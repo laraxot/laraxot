@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bdd34050108926c0d3b12cdd03a006fe",
+    "content-hash": "e9523850f973bf744a7222af1e8ec26a",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7710,16 +7710,16 @@
         },
         {
             "name": "filament/upgrade",
-            "version": "v4.11.8",
+            "version": "v5.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/upgrade.git",
-                "reference": "4a47e751fe3cf1685e7cd028fbbb8891f65f3c74"
+                "reference": "1dec8fe9a7d36892dfaca9460f640c4c9fb2dc2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/upgrade/zipball/4a47e751fe3cf1685e7cd028fbbb8891f65f3c74",
-                "reference": "4a47e751fe3cf1685e7cd028fbbb8891f65f3c74",
+                "url": "https://api.github.com/repos/filamentphp/upgrade/zipball/1dec8fe9a7d36892dfaca9460f640c4c9fb2dc2c",
+                "reference": "1dec8fe9a7d36892dfaca9460f640c4c9fb2dc2c",
                 "shasum": ""
             },
             "require": {
@@ -7728,16 +7728,9 @@
                 "rector/rector": "^2.0"
             },
             "bin": [
-                "bin/filament-v4"
+                "bin/filament-v5"
             ],
             "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Filament\\Upgrade\\UpgradeServiceProvider"
-                    ]
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Filament\\Upgrade\\": "src"
@@ -7747,13 +7740,13 @@
             "license": [
                 "MIT"
             ],
-            "description": "Upgrade Filament v3 code to Filament v4.",
+            "description": "Upgrade Filament v4 code to Filament v5.",
             "homepage": "https://github.com/filamentphp/filament",
             "support": {
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2026-05-20T17:24:13+00:00"
+            "time": "2026-05-20T17:21:47+00:00"
         },
         {
             "name": "pdepend/pdepend",
@@ -7967,16 +7960,16 @@
         },
         {
             "name": "rector/rector",
-            "version": "2.5.3",
+            "version": "2.5.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "3d3577ad88d70d9f8dccd0a4c2f75bf13d6268e6"
+                "reference": "ba22f8c087848278fed6b4910d4cf1108096d8d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/3d3577ad88d70d9f8dccd0a4c2f75bf13d6268e6",
-                "reference": "3d3577ad88d70d9f8dccd0a4c2f75bf13d6268e6",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/ba22f8c087848278fed6b4910d4cf1108096d8d3",
+                "reference": "ba22f8c087848278fed6b4910d4cf1108096d8d3",
                 "shasum": ""
             },
             "require": {
@@ -8015,7 +8008,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/2.5.3"
+                "source": "https://github.com/rectorphp/rector/tree/2.5.7"
             },
             "funding": [
                 {
@@ -8023,7 +8016,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-07-05T01:32:08+00:00"
+            "time": "2026-07-13T15:24:18+00:00"
         },
         {
             "name": "symfony/config",
