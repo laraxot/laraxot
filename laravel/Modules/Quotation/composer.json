@@ -1,0 +1,73 @@
+{
+    "name": "laraxot/module_quotation_fila5",
+    "description": "Quotation module (replica gestionale_commesse, Laraxot normalize)",
+    "keywords": [
+        "laraxot",
+        "laravel",
+        "filament",
+        "module_quotation"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marco Sottana",
+            "email": "marco.sottana@gmail.com"
+        },
+        {
+            "name": "Davide Cavallini",
+            "email": "davidecavallini1987@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Quotation\\": "app/",
+            "Modules\\Quotation\\Database\\Factories\\": "database/factories/",
+            "Modules\\Quotation\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Quotation\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Quotation\\Providers\\QuotationServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../Xot"
+        },
+        {
+            "type": "path",
+            "url": "../User"
+        },
+        {
+            "type": "path",
+            "url": "../Tenant"
+        },
+        {
+            "type": "path",
+            "url": "../UI"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "wikimedia/composer-merge-plugin": true
+        }
+    }
+}

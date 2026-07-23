@@ -1,0 +1,11 @@
+{
+    "name": "Intervention",
+    "alias": "intervention",
+    "description": "Intervention \u2014 replica gestionale_commesse (normalize Laraxot)",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Intervention\\Providers\\InterventionServiceProvider"
+    ],
+    "files": []
+}

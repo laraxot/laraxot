@@ -1,0 +1,11 @@
+{
+    "name": "PublicProcurement",
+    "alias": "publicprocurement",
+    "description": "PublicProcurement \u2014 replica gestionale_commesse (normalize Laraxot)",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\PublicProcurement\\Providers\\PublicProcurementServiceProvider"
+    ],
+    "files": []
+}

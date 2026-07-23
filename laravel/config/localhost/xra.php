@@ -7,7 +7,7 @@ return [
     'enable_ads' => '1',
     'main_module' => 'TechPlanner',
     'primary_lang' => 'it',
-    'pub_theme' => 'Two',
+    'pub_theme' => 'Zero',
     'pub_theme' => 'Sixteen',
     'pub_theme' => 'Sixteen',
     'show_trans_key' => false,

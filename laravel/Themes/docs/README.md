@@ -40,3 +40,10 @@ This directory routes to the active documentation roots for the Laravel themes i
 - [QMD Setup](./QMD-SETUP.md) — Configurazione ricerca locale
 - [Performance](./PERFORMANCE-OPTIMIZATION.md) — Metriche e best practice
 - [Project Structure](./PROJECT-STRUCTURE.md) — Directory layout
+
+- [AiAssistant vs Themes](./aiassistant-vs-themes.md) — chat/proposal nel modulo, non nel tema; `statuses=false` ≠ cancellato.
+
+## Gestionale / replica
+
+- [Fase replica singolare](../../docs/gestionale-commesse-comparison/replica-singular-phase.md)
+- [Temi vs moduli replica](./copy-normalize-modules-vs-themes.md)

@@ -1,0 +1,57 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\TimberBilling\Filament\Pages;
+
+use App\Support\AccountFeatures;
+use Filament\Pages\Page;
+use Illuminate\Support\Facades\Auth;
+use Modules\TimberBilling\Queries\GetTimberAgendaQuery;
+
+final class TimberAgendaPage extends Page
+{
+    protected static bool $isDiscovered = false;
+
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-calendar-days';
+
+    protected static ?string $navigationLabel = 'Agenda';
+
+    protected static ?string $title = 'Agenda vendite, scadenze e documenti';
+
+    protected static ?string $slug = 'agenda';
+
+    protected static ?int $navigationSort = 26;
+
+    protected string $view = 'timberbilling::filament.agenda';
+
+    public string $fromDate = '';
+
+    public string $toDate = '';
+
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Analisi';
+    }
+
+    public static function canAccess(): bool
+    {
+        return AccountFeatures::canAccessPanel(Auth::user(), 'timber');
+    }
+
+    public function mount(): void
+    {
+        $this->fromDate = now()->startOfMonth()->toDateString();
+        $this->toDate = now()->endOfMonth()->toDateString();
+    }
+
+    /**
+     * @return array{events: array<int, \Modules\TimberBilling\Domain\DTO\AgendaEvent>}
+     */
+    protected function getViewData(): array
+    {
+        return [
+            'events' => app(GetTimberAgendaQuery::class)->execute($this->fromDate, $this->toDate),
+        ];
+    }
+}

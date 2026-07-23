@@ -1,0 +1,89 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Catalog\Filament\Resources;
+
+use App\Support\Concerns\HasAccountFeatureVisibility;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Forms\Components\TextInput;
+use Filament\Resources\Resource;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Schema;
+use Filament\Tables;
+use Filament\Tables\Table;
+use Modules\Catalog\Filament\Resources\CatalogModelResource\Pages;
+use Modules\Catalog\Models\CatalogModel;
+
+final class CatalogModelResource extends Resource
+{
+    use HasAccountFeatureVisibility;
+
+    protected static ?string $model = CatalogModel::class;
+
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-squares-2x2';
+
+    private const ACCOUNT_FEATURE_ADMIN = 'admin.catalog';
+
+    private const ACCOUNT_FEATURE_OPERATOR = 'operator.catalog';
+
+    public static function getNavigationGroup(): ?string
+    {
+        return __('catalog.navigation');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('catalog.model');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('catalog.models');
+    }
+
+    public static function form(Schema $schema): Schema
+    {
+        return $schema->components([
+            Section::make()->columnSpanFull()->components([
+                TextInput::make('name')
+                    ->label(__('catalog.fields.name'))
+                    ->required()
+                    ->maxLength(255),
+            ]),
+        ]);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+                Tables\Columns\TextColumn::make('name')
+                    ->label(__('catalog.fields.name'))
+                    ->searchable()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->toggleable(isToggledHiddenByDefault: true),
+            ])
+            ->actions([
+                ViewAction::make(),
+                EditAction::make(),
+            ])
+            ->bulkActions([
+                DeleteBulkAction::make(),
+            ]);
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListCatalogModels::route('/'),
+            'create' => Pages\CreateCatalogModel::route('/create'),
+            'view' => Pages\ViewCatalogModel::route('/{record}'),
+            'edit' => Pages\EditCatalogModel::route('/{record}/edit'),
+        ];
+    }
+}

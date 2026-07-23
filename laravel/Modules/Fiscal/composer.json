@@ -1,0 +1,73 @@
+{
+    "name": "laraxot/module_fiscal_fila5",
+    "description": "Fiscal module (replica gestionale_commesse, Laraxot normalize)",
+    "keywords": [
+        "laraxot",
+        "laravel",
+        "filament",
+        "module_fiscal"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marco Sottana",
+            "email": "marco.sottana@gmail.com"
+        },
+        {
+            "name": "Davide Cavallini",
+            "email": "davidecavallini1987@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Fiscal\\": "app/",
+            "Modules\\Fiscal\\Database\\Factories\\": "database/factories/",
+            "Modules\\Fiscal\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Fiscal\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Fiscal\\Providers\\FiscalServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../Xot"
+        },
+        {
+            "type": "path",
+            "url": "../User"
+        },
+        {
+            "type": "path",
+            "url": "../Tenant"
+        },
+        {
+            "type": "path",
+            "url": "../UI"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "wikimedia/composer-merge-plugin": true
+        }
+    }
+}

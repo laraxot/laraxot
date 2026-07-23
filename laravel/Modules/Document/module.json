@@ -1,0 +1,11 @@
+{
+    "name": "Document",
+    "alias": "document",
+    "description": "Document \u2014 replica gestionale_commesse (normalize Laraxot)",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Document\\Providers\\DocumentServiceProvider"
+    ],
+    "files": []
+}

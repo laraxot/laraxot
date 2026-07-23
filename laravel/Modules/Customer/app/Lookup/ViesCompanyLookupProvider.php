@@ -1,0 +1,89 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Customer\Lookup;
+
+use Illuminate\Support\Facades\Http;
+
+final class ViesCompanyLookupProvider implements CompanyLookupProviderInterface
+{
+    private const ENDPOINT = 'https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/';
+
+    public function search(string $query): array
+    {
+        $vat = $this->extractItalianVat($query);
+        if ($vat === null) {
+            return [];
+        }
+
+        $timeout = config('company_lookup.vies_timeout', 8);
+
+        try {
+            $response = Http::acceptJson()
+                ->timeout(is_numeric($timeout) ? (int) $timeout : 8)
+                ->get(self::ENDPOINT.$vat);
+        } catch (\Throwable) {
+            return [];
+        }
+
+        if (! $response->successful()) {
+            return [];
+        }
+
+        $data = $response->json();
+        if (! is_array($data) || ($data['isValid'] ?? null) !== true) {
+            return [];
+        }
+
+        $nameValue = $data['name'] ?? null;
+        $name = is_string($nameValue) ? trim($nameValue) : '';
+        if ($name === '' || $name === '---') {
+            return [];
+        }
+
+        $addressValue = $data['address'] ?? null;
+        [$street, $city, $postalCode, $province] = $this->parseAddress(is_string($addressValue) ? $addressValue : '');
+
+        return [[
+            'legal_name' => $name,
+            'vat_number' => 'IT'.$vat,
+            'tax_code' => $vat,
+            'address_line1' => $street,
+            'city' => $city,
+            'postal_code' => $postalCode,
+            'province' => $province,
+            'phone' => null,
+            'email' => null,
+        ]];
+    }
+
+    private function extractItalianVat(string $query): ?string
+    {
+        $normalized = preg_replace('/\s+/', '', $query) ?? '';
+        if (preg_match('/(?:IT)?(\d{11})/i', $normalized, $matches) === 1) {
+            return $matches[1];
+        }
+
+        return null;
+    }
+
+    private function parseAddress(string $address): array
+    {
+        $flat = trim((string) preg_replace('/\s+/', ' ', str_replace(["\n", "\r"], ' ', $address)));
+        if ($flat === '') {
+            return [null, null, null, null];
+        }
+
+        if (preg_match('/^(.*?)\s(\d{5})\s(.+?)(?:\s([A-Z]{2}))?$/', $flat, $m) === 1) {
+            $street = trim($m[1]) !== '' ? trim($m[1]) : null;
+            $postalCode = $m[2];
+            $city = trim($m[3]) !== '' ? trim($m[3]) : null;
+            $province = $m[4] ?? null;
+
+            return [$street, $city, $postalCode, $province];
+        }
+
+        return [$flat, null, null, null];
+    }
+}

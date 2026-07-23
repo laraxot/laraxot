@@ -1,0 +1,275 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Intervention\Filament\Resources;
+
+use App\Support\AccountFeatures;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\RichEditor\TextColor;
+use Filament\Forms\Components\Select;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Components\ViewEntry;
+use Filament\Resources\Resource;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Schema;
+use Filament\Tables;
+use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
+use Modules\Intervention\Filament\Resources\DailyNoteResource\Pages;
+use Modules\Intervention\Models\DailyNote;
+use Modules\Platform\Models\PlatformSetting;
+
+final class DailyNoteResource extends Resource
+{
+    protected static ?string $model = DailyNote::class;
+
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-pencil-square';
+
+    /**
+     * @return array<string, TextColor>
+     */
+    public static function richTextColors(): array
+    {
+        return [
+            'slate' => TextColor::make('Grigio', '#475569', darkColor: '#cbd5e1'),
+            'blue' => TextColor::make('Blu', '#2563eb', darkColor: '#60a5fa'),
+            'green' => TextColor::make('Verde', '#16a34a', darkColor: '#4ade80'),
+            'amber' => TextColor::make('Ambra', '#d97706', darkColor: '#fbbf24'),
+            'red' => TextColor::make('Rosso', '#dc2626', darkColor: '#f87171'),
+            'purple' => TextColor::make('Viola', '#7c3aed', darkColor: '#a78bfa'),
+        ];
+    }
+
+    public static function photoDirectory(?int $userId, mixed $noteDate): string
+    {
+        $normalizedUserId = max(0, (int) $userId);
+        $normalizedDate = preg_replace('/[^0-9-]/', '', (string) $noteDate) ?: 'draft';
+
+        return "media/daily-notes/{$normalizedUserId}/{$normalizedDate}/photos";
+    }
+
+    private static function isEnabledByPlatform(): bool
+    {
+        return PlatformSetting::getBool('modules.operator.daily_notes', true);
+    }
+
+    public static function shouldRegisterNavigation(): bool
+    {
+        return self::isEnabledByPlatform() && AccountFeatures::currentPanelAllowsFeature(
+            Auth::user(),
+            adminFeature: null,
+            operatorFeature: 'operator.daily_notes',
+            adminDefault: false,
+            operatorDefault: true,
+            fallback: false,
+        );
+    }
+
+    public static function canViewAny(): bool
+    {
+        return self::isEnabledByPlatform() && AccountFeatures::currentPanelAllowsFeature(
+            Auth::user(),
+            adminFeature: null,
+            operatorFeature: 'operator.daily_notes',
+            adminDefault: false,
+            operatorDefault: true,
+            fallback: false,
+        )
+            && parent::canViewAny();
+    }
+
+    public static function canCreate(): bool
+    {
+        return self::isEnabledByPlatform() && AccountFeatures::currentPanelAllowsFeature(
+            Auth::user(),
+            adminFeature: null,
+            operatorFeature: 'operator.daily_notes',
+            adminDefault: false,
+            operatorDefault: true,
+            fallback: false,
+        )
+            && parent::canCreate();
+    }
+
+    public static function canEdit($record): bool
+    {
+        return self::isEnabledByPlatform() && AccountFeatures::currentPanelAllowsFeature(
+            Auth::user(),
+            adminFeature: null,
+            operatorFeature: 'operator.daily_notes',
+            adminDefault: false,
+            operatorDefault: true,
+            fallback: false,
+        )
+            && parent::canEdit($record);
+    }
+
+    public static function canView($record): bool
+    {
+        return self::isEnabledByPlatform() && AccountFeatures::currentPanelAllowsFeature(
+            Auth::user(),
+            adminFeature: null,
+            operatorFeature: 'operator.daily_notes',
+            adminDefault: false,
+            operatorDefault: true,
+            fallback: false,
+        )
+            && parent::canView($record);
+    }
+
+    public static function getNavigationGroup(): ?string
+    {
+        return __('interventions.navigation');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('interventions.daily_note');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('interventions.daily_notes');
+    }
+
+    public static function form(Schema $schema): Schema
+    {
+        return $schema->components([
+            Section::make()
+                ->columnSpanFull()
+                ->components([
+                    Grid::make(2)->components([
+                        Select::make('user_id')
+                            ->label(__('interventions.fields.user'))
+                            ->relationship('user', 'name')
+                            ->searchable()
+                            ->preload()
+                            ->required()
+                            ->default(fn (): ?int => request()->is('operator/*') ? Auth::id() : null)
+                            ->disabled(fn (): bool => request()->is('operator/*'))
+                            ->dehydrated(),
+                        DatePicker::make('note_date')
+                            ->label(__('interventions.fields.note_date'))
+                            ->required(),
+                    ]),
+                    RichEditor::make('body_html')
+                        ->label(__('interventions.fields.body'))
+                        ->required()
+                        ->toolbarButtons([
+                            ['bold', 'italic', 'underline', 'strike', 'link', 'textColor'],
+                            ['blockquote', 'bulletList', 'orderedList'],
+                            ['undo', 'redo'],
+                        ])
+                        ->textColors(self::richTextColors())
+                        ->helperText(__('interventions.helpers.daily_note_formatting'))
+                        ->columnSpanFull(),
+                    FileUpload::make('photo_paths')
+                        ->label(__('interventions.fields.photos'))
+                        ->disk('public')
+                        ->directory(fn (Get $get): string => self::photoDirectory(
+                            userId: (int) ($get('user_id') ?: Auth::id()),
+                            noteDate: $get('note_date'),
+                        ))
+                        ->image()
+                        ->multiple()
+                        ->appendFiles()
+                        ->maxParallelUploads(1)
+                        ->imageResizeMode('contain')
+                        ->imageResizeTargetWidth('1280')
+                        ->imageResizeTargetHeight('1280')
+                        ->extraInputAttributes([
+                            'accept' => 'image/*',
+                            'capture' => 'environment',
+                        ], merge: true)
+                        ->helperText(__('interventions.helpers.daily_note_photos'))
+                        ->columnSpanFull(),
+                ])
+                ->columns(2),
+        ]);
+    }
+
+    public static function infolist(Schema $schema): Schema
+    {
+        return $schema->components([
+            Section::make()
+                ->columnSpanFull()
+                ->components([
+                    Grid::make(2)->components([
+                        TextEntry::make('user.name')
+                            ->label(__('interventions.fields.user')),
+                        TextEntry::make('note_date')
+                            ->label(__('interventions.fields.note_date'))
+                            ->date(),
+                    ]),
+                    ViewEntry::make('daily_note_display')
+                        ->hiddenLabel()
+                        ->view('interventions::filament.infolists.entries.daily-note-display')
+                        ->columnSpanFull(),
+                ])
+                ->columns(2),
+        ]);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+                Tables\Columns\TextColumn::make('user.name')
+                    ->label(__('interventions.fields.user'))
+                    ->searchable()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('note_date')
+                    ->label(__('interventions.fields.note_date'))
+                    ->date()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('body')
+                    ->label(__('interventions.fields.body'))
+                    ->limit(80)
+                    ->wrap()
+                    ->toggleable(),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->toggleable(isToggledHiddenByDefault: true),
+            ])
+            ->actions([
+                ViewAction::make(),
+                EditAction::make(),
+            ])
+            ->bulkActions([
+                DeleteBulkAction::make(),
+            ]);
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        $query = parent::getEloquentQuery();
+
+        if (request()->is('operator/*')) {
+            $userId = Auth::id();
+            if ($userId !== null) {
+                $query->where('user_id', $userId);
+            }
+        }
+
+        return $query;
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListDailyNotes::route('/'),
+            'create' => Pages\CreateDailyNote::route('/create'),
+            'view' => Pages\ViewDailyNote::route('/{record}'),
+            'edit' => Pages\EditDailyNote::route('/{record}/edit'),
+        ];
+    }
+}

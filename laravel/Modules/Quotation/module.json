@@ -1,0 +1,11 @@
+{
+    "name": "Quotation",
+    "alias": "quotation",
+    "description": "Quotation \u2014 replica gestionale_commesse (normalize Laraxot)",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Quotation\\Providers\\QuotationServiceProvider"
+    ],
+    "files": []
+}

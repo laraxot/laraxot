@@ -1,0 +1,73 @@
+{
+    "name": "laraxot/module_billing_fila5",
+    "description": "Billing module (replica gestionale_commesse, Laraxot normalize)",
+    "keywords": [
+        "laraxot",
+        "laravel",
+        "filament",
+        "module_billing"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marco Sottana",
+            "email": "marco.sottana@gmail.com"
+        },
+        {
+            "name": "Davide Cavallini",
+            "email": "davidecavallini1987@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Billing\\": "app/",
+            "Modules\\Billing\\Database\\Factories\\": "database/factories/",
+            "Modules\\Billing\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Billing\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Billing\\Providers\\BillingServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../Xot"
+        },
+        {
+            "type": "path",
+            "url": "../User"
+        },
+        {
+            "type": "path",
+            "url": "../Tenant"
+        },
+        {
+            "type": "path",
+            "url": "../UI"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "wikimedia/composer-merge-plugin": true
+        }
+    }
+}

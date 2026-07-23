@@ -1,0 +1,102 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\PublicProcurement\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Customer\Models\Customer;
+use Modules\WorkOrder\Models\WorkOrder;
+
+final class PublicProcurementContract extends Model
+{
+    use SoftDeletes;
+
+    protected $table = 'public_procurement_contracts';
+
+    /** @var array<int, string> */
+    protected $guarded = [];
+
+    /** @return array<string, string> */
+    protected function casts(): array
+    {
+        return [
+            'awarded_on' => 'date',
+            'signed_on' => 'date',
+            'site_handover_on' => 'date',
+            'works_start_on' => 'date',
+            'works_due_on' => 'date',
+            'works_completed_on' => 'date',
+            'contract_amount' => 'decimal:2',
+            'security_costs' => 'decimal:2',
+            'vat_rate' => 'decimal:2',
+            'discount_rate' => 'decimal:3',
+            'retention_rate' => 'decimal:3',
+            'meta' => 'array',
+            'deleted_at' => 'datetime',
+        ];
+    }
+
+    /** @return BelongsTo<WorkOrder, $this> */
+    public function workOrder(): BelongsTo
+    {
+        return $this->belongsTo(WorkOrder::class, 'work_order_id');
+    }
+
+    /** @return BelongsTo<PublicProcurementTenderOpportunity, $this> */
+    public function opportunity(): BelongsTo
+    {
+        return $this->belongsTo(PublicProcurementTenderOpportunity::class, 'tender_opportunity_id');
+    }
+
+    /** @return BelongsTo<Customer, $this> */
+    public function customer(): BelongsTo
+    {
+        return $this->belongsTo(Customer::class, 'customer_id');
+    }
+
+    /** @return HasMany<PublicProcurementDocumentRequirement, $this> */
+    public function documentRequirements(): HasMany
+    {
+        return $this->hasMany(PublicProcurementDocumentRequirement::class, 'public_procurement_contract_id');
+    }
+
+    /** @return HasMany<PublicProcurementPriceItem, $this> */
+    public function priceItems(): HasMany
+    {
+        return $this->hasMany(PublicProcurementPriceItem::class, 'public_procurement_contract_id');
+    }
+
+    /** @return HasMany<PublicProcurementMeasurement, $this> */
+    public function measurements(): HasMany
+    {
+        return $this->hasMany(PublicProcurementMeasurement::class, 'public_procurement_contract_id');
+    }
+
+    /** @return HasMany<PublicProcurementProgressReport, $this> */
+    public function progressReports(): HasMany
+    {
+        return $this->hasMany(PublicProcurementProgressReport::class, 'public_procurement_contract_id');
+    }
+
+    /** @return HasMany<PublicProcurementDeadline, $this> */
+    public function deadlines(): HasMany
+    {
+        return $this->hasMany(PublicProcurementDeadline::class, 'public_procurement_contract_id');
+    }
+
+    /** @return HasMany<PublicProcurementOfficialRecord, $this> */
+    public function officialRecords(): HasMany
+    {
+        return $this->hasMany(PublicProcurementOfficialRecord::class, 'public_procurement_contract_id');
+    }
+
+    /** @return HasMany<PublicProcurementGuarantee, $this> */
+    public function guarantees(): HasMany
+    {
+        return $this->hasMany(PublicProcurementGuarantee::class, 'public_procurement_contract_id');
+    }
+}

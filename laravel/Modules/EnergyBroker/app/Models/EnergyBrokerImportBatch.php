@@ -1,0 +1,38 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\EnergyBroker\Models;
+
+use App\Models\User;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+final class EnergyBrokerImportBatch extends Model
+{
+    use SoftDeletes;
+
+    protected $table = 'energy_broker_import_batches';
+
+    protected $guarded = [];
+
+    protected function casts(): array
+    {
+        return [
+            'meta' => 'array',
+            'deleted_at' => 'datetime',
+        ];
+    }
+
+    public function uploadedBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'uploaded_by_user_id');
+    }
+
+    public function documents(): HasMany
+    {
+        return $this->hasMany(EnergyBrokerDocument::class, 'energy_broker_import_batch_id');
+    }
+}

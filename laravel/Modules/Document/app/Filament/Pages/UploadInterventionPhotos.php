@@ -1,0 +1,104 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Document\Filament\Pages;
+
+use App\Support\AccountFeatures;
+use Filament\Actions\Action;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Hidden;
+use Filament\Pages\Page;
+use Filament\Schemas\Schema;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
+use Modules\Document\Actions\AttachPhotosToInterventionAction;
+use Modules\Intervention\Models\Intervention;
+
+final class UploadInterventionPhotos extends Page
+{
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-camera';
+
+    protected string $view = 'documents::filament.pages.upload-intervention-photos';
+
+    protected static bool $shouldRegisterNavigation = false;
+
+    protected static ?string $slug = 'interventions/{interventionId}/upload-photos';
+
+    public ?Intervention $intervention = null;
+
+    /** @var array<string, mixed> */
+    public array $data = [];
+
+    public static function canAccess(): bool
+    {
+        return request()->is('operator/*')
+            && AccountFeatures::hasFeature(Auth::user(), 'operator.upload_media', true);
+    }
+
+    public function mount(int $interventionId): void
+    {
+        $this->intervention = Intervention::query()->findOrFail($interventionId);
+
+        Gate::authorize('update', $this->intervention);
+
+        $this->form->fill([
+            'intervention_id' => $this->intervention->id,
+            'photos' => [],
+        ]);
+    }
+
+    public function form(Schema $schema): Schema
+    {
+        $interventionId = $this->intervention?->id ?? 0;
+
+        return $schema
+            ->statePath('data')
+            ->components([
+                Hidden::make('intervention_id')->default($interventionId),
+                FileUpload::make('photos')
+                    ->label(__('documents.actions.upload_photos'))
+                    ->disk('public')
+                    ->directory("media/interventions/{$interventionId}/photos")
+                    ->image()
+                    ->multiple()
+                    ->appendFiles()
+                    ->preserveFilenames()
+                    ->maxParallelUploads(1)
+                    ->required()
+                    ->columnSpanFull(),
+            ]);
+    }
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            Action::make('save')
+                ->label(__('documents.actions.save'))
+                ->action(function (): void {
+                    $state = $this->form->getState();
+                    $paths = $state['photos'] ?? [];
+
+                    if (! is_array($paths) || $this->intervention === null) {
+                        return;
+                    }
+
+                    app(AttachPhotosToInterventionAction::class)->execute(
+                        intervention: $this->intervention,
+                        paths: array_map('strval', $paths),
+                        uploadedByUserId: Auth::id(),
+                    );
+
+                    $this->redirect(\Modules\Intervention\Filament\Resources\InterventionResource::getUrl('view', [
+                        'record' => $this->intervention->id,
+                    ]));
+                }),
+        ];
+    }
+
+    public function getTitle(): string
+    {
+        return __('documents.pages.upload_intervention_photos');
+    }
+}
+

@@ -1,0 +1,11 @@
+{
+    "name": "Platform",
+    "alias": "platform",
+    "description": "Platform \u2014 replica gestionale_commesse (normalize Laraxot)",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Platform\\Providers\\PlatformServiceProvider"
+    ],
+    "files": []
+}

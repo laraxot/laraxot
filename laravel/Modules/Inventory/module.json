@@ -1,0 +1,11 @@
+{
+    "name": "Inventory",
+    "alias": "inventory",
+    "description": "Inventory \u2014 replica gestionale_commesse (normalize Laraxot)",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Inventory\\Providers\\InventoryServiceProvider"
+    ],
+    "files": []
+}

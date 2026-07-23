@@ -1,0 +1,26 @@
+{
+    "name": "laraxot/module_customer_fila5",
+    "description": "Customer management: anagrafica clienti, sedi, referenti, ruoli referente, rivenditori",
+    "type": "library",
+    "require": {
+        "laravel/framework": "*",
+        "spatie/queueable-action": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Customer\\": "app/",
+            "Modules\\Customer\\Database\\Factories\\": "database/factories/",
+            "Modules\\Customer\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Customer\\Providers\\CustomerServiceProvider",
+                "Modules\\Customer\\Providers\\Filament\\AdminPanelProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

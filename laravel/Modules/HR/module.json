@@ -1,0 +1,11 @@
+{
+    "name": "HR",
+    "alias": "hr",
+    "description": "HR \u2014 replica gestionale_commesse (normalize Laraxot)",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\HR\\Providers\\HrServiceProvider"
+    ],
+    "files": []
+}

@@ -1,0 +1,30 @@
+# sprint-status — base_workorder_fila5 (BMAD)
+
+# last_updated: 2026-07-23
+# STATUS DEFINITIONS: backlog | ready-for-dev | in-progress | review | done | blocked
+
+project: base_workorder_fila5
+source_epic: docs/stories/EPIC-gestionale-commesse-alignment.md
+comparison_index: docs/gestionale-commesse-comparison/README.md
+phase_canon: docs/gestionale-commesse-comparison/replica-singular-phase.md
+agent_errors_ssot: docs/gestionale-commesse-comparison/agent-errors-lessons.md
+
+development_status:
+  gestionale-commesse-module-parity: ready-for-dev
+  1.2.customer-module: ready-for-dev
+  1.3.workorder-module: ready-for-dev
+  1.4.intervention-module: ready-for-dev
+  1.5.employee-hr-gap: ready-for-dev
+  1.6.copy-reshape-src-modules: ready-for-dev
+  1.7.composer-json-new-modules: ready-for-dev
+  1.8.wave1-reshape-xotbase: ready-for-dev
+  1.9.wave2-reshape-remaining-modules: ready-for-dev
+  1.10.agent-errors-replica-singular-guardrails: ready-for-dev
+  2.1.copy-then-normalize-modules: ready-for-dev
+  2.2.agent-errors-replica-singular: ready-for-dev
+
+github:
+  issue_epic: https://github.com/laraxot/base_workorder_fila5/issues/7
+  discussion_epic: https://github.com/laraxot/base_workorder_fila5/discussions/8
+  issue_guardrail: https://github.com/laraxot/base_workorder_fila5/issues/9
+  discussion_lessons: https://github.com/laraxot/base_workorder_fila5/discussions/10

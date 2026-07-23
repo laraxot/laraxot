@@ -1,0 +1,9 @@
+{
+    "name": "Customer",
+    "alias": "customer",
+    "description": "Anagrafica clienti: cliente, sedi, referenti, ruoli referente, rivenditori",
+    "providers": [
+        "Modules\\Customer\\Providers\\CustomerServiceProvider",
+        "Modules\\Customer\\Providers\\Filament\\AdminPanelProvider"
+    ]
+}

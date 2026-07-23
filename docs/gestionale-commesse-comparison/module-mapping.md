@@ -1,87 +1,72 @@
 ---
-title: "Mapping moduli gestionale_commesse → base_workorder_fila5"
+title: "Mapping moduli gestionale_commesse → replica singolare"
 type: concept
-tags: [gestionale-commesse, module-mapping, parity, laraxot, bmad]
+tags: [gestionale-commesse, module-mapping, replica, singular, laraxot]
 created: 2026-07-23
 updated: 2026-07-23
-qmd: "gestionale_commesse module mapping Auth User HR Employee WorkOrders parity"
+qmd: "gestionale_commesse module mapping replica singular AiAssistant Auth Customer WorkOrder"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
 discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
 related:
+  - "./replica-singular-phase.md"
   - "./glossary-align.md"
-  - "./new-modules-candidates.md"
-  - "../../laravel/Modules/User/docs/gestionale-auth-vs-user.md"
-  - "../../laravel/Modules/Employee/docs/gestionale-hr-gap.md"
+  - "./copy-then-normalize.md"
   - "../../laravel/Themes/docs/gestionale-panels-vs-themes.md"
-  - "../wiki/skills/bmad-create-story/stories/gestionale-commesse-module-parity.story.md"
+  - "../wiki/rules/module-name-singular-mandatory.md"
 ---
 
-# Mapping moduli gestionale_commesse → base_workorder_fila5
+# Mapping — fase replica (singolare)
 
-> **Perché:** `gestionale_commesse` è il dominio operativo (commesse, interventi, preventivi). Questo progetto è la base Laraxot su cui portarlo. I nomi moduli non coincidono: va esplicitato il corrispettivo o il candidato nuovo.
+> **Perché:** porting = **replicare** i moduli SRC. Unica trasformazione di nome: **singolare**.  
+> Colonna «overlap piattaforma» = nota analitica per **dopo**; non impedisce la replica.
 
-## Fonte analizzata
+## Fonte
 
-- Path: `/var/www/_bases/gestionale_commesse`
-- Architettura SRC: `Domain/` + `Application/` + `Infrastructure/` (DDD leggero)
-- Stack UI SRC: multi **Filament Panel** (Admin, Operator, Customer, Timber, …) — **nessun** package `Themes/`
-- Glossario SRC: `docs/glossary.md` (Commessa→WorkOrder, Dipendente→Employee, …)
+- `/var/www/_bases/gestionale_commesse/Modules/*`
+- UI SRC = multi panel Filament (nessun Themes package)
 
-## Tabella master (SRC → nostro)
+## Tabella master
 
-| Modulo SRC | Modelli (n) | Nostro corrispettivo | Tipo | Nome proposto Laraxot | Note |
-|---|---:|---|---|---|---|
-| **Auth** | 0 (User in `app/`) | **User** | rename/esistente | `User` | Vedi [gestionale-auth-vs-user.md](../../laravel/Modules/User/docs/gestionale-auth-vs-user.md) |
-| **HR** | 5 | **Employee** | rename/esistente + gap | `Employee` | Vedi [gestionale-hr-gap.md](../../laravel/Modules/Employee/docs/gestionale-hr-gap.md) |
-| **Customers** | 5 | — | **nuovo** | `Customer` | Cliente/sede/referente/rivenditore |
-| **WorkOrders** | 5 | — (**non** Job) | **nuovo** | `WorkOrder` | Commessa; `Job` = code Laravel |
-| **Interventions** | 7 | — (parziale overlap Employee TimePunch) | **nuovo** | `Intervention` | Timbrature su intervento ≠ WorkHour generico |
-| **Quotations** | 5 | — | **nuovo** | `Quotation` | Preventivi + template + site survey |
-| **Catalog** | 7 | — | **nuovo** | `Catalog` | Prodotti + Metel + lookup |
-| **Documents** | 1 (`Media`) | **Media** | esistente (sottinsieme) | `Media` | SRC Documents è thin wrapper su media |
-| **Signatures** | 2 | — | **nuovo** | `Signature` | Firma + sketch canvas |
-| **Vehicles** | 2 | — | **nuovo** | `Vehicle` | Flotta + documenti veicolo |
-| **Billing** | 7 | — | **nuovo** | `Billing` | Fatture, DDT, fornitori |
-| **Platform** | 2 | **Tenant** + **Activity** + **Xot** | split | — | Settings→Tenant/Xot; AuditLog→Activity |
-| **AiAssistant** | 4 | **AI** | esistente + gap | `AI` | Thread/proposal mancanti |
-| **Inventory** | 5 | — | **nuovo** | `Inventory` | Magazzino/movimenti |
-| **Bom** | 2 | — | **nuovo** | `Bom` | Distinta base |
-| **Production** | 2 | — | **nuovo** | `Production` | Ordini/fasi produzione |
-| **Compliance** | 9 | ≠ **Gdpr** | **nuovo** | `Compliance` | Impianti/POS/RCEE — non consensi GDPR |
-| **PublicProcurement** | 15 | — | **nuovo** | `PublicProcurement` | Appalti/gare (verticale) |
-| **EnergyBroker** | 6 | — | **nuovo** | `EnergyBroker` | Verticale energy |
-| **WhatsApp** | 3 | **Notify** (canale) | estendere | restare in `Notify` | Preferire canale, non modulo gemello |
-| **Email** | 3 | **Notify** (inbox) | estendere | restare in `Notify` | Poll inbox ≠ MailTemplate |
-| **TimberBilling** | 4 | — | **nuovo** o sotto-Billing | `TimberBilling` | Verticale timber FE |
-| **Fiscal** | 0 (solo actions) | — | **nuovo** (lib) | `Fiscal` | Calcoli IVA/XML — senza modelli |
+| Modulo SRC | Replica (nome cartella) | Modelli (n) | Overlap piattaforma (fase **dopo**) |
+|---|---|---:|---|
+| Auth | **Auth** | 0 | nota vs `User` |
+| HR | **HR** | 5 | nota vs `Employee` |
+| Customers | **Customer** | 5 | — |
+| WorkOrders | **WorkOrder** | 5 | ≠ `Job` |
+| Interventions | **Intervention** | 7 | — |
+| Quotations | **Quotation** | 5 | — |
+| Catalog | **Catalog** | 7 | — |
+| Documents | **Document** | 1 | nota vs `Media` |
+| Signatures | **Signature** | 2 | — |
+| Vehicles | **Vehicle** | 2 | — |
+| Billing | **Billing** | 7 | — |
+| Platform | **Platform** | 2 | nota vs Tenant/Activity/Xot |
+| AiAssistant | **AiAssistant** | 4 | nota vs `AI` — **non** rinominare in AI |
+| Inventory | **Inventory** | 5 | — |
+| Bom | **Bom** | 2 | — |
+| Production | **Production** | 2 | — |
+| Compliance | **Compliance** | 9 | ≠ `Gdpr` |
+| PublicProcurement | **PublicProcurement** | 15 | — |
+| EnergyBroker | **EnergyBroker** | 6 | — |
+| WhatsApp | **WhatsApp** | 3 | nota vs `Notify` |
+| Email | **Email** | 3 | nota vs `Notify` |
+| TimberBilling | **TimberBilling** | 4 | — |
+| Fiscal | **Fiscal** | 0 | — |
 
-## Moduli nostri senza corrispettivo SRC (non eliminare)
+## Regole
 
-| Nostro | Ruolo | Impatto sul porting |
-|---|---|---|
-| Xot | Fondazione Laraxot / XotBase | Obbligatorio per ogni nuovo modulo |
-| Lang / UI / Cms / Blog / Comment / Seo / Rating / Geo | Piattaforma FO/CMS | Fuori scope gestionale operativo |
-| Job | Queue/schedule | **Non** mappare a WorkOrders |
-| Gdpr | Consensi/trattamenti | Non sostituisce Compliance |
-| Tenant | Multi-tenant | Assorbe parte Platform |
+1. Ogni riga SRC → **una cartella replica** con nome singolare (o brand).
+2. Vietato cancellare la replica perché esiste un modulo piattaforma «simile».
+3. Vietato tenere enable sia plurale SRC sia singolare.
+4. Temi: panels FO restano nei Themes; BL nei moduli — [gestionale-panels-vs-themes.md](../../laravel/Themes/docs/gestionale-panels-vs-themes.md).
 
-## Regola naming (politica)
+## Priorità normalize (business)
 
-- SRC usa **plurale** dominio (`Customers`, `WorkOrders`).
-- Laraxot in questo repo usa **nome dominio** spesso singolare (`User`, `Employee`, `Media`).
-- Per i nuovi moduli del porting: **singolare PascalCase** allineato al glossario inglese SRC (`WorkOrder`, `Customer`, `Intervention`), salvo brand verticali (`EnergyBroker`, `PublicProcurement`, `TimberBilling`).
-
-## Temi / panels
-
-SRC non ha Themes: ha **N panel Filament**. Noi: Themes Folio (Sixteen/Zero/…) + panel admin per modulo. Dettaglio: [gestionale-panels-vs-themes.md](../../laravel/Themes/docs/gestionale-panels-vs-themes.md).
-
-## Priorità porting (business)
-
-1. `Customer` + `WorkOrder` + `Intervention` (cuore commessa)
+1. `Customer` + `WorkOrder` + `Intervention`
 2. `Quotation` + `Catalog`
-3. Gap `Employee` (HR) + allineamenti `User`
-4. `Billing` / `Fiscal` / `Signature` / `Vehicle` / `Media`
-5. Verticali (`PublicProcurement`, `EnergyBroker`, `TimberBilling`) e manufacturing (`Inventory`, `Bom`, `Production`)
-6. Canali (`Notify` WhatsApp/Email inbox) + `AI` parity
+3. `AiAssistant` + `Auth` + `HR` (repliche complete, non merge)
+4. `Billing` / `Fiscal` / `Signature` / `Vehicle` / `Document`
+5. Verticali e manufacturing
+6. `Email` / `WhatsApp` / `Platform`

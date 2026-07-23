@@ -6,19 +6,26 @@ tags:
   - qmd
   - techplanner
 created: "2026-06-06"
-updated: "2026-06-07"
-qmd: "tp-wiki-root"
+updated: "2026-07-23"
+qmd: "tp-wiki-root workorder AiAssistant visibility"
 issues:
-  - "https://github.com/laraxot/base_techplanner_fila5/issues/11"
+  - "https://github.com/laraxot/base_workorder_fila5/issues/7"
 discussions:
-  - "https://github.com/laraxot/base_techplanner_fila5/discussions/12"
+  - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
 ---
 
 # TechPlanner LLM Wiki Log
 
+## 2026-07-23
+
+- **Story 1.10 + libro errori** — [agent-errors-lessons.md](../../gestionale-commesse-comparison/agent-errors-lessons.md), rule [replica-singular-no-merge-delete.md](./rules/replica-singular-no-merge-delete.md), issue [#9](https://github.com/laraxot/base_workorder_fila5/issues/9). Fase = replica + singolare.
+- **Religione fase = replica + singolare** — niente merge Auth→User / AiAssistant→AI in questa fase. SSoT: [replica-singular-phase.md](../../gestionale-commesse-comparison/replica-singular-phase.md).
+- **AiAssistant «non si vede»** — cartella presente; chiave `modules_statuses` reinserita `false`. [visibility.md](../../laravel/Modules/AiAssistant/docs/visibility.md).
+
 ## 2026-07-16
 
 - **Contenuto JSON FO dichiarato sacro** — dopo la cancellazione massiva nel commit `d6e43cc`, ricostruiti forward-only i JSON TechPlanner da history, aggiunte rule, memory, skill, documentazione owner Cms/Theme Two e gate di presenza/sintassi. Tracciamento: issue #40, discussion #41.
+
 
 ## 2026-07-06
 

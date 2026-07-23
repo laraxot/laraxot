@@ -1,0 +1,73 @@
+{
+    "name": "laraxot/module_compliance_fila5",
+    "description": "Compliance module (replica gestionale_commesse, Laraxot normalize)",
+    "keywords": [
+        "laraxot",
+        "laravel",
+        "filament",
+        "module_compliance"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marco Sottana",
+            "email": "marco.sottana@gmail.com"
+        },
+        {
+            "name": "Davide Cavallini",
+            "email": "davidecavallini1987@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Compliance\\": "app/",
+            "Modules\\Compliance\\Database\\Factories\\": "database/factories/",
+            "Modules\\Compliance\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Compliance\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Compliance\\Providers\\ComplianceServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../Xot"
+        },
+        {
+            "type": "path",
+            "url": "../User"
+        },
+        {
+            "type": "path",
+            "url": "../Tenant"
+        },
+        {
+            "type": "path",
+            "url": "../UI"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "wikimedia/composer-merge-plugin": true
+        }
+    }
+}
