@@ -1,3 +1,0 @@
-[submodule "laravel/Modules/Lang/packages/lara-zeus/spatie-translatable"]
-	path = laravel/Modules/Lang/packages/lara-zeus/spatie-translatable
-	url = https://github.com/lara-zeus/spatie-translatable.git

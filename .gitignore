@@ -121,3 +121,4 @@ public_html/assets/geo
 bashscripts/ai/.agents/skills/ui-ux-pro-max/scripts/__pycache__/core.cpython-312.pyc
 build
 cache/*
+.gitmodules
