@@ -21,7 +21,7 @@ jobs:
           coverage: none
 
       - name: Cache Composer dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: laravel/vendor
           key: composer-${{ hashFiles('laravel/composer.lock') }}
@@ -54,7 +54,7 @@ jobs:
           coverage: none
 
       - name: Cache Composer dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: laravel/vendor
           key: composer-${{ hashFiles('laravel/composer.lock') }}
@@ -102,7 +102,7 @@ jobs:
           coverage: xdebug
 
       - name: Cache Composer dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: laravel/vendor
           key: composer-${{ hashFiles('laravel/composer.lock') }}
