@@ -124,3 +124,4 @@ cache/*
 .gitmodules
 .opencode
 *.backup
+.planning
