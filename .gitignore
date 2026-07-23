@@ -125,3 +125,4 @@ cache/*
 .opencode
 *.backup
 .planning
+laravel/Modules/Notify/docs/notification/archive
