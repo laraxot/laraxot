@@ -1,0 +1,777 @@
+<body>
+  <div> .skiplink
+    <a> .visually-hidden-focusable "Vai ai contenuti"
+    <a> .visually-hidden-focusable "Vai al
+        footer"
+  <header[data-bs-target]> .it-header-wrapper
+    <div> .it-header-slim-wrapper
+      <div> .container
+        <div> .row
+          <div> .col-12
+            <div> .it-header-slim-wrapper-content
+              <a[aria-label]> .d-lg-block .navbar-brand "Nome della Regione"
+              <div[role="navigation"]> .it-header-slim-right-zone
+                <div> .dropdown .nav-item
+                  <button[data-bs-toggle]> .dropdown-toggle .nav-link
+                    <span> .visually-hidden "Lingua attiva:"
+                    <span> "ITA"
+                  <div> .dropdown-menu
+                    <div> .row
+                      <div> .col-12
+                        <div> .link-list-wrapper
+                          <ul> .link-list
+                            <li>
+                              <a> .dropdown-item .list-item
+                                <span>
+                                  <span> .visually-hidden "selezionata"
+                            <li>
+                              <a> .dropdown-item .list-item
+                                <span> "ENG"
+                <div> .dropdown .it-user-wrapper .nav-item
+                  <a[data-bs-toggle][data-focus-mouse]> .btn .btn-full .btn-icon .btn-primary
+                    <span> .rounded-icon
+                      <img> .border .icon-white .rounded-circle
+                    <span> .d-lg-block .d-none "Mario Rossi"
+                  <div> .dropdown-menu
+                    <div> .row
+                      <div> .col-12
+                        <div> .link-list-wrapper
+                          <ul> .link-list
+                            <li>
+                              <a> .dropdown-item .list-item
+                                <span> "I miei servizi"
+                            <li>
+                              <a> .dropdown-item .list-item
+                                <span> "Le mie pratiche"
+                            <li>
+                              <a> .dropdown-item .list-item
+                                <span> "Notifiche"
+                            <li>
+                              <span> .divider
+                            <li>
+                              <a> .dropdown-item .list-item
+                                <span> "Impostazioni"
+                            <li>
+                              <a> .left-icon .list-item
+                                <span> .fw-bold "Esci"
+    <div> .it-nav-wrapper
+      <div> .it-header-center-wrapper
+        <div> .container
+          <div> .row
+            <div> .col-12
+              <div> .it-header-center-content-wrapper
+                <div> .it-brand-wrapper
+                  <a>
+                    <div> .it-brand-text
+                      <div> .it-brand-title "Il mio Comune"
+                      <div> .d-md-block .d-none .it-brand-tagline "Un comune da vivere"
+                <div> .it-right-zone
+                  <div> .d-lg-flex .d-none .it-socials
+                    <span> "Seguici su"
+                    <ul>
+                      <li>
+                        <a>
+                          <span> .visually-hidden "Twitter"
+                      <li>
+                        <a>
+                          <span> .visually-hidden "Facebook"
+                      <li>
+                        <a>
+                          <span> .visually-hidden "YouTube"
+                      <li>
+                        <a>
+                          <span> .visually-hidden "Telegram"
+                      <li>
+                        <a>
+                          <span> .visually-hidden "Whatsapp"
+                      <li>
+                        <a>
+                          <span> .visually-hidden "RSS"
+                  <div> .it-search-wrapper
+                    <span> .d-md-block .d-none "Cerca"
+                    <button[data-bs-toggle][data-bs-target][aria-label]> .rounded-icon .search-link
+      <div#header-nav-wrapper> .it-header-navbar-wrapper
+        <div> .container
+          <div> .row
+            <div> .col-12
+              <div> .has-megamenu .navbar .navbar-expand-lg
+                <button[aria-label][data-bs-target][data-bs-toggle]> .custom-navbar-toggler
+                <div#nav4> .navbar-collapsable
+                  <div> .overlay
+                  <div> .close-div
+                    <button> .btn .close-menu
+                      <span> .visually-hidden "Nascondi la navigazione"
+                  <div> .menu-wrapper
+                    <a> .logo-hamburger
+                      <div> .it-brand-text
+                        <div> .it-brand-title "Nome del Comune"
+                    <nav[aria-label]>
+                      <ul[data-element]> .navbar-nav
+                        <li> .nav-item
+                          <a[data-element]> .nav-link
+                            <span> "Amministrazione"
+                        <li> .nav-item
+                          <a[data-element]> .nav-link
+                            <span> "Novità"
+                        <li> .nav-item
+                          <a[data-element]> .nav-link
+                            <span> "Servizi"
+                        <li> .nav-item
+                          <a[data-element]> .nav-link
+                            <span> "Vivere il Comune"
+                    <nav[aria-label]>
+                      <ul> .navbar-nav .navbar-secondary
+                        <li> .nav-item
+                          <a> .nav-link "Iscrizioni"
+                        <li> .nav-item
+                          <a> .nav-link "Estate in città"
+                        <li> .nav-item
+                          <a> .nav-link "Polizia locale"
+                        <li> .nav-item
+                          <a[data-element]> .nav-link
+                            <span>
+                    <div> .it-socials
+                      <span> "Seguici su"
+                      <ul>
+                        <li>
+                          <a>
+                            <span> .visually-hidden "Twitter"
+                        <li>
+                          <a>
+                            <span> .visually-hidden "Facebook"
+                        <li>
+                          <a>
+                            <span> .visually-hidden "YouTube"
+                        <li>
+                          <a>
+                            <span> .visually-hidden "Telegram"
+                        <li>
+                          <a>
+                            <span> .visually-hidden "Whatsapp"
+                        <li>
+                          <a>
+                            <span> .visually-hidden "RSS"
+  <main>
+    <div#main-container> .container
+      <div> .justify-content-center .row
+        <div> .col-12 .col-lg-10
+          <div[role="navigation"]> .cmp-breadcrumbs
+            <nav[aria-label]> .breadcrumb-container
+              <ol[data-element]> .breadcrumb .p-0
+                <li> .breadcrumb-item
+                  <a> "Home"
+                  <span> .separator "/"
+                <li> .active .breadcrumb-item "Area personale"
+          <div> .cmp-heading .pb-3 .pb-lg-4
+            <h1> .title-xxxlarge "Giulia Rossi"
+            <p> .subtitle-small "CF: GLARSS72H25H501Y"
+        <div> .col-12 .p-0
+          <div> .cmp-nav-tab .mb-4 .mb-lg-5 .mt-lg-4
+            <ul#myTab[role="tablist"]> .flex-nowrap .nav .nav-tabs .nav-tabs-icon-text .w-100
+              <li[role="tab"]> .nav-item .w-100
+                <a[role="button"][data-bs-toggle][data-focus-mouse]> .active .justify-content-start .nav-link .text-tab
+              <li[role="tab"]> .nav-item .w-100
+                <a[role="button"][data-bs-toggle][data-focus-mouse]> .justify-content-start .nav-link .text-tab
+              <li[role="tab"]> .nav-item .w-100
+                <a[role="button"][data-bs-toggle][data-focus-mouse]> .justify-content-start .nav-link .text-tab
+              <li[role="tab"]> .nav-item .w-100
+                <a[role="button"][data-bs-toggle][data-focus-mouse]> .justify-content-start .nav-link .text-tab
+      <div> .it-page-sections-container
+        <div> .tab-content
+          <div#data-ex-tab1[role="tabpanel"]> .active .fade .show .tab-pane
+            <div> .row
+              <div> .col-12 .col-lg-3 .d-lg-block .d-none .mb-4
+                <div> .cmp-navscroll .sticky-top
+                  <nav[aria-label][data-bs-navscroll]> .it-navscroll-wrapper .navbar .navbar-expand-lg
+                    <div#navbarNavProgress> .navbar-custom
+                      <div> .menu-wrapper
+                        <div> .link-list-wrapper
+                          <div> .accordion
+                            <div> .accordion-item
+                              <span#accordion-title-one> .accordion-header
+                                <button[data-bs-toggle][data-bs-target]> .accordion-button .pb-10 .px-3
+                              <div> .progress
+                                <div[role="progressbar"]> .it-navscroll-progressbar .progress-bar
+                              <div#collapse-one[role="region"]> .accordion-collapse .collapse .show
+                                <div> .accordion-body
+                                  <ul[data-element]> .link-list
+                                    <li> .nav-item
+                                      <a> .nav-link
+                                        <span> "Ultimi messaggi"
+                                    <li> .nav-item
+                                      <a> .nav-link
+                                        <span> "Ultime attività"
+              <div> .col-12 .col-lg-8 .offset-lg-1
+                <div#latest-posts> .it-page-section .mb-40 .mb-lg-60
+                  <div> .cmp-card
+                    <div> .card
+                      <div> .border-0 .card-header .mb-lg-20 .p-0
+                        <div> .d-flex
+                          <h2> .title-xxlarge "Ultimi messaggi"
+                      <div> .card-body .p-0
+                        <div#1[data-bs-toggle][data-bs-target]> .cmp-card-latest-messages .mb-3
+                          <div> .card .pb-4 .pt-4 .px-4 .shadow-sm
+                            <span> .visually-hidden "Categoria:"
+                            <div> .border-0 .card-header .m-0 .p-0
+                              <date> .date-xsmall "05/04/2022"
+                            <div> .card-body .my-2 .p-0
+                              <h3> .m-0 .mb-1 .t-primary .title-small-semi-bold
+                                <a> .text-decoration-none "Richiesta servizio mensa scolastica"
+                              <p> .text-paragraph .text-truncate "La richiesta AN4059281 è stata approv..."
+                        <div#2[data-bs-toggle][data-bs-target]> .cmp-card-latest-messages .mb-3
+                          <div> .card .pb-4 .pt-4 .px-4 .shadow-sm
+                            <span> .visually-hidden "Categoria:"
+                            <div> .border-0 .card-header .m-0 .p-0
+                              <date> .date-xsmall "20/03/2022"
+                            <div> .card-body .my-2 .p-0
+                              <h3> .m-0 .mb-1 .t-primary .title-small-semi-bold
+                                <a> .text-decoration-none "Richiesta servizio mensa scolastica"
+                              <p> .text-paragraph .text-truncate "La richiesta AN4059281 è stata ricevu..."
+                        <div#3[data-bs-toggle][data-bs-target]> .cmp-card-latest-messages .mb-3
+                          <div> .card .pb-4 .pt-4 .px-4 .shadow-sm
+                            <span> .visually-hidden "Categoria:"
+                            <div> .border-0 .card-header .m-0 .p-0
+                              <date> .date-xsmall "15/02/2022"
+                            <div> .card-body .my-2 .p-0
+                              <h3> .m-0 .mb-1 .t-primary .title-small-semi-bold
+                                <a> .text-decoration-none "Iscrizione alla scuola dell’infanzia"
+                              <p> .text-paragraph .text-truncate "La richiesta AFG059281 è stata ricevu..."
+                        <button> .btn .btn-label .btn-me .btn-xs .px-0 .t-primary
+                          <span> "Vedi altri messaggi"
+                <div#latest-activities> .it-page-section .mb-50 .mb-lg-90
+                  <div> .cmp-card
+                    <div> .card
+                      <div> .border-0 .card-header .m-0 .mb-lg-20 .p-0
+                        <div> .d-flex
+                          <h2> .mb-3 .title-xxlarge "Ultime attività"
+                      <div> .card-body .p-0
+                        <div> .cmp-icon-card .mb-3
+                          <div> .card .drop-shadow .pb-4 .pr-30 .ps-4 .pt-20
+                            <div> .cmp-card-title .d-flex
+                              <h3> .mb-2 .t-primary .title-small-semi-bold .underline
+                                <a> "Segnalazione disservizio"
+                            <div> .cmp-icon-card__description
+                              <date> .date-xsmall .ml-30 "15/04/2022"
+                        <div> .cmp-icon-card .mb-3
+                          <div> .card .drop-shadow .pb-4 .pr-30 .ps-4 .pt-20
+                            <div> .cmp-card-title .d-flex
+                              <h3> .mb-2 .t-primary .title-small-semi-bold .underline
+                                <a> "Pagamento contravvenzione"
+                            <div> .cmp-icon-card__description
+                              <date> .date-xsmall .ml-30 "23/01/2022"
+                        <div> .cmp-icon-card .mb-3
+                          <div> .card .drop-shadow .pb-4 .pr-30 .ps-4 .pt-20
+                            <div> .cmp-card-title .d-flex
+                              <h3> .mb-2 .t-primary .title-small-semi-bold .underline
+                                <a> "Richiesta assegno maternità"
+                            <div> .cmp-icon-card__description
+                              <date> .date-xsmall .ml-30 "01/10/2021"
+                        <button> .btn .btn-label .btn-me .btn-xs .px-0 .t-primary
+                          <span> "Vedi altre attività"
+          <div#data-ex-tab2[role="tabpanel"]> .tab-pane
+          <div#data-ex-tab3[role="tabpanel"]> .tab-pane
+            <div> .row
+              <div> .col-lg-3 .d-lg-block .d-none .d-sm-none
+                <div> .cmp-navscroll .sticky-top
+                  <nav[aria-label][data-bs-navscroll]> .it-navscroll-wrapper .navbar .navbar-expand-lg
+                    <div#navbarNavProgress> .navbar-custom
+                      <div> .menu-wrapper
+                        <div> .link-list-wrapper
+                          <div> .accordion
+                            <div> .accordion-item
+                              <span#accordion-title-Three> .accordion-header
+                                <button[data-bs-toggle][data-bs-target]> .accordion-button .pb-10 .px-3
+                              <div> .progress
+                                <div[role="progressbar"]> .it-navscroll-progressbar .progress-bar
+                              <div#collapse-Three[role="region"]> .accordion-collapse .collapse .show
+                                <div> .accordion-body
+                                  <ul[data-element]> .link-list
+                                    <li> .nav-item
+                                      <a> .nav-link
+                                        <span> "Pratiche"
+                                    <li> .nav-item
+                                      <a> .nav-link
+                                        <span> "Pagamenti"
+              <div> .col-12 .col-lg-8 .offset-lg-1 .px-0 .px-sm-3
+                <section#practices> .it-page-section .mb-40 .mb-lg-60
+                  <div> .cmp-filter
+                    <div> .filter-section
+                      <h2> .cmp-filter__title .title-xxlarge "Pratiche"
+                      <div> .align-items-center .d-flex .filter-wrapper
+                        <button> .btn .p-0 .pe-2 .t-primary
+                          <span> .rounded-icon
+                          <span> "Filtra"
+                        <div> .dropdown
+                          <button#dropdownMenu-pratiche[data-bs-toggle][aria-label]> .btn .btn-dropdown .dropdown-toggle
+                            <span> .dropdown__title "Ordina"
+                          <div> .dropdown-menu
+                            <div> .link-list-wrapper
+                              <ul> .link-list
+                                <li>
+                                  <a> .dropdown-item .list-item
+                                    <span> "Azione 1"
+                                <li>
+                                  <a> .dropdown-item .list-item
+                                    <span> "Azione 2"
+                                <li>
+                                  <a> .dropdown-item .list-item
+                                    <span> "Azione 3"
+                    <div> .cmp-input-search
+                      <div> .autocomplete-wrapper .form-group
+                        <div> .input-group
+                          <label> .active .visually-hidden "Cerca nel sito"
+                          <input#autocomplete-pratiche[data-bs-autocomplete]> .autocomplete .form-control
+                          <ul> .autocomplete-list
+                          <span> .autocomplete-icon
+                  <div> .cmp-accordion
+                    <div> .accordion
+                      <div> .accordion-item
+                        <div#heading1> .accordion-header
+                          <button[data-bs-toggle][data-bs-target]> .accordion-button .collapsed .title-snall-semi-bold
+                            <div> .button-wrapper
+                              <div> .icon-wrapper
+                                <img[role="img"]> .icon-folder
+                                <span> .u-main-black "In attesa"
+                          <p> .accordion-date .mb-0 .title-xsmall-regular "20/03/2022"
+                        <div#collapse1[role="region"][data-bs-parent]> .accordion-collapse .collapse .p-0
+                          <div> .accordion-body
+                            <p> .fw-normal .mb-2
+                              <span> .label "AN4059281"
+                            <a> .mb-2
+                              <span> .t-primary "Scheda servizio"
+                            <a> .chip .chip-simple
+                              <span> .chip-label "Servizio non digitale"
+                            <div> .cmp-icon-list
+                              <div> .link-list-wrapper
+                                <ul> .link-list
+                                  <li> .mt-3 .shadow
+                                    <a[aria-label]> .icon-left .list-item .t-primary .title-small-semi-bold
+                                      <span> .list-item-title-icon-wrapper
+                                        <span> .list-item-title .title-small-semi-bold "Ricevuta pagamento (PDF 80KB)"
+                            <button> .btn .btn-primary .justify-content-center .my-3
+                              <span> "Perfeziona la richiesta"
+                      <div> .accordion-item
+                        <div#heading2> .accordion-header
+                          <button[data-bs-toggle][data-bs-target]> .accordion-button .collapsed .title-snall-semi-bold
+                            <div> .button-wrapper
+                              <div> .icon-wrapper
+                                <img[role="img"]> .icon-folder
+                                <span> "Conclusa"
+                          <p> .accordion-date .mb-0 .title-xsmall-regular "24/06/2021"
+                        <div#collapse2[role="region"][data-bs-parent]> .accordion-collapse .collapse .p-0
+                          <div> .accordion-body
+                            <p> .fw-normal .mb-2
+                              <span> .label "AN4059281"
+                            <a> .mb-2
+                              <span> .t-primary "Scheda servizio"
+                            <a> .chip .chip-simple
+                              <span> .chip-label "Servizio non digitale"
+                            <div> .cmp-icon-list
+                              <div> .link-list-wrapper
+                                <ul> .link-list
+                                  <li> .mt-3 .shadow
+                                    <a[aria-label]> .icon-left .list-item .t-primary .title-small-semi-bold
+                                      <span> .list-item-title-icon-wrapper
+                                        <span> .list-item-title .title-small-semi-bold "Ricevuta pagamento (PDF 80KB)"
+                            <button> .btn .btn-primary .justify-content-center .my-3
+                              <span> "Perfeziona la richiesta"
+                      <div> .accordion-item
+                        <div#heading3> .accordion-header
+                          <button[data-bs-toggle][data-bs-target]> .accordion-button .collapsed .title-snall-semi-bold
+                            <div> .button-wrapper
+                              <div> .icon-wrapper
+                                <img[role="img"]> .icon-folder
+                                <span> "Conclusa"
+                          <p> .accordion-date .mb-0 .title-xsmall-regular "10/05/2021"
+                        <div#collapse3[role="region"][data-bs-parent]> .accordion-collapse .collapse .p-0
+                          <div> .accordion-body
+                            <p> .fw-normal .mb-2
+                              <span> .label "AN4059281"
+                            <a> .mb-2
+                              <span> .t-primary "Scheda servizio"
+                            <a> .chip .chip-simple
+                              <span> .chip-label "Servizio non digitale"
+                            <div> .cmp-icon-list
+                              <div> .link-list-wrapper
+                                <ul> .link-list
+                                  <li> .mt-3 .shadow
+                                    <a[aria-label]> .icon-left .list-item .t-primary .title-small-semi-bold
+                                      <span> .list-item-title-icon-wrapper
+                                        <span> .list-item-title .title-small-semi-bold "Ricevuta pagamento (PDF 80KB)"
+                            <button> .btn .btn-primary .justify-content-center .my-3
+                              <span> "Perfeziona la richiesta"
+                      <div> .accordion-item
+                        <div#heading4> .accordion-header
+                          <button[data-bs-toggle][data-bs-target]> .accordion-button .collapsed .title-snall-semi-bold
+                            <div> .button-wrapper
+                              <div> .icon-wrapper
+                                <img[role="img"]> .icon-folder
+                                <span> "Conclusa"
+                          <p> .accordion-date .mb-0 .title-xsmall-regular "06/03/2021"
+                        <div#collapse4[role="region"][data-bs-parent]> .accordion-collapse .collapse .p-0
+                          <div> .accordion-body
+                            <p> .fw-normal .mb-2
+                              <span> .label "AN4059281"
+                            <a> .mb-2
+                              <span> .t-primary "Scheda servizio"
+                            <a> .chip .chip-simple
+                              <span> .chip-label "Servizio non digitale"
+                            <div> .cmp-icon-list
+                              <div> .link-list-wrapper
+                                <ul> .link-list
+                                  <li> .mt-3 .shadow
+                                    <a[aria-label]> .icon-left .list-item .t-primary .title-small-semi-bold
+                                      <span> .list-item-title-icon-wrapper
+                                        <span> .list-item-title .title-small-semi-bold "Ricevuta pagamento (PDF 80KB)"
+                            <button> .btn .btn-primary .justify-content-center .my-3
+                              <span> "Perfeziona la richiesta"
+                  <button> .accordion-view-more .btn .mb-2 .ps-lg-3 .pt-3 .t-primary .title-xsmall-semi-bold
+                    <span> "Vedi altre pratiche"
+                <section#payments> .it-page-section .mb-50 .mb-lg-90
+                  <div> .cmp-filter
+                    <div> .filter-section
+                      <h2> .cmp-filter__title .title-xxlarge "Pagamenti"
+                      <div> .align-items-center .d-flex .filter-wrapper
+                        <button> .btn .p-0 .pe-2 .t-primary
+                          <span> .rounded-icon
+                          <span> "Filtra"
+                        <div> .dropdown
+                          <button#dropdownMenu-pagamenti[data-bs-toggle][aria-label]> .btn .btn-dropdown .dropdown-toggle
+                            <span> .dropdown__title "Ordina"
+                          <div> .dropdown-menu
+                            <div> .link-list-wrapper
+                              <ul> .link-list
+                                <li>
+                                  <a> .dropdown-item .list-item
+                                    <span> "Azione 1"
+                                <li>
+                                  <a> .dropdown-item .list-item
+                                    <span> "Azione 2"
+                                <li>
+                                  <a> .dropdown-item .list-item
+                                    <span> "Azione 3"
+                    <div> .cmp-input-search
+                      <div> .autocomplete-wrapper .form-group
+                        <div> .input-group
+                          <label> .active .visually-hidden "Cerca nel sito"
+                          <input#autocomplete-pagamenti[data-bs-autocomplete]> .autocomplete .form-control
+                          <ul> .autocomplete-list
+                          <span> .autocomplete-icon
+                  <div> .cmp-accordion
+                    <div> .accordion
+                      <div> .accordion-item
+                        <div#heading5> .accordion-header
+                          <button[data-bs-toggle][data-bs-target]> .accordion-button .collapsed .title-snall-semi-bold
+                            <div> .button-wrapper
+                              <div> .icon-wrapper
+                                <img[role="img"]> .icon-folder
+                                <span> "Pagato"
+                          <p> .accordion-date .mb-0 .title-xsmall-regular "01/10/2021"
+                        <div#collapse5[role="region"][data-bs-parent]> .accordion-collapse .collapse .p-0
+                          <div> .accordion-body
+                            <p> .fw-normal .mb-2
+                              <span> .label "AN4059281"
+                            <a> .mb-2
+                              <span> .t-primary "Scheda servizio"
+                            <a> .chip .chip-simple
+                              <span> .chip-label "Servizio non digitale"
+                            <div> .cmp-icon-list
+                              <div> .link-list-wrapper
+                                <ul> .link-list
+                                  <li> .mt-3 .shadow
+                                    <a[aria-label]> .icon-left .list-item .t-primary .title-small-semi-bold
+                                      <span> .list-item-title-icon-wrapper
+                                        <span> .list-item-title .title-small-semi-bold "Ricevuta pagamento (PDF 80KB)"
+                            <button> .btn .btn-primary .justify-content-center .my-3
+                              <span> "Perfeziona la richiesta"
+                      <div> .accordion-item
+                        <div#heading6> .accordion-header
+                          <button[data-bs-toggle][data-bs-target]> .accordion-button .collapsed .title-snall-semi-bold
+                            <div> .button-wrapper
+                              <div> .icon-wrapper
+                                <img[role="img"]> .icon-folder
+                                <span> "Pagato"
+                          <p> .accordion-date .mb-0 .title-xsmall-regular "24/06/2021"
+                        <div#collapse6[role="region"][data-bs-parent]> .accordion-collapse .collapse .p-0
+                          <div> .accordion-body
+                            <p> .fw-normal .mb-2
+                              <span> .label "AN4059281"
+                            <a> .mb-2
+                              <span> .t-primary "Scheda servizio"
+                            <a> .chip .chip-simple
+                              <span> .chip-label "Servizio non digitale"
+                            <div> .cmp-icon-list
+                              <div> .link-list-wrapper
+                                <ul> .link-list
+                                  <li> .mt-3 .shadow
+                                    <a[aria-label]> .icon-left .list-item .t-primary .title-small-semi-bold
+                                      <span> .list-item-title-icon-wrapper
+                                        <span> .list-item-title .title-small-semi-bold "Ricevuta pagamento (PDF 80KB)"
+                            <button> .btn .btn-primary .justify-content-center .my-3
+                              <span> "Perfeziona la richiesta"
+                      <div> .accordion-item
+                        <div#heading7> .accordion-header
+                          <button[data-bs-toggle][data-bs-target]> .accordion-button .collapsed .title-snall-semi-bold
+                            <div> .button-wrapper
+                              <div> .icon-wrapper
+                                <img[role="img"]> .icon-folder
+                                <span> "Pagato"
+                          <p> .accordion-date .mb-0 .title-xsmall-regular "10/05/2021"
+                        <div#collapse7[role="region"][data-bs-parent]> .accordion-collapse .collapse .p-0
+                          <div> .accordion-body
+                            <p> .fw-normal .mb-2
+                              <span> .label "AN4059281"
+                            <a> .mb-2
+                              <span> .t-primary "Scheda servizio"
+                            <a> .chip .chip-simple
+                              <span> .chip-label "Servizio non digitale"
+                            <div> .cmp-icon-list
+                              <div> .link-list-wrapper
+                                <ul> .link-list
+                                  <li> .mt-3 .shadow
+                                    <a[aria-label]> .icon-left .list-item .t-primary .title-small-semi-bold
+                                      <span> .list-item-title-icon-wrapper
+                                        <span> .list-item-title .title-small-semi-bold "Ricevuta pagamento (PDF 80KB)"
+                            <button> .btn .btn-primary .justify-content-center .my-3
+                              <span> "Perfeziona la richiesta"
+                      <div> .accordion-item
+                        <div#heading8> .accordion-header
+                          <button[data-bs-toggle][data-bs-target]> .accordion-button .collapsed .title-snall-semi-bold
+                            <div> .button-wrapper
+                              <div> .icon-wrapper
+                                <img[role="img"]> .icon-folder
+                                <span> "Pagato"
+                          <p> .accordion-date .mb-0 .title-xsmall-regular "06/03/2021"
+                        <div#collapse8[role="region"][data-bs-parent]> .accordion-collapse .collapse .p-0
+                          <div> .accordion-body
+                            <p> .fw-normal .mb-2
+                              <span> .label "AN4059281"
+                            <a> .mb-2
+                              <span> .t-primary "Scheda servizio"
+                            <a> .chip .chip-simple
+                              <span> .chip-label "Servizio non digitale"
+                            <div> .cmp-icon-list
+                              <div> .link-list-wrapper
+                                <ul> .link-list
+                                  <li> .mt-3 .shadow
+                                    <a[aria-label]> .icon-left .list-item .t-primary .title-small-semi-bold
+                                      <span> .list-item-title-icon-wrapper
+                                        <span> .list-item-title .title-small-semi-bold "Ricevuta pagamento (PDF 80KB)"
+                            <button> .btn .btn-primary .justify-content-center .my-3
+                              <span> "Perfeziona la richiesta"
+                  <button> .accordion-view-more .btn .mb-2 .ps-lg-3 .t-primary .title-xsmall-semi-bold
+                    <span> "Vedi altri pagamenti"
+          <div#data-ex-tab4[role="tabpanel"]> .tab-pane
+    <div> .bg-grey-card .shadow-contacts
+      <div> .container
+        <div> .row
+          <div> .col-12 .col-lg-6 .offset-lg-3 .p-contacts
+            <div> .cmp-contacts
+              <div> .card .w-100
+                <div> .card-body
+                  <h2> .title-medium-2-semi-bold "Contatta il comune"
+                  <ul> .contact-list .p-0
+                    <li>
+                      <a> .list-item
+                        <span> "Leggi le domande frequenti"
+                    <li>
+                      <a[data-element]> .list-item
+                        <span> "Richiedi assistenza"
+                    <li>
+                      <a> .list-item
+                        <span> "Chiama il numero verde 05 0505"
+                    <li>
+                      <a[data-element]> .list-item
+                        <span> "Prenota appuntamento"
+    <div> .cmp-modal
+      <div#modal-message[role="dialog"]> .fade .it-dialog-scrollable .modal
+        <div[role="document"]> .modal-dialog .modal-dialog-centered
+          <div> .h-100 .modal-content .modal-dimensions
+            <div> .cmp-modal__header .modal-header .pb-0
+              <button[data-bs-dismiss][aria-label]> .btn-close
+              <div> .cmp-modal__header .mt-30 .mt-lg-50
+                <date> .date-regular .w-100 "15/03/2022"
+                <h2#modal-message-modal-title> .mb-0 .mt-2 .title-xxxlarge "Iscrizione alla scuola
+      dell’infanzia"
+            <div> .modal-body
+              <div> .mb-60 .mb-lg-80
+                <h5> .subtitle-large "Graduatoria 2022/23"
+                <p> .fw-normal .mb-4 .text-paragraph
+                <a> .t-primary .text-decoration-underline .text-paragraph "Graduatoria Scuola
+                dell'infanzia per l'anno "
+  <div#search-modal[role="dialog"]> .fade .modal .search-modal
+    <div[role="document"]> .modal-dialog .modal-lg
+      <div> .modal-content .perfect-scrollbar
+        <div> .modal-body
+          <form>
+            <div> .container
+              <div> .row .variable-gutters
+                <div> .col
+                  <div> .modal-title
+                    <button[data-bs-toggle][data-bs-target][aria-label]> .d-md-none .search-link
+                    <h2> "Cerca"
+                    <button[data-bs-toggle][data-bs-target][aria-label]> .d-md-block .d-none .search-link
+                  <div> .autocomplete-wrapper .form-group
+                    <label> .active .visually-hidden "Cerca nel sito"
+                    <input#autocomplete-two[data-bs-autocomplete]> .autocomplete .ps-5
+                    <ul> .autocomplete-list
+                    <span> .autocomplete-icon
+                    <button> .btn .btn-primary
+                      <span> "Cerca"
+              <div> .row .variable-gutters
+                <div> .col-lg-5
+                  <div> .searches-list-wrapper
+                    <div> .other-link-title "FORSE STAVI CERCANDO"
+                    <ul> .searches-list
+                      <li>
+                        <a> "Rilascio Carta Identità Elettronica (CIE)"
+                      <li>
+                        <a> "Cambio di residenza"
+                      <li>
+                        <a> "Tributi online"
+                      <li>
+                        <a> "Prenotazione appuntamenti"
+                      <li>
+                        <a> "Rilascio tessera elettorale"
+                      <li>
+                        <a> "Voucher connettività"
+  <footer#footer> .it-footer
+    <div> .it-footer-main
+      <div> .container
+        <div> .row
+          <div> .col-12 .footer-items-wrapper .logo-wrapper
+            <img> .ue-logo
+            <div> .it-brand-wrapper
+              <a>
+                <div> .it-brand-text
+                  <h2> .no_toc "Nome del Comune"
+        <div> .row
+          <div> .col-md-3 .footer-items-wrapper
+            <h4> .footer-heading-title "Amministrazione"
+            <ul> .footer-list
+              <li>
+                <a> "Organi di governo"
+              <li>
+                <a> "Aree amministrative"
+              <li>
+                <a> "Uffici"
+              <li>
+                <a> "Enti e fondazioni"
+              <li>
+                <a> "Politici"
+              <li>
+                <a> "Personale amministrativo"
+              <li>
+                <a> "Documenti e dati"
+          <div> .col-md-6 .footer-items-wrapper
+            <h4> .footer-heading-title "Categorie di servizio"
+            <div> .row
+              <div> .col-md-6
+                <ul> .footer-list
+                  <li>
+                    <a> "Anagrafe e stato civile"
+                  <li>
+                    <a> "Cultura e tempo libero"
+                  <li>
+                    <a> "Vita lavorativa"
+                  <li>
+                    <a> "Imprese e commercio"
+                  <li>
+                    <a> "Appalti pubblici"
+                  <li>
+                    <a> "Catasto e urbanistica"
+                  <li>
+                    <a> "Turismo"
+                  <li>
+                    <a> "Mobilità e trasporti"
+              <div> .col-md-6
+                <ul> .footer-list
+                  <li>
+                    <a> "Educazione e formazione"
+                  <li>
+                    <a> "Giustizia e sicurezza pubblica"
+                  <li>
+                    <a> "Tributi, finanze e contravvenzioni"
+                  <li>
+                    <a> "Ambiente"
+                  <li>
+                    <a> "Salute, benessere e assistenza"
+                  <li>
+                    <a> "Autorizzazioni"
+                  <li>
+                    <a> "Agricoltura e pesca"
+          <div> .col-md-3 .footer-items-wrapper
+            <h4> .footer-heading-title "Novità"
+            <ul> .footer-list
+              <li>
+                <a> "Notizie"
+              <li>
+                <a> "Comunicati"
+              <li>
+                <a> "Avvisi"
+            <h4> .footer-heading-title "Vivere il comune"
+            <ul> .footer-list
+              <li>
+                <a> "Luoghi"
+              <li>
+                <a> "Eventi"
+          <div> .col-md-9 .footer-items-wrapper .mt-md-4
+            <h4> .footer-heading-title "Contatti"
+            <div> .row
+              <div> .col-md-4
+                <p> .footer-info
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <a> "Ufficio Relazioni con il Pubblico"
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+              <div> .col-md-4
+                <ul> .footer-list
+                  <li>
+                    <a[data-element]> "Leggi le FAQ"
+                  <li>
+                    <a> "Prenotazione appuntamento"
+                  <li>
+                    <a[data-element]> "Segnalazione disservizio"
+                  <li>
+                    <a> "Richiesta d'assistenza"
+              <div> .col-md-4
+                <ul> .footer-list
+                  <li>
+                    <a> "Amministrazione trasparente"
+                  <li>
+                    <a[data-element]> "Informativa privacy"
+                  <li>
+                    <a[data-element]> "Note legali"
+                  <li>
+                    <a[data-element]> "Dichiarazione di accessibilità"
+          <div> .col-md-3 .footer-items-wrapper .mt-md-4
+            <h4> .footer-heading-title "Seguici su"
+            <ul> .list-inline .social .text-start
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "Twitter"
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "Facebook"
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "YouTube"
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "Telegram"
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "Whatsapp"
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "RSS"
+        <div> .row
+          <div> .col-12 .footer-items-wrapper
+            <div> .footer-bottom
+              <a> "Media policy"
+              <a> "Mappa del sito"

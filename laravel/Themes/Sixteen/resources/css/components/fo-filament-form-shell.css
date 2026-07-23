@@ -1,0 +1,66 @@
+/**
+ * Shell Filament FO condiviso (login, register, wizard).
+ * Un bordo sul wrapper .fi-input-wrp; input interni senza bordo (no doppio bordo).
+ * Colori solo da token :root (--fixcity-field-*), mai hex per pagina.
+ */
+
+.fo-filament-form-shell .fi-input-wrp {
+    display: flex !important;
+    align-items: stretch !important;
+    min-height: 44px;
+    overflow: hidden;
+    border: 1px solid var(--fixcity-field-border, #5c6f82) !important;
+    border-radius: var(--dc-radius-sm, 4px) !important;
+    background-color: var(--dc-gray-white, #ffffff) !important;
+    box-shadow: none !important;
+    --tw-ring-shadow: 0 0 #0000 !important;
+    --tw-ring-offset-shadow: 0 0 #0000 !important;
+    --tw-shadow: 0 0 #0000 !important;
+    --tw-ring-color: transparent !important;
+}
+
+.fo-filament-form-shell .fi-input-wrp:focus-within {
+    border-color: var(--fixcity-field-focus, var(--fixcity-primary, #007a52)) !important;
+    box-shadow: 0 0 0 1px var(--fixcity-field-focus, var(--fixcity-primary, #007a52)) !important;
+}
+
+.fo-filament-form-shell .fi-input,
+.fo-filament-form-shell .fi-select-input,
+.fo-filament-form-shell .fi-input-wrp input,
+.fo-filament-form-shell .fi-input-wrp textarea {
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+    --tw-ring-shadow: 0 0 #0000 !important;
+}
+
+.fo-filament-form-shell .fi-input-wrp-content-ctn {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+}
+
+.fo-filament-form-shell .fi-input-wrp-suffix {
+    display: flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    border-inline-start: 1px solid var(--fixcity-field-border, #5c6f82) !important;
+    background-color: var(--dc-gray-white, #ffffff) !important;
+}
+
+.fo-filament-form-shell .fi-fo-field-label,
+.fo-filament-form-shell .fi-fo-field-label-content {
+    font-weight: 600;
+    color: var(--dc-gray-dark, #333333);
+}
+
+.fo-filament-form-shell .fi-fo-field {
+    display: block;
+    margin-bottom: 1.25rem;
+}
+
+.fo-filament-form-shell .fi-fo-field-label-col,
+.fo-filament-form-shell .fi-fo-field-content-col {
+    width: 100%;
+    max-width: none;
+}

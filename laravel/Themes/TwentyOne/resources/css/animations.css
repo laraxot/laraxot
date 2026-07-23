@@ -1,0 +1,190 @@
+/* ============================================================
+ * Scroll Reveal — elements start hidden, become visible via JS
+ * ============================================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.reveal-left {
+    transform: translateX(-24px);
+}
+
+.reveal.reveal-right {
+    transform: translateX(24px);
+}
+
+.reveal.reveal-scale {
+    transform: scale(0.96);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Staggered delays for reveal groups */
+.reveal-group .reveal:nth-child(1) { transition-delay: 0ms; }
+.reveal-group .reveal:nth-child(2) { transition-delay: 100ms; }
+.reveal-group .reveal:nth-child(3) { transition-delay: 200ms; }
+.reveal-group .reveal:nth-child(4) { transition-delay: 300ms; }
+.reveal-group .reveal:nth-child(5) { transition-delay: 400ms; }
+.reveal-group .reveal:nth-child(6) { transition-delay: 500ms; }
+
+/* ============================================================
+ * Skeleton Loading
+ * ============================================================ */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        rgb(148 163 184 / 0.15) 0%,
+        rgb(148 163 184 / 0.30) 40%,
+        rgb(148 163 184 / 0.15) 80%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+    border-radius: 0.375rem;
+}
+
+/* Dark skeleton */
+.dark .skeleton {
+    background: linear-gradient(
+        90deg,
+        rgb(30 41 59 / 0.8) 0%,
+        rgb(51 65 85 / 0.9) 40%,
+        rgb(30 41 59 / 0.8) 80%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* ============================================================
+ * Page transition (fade in on load)
+ * ============================================================ */
+.page-enter {
+    animation: fade-in-up 0.5s ease-out both;
+}
+
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+ * Micro-interaction helpers
+ * ============================================================ */
+
+/* Ripple button effect */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btn-ripple::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgb(255 255 255 / 0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.btn-ripple:active::after {
+    opacity: 1;
+    transition: none;
+}
+
+/* Card hover lift */
+.card-lift {
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+
+.card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px rgb(0 0 0 / 0.25);
+}
+
+/* Gradient progress bar */
+.progress-bar {
+    height: 6px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 0%;
+}
+
+.progress-bar.animated {
+    width: var(--progress, 0%);
+}
+
+/* ============================================================
+ * prefers-reduced-motion — disable all motion
+ * ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal.reveal-left,
+    .reveal.reveal-right,
+    .reveal.reveal-scale {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .skeleton {
+        animation: none;
+    }
+
+    .page-enter {
+        animation: none;
+    }
+
+    .card-lift:hover {
+        transform: none;
+    }
+
+    /* Keep only essential Tailwind animations off */
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================================
+ * Stats counter number
+ * ============================================================ */
+.stat-number {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+}
+
+/* ============================================================
+ * Smooth scroll (html level)
+ * ============================================================ */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ============================================================
+ * Focus ring — accessible keyboard navigation
+ * ============================================================ */
+:focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+}

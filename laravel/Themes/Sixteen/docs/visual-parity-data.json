@@ -1,0 +1,380 @@
+[
+  {
+    "page": "persona",
+    "localHeight": 1080,
+    "refHeight": 1080,
+    "diff": 0,
+    "parity": 100
+  },
+  {
+    "page": "appuntamento-01-ufficio",
+    "localHeight": 1878,
+    "refHeight": 1862,
+    "diff": 16,
+    "parity": 99
+  },
+  {
+    "page": "risultati-ricerca",
+    "localHeight": 3994,
+    "refHeight": 4084,
+    "diff": 90,
+    "parity": 98
+  },
+  {
+    "page": "assistenza-02-conferma",
+    "localHeight": 1878,
+    "refHeight": 1942,
+    "diff": 64,
+    "parity": 97
+  },
+  {
+    "page": "segnalazione-01-privacy",
+    "localHeight": 1878,
+    "refHeight": 1938,
+    "diff": 60,
+    "parity": 97
+  },
+  {
+    "page": "domande-frequenti",
+    "localHeight": 3193,
+    "refHeight": 3314,
+    "diff": 121,
+    "parity": 96
+  },
+  {
+    "page": "assistenza-01-dati",
+    "localHeight": 3078,
+    "refHeight": 2916,
+    "diff": 162,
+    "parity": 95
+  },
+  {
+    "page": "segnalazione-dettaglio",
+    "localHeight": 4131,
+    "refHeight": 4433,
+    "diff": 302,
+    "parity": 93
+  },
+  {
+    "page": "homepage",
+    "localHeight": 4279,
+    "refHeight": 4629,
+    "diff": 350,
+    "parity": 92
+  },
+  {
+    "page": "appuntamento-04-richiedente-autenticato",
+    "localHeight": 1878,
+    "refHeight": 2025,
+    "diff": 147,
+    "parity": 92
+  },
+  {
+    "page": "appuntamento-04-richiedente",
+    "localHeight": 1878,
+    "refHeight": 2059,
+    "diff": 181,
+    "parity": 91
+  },
+  {
+    "page": "argomenti",
+    "localHeight": 3692,
+    "refHeight": 4104,
+    "diff": 412,
+    "parity": 89
+  },
+  {
+    "page": "appuntamento-03-dettagli",
+    "localHeight": 1878,
+    "refHeight": 2139,
+    "diff": 261,
+    "parity": 87
+  },
+  {
+    "page": "appuntamento-06-conferma",
+    "localHeight": 3078,
+    "refHeight": 2693,
+    "diff": 385,
+    "parity": 87
+  },
+  {
+    "page": "ticket-list",
+    "localHeight": 3618,
+    "refHeight": 3128,
+    "diff": 490,
+    "parity": 85
+  },
+  {
+    "page": "segnalazione-04-conferma",
+    "localHeight": 1878,
+    "refHeight": 2301,
+    "diff": 423,
+    "parity": 80
+  },
+  {
+    "page": "lista-risorse",
+    "localHeight": 5287,
+    "refHeight": 4256,
+    "diff": 1031,
+    "parity": 78
+  },
+  {
+    "page": "documenti-dati",
+    "localHeight": 3078,
+    "refHeight": 4090,
+    "diff": 1012,
+    "parity": 72
+  },
+  {
+    "page": "appuntamento-02-data-orario",
+    "localHeight": 1878,
+    "refHeight": 2486,
+    "diff": 608,
+    "parity": 72
+  },
+  {
+    "page": "argomento",
+    "localHeight": 3078,
+    "refHeight": 4135,
+    "diff": 1057,
+    "parity": 71
+  },
+  {
+    "page": "amministrazione",
+    "localHeight": 2263,
+    "refHeight": 3120,
+    "diff": 857,
+    "parity": 68
+  },
+  {
+    "page": "appuntamento-01-ufficio-luogo",
+    "localHeight": 1878,
+    "refHeight": 2655,
+    "diff": 777,
+    "parity": 66
+  },
+  {
+    "page": "novita",
+    "localHeight": 3078,
+    "refHeight": 4466,
+    "diff": 1388,
+    "parity": 63
+  },
+  {
+    "page": "servizi",
+    "localHeight": 3078,
+    "refHeight": 4628,
+    "diff": 1550,
+    "parity": 60
+  },
+  {
+    "page": "appuntamento-05-riepilogo",
+    "localHeight": 1878,
+    "refHeight": 2844,
+    "diff": 966,
+    "parity": 59
+  },
+  {
+    "page": "segnalazione-area-personale",
+    "localHeight": 1878,
+    "refHeight": 2854,
+    "diff": 976,
+    "parity": 59
+  },
+  {
+    "page": "mappa-sito",
+    "localHeight": 2542,
+    "refHeight": 4169,
+    "diff": 1627,
+    "parity": 52
+  },
+  {
+    "page": "segnalazione-02-dati",
+    "localHeight": 1878,
+    "refHeight": 3064,
+    "diff": 1186,
+    "parity": 52
+  },
+  {
+    "page": "eventi",
+    "localHeight": 3078,
+    "refHeight": 5066,
+    "diff": 1988,
+    "parity": 51
+  },
+  {
+    "page": "segnalazione-03-riepilogo",
+    "localHeight": 1878,
+    "refHeight": 3098,
+    "diff": 1220,
+    "parity": 51
+  },
+  {
+    "page": "aree-amministrative",
+    "localHeight": 1878,
+    "refHeight": 1080,
+    "diff": 798,
+    "parity": 46
+  },
+  {
+    "page": "area-amministrativa-dettaglio",
+    "localHeight": 1878,
+    "refHeight": 1080,
+    "diff": 798,
+    "parity": 46
+  },
+  {
+    "page": "organo",
+    "localHeight": 1878,
+    "refHeight": 1080,
+    "diff": 798,
+    "parity": 46
+  },
+  {
+    "page": "persona-dettaglio",
+    "localHeight": 1878,
+    "refHeight": 1080,
+    "diff": 798,
+    "parity": 46
+  },
+  {
+    "page": "ufficio",
+    "localHeight": 1878,
+    "refHeight": 1080,
+    "diff": 798,
+    "parity": 46
+  },
+  {
+    "page": "ufficio-dettaglio",
+    "localHeight": 1878,
+    "refHeight": 1080,
+    "diff": 798,
+    "parity": 46
+  },
+  {
+    "page": "enti-e-fondazioni",
+    "localHeight": 1878,
+    "refHeight": 1080,
+    "diff": 798,
+    "parity": 46
+  },
+  {
+    "page": "ente-dettaglio",
+    "localHeight": 1878,
+    "refHeight": 1080,
+    "diff": 798,
+    "parity": 46
+  },
+  {
+    "page": "documento-dettaglio",
+    "localHeight": 1878,
+    "refHeight": 1080,
+    "diff": 798,
+    "parity": 46
+  },
+  {
+    "page": "dataset-dettaglio",
+    "localHeight": 1878,
+    "refHeight": 1080,
+    "diff": 798,
+    "parity": 46
+  },
+  {
+    "page": "luoghi",
+    "localHeight": 1878,
+    "refHeight": 1080,
+    "diff": 798,
+    "parity": 46
+  },
+  {
+    "page": "luogo-dettaglio",
+    "localHeight": 1878,
+    "refHeight": 1080,
+    "diff": 798,
+    "parity": 46
+  },
+  {
+    "page": "contatti",
+    "localHeight": 1878,
+    "refHeight": 1080,
+    "diff": 798,
+    "parity": 46
+  },
+  {
+    "page": "pagamento",
+    "localHeight": 1878,
+    "refHeight": 1080,
+    "diff": 798,
+    "parity": 46
+  },
+  {
+    "page": "pagamento-dettaglio",
+    "localHeight": 1878,
+    "refHeight": 1080,
+    "diff": 798,
+    "parity": 46
+  },
+  {
+    "page": "lista-categorie",
+    "localHeight": 1878,
+    "refHeight": 3374,
+    "diff": 1496,
+    "parity": 43
+  },
+  {
+    "page": "lista-risorse-categorie",
+    "localHeight": 3078,
+    "refHeight": 5838,
+    "diff": 2760,
+    "parity": 38
+  },
+  {
+    "page": "novita-dettaglio",
+    "localHeight": 1878,
+    "refHeight": 3607,
+    "diff": 1729,
+    "parity": 37
+  },
+  {
+    "page": "servizio-dettaglio",
+    "localHeight": 3022,
+    "refHeight": 5821,
+    "diff": 2799,
+    "parity": 37
+  },
+  {
+    "page": "servizi-categoria",
+    "localHeight": 1878,
+    "refHeight": 4539,
+    "diff": 2661,
+    "parity": 17
+  },
+  {
+    "page": "prenotazione-appuntamento",
+    "localHeight": 3078,
+    "refHeight": 1080,
+    "diff": 1998,
+    "parity": 4
+  },
+  {
+    "page": "richiesta-assistenza",
+    "localHeight": 3078,
+    "refHeight": 1080,
+    "diff": 1998,
+    "parity": 4
+  },
+  {
+    "page": "segnalazione-disservizio",
+    "localHeight": 3078,
+    "refHeight": 1080,
+    "diff": 1998,
+    "parity": 4
+  },
+  {
+    "page": "evento-dettaglio",
+    "localHeight": 1878,
+    "refHeight": 8563,
+    "diff": 6685,
+    "parity": 0
+  }
+]

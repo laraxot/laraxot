@@ -1,0 +1,468 @@
+/**
+ * Global CSS Fixes - All Design Comuni Pages
+ *
+ * Based on visual parity analysis of all 7 segnalazione pages.
+ * These fixes address the systemic font size and color differences
+ * found across ALL pages.
+ *
+ * Source: Visual parity analysis 2026-04-09
+ * Reference: https://italia.github.io/design-comuni-pagine-statiche/
+ */
+
+/* ============================================================================
+   FONT SIZE UTILITIES - Bootstrap Italia reference sizes
+   Missing in local: 18px, 16px, 14px on various elements
+   ============================================================================ */
+
+/* Nav links - reference uses 18px (solo contenuto / navbar generica: NON barra istituzionale verde) */
+.nav-link,
+.navbar .nav-link {
+  font-size: 18px !important;
+  color: var(--bs-dark, #17334f) !important;
+}
+
+/* Barra principale Sixteen: bianco su verde (global-fixes è tardi in cascade — evita #17334f qui) */
+.it-header-navbar-wrapper .nav-link,
+.it-header-navbar-wrapper .navbar-nav .nav-link,
+.it-header-navbar-wrapper .navbar-secondary .nav-link {
+  color: #ffffff !important;
+}
+
+/* Nav links active — pagine contenuto */
+.nav-link.active,
+.navbar .nav-link.active {
+  color: var(--bs-primary, #007a52) !important;
+  font-weight: 600 !important;
+}
+
+/* Active su navbar istituzionale: sottolineatura bianca, no fill (allineato header-footer-colors / listing-parity) */
+.it-header-navbar-wrapper .navbar-nav .nav-link.active,
+.it-header-navbar-wrapper .navbar-nav .nav-link[aria-current='page'],
+.it-header-navbar-wrapper .nav-item.active .nav-link {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  background-color: transparent !important;
+}
+
+/* Skip links / "Vai ai contenuti" - reference uses 16px */
+.visually-hidden-focusable,
+.skiplink a {
+  font-size: 16px !important;
+  color: var(--bs-primary, #007a52) !important;
+}
+
+/* Breadcrumb items - reference uses 16px */
+.breadcrumb-item,
+.breadcrumb-item a,
+.cmp-breadcrumbs .breadcrumb-item a {
+  font-size: 16px !important;
+  color: var(--bs-primary, #007a52) !important;
+}
+
+.breadcrumb-item.active {
+  color: var(--bs-body-color, #1a1a1a) !important;
+}
+
+.breadcrumb .separator {
+  color: var(--bs-gray-600, #525252) !important;
+  font-size: 16px !important;
+}
+
+/* Steppers (DC): indice 14px, voci 18px */
+.steppers-index {
+  font-size: 14px !important;
+  color: #5d7083 !important;
+}
+
+.steppers-header ul li {
+  font-size: 18px !important;
+  color: #5d7083 !important;
+}
+
+.steppers-header ul li.active {
+  color: #17334f !important;
+  font-weight: 600 !important;
+}
+
+.steppers-header ul li.confirmed,
+.steppers-header ul li.completed {
+  color: #007a52 !important;
+  font-weight: 600 !important;
+}
+
+/* Brand text - reference uses 16px */
+.it-brand-text,
+.it-brand-title,
+.it-brand-tagline {
+  font-size: 16px !important;
+}
+
+.it-brand-title {
+  font-weight: 700 !important;
+  /* Colore: non forzare qui — header (center/menu) usa tema; contenuto usa utility / altri layer */
+}
+
+.it-brand-tagline {
+  font-size: 14px !important;
+  color: var(--bs-gray-secondary, #5d7083) !important;
+}
+
+/* Language selector - reference uses 14px */
+.dropdown .nav-link,
+.it-header-slim-wrapper .nav-link {
+  font-size: 14px !important;
+  color: var(--bs-white, #fff) !important;
+}
+
+/* Footer headings - reference uses 18px */
+.footer-heading-title {
+  font-size: 18px !important;
+  color: var(--bs-white, #fff) !important;
+}
+
+/* Footer links - reference uses 16px */
+.footer-list a,
+.footer-list .list-item {
+  font-size: 16px !important;
+  color: var(--bs-white, #fff) !important;
+}
+
+/* ============================================================================
+   COLOR FIXES - EXACT reference values from visual parity analysis
+   Reference uses: rgb(0,0,0), rgb(212,212,212), rgb(69,90,100), rgb(93,112,131)
+   ============================================================================ */
+
+/* Body text - reference uses rgb(26,26,26) = #1a1a1a for body, rgb(0,0,0) = #000000 for key text */
+body {
+  color: #1a1a1a !important;
+}
+
+/* Primary text - reference uses pure black for headings */
+h1, h2, h3, h4, h5, h6,
+.title-xxxlarge, .title-xxlarge, .title-xlarge,
+.title-large, .title-medium, .title-small {
+  color: #1a1a1a !important;
+}
+
+/* Secondary text - reference uses rgb(69,90,100) = #455a64 */
+.text-muted,
+.u-grey-dark,
+.subtitle-small,
+.title-xsmall {
+  color: #455a64 !important;
+}
+
+/* Tertiary text - reference uses rgb(93,112,131) = #5d7083 */
+.text-paragraph-small,
+.label-input,
+.title-xsmall-bold {
+  color: #5d7083 !important;
+}
+
+/* Border colors - reference uses rgb(212,212,212) = #d4d4d4 */
+.border-light,
+hr,
+.form-check .checkbox-body,
+.single-line-info.border-light,
+.accordion-header .accordion-button {
+  border-color: #d4d4d4 !important;
+}
+
+/* Link colors - reference uses Bootstrap Italia green */
+.t-primary,
+a.t-primary {
+  color: #007a52 !important;
+}
+
+.t-primary:hover {
+  color: #004d33 !important;
+}
+
+/*
+ * Header istituzionale + footer: NON sovrascrivere qui (conflitto tema Sixteen verde).
+ * Fonte verità: components/header-footer-colors.css + app.css parity.
+ */
+
+/* Grey card background - reference uses #ebeef0 */
+.bg-grey-card {
+  background-color: #ebeef0 !important;
+}
+
+/* Card backgrounds */
+.card.has-bkg-grey {
+  background-color: #ebeef0 !important;
+}
+
+/* Form backgrounds - white */
+.form-group.bg-white,
+.text-area-wrapper.bg-white,
+.cmp-text-area.bg-white {
+  background-color: #ffffff !important;
+}
+
+/* Select wrapper styling */
+.select-wrapper {
+  background-color: #ffffff !important;
+}
+
+/* Button styling */
+.btn-primary {
+  background-color: #007a52 !important;
+  border-color: #007a52 !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:hover {
+  background-color: #004d33 !important;
+  border-color: #004d33 !important;
+}
+
+.btn-outline-primary {
+  background-color: #ffffff !important;
+  border-color: #007a52 !important;
+  color: #007a52 !important;
+}
+
+/* Contact list items */
+.contact-list li,
+.contact-list li a {
+  color: #007a52 !important;
+}
+
+.contact-list .icon {
+  fill: #007a52 !important;
+}
+
+/* Callout/Warning box */
+.callout.callout-highlight.warning {
+  background-color: #fff4e5 !important;
+  border-left-color: #f90 !important;
+}
+
+.callout-title {
+  color: #17334f !important;
+}
+
+/* Card styling */
+.card {
+  border: none !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+}
+
+/* Info summary */
+.cmp-info-summary {
+  background-color: #ffffff !important;
+}
+
+.single-line-info.border-light {
+  border-bottom: 1px solid #d4d4d4 !important;
+  padding: 0.5rem 0 !important;
+}
+
+.data-text {
+  color: #1a1a1a !important;
+  font-weight: 400 !important;
+}
+
+/* ============================================================================
+   SPACING FIXES - Match reference padding/margins
+   ============================================================================ */
+
+/* Breadcrumb spacing */
+.cmp-breadcrumbs {
+  margin-bottom: 1rem !important;
+}
+
+.breadcrumb {
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Steppers spacing */
+.steppers {
+  margin-bottom: 2rem !important;
+}
+
+.steppers-content {
+  padding-bottom: 2rem !important;
+}
+
+/* Contact section spacing */
+.shadow-contacts {
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1) !important;
+}
+
+.cmp-contacts {
+  padding: 2rem 0 !important;
+}
+
+.cmp-contacts .card {
+  border: none !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+}
+
+/* Contact list items */
+.contact-list li {
+  margin: 1rem 0 !important;
+  color: #007a52 !important;
+}
+
+.contact-list li a {
+  color: #007a52 !important;
+  text-decoration: none !important;
+}
+
+.contact-list li a:hover {
+  text-decoration: underline !important;
+}
+
+.contact-list .icon {
+  fill: #007a52 !important;
+}
+
+/* ============================================================================
+   Segnalazioni elenco: center the page shell and keep the map clusters visible.
+   The page card is #main-container; <main> must stay full-width.
+   ============================================================================ */
+body[data-page='ticket-list'] main {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 0 3.5rem !important;
+  background-color: var(--dc-surface-muted, #f4f7fb) !important;
+  box-shadow: none !important;
+}
+
+body[data-page='ticket-list'] main #main-container {
+  width: calc(100% - 2rem) !important;
+  max-width: 1176px !important;
+  margin: 2rem auto 3.5rem !important;
+  padding: 2.25rem clamp(1.25rem, 3vw, 3rem) 2.75rem !important;
+  background: #ffffff !important;
+  box-shadow: var(--dc-shadow-soft, 0 20px 48px rgba(20, 52, 84, 0.08)) !important;
+}
+
+body[data-page='ticket-list'] main #main-container .map-box,
+body[data-page='ticket-list'] main #main-container map-lit,
+body[data-page='ticket-list'] main #main-container .map-container,
+body[data-page='ticket-list'] main #main-container .geo-map-leaflet {
+  min-height: 305px !important;
+}
+
+body[data-page='ticket-list'] main #main-container map-lit {
+  height: clamp(305px, 52vw, 661px) !important;
+}
+
+@media (max-width: 991.98px) {
+  body[data-page='ticket-list'] main #main-container {
+    width: calc(100% - 2px) !important;
+    margin: 1rem auto 2rem !important;
+    padding: 1.5rem 1rem 2rem !important;
+  }
+}
+
+/* Tab Mappa/Elenco — verde istituzionale (#007a52), non blu link BI (#0066cc) */
+body[data-page='ticket-list'] main #main-container .nav.nav-tabs .nav-link {
+  color: #5c6f82;
+  border-bottom: 3px solid transparent;
+}
+
+body[data-page='ticket-list'] main #main-container .nav.nav-tabs .nav-link.active {
+  color: var(--bs-primary, #007a52) !important;
+  border-bottom: 3px solid var(--bs-primary, #007a52) !important;
+  font-weight: 600;
+}
+
+body[data-page='ticket-list'] main #main-container .nav.nav-tabs .nav-link:not(.active) {
+  color: #5c6f82 !important;
+  border-bottom: 3px solid transparent !important;
+}
+
+body[data-page='ticket-list'] main #main-container #block-clear-filters,
+body[data-page='ticket-list'] main #block-clear-filters {
+    background-color: var(--bs-primary, #007a52) !important;
+    border-color: var(--bs-primary, #007a52) !important;
+    color: #fff !important;
+}
+
+body[data-page='ticket-list'] main #main-container #block-clear-filters span,
+body[data-page='ticket-list'] main #block-clear-filters span {
+    color: #fff !important;
+}
+
+body[data-page='ticket-list'] main #main-container #block-clear-filters:hover,
+body[data-page='ticket-list'] main #block-clear-filters:hover {
+    background-color: #006341 !important;
+    color: #fff !important;
+}
+
+
+/* Design Comuni header container parity - reference uses full Bootstrap container width */
+@media (min-width: 992px) {
+  .it-header-slim-wrapper > .container,
+  .it-header-center-wrapper > .container,
+  .it-header-navbar-wrapper > .container {
+    max-width: 1320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .it-header-slim-wrapper > .container > .row,
+  .it-header-center-wrapper > .container > .row,
+  .it-header-navbar-wrapper > .container > .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-left: -12px !important;
+    margin-right: -12px !important;
+  }
+
+  .it-header-slim-wrapper > .container > .row > .col-12,
+  .it-header-center-wrapper > .container > .row > .col-12,
+  .it-header-navbar-wrapper > .container > .row > .col-12 {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .it-header-center-content-wrapper {
+    min-height: 96px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-wrapper {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-wrapper > a {
+    width: auto !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-wrapper .icon,
+  .it-header-center-content-wrapper .it-brand-wrapper svg {
+    width: 82px !important;
+    height: 82px !important;
+    flex: 0 0 82px !important;
+  }
+
+  .it-header-navbar-wrapper .navbar {
+    min-height: 56px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .it-header-slim-wrapper > .container,
+  .it-header-center-wrapper > .container,
+  .it-header-navbar-wrapper > .container {
+    max-width: 1320px !important;
+  }
+}

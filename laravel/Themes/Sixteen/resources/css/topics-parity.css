@@ -1,0 +1,665 @@
+/**
+ * Argomenti Page - Visual Parity CSS
+ *
+ * Adds missing classes to match reference:
+ * https://italia.github.io/design-comuni-pagine-statiche/sito/argomenti.html
+ *
+ * No Bootstrap Italia. Tailwind CSS + Alpine.js only.
+ */
+
+/* ============================================================================
+   GRID GAP UTILITIES
+   ============================================================================ */
+
+/* g-4: 1.5rem gap between grid items */
+.row.g-4 {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  row-gap: 1.5rem;
+}
+.row.g-4 > * {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.row.g-3 {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  row-gap: 1rem;
+}
+.row.g-3 > * {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* ============================================================================
+   IT-GRID-ITEM: Image overlay cards (In evidenza section)
+   ============================================================================ */
+
+.it-grid-item-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.it-grid-item-wrapper a {
+  display: block;
+  position: relative;
+  color: inherit;
+  text-decoration: none !important;
+}
+
+.it-grid-item-overlay a,
+.it-grid-item-overlay a:hover,
+.it-grid-item-overlay a:visited {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* Responsive image container - maintains aspect ratio ~4:3 portrait */
+.img-responsive-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.img-responsive {
+  position: relative;
+  width: 100%;
+  padding-bottom: 130%; /* Portrait aspect ratio (taller than wide) */
+  overflow: hidden;
+}
+
+.img-responsive.rounded {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.img-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay variant: dark gradient + white text at bottom */
+.it-grid-item-overlay .img-responsive::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.15) 30%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Text wrapper overlaid at bottom of image */
+.it-griditem-text-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 1.25rem 1.25rem;
+  z-index: 2;
+}
+
+.it-griditem-text-wrapper h3 {
+  color: #ffffff !important;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* ============================================================================
+   CMP-CARD-SIMPLE: Topics grid cards (Esplora per argomento)
+   ============================================================================ */
+
+.cmp-card-simple {
+  height: 100%;
+}
+
+.cmp-card-simple .card {
+  height: 100%;
+  border-radius: 4px;
+  border: none;
+}
+
+.cmp-card-simple .card-body {
+  padding: 1.25rem;
+}
+
+.cmp-card-simple .card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+/* Green title color for topic cards */
+.cmp-card-simple .card-title.t-primary,
+.cmp-card-simple h3.t-primary {
+  color: #007A52 !important;
+}
+
+.cmp-card-simple a.text-decoration-none:hover h3.t-primary {
+  color: #005841 !important;
+  text-decoration: underline;
+}
+
+.cmp-card-simple .description {
+  font-size: 0.875rem;
+  color: #5C6F82;
+  line-height: 1.5;
+}
+
+/* Card wrapper */
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-wrapper.pb-0 {
+  padding-bottom: 0 !important;
+}
+
+/* ============================================================================
+   HERO - Argomenti page specific
+   ============================================================================ */
+
+/* Breadcrumb separator in hero */
+.cmp-hero .breadcrumb {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+/* Override: ensure h1 is large in cmp-hero for argomenti */
+.cmp-hero h1.text-black,
+.cmp-hero .it-hero-text-wrapper h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #191919 !important;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 992px) {
+  .cmp-hero h1.text-black,
+  .cmp-hero .it-hero-text-wrapper h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Hero text description - must not be green */
+.cmp-hero .hero-text p,
+.cmp-hero .hero-text {
+  font-size: 1.125rem;
+  color: #191919 !important;
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+/* Override global link green for description links */
+.cmp-hero .hero-text a {
+  color: #0066cc !important;
+}
+
+/* ============================================================================
+   SECTION SEPARATORS
+   ============================================================================ */
+
+/* Horizontal rule between hero and In evidenza */
+.it-hero-wrapper + .container,
+.cmp-hero + .container {
+  border-top: 1px solid #E5E7EB;
+}
+
+/* ============================================================================
+   TOPICS-HIGHLIGHT - "In evidenza" title
+   ============================================================================ */
+
+.container .title-xxlarge {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #191919;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================================
+   SHADOW UTILITY
+   ============================================================================ */
+
+.shadow-sm {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.08) !important;
+}
+
+/* ============================================================================
+   BORDER-LIGHT OVERRIDE
+   ============================================================================ */
+
+.border.border-light {
+  border-color: #E5E7EB !important;
+}
+
+/* ============================================================================
+   T-PRIMARY (topic links green color)
+   ============================================================================ */
+
+.t-primary {
+  color: #007A52 !important;
+}
+
+a .t-primary,
+a:hover .t-primary {
+  text-decoration: none;
+}
+
+/* ============================================================================
+   CONTACTS SECTION - Contatta il comune
+   ============================================================================ */
+
+/* Match reference styling for contacts section */
+.bg-grey-card {
+  background-color: #f5f5f5;
+}
+
+.shadow-contacts {
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list .list-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  color: #004445;
+  text-decoration: none;
+  border-bottom: 1px solid #E5E7EB;
+  transition: color 0.2s;
+}
+
+.contact-list .list-item:hover {
+  color: #007A52;
+  text-decoration: underline;
+}
+
+.contact-list .list-item .icon {
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* ============================================================================
+   RATING SECTION - Match reference bg-primary style
+   ============================================================================ */
+
+.it-rating-section.bg-primary {
+  background-color: #004445;
+}
+
+.it-rating-section.bg-primary .text-xl {
+  color: #ffffff;
+}
+
+.it-rating-section.bg-primary .text-gray-900 {
+  color: #ffffff;
+}
+
+/* Override gray-50 to match reference primary color */
+.it-rating-section {
+  background-color: #004445;
+}
+
+.it-rating-section p {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   ARGOMENTI PAGE-SCOPED PARITY REFINEMENTS
+   ========================================================================== */
+
+body.dc-argomenti-parity main[data-page="argomenti"] {
+  background: #ffffff;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] > .cmp-breadcrumbs {
+  padding-top: 0.5rem;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] > .cmp-breadcrumbs .container,
+body.dc-argomenti-parity main[data-page="argomenti"] > .cmp-hero .container,
+body.dc-argomenti-parity main[data-page="argomenti"] > .container {
+  max-width: 1140px;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] > .cmp-breadcrumbs + .cmp-hero {
+  border-top: 0;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] > .cmp-hero {
+  border-top: 0;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] > .cmp-hero .it-hero-text-wrapper {
+  padding-top: 0.25rem;
+  padding-bottom: 3.5rem;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] > .cmp-hero h1 {
+  letter-spacing: -0.02em;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] > .container.py-5 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .it-grid-item-wrapper {
+  border-radius: 4px;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .it-griditem-text-wrapper {
+  padding: 1rem 1rem 1.125rem;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .cmp-card-simple .card-body {
+  min-height: 168px;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .faq-rating-section {
+  background: #0066cc !important;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .faq-rating-section .cmp-rating {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .faq-rating-section .card-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .faq-rating-stars {
+  display: flex;
+  gap: 0.4rem;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .faq-rating-star {
+  border: 0;
+  background: transparent;
+  color: #bfc4c9;
+  font-size: 2rem;
+  line-height: 1;
+  padding: 0;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .faq-rating-star:hover,
+body.dc-argomenti-parity main[data-page="argomenti"] .faq-rating-star:focus {
+  color: #ffb400;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .it-footer-main {
+  background: #f5f7f9 !important;
+  color: #17324d !important;
+  padding-top: 3.5rem !important;
+  padding-bottom: 3.5rem !important;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .it-footer-main .container {
+  max-width: 1140px;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .it-footer-main .row {
+  max-width: 41rem;
+  margin-left: auto;
+  margin-right: auto;
+  row-gap: 2rem;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .it-footer-main [class*="col-"] {
+  width: 100%;
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .it-footer-main h3 {
+  color: #17324d !important;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none !important;
+  margin-bottom: 1rem !important;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .it-footer-main .it-footer-main-column-content {
+  gap: 0.35rem !important;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .it-footer-main a {
+  color: #17324d !important;
+  text-decoration: none !important;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .it-footer-main a:hover span {
+  text-decoration: underline;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .it-footer-main a > div {
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .it-footer-main svg {
+  width: 1rem !important;
+  height: 1rem !important;
+  color: #0066cc;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .it-footer-main a span {
+  font-weight: 400 !important;
+}
+
+@media (max-width: 991px) {
+  body.dc-argomenti-parity main[data-page="argomenti"] .cmp-card-simple .card-body {
+    min-height: 0;
+  }
+
+  body.dc-argomenti-parity main[data-page="argomenti"] .faq-rating-section .cmp-rating {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* ==========================================================================
+   ARGOMENTI POST-VERIFY HEIGHT TRIM
+   ========================================================================== */
+
+body.dc-argomenti-parity main[data-page="argomenti"] .faq-rating-section .cmp-rating {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .it-footer-main {
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.5rem !important;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .it-footer-main .row {
+  max-width: 54rem;
+  row-gap: 1rem;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .it-footer-main [class*="col-"] {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+body.dc-argomenti-parity main[data-page="argomenti"] .it-footer-main h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem !important;
+}
+
+@media (max-width: 767px) {
+  body.dc-argomenti-parity main[data-page="argomenti"] .it-footer-main [class*="col-"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
+   ARGOMENTI PARITY PASS - 2026-04-03
+   Scoped only to the rendered argomenti page after structure alignment
+   ========================================================================== */
+main[data-page="argomenti"] > .container#main-container {
+  padding-top: 0.5rem;
+}
+
+main[data-page="argomenti"] > .container#main-container .cmp-breadcrumbs {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+main[data-page="argomenti"] > .container + .container {
+  border-top: 0 !important;
+}
+
+main[data-page="argomenti"] > .container .row-shadow {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+main[data-page="argomenti"] > .container .it-hero-wrapper {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+main[data-page="argomenti"] > .container .it-hero-text-wrapper {
+  padding-top: 0 !important;
+  padding-bottom: 3.75rem !important;
+}
+
+main[data-page="argomenti"] > .container .hero-text p {
+  max-width: 44rem;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: #17324d !important;
+}
+
+main[data-page="argomenti"] > .container.py-5,
+main[data-page="argomenti"] > .container#argomento {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+main[data-page="argomenti"] .it-grid-item-wrapper,
+main[data-page="argomenti"] .it-grid-item-wrapper .img-responsive,
+main[data-page="argomenti"] .it-grid-item-wrapper .img-wrapper {
+  border-radius: 0 !important;
+}
+
+main[data-page="argomenti"] .cmp-card-simple .card {
+  border-radius: 0 !important;
+}
+
+main[data-page="argomenti"] .cmp-card-simple .card-body {
+  min-height: 158px;
+  padding: 1rem 1.125rem 1rem !important;
+}
+
+main[data-page="argomenti"] .cmp-card-simple .description {
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+main[data-page="argomenti"] > .bg-primary {
+  padding-top: 2.75rem;
+  padding-bottom: 2.75rem;
+}
+
+main[data-page="argomenti"] > .bg-primary .cmp-rating {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+main[data-page="argomenti"] > .bg-primary .card-wrapper {
+  max-width: 580px;
+  margin: 0 auto;
+  border-radius: 0 !important;
+}
+
+main[data-page="argomenti"] .faq-rating-stars {
+  display: flex;
+  gap: 0.25rem;
+}
+
+main[data-page="argomenti"] .faq-rating-star {
+  border: 0;
+  background: transparent;
+  color: #bfc4c9;
+  font-size: 1.8rem;
+  line-height: 1;
+  padding: 0;
+}
+
+main[data-page="argomenti"] .faq-rating-star:hover,
+main[data-page="argomenti"] .faq-rating-star:focus-visible {
+  color: #ffb400;
+}
+
+main[data-page="argomenti"] > .bg-grey-card.shadow-contacts {
+  background: #eceff1 !important;
+  box-shadow: none !important;
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+main[data-page="argomenti"] > .bg-grey-card.shadow-contacts .card {
+  max-width: 540px;
+  margin: 0 auto;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+main[data-page="argomenti"] > .bg-grey-card.shadow-contacts .card-body {
+  padding: 1.5rem 1.75rem !important;
+}
+
+main[data-page="argomenti"] > .bg-grey-card.shadow-contacts .contact-list .list-item {
+  color: #0066cc !important;
+  border-bottom-color: #d9e1e8;
+}
+
+main[data-page="argomenti"] > .bg-grey-card.shadow-contacts .contact-list .list-item:hover {
+  color: #004b9a !important;
+}
+
+main[data-page="argomenti"] > .bg-grey-card.shadow-contacts .contact-list .icon {
+  color: #0066cc !important;
+  fill: currentColor;
+}

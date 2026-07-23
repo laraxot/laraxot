@@ -1,0 +1,36 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'title' => 'Sottana',
+    'sitename' => 'Sottana',
+    'subtitle' => 'Gestione Interventi Tecnici',
+    'sottotitolo_comune' => '',
+    'generator' => '',
+    'charset' => 'UTF-8',
+    'author' => '',
+    'description' => 'Sistema di gestione interventi tecnici e pianificazione',
+    'keywords' => 'interventi, tecnici, pianificazione, gestione',
+    'nome_regione' => '',
+    'nome_comune' => '',
+    'site_title' => '',
+    'favicon' => 'img/sottana.com/favicon/favicon.ico',
+    'logo_img' => 'img/sottana.com/logo.svg',
+    'logo_square' => 'img/sottana.com/logo.svg',
+    'logo_footer_img' => 'img/sottana.com/logo.svg',
+    'logo_alt' => 'Sottana - Gestione Interventi Tecnici',
+    'logo_header_dark' => 'img/sottana.com/logo-dark.svg',
+    'logo_header' => 'img/sottana.com/logo.svg',
+    'hide_megamenu' => false,
+    'hero_type' => 'with_megamenu_bottom',
+    'facebook_href' => '',
+    'twitter_href' => '',
+    'youtube_href' => '',
+    'fastlink' => false,
+    'color_primary' => '#0071b0',
+    'color_title' => 'white',
+    'color_megamenu' => '#0071b0',
+    'color_hamburger' => '#000',
+    'color_banner' => '#000',
+];

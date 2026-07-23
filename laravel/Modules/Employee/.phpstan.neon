@@ -1,0 +1,15 @@
+parameters:
+    level: 10
+    paths:
+        - app
+        - tests
+    excludePaths:
+        - database/migrations
+
+    # Ignora solo errori di migrazione e altre eccezioni necessarie
+    ignoreErrors:
+        # Ignora errori temporanei durante la migrazione
+        - '#Call to an undefined method.*renameColumn#'
+        - '#Call to an undefined method.*dropIndex#'
+        # Ignora errori di covarianza nei tipi di ritorno delle relazioni
+        - '#Template type TDeclaringModel on class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo is not covariant#' 

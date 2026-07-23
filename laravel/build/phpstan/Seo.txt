@@ -1,0 +1,53 @@
+=== PHPStan Analysis for Seo ===
+Date: Thu Jul 16 10:12:20 AM CEST 2026
+Configuration: /var/www/_bases/base_techplanner_fila5/laravel/phpstan.neon
+============================================
+
+  0/24 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%
+ 12/24 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░]  50%
+ 24/24 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+Instructions for interpreting errors
+---------
+
+Each error has an associated identifier, like `argument.type`
+or `return.missing`.
+
+Each error identifier has documentation at URL https://phpstan.org/error-identifiers/<identifier>
+This page contains code example, explanation why is this an error
+and instruction how to fix it.
+Before fixing the error, fetch the documentation page for its identifier.
+
+The error usually indicates a real bug or incorrect type in the code. Fix the underlying cause, do not just make the error go away.
+Do not add `@phpstan-ignore` comments, `@phpstan-ignore-next-line` comments, or baseline entries to suppress the error.
+Do not use assert() or inline @var PHPDoc tag to override PHPStan's inferred type.
+Do not add type casts just to silence errors.
+Do not widen parameter or return types just to make the error go away.
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/Filament/Widgets/SocialShareWidgetTest.php                  
+ ------ ----------------------------------------------------------------------- 
+  18     Method                                                                 
+         Modules\Seo\Filament\Widgets\SocialShareWidget@anonymous/tests/Unit/F  
+         ilament/Widgets/SocialShareWidgetTest.php:15::exposeViewData() return  
+         type has no value type specified in iterable type array.               
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Unit/Filament/Widgets/SocialShareWidgetTest.php              
+ ------ ----------------------------------------------------------------------- 
+
+ -- --------------------------------------------------------------------------- 
+     Error                                                                      
+ -- --------------------------------------------------------------------------- 
+     Ignored error pattern #PHPDoc tag @mixin contains unknown class # was not  
+     matched in reported errors.                                                
+     Ignored error pattern #Cannot cast mixed to                                
+     (string|float|double|int|bool|boolean).# was not matched in reported       
+     errors.                                                                    
+ -- --------------------------------------------------------------------------- 
+
+ [ERROR] Found 3 errors                                                         
+
+
+=== END ANALYSIS ===

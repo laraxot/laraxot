@@ -1,0 +1,30 @@
+{
+    "id": "sicurezza-elettromedicali",
+    "title": {
+        "it": "La sicurezza elettrica degli elettromedicali: perché la verifica IEC 62353 è fondamentale",
+        "en": "Electrical safety of electromedical devices: why IEC 62353 is fundamental"
+    },
+    "slug": "blog/sicurezza-elettromedicali",
+    "content_blocks": {
+        "it": [
+            {
+                "type": "hero",
+                "slug": "article-hero",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.internal",
+                    "title": "Sicurezza Elettrica IEC 62353",
+                    "subtitle": "Tutto quello che c'è da sapere sulle verifiche periodiche per le apparecchiature elettromedicali.",
+                    "image": "/themes/Two/images/medical-equipment.jpg"
+                }
+            },
+            {
+                "type": "content",
+                "slug": "article-body",
+                "data": {
+                    "view": "pub_theme::components.blocks.content.text",
+                    "content": "<p class='mb-6 font-semibold text-lg'>L'utilizzo di apparecchiature elettromedicali comporta rischi intrinseci che non possono essere trascurati.</p><p class='mb-4'>La norma IEC 62353 definisce i test di sicurezza elettrica da eseguire sulle apparecchiature elettromedicali o sui sistemi elettromedicali dopo riparazioni o durante i test periodici. L'obiettivo è prevenire shock elettrici a pazienti e staff.</p><h2 class='text-2xl font-bold mt-8 mb-4'>Le Correnti di Dispersione</h2><p class='mb-4'>Uno dei controlli più critici riguarda la misurazione delle correnti di dispersione verso il paziente e verso terra. Anche piccoli valori di corrente, impercettibili per una persona sana, possono essere letali per un paziente collegato a più apparecchiature o in condizioni di fragilità.</p><h2 class='text-2xl font-bold mt-8 mb-4'>Misura della Resistenza di Terra</h2><p class='mb-4'>Verificare la continuità del conduttore di protezione è il primo passo per assicurare che, in caso di guasto, la corrente venga scaricata correttamente verso terra senza attraversare il corpo umano.</p>"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,206 @@
+/**
+ * Design Comuni - Header & Footer Colors Fix
+ * Bootstrap Italia Official Colors
+ */
+
+/* ========================================
+   BOOTSTRAP ITALIA OFFICIAL COLORS
+======================================== */
+
+/* Primary Colors - Laraxot Green Theme (Comune Logo Based) */
+:root {
+  --color-italia: #007A52;      /* Comune Green */
+  --color-italia-dark: #00402B; /* Dark Green */
+  --color-italia-darker: #002216;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+}
+
+/* ========================================
+   HEADER COLORS
+======================================== */
+
+/* Header Slim - Verde Scuro (#00402B) */
+.it-header-slim-wrapper {
+  background-color: var(--color-italia-dark) !important;
+  color: #FFFFFF !important;
+}
+
+.it-header-slim-wrapper a,
+.it-header-slim-wrapper .nav-link {
+  color: #FFFFFF !important;
+}
+
+/* Header Center - Verde (#007A52) per parità con sfondo Logo */
+.it-header-center-wrapper {
+  background-color: var(--color-italia) !important;
+  color: #FFFFFF !important;
+  /* D6: Header center height - padding verticale */
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+}
+
+.it-header-center-wrapper .it-brand-title,
+.it-header-center-wrapper a {
+  color: #FFFFFF !important;
+}
+
+/* Menu mobile / logo hamburger: titolo comune su fondo verde */
+.it-header-navbar-wrapper .menu-wrapper .it-brand-title,
+.it-header-navbar-wrapper .logo-hamburger .it-brand-title {
+  color: #ffffff !important;
+}
+
+/* Header Navbar - Verde (#007A52) */
+.it-header-navbar-wrapper {
+  background-color: var(--color-italia) !important;
+  color: #FFFFFF !important;
+}
+
+/* D4: menu-wrapper at desktop must be transparent — CDN BI sets it to primary blue */
+.it-header-navbar-wrapper .menu-wrapper {
+  background-color: transparent !important;
+}
+
+/* D4: remove any left border stripe on nav items and wrapper */
+.it-header-navbar-wrapper,
+.it-header-navbar-wrapper .navbar-nav,
+.it-header-navbar-wrapper .menu-wrapper {
+  border-left: none !important;
+}
+
+.it-header-navbar-wrapper a,
+.it-header-navbar-wrapper .nav-link {
+  color: #FFFFFF !important;
+}
+
+/* D3/D5: barra verde è lo sfondo del wrapper; le voci restano trasparenti (no fill) */
+.it-header-navbar-wrapper .navbar-nav .nav-link {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border-left: none !important;
+}
+
+.it-header-navbar-wrapper .navbar-nav .nav-link.active,
+.it-header-navbar-wrapper .navbar-nav .nav-link[aria-current='page'] {
+  background-color: transparent !important;
+}
+
+/* Center underline under active nav item */
+.it-header-navbar-wrapper .navbar-nav .nav-link {
+  position: relative;
+}
+.it-header-navbar-wrapper .navbar-nav .nav-link.active::after,
+.it-header-navbar-wrapper .navbar-nav .nav-link[aria-current='page']::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background-color: #ffffff;
+}
+
+/* Nome della Regione - background transparent to show dark green */
+.it-header-slim-wrapper .navbar-brand {
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+/* Aggiunto per fix region name text in slim header */
+.it-header-slim-wrapper .navbar-brand,
+.it-header-slim-wrapper .brand-text,
+.it-header-slim-wrapper [data-region-name] {
+  color: #ffffff !important;
+}
+
+/* D1: "Accedi all'area personale" button - light green like central header */
+.it-header-slim-wrapper .btn-full,
+.it-header-slim-wrapper .btn-primary.btn-icon.btn-full {
+  background-color: var(--color-italia) !important;
+  border-color: var(--color-italia) !important;
+  color: #ffffff !important;
+}
+
+/* D1: Language switcher button transparent */
+.it-header-slim-wrapper .dropdown-toggle {
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+/* AC4 Story 8-106: Language dropdown — sfondo bianco, testo scuro come DC reference */
+.it-header-slim-wrapper .dropdown-menu {
+  background-color: #ffffff !important;
+  color: #17324d !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+}
+.it-header-slim-wrapper .dropdown-menu .dropdown-item,
+.it-header-slim-wrapper .dropdown-menu .list-item {
+  color: #17324d !important;
+}
+.it-header-slim-wrapper .dropdown-menu .dropdown-item:hover,
+.it-header-slim-wrapper .dropdown-menu .list-item:hover {
+  background-color: #f0f4f8 !important;
+  color: #17324d !important;
+}
+
+/* AC3 Story 8-106: search wrapper flex-row come DC — etichetta «Cerca» a sinistra, lente a destra */
+.it-header-center-wrapper .it-search-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+/* ========================================
+   FOOTER COLORS
+======================================== */
+
+/* Footer Main - Dark Green (#00402B) */
+.it-footer {
+  background-color: var(--color-italia-dark) !important;
+  color: #FFFFFF !important;
+}
+
+.it-footer a,
+.it-footer .footer-heading-title,
+.it-footer .footer-info {
+  color: #FFFFFF !important;
+}
+
+/* Footer Secondary - Darker Green (#002216) */
+.it-footer-secondary {
+  background-color: var(--color-italia-darker) !important;
+  color: #FFFFFF !important;
+}
+
+.it-footer-secondary a,
+.it-footer-secondary p {
+  color: #FFFFFF !important;
+}
+
+/* ========================================
+   UTILITY CLASSES FOR COLORS
+======================================== */
+
+.bg-italia {
+  background-color: var(--color-italia) !important;
+}
+
+.bg-italia-dark {
+  background-color: var(--color-italia-dark) !important;
+}
+
+.text-italia {
+  color: var(--color-italia) !important;
+}
+
+.link-italia {
+  color: var(--color-italia) !important;
+}
+
+.link-italia:hover {
+  color: var(--color-italia-dark) !important;
+}

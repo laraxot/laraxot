@@ -1,0 +1,1 @@
+# Theme Two Documentation\n\nActive theme for Sottana Service.\n\n## Updates\n- Brand: Sottana Service\n- Header: Updated with Elephant Logo and Sottana Service name.\n- Footer: Updated with new brand and contacts.

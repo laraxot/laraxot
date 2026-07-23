@@ -1,0 +1,31 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "laravel/app/",
+            "Database\\Factories\\": "laravel/database/factories/",
+            "Database\\Seeders\\": "laravel/database/seeders/",
+            "Modules\\": "laravel/Modules/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+           "Tests\\": "laravel/tests/",
+           "Modules\\": "laravel/Modules/"
+        }
+    },
+    "require-dev": {
+        "filament/upgrade": "~4.0",
+        "phpmd/phpmd": "^2.15"
+    },
+    "require": {
+        "filament/tables": "^5.1",
+        "filament/schemas": "^5.1",
+        "filament/forms": "^5.1",
+        "filament/infolists": "^5.1",
+        "filament/actions": "^5.1",
+        "filament/notifications": "^5.1",
+        "filament/widgets": "^5.1",
+        "filament/support": "^5.1",
+        "spatie/laravel-schemaless-attributes": "^2.6"
+    }
+}

@@ -1,0 +1,10 @@
+page=segnalazione-dettaglio
+parity_score=62.9
+reference_elements=804
+local_elements=806
+identical=208
+different=596
+missing=0
+extra=2
+threshold=90
+status=FAIL

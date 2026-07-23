@@ -1,0 +1,260 @@
+{
+    "AI": {
+        "missing_roadmap": true,
+        "files": {
+            "phpstan-remediation-2025-12-23.md": [
+                "date_in_filename"
+            ]
+        }
+    },
+    "Cms": {
+        "files": {
+            "code-quality-analysis-2025-11-24.md": [
+                "date_in_filename"
+            ],
+            "roadmap-2026-01-30.md": [
+                "date_in_filename"
+            ],
+            "roadmap-2026-01-31.md": [
+                "date_in_filename"
+            ]
+        }
+    },
+    "Employee": {
+        "missing_roadmap": true,
+        "files": {
+            "phpmd-fixes-2025-12-30.md": [
+                "date_in_filename"
+            ]
+        }
+    },
+    "Gdpr": {
+        "files": {
+            "register-widget-fix-2026-02-13.md": [
+                "date_in_filename"
+            ]
+        }
+    },
+    "Geo": {
+        "files": {
+            "README.md.cleaned": [
+                "uppercase"
+            ],
+            "address-translation-fixes-2025-01-27.md": [
+                "date_in_filename"
+            ],
+            "helper-text-normalization-fix-2025-08-08.md": [
+                "date_in_filename"
+            ],
+            "phpstan-errors-roadmap-2026-01-12.md": [
+                "date_in_filename"
+            ],
+            "phpstan-fixes-2025-01-27.md": [
+                "date_in_filename"
+            ],
+            "sintassi-array-correzione-2025-01-06.md": [
+                "date_in_filename"
+            ]
+        }
+    },
+    "Notify": {
+        "files": {
+            "CHANGELOG.MD": [
+                "uppercase"
+            ],
+            "INDEX.md": [
+                "uppercase"
+            ],
+            "Test_SMTP.txt": [
+                "uppercase"
+            ],
+            "dry-kiss-analysis-2025-10-15.md": [
+                "date_in_filename"
+            ]
+        }
+    },
+    "Seo": {
+        "missing_roadmap": true
+    },
+    "TechPlanner": {
+        "files": {
+            "FILOSOFIA_MODULO_TECHPLANNER.md": [
+                "uppercase"
+            ]
+        }
+    },
+    "Tenant": {
+        "files": {
+            "TODO.md": [
+                "uppercase"
+            ]
+        }
+    },
+    "User": {
+        "files": {
+            "INDEX.md": [
+                "uppercase"
+            ],
+            "baseuser-refactoring-completed-2025-10-15.md": [
+                "date_in_filename"
+            ],
+            "dry-kiss-analysis-2025-10-15.md": [
+                "date_in_filename"
+            ],
+            "git-conflicts-resolution-2025-01-27.md": [
+                "date_in_filename"
+            ],
+            "phpstan-dry-kiss-improvements-2025-10-17.md": [
+                "date_in_filename"
+            ],
+            "phpstan-fixes-2025-10-01.md": [
+                "date_in_filename"
+            ],
+            "translation-city-field-refactor-2025-08-08.md": [
+                "date_in_filename"
+            ]
+        }
+    },
+    "Xot": {
+        "files": {
+            "CHANGELOG.MD": [
+                "uppercase"
+            ],
+            "testing-progress-session-2025-01-22.md": [
+                "date_in_filename"
+            ]
+        }
+    },
+    "Sixteen": {
+        "files": {
+            "ACCESSIBILITY_IMPLEMENTATION_GUIDE.md": [
+                "uppercase"
+            ],
+            "AGID_CHECKLIST_100.md": [
+                "uppercase"
+            ],
+            "AGID_COMPONENTS_REORGANIZATION.md": [
+                "uppercase"
+            ],
+            "CODE_QUALITY_ANALYSIS.md": [
+                "uppercase"
+            ],
+            "CODE_QUALITY_TOOLS.md": [
+                "uppercase"
+            ],
+            "COMPONENTS_UPDATE_2025-10.md": [
+                "uppercase"
+            ],
+            "COMPREHENSIVE_COMPONENTS_REORGANIZATION.md": [
+                "uppercase"
+            ],
+            "DESIGN_COMUNI_INTEGRATION.md": [
+                "uppercase"
+            ],
+            "DESIGN_COMUNI_ITALIA_INTEGRATION.md": [
+                "uppercase"
+            ],
+            "ROADMAP.md": [
+                "uppercase"
+            ],
+            "ROADMAP_2025.md": [
+                "uppercase"
+            ],
+            "SEO_FRONTEND_OPTIMIZATION_GUIDE.md": [
+                "uppercase"
+            ],
+            "TRANSLATION_PLAN.md": [
+                "uppercase"
+            ],
+            "UI_COMPONENTS_REORGANIZATION.md": [
+                "uppercase"
+            ]
+        }
+    },
+    "Two": {
+        "missing_roadmap": true,
+        "files": {
+            "FINAL-SUMMARY.md": [
+                "uppercase"
+            ],
+            "REPLICATION-COMPLETE.md": [
+                "uppercase"
+            ],
+            "UI-UX-improvement-plan.md": [
+                "uppercase"
+            ],
+            "screenshot_127_0_0_1_2026-02-06T16-22-09-189Z_frame1.png": [
+                "uppercase",
+                "date_in_filename"
+            ],
+            "screenshot_127_0_0_1_2026-02-06T16-22-09-195Z_frame2.png": [
+                "uppercase",
+                "date_in_filename"
+            ],
+            "screenshot_127_0_0_1_2026-02-06T16-22-09-196Z_frame3.png": [
+                "uppercase",
+                "date_in_filename"
+            ],
+            "screenshot_127_0_0_1_2026-02-06T20-11-34-860Z_frame1.png": [
+                "uppercase",
+                "date_in_filename"
+            ],
+            "screenshot_127_0_0_1_2026-02-06T20-11-34-861Z_frame2.png": [
+                "uppercase",
+                "date_in_filename"
+            ],
+            "screenshot_127_0_0_1_2026-02-06T20-11-34-862Z_frame3.png": [
+                "uppercase",
+                "date_in_filename"
+            ],
+            "screenshot_127_0_0_1_2026-02-06T20-11-34-864Z_frame4.png": [
+                "uppercase",
+                "date_in_filename"
+            ],
+            "screenshot_127_0_0_1_2026-02-06T20-11-34-865Z_frame5.png": [
+                "uppercase",
+                "date_in_filename"
+            ],
+            "screenshot_127_0_0_1_2026-02-06T20-11-34-866Z_frame6.png": [
+                "uppercase",
+                "date_in_filename"
+            ],
+            "screenshot_127_0_0_1_2026-02-06T20-11-34-867Z_frame7.png": [
+                "uppercase",
+                "date_in_filename"
+            ],
+            "screenshot_127_0_0_1_2026-02-06T20-11-34-868Z_frame8.png": [
+                "uppercase",
+                "date_in_filename"
+            ],
+            "screenshot_lightseagreen_dogfish_560272_hostingersite_com_2026-02-06T16-22-11-508Z_frame1.png": [
+                "uppercase",
+                "date_in_filename"
+            ],
+            "screenshot_lightseagreen_dogfish_560272_hostingersite_com_2026-02-06T16-22-11-511Z_frame2.png": [
+                "uppercase",
+                "date_in_filename"
+            ],
+            "screenshot_lightseagreen_dogfish_560272_hostingersite_com_2026-02-06T16-22-11-513Z_frame3.png": [
+                "uppercase",
+                "date_in_filename"
+            ],
+            "screenshot_lightseagreen_dogfish_560272_hostingersite_com_2026-02-06T16-22-11-514Z_frame4.png": [
+                "uppercase",
+                "date_in_filename"
+            ],
+            "screenshot_lightseagreen_dogfish_560272_hostingersite_com_2026-02-06T16-22-11-515Z_frame5.png": [
+                "uppercase",
+                "date_in_filename"
+            ],
+            "screenshot_lightseagreen_dogfish_560272_hostingersite_com_2026-02-06T16-22-11-517Z_frame6.png": [
+                "uppercase",
+                "date_in_filename"
+            ],
+            "screenshot_lightseagreen_dogfish_560272_hostingersite_com_2026-02-06T16-22-11-518Z_frame7.png": [
+                "uppercase",
+                "date_in_filename"
+            ]
+        }
+    }
+}

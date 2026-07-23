@@ -1,0 +1,29 @@
+{
+    "mcpServers": {
+        "qmd": {
+            "type": "stdio",
+            "command": "qmd",
+            "args": ["mcp"],
+            "env": {
+                "XDG_CACHE_HOME": "${HOME}/.cache/qmd-cache",
+                "XDG_CONFIG_HOME": "${HOME}/.cache/qmd-config",
+                "QMD_LLAMA_GPU": "off"
+            }
+        },
+        "flowbite": {
+            "type": "stdio",
+            "command": "npx",
+            "args": ["-y", "flowbite-mcp"]
+        },
+        "daisyui": {
+            "type": "stdio",
+            "command": "npx",
+            "args": ["-y", "daisyui@latest", "mcp"]
+        },
+        "a11y-accessibility": {
+            "type": "stdio",
+            "command": "npx",
+            "args": ["-y", "a11y-mcp-server"]
+        }
+    }
+}

@@ -1,0 +1,7 @@
+     MODAL COMPONENTS
+     ============================================================ */
+  .modal { @apply hidden fixed inset-0 z-50 overflow-hidden; }
+  .modal.show { @apply flex items-center justify-center overflow-y-auto; }
+  .modal-backdrop { @apply fixed inset-0 bg-black/50 z-40; }
+  .modal-content { @apply relative bg-white rounded-lg shadow-2xl; }
+}

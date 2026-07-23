@@ -1,0 +1,29 @@
+{
+  "mode": "yolo",
+  "depth": "standard",
+  "parallelization": true,
+  "commit_docs": true,
+  "model_profile": "balanced",
+  "workflow": {
+    "research": true,
+    "plan_check": true,
+    "verifier": true,
+    "auto_advance": true,
+    "nyquist_validation": true
+  },
+  "swarm": {
+    "enabled": true,
+    "lock_suffix": ".lock",
+    "verification_commands": [
+      "phpstan",
+      "phpmd",
+      "phpinsights",
+      "pest",
+      "puppeteer",
+      "playwright-mcp"
+    ]
+  },
+  "constraints": {
+    "never_modify": ["laravel/phpstan.neon"]
+  }
+}

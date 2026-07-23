@@ -1,0 +1,451 @@
+<body>
+  <div> .skiplink
+    <a> .visually-hidden-focusable "Vai ai contenuti"
+    <a> .visually-hidden-focusable "Vai al
+        footer"
+  <header[data-bs-target]> .it-header-wrapper
+    <div> .it-header-slim-wrapper
+      <div> .container
+        <div> .row
+          <div> .col-12
+            <div> .it-header-slim-wrapper-content
+              <a[aria-label]> .d-lg-block .navbar-brand "Nome della Regione"
+              <div[role="navigation"]> .it-header-slim-right-zone
+                <div> .dropdown .nav-item
+                  <button[data-bs-toggle]> .dropdown-toggle .nav-link
+                    <span> .visually-hidden "Lingua attiva:"
+                    <span> "ITA"
+                  <div> .dropdown-menu
+                    <div> .row
+                      <div> .col-12
+                        <div> .link-list-wrapper
+                          <ul> .link-list
+                            <li>
+                              <a> .dropdown-item .list-item
+                                <span>
+                                  <span> .visually-hidden "selezionata"
+                            <li>
+                              <a> .dropdown-item .list-item
+                                <span> "ENG"
+                <a[data-element]> .btn .btn-full .btn-icon .btn-primary
+                  <span> .rounded-icon
+                  <span> .d-lg-block .d-none "Accedi all'area personale"
+    <div> .it-nav-wrapper
+      <div> .it-header-center-wrapper
+        <div> .container
+          <div> .row
+            <div> .col-12
+              <div> .it-header-center-content-wrapper
+                <div> .it-brand-wrapper
+                  <a>
+                    <div> .it-brand-text
+                      <div> .it-brand-title "Il mio Comune"
+                      <div> .d-md-block .d-none .it-brand-tagline "Un comune da vivere"
+                <div> .it-right-zone
+                  <div> .d-lg-flex .d-none .it-socials
+                    <span> "Seguici su"
+                    <ul>
+                      <li>
+                        <a>
+                          <span> .visually-hidden "Twitter"
+                      <li>
+                        <a>
+                          <span> .visually-hidden "Facebook"
+                      <li>
+                        <a>
+                          <span> .visually-hidden "YouTube"
+                      <li>
+                        <a>
+                          <span> .visually-hidden "Telegram"
+                      <li>
+                        <a>
+                          <span> .visually-hidden "Whatsapp"
+                      <li>
+                        <a>
+                          <span> .visually-hidden "RSS"
+                  <div> .it-search-wrapper
+                    <span> .d-md-block .d-none "Cerca"
+                    <button[data-bs-toggle][data-bs-target][aria-label]> .rounded-icon .search-link
+      <div#header-nav-wrapper> .it-header-navbar-wrapper
+        <div> .container
+          <div> .row
+            <div> .col-12
+              <div> .has-megamenu .navbar .navbar-expand-lg
+                <button[aria-label][data-bs-target][data-bs-toggle]> .custom-navbar-toggler
+                <div#nav4> .navbar-collapsable
+                  <div> .overlay
+                  <div> .close-div
+                    <button> .btn .close-menu
+                      <span> .visually-hidden "Nascondi la navigazione"
+                  <div> .menu-wrapper
+                    <a> .logo-hamburger
+                      <div> .it-brand-text
+                        <div> .it-brand-title "Nome del Comune"
+                    <nav[aria-label]>
+                      <ul[data-element]> .navbar-nav
+                        <li> .nav-item
+                          <a[data-element]> .nav-link
+                            <span> "Amministrazione"
+                        <li> .nav-item
+                          <a[data-element]> .nav-link
+                            <span> "Novità"
+                        <li> .nav-item
+                          <a[data-element]> .active .nav-link
+                            <span> "Servizi"
+                        <li> .nav-item
+                          <a[data-element]> .nav-link
+                            <span> "Vivere il Comune"
+                    <nav[aria-label]>
+                      <ul> .navbar-nav .navbar-secondary
+                        <li> .nav-item
+                          <a> .nav-link "Iscrizioni"
+                        <li> .nav-item
+                          <a> .nav-link "Estate in città"
+                        <li> .nav-item
+                          <a> .nav-link "Polizia locale"
+                        <li> .nav-item
+                          <a[data-element]> .nav-link
+                            <span>
+                    <div> .it-socials
+                      <span> "Seguici su"
+                      <ul>
+                        <li>
+                          <a>
+                            <span> .visually-hidden "Twitter"
+                        <li>
+                          <a>
+                            <span> .visually-hidden "Facebook"
+                        <li>
+                          <a>
+                            <span> .visually-hidden "YouTube"
+                        <li>
+                          <a>
+                            <span> .visually-hidden "Telegram"
+                        <li>
+                          <a>
+                            <span> .visually-hidden "Whatsapp"
+                        <li>
+                          <a>
+                            <span> .visually-hidden "RSS"
+  <main>
+    <div#main-container> .container
+      <div> .justify-content-center .row
+        <div> .col-12 .col-lg-10
+          <div[role="navigation"]> .cmp-breadcrumbs
+            <nav[aria-label]> .breadcrumb-container
+              <ol[data-element]> .breadcrumb .p-0
+                <li> .breadcrumb-item
+                  <a> "Home"
+                  <span> .separator "/"
+                <li> .breadcrumb-item
+                  <a> "Servizi"
+                  <span> .separator "/"
+                <li> .active .breadcrumb-item "Segnalazione disservizio"
+          <div> .cmp-heading .pb-3 .pb-lg-4
+            <h1> .title-xxxlarge "Segnalazione disservizio"
+        <div> .col-12
+          <div> .steppers
+            <div> .steppers-header
+              <ul>
+                <li> .confirmed
+                  <span> .visually-hidden "Confermato"
+                <li> .confirmed
+                  <span> .visually-hidden "Confermato"
+                <li> .active
+                  <span> .visually-hidden "Attivo"
+              <span> .steppers-index "3/3"
+      <div> .justify-content-center .row
+        <div> .col-12 .col-lg-8
+          <div> .callout .callout-highlight .ps-3 .warning
+            <div> .align-items-center .callout-title .d-flex .mb-20
+              <span> "Attenzione"
+            <p> .text-paragraph .titillium
+              <span> .d-lg-block "Verifica
+                      che siano corrette."
+          <h2> .mb-4 .mt-40 .title-xxlarge "Segnalazione"
+          <div> .cmp-card .mb-4
+            <div> .card .has-bkg-grey .mb-0 .shadow-sm
+              <div> .border-0 .card-header .m-0 .mb-lg-20 .p-0
+                <div> .d-flex
+                  <h3> .mb-4 .subtitle-large "Disservizio"
+              <div> .card-body .p-0
+                <div> .bg-white .cmp-info-summary .p-3 .p-lg-4
+                  <div> .card
+                    <div> .border-bottom .border-light .card-header .d-flex .justify-content-end .mb-0 .p-0 .pb-2
+                      <a> .text-decoration-none
+                        <span> .t-primary .text-button-sm-semi "Modifica"
+                    <div> .card-body .p-0
+                      <div> .border-light .single-line-info
+                        <div> .text-paragraph-small "Indirizzo"
+                        <div> .border-light
+                          <p> .data-text "Via Solferino - 50100 Firenze (FI)"
+                      <div> .border-light .single-line-info
+                        <div> .text-paragraph-small "Tipo di disservizio"
+                        <div> .border-light
+                          <p> .data-text "Danneggiamento proprietà pubblica"
+                      <div> .border-light .single-line-info
+                        <div> .text-paragraph-small "Titolo"
+                        <div> .border-light
+                          <p> .data-text "Panchina danneggiata"
+                      <div> .border-light .single-line-info
+                        <div> .text-paragraph-small "Dettagli"
+                        <div> .border-light
+                          <p> .data-text
+                      <div> .border-light .single-line-info
+                        <div> .text-paragraph-small "Immagini"
+                        <div> .border-light
+                          <p> .data-text "6yhakandsahm413d8da.jpg"
+                    <div> .card-footer .p-0
+          <h2> .mb-4 .mt-40 .title-xxlarge "Dati Generali"
+          <div> .cmp-card .mb-4
+            <div> .card .has-bkg-grey .mb-0 .shadow-sm
+              <div> .border-0 .card-header .m-0 .mb-lg-20 .p-0
+                <div> .d-flex
+                  <h3> .mb-4 .subtitle-large "Autore della segnalazione"
+              <div> .card-body .p-0
+                <div> .bg-white .cmp-info-summary .mb-4 .mb-lg-30 .p-3 .p-lg-4
+                  <div> .card
+                    <div> .border-bottom .border-light .card-header .d-flex .d-flex .justify-content-between .justify-content-end .mb-0 .p-0
+                      <h4> .mb-3 .title-large-semi-bold "Giulia Bianchi"
+                    <div> .card-body .p-0
+                      <div> .border-light .single-line-info
+                        <div> .text-paragraph-small "Codice Fiscale"
+                        <div> .border-light
+                          <p> .data-text "GLABNC72H25H501Y"
+                    <div> .card-footer .d-none .p-0
+                <div> .bg-white .cmp-info-summary .p-3 .p-lg-4
+                  <div> .card
+                    <div> .border-bottom .border-light .card-header .d-flex .d-flex .justify-content-between .justify-content-end .mb-0 .p-0
+                      <h4> .mb-3 .title-large-semi-bold "Contatti"
+                    <div> .card-body .p-0
+                      <div> .border-light .single-line-info
+                        <div> .text-paragraph-small "Telefono"
+                        <div> .border-light
+                          <p> .data-text "+39 331 1234567"
+                      <div> .border-light .single-line-info
+                        <div> .text-paragraph-small "Email"
+                        <div> .border-light
+                          <p> .data-text "giulia.bianchi@gmail.com"
+                    <div> .card-footer .d-none .p-0
+          <div> .cmp-nav-steps
+            <nav[aria-label]> .steppers-nav
+              <button> .btn .btn-sm .p-0 .steppers-btn-prev
+                <span> .t-primary .text-button-sm "Indietro"
+              <button> .bg-white .btn .btn-outline-primary .btn-sm .d-lg-block .d-none .saveBtn .steppers-btn-save
+                <span> .t-primary .text-button-sm "Salva Richiesta"
+              <button> .bg-white .btn .btn-outline-primary .btn-sm .center .d-block .d-lg-none .saveBtn .steppers-btn-save
+                <span> .t-primary .text-button-sm "Salva"
+              <button[data-bs-toggle][data-bs-target]> .btn .btn-primary .btn-sm .send .steppers-btn-confirm
+                <span> .text-button-sm "Invia"
+            <div#alert-message[role="alert"]> .alert .alert-success .cmp-disclaimer .d-none .rounded
+              <span> .cmp-disclaimer__message .d-inline-block .text-uppercase "Richiesta salvata con successo"
+    <div> .bg-grey-card .shadow-contacts
+      <div> .container
+        <div> .row
+          <div> .col-12 .col-lg-6 .offset-lg-3 .p-contacts
+            <div> .cmp-contacts
+              <div> .card .w-100
+                <div> .card-body
+                  <h2> .title-medium-2-semi-bold "Contatta il comune"
+                  <ul> .contact-list .p-0
+                    <li>
+                      <a> .list-item
+                        <span> "Leggi le domande frequenti"
+                    <li>
+                      <a[data-element]> .list-item
+                        <span> "Richiedi assistenza"
+                    <li>
+                      <a> .list-item
+                        <span> "Chiama il numero verde 05 0505"
+                    <li>
+                      <a[data-element]> .list-item
+                        <span> "Prenota appuntamento"
+    <div> .cmp-modal
+      <div#modal-terms[role="dialog"]> .fade .modal
+        <div[role="document"]> .modal-dialog .modal-dialog-centered .small
+          <div> .modal-content .modal-dimensions
+            <div> .cmp-modal__header .modal-header .pb-0
+              <button[data-bs-dismiss][aria-label]> .btn-close
+              <h2#modal-terms-modal-title> .cmp-modal__header-title .title-mini "Termini e condizioni"
+              <p> .cmp-modal__header-info .header-font
+              <a> .cmp-modal__header-link .mt-1 .text-success .underline "Leggi termini e condizioni"
+            <div> .modal-body
+            <div> .modal-footer .pb-70 .pt-0
+              <button[data-bs-toggle][data-bs-target]> .btn .btn-primary .fw-bold .mb-4 .mx-0 .w-100 "Conferma e invia"
+              <button[data-bs-dismiss]> .btn .btn-outline-primary .mx-0 .w-100 "Annulla"
+  <div#search-modal[role="dialog"]> .fade .modal .search-modal
+    <div[role="document"]> .modal-dialog .modal-lg
+      <div> .modal-content .perfect-scrollbar
+        <div> .modal-body
+          <form>
+            <div> .container
+              <div> .row .variable-gutters
+                <div> .col
+                  <div> .modal-title
+                    <button[data-bs-toggle][data-bs-target][aria-label]> .d-md-none .search-link
+                    <h2> "Cerca"
+                    <button[data-bs-toggle][data-bs-target][aria-label]> .d-md-block .d-none .search-link
+                  <div> .autocomplete-wrapper .form-group
+                    <label> .active .visually-hidden "Cerca nel sito"
+                    <input#autocomplete-two[data-bs-autocomplete]> .autocomplete .ps-5
+                    <ul> .autocomplete-list
+                    <span> .autocomplete-icon
+                    <button> .btn .btn-primary
+                      <span> "Cerca"
+              <div> .row .variable-gutters
+                <div> .col-lg-5
+                  <div> .searches-list-wrapper
+                    <div> .other-link-title "FORSE STAVI CERCANDO"
+                    <ul> .searches-list
+                      <li>
+                        <a> "Rilascio Carta Identità Elettronica (CIE)"
+                      <li>
+                        <a> "Cambio di residenza"
+                      <li>
+                        <a> "Tributi online"
+                      <li>
+                        <a> "Prenotazione appuntamenti"
+                      <li>
+                        <a> "Rilascio tessera elettorale"
+                      <li>
+                        <a> "Voucher connettività"
+  <footer#footer> .it-footer
+    <div> .it-footer-main
+      <div> .container
+        <div> .row
+          <div> .col-12 .footer-items-wrapper .logo-wrapper
+            <img> .ue-logo
+            <div> .it-brand-wrapper
+              <a>
+                <div> .it-brand-text
+                  <h2> .no_toc "Nome del Comune"
+        <div> .row
+          <div> .col-md-3 .footer-items-wrapper
+            <h4> .footer-heading-title "Amministrazione"
+            <ul> .footer-list
+              <li>
+                <a> "Organi di governo"
+              <li>
+                <a> "Aree amministrative"
+              <li>
+                <a> "Uffici"
+              <li>
+                <a> "Enti e fondazioni"
+              <li>
+                <a> "Politici"
+              <li>
+                <a> "Personale amministrativo"
+              <li>
+                <a> "Documenti e dati"
+          <div> .col-md-6 .footer-items-wrapper
+            <h4> .footer-heading-title "Categorie di servizio"
+            <div> .row
+              <div> .col-md-6
+                <ul> .footer-list
+                  <li>
+                    <a> "Anagrafe e stato civile"
+                  <li>
+                    <a> "Cultura e tempo libero"
+                  <li>
+                    <a> "Vita lavorativa"
+                  <li>
+                    <a> "Imprese e commercio"
+                  <li>
+                    <a> "Appalti pubblici"
+                  <li>
+                    <a> "Catasto e urbanistica"
+                  <li>
+                    <a> "Turismo"
+                  <li>
+                    <a> "Mobilità e trasporti"
+              <div> .col-md-6
+                <ul> .footer-list
+                  <li>
+                    <a> "Educazione e formazione"
+                  <li>
+                    <a> "Giustizia e sicurezza pubblica"
+                  <li>
+                    <a> "Tributi, finanze e contravvenzioni"
+                  <li>
+                    <a> "Ambiente"
+                  <li>
+                    <a> "Salute, benessere e assistenza"
+                  <li>
+                    <a> "Autorizzazioni"
+                  <li>
+                    <a> "Agricoltura e pesca"
+          <div> .col-md-3 .footer-items-wrapper
+            <h4> .footer-heading-title "Novità"
+            <ul> .footer-list
+              <li>
+                <a> "Notizie"
+              <li>
+                <a> "Comunicati"
+              <li>
+                <a> "Avvisi"
+            <h4> .footer-heading-title "Vivere il comune"
+            <ul> .footer-list
+              <li>
+                <a> "Luoghi"
+              <li>
+                <a> "Eventi"
+          <div> .col-md-9 .footer-items-wrapper .mt-md-4
+            <h4> .footer-heading-title "Contatti"
+            <div> .row
+              <div> .col-md-4
+                <p> .footer-info
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <a> "Ufficio Relazioni con il Pubblico"
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+              <div> .col-md-4
+                <ul> .footer-list
+                  <li>
+                    <a[data-element]> "Leggi le FAQ"
+                  <li>
+                    <a> "Prenotazione appuntamento"
+                  <li>
+                    <a[data-element]> "Segnalazione disservizio"
+                  <li>
+                    <a> "Richiesta d'assistenza"
+              <div> .col-md-4
+                <ul> .footer-list
+                  <li>
+                    <a> "Amministrazione trasparente"
+                  <li>
+                    <a[data-element]> "Informativa privacy"
+                  <li>
+                    <a[data-element]> "Note legali"
+                  <li>
+                    <a[data-element]> "Dichiarazione di accessibilità"
+          <div> .col-md-3 .footer-items-wrapper .mt-md-4
+            <h4> .footer-heading-title "Seguici su"
+            <ul> .list-inline .social .text-start
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "Twitter"
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "Facebook"
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "YouTube"
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "Telegram"
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "Whatsapp"
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "RSS"
+        <div> .row
+          <div> .col-12 .footer-items-wrapper
+            <div> .footer-bottom
+              <a> "Media policy"
+              <a> "Mappa del sito"

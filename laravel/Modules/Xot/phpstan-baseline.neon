@@ -1,0 +1,1297 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 2
+			path: app/Actions/ArtisanAction.php
+
+		-
+			message: '#^Offset 1 might not exist on array\|null\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: app/Actions/ArtisanAction.php
+
+		-
+			message: '#^PHPDoc tag @var contains unresolvable type\.$#'
+			identifier: varTag.unresolvableType
+			count: 2
+			path: app/Actions/ArtisanAction.php
+
+		-
+			message: '#^Parameter \#1 \$array of function array_unique expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Actions/ArtisanAction.php
+
+		-
+			message: '#^Call to an undefined method GuzzleHttp\\Promise\\PromiseInterface\|Illuminate\\Http\\Client\\Response\:\:json\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Actions/Dummy/GetProductsArrayDummyAction.php
+
+		-
+			message: '#^Parameter \#2 \$data of method Modules\\Lang\\Actions\\SaveTransAction\:\:execute\(\) expects array\<string, mixed\>\|Illuminate\\Contracts\\Support\\Htmlable\|int\|string\|null, array\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Actions/Filament/AutoLabelAction.php
+
+		-
+			message: '#^Method Modules\\Xot\\Actions\\Filament\\GetModulesNavigationItems\:\:getCachedModuleConfigs\(\) should return array\<int, array\{module\: string, module_low\: string, icon\: string, sort\: int\}\> but returns array\<non\-empty\-array\>\.$#'
+			identifier: return.type
+			count: 2
+			path: app/Actions/Filament/GetModulesNavigationItems.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Contracts\\View\\Factory\:\:getFinder\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Actions/File/FileAction.php
+
+		-
+			message: '#^Call to an undefined static method Nwidart\\Modules\\Facades\\Module\:\:asset\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 2
+			path: app/Actions/File/FileAction.php
+
+		-
+			message: '#^Call to an undefined static method Nwidart\\Modules\\Facades\\Module\:\:getAssetsPath\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/Actions/File/FileAction.php
+
+		-
+			message: '#^Cannot call method getHints\(\) on class\-string\|object\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Actions/File/FileAction.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 2
+			path: app/Actions/File/FileAction.php
+
+		-
+			message: '#^Invalid array key type float\.$#'
+			identifier: offsetAccess.invalidOffset
+			count: 2
+			path: app/Actions/File/FileAction.php
+
+		-
+			message: '#^Method Modules\\Xot\\Actions\\File\\FileAction\:\:getComponents\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Actions/File/FileAction.php
+
+		-
+			message: '#^Method Modules\\Xot\\Actions\\File\\FileAction\:\:getViewNameSpaceUrl\(\) should return string but returns mixed\.$#'
+			identifier: return.type
+			count: 2
+			path: app/Actions/File/FileAction.php
+
+		-
+			message: '#^Parameter \#1 \$object_or_class of function method_exists expects object\|string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Actions/File/FileAction.php
+
+		-
+			message: '#^Parameter \$data of method Modules\\Xot\\Actions\\Arr\\SaveArrayAction\:\:execute\(\) expects array\<string, mixed\>, array given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Actions/File/FileAction.php
+
+		-
+			message: '#^Call to method Spipu\\Html2Pdf\\Html2Pdf\:\:output\(\) with incorrect case\: Output$#'
+			identifier: method.nameCase
+			count: 3
+			path: app/Actions/GeneratePdfAction.php
+
+		-
+			message: '#^Call to method Spipu\\Html2Pdf\\Html2Pdf\:\:writeHTML\(\) with incorrect case\: WriteHTML$#'
+			identifier: method.nameCase
+			count: 1
+			path: app/Actions/GeneratePdfAction.php
+
+		-
+			message: '#^PHPDoc tag @return contains unresolvable type\.$#'
+			identifier: return.unresolvableType
+			count: 1
+			path: app/Actions/GetViewAction.php
+
+		-
+			message: '#^Call to method Spipu\\Html2Pdf\\Html2Pdf\:\:output\(\) with incorrect case\: Output$#'
+			identifier: method.nameCase
+			count: 3
+			path: app/Actions/Html/HtmlToPdfAction.php
+
+		-
+			message: '#^Call to method Spipu\\Html2Pdf\\Html2Pdf\:\:writeHTML\(\) with incorrect case\: WriteHTML$#'
+			identifier: method.nameCase
+			count: 1
+			path: app/Actions/Html/HtmlToPdfAction.php
+
+		-
+			message: '#^Call to method Spipu\\Html2Pdf\\Html2Pdf\:\:output\(\) with incorrect case\: Output$#'
+			identifier: method.nameCase
+			count: 3
+			path: app/Actions/HtmlAction.php
+
+		-
+			message: '#^Call to method Spipu\\Html2Pdf\\Html2Pdf\:\:writeHTML\(\) with incorrect case\: WriteHTML$#'
+			identifier: method.nameCase
+			count: 1
+			path: app/Actions/HtmlAction.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:find\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Actions/Model/Store/HasOneAction.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:create\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Actions/Model/Update/BelongsToAction.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:find\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Actions/Model/Update/BelongsToAction.php
+
+		-
+			message: '#^Parameter \#1 \$model of method Illuminate\\Database\\Eloquent\\Relations\\BelongsTo\<Illuminate\\Database\\Eloquent\\Model,Illuminate\\Database\\Eloquent\\Model\>\:\:associate\(\) expects Illuminate\\Database\\Eloquent\\Model\|int\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Actions/Model/Update/BelongsToAction.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:firstOrCreate\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Actions/Model/UpdateAction.php
+
+		-
+			message: '#^Cannot call method update\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Actions/Model/UpdateAction.php
+
+		-
+			message: '#^Method Modules\\Xot\\Actions\\Model\\UpdateAction\:\:execute\(\) should return Illuminate\\Database\\Eloquent\\Model but returns mixed\.$#'
+			identifier: return.type
+			count: 2
+			path: app/Actions/Model/UpdateAction.php
+
+		-
+			message: '#^Parameter \#1 \$model of method Modules\\Xot\\Actions\\Model\\Update\\RelationAction\:\:execute\(\) expects Illuminate\\Database\\Eloquent\\Model, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Actions/Model/UpdateAction.php
+
+		-
+			message: '#^Call to an undefined static method Illuminate\\Database\\Eloquent\\Model\:\:where\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 2
+			path: app/Actions/ModelClass/CopyFromLastYearAction.php
+
+		-
+			message: '#^Cannot call method get\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Actions/ModelClass/CopyFromLastYearAction.php
+
+		-
+			message: '#^Call to an undefined static method Illuminate\\Database\\Eloquent\\Model\:\:insert\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/Actions/ModelClass/FakeSeederAction.php
+
+		-
+			message: '#^Call to static method error\(\) on an unknown class Log\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Actions/Pdf/GetPdfContentByRecordAction.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\ConnectionInterface\:\:getDriverName\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Actions/Trend/BuildTrendCollectionAction.php
+
+		-
+			message: '#^Cannot access property \$aggregate on mixed\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Actions/Trend/BuildTrendCollectionAction.php
+
+		-
+			message: '#^Method Modules\\Xot\\Actions\\Trend\\BuildTrendCollectionAction\:\:execute\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Actions/Trend/BuildTrendCollectionAction.php
+
+		-
+			message: '#^Method Modules\\Xot\\Actions\\Trend\\BuildTrendCollectionAction\:\:execute\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Actions/Trend/BuildTrendCollectionAction.php
+
+		-
+			message: '#^Method Modules\\Xot\\Actions\\Trend\\BuildTrendCollectionAction\:\:getDatePeriod\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Actions/Trend/BuildTrendCollectionAction.php
+
+		-
+			message: '#^Method Modules\\Xot\\Actions\\Trend\\BuildTrendCollectionAction\:\:mapValuesToDates\(\) has parameter \$collection with generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Actions/Trend/BuildTrendCollectionAction.php
+
+		-
+			message: '#^Method Modules\\Xot\\Actions\\Trend\\BuildTrendCollectionAction\:\:mapValuesToDates\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Actions/Trend/BuildTrendCollectionAction.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:map\(\) expects callable\(mixed, int\|string\)\: Modules\\Xot\\Datas\\TrendData, Closure\(Illuminate\\Support\\Carbon\)\: Modules\\Xot\\Datas\\TrendData given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Actions/Trend/BuildTrendCollectionAction.php
+
+		-
+			message: '#^Parameter \#1 \$expression of method Illuminate\\Database\\Query\\Builder\:\:selectRaw\(\) expects literal\-string, non\-falsy\-string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Actions/Trend/BuildTrendCollectionAction.php
+
+		-
+			message: '#^Parameter \#1 \$value of function collect expects Illuminate\\Contracts\\Support\\Arrayable\<\(int\|string\), mixed\>\|iterable\<\(int\|string\), mixed\>\|null, Carbon\\CarbonInterval\|Carbon\\CarbonPeriod given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Actions/Trend/BuildTrendCollectionAction.php
+
+		-
+			message: '#^Property Modules\\Xot\\Actions\\Trend\\BuildTrendCollectionAction\:\:\$query with generic class Illuminate\\Database\\Eloquent\\Builder does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Actions/Trend/BuildTrendCollectionAction.php
+
+		-
+			message: '#^Unable to resolve the template type TKey in call to function collect$#'
+			identifier: argument.templateType
+			count: 1
+			path: app/Actions/Trend/BuildTrendCollectionAction.php
+
+		-
+			message: '#^Unable to resolve the template type TValue in call to function collect$#'
+			identifier: argument.templateType
+			count: 1
+			path: app/Actions/Trend/BuildTrendCollectionAction.php
+
+		-
+			message: '#^PHPDoc tag @return contains unresolvable type\.$#'
+			identifier: return.unresolvableType
+			count: 1
+			path: app/Actions/View/GetViewByClassAction.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:map\(\) expects callable\(mixed, int\|string\)\: array\{string, string, string, string\}, Closure\(Modules\\Xot\\Datas\\ComponentFileData\)\: array\{string, string, string, string\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Console/Commands/AnalyzeComponentsCommand.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Contracts/ExtraContract.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Contracts/HasRecursiveRelationshipsContract.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Contracts/ModelContactContract.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Contracts/ModelContract.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Contracts/ModelInputContract.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Contracts/ModelProfileContract.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Contracts/ModelWithAuthorContract.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Contracts/ModelWithPosContract.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Contracts/ModelWithStatusContract.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Contracts/ModelWithUserContract.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Contracts/PivotContract.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Contracts/ProfileContract.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Contracts/UpdaterContract.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Contracts/UserContract.php
+
+		-
+			message: '#^Trait Modules\\Xot\\Database\\Migrations\\Concerns\\XotBaseMigrationUuidConversion is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: app/Database/Migrations/Concerns/XotBaseMigrationUuidConversion.php
+
+		-
+			message: '#^Call to method ReflectionClass\<\$this\(Modules\\Xot\\Database\\Migrations\\XotBaseMigration\)\>\:\:getFileName\(\) with incorrect case\: getFilename$#'
+			identifier: method.nameCase
+			count: 1
+			path: app/Database/Migrations/XotBaseMigration.php
+
+		-
+			message: '#^Trait Modules\\Xot\\Datas\\Concerns\\MetatagDataBrandThemeAccessors is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: app/Datas/Concerns/MetatagDataBrandThemeAccessors.php
+
+		-
+			message: '#^Trait Modules\\Xot\\Datas\\Concerns\\XotDataProfileThemeAccessors is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: app/Datas/Concerns/XotDataProfileThemeAccessors.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model&Modules\\Xot\\Contracts\\ProfileContract\:\:firstOrCreate\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Datas/XotData.php
+
+		-
+			message: '#^Cannot call method first\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Datas/XotData.php
+
+		-
+			message: '#^Parameter \#3 \.\.\.\$values of function sprintf expects bool\|float\|int\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Exceptions/Formatters/WebhookErrorFormatter.php
+
+		-
+			message: '#^Parameter \#1 \$tooltip of method Filament\\Actions\\Action\:\:tooltip\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, array\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Actions/Header/ExportPdfAction.php
+
+		-
+			message: '#^Parameter \#1 \$tooltip of method Filament\\Actions\\Action\:\:tooltip\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, array\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Actions/Header/ExportTreeXlsAction.php
+
+		-
+			message: '#^Parameter \#1 \$tooltip of method Filament\\Actions\\Action\:\:tooltip\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, array\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Actions/Header/ExportXlsAction.php
+
+		-
+			message: '#^Cannot cast array\|string to string\.$#'
+			identifier: cast.string
+			count: 8
+			path: app/Filament/Actions/Header/ExportXlsLazyAction.php
+
+		-
+			message: '#^Parameter \#1 \$description of method Filament\\Actions\\Action\:\:modalDescription\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Actions/Header/ExportXlsLazyAction.php
+
+		-
+			message: '#^Parameter \#1 \$heading of method Filament\\Actions\\Action\:\:modalHeading\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Actions/Header/ExportXlsLazyAction.php
+
+		-
+			message: '#^Parameter \#1 \$icon of method Filament\\Actions\\Action\:\:icon\(\) expects BackedEnum\|Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Actions/Header/ExportXlsLazyAction.php
+
+		-
+			message: '#^Parameter \#1 \$label of method Filament\\Actions\\Action\:\:label\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Actions/Header/ExportXlsLazyAction.php
+
+		-
+			message: '#^Parameter \#1 \$label of method Filament\\Actions\\Action\:\:modalCancelActionLabel\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Actions/Header/ExportXlsLazyAction.php
+
+		-
+			message: '#^Parameter \#1 \$label of method Filament\\Actions\\Action\:\:modalSubmitActionLabel\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Actions/Header/ExportXlsLazyAction.php
+
+		-
+			message: '#^Parameter \#1 \$title of method Filament\\Actions\\Action\:\:successNotificationTitle\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Actions/Header/ExportXlsLazyAction.php
+
+		-
+			message: '#^Parameter \#1 \$tooltip of method Filament\\Actions\\Action\:\:tooltip\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Actions/Header/ExportXlsLazyAction.php
+
+		-
+			message: '#^Parameter \#1 \$tooltip of method Filament\\Actions\\Action\:\:tooltip\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, array\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Actions/Header/FakeSeederHeaderAction.php
+
+		-
+			message: '#^Parameter \#1 \$tooltip of method Filament\\Actions\\Action\:\:tooltip\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, array\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Actions/Table/ExportXlsTableAction.php
+
+		-
+			message: '#^Anonymous function should return Illuminate\\Database\\Eloquent\\Builder but returns Illuminate\\Database\\Query\\Builder\.$#'
+			identifier: return.type
+			count: 2
+			path: app/Filament/Builders/FilterBuilder.php
+
+		-
+			message: '#^Call to an undefined static method Illuminate\\Database\\Eloquent\\Model\:\:pluck\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/Filament/Builders/FilterBuilder.php
+
+		-
+			message: '#^Cannot call method toArray\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Filament/Builders/FilterBuilder.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 6
+			path: app/Filament/Builders/FilterBuilder.php
+
+		-
+			message: '#^Method Modules\\Xot\\Filament\\Builders\\FilterBuilder\:\:applyTrashedQuery\(\) should return Illuminate\\Database\\Eloquent\\Builder\<Illuminate\\Database\\Eloquent\\Model\> but returns Illuminate\\Database\\Eloquent\\Builder\<Illuminate\\Database\\Eloquent\\Model\>\|Illuminate\\Database\\Query\\Builder\.$#'
+			identifier: return.type
+			count: 2
+			path: app/Filament/Builders/FilterBuilder.php
+
+		-
+			message: '#^PHPDoc tag @return contains unresolvable type\.$#'
+			identifier: return.unresolvableType
+			count: 1
+			path: app/Filament/Forms/Components/XotBaseField.php
+
+		-
+			message: '#^Cannot cast array\|string to string\.$#'
+			identifier: cast.string
+			count: 12
+			path: app/Filament/Pages/ArtisanCommandsManager.php
+
+		-
+			message: '#^Parameter \#1 \$label of method Filament\\Actions\\Action\:\:label\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 8
+			path: app/Filament/Pages/ArtisanCommandsManager.php
+
+		-
+			message: '#^Parameter \#1 \$title of method Filament\\Notifications\\Notification\:\:title\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 4
+			path: app/Filament/Pages/ArtisanCommandsManager.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Contracts\\Auth\\Authenticatable\:\:getModules\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Filament/Pages/MainDashboard.php
+
+		-
+			message: '#^Parameter \#1 \$array of static method Illuminate\\Support\\Arr\:\:first\(\) expects iterable, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Pages/MainDashboard.php
+
+		-
+			message: '#^Parameter \#1 \$value of function count expects array\|Countable, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Filament/Pages/MainDashboard.php
+
+		-
+			message: '#^Unable to resolve the template type TValue in call to static method Illuminate\\Support\\Arr\:\:first\(\)$#'
+			identifier: argument.templateType
+			count: 1
+			path: app/Filament/Pages/MainDashboard.php
+
+		-
+			message: '#^Parameter \#1 \$title of method Filament\\Notifications\\Notification\:\:title\(\) expects Closure\|string\|null, array\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Pages/MetatagPage.php
+
+		-
+			message: '#^Method Modules\\Xot\\Filament\\Pages\\XotBasePage\:\:hasPermissionTo\(\) should return bool but returns mixed\.$#'
+			identifier: return.type
+			count: 2
+			path: app/Filament/Pages/XotBasePage.php
+
+		-
+			message: '#^Parameter \#1 \$label of method Filament\\Actions\\Action\:\:label\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, array\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Pages/XotBasePage.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:getModel\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Filament/Resources/LogResource/Pages/ViewLog.php
+
+		-
+			message: '#^Anonymous function should return Illuminate\\Database\\Eloquent\\Builder but returns Illuminate\\Database\\Query\\Builder\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Filament/Resources/Pages/XotBaseListRecords.php
+
+		-
+			message: '#^Cannot cast array\|string to string\.$#'
+			identifier: cast.string
+			count: 3
+			path: app/Filament/Resources/Pages/XotBaseListRecords.php
+
+		-
+			message: '#^Parameter \#1 \$body of method Filament\\Notifications\\Notification\:\:body\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Resources/Pages/XotBaseListRecords.php
+
+		-
+			message: '#^Parameter \#1 \$title of method Filament\\Notifications\\Notification\:\:title\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Resources/Pages/XotBaseListRecords.php
+
+		-
+			message: '#^Parameter \#1 \$tooltip of method Filament\\Actions\\Action\:\:tooltip\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Resources/Pages/XotBaseListRecords.php
+
+		-
+			message: '#^Anonymous function should return Illuminate\\Database\\Eloquent\\Builder but returns Illuminate\\Database\\Query\\Builder\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Filament/Resources/Pages/XotBaseManageRelatedRecords.php
+
+		-
+			message: '#^Cannot cast array\|string to string\.$#'
+			identifier: cast.string
+			count: 2
+			path: app/Filament/Resources/Pages/XotBaseManageRelatedRecords.php
+
+		-
+			message: '#^Parameter \#1 \$body of method Filament\\Notifications\\Notification\:\:body\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Resources/Pages/XotBaseManageRelatedRecords.php
+
+		-
+			message: '#^Parameter \#1 \$title of method Filament\\Notifications\\Notification\:\:title\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Resources/Pages/XotBaseManageRelatedRecords.php
+
+		-
+			message: '#^Anonymous function should return Illuminate\\Database\\Eloquent\\Builder but returns Illuminate\\Database\\Query\\Builder\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Filament/Resources/RelationManagers/XotBaseRelationManager.php
+
+		-
+			message: '#^Cannot cast array\|string to string\.$#'
+			identifier: cast.string
+			count: 2
+			path: app/Filament/Resources/RelationManagers/XotBaseRelationManager.php
+
+		-
+			message: '#^Parameter \#1 \$body of method Filament\\Notifications\\Notification\:\:body\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Resources/RelationManagers/XotBaseRelationManager.php
+
+		-
+			message: '#^Parameter \#1 \$title of method Filament\\Notifications\\Notification\:\:title\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Resources/RelationManagers/XotBaseRelationManager.php
+
+		-
+			message: '#^Parameter \#1 \$tooltip of method Filament\\Actions\\Action\:\:tooltip\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, array\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Resources/RelationManagers/XotBaseRelationManager.php
+
+		-
+			message: '#^Anonymous function should return Illuminate\\Database\\Eloquent\\Builder but returns Illuminate\\Database\\Query\\Builder\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Filament/Resources/Tables/XotBaseResourceTable.php
+
+		-
+			message: '#^Cannot cast array\|string to string\.$#'
+			identifier: cast.string
+			count: 3
+			path: app/Filament/Resources/Tables/XotBaseResourceTable.php
+
+		-
+			message: '#^Parameter \#1 \$body of method Filament\\Notifications\\Notification\:\:body\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Resources/Tables/XotBaseResourceTable.php
+
+		-
+			message: '#^Parameter \#1 \$title of method Filament\\Notifications\\Notification\:\:title\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Resources/Tables/XotBaseResourceTable.php
+
+		-
+			message: '#^Parameter \#1 \$tooltip of method Filament\\Actions\\Action\:\:tooltip\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Resources/Tables/XotBaseResourceTable.php
+
+		-
+			message: '#^Anonymous function should return Illuminate\\Database\\Eloquent\\Builder but returns Illuminate\\Database\\Query\\Builder\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Filament/Resources/XotBaseResource/Pages/XotBaseManageRelatedRecords.php
+
+		-
+			message: '#^Cannot cast array\|string to string\.$#'
+			identifier: cast.string
+			count: 2
+			path: app/Filament/Resources/XotBaseResource/Pages/XotBaseManageRelatedRecords.php
+
+		-
+			message: '#^Parameter \#1 \$body of method Filament\\Notifications\\Notification\:\:body\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Resources/XotBaseResource/Pages/XotBaseManageRelatedRecords.php
+
+		-
+			message: '#^Parameter \#1 \$title of method Filament\\Notifications\\Notification\:\:title\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Resources/XotBaseResource/Pages/XotBaseManageRelatedRecords.php
+
+		-
+			message: '#^Anonymous function should return Illuminate\\Database\\Eloquent\\Builder but returns Illuminate\\Database\\Query\\Builder\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Filament/Resources/XotBaseResource/RelationManager/XotBaseRelationManager.php
+
+		-
+			message: '#^Cannot cast array\|string to string\.$#'
+			identifier: cast.string
+			count: 3
+			path: app/Filament/Resources/XotBaseResource/RelationManager/XotBaseRelationManager.php
+
+		-
+			message: '#^Method Modules\\Xot\\Filament\\Resources\\XotBaseResource\\RelationManager\\XotBaseRelationManager\:\:getNavigationGroup\(\) should return string but returns array\|string\.$#'
+			identifier: return.type
+			count: 2
+			path: app/Filament/Resources/XotBaseResource/RelationManager/XotBaseRelationManager.php
+
+		-
+			message: '#^Method Modules\\Xot\\Filament\\Resources\\XotBaseResource\\RelationManager\\XotBaseRelationManager\:\:getNavigationLabel\(\) should return string but returns array\|string\.$#'
+			identifier: return.type
+			count: 2
+			path: app/Filament/Resources/XotBaseResource/RelationManager/XotBaseRelationManager.php
+
+		-
+			message: '#^Method Modules\\Xot\\Filament\\Resources\\XotBaseResource\\RelationManager\\XotBaseRelationManager\:\:getPluralModelLabel\(\) should return string but returns array\|string\.$#'
+			identifier: return.type
+			count: 2
+			path: app/Filament/Resources/XotBaseResource/RelationManager/XotBaseRelationManager.php
+
+		-
+			message: '#^Parameter \#1 \$body of method Filament\\Notifications\\Notification\:\:body\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Resources/XotBaseResource/RelationManager/XotBaseRelationManager.php
+
+		-
+			message: '#^Parameter \#1 \$title of method Filament\\Notifications\\Notification\:\:title\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Resources/XotBaseResource/RelationManager/XotBaseRelationManager.php
+
+		-
+			message: '#^Parameter \#1 \$tooltip of method Filament\\Actions\\Action\:\:tooltip\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Resources/XotBaseResource/RelationManager/XotBaseRelationManager.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 2
+			path: app/Filament/Support/ColumnBuilder.php
+
+		-
+			message: '#^Parameter \#1 \$label of method Filament\\Tables\\Columns\\Column\:\:label\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, array\|string given\.$#'
+			identifier: argument.type
+			count: 16
+			path: app/Filament/Support/ColumnBuilder.php
+
+		-
+			message: '#^Trait Modules\\Xot\\Filament\\Traits\\Concerns\\HasXotTableActions is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: app/Filament/Traits/Concerns/HasXotTableActions.php
+
+		-
+			message: '#^Trait Modules\\Xot\\Filament\\Traits\\NavigationPageLabelTrait is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: app/Filament/Traits/NavigationPageLabelTrait.php
+
+		-
+			message: '#^Method Modules\\Xot\\Filament\\Widgets\\StateOverviewWidget\:\:getStates\(\) should return array\<int, array\<string, mixed\>\> but returns array\.$#'
+			identifier: return.type
+			count: 2
+			path: app/Filament/Widgets/StateOverviewWidget.php
+
+		-
+			message: '#^Cannot cast mixed to int\.$#'
+			identifier: cast.int
+			count: 1
+			path: app/Filament/Widgets/StatesChartWidget.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 1
+			path: app/Filament/Widgets/StatesChartWidget.php
+
+		-
+			message: '#^PHPDoc tag @var for property Modules\\Xot\\Filament\\Widgets\\TestWidget\:\:\$view contains unresolvable type\.$#'
+			identifier: property.unresolvableType
+			count: 1
+			path: app/Filament/Widgets/TestWidget.php
+
+		-
+			message: '#^PHPDoc tag @var for property Modules\\Xot\\Filament\\Widgets\\TestWidget\:\:\$view with type mixed is not subtype of native type string\.$#'
+			identifier: property.phpDocType
+			count: 1
+			path: app/Filament/Widgets/TestWidget.php
+
+		-
+			message: '#^Binary operation "\." between ''function\(context\) \{…'' and array\|string results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: app/Filament/Widgets/XotBaseChartWidget.php
+
+		-
+			message: '#^Binary operation "\." between mixed and ''"\.replace\("\:count",…'' results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: app/Filament/Widgets/XotBaseChartWidget.php
+
+		-
+			message: '#^Anonymous function should return Illuminate\\Database\\Eloquent\\Builder but returns Illuminate\\Database\\Query\\Builder\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Filament/Widgets/XotBaseTableWidget.php
+
+		-
+			message: '#^Cannot cast array\|string to string\.$#'
+			identifier: cast.string
+			count: 3
+			path: app/Filament/Widgets/XotBaseTableWidget.php
+
+		-
+			message: '#^Parameter \#1 \$body of method Filament\\Notifications\\Notification\:\:body\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Widgets/XotBaseTableWidget.php
+
+		-
+			message: '#^Parameter \#1 \$title of method Filament\\Notifications\\Notification\:\:title\(\) expects Closure\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Widgets/XotBaseTableWidget.php
+
+		-
+			message: '#^Parameter \#1 \$tooltip of method Filament\\Actions\\Action\:\:tooltip\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Widgets/XotBaseTableWidget.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 1
+			path: app/Filament/Widgets/XotBaseWidget.php
+
+		-
+			message: '#^PHPDoc tag @var for variable \$submit_view contains unresolvable type\.$#'
+			identifier: varTag.unresolvableType
+			count: 1
+			path: app/Filament/Widgets/XotBaseWidget.php
+
+		-
+			message: '#^Parameter \#1 \$label of method Filament\\Actions\\Action\:\:label\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, array\|string given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Filament/Widgets/XotBaseWidget.php
+
+		-
+			message: '#^Parameter \#1 \$view of method Illuminate\\Contracts\\View\\Factory\:\:exists\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Widgets/XotBaseWidget.php
+
+		-
+			message: '#^Part \$submit_view \(mixed\) of encapsed string cannot be cast to string\.$#'
+			identifier: encapsedStringPart.nonString
+			count: 1
+			path: app/Filament/Widgets/XotBaseWidget.php
+
+		-
+			message: '#^PHPDoc tag @var for variable \$wizardView contains unresolvable type\.$#'
+			identifier: varTag.unresolvableType
+			count: 1
+			path: app/Filament/Widgets/XotBaseWizardWidget.php
+
+		-
+			message: '#^Parameter \#1 \$label of method Filament\\Actions\\Action\:\:label\(\) expects Closure\|Illuminate\\Contracts\\Support\\Htmlable\|string\|null, array\|string given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Filament/Widgets/XotBaseWizardWidget.php
+
+		-
+			message: '#^Parameter \#1 \$view of method Filament\\Support\\Components\\ViewComponent\:\:view\(\) expects string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Widgets/XotBaseWizardWidget.php
+
+		-
+			message: '#^Parameter \#1 \$view of method Illuminate\\Contracts\\View\\Factory\:\:exists\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Filament/Widgets/XotBaseWizardWidget.php
+
+		-
+			message: '#^PHPDoc tag @return contains unresolvable type\.$#'
+			identifier: return.unresolvableType
+			count: 1
+			path: app/Http/Livewire/XotBaseComponent.php
+
+		-
+			message: '#^Cannot access property \$id on mixed\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Middleware/FilamentMemoryMonitorMiddleware.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Contracts\\Auth\\Factory\:\:id\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: app/Http/Middleware/SecurityMiddleware.php
+
+		-
+			message: '#^Parameter \#1 \$haystack of function str_starts_with expects string, array\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Middleware/SecurityMiddleware.php
+
+		-
+			message: '#^Cannot access property \$lang on mixed\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Middleware/SetDefaultLocaleForUrls.php
+
+		-
+			message: '#^PHPDoc tag @method for method Modules\\Xot\\Models\\BaseExtra\:\:disableCache\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/BaseExtra.php
+
+		-
+			message: '#^PHPDoc tag @method for method Modules\\Xot\\Models\\BaseExtra\:\:newModelQuery\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/BaseExtra.php
+
+		-
+			message: '#^PHPDoc tag @method for method Modules\\Xot\\Models\\BaseExtra\:\:newQuery\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/BaseExtra.php
+
+		-
+			message: '#^PHPDoc tag @method for method Modules\\Xot\\Models\\BaseExtra\:\:query\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/BaseExtra.php
+
+		-
+			message: '#^PHPDoc tag @method for method Modules\\Xot\\Models\\BaseExtra\:\:whereCreatedAt\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/BaseExtra.php
+
+		-
+			message: '#^PHPDoc tag @method for method Modules\\Xot\\Models\\BaseExtra\:\:whereCreatedBy\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/BaseExtra.php
+
+		-
+			message: '#^PHPDoc tag @method for method Modules\\Xot\\Models\\BaseExtra\:\:whereDeletedAt\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/BaseExtra.php
+
+		-
+			message: '#^PHPDoc tag @method for method Modules\\Xot\\Models\\BaseExtra\:\:whereDeletedBy\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/BaseExtra.php
+
+		-
+			message: '#^PHPDoc tag @method for method Modules\\Xot\\Models\\BaseExtra\:\:whereExtraAttributes\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/BaseExtra.php
+
+		-
+			message: '#^PHPDoc tag @method for method Modules\\Xot\\Models\\BaseExtra\:\:whereId\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/BaseExtra.php
+
+		-
+			message: '#^PHPDoc tag @method for method Modules\\Xot\\Models\\BaseExtra\:\:whereModelId\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/BaseExtra.php
+
+		-
+			message: '#^PHPDoc tag @method for method Modules\\Xot\\Models\\BaseExtra\:\:whereModelType\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/BaseExtra.php
+
+		-
+			message: '#^PHPDoc tag @method for method Modules\\Xot\\Models\\BaseExtra\:\:whereUpdatedAt\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/BaseExtra.php
+
+		-
+			message: '#^PHPDoc tag @method for method Modules\\Xot\\Models\\BaseExtra\:\:whereUpdatedBy\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/BaseExtra.php
+
+		-
+			message: '#^PHPDoc tag @method for method Modules\\Xot\\Models\\BaseExtra\:\:withCacheCooldownSeconds\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/BaseExtra.php
+
+		-
+			message: '#^PHPDoc tag @method for method Modules\\Xot\\Models\\BaseExtra\:\:withExtraAttributes\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/BaseExtra.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/BaseExtra.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/Cache.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/CacheLock.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/Extra.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/Feed.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/HealthCheckResultHistoryItem.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:count\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Models/InformationSchemaTable.php
+
+		-
+			message: '#^Call to an undefined static method Modules\\Xot\\Models\\InformationSchemaTable\:\:firstOrCreate\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/Models/InformationSchemaTable.php
+
+		-
+			message: '#^Call to an undefined static method Modules\\Xot\\Models\\InformationSchemaTable\:\:updateOrCreate\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/Models/InformationSchemaTable.php
+
+		-
+			message: '#^Cannot access property \$table_rows on mixed\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Models/InformationSchemaTable.php
+
+		-
+			message: '#^Cannot call method update\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/InformationSchemaTable.php
+
+		-
+			message: '#^Cannot cast mixed to int\.$#'
+			identifier: cast.int
+			count: 1
+			path: app/Models/InformationSchemaTable.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/InformationSchemaTable.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/Log.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/Module.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/PulseAggregate.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/PulseEntry.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/PulseValue.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/Session.php
+
+		-
+			message: '#^Trait Modules\\Xot\\Models\\Traits\\HasExtraTrait is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: app/Models/Traits/HasExtraTrait.php
+
+		-
+			message: '#^Trait Modules\\Xot\\Models\\Traits\\HasUuid is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: app/Models/Traits/HasUuid.php
+
+		-
+			message: '#^Trait Modules\\Xot\\Models\\Traits\\TypedHasRecursiveRelationships is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: app/Models/Traits/TypedHasRecursiveRelationships.php
+
+		-
+			message: '#^Method Modules\\Xot\\Phpstan\\HasCommonScopesPhpstanProbe\:\:scopePublished\(\) should return Illuminate\\Database\\Eloquent\\Builder\<Modules\\Xot\\Phpstan\\HasCommonScopesPhpstanProbe\> but returns Illuminate\\Database\\Query\\Builder\.$#'
+			identifier: return.type
+			count: 2
+			path: app/Phpstan/TraitProbes.php
+
+		-
+			message: '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\.$#'
+			identifier: foreach.nonIterable
+			count: 1
+			path: app/Providers/FilamentOptimizationServiceProvider.php
+
+		-
+			message: '#^Cannot call method all\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Providers/FilamentOptimizationServiceProvider.php
+
+		-
+			message: '#^Cannot call method pushMiddlewareToGroup\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Providers/FilamentOptimizationServiceProvider.php
+
+		-
+			message: '#^Property Modules\\Xot\\QueryBuilders\\BaseQueryBuilder\<T of Illuminate\\Database\\Eloquent\\Model\>\:\:\$query \(Illuminate\\Database\\Eloquent\\Builder\<T of Illuminate\\Database\\Eloquent\\Model\>\) does not accept Illuminate\\Database\\Query\\Builder\.$#'
+			identifier: assign.propertyType
+			count: 16
+			path: app/QueryBuilders/BaseQueryBuilder.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Query\\Builder\:\:getModels\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Relations/CustomRelation.php
+
+		-
+			message: '#^Parameter \#1 \$models of method Illuminate\\Database\\Eloquent\\Builder\<Illuminate\\Database\\Eloquent\\Model\>\:\:eagerLoadRelations\(\) expects array\<int, Illuminate\\Database\\Eloquent\\Model\>, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Relations/CustomRelation.php
+
+		-
+			message: '#^Method Modules\\Xot\\View\\Components\\XDebug\:\:render\(\) should return Illuminate\\Contracts\\View\\View but returns Illuminate\\Contracts\\View\\Factory\|Illuminate\\Contracts\\View\\View\.$#'
+			identifier: return.type
+			count: 2
+			path: app/View/Components/XDebug.php
+
+		-
+			message: '#^Parameter \#1 \$view of function view expects string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/View/Components/XDebug.php
+
+		-
+			message: '#^Method Modules\\Xot\\View\\Components\\XotBaseComponent\:\:render\(\) should return Illuminate\\Contracts\\View\\View but returns Illuminate\\Contracts\\View\\Factory\|Illuminate\\Contracts\\View\\View\.$#'
+			identifier: return.type
+			count: 2
+			path: app/View/Components/XotBaseComponent.php
+
+		-
+			message: '#^PHPDoc tag @var for variable \$view contains unresolvable type\.$#'
+			identifier: varTag.unresolvableType
+			count: 1
+			path: app/View/Components/XotBaseComponent.php
+
+		-
+			message: '#^PHPDoc tag @var with type mixed is not subtype of native type string\.$#'
+			identifier: varTag.nativeType
+			count: 1
+			path: app/View/Components/XotBaseComponent.php
+
+		-
+			message: '#^Parameter \#1 \$view of function view expects string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/View/Components/XotBaseComponent.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Schema\\Blueprint\:\:schemalessAttributes\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: database/migrations/2024_01_01_000015_create_extra_table.php

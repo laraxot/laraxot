@@ -1,0 +1,7 @@
+---
+module: theme
+topic: sitemap
+canonical: ../../../Themes/docs/shared-components/sitemap.md
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/sitemap.md

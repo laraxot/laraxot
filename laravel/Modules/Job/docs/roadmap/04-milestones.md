@@ -1,0 +1,27 @@
+---
+title: "Milestones - Job"
+module: "Job"
+type: concept
+tags: [04, milestones]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "04 milestones"
+related:
+  - "./phpstan-fixes-archive-2.md"
+---
+# Milestones - Job
+
+## M1 Documentation Baseline
+
+- `roadmap.md` allineato e `docs/roadmap/` completo.
+- Link relativi verificati.
+
+## M2 Operational Readiness
+
+- Checklist incident response disponibile.
+- Procedure di recovery validate sui casi principali.
+
+## M3 Regression Safety
+
+- Test minimi sui flussi critici in esecuzione regolare.
+- Riduzione regressioni ricorrenti.

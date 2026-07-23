@@ -1,0 +1,15 @@
+{
+  "preset": "laravel",
+  "exclude": [
+    "phpstan-baseline.neon",
+    ".git",
+    "*.phar",
+    "test*.txt",
+    "*.lock",
+    "*_free.txt",
+    "xdebug.txt"
+  ],
+  "extensions": [
+    "php"
+  ]
+}

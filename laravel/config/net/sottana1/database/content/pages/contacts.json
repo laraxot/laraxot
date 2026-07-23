@@ -1,0 +1,314 @@
+{
+    "id": "4",
+    "title": {
+        "it": "Contatti - Sottana Service",
+        "en": "Contacts - Sottana Service"
+    },
+    "slug": "contacts",
+    "middleware": null,
+    "content": null,
+    "content_blocks": {
+        "it": [
+            {
+                "type": "hero",
+                "slug": "contacts-hero",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.contacts",
+                    "title": "Contattaci",
+                    "subtitle": "Siamo a tua disposizione per qualsiasi esigenza di radioprotezione, elettromedicali e consulenza tecnica per studi dentistici e cliniche veterinarie",
+                    "primary_cta": {
+                        "label": "Chiama Ora",
+                        "url": "tel:+39041455552"
+                    },
+                    "secondary_cta": {
+                        "label": "Invia Email",
+                        "url": "mailto:studio@sottana.net"
+                    }
+                }
+            },
+            {
+                "type": "contact-methods",
+                "slug": "contact-channels",
+                "data": {
+                    "view": "pub_theme::components.blocks.contact.methods",
+                    "title": "Come Raggiungerci",
+                    "methods": [
+                        {
+                            "type": "phone",
+                            "title": "Telefono",
+                            "description": "Chiamaci per assistenza immediata",
+                            "value": "+39 041 455552",
+                            "url": "tel:+39041455552",
+                            "hours": "Lun-Ven: 9:00-18:00",
+                            "icon": "phone",
+                            "color": "emerald"
+                        },
+                        {
+                            "type": "phone",
+                            "title": "Cellulare",
+                            "description": "Chiama o WhatsApp",
+                            "value": "+39 347 58 96 127",
+                            "url": "tel:+393475896127",
+                            "hours": "Lun-Ven: 9:00-18:00",
+                            "icon": "phone",
+                            "color": "green"
+                        },
+                        {
+                            "type": "email",
+                            "title": "Email",
+                            "description": "Invia le tue richieste via email",
+                            "value": "studio@sottana.net",
+                            "url": "mailto:studio@sottana.net",
+                            "hours": "",
+                            "icon": "email",
+                            "color": "teal"
+                        },
+                        {
+                            "type": "address",
+                            "title": "Sede Operativa",
+                            "description": "Visita la nostra sede",
+                            "value": "Via Vanzo 86, 31021 Mogliano Veneto (TV)",
+                            "hours": "Su appuntamento",
+                            "icon": "location",
+                            "color": "cyan"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "contact-form",
+                "slug": "contact-form-section",
+                "data": {
+                    "view": "pub_theme::components.blocks.contact.form",
+                    "title": "Invia una Richiesta",
+                    "subtitle": "Compila il modulo sottostante e ti risponderemo il prima possibile con una consulenza personalizzata",
+                    "fields": [
+                        {
+                            "name": "first_name",
+                            "label": "Nome",
+                            "type": "text",
+                            "required": true,
+                            "width": "half"
+                        },
+                        {
+                            "name": "last_name",
+                            "label": "Cognome",
+                            "type": "text",
+                            "required": true,
+                            "width": "half"
+                        },
+                        {
+                            "name": "email",
+                            "label": "Email",
+                            "type": "email",
+                            "required": true,
+                            "width": "full"
+                        },
+                        {
+                            "name": "phone",
+                            "label": "Telefono",
+                            "type": "tel",
+                            "required": false,
+                            "width": "full"
+                        },
+                        {
+                            "name": "company",
+                            "label": "Azienda/Studio",
+                            "type": "text",
+                            "required": false,
+                            "width": "full"
+                        },
+                        {
+                            "name": "service_type",
+                            "label": "Tipo di Servizio Richiesto",
+                            "type": "select",
+                            "required": true,
+                            "width": "full",
+                            "options": [
+                                {
+                                    "value": "radioprotezione",
+                                    "label": "Controllo Radioprotezione"
+                                },
+                                {
+                                    "value": "elettromedicali",
+                                    "label": "Controllo Elettromedicali"
+                                },
+                                {
+                                    "value": "documentazione",
+                                    "label": "Documentazione e Conformità"
+                                },
+                                {
+                                    "value": "consulenza",
+                                    "label": "Consulenza Generale"
+                                },
+                                {
+                                    "value": "formazione",
+                                    "label": "Formazione del Personale"
+                                },
+                                {
+                                    "value": "veterinario",
+                                    "label": "Servizi Veterinari"
+                                },
+                                {
+                                    "value": "dentistico",
+                                    "label": "Servizi Dentistici"
+                                },
+                                {
+                                    "value": "altro",
+                                    "label": "Altro"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "message",
+                            "label": "Messaggio",
+                            "type": "textarea",
+                            "required": true,
+                            "width": "full",
+                            "placeholder": "Descrivi brevemente la tua richiesta e le tue esigenze specifiche..."
+                        }
+                    ],
+                    "submit_button": {
+                        "label": "Invia Richiesta",
+                        "icon": "send"
+                    }
+                }
+            },
+            {
+                "type": "working-hours",
+                "slug": "office-hours",
+                "data": {
+                    "view": "pub_theme::components.blocks.contact.hours",
+                    "title": "Orari di Lavoro",
+                    "schedule": [
+                        {
+                            "day": "Lunedì - Venerdì",
+                            "hours": "09:00 - 18:00"
+                        },
+                        {
+                            "day": "Sabato",
+                            "hours": "Chiuso"
+                        },
+                        {
+                            "day": "Domenica",
+                            "hours": "Chiuso"
+                        }
+                    ]
+                }
+            }
+        ],
+        "en": [
+            {
+                "type": "hero",
+                "slug": "contacts-hero",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.contacts",
+                    "title": "Contact Us",
+                    "subtitle": "We are available for any radiation protection, electromedical and technical consulting needs for dental practices and veterinary clinics",
+                    "primary_cta": {
+                        "label": "Call Now",
+                        "url": "tel:+39041455552"
+                    },
+                    "secondary_cta": {
+                        "label": "Send Email",
+                        "url": "mailto:studio@sottana.net"
+                    }
+                }
+            },
+            {
+                "type": "contact-methods",
+                "slug": "contact-channels",
+                "data": {
+                    "view": "pub_theme::components.blocks.contact.methods",
+                    "title": "How to Reach Us",
+                    "methods": [
+                        {
+                            "type": "phone",
+                            "title": "Phone",
+                            "description": "Call us for immediate assistance",
+                            "value": "+39 041 455552",
+                            "url": "tel:+39041455552",
+                            "hours": "Mon-Fri: 9:00-18:00",
+                            "icon": "phone",
+                            "color": "emerald"
+                        },
+                        {
+                            "type": "email",
+                            "title": "Email",
+                            "description": "Send your requests via email",
+                            "value": "studio@sottana.net",
+                            "url": "mailto:studio@sottana.net",
+                            "hours": "",
+                            "icon": "email",
+                            "color": "teal"
+                        },
+                        {
+                            "type": "address",
+                            "title": "Office",
+                            "description": "Visit our office",
+                            "value": "Via Vanzo 86, 31021 Mogliano Veneto (TV), Italy",
+                            "hours": "By appointment",
+                            "icon": "location",
+                            "color": "cyan"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "working-hours",
+                "slug": "office-hours",
+                "data": {
+                    "view": "pub_theme::components.blocks.contact.hours",
+                    "title": "Office Hours",
+                    "schedule": [
+                        {
+                            "day": "Monday - Friday",
+                            "hours": "09:00 - 18:00"
+                        },
+                        {
+                            "day": "Saturday",
+                            "hours": "Closed"
+                        },
+                        {
+                            "day": "Sunday",
+                            "hours": "Closed"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "sidebar_blocks": {
+        "it": [
+            {
+                "type": "quick-response",
+                "slug": "quick-response",
+                "data": {
+                    "view": "pub_theme::components.blocks.sidebar.quick-response",
+                    "title": "Risposta Rapida Garantita",
+                    "features": [
+                        {
+                            "icon": "check",
+                            "title": "Consulenza Personalizzata",
+                            "description": "Proposta personalizzata"
+                        },
+                        {
+                            "icon": "bolt",
+                            "title": "Supporto Tecnico",
+                            "description": "Assistenza continua durante tutto il processo"
+                        }
+                    ]
+                }
+            }
+        ],
+        "en": []
+    },
+    "footer_blocks": {
+        "it": [],
+        "en": []
+    },
+    "created_at": "2026-02-06T12:00:00.000000Z",
+    "updated_at": "2026-02-08T04:56:00.000000Z",
+    "created_by": null,
+    "updated_by": "01985ae8-8039-71ea-88c7-54ebce6295b0"
+}

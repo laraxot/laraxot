@@ -1,0 +1,284 @@
+# HTML Body Structure Comparison — ticket-list
+
+- Data: 2026-04-08 12:19:48
+- Reference: `/tmp/reference_segnalazioni.html`
+- Local: `/tmp/local_segnalazioni_v2.html`
+- Soglia obiettivo: 90%
+- Parity score: **76.2%**
+
+## Sommario
+- ✅ Elementi identici: 549
+- 🛈 Elementi quasi uguali (solo testo/attributi non strutturali): 42
+- ❌ Elementi mancanti: 7
+- ⚠️ Elementi con differenze strutturali: 3
+- ➕ Elementi extra locali: 7
+
+## ✅ Elementi identici
+- ✅ `document/body[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/div[1]/a[1]` — <a> identical
+- ✅ `document/body[1]/div[1]/a[2]` — <a> identical
+- ✅ `document/body[1]/header[1]` — <header> identical
+- ✅ `document/body[1]/header[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]` — <button> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[2]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1]` — <use> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]` — <ul> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[2]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]/div[2]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]` — <ul> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]` — <button> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]/svg[1]/use[1]` — <use> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]` — <button> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1]` — <use> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]` — <button> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/svg[1]/use[1]` — <use> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/svg[1]/use[1]` — <use> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]` — <nav> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]` — <ul> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[1]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[1]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[1]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]` — <nav> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]` — <ul> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[1]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[1]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[2]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[2]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[3]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[3]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]/span[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]` — <div> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]` — <ul> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]` — <li> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]` — <a> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1]` — <svg> identical
+- ✅ `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/main[1]` — <main> identical
+- ✅ `document/body[1]/main[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]` — <nav> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]` — <ol> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]` — <li> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/a[1]` — <a> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/span[1]` — <span> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]` — <li> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[1]/div[1]/div[2]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[1]/div[1]/div[2]/h1[1]` — <h1> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[1]/hr[1]` — <hr> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]` — <fieldset> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/legend[1]` — <legend> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]` — <ul> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[1]` — <li> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[1]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[1]/div[1]/div[1]/input[1]` — <input> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[1]/div[1]/div[1]/label[1]` — <label> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[2]` — <li> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[2]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[2]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[2]/div[1]/div[1]/label[1]` — <label> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[3]` — <li> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[3]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[3]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[3]/div[1]/div[1]/input[1]` — <input> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[3]/div[1]/div[1]/label[1]` — <label> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[4]` — <li> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[4]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[4]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[4]/div[1]/div[1]/input[1]` — <input> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[4]/div[1]/div[1]/label[1]` — <label> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[5]` — <li> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[5]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[5]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[5]/div[1]/div[1]/input[1]` — <input> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[5]/div[1]/div[1]/label[1]` — <label> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[6]` — <li> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[6]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[6]/div[1]/div[1]` — <div> identical
+- ✅ `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[6]/div[1]/div[1]/input[1]` — <input> identical
+
+## 🛈 Elementi quasi uguali
+- 🛈 `document/body[1]` — other attributes differ
+- 🛈 `document/body[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]/image[1]` — other attributes differ
+- 🛈 `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]/span[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/main[1]/div[1]/div[1]/div[1]/div[2]/p[1]` — text differs
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[2]/div[1]/div[1]/input[1]` — other attributes differ
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[7]/div[1]/div[1]/label[1]` — text differs
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[1]/button[1]/span[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/button[1]/span[1]` — other attributes differ
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/p[1]` — text differs
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/p[1]` — text differs
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/h3[1]` — text differs
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]` — text differs
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/p[1]` — text differs
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/p[1]` — text differs
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/h3[1]` — text differs
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]` — text differs
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/p[1]` — text differs
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/p[1]` — text differs
+- 🛈 `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[2]/button[1]/span[1]` — other attributes differ
+- 🛈 `document/body[1]/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]/a[1]/svg[1]/use[1]` — other attributes differ
+- 🛈 `document/body[1]/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]/a[1]/svg[1]/use[1]` — other attributes differ
+
+## ❌ Elementi mancanti
+- ❌ `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[2]` — missing local element <div>
+- ❌ `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[3]` — missing local element <div>
+- ❌ `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[3]` — missing local element <div>
+- ❌ `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[3]` — missing local element <div>
+- ❌ `document/body[1]/main[1]/div[2]` — missing local element <div>
+- ❌ `document/body[1]/main[1]/div[3]` — missing local element <div>
+- ❌ `document/body[1]/main[1]/div[4]` — missing local element <div>
+
+## ⚠️ Elementi con differenze strutturali
+- ⚠️ `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]` — classes differ: ref=['accordion-collapse', 'collapse', 'pb-0'] local=['accordion-collapse', 'collapse']; other attributes differ
+- ⚠️ `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[3]/img[1]` — classes differ: ref=['img-fluid', 'w-100'] local=['img-fluid', 'mb-3', 'mb-lg-0', 'w-100']; other attributes differ
+- ⚠️ `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[2]/button[1]` — classes differ: ref=['btn', 'btn', 'btn-outline-primary', 'mobile-full', 'mt-10', 'mx-auto', 'py-3'] local=['btn', 'btn-outline-primary', 'mobile-full', 'mt-10', 'mx-auto', 'py-3']; other attributes differ
+
+## ➕ Elementi extra locali
+- ➕ `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]/br[1]` — extra local element <br>
+- ➕ `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]/span[1]` — extra local element <span>
+- ➕ `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]/br[1]` — extra local element <br>
+- ➕ `document/body[1]/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]/span[1]` — extra local element <span>
+- ➕ `document/body[1]/main[1]/div[1]/div[3]` — extra local element <div>
+- ➕ `document/body[1]/main[1]/div[1]/div[4]` — extra local element <div>
+- ➕ `document/body[1]/main[1]/div[1]/div[5]` — extra local element <div>
+

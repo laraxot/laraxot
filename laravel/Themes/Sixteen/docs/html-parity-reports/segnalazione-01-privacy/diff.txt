@@ -1,0 +1,159 @@
+--- URL1: file:///tmp/batch-fix/ref_segnalazione-01-privacy.html
++++ URL2: file:///tmp/batch-fix/local_segnalazione-01-privacy.html
+@@ -114,7 +114,7 @@
+                         <a class="nav-link" data-element="news">
+                           <span>
+                       <li class="nav-item">
+-                        <a class="nav-link active" data-element="all-services">
++                        <a class="nav-link" data-element="all-services">
+                           <span>
+                       <li class="nav-item">
+                         <a class="nav-link" data-element="live">
+@@ -166,73 +166,74 @@
+                             <use>
+                           <span class="visually-hidden">
+ <main>
+-  <div id="main-container" class="container">
+-    <div class="row justify-content-center">
+-      <div class="col-12 col-lg-10">
+-        <div class="cmp-breadcrumbs" role="navigation">
+-          <nav class="breadcrumb-container">
+-            <ol class="breadcrumb p-0" data-element="breadcrumb">
+-              <li class="breadcrumb-item">
+-                <a>
+-                <span class="separator">
+-              <li class="breadcrumb-item">
+-                <a>
+-                <span class="separator">
+-              <li class="breadcrumb-item active">
+-  <div class="container">
+-    <div class="row justify-content-center">
+-      <div class="col-12 col-lg-10">
+-        <h1 class="title-xxxlarge mb-4">
+-      <div class="col-12">
+-        <div class="steppers">
+-          <div class="steppers-header">
+-            <ul>
+-              <li class="active">
+-                <span class="visually-hidden">
+-              <li>
+-              <li>
+-            <span class="steppers-index">
+-  <div class="container">
+-    <div class="row justify-content-center">
+-      <div class="col-12 col-lg-8 pb-40 pb-lg-80">
+-        <p class="text-paragraph mb-lg-4">
+-        <p class="text-paragraph mb-0">
+-          <a class="t-primary">
+-        <div class="form-check mt-4 mb-3 mt-md-40 mb-lg-40">
+-          <div class="checkbox-body d-flex align-items-center">
+-            <input id="privacy">
+-            <label class="title-small-semi-bold pt-1">
+-        <button class="btn btn-primary mobile-full">
+-          <span>
+-  <div class="bg-grey-card shadow-contacts">
++  <div class="tests-view-wrapper">
+     <div class="container">
+-      <div class="row">
+-        <div class="col-12 col-lg-6 offset-lg-3 p-contacts">
+-          <div class="cmp-contacts">
+-            <div class="card w-100">
+-              <div class="card-body">
+-                <h2 class="title-medium-2-semi-bold">
+-                <ul class="contact-list p-0">
+-                  <li>
+-                    <a class="list-item">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use>
+-                      <span>
+-                  <li>
+-                    <a class="list-item" data-element="contacts">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use>
+-                      <span>
+-                  <li>
+-                    <a class="list-item">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use>
+-                      <span>
+-                  <li>
+-                    <a class="list-item" data-element="appointment-booking">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use>
+-                      <span>
++      <div class="row justify-content-center">
++        <div class="col-12 col-lg-10">
++          <div class="cmp-breadcrumbs" role="navigation">
++            <nav class="breadcrumb-container">
++              <ol class="breadcrumb p-0" data-element="breadcrumb">
++                <li class="breadcrumb-item">
++                  <a>
++                  <span class="separator">
++                <li class="breadcrumb-item">
++                  <a>
++                  <span class="separator">
++                <li class="breadcrumb-item active">
++    <div class="container">
++      <div class="row justify-content-center">
++        <div class="col-12 col-lg-10">
++          <h1 class="title-xxxlarge mb-4">
++        <div class="col-12">
++          <div class="steppers">
++            <div class="steppers-header">
++              <ul>
++                <li class="active">
++                  <span class="visually-hidden">
++                <li>
++                <li>
++              <span class="steppers-index">
++    <div class="container">
++      <div class="row justify-content-center">
++        <div class="col-12 col-lg-8 pb-40 pb-lg-80">
++          <p class="text-paragraph mb-lg-4">
++          <p class="text-paragraph mb-0">
++            <a class="t-primary">
++          <div class="form-check mt-4 mb-3 mt-md-40 mb-lg-40">
++            <div class="checkbox-body d-flex align-items-center">
++              <input id="privacy">
++              <label class="title-small-semi-bold pt-1">
++          <button class="btn btn-primary mobile-full">
++            <span>
++    <div class="bg-grey-card shadow-contacts">
++      <div class="container">
++        <div class="row">
++          <div class="col-12 col-lg-6 offset-lg-3 p-contacts">
++            <div class="cmp-contacts">
++              <div class="card w-100">
++                <div class="card-body">
++                  <h2 class="title-medium-2-semi-bold">
++                  <ul class="contact-list p-0">
++                    <li>
++                      <a class="list-item">
++                        <svg class="icon icon-primary icon-sm">
++                          <use>
++                        <span>
++                    <li>
++                      <a class="list-item" data-element="contacts">
++                        <svg class="icon icon-primary icon-sm">
++                          <use>
++                        <span>
++                    <li>
++                      <a class="list-item">
++                        <svg class="icon icon-primary icon-sm">
++                          <use>
++                        <span>
++                    <li>
++                      <a class="list-item" data-element="appointment-booking">
++                        <svg class="icon icon-primary icon-sm">
++                          <use>
++                        <span>
+ <div id="search-modal" class="modal fade search-modal" role="dialog">
+   <div class="modal-dialog modal-lg" role="document">
+     <div class="modal-content perfect-scrollbar">
+@@ -428,3 +429,6 @@
+           <div class="footer-bottom">
+             <a>
+             <a>
++<link>
++<link>
++<link>

@@ -1,0 +1,144 @@
+   Segnalazioni elenco: center the page shell and keep the map clusters visible.
+   The page card is #main-container; <main> must stay full-width.
+   ============================================================================ */
+body[data-page='ticket-list'] main {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 0 3.5rem !important;
+  background-color: var(--dc-surface-muted, #f4f7fb) !important;
+  box-shadow: none !important;
+}
+
+body[data-page='ticket-list'] main #main-container {
+  width: calc(100% - 2rem) !important;
+  max-width: 1176px !important;
+  margin: 2rem auto 3.5rem !important;
+  padding: 2.25rem clamp(1.25rem, 3vw, 3rem) 2.75rem !important;
+  background: #ffffff !important;
+  box-shadow: var(--dc-shadow-soft, 0 20px 48px rgba(20, 52, 84, 0.08)) !important;
+}
+
+body[data-page='ticket-list'] main #main-container .map-box,
+body[data-page='ticket-list'] main #main-container map-lit,
+body[data-page='ticket-list'] main #main-container .map-container,
+body[data-page='ticket-list'] main #main-container .geo-map-leaflet {
+  min-height: 305px !important;
+}
+
+body[data-page='ticket-list'] main #main-container map-lit {
+  height: clamp(305px, 52vw, 661px) !important;
+}
+
+@media (max-width: 991.98px) {
+  body[data-page='ticket-list'] main #main-container {
+    width: calc(100% - 2px) !important;
+    margin: 1rem auto 2rem !important;
+    padding: 1.5rem 1rem 2rem !important;
+  }
+}
+
+/* Tab Mappa/Elenco — verde istituzionale (#007a52), non blu link BI (#0066cc) */
+body[data-page='ticket-list'] main #main-container .nav.nav-tabs .nav-link {
+  color: #5c6f82;
+  border-bottom: 3px solid transparent;
+}
+
+body[data-page='ticket-list'] main #main-container .nav.nav-tabs .nav-link.active {
+  color: var(--bs-primary, #007a52) !important;
+  border-bottom: 3px solid var(--bs-primary, #007a52) !important;
+  font-weight: 600;
+}
+
+body[data-page='ticket-list'] main #main-container .nav.nav-tabs .nav-link:not(.active) {
+  color: #5c6f82 !important;
+  border-bottom: 3px solid transparent !important;
+}
+
+body[data-page='ticket-list'] main #main-container #block-clear-filters,
+body[data-page='ticket-list'] main #block-clear-filters {
+    background-color: var(--bs-primary, #007a52) !important;
+    border-color: var(--bs-primary, #007a52) !important;
+    color: #fff !important;
+}
+
+body[data-page='ticket-list'] main #main-container #block-clear-filters span,
+body[data-page='ticket-list'] main #block-clear-filters span {
+    color: #fff !important;
+}
+
+body[data-page='ticket-list'] main #main-container #block-clear-filters:hover,
+body[data-page='ticket-list'] main #block-clear-filters:hover {
+    background-color: #006341 !important;
+    color: #fff !important;
+}
+
+/* Design Comuni header container parity - reference uses full Bootstrap container width */
+@media (min-width: 992px) {
+  .it-header-slim-wrapper > .container,
+  .it-header-center-wrapper > .container,
+  .it-header-navbar-wrapper > .container {
+    max-width: 1320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .it-header-slim-wrapper > .container > .row,
+  .it-header-center-wrapper > .container > .row,
+  .it-header-navbar-wrapper > .container > .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-left: -12px !important;
+    margin-right: -12px !important;
+  }
+
+  .it-header-slim-wrapper > .container > .row > .col-12,
+  .it-header-center-wrapper > .container > .row > .col-12,
+  .it-header-navbar-wrapper > .container > .row > .col-12 {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .it-header-center-content-wrapper {
+    min-height: 96px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-wrapper {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-wrapper > a {
+    width: auto !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-wrapper .icon,
+  .it-header-center-content-wrapper .it-brand-wrapper svg {
+    width: 82px !important;
+    height: 82px !important;
+    flex: 0 0 82px !important;
+  }
+
+  .it-header-navbar-wrapper .navbar {
+    min-height: 56px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .it-header-slim-wrapper > .container,
+  .it-header-center-wrapper > .container,
+  .it-header-navbar-wrapper > .container {
+    max-width: 1320px !important;
+  }
+}

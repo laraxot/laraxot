@@ -1,0 +1,294 @@
+/* ==========================================================================
+   Design Comuni CSS Tokens - EXACT VALUES from Reference
+   Source: https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html
+   ========================================================================== */
+
+:root {
+    /* ==========================================================================
+       COLORS - EXACT HEX VALUES from Design Comuni
+       ========================================================================== */
+    
+    /* Primary Blues */
+    --dc-blue-dark: #003D73;      /* Top bar, footer background */
+    --dc-blue-primary: #0066CC;   /* Brand color, links */
+    --dc-blue-light: #4D9BE6;     /* Hover states */
+    --dc-blue-lighter: #E6F2FF;   /* Light backgrounds */
+    
+    /* Grays - Text */
+    --dc-gray-dark: #333333;      /* Primary text */
+    --dc-gray-medium: #666666;    /* Secondary text, tagline */
+    --dc-gray-light: #999999;     /* Tertiary text */
+    --dc-gray-lighter: #CCCCCC;   /* Borders */
+    --dc-gray-lightest: #F2F2F2;  /* Backgrounds */
+    --dc-gray-white: #FFFFFF;     /* Pure white */
+    
+    /* Semantic Colors */
+    --dc-success: #00B373;
+    --dc-error: #D9364F;
+    --dc-warning: #FFB300;
+    --dc-info: #5C6F82;
+    
+    /* ==========================================================================
+       TYPOGRAPHY - EXACT VALUES
+       ========================================================================== */
+    
+    /* Font Families */
+    --dc-font-sans: 'Titillium Web', system-ui, -apple-system, sans-serif;
+    --dc-font-mono: 'Roboto Mono', monospace;
+    
+    /* Font Sizes - EXACT */
+    --dc-font-size-xs: 0.75rem;    /* 12px */
+    --dc-font-size-sm: 0.875rem;   /* 14px - region name, tagline */
+    --dc-font-size-base: 1rem;     /* 16px - body */
+    --dc-font-size-lg: 1.25rem;    /* 20px */
+    --dc-font-size-xl: 1.5rem;     /* 24px - brand title */
+    --dc-font-size-xxl: 2rem;      /* 32px */
+    --dc-font-size-xxxl: 2.5rem;   /* 40px */
+    
+    /* Font Weights - EXACT */
+    --dc-font-weight-normal: 400;
+    --dc-font-weight-medium: 500;
+    --dc-font-weight-semibold: 600;  /* Region name, buttons */
+    --dc-font-weight-bold: 700;      /* Brand title, highlighted nav */
+    
+    /* Line Heights */
+    --dc-line-height-tight: 1.2;
+    --dc-line-height-normal: 1.5;
+    --dc-line-height-relaxed: 1.75;
+    
+    /* ==========================================================================
+       SPACING - EXACT VALUES
+       ========================================================================== */
+    
+    /* Padding/Margin Scale */
+    --dc-spacing-0: 0;
+    --dc-spacing-1: 0.25rem;   /* 4px */
+    --dc-spacing-2: 0.5rem;    /* 8px - top bar padding */
+    --dc-spacing-3: 0.75rem;   /* 12px */
+    --dc-spacing-4: 1rem;      /* 16px */
+    --dc-spacing-5: 1.25rem;   /* 20px */
+    --dc-spacing-6: 1.5rem;    /* 24px - header padding */
+    --dc-spacing-8: 2rem;      /* 32px */
+    --dc-spacing-10: 2.5rem;   /* 40px */
+    --dc-spacing-12: 3rem;     /* 48px */
+    
+    /* Gaps - EXACT */
+    --dc-gap-sm: 0.5rem;       /* 8px - social icons */
+    --dc-gap-md: 0.75rem;      /* 12px - nav items */
+    --dc-gap-lg: 1rem;         /* 16px - brand gap */
+    --dc-gap-xl: 1.5rem;       /* 24px */
+    
+    /* ==========================================================================
+       BORDERS - EXACT VALUES
+       ========================================================================== */
+    
+    /* Border Widths */
+    --dc-border-width-sm: 1px;
+    --dc-border-width-md: 2px;
+    --dc-border-width-lg: 4px;
+    
+    /* Border Colors */
+    --dc-border-light: rgba(255, 255, 255, 0.2);  /* Top bar border */
+    --dc-border-gray: #CCCCCC;
+    --dc-border-gray-light: #E0E0E0;  /* Nav wrapper border */
+    
+    /* Border Radius */
+    --dc-radius-sm: 0.25rem;   /* 4px - buttons */
+    --dc-radius-md: 0.5rem;    /* 8px */
+    --dc-radius-lg: 0.75rem;   /* 12px */
+    --dc-radius-xl: 1rem;      /* 16px */
+    
+    /* ==========================================================================
+       SHADOWS - EXACT VALUES
+       ========================================================================== */
+    
+    --dc-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --dc-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);    /* Dropdown */
+    --dc-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+    --dc-shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.2);
+    
+    /* ==========================================================================
+       SIZES - EXACT VALUES
+       ========================================================================== */
+    
+    /* Logo */
+    --dc-logo-size: 82px;      /* EXACT - Brand logo */
+    
+    /* Header Heights */
+    --dc-header-slim-height: auto;
+    --dc-header-main-padding: 1.5rem 0;  /* 24px top/bottom */
+    
+    /* Icon Sizes */
+    --dc-icon-xs: 12px;
+    --dc-icon-sm: 16px;        /* Social icons */
+    --dc-icon-md: 24px;
+    --dc-icon-lg: 32px;
+    --dc-icon-xl: 48px;
+    
+    /* ==========================================================================
+       TRANSITIONS - EXACT VALUES
+       ========================================================================== */
+    
+    --dc-transition-fast: 150ms ease;
+    --dc-transition-normal: 200ms ease;
+    --dc-transition-slow: 300ms ease;
+    
+    /* ==========================================================================
+       Z-INDEX - EXACT VALUES
+       ========================================================================== */
+    
+    --dc-z-dropdown: 100;
+    --dc-z-sticky: 200;
+    --dc-z-modal: 300;
+    --dc-z-tooltip: 400;
+}
+
+/* ==========================================================================
+   UTILITY CLASSES - Design Comuni Standard
+   ========================================================================== */
+
+/* Text Colors */
+.text-dc-blue-dark { color: var(--dc-blue-dark); }
+.text-dc-blue-primary { color: var(--dc-blue-primary); }
+.text-dc-blue-light { color: var(--dc-blue-light); }
+.text-dc-gray-dark { color: var(--dc-gray-dark); }
+.text-dc-gray-medium { color: var(--dc-gray-medium); }
+.text-dc-gray-light { color: var(--dc-gray-light); }
+.text-dc-white { color: var(--dc-gray-white); }
+
+/* Background Colors */
+.bg-dc-blue-dark { background-color: var(--dc-blue-dark); }
+.bg-dc-blue-primary { background-color: var(--dc-blue-primary); }
+.bg-dc-white { background-color: var(--dc-gray-white); }
+.bg-dc-gray-lightest { background-color: var(--dc-gray-lightest); }
+
+/* Font Sizes */
+.text-dc-sm { font-size: var(--dc-font-size-sm); }
+.text-dc-base { font-size: var(--dc-font-size-base); }
+.text-dc-lg { font-size: var(--dc-font-size-lg); }
+.text-dc-xl { font-size: var(--dc-font-size-xl); }
+
+/* Font Weights */
+.font-dc-normal { font-weight: var(--dc-font-weight-normal); }
+.font-dc-medium { font-weight: var(--dc-font-weight-medium); }
+.font-dc-semibold { font-weight: var(--dc-font-weight-semibold); }
+.font-dc-bold { font-weight: var(--dc-font-weight-bold); }
+
+/* Spacing */
+.spacing-dc-2 { padding: var(--dc-spacing-2); }
+.spacing-dc-4 { padding: var(--dc-spacing-4); }
+.spacing-dc-6 { padding: var(--dc-spacing-6); }
+
+/* ==========================================================================
+   COMPONENT SPECIFIC STYLES
+   ========================================================================== */
+
+/* Top Bar - it-header-slim-wrapper */
+.it-header-slim-wrapper {
+    background-color: var(--dc-blue-dark);
+    border-bottom: var(--dc-border-width-sm) solid var(--dc-border-light);
+    padding: var(--dc-spacing-2) 0;
+}
+
+.it-header-slim-wrapper .navbar-brand {
+    color: var(--dc-gray-white);
+    font-size: var(--dc-font-size-sm);
+    font-weight: var(--dc-font-weight-semibold);
+}
+
+/* Login Button */
+.btn.btn-primary.btn-icon.btn-full {
+    background-color: var(--dc-gray-white);
+    color: var(--dc-blue-primary);
+    border: var(--dc-border-width-sm) solid var(--dc-gray-white);
+    padding: var(--dc-spacing-2) var(--dc-spacing-4);
+    font-size: var(--dc-font-size-sm);
+    font-weight: var(--dc-font-weight-semibold);
+    border-radius: var(--dc-radius-sm);
+    gap: var(--dc-gap-sm);
+    transition: all var(--dc-transition-fast);
+}
+
+.btn.btn-primary.btn-icon.btn-full:hover {
+    background-color: var(--dc-gray-lightest);
+}
+
+/* Main Header */
+.it-header-center-wrapper {
+    background-color: var(--dc-gray-white);
+    padding: var(--dc-spacing-6) 0;
+}
+
+/* Brand */
+.it-brand-title {
+    color: var(--dc-blue-primary);
+    font-size: var(--dc-font-size-xl);
+    font-weight: var(--dc-font-weight-bold);
+    line-height: var(--dc-line-height-tight);
+    margin: 0;
+}
+
+.it-brand-tagline {
+    color: var(--dc-gray-medium);
+    font-size: var(--dc-font-size-sm);
+    font-weight: var(--dc-font-weight-normal);
+    margin-top: var(--dc-spacing-1);
+}
+
+/* Social Icons */
+.it-socials {
+    gap: var(--dc-gap-sm);
+}
+
+.it-socials > span {
+    color: var(--dc-gray-medium);
+    font-size: var(--dc-font-size-sm);
+}
+
+.it-socials .icon.icon-sm {
+    width: var(--dc-icon-sm);
+    height: var(--dc-icon-sm);
+    color: var(--dc-blue-primary);
+}
+
+/* Navigation */
+.it-nav-wrapper {
+    border-top: var(--dc-border-width-sm) solid var(--dc-border-gray-light);
+    border-bottom: var(--dc-border-width-sm) solid var(--dc-border-gray-light);
+}
+
+.navbar-nav .nav-link {
+    color: var(--dc-gray-dark);
+    font-size: var(--dc-font-size-base);
+    font-weight: var(--dc-font-weight-medium);
+    padding: var(--dc-spacing-4) var(--dc-spacing-6);
+    text-decoration: none;
+    transition: color var(--dc-transition-fast);
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--dc-blue-primary);
+    text-decoration: underline;
+}
+
+.nav-item.highlighted .nav-link {
+    color: var(--dc-blue-primary);
+    font-weight: var(--dc-font-weight-bold);
+}
+
+/* Dropdown */
+.dropdown-menu {
+    background-color: var(--dc-gray-white);
+    border: var(--dc-border-width-sm) solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--dc-radius-sm);
+    box-shadow: var(--dc-shadow-md);
+}
+
+.dropdown-item {
+    color: var(--dc-gray-dark);
+    padding: var(--dc-spacing-2) var(--dc-spacing-4);
+}
+
+.dropdown-item:hover {
+    background-color: var(--dc-gray-lightest);
+}

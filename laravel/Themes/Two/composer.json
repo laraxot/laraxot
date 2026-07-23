@@ -1,0 +1,39 @@
+{
+    "name": "laraxot/theme-two",
+    "description": "Tema Two per <nome progetto>",
+    "type": "theme",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "Themes\\Two\\": "app/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Themes\\Two\\ThemeServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^8.3",
+        "filament/tables": "^5.0",
+        "filament/schemas": "^5.0",
+        "filament/forms": "^5.0",
+        "filament/infolists": "^5.0",
+        "filament/actions": "^5.0",
+        "filament/notifications": "^5.0",
+        "filament/widgets": "^5.0",
+        "filament/support": "^5.0"
+    },
+    "require-dev-comment": {
+        "phpstan/phpstan": "^1.10",
+        "pestphp/pest": "^2.0"
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

@@ -1,0 +1,7 @@
+dentro questa pagina c'e' una mappa , intanto e' sbagliata e cmq meglio che la metti statica e cliccando sopra la mappa si apra google maps con punto di destinazione l'indirizzo della mappa , 
+per farlo prima studia in internet come farlo al meglio , poi devi capire che cose di mappa sono cose del modulo GEO, percio' devi di sicuro studiare aggiornare e migliorare anche la cartella laravel/Modules/Geo/docs
+se devi fare un componente devi farlo dentro il modulo geo, ma penso che sia meglio che ti scarichi la mappa statica da internet con indirizzo corretto e devi verificare che si veda bene via vanzo 86 mogliano veneto, questa png in questo caso la dovrai salvare dentro il modulo TechPlanner che e' il main_module di questo progetto, ragiona a fondo, studia aggiorna e migliora le cartelle docs dentro i moduli e dentro i temi , documenta dentro le cartelle docs come vorresti fare , poi implementa poi controlla , devi sempre mettere in dubbio quello che ti dico , questa e' una nuova issue percio' devi creare anche la nuova github issue e la github discussions , se la issue o la discussion esistono interagisci con quello che c'e' in ottica di crescita
+
+
+
+la mappa statica dentro http://127.0.0.1:8002/it/contatti  metti quella generata da google maps , che quella generata con openstreetmap e' imprecisa

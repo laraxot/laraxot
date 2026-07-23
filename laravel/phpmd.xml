@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<ruleset name="Laravel PHPMD Rules"
+         xmlns="http://pmd.sf.net/ruleset/1.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+         xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+    <description>PHPMD Rules for Laravel Modular Application</description>
+
+    <!-- Clean Code Rules -->
+    <rule ref="rulesets/cleancode.xml">
+        <exclude name="StaticAccess"/>
+        <exclude name="ElseExpression"/>
+        <exclude name="BooleanArgumentFlag"/>
+    </rule>
+
+    <!-- Code Size Rules -->
+    <rule ref="rulesets/codesize.xml">
+        <exclude name="ExcessiveParameterList"/>
+        <exclude name="ExcessiveClassComplexity"/>
+    </rule>
+    <rule ref="rulesets/codesize.xml/ExcessiveParameterList">
+        <properties>
+            <property name="minimum" value="8"/>
+        </properties>
+    </rule>
+    <rule ref="rulesets/codesize.xml/ExcessiveClassComplexity">
+        <properties>
+            <property name="maximum" value="60"/>
+        </properties>
+    </rule>
+
+    <!-- Controversial Rules -->
+    <rule ref="rulesets/controversial.xml">
+        <exclude name="Superglobals"/>
+    </rule>
+
+    <!-- Design Rules -->
+    <rule ref="rulesets/design.xml">
+        <exclude name="CouplingBetweenObjects"/>
+    </rule>
+    <rule ref="rulesets/design.xml/CouplingBetweenObjects">
+        <properties>
+            <property name="maximum" value="20"/>
+        </properties>
+    </rule>
+
+    <!-- Naming Rules -->
+    <rule ref="rulesets/naming.xml">
+        <exclude name="ShortVariable"/>
+        <exclude name="LongVariable"/>
+    </rule>
+    <rule ref="rulesets/naming.xml/ShortVariable">
+        <properties>
+            <property name="minimum" value="2"/>
+        </properties>
+    </rule>
+
+    <!-- Unused Code Rules -->
+    <rule ref="rulesets/unusedcode.xml"/>
+
+    <!-- Exclude patterns -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/tests/*</exclude-pattern>
+    <exclude-pattern>*/Tests/*</exclude-pattern>
+    <exclude-pattern>*/database/migrations/*</exclude-pattern>
+    <exclude-pattern>*/docs/*</exclude-pattern>
+    <exclude-pattern>*.blade.php</exclude-pattern>
+    <exclude-pattern>*/config/*</exclude-pattern>
+    <exclude-pattern>*/database/factories/*</exclude-pattern>
+    <exclude-pattern>*/resources/*</exclude-pattern>
+    <exclude-pattern>*/build/phpstan/*</exclude-pattern>
+    <exclude-pattern>*.php-cs-fixer.php</exclude-pattern>
+    <exclude-pattern>*.php-cs-fixer.dist.php</exclude-pattern>
+    <exclude-pattern>*.php_cs.dist.php</exclude-pattern>
+    <exclude-pattern>laravel/Modules/Notify/app/Actions/BuildMailMessageAction.php</exclude-pattern>
+    <exclude-pattern>laravel/Modules/Notify/app/Datas/EmailData.php</exclude-pattern>
+    <exclude-pattern>laravel/Modules/Notify/app/Notifications/GenericNotification.php</exclude-pattern>
+    <exclude-pattern>laravel/Modules/Tenant/app/Services/TenantService.php</exclude-pattern>
+    <exclude-pattern>laravel/Modules/Xot/app/Actions/Arr/*</exclude-pattern>
+    <exclude-pattern>laravel/Modules/Xot/app/Models/Traits/TypedHasRecursiveRelationships.php</exclude-pattern>
+</ruleset>

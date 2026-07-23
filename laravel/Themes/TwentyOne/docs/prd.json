@@ -1,0 +1,36 @@
+{
+  "name": "TwentyOne",
+  "type": "theme",
+  "status": "baseline",
+  "purpose": "Tema frontoffice principale del progetto con rendering homepage, sezioni, blocchi e integrazione runtime pubblica.",
+  "goals": [
+    "Servire il frontoffice guest-accessible",
+    "Rendere coerenti sezioni, blocks e pagine Cms/Predict",
+    "Stabilizzare pipeline asset e pubblicazione tema"
+  ],
+  "nonGoals": [
+    "Duplicare logica di dominio del modulo Predict"
+  ],
+  "dependencies": [
+    "Cms",
+    "Predict",
+    "UI"
+  ],
+  "qualityGates": [
+    "./vendor/bin/phpstan analyse Themes/TwentyOne",
+    "npm run build",
+    "npm run copy"
+  ],
+  "suiteVersion": "baseline-v1",
+  "sourceFramework": "Notion product template family adapted to repository governance",
+  "companionDocs": [
+    "product-roadmap.md",
+    "product-launch-plan.md",
+    "product-strategy.md",
+    "user-research.md",
+    "sprint-planning-meeting.md"
+  ],
+  "implementationPattern": "action-first",
+  "actionStandard": "spatie/laravel-queueable-action",
+  "architectureRule": "No generic Services for business logic; use Action classes with execute()"
+}

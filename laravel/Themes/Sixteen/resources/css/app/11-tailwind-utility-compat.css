@@ -1,0 +1,284 @@
+/*
+ * Bootstrap Italia class-name compatibility expressed with Tailwind apply.
+ * Extracted from resources/css/app.css to keep app.css as a small import index.
+ */
+/* =======================================
+   DESIGN COMUNI BOOTSTRAP CLASSES CONVERTED TO TAILWIND
+   Source: https://italia.github.io/design-comuni-pagine-statiche/
+   Classes from: segnalazione-01 - 04, area-personale, elenco
+   ======================================= */
+
+/* Container & Grid — NON ridefinire .container: Bootstrap Italia + container-override.css (max-width 1320) */
+.row { @apply flex flex-wrap -mx-4; }
+.col-12 { @apply w-full px-4; }
+.col-md-6 { @apply md:w-1/2 px-4; }
+.col-md-4 { @apply md:w-1/3 px-4; }
+.col-md-3 { @apply md:w-1/4 px-4; }
+.col-lg-8 { @apply lg:w-2/3 px-4; }
+.col-lg-4 { @apply lg:w-1/3 px-4; }
+.col-sm-12 { @apply sm:w-full px-4; }
+
+/* Typography */
+.h1 { @apply text-4xl font-bold; }
+.h2 { @apply text-3xl font-bold; }
+.h3 { @apply text-2xl font-bold; }
+.h4 { @apply text-xl font-bold; }
+.h5 { @apply text-lg font-bold; }
+.h6 { @apply text-base font-bold; }
+.fw-bold { @apply font-bold; }
+.fw-normal { @apply font-normal; }
+.text-center { @apply text-center; }
+.text-end { @apply text-right; }
+.text-muted { @apply text-gray-600; }
+.lead { @apply text-xl text-gray-700; }
+
+/* Colors - Design Comuni: verde PA = sfondo primario, blu = testo/link istituzionale */
+.bg-primary { @apply bg-[#007A52]; }
+.text-primary { @apply text-[#0066CC]; }
+.bg-secondary { @apply bg-[#6C7688]; }
+.text-secondary { @apply text-[#6C7688]; }
+.bg-success { @apply bg-[#198754]; }
+.text-success { @apply text-[#198754]; }
+.bg-danger { @apply bg-[#DC3545]; }
+.text-danger { @apply text-[#DC3545]; }
+.bg-warning { @apply bg-[#FFC107]; }
+.text-warning { @apply text-[#FFC107]; }
+.bg-light { @apply bg-gray-100; }
+.text-white { @apply text-white; }
+
+/* Buttons - Design Comuni primary button = #0066CC (header override in 03/08/13) */
+.btn { @apply inline-flex items-center justify-center gap-2 rounded transition-colors; }
+.btn-primary { @apply bg-[#0066CC] text-white px-4 py-2 hover:bg-[#004A99]; }
+.btn-secondary { @apply bg-[#6C7688] text-white px-4 py-2 hover:bg-[#5A6270]; }
+.btn-outline-secondary { @apply border-2 border-[#6C7688] text-[#6C7688] px-4 py-2 rounded hover:bg-[#6C7688] hover:text-white; }
+.btn-lg { @apply px-6 py-3 text-lg; }
+.btn-sm { @apply px-3 py-1.5 text-sm; }
+.btn-icon { @apply inline-flex items-center; }
+.btn-full { @apply w-full; }
+
+/* Forms */
+.form-control { @apply w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 outline-none; }
+.form-check { @apply flex items-start gap-2; }
+.form-check-input { @apply w-4 h-4 text-[#0066CC] border-gray-300 rounded; }
+.form-check-label { @apply text-sm text-gray-700; }
+.form-label { @apply block text-sm font-medium text-gray-700 mb-1; }
+.form-text { @apply text-sm text-gray-500 mt-1; }
+.form-select { @apply w-full px-3 py-2 border border-gray-300 rounded pr-8 bg-white; }
+
+/* Breadcrumb */
+.breadcrumb { @apply flex items-center space-x-2 text-sm text-gray-500; }
+.breadcrumb-item { @apply inline-flex items-center; }
+.breadcrumb-item.active { @apply text-gray-700 font-medium; }
+
+/* Stepper - Design Comuni custom stepper */
+.stepper { @apply flex items-center justify-between; }
+.stepper-step { @apply flex items-center gap-2; }
+.stepper-step.active { @apply text-[#0066CC] font-bold; }
+.stepper-step.completed { @apply text-green-600; }
+
+/* Alerts */
+.alert { @apply border-l-4 p-4; }
+.alert-info { @apply bg-blue-50 border-blue-500; }
+.alert-success { @apply bg-green-50 border-green-500; }
+.alert-warning { @apply bg-yellow-50 border-yellow-500; }
+.alert-danger { @apply bg-red-50 border-red-500; }
+
+/* Cards */
+.card { @apply bg-white rounded-lg shadow-md overflow-hidden; }
+.card-body { @apply p-4; }
+.card-title { @apply text-xl font-bold mb-2; }
+.card-text { @apply text-gray-600; }
+
+/* Display & Flex */
+.d-flex { @apply flex; }
+.d-none { @apply hidden; }
+.d-block { @apply block; }
+.d-inline { @apply inline; }
+.d-inline-block { @apply inline-block; }
+.justify-content-between { @apply justify-between; }
+.justify-content-center { @apply justify-center; }
+.justify-content-end { @apply justify-end; }
+.align-items-center { @apply items-center; }
+.align-items-start { @apply items-start; }
+.flex-column { @apply flex-col; }
+.flex-wrap { @apply flex-wrap; }
+
+/* Sizing */
+.w-100 { @apply w-full; }
+.h-100 { @apply h-full; }
+.mw-100 { @apply max-w-full; }
+.vw-100 { @apply w-screen; }
+.min-vh-100 { @apply min-h-screen; }
+
+/* Tables */
+.table { @apply w-full border-collapse; }
+.table-striped { @apply divide-y divide-gray-200; }
+.table-bordered { @apply border border-gray-300; }
+
+/* Badges */
+.badge { @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium; }
+.badge.bg-primary { @apply bg-blue-100 text-blue-800; }
+.badge.bg-success { @apply bg-green-100 text-green-800; }
+.badge.bg-warning { @apply bg-yellow-100 text-yellow-800; }
+.badge.bg-danger { @apply bg-red-100 text-red-800; }
+
+/* Spacing - Bootstrap uses 0.25rem base, Tailwind SAME! */
+/* mb-3 (1rem) = mb-4 (1rem) ✅ SAME RESULT */
+/* mb-4 (1.5rem) = mb-6 (1.5rem) ✅ SAME RESULT */
+.mb-3 { @apply mb-4; }
+.mb-4 { @apply mb-6; }
+.mt-3 { @apply mt-4; }
+.mt-4 { @apply mt-6; }
+.pt-3 { @apply pt-4; }
+.pb-3 { @apply pb-4; }
+.py-2 { @apply py-2; }
+.px-4 { @apply px-6; }
+.p-3 { @apply p-4; }
+.p-4 { @apply p-6; }
+
+/* Skip Link */
+.skiplink { @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:shadow-lg; }
+.visually-hidden-focusable { @apply sr-only focus:not-sr-only; }
+
+/* Header specific (Design Comuni) */
+.it-header-wrapper { @apply bg-white shadow-sm; }
+.it-header-slim-wrapper { @apply bg-[#00402B] text-white; }
+.it-header-center-wrapper { @apply border-b border-gray-200; }
+.it-nav-wrapper { @apply border-b border-gray-200; }
+.nav-item { @apply relative; }
+.nav-link { @apply inline-flex items-center px-3 py-2 text-sm hover:bg-gray-100; }
+.dropdown-toggle { @apply inline-flex items-center gap-1; }
+.dropdown-menu { @apply absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50; }
+.dropdown-item { @apply block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100; }
+
+/* Link list */
+.link-list-wrapper { @apply py-4; }
+.link-list { @apply space-y-2; }
+.link-list-item { @apply inline-flex items-center gap-2; }
+
+
+/* ============================================
+   Create Ticket Wizard Styles (from create-ticket.blade.php)
+   P0: Removed inline <style> block → moved here
+   ============================================ */
+
+/* Primary button override */
+.fi-btn.fi-btn-color-primary {
+    background-color: #007a52 !important;
+    color: white !important;
+}
+.fi-btn.fi-btn-color-primary:hover {
+    background-color: #007a52 !important;
+}
+
+/* Custom color button */
+.fi-btn.fi-color-custom {
+    background-color: #059669 !important; /* emerald-600 */
+}
+.fi-btn.fi-color-custom:hover {
+    background-color: #0d9488 !important; /* emerald-500 */
+}
+
+/* Subtitle */
+.subtitle {
+    font-family: 'Titillium Web', sans-serif !important;
+    font-weight: 800 !important;
+}
+
+/* Submit button (wizard segnalazione — escluso login FO) */
+body:not([data-page='auth-login']) button[type="submit"].fi-btn {
+    background-color: white !important;
+    color: #007a52 !important;
+    border: 2px solid #007a52 !important;
+    --c-400: none !important;
+    --c-500: none !important;
+    --c-600: none !important;
+    cursor: pointer;
+}
+body:not([data-page='auth-login']) button[type="submit"].fi-btn:hover {
+    background-color: white !important;
+    color: #007a52 !important;
+    border: 2px solid #007a52 !important;
+}
+
+/* Hide wizard step indicator circle */
+.fi-fo-wizard-header-step-indicator,
+.fi-fo-wizard-header-step-icon-ctn {
+    display: none !important;
+}
+
+/* Wizard header */
+.fi-fo-wizard-header {
+    border: none !important;
+}
+
+/* Wizard steps */
+.fi-fo-wizard-header-step {
+    border-left: 2px solid #e5e7eb !important;
+    border-bottom: none !important;
+}
+.fi-fo-wizard-header-step.fi-active {
+    border-left: 2px solid #007a52 !important;
+    border-bottom: 2px solid #007a52 !important;
+}
+
+/* Step labels */
+.fi-fo-wizard-header-step-label {
+    font-size: 1.125rem !important;
+    font-weight: 600 !important;
+}
+.fi-fo-wizard-header-step.fi-active .fi-fo-wizard-header-step-label {
+    color: #007a52 !important;
+}
+
+/* Hide separator */
+.fi-fo-wizard-header-step-separator {
+    display: none !important;
+}
+
+/* Error message */
+.fi-fo-field-wrp-error-message {
+    color: #dc2626 !important;
+    font-weight: 500 !important;
+    font-size: 1rem !important;
+    margin-top: 0.5rem !important;
+}
+
+/* Section styling */
+.fi-section-content-ctn {
+    background-color: #d3d3d3 !important; /* lightgrey */
+    padding: 1.5rem !important;
+    border-radius: 0.5rem !important;
+}
+.fi-section-content {
+    background-color: white !important;
+    border-radius: 0.5rem !important;
+    padding: 1.5rem !important;
+}
+.fi-section {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Previous step button */
+button[type="button"].fi-btn-color-gray {
+    background-color: white !important;
+    color: #007a52 !important;
+    --c-400: none !important;
+    --c-500: none !important;
+    --c-600: none !important;
+    border: none !important;
+    cursor: pointer;
+}
+button[type="button"].fi-btn-color-gray:hover {
+    background-color: white !important;
+    color: #007a52 !important;
+}
+
+/* ========================================
+   GSD FINAL PASS - DESIGN COMUNI WIZARD UX
+   Runtime target: Filament wizard inside Sixteen Design Comuni pages.
+   Keep this block last: older imported parity chunks must not override it.
+   Scope must remain component/theme-level; never use module/domain hooks.
+======================================== */

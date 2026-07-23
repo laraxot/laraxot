@@ -1,0 +1,19 @@
+/* Fix for wizard step visibility issue */
+.wizard-dc-form-shell .fi-sc-wizard-step.fi-active {
+    display: block !important;
+}
+
+.wizard-dc-form-shell .fi-sc-wizard-step:not(.fi-active) {
+    display: none !important;
+}
+
+/* Ensure the form inside the active step is visible */
+.wizard-dc-form-shell .fi-sc-wizard-step.fi-active form {
+    display: block !important;
+}
+
+/* Also ensure direct grid children are handled */
+.wizard-dc-form-shell .fi-sc-wizard > .fi-sc.fi-grid.fi-active,
+.wizard-dc-form-shell .fi-sc-wizard > .fi-grid.fi-active {
+    display: block !important;
+}

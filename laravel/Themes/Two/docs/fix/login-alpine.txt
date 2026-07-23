@@ -1,0 +1,24 @@
+# Fix: $wire is not defined + Multiple instances of Alpine (login page)
+
+## Sintomi
+- Alpine Expression Error: $wire is not defined
+- Expression: filamentSchemaComponent({ path: 'data.email', containerPath: 'data', $wire })
+- Detected multiple instances of Alpine running
+- Uncaught ReferenceError: $wire is not defined
+
+## Causa root
+1. **Alpine duplicato**: app.js importava alpine.js che chiamava Alpine.start(), creando una seconda istanza. Livewire/Filament fornisce già Alpine.
+2. **Contesto sbagliato**: I componenti Filament (TextInput, Checkbox) usano filamentSchemaComponent che richiede $wire (riferimento al componente Livewire). Con due istanze Alpine, i form venivano inizializzati nel contesto sbagliato, senza $wire.
+
+## Soluzione
+1. **Rimuovere** l'import di alpine.js da resources/js/app.js. Non caricare Alpine nel tema.
+2. **Aggiungere** @livewireScripts prima di @filamentScripts nel layout base (usato dalla pagina login).
+3. **Ordine script**: @livewireScripts → @filamentScripts → @vite(app.js)
+
+## Regola architetturale
+- Alpine è fornito da Livewire/Filament. MAI importarlo in app.js né caricarlo da CDN.
+- Layout con Livewire widget (LoginWidget, ecc.) deve avere @livewireScripts prima di @filamentScripts.
+
+## Riferimenti
+- [layout.txt](layout.txt) - Alpine e asset tema
+- [login.txt](login.txt) - Fix login widget

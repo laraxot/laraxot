@@ -1,0 +1,313 @@
+{
+  "metadata": {
+    "generatedAt": "2026-04-03T13:13:44.904Z",
+    "totalPages": 54,
+    "assessmentMethod": "Visual height comparison (Playwright)"
+  },
+  "priority_phases": [
+    {
+      "phase": "🔴 CRITICAL - Immediate (Week 1)",
+      "description": "100% visual parity - Minimal/no CSS fixes needed. Quick wins to build momentum.",
+      "pages": [
+        {
+          "rank": 1,
+          "page": "persona",
+          "parity": 100,
+          "diff": 0,
+          "localHeight": 1080,
+          "refHeight": 1080,
+          "effort": "trivial",
+          "notes": "Already identical - verify styling only"
+        }
+      ]
+    },
+    {
+      "phase": "🟠 HIGH - Immediate (Week 1)",
+      "description": "95-99% visual parity - Very small differences, CSS-only fixes.",
+      "pages": [
+        {
+          "rank": 2,
+          "page": "appuntamento-01-ufficio",
+          "parity": 99,
+          "diff": 16,
+          "effort": "minimal",
+          "notes": "16px diff - likely single spacing adjustment"
+        },
+        {
+          "rank": 3,
+          "page": "risultati-ricerca",
+          "parity": 98,
+          "diff": 90,
+          "effort": "low",
+          "notes": "90px diff - check card spacing and margins"
+        },
+        {
+          "rank": 4,
+          "page": "assistenza-02-conferma",
+          "parity": 97,
+          "diff": 64,
+          "effort": "low",
+          "notes": "64px diff - form spacing issue"
+        },
+        {
+          "rank": 5,
+          "page": "segnalazione-01-privacy",
+          "parity": 97,
+          "diff": 60,
+          "effort": "low",
+          "notes": "60px diff - form spacing"
+        },
+        {
+          "rank": 6,
+          "page": "domande-frequenti",
+          "parity": 96,
+          "diff": 121,
+          "effort": "low",
+          "notes": "121px diff - FAQ accordion spacing"
+        },
+        {
+          "rank": 7,
+          "page": "assistenza-01-dati",
+          "parity": 95,
+          "diff": 162,
+          "effort": "low",
+          "notes": "162px diff - multi-step form spacing"
+        }
+      ]
+    },
+    {
+      "phase": "🟡 MEDIUM-HIGH (Week 2)",
+      "description": "90-94% visual parity - Minor CSS adjustments needed.",
+      "pages": [
+        {
+          "rank": 8,
+          "page": "segnalazione-dettaglio",
+          "parity": 93,
+          "diff": 302,
+          "effort": "medium",
+          "notes": "302px diff - content sections spacing"
+        },
+        {
+          "rank": 9,
+          "page": "homepage",
+          "parity": 92,
+          "diff": 350,
+          "effort": "medium",
+          "notes": "350px diff - already partially fixed in Wave 3"
+        },
+        {
+          "rank": 10,
+          "page": "appuntamento-04-richiedente-autenticato",
+          "parity": 92,
+          "diff": 147,
+          "effort": "medium",
+          "notes": "147px diff - form field styling"
+        },
+        {
+          "rank": 11,
+          "page": "appuntamento-04-richiedente",
+          "parity": 91,
+          "diff": 181,
+          "effort": "medium",
+          "notes": "181px diff - form styling variant"
+        }
+      ]
+    },
+    {
+      "phase": "🟢 MEDIUM (Week 2-3)",
+      "description": "85-89% visual parity - Moderate CSS work required.",
+      "pages": [
+        {
+          "rank": 12,
+          "page": "argomenti",
+          "parity": 89,
+          "diff": 412,
+          "effort": "medium",
+          "notes": "412px diff - topic listing layout"
+        },
+        {
+          "rank": 13,
+          "page": "appuntamento-03-dettagli",
+          "parity": 87,
+          "diff": 261,
+          "effort": "medium",
+          "notes": "261px diff - appointment details form"
+        },
+        {
+          "rank": 14,
+          "page": "appuntamento-06-conferma",
+          "parity": 87,
+          "diff": 385,
+          "effort": "medium",
+          "notes": "385px diff - summary/confirmation layout"
+        },
+        {
+          "rank": 15,
+          "page": "ticket-list",
+          "parity": 85,
+          "diff": 490,
+          "effort": "medium",
+          "notes": "490px diff - list layout and item spacing"
+        }
+      ]
+    },
+    {
+      "phase": "⚪ MEDIUM-LOW (Week 3+)",
+      "description": "80-84% visual parity - Requires investigation + CSS work.",
+      "pages": [
+        {
+          "rank": 16,
+          "page": "segnalazione-04-conferma",
+          "parity": 80,
+          "diff": 423,
+          "effort": "medium-high",
+          "notes": "423px diff - form summary page"
+        }
+      ]
+    },
+    {
+      "phase": "🔵 BACKLOG - Investigation Needed",
+      "description": "<80% parity - Likely structural issues or incomplete pages.",
+      "categories": [
+        {
+          "name": "List/Pagination Issues (17-43% parity)",
+          "effort": "high",
+          "pages": [
+            {
+              "page": "lista-risorse",
+              "parity": 78,
+              "diff": 1031
+            },
+            {
+              "page": "documenti-dati",
+              "parity": 72,
+              "diff": 1012
+            },
+            {
+              "page": "argomento",
+              "parity": 71,
+              "diff": 1057
+            },
+            {
+              "page": "lista-categorie",
+              "parity": 43,
+              "diff": 1496
+            },
+            {
+              "page": "lista-risorse-categorie",
+              "parity": 38,
+              "diff": 2760
+            }
+          ],
+          "notes": "Missing pagination UI, different list layouts"
+        },
+        {
+          "name": "Detail Pages (37-46% parity)",
+          "effort": "high",
+          "pages": [
+            {
+              "page": "pagamento-dettaglio",
+              "parity": 46,
+              "diff": 798
+            },
+            {
+              "page": "novita-dettaglio",
+              "parity": 37,
+              "diff": 1729
+            },
+            {
+              "page": "servizio-dettaglio",
+              "parity": 37,
+              "diff": 2799
+            }
+          ],
+          "notes": "Missing detail content, different layouts"
+        },
+        {
+          "name": "Complex/Multi-step Pages (4-17% parity)",
+          "effort": "very-high",
+          "pages": [
+            {
+              "page": "servizi-categoria",
+              "parity": 17,
+              "diff": 2661
+            },
+            {
+              "page": "prenotazione-appuntamento",
+              "parity": 4,
+              "diff": 1998,
+              "notes": "Form wizard - step 1 only shown?"
+            },
+            {
+              "page": "richiesta-assistenza",
+              "parity": 4,
+              "diff": 1998,
+              "notes": "Form wizard - step 1 only shown?"
+            },
+            {
+              "page": "segnalazione-disservizio",
+              "parity": 4,
+              "diff": 1998,
+              "notes": "Form wizard - step 1 only shown?"
+            }
+          ],
+          "notes": "Multi-step forms - each step rendered as separate 1878px container"
+        },
+        {
+          "name": "Completely Different (0% parity)",
+          "effort": "critical",
+          "pages": [
+            {
+              "page": "evento-dettaglio",
+              "parity": 0,
+              "diff": 6685,
+              "notes": "Reference 8563px, Local 1878px - missing content?"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "estimated_timeline": {
+    "phase_1_critical": {
+      "duration": "1 day",
+      "pages": 1,
+      "effort": "trivial"
+    },
+    "phase_2_high": {
+      "duration": "2-3 days",
+      "pages": 6,
+      "effort": "minimal to low"
+    },
+    "phase_3_medium_high": {
+      "duration": "3-4 days",
+      "pages": 4,
+      "effort": "medium"
+    },
+    "phase_4_medium": {
+      "duration": "4-5 days",
+      "pages": 5,
+      "effort": "medium"
+    },
+    "phase_5_backlog": {
+      "duration": "2+ weeks",
+      "pages": 38,
+      "effort": "high to critical",
+      "notes": "Requires investigation, possible template/data changes"
+    },
+    "total_estimate": "3-4 weeks for all pages"
+  },
+  "success_criteria": {
+    "phase_1_complete": "1 page tested and verified",
+    "phase_2_complete": "6 pages at 95%+ CSS parity",
+    "phase_3_complete": "4 pages at 90%+ CSS parity",
+    "milestone_1_done": "All top 15 pages visually identical (50% of conversion complete)",
+    "full_conversion": "All 54 pages at 95%+ visual parity"
+  },
+  "notes": {
+    "quick_wins": "Phases 1-4 (11 pages total) can be completed in parallel by multiple developers",
+    "form_wizards": "prenotazione, richiesta-assistenza, segnalazione have special structure - each step is its own page template",
+    "investigation_needed": "38 pages <80% parity need detailed analysis before CSS work begins",
+    "recommendation": "Focus on Phase 1-4 for quick wins, then tackle Phase 5 with deeper architectural understanding"
+  }
+}

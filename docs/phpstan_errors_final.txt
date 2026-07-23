@@ -1,0 +1,180 @@
+Note: Using configuration file /var/www/_bases/base_techplanner_fila4_mono/laravel/phpstan.neon.
+    0/3905 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%[1G[2K 3905/3905 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+ ------ ----------------------------------------------------------------------- 
+  Line   Cms/app/Models/Conf.php                                                
+ ------ ----------------------------------------------------------------------- 
+  43     Method Modules\Cms\Models\Conf::getRows() should return array<int, ar  
+         ray{id: int, name: string}> but returns array.                         
+         🪪  return.type                                                        
+         ✏️  Cms/app/Models/Conf.php                                            
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   Cms/app/Models/Traits/HasBlocks.php (in context of class               
+         Modules\Cms\Models\Section)                                            
+ ------ ----------------------------------------------------------------------- 
+  32     Cannot call method all() on array<Modules\Cms\Datas\BlockData>.        
+         🪪  method.nonObject                                                   
+         ✏️  Cms/app/Models/Traits/HasBlocks.php                                
+  32     Method Modules\Cms\Models\Section::getBlocks() should return array<in  
+         t, Modules\Cms\Datas\BlockData> but returns mixed.                     
+         🪪  return.type                                                        
+         ✏️  Cms/app/Models/Traits/HasBlocks.php                                
+  50     Method Modules\Cms\Models\Section::compile() should return array<stri  
+         ng, mixed> but returns array.                                          
+         🪪  return.type                                                        
+         ✏️  Cms/app/Models/Traits/HasBlocks.php                                
+  50     Variable $result in PHPDoc tag @var does not exist.                    
+         🪪  varTag.variableNotFound                                            
+         ✏️  Cms/app/Models/Traits/HasBlocks.php                                
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------- 
+  Line   Cms/app/View/Composers/ThemeComposer.php                           
+ ------ ------------------------------------------------------------------- 
+  33     Method Modules\Cms\View\Composers\ThemeComposer::getMenu() should  
+         return array<string, mixed>|null but returns array<mixed, mixed>.  
+         🪪  return.type                                                    
+         ✏️  Cms/app/View/Composers/ThemeComposer.php                       
+  33     Variable $result in PHPDoc tag @var does not exist.                
+         🪪  varTag.variableNotFound                                        
+         ✏️  Cms/app/View/Composers/ThemeComposer.php                       
+ ------ ------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   Cms/generate_business_data.php                                         
+ ------ ----------------------------------------------------------------------- 
+  17     Cannot call method make() on mixed.                                    
+         🪪  method.nonObject                                                   
+         ✏️  Cms/generate_business_data.php                                     
+  18     Cannot call method bootstrap() on mixed.                               
+         🪪  method.nonObject                                                   
+         ✏️  Cms/generate_business_data.php                                     
+  43     Argument of an invalid type mixed supplied for foreach, only           
+         iterables are supported.                                               
+         🪪  foreach.nonIterable                                                
+         ✏️  Cms/generate_business_data.php                                     
+  44     Parameter #2 $modelName of method                                      
+         BusinessDataGenerator::generateModelRecords() expects string, mixed    
+         given.                                                                 
+         🪪  argument.type                                                      
+         ✏️  Cms/generate_business_data.php                                     
+  63     Cannot access offset string on mixed.                                  
+         🪪  offsetAccess.nonOffsetAccessible                                   
+         ✏️  Cms/generate_business_data.php                                     
+  77     Cannot access offset string on mixed.                                  
+         🪪  offsetAccess.nonOffsetAccessible                                   
+         ✏️  Cms/generate_business_data.php                                     
+  84     Cannot call method count() on mixed.                                   
+         🪪  method.nonObject                                                   
+         ✏️  Cms/generate_business_data.php                                     
+  84     Cannot call method create() on mixed.                                  
+         🪪  method.nonObject                                                   
+         ✏️  Cms/generate_business_data.php                                     
+  89     Cannot access offset string on mixed.                                  
+         🪪  offsetAccess.nonOffsetAccessible                                   
+         ✏️  Cms/generate_business_data.php                                     
+  96     Cannot access offset string on mixed.                                  
+         🪪  offsetAccess.nonOffsetAccessible                                   
+         ✏️  Cms/generate_business_data.php                                     
+  104    Cannot access offset string on mixed.                                  
+         🪪  offsetAccess.nonOffsetAccessible                                   
+         ✏️  Cms/generate_business_data.php                                     
+  123    Argument of an invalid type mixed supplied for foreach, only           
+         iterables are supported.                                               
+         🪪  foreach.nonIterable                                                
+         ✏️  Cms/generate_business_data.php                                     
+  124    Cannot access offset 'status' on mixed.                                
+         🪪  offsetAccess.nonOffsetAccessible                                   
+         ✏️  Cms/generate_business_data.php                                     
+  131    Part $modelName (mixed) of encapsed string cannot be cast to string.   
+         🪪  encapsedStringPart.nonString                                       
+         ✏️  Cms/generate_business_data.php                                     
+  133    Cannot access offset 'status' on mixed.                                
+         🪪  offsetAccess.nonOffsetAccessible                                   
+         ✏️  Cms/generate_business_data.php                                     
+  134    Cannot access offset 'count' on mixed.                                 
+         🪪  offsetAccess.nonOffsetAccessible                                   
+         ✏️  Cms/generate_business_data.php                                     
+  134    Part $result['count'] (mixed) of encapsed string cannot be cast to     
+         string.                                                                
+         🪪  encapsedStringPart.nonString                                       
+         ✏️  Cms/generate_business_data.php                                     
+  136    Binary operation "+=" between (float|int) and mixed results in an      
+         error.                                                                 
+         🪪  assignOp.invalid                                                   
+         ✏️  Cms/generate_business_data.php                                     
+  136    Cannot access offset 'count' on mixed.                                 
+         🪪  offsetAccess.nonOffsetAccessible                                   
+         ✏️  Cms/generate_business_data.php                                     
+  138    Parameter #3 $subject of function str_replace expects array<string>|s  
+         tring, mixed given.                                                    
+         🪪  argument.type                                                      
+         ✏️  Cms/generate_business_data.php                                     
+  165    Argument of an invalid type mixed supplied for foreach, only           
+         iterables are supported.                                               
+         🪪  foreach.nonIterable                                                
+         ✏️  Cms/generate_business_data.php                                     
+  166    Cannot access offset 'command' on mixed.                               
+         🪪  offsetAccess.nonOffsetAccessible                                   
+         ✏️  Cms/generate_business_data.php                                     
+  167    Part $modelName (mixed) of encapsed string cannot be cast to string.   
+         🪪  encapsedStringPart.nonString                                       
+         ✏️  Cms/generate_business_data.php                                     
+  168    Binary operation "." between mixed and "\n" results in an error.       
+         🪪  binaryOp.invalid                                                   
+         ✏️  Cms/generate_business_data.php                                     
+  169    Part $modelName (mixed) of encapsed string cannot be cast to string.   
+         🪪  encapsedStringPart.nonString                                       
+         ✏️  Cms/generate_business_data.php                                     
+  171    Binary operation "." between non-falsy-string and mixed results in an  
+         error.                                                                 
+         🪪  binaryOp.invalid                                                   
+         ✏️  Cms/generate_business_data.php                                     
+  171    Cannot access offset 'status' on mixed.                                
+         🪪  offsetAccess.nonOffsetAccessible                                   
+         ✏️  Cms/generate_business_data.php                                     
+  171    Part $modelName (mixed) of encapsed string cannot be cast to string.   
+         🪪  encapsedStringPart.nonString                                       
+         ✏️  Cms/generate_business_data.php                                     
+ ------ ----------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------- 
+  Line   Cms/populate_database_comprehensive.php                             
+ ------ -------------------------------------------------------------------- 
+  35     Cannot call method bootstrap() on mixed.                            
+         🪪  method.nonObject                                                
+         ✏️  Cms/populate_database_comprehensive.php                         
+  35     Cannot call method make() on mixed.                                 
+         🪪  method.nonObject                                                
+         ✏️  Cms/populate_database_comprehensive.php                         
+  81     Cannot call method create() on mixed.                               
+         🪪  method.nonObject                                                
+         ✏️  Cms/populate_database_comprehensive.php                         
+  117    Cannot call method create() on mixed.                               
+         🪪  method.nonObject                                                
+         ✏️  Cms/populate_database_comprehensive.php                         
+  119    Cannot call method create() on mixed.                               
+         🪪  method.nonObject                                                
+         ✏️  Cms/populate_database_comprehensive.php                         
+  194    Cannot call method create() on mixed.                               
+         🪪  method.nonObject                                                
+         ✏️  Cms/populate_database_comprehensive.php                         
+  233    Cannot access offset 'status' on mixed.                             
+         🪪  offsetAccess.nonOffsetAccessible                                
+         ✏️  Cms/populate_database_comprehensive.php                         
+  240    Cannot access offset 'status' on mixed.                             
+         🪪  offsetAccess.nonOffsetAccessible                                
+         ✏️  Cms/populate_database_comprehensive.php                         
+  241    Cannot access offset 'count' on mixed.                              
+         🪪  offsetAccess.nonOffsetAccessible                                
+         ✏️  Cms/populate_database_comprehensive.php                         
+  241    Part $result['count'] (mixed) of encapsed string cannot be cast to  
+         string.                                                             
+         🪪  encapsedStringPart.nonString                                    
+         ✏️  Cms/populate_database_comprehensive.php                         
+ ------ -------------------------------------------------------------------- 
+
+ [ERROR] Found 45 errors                                                        
+

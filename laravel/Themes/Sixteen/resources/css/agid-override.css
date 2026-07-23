@@ -1,0 +1,202 @@
+/* Override completo per Design System AGID */
+
+/* Header principale con colore AGID */
+.header-main {
+    background-color: var(--italia-blue-500) !important;
+}
+
+/* Bottoni primari */
+.btn-primary,
+.filament-button-primary,
+[data-filament-button="primary"] {
+    background-color: var(--italia-blue-500) !important;
+    border-color: var(--italia-blue-500) !important;
+}
+
+.btn-primary:hover,
+.filament-button-primary:hover,
+[data-filament-button="primary"]:hover {
+    background-color: var(--italia-blue-600) !important;
+    border-color: var(--italia-blue-600) !important;
+}
+
+/* Bottoni successo */
+.btn-success,
+.filament-button-success,
+[data-filament-button="success"] {
+    background-color: var(--italia-green-500) !important;
+    border-color: var(--italia-green-500) !important;
+}
+
+.btn-success:hover,
+.filament-button-success:hover,
+[data-filament-button="success"]:hover {
+    background-color: var(--italia-green-600) !important;
+    border-color: var(--italia-green-600) !important;
+}
+
+/* Bottoni pericolo */
+.btn-danger,
+.filament-button-danger,
+[data-filament-button="danger"] {
+    background-color: var(--italia-red-500) !important;
+    border-color: var(--italia-red-500) !important;
+}
+
+.btn-danger:hover,
+.filament-button-danger:hover,
+[data-filament-button="danger"]:hover {
+    background-color: var(--italia-red-600) !important;
+    border-color: var(--italia-red-600) !important;
+}
+
+/* Bottoni avviso */
+.btn-warning,
+.filament-button-warning,
+[data-filament-button="warning"] {
+    background-color: var(--italia-yellow-500) !important;
+    border-color: var(--italia-yellow-500) !important;
+}
+
+.btn-warning:hover,
+.filament-button-warning:hover,
+[data-filament-button="warning"]:hover {
+    background-color: var(--italia-yellow-600) !important;
+    border-color: var(--italia-yellow-600) !important;
+}
+
+/* Input focus */
+input:focus,
+select:focus,
+textarea:focus,
+.filament-input:focus,
+.filament-select:focus,
+.filament-textarea:focus {
+    border-color: var(--italia-blue-500) !important;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1) !important;
+}
+
+/* Link e navigazione */
+a,
+.filament-navigation-item,
+.nav-link {
+    color: var(--italia-blue-500) !important;
+}
+
+a:hover,
+.filament-navigation-item:hover,
+.nav-link:hover {
+    color: var(--italia-blue-600) !important;
+}
+
+/* Badge e alert */
+.badge-primary,
+.filament-badge-primary {
+    background-color: var(--italia-blue-100) !important;
+    color: var(--italia-blue-800) !important;
+}
+
+.badge-success,
+.filament-badge-success {
+    background-color: var(--italia-green-100) !important;
+    color: var(--italia-green-800) !important;
+}
+
+.badge-danger,
+.filament-badge-danger {
+    background-color: var(--italia-red-100) !important;
+    color: var(--italia-red-800) !important;
+}
+
+.badge-warning,
+.filament-badge-warning {
+    background-color: var(--italia-yellow-100) !important;
+    color: var(--italia-yellow-800) !important;
+}
+
+/* Alert */
+.alert-success {
+    background-color: var(--italia-green-50) !important;
+    border-color: var(--italia-green-200) !important;
+    color: var(--italia-green-800) !important;
+}
+
+.alert-danger {
+    background-color: var(--italia-red-50) !important;
+    border-color: var(--italia-red-200) !important;
+    color: var(--italia-red-800) !important;
+}
+
+.alert-warning {
+    background-color: var(--italia-yellow-50) !important;
+    border-color: var(--italia-yellow-200) !important;
+    color: var(--italia-yellow-800) !important;
+}
+
+.alert-info {
+    background-color: var(--italia-blue-50) !important;
+    border-color: var(--italia-blue-200) !important;
+    color: var(--italia-blue-800) !important;
+}
+
+/* Override Filament — verde PA (PaDesignColors), non blu istituzionale */
+.fi-btn-primary,
+.fi-btn.fi-btn-color-primary {
+    background-color: #007a52 !important;
+    border-color: #007a52 !important;
+    color: #ffffff !important;
+}
+
+.fi-btn-primary:hover,
+.fi-btn.fi-btn-color-primary:hover {
+    background-color: #006945 !important;
+    border-color: #006945 !important;
+    color: #ffffff !important;
+}
+
+.fi-input:focus {
+    border-color: #007a52 !important;
+    box-shadow: 0 0 0 3px rgba(0, 122, 82, 0.15) !important;
+}
+
+/* Override per Bootstrap Italia */
+.btn-primary {
+    background-color: var(--italia-blue-500) !important;
+    border-color: var(--italia-blue-500) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--italia-blue-600) !important;
+    border-color: var(--italia-blue-600) !important;
+}
+
+/* Override per header specifico */
+.it-header-wrapper {
+    background-color: var(--italia-blue-500) !important;
+}
+
+.it-header-center-wrapper {
+    background-color: var(--italia-blue-500) !important;
+}
+
+/* Override per form */
+.form-control:focus {
+    border-color: var(--italia-blue-500) !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.25) !important;
+}
+
+/* Override per card */
+.card-header {
+    background-color: var(--italia-blue-50) !important;
+    border-bottom-color: var(--italia-blue-200) !important;
+}
+
+/* Override per table */
+.table-primary {
+    background-color: var(--italia-blue-50) !important;
+}
+
+.table-primary th {
+    background-color: var(--italia-blue-100) !important;
+    color: var(--italia-blue-800) !important;
+}

@@ -1,0 +1,289 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Geo\Models;
+
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Collection;
+use Modules\Geo\Database\Factories\ComuneFactory;
+use Modules\Tenant\Models\Traits\SushiToJson;
+use Modules\Xot\Contracts\ProfileContract;
+
+/**
+ * Modello per i comuni italiani con Sushi.
+ *
+ * Implementa il pattern Facade per fornire un'interfaccia unificata a tutti i dati geografici:
+ * regioni, province, città, CAP, codici ISTAT, ecc.
+ * Tutti i dati sono estratti da file JSON e gestiti tramite Sushi.
+ *
+ * @property string|null                  $nome
+ * @property float|null                   $codice
+ * @property array<array-key, mixed>|null $zona
+ * @property array<array-key, mixed>|null $regione
+ * @property array<array-key, mixed>|null $provincia
+ * @property string|null                  $sigla
+ * @property string|null                  $codiceCatastale
+ * @property array<array-key, mixed>|null $cap
+ * @property int|null                     $popolazione
+ * @property int|null                     $id
+ * @property string|null                  $title
+ * @property string|null                  $slug
+ * @property string|null                  $content
+ * @property string|null                  $created_at
+ * @property string|null                  $updated_at
+ * @property string|null                  $created_by
+ * @property string|null                  $updated_by
+ * @property ProfileContract|null         $creator
+ * @property ProfileContract|null         $updater
+ *
+ * @method static Builder<static>|Comune newModelQuery()
+ * @method static Builder<static>|Comune newQuery()
+ * @method static Builder<static>|Comune query()
+ * @method static Builder<static>|Comune whereCap($value)
+ * @method static Builder<static>|Comune whereCodice($value)
+ * @method static Builder<static>|Comune whereCodiceCatastale($value)
+ * @method static Builder<static>|Comune whereContent($value)
+ * @method static Builder<static>|Comune whereCreatedAt($value)
+ * @method static Builder<static>|Comune whereCreatedBy($value)
+ * @method static Builder<static>|Comune whereId($value)
+ * @method static Builder<static>|Comune whereNome($value)
+ * @method static Builder<static>|Comune wherePopolazione($value)
+ * @method static Builder<static>|Comune whereProvincia($value)
+ * @method static Builder<static>|Comune whereRegione($value)
+ * @method static Builder<static>|Comune whereSigla($value)
+ * @method static Builder<static>|Comune whereSlug($value)
+ * @method static Builder<static>|Comune whereTitle($value)
+ * @method static Builder<static>|Comune whereUpdatedAt($value)
+ * @method static Builder<static>|Comune whereUpdatedBy($value)
+ * @method static Builder<static>|Comune whereZona($value)
+ *
+ * @property ProfileContract|null $deleter
+ *
+ * @method static ComuneFactory factory($count = null, $state = [])
+ *
+ * @property int|null    $altitudine
+ * @property string|null $codice_catastale
+ * @property float|null  $lat
+ * @property float|null  $lng
+ * @property string|null $sigla_provincia
+ * @property float|null  $superficie
+ * @property string|null $zona_altimetrica
+ *
+ * @method static Builder<static>|Comune whereAltitudine($value)
+ * @method static Builder<static>|Comune whereLat($value)
+ * @method static Builder<static>|Comune whereLng($value)
+ * @method static Builder<static>|Comune whereSiglaProvincia($value)
+ * @method static Builder<static>|Comune whereSuperficie($value)
+ * @method static Builder<static>|Comune whereZonaAltimetrica($value)
+ *
+ * @mixin \Eloquent
+ */
+class Comune extends BaseModel
+{
+    use SushiToJson;
+
+    public string $jsonDirectory = '';
+
+    /** @var array<int, string> */
+    public $translatable = [];
+
+    /** @var list<string> */
+    protected $fillable = [
+        'id',
+        'codice',
+        'nome',
+        'regione',
+        'provincia',
+        'sigla_provincia',
+        'cap',
+        'codice_catastale',
+        'popolazione',
+        'zona_altimetrica',
+        'altitudine',
+        'superficie',
+        'lat',
+        'lng',
+    ];
+
+    /** @var array<string, string> */
+    protected array $schema = [
+        'id' => 'integer',
+        'title' => 'json',
+        'slug' => 'string',
+        'content' => 'string',
+        'zona' => 'json',
+        'provincia' => 'json',
+        'regione' => 'json',
+        'cap' => 'json',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'created_by' => 'string',
+        'updated_by' => 'string',
+    ];
+
+    public function getJsonFile(): string
+    {
+        return module_path('Geo', 'resources/json/comuni.json');
+    }
+
+    /**
+     * @return array<int, array<string, mixed>>
+     */
+    public function getRows(): array
+    {
+        return $this->getSushiRows();
+    }
+
+    /**
+     * Get all regions.
+     *
+     * @return Collection<int, array<array-key, mixed>>
+     */
+    public static function getRegioni(): Collection
+    {
+        $regioni = [];
+
+        foreach (static::all() as $comune) {
+            $regione = $comune->regione;
+            if (! is_array($regione)) {
+                continue;
+            }
+
+            $regioni[] = $regione;
+        }
+
+        /** @var Collection<int, array<array-key, mixed>> $result */
+        $result = collect($regioni)
+            ->unique()
+            ->sort()
+            ->values();
+
+        return $result;
+    }
+
+    /**
+     * Get all provinces for a region.
+     *
+     * @return Collection<int, array<array-key, mixed>>
+     */
+    public static function getProvinceByRegione(string $regione): Collection
+    {
+        $province = [];
+
+        foreach (static::where('regione', $regione)->get() as $comune) {
+            $provincia = $comune->provincia;
+            if (! is_array($provincia)) {
+                continue;
+            }
+
+            $province[] = $provincia;
+        }
+
+        /** @var Collection<int, array<array-key, mixed>> $result */
+        $result = collect($province)
+            ->unique()
+            ->sort()
+            ->values();
+
+        return $result;
+    }
+
+    /**
+     * Get all comuni for a province.
+     *
+     * @return Collection<int, static>
+     */
+    public static function getComuniByProvincia(string $provincia): Collection
+    {
+        /** @var Collection<int, static> $comuni */
+        $comuni = static::where('provincia', $provincia)->orderBy('nome')->get();
+
+        return $comuni;
+    }
+
+    /**
+     * Find a comune by name (case insensitive).
+     *
+     * @param string $nome The name of the comune to find (case insensitive)
+     *
+     * @return static|null The found comune or null if not found
+     */
+    public static function findByNome(string $nome): ?self
+    {
+        /** @var static|null $comune */
+        $comune = static::all()
+            ->first(fn (self $item): bool => strtolower($item->nome ?? '') === strtolower($nome));
+
+        return $comune;
+    }
+
+    /**
+     * Find comuni by CAP code (partial match supported).
+     *
+     * @param string $cap The CAP code to search for
+     *
+     * @return Collection<int, static> Collection of matching comuni
+     */
+    public static function findByCap(string $cap): Collection
+    {
+        /** @var Collection<int, static> $comuni */
+        $comuni = static::where('cap', 'like', "%{$cap}%")->get();
+
+        return $comuni;
+    }
+
+    /**
+     * Find a city by ID.
+     *
+     * @return array<string, mixed>|null
+     */
+    public static function findComune(int $id): ?array
+    {
+        $comune = static::query()->where('id', $id)->first();
+
+        if (! $comune instanceof self) {
+            return null;
+        }
+
+        /** @var array<string, mixed> $data */
+        $data = [];
+        foreach ($comune->toArray() as $key => $value) {
+            if (! is_string($key)) {
+                continue;
+            }
+
+            $data[$key] = $value;
+        }
+
+        return $data;
+    }
+
+    /**
+     * Get the directory where Comune JSON files are stored.
+     */
+    public function getJsonDirectory(): string
+    {
+        return $this->jsonDirectory;
+    }
+
+    /**
+     * Set the directory where Comune JSON files are stored.
+     */
+    public function setJsonDirectory(string $directory): void
+    {
+        $this->jsonDirectory = $directory;
+    }
+
+    /** @return array<string, string>     */
+    #[\Override]
+    protected function casts(): array
+    {
+        return [
+            'regione' => 'array',
+            'zona' => 'array',
+            'provincia' => 'array',
+            'cap' => 'array',
+        ];
+    }
+}

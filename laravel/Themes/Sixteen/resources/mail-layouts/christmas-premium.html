@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>{{ subject }}</title>
+    
+    <style>
+        /* Base Reset */
+        body, table, td, p, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; }
+        
+        /* Premium Christmas Theme */
+        :root {
+            --premium-bg: #0A0E27; /* Deep night blue */
+            --premium-card: #1A1F3A;
+            --premium-gold: #D4AF37;
+            --premium-silver: #C0C0C0;
+            --premium-red: #B91C1C;
+            --premium-green: #14532D;
+            --premium-text: #F8FAFC;
+            --premium-text-light: #CBD5E1;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            background-color: var(--premium-bg);
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: var(--premium-text);
+        }
+
+        /* Premium Background Pattern - SVG Inline */
+        .premium-bg-pattern {
+            background-color: var(--premium-bg);
+            background-image: url('data:image/svg+xml;utf8,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="snowflakes" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23D4AF37" opacity="0.3"/><circle cx="30" cy="20" r="0.8" fill="%23C0C0C0" opacity="0.4"/><circle cx="50" cy="15" r="1.2" fill="%23D4AF37" opacity="0.25"/><circle cx="15" cy="40" r="0.9" fill="%23C0C0C0" opacity="0.35"/><circle cx="45" cy="45" r="1.1" fill="%23D4AF37" opacity="0.3"/></pattern></defs><rect width="100%" height="100%" fill="url(%23snowflakes)"/></svg>');
+            background-repeat: repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .email-wrapper {
+            width: 100%;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #0A0E27 0%, #1A1F3A 50%, #0A0E27 100%);
+            position: relative;
+        }
+
+        /* Animated Snow Overlay */
+        .snow-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .snowflake {
+            position: absolute;
+            color: #FFFFFF;
+            font-size: 12px;
+            opacity: 0;
+            animation: snowfall 12s infinite linear;
+        }
+
+        @keyframes snowfall {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px) translateX(0px);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh) translateX(20px);
+            }
+        }
+
+        .sf1 { left: 10%; animation-delay: 0s; animation-duration: 14s; }
+        .sf2 { left: 20%; animation-delay: 2s; animation-duration: 12s; }
+        .sf3 { left: 30%; animation-delay: 4s; animation-duration: 16s; }
+        .sf4 { left: 40%; animation-delay: 1s; animation-duration: 13s; }
+        .sf5 { left: 50%; animation-delay: 3s; animation-duration: 15s; }
+        .sf6 { left: 60%; animation-delay: 5s; animation-duration: 11s; }
+        .sf7 { left: 70%; animation-delay: 2.5s; animation-duration: 14s; }
+        .sf8 { left: 80%; animation-delay: 4.5s; animation-duration: 13s; }
+        .sf9 { left: 90%; animation-delay: 1.5s; animation-duration: 15s; }
+        .sf10 { left: 15%; animation-delay: 6s; animation-duration: 12s; }
+
+        .email-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, 
+                rgba(26, 31, 58, 0.98) 0%, 
+                rgba(45, 27, 78, 0.95) 100%);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 3px solid rgba(212, 175, 55, 0.6);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 
+                0 30px 80px rgba(0, 0, 0, 0.7),
+                0 15px 40px rgba(0, 0, 0, 0.5),
+                0 0 60px rgba(212, 175, 55, 0.4),
+                0 0 100px rgba(212, 175, 55, 0.2),
+                inset 0 2px 4px rgba(255, 255, 255, 0.1),
+                inset 0 -2px 4px rgba(212, 175, 55, 0.15);
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Animated premium gradient overlay */
+        .email-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.06) 0%,
+                rgba(192, 192, 192, 0.04) 25%,
+                rgba(27, 28, 60, 0.04) 50%,
+                rgba(192, 192, 192, 0.04) 75%,
+                rgba(212, 175, 55, 0.06) 100%);
+            background-size: 400% 400%;
+            animation: premium-gradient-flow 15s ease infinite;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.7;
+        }
+        
+        @keyframes premium-gradient-flow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .email-header {
+            padding: 56px 48px;
+            text-align: center;
+            background: linear-gradient(135deg, #1A1F3A 0%, #2D1B4E 50%, #1A1F3A 100%);
+            background-size: 200% 200%;
+            border-bottom: 4px solid var(--premium-gold);
+            position: relative;
+            overflow: hidden;
+            animation: premium-header-flow 12s ease infinite;
+            box-shadow: 
+                inset 0 0 80px rgba(212, 175, 55, 0.2),
+                inset 0 2px 0 rgba(255, 255, 255, 0.1),
+                0 4px 30px rgba(45, 27, 78, 0.4);
+        }
+        
+        @keyframes premium-header-flow {
+            0%, 100% { 
+                background-position: 0% 50%;
+                filter: brightness(1);
+            }
+            50% { 
+                background-position: 100% 50%;
+                filter: brightness(1.15);
+            }
+        }
+
+        .email-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            animation: premium-radial-glow 8s ease infinite;
+        }
+        
+        @keyframes premium-radial-glow {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        
+        /* Shimmer effect premium */
+        .email-header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(212, 175, 55, 0.2) 50%, transparent 70%);
+            animation: premium-shimmer 6s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes premium-shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .email-logo {
+            max-width: 180px;
+            height: auto;
+            margin: 0 auto 25px auto;
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.5));
+        }
+
+        .premium-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--premium-gold);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin: 0;
+            line-height: 1.1;
+            text-shadow: 
+                0 0 30px rgba(212, 175, 55, 0.7),
+                0 0 60px rgba(212, 175, 55, 0.4),
+                2px 2px 6px rgba(0, 0, 0, 0.9),
+                0 0 100px rgba(212, 175, 55, 0.2);
+            position: relative;
+            z-index: 2;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            animation: premium-title-glow 3s ease-in-out infinite;
+        }
+        
+        @keyframes premium-title-glow {
+            0%, 100% { 
+                filter: brightness(1);
+                text-shadow: 
+                    0 0 30px rgba(212, 175, 55, 0.7),
+                    0 0 60px rgba(212, 175, 55, 0.4),
+                    2px 2px 6px rgba(0, 0, 0, 0.9),
+                    0 0 100px rgba(212, 175, 55, 0.2);
+            }
+            50% { 
+                filter: brightness(1.2);
+                text-shadow: 
+                    0 0 40px rgba(212, 175, 55, 0.9),
+                    0 0 80px rgba(212, 175, 55, 0.6),
+                    2px 2px 8px rgba(0, 0, 0, 0.9),
+                    0 0 120px rgba(212, 175, 55, 0.4);
+            }
+        }
+
+        .premium-subtitle {
+            font-size: 16px;
+            color: var(--premium-silver);
+            margin-top: 10px;
+            letter-spacing: 2px;
+            font-style: italic;
+        }
+
+        .gold-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--premium-gold), transparent);
+            margin: 30px 0;
+            width: 100%;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .email-content {
+            padding: 56px 48px;
+            color: var(--premium-text);
+            font-size: 18px;
+            line-height: 1.95;
+            letter-spacing: 0.02em;
+            background: linear-gradient(180deg, 
+                var(--premium-card) 0%, 
+                #1E2442 100%);
+            position: relative;
+            z-index: 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .email-content::after {
+            content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"><path fill="%23D4AF37" opacity="0.15" d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/></svg>');
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            opacity: 1;
+            z-index: 1;
+            transform: rotate(-15deg);
+        }
+        
+        /* Additional SVG decorations */
+        .svg-decoration {
+            position: absolute;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,10 L61,35 L88,40 L69,59 L73,86 L50,73 L27,86 L31,59 L12,40 L39,35 Z" fill="%23D4AF37" opacity="0.08"/><circle cx="50" cy="50" r="8" fill="%23F7E7CE" opacity="0.06"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.05;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .svg-top-left {
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            transform: rotate(45deg);
+        }
+        
+        .svg-bottom-right {
+            bottom: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            transform: rotate(135deg);
+        }
+        
+        /* Additional SVG decorations */
+        .svg-decoration {
+            position: absolute;
+            opacity: 0.05;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .svg-top-left {
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            transform: rotate(45deg);
+        }
+        
+        .svg-bottom-right {
+            bottom: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            transform: rotate(135deg);
+        }
+
+        .email-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--premium-gold), transparent);
+            opacity: 0.6;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* Premium texture overlay */
+        .email-content::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 30%, rgba(212, 175, 55, 0.06) 0%, transparent 60%),
+                radial-gradient(circle at 75% 70%, rgba(192, 192, 192, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        h1, h2, h3 {
+            color: var(--premium-gold);
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            text-shadow: 
+                0 2px 10px rgba(212, 175, 55, 0.5),
+                0 0 20px rgba(212, 175, 55, 0.3);
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+        }
+        
+        h3 {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .premium-notice {
+            border: 3px solid rgba(212, 175, 55, 0.7);
+            padding: 40px 36px;
+            margin: 36px 0;
+            text-align: center;
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.15) 0%, 
+                rgba(192, 192, 192, 0.08) 50%,
+                rgba(212, 175, 55, 0.15) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 
+                0 15px 40px rgba(212, 175, 55, 0.3),
+                0 6px 20px rgba(0, 0, 0, 0.2),
+                inset 0 2px 6px rgba(255, 255, 255, 0.15),
+                inset 0 -2px 6px rgba(212, 175, 55, 0.1),
+                0 0 40px rgba(212, 175, 55, 0.25);
+            position: relative;
+        }
+        
+        /* Animated premium glow */
+        .premium-notice::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.1) 0%,
+                transparent 40%,
+                transparent 60%,
+                rgba(212, 175, 55, 0.08) 100%);
+            background-size: 200% 200%;
+            animation: premium-notice-glow 8s ease infinite;
+            border-radius: 9px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        @keyframes premium-notice-glow {
+            0%, 100% { background-position: 0% 50%; opacity: 0.6; }
+            50% { background-position: 100% 50%; opacity: 0.9; }
+        }
+
+        .premium-notice::before {
+            content: '✨';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+            background: var(--premium-card);
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 20px 48px;
+            background: linear-gradient(135deg, var(--premium-gold) 0%, #B8941F 100%);
+            background-size: 200% 200%;
+            color: var(--premium-bg) !important;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 17px;
+            letter-spacing: 2.5px;
+            border: 2px solid rgba(212, 175, 55, 0.8);
+            border-radius: 8px;
+            box-shadow: 
+                0 6px 20px rgba(212, 175, 55, 0.5),
+                0 2px 8px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            animation: premium-btn-gradient 4s ease infinite;
+        }
+        
+        @keyframes premium-btn-gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #B8941F 0%, var(--premium-gold) 100%);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 
+                0 10px 30px rgba(212, 175, 55, 0.7),
+                0 4px 15px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                0 0 40px rgba(212, 175, 55, 0.4);
+        }
+        
+        .btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+        
+        .btn:active {
+            transform: translateY(-1px) scale(0.98);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
+        }
+        
+        /* Social Icons */
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            fill: var(--premium-gold);
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+        }
+        
+        .social-icon:hover {
+            fill: #FFD700;
+            transform: scale(1.15);
+        }
+
+        .email-footer {
+            background-color: #0A0E27;
+            padding: 35px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--premium-text-light);
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .email-footer a { 
+            color: var(--premium-gold); 
+            text-decoration: none; 
+            border-bottom: 1px dotted var(--premium-gold);
+        }
+
+        .email-footer a:hover {
+            border-bottom: 1px solid var(--premium-gold);
+        }
+
+        /* Twinkling Stars */
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--premium-gold);
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle 3s infinite ease-in-out;
+            box-shadow: 0 0 6px var(--premium-gold);
+        }
+
+        @keyframes twinkle { 
+            0%, 100% { opacity: 0; transform: scale(1); } 
+            50% { opacity: 1; transform: scale(1.3); box-shadow: 0 0 12px var(--premium-gold); } 
+        }
+
+        .star1 { top: 15%; left: 25%; animation-delay: 0s; }
+        .star2 { top: 25%; left: 75%; animation-delay: 1s; }
+        .star3 { top: 60%; left: 15%; animation-delay: 2s; }
+        .star4 { top: 70%; left: 85%; animation-delay: 1.5s; }
+        .star5 { top: 40%; left: 50%; animation-delay: 0.5s; }
+
+        /* SVG Animated Decorations - Premium Luxury 2025 */
+        .svg-star {
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            opacity: 0;
+            animation: svg-premium-twinkle 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes svg-premium-twinkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0.7) rotate(0deg);
+                filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.6));
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.45) rotate(180deg);
+                filter: drop-shadow(0 0 18px rgba(212, 175, 55, 1));
+            }
+        }
+
+        .svg-star:nth-child(1) { top: 20%; left: 14%; animation-delay: 0s; }
+        .svg-star:nth-child(2) { top: 32%; right: 18%; animation-delay: 2s; }
+        .svg-star:nth-child(3) { top: 68%; left: 12%; animation-delay: 3s; }
+        .svg-star:nth-child(4) { top: 78%; right: 16%; animation-delay: 1.5s; }
+
+        .svg-snowflake {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            opacity: 0.9;
+            animation: svg-premium-snowfall linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes svg-premium-snowfall {
+            0% {
+                transform: translateY(-10%) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) translateX(38px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .svg-snowflake:nth-child(1) { left: 10%; animation-duration: 14s; animation-delay: 0s; }
+        .svg-snowflake:nth-child(2) { left: 22%; animation-duration: 16s; animation-delay: 3s; }
+        .svg-snowflake:nth-child(3) { left: 38%; animation-duration: 13s; animation-delay: 5s; }
+        .svg-snowflake:nth-child(4) { left: 58%; animation-duration: 15s; animation-delay: 2s; }
+        .svg-snowflake:nth-child(5) { left: 78%; animation-duration: 17s; animation-delay: 4s; }
+        .svg-snowflake:nth-child(6) { left: 92%; animation-duration: 14s; animation-delay: 6s; }
+
+        .svg-christmas-tree {
+            display: inline-block;
+            width: 54px;
+            height: 62px;
+            animation: svg-premium-tree-sway 6s ease-in-out infinite;
+        }
+
+        @keyframes svg-premium-tree-sway {
+            0%, 100% {
+                transform: rotate(-2deg);
+                filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8));
+            }
+            50% {
+                transform: rotate(2deg);
+                filter: drop-shadow(0 0 24px rgba(212, 175, 55, 1));
+            }
+        }
+
+        /* Webkit support for SVG animations */
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            .svg-star {
+                -webkit-animation: svg-premium-twinkle 6s ease-in-out infinite;
+            }
+            .svg-snowflake {
+                -webkit-animation: svg-premium-snowfall linear infinite;
+            }
+            .svg-christmas-tree {
+                -webkit-animation: svg-premium-tree-sway 6s ease-in-out infinite;
+            }
+        }
+
+        /* Accessibility - Prefers Reduced Motion (WCAG 2.1 AA Enhanced) */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .snowflake, .star,
+            .svg-star, .svg-snowflake, .svg-christmas-tree,
+            .svg-decoration {
+                animation: none !important;
+                opacity: 0.5 !important;
+            }
+            
+            .email-header::before,
+            .email-header::after,
+            .email-container::after,
+            .premium-notice::after {
+                animation: none !important;
+                display: none !important;
+            }
+            
+            .btn:hover {
+                transform: none !important;
+            }
+            
+            .btn::before {
+                display: none !important;
+            }
+        }
+
+        /* Responsive - Mobile-First Optimization */
+        @media screen and (max-width: 600px) {
+            .email-container { 
+                border-radius: 0 !important; 
+                border-left: none !important;
+                border-right: none !important;
+                max-width: 100% !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+            }
+            
+            .email-container::after {
+                display: none !important;
+                animation: none !important;
+            }
+            
+            .email-content, .email-header { 
+                padding: 32px 24px !important; 
+            }
+            
+            .email-header::before,
+            .email-header::after {
+                display: none !important;
+                animation: none !important;
+            }
+            
+            .premium-title {
+                font-size: 28px !important;
+                letter-spacing: 2px !important;
+            }
+            
+            h1 {
+                font-size: 26px !important;
+            }
+            
+            h2 {
+                font-size: 22px !important;
+            }
+            
+            .premium-notice {
+                padding: 28px 20px !important;
+                margin: 24px 0 !important;
+            }
+            
+            .premium-notice::after {
+                display: none !important;
+                animation: none !important;
+            }
+            
+            .snowflake {
+                animation: none !important;
+                opacity: 0 !important;
+                display: none !important;
+            }
+            
+            .star {
+                animation: none !important;
+                opacity: 0.5 !important;
+            }
+            
+            .svg-star, .svg-snowflake, .svg-christmas-tree,
+            .svg-decoration {
+                display: none !important;
+            }
+            
+            .btn {
+                display: block !important;
+                width: 100% !important;
+                padding: 16px 24px !important;
+                font-size: 16px !important;
+                margin: 16px 0 !important;
+            }
+            
+            /* Rimuovi backdrop-filter su mobile (performance) */
+            .email-container,
+            .premium-notice {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+        }
+        
+        /* Dark Mode Optimization Avanzato */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, #000000 0%, #0A0E1A 50%, #000000 100%) !important;
+                background-size: 200% 200%;
+                animation: premium-dark-bg 20s ease infinite;
+            }
+            
+            @keyframes premium-dark-bg {
+                0%, 100% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+            }
+
+            .email-container {
+                background: linear-gradient(135deg, 
+                    rgba(10, 14, 39, 0.98) 0%, 
+                    rgba(0, 0, 0, 0.95) 100%) !important;
+                backdrop-filter: blur(18px);
+                -webkit-backdrop-filter: blur(18px);
+                box-shadow:
+                    0 30px 80px rgba(0, 0, 0, 0.9),
+                    0 15px 40px rgba(0, 0, 0, 0.7),
+                    0 0 70px rgba(212, 175, 55, 0.5),
+                    0 0 120px rgba(212, 175, 55, 0.3),
+                    inset 0 2px 4px rgba(255, 255, 255, 0.05),
+                    inset 0 -2px 4px rgba(212, 175, 55, 0.2) !important;
+            }
+
+            .email-content {
+                background: linear-gradient(180deg, 
+                    rgba(10, 14, 39, 1) 0%,
+                    rgba(0, 0, 0, 0.98) 100%) !important;
+            }
+            
+            .premium-notice {
+                background: linear-gradient(135deg, 
+                    rgba(212, 175, 55, 0.2) 0%, 
+                    rgba(192, 192, 192, 0.12) 50%,
+                    rgba(212, 175, 55, 0.2) 100%) !important;
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+            }
+            
+            .email-header {
+                box-shadow: 
+                    inset 0 0 100px rgba(212, 175, 55, 0.3),
+                    inset 0 2px 0 rgba(255, 255, 255, 0.05),
+                    0 4px 40px rgba(45, 27, 78, 0.6) !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="premium-bg-pattern">
+        <div class="snow-overlay">
+            <div class="snowflake sf1">❄</div>
+            <div class="snowflake sf2">❅</div>
+            <div class="snowflake sf3">❆</div>
+            <div class="snowflake sf4">❄</div>
+            <div class="snowflake sf5">❅</div>
+            <div class="snowflake sf6">❆</div>
+            <div class="snowflake sf7">❄</div>
+            <div class="snowflake sf8">❅</div>
+            <div class="snowflake sf9">❆</div>
+            <div class="snowflake sf10">❄</div>
+
+            <!-- SVG Animated Snowflakes - Premium Luxury -->
+            <svg class="svg-snowflake" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; left: 10%; width: 20px; height: 20px; opacity: 0.9; animation: svg-premium-snowfall linear infinite 14s 0s; pointer-events: none; z-index: 0;">
+                <path d="M25,2 L25,48 M2,25 L48,25 M10,10 L40,40 M40,10 L10,40" stroke="#D4AF37" stroke-width="3" fill="none" opacity="0.98"/>
+                <circle cx="25" cy="25" r="4.5" fill="#F7E7CE" opacity="0.95">
+                    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <svg class="svg-snowflake" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; left: 22%; width: 20px; height: 20px; opacity: 0.9; animation: svg-premium-snowfall linear infinite 16s 3s; pointer-events: none; z-index: 0;">
+                <path d="M25,2 L25,48 M2,25 L48,25 M10,10 L40,40 M40,10 L10,40" stroke="#D4AF37" stroke-width="3" fill="none" opacity="0.98"/>
+                <circle cx="25" cy="25" r="4.5" fill="#F7E7CE" opacity="0.95">
+                    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <svg class="svg-snowflake" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; left: 38%; width: 20px; height: 20px; opacity: 0.9; animation: svg-premium-snowfall linear infinite 13s 5s; pointer-events: none; z-index: 0;">
+                <path d="M25,2 L25,48 M2,25 L48,25 M10,10 L40,40 M40,10 L10,40" stroke="#D4AF37" stroke-width="3" fill="none" opacity="0.98"/>
+                <circle cx="25" cy="25" r="4.5" fill="#F7E7CE" opacity="0.95">
+                    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <svg class="svg-snowflake" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; left: 58%; width: 20px; height: 20px; opacity: 0.9; animation: svg-premium-snowfall linear infinite 15s 2s; pointer-events: none; z-index: 0;">
+                <path d="M25,2 L25,48 M2,25 L48,25 M10,10 L40,40 M40,10 L10,40" stroke="#D4AF37" stroke-width="3" fill="none" opacity="0.98"/>
+                <circle cx="25" cy="25" r="4.5" fill="#F7E7CE" opacity="0.95">
+                    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <svg class="svg-snowflake" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; left: 78%; width: 20px; height: 20px; opacity: 0.9; animation: svg-premium-snowfall linear infinite 17s 4s; pointer-events: none; z-index: 0;">
+                <path d="M25,2 L25,48 M2,25 L48,25 M10,10 L40,40 M40,10 L10,40" stroke="#D4AF37" stroke-width="3" fill="none" opacity="0.98"/>
+                <circle cx="25" cy="25" r="4.5" fill="#F7E7CE" opacity="0.95">
+                    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <svg class="svg-snowflake" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; left: 92%; width: 20px; height: 20px; opacity: 0.9; animation: svg-premium-snowfall linear infinite 14s 6s; pointer-events: none; z-index: 0;">
+                <path d="M25,2 L25,48 M2,25 L48,25 M10,10 L40,40 M40,10 L10,40" stroke="#D4AF37" stroke-width="3" fill="none" opacity="0.98"/>
+                <circle cx="25" cy="25" r="4.5" fill="#F7E7CE" opacity="0.95">
+                    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+        </div>
+
+        <table role="presentation" class="email-wrapper" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    <table role="presentation" class="email-container" width="650" cellpadding="0" cellspacing="0">
+                        <!-- Header -->
+                        <tr>
+                            <td class="email-header">
+                                <div class="star star1"></div>
+                                <div class="star star2"></div>
+
+                                <!-- SVG Animated Stars in Header - Premium Luxury -->
+                                <svg class="svg-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; top: 20%; left: 14%; width: 26px; height: 26px; opacity: 0; animation: svg-premium-twinkle 6s ease-in-out infinite 0s; pointer-events: none;">
+                                    <path d="M50,10 L61,35 L88,40 L69,59 L73,86 L50,73 L27,86 L31,59 L12,40 L39,35 Z"
+                                          fill="#D4AF37" stroke="#F7E7CE" stroke-width="3" opacity="1">
+                                        <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+                                    </path>
+                                </svg>
+                                <svg class="svg-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; top: 32%; right: 18%; width: 26px; height: 26px; opacity: 0; animation: svg-premium-twinkle 6s ease-in-out infinite 2s; pointer-events: none;">
+                                    <path d="M50,10 L61,35 L88,40 L69,59 L73,86 L50,73 L27,86 L31,59 L12,40 L39,35 Z"
+                                          fill="#D4AF37" stroke="#F7E7CE" stroke-width="3" opacity="1">
+                                        <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+                                    </path>
+                                </svg>
+                                <svg class="svg-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; top: 68%; left: 12%; width: 26px; height: 26px; opacity: 0; animation: svg-premium-twinkle 6s ease-in-out infinite 3s; pointer-events: none;">
+                                    <path d="M50,10 L61,35 L88,40 L69,59 L73,86 L50,73 L27,86 L31,59 L12,40 L39,35 Z"
+                                          fill="#D4AF37" stroke="#F7E7CE" stroke-width="3" opacity="1">
+                                        <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+                                    </path>
+                                </svg>
+                                <svg class="svg-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; top: 78%; right: 16%; width: 26px; height: 26px; opacity: 0; animation: svg-premium-twinkle 6s ease-in-out infinite 1.5s; pointer-events: none;">
+                                    <path d="M50,10 L61,35 L88,40 L69,59 L73,86 L50,73 L27,86 L31,59 L12,40 L39,35 Z"
+                                          fill="#D4AF37" stroke="#F7E7CE" stroke-width="3" opacity="1">
+                                        <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+                                    </path>
+                                </svg>
+                                
+                                {{#logo_header}}
+                                <img src="{{ logo_header }}" alt="{{ company_name }}" class="email-logo">
+                                {{/logo_header}}
+                                {{^logo_header}}
+                                {{#logo_header_base64}}
+                                <img src="data:image/png;base64,{{ logo_header_base64 }}" alt="{{ company_name }}" class="email-logo">
+                                {{/logo_header_base64}}
+                                {{^logo_header_base64}}
+                                {{#logo_svg}}
+                                <img src="{{ logo_svg }}" alt="{{ company_name }}" class="email-logo">
+                                {{/logo_svg}}
+                                {{/logo_header_base64}}
+                                {{/logo_header}}
+
+                                <h1 class="premium-title">Buone Feste</h1>
+                                <p class="premium-subtitle">Season's Greetings</p>
+                                
+                                <div class="gold-divider"></div>
+                            </td>
+                        </tr>
+
+                        <!-- Content -->
+                        <tr>
+                            <td class="email-content">
+                                <!-- SVG Decorations -->
+                                <div class="svg-decoration svg-top-left" aria-hidden="true"></div>
+                                <div class="svg-decoration svg-bottom-right" aria-hidden="true"></div>
+                                
+                                <div class="star star3"></div>
+                                <div class="star star4"></div>
+                                <div class="star star5"></div>
+
+                                <!-- Holiday Notice -->
+                                <div class="premium-notice">
+                                    <h2 style="color: var(--premium-gold); margin-top: 0; font-size: 22px;">🎄 Chiusura Festività 🎄</h2>
+                                    <p style="margin: 10px 0 0; font-size: 16px; color: var(--premium-text-light);">
+                                        Lo studio sarà chiuso dal <strong>24 Dicembre</strong> al <strong>7 Gennaio</strong><br>
+                                        Per urgenze, contattateci via email
+                                    </p>
+                                </div>
+
+                                <!-- Dynamic Body Content -->
+                                {{{ body }}}
+                            </td>
+                        </tr>
+
+                        <!-- Footer -->
+                        <tr>
+                            <td class="email-footer">
+                                <p style="margin: 0 0 15px; font-size: 15px; color: var(--premium-gold);">
+                                    {{#company_name}}{{ company_name }}{{/company_name}}{{^company_name}}Provincia di Treviso{{/company_name}}
+                                </p>
+                                {{#company_address}}
+                                <p style="margin: 0 0 10px; font-size: 12px;">
+                                    {{ company_address }}
+                                </p>
+                                {{/company_address}}
+                                <p style="margin: 10px 0; font-size: 11px;">
+                                    {{#site_url}}<a href="{{ site_url }}">Visita il sito</a>{{/site_url}}
+                                    {{#site_url}}{{#unsubscribe_url}} | {{/unsubscribe_url}}{{/site_url}}
+                                    {{#unsubscribe_url}}<a href="{{ unsubscribe_url }}">Annulla iscrizione</a>{{/unsubscribe_url}}
+                                </p>
+                                <p style="margin: 15px 0 0; font-size: 11px; color: var(--premium-text-light);">
+                                    © {{ year }} {{#company_name}}{{ company_name }}{{/company_name}}{{^company_name}}Provincia di Treviso{{/company_name}}. Tutti i diritti riservati.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

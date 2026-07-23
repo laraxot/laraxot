@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Design Comuni Components - Tailwind CSS
+   Uses @apply for Bootstrap Italia-like classes with Normalized Tokens
+   ========================================================================== */
+
+/* Top Bar Component
+   ========================================================================== */
+.it-header-slim-wrapper {
+    @apply bg-[#00402b] border-b border-white/20;
+}
+
+/* Header Center Component
+   ========================================================================== */
+.it-header-center-wrapper {
+    @apply bg-white border-b border-[#d9e1e8] py-6;
+}
+
+.it-header-center-wrapper .social-links a {
+    @apply text-[#0066cc] hover:text-[#004b9a] transition-colors;
+}
+
+/* Navigation Component
+   ========================================================================== */
+.it-nav-wrapper {
+    @apply bg-white border-b border-[#d9e1e8];
+}
+
+.it-nav-wrapper .nav-link {
+    @apply px-3 py-3 text-[#5c6f82] hover:text-[#0066cc] transition-colors;
+}
+
+.it-nav-wrapper .nav-item.highlighted .nav-link {
+    @apply font-bold text-[#0066cc];
+}
+
+/* Card Components
+   ========================================================================== */
+.cmp-card {
+    @apply mb-4 lg:mb-8;
+}
+
+.card.has-bkg-grey {
+    @apply bg-[#f5f6f7] border-none;
+}
+
+.cmp-info-button-card .card {
+    @apply border border-[#d9e1e8] rounded-lg p-4 transition-all;
+}
+
+/* Modal Styling
+   ========================================================================== */
+.modal-header {
+    @apply border-b border-[#d9e1e8] bg-white;
+}
+
+.modal-title {
+    @apply text-[#0066cc] font-bold uppercase;
+}
+
+.modal-footer {
+    @apply border-t border-[#d9e1e8] bg-[#f5f6f7];
+}
+
+/* Buttons
+   ========================================================================== */
+.btn-primary {
+    @apply text-white bg-[#0066cc] text-white rounded font-semibold transition-all;
+}
+
+.btn-outline-primary {
+    @apply border-2 border-[#0066cc] text-[#0066cc] bg-transparent hover:text-white bg-[#0066cc] hover:text-white transition-all;
+}

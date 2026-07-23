@@ -1,0 +1,31 @@
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 992px) {
+    .it-header-slim-wrapper-content {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+    }
+    
+    .it-header-slim-right-zone {
+        justify-content: center !important;
+    }
+    
+    .it-hero-wrapper {
+        min-height: 300px !important;
+    }
+    
+    .it-hero-wrapper .hero-title {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .it-header-slim-wrapper .btn-primary span {
+        display: none !important;
+    }
+    
+    .it-hero-wrapper .hero-title {
+        font-size: 1.5rem !important;
+    }
+}

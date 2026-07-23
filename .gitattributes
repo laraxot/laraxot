@@ -1,0 +1,5 @@
+*.svg !text !filter !merge !diff
+*.png !text !filter !merge !diff
+*.jpg !text !filter !merge !diff
+*.ico !text !filter !merge !diff
+*.db !text !filter !merge !diff

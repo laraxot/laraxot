@@ -1,0 +1,464 @@
+   32. FILAMENT SCHEMA WIZARD → Design Comuni Stepper Parity
+   Override Filament's default wizard style to match Design Comuni reference.
+   Reference: https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-01-privacy.html
+   ============================================================================ */
+
+/* Remove Filament's default wizard border and background */
+.fi-sc-wizard {
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 2rem 0 !important;
+}
+
+/* Wizard header - match Design Comuni stepper style */
+.fi-sc-wizard-header {
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+/* Step indicators */
+.fi-sc-wizard-header-step {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 16px 24px !important;
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  color: #5d7083 !important;
+  border: none !important;
+  position: relative !important;
+  flex-grow: 1 !important;
+}
+
+/* Active step - green underline like reference */
+.fi-sc-wizard-header-step.fi-active {
+  color: #007a52 !important;
+}
+
+.fi-sc-wizard-header-step.fi-active::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 24px !important;
+  right: 24px !important;
+  height: 2px !important;
+  background: #007a52 !important;
+}
+
+/* Completed step */
+.fi-sc-wizard-header-step.fi-completed {
+  color: #007a52 !important;
+}
+
+/* Step separator (chevron/arrows) */
+.fi-sc-wizard-header-step .fi-sc-wizard-header-step-separator {
+  display: none !important;
+}
+
+/* Replace separator with vertical line like reference */
+.fi-sc-wizard-header-step:not(:last-child)::after {
+  content: "" !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 25% !important;
+  bottom: 25% !important;
+  width: 1px !important;
+  background: #c5c7c9 !important;
+}
+
+/* Wizard content area */
+.fi-sc-wizard-content {
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* Wizard footer / navigation buttons */
+.fi-sc-wizard-footer {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 1.5rem 0 !important;
+  border-top: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+/* Previous button */
+.fi-sc-wizard-footer .fi-btn.fi-btn-color-gray {
+  background: transparent !important;
+  border: none !important;
+  color: #007a52 !important;
+  font-size: 0.875rem !important;
+  padding: 0.5rem 0 !important;
+}
+
+/* Submit/Next button */
+.fi-sc-wizard-footer .fi-btn.fi-btn-color-primary {
+  background: #007a52 !important;
+  border: none !important;
+  color: #fff !important;
+  font-size: 0.875rem !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.25rem !important;
+}
+
+.fi-sc-wizard-footer .fi-btn.fi-btn-color-primary:hover {
+  background: #005a3d !important;
+}
+
+/* Tablet/mobile: show only active step + counter */
+@media (max-width: 991.98px) {
+  .fi-sc-wizard {
+    margin: 1rem 0 !important;
+  }
+
+  .fi-sc-wizard-header {
+    padding: 0 24px !important;
+    height: 64px !important;
+    background: #fff !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    border-radius: 0 !important;
+  }
+
+  /* Hide non-active steps */
+  .fi-sc-wizard-header-step:not(.fi-active):not(.fi-completed) {
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 0 !important;
+    position: absolute !important;
+    display: block !important;
+  }
+
+  /* Show active step prominently */
+  .fi-sc-wizard-header-step.fi-active {
+    font-size: 1rem !important;
+    padding: 0 !important;
+  }
+
+  .fi-sc-wizard-header-step.fi-active::after {
+    display: none !important;
+  }
+
+  .fi-sc-wizard-header-step::after {
+    display: none !important;
+  }
+
+  /* Step counter X/N */
+  .fi-sc-wizard-header-step-counter {
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    color: #17324d !important;
+    flex-shrink: 0 !important;
+  }
+
+  .fi-sc-wizard-footer {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+
+  .fi-sc-wizard-footer .fi-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* 29. Step 2 high parity hardening */
+.segnalazione-wizard-layout {
+  align-items: flex-start !important;
+  --bs-gutter-x: 2rem !important;
+}
+
+.segnalazione-side-column {
+  padding-right: 0.5rem !important;
+}
+
+.segnalazione-main-column {
+  padding-left: 0.5rem !important;
+}
+
+.cmp-page-index {
+  max-width: 100% !important;
+}
+
+.cmp-page-index .accordion-item {
+  border-color: #c5d0d9 !important;
+}
+
+.cmp-page-index .accordion-button {
+  min-height: 4rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  color: #17324d !important;
+}
+
+.cmp-page-index .link-list a {
+  padding: 0.875rem 1rem !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  color: #17324d !important;
+}
+
+.cmp-page-index .link-list a span {
+  display: inline-block !important;
+  max-width: 14rem !important;
+}
+
+.cmp-wizard-widget,
+.fi-sc-wizard,
+.fi-sc-wizard-step,
+.fi-sc-wizard-step > .fi-sc {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.fi-sc-wizard {
+  row-gap: 1.5rem !important;
+}
+
+.fi-sc-wizard-header {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Story 7-51: keep only Design Comuni stepper (remove duplicated Filament header above it). */
+.fi-sc-wizard-header {
+  display: none !important;
+}
+
+.fi-sc-wizard-step {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.segnalazione-required-legend {
+  margin-bottom: 1rem !important;
+}
+
+.fi-section {
+  margin-bottom: 1.25rem !important;
+}
+
+.fi-section .fi-section-header {
+  margin-bottom: 0.5rem !important;
+}
+
+.fi-section .fi-section-content-ctn {
+  padding: 1.25rem 1.25rem 1rem !important;
+}
+
+.fi-section .fi-section-content {
+  row-gap: 0.875rem !important;
+}
+
+.fi-section[data-step-section="inefficiency"] .fi-section-header {
+  margin-bottom: 0.25rem !important;
+}
+
+.fi-section[data-step-section="inefficiency"] .fi-section-content-ctn {
+  padding-top: 0.875rem !important;
+}
+
+.fi-section[data-step-section="inefficiency"] .fi-section-content {
+  row-gap: 0.625rem !important;
+}
+
+.fi-section[data-step-section="inefficiency"] .fi-fo-field-content-col {
+  margin-top: 0.25rem !important;
+}
+
+.fi-fo-field {
+  margin-bottom: 0 !important;
+}
+
+.fi-fo-field-content-col {
+  margin-top: 0.375rem !important;
+}
+
+.fi-section[data-step-section="author"] .fi-section-content > .fi-grid {
+  column-gap: 1rem !important;
+  row-gap: 0.75rem !important;
+}
+
+.fi-section[data-step-section="author"] .fi-sc-text {
+  min-height: 4rem !important;
+  padding: 0.875rem 1rem !important;
+  color: #17324d !important;
+}
+
+.it-header-slim-wrapper .btn-icon.btn-full {
+  min-height: 2.75rem !important;
+  padding: 0.25rem 1rem !important;
+  border-radius: 0 !important;
+}
+
+.it-header-slim-wrapper .btn-icon.btn-full span:not(.rounded-icon) {
+  font-size: 0.9375rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+}
+
+.it-header-center-content-wrapper .it-search-wrapper > span,
+.it-header-center-content-wrapper .search-label {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+}
+
+/* CoordinatePicker — visible map and controls inside Design Comuni wizard.
+   Leaflet panes are runtime-generated in light DOM, so the theme owns final parity. */
+coordinate-picker-lit {
+  display: block !important;
+  width: 100% !important;
+  min-height: 340px !important;
+  background: #fff !important;
+}
+
+coordinate-picker-lit .map-container,
+coordinate-picker-lit .map-picker-leaflet-pane,
+coordinate-picker-lit .leaflet-container {
+  opacity: 1 !important;
+  background: #fff !important;
+}
+
+coordinate-picker-lit .leaflet-tile,
+coordinate-picker-lit .leaflet-tile-loaded,
+coordinate-picker-lit .leaflet-pane,
+coordinate-picker-lit .leaflet-map-pane,
+coordinate-picker-lit .leaflet-tile-pane,
+coordinate-picker-lit .leaflet-marker-pane {
+  opacity: 1 !important;
+}
+
+coordinate-picker-lit .layer-controls-overlay {
+  top: 0.75rem !important;
+  left: 0.75rem !important;
+  z-index: 1100 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+  pointer-events: auto !important;
+}
+
+coordinate-picker-lit .ctrl-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 2.75rem !important;
+  height: 2.75rem !important;
+  min-width: 2.75rem !important;
+  min-height: 2.75rem !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+  color: #17324d !important;
+  background: #fff !important;
+  border: 1px solid #d9e1e8 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 8px rgba(23, 50, 77, 0.18) !important;
+  pointer-events: auto !important;
+}
+
+coordinate-picker-lit .ctrl-btn:hover,
+coordinate-picker-lit .ctrl-btn:focus-visible {
+  color: #007a52 !important;
+  background: #f5f7f9 !important;
+  outline: 2px solid #007a52 !important;
+  outline-offset: 2px !important;
+}
+
+coordinate-picker-lit .ctrl-btn svg {
+  display: block !important;
+  width: 1.35rem !important;
+  height: 1.35rem !important;
+  opacity: 1 !important;
+  color: currentColor !important;
+  stroke: currentColor !important;
+}
+
+/* --------------------------------------------------------------------------
+   33. Header CTA parity — "Accedi all'area personale"
+   Keep the real Design Comuni button geometry.
+   NOTE: .it-header-slim-wrapper is OUTSIDE .page-content — selectors must
+   target it globally (not scoped to page-content) to match.
+   -------------------------------------------------------------------------- */
+.it-header-slim-wrapper .btn-icon.btn-full {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.625rem !important;
+  width: auto !important;
+  min-width: fit-content !important;
+  height: 3rem !important;
+  min-height: 3rem !important;
+  padding: 0.75rem 1.5rem !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #007a52 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  box-shadow: none !important;
+}
+
+.it-header-slim-wrapper .btn-icon.btn-full:hover,
+.it-header-slim-wrapper .btn-icon.btn-full:focus-visible {
+  background: #00684a !important;
+  color: #fff !important;
+}
+
+.it-header-slim-wrapper .btn-icon.btn-full .rounded-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  min-width: 1.5rem !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0.75rem !important;
+  background: #fff !important;
+}
+
+.it-header-slim-wrapper .btn-icon.btn-full .icon {
+  width: 1rem !important;
+  height: 1rem !important;
+  color: #007a52 !important;
+  fill: currentColor !important;
+}
+
+.it-header-slim-wrapper .btn-icon.btn-full span:not(.rounded-icon) {
+  display: inline-block !important;
+  font-size: 0.9375rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  color: #fff !important;
+}
+
+@media (min-width: 992px) {
+  .segnalazione-wizard-layout {
+    --bs-gutter-x: 2.5rem !important;
+  }
+
+  .cmp-page-index .link-list a span {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .cmp-page-index-mobile {
+    margin-bottom: 1rem !important;
+  }
+
+  .fi-sc-wizard-header {
+    margin-bottom: 1rem !important;
+  }
+
+  .fi-section .fi-section-content-ctn {
+    padding: 1rem !important;
+  }
+}

@@ -1,0 +1,360 @@
+/**
+ * Amministrazione Page Visual Parity Fixes
+ *
+ * Reference: https://italia.github.io/design-comuni-pagine-statiche/sito/amministrazione.html
+ * Local: http://127.0.0.1:8000/it/tests/amministrazione
+ *
+ * Current: 85% parity
+ * Target: 90%+
+ *
+ * Created: 2026-04-04
+ */
+
+/* ============================================================================
+   1. HERO SECTION
+   ============================================================================ */
+
+.hero-default {
+  background: linear-gradient(to bottom, #f2f7fc 0%, #ffffff 100%);
+  padding: 3rem 0 4rem;
+  margin-bottom: 3rem;
+}
+
+.hero-default h1 {
+  color: #17324d !important;
+  font-size: clamp(2.5rem, 4vw, 3.5rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  margin-bottom: 1rem !important;
+}
+
+.hero-default .subtitle {
+  color: #5b6f82 !important;
+  font-size: 1.25rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.hero-default .content p {
+  color: #32506d !important;
+  font-size: 1.1rem !important;
+  line-height: 1.7 !important;
+  max-width: 70ch !important;
+}
+
+/* ============================================================================
+   2. CARDS GRID SECTION (Organi di governo)
+   ============================================================================ */
+
+.cards-grid,
+[id*="cards-grid"] {
+  padding: 3rem 0;
+}
+
+.cards-grid h2 {
+  color: #17324d !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Card grid container */
+.cards-grid .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 1.5rem !important;
+}
+
+/* Individual cards */
+.cards-grid .card,
+.cards-grid .cmp-card-simple {
+  border: 1px solid #e1e8ed !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  transition: all 0.2s ease !important;
+  height: 100% !important;
+  background: #ffffff !important;
+}
+
+.cards-grid .card:hover,
+.cards-grid .cmp-card-simple:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+  transform: translateY(-2px) !important;
+  border-color: #0066cc !important;
+}
+
+.cards-grid .card-body {
+  padding: 1.5rem !important;
+}
+
+.cards-grid .card-title {
+  color: #0066cc !important;
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.75rem !important;
+  line-height: 1.3 !important;
+}
+
+.cards-grid .card-description,
+.cards-grid .card-body p {
+  color: #5b6f82 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+.cards-grid .card a {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block !important;
+}
+
+.cards-grid .card a:hover {
+  color: #0066cc !important;
+}
+
+/* ============================================================================
+   3. LINKS LIST SECTION (Documenti e dati)
+   ============================================================================ */
+
+.links-list,
+[id*="links-list"] {
+  padding: 3rem 0;
+  background: #f2f7fc !important;
+  margin: 2rem 0;
+}
+
+.links-list h2 {
+  color: #17324d !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.links-list ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.links-list li {
+  background: #ffffff !important;
+  border: 1px solid #e1e8ed !important;
+  border-radius: 8px !important;
+  margin-bottom: 1rem !important;
+  padding: 1.25rem 1.5rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.links-list li:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  border-color: #0066cc !important;
+}
+
+.links-list li a {
+  color: #0066cc !important;
+  text-decoration: none !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  display: block !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.links-list li a:hover {
+  text-decoration: underline !important;
+}
+
+.links-list li .description {
+  color: #5b6f82 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+}
+
+/* ============================================================================
+   4. FEEDBACK SECTION
+   ============================================================================ */
+
+.feedback-section,
+section[data-element="feedback"] {
+  background: #f2f7fc !important;
+  padding: 3rem 0 !important;
+  margin: 3rem 0 !important;
+}
+
+.feedback-section h2,
+.feedback-section h3 {
+  color: #17324d !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 1.5rem !important;
+  text-align: center !important;
+}
+
+.feedback-section .rating-stars {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.feedback-section .rating-stars label {
+  cursor: pointer !important;
+  transition: transform 0.15s ease !important;
+}
+
+.feedback-section .rating-stars label:hover {
+  transform: scale(1.15) !important;
+}
+
+.feedback-section .rating-stars svg,
+.feedback-section .rating-stars .star {
+  width: 40px !important;
+  height: 40px !important;
+  color: #5b6f82 !important;
+}
+
+/* ============================================================================
+   5. CONTACTS SECTION
+   ============================================================================ */
+
+.contacts-section,
+section[data-element="contacts"] {
+  padding: 3rem 0 !important;
+}
+
+.contacts-section h2 {
+  color: #17324d !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 2rem !important;
+}
+
+.contacts-section .contact-info {
+  background: #ffffff !important;
+  border: 1px solid #e1e8ed !important;
+  border-radius: 8px !important;
+  padding: 2rem !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+}
+
+.contacts-section .contact-item {
+  margin-bottom: 1rem !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 1rem !important;
+}
+
+.contacts-section .contact-item .label {
+  color: #5b6f82 !important;
+  font-size: 0.875rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.contacts-section .contact-item .value {
+  color: #17324d !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+.contacts-section .contact-item a {
+  color: #0066cc !important;
+  text-decoration: none !important;
+}
+
+.contacts-section .contact-item a:hover {
+  text-decoration: underline !important;
+}
+
+/* ============================================================================
+   6. FAQ SECTION
+   ============================================================================ */
+
+.faq-section,
+section[data-element="faq"] {
+  padding: 3rem 0 !important;
+}
+
+.faq-section h2 {
+  color: #17324d !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 2rem !important;
+}
+
+.faq-section .accordion-item,
+.faq-section .faq-item {
+  border: 1px solid #e1e8ed !important;
+  border-radius: 8px !important;
+  margin-bottom: 1rem !important;
+  overflow: hidden !important;
+}
+
+.faq-section .accordion-header button,
+.faq-section .faq-question {
+  width: 100% !important;
+  padding: 1.25rem 1.5rem !important;
+  background: #ffffff !important;
+  border: none !important;
+  text-align: left !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: #17324d !important;
+  cursor: pointer !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  transition: background 0.2s ease !important;
+}
+
+.faq-section .accordion-header button:hover,
+.faq-section .faq-question:hover {
+  background: #f2f7fc !important;
+}
+
+.faq-section .accordion-header button::after,
+.faq-section .faq-question::after {
+  content: '+' !important;
+  font-size: 1.5rem !important;
+  font-weight: 300 !important;
+  color: #0066cc !important;
+  transition: transform 0.2s ease !important;
+}
+
+.faq-section .accordion-header button[aria-expanded="true"]::after,
+.faq-section .faq-question.expanded::after {
+  content: '−' !important;
+}
+
+.faq-section .accordion-body,
+.faq-section .faq-answer {
+  padding: 0 1.5rem 1.5rem !important;
+  color: #5b6f82 !important;
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+}
+
+/* ============================================================================
+   7. RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .hero-default {
+    padding: 2rem 0 3rem !important;
+  }
+
+  .hero-default h1 {
+    font-size: 2rem !important;
+  }
+
+  .cards-grid .row {
+    gap: 1rem !important;
+  }
+
+  .cards-grid .col-md-6,
+  .cards-grid .col-lg-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}

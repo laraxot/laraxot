@@ -1,0 +1,394 @@
+/*
+ * Primary Design Comuni tokens, header and navigation overrides.
+ * Extracted from resources/css/app.css to keep app.css as a small import index.
+ */
+/* ========================================
+   FINAL HOMEPAGE PARITY OVERRIDES
+   Colors VERIFIED from reference 2026-04-02
+======================================== */
+:root {
+  /* Reference colors from computed styles */
+  --dc-green: #007a52;       /* Comune Logo Green-Background */
+  --dc-green-dark: #00402b;  /* Fascia slim istituzionale (Design Comuni / Sixteen verde) */
+  --dc-blue: #0066cc;
+  --dc-blue-primary: #007a52; /* Primary action is green */
+  --dc-blue-lighter: #e6f7f1; /* Light green for hover */
+  --dc-blue-dark: #00402b;    /* Allineato a slim verde scuro (no blu istituzionale su Sixteen) */
+  --dc-ink: #191919;         /* rgb(25, 25, 25) - text color */
+  --dc-muted: #5c6f82;
+  --dc-footer: #202a2e;      /* rgb(32,42,46) - reference footer bg */
+  --dc-footer-dark: #1b2733;
+  --dc-border: #d9e1e8;
+}
+
+html,
+body {
+  color: var(--dc-ink);
+  background: #fff;
+}
+
+.it-header-wrapper {
+  background: transparent;
+  color: var(--dc-ink);
+  box-shadow: none;
+}
+
+/* Header slim — top istituzionale Design Comuni (token: --dc-green-dark, ref. statiche comuni) */
+.it-header-slim-wrapper {
+  background: var(--dc-green-dark) !important;
+  display: flex !important;
+  padding-block: 0 !important; /* FIX: bootstrap-italia-classes.css adds py-2 (8px); reference header is exactly 48px with no padding */
+}
+
+.it-header-slim-wrapper .it-header-slim-right-zone,
+.it-header-slim-wrapper .it-header-slim-right-zone .dropdown {
+  overflow: visible !important;
+}
+
+.it-header-slim-wrapper .it-header-slim-right-zone,
+.it-header-slim-wrapper .it-header-slim-right-zone .dropdown {
+  overflow: visible !important;
+}
+
+.it-header-slim-wrapper-content {
+  padding: 0 18px !important;
+  gap: 0 !important;
+}
+
+/* Navbar brand in slim wrapper - reference: 14px, 400, 12px padding, 21px line-height */
+.navbar-brand {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  padding: 12px 0 !important;
+  line-height: 21px !important;
+  color: #fff !important;
+  text-decoration: none !important; /* FIX: no underline like reference */
+}
+
+.it-header-slim-wrapper-content {
+  padding: 0 18px !important;
+  gap: 0 !important;
+}
+
+/* FIX: ITA dropdown single chevron — remove Bootstrap's default ::after chevron */
+.it-header-slim-wrapper .dropdown-toggle::after {
+  display: none !important;
+}
+
+/* FIX: Nav links no underline (desktop) */
+.it-header-navbar-wrapper .nav-link {
+  text-decoration: none !important;
+}
+
+/* Navbar brand in slim wrapper - reference: 14px, 400, 12px padding, 21px line-height */
+.navbar-brand {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  padding: 12px 0 !important;
+  line-height: 21px !important;
+  color: #fff !important;
+}
+
+.it-header-center-wrapper {
+  /* Use Dark Green for center header as requested for visual parity (Comune logo background) */
+  background: var(--dc-green) !important;
+  color: #fff !important;
+  padding: 6px 0 0 !important;
+  border-bottom: none !important;
+}
+
+.it-header-center-wrapper .it-brand-wrapper {
+  display: block !important;
+  gap: 0 !important;
+}
+
+/* Social icon links - must be white on green header */
+.it-socials a {
+  color: #fff !important;
+}
+
+.it-socials a svg,
+.it-socials svg.icon {
+  fill: #fff !important;
+  color: #fff !important;
+}
+
+.it-search-wrapper span,
+.it-socials > span {
+  color: #fff !important;
+  font-size: 14px !important;
+}
+
+.it-socials {
+  color: #fff !important;
+  font-size: 14px !important;
+  line-height: 21px !important;
+  gap: 0 !important;
+}
+
+.it-header-center-wrapper .it-brand-wrapper > a,
+.it-header-center-wrapper .it-brand-wrapper .it-brand-text,
+.it-header-center-wrapper .it-brand-wrapper .it-brand-title,
+.it-header-center-wrapper .it-brand-wrapper .it-brand-tagline {
+  color: #fff !important;
+}
+
+.it-header-center-wrapper .it-brand-wrapper .it-brand-text {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.search-link {
+  background: white !important;
+  border-color: white !important;
+  color: var(--dc-green) !important;
+}
+
+.search-link:hover {
+  background: #f0f0f0 !important;
+  border-color: #f0f0f0 !important;
+}
+
+/* Header-scoped primary button mapping: use Comune green for header CTAs */
+.it-header-slim-wrapper .btn-primary,
+.it-header-center-wrapper .btn-primary,
+.it-header-navbar-wrapper .btn-primary,
+.it-header-wrapper .btn-primary {
+  background: var(--dc-green) !important;
+  border-color: var(--dc-green) !important;
+  color: #fff !important;
+}
+
+/* Ensure main "Avanti" button stacks under checkboxes and is full-width on mobile */
+.btn-next {
+  display: inline-block !important;
+  margin-top: 1rem !important;
+}
+
+@media (max-width: 767.98px) {
+  .btn-next {
+    display: block !important;
+    width: 100% !important;
+  }
+}
+
+/* ---- Nav Wrapper ---- */
+.it-nav-wrapper {
+  background: transparent !important;
+  position: relative !important; /* story 7-8: antenato di riferimento per it-header-navbar-wrapper position:absolute su mobile */
+}
+
+/* Navbar */
+.it-header-navbar-wrapper {
+  /* Make navbar use Comune logo green instead of blue for nav background */
+  background: var(--dc-green) !important;
+}
+
+/* Mobile (<992px): hamburger a sinistra del logo — comportamento Bootstrap Italia.
+   Il navbar-wrapper resta nel flusso normale, l'hamburger è il primo elemento. */
+@media (max-width: 991.98px) {
+  .it-header-navbar-wrapper {
+    /* Remove position:absolute so it flows naturally in the document */
+    position: static !important;
+    z-index: auto !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: auto !important;
+    background: transparent !important;
+  }
+
+  .it-header-navbar-wrapper .navbar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 0 !important;
+    min-height: 3rem !important;
+  }
+
+  /* Hamburger button: visible, left side */
+  .custom-navbar-toggler {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    min-width: 2.5rem !important;
+    padding: 0.5rem !important;
+    margin: 0 !important;
+    margin-right: 0.75rem !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0.25rem !important;
+    color: #fff !important;
+    flex-shrink: 0 !important;
+    order: -1 !important; /* Ensure it's first */
+  }
+
+  .custom-navbar-toggler:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .custom-navbar-toggler .icon {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    fill: #fff !important;
+  }
+
+  /* Center wrapper: flex row with hamburger first */
+  .it-header-center-wrapper .container {
+    padding: 0 !important;
+  }
+
+  .it-header-center-wrapper .row {
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .it-header-center-wrapper .col-12 {
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .it-header-center-content-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Brand wrapper: no extra padding */
+  .it-brand-wrapper {
+    padding-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  /* Right zone: search */
+  .it-right-zone {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+
+  /* Story 7.10: Mobile overlay menu — Alpine.js replaces Bootstrap Italia toggle */
+  .navbar-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    z-index: 1040 !important;
+  }
+
+  .navbar-collapsable {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 85% !important;
+    max-width: 320px !important;
+    height: 100vh !important;
+    z-index: 1050 !important;
+    overflow-y: auto !important;
+    background: #fff !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.3s ease !important;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  /* Close button inside mobile menu */
+  .navbar-collapsable .close-div {
+    position: absolute !important;
+    top: 16px !important;
+    right: 16px !important;
+    z-index: 1060 !important;
+  }
+
+  /* Hide socials inside mobile menu (duplicati — già nel center wrapper) */
+  .navbar-collapsable .menu-wrapper .it-socials {
+    display: none !important;
+  }
+
+  /* Mobile menu nav links styling */
+  .navbar-collapsable .navbar-nav .nav-link {
+    color: #17324d !important;
+    padding: 12px 24px !important;
+    border-bottom: 1px solid #e6e9ed !important;
+  }
+
+  .navbar-collapsable .navbar-nav .nav-link:hover {
+    background: #f0f4f8 !important;
+  }
+
+  .navbar-collapsable .navbar-secondary .nav-link {
+    font-size: 14px !important;
+    color: #5c6f82 !important;
+    padding-left: 40px !important;
+  }
+
+  /* Logo hamburger inside mobile menu */
+  .navbar-collapsable .logo-hamburger {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 16px 24px !important;
+    border-bottom: 1px solid #e6e9ed !important;
+    color: #17324d !important;
+    text-decoration: none !important;
+  }
+
+  .navbar-collapsable .logo-hamburger .it-brand-title {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+  }
+}
+
+/* Story 7.10: desktop — backdrop overlay disattivato (nav inline via ticket-parity / app) */
+@media (min-width: 992px) {
+  .it-header-navbar-wrapper .navbar-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+
+
+/* Body scroll lock when mobile nav is open */
+body.nav-open {
+  overflow: hidden !important;
+}
+
+.navbar-nav {
+  font-size: 18px !important;
+  line-height: normal !important;
+  gap: 0 !important;
+}
+
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-size: 18px !important;
+  line-height: normal !important;
+  display: flex !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-secondary .nav-link:hover {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.navbar-secondary .nav-link,
+.navbar-collapsable .navbar-nav .nav-link,
+.navbar-collapsable .navbar-secondary .nav-link {
+  color: #fff !important;
+}
+
+.custom-navbar-toggler,
+.close-menu {
+  color: #fff;
+}
+
+.close-menu {
+  background: transparent;
+}

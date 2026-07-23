@@ -1,0 +1,23 @@
+=== PHPStan Analysis for Comment ===
+Date: Thu Jul 16 10:19:16 AM CEST 2026
+Configuration: /var/www/_bases/base_techplanner_fila5/laravel/phpstan.neon
+============================================
+
+   0/108 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%
+ 108/108 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+ -- --------------------------------------------------------------------------- 
+     Error                                                                      
+ -- --------------------------------------------------------------------------- 
+     Ignored error pattern #PHPDoc tag @mixin contains unknown class # was not  
+     matched in reported errors.                                                
+     Ignored error pattern #Cannot cast mixed to                                
+     (string|float|double|int|bool|boolean).# was not matched in reported       
+     errors.                                                                    
+ -- --------------------------------------------------------------------------- 
+
+
+ [ERROR] Found 2 errors                                                         
+
+
+=== END ANALYSIS ===

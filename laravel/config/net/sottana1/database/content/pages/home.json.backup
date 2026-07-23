@@ -1,0 +1,290 @@
+{
+    "id": "1",
+    "title": {
+        "it": "TechPlanner - Sistema di Gestione Tecnica"
+    },
+    "slug": "home",
+    "middleware": null,
+    "content": null,
+    "content_blocks": {
+        "it": [
+            {
+                "type": "hero",
+                "slug": "hero-section",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.simple",
+                    "title": "Radioprotezione e Sicurezza Radiologica per Studi Dentistici e Veterinari",
+                    "subtitle": "Conformità normativa garantita, sicurezza pazienti e staff, controlli periodici certificati secondo D.Lgs 101/2020 e Direttiva 2013/59/Euratom.",
+                    "primary_cta_label": "Richiedi Controllo Radioprotezione",
+                    "primary_cta_url": "/it/contact",
+                    "secondary_cta_label": "Scopri i Servizi",
+                    "secondary_cta_url": "/it/servizi",
+                    "image": "https://images.unsplash.com/photo-1581595219315-a187dd40c322",
+                    "stats": [
+                        {"label": "Conformità D.Lgs 101/2020", "value": "100%"},
+                        {"label": "Esperti Qualificati", "value": "Certificato"},
+                        {"label": "Intervento in 24/48h", "value": "Rapido"}
+                    ]
+                }
+            },
+            {
+                "type": "services-grid",
+                "slug": "main-services",
+                "data": {
+                    "view": "pub_theme::components.blocks.services.grid",
+                    "title": "I Nostri Servizi",
+                    "subtitle": "Soluzioni complete per la sicurezza radiologica",
+                    "services": [
+                        {
+                            "title": "Controllo Radioprotezione",
+                            "description": "Verifiche periodiche e straordinarie per apparecchiature radiologiche in ambito odontoiatrico e veterinario. Garanzia di conformità al D.Lgs 101/2020.",
+                            "icon": "heroicon-o-shield-check",
+                            "url": "/it/servizi"
+                        },
+                        {
+                            "title": "Controllo Elettromedicali",
+                            "description": "Manutenzione preventiva e verifiche di sicurezza elettrica su tutti i dispositivi medici (IEC 62353), assicurando funzionalità e sicurezza per pazienti e operatori.",
+                            "icon": "heroicon-o-wrench-screwdriver",
+                            "url": "/it/servizi"
+                        },
+                        {
+                            "title": "Documentazione e Conformità",
+                            "description": "Gestione completa della documentazione obbligatoria: registri di controllo, nomine esperti qualificati, relazioni tecniche e comunicazioni agli organi competenti.",
+                            "icon": "heroicon-o-document-check",
+                            "url": "/it/servizi"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "why-critical",
+                "slug": "why-radioprotection",
+                "data": {
+                    "view": "pub_theme::components.blocks.why-critical.grid",
+                    "title": "Perché la Radioprotezione è Critica?",
+                    "subtitle": "Non è solo burocrazia: è la base per operare in sicurezza e legalità nel settore sanitario.",
+                    "points": [
+                        {
+                            "title": "Rischi e Sanzioni",
+                            "description": "La mancata conformità comporta sanzioni penali e amministrative pesanti, oltre al rischio di sospensione dell'attività.",
+                            "icon": "heroicon-o-exclamation-triangle"
+                        },
+                        {
+                            "title": "Obblighi Normativi",
+                            "description": "Rispetto rigoroso del D.Lgs 101/2020 e della Direttiva 2013/59/Euratom per la tutela della salute.",
+                            "icon": "heroicon-o-book-open"
+                        },
+                        {
+                            "title": "Sicurezza Persone",
+                            "description": "Protezione fondamentale per operatori, pazienti e pubblico contro i rischi delle radiazioni ionizzanti.",
+                            "icon": "heroicon-o-user-group"
+                        },
+                        {
+                            "title": "Responsabilità Legale",
+                            "description": "L'esercente è legalmente responsabile. Una gestione corretta è l'unica tutela in caso di contenziosi.",
+                            "icon": "heroicon-o-scale"
+                        }
+                    ]
+                }
+            }
+,
+            {
+                "type": "sectors",
+                "slug": "industry-sectors",
+                "data": {
+                    "view": "pub_theme::components.blocks.sectors.split",
+                    "title": "Settori di Specializzazione",
+                    "subtitle": "Competenza verticale per esigenze specifiche",
+                    "sectors": [
+                        {
+                            "title": "Odontoiatria",
+                            "description": "Precisione millimetrica per la diagnostica dentale",
+                            "use_cases": [
+                                "Radiografie Endorali - Verifica tubi radiogeni per RX periapicali e bitewing",
+                                "Ortopantomografia (OPT) - Controllo qualità e sicurezza per panoramiche dentali",
+                                "CBCT (Cone Beam) - Protocolli avanzati per tomografia computerizzata a fascio conico"
+                            ],
+                            "image": "https://images.unsplash.com/photo-1660220617553-95cb021c0a5e"
+                        },
+                        {
+                            "title": "Medicina Veterinaria",
+                            "description": "Sicurezza adattata alle esigenze cliniche animali",
+                            "use_cases": [
+                                "Radiologia Digitale e Analogica - Controlli su sistemi RX fissi e portatili per animali",
+                                "Biosicurezza Radiologica - Procedure per contenimento e protezione durante esami su animali",
+                                "Fluoroscopia e Arco a C - Verifiche per sistemi di radiologia interventistica veterinaria"
+                            ],
+                            "image": "https://images.unsplash.com/photo-1657778752500-9da406aa813f"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "what-we-do",
+                "slug": "our-approach",
+                "data": {
+                    "view": "pub_theme::components.blocks.what-we-do.checklist",
+                    "title": "Cosa Controlliamo",
+                    "subtitle": "Il nostro protocollo di verifica copre ogni aspetto della sicurezza radiologica. Dall'efficienza delle macchine alla protezione strutturale, nulla viene lasciato al caso per garantire la totale conformità al D.Lgs 101/2020.",
+                    "checklist": [
+                        {
+                            "icon": "heroicon-o-chart-bar",
+                            "title": "Dosimetria",
+                            "description": "Monitoraggio dell'esposizione alle radiazioni per il personale esposto e l'ambiente."
+                        },
+                        {
+                            "icon": "heroicono-shield-check",
+                            "title": "Schermature",
+                            "description": "Verifica dell'adeguatezza delle barriere protettive e dei DPI (camici, collari)."
+                        },
+                        {
+                            "icon": "heroicono-cpu-chip",
+                            "title": "Apparecchiature Radiologiche",
+                            "description": "Controllo di costanza, tensione, corrente e tempi di esposizione dei generatori."
+                        },
+                        {
+                            "icon": "heroicono-light-bulb",
+                            "title": "Sistemi di Protezione",
+                            "description": "Test su interblocchi, segnaletica luminosa e acustica di sicurezza."
+                        },
+                        {
+                            "icon": "heroicono-document-check",
+                            "title": "Documentazione e Registri",
+                            "description": "Audit sulla corretta tenuta del registro macchine e delle schede dosimetriche."
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "testimonials",
+                "slug": "customer-reviews",
+                "data": {
+                    "view": "pub_theme::components.blocks.testimonials.grid",
+                    "title": "Dicono di Noi",
+                    "subtitle": "La tranquillità di chi ha scelto la sicurezza certificata",
+                    "testimonials": [
+                        {
+                            "name": "Dr. Roberto Magni",
+                            "role": "Centro Odontoiatrico Magni",
+                            "location": "Padova, PD",
+                            "avatar": "https://images.unsplash.com/photo-1537368910025-700350fe46c7",
+                            "rating": 5,
+                            "quote": "La gestione della radioprotezione era un incubo burocratico. Con Marco abbiamo non solo messo tutto in regola secondo il D.Lgs 101/2020, ma dormiamo sonni tranquilli sapendo che i controlli sono precisi e puntuali.",
+                            "date": "15 gennaio 2026"
+                        },
+                        {
+                            "name": "Dr.ssa Elena Visentin",
+                            "role": "Clinica Veterinaria San Marco",
+                            "location": "Mestre, VE",
+                            "avatar": "https://images.unsplash.com/photo-1594824476967-48c8b964273f",
+                            "rating": 5,
+                            "quote": "Professionalità assoluta nel controllo delle nostre apparecchiature radiologiche. Le verifiche sono meticolose e le spiegazioni chiare. Un partner indispensabile per la sicurezza del nostro staff e dei pazienti animali.",
+                            "date": "20 novembre 2025"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "resources",
+                "slug": "free-resources",
+                "data": {
+                    "view": "pub_theme::components.blocks.resources.grid",
+                    "title": "Risorse Utili per il Tuo Studio",
+                    "subtitle": "Scarica le nostre guide gratuite per approfondire gli obblighi di radioprotezione e gestire al meglio la sicurezza.",
+                    "resources": [
+                        {
+                            "title": "Guida Radioprotezione Odontoiatrica",
+                            "description": "Vademecum essenziale sugli obblighi di legge e le buone prassi per lo studio dentistico.",
+                            "icon": "heroicon-o-document-text",
+                            "download_url": "/downloads/guida-odontoiatria.pdf"
+                        },
+                        {
+                            "title": "Guida Radioprotezione Veterinaria",
+                            "description": "Manuale operativo per la gestione del rischio radiologico nelle cliniche veterinarie.",
+                            "icon": "heroicon-o-document-text",
+                            "download_url": "/downloads/guida-veterinaria.pdf"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "newsletter",
+                "slug": "email-subscription",
+                "data": {
+                    "view": "pub_theme::components.blocks.newsletter.form",
+                    "title": "Rimani Aggiornato",
+                    "description": "Iscriviti alla nostra newsletter per ricevere aggiornamenti normativi, consigli pratici e offerte esclusive per il tuo studio.",
+                    "cta_label": "Iscriviti",
+                    "privacy_note": "Niente spam, solo contenuti di qualità. Puoi disiscriverti quando vuoi."
+                }
+            }
+        ]
+    },
+    "sidebar_blocks": {
+        "it": [
+            {
+                "type": "quick-links",
+                "slug": "quick-links",
+                "data": {
+                    "view": "pub_theme::components.blocks.sidebar.quick-links",
+                    "title": "Accesso Rapido",
+                    "links": [
+                        {
+                            "label": "Dashboard Admin",
+                            "url": "/admin",
+                            "icon": "heroicon-o-squares-2x2"
+                        },
+                        {
+                            "label": "Gestione Dipendenti",
+                            "url": "/employee/admin",
+                            "icon": "heroicon-o-users"
+                        },
+                        {
+                            "label": "Report e Analytics",
+                            "url": "/chart/admin",
+                            "icon": "heroicon-o-chart-bar"
+                        },
+                        {
+                            "label": "Documentazione",
+                            "url": "/docs",
+                            "icon": "heroicon-o-document-text"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "system-info",
+                "slug": "system-info",
+                "data": {
+                    "view": "pub_theme::components.blocks.sidebar.system-info",
+                    "title": "Informazioni Sistema",
+                    "info": [
+                        {
+                            "label": "Versione",
+                            "value": "{{ app()->version() }}"
+                        },
+                        {
+                            "label": "Ambiente",
+                            "value": "{{ app()->environment() }}"
+                        },
+                        {
+                            "label": "Lingua",
+                            "value": "{{ app()->getLocale() }}"
+                        },
+                        {
+                            "label": "Tema",
+                            "value": "Sixteen"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "footer_blocks": {
+        "it": []
+    },
+    "created_at": "2025-07-08T09:02:57.000000Z",
+    "updated_at": "2025-01-06T15:30:00.000000Z",
+    "created_by": null,
+    "updated_by": "01985ae8-8039-71ea-88c7-54ebce6295b0"
+}

@@ -1,0 +1,93 @@
+{
+  "resources/js/app.js": {
+    "file": "assets/app-[hash].js",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "css": ["assets/app-[hash].css"]
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-[hash].css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/chart.js": {
+    "file": "assets/chart-[hash].js",
+    "src": "resources/js/chart.js",
+    "isEntry": true,
+    "css": ["assets/chart-[hash].css"]
+  },
+  "resources/css/chart.css": {
+    "file": "assets/chart-[hash].css",
+    "src": "resources/css/chart.css",
+    "isEntry": true
+  },
+  "resources/js/filament-chart-js-plugins.js": {
+    "file": "assets/filament-chart-js-plugins-[hash].js",
+    "name": "filament-chart-js-plugins",
+    "src": "resources/js/filament-chart-js-plugins.js",
+    "isEntry": true
+  }
+}
+
+
+
+
+
+ 6440866 (.)
+
+ d2e74a3 (.)
+  "Resources/css/app.css": {
+    "file": "assets/app-l0sNRNKZ.js",
+    "name": "app",
+    "src": "Resources/css/app.css",
+    "isEntry": true
+  },
+  "Resources/js/app.js": {
+    "file": "assets/app-DP2rzg_V.js",
+    "name": "app",
+    "src": "Resources/js/app.js",
+    "isEntry": true
+  },
+  "Resources/js/filament-chart-js-plugins.js": {
+    "file": "assets/filament-chart-js-plugins-Rc_bp8Yh.js",
+    "name": "filament-chart-js-plugins",
+    "src": "Resources/js/filament-chart-js-plugins.js",
+    "isEntry": true
+  }
+
+
+}
+
+
+ dacab4a (.)
+  "resources/css/app.css": {
+    "file": "assets/app-l0sNRNKZ.js",
+    "name": "app",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DP2rzg_V.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/filament-chart-js-plugins.js": {
+    "file": "assets/filament-chart-js-plugins-Rc_bp8Yh.js",
+    "name": "filament-chart-js-plugins",
+    "src": "resources/js/filament-chart-js-plugins.js",
+    "isEntry": true
+  }
+}
+
+ 7d3b0bb (.)
+
+}
+ 6440866 (.)
+
+}
+ d2e74a3 (.)
+
+ dacab4a (.)
+}
+}

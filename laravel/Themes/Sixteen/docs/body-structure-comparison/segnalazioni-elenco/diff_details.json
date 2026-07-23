@@ -1,0 +1,1497 @@
+{
+  "page": "ticket-list",
+  "date": "2026-04-08T13:13:24.021675",
+  "ref_url": "https://italia.github.io/design-comuni-pagine-statiche/sito/ticket-list.html",
+  "local_url": "http://127.0.0.1:8000/it/tests/ticket-list",
+  "stats": {
+    "total_ref": 775,
+    "total_local": 726,
+    "identical": 603,
+    "different": 68,
+    "missing_in_local": 104,
+    "extra_in_local": 55,
+    "parity_score": 77.8
+  },
+  "ids": {
+    "common": [
+      "autocomplete-two",
+      "collapse1",
+      "collapse2",
+      "collapse3",
+      "data-ex-disservizio1",
+      "data-ex-disservizio2",
+      "enviroment",
+      "footer",
+      "green",
+      "header-nav-wrapper",
+      "main-container",
+      "maintenance",
+      "nav4",
+      "public-order",
+      "rating",
+      "road",
+      "rodent-control",
+      "search-modal",
+      "security",
+      "service",
+      "star1a",
+      "star2a",
+      "star3a",
+      "star4a",
+      "star5a",
+      "street-furniture",
+      "tabDisservizio",
+      "waste",
+      "water"
+    ],
+    "missing_in_local": [
+      "fifth-star",
+      "first-star",
+      "formGroupExampleInputWithHelp",
+      "formGroupExampleInputWithHelpDescription",
+      "fourth-star",
+      "modal-disservizio",
+      "modal2Title",
+      "radio-1",
+      "radio-10",
+      "radio-2",
+      "radio-3",
+      "radio-4",
+      "radio-5",
+      "radio-6",
+      "radio-7",
+      "radio-8",
+      "radio-9",
+      "rating-feedback",
+      "second-star",
+      "third-star"
+    ],
+    "extra_in_local": [
+      "mobile-enviroment",
+      "mobile-green",
+      "mobile-maintenance",
+      "mobile-public-order",
+      "mobile-road",
+      "mobile-rodent-control",
+      "mobile-security",
+      "mobile-service",
+      "mobile-street-furniture",
+      "mobile-waste",
+      "mobile-water",
+      "modal-categories",
+      "modal-categories-label"
+    ]
+  },
+  "classes": {
+    "common_count": 228,
+    "missing_in_local": [
+      "align-items-lg-center",
+      "btn-back",
+      "btn-next",
+      "btn-sm",
+      "button-shadow",
+      "card-teaser",
+      "cmp-radio-list",
+      "cmp-radio-list__item",
+      "cmp-rating__card-first",
+      "cmp-rating__card-second",
+      "cmp-steps-rating",
+      "cmp-steps-rating__body",
+      "d-block",
+      "drop-shadow",
+      "fieldset-rating-one",
+      "fieldset-rating-two",
+      "flex-column",
+      "flex-lg-row",
+      "flex-wrap",
+      "form-control",
+      "form-rating",
+      "form-text",
+      "fw-bold",
+      "iscrizioni-header",
+      "m-0",
+      "me-4",
+      "modal-footer",
+      "pb-2",
+      "pt-2",
+      "pt-4",
+      "radio-body",
+      "shadow-rating",
+      "step",
+      "step-title",
+      "text-black",
+      "text-wrap",
+      "title-medium-2-bold",
+      "title-small-semi-bold",
+      "title-xsmall"
+    ],
+    "extra_in_local": [
+      "h4",
+      "modal-dialog-scrollable"
+    ]
+  },
+  "different_elements": [
+    {
+      "tag": "div",
+      "depth": 20,
+      "id": null,
+      "classes": [
+        "border-0",
+        "border-light"
+      ],
+      "diffs": [
+        "classes missing in local: ['border-0']",
+        "extra classes in local: ['single-line-info']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 21,
+      "id": null,
+      "classes": [
+        "d-lg-flex",
+        "gap-2",
+        "mt-3"
+      ],
+      "diffs": [
+        "classes missing in local: ['d-lg-flex', 'gap-2', 'mt-3']",
+        "extra classes in local: ['text-paragraph-small']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 22,
+      "id": null,
+      "classes": [],
+      "diffs": [
+        "extra classes in local: ['border-0', 'border-light']",
+        "attrs differ: ref=set(), loc={'class'}"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 22,
+      "id": null,
+      "classes": [],
+      "diffs": [
+        "extra classes in local: ['d-lg-flex', 'gap-2', 'mt-3']",
+        "attrs differ: ref=set(), loc={'class'}"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 20,
+      "id": null,
+      "classes": [
+        "text-paragraph-small"
+      ],
+      "diffs": [
+        "classes missing in local: ['text-paragraph-small']",
+        "extra classes in local: ['border-light', 'single-line-info']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 20,
+      "id": null,
+      "classes": [
+        "border-0",
+        "border-light"
+      ],
+      "diffs": [
+        "classes missing in local: ['border-0', 'border-light']",
+        "extra classes in local: ['text-paragraph-small']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 21,
+      "id": null,
+      "classes": [
+        "d-lg-flex",
+        "gap-2",
+        "mt-3"
+      ],
+      "diffs": [
+        "classes missing in local: ['d-lg-flex', 'gap-2', 'mt-3']",
+        "extra classes in local: ['border-0', 'border-light']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 22,
+      "id": null,
+      "classes": [],
+      "diffs": [
+        "extra classes in local: ['d-lg-flex', 'gap-2', 'mt-3']",
+        "attrs differ: ref=set(), loc={'class'}"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 8,
+      "id": null,
+      "classes": [
+        "text-wrapper"
+      ],
+      "diffs": [
+        "classes missing in local: ['text-wrapper']",
+        "extra classes in local: ['card-footer', 'd-none', 'p-0']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 8,
+      "id": null,
+      "classes": [
+        "button-wrapper"
+      ],
+      "diffs": [
+        "classes missing in local: ['button-wrapper']",
+        "extra classes in local: ['col-12', 'text-center']"
+      ]
+    },
+    {
+      "tag": "button",
+      "depth": 9,
+      "id": null,
+      "classes": [
+        "btn",
+        "btn",
+        "btn-primary",
+        "mb-4",
+        "mb-lg-0",
+        "mobile-full",
+        "mt-2",
+        "py-3"
+      ],
+      "diffs": [
+        "classes missing in local: ['btn-primary', 'mb-4', 'mb-lg-0', 'mt-2']",
+        "extra classes in local: ['btn-outline-primary', 'mt-10', 'mx-auto']",
+        "attrs differ: ref={'data-bs-toggle', 'type', 'class', 'data-bs-target'}, loc={'type', 'class'}"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 2,
+      "id": null,
+      "classes": [
+        "container"
+      ],
+      "diffs": [
+        "classes missing in local: ['container']",
+        "extra classes in local: ['bg-primary']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 3,
+      "id": null,
+      "classes": [
+        "bg-primary",
+        "d-flex",
+        "justify-content-center",
+        "row"
+      ],
+      "diffs": [
+        "classes missing in local: ['bg-primary', 'd-flex', 'justify-content-center', 'row']",
+        "extra classes in local: ['container']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 4,
+      "id": null,
+      "classes": [
+        "col-12",
+        "col-lg-6",
+        "p-lg-0",
+        "px-3"
+      ],
+      "diffs": [
+        "classes missing in local: ['col-12', 'col-lg-6', 'p-lg-0', 'px-3']",
+        "extra classes in local: ['bg-primary', 'd-flex', 'justify-content-center', 'row']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 5,
+      "id": "rating",
+      "classes": [
+        "cmp-rating",
+        "pb-lg-80",
+        "pt-lg-80"
+      ],
+      "diffs": [
+        "id: 'rating' vs 'None'",
+        "classes missing in local: ['cmp-rating', 'pb-lg-80', 'pt-lg-80']",
+        "extra classes in local: ['col-12', 'col-lg-6', 'p-lg-0', 'px-3']",
+        "attrs differ: ref={'class', 'id'}, loc={'class'}"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 6,
+      "id": null,
+      "classes": [
+        "card",
+        "card-wrapper",
+        "shadow"
+      ],
+      "diffs": [
+        "id: 'None' vs 'rating'",
+        "classes missing in local: ['card', 'card-wrapper', 'shadow']",
+        "extra classes in local: ['cmp-rating', 'pb-lg-80', 'pt-lg-80']",
+        "attrs differ: ref={'class', 'data-element'}, loc={'class', 'id'}"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 7,
+      "id": null,
+      "classes": [
+        "cmp-rating__card-first"
+      ],
+      "diffs": [
+        "classes missing in local: ['cmp-rating__card-first']",
+        "extra classes in local: ['card', 'card-wrapper', 'shadow']"
+      ]
+    },
+    {
+      "tag": "label",
+      "depth": 10,
+      "id": null,
+      "classes": [
+        "active",
+        "full",
+        "rating-star"
+      ],
+      "diffs": [
+        "classes missing in local: ['active']",
+        "attrs differ: ref={'for', 'class', 'data-element'}, loc={'for', 'class'}"
+      ]
+    },
+    {
+      "tag": "label",
+      "depth": 10,
+      "id": null,
+      "classes": [
+        "active",
+        "full",
+        "rating-star"
+      ],
+      "diffs": [
+        "classes missing in local: ['active']",
+        "attrs differ: ref={'for', 'class', 'data-element'}, loc={'for', 'class'}"
+      ]
+    },
+    {
+      "tag": "label",
+      "depth": 10,
+      "id": null,
+      "classes": [
+        "active",
+        "full",
+        "rating-star"
+      ],
+      "diffs": [
+        "classes missing in local: ['active']",
+        "attrs differ: ref={'for', 'class', 'data-element'}, loc={'for', 'class'}"
+      ]
+    },
+    {
+      "tag": "label",
+      "depth": 10,
+      "id": null,
+      "classes": [
+        "active",
+        "full",
+        "rating-star"
+      ],
+      "diffs": [
+        "classes missing in local: ['active']",
+        "attrs differ: ref={'for', 'class', 'data-element'}, loc={'for', 'class'}"
+      ]
+    },
+    {
+      "tag": "label",
+      "depth": 10,
+      "id": null,
+      "classes": [
+        "active",
+        "full",
+        "rating-star"
+      ],
+      "diffs": [
+        "classes missing in local: ['active']",
+        "attrs differ: ref={'for', 'class', 'data-element'}, loc={'for', 'class'}"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 7,
+      "id": null,
+      "classes": [
+        "cmp-rating__card-second",
+        "d-none"
+      ],
+      "diffs": [
+        "classes missing in local: ['cmp-rating__card-second', 'd-none']",
+        "extra classes in local: ['bg-grey-card', 'shadow-contacts']",
+        "attrs differ: ref={'class', 'data-step'}, loc={'class'}"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 8,
+      "id": null,
+      "classes": [
+        "border-0",
+        "card-header",
+        "mb-0"
+      ],
+      "diffs": [
+        "classes missing in local: ['border-0', 'card-header', 'mb-0']",
+        "extra classes in local: ['container']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 7,
+      "id": null,
+      "classes": [
+        "d-none",
+        "form-rating"
+      ],
+      "diffs": [
+        "classes missing in local: ['d-none', 'form-rating']",
+        "extra classes in local: ['d-flex', 'justify-content-center', 'p-contacts', 'row']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 8,
+      "id": null,
+      "classes": [
+        "d-none"
+      ],
+      "diffs": [
+        "classes missing in local: ['d-none']",
+        "extra classes in local: ['col-12', 'col-lg-5']",
+        "attrs differ: ref={'class', 'data-step'}, loc={'class'}"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 9,
+      "id": null,
+      "classes": [
+        "cmp-steps-rating"
+      ],
+      "diffs": [
+        "classes missing in local: ['cmp-steps-rating']",
+        "extra classes in local: ['cmp-contacts']"
+      ]
+    },
+    {
+      "tag": "span",
+      "depth": 13,
+      "id": null,
+      "classes": [
+        "d-block",
+        "text-wrap"
+      ],
+      "diffs": [
+        "classes missing in local: ['d-block', 'text-wrap']",
+        "attrs differ: ref={'class', 'data-element'}, loc=set()"
+      ]
+    },
+    {
+      "tag": "span",
+      "depth": 13,
+      "id": null,
+      "classes": [
+        "step"
+      ],
+      "diffs": [
+        "classes missing in local: ['step']",
+        "attrs differ: ref={'class'}, loc=set()"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 11,
+      "id": null,
+      "classes": [
+        "cmp-steps-rating__body"
+      ],
+      "diffs": [
+        "classes missing in local: ['cmp-steps-rating__body']",
+        "extra classes in local: ['it-example-modal']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 12,
+      "id": null,
+      "classes": [
+        "cmp-radio-list"
+      ],
+      "diffs": [
+        "id: 'None' vs 'modal-categories'",
+        "classes missing in local: ['cmp-radio-list']",
+        "extra classes in local: ['fade', 'modal']",
+        "attrs differ: ref={'class'}, loc={'aria-labelledby', 'tabindex', 'role', 'id', 'class', 'aria-hidden'}"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 13,
+      "id": null,
+      "classes": [
+        "card",
+        "card-teaser",
+        "shadow-rating"
+      ],
+      "diffs": [
+        "classes missing in local: ['card', 'card-teaser', 'shadow-rating']",
+        "extra classes in local: ['modal-dialog', 'modal-dialog-scrollable']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 14,
+      "id": null,
+      "classes": [
+        "card-body"
+      ],
+      "diffs": [
+        "classes missing in local: ['card-body']",
+        "extra classes in local: ['modal-content']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 15,
+      "id": null,
+      "classes": [
+        "form-check",
+        "m-0"
+      ],
+      "diffs": [
+        "classes missing in local: ['form-check', 'm-0']",
+        "extra classes in local: ['modal-header']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 16,
+      "id": null,
+      "classes": [
+        "border-bottom",
+        "border-light",
+        "cmp-radio-list__item",
+        "radio-body"
+      ],
+      "diffs": [
+        "classes missing in local: ['border-bottom', 'border-light', 'cmp-radio-list__item', 'radio-body']",
+        "extra classes in local: ['modal-body']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 16,
+      "id": null,
+      "classes": [
+        "border-bottom",
+        "border-light",
+        "cmp-radio-list__item",
+        "radio-body"
+      ],
+      "diffs": [
+        "classes missing in local: ['border-bottom', 'border-light', 'cmp-radio-list__item', 'radio-body']",
+        "extra classes in local: ['categoy-list', 'pb-4']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 16,
+      "id": null,
+      "classes": [
+        "border-bottom",
+        "border-light",
+        "cmp-radio-list__item",
+        "radio-body"
+      ],
+      "diffs": [
+        "classes missing in local: ['border-bottom', 'border-light', 'cmp-radio-list__item', 'radio-body']",
+        "extra classes in local: ['form-check']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 16,
+      "id": null,
+      "classes": [
+        "border-bottom",
+        "border-light",
+        "cmp-radio-list__item",
+        "radio-body"
+      ],
+      "diffs": [
+        "classes missing in local: ['border-bottom', 'cmp-radio-list__item', 'radio-body']",
+        "extra classes in local: ['checkbox-body', 'py-1']"
+      ]
+    },
+    {
+      "tag": "input",
+      "depth": 17,
+      "id": "radio-4",
+      "classes": [],
+      "diffs": [
+        "id: 'radio-4' vs 'mobile-water'",
+        "attrs differ: ref={'type', 'name', 'id'}, loc={'value', 'type', 'name', 'id'}"
+      ]
+    },
+    {
+      "tag": "label",
+      "depth": 17,
+      "id": null,
+      "classes": [
+        "active"
+      ],
+      "diffs": [
+        "classes missing in local: ['active']",
+        "extra classes in local: ['category-list__list', 'mb-0', 'subtitle-small_semi-bold']",
+        "attrs differ: ref={'for', 'class', 'data-element'}, loc={'for', 'class'}"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 16,
+      "id": null,
+      "classes": [
+        "border-bottom",
+        "border-light",
+        "cmp-radio-list__item",
+        "radio-body"
+      ],
+      "diffs": [
+        "classes missing in local: ['border-bottom', 'cmp-radio-list__item', 'radio-body']",
+        "extra classes in local: ['checkbox-body', 'py-1']"
+      ]
+    },
+    {
+      "tag": "input",
+      "depth": 17,
+      "id": "radio-5",
+      "classes": [],
+      "diffs": [
+        "id: 'radio-5' vs 'mobile-enviroment'",
+        "attrs differ: ref={'type', 'name', 'id'}, loc={'value', 'type', 'name', 'id'}"
+      ]
+    },
+    {
+      "tag": "label",
+      "depth": 17,
+      "id": null,
+      "classes": [
+        "active"
+      ],
+      "diffs": [
+        "classes missing in local: ['active']",
+        "extra classes in local: ['category-list__list', 'mb-0', 'subtitle-small_semi-bold']",
+        "attrs differ: ref={'for', 'class', 'data-element'}, loc={'for', 'class'}"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 15,
+      "id": null,
+      "classes": [
+        "form-check",
+        "m-0"
+      ],
+      "diffs": [
+        "classes missing in local: ['m-0']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 16,
+      "id": null,
+      "classes": [
+        "border-bottom",
+        "border-light",
+        "cmp-radio-list__item",
+        "radio-body"
+      ],
+      "diffs": [
+        "classes missing in local: ['border-bottom', 'cmp-radio-list__item', 'radio-body']",
+        "extra classes in local: ['checkbox-body', 'py-1']"
+      ]
+    },
+    {
+      "tag": "input",
+      "depth": 17,
+      "id": "radio-6",
+      "classes": [],
+      "diffs": [
+        "id: 'radio-6' vs 'mobile-street-furniture'",
+        "attrs differ: ref={'type', 'name', 'id'}, loc={'value', 'type', 'name', 'id'}"
+      ]
+    },
+    {
+      "tag": "label",
+      "depth": 17,
+      "id": null,
+      "classes": [
+        "active"
+      ],
+      "diffs": [
+        "classes missing in local: ['active']",
+        "extra classes in local: ['category-list__list', 'mb-0', 'subtitle-small_semi-bold']",
+        "attrs differ: ref={'for', 'class', 'data-element'}, loc={'for', 'class'}"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 16,
+      "id": null,
+      "classes": [
+        "border-bottom",
+        "border-light",
+        "cmp-radio-list__item",
+        "radio-body"
+      ],
+      "diffs": [
+        "classes missing in local: ['border-bottom', 'border-light', 'cmp-radio-list__item', 'radio-body']",
+        "extra classes in local: ['form-check']"
+      ]
+    },
+    {
+      "tag": "div",
+      "depth": 16,
+      "id": null,
+      "classes": [
+        "border-bottom",
+        "border-light",
+        "cmp-radio-list__item",
+        "radio-body"
+      ],
+      "diffs": [
+        "classes missing in local: ['border-bottom', 'cmp-radio-list__item', 'radio-body']",
+        "extra classes in local: ['checkbox-body', 'py-1']"
+      ]
+    },
+    {
+      "tag": "input",
+      "depth": 17,
+      "id": "radio-8",
+      "classes": [],
+      "diffs": [
+        "id: 'radio-8' vs 'mobile-rodent-control'",
+        "attrs differ: ref={'type', 'name', 'id'}, loc={'value', 'type', 'name', 'id'}"
+      ]
+    }
+  ],
+  "missing_elements": [
+    {
+      "tag": "div",
+      "id": null,
+      "classes": [
+        "border-light",
+        "single-line-info"
+      ]
+    },
+    {
+      "tag": "div",
+      "id": null,
+      "classes": [
+        "text-paragraph-small"
+      ]
+    },
+    {
+      "tag": "img",
+      "id": null,
+      "classes": [
+        "img-fluid",
+        "mb-3",
+        "mb-lg-0",
+        "w-100"
+      ]
+    },
+    {
+      "tag": "img",
+      "id": null,
+      "classes": [
+        "img-fluid",
+        "mb-3",
+        "mb-lg-0",
+        "w-100"
+      ]
+    },
+    {
+      "tag": "div",
+      "id": null,
+      "classes": [
+        "border-light",
+        "single-line-info"
+      ]
+    },
+    {
+      "tag": "img",
+      "id": null,
+      "classes": [
+        "img-fluid",
+        "mb-3",
+        "mb-lg-0",
+        "w-100"
+      ]
+    },
+    {
+      "tag": "div",
+      "id": null,
+      "classes": [
+        "card-footer",
+        "d-none",
+        "p-0"
+      ]
+    },
+    {
+      "tag": "div",
+      "id": null,
+      "classes": [
+        "col-12",
+        "text-center"
+      ]
+    },
+    {
+      "tag": "button",
+      "id": null,
+      "classes": [
+        "btn",
+        "btn",
+        "btn-outline-primary",
+        "mobile-full",
+        "mt-10",
+        "mx-auto",
+        "py-3"
+      ]
+    },
+    {
+      "tag": "span",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "div",
+      "id": null,
+      "classes": [
+        "col-lg-6",
+        "mb-4",
+        "mb-lg-0",
+        "mt-50"
+      ]
+    },
+    {
+      "tag": "div",
+      "id": null,
+      "classes": [
+        "cmp-text-button",
+        "mt-0"
+      ]
+    },
+    {
+      "tag": "h2",
+      "id": null,
+      "classes": [
+        "mb-0",
+        "title-xxlarge"
+      ]
+    },
+    {
+      "tag": "p",
+      "id": null,
+      "classes": [
+        "mb-3",
+        "mt-3",
+        "subtitle-small"
+      ]
+    },
+    {
+      "tag": "div",
+      "id": null,
+      "classes": [
+        "bg-primary"
+      ]
+    },
+    {
+      "tag": "path",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "span",
+      "id": "first-star",
+      "classes": [
+        "visually-hidden"
+      ]
+    },
+    {
+      "tag": "path",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "span",
+      "id": "second-star",
+      "classes": [
+        "visually-hidden"
+      ]
+    },
+    {
+      "tag": "path",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "span",
+      "id": "third-star",
+      "classes": [
+        "visually-hidden"
+      ]
+    },
+    {
+      "tag": "path",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "span",
+      "id": "fourth-star",
+      "classes": [
+        "visually-hidden"
+      ]
+    },
+    {
+      "tag": "path",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "span",
+      "id": "fifth-star",
+      "classes": [
+        "visually-hidden"
+      ]
+    },
+    {
+      "tag": "h2",
+      "id": "rating-feedback",
+      "classes": [
+        "mb-0",
+        "title-medium-2-bold"
+      ]
+    },
+    {
+      "tag": "fieldset",
+      "id": null,
+      "classes": [
+        "d-none",
+        "fieldset-rating-one"
+      ]
+    },
+    {
+      "tag": "legend",
+      "id": null,
+      "classes": [
+        "iscrizioni-header",
+        "w-100"
+      ]
+    },
+    {
+      "tag": "h3",
+      "id": null,
+      "classes": [
+        "align-items-lg-center",
+        "d-flex",
+        "drop-shadow",
+        "flex-column",
+        "flex-lg-row",
+        "justify-content-between",
+        "step-title"
+      ]
+    },
+    {
+      "tag": "input",
+      "id": "radio-1",
+      "classes": []
+    },
+    {
+      "tag": "label",
+      "id": null,
+      "classes": [
+        "active"
+      ]
+    },
+    {
+      "tag": "input",
+      "id": "radio-2",
+      "classes": []
+    },
+    {
+      "tag": "label",
+      "id": null,
+      "classes": [
+        "active"
+      ]
+    },
+    {
+      "tag": "input",
+      "id": "radio-3",
+      "classes": []
+    },
+    {
+      "tag": "label",
+      "id": null,
+      "classes": [
+        "active"
+      ]
+    },
+    {
+      "tag": "fieldset",
+      "id": null,
+      "classes": [
+        "d-none",
+        "fieldset-rating-two"
+      ]
+    },
+    {
+      "tag": "legend",
+      "id": null,
+      "classes": [
+        "iscrizioni-header",
+        "w-100"
+      ]
+    },
+    {
+      "tag": "h3",
+      "id": null,
+      "classes": [
+        "align-items-lg-center",
+        "d-flex",
+        "drop-shadow",
+        "flex-column",
+        "flex-lg-row",
+        "flex-wrap",
+        "justify-content-between",
+        "step-title"
+      ]
+    },
+    {
+      "tag": "span",
+      "id": null,
+      "classes": [
+        "d-block",
+        "text-wrap"
+      ]
+    },
+    {
+      "tag": "span",
+      "id": null,
+      "classes": [
+        "step"
+      ]
+    },
+    {
+      "tag": "div",
+      "id": null,
+      "classes": [
+        "cmp-steps-rating__body"
+      ]
+    },
+    {
+      "tag": "div",
+      "id": null,
+      "classes": [
+        "cmp-radio-list"
+      ]
+    },
+    {
+      "tag": "div",
+      "id": null,
+      "classes": [
+        "card",
+        "card-teaser",
+        "shadow-rating"
+      ]
+    },
+    {
+      "tag": "div",
+      "id": null,
+      "classes": [
+        "card-body"
+      ]
+    },
+    {
+      "tag": "input",
+      "id": "radio-7",
+      "classes": []
+    },
+    {
+      "tag": "label",
+      "id": null,
+      "classes": [
+        "active"
+      ]
+    },
+    {
+      "tag": "input",
+      "id": "radio-9",
+      "classes": []
+    },
+    {
+      "tag": "label",
+      "id": null,
+      "classes": [
+        "active"
+      ]
+    },
+    {
+      "tag": "div",
+      "id": null,
+      "classes": [
+        "d-none"
+      ]
+    },
+    {
+      "tag": "div",
+      "id": null,
+      "classes": [
+        "cmp-steps-rating"
+      ]
+    }
+  ],
+  "extra_elements": [
+    {
+      "tag": "div",
+      "id": null,
+      "classes": [
+        "card",
+        "w-100"
+      ]
+    },
+    {
+      "tag": "div",
+      "id": null,
+      "classes": [
+        "card-body"
+      ]
+    },
+    {
+      "tag": "h2",
+      "id": null,
+      "classes": [
+        "title-medium-2-semi-bold"
+      ]
+    },
+    {
+      "tag": "ul",
+      "id": null,
+      "classes": [
+        "contact-list",
+        "p-0"
+      ]
+    },
+    {
+      "tag": "li",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "a",
+      "id": null,
+      "classes": [
+        "list-item"
+      ]
+    },
+    {
+      "tag": "svg",
+      "id": null,
+      "classes": [
+        "icon",
+        "icon-primary",
+        "icon-sm"
+      ]
+    },
+    {
+      "tag": "use",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "span",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "li",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "a",
+      "id": null,
+      "classes": [
+        "list-item"
+      ]
+    },
+    {
+      "tag": "svg",
+      "id": null,
+      "classes": [
+        "icon",
+        "icon-primary",
+        "icon-sm"
+      ]
+    },
+    {
+      "tag": "use",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "span",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "li",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "a",
+      "id": null,
+      "classes": [
+        "list-item"
+      ]
+    },
+    {
+      "tag": "svg",
+      "id": null,
+      "classes": [
+        "icon",
+        "icon-primary",
+        "icon-sm"
+      ]
+    },
+    {
+      "tag": "use",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "span",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "li",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "a",
+      "id": null,
+      "classes": [
+        "list-item"
+      ]
+    },
+    {
+      "tag": "svg",
+      "id": null,
+      "classes": [
+        "icon",
+        "icon-primary",
+        "icon-sm"
+      ]
+    },
+    {
+      "tag": "use",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "h2",
+      "id": null,
+      "classes": [
+        "mb-3",
+        "title-medium-2-semi-bold"
+      ]
+    },
+    {
+      "tag": "ul",
+      "id": null,
+      "classes": [
+        "contact-list",
+        "p-0"
+      ]
+    },
+    {
+      "tag": "li",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "a",
+      "id": null,
+      "classes": [
+        "list-item"
+      ]
+    },
+    {
+      "tag": "svg",
+      "id": null,
+      "classes": [
+        "icon",
+        "icon-primary",
+        "icon-sm"
+      ]
+    },
+    {
+      "tag": "use",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "h2",
+      "id": "modal-categories-label",
+      "classes": [
+        "h4",
+        "modal-title"
+      ]
+    },
+    {
+      "tag": "button",
+      "id": null,
+      "classes": [
+        "btn-close"
+      ]
+    },
+    {
+      "tag": "fieldset",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "ul",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "li",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "li",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "div",
+      "id": null,
+      "classes": [
+        "form-check"
+      ]
+    },
+    {
+      "tag": "li",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "li",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "li",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "li",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "label",
+      "id": null,
+      "classes": [
+        "category-list__list",
+        "mb-0",
+        "subtitle-small_semi-bold"
+      ]
+    },
+    {
+      "tag": "input",
+      "id": "mobile-public-order",
+      "classes": []
+    },
+    {
+      "tag": "label",
+      "id": null,
+      "classes": [
+        "category-list__list",
+        "mb-0",
+        "subtitle-small_semi-bold"
+      ]
+    },
+    {
+      "tag": "li",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "input",
+      "id": "mobile-green",
+      "classes": []
+    },
+    {
+      "tag": "label",
+      "id": null,
+      "classes": [
+        "category-list__list",
+        "mb-0",
+        "subtitle-small_semi-bold"
+      ]
+    },
+    {
+      "tag": "li",
+      "id": null,
+      "classes": []
+    },
+    {
+      "tag": "input",
+      "id": "mobile-service",
+      "classes": []
+    },
+    {
+      "tag": "label",
+      "id": null,
+      "classes": [
+        "category-list__list",
+        "mb-0",
+        "subtitle-small_semi-bold"
+      ]
+    },
+    {
+      "tag": "li",
+      "id": null,
+      "classes": []
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+    "Activity": true,
+    "Cms": true,
+    "Employee": true,
+    "Gdpr": true,
+    "Geo": true,
+    "Job": true,
+    "Lang": true,
+    "Media": true,
+    "Notify": true,
+    "TechPlanner": true,
+    "Tenant": true,
+    "UI": true,
+    "User": true,
+    "Xot": true,
+    "AI": true,
+    "Blog": true,
+    "Comment": true,
+    "Rating": true,
+    "Seo": true,
+    "Setting": true
+}

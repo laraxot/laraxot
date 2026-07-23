@@ -1,0 +1,3514 @@
+/* Bootstrap Italia styles converted to Tailwind CSS with @apply */
+/* Based on: https://italia.github.io/design-comuni-pagine-statiche/ */
+
+@import 'tailwindcss';
+
+/* Set DaisyUI theme */
+@import '../../../../vendor/filament/support/resources/css/index.css';
+@import '../../../../vendor/filament/actions/resources/css/index.css';
+@import '../../../../vendor/filament/forms/resources/css/index.css';
+@import '../../../../vendor/filament/infolists/resources/css/index.css';
+@import '../../../../vendor/filament/notifications/resources/css/index.css';
+@import '../../../../vendor/filament/schemas/resources/css/index.css';
+@import '../../../../vendor/filament/tables/resources/css/index.css';
+@import '../../../../vendor/filament/widgets/resources/css/index.css';
+@variant dark (&:where(.dark, .dark *));
+
+/* Import Titillium Web font - Bootstrap Italia official font */
+
+/* Clean visibility overrides for Filament compatibility */
+main {
+  @apply relative z-10;
+}
+
+main *:not(.d-none) {
+  @apply opacity-100;
+}
+
+/* Ensure grid system works */
+.row {
+  @apply flex flex-wrap;
+}
+
+.d-flex {
+  @apply flex;
+}
+
+/* Reset base styles to ensure visibility */
+* {
+  @apply box-border;
+}
+
+html, body {
+  @apply m-0 p-0 w-full h-auto leading-normal;
+  font-family: "Titillium Web";
+}
+
+/* Bootstrap Italia design converted to Tailwind CSS with @apply */
+/* Colors based on Bootstrap Italia: Primary Green #007a52, Blue #006cc6, Gray #5d7083 */
+
+/* CSS Custom Properties - Design Comuni (VERIFIED from reference 2026-04-02) */
+:root {
+  /* Bootstrap Italia primary - GREEN */
+  --bs-primary: #007A52;
+  --bs-primary-dark: #00402B;
+  --bs-primary-darker: #002244;
+  /* Secondary */
+  --bs-secondary: #5d7083;
+  --bs-success: #008055;
+  --bs-blue: #0073e6;
+  --bs-dark: #17334f;
+  --bs-light: #e9e6f2;
+  --bs-gray-100: #f5f5f5;
+  --bs-gray-200: #e6e6e6;
+  --bs-gray-300: #d4d4d4;
+  --bs-gray-600: #525252;
+  --bs-gray-900: #191919;
+}
+
+/* Header styling - VERIFIED from reference 2026-04-02 */
+.it-header-wrapper {
+  background-color: var(--bs-primary);
+  @apply relative;
+  color: #191919;
+}
+
+.it-header-slim-wrapper {
+  background-color: var(--bs-primary-dark);
+  @apply py-0 text-base flex;
+  color: #191919;
+}
+
+.it-header-slim-wrapper-content {
+  @apply flex justify-between items-center;
+  padding: 0 18px;
+}
+
+/* Removed conflicting color rule for slim header links */
+/* .it-header-slim-wrapper a {
+  @apply no-underline text-base;
+  color: #191919;
+} */
+
+.it-header-slim-right-zone {
+  @apply flex items-center gap-4;
+}
+
+/* Dropdown language selector */
+.nav-item.dropdown {
+  @apply relative;
+}
+
+.nav-link.dropdown-toggle {
+  @apply bg-transparent border-0 flex items-center gap-1 px-2 py-1 text-base cursor-pointer;
+  color: #191919;
+}
+
+.nav-link.dropdown-toggle:hover {
+  @apply opacity-80;
+}
+
+.nav-link.dropdown-toggle:hover {
+  @apply opacity-80;
+}
+
+.dropdown-menu {
+  @apply absolute top-full right-0 bg-white border border-gray-200 rounded shadow-lg min-w-30 z-50 hidden;
+}
+
+.dropdown-menu.show {
+  @apply block;
+}
+
+.dropdown-item {
+  @apply block px-4 py-2 text-gray-900 no-underline text-sm;
+}
+
+.dropdown-item:hover {
+  @apply bg-gray-100;
+}
+
+/* DaisyUI Dropdown fixes for Bootstrap Italia header */
+.it-header-wrapper .dropdown .dropdown-content {
+  background-color: white !important;
+  color: #17334f !important;
+  border: 1px solid #dee2e6 !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.it-header-wrapper .dropdown .dropdown-content a {
+  color: #17334f !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.25rem !important;
+}
+
+.it-header-wrapper .dropdown .dropdown-content a:hover {
+  background-color: #f8f9fa !important;
+  color: #007a52 !important;
+}
+
+/* Language dropdown styling fix - override header white text */
+#language-menu {
+  background-color: white !important;
+  border: 1px solid #dee2e6 !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  z-index: 1050 !important;
+}
+
+.it-header-slim-wrapper .dropdown-menu .dropdown-item {
+  color: #17334f !important;
+  background-color: transparent !important;
+}
+
+.it-header-slim-wrapper .dropdown-menu .dropdown-item:hover {
+  background-color: #f8f9fa !important;
+  color: #007a52 !important;
+}
+
+.it-header-slim-wrapper .dropdown-menu .dropdown-item span {
+  color: #17334f !important;
+}
+
+.it-header-slim-wrapper .dropdown-menu .dropdown-item:hover span {
+  color: #007a52 !important;
+}
+
+/* Force text visibility in dropdowns */
+.dropdown-menu,
+.dropdown-content,
+.menu {
+  color: #17334f !important;
+}
+
+.dropdown-menu *,
+.dropdown-content *,
+.menu * {
+  color: #17334f !important;
+}
+
+.dropdown-menu a,
+.dropdown-content a,
+.menu a {
+  color: #17334f !important;
+  text-decoration: none !important;
+}
+
+.dropdown-menu a:hover,
+.dropdown-content a:hover,
+.menu a:hover {
+  color: #007a52 !important;
+  background-color: #f8f9fa !important;
+}
+
+/* DaisyUI specific overrides for Bootstrap Italia */
+.it-header-wrapper .dropdown .menu {
+  background-color: white !important;
+  color: #17334f !important;
+  border: 1px solid #dee2e6 !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.it-header-wrapper .dropdown .menu li a {
+  color: #17334f !important;
+  background-color: transparent !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.it-header-wrapper .dropdown .menu li a:hover {
+  color: #007a52 !important;
+  background-color: #f8f9fa !important;
+}
+
+/* Override DaisyUI text color inheritance */
+.it-header-wrapper .dropdown .menu li a span {
+  color: #17334f !important;
+}
+
+.it-header-wrapper .dropdown .menu li a:hover span {
+  color: #007a52 !important;
+}
+
+/* Force visibility for all dropdown text elements */
+.it-header-wrapper .dropdown * {
+  color: #17334f !important;
+}
+
+.it-header-wrapper .dropdown .menu * {
+  color: #17334f !important;
+}
+
+.it-header-wrapper .dropdown .menu li * {
+  color: #17334f !important;
+}
+
+.it-header-wrapper .dropdown .menu li a * {
+  color: #17334f !important;
+}
+
+.it-header-wrapper .dropdown .menu li a:hover * {
+  color: #007a52 !important;
+}
+
+/* User access button */
+.btn-icon.btn-full {
+  @apply flex items-center gap-2 px-4 py-2 rounded text-sm whitespace-nowrap;
+}
+
+.rounded-icon {
+  @apply inline-flex items-center justify-center w-6 h-6 bg-white rounded-full;
+}
+
+/* SVG Icons styling */
+.icon {
+  @apply w-4 h-4 fill-current;
+}
+
+.icon-sm {
+  @apply w-3.5 h-3.5;
+}
+
+.icon-primary {
+  color: var(--bs-primary);
+}
+
+.icon-white {
+  @apply text-white;
+}
+
+/* Brand section */
+.it-brand-wrapper {
+  @apply flex items-center gap-3;
+}
+
+.it-brand-wrapper a {
+  @apply flex items-center gap-3 no-underline;
+  color: #191919;
+}
+
+.it-brand-text {
+  @apply flex flex-col;
+}
+
+.it-brand-logo {
+  @apply w-20 h-20 flex-shrink-0;
+}
+
+.it-brand-title {
+  @apply text-2xl font-semibold mb-0;
+  color: #FFFFFF;
+}
+
+.it-brand-tagline {
+  @apply text-sm mb-0;
+  color: #FFFFFF;
+}
+
+.it-brand-tagline {
+  @apply text-sm mb-0;
+  color: #FFFFFF;
+}
+
+.it-brand-tagline {
+  @apply text-sm mb-0;
+  color: #FFFFFF;
+}
+
+.it-brand-tagline {
+  @apply text-sm mb-0;
+  color: #FFFFFF;
+}
+
+.it-brand-tagline {
+  @apply text-sm mb-0;
+  color: #FFFFFF;
+}
+
+.it-brand-tagline {
+  @apply text-sm mb-0;
+  color: #FFFFFF;
+}
+
+.it-right-zone {
+  @apply flex items-center gap-4;
+}
+
+.it-socials {
+  @apply flex items-center gap-2;
+}
+
+.it-socials span {
+  @apply text-sm mr-3 font-normal;
+  color: #FFFFFF;
+}
+
+.it-socials ul {
+  @apply flex gap-0.5 list-none m-0 p-0;
+}
+
+.it-socials li a {
+  @apply p-1 inline-flex transition-opacity duration-200;
+  color: #007A52;
+}
+
+.it-socials li a .icon {
+  @apply w-6 h-6 text-[#007A52];
+}
+
+.it-socials li a .icon {
+  @apply w-6 h-6 text-[#007A52];
+}
+
+.it-socials li a .icon {
+  @apply w-6 h-6 text-[#007A52];
+}
+
+.it-socials li a:hover {
+  @apply opacity-80;
+}
+
+/* Right zone layout */
+.it-right-zone {
+  @apply flex items-center gap-6;
+}
+
+/* .d-none.d-lg-flex: hidden on mobile, flex on desktop */
+@media (min-width: 992px) {
+  .d-none.d-lg-flex {
+    display: flex !important;
+  }
+}
+
+.it-search-wrapper {
+  @apply flex items-center gap-2;
+}
+
+.it-search-wrapper span {
+  @apply text-sm;
+  color: #FFFFFF;
+}
+
+.search-link {
+  background: transparent;
+  color: #FFFFFF;
+  @apply p-1 rounded-full border-0 inline-flex items-center justify-center transition-colors duration-200 ml-4;
+}
+
+.search-link .icon {
+  @apply w-6 h-6;
+}
+
+.search-link:hover {
+  @apply bg-white/10;
+}
+
+/* Navigation - Design Comuni green */
+.it-nav-wrapper {
+  background: #007A52 !important;
+  box-shadow: none;
+}
+
+.it-header-navbar-wrapper {
+  background: #007A52 !important;
+  @apply py-0 border-t-0;
+  color: #FFFFFF;
+}
+
+.it-header-center-wrapper {
+    background: #007A52 !important;
+    @apply py-[6px] pb-0;
+    color: #FFFFFF;
+}
+
+.it-header-center-content-wrapper {
+  @apply flex items-center;
+}
+
+.it-header-center-content-wrapper .it-brand-wrapper {
+  @apply mr-auto;
+}
+
+/* Navbar */
+.navbar {
+  @apply p-0;
+  background: #007A52 !important;
+}
+
+.navbar-expand-lg {
+  background: #007A52 !important;
+}
+
+.navbar-nav {
+  @apply flex gap-0 list-none m-0 p-0;
+}
+
+.navbar-nav .nav-item {
+  @apply relative;
+}
+
+.navbar-nav .nav-link {
+  @apply font-semibold text-lg px-6 py-3 no-underline block transition-colors duration-200;
+  color: #FFFFFF;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.navbar-secondary {
+  @apply mt-2;
+}
+
+.navbar-secondary .nav-link {
+  @apply text-sm font-normal px-6 py-2 opacity-90;
+  color: #FFFFFF;
+}
+
+.navbar-secondary .nav-link:hover {
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+/* Navigation styling per desktop e mobile */
+.navbar-collapsable .navbar-nav .nav-link {
+  @apply bg-transparent;
+  color: #FFFFFF;
+}
+
+.navbar-collapsable .navbar-secondary .nav-link {
+  @apply bg-transparent opacity-90;
+  color: #191919;
+}
+
+/* Mobile hamburger menu - centered vertically */
+.custom-navbar-toggler {
+  @apply border-0 bg-transparent p-2 block;
+  color: #191919;
+  align-self: center;
+}
+
+/* Hamburger menu icon vertical centering */
+.navbar .custom-navbar-toggler .icon {
+  @apply align-middle;
+  vertical-align: middle;
+}
+
+/* Slim wrapper: language selector + user button contrast */
+.it-header-slim-wrapper {
+  background-color: #00402b !important;
+}
+
+.it-header-slim-wrapper .nav-link {
+  @apply text-white;
+  color: #ffffff !important;
+}
+
+.it-header-slim-wrapper .nav-link .icon {
+  fill: #ffffff !important;
+}
+
+.it-header-slim-wrapper .btn-primary {
+  background-color: #007A52 !important;
+  border-color: #007A52 !important;
+}
+
+.it-header-slim-wrapper .btn-primary .icon {
+  fill: #ffffff !important;
+}
+
+/* Solo figli diretti del toggle (nome utente), non l'iniziale dentro .rounded-icon */
+.it-header-slim-wrapper .btn-primary > span:not(.rounded-icon) {
+  @apply text-white;
+  color: #ffffff !important;
+}
+
+.cmp-text-button .btn-primary,
+.btn-primary .text-white,
+.btn-primary:where(.mobile-full, .py-3) {
+  color: #ffffff !important;
+}
+
+/* Slim wrapper right zone alignment */
+.it-header-slim-right-zone {
+  @apply flex items-center gap-2;
+}
+
+/* Language dropdown styling */
+.it-header-slim-wrapper .dropdown-menu {
+  @apply mt-2;
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.it-header-slim-wrapper .dropdown-item {
+  @apply text-gray-800 hover:bg-gray-100;
+  color: #191919;
+}
+
+/* Search label visible at all breakpoints */
+.search-label {
+  @apply text-white text-sm;
+  color: #ffffff !important;
+}
+
+/* User button icon white */
+.btn-primary .icon-white,
+.it-header-slim-wrapper .btn .icon {
+  fill: #ffffff !important;
+}
+
+@media (min-width: 992px) {
+  .custom-navbar-toggler {
+    @apply hidden;
+  }
+}
+
+/* Mostra menu su desktop con layout orizzontale */
+@media (min-width: 992px) {
+  .navbar-collapsable {
+    @apply flex static w-full;
+    background: var(--bs-primary) !important;
+  }
+
+  .navbar-collapsable .overlay,
+  .navbar-collapsable .close-div,
+  .navbar-collapsable .logo-hamburger {
+    @apply hidden;
+  }
+
+  .navbar-collapsable .menu-wrapper {
+    @apply flex justify-between items-center w-full p-0;
+  }
+
+  .navbar-collapsable nav {
+    @apply flex;
+  }
+
+  .navbar-collapsable nav[aria-label="Principale"] {
+    @apply flex-1;
+  }
+
+  .navbar-collapsable nav[aria-label="Secondaria"] {
+    @apply ml-auto;
+  }
+
+  .navbar-collapsable .navbar-nav {
+    @apply flex flex-row m-0 p-0;
+  }
+
+  .navbar-collapsable .navbar-secondary {
+    @apply flex flex-row m-0 p-0;
+  }
+
+  .navbar-collapsable .it-socials {
+    @apply hidden;
+  }
+}
+
+/* Mobile menu styling */
+.navbar-collapsable .it-socials {
+  @apply mt-8 pt-4 border-t border-white/20;
+}
+
+.navbar-collapsable {
+  @apply relative bg-transparent block;
+}
+
+@media (max-width: 991px) {
+  .navbar-collapsable {
+    @apply fixed top-0 left-0 right-0 bottom-0 bg-white z-50 overflow-y-auto hidden;
+  }
+
+  .navbar-collapsable.show {
+    @apply block;
+  }
+}
+
+.close-div {
+  @apply flex justify-end p-4;
+}
+
+@media (min-width: 992px) {
+  .close-div {
+    @apply hidden;
+  }
+}
+
+.close-menu {
+  @apply bg-transparent border-0 p-2;
+  color: var(--bs-dark);
+}
+
+.menu-wrapper {
+  @apply p-4;
+}
+
+@media (min-width: 992px) {
+  .menu-wrapper {
+    @apply p-0;
+  }
+}
+
+
+.row {
+  @apply flex flex-wrap -mx-3;
+}
+
+.col-12 {
+  @apply flex-none w-full max-w-full px-3;
+}
+
+.col-lg-3 {
+  @apply flex-none w-full max-w-full px-3;
+}
+
+.col-lg-8 {
+  @apply flex-none w-full max-w-full px-3;
+}
+
+.col-lg-10 {
+  @apply flex-none w-full max-w-full px-3;
+}
+
+.col-md-3 {
+  @apply flex-none w-full max-w-full px-3;
+}
+
+.col-md-4 {
+  @apply flex-none w-full max-w-full px-3;
+}
+
+.col-md-6 {
+  @apply flex-none w-full max-w-full px-3;
+}
+
+.col-md-9 {
+  @apply flex-none w-full max-w-full px-3;
+}
+
+.col-lg-5 {
+  @apply flex-none w-full max-w-full px-3;
+}
+
+.col-lg-6 {
+  @apply flex-none w-full max-w-full px-3;
+}
+
+/* Large devices (992px and up) */
+@media (min-width: 992px) {
+  .col-lg-3 {
+    @apply flex-none w-1/4;
+    max-width: 25%;
+  }
+
+  .col-lg-5 {
+    @apply flex-none;
+    width: 41.666667%;
+    max-width: 41.666667%;
+  }
+
+  .col-lg-6 {
+    @apply flex-none w-1/2;
+    max-width: 50%;
+  }
+
+  .col-lg-8 {
+    @apply flex-none w-2/3;
+    max-width: 66.666667%;
+  }
+
+  .col-lg-10 {
+    @apply flex-none w-5/6;
+    max-width: 83.333333%;
+  }
+}
+
+/* Medium devices (768px and up) */
+@media (min-width: 768px) {
+  .col-md-3 {
+    @apply flex-none w-1/4;
+    max-width: 25%;
+  }
+
+  .col-md-4 {
+    @apply flex-none w-1/3;
+    max-width: 33.333333%;
+  }
+
+  .col-md-6 {
+    @apply flex-none w-1/2;
+    max-width: 50%;
+  }
+
+  .col-md-9 {
+    @apply flex-none w-3/4;
+    max-width: 75%;
+  }
+}
+
+/* Offset classes */
+.offset-lg-1 {
+  @apply ml-0;
+}
+
+@media (min-width: 992px) {
+  .offset-lg-1 {
+    margin-left: 8.333333%;
+  }
+}
+
+/* Main content layout */
+main {
+  background: white;
+  @apply min-h-screen block w-full;
+  min-height: calc(100vh - 200px);
+}
+
+#main-container {
+  @apply py-8 block w-full;
+}
+
+/* Ensure main content is visible */
+body {
+  @apply m-0 p-0 w-full text-base leading-normal block;
+  font-family: "Titillium Web";
+  color: var(--bs-dark);
+  background: white;
+}
+
+/* Force visibility of main content (non forzare display:block su .col-* — rompe la griglia Bootstrap) */
+main,
+#main-container,
+.container {
+  @apply visible opacity-100;
+}
+
+.row {
+  @apply flex flex-wrap visible opacity-100;
+}
+
+[class*="col-"] {
+  @apply visible opacity-100;
+}
+
+/* Override any hidden classes that might be interfering */
+.d-none {
+  @apply hidden;
+}
+
+.d-lg-block {
+  @apply hidden;
+}
+
+@media (min-width: 992px) {
+  .d-lg-block {
+    @apply block;
+  }
+}
+
+@media (max-width: 991px) {
+  .d-lg-none {
+    @apply hidden;
+  }
+}
+
+/* Fix header positioning */
+.it-header-wrapper {
+  @apply relative z-50;
+}
+
+/* Fix navigation positioning */
+.it-nav-wrapper {
+  @apply relative z-40;
+}
+
+/* Typography and text styling - Bootstrap Italia with @apply */
+.title-xxxlarge {
+  @apply text-5xl font-bold text-gray-900 leading-tight mb-0;
+  color: var(--bs-dark);
+}
+
+.title-xxlarge {
+  @apply text-4xl font-bold text-gray-900 mb-0;
+  color: var(--bs-dark);
+}
+
+.medium-title {
+  @apply text-xl font-semibold text-gray-900 mb-2;
+  color: var(--bs-dark);
+}
+
+.subtitle-small {
+  @apply text-sm text-gray-500 mt-2 mb-0;
+  color: var(--bs-secondary);
+}
+
+.subtitle-small_semi-bold {
+  @apply text-sm font-semibold text-gray-900 mb-0;
+  color: var(--bs-dark);
+}
+
+/* Breadcrumbs - Bootstrap Italia style with @apply */
+.cmp-breadcrumbs {
+  @apply mt-4;
+}
+
+.breadcrumb {
+  @apply flex items-center p-0 m-0 list-none text-sm;
+}
+
+.breadcrumb-item {
+  @apply flex items-center;
+}
+
+.breadcrumb-item a {
+  color: var(--bs-primary);
+  @apply no-underline;
+}
+
+.breadcrumb-item a:hover {
+  @apply underline;
+}
+
+.breadcrumb-item.active {
+  color: var(--bs-secondary);
+}
+
+.separator {
+  @apply mx-2;
+  color: var(--bs-gray-600);
+}
+
+/* Headings and content sections */
+.cmp-heading {
+  @apply mt-2 mb-8;
+}
+
+.title-xxxlarge {
+  @apply text-5xl font-bold text-gray-900 leading-tight mb-0;
+  color: var(--bs-dark);
+}
+
+.subtitle-small {
+  @apply text-sm text-gray-500 mt-2 mb-0;
+  color: var(--bs-secondary);
+}
+
+/* Category sidebar - Bootstrap Italia style with @apply */
+.category-list__title {
+  @apply text-xs font-semibold uppercase tracking-wider text-gray-900 mb-4;
+  color: var(--bs-dark);
+}
+
+.category-list__list {
+  @apply inline-block text-sm font-medium;
+}
+
+.categoy-list {
+  @apply pb-4;
+}
+
+.categoy-list ul {
+  @apply list-none p-0 m-0;
+}
+
+.categoy-list li {
+  @apply mb-2;
+}
+
+/* Form elements - Bootstrap Italia style with @apply */
+.form-check {
+  @apply flex items-start mb-2;
+}
+
+.checkbox-body {
+  @apply flex items-center py-2 border-b border-gray-200;
+}
+
+.checkbox-body input[type="checkbox"] {
+  @apply w-4 h-4 mr-2 accent-green-600 border border-gray-300 rounded;
+}
+
+.checkbox-body label {
+  @apply text-sm font-medium text-gray-900 cursor-pointer flex-1;
+  color: var(--bs-dark);
+}
+
+/* Results and filters - Bootstrap Italia style with @apply */
+.search-results {
+  @apply text-gray-900 font-medium text-base;
+  color: var(--bs-dark);
+}
+
+.d-flex.justify-content-between {
+  @apply flex justify-between items-center;
+}
+
+.border-bottom.border-light {
+  @apply border-b border-gray-200;
+}
+
+.pb-3 {
+  @apply pb-3;
+}
+
+.mt-5 {
+  @apply mt-5;
+}
+
+/* Display utilities */
+.d-lg-none {
+  @apply block;
+}
+
+@media (min-width: 992px) {
+  .d-lg-none {
+    @apply hidden;
+  }
+}
+
+.d-none {
+  @apply hidden;
+}
+
+.d-none.d-lg-block {
+  @apply hidden;
+}
+
+@media (min-width: 992px) {
+  .d-none.d-lg-block {
+    @apply block;
+  }
+}
+
+.title-xsmall-semi-bold {
+  @apply text-xs font-semibold;
+}
+
+.ms-1 {
+  @apply ml-1;
+}
+
+/* Filter buttons */
+.btn.p-0.pe-2 {
+  @apply p-0 pr-2;
+}
+
+.title-medium-semi-bold {
+  @apply text-base font-semibold;
+}
+
+.pt-0 {
+  @apply pt-0;
+}
+
+/* Map/list block — tab panels (scoped #main-container; parity in listing-parity.css) */
+#main-container .tab-content [x-cloak],
+.segnalazioni-elenco .tab-content [x-cloak] {
+  display: none !important;
+}
+
+/* Tabs - Bootstrap Italia style with @apply */
+.nav-tabs {
+  @apply flex w-full border-b border-gray-200 mb-10 mt-3 p-0 list-none;
+}
+
+.nav-tabs .nav-item {
+  @apply flex-1 relative;
+}
+
+.nav-tabs .nav-link {
+  @apply block py-2 text-center font-semibold text-gray-500 no-underline border-b-2 border-transparent transition-all duration-200;
+  color: var(--bs-secondary);
+}
+
+.nav-tabs .nav-link:hover {
+  @apply text-gray-900;
+  color: var(--bs-dark);
+}
+
+.nav-tabs .nav-link.active {
+  @apply text-green-600 border-green-600;
+  color: var(--bs-primary);
+}
+
+/* Tab content */
+.tab-content {
+  @apply w-full block;
+}
+
+.tab-pane {
+  @apply w-full hidden;
+}
+
+.tab-pane.fade {
+  @apply opacity-0 transition-opacity duration-300;
+}
+
+.tab-pane.fade.show.active,
+.tab-pane.active {
+  @apply block opacity-100;
+}
+
+.w-100 {
+  @apply w-full;
+}
+
+.flex-nowrap {
+  @apply flex-nowrap;
+}
+
+.shadow-none {
+  @apply shadow-none;
+}
+
+/* Map - Bootstrap Italia style with @apply */
+.map-box {
+  @apply relative border border-gray-200 rounded-lg overflow-hidden bg-white;
+}
+
+.map-box .pin {
+  @apply absolute bg-transparent border-0 p-0 cursor-pointer;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+}
+
+.map-box .pin img {
+  @apply w-10 h-10;
+}
+
+/* Cards - Bootstrap Italia style with @apply */
+.cmp-info-button-card {
+  @apply mb-4;
+}
+
+@media (min-width: 992px) {
+  .cmp-info-button-card {
+    @apply mb-8;
+  }
+}
+
+.card {
+  @apply bg-white border border-gray-200 rounded-lg shadow-sm;
+}
+
+.card.has-bkg-grey,
+.bg-bootstrap-bg-grey {
+  @apply bg-gray-100 border-0;
+}
+
+.card-body {
+  @apply p-0;
+}
+
+.cmp-info-button-card .card {
+  @apply bg-gray-100 p-3;
+}
+
+@media (min-width: 992px) {
+  .cmp-info-button-card .card {
+    @apply p-4;
+  }
+}
+
+.medium-title {
+  @apply text-lg font-semibold text-gray-900 mb-2;
+  color: var(--bs-dark);
+}
+
+.card-info {
+  @apply text-sm text-gray-500 mb-4;
+  color: var(--bs-secondary);
+}
+
+.card-info span {
+  @apply font-semibold text-gray-900 block;
+  color: var(--bs-dark);
+}
+
+/* Buttons - Bootstrap Italia style with @apply */
+.btn {
+  @apply inline-flex items-center justify-center px-6 py-3 text-base font-semibold leading-normal no-underline border-2 border-transparent rounded cursor-pointer transition-all duration-200 min-h-12;
+}
+
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  @apply text-white;
+}
+
+.btn-primary:hover {
+  @apply bg-blue-700 border-blue-700 text-white;
+}
+
+.btn-outline-primary {
+  @apply bg-transparent border-green-600 text-green-600;
+  border-color: var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  @apply text-white;
+}
+
+.btn-icon {
+  @apply p-2 min-w-12 min-h-12;
+}
+
+.btn-full {
+  @apply w-full;
+}
+
+.mobile-full {
+  @apply w-full;
+}
+
+@media (min-width: 992px) {
+  .mobile-full {
+    @apply w-auto;
+  }
+}
+
+/* Text button section - Bootstrap Italia style with @apply */
+.cmp-text-button {
+  @apply mt-0;
+}
+
+.title-xxlarge {
+  @apply text-4xl font-bold mb-0 text-gray-900;
+  color: var(--bs-dark);
+}
+
+.text-wrapper {
+  @apply mt-3;
+}
+
+.button-wrapper {
+  @apply mt-2;
+}
+
+/* Footer - Design Comuni dark blue */
+.it-footer {
+  background-color: #17324D !important;
+  color: white !important;
+}
+
+footer.it-footer {
+  background-color: #17324D !important;
+  color: white !important;
+}
+
+.it-footer-main {
+  @apply py-12;
+}
+
+.ue-logo {
+  @apply h-20 mb-0 mr-0 flex-shrink-0;
+}
+
+/* Footer logo wrapper - align EU logo and comune brand */
+.footer-items-wrapper.logo-wrapper {
+  @apply flex items-center justify-start flex-nowrap gap-12 mb-8;
+}
+
+.footer-items-wrapper {
+  @apply mb-8;
+}
+
+/* Footer brand styling */
+.it-footer .it-brand-text h2 {
+  @apply text-3xl font-bold text-white m-0;
+}
+
+.it-footer .it-brand-wrapper {
+  @apply flex items-center gap-4 flex-shrink-0;
+}
+
+.it-footer .it-brand-wrapper a {
+  @apply flex items-center gap-4 no-underline;
+}
+
+.it-footer .it-brand-wrapper .icon {
+  @apply w-16 h-16 flex-shrink-0;
+}
+
+/* Footer social links styling */
+.it-footer .list-inline.social {
+  @apply flex gap-2 mt-4 list-none p-0;
+}
+
+.it-footer .list-inline.social .list-inline-item {
+  @apply m-0;
+}
+
+.it-footer .list-inline.social .list-inline-item a {
+  @apply inline-flex items-center justify-center p-1.5 rounded-lg transition-colors duration-200;
+}
+
+.it-footer .list-inline.social .list-inline-item a:hover {
+  @apply bg-white/10;
+}
+
+.it-footer .list-inline.social .icon {
+  @apply w-6 h-6;
+}
+
+.footer-heading-title {
+  @apply text-lg font-semibold mb-4 text-white;
+}
+
+.footer-list {
+  @apply list-none p-0 m-0;
+}
+
+.footer-list li {
+  @apply mb-2;
+}
+
+.footer-list li a {
+  @apply text-gray-300 hover:text-white text-sm underline transition-colors duration-200;
+}
+
+.footer-info {
+  @apply text-gray-300 text-sm leading-relaxed;
+}
+
+.footer-bottom {
+  @apply flex gap-6 pt-4 border-t border-gray-700 mt-8;
+}
+
+.footer-bottom a {
+  @apply text-gray-300 hover:text-white text-sm no-underline;
+}
+
+/* Rating - Bootstrap Italia style with @apply */
+.cmp-rating {
+  @apply py-12;
+}
+
+.cmp-rating .card-wrapper {
+  @apply rounded-2xl shadow-2xl max-w-2xl mx-auto;
+}
+
+.cmp-rating .card-header {
+  @apply p-8 pb-4 border-0 bg-white rounded-t-2xl;
+}
+
+.cmp-rating .card-body {
+  @apply p-4 pb-8;
+}
+
+.cmp-rating .title-medium-2-semi-bold {
+  @apply text-2xl font-semibold text-gray-900 text-center leading-snug mb-0;
+  color: var(--bs-dark);
+}
+
+.rating {
+  @apply flex flex-row-reverse justify-center gap-1 mt-6;
+}
+
+.rating input {
+  @apply hidden;
+}
+
+.rating .rating-star {
+  @apply cursor-pointer w-10 h-10 flex items-center justify-center rounded transition-all duration-200;
+}
+
+.rating .rating-star:hover {
+  @apply scale-110;
+}
+
+.rating .rating-star svg {
+  @apply fill-slate-300 w-8 h-8 transition-colors duration-200;
+}
+
+.rating input:checked ~ label.rating-star svg,
+.rating label.rating-star.active svg {
+  @apply fill-yellow-400;
+}
+
+/* Active stars shown as gray (unselected default state - matches Design Comuni reference) */
+.rating .rating-star.active svg {
+  @apply fill-slate-300;
+}
+
+.pt-lg-80 {
+  @apply pt-8;
+}
+
+@media (min-width: 992px) {
+  .pt-lg-80 {
+    @apply pt-20;
+  }
+}
+
+.pb-lg-80 {
+  @apply pb-8;
+}
+
+@media (min-width: 992px) {
+  .pb-lg-80 {
+    @apply pb-20;
+  }
+}
+
+/* Utility classes - Bootstrap Italia style with @apply */
+.d-flex {
+  @apply flex;
+}
+
+.justify-content-between {
+  @apply justify-between;
+}
+
+.justify-content-center {
+  @apply justify-center;
+}
+
+/* Fix visibility issues */
+.d-block {
+  @apply block;
+}
+
+.visible {
+  @apply visible;
+}
+
+/* Ensure hr elements are visible */
+hr {
+  @apply border-0 border-t border-gray-200 my-4;
+}
+
+.hr {
+  @apply border-t border-gray-200 my-4;
+}
+
+.align-items-center {
+  @apply items-center;
+}
+
+.text-center {
+  @apply text-center;
+}
+
+.mb-0 {
+  @apply mb-0;
+}
+
+.mt-0 {
+  @apply mt-0;
+}
+
+.p-0 {
+  @apply p-0;
+}
+
+.px-3 {
+  @apply px-3;
+}
+
+.p-lg-0 {
+  @apply p-0;
+}
+
+@media (min-width: 992px) {
+  .p-lg-0 {
+    @apply p-0;
+  }
+}
+
+.p-3 {
+  @apply p-3;
+}
+
+.p-lg-4 {
+  @apply p-3;
+}
+
+@media (min-width: 992px) {
+  .p-lg-4 {
+    @apply p-4;
+  }
+}
+
+/* Responsive spacing - Bootstrap Italia style with @apply */
+.mb-md-40 {
+  @apply mb-10;
+}
+
+.mb-lg-80 {
+  @apply mb-20;
+}
+
+.mt-30 {
+  @apply mt-8;
+}
+
+.mb-2 {
+  @apply mb-2;
+}
+
+.mt-5 {
+  @apply mt-5;
+}
+
+.mb-40 {
+  @apply mb-10;
+}
+
+.mt-3 {
+  @apply mt-3;
+}
+
+.mb-3 {
+  @apply mb-3;
+}
+
+.mt-2 {
+  @apply mt-2;
+}
+
+.mb-4 {
+  @apply mb-4;
+}
+
+.mb-lg-0 {
+  @apply mb-0;
+}
+
+.mt-50 {
+  @apply mt-12;
+}
+
+.mb-lg-30 {
+  @apply mb-8;
+}
+
+.mt-10 {
+  @apply mt-10;
+}
+
+/* Colors - Bootstrap Italia style with @apply */
+.text-primary,
+.t-primary {
+  color: var(--bs-primary);
+}
+
+.border-light {
+  border-color: var(--bs-gray-200);
+}
+
+.shadow-sm {
+  @apply shadow-sm;
+}
+
+.shadow-contacts {
+  @apply shadow-lg;
+}
+
+/* Contacts component styling */
+.cmp-contacts .card {
+  @apply bg-white rounded-xl shadow-2xl border-0;
+}
+
+.cmp-contacts .card-body {
+  @apply p-8;
+}
+
+.contact-list {
+  @apply list-none m-0 p-0;
+}
+
+.contact-list .list-item {
+  @apply flex items-center py-4 text-green-600 no-underline font-medium border-b border-gray-200 last:border-b-0 transition-colors duration-200;
+  color: var(--bs-primary);
+}
+
+.contact-list .list-item:hover {
+  color: var(--bs-primary-dark);
+}
+
+.contact-list .list-item .icon {
+  @apply mr-4 w-5 h-5;
+}
+
+.bg-primary {
+  background-color: var(--bs-primary);
+}
+
+.bg-grey-card {
+  background-color: var(--bs-gray-100);
+}
+
+/* ============================================================================
+   CARD COMPONENTS - Bootstrap Italia Exact Mapping
+   Missing classes added to match reference implementation
+   ============================================================================ */
+
+/* Card Teaser - Main card style for listings */
+.card-teaser {
+  @apply bg-white rounded border border-gray-200 transition-all duration-200;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card-teaser:hover {
+  @apply border-blue-600;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.card-teaser .card-body {
+  @apply p-6;
+}
+
+.card-teaser .card-title {
+  @apply text-blue-600 text-lg font-semibold mb-2 leading-tight;
+}
+
+.card-teaser .card-title a {
+  @apply text-blue-600 no-underline hover:text-blue-800;
+}
+
+.card-teaser .card-text {
+  @apply text-gray-500 text-base leading-relaxed mt-0;
+}
+
+/* CMP Card Simple - Simple card component */
+.cmp-card-simple {
+  @apply bg-white rounded-lg;
+}
+
+.cmp-card-simple .card {
+  @apply border border-gray-200 rounded shadow-sm transition-all duration-200 h-full;
+}
+
+.cmp-card-simple .card:hover {
+  @apply border-blue-600;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.cmp-card-simple .card-body {
+  @apply p-6;
+}
+
+.cmp-card-simple .card-title {
+  @apply text-blue-600 text-base font-semibold mb-2 leading-tight;
+}
+
+.cmp-card-simple .card-title.t-primary,
+.cmp-card-simple h3.t-primary {
+  color: #0066cc !important;
+}
+
+.cmp-card-simple .description {
+  @apply text-gray-500 text-sm leading-relaxed;
+}
+
+/* ============================================================================
+   SECTION SPACING - Bootstrap Italia standard
+   ============================================================================ */
+
+/* Standard section spacing */
+section.py-5 {
+  @apply py-12;
+}
+
+section.py-4 {
+  @apply py-8;
+}
+
+/* ============================================================================
+   LINK LIST - Bootstrap Italia links list component
+   ============================================================================ */
+
+.link-list-wrapper {
+  @apply bg-white rounded-lg;
+}
+
+.link-list-wrapper ul {
+  @apply list-none p-0 m-0;
+}
+
+.link-list-wrapper .link-list {
+  @apply space-y-2;
+}
+
+.link-list-wrapper .list-item {
+  @apply border border-gray-200 rounded-lg p-4 transition-all duration-200;
+}
+
+.link-list-wrapper .list-item:hover {
+  @apply border-blue-600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.link-list-wrapper .list-item a {
+  @apply text-blue-600 text-lg font-semibold block mb-1 no-underline hover:underline;
+}
+
+.link-list-wrapper .list-item .description,
+.link-list-wrapper .list-item p {
+  @apply text-gray-500 text-sm leading-relaxed m-0;
+}
+
+/* ============================================================================
+   ACCORDION - Bootstrap Italia accordion component
+   ============================================================================ */
+
+.accordion {
+  @apply space-y-2;
+}
+
+.accordion .accordion-item {
+  @apply border border-gray-200 rounded-lg overflow-hidden;
+}
+
+.accordion .accordion-header {
+  @apply m-0;
+}
+
+.accordion .accordion-button {
+  @apply w-full px-6 py-4 bg-white text-gray-900 text-lg font-semibold text-left cursor-pointer border-0 transition-colors duration-200 flex justify-between items-center;
+}
+
+.accordion .accordion-button:hover {
+  @apply bg-blue-50;
+}
+
+.accordion .accordion-button:not(.collapsed)::after {
+  content: '−' !important;
+  @apply text-blue-600 text-2xl font-light;
+}
+
+.accordion .accordion-button.collapsed::after {
+  content: '+' !important;
+  @apply text-blue-600 text-2xl font-light;
+}
+
+.accordion .accordion-body {
+  @apply px-6 pb-4 text-gray-500 text-base leading-relaxed;
+}
+
+/* ============================================================================
+   RATING COMPONENT - Bootstrap Italia rating component
+   ============================================================================ */
+
+.cmp-rating {
+  @apply py-8;
+}
+
+.cmp-rating .card-wrapper {
+  @apply bg-blue-50 rounded-lg p-6 text-center;
+}
+
+.cmp-rating .card-header {
+  @apply mb-4;
+}
+
+.cmp-rating .title-medium-2-semi-bold {
+  @apply text-2xl font-semibold text-gray-900;
+}
+
+.cmp-rating__card-first,
+.cmp-rating__card-second {
+  @apply inline-flex items-center justify-center w-10 h-10 rounded-full mx-1 cursor-pointer transition-transform duration-150;
+}
+
+.cmp-rating__card-first:hover,
+.cmp-rating__card-second:hover {
+  @apply scale-115;
+}
+
+/* ============================================================================
+   CONTACT LIST - Bootstrap Italia contact list component
+   ============================================================================ */
+.title-medium-2-semi-bold {
+  @apply text-xl font-semibold text-gray-900;
+  color: var(--bs-dark);
+}
+
+.title-medium-2-bold {
+  @apply text-xl font-bold text-gray-900;
+  color: var(--bs-dark);
+}
+
+.title-xsmall {
+  @apply text-sm font-medium text-gray-900;
+  color: var(--bs-dark);
+}
+
+.title-small-semi-bold {
+  @apply text-sm font-semibold text-gray-900;
+  color: var(--bs-dark);
+}
+
+.text-paragraph-small {
+  @apply text-xs text-gray-500;
+  color: var(--bs-secondary);
+}
+
+.data-text {
+  @apply text-sm text-gray-900 font-normal;
+  color: var(--bs-dark);
+}
+
+.text-button-sm-semi {
+  @apply text-sm font-semibold;
+}
+
+/* Form elements - Bootstrap Italia style with @apply */
+.form-control {
+  @apply w-full px-3 py-2 border-2 border-gray-300 rounded text-base leading-normal transition-all duration-200;
+}
+
+.form-control:focus {
+  @apply outline-none border-green-600;
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 2px rgba(0, 108, 198, 0.25);
+}
+
+.form-group {
+  @apply mb-4;
+}
+
+.form-text {
+  @apply text-xs text-gray-500 mt-1;
+  color: var(--bs-secondary);
+}
+
+/* Accordion - Bootstrap Italia style with @apply */
+.accordion-item {
+  @apply border border-gray-200 rounded-lg mb-2;
+}
+
+.accordion-header {
+  @apply w-full;
+}
+
+.accordion-button {
+  @apply w-full p-3 text-left flex items-center justify-between bg-white border-0 cursor-pointer transition-colors duration-200;
+}
+
+.accordion-button::after {
+  content: '';
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.accordion-button[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+.accordion-button[aria-expanded="false"]::after {
+  transform: rotate(0deg);
+}
+
+.accordion-button:hover {
+  @apply bg-gray-100;
+}
+
+.accordion-button.collapsed {
+  @apply bg-white;
+}
+
+.accordion-collapse {
+  @apply hidden;
+}
+
+.accordion-collapse.show {
+  @apply block;
+}
+
+.accordion-body {
+  @apply p-0;
+}
+
+/* Info summary - Bootstrap Italia style with @apply */
+.cmp-info-summary {
+  @apply bg-white border-0;
+}
+
+.single-line-info {
+  @apply border-b border-gray-200 py-3;
+}
+
+.single-line-info:last-child {
+  @apply border-b-0;
+}
+
+/* Image gallery - Bootstrap Italia style with @apply */
+.d-lg-flex {
+  @apply flex flex-col;
+}
+
+@media (min-width: 992px) {
+  .d-lg-flex {
+    @apply flex-row;
+  }
+}
+
+.gap-2 {
+  @apply gap-2;
+}
+
+.img-fluid {
+  @apply max-w-full h-auto;
+}
+
+/* Modal - Bootstrap Italia style with @apply */
+.modal {
+  @apply fixed inset-0 z-50 hidden bg-black/50 items-center justify-center;
+}
+
+.modal.show {
+  @apply flex;
+}
+
+.modal-dialog {
+  @apply bg-white rounded-lg shadow-2xl max-w-md w-full mx-4;
+}
+
+.modal-content {
+  @apply relative;
+}
+
+.modal-header {
+  @apply flex items-center justify-between p-4 border-b border-gray-200;
+}
+
+.modal-title {
+  @apply text-lg font-semibold text-gray-900;
+  color: var(--bs-dark);
+}
+
+.btn-close {
+  @apply bg-transparent border-0 text-gray-500 cursor-pointer text-xl p-2;
+}
+
+.btn-close:hover {
+  @apply text-gray-900;
+  color: var(--bs-dark);
+}
+
+.modal-body {
+  @apply p-4;
+}
+
+.modal-footer {
+  @apply flex justify-end gap-2 p-4 border-t border-gray-200;
+}
+
+/* Search modal - Bootstrap Italia style with @apply */
+.search-modal .modal-dialog {
+  @apply max-w-2xl;
+}
+
+.autocomplete-wrapper {
+  @apply relative;
+}
+
+.autocomplete {
+  @apply w-full pl-10 pr-4 py-2 border-2 border-gray-300 rounded-lg text-base;
+}
+
+.autocomplete:focus {
+  @apply outline-none border-green-600;
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 2px rgba(0, 108, 198, 0.25);
+}
+
+.autocomplete-icon {
+  @apply absolute left-3 text-gray-500;
+  color: var(--bs-secondary);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.searches-list-wrapper {
+  @apply mt-6;
+}
+
+.other-link-title {
+  @apply text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3;
+  color: var(--bs-secondary);
+}
+
+.searches-list {
+  @apply list-none p-0 m-0;
+}
+
+.searches-list li {
+  @apply mb-2;
+}
+
+.searches-list li a {
+  @apply text-green-600 hover:underline text-sm no-underline;
+  color: var(--bs-primary);
+}
+
+/* Additional utility classes for Bootstrap Italia compatibility */
+.list-none {
+  @apply list-none;
+}
+
+.m-0 {
+  @apply m-0;
+}
+
+.mx-auto {
+  @apply mx-auto;
+}
+
+.px-4 {
+  @apply px-4;
+}
+
+.py-1 {
+  @apply py-1;
+}
+
+.py-2 {
+  @apply py-2;
+}
+
+.border-0 {
+  @apply border-0;
+}
+
+.border-bottom {
+  @apply border-b;
+}
+
+.border-top {
+  @apply border-t;
+}
+
+.text-black {
+  @apply text-black;
+}
+
+.visually-hidden {
+  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  clip: rect(0, 0, 0, 0);
+}
+
+.visually-hidden-focusable:focus {
+  @apply static w-auto h-auto overflow-visible whitespace-normal;
+  padding: inherit;
+  margin: inherit;
+  clip: auto;
+}
+
+.list-inline {
+  @apply list-none p-0 flex;
+}
+
+.list-inline-item {
+  @apply inline-block;
+}
+
+/* Skip links */
+.skiplink {
+  @apply absolute -top-24 left-0 z-50;
+}
+
+.skiplink a {
+  background: var(--bs-primary);
+  @apply text-white px-4 py-2 no-underline;
+}
+
+.skiplink a:focus {
+  @apply top-0 absolute;
+}
+
+/* Dropdown styling fix - override header white text for all dropdowns */
+.it-header-slim-wrapper .dropdown-menu {
+  @apply bg-white border border-gray-300 shadow-lg z-50;
+}
+
+/* Keep dropdown button white when closed - force override */
+.it-header-slim-wrapper .dropdown .nav-link.dropdown-toggle {
+  color: white !important;
+  font-weight: normal !important;
+}
+
+.it-header-slim-wrapper .dropdown .nav-link.dropdown-toggle span {
+  color: white !important;
+  font-weight: normal !important;
+}
+
+/* Fix SVG icon color in dropdown button */
+.it-header-slim-wrapper .dropdown .nav-link.dropdown-toggle .icon {
+  color: white !important;
+  fill: white !important;
+}
+
+/* Only style dropdown menu items, not the button */
+.it-header-slim-wrapper .dropdown-menu .dropdown-item {
+  @apply text-gray-800 bg-transparent;
+}
+
+.it-header-slim-wrapper .dropdown-menu .dropdown-item:hover {
+  @apply bg-gray-100;
+  color: #007a52 !important;
+}
+
+.it-header-slim-wrapper .dropdown-menu .dropdown-item span {
+  @apply text-gray-800;
+}
+
+.it-header-slim-wrapper .dropdown-menu .dropdown-item:hover span {
+  color: #007a52 !important;
+}
+
+/* FAQ Page Specific Styles */
+
+/* Search Box - Design Comuni style */
+.cmp-input-search {
+  @apply my-8;
+}
+
+.cmp-input-search .search-header {
+  @apply mb-4;
+}
+
+.cmp-input-search .search-title {
+  @apply text-xl font-semibold text-gray-900;
+  font-family: 'Titillium Web';
+}
+
+.cmp-input-search .search-form .form-group {
+  @apply mb-0;
+}
+
+.cmp-input-search .input-group {
+  @apply flex border border-gray-300 rounded-lg overflow-hidden;
+}
+
+.cmp-input-search .input-group .form-control {
+  @apply flex-1 px-4 py-3 border-0 outline-none text-base;
+  font-family: 'Titillium Web';
+}
+
+.cmp-input-search .input-group .form-control::placeholder {
+  @apply text-gray-500;
+}
+
+.cmp-input-search .input-group .btn-primary {
+  @apply px-6 py-3 bg-[#0066cc] border-0 text-white font-semibold flex items-center gap-2 cursor-pointer transition-colors duration-200;
+  font-family: 'Titillium Web';
+}
+
+.cmp-input-search .input-group .btn-primary:hover {
+  @apply bg-[#0052a3];
+}
+
+.cmp-input-search .input-group .btn-primary .icon {
+  @apply w-5 h-5;
+}
+
+/* FAQ Accordion - Design Comuni style - Dark Teal */
+.cmp-accordion.faq .accordion-item {
+  @apply border-0 mb-0;
+}
+
+.cmp-accordion.faq .accordion-button {
+  @apply w-full px-4 py-4 text-left flex items-center justify-between cursor-pointer transition-colors duration-200 rounded-t-lg;
+  font-family: 'Titillium Web';
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #FFFFFF !important;
+  background-color: #004445 !important;
+}
+
+.cmp-accordion.faq .accordion-button:hover {
+  background-color: #003334 !important;
+}
+
+.cmp-accordion.faq .accordion-button .button-wrapper {
+  @apply flex-1;
+}
+
+.cmp-accordion.faq .accordion-button .icon-wrapper {
+  @apply flex-shrink-0 ml-2;
+}
+
+.cmp-accordion.faq .accordion-button .icon {
+  @apply text-white;
+}
+
+.cmp-accordion.faq .accordion-button .icon.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.cmp-accordion.faq .accordion-button.collapsed {
+  background-color: #004445 !important;
+}
+
+.cmp-accordion.faq .accordion-button .icon {
+  @apply text-white;
+  color: #FFFFFF !important;
+}
+
+.cmp-accordion.faq .accordion-collapse {
+  @apply hidden;
+  background-color: #F2F9F9;
+}
+
+.cmp-accordion.faq .accordion-collapse.show {
+  @apply block rounded-b-lg;
+}
+
+.cmp-accordion.faq .accordion-body {
+  @apply px-4 pb-4 pt-2 text-base;
+  font-family: 'Titillium Web';
+  color: #334a52;
+  background-color: #F2F9F9;
+}
+
+.cmp-accordion.faq .accordion-body p {
+  @apply mb-0;
+}
+
+/* Link list section after FAQ */
+.link-list-block {
+  @apply mt-8 mb-8;
+}
+
+.link-list-block .link-list-title {
+  @apply text-lg font-semibold text-gray-900 mb-4;
+}
+
+.link-list-block .link-list {
+  @apply flex flex-wrap gap-3;
+}
+
+.link-list-block .link-list a {
+  @apply px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors duration-200;
+  font-family: 'Titillium Web';
+}
+/* FAQ Parity Styles */
+.dc-faq-hero-section {
+    @apply bg-white;
+}
+
+.it-rating-section {
+    @apply py-12;
+}
+
+.it-rating-wrapper {
+    @apply max-w-2xl mx-auto text-center;
+}
+
+.it-rating-label-container p {
+    @apply text-xl font-semibold text-gray-900 uppercase tracking-wider mb-6;
+}
+
+.it-rating-list {
+    @apply flex justify-center gap-2 list-none p-0;
+}
+
+.it-rating-list li button {
+    @apply p-2 transition-transform duration-200 hover:scale-110 border-0 bg-transparent cursor-pointer;
+}
+
+.it-rating-list .icon {
+    @apply w-10 h-10 transition-colors duration-200;
+}
+
+.fill-yellow-400 {
+    fill: #FFCC00;
+}
+
+.fill-gray-300 {
+    fill: #E0E0E0;
+}
+
+/* ============================================
+   SEGNALAZIONE PAGES - Design Comuni Parity
+   Added: 2026-04-07
+   ============================================ */
+
+/* ============================================
+   STEPPERS - Design Comuni Parity (Mobile-First)
+   Reference: https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-02-dati.html
+   Added: 2026-04-12
+   ============================================ */
+
+/* Steppers wrapper */
+.steppers {
+  @apply w-full mb-4;
+}
+
+/* Steppers header */
+.steppers-header {
+  @apply w-full;
+}
+
+/* Steppers list - horizontal on desktop, scrollable on mobile */
+.steppers-header ul {
+  @apply flex flex-nowrap overflow-x-auto gap-0 list-none p-0 m-0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.steppers-header ul::-webkit-scrollbar {
+  display: none;
+}
+
+/* Stepper item */
+.steppers-header li {
+  @apply flex items-center flex-shrink-0 pr-4 text-sm;
+  font-family: 'Titillium Web', sans-serif;
+  color: var(--bs-gray-500, #767676);
+  position: relative;
+}
+
+/* Stepper number circle */
+.steppers-number {
+  @apply inline-flex items-center justify-center w-6 h-6 rounded-full mr-2 text-xs font-semibold;
+  background-color: var(--bs-gray-300, #e6e6e6);
+  color: var(--bs-gray-700, #5c6f82);
+}
+
+/* Active step */
+.steppers-header li.active {
+  @apply font-semibold;
+  color: var(--bs-primary, #00695c);
+}
+
+.steppers-header li.active .steppers-number {
+  @apply bg-green-700 text-white;
+  background-color: var(--bs-primary, #00695c);
+}
+
+/* Completed step */
+.steppers-header li.confirmed {
+  @apply text-green-700;
+  color: var(--bs-primary, #00695c);
+}
+
+.steppers-header li.confirmed .steppers-number {
+  @apply hidden;
+}
+
+.steppers-header li.confirmed .steppers-success {
+  @apply w-6 h-6 mr-2;
+  fill: var(--bs-primary, #00695c);
+}
+
+/* Stepper success icon */
+.steppers-success {
+  @apply mr-2 flex-shrink-0;
+}
+
+/* Steppers index (e.g., "2/4") */
+.steppers-index {
+  @apply block text-xs text-gray-500 mt-1;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+/* Steppers content */
+.steppers-content {
+  @apply w-full;
+}
+
+/* Steppers nav buttons */
+.steppers-nav {
+  @apply flex items-center justify-between w-full mt-6 pt-4 border-t border-gray-200;
+}
+
+.steppers-btn-prev,
+.steppers-btn-confirm,
+.steppers-btn-save {
+  @apply inline-flex items-center gap-2 text-sm;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+/* ============================================
+   MOBILE (< 992px): Show ONLY active step + index
+   Reference shows: "Dati di segnalazione    2/3"
+   ============================================ */
+@media (max-width: 991px) {
+  /* Hide all non-active steps on mobile */
+  .steppers-header li:not(.active) {
+    @apply hidden;
+  }
+
+  /* Active step: show as single line with index on right */
+  .steppers-header ul {
+    @apply flex-row items-center justify-between overflow-visible;
+  }
+
+  .steppers-header li.active {
+    @apply flex items-center justify-between w-full pr-0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--bs-primary, #00695c);
+  }
+
+  /* Hide number circle on mobile - show only text */
+  .steppers-header li.active .steppers-number {
+    @apply hidden;
+  }
+
+  /* Hide success icon on mobile */
+  .steppers-header li.active .steppers-success {
+    @apply hidden;
+  }
+
+  /* Show visually-hidden text as visible label on mobile */
+  .steppers-header li.active .visually-hidden {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: nowrap;
+    clip-path: none;
+  }
+
+  /* Index on right side of active step */
+  .steppers-index {
+    @apply text-sm font-normal ml-4 mt-0;
+    color: var(--bs-gray-600, #5c6f82);
+  }
+}
+
+/* ============================================
+   DESKTOP (≥ 992px): Full horizontal stepper
+   ============================================ */
+@media (min-width: 992px) {
+  .steppers-header ul {
+    @apply overflow-visible;
+  }
+
+  .steppers-header li::after {
+    content: '';
+    @apply absolute top-1/2 right-0 w-8 h-px bg-gray-300 -translate-y-1/2;
+  }
+
+  .steppers-header li:last-child::after {
+    display: none;
+  }
+
+  .steppers-header li.confirmed::after {
+    @apply bg-green-700;
+    background-color: var(--bs-primary, #00695c);
+  }
+
+  .steppers-index {
+    @apply text-right mt-0;
+  }
+}
+
+/* Card wrapper bg-grey */
+.card-wrapper.bg-grey-card,
+.bg-grey-card {
+  @apply bg-gray-100;
+}
+
+/* Card teaser */
+.card.card-teaser {
+  @apply rounded-lg shadow-sm border-0;
+}
+
+.card.card-teaser-info {
+  @apply bg-white rounded-lg shadow-sm;
+}
+
+/* Title typography */
+.title-xxxlarge {
+  @apply text-3xl md:text-4xl font-semibold leading-tight mb-4;
+  font-family: 'Titillium Web';
+}
+
+.title-xxlarge {
+  @apply text-2xl md:text-3xl font-semibold leading-tight mb-3;
+  font-family: 'Titillium Web';
+}
+
+.title-large {
+  @apply text-xl font-semibold leading-snug;
+  font-family: 'Titillium Web';
+}
+
+.title-medium-semi-bold {
+  @apply text-lg font-semibold leading-normal;
+  font-family: 'Titillium Web';
+}
+
+.title-medium-2-semi-bold {
+  @apply text-lg font-semibold leading-normal;
+  font-family: 'Titillium Web';
+}
+
+.title-small-semi-bold {
+  @apply text-sm font-semibold leading-normal;
+  font-family: 'Titillium Web';
+}
+
+.title-xsmall {
+  @apply text-xs leading-normal;
+  font-family: 'Titillium Web';
+}
+
+.title-xsmall-bold {
+  @apply text-xs font-semibold leading-normal;
+  font-family: 'Titillium Web';
+}
+
+/* Subtitle and paragraph */
+.subtitle-small {
+  @apply text-sm leading-relaxed text-gray-700;
+  font-family: 'Titillium Web';
+}
+
+.text-paragraph {
+  @apply text-base leading-relaxed;
+  font-family: 'Titillium Web';
+  color: #191919;
+  line-height: 1.6;
+}
+
+.text-paragraph-small {
+  @apply text-sm leading-relaxed text-gray-600;
+  font-family: 'Titillium Web';
+}
+
+/* Link colors */
+.t-primary {
+  @apply text-green-700 no-underline hover:text-green-800;
+  color: var(--bs-primary);
+}
+
+.t-primary:hover {
+  color: var(--bs-primary-dark);
+}
+
+/* Form elements */
+.form-check {
+  @apply mb-3;
+}
+
+.checkbox-body {
+  @apply flex items-start gap-2;
+}
+
+.checkbox-body input[type="checkbox"] {
+  @apply mt-1 h-4 w-4 border-gray-300 rounded focus:ring-green-600;
+}
+
+.input-wrapper {
+  @apply mb-3;
+}
+
+.input-wrapper label {
+  @apply block text-sm font-semibold text-gray-700 mb-1;
+}
+
+.input-wrapper input,
+.form-control {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 text-base;
+  font-family: 'Titillium Web';
+}
+
+.select-wrapper {
+  @apply mb-3;
+}
+
+.select-wrapper select,
+.form-select {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 text-base bg-white;
+  font-family: 'Titillium Web';
+}
+
+.text-area-wrapper {
+  @apply rounded-lg;
+}
+
+.text-area-wrapper textarea {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 text-base resize-y;
+  font-family: 'Titillium Web';
+}
+
+/* Buttons */
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 font-semibold text-base rounded-lg border-2 transition-colors duration-200 cursor-pointer no-underline;
+  font-family: 'Titillium Web';
+}
+
+.btn-primary {
+  @apply bg-green-700 text-white border-green-700 hover:bg-green-800 hover:border-green-800;
+  color: white;
+}
+
+.btn-outline-primary {
+  @apply bg-transparent text-green-700 border-green-700 hover:bg-green-50;
+}
+
+.btn-outline-primary.bg-white {
+  @apply bg-white;
+}
+
+.btn-sm {
+  @apply px-3 py-1.5 text-sm;
+}
+
+.btn.disabled,
+.btn:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* Callout/Alert boxes */
+.callout {
+  @apply rounded-lg p-4 mb-6 border-l-4;
+}
+
+.callout.warning {
+  @apply bg-yellow-50 border-yellow-500;
+}
+
+.callout-content {
+  @apply flex gap-3;
+}
+
+.callout-icon {
+  @apply flex-shrink-0;
+}
+
+.callout-icon .icon {
+  @apply w-6 h-6 text-yellow-600;
+}
+
+.callout-text h3 {
+  @apply text-lg font-semibold text-yellow-800 mb-1;
+}
+
+.callout-text p {
+  @apply text-sm text-yellow-700;
+}
+
+/* Summary list (dl/dt/dd) */
+.summary-list {
+  @apply space-y-3;
+}
+
+.summary-item {
+  @apply border-b border-gray-200 pb-2 last:border-0 last:pb-0;
+}
+
+.summary-item dt {
+  @apply text-sm font-semibold text-gray-500 mb-1;
+}
+
+.summary-item dd {
+  @apply text-base text-gray-900;
+}
+
+/* Upload wrapper */
+.upload-wrapper {
+  @apply flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-200;
+}
+
+.upload-wrapper img {
+  @apply w-12 h-12 object-cover rounded;
+}
+
+/* Navscroll / It-navscroll-wrapper */
+.cmp-navscroll {
+  @apply sticky top-20;
+}
+
+.it-navscroll-wrapper {
+  @apply bg-transparent shadow-none;
+}
+
+.it-navscroll-wrapper .accordion-button {
+  @apply text-sm font-semibold text-gray-900 bg-transparent border-0 shadow-none;
+}
+
+.it-navscroll-wrapper .link-list {
+  @apply list-none pl-0;
+}
+
+.it-navscroll-wrapper .link-list .nav-link {
+  @apply block py-1.5 text-sm text-gray-700 no-underline hover:text-green-700;
+}
+
+.it-navscroll-wrapper .link-list .nav-link.active {
+  @apply text-green-700 font-semibold;
+}
+
+/* Progress bar for navscroll */
+.progress {
+  @apply h-1 bg-gray-200 rounded-full overflow-hidden;
+}
+
+.progress-bar {
+  @apply bg-green-700 h-full transition-all duration-300;
+}
+
+/* Avatar */
+.avatar {
+  @apply rounded-full overflow-hidden flex-shrink-0;
+}
+
+.avatar.size-xl {
+  @apply w-16 h-16;
+}
+
+.avatar img {
+  @apply w-full h-full object-cover;
+}
+
+/* Badge */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+}
+
+.badge.bg-primary {
+  @apply bg-green-700 text-white;
+}
+
+.badge.bg-success {
+  @apply bg-green-600 text-white;
+}
+
+.badge.bg-warning {
+  @apply bg-yellow-500 text-white;
+}
+
+.badge.bg-secondary {
+  @apply bg-gray-500 text-white;
+}
+
+/* Link list */
+.link-list {
+  @apply list-none pl-0;
+}
+
+.link-list .list-item {
+  @apply flex items-center gap-2 py-2 text-sm text-gray-700 no-underline hover:text-green-700;
+}
+
+.link-list .list-item-title-icon-wrapper {
+  @apply flex items-center gap-2;
+}
+
+.link-list .list-item-title {
+  @apply text-sm font-medium;
+}
+
+/* Contact list */
+.contact-list {
+  @apply list-none pl-0;
+}
+
+.contact-list .list-item {
+  @apply flex items-center gap-2 py-2 text-sm text-gray-700 no-underline hover:text-green-700;
+}
+
+/* Card body spacing */
+.card-body {
+  @apply p-4;
+}
+
+.card-body.pe-3 {
+  @apply pr-3;
+}
+
+/* Utility classes */
+.u-grey-dark {
+  @apply text-gray-600;
+}
+
+.bg-white {
+  @apply bg-white;
+}
+
+.rounded {
+  @apply rounded-lg;
+}
+
+.shadow-sm {
+  @apply shadow-sm;
+}
+
+.p-big {
+  @apply p-4 md:p-6;
+}
+
+.mb-40 {
+  @apply mb-10;
+}
+
+.mb-30 {
+  @apply mb-8;
+}
+
+.mt-50 {
+  @apply mt-12;
+}
+
+.mt-10 {
+  @apply mt-2.5;
+}
+
+.mt-40 {
+  @apply mt-10;
+}
+
+.pt-10 {
+  @apply pt-2.5;
+}
+
+.pb-10 {
+  @apply pb-2.5;
+}
+
+.ms-2 {
+  @apply ms-2;
+}
+
+/* Mobile full width buttons */
+.mobile-full {
+  @apply w-full md:w-auto;
+}
+
+/* Rating section */
+.cmp-rating {
+  @apply py-12;
+}
+
+.cmp-rating__card-first {
+  @apply bg-white rounded-lg shadow-sm;
+}
+
+.rating {
+  @apply flex justify-center gap-1 border-0;
+}
+
+.rating .full {
+  @apply cursor-pointer p-1;
+}
+
+.rating .full svg {
+  @apply w-8 h-8 fill-gray-300 transition-colors duration-200;
+}
+
+.rating input[type="radio"]:checked ~ .full svg,
+.rating .full:hover svg {
+  @apply fill-yellow-400;
+}
+
+/* Contacts section */
+.shadow-contacts {
+  @apply shadow-md;
+}
+
+.p-contacts {
+  @apply py-8 px-4;
+}
+
+.cmp-contacts .card {
+  @apply border-0 shadow-none bg-transparent;
+}
+
+/* Icon list */
+.cmp-icon-list .link-list-wrapper {
+  @apply mt-2;
+}
+
+/* Heading component */
+.cmp-heading {
+  @apply mb-6;
+}
+
+.cmp-heading .categoryicon-top {
+  @apply flex items-center gap-3 mb-2;
+}
+
+/* Breadcrumb */
+.breadcrumb-container {
+  @apply mb-4;
+}
+
+.breadcrumb {
+  @apply flex flex-wrap items-center gap-1 text-sm list-none pl-0;
+}
+
+.breadcrumb-item a {
+  @apply text-green-700 no-underline hover:underline;
+}
+
+.breadcrumb-item.active a {
+  @apply text-gray-500 no-underline;
+}
+
+/* Tabs */
+.nav-tabs {
+  @apply flex border-b border-gray-200;
+}
+
+.nav-tabs .nav-link {
+  @apply px-4 py-2 text-sm font-semibold text-gray-600 border-b-2 border-transparent hover:text-green-700 hover:border-green-700 no-underline;
+}
+
+.nav-tabs .nav-link.active {
+  @apply text-green-700 border-green-700;
+}
+
+.tab-content {
+  @apply mt-6 block;
+}
+
+.tab-pane {
+  @apply hidden;
+}
+
+.tab-pane.show.active {
+  @apply block;
+}
+
+/* Modal */
+.modal-dialog {
+  @apply max-w-lg mx-auto my-8;
+}
+
+.modal-content {
+  @apply bg-white rounded-lg shadow-xl;
+}
+
+.modal-header {
+  @apply flex items-center justify-between p-4 border-b;
+}
+
+.modal-body {
+  @apply p-4;
+}
+
+/* Map placeholder */
+.map-placeholder {
+  @apply flex items-center justify-center bg-gray-200 rounded-lg;
+  min-height: 300px;
+}
+
+/* Category list */
+.cmp-category-list .card-wrapper {
+  @apply mb-4;
+}
+
+/* Icon sizes */
+.icon-xs {
+  @apply w-3 h-3;
+}
+
+.icon-sm {
+  @apply w-4 h-4;
+}
+
+.icon-md {
+  @apply w-6 h-6;
+}
+
+.icon-primary {
+  @apply text-green-700;
+}
+
+.icon-white {
+  @apply text-white;
+}
+
+/* Accordion */
+.accordion-item {
+  @apply border-b border-gray-200;
+}
+
+.accordion-button {
+  @apply flex items-center justify-between w-full py-3 text-sm font-semibold text-gray-900 bg-transparent border-0 cursor-pointer;
+}
+
+.accordion-button:not(.collapsed) {
+  @apply text-green-700;
+}
+
+.accordion-collapse {
+  @apply overflow-hidden;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-collapse.collapse.show {
+  @apply block;
+}
+
+.accordion-body {
+  @apply py-3;
+}
+
+/* Right icon rotation */
+.icon.right {
+  @apply transition-transform duration-200;
+}
+
+.accordion-button[aria-expanded="true"] .icon.right {
+  @apply rotate-180;
+}
+
+/* Visually hidden */
+.visually-hidden {
+  @apply sr-only;
+}
+
+/* Active input label */
+.active-input {
+  @apply block text-sm font-semibold text-gray-700 mb-1;
+}
+
+/* Row column menu left */
+.row-column-menu-left {
+  @apply flex flex-col lg:flex-row gap-6;
+}
+
+/* Border col */
+.border-col {
+  @apply border-r border-gray-200 pr-4;
+}
+
+/* It-page-sections-container */
+.it-page-sections-container {
+  @apply space-y-8;
+}
+
+.it-page-section {
+  @apply scroll-mt-24;
+}
+
+/* Chip tag */
+.chip {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.chip-simple {
+  @apply bg-gray-100 text-gray-700 hover:bg-gray-200;
+}
+
+.chip-label {
+  @apply text-xs font-medium;
+}
+
+/* Dropdown */
+.dropdown {
+  @apply relative inline-block;
+}
+
+.dropdown-menu {
+  @apply absolute right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 min-w-48 z-50;
+}
+
+/* Btn dropdown */
+.btn-dropdown {
+  @apply bg-transparent border-0 text-sm underline;
+}
+
+/* Dropdown menu link list */
+.dropdown-menu .link-list-wrapper {
+  @apply p-2;
+}
+
+.dropdown-menu .link-list .list-item {
+  @apply px-3 py-2 rounded hover:bg-gray-50;
+}
+
+/* Hr spacing */
+hr.mb-0 {
+  @apply mb-0;
+}
+
+hr.mt-30 {
+  @apply mt-8;
+}
+
+hr.mt-40 {
+  @apply mt-10;
+}
+
+/* Offset and spacing utilities */
+.offset-lg-1 {
+  @apply lg:ml-[8.333333%];
+}
+
+.offset-lg-3 {
+  @apply lg:ml-[25%];
+}
+
+/* D-none d-lg-block */
+.d-none {
+  @apply hidden;
+}
+
+.d-lg-block {
+  @apply lg:block;
+}
+
+/* Flex utilities */
+.d-flex {
+  @apply flex;
+}
+
+.flex-wrap {
+  @apply flex-wrap;
+}
+
+.gap-1 { @apply gap-1; }
+.gap-2 { @apply gap-2; }
+.gap-3 { @apply gap-3; }
+.gap-4 { @apply gap-4; }
+
+/* Align items */
+.align-items-center {
+  @apply items-center;
+}
+
+.align-self-center {
+  @apply self-center;
+}
+
+.align-self-start {
+  @apply self-start;
+}
+
+/* Justify content */
+.justify-content-center {
+  @apply justify-center;
+}
+
+.justify-content-between {
+  @apply justify-between;
+}
+
+/* Display utilities */
+.d-inline-block {
+  @apply inline-block;
+}
+
+.d-inline-flex {
+  @apply inline-flex;
+}
+
+/* Width utilities */
+.w-100 {
+  @apply w-full;
+}
+
+/* Position utilities */
+.sticky-top {
+  @apply sticky top-20;
+}
+
+/* Border utilities */
+.border-0 {
+  @apply border-0;
+}
+
+.border-bottom {
+  @apply border-b;
+}
+
+.border-light {
+  @apply border-gray-200;
+}
+
+/* Shadow utilities */
+.shadow-none {
+  @apply shadow-none;
+}
+
+.shadow-lg {
+  @apply shadow-lg;
+}
+
+/* Text utilities */
+.text-center {
+  @apply text-center;
+}
+
+.text-decoration-none {
+  @apply no-underline;
+}
+
+.fw-bold {
+  @apply font-bold;
+}
+
+/* Padding utilities */
+.p-0 { @apply p-0; }
+.p-3 { @apply p-3; }
+.p-4 { @apply p-4; }
+.px-3 { @apply px-3; }
+.px-4 { @apply px-4; }
+.py-2 { @apply py-2; }
+.py-3 { @apply py-3; }
+.pt-2 { @apply pt-2; }
+.pt-3 { @apply pt-3; }
+.pt-4 { @apply pt-4; }
+.pt-5 { @apply pt-5; }
+.pb-3 { @apply pb-3; }
+.pb-4 { @apply pb-4; }
+.pe-2 { @apply pe-2; }
+.pe-3 { @apply pe-3; }
+.ps-4 { @apply ps-4; }
+
+/* Margin utilities */
+.m-0 { @apply m-0; }
+.mb-0 { @apply mb-0; }
+.mb-1 { @apply mb-1; }
+.mb-2 { @apply mb-2; }
+.mb-3 { @apply mb-3; }
+.mb-4 { @apply mb-4; }
+.mt-1 { @apply mt-1; }
+.mt-2 { @apply mt-2; }
+.mt-3 { @apply mt-3; }
+.mt-4 { @apply mt-4; }
+.mt-5 { @apply mt-5; }
+.ms-1 { @apply ms-1; }
+.mb-6 { @apply mb-6; }
+
+/* Responsive margin/padding */
+@media (min-width: 992px) {
+  .mb-lg-4 { @apply mb-4; }
+  .mb-lg-80 { @apply mb-20; }
+  .mt-lg-80 { @apply mt-20; }
+  .pb-lg-80 { @apply pb-20; }
+  .pt-lg-80 { @apply pt-20; }
+  .pb-lg-0 { @apply pb-0; }
+  .pt-lg-0 { @apply pt-0; }
+  .p-lg-0 { @apply p-0; }
+  .p-lg-4 { @apply p-4; }
+  .px-lg-4 { @apply px-4; }
+  .pt-lg-4 { @apply pt-4; }
+  .pt-lg-5 { @apply pt-5; }
+  .pb-lg-4 { @apply pb-4; }
+  .pb-lg-0 { @apply pb-0; }
+  .mt-4 { @apply mt-4; }
+  .mb-4 { @apply mb-4; }
+  .gap-30 { @apply gap-8; }
+  .mr-10 { @apply mr-2.5; }
+}
+
+/* Responsive column widths */
+.col-12 { @apply w-full; }
+.col-lg-3 { @apply lg:w-1/4; }
+.col-lg-5 { @apply lg:w-5/12; }
+.col-lg-6 { @apply lg:w-1/2; }
+.col-lg-8 { @apply lg:w-2/3; }
+.col-lg-10 { @apply lg:w-5/6; }
+
+@media (min-width: 768px) {
+  .col-md-8 { @apply md:w-2/3; }
+}
+
+/* Row */
+.row {
+  @apply flex flex-wrap -mx-3;
+}
+
+.row > [class*="col-"] {
+  @apply px-3;
+}
+
+/* Container */
+.container {
+  @apply w-full max-w-7xl mx-auto px-4;
+}
+
+/* Background colors */
+.bg-primary {
+  background-color: var(--bs-primary);
+}
+
+.bg-grey-card {
+  @apply bg-gray-100;
+}
+
+/* Lora font for rich text */
+.lora {
+  font-family: 'Lora', serif;
+}
+
+/* List wrapper */
+.list-wrapper {
+  @apply list-none pl-0;
+}
+
+.list-wrapper.link-list {
+  @apply space-y-2;
+}
+
+.list-wrapper.link-list .list-item {
+  @apply flex items-start gap-2 text-base text-gray-700;
+}
+
+.list-wrapper.link-list .list-item span {
+  @apply leading-relaxed;
+}
+
+/* Has bg grey */
+.has-bg-grey {
+  @apply bg-gray-100;
+}
+
+/* P-3 utility */
+.p-3 {
+  @apply p-3;
+}
+
+/* CTA group */
+.dc-service-detail__cta-group {
+  @apply flex flex-col lg:flex-row gap-4 lg:gap-8;
+}
+
+/* Button stack for mobile */
+.dc-service-detail__button-stack {
+  @apply flex flex-col gap-3;
+}
+
+.dc-service-detail__button-stack .btn {
+  @apply w-full;
+}
+
+/* Dropdown for share/actions */
+.dc-service-detail__dropdown {
+  @apply inline-block relative;
+}
+
+.dc-service-detail__dropdown-menu {
+  @apply absolute right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 min-w-48 z-50;
+}
+
+/* Rich text content */
+.dc-service-detail__richtext {
+  @apply text-base leading-relaxed text-gray-700;
+}
+
+.dc-service-detail__richtext p {
+  @apply mb-4;
+}
+
+.dc-service-detail__richtext ul {
+  @apply list-disc pl-6 mb-4;
+}
+
+.dc-service-detail__richtext ol {
+  @apply list-decimal pl-6 mb-4;
+}
+
+.dc-service-detail__richtext a {
+  @apply text-green-700 no-underline hover:underline;
+}
+
+/* Icon link component */
+.cmp-icon-link .list-item {
+  @apply flex items-center gap-2 py-2 text-sm text-green-700 no-underline hover:text-green-800;
+}
+
+.cmp-icon-link .list-item-title-icon-wrapper {
+  @apply flex items-center gap-2;
+}
+
+/* Rotate utility */
+.rotate-180 {
+  @apply rotate-180;
+}
+
+/* Visually hidden for accessibility */
+.visually-hidden {
+  @apply sr-only;
+}
+
+/* Btn label for "view more" links */
+.btn-label {
+  @apply bg-transparent border-0 p-0 text-sm font-semibold text-green-700 hover:text-green-800 cursor-pointer;
+}
+
+/* Card latest messages */
+.cmp-card-latest-messages {
+  @apply border-b border-gray-200 pb-3 mb-3 last:border-0;
+}
+
+/* Icon card */
+.cmp-icon-card {
+  @apply flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm mb-3;
+}
+
+/* Filter component */
+.cmp-filter {
+  @apply mb-4;
+}
+
+.cmp-filter input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg text-sm;
+}
+
+/* Accordion view more */
+.accordion-view-more {
+  @apply text-sm font-semibold text-green-700 hover:text-green-800 cursor-pointer;
+}
+
+/* Nav tab component */
+.cmp-nav-tab {
+  @apply border-b border-gray-200 mb-6;
+}
+
+.cmp-nav-tab .nav-tabs {
+  @apply flex gap-4;
+}
+
+.cmp-nav-tab .nav-link {
+  @apply px-4 py-2 text-sm font-semibold text-gray-600 border-b-2 border-transparent hover:text-green-700;
+}
+
+.cmp-nav-tab .nav-link.active {
+  @apply text-green-700 border-green-700;
+}
+
+/* Info progress stepper */
+.cmp-info-progress {
+  @apply mb-6;
+}
+
+.cmp-info-progress .step-list {
+  @apply flex items-center gap-2 text-sm;
+}
+
+.cmp-info-progress .step {
+  @apply flex items-center gap-1;
+}
+
+.cmp-info-progress .step.active {
+  @apply text-green-700 font-semibold;
+}
+
+/* Nav steps component */
+.cmp-nav-steps {
+  @apply flex justify-between mt-6 pt-4 border-t border-gray-200;
+}
+
+/* Text button component */
+.cmp-text-button {
+  @apply p-4 bg-white rounded-lg shadow-sm;
+}
+
+/* Map component */
+.cmp-map {
+  @apply rounded-lg overflow-hidden;
+}
+
+/* Category list component */
+.cmp-category-list {
+  @apply mb-6;
+}
+
+/* Rating component */
+.cmp-rating {
+  @apply py-12;
+}
+
+/* Contacts component */
+.cmp-contacts {
+  @apply w-full;
+}
+
+/* Icon list component */
+.cmp-icon-list {
+  @apply mb-6;
+}
+
+/* Heading component */
+.cmp-heading {
+  @apply mb-6;
+}
+
+/* Breadcrumbs component */
+.cmp-breadcrumbs {
+  @apply mb-4;
+}
+
+/* Card component */
+.cmp-card {
+  @apply bg-white rounded-lg shadow-sm mb-4;
+}
+
+/* Button component */
+.cmp-button {
+  @apply inline-block;
+}
+
+/* Input autocomplete */
+.cmp-input-autocomplete {
+  @apply relative;
+}
+
+.cmp-input-autocomplete input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg pr-10;
+}
+
+.cmp-input-autocomplete .autocomplete-results {
+  @apply absolute z-10 w-full mt-1 bg-white rounded-lg shadow-lg border border-gray-200 max-h-48 overflow-y-auto;
+}
+
+/* Select component */
+.cmp-select {
+  @apply relative;
+}
+
+/* Text area component */
+.cmp-text-area {
+  @apply relative;
+}
+
+/* Info summary */
+.cmp-info-summary {
+  @apply bg-white rounded-lg p-4;
+}
+
+.cmp-info-summary-no-modify {
+  @apply bg-white rounded-lg p-4;
+}
+
+/* Callout component */
+.cmp-callout {
+  @apply rounded-lg p-4 mb-6 border-l-4;
+}
+
+.cmp-callout.warning {
+  @apply bg-yellow-50 border-yellow-500;
+}
+
+/* Modal component */
+.cmp-modal {
+  @apply fixed inset-0 z-50 flex items-center justify-center;
+}
+
+.cmp-modal .modal-backdrop {
+  @apply fixed inset-0 bg-black/50;
+}
+
+.cmp-modal .modal-content {
+  @apply bg-white rounded-lg shadow-xl max-w-lg w-full mx-4 max-h-[90vh] overflow-y-auto;
+}

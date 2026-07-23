@@ -1,0 +1,220 @@
+{
+    "id": "2",
+    "title": {
+        "it": "Servizi - Sottana Service",
+        "en": "Services - Sottana Service"
+    },
+    "slug": "services",
+    "middleware": null,
+    "content": null,
+    "content_blocks": {
+        "it": [
+            {
+                "type": "hero-internal",
+                "slug": "services-hero",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.internal",
+                    "title": "Autorizzazioni Sanitarie, Controllo Apparecchi RX ed Elettromedicali, Documenti di Valutazione del Rischio",
+                    "subtitle": "Soluzioni complete per garantire la massima sicurezza, igiene e conformità normativa nel tuo studio dentistico o clinica veterinaria",
+                    "breadcrumb_label": "Servizi"
+                }
+            },
+            {
+                "type": "services-cards",
+                "slug": "service-cards-grid",
+                "data": {
+                    "view": "pub_theme::components.blocks.services.cards-image",
+                    "services": [
+                        {
+                            "title": "Autorizzazioni Sanitarie",
+                            "description": "Assistenza completa per l'ottenimento e il rinnovo delle autorizzazioni sanitarie per studi dentistici e cliniche veterinarie con apparecchiature radiologiche.",
+                            "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop",
+                            "url": "/it/contatti"
+                        },
+                        {
+                            "title": "Controllo Apparecchi RX ed Elettromedicali",
+                            "description": "Verifiche periodiche di sicurezza su apparecchiature radiologiche (RX endorale, OPT, CBCT) e dispositivi elettromedicali secondo IEC 62353.",
+                            "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
+                            "url": "/it/contatti"
+                        },
+                        {
+                            "title": "Documenti di Valutazione del Rischio",
+                            "description": "Redazione di DVR, relazioni tecniche, nomine degli esperti di radioprotezione e tutta la documentazione obbligatoria per la conformità normativa.",
+                            "image": "https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&h=400&fit=crop",
+                            "url": "/it/contatti"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "sector-detail",
+                "slug": "sector-odontoiatria",
+                "data": {
+                    "view": "pub_theme::components.blocks.sectors.detail",
+                    "title": "Odontoiatria",
+                    "sector_subtitle": "Consulenza Specializzata per Studi Dentistici",
+                    "description": "Gli studi dentistici affrontano sfide uniche in termini di sicurezza e igiene. Dalla sterilizzazione degli strumenti alla gestione dei rifiuti speciali, ogni aspetto richiede attenzione e competenza specifica.",
+                    "focus_areas": [
+                        "Sterilizzazione e tracciabilità strumenti",
+                        "Protezione da contaminazione crociata",
+                        "Gestione rifiuti sanitari pericolosi",
+                        "Sicurezza radiologica e apparecchiature",
+                        "Formazione continua del personale",
+                        "Protocolli di emergenza medica"
+                    ],
+                    "compliance_text": "Conformità con normative ASL, linee guida nazionali ed europee per studi odontoiatrici, protocolli di sterilizzazione e disinfezione certificati.",
+                    "cta_label": "Consulenza per Studi Dentistici",
+                    "cta_url": "/it/contatti",
+                    "image": "/themes/Two/images/service-odontoiatria.jpg",
+                    "reversed": false,
+                    "bg": "bg-white"
+                }
+            },
+            {
+                "type": "sector-detail",
+                "slug": "sector-veterinaria",
+                "data": {
+                    "view": "pub_theme::components.blocks.sectors.detail",
+                    "title": "Medicina Veterinaria",
+                    "sector_subtitle": "Consulenza Specializzata per Cliniche Veterinarie",
+                    "description": "Le cliniche veterinarie richiedono protocolli specifici per la sicurezza radiologica e la gestione delle apparecchiature. Dalla radiologia digitale ai sistemi portatili, ogni aspetto necessita di competenza dedicata.",
+                    "focus_areas": [
+                        "Radiologia digitale e analogica",
+                        "Sistemi RX fissi e portatili",
+                        "Protezione operatori e animali",
+                        "Gestione dosimetria personale",
+                        "Formazione specifica veterinaria",
+                        "Conformità normative settore"
+                    ],
+                    "compliance_text": "Conformità con normative ASL, linee guida nazionali per cliniche veterinarie, protocolli di sicurezza radiologica certificati e documentazione completa per gli organi di controllo.",
+                    "cta_label": "Consulenza per Cliniche Veterinarie",
+                    "cta_url": "/it/contatti",
+                    "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800&h=600&fit=crop",
+                    "reversed": true,
+                    "bg": "bg-gray-50"
+                }
+            },
+            {
+                "type": "cta-banner",
+                "slug": "services-cta",
+                "data": {
+                    "view": "pub_theme::components.blocks.cta.banner",
+                    "title": "Inizia Oggi il Tuo Percorso verso la Conformità",
+                    "subtitle": "Contattaci per una consulenza personalizzata e scopri come possiamo aiutare il tuo studio",
+                    "cta_label": "Richiedi Consulenza Gratuita",
+                    "cta_url": "/it/contatti"
+                }
+            }
+        ],
+        "en": [
+            {
+                "type": "hero-internal",
+                "slug": "services-hero",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.internal",
+                    "title": "Sanitary Authorizations, RX and Electromedical Equipment Control, Risk Assessment Documents",
+                    "subtitle": "Complete solutions to ensure maximum safety, hygiene and regulatory compliance in your dental or veterinary practice",
+                    "breadcrumb_label": "Services"
+                }
+            },
+            {
+                "type": "services-cards",
+                "slug": "service-cards-grid",
+                "data": {
+                    "view": "pub_theme::components.blocks.services.cards-image",
+                    "services": [
+                        {
+                            "title": "Sanitary Authorizations",
+                            "description": "Full assistance for obtaining and renewing sanitary authorizations for dental practices and veterinary clinics with radiological equipment.",
+                            "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop",
+                            "url": "/en/contact"
+                        },
+                        {
+                            "title": "RX and Electromedical Equipment Control",
+                            "description": "Periodic safety checks on radiological equipment (intraoral RX, OPT, CBCT) and electromedical devices according to IEC 62353.",
+                            "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
+                            "url": "/en/contact"
+                        },
+                        {
+                            "title": "Risk Assessment Documents",
+                            "description": "Drafting of DVR, technical reports, appointments of radiation protection experts and all mandatory documentation for regulatory compliance.",
+                            "image": "https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&h=400&fit=crop",
+                            "url": "/en/contact"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "sector-detail",
+                "slug": "sector-dentistry",
+                "data": {
+                    "view": "pub_theme::components.blocks.sectors.detail",
+                    "title": "Dentistry",
+                    "sector_subtitle": "Specialized Consulting for Dental Practices",
+                    "description": "Dental practices face unique challenges in terms of safety and hygiene. From instrument sterilization to special waste management, every aspect requires specific attention and expertise.",
+                    "focus_areas": [
+                        "Sterilization and instrument traceability",
+                        "Cross-contamination protection",
+                        "Hazardous medical waste management",
+                        "Radiological safety and equipment",
+                        "Continuous staff training",
+                        "Medical emergency protocols"
+                    ],
+                    "compliance_text": "Compliance with ASL regulations, national and European guidelines for dental practices, certified sterilization and disinfection protocols.",
+                    "cta_label": "Consultation for Dental Practices",
+                    "cta_url": "/en/contact",
+                    "image": "/themes/Two/images/service-odontoiatria.jpg",
+                    "reversed": false,
+                    "bg": "bg-white"
+                }
+            },
+            {
+                "type": "sector-detail",
+                "slug": "sector-veterinary",
+                "data": {
+                    "view": "pub_theme::components.blocks.sectors.detail",
+                    "title": "Veterinary Medicine",
+                    "sector_subtitle": "Specialized Consulting for Veterinary Clinics",
+                    "description": "Veterinary clinics require specific protocols for radiological safety and equipment management. From digital radiology to portable systems, every aspect needs dedicated expertise.",
+                    "focus_areas": [
+                        "Digital and analog radiology",
+                        "Fixed and portable RX systems",
+                        "Operator and animal protection",
+                        "Personal dosimetry management",
+                        "Specific veterinary training",
+                        "Sector regulatory compliance"
+                    ],
+                    "compliance_text": "Compliance with ASL regulations, national guidelines for veterinary clinics, certified radiological safety protocols and complete documentation for control bodies.",
+                    "cta_label": "Consultation for Veterinary Clinics",
+                    "cta_url": "/en/contact",
+                    "image": "/themes/Two/images/radiologia-veterinaria.jpg",
+                    "reversed": true,
+                    "bg": "bg-gray-50"
+                }
+            },
+            {
+                "type": "cta-banner",
+                "slug": "services-cta",
+                "data": {
+                    "view": "pub_theme::components.blocks.cta.banner",
+                    "title": "Start Your Journey to Compliance Today",
+                    "subtitle": "Contact us for a personalized consultation and discover how we can help your practice",
+                    "cta_label": "Request Free Consultation",
+                    "cta_url": "/en/contact"
+                }
+            }
+        ]
+    },
+    "sidebar_blocks": {
+        "it": [],
+        "en": []
+    },
+    "footer_blocks": {
+        "it": [],
+        "en": []
+    },
+    "created_at": "2025-07-08T09:02:57.000000Z",
+    "updated_at": "2026-02-06T20:20:00.000000Z",
+    "created_by": null,
+    "updated_by": "01985ae8-8039-71ea-88c7-54ebce6295b0"
+}

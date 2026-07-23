@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+>
+    <testsuites>
+        <testsuite name="Unit">
+            <directory>tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Feature">
+            <directory>tests/Feature</directory>
+        </testsuite>
+        <testsuite name="Activity">
+            <directory>Modules/Activity/tests</directory>
+        </testsuite>
+        <testsuite name="AI">
+            <directory>Modules/AI/tests</directory>
+        </testsuite>
+        <testsuite name="Cms">
+            <directory>Modules/Cms/tests</directory>
+        </testsuite>
+        <testsuite name="Employee">
+            <directory>Modules/Employee/tests</directory>
+        </testsuite>
+        <testsuite name="Gdpr">
+            <directory>Modules/Gdpr/tests</directory>
+        </testsuite>
+        <testsuite name="Geo">
+            <directory>Modules/Geo/tests</directory>
+        </testsuite>
+        <testsuite name="Job">
+            <directory>Modules/Job/tests</directory>
+        </testsuite>
+        <testsuite name="Lang">
+            <directory>Modules/Lang/tests</directory>
+        </testsuite>
+        <testsuite name="Media">
+            <directory>Modules/Media/tests</directory>
+        </testsuite>
+        <testsuite name="Notify">
+            <directory>Modules/Notify/tests</directory>
+        </testsuite>
+        <testsuite name="TechPlanner">
+            <directory>Modules/TechPlanner/tests</directory>
+        </testsuite>
+        <testsuite name="Tenant">
+            <directory>Modules/Tenant/tests</directory>
+        </testsuite>
+        <testsuite name="UI">
+            <directory>Modules/UI/tests</directory>
+        </testsuite>
+        <testsuite name="User">
+            <directory>Modules/User/tests</directory>
+        </testsuite>
+        <testsuite name="Xot">
+            <directory>Modules/Xot/tests</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory>app</directory>
+            <directory>Modules/*/app</directory>
+            <directory>Modules/*/src</directory>
+            <directory>Modules/*/App</directory>
+        </include>
+    </source>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="APP_MAINTENANCE_DRIVER" value="file"/>
+        <env name="BCRYPT_ROUNDS" value="4"/>
+        <env name="CACHE_STORE" value="array"/>
+        <env name="DB_CONNECTION" value="sqlite"/>
+        <env name="DB_DATABASE" value=":memory:"/>
+        <env name="MAIL_MAILER" value="array"/>
+        <env name="QUEUE_CONNECTION" value="sync"/>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="PULSE_ENABLED" value="false"/>
+        <env name="TELESCOPE_ENABLED" value="false"/>
+        <env name="NIGHTWATCH_ENABLED" value="false"/>
+    </php>
+</phpunit>

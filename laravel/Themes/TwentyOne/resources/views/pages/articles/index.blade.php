@@ -1,0 +1,21 @@
+<?php
+
+use Modules\Blog\Models\Category;
+use Illuminate\Support\Arr;
+use Illuminate\View\View;
+use function Laravel\Folio\{withTrashed,middleware, name,render};
+
+withTrashed();
+name('articles.index');
+//middleware(['auth', 'verified']);
+
+// render(function (View $view) {
+//     $categories = Category::tree()->get()->toTree();
+//     return $view->with('categories', $categories);
+// });
+
+
+?>
+<x-layouts.app>
+    @include('predict::components.blocks.article_list.play_money_markets', ['method' => 'getAllArticles'])
+</x-layouts.app>

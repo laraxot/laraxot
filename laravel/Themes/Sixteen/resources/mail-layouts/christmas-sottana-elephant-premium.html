@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>{{ subject }}</title>
+    
+    <!-- Preheader Text -->
+    <div style="display: none; max-height: 0px; overflow: hidden; font-size: 0px; line-height: 0px;">
+        {{ preheader_text }}
+    </div>
+    
+    <style>
+        /* Reset CSS per compatibilità client email */
+        body, table, td, p, a, li, blockquote {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            display: block;
+        }
+        
+        /* Sottana Service Luxury Theme - Elephant Edition */
+        :root {
+            color-scheme: light dark;
+            --sottana-gold: #D4AF37;      /* Oro premium */
+            --sottana-gold-light: #F4E5C3;
+            --sottana-gold-dark: #B8941F;
+            --sottana-red: #B91C1C;       /* Rosso natalizio sofisticato */
+            --sottana-red-light: #DC2626;
+            --sottana-burgundy: #7C2D12;   /* Bordeaux elegante */
+            --sottana-ivory: #FFFFF0;      /* Avorio lusso */
+            --sottana-champagne: #F7E7CE;  /* Champagne per eleganza */
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --bg-dark: #0F172A;
+            --bg-medium: #1E293B;
+        }
+        
+        /* Base Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-medium) 50%, var(--bg-dark) 100%);
+            font-family: 'Georgia', 'Times New Roman', serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: var(--text-dark);
+        }
+        
+        /* Background pattern with elephant motifs */
+        .email-wrapper {
+            width: 100%;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-medium) 50%, var(--bg-dark) 100%);
+            background-image:
+                radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 75% 75%, rgba(185, 28, 28, 0.05) 0%, transparent 30%),
+                url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><text y="50" font-size="12" fill="%23D4AF37" opacity="0.1">🐘</text></svg>'),
+                repeating-linear-gradient(45deg, rgba(212, 175, 55, 0.02) 0px, rgba(212, 175, 55, 0.02) 1px, transparent 1px, transparent 10px);
+            background-repeat: repeat;
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Animated golden particles - Elephant inspired */
+        .golden-particle {
+            position: absolute;
+            background: radial-gradient(circle, #FFD700 0%, var(--sottana-gold) 50%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0;
+            animation: float-elephant-spirit 10s ease-in-out infinite;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+        }
+        
+        @keyframes float-elephant-spirit {
+            0% {
+                transform: translateY(100vh) scale(0.3);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(40vh) scale(1);
+                box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-20vh) scale(0.3);
+                opacity: 0;
+            }
+        }
+        
+        /* Additional elephant spirit particles for more luxury effect */
+        .elephant-spirit {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: rgba(212, 175, 55, 0.7);
+            border-radius: 50%;
+            opacity: 0;
+            animation: elephant-spirit-float 8s linear infinite;
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.7);
+        }
+        
+        @keyframes elephant-spirit-float {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 0.8;
+                transform: translateY(-40vh) translateX(20px) rotate(180deg);
+                box-shadow: 0 0 15px rgba(212, 175, 55, 0.9);
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(40px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .elephant-spirit:nth-child(19) { left: 15%; top: 0; animation-delay: 1s; animation-duration: 12s; }
+        .elephant-spirit:nth-child(20) { left: 35%; top: 0; animation-delay: 4s; animation-duration: 10s; }
+        .elephant-spirit:nth-child(21) { left: 55%; top: 0; animation-delay: 7s; animation-duration: 14s; }
+        .elephant-spirit:nth-child(22) { left: 75%; top: 0; animation-delay: 3s; animation-duration: 11s; }
+        
+        .golden-particle:nth-child(1) { left: 8%; width: 5px; height: 5px; animation-delay: 0s; animation-duration: 14s; }
+        .golden-particle:nth-child(2) { left: 22%; width: 7px; height: 7px; animation-delay: 3s; animation-duration: 16s; }
+        .golden-particle:nth-child(3) { left: 42%; width: 4px; height: 4px; animation-delay: 6s; animation-duration: 12s; }
+        .golden-particle:nth-child(4) { left: 62%; width: 6px; height: 6px; animation-delay: 2s; animation-duration: 15s; }
+        .golden-particle:nth-child(5) { left: 78%; width: 5px; height: 5px; animation-delay: 5s; animation-duration: 13s; }
+        .golden-particle:nth-child(6) { left: 92%; width: 7px; height: 7px; animation-delay: 7s; animation-duration: 14s; }
+        
+        /* Elegant snowflakes */
+        .snowflake {
+            position: absolute;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="white" d="M12 2L13.09 8.26L19 7L17.74 9.74L24 11L17.74 12.26L19 15L13.09 13.74L12 20L10.91 13.74L5 15L6.26 12.26L0 11L6.26 9.74L5 7L10.91 8.26L12 2Z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 14px;
+            height: 14px;
+            opacity: 0.85;
+            animation: elegant-snowfall linear infinite;
+        }
+        
+        @keyframes elegant-snowfall {
+            0% {
+                transform: translateY(-10%) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) translateX(40px) rotate(450deg);
+                opacity: 0;
+            }
+        }
+        
+        .snowflake:nth-child(7) { left: 5%; animation-duration: 18s; animation-delay: 1s; }
+        .snowflake:nth-child(8) { left: 15%; animation-duration: 20s; animation-delay: 4s; }
+        .snowflake:nth-child(9) { left: 28%; animation-duration: 17s; animation-delay: 7s; }
+        .snowflake:nth-child(10) { left: 45%; animation-duration: 19s; animation-delay: 2s; }
+        .snowflake:nth-child(11) { left: 60%; animation-duration: 18s; animation-delay: 5s; }
+        .snowflake:nth-child(12) { left: 75%; animation-duration: 21s; animation-delay: 3s; }
+        .snowflake:nth-child(13) { left: 88%; animation-duration: 17s; animation-delay: 6s; }
+        .snowflake:nth-child(14) { left: 12%; animation-duration: 20s; animation-delay: 8s; }
+        .snowflake:nth-child(15) { left: 35%; animation-duration: 16s; animation-delay: 1s; }
+        
+        /* Email Container - Premium Card */
+        .email-container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: 
+                radial-gradient(circle at 5% 5%, rgba(212, 175, 55, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 95% 95%, rgba(185, 28, 28, 0.05) 0%, transparent 20%),
+                linear-gradient(135deg, var(--sottana-ivory) 0%, #FEFDF8 50%, var(--sottana-ivory) 100%);
+            border-radius: 12px;
+            box-shadow:
+                0 25px 80px rgba(0, 0, 0, 0.4),
+                0 0 0 2px var(--sottana-gold),
+                inset 0 1px 0 rgba(255, 255, 255, 0.95);
+            overflow: hidden;
+            position: relative;
+            z-index: 10;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        /* Ornamental gold borders */
+        .gold-border-top {
+            height: 10px;
+            background: linear-gradient(90deg,
+                var(--sottana-burgundy) 0%,
+                var(--sottana-gold-dark) 20%,
+                var(--sottana-gold) 50%,
+                var(--sottana-gold-dark) 80%,
+                var(--sottana-burgundy) 100%
+            );
+            background-size: 300% 100%;
+            animation: premium-shimmer 4s ease-in-out infinite;
+        }
+        
+        @keyframes premium-shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        /* Header with luxury gradient */
+        .email-header {
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
+                linear-gradient(135deg, var(--sottana-burgundy) 0%, var(--sottana-red) 50%, #991B1B 100%);
+            padding: 60px 50px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .email-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="50" height="50"><circle cx="50" cy="50" r="40" fill="none" stroke="%23D4AF37" stroke-width="0.5" opacity="0.3" stroke-dasharray="5,5"/></svg>') 50% 50%;
+            opacity: 0.7;
+        }
+        
+        /* Animated elephant stars */
+        .elephant-star {
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28"><path fill="%23D4AF37" d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0;
+            animation: elephant-twinkle 5s ease-in-out infinite;
+        }
+        
+        @keyframes elephant-twinkle {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(0.8) rotate(0deg);
+            }
+            25% {
+                opacity: 0.8;
+                transform: scale(1.1) rotate(90deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.3) rotate(180deg);
+                text-shadow: 0 0 25px rgba(212, 175, 55, 0.9);
+            }
+            75% {
+                opacity: 0.8;
+                transform: scale(1.1) rotate(270deg);
+            }
+            100% {
+                opacity: 0.3;
+                transform: scale(0.8) rotate(360deg);
+            }
+        }
+        
+        .elephant-star:nth-child(1) { top: 12%; left: 8%; animation-delay: 0s; }
+        .elephant-star:nth-child(2) { top: 20%; right: 12%; animation-delay: 1.5s; }
+        .elephant-star:nth-child(3) { top: 65%; left: 10%; animation-delay: 3s; }
+        .elephant-star:nth-child(4) { top: 70%; right: 8%; animation-delay: 2s; }
+        .elephant-star:nth-child(5) { top: 40%; left: 15%; animation-delay: 1s; }
+        .elephant-star:nth-child(6) { top: 45%; right: 18%; animation-delay: 2.5s; }
+        
+        .email-logo {
+            max-width: 250px;
+            height: auto;
+            margin: 0 auto 25px;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.4));
+        }
+        
+        .luxury-title {
+            color: var(--sottana-gold);
+            font-size: 42px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin: 25px 0 12px;
+            text-shadow:
+                3px 3px 6px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(212, 175, 55, 0.6);
+            position: relative;
+            z-index: 2;
+            font-family: 'Bodoni MT', 'Didot', 'Garamond', serif;
+        }
+        
+        .luxury-subtitle {
+            color: var(--sottana-champagne);
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 2.5px;
+            margin: 0 0 20px;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .elephant-greeting {
+            color: var(--sottana-gold);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin: 0;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Ornamental divider with elephant motif */
+        .elephant-divider {
+            text-align: center;
+            margin: 35px 0 25px;
+            color: var(--sottana-gold);
+            font-size: 32px;
+            letter-spacing: 25px;
+            opacity: 0.7;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Content Area */
+        .email-content {
+            padding: 55px 50px;
+            background: linear-gradient(180deg, var(--sottana-ivory) 0%, #FEFDF8 100%);
+            color: var(--text-dark);
+            line-height: 1.9;
+            font-size: 18px;
+            position: relative;
+        }
+        
+        .email-content::before {
+            content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"><path fill="%23D4AF37" opacity="0.15" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13.5v7.5c0 .55.45 1 1 1s1-.45 1-1V6.5c0-.55-.45-1-1-1s-1 .45-1 1z"/></svg>');
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            opacity: 1;
+            z-index: 1;
+            transform: rotate(-15deg);
+        }
+        
+        .email-content::after {
+            content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"><path fill="%23D4AF37" opacity="0.15" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13.5v7.5c0 .55.45 1 1 1s1-.45 1-1V6.5c0-.55-.45-1-1-1s-1 .45-1 1z"/></svg>');
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            opacity: 1;
+            z-index: 1;
+            transform: rotate(15deg);
+        }
+        
+        /* Additional SVG decorations */
+        .svg-decoration {
+            position: absolute;
+            opacity: 0.05;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .svg-top-left {
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            transform: rotate(45deg);
+        }
+        
+        .svg-bottom-right {
+            bottom: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            transform: rotate(135deg);
+        }
+        
+        /* Premium closure notice box */
+        .premium-closure-notice {
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(185, 28, 28, 0.1) 0%, transparent 20%),
+                linear-gradient(135deg, 
+                    var(--sottana-champagne) 0%, 
+                    var(--sottana-gold-light) 50%, 
+                    var(--sottana-ivory) 100%);
+            border: 3px double var(--sottana-gold);
+            border-radius: 10px;
+            padding: 40px 35px;
+            margin: 40px 0;
+            text-align: center;
+            position: relative;
+            box-shadow:
+                0 12px 35px rgba(139, 0, 0, 0.2),
+                inset 0 2px 0 rgba(255, 255, 255, 0.9),
+                0 0 40px rgba(212, 175, 55, 0.15);
+            border-image: linear-gradient(135deg, var(--sottana-gold), var(--sottana-red), var(--sottana-gold)) 1;
+            overflow: hidden;
+        }
+        
+        .premium-closure-notice::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--sottana-gold), transparent);
+            animation: gold-line-sweep 4s linear infinite;
+        }
+        
+        @keyframes gold-line-sweep {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .premium-closure-notice::before,
+        .premium-closure-notice::after {
+            content: '🐘';
+            position: absolute;
+            top: -25px;
+            font-size: 40px;
+            color: var(--sottana-gold);
+            text-shadow: 0 3px 12px rgba(139, 0, 0, 0.4);
+            animation: elephant-wiggle 6s ease-in-out infinite;
+        }
+        
+        @keyframes elephant-wiggle {
+            0%, 100% { transform: rotate(-5deg) scale(1); }
+            50% { transform: rotate(5deg) scale(1.1); }
+        }
+        
+        .premium-closure-notice::before { left: 35px; animation-delay: 0s; }
+        .premium-closure-notice::after { right: 35px; animation-delay: 2s; }
+        
+        .premium-closure-title {
+            color: var(--sottana-burgundy);
+            font-size: 30px;
+            font-weight: 700;
+            margin: 0 0 25px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-family: 'Bodoni MT', 'Didot', serif;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .premium-closure-dates {
+            background: linear-gradient(135deg, 
+                rgba(124, 45, 18, 0.1) 0%, 
+                rgba(185, 28, 28, 0.08) 100%);
+            padding: 22px 30px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 5px solid var(--sottana-burgundy);
+            box-shadow: inset 0 0 25px rgba(212, 175, 55, 0.15);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .premium-closure-dates strong {
+            color: var(--sottana-burgundy);
+            font-size: 22px;
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .premium-closure-message {
+            color: var(--sottana-gold-dark);
+            font-size: 19px;
+            font-weight: 600;
+            margin-top: 22px;
+            font-style: italic;
+            background: linear-gradient(135deg, var(--sottana-gold-dark), #991B1B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-dark);
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0 0 22px 0;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            letter-spacing: 0.5px;
+        }
+        
+        h1 { font-size: 36px; }
+        h2 { font-size: 32px; }
+        h3 { font-size: 28px; }
+        
+        p {
+            margin: 0 0 20px 0;
+            color: var(--text-dark);
+            line-height: 1.9;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+        
+        /* Enhanced text styling */
+        .email-content strong {
+            color: var(--sottana-burgundy);
+            font-weight: 800;
+            text-shadow: 0 0 5px rgba(185, 28, 28, 0.1);
+        }
+        
+        .email-content em {
+            color: var(--sottana-gold-dark);
+            font-style: italic;
+        }
+        
+        /* Premium button */
+        .btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.3) 0%, transparent 25%),
+                linear-gradient(135deg, var(--sottana-red) 0%, var(--sottana-burgundy) 100%);
+            color: var(--sottana-gold) !important;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 17px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            box-shadow:
+                0 8px 20px rgba(139, 0, 0, 0.5),
+                inset 0 2px 0 rgba(255, 255, 255, 0.4),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            border: 1px solid var(--sottana-gold-dark);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.4) 0%, transparent 25%),
+                linear-gradient(135deg, var(--sottana-burgundy) 0%, var(--sottana-red) 100%);
+            box-shadow:
+                0 10px 28px rgba(139, 0, 0, 0.7),
+                inset 0 2px 0 rgba(255, 255, 255, 0.5),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.4);
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        .email-footer {
+            background: linear-gradient(135deg, var(--sottana-burgundy) 0%, var(--bg-dark) 100%);
+            color: var(--sottana-champagne);
+            padding: 45px 40px;
+            text-align: center;
+            font-size: 15px;
+            line-height: 1.9;
+            position: relative;
+        }
+        
+        .email-footer::before {
+            content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25"><path fill="%23F7E7CE" opacity="0.5" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13.5v7.5c0 .55.45 1 1 1s1-.45 1-1V6.5c0-.55-.45-1-1-1s-1 .45-1 1z"/></svg>');
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            opacity: 1;
+            transform: rotate(-10deg);
+        }
+        
+        .email-footer::after {
+            content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25"><path fill="%23F7E7CE" opacity="0.5" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13.5v7.5c0 .55.45 1 1 1s1-.45 1-1V6.5c0-.55-.45-1-1-1s-1 .45-1 1z"/></svg>');
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            opacity: 1;
+            transform: rotate(10deg);
+        }
+        
+        .email-footer a {
+            color: var(--sottana-gold);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.4s, color 0.4s;
+        }
+        
+        .email-footer a:hover {
+            border-bottom-color: var(--sottana-gold);
+            color: var(--sottana-gold-light);
+        }
+        
+        .gold-border-bottom {
+            height: 10px;
+            background: linear-gradient(90deg,
+                var(--sottana-burgundy) 0%,
+                var(--sottana-gold-dark) 20%,
+                var(--sottana-gold) 50%,
+                var(--sottana-gold-dark) 80%,
+                var(--sottana-burgundy) 100%
+            );
+            background-size: 300% 100%;
+            animation: premium-shimmer 4s ease-in-out infinite;
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 600px) {
+            .email-wrapper { padding: 0 !important; }
+            .email-container {
+                width: 100% !important;
+                border-radius: 0 !important;
+            }
+            .email-header,
+            .email-content,
+            .email-footer {
+                padding: 35px 25px !important;
+            }
+            .luxury-title { 
+                font-size: 32px !important; 
+                letter-spacing: 2px !important; 
+            }
+            .premium-closure-notice { 
+                padding: 30px 25px !important; 
+            }
+            .btn {
+                display: block !important;
+                width: 100% !important;
+                text-align: center !important;
+            }
+            /* Disable animations on mobile for performance */
+            .golden-particle,
+            .snowflake,
+            .elephant-star {
+                display: none !important;
+            }
+        }
+        
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        /* Print Styles */
+        @media print {
+            .email-wrapper { background: #FFFFFF !important; }
+            .email-container { box-shadow: none !important; }
+            .golden-particle,
+            .snowflake,
+            .elephant-star {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <span class="sr-only">Vai al contenuto principale</span>
+
+    <!-- Animated particles -->
+    <div class="golden-particle" aria-hidden="true"></div>
+    <div class="golden-particle" aria-hidden="true"></div>
+    <div class="golden-particle" aria-hidden="true"></div>
+    <div class="golden-particle" aria-hidden="true"></div>
+    <div class="golden-particle" aria-hidden="true"></div>
+    <div class="golden-particle" aria-hidden="true"></div>
+
+    <!-- Elephant spirit particles -->
+    <div class="elephant-spirit" aria-hidden="true"></div>
+    <div class="elephant-spirit" aria-hidden="true"></div>
+    <div class="elephant-spirit" aria-hidden="true"></div>
+    <div class="elephant-spirit" aria-hidden="true"></div>
+
+    <!-- Elegant snowflakes -->
+    <div class="snowflake" aria-hidden="true"></div>
+    <div class="snowflake" aria-hidden="true"></div>
+    <div class="snowflake" aria-hidden="true"></div>
+    <div class="snowflake" aria-hidden="true"></div>
+    <div class="snowflake" aria-hidden="true"></div>
+    <div class="snowflake" aria-hidden="true"></div>
+    <div class="snowflake" aria-hidden="true"></div>
+    <div class="snowflake" aria-hidden="true"></div>
+    <div class="snowflake" aria-hidden="true"></div>
+    <div class="snowflake" aria-hidden="true"></div>
+
+    <!-- Email Wrapper -->
+    <table role="presentation" class="email-wrapper" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center" style="padding: 40px 0;">
+
+                <!-- Email Container -->
+                <table role="presentation" class="email-container" width="680" cellpadding="0" cellspacing="0">
+
+                    <!-- Gold Border Top -->
+                    <tr>
+                        <td class="gold-border-top" colspan="1"></td>
+                    </tr>
+
+                    <!-- Header -->
+                    <tr>
+                        <td class="email-header">
+                            <div class="elephant-star" aria-hidden="true">✦</div>
+                            <div class="elephant-star" aria-hidden="true">✧</div>
+                            <div class="elephant-star" aria-hidden="true">✦</div>
+                            <div class="elephant-star" aria-hidden="true">✧</div>
+                            <div class="elephant-star" aria-hidden="true">✦</div>
+                            <div class="elephant-star" aria-hidden="true">✧</div>
+
+                            {{#logo_header}}
+                            <img src="{{ logo_header }}" alt="{{ company_name }}" class="email-logo">
+                            {{/logo_header}}
+                            {{^logo_header}}
+                            {{#logo_header_base64}}
+                            <img src="data:image/png;base64,{{ logo_header_base64 }}" alt="{{ company_name }}" class="email-logo">
+                            {{/logo_header_base64}}
+                            {{^logo_header_base64}}
+                            {{#logo_svg}}
+                            <img src="{{ logo_svg }}" alt="{{ company_name }}" class="email-logo">
+                            {{/logo_svg}}
+                            {{/logo_header_base64}}
+                            {{/logo_header}}
+
+                            <h1 class="luxury-title">Buone Feste</h1>
+                            <p class="luxury-subtitle">Auguri dal Team Sottana Service</p>
+                            <p class="elephant-greeting">Con il nostro fedele elefante a fare gli auguri! 🐘</p>
+                        </td>
+                    </tr>
+
+                    <!-- Elephant Divider -->
+                    <tr>
+                        <td class="elephant-divider" aria-hidden="true">🐘 ✦ 🐘</td>
+                    </tr>
+
+                    <!-- Main Content -->
+                    <tr>
+                        <td class="email-content">
+                            <!-- SVG Decorations -->
+                            <div class="svg-decoration svg-top-left" aria-hidden="true"></div>
+                            <div class="svg-decoration svg-bottom-right" aria-hidden="true"></div>
+
+                            <!-- Premium Closure Notice Box -->
+                            <div class="premium-closure-notice">
+                                <h2 class="premium-closure-title">🐘 Chiusura Festività Natalizie 🐘</h2>
+
+                                <div class="premium-closure-dates">
+                                    <strong>Lo staff di Sottana Service</strong>
+                                    vi augura Buone Feste!
+                                </div>
+
+                                <div class="premium-closure-dates">
+                                    <strong>Ufficio chiuso dal</strong>
+                                    24 dicembre al 6 gennaio
+                                </div>
+
+                                <p class="premium-closure-message">
+                                    Ci rivediamo il 7 gennaio! 🎄✨
+                                </p>
+                            </div>
+
+                            <!-- Dynamic Body Content -->
+                            {{{ body }}}
+
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td class="email-footer">
+                            <table style="margin: 0 auto 16px auto;">
+                                <tr>
+                                    <td style="padding: 0 10px;"><a href="#"><svg class="social-icon" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg></a></td>
+                                    <td style="padding: 0 10px;"><a href="#"><svg class="social-icon" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/></svg></a></td>
+                                    <td style="padding: 0 10px;"><a href="#"><svg class="social-icon" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></td>
+                                </tr>
+                            </table>
+                            <p style="margin: 0 0 18px 0; font-size: 18px; font-weight: 700; color: var(--sottana-gold);">
+                                {{#company_name}}{{ company_name }}{{/company_name}}{{^company_name}}Sottana Service 🐘{{/company_name}}
+                            </p>
+                            {{#company_address}}
+                            <p style="margin: 0 0 12px 0; font-size: 15px;">
+                                {{ company_address }}
+                            </p>
+                            {{/company_address}}
+
+                            <p style="margin: 22px 0 12px; font-size: 14px; color: var(--sottana-champagne);">
+                                🐘 Buone Feste dal Team Sottana Service (con il nostro elefante preferito!) 🐘
+                            </p>
+
+                            <p style="margin: 12px 0 0; font-size: 13px; opacity: 0.9;">
+                                {{#site_url}}<a href="{{ site_url }}">Visita il sito</a>{{/site_url}}
+                                {{#site_url}}{{#unsubscribe_url}} | {{/unsubscribe_url}}{{/site_url}}
+                                {{#unsubscribe_url}}<a href="{{ unsubscribe_url }}">Annulla iscrizione</a>{{/unsubscribe_url}}
+                            </p>
+
+                            <p style="margin: 18px 0 0; font-size: 12px; opacity: 0.8;">
+                                © {{ year }} {{#company_name}}{{ company_name }}{{/company_name}}{{^company_name}}Sottana Service{{/company_name}}. Tutti i diritti riservati.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Gold Border Bottom -->
+                    <tr>
+                        <td class="gold-border-bottom" colspan="1"></td>
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

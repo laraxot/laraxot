@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     fill="none" 
+     viewBox="0 0 24 24" 
+     stroke="currentColor"
+     stroke-width="1.5"
+     aria-hidden="true" 
+     role="img">
+    <style>
+        @keyframes employee-pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+        }
+        @keyframes badge-slide {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(2px); }
+            100% { transform: translateX(0); }
+        }
+        .employee-group {
+            transition: all 0.3s ease-in-out;
+        }
+        .employee-badge {
+            transition: all 0.3s ease-in-out;
+        }
+        svg:hover .employee-group {
+            animation: employee-pulse 2s ease-in-out infinite;
+        }
+        svg:hover .employee-badge {
+            animation: badge-slide 1.5s ease-in-out infinite;
+        }
+    </style>
+    
+    <!-- Dipendente Principale con Badge -->
+    <g class="employee-group">
+        <!-- Testa -->
+        <circle cx="12" cy="8" r="3.5" stroke-width="1.5" />
+        
+        <!-- Corpo -->
+        <path stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="1.5"
+              d="M4 20a8 8 0 0116 0" />
+              
+        <!-- Dettagli Viso -->
+        <circle cx="10.5" cy="7.5" r="0.5" fill="currentColor" opacity="0.6" />
+        <circle cx="13.5" cy="7.5" r="0.5" fill="currentColor" opacity="0.6" />
+        <path stroke-linecap="round" 
+              stroke-width="0.8"
+              d="M10.5 9.5c0.5 0.5 1.5 0.5 2 0" 
+              opacity="0.7" />
+    </g>
+
+    <!-- Badge ID Dipendente -->
+    <g class="employee-badge">
+        <rect x="16" y="5" width="5" height="7" rx="1.5" 
+              stroke-width="1.2" 
+              fill="none" 
+              opacity="0.8" />
+        
+        <!-- Foto nel badge -->
+        <rect x="17" y="6" width="3" height="2.5" rx="0.3" 
+              stroke-width="0.8" 
+              opacity="0.6" />
+              
+        <!-- Linee testo -->
+        <line x1="17" y1="9.5" x2="19.5" y2="9.5" stroke-width="0.6" opacity="0.5" />
+        <line x1="17" y1="10.5" x2="19" y2="10.5" stroke-width="0.6" opacity="0.5" />
+        <line x1="17" y1="11.5" x2="19.8" y2="11.5" stroke-width="0.6" opacity="0.5" />
+        
+        <!-- Clip del badge -->
+        <rect x="18" y="4.5" width="1" height="1" rx="0.2" 
+              stroke-width="0.8" 
+              opacity="0.7" />
+    </g>
+    
+    <!-- Indicatore Status Attivo -->
+    <circle cx="20" cy="3" r="1.2"
+            fill="currentColor"
+            opacity="0.7" />
+            
+    <!-- Piccolo punto nel centro dell'indicatore -->
+    <circle cx="20" cy="3" r="0.4"
+            fill="none"
+            stroke="white"
+            stroke-width="0.3"
+            opacity="0.9" />
+</svg>

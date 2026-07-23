@@ -1,0 +1,520 @@
+/*
+ * Homepage Visual Fixes - Design Comuni Alignment
+ * Created: 2026-04-07
+ * Purpose: Fix all visual differences between local and reference
+ */
+
+/* ========== 0. GOVERNANCE CARDS - 3 COLUMN LAYOUT FIX (SCREENSHOT 8) ========== */
+
+/* Override flexbox with Bootstrap grid for governance cards - WIDER CARDS */
+#calendario .row.g-4 {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+}
+
+/* Make cards wider on tablet - use col-12 for wider cards */
+#calendario .row.g-4 > .col-md-6.col-lg-4 {
+  flex: 0 0 auto !important;
+  width: 33.333% !important;  /* 3 columns desktop */
+  min-width: 200px !important;  /* Minimum width for readability */
+}
+
+/* Tablet: 3 columns but wider cards (screenshot shows them side by side) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  #calendario .row.g-4 > .col-md-6.col-lg-4 {
+    width: 33.333% !important;  /* 3 columns on tablet */
+    min-width: 180px !important;
+  }
+}
+
+/* Ensure cards are wider - use more of available space */
+#calendario .card-teaser {
+  min-width: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Mario Rossi card - title must be GREEN */
+#calendario .card:first-child .card-title,
+#calendario .card-teaser.card-flex .card-title,
+.dc-homepage-parity #calendario .card-title {
+  color: #007a52 !important;  /* Green, per reference */
+  font-weight: 600 !important;
+}
+
+/* Governance cards - ALWAYS side by side (3 columns) */
+#calendario .row.g-4 {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+#calendario .row.g-4 > .col-12,
+#calendario .row.g-4 > [class*="col-"] {
+  flex: 0 0 33.333% !important;
+  max-width: 33.333% !important;
+  width: 33.333% !important;
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 991.98px) {
+  #calendario .row.g-4 > .col-12,
+  #calendario .row.g-4 > [class*="col-"] {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 575.98px) {
+  #calendario .row.g-4 > .col-12,
+  #calendario .row.g-4 > [class*="col-"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+/* Description text - dark gray, not black */
+#calendario .card-text {
+  color: #555 !important;
+}
+
+/* "Inaugurazione lunedì 2 luglio..." - this is in calendar events, make links green */
+#calendario .it-calendar-wrapper .card-text a,
+#calendario .card-text a {
+  color: #006E47 !important;
+  text-decoration: underline !important;
+}
+
+#calendario .card-text a:hover {
+  color: #004d31 !important;
+}
+
+/* ========== 1. HERO SECTION FIXES ========== */
+
+/* 1.1 News title must be green */
+#head-section .card-title,
+section#head-section h3.card-title {
+  color: #006E47 !important;
+}
+
+#head-section .card-title:hover {
+  color: #004d31 !important;
+}
+
+/* 1.1b Hero description - Lora font */
+#head-section .lora {
+  font-family: 'Lora', serif !important;
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+  color: #333 !important;
+}
+
+#head-section .lora strong {
+  font-weight: 700 !important;
+  color: #000 !important;
+}
+
+/* 1.2 "Estate in città" chip - green */
+.chip-success,
+.chip-green {
+  background-color: rgba(0, 110, 71, 0.1) !important;
+  color: #006E47 !important;
+  border: 1px solid rgba(0, 110, 71, 0.2);
+}
+
+.chip-success .chip-label,
+.chip-green .chip-label {
+  color: #006E47 !important;
+}
+
+/* 1.3 "Tutte le novità" link - green with arrow */
+.read-more {
+  color: #006E47 !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.read-more .icon {
+  fill: #006E47 !important;
+  stroke: #006E47 !important;
+  margin-left: 0.25rem;
+}
+
+.read-more:hover {
+  color: #004d31 !important;
+  text-decoration: underline;
+}
+
+.read-more:hover .icon {
+  fill: #004d31 !important;
+  stroke: #004d31 !important;
+}
+
+/* Force "Tutte le novità" specific link to be green */
+#head-section .card-body .read-more,
+#head-section a.read-more {
+  color: #006E47 !important;
+}
+
+#head-section .read-more .icon {
+  fill: #006E47 !important;
+  stroke: #006E47 !important;
+}
+
+/* 1.4 Category and date spacing */
+.category-top {
+  margin-bottom: 1rem;
+}
+
+.category-top .data {
+  font-size: 0.95rem;
+  margin-left: 0.5rem;
+}
+
+/* ========== 2. GOVERNANCE CARDS FIXES ========== */
+
+/* Cards already have col-md-6 col-lg-4, ensure proper display */
+.card-teaser-block-3,
+.card-wrapper.card-teaser-wrapper-equal {
+  display: contents !important;
+}
+
+/* Read-more links in governance cards */
+.read-more.text-success {
+  color: #006E47 !important;
+}
+
+.read-more.text-success .icon {
+  fill: #006E47 !important;
+  stroke: #006E47 !important;
+}
+
+/* ========== 3. CALENDAR FIXES ========== */
+
+/* Calendar header - green background */
+.it-header-block {
+  background-color: #006E47 !important;
+  padding: 1rem;
+  border-radius: 4px 4px 0 0;
+}
+
+.it-header-block-title h3 {
+  color: #ffffff !important;
+  text-align: center;
+}
+
+/* Calendar events links */
+.it-calendar-wrapper .card-text a {
+  color: #006E47 !important;
+  text-decoration: underline;
+}
+
+.it-calendar-wrapper .card-text a:hover {
+  color: #004d31 !important;
+}
+
+/* Ensure calendar is visible */
+.it-calendar-wrapper {
+  display: block !important;
+  visibility: visible !important;
+}
+
+.row-calendar {
+  display: block !important;
+}
+
+/* ========== 4. ARGOMENTI IN EVIDENZA FIXES ========== */
+
+/* Section header - green background */
+.evidence-section .section {
+  background-color: #006E47 !important;
+}
+
+.evidence-section h2.text-white {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 2rem;
+}
+
+/* Topics cards grid layout */
+.card-teaser-block-3 {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.5rem !important;
+}
+
+@media (max-width: 992px) {
+  .card-teaser-block-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-teaser-block-3 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* "Esplora argomento" links */
+.card-teaser .read-more {
+  color: #006E47 !important;
+}
+
+.card-teaser .read-more .icon {
+  fill: #006E47 !important;
+  stroke: #006E47 !important;
+}
+
+/* ========== 5. SITI TEMATICI CARD COLORS ========== */
+
+.card-bg-blue {
+  background-color: #0066CC !important;
+  color: #fff !important;
+}
+
+.card-bg-warning {
+  background-color: #FF6F00 !important;
+  color: #fff !important;
+}
+
+.card-bg-dark {
+  background-color: #2b3442 !important;
+  color: #fff !important;
+}
+
+/* Ensure themed site cards are in grid */
+.siti-tematici .card-wrapper {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.5rem !important;
+}
+
+/* ========== 5.1 TOPIC LINKS - SIMPLE TEXT STYLE ========== */
+
+/* Topic card links should be simple text, not buttons */
+.evidence-section .card-teaser .link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.evidence-section .card-teaser .link-list li {
+  margin-bottom: 0.75rem;
+  padding: 0;
+}
+
+.evidence-section .card-teaser .link-list .list-item {
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0.5rem 0 !important;
+  box-shadow: none !important;
+  display: block;
+}
+
+.evidence-section .card-teaser .link-list .list-item .text-success {
+  color: #006E47 !important;
+  text-decoration: underline;
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.evidence-section .card-teaser .link-list .list-item:hover .text-success {
+  color: #004d31 !important;
+}
+
+/* ========== 6. USEFUL LINKS - TEXT NOT BUTTONS ========== */
+
+.link-list-wrapper .list-item,
+.support-links .list-item {
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0.5rem 0 !important;
+  box-shadow: none !important;
+}
+
+.link-list-wrapper .list-item .text-success,
+.support-links .list-item .text-success {
+  color: #006E47 !important;
+  text-decoration: none;
+}
+
+.link-list-wrapper .list-item:hover,
+.support-links .list-item:hover {
+  background-color: rgba(0, 110, 71, 0.05) !important;
+  text-decoration: underline !important;
+}
+
+/* ========== 7. FEEDBACK RATING - GREEN BACKGROUND ========== */
+
+.cmp-rating {
+  background-color: #006E47 !important;
+  width: 100% !important;
+  padding: 4rem 0 !important;
+}
+
+.cmp-rating .card-wrapper {
+  background: #ffffff !important;
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  padding: 2rem !important;
+}
+
+.cmp-rating .card-header {
+  background: transparent !important;
+  border: none !important;
+}
+
+.cmp-rating h2 {
+  color: #000000 !important;
+  font-size: 1.5rem !important;
+}
+
+/* Rating stars - grey default, blue on hover/select */
+.rating-star {
+  color: #999 !important;
+}
+
+.rating-star.full {
+  color: #999 !important;
+}
+
+.rating-star:hover,
+.rating-star.active {
+  color: #0066CC !important;
+}
+
+.rating-star svg {
+  fill: #999 !important;
+}
+
+.rating-star:hover svg,
+.rating-star.active svg {
+  fill: #0066CC !important;
+}
+
+/* ========== 8. CONTACT SECTION FIXES ========== */
+
+.contact-list .list-item {
+  color: #006E47 !important;
+  text-decoration: underline !important;
+}
+
+.contact-list .list-item:hover {
+  color: #004d31 !important;
+  text-decoration: underline !important;
+}
+
+.contact-list .icon-primary {
+  color: #006E47 !important;
+  fill: #006E47 !important;
+}
+
+/* Background for contact section */
+.bg-grey-card {
+  background-color: #f5f5f5 !important;
+}
+
+/* ========== 9. FOOTER FIXES ========== */
+
+.footer a,
+footer a {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+
+.Footer a:hover,
+footer a:hover {
+  color: #cccccc !important;
+  text-decoration: underline !important;
+}
+
+/* ========== 10. HEADER FIXES ========== */
+
+/* Login button icon spacing */
+.btn-outline-light .icon {
+  margin-right: 0.5rem;
+}
+
+/* Ensure header center content is flex */
+.it-header-center-content-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem;
+}
+
+/* ========== 11. RESPONSIVE FIXES ========== */
+
+/* Mobile: single column */
+@media (max-width: 575.98px) {
+  .col-md-6, .col-lg-4 {
+    grid-column: span 1 / span 1 !important;
+  }
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .col-lg-4 {
+    grid-column: span 2 / span 2 !important;
+  }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 992px) {
+  .col-lg-4 {
+    grid-column: span 1 / span 1 !important;
+  }
+}
+
+/* ============================================================================
+   FIX #10: Rating Stars - Match Reference Default State
+   Reference has all stars active by default, local uses Alpine.js dynamic
+   ============================================================================ */
+.cmp-rating .rating-star {
+  /* Make stars appear active by default like reference */
+  color: #FCDC3C !important;
+}
+
+.cmp-rating .rating-star svg {
+  fill: #FCDC3C !important;
+}
+
+/* When user hovers or clicks, use Alpine.js dynamic classes */
+.cmp-rating .rating-star.active {
+  color: #FCDC3C !important;
+}
+
+.cmp-rating .rating-star.active svg {
+  fill: #FCDC3C !important;
+}
+
+/* ============================================================================
+   FIX #11: Hero Row - Remove min-height
+   Reference has content-height only, local had min-vh-lg-50 (50vh)
+   Already fixed in blade template, but add CSS safeguard
+   ============================================================================ */
+#head-section .row {
+  min-height: 0 !important;
+}
+
+/* ============================================================================
+   FIX #12: Container Nesting - Compensate for double-nesting
+   Reference: <main> → <section> → <div.container>
+   Local: <main> → <div.container#main-container> → <section> → <div.container>
+   ============================================================================ */
+#main-container > section > .container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+@media (min-width: 992px) {
+  #main-container > section > .container {
+    max-width: 100% !important;
+  }
+}
+

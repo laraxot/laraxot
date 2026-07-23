@@ -1,0 +1,211 @@
+{
+    "id": "5",
+    "title": {
+        "it": "Chi Siamo - Sottana Service",
+        "en": "About Us - Sottana Service"
+    },
+    "slug": "about",
+    "middleware": null,
+    "content": null,
+    "content_blocks": {
+        "it": [
+            {
+                "type": "hero",
+                "slug": "about-hero",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.about",
+                    "title": "Chi Siamo",
+                    "subtitle": "Sottana Service. Sicurezza ed igiene per i tuoi studi professionali.",
+                    "primary_cta": {
+                        "label": "Contattaci",
+                        "url": "/contacts"
+                    },
+                    "stats": []
+                }
+            },
+            {
+                "type": "content-split",
+                "slug": "professional-profile",
+                "data": {
+                    "view": "pub_theme::components.blocks.content.split",
+                    "title": "La Nostra Storia",
+                    "content": "<p class='text-lg leading-relaxed text-gray-700'>Sottana Service nasce con una missione chiara: garantire la massima sicurezza e conformità negli studi professionali.</p><p class='mt-4 text-gray-600'>Forniamo supporto ai professionisti che cercano un partner affidabile per la gestione della sicurezza, igiene e radioprotezione nei loro studi.</p><p class='mt-4 text-gray-600'>La nostra filosofia si basa su tre pilastri: competenza tecnica senza compromessi, supporto completo al cliente e conformità garantita secondo le normative vigenti.</p>",
+                    "image": "/themes/Two/images/medical-equipment.jpg",
+                    "reverse": false
+                }
+            },
+            {
+                "type": "values",
+                "slug": "core-values",
+                "data": {
+                    "view": "pub_theme::components.blocks.services.grid",
+                    "title": "Missione e Valori",
+                    "subtitle": "I principi che guidano ogni nostro intervento e ci rendono partner affidabili per la tua attività",
+                    "services": [
+                        {
+                            "title": "Missione",
+                            "description": "Garantire la massima sicurezza radiologica ed elettrica attraverso controlli precisi e consulenza specializzata.",
+                            "icon": "heroicon-o-bolt"
+                        },
+                        {
+                            "title": "Competenza",
+                            "description": "Aggiornamento costante su normative e tecnologie, certificazioni riconosciute e esperienza decennale.",
+                            "icon": "heroicon-o-check-circle"
+                        },
+                        {
+                            "title": "Innovazione",
+                            "description": "Utilizzo di tecnologie all'avanguardia e approcci innovativi per semplificare la conformità.",
+                            "icon": "heroicon-o-light-bulb"
+                        },
+                        {
+                            "title": "Integrità",
+                            "description": "Trasparenza totale nei processi e approccio etico. La fiducia dei clienti è il nostro asset più prezioso.",
+                            "icon": "heroicon-o-heart"
+                        },
+                        {
+                            "title": "Orientamento al Cliente",
+                            "description": "Ascolto attento delle esigenze, soluzioni personalizzate e supporto continuo.",
+                            "icon": "heroicon-o-user-group"
+                        },
+                        {
+                            "title": "Responsabilità",
+                            "description": "Impegno costante per la protezione della salute e della sicurezza nel settore sanitario.",
+                            "icon": "heroicon-o-shield-check"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "company-data",
+                "slug": "company-info",
+                "data": {
+                    "view": "pub_theme::components.blocks.company-data",
+                    "title": "Dati Aziendali",
+                    "subtitle": "Informazioni legali e di contatto",
+                    "fields": [
+                        {
+                            "label": "Partita IVA",
+                            "value": "05532540266"
+                        },
+                        {
+                            "label": "REA",
+                            "value": "TV - 451911"
+                        },
+                        {
+                            "label": "Sede",
+                            "value": "Via Vanzo 86, 31021 Mogliano Veneto TV"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "benefits",
+                "slug": "six-benefits",
+                "data": {
+                    "view": "pub_theme::components.blocks.benefits",
+                    "title": "Perché Sceglierci",
+                    "subtitle": "I vantaggi che fanno la differenza per il tuo studio",
+                    "benefits": [
+                        {
+                            "title": "Specializzazione Dentistico/Veterinario",
+                            "description": "Ci concentriamo esclusivamente su studi dentistici e cliniche veterinarie, garantendo competenza specifica.",
+                            "icon": "<svg class='w-7 h-7 text-brand-blue' fill='none' stroke='currentColor' stroke-width='2' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' d='M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z'/></svg>",
+                            "features": [
+                                "Controlli RX endorali",
+                                "Ortopantomografia OPT",
+                                "CBCT e TC Cone Beam",
+                                "Radiologia veterinaria"
+                            ]
+                        },
+                        {
+                            "title": "Esperienza",
+                            "description": "Anni di attività nel campo dei controlli periodici e della consulenza radioprotezione.",
+                            "icon": "<svg class='w-7 h-7 text-brand-blue' fill='none' stroke='currentColor' stroke-width='2' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'/></svg>",
+                            "features": [
+                                "Controlli periodici",
+                                "Consulenza specifica",
+                                "Aggiornamento costante"
+                            ]
+                        },
+                        {
+                            "title": "Conformità Normativa Garantita",
+                            "description": "Tutti i controlli secondo D.Lgs 101/2020 e Direttiva 2013/59/Euratom, senza eccezioni.",
+                            "icon": "<svg class='w-7 h-7 text-brand-blue' fill='none' stroke='currentColor' stroke-width='2' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'/></svg>",
+                            "features": [
+                                "D.Lgs 101/2020",
+                                "Direttiva Euratom 2013/59",
+                                "Documentazione completa",
+                                "Registri aggiornati"
+                            ]
+                        },
+                        {
+                            "title": "Supporto Completo",
+                            "description": "Non solo controlli, ma consulenza completa per la gestione della radioprotezione nel tuo studio.",
+                            "icon": "<svg class='w-7 h-7 text-brand-blue' fill='none' stroke='currentColor' stroke-width='2' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' d='M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z'/></svg>",
+                            "features": [
+                                "Consulenza telefonica",
+                                "Supporto documentazione",
+                                "Formazione personale",
+                                "Assistenza rapida"
+                            ]
+                        },
+                        {
+                            "title": "Prezzi Competitivi",
+                            "description": "Tariffe chiare e competitive senza sacrificare la qualità dei controlli e della consulenza.",
+                            "icon": "<svg class='w-7 h-7 text-brand-blue' fill='none' stroke='currentColor' stroke-width='2' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' d='M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z'/></svg>",
+                            "features": [
+                                "Preventivo gratuito",
+                                "Nessun costo nascosto",
+                                "Pagamenti dilazionati",
+                                "Rapporto qualità/prezzo"
+                            ]
+                        },
+                        {
+                            "title": "Risultati Certificati",
+                            "description": "Rilascio di certificati e documentazione valida per gli organi di controllo.",
+                            "icon": "<svg class='w-7 h-7 text-brand-blue' fill='none' stroke='currentColor' stroke-width='2' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z'/></svg>",
+                            "features": [
+                                "Certificati ufficiali",
+                                "Documentazione ASL",
+                                "Registri conformi",
+                                "Tracciabilità completa"
+                            ]
+                        }
+                    ],
+                    "cta": {
+                        "label": "Parliamo del Tuo Studio",
+                        "url": "/contacts"
+                    }
+                }
+            }
+
+        ],
+        "en": [
+            {
+                "type": "hero",
+                "slug": "about-hero",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.about",
+                    "title": "About Us",
+                    "subtitle": "Serving healthcare safety in northern Italy. Competence and passion for radiation protection.",
+                    "primary_cta": {
+                        "label": "Contact Us",
+                        "url": "/contacts"
+                    }
+                }
+            }
+        ]
+    },
+    "sidebar_blocks": {
+        "it": [],
+        "en": []
+    },
+    "footer_blocks": {
+        "it": [],
+        "en": []
+    },
+    "created_at": "2026-02-06T13:00:00.000000Z",
+    "updated_at": "2026-02-06T18:00:00.000000Z",
+    "created_by": null,
+    "updated_by": "01985ae8-8039-71ea-88c7-54ebce6295b0"
+}

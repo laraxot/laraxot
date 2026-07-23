@@ -1,0 +1,136 @@
+/**
+ * Sixteen Theme - Design Comuni Italia
+ *
+ * Bootstrap Italia styles converted to Tailwind CSS with @apply
+ * Based on: https://italia.github.io/design-comuni-pagine-statiche/
+ */
+
+/* Google Fonts - MUST be first @import */
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+/* Leaflet + cluster (mappa segnalazioni /it/) */
+@import 'leaflet/dist/leaflet.css';
+@import 'leaflet.markercluster/dist/MarkerCluster.css';
+@import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+
+/*
+ * Cookie consent (Spatie): NON usare @import url('/vendor/...') qui — postcss-import in Vite
+ * interpreta la path come filesystem assoluto e il build fallisce (ENOENT).
+ * Il foglio è pubblicato sotto public/vendor a runtime: resta il <link> in
+ * resources/views/components/layouts/main.blade.php con {{ asset('vendor/cookie-consent/...') }}.
+ */
+
+/* Alpine: nasconde nodi finché non è inizializzato (ex inline in main.blade.php) */
+[x-cloak] {
+    display: none !important;
+}
+
+/* ========================================
+   TAILWIND CSS 4.x LAYERS
+======================================== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DaisyUI — component library su Tailwind (v. https://daisyui.com/docs/ ) */
+@plugin "daisyui";
+
+/* ========================================
+   OVERRIDE TAILWIND DEFAULT FONTS
+   Force Titillium Web ONLY - no fallbacks
+======================================== */
+@theme {
+  --font-sans: "Titillium Web";
+  --font-serif: "Titillium Web";
+  --font-mono: "Titillium Web";
+
+  /* Verde PA — allineato a tailwind.config.js e PaDesignColors (#007A52) */
+  --color-primary-50: #e6f7f0;
+  --color-primary-100: #b3e6d1;
+  --color-primary-200: #80d5b2;
+  --color-primary-300: #4dc493;
+  --color-primary-400: #1ab374;
+  --color-primary-500: #007a52;
+  --color-primary-600: #006945;
+  --color-primary-700: #005838;
+  --color-primary-800: #00472b;
+  --color-primary-900: #00361e;
+}
+
+/* ========================================
+   IMPORT STYLE-APPLY (Bootstrap Italia converted to Tailwind)
+======================================== */
+@import './style-apply.css';
+
+/* ========================================
+   FILAMENT WIZARD → BOOTSTRAP ITALIA PARITY
+   Forces Filament markup to look like Design Comuni
+======================================== */
+@import './components/filament-wizard-parity.css';
+@import './components/filament-select-wizard-fix.css';
+@import "./container-override.css";
+@import "./footer-override.css";
+@import "./bootstrap-italia.css";
+
+/* ========================================
+   IMPORT DESIGN COMUNI COMPONENT CLASSES
+   Bootstrap Italia classes → Tailwind CSS
+======================================== */
+@import './components/header-footer-colors.css';
+@import './components/bootstrap-italia-classes.css';
+
+/* ========================================
+   WIZARD FORM — componente globale (no per-pagina)
+   Design Comuni: CSS per componente, mai per data-slug
+======================================== */
+
+/* ========================================
+   MOBILE HEADER FIX
+   Specific fixes for mobile header overlapping
+======================================== */
+@import './mobile-header-fix.css';
+
+/* ========================================
+   MAP FIXES
+   Responsive map and fullscreen functionality
+======================================== */
+@import './mobile-map-fix.css';
+
+/* ========================================
+   WIZARD SPACING FIXES
+   Reduce excessive space between elements
+======================================== */
+@import './wizard-spacing-fix.css';
+@import './wizard-visibility-fix.css';
+@import './components/civic-design-tokens.css';
+@import './components/civic-design-components.css';
+@import './civic-design-visual-fix.css';
+@import './civic-design-global.css';
+@import './faq-parity.css';
+@import './topics-parity.css';
+@import './homepage-visual-fix.css';
+@import './listing-parity.css';
+@import './services-parity-fix.css';
+@import './administration-parity-fix.css';
+@import './ticket-parity.css';
+@import './homepage-parity-v2.css';
+@import './homepage-mobile-qa.css';
+/* Global fixes MUST be last to override all page-specific rules */
+@import './civic-design-global-fixes.css';
+
+/* App thematic layers: extracted to keep this import index below 250 lines. */
+@import './app/01-wizard-form-spacing.css';
+@import './app/02-map-wrapper.css';
+@import './app/03-header-navigation-primary.css';
+@import './app/04-homepage-components.css';
+@import './app/05-homepage-parity-overrides.css';
+@import './app/06-page-cards-and-listing.css';
+@import './app/07-map-clusters-and-leaflet.css';
+@import './app/08-layout-type-and-header.css';
+@import './app/09-filament-wizard-shell.css';
+@import './app/10-header-navigation-contracts.css';
+@import './app/11-tailwind-utility-compat.css';
+@import './app/12-wizard-dc-form-shell.css';
+@import './app/13-final-runtime-overrides.css';
+@import './components/fo-filament-form-shell.css';
+@import './app/14-auth-login.css';

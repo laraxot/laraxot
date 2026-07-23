@@ -1,0 +1,31 @@
+# bmad + antigravity — riferimenti e checklist
+
+Documentazione canonica del repo (non duplicare qui):
+- ../../../../../docs/bmad/setup-guide.md
+- ../../../../../docs/bmad/quick-reference.md
+- ../../../../../docs/bmad/antigravity-integration.md
+- ../../../../../docs/guides/bmad-method-setup.md
+
+Checklist veloce:
+- _bmad/ presente e senza marker di merge nei config
+- _bmad-output/ per artefatti
+- skill bmad in .agents/skills/ (Cursor)
+
+Risorse esterne (studio):
+https://github.com/salacoste/antigravity-bmad-config
+https://medium.com/@visrow/bmad-method-building-custom-ai-agents-with-bmb-and-google-antigravity-54ac96024e94
+https://github.com/bmad-code-org/BMAD-METHOD/discussions/1752
+https://medium.com/@visrow/antigravity-ide-hands-on-googles-agent-first-future-are-we-ready-a6d991025082
+https://support.google.com/gemini/thread/405167946/upgrading-to-ultra-for-vibe-coding-antigravity-to-fix-opus-rate-limits-and-use-gemini-3-pro?hl=en
+https://dev.to/extinctsion/bmad-the-agile-framework-that-makes-ai-actually-predictable-5fe7
+https://www.linkedin.com/pulse/my-tryst-bmad-field-notes-from-hands-on-use-rohit-sharma-rjq1c/
+https://medium.com/@visrow/bmad-method-from-zero-to-hero-1bf5203f2ecd
+https://github.com/bmad-code-org/BMAD-METHOD/
+https://medium.com/@visrow/what-is-bmad-method-a-simple-guide-to-the-future-of-ai-driven-development-412274f91419
+https://www.kevintholland.com/bmad-cursor-the-first-ai-framework-that-actually-makes-sense-for-pms/
+https://forum.cursor.com/t/bmad-method-v2-in-an-evolution-imo-the-power-of-custom-agents-smaller-docs-and-checklists/87218
+https://gist.github.com/bossjones/1fd99aea0e46d427f671f853900a0f2a
+https://gdg.community.dev/events/details/google-gdg-teramo-presents-il-vibe-coding-che-funziona-bmad-cursor-gemini-25-con-live-demo/
+https://forum.cursor.com/t/vibe-ceoing-a-project-with-cursor-part-2-hands-on-bmad-aaidd-workflow-github-prompts/81140/2
+https://medium.com/@courtlinholt/mastering-the-bmad-method-a-revolutionary-approach-to-agile-ai-driven-development-for-modern-e7be588b8d94
+https://docs.bmad-method.org/reference/commands/

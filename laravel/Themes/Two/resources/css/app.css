@@ -1,0 +1,324 @@
+@import 'tailwindcss';
+@plugin "daisyui";
+
+@theme {
+    /* Original Brand Colors */
+    --color-brand-blue: #1E5A96;
+    --color-brand-green: #2D8659;
+    --color-brand-orange: #E67E22;
+    /* Darker orange for WCAG AA contrast on light backgrounds (4.5:1+) */
+    --color-brand-orange-dark: #B85C00;
+    
+    /* Target Website Color Palette */
+    --color-primary-light: oklch(0.65 0.15 250);
+    --color-primary-dark: oklch(0.45 0.20 280);
+    --color-text-primary: oklch(0.2 0.02 250);
+    --color-text-secondary: oklch(0.4 0.02 250);
+    --color-text-tertiary: oklch(0.6 0.02 250);
+    
+    /* Glassmorphism Colors */
+    --color-primary-soft: oklch(0.9 0.05 250);
+    --color-glass-white: rgba(255, 255, 255, 0.1);
+    
+    /* Custom Animations */
+    --animate-float: float 3s ease-in-out infinite;
+    --animate-progress: progress 3s ease-in-out infinite;
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes progress {
+        0% { width: 0%; }
+        50% { width: 70%; }
+        100% { width: 100%; }
+    }
+}
+
+/* Glassmorphism Utility */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Target Website Utilities */
+.glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Primary Gradient Background */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary-dark) 100%);
+}
+
+/* Text Colors */
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-tertiary { color: var(--color-text-tertiary); }
+
+/* Countdown Item Gradient */
+.bg-gradient-countdown {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary-dark) 100%);
+}
+
+/* Progress Bar Animation */
+.progress-animate {
+    animation: var(--animate-progress);
+}
+
+/* Floating Animation */
+.float-animate {
+    animation: var(--animate-float);
+}
+
+/* Required by all components */
+@import '../../../../vendor/filament/support/resources/css/index.css';
+
+
+/* Required by actions and tables */
+@import '../../../../vendor/filament/actions/resources/css/index.css';
+
+/* Required by actions, forms and tables */
+@import '../../../../vendor/filament/forms/resources/css/index.css';
+
+/* Required by actions and infolists */
+@import '../../../../vendor/filament/infolists/resources/css/index.css';
+
+/* Required by notifications */
+@import '../../../../vendor/filament/notifications/resources/css/index.css';
+
+/* Required by actions, infolists, forms, schemas and tables */
+@import '../../../../vendor/filament/schemas/resources/css/index.css';
+
+/* Required by tables */
+@import '../../../../vendor/filament/tables/resources/css/index.css';
+
+/* Required by widgets */
+@import '../../../../vendor/filament/widgets/resources/css/index.css';
+
+@variant dark (&:where(.dark, .dark *));
+
+/* WCAG 2.1 AA Accessibility Improvements */
+
+/* Screen reader only content */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.sr-only:focus,
+.focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* Enhanced Focus Indicators for WCAG 2.1 AA compliance */
+:where(a, button, input, select, textarea, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
+    outline: 3px solid #1E5A96 !important;
+    outline-offset: 3px !important;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0 2px rgba(30, 90, 150, 0.3) !important;
+}
+
+/* Ensure minimum touch target size (44x44px) for mobile */
+button, 
+a[role="button"],
+input[type="submit"],
+input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Improve color contrast for text - WCAG 2.1 AA compliance */
+.text-white\/80 {
+    color: rgba(255, 255, 255, 0.95); /* Improved from 0.8 to 0.95 for better contrast */
+}
+
+.text-white\/90 {
+    color: rgba(255, 255, 255, 1); /* Improved from 0.9 to 1.0 */
+}
+
+.text-white\/95 {
+    color: rgba(255, 255, 255, 0.98); /* High contrast for footer text */
+}
+
+/* Ensure sufficient contrast for non-text elements (icons, borders) */
+.text-blue-100\/80 {
+    color: rgba(255, 255, 255, 0.95); /* Changed to white for better contrast on dark background */
+}
+
+.text-blue-100\/90 {
+    color: rgba(255, 255, 255, 0.98); /* Changed to white for better contrast */
+}
+
+.text-blue-200 {
+    color: rgba(255, 255, 255, 0.95); /* Changed to white for better contrast */
+}
+
+.text-blue-200\/70 {
+    color: rgba(255, 255, 255, 0.95); /* Changed to white for better contrast */
+}
+
+.text-gray-200 {
+    color: rgba(255, 255, 255, 0.95); /* Changed to white for better contrast on dark footer */
+}
+
+/* Footer / contentinfo: ensure orange and gray text meet 4.5:1 on dark blue */
+[role="contentinfo"] .text-orange-400,
+footer .text-orange-400 {
+    color: #fcd34d; /* amber-300, ~4.5:1 on #0d2d4d */
+}
+
+[role="contentinfo"] .text-gray-400,
+footer .text-gray-400 {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* PageSpeed / WCAG: text-brand-orange on light backgrounds needs 4.5:1 contrast */
+.text-brand-orange:not(.bg-brand-orange):not(.border-brand-orange):not(.from-brand-orange):not(.to-brand-orange):not(.via-brand-orange) {
+    color: var(--color-brand-orange-dark) !important;
+}
+
+/* WCAG: border-brand-orange on light backgrounds needs darker shade */
+.border-brand-orange:not(.bg-white):not(.bg-gray-50):not(.bg-brand-blue):not(.bg-brand-green) {
+    border-color: var(--color-brand-orange-dark) !important;
+}
+.border-t-brand-orange:not(.bg-white):not(.bg-gray-50):not(.bg-brand-blue):not(.bg-brand-green) {
+    border-top-color: var(--color-brand-orange-dark) !important;
+}
+
+/* Reflow support - ensure content doesn't require horizontal scrolling at 320px */
+@media (max-width: 320px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Prevent horizontal overflow */
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Ensure flex items wrap properly */
+    .flex {
+        flex-wrap: wrap;
+    }
+    
+    /* Ensure grid items don't overflow */
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Ensure text doesn't overflow */
+    p, span, h1, h2, h3, h4, h5, h6 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+/* Ensure form elements don't overflow on small screens */
+@media (max-width: 320px) {
+    input, select, textarea {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+    
+    /* Ensure labels and inputs fit */
+    label {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* Cookie Consent Accessibility Fixes - WCAG 2.1 AA */
+/* Fix focus indicators that were removed by cookie-consent plugin */
+.lcc-button {
+    min-height: 44px;
+    min-width: 44px;
+    line-height: 1.5; /* C21 - WCAG 1.4.12 Text Spacing */
+}
+
+/* C21: Line height for all cookie modal text */
+.lcc-modal p,
+.lcc-modal .lcc-content {
+    line-height: 1.5;
+}
+
+.lcc-button:focus-visible {
+    outline: 3px solid #1E5A96 !important;
+    outline-offset: 3px !important;
+    border-radius: 0.25rem;
+}
+
+.lcc-button:focus {
+    outline: 3px solid #1E5A96 !important;
+    outline-offset: 3px !important;
+}
+
+.lcc-modal__close:focus-visible {
+    outline: 3px solid #1E5A96 !important;
+    outline-offset: 2px !important;
+}
+
+.lcc-label input:focus-visible {
+    outline: 3px solid #1E5A96 !important;
+    outline-offset: 2px !important;
+}
+/* WCAG 1.4.12 - Text Spacing (C21) - line-height minimo */
+body {
+    line-height: 1.5;
+}
+
+p, li, dt, dd, label {
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    letter-spacing: normal;
+}
+
+/* WCAG 1.4.4 - Resize Text (C12/C13/C14) - font sizes in rem */
+/* Ensure base font size is relative */
+html {
+    font-size: 100%; /* 16px default, user can override */
+}
+
+/* WCAG 2.4.1 - Bypass Blocks (ARIA11) - Skip to content link */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #1E5A96;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 9999;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}

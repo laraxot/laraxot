@@ -1,0 +1,350 @@
+{
+  "timestamp": "2026-05-14T14:40:14.859Z",
+  "viewport": {
+    "width": 1366,
+    "height": 900
+  },
+  "urls": {
+    "local": "http://127.0.0.1:8000/it/tests/segnalazione-crea?step=form.privacy",
+    "reference": "https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-01-privacy.html"
+  },
+  "expected": {
+    "steps": [
+      "Autorizzazioni e condizioni",
+      "Dati di segnalazione",
+      "Riepilogo"
+    ],
+    "privacyText": "Il Comune di Firenze gestisce i dati personali forniti e liberamente comunicati",
+    "checkbox": "Ho letto e compreso"
+  },
+  "playwright": {
+    "local": {
+      "url": "http://127.0.0.1:8000/it/tests/segnalazione-crea?step=form.privacy",
+      "title": "ErrorException",
+      "stepLabels": [],
+      "activeStep": null,
+      "containsExpectedSteps": false,
+      "containsPrivacyText": false,
+      "containsCheckboxText": false,
+      "containsWrongHook": false,
+      "rects": {
+        "title": {
+          "x": 100,
+          "y": 120,
+          "width": 1166,
+          "height": 36
+        },
+        "stepper": null,
+        "stepperHeader": null,
+        "formShell": null,
+        "form": null,
+        "activeStep": null,
+        "privacySection": null,
+        "checkbox": null
+      },
+      "styles": {
+        "body": {
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "oklch(0.985 0 0)",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "display": "block"
+        },
+        "title": {
+          "color": "oklch(0.145 0 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "30px",
+          "fontWeight": "600",
+          "lineHeight": "36px",
+          "display": "block"
+        },
+        "stepper": null,
+        "activeStep": null,
+        "form": null,
+        "checkboxLabel": null
+      }
+    },
+    "reference": {
+      "url": "https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-01-privacy.html",
+      "title": "Segnalazione disservizio",
+      "stepLabels": [
+        "Autorizzazioni e condizioni Attivo",
+        "Dati di segnalazione",
+        "Riepilogo"
+      ],
+      "activeStep": "Autorizzazioni e condizioni Attivo",
+      "containsExpectedSteps": true,
+      "containsPrivacyText": true,
+      "containsCheckboxText": true,
+      "containsWrongHook": false,
+      "rects": {
+        "title": {
+          "x": 205,
+          "y": 298,
+          "width": 956,
+          "height": 60
+        },
+        "stepper": {
+          "x": 107,
+          "y": 382,
+          "width": 1152,
+          "height": 59
+        },
+        "stepperHeader": {
+          "x": 107,
+          "y": 382,
+          "width": 1152,
+          "height": 59
+        },
+        "formShell": null,
+        "form": null,
+        "activeStep": {
+          "x": 107,
+          "y": 382,
+          "width": 445,
+          "height": 59
+        },
+        "privacySection": null,
+        "checkbox": {
+          "x": 312,
+          "y": 642,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "styles": {
+        "body": {
+          "color": "rgb(25, 25, 25)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "fontFamily": "\"Titillium Web\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "display": "block"
+        },
+        "title": {
+          "color": "rgb(25, 25, 25)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"Titillium Web\"",
+          "fontSize": "48px",
+          "fontWeight": "700",
+          "lineHeight": "60px",
+          "display": "block"
+        },
+        "stepper": {
+          "color": "rgb(25, 25, 25)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"Titillium Web\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "display": "block"
+        },
+        "activeStep": {
+          "color": "rgb(0, 122, 82)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"Titillium Web\"",
+          "fontSize": "18px",
+          "fontWeight": "600",
+          "lineHeight": "normal",
+          "display": "flex"
+        },
+        "form": null,
+        "checkboxLabel": {
+          "color": "rgb(26, 26, 26)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"Titillium Web\"",
+          "fontSize": "18px",
+          "fontWeight": "600",
+          "lineHeight": "27px",
+          "display": "block"
+        }
+      }
+    },
+    "comparison": {
+      "labelsMatchReference": false,
+      "privacyTextVisible": false,
+      "checkboxTextVisible": false,
+      "wrongHookAbsent": true,
+      "localFormVisible": false,
+      "localStepperVisible": false,
+      "refStepperVisible": true,
+      "widthDelta": {
+        "stepper": null,
+        "form": null
+      },
+      "activeStepColor": {
+        "local": null,
+        "reference": "rgb(0, 122, 82)"
+      }
+    }
+  },
+  "puppeteer": {
+    "local": {
+      "url": "http://127.0.0.1:8000/it/tests/segnalazione-crea?step=form.privacy",
+      "title": "ErrorException",
+      "stepLabels": [],
+      "activeStep": null,
+      "containsExpectedSteps": false,
+      "containsPrivacyText": false,
+      "containsCheckboxText": false,
+      "containsWrongHook": false,
+      "rects": {
+        "title": {
+          "x": 100,
+          "y": 120,
+          "width": 1166,
+          "height": 36
+        },
+        "stepper": null,
+        "stepperHeader": null,
+        "formShell": null,
+        "form": null,
+        "activeStep": null,
+        "privacySection": null,
+        "checkbox": null
+      },
+      "styles": {
+        "body": {
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "oklch(0.985 0 0)",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "display": "block"
+        },
+        "title": {
+          "color": "oklch(0.145 0 0)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "30px",
+          "fontWeight": "600",
+          "lineHeight": "36px",
+          "display": "block"
+        },
+        "stepper": null,
+        "activeStep": null,
+        "form": null,
+        "checkboxLabel": null
+      }
+    },
+    "reference": {
+      "url": "https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-01-privacy.html",
+      "title": "Segnalazione disservizio",
+      "stepLabels": [
+        "Autorizzazioni e condizioni Attivo",
+        "Dati di segnalazione",
+        "Riepilogo"
+      ],
+      "activeStep": "Autorizzazioni e condizioni Attivo",
+      "containsExpectedSteps": true,
+      "containsPrivacyText": true,
+      "containsCheckboxText": true,
+      "containsWrongHook": false,
+      "rects": {
+        "title": {
+          "x": 205,
+          "y": 298,
+          "width": 956,
+          "height": 60
+        },
+        "stepper": {
+          "x": 107,
+          "y": 382,
+          "width": 1152,
+          "height": 59
+        },
+        "stepperHeader": {
+          "x": 107,
+          "y": 382,
+          "width": 1152,
+          "height": 59
+        },
+        "formShell": null,
+        "form": null,
+        "activeStep": {
+          "x": 107,
+          "y": 382,
+          "width": 444,
+          "height": 59
+        },
+        "privacySection": null,
+        "checkbox": {
+          "x": 312,
+          "y": 642,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "styles": {
+        "body": {
+          "color": "rgb(25, 25, 25)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "fontFamily": "\"Titillium Web\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "display": "block"
+        },
+        "title": {
+          "color": "rgb(25, 25, 25)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"Titillium Web\"",
+          "fontSize": "48px",
+          "fontWeight": "700",
+          "lineHeight": "60px",
+          "display": "block"
+        },
+        "stepper": {
+          "color": "rgb(25, 25, 25)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"Titillium Web\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "display": "block"
+        },
+        "activeStep": {
+          "color": "rgb(0, 122, 82)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"Titillium Web\"",
+          "fontSize": "18px",
+          "fontWeight": "600",
+          "lineHeight": "normal",
+          "display": "flex"
+        },
+        "form": null,
+        "checkboxLabel": {
+          "color": "rgb(26, 26, 26)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"Titillium Web\"",
+          "fontSize": "18px",
+          "fontWeight": "600",
+          "lineHeight": "27px",
+          "display": "block"
+        }
+      }
+    },
+    "comparison": {
+      "labelsMatchReference": false,
+      "privacyTextVisible": false,
+      "checkboxTextVisible": false,
+      "wrongHookAbsent": true,
+      "localFormVisible": false,
+      "localStepperVisible": false,
+      "refStepperVisible": true,
+      "widthDelta": {
+        "stepper": null,
+        "form": null
+      },
+      "activeStepColor": {
+        "local": null,
+        "reference": "rgb(0, 122, 82)"
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+/*
+ * Filament wizard spacing bridge kept outside app.css.
+ * Extracted from resources/css/app.css to keep app.css as a small import index.
+ */
+.filament-wizard .page-content {
+    margin-bottom: 0.5rem;
+    padding: 0;
+}
+
+.filament-wizard .filament-form {
+    margin-bottom: 0;
+}
+
+.filament-wizard .form-field {
+    margin-bottom: 1rem;
+}
+
+.filament-wizard .form-field[data-name="location"] {
+    margin-bottom: 2rem;
+}

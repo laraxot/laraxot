@@ -1,0 +1,67 @@
+/**
+ * Impeccable polish layer — motion, typography, a11y (DESIGN.md).
+ * Loaded last in app.css; wins over civic side-tab alerts without patching legacy parity files.
+ */
+
+/* Alerts — full 1px border instead of side-tab (Impeccable detect / DESIGN.md) */
+.alert,
+.callout,
+.it-alert,
+.alert-warning {
+  border: 1px solid #007a52 !important;
+  border-radius: 4px !important;
+}
+
+.alert-info,
+.it-alert.alert-info {
+  border-color: #0066cc !important;
+}
+
+.alert-warning,
+.it-alert.alert-warning {
+  border-color: #995c00 !important;
+}
+
+/* Typography: even headings, fewer orphans in prose */
+#main-container h1,
+#main-container h2,
+#main-container h3,
+.cmp-hero h1,
+.it-hero-text-wrapper h1 {
+  text-wrap: balance;
+}
+
+#main-container .card-text,
+#main-container .it-griditem-text-wrapper p,
+#main-container article p {
+  text-wrap: pretty;
+  max-width: 75ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Touch targets — min 44px on primary header controls (WCAG 2.5.5) */
+.it-header-slim-wrapper .nav-link,
+.it-header-slim-wrapper .btn-icon,
+.it-header-navbar-wrapper .nav-link {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Focus ring — civic green, visible on keyboard nav */
+#main-container a:focus-visible,
+#main-container button:focus-visible,
+.it-header-slim-wrapper a:focus-visible,
+.it-header-slim-wrapper button:focus-visible {
+  outline: 2px solid #007a52;
+  outline-offset: 2px;
+}

@@ -1,0 +1,78 @@
+@import 'tailwindcss';
+
+/* Required by all components */
+@import '../../../../vendor/filament/support/resources/css/index.css';
+
+/* Required by actions and tables */
+@import '../../../../vendor/filament/actions/resources/css/index.css';
+
+/* Required by actions, forms and tables */
+@import '../../../../vendor/filament/forms/resources/css/index.css';
+
+/* Required by actions and infolists */
+@import '../../../../vendor/filament/infolists/resources/css/index.css';
+
+/* Required by notifications */
+@import '../../../../vendor/filament/notifications/resources/css/index.css';
+
+/* Required by actions, infolists, forms, schemas and tables */
+@import '../../../../vendor/filament/schemas/resources/css/index.css';
+
+/* Required by tables */
+@import '../../../../vendor/filament/tables/resources/css/index.css';
+
+/* Required by widgets */
+@import '../../../../vendor/filament/widgets/resources/css/index.css';
+
+@variant dark (&:where(.dark, .dark *));
+
+/* Swiper CSS */
+@import 'swiper/css/bundle';
+
+/* Custom modal styles */
+@import "./modal.css";
+
+/* Dark mode variant */
+@variant dark (&:where(.dark, .dark *));
+
+/* Custom theme styles for prediction market */
+.prediction-card {
+	@apply bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4;
+}
+
+.market-yes {
+	@apply text-green-600 bg-green-50 dark:bg-green-900/20 px-2 py-1 rounded;
+}
+
+.market-no {
+	@apply text-red-600 bg-red-50 dark:bg-red-900/20 px-2 py-1 rounded;
+}
+
+.probability-high {
+	@apply text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20 px-2 py-1 rounded font-medium;
+}
+
+.probability-medium {
+	@apply text-amber-600 bg-amber-50 dark:bg-amber-900/20 px-2 py-1 rounded font-medium;
+}
+
+.probability-low {
+	@apply text-red-600 bg-red-50 dark:bg-red-900/20 px-2 py-1 rounded font-medium;
+}
+
+/* Custom button styles */
+.btn-market {
+	@apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+}
+
+.btn-market-primary {
+	@apply bg-indigo-600 hover:bg-indigo-700 text-white;
+}
+
+.btn-market-success {
+	@apply bg-green-600 hover:bg-green-700 text-white;
+}
+
+.btn-market-danger {
+	@apply bg-red-600 hover:bg-red-700 text-white;
+}

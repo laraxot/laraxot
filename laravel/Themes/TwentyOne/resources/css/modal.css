@@ -1,0 +1,51 @@
+.xot-modal-place-bet + form .fi-modal-window {
+    @apply bg-white text-slate-500;
+    * {
+        @apply text-gray-950;
+    }
+    .fi-modal-header {
+        @apply !bg-blue-500 !py-4;
+        .fi-modal-heading {
+            @apply text-white text-start;
+        }
+    }
+    .fi-modal-content {
+        > div {
+            @apply gap-0 mb-0 border border-gray-200;
+        }
+        .fi-input-wrp {
+            @apply rounded-none;
+            &:has(select) {
+                @apply bg-gray-100;
+            }
+            > div {
+                select, input, span {
+                    @apply py-6 ;
+                }
+                input[type="number"] {
+                    @apply text-3xl font-bold;
+                }
+                span {
+                    @apply ps-0;
+                }
+            }
+        }
+    }
+    .fi-modal-footer {
+        @apply pt-0 bg-white border-0 border-none;
+        button {
+            @apply px-4 py-3 border;
+        }
+        button[type="submit"] {
+            @apply bg-blue-600 border-blue-600;
+            span {
+                @apply text-white
+            }
+        }
+    }
+}
+
+form .fi-modal button.fi-ac-btn-action[type="submit"]
+{
+    @apply bg-blue-500;
+}

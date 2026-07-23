@@ -1,0 +1,136 @@
+/* Colori AGID (Agenzia per l'Italia Digitale) */
+:root {
+    --italia-blue-50: #e6f2ff;
+    --italia-blue-100: #b3d9ff;
+    --italia-blue-200: #80bfff;
+    --italia-blue-300: #4da6ff;
+    --italia-blue-400: #1a8cff;
+    --italia-blue-500: #0066CC;
+    --italia-blue-600: #0052a3;
+    --italia-blue-700: #003d7a;
+    --italia-blue-800: #002952;
+    --italia-blue-900: #001429;
+
+    --italia-green-50: #e6f7f0;
+    --italia-green-100: #b3e6d1;
+    --italia-green-200: #80d5b2;
+    --italia-green-300: #4dc493;
+    --italia-green-400: #1ab374;
+    --italia-green-500: #00B373;
+    --italia-green-600: #008f5c;
+    --italia-green-700: #006b45;
+    --italia-green-800: #00472e;
+    --italia-green-900: #002317;
+
+    --italia-red-50: #fce8ea;
+    --italia-red-100: #f7b3b8;
+    --italia-red-200: #f27e86;
+    --italia-red-300: #ed4954;
+    --italia-red-400: #e81422;
+    --italia-red-500: #D9364F;
+    --italia-red-600: #ae2b3f;
+    --italia-red-700: #83202f;
+    --italia-red-800: #58151f;
+    --italia-red-900: #2d0a0f;
+
+    --italia-yellow-50: #fff8e6;
+    --italia-yellow-100: #ffecb3;
+    --italia-yellow-200: #ffe080;
+    --italia-yellow-300: #ffd44d;
+    --italia-yellow-400: #ffc81a;
+    --italia-yellow-500: #F5A623;
+    --italia-yellow-600: #c4851c;
+    --italia-yellow-700: #936315;
+    --italia-yellow-800: #62420e;
+    --italia-yellow-900: #312107;
+}
+
+/* Utility classes per colori AGID */
+.bg-italia-blue-50 { background-color: var(--italia-blue-50); }
+.bg-italia-blue-100 { background-color: var(--italia-blue-100); }
+.bg-italia-blue-200 { background-color: var(--italia-blue-200); }
+.bg-italia-blue-300 { background-color: var(--italia-blue-300); }
+.bg-italia-blue-400 { background-color: var(--italia-blue-400); }
+.bg-italia-blue-500 { background-color: var(--italia-blue-500); }
+.bg-italia-blue-600 { background-color: var(--italia-blue-600); }
+.bg-italia-blue-700 { background-color: var(--italia-blue-700); }
+.bg-italia-blue-800 { background-color: var(--italia-blue-800); }
+.bg-italia-blue-900 { background-color: var(--italia-blue-900); }
+
+.text-italia-blue-50 { color: var(--italia-blue-50); }
+.text-italia-blue-100 { color: var(--italia-blue-100); }
+.text-italia-blue-200 { color: var(--italia-blue-200); }
+.text-italia-blue-300 { color: var(--italia-blue-300); }
+.text-italia-blue-400 { color: var(--italia-blue-400); }
+.text-italia-blue-500 { color: var(--italia-blue-500); }
+.text-italia-blue-600 { color: var(--italia-blue-600); }
+.text-italia-blue-700 { color: var(--italia-blue-700); }
+.text-italia-blue-800 { color: var(--italia-blue-800); }
+.text-italia-blue-900 { color: var(--italia-blue-900); }
+
+.border-italia-blue-50 { border-color: var(--italia-blue-50); }
+.border-italia-blue-100 { border-color: var(--italia-blue-100); }
+.border-italia-blue-200 { border-color: var(--italia-blue-200); }
+.border-italia-blue-300 { border-color: var(--italia-blue-300); }
+.border-italia-blue-400 { border-color: var(--italia-blue-400); }
+.border-italia-blue-500 { border-color: var(--italia-blue-500); }
+.border-italia-blue-600 { border-color: var(--italia-blue-600); }
+.border-italia-blue-700 { border-color: var(--italia-blue-700); }
+.border-italia-blue-800 { border-color: var(--italia-blue-800); }
+.border-italia-blue-900 { border-color: var(--italia-blue-900); }
+
+/* Hover states */
+.hover\:bg-italia-blue-600:hover { background-color: var(--italia-blue-600); }
+.hover\:text-italia-blue-500:hover { color: var(--italia-blue-500); }
+
+/* Focus states */
+.focus\:ring-italia-blue-500:focus { --tw-ring-color: var(--italia-blue-500); }
+.focus\:border-italia-blue-500:focus { border-color: var(--italia-blue-500); }
+
+/* Green colors */
+.bg-italia-green-50 { background-color: var(--italia-green-50); }
+.bg-italia-green-100 { background-color: var(--italia-green-100); }
+.bg-italia-green-200 { background-color: var(--italia-green-200); }
+.bg-italia-green-500 { background-color: var(--italia-green-500); }
+.bg-italia-green-600 { background-color: var(--italia-green-600); }
+.bg-italia-green-800 { background-color: var(--italia-green-800); }
+
+.text-italia-green-800 { color: var(--italia-green-800); }
+
+.border-italia-green-200 { border-color: var(--italia-green-200); }
+
+.hover\:bg-italia-green-600:hover { background-color: var(--italia-green-600); }
+.focus\:ring-italia-green-500:focus { --tw-ring-color: var(--italia-green-500); }
+
+/* Red colors */
+.bg-italia-red-50 { background-color: var(--italia-red-50); }
+.bg-italia-red-100 { background-color: var(--italia-red-100); }
+.bg-italia-red-200 { background-color: var(--italia-red-200); }
+.bg-italia-red-500 { background-color: var(--italia-red-500); }
+.bg-italia-red-600 { background-color: var(--italia-red-600); }
+.bg-italia-red-800 { background-color: var(--italia-red-800); }
+
+.text-italia-red-500 { color: var(--italia-red-500); }
+.text-italia-red-800 { color: var(--italia-red-800); }
+
+.border-italia-red-200 { border-color: var(--italia-red-200); }
+.border-italia-red-500 { border-color: var(--italia-red-500); }
+
+.hover\:bg-italia-red-600:hover { background-color: var(--italia-red-600); }
+.focus\:ring-italia-red-500:focus { --tw-ring-color: var(--italia-red-500); }
+.focus\:border-italia-red-500:focus { border-color: var(--italia-red-500); }
+
+/* Yellow colors */
+.bg-italia-yellow-50 { background-color: var(--italia-yellow-50); }
+.bg-italia-yellow-100 { background-color: var(--italia-yellow-100); }
+.bg-italia-yellow-200 { background-color: var(--italia-yellow-200); }
+.bg-italia-yellow-500 { background-color: var(--italia-yellow-500); }
+.bg-italia-yellow-600 { background-color: var(--italia-yellow-600); }
+.bg-italia-yellow-800 { background-color: var(--italia-yellow-800); }
+
+.text-italia-yellow-800 { color: var(--italia-yellow-800); }
+
+.border-italia-yellow-200 { border-color: var(--italia-yellow-200); }
+
+.hover\:bg-italia-yellow-600:hover { background-color: var(--italia-yellow-600); }
+.focus\:ring-italia-yellow-500:focus { --tw-ring-color: var(--italia-yellow-500); }

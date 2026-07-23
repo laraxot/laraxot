@@ -1,0 +1,151 @@
+{
+  "timestamp": "2026-04-05T07:30:14.922Z",
+  "totalPages": 16,
+  "averageSimilarity": 29,
+  "pages": [
+    {
+      "page": "prenotazione-appuntamento",
+      "similarity": 0,
+      "refTagCount": 20,
+      "localTagCount": 8504,
+      "missingClassCount": 4,
+      "extraClassCount": 214
+    },
+    {
+      "page": "segnalazione-disservizio",
+      "similarity": 0,
+      "refTagCount": 20,
+      "localTagCount": 8504,
+      "missingClassCount": 4,
+      "extraClassCount": 214
+    },
+    {
+      "page": "aree-amministrative",
+      "similarity": 6,
+      "refTagCount": 20,
+      "localTagCount": 404,
+      "missingClassCount": 3,
+      "extraClassCount": 142
+    },
+    {
+      "page": "organo",
+      "similarity": 6,
+      "refTagCount": 20,
+      "localTagCount": 404,
+      "missingClassCount": 3,
+      "extraClassCount": 142
+    },
+    {
+      "page": "ufficio",
+      "similarity": 6,
+      "refTagCount": 20,
+      "localTagCount": 404,
+      "missingClassCount": 3,
+      "extraClassCount": 142
+    },
+    {
+      "page": "enti-e-fondazioni",
+      "similarity": 6,
+      "refTagCount": 20,
+      "localTagCount": 404,
+      "missingClassCount": 3,
+      "extraClassCount": 142
+    },
+    {
+      "page": "luoghi",
+      "similarity": 6,
+      "refTagCount": 20,
+      "localTagCount": 404,
+      "missingClassCount": 3,
+      "extraClassCount": 142
+    },
+    {
+      "page": "contatti",
+      "similarity": 6,
+      "refTagCount": 20,
+      "localTagCount": 400,
+      "missingClassCount": 3,
+      "extraClassCount": 135
+    },
+    {
+      "page": "documenti-dati",
+      "similarity": 7,
+      "refTagCount": 702,
+      "localTagCount": 8504,
+      "missingClassCount": 211,
+      "extraClassCount": 208
+    },
+    {
+      "page": "novita",
+      "similarity": 7,
+      "refTagCount": 713,
+      "localTagCount": 8504,
+      "missingClassCount": 214,
+      "extraClassCount": 209
+    },
+    {
+      "page": "eventi",
+      "similarity": 7,
+      "refTagCount": 791,
+      "localTagCount": 8504,
+      "missingClassCount": 222,
+      "extraClassCount": 210
+    },
+    {
+      "page": "servizi",
+      "similarity": 74,
+      "refTagCount": 730,
+      "localTagCount": 512,
+      "missingClassCount": 96,
+      "extraClassCount": 72
+    },
+    {
+      "page": "lista-categorie",
+      "similarity": 78,
+      "refTagCount": 640,
+      "localTagCount": 409,
+      "missingClassCount": 69,
+      "extraClassCount": 6
+    },
+    {
+      "page": "amministrazione",
+      "similarity": 81,
+      "refTagCount": 603,
+      "localTagCount": 425,
+      "missingClassCount": 64,
+      "extraClassCount": 9
+    },
+    {
+      "page": "lista-risorse",
+      "similarity": 86,
+      "refTagCount": 690,
+      "localTagCount": 601,
+      "missingClassCount": 83,
+      "extraClassCount": 36
+    },
+    {
+      "page": "homepage",
+      "similarity": 92,
+      "refTagCount": 844,
+      "localTagCount": 780,
+      "missingClassCount": 44,
+      "extraClassCount": 23
+    }
+  ],
+  "criticalPages": [
+    "aree-amministrative",
+    "organo",
+    "ufficio",
+    "enti-e-fondazioni",
+    "documenti-dati",
+    "novita",
+    "eventi",
+    "luoghi",
+    "contatti",
+    "prenotazione-appuntamento",
+    "segnalazione-disservizio"
+  ],
+  "goodPages": [
+    "homepage"
+  ]
+}

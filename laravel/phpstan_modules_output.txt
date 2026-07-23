@@ -1,0 +1,16 @@
+Note: Using configuration file /var/www/_bases/base_techplanner_fila4_mono/laravel/phpstan.neon.
+    0/3894 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%[1G[2K 3894/3894 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+ ------ ---------------------------------------------------------------- 
+  Line   Lang/app/Providers/RouteServiceProvider.php                     
+ ------ ---------------------------------------------------------------- 
+  69     Parameter #1 $locale of method                                  
+         Illuminate\Foundation\Application::setLocale() expects string,  
+         string|null given.                                              
+         🪪  argument.type                                               
+         ✏️  Lang/app/Providers/RouteServiceProvider.php                 
+ ------ ---------------------------------------------------------------- 
+
+
+ [ERROR] Found 1 error                                                          
+

@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <title>{{ subject }}</title>
+    
+    <style>
+        /* Base Reset */
+        body, table, td, p, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; display: block; }
+        
+        /* Professional Christmas Palette (Deep Red & Gold) */
+        :root {
+            --pro-bg: #800000;      /* Maroon/Deep Red */
+            --pro-gold: #C5A059;    /* Muted Gold */
+            --pro-cream: #FFFDD0;   /* Cream */
+            --pro-text: #2C2C2C;    /* Charcoal */
+            --pro-white: #FFFFFF;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            background-color: #800000;
+            background-image: linear-gradient(135deg, #600000 25%, #800000 25%, #800000 50%, #600000 50%, #600000 75%, #800000 75%, #800000 100%);
+            background-size: 40px 40px; /* Subtle texture */
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #2C2C2C;
+        }
+
+        .email-wrapper {
+            width: 100%;
+            padding: 40px 0;
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Aurora Borealis Effect - Professional Gold/Cream */
+        .email-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                125deg,
+                transparent 0%,
+                transparent 25%,
+                rgba(197, 160, 89, 0.10) 40%,
+                rgba(255, 253, 208, 0.08) 50%,
+                rgba(197, 160, 89, 0.12) 60%,
+                transparent 75%,
+                transparent 100%
+            );
+            background-size: 400% 400%;
+            animation: aurora-professional 21s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.5;
+        }
+
+        @keyframes aurora-professional {
+            0%, 100% {
+                transform: translateX(0%) translateY(0%) rotate(0deg);
+                background-position: 0% 50%;
+                opacity: 0.4;
+            }
+            33% {
+                transform: translateX(12%) translateY(-6%) rotate(2deg);
+                background-position: 50% 30%;
+                opacity: 0.6;
+            }
+            66% {
+                transform: translateX(-6%) translateY(6%) rotate(-1deg);
+                background-position: 100% 70%;
+                opacity: 0.5;
+            }
+        }
+
+        /* The "Card" Effect - Professional Premium */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, 
+                rgba(255, 253, 208, 0.98) 0%, 
+                rgba(255, 253, 208, 0.95) 100%);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 2px solid rgba(197, 160, 89, 0.6);
+            border-radius: 12px;
+            box-shadow: 
+                0 25px 60px rgba(0, 0, 0, 0.6),
+                0 10px 30px rgba(0, 0, 0, 0.4),
+                inset 0 2px 4px rgba(255, 255, 255, 0.8),
+                inset 0 -2px 4px rgba(197, 160, 89, 0.1),
+                0 0 30px rgba(197, 160, 89, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Professional animated gradient overlay */
+        .email-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(197, 160, 89, 0.04) 0%,
+                rgba(128, 0, 0, 0.02) 25%,
+                rgba(197, 160, 89, 0.04) 50%,
+                rgba(128, 0, 0, 0.02) 75%,
+                rgba(197, 160, 89, 0.04) 100%);
+            background-size: 400% 400%;
+            animation: professional-gradient-shift 14s ease infinite;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.6;
+        }
+        
+        @keyframes professional-gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Gold Border Frame inside the card */
+        .inner-frame {
+            border: 2px solid #C5A059;
+            margin: 10px;
+            border-radius: 2px;
+        }
+
+        .email-header {
+            padding: 48px 28px 28px;
+            text-align: center;
+            background: linear-gradient(135deg, 
+                rgba(255, 253, 208, 1) 0%,
+                rgba(255, 253, 208, 0.98) 100%);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                inset 0 -2px 0 rgba(197, 160, 89, 0.3),
+                0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Professional shimmer effect */
+        .email-header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 40%, rgba(197, 160, 89, 0.04) 50%, transparent 60%);
+            animation: professional-shimmer 10s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes professional-shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .email-logo {
+            max-width: 220px;
+            height: auto;
+            margin: 0 auto 20px;
+        }
+
+        .wreath-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #386641; /* Pine Green */
+            display: inline-block;
+        }
+
+        .main-title {
+            color: #800000;
+            font-size: 30px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin: 14px 0;
+            text-transform: uppercase;
+            border-bottom: 3px solid rgba(197, 160, 89, 0.6);
+            display: inline-block;
+            padding-bottom: 14px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+            z-index: 1;
+        }
+
+        .email-content {
+            padding: 32px 40px;
+            font-size: 17px;
+            line-height: 1.85;
+            letter-spacing: 0.01em;
+            color: #4A4A4A;
+            text-align: center;
+            background: linear-gradient(180deg, 
+                rgba(255, 253, 208, 1) 0%,
+                rgba(255, 253, 208, 0.98) 100%);
+            position: relative;
+            z-index: 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Professional texture overlay */
+        .email-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(197, 160, 89, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(128, 0, 0, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Closure Notice Box - The "Professional" centerpiece Premium */
+        .closure-notice-box {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.98) 0%, 
+                rgba(255, 253, 208, 0.95) 100%);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 3px solid rgba(197, 160, 89, 0.7);
+            padding: 32px 28px;
+            margin: 36px 0;
+            position: relative;
+            box-shadow: 
+                0 8px 24px rgba(197, 160, 89, 0.25),
+                0 4px 12px rgba(0, 0, 0, 0.1),
+                inset 0 2px 4px rgba(255, 255, 255, 0.8),
+                inset 0 -2px 4px rgba(197, 160, 89, 0.1);
+        }
+        
+        /* Professional glow effect */
+        .closure-notice-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.15) 0%,
+                transparent 40%,
+                transparent 60%,
+                rgba(197, 160, 89, 0.05) 100%);
+            background-size: 200% 200%;
+            animation: professional-notice-glow 8s ease infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        @keyframes professional-notice-glow {
+            0%, 100% { background-position: 0% 50%; opacity: 0.5; }
+            50% { background-position: 100% 50%; opacity: 0.8; }
+        }
+        
+        .closure-notice-box::before {
+            content: "📅";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #FFFDD0;
+            padding: 0 10px;
+            font-size: 20px;
+        }
+
+        .notice-title {
+            color: #800000;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .notice-dates {
+            font-size: 18px;
+            color: #2C2C2C;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .notice-reopening {
+            color: #386641; /* Pine Green */
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .staff-signature {
+            font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+            font-size: 24px;
+            color: #C5A059;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            background: linear-gradient(135deg, #800000 0%, #A00000 100%);
+            background-size: 200% 200%;
+            color: #FFFFFF !important;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 24px;
+            border-radius: 6px;
+            box-shadow: 
+                0 4px 14px rgba(128, 0, 0, 0.4),
+                0 2px 6px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            animation: professional-btn-gradient 4s ease infinite;
+        }
+        
+        @keyframes professional-btn-gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.25);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, #A00000 0%, #800000 100%);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 
+                0 8px 24px rgba(128, 0, 0, 0.5),
+                0 4px 12px rgba(0, 0, 0, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+        
+        .btn:active {
+            transform: translateY(0) scale(0.98);
+            box-shadow: 0 3px 8px rgba(128, 0, 0, 0.3);
+        }
+
+
+        .email-footer {
+            background-color: #2C2C2C;
+            color: #A0A0A0;
+            padding: 30px;
+            text-align: center;
+            font-size: 12px;
+            border-top: 4px solid #C5A059;
+        }
+        
+        .email-footer a { 
+            color: #C5A059; 
+            text-decoration: none; 
+        }
+        
+        /* Social Icons */
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            fill: #C5A059;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+        }
+        
+        .social-icon:hover {
+            fill: #FFFDD0;
+            transform: scale(1.15);
+        }
+
+        /* Subtle Slow Snow */
+        .snowflake {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #FFF;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: drift 15s linear infinite;
+        }
+        
+        @keyframes drift {
+            from { transform: translateY(-20px) translateX(0); opacity: 0.6; }
+            to { transform: translateY(800px) translateX(50px); opacity: 0; }
+        }
+
+        .s1 { left: 10%; animation-duration: 20s; animation-delay: 0s; }
+        .s2 { left: 30%; animation-duration: 25s; animation-delay: 5s; }
+        .s3 { left: 50%; animation-duration: 18s; animation-delay: 2s; }
+        .s4 { left: 70%; animation-duration: 22s; animation-delay: 8s; }
+        .s5 { left: 90%; animation-duration: 28s; animation-delay: 1s; }
+
+
+        /* SVG Animated Decorations - Professional Elegant 2025 */
+        .svg-star {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            opacity: 0;
+            animation: svg-professional-twinkle 5.5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes svg-professional-twinkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0.7) rotate(0deg);
+                filter: drop-shadow(0 0 4px rgba(197, 160, 89, 0.5));
+            }
+            50% {
+                opacity: 0.95;
+                transform: scale(1.25) rotate(180deg);
+                filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.8));
+            }
+        }
+
+        .svg-star:nth-child(1) { top: 18%; left: 10%; animation-delay: 0s; }
+        .svg-star:nth-child(2) { top: 30%; right: 14%; animation-delay: 2.2s; }
+
+        .svg-snowflake {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            opacity: 0.7;
+            animation: svg-professional-snowfall linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes svg-professional-snowfall {
+            0% {
+                transform: translateY(-10%) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.75;
+            }
+            90% {
+                opacity: 0.75;
+            }
+            100% {
+                transform: translateY(100vh) translateX(30px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .svg-snowflake:nth-child(1) { left: 8%; animation-duration: 13s; animation-delay: 0s; }
+        .svg-snowflake:nth-child(2) { left: 24%; animation-duration: 15s; animation-delay: 2.5s; }
+        .svg-snowflake:nth-child(3) { left: 52%; animation-duration: 14s; animation-delay: 5s; }
+        .svg-snowflake:nth-child(4) { left: 76%; animation-duration: 16s; animation-delay: 3s; }
+
+        /* Webkit support for SVG animations */
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            .svg-star {
+                -webkit-animation: svg-professional-twinkle 5.5s ease-in-out infinite;
+            }
+            .svg-snowflake {
+                -webkit-animation: svg-professional-snowfall linear infinite;
+            }
+        }
+
+        /* Accessibility - Prefers Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .email-wrapper::before,
+            .email-header::after,
+            .email-container::after,
+            .closure-notice-box::after {
+                animation: none !important;
+                display: none !important;
+            }
+            .svg-star, .svg-snowflake,
+            .svg-decoration {
+                animation: none !important;
+                opacity: 0.5 !important;
+            }
+
+            .btn:hover {
+                transform: none !important;
+            }
+
+            .btn::before {
+                display: none !important;
+            }
+        }
+
+        /* Responsive - Mobile-First Optimization */
+        @media screen and (max-width: 600px) {
+            .email-container { 
+                max-width: 100% !important; 
+                border: none !important; 
+                border-radius: 0 !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+            }
+            
+            .email-container::after,
+            .email-wrapper::before {
+                display: none !important;
+                animation: none !important;
+            }
+
+            .inner-frame {
+                border: none !important;
+                margin: 0 !important;
+            }
+            
+            .email-header {
+                padding: 32px 24px 24px !important;
+            }
+            
+            .email-header::after {
+                display: none !important;
+                animation: none !important;
+            }
+            
+            .email-content { 
+                padding: 32px 24px !important; 
+            }
+            
+            .main-title {
+                font-size: 24px !important;
+            }
+            
+            .closure-notice-box {
+                padding: 24px 20px !important;
+                margin: 24px 0 !important;
+            }
+            
+            .closure-notice-box::after {
+                display: none !important;
+                animation: none !important;
+            }
+            
+            .btn {
+                display: block !important;
+                width: 100% !important;
+                padding: 16px 24px !important;
+                margin: 16px 0 0 0 !important;
+            }
+            
+            /* Rimuovi backdrop-filter su mobile (performance) */
+            .email-container,
+            .closure-notice-box {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+        }
+        
+        /* Dark Mode Optimization */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, #1A0000 0%, #2D0000 50%, #1A0000 100%) !important;
+                background-size: 200% 200%;
+                animation: professional-dark-bg 20s ease infinite;
+            }
+            
+            @keyframes professional-dark-bg {
+                0%, 100% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+            }
+            
+            .email-container {
+                background: linear-gradient(135deg, 
+                    rgba(26, 13, 0, 0.98) 0%, 
+                    rgba(45, 20, 0, 0.95) 100%) !important;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                box-shadow: 
+                    0 25px 60px rgba(0, 0, 0, 0.8),
+                    0 10px 30px rgba(0, 0, 0, 0.6),
+                    inset 0 2px 4px rgba(255, 255, 255, 0.05),
+                    inset 0 -2px 4px rgba(197, 160, 89, 0.15),
+                    0 0 40px rgba(197, 160, 89, 0.3) !important;
+            }
+            
+            .email-content {
+                background: linear-gradient(180deg, 
+                    rgba(26, 13, 0, 1) 0%,
+                    rgba(45, 20, 0, 0.98) 100%) !important;
+                color: #F9FAFB !important;
+            }
+            
+            .main-title {
+                color: #FFD700 !important;
+            }
+            
+            .closure-notice-box {
+                background: linear-gradient(135deg, 
+                    rgba(45, 20, 0, 0.98) 0%, 
+                    rgba(26, 13, 0, 0.95) 100%) !important;
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                border-color: rgba(197, 160, 89, 0.5) !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<!--[if mso]>
+<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:100%;height:100%;">
+<v:fill type="gradient" color="#800000" color2="#600000" angle="135"/>
+<v:textbox inset="0,0,0,0">
+<![endif]>
+    <div style="position:fixed; width:100%; height:100%; top:0; left:0; pointer-events:none; z-index:0;">
+        <div class="snowflake s1"></div>
+        <div class="snowflake s2"></div>
+        <div class="snowflake s3"></div>
+        <div class="snowflake s4"></div>
+        <div class="snowflake s5"></div>
+
+        <!-- SVG Animated Snowflakes - Professional Elegant -->
+        <svg class="svg-snowflake" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; left: 8%; width: 16px; height: 16px; opacity: 0.7; animation: svg-professional-snowfall linear infinite 13s 0s; pointer-events: none; z-index: 0;">
+            <path d="M25,2 L25,48 M2,25 L48,25 M10,10 L40,40 M40,10 L10,40" stroke="#C5A059" stroke-width="2" fill="none" opacity="0.8"/>
+            <circle cx="25" cy="25" r="3" fill="#FFFDD0" opacity="0.75">
+                <animate attributeName="opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite"/>
+            </circle>
+        </svg>
+        <svg class="svg-snowflake" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; left: 24%; width: 16px; height: 16px; opacity: 0.7; animation: svg-professional-snowfall linear infinite 15s 2.5s; pointer-events: none; z-index: 0;">
+            <path d="M25,2 L25,48 M2,25 L48,25 M10,10 L40,40 M40,10 L10,40" stroke="#C5A059" stroke-width="2" fill="none" opacity="0.8"/>
+            <circle cx="25" cy="25" r="3" fill="#FFFDD0" opacity="0.75">
+                <animate attributeName="opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite"/>
+            </circle>
+        </svg>
+        <svg class="svg-snowflake" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; left: 52%; width: 16px; height: 16px; opacity: 0.7; animation: svg-professional-snowfall linear infinite 14s 5s; pointer-events: none; z-index: 0;">
+            <path d="M25,2 L25,48 M2,25 L48,25 M10,10 L40,40 M40,10 L10,40" stroke="#C5A059" stroke-width="2" fill="none" opacity="0.8"/>
+            <circle cx="25" cy="25" r="3" fill="#FFFDD0" opacity="0.75">
+                <animate attributeName="opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite"/>
+            </circle>
+        </svg>
+        <svg class="svg-snowflake" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; left: 76%; width: 16px; height: 16px; opacity: 0.7; animation: svg-professional-snowfall linear infinite 16s 3s; pointer-events: none; z-index: 0;">
+            <path d="M25,2 L25,48 M2,25 L48,25 M10,10 L40,40 M40,10 L10,40" stroke="#C5A059" stroke-width="2" fill="none" opacity="0.8"/>
+            <circle cx="25" cy="25" r="3" fill="#FFFDD0" opacity="0.75">
+                <animate attributeName="opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite"/>
+            </circle>
+        </svg>
+    </div>
+
+    <table role="presentation" class="email-wrapper" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center">
+                <table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="inner-frame">
+                            <!-- Header -->
+                            <div class="email-header" style="position: relative;">
+                                <!-- SVG Animated Stars in Header - Professional Elegant -->
+                                <svg class="svg-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; top: 18%; left: 10%; width: 20px; height: 20px; opacity: 0; animation: svg-professional-twinkle 5.5s ease-in-out infinite 0s; pointer-events: none;">
+                                    <path d="M50,10 L61,35 L88,40 L69,59 L73,86 L50,73 L27,86 L31,59 L12,40 L39,35 Z"
+                                          fill="#C5A059" stroke="#FFFDD0" stroke-width="2" opacity="1">
+                                        <animate attributeName="opacity" values="0.5;0.95;0.5" dur="2.75s" repeatCount="indefinite"/>
+                                    </path>
+                                </svg>
+                                <svg class="svg-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; top: 30%; right: 14%; width: 20px; height: 20px; opacity: 0; animation: svg-professional-twinkle 5.5s ease-in-out infinite 2.2s; pointer-events: none;">
+                                    <path d="M50,10 L61,35 L88,40 L69,59 L73,86 L50,73 L27,86 L31,59 L12,40 L39,35 Z"
+                                          fill="#C5A059" stroke="#FFFDD0" stroke-width="2" opacity="1">
+                                        <animate attributeName="opacity" values="0.5;0.95;0.5" dur="2.75s" repeatCount="indefinite"/>
+                                    </path>
+                                </svg>
+
+                                {{#logo_header}}
+                                <img src="{{ logo_header }}" alt="{{ company_name }}" class="email-logo">
+                                {{/logo_header}}
+                                {{^logo_header}}
+                                <h2 style="color: #800000; font-size: 24px;">{{ company_name }}</h2>
+                                {{/logo_header}}
+
+                                <div class="wreath-icon">🌿</div>
+                                <div class="main-title">Buone Feste</div>
+                            </div>
+
+                            <!-- Content -->
+                            <div class="email-content" style="position: relative;">
+                                <!-- SVG Decorations - Professional Elegant -->
+                                <div class="svg-decoration svg-top-left" aria-hidden="true"></div>
+                                <div class="svg-decoration svg-bottom-right" aria-hidden="true"></div>
+                                
+                                <p>Gentile Cliente,</p>
+                                <p>In occasione delle prossime festività natalizie, desideriamo ringraziarLa per la fiducia accordataci e porgerLe i nostri più sinceri auguri di un sereno Natale e di un felice Anno Nuovo.</p>
+
+                                <!-- Closure Notice Box -->
+                                <div class="closure-notice-box">
+                                    <div class="notice-title">Comunicazione di Servizio</div>
+                                    <p style="margin: 0; font-size: 14px; color: #666;">I nostri uffici rimarranno chiusi</p>
+                                    <div class="notice-dates">dal 24 Dicembre al 6 Gennaio</div>
+                                    <div class="notice-reopening">Ci rivediamo il 7 Gennaio!</div>
+                                </div>
+
+                                {{#body}}
+                                <!-- Additional dynamic content if needed -->
+                                <div style="margin-top: 20px;">
+                                    {{{ body }}}
+                                </div>
+                                {{/body}}
+
+                                <div class="staff-signature">
+                                    Lo Staff di <br>
+                                    {{#company_name}}{{ company_name }}{{/company_name}}{{^company_name}}Sottana Service{{/company_name}}
+                                </div>
+
+                                {{#action_url}}
+                                <a href="{{ action_url }}" class="btn">Area Riservata</a>
+                                {{/action_url}}
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="email-footer">
+                                <p>&copy; {{ year }} {{#company_name}}{{ company_name }}{{/company_name}}{{^company_name}}Sottana Service{{/company_name}}. Tutti i diritti riservati.</p>
+                                <p>
+                                    {{#company_address}}{{ company_address }}<br>{{/company_address}}
+                                    {{#site_url}}<a href="{{ site_url }}">Sito Web</a> &nbsp;|&nbsp; {{/site_url}}
+                                    {{#unsubscribe_url}}<a href="{{ unsubscribe_url }}">Cancellami</a>{{/unsubscribe_url}}
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+<!--[if mso]>
+</v:textbox>
+</v:rect>
+<![endif]-->
+</body>
+</html>

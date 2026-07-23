@@ -1,0 +1,42 @@
+{
+    "name": "Sixteen",
+    "type": "pub",
+    "description": "Tema moderno per Laravel che implementa le Linee Guida di Design per i Servizi Digitali della Pubblica Amministrazione utilizzando Tailwind CSS",
+    "keywords": ["tailwind", "accessibility", "wcag", "pa", "italy", "design-system"],
+    "active": true,
+    "order": 0,
+    "aliases": ["sixteen", "italy", "pa-theme"],
+    "files": [
+        "tailwind.config.js",
+        "vite.config.js",
+        "package.json"
+    ],
+    "requires": [
+        "laravel/framework",
+        "filament/filament",
+        "tailwindcss",
+        "daisyui"
+    ],
+    "version": "1.0.0",
+    "author": "Laraxot Team",
+    "license": "MIT",
+    "homepage": "https://github.com/laraxot/theme-sixteen",
+    "support": {
+        "issues": "https://github.com/laraxot/theme-sixteen/issues",
+        "source": "https://github.com/laraxot/theme-sixteen"
+    },
+    "features": [
+        "WCAG 2.1 AA Compliance",
+        "Tailwind CSS Integration",
+        "Filament Admin Panel Support",
+        "Responsive Design",
+        "Dark Mode Support",
+        "Accessibility Features",
+        "Italian PA Design Guidelines"
+    ],
+    "compatibility": {
+        "laravel": ">=10.0",
+        "filament": ">=3.0",
+        "php": ">=8.1"
+    }
+}

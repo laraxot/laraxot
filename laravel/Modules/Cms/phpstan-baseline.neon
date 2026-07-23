@@ -1,0 +1,145 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Cannot cast mixed to int\.$#'
+			identifier: cast.int
+			count: 1
+			path: app/Actions/ResolveBlockQueryAction.php
+
+		-
+			message: '#^PHPDoc tag @return contains unresolvable type\.$#'
+			identifier: return.unresolvableType
+			count: 1
+			path: app/Actions/View/GetCmsViewAction.php
+
+		-
+			message: '#^Property Modules\\Cms\\Http\\Livewire\\Page\\Show\:\:\$pageContent \(array\<string, mixed\>\) does not accept mixed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Http/Livewire/Page/Show.php
+
+		-
+			message: '#^Cannot access property \$lang on mixed\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Http/Middleware/SetFolioLocale.php
+
+		-
+			message: '#^Parameter \#1 \$object_or_class of function property_exists expects object\|string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Middleware/SetFolioLocale.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 2
+			path: app/Models/Page.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 2
+			path: app/Models/Section.php
+
+		-
+			message: '#^Method Modules\\Cms\\View\\Components\\AppLayout\:\:render\(\) should return Illuminate\\Contracts\\View\\View but returns Illuminate\\Contracts\\View\\Factory\|Illuminate\\Contracts\\View\\View\.$#'
+			identifier: return.type
+			count: 1
+			path: app/View/Components/AppLayout.php
+
+		-
+			message: '#^PHPDoc tag @var for variable \$view contains unresolvable type\.$#'
+			identifier: varTag.unresolvableType
+			count: 1
+			path: app/View/Components/AppLayout.php
+
+		-
+			message: '#^Parameter \#1 \$view of function view expects string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/View/Components/AppLayout.php
+
+		-
+			message: '#^Parameter \$user of method Modules\\Cms\\Actions\\BuildPageSchemaAction\:\:execute\(\) expects Illuminate\\Contracts\\Auth\\Authenticatable\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/View/Components/Metatags.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 1
+			path: app/View/Components/Page.php
+
+		-
+			message: '#^Binary operation "\." between ''/'' and mixed results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: app/docs/config.php
+
+		-
+			message: '#^Cannot access property \$id on mixed\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/docs/config.php
+
+		-
+			message: '#^Cannot call method contains\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/docs/config.php
+
+		-
+			message: '#^Cannot call method getFilename\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/docs/config.php
+
+		-
+			message: '#^Cannot call method getPath\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 4
+			path: app/docs/config.php
+
+		-
+			message: '#^Cannot call method where\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/docs/config.php
+
+		-
+			message: '#^Function trimPath not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: app/docs/config.php
+
+		-
+			message: '#^Parameter \#1 \$haystack of static method Illuminate\\Support\\Str\:\:endsWith\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/docs/config.php
+
+		-
+			message: '#^Parameter \#1 \$haystack of static method Illuminate\\Support\\Str\:\:startsWith\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/docs/config.php
+
+		-
+			message: '#^Parameter \#1 \$title of static method Illuminate\\Support\\Str\:\:slug\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/docs/config.php
+
+		-
+			message: '#^Parameter \#2 \$needles of static method Illuminate\\Support\\Str\:\:endsWith\(\) expects iterable\<string\>\|string, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/docs/config.php
+
+		-
+			message: '#^Path in require_once\(\) "navigation\.php" is not a file or it does not exist\.$#'
+			identifier: requireOnce.fileNotFound
+			count: 1
+			path: app/docs/config.php

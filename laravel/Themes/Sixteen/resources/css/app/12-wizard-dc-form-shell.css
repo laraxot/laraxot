@@ -1,0 +1,299 @@
+/*
+ * Design Comuni wizard form shell and field parity.
+ * Extracted from resources/css/app.css to keep app.css as a small import index.
+ */
+
+.cmp-wizard-widget {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+@media (min-width: 992px) {
+    .cmp-wizard-widget .wizard-dc-form-shell {
+        max-width: 1152px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .cmp-wizard-widget .wizard-dc-form-shell > .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .cmp-wizard-widget .wizard-dc-form-shell > .row > .col-12 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .wizard-dc-form {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .fi-section,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-section-content-ctn,
+.cmp-wizard-vector-widget .wizard-dc-form-shell .fi-section-content,
+.cmp-wizard-vector-widget .wizard-dc-form-shell .fi-grid,
+.cmp-wizard-vector-widget .wizard-dc-form-shell .fi-fo-field-wrp,
+.cmp-wizard-vector-widget .wizard-dc-form-shell .fi-fo-field-content-col,
+.cmp-wizard-vector-vector .wizard-dc-form-shell .coordinate-picker-field-wrapper,
+.cmp-wizard-vector-vector .wizard-dc-form-shell .map-container-wrapper,
+.cmp-wizard-vector-vector .wizard-dc-form-shell coordinate-picker-lit,
+.cmp-wizard-vector-vector .wizard-dc-form-shell coordinate-picker-lit .map-container,
+.cmp-wizard-vector-vector .wizard-dc-form-shell coordinate-picker-lit .map-picker-leaflet-pane,
+.cmp-wizard-vector-vector .wizard-dc-form-shell coordinate-picker-lit .leaflet-container {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .fi-sc-wizard-step,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-sc-wizard-footer {
+    width: 100% !important;
+    max-width: 760px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .fi-sc-wizard-step > .fi-sc,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-section,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-section-content-ctn,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-section-content,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-fo-field-wrp,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-fo-field-content-col {
+    max-width: 760px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .fi-section-content-ctn,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-section-content {
+    padding-left: clamp(0.75rem, 1.5vw, 1.25rem) !important;
+    padding-right: clamp(0.75rem, 1.5vw, 1.25rem) !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell coordinate-picker-lit .map-container {
+    min-height: 380px !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .geo-coordinate-readout {
+    display: block !important;
+    position: relative !important;
+    z-index: 1 !important;
+    margin-top: 0.5rem !important;
+    padding: 0.75rem !important;
+    border: 1px solid #d9e1e8 !important;
+    border-radius: 4px !important;
+    background: #f7f9fa !important;
+    color: #455a64 !important;
+    font-size: 0.8125rem !important;
+    line-height: 1.35 !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .geo-coordinate-readout__coords {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem 1rem !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .geo-coordinate-readout__address {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 0.375rem !important;
+    min-width: 0 !important;
+    margin-top: 0.35rem !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .geo-coordinate-readout__icon {
+    flex: 0 0 auto !important;
+    width: 1rem !important;
+    height: 1rem !important;
+    color: #007a52 !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .geo-coordinate-readout strong {
+    color: #17324d !important;
+    font-weight: 600 !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .steppers {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 2rem !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    border: 0 !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .steppers-header {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+    padding: 0 !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .steppers-list {
+    display: flex !important;
+    align-items: center !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    gap: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .steppers-list::-webkit-scrollbar {
+    display: none !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .stepper-step {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    flex: 0 0 auto !important;
+    padding-right: 1.5rem !important;
+    color: #5c6f82 !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    white-space: nowrap !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .stepper-step.active {
+    color: #007a52 !important;
+    font-weight: 600 !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .stepper-step.confirmed {
+    color: #008c45 !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .steppers-index {
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #5c6f82 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    font-size: 0.75rem !important;
+    font-weight: 400 !important;
+    line-height: 1.3 !important;
+    text-align: right !important;
+}
+
+@media (min-width: 992px) {
+    .cmp-wizard-widget .wizard-dc-form-shell .stepper-step::after {
+        content: '' !important;
+        position: absolute !important;
+        top: 50% !important;
+        right: 0.5rem !important;
+        width: 0.5rem !important;
+        height: 1px !important;
+        background: #d9e1e8 !important;
+        transform: translateY(-50%) !important;
+    }
+
+    .cmp-wizard-widget .wizard-dc-form-shell .stepper-step:last-child::after {
+        display: none !important;
+    }
+}
+
+/*
+ * Wizard form fields: un solo bordo su .fi-input-wrp (e native select wrapper);
+ * controlli interni borderless; ring Filament spento.
+ */
+.cmp-wizard-widget .wizard-dc-form-shell .fi-input-wrp,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-fo-select.fi-fo-select-native,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-sc-wizard .fi-input-wrp,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-sc-wizard .fi-fo-field-wrp .fi-input-wrp {
+    border: 1px solid #5c6f82 !important;
+    border-radius: 4px !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 1px 2px rgba(23, 50, 77, 0.04) !important;
+    --tw-ring-shadow: 0 0 #0000 !important;
+    --tw-ring-offset-shadow: 0 0 #0000 !important;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .fi-input-wrp:focus-within,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-fo-select.fi-fo-select-native:focus-within,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-sc-wizard .fi-input-wrp:focus-within {
+    box-shadow: 0 1px 2px rgba(23, 50, 77, 0.04) !important;
+    --tw-ring-shadow: 0 0 #0000 !important;
+    --tw-ring-offset-shadow: 0 0 #0000 !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .fi-input,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-input-wrp-input,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-fo-text-input,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-fo-textarea-input,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-input-wrp input:not([type="checkbox"]):not([type="radio"]),
+.cmp-wizard-widget .wizard-dc-form-shell .fi-input-wrp select,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-input-wrp textarea,
+.cmp-wizard-widget .wizard-dc-form-shell input[type="text"],
+.cmp-wizard-widget .wizard-dc-form-shell input[type="email"],
+.cmp-wizard-widget .wizard-dc-form-shell input[type="tel"],
+.cmp-wizard-widget .wizard-dc-form-shell input[type="number"],
+.cmp-wizard-widget .wizard-dc-form-shell input[type="search"],
+.cmp-wizard-widget .wizard-dc-form-shell select.fi-select-input,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-fo-select-native select,
+.cmp-wizard-widget .wizard-dc-form-shell textarea,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-sc-wizard select,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-sc-wizard input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]),
+.cmp-wizard-widget .wizard-dc-form-shell .fi-sc-wizard textarea {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    color: #17324d !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell select,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-fo-select-native select,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-sc-wizard select {
+    appearance: auto !important;
+    -webkit-appearance: auto !important;
+    padding-right: 2rem !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%235c6f82' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.5rem center !important;
+    background-size: 16px 12px !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell input::placeholder,
+.cmp-wizard-widget .wizard-dc-form-shell textarea::placeholder {
+    color: #5c6f82 !important;
+    opacity: 1 !important;
+}
+
+.cmp-wizard-widget .wizard-dc-form-shell .fi-sc-wizard .fi-fo-field-wrp,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-sc-wizard .fi-field-wrapper,
+.cmp-wizard-widget .wizard-dc-form-shell .fi-sc-wizard .fi-field-wrapper-content {
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+@media (max-width: 767.98px) {
+    .cmp-wizard-widget .wizard-dc-form-shell .steppers-list {
+        gap: 0 !important;
+        overflow-x: auto !important;
+    }
+}
+
+[data-sixteen-mobile-nav-overlay][hidden] {
+  display: none !important;
+}
+
+[data-sixteen-mobile-nav-overlay].is-open {
+  display: block !important;
+}

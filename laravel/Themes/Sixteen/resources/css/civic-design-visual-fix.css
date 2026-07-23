@@ -1,0 +1,292 @@
+/**
+ * Design Comuni - Visual Parity Fixes
+ * 
+ * Fixes for CSS differences between local and reference implementation
+ * All fixes use Tailwind CSS with !important for Bootstrap Italia override
+ * No HTML DOM changes required
+ */
+
+/* ============================================================================
+   1. LINK COLORS: White → Design Comuni Green (#007A52)
+   ============================================================================ */
+
+a, 
+.link,
+[role="link"] {
+  color: #007A52 !important;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover,
+.link:hover,
+[role="link"]:hover {
+  color: #005841 !important;
+  text-decoration: underline;
+}
+
+a:visited,
+.link:visited,
+[role="link"]:visited {
+  color: #005841 !important;
+}
+
+a:active,
+.link:active,
+[role="link"]:active {
+  color: #003d2f !important;
+}
+
+/* Links in header specific */
+header.it-header-wrapper a {
+  color: #007A52 !important;
+}
+
+header.it-header-wrapper a:hover {
+  color: #005841 !important;
+}
+
+/* ============================================================================
+   2. FOOTER STYLING & BACKGROUND
+   ============================================================================ */
+
+footer,
+.it-footer,
+.it-footer-main {
+  background-color: transparent !important;
+}
+
+.it-footer-main {
+  background-color: #1a3a42 !important;
+  padding-top: 32px !important;
+  padding-bottom: 32px !important;
+}
+
+.footer-column {
+  margin-bottom: 24px !important;
+}
+
+/* Footer links */
+footer a {
+  color: #007A52 !important;
+}
+
+footer a:hover {
+  color: #005841 !important;
+  text-decoration: underline;
+}
+
+/* ============================================================================
+   3. HEADER HEIGHT ADJUSTMENT (-18px issue)
+   ============================================================================ */
+
+header.it-header-wrapper,
+.it-header {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  min-height: 222px !important;
+}
+
+/* Popup mappa: block .popup__header è <div>, non il tag header istituzionale */
+.leaflet-popup.popup-wrapper .popup__header,
+.dc-homepage-parity .leaflet-popup.popup-wrapper .popup__header {
+  min-height: 0 !important;
+  height: auto !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.4rem !important;
+}
+
+.it-header-center-wrapper {
+  padding: 18px 0 !important;
+  display: flex;
+  align-items: center;
+  min-height: 60px !important;
+}
+
+.navbar {
+  min-height: 60px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+.navbar-brand {
+  padding: 6px 0 !important;
+}
+
+/* ============================================================================
+   4. TEXT COLORS: H1 Exact Color Adjustment
+   ============================================================================ */
+
+h1 {
+  color: #191919 !important; /* rgb(25,25,25) */
+}
+
+h2 {
+  color: #1a1a1a !important; /* rgb(26,26,26) */
+}
+
+h3, h4, h5, h6 {
+  color: #1a1a1a !important;
+}
+
+p, span, body {
+  color: #1a1a1a !important;
+}
+
+/* ============================================================================
+   5. FOOTER HEIGHT ADJUSTMENT (-19px issue)
+   ============================================================================ */
+
+.it-footer-main {
+  min-height: 775px !important;
+}
+
+.footer-column {
+  min-height: auto !important;
+}
+
+.footer-column h3,
+.footer-column > div > h3 {
+  margin-bottom: 16px !important;
+  font-weight: 600;
+}
+
+.footer-links-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.footer-links-list li {
+  margin-bottom: 12px !important;
+}
+
+.footer-links-list a {
+  display: inline-block !important;
+  color: #007A52 !important;
+}
+
+/* ============================================================================
+   6. CONTAINER CENTERING (previously fixed, ensuring consistency)
+   ============================================================================ */
+
+.container {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 1320px !important;
+}
+
+.container-fluid {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* Wizard Form Width Fix - match design-comuni-pagine-statiche reference */
+.fi-sc-wizard .container,
+.fi-sc-wizard .container-fluid {
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+}
+
+/* Ensure wizard form doesn't stretch full width */
+.fi-sc-wizard .fi-fo-section-body,
+.fi-sc-wizard .wizard-section-card .section-content {
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Wizard specific container styling */
+.fi-sc-wizard .wizard-container,
+.fi-sc-wizard .fi-wiz-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+/* COORDINATE PICKER DATA DISPLAY FIX */
+/* Ensure coordinate picker data shows below the map */
+.fi-sc-wizard .coordinate-picker-field-wrapper .rounded-lg {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Ensure lat/lng and address are visible (not map .ctrl-fallback icons inside .ctrl-btn) */
+.fi-sc-wizard .coordinate-picker-field-wrapper span:not(.ctrl-fallback) {
+  display: inline !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.fi-sc-wizard .coordinate-picker-field-wrapper strong {
+  display: inline !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-weight: 600 !important;
+}
+
+.fi-sc-wizard .coordinate-picker-field-wrapper .truncate {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+
+.fi-sc-wizard .coordinate-picker-field-wrapper .mt-1 {
+  margin-top: 0.5rem !important;
+}
+
+/* Fix any hidden state from Tailwind/Dark mode overrides */
+.fi-sc-wizard .coordinate-picker-field-wrapper .bg-gray-50,
+.fi-sc-wizard .coordinate-picker-field-wrapper .dark\:bg-white\/5 {
+  background-color: #f8f9fa !important;
+  border: 1px solid #dee2e6 !important;
+  border-radius: 4px !important;
+}
+
+.fi-sc-wizard .coordinate-picker-field-wrapper .text-gray-500 {
+  color: #495057 !important;
+}
+
+/* Ensure Heroicons are visible */
+.fi-sc-wizard .coordinate-picker-field-wrapper svg {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure proper centering at all breakpoints */
+@media (min-width: 1920px) {
+  .container {
+    margin: 0 auto !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .container-fluid {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+/* ============================================================================
+   7. VERIFICATION HELPERS (remove before production)
+   ============================================================================ */
+
+/* Visual debug: Show element boundaries for testing */
+.debug-visual {
+  outline: 1px solid rgba(255, 0, 0, 0.2) !important;
+}
+
+/* Hover state for testing links */
+.test-link:hover {
+  background-color: rgba(0, 122, 82, 0.1) !important;
+}

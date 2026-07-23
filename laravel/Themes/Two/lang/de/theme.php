@@ -1,0 +1,85 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'nav' => [
+        'menu' => 'Menü',
+        'close' => 'Schließen',
+        'home' => 'Startseite',
+        'about' => 'Über uns',
+        'services' => 'Dienstleistungen',
+        'contact' => 'Kontakt',
+        'login' => 'Anmelden',
+        'register' => 'Registrieren',
+        'profile' => 'Profil',
+        'logout' => 'Abmelden',
+        'search' => 'Suchen',
+        'toggle_menu' => 'Menü umschalten',
+        'toggle_search' => 'Suche umschalten',
+        'toggle_theme' => 'Theme wechseln',
+        'back_to_top' => 'Nach oben',
+    ],
+    'form' => [
+        'required' => 'Pflichtfeld',
+        'email' => 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
+        'min' => 'Das Feld muss mindestens :min Zeichen enthalten',
+        'max' => 'Das Feld darf nicht mehr als :max Zeichen enthalten',
+        'submit' => 'Absenden',
+        'cancel' => 'Abbrechen',
+        'save' => 'Speichern',
+        'delete' => 'Löschen',
+        'edit' => 'Bearbeiten',
+        'view' => 'Anzeigen',
+        'search' => 'Suchen...',
+        'filter' => 'Filtern',
+        'reset' => 'Zurücksetzen',
+        'select' => 'Auswählen',
+        'choose' => 'Wählen...',
+    ],
+    'messages' => [
+        'success' => 'Vorgang erfolgreich abgeschlossen',
+        'error' => 'Ein Fehler ist aufgetreten',
+        'warning' => 'Warnung',
+        'info' => 'Information',
+        'loading' => 'Lädt...',
+        'no_results' => 'Keine Ergebnisse gefunden',
+        'confirm_delete' => 'Sind Sie sicher, dass Sie dieses Element löschen möchten?',
+        'yes' => 'Ja',
+        'no' => 'Nein',
+        'cookie_consent' => 'Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern',
+        'accept' => 'Akzeptieren',
+        'decline' => 'Ablehnen',
+    ],
+    'footer' => [
+        'copyright' => 'Alle Rechte vorbehalten',
+        'privacy' => 'Datenschutz',
+        'terms' => 'Allgemeine Geschäftsbedingungen',
+        'cookies' => 'Cookie-Richtlinie',
+        'social' => [
+            'follow' => 'Folgen Sie uns auf',
+            'facebook' => 'Facebook',
+            'twitter' => 'Twitter',
+            'instagram' => 'Instagram',
+            'linkedin' => 'LinkedIn',
+        ],
+    ],
+    'errors' => [
+        404 => [
+            'title' => 'Seite nicht gefunden',
+            'message' => 'Die gesuchte Seite existiert nicht',
+        ],
+        500 => [
+            'title' => 'Server-Fehler',
+            'message' => 'Ein interner Server-Fehler ist aufgetreten',
+        ],
+        403 => [
+            'title' => 'Zugriff verweigert',
+            'message' => 'Sie haben keine Berechtigung, auf diese Seite zuzugreifen',
+        ],
+        'offline' => [
+            'title' => 'Offline',
+            'message' => 'Sie sind nicht mit dem Internet verbunden',
+        ],
+    ],
+];

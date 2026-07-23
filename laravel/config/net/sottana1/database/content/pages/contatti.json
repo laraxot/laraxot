@@ -1,0 +1,115 @@
+{
+    "id": "6",
+    "title": {
+        "it": "Contatti - Sottana Service",
+        "en": "Contact - Sottana Service"
+    },
+    "slug": "contatti",
+    "middleware": null,
+    "content": null,
+    "content_blocks": {
+        "it": [
+            {
+                "type": "hero",
+                "slug": "hero-contatti",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.simple",
+                    "title": "Contattaci",
+                    "subtitle": "Siamo a tua disposizione per qualsiasi informazione sulla radioprotezione del tuo studio",
+                    "image": "/images/hero-bg.jpg"
+                }
+            },
+            {
+                "type": "contact-info",
+                "slug": "contact-details",
+                "data": {
+                    "view": "pub_theme::components.blocks.contact.info",
+                    "title": "Come Contattarci",
+                    "subtitle": "Scegli il modo più comodo per raggiungerci",
+                    "address": "Via Vanzo 86, 31021 Mogliano Veneto (TV)",
+                    "coordinates": {
+                        "lat": 45.5648,
+                        "lng": 12.2347
+                    },
+                    "info": {
+                        "phone": "+39 041 455552",
+                        "phone_mobile": "+39 347 58 96 127",
+                        "email": "studio@sottana.net",
+                        "address": "Via Vanzo 86, 31021 Mogliano Veneto (TV)",
+                        "hours": "Lun-Ven: 09:00-18:00"
+                    },
+                    "social": {
+                        "linkedin": "https://linkedin.com/in/marcosottana",
+                        "facebook": "https://facebook.com/marcosottana.consulenza"
+                    }
+                }
+            },
+            {
+                "type": "contact-form",
+                "slug": "contact-form",
+                "data": {
+                    "view": "pub_theme::components.blocks.contact.form",
+                    "title": "Richiedi una Consulenza",
+                    "subtitle": "Compila il form e ti ricontatteremo il prima possibile",
+                    "fields": [
+                        {
+                            "name": "nome",
+                            "label": "Nome e Cognome",
+                            "type": "text",
+                            "required": true
+                        },
+                        {
+                            "name": "email",
+                            "label": "Email",
+                            "type": "email",
+                            "required": true
+                        },
+                        {
+                            "name": "telefono",
+                            "label": "Telefono",
+                            "type": "tel",
+                            "required": false
+                        },
+                        {
+                            "name": "studio",
+                            "label": "Nome Studio",
+                            "type": "text",
+                            "required": false
+                        },
+                        {
+                            "name": "tipo",
+                            "label": "Tipo di Studio",
+                            "type": "select",
+                            "options": [
+                                "Odontoiatrico",
+                                "Veterinario",
+                                "Altro"
+                            ]
+                        },
+                        {
+                            "name": "messaggio",
+                            "label": "Messaggio",
+                            "type": "textarea",
+                            "required": true
+                        }
+                    ],
+                    "submit_label": "Invia Richiesta",
+                    "privacy_text": "Inviando questo form accetti la nostra Privacy Policy."
+                }
+            },
+        ],
+        "en": [
+            {
+                "type": "hero",
+                "slug": "hero-contact",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.simple",
+                    "title": "Contact Us",
+                    "subtitle": "We are at your disposal for any information on radiation protection for your clinic"
+                }
+            }
+        ]
+    },
+    "created_at": "2025-07-08T09:02:57.000000Z",
+    "updated_at": "2026-02-06T18:00:00.000000Z"
+}

@@ -1,0 +1,4481 @@
+[
+  {
+    "path": "body/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "skiplink"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "visually-hidden-focusable",
+      "href": "#main-container"
+    },
+    "direct_text": "Vai ai contenuti"
+  },
+  {
+    "path": "body/div[1]/a[2]",
+    "tag": "a",
+    "attrs": {
+      "class": "visually-hidden-focusable",
+      "href": "#footer"
+    },
+    "direct_text": "Vai al footer"
+  },
+  {
+    "path": "body/header[1]",
+    "tag": "header",
+    "attrs": {
+      "class": "it-header-wrapper",
+      "data-bs-target": "#header-nav-wrapper",
+      "style": ""
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-header-slim-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-header-slim-wrapper-content"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "aria-label": "Vai al portale {Nome della Regione} - link esterno - apertura nuova scheda",
+      "class": "d-lg-block navbar-brand",
+      "href": "#",
+      "target": "_blank",
+      "title": "Vai al portale {Nome della Regione}"
+    },
+    "direct_text": "Nome della Regione"
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-header-slim-right-zone",
+      "role": "navigation"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "dropdown nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "aria-controls": "languages",
+      "aria-expanded": "false",
+      "aria-haspopup": "true",
+      "class": "dropdown-toggle nav-link",
+      "data-bs-toggle": "dropdown",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Lingua attiva:"
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[2]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "ITA"
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "dropdown-menu"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "link-list-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "link-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "dropdown-item list-item",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "ITA"
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "selezionata"
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "dropdown-item list-item",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "ENG"
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "btn btn-full btn-icon btn-primary",
+      "data-element": "personal-area-login",
+      "href": "../servizi/accesso-servizio.html"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "rounded-icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon icon-primary"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-user"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[2]",
+    "tag": "span",
+    "attrs": {
+      "class": "d-lg-block d-none"
+    },
+    "direct_text": "Accedi all'area personale"
+  },
+  {
+    "path": "body/header[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-nav-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-header-center-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-header-center-content-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-brand-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "homepage.html",
+      "title": "Vai alla homepage"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon",
+      "height": "82",
+      "width": "82"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]/image[1]",
+    "tag": "image",
+    "attrs": {
+      "xlink:href": "../assets/images/logo-comune.svg"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-brand-text"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-brand-title"
+    },
+    "direct_text": "Il mio Comune"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "d-md-block d-none it-brand-tagline"
+    },
+    "direct_text": "Un comune da vivere"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-right-zone"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "d-lg-flex d-none it-socials"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Seguici su"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Twitter"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Facebook"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "YouTube"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Telegram"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Whatsapp"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "RSS"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-search-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "d-md-block d-none"
+    },
+    "direct_text": "Cerca"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "aria-label": "Cerca nel sito",
+      "class": "rounded-icon search-link",
+      "data-bs-target": "#search-modal",
+      "data-bs-toggle": "modal",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-search"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-header-navbar-wrapper",
+      "id": "header-nav-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "has-megamenu navbar navbar-expand-lg"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "aria-controls": "nav4",
+      "aria-expanded": "false",
+      "aria-label": "Mostra/Nascondi la navigazione",
+      "class": "custom-navbar-toggler",
+      "data-bs-target": "#nav4",
+      "data-bs-toggle": "navbarcollapsible",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-burger"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "navbar-collapsable",
+      "id": "nav4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "overlay",
+      "style": "display: none;"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "close-div"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "class": "btn close-menu",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Nascondi la navigazione"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "menu-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "logo-hamburger",
+      "href": "homepage.html"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-pa"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-brand-text"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-brand-title"
+    },
+    "direct_text": "Nome del Comune"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]",
+    "tag": "nav",
+    "attrs": {
+      "aria-label": "Principale"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "navbar-nav",
+      "data-element": "main-navigation"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "data-element": "management",
+      "href": "../sito/amministrazione.html"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Amministrazione"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "data-element": "news",
+      "href": "../sito/novita.html"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Novità"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "active nav-link",
+      "data-element": "all-services",
+      "href": "../sito/servizi.html"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Servizi"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "data-element": "live",
+      "href": "../sito/eventi.html"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Vivere il Comune"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]",
+    "tag": "nav",
+    "attrs": {
+      "aria-label": "Secondaria"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "navbar-nav navbar-secondary"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "href": "../sito/argomento.html"
+    },
+    "direct_text": "Iscrizioni"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "href": "../sito/argomento.html"
+    },
+    "direct_text": "Estate in città"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "href": "../sito/argomento.html"
+    },
+    "direct_text": "Polizia locale"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "data-element": "all-topics",
+      "href": "argomenti.html"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Tutti gli argomenti"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]/span[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon icon-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]/span[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-right"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-socials"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Seguici su"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Twitter"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Facebook"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "YouTube"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Telegram"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Whatsapp"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "RSS"
+  },
+  {
+    "path": "body/main[1]",
+    "tag": "main",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "container",
+      "id": "main-container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "justify-content-center row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12 col-lg-10"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-breadcrumbs",
+      "role": "navigation"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]",
+    "tag": "nav",
+    "attrs": {
+      "aria-label": "breadcrumb",
+      "class": "breadcrumb-container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]",
+    "tag": "ol",
+    "attrs": {
+      "class": "breadcrumb p-0",
+      "data-element": "breadcrumb"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]",
+    "tag": "li",
+    "attrs": {
+      "class": "breadcrumb-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "homepage.html"
+    },
+    "direct_text": "Home"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "separator"
+    },
+    "direct_text": "/"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]",
+    "tag": "li",
+    "attrs": {
+      "class": "breadcrumb-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Servizi"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "separator"
+    },
+    "direct_text": "/"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[3]",
+    "tag": "li",
+    "attrs": {
+      "aria-current": "page",
+      "class": "active breadcrumb-item"
+    },
+    "direct_text": "Segnalazione disservizio"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-heading pb-3 pb-lg-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[2]/h1[1]",
+    "tag": "h1",
+    "attrs": {
+      "class": "title-xxxlarge"
+    },
+    "direct_text": "Segnalazione disservizio"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "steppers"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "steppers-header"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {
+      "class": "confirmed"
+    },
+    "direct_text": "Informativa sulla privacy"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon steppers-success"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-check"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Confermato"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {
+      "class": "active"
+    },
+    "direct_text": "Dati di segnalazione"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Attivo"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {
+      "class": ""
+    },
+    "direct_text": "Riepilogo"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "steppers-index"
+    },
+    "direct_text": "2/3"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[2]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "d-lg-none my-5 title-xsmall"
+    },
+    "direct_text": "I campi contraddistinti dal simbolo asterisco sono obbligatori"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12 col-lg-3 d-lg-block d-none mb-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "aria-labelledby": "accordion-title-one",
+      "class": "cmp-navscroll sticky-top"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]",
+    "tag": "nav",
+    "attrs": {
+      "aria-label": "INFORMAZIONI RICHIESTE",
+      "class": "it-navscroll-wrapper navbar navbar-expand-lg"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "navbar-custom",
+      "id": "navbarNavProgress"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "menu-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "link-list-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "accordion-header",
+      "id": "accordion-title-one"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "aria-controls": "collapse-one",
+      "aria-expanded": "true",
+      "class": "accordion-button pb-10 px-3",
+      "data-bs-target": "#collapse-one",
+      "data-bs-toggle": "collapse",
+      "type": "button"
+    },
+    "direct_text": "INFORMAZIONI RICHIESTE"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon icon-xs right"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "progress"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "aria-valuemax": "100",
+      "aria-valuemin": "0",
+      "aria-valuenow": "0",
+      "class": "it-navscroll-progressbar progress-bar",
+      "role": "progressbar"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "aria-labelledby": "accordion-title-one",
+      "class": "accordion-collapse collapse show",
+      "id": "collapse-one",
+      "role": "region"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "link-list",
+      "data-element": "page-index"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "href": "#report-place"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Luogo"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "href": "#report-info"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Disservizio"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "href": "#report-author"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Autore della segnalazione"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12 col-lg-8 offset-lg-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "aria-live": "polite",
+      "class": "steppers-content"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-page-sections-container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]",
+    "tag": "section",
+    "attrs": {
+      "class": "it-page-section",
+      "id": "report-place"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-card mb-40"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card has-bkg-grey p-big p-lg-4 shadow-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-0 card-header m-0 mb-lg-20 p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "d-flex"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/h2[1]",
+    "tag": "h2",
+    "attrs": {
+      "class": "mb-1 title-xxlarge"
+    },
+    "direct_text": "Luogo"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "mb-0 subtitle-small"
+    },
+    "direct_text": "Indica il luogo del disservizio"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-input-autocomplete"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "bg-white form-group mb-0 mt-3 p-3"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "d-none label-input mb-2",
+      "for": "autocomplete-regioni"
+    },
+    "direct_text": "Cerca un luogo*"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "class": "autocomplete",
+      "data-bs-autocomplete": "[{\"text\":\"Abruzzo\",\"link\":\"#\"},{\"text\":\"Basilicata\",\"link\":\"#\"},{\"text\":\"Calabria\",\"link\":\"#\"},{\"text\":\"Campania\",\"link\":\"#\"},{\"text\":\"Emilia Romagna\",\"link\":\"#\"},{\"text\":\"Friuli Venezia Giulia\",\"link\":\"#\"},{\"text\":\"Lazio\",\"link\":\"#\"},{\"text\":\"Liguria\",\"link\":\"#\"},{\"text\":\"Lombardia\",\"link\":\"#\"},{\"text\":\"Marche\",\"link\":\"#\"},{\"text\":\"Molise\",\"link\":\"#\"},{\"text\":\"Piemonte\",\"link\":\"#\"},{\"text\":\"Puglia\",\"link\":\"#\"},{\"text\":\"Sardegna\",\"link\":\"#\"},{\"text\":\"Sicilia\",\"link\":\"#\"},{\"text\":\"Toscana\",\"link\":\"#\"},{\"text\":\"Trentino Alto Adige\",\"link\":\"#\"},{\"text\":\"Umbria\",\"link\":\"#\"},{\"text\":\"Valle d’Aosta\",\"link\":\"#\"},{\"text\":\"Veneto\",\"link\":\"#\"}]",
+      "id": "autocomplete-regioni",
+      "name": "autocomplete-regioni",
+      "placeholder": "Cerca un luogo*",
+      "type": "search"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "link-wrapper mt-3"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "active icon-left list-item",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "list-item-title-icon-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]/span[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon icon-primary icon-sm mb-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]/span[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-map-marker"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]/span[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "list-item-title t-primary"
+    },
+    "direct_text": "Usa la tua posizione"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]",
+    "tag": "section",
+    "attrs": {
+      "class": "it-page-section",
+      "id": "report-info"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-card mb-40"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card has-bkg-grey p-big shadow-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-0 card-header m-0 mb-lg-20 p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "d-flex"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[1]/div[1]/h2[1]",
+    "tag": "h2",
+    "attrs": {
+      "class": "icon-required mb-3 title-xxlarge"
+    },
+    "direct_text": "Disservizio"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "p-lg-4 p-md-3 pb-lg-0 select-partials select-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "visually-hidden",
+      "for": "inefficiency"
+    },
+    "direct_text": "Tipo di disservizio**"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[1]/select[1]",
+    "tag": "select",
+    "attrs": {
+      "class": "u-grey-dark",
+      "id": "inefficiency"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[1]/select[1]/option[1]",
+    "tag": "option",
+    "attrs": {
+      "selected": "selected",
+      "value": ""
+    },
+    "direct_text": "Tipo di disservizio*"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[1]/select[1]/option[2]",
+    "tag": "option",
+    "attrs": {
+      "value": "Danneggiamento proprietà pubblica"
+    },
+    "direct_text": "Danneggiamento proprietà pubblica"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "bg-white p-3 pb-lg-0 pt-lg-5 px-lg-4 text-area-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-input form-group mb-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[2]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "cmp-input__label",
+      "for": "title"
+    },
+    "direct_text": "Titolo*"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[2]/div[1]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "class": "form-control",
+      "id": "title",
+      "name": "title",
+      "type": "text"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "bg-white cmp-text-area m-0 p-3 pb-lg-4 pt-lg-5 px-lg-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[3]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "form-group"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[3]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "d-block",
+      "for": "details"
+    },
+    "direct_text": "Dettagli**"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[3]/div[1]/textarea[1]",
+    "tag": "textarea",
+    "attrs": {
+      "class": "text-area",
+      "id": "details",
+      "rows": "2"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[3]/div[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "label"
+    },
+    "direct_text": "Inserire al massimo 200 caratteri"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[4]",
+    "tag": "div",
+    "attrs": {
+      "class": "bg-white btn-wrapper pb-3 pb-lg-4 pt-2 pt-lg-0 px-3 px-lg-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[4]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "ms-2 pb-2 title-xsmall-bold u-grey-dark"
+    },
+    "direct_text": "Immagini"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[4]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "align-items-center d-flex justify-content-between upload-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[4]/div[1]/img[1]",
+    "tag": "img",
+    "attrs": {
+      "alt": "",
+      "class": "img",
+      "src": "../assets/images/img-disservizio-thumbnail.png"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[4]/div[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "fw-bold ms-2 t-primary w-100"
+    },
+    "direct_text": "6yhakandsahm413d8.jpg"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[4]/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "aria-label": "elimina immagina caricata",
+      "class": "align-self-center",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[4]/div[1]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon icon-primary icon-sm mb-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[4]/div[1]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-close"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[4]/hr[1]",
+    "tag": "hr",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[4]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "aria-label": "Carica file per il disservizio",
+      "class": "btn btn-primary fw-bold w-100",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[4]/button[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "rounded-icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[4]/button[1]/span[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[4]/button[1]/span[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-upload"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[4]/button[1]/span[2]",
+    "tag": "span",
+    "attrs": {
+      "class": ""
+    },
+    "direct_text": "Carica file"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[2]/div[1]/div[1]/div[2]/div[4]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "mb-0 pt-10 title-xsmall u-grey-dark"
+    },
+    "direct_text": "Seleziona una o più immagini da allegare alla segnalazione"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]",
+    "tag": "section",
+    "attrs": {
+      "class": "it-page-section",
+      "id": "report-author"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-card"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card has-bkg-grey shadow-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-0 card-header m-0 mb-lg-20 p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "d-flex"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[1]/div[1]/h2[1]",
+    "tag": "h2",
+    "attrs": {
+      "class": "mb-1 title-xxlarge"
+    },
+    "direct_text": "Autore della segnalazione"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[1]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "mb-0 subtitle-small"
+    },
+    "direct_text": "Informazione su di te"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-info-button-card mt-3"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card p-3 p-lg-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/h3[1]",
+    "tag": "h3",
+    "attrs": {
+      "class": "big-title mb-0"
+    },
+    "direct_text": "Giulia Bianchi"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "card-info"
+    },
+    "direct_text": "Codice Fiscale"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/p[1]/br[1]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/p[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "GLABNC72H25H501Y"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-header",
+      "id": "heading-collapse-parents"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "aria-controls": "collapse-parents",
+      "aria-expanded": "false",
+      "class": "accordion-button collapsed",
+      "data-bs-target": "#collapse-parents",
+      "data-bs-toggle": "collapse",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "align-items-center d-flex"
+    },
+    "direct_text": "Mostra tutto"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon icon-primary icon-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-collapse collapse",
+      "id": "collapse-parents",
+      "role": "region"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "bg-white cmp-info-summary has-border"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light card-header d-flex d-flex justify-content-between justify-content-end mb-0 p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/h4[1]",
+    "tag": "h4",
+    "attrs": {
+      "class": "mb-3 title-large-semi-bold"
+    },
+    "direct_text": "Contatti"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "d-none text-decoration-none",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "t-primary text-button-sm-semi"
+    },
+    "direct_text": "Modifica"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light single-line-info"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "text-paragraph-small"
+    },
+    "direct_text": "Telefono"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "data-text"
+    },
+    "direct_text": "+39 331 1234567"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light single-line-info"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "text-paragraph-small"
+    },
+    "direct_text": "Email"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "data-text"
+    },
+    "direct_text": "mario.rossi@gmail.com"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-footer d-none p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-nav-steps"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[2]/nav[1]",
+    "tag": "nav",
+    "attrs": {
+      "aria-label": "Step",
+      "class": "steppers-nav"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[2]/nav[1]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "class": "btn btn-sm p-0 steppers-btn-prev",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[2]/nav[1]/button[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon icon-primary icon-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[2]/nav[1]/button[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-left"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[2]/nav[1]/button[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "t-primary text-button-sm"
+    },
+    "direct_text": "Indietro"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[2]/nav[1]/button[2]",
+    "tag": "button",
+    "attrs": {
+      "class": "bg-white btn btn-outline-primary btn-sm d-lg-block d-none saveBtn steppers-btn-save",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[2]/nav[1]/button[2]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "t-primary text-button-sm"
+    },
+    "direct_text": "Salva Richiesta"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[2]/nav[1]/button[3]",
+    "tag": "button",
+    "attrs": {
+      "class": "bg-white btn btn-outline-primary btn-sm center d-block d-lg-none saveBtn steppers-btn-save",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[2]/nav[1]/button[3]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "t-primary text-button-sm"
+    },
+    "direct_text": "Salva"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[2]/nav[1]/button[4]",
+    "tag": "button",
+    "attrs": {
+      "class": "btn btn-primary btn-sm steppers-btn-confirm",
+      "data-bs-target": "#",
+      "data-bs-toggle": "modal",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[2]/nav[1]/button[4]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "text-button-sm"
+    },
+    "direct_text": "Avanti"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[2]/nav[1]/button[4]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[2]/nav[1]/button[4]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-right"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "alert alert-success cmp-disclaimer d-none rounded",
+      "id": "alert-message",
+      "role": "alert"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "cmp-disclaimer__message d-inline-block text-uppercase"
+    },
+    "direct_text": "Richiesta salvata con successo"
+  },
+  {
+    "path": "body/main[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "bg-grey-card shadow-contacts"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "d-flex justify-content-center p-contacts row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12 col-lg-5"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-contacts"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card w-100"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1]",
+    "tag": "h2",
+    "attrs": {
+      "class": "title-medium-2-semi-bold"
+    },
+    "direct_text": "Contatta il comune"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "contact-list p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "list-item",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon icon-primary icon-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-help-circle"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Leggi le domande frequenti"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "list-item",
+      "data-element": "contacts",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon icon-primary icon-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-mail"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Richiedi assistenza"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "list-item",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon icon-primary icon-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-hearing"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Chiama il numero verde 05 0505"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "list-item",
+      "data-element": "appointment-booking",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon icon-primary icon-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-calendar"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Prenota appuntamento"
+  },
+  {
+    "path": "body/div[2]",
+    "tag": "div",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "fade modal search-modal",
+      "id": "search-modal",
+      "role": "dialog",
+      "tabindex": "-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "modal-dialog modal-lg",
+      "role": "document"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "modal-content perfect-scrollbar"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "modal-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]",
+    "tag": "form",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row variable-gutters"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "modal-title"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "aria-label": "Chiudi e torna alla pagina precedente",
+      "class": "d-md-none search-link",
+      "data-bs-target": "#search-modal",
+      "data-bs-toggle": "modal",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon icon-md"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-left"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/h2[1]",
+    "tag": "h2",
+    "attrs": {},
+    "direct_text": "Cerca"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[2]",
+    "tag": "button",
+    "attrs": {
+      "aria-label": "Chiudi e torna alla pagina precedente",
+      "class": "d-md-block d-none search-link",
+      "data-bs-target": "#search-modal",
+      "data-bs-toggle": "modal",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[2]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon icon-md"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[2]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "autocomplete-wrapper form-group"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "visually-hidden",
+      "for": "autocomplete-two"
+    },
+    "direct_text": "Cerca nel sito"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "class": "autocomplete ps-5",
+      "data-bs-autocomplete": "[]",
+      "id": "autocomplete-two",
+      "name": "autocomplete-two",
+      "placeholder": "Cerca nel sito",
+      "type": "search"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "autocomplete-icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/span[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/span[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-search"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "class": "btn btn-primary",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/button[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": ""
+    },
+    "direct_text": "Cerca"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "row variable-gutters"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-lg-5"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "searches-list-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "other-link-title"
+    },
+    "direct_text": "FORSE STAVI CERCANDO"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "searches-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Rilascio Carta Identità Elettronica (CIE)"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Cambio di residenza"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Tributi online"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Prenotazione appuntamenti"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[5]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[5]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Rilascio tessera elettorale"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[6]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[6]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Voucher connettività"
+  },
+  {
+    "path": "body/footer[1]",
+    "tag": "footer",
+    "attrs": {
+      "class": "it-footer",
+      "id": "footer"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-footer-main"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12 footer-items-wrapper logo-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/img[1]",
+    "tag": "img",
+    "attrs": {
+      "alt": "logo Unione Europea",
+      "class": "ue-logo",
+      "src": "../assets/images/logo-eu-inverted.svg"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-brand-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-pa"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-brand-text"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]/h2[1]",
+    "tag": "h2",
+    "attrs": {
+      "class": "no_toc"
+    },
+    "direct_text": "Nome del Comune"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-3 footer-items-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/h4[1]",
+    "tag": "h4",
+    "attrs": {
+      "class": "footer-heading-title"
+    },
+    "direct_text": "Amministrazione"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "footer-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Organi di governo"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Aree amministrative"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Uffici"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Enti e fondazioni"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Politici"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Personale amministrativo"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Documenti e dati"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-6 footer-items-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/h4[1]",
+    "tag": "h4",
+    "attrs": {
+      "class": "footer-heading-title"
+    },
+    "direct_text": "Categorie di servizio"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-6"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "footer-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Anagrafe e stato civile"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Cultura e tempo libero"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Vita lavorativa"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Imprese e commercio"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[5]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[5]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Appalti pubblici"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[6]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[6]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Catasto e urbanistica"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[7]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[7]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Turismo"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[8]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[8]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Mobilità e trasporti"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-6"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "footer-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Educazione e formazione"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Giustizia e sicurezza pubblica"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Tributi, finanze e contravvenzioni"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Ambiente"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[5]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[5]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Salute, benessere e assistenza"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[6]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[6]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Autorizzazioni"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[7]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[7]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Agricoltura e pesca"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-3 footer-items-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/h4[1]",
+    "tag": "h4",
+    "attrs": {
+      "class": "footer-heading-title"
+    },
+    "direct_text": "Novità"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "footer-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Notizie"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Comunicati"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Avvisi"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/h4[2]",
+    "tag": "h4",
+    "attrs": {
+      "class": "footer-heading-title"
+    },
+    "direct_text": "Vivere il comune"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]",
+    "tag": "ul",
+    "attrs": {
+      "class": "footer-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Luoghi"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Eventi"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-9 footer-items-wrapper mt-md-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/h4[1]",
+    "tag": "h4",
+    "attrs": {
+      "class": "footer-heading-title"
+    },
+    "direct_text": "Contatti"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "footer-info"
+    },
+    "direct_text": "Comune di Nome Comune Via Roma 123 - 00100 Comune Codice fiscale / P. IVA: 00123456789 Numero verde: 800 016 123 SMS e WhatsApp: +39 320 1234567 Posta Elettronica Certificata Centralino unico: 012 3456"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[1]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[2]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[3]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[4]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Ufficio Relazioni con il Pubblico"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[5]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[6]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[7]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[8]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "footer-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "data-element": "faq",
+      "href": "#"
+    },
+    "direct_text": "Leggi le FAQ"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Prenotazione appuntamento"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "data-element": "report-inefficiency",
+      "href": "#"
+    },
+    "direct_text": "Segnalazione disservizio"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Richiesta d'assistenza"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "footer-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Amministrazione trasparente"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "data-element": "privacy-policy-link",
+      "href": "#"
+    },
+    "direct_text": "Informativa privacy"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "data-element": "legal-notes",
+      "href": "#"
+    },
+    "direct_text": "Note legali"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "data-element": "accessibility-link",
+      "href": "#"
+    },
+    "direct_text": "Dichiarazione di accessibilità"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-3 footer-items-wrapper mt-md-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/h4[1]",
+    "tag": "h4",
+    "attrs": {
+      "class": "footer-heading-title"
+    },
+    "direct_text": "Seguici su"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "list-inline social text-start"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {
+      "class": "list-inline-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "p-1 text-white",
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Twitter"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {
+      "class": "list-inline-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "p-1 text-white",
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Facebook"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {
+      "class": "list-inline-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "p-1 text-white",
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "YouTube"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {
+      "class": "list-inline-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "p-1 text-white",
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Telegram"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]",
+    "tag": "li",
+    "attrs": {
+      "class": "list-inline-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "p-1 text-white",
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Whatsapp"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]",
+    "tag": "li",
+    "attrs": {
+      "class": "list-inline-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "p-1 text-white",
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "RSS"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[3]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12 footer-items-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[3]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "footer-bottom"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Media policy"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[2]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Mappa del sito"
+  }
+]

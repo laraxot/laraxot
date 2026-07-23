@@ -1,0 +1,974 @@
+/*
+ * Global typography, layout and header refinements.
+ * Extracted from resources/css/app.css to keep app.css as a small import index.
+ */
+/* ========================================
+   LISTA RISORSE PARITY PASS - 2026-04-04
+   CSS-only fixes for the current shared listing markup
+======================================== */
+main[data-page="lista-risorse"] .cmp-heading {
+  padding-top: 0 !important;
+}
+
+main[data-page="lista-risorse"] .cmp-heading h1,
+main[data-page="lista-risorse"] .cmp-heading h2 {
+  color: #1f2d3d !important;
+  letter-spacing: -0.01em !important;
+}
+
+main[data-page="lista-risorse"] .cmp-heading h1 {
+  font-size: 2.5rem !important;
+  line-height: 1.12 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+main[data-page="lista-risorse"] .cmp-heading .lead {
+  max-width: 44rem !important;
+  color: #5c6f82 !important;
+  font-size: 1.25rem !important;
+  line-height: 1.55 !important;
+}
+
+main[data-page="lista-risorse"] .section.section-muted {
+  background: #eceff1 !important;
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.75rem !important;
+}
+
+main[data-page="lista-risorse"] section.section:has(> .container .cmp-input-search.mb-4) {
+  background: #eceff1 !important;
+  padding-top: 2.25rem !important;
+  padding-bottom: 3rem !important;
+}
+
+main[data-page="lista-risorse"] .section.section-muted .cmp-heading,
+main[data-page="lista-risorse"] section.section:has(> .container .cmp-input-search.mb-4) .cmp-heading {
+  padding-bottom: 1rem !important;
+}
+
+main[data-page="lista-risorse"] .card.card-teaser.card-teaser-image-top {
+  border-radius: 0 !important;
+  border: 1px solid #d9e1e8 !important;
+  box-shadow: none !important;
+}
+
+main[data-page="lista-risorse"] .card.card-teaser.card-teaser-image-top .card-image-wrapper {
+  overflow: hidden !important;
+}
+
+main[data-page="lista-risorse"] .card.card-teaser.card-teaser-image-top .card-image-wrapper img {
+  width: 100% !important;
+  height: 12rem !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+}
+
+main[data-page="lista-risorse"] .card.card-teaser.card-teaser-image-top .card-body {
+  padding: 1rem !important;
+}
+
+main[data-page="lista-risorse"] .card.card-teaser.card-teaser-image-top .card-title {
+  margin-bottom: 0.625rem !important;
+  font-size: 1.25rem !important;
+  line-height: 1.3 !important;
+}
+
+main[data-page="lista-risorse"] .card.card-teaser.card-teaser-image-top .card-title a {
+  color: #007a52 !important;
+}
+
+main[data-page="lista-risorse"] .card.card-teaser.card-teaser-image-top .card-text {
+  color: #5c6f82 !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+main[data-page="lista-risorse"] .category-top {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.625rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+main[data-page="lista-risorse"] .category-top .badge {
+  border-radius: 999px !important;
+  padding: 0.15rem 0.55rem !important;
+  font-size: 0.6875rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  background: #007a52 !important;
+}
+
+main[data-page="lista-risorse"] .category-top .data {
+  color: #5c6f82 !important;
+  font-size: 0.8125rem !important;
+  line-height: 1.4 !important;
+  text-transform: uppercase !important;
+}
+
+main[data-page="lista-risorse"] .cmp-input-search .input-group {
+  min-height: 3rem !important;
+}
+
+main[data-page="lista-risorse"] .cmp-input-search .form-control {
+  min-height: 3rem !important;
+  border-radius: 0 !important;
+  border-color: #c5d0db !important;
+}
+
+main[data-page="lista-risorse"] .cmp-input-search .btn {
+  min-width: 3rem !important;
+  border-radius: 0 !important;
+}
+
+main[data-page="lista-risorse"] .cmp-input-search + p {
+  color: #5c6f82 !important;
+  margin-bottom: 1.25rem !important;
+}
+
+main[data-page="lista-risorse"] .section.section-primary {
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.5rem !important;
+}
+
+main[data-page="lista-risorse"] .section.section-primary .cmp-rating + .cmp-rating {
+  display: none !important;
+}
+
+main[data-page="lista-risorse"] .section.section-primary .cmp-rating {
+  margin-bottom: 0 !important;
+}
+
+main[data-page="lista-risorse"] .section.section-primary .card-wrapper.card {
+  max-width: 25rem !important;
+  margin: 0 auto !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+main[data-page="lista-risorse"] .section.section-primary .card-body {
+  padding: 1rem 1.25rem !important;
+}
+
+main[data-page="lista-risorse"] .section.section-primary .card-body h2 {
+  font-size: 1rem !important;
+  line-height: 1.35 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+main[data-page="lista-risorse"] .useful-links-section {
+  padding-top: 0 !important;
+}
+
+main[data-page="lista-risorse"] .useful-links-section .section.section-muted {
+  background: #f5f7f8 !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+@media (min-width: 992px) {
+  main[data-page="lista-risorse"] section.section:has(> .container .cmp-input-search.mb-4) .row.g-4 > .col-12.col-lg-6 {
+    flex: 0 0 33.333333% !important;
+    max-width: 33.333333% !important;
+  }
+}
+/* ========================================
+   SEGNALAZIONI ELENCO MOBILE TUNING - 2026-04-06
+======================================== */
+main[data-page="page-shell"] .cmp-rating .cmp-rating__card-second,
+main[data-page="page-shell"] .cmp-rating .form-rating {
+  display: none;
+}
+
+main[data-page="page-shell"] .cmp-rating .button-wrapper,
+main[data-page="page-shell"] .cmp-rating button {
+  display: none;
+}
+
+main[data-page="page-shell"] .cmp-rating fieldset.rating {
+  justify-content: center !important;
+}
+
+main[data-page="page-shell"] .cmp-contacts .cmp-contacts__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (max-width: 991px) {
+  main[data-page="page-shell"] .map-box > img {
+    height: 22rem;
+  }
+
+  main[data-page="page-shell"] .cmp-contacts .cmp-contacts__container {
+    gap: 0.75rem;
+  }
+
+  main[data-page="page-shell"] .cmp-text-button {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ============================================================================
+   FINAL FONT OVERRIDE - Must be LAST to win over Filament/Tailwind defaults
+   Applied to ALL body content to ensure Titillium Web everywhere
+   ============================================================================ */
+body,
+body *,
+main,
+main *,
+.container,
+.container *,
+.row,
+.row *,
+[class*="col-"],
+[class*="col-"] * {
+  font-family: "Titillium Web" !important;
+}
+
+/* Preserve monospace ONLY for code elements and debug */
+pre, code, kbd, samp,
+.phpdebugbar, .phpdebugbar *,
+.sf-dump, .sf-dump * {
+  /* keep their own fonts */
+}
+
+/* ABSOLUTE FINAL OVERRIDE - body font with !important */
+html body {
+  font-family: "Titillium Web" !important;
+}
+
+/* ========================================
+   STORY 7.25 - SEGNALAZIONE-02-DATI HEADER VISUAL PARITY
+   Scoped via (NOT body class).
+   REGOLA: MAI aggiungere classi al <body>. Reference HTML ha <body> pulito.
+   Usare classi componente riusabili per CSS scoping; evitare selector per singola pagina o singolo wizard.
+======================================== */
+.it-header-slim-wrapper .dropdown-toggle::after {
+  display: none !important;
+}
+
+.it-header-slim-wrapper,
+.it-header-slim-wrapper .container,
+.it-header-slim-wrapper .row,
+.it-header-slim-wrapper .col-12 {
+  min-height: 48px !important;
+}
+
+/* Bootstrap Italia imposta padding: 6.5px 18px sull'it-header-slim-wrapper.
+   Questo allarga il container oltre 48px e fa scendere il dropdown menu
+   al di sotto del bottone visibile (top: 100% del nav-item allungato). */
+.it-header-slim-wrapper {
+  padding: 0 !important;
+}
+
+.it-header-slim-wrapper-content {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  min-height: 48px !important;
+  padding: 0 16px !important;
+  gap: 0 !important;
+}
+
+.it-header-slim-wrapper .navbar-brand {
+  display: block !important;
+  margin-right: auto !important;
+  padding: 12px 0 !important;
+  color: #fff !important;
+}
+
+.it-header-slim-right-zone {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+  margin-left: auto !important;
+}
+
+.it-header-slim-wrapper .nav-item.dropdown {
+  display: flex !important;
+  align-items: center !important;
+  height: 48px !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  --bs-dropdown-spacer: 0;
+}
+
+.it-header-slim-wrapper .it-user-wrapper:has([aria-expanded="true"])::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-left: 8px solid transparent !important;
+  border-right: 8px solid transparent !important;
+  border-bottom: 8px solid #ffffff !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  z-index: 1001 !important;
+}
+
+.it-header-slim-wrapper .nav-link.dropdown-toggle {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  height: 48px !important;
+  padding: 0 12px !important;
+  color: #fff !important;
+  border: 0 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease, color 0.2s ease !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper > .nav-link.dropdown-toggle {
+  gap: 10px !important;
+  padding-inline: 14px !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper > .nav-link.dropdown-toggle > span:not(.rounded-icon) {
+  color: #ffffff !important;
+  font-size: 0.9375rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+}
+
+.it-header-slim-wrapper .nav-link.dropdown-toggle .icon {
+  width: 16px !important;
+  height: 16px !important;
+  color: #fff !important;
+  fill: currentColor !important;
+  transition: transform 0.2s ease !important;
+}
+
+.it-header-slim-wrapper .nav-link.dropdown-toggle:hover,
+.it-header-slim-wrapper .nav-link.dropdown-toggle:focus-visible,
+.it-header-slim-wrapper .dropdown.is-open > .nav-link.dropdown-toggle,
+.it-header-slim-wrapper .nav-link.dropdown-toggle[aria-expanded="true"] {
+  background: rgba(255, 255, 255, 0.14) !important;
+  color: #fff !important;
+  outline: 0 !important;
+}
+
+.it-header-slim-wrapper .dropdown.is-open > .nav-link.dropdown-toggle .icon,
+.it-header-slim-wrapper .nav-link.dropdown-toggle[aria-expanded="true"] .icon {
+  transform: rotate(180deg);
+}
+
+.it-header-slim-wrapper .dropdown-menu {
+  border: 1px solid #c5d0c9 !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  box-shadow: 0 0.375rem 1.5rem rgba(23, 50, 43, 0.16) !important;
+  margin-top: 0.25rem !important;
+  min-width: 13rem !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  z-index: 1000 !important;
+}
+
+.it-header-slim-wrapper .dropdown-menu .dropdown-item {
+  color: #17324d !important;
+  background: transparent !important;
+}
+
+.it-header-slim-wrapper .dropdown-menu .dropdown-item:hover,
+.it-header-slim-wrapper .dropdown-menu .dropdown-item:focus-visible {
+  background: var(--dc-blue-lighter) !important;
+  color: var(--dc-blue-primary) !important;
+  outline: 0 !important;
+}
+
+.it-header-slim-wrapper .dropdown-menu .dropdown-item .icon,
+.it-header-slim-wrapper .dropdown-menu .dropdown-item svg {
+  color: #17324d !important;
+  fill: currentColor !important;
+}
+
+.it-header-slim-wrapper .dropdown-menu .dropdown-item span {
+  color: inherit !important;
+}
+
+/* Language switcher — .it-language-switcher (classe su nav-item.dropdown nel blade)
+   Struttura semplificata: dropdown-menu > a.dropdown-item (no link-list/list-item)
+   Conflitto evitato: style-apply.css ridefinisce .link-list-wrapper/.list-item con Tailwind
+   data-bs-display="static" nel blade disabilita Popper: usa CSS top:100%+margin-top:0 */
+.it-header-slim-wrapper .it-language-switcher {
+  --bs-dropdown-spacer: 0;
+}
+
+/* Il ::before di Bootstrap Italia sul dropdown viene coperto dallo sfondo verde del slim header. */
+.it-header-slim-wrapper .it-language-switcher .dropdown-menu::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Freccia sul nav-item (.dropdown, già position:relative da Bootstrap).
+   ::after del nav-item è il containing block corretto: stessa origine di left:0 del dropdown.
+   bottom:0 → il diamante è centrato sul bordo inferiore del nav-item:
+   la metà superiore (su sfondo verde) è visibile come triangolo bianco;
+   la metà inferiore (su sfondo bianco dropdown) è invisibile. */
+.it-header-slim-wrapper .it-language-switcher:has(.nav-link[aria-expanded="true"])::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-left: 8px solid transparent !important;
+  border-right: 8px solid transparent !important;
+  border-bottom: 8px solid #ffffff !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  z-index: 1001 !important;
+}
+
+.it-header-slim-wrapper .it-language-switcher .dropdown-menu {
+  min-width: 7rem !important;
+  padding: 0.25rem 0 !important;
+  margin-top: 0 !important;
+}
+
+.it-header-slim-wrapper .it-language-switcher .dropdown-menu .dropdown-item {
+  padding: 0.5rem 1.25rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  color: #007a52 !important;
+  white-space: nowrap !important;
+}
+
+.it-header-slim-wrapper .it-language-switcher .dropdown-menu .dropdown-item[aria-current="true"] {
+  font-weight: 700 !important;
+  color: #17324d !important;
+}
+
+.it-header-slim-wrapper .it-language-switcher .dropdown-menu .dropdown-item:hover,
+.it-header-slim-wrapper .it-language-switcher .dropdown-menu .dropdown-item:focus-visible {
+  background: rgba(0, 122, 82, 0.08) !important;
+  color: #005c40 !important;
+}
+
+/* STORY-147: dropdown utente compatto (annulla space-y/p-4 da style-apply) */
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu .row {
+  margin: 0 !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu .col-12 {
+  padding: 0 !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu .link-list-wrapper {
+  padding: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu .link-list-wrapper .link-list {
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 0 !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu .link-list-wrapper .link-list > li {
+  margin: 0 !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu .link-list-wrapper .link-list > * + * {
+  margin-top: 0 !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu .dropdown-item,
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu a.list-item {
+  display: block !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0.375rem 1rem !important;
+  margin: 0 !important;
+  line-height: 1.25 !important;
+  font-size: 0.875rem !important;
+  box-shadow: none !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu .divider {
+  display: block !important;
+  height: 1px !important;
+  margin: 0.25rem 0 !important;
+  padding: 0 !important;
+  background: #d9e3ea !important;
+  border: 0 !important;
+}
+
+.it-header-slim-wrapper .btn-icon.btn-full,
+.it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.625rem !important;
+  width: auto !important;
+  min-width: fit-content !important;
+  height: 3rem !important;
+  padding: 0.75rem 1.5rem !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: var(--dc-green) !important;
+  color: #fff !important;
+  white-space: nowrap !important;
+  box-shadow: none !important;
+}
+
+.it-header-slim-wrapper .btn-icon.btn-full .rounded-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0.75rem !important;
+  background: #fff !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .rounded-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  border-radius: 9999px !important;
+  overflow: hidden !important;
+  background: rgba(255, 255, 255, 0.16) !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .it-user-avatar {
+  display: block !important;
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 9999px !important;
+  object-fit: cover !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .rounded-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  border-radius: 9999px !important;
+  overflow: hidden !important;
+  background: rgba(255, 255, 255, 0.16) !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .it-user-avatar {
+  display: block !important;
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 9999px !important;
+  object-fit: cover !important;
+}
+
+.it-header-slim-wrapper .btn-icon.btn-full .rounded-icon .icon {
+  color: var(--dc-green-dark) !important;
+  fill: currentColor !important;
+}
+
+.it-header-slim-wrapper .btn-icon.btn-full .icon {
+  width: 1rem !important;
+  height: 1rem !important;
+  color: #fff !important;
+  fill: currentColor !important;
+}
+
+.it-header-center-wrapper {
+  background: #007a52 !important;
+  min-height: auto !important;
+  padding: 14px 0 !important;
+}
+
+.it-header-center-content-wrapper {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  min-height: 52px !important;
+  gap: 16px !important;
+}
+
+.it-header-center-wrapper .it-brand-wrapper {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  padding-left: 0 !important;
+}
+
+.it-header-center-wrapper .it-brand-wrapper > a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+}
+
+.it-header-center-wrapper .it-brand-wrapper > a::before {
+  width: 52px !important;
+  height: 52px !important;
+  flex: 0 0 52px !important;
+}
+
+.it-header-center-wrapper .it-brand-wrapper .it-brand-text {
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
+}
+
+.it-right-zone {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+  margin-left: auto !important;
+  flex: 0 0 auto !important;
+}
+
+.it-search-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-left: auto !important;
+}
+
+.it-search-wrapper span {
+  color: #fff !important;
+}
+
+/* AC3 Story 8-106: search wrapper flex-row — rimosso blocco column ridondante */
+
+.search-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 48px !important;
+  height: 48px !important;
+  margin-left: 0 !important;
+  background: #fff !important;
+  border: 1px solid #fff !important;
+  border-radius: 9999px !important;
+}
+
+.search-link .icon {
+  width: 22px !important;
+  height: 22px !important;
+  color: #007a52 !important;
+  fill: currentColor !important;
+}
+
+@media (max-width: 991.98px) {
+  .it-nav-wrapper {
+    position: relative !important;
+  }
+
+  .it-header-navbar-wrapper {
+    position: absolute !important;
+    top: 50% !important;
+    left: 12px !important;
+    transform: translateY(-50%) !important;
+    width: auto !important;
+    min-height: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    z-index: 8 !important;
+  }
+
+  .it-header-navbar-wrapper .container,
+  .it-header-navbar-wrapper .row,
+  .it-header-navbar-wrapper .col-12,
+  .it-header-navbar-wrapper .navbar {
+    width: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .custom-navbar-toggler {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    color: #fff !important;
+    background: transparent !important;
+  }
+
+  .custom-navbar-toggler .icon {
+    width: 24px !important;
+    height: 24px !important;
+    color: #fff !important;
+    fill: currentColor !important;
+  }
+
+  .it-header-center-wrapper .it-brand-wrapper {
+    margin-left: 48px !important;
+  }
+
+  .navbar-collapsable {
+    background: #fff !important;
+  }
+
+  .navbar-collapsable .navbar-nav .nav-link {
+    color: #17324d !important;
+  }
+
+  .navbar-collapsable .navbar-secondary .nav-link {
+    color: #5c6f82 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .it-brand-tagline {
+    display: block !important;
+    margin-top: 2px !important;
+    color: #fff !important;
+  }
+
+  .it-brand-title {
+    font-size: 24px !important;
+    line-height: 1.15 !important;
+  }
+
+  .it-search-wrapper span {
+    display: inline !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .it-header-slim-wrapper .navbar-brand {
+    max-width: 48% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .it-header-slim-wrapper .nav-link.dropdown-toggle {
+    padding: 0 8px !important;
+  }
+
+  .it-header-slim-wrapper .it-language-switcher .dropdown-menu,
+  .it-header-slim-wrapper .it-user-wrapper .dropdown-menu {
+    margin-top: -4px !important;
+  }
+
+  .it-header-slim-wrapper .btn-icon.btn-full {
+    width: 48px !important;
+    min-width: 48px !important;
+  }
+
+  .it-brand-tagline,
+  .it-search-wrapper span {
+    display: none !important;
+  }
+
+  .it-header-center-wrapper .it-brand-wrapper > a::before {
+    width: 44px !important;
+    height: 44px !important;
+    flex: 0 0 44px !important;
+  }
+
+  .it-brand-title {
+    font-size: 20px !important;
+    line-height: 1.15 !important;
+  }
+
+  .it-header-center-wrapper {
+    padding: 12px 0 !important;
+  }
+
+  .it-header-center-wrapper .it-brand-wrapper {
+    margin-left: 44px !important;
+  }
+}
+
+/* ========================================
+   FINAL STEPPER RESPONSIVE FIX
+   Scope without touching <body> or markup.
+======================================== */
+/* main#main-container: layout app.blade.php (id su <main>). main #main-container: pattern statica DC (div interno). */
+main#main-container .steppers,
+main #main-container .steppers {
+  width: 100%;
+}
+
+main#main-container .steppers-header,
+main #main-container .steppers-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+
+main#main-container .steppers-header ul,
+main #main-container .steppers-header ul {
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  scrollbar-width: none;
+}
+
+main#main-container .steppers-header ul::-webkit-scrollbar,
+main #main-container .steppers-header ul::-webkit-scrollbar {
+  display: none;
+}
+
+main#main-container .steppers-header li,
+main #main-container .steppers-header li {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  min-height: 2rem;
+  padding-right: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+main#main-container .steppers-index,
+main #main-container .steppers-index {
+  flex: 0 0 auto;
+  margin: 0;
+  padding-top: 0.125rem;
+  white-space: nowrap;
+}
+
+main#main-container .cmp-nav-steps,
+main #main-container .cmp-nav-steps {
+  margin-top: 2rem;
+}
+
+main#main-container .steppers-nav,
+main #main-container .steppers-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+main#main-container .steppers-nav .steppers-btn-prev,
+main #main-container .steppers-nav .steppers-btn-prev,
+main#main-container .steppers-nav .steppers-btn-confirm,
+main #main-container .steppers-nav .steppers-btn-confirm {
+  flex: 0 0 auto;
+}
+
+main#main-container .steppers-nav .steppers-btn-save,
+main #main-container .steppers-nav .steppers-btn-save {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+@media (max-width: 991.98px) {
+  main#main-container .steppers-header,
+  main #main-container .steppers-header {
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  main#main-container .steppers-header li,
+  main #main-container .steppers-header li {
+    font-size: 0.8125rem;
+    padding-right: 1rem;
+  }
+
+  main#main-container .cmp-nav-steps,
+  main #main-container .cmp-nav-steps {
+    margin-top: 1.5rem;
+  }
+
+  main#main-container .steppers-nav,
+  main #main-container .steppers-nav {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  main#main-container .steppers-nav .steppers-btn-prev,
+  main #main-container .steppers-nav .steppers-btn-prev {
+    justify-self: start;
+  }
+
+  main#main-container .steppers-nav .steppers-btn-confirm,
+  main #main-container .steppers-nav .steppers-btn-confirm {
+    justify-self: end;
+  }
+
+  main#main-container .steppers-nav .steppers-btn-save,
+  main #main-container .steppers-nav .steppers-btn-save {
+    margin-left: 0;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 767.98px) {
+  main#main-container .steppers-header,
+  main #main-container .steppers-header {
+    align-items: flex-start;
+  }
+
+  main#main-container .steppers-header li,
+  main #main-container .steppers-header li {
+    min-height: 1.75rem;
+    padding-right: 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  main#main-container .steppers-index,
+  main #main-container .steppers-index {
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+
+  main#main-container .steppers-nav,
+  main #main-container .steppers-nav {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  main#main-container .steppers-nav .steppers-btn-prev,
+  main #main-container .steppers-nav .steppers-btn-prev,
+  main#main-container .steppers-nav .steppers-btn-confirm,
+  main #main-container .steppers-nav .steppers-btn-confirm {
+    width: 100%;
+    justify-content: center;
+  }
+
+  main#main-container .steppers-nav .steppers-btn-save,
+  main #main-container .steppers-nav .steppers-btn-save {
+    grid-column: 1 / -1;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ========================================
+   FINAL FIX -  wizard + header parity
+   Uses stable hooks only: Filament wizard and Design Comuni component hooks.
+======================================== */

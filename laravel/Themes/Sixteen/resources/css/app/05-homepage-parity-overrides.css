@@ -1,0 +1,595 @@
+/*
+ * Homepage visual parity last-mile overrides.
+ * Extracted from resources/css/app.css to keep app.css as a small import index.
+ */
+/* ========================================
+   FOOTER PARITY HOTFIX
+   Reference: rgb(32,42,46) = #202a2e
+======================================== */
+:root {
+  --dc-footer: #202a2e;
+}
+
+footer#footer,
+footer#footer .it-footer-main {
+  background: #202a2e !important;
+  color: #fff !important;
+}
+
+footer#footer .container,
+footer#footer .row,
+footer#footer .footer-items-wrapper {
+  background: transparent !important;
+}
+
+footer#footer .footer-heading-title,
+footer#footer .it-brand-text h2,
+footer#footer .it-brand-wrapper a,
+footer#footer .footer-bottom a,
+footer#footer .footer-list a,
+footer#footer .footer-info,
+footer#footer .social a,
+footer#footer .icon,
+footer#footer svg,
+footer#footer span,
+footer#footer p,
+footer#footer li {
+  color: #fff !important;
+  fill: currentColor;
+}
+
+footer#footer .footer-list li a {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+footer#footer .footer-list li a:hover {
+  color: #fff !important;
+}
+
+footer#footer .footer-heading-title,
+footer#footer .it-brand-text h2 {
+  color: #fff !important;
+}
+
+footer#footer .footer-heading-title {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+footer#footer .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+/* ========================================
+   HEADER PARITY HOTFIX
+======================================== */
+.it-header-center-wrapper .it-socials a,
+.it-header-center-wrapper .it-socials .icon,
+.it-header-center-wrapper .it-socials svg,
+.it-header-center-wrapper .it-socials use {
+  color: #fff !important;
+  fill: currentColor !important;
+}
+
+.dc-homepage-parity #head-section .cmp-search {
+  display: none !important;
+}
+
+/* ========================================
+   LOGO PARITY — SVG diretto come nel riferimento Bootstrap Italia
+   Reference: .it-brand-wrapper a .icon { width:82px; height:82px; margin-right:16px }
+======================================== */
+.it-header-center-wrapper .it-brand-wrapper > a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.it-header-center-wrapper .it-brand-wrapper > a > svg.icon {
+  width: 82px !important;
+  height: 82px !important;
+  flex: 0 0 82px !important;
+  margin-right: 0 !important;
+  display: block !important;
+}
+
+/* ========================================
+   PARITY FIXES - 2026-04-02 Visual Analysis
+   Verified against reference screenshots
+======================================== */
+
+/* 1. Evidence section: background image 300px tall at top (reference behavior) */
+.evidence-section .section {
+  background-size: 100% 300px !important;
+  background-position: center top !important;
+}
+.evidence-section .section::before {
+  /* Limit gradient overlay to top 300px matching background image height */
+  bottom: auto !important;
+  height: 300px !important;
+}
+
+/* 2. Calendar Splide: hide prev/next arrows (reference has none) */
+#calendario .splide__arrows,
+#calendario .splide__arrow {
+  display: none !important;
+}
+
+/* 3. Rating stars: grey by default, yellow only when checked/hovered */
+.rating .rating-star svg {
+  fill: #d9e1e8 !important;
+}
+.rating input:checked ~ label.rating-star svg,
+.rating .rating-star:hover svg,
+.rating .rating-star.active svg {
+  fill: #ffb400 !important;
+}
+
+/* 4. Useful links section: link color green + underline */
+.useful-links-section .link-list li a,
+.useful-links-section .link-list-wrapper a,
+.section-muted .link-list li a {
+  color: var(--dc-green) !important;
+  text-decoration: underline !important;
+}
+.useful-links-section .link-list li a:hover,
+.section-muted .link-list li a:hover {
+  text-decoration: none !important;
+}
+
+/* 5. Slim header button: "Accedi all'area personale" compact style */
+.it-header-slim-wrapper .btn-full,
+.it-header-slim-wrapper .it-access-top-wrapper .btn {
+  border-radius: 4px !important;
+  font-size: 14px !important;
+  padding: 6px 12px !important;
+  line-height: 1.5 !important;
+}
+
+/* 6. Evidence section: "Altri argomenti" text/chip colors on gradient */
+.evidence-section .chip-simple {
+  border-color: var(--dc-green) !important;
+  color: var(--dc-green) !important;
+  background: #fff !important;
+}
+.evidence-section .title-xsmall-bold {
+  color: #5c6f82 !important;
+}
+
+/* 7. Evidence section topic card links: green colored */
+.evidence-section .card-teaser .card-body .list-item .text-success {
+  color: var(--dc-green) !important;
+  text-decoration: underline !important;
+}
+
+/* 8. Calendar section: h2 "Events" title — match reference 40px */
+#calendario .row-title h2,
+#calendario .section h2 {
+  font-size: 2.5rem !important;  /* 40px */
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  color: var(--dc-ink) !important;
+}
+
+/* 9. Calendar date cards: border-radius 4px to match reference, lighter border */
+#calendario .card {
+  border-radius: 4px !important;
+  border-color: rgb(233, 230, 242) !important;
+}
+
+/* Calendar "Settembre 2022" header bar: bold text matching reference */
+.it-header-block-title h3,
+.home-carousel-title,
+#calendario .it-header-block-title h3 {
+  font-weight: 700 !important;
+  font-style: normal !important;
+  letter-spacing: 0.02em !important;
+  font-size: 1rem !important;
+  color: #fff !important;
+}
+
+/* 10. Hero section: "Estate in città" tag pill green */
+#head-section .rounded-pill {
+  background: var(--dc-green) !important;
+  color: #fff !important;
+  border-color: var(--dc-green) !important;
+}
+
+/* 11. Hero section min-height parity */
+#head-section .row.min-vh-lg-50 {
+  min-height: 50vh !important;
+  align-items: center !important;
+}
+
+/* ========================================
+   HEADER + HERO RESIDUAL PARITY HOTFIX
+======================================== */
+.it-header-slim-wrapper {
+  min-height: 48px !important;
+}
+
+.it-header-slim-wrapper-content {
+  min-height: 48px !important;
+  align-items: center !important;
+  padding: 0 !important;
+}
+
+.it-header-slim-wrapper .btn-full,
+.it-header-slim-wrapper .it-access-top-wrapper .btn {
+  padding: 4px 12px !important;
+  min-height: 40px !important;
+}
+
+.it-header-center-wrapper {
+  height: 120px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 6px !important;
+  padding-bottom: 0 !important;
+}
+
+.it-header-center-content-wrapper {
+  min-height: 84px !important;
+  align-items: center !important;
+}
+
+@media (min-width: 992px) {
+  .it-header-center-content-wrapper {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.it-header-navbar-wrapper {
+  min-height: 54px !important;
+}
+
+.it-header-navbar-wrapper .row {
+  margin: 0 !important;
+}
+
+.it-header-navbar-wrapper .col-12 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.it-header-navbar-wrapper .navbar {
+  min-height: 54px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.it-header-navbar-wrapper .navbar-nav .nav-link,
+.it-header-navbar-wrapper .navbar-secondary .nav-link {
+  min-height: 54px !important;
+  align-items: center !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.it-header-navbar-wrapper .navbar-nav .nav-link:first-child {
+  padding-left: 30px !important;
+}
+
+#head-section {
+  padding: 3rem 0 0 !important;
+}
+
+#head-section .card-title {
+  font-size: 32px !important;
+  line-height: 40px !important;
+  margin-bottom: 8px !important;
+}
+
+#head-section .lora {
+  font-size: 18px !important;
+  line-height: 28px !important;
+  padding-top: 16px !important;
+  margin-bottom: 24px !important;
+}
+
+#head-section .img-fluid {
+  width: 556px !important;
+  max-width: 100% !important;
+  height: 417px !important;
+  object-fit: cover !important;
+}
+
+/* ========================================
+   HEADER WRAPPER NORMALIZATION HOTFIX
+======================================== */
+header.it-header-wrapper {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  min-height: auto !important;
+}
+
+.it-brand-tagline {
+  font-weight: 400 !important;
+}
+
+/* ========================================
+   FINAL HEADER COLOR + SLIM BAR FIX
+   FIXED 2026-04-10: Removed hard height to prevent clipping at tablet/mobile
+======================================== */
+.it-header-slim-wrapper,
+.it-header-slim-wrapper .container,
+.it-header-slim-wrapper .row,
+.it-header-slim-wrapper .col-12 {
+  min-height: 48px !important;
+}
+
+.it-header-slim-wrapper-content {
+  min-height: 48px !important;
+}
+
+.it-header-navbar-wrapper a,
+.it-header-navbar-wrapper .nav-link,
+.it-header-navbar-wrapper .nav-link span,
+.it-header-navbar-wrapper .navbar-secondary .nav-link {
+  color: #fff !important;
+}
+
+.it-header-navbar-wrapper .navbar-nav .nav-link:hover,
+.it-header-navbar-wrapper .navbar-secondary .nav-link:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  position: relative !important;
+}
+
+/* AC2 Story 8-106: hover ::after centrato sotto il testo del link (come DC active) */
+.it-header-navbar-wrapper .navbar-nav .nav-link:hover::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 2.75rem !important;
+  max-width: calc(100% - 0.75rem) !important;
+  height: 3px !important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  border-radius: 1px !important;
+}
+
+/* Story 8-105: indicatore attivo centrato sotto il testo (non barra full-width sul link) */
+.it-header-navbar-wrapper .navbar-nav .nav-link.active,
+.it-header-navbar-wrapper .navbar-nav .nav-link[aria-current="page"] {
+  background-color: transparent !important;
+  border-bottom: none !important;
+  color: #fff !important;
+  position: relative !important;
+}
+
+.it-header-navbar-wrapper .navbar-nav .nav-link.active::after,
+.it-header-navbar-wrapper .navbar-nav .nav-link[aria-current="page"]::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 2.75rem !important;
+  max-width: calc(100% - 0.75rem) !important;
+  height: 3px !important;
+  background-color: #ffffff !important;
+  border-radius: 1px !important;
+}
+
+/* Fix menu-wrapper: Bootstrap Italia sets blue bg — override to transparent (DC reference = rgba(0,0,0,0)) */
+.it-header-navbar-wrapper .menu-wrapper {
+  background: transparent !important;
+}
+
+/* ========================================
+   HERO LAYOUT FINAL TUNING
+======================================== */
+#head-section {
+  padding-top: 0 !important;
+}
+
+#head-section .row.align-items-center.min-vh-lg-50 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+#head-section .col-lg-6.order-2.order-lg-1 {
+  padding-left: 64px !important;
+  padding-right: 28px !important;
+}
+
+/* ========================================
+   HOMEPAGE PARITY PASS - 2026-04-02
+   Scoped adjustments for /it/tests/homepage
+======================================== */
+.dc-homepage-parity {
+  --dc-page-max-width: 1320px;
+}
+
+.dc-homepage-parity .container {
+  max-width: var(--dc-page-max-width) !important;
+}
+
+.dc-homepage-parity .it-header-center-wrapper {
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+  min-height: 108px !important;
+}
+
+.dc-homepage-parity .it-header-center-content-wrapper {
+  min-height: 76px !important;
+}
+
+.dc-homepage-parity .it-header-navbar-wrapper,
+.dc-homepage-parity .it-header-navbar-wrapper .navbar,
+.dc-homepage-parity .it-header-navbar-wrapper .navbar-nav .nav-link,
+.dc-homepage-parity .it-header-navbar-wrapper .navbar-secondary .nav-link {
+  min-height: 52px !important;
+}
+
+.dc-homepage-parity #head-section {
+  padding-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.dc-homepage-parity #head-section .row.align-items-center.min-vh-lg-50 {
+  min-height: auto !important;
+  padding-top: 32px !important;
+  padding-bottom: 24px !important;
+  align-items: flex-start !important;
+}
+
+.dc-homepage-parity #head-section .card {
+  margin-bottom: 0 !important;
+}
+
+.dc-homepage-parity #head-section .card-body {
+  padding-top: 22px !important;
+  padding-right: 44px !important;
+  padding-bottom: 0 !important;
+}
+
+.dc-homepage-parity #head-section .category-top {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-bottom: 14px !important;
+}
+
+.dc-homepage-parity #head-section .category-top .icon {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.dc-homepage-parity #head-section .card-title {
+  max-width: 560px !important;
+  font-size: 30px !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.01em !important;
+  margin-bottom: 12px !important;
+}
+
+.dc-homepage-parity #head-section .lora {
+  max-width: 560px !important;
+  font-size: 18px !important;
+  line-height: 1.55 !important;
+  margin-bottom: 22px !important;
+}
+
+.dc-homepage-parity #head-section .chip.chip-simple {
+  margin-bottom: 28px !important;
+}
+
+.dc-homepage-parity #head-section .read-more {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding-bottom: 0 !important;
+}
+
+.dc-homepage-parity #head-section .col-lg-6.order-1.order-lg-2 {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+.dc-homepage-parity #head-section .img-fluid {
+  display: block !important;
+  width: 100% !important;
+  height: 416px !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+.dc-homepage-parity #calendario .section {
+  padding-top: 0 !important;
+}
+
+.dc-homepage-parity #calendario .card-overlapping {
+  margin-top: -8px !important;
+}
+
+.dc-homepage-parity #calendario .card-teaser-wrapper-equal {
+  align-items: stretch !important;
+}
+
+.dc-homepage-parity #calendario .card-teaser-wrapper-equal > .card {
+  min-height: 278px !important;
+}
+
+.dc-homepage-parity #calendario .card-teaser-image .card-body,
+.dc-homepage-parity #calendario .card-teaser .card-body {
+  padding: 18px 20px 28px !important;
+}
+
+.dc-homepage-parity #calendario .card-teaser-image .card-image {
+  padding-bottom: 28px !important;
+}
+
+.dc-homepage-parity #calendario .card-teaser-image .card-image img {
+  width: 100% !important;
+  max-width: 150px !important;
+  aspect-ratio: 3 / 4 !important;
+  object-fit: cover !important;
+}
+
+.dc-homepage-parity #calendario .row-title {
+  padding-top: 42px !important;
+  padding-bottom: 18px !important;
+}
+
+.dc-homepage-parity .evidence-section .section {
+  padding-top: 52px !important;
+  padding-bottom: 52px !important;
+}
+
+.dc-homepage-parity .evidence-section .card-wrapper.card-teaser-block-3 > .card,
+.dc-homepage-parity .evidence-section .card-wrapper.card-teaser-block-3 > a.card {
+  min-height: 100% !important;
+}
+
+.dc-homepage-parity .evidence-section .card-body {
+  padding: 22px 24px 26px !important;
+}
+
+.dc-homepage-parity .evidence-section .card-title {
+  margin-bottom: 12px !important;
+}
+
+.dc-homepage-parity .evidence-section .link-list-wrapper {
+  margin-top: 20px !important;
+}
+
+.dc-homepage-parity .evidence-section .row.pt-30 {
+  padding-top: 40px !important;
+}
+
+.dc-homepage-parity .evidence-section .btn.btn-primary {
+  min-width: 92px !important;
+  padding: 10px 18px !important;
+}
+
+.dc-homepage-parity .useful-links-section .section {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+
+.dc-homepage-parity .useful-links-section .input-group {
+  min-height: 48px !important;
+}
+
+.dc-homepage-parity .useful-links-section .btn.btn-primary {
+  padding: 10px 18px !important;
+}
+
+.dc-homepage-parity .bg-primary .cmp-rating {
+  padding-top: 56px !important;
+  padding-bottom: 56px !important;
+}
+
+.dc-homepage-parity .p-contacts,
+.dc-homepage-parity .cmp-contacts {
+  padding-top: 32px !important;
+  padding-bottom: 32px !important;
+}
+
+.dc-homepage-parity footer#footer .it-footer-main {
+  padding-top: 26px !important;
+}

@@ -1,0 +1,17 @@
+{
+    "id": "1",
+    "title": {
+        "it": "home1"
+    },
+    "slug": "home",
+    "middleware": null,
+    "content": null,
+    "description": null,
+    "content_blocks": [],
+    "sidebar_blocks": null,
+    "footer_blocks": null,
+    "created_at": "2026-01-12T09:23:20.000000Z",
+    "updated_at": "2026-01-12T09:23:20.000000Z",
+    "created_by": "019bb16c-66a8-72ba-8b92-266e28a08e56",
+    "updated_by": "019bb16c-66a8-72ba-8b92-266e28a08e56"
+}

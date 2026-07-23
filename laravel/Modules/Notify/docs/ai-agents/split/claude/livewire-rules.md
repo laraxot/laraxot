@@ -1,0 +1,78 @@
+---
+title: "Livewire Rules"
+type: rule
+tags: [livewire, rules]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "livewire-rules livewire rules"
+issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
+discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+related:
+  - "./boost-rules.md"
+  - "./filament-rules.md"
+  - "./filament-v3-rules.md"
+  - "./fluxui-rules.md"
+  - "./folio-rules.md"
+  - "./foundation-rules.md"
+  - "./laravel-core-rules.md"
+  - "./laravel-v11-rules.md"
+---
+
+=== livewire/core rules ===
+
+## Livewire Core
+- Use the `search-docs` tool to find exact version specific documentation for how to write Livewire & Livewire tests.
+- Use the `php artisan make:livewire [Posts\\CreatePost]` artisan command to create new components
+- State should live on the server, with the UI reflecting it.
+- All Livewire requests hit the Laravel backend, they're like regular HTTP requests. Always validate form data, and run authorization checks in Livewire actions.
+
+## Livewire Best Practices
+- Livewire components require a single root element.
+- Use `wire:loading` and `wire:dirty` for delightful loading states.
+- Add `wire:key` in loops:
+
+    ```blade
+    @foreach ($items as $item)
+        <div wire:key="item-{{ $item->id }}">
+            {{ $item->name }}
+        </div>
+    @endforeach
+    ```
+
+- Prefer lifecycle hooks like `mount()`, `updatedFoo()`) for initialization and reactive side effects:
+
+<code-snippet name="Lifecycle hook examples" lang="php">
+    public function mount(User $user) { $this->user = $user; }
+    public function updatedSearch() { $this->resetPage(); }
+</code-snippet>
+
+
+## Testing Livewire
+
+<code-snippet name="Example Livewire component test" lang="php">
+    Livewire::test(Counter::class)
+        ->assertSet('count', 0)
+        ->call('increment')
+        ->assertSet('count', 1)
+        ->assertSee(1)
+        ->assertStatus(200);
+</code-snippet>
+
+
+    <code-snippet name="Testing a Livewire component exists within a page" lang="php">
+        $this->get('/posts/create')
+        ->assertSeeLivewire(CreatePost::class);
+    </code-snippet>
+
+
+=== livewire/v3 rules ===
+
+
+---
+
+## Cross-References
+
+- ← [CLAUDE Index](INDEX.md) — All Laravel Boost guidelines
+- ← [Main AI Docs Index](../INDEX.md) — Master index
+- ← [../../../../docs/claude.md](../../../../docs/../../../../docs/claude.md) — Original source
+

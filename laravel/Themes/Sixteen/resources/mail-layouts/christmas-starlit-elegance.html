@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <title>{{ subject | default: "Auguri da {{ company_name }}" }}</title>
+
+    <style>
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; display: block; }
+        body { margin: 0; padding: 0; width: 100% !important; height: 100% !important; }
+
+        :root {
+            --midnight: #050824;
+            --navy: #0F1C46;
+            --aurora: #3FD5FF;
+            --aurora-secondary: #5AF9C5;
+            --starlight: #F4E3B2;
+            --velvet: #B51773;
+            --frost: #0F213B;
+            --glass: rgba(9, 16, 44, 0.78);
+            --text: #F7FAFF;
+            --text-muted: #9FB5D6;
+        }
+
+        body {
+            background-color: var(--midnight);
+            font-family: 'Montserrat', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text);
+        }
+
+        .email-wrapper {
+            width: 100%;
+            background-color: var(--midnight);
+            background-image:
+                radial-gradient(circle at 20% 20%, rgba(244, 227, 178, 0.35), transparent 30%),
+                radial-gradient(circle at 80% 30%, rgba(63, 213, 255, 0.18), transparent 45%),
+                radial-gradient(circle at 50% 80%, rgba(181, 23, 115, 0.25), transparent 40%);
+            padding: 40px 12px;
+        }
+
+        .email-container {
+            max-width: 640px;
+            margin: 0 auto;
+            background: linear-gradient(175deg, rgba(5, 8, 36, 0.85) 0%, rgba(9, 17, 50, 0.92) 60%, rgba(15, 33, 59, 0.96) 100%);
+            border-radius: 24px;
+            border: 1px solid rgba(90, 249, 197, 0.25);
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.55),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .starfield {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .starfield span {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            animation: twinkle 5s linear infinite;
+        }
+
+        .starfield span:nth-child(odd) { animation-duration: 7s; opacity: 0.4; }
+        .starfield span:nth-child(3n) { animation-duration: 9s; background: rgba(90, 249, 197, 0.9); }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 0.9; transform: scale(1.3); }
+        }
+
+        .hero {
+            padding: 56px 48px 36px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            background: radial-gradient(circle at top, rgba(63, 213, 255, 0.25), transparent 65%);
+        }
+
+        .hero-logo {
+            max-width: 160px;
+            margin: 0 auto 24px;
+        }
+
+        .hero-kicker {
+            letter-spacing: 4px;
+            font-size: 0.8rem;
+            color: var(--aurora-secondary);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .hero-title {
+            font-size: 2.4rem;
+            margin: 0;
+            color: var(--text);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-title span {
+            color: var(--starlight);
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin: 16px auto 0;
+            max-width: 420px;
+        }
+
+        .cta-group {
+            margin-top: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 32px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin: 6px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(120deg, var(--aurora) 0%, var(--aurora-secondary) 100%);
+            color: var(--midnight) !important;
+            box-shadow: 0 10px 25px rgba(63, 213, 255, 0.35);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(244, 227, 178, 0.65);
+            color: var(--starlight) !important;
+        }
+
+        .content {
+            padding: 40px 48px;
+            color: var(--text);
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        .glass-card {
+            background: var(--glass);
+            border-radius: 18px;
+            border: 1px solid rgba(244, 227, 178, 0.2);
+            padding: 28px;
+            margin-bottom: 32px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+        }
+
+        .glass-card h2 {
+            margin: 0 0 12px;
+            font-size: 1.35rem;
+            color: var(--starlight);
+        }
+
+        .schedule {
+            background: linear-gradient(145deg, rgba(181, 23, 115, 0.2), rgba(63, 213, 255, 0.08));
+            border-left: 4px solid var(--velvet);
+        }
+
+        .divider {
+            height: 1px;
+            margin: 32px 0;
+            background: linear-gradient(90deg, transparent, rgba(244, 227, 178, 0.4), transparent);
+        }
+
+        .signature {
+            text-align: center;
+            margin-top: 24px;
+            font-style: italic;
+            color: var(--text-muted);
+        }
+
+        .footer {
+            padding: 32px 24px 40px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: radial-gradient(circle at bottom, rgba(181, 23, 115, 0.2), transparent 55%);
+        }
+
+        .footer a {
+            color: var(--aurora);
+            text-decoration: none;
+        }
+
+        .stellar-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: rgba(5, 8, 36, 0.7);
+            border: 1px solid rgba(244, 227, 178, 0.4);
+            font-size: 0.85rem;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .stellar-badge span {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 640px) {
+            .hero, .content { padding: 36px 24px; }
+            .hero-title { font-size: 2rem; }
+            .cta-group { display: flex; flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+            .starfield span { opacity: 0.4 !important; }
+        }
+    </style>
+</head>
+<body>
+    <table role="presentation" class="email-wrapper" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center">
+                <table role="presentation" class="email-container" cellpadding="0" cellspacing="0" width="640">
+                    <tr>
+                        <td>
+                            <div class="starfield" aria-hidden="true">
+                                <span style="top:10%;left:20%"></span>
+                                <span style="top:25%;left:60%"></span>
+                                <span style="top:40%;left:15%"></span>
+                                <span style="top:70%;left:30%"></span>
+                                <span style="top:55%;left:80%"></span>
+                                <span style="top:15%;left:85%"></span>
+                                <span style="top:82%;left:65%"></span>
+                            </div>
+
+                            <div class="hero">
+                                <img class="hero-logo" src="{{ logo_header_base64 ? 'data:image/png;base64,'.logo_header_base64 : (logo_header ?: 'https://www.sottanaservice.it/logo_placeholder.png') }}" alt="{{ company_name }}">
+
+                                <div class="stellar-badge">
+                                    <span>✦</span>
+                                    {{ hero_kicker | default: "Christmas Corporate Update" }}
+                                </div>
+
+                                <h1 class="hero-title">
+                                    {{ hero_title | default: "Auguri Stellari <span>{{ company_name }}</span>" }}
+                                </h1>
+                                <p class="hero-subtitle">
+                                    {{ hero_subtitle | default: "Celebriamo un altro anno di progetti condivisi con un tocco di aurora boreale, innovazione e gratitudine." }}
+                                </p>
+
+                                <div class="cta-group">
+                                    {{#if cta_primary_url}}
+                                        <a href="{{ cta_primary_url }}" class="btn btn-primary">{{ cta_primary_label | default: "Apri il messaggio" }}</a>
+                                    {{/if}}
+                                    {{#if cta_secondary_url}}
+                                        <a href="{{ cta_secondary_url }}" class="btn btn-secondary">{{ cta_secondary_label | default: "Scarica il programma" }}</a>
+                                    {{/if}}
+                                </div>
+                            </div>
+
+                            <div class="content">
+                                <div class="glass-card">
+                                    <h2>{{ highlight_title | default: "Messaggio dalla Direzione" }}</h2>
+                                    <p>
+                                        {{ highlight_body | default: "Che la magia delle festività porti nuova energia ai vostri team. Grazie per la fiducia quotidiana: siamo onorati di essere al vostro fianco in progetti che illuminano territori, aziende e persone." }}
+                                    </p>
+                                    <p>
+                                        {{ secondary_paragraph | default: "Nel 2026 continueremo a costruire soluzioni digitali inclusive, sostenibili e ad alta affidabilità. Il nostro impegno è offrirvi piattaforme sempre più sicure, creative e conformi alle normative internazionali." }}
+                                    </p>
+                                </div>
+
+                                <div class="glass-card schedule">
+                                    <h2>{{ holiday_section_title | default: "Programma Festività & Supporto" }}</h2>
+                                    <p style="margin:0;">
+                                        {{ holiday_section_body | default: "Gli uffici saranno chiusi dal 24 dicembre al 6 gennaio. Restiamo monitorati su canali di reperibilità per eventuali emergenze enterprise; potete inviare richieste critiche a supporto-natale@{{ company_domain | default: 'azienda.it' }}." }}
+                                    </p>
+                                    <p style="margin-top:18px;margin-bottom:0;color:var(--aurora);font-weight:600;">
+                                        {{ reopening_message | default: "Torniamo operativi al 100% da martedì 7 gennaio con roadmap, sprint e onboarding già pianificati." }}
+                                    </p>
+                                </div>
+
+                                <div class="glass-card">
+                                    <h2>{{ inspiration_title | default: "Highlights che Brillano" }}</h2>
+                                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td width="50%" style="padding-right:12px;vertical-align:top;">
+                                                <p style="margin-top:0;"><strong>✨ {{ highlight_one_title | default: "Progetti Iconici" }}</strong></p>
+                                                <p style="margin-top:6px;color:var(--text-muted);">
+                                                    {{ highlight_one_body | default: "14 portali pubblici, 6 piattaforme SaaS e un ecosistema AI rispettoso dei dati dei cittadini." }}
+                                                </p>
+                                            </td>
+                                            <td width="50%" style="padding-left:12px;vertical-align:top;">
+                                                <p style="margin-top:0;"><strong>🌌 {{ highlight_two_title | default: "Esperienze Immersive" }}</strong></p>
+                                                <p style="margin-top:6px;color:var(--text-muted);">
+                                                    {{ highlight_two_body | default: "Design aurora, motion controllato e storytelling digitale coordinato per campagne corporate & istituzionali." }}
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div class="divider"></div>
+
+                                <p style="text-align:center;font-size:1.05rem;font-weight:600;color:var(--starlight);margin-bottom:12px;">
+                                    {{ toast_title | default: "Che sia un Natale costellato di visioni ambiziose." }}
+                                </p>
+                                <p style="text-align:center;color:var(--text-muted);margin:0;">
+                                    {{ toast_body | default: "Vi auguriamo serenità, creatività e nuove costellazioni di opportunità condivise." }}
+                                </p>
+
+                                <div class="signature">
+                                    {{ closing_message | default: "Con gratitudine cosmica," }}<br>
+                                    <strong>{{ signature_name | default: "Il Team {{ company_name | default: 'Sottana Service' }}" }}</strong>
+                                </div>
+                            </div>
+
+                            <div class="footer">
+                                <p style="margin-bottom:8px;">
+                                    {{ company_name | default: "Sottana Service" }} • {{ company_address | default: "Via delle Costellazioni 12, Milano" }}
+                                </p>
+                                <p style="margin-bottom:16px;">
+                                    {{#if site_url}}<a href="{{ site_url }}">Visita il sito</a> • {{/if}}
+                                    <a href="{{ unsubscribe_url | default: '#' }}">Annulla iscrizione</a>
+                                </p>
+                                <p style="font-size:0.75rem;color:rgba(255,255,255,0.6);">
+                                    © {{ year | default: "2025" }} {{ company_name | default: "Sottana Service" }} — All lights reserved.
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

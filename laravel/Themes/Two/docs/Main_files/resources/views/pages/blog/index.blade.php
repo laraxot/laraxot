@@ -1,0 +1,1 @@
+<?php use function Laravel\Folio\name; use Livewire\Volt\Component; name('blog.index'); new class extends Component {}; ?> <x-layouts.app> @volt('blog.index') <div> <x-page side='content' slug='blog' /> </div> @endvolt </x-layouts.app>

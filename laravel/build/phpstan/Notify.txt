@@ -1,0 +1,515 @@
+=== PHPStan Analysis for Notify ===
+Date: Thu Jul 16 10:11:18 AM CEST 2026
+Configuration: /var/www/_bases/base_techplanner_fila5/laravel/phpstan.neon
+============================================
+
+   0/595 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%
+  40/595 [▓░░░░░░░░░░░░░░░░░░░░░░░░░░░]   6%
+ 595/595 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+Instructions for interpreting errors
+---------
+
+Each error has an associated identifier, like `argument.type`
+or `return.missing`.
+
+Each error identifier has documentation at URL https://phpstan.org/error-identifiers/<identifier>
+This page contains code example, explanation why is this an error
+and instruction how to fix it.
+Before fixing the error, fetch the documentation page for its identifier.
+
+The error usually indicates a real bug or incorrect type in the code. Fix the underlying cause, do not just make the error go away.
+Do not add `@phpstan-ignore` comments, `@phpstan-ignore-next-line` comments, or baseline entries to suppress the error.
+Do not use assert() or inline @var PHPDoc tag to override PHPStan's inferred type.
+Do not add type casts just to silence errors.
+Do not widen parameter or return types just to make the error go away.
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Feature/emailtemplatestest.php                                   
+ ------ ----------------------------------------------------------------------- 
+  15     Call to method toBeTrue() of internal class Pest\Mixins\Expectation<T  
+         Value> from outside its root namespace Pest.                           
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/emailtemplatestest.php                               
+  21     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/emailtemplatestest.php                               
+  25     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/emailtemplatestest.php                               
+  37     Call to method toBeTrue() of internal class Pest\Mixins\Expectation<T  
+         Value> from outside its root namespace Pest.                           
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/emailtemplatestest.php                               
+  43     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/emailtemplatestest.php                               
+  55     Call to method toBeTrue() of internal class Pest\Mixins\Expectation<T  
+         Value> from outside its root namespace Pest.                           
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/emailtemplatestest.php                               
+  61     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/emailtemplatestest.php                               
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Feature/jsoncomponentstest.php                                   
+ ------ ----------------------------------------------------------------------- 
+  17     Call to method toBeTrue() of internal class Pest\Mixins\Expectation<T  
+         Value> from outside its root namespace Pest.                           
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/jsoncomponentstest.php                               
+  27     Call to method toBeNull() of internal class Pest\Mixins\Expectation<T  
+         Value> from outside its root namespace Pest.                           
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/jsoncomponentstest.php                               
+  30     Call to method toHaveCount() of internal class                         
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/jsoncomponentstest.php                               
+  33     Call to method toHaveKey() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/jsoncomponentstest.php                               
+  34     Call to method toHaveKey() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/jsoncomponentstest.php                               
+  35     Call to method toHaveKey() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/jsoncomponentstest.php                               
+  37     Call to method toHaveKey() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/jsoncomponentstest.php                               
+  38     Call to method toHaveKey() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/jsoncomponentstest.php                               
+  39     Call to method toHaveKey() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/jsoncomponentstest.php                               
+  43     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/jsoncomponentstest.php                               
+  44     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/jsoncomponentstest.php                               
+  48     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/jsoncomponentstest.php                               
+  49     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/jsoncomponentstest.php                               
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Support/helpers.php                                              
+ ------ ----------------------------------------------------------------------- 
+  50     Function mockExpectation() should return Mockery\CompositeExpectation  
+         but returns Mockery\ExpectationInterface|Mockery\HigherOrderMessage.   
+         🪪  return.type                                                        
+         ✏️  tests/Support/helpers.php                                          
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/NotificationManagerTest.php                         
+ ------ ----------------------------------------------------------------------- 
+  21     Access to an undefined property                                        
+         Pest\PendingCalls\TestCall::$notificationManager.                      
+         🪪  property.notFound                                                  
+         💡  Learn more: https://phpstan.org/blog/solving-phpstan-access-to-und  
+         efined-property                                                        
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  36     Call to an undefined method Mockery\CompositeExpectation::with().      
+         🪪  method.notFound                                                    
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  36     Cannot call method andReturn() on mixed.                               
+         🪪  method.nonObject                                                   
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  39     Call to an undefined method Mockery\CompositeExpectation::with().      
+         🪪  method.notFound                                                    
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  39     Cannot call method once() on mixed.                                    
+         🪪  method.nonObject                                                   
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  46     Access to an undefined property                                        
+         Pest\PendingCalls\TestCall::$notificationManager.                      
+         🪪  property.notFound                                                  
+         💡  Learn more: https://phpstan.org/blog/solving-phpstan-access-to-und  
+         efined-property                                                        
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  46     Cannot call method send() on mixed.                                    
+         🪪  method.nonObject                                                   
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  60     Call to an undefined method Mockery\CompositeExpectation::with().      
+         🪪  method.notFound                                                    
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  60     Cannot call method andReturn() on mixed.                               
+         🪪  method.nonObject                                                   
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  63     Call to an undefined method Mockery\CompositeExpectation::times().     
+         🪪  method.notFound                                                    
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  67     Access to an undefined property                                        
+         Pest\PendingCalls\TestCall::$notificationManager.                      
+         🪪  property.notFound                                                  
+         💡  Learn more: https://phpstan.org/blog/solving-phpstan-access-to-und  
+         efined-property                                                        
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  67     Cannot call method sendMultiple() on mixed.                            
+         🪪  method.nonObject                                                   
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  69     Call to method toHaveCount() of internal class                         
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  80     Call to an undefined method Mockery\CompositeExpectation::with().      
+         🪪  method.notFound                                                    
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  80     Cannot call method andReturn() on mixed.                               
+         🪪  method.nonObject                                                   
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  82     Access to an undefined property                                        
+         Pest\PendingCalls\TestCall::$notificationManager.                      
+         🪪  property.notFound                                                  
+         💡  Learn more: https://phpstan.org/blog/solving-phpstan-access-to-und  
+         efined-property                                                        
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  82     Cannot call method getTemplate() on mixed.                             
+         🪪  method.nonObject                                                   
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  84     Call to method toBeNull() of internal class Pest\Mixins\Expectation<T  
+         Value> from outside its root namespace Pest.                           
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  90     Access to an undefined property                                        
+         Pest\PendingCalls\TestCall::$notificationManager.                      
+         🪪  property.notFound                                                  
+         💡  Learn more: https://phpstan.org/blog/solving-phpstan-access-to-und  
+         efined-property                                                        
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  90     Cannot call method getTemplatesByCategory() on mixed.                  
+         🪪  method.nonObject                                                   
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  92     Call to method toHaveCount() of internal class                         
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  99     Access to an undefined property                                        
+         Pest\PendingCalls\TestCall::$notificationManager.                      
+         🪪  property.notFound                                                  
+         💡  Learn more: https://phpstan.org/blog/solving-phpstan-access-to-und  
+         efined-property                                                        
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  99     Call to method toThrow() of internal class Pest\Mixins\Expectation<TV  
+         alue> from outside its root namespace Pest.                            
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  99     Cannot call method send() on mixed.                                    
+         🪪  method.nonObject                                                   
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  108    Call to an undefined method Mockery\CompositeExpectation::once().      
+         🪪  method.notFound                                                    
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  113    Access to an undefined property                                        
+         Pest\PendingCalls\TestCall::$notificationManager.                      
+         🪪  property.notFound                                                  
+         💡  Learn more: https://phpstan.org/blog/solving-phpstan-access-to-und  
+         efined-property                                                        
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  113    Cannot call method send() on mixed.                                    
+         🪪  method.nonObject                                                   
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  121    Call to an undefined method Mockery\CompositeExpectation::once().      
+         🪪  method.notFound                                                    
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  125    Access to an undefined property                                        
+         Pest\PendingCalls\TestCall::$notificationManager.                      
+         🪪  property.notFound                                                  
+         💡  Learn more: https://phpstan.org/blog/solving-phpstan-access-to-und  
+         efined-property                                                        
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  125    Cannot call method sendMultiple() on mixed.                            
+         🪪  method.nonObject                                                   
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+  127    Call to method toHaveCount() of internal class                         
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/NotificationManagerTest.php                     
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/SMS/SendAgiletelecomSMSActionTest.php               
+ ------ ----------------------------------------------------------------------- 
+  10     Call to method toBeInstanceOf() of internal class                      
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSActionTest.php           
+  18     Call to method toBeTrue() of internal class Pest\Mixins\Expectation<T  
+         Value> from outside its root namespace Pest.                           
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSActionTest.php           
+  19     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSActionTest.php           
+  29     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSActionTest.php           
+  38     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSActionTest.php           
+  46     Call to method toBeNull() of internal class Pest\Mixins\Expectation<T  
+         Value> from outside its root namespace Pest.                           
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSActionTest.php           
+  49     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSActionTest.php           
+  56     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSActionTest.php           
+  66     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSActionTest.php           
+  67     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSActionTest.php           
+  74     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSActionTest.php           
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/SMS/SendAgiletelecomSMSv1ActionTest.php             
+ ------ ----------------------------------------------------------------------- 
+  10     Call to method toBeInstanceOf() of internal class                      
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv1ActionTest.php         
+  14     Call to method toBeObject() of internal class Pest\Mixins\Expectation  
+         <TValue> from outside its root namespace Pest.                         
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv1ActionTest.php         
+  21     Call to method toBeTrue() of internal class Pest\Mixins\Expectation<T  
+         Value> from outside its root namespace Pest.                           
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv1ActionTest.php         
+  22     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv1ActionTest.php         
+  31     Call to method toBeInstanceOf() of internal class                      
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv1ActionTest.php         
+  32     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv1ActionTest.php         
+  40     Call to method toBeInstanceOf() of internal class                      
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv1ActionTest.php         
+  41     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv1ActionTest.php         
+  48     Call to method toBeNull() of internal class Pest\Mixins\Expectation<T  
+         Value> from outside its root namespace Pest.                           
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv1ActionTest.php         
+  51     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv1ActionTest.php         
+  57     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv1ActionTest.php         
+  66     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv1ActionTest.php         
+  67     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv1ActionTest.php         
+  73     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv1ActionTest.php         
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/SMS/SendAgiletelecomSMSv2ActionTest.php             
+ ------ ----------------------------------------------------------------------- 
+  10     Call to method toBeInstanceOf() of internal class                      
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv2ActionTest.php         
+  14     Call to method toBeObject() of internal class Pest\Mixins\Expectation  
+         <TValue> from outside its root namespace Pest.                         
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv2ActionTest.php         
+  21     Call to method toBeTrue() of internal class Pest\Mixins\Expectation<T  
+         Value> from outside its root namespace Pest.                           
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv2ActionTest.php         
+  22     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv2ActionTest.php         
+  31     Call to method toBeInstanceOf() of internal class                      
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv2ActionTest.php         
+  32     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv2ActionTest.php         
+  40     Call to method toBeInstanceOf() of internal class                      
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv2ActionTest.php         
+  41     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv2ActionTest.php         
+  48     Call to method toBeNull() of internal class Pest\Mixins\Expectation<T  
+         Value> from outside its root namespace Pest.                           
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv2ActionTest.php         
+  51     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv2ActionTest.php         
+  57     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv2ActionTest.php         
+  66     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv2ActionTest.php         
+  67     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv2ActionTest.php         
+  73     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Actions/SMS/SendAgiletelecomSMSv2ActionTest.php         
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/SendNotificationToRecipientActionTest.php           
+ ------ ----------------------------------------------------------------------- 
+  22     Method                                                                 
+         Illuminate\Notifications\Notification@anonymous/tests/Unit/Actions/Se  
+         ndNotificationToRecipientActionTest.php:19::via() return type has no   
+         value type specified in iterable type array.                           
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Unit/Actions/SendNotificationToRecipientActionTest.php       
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/Notifications/Channels/NotificationsChannelsTest.php        
+ ------ ----------------------------------------------------------------------- 
+  43     Method                                                                 
+         Illuminate\Notifications\Notification@anonymous/tests/Unit/Notificati  
+         ons/Channels/NotificationsChannelsTest.php:40::toTelegram() return     
+         type has no value type specified in iterable type array.               
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Unit/Notifications/Channels/NotificationsChannelsTest.php    
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/Notifications/NotificationsCoverageTest.php                 
+ ------ ----------------------------------------------------------------------- 
+  213    Parameter #1 $attachments of method                                    
+         Modules\Notify\Notifications\RecordNotification::addAttachments()      
+         expects array<int, array{path?: string, data?: mixed, as?: string|nul  
+         l, mime?: string|null}>, array{array{name: 'file.pdf', path: string}}  
+          given.                                                                
+         🪪  argument.type                                                      
+         💡  Sealed array shape does not accept array with extra key 'name'.    
+         ✏️  tests/Unit/Notifications/NotificationsCoverageTest.php             
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/Providers/NotifyServiceProviderTest.php                     
+ ------ ----------------------------------------------------------------------- 
+  21     Method                                                                 
+         class@anonymous/tests/Unit/Providers/NotifyServiceProviderTest.php:15  
+         ::execute() has parameter $default with no value type specified in     
+         iterable type array.                                                   
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Unit/Providers/NotifyServiceProviderTest.php                 
+  21     Method                                                                 
+         class@anonymous/tests/Unit/Providers/NotifyServiceProviderTest.php:15  
+         ::execute() return type has no value type specified in iterable type   
+         array.                                                                 
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Unit/Providers/NotifyServiceProviderTest.php                 
+  40     Method                                                                 
+         class@anonymous/tests/Unit/Providers/NotifyServiceProviderTest.php:34  
+         ::execute() has parameter $default with no value type specified in     
+         iterable type array.                                                   
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Unit/Providers/NotifyServiceProviderTest.php                 
+  40     Method                                                                 
+         class@anonymous/tests/Unit/Providers/NotifyServiceProviderTest.php:34  
+         ::execute() return type has no value type specified in iterable type   
+         array.                                                                 
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Unit/Providers/NotifyServiceProviderTest.php                 
+ ------ ----------------------------------------------------------------------- 
+
+ -- --------------------------------------------------------------------------- 
+     Error                                                                      
+ -- --------------------------------------------------------------------------- 
+     Ignored error pattern #PHPDoc tag @mixin contains unknown class # was not  
+     matched in reported errors.                                                
+ -- --------------------------------------------------------------------------- 
+
+ [ERROR] Found 99 errors                                                        
+
+
+=== END ANALYSIS ===

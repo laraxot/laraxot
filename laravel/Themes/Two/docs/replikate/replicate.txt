@@ -1,0 +1,105 @@
+questo 
+http://127.0.0.1:8000/it
+deve diventare uguale a 
+https://lightseagreen-dogfish-560272.hostingersite.com/
+
+ricordati che noi lo gestiamo a blocchi gestiti da https://filamentphp.com/docs/5.x/forms/builder  e che i contenuti della homepage sono dentro 
+/var/www/_bases/base_techplanner_fila5/laravel/config/local/techplanner/database/content/home.json  e se devi creare nuovi blocchi li crei dentro 
+laravel/Themes/Two/resources/views/components/blocks
+
+usa gli mcp per crearti screenshots e salvarteli dentro laravel/Themes/Two/docs e poi analizzali e crei documentazione dentro laravel/Themes/Two/docs sul cosa fare per replicare 
+https://lightseagreen-dogfish-560272.hostingersite.com/
+dentro 
+http://127.0.0.1:8000/it (che e' il nostro)
+anzi il nostro deve essere ancora piu' bello percio' le migliorie le documenti dentro laravel/Themes/Two/docs, poi studi aggiorni e migliori le cartelle docs dentro i moduli e dentro i temi
+
+ricordati che il nostro e' un sito multilingua, seo ready , inbound marketing ready , adsense ready , percio' utilizza anche internet per prendere le informazioni mancanti e documentarle dentro le cartelle docs dentro i moduli e dentro i temi 
+
+
+la tua memoria sono le cartelle docs dentro i moduli e dentro i temi, percio' edvi costantemente aggiornarle e studiarle e cerca sempre di imparare dai tuoi errori
+
+il sito http://127.0.0.1:8000/it  ti sembra uguale a https://lightseagreen-dogfish-560272.hostingersite.com/  ??  documenta dentro le cartelle docs dentro i moduli con documentazione e screenshots le differenze e poi cerca di fare diventare 
+http://127.0.0.1:8000/it uguale a https://lightseagreen-dogfish-560272.hostingersite.com/  per farlo devi anche scaricare tutte le immagini di https://lightseagreen-dogfish-560272.hostingersite.com/ dentro il tema Two .. interpreta il js di 
+https://lightseagreen-dogfish-560272.hostingersite.com/ e genera l'html che viene usato , quello che appare quando usi ispezione dalle developers tools di chrome questi html salvali dentro /var/www/_bases/base_techplanner_fila5/laravel/Themes/Two/Main_files  
+percio' creati una versione statica di https://lightseagreen-dogfish-560272.hostingersite.com/   e salva dentro /var/www/_bases/base_techplanner_fila5/laravel/Themes/Two/Main_files, concentrati sulla headernav .. inizia da quella 
+copia la headernav di https://lightseagreen-dogfish-560272.hostingersite.com/  e mettila in  http://127.0.0.1:8000/it   nel nostro progetto la headernav e' gestista dal componente  <x-section slug="header"/>  percio' dalla blade laravel/Themes/Two/resources/views/components/sections/header.blade.php
+e il suo contenuto e' gestito da laravel/config/local/techplanner/database/content/sections/header.json  devi analizzare il codice finche' non trovi anche l'errore che ho detto io e poi aggiornare , studiare e migliorare le cartelle docs dentro i moduli e dentro i temi, non devi copiare solo le forme e i colori ma anche i contenuti , ti ricordo che i contenuti vanno dentro i file json 
+se dice View not found: pub_theme::components.blocks.hero.simple  sai che la blade va creata in questo caso dentro laravel/Themes/Two/resources/views/components/blocks/hero/simple.blade.php
+se vedi errori tipo Unable to locate a class or view for component [heroicon-o-linkedin]  magari puoi creare linkedin.svg dentro laravel/Modules/TechPlanner/resources/svg  e poi lo puoi richiamare con filament https://filamentphp.com/docs/5.x/components/icon-button  ovvero con <x-filament::icon  icon="techplanner-linkedin"  />
+
+
+questa pagina http://127.0.0.1:8000/it/services deve essere uguale a https://lightseagreen-dogfish-560272.hostingersite.com/servizi  e crea anche le altre pagine presenti dentro https://lightseagreen-dogfish-560272.hostingersite.com/servizi che mancano 
+
+questa pagina http://127.0.0.1:8000/it/blog  deve essere uguale a https://lightseagreen-dogfish-560272.hostingersite.com/blog
+questa pagina http://127.0.0.1:8000/it/faq  deve essere uguale a https://lightseagreen-dogfish-560272.hostingersite.com/faq
+questa pagina http://127.0.0.1:8000/it/contacts  deve essere uguale a https://lightseagreen-dogfish-560272.hostingersite.com/contatti
+questa pagina http://127.0.0.1:8000/it/about  deve essere uguale a https://lightseagreen-dogfish-560272.hostingersite.com/chi-siamo
+
+poi aggiungi tutto quello che serve per il gpdr e la privacy .. ti ricordo che esiste il modulo GDPR 
+
+hai controllato che tutto quello che c'e' in https://lightseagreen-dogfish-560272.hostingersite.com/chi-siamo sia stato implementato a dovere nel nostro ?
+
+ questa http://127.0.0.1:8000/it  doveva essere uguale a https://lightseagreen-dogfish-560272.hostingersite.com/ , fa un report completo di ogni pagina di https://lightseagreen-dogfish-560272.hostingersite.com/  il
+   livello di conversione, quello che manca, quello che ci potrebbe essere da migliorare, le cose gdpr, le cose seo, le cose inbound marketing , tutti questi tuoi ragionamenti e report ovviamente vanno messi dentro le
+   cartelle docs dentro i moduli e dentro i temi, poi prima di procedere devi sempre studiare, aggiornare e migliorare le cartelle docs anche perche' dentro quelle cartelle ci mettono i loro ragionamenti altri agenti
+   ai
+
+se trovi errore ad esempio  Unable to locate a class or view for component [ui.service-card]. qui chiede che ci sia un componente dentro il modulo ui, percio' dobbiamo prima capire se e' un componente veramente agnostico e indipendente dal tema
+percio' puo' stare dentro il modulo ui o fare service-card dentro laravel/Themes/Two/resources/views/components  che e' autoregistrato, che devi andare ad analizzare il codice per sapere dove fa questa cosa, e mettere li il componente , come sempre prima devi studiare, aggiornare e migliorare le cartelle docs dentro i moduli e dentro i temi, sempre sapendo che e' meglio studiare a fondo le cartelle docs perche' ci scrivono dentro anche altri agenti ai percio' meglio studiare cosa dicono anche gli altri agenti ai che potrebbero avere buone idee e prima di modificare un file devi anche controllare che qualche agente ai non lo abbia gia' modificato 
+
+esegui  php artisan optimize  dalla cartella laravel e sistema gli errori che vengono fuori , sempre ragionandoci a fondo e studiando, aggiornando e migliorando le cartelle docs dentro i moduli e dentro i temi
+
+
+e' sbagliato aggiungere 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
+
+// TechPlanner specific routes (blog is handled by Folio)
+Route::get('/services', [PagesController::class, 'services'])->name('techplanner.services');
+Route::get('/blog', [PagesController::class, 'blog'])->name('techplanner.blog');
+Route::get('/faq', [PagesController::class, 'faq'])->name('techplanner.faq');
+Route::get('/contacts', [PagesController::class, 'contacts'])->name('techplanner.contacts');
+Route::get('/about', [PagesController::class, 'about'])->name('techplanner.about');
+
+perche' noi per il frontend utilizziamo folio+volt+laraxot 
+
+non usiamo i controllers percio' e' errato fare controller tipo laravel/app/Http/Controllers/BlogController.php
+
+
+in questa blade laravel/Themes/Two/resources/views/components/sections/header/v1.blade.php  ci dovrebbe stare la headernav copiala bene da https://lightseagreen-dogfish-560272.hostingersite.com/  pero' ricordati che i contenuti di quella headernav sono dentro laravel/config/local/techplanner/database/content/sections/header.json e il nostro sito in piu' e' in multilingua percio' studia bene il modulo Lang , e in piu' abbiamo anche il login , percio' se uno e' loggato nella headernav vede il suo avatar con un dropdown con le solite cose , come sempre prima studia, aggiorna e migliora le cartelle docs dentro i moduli e dentro i temi, poi ragiona poi implementa e poi controlla 
+nella headernav ci devono essere MINIMO le cose mostrate nella headernav di https://lightseagreen-dogfish-560272.hostingersite.com/ e dentro la nostra headernav i contenuti devono essere gestiti dal file laravel/config/local/techplanner/database/content/sections/header.json  percio' nella blade della nostra headernav devono essere utilizzati in "foreach" tutti i blocchi che son dentro il json , perche tutto quello che e' dentro il json ha una sua utilità
+
+
+la blade per il footer dovresti aver capito che e' laravel/Themes/Two/resources/views/components/sections/footer/v1.blade.php  e dovresti aver capito che il contenuto da mostrare e' dentro il file laravel/config/local/techplanner/database/content/sections/footer.json  e dovresti aver capito che devi mostrare come minimo le cose del footer di https://lightseagreen-dogfish-560272.hostingersite.com/ , e come sempre prima studi, aggiorni e migliori le cartelle docs dentro i moduli e dentro i temi, cerchi sempre di imparare dai tuoi errori, e cerchi di imparare cose nuove e aggiorni le tue rule , le tue memories e le tue skills e tutto quello che serve per diventare migliore sia te che gli altri agenti ai 
+
+quando sei in un punto "stabile" che sei sicuro che tutto funziona fa anche git commit e git push , questa e' una regola importante che devi sempre ricordare percio' fa tutto quello che serve per ricordarla sia te che gli altri agenti ai
+
+devi migliorare lo sfondo dell headernav perche' dopo i caratteri bianchi su bianco non si legge nulla , percio' cerca di migliorare la ui/ux, sempre prima devi studiare, aggiornare e migliorare le cartelle docs dentro i moduli e dentro i temi, imparando dai tuoi errori e cercando di migliorarti sempre aggiornando le tue rules, le tue memoeries, le tue skills e anche quelle degli altri agenti ai
+
+
+creare laravel/Themes/Two/resources/views/pages/about/index.blade.php e' sbagliato perche' c'e' gia' /var/www/_bases/base_techplanner_fila5/laravel/Themes/Two/resources/views/pages/[slug].blade.php  percio' andando su /it/about va a leggere il json about.json .. cerca di capire al meglio la filosofia, religione, politica, religione poi condividila con gli altri agenti ai, poi procedi 
+
+questa pagina https://lightseagreen-dogfish-560272.hostingersite.com/chi-siamo a noi corrisponde http://127.0.0.1:8000/it/about , capisci da solo il perche' e avverti anche gli altri agenti ai
+
+la pagina https://lightseagreen-dogfish-560272.hostingersite.com/servizi  a noi corrisponde a http://127.0.0.1:8000/it/services
+la pagina https://lightseagreen-dogfish-560272.hostingersite.com/blog  a noi corrisponde a http://127.0.0.1:8000/it/blog
+la pagina https://lightseagreen-dogfish-560272.hostingersite.com/faq a noi corrisponde a http://127.0.0.1:8000/it/faqs 
+la pagina https://lightseagreen-dogfish-560272.hostingersite.com/contatti a noi corrisponde a http://127.0.0.1:8000/it/contacts
+
+l'headernav dentro https://lightseagreen-dogfish-560272.hostingersite.com/ quando ti sposti in basso si trasforma trasformando lo sfondo in bianco non trasparente e il colore del testo in nero per tenere la ui/ux .. controlla 
+
+la pagina http://127.0.0.1:8000/it/about dovrebbe essere uguale a https://lightseagreen-dogfish-560272.hostingersite.com/chi-siamo  ma non lo e' parti pure dal footer e analizza pezzo per pezzo , 
+
+questo file laravel/target_about.html  doveva essere dentro una sottocartella di laravel/Themes/Two/Main_files capisci la regola e ricordatela sempre e spiegala anche agli altri agenti ai
+
+questa pagina http://127.0.0.1:8000/it/blog dovrebbe essere uguale a https://lightseagreen-dogfish-560272.hostingersite.com/blog , come sempre prima studi aggiorni e migliori le cartelle docs dentro i moduli e dentro i temi, ti installi e configuri gli mcp che ti possono aiutare a raggiungere il tuo scopo , poi implementi poi controlli 
+
+il footer nostro si vede male ! non si legge nulla , gli elementi non sono ben ordinati, aiutati con gli mcp, fa screenshots, fa tutto quello che serve per capire che il footer che hai fatto non e' completato, e dopo che lohai fatto controllalo facendo altri screenshot e analizzando , non farmi perdere tempo
+per capire il passaggio delle variabili al footer e' meglio prima che te studi a fondo laravel/Modules/Cms/app/View/Components/Section.php , come vedi passiamo gia' variabili al footer
+
+aggiorna le rules, le memories, le skills, le cartelle docs sia tue che anche quelle degli altri agenti ai, fa il massimo che puoi per imparare sempre dai tuoi errori e costantemente migliorarti
+
+questo errore "Unable to locate a class or view for component [two::sections.footer.v1]" e' grave vuol dire che non hai studiato a fondo il codice e le cartelle docs dentro modulo CMS, dovresti aver capito che i componenti dentro il tema sono autoregistrati percio' chiamare two era gia' sbagliato, sbagliato ancora di piu' in quanto sections.footer.v1 andava chiamato semplicemente con <x-section slug="footer" /> percio' dovevi studiare meglio anche laravel/Modules/Cms/app/View/Components/Section.php
+
+
+ma hai controllato il footer ? quello che fai devi sempre controllarlo, il tuo scopo e' non farmi perdere tempo e le cose che fai devi sempre controllarle questa e' una regola importantissima che devi sempre ricordare !!!

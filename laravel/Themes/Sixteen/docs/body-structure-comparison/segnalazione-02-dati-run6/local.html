@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        
+
+        
+        <script>
+            if (typeof(Storage) !== "undefined") {
+                if (localStorage.getItem('dark_mode') && localStorage.getItem('dark_mode') == 'true') {
+                    document.documentElement.classList.add('dark');
+                }
+            }
+        </script>
+        <style>
+            [x-cloak] {
+                display: none !important;
+            }
+        </style>
+                            <link rel="preload" as="style" href="http://127.0.0.1:8000/themes/Sixteen/assets/app-BfY5lYio.css" /><link rel="stylesheet" href="http://127.0.0.1:8000/themes/Sixteen/assets/app-BfY5lYio.css" data-navigate-track="reload" />            <script id="browser-logger-active">
+(function() {
+    const ENDPOINT = 'http://127.0.0.1:8000/_boost/browser-logs';
+    const logQueue = [];
+    let flushTimeout = null;
+
+    console.log('🔍 Browser logger active (MCP server detected). Posting to: ' + ENDPOINT);
+
+    // Store original console methods
+    const originalConsole = {
+        log: console.log,
+        info: console.info,
+        error: console.error,
+        warn: console.warn,
+        table: console.table
+    };
+
+    // Helper to safely stringify values
+    function safeStringify(obj) {
+        const seen = new WeakSet();
+        return JSON.stringify(obj, (key, value) => {
+            if (typeof value === 'object' && value !== null) {
+                if (seen.has(value)) return '[Circular]';
+                seen.add(value);
+            }
+            if (value instanceof Error) {
+                return {
+                    name: value.name,
+                    message: value.message,
+                    stack: value.stack
+                };
+            }
+            return value;
+        });
+    }
+
+    // Batch and send logs
+    function flushLogs() {
+        if (logQueue.length === 0) return;
+
+        const batch = logQueue.splice(0, logQueue.length);
+
+        fetch(ENDPOINT, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            body: JSON.stringify({ logs: batch })
+        }).catch(err => {
+            // Silently fail to avoid infinite loops
+            originalConsole.error('Failed to send logs:', err);
+        });
+    }
+
+    // Debounced flush (100ms)
+    function scheduleFlush() {
+        if (flushTimeout) clearTimeout(flushTimeout);
+        flushTimeout = setTimeout(flushLogs, 100);
+    }
+
+    // Intercept console methods
+    ['log', 'info', 'error', 'warn', 'table'].forEach(method => {
+        console[method] = function(...args) {
+            // Call original method
+            originalConsole[method].apply(console, args);
+
+            // Capture log data
+            try {
+                logQueue.push({
+                    type: method,
+                    timestamp: new Date().toISOString(),
+                    data: args.map(arg => {
+                        try {
+                            return typeof arg === 'object' ? JSON.parse(safeStringify(arg)) : arg;
+                        } catch (e) {
+                            return String(arg);
+                        }
+                    }),
+                    url: window.location.href,
+                    userAgent: navigator.userAgent
+                });
+
+                scheduleFlush();
+            } catch (e) {
+                // Fail silently
+            }
+        };
+    });
+
+    // Global error handlers for uncaught errors
+    const originalOnError = window.onerror;
+    window.onerror = function boostErrorHandler(errorMsg, url, lineNumber, colNumber, error) {
+        try {
+            logQueue.push({
+                type: 'uncaught_error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: errorMsg,
+                    filename: url,
+                    lineno: lineNumber,
+                    colno: colNumber,
+                    error: error ? {
+                        name: error.name,
+                        message: error.message,
+                        stack: error.stack
+                    } : null
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Call original handler if it exists
+        if (originalOnError && typeof originalOnError === 'function') {
+            return originalOnError(errorMsg, url, lineNumber, colNumber, error);
+        }
+
+        // Let the error continue to propagate
+        return false;
+    }
+    window.addEventListener('error', (event) => {
+        try {
+            logQueue.push({
+                type: 'window_error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: event.message,
+                    filename: event.filename,
+                    lineno: event.lineno,
+                    colno: event.colno,
+                    error: event.error ? {
+                        name: event.error.name,
+                        message: event.error.message,
+                        stack: event.error.stack
+                    } : null
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Let the error continue to propagate
+        return false;
+    });
+    window.addEventListener('unhandledrejection', (event) => {
+        try {
+            logQueue.push({
+                type: 'error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: 'Unhandled Promise Rejection',
+                    reason: event.reason instanceof Error ? {
+                        name: event.reason.name,
+                        message: event.reason.message,
+                        stack: event.reason.stack
+                    } : event.reason
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Let the rejection continue to propagate
+        return false;
+    });
+
+    // Flush on page unload
+    window.addEventListener('beforeunload', () => {
+        if (logQueue.length > 0) {
+            navigator.sendBeacon(ENDPOINT, JSON.stringify({ logs: logQueue }));
+        }
+    });
+})();
+</script>
+<!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.list-item][wire\:loading\.list-item], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}[wire\:cloak] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}</style>
+</head>
+    <body>
+        <div class="skiplink">
+        <a class="visually-hidden-focusable" href="#main-container">Vai ai contenuti</a>
+        <a class="visually-hidden-focusable" href="#footer">Vai al footer</a>
+    </div><!-- /skiplink -->
+
+    <header class="it-header-wrapper" data-bs-target="#header-nav-wrapper">
+    <div class="it-header-slim-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="it-header-slim-wrapper-content">
+                        <a class="navbar-brand" target="_blank" href="#" aria-label="Vai al portale {Nome della Regione} - link esterno - apertura nuova scheda" title="Vai al portale {Nome della Regione}">Nome della Regione</a>
+                        <div class="it-header-slim-right-zone" role="navigation">
+                            <div class="nav-item dropdown">
+                                <button type="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="languages" aria-haspopup="true">
+                                    <span class="visually-hidden">Lingua attiva:</span>
+                                    <span>ITA</span>
+                                    <svg class="icon">
+                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use>
+                                    </svg>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="link-list-wrapper">
+                                                <ul class="link-list">
+                                                    <li><a class="dropdown-item list-item" href="#"><span>ITA <span class="visually-hidden">selezionata</span></span></a></li>
+                                                    <li><a class="dropdown-item list-item" href="#"><span>ENG</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="btn btn-primary btn-icon btn-full" href="/it/tests/accesso-servizio" data-element="personal-area-login">
+                                <span class="rounded-icon" aria-hidden="true">
+                                    <svg class="icon icon-primary">
+                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-user"></use>
+                                    </svg>
+                                </span>
+                                <span class="d-none d-lg-block">Accedi all'area personale</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="it-nav-wrapper">
+        <div class="it-header-center-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="it-header-center-content-wrapper">
+                            <div class="it-brand-wrapper">
+                                <a href="/">
+                                    <svg width="82" height="82" class="icon" aria-hidden="true">
+                                        <image href="/themes/Sixteen/design-comuni/assets/images/logo-comune.svg"/>
+                                    </svg>
+                                    <div class="it-brand-text">
+                                        <div class="it-brand-title">Il mio Comune</div>
+                                        <div class="it-brand-tagline d-none d-md-block">Un comune da vivere</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="it-right-zone">
+                                <div class="it-socials d-none d-lg-flex">
+                                    <span>Seguici su</span>
+                                    <ul>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"></use>
+                                                </svg>
+                                                <span class="visually-hidden">Twitter</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"></use>
+                                                </svg>
+                                                <span class="visually-hidden">Facebook</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"></use>
+                                                </svg>
+                                                <span class="visually-hidden">YouTube</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"></use>
+                                                </svg>
+                                                <span class="visually-hidden">Telegram</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"></use>
+                                                </svg>
+                                                <span class="visually-hidden">Whatsapp</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"></use>
+                                                </svg>
+                                                <span class="visually-hidden">RSS</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="it-search-wrapper d-flex align-items-center">
+                                    <span class="search-label me-2">Cerca</span>
+                                    <button class="search-link rounded-icon" type="button" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="Cerca nel sito">
+                                        <svg class="icon">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-search"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="it-header-navbar-wrapper" id="header-nav-wrapper" x-data="headerMobileNav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="navbar navbar-expand-lg has-megamenu">
+                            <button class="custom-navbar-toggler" type="button" aria-controls="nav4" :aria-expanded="mobileNavOpen.toString()" aria-label="Mostra/Nascondi la navigazione" @click="toggle()">
+                                <svg class="icon">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-burger"></use>
+                                </svg>
+                            </button>
+                            <!-- Mobile overlay backdrop -->
+                            <div x-show="mobileNavOpen" @click.self="close()" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="navbar-overlay" style="display: none;"></div>
+                            <!-- Mobile menu panel -->
+                            <div x-show="mobileNavOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="translate-x-[-100%]" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-[-100%]" class="navbar-collapsable" id="nav4" @keydown.escape.window="close()" style="display: none;">
+                                <div class="close-div">
+                                    <button class="btn close-menu" type="button" @click="close()">
+                                        <span class="visually-hidden">Nascondi la navigazione</span>
+                                        <svg class="icon">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="menu-wrapper">
+                                    <a href="/" class="logo-hamburger">
+                                        <svg class="icon" aria-hidden="true">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa"></use>
+                                        </svg>
+                                        <div class="it-brand-text">
+                                            <div class="it-brand-title">Nome del Comune</div>
+                                        </div>
+                                    </a>
+                                    <nav aria-label="Principale">
+                                        <ul class="navbar-nav" data-element="main-navigation">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/it/tests/amministrazione" data-element="management">
+                                                    <span>Amministrazione</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/it/tests/novita" data-element="news">
+                                                    <span>Novità</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link active" href="/it/tests/servizi" data-element="all-services">
+                                                    <span>Servizi</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/it/tests/eventi" data-element="live">
+                                                    <span>Vivere il Comune</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <nav aria-label="Secondaria">
+                                        <ul class="navbar-nav navbar-secondary">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Iscrizioni</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Estate in città</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Polizia locale</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/it/tests/argomenti" data-element="all-topics">
+                                                    <span>Tutti gli argomenti
+                                                        <svg class="icon icon-sm">
+                                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-right"></use>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <div class="it-socials">
+                                        <span>Seguici su</span>
+                                        <ul>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">Twitter</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">Facebook</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">YouTube</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">Telegram</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">Whatsapp</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">RSS</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div wire:key="lw-558597373-0" wire:snapshot="{&quot;data&quot;:{&quot;slug&quot;:&quot;segnalazione-02-dati&quot;,&quot;pageSlug&quot;:&quot;tests.segnalazione-02-dati&quot;,&quot;data&quot;:[{&quot;slug&quot;:&quot;segnalazione-02-dati&quot;},{&quot;s&quot;:&quot;arr&quot;}],&quot;blocks&quot;:[[[{&quot;type&quot;:&quot;segnalazione-02-dati&quot;,&quot;slug&quot;:null,&quot;data&quot;:[{&quot;view&quot;:&quot;pub_theme::components.blocks.tests.segnalazione-02-dati&quot;,&quot;title&quot;:&quot;Segnalazione disservizio&quot;,&quot;current_step&quot;:2,&quot;total_steps&quot;:3,&quot;steps&quot;:[[&quot;Informativa sulla privacy&quot;,&quot;Dati di segnalazione&quot;,&quot;Riepilogo&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;text&quot;:[{&quot;breadcrumb_aria&quot;:&quot;breadcrumb&quot;,&quot;required_note&quot;:&quot;I campi contraddistinti dal simbolo asterisco sono obbligatori&quot;,&quot;sidebar_title&quot;:&quot;INFORMAZIONI RICHIESTE&quot;,&quot;place_help&quot;:&quot;Indica il luogo del disservizio&quot;,&quot;use_my_location&quot;:&quot;Usa la tua posizione&quot;,&quot;inefficiency_heading&quot;:&quot;Disservizio&quot;,&quot;inefficiency_label&quot;:&quot;Tipo di disservizio**&quot;,&quot;inefficiency_placeholder&quot;:&quot;Tipo di disservizio*&quot;,&quot;title_label&quot;:&quot;Titolo*&quot;,&quot;details_label&quot;:&quot;Dettagli**&quot;,&quot;details_max&quot;:&quot;Inserire al massimo 200 caratteri&quot;,&quot;author_about&quot;:&quot;Informazione su di te&quot;,&quot;steps_nav&quot;:&quot;Step&quot;},{&quot;s&quot;:&quot;arr&quot;}],&quot;placeholders&quot;:[{&quot;search_place&quot;:&quot;Cerca un luogo*&quot;},{&quot;s&quot;:&quot;arr&quot;}],&quot;user&quot;:[{&quot;name&quot;:&quot;Giulia Bianchi&quot;,&quot;cf&quot;:&quot;GLABNC72H25H501Y&quot;,&quot;phone&quot;:&quot;+39 331 1234567&quot;,&quot;email&quot;:&quot;mario.rossi@gmail.com&quot;},{&quot;s&quot;:&quot;arr&quot;}]},{&quot;s&quot;:&quot;arr&quot;}],&quot;view&quot;:&quot;pub_theme::components.blocks.tests.segnalazione-02-dati&quot;,&quot;livewire&quot;:false,&quot;livewireComponentName&quot;:&quot;&quot;,&quot;active&quot;:true},{&quot;class&quot;:&quot;Modules\\Cms\\Datas\\BlockData&quot;,&quot;s&quot;:&quot;wrbl&quot;}]],{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;k5OxkeS9IABe6xKeihRv&quot;,&quot;name&quot;:&quot;volt-anonymous-fragment-eyJuYW1lIjoidGVzdHMudmlldyIsInBhdGgiOiJUaGVtZXNcL1NpeHRlZW5cL3Jlc291cmNlc1wvdmlld3NcL3BhZ2VzXC90ZXN0c1wvW3NsdWddLmJsYWRlLnBocCJ9&quot;,&quot;path&quot;:&quot;it\/tests\/segnalazione-02-dati&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;attributes&quot;:{&quot;lang&quot;:&quot;it&quot;,&quot;_theme&quot;:{},&quot;isMobile&quot;:false,&quot;isTablet&quot;:false,&quot;isDesktop&quot;:true},&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;it&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;43cf57a4ae213e2fb244ff41584c8546c945e94502bc689b67567b8d20f2d31c&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="k5OxkeS9IABe6xKeihRv" wire:name="volt-anonymous-fragment-eyJuYW1lIjoidGVzdHMudmlldyIsInBhdGgiOiJUaGVtZXNcL1NpeHRlZW5cL3Jlc291cmNlc1wvdmlld3NcL3BhZ2VzXC90ZXN0c1wvW3NsdWddLmJsYWRlLnBocCJ9" class="page-content content" data-slug="tests.segnalazione-02-dati" data-side="content">
+        <!--[if BLOCK]><![endif]-->            <div class="container" id="main-container">
+    <div class="justify-content-center row">
+        <div class="col-12 col-lg-10">
+            <div class="cmp-breadcrumbs" role="navigation">
+                <nav aria-label="breadcrumb" class="breadcrumb-container">
+                    <ol class="breadcrumb p-0" data-element="breadcrumb">
+                        <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/it/tests/homepage">fixcity::segnalazione.breadcrumb.home.label</a><span class="separator">/</span></li>
+                        <li class="breadcrumb-item"><a href="#">fixcity::segnalazione.breadcrumb.services.label</a><span class="separator">/</span></li>
+                        <li aria-current="page" class="active breadcrumb-item">Segnalazione disservizio</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="cmp-heading pb-3 pb-lg-4">
+                <h1 class="title-xxxlarge">Segnalazione disservizio</h1>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="steppers">
+                <div class="steppers-header">
+                    <ul>
+                        <li class="confirmed">Informativa sulla privacy<svg aria-hidden="true" class="icon steppers-success">
+                                <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-check"></use>
+                            </svg><span class="visually-hidden">Confermato</span></li>
+                        <li class="active">Dati di segnalazione<span class="visually-hidden">Attivo</span></li>
+                        <li class="">Riepilogo</li>
+                    </ul>
+                    <span aria-hidden="true" class="steppers-index">2/3</span>
+                </div>
+            </div>
+            <p class="d-lg-none my-5 title-xsmall">fixcity::segnalazione.fields.required.note.label</p>
+        </div>
+    </div>
+
+    <div class="row" x-data="{ accordionOpen: true, parentsOpen: false }">
+        <div class="col-12 col-lg-3 d-lg-block d-none mb-4">
+            <div aria-labelledby="accordion-title-one" class="cmp-navscroll sticky-top">
+                <nav aria-label="INFORMAZIONI RICHIESTE" class="it-navscroll-wrapper navbar navbar-expand-lg">
+                    <div class="navbar-custom" id="navbarNavProgress">
+                        <div class="menu-wrapper">
+                            <div class="link-list-wrapper">
+                                <div class="accordion">
+                                    <div class="accordion-item">
+                                        <span class="accordion-header" id="accordion-title-one">
+                                            <button aria-controls="collapse-one" aria-expanded="true" class="accordion-button pb-10 px-3" data-bs-target="#collapse-one" data-bs-toggle="collapse" type="button" @click="accordionOpen = !accordionOpen">
+                                                INFORMAZIONI RICHIESTE
+                                                <svg class="icon icon-xs right">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use>
+                                                </svg>
+                                            </button>
+                                        </span>
+                                        <div class="progress">
+                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="it-navscroll-progressbar progress-bar" role="progressbar"></div>
+                                        </div>
+                                        <div aria-labelledby="accordion-title-one" class="accordion-collapse collapse show" id="collapse-one" role="region" x-show="accordionOpen" x-cloak>
+                                            <div class="accordion-body">
+                                                <ul class="link-list" data-element="page-index">
+                                                    <li class="nav-item"><a class="nav-link" href="#report-place"><span>Luogo</span></a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#report-info"><span>Disservizio</span></a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#report-author"><span>Autore della segnalazione</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="col-12 col-lg-8 offset-lg-1">
+            <div aria-live="polite" class="steppers-content">
+                <div class="it-page-sections-container">
+                    <section class="it-page-section" id="report-place">
+                        <div class="cmp-card mb-40">
+                            <div class="card has-bkg-grey p-big p-lg-4 shadow-sm">
+                                <div class="border-0 card-header m-0 mb-lg-20 p-0">
+                                    <div class="d-flex">
+                                        <h2 class="mb-1 title-xxlarge">Luogo</h2>
+                                    </div>
+                                    <p class="mb-0 subtitle-small">Indica il luogo del disservizio</p>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="cmp-input-autocomplete">
+                                        <div class="bg-white form-group mb-0 mt-3 p-3">
+                                            <label class="d-none label-input mb-2" for="autocomplete-regioni">Cerca un luogo*</label>
+                                            <input class="autocomplete" data-bs-autocomplete="[{&quot;text&quot;:&quot;Abruzzo&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Basilicata&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Calabria&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Campania&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Emilia Romagna&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Friuli Venezia Giulia&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Lazio&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Liguria&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Lombardia&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Marche&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Molise&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Piemonte&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Puglia&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Sardegna&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Sicilia&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Toscana&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Trentino Alto Adige&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Umbria&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Valle d’Aosta&quot;,&quot;link&quot;:&quot;#&quot;},{&quot;text&quot;:&quot;Veneto&quot;,&quot;link&quot;:&quot;#&quot;}]" id="autocomplete-regioni" name="autocomplete-regioni" placeholder="Cerca un luogo*" type="search">
+                                            <div class="link-wrapper mt-3">
+                                                <a class="active icon-left list-item" href="#">
+                                                    <span class="list-item-title-icon-wrapper">
+                                                        <svg aria-hidden="true" class="icon icon-primary icon-sm mb-1">
+                                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-map-marker"></use>
+                                                        </svg>
+                                                        <span class="list-item-title t-primary">Usa la tua posizione</span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="it-page-section" id="report-info">
+                        <div class="cmp-card mb-40">
+                            <div class="card has-bkg-grey p-big shadow-sm">
+                                <div class="border-0 card-header m-0 mb-lg-20 p-0">
+                                    <div class="d-flex">
+                                        <h2 class="icon-required mb-3 title-xxlarge">Disservizio</h2>
+                                    </div>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="p-lg-4 p-md-3 pb-lg-0 select-partials select-wrapper">
+                                        <label class="visually-hidden" for="inefficiency">Tipo di disservizio*</label>
+                                        <select class="u-grey-dark" id="inefficiency">
+                                            <option selected="selected" value="">Tipo di disservizio*</option>
+                                            <option value="property_damage">fixcity::segnalazione.inefficiency_types.property_damage.label</option>
+                                        </select>
+                                    </div>
+                                    <div class="bg-white p-3 pb-lg-0 pt-lg-5 px-lg-4 text-area-wrapper">
+                                        <div class="cmp-input form-group mb-0">
+                                            <label class="cmp-input__label" for="title">Titolo*</label>
+                                            <input class="form-control" id="title" name="title" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="bg-white cmp-text-area m-0 p-3 pb-lg-4 pt-lg-5 px-lg-4">
+                                        <div class="form-group">
+                                            <label class="d-block" for="details">Dettagli**</label>
+                                            <textarea class="text-area" id="details" rows="2"></textarea>
+                                            <span class="label">fixcity::segnalazione.fields.details.max_chars.label</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-white btn-wrapper pb-3 pb-lg-4 pt-2 pt-lg-0 px-3 px-lg-4" x-data="{ removeFileLabel: 'fixcity::segnalazione.actions.remove_file.aria.label', files: [], maxFiles: 5, maxSize: 5 * 1024 * 1024, addFiles(event) { const newFiles = Array.from(event.target.files); newFiles.forEach(file => { if (this.files.length < this.maxFiles && file.size <= this.maxSize) { this.files.push({ name: file.name, size: file.size, type: file.type, preview: file.type.startsWith('image/') ? URL.createObjectURL(file) : null }); } }); event.target.value = ''; }, removeFile(index) { if (this.files[index]?.preview) { URL.revokeObjectURL(this.files[index].preview); } this.files.splice(index, 1); } }">
+                                        <label class="ms-2 pb-2 title-xsmall-bold u-grey-dark">Immagini</label>
+                                        <template x-if="files.length === 0">
+                                            <div class="align-items-center d-flex justify-content-between upload-wrapper">
+                                                <img alt="" class="img" src="/themes/Sixteen/design-comuni/assets/images/img-disservizio-thumbnail.png">
+                                                <span class="fw-bold ms-2 t-primary w-100">6yhakandsahm413d8.jpg</span>
+                                                <a aria-label="fixcity::segnalazione.actions.remove_image.aria.label" class="align-self-center" href="#">
+                                                    <svg class="icon icon-primary icon-sm mb-1">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-close"></use>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </template>
+                                        <hr>
+                                        <template x-for="(file, index) in files" :key="index">
+                                            <div>
+                                                <div class="align-items-center d-flex justify-content-between upload-wrapper">
+                                                    <template x-if="file.preview">
+                                                        <img :src="file.preview" alt="" class="img" style="width:48px;height:48px;object-fit:cover;border-radius:4px;">
+                                                    </template>
+                                                    <template x-if="!file.preview">
+                                                        <svg aria-hidden="true" class="icon icon-primary" style="width:48px;height:48px;flex-shrink:0;">
+                                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-file"></use>
+                                                        </svg>
+                                                    </template>
+                                                    <span class="fw-bold ms-2 t-primary w-100" x-text="file.name"></span>
+                                                    <a href="#" class="align-self-center" :aria-label="removeFileLabel + ' ' + file.name" @click.prevent="removeFile(index)">
+                                                        <svg aria-hidden="true" class="icon icon-primary icon-sm mb-1">
+                                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-close"></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                                <hr>
+                                            </div>
+                                        </template>
+                                        <input type="file" id="file-upload-attachments" name="attachments[]" class="d-none" accept="image/jpeg,image/png,image/gif,image/webp" @change="addFiles($event)">
+                                        <button type="button" aria-label="Carica file per il disservizio" class="btn btn-primary fw-bold w-100" @click="document.getElementById('file-upload-attachments').click()">
+                                            <span class="rounded-icon">
+                                                <svg aria-hidden="true" class="icon icon-sm icon-white">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-upload"></use>
+                                                </svg>
+                                            </span>
+                                            <span>Carica file</span>
+                                        </button>
+                                        <p class="mb-0 pt-10 title-xsmall u-grey-dark">Seleziona una o più immagini da allegare alla segnalazione</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="it-page-section" id="report-author">
+                        <div class="cmp-card">
+                            <div class="card has-bkg-grey shadow-sm">
+                                <div class="border-0 card-header m-0 mb-lg-20 p-0">
+                                    <div class="d-flex">
+                                        <h2 class="mb-1 title-xxlarge">Autore della segnalazione</h2>
+                                    </div>
+                                    <p class="mb-0 subtitle-small">Informazione su di te</p>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="cmp-info-button-card mt-3">
+                                        <div class="card p-3 p-lg-4">
+                                            <div class="card-body p-0">
+                                                <h3 class="big-title mb-0">Giulia Bianchi</h3>
+                                                <p class="card-info">Codice Fiscale<br><span>GLABNC72H25H501Y</span></p>
+                                                <div class="accordion-item">
+                                                    <div class="accordion-header" id="heading-collapse-parents">
+                                                        <button @click="parentsOpen = !parentsOpen" aria-controls="collapse-parents" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse-parents" data-bs-toggle="collapse" type="button">
+                                                            <span class="align-items-center d-flex">Mostra tutto<svg class="icon icon-primary icon-sm">
+                                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use>
+                                                                </svg></span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="accordion-collapse collapse" id="collapse-parents" role="region" x-show="parentsOpen" x-cloak>
+                                                        <div class="accordion-body p-0">
+                                                            <div class="bg-white cmp-info-summary has-border">
+                                                                <div class="card">
+                                                                    <div class="border-bottom border-light card-header d-flex d-flex justify-content-between justify-content-end mb-0 p-0">
+                                                                        <h4 class="mb-3 title-large-semi-bold">Contatti</h4><a class="d-none text-decoration-none" href="#"><span class="t-primary text-button-sm-semi">Modifica</span></a>
+                                                                    </div>
+                                                                    <div class="card-body p-0">
+                                                                        <div class="border-light single-line-info">
+                                                                            <div class="text-paragraph-small">Telefono</div>
+                                                                            <div class="border-light">
+                                                                                <p class="data-text">+39 331 1234567</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="border-light single-line-info">
+                                                                            <div class="text-paragraph-small">Email</div>
+                                                                            <div class="border-light">
+                                                                                <p class="data-text">mario.rossi@gmail.com</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card-footer d-none p-0"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="cmp-nav-steps" x-data="{ showSaveAlert: false }">
+                    <nav aria-label="Step" class="steppers-nav">
+                        <button class="btn btn-sm p-0 steppers-btn-prev" type="button" onclick="window.location.href='http://127.0.0.1:8000/it/tests/segnalazione-01-privacy'">
+                            <svg aria-hidden="true" class="icon icon-primary icon-sm">
+                                <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-left"></use>
+                            </svg>
+                            <span class="t-primary text-button-sm">Indietro</span>
+                        </button>
+                        <button class="bg-white btn btn-outline-primary btn-sm d-lg-block d-none saveBtn steppers-btn-save" type="button" @click="showSaveAlert = true; setTimeout(() => showSaveAlert = false, 4000)">
+                            <span class="t-primary text-button-sm">fixcity::segnalazione.actions.save.label</span>
+                        </button>
+                        <button class="bg-white btn btn-outline-primary btn-sm center d-block d-lg-none saveBtn steppers-btn-save" type="button" @click="showSaveAlert = true; setTimeout(() => showSaveAlert = false, 4000)">
+                            <span class="t-primary text-button-sm">fixcity::segnalazione.actions.save_short.label</span>
+                        </button>
+                        <button class="btn btn-primary btn-sm steppers-btn-confirm" data-bs-target="#" data-bs-toggle="modal" type="button" onclick="window.location.href='http://127.0.0.1:8000/it/tests/segnalazione-03-riepilogo'">
+                            <span class="text-button-sm">Avanti</span>
+                            <svg aria-hidden="true" class="icon icon-sm icon-white">
+                                <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-right"></use>
+                            </svg>
+                        </button>
+                    </nav>
+                    <div class="alert alert-success cmp-disclaimer d-none rounded" id="alert-message" role="alert" :class="{ 'd-none': !showSaveAlert }" x-cloak x-transition>
+                        <span class="cmp-disclaimer__message d-inline-block text-uppercase">Richiesta salvata con successo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-grey-card shadow-contacts">
+    <div class="container">
+        <div class="d-flex justify-content-center p-contacts row">
+            <div class="col-12 col-lg-5">
+                <div class="cmp-contacts">
+                    <div class="card w-100">
+                        <div class="card-body">
+                            <h2 class="title-medium-2-semi-bold">Contatta il comune</h2>
+                            <ul class="contact-list p-0">
+                                <li><a class="list-item" href="#"><svg aria-hidden="true" class="icon icon-primary icon-sm">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-help-circle"></use>
+                                        </svg><span>Leggi le domande frequenti</span></a></li>
+                                <li><a class="list-item" data-element="contacts" href="#"><svg aria-hidden="true" class="icon icon-primary icon-sm">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-mail"></use>
+                                        </svg><span>Richiedi assistenza</span></a></li>
+                                <li><a class="list-item" href="#"><svg aria-hidden="true" class="icon icon-primary icon-sm">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-hearing"></use>
+                                        </svg><span>Chiama il numero verde 05 0505</span></a></li>
+                                <li><a class="list-item" data-element="appointment-booking" href="#"><svg aria-hidden="true" class="icon icon-primary icon-sm">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-calendar"></use>
+                                        </svg><span>Prenota appuntamento</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>        <!--[if ENDBLOCK]><![endif]-->    </div>
+    </main>
+
+    <div class="modal fade search-modal" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content perfect-scrollbar">
+            <div class="modal-body">
+                <form>
+                    <div class="container">
+                        <div class="row variable-gutters">
+                            <div class="col">
+                                <div class="modal-title">
+                                    <button class="search-link d-md-none" type="button" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="Chiudi e torna alla pagina precedente">
+                                        <svg class="icon icon-md">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-left"></use>
+                                        </svg>
+                                    </button>
+                                    <h2>Cerca</h2>
+                                    <button class="search-link d-none d-md-block" type="button" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="Chiudi e torna alla pagina precedente">
+                                        <svg class="icon icon-md">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="form-group autocomplete-wrapper">
+                                    <label for="autocomplete-two" class="visually-hidden">Cerca nel sito</label>
+                                    <input type="search" class="autocomplete ps-5" placeholder="Cerca nel sito" id="autocomplete-two" name="autocomplete-two" data-bs-autocomplete="[]">
+                                    <span class="autocomplete-icon" aria-hidden="true">
+                                        <svg class="icon"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-search"></use></svg>
+                                    </span>
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="">Cerca</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row variable-gutters">
+                            <div class="col-lg-5">
+                                <div class="searches-list-wrapper">
+                                    <div class="other-link-title">FORSE STAVI CERCANDO</div>
+                                    <ul class="searches-list">
+                                        <li><a href="#">Rilascio Carta Identità Elettronica (CIE)</a></li>
+                                        <li><a href="#">Cambio di residenza</a></li>
+                                        <li><a href="#">Tributi online</a></li>
+                                        <li><a href="#">Prenotazione appuntamenti</a></li>
+                                        <li><a href="#">Rilascio tessera elettorale</a></li>
+                                        <li><a href="#">Voucher connettività</a></li>
+                                    </ul><!-- /searches-list -->
+                                </div><!-- /searches-list-wrapper -->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer class="it-footer" id="footer">
+    <div class="it-footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 footer-items-wrapper logo-wrapper">
+                    <img class="ue-logo" src="/themes/Sixteen/design-comuni/assets/images/logo-eu-inverted.svg" alt="logo Unione Europea">
+                    <div class="it-brand-wrapper">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa"></use>
+                            </svg>
+                            <div class="it-brand-text">
+                                <h2 class="no_toc">Nome del Comune</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 footer-items-wrapper">
+                    <h4 class="footer-heading-title">Amministrazione</h4>
+                    <ul class="footer-list">
+                        <li><a href="#">Organi di governo</a></li>
+                        <li><a href="#">Aree amministrative</a></li>
+                        <li><a href="#">Uffici</a></li>
+                        <li><a href="#">Enti e fondazioni</a></li>
+                        <li><a href="#">Politici</a></li>
+                        <li><a href="#">Personale amministrativo</a></li>
+                        <li><a href="#">Documenti e dati</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 footer-items-wrapper">
+                    <h4 class="footer-heading-title">Categorie di servizio</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="footer-list">
+                                <li><a href="#">Anagrafe e stato civile</a></li>
+                                <li><a href="#">Cultura e tempo libero</a></li>
+                                <li><a href="#">Vita lavorativa</a></li>
+                                <li><a href="#">Imprese e commercio</a></li>
+                                <li><a href="#">Appalti pubblici</a></li>
+                                <li><a href="#">Catasto e urbanistica</a></li>
+                                <li><a href="#">Turismo</a></li>
+                                <li><a href="#">Mobilità e trasporti</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="footer-list">
+                                <li><a href="#">Educazione e formazione</a></li>
+                                <li><a href="#">Giustizia e sicurezza pubblica</a></li>
+                                <li><a href="#">Tributi, finanze e contravvenzioni</a></li>
+                                <li><a href="#">Ambiente</a></li>
+                                <li><a href="#">Salute, benessere e assistenza</a></li>
+                                <li><a href="#">Autorizzazioni</a></li>
+                                <li><a href="#">Agricoltura e pesca</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 footer-items-wrapper">
+                    <h4 class="footer-heading-title">Novità</h4>
+                    <ul class="footer-list">
+                        <li><a href="#">Notizie</a></li>
+                        <li><a href="#">Comunicati</a></li>
+                        <li><a href="#">Avvisi</a></li>
+                    </ul>
+                    <h4 class="footer-heading-title">Vivere il comune</h4>
+                    <ul class="footer-list">
+                        <li><a href="#">Luoghi</a></li>
+                        <li><a href="#">Eventi</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-9 mt-md-4 footer-items-wrapper">
+                    <h4 class="footer-heading-title">Contatti</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p class="footer-info">Comune di Nome Comune<br>
+                                Via Roma 123 - 00100 Comune<br>
+                                Codice fiscale / P. IVA: 00123456789<br><br>
+                                <a href="#">Ufficio Relazioni con il Pubblico</a><br>
+                                Numero verde: 800 016 123<br>
+                                SMS e WhatsApp: +39 320 1234567<br>
+                                Posta Elettronica Certificata<br>
+                                Centralino unico: 012 3456
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="footer-list">
+                                <li><a href="#" data-element="faq">Leggi le FAQ</a></li>
+                                <li><a href="#">Prenotazione appuntamento</a></li>
+                                <li><a href="#" data-element="report-inefficiency">Segnalazione disservizio</a></li>
+                                <li><a href="#">Richiesta d'assistenza</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="footer-list">
+                                <li><a href="#">Amministrazione trasparente</a></li>
+                                <li><a href="#" data-element="privacy-policy-link">Informativa privacy</a></li>
+                                <li><a href="#" data-element="legal-notes">Note legali</a></li>
+                                <li><a href="#" data-element="accessibility-link">Dichiarazione di accessibilità</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-md-4 footer-items-wrapper">
+                    <h4 class="footer-heading-title">Seguici su</h4>
+                    <ul class="list-inline text-start social">
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"></use>
+                                </svg>
+                                <span class="visually-hidden">Twitter</span></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"></use>
+                                </svg>
+                                <span class="visually-hidden">Facebook</span></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"></use>
+                                </svg>
+                                <span class="visually-hidden">YouTube</span></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"></use>
+                                </svg>
+                                <span class="visually-hidden">Telegram</span></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"></use>
+                                </svg>
+                                <span class="visually-hidden">Whatsapp</span></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"></use>
+                                </svg>
+                                <span class="visually-hidden">RSS</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 footer-items-wrapper">
+                    <div class="footer-bottom">
+                        <a href="#">Media policy</a>
+                        <a href="#">Mappa del sito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+                    
+            <link rel="preload" as="style" href="http://127.0.0.1:8000/themes/Sixteen/assets/app-BRKXMWAJ.css" /><link rel="modulepreload" as="script" href="http://127.0.0.1:8000/themes/Sixteen/assets/app-DYvQ-VW5.js" /><link rel="stylesheet" href="http://127.0.0.1:8000/themes/Sixteen/assets/app-BRKXMWAJ.css" data-navigate-track="reload" /><script type="module" src="http://127.0.0.1:8000/themes/Sixteen/assets/app-DYvQ-VW5.js" data-navigate-track="reload"></script>        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const darkModeToggle = document.getElementById('darkModeToggle');
+                if (darkModeToggle) {
+                    darkModeToggle.addEventListener('click', function() {
+                        const html = document.documentElement;
+                        const isDark = html.classList.contains('dark');
+                        if (isDark) {
+                            html.classList.remove('dark');
+                            localStorage.setItem('dark_mode', 'false');
+                        } else {
+                            html.classList.add('dark');
+                            localStorage.setItem('dark_mode', 'true');
+                        }
+                    });
+                }
+            });
+        </script>
+    <!-- Livewire Scripts -->
+<script src="http://127.0.0.1:8000/livewire-88e501d9/livewire.js?id=698c71c1"   data-csrf="ChzQUtN4VOS3xzTgecgsCXkB2cATtq18386fmfMB" data-module-url="http://127.0.0.1:8000/livewire-88e501d9" data-update-uri="http://127.0.0.1:8000/livewire-88e501d9/update" data-navigate-once="true"></script>
+</body>
+</html>

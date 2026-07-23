@@ -1,0 +1,105 @@
+/* Wizard Mobile First Responsive Fixes */
+
+/* Hide "Informazioni richieste" title on mobile */
+.wizard-side-index-title {
+    @apply sr-only;
+}
+
+/* Show sidebar index only on desktop */
+@media (min-width: 992px) {
+    .wizard-side-index-title {
+        @apply block text-sm font-semibold text-gray-800 mb-3;
+    }
+}
+
+/* Stepper responsive adjustments */
+.steppers {
+    @apply mb-4;
+}
+
+.step-list {
+    @apply flex overflow-x-auto pb-2 scrollbar-hide;
+}
+
+.step-item {
+    @apply flex-shrink-0 mr-4;
+}
+
+.step-icon {
+    @apply w-8 h-8 rounded-full flex items-center justify-center text-white font-semibold text-sm;
+}
+
+.step-title {
+    @apply block text-xs font-medium mt-1 whitespace-nowrap;
+}
+
+/* Progress bar responsive */
+.progress-step {
+    @apply mt-2;
+}
+
+.progress-bar {
+    @apply h-2 bg-gray-200 rounded-full overflow-hidden;
+}
+
+/* Form section spacing - reduce excess space */
+.wizard-section-card {
+    @apply mb-4;
+}
+
+.wizard-section-card .section-content {
+    @apply p-4 md:p-6;
+}
+
+/* Wizard actions responsive */
+.wizard-actions {
+    @apply flex justify-between items-center mt-6 pt-4 border-t border-gray-200;
+}
+
+@media (max-width: 768px) {
+    .wizard-actions {
+        @apply flex-col gap-3;
+    }
+
+    .wizard-btn-back,
+    .wizard-btn-next {
+        @apply w-full justify-center;
+    }
+
+    /* Hide stepper title on mobile */
+    .steppers .step-list {
+        @apply pb-4;
+    }
+
+    /* Reduce map height on mobile */
+    .latitude-longitude-map-canvas {
+        @apply h-64;
+    }
+}
+
+@media (max-width: 480px) {
+    .latitude-longitude-map-canvas {
+        @apply h-56;
+    }
+
+    .wizard-section-card .section-content {
+        @apply p-3;
+    }
+}
+
+/* Container responsive adjustments */
+.container {
+    @apply px-4;
+}
+
+@media (min-width: 768px) {
+    .container {
+        @apply px-6;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        @apply px-8;
+    }
+}

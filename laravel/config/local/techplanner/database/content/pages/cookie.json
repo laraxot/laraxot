@@ -1,0 +1,57 @@
+{
+    "id": "11",
+    "title": {
+        "it": "Cookie Policy - Sottana Service",
+        "en": "Cookie Policy - Sottana Service"
+    },
+    "slug": "cookie",
+    "middleware": null,
+    "content": null,
+    "content_blocks": {
+        "it": [
+            {
+                "type": "hero",
+                "slug": "hero-cookie",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.page",
+                    "title": "Cookie Policy",
+                    "subtitle": "Informativa sull'uso dei cookie",
+                    "bg_color": "brand-blue"
+                }
+            },
+            {
+                "type": "content",
+                "slug": "cookie-content",
+                "data": {
+                    "view": "pub_theme::components.blocks.content.legal",
+                    "title": "Informativa Cookie",
+                    "content": "<p>Questo sito utilizza i cookie per migliorare l'esperienza di navigazione. Di seguito ti informiamo sulle tipologie di cookie utilizzati.</p><h3>Cosa sono i cookie</h3><p>I cookie sono piccoli file di testo che i siti visitati inviano al tuo dispositivo, dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla visita successiva.</p><h3>Tipologie di cookie utilizzati</h3><p><strong>Cookie tecnici (necessari):</strong> Questi cookie sono essenziali per il funzionamento del sito e non possono essere disabilitati. Includono cookie di sessione, cookie di autenticazione e cookie di sicurezza.</p><p><strong>Cookie analitici:</strong> Utilizziamo Google Analytics per raccogliere informazioni anonime sulle visite al sito, come il numero di visitatori, le pagine più visitate e il tempo di permanenza. Questi dati ci aiutano a migliorare il sito. IP anonimizzato.</p><p><strong>Cookie di marketing:</strong> Utilizzati per mostrare annunci pertinenti agli interessi dell'utente (solo se hai dato consenso).</p><h3>Durata dei cookie</h3><ul><li>Cookie di sessione: vengono eliminati alla chiusura del browser</li><li>Cookie persistenti: rimangono memorizzati per un periodo variabile da pochi giorni a diversi mesi</li></ul><h3>Gestione dei cookie</h3><p>Puoi gestire le preferenze sui cookie attraverso le impostazioni del tuo browser. La maggior parte dei browser permette di:</p><ul><li>Visualizzare i cookie presenti ed eliminarli singolarmente</li><li>Bloccare i cookie di terze parti</li><li>Bloccare tutti i cookie</li><li>Ricevere un avviso prima dell'installazione di un cookie</li></ul><p>Tieni presente che disabilitare i cookie tecnici potrebbe compromettere il funzionamento del sito.</p><h3>Cookie di terze parti</h3><p>Questo sito utilizza servizi di terze parti che potrebbero installare cookie:</p><ul><li><strong>Google Analytics:</strong> per analisi statistiche anonime (IP anonimizzato)</li><li><strong>Google Maps:</strong> per la visualizzazione delle mappe (solo se presente)</li></ul><h3>Aggiornamenti</h3><p>Questa informativa può essere aggiornata periodicamente. Ti invitiamo a consultarla regolarmente.</p><p>Ultimo aggiornamento: Febbraio 2026</p>"
+                }
+            }
+        ],
+        "en": [
+            {
+                "type": "hero",
+                "slug": "hero-cookie",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.page",
+                    "title": "Cookie Policy",
+                    "subtitle": "Information on cookie usage",
+                    "bg_color": "brand-blue"
+                }
+            }
+        ]
+    },
+    "sidebar_blocks": {
+        "it": [],
+        "en": []
+    },
+    "footer_blocks": {
+        "it": [],
+        "en": []
+    },
+    "created_at": "2026-02-06T11:00:00.000000Z",
+    "updated_at": "2026-02-06T18:00:00.000000Z",
+    "created_by": null,
+    "updated_by": "01985ae8-8039-71ea-88c7-54ebce6295b0"
+}

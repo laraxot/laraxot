@@ -1,0 +1,286 @@
+=== PHPStan Analysis for Geo ===
+Date: Thu Jul 16 10:03:00 AM CEST 2026
+Configuration: /var/www/_bases/base_techplanner_fila5/laravel/phpstan.neon
+============================================
+
+   0/491 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%
+  20/491 [▓░░░░░░░░░░░░░░░░░░░░░░░░░░░]   4%
+ 298/491 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░]  60%
+ 491/491 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+Instructions for interpreting errors
+---------
+
+Each error has an associated identifier, like `argument.type`
+or `return.missing`.
+
+Each error identifier has documentation at URL https://phpstan.org/error-identifiers/<identifier>
+This page contains code example, explanation why is this an error
+and instruction how to fix it.
+Before fixing the error, fetch the documentation page for its identifier.
+
+The error usually indicates a real bug or incorrect type in the code. Fix the underlying cause, do not just make the error go away.
+Do not add `@phpstan-ignore` comments, `@phpstan-ignore-next-line` comments, or baseline entries to suppress the error.
+Do not use assert() or inline @var PHPDoc tag to override PHPStan's inferred type.
+Do not add type casts just to silence errors.
+Do not widen parameter or return types just to make the error go away.
+ ------ ----------------------------------------------------------------------- 
+  Line   app/Filament/Pages/Dashboard.php                                       
+ ------ ----------------------------------------------------------------------- 
+  15     Return type (list<class-string>) of method Modules\Geo\Filament\Pages  
+         \Dashboard::getWidgets() should be compatible with return type (array  
+         <string, mixed>) of method Modules\Xot\Filament\Pages\XotBaseDashboar  
+         d::getWidgets()                                                        
+         🪪  method.childReturnType                                             
+         ✏️  app/Filament/Pages/Dashboard.php                                   
+ ------ ----------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------- 
+  Line   app/Filament/Widgets/LatLngWidget.php                               
+ ------ -------------------------------------------------------------------- 
+  18     No error with identifier property.defaultValue is reported on line  
+         18.                                                                 
+         🪪  ignore.unmatchedIdentifier (non-ignorable)                      
+         ✏️  app/Filament/Widgets/LatLngWidget.php                           
+ ------ -------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------- 
+  Line   app/Filament/Widgets/LocationWidget.php                             
+ ------ -------------------------------------------------------------------- 
+  49     No error with identifier property.defaultValue is reported on line  
+         49.                                                                 
+         🪪  ignore.unmatchedIdentifier (non-ignorable)                      
+         ✏️  app/Filament/Widgets/LocationWidget.php                         
+ ------ -------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------- 
+  Line   app/Filament/Widgets/WebbingbrasilMap.php                           
+ ------ -------------------------------------------------------------------- 
+  19     No error with identifier property.defaultValue is reported on line  
+         19.                                                                 
+         🪪  ignore.unmatchedIdentifier (non-ignorable)                      
+         ✏️  app/Filament/Widgets/WebbingbrasilMap.php                       
+ ------ -------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/CalculateDistanceActionTest.php                 
+ ------ ------------------------------------------------------------------- 
+  26     Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  50     Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  64     Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  78     Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  92     Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  106    Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  120    Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  134    Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  148    Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  154    Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  160    Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  166    Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  172    Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  183    Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  189    Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  195    Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  201    Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  220    Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+  245    Class Modules\Geo\Actions\CalculateDistanceAction does not have a  
+         constructor and must be instantiated without any parameters.       
+         🪪  new.noConstructor                                              
+         ✏️  tests/Unit/Actions/CalculateDistanceActionTest.php             
+ ------ ------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Elevation/GetElevationActionTest.php               
+ ------ ---------------------------------------------------------------------- 
+  16     Class Modules\Geo\Actions\Elevation\GetElevationAction does not have  
+         a constructor and must be instantiated without any parameters.        
+         🪪  new.noConstructor                                                 
+         ✏️  tests/Unit/Actions/Elevation/GetElevationActionTest.php           
+  32     Class Modules\Geo\Actions\Elevation\GetElevationAction does not have  
+         a constructor and must be instantiated without any parameters.        
+         🪪  new.noConstructor                                                 
+         ✏️  tests/Unit/Actions/Elevation/GetElevationActionTest.php           
+  43     Class Modules\Geo\Actions\Elevation\GetElevationAction does not have  
+         a constructor and must be instantiated without any parameters.        
+         🪪  new.noConstructor                                                 
+         ✏️  tests/Unit/Actions/Elevation/GetElevationActionTest.php           
+  54     Class Modules\Geo\Actions\Elevation\GetElevationAction does not have  
+         a constructor and must be instantiated without any parameters.        
+         🪪  new.noConstructor                                                 
+         ✏️  tests/Unit/Actions/Elevation/GetElevationActionTest.php           
+  65     Class Modules\Geo\Actions\Elevation\GetElevationAction does not have  
+         a constructor and must be instantiated without any parameters.        
+         🪪  new.noConstructor                                                 
+         ✏️  tests/Unit/Actions/Elevation/GetElevationActionTest.php           
+  76     Class Modules\Geo\Actions\Elevation\GetElevationAction does not have  
+         a constructor and must be instantiated without any parameters.        
+         🪪  new.noConstructor                                                 
+         ✏️  tests/Unit/Actions/Elevation/GetElevationActionTest.php           
+  87     Class Modules\Geo\Actions\Elevation\GetElevationAction does not have  
+         a constructor and must be instantiated without any parameters.        
+         🪪  new.noConstructor                                                 
+         ✏️  tests/Unit/Actions/Elevation/GetElevationActionTest.php           
+  98     Class Modules\Geo\Actions\Elevation\GetElevationAction does not have  
+         a constructor and must be instantiated without any parameters.        
+         🪪  new.noConstructor                                                 
+         ✏️  tests/Unit/Actions/Elevation/GetElevationActionTest.php           
+  109    Class Modules\Geo\Actions\Elevation\GetElevationAction does not have  
+         a constructor and must be instantiated without any parameters.        
+         🪪  new.noConstructor                                                 
+         ✏️  tests/Unit/Actions/Elevation/GetElevationActionTest.php           
+  115    Class Modules\Geo\Actions\Elevation\GetElevationAction does not have  
+         a constructor and must be instantiated without any parameters.        
+         🪪  new.noConstructor                                                 
+         ✏️  tests/Unit/Actions/Elevation/GetElevationActionTest.php           
+  121    Class Modules\Geo\Actions\Elevation\GetElevationAction does not have  
+         a constructor and must be instantiated without any parameters.        
+         🪪  new.noConstructor                                                 
+         ✏️  tests/Unit/Actions/Elevation/GetElevationActionTest.php           
+  127    Class Modules\Geo\Actions\Elevation\GetElevationAction does not have  
+         a constructor and must be instantiated without any parameters.        
+         🪪  new.noConstructor                                                 
+         ✏️  tests/Unit/Actions/Elevation/GetElevationActionTest.php           
+  133    Class Modules\Geo\Actions\Elevation\GetElevationAction does not have  
+         a constructor and must be instantiated without any parameters.        
+         🪪  new.noConstructor                                                 
+         ✏️  tests/Unit/Actions/Elevation/GetElevationActionTest.php           
+ ------ ---------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/FilterCoordinatesInRadiusActionTest.php           
+ ------ --------------------------------------------------------------------- 
+  20     Class Modules\Geo\Actions\CalculateDistanceAction does not have a    
+         constructor and must be instantiated without any parameters.         
+         🪪  new.noConstructor                                                
+         ✏️  tests/Unit/Actions/FilterCoordinatesInRadiusActionTest.php       
+  20     Class Modules\Geo\Actions\FilterCoordinatesInRadiusAction does not   
+         have a constructor and must be instantiated without any parameters.  
+         🪪  new.noConstructor                                                
+         ✏️  tests/Unit/Actions/FilterCoordinatesInRadiusActionTest.php       
+  36     Class Modules\Geo\Actions\CalculateDistanceAction does not have a    
+         constructor and must be instantiated without any parameters.         
+         🪪  new.noConstructor                                                
+         ✏️  tests/Unit/Actions/FilterCoordinatesInRadiusActionTest.php       
+  36     Class Modules\Geo\Actions\FilterCoordinatesInRadiusAction does not   
+         have a constructor and must be instantiated without any parameters.  
+         🪪  new.noConstructor                                                
+         ✏️  tests/Unit/Actions/FilterCoordinatesInRadiusActionTest.php       
+  52     Class Modules\Geo\Actions\CalculateDistanceAction does not have a    
+         constructor and must be instantiated without any parameters.         
+         🪪  new.noConstructor                                                
+         ✏️  tests/Unit/Actions/FilterCoordinatesInRadiusActionTest.php       
+  52     Class Modules\Geo\Actions\FilterCoordinatesInRadiusAction does not   
+         have a constructor and must be instantiated without any parameters.  
+         🪪  new.noConstructor                                                
+         ✏️  tests/Unit/Actions/FilterCoordinatesInRadiusActionTest.php       
+  64     Class Modules\Geo\Actions\FilterCoordinatesInRadiusAction does not   
+         have a constructor and must be instantiated without any parameters.  
+         🪪  new.noConstructor                                                
+         ✏️  tests/Unit/Actions/FilterCoordinatesInRadiusActionTest.php       
+  65     Class Modules\Geo\Actions\CalculateDistanceAction does not have a    
+         constructor and must be instantiated without any parameters.         
+         🪪  new.noConstructor                                                
+         ✏️  tests/Unit/Actions/FilterCoordinatesInRadiusActionTest.php       
+  77     Class Modules\Geo\Actions\CalculateDistanceAction does not have a    
+         constructor and must be instantiated without any parameters.         
+         🪪  new.noConstructor                                                
+         ✏️  tests/Unit/Actions/FilterCoordinatesInRadiusActionTest.php       
+  77     Class Modules\Geo\Actions\FilterCoordinatesInRadiusAction does not   
+         have a constructor and must be instantiated without any parameters.  
+         🪪  new.noConstructor                                                
+         ✏️  tests/Unit/Actions/FilterCoordinatesInRadiusActionTest.php       
+ ------ --------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/IPGeolocation/GetLocationFromIPActionTest.php      
+ ------ ---------------------------------------------------------------------- 
+  27     Class Modules\Geo\Actions\IPGeolocation\GetLocationFromIPAction does  
+         not have a constructor and must be instantiated without any           
+         parameters.                                                           
+         🪪  new.noConstructor                                                 
+         ✏️  tests/Unit/Actions/IPGeolocation/GetLocationFromIPActionTest.php  
+  38     Class Modules\Geo\Actions\IPGeolocation\GetLocationFromIPAction does  
+         not have a constructor and must be instantiated without any           
+         parameters.                                                           
+         🪪  new.noConstructor                                                 
+         ✏️  tests/Unit/Actions/IPGeolocation/GetLocationFromIPActionTest.php  
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Maps/BuildGeoMapWidgetPayloadActionTest.php         
+ ------ ----------------------------------------------------------------------- 
+  32     Method                                                                 
+         Modules\Geo\Actions\Maps\BuildGeoMapWidgetPayloadAction@anonymous/tes  
+         ts/Unit/Actions/Maps/BuildGeoMapWidgetPayloadActionTest.php:28::__con  
+         struct() has parameter $places with generic class                      
+         Illuminate\Database\Eloquent\Collection but does not specify its       
+         types: TKey, TModel                                                    
+         🪪  missingType.generics                                               
+         ✏️  tests/Unit/Actions/Maps/BuildGeoMapWidgetPayloadActionTest.php     
+ ------ ----------------------------------------------------------------------- 
+
+ -- --------------------------------------------------------------------------- 
+     Error                                                                      
+ -- --------------------------------------------------------------------------- 
+     Ignored error pattern #PHPDoc tag @mixin contains unknown class # was not  
+     matched in reported errors.                                                
+ -- --------------------------------------------------------------------------- 
+
+ [ERROR] Found 50 errors                                                        
+
+
+=== END ANALYSIS ===

@@ -1,0 +1,1 @@
+in http://127.0.0.1:8001/it nella headernav si vede a sinistra scritto "Marco Sottana Consulenza Sicurezza" modifica con "Sottana Service" e metti a sx di "Sottana Service" un logo vettoriale di un elefante stilizzato di profilo con proboscide a destra

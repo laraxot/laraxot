@@ -1,0 +1,99 @@
+/* v2 */
+/**
+ * /it/auth/login — LAYOUT ONLY.
+ *
+ * I colori e i bordi arrivano da:
+ *   - FoFormShell  → components/fo-filament-form-shell.css  (bordo wrapper, focus, suffix)
+ *   - PA Tokens    → components/civic-design-tokens.css    (--fixcity-primary, --fixcity-field-*)
+ *   - PaDesignColors → Modules\Xot\Support\PaDesignColors   (Filament primary verde #007A52)
+ *   - XotServiceProvider::registerPaFilamentColors()       (FilamentColor::register FO widget)
+ *   - ApplyMetatagToPanelAction                            (colors su ogni XotBasePanelProvider)
+ *
+ * VIETATO qui:
+ *   - Hex `#007A52` / `#006945` / `#5c6f82` su `body[data-page='auth-login']`
+ *   - Override di `bg-primary-*` / `hover:bg-primary-*` su CTA
+ *   - Ridefinire `border` / `box-shadow` su `.fi-input-wrp` (è compito di fo-filament-form-shell)
+ *
+ * REGOLE: docs/Themes/Sixteen/docs/architecture/fo-pa-tokens-uniformity.md
+ *          laravel/docs/wiki/memories/pa-design-colors-no-hex-overrides.md
+ *
+ * Scope: `body[data-page="auth-login"]` (anche `auth-register` se l'override è solo di layout).
+ */
+body[data-page='auth-login'] main,
+body[data-page='auth-register'] main {
+    @apply bg-slate-50;
+}
+
+body[data-page='auth-login'] .auth-login-card .fi-section,
+body[data-page='auth-register'] .auth-register-card .fi-section {
+    @apply rounded-none border-0 shadow-none;
+}
+
+/* Helper testo Filament v5 (fi-sc-dense sotto il campo) */
+body[data-page='auth-login'] .fo-filament-form-shell .fi-sc.fi-inline.fi-sc-dense,
+body[data-page='auth-register'] .fo-filament-form-shell .fi-sc.fi-inline.fi-sc-dense {
+    display: block;
+    margin-top: 0.25rem;
+}
+
+body[data-page='auth-login'] .fo-filament-form-shell .fi-sc.fi-inline.fi-sc-dense .fi-sc-text,
+body[data-page='auth-register'] .fo-filament-form-shell .fi-sc.fi-inline.fi-sc-dense .fi-sc-text {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: var(--dc-gray-medium, #5c6f82);
+}
+
+/* Password register: sempre colonna piena (no affiancamento stretto) */
+body[data-page='auth-register'] .fo-filament-form-shell .fi-grid-col:has([id='form.password']),
+body[data-page='auth-register'] .fo-filament-form-shell .fi-grid-col:has([id='form.password_confirmation']) {
+    grid-column: 1 / -1;
+}
+
+/* Skip-link già gestito da layout PA; qui solo eventuali tweak di posizione assenti. */
+
+/* ── Mobile layout fixes (< 640px) ──────────────────────────────────────────
+ *
+ * Obiettivo: card login occupa tutta la larghezza dello schermo (0 margini
+ * laterali), form shell senza box annidato, campo password non trabocca.
+ *
+ * Regola progetto: zero modifiche alle classi HTML — tutto qui via CSS.
+ */
+@media (max-width: 639px) {
+    /* 1. Card: margini negativi speculari al px-4 del container (DaisyUI: 1.5rem)
+     *    → la card esce oltre il padding e occupa tutta la larghezza dello schermo.
+     *    Il container mantiene il suo px-4 → titolo e header conservano il rientro. */
+    body[data-page='auth-login'] .auth-login-card {
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+        border-radius: 0;
+        border-left-width: 0;
+        border-right-width: 0;
+    }
+
+    /* 2. Card interior: DaisyUI sovrascrive p-5 con padding:3rem!important
+     *    → override con !important su sinistra/destra; il top/bottom rimane */
+    body[data-page='auth-login'] .auth-login-card > div {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
+
+    /* 3. Form shell: rimuove box annidato (border + padding) su mobile */
+    body[data-page='auth-login'] .fo-filament-form-shell {
+        border-width: 0;
+        border-radius: 0;
+        padding: 0;
+        background: transparent;
+    }
+
+    /* 4. fi-input-wrp (flex container input + "Mostra password"):
+     *    min-width:0 impedisce al campo password di traboccare */
+    body[data-page='auth-login'] .fi-input-wrp,
+    body[data-page='auth-login'] .fi-input-wrp > * {
+        min-width: 0;
+    }
+
+    body[data-page='auth-login'] .fi-input {
+        min-width: 0;
+        flex: 1 1 0%;
+    }
+}

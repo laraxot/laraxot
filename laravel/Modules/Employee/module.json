@@ -1,0 +1,17 @@
+{
+    "name": "Employee",
+    "alias": "employee",
+    "description": "Gestione dipendenti e risorse umane del sistema",
+    "keywords": ["employee", "hr", "human resources", "staff", "personnel"],
+    "priority": 0,
+    "providers": [
+        "Modules\\Employee\\Providers\\EmployeeServiceProvider",
+        "Modules\\Employee\\Providers\\Filament\\AdminPanelProvider"
+    ],
+    "migration": {
+        "seeds": [
+            "Modules\\Employee\\Database\\Seeders\\EmployeeSeeder"
+        ]
+    },
+    "files": []
+}

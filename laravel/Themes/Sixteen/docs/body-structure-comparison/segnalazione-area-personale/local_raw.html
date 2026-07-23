@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        
+
+        
+        <script>
+            if (typeof(Storage) !== "undefined") {
+                if (localStorage.getItem('dark_mode') && localStorage.getItem('dark_mode') == 'true') {
+                    document.documentElement.classList.add('dark');
+                }
+            }
+        </script>
+        <style>
+            [x-cloak] {
+                display: none !important;
+            }
+        </style>
+                            <link rel="preload" as="style" href="http://127.0.0.1:8000/themes/Sixteen/assets/app-C99pPht6.css" /><link rel="stylesheet" href="http://127.0.0.1:8000/themes/Sixteen/assets/app-C99pPht6.css" data-navigate-track="reload" />            <script id="browser-logger-active">
+(function() {
+    const ENDPOINT = 'http://127.0.0.1:8000/_boost/browser-logs';
+    const logQueue = [];
+    let flushTimeout = null;
+
+    console.log('🔍 Browser logger active (MCP server detected). Posting to: ' + ENDPOINT);
+
+    // Store original console methods
+    const originalConsole = {
+        log: console.log,
+        info: console.info,
+        error: console.error,
+        warn: console.warn,
+        table: console.table
+    };
+
+    // Helper to safely stringify values
+    function safeStringify(obj) {
+        const seen = new WeakSet();
+        return JSON.stringify(obj, (key, value) => {
+            if (typeof value === 'object' && value !== null) {
+                if (seen.has(value)) return '[Circular]';
+                seen.add(value);
+            }
+            if (value instanceof Error) {
+                return {
+                    name: value.name,
+                    message: value.message,
+                    stack: value.stack
+                };
+            }
+            return value;
+        });
+    }
+
+    // Batch and send logs
+    function flushLogs() {
+        if (logQueue.length === 0) return;
+
+        const batch = logQueue.splice(0, logQueue.length);
+
+        fetch(ENDPOINT, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            body: JSON.stringify({ logs: batch })
+        }).catch(err => {
+            // Silently fail to avoid infinite loops
+            originalConsole.error('Failed to send logs:', err);
+        });
+    }
+
+    // Debounced flush (100ms)
+    function scheduleFlush() {
+        if (flushTimeout) clearTimeout(flushTimeout);
+        flushTimeout = setTimeout(flushLogs, 100);
+    }
+
+    // Intercept console methods
+    ['log', 'info', 'error', 'warn', 'table'].forEach(method => {
+        console[method] = function(...args) {
+            // Call original method
+            originalConsole[method].apply(console, args);
+
+            // Capture log data
+            try {
+                logQueue.push({
+                    type: method,
+                    timestamp: new Date().toISOString(),
+                    data: args.map(arg => {
+                        try {
+                            return typeof arg === 'object' ? JSON.parse(safeStringify(arg)) : arg;
+                        } catch (e) {
+                            return String(arg);
+                        }
+                    }),
+                    url: window.location.href,
+                    userAgent: navigator.userAgent
+                });
+
+                scheduleFlush();
+            } catch (e) {
+                // Fail silently
+            }
+        };
+    });
+
+    // Global error handlers for uncaught errors
+    const originalOnError = window.onerror;
+    window.onerror = function boostErrorHandler(errorMsg, url, lineNumber, colNumber, error) {
+        try {
+            logQueue.push({
+                type: 'uncaught_error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: errorMsg,
+                    filename: url,
+                    lineno: lineNumber,
+                    colno: colNumber,
+                    error: error ? {
+                        name: error.name,
+                        message: error.message,
+                        stack: error.stack
+                    } : null
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Call original handler if it exists
+        if (originalOnError && typeof originalOnError === 'function') {
+            return originalOnError(errorMsg, url, lineNumber, colNumber, error);
+        }
+
+        // Let the error continue to propagate
+        return false;
+    }
+    window.addEventListener('error', (event) => {
+        try {
+            logQueue.push({
+                type: 'window_error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: event.message,
+                    filename: event.filename,
+                    lineno: event.lineno,
+                    colno: event.colno,
+                    error: event.error ? {
+                        name: event.error.name,
+                        message: event.error.message,
+                        stack: event.error.stack
+                    } : null
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Let the error continue to propagate
+        return false;
+    });
+    window.addEventListener('unhandledrejection', (event) => {
+        try {
+            logQueue.push({
+                type: 'error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: 'Unhandled Promise Rejection',
+                    reason: event.reason instanceof Error ? {
+                        name: event.reason.name,
+                        message: event.reason.message,
+                        stack: event.reason.stack
+                    } : event.reason
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Let the rejection continue to propagate
+        return false;
+    });
+
+    // Flush on page unload
+    window.addEventListener('beforeunload', () => {
+        if (logQueue.length > 0) {
+            navigator.sendBeacon(ENDPOINT, JSON.stringify({ logs: logQueue }));
+        }
+    });
+})();
+</script>
+<!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.list-item][wire\:loading\.list-item], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}[wire\:cloak] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}</style>
+</head>
+    <body class="page-tests-segnalazione-area-personale">
+        <div class="skiplink">
+        <a class="visually-hidden-focusable" href="#main-container">Vai ai contenuti</a>
+        <a class="visually-hidden-focusable" href="#footer">Vai al footer</a>
+    </div><!-- /skiplink -->
+
+    <header class="it-header-wrapper" data-bs-target="#header-nav-wrapper">
+    <div class="it-header-slim-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="it-header-slim-wrapper-content">
+                        <a class="d-lg-block navbar-brand" target="_blank" href="#" aria-label="Vai al portale {Nome della Regione} - link esterno - apertura nuova scheda" title="Vai al portale {Nome della Regione}">Nome della Regione</a>
+                        <div class="it-header-slim-right-zone" role="navigation">
+                            <div class="nav-item dropdown">
+                                <button type="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="languages" aria-haspopup="true">
+                                    <span class="visually-hidden">Lingua attiva:</span>
+                                    <span>ITA</span>
+                                    <svg class="icon">
+                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use>
+                                    </svg>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="link-list-wrapper">
+                                                <ul class="link-list">
+                                                    <li><a class="dropdown-item list-item" href="#"><span>ITA <span class="visually-hidden">selezionata</span></span></a></li>
+                                                    <li><a class="dropdown-item list-item" href="#"><span>ENG</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="btn btn-primary btn-icon btn-full" href="/it/tests/accesso-servizio" data-element="personal-area-login">
+                                <span class="rounded-icon" aria-hidden="true">
+                                    <svg class="icon icon-primary">
+                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-user"></use>
+                                    </svg>
+                                </span>
+                                <span class="d-none d-lg-block">Accedi all'area personale</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="it-nav-wrapper">
+        <div class="it-header-center-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="it-header-center-content-wrapper">
+                            <div class="it-brand-wrapper">
+                                <a href="/">
+                                    <svg width="82" height="82" class="icon" aria-hidden="true">
+                                        <image href="/themes/Sixteen/design-comuni/assets/images/logo-comune.svg"/>
+                                    </svg>
+                                    <div class="it-brand-text">
+                                        <div class="it-brand-title">Il mio Comune</div>
+                                        <div class="it-brand-tagline d-none d-md-block">Un comune da vivere</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="it-right-zone">
+                                <div class="it-socials d-none d-lg-flex">
+                                    <span>Seguici su</span>
+                                    <ul>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"></use>
+                                                </svg>
+                                                <span class="visually-hidden">Twitter</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"></use>
+                                                </svg>
+                                                <span class="visually-hidden">Facebook</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"></use>
+                                                </svg>
+                                                <span class="visually-hidden">YouTube</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"></use>
+                                                </svg>
+                                                <span class="visually-hidden">Telegram</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"></use>
+                                                </svg>
+                                                <span class="visually-hidden">Whatsapp</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"></use>
+                                                </svg>
+                                                <span class="visually-hidden">RSS</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="it-search-wrapper">
+                                    <span class="d-none d-md-block">Cerca</span>
+                                    <button class="search-link rounded-icon" type="button" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="Cerca nel sito">
+                                        <svg class="icon">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-search"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="it-header-navbar-wrapper" id="header-nav-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="navbar navbar-expand-lg has-megamenu">
+                            <button class="custom-navbar-toggler" type="button" aria-controls="nav4" aria-expanded="false" aria-label="Mostra/Nascondi la navigazione" data-bs-target="#nav4" data-bs-toggle="navbarcollapsible">
+                                <svg class="icon">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-burger"></use>
+                                </svg>
+                            </button>
+                            <div class="navbar-collapsable" id="nav4">
+                                <div class="overlay" style="display: none;"></div>
+                                <div class="close-div">
+                                    <button class="btn close-menu" type="button">
+                                        <span class="visually-hidden">Nascondi la navigazione</span>
+                                        <svg class="icon">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="menu-wrapper">
+                                    <a href="/" class="logo-hamburger">
+                                        <svg class="icon" aria-hidden="true">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa"></use>
+                                        </svg>
+                                        <div class="it-brand-text">
+                                            <div class="it-brand-title">Nome del Comune</div>
+                                        </div>
+                                    </a>
+                                    <nav aria-label="Principale">
+                                        <ul class="navbar-nav" data-element="main-navigation">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/it/tests/amministrazione" data-element="management">
+                                                    <span>Amministrazione</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/it/tests/novita" data-element="news">
+                                                    <span>Novità</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/it/tests/servizi" data-element="all-services">
+                                                    <span>Servizi</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/it/tests/eventi" data-element="live">
+                                                    <span>Vivere il Comune</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <nav aria-label="Secondaria">
+                                        <ul class="navbar-nav navbar-secondary">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Iscrizioni</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Estate in città</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Polizia locale</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/it/tests/argomenti" data-element="all-topics">
+                                                    <span>Tutti gli argomenti
+                                                        <svg class="icon icon-sm">
+                                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-right"></use>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <div class="it-socials">
+                                        <span>Seguici su</span>
+                                        <ul>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">Twitter</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">Facebook</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">YouTube</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">Telegram</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">Whatsapp</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">RSS</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div wire:key="lw-558597373-0" wire:snapshot="{&quot;data&quot;:{&quot;slug&quot;:&quot;segnalazione-area-personale&quot;,&quot;pageSlug&quot;:&quot;tests.segnalazione-area-personale&quot;,&quot;data&quot;:[{&quot;slug&quot;:&quot;segnalazione-area-personale&quot;},{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;1x6gBN6pNUiiadzvaooK&quot;,&quot;name&quot;:&quot;volt-anonymous-fragment-eyJuYW1lIjoidGVzdHMudmlldyIsInBhdGgiOiJUaGVtZXNcL1NpeHRlZW5cL3Jlc291cmNlc1wvdmlld3NcL3BhZ2VzXC90ZXN0c1wvW3NsdWddLmJsYWRlLnBocCJ9&quot;,&quot;path&quot;:&quot;it\/tests\/segnalazione-area-personale&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;attributes&quot;:{&quot;lang&quot;:&quot;it&quot;,&quot;_theme&quot;:{},&quot;isMobile&quot;:false,&quot;isTablet&quot;:false,&quot;isDesktop&quot;:true},&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;it&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;1f6253f55fb015df6f89dc62c6bdf81d52e0544b20b721d0a76f7ea059a4a316&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="1x6gBN6pNUiiadzvaooK" wire:name="volt-anonymous-fragment-eyJuYW1lIjoidGVzdHMudmlldyIsInBhdGgiOiJUaGVtZXNcL1NpeHRlZW5cL3Jlc291cmNlc1wvdmlld3NcL3BhZ2VzXC90ZXN0c1wvW3NsdWddLmJsYWRlLnBocCJ9" class="tests-view-wrapper">
+        
+        
+        <!--[if BLOCK]><![endif]-->            <div class="container" id="main-container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+            <div class="cmp-breadcrumbs" role="navigation">
+                <nav class="breadcrumb-container" aria-label="breadcrumb">
+                    <ol class="breadcrumb p-0" data-element="breadcrumb">
+                        <!--[if BLOCK]><![endif]-->                                                        <li class="breadcrumb-item">
+                                <!--[if BLOCK]><![endif]-->                                    <a href="/it/tests/homepage">Home</a><span class="separator">/</span>
+                                <!--[if ENDBLOCK]><![endif]-->                            </li>
+                                                                                <li class="breadcrumb-item active" aria-current=&quot;page&quot;>
+                                <!--[if BLOCK]><![endif]-->                                    Area personale
+                                <!--[if ENDBLOCK]><![endif]-->                            </li>
+                        <!--[if ENDBLOCK]><![endif]-->                    </ol>
+                </nav>
+            </div>
+            <div class="cmp-heading pb-3 pb-lg-4">
+                <h1 class="title-xxxlarge">Giulia Rossi</h1>
+                <p class="subtitle-small">CF: GLARSS72H25H501Y</p>
+            </div>
+        </div>
+
+        <div class="col-12 p-0">
+            <div class="cmp-nav-tab mb-4 mb-lg-5 mt-lg-4">
+                <ul class="nav nav-tabs nav-tabs-icon-text w-100 flex-nowrap" id="myTab" role="tablist">
+                    <!--[if BLOCK]><![endif]-->                                                <li class="nav-item w-100" role="tab">
+                            <a class="nav-link justify-content-start text-tab active" href="#data-ex-tab1" aria-current="page" aria-controls="data-ex-tab1" aria-selected="true" data-bs-toggle="tab" role="button">
+                                <svg class="icon me-1 mr-lg-10" aria-hidden="true">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa"></use>
+                                </svg>
+                                Scrivania
+                            </a>
+                        </li>
+                                                                    <li class="nav-item w-100" role="tab">
+                            <a class="nav-link justify-content-start text-tab" href="#data-ex-tab2" aria-current="page" aria-controls="data-ex-tab2" aria-selected="false" data-bs-toggle="tab" role="button">
+                                <svg class="icon me-1 mr-lg-10" aria-hidden="true">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-mail"></use>
+                                </svg>
+                                Messaggi
+                            </a>
+                        </li>
+                                                                    <li class="nav-item w-100" role="tab">
+                            <a class="nav-link justify-content-start text-tab" href="#data-ex-tab3" aria-current="page" aria-controls="data-ex-tab3" aria-selected="false" data-bs-toggle="tab" role="button">
+                                <svg class="icon me-1 mr-lg-10" aria-hidden="true">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-files"></use>
+                                </svg>
+                                Attività
+                            </a>
+                        </li>
+                                                                    <li class="nav-item w-100" role="tab">
+                            <a class="nav-link justify-content-start text-tab" href="#data-ex-tab4" aria-current="page" aria-controls="data-ex-tab4" aria-selected="false" data-bs-toggle="tab" role="button">
+                                <svg class="icon me-1 mr-lg-10" aria-hidden="true">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-settings"></use>
+                                </svg>
+                                Servizi
+                            </a>
+                        </li>
+                    <!--[if ENDBLOCK]><![endif]-->                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="it-page-sections-container">
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="data-ex-tab1" role="tabpanel">
+                <div class="row">
+                    <div class="d-none d-sm-none d-lg-block col-lg-3">
+                        <div class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-one">
+                            <nav class="navbar it-navscroll-wrapper navbar-expand-lg" aria-label="INDICE DELLA PAGINA" data-bs-navscroll>
+                                <div class="navbar-custom" id="navbarNavProgress">
+                                    <div class="menu-wrapper">
+                                        <div class="link-list-wrapper">
+                                            <div class="accordion">
+                                                <div class="accordion-item">
+                                                    <span class="accordion-header" id="accordion-title-one">
+                                                        <button class="accordion-button pb-10 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-one" aria-expanded="true" aria-controls="collapse-one">
+                                                            INDICE DELLA PAGINA
+                                                            <svg class="icon icon-xs right"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                                        </button>
+                                                    </span>
+                                                    <div class="progress">
+                                                        <div class="progress-bar it-navscroll-progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                    <div id="collapse-one" class="accordion-collapse collapse show" role="region" aria-labelledby="accordion-title-one">
+                                                        <div class="accordion-body">
+                                                            <ul class="link-list" data-element="page-index">
+                                                                <!--[if BLOCK]><![endif]-->                                                                    <li class="nav-item">
+                                                                        <a class="nav-link" href="#latest-posts"><span>Ultimi messaggi</span></a>
+                                                                    </li>
+                                                                                                                                    <li class="nav-item">
+                                                                        <a class="nav-link" href="#latest-activities"><span>Ultime attività</span></a>
+                                                                    </li>
+                                                                <!--[if ENDBLOCK]><![endif]-->                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-8 offset-lg-1 px-0 px-sm-3">
+                        <div class="it-page-section mb-40 mb-lg-60" id="latest-posts">
+                            <div class="cmp-card">
+                                <div class="card">
+                                    <div class="card-header border-0 p-0 mb-lg-20">
+                                        <div class="d-flex"><h2 class="title-xxlarge">Ultimi messaggi</h2></div>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <!--[if BLOCK]><![endif]-->                                            <div class="cmp-card-latest-messages mb-3" data-bs-toggle="modal" data-bs-target="#modal-message" id="1">
+                                                <div class="card shadow-sm px-4 pt-4 pb-4">
+                                                    <span class="visually-hidden">Categoria:</span>
+                                                    <div class="card-header border-0 p-0 m-0">
+                                                        <date class="date-xsmall">05/04/2022</date>
+                                                    </div>
+                                                    <div class="card-body p-0 my-2">
+                                                        <h3 class="title-small-semi-bold t-primary m-0 mb-1">
+                                                            <a href="#" class="text-decoration-none">Richiesta servizio mensa scolastica</a>
+                                                        </h3>
+                                                        <p class="text-paragraph text-truncate">La richiesta AN4059281 è stata approvata.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                    <div class="cmp-card-latest-messages mb-3" data-bs-toggle="modal" data-bs-target="#modal-message" id="2">
+                                                <div class="card shadow-sm px-4 pt-4 pb-4">
+                                                    <span class="visually-hidden">Categoria:</span>
+                                                    <div class="card-header border-0 p-0 m-0">
+                                                        <date class="date-xsmall">20/03/2022</date>
+                                                    </div>
+                                                    <div class="card-body p-0 my-2">
+                                                        <h3 class="title-small-semi-bold t-primary m-0 mb-1">
+                                                            <a href="#" class="text-decoration-none">Richiesta servizio mensa scolastica</a>
+                                                        </h3>
+                                                        <p class="text-paragraph text-truncate">La richiesta AN4059281 è stata ricevuta.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                    <div class="cmp-card-latest-messages mb-3" data-bs-toggle="modal" data-bs-target="#modal-message" id="3">
+                                                <div class="card shadow-sm px-4 pt-4 pb-4">
+                                                    <span class="visually-hidden">Categoria:</span>
+                                                    <div class="card-header border-0 p-0 m-0">
+                                                        <date class="date-xsmall">15/02/2022</date>
+                                                    </div>
+                                                    <div class="card-body p-0 my-2">
+                                                        <h3 class="title-small-semi-bold t-primary m-0 mb-1">
+                                                            <a href="#" class="text-decoration-none">Iscrizione alla scuola dell&#039;infanzia</a>
+                                                        </h3>
+                                                        <p class="text-paragraph text-truncate">La richiesta AFG059281 è stata ricevuta.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <!--[if ENDBLOCK]><![endif]-->                                        <!--[if BLOCK]><![endif]-->                                            <button type="button" class="btn btn-xs btn-me btn-label t-primary px-0"><span>Vedi altri messaggi</span></button>
+                                        <!--[if ENDBLOCK]><![endif]-->                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="it-page-section mb-50 mb-lg-90" id="latest-activities">
+                            <div class="cmp-card">
+                                <div class="card">
+                                    <div class="card-header border-0 p-0 mb-lg-20 m-0">
+                                        <div class="d-flex"><h2 class="title-xxlarge mb-3">Ultime attività</h2></div>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <!--[if BLOCK]><![endif]-->                                            <div class="cmp-icon-card mb-3">
+                                                <div class="card pt-20 pb-4 ps-4 pr-30 drop-shadow">
+                                                    <div class="cmp-card-title d-flex">
+                                                        <svg class="icon icon-sm me-2" aria-hidden="true"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-files"></use></svg>
+                                                        <h3 class="t-primary mb-2 underline title-small-semi-bold">
+                                                            <a href="#">Segnalazione disservizio</a>
+                                                        </h3>
+                                                    </div>
+                                                    <div class="cmp-icon-card__description"><date class="date-xsmall ml-30">15/04/2022</date></div>
+                                                </div>
+                                            </div>
+                                                                                    <div class="cmp-icon-card mb-3">
+                                                <div class="card pt-20 pb-4 ps-4 pr-30 drop-shadow">
+                                                    <div class="cmp-card-title d-flex">
+                                                        <svg class="icon icon-sm me-2" aria-hidden="true"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-files"></use></svg>
+                                                        <h3 class="t-primary mb-2 underline title-small-semi-bold">
+                                                            <a href="#">Pagamento contravvenzione</a>
+                                                        </h3>
+                                                    </div>
+                                                    <div class="cmp-icon-card__description"><date class="date-xsmall ml-30">23/01/2022</date></div>
+                                                </div>
+                                            </div>
+                                                                                    <div class="cmp-icon-card mb-3">
+                                                <div class="card pt-20 pb-4 ps-4 pr-30 drop-shadow">
+                                                    <div class="cmp-card-title d-flex">
+                                                        <svg class="icon icon-sm me-2" aria-hidden="true"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-files"></use></svg>
+                                                        <h3 class="t-primary mb-2 underline title-small-semi-bold">
+                                                            <a href="#">Richiesta assegno maternità</a>
+                                                        </h3>
+                                                    </div>
+                                                    <div class="cmp-icon-card__description"><date class="date-xsmall ml-30">01/10/2021</date></div>
+                                                </div>
+                                            </div>
+                                        <!--[if ENDBLOCK]><![endif]-->                                        <!--[if BLOCK]><![endif]-->                                            <button type="button" class="btn btn-xs btn-me btn-label t-primary px-0"><span>Vedi altre attività</span></button>
+                                        <!--[if ENDBLOCK]><![endif]-->                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="data-ex-tab2" role="tabpanel"></div>
+
+            <div class="tab-pane" id="data-ex-tab3" role="tabpanel">
+                <div class="row">
+                    <div class="d-none d-sm-none d-lg-block col-lg-3">
+                        <div class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-Three">
+                            <nav class="navbar it-navscroll-wrapper navbar-expand-lg" aria-label="INDICE DELLA PAGINA" data-bs-navscroll>
+                                <div class="navbar-custom" id="navbarNavProgress">
+                                    <div class="menu-wrapper">
+                                        <div class="link-list-wrapper">
+                                            <div class="accordion">
+                                                <div class="accordion-item">
+                                                    <span class="accordion-header" id="accordion-title-Three">
+                                                        <button class="accordion-button pb-10 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-Three" aria-expanded="true" aria-controls="collapse-Three">
+                                                            INDICE DELLA PAGINA
+                                                            <svg class="icon icon-xs right"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                                        </button>
+                                                    </span>
+                                                    <div class="progress">
+                                                        <div class="progress-bar it-navscroll-progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                    <div id="collapse-Three" class="accordion-collapse collapse show" role="region" aria-labelledby="accordion-title-Three">
+                                                        <div class="accordion-body">
+                                                            <ul class="link-list" data-element="page-index">
+                                                                <!--[if BLOCK]><![endif]-->                                                                    <li class="nav-item">
+                                                                        <a class="nav-link" href="#practices"><span>Pratiche</span></a>
+                                                                    </li>
+                                                                                                                                    <li class="nav-item">
+                                                                        <a class="nav-link" href="#payments"><span>Pagamenti</span></a>
+                                                                    </li>
+                                                                <!--[if ENDBLOCK]><![endif]-->                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-8 offset-lg-1 px-0 px-sm-3">
+                        <section class="it-page-section mb-40 mb-lg-60" id="practices">
+                            <div class="cmp-filter">
+                                <div class="filter-section">
+                                    <h2 class="cmp-filter__title title-xxlarge">Pratiche</h2>
+                                    <div class="filter-wrapper d-flex align-items-center">
+                                        <button type="button" class="btn p-0 pe-2 t-primary">
+                                            <span class="rounded-icon"><svg class="icon icon-primary icon-xs me-1" aria-hidden="true"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-funnel"></use></svg></span>
+                                            <span>Filtra</span>
+                                        </button>
+                                        <div class="dropdown">
+                                            <button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownMenu-pratiche" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="">
+                                                <svg class="icon-expand icon icon-sm icon-primary"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                                <span class="dropdown__title">Ordina</span>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenu-pratiche">
+                                                <div class="link-list-wrapper">
+                                                    <ul class="link-list">
+                                                        <!--[if BLOCK]><![endif]-->                                                            <li><a class="dropdown-item list-item" href="#"><span>Azione 1</span></a></li>
+                                                                                                                    <li><a class="dropdown-item list-item" href="#"><span>Azione 2</span></a></li>
+                                                                                                                    <li><a class="dropdown-item list-item" href="#"><span>Azione 3</span></a></li>
+                                                        <!--[if ENDBLOCK]><![endif]-->                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cmp-input-search">
+                                    <div class="form-group autocomplete-wrapper">
+                                        <div class="input-group">
+                                            <label for="autocomplete-pratiche" class="visually-hidden">Cerca nel sito</label>
+                                            <input type="search" class="autocomplete form-control" placeholder="Cerca" id="autocomplete-pratiche" name="pratiche" data-bs-autocomplete="[]">
+                                            <span class="autocomplete-icon" aria-hidden="true">
+                                                <svg class="icon icon-sm"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-search"></use></svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cmp-accordion">
+                                <div class="accordion">
+                                    <!--[if BLOCK]><![endif]-->                                        <div class="accordion-item">
+                                            <div class="accordion-header" id="heading1">
+                                                <button class="accordion-button collapsed title-snall-semi-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                                    <div class="button-wrapper">
+                                                        Segnalazione disservizio
+                                                        <div class="icon-wrapper">
+                                                            <img class="icon-folder" src="/themes/Sixteen/design-comuni/assets/images/folder-waiting.svg" alt="folder In attesa" role="img">
+                                                            <span class="u-main-black">In attesa</span>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                                <p class="accordion-date title-xsmall-regular mb-0">20/03/2022</p>
+                                            </div>
+
+                                            <div id="collapse1" class="accordion-collapse collapse p-0" data-bs-parent="#accordionExample1" role="region" aria-labelledby="heading1">
+                                                <div class="accordion-body">
+                                                    <p class="mb-2 fw-normal">Pratica: <span class="label">AN4059281</span></p>
+                                                    <a href="#" class="mb-2"><span class="t-primary">Scheda servizio</span></a>
+                                                    <a class="chip chip-simple" href="#"><span class="chip-label">Servizio non digitale</span></a>
+                                                    <!--[if BLOCK]><![endif]-->                                                        <div class="cmp-icon-list">
+                                                            <div class="link-list-wrapper">
+                                                                <ul class="link-list">
+                                                                    <!--[if BLOCK]><![endif]-->                                                                        <li class="shadow mt-3">
+                                                                            <a href="#" class="list-item icon-left t-primary title-small-semi-bold" aria-label="Ricevuta pagamento (PDF 80KB)">
+                                                                                <span class="list-item-title-icon-wrapper">
+                                                                                    <svg class="icon icon-sm align-self-start icon-color" aria-hidden="true"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-clip"></use></svg>
+                                                                                    <span class="list-item-title title-small-semi-bold">Ricevuta pagamento (PDF 80KB)</span>
+                                                                                </span>
+                                                                            </a>
+                                                                        </li>
+                                                                    <!--[if ENDBLOCK]><![endif]-->                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    <!--[if ENDBLOCK]><![endif]-->                                                    <button type="button" class="btn btn-primary justify-content-center my-3"><span>Perfeziona la richiesta</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="accordion-item">
+                                            <div class="accordion-header" id="heading2">
+                                                <button class="accordion-button collapsed title-snall-semi-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                                                    <div class="button-wrapper">
+                                                        Iscrizione corso di formazione
+                                                        <div class="icon-wrapper">
+                                                            <img class="icon-folder" src="/themes/Sixteen/design-comuni/assets/images/folder-concluded.svg" alt="folder Conclusa" role="img">
+                                                            <span class="">Conclusa</span>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                                <p class="accordion-date title-xsmall-regular mb-0">24/06/2021</p>
+                                            </div>
+
+                                            <div id="collapse2" class="accordion-collapse collapse p-0" data-bs-parent="#accordionExample2" role="region" aria-labelledby="heading2">
+                                                <div class="accordion-body">
+                                                    <p class="mb-2 fw-normal">Pratica: <span class="label">AN4059281</span></p>
+                                                    <a href="#" class="mb-2"><span class="t-primary">Scheda servizio</span></a>
+                                                    <a class="chip chip-simple" href="#"><span class="chip-label">Servizio non digitale</span></a>
+                                                    <!--[if BLOCK]><![endif]-->                                                        <div class="cmp-icon-list">
+                                                            <div class="link-list-wrapper">
+                                                                <ul class="link-list">
+                                                                    <!--[if BLOCK]><![endif]-->                                                                        <li class="shadow mt-3">
+                                                                            <a href="#" class="list-item icon-left t-primary title-small-semi-bold" aria-label="Ricevuta pagamento (PDF 80KB)">
+                                                                                <span class="list-item-title-icon-wrapper">
+                                                                                    <svg class="icon icon-sm align-self-start icon-color" aria-hidden="true"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-clip"></use></svg>
+                                                                                    <span class="list-item-title title-small-semi-bold">Ricevuta pagamento (PDF 80KB)</span>
+                                                                                </span>
+                                                                            </a>
+                                                                        </li>
+                                                                    <!--[if ENDBLOCK]><![endif]-->                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    <!--[if ENDBLOCK]><![endif]-->                                                    <button type="button" class="btn btn-primary justify-content-center my-3"><span>Perfeziona la richiesta</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="accordion-item">
+                                            <div class="accordion-header" id="heading3">
+                                                <button class="accordion-button collapsed title-snall-semi-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                                                    <div class="button-wrapper">
+                                                        Richiesta permesso ZTL
+                                                        <div class="icon-wrapper">
+                                                            <img class="icon-folder" src="/themes/Sixteen/design-comuni/assets/images/folder-concluded.svg" alt="folder Conclusa" role="img">
+                                                            <span class="">Conclusa</span>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                                <p class="accordion-date title-xsmall-regular mb-0">10/05/2021</p>
+                                            </div>
+
+                                            <div id="collapse3" class="accordion-collapse collapse p-0" data-bs-parent="#accordionExample3" role="region" aria-labelledby="heading3">
+                                                <div class="accordion-body">
+                                                    <p class="mb-2 fw-normal">Pratica: <span class="label">AN4059281</span></p>
+                                                    <a href="#" class="mb-2"><span class="t-primary">Scheda servizio</span></a>
+                                                    <a class="chip chip-simple" href="#"><span class="chip-label">Servizio non digitale</span></a>
+                                                    <!--[if BLOCK]><![endif]-->                                                        <div class="cmp-icon-list">
+                                                            <div class="link-list-wrapper">
+                                                                <ul class="link-list">
+                                                                    <!--[if BLOCK]><![endif]-->                                                                        <li class="shadow mt-3">
+                                                                            <a href="#" class="list-item icon-left t-primary title-small-semi-bold" aria-label="Ricevuta pagamento (PDF 80KB)">
+                                                                                <span class="list-item-title-icon-wrapper">
+                                                                                    <svg class="icon icon-sm align-self-start icon-color" aria-hidden="true"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-clip"></use></svg>
+                                                                                    <span class="list-item-title title-small-semi-bold">Ricevuta pagamento (PDF 80KB)</span>
+                                                                                </span>
+                                                                            </a>
+                                                                        </li>
+                                                                    <!--[if ENDBLOCK]><![endif]-->                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    <!--[if ENDBLOCK]><![endif]-->                                                    <button type="button" class="btn btn-primary justify-content-center my-3"><span>Perfeziona la richiesta</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="accordion-item">
+                                            <div class="accordion-header" id="heading4">
+                                                <button class="accordion-button collapsed title-snall-semi-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                                                    <div class="button-wrapper">
+                                                        Richiesta parcheggio residenti
+                                                        <div class="icon-wrapper">
+                                                            <img class="icon-folder" src="/themes/Sixteen/design-comuni/assets/images/folder-concluded.svg" alt="folder Conclusa" role="img">
+                                                            <span class="">Conclusa</span>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                                <p class="accordion-date title-xsmall-regular mb-0">06/03/2021</p>
+                                            </div>
+
+                                            <div id="collapse4" class="accordion-collapse collapse p-0" data-bs-parent="#accordionExample4" role="region" aria-labelledby="heading4">
+                                                <div class="accordion-body">
+                                                    <p class="mb-2 fw-normal">Pratica: <span class="label">AN4059281</span></p>
+                                                    <a href="#" class="mb-2"><span class="t-primary">Scheda servizio</span></a>
+                                                    <a class="chip chip-simple" href="#"><span class="chip-label">Servizio non digitale</span></a>
+                                                    <!--[if BLOCK]><![endif]-->                                                        <div class="cmp-icon-list">
+                                                            <div class="link-list-wrapper">
+                                                                <ul class="link-list">
+                                                                    <!--[if BLOCK]><![endif]-->                                                                        <li class="shadow mt-3">
+                                                                            <a href="#" class="list-item icon-left t-primary title-small-semi-bold" aria-label="Ricevuta pagamento (PDF 80KB)">
+                                                                                <span class="list-item-title-icon-wrapper">
+                                                                                    <svg class="icon icon-sm align-self-start icon-color" aria-hidden="true"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-clip"></use></svg>
+                                                                                    <span class="list-item-title title-small-semi-bold">Ricevuta pagamento (PDF 80KB)</span>
+                                                                                </span>
+                                                                            </a>
+                                                                        </li>
+                                                                    <!--[if ENDBLOCK]><![endif]-->                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    <!--[if ENDBLOCK]><![endif]-->                                                    <button type="button" class="btn btn-primary justify-content-center my-3"><span>Perfeziona la richiesta</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!--[if ENDBLOCK]><![endif]-->                                </div>
+                            </div>
+                            <!--[if BLOCK]><![endif]-->                                <button type="button" class="btn accordion-view-more mb-2 pt-3 t-primary title-xsmall-semi-bold ps-lg-3"><span>Vedi altre pratiche</span></button>
+                            <!--[if ENDBLOCK]><![endif]-->                        </section>
+
+                        <section class="it-page-section mb-50 mb-lg-90" id="payments">
+                            <div class="cmp-filter">
+                                <div class="filter-section">
+                                    <h2 class="cmp-filter__title title-xxlarge">Pagamenti</h2>
+                                    <div class="filter-wrapper d-flex align-items-center">
+                                        <button type="button" class="btn p-0 pe-2 t-primary">
+                                            <span class="rounded-icon"><svg class="icon icon-primary icon-xs me-1" aria-hidden="true"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-funnel"></use></svg></span>
+                                            <span>Filtra</span>
+                                        </button>
+                                        <div class="dropdown">
+                                            <button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownMenu-pagamenti" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="">
+                                                <svg class="icon-expand icon icon-sm icon-primary"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                                <span class="dropdown__title">Ordina</span>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenu-payments">
+                                                <div class="link-list-wrapper">
+                                                    <ul class="link-list">
+                                                        <!--[if BLOCK]><![endif]-->                                                            <li><a class="dropdown-item list-item" href="#"><span>Azione 1</span></a></li>
+                                                                                                                    <li><a class="dropdown-item list-item" href="#"><span>Azione 2</span></a></li>
+                                                                                                                    <li><a class="dropdown-item list-item" href="#"><span>Azione 3</span></a></li>
+                                                        <!--[if ENDBLOCK]><![endif]-->                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cmp-input-search">
+                                    <div class="form-group autocomplete-wrapper">
+                                        <div class="input-group">
+                                            <label for="autocomplete-pagamenti" class="visually-hidden">Cerca nel sito</label>
+                                            <input type="search" class="autocomplete form-control" placeholder="Cerca" id="autocomplete-pagamenti" name="pagamenti" data-bs-autocomplete="[]">
+                                            <span class="autocomplete-icon" aria-hidden="true">
+                                                <svg class="icon icon-sm"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-search"></use></svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cmp-accordion">
+                                <div class="accordion">
+                                    <!--[if BLOCK]><![endif]-->                                        <div class="accordion-item">
+                                            <div class="accordion-header" id="heading5">
+                                                <button class="accordion-button collapsed title-snall-semi-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+                                                    <div class="button-wrapper">
+                                                        Pagamento contravvenzione
+                                                        <div class="icon-wrapper">
+                                                            <img class="icon-folder" src="/themes/Sixteen/design-comuni/assets/images/folder-payment.svg" alt="folder Pagato" role="img">
+                                                            <span class="">Pagato</span>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                                <p class="accordion-date title-xsmall-regular mb-0">01/10/2021</p>
+                                            </div>
+
+                                            <div id="collapse5" class="accordion-collapse collapse p-0" data-bs-parent="#accordionExample5" role="region" aria-labelledby="heading5">
+                                                <div class="accordion-body">
+                                                    <p class="mb-2 fw-normal">Pratica: <span class="label">AN4059281</span></p>
+                                                    <a href="#" class="mb-2"><span class="t-primary">Scheda servizio</span></a>
+                                                    <a class="chip chip-simple" href="#"><span class="chip-label">Servizio non digitale</span></a>
+                                                    <!--[if BLOCK]><![endif]-->                                                        <div class="cmp-icon-list">
+                                                            <div class="link-list-wrapper">
+                                                                <ul class="link-list">
+                                                                    <!--[if BLOCK]><![endif]-->                                                                        <li class="shadow mt-3">
+                                                                            <a href="#" class="list-item icon-left t-primary title-small-semi-bold" aria-label="Ricevuta pagamento (PDF 80KB)">
+                                                                                <span class="list-item-title-icon-wrapper">
+                                                                                    <svg class="icon icon-sm align-self-start icon-color" aria-hidden="true"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-clip"></use></svg>
+                                                                                    <span class="list-item-title title-small-semi-bold">Ricevuta pagamento (PDF 80KB)</span>
+                                                                                </span>
+                                                                            </a>
+                                                                        </li>
+                                                                    <!--[if ENDBLOCK]><![endif]-->                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    <!--[if ENDBLOCK]><![endif]-->                                                    <button type="button" class="btn btn-primary justify-content-center my-3"><span>Perfeziona la richiesta</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="accordion-item">
+                                            <div class="accordion-header" id="heading6">
+                                                <button class="accordion-button collapsed title-snall-semi-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+                                                    <div class="button-wrapper">
+                                                        Pagamento contravvenzione
+                                                        <div class="icon-wrapper">
+                                                            <img class="icon-folder" src="/themes/Sixteen/design-comuni/assets/images/folder-payment.svg" alt="folder Pagato" role="img">
+                                                            <span class="">Pagato</span>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                                <p class="accordion-date title-xsmall-regular mb-0">24/06/2021</p>
+                                            </div>
+
+                                            <div id="collapse6" class="accordion-collapse collapse p-0" data-bs-parent="#accordionExample6" role="region" aria-labelledby="heading6">
+                                                <div class="accordion-body">
+                                                    <p class="mb-2 fw-normal">Pratica: <span class="label">AN4059281</span></p>
+                                                    <a href="#" class="mb-2"><span class="t-primary">Scheda servizio</span></a>
+                                                    <a class="chip chip-simple" href="#"><span class="chip-label">Servizio non digitale</span></a>
+                                                    <!--[if BLOCK]><![endif]-->                                                        <div class="cmp-icon-list">
+                                                            <div class="link-list-wrapper">
+                                                                <ul class="link-list">
+                                                                    <!--[if BLOCK]><![endif]-->                                                                        <li class="shadow mt-3">
+                                                                            <a href="#" class="list-item icon-left t-primary title-small-semi-bold" aria-label="Ricevuta pagamento (PDF 80KB)">
+                                                                                <span class="list-item-title-icon-wrapper">
+                                                                                    <svg class="icon icon-sm align-self-start icon-color" aria-hidden="true"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-clip"></use></svg>
+                                                                                    <span class="list-item-title title-small-semi-bold">Ricevuta pagamento (PDF 80KB)</span>
+                                                                                </span>
+                                                                            </a>
+                                                                        </li>
+                                                                    <!--[if ENDBLOCK]><![endif]-->                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    <!--[if ENDBLOCK]><![endif]-->                                                    <button type="button" class="btn btn-primary justify-content-center my-3"><span>Perfeziona la richiesta</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="accordion-item">
+                                            <div class="accordion-header" id="heading7">
+                                                <button class="accordion-button collapsed title-snall-semi-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="true" aria-controls="collapse7">
+                                                    <div class="button-wrapper">
+                                                        Pagamento contravvenzione
+                                                        <div class="icon-wrapper">
+                                                            <img class="icon-folder" src="/themes/Sixteen/design-comuni/assets/images/folder-payment.svg" alt="folder Pagato" role="img">
+                                                            <span class="">Pagato</span>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                                <p class="accordion-date title-xsmall-regular mb-0">10/05/2021</p>
+                                            </div>
+
+                                            <div id="collapse7" class="accordion-collapse collapse p-0" data-bs-parent="#accordionExample7" role="region" aria-labelledby="heading7">
+                                                <div class="accordion-body">
+                                                    <p class="mb-2 fw-normal">Pratica: <span class="label">AN4059281</span></p>
+                                                    <a href="#" class="mb-2"><span class="t-primary">Scheda servizio</span></a>
+                                                    <a class="chip chip-simple" href="#"><span class="chip-label">Servizio non digitale</span></a>
+                                                    <!--[if BLOCK]><![endif]-->                                                        <div class="cmp-icon-list">
+                                                            <div class="link-list-wrapper">
+                                                                <ul class="link-list">
+                                                                    <!--[if BLOCK]><![endif]-->                                                                        <li class="shadow mt-3">
+                                                                            <a href="#" class="list-item icon-left t-primary title-small-semi-bold" aria-label="Ricevuta pagamento (PDF 80KB)">
+                                                                                <span class="list-item-title-icon-wrapper">
+                                                                                    <svg class="icon icon-sm align-self-start icon-color" aria-hidden="true"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-clip"></use></svg>
+                                                                                    <span class="list-item-title title-small-semi-bold">Ricevuta pagamento (PDF 80KB)</span>
+                                                                                </span>
+                                                                            </a>
+                                                                        </li>
+                                                                    <!--[if ENDBLOCK]><![endif]-->                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    <!--[if ENDBLOCK]><![endif]-->                                                    <button type="button" class="btn btn-primary justify-content-center my-3"><span>Perfeziona la richiesta</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                                            <div class="accordion-item">
+                                            <div class="accordion-header" id="heading8">
+                                                <button class="accordion-button collapsed title-snall-semi-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
+                                                    <div class="button-wrapper">
+                                                        Pagamento contravvenzione
+                                                        <div class="icon-wrapper">
+                                                            <img class="icon-folder" src="/themes/Sixteen/design-comuni/assets/images/folder-payment.svg" alt="folder Pagato" role="img">
+                                                            <span class="">Pagato</span>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                                <p class="accordion-date title-xsmall-regular mb-0">06/03/2021</p>
+                                            </div>
+
+                                            <div id="collapse8" class="accordion-collapse collapse p-0" data-bs-parent="#accordionExample8" role="region" aria-labelledby="heading8">
+                                                <div class="accordion-body">
+                                                    <p class="mb-2 fw-normal">Pratica: <span class="label">AN4059281</span></p>
+                                                    <a href="#" class="mb-2"><span class="t-primary">Scheda servizio</span></a>
+                                                    <a class="chip chip-simple" href="#"><span class="chip-label">Servizio non digitale</span></a>
+                                                    <!--[if BLOCK]><![endif]-->                                                        <div class="cmp-icon-list">
+                                                            <div class="link-list-wrapper">
+                                                                <ul class="link-list">
+                                                                    <!--[if BLOCK]><![endif]-->                                                                        <li class="shadow mt-3">
+                                                                            <a href="#" class="list-item icon-left t-primary title-small-semi-bold" aria-label="Ricevuta pagamento (PDF 80KB)">
+                                                                                <span class="list-item-title-icon-wrapper">
+                                                                                    <svg class="icon icon-sm align-self-start icon-color" aria-hidden="true"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-clip"></use></svg>
+                                                                                    <span class="list-item-title title-small-semi-bold">Ricevuta pagamento (PDF 80KB)</span>
+                                                                                </span>
+                                                                            </a>
+                                                                        </li>
+                                                                    <!--[if ENDBLOCK]><![endif]-->                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    <!--[if ENDBLOCK]><![endif]-->                                                    <button type="button" class="btn btn-primary justify-content-center my-3"><span>Perfeziona la richiesta</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!--[if ENDBLOCK]><![endif]-->                                </div>
+                            </div>
+                            <!--[if BLOCK]><![endif]-->                                <button type="button" class="btn accordion-view-more mb-2 pt-3 t-primary title-xsmall-semi-bold ps-lg-3"><span>Vedi altri pagamenti</span></button>
+                            <!--[if ENDBLOCK]><![endif]-->                        </section>
+
+                        <section class="it-page-section mb-50 mb-lg-90" id="contacts">
+                            <div class="cmp-card">
+                                <div class="card">
+                                    <div class="card-header border-0 p-0 mb-lg-20 m-0">
+                                        <div class="d-flex"><h2 class="title-xxlarge mb-3">Contatta il comune</h2></div>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <ul class="link-list">
+                                            <!--[if BLOCK]><![endif]-->                                                <li><a class="list-item" href="#"><span>Leggi le domande frequenti</span></a></li>
+                                                                                            <li><a class="list-item" href="#"><span>Richiedi assistenza</span></a></li>
+                                                                                            <li><a class="list-item" href="#"><span>Chiama il numero verde 05 0505</span></a></li>
+                                                                                            <li><a class="list-item" href="#"><span>Prenota appuntamento</span></a></li>
+                                            <!--[if ENDBLOCK]><![endif]-->                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="it-page-section mb-50 mb-lg-90" id="highlight">
+                            <div class="cmp-card">
+                                <div class="card card-teaser rounded shadow-sm p-4">
+                                    <div class="card-body p-0">
+                                        <date class="date-xsmall">15/03/2022</date>
+                                        <h2 class="title-xxlarge mt-2">Iscrizione alla scuola dell&#039;infanzia</h2>
+                                        <h5 class="subtitle-large mb-3">Graduatoria 2022/23</h5>
+                                        <p class="mb-3">La graduatoria per l&#039;iscrizione alla Scuola dell&#039;Infanzia, a.a. 2022/2023 è stata pubblicata. Consulta la graduatoria online e perfeziona la pratica.</p>
+                                        <a href="#" class="t-primary text-decoration-none">Graduatoria Scuola dell&#039;infanzia per l&#039;anno scolastico 2022/23</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="it-page-section mb-50 mb-lg-90" id="search-section">
+                            <div class="cmp-search-box">
+                                <h2 class="title-xxlarge mb-3">Cerca</h2>
+                                <form>
+                                    <div class="cmp-input-search">
+                                        <label class="visually-hidden" for="search-area-personale">Cerca nel sito</label>
+                                        <input id="search-area-personale" type="search" class="form-control" placeholder="Cerca nel sito">
+                                        <button type="submit" class="btn btn-primary"><span>Cerca</span></button>
+                                    </div>
+                                </form>
+                                <div class="cmp-icon-list mt-4">
+                                    <h3 class="title-medium mb-3">FORSE STAVI CERCANDO</h3>
+                                    <ul class="link-list">
+                                        <!--[if BLOCK]><![endif]-->                                            <li><a class="list-item" href="#"><span>Rilascio Carta Identità Elettronica (CIE)</span></a></li>
+                                                                                    <li><a class="list-item" href="#"><span>Cambio di residenza</span></a></li>
+                                                                                    <li><a class="list-item" href="#"><span>Tributi online</span></a></li>
+                                                                                    <li><a class="list-item" href="#"><span>Prenotazione appuntamenti</span></a></li>
+                                                                                    <li><a class="list-item" href="#"><span>Rilascio tessera elettorale</span></a></li>
+                                                                                    <li><a class="list-item" href="#"><span>Voucher connettività</span></a></li>
+                                        <!--[if ENDBLOCK]><![endif]-->                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade it-dialog-scrollable" tabindex="-1" role="dialog" id="modal-message" aria-labelledby="modal-message-modal-title">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content modal-dimensions h-100">
+            <div class="cmp-modal__header modal-header pb-0">
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Chiudi finestra modale">
+                </button>
+                <div class="cmp-modal__header mt-30 mt-lg-50">
+                    <date class="date-regular w-100">05/04/2022</date>
+                    <h2 id="modal-message-modal-title" class="title-xxxlarge mt-2 mb-0">Richiesta servizio mensa scolastica</h2>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="mb-60 mb-lg-80">
+                    <h5 class="subtitle-large">fixcity::segnalazione.modal.message.subtitle</h5>
+                    <p class="text-paragraph mb-4 fw-normal">fixcity::segnalazione.modal.message.body</p>
+                    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                </div>
+            </div>
+        </div>
+    </div>
+</div>        <!--[if ENDBLOCK]><![endif]-->    </div>
+    </main>
+
+    <div class="modal fade search-modal" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content perfect-scrollbar">
+            <div class="modal-body">
+                <form>
+                    <div class="container">
+                        <div class="row variable-gutters">
+                            <div class="col">
+                                <div class="modal-title">
+                                    <button class="search-link d-md-none" type="button" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="Chiudi e torna alla pagina precedente">
+                                        <svg class="icon icon-md">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-left"></use>
+                                        </svg>
+                                    </button>
+                                    <h2>Cerca</h2>
+                                    <button class="search-link d-none d-md-block" type="button" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="Chiudi e torna alla pagina precedente">
+                                        <svg class="icon icon-md">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="form-group autocomplete-wrapper">
+                                    <label for="autocomplete-two" class="visually-hidden">Cerca nel sito</label>
+                                    <input type="search" class="autocomplete ps-5" placeholder="Cerca nel sito" id="autocomplete-two" name="autocomplete-two" data-bs-autocomplete="[]">
+                                    <span class="autocomplete-icon" aria-hidden="true">
+                                        <svg class="icon"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-search"></use></svg>
+                                    </span>
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="">Cerca</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row variable-gutters">
+                            <div class="col-lg-5">
+                                <div class="searches-list-wrapper">
+                                    <div class="other-link-title">FORSE STAVI CERCANDO</div>
+                                    <ul class="searches-list">
+                                        <li><a href="#">Rilascio Carta Identità Elettronica (CIE)</a></li>
+                                        <li><a href="#">Cambio di residenza</a></li>
+                                        <li><a href="#">Tributi online</a></li>
+                                        <li><a href="#">Prenotazione appuntamenti</a></li>
+                                        <li><a href="#">Rilascio tessera elettorale</a></li>
+                                        <li><a href="#">Voucher connettività</a></li>
+                                    </ul><!-- /searches-list -->
+                                </div><!-- /searches-list-wrapper -->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer class="it-footer" id="footer">
+    <div class="it-footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 footer-items-wrapper logo-wrapper">
+                    <img class="ue-logo" src="/themes/Sixteen/design-comuni/assets/images/logo-eu-inverted.svg" alt="logo Unione Europea">
+                    <div class="it-brand-wrapper">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa"></use>
+                            </svg>
+                            <div class="it-brand-text">
+                                <h2 class="no_toc">Nome del Comune</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 footer-items-wrapper">
+                    <h4 class="footer-heading-title">Amministrazione</h4>
+                    <ul class="footer-list">
+                        <li><a href="#">Organi di governo</a></li>
+                        <li><a href="#">Aree amministrative</a></li>
+                        <li><a href="#">Uffici</a></li>
+                        <li><a href="#">Enti e fondazioni</a></li>
+                        <li><a href="#">Politici</a></li>
+                        <li><a href="#">Personale amministrativo</a></li>
+                        <li><a href="#">Documenti e dati</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 footer-items-wrapper">
+                    <h4 class="footer-heading-title">Categorie di servizio</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="footer-list">
+                                <li><a href="#">Anagrafe e stato civile</a></li>
+                                <li><a href="#">Cultura e tempo libero</a></li>
+                                <li><a href="#">Vita lavorativa</a></li>
+                                <li><a href="#">Imprese e commercio</a></li>
+                                <li><a href="#">Appalti pubblici</a></li>
+                                <li><a href="#">Catasto e urbanistica</a></li>
+                                <li><a href="#">Turismo</a></li>
+                                <li><a href="#">Mobilità e trasporti</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="footer-list">
+                                <li><a href="#">Educazione e formazione</a></li>
+                                <li><a href="#">Giustizia e sicurezza pubblica</a></li>
+                                <li><a href="#">Tributi, finanze e contravvenzioni</a></li>
+                                <li><a href="#">Ambiente</a></li>
+                                <li><a href="#">Salute, benessere e assistenza</a></li>
+                                <li><a href="#">Autorizzazioni</a></li>
+                                <li><a href="#">Agricoltura e pesca</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 footer-items-wrapper">
+                    <h4 class="footer-heading-title">Novità</h4>
+                    <ul class="footer-list">
+                        <li><a href="#">Notizie</a></li>
+                        <li><a href="#">Comunicati</a></li>
+                        <li><a href="#">Avvisi</a></li>
+                    </ul>
+                    <h4 class="footer-heading-title">Vivere il comune</h4>
+                    <ul class="footer-list">
+                        <li><a href="#">Luoghi</a></li>
+                        <li><a href="#">Eventi</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-9 mt-md-4 footer-items-wrapper">
+                    <h4 class="footer-heading-title">Contatti</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p class="footer-info">Comune di Nome Comune<br>
+                                Via Roma 123 - 00100 Comune<br>
+                                Codice fiscale / P. IVA: 00123456789<br><br>
+                                <a href="#">Ufficio Relazioni con il Pubblico</a><br>
+                                Numero verde: 800 016 123<br>
+                                SMS e WhatsApp: +39 320 1234567<br>
+                                Posta Elettronica Certificata<br>
+                                Centralino unico: 012 3456
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="footer-list">
+                                <li><a href="#" data-element="faq">Leggi le FAQ</a></li>
+                                <li><a href="#">Prenotazione appuntamento</a></li>
+                                <li><a href="#" data-element="report-inefficiency">Segnalazione disservizio</a></li>
+                                <li><a href="#">Richiesta d'assistenza</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="footer-list">
+                                <li><a href="#">Amministrazione trasparente</a></li>
+                                <li><a href="#" data-element="privacy-policy-link">Informativa privacy</a></li>
+                                <li><a href="#" data-element="legal-notes">Note legali</a></li>
+                                <li><a href="#" data-element="accessibility-link">Dichiarazione di accessibilità</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-md-4 footer-items-wrapper">
+                    <h4 class="footer-heading-title">Seguici su</h4>
+                    <ul class="list-inline text-start social">
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"></use>
+                                </svg>
+                                <span class="visually-hidden">Twitter</span></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"></use>
+                                </svg>
+                                <span class="visually-hidden">Facebook</span></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"></use>
+                                </svg>
+                                <span class="visually-hidden">YouTube</span></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"></use>
+                                </svg>
+                                <span class="visually-hidden">Telegram</span></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"></use>
+                                </svg>
+                                <span class="visually-hidden">Whatsapp</span></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"></use>
+                                </svg>
+                                <span class="visually-hidden">RSS</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 footer-items-wrapper">
+                    <div class="footer-bottom">
+                        <a href="#">Media policy</a>
+                        <a href="#">Mappa del sito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+                    
+            <link rel="preload" as="style" href="http://127.0.0.1:8000/themes/Sixteen/assets/app-BRKXMWAJ.css" /><link rel="modulepreload" as="script" href="http://127.0.0.1:8000/themes/Sixteen/assets/app--a8bupAA.js" /><link rel="stylesheet" href="http://127.0.0.1:8000/themes/Sixteen/assets/app-BRKXMWAJ.css" data-navigate-track="reload" /><script type="module" src="http://127.0.0.1:8000/themes/Sixteen/assets/app--a8bupAA.js" data-navigate-track="reload"></script>        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const darkModeToggle = document.getElementById('darkModeToggle');
+                if (darkModeToggle) {
+                    darkModeToggle.addEventListener('click', function() {
+                        const html = document.documentElement;
+                        const isDark = html.classList.contains('dark');
+                        if (isDark) {
+                            html.classList.remove('dark');
+                            localStorage.setItem('dark_mode', 'false');
+                        } else {
+                            html.classList.add('dark');
+                            localStorage.setItem('dark_mode', 'true');
+                        }
+                    });
+                }
+            });
+        </script>
+    <!-- Livewire Scripts -->
+<script src="http://127.0.0.1:8000/livewire-88e501d9/livewire.js?id=698c71c1"   data-csrf="XKLMsXO2aMLcPR8CqBPZuVFRE9SPqkZnd5Ci1Uoj" data-module-url="http://127.0.0.1:8000/livewire-88e501d9" data-update-uri="http://127.0.0.1:8000/livewire-88e501d9/update" data-navigate-once="true"></script>
+</body>
+</html>

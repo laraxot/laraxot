@@ -1,0 +1,129 @@
+/* Fix header overlapping issues */
+.it-header-navbar-wrapper {
+    min-height: 56px !important;
+    height: auto !important;
+    display: block !important;
+}
+
+.navbar {
+    min-height: 56px !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.custom-navbar-toggler {
+    display: none !important;
+    margin: auto !important;
+}
+
+@media (max-width: 991.98px) {
+    .custom-navbar-toggler {
+        display: block !important;
+    }
+}
+
+/* Ensure header components are properly positioned */
+.it-header-wrapper {
+    position: relative !important;
+    z-index: 1000 !important;
+}
+
+.it-header-slim-wrapper {
+    position: static !important;
+}
+
+.it-header-center-wrapper {
+    position: static !important;
+}
+
+/* Fix navbar dropdown */
+.navbar-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 999 !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.navbar-collapsable {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    max-width: 440px !important;
+    height: 100% !important;
+    z-index: 1001 !important;
+    background: white !important;
+}
+
+/* Ensure nav wrapper has content */
+.it-nav-wrapper {
+    display: block !important;
+    min-height: calc(64px + 80px) !important;
+}
+
+/* Story 8.8: reduce aggressive overrides that degrade runtime parity */
+.tests-route .it-header-navbar-wrapper {
+    min-height: 64px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.tests-route .it-header-navbar-wrapper .navbar {
+    width: 100% !important;
+    min-height: 64px !important;
+    justify-content: flex-start !important;
+}
+
+.tests-route .custom-navbar-toggler {
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+    align-self: center !important;
+}
+
+@media (min-width: 992px) {
+    .tests-route .custom-navbar-toggler {
+        display: none !important;
+    }
+}
+
+.tests-route .it-search-wrapper {
+    gap: 0.5rem !important;
+}
+
+.tests-route .search-label {
+    display: inline-flex !important;
+    color: #fff !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    white-space: nowrap !important;
+}
+
+.tests-route .it-header-slim-right-zone .btn-full {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+.tests-route .it-header-slim-right-zone .btn-full .rounded-icon {
+    background: #fff !important;
+}
+
+.tests-route .it-header-slim-right-zone .btn-full .icon-primary {
+    color: #0066cc !important;
+    fill: currentColor !important;
+}
+
+.tests-route .it-header-slim-right-zone .dropdown-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.375rem !important;
+}
+
+.tests-route .it-header-slim-right-zone .dropdown-toggle .icon {
+    background: transparent !important;
+}

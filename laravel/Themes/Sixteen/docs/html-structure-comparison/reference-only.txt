@@ -1,0 +1,320 @@
+<a class="btn btn-primary btn-icon btn-full" href="..." data-element="personal-area-login">
+<a class="chip chip-simple" href="...">
+<a class="chip chip-simple" href="...">
+<a class="chip chip-simple" href="...">
+<a class="chip chip-simple" href="...">
+<a class="chip chip-simple" href="...">
+<a class="chip chip-simple" href="...">
+<a class="chip chip-simple" href="...">
+<a class="list-item active icon-left mb-2" href="...">
+<a class="list-item active icon-left mb-2" href="...">
+<a class="list-item active icon-left mb-2" href="...">
+<a class="list-item active icon-left mb-2" href="...">
+<a class="list-item active icon-left mb-2" href="...">
+<a class="list-item active icon-left" href="...">
+<a class="list-item active icon-left" href="...">
+<a class="list-item active ps-0" href="...">
+<a class="list-item mb-3 active ps-0" href="...">
+<a class="list-item mb-3 active ps-0" href="...">
+<a class="list-item mb-3 active ps-0" href="...">
+<a class="list-item mb-3 active ps-0" href="...">
+<a class="list-item mb-3 active ps-0" href="...">
+<a class="list-item" href="..." data-element="appointment-booking">
+<a class="list-item" href="..." data-element="contacts">
+<a class="list-item" href="...">
+<a class="list-item" href="...">
+<a class="list-item" href="...">
+<a class="read-more ps-3" href="...">
+<a class="read-more pt-0" href="...">
+<a class="read-more pt-0" href="...">
+<a class="read-more pt-0" href="...">
+<a class="read-more" href="...">
+<a class="read-more" href="...">
+<a href="..." class="btn btn-primary mt-40">
+<a href="..." class="card card-teaser card-bg-blue no-after rounded mt-0 p-3">
+<a href="..." class="card card-teaser card-bg-blue rounded mt-0 p-3">
+<a href="..." class="card card-teaser card-bg-dark rounded p-3 mt-0">
+<a href="..." class="card card-teaser card-bg-warning rounded mt-0 p-3">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<body>
+<button class="btn btn-outline-primary fw-bold me-4 btn-back" type="button">
+<button class="custom-navbar-toggler" type="button" aria-controls="nav4" aria-expanded="false" aria-label="Mostra/Nascondi la navigazione" data-bs-target="#nav4" data-bs-toggle="navbarcollapsible">
+<div class="avatar size-lg me-3">
+<div class="avatar size-lg me-3">
+<div class="avatar size-lg me-3">
+<div class="avatar size-lg me-3">
+<div class="bg-primary">
+<div class="card card-bg">
+<div class="card card-bg">
+<div class="card card-bg">
+<div class="card card-bg">
+<div class="card card-bg">
+<div class="card card-bg">
+<div class="card card-bg">
+<div class="card card-teaser card-teaser-image card-flex no-after rounded shadow-sm border border-light mb-0">
+<div class="card card-teaser no-after rounded shadow-sm border border-light">
+<div class="card card-teaser no-after rounded shadow-sm border border-light">
+<div class="card card-teaser no-after rounded shadow-sm border border-light">
+<div class="card card-teaser no-after rounded shadow-sm mb-0 border border-light">
+<div class="card card-teaser no-after rounded shadow-sm mb-0 border border-light">
+<div class="card-body p-3 pb-5">
+<div class="card-body pb-5">
+<div class="card-body pb-5">
+<div class="card-body pb-5">
+<div class="card-body pb-5">
+<div class="card-body pb-5">
+<div class="card-body">
+<div class="card-body">
+<div class="card-body">
+<div class="card-body">
+<div class="card-body">
+<div class="card-body">
+<div class="card-body">
+<div class="card-body">
+<div class="card-body">
+<div class="card-body">
+<div class="card-body">
+<div class="card-image card-image-rounded pb-5">
+<div class="card-image-wrapper with-read-more">
+<div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3 pb-0">
+<div class="card-wrapper h-100">
+<div class="card-wrapper h-100">
+<div class="card-wrapper h-100">
+<div class="card-wrapper h-100">
+<div class="card-wrapper h-100">
+<div class="card-wrapper h-100">
+<div class="card-wrapper">
+<div class="category-top">
+<div class="category-top">
+<div class="category-top">
+<div class="cmp-rating pt-lg-80 pb-lg-80" id="rating">
+<div class="cmp-rating__card-first">
+<div class="col-12 col-lg-6">
+<div class="col-lg-10 col-xl-6 offset-lg-1 offset-xl-2">
+<div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2 text-center">
+<div class="col-lg-3">
+<div class="col-lg-9">
+<div class="container">
+<div class="form-rating d-none">
+<div class="it-single-slide-wrapper h-100">
+<div class="it-single-slide-wrapper h-100">
+<div class="it-single-slide-wrapper h-100">
+<div class="it-single-slide-wrapper h-100">
+<div class="it-single-slide-wrapper h-100">
+<div class="it-single-slide-wrapper h-100">
+<div class="it-single-slide-wrapper">
+<div class="link-list-heading text-uppercase mb-3 ps-0 text-secondary">
+<div class="link-list-wrapper mt-4">
+<div class="link-list-wrapper mt-4">
+<div class="link-list-wrapper">
+<div class="pt-4 pt-lg-30">
+<div class="row d-flex justify-content-center bg-primary">
+<div class="row d-lg-inline-flex">
+<div class="row pt-30">
+<div class="row pt-5">
+<div class="section py-5 pb-lg-80 px-lg-5 position-relative" >
+<fieldset class="fieldset-rating-one d-none" data-element="feedback-rating-positive">
+<fieldset class="fieldset-rating-two d-none" data-element="feedback-rating-negative">
+<fieldset class="rating">
+<h2 class="title-medium-2-semi-bold mt-4">
+<h2>
+<h3 class="card-title sito-tematico">
+<h3 class="card-title sito-tematico">
+<h3 class="card-title text-paragraph-medium u-grey-light">
+<h3 class="card-title text-paragraph-medium u-grey-light">
+<h3 class="card-title text-paragraph-medium u-grey-light">
+<h3 class="card-title text-white sito-tematico">
+<h3 class="card-title">
+<h3 class="card-title">
+<h3 class="card-title">
+<h3 class="text-uppercase mb-3 title-xsmall-bold text text-secondary">
+<h4 class="card-title pb-4 mb-10 text-secondary">
+<h4 class="card-title pb-4 mb-10 text-secondary">
+<h4 class="card-title pb-4 mb-10 text-secondary">
+<h4 class="card-title pb-4 mb-10 text-secondary">
+<h4 class="card-title pb-4 mb-10">
+<h4 class="card-title pb-4 mb-10">
+<h4 class="card-title pb-4 mb-10">
+<h4 class="card-title text-white mb-1">
+<img src="..." alt="..." class="me-3 rounded">
+<img src="..." alt="..." class="me-3 rounded">
+<img src="..." alt="..." class="me-3 rounded">
+<img src="..." alt="..." class="me-3 rounded">
+<img src="..." alt="..." class="me-3 rounded">
+<img src="..." alt="...">
+<img src="..." alt="...">
+<img src="..." alt="...">
+<img src="..." alt="...">
+<img src="..." alt="...">
+<input type="radio" id="star1a" name="ratingA" value="1">
+<input type="radio" id="star2a" name="ratingA" value="2">
+<input type="radio" id="star3a" name="ratingA" value="3">
+<input type="radio" id="star4a" name="ratingA" value="4">
+<input type="radio" id="star5a" name="ratingA" value="5">
+<label class="full rating-star active" for="star1a" data-element="feedback-rate-1">
+<label class="full rating-star active" for="star2a" data-element="feedback-rate-2">
+<label class="full rating-star active" for="star3a" data-element="feedback-rate-3">
+<label class="full rating-star active" for="star4a" data-element="feedback-rate-4">
+<label class="full rating-star active" for="star5a" data-element="feedback-rate-5">
+<label for="formGroupExampleInputWithHelp" class="">
+<label for="radio-4" class="active" data-element="feedback-rating-answer">
+<li class="splide__slide">
+<li class="splide__slide">
+<li class="splide__slide">
+<li class="splide__slide">
+<li class="splide__slide">
+<li class="splide__slide">
+<li class="splide__slide">
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<main>
+<p class="card-text pb-3">
+<p class="card-text px-2 pb-10 mb-10 d-flex">
+<p class="card-text px-2 pb-10 mb-10 d-flex">
+<p class="card-text px-2 pb-10 mb-10 d-flex">
+<p class="card-text px-2 pb-10 mb-10 d-flex">
+<p class="card-text px-2 pb-10 mb-10 d-flex">
+<p class="card-text px-2 pb-10 mb-10">
+<p class="card-text px-2 pb-10 mb-10">
+<p class="card-text px-2 pb-10 mb-10">
+<p class="card-text px-2 pb-10 mb-10">
+<p class="card-text px-2 pb-10 mb-10">
+<p class="card-text px-2 pb-10 mb-10">
+<p class="card-text px-2 pb-10 mb-10">
+<p class="card-text px-2 pb-10 mb-10">
+<p class="card-text px-2 pb-10 mb-10">
+<p class="card-text px-2 pb-10 mb-10">
+<p class="card-text px-2 pb-10 mb-10">
+<p class="card-text px-2 pb-10 mb-10">
+<p class="card-text px-2">
+<p class="card-text px-2">
+<p class="card-text px-2">
+<p class="card-text px-2">
+<p class="card-text text-sans-serif text-white">
+<p class="card-text text-sans-serif text-white">
+<p class="card-text text-sans-serif">
+<p class="card-text text-sans-serif">
+<p class="card-text">
+<p class="card-text">
+<p class="mb-10 text-paragraph-small-semi">
+<p class="text-paragraph-card u-grey-light m-0">
+<p class="text-paragraph-card u-grey-light m-0">
+<p class="text-paragraph-card u-grey-light m-0">
+<span class="chip-label">
+<span class="chip-label">
+<span class="chip-label">
+<span class="chip-label">
+<span class="chip-label">
+<span class="chip-label">
+<span class="chip-label">
+<span class="d-none d-lg-block">
+<span class="list-item-title-icon-wrapper">
+<span class="list-item-title-icon-wrapper">
+<span class="list-item-title-icon-wrapper">
+<span class="list-item-title-icon-wrapper">
+<span class="rounded-icon" aria-hidden="true">
+<span class="text">
+<span class="text">
+<span class="text">
+<span class="text">
+<span class="text">
+<span class="text">
+<span class="text-button-normal">
+<span class="text-button-normal">
+<span class="text-button-normal">
+<span class="text-button-normal">
+<span class="text-button-normal">
+<span class="text-button-normal">
+<span class="text-success">
+<span class="text-success">
+<span class="text-success">
+<span class="text-success">
+<span class="text-underline">
+<span class="text-underline">
+<span class="text-underline">
+<span class="title-xsmall-semi-bold fw-semibold">
+<span class="title-xsmall-semi-bold fw-semibold">
+<span class="title-xsmall-semi-bold fw-semibold">
+<span>
+<span>
+<span>
+<span>
+<span>
+<span>
+<span>
+<span>
+<span>
+<span>
+<span>
+<span>
+<svg class="icon icon-primary icon-sm" aria-hidden="true">
+<svg class="icon icon-primary icon-sm" aria-hidden="true">
+<svg class="icon icon-primary icon-sm" aria-hidden="true">
+<svg class="icon icon-primary icon-sm" aria-hidden="true">
+<svg class="icon icon-primary icon-sm" aria-hidden="true">
+<svg class="icon icon-primary">
+<svg class="icon ms-0">
+<svg class="icon ms-0">
+<svg class="icon ms-0">
+<svg class="icon">
+<svg class="icon">
+<svg class="icon">
+<ul class="contact-list p-0">
+<ul class="d-flex flex-wrap gap-1">
+<ul class="link-list">
+<ul class="link-list">
+<ul class="link-list">
+<use href="...">
+<use href="...">
+<use href="...">
+<use href="...">
+<use href="...">
+<use xlink:href="...">
+<use xlink:href="...">
+<use xlink:href="...">
+<use xlink:href="...">
+<use xlink:href="...">
+<use xlink:href="...">

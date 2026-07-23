@@ -1,0 +1,6356 @@
+[
+  {
+    "path": "body/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "skiplink"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "visually-hidden-focusable",
+      "href": "#main-container"
+    },
+    "direct_text": "Vai ai contenuti"
+  },
+  {
+    "path": "body/div[1]/a[2]",
+    "tag": "a",
+    "attrs": {
+      "class": "visually-hidden-focusable",
+      "href": "#footer"
+    },
+    "direct_text": "Vai al footer"
+  },
+  {
+    "path": "body/header[1]",
+    "tag": "header",
+    "attrs": {
+      "class": "it-header-wrapper",
+      "data-bs-target": "#header-nav-wrapper",
+      "style": ""
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-header-slim-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-header-slim-wrapper-content"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "aria-label": "Vai al portale {Nome della Regione} - link esterno - apertura nuova scheda",
+      "class": "d-lg-block navbar-brand",
+      "href": "#",
+      "target": "_blank",
+      "title": "Vai al portale {Nome della Regione}"
+    },
+    "direct_text": "Nome della Regione"
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-header-slim-right-zone",
+      "role": "navigation"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "dropdown nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "aria-controls": "languages",
+      "aria-expanded": "false",
+      "aria-haspopup": "true",
+      "class": "dropdown-toggle nav-link",
+      "data-bs-toggle": "dropdown",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Lingua attiva:"
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[2]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "ITA"
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "dropdown-menu"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "link-list-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "link-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "dropdown-item list-item",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "ITA"
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "selezionata"
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "dropdown-item list-item",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "ENG"
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "btn btn-full btn-icon btn-primary",
+      "data-element": "personal-area-login",
+      "href": "../servizi/accesso-servizio.html"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "rounded-icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon icon-primary"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-user"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[2]",
+    "tag": "span",
+    "attrs": {
+      "class": "d-lg-block d-none"
+    },
+    "direct_text": "Accedi all'area personale"
+  },
+  {
+    "path": "body/header[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-nav-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-header-center-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-header-center-content-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-brand-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "homepage.html"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon",
+      "height": "82",
+      "width": "82"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]/image[1]",
+    "tag": "image",
+    "attrs": {
+      "xlink:href": "../assets/images/logo-comune.svg"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-brand-text"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-brand-title"
+    },
+    "direct_text": "Il mio Comune"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "d-md-block d-none it-brand-tagline"
+    },
+    "direct_text": "Un comune da vivere"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-right-zone"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "d-lg-flex d-none it-socials"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Seguici su"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Twitter"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Facebook"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "YouTube"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Telegram"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Whatsapp"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "RSS"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-search-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "d-md-block d-none"
+    },
+    "direct_text": "Cerca"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "aria-label": "Cerca nel sito",
+      "class": "rounded-icon search-link",
+      "data-bs-target": "#search-modal",
+      "data-bs-toggle": "modal",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-search"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-header-navbar-wrapper",
+      "id": "header-nav-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "has-megamenu navbar navbar-expand-lg"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "aria-controls": "nav4",
+      "aria-expanded": "false",
+      "aria-label": "Mostra/Nascondi la navigazione",
+      "class": "custom-navbar-toggler",
+      "data-bs-target": "#nav4",
+      "data-bs-toggle": "navbarcollapsible",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-burger"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "navbar-collapsable",
+      "id": "nav4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "overlay",
+      "style": "display: none;"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "close-div"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "class": "btn close-menu",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Nascondi la navigazione"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "menu-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "logo-hamburger",
+      "href": "homepage.html"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-pa"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-brand-text"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-brand-title"
+    },
+    "direct_text": "Nome del Comune"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]",
+    "tag": "nav",
+    "attrs": {
+      "aria-label": "Principale"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "navbar-nav",
+      "data-element": "main-navigation"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "data-element": "management",
+      "href": "../sito/amministrazione.html"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Amministrazione"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "data-element": "news",
+      "href": "../sito/novita.html"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Novità"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "data-element": "all-services",
+      "href": "../sito/servizi.html"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Servizi"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "data-element": "live",
+      "href": "../sito/eventi.html"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Vivere il Comune"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]",
+    "tag": "nav",
+    "attrs": {
+      "aria-label": "Secondaria"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "navbar-nav navbar-secondary"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "href": "../sito/argomento.html"
+    },
+    "direct_text": "Iscrizioni"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "href": "../sito/argomento.html"
+    },
+    "direct_text": "Estate in città"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "href": "../sito/argomento.html"
+    },
+    "direct_text": "Polizia locale"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "nav-link",
+      "data-element": "all-topics",
+      "href": "argomenti.html"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Tutti gli argomenti"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]/span[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon icon-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]/span[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-right"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-socials"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Seguici su"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Twitter"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Facebook"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "YouTube"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Telegram"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Whatsapp"
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "RSS"
+  },
+  {
+    "path": "body/main[1]",
+    "tag": "main",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "container",
+      "id": "main-container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "justify-content-center mb-lg-80 mb-md-40 row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12 col-lg-10"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-breadcrumbs",
+      "role": "navigation"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]",
+    "tag": "nav",
+    "attrs": {
+      "aria-label": "breadcrumb",
+      "class": "breadcrumb-container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]",
+    "tag": "ol",
+    "attrs": {
+      "class": "breadcrumb p-0",
+      "data-element": "breadcrumb"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]",
+    "tag": "li",
+    "attrs": {
+      "class": "breadcrumb-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "homepage.html"
+    },
+    "direct_text": "Home"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "separator"
+    },
+    "direct_text": "/"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]",
+    "tag": "li",
+    "attrs": {
+      "aria-current": "page",
+      "class": "active breadcrumb-item"
+    },
+    "direct_text": "Elenco segnalazioni"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-heading p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[2]/h1[1]",
+    "tag": "h1",
+    "attrs": {
+      "class": "title-xxxlarge"
+    },
+    "direct_text": "Elenco segnalazioni"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/div[1]/div[2]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "subtitle-small"
+    },
+    "direct_text": "Negli ultimi 12 mesi sono state risolte 73 segnalazioni."
+  },
+  {
+    "path": "body/main[1]/div[1]/div[1]/hr[1]",
+    "tag": "hr",
+    "attrs": {
+      "class": "d-lg-block d-none mb-2 mt-30"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "justify-content-center row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-lg-3 d-lg-block d-none"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]",
+    "tag": "fieldset",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/legend[1]",
+    "tag": "legend",
+    "attrs": {
+      "class": "category-list__title h6 text-uppercase"
+    },
+    "direct_text": "categoria"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "categoy-list pb-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "form-check"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light checkbox-body py-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[1]/div[1]/div[1]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "water",
+      "name": "category",
+      "type": "checkbox",
+      "value": "acqua,allagamenti,fogne"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[1]/div[1]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "category-list__list mb-0 subtitle-small_semi-bold",
+      "for": "water"
+    },
+    "direct_text": "Acqua, allagamenti, problemi fognari (21)"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "form-check"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light checkbox-body py-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[2]/div[1]/div[1]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "enviroment",
+      "name": "category",
+      "type": "checkbox",
+      "value": "inquinamneto"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[2]/div[1]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "category-list__list mb-0 subtitle-small_semi-bold",
+      "for": "enviroment"
+    },
+    "direct_text": "Ambiente, inquinamento, protezione ambientale (14)"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[3]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "form-check"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[3]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light checkbox-body py-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[3]/div[1]/div[1]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "street-furniture",
+      "name": "category",
+      "type": "checkbox",
+      "value": "arredo-urbano"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[3]/div[1]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "category-list__list mb-0 subtitle-small_semi-bold",
+      "for": "street-furniture"
+    },
+    "direct_text": "Arredo urbano (7)"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[4]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "form-check"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[4]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light checkbox-body py-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[4]/div[1]/div[1]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "rodent-control",
+      "name": "category",
+      "type": "checkbox",
+      "value": "derattizazione"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[4]/div[1]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "category-list__list mb-0 subtitle-small_semi-bold",
+      "for": "rodent-control"
+    },
+    "direct_text": "Disinfestazione, derattizazione, animali randagi (208)"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[5]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[5]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "form-check"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[5]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light checkbox-body py-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[5]/div[1]/div[1]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "waste",
+      "name": "category",
+      "type": "checkbox",
+      "value": "igiene"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[5]/div[1]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "category-list__list mb-0 subtitle-small_semi-bold",
+      "for": "waste"
+    },
+    "direct_text": "Igiene urbana, rifiuti, pulizia e decoro (321)"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[6]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[6]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "form-check"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[6]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light checkbox-body py-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[6]/div[1]/div[1]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "maintenance",
+      "name": "category",
+      "type": "checkbox",
+      "value": "manutenzione"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[6]/div[1]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "category-list__list mb-0 subtitle-small_semi-bold",
+      "for": "maintenance"
+    },
+    "direct_text": "Manutenzione immobili, edifici pubblici, scuole, barriere architettoniche, cimiteri (302)"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[7]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[7]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "form-check"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[7]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light checkbox-body py-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[7]/div[1]/div[1]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "public-order",
+      "name": "category",
+      "type": "checkbox",
+      "value": "ordine-pubblico"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[7]/div[1]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "category-list__list mb-0 subtitle-small_semi-bold",
+      "for": "public-order"
+    },
+    "direct_text": "Ordine pubblico, disturbo della quiete (302)"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[8]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[8]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "form-check"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[8]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light checkbox-body py-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[8]/div[1]/div[1]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "green",
+      "name": "category",
+      "type": "checkbox",
+      "value": "parchi"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[8]/div[1]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "category-list__list mb-0 subtitle-small_semi-bold",
+      "for": "green"
+    },
+    "direct_text": "Parchi e verde pubblico (302)"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[9]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[9]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "form-check"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[9]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light checkbox-body py-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[9]/div[1]/div[1]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "service",
+      "name": "category",
+      "type": "checkbox",
+      "value": "servizi"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[9]/div[1]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "category-list__list mb-0 subtitle-small_semi-bold",
+      "for": "service"
+    },
+    "direct_text": "Servizi del comune (302)"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[10]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[10]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "form-check"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[10]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light checkbox-body py-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[10]/div[1]/div[1]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "security",
+      "name": "category",
+      "type": "checkbox",
+      "value": "sicurezza"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[10]/div[1]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "category-list__list mb-0 subtitle-small_semi-bold",
+      "for": "security"
+    },
+    "direct_text": "Sicurezza, degrado urbano e sociale (302)"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[11]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[11]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "form-check"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[11]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light checkbox-body py-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[11]/div[1]/div[1]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "road",
+      "name": "category",
+      "type": "checkbox",
+      "value": "strade"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[1]/fieldset[1]/div[1]/ul[1]/li[11]/div[1]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "category-list__list mb-0 subtitle-small_semi-bold",
+      "for": "road"
+    },
+    "direct_text": "Strade, marciapiedi, segnaletica e viabilità (302)"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-lg-8 offset-lg-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light d-flex justify-content-between mt-5 pb-3"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "search-results"
+    },
+    "direct_text": "645 Risultati"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "class": "btn d-lg-none p-0 pe-2",
+      "data-bs-target": "#modal-categories",
+      "data-bs-toggle": "modal",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/button[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "rounded-icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/button[1]/span[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon icon-primary icon-xs"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/button[1]/span[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-funnel"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/button[1]/span[2]",
+    "tag": "span",
+    "attrs": {
+      "class": "ms-1 t-primary title-xsmall-semi-bold"
+    },
+    "direct_text": "Filtra"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/button[2]",
+    "tag": "button",
+    "attrs": {
+      "class": "btn d-lg-block d-none p-0 pe-2",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[1]/button[2]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "ms-1 title-xsmall-semi-bold"
+    },
+    "direct_text": "Rimuovi tutti i filtri"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "border-bottom border-light flex-nowrap mb-40 mt-3 nav nav-tabs shadow-none w-100",
+      "id": "tabDisservizio",
+      "role": "tablist"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item w-100",
+      "role": "tab"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "aria-controls": "disservizio1",
+      "aria-current": "page",
+      "aria-selected": "true",
+      "class": "active nav-link pt-0 title-medium-semi-bold",
+      "data-bs-toggle": "tab",
+      "href": "#data-ex-disservizio1",
+      "role": "button"
+    },
+    "direct_text": "Mappa"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {
+      "class": "nav-item w-100",
+      "role": "tab"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "aria-controls": "disservizio2",
+      "aria-current": "page",
+      "aria-selected": "true",
+      "class": "nav-link pt-0 title-medium-semi-bold",
+      "data-bs-toggle": "tab",
+      "href": "#data-ex-disservizio2",
+      "role": "button"
+    },
+    "direct_text": "Elenco"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "tab-content"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "active fade show tab-pane",
+      "id": "data-ex-disservizio1",
+      "role": "tabpanel"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "map-box"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/img[1]",
+    "tag": "img",
+    "attrs": {
+      "alt": "Mappa",
+      "class": "w-100",
+      "src": "../assets/images/map-placeholder.svg"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "class": "pin",
+      "data-bs-target": "#modal-disservizio",
+      "data-bs-toggle": "modal",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]/img[1]",
+    "tag": "img",
+    "attrs": {
+      "alt": "Pin di geolocalizzazione",
+      "src": "../assets/images/map-pin.svg",
+      "title": "Pin di geolocalizzazione"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-lg-6 mb-4 mb-lg-0 mt-50"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-text-button mt-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/h2[1]",
+    "tag": "h2",
+    "attrs": {
+      "class": "mb-0 title-xxlarge"
+    },
+    "direct_text": "Fai una segnalazione"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "text-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "mb-3 mt-3 subtitle-small"
+    },
+    "direct_text": "Se vuoi aggiungere una segnalazione, puoi farlo dopo esserti autenticato con le tue credenziali SPID o CIE."
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "button-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "class": "btn btn btn-primary mb-4 mb-lg-0 mobile-full mt-2 py-3",
+      "data-bs-target": "#modal-disservizio",
+      "data-bs-toggle": "modal",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/button[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": ""
+    },
+    "direct_text": "Segnala disservizio"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "fade tab-pane",
+      "id": "data-ex-disservizio2",
+      "role": "tabpanel"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-card mb-4 mb-lg-30"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card has-bkg-grey shadow-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-info-button-card"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card p-3 p-lg-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h3[1]",
+    "tag": "h3",
+    "attrs": {
+      "class": "mb-0 medium-title"
+    },
+    "direct_text": "Buca in via Solferino"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "card-info"
+    },
+    "direct_text": "Tipologia di segnalazione"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]/br[1]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Verde pubblico e arredo urbano"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-header"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "aria-controls": "collapse1",
+      "aria-expanded": "false",
+      "class": "accordion-button collapsed",
+      "data-bs-target": "#collapse1",
+      "data-bs-toggle": "collapse",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "align-items-center d-flex"
+    },
+    "direct_text": "Mostra tutto"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon icon-primary icon-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-collapse collapse pb-0",
+      "id": "collapse1",
+      "role": "region"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "bg-white border-0 cmp-info-summary"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light card-header d-flex justify-content-end mb-0 p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "d-none text-decoration-none",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "t-primary text-button-sm-semi"
+    },
+    "direct_text": "Modifica"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light single-line-info"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "text-paragraph-small"
+    },
+    "direct_text": "Indirizzo"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "data-text"
+    },
+    "direct_text": "Via Solferino - 50100 Firenze"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light single-line-info"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "text-paragraph-small"
+    },
+    "direct_text": "Dettaglio"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "data-text"
+    },
+    "direct_text": "Sulla strada c’è una buca piuttosto profonda che andrebbe sistemata con urgenza"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light single-line-info"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "text-paragraph-small"
+    },
+    "direct_text": "Immagini"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-0 border-light"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "d-lg-flex gap-2 mt-3"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[1]/img[1]",
+    "tag": "img",
+    "attrs": {
+      "alt": "Immagine della mappa di dove si trova il disservizio",
+      "class": "img-fluid mb-3 mb-lg-0 w-100",
+      "src": "../assets/images/image-disservizio.png"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[2]/img[1]",
+    "tag": "img",
+    "attrs": {
+      "alt": "Immagine della mappa di dove si trova il disservizio",
+      "class": "img-fluid mb-3 mb-lg-0 w-100",
+      "src": "../assets/images/image-disservizio.png"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[3]/img[1]",
+    "tag": "img",
+    "attrs": {
+      "alt": "Immagine della mappa di dove si trova il disservizio",
+      "class": "img-fluid w-100",
+      "src": "../assets/images/image-disservizio.png"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-footer d-none p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-card mb-4 mb-lg-30"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card has-bkg-grey shadow-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-info-button-card"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card p-3 p-lg-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/h3[1]",
+    "tag": "h3",
+    "attrs": {
+      "class": "mb-0 medium-title"
+    },
+    "direct_text": "Titolo segnalazione 2"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "card-info"
+    },
+    "direct_text": "Tipologia segnalazione"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-header"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "aria-controls": "collapse2",
+      "aria-expanded": "false",
+      "class": "accordion-button collapsed",
+      "data-bs-target": "#collapse2",
+      "data-bs-toggle": "collapse",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "align-items-center d-flex"
+    },
+    "direct_text": "Mostra tutto"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon icon-primary icon-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-collapse collapse",
+      "id": "collapse2",
+      "role": "region"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "bg-white border-0 cmp-info-summary"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light card-header d-flex justify-content-end mb-0 p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "d-none text-decoration-none",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "t-primary text-button-sm-semi"
+    },
+    "direct_text": "Modifica"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light single-line-info"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "text-paragraph-small"
+    },
+    "direct_text": "Indirizzo"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "data-text"
+    },
+    "direct_text": "Via Solferino - 50100 Firenze"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light single-line-info"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "text-paragraph-small"
+    },
+    "direct_text": "Dettaglio"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "data-text"
+    },
+    "direct_text": "Sulla strada c’è una buca piuttosto profonda che andrebbe sistemata con urgenza"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light single-line-info"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "text-paragraph-small"
+    },
+    "direct_text": "Immagini"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-0 border-light"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "d-lg-flex gap-2 mt-3"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[1]/img[1]",
+    "tag": "img",
+    "attrs": {
+      "alt": "Immagine della mappa di dove si trova il disservizio",
+      "class": "img-fluid mb-3 mb-lg-0 w-100",
+      "src": "../assets/images/image-disservizio.png"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[2]/img[1]",
+    "tag": "img",
+    "attrs": {
+      "alt": "Immagine della mappa di dove si trova il disservizio",
+      "class": "img-fluid mb-3 mb-lg-0 w-100",
+      "src": "../assets/images/image-disservizio.png"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[3]/img[1]",
+    "tag": "img",
+    "attrs": {
+      "alt": "Immagine della mappa di dove si trova il disservizio",
+      "class": "img-fluid w-100",
+      "src": "../assets/images/image-disservizio.png"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-footer d-none p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-card mb-4 mb-lg-30"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card has-bkg-grey shadow-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-info-button-card"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card p-3 p-lg-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/h3[1]",
+    "tag": "h3",
+    "attrs": {
+      "class": "mb-0 medium-title"
+    },
+    "direct_text": "Titolo segnalazione 3"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "card-info"
+    },
+    "direct_text": "Tipologia segnalazione"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-header"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "aria-controls": "collapse3",
+      "aria-expanded": "false",
+      "class": "accordion-button collapsed",
+      "data-bs-target": "#collapse3",
+      "data-bs-toggle": "collapse",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "align-items-center d-flex"
+    },
+    "direct_text": "Mostra tutto"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon icon-primary icon-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-collapse collapse",
+      "id": "collapse3",
+      "role": "region"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "accordion-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "bg-white border-0 cmp-info-summary"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light card-header d-flex justify-content-end mb-0 p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "d-none text-decoration-none",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "t-primary text-button-sm-semi"
+    },
+    "direct_text": "Modifica"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light single-line-info"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "text-paragraph-small"
+    },
+    "direct_text": "Indirizzo"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "data-text"
+    },
+    "direct_text": "Via Solferino - 50100 Firenze"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light single-line-info"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "text-paragraph-small"
+    },
+    "direct_text": "Dettaglio"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "data-text"
+    },
+    "direct_text": "Sulla strada c’è una buca piuttosto profonda che andrebbe sistemata con urgenza"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-light single-line-info"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "text-paragraph-small"
+    },
+    "direct_text": "Immagini"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-0 border-light"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "d-lg-flex gap-2 mt-3"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[1]/img[1]",
+    "tag": "img",
+    "attrs": {
+      "alt": "Immagine della mappa di dove si trova il disservizio",
+      "class": "img-fluid mb-3 mb-lg-0 w-100",
+      "src": "../assets/images/image-disservizio.png"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[2]/img[1]",
+    "tag": "img",
+    "attrs": {
+      "alt": "Immagine della mappa di dove si trova il disservizio",
+      "class": "img-fluid mb-3 mb-lg-0 w-100",
+      "src": "../assets/images/image-disservizio.png"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[3]/img[1]",
+    "tag": "img",
+    "attrs": {
+      "alt": "Immagine della mappa di dove si trova il disservizio",
+      "class": "img-fluid w-100",
+      "src": "../assets/images/image-disservizio.png"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-footer d-none p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12 text-center"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[2]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "class": "btn btn btn-outline-primary mobile-full mt-10 mx-auto py-3",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[2]/button[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": ""
+    },
+    "direct_text": "Carica altre segnalazioni"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-lg-6 mb-4 mb-lg-0 mt-50"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[3]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-text-button mt-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[3]/div[1]/h2[1]",
+    "tag": "h2",
+    "attrs": {
+      "class": "mb-0 title-xxlarge"
+    },
+    "direct_text": "Fai una segnalazione"
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[3]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "text-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[3]/div[1]/div[1]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "mb-3 mt-3 subtitle-small"
+    },
+    "direct_text": "Se vuoi aggiungere una segnalazione, puoi farlo dopo esserti autenticato con le tue credenziali SPID o CIE."
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[3]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "button-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[3]/div[1]/div[2]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "class": "btn btn btn-primary mb-4 mb-lg-0 mobile-full mt-2 py-3",
+      "data-bs-target": "#modal-disservizio",
+      "data-bs-toggle": "modal",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[3]/div[1]/div[2]/button[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": ""
+    },
+    "direct_text": "Segnala disservizio"
+  },
+  {
+    "path": "body/main[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "bg-primary"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "bg-primary d-flex justify-content-center row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12 col-lg-6 p-lg-0 px-3"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-rating pb-lg-80 pt-lg-80",
+      "id": "rating"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card card-wrapper shadow",
+      "data-element": "feedback"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-rating__card-first"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-0 card-header"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1]",
+    "tag": "h2",
+    "attrs": {
+      "class": "mb-0 title-medium-2-semi-bold",
+      "data-element": "feedback-title"
+    },
+    "direct_text": "Quanto sono chiare le informazioni su questa pagina?"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]",
+    "tag": "fieldset",
+    "attrs": {
+      "class": "rating"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/legend[1]",
+    "tag": "legend",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Valuta da 1 a 5 stelle la pagina"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "star5a",
+      "name": "ratingA",
+      "type": "radio",
+      "value": "5"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "active full rating-star",
+      "data-element": "feedback-rate-5",
+      "for": "star5a"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-labelledby": "first-star",
+      "class": "icon icon-sm",
+      "role": "img",
+      "viewbox": "0 0 24 24",
+      "xmlns": "http://www.w3.org/2000/svg"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/svg[1]/path[1]",
+    "tag": "path",
+    "attrs": {
+      "d": "M12 1.7L9.5 9.2H1.6L8 13.9l-2.4 7.6 6.4-4.7 6.4 4.7-2.4-7.6 6.4-4.7h-7.9L12 1.7z"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/svg[1]/path[1]/path[1]",
+    "tag": "path",
+    "attrs": {
+      "d": "M0 0h24v24H0z",
+      "fill": "none"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden",
+      "id": "first-star"
+    },
+    "direct_text": "Valuta 5 stelle su 5"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[2]",
+    "tag": "input",
+    "attrs": {
+      "id": "star4a",
+      "name": "ratingA",
+      "type": "radio",
+      "value": "4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]",
+    "tag": "label",
+    "attrs": {
+      "class": "active full rating-star",
+      "data-element": "feedback-rate-4",
+      "for": "star4a"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-labelledby": "second-star",
+      "class": "icon icon-sm",
+      "role": "img",
+      "viewbox": "0 0 24 24",
+      "xmlns": "http://www.w3.org/2000/svg"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/svg[1]/path[1]",
+    "tag": "path",
+    "attrs": {
+      "d": "M12 1.7L9.5 9.2H1.6L8 13.9l-2.4 7.6 6.4-4.7 6.4 4.7-2.4-7.6 6.4-4.7h-7.9L12 1.7z"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/svg[1]/path[1]/path[1]",
+    "tag": "path",
+    "attrs": {
+      "d": "M0 0h24v24H0z",
+      "fill": "none"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden",
+      "id": "second-star"
+    },
+    "direct_text": "Valuta 4 stelle su 5"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[3]",
+    "tag": "input",
+    "attrs": {
+      "id": "star3a",
+      "name": "ratingA",
+      "type": "radio",
+      "value": "3"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]",
+    "tag": "label",
+    "attrs": {
+      "class": "active full rating-star",
+      "data-element": "feedback-rate-3",
+      "for": "star3a"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-labelledby": "third-star",
+      "class": "icon icon-sm",
+      "role": "img",
+      "viewbox": "0 0 24 24",
+      "xmlns": "http://www.w3.org/2000/svg"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/svg[1]/path[1]",
+    "tag": "path",
+    "attrs": {
+      "d": "M12 1.7L9.5 9.2H1.6L8 13.9l-2.4 7.6 6.4-4.7 6.4 4.7-2.4-7.6 6.4-4.7h-7.9L12 1.7z"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/svg[1]/path[1]/path[1]",
+    "tag": "path",
+    "attrs": {
+      "d": "M0 0h24v24H0z",
+      "fill": "none"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden",
+      "id": "third-star"
+    },
+    "direct_text": "Valuta 3 stelle su 5"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[4]",
+    "tag": "input",
+    "attrs": {
+      "id": "star2a",
+      "name": "ratingA",
+      "type": "radio",
+      "value": "2"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]",
+    "tag": "label",
+    "attrs": {
+      "class": "active full rating-star",
+      "data-element": "feedback-rate-2",
+      "for": "star2a"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-labelledby": "fourth-star",
+      "class": "icon icon-sm",
+      "role": "img",
+      "viewbox": "0 0 24 24",
+      "xmlns": "http://www.w3.org/2000/svg"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/svg[1]/path[1]",
+    "tag": "path",
+    "attrs": {
+      "d": "M12 1.7L9.5 9.2H1.6L8 13.9l-2.4 7.6 6.4-4.7 6.4 4.7-2.4-7.6 6.4-4.7h-7.9L12 1.7z"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/svg[1]/path[1]/path[1]",
+    "tag": "path",
+    "attrs": {
+      "d": "M0 0h24v24H0z",
+      "fill": "none"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden",
+      "id": "fourth-star"
+    },
+    "direct_text": "Valuta 2 stelle su 5"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[5]",
+    "tag": "input",
+    "attrs": {
+      "id": "star1a",
+      "name": "ratingA",
+      "type": "radio",
+      "value": "1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]",
+    "tag": "label",
+    "attrs": {
+      "class": "active full rating-star",
+      "data-element": "feedback-rate-1",
+      "for": "star1a"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-labelledby": "fifth-star",
+      "class": "icon icon-sm",
+      "role": "img",
+      "viewbox": "0 0 24 24",
+      "xmlns": "http://www.w3.org/2000/svg"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/svg[1]/path[1]",
+    "tag": "path",
+    "attrs": {
+      "d": "M12 1.7L9.5 9.2H1.6L8 13.9l-2.4 7.6 6.4-4.7 6.4 4.7-2.4-7.6 6.4-4.7h-7.9L12 1.7z"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/svg[1]/path[1]/path[1]",
+    "tag": "path",
+    "attrs": {
+      "d": "M0 0h24v24H0z",
+      "fill": "none"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden",
+      "id": "fifth-star"
+    },
+    "direct_text": "Valuta 1 stelle su 5"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-rating__card-second d-none",
+      "data-step": "3"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-0 card-header mb-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/h2[1]",
+    "tag": "h2",
+    "attrs": {
+      "class": "mb-0 title-medium-2-bold",
+      "id": "rating-feedback"
+    },
+    "direct_text": "Grazie, il tuo parere ci aiuterà a migliorare il servizio!"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "d-none form-rating"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "d-none",
+      "data-step": "1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-steps-rating"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]",
+    "tag": "fieldset",
+    "attrs": {
+      "class": "d-none fieldset-rating-one",
+      "data-element": "feedback-rating-positive"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/legend[1]",
+    "tag": "legend",
+    "attrs": {
+      "class": "iscrizioni-header w-100"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/legend[1]/h3[1]",
+    "tag": "h3",
+    "attrs": {
+      "class": "align-items-lg-center d-flex drop-shadow flex-column flex-lg-row justify-content-between step-title"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/legend[1]/h3[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "d-block text-wrap",
+      "data-element": "feedback-rating-question"
+    },
+    "direct_text": "Quali sono stati gli aspetti che hai preferito?"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/legend[1]/h3[1]/span[2]",
+    "tag": "span",
+    "attrs": {
+      "class": "step"
+    },
+    "direct_text": "1/2"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-steps-rating__body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-radio-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card card-teaser shadow-rating"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "form-check m-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light cmp-radio-list__item radio-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "radio-1",
+      "name": "rating1",
+      "type": "radio"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "active",
+      "data-element": "feedback-rating-answer",
+      "for": "radio-1"
+    },
+    "direct_text": "Le indicazioni erano chiare"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light cmp-radio-list__item radio-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "radio-2",
+      "name": "rating1",
+      "type": "radio"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "active",
+      "data-element": "feedback-rating-answer",
+      "for": "radio-2"
+    },
+    "direct_text": "Le indicazioni erano complete"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light cmp-radio-list__item radio-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "radio-3",
+      "name": "rating1",
+      "type": "radio"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "active",
+      "data-element": "feedback-rating-answer",
+      "for": "radio-3"
+    },
+    "direct_text": "Capivo sempre che stavo procedendo correttamente"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light cmp-radio-list__item radio-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "radio-4",
+      "name": "rating1",
+      "type": "radio"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "active",
+      "data-element": "feedback-rating-answer",
+      "for": "radio-4"
+    },
+    "direct_text": "Non ho avuto problemi tecnici"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light cmp-radio-list__item radio-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "radio-5",
+      "name": "rating1",
+      "type": "radio"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "active",
+      "data-element": "feedback-rating-answer",
+      "for": "radio-4"
+    },
+    "direct_text": "Altro"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]",
+    "tag": "fieldset",
+    "attrs": {
+      "class": "d-none fieldset-rating-two",
+      "data-element": "feedback-rating-negative"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/legend[1]",
+    "tag": "legend",
+    "attrs": {
+      "class": "iscrizioni-header w-100"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/legend[1]/h3[1]",
+    "tag": "h3",
+    "attrs": {
+      "class": "align-items-lg-center d-flex drop-shadow flex-column flex-lg-row flex-wrap justify-content-between step-title"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/legend[1]/h3[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "d-block text-wrap",
+      "data-element": "feedback-rating-question"
+    },
+    "direct_text": "Dove hai incontrato le maggiori difficoltà?"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/legend[1]/h3[1]/span[2]",
+    "tag": "span",
+    "attrs": {
+      "class": "step"
+    },
+    "direct_text": "1/2"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-steps-rating__body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-radio-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card card-teaser shadow-rating"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "form-check m-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light cmp-radio-list__item radio-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "radio-6",
+      "name": "rating2",
+      "type": "radio"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "active",
+      "data-element": "feedback-rating-answer",
+      "for": "radio-6"
+    },
+    "direct_text": "A volte le indicazioni non erano chiare"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light cmp-radio-list__item radio-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "radio-7",
+      "name": "rating2",
+      "type": "radio"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "active",
+      "data-element": "feedback-rating-answer",
+      "for": "radio-7"
+    },
+    "direct_text": "A volte le indicazioni non erano complete"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light cmp-radio-list__item radio-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "radio-8",
+      "name": "rating2",
+      "type": "radio"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "active",
+      "data-element": "feedback-rating-answer",
+      "for": "radio-8"
+    },
+    "direct_text": "A volte non capivo se stavo procedendo correttamente"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light cmp-radio-list__item radio-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "radio-9",
+      "name": "rating2",
+      "type": "radio"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "active",
+      "data-element": "feedback-rating-answer",
+      "for": "radio-9"
+    },
+    "direct_text": "Ho avuto problemi tecnici"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light cmp-radio-list__item radio-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "id": "radio-10",
+      "name": "rating2",
+      "type": "radio"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "active",
+      "data-element": "feedback-rating-answer",
+      "for": "radio-10"
+    },
+    "direct_text": "Altro"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "d-none",
+      "data-step": "2"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-steps-rating"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]",
+    "tag": "fieldset",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/legend[1]",
+    "tag": "legend",
+    "attrs": {
+      "class": "iscrizioni-header w-100"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/legend[1]/h3[1]",
+    "tag": "h3",
+    "attrs": {
+      "class": "align-items-lg-center d-flex drop-shadow flex-column flex-lg-row flex-wrap justify-content-between step-title"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/legend[1]/h3[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "d-block text-wrap"
+    },
+    "direct_text": "Vuoi aggiungere altri dettagli?"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/legend[1]/h3[1]/span[2]",
+    "tag": "span",
+    "attrs": {
+      "class": "step"
+    },
+    "direct_text": "2/2"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-steps-rating__body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "form-group"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "",
+      "for": "formGroupExampleInputWithHelp"
+    },
+    "direct_text": "Dettaglio"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "aria-describedby": "formGroupExampleInputWithHelpDescription",
+      "class": "form-control",
+      "data-element": "feedback-input-text",
+      "id": "formGroupExampleInputWithHelp",
+      "maxlength": "200",
+      "type": "text"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/small[1]",
+    "tag": "small",
+    "attrs": {
+      "class": "form-text",
+      "id": "formGroupExampleInputWithHelpDescription"
+    },
+    "direct_text": "Inserire massimo 200 caratteri"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "button-shadow d-flex flex-nowrap justify-content-center pt-4 w-100"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[3]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "class": "btn btn-back btn-outline-primary fw-bold me-4",
+      "type": "button"
+    },
+    "direct_text": "Indietro"
+  },
+  {
+    "path": "body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[3]/button[2]",
+    "tag": "button",
+    "attrs": {
+      "class": "btn btn-next btn-primary fw-bold",
+      "form": "rating",
+      "type": "submit"
+    },
+    "direct_text": "Avanti"
+  },
+  {
+    "path": "body/main[1]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "bg-grey-card shadow-contacts"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "d-flex justify-content-center p-contacts row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12 col-lg-5"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "cmp-contacts"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card w-100"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "card-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1]",
+    "tag": "h2",
+    "attrs": {
+      "class": "title-medium-2-semi-bold"
+    },
+    "direct_text": "Contatta il comune"
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "contact-list p-0"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "list-item",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon icon-primary icon-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-help-circle"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Leggi le domande frequenti"
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "list-item",
+      "data-element": "contacts",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon icon-primary icon-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-mail"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Richiedi assistenza"
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "list-item",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon icon-primary icon-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-hearing"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Chiama il numero verde 05 0505"
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "list-item",
+      "data-element": "appointment-booking",
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon icon-primary icon-sm"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-calendar"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {},
+    "direct_text": "Prenota appuntamento"
+  },
+  {
+    "path": "body/main[1]/div[4]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-example-modal"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "aria-labelledby": "modal2Title",
+      "class": "fade modal",
+      "id": "modal-disservizio",
+      "role": "dialog",
+      "tabindex": "-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "modal-dialog",
+      "role": "document"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "modal-content"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "modal-header"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/h2[1]",
+    "tag": "h2",
+    "attrs": {
+      "class": "modal-title title-small-semi-bold",
+      "id": "modal2Title"
+    },
+    "direct_text": "Buca in via Solferino"
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "aria-label": "Chiudi finestra modale",
+      "class": "btn-close",
+      "data-bs-dismiss": "modal",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-close"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "modal-body text-black"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/h3[1]",
+    "tag": "h3",
+    "attrs": {
+      "class": "border-light pt-2 title-xsmall"
+    },
+    "direct_text": "Titolo"
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "pb-2 subtitle-small"
+    },
+    "direct_text": "Buca in via Solferino"
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[2]/h3[1]",
+    "tag": "h3",
+    "attrs": {
+      "class": "border-light pt-2 title-xsmall"
+    },
+    "direct_text": "Tipologia di segnalazione"
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[2]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "pb-2 subtitle-small"
+    },
+    "direct_text": "Verde pubblico e arredo urbano"
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[3]/h3[1]",
+    "tag": "h3",
+    "attrs": {
+      "class": "border-light pt-2 title-xsmall"
+    },
+    "direct_text": "Indirizzo"
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[3]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "pb-2 subtitle-small"
+    },
+    "direct_text": "Via Solferino - 50100 Firenze"
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[4]",
+    "tag": "div",
+    "attrs": {
+      "class": "border-bottom border-light"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[4]/h3[1]",
+    "tag": "h3",
+    "attrs": {
+      "class": "border-light pt-2 title-xsmall"
+    },
+    "direct_text": "Dettaglio"
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[4]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "pb-2 subtitle-small"
+    },
+    "direct_text": "Sulla strada c’è una buca piuttosto profonda che andrebbe sistemata con urgenza"
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/h3[1]",
+    "tag": "h3",
+    "attrs": {
+      "class": "border-light pt-2 title-xsmall"
+    },
+    "direct_text": "Immagini"
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[2]/img[1]",
+    "tag": "img",
+    "attrs": {
+      "alt": "immagine della mappa di dove si trova il disservizio",
+      "class": "mb-2 w-100",
+      "src": "../assets/images/modal-disservizio-placeholder.png"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "modal-footer"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[3]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "aria-label": "Chiudi finestra modale",
+      "class": "btn btn-outline-primary btn-sm w-100",
+      "data-bs-dismiss": "modal",
+      "type": "button"
+    },
+    "direct_text": "Chiudi"
+  },
+  {
+    "path": "body/div[2]",
+    "tag": "div",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "fade modal search-modal",
+      "id": "search-modal",
+      "role": "dialog",
+      "tabindex": "-1"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "modal-dialog modal-lg",
+      "role": "document"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "modal-content perfect-scrollbar"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "modal-body"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]",
+    "tag": "form",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row variable-gutters"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "modal-title"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "aria-label": "Chiudi e torna alla pagina precedente",
+      "class": "d-md-none search-link",
+      "data-bs-target": "#search-modal",
+      "data-bs-toggle": "modal",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon icon-md"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-left"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/h2[1]",
+    "tag": "h2",
+    "attrs": {},
+    "direct_text": "Cerca"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[2]",
+    "tag": "button",
+    "attrs": {
+      "aria-label": "Chiudi e torna alla pagina precedente",
+      "class": "d-md-block d-none search-link",
+      "data-bs-target": "#search-modal",
+      "data-bs-toggle": "modal",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[2]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon icon-md"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[2]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "autocomplete-wrapper form-group"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/label[1]",
+    "tag": "label",
+    "attrs": {
+      "class": "visually-hidden",
+      "for": "autocomplete-two"
+    },
+    "direct_text": "Cerca nel sito"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/input[1]",
+    "tag": "input",
+    "attrs": {
+      "class": "autocomplete ps-5",
+      "data-bs-autocomplete": "[]",
+      "id": "autocomplete-two",
+      "name": "autocomplete-two",
+      "placeholder": "Cerca nel sito",
+      "type": "search"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "autocomplete-icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/span[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/span[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-search"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/button[1]",
+    "tag": "button",
+    "attrs": {
+      "class": "btn btn-primary",
+      "type": "button"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/button[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": ""
+    },
+    "direct_text": "Cerca"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "row variable-gutters"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-lg-5"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "searches-list-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "other-link-title"
+    },
+    "direct_text": "FORSE STAVI CERCANDO"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "searches-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Rilascio Carta Identità Elettronica (CIE)"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Cambio di residenza"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Tributi online"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Prenotazione appuntamenti"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[5]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[5]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Rilascio tessera elettorale"
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[6]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[6]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Voucher connettività"
+  },
+  {
+    "path": "body/footer[1]",
+    "tag": "footer",
+    "attrs": {
+      "class": "it-footer",
+      "id": "footer"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-footer-main"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "container"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12 footer-items-wrapper logo-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/img[1]",
+    "tag": "img",
+    "attrs": {
+      "alt": "logo Unione Europea",
+      "class": "ue-logo",
+      "src": "../assets/images/logo-eu-inverted.svg"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-brand-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "aria-hidden": "true",
+      "class": "icon"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-pa"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "it-brand-text"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]/h2[1]",
+    "tag": "h2",
+    "attrs": {
+      "class": "no_toc"
+    },
+    "direct_text": "Nome del Comune"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-3 footer-items-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/h4[1]",
+    "tag": "h4",
+    "attrs": {
+      "class": "footer-heading-title"
+    },
+    "direct_text": "Amministrazione"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "footer-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Organi di governo"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Aree amministrative"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Uffici"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Enti e fondazioni"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Politici"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Personale amministrativo"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Documenti e dati"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-6 footer-items-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/h4[1]",
+    "tag": "h4",
+    "attrs": {
+      "class": "footer-heading-title"
+    },
+    "direct_text": "Categorie di servizio"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-6"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "footer-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Anagrafe e stato civile"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Cultura e tempo libero"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Vita lavorativa"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Imprese e commercio"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[5]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[5]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Appalti pubblici"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[6]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[6]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Catasto e urbanistica"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[7]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[7]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Turismo"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[8]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[8]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Mobilità e trasporti"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-6"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "footer-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Educazione e formazione"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Giustizia e sicurezza pubblica"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Tributi, finanze e contravvenzioni"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Ambiente"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[5]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[5]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Salute, benessere e assistenza"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[6]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[6]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Autorizzazioni"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[7]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[7]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Agricoltura e pesca"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-3 footer-items-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/h4[1]",
+    "tag": "h4",
+    "attrs": {
+      "class": "footer-heading-title"
+    },
+    "direct_text": "Novità"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "footer-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Notizie"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Comunicati"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Avvisi"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/h4[2]",
+    "tag": "h4",
+    "attrs": {
+      "class": "footer-heading-title"
+    },
+    "direct_text": "Vivere il comune"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]",
+    "tag": "ul",
+    "attrs": {
+      "class": "footer-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Luoghi"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Eventi"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-9 footer-items-wrapper mt-md-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/h4[1]",
+    "tag": "h4",
+    "attrs": {
+      "class": "footer-heading-title"
+    },
+    "direct_text": "Contatti"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]",
+    "tag": "p",
+    "attrs": {
+      "class": "footer-info"
+    },
+    "direct_text": "Comune di Nome Comune Via Roma 123 - 00100 Comune Codice fiscale / P. IVA: 00123456789 Numero verde: 800 016 123 SMS e WhatsApp: +39 320 1234567 Posta Elettronica Certificata Centralino unico: 012 3456"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[1]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[2]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[3]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[4]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Ufficio Relazioni con il Pubblico"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[5]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[6]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[7]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[8]",
+    "tag": "br",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "footer-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "data-element": "faq",
+      "href": "#"
+    },
+    "direct_text": "Leggi le FAQ"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Prenotazione appuntamento"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "data-element": "report-inefficiency",
+      "href": "#"
+    },
+    "direct_text": "Segnalazione disservizio"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Richiesta d'assistenza"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "footer-list"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Amministrazione trasparente"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "data-element": "privacy-policy-link",
+      "href": "#"
+    },
+    "direct_text": "Informativa privacy"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "data-element": "legal-notes",
+      "href": "#"
+    },
+    "direct_text": "Note legali"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {},
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "data-element": "accessibility-link",
+      "href": "#"
+    },
+    "direct_text": "Dichiarazione di accessibilità"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-md-3 footer-items-wrapper mt-md-4"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/h4[1]",
+    "tag": "h4",
+    "attrs": {
+      "class": "footer-heading-title"
+    },
+    "direct_text": "Seguici su"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]",
+    "tag": "ul",
+    "attrs": {
+      "class": "list-inline social text-start"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]",
+    "tag": "li",
+    "attrs": {
+      "class": "list-inline-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "p-1 text-white",
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Twitter"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]",
+    "tag": "li",
+    "attrs": {
+      "class": "list-inline-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "p-1 text-white",
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Facebook"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]",
+    "tag": "li",
+    "attrs": {
+      "class": "list-inline-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "p-1 text-white",
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "YouTube"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]",
+    "tag": "li",
+    "attrs": {
+      "class": "list-inline-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "p-1 text-white",
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Telegram"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]",
+    "tag": "li",
+    "attrs": {
+      "class": "list-inline-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "p-1 text-white",
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "Whatsapp"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]",
+    "tag": "li",
+    "attrs": {
+      "class": "list-inline-item"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "class": "p-1 text-white",
+      "href": "#",
+      "target": "_blank"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]/a[1]/svg[1]",
+    "tag": "svg",
+    "attrs": {
+      "class": "align-top icon icon-sm icon-white"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]/a[1]/svg[1]/use[1]",
+    "tag": "use",
+    "attrs": {
+      "xlink:href": "../assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]/a[1]/span[1]",
+    "tag": "span",
+    "attrs": {
+      "class": "visually-hidden"
+    },
+    "direct_text": "RSS"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[3]",
+    "tag": "div",
+    "attrs": {
+      "class": "row"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[3]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "col-12 footer-items-wrapper"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[3]/div[1]/div[1]",
+    "tag": "div",
+    "attrs": {
+      "class": "footer-bottom"
+    },
+    "direct_text": ""
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Media policy"
+  },
+  {
+    "path": "body/footer[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[2]",
+    "tag": "a",
+    "attrs": {
+      "href": "#"
+    },
+    "direct_text": "Mappa del sito"
+  }
+]

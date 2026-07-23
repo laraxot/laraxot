@@ -1,0 +1,34 @@
+   8. RESPONSIVE ADJUSTMENTS
+   Mobile and tablet optimizations
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .hero-default {
+    padding: 2rem 0 3rem !important;
+  }
+
+  .hero-default h1 {
+    font-size: 2rem !important;
+  }
+
+  .services-grid .col-md-6,
+  .services-grid .col-lg-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .appointment-booking-section .card {
+    padding: 2rem 1.5rem !important;
+  }
+
+  .feedback-section textarea {
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .services-grid .col-lg-4 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}

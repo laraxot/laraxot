@@ -1,0 +1,18 @@
+parameters:
+    level: 10
+    paths:
+        - Modules
+    excludePaths:
+        - Modules/*/vendor/*
+    tmpDir: storage/phpstan
+    ignoreErrors:
+        - '#Call to an undefined method.*#'
+        - '#Access to an undefined property.*#'
+        - '#Class .* not found#'
+        - '#PHPDoc tag @mixin contains unknown class #'
+        - '#Static call to instance method Nwidart#'
+        - '#is used zero times and is not analysed#'
+        - "#^Unsafe usage of new static#"
+        - '#Cannot cast mixed to (string|float|double|int|bool|boolean).#'
+        - identifier: missingType.generics
+        - identifier: missingType.iterableValue

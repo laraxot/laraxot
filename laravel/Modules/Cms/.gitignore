@@ -1,0 +1,131 @@
+# Auto-generated forbidden paths — do not edit manually
+# Reason: root cleanup policy (see docs/wiki/rules/root-cleanup-policy.md)
+
+bashscripts
+_bmad-output
+.circleci
+.claude-audit
+.devcontainer
+_docs
+docs/archive
+docs/archived
+docs/legacy
+docs/workbench
+.kilocode
+.kiro
+.ralph
+scripts
+test-results
+tests/.claude-audit
+# ==============================================
+# LARAXOT MODULE CMS — .gitignore
+# DEPENDENCIES & PACKAGES
+/vendor/
+/node_modules/
+/docs/vendor/
+package-lock.json
+yarn.lock
+composer.lock
+# BUILD & COMPILED FILES
+/build/
+dist/
+docs/cache/
+cache/
+# CACHE & TEMPORARY FILES
+*.cache
+*.lock
+*.phar
+*.jar
+*.tmp
+*.swp
+*.swo
+*.stackdump
+*:Zone.Identifier
+v8-compile-cache-*
+.php-cs-fixer.cache
+.phpunit.result.cache
+# LOG FILES
+*.log
+error_log
+npm-debug.log*
+yarn-error.log*
+lerna-debug.log*
+# LARAVEL SPECIFIC
+bootstrap/compiled.php
+app/storage/
+public/storage
+public/hot
+public_html/storage
+public_html/hot
+storage/*.key
+.env
+.env.*
+!.env.example
+# ENVIRONMENT & CONFIGURATION
+Homestead.yaml
+Homestead.json
+/.vagrant
+/.idea
+.phpintel
+.phpstorm.meta.php
+# IDE / DEV TOOLS (personal, never commit)
+.windsurf/
+.cursor/
+.vscode/
+# GIT SPECIFIC
+.git-rewrite/
+.git-blame-ignore-revs
+# SYSTEM FILES
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+# BACKUP / MERGE RESIDUE (never commit)
+*.old
+*.old1
+*.old2
+*.backup
+*.backup.*
+*.bak
+*.bakcup
+*.new
+*.fila2
+*.orig
+*.rej
+*~HEAD
+*~BASE
+*~LOCAL
+*~REMOTE
+*~head
+# PHPSTAN / DOCS CACHE
+docs/phpstan/
+# LEGACY / OLD DIRECTORIES
+resources/lang/
+resources/views/Components_old/
+database/Migrations_old/
+database/Seeders_old/
+database/Factories_old/
+database_old/
+laravel
+public_html
+lang/lang/
+# MODULE SPECIFIC — CMS
+config/local.php
+config/development.php
+content/temp/
+content/drafts/
+content/uploads/temp/
+storage/cms/
+storage/content/
+test_content.json
+cms_test_data.sql
+# PROJECT SCRATCH
+agentdb.rvf
+audit-coverage/
+tests/AuditCoverage/
+# AI / TOOL SCAFFOLD — must never exist in the module tree
+# (see docs/module-root-hygiene.md and
+#  docs/wiki/rules/module-theme-root-cleanup.md)

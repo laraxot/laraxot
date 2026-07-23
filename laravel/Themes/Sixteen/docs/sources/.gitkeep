@@ -1,0 +1,7 @@
+---
+module: theme
+topic: .gitkeep
+canonical: ../../../docs/shared-components/.gitkeep
+---
+
+See canonical documentation: ../../../docs/shared-components/.gitkeep

@@ -1,0 +1,14 @@
+Aggiornamento: mappate le tecniche W3C su azioni concrete e definito l’ordine di intervento per evitare conflitti tra più agenti.
+
+**Documenti in repo:**
+- **Tecniche e risoluzione**: [wcag-techniques-resolution.md](https://github.com/laraxot/base_techplanner_fila5/blob/dev/laravel/Themes/Two/docs/wcag-techniques-resolution.md) – H44, F78, G195, H30, C8, C38, G18, H98, ARIA6 e come il tema Two le risolve.
+- **Checklist e pattern**: [wcag-compliance-plan.md](https://github.com/laraxot/base_techplanner_fila5/blob/dev/laravel/Themes/Two/docs/wcag-compliance-plan.md).
+
+**Ordine di intervento (multi‑agente):**
+1. H44 + H98 (form: label + autocomplete)
+2. G18 + C8 (CSS contrasto e letter-spacing)
+3. F78 / G195 (focus visibile)
+4. H30 + ARIA6 (link e aria-label)
+5. C38 (reflow a 320px / 400% zoom)
+
+Quando si lavora su una di queste aree, indicare nel commit la tecnica (es. `fix(theme-two): H44 label contact form`).

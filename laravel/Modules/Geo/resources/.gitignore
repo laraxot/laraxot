@@ -1,0 +1,8 @@
+/dist
+/fonts
+/webfonts
+-e 
+# PHPStan documentation
+docs/phpstan/
+_docs/
+agentdb.rvf

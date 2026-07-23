@@ -1,0 +1,431 @@
+<a  >
+<a  class="logo-hamburger">
+<a  class="t-primary">
+<a  data-element="accessibility-link">
+<a  data-element="faq">
+<a  data-element="legal-notes">
+<a  data-element="privacy-policy-link">
+<a  data-element="report-inefficiency">
+<a  target="_blank">
+<a  target="_blank">
+<a  target="_blank">
+<a  target="_blank">
+<a  target="_blank">
+<a  target="_blank">
+<a  target="_blank">
+<a  target="_blank">
+<a  target="_blank">
+<a  target="_blank">
+<a  target="_blank">
+<a  target="_blank">
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a >
+<a class="btn btn-primary btn-icon btn-full"  data-element="personal-area-login">
+<a class="d-lg-block navbar-brand" target="_blank"  aria-label="..." >
+<a class="dropdown-item list-item" >
+<a class="dropdown-item list-item" >
+<a class="list-item"  data-element="appointment-booking">
+<a class="list-item"  data-element="contacts">
+<a class="list-item" >
+<a class="list-item" >
+<a class="nav-link active"  data-element="all-services">
+<a class="nav-link"  data-element="all-topics">
+<a class="nav-link"  data-element="live">
+<a class="nav-link"  data-element="management">
+<a class="nav-link"  data-element="news">
+<a class="nav-link" >
+<a class="nav-link" >
+<a class="nav-link" >
+<a class="p-1 text-white"  target="_blank">
+<a class="p-1 text-white"  target="_blank">
+<a class="p-1 text-white"  target="_blank">
+<a class="p-1 text-white"  target="_blank">
+<a class="p-1 text-white"  target="_blank">
+<a class="p-1 text-white"  target="_blank">
+<a class="visually-hidden-focusable" >
+<a class="visually-hidden-focusable" >
+<body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<button class="btn close-menu" type="button">
+<button class="custom-navbar-toggler" type="button" aria-controls="nav4" aria-expanded="false" aria-label="..." data-bs-target="#nav4" data-bs-toggle="navbarcollapsible">
+<button class="search-link d-md-none" type="button" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="...">
+<button class="search-link d-none d-md-block" type="button" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="...">
+<button class="search-link rounded-icon" type="button" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="...">
+<button type="button" class="btn btn-primary mobile-full">
+<button type="button" class="btn btn-primary">
+<button type="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="languages" aria-haspopup="true">
+<div class="bg-grey-card shadow-contacts">
+<div class="card w-100">
+<div class="card-body">
+<div class="checkbox-body d-flex align-items-center">
+<div class="close-div">
+<div class="cmp-breadcrumbs" >
+<div class="cmp-contacts">
+<div class="col">
+<div class="col-12 col-lg-10">
+<div class="col-12 col-lg-10">
+<div class="col-12 col-lg-6 offset-lg-3 p-contacts">
+<div class="col-12 col-lg-8 pb-40 pb-lg-80">
+<div class="col-12 footer-items-wrapper logo-wrapper">
+<div class="col-12 footer-items-wrapper">
+<div class="col-12">
+<div class="col-12">
+<div class="col-12">
+<div class="col-12">
+<div class="col-12">
+<div class="col-lg-5">
+<div class="col-md-3 footer-items-wrapper">
+<div class="col-md-3 footer-items-wrapper">
+<div class="col-md-3 mt-md-4 footer-items-wrapper">
+<div class="col-md-4">
+<div class="col-md-4">
+<div class="col-md-4">
+<div class="col-md-6 footer-items-wrapper">
+<div class="col-md-6">
+<div class="col-md-6">
+<div class="col-md-9 mt-md-4 footer-items-wrapper">
+<div class="container" id="main-container">
+<div class="container">
+<div class="container">
+<div class="container">
+<div class="container">
+<div class="container">
+<div class="container">
+<div class="container">
+<div class="container">
+<div class="dropdown-menu">
+<div class="footer-bottom">
+<div class="form-check mt-4 mb-3 mt-md-40 mb-lg-40">
+<div class="form-group autocomplete-wrapper">
+<div class="it-brand-tagline d-none d-md-block">
+<div class="it-brand-text">
+<div class="it-brand-text">
+<div class="it-brand-text">
+<div class="it-brand-title">
+<div class="it-brand-title">
+<div class="it-brand-wrapper">
+<div class="it-brand-wrapper">
+<div class="it-footer-main">
+<div class="it-header-center-content-wrapper">
+<div class="it-header-center-wrapper">
+<div class="it-header-navbar-wrapper" id="header-nav-wrapper">
+<div class="it-header-slim-right-zone" >
+<div class="it-header-slim-wrapper">
+<div class="it-header-slim-wrapper-content">
+<div class="it-nav-wrapper">
+<div class="it-right-zone">
+<div class="it-search-wrapper">
+<div class="it-socials d-none d-lg-flex">
+<div class="it-socials">
+<div class="link-list-wrapper">
+<div class="menu-wrapper">
+<div class="modal fade search-modal" id="search-modal" tabindex="-1"  aria-hidden="true">
+<div class="modal-body">
+<div class="modal-content perfect-scrollbar">
+<div class="modal-dialog modal-lg" >
+<div class="modal-title">
+<div class="nav-item dropdown">
+<div class="navbar navbar-expand-lg has-megamenu">
+<div class="navbar-collapsable" id="nav4">
+<div class="other-link-title">
+<div class="overlay" >
+<div class="row justify-content-center">
+<div class="row justify-content-center">
+<div class="row justify-content-center">
+<div class="row variable-gutters">
+<div class="row variable-gutters">
+<div class="row">
+<div class="row">
+<div class="row">
+<div class="row">
+<div class="row">
+<div class="row">
+<div class="row">
+<div class="row">
+<div class="row">
+<div class="row">
+<div class="searches-list-wrapper">
+<div class="skiplink">
+<div class="steppers">
+<div class="steppers-header">
+<footer class="it-footer" id="footer">
+<form>
+<h1 class="title-xxxlarge mb-4">
+<h2 class="no_toc">
+<h2 class="title-medium-2-semi-bold">
+<h2>
+<h4 class="footer-heading-title">
+<h4 class="footer-heading-title">
+<h4 class="footer-heading-title">
+<h4 class="footer-heading-title">
+<h4 class="footer-heading-title">
+<h4 class="footer-heading-title">
+<header class="it-header-wrapper" data-bs-target="#header-nav-wrapper" >
+<image xlink:href="../assets/images/logo-comune.svg"/>
+<img class="ue-logo"  >
+<input type="checkbox" id="privacy" name="privacy-field" value="privacy-field">
+<input type="search" class="autocomplete ps-5" placeholder="Cerca nel sito" id="autocomplete-two" name="autocomplete-two" data-bs-autocomplete="[]">
+<label class="title-small-semi-bold pt-1" for="privacy">
+<label for="autocomplete-two" class="visually-hidden">
+<li class="">
+<li class="">
+<li class="active">
+<li class="breadcrumb-item active" aria-current="page">
+<li class="breadcrumb-item">
+<li class="breadcrumb-item">
+<li class="list-inline-item">
+<li class="list-inline-item">
+<li class="list-inline-item">
+<li class="list-inline-item">
+<li class="list-inline-item">
+<li class="list-inline-item">
+<li class="nav-item">
+<li class="nav-item">
+<li class="nav-item">
+<li class="nav-item">
+<li class="nav-item">
+<li class="nav-item">
+<li class="nav-item">
+<li class="nav-item">
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<li>
+<main>
+<nav aria-label="...">
+<nav aria-label="...">
+<nav class="breadcrumb-container" aria-label="...">
+<ol class="breadcrumb p-0" data-element="breadcrumb">
+<p class="footer-info">
+<p class="text-paragraph mb-0">
+<p class="text-paragraph mb-lg-4">
+<span class="">
+<span class="">
+<span class="autocomplete-icon" aria-hidden="true">
+<span class="d-none d-lg-block">
+<span class="d-none d-md-block">
+<span class="rounded-icon" aria-hidden="true">
+<span class="separator">
+<span class="separator">
+<span class="steppers-index" aria-hidden="true">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span class="visually-hidden">
+<span>
+<span>
+<span>
+<span>
+<span>
+<span>
+<span>
+<span>
+<span>
+<span>
+<span>
+<span>
+<span>
+<span>
+<svg class="icon icon-md">
+<svg class="icon icon-md">
+<svg class="icon icon-primary icon-sm" aria-hidden="true">
+<svg class="icon icon-primary icon-sm" aria-hidden="true">
+<svg class="icon icon-primary icon-sm" aria-hidden="true">
+<svg class="icon icon-primary icon-sm" aria-hidden="true">
+<svg class="icon icon-primary">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm icon-white align-top">
+<svg class="icon icon-sm">
+<svg class="icon" aria-hidden="true">
+<svg class="icon" aria-hidden="true">
+<svg class="icon">
+<svg class="icon">
+<svg class="icon">
+<svg class="icon">
+<svg class="icon">
+<svg width="82" height="82" class="icon" aria-hidden="true">
+<ul class="contact-list p-0">
+<ul class="footer-list">
+<ul class="footer-list">
+<ul class="footer-list">
+<ul class="footer-list">
+<ul class="footer-list">
+<ul class="footer-list">
+<ul class="footer-list">
+<ul class="link-list">
+<ul class="list-inline text-start social">
+<ul class="navbar-nav navbar-secondary">
+<ul class="navbar-nav" data-element="main-navigation">
+<ul class="searches-list">
+<ul>
+<ul>
+<ul>
+<use >
+<use >
+<use >
+<use >
+<use >
+<use >
+<use >
+<use >
+<use >
+<use >
+<use >
+<use >
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-right">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-pa">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-rss">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-rss">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-rss">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-user">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube">
+<use xlink:href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube">

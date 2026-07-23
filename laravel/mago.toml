@@ -1,0 +1,16 @@
+# Mago configuration file
+# For more information, see https://mago.carthage.software/#/getting-started/configuration
+php-version = "8.2.0"
+
+[source]
+paths = ["app/", "database/factories/", "database/seeders/", "tests/"]
+includes = ["vendor"]
+excludes = []
+
+[formatter]
+print-width = 120
+use-tabs = false
+
+[linter]
+excludes = []
+integrations = []

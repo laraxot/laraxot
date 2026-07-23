@@ -1,0 +1,19 @@
+{
+  "blocks": [],
+  "found_ids": [],
+  "found_tags": [],
+  "missing_ids": [
+    "calendario",
+    "footer",
+    "head-section",
+    "main-container",
+    "rating",
+    "search-modal"
+  ],
+  "missing_tags": [
+    "footer",
+    "header",
+    "main",
+    "nav"
+  ]
+}

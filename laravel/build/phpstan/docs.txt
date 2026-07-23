@@ -1,0 +1,10 @@
+=== PHPStan Analysis for docs ===
+Date: Thu Jul 16 10:16:31 AM CEST 2026
+Configuration: /var/www/_bases/base_techplanner_fila5/laravel/phpstan.neon
+============================================
+
+
+ [ERROR] No files found to analyse.                                             
+
+
+=== END ANALYSIS ===

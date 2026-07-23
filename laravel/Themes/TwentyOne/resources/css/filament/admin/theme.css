@@ -1,0 +1,41 @@
+@import '../../../../../../vendor/filament/filament/resources/css/theme.css';
+@config './tailwind.config.js';
+
+/* Custom Filament 4 theme overrides */
+:root {
+    --primary: theme('colors.indigo.600');
+    --success: theme('colors.green.600');
+    --warning: theme('colors.amber.600');
+    --danger: theme('colors.red.600');
+}
+
+/* Prediction market specific styles */
+.fi-main {
+    @apply bg-gray-50 dark:bg-gray-900;
+}
+
+.prediction-card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700;
+}
+
+/* Market probability colors */
+.probability-high {
+    @apply text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20;
+}
+
+.probability-medium {
+    @apply text-amber-600 bg-amber-50 dark:bg-amber-900/20;
+}
+
+.probability-low {
+    @apply text-red-600 bg-red-50 dark:bg-red-900/20;
+}
+
+/* Custom market indicators */
+.market-yes {
+    @apply text-green-600 bg-green-50 dark:bg-green-900/20;
+}
+
+.market-no {
+    @apply text-red-600 bg-red-50 dark:bg-red-900/20;
+}

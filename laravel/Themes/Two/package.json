@@ -1,0 +1,39 @@
+{
+  "name": "laraxot/theme-two",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Tema Two",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "watch": "vite build --watch",
+    "copy": "mkdir -p ../../../public_html/themes/Two && cp -rv ./public/* ../../../public_html/themes/Two/"
+  },
+  "devDependencies": {
+    "@alpinejs/focus": "^3.14.9",
+    "@headlessui/vue": "^1.7.19",
+    "@heroicons/vue": "^2.1.1",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.2.0",
+    "@types/node": "^20.11.24",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "autoprefixer": "^10.4.21",
+    "axios": "^1.8.4",
+    "concurrently": "^9.1.2",
+    "flowbite": "^3.1.2",
+    "laravel-vite-plugin": "^1.2.0",
+    "postcss": "^8.5.3",
+    "postcss-nesting": "^13.0.1",
+    "swiper": "^11.2.6",
+    "tailwindcss": "^4.2.0",
+    "tippy.js": "^6.3.7",
+    "vite": "^6.2.4",
+    "vue": "^3.4.21"
+  },
+  "dependencies": {
+    "daisyui": "^5.5.18"
+  }
+}

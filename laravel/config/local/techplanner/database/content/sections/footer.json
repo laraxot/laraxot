@@ -1,0 +1,267 @@
+{
+    "id": "2",
+    "slug": "footer",
+    "name": {
+        "it": "Footer Sottana Service",
+        "en": "Footer Sottana Service"
+    },
+    "blocks": {
+        "it": [
+            {
+                "type": "footer",
+                "slug": "main-footer",
+                "data": {
+                    "view": "pub_theme::components.sections.footer.v1",
+                    "brand": {
+                        "name": "Sottana Service",
+                        "subtitle": "Consulenza Sicurezza e Radioprotezione",
+                        "description": "Specialisti in radioprotezione e sicurezza per studi dentistici e cliniche veterinarie. Partner di fiducia per la conformità normativa."
+                    },
+                    "social": {
+                        "linkedin": "https://linkedin.com/in/marcosottana",
+                        "facebook": "https://facebook.com/marcosottana",
+                        "instagram": "https://instagram.com/marcosottana"
+                    },
+                    "normative": {
+                        "title": "Normative & Certificazioni",
+                        "items": [
+                            {
+                                "label": "D.Lgs 101/2020",
+                                "description": "Attuazione della direttiva 2013/59/Euratom per la sicurezza radiologica."
+                            },
+                            {
+                                "label": "Esperti di Radioprotezione",
+                                "description": "Professionisti iscritti negli elenchi nominativi autorizzati."
+                            },
+                            {
+                                "label": "IEC 62353",
+                                "description": "Verifiche periodiche di sicurezza elettrica per apparecchi elettromedicali."
+                            }
+                        ]
+                    },
+                    "services": {
+                        "title": "Servizi di Consulenza",
+                        "items": [
+                            "Autorizzazioni Sanitarie",
+                            "Controllo Apparecchi RX ed Elettromedicali",
+                            "Documenti di Valutazione del Rischio"
+                        ]
+                    },
+                    "contact": {
+                        "title": "Contatti",
+                        "items": [
+                            {
+                                "type": "address",
+                                "value": "Via Vanzo 86, 31021 Mogliano Veneto TV"
+                            },
+                            {
+                                "type": "email",
+                                "value": "studio@sottana.com"
+                            },
+                            {
+                                "type": "phone",
+                                "value": "+39 041 455552"
+                            },
+                            {
+                                "type": "phone_mobile",
+                                "value": "+39 347 58 96 127"
+                            }
+                        ],
+                        "piva": "05532540266",
+                        "rea": "TV - 451911"
+                    },
+                    "certifications": {
+                        "title": "Certificazioni",
+                        "items": [
+                            {
+                                "name": "Esperto di Radioprotezione",
+                                "issuer": "Ministero della Salute",
+                                "validity": "2026-12-31"
+                            },
+                            {
+                                "name": "Esperto in Radioprotezione",
+                                "issuer": "Ministero della Salute",
+                                "validity": "2026-12-31"
+                            }
+                        ]
+                    },
+                    "testimonials": {
+                        "title": "Dicono di Noi",
+                        "items": [
+                            {
+                                "text": "Servizio eccellente e professionale. Marco è molto competente e disponibile per qualsiasi chiarimento.",
+                                "author": "Dr. Alberto Rossi",
+                                "role": "Studio Dentistico Rossi",
+                                "location": "Treviso"
+                            },
+                            {
+                                "text": "Puntuali, precisi e sempre aggiornati sulle normative. Consiglio vivamente.",
+                                "author": "Dr.ssa Giulia Bianchi",
+                                "role": "Clinica Veterinaria VetLife",
+                                "location": "Venezia"
+                            }
+                        ]
+                    },
+                    "quick_actions": {
+                        "call": {
+                            "phone": "+39 041 455552",
+                            "label": "Chiama Ora"
+                        },
+                        "whatsapp": {
+                            "number": "+39 347 58 96 127",
+                            "label": "WhatsApp"
+                        },
+                        "appointment": {
+                            "url": "/it/contatti",
+                            "label": "Prenota Appuntamento"
+                        }
+                    },
+                    "map": {
+                        "address": "Via Vanzo 86, 31021 Mogliano Veneto TV",
+                        "embed_url": "https://www.openstreetmap.org/export/embed.html?bbox=12.2406%2C45.5533%2C12.2606%2C45.5733&layer=mapnik&marker=45.5633%2C12.2506",
+                        "link": "https://www.google.com/maps/search/?api=1&query=Via+Vanzo+86%2C+31021+Mogliano+Veneto+TV"
+                    },
+                    "legal": {
+                        "copyright": "© 2026 Sottana Service - Consulenza Sicurezza e Radioprotezione. Tutti i diritti riservati.",
+                        "links": [
+                            {
+                                "label": "Privacy Policy",
+                                "url": "/it/privacy"
+                            },
+                            {
+                                "label": "Termini e Condizioni",
+                                "url": "/it/terms"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "en": [
+            {
+                "type": "footer",
+                "slug": "main-footer",
+                "data": {
+                    "view": "pub_theme::components.sections.footer.v1",
+                    "brand": {
+                        "name": "Sottana Service",
+                        "subtitle": "Safety and Radiation Protection Consulting",
+                        "description": "Specialists in radiation protection and safety for dental practices and veterinary clinics. Trusted partner for regulatory compliance."
+                    },
+                    "social": {
+                        "linkedin": "https://linkedin.com/in/marcosottana",
+                        "facebook": "https://facebook.com/marcosottana",
+                        "instagram": "https://instagram.com/marcosottana"
+                    },
+                    "normative": {
+                        "title": "Regulations & Certifications",
+                        "items": [
+                            {
+                                "label": "D.Lgs 101/2020",
+                                "description": "Implementation of Directive 2013/59/Euratom for radiological safety."
+                            },
+                            {
+                                "label": "Radiation Protection Experts",
+                                "description": "Professionals registered in authorized nominative lists."
+                            },
+                            {
+                                "label": "IEC 62353",
+                                "description": "Periodic electrical safety tests for medical devices."
+                            }
+                        ]
+                    },
+                    "services": {
+                        "title": "Consulting Services",
+                        "items": [
+                            "Health Authorizations",
+                            "RX and Electromedical Equipment Control",
+                            "Risk Assessment Documents"
+                        ]
+                    },
+                    "contact": {
+                        "title": "Contacts",
+                        "items": [
+                            {
+                                "type": "address",
+                                "value": "Via Vanzo 86, 31021 Mogliano Veneto TV, Italy"
+                            },
+                            {
+                                "type": "email",
+                                "value": "studio@sottana.com"
+                            },
+                            {
+                                "type": "phone",
+                                "value": "+39 041 455552"
+                            },
+                            {
+                                "type": "phone_mobile",
+                                "value": "+39 347 58 96 127"
+                            }
+                        ],
+                        "piva": "05532540266",
+                        "rea": "TV - 451911"
+                    },
+                    "certifications": {
+                        "title": "Certifications",
+                        "items": [
+                            {
+                                "name": "Radiation Protection Expert",
+                                "issuer": "Ministry of Health",
+                                "validity": "2026-12-31"
+                            },
+                            {
+                                "name": "Radiation Protection Expert",
+                                "issuer": "Ministry of Health",
+                                "validity": "2026-12-31"
+                            }
+                        ]
+                    },
+                    "testimonials": {
+                        "title": "What They Say",
+                        "items": [
+                            {
+                                "text": "Excellent and professional service. Marco is very competent and available for any clarification.",
+                                "author": "Dr. Alberto Rossi",
+                                "role": "Studio Dentistico Rossi",
+                                "location": "Treviso"
+                            },
+                            {
+                                "text": "Punctual, precise and always up to date on regulations. Highly recommended.",
+                                "author": "Dr.ssa Giulia Bianchi",
+                                "role": "Clinica Veterinaria VetLife",
+                                "location": "Venezia"
+                            }
+                        ]
+                    },
+                    "quick_actions": {
+                        "call": {
+                            "phone": "+39 041 455552",
+                            "label": "Call Now"
+                        },
+                        "whatsapp": {
+                            "number": "+39 347 58 96 127",
+                            "label": "WhatsApp"
+                        },
+                        "appointment": {
+                            "url": "/en/contacts",
+                            "label": "Book Appointment"
+                        }
+                    },
+                    "legal": {
+                        "copyright": "© 2026 Sottana Service - Safety and Radiation Protection Consulting. All rights reserved.",
+                        "links": [
+                            {
+                                "label": "Privacy Policy",
+                                "url": "/en/privacy"
+                            },
+                            {
+                                "label": "Terms and Conditions",
+                                "url": "/en/terms"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-labelledby="employee-logo-title" role="img">
+  <title id="employee-logo-title">Employee Management Logo</title>
+  <defs>
+    <style>
+      .logo-primary { 
+        stroke: currentColor; 
+        opacity: 0.9;
+        transition: all 0.3s ease;
+      }
+      .logo-secondary { 
+        stroke: currentColor; 
+        opacity: 0.7;
+        transition: all 0.3s ease;
+      }
+      .logo-accent { 
+        stroke: currentColor; 
+        opacity: 0.5;
+        transition: all 0.3s ease;
+      }
+      @media (prefers-color-scheme: dark) {
+        .logo-primary { opacity: 0.95; }
+        .logo-secondary { opacity: 0.8; }
+        .logo-accent { opacity: 0.6; }
+      }
+      @keyframes pulse-gentle {
+        0%, 100% { opacity: 0.9; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.02); }
+      }
+      .logo-animate {
+        animation: pulse-gentle 3s ease-in-out infinite;
+      }
+      svg:hover .logo-primary {
+        opacity: 1;
+        stroke-width: 2;
+      }
+      svg:hover .logo-secondary {
+        opacity: 0.9;
+      }
+      svg:hover .logo-accent {
+        opacity: 0.7;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .logo-animate { animation: none; }
+        svg:hover .logo-primary { transition: none; }
+      }
+    </style>
+  </defs>
+  
+  <!-- Main employee figure -->
+  <circle cx="12" cy="7" r="3" class="logo-primary logo-animate"/>
+  <path d="M5 21v-2a7 7 0 0 1 14 0v2" class="logo-primary"/>
+  
+  <!-- Building/office structure -->
+  <rect x="2" y="3" width="20" height="16" rx="2" class="logo-secondary"/>
+  <path d="M8 7h8M8 11h8M8 15h8" class="logo-accent"/>
+  
+  <!-- Professional badge/ID -->
+  <rect x="15" y="5" width="4" height="3" rx="0.5" class="logo-accent"/>
+  <circle cx="17" cy="6" r="0.5" class="logo-accent"/>
+</svg>

@@ -1,0 +1,11 @@
+# BATCH ANALYSIS SUMMARY
+
+Page | Match | Ref Size | Local Size | Issues
+---|---|---|---|---
+domande-frequenti | 85.7% | 85.6KB | 98.0KB | 3
+lista-categorie | 78.9% | 54.7KB | 44.0KB | 4
+argomenti | 75.0% | 63.0KB | 65.6KB | 5
+homepage | 70.6% | 71.9KB | 86.1KB | 5
+risultati-ricerca | 64.0% | 94.7KB | 76.6KB | 9
+
+Failed pages:

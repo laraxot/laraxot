@@ -1,0 +1,94 @@
+/* Visual Parity Fixes for Design Comuni Header */
+
+/* 1. Hamburger menu to the left of the logo on mobile/tablet */
+@media (max-width: 991px) {
+    .it-header-center-content-wrapper {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    /* Move toggler to the top left of the center wrapper */
+    .custom-navbar-toggler {
+        position: absolute !important;
+        left: 1rem !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 60 !important;
+        color: white !important;
+        display: flex !important;
+    }
+    
+    .it-header-center-wrapper {
+        position: relative !important;
+    }
+    
+    .it-brand-wrapper {
+        margin-left: 3rem !important; /* Make room for hamburger */
+    }
+}
+
+/* 2. Slogan under the logo */
+.it-brand-text {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.it-brand-tagline {
+    display: block !important;
+    font-size: 0.875rem !important;
+    opacity: 0.8 !important;
+}
+
+/* 3. Language selector: only arrow */
+.it-header-slim-right-zone .nav-item.dropdown .nav-link span:not(.visually-hidden) {
+    /* If we want to hide "ITA" text: display: none !important; */
+}
+
+/* 4. Search magnifying glass to the right */
+.it-header-center-content-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+}
+
+.it-right-zone {
+    margin-left: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+}
+
+/* Ensure search icon is on the far right */
+.it-search-wrapper {
+    order: 99 !important;
+}
+
+/* Additional fixes based on typical Design Comuni header */
+.it-header-slim-wrapper {
+    background-color: #00402b !important; /* Darker green for slim header */
+}
+
+.it-header-center-wrapper, .it-header-navbar-wrapper {
+    background-color: #007a52 !important; /* Primary green */
+}
+
+/* Language selector dropdown icon fix */
+.it-header-slim-right-zone .dropdown-toggle .icon {
+    width: 1rem !important;
+    height: 1rem !important;
+    margin-left: 0.25rem !important;
+    fill: white !important;
+}
+
+/* Center logo better on mobile */
+@media (max-width: 575px) {
+    .it-brand-logo {
+        width: 3rem !important;
+        height: 3rem !important;
+    }
+    .it-brand-title {
+        font-size: 1.125rem !important;
+    }
+}

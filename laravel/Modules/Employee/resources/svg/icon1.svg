@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     fill="none" 
+     viewBox="0 0 24 24" 
+     stroke="currentColor"
+     stroke-width="1.5"
+     aria-hidden="true" 
+     role="img"
+     aria-label="Employee Icon">
+    <style>
+        .employee-figure { 
+            animation: breathe 4s ease-in-out infinite;
+            transform-origin: 12px 12px;
+        }
+        .employee-badge { 
+            animation: shine 3s ease-in-out infinite;
+            transform-origin: 16px 8px;
+        }
+        .employee-building { 
+            animation: subtle-pulse 5s ease-in-out infinite;
+            transform-origin: 12px 20px;
+        }
+        
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        
+        @keyframes shine {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+        
+        @keyframes subtle-pulse {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.01); }
+        }
+        
+        svg:hover .employee-figure { 
+            animation-duration: 2s; 
+        }
+        svg:hover .employee-badge { 
+            animation-duration: 1s; 
+        }
+        svg:hover .employee-building { 
+            animation-duration: 2s; 
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .employee-badge { opacity: 0.9; }
+            .employee-building { opacity: 0.8; }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .employee-figure, .employee-badge, .employee-building { animation: none; }
+        }
+    </style>
+    
+    <!-- Employee figure -->
+    <g class="employee-figure">
+        <!-- Head -->
+        <circle cx="12" cy="7" r="3" />
+        <!-- Body -->
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 10c-3 0-5.5 1.5-5.5 4v3h11v-3c0-2.5-2.5-4-5.5-4z" />
+        <!-- Arms -->
+        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 13l-1 2M16.5 13l1 2" opacity="0.8" />
+    </g>
+    
+    <!-- ID Badge -->
+    <g class="employee-badge">
+        <rect x="14" y="6" width="3" height="4" rx="0.5" stroke-width="1" opacity="0.7" />
+        <path stroke-linecap="round" d="M15 7.5h1M15 8.5h1" stroke-width="0.5" opacity="0.6" />
+    </g>
+    
+    <!-- Office building background -->
+    <g class="employee-building">
+        <rect x="2" y="18" width="20" height="4" rx="0.5" opacity="0.3" />
+        <path stroke-linecap="round" d="M5 18v-2M8 18v-2M11 18v-2M13 18v-2M16 18v-2M19 18v-2" opacity="0.4" stroke-width="1" />
+    </g>
+    
+    <!-- Professional indicators -->
+    <circle cx="9" cy="8" r="0.5" fill="currentColor" opacity="0.5" />
+    <circle cx="15" cy="8" r="0.5" fill="currentColor" opacity="0.5" />
+</svg>

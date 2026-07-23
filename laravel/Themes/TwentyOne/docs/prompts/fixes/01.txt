@@ -1,0 +1,253 @@
+fix backlog ventuno/predict (versione dry + kiss)
+
+obiettivo
+- rendere `http://predict.local/it` leggibile, moderno, cinematico e coerente con architettura laraxot.
+- mostrare in homepage mercati `predict` reali multi-outcome (minimo 4 esiti), non solo si/no.
+
+principi architetturali
+- front office: folio + volt class-based + cms json, niente controller/route dedicate.
+- homepage corretta: usare `x-page` con slug `home`, non include blade hardcoded.
+- routing locale: i link pubblici devono includere locale corrente (`/it/...`).
+- tema agnostico: contenuti configurabili via json, evitare hardcode.
+
+snippet homepage corretto
+```blade
+<x-layouts.app>
+    @volt('home')
+    <div>
+        <x-page side="content" slug="home" />
+    </div>
+    @endvolt
+</x-layouts.app>
+```
+
+routing predicts (regola)
+- non creare `pages/it/predicts/index.blade.php`.
+- per `/it/predicts` deve rispondere `pages/[container0]/index.blade.php`.
+
+ui/ux predict in homepage
+- usare widget table filament per griglie/listing con ricerca, filtri, ordinamento.
+- per esiti multi-outcome usare card con immagine + barra percentuale + apertura modal su click.
+- niente emoji nel front office: usare svg da file (mai svg hardcoded in blade).
+
+dati e seeding
+- vietato mock hardcoded scollegato dal db.
+- popolare db con mercati reali e outcome >= 4, con percentuali calcolate da dati persistiti.
+
+traduzioni e localizzazione
+- formato chiavi obbligatorio: `__('<namespace>::<contesto>.<collezione>.<key>.<tipo>')`.
+- evitare chiavi incomplete tipo `__('predict::home.hero.cta_learn')` senza `.tipo`.
+- usare `spatie/laravel-translatable` + `mcamara/laravel-localization` in modo coerente.
+
+migrazioni (policy progetto)
+- una sola migrazione `create_*_table.php` per modello.
+- se serve una nuova colonna, aggiornare quella migrazione in modo idempotente e cambiare timestamp.
+- evitare file tipo `*_add_status_to_*_table.php` se in conflitto con policy del progetto.
+
+composer modulare
+- `laravel/composer.json` minimale.
+- dipendenze applicative nei moduli che le usano (es. `laravel/passport` nel modulo user).
+
+vincoli operativi
+- non usare `/tmp`.
+- phpmd via `.phar` (non via composer).
+- usare e mantenere mcp/skills/rules/memories utili al lavoro.
+
+quality gate (dopo ogni modifica)
+- `phpstan`
+- `phpmd` (.phar)
+- `phpinsights`
+- `pest`
+
+done criteria
+- `/it` e `/it/predicts` funzionano con link localizzati corretti.
+- homepage mostra mercati multi-outcome con ui cinematica e leggibile.
+- nessun uso front-office di emoji o svg inline.
+- docs modulo/tema aggiornate con logica, motivazioni e backlink relativi.
+
+protocollo autonomia operativa (obbligatorio)
+- audit runtime e visuale sempre eseguiti in autonomia su:
+  - `http://predict.local/it`
+  - `http://predict.local/it/predicts`
+- screenshot sempre prodotti e archiviati in `Themes/TwentyOne/docs/screenshots/`.
+- findings sempre classificati: `critical/high/medium/low`.
+- fix applicati con approccio minimalista (dry + kiss) e fallback schema-aware dove serve.
+- re-test finale obbligatorio prima di chiudere il task.
+utilizza bmad e gsd, questo e' un sistena modulare percio' studia https://github.com/nWidart/laravel-modules e wikimedia/composer-merge-plugin  capirai che nel file laravel/composer.json ci deve essere il minimo indispensabile perche' i pacchetti devono risiedere dentro i
+  moduli che li utilizzando , uno degli errori e' la versione di laravel/passport , noi utilizziamo l'ultima versione di laravel/passport e questo pacchetto deve essere citato nel composer.json del modulo User
+
+  
+
+
+  devi controllare http://predict.local/it  anche tutti i suoi links e deve funzionare tutto per esempio questo link e' sbagliato http://predict.local/predicts il link corretto e' http://predict.local/it/predicts  ma devi sempre capirne la logica
+
+
+  corretto 
+  <div>
+  <x-page side="content" slug="home"  />
+  </div>        
+  SBAGLIATO 
+  @include('pub_theme::home') ​
+
+
+installati e configurati tutti gli mcp e le skills che vuoi ! cercatele in internet , fa una ricerca su cosa installare e configurare per migliorare il tuo lavoro 
+
+Molto lavoro e' gia' stato fatto , studia a fondo il codice esistente !
+
+le possibili risposte del predict la maggior parte delle volte non sono si/no  come ad esempio quali di queste 4 squadre di calcio vincera' il campionato, chi di questi 5 vincera' x-factor, quale politico verra' votato di piu' , quale di questi 6 loghi ti piace di piu' , e percio' per aumentare la ui/ux non scriviamo la label ma mettiamo una immagine con dentro una barra che mostra la percentuale , sotto la label, cliccando sopra questa immagine si apre un modal etc etc , 
+
+popolati il database non devi mettere valori hardcoded o mock , devono essere tutti valori calcolati con dati salvati nel db !
+
+link errato http://predict.local/predicts/la-juventus-vincera-la-serie-a-2024-25 link corretto http://predict.local/it/predicts/la-juventus-vincera-la-serie-a-2024-25 ovvio se la lingua corrente e' l'italiano , e ovvio devi controllare anche http://predict.local/it/predicts/la-juventus-vincera-la-serie-a-2024-25 , fa anche una predict come ti ho spiegato che non abbia si/no come risposta ma che abbia almento 4 possibili risposte 
+
+studia a fondo 
+https://laravel.com/ai/boost
+https://laravel.com/docs/12.x/boost
+https://github.com/laravel/boost
+https://laracasts.com/series/jeffreys-larabits/episodes/49
+e controlla l'effettivo funzionamento di laravel boost e l'mcp !
+
+stai facendo errori con le traduzioni percio' studia a fondo
+https://spatie.be/docs/laravel-translatable/v6/introduction
+https://github.com/spatie/laravel-translatable
+https://github.com/lara-zeus/spatie-translatable
+https://spatie.be/docs/laravel-translatable/v6/basic-usage/querying-translations
+https://github.com/spatie/nova-translatable
+https://github.com/mcamara/laravel-localization
+e correggi tutti gli errori che trovi nel codice, non lasciare nulla di intentato !
+
+smettila di usare "/tmp" !
+
+quando c'e' un form utilizziamo i form di filament percio' creiamo un filament widget con dentro il form e poi lo richiamiamo !
+quando c'e' una griglia con piu' elementi come quella che hai mostrato in homepage , utilizziamo una table filament percio' creaimo un widget table filament e poi lo richiamiamo, e mettiamo anche la ricerca, filtri e ordinamento , percio' studia a fondo 
+https://filamentphp.com/docs/5.x/tables/overview
+https://filamentphp.com/docs/5.x/tables/layout
+https://filamentphp.com/docs/5.x/tables/custom-data
+https://filamentphp.com/docs/5.x/components/table
+https://filamentphp.com/docs/5.x/widgets/overview#table-widgets
+
+
+phpmd non devi installarlo con composer, ma ti installi la versione .phar , se non sai come fare te lo vai a cercare in internet 
+
+installati e configurati le skills e gli mcp che vuoi  per migliorare tailwindcss , vite, ui/ux , cinematico, particles effetcts
+
+studia effetto cinematico e particles effetcts e cerca di implementare https://antigravity.google/auth-success?app=antigravity e https://www.nativewind.dev/
+
+allora non mi piacciono le predict di tipo si/no , mostra in homepage predict con minimo 4 possibili risposte , come dicevamo mostriamo l'immagine del tipo della risposta es le foto dei 4 cantanti di sanremo , dentro la foto una barra per mostrare la percentuale dei crediti
+  giocati ,  deve essere bellissimo il nostro sito.. e cosi' non lo e' .. studia in internet come renderlo piu' bello e rendilo piu' bello , crea i seeder, popola il db con questi predict con tipi risposta diversi da si/no , miglior la homepage che cosi' proprio non va
+
+devi capire il perche' , la logica, la filosofia, la politica, la religione , lo zen , documentarle dentro le tue docs, le tue rules, le tue memories e le tue skills, 
+  aggiorna studia e migliora le tue docs, le tue rules, le tue memories, le tue skills, ricorda che dopo aver modificato un file devi controllarlo con phpstan,phpmd, phpinsights e pest, ricorda che questo task lo diamo a piu' agenti ai, percio' comportati di conseguenza e cerca di unire le forze con gli altri agenti ai 
+
+noi utilizziamo Class-based Volt components  https://livewire.laravel.com/docs/3.x/volt#class-based-volt-components  percio' aggiorna studia e migliora le cartelle docs dentro i moduli e dentro i temi, le tue rules, le tue memories, le tue
+  skills,
+
+  la pagina http://predict.local/it/predicts/  fai pure degli screenshots e analizzala se corrisponde ai criteri di bellezza e di ui/ux che ci siamo imposti 
+
+
+  AGENTS.md, CLAUDE.md, GEMINI.md, QWEN.md, IFLOW.md sono file grandi spezzali in piu' files .md e mettili dentro ./.agents/docs e crea collegamenti bidirezionali relativi , nel contempo cerca anche di migliorare , cerchiamo sempre di lasciare i file meglio di quello che li troviamo , regola del buon boy scout 
+
+
+laravel/Themes/TwentyOne/resources/views/pages/index.blade.php
+la parte blade doveva essere
+<x-layouts.app>
+    @volt('home')
+    <div>
+        <x-page side="content" slug="home"  />
+    </div>
+    @endvolt
+</x-layouts.app>
+
+[FATTO] Implementato: index.blade.php ora usa pattern CMS-driven con x-page slug="home".
+Contenuto da config/local/predict/database/content/pages/home.json.
+Doc: Themes/TwentyOne/docs/homepage-governance.md
+
+questa traduzione __('predict::home.hero.cta_learn')  e' errata tutte le traduzione  devono seguire un prototipo __('<namespace>::<contesto>.<collezzione>.<key>.<tipo>')
+
+[FATTO] Corretto: hero-betting, action-buttons usano .label. common.view/bet in common.php come array con label. home.php hero.stats e virtual_currency_disclaimer aggiunti. Doc: index-blade-errors-and-fixes.md
+
+capisci da solo il perche' , aggiorna studia e migliora le cartelle docs dentro i moduli e dentro i temi, le tue rules le tue memories, le tue skills, le github issue e le github discussion, usa gh e mcp, installati e configurati gli mcp che vuoi, questo identico task viene dato a piu' agenti ai contemporaneamente percio' comportati di conseguenza e cerca di unire le forze con gli altri ageni ai 
+
+il tema deve essere versatile agnostico, e cerchiamo di usare molto i file json cosi' poi li possiamo configurare da back office tramite https://filamentphp.com/docs/5.x/forms/builder#builder  
+
+
+cerchiamo di utilizzare una linea comune in tutto il sito percio' facciamo @push('styles') solo in caso estremo , analizza tutti gli errori che hai fatto in laravel/Themes/TwentyOne/resources/views/pages/index.blade.php
+e documentali perfettamente dentro le cartelle docs, le tue rules, le tue memories e le tue skills, aggiorna anche le gihub issue e github discussions, poi interagisci con tutte le github issue e tutte le gihub discussions, utilizza gh e mcp, installati e configurati tutti gli mcp che vuoi 
+
+
+devi interagire con tutte le gihub issue e le github discussions , utilizza gh e mcp, installati e configurati gli mcp che vuoi 
+
+
+devi interagire con tutte le gihub issue e le github discussions , utilizza gh e mcp, installati e configurati gli mcp che vuoi, questo vuol dire anche chiudere github issue , e fare quello che chiedono le gihub issue
+
+
+aggiungi effetto particles ! poi fatti screenshot ed analizzali che molte cose non si leggono, e poi ti ho gia' detto molte volte che le domande la maggior parte non sono si/no ma sono ad esempio quale squadra di calcio vincera' .. quale cantante vince, quale politico vince , percio' meglio mettere anche foto/immagini con dentro la barra della percentuale , non devi mockare dati, ma popolare il database cosi' mostriamo dati presi dal database pronti 
+
+gli emoji nel front office non devi usarli .. si utilizzano nei console commands, nel back office, ma nel front office al posto degli emoji utilizza svg, ti ricordo che gli svg non vanno hardcoded ma devi salvare il file .svg nelle locazioni che trovi studiando meglio le cartelle docs dentro i moduli e dentro i temi 
+
+
+"Unisciti alla più grande community di prediction market" non scrivere cagate ! dobbiamo essere clickbait ma anche sinceri, siamo appena nati 
+
+
+smettila di utilizzare la cartella "/tmp" !
+
+
+si vede di merda http://predict.local/it   e non e' cinematico devi migliorarlo tanto per adesso sembra un sito vecchio
+
+[FATTO] Hero cinematic upgrade: film grain, vignette, palette scura #0a0e1a, trust bar dark, x-page slug="home", blocchi features+cta in home.json, route container0.view/list, XotData per User. Doc: homepage-governance.md
+
+
+fare una migrazione che si chiama laravel/Modules/Predict/database/migrations/2026_03_20_000001_add_status_to_categories_table.php e' sbagliato: per quel campo devi aggiornare la UNICA migrazione del modello in formato `create_*_table.php` (qui: `2026_03_20_000001_create_categories_table.php`), rendendola idempotente (crea tabella se manca, aggiunge la colonna `status` solo se non esiste gia').
+
+
+la blade laravel/Themes/TwentyOne/resources/views/pages/it/predicts/index.blade.php  non era da fare per le url tipo /it/predicts deve rispondere la blade laravel/Themes/TwentyOne/resources/views/pages/[container0]/index.blade.php
+capisci il perche' la logica la filosofia la politica la religione e lo zen e li documenti dentro le cartelle docs dentro i moduli e dentro i temi, studia migliora e aggiorna le tue docs, le tue rules, le tue memories, le tue guidelines, le github issue e le gihub discussions, utilizza gh e mcp , installa e configurati gli mcp e le skills che vuoi , cercatele anche in internet 
+
+
+
+studia a fondo 
+https://flowbite.com/docs/getting-started/mcp/
+https://github.com/Tai-DT/mcp-tailwind-gemini
+https://daisyui.com/blueprint/
+https://tailwindcss.com/
+https://github.com/tailwindlabs/tailwindcss/discussions/19737
+https://www.tailwindapp.com/blog/introducing-tailwinds-mcp-server
+https://www.pulsemcp.com/servers/tailwind-gemini
+https://mcpservers.org/servers/tailkits-com-ui
+https://tailkits.com/blog/tailwind-component-libraries-mcp-integration/
+https://flyonui.com/docs/pro/mcp/
+https://www.reddit.com/r/tailwindcss/comments/1m316aj/introducing_flyonui_mcp_the_brand_new_tailwind_ai/?tl=it
+https://github.com/CaullenOmdahl/Tailwind-Svelte-Assistant
+https://daisyui.com/docs/editor/windsurf/
+https://skywork.ai/skypage/en/tailwind-gemini-server-ai-frontend/1981230488607444992
+https://www.pulsemcp.com/servers/tokenizin-tailwind-to-nativewind
+https://github.com/richardkmichael/mcp-tailwindplus
+https://flowbite.com/
+https://ui.shadcn.com/docs/mcp
+https://laravel.com/docs/13.x/boost
+https://preline.co/
+https://daisyui.com/docs/editor/claude/
+https://www.aitmpl.com/
+https://ui.aceternity.com/
+https://www.nativewind.dev/
+https://coss.com/ui
+https://www.heroui.com/
+https://github.com/chatmcp/mcpso/blob/main/tailwind.config.ts
+https://headlessui.com/
+https://cursor.directory/plugins
+https://tailwindcss.com/docs/cursor
+https://classmcp.com/
+https://www.npmjs.com/package/classmcp
+https://github.com/themesberg/flowbite-mcp
+https://daisyui.com/docs/editor/claudecode/
+
+
+e installati e configurati gli mcp e creati le skills , le rules, le memories, le guidelines per migliorare tailwindcss , vite, ui/ux , cinematico, particles effetcts
+
+
+
+poi migliora /var/www/_bases/base_predict_fila5/laravel/Themes/TwentyOne/docs/prompts/fixes/01.txt in ottica dry + kiss + controllo rindondanza avanzata 
+
+
+dentro laravel/Themes/TwentyOne/resources/views/components/layouts/app.blade.php  hai messo il tag style, quando quel contenuto era molto meglio metterlo dentro laravel/Themes/TwentyOne/resources/css/app.css  e poi dalla cartella laravel/Themes/TwentyOne  lanciare npm run build per compilare e npm run copy per copia re i file compilati nella parte pubblica percio' compilare la blade laravel/Themes/TwentyOne/resources/views/pages/it/predicts/index.blade.php  non era da fare per le url tipo /it/predicts deve rispondere la blade laravel/Themes/TwentyOne/resources/views/pages/[container0]/index.blade.php
+capisci il perche' la logica la filosofia la politica la religione e lo zen e li documenti dentro le cartelle docs dentro i moduli e dentro i temi, studia migliora e aggiorna le tue docs, le tue rules, le tue memories, le tue guidelines, le github issue e le gihub discussions, utilizza gh e mcp , installa e configurati gli mcp e le skills che vuoi , cercatele anche in internet 

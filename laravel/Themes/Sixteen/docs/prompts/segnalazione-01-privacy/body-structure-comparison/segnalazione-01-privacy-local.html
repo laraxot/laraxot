@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        
+
+        
+        <script>
+            if (typeof(Storage) !== "undefined") {
+                if (localStorage.getItem('dark_mode') && localStorage.getItem('dark_mode') == 'true') {
+                    document.documentElement.classList.add('dark');
+                }
+            }
+        </script>
+        <style>
+            [x-cloak] {
+                display: none !important;
+            }
+        </style>
+                            <link rel="preload" as="style" href="http://127.0.0.1:8000/themes/Sixteen/assets/app-DiCQLExT.css" /><link rel="preload" as="style" href="http://127.0.0.1:8000/themes/Sixteen/assets/app-BRKXMWAJ.css" /><link rel="modulepreload" as="script" href="http://127.0.0.1:8000/themes/Sixteen/assets/app-B3JtV_Vh.js" /><link rel="stylesheet" href="http://127.0.0.1:8000/themes/Sixteen/assets/app-DiCQLExT.css" data-navigate-track="reload" /><link rel="stylesheet" href="http://127.0.0.1:8000/themes/Sixteen/assets/app-BRKXMWAJ.css" data-navigate-track="reload" /><script type="module" src="http://127.0.0.1:8000/themes/Sixteen/assets/app-B3JtV_Vh.js" data-navigate-track="reload"></script>            <script id="browser-logger-active">
+(function() {
+    const ENDPOINT = 'http://127.0.0.1:8000/_boost/browser-logs';
+    const logQueue = [];
+    let flushTimeout = null;
+
+    console.log('🔍 Browser logger active (MCP server detected). Posting to: ' + ENDPOINT);
+
+    // Store original console methods
+    const originalConsole = {
+        log: console.log,
+        info: console.info,
+        error: console.error,
+        warn: console.warn,
+        table: console.table
+    };
+
+    // Helper to safely stringify values
+    function safeStringify(obj) {
+        const seen = new WeakSet();
+        return JSON.stringify(obj, (key, value) => {
+            if (typeof value === 'object' && value !== null) {
+                if (seen.has(value)) return '[Circular]';
+                seen.add(value);
+            }
+            if (value instanceof Error) {
+                return {
+                    name: value.name,
+                    message: value.message,
+                    stack: value.stack
+                };
+            }
+            return value;
+        });
+    }
+
+    // Batch and send logs
+    function flushLogs() {
+        if (logQueue.length === 0) return;
+
+        const batch = logQueue.splice(0, logQueue.length);
+
+        fetch(ENDPOINT, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            body: JSON.stringify({ logs: batch })
+        }).catch(err => {
+            // Silently fail to avoid infinite loops
+            originalConsole.error('Failed to send logs:', err);
+        });
+    }
+
+    // Debounced flush (100ms)
+    function scheduleFlush() {
+        if (flushTimeout) clearTimeout(flushTimeout);
+        flushTimeout = setTimeout(flushLogs, 100);
+    }
+
+    // Intercept console methods
+    ['log', 'info', 'error', 'warn', 'table'].forEach(method => {
+        console[method] = function(...args) {
+            // Call original method
+            originalConsole[method].apply(console, args);
+
+            // Capture log data
+            try {
+                logQueue.push({
+                    type: method,
+                    timestamp: new Date().toISOString(),
+                    data: args.map(arg => {
+                        try {
+                            return typeof arg === 'object' ? JSON.parse(safeStringify(arg)) : arg;
+                        } catch (e) {
+                            return String(arg);
+                        }
+                    }),
+                    url: window.location.href,
+                    userAgent: navigator.userAgent
+                });
+
+                scheduleFlush();
+            } catch (e) {
+                // Fail silently
+            }
+        };
+    });
+
+    // Global error handlers for uncaught errors
+    const originalOnError = window.onerror;
+    window.onerror = function boostErrorHandler(errorMsg, url, lineNumber, colNumber, error) {
+        try {
+            logQueue.push({
+                type: 'uncaught_error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: errorMsg,
+                    filename: url,
+                    lineno: lineNumber,
+                    colno: colNumber,
+                    error: error ? {
+                        name: error.name,
+                        message: error.message,
+                        stack: error.stack
+                    } : null
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Call original handler if it exists
+        if (originalOnError && typeof originalOnError === 'function') {
+            return originalOnError(errorMsg, url, lineNumber, colNumber, error);
+        }
+
+        // Let the error continue to propagate
+        return false;
+    }
+    window.addEventListener('error', (event) => {
+        try {
+            logQueue.push({
+                type: 'window_error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: event.message,
+                    filename: event.filename,
+                    lineno: event.lineno,
+                    colno: event.colno,
+                    error: event.error ? {
+                        name: event.error.name,
+                        message: event.error.message,
+                        stack: event.error.stack
+                    } : null
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Let the error continue to propagate
+        return false;
+    });
+    window.addEventListener('unhandledrejection', (event) => {
+        try {
+            logQueue.push({
+                type: 'error',
+                timestamp: new Date().toISOString(),
+                data: [{
+                    message: 'Unhandled Promise Rejection',
+                    reason: event.reason instanceof Error ? {
+                        name: event.reason.name,
+                        message: event.reason.message,
+                        stack: event.reason.stack
+                    } : event.reason
+                }],
+                url: window.location.href,
+                userAgent: navigator.userAgent
+            });
+
+            scheduleFlush();
+        } catch (e) {
+            // Fail silently
+        }
+
+        // Let the rejection continue to propagate
+        return false;
+    });
+
+    // Flush on page unload
+    window.addEventListener('beforeunload', () => {
+        if (logQueue.length > 0) {
+            navigator.sendBeacon(ENDPOINT, JSON.stringify({ logs: logQueue }));
+        }
+    });
+})();
+</script>
+<link rel='stylesheet' type='text/css' property='stylesheet' href='/_debugbar/assets/stylesheets?v=1769180602' data-turbolinks-eval='false' data-turbo-eval='false'><script src='/_debugbar/assets/javascript?v=1769180602' data-turbolinks-eval='false' data-turbo-eval='false'></script><script data-turbo-eval='false'>jQuery.noConflict(true);</script>
+<script> Sfdump = window.Sfdump || (function (doc) { doc.documentElement.classList.add('sf-js-enabled'); var rxEsc = /([.*+?^${}()|\[\]\/\\])/g, idRx = /\bsf-dump-\d+-ref[012]\w+\b/, keyHint = 0 <= navigator.platform.toUpperCase().indexOf('MAC') ? 'Cmd' : 'Ctrl', addEventListener = function (e, n, cb) { e.addEventListener(n, cb, false); }; if (!doc.addEventListener) { addEventListener = function (element, eventName, callback) { element.attachEvent('on' + eventName, function (e) { e.preventDefault = function () {e.returnValue = false;}; e.target = e.srcElement; callback(e); }); }; } function toggle(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className, arrow, newClass; if (/\bsf-dump-compact\b/.test(oldClass)) { arrow = '▼'; newClass = 'sf-dump-expanded'; } else if (/\bsf-dump-expanded\b/.test(oldClass)) { arrow = '▶'; newClass = 'sf-dump-compact'; } else { return false; } if (doc.createEvent && s.dispatchEvent) { var event = doc.createEvent('Event'); event.initEvent('sf-dump-expanded' === newClass ? 'sfbeforedumpexpand' : 'sfbeforedumpcollapse', true, false); s.dispatchEvent(event); } a.lastChild.innerHTML = arrow; s.className = s.className.replace(/\bsf-dump-(compact|expanded)\b/, newClass); if (recursive) { try { a = s.querySelectorAll('.'+oldClass); for (s = 0; s < a.length; ++s) { if (-1 == a[s].className.indexOf(newClass)) { a[s].className = newClass; a[s].previousSibling.lastChild.innerHTML = arrow; } } } catch (e) { } } return true; }; function collapse(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className; if (/\bsf-dump-expanded\b/.test(oldClass)) { toggle(a, recursive); return true; } return false; }; function expand(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className; if (/\bsf-dump-compact\b/.test(oldClass)) { toggle(a, recursive); return true; } return false; }; function collapseAll(root) { var a = root.querySelector('a.sf-dump-toggle'); if (a) { collapse(a, true); expand(a); return true; } return false; } function reveal(node) { var previous, parents = []; while ((node = node.parentNode || {}) && (previous = node.previousSibling) && 'A' === previous.tagName) { parents.push(previous); } if (0 !== parents.length) { parents.forEach(function (parent) { expand(parent); }); return true; } return false; } function highlight(root, activeNode, nodes) { resetHighlightedNodes(root); Array.from(nodes||[]).forEach(function (node) { if (!/\bsf-dump-highlight\b/.test(node.className)) { node.className = node.className + ' sf-dump-highlight'; } }); if (!/\bsf-dump-highlight-active\b/.test(activeNode.className)) { activeNode.className = activeNode.className + ' sf-dump-highlight-active'; } } function resetHighlightedNodes(root) { Array.from(root.querySelectorAll('.sf-dump-str, .sf-dump-key, .sf-dump-public, .sf-dump-protected, .sf-dump-private')).forEach(function (strNode) { strNode.className = strNode.className.replace(/\bsf-dump-highlight\b/, ''); strNode.className = strNode.className.replace(/\bsf-dump-highlight-active\b/, ''); }); } return function (root, x) { root = doc.getElementById(root); var indentRx = new RegExp('^('+(root.getAttribute('data-indent-pad') || ' ').replace(rxEsc, '\\$1')+')+', 'm'), options = {"maxDepth":1,"maxStringLength":160,"fileLinkFormat":false}, elt = root.getElementsByTagName('A'), len = elt.length, i = 0, s, h, t = []; while (i < len) t.push(elt[i++]); for (i in x) { options[i] = x[i]; } function a(e, f) { addEventListener(root, e, function (e, n) { if ('A' == e.target.tagName) { f(e.target, e); } else if ('A' == e.target.parentNode.tagName) { f(e.target.parentNode, e); } else { n = /\bsf-dump-ellipsis\b/.test(e.target.className) ? e.target.parentNode : e.target; if ((n = n.nextElementSibling) && 'A' == n.tagName) { if (!/\bsf-dump-toggle\b/.test(n.className)) { n = n.nextElementSibling || n; } f(n, e, true); } } }); }; function isCtrlKey(e) { return e.ctrlKey || e.metaKey; } function xpathString(str) { var parts = str.match(/[^'"]+|['"]/g).map(function (part) { if ("'" == part) { return '"\'"'; } if ('"' == part) { return "'\"'"; } return "'" + part + "'"; }); return "concat(" + parts.join(",") + ", '')"; } function xpathHasClass(className) { return "contains(concat(' ', normalize-space(@class), ' '), ' " + className +" ')"; } a('mouseover', function (a, e, c) { if (c) { e.target.style.cursor = "pointer"; } }); a('click', function (a, e, c) { if (/\bsf-dump-toggle\b/.test(a.className)) { e.preventDefault(); if (!toggle(a, isCtrlKey(e))) { var r = doc.getElementById(a.getAttribute('href').slice(1)), s = r.previousSibling, f = r.parentNode, t = a.parentNode; t.replaceChild(r, a); f.replaceChild(a, s); t.insertBefore(s, r); f = f.firstChild.nodeValue.match(indentRx); t = t.firstChild.nodeValue.match(indentRx); if (f && t && f[0] !== t[0]) { r.innerHTML = r.innerHTML.replace(new RegExp('^'+f[0].replace(rxEsc, '\\$1'), 'mg'), t[0]); } if (/\bsf-dump-compact\b/.test(r.className)) { toggle(s, isCtrlKey(e)); } } if (c) { } else if (doc.getSelection) { try { doc.getSelection().removeAllRanges(); } catch (e) { doc.getSelection().empty(); } } else { doc.selection.empty(); } } else if (/\bsf-dump-str-toggle\b/.test(a.className)) { e.preventDefault(); e = a.parentNode.parentNode; e.className = e.className.replace(/\bsf-dump-str-(expand|collapse)\b/, a.parentNode.className); } }); elt = root.getElementsByTagName('SAMP'); len = elt.length; i = 0; while (i < len) t.push(elt[i++]); len = t.length; for (i = 0; i < len; ++i) { elt = t[i]; if ('SAMP' == elt.tagName) { a = elt.previousSibling || {}; if ('A' != a.tagName) { a = doc.createElement('A'); a.className = 'sf-dump-ref'; elt.parentNode.insertBefore(a, elt); } else { a.innerHTML += ' '; } a.title = (a.title ? a.title+'\n[' : '[')+keyHint+'+click] Expand all children'; a.innerHTML += elt.className == 'sf-dump-compact' ? '<span>▶</span>' : '<span>▼</span>'; a.className += ' sf-dump-toggle'; x = 1; if ('sf-dump' != elt.parentNode.className) { x += elt.parentNode.getAttribute('data-depth')/1; } } else if (/\bsf-dump-ref\b/.test(elt.className) && (a = elt.getAttribute('href'))) { a = a.slice(1); elt.className += ' sf-dump-hover'; elt.className += ' '+a; if (/[\[{]$/.test(elt.previousSibling.nodeValue)) { a = a != elt.nextSibling.id && doc.getElementById(a); try { s = a.nextSibling; elt.appendChild(a); s.parentNode.insertBefore(a, s); if (/^[@#]/.test(elt.innerHTML)) { elt.innerHTML += ' <span>▶</span>'; } else { elt.innerHTML = '<span>▶</span>'; elt.className = 'sf-dump-ref'; } elt.className += ' sf-dump-toggle'; } catch (e) { if ('&' == elt.innerHTML.charAt(0)) { elt.innerHTML = '…'; elt.className = 'sf-dump-ref'; } } } } } if (doc.evaluate && Array.from && root.children.length > 1) { root.setAttribute('tabindex', 0); SearchState = function () { this.nodes = []; this.idx = 0; }; SearchState.prototype = { next: function () { if (this.isEmpty()) { return this.current(); } this.idx = this.idx < (this.nodes.length - 1) ? this.idx + 1 : 0; return this.current(); }, previous: function () { if (this.isEmpty()) { return this.current(); } this.idx = this.idx > 0 ? this.idx - 1 : (this.nodes.length - 1); return this.current(); }, isEmpty: function () { return 0 === this.count(); }, current: function () { if (this.isEmpty()) { return null; } return this.nodes[this.idx]; }, reset: function () { this.nodes = []; this.idx = 0; }, count: function () { return this.nodes.length; }, }; function showCurrent(state) { var currentNode = state.current(), currentRect, searchRect; if (currentNode) { reveal(currentNode); highlight(root, currentNode, state.nodes); if ('scrollIntoView' in currentNode) { currentNode.scrollIntoView(true); currentRect = currentNode.getBoundingClientRect(); searchRect = search.getBoundingClientRect(); if (currentRect.top < (searchRect.top + searchRect.height)) { window.scrollBy(0, -(searchRect.top + searchRect.height + 5)); } } } counter.textContent = (state.isEmpty() ? 0 : state.idx + 1) + ' of ' + state.count(); } var search = doc.createElement('div'); search.className = 'sf-dump-search-wrapper sf-dump-search-hidden'; search.innerHTML = ' <input type="text" class="sf-dump-search-input"> <span class="sf-dump-search-count">0 of 0<\/span> <button type="button" class="sf-dump-search-input-previous" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 1331l-166 165q-19 19-45 19t-45-19L896 965l-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> <button type="button" class="sf-dump-search-input-next" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 808l-742 741q-19 19-45 19t-45-19L109 808q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> '; root.insertBefore(search, root.firstChild); var state = new SearchState(); var searchInput = search.querySelector('.sf-dump-search-input'); var counter = search.querySelector('.sf-dump-search-count'); var searchInputTimer = 0; var previousSearchQuery = ''; addEventListener(searchInput, 'keyup', function (e) { var searchQuery = e.target.value; /* Don't perform anything if the pressed key didn't change the query */ if (searchQuery === previousSearchQuery) { return; } previousSearchQuery = searchQuery; clearTimeout(searchInputTimer); searchInputTimer = setTimeout(function () { state.reset(); collapseAll(root); resetHighlightedNodes(root); if ('' === searchQuery) { counter.textContent = '0 of 0'; return; } var classMatches = [ "sf-dump-str", "sf-dump-key", "sf-dump-public", "sf-dump-protected", "sf-dump-private", ].map(xpathHasClass).join(' or '); var xpathResult = doc.evaluate('.//span[' + classMatches + '][contains(translate(child::text(), ' + xpathString(searchQuery.toUpperCase()) + ', ' + xpathString(searchQuery.toLowerCase()) + '), ' + xpathString(searchQuery.toLowerCase()) + ')]', root, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null); while (node = xpathResult.iterateNext()) state.nodes.push(node); showCurrent(state); }, 400); }); Array.from(search.querySelectorAll('.sf-dump-search-input-next, .sf-dump-search-input-previous')).forEach(function (btn) { addEventListener(btn, 'click', function (e) { e.preventDefault(); -1 !== e.target.className.indexOf('next') ? state.next() : state.previous(); searchInput.focus(); collapseAll(root); showCurrent(state); }) }); addEventListener(root, 'keydown', function (e) { var isSearchActive = !/\bsf-dump-search-hidden\b/.test(search.className); if ((114 === e.keyCode && !isSearchActive) || (isCtrlKey(e) && 70 === e.keyCode)) { /* F3 or CMD/CTRL + F */ if (70 === e.keyCode && document.activeElement === searchInput) { /* * If CMD/CTRL + F is hit while having focus on search input, * the user probably meant to trigger browser search instead. * Let the browser execute its behavior: */ return; } e.preventDefault(); search.className = search.className.replace(/\bsf-dump-search-hidden\b/, ''); searchInput.focus(); } else if (isSearchActive) { if (27 === e.keyCode) { /* ESC key */ search.className += ' sf-dump-search-hidden'; e.preventDefault(); resetHighlightedNodes(root); searchInput.value = ''; } else if ( (isCtrlKey(e) && 71 === e.keyCode) /* CMD/CTRL + G */ || 13 === e.keyCode /* Enter */ || 114 === e.keyCode /* F3 */ ) { e.preventDefault(); e.shiftKey ? state.previous() : state.next(); collapseAll(root); showCurrent(state); } } }); } if (0 >= options.maxStringLength) { return; } try { elt = root.querySelectorAll('.sf-dump-str'); len = elt.length; i = 0; t = []; while (i < len) t.push(elt[i++]); len = t.length; for (i = 0; i < len; ++i) { elt = t[i]; s = elt.innerText || elt.textContent; x = s.length - options.maxStringLength; if (0 < x) { h = elt.innerHTML; elt[elt.innerText ? 'innerText' : 'textContent'] = s.substring(0, options.maxStringLength); elt.className += ' sf-dump-str-collapse'; elt.innerHTML = '<span class=sf-dump-str-collapse>'+h+'<a class="sf-dump-ref sf-dump-str-toggle" title="Collapse"> ◀</a></span>'+ '<span class=sf-dump-str-expand>'+elt.innerHTML+'<a class="sf-dump-ref sf-dump-str-toggle" title="'+x+' remaining characters"> ▶</a></span>'; } } } catch (e) { } }; })(document); </script><style> .sf-js-enabled .phpdebugbar pre.sf-dump .sf-dump-compact, .sf-js-enabled .sf-dump-str-collapse .sf-dump-str-collapse, .sf-js-enabled .sf-dump-str-expand .sf-dump-str-expand { display: none; } .sf-dump-hover:hover { background-color: #B729D9; color: #FFF !important; border-radius: 2px; } .phpdebugbar pre.sf-dump { display: block; white-space: pre; padding: 5px; overflow: initial !important; } .phpdebugbar pre.sf-dump:after { content: ""; visibility: hidden; display: block; height: 0; clear: both; } .phpdebugbar pre.sf-dump .sf-dump-ellipsization { display: inline-flex; } .phpdebugbar pre.sf-dump a { text-decoration: none; cursor: pointer; border: 0; outline: none; color: inherit; } .phpdebugbar pre.sf-dump img { max-width: 50em; max-height: 50em; margin: .5em 0 0 0; padding: 0; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAHUlEQVQY02O8zAABilCaiQEN0EeA8QuUcX9g3QEAAjcC5piyhyEAAAAASUVORK5CYII=) #D3D3D3; } .phpdebugbar pre.sf-dump .sf-dump-ellipsis { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; } .phpdebugbar pre.sf-dump .sf-dump-ellipsis-tail { flex-shrink: 0; } .phpdebugbar pre.sf-dump code { display:inline; padding:0; background:none; } .sf-dump-public.sf-dump-highlight, .sf-dump-protected.sf-dump-highlight, .sf-dump-private.sf-dump-highlight, .sf-dump-str.sf-dump-highlight, .sf-dump-key.sf-dump-highlight { background: rgba(111, 172, 204, 0.3); border: 1px solid #7DA0B1; border-radius: 3px; } .sf-dump-public.sf-dump-highlight-active, .sf-dump-protected.sf-dump-highlight-active, .sf-dump-private.sf-dump-highlight-active, .sf-dump-str.sf-dump-highlight-active, .sf-dump-key.sf-dump-highlight-active { background: rgba(253, 175, 0, 0.4); border: 1px solid #ffa500; border-radius: 3px; } .phpdebugbar pre.sf-dump .sf-dump-search-hidden { display: none !important; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper { font-size: 0; white-space: nowrap; margin-bottom: 5px; display: flex; position: -webkit-sticky; position: sticky; top: 5px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > * { vertical-align: top; box-sizing: border-box; height: 21px; font-weight: normal; border-radius: 0; background: #FFF; color: #757575; border: 1px solid #BBB; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > input.sf-dump-search-input { padding: 3px; height: 21px; font-size: 12px; border-right: none; border-top-left-radius: 3px; border-bottom-left-radius: 3px; color: #000; min-width: 15px; width: 100%; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next, .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous { background: #F2F2F2; outline: none; border-left: none; font-size: 0; line-height: 0; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next { border-top-right-radius: 3px; border-bottom-right-radius: 3px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next > svg, .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous > svg { pointer-events: none; width: 12px; height: 12px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-count { display: inline-block; padding: 0 5px; margin: 0; border-left: none; line-height: 21px; font-size: 12px; }.phpdebugbar pre.sf-dump, .phpdebugbar pre.sf-dump .sf-dump-default{word-wrap: break-word; white-space: pre-wrap; word-break: normal}.phpdebugbar pre.sf-dump .sf-dump-num{font-weight:bold; color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-const{font-weight:bold}.phpdebugbar pre.sf-dump .sf-dump-str{font-weight:bold; color:#3A9B26}.phpdebugbar pre.sf-dump .sf-dump-note{color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-ref{color:#7B7B7B}.phpdebugbar pre.sf-dump .sf-dump-public{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-protected{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-private{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-meta{color:#B729D9}.phpdebugbar pre.sf-dump .sf-dump-key{color:#3A9B26}.phpdebugbar pre.sf-dump .sf-dump-index{color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-ellipsis{color:#A0A000}.phpdebugbar pre.sf-dump .sf-dump-virtual{font-style:italic}.phpdebugbar pre.sf-dump .sf-dump-ns{user-select:none;}.phpdebugbar pre.sf-dump .sf-dump-ellipsis-note{color:#1299DA}.phpdebugbar[data-theme='dark'] pre.sf-dump, pre.sf-dump .sf-dump-default{background-color:#18171B; color:#FF8400; line-height:1.2em; font:12px Menlo, Monaco, Consolas, monospace; word-wrap: break-word; white-space: pre-wrap; position:relative; z-index:99999; word-break: break-all}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-num{font-weight:bold; color:#1299DA}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-const{font-weight:bold}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-virtual{font-style:italic}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-str{font-weight:bold; color:#56DB3A}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-note{color:#1299DA}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-ref{color:#A0A0A0}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-public{color:#FFFFFF}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-protected{color:#FFFFFF}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-private{color:#FFFFFF}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-meta{color:#B729D9}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-key{color:#56DB3A}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-index{color:#1299DA}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-ellipsis{color:#FF8400}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-ns{user-select:none;}.phpdebugbar[data-theme='dark'] pre.sf-dump .sf-dump-ellipsis-note{color:#1299DA}</style>
+<!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.list-item][wire\:loading\.list-item], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}[wire\:cloak] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}</style>
+</head>
+    <body class="">
+        <div class="skiplink">
+        <a class="visually-hidden-focusable" href="#main-container">Vai ai contenuti</a>
+        <a class="visually-hidden-focusable" href="#footer">Vai al footer</a>
+    </div><!-- /skiplink -->
+
+    <header class="it-header-wrapper" data-bs-target="#header-nav-wrapper">
+    <div class="it-header-slim-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="it-header-slim-wrapper-content">
+                        <a class="d-lg-block navbar-brand" target="_blank" href="#" aria-label="Vai al portale {Nome della Regione} - link esterno - apertura nuova scheda" title="Vai al portale {Nome della Regione}">Nome della Regione</a>
+                        <div class="it-header-slim-right-zone" role="navigation">
+                            <div class="nav-item dropdown">
+                                <button type="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="languages" aria-haspopup="true">
+                                    <span class="visually-hidden">Lingua attiva:</span>
+                                    <span>ITA</span>
+                                    <svg class="icon">
+                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use>
+                                    </svg>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="link-list-wrapper">
+                                                <ul class="link-list">
+                                                    <li><a class="dropdown-item list-item" href="#"><span>ITA <span class="visually-hidden">selezionata</span></span></a></li>
+                                                    <li><a class="dropdown-item list-item" href="#"><span>ENG</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="btn btn-primary btn-icon btn-full" href="/it/tests/accesso-servizio" data-element="personal-area-login">
+                                <span class="rounded-icon" aria-hidden="true">
+                                    <svg class="icon icon-primary">
+                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-user"></use>
+                                    </svg>
+                                </span>
+                                <span class="d-none d-lg-block">Accedi all'area personale</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="it-nav-wrapper">
+        <div class="it-header-center-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="it-header-center-content-wrapper">
+                            <div class="it-brand-wrapper">
+                                <a href="/">
+                                    <svg width="82" height="82" class="icon" aria-hidden="true">
+                                        <image href="/themes/Sixteen/design-comuni/assets/images/logo-comune.svg"/>
+                                    </svg>
+                                    <div class="it-brand-text">
+                                        <div class="it-brand-title">Il mio Comune</div>
+                                        <div class="it-brand-tagline d-none d-md-block">Un comune da vivere</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="it-right-zone">
+                                <div class="it-socials d-none d-lg-flex">
+                                    <span>Seguici su</span>
+                                    <ul>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"></use>
+                                                </svg>
+                                                <span class="visually-hidden">Twitter</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"></use>
+                                                </svg>
+                                                <span class="visually-hidden">Facebook</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"></use>
+                                                </svg>
+                                                <span class="visually-hidden">YouTube</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"></use>
+                                                </svg>
+                                                <span class="visually-hidden">Telegram</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"></use>
+                                                </svg>
+                                                <span class="visually-hidden">Whatsapp</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <svg class="icon icon-sm icon-white align-top">
+                                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"></use>
+                                                </svg>
+                                                <span class="visually-hidden">RSS</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="it-search-wrapper">
+                                    <span class="d-none d-md-block">Cerca</span>
+                                    <button class="search-link rounded-icon" type="button" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="Cerca nel sito">
+                                        <svg class="icon">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-search"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="it-header-navbar-wrapper" id="header-nav-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="navbar navbar-expand-lg has-megamenu">
+                            <button class="custom-navbar-toggler" type="button" aria-controls="nav4" aria-expanded="false" aria-label="Mostra/Nascondi la navigazione" data-bs-target="#nav4" data-bs-toggle="navbarcollapsible">
+                                <svg class="icon">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-burger"></use>
+                                </svg>
+                            </button>
+                            <div class="navbar-collapsable" id="nav4">
+                                <div class="overlay" style="display: none;"></div>
+                                <div class="close-div">
+                                    <button class="btn close-menu" type="button">
+                                        <span class="visually-hidden">Nascondi la navigazione</span>
+                                        <svg class="icon">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="menu-wrapper">
+                                    <a href="/" class="logo-hamburger">
+                                        <svg class="icon" aria-hidden="true">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa"></use>
+                                        </svg>
+                                        <div class="it-brand-text">
+                                            <div class="it-brand-title">Nome del Comune</div>
+                                        </div>
+                                    </a>
+                                    <nav aria-label="Principale">
+                                        <ul class="navbar-nav" data-element="main-navigation">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/it/tests/amministrazione" data-element="management">
+                                                    <span>Amministrazione</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/it/tests/novita" data-element="news">
+                                                    <span>Novità</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/it/tests/servizi" data-element="all-services">
+                                                    <span>Servizi</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/it/tests/eventi" data-element="live">
+                                                    <span>Vivere il Comune</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <nav aria-label="Secondaria">
+                                        <ul class="navbar-nav navbar-secondary">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Iscrizioni</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Estate in città</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Polizia locale</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/it/tests/argomenti" data-element="all-topics">
+                                                    <span>Tutti gli argomenti
+                                                        <svg class="icon icon-sm">
+                                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-right"></use>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <div class="it-socials">
+                                        <span>Seguici su</span>
+                                        <ul>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">Twitter</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">Facebook</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">YouTube</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">Telegram</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">Whatsapp</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <svg class="icon icon-sm icon-white align-top">
+                                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"></use>
+                                                    </svg>
+                                                    <span class="visually-hidden">RSS</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main id="main-container">
+        <div wire:key="lw-558597373-0" wire:snapshot="{&quot;data&quot;:{&quot;slug&quot;:&quot;segnalazione-01-privacy&quot;,&quot;pageSlug&quot;:&quot;tests.segnalazione-01-privacy&quot;,&quot;data&quot;:[{&quot;slug&quot;:&quot;segnalazione-01-privacy&quot;},{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;J4Bj0vccyxysWB6A3gDd&quot;,&quot;name&quot;:&quot;volt-anonymous-fragment-eyJuYW1lIjoidGVzdHMudmlldyIsInBhdGgiOiJUaGVtZXNcL1NpeHRlZW5cL3Jlc291cmNlc1wvdmlld3NcL3BhZ2VzXC90ZXN0c1wvW3NsdWddLmJsYWRlLnBocCJ9&quot;,&quot;path&quot;:&quot;it\/tests\/segnalazione-01-privacy&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;attributes&quot;:{&quot;lang&quot;:&quot;it&quot;,&quot;_theme&quot;:{},&quot;isMobile&quot;:false,&quot;isTablet&quot;:false,&quot;isDesktop&quot;:true},&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;it&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;efb2961625bf799c2c4189d37de96397dbc2c6bee477ba2f6db7665540cbdf19&quot;}" wire:effects="{&quot;partials&quot;:[]}" wire:id="J4Bj0vccyxysWB6A3gDd" wire:name="volt-anonymous-fragment-eyJuYW1lIjoidGVzdHMudmlldyIsInBhdGgiOiJUaGVtZXNcL1NpeHRlZW5cL3Jlc291cmNlc1wvdmlld3NcL3BhZ2VzXC90ZXN0c1wvW3NsdWddLmJsYWRlLnBocCJ9" class="cms-view-wrapper">
+        
+        <div class="page-content content" data-slug="tests.segnalazione-01-privacy" data-side="content">
+            <!--[if BLOCK]><![endif]-->                <div class="segnalazione-privacy-page">
+<div class="container" id="main-container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+            <div class="cmp-breadcrumbs" role="navigation">
+                <nav class="breadcrumb-container" aria-label="breadcrumb">
+                    <ol class="breadcrumb p-0" data-element="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a><span class="separator">/</span></li>
+                        <li class="breadcrumb-item"><a href="#">Servizi</a><span class="separator">/</span></li>
+                        <li class="breadcrumb-item active" aria-current="page">Segnalazione disservizio</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+            <h1 class="title-xxxlarge mb-4">Segnalazione disservizio</h1>
+        </div>
+        <div class="col-12">
+            <div class="steppers">
+                <div class="steppers-header">
+                    <ul>
+                        <!--[if BLOCK]><![endif]-->                            <li class="active">
+                                Autorizzazioni e condizioni
+                                <!--[if BLOCK]><![endif]-->                                    <span class="visually-hidden">Attivo</span>
+                                <!--[if ENDBLOCK]><![endif]-->                            </li>
+                                                    <li class="">
+                                Dati di segnalazione
+                                <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                            </li>
+                                                    <li class="">
+                                Riepilogo
+                                <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                            </li>
+                        <!--[if ENDBLOCK]><![endif]-->                    </ul>
+                    <span class="steppers-index" aria-hidden="true">1/3</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-8 pb-40 pb-lg-80">
+            <p class="text-paragraph mb-lg-4">Il Comune di Firenze gestisce i dati personali forniti e liberamente comunicati sulla base dell&#039;articolo 13 del Regolamento (UE) 2016/679 General data protection regulation (Gdpr) e degli articoli 13 e successive modifiche e integrazione del decreto legislativo (di seguito d.lgs) 267/2000 (Testo unico enti locali).</p>
+            <p class="text-paragraph mb-0">
+                Per i dettagli sul trattamento dei dati personali consulta l&#039;
+                <a href="#" class="t-primary">informativa sulla privacy.</a>
+            </p>
+
+            <div class="form-check mt-4 mb-3 mt-md-40 mb-lg-40">
+                <div class="checkbox-body d-flex align-items-center">
+                    <input type="checkbox" id="privacy" name="privacy-field" value="privacy-field">
+                    <label class="title-small-semi-bold pt-1" for="privacy">Ho letto e compreso l&#039;informativa sulla privacy</label>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary mobile-full">
+                <span class="">Avanti</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="bg-grey-card shadow-contacts">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6 offset-lg-3 p-contacts">
+                <div class="cmp-contacts">
+                    <div class="card w-100">
+                        <div class="card-body">
+                            <h2 class="title-medium-2-semi-bold">Contatta il comune</h2>
+                            <ul class="contact-list p-0">
+                                <li><a class="list-item" href="#">
+                                    <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-help-circle"></use>
+                                    </svg><span>Leggi le domande frequenti</span></a></li>
+                                <li><a class="list-item" href="#" data-element="contacts">
+                                    <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-mail"></use>
+                                    </svg><span>Richiedi assistenza</span></a></li>
+                                <li><a class="list-item" href="#">
+                                    <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-hearing"></use>
+                                    </svg><span>Chiama il numero verde 05 0505</span></a></li>
+                                <li><a class="list-item" href="#" data-element="appointment-booking">
+                                    <svg class="icon icon-primary icon-sm" aria-hidden="true">
+                                        <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-calendar"></use>
+                                    </svg><span>Prenota appuntamento</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>            <!--[if ENDBLOCK]><![endif]-->        </div>
+    </div>
+    </main>
+
+    <div class="modal fade search-modal" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content perfect-scrollbar">
+            <div class="modal-body">
+                <form>
+                    <div class="container">
+                        <div class="row variable-gutters">
+                            <div class="col">
+                                <div class="modal-title">
+                                    <button class="search-link d-md-none" type="button" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="Chiudi e torna alla pagina precedente">
+                                        <svg class="icon icon-md">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-left"></use>
+                                        </svg>
+                                    </button>
+                                    <h2>Cerca</h2>
+                                    <button class="search-link d-none d-md-block" type="button" data-bs-toggle="modal" data-bs-target="#search-modal" aria-label="Chiudi e torna alla pagina precedente">
+                                        <svg class="icon icon-md">
+                                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="form-group autocomplete-wrapper">
+                                    <label for="autocomplete-two" class="visually-hidden">Cerca nel sito</label>
+                                    <input type="search" class="autocomplete ps-5" placeholder="Cerca nel sito" id="autocomplete-two" name="autocomplete-two" data-bs-autocomplete="[]">
+                                    <span class="autocomplete-icon" aria-hidden="true">
+                                        <svg class="icon"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-search"></use></svg>
+                                    </span>
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="">Cerca</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row variable-gutters">
+                            <div class="col-lg-5">
+                                <div class="searches-list-wrapper">
+                                    <div class="other-link-title">FORSE STAVI CERCANDO</div>
+                                    <ul class="searches-list">
+                                        <li><a href="#">Rilascio Carta Identità Elettronica (CIE)</a></li>
+                                        <li><a href="#">Cambio di residenza</a></li>
+                                        <li><a href="#">Tributi online</a></li>
+                                        <li><a href="#">Prenotazione appuntamenti</a></li>
+                                        <li><a href="#">Rilascio tessera elettorale</a></li>
+                                        <li><a href="#">Voucher connettività</a></li>
+                                    </ul><!-- /searches-list -->
+                                </div><!-- /searches-list-wrapper -->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer class="it-footer" id="footer">
+    <div class="it-footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 footer-items-wrapper logo-wrapper">
+                    <img class="ue-logo" src="/themes/Sixteen/design-comuni/assets/images/logo-eu-inverted.svg" alt="logo Unione Europea">
+                    <div class="it-brand-wrapper">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa"></use>
+                            </svg>
+                            <div class="it-brand-text">
+                                <h2 class="no_toc">Nome del Comune</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 footer-items-wrapper">
+                    <h4 class="footer-heading-title">Amministrazione</h4>
+                    <ul class="footer-list">
+                        <li><a href="#">Organi di governo</a></li>
+                        <li><a href="#">Aree amministrative</a></li>
+                        <li><a href="#">Uffici</a></li>
+                        <li><a href="#">Enti e fondazioni</a></li>
+                        <li><a href="#">Politici</a></li>
+                        <li><a href="#">Personale amministrativo</a></li>
+                        <li><a href="#">Documenti e dati</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 footer-items-wrapper">
+                    <h4 class="footer-heading-title">Categorie di servizio</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="footer-list">
+                                <li><a href="#">Anagrafe e stato civile</a></li>
+                                <li><a href="#">Cultura e tempo libero</a></li>
+                                <li><a href="#">Vita lavorativa</a></li>
+                                <li><a href="#">Imprese e commercio</a></li>
+                                <li><a href="#">Appalti pubblici</a></li>
+                                <li><a href="#">Catasto e urbanistica</a></li>
+                                <li><a href="#">Turismo</a></li>
+                                <li><a href="#">Mobilità e trasporti</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="footer-list">
+                                <li><a href="#">Educazione e formazione</a></li>
+                                <li><a href="#">Giustizia e sicurezza pubblica</a></li>
+                                <li><a href="#">Tributi, finanze e contravvenzioni</a></li>
+                                <li><a href="#">Ambiente</a></li>
+                                <li><a href="#">Salute, benessere e assistenza</a></li>
+                                <li><a href="#">Autorizzazioni</a></li>
+                                <li><a href="#">Agricoltura e pesca</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 footer-items-wrapper">
+                    <h4 class="footer-heading-title">Novità</h4>
+                    <ul class="footer-list">
+                        <li><a href="#">Notizie</a></li>
+                        <li><a href="#">Comunicati</a></li>
+                        <li><a href="#">Avvisi</a></li>
+                    </ul>
+                    <h4 class="footer-heading-title">Vivere il comune</h4>
+                    <ul class="footer-list">
+                        <li><a href="#">Luoghi</a></li>
+                        <li><a href="#">Eventi</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-9 mt-md-4 footer-items-wrapper">
+                    <h4 class="footer-heading-title">Contatti</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p class="footer-info">Comune di Nome Comune<br>
+                                Via Roma 123 - 00100 Comune<br>
+                                Codice fiscale / P. IVA: 00123456789<br><br>
+                                <a href="#">Ufficio Relazioni con il Pubblico</a><br>
+                                Numero verde: 800 016 123<br>
+                                SMS e WhatsApp: +39 320 1234567<br>
+                                Posta Elettronica Certificata<br>
+                                Centralino unico: 012 3456
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="footer-list">
+                                <li><a href="#" data-element="faq">Leggi le FAQ</a></li>
+                                <li><a href="#">Prenotazione appuntamento</a></li>
+                                <li><a href="#" data-element="report-inefficiency">Segnalazione disservizio</a></li>
+                                <li><a href="#">Richiesta d'assistenza</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="footer-list">
+                                <li><a href="#">Amministrazione trasparente</a></li>
+                                <li><a href="#" data-element="privacy-policy-link">Informativa privacy</a></li>
+                                <li><a href="#" data-element="legal-notes">Note legali</a></li>
+                                <li><a href="#" data-element="accessibility-link">Dichiarazione di accessibilità</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-md-4 footer-items-wrapper">
+                    <h4 class="footer-heading-title">Seguici su</h4>
+                    <ul class="list-inline text-start social">
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter"></use>
+                                </svg>
+                                <span class="visually-hidden">Twitter</span></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook"></use>
+                                </svg>
+                                <span class="visually-hidden">Facebook</span></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube"></use>
+                                </svg>
+                                <span class="visually-hidden">YouTube</span></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram"></use>
+                                </svg>
+                                <span class="visually-hidden">Telegram</span></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp"></use>
+                                </svg>
+                                <span class="visually-hidden">Whatsapp</span></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="p-1 text-white" href="#" target="_blank">
+                                <svg class="icon icon-sm icon-white align-top">
+                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss"></use>
+                                </svg>
+                                <span class="visually-hidden">RSS</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 footer-items-wrapper">
+                    <div class="footer-bottom">
+                        <a href="#">Media policy</a>
+                        <a href="#">Mappa del sito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const darkModeToggle = document.getElementById('darkModeToggle');
+                if (darkModeToggle) {
+                    darkModeToggle.addEventListener('click', function() {
+                        const html = document.documentElement;
+                        const isDark = html.classList.contains('dark');
+                        if (isDark) {
+                            html.classList.remove('dark');
+                            localStorage.setItem('dark_mode', 'false');
+                        } else {
+                            html.classList.add('dark');
+                            localStorage.setItem('dark_mode', 'true');
+                        }
+                    });
+                }
+            });
+        </script>
+    <script type="text/javascript">
+var phpdebugbar = new PhpDebugBar.DebugBar({"theme":"auto","hideEmptyTabs":false});
+phpdebugbar.addTab("request", new PhpDebugBar.DebugBar.Tab({"icon":"tags","order":-100,"title":"Request", "widget": new PhpDebugBar.Widgets.HtmlVariableListWidget()}));
+phpdebugbar.addIndicator("php_version", new PhpDebugBar.DebugBar.Indicator({"icon":"code","tooltip":"PHP Version"}), "right");
+phpdebugbar.addTab("messages", new PhpDebugBar.DebugBar.Tab({"icon":"list-alt","title":"Messages", "widget": new PhpDebugBar.Widgets.MessagesWidget()}));
+phpdebugbar.addIndicator("time", new PhpDebugBar.DebugBar.Indicator({"icon":"clock-o","tooltip":"Request Duration","link":"timeline"}), "right");
+phpdebugbar.addTab("timeline", new PhpDebugBar.DebugBar.Tab({"icon":"tasks","title":"Timeline", "widget": new PhpDebugBar.Widgets.TimelineWidget()}));
+phpdebugbar.addIndicator("memory", new PhpDebugBar.DebugBar.Indicator({"icon":"cogs","tooltip":"Memory Usage"}), "right");
+phpdebugbar.addTab("exceptions", new PhpDebugBar.DebugBar.Tab({"icon":"bug","title":"Exceptions", "widget": new PhpDebugBar.Widgets.ExceptionsWidget()}));
+phpdebugbar.addTab("views", new PhpDebugBar.DebugBar.Tab({"icon":"leaf","title":"Views", "widget": new PhpDebugBar.Widgets.TemplatesWidget()}));
+phpdebugbar.addTab("route", new PhpDebugBar.DebugBar.Tab({"icon":"share","title":"Route", "widget": new PhpDebugBar.Widgets.HtmlVariableListWidget()}));
+phpdebugbar.addTab("queries", new PhpDebugBar.DebugBar.Tab({"icon":"database","title":"Queries", "widget": new PhpDebugBar.Widgets.LaravelQueriesWidget()}));
+phpdebugbar.addTab("models", new PhpDebugBar.DebugBar.Tab({"icon":"cubes","title":"Models", "widget": new PhpDebugBar.Widgets.TableVariableListWidget()}));
+phpdebugbar.addTab("livewire", new PhpDebugBar.DebugBar.Tab({"icon":"bolt","title":"Livewire", "widget": new PhpDebugBar.Widgets.VariableListWidget()}));
+phpdebugbar.addTab("emails", new PhpDebugBar.DebugBar.Tab({"icon":"inbox","title":"Mails", "widget": new PhpDebugBar.Widgets.MailsWidget()}));
+phpdebugbar.addTab("gate", new PhpDebugBar.DebugBar.Tab({"icon":"list-alt","title":"Gate", "widget": new PhpDebugBar.Widgets.MessagesWidget()}));
+phpdebugbar.addTab("session", new PhpDebugBar.DebugBar.Tab({"icon":"archive","title":"Session", "widget": new PhpDebugBar.Widgets.VariableListWidget()}));
+phpdebugbar.addIndicator("currentrequest", new PhpDebugBar.DebugBar.Indicator({"icon":"share","link":"request"}), "right");
+phpdebugbar.setDataMap({
+"request": ["request.data", {}],
+"php_version": ["php.version", ],
+"messages": ["messages.messages", []],
+"messages:badge": ["messages.count", null],
+"time": ["time.duration_str", '0ms'],
+"timeline": ["time", {}],
+"memory": ["memory.peak_usage_str", '0B'],
+"exceptions": ["exceptions.exceptions", []],
+"exceptions:badge": ["exceptions.count", null],
+"views": ["views", []],
+"views:badge": ["views.nb_templates", 0],
+"route": ["route", {}],
+"queries": ["queries", []],
+"queries:badge": ["queries.nb_statements", 0],
+"models": ["models", {}],
+"models:badge": ["models.count", 0],
+"livewire": ["livewire.data", {}],
+"livewire:badge": ["livewire.count", 0],
+"emails": ["symfonymailer_mails.mails", []],
+"emails:badge": ["symfonymailer_mails.count", null],
+"gate": ["gate.messages", []],
+"gate:badge": ["gate.count", null],
+"session": ["session", {}],
+"request:badge": ["request.badge", null],
+"currentrequest": ["request.data.uri", ],
+"currentrequest:tooltip": ["request.tooltip", {}]
+});
+phpdebugbar.restoreState();
+phpdebugbar.enableAjaxHandlerTab();
+phpdebugbar.ajaxHandler = new PhpDebugBar.AjaxHandler(phpdebugbar, undefined, true);
+phpdebugbar.ajaxHandler.bindToFetch();
+phpdebugbar.ajaxHandler.bindToXHR();
+phpdebugbar.setOpenHandler(new PhpDebugBar.OpenHandler({"url":"http:\/\/127.0.0.1:8000\/_debugbar\/open"}));
+phpdebugbar.addDataSet({"__meta":{"id":"01KNRMMBCP3RD1Y86JMW7S0HN3","datetime":"2026-04-09 10:09:39","utime":1775722179.990663,"method":"GET","uri":"\/it\/tests\/segnalazione-01-privacy","ip":"127.0.0.1"},"php":{"version":"8.3.6","interface":"cli-server"},"messages":{"count":0,"messages":[]},"time":{"count":3,"start":1775722179.497631,"end":1775722179.990694,"duration":0.49306297302246094,"duration_str":"493ms","measures":[{"label":"Booting","start":1775722179.497631,"relative_start":0,"end":1775722179.942363,"relative_end":1775722179.942363,"duration":0.4447319507598877,"duration_str":"445ms","memory":0,"memory_str":"0B","params":[],"collector":"time","group":null},{"label":"Application","start":1775722179.942384,"relative_start":0.44475293159484863,"end":1775722179.990698,"relative_end":4.0531158447265625e-6,"duration":0.04831409454345703,"duration_str":"48.31ms","memory":0,"memory_str":"0B","params":[],"collector":"time","group":null},{"label":"Routing","start":1775722179.943575,"relative_start":0.44594383239746094,"end":1775722179.948301,"relative_end":1775722179.948301,"duration":0.0047261714935302734,"duration_str":"4.73ms","memory":0,"memory_str":"0B","params":[],"collector":null,"group":null}]},"memory":{"peak_usage":8018544,"peak_usage_str":"8MB"},"exceptions":{"count":0,"exceptions":[]},"views":{"count":8,"nb_templates":8,"templates":[{"name":"\/var\/www\/_bases\/base_fixcity_fila5\/laravel\/Themes\/Sixteen\/resources\/views\/pages\/tests\/[slug].blade.php","param_count":null,"params":[],"start":1775722179.964127,"type":"blade","hash":"blade\/var\/www\/_bases\/base_fixcity_fila5\/laravel\/Themes\/Sixteen\/resources\/views\/pages\/tests\/[slug].blade.php\/var\/www\/_bases\/base_fixcity_fila5\/laravel\/Themes\/Sixteen\/resources\/views\/pages\/tests\/[slug].blade.php","xdebug_link":{"url":"vscode:\/\/file\/%2Fvar%2Fwww%2F_bases%2Fbase_fixcity_fila5%2Flaravel%2FThemes%2FSixteen%2Fresources%2Fviews%2Fpages%2Ftests%2F%5Bslug%5D.blade.php:1","ajax":false,"filename":"[slug].blade.php","line":"?"}},{"name":"\/var\/www\/_bases\/base_fixcity_fila5\/laravel\/storage\/framework\/views\/ec27ac954d8b300e0b19de6e6da676d6.blade.php","param_count":null,"params":[],"start":1775722179.969894,"type":"blade","hash":"blade\/var\/www\/_bases\/base_fixcity_fila5\/laravel\/storage\/framework\/views\/ec27ac954d8b300e0b19de6e6da676d6.blade.php\/var\/www\/_bases\/base_fixcity_fila5\/laravel\/storage\/framework\/views\/ec27ac954d8b300e0b19de6e6da676d6.blade.php","xdebug_link":{"url":"vscode:\/\/file\/%2Fvar%2Fwww%2F_bases%2Fbase_fixcity_fila5%2Flaravel%2Fstorage%2Fframework%2Fviews%2Fec27ac954d8b300e0b19de6e6da676d6.blade.php:1","ajax":false,"filename":"ec27ac954d8b300e0b19de6e6da676d6.blade.php","line":"?"}},{"name":"pub_theme::components.blocks.tests.segnalazione-01-privacy","param_count":null,"params":[],"start":1775722179.978839,"type":"blade","hash":"blade\/var\/www\/_bases\/base_fixcity_fila5\/laravel\/Themes\/Sixteen\/resources\/views\/components\/blocks\/tests\/segnalazione-01-privacy.blade.phppub_theme::components.blocks.tests.segnalazione-01-privacy","xdebug_link":{"url":"vscode:\/\/file\/%2Fvar%2Fwww%2F_bases%2Fbase_fixcity_fila5%2Flaravel%2FThemes%2FSixteen%2Fresources%2Fviews%2Fcomponents%2Fblocks%2Ftests%2Fsegnalazione-01-privacy.blade.php:1","ajax":false,"filename":"segnalazione-01-privacy.blade.php","line":"?"}},{"name":"components.layouts.app","param_count":null,"params":[],"start":1775722179.982462,"type":"blade","hash":"blade\/var\/www\/_bases\/base_fixcity_fila5\/laravel\/Themes\/Sixteen\/resources\/views\/components\/layouts\/app.blade.phpcomponents.layouts.app","xdebug_link":{"url":"vscode:\/\/file\/%2Fvar%2Fwww%2F_bases%2Fbase_fixcity_fila5%2Flaravel%2FThemes%2FSixteen%2Fresources%2Fviews%2Fcomponents%2Flayouts%2Fapp.blade.php:1","ajax":false,"filename":"app.blade.php","line":"?"}},{"name":"pub_theme::components.sections.header.v1","param_count":null,"params":[],"start":1775722179.986726,"type":"blade","hash":"blade\/var\/www\/_bases\/base_fixcity_fila5\/laravel\/Themes\/Sixteen\/resources\/views\/components\/sections\/header\/v1.blade.phppub_theme::components.sections.header.v1","xdebug_link":{"url":"vscode:\/\/file\/%2Fvar%2Fwww%2F_bases%2Fbase_fixcity_fila5%2Flaravel%2FThemes%2FSixteen%2Fresources%2Fviews%2Fcomponents%2Fsections%2Fheader%2Fv1.blade.php:1","ajax":false,"filename":"v1.blade.php","line":"?"}},{"name":"pub_theme::components.sections.search-modal","param_count":null,"params":[],"start":1775722179.98745,"type":"blade","hash":"blade\/var\/www\/_bases\/base_fixcity_fila5\/laravel\/Themes\/Sixteen\/resources\/views\/components\/sections\/search-modal.blade.phppub_theme::components.sections.search-modal","xdebug_link":{"url":"vscode:\/\/file\/%2Fvar%2Fwww%2F_bases%2Fbase_fixcity_fila5%2Flaravel%2FThemes%2FSixteen%2Fresources%2Fviews%2Fcomponents%2Fsections%2Fsearch-modal.blade.php:1","ajax":false,"filename":"search-modal.blade.php","line":"?"}},{"name":"pub_theme::components.sections.footer.full","param_count":null,"params":[],"start":1775722179.988822,"type":"blade","hash":"blade\/var\/www\/_bases\/base_fixcity_fila5\/laravel\/Themes\/Sixteen\/resources\/views\/components\/sections\/footer\/full.blade.phppub_theme::components.sections.footer.full","xdebug_link":{"url":"vscode:\/\/file\/%2Fvar%2Fwww%2F_bases%2Fbase_fixcity_fila5%2Flaravel%2FThemes%2FSixteen%2Fresources%2Fviews%2Fcomponents%2Fsections%2Ffooter%2Ffull.blade.php:1","ajax":false,"filename":"full.blade.php","line":"?"}},{"name":"components.layouts.main","param_count":null,"params":[],"start":1775722179.98939,"type":"blade","hash":"blade\/var\/www\/_bases\/base_fixcity_fila5\/laravel\/Themes\/Sixteen\/resources\/views\/components\/layouts\/main.blade.phpcomponents.layouts.main","xdebug_link":{"url":"vscode:\/\/file\/%2Fvar%2Fwww%2F_bases%2Fbase_fixcity_fila5%2Flaravel%2FThemes%2FSixteen%2Fresources%2Fviews%2Fcomponents%2Flayouts%2Fmain.blade.php:1","ajax":false,"filename":"main.blade.php","line":"?"}}]},"route":{"uri":"GET {fallbackPlaceholder}","uses":"Closure(Request $request) {#4646\n  class: \u0022Laravel\\Folio\\FolioManager\u0022\n  this: Laravel\\Folio\\FolioManager {#3167 \u2026}\n  file: \u0022\/var\/www\/_bases\/base_fixcity_fila5\/laravel\/vendor\/laravel\/folio\/src\/FolioManager.php\u0022\n  line: \u002282 to 94\u0022\n}","as":"tests.view","file":{"value":"vendor\/laravel\/folio\/src\/FolioManager.php:82-94","xdebug_link":{"url":"vscode:\/\/file\/%2Fvar%2Fwww%2F_bases%2Fbase_fixcity_fila5%2Flaravel%2Fvendor%2Flaravel%2Ffolio%2Fsrc%2FFolioManager.php:82","ajax":false,"filename":"FolioManager.php","line":"82"}}},"queries":{"count":0,"nb_statements":0,"nb_visible_statements":0,"nb_excluded_statements":0,"nb_failed_statements":0,"accumulated_duration":0,"accumulated_duration_str":"0\u03bcs","memory_usage":0,"memory_usage_str":null,"statements":[]},"models":{"data":{"Modules\\Cms\\Models\\Section":{"retrieved":2,"xdebug_link":{"url":"vscode:\/\/file\/%2Fvar%2Fwww%2F_bases%2Fbase_fixcity_fila5%2Flaravel%2FModules%2FCms%2Fapp%2FModels%2FSection.php:1","ajax":false,"filename":"Section.php","line":"?"}},"Modules\\Cms\\Models\\Page":{"retrieved":1,"xdebug_link":{"url":"vscode:\/\/file\/%2Fvar%2Fwww%2F_bases%2Fbase_fixcity_fila5%2Flaravel%2FModules%2FCms%2Fapp%2FModels%2FPage.php:1","ajax":false,"filename":"Page.php","line":"?"}}},"count":3,"key_map":{"retrieved":"Retrieved","created":"Created","updated":"Updated","deleted":"Deleted"},"is_counter":true,"badges":{"retrieved":3}},"livewire":{"data":{"volt-anonymous-fragment-eyJuYW1lIjoidGVzdHMudmlldyIsInBhdGgiOiJUaGVtZXNcL1NpeHRlZW5cL3Jlc291cmNlc1wvdmlld3NcL3BhZ2VzXC90ZXN0c1wvW3NsdWddLmJsYWRlLnBocCJ9 #J4Bj0vccyxysWB6A3gDd":"array:4 [\n  \u0022data\u0022 =\u003E array:3 [\n    \u0022slug\u0022 =\u003E \u0022segnalazione-01-privacy\u0022\n    \u0022pageSlug\u0022 =\u003E \u0022tests.segnalazione-01-privacy\u0022\n    \u0022data\u0022 =\u003E array:1 [\n      \u0022slug\u0022 =\u003E \u0022segnalazione-01-privacy\u0022\n    ]\n  ]\n  \u0022name\u0022 =\u003E \u0022volt-anonymous-fragment-eyJuYW1lIjoidGVzdHMudmlldyIsInBhdGgiOiJUaGVtZXNcL1NpeHRlZW5cL3Jlc291cmNlc1wvdmlld3NcL3BhZ2VzXC90ZXN0c1wvW3NsdWddLmJsYWRlLnBocCJ9\u0022\n  \u0022component\u0022 =\u003E \u0022Livewire\\Volt\\Component@anonymous\\x00\/var\/www\/_bases\/base_fixcity_fila5\/laravel\/Themes\/Sixteen\/resources\/views\/pages\/tests\/[slug].blade.php:14$5ab\u0022\n  \u0022id\u0022 =\u003E \u0022J4Bj0vccyxysWB6A3gDd\u0022\n]"},"count":1},"symfonymailer_mails":{"count":0,"mails":[]},"gate":{"count":0,"messages":[]},"session":{"_token":"TAVVdAuxMnAZ0aNhTY4fpg7HDHy8S4G9CbSRnknH","locale":"it"},"request":{"data":{"status":"200 OK","full_url":"http:\/\/127.0.0.1:8000\/it\/tests\/segnalazione-01-privacy","action_name":"tests.view","controller_action":"Closure","uri":"GET {fallbackPlaceholder}","file":{"value":"vendor\/laravel\/folio\/src\/FolioManager.php:82-94","xdebug_link":{"url":"vscode:\/\/file\/%2Fvar%2Fwww%2F_bases%2Fbase_fixcity_fila5%2Flaravel%2Fvendor%2Flaravel%2Ffolio%2Fsrc%2FFolioManager.php:82","ajax":false,"filename":"FolioManager.php","line":"82"}},"duration":"494ms","peak_memory":"10MB","response":"text\/html; charset=utf-8","request_format":"html","request_query":"\u003Cpre class=sf-dump id=sf-dump-2030726485 data-indent-pad=\u0022  \u0022\u003E[]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-2030726485\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n","request_request":"\u003Cpre class=sf-dump id=sf-dump-701424781 data-indent-pad=\u0022  \u0022\u003E[]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-701424781\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n","request_headers":"\u003Cpre class=sf-dump id=sf-dump-926228345 data-indent-pad=\u0022  \u0022\u003E\u003Cspan class=sf-dump-note\u003Earray:5\u003C\/span\u003E [\u003Csamp data-depth=1 class=sf-dump-expanded\u003E\n  \u0022\u003Cspan class=sf-dump-key\u003Eaccept-encoding\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u00228 characters\u0022\u003Eidentity\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Ehost\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002214 characters\u0022\u003E127.0.0.1:8000\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Euser-agent\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002250 characters\u0022\u003EMozilla\/5.0 (compatible; HTMLStructureCompare\/3.0)\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Eaccept\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002231 characters\u0022\u003Etext\/html,application\/xhtml+xml\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Econnection\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u00225 characters\u0022\u003Eclose\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n\u003C\/samp\u003E]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-926228345\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n","request_cookies":"\u003Cpre class=sf-dump id=sf-dump-1746248105 data-indent-pad=\u0022  \u0022\u003E[]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-1746248105\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n","response_headers":"\u003Cpre class=sf-dump id=sf-dump-1561335153 data-indent-pad=\u0022  \u0022\u003E\u003Cspan class=sf-dump-note\u003Earray:3\u003C\/span\u003E [\u003Csamp data-depth=1 class=sf-dump-expanded\u003E\n  \u0022\u003Cspan class=sf-dump-key\u003Econtent-type\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002224 characters\u0022\u003Etext\/html; charset=utf-8\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Ecache-control\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002217 characters\u0022\u003Eno-cache, private\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n  \u0022\u003Cspan class=sf-dump-key\u003Edate\u003C\/span\u003E\u0022 =\u003E \u003Cspan class=sf-dump-note\u003Earray:1\u003C\/span\u003E [\u003Csamp data-depth=2 class=sf-dump-compact\u003E\n    \u003Cspan class=sf-dump-index\u003E0\u003C\/span\u003E =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002229 characters\u0022\u003EThu, 09 Apr 2026 08:09:39 GMT\u003C\/span\u003E\u0022\n  \u003C\/samp\u003E]\n\u003C\/samp\u003E]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-1561335153\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n","session_attributes":"\u003Cpre class=sf-dump id=sf-dump-1550395139 data-indent-pad=\u0022  \u0022\u003E\u003Cspan class=sf-dump-note\u003Earray:2\u003C\/span\u003E [\u003Csamp data-depth=1 class=sf-dump-expanded\u003E\n  \u0022\u003Cspan class=sf-dump-key\u003E_token\u003C\/span\u003E\u0022 =\u003E \u0022\u003Cspan class=sf-dump-str title=\u002240 characters\u0022\u003ETAVVdAuxMnAZ0aNhTY4fpg7HDHy8S4G9CbSRnknH\u003C\/span\u003E\u0022\n  \u0022\u003Cspan class=sf-dump-key\u003Elocale\u003C\/span\u003E\u0022 =\u003E \u0022\u003Cspan class=sf-dump-str title=\u00222 characters\u0022\u003Eit\u003C\/span\u003E\u0022\n\u003C\/samp\u003E]\n\u003C\/pre\u003E\u003Cscript\u003ESfdump(\u0022sf-dump-1550395139\u0022, {\u0022maxDepth\u0022:0})\u003C\/script\u003E\n"},"tooltip":{"status":"200 OK","full_url":"http:\/\/127.0.0.1:8000\/it\/tests\/segnalazione-01-privacy","action_name":"tests.view","controller_action":"Closure"},"badge":null}}, "01KNRMMBCP3RD1Y86JMW7S0HN3");
+
+</script>
+<!-- Livewire Scripts -->
+<script src="http://127.0.0.1:8000/livewire-88e501d9/livewire.js?id=698c71c1"   data-csrf="TAVVdAuxMnAZ0aNhTY4fpg7HDHy8S4G9CbSRnknH" data-module-url="http://127.0.0.1:8000/livewire-88e501d9" data-update-uri="http://127.0.0.1:8000/livewire-88e501d9/update" data-navigate-once="true"></script>
+</body>
+</html>

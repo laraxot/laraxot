@@ -1,0 +1,5575 @@
+/* ============================================================================
+   Segnalazione Pages - Visual Parity CSS
+ *
+ * Covers: segnalazione-dettaglio, segnalazione-01-privacy,
+ *         segnalazione-02-dati, segnalazione-03-riepilogo,
+ *         segnalazione-04-conferma, segnalazione-area-personale,
+ *         ticket-list
+ *
+ * Reference: https://italia.github.io/design-comuni-pagine-statiche/sito/
+ * Strategy: Tailwind CSS + Alpine.js (NO Bootstrap Italia runtime)
+ *
+ * Created: 2026-04-07
+ * Updated: 2026-04-12 - Visual parity fixes
+ *   - Body class removed (HTML parity: <body> only, no classes)
+ *   - Stepper header: show ALL steps on mobile (was hiding non-active)
+ *   - ITA dropdown: single chevron (removed custom ::after)
+ *   - Nav links: no text-decoration
+ *   - Mobile: no horizontal scrollbar
+ * ============================================================================ */
+
+/* FIX: Prevent horizontal scrollbar on mobile */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+main /* Tailwind: Force centering on ticket-list-page container */
+.ticket-list-page.container,
+.ticket-list-page#main-container {
+    max-width: 1166px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Container override for Design Comuni parity */
+.container {
+    max-width: 100% !important;
+}
+
+/* ============================================================================
+   0. BOOTSTRAP ITALIA REFERENCE COLORS
+   Source: Computed styles analysis 2026-04-09
+   ============================================================================ */
+:root {
+  /* Text colors - EXACT from computed styles */
+  --bi-text-primary: #191919;        /* rgb(25, 25, 25) - reference text color */
+  --bi-text-dark: #191919;           /* Same as primary for consistency */
+  --bi-text-secondary: #455a64;      /* rgb(69,90,100) - blue-gray */
+  --bi-text-muted: #5c6f82;          /* Muted text */
+  --bi-text-link: #007a52;           /* rgb(0, 122, 82) - green links */
+
+  /* Border colors */
+  --bi-border-light: #d4d4d4;        /* Light gray borders */
+  --bi-border: #e0e0e0;              /* Standard border */
+
+  /* Background colors */
+  --bi-bg-white: #ffffff;            /* Pure white */
+  --bi-bg-page: #fafafa;             /* Page background */
+  --bi-bg-light: #f5f5f5;            /* Light gray sections */
+
+  /* Brand colors */
+  --bi-primary: #007a52;             /* Bootstrap Italia green */
+  --bi-primary-dark: #00402b;        /* Darker green */
+}
+
+/* ============================================================================
+   0.1 TYPOGRAPHY - EXACT REFERENCE MATCH
+   Computed styles from reference 2026-04-09
+   ============================================================================ */
+
+/* Force Titillium Web everywhere - NO fallbacks to match computed styles */
+html, body,
+body p, body span, body div,
+body a, body li, body label,
+body input, body button,
+body h1, body h2, body h3, body h4, body h5, body h6,
+.card, .btn, .list-item, a {
+  font-family: "Titillium Web" !important;
+}
+
+/* Reference computed styles:
+   body: font-family "Titillium Web"
+   h1: 48px, 700, line-height 60px, letter-spacing -1px
+   h2: 24px, line-height 30px
+   p: 16px, 400, line-height 24px
+*/
+
+body {
+  color: rgb(25, 25, 25) !important;
+  background-color: rgb(255, 255, 255) !important;
+}
+
+h1, .h1, .hero-title {
+  font-size: 48px !important;
+  font-weight: 700 !important;
+  line-height: 60px !important;
+  letter-spacing: -1px !important;
+  color: rgb(25, 25, 25) !important;
+  margin-bottom: 24px !important;
+  margin-top: 0 !important;
+}
+
+h2, .h2, .section-title {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  line-height: 30px !important;
+  color: rgb(25, 25, 25) !important;
+  margin-bottom: 8px !important;
+  margin-top: 0 !important;
+}
+
+h3 {
+  font-size: 20px !important;
+  line-height: 28px !important;
+  color: rgb(25, 25, 25) !important;
+}
+
+p {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  color: rgb(25, 25, 25) !important;
+  margin-bottom: 24px !important;
+}
+
+a {
+  color: rgb(0, 122, 82) !important;  /* Green links like reference */
+  text-decoration: underline !important;
+}
+
+a:hover {
+  color: rgb(0, 64, 43) !important;  /* Darker green on hover */
+}
+
+/* ============================================================================
+   0.2 CONTAINER - Match reference max-width and padding
+   Reference container: maxWidth from computed
+   ============================================================================ */
+
+.container {
+  max-width: 1166px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px !important;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px !important;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1166px !important;
+  }
+}
+
+/* ============================================================================
+   0.3 CARD - Bootstrap Italia style (reference match)
+   Reference: NO padding, NO border-radius, NO shadow on main card
+   ============================================================================ */
+
+.card {
+  background-color: rgb(255, 255, 255) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.card-body {
+  padding: 0 !important;
+}
+
+.card-title {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: rgb(25, 25, 25) !important;
+  margin-bottom: 16px !important;
+}
+
+.card-text {
+  font-size: 16px !important;
+  line-height: 24px !important;
+  color: rgb(25, 25, 25) !important;
+  margin-bottom: 16px !important;
+}
+
+/* ============================================================================
+   0.4 BUTTONS - Bootstrap Italia style (reference match)
+   Reference: 12px 24px padding, 16px font, 600 weight, 0 border-radius
+   ============================================================================ */
+
+.btn {
+  display: inline-block !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  vertical-align: middle !important;
+  user-select: none !important;
+  border: none !important;
+  padding: 12px 24px !important;
+  font-size: 16px !important;
+  line-height: 24.88px !important;
+  border-radius: 0 !important;
+  transition: all 0.2s ease-in-out !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+}
+
+.btn-primary {
+  background-color: rgb(0, 122, 82) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.btn-primary:hover {
+  background-color: rgb(0, 90, 60) !important;
+  border-color: rgb(0, 90, 60) !important;
+}
+
+.btn-secondary {
+  background-color: rgb(108, 117, 125) !important;
+  border-color: rgb(108, 117, 125) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.btn-outline-primary {
+  background-color: transparent !important;
+  border-color: rgb(0, 122, 82) !important;
+  color: rgb(0, 122, 82) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: rgb(0, 122, 82) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.btn-lg {
+  padding: 0.5rem 1.5rem !important;
+  font-size: 1.125rem !important;
+  border-radius: 4px !important;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.75rem !important;
+  font-size: 0.875rem !important;
+  border-radius: 3px !important;
+}
+
+/* ============================================================================
+   0.5 LIST ITEMS
+   ============================================================================ */
+
+.list-item {
+  font-family: "Titillium Web" !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  color: rgb(25, 25, 25) !important;
+  padding: 8px 0 !important;
+  border-bottom: 1px solid rgb(212, 212, 212) !important;
+}
+
+.list-item:last-child {
+  border-bottom: none !important;
+}
+
+.link-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.link-list-wrapper ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* ============================================================================
+   0.6 BORDER RESET - Remove unwanted borders
+   Reference: NO borders on body, headings, paragraphs
+   ============================================================================ */
+
+body, h1, h2, h3, h4, h5, h6, p, span, div, a, li {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-style: none !important;
+}
+
+/* ============================================================================
+   1. BOOTSTRAP UTILITY CLASSES — Missing mappings
+   ============================================================================ */
+
+/* Flexbox */
+.d-flex          { display: flex !important; }
+.d-inline-flex   { display: inline-flex !important; }
+.d-block         { display: block !important; }
+.d-inline-block  { display: inline-block !important; }
+.d-inline        { display: inline !important; }
+.flex-wrap        { flex-wrap: wrap !important; }
+.flex-nowrap      { flex-wrap: nowrap !important; }
+.flex-column      { flex-direction: column !important; }
+.flex-row         { flex-direction: row !important; }
+.flex-grow-1      { flex-grow: 1 !important; }
+.flex-shrink-0    { flex-shrink: 0 !important; }
+.align-items-center    { align-items: center !important; }
+.align-items-start     { align-items: flex-start !important; }
+.align-items-end       { align-items: flex-end !important; }
+.align-self-center     { align-self: center !important; }
+.justify-content-center  { justify-content: center !important; }
+.justify-content-between { justify-content: space-between !important; }
+.justify-content-end     { justify-content: flex-end !important; }
+.justify-content-start   { justify-content: flex-start !important; }
+
+/* Gap */
+.gap-1  { gap: 0.25rem !important; }
+.gap-2  { gap: 0.5rem !important; }
+.gap-3  { gap: 1rem !important; }
+.gap-4  { gap: 1.5rem !important; }
+.gap-30 { gap: 30px !important; }
+
+/* Width/Height */
+.w-100  { width: 100% !important; }
+.w-50   { width: 50% !important; }
+.h-100  { height: 100% !important; }
+.mw-100 { max-width: 100% !important; }
+
+/* Overflow */
+.overflow-hidden { overflow: hidden !important; }
+.text-wrap       { overflow-wrap: break-word !important; word-wrap: break-word !important; }
+.text-truncate   { overflow: hidden !important; text-overflow: ellipsis !important; white-space: nowrap !important; }
+
+/* Margins */
+.m-0    { margin: 0 !important; }
+.mt-0   { margin-top: 0 !important; }
+.mt-1   { margin-top: 0.25rem !important; }
+.mt-2   { margin-top: 0.5rem !important; }
+.mt-3   { margin-top: 1rem !important; }
+.mt-4   { margin-top: 1.5rem !important; }
+.mt-5   { margin-top: 3rem !important; }
+.mb-0   { margin-bottom: 0 !important; }
+.mb-1   { margin-bottom: 0.25rem !important; }
+.mb-2   { margin-bottom: 0.5rem !important; }
+.mb-3   { margin-bottom: 1rem !important; }
+.mb-4   { margin-bottom: 1.5rem !important; }
+.mb-5   { margin-bottom: 3rem !important; }
+.mb-30  { margin-bottom: 30px !important; }
+.mb-40  { margin-bottom: 40px !important; }
+.ms-0   { margin-left: 0 !important; }
+.ms-1   { margin-left: 0.25rem !important; }
+.ms-2   { margin-left: 0.5rem !important; }
+.ms-3   { margin-left: 1rem !important; }
+.ms-4   { margin-left: 1.5rem !important; }
+.me-1   { margin-right: 0.25rem !important; }
+.me-2   { margin-right: 0.5rem !important; }
+.me-3   { margin-right: 1rem !important; }
+.me-4   { margin-right: 1.5rem !important; }
+.mx-auto { margin-left: auto !important; margin-right: auto !important; }
+.my-3    { margin-top: 1rem !important; margin-bottom: 1rem !important; }
+.mr-lg-30 { margin-right: 30px; }
+
+/* Padding */
+.p-0    { padding: 0 !important; }
+.p-1    { padding: 0.25rem !important; }
+.p-2    { padding: 0.5rem !important; }
+.p-3    { padding: 1rem !important; }
+.p-4    { padding: 1.5rem !important; }
+.p-5    { padding: 3rem !important; }
+.px-0   { padding-left: 0 !important; padding-right: 0 !important; }
+.px-3   { padding-left: 1rem !important; padding-right: 1rem !important; }
+.px-4   { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+.py-1   { padding-top: 0.25rem !important; padding-bottom: 0.25rem !important; }
+.py-2   { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
+.py-3   { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+.py-4   { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+.py-5   { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+.pt-0   { padding-top: 0 !important; }
+.pt-1   { padding-top: 0.25rem !important; }
+.pt-2   { padding-top: 0.5rem !important; }
+.pt-3   { padding-top: 1rem !important; }
+.pt-4   { padding-top: 1.5rem !important; }
+.pt-5   { padding-top: 3rem !important; }
+.pb-0   { padding-bottom: 0 !important; }
+.pb-2   { padding-bottom: 0.5rem !important; }
+.pb-3   { padding-bottom: 1rem !important; }
+.pb-4   { padding-bottom: 1.5rem !important; }
+.pb-5   { padding-bottom: 3rem !important; }
+.ps-0   { padding-left: 0 !important; }
+.ps-3   { padding-left: 1rem !important; }
+.pe-0   { padding-right: 0 !important; }
+.pe-3   { padding-right: 1rem !important; }
+
+/* Responsive margins/paddings */
+@media (min-width: 992px) {
+  .mt-lg-0   { margin-top: 0 !important; }
+  .mt-lg-80  { margin-top: 80px !important; }
+  .mb-lg-0   { margin-bottom: 0 !important; }
+  .pb-lg-4   { padding-bottom: 1.5rem !important; }
+  .pt-lg-0   { padding-top: 0 !important; }
+  .mt-md-4   { margin-top: 1.5rem !important; }
+}
+
+/* Borders */
+.border         { border: 1px solid #dee2e6 !important; }
+.border-0       { border: 0 !important; }
+.border-bottom  { border-bottom: 1px solid #dee2e6 !important; }
+.border-top     { border-top: 1px solid #dee2e6 !important; }
+.border-light   { border-color: #e9ecef !important; }
+.border-start   { border-left: 1px solid #dee2e6 !important; }
+.rounded        { border-radius: 4px !important; }
+.rounded-0      { border-radius: 0 !important; }
+.rounded-circle { border-radius: 50% !important; }
+
+/* Text */
+.text-center    { text-align: center !important; }
+.text-start     { text-align: left !important; }
+.text-end       { text-align: right !important; }
+.text-uppercase { text-transform: uppercase !important; }
+.text-lowercase { text-transform: lowercase !important; }
+.text-decoration-underline { text-decoration: underline !important; }
+.text-decoration-none      { text-decoration: none !important; }
+.fw-bold        { font-weight: 700 !important; }
+.fw-semibold    { font-weight: 600 !important; }
+.fw-normal      { font-weight: 400 !important; }
+.fs-0           { font-size: 0.875rem !important; }
+.fst-italic     { font-style: italic !important; }
+
+/* Font size utilities - Bootstrap Italia / Design Comuni reference */
+.fs-18 { font-size: 18px !important; }
+.fs-16 { font-size: 16px !important; }
+.fs-14 { font-size: 14px !important; }
+
+/* Paragraph text - EXACT reference sizes from computed styles */
+.text-paragraph       { font-size: 1rem !important; line-height: 1.5 !important; color: rgb(25, 25, 25) !important; font-weight: 400 !important; margin-bottom: 24px !important; }
+.text-paragraph-small { font-size: 0.875rem !important; line-height: 1.5 !important; color: rgb(25, 25, 25) !important; }
+
+/* Secondary text colors - EXACT reference */
+.text-muted, .u-grey-dark { color: var(--bi-text-secondary, #455a64) !important; }
+.subtitle-small { font-size: 0.875rem; color: var(--bi-text-secondary, #455a64); }
+
+/* Border colors - EXACT reference from visual parity analysis */
+.border-light { border-color: var(--bi-border-light, #d4d4d4) !important; }
+hr { border-color: var(--bi-border-light, #d4d4d4); }
+
+/* Body text color - EXACT reference rgb(0,0,0) */
+body, .segnalazione-privacy-page, .segnalazione-dati-page,
+.segnalazione-riepilogo-page, .segnalazione-conferma-page,
+.cms-detail-page, .segnalazione-area-page,
+body #main-container[data-page='ticket-list'] {
+  color: var(--bi-text-primary, #000000);
+}
+
+/* Title colors - EXACT reference */
+.title-xxxlarge, .title-xxlarge, .title-xlarge,
+.title-large, .title-medium, .title-small, .title-xsmall {
+  color: var(--bi-text-primary, #000000);
+}
+
+/* Link colors - EXACT reference */
+.t-primary { color: var(--bi-link, #0066cc) !important; }
+.t-primary:hover { color: var(--bi-primary-dark, #00402b) !important; }
+
+/* Background */
+.bg-white   { background-color: #fff !important; }
+.bg-light   { background-color: #f5f6f7 !important; }
+.bg-primary { background-color: #007a52 !important; color: #fff; }
+
+/* Shadows */
+.shadow    { box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15) !important; }
+.shadow-sm { box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075) !important; }
+.shadow-lg { box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important; }
+.drop-shadow { box-shadow: 0 2px 8px rgba(0,0,0,.1) !important; }
+
+/* Position */
+.position-relative { position: relative !important; }
+.position-sticky   { position: sticky !important; }
+.sticky-top        { position: sticky !important; top: 0; z-index: 1020; }
+
+/* Misc */
+.img-fluid { max-width: 100% !important; height: auto !important; }
+.list-inline { list-style: none; padding: 0; display: flex; flex-wrap: wrap; }
+.list-inline-item { margin-right: 0.5rem; }
+.no-gutters > .col, .no-gutters > [class*="col-"] { padding-right: 0; padding-left: 0; }
+.variable-gutters { margin-left: -12px; margin-right: -12px; }
+.variable-gutters > .col, .variable-gutters > [class*="col-"] { padding-left: 12px; padding-right: 12px; }
+
+
+/* ============================================================================
+   2. TYPOGRAPHY — Design Comuni specific classes
+   ============================================================================ */
+.title-xxxlarge {
+  font-size: 3rem !important;        /* 48px - was 2.5rem/40px */
+  font-weight: 700 !important;
+  line-height: 1.25 !important;      /* 60px/48px - was 1.1 */
+  letter-spacing: -1px !important;
+  color: rgb(25, 25, 25) !important;
+}
+
+.title-xxlarge {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #191919;
+}
+
+.title-xlarge {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #191919;
+}
+
+.title-large {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.title-medium-2-semi-bold {
+  font-size: 1.5rem !important;      /* 24px - was 1.125rem/18px */
+  font-weight: 600 !important;
+  line-height: 1.25 !important;      /* 30px/24px - was 1.35 */
+  color: rgb(25, 25, 25) !important;
+  margin-bottom: 8px !important;
+}
+
+.title-small-semi-bold {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.subtitle-small {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #5c6f82;
+}
+
+.subtitle-small_semi-bold {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.text-button {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+
+/* ============================================================================
+   3. BREADCRUMBS
+   ============================================================================ */
+.cmp-breadcrumbs {
+  padding: 1rem 0;
+}
+
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.875rem;
+  gap: 0;
+}
+
+.breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.breadcrumb-item a {
+  color: #5c6f82 !important;
+  text-decoration: none !important;
+  font-size: 0.875rem;
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline !important;
+}
+
+.breadcrumb-item.active {
+  color: #17324d;
+  font-weight: 600;
+}
+
+.breadcrumb-item .separator {
+  margin: 0 0.5rem;
+  color: #5c6f82;
+}
+
+.breadcrumb-item .icon {
+  width: 18px;
+  height: 18px;
+}
+
+
+/* ============================================================================
+   4. PAGE HEADING (cmp-heading)
+   ============================================================================ */
+.cmp-heading {
+  padding-bottom: 1rem;
+}
+
+.cmp-heading h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #191919;
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 767px) {
+  .cmp-heading h1 {
+    font-size: 1.75rem;
+  }
+}
+
+
+/* ============================================================================
+   5. CHIP/BADGE Component
+   ============================================================================ */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 16px;
+  border: 1px solid #5c6f82;
+  border-radius: 24px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  background: transparent;
+  color: #191919;
+}
+
+.chip-simple {
+  border-color: #d9e1e8;
+}
+
+.chip-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.chip-lg {
+  padding: 8px 24px;
+  font-size: 1rem;
+}
+
+
+/* ============================================================================
+   6. SIDEBAR NAVIGATION (cmp-navscroll) — segnalazione-dettaglio
+   ============================================================================ */
+.row-column-menu-left {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.border-col {
+  border-right: 1px solid #d9e1e8;
+}
+
+@media (max-width: 991px) {
+  .border-col {
+    border-right: none;
+    border-bottom: 1px solid #d9e1e8;
+  }
+}
+
+.cmp-navscroll {
+  padding: 0;
+}
+
+.cmp-navscroll .navbar {
+  padding: 0;
+}
+
+.it-navscroll-wrapper .menu-wrapper {
+  padding: 0;
+}
+
+.it-navscroll-wrapper .link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.it-navscroll-wrapper .link-list a {
+  display: block;
+  padding: 0.625rem 1rem;
+  font-size: 0.9375rem;
+  color: #17324d;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.it-navscroll-wrapper .link-list a:hover,
+.it-navscroll-wrapper .link-list a.active {
+  color: #007a52;
+  border-left-color: #007a52;
+  background: rgba(0, 122, 82, 0.04);
+}
+
+
+/* ============================================================================
+   7. PAGE SECTIONS (it-page-section) — segnalazione-dettaglio
+   ============================================================================ */
+.it-page-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.it-page-section h2 {
+  font-family: 'Titillium Web';
+  font-style: italic;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #191919;
+  margin-bottom: 1rem;
+}
+
+.it-page-section h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #191919;
+  margin-bottom: 0.75rem;
+}
+
+
+/* ============================================================================
+   8. ACCORDION COMPONENT (Bootstrap Italia)
+   ============================================================================ */
+.accordion {
+  border: 0;
+}
+
+.accordion-item {
+  border: 1px solid #d9e1e8;
+  border-radius: 0;
+  margin-bottom: -1px;
+  background: #fff;
+}
+
+.accordion-item:first-child {
+  border-radius: 4px 4px 0 0;
+}
+
+.accordion-item:last-child {
+  border-radius: 0 0 4px 4px;
+}
+
+.accordion-header {
+  margin: 0;
+}
+
+.accordion-button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #17324d;
+  background: #fff;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.accordion-button:hover {
+  background: #f5f6f7;
+}
+
+.accordion-button::after {
+  content: '';
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23212529' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.accordion-button:not(.collapsed)::after {
+  transform: rotate(-180deg);
+}
+
+.accordion-button.collapsed {
+  color: #5c6f82;
+}
+
+.cmp-card .accordion-button::after {
+  display: none;
+}
+
+.accordion-collapse {
+  display: none;
+  overflow: hidden;
+}
+
+.accordion-collapse.show {
+  display: block;
+}
+
+.accordion-body {
+  padding: 1rem 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #191919;
+}
+
+.collapse {
+  display: none;
+}
+
+.collapse.show {
+  display: block;
+}
+
+.fade {
+  opacity: 1;
+  transition: opacity 0.15s linear;
+}
+
+
+/* ============================================================================
+   9. FORM COMPONENTS
+   ============================================================================ */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label,
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #17324d;
+}
+
+.form-control,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+input[type="url"],
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: 0.625rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #191919;
+  background: #fff;
+  border: 1px solid #5c6f82;
+  border-radius: 0;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #007a52;
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(0, 122, 82, 0.25);
+}
+
+.form-control::placeholder {
+  color: #5c6f82;
+  opacity: 0.7;
+}
+
+.input-group {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.input-group .form-control {
+  flex: 1;
+}
+
+.input-group-append,
+.input-group-text {
+  display: flex;
+  align-items: center;
+}
+
+.form-text,
+.form-check-description {
+  font-size: 0.8125rem;
+  color: #5c6f82;
+  margin-top: 0.25rem;
+}
+
+/* Checkbox & Radio - Bootstrap Italia style */
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+}
+
+.form-check input[type="checkbox"],
+.form-check input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  left: 9px;
+  top: 9px;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.form-check input[type="checkbox"] + label,
+.form-check input[type="radio"] + label {
+  position: relative;
+  padding-left: 2rem;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  user-select: none;
+  color: #191919;
+}
+
+.form-check-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+  border: 2px solid #5c6f82;
+  border-radius: 2px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.form-check-input[type="radio"] {
+  border-radius: 50%;
+}
+
+.form-check-input:checked {
+  background-color: #06c;
+  border-color: #06c;
+}
+
+.form-check-input:checked::after {
+  content: '';
+  display: block;
+  width: 0.625rem;
+  height: 0.375rem;
+  margin: 0.25rem auto 0;
+  border: solid #fff;
+  border-width: 0 0 2px 2px;
+  transform: rotate(-45deg);
+}
+
+.form-check-input[type="radio"]:checked::after {
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: 0.25rem auto 0;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  transform: none;
+}
+
+.form-check-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #191919;
+  cursor: pointer;
+}
+
+/* Radio body styling used on segnalazione pages */
+.cmp-radio-list__item {
+  padding: 1rem 1.25rem;
+  border: 1px solid #d9e1e8;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cmp-radio-list__item:hover {
+  border-color: #007a52;
+  background: rgba(0, 122, 82, 0.02);
+}
+
+.radio-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+
+/* ============================================================================
+   10. STEPPER COMPONENT — Bootstrap Italia exact parity
+   Reference: https://italia.github.io/design-comuni-pagine-statiche/
+   ============================================================================ */
+
+/* Base (all breakpoints) */
+.steppers .steppers-header {
+  margin-bottom: 2rem;
+}
+
+.steppers .steppers-header ul {
+  display: flex;
+  width: 100%;
+  padding: 0;
+}
+
+.steppers .steppers-header ul li {
+  display: flex;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #5d7083;
+  list-style-type: none;
+}
+
+.steppers .steppers-header ul li .icon {
+  fill: #5d7083;
+  margin-right: 0.667rem;
+  width: 24px;
+  height: 24px;
+}
+
+.steppers .steppers-header ul li.active,
+.steppers .steppers-header ul li.confirmed {
+  color: #007a52;
+}
+
+.steppers .steppers-header ul li.active .icon,
+.steppers .steppers-header ul li.confirmed .icon {
+  fill: #007a52;
+}
+
+.steppers .steppers-index {
+  margin-left: auto;
+  font-size: 0.875rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* Mobile + Tablet (< 992px): card with shadow, only active step visible */
+@media (max-width: 991.98px) {
+  .steppers .steppers-header {
+    padding: 0 24px;
+    height: 64px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .steppers .steppers-header ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide all non-active steps (clipped, position absolute) */
+  .steppers .steppers-header ul li:not(.active) {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 0;
+    position: absolute;
+    display: block;
+  }
+}
+
+/* sm breakpoint: slightly smaller font */
+@media (min-width: 576px) {
+  .steppers .steppers-header li {
+    font-size: 1rem;
+  }
+}
+
+/* Desktop (>= 992px): full tab row, green ::after underline on active */
+@media (min-width: 992px) {
+  .steppers .steppers-index {
+    display: none;
+  }
+
+  .steppers .steppers-header {
+    padding: 0;
+    box-shadow: none;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+  }
+
+  .steppers .steppers-header li {
+    padding: 16px 24px;
+    flex-grow: 1;
+    border-left: 1px solid #c5c7c9;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .steppers .steppers-header li:last-child {
+    border-right: 1px solid #c5c7c9;
+  }
+
+  .steppers .steppers-header li.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 2.222rem);
+    height: 2px;
+    background: #007a52;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.steppers-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+  border-top: 1px solid #d9e1e8;
+}
+
+
+/* ============================================================================
+   11. RATING STARS — Fix oversized SVG issue
+   ============================================================================ */
+.cmp-rating {
+  text-align: center;
+}
+
+.cmp-rating .card {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+.cmp-rating .card-header {
+  border-bottom: 0;
+  background: transparent;
+  padding-bottom: 0;
+}
+
+.rating,
+fieldset.rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  direction: rtl;
+  padding: 0;
+  margin: 0.5rem 0;
+  border: 0;
+}
+
+.rating-star,
+.rating label {
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* CRITICAL: Fix the oversized star SVGs */
+.rating-star svg,
+.rating label svg,
+.rating svg,
+fieldset.rating svg,
+.cmp-rating svg {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  fill: #d9e1e8;
+  transition: fill 0.15s;
+}
+
+.rating-star:hover svg,
+.rating input:checked ~ label svg,
+.rating label:hover svg,
+.rating label:hover ~ label svg {
+  fill: #ffb400 !important;
+}
+
+.rating input {
+  display: none;
+}
+
+
+/* ============================================================================
+   12. CARDS in segnalazione context
+   ============================================================================ */
+.card-header {
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.card-footer {
+  padding: 1rem 1.25rem;
+  background: #f5f6f7;
+  border-top: 1px solid #e9ecef;
+}
+
+.card-space {
+  margin-bottom: 1rem;
+}
+
+.card-bg {
+  background: #fff;
+}
+
+.card-body__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-body__list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 0.9375rem;
+}
+
+.card-body__list li:last-child {
+  border-bottom: 0;
+}
+
+/* Single-line info items used in detail pages */
+.single-line-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.single-line-info .data-text {
+  font-size: 0.9375rem;
+  color: #191919;
+}
+
+.data-text {
+  font-size: 0.9375rem;
+  color: #191919;
+}
+
+
+/* ============================================================================
+   13. SPLIDE/CAROUSEL (used in segnalazione-dettaglio)
+   ============================================================================ */
+.cmp-carousel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.cmp-carousel__header-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.splide__slide {
+  padding: 0 0.5rem;
+}
+
+
+/* ============================================================================
+   14. CONTATTA IL COMUNE / CONTACTS (shared bottom section)
+   ============================================================================ */
+.cmp-contacts {
+  padding: 2rem 0;
+}
+
+.cmp-contacts .card {
+  max-width: 520px;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.cmp-contacts .card-body {
+  padding: 1.5rem;
+}
+
+.cmp-contacts .card-body .list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.cmp-contacts .icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: #007a52;
+}
+
+
+/* ============================================================================
+   15. ICON GLOBAL — Fix oversized SVGs in all contexts
+   ============================================================================ */
+.icon,
+svg.icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  display: inline-block;
+  fill: currentColor;
+}
+
+.icon-xs, svg.icon-xs { width: 16px; height: 16px; }
+.icon-sm, svg.icon-sm { width: 20px; height: 20px; }
+.icon-lg, svg.icon-lg { width: 32px; height: 32px; }
+.icon-xl, svg.icon-xl { width: 48px; height: 48px; }
+
+/* Prevent any SVG from being absurdly large */
+/* Exclude: Leaflet cluster icons, map marker icons, and type icon SVGs */
+main svg:not(.leaflet-zoom-animated):not([width]):not([class*="icon"]):not(.geo-cluster-wrapper):not(.geo-map-marker-wrapper):not(.geo-cluster-wrapper *) {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Icon containers — prevent icons from taking huge space */
+.icon-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.list-item-title-icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+/* ============================================================================
+   16. SEGNALAZIONE SPECIFIC: Detail page layout
+   ============================================================================ */
+/* Sidebar + content layout */
+.row-column-menu-left > .col-lg-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.row-column-menu-left > .col-lg-8,
+.row-column-menu-left > .col-lg-9 {
+  flex: 0 0 66.667%;
+  max-width: 66.667%;
+}
+
+@media (max-width: 991px) {
+  .row-column-menu-left > .col-lg-3,
+  .row-column-menu-left > .col-lg-8,
+  .row-column-menu-left > .col-lg-9 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* ============================================================================
+   17. SEGNALAZIONE SPECIFIC: Elenco page
+   ============================================================================ */
+/* Tabs for map/list toggle */
+.nav-tabs,
+.cmp-nav-tab {
+  display: flex;
+  border-bottom: 2px solid #d9e1e8;
+  margin-bottom: 1.5rem;
+}
+
+.nav-tabs .nav-link,
+.cmp-nav-tab a {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #5c6f82;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.nav-tabs .nav-link:hover,
+.cmp-nav-tab a:hover {
+  color: #007a52;
+}
+
+.nav-tabs .nav-link.active,
+.cmp-nav-tab a.active {
+  color: #007a52;
+  border-bottom-color: #007a52;
+}
+
+/* Category filter sidebar on elenco */
+.cmp-category-filter {
+  padding-right: 1rem;
+}
+
+.cmp-category-filter label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0;
+  font-size: 0.875rem;
+  color: #191919;
+  cursor: pointer;
+}
+
+/* Map container */
+.cmp-map-container,
+#map-container,
+[data-element="map-container"] {
+  width: 100%;
+  min-height: 400px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+
+/* ============================================================================
+   18. SEGNALAZIONE AREA PERSONALE
+   ============================================================================ */
+/* Tab navigation */
+.nav-pills {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.nav-pills .nav-link {
+  padding: 0.5rem 1rem;
+  border-radius: 24px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #5c6f82;
+  border: 1px solid #d9e1e8;
+  background: #fff;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.nav-pills .nav-link:hover {
+  background: #f5f6f7;
+}
+
+.nav-pills .nav-link.active {
+  background: #007a52;
+  color: #fff;
+  border-color: #007a52;
+}
+
+
+/* ============================================================================
+   19. CTA / CALL TO ACTION SECTION
+   ============================================================================ */
+.cmp-hero-cta {
+  padding: 3rem 0;
+  background: #f5f6f7;
+  text-align: center;
+}
+
+.cmp-hero-cta h2 {
+  font-family: 'Titillium Web';
+  font-style: italic;
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.cmp-hero-cta .btn {
+  margin-top: 1rem;
+}
+
+
+/* ============================================================================
+   20. CHECKBOX/RADIO BODY STYLING (privacy page, dati page)
+   ============================================================================ */
+.checkbox-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+}
+
+
+/* ============================================================================
+   21. RESPONSIVE OVERRIDES
+   ============================================================================ */
+@media (max-width: 991px) {
+  .d-lg-flex { display: flex !important; }
+  .d-lg-block { display: block !important; }
+  .d-none.d-lg-block { display: none !important; }
+  .d-none.d-lg-flex { display: none !important; }
+
+  .row-column-menu-left {
+    flex-direction: column;
+  }
+
+  .title-xxxlarge {
+    font-size: 1.75rem;
+  }
+
+  .title-xxlarge {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .d-lg-flex  { display: flex !important; }
+  .d-lg-block { display: block !important; }
+  .d-lg-none  { display: none !important; }
+  .d-none.d-lg-block { display: block !important; }
+  .d-none.d-lg-flex  { display: flex !important; }
+
+  .col-lg-3  { flex: 0 0 25%; max-width: 25%; padding-left: 1rem; padding-right: 1rem; }
+  .col-lg-4  { flex: 0 0 33.333%; max-width: 33.333%; padding-left: 1rem; padding-right: 1rem; }
+  .col-lg-5  { flex: 0 0 41.667%; max-width: 41.667%; padding-left: 1rem; padding-right: 1rem; }
+  .col-lg-6  { flex: 0 0 50%; max-width: 50%; padding-left: 1rem; padding-right: 1rem; }
+  .col-lg-7  { flex: 0 0 58.333%; max-width: 58.333%; padding-left: 1rem; padding-right: 1rem; }
+  .col-lg-8  { flex: 0 0 66.667%; max-width: 66.667%; padding-left: 1rem; padding-right: 1rem; }
+  .col-lg-9  { flex: 0 0 75%; max-width: 75%; padding-left: 1rem; padding-right: 1rem; }
+  .col-lg-10 { flex: 0 0 83.333%; max-width: 83.333%; padding-left: 1rem; padding-right: 1rem; }
+  .offset-lg-1 { margin-left: 8.333%; }
+}
+
+@media (min-width: 768px) {
+  .d-md-block { display: block !important; }
+  .d-md-flex  { display: flex !important; }
+  .d-none.d-md-block { display: block !important; }
+
+  .col-md-3  { flex: 0 0 25%; max-width: 25%; padding-left: 1rem; padding-right: 1rem; }
+  .col-md-4  { flex: 0 0 33.333%; max-width: 33.333%; padding-left: 1rem; padding-right: 1rem; }
+  .col-md-5  { flex: 0 0 41.667%; max-width: 41.667%; padding-left: 1rem; padding-right: 1rem; }
+  .col-md-6  { flex: 0 0 50%; max-width: 50%; padding-left: 1rem; padding-right: 1rem; }
+  .col-md-8  { flex: 0 0 66.667%; max-width: 66.667%; padding-left: 1rem; padding-right: 1rem; }
+  .col-md-9  { flex: 0 0 75%; max-width: 75%; padding-left: 1rem; padding-right: 1rem; }
+}
+
+@media (max-width: 575px) {
+  /* Ensure the container doesn't cause horizontal scroll */
+  .container {
+    max-width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+
+/* ============================================================================
+   22. MOBILE MENU / NAVBAR COLLAPSABLE refinements
+   ============================================================================ */
+.navbar-collapsable {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: #007a52;
+}
+
+.navbar-collapsable.show {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-collapsable .overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.navbar-collapsable .menu-wrapper {
+  padding: 1rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.navbar-collapsable .close-div {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem 1rem;
+}
+
+@media (min-width: 992px) {
+  .navbar-collapsable {
+    display: flex !important;
+    position: static;
+    background: transparent;
+    flex-direction: row;
+  }
+
+  .navbar-collapsable .overlay,
+  .navbar-collapsable .close-div,
+  .custom-navbar-toggler {
+    display: none !important;
+  }
+
+  .navbar-collapsable .menu-wrapper {
+    display: flex;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+  }
+}
+
+
+/* ============================================================================
+   23. DROPDOWN refinements
+   NOTE: Custom ::after chevron removed — uses SVG icon from template instead
+   ============================================================================ */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: #191919;
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f5f6f7;
+  color: #007a52;
+}
+
+.btn-dropdown {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+
+/* ============================================================================
+   24. SEARCH MODAL
+   ============================================================================ */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 3rem;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-dialog {
+  background: #fff;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 640px;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.25);
+}
+
+.modal-content {
+  padding: 1.5rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.btn-close {
+  background: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #5c6f82;
+  padding: 0.25rem;
+  line-height: 1;
+}
+
+.btn-close::after {
+  content: '×';
+}
+
+.btn-close span {
+  display: none;
+}
+
+/* ============================================================================
+   25. SEGNALAZIONE FLOW PAGES — Additional classes for 01-privacy, 02-dati, 03-riepilogo
+   ============================================================================ */
+
+/* Alert/Warning boxes */
+.it-alert,
+.alert-warning {
+  background-color: #fff9f0 !important;
+  border-left: 4px solid #995C00 !important;
+  padding: 1.25rem 1.5rem !important;
+  border-radius: 4px !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.it-alert h2,
+.alert-warning h2 {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #191919 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.it-alert p,
+.alert-warning p {
+  font-size: 1rem !important;
+  color: #191919 !important;
+  margin-bottom: 0 !important;
+}
+
+.no_toc {
+  font-size: inherit !important;
+  font-weight: inherit !important;
+}
+
+/* Card wrapper for summary cards */
+.card-wrapper {
+  margin-bottom: 1.5rem !important;
+}
+
+.card-wrapper .card {
+  border: 1px solid #e8e8e8 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+.card-wrapper .card-header {
+  background-color: #f5f6f7 !important;
+  padding: 1rem 1.25rem !important;
+  border-bottom: 1px solid #e8e8e8 !important;
+  font-weight: 600 !important;
+}
+
+.card-wrapper .card-body {
+  padding: 1.25rem !important;
+}
+
+/* Definition list styling for summary */
+.it-list-wrapper {
+  margin: 0 !important;
+}
+
+.it-list-wrapper > div {
+  margin-bottom: 1rem !important;
+}
+
+.it-list-wrapper dt {
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.it-list-wrapper dd {
+  font-size: 1rem !important;
+  color: #191919 !important;
+  margin-left: 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* Text color utilities */
+.t-primary {
+  color: #007A52 !important;
+}
+
+.t-secondary {
+  color: #5c6f82 !important;
+}
+
+/* Read more/terms links */
+.read-terms,
+a.read-terms {
+  color: #007A52 !important;
+  text-decoration: underline !important;
+  font-size: 0.9rem !important;
+}
+
+/* Actions wrapper */
+.actions-wrapper {
+  padding: 1.5rem 0 !important;
+  border-top: 1px solid #e8e8e8 !important;
+}
+
+/* Terms section */
+.terms-section {
+  margin-top: 2rem !important;
+  padding-top: 2rem !important;
+  border-top: 1px solid #e8e8e8 !important;
+}
+
+/* File upload */
+.fileupload {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+}
+
+.fileupload-filename {
+  font-size: 0.875rem !important;
+  color: #5c6f82 !important;
+  padding: 0.5rem 0.75rem !important;
+  background-color: #f5f6f7 !important;
+  border-radius: 4px !important;
+  display: inline-block !important;
+}
+
+/* User card in dati form */
+.user-card {
+  background-color: #fff !important;
+}
+
+.user-card .contacts {
+  border-top: 1px solid #e8e8e8 !important;
+  padding-top: 1rem !important;
+}
+
+/* Stepper nav buttons */
+.steppers-nav {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 1.5rem 0 !important;
+  margin-top: 2rem !important;
+  border-top: 1px solid #e8e8e8 !important;
+  gap: 1rem !important;
+  flex-wrap: wrap !important;
+}
+
+.steppers-nav .d-flex.gap-2 {
+  display: flex !important;
+  gap: 0.75rem !important;
+}
+
+/* Outline secondary button */
+.btn-outline-secondary {
+  background-color: #fff !important;
+  color: #5c6f82 !important;
+  border: 2px solid #5c6f82 !important;
+  border-radius: 4px !important;
+  padding: 0.625rem 1.5rem !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  cursor: pointer !important;
+  font-family: 'Titillium Web' !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f5f6f7 !important;
+  color: #191919 !important;
+}
+
+/* Danger outline button */
+.btn-outline-danger {
+  background-color: #fff !important;
+  color: #cc0000 !important;
+  border: 2px solid #cc0000 !important;
+  border-radius: 4px !important;
+  padding: 0.625rem 1.5rem !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  cursor: pointer !important;
+  font-family: 'Titillium Web' !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-outline-danger:hover {
+  background-color: #cc0000 !important;
+  color: #fff !important;
+}
+
+/* Form note */
+.form-note {
+  font-size: 0.875rem !important;
+  color: #5c6f82 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Text danger (for asterisk) */
+.text-danger {
+  color: #cc0000 !important;
+}
+
+/* Responsive: mobile full buttons */
+@media (max-width: 767px) {
+  .mobile-full,
+  .btn.mobile-full {
+    width: 100% !important;
+  }
+
+  .steppers-nav {
+    flex-direction: column !important;
+  }
+
+  .steppers-nav > *,
+  .steppers-nav .d-flex {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* ============================================================================
+   26. SEGNALAZIONE-01-PRIVACY — Visual parity fixes
+   ============================================================================ */
+
+/* --------------------------------------------------------------------------
+   26.1 Privacy text paragraph — spacing and typography
+   Reference: Titillium Web 16px/24px, color #191919 (near black)
+   Updated: 2026-04-09 - Visual parity analysis confirmed #191919
+   -------------------------------------------------------------------------- */
+.segnalazione-privacy-page .text-paragraph {
+  font-family: 'Titillium Web' !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  color: var(--bi-text-dark) !important; /* #191919 - near black from reference */
+  max-width: 640px !important;
+  margin-bottom: 16px !important;
+}
+
+/* Override any .lora class that might be applied to paragraphs */
+.segnalazione-privacy-page p.lora,
+.segnalazione-privacy-page .lora.text-paragraph {
+  font-family: 'Titillium Web' !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  color: #191919 !important;
+}
+
+/* --------------------------------------------------------------------------
+   26.3 Checkbox — Bootstrap Italia style
+   Reference: square checkbox with green check, label inline on same line, no underline
+   -------------------------------------------------------------------------- */
+.segnalazione-privacy-page .form-check,
+.form-check {
+  border-bottom: none !important;
+  border-top: none !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.segnalazione-privacy-page .form-check .checkbox-body,
+.form-check .checkbox-body {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  padding: 0.5rem 0 !important;
+}
+
+.segnalazione-privacy-page .form-check input[type="checkbox"],
+.form-check input[type="checkbox"] {
+  /* Override BI: opacity:0 and position:absolute → make the input itself the visible checkbox */
+  opacity: 1 !important;
+  position: static !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  min-width: 1.25rem !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  border: 2px solid #5c6f82 !important;
+  border-radius: 2px !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  background: #fff !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+.segnalazione-privacy-page .form-check input[type="checkbox"]:checked,
+.form-check input[type="checkbox"]:checked {
+  background-color: #007a52 !important;
+  border-color: #007a52 !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e") !important;
+  background-size: 75% 75% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.segnalazione-privacy-page .form-check input[type="checkbox"]:hover,
+.form-check input[type="checkbox"]:hover {
+  border-color: #007a52 !important;
+}
+
+/* Hide BI pseudo-elements on the label: input is now the real visual checkbox */
+.form-check .checkbox-body input[type="checkbox"] + label::before,
+.form-check .checkbox-body input[type="checkbox"] + label::after {
+  display: none !important;
+  content: none !important;
+}
+
+.segnalazione-privacy-page .form-check .checkbox-body label.title-small-semi-bold,
+.form-check .checkbox-body label.title-small-semi-bold {
+  /* Reset BI: position:relative (not needed since we hide ::before/::after) */
+  position: static !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #17324d !important;
+  line-height: 1.5 !important;
+  cursor: pointer !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   26.4 Button "Avanti" — Bootstrap Italia primary button (GREEN #007a52)
+   Reference: padding 12px 24px, font-size 16px, weight 600, NO border-radius
+   -------------------------------------------------------------------------- */
+.btn.btn-primary.mobile-full {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 375px !important;
+  min-height: 48px !important;
+  padding: 12px 24px !important;
+  background-color: rgb(0, 122, 82) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 24.88px !important;
+  color: #fff !important;
+  font-family: 'Titillium Web' !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s ease !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0 !important;
+}
+
+.btn.btn-primary.mobile-full:hover {
+  background-color: rgb(0, 90, 60) !important;
+}
+
+.btn.btn-primary.mobile-full:active {
+  background-color: #004780 !important;
+}
+
+/* --------------------------------------------------------------------------
+   26.5 "Contatta il comune" card — wider white card on grey background, minimal shadow
+   Reference: white card, centered, ~592px wide, subtle shadow
+   -------------------------------------------------------------------------- */
+.bg-grey-card {
+  background-color: #f2f4f6 !important;
+  padding: 3rem 0 !important;
+  margin-top: 2rem !important;
+}
+
+/* Override the col-lg-6 offset-lg-3 constraint */
+.bg-grey-card .row > .col-12.col-lg-6,
+.bg-grey-card .col-12.col-lg-6.offset-lg-3 {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+.bg-grey-card .cmp-contacts {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.bg-grey-card .cmp-contacts .card,
+div.bg-grey-card .cmp-contacts .card.w-100 {
+  width: 100% !important;
+  max-width: 592px !important;
+  min-width: 320px !important;
+  border: none !important;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.06) !important;
+  background: #fff !important;
+  border-radius: 4px !important;
+}
+
+.bg-grey-card .cmp-contacts .card-body {
+  padding: 2rem !important;
+}
+
+.bg-grey-card .cmp-contacts .card-body {
+  padding: 2rem !important;
+}
+
+.bg-grey-card .cmp-contacts .card-body h2.title-medium-2-semi-bold {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #191919 !important;
+  margin-bottom: 1.25rem !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+}
+
+.bg-grey-card .contact-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.bg-grey-card .contact-list li {
+  margin-bottom: 0 !important;
+}
+
+.bg-grey-card .contact-list .list-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  padding: 0.75rem 0 !important;
+  font-size: 1rem !important;
+  color: #06c !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid #e8e8e8 !important;
+  transition: color 0.15s ease !important;
+}
+
+.bg-grey-card .contact-list li:last-child .list-item {
+  border-bottom: none !important;
+}
+
+.bg-grey-card .contact-list .list-item:hover {
+  color: #0052a3 !important;
+  text-decoration: underline !important;
+}
+
+.bg-grey-card .contact-list .list-item .icon {
+  width: 20px !important;
+  height: 20px !important;
+  flex-shrink: 0 !important;
+  fill: #06c !important;
+}
+
+.bg-grey-card .contact-list .list-item span {
+  color: inherit !important;
+  font-size: 1rem !important;
+}
+
+/* --------------------------------------------------------------------------
+   26.6 Footer fixes — "Nome del Comune" without underline
+   -------------------------------------------------------------------------- */
+footer#footer .it-brand-wrapper > a,
+footer#footer .it-footer-brand a {
+  text-decoration: none !important;
+}
+
+footer#footer .it-brand-wrapper > a:hover {
+  text-decoration: underline !important;
+}
+
+/* --------------------------------------------------------------------------
+   26.17 HEADER BRAND LINK — Remove underline from brand title/tagline
+   Reference: no underline on "Il mio Comune" and "Un comune da vivere"
+   -------------------------------------------------------------------------- */
+.it-header-center-wrapper .it-brand-wrapper > a,
+.it-header-center-wrapper .it-brand-title,
+.it-header-center-wrapper .it-brand-tagline {
+  text-decoration: none !important;
+}
+
+.it-header-center-wrapper .it-brand-wrapper > a:hover {
+  text-decoration: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   26.7 Header slim — "Accedi all'area personale" button styling
+   Reference: white icon + text on dark green background
+   -------------------------------------------------------------------------- */
+.it-header-slim-wrapper .it-access-top-wrapper .btn,
+.it-header-slim-wrapper .btn-full {
+  color: #fff !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 12px 16px !important;
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: all 0.15s ease !important;
+}
+
+.it-header-slim-wrapper .it-access-top-wrapper .btn:hover,
+.it-header-slim-wrapper .btn-full:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.it-header-slim-wrapper .it-access-top-wrapper .btn svg,
+.it-header-slim-wrapper .btn-full svg {
+  fill: #fff !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* --------------------------------------------------------------------------
+   26.8 Header center — "Cerca" label next to search button
+   Reference: "Cerca" text positioned to the left of the search icon button
+   -------------------------------------------------------------------------- */
+.it-header-center-wrapper .it-search-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.it-header-center-wrapper .it-search-wrapper > span {
+  color: #fff !important;
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  white-space: nowrap !important;
+}
+
+/* --------------------------------------------------------------------------
+   26.9 Main content area — proper spacing
+   -------------------------------------------------------------------------- */
+.segnalazione-privacy-page .container .row.justify-content-center {
+  margin-bottom: 0 !important;
+}
+
+.segnalazione-privacy-page .col-12.col-lg-8 {
+  padding-bottom: 2rem !important;
+}
+
+@media (min-width: 992px) {
+  .segnalazione-privacy-page .col-12.col-lg-8 {
+    padding-bottom: 4rem !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   26.10 Breadcrumb — reference style
+   Reference: "Home / Servizi / Segnalazione disservizio" with slashes
+   -------------------------------------------------------------------------- */
+.cmp-breadcrumbs {
+  padding: 1rem 0 0.5rem !important;
+}
+
+.cmp-breadcrumbs .breadcrumb {
+  font-size: 0.875rem !important;
+}
+
+.cmp-breadcrumbs .breadcrumb-item a {
+  color: #5c6f82 !important;
+  text-decoration: none !important;
+}
+
+.cmp-breadcrumbs .breadcrumb-item a:hover {
+  text-decoration: underline !important;
+}
+
+.cmp-breadcrumbs .breadcrumb-item.active {
+  color: #191919 !important;
+  font-weight: 400 !important;
+}
+
+.cmp-breadcrumbs .breadcrumb-item .separator {
+  margin: 0 0.375rem !important;
+  color: #5c6f82 !important;
+}
+
+/* --------------------------------------------------------------------------
+   26.11 Page heading H1
+   Reference: large bold title
+   -------------------------------------------------------------------------- */
+h1.title-xxxlarge {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  color: #191919 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+@media (max-width: 767px) {
+  h1.title-xxxlarge {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   26.12 Privacy text link styling
+   -------------------------------------------------------------------------- */
+.segnalazione-privacy-page a.t-primary {
+  color: #007a52 !important;
+  text-decoration: underline !important;
+}
+
+.segnalazione-privacy-page a.t-primary:hover {
+  color: #005c3e !important;
+}
+
+/* --------------------------------------------------------------------------
+   26.13 Container width for segnalazione pages — match reference
+   Reference uses max-width content area
+   -------------------------------------------------------------------------- */
+.segnalazione-privacy-page #main-container {
+  padding-top: 1.5rem !important;
+}
+
+/* --------------------------------------------------------------------------
+   26.14 Slim header language selector
+   Reference: "ITA" with dropdown arrow
+   -------------------------------------------------------------------------- */
+.it-header-slim-wrapper .it-header-slim-wrapper-content {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.it-header-slim-wrapper .it-left-region {
+  font-size: 0.875rem !important;
+  color: #fff !important;
+}
+
+.it-header-slim-wrapper .it-right-region {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+
+/* ============================================================================
+   26. PAGE-SPECIFIC VISUAL PARITY — segnalazione-01-privacy
+   Keep scoped to the tests privacy page to avoid stepping on parallel work.
+   ============================================================================ */
+
+.cmp-breadcrumbs {
+  padding: 2rem 0 1.25rem !important;
+}
+
+.title-xxxlarge {
+  margin-bottom: 2.25rem !important;
+}
+
+.steppers {
+  margin-bottom: 2rem !important;
+}
+
+.steppers-header {
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: space-between !important;
+  padding: 0 !important;
+  margin-bottom: 2.25rem !important;
+  border-bottom: 0 !important;
+  gap: 0 !important;
+  overflow: visible !important;
+}
+
+.steppers-header ul {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  align-items: stretch !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.steppers-header li {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  flex: 1 1 0 !important;
+  min-height: 4rem !important;
+  padding: 0 1.5rem 1rem 1.5rem !important;
+  margin: 0 !important;
+  border-left: 1px solid #d9e1e8 !important;
+  color: #5c6f82 !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  white-space: normal !important;
+}
+
+.steppers-header li:last-child {
+  border-right: 1px solid #d9e1e8 !important;
+}
+
+.steppers-header li.active {
+  color: #007a52 !important;
+}
+
+.steppers-header li.active::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 1.25rem !important;
+  right: 1.25rem !important;
+  bottom: 0 !important;
+  height: 3px !important;
+  background: #007a52 !important;
+}
+
+.steppers-header .visually-hidden {
+  position: absolute !important;
+}
+
+.steppers-index {
+  display: none !important;
+}
+
+.form-check {
+  margin-top: 2rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.checkbox-body {
+  gap: 0.875rem !important;
+  padding: 0 !important;
+}
+
+.checkbox-body input[type="checkbox"] {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  margin: 0 !important;
+  border: 2px solid #5c6f82 !important;
+  border-radius: 0.25rem !important;
+  flex: 0 0 1.5rem !important;
+}
+
+.checkbox-body label {
+  padding-top: 0 !important;
+  line-height: 1.5 !important;
+}
+
+.btn.btn-primary.mobile-full {
+  width: min(25.5rem, 100%) !important;
+  min-height: 3rem !important;
+  justify-content: center !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+}
+
+@media (max-width: 991px) {
+  .cmp-breadcrumbs {
+    padding: 1.5rem 0 1rem !important;
+  }
+
+  .title-xxxlarge {
+    margin-bottom: 1.75rem !important;
+  }
+
+  .steppers-header {
+    padding: 1.125rem 1.5rem !important;
+    margin-bottom: 1.75rem !important;
+    background: #fff !important;
+    box-shadow: 0 8px 24px rgba(23, 50, 77, 0.12) !important;
+  }
+
+  .steppers-header ul {
+    display: block !important;
+  }
+
+  .steppers-header li {
+    display: none !important;
+    border: 0 !important;
+    padding: 0 !important;
+    min-height: auto !important;
+  }
+
+  .steppers-header li.active {
+    display: block !important;
+    flex: 1 1 auto !important;
+    font-size: 1rem !important;
+  }
+
+  .steppers-header li.active::after {
+    display: none !important;
+  }
+
+  .steppers-index {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    min-width: 3rem !important;
+    margin-left: 1rem !important;
+    color: #17324d !important;
+    font-size: 1.125rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+  }
+
+  .text-paragraph {
+    max-width: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .checkbox-body {
+    align-items: flex-start !important;
+  }
+
+  .btn.btn-primary.mobile-full {
+    width: 100% !important;
+  }
+}
+
+/* Nascondere Debugbar solo nei run parity (screenshot/HTML diff).
+ * Dev normale: non aggiungere questa classe al body.
+ * Esempio Playwright: document.body.classList.add('parity-capture-hide-dev-overlays');
+ */
+body.parity-capture-hide-dev-overlays #phpdebugbar,
+body.parity-capture-hide-dev-overlays .phpdebugbar,
+body.parity-capture-hide-dev-overlays [id^="phpdebugbar-"],
+body.parity-capture-hide-dev-overlays [id^="phpdebugbar"] {
+  display: none !important;
+}
+
+/* ============================================================================
+   26. PAGE-SPECIFIC PARITY: segnalazione-01-privacy
+   ============================================================================ */
+.cmp-breadcrumbs {
+  padding: 0.7rem 0 0.4rem !important;
+}
+
+.cmp-breadcrumbs .breadcrumb-item,
+.cmp-breadcrumbs .breadcrumb-item a,
+.cmp-breadcrumbs .separator {
+  font-size: 0.75rem !important;
+  line-height: 1.5 !important;
+}
+
+.title-xxxlarge {
+  font-size: 2.5rem !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 1.55rem !important;
+}
+
+.steppers {
+  margin-bottom: 1.5rem !important;
+}
+
+.steppers-header {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: end !important;
+  gap: 1rem !important;
+  padding: 0 !important;
+  margin-bottom: 1.8rem !important;
+  border-bottom: 0 !important;
+  overflow: visible !important;
+}
+
+.steppers-header ul {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 2rem !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.steppers-header li {
+  display: block !important;
+  position: relative !important;
+  min-width: 0 !important;
+  padding: 0 0 0.9rem !important;
+  margin: 0 !important;
+  border-bottom: 1px solid #d9e3ea !important;
+  color: #007A52 !important;
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  line-height: 1.45 !important;
+  white-space: normal !important;
+}
+
+.steppers-header li.active {
+  color: #007A52 !important;
+}
+
+.steppers-header li.confirmed {
+  color: #008758 !important;
+}
+
+.steppers-header .steppers-success {
+  width: 1rem !important;
+  height: 1rem !important;
+  color: #008758 !important;
+  margin-left: 0.4rem !important;
+  vertical-align: -0.12rem !important;
+}
+
+.steppers-index {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  min-width: 2.75rem !important;
+  padding-bottom: 0.9rem !important;
+  color: #5b6f82 !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+}
+
+.text-paragraph {
+  color: #5C6F82 !important;
+  font-family: 'Titillium Web' !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  max-width: 640px !important;
+  margin-bottom: 16px !important;
+}
+
+.text-paragraph + .text-paragraph {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.form-check {
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+  padding: 0 !important;
+}
+
+.checkbox-body {
+  gap: 0.6rem !important;
+  padding: 0 !important;
+}
+
+.checkbox-body input[type="checkbox"] {
+  width: 1.125rem !important;
+  height: 1.125rem !important;
+  margin-top: 0 !important;
+  border: 1px solid #5b6f82 !important;
+}
+
+.checkbox-body label {
+  margin: 0 !important;
+  padding-top: 0 !important;
+  font-size: 1.125rem !important;
+  line-height: 1.45 !important;
+  color: #1a1a1a !important;
+  font-weight: 600 !important;
+}
+
+.btn.btn-primary.mobile-full {
+  min-width: 10.75rem !important;
+  width: auto !important;
+  padding: 0.7rem 2.15rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.2 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* ============================================================================
+   26.15 FONT PARITY — Override all conflicting text-paragraph rules
+   Reference: Titillium Web, 16px, 24px line-height, color #191919 (nero)
+   Must beat: .text-paragraph
+   ============================================================================ */
+.text-paragraph {
+  color: #191919 !important;
+  font-family: 'Titillium Web' !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  margin-bottom: 16px !important;
+}
+
+/* Also override via container class (dual approach for maximum specificity) */
+.segnalazione-privacy-page .text-paragraph {
+  color: #191919 !important;
+  font-family: 'Titillium Web' !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  margin-bottom: 16px !important;
+}
+
+p.lora,
+.lora.text-paragraph,
+.segnalazione-privacy-page p.lora,
+.segnalazione-privacy-page .lora.text-paragraph {
+  font-family: 'Titillium Web' !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  color: #191919 !important;
+}
+
+/* ============================================================================
+   26.16 CONTACTS CARD — Fix max-width (was 16.5rem = 264px, too narrow)
+   Reference: ~592px wide card centered on grey background
+   ============================================================================ */
+.bg-grey-card.shadow-contacts {
+  margin-top: 2rem !important;
+  padding: 3rem 0 !important;
+  background: #f2f4f6 !important;
+  box-shadow: none !important;
+}
+
+.p-contacts {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+.cmp-contacts {
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.cmp-contacts .card {
+  max-width: 592px !important;
+  min-width: 320px !important;
+  margin: 0 auto !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: #fff !important;
+}
+
+.cmp-contacts .card-body {
+  padding: 2rem !important;
+}
+
+.cmp-contacts .title-medium-2-semi-bold {
+  font-size: 1rem !important;
+  line-height: 1.25 !important;
+  margin-bottom: 0.85rem !important;
+}
+
+.cmp-contacts .list-item {
+  gap: 0.55rem !important;
+  padding: 0.32rem 0 !important;
+}
+
+.cmp-contacts .list-item span {
+  font-size: 0.75rem !important;
+  line-height: 1.35 !important;
+}
+
+.cmp-contacts .icon {
+  width: 0.95rem !important;
+  height: 0.95rem !important;
+}
+
+@media (max-width: 991px) {
+  .steppers-header {
+    grid-template-columns: 1fr !important;
+  }
+
+  .steppers-header ul {
+    gap: 1rem !important;
+  }
+
+  .steppers-index {
+    justify-content: flex-start !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+/* ============================================================================
+   Global text-paragraph fixes for all segnalazione pages
+   Reference: Each page has slightly different typography - match exactly
+   ============================================================================ */
+
+/* segnalazione-area-personale: Titillium Web 16px/24px, color #191919 */
+.text-paragraph {
+  font-family: 'Titillium Web' !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  color: #191919 !important;
+}
+
+/* ticket-list: no .text-paragraph elements - uses different structure */
+
+/* segnalazione-dettaglio: Lora serif 16px/24px, color #191919 */
+.text-paragraph {
+  font-family: 'Lora', Georgia, serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  color: #191919 !important;
+}
+
+/* segnalazione-03-riepilogo: Titillium Web 18px/27px, color #30475f */
+.text-paragraph {
+  font-family: 'Titillium Web' !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 27px !important;
+  color: #30475f !important;
+}
+
+/* ============================================================================
+   FINAL VISUAL PARITY FIXES - 2026-04-09
+   Must override ALL conflicting page-specific rules
+   Reference: computed styles from italia.github.io
+   ============================================================================ */
+
+/* H1 title: REF 48px/60px w=700 → was 40px/44px */
+h1.title-xxxlarge {
+  font-size: 3rem !important;        /* 48px = 3 * 16px */
+  line-height: 60px !important;
+  font-weight: 700 !important;
+  color: rgb(25, 25, 25) !important;
+  margin-bottom: 8px !important;
+}
+
+/* segnalazione-01-privacy uses 24px margin-bottom for h1 */
+h1.title-xxxlarge,
+h1.title-xxxlarge {
+  margin-bottom: 24px !important;
+}
+
+/* Checkbox label: REF 18px/27px w=600 color=rgb(26,26,26) → was 14px/21px */
+.form-check .checkbox-body label.title-small-semi-bold,
+.form-check label[for="privacy"] {
+  font-size: 18px !important;
+  line-height: 27px !important;
+  font-weight: 600 !important;
+  color: rgb(26, 26, 26) !important;
+}
+
+/* Button: REF 16px/24.88px w=600 bg=rgb(0,122,82) → was 14px/21px w=400 bg=transparent */
+button.btn.btn-primary.mobile-full,
+.btn.btn-primary.mobile-full {
+  font-size: 16px !important;
+  line-height: 1.555 !important;     /* 24.88/16 */
+  font-weight: 600 !important;
+  background-color: rgb(0, 122, 82) !important;
+  color: rgb(255, 255, 255) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 0.75rem 2rem !important;
+  min-height: 48px !important;
+}
+
+button.btn.btn-primary.mobile-full:hover,
+.btn.btn-primary.mobile-full:hover {
+  background-color: rgb(0, 90, 60) !important;
+}
+
+/* Contacts card background: REF rgb(235,238,240) */
+.bg-grey-card {
+  background-color: rgb(235, 238, 240) !important;
+}
+
+/* ============================================================================
+    — same styles as segnalazione-01-privacy
+   Reference: https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-01-privacy.html
+   ============================================================================ */
+
+/* Stepper: indicazione stato sola; nessun salto step da click (AC wizard) */
+.steppers-header li {
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+.steppers-header ul {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 2rem !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.steppers-header li {
+  display: block !important;
+  position: relative !important;
+  min-width: 0 !important;
+  padding: 0 0 0.9rem !important;
+  margin: 0 !important;
+  border-bottom: 1px solid #d9e3ea !important;
+  color: #007A52 !important;
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  line-height: 1.45 !important;
+  white-space: normal !important;
+}
+
+.steppers-header ul li {
+  color: #007A52 !important;
+}
+
+.steppers-header ul li:hover {
+  color: #007A52 !important;
+}
+
+.steppers-header ul li.active {
+  color: #007A52 !important;
+}
+
+.steppers-header ul li.confirmed {
+  color: #007A52 !important;
+}
+
+.steppers-header li.active {
+  color: #007A52 !important;
+}
+
+.steppers-header li.confirmed {
+  color: #007A52 !important;
+  border-bottom-color: #008758 !important;
+}
+
+.form-check {
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+  padding: 0 !important;
+}
+
+.checkbox-body label {
+  font-size: 1.125rem !important;
+  color: #1a1a1a !important;
+}
+
+h1.title-xxxlarge {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  color: #191919 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* ============================================================================
+   27. SEGNALAZIONE-02-DATI — Visual parity fixes
+   Reference: https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-02-dati.html
+   Story 7-3: selettori allineati al Blade (steppers-btn-*, cmp-card, upload-wrapper).
+   ============================================================================ */
+
+/* 27.1 Form inputs — underline-only style (border-bottom only) */
+input[type="text"],
+input[type="search"],
+textarea,
+select {
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-left: 0 !important;
+  border-bottom: 1px solid #5d7083 !important;
+  border-radius: 0 !important;
+  font-size: 16px !important;
+  padding: 6px 8px !important;
+  background: #fff !important;
+  color: #191919 !important;
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus,
+textarea:focus,
+select:focus {
+  border-bottom-color: #007a52 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* 27.2 Form labels — solo aree form (evita breadcrumb / navscroll) */
+.cmp-card .form-group label:not(.visually-hidden),
+.cmp-card .cmp-input__label,
+.cmp-text-area label {
+  font-family: 'Titillium Web', sans-serif !important;
+  font-size: 16px !important;
+  color: #191919 !important;
+  font-weight: 600 !important;
+}
+
+/* 27.3 Section cards — markup Blade: .cmp-card .card.has-bkg-grey */
+.cmp-card .card.has-bkg-grey {
+  border-radius: 4px !important;
+}
+
+/* 27.4 Section headings */
+.cmp-card .card-header h2.title-xxlarge {
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  color: #191919 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* 27.5 Stepper nav — layout */
+.steppers-nav {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 1.5rem 0 !important;
+  margin-top: 2rem !important;
+}
+
+/* 27.6 Indietro — .steppers-btn-prev (anchor o button) */
+.steppers-nav .steppers-btn-prev {
+  background: transparent !important;
+  border: none !important;
+  color: #007a52 !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  padding: 0 !important;
+  text-decoration: none !important;
+}
+
+/* 27.7 Salva — .steppers-btn-save */
+.steppers-nav .steppers-btn-save {
+  background: transparent !important;
+  border: 1px solid #007a52 !important;
+  color: #007a52 !important;
+  border-radius: 4px !important;
+  padding: 8px 24px !important;
+  font-weight: 600 !important;
+}
+
+/* 27.8 Avanti — .steppers-btn-confirm */
+.steppers-nav .steppers-btn-confirm {
+  background: #007a52 !important;
+  border: none !important;
+  color: #fff !important;
+  border-radius: 4px !important;
+  padding: 8px 24px !important;
+  font-weight: 600 !important;
+  min-width: 120px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+}
+
+/* 27.9 Stepper — match segnalazione-01-privacy styling */
+.steppers-header {
+  background: #fff !important;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 4px !important;
+  padding: 0 1.5rem !important;
+}
+
+.steppers-header ul li.active {
+  color: #007a52 !important;
+  font-weight: 700 !important;
+  border-bottom-color: #007a52 !important;
+}
+
+.steppers-header ul li:not(.active):not(.confirmed) {
+  color: #5c6f82 !important;
+}
+
+/* 27.10 Carica file — bottone primario in .btn-wrapper */
+.btn-wrapper .btn.btn-primary[type="button"] {
+  background: #007a52 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 12px 24px !important;
+  font-weight: 600 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+/* 27.11 Contacts card — flat, no shadow */
+.cmp-contacts .card {
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: #fff !important;
+  max-width: 592px !important;
+  margin: 0 auto !important;
+}
+
+/* 27.12 Nota campi obbligatori — riga sotto stepper (mobile) */
+.col-12 > .steppers + p.title-xsmall {
+  font-size: 0.875rem !important;
+  color: #5c6f82 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* 27.13 Testi di aiuto sotto i campi */
+.cmp-text-area span.label,
+.cmp-card .card-header .subtitle-small {
+  font-size: 0.875rem !important;
+  color: #5c6f82 !important;
+  margin-top: 0.5rem !important;
+}
+
+/* 27.14 Riga upload file — .upload-wrapper nel Blade */
+.upload-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 8px 12px !important;
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 4px !important;
+  margin-bottom: 1rem !important;
+}
+
+/* 27.15 Sezione autore — .cmp-info-button-card */
+#report-author .cmp-info-button-card > .card {
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 4px !important;
+}
+
+#report-author .cmp-info-button-card .big-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #191919 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* 27.16 Contacts card links — verde reference */
+.cmp-contacts a {
+  color: #007a52 !important;
+}
+
+.cmp-contacts a:hover {
+  text-decoration: underline !important;
+}
+
+.cmp-contacts .icon {
+  fill: #007a52 !important;
+  color: #007a52 !important;
+}
+
+/* 27.17 Filament schema parity (wizard step 2) */
+.fi-section {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 1.75rem !important;
+}
+
+.fi-section .fi-section-header {
+  padding: 0 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.fi-section .fi-section-header-heading {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: #191919 !important;
+  line-height: 1.25 !important;
+}
+
+.fi-section .fi-section-header-description {
+  font-size: 1rem !important;
+  color: #5c6f82 !important;
+  margin-top: 0.35rem !important;
+}
+
+.fi-section .fi-section-content-ctn {
+  background: #f5f7f9 !important;
+  border-radius: 4px !important;
+  padding: 1.5rem 1.5rem 1.25rem !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.fi-section .fi-section-content {
+  row-gap: 1.1rem !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.fi-section .fi-sc-text {
+  color: #17324d !important;
+  font-size: 1rem !important;
+}
+
+.cmp-wizard-widget {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.fi-fo-field-label,
+.fi-fo-field-label-content {
+  color: #17324d !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+}
+
+.fi-input,
+.fi-select-input,
+textarea {
+  font-size: 1rem !important;
+}
+
+.fi-input-wrp,
+.fi-fo-select,
+.fi-fo-textarea {
+  background: #fff !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.fi-fo-field {
+  display: block !important;
+}
+
+.fi-fo-field-label-col,
+.fi-fo-field-content-col {
+  width: 100% !important;
+  max-width: none !important;
+  flex: 0 0 100% !important;
+  padding: 0 !important;
+}
+
+.fi-fo-field-content-col {
+  margin-top: 0.5rem !important;
+}
+
+.fi-fo-file-upload {
+  background: #fff !important;
+  border: 1px solid #d9e1e8 !important;
+  padding: 1rem !important;
+}
+
+.fi-section[data-step-section="author"] .fi-sc {
+  --cols-lg: repeat(3, minmax(0, 1fr));
+}
+
+.fi-section[data-step-section="author"] .fi-sc-text {
+  display: block !important;
+  min-height: 4.5rem !important;
+  background: #fff !important;
+  border-top: 1px solid #d9e1e8 !important;
+  padding: 1rem !important;
+}
+
+.cmp-page-index,
+.cmp-page-index-mobile {
+  display: none;
+}
+
+.segnalazione-wizard-layout:has(.fi-sc-wizard-header-step:nth-child(2).fi-active) .cmp-page-index {
+  display: block;
+}
+
+.segnalazione-wizard-layout:has(.fi-sc-wizard-header-step:nth-child(2).fi-active) .cmp-page-index-mobile {
+  display: block;
+}
+
+.cmp-page-index {
+  top: 7rem;
+}
+
+.segnalazione-required-legend {
+  margin-bottom: 1.5rem !important;
+  color: #17324d !important;
+}
+
+.fi-section .fi-section-collapse-btn {
+  color: #17324d !important;
+}
+
+/* Filament schema sections already render their own header:
+   hide duplicate section labels generated by wrapper. */
+.fi-sc-section-label-ctn {
+  display: none !important;
+}
+
+.wizard-side-index {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.wizard-side-index-box {
+  background: #fff !important;
+  border: 1px solid #d9e1e8 !important;
+  padding: 0.75rem 0.75rem 0.25rem !important;
+}
+
+.wizard-side-index-title {
+  color: #17324d !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  margin: 0 0 0.5rem !important;
+}
+
+.wizard-side-index .nav-item {
+  list-style: none !important;
+  border-bottom: 1px solid #d9e1e8 !important;
+}
+
+.wizard-side-index .text-paragraph-small {
+  color: #17324d !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+}
+
+/* Step 2 — fallback mobile (AC2): indice orizzontale scrollabile sotto lg */
+@media (max-width: 991.98px) {
+  .wizard-sidebar .wizard-side-index {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 0.5rem !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 0.25rem !important;
+  }
+
+  .wizard-sidebar .wizard-side-index .nav-item {
+    flex: 0 0 auto !important;
+    border-bottom: none !important;
+    border: 1px solid #d9e1e8 !important;
+    border-radius: 4px !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+}
+
+/* 27.17 Indice sezioni mobile (sidebar assente sotto lg) */
+.cmp-page-index-mobile {
+  margin-bottom: 1.25rem !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.cmp-page-index-mobile__list {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 0.5rem !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.cmp-page-index-mobile__list li {
+  flex: 0 0 auto !important;
+}
+
+.cmp-page-index-mobile__list a {
+  display: inline-block !important;
+  padding: 0.35rem 0.75rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  color: #007a52 !important;
+  border: 1px solid #007a52 !important;
+  border-radius: 4px !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+/* 27.18 Stepper — responsive tablet/mobile: solo passo attivo + contatore X/N
+   Reference CSS: @media(max-width:991.98px) li:not(.active) → clip:rect(1px,1px,1px,1px)
+   Reference: https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-01-privacy.html
+*/
+@media (max-width: 991.98px) {
+  /* Hide non-active steps (reference behavior) */
+  .steppers-header ul li:not(.active) {
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 0 !important;
+    position: absolute !important;
+    display: block !important;
+    width: 1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+  }
+
+  /* Show active step */
+  .steppers-header ul li.active {
+    display: flex !important;
+    align-items: center !important;
+    font-size: 1.125rem !important;
+    font-weight: 600 !important;
+    color: #007a52 !important;
+    flex: 1 !important;
+  }
+
+  .steppers-header ul li.active .icon,
+  .steppers-header ul li.active .steppers-success {
+    fill: #007a52 !important;
+  }
+
+  /* Steppers header: white bar with shadow */
+  .steppers-header {
+    padding: 0 24px !important;
+    height: 64px !important;
+    background: #fff !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .steppers-header ul {
+    display: flex !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Steppers index (counter X/N) */
+  .steppers-index {
+    display: inline !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    color: #5d7082 !important;
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Scoped: blocco test segnalazione-02-dati (contract + stessa strategia §27.18) */
+  .page-content[data-slug="tests.segnalazione-02-dati"] .steppers-index {
+    display: inline !important;
+  }
+
+  /* Steppers nav: bottom bar with prev/save/next buttons */
+  .steppers-nav {
+    display: flex !important;
+    height: 64px !important;
+    padding: 0 24px !important;
+    box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.1) !important;
+    background: #fff !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+}
+
+/* 27.18b Stepper — mobile < 576px: compatto */
+@media (max-width: 575.98px) {
+  .steppers-header ul li.active {
+    font-size: 1rem !important;
+  }
+
+  .steppers-header {
+    padding: 0 16px !important;
+    height: 56px !important;
+  }
+}
+
+/* 27.19 Pulsanti passo — griglia su viewport stretti */
+@media (max-width: 991.98px) {
+  .steppers-nav {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.75rem !important;
+    align-items: stretch !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .steppers-nav .steppers-btn-save {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+  }
+
+  .steppers-nav .steppers-btn-prev,
+  .steppers-nav .steppers-btn-confirm {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* 27.20 Titolo e card — proporzioni mobile */
+@media (max-width: 767.98px) {
+  .cmp-heading h1.title-xxxlarge {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .cmp-card .card.has-bkg-grey {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .upload-wrapper {
+    flex-wrap: wrap !important;
+  }
+}
+
+/* 27.21 Blocco contatti — padding orizzontale */
+@media (max-width: 575.98px) {
+  .bg-grey-card.shadow-contacts .p-contacts {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* ============================================================================
+   28. SEGNALAZIONE-AREA-PERSONALE — Visual parity fixes
+   Reference: https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-area-personale.html
+   Date: 2026-04-09
+   ============================================================================ */
+
+/* 28.1 Tabs — active green with border-bottom, inactive dark (solo elenco segnalazioni) */
+body[data-page='ticket-list'] #main-container .nav-tabs .nav-link {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  border-radius: 0 !important;
+  color: #191919 !important;
+  border-bottom: 3px solid transparent !important;
+}
+
+body[data-page='ticket-list'] #main-container .nav-tabs .nav-link.active {
+  color: #007a52 !important;
+  border-bottom-color: #007a52 !important;
+}
+
+/* 28.2 Section headings — 40px, bold, not italic */
+h2,
+.title-xlarge,
+.section-title {
+  font-size: 40px !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  color: #1a1a1a !important;
+  margin-bottom: 8px !important;
+}
+
+/* 28.3 Cards — no border-radius, specific shadow */
+.card {
+  border-radius: 0 !important;
+  border: none !important;
+  background: #fff !important;
+}
+
+.card-teaser,
+.card.shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075) !important;
+}
+
+.card-teaser-lg {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 28.4 User name header */
+.user-name {
+  font-size: 48px !important;
+  font-weight: 700 !important;
+  color: #191919 !important;
+}
+
+/* 28.5 Message list items */
+.message-item {
+  border-bottom: 1px solid #e0e0e0 !important;
+  padding: 1rem 0 !important;
+}
+
+.message-item .message-title {
+  color: #007a52 !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+}
+
+.message-item .message-date {
+  color: #5c6f82 !important;
+  font-size: 0.875rem !important;
+}
+
+/* 28.6 Activity cards */
+.activity-card {
+  padding: 1.5rem !important;
+  background: #fff !important;
+}
+
+.activity-card .activity-title {
+  color: #007a52 !important;
+  font-weight: 600 !important;
+}
+
+.activity-card .activity-date {
+  color: #5c6f82 !important;
+  font-size: 0.875rem !important;
+}
+
+/* 28.7 Contacts card — flat */
+.cmp-contacts .card {
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: #fff !important;
+}
+
+.cmp-contacts a {
+  color: #007a52 !important;
+}
+
+/* 28.8 "Vedi altri messaggi" button */
+.btn-view-more {
+  background: #007a52 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 8px 16px !important;
+  font-weight: 600 !important;
+}
+
+/* ============================================================================
+   GLOBAL SEGNALAZIONE PARITY - ALL PAGES
+   Fixes: h2 sizing, button styling, body text color
+   Applied to ALL segnalazione-* pages
+   ============================================================================ */
+
+/* H2 title sizing: REF 40px/50px/700 → local was 24px/30px/400 */
+h2,
+h2.title-xxlarge,
+.title-xxlarge {
+  font-size: 2.5rem !important;      /* 40px */
+  line-height: 50px !important;
+  font-weight: 700 !important;
+  color: rgb(25, 25, 25) !important;
+}
+
+/* Primary buttons on segnalazione pages */
+.segnalazione-privacy-page .btn-primary,
+.segnalazione-dati-page .btn-primary,
+.segnalazione-riepilogo-page .btn-primary,
+.segnalazione-conferma-page .btn-primary,
+.cms-detail-page .btn-primary,
+.segnalazione-area-page .btn-primary,
+body #main-container[data-page='ticket-list'] .btn-primary {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  background-color: rgb(0, 122, 82) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+/* Body text color: REF rgb(25,25,25) → local was rgb(26,26,26) */
+body {
+  color: rgb(25, 25, 25) !important;
+}
+
+/* Override Filament body color (#17324d) - MUST be last rule */
+html body,
+html.segnalazione body,
+body.segnalazione-page {
+  color: rgb(25, 25, 25) !important;
+}
+
+/* Global button fix - all segnalazione pages */
+button.btn-primary:not(.dropdown-toggle):not(.navbar-toggler):not(.close-menu):not(.accordion-button):not(.custom-navbar-toggler) {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  background-color: rgb(0, 122, 82) !important;
+  color: rgb(255, 255, 255) !important;
+  border: none !important;
+  border-radius: 4px !important;
+}
+
+/* ============================================================================
+   28. SEGNALAZIONE-01-PRIVACY - Final visual parity fixes
+   Body class: page-tests-segnalazione-01-privacy
+   Date: 2026-04-09 - Computed style fixes
+   ============================================================================ */
+
+/* h1 title - REF 48px/60px/700 → ensure override of all previous rules */
+h1,
+h1.title-xxxlarge {
+  font-size: 48px !important;
+  line-height: 60px !important;
+  font-weight: 700 !important;
+  letter-spacing: -1px !important;
+  color: rgb(25, 25, 25) !important;
+  margin-bottom: 24px !important;
+}
+
+/* h2 title - REF 24px/30px/600 */
+h2,
+h2.title-medium-2-semi-bold {
+  font-size: 24px !important;
+  line-height: 30px !important;
+  font-weight: 600 !important;
+  color: rgb(25, 25, 25) !important;
+  margin-bottom: 8px !important;
+}
+
+/* Paragraph - REF 16px/24px/400 */
+p,
+p.text-paragraph {
+  font-size: 16px !important;
+  line-height: 24px !important;
+  font-weight: 400 !important;
+  color: rgb(25, 25, 25) !important;
+  margin-bottom: 24px !important;
+}
+
+/* Button - REF 16px/24.88px/600, green bg, 12px 24px padding */
+.btn,
+.btn-primary,
+button.btn-primary {
+  font-size: 16px !important;
+  line-height: 24.88px !important;
+  font-weight: 600 !important;
+  padding: 12px 24px !important;
+  background-color: rgb(0, 122, 82) !important;
+  color: rgb(255, 255, 255) !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+/* Card - REF white bg, no padding, no shadow */
+.card {
+  background-color: rgb(255, 255, 255) !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* List item - REF 16px/32px, white text on green bg */
+.list-item {
+  font-size: 16px !important;
+  line-height: 32px !important;
+  color: rgb(255, 255, 255) !important;
+  padding: 4px 24px !important;
+}
+
+/* Links - REF green, no bg */
+a {
+  background-color: transparent !important;
+  color: rgb(0, 122, 82) !important;
+  padding: 0 !important;
+}
+
+/* Body text color - exact match */
+body {
+  color: rgb(25, 25, 25) !important;
+  background-color: rgb(255, 255, 255) !important;
+}
+
+/* ============================================================================
+   SEGNALAZIONE-02-DATI SPECIFIC FIXES
+   Based on computed styles deep-dive analysis
+   ============================================================================ */
+
+/* Steppers header: active item font */
+.steppers-header li.active {
+  font-weight: 700 !important;
+  line-height: normal !important;
+}
+
+.steppers-header ul li {
+  line-height: normal !important;
+}
+
+.steppers-index {
+  color: rgb(93, 112, 131) !important;
+}
+
+/* Card header: transparent bg */
+.card-header.border-0 {
+  background-color: transparent !important;
+}
+
+/* Form elements: select and input colors */
+select#inefficiency,
+.u-grey-dark {
+  font-weight: 400 !important;
+  color: rgb(25, 25, 25) !important;
+}
+
+input#title,
+textarea#details,
+.text-area {
+  color: rgb(93, 112, 131) !important;
+}
+
+/* Upload section button */
+.btn-wrapper .btn-primary {
+  font-weight: 600 !important;
+  line-height: 24px !important;
+}
+
+.btn-wrapper p.title-xsmall {
+  font-size: 14px !important;
+  line-height: 21px !important;
+  color: rgb(90, 118, 138) !important;
+}
+
+/* Navigation buttons */
+.steppers-nav .steppers-btn-prev,
+.steppers-nav .steppers-btn-save,
+.steppers-nav .steppers-btn-confirm {
+  font-size: 14px !important;
+  line-height: 24.88px !important;
+}
+
+.steppers-nav .steppers-btn-prev {
+  color: rgb(0, 102, 204) !important;
+  background-color: transparent !important;
+}
+
+/* Contacts card h2 */
+.cmp-contacts .card-body h2.title-medium-2-semi-bold {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  line-height: 30px !important;
+}
+
+/* Contact list items */
+.cmp-contacts .contact-list .list-item {
+  font-weight: 400 !important;
+  color: rgb(0, 122, 82) !important;
+}
+
+/* ============================================================================
+   27.19 HEADER MOBILE — Hamburger a sinistra, logo centrato, cerca a destra
+   Reference: Design Comuni mobile header — tutto su UNA sola riga.
+   
+   ROOT CAUSE ANALYSIS: 
+   - DOM: nav-wrapper > [center-wrapper (logo), navbar-wrapper (hamburger)]
+   - Il navbar-wrapper ha bg verde sulla .navbar che COPRE il center-wrapper
+   - center-wrapper ha z-index 10 ma è DOPO navbar-wrapper nel DOM stacking
+   - La .navbar ha position: relative che crea stacking context!
+   
+   FIX: uso grid per sovrapporre. nav-wrapper grid, entrambi i figli nella 
+   stessa cell. Navbar-wrapper z-index 1 (solo hamburger), center-wrapper 
+   z-index 20 (sopra). Il verde resta sulla .navbar ma z-index risolve.
+   ============================================================================ */
+
+@media (max-width: 991.98px) {
+  /* Nav wrapper: grid per sovrapporre i figli */
+  .it-nav-wrapper {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+  }
+
+  /* === NAVBAR WRAPPER: grid cell 1, z-index 1, contiene hamburger === */
+  .it-header-navbar-wrapper {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    z-index: 1 !important;
+  }
+
+  .it-header-navbar-wrapper .container,
+  .it-header-navbar-wrapper .row,
+  .it-header-navbar-wrapper .col-12 {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .it-header-navbar-wrapper .navbar {
+    min-height: 5rem !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* Hamburger: a sinistra */
+  .it-header-navbar-wrapper .custom-navbar-toggler {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    z-index: 30 !important;
+    width: 3rem !important;
+    height: 3rem !important;
+    min-width: 3rem !important;
+    padding: 0.5rem !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0.25rem !important;
+    color: #fff !important;
+  }
+
+  .it-header-navbar-wrapper .custom-navbar-toggler:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .it-header-navbar-wrapper .custom-navbar-toggler .icon {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    fill: #fff !important;
+  }
+
+  /* Overlay panel: visibility is controlled by Alpine x-show, not by page-scoped display:none rules */
+  .it-header-navbar-wrapper .navbar-overlay {
+    z-index: 1040 !important;
+  }
+
+  .it-header-navbar-wrapper .navbar-collapsable {
+    z-index: 1050 !important;
+  }
+
+  /* === CENTER WRAPPER: grid cell 1, z-index 20, SOPRA navbar === */
+  .it-header-center-wrapper {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    z-index: 20 !important;
+    /* Pointer events none per NON bloccare hamburger sotto */
+    pointer-events: none !important;
+  }
+
+  .it-header-center-wrapper .container,
+  .it-header-center-wrapper .row,
+  .it-header-center-wrapper .col-12 {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Center content: flex row */
+  .it-header-center-content-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.75rem !important;
+    min-height: 5rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Brand */
+  .it-header-center-content-wrapper .it-brand-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    pointer-events: auto !important; /* Riabilita click su brand */
+  }
+
+  .it-header-center-content-wrapper .it-brand-wrapper a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    text-decoration: none !important;
+    color: #fff !important;
+    min-width: 0 !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-wrapper svg {
+    flex-shrink: 0 !important;
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-text {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    line-height: 1.2 !important;
+    min-width: 0 !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-title {
+    font-size: 1.125rem !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-tagline {
+    display: block !important;
+    margin-top: 0.125rem !important;
+    font-size: 0.75rem !important;
+    line-height: 1.15 !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+  }
+
+  /* Right zone: cerca */
+  .it-header-center-content-wrapper .it-right-zone {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+    pointer-events: auto !important; /* Riabilita click su cerca */
+  }
+
+  .it-header-center-content-wrapper .it-socials {
+    display: none !important;
+  }
+
+  .it-header-center-content-wrapper .it-search-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+    margin-left: auto !important;
+  }
+
+  .it-header-center-content-wrapper .it-search-wrapper > span {
+    display: none !important;
+  }
+
+  .it-header-center-content-wrapper .it-search-wrapper .search-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+    border-radius: 50% !important;
+    background: #fff !important;
+    border: none !important;
+    padding: 0 !important;
+    pointer-events: auto !important;
+  }
+
+  .it-header-center-content-wrapper .it-search-wrapper .search-link .icon {
+    width: 1.125rem !important;
+    height: 1.125rem !important;
+    fill: #5c6f82 !important;
+  }
+
+  /* Slim header language/account: keep a single visible chevron */
+  .it-header-slim-wrapper .dropdown-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.375rem !important;
+  }
+
+  .it-header-slim-wrapper .dropdown-toggle::after {
+    display: none !important;
+  }
+
+  .it-header-slim-wrapper .dropdown-toggle .icon {
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  p.title-xsmall.d-lg-none.my-5 {
+    display: block !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 2rem !important;
+    color: #17324d !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .it-header-center-content-wrapper {
+    min-height: 5.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-tagline {
+    display: block !important;
+    font-size: 0.9375rem !important;
+    line-height: 1.35 !important;
+    margin-top: 0.125rem !important;
+  }
+
+  .it-header-center-content-wrapper .it-search-wrapper > span {
+    display: block !important;
+    font-size: 0.9375rem !important;
+    line-height: 1 !important;
+  }
+}
+
+/* 27.22 Header/content spacing — avoid page title clipping under mobile/tablet header */
+@media (max-width: 991.98px) {
+  #main-container {
+    padding-top: 0.875rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #main-container {
+    padding-top: 1.125rem !important;
+  }
+}
+
+/* 27.23 Header flow height — keep center header row in document flow on tablet/mobile */
+@media (max-width: 991.98px) {
+  .it-nav-wrapper {
+    min-height: 120px !important;
+  }
+}
+
+
+@media (max-width: 991.98px) {
+  .it-header-navbar-wrapper .navbar {
+    position: relative !important;
+  }
+
+  .it-header-navbar-wrapper .custom-navbar-toggler {
+    position: absolute !important;
+    left: 0.75rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .it-navscroll-wrapper .accordion-body {
+    display: block !important;
+    padding: 0.75rem 0 0 !important;
+  }
+
+  .it-navscroll-wrapper .link-list {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .it-navscroll-wrapper .link-list .nav-item {
+    display: block !important;
+    margin: 0 0 0.25rem !important;
+  }
+
+  .it-navscroll-wrapper .link-list .nav-link {
+    display: block !important;
+    padding: 0.5rem 0 !important;
+    color: #007a52 !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+  }
+}
+
+/* 27.24 Header visual parity last-mile for segnalazione-02-dati.
+   Keep this block at the end so it wins over earlier incremental fixes. */
+@media (max-width: 991.98px) {
+  .it-header-slim-wrapper .it-header-slim-wrapper-content {
+    min-height: 2rem !important;
+    padding-inline: 0.75rem !important;
+    justify-content: space-between !important;
+    gap: 0.5rem !important;
+  }
+
+  .it-header-slim-wrapper .navbar-brand {
+    flex: 1 1 auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+  }
+
+  .it-header-slim-wrapper .it-header-slim-right-zone {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 0.5rem !important;
+    flex: 0 0 auto !important;
+  }
+
+  .it-header-slim-wrapper .dropdown {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .it-header-slim-wrapper .dropdown-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+    padding: 0 !important;
+    text-decoration: none !important;
+  }
+
+  .it-header-slim-wrapper .dropdown-toggle::after {
+    display: none !important;
+  }
+
+  .it-header-slim-wrapper .dropdown-toggle .icon {
+    display: block !important;
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+    margin: 0 !important;
+  }
+
+  .it-header-slim-wrapper .btn-icon.btn-full {
+    width: 2rem !important;
+    min-width: 2rem !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  .it-header-slim-wrapper .btn-icon.btn-full > span:not(.rounded-icon) {
+    display: none !important;
+  }
+
+  .it-nav-wrapper {
+    min-height: 5.5rem !important;
+  }
+
+  .it-header-center-wrapper {
+    pointer-events: auto !important;
+  }
+
+  .it-header-center-content-wrapper {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.75rem !important;
+    min-height: 5.5rem !important;
+    padding-left: 4.25rem !important;
+    padding-right: 0.875rem !important;
+  }
+
+  .it-header-navbar-wrapper {
+    z-index: 40 !important;
+  }
+
+  .it-header-navbar-wrapper .navbar {
+    min-height: 5.5rem !important;
+  }
+
+  .it-header-navbar-wrapper .custom-navbar-toggler {
+    position: absolute !important;
+    left: 0.75rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 60 !important;
+    margin: 0 !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    flex: 1 1 auto !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-wrapper > a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.625rem !important;
+    min-width: 0 !important;
+    text-decoration: none !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-wrapper .icon,
+  .it-header-center-content-wrapper .it-brand-wrapper svg {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+    flex: 0 0 2.25rem !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-text {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-title {
+    margin: 0 !important;
+    font-size: 1.125rem !important;
+    line-height: 1.05 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-tagline {
+    display: block !important;
+    margin-top: 0.125rem !important;
+    font-size: 0.75rem !important;
+    line-height: 1.15 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .it-header-center-content-wrapper .it-right-zone {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+    gap: 0 !important;
+    flex: 0 0 auto !important;
+  }
+
+  .it-header-center-content-wrapper .it-socials {
+    display: none !important;
+  }
+
+  .it-header-center-content-wrapper .it-search-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+    flex: 0 0 auto !important;
+    order: 3 !important;
+  }
+
+  .it-header-center-content-wrapper .it-search-wrapper > span {
+    display: none !important;
+  }
+
+  .it-header-center-content-wrapper .it-search-wrapper .search-link {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+    margin-left: auto !important;
+    border-radius: 9999px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .it-nav-wrapper {
+    min-height: 6rem !important;
+  }
+
+  .it-header-center-content-wrapper {
+    min-height: 6rem !important;
+    padding-left: 4.5rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .it-header-navbar-wrapper .navbar,
+  .it-header-navbar-wrapper .custom-navbar-toggler {
+    min-height: 6rem !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-wrapper .icon,
+  .it-header-center-content-wrapper .it-brand-wrapper svg {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    flex-basis: 2.5rem !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-title {
+    font-size: 1.375rem !important;
+    line-height: 1.05 !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-tagline {
+    display: block !important;
+    font-size: 0.875rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .it-header-center-content-wrapper .it-brand-tagline {
+    display: none !important;
+  }
+}
+
+/* 27.25 Stepper last-mile responsive fix for segnalazione-02-dati.
+   On tablet/mobile the reference shows only the active step plus the X/Y counter. */
+@media (max-width: 991.98px) {
+  .steppers {
+    margin-bottom: 0 !important;
+  }
+
+  .steppers-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.75rem !important;
+    padding: 0.75rem 1rem !important;
+    min-height: auto !important;
+    height: auto !important;
+    flex-wrap: nowrap !important;
+    overflow: hidden !important;
+  }
+
+  .steppers-header ul {
+    display: flex !important;
+    align-items: center !important;
+    flex: 1 1 auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    flex-wrap: nowrap !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+  }
+
+  .steppers-header ul li {
+    display: none !important;
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-width: 0 !important;
+  }
+
+  .steppers-header ul li.active {
+    display: flex !important;
+    align-items: center !important;
+    flex: 1 1 auto !important;
+    gap: 0.25rem !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25 !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    color: #17324d !important;
+    border: 0 !important;
+  }
+
+  .steppers-header ul li.active .icon,
+  .steppers-header ul li.active .steppers-success,
+  .steppers-header ul li.active .visually-hidden {
+    display: none !important;
+  }
+
+  .steppers-index {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    order: 0 !important;
+    font-size: 0.875rem !important;
+    line-height: 1 !important;
+    color: #5c6f82 !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .steppers-header {
+    padding: 0.875rem 1.25rem !important;
+  }
+
+  .steppers-header ul li.active {
+    font-size: 1rem !important;
+  }
+
+  .steppers-index {
+    font-size: 0.875rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .steppers-header {
+    flex-wrap: nowrap !important;
+  }
+
+  .steppers-header ul {
+    width: 100% !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .steppers-header ul li {
+    display: flex !important;
+  }
+}
+
+/* ==========================================================================
+   31. Segnalazione 02 dati - Stepper responsive parity final override
+   Reference mobile/tablet: card compatta con solo step attivo + contatore a destra.
+   Scoped per evitare regressioni sugli altri stepper.
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .steppers {
+    display: block !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .steppers-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.75rem !important;
+    min-height: 56px !important;
+    height: auto !important;
+    padding: 0.875rem 1rem !important;
+    overflow: visible !important;
+    border-radius: 0 !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .steppers-header ul {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    overflow: hidden !important;
+  }
+
+  .steppers-header ul li {
+    display: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  .steppers-header ul li.active {
+    display: flex !important;
+    align-items: center !important;
+    flex: 1 1 auto !important;
+    color: #007a52 !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    line-height: 1.25 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .steppers-header ul li.active .visually-hidden {
+    position: absolute !important;
+  }
+
+  .steppers-header .steppers-index,
+  .steppers-index,
+  span.steppers-index {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    height: auto !important;
+    position: static !important;
+    overflow: visible !important;
+    clip: auto !important;
+    clip-path: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    margin-left: 0 !important;
+    color: #17324d !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .steppers-header {
+    padding: 0.75rem 0.875rem !important;
+  }
+
+  .steppers-header ul li.active {
+    font-size: 0.95rem !important;
+  }
+
+  .steppers-header .steppers-index,
+  .steppers-index {
+    font-size: 0.8125rem !important;
+  }
+}
+
+/* ============================================================================
+   27.26 SEGNALAZIONE-02-DATI — LAST-MILE RUNTIME FIX
+   Keep <body> plain. Scope on the real tests wrapper + page structure only.
+   ============================================================================ */
+@media (max-width: 991.98px) {
+  #main-container .steppers {
+    display: block !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  #main-container .steppers-header {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    padding: 0.875rem 1rem !important;
+    min-height: 64px !important;
+    border-radius: 0.25rem !important;
+    background: #fff !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08) !important;
+    overflow: visible !important;
+  }
+
+  #main-container .steppers-header ul {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    overflow: hidden !important;
+  }
+
+  #main-container .steppers-header ul li {
+    display: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  #main-container .steppers-header ul li.active {
+    display: flex !important;
+    align-items: center !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    color: #007a52 !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    line-height: 1.25 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    border-bottom: 3px solid #008758 !important;
+    padding-bottom: 0.375rem !important;
+  }
+
+  #main-container .steppers-header ul li.active .icon,
+  #main-container .steppers-header ul li.active .steppers-success,
+  #main-container .steppers-header ul li.active .visually-hidden {
+    display: none !important;
+  }
+
+  #main-container .steppers-header .steppers-index,
+  #main-container .steppers-index,
+  #main-container span.steppers-index {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    height: auto !important;
+    position: static !important;
+    overflow: visible !important;
+    clip: auto !important;
+    clip-path: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    margin-left: 0 !important;
+    color: #17324d !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #main-container .steppers-header {
+    padding: 0.875rem 1.25rem !important;
+  }
+
+  #main-container .steppers-header ul li.active {
+    font-size: 1rem !important;
+  }
+
+  #main-container .steppers-header .steppers-index {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* ============================================================
+   STEPPER MOBILE-FIRST RESPONSIVE — Story 7.28
+   Base: mobile 375px → Tablet: 768px → Desktop: 1024px+
+   ============================================================ */
+
+/* --- BASE: Mobile (375px default) --- */
+.steppers {
+  margin: 0 -0.75rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.steppers-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  min-height: 48px;
+  overflow-x: auto;
+}
+
+.steppers-header ul {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  flex: 1;
+  min-width: 0;
+}
+
+.steppers-header ul li {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #5b6f82;
+  padding: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+.steppers-header ul li.active {
+  color: #06c;
+}
+
+.steppers-header ul li.confirmed {
+  color: #06c;
+}
+
+.steppers-header ul li .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.steppers-header ul li .steppers-success {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.steppers-index {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #5b6f82;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+/* Stepper content - mobile spacing */
+.steppers-content {
+  padding: 1rem 0;
+}
+
+.steppers-content .it-page-sections-container {
+  gap: 1rem;
+}
+
+.steppers-content .cmp-card .card {
+  padding: 1rem;
+}
+
+.steppers-content .cmp-card .card.has-bkg-grey {
+  padding: 1rem;
+}
+
+/* Navigation buttons - stacked on mobile */
+.steppers-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  align-items: center;
+}
+
+.steppers-nav .steppers-btn-prev {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+  background: none;
+  border: none;
+}
+
+.steppers-nav .steppers-btn-save {
+  width: 100%;
+  justify-content: center;
+  order: 3;
+}
+
+.steppers-nav .steppers-btn-confirm {
+  width: 100%;
+  justify-content: center;
+  order: 4;
+}
+
+.steppers-nav .text-button-sm {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Disclaimer message */
+.cmp-disclaimer {
+  margin-top: 0.75rem;
+}
+
+.cmp-disclaimer__message {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+/* --- TABLET: 768px+ --- */
+@media (min-width: 768px) {
+  .steppers {
+    margin: 0;
+    overflow-x: visible;
+  }
+
+  .steppers-header {
+    padding: 1rem 1.5rem;
+    min-height: 56px;
+    overflow-x: visible;
+  }
+
+  .steppers-header ul {
+    gap: 1rem;
+  }
+
+  .steppers-header ul li {
+    font-size: 0.875rem;
+    padding: 0.375rem 0;
+  }
+
+  .steppers-header ul li .steppers-success {
+    width: 16px;
+    height: 16px;
+  }
+
+  .steppers-index {
+    font-size: 0.875rem;
+  }
+
+  .steppers-content {
+    padding: 1.5rem 0;
+  }
+
+  .steppers-content .cmp-card .card {
+    padding: 1.25rem;
+  }
+
+  /* Buttons side by side on tablet */
+  .steppers-nav {
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding: 1.25rem 0;
+  }
+
+  .steppers-nav .steppers-btn-prev {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .steppers-nav .steppers-btn-save {
+    width: auto;
+    order: unset;
+  }
+
+  .steppers-nav .steppers-btn-confirm {
+    width: auto;
+    order: unset;
+  }
+
+  .cmp-disclaimer {
+    margin-top: 1rem;
+  }
+}
+
+/* --- DESKTOP: 1024px+ --- */
+@media (min-width: 1024px) {
+  .steppers {
+    margin: 0;
+  }
+
+  .steppers-header {
+    padding: 1rem 2rem;
+    min-height: 64px;
+  }
+
+  .steppers-header ul {
+    gap: 1.5rem;
+  }
+
+  .steppers-header ul li {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .steppers-header ul li .steppers-success {
+    width: 18px;
+    height: 18px;
+  }
+
+  .steppers-index {
+    font-size: 1rem;
+  }
+
+  .steppers-content {
+    padding: 2rem 0;
+  }
+
+  .steppers-content .cmp-card .card {
+    padding: 1.5rem;
+  }
+
+  .steppers-nav {
+    padding: 1.5rem 0;
+    gap: 1.25rem;
+  }
+
+  .steppers-nav .steppers-btn-prev {
+    font-size: 0.875rem;
+  }
+
+  .steppers-nav .steppers-btn-save {
+    font-size: 0.875rem;
+  }
+
+  .steppers-nav .steppers-btn-confirm {
+    font-size: 0.875rem;
+  }
+
+  .cmp-disclaimer {
+    margin-top: 1.25rem;
+  }
+
+  .cmp-disclaimer__message {
+    font-size: 0.875rem;
+  }
+}
+
+/* Mobile-specific overrides for d-lg-block/d-none Bootstrap classes */
+@media (max-width: 991.98px) {
+  .steppers-nav .d-lg-block.d-none {
+    display: none !important;
+  }
+
+  .steppers-nav .d-block.d-lg-none {
+    display: flex !important;
+  }
+}
+
+/* 27.26 Segnalazione 02 stepper: final mobile/tablet parity without body selectors. */
+@media (max-width: 991.98px) {
+  #main-container .steppers {
+    margin-bottom: 0 !important;
+  }
+
+  #main-container .steppers-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.75rem !important;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 1rem 1.25rem !important;
+    overflow: hidden !important;
+    background: #fff !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  #main-container .steppers-header ul {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    align-items: center !important;
+    min-width: 0 !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  #main-container .steppers-header ul li {
+    display: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  #main-container .steppers-header ul li.active {
+    display: block !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    color: #008758 !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  #main-container .steppers-header ul li.active .icon,
+  #main-container .steppers-header ul li.active .steppers-success,
+  #main-container .steppers-header ul li.active .visually-hidden {
+    display: none !important;
+  }
+
+  #main-container .steppers-index {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    width: auto !important;
+    min-width: 2.25rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #17324d !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* ============================================================================
+   32. FILAMENT SCHEMA WIZARD → Design Comuni Stepper Parity
+   Override Filament's default wizard style to match Design Comuni reference.
+   Reference: https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-01-privacy.html
+   ============================================================================ */
+
+/* Remove Filament's default wizard border and background */
+.fi-sc-wizard {
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 2rem 0 !important;
+}
+
+/* Wizard header - match Design Comuni stepper style */
+.fi-sc-wizard-header {
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+/* Step indicators */
+.fi-sc-wizard-header-step {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 16px 24px !important;
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  color: #5d7083 !important;
+  border: none !important;
+  position: relative !important;
+  flex-grow: 1 !important;
+}
+
+/* Active step - green underline like reference */
+.fi-sc-wizard-header-step.fi-active {
+  color: #007a52 !important;
+}
+
+.fi-sc-wizard-header-step.fi-active::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 24px !important;
+  right: 24px !important;
+  height: 2px !important;
+  background: #007a52 !important;
+}
+
+/* Completed step */
+.fi-sc-wizard-header-step.fi-completed {
+  color: #007a52 !important;
+}
+
+/* Step separator (chevron/arrows) */
+.fi-sc-wizard-header-step .fi-sc-wizard-header-step-separator {
+  display: none !important;
+}
+
+/* Replace separator with vertical line like reference */
+.fi-sc-wizard-header-step:not(:last-child)::after {
+  content: "" !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 25% !important;
+  bottom: 25% !important;
+  width: 1px !important;
+  background: #c5c7c9 !important;
+}
+
+/* Wizard content area */
+.fi-sc-wizard-content {
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* Wizard footer / navigation buttons */
+.fi-sc-wizard-footer {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 1.5rem 0 !important;
+  border-top: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+/* Previous button */
+.fi-sc-wizard-footer .fi-btn.fi-btn-color-gray {
+  background: transparent !important;
+  border: none !important;
+  color: #007a52 !important;
+  font-size: 0.875rem !important;
+  padding: 0.5rem 0 !important;
+}
+
+/* Submit/Next button */
+.fi-sc-wizard-footer .fi-btn.fi-btn-color-primary {
+  background: #007a52 !important;
+  border: none !important;
+  color: #fff !important;
+  font-size: 0.875rem !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.25rem !important;
+}
+
+.fi-sc-wizard-footer .fi-btn.fi-btn-color-primary:hover {
+  background: #005a3d !important;
+}
+
+/* Tablet/mobile: show only active step + counter */
+@media (max-width: 991.98px) {
+  .fi-sc-wizard {
+    margin: 1rem 0 !important;
+  }
+
+  .fi-sc-wizard-header {
+    padding: 0 24px !important;
+    height: 64px !important;
+    background: #fff !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    border-radius: 0 !important;
+  }
+
+  /* Hide non-active steps */
+  .fi-sc-wizard-header-step:not(.fi-active):not(.fi-completed) {
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 0 !important;
+    position: absolute !important;
+    display: block !important;
+  }
+
+  /* Show active step prominently */
+  .fi-sc-wizard-header-step.fi-active {
+    font-size: 1rem !important;
+    padding: 0 !important;
+  }
+
+  .fi-sc-wizard-header-step.fi-active::after {
+    display: none !important;
+  }
+
+  .fi-sc-wizard-header-step::after {
+    display: none !important;
+  }
+
+  /* Step counter X/N */
+  .fi-sc-wizard-header-step-counter {
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    color: #17324d !important;
+    flex-shrink: 0 !important;
+  }
+
+  .fi-sc-wizard-footer {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+
+  .fi-sc-wizard-footer .fi-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* 29. Step 2 high parity hardening */
+.segnalazione-wizard-layout {
+  align-items: flex-start !important;
+  --bs-gutter-x: 2rem !important;
+}
+
+.segnalazione-side-column {
+  padding-right: 0.5rem !important;
+}
+
+.segnalazione-main-column {
+  padding-left: 0.5rem !important;
+}
+
+.cmp-page-index {
+  max-width: 100% !important;
+}
+
+.cmp-page-index .accordion-item {
+  border-color: #c5d0d9 !important;
+}
+
+.cmp-page-index .accordion-button {
+  min-height: 4rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  color: #17324d !important;
+}
+
+.cmp-page-index .link-list a {
+  padding: 0.875rem 1rem !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  color: #17324d !important;
+}
+
+.cmp-page-index .link-list a span {
+  display: inline-block !important;
+  max-width: 14rem !important;
+}
+
+.cmp-wizard-widget,
+.fi-sc-wizard,
+.fi-sc-wizard-step,
+.fi-sc-wizard-step > .fi-sc {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.fi-sc-wizard {
+  row-gap: 1.5rem !important;
+}
+
+.fi-sc-wizard-header {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Story 7-51: keep only Design Comuni stepper (remove duplicated Filament header above it). */
+.fi-sc-wizard-header {
+  display: none !important;
+}
+
+.fi-sc-wizard-step {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.segnalazione-required-legend {
+  margin-bottom: 1rem !important;
+}
+
+.fi-section {
+  margin-bottom: 1.25rem !important;
+}
+
+.fi-section .fi-section-header {
+  margin-bottom: 0.5rem !important;
+}
+
+.fi-section .fi-section-content-ctn {
+  padding: 1.25rem 1.25rem 1rem !important;
+}
+
+.fi-section .fi-section-content {
+  row-gap: 0.875rem !important;
+}
+
+.fi-section[data-step-section="inefficiency"] .fi-section-header {
+  margin-bottom: 0.25rem !important;
+}
+
+.fi-section[data-step-section="inefficiency"] .fi-section-content-ctn {
+  padding-top: 0.875rem !important;
+}
+
+.fi-section[data-step-section="inefficiency"] .fi-section-content {
+  row-gap: 0.625rem !important;
+}
+
+.fi-section[data-step-section="inefficiency"] .fi-fo-field-content-col {
+  margin-top: 0.25rem !important;
+}
+
+.fi-fo-field {
+  margin-bottom: 0 !important;
+}
+
+.fi-fo-field-content-col {
+  margin-top: 0.375rem !important;
+}
+
+.fi-section[data-step-section="author"] .fi-section-content > .fi-grid {
+  column-gap: 1rem !important;
+  row-gap: 0.75rem !important;
+}
+
+.fi-section[data-step-section="author"] .fi-sc-text {
+  min-height: 4rem !important;
+  padding: 0.875rem 1rem !important;
+  color: #17324d !important;
+}
+
+.it-header-slim-wrapper .btn-icon.btn-full {
+  min-height: 2.75rem !important;
+  padding: 0.25rem 1rem !important;
+  border-radius: 0 !important;
+}
+
+.it-header-slim-wrapper .btn-icon.btn-full > span:not(.rounded-icon) {
+  font-size: 0.9375rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+}
+
+.it-header-center-content-wrapper .it-search-wrapper > span,
+.it-header-center-content-wrapper .search-label {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+}
+
+/* CoordinatePicker — visible map and controls inside Design Comuni wizard.
+   Leaflet panes are runtime-generated in light DOM, so the theme owns final parity. */
+coordinate-picker-lit {
+  display: block !important;
+  width: 100% !important;
+  min-height: 340px !important;
+  background: #fff !important;
+}
+
+coordinate-picker-lit .map-container,
+coordinate-picker-lit .map-picker-leaflet-pane,
+coordinate-picker-lit .leaflet-container {
+  opacity: 1 !important;
+  background: #fff !important;
+}
+
+coordinate-picker-lit .leaflet-tile,
+coordinate-picker-lit .leaflet-tile-loaded,
+coordinate-picker-lit .leaflet-pane,
+coordinate-picker-lit .leaflet-map-pane,
+coordinate-picker-lit .leaflet-tile-pane,
+coordinate-picker-lit .leaflet-marker-pane {
+  opacity: 1 !important;
+}
+
+coordinate-picker-lit .layer-controls-overlay {
+  top: 0.75rem !important;
+  left: 0.75rem !important;
+  z-index: 1100 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+  pointer-events: auto !important;
+}
+
+coordinate-picker-lit .ctrl-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 2.75rem !important;
+  height: 2.75rem !important;
+  min-width: 2.75rem !important;
+  min-height: 2.75rem !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+  color: #17324d !important;
+  background: #fff !important;
+  border: 1px solid #d9e1e8 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 8px rgba(23, 50, 77, 0.18) !important;
+  pointer-events: auto !important;
+}
+
+coordinate-picker-lit .ctrl-btn:hover,
+coordinate-picker-lit .ctrl-btn:focus-visible {
+  color: #007a52 !important;
+  background: #f5f7f9 !important;
+  outline: 2px solid #007a52 !important;
+  outline-offset: 2px !important;
+}
+
+coordinate-picker-lit .ctrl-btn svg {
+  display: block !important;
+  width: 1.35rem !important;
+  height: 1.35rem !important;
+  opacity: 1 !important;
+  color: currentColor !important;
+  stroke: currentColor !important;
+}
+
+/* --------------------------------------------------------------------------
+   33. Header CTA parity — "Accedi all'area personale"
+   Keep the real Design Comuni button geometry.
+   NOTE: .it-header-slim-wrapper is OUTSIDE .page-content — selectors must
+   target it globally (not scoped to page-content) to match.
+   -------------------------------------------------------------------------- */
+.it-header-slim-wrapper .btn-icon.btn-full {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.625rem !important;
+  width: auto !important;
+  min-width: fit-content !important;
+  height: 3rem !important;
+  min-height: 3rem !important;
+  padding: 0.75rem 1.5rem !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #007a52 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  box-shadow: none !important;
+}
+
+.it-header-slim-wrapper .btn-icon.btn-full:hover,
+.it-header-slim-wrapper .btn-icon.btn-full:focus-visible {
+  background: #00684a !important;
+  color: #fff !important;
+}
+
+.it-header-slim-wrapper .btn-icon.btn-full .rounded-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  min-width: 1.5rem !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0.75rem !important;
+  background: #fff !important;
+}
+
+.it-header-slim-wrapper .btn-icon.btn-full .icon {
+  width: 1rem !important;
+  height: 1rem !important;
+  color: #007a52 !important;
+  fill: currentColor !important;
+}
+
+@media (min-width: 992px) {
+  .it-header-slim-wrapper .btn-icon.btn-full > span:not(.rounded-icon) {
+    display: inline-block !important;
+    font-size: 0.9375rem !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    color: #fff !important;
+  }
+
+  .segnalazione-wizard-layout {
+    --bs-gutter-x: 2.5rem !important;
+  }
+
+  .cmp-page-index .link-list a span {
+    max-width: 100% !important;
+  }
+}
+
+
+
+@media (max-width: 991.98px) {
+  .cmp-page-index-mobile {
+    margin-bottom: 1rem !important;
+  }
+
+  .fi-sc-wizard-header {
+    margin-bottom: 1rem !important;
+  }
+
+  .fi-section .fi-section-content-ctn {
+    padding: 1rem !important;
+  }
+}

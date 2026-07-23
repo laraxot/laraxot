@@ -1,0 +1,771 @@
+<style>
+        /* Reset CSS per compatibilità client email */
+        body, table, td, p, a, li, blockquote {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            display: block;
+        }
+        
+        /* Sottana Service Premium Theme */
+        :root {
+            color-scheme: light dark;
+            --sottana-blue: #1E40AF;       /* Blue professionale */
+            --sottana-blue-light: #3B82F6;
+            --sottana-blue-dark: #1E3A8A;
+            --sottana-gold: #D4AF37;      /* Oro per eleganza natalizia */
+            --sottana-gold-light: #F4E5C3;
+            --sottana-gold-dark: #B8941F;
+            --sottana-red: #B91C1C;       /* Rosso natalizio sofisticato */
+            --sottana-ivory: #FFFFF0;      /* Avorio lusso */
+            --sottana-gray: #F8FAFC;       /* Grigio chiaro professionale */
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --bg-dark: #0F172A;
+            --bg-medium: #1E293B;
+        }
+        
+        /* Base Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-medium) 50%, var(--bg-dark) 100%);
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: var(--text-dark);
+        }
+        
+        .email-wrapper {
+            width: 100%;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-medium) 50%, var(--bg-dark) 100%);
+            background-image:
+                radial-gradient(circle at 30% 30%, rgba(30, 64, 175, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 70% 70%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+                repeating-linear-gradient(135deg, rgba(30, 64, 175, 0.03) 0px, rgba(30, 64, 175, 0.03) 1px, transparent 1px, transparent 10px);
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .premium-particle {
+            position: absolute;
+            background: radial-gradient(circle, var(--sottana-gold) 0%, var(--sottana-blue) 50%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0;
+            animation: float-premium 12s ease-in-out infinite;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+        
+        @keyframes float-premium {
+            0% {
+                transform: translateY(100vh) scale(0.4);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(45vh) scale(1);
+                box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-15vh) scale(0.4);
+                opacity: 0;
+            }
+        }
+        
+        .pro-particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: rgba(30, 64, 175, 0.6);
+            border-radius: 50%;
+            opacity: 0;
+            animation: pro-particle-float 9s linear infinite;
+            box-shadow: 0 0 6px rgba(30, 64, 175, 0.6);
+        }
+        
+        @keyframes pro-particle-float {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.4;
+            }
+            50% {
+                opacity: 0.7;
+                transform: translateY(-45vh) translateX(-15px) rotate(180deg);
+                box-shadow: 0 0 12px rgba(30, 64, 175, 0.8);
+            }
+            85% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(-30px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .pro-particle:nth-child(18) { left: 20%; top: 0; animation-delay: 2s; animation-duration: 13s; }
+        .pro-particle:nth-child(19) { left: 40%; top: 0; animation-delay: 5s; animation-duration: 11s; }
+        .pro-particle:nth-child(20) { left: 60%; top: 0; animation-delay: 8s; animation-duration: 14s; }
+        .pro-particle:nth-child(21) { left: 80%; top: 0; animation-delay: 4s; animation-duration: 10s; }
+        
+        .premium-particle:nth-child(1) { left: 10%; width: 6px; height: 6px; animation-delay: 0s; animation-duration: 15s; }
+        .premium-particle:nth-child(2) { left: 25%; width: 8px; height: 8px; animation-delay: 4s; animation-duration: 17s; }
+        .premium-particle:nth-child(3) { left: 45%; width: 5px; height: 5px; animation-delay: 8s; animation-duration: 13s; }
+        .premium-particle:nth-child(4) { left: 65%; width: 7px; height: 7px; animation-delay: 2s; animation-duration: 16s; }
+        .premium-particle:nth-child(5) { left: 80%; width: 6px; height: 6px; animation-delay: 6s; animation-duration: 14s; }
+        
+        .snowflake {
+            position: absolute;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12"><path fill="white" d="M12 2L13.09 8.26L19 7L17.74 9.74L24 11L17.74 12.26L19 15L13.09 13.74L12 20L10.91 13.74L5 15L6.26 12.26L0 11L6.26 9.74L5 7L10.91 8.26L12 2Z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 12px;
+            height: 12px;
+            opacity: 0.85;
+            animation: premium-snowfall linear infinite;
+        }
+        
+        @keyframes premium-snowfall {
+            0% {
+                transform: translateY(-10%) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) translateX(35px) rotate(400deg);
+                opacity: 0;
+            }
+        }
+        
+        .snowflake:nth-child(6) { left: 7%; animation-duration: 16s; animation-delay: 1s; }
+        .snowflake:nth-child(7) { left: 18%; animation-duration: 18s; animation-delay: 5s; }
+        .snowflake:nth-child(8) { left: 32%; animation-duration: 15s; animation-delay: 9s; }
+        .snowflake:nth-child(9) { left: 48%; animation-duration: 17s; animation-delay: 3s; }
+        .snowflake:nth-child(10) { left: 62%; animation-duration: 16s; animation-delay: 7s; }
+        .snowflake:nth-child(11) { left: 75%; animation-duration: 19s; animation-delay: 4s; }
+        .snowflake:nth-child(12) { left: 88%; animation-duration: 15s; animation-delay: 8s; }
+        
+        .email-container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: 
+                radial-gradient(circle at 5% 5%, rgba(212, 175, 55, 0.03) 0%, transparent 15%),
+                radial-gradient(circle at 95% 95%, rgba(30, 64, 175, 0.03) 0%, transparent 15%),
+                linear-gradient(135deg, var(--sottana-ivory) 0%, #FEFDF8 50%, var(--sottana-ivory) 100%);
+            border-radius: 12px;
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.35),
+                0 0 0 1px rgba(30, 64, 175, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.95);
+            overflow: hidden;
+            position: relative;
+            z-index: 10;
+            border: 1px solid rgba(30, 64, 175, 0.2);
+        }
+        
+        .pro-border-top {
+            height: 8px;
+            background: linear-gradient(90deg,
+                var(--sottana-blue) 0%,
+                var(--sottana-gold) 50%,
+                var(--sottana-blue) 100%
+            );
+            background-size: 200% 100%;
+            animation: pro-shimmer 5s ease-in-out infinite;
+        }
+        
+        @keyframes pro-shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .email-header {
+            background: 
+                radial-gradient(circle at 15% 15%, rgba(212, 175, 55, 0.2) 0%, transparent 35%),
+                radial-gradient(circle at 85% 85%, rgba(255, 255, 255, 0.1) 0%, transparent 35%),
+                linear-gradient(135deg, var(--sottana-blue) 0%, #2563EB 50%, var(--sottana-blue-dark) 100%);
+            padding: 55px 45px 45px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .email-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="50" height="50"><circle cx="50" cy="50" r="40" fill="none" stroke="%231E40AF" stroke-width="0.5" opacity="0.3" stroke-dasharray="5,5"/></svg>') 50% 50%;
+            opacity: 0.6;
+        }
+        
+        .pro-star {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="%23D4AF37" d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0;
+            animation: pro-twinkle 4s ease-in-out infinite;
+        }
+        
+        @keyframes pro-twinkle {
+            0%, 100% {
+                opacity: 0.4;
+                transform: scale(0.8) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2) rotate(180deg);
+                text-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+            }
+        }
+        
+        .pro-star:nth-child(1) { top: 15%; left: 12%; animation-delay: 0s; }
+        .pro-star:nth-child(2) { top: 22%; right: 15%; animation-delay: 1.5s; }
+        .pro-star:nth-child(3) { top: 68%; left: 14%; animation-delay: 3s; }
+        .pro-star:nth-child(4) { top: 72%; right: 12%; animation-delay: 2s; }
+        
+        .email-logo {
+            max-width: 240px;
+            height: auto;
+            margin: 0 auto 22px;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+        }
+        
+        .pro-title {
+            color: var(--sottana-gold);
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 22px 0 12px;
+            text-shadow:
+                2px 2px 6px rgba(0, 0, 0, 0.5),
+                0 0 25px rgba(212, 175, 55, 0.5);
+            position: relative;
+            z-index: 2;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+        
+        .pro-subtitle {
+            color: var(--sottana-gold-light);
+            font-size: 17px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin: 0 0 18px;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .email-content {
+            padding: 50px 45px;
+            background: linear-gradient(180deg, var(--sottana-ivory) 0%, var(--sottana-gray) 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px;
+            position: relative;
+        }
+        
+        .email-content::before {
+            content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"><path fill="%231E40AF" opacity="0.15" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13.5v7.5c0 .55.45 1 1 1s1-.45 1-1V6.5c0-.55-.45-1-1-1s-1 .45-1 1z"/></svg>');
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            opacity: 1;
+            z-index: 1;
+            transform: rotate(-10deg);
+        }
+        
+        .email-content::after {
+            content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"><path fill="%231E40AF" opacity="0.15" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13.5v7.5c0 .55.45 1 1 1s1-.45 1-1V6.5c0-.55-.45-1-1-1s-1 .45-1 1z"/></svg>');
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            opacity: 1;
+            z-index: 1;
+            transform: rotate(10deg);
+        }
+        
+        .svg-decoration {
+            position: absolute;
+            opacity: 0.05;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .svg-top-left {
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            transform: rotate(45deg);
+        }
+        
+        .svg-bottom-right {
+            bottom: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            transform: rotate(135deg);
+        }
+        
+        .pro-closure-notice {
+            background: 
+                radial-gradient(circle at 5% 15%, rgba(212, 175, 55, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 95% 85%, rgba(30, 64, 175, 0.05) 0%, transparent 25%),
+                linear-gradient(135deg, 
+                    var(--sottana-gray) 0%, 
+                    #FFFFFF 100%);
+            border: 2px solid var(--sottana-blue);
+            border-radius: 8px;
+            padding: 35px 30px;
+            margin: 35px 0;
+            text-align: center;
+            position: relative;
+            box-shadow:
+                0 10px 30px rgba(30, 64, 175, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border-left: 5px solid var(--sottana-gold);
+            overflow: hidden;
+        }
+        
+        .pro-closure-notice::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--sottana-blue), transparent);
+            animation: blue-line-sweep 5s linear infinite;
+        }
+        
+        @keyframes blue-line-sweep {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .pro-closure-notice::before {
+            content: '🎄';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 36px;
+            color: var(--sottana-gold);
+            text-shadow: 0 2px 10px rgba(30, 64, 175, 0.3);
+        }
+        
+        .pro-closure-title {
+            color: var(--sottana-blue);
+            font-size: 27px;
+            font-weight: 700;
+            margin: 0 0 22px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'Georgia', serif;
+        }
+        
+        .pro-closure-dates {
+            background: linear-gradient(135deg, 
+                rgba(30, 64, 175, 0.05) 0%, 
+                rgba(185, 28, 28, 0.05) 100%);
+            padding: 20px 25px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid var(--sottana-blue);
+        }
+        
+        .pro-closure-dates strong {
+            color: var(--sottana-blue-dark);
+            font-size: 20px;
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .pro-closure-reopen {
+            color: var(--sottana-gold-dark);
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--sottana-blue);
+            font-weight: 800;
+            line-height: 1.2;
+            margin: 0 0 20px 0;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            letter-spacing: 0.3px;
+        }
+        
+        h1 { font-size: 32px; }
+        h2 { font-size: 28px; }
+        h3 { font-size: 24px; }
+        
+        p {
+            margin: 0 0 18px 0;
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .email-content strong {
+            color: var(--sottana-blue-dark);
+            font-weight: 900;
+            text-shadow: 0 0 5px rgba(30, 64, 175, 0.1);
+        }
+        
+        .email-content em {
+            color: var(--sottana-gold-dark);
+            font-style: italic;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 18px 40px;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.2) 0%, transparent 20%),
+                linear-gradient(135deg, var(--sottana-blue) 0%, #2563EB 100%);
+            color: #FFFFFF !important;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow:
+                0 8px 20px rgba(30, 64, 175, 0.5),
+                inset 0 2px 0 rgba(255, 255, 255, 0.4),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.3) 0%, transparent 20%),
+                linear-gradient(135deg, #2563EB 0%, var(--sottana-blue) 100%);
+            box-shadow:
+                0 10px 25px rgba(30, 64, 175, 0.7),
+                inset 0 2px 0 rgba(255, 255, 255, 0.5),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        .email-footer {
+            background: linear-gradient(135deg, var(--sottana-blue-dark) 0%, var(--bg-dark) 100%);
+            color: var(--sottana-gray);
+            padding: 40px 35px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.8;
+            position: relative;
+        }
+        
+        .email-footer::before {
+            content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25"><path fill="%23F8FAFC" opacity="0.5" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13.5v7.5c0 .55.45 1 1 1s1-.45 1-1V6.5c0-.55-.45-1-1-1s-1 .45-1 1z"/></svg>');
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            opacity: 1;
+            transform: rotate(-10deg);
+        }
+        
+        .email-footer::after {
+            content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25"><path fill="%23F8FAFC" opacity="0.5" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13.5v7.5c0 .55.45 1 1 1s1-.45 1-1V6.5c0-.55-.45-1-1-1s-1 .45-1 1z"/></svg>');
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            opacity: 1;
+            transform: rotate(10deg);
+        }
+        
+        .email-footer a {
+            color: var(--sottana-gold);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s, color 0.3s;
+        }
+        
+        .email-footer a:hover {
+            border-bottom-color: var(--sottana-gold);
+            color: var(--sottana-gold-light);
+        }
+        
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            fill: #D4AF37;
+            transition: all 0.2s ease-in-out;
+        }
+        
+        .social-icon:hover {
+            fill: #F8FAFC;
+            transform: scale(1.1);
+        }
+
+        .pro-border-bottom {
+            height: 8px;
+            background: linear-gradient(90deg,
+                var(--sottana-blue) 0%,
+                var(--sottana-gold) 50%,
+                var(--sottana-blue) 100%
+            );
+            background-size: 200% 100%;
+            animation: pro-shimmer 5s ease-in-out infinite;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .email-wrapper { padding: 0 !important; }
+            .email-container {
+                width: 100% !important;
+                border-radius: 0 !important;
+            }
+            .email-header,
+            .email-content,
+            .email-footer {
+                padding: 32px 22px !important;
+            }
+            .pro-title { 
+                font-size: 30px !important; 
+                letter-spacing: 2px !important; 
+            }
+            .pro-closure-notice { 
+                padding: 30px 25px !important; 
+            }
+            .btn {
+                display: block !important;
+                width: 100% !important;
+                text-align: center !important;
+            }
+            .premium-particle,
+            .snowflake,
+            .pro-star {
+                display: none !important;
+            }
+        }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        @media print {
+            .email-wrapper { background: #FFFFFF !important; }
+            .email-container { box-shadow: none !important; }
+            .premium-particle,
+            .snowflake,
+            .pro-star {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <span class="sr-only">Vai al contenuto principale</span>
+
+    <!-- Animated particles -->
+    <div class="premium-particle" aria-hidden="true"></div>
+    <div class="premium-particle" aria-hidden="true"></div>
+    <div class="premium-particle" aria-hidden="true"></div>
+    <div class="premium-particle" aria-hidden="true"></div>
+    <div class="premium-particle" aria-hidden="true"></div>
+
+    <!-- Professional particles -->
+    <div class="pro-particle" aria-hidden="true"></div>
+    <div class="pro-particle" aria-hidden="true"></div>
+    <div class="pro-particle" aria-hidden="true"></div>
+    <div class="pro-particle" aria-hidden="true"></div>
+
+    <!-- Elegant snowflakes -->
+    <div class="snowflake" aria-hidden="true"></div>
+    <div class="snowflake" aria-hidden="true"></div>
+    <div class="snowflake" aria-hidden="true"></div>
+    <div class="snowflake" aria-hidden="true"></div>
+    <div class="snowflake" aria-hidden="true"></div>
+    <div class="snowflake" aria-hidden="true"></div>
+    <div class="snowflake" aria-hidden="true"></div>
+
+    <!-- Email Wrapper -->
+    <table role="presentation" class="email-wrapper" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center" style="padding: 40px 0;">
+
+                <!-- Email Container -->
+                <table role="presentation" class="email-container" width="680" cellpadding="0" cellspacing="0">
+
+                    <!-- Professional Border Top -->
+                    <tr>
+                        <td class="pro-border-top" colspan="1"></td>
+                    </tr>
+
+                    <!-- Header -->
+                    <tr>
+                        <td class="email-header">
+                            <div class="pro-star" aria-hidden="true">✦</div>
+                            <div class="pro-star" aria-hidden="true">✧</div>
+                            <div class="pro-star" aria-hidden="true">✦</div>
+                            <div class="pro-star" aria-hidden="true">✧</div>
+
+                            {{#logo_header}}
+                            <img src="{{ logo_header }}" alt="{{ company_name }}" class="email-logo">
+                            {{/logo_header}}
+                            {{^logo_header}}
+                            {{#logo_header_base64}}
+                            <img src="data:image/png;base64,{{ logo_header_base64 }}" alt="{{ company_name }}" class="email-logo">
+                            {{/logo_header_base64}}
+                            {{^logo_header_base64}}
+                            {{#logo_svg}}
+                            <img src="{{ logo_svg }}" alt="{{ company_name }}" class="email-logo">
+                            {{/logo_svg}}
+                            {{/logo_header_base64}}
+                            {{/logo_header}}
+
+                            <h1 class="pro-title">Buone Feste</h1>
+                            <p class="pro-subtitle">Auguri dal Team Sottana Service</p>
+                        </td>
+                    </tr>
+
+                    <!-- Main Content -->
+                    <tr>
+                        <td class="email-content">
+                            <!-- SVG Decorations -->
+                            <div class="svg-decoration svg-top-left" aria-hidden="true"></div>
+                            <div class="svg-decoration svg-bottom-right" aria-hidden="true"></div>
+
+                            <!-- Professional Closure Notice Box -->
+                            <div class="pro-closure-notice">
+                                <h2 class="pro-closure-title">🎄 Chiusura Festività 🎄</h2>
+
+                                <div class="pro-closure-dates">
+                                    <strong>Lo staff di Sottana Service</strong>
+                                    vi augura Buone Feste!
+                                </div>
+
+                                <div class="pro-closure-dates">
+                                    <strong>Ufficio chiuso dal</strong>
+                                    24 dicembre al 6 gennaio
+                                </div>
+
+                                <p class="pro-closure-reopen">
+                                    Ci rivediamo il 7 gennaio! ✨
+                                </p>
+                            </div>
+
+                            <!-- Dynamic Body Content -->
+                            {{{ body }}}
+
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td class="email-footer">
+                            <table style="margin: 0 auto 16px auto;">
+                                <tr>
+                                    <td style="padding: 0 10px;"><a href="#"><svg class="social-icon" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg></a></td>
+                                    <td style="padding: 0 10px;"><a href="#"><svg class="social-icon" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/></svg></a></td>
+                                    <td style="padding: 0 10px;"><a href="#"><svg class="social-icon" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></td>
+                                </tr>
+                            </table>
+                            <p style="margin: 0 0 15px 0; font-size: 17px; font-weight: 700; color: var(--sottana-gold);">
+                                {{#company_name}}{{ company_name }}{{/company_name}}{{^company_name}}Sottana Service{{/company_name}}
+                            </p>
+                            {{#company_address}}
+                            <p style="margin: 0 0 10px 0; font-size: 14px;">
+                                {{ company_address }}
+                            </p>
+                            {{/company_address}}
+
+                            <p style="margin: 20px 0 10px; font-size: 13px; color: var(--sottana-gray);">
+                                🎄 Buone Feste dal Team {{#company_name}}{{ company_name }}{{/company_name}}{{^company_name}}Sottana Service{{/company_name}}! ✨
+                            </p>
+
+                            <p style="margin: 10px 0 0; font-size: 12px; opacity: 0.8;">
+                                {{#site_url}}<a href="{{ site_url }}">Visita il sito</a>{{/site_url}}
+                                {{#site_url}}{{#unsubscribe_url}} | {{/unsubscribe_url}}{{/site_url}}
+                                {{#unsubscribe_url}}<a href="{{ unsubscribe_url }}">Annulla iscrizione</a>{{/unsubscribe_url}}
+                            </p>
+
+                            <p style="margin: 15px 0 0; font-size: 11px; opacity: 0.7;">
+                                © {{ year }} {{#company_name}}{{ company_name }}{{/company_name}}{{^company_name}}Sottana Service{{/company_name}}. Tutti i diritti riservati.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Professional Border Bottom -->
+                    <tr>
+                        <td class="pro-border-bottom" colspan="1"></td>
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,449 @@
+--- segnalazione-04-conferma-reference
++++ segnalazione-04-conferma-local
+@@ -114,7 +114,7 @@
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=nav-link | text=-
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Novità
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3] | <li> | id=- | class=nav-item | text=-
+-body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=active nav-link | text=-
++body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=nav-link | text=-
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Servizi
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4] | <li> | id=- | class=nav-item | text=-
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=nav-link | text=-
+@@ -165,195 +165,248 @@
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1] | <svg> | id=- | class=align-top icon icon-sm icon-white | text=-
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/span[1] | <span> | id=- | class=visually-hidden | text=RSS
+-body/main[1] | <main> | id=- | class=- | text=-
+-body/main[1]/div[1] | <div> | id=main-container | class=container | text=-
+-body/main[1]/div[1]/div[1] | <div> | id=- | class=justify-content-center row | text=-
+-body/main[1]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-10 | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-breadcrumbs | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1] | <nav> | id=- | class=breadcrumb-container | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1] | <ol> | id=- | class=breadcrumb p-0 | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1] | <li> | id=- | class=breadcrumb-item | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/a[1] | <a> | id=- | class=- | text=Home
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/span[1] | <span> | id=- | class=separator | text=/
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2] | <li> | id=- | class=breadcrumb-item | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]/a[1] | <a> | id=- | class=- | text=Servizi
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]/span[1] | <span> | id=- | class=separator | text=/
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[3] | <li> | id=- | class=active breadcrumb-item | text=Segnalazione disservizio
+-body/main[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=cmp-heading p-0 | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=categoryicon-top d-flex | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/svg[1] | <svg> | id=- | class=icon icon-md icon-success mr-10 | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/h1[1] | <h1> | id=- | class=title-xxxlarge | text=Segnalazione inviata
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/p[1] | <p> | id=- | class=subtitle-small | text=Grazie, abbiamo ricevuto la tua
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/p[1]/strong[1] | <strong> | id=- | class=- | text=segnalazione AN4059281.
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/p[2] | <p> | id=- | class=subtitle-small | text=Sarà visibile sulla una volta presa in carico dall’amministrazione.
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/p[2]/a[1] | <a> | id=- | class=t-primary | text=lista di tutte segnalazioni
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/p[3] | <p> | id=- | class=pt-3 pt-lg-4 subtitle-small | text=Abbiamo inviato il riepilogo all’email:
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/p[3]/br[1] | <br> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/p[3]/strong[1] | <strong> | id=- | class=- | text=giulia.bianchi@gmail.com
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/button[1] | <button> | id=- | class=bg-white btn btn-outline-primary fw-bold | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/button[1]/span[1] | <span> | id=- | class=rounded-icon | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/button[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/button[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/button[1]/span[2] | <span> | id=- | class=- | text=Scarica la ricevuta (PDF 100KB)
+-body/main[1]/div[1]/div[1]/div[1]/p[1] | <p> | id=- | class=mt-3 | text=-
+-body/main[1]/div[1]/div[1]/div[1]/p[1]/a[1] | <a> | id=- | class=t-primary text-paragraph | text=Consulta la richiesta
+-body/main[1]/div[1]/div[1]/div[1]/p[1]/span[1] | <span> | id=- | class=text-paragraph | text=nella tua area riservata
+-body/main[1]/div[1]/hr[1] | <hr> | id=- | class=d-lg-block d-none mb-0 mt-40 | text=-
+-body/main[1]/div[1]/div[2] | <div> | id=- | class=justify-content-center mb-3 mb-md-5 row | text=-
+-body/main[1]/div[1]/div[2]/div[1] | <div> | id=- | class=col-12 col-lg-10 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/h2[1] | <h2> | id=related-service | class=mb-2 mb-lg-4 mb-lg-4 mt-40 title-xxlarge | text=Servizi correlati
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mb-4 shadow | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Richiesta appuntamento
+-body/main[1]/div[2] | <div> | id=- | class=bg-primary | text=-
+-body/main[1]/div[2]/div[1] | <div> | id=- | class=container | text=-
+-body/main[1]/div[2]/div[1]/div[1] | <div> | id=- | class=bg-primary d-flex justify-content-center row | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-6 p-lg-0 px-4 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1] | <div> | id=rating | class=cmp-rating pb-lg-80 pt-lg-80 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card card-wrapper shadow | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-rating__card-first | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=border-0 card-header | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=mb-0 title-medium-2-semi-bold | text=Quanto è stato facile usare questo servizio?
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1] | <fieldset> | id=- | class=rating | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/legend[1] | <legend> | id=- | class=visually-hidden | text=Valuta da 1 a 5 stelle la pagina
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[1] | <input> | id=star5a | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1] | <label> | id=- | class=active full rating-star | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/svg[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/svg[1]/path[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/span[1] | <span> | id=first-star | class=visually-hidden | text=Valuta 5 stelle su 5
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[2] | <input> | id=star4a | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2] | <label> | id=- | class=active full rating-star | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/svg[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/svg[1]/path[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/span[1] | <span> | id=second-star | class=visually-hidden | text=Valuta 4 stelle su 5
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[3] | <input> | id=star3a | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3] | <label> | id=- | class=active full rating-star | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/svg[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/svg[1]/path[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/span[1] | <span> | id=third-star | class=visually-hidden | text=Valuta 3 stelle su 5
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[4] | <input> | id=star2a | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4] | <label> | id=- | class=active full rating-star | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/svg[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/svg[1]/path[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/span[1] | <span> | id=fourth-star | class=visually-hidden | text=Valuta 2 stelle su 5
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[5] | <input> | id=star1a | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5] | <label> | id=- | class=active full rating-star | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/svg[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/svg[1]/path[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/span[1] | <span> | id=fifth-star | class=visually-hidden | text=Valuta 1 stelle su 5
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=cmp-rating__card-second d-none | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=border-0 card-header mb-0 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/h2[1] | <h2> | id=rating-feedback | class=mb-0 title-medium-2-bold | text=Grazie, il tuo parere ci aiuterà a migliorare il servizio!
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3] | <div> | id=- | class=d-none form-rating | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1] | <div> | id=- | class=d-none | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1] | <div> | id=- | class=cmp-steps-rating | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1] | <fieldset> | id=- | class=d-none fieldset-rating-one | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/legend[1] | <legend> | id=- | class=iscrizioni-header w-100 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/legend[1]/h3[1] | <h3> | id=- | class=align-items-lg-center d-flex drop-shadow flex-column flex-lg-row justify-content-between step-title | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/legend[1]/h3[1]/span[1] | <span> | id=- | class=d-block text-wrap | text=Quali sono stati gli aspetti che hai preferito?
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/legend[1]/h3[1]/span[2] | <span> | id=- | class=step | text=1/2
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1] | <div> | id=- | class=cmp-steps-rating__body | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1] | <div> | id=- | class=cmp-radio-list | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card card-teaser shadow-rating | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=form-check m-0 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1] | <input> | id=radio-1 | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1] | <label> | id=- | class=active | text=Le indicazioni erano chiare
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/input[1] | <input> | id=radio-2 | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/label[1] | <label> | id=- | class=active | text=Le indicazioni erano complete
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/input[1] | <input> | id=radio-3 | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/label[1] | <label> | id=- | class=active | text=Capivo sempre che stavo procedendo correttamente
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1] | <input> | id=radio-4 | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/label[1] | <label> | id=- | class=active | text=Non ho avuto problemi tecnici
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5]/input[1] | <input> | id=radio-5 | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5]/label[1] | <label> | id=- | class=active | text=Altro
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2] | <fieldset> | id=- | class=d-none fieldset-rating-two | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/legend[1] | <legend> | id=- | class=iscrizioni-header w-100 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/legend[1]/h3[1] | <h3> | id=- | class=align-items-lg-center d-flex drop-shadow flex-column flex-lg-row flex-wrap justify-content-between step-title | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/legend[1]/h3[1]/span[1] | <span> | id=- | class=d-block text-wrap | text=Dove hai incontrato le maggiori difficoltà?
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/legend[1]/h3[1]/span[2] | <span> | id=- | class=step | text=1/2
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1] | <div> | id=- | class=cmp-steps-rating__body | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1] | <div> | id=- | class=cmp-radio-list | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1] | <div> | id=- | class=card card-teaser shadow-rating | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=form-check m-0 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1] | <input> | id=radio-6 | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1] | <label> | id=- | class=active | text=A volte le indicazioni non erano chiare
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/input[1] | <input> | id=radio-7 | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/label[1] | <label> | id=- | class=active | text=A volte le indicazioni non erano complete
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/input[1] | <input> | id=radio-8 | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/label[1] | <label> | id=- | class=active | text=A volte non capivo se stavo procedendo correttamente
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1] | <input> | id=radio-9 | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/label[1] | <label> | id=- | class=active | text=Ho avuto problemi tecnici
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5]/input[1] | <input> | id=radio-10 | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5]/label[1] | <label> | id=- | class=active | text=Altro
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2] | <div> | id=- | class=d-none | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1] | <div> | id=- | class=cmp-steps-rating | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1] | <fieldset> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/legend[1] | <legend> | id=- | class=iscrizioni-header w-100 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/legend[1]/h3[1] | <h3> | id=- | class=align-items-lg-center d-flex drop-shadow flex-column flex-lg-row flex-wrap justify-content-between step-title | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/legend[1]/h3[1]/span[1] | <span> | id=- | class=d-block text-wrap | text=Vuoi aggiungere altri dettagli?
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/legend[1]/h3[1]/span[2] | <span> | id=- | class=step | text=2/2
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/div[1] | <div> | id=- | class=cmp-steps-rating__body | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/div[1]/div[1] | <div> | id=- | class=form-group | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/label[1] | <label> | id=- | class=- | text=Dettaglio
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/input[1] | <input> | id=formGroupExampleInputWithHelp | class=form-control | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/small[1] | <small> | id=formGroupExampleInputWithHelpDescription | class=form-text | text=Inserire massimo 200 caratteri
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[3] | <div> | id=- | class=button-shadow d-flex flex-nowrap justify-content-center pt-4 w-100 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[3]/button[1] | <button> | id=- | class=btn btn-back btn-outline-primary fw-bold me-4 | text=Indietro
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[3]/button[2] | <button> | id=- | class=btn btn-next btn-primary fw-bold | text=Avanti
+-body/main[1]/div[3] | <div> | id=- | class=bg-grey-card shadow-contacts | text=-
+-body/main[1]/div[3]/div[1] | <div> | id=- | class=container | text=-
+-body/main[1]/div[3]/div[1]/div[1] | <div> | id=- | class=row | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-6 offset-lg-3 p-contacts | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-contacts | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card w-100 | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=title-medium-2-semi-bold | text=Contatta il comune
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=contact-list p-0 | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Leggi le domande frequenti
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Richiedi assistenza
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Chiama il numero verde 05 0505
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4] | <li> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/span[1] | <span> | id=- | class=- | text=Prenota appuntamento
++body/main[1] | <main> | id=main-container | class=- | text=-
++body/main[1]/div[1] | <div> | id=- | class=cms-view-wrapper | text=-
++body/main[1]/div[1]/div[1] | <div> | id=- | class=content page-content | text=-
++body/main[1]/div[1]/div[1]/section[1] | <section> | id=- | class=py-8 stepper-flow-section | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1] | <div> | id=- | class=lg:px-8 max-w-5xl mx-auto px-4 sm:px-6 | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[1] | <div> | id=- | class=mb-8 | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=font-bold text-2xl text-gray-900 | text=Segnalazione disservizio
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[1]/p[1] | <p> | id=- | class=mt-2 text-gray-600 | text=Segnala un disservizio riscontrato
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2] | <div> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1] | <div> | id=- | class=stepper-header | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1] | <ul> | id=- | class=stepper-header-group | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[1] | <li> | id=- | class=stepper-step | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/button[1] | <button> | id=- | class=stepper-number | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/button[1]/span[1] | <span> | id=- | class=step-dot | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/button[1]/span[1]/span[1] | <span> | id=- | class=sr-only | text=Completato
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/button[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/button[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/button[1]/span[1]/span[2] | <span> | id=- | class=- | text=1
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/button[1]/span[2] | <span> | id=- | class=step-label | text=Dati
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[2] | <li> | id=- | class=stepper-step | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/button[1] | <button> | id=- | class=stepper-number | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/button[1]/span[1] | <span> | id=- | class=step-dot | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/button[1]/span[1]/span[1] | <span> | id=- | class=sr-only | text=Completato
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/button[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/button[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/button[1]/span[1]/span[2] | <span> | id=- | class=- | text=2
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/button[1]/span[2] | <span> | id=- | class=step-label | text=Dettagli
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[3] | <li> | id=- | class=stepper-step | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/button[1] | <button> | id=- | class=stepper-number | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/button[1]/span[1] | <span> | id=- | class=step-dot | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/button[1]/span[1]/span[1] | <span> | id=- | class=sr-only | text=Completato
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/button[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/button[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/button[1]/span[1]/span[2] | <span> | id=- | class=- | text=3
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/button[1]/span[2] | <span> | id=- | class=step-label | text=Conferma
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[4] | <li> | id=- | class=stepper-step | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/button[1] | <button> | id=- | class=stepper-number | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/button[1]/span[1] | <span> | id=- | class=step-dot | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/button[1]/span[1]/span[1] | <span> | id=- | class=sr-only | text=Completato
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/button[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/button[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/button[1]/span[1]/span[2] | <span> | id=- | class=- | text=4
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/button[1]/span[2] | <span> | id=- | class=step-label | text=Step 4
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=stepper-progress | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=stepper-progress-bar | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/div[2] | <div> | id=- | class=stepper-content | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/nav[1] | <nav> | id=- | class=stepper-nav | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/nav[1]/button[1] | <button> | id=- | class=btn btn-outline-primary | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/nav[1]/button[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/nav[1]/button[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/nav[1]/button[1]/span[1] | <span> | id=- | class=- | text=Indietro
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/nav[1]/button[2] | <button> | id=- | class=btn btn-primary ms-auto | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/nav[1]/button[2]/span[1] | <span> | id=- | class=- | text=Avanti
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/nav[1]/button[2]/svg[1] | <svg> | id=- | class=icon icon-sm icon-white | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/nav[1]/button[2]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/nav[1]/button[3] | <button> | id=- | class=btn btn-success ms-auto | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/nav[1]/button[3]/span[1] | <span> | id=- | class=- | text=Conferma
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/nav[1]/button[3]/svg[1] | <svg> | id=- | class=icon icon-sm icon-white | text=-
++body/main[1]/div[1]/div[1]/section[1]/div[1]/div[2]/nav[1]/button[3]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1] | <div> | id=main-container | class=container | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=justify-content-center row | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-10 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-heading p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=categoryicon-top d-flex | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/svg[1] | <svg> | id=- | class=icon icon-md icon-success mr-10 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h1[1] | <h1> | id=- | class=title-xxxlarge | text=Segnalazione inviata
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1] | <p> | id=- | class=subtitle-small | text=Grazie, abbiamo ricevuto la tua
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]/strong[1] | <strong> | id=- | class=- | text=segnalazione SEG-2025-005678.
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[2] | <p> | id=- | class=subtitle-small | text=Sarà visibile sulla una volta presa in carico dall'amministrazione.
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[2]/a[1] | <a> | id=- | class=t-primary | text=lista di tutte le segnalazioni
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[3] | <p> | id=- | class=pt-3 pt-lg-4 subtitle-small | text=Abbiamo inviato il riepilogo all'email:
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[3]/br[1] | <br> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[3]/strong[1] | <strong> | id=- | class=- | text=giulia.bianchi@gmail.com
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1] | <a> | id=- | class=bg-white btn btn-outline-primary fw-bold mt-4 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1] | <span> | id=- | class=rounded-icon | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[2] | <span> | id=- | class=- | text=Scarica la ricevuta (PDF 100KB)
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1] | <p> | id=- | class=mt-3 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]/a[1] | <a> | id=- | class=t-primary text-paragraph | text=Consulta la richiesta
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]/span[1] | <span> | id=- | class=text-paragraph | text=nella tua area riservata
++body/main[1]/div[1]/div[1]/div[1]/hr[1] | <hr> | id=- | class=d-lg-block d-none mb-0 mt-40 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=justify-content-center mb-3 mb-md-5 row | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=col-12 col-lg-10 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/h2[1] | <h2> | id=related-service | class=mb-2 mb-lg-4 mb-lg-4 mt-40 title-xxlarge | text=Servizi correlati
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mb-4 shadow | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Richiesta appuntamento
++body/main[1]/div[1]/div[1]/div[2] | <div> | id=- | class=bg-primary | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=container | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=bg-primary d-flex justify-content-center row | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-6 p-lg-0 px-4 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1] | <div> | id=rating | class=cmp-rating pb-lg-80 pt-lg-80 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card card-wrapper shadow | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-rating__card-first | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=border-0 card-header | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=mb-0 title-medium-2-semi-bold | text=Quanto è stato facile usare questo servizio?
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1] | <fieldset> | id=- | class=rating | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/legend[1] | <legend> | id=- | class=visually-hidden | text=Valuta da 1 a 5 stelle la pagina
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[1] | <input> | id=star5a | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1] | <label> | id=- | class=active full rating-star | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/svg[1]/path[1] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/svg[1]/path[2] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/span[1] | <span> | id=first-star | class=visually-hidden | text=Valuta 5 stelle su 5
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[2] | <input> | id=star4a | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2] | <label> | id=- | class=active full rating-star | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/svg[1]/path[1] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/svg[1]/path[2] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/span[1] | <span> | id=second-star | class=visually-hidden | text=Valuta 4 stelle su 5
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[3] | <input> | id=star3a | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3] | <label> | id=- | class=active full rating-star | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/svg[1]/path[1] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/svg[1]/path[2] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/span[1] | <span> | id=third-star | class=visually-hidden | text=Valuta 3 stelle su 5
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[4] | <input> | id=star2a | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4] | <label> | id=- | class=active full rating-star | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/svg[1]/path[1] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/svg[1]/path[2] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/span[1] | <span> | id=fourth-star | class=visually-hidden | text=Valuta 2 stelle su 5
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[5] | <input> | id=star1a | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5] | <label> | id=- | class=active full rating-star | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/svg[1]/path[1] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/svg[1]/path[2] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/span[1] | <span> | id=fifth-star | class=visually-hidden | text=Valuta 1 stella su 5
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=cmp-rating__card-second d-none | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=border-0 card-header mb-0 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/h2[1] | <h2> | id=rating-feedback | class=mb-0 title-medium-2-bold | text=Grazie, il tuo parere ci aiuterà a migliorare il servizio!
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2] | <div> | id=- | class=d-none form-rating | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1] | <div> | id=- | class=cmp-steps-rating | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1] | <fieldset> | id=- | class=d-none fieldset-rating-one | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/legend[1] | <legend> | id=- | class=iscrizioni-header w-100 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/legend[1]/h3[1] | <h3> | id=- | class=align-items-lg-center d-flex drop-shadow flex-column flex-lg-row justify-content-between step-title | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/legend[1]/h3[1]/span[1] | <span> | id=- | class=d-block text-wrap | text=Cosa ritieni di meglio di questa pagina?
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/legend[1]/h3[1]/span[2] | <span> | id=- | class=step | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1] | <div> | id=- | class=cmp-steps-rating__body | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1] | <div> | id=- | class=cmp-radio-list | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card card-teaser shadow-rating | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1] | <input> | id=radio-1 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1] | <label> | id=- | class=active | text=Le informazioni sono chiare
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/input[1] | <input> | id=radio-2 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/label[1] | <label> | id=- | class=active | text=Le informazioni sono complete
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[3] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1] | <input> | id=radio-3 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/label[1] | <label> | id=- | class=active | text=È facile trovare quello che cerco
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[4] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/input[1] | <input> | id=radio-4 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/label[1] | <label> | id=- | class=active | text=Il design è gradevole
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[5] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1]/input[1] | <input> | id=radio-5 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1]/label[1] | <label> | id=- | class=active | text=Altro
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2] | <div> | id=- | class=cmp-steps-rating | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1] | <fieldset> | id=- | class=d-none fieldset-rating-two | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/legend[1] | <legend> | id=- | class=iscrizioni-header w-100 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/legend[1]/h3[1] | <h3> | id=- | class=align-items-lg-center d-flex drop-shadow flex-column flex-lg-row flex-wrap justify-content-between step-title | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/legend[1]/h3[1]/span[1] | <span> | id=- | class=d-block text-wrap | text=Cosa non va in questa pagina?
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/legend[1]/h3[1]/span[2] | <span> | id=- | class=step | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1] | <div> | id=- | class=cmp-steps-rating__body | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1] | <div> | id=- | class=cmp-radio-list | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card card-teaser shadow-rating | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1] | <input> | id=radio-6 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1] | <label> | id=- | class=active | text=Le informazioni non sono chiare
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/input[1] | <input> | id=radio-7 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/label[1] | <label> | id=- | class=active | text=Le informazioni sono incomplete
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[3] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1] | <input> | id=radio-8 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/label[1] | <label> | id=- | class=active | text=È difficile trovare quello che cerco
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[4] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/input[1] | <input> | id=radio-9 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/label[1] | <label> | id=- | class=active | text=Il design non è gradevole
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[5] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1]/input[1] | <input> | id=radio-10 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1]/label[1] | <label> | id=- | class=active | text=Altro
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3] | <div> | id=- | class=cmp-steps-rating | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1] | <div> | id=- | class=cmp-steps-rating__body | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1] | <div> | id=- | class=form-group | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/label[1] | <label> | id=- | class=- | text=Dettaglio
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/input[1] | <input> | id=formGroupExampleInputWithHelp | class=form-control | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/small[1] | <small> | id=formGroupExampleInputWithHelpDescription | class=form-text | text=Inserire massimo 200 caratteri
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[4] | <div> | id=- | class=button-shadow d-flex flex-nowrap justify-content-center pt-4 w-100 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[4]/button[1] | <button> | id=- | class=btn btn-back btn-outline-primary fw-bold me-4 | text=Indietro
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[4]/button[2] | <button> | id=- | class=btn btn-next btn-primary fw-bold | text=Avanti
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3] | <div> | id=- | class=cmp-rating__card-second d-none | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1] | <div> | id=- | class=border-0 card-header mb-0 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/h2[1] | <h2> | id=- | class=mb-0 title-medium-2-bold | text=Grazie per il tuo feedback!
++body/main[1]/div[1]/div[1]/div[3] | <div> | id=- | class=bg-grey-card shadow-contacts | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1] | <div> | id=- | class=container | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1] | <div> | id=- | class=row | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-6 offset-lg-3 p-contacts | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-contacts | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card w-100 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=title-medium-2-semi-bold | text=Contatta il comune
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=contact-list p-0 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Leggi le domande frequenti
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Richiedi assistenza
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Chiama il numero verde 05 0505
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/span[1] | <span> | id=- | class=- | text=Prenota appuntamento
+ body/div[2] | <div> | id=search-modal | class=fade modal search-modal | text=-
+ body/div[2]/div[1] | <div> | id=- | class=modal-dialog modal-lg | text=-
+ body/div[2]/div[1]/div[1] | <div> | id=- | class=modal-content perfect-scrollbar | text=-

@@ -1,0 +1,8 @@
+/**
+ * DEPRECATED — questo file non è importato ed è stato svuotato.
+ *
+ * Le regole wizard generiche sono in: components/filament-wizard-parity.css
+ * Scope corretto: .fi-sc-wizard (NON .segnalazione-wizard-root o .ticket-wizard-root)
+ *
+ * Regola: MAI selettori page-specific per i wizard — CSS globale per componente.
+ */

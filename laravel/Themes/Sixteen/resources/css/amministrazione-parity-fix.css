@@ -1,0 +1,22 @@
+   7. RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .hero-default {
+    padding: 2rem 0 3rem !important;
+  }
+
+  .hero-default h1 {
+    font-size: 2rem !important;
+  }
+
+  .cards-grid .row {
+    gap: 1rem !important;
+  }
+
+  .cards-grid .col-md-6,
+  .cards-grid .col-lg-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}

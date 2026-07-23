@@ -1,0 +1,17 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Seo\Providers;
+
+use Modules\Xot\Providers\XotBaseRouteServiceProvider;
+
+class RouteServiceProvider extends XotBaseRouteServiceProvider
+{
+    public string $name = 'Seo';
+
+    /**
+     * The module namespace to assume when generating URLs to actions.
+     */
+    protected string $moduleNamespace = 'Modules\Seo\Http\Controllers';
+}

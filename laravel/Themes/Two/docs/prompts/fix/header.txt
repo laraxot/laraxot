@@ -1,0 +1,17 @@
+in laravel/config/local/techplanner/database/content/sections/header.json
+hai scritto 
+"view": "themes.two::components.sections.header.v1",
+dovevi scrivere
+"view": "pub_theme::components.sections.header.v1",
+
+
+dentro laravel/Themes/Two/resources/views/components/sections/header.blade.php
+hai scritto 
+@include('themes.two::components.sections.header_bi5', ['blocks' => $blocks])
+oppure @include('pub_theme:components.sections.header_bi5', ...)  [manca :]
+dovevi scrivere
+@include('pub_theme::components.sections.header_bi5', ['blocks' => $blocks])
+
+Regola: SEMPRE pub_theme:: (doppio due punti), MAI themes.two:: o namespace tema specifico.
+
+analizza e ragione finche' non capisci il perche' e la regola, poi aggiorna, studia e migliora le cartelle docs dentro i moduli e dentro i temi, aggiorna le tue rules, le tue memories , le tue skills 

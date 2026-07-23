@@ -1,0 +1,5732 @@
+{
+  "summary": {
+    "reference_elements": 430,
+    "local_elements": 433,
+    "identical": 378,
+    "different": 52,
+    "missing": 0,
+    "extra": 3
+  },
+  "scores": {
+    "parity": 93.3,
+    "tag_parity": 100.0,
+    "id_parity": 100.0,
+    "class_parity": 99.74
+  },
+  "reference": {
+    "tags": {
+      "a": 86,
+      "br": 8,
+      "button": 8,
+      "div": 94,
+      "footer": 1,
+      "form": 1,
+      "h1": 1,
+      "h2": 3,
+      "h4": 6,
+      "header": 1,
+      "image": 1,
+      "img": 1,
+      "input": 2,
+      "label": 2,
+      "li": 79,
+      "main": 1,
+      "nav": 3,
+      "ol": 1,
+      "p": 3,
+      "span": 45,
+      "svg": 34,
+      "ul": 16,
+      "use": 33
+    },
+    "ids": [
+      "autocomplete-two",
+      "footer",
+      "header-nav-wrapper",
+      "main-container",
+      "nav4",
+      "privacy",
+      "search-modal"
+    ],
+    "classes": {
+      "active": 3,
+      "align-items-center": 1,
+      "align-top": 18,
+      "autocomplete": 1,
+      "autocomplete-icon": 1,
+      "autocomplete-wrapper": 1,
+      "bg-grey-card": 1,
+      "breadcrumb": 1,
+      "breadcrumb-container": 1,
+      "breadcrumb-item": 3,
+      "btn": 4,
+      "btn-full": 1,
+      "btn-icon": 1,
+      "btn-primary": 3,
+      "card": 1,
+      "card-body": 1,
+      "checkbox-body": 1,
+      "close-div": 1,
+      "close-menu": 1,
+      "cmp-breadcrumbs": 1,
+      "cmp-contacts": 1,
+      "col": 1,
+      "col-12": 11,
+      "col-lg-10": 2,
+      "col-lg-5": 1,
+      "col-lg-6": 1,
+      "col-lg-8": 1,
+      "col-md-3": 3,
+      "col-md-4": 3,
+      "col-md-6": 3,
+      "col-md-9": 1,
+      "contact-list": 1,
+      "container": 9,
+      "custom-navbar-toggler": 1,
+      "d-flex": 1,
+      "d-lg-block": 2,
+      "d-lg-flex": 1,
+      "d-md-block": 3,
+      "d-md-none": 1,
+      "d-none": 5,
+      "dropdown": 1,
+      "dropdown-item": 2,
+      "dropdown-menu": 1,
+      "dropdown-toggle": 1,
+      "fade": 1,
+      "footer-bottom": 1,
+      "footer-heading-title": 6,
+      "footer-info": 1,
+      "footer-items-wrapper": 7,
+      "footer-list": 7,
+      "form-check": 1,
+      "form-group": 1,
+      "has-megamenu": 1,
+      "icon": 34,
+      "icon-md": 2,
+      "icon-primary": 5,
+      "icon-sm": 23,
+      "icon-white": 18,
+      "it-brand-tagline": 1,
+      "it-brand-text": 3,
+      "it-brand-title": 2,
+      "it-brand-wrapper": 2,
+      "it-footer": 1,
+      "it-footer-main": 1,
+      "it-header-center-content-wrapper": 1,
+      "it-header-center-wrapper": 1,
+      "it-header-navbar-wrapper": 1,
+      "it-header-slim-right-zone": 1,
+      "it-header-slim-wrapper": 1,
+      "it-header-slim-wrapper-content": 1,
+      "it-header-wrapper": 1,
+      "it-nav-wrapper": 1,
+      "it-right-zone": 1,
+      "it-search-wrapper": 1,
+      "it-socials": 2,
+      "justify-content-center": 3,
+      "link-list": 1,
+      "link-list-wrapper": 1,
+      "list-inline": 1,
+      "list-inline-item": 6,
+      "list-item": 6,
+      "logo-hamburger": 1,
+      "logo-wrapper": 1,
+      "mb-0": 1,
+      "mb-3": 1,
+      "mb-4": 1,
+      "mb-lg-4": 1,
+      "mb-lg-40": 1,
+      "menu-wrapper": 1,
+      "mobile-full": 1,
+      "modal": 1,
+      "modal-body": 1,
+      "modal-content": 1,
+      "modal-dialog": 1,
+      "modal-lg": 1,
+      "modal-title": 1,
+      "mt-4": 1,
+      "mt-md-4": 2,
+      "mt-md-40": 1,
+      "nav-item": 9,
+      "nav-link": 9,
+      "navbar": 1,
+      "navbar-brand": 1,
+      "navbar-collapsable": 1,
+      "navbar-expand-lg": 1,
+      "navbar-nav": 2,
+      "navbar-secondary": 1,
+      "no_toc": 1,
+      "offset-lg-3": 1,
+      "other-link-title": 1,
+      "overlay": 1,
+      "p-0": 2,
+      "p-1": 6,
+      "p-contacts": 1,
+      "pb-40": 1,
+      "pb-lg-80": 1,
+      "perfect-scrollbar": 1,
+      "ps-5": 1,
+      "pt-1": 1,
+      "rounded-icon": 2,
+      "row": 15,
+      "search-link": 3,
+      "search-modal": 1,
+      "searches-list": 1,
+      "searches-list-wrapper": 1,
+      "separator": 2,
+      "shadow-contacts": 1,
+      "skiplink": 1,
+      "social": 1,
+      "steppers": 1,
+      "steppers-header": 1,
+      "steppers-index": 1,
+      "t-primary": 1,
+      "text-paragraph": 2,
+      "text-start": 1,
+      "text-white": 6,
+      "title-medium-2-semi-bold": 1,
+      "title-small-semi-bold": 1,
+      "title-xxxlarge": 1,
+      "ue-logo": 1,
+      "variable-gutters": 2,
+      "visually-hidden": 23,
+      "visually-hidden-focusable": 2,
+      "w-100": 1
+    }
+  },
+  "local": {
+    "tags": {
+      "a": 86,
+      "br": 8,
+      "button": 8,
+      "div": 97,
+      "footer": 1,
+      "form": 1,
+      "h1": 1,
+      "h2": 3,
+      "h4": 6,
+      "header": 1,
+      "image": 1,
+      "img": 1,
+      "input": 2,
+      "label": 2,
+      "li": 79,
+      "main": 1,
+      "nav": 3,
+      "ol": 1,
+      "p": 3,
+      "span": 45,
+      "svg": 34,
+      "ul": 16,
+      "use": 33
+    },
+    "ids": [
+      "autocomplete-two",
+      "footer",
+      "header-nav-wrapper",
+      "main-container",
+      "nav4",
+      "privacy",
+      "search-modal"
+    ],
+    "classes": {
+      "active": 2,
+      "align-items-center": 1,
+      "align-top": 18,
+      "autocomplete": 1,
+      "autocomplete-icon": 1,
+      "autocomplete-wrapper": 1,
+      "bg-grey-card": 1,
+      "breadcrumb": 1,
+      "breadcrumb-container": 1,
+      "breadcrumb-item": 3,
+      "btn": 4,
+      "btn-full": 1,
+      "btn-icon": 1,
+      "btn-primary": 3,
+      "card": 1,
+      "card-body": 1,
+      "checkbox-body": 1,
+      "close-div": 1,
+      "close-menu": 1,
+      "cmp-breadcrumbs": 1,
+      "cmp-contacts": 1,
+      "cms-view-wrapper": 1,
+      "col": 1,
+      "col-12": 11,
+      "col-lg-10": 2,
+      "col-lg-5": 1,
+      "col-lg-6": 1,
+      "col-lg-8": 1,
+      "col-md-3": 3,
+      "col-md-4": 3,
+      "col-md-6": 3,
+      "col-md-9": 1,
+      "contact-list": 1,
+      "container": 9,
+      "content": 1,
+      "custom-navbar-toggler": 1,
+      "d-flex": 1,
+      "d-lg-block": 2,
+      "d-lg-flex": 1,
+      "d-md-block": 3,
+      "d-md-none": 1,
+      "d-none": 5,
+      "dropdown": 1,
+      "dropdown-item": 2,
+      "dropdown-menu": 1,
+      "dropdown-toggle": 1,
+      "fade": 1,
+      "footer-bottom": 1,
+      "footer-heading-title": 6,
+      "footer-info": 1,
+      "footer-items-wrapper": 7,
+      "footer-list": 7,
+      "form-check": 1,
+      "form-group": 1,
+      "has-megamenu": 1,
+      "icon": 34,
+      "icon-md": 2,
+      "icon-primary": 5,
+      "icon-sm": 23,
+      "icon-white": 18,
+      "it-brand-tagline": 1,
+      "it-brand-text": 3,
+      "it-brand-title": 2,
+      "it-brand-wrapper": 2,
+      "it-footer": 1,
+      "it-footer-main": 1,
+      "it-header-center-content-wrapper": 1,
+      "it-header-center-wrapper": 1,
+      "it-header-navbar-wrapper": 1,
+      "it-header-slim-right-zone": 1,
+      "it-header-slim-wrapper": 1,
+      "it-header-slim-wrapper-content": 1,
+      "it-header-wrapper": 1,
+      "it-nav-wrapper": 1,
+      "it-right-zone": 1,
+      "it-search-wrapper": 1,
+      "it-socials": 2,
+      "justify-content-center": 3,
+      "link-list": 1,
+      "link-list-wrapper": 1,
+      "list-inline": 1,
+      "list-inline-item": 6,
+      "list-item": 6,
+      "logo-hamburger": 1,
+      "logo-wrapper": 1,
+      "mb-0": 1,
+      "mb-3": 1,
+      "mb-4": 1,
+      "mb-lg-4": 1,
+      "mb-lg-40": 1,
+      "menu-wrapper": 1,
+      "mobile-full": 1,
+      "modal": 1,
+      "modal-body": 1,
+      "modal-content": 1,
+      "modal-dialog": 1,
+      "modal-lg": 1,
+      "modal-title": 1,
+      "mt-4": 1,
+      "mt-md-4": 2,
+      "mt-md-40": 1,
+      "nav-item": 9,
+      "nav-link": 9,
+      "navbar": 1,
+      "navbar-brand": 1,
+      "navbar-collapsable": 1,
+      "navbar-expand-lg": 1,
+      "navbar-nav": 2,
+      "navbar-secondary": 1,
+      "no_toc": 1,
+      "offset-lg-3": 1,
+      "other-link-title": 1,
+      "overlay": 1,
+      "p-0": 2,
+      "p-1": 6,
+      "p-contacts": 1,
+      "page-content": 1,
+      "pb-40": 1,
+      "pb-lg-80": 1,
+      "perfect-scrollbar": 1,
+      "ps-5": 1,
+      "pt-1": 1,
+      "rounded-icon": 2,
+      "row": 15,
+      "search-link": 3,
+      "search-modal": 1,
+      "searches-list": 1,
+      "searches-list-wrapper": 1,
+      "segnalazione-privacy-page": 1,
+      "separator": 2,
+      "shadow-contacts": 1,
+      "skiplink": 1,
+      "social": 1,
+      "steppers": 1,
+      "steppers-header": 1,
+      "steppers-index": 1,
+      "t-primary": 1,
+      "text-paragraph": 2,
+      "text-start": 1,
+      "text-white": 6,
+      "title-medium-2-semi-bold": 1,
+      "title-small-semi-bold": 1,
+      "title-xxxlarge": 1,
+      "ue-logo": 1,
+      "variable-gutters": 2,
+      "visually-hidden": 23,
+      "visually-hidden-focusable": 2,
+      "w-100": 1
+    }
+  },
+  "missing_ids": [],
+  "extra_ids": [],
+  "element_results": [
+    {
+      "status": "identical",
+      "ref_path": "body/div[1]",
+      "local_path": "body/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[1]/a[1]",
+      "local_path": "body/div[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[1]/a[2]",
+      "local_path": "body/div[1]/a[2]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]",
+      "local_path": "body/header[1]",
+      "ref_tag": "header",
+      "local_tag": "header",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]",
+      "local_path": "body/header[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+      "ref_tag": "button",
+      "local_tag": "button",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[2]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[2]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]",
+      "ref_tag": "ul",
+      "local_tag": "ul",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/svg[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[2]",
+      "local_path": "body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[2]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]",
+      "local_path": "body/header[1]/div[2]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]/image[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]/image[1]",
+      "ref_tag": "image",
+      "local_tag": "image",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]/div[2]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]/div[2]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]",
+      "ref_tag": "ul",
+      "local_tag": "ul",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]",
+      "ref_tag": "button",
+      "local_tag": "button",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]",
+      "local_path": "body/header[1]/div[2]/div[2]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "id",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]",
+      "ref_tag": "button",
+      "local_tag": "button",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "id",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]",
+      "ref_tag": "button",
+      "local_tag": "button",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/div[1]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]",
+      "ref_tag": "nav",
+      "local_tag": "nav",
+      "identical_parts": [
+        "tag",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]",
+      "ref_tag": "ul",
+      "local_tag": "ul",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[1]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[1]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[1]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[1]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "classes `active nav-link` -> `nav-link`",
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]",
+      "ref_tag": "nav",
+      "local_tag": "nav",
+      "identical_parts": [
+        "tag",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]",
+      "ref_tag": "ul",
+      "local_tag": "ul",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[1]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[1]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[2]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[2]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[2]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[2]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[3]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[3]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[3]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[3]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]/span[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]/span[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]/span[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[2]/ul[1]/li[4]/a[1]/span[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]",
+      "ref_tag": "ul",
+      "local_tag": "ul",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[3]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[4]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[5]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1]/use[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/span[1]",
+      "local_path": "body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/main[1]",
+      "local_path": "body/main[1]",
+      "ref_tag": "main",
+      "local_tag": "main",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "id `none` -> `main-container`",
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "extra",
+      "ref_path": null,
+      "local_path": "body/main[1]/div[1]",
+      "ref_tag": null,
+      "local_tag": "div",
+      "identical_parts": [],
+      "differences": [
+        "extra in local document"
+      ]
+    },
+    {
+      "status": "extra",
+      "ref_path": null,
+      "local_path": "body/main[1]/div[1]/div[1]",
+      "ref_tag": null,
+      "local_tag": "div",
+      "identical_parts": [],
+      "differences": [
+        "extra in local document"
+      ]
+    },
+    {
+      "status": "extra",
+      "ref_path": null,
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]",
+      "ref_tag": null,
+      "local_tag": "div",
+      "identical_parts": [],
+      "differences": [
+        "extra in local document"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "id",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[1]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]",
+      "ref_tag": "nav",
+      "local_tag": "nav",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]",
+      "ref_tag": "ol",
+      "local_tag": "ol",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/a[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/span[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]/a[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]/span[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[3]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[3]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[2]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[2]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[2]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[2]/div[1]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[2]/div[1]/div[1]/h1[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/h1[1]",
+      "ref_tag": "h1",
+      "local_tag": "h1",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[2]/div[1]/div[2]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[2]/div[1]/div[2]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[2]/div[1]/div[2]/div[1]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]",
+      "ref_tag": "ul",
+      "local_tag": "ul",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/span[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[3]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[3]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[2]/div[1]/div[2]/div[1]/div[1]/span[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[3]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[3]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[3]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[3]/div[1]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/main[1]/div[3]/div[1]/div[1]/p[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/p[1]",
+      "ref_tag": "p",
+      "local_tag": "p",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": [
+        "text `Il Comune di Firenze gestisce i dati personali forniti e liberamente comunicati sulla base dell’articolo 13 del Regolamento (UE) 2016/679 General data protection regulation (Gdpr) e degli articoli 13 e successive modifiche e integrazione del decreto legislativo (di seguito d.lgs) 267/2000 (Testo unico enti locali).` -> `Il Comune di Firenze gestisce i dati personali forniti e liberamente comunicati sulla base dell'articolo 13 del Regolamento (UE) 2016/679 General data protection regulation (Gdpr) e degli articoli 13 e successive modifiche e integrazione del decreto legislativo (di seguito d.lgs) 267/2000 (Testo unico enti locali).`"
+      ]
+    },
+    {
+      "status": "different",
+      "ref_path": "body/main[1]/div[3]/div[1]/div[1]/p[2]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/p[2]",
+      "ref_tag": "p",
+      "local_tag": "p",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": [
+        "text `Per i dettagli sul trattamento dei dati personali consulta l’` -> `Per i dettagli sul trattamento dei dati personali consulta l'`"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[3]/div[1]/div[1]/p[2]/a[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/p[2]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[3]/div[1]/div[1]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/input[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/input[1]",
+      "ref_tag": "input",
+      "local_tag": "input",
+      "identical_parts": [
+        "tag",
+        "id",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/label[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/label[1]",
+      "ref_tag": "label",
+      "local_tag": "label",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": [
+        "text `Ho letto e compreso l’informativa sulla privacy` -> `Ho letto e compreso l'informativa sulla privacy`"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[3]/div[1]/div[1]/button[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/button[1]",
+      "ref_tag": "button",
+      "local_tag": "button",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[3]/div[1]/div[1]/button[1]/span[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/button[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1]",
+      "ref_tag": "h2",
+      "local_tag": "h2",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]",
+      "ref_tag": "ul",
+      "local_tag": "ul",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/span[1]",
+      "local_path": "body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]",
+      "local_path": "body/div[2]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "id",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]",
+      "local_path": "body/div[2]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]",
+      "local_path": "body/div[2]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]",
+      "ref_tag": "form",
+      "local_tag": "form",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[1]",
+      "ref_tag": "button",
+      "local_tag": "button",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/h2[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/h2[1]",
+      "ref_tag": "h2",
+      "local_tag": "h2",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[2]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[2]",
+      "ref_tag": "button",
+      "local_tag": "button",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[2]/svg[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[2]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[2]/svg[1]/use[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[2]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/label[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/label[1]",
+      "ref_tag": "label",
+      "local_tag": "label",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/input[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/input[1]",
+      "ref_tag": "input",
+      "local_tag": "input",
+      "identical_parts": [
+        "tag",
+        "id",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/span[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/span[1]/svg[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/span[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/span[1]/svg[1]/use[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/span[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/button[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/button[1]",
+      "ref_tag": "button",
+      "local_tag": "button",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/button[1]/span[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/button[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]",
+      "ref_tag": "ul",
+      "local_tag": "ul",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[3]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[3]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[4]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[4]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[4]/a[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[4]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[5]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[5]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[5]/a[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[5]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[6]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[6]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[6]/a[1]",
+      "local_path": "body/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[6]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]",
+      "local_path": "body/footer[1]",
+      "ref_tag": "footer",
+      "local_tag": "footer",
+      "identical_parts": [
+        "tag",
+        "id",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]",
+      "local_path": "body/footer[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/img[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/img[1]",
+      "ref_tag": "img",
+      "local_tag": "img",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]/use[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]/h2[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]/h2[1]",
+      "ref_tag": "h2",
+      "local_tag": "h2",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/h4[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/h4[1]",
+      "ref_tag": "h4",
+      "local_tag": "h4",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]",
+      "ref_tag": "ul",
+      "local_tag": "ul",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/h4[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/h4[1]",
+      "ref_tag": "h4",
+      "local_tag": "h4",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]",
+      "ref_tag": "ul",
+      "local_tag": "ul",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[4]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[4]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[4]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[4]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[5]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[5]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[5]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[5]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[6]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[6]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[6]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[6]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[7]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[7]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[7]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[7]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[8]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[8]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[8]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[8]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]",
+      "ref_tag": "ul",
+      "local_tag": "ul",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[1]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[1]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[2]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[2]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[2]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[2]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[3]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[3]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[3]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[3]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[4]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[4]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[4]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[4]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[5]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[5]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[5]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[5]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[6]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[6]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[6]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[6]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[7]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[7]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[7]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/ul[1]/li[7]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/h4[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/h4[1]",
+      "ref_tag": "h4",
+      "local_tag": "h4",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]",
+      "ref_tag": "ul",
+      "local_tag": "ul",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[1]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[1]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[2]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[2]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[2]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[2]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[3]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[3]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[3]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/li[3]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/h4[2]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/h4[2]",
+      "ref_tag": "h4",
+      "local_tag": "h4",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]",
+      "ref_tag": "ul",
+      "local_tag": "ul",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]/li[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]/li[1]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]/li[1]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]/li[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]/li[2]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]/li[2]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]/li[2]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[3]/ul[2]/li[2]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/h4[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/h4[1]",
+      "ref_tag": "h4",
+      "local_tag": "h4",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]",
+      "ref_tag": "p",
+      "local_tag": "p",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[1]",
+      "ref_tag": "br",
+      "local_tag": "br",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[2]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[2]",
+      "ref_tag": "br",
+      "local_tag": "br",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[3]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[3]",
+      "ref_tag": "br",
+      "local_tag": "br",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[4]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[4]",
+      "ref_tag": "br",
+      "local_tag": "br",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[5]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[5]",
+      "ref_tag": "br",
+      "local_tag": "br",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[6]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[6]",
+      "ref_tag": "br",
+      "local_tag": "br",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[7]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[7]",
+      "ref_tag": "br",
+      "local_tag": "br",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[8]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/p[1]/br[8]",
+      "ref_tag": "br",
+      "local_tag": "br",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]",
+      "ref_tag": "ul",
+      "local_tag": "ul",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[1]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[1]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[2]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[2]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[2]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[2]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[3]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[3]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[3]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[3]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[4]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[4]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[4]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[2]/ul[1]/li[4]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]",
+      "ref_tag": "ul",
+      "local_tag": "ul",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[1]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[1]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[2]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[2]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[2]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[2]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[3]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[3]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[3]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[3]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[4]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[4]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[4]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[3]/ul[1]/li[4]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/h4[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/h4[1]",
+      "ref_tag": "h4",
+      "local_tag": "h4",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]",
+      "ref_tag": "ul",
+      "local_tag": "ul",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]/a[1]/svg[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]/a[1]/svg[1]/use[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]/a[1]/span[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[1]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]/a[1]/svg[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]/a[1]/svg[1]/use[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]/a[1]/span[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[2]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]/a[1]/svg[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]/a[1]/svg[1]/use[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]/a[1]/span[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[3]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]/a[1]/svg[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]/a[1]/svg[1]/use[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]/a[1]/span[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[4]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]/a[1]/svg[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]/a[1]/svg[1]/use[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]/a[1]/span[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[5]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]",
+      "ref_tag": "li",
+      "local_tag": "li",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "attrs"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]/a[1]/svg[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]/a[1]/svg[1]",
+      "ref_tag": "svg",
+      "local_tag": "svg",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "different",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]/a[1]/svg[1]/use[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]/a[1]/svg[1]/use[1]",
+      "ref_tag": "use",
+      "local_tag": "use",
+      "identical_parts": [
+        "tag"
+      ],
+      "differences": [
+        "attributes differ"
+      ]
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]/a[1]/span[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[2]/div[5]/ul[1]/li[6]/a[1]/span[1]",
+      "ref_tag": "span",
+      "local_tag": "span",
+      "identical_parts": [
+        "tag",
+        "classes",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[3]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[3]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[3]/div[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[3]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[3]/div[1]/div[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[3]/div[1]/div[1]",
+      "ref_tag": "div",
+      "local_tag": "div",
+      "identical_parts": [
+        "tag",
+        "classes"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[1]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    },
+    {
+      "status": "identical",
+      "ref_path": "body/footer[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[2]",
+      "local_path": "body/footer[1]/div[1]/div[1]/div[3]/div[1]/div[1]/a[2]",
+      "ref_tag": "a",
+      "local_tag": "a",
+      "identical_parts": [
+        "tag",
+        "attrs",
+        "text"
+      ],
+      "differences": []
+    }
+  ]
+}

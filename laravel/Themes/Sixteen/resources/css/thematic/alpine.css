@@ -1,0 +1,4 @@
+/* Alpine: nasconde nodi finché non è inizializzato (ex inline in main.blade.php) */
+[x-cloak] {
+    display: none !important;
+}

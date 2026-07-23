@@ -1,0 +1,19 @@
+/* ========================================
+   TAILWIND CSS 4.x LAYERS
+======================================= */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DaisyUI — component library su Tailwind (v. https://daisyui.com/docs/ ) */
+@plugin "daisyui";
+
+/* ========================================
+   OVERRIDE TAILWIND DEFAULT FONTS
+   Force Titillium Web ONLY - no fallbacks
+======================================= */
+@theme {
+  --font-sans: "Titillium Web";
+  --font-serif: "Titillium Web";
+  --font-mono: "Titillium Web";
+}

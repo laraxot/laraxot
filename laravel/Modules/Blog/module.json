@@ -1,0 +1,18 @@
+{
+    "name": "Blog",
+    "alias": "blog",
+    "description": "Modulo per la gestione di blog, articoli, categorie e contenuti editoriali",
+    "keywords": ["blog", "articles", "categories", "content", "editorial"],
+    "priority": 10,
+    "active": 1,
+    "order": 10,
+    "providers": [
+        "Modules\\Blog\\Providers\\BlogServiceProvider",
+        "Modules\\Blog\\Providers\\Filament\\AdminPanelProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": ["Xot", "UI", "Lang", "Cms"],
+    "minimumCoreVersion": "10.0",
+    "phpVersion": "^8.1"
+}

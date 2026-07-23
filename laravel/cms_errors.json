@@ -1,0 +1,4 @@
+Note: Using configuration file /var/www/_bases/base_techplanner_fila4_mono/laravel/phpstan.neon.
+   0/287 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%[1G[2K 287/287 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+{"totals":{"errors":0,"file_errors":1},"files":{"/var/www/_bases/base_techplanner_fila4_mono/laravel/Modules/Cms/database/seeders/CmsMassSeeder.php":{"errors":1,"messages":[{"message":"Call to function method_exists() with 'Modules\\\\Cms\\\\Models\\\\Conf' and 'count' will always evaluate to true.","line":204,"ignorable":true,"identifier":"function.alreadyNarrowedType"}]}},"errors":[]}

@@ -1,0 +1,9 @@
+devi creare dei predicts con piu' di 3 risposte, le risposte si/no sono una minima parte, percio' creati seeder e popola database, 
+creati il predict  quale film fra questi 4 fara' piu' incassi al botteghino, ovvio che devi mettere anche le foto e fare una cosa bella 
+
+
+anche se virtuali son sempre crediti percio' studiati a fondo:
+ https://spatie.be/docs/laravel-event-sourcing/v7/introduction
+https://github.com/spatie/laravel-event-sourcing
+https://spatie.be/docs/laravel-event-sourcing/v7/getting-familiar-with-event-sourcing/introduction
+capisci il perche' la logica la filosofia la politica la religione e lo zen e li documenti dentro le cartelle docs dentro i moduli e dentro i temi, studia migliora e aggiorna le tue docs, le tue rules, le tue memories, le tue guidelines, le github issue e le gihub discussions, utilizza gh e mcp , installa e configurati gli mcp e le skills che vuoi , cercatele anche in internet 

@@ -1,0 +1,74 @@
+{
+    "id": "profile",
+    "title": {
+        "it": "Il Mio Profilo - Sottana Service",
+        "en": "My Profile - Sottana Service"
+    },
+    "slug": "profile",
+    "middleware": null,
+    "content": null,
+    "content_blocks": {
+        "it": [
+            {
+                "type": "hero",
+                "slug": "profile-hero",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.simple",
+                    "title": "Il Mio Profilo",
+                    "subtitle": "Gestisci le tue informazioni personali e le impostazioni dell'account.",
+                    "primary_cta_label": "Modifica Profilo",
+                    "primary_cta_url": "/it/profile/edit",
+                    "secondary_cta_label": "Dashboard",
+                    "secondary_cta_url": "/admin",
+                    "image": "/images/hero-bg.jpg"
+                }
+            },
+            {
+                "type": "content",
+                "slug": "profile-info",
+                "data": {
+                    "view": "pub_theme::components.blocks.content.simple",
+                    "title": "Area Personale",
+                    "content": "<p class='text-lg leading-relaxed text-gray-700'>Da questa pagina puoi accedere alla modifica del profilo, alla dashboard amministrativa e gestire le tue preferenze.</p>"
+                }
+            }
+        ],
+        "en": [
+            {
+                "type": "hero",
+                "slug": "profile-hero",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.simple",
+                    "title": "My Profile",
+                    "subtitle": "Manage your personal information and account settings.",
+                    "primary_cta_label": "Edit Profile",
+                    "primary_cta_url": "/en/profile/edit",
+                    "secondary_cta_label": "Dashboard",
+                    "secondary_cta_url": "/admin",
+                    "image": "/images/hero-bg.jpg"
+                }
+            },
+            {
+                "type": "content",
+                "slug": "profile-info",
+                "data": {
+                    "view": "pub_theme::components.blocks.content.simple",
+                    "title": "Personal Area",
+                    "content": "<p class='text-lg leading-relaxed text-gray-700'>From this page you can access profile editing, the admin dashboard and manage your preferences.</p>"
+                }
+            }
+        ]
+    },
+    "sidebar_blocks": {
+        "it": [],
+        "en": []
+    },
+    "footer_blocks": {
+        "it": [],
+        "en": []
+    },
+    "created_at": null,
+    "updated_at": null,
+    "created_by": null,
+    "updated_by": null
+}

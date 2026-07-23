@@ -1,0 +1,500 @@
+/*
+ * Final runtime overrides for mobile nav and segnalazioni elenco.
+ * Extracted from resources/css/app.css to keep app.css as a small import index.
+ */
+
+/* STORY-147: slim logged toggle — verde comune su fascia dark (parity logged-original-closed) */
+.it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full {
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 3rem !important;
+  background: var(--dc-green) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: #fff !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full:hover,
+.it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full:focus-visible {
+  background: #00684a !important;
+  color: #fff !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full .rounded-icon {
+  background: #fff !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full .rounded-icon img {
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: cover !important;
+}
+
+/* Iniziale verde su cerchio bianco (parity logged-original); vince su ticket-parity span{color:#fff} */
+.it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full .rounded-icon .user-initial-fallback {
+  color: #00402b !important;
+  font-size: 0.75rem !important;
+  line-height: 1 !important;
+}
+
+/* STORY-147: dropdown utente allineato a destra sotto toggle (parity logged-dropdown.png) */
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu {
+  left: auto !important;
+  right: 0 !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+}
+
+@media (max-width: 767.98px) {
+  .it-header-slim-wrapper .it-user-wrapper .dropdown-menu {
+    margin-top: -4px !important;
+  }
+}
+
+/* STORY-147: dropdown compatto — annulla p-4/space-y-2/border da style-apply .link-list-wrapper */
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu .row {
+  margin: 0 !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu .col-12 {
+  padding: 0 !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu .link-list-wrapper {
+  padding: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu .link-list-wrapper .link-list {
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 0 !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu .link-list-wrapper .link-list > li {
+  margin: 0 !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu .link-list-wrapper .link-list > * + * {
+  margin-top: 0 !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu .link-list-wrapper .list-item,
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu a.list-item,
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu button.list-item {
+  display: block !important;
+  width: 100% !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0.375rem 1rem !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  color: #17324d !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  text-align: left !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu form {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu .link-list-wrapper .list-item:hover,
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu a.list-item:hover {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.it-header-slim-wrapper .it-user-wrapper .dropdown-menu .link-list .divider {
+  display: block !important;
+  height: 1px !important;
+  margin: 0.25rem 0 !important;
+  padding: 0 !important;
+  background: #d9e4df !important;
+  border: 0 !important;
+}
+
+/* STORY-147: dropdown utente slim — .show deve essere visibile */
+.it-header-slim-wrapper .dropdown-menu.show {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* STORY-147 UX: mobile slim logged — solo avatar (vince su ticket-parity span inline-block) */
+@media (max-width: 991.98px) {
+  .it-header-slim-wrapper .it-user-wrapper .d-none.d-lg-block,
+  .it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full > span.d-none.d-lg-block,
+  .it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full > svg.d-none.d-lg-block,
+  .it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full > span:not(.rounded-icon) {
+    display: none !important;
+  }
+
+  .it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full {
+    width: 48px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
+    padding: 0.75rem !important;
+    padding-inline: 0.75rem !important;
+    justify-content: center !important;
+    gap: 0 !important;
+  }
+
+  .it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full .rounded-icon {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+  }
+}
+.navbar-collapsable[data-sixteen-mobile-nav-panel].is-open {
+  display: flex !important;
+  transform: translateX(0) !important;
+}
+
+/* ============================================================================
+   FINAL FIX: Segnalazioni Elenco Page Centering
+   Forces proper centering regardless of other CSS conflicts
+   ============================================================================ */
+body[data-page="ticket-list"] main > #main-container,
+body[data-page="ticket-list"] main #main-container {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+body[data-page="ticket-list"] main > #main-container .row,
+body[data-page="ticket-list"] main #main-container .row {
+  margin-left: -0.75rem !important;
+  margin-right: -0.75rem !important;
+}
+
+body[data-page="ticket-list"] main > #main-container .row > [class*="col-"],
+body[data-page="ticket-list"] main #main-container .row > [class*="col-"] {
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+}
+
+/* ============================================================================
+   DAISYUI RATING OVERRIDE
+   DaisyUI applica .rating :where(*) { background-color: var(--color-base-content) }
+   che colora di nero le label del nostro fieldset.rating con SVG.
+   Il nostro fieldset.rating usa label+SVG, NON il pattern DaisyUI input+mask.
+   ============================================================================ */
+
+/* 1. Reset DaisyUI :where(*) background su label del nostro fieldset */
+fieldset.rating :where(*),
+fieldset.rating label,
+fieldset.rating .rating-star {
+  background-color: transparent !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  opacity: 1 !important;
+  border-radius: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* 2. Layout fieldset */
+fieldset.rating {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  justify-content: flex-end !important;
+  gap: 0.25rem !important;
+  padding: 0 !important;
+  margin-top: 0.5rem !important;
+  border: none !important;
+}
+
+/* 3. Label cursor */
+fieldset.rating label,
+fieldset.rating .rating-star {
+  cursor: pointer !important;
+  padding: 0.25rem !important;
+}
+
+/* 4. SVG stelle: grigio di default */
+fieldset.rating label svg,
+fieldset.rating .rating-star svg {
+  fill: #d9e1e8 !important;
+  width: 2rem !important;
+  height: 2rem !important;
+  display: block !important;
+  transition: fill 0.15s ease !important;
+}
+
+/* 5. SVG stelle: giallo se attive/checked/hover */
+fieldset.rating input:checked ~ label svg,
+fieldset.rating label.active svg,
+fieldset.rating label:hover svg,
+fieldset.rating label:hover ~ label svg {
+  fill: #ffb400 !important;
+}
+
+/* Rating card compatto */
+.cmp-rating .card,
+.cmp-rating .card.shadow {
+  max-width: 640px !important;
+  border-radius: 4px !important;
+}
+
+/* card-first: testo a sinistra + stelle a destra (layout riga come reference) */
+.cmp-rating__card-first {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+  padding: 1rem 1.5rem !important;
+}
+
+.cmp-rating__card-first .card-header {
+  flex: 1 1 auto !important;
+  padding: 0 !important;
+  border: none !important;
+  background: none !important;
+}
+
+.cmp-rating__card-first .card-body {
+  flex: 0 0 auto !important;
+  padding: 0 !important;
+}
+
+/* Fieldset dentro card-body: no margine top aggiuntivo */
+.cmp-rating__card-first fieldset.rating {
+  margin-top: 0 !important;
+  justify-content: flex-start !important;
+}
+
+.bg-primary .cmp-rating {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* ============================================================================
+   CONTACTS CARD — padding compatto come reference
+   ============================================================================ */
+
+.p-contacts {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+.cmp-contacts .card-body {
+  padding: 1.5rem !important;
+}
+
+/* Header shell: .container centrato come reference Design Comuni (logo non flush al viewport) */
+@media (min-width: 992px) {
+  .it-header-wrapper .container {
+    width: 100% !important;
+    max-width: 1320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .it-header-wrapper .container > .row {
+    margin-left: -12px !important;
+    margin-right: -12px !important;
+  }
+
+  .it-header-wrapper .container > .row > .col-12 {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .it-header-center-content-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+/* Filtri mappa (/it, ticket-list): icona tipo affianco alla label */
+body[data-page="ticket-list"] .categoy-list .checkbox-body input[type="checkbox"] + label.filter-type-label,
+.categoy-list .checkbox-body input[type="checkbox"] + label.filter-type-label {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  gap: 0.5rem !important;
+  width: auto !important;
+  max-width: 100%;
+  padding-left: 0 !important;
+}
+
+.categoy-list .filter-type-icon {
+  flex: 0 0 20px;
+  width: 20px !important;
+  height: 20px !important;
+  max-width: 20px !important;
+  object-fit: contain;
+}
+
+.categoy-list .filter-type-label__text {
+  flex: 1 1 auto;
+  min-width: 0;
+  line-height: 1.35;
+}
+
+.categoy-list .filter-status-color {
+  display: inline-block;
+  flex: 0 0 14px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid #fff;
+  box-shadow: 0 0 0 1px rgba(31, 45, 61, 0.2);
+}
+
+.filter-status-fieldset {
+  margin-top: 0.75rem;
+  padding-top: 1rem !important;
+}
+
+/* Popup mappa: no tag <header> (evita .dc-homepage-parity header{min-height:222px}) */
+.leaflet-popup.popup-wrapper .popup__header,
+.leaflet-popup.popup-wrapper header.popup__header,
+.dc-homepage-parity .leaflet-popup.popup-wrapper .popup__header {
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  padding-top: 0.4rem !important;
+  padding-bottom: 0.1rem !important;
+}
+
+/* STORY-365: modal filtri mobile — sopra lo stacking context Leaflet (teleportato a body via initFilterModal) */
+#modal-categories { z-index: 10000 !important; }
+
+/* ============================================================================
+   STORY-476: Mobile header visual parity
+   ============================================================================ */
+
+/* Gap 4: "Nome della Regione" — d-lg-block nasconde su mobile.
+   bootstrap-italia.css riga 1160: @media(max-width:991.98px) .d-lg-block { display:none !important }
+   → specificity (0,1,0). Override: specificity (0,3,0) vince a parità di !important.
+   Overflow visible su tutta la catena: il clipping sinistro viene dal container. */
+@media (max-width: 991.98px) {
+  .it-header-slim-wrapper .it-header-slim-wrapper-content {
+    overflow: visible !important;
+  }
+
+  .it-header-slim-wrapper .it-header-slim-wrapper-content .navbar-brand {
+    display: block !important;
+    color: #fff !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    text-indent: 0 !important;
+    clip: auto !important;
+    clip-path: none !important;
+    white-space: nowrap !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    position: static !important;
+  }
+}
+
+/* "Cerca" text: bootstrap-italia.css riga 1176 ha .d-md-block{display:block} dentro max-width:767.98px
+   (bug: lo mostra anche su mobile <768px). Override con specificità maggiore. */
+@media (max-width: 991.98px) {
+  .it-header-center-wrapper .it-search-wrapper span.d-md-block {
+    display: none !important;
+  }
+}
+
+/* Logo SVG: <image xlink:href> senza attributi width/height → renderizza 0×0 su molti browser */
+.it-brand-wrapper .icon image,
+.it-brand-wrapper svg image {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Hamburger: mobile-header-fix.css usa grid con navbar-wrapper a z-index:1 sotto il center (z-index:20).
+   Fix: navbar-wrapper diventa absolute sul lato sinistro del nav-wrapper, trasparente,
+   il center-content-wrapper aggiunge padding-left per fare spazio. */
+@media (max-width: 991.98px) {
+  /* Container relativo per il posizionamento absolute del navbar-wrapper */
+  .it-nav-wrapper {
+    position: relative !important;
+    display: block !important;
+  }
+
+  /* Center wrapper: flusso normale (la barra verde prende tutta la larghezza) */
+  .it-header-center-wrapper {
+    position: static !important;
+    z-index: auto !important;
+    pointer-events: auto !important;
+  }
+
+  /* Spazio a sinistra per il hamburger */
+  .it-header-center-content-wrapper {
+    padding-left: 3.5rem !important;
+  }
+
+  /* Navbar wrapper: galleggia assoluto sul lato sinistro, sfondo trasparente, z sopra center */
+  .it-header-navbar-wrapper {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 3.5rem !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    background: transparent !important;
+    border-bottom: none !important;
+    z-index: 30 !important;
+    pointer-events: none !important;
+  }
+
+  .it-header-navbar-wrapper .navbar {
+    height: 100% !important;
+    min-height: 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    pointer-events: none !important;
+  }
+
+  /* Hamburger: cliccabile, centrato nel suo slot da 3.5rem */
+  .custom-navbar-toggler {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    z-index: auto !important;
+    width: 3rem !important;
+    height: 3rem !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    border: none !important;
+    color: #fff !important;
+  }
+
+  /* Menu mobile (navbar-collapsable): deve restare interattivo e sopra tutto */
+  .it-header-navbar-wrapper .navbar-collapsable {
+    pointer-events: auto !important;
+  }
+}
+

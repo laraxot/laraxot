@@ -1,0 +1,233 @@
+=== PHPStan Analysis for Activity ===
+Date: Thu Jul 16 10:18:54 AM CEST 2026
+Configuration: /var/www/_bases/base_techplanner_fila5/laravel/phpstan.neon
+============================================
+
+   0/238 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%
+ 238/238 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+Instructions for interpreting errors
+---------
+
+Each error has an associated identifier, like `argument.type`
+or `return.missing`.
+
+Each error identifier has documentation at URL https://phpstan.org/error-identifiers/<identifier>
+This page contains code example, explanation why is this an error
+and instruction how to fix it.
+Before fixing the error, fetch the documentation page for its identifier.
+
+The error usually indicates a real bug or incorrect type in the code. Fix the underlying cause, do not just make the error go away.
+Do not add `@phpstan-ignore` comments, `@phpstan-ignore-next-line` comments, or baseline entries to suppress the error.
+Do not use assert() or inline @var PHPDoc tag to override PHPStan's inferred type.
+Do not add type casts just to silence errors.
+Do not widen parameter or return types just to make the error go away.
+ ------ ----------------------------------------------------------------------- 
+  Line   app/Filament/Pages/Concerns/CanPaginate.php (in context of             
+         class@anonymous/tests/Unit/CanPaginateTest.php:44)                     
+ ------ ----------------------------------------------------------------------- 
+  84     Method                                                                 
+         class@anonymous/tests/Unit/CanPaginateTest.php:44::paginateQuery()     
+         has parameter $query with generic class                                
+         Illuminate\Database\Eloquent\Builder but does not specify its types:   
+         TModel                                                                 
+         🪪  missingType.generics                                               
+         ✏️  app/Filament/Pages/Concerns/CanPaginate.php                        
+  84     Method                                                                 
+         class@anonymous/tests/Unit/CanPaginateTest.php:44::paginateQuery()     
+         return type with generic interface                                     
+         Illuminate\Contracts\Pagination\CursorPaginator does not specify its   
+         types: TKey, TValue                                                    
+         🪪  missingType.generics                                               
+         ✏️  app/Filament/Pages/Concerns/CanPaginate.php                        
+  84     Method                                                                 
+         class@anonymous/tests/Unit/CanPaginateTest.php:44::paginateQuery()     
+         return type with generic interface                                     
+         Illuminate\Contracts\Pagination\Paginator does not specify its types:  
+         TKey, TValue                                                           
+         🪪  missingType.generics                                               
+         ✏️  app/Filament/Pages/Concerns/CanPaginate.php                        
+  119    Method                                                                 
+         class@anonymous/tests/Unit/CanPaginateTest.php:44::getRecordsPerPageS  
+         electOptions() return type has no value type specified in iterable     
+         type array.                                                            
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  app/Filament/Pages/Concerns/CanPaginate.php                        
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Fixtures/ListLogActivitiesActionTestResource.php                 
+ ------ ----------------------------------------------------------------------- 
+  11     Method                                                                 
+         Modules\Activity\Tests\Fixtures\ListLogActivitiesActionTestResource::  
+         getUrl() has parameter $parameters with no value type specified in     
+         iterable type array.                                                   
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Fixtures/ListLogActivitiesActionTestResource.php             
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Fixtures/ListLogActivitiesActionTestResourceSimple.php           
+ ------ ----------------------------------------------------------------------- 
+  11     Method                                                                 
+         Modules\Activity\Tests\Fixtures\ListLogActivitiesActionTestResourceSi  
+         mple::getUrl() has parameter $parameters with no value type specified  
+         in iterable type array.                                                
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Fixtures/ListLogActivitiesActionTestResourceSimple.php       
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/PestStubs.php                                                    
+ ------ ----------------------------------------------------------------------- 
+  32     Function livewire() has parameter $params with no value type           
+         specified in iterable type array.                                      
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/PestStubs.php                                                
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------- 
+  Line   tests/Security/AccessControlTest.php                             
+ ------ ----------------------------------------------------------------- 
+  23     Cannot call method create() on mixed.                            
+         🪪  method.nonObject                                             
+         ✏️  tests/Security/AccessControlTest.php                         
+  26     Parameter #1 $user of method                                     
+         Modules\Xot\Models\Policies\XotBasePolicy::viewAny() expects     
+         Modules\Xot\Contracts\UserContract, mixed given.                 
+         🪪  argument.type                                                
+         ✏️  tests/Security/AccessControlTest.php                         
+  30     Cannot call method create() on mixed.                            
+         🪪  method.nonObject                                             
+         ✏️  tests/Security/AccessControlTest.php                         
+  31     Cannot call method givePermissionTo() on mixed.                  
+         🪪  method.nonObject                                             
+         ✏️  tests/Security/AccessControlTest.php                         
+  34     Parameter #1 $user of method                                     
+         Modules\Xot\Models\Policies\XotBasePolicy::viewAny() expects     
+         Modules\Xot\Contracts\UserContract, mixed given.                 
+         🪪  argument.type                                                
+         ✏️  tests/Security/AccessControlTest.php                         
+  38     Cannot call method create() on mixed.                            
+         🪪  method.nonObject                                             
+         ✏️  tests/Security/AccessControlTest.php                         
+  41     Parameter #1 $user of method                                     
+         Modules\Activity\Models\Policies\ActivityPolicy::view() expects  
+         Modules\Xot\Contracts\UserContract, mixed given.                 
+         🪪  argument.type                                                
+         ✏️  tests/Security/AccessControlTest.php                         
+  45     Cannot call method create() on mixed.                            
+         🪪  method.nonObject                                             
+         ✏️  tests/Security/AccessControlTest.php                         
+  46     Cannot call method assignRole() on mixed.                        
+         🪪  method.nonObject                                             
+         ✏️  tests/Security/AccessControlTest.php                         
+  49     Parameter #1 $user of method                                     
+         Modules\Xot\Models\Policies\XotBasePolicy::viewAny() expects     
+         Modules\Xot\Contracts\UserContract, mixed given.                 
+         🪪  argument.type                                                
+         ✏️  tests/Security/AccessControlTest.php                         
+  50     Parameter #1 $user of method                                     
+         Modules\Activity\Models\Policies\ActivityPolicy::view() expects  
+         Modules\Xot\Contracts\UserContract, mixed given.                 
+         🪪  argument.type                                                
+         ✏️  tests/Security/AccessControlTest.php                         
+  54     Cannot call method create() on mixed.                            
+         🪪  method.nonObject                                             
+         ✏️  tests/Security/AccessControlTest.php                         
+  58     Cannot access property $description on mixed.                    
+         🪪  property.nonObject                                           
+         ✏️  tests/Security/AccessControlTest.php                         
+  59     Cannot access property $description on mixed.                    
+         🪪  property.nonObject                                           
+         ✏️  tests/Security/AccessControlTest.php                         
+  59     Cannot call method fresh() on mixed.                             
+         🪪  method.nonObject                                             
+         ✏️  tests/Security/AccessControlTest.php                         
+ ------ ----------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/ActivityLifecycleActionsTest.php                    
+ ------ ----------------------------------------------------------------------- 
+  18     Function                                                               
+         Modules\Activity\Tests\Unit\Actions\createActivityLifecycleUser() has  
+         parameter $attributes with no value type specified in iterable type    
+         array.                                                                 
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Unit/Actions/ActivityLifecycleActionsTest.php                
+  20     Parameter #1 $attributes of method                                     
+         Illuminate\Database\Eloquent\Factories\Factory<Modules\User\Models\Us  
+         er>::createOne() expects array<string, mixed>|(callable(array<string,  
+          mixed>): array<string, mixed>), array given.                          
+         🪪  argument.type                                                      
+         ✏️  tests/Unit/Actions/ActivityLifecycleActionsTest.php                
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/CanPaginateTest.php                                         
+ ------ ----------------------------------------------------------------------- 
+  63     Method                                                                 
+         class@anonymous/tests/Unit/CanPaginateTest.php:44::test_get_records_p  
+         er_page_select_options() return type has no value type specified in    
+         iterable type array.                                                   
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Unit/CanPaginateTest.php                                     
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/fixtures/ListLogActivitiesActionTestResource.php                 
+ ------ ----------------------------------------------------------------------- 
+  11     Method                                                                 
+         Modules\Activity\Tests\Fixtures\ListLogActivitiesActionTestResource::  
+         getUrl() has parameter $parameters with no value type specified in     
+         iterable type array.                                                   
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/fixtures/ListLogActivitiesActionTestResource.php             
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/fixtures/ListLogActivitiesActionTestResourceSimple.php           
+ ------ ----------------------------------------------------------------------- 
+  11     Method                                                                 
+         Modules\Activity\Tests\Fixtures\ListLogActivitiesActionTestResourceSi  
+         mple::getUrl() has parameter $parameters with no value type specified  
+         in iterable type array.                                                
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/fixtures/ListLogActivitiesActionTestResourceSimple.php       
+ ------ ----------------------------------------------------------------------- 
+
+ -- --------------------------------------------------------------------------- 
+     Error                                                                      
+ -- --------------------------------------------------------------------------- 
+     Ignored error pattern #PHPDoc tag @mixin contains unknown class # was not  
+     matched in reported errors.                                                
+ -- --------------------------------------------------------------------------- 
+
+ [ERROR] Found 28 errors                                                        
+
+
+=== END ANALYSIS ===

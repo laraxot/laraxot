@@ -1,0 +1,5 @@
+/bmad-create-story http://127.0.0.1:8000/it/tests/segnalazione-crea?step=form.riepilogo%3A%3Adata%3A%3Awizard-step
+deve avere un alto html parity e un altissimo visual parity con https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-03-riepilogo.html
+come vedi ci sono 2 tast salva richiesta e invia , salva richiesta alla fine salva con stato draft, e invia salva con stato pending 
+devi capire lo scopo, la visione, il perche' la politica, la religione la filosofia, lo zen , documentare tutto dentro le cartelle docs dentro i moduli e dentro i temi, fare ingest dei documenti nuovi, 
+ragionare e sistemare il nostro wizard in modo che sia conforme a quanto previsto dal design system, documentare tutto dentro le cartelle docs dentro i moduli e dentro i temi, fare ingest dei documenti nuovi, 

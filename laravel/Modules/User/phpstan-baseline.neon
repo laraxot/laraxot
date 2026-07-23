@@ -1,0 +1,853 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Variable \$level might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: resources/views/notifications/email.blade.php
+
+		-
+			message: '#^Method Livewire\\Volt\\Component@anonymous/resources/views/pages/auth/login\.blade\.php\:17\:\:authenticate\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: resources/views/pages/auth/login.blade.php
+
+		-
+			message: '#^Parameter \#1 \$guard of class Illuminate\\Auth\\Events\\Login constructor expects string, Illuminate\\Contracts\\Auth\\Guard given\.$#'
+			identifier: argument.type
+			count: 1
+			path: resources/views/pages/auth/login.blade.php
+
+		-
+			message: '#^Parameter \#2 \$remember of static method Illuminate\\Support\\Facades\\Auth\:\:attempt\(\) expects bool, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: resources/views/pages/auth/login.blade.php
+
+		-
+			message: '#^Parameter \#2 \$user of class Illuminate\\Auth\\Events\\Login constructor expects Illuminate\\Contracts\\Auth\\Authenticatable, Modules\\User\\Models\\User\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: resources/views/pages/auth/login.blade.php
+
+		-
+			message: '#^Parameter \#3 \$remember of class Illuminate\\Auth\\Events\\Login constructor expects bool, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: resources/views/pages/auth/login.blade.php
+
+		-
+			message: '#^Property Livewire\\Volt\\Component@anonymous/resources/views/pages/auth/login\.blade\.php\:17\:\:\$email has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: resources/views/pages/auth/login.blade.php
+
+		-
+			message: '#^Property Livewire\\Volt\\Component@anonymous/resources/views/pages/auth/login\.blade\.php\:17\:\:\$password has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: resources/views/pages/auth/login.blade.php
+
+		-
+			message: '#^Property Livewire\\Volt\\Component@anonymous/resources/views/pages/auth/login\.blade\.php\:17\:\:\$remember has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: resources/views/pages/auth/login.blade.php
+
+		-
+			message: '#^Cannot access property \$password on mixed\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: 'resources/views/pages/auth/password/[token].blade.php'
+
+		-
+			message: '#^Cannot call method save\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: 'resources/views/pages/auth/password/[token].blade.php'
+
+		-
+			message: '#^Cannot call method setRememberToken\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: 'resources/views/pages/auth/password/[token].blade.php'
+
+		-
+			message: '#^Parameter \#1 \$key of function trans expects string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: 'resources/views/pages/auth/password/[token].blade.php'
+
+		-
+			message: '#^Parameter \#1 \$user of class Illuminate\\Auth\\Events\\PasswordReset constructor expects Illuminate\\Contracts\\Auth\\Authenticatable, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: 'resources/views/pages/auth/password/[token].blade.php'
+
+		-
+			message: '#^Parameter \#1 \$user of method Illuminate\\Auth\\SessionGuard\:\:login\(\) expects Illuminate\\Contracts\\Auth\\Authenticatable, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: 'resources/views/pages/auth/password/[token].blade.php'
+
+		-
+			message: '#^Parameter \#1 \$value of static method Illuminate\\Support\\Facades\\Hash\:\:make\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: 'resources/views/pages/auth/password/[token].blade.php'
+
+		-
+			message: '#^Method Livewire\\Volt\\Component@anonymous/resources/views/pages/auth/password/confirm\.blade\.php\:13\:\:confirm\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: resources/views/pages/auth/password/confirm.blade.php
+
+		-
+			message: '#^Property Livewire\\Volt\\Component@anonymous/resources/views/pages/auth/password/confirm\.blade\.php\:13\:\:\$password has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: resources/views/pages/auth/password/confirm.blade.php
+
+		-
+			message: '#^Method Livewire\\Volt\\Component@anonymous/resources/views/pages/auth/password/reset\.blade\.php\:14\:\:sendResetPasswordLink\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: resources/views/pages/auth/password/reset.blade.php
+
+		-
+			message: '#^Property Livewire\\Volt\\Component@anonymous/resources/views/pages/auth/password/reset\.blade\.php\:14\:\:\$email has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: resources/views/pages/auth/password/reset.blade.php
+
+		-
+			message: '#^Property Livewire\\Volt\\Component@anonymous/resources/views/pages/auth/password/reset\.blade\.php\:14\:\:\$emailSentMessage has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: resources/views/pages/auth/password/reset.blade.php
+
+		-
+			message: '#^Cannot call method hasVerifiedEmail\(\) on Modules\\User\\Models\\User\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: resources/views/pages/auth/verify.blade.php
+
+		-
+			message: '#^Cannot call method sendEmailVerificationNotification\(\) on Modules\\User\\Models\\User\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: resources/views/pages/auth/verify.blade.php
+
+		-
+			message: '#^Method Livewire\\Volt\\Component@anonymous/resources/views/pages/auth/verify\.blade\.php\:16\:\:resend\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: resources/views/pages/auth/verify.blade.php
+
+		-
+			message: '#^Parameter \#1 \$user of class Illuminate\\Auth\\Events\\Verified constructor expects Illuminate\\Contracts\\Auth\\MustVerifyEmail, Modules\\User\\Models\\User\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: resources/views/pages/auth/verify.blade.php
+
+		-
+			message: '#^Method Livewire\\Volt\\Component@anonymous/resources/views/pages/learn/index\.blade\.php\:15\:\:mount\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: resources/views/pages/learn/index.blade.php
+
+		-
+			message: '#^Property Livewire\\Volt\\Component@anonymous/resources/views/pages/learn/index\.blade\.php\:15\:\:\$readme has no type specified\.$#'
+			identifier: missingType.property
+			count: 1
+			path: resources/views/pages/learn/index.blade.php
+
+		-
+			message: '#^Access to an undefined property Livewire\\Volt\\Component@anonymous/resources/views/pages/profile/edit\.blade\.php\:45\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: resources/views/pages/profile/edit.blade.php
+
+		-
+			message: '#^Cannot access offset ''email'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 4
+			path: resources/views/pages/profile/edit.blade.php
+
+		-
+			message: '#^Cannot access offset ''first_name'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 2
+			path: resources/views/pages/profile/edit.blade.php
+
+		-
+			message: '#^Cannot access offset ''last_name'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 2
+			path: resources/views/pages/profile/edit.blade.php
+
+		-
+			message: '#^Instanceof between Modules\\User\\Models\\User and Illuminate\\Contracts\\Auth\\MustVerifyEmail will always evaluate to true\.$#'
+			identifier: instanceof.alwaysTrue
+			count: 1
+			path: resources/views/pages/profile/edit.blade.php
+
+		-
+			message: '#^Parameter \#1 \$string of function trim expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 3
+			path: resources/views/pages/profile/edit.blade.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:assertAuthenticatedAs\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/Actions/LoginUserActionTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:assertAuthenticatedAs\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/Actions/Socialite/LoginUserActionTest.php
+
+		-
+			message: '#^Cannot call method assertStatus\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 4
+			path: tests/Feature/AuthComponentsTest.php
+
+		-
+			message: '#^Function Pest\\Laravel\\actingAs not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: tests/Feature/AuthComponentsTest.php
+
+		-
+			message: '#^Function Pest\\Laravel\\get not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: tests/Feature/AuthComponentsTest.php
+
+		-
+			message: '#^Used function Pest\\Laravel\\actingAs not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: tests/Feature/AuthComponentsTest.php
+
+		-
+			message: '#^Used function Pest\\Laravel\\get not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: tests/Feature/AuthComponentsTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$device\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/Authentication/ApiLogoutControllerTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$user\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/Authentication/ApiLogoutControllerTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:requireDevice\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/Authentication/ApiLogoutControllerTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:requireUser\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/Authentication/ApiLogoutControllerTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipUnlessUserTable\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: tests/Feature/Authentication/ApiLogoutControllerTest.php
+
+		-
+			message: '#^Cannot call method getKey\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: tests/Feature/Authentication/ApiLogoutControllerTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$user\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:requireFreshUser\(\)\.$#'
+			identifier: method.notFound
+			count: 7
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:requireUser\(\)\.$#'
+			identifier: method.notFound
+			count: 51
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot access property \$email on mixed\.$#'
+			identifier: property.nonObject
+			count: 4
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot access property \$id on mixed\.$#'
+			identifier: property.nonObject
+			count: 4
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot access property \$is_otp on mixed\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot access property \$password on mixed\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot access property \$password_expires_at on mixed\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot access property \$remember_token on mixed\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot call method assignRole\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 3
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot call method authentications\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot call method clients\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot call method forceFill\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot call method givePermissionTo\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 3
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot call method hasAllPermissions\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot call method hasAnyPermission\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot call method hasPermissionTo\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 6
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot call method hasRole\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 5
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot call method latestAuthentication\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot call method removeRole\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot call method revokePermissionTo\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot call method save\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot call method tokens\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot call method update\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 4
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Cannot call method validateForPassportPasswordGrant\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Parameter \#1 \$user of static method Illuminate\\Support\\Facades\\Auth\:\:login\(\) expects Illuminate\\Contracts\\Auth\\Authenticatable, mixed given\.$#'
+			identifier: argument.type
+			count: 4
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Parameter \#1 \$username of static method Modules\\User\\Models\\BaseUser\:\:findForPassport\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Parameter \#2 \$hashedValue of static method Illuminate\\Support\\Facades\\Hash\:\:check\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: tests/Feature/Authentication/UserAuthenticationTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipUnlessUserColumn\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/ChangeProfilePasswordTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipUnlessUsersTableReady\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/ChangeProfilePasswordTest.php
+
+		-
+			message: '#^Function Pest\\Laravel\\actingAs not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: tests/Feature/ChangeProfilePasswordTest.php
+
+		-
+			message: '#^Used function Pest\\Laravel\\actingAs not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: tests/Feature/ChangeProfilePasswordTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$action\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/Filament/Actions/ChangePasswordActionTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:setupFilamentAdminPanel\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/Filament/Actions/ChangePasswordActionTest.php
+
+		-
+			message: '#^Function Pest\\Laravel\\actingAs not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: tests/Feature/Filament/Clusters/AppearanceClusterTest.php
+
+		-
+			message: '#^Used function Pest\\Laravel\\actingAs not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: tests/Feature/Filament/Clusters/AppearanceClusterTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$createUserPage\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/Filament/Pages/CreateUserTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$listUsersPage\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/Filament/Pages/ListUsersTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$users\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/Filament/Pages/ListUsersTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$admin\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/Filament/UserResourceTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$user\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/Filament/UserResourceTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:actingAs\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/Filament/UserResourceTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:requireAdmin\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/Filament/UserResourceTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:setupFilamentAdminPanel\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/Filament/UserResourceTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipTest\(\)\.$#'
+			identifier: method.notFound
+			count: 6
+			path: tests/Feature/Filament/UserResourceTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:get\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/Filament/Widgets/Auth/RegisterWidgetTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:markTestSkipped\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/Filament/Widgets/Auth/RegisterWidgetTest.php
+
+		-
+			message: '#^Cannot call method assertSuccessful\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Feature/Filament/Widgets/Auth/RegisterWidgetTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$widget\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/Filament/Widgets/LoginWidgetTest.php
+
+		-
+			message: '#^Cannot call method assertRedirect\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Feature/Filament/Widgets/NotificationsCenterWidgetTest.php
+
+		-
+			message: '#^Function Pest\\Laravel\\get not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: tests/Feature/Filament/Widgets/NotificationsCenterWidgetTest.php
+
+		-
+			message: '#^Used function Pest\\Laravel\\get not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: tests/Feature/Filament/Widgets/NotificationsCenterWidgetTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$user\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/Filament/Widgets/UserOverviewTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$widget\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/Filament/Widgets/UserOverviewTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipTest\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/MigrateDbTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipUnlessDirectPermissionSupported\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: tests/Feature/Models/UserModelTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipUnlessUsersTableReady\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/Models/UserModelTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:post\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/Passport/ClientCredentials.php
+
+		-
+			message: '#^Cannot call method assertJsonPath\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Feature/Passport/ClientCredentials.php
+
+		-
+			message: '#^Cannot call method assertJsonStructure\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Feature/Passport/ClientCredentials.php
+
+		-
+			message: '#^Cannot call method assertOk\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Feature/Passport/ClientCredentials.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipTest\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/PasswordDataLabelsTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$tenant1\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/TenantScopeConsoleTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$tenant2\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/TenantScopeConsoleTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipUnlessUsersTableReady\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: tests/Feature/TenantScopeConsoleTest.php
+
+		-
+			message: '#^Function Pest\\Laravel\\actingAs not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: tests/Feature/TenantScopeConsoleTest.php
+
+		-
+			message: '#^Used function Pest\\Laravel\\actingAs not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: tests/Feature/TenantScopeConsoleTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$google2fa\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/TwoFactorServiceTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$user\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/TwoFactorServiceTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:createTestUser\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/TwoFactorServiceTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipUnlessUserColumn\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: tests/Feature/TwoFactorServiceTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipTest\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: tests/Feature/UserBusinessLogicTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$command\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/UserCommandIntegrationTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:fail\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/UserManagementBusinessLogicTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipTest\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: tests/Feature/UserManagementBusinessLogicTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipUnlessUsersTableReady\(\)\.$#'
+			identifier: method.notFound
+			count: 4
+			path: tests/Feature/UserModelBasicTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipUnlessUsersTableReady\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/UserModelSimpleTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\PendingCalls\\TestCall\:\:\$user\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/Feature/UserModelTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:fail\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/user-management-business-logic.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipTest\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: tests/Feature/user-management-business-logic.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipTest\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Unit/Datas/UserDatasAndEnumsCoverageTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipUnlessUsersTableReady\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Unit/HasTeamsTraitCurrentTeamTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipTest\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Unit/Models/OauthClientTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:assertDatabaseHasRow\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Unit/Models/TenantTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipTest\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: tests/Unit/Models/TenantTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipUnlessTenantColumn\(\)\.$#'
+			identifier: method.notFound
+			count: 4
+			path: tests/Unit/Models/TenantTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipUnlessUserTable\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Unit/Models/TenantTest.php
+
+		-
+			message: '#^Access to an undefined property Pest\\Mixins\\Expectation\<mixed\>\:\:\$not\.$#'
+			identifier: property.notFound
+			count: 2
+			path: tests/Unit/NoCommentModuleDependencyTest.php
+
+		-
+			message: '#^Cannot access property \$not on mixed\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: tests/Unit/NoCommentModuleDependencyTest.php
+
+		-
+			message: '#^Cannot call method toContain\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 4
+			path: tests/Unit/NoCommentModuleDependencyTest.php
+
+		-
+			message: '#^Function Pest\\Laravel\\actingAs not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: tests/Unit/QuickWins/UserQuickWinsCoverageTest.php
+
+		-
+			message: '#^Used function Pest\\Laravel\\actingAs not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: tests/Unit/QuickWins/UserQuickWinsCoverageTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:assertNotSame\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Unit/UserTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipTest\(\)\.$#'
+			identifier: method.notFound
+			count: 6
+			path: tests/Unit/UserTest.php
+
+		-
+			message: '#^Call to an undefined method Pest\\PendingCalls\\TestCall\:\:skipUnlessDirectPermissionSupported\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Unit/UserTest.php

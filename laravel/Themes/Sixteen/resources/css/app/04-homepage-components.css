@@ -1,0 +1,284 @@
+/*
+ * Homepage components, footer, rating and card parity overrides.
+ * Extracted from resources/css/app.css to keep app.css as a small import index.
+ */
+/* ---- Container / Grid ---- */
+.container {
+  padding: 0 12px !important;
+  margin: 0 auto !important;
+}
+
+.row {
+  margin: 0 -12px !important;
+}
+
+/* ---- Evidence Cards ---- */
+/* ---- Evidence Cards ---- */
+.evidence-section .section::before {
+  background: linear-gradient(90deg, rgba(0, 122, 82, 0.96), rgba(0, 102, 204, 0.92));
+}
+
+.evidence-section .card {
+  padding: 16px 24px !important;
+  margin: 16px 0 !important;
+}
+
+.bg-primary {
+  background: var(--dc-green) !important;
+  color: #fff;
+}
+
+.evidence-section .card {
+  padding: 16px 24px !important;
+  margin: 16px 0 !important;
+}
+
+.bg-primary {
+  background: var(--dc-green) !important;
+  color: #fff;
+}
+
+.btn-primary,
+.input-group-append .btn {
+  background: var(--dc-green) !important;
+  border-color: var(--dc-green) !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover,
+.input-group-append .btn:hover {
+  background: var(--dc-green-dark) !important;
+  border-color: var(--dc-green-dark) !important;
+}
+
+/* ---- Rating ---- */
+.cmp-rating {
+  color: var(--dc-ink) !important;
+}
+
+.cmp-rating .card {
+  color: var(--dc-ink) !important;
+  padding: 24px !important;
+}
+
+/* ---- Rating ---- */
+.cmp-rating {
+  color: var(--dc-ink) !important;
+}
+
+.cmp-rating .card {
+  color: var(--dc-ink) !important;
+  padding: 24px !important;
+}
+
+.rating .rating-star svg,
+.rating label.rating-star svg {
+  fill: #d9e1e8;
+}
+
+.rating .rating-star:hover svg,
+.rating label.rating-star:hover svg,
+.rating input:checked ~ label.rating-star svg,
+.rating label.rating-star:hover ~ label.rating-star svg {
+  fill: #ffb400;
+}
+
+/* Footer: dark navy matching reference */
+.it-footer,
+footer.it-footer {
+  background: #17324D !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  padding: 0 !important;
+}
+
+.it-footer-main {
+  background: #17324D !important;
+  padding: 0 !important;
+}
+
+.it-footer-secondary {
+  background: #0d1f2d !important;
+  border-top-color: rgba(255, 255, 255, 0.16);
+}
+
+.it-footer .it-brand-wrapper a,
+.it-footer .it-brand-text,
+.it-footer a,
+.it-footer p,
+.it-footer li,
+.it-footer span {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.it-footer .footer-heading-title {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+.it-footer .footer-list li a,
+.it-footer .footer-info {
+  color: rgba(255, 255, 255, 0.75) !important;
+  text-decoration: none;
+}
+
+.it-footer .footer-list li a:hover {
+  color: #fff !important;
+  text-decoration: underline;
+}
+
+.it-footer .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+/* Compact feedback + contacts to match reference height */
+.bg-primary .cmp-rating {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* Rating card: compact padding + layout matching reference */
+.cmp-rating .card-header {
+  padding: 1rem 1.5rem 0.5rem !important;
+  border-radius: 0 !important;
+}
+.cmp-rating .card-body {
+  padding: 0.5rem 1.5rem 1rem !important;
+}
+.cmp-rating .card,
+.cmp-rating .card.shadow {
+  border-radius: 4px !important;
+  max-width: 640px !important;
+}
+.cmp-rating .title-medium-2-semi-bold {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  text-align: left !important;
+}
+/* Stars: left-aligned (flex-end with flex-row-reverse = visually left), compact spacing */
+.cmp-rating .rating,
+fieldset.rating {
+  justify-content: flex-end !important;
+  margin-top: 0.5rem !important;
+  gap: 0.25rem !important;
+}
+
+.p-contacts {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+/* Useful links: compact link item padding to match reference */
+.useful-links-section .link-list .list-item,
+.useful-links-section .link-list li a {
+  padding-top: 0.625rem !important;
+  padding-bottom: 0.625rem !important;
+}
+
+.cmp-contacts .card-body {
+  padding: 1.5rem !important;
+}
+
+.search-modal {
+  background: rgba(23, 50, 77, 0.56);
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.search-modal.show {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.search-modal .modal-dialog {
+  border-radius: 0;
+}
+
+.shadow-contacts {
+  box-shadow: 0 -8px 18px rgba(23, 50, 77, 0.08);
+}
+
+/* ========================================
+   HERO SECTION - Design Comuni parity
+======================================== */
+#head-section .card {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#head-section .card-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--dc-green) !important;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+/* Read-more / all-news link: uppercase */
+.read-more {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--dc-green) !important;
+}
+
+.read-more svg { fill: var(--dc-green); }
+
+/* Government body cards: VAI ALLA PAGINA uppercase */
+.government-card .read-more,
+.card.border .read-more {
+  text-transform: uppercase;
+}
+
+/* Government body card: category label */
+.category-top .title-xsmall-semi-bold {
+  text-transform: uppercase;
+  color: var(--dc-muted) !important;
+}
+
+@media (max-width: 991px) {
+  .it-header-center-content-wrapper {
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .it-brand-wrapper a {
+    align-items: flex-start;
+  }
+
+  .navbar-collapsable {
+    background: var(--dc-green) !important;
+  }
+
+  .menu-wrapper {
+    padding: 1.25rem;
+  }
+}
+
+footer#footer,
+footer#footer .it-footer-main {
+  background: #17324D !important;
+}
+
+footer#footer .it-footer-secondary {
+  background: #0d1f2d !important;
+}
+
+footer#footer .container,
+footer#footer .row,
+footer#footer .footer-items-wrapper {
+  background: transparent !important;
+}
+
+footer#footer .it-brand-wrapper {
+  align-items: center;
+}
+
+footer#footer .icon,
+footer#footer svg {
+  color: #fff !important;
+  fill: currentColor;
+}

@@ -1,0 +1,352 @@
+/* AGID CSS Framework - Tema Sixteen */
+
+/* AGID Typography - Titillium Web */
+.font-titillium {
+    font-family: 'Titillium Web', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* AGID Color Palette */
+:root {
+    --agid-blue-primary: #0066CC;
+    --agid-blue-secondary: #004080;
+    --agid-blue-light: #E6F2FF;
+    --agid-gray-dark: #5C6F82;
+    --agid-gray-medium: #A5B3C1;
+    --agid-gray-light: #F0F6FC;
+    --agid-green: #00A040;
+    --agid-red: #D73527;
+    --agid-orange: #FF9900;
+}
+
+/* AGID Components */
+.agid-button-primary {
+    @apply bg-blue-600 hover:bg-blue-700 focus:ring-blue-600 text-white font-medium py-2 px-4 rounded-md transition-colors;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.agid-button-secondary {
+    @apply bg-white hover:bg-gray-50 focus:ring-blue-600 text-blue-600 border border-blue-600 font-medium py-2 px-4 rounded-md transition-colors;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.agid-input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-colors;
+    @apply focus:outline-none;
+}
+
+.agid-input:invalid {
+    @apply border-red-500 focus:ring-red-500 focus:border-red-500;
+}
+
+.agid-card {
+    @apply bg-white rounded-lg shadow-lg border border-gray-200;
+}
+
+.agid-card-header {
+    @apply bg-blue-50 px-6 py-4 border-b border-gray-200;
+}
+
+.agid-card-body {
+    @apply px-6 py-6;
+}
+
+.agid-card-footer {
+    @apply bg-gray-50 px-6 py-4 border-t border-gray-200;
+}
+
+/* AGID Focus Management */
+.agid-focus {
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2;
+}
+
+.agid-focus-white {
+    @apply focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+}
+
+/* AGID Accessibility Helpers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.focus-within\:not-sr-only:focus-within,
+.focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* AGID Skip Links */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--agid-blue-primary);
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 0 0 4px 4px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* AGID Form Styles */
+.agid-form-group {
+    @apply mb-4;
+}
+
+.agid-form-label {
+    @apply block text-sm font-medium text-gray-700 mb-2;
+}
+
+.agid-form-help {
+    @apply text-xs text-gray-500 mt-1;
+}
+
+.agid-form-error {
+    @apply text-xs text-red-600 mt-1;
+}
+
+/* AGID Alert Styles */
+.agid-alert {
+    @apply p-4 rounded-md border;
+}
+
+.agid-alert-success {
+    @apply bg-green-50 border-green-200 text-green-800;
+}
+
+.agid-alert-error {
+    @apply bg-red-50 border-red-200 text-red-800;
+}
+
+.agid-alert-warning {
+    @apply bg-orange-50 border-orange-200 text-orange-800;
+}
+
+.agid-alert-info {
+    @apply bg-blue-50 border-blue-200 text-blue-800;
+}
+
+/* AGID Header Styles */
+.agid-header-slim {
+    background-color: var(--agid-blue-primary);
+    color: white;
+    padding: 8px 0;
+}
+
+.agid-header-main {
+    background-color: white;
+    border-bottom: 4px solid var(--agid-blue-primary);
+    padding: 16px 0;
+}
+
+/* AGID Footer Styles */
+.agid-footer {
+    background-color: #1f2937;
+    color: white;
+    margin-top: auto;
+}
+
+/* AGID Breadcrumb Styles */
+.agid-breadcrumb {
+    background-color: #f3f4f6;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 12px 0;
+}
+
+/* AGID Responsive Breakpoints */
+@media (max-width: 768px) {
+    .agid-mobile-stack {
+        @apply flex-col space-y-4 space-x-0;
+    }
+    
+    .agid-mobile-hide {
+        @apply hidden;
+    }
+    
+    .agid-mobile-show {
+        @apply block;
+    }
+    
+    .agid-header-main {
+        padding: 12px 0;
+    }
+    
+    .agid-header-main .flex {
+        @apply flex-col space-y-4;
+    }
+}
+
+@media (min-width: 769px) {
+    .agid-desktop-hide {
+        @apply hidden;
+    }
+    
+    .agid-desktop-show {
+        @apply block;
+    }
+}
+
+/* AGID High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --agid-blue-primary: #0052A3;
+        --agid-blue-secondary: #003366;
+    }
+    
+    .agid-button-primary {
+        @apply border-2 border-white;
+    }
+    
+    .agid-input {
+        @apply border-2;
+    }
+}
+
+/* AGID Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* AGID Print Styles */
+@media print {
+    .agid-no-print {
+        display: none !important;
+    }
+    
+    .agid-header-slim,
+    .agid-footer {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+    
+    .agid-card {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+}
+
+/* AGID Focus Visible Polyfill */
+.js-focus-visible :focus:not(.focus-visible) {
+    outline: none;
+}
+
+/* AGID Custom Properties for Theme Customization */
+.agid-theme-custom {
+    --agid-primary-color: var(--agid-blue-primary);
+    --agid-secondary-color: var(--agid-gray-dark);
+    --agid-success-color: var(--agid-green);
+    --agid-danger-color: var(--agid-red);
+    --agid-warning-color: var(--agid-orange);
+}
+
+/* AGID Loading States */
+.agid-loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.agid-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--agid-blue-primary);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: agid-spin 1s linear infinite;
+}
+
+@keyframes agid-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* AGID Utility Classes */
+.agid-text-primary {
+    color: var(--agid-blue-primary);
+}
+
+.agid-text-secondary {
+    color: var(--agid-gray-dark);
+}
+
+.agid-bg-primary {
+    background-color: var(--agid-blue-primary);
+}
+
+.agid-bg-secondary {
+    background-color: var(--agid-gray-light);
+}
+
+.agid-border-primary {
+    border-color: var(--agid-blue-primary);
+}
+
+/* AGID Container Responsive */
+.agid-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+    .agid-container {
+        max-width: 640px;
+    }
+}
+
+@media (min-width: 768px) {
+    .agid-container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .agid-container {
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .agid-container {
+        max-width: 1280px;
+    }
+}

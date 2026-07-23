@@ -1,0 +1,33 @@
+/**
+ * STORY-056 — homepage /it mobile-tablet QA (overflow, tap target CTA).
+ */
+
+@media (max-width: 1024px) {
+    body,
+    main,
+    #main-container,
+    .container {
+        overflow-x: clip;
+        max-width: 100%;
+    }
+
+    .bg-grey-card .contact-list .list-item,
+    .homepage-map-preview .btn,
+    a[href*='segnalazione-crea'].btn,
+    a[href*='segnalazione-crea'].btn-primary {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .cmp-calendar,
+    .cmp-card,
+    .card-teaser {
+        max-width: 100%;
+    }
+
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

@@ -1,0 +1,31 @@
+/**
+ * Sixteen Theme - Design Comuni Italia - TEST
+ */
+
+/* ========================================
+   TAILWIND CSS 4.x BASE
+======================================== */
+@import "tailwindcss";
+
+/* ========================================
+   IMPORT STYLE-APPLY (Bootstrap Italia converted to Tailwind)
+======================================== */
+@import './style-apply.css';
+
+/* ========================================
+   IMPORT DESIGN COMUNI COMPONENT CLASSES
+   Bootstrap Italia classes → Tailwind CSS
+======================================== */
+@import './components/bootstrap-italia-classes.css';
+
+/* ========================================
+   FINAL HOMEPAGE PARITY OVERRIDES
+   Keep this last so it wins over duplicated legacy mappings.
+======================================== */
+@import './overrides/homepage-parity.css';
+
+/* ========================================
+   FILAMENT WIZARD → BOOTSTRAP ITALIA VISUAL PARITY
+   Forces Filament runtime classes to look like Design Comuni
+======================================== */
+@import './components/filament-wizard-parity.css';

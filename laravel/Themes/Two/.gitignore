@@ -1,0 +1,57 @@
+# Auto-generated forbidden paths — do not edit manually
+# Reason: root cleanup policy (see docs/wiki/rules/root-cleanup-policy.md)
+
+bashscripts
+_bmad-output
+.circleci
+.claude-audit
+.devcontainer
+_docs
+docs/archive
+docs/archived
+docs/legacy
+docs/workbench
+.kilocode
+.kiro
+.ralph
+scripts
+test-results
+tests/.claude-audit
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+node_modules
+dist
+dist-ssr
+*.local
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.git-blame-ignore-revs
+package-lock.json
+.php-cs-fixer.cache
+.git-rewrite/
+# Standard ignores (auto)
+node_modules/
+vendor/
+*.old
+*.old1
+*.bak
+*.bakcup
+*.backup.*
+*.*Zone.Identifier
+.cursor/
+.windsurf/
+tests/AuditCoverage

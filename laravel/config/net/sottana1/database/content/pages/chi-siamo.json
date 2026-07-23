@@ -1,0 +1,232 @@
+{
+    "id": "1",
+    "title": {
+        "it": "Chi Siamo",
+        "en": "About Us"
+    },
+    "slug": "chi-siamo",
+    "middleware": null,
+    "content": null,
+    "content_blocks": {
+        "it": [
+            {
+                "type": "hero",
+                "slug": "hero-section",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.simple",
+                    "title": "Chi Siamo",
+                    "subtitle": "Esperti in sicurezza e igiene per studi professionali sanitari",
+                    "primary_cta_label": "Contattaci",
+                    "primary_cta_url": "/it/contatti",
+                    "secondary_cta_label": "Scopri i Servizi",
+                    "secondary_cta_url": "/it/servizi",
+                    "image": "/themes/Two/images/hero-bg.jpg"
+                }
+            },
+            {
+                "type": "about-profile",
+                "slug": "marco-sottana-profile",
+                "data": {
+                    "view": "pub_theme::components.blocks.about.profile",
+                    "name": "Sottana Service",
+                    "title": "Consulente Specializzato in Sicurezza e Igiene",
+                    "description": "Con una specializzazione verticale nel settore dentistico e veterinario, mi dedico a garantire che gli studi professionali mantengano i più alti standard di sicurezza e igiene, assicurando la piena conformità normativa.\n\nLa mia missione è semplificare la complessità normativa, fornendo soluzioni pratiche e immediate che permettono ai professionisti di concentrarsi su ciò che sanno fare meglio: prendersi cura dei loro pazienti.",
+                    "image": "/themes/Two/images/dr-roberto-magni.jpg",
+                    "features": [
+                        {
+                            "title": "Certificazioni e Qualifiche",
+                            "description": "Certificazioni professionali e aggiornamento continuo sulle normative del settore",
+                            "icon": "heroicon-o-academic-cap"
+                        },
+                        {
+                            "title": "Specializzazione Verticale",
+                            "description": "Focus esclusivo su studi dentistici e cliniche veterinarie",
+                            "icon": "heroicono-bolt"
+                        },
+                        {
+                            "title": "Approccio Personalizzato",
+                            "description": "Ogni studio ha esigenze uniche, ogni soluzione è su misura",
+                            "icon": "heroicon-o-user"
+                        }
+                    ],
+                    "company_info": {
+                        "piva": "05532540266",
+                        "rea": "TV - 451911",
+                        "address": "Via Vanzo 86, 31021 Mogliano Veneto TV"
+                    }
+                }
+            },
+            {
+                "type": "features-grid",
+                "slug": "why-choose-us",
+                "data": {
+                    "view": "pub_theme::components.blocks.features.grid",
+                    "title": "Perché Scegliere Sottana Service",
+                    "subtitle": "I vantaggi concreti di affidarsi alla nostra esperienza e competenza",
+                    "features": [
+                        {
+                            "title": "Specializzazione Verticale",
+                            "description": "Focus esclusivo su studi dentistici e cliniche veterinarie. Conosciamo a fondo le sfide specifiche del tuo settore e offriamo soluzioni mirate.",
+                            "icon": "heroicono-bolt",
+                            "color": "blue"
+                        },
+                        {
+                            "title": "Esperienza Comprovata",
+                            "description": "Al servizio di professionisti sanitari in tutto il Veneto. Decine di studi soddisfatti testimoniano la qualità del nostro lavoro.",
+                            "icon": "heroicon-o-chart-bar",
+                            "color": "green"
+                        },
+                        {
+                            "title": "Conformità Garantita",
+                            "description": "Ti assicuriamo la piena conformità con tutte le normative vigenti. Zero preoccupazioni durante le ispezioni, massima tranquillità operativa.",
+                            "icon": "heroicon-o-shield-check",
+                            "color": "blue"
+                        },
+                        {
+                            "title": "Supporto Continuativo",
+                            "description": "Non ti lasciamo solo dopo la consulenza. Offriamo assistenza continua, aggiornamenti normativi e formazione ricorrente per il tuo team.",
+                            "icon": "heroicono-support",
+                            "color": "orange"
+                        },
+                        {
+                            "title": "Prezzi Competitivi",
+                            "description": "Tariffe trasparenti e competitive senza sorprese. Investire nella sicurezza non deve svuotare il portafoglio. Preventivi chiari e personalizzati.",
+                            "icon": "heroicono-currency-euro",
+                            "color": "green"
+                        },
+                        {
+                            "title": "Risultati Provati",
+                            "description": "I nostri clienti vedono miglioramenti tangibili: processi più efficienti, personale più preparato, pazienti più soddisfatti e zero non conformità.",
+                            "icon": "heroicono-trophy",
+                            "color": "blue"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cta",
+                "slug": "contact-cta",
+                "data": {
+                    "view": "pub_theme::components.blocks.cta.simple",
+                    "title": "Parliamo del Tuo Studio",
+                    "description": "Contattaci per una consulenza gratuita e scopri come possiamo aiutarti",
+                    "primary_cta_label": "Richiedi Consulenza Gratuita",
+                    "primary_cta_url": "/it/contatti",
+                    "background_color": "bg-brand-blue"
+                }
+            }
+        ],
+        "en": [
+            {
+                "type": "hero",
+                "slug": "hero-section",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.simple",
+                    "title": "About Us",
+                    "subtitle": "Safety and hygiene experts for professional healthcare practices",
+                    "primary_cta_label": "Contact Us",
+                    "primary_cta_url": "/en/contacts",
+                    "secondary_cta_label": "Explore Services",
+                    "secondary_cta_url": "/en/services",
+                    "image": "/themes/Two/images/hero-bg.jpg"
+                }
+            },
+            {
+                "type": "about-profile",
+                "slug": "marco-sottana-profile",
+                "data": {
+                    "view": "pub_theme::components.blocks.about.profile",
+                    "name": "Sottana Service",
+                    "title": "Specialized Safety and Hygiene Consultant",
+                    "description": "With vertical specialization in the dental and veterinary sector, I am dedicated to ensuring that professional practices maintain the highest standards of safety and hygiene, ensuring full regulatory compliance.\n\nMy mission is to simplify regulatory complexity, providing practical and immediate solutions that allow professionals to focus on what they do best: taking care of their patients.",
+                    "image": "/themes/Two/images/dr-roberto-magni.jpg",
+                    "features": [
+                        {
+                            "title": "Certifications and Qualifications",
+                            "description": "Professional certifications and continuous updating on sector regulations",
+                            "icon": "heroicon-o-academic-cap"
+                        },
+                        {
+                            "title": "Vertical Specialization",
+                            "description": "Exclusive focus on dental practices and veterinary clinics",
+                            "icon": "heroicono-bolt"
+                        },
+                        {
+                            "title": "Personalized Approach",
+                            "description": "Every practice has unique needs, every solution is tailor-made",
+                            "icon": "heroicon-o-user"
+                        }
+                    ],
+                    "company_info": {
+                        "piva": "05532540266",
+                        "rea": "TV - 451911",
+                        "address": "Via Vanzo 86, 31021 Mogliano Veneto TV"
+                    }
+                }
+            },
+            {
+                "type": "features-grid",
+                "slug": "why-choose-us",
+                "data": {
+                    "view": "pub_theme::components.blocks.features.grid",
+                    "title": "Why Choose Sottana Service",
+                    "subtitle": "Concrete advantages of relying on our experience and expertise",
+                    "features": [
+                        {
+                            "title": "Vertical Specialization",
+                            "description": "Exclusive focus on dental practices and veterinary clinics. We know the specific challenges of your sector inside out and offer targeted solutions.",
+                            "icon": "heroicon-o-bolt",
+                            "color": "blue"
+                        },
+                        {
+                            "title": "Proven Experience",
+                            "description": "Serving healthcare professionals throughout Veneto. Dozens of satisfied practices testify to the quality of our work.",
+                            "icon": "heroicon-o-chart-bar",
+                            "color": "green"
+                        },
+                        {
+                            "title": "Guaranteed Compliance",
+                            "description": "We ensure full compliance with all applicable regulations. Zero worries during inspections, maximum operational peace of mind.",
+                            "icon": "heroicon-o-shield-check",
+                            "color": "blue"
+                        },
+                        {
+                            "title": "Continuous Support",
+                            "description": "We don't leave you alone after the consultation. We offer ongoing assistance, regulatory updates and recurring training for your team.",
+                            "icon": "heroicon-o-support",
+                            "color": "orange"
+                        },
+                        {
+                            "title": "Competitive Pricing",
+                            "description": "Transparent and competitive rates with no surprises. Investing in safety shouldn't empty your wallet. Clear and personalized quotes.",
+                            "icon": "heroicono-currency-euro",
+                            "color": "green"
+                        },
+                        {
+                            "title": "Proven Results",
+                            "description": "Our clients see tangible improvements: more efficient processes, better prepared staff, more satisfied patients and zero non-compliance.",
+                            "icon": "heroicon-o-trophy",
+                            "color": "blue"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "cta",
+                "slug": "contact-cta",
+                "data": {
+                    "view": "pub_theme::components.blocks.cta.simple",
+                    "title": "Let's Talk About Your Practice",
+                    "description": "Contact us for a free consultation and discover how we can help you",
+                    "primary_cta_label": "Request Free Consultation",
+                    "primary_cta_url": "/en/contacts",
+                    "background_color": "bg-brand-blue"
+                }
+            }
+        ]
+    },
+    "created_at": "2025-07-08T09:02:57.000000Z",
+    "updated_at": "2026-02-06T22:30:00.000000Z",
+    "created_by": null,
+    "updated_by": "01985ae8-8039-71ea-88c7-54ebce6295b0"
+}

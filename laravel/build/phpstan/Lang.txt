@@ -1,0 +1,242 @@
+=== PHPStan Analysis for Lang ===
+Date: Thu Jul 16 10:19:09 AM CEST 2026
+Configuration: /var/www/_bases/base_techplanner_fila5/laravel/phpstan.neon
+============================================
+
+   0/181 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%
+ 181/181 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+Instructions for interpreting errors
+---------
+
+Each error has an associated identifier, like `argument.type`
+or `return.missing`.
+
+Each error identifier has documentation at URL https://phpstan.org/error-identifiers/<identifier>
+This page contains code example, explanation why is this an error
+and instruction how to fix it.
+Before fixing the error, fetch the documentation page for its identifier.
+
+The error usually indicates a real bug or incorrect type in the code. Fix the underlying cause, do not just make the error go away.
+Do not add `@phpstan-ignore` comments, `@phpstan-ignore-next-line` comments, or baseline entries to suppress the error.
+Do not use assert() or inline @var PHPDoc tag to override PHPStan's inferred type.
+Do not add type casts just to silence errors.
+Do not widen parameter or return types just to make the error go away.
+ ------ ------------------------------------------------------------------ 
+  Line   tests/AuditCoverage.bak/001-AuditBridgeTest001.php                
+ ------ ------------------------------------------------------------------ 
+  12     Call to an undefined static method                                
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest1::assertTrue().  
+         🪪  staticMethod.notFound                                         
+         ✏️  tests/AuditCoverage.bak/001-AuditBridgeTest001.php            
+ ------ ------------------------------------------------------------------ 
+
+ ------ ------------------------------------------------------------------ 
+  Line   tests/AuditCoverage.bak/002-AuditBridgeTest002.php                
+ ------ ------------------------------------------------------------------ 
+  12     Call to an undefined static method                                
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest2::assertTrue().  
+         🪪  staticMethod.notFound                                         
+         ✏️  tests/AuditCoverage.bak/002-AuditBridgeTest002.php            
+ ------ ------------------------------------------------------------------ 
+
+ ------ ------------------------------------------------------------------ 
+  Line   tests/AuditCoverage.bak/003-AuditBridgeTest003.php                
+ ------ ------------------------------------------------------------------ 
+  12     Call to an undefined static method                                
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest3::assertTrue().  
+         🪪  staticMethod.notFound                                         
+         ✏️  tests/AuditCoverage.bak/003-AuditBridgeTest003.php            
+ ------ ------------------------------------------------------------------ 
+
+ ------ ------------------------------------------------------------------ 
+  Line   tests/AuditCoverage.bak/004-AuditBridgeTest004.php                
+ ------ ------------------------------------------------------------------ 
+  12     Call to an undefined static method                                
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest4::assertTrue().  
+         🪪  staticMethod.notFound                                         
+         ✏️  tests/AuditCoverage.bak/004-AuditBridgeTest004.php            
+ ------ ------------------------------------------------------------------ 
+
+ ------ ------------------------------------------------------------------ 
+  Line   tests/AuditCoverage.bak/005-AuditBridgeTest005.php                
+ ------ ------------------------------------------------------------------ 
+  12     Call to an undefined static method                                
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest5::assertTrue().  
+         🪪  staticMethod.notFound                                         
+         ✏️  tests/AuditCoverage.bak/005-AuditBridgeTest005.php            
+ ------ ------------------------------------------------------------------ 
+
+ ------ ------------------------------------------------------------------ 
+  Line   tests/AuditCoverage.bak/006-AuditBridgeTest006.php                
+ ------ ------------------------------------------------------------------ 
+  12     Call to an undefined static method                                
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest6::assertTrue().  
+         🪪  staticMethod.notFound                                         
+         ✏️  tests/AuditCoverage.bak/006-AuditBridgeTest006.php            
+ ------ ------------------------------------------------------------------ 
+
+ ------ ------------------------------------------------------------------ 
+  Line   tests/AuditCoverage.bak/007-AuditBridgeTest007.php                
+ ------ ------------------------------------------------------------------ 
+  12     Call to an undefined static method                                
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest7::assertTrue().  
+         🪪  staticMethod.notFound                                         
+         ✏️  tests/AuditCoverage.bak/007-AuditBridgeTest007.php            
+ ------ ------------------------------------------------------------------ 
+
+ ------ ------------------------------------------------------------------ 
+  Line   tests/AuditCoverage.bak/008-AuditBridgeTest008.php                
+ ------ ------------------------------------------------------------------ 
+  12     Call to an undefined static method                                
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest8::assertTrue().  
+         🪪  staticMethod.notFound                                         
+         ✏️  tests/AuditCoverage.bak/008-AuditBridgeTest008.php            
+ ------ ------------------------------------------------------------------ 
+
+ ------ ------------------------------------------------------------------ 
+  Line   tests/AuditCoverage.bak/009-AuditBridgeTest009.php                
+ ------ ------------------------------------------------------------------ 
+  12     Call to an undefined static method                                
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest9::assertTrue().  
+         🪪  staticMethod.notFound                                         
+         ✏️  tests/AuditCoverage.bak/009-AuditBridgeTest009.php            
+ ------ ------------------------------------------------------------------ 
+
+ ------ ------------------------------------------------------------------- 
+  Line   tests/AuditCoverage.bak/010-AuditBridgeTest010.php                 
+ ------ ------------------------------------------------------------------- 
+  12     Call to an undefined static method                                 
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest10::assertTrue().  
+         🪪  staticMethod.notFound                                          
+         ✏️  tests/AuditCoverage.bak/010-AuditBridgeTest010.php             
+ ------ ------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------- 
+  Line   tests/AuditCoverage.bak/011-AuditBridgeTest011.php                 
+ ------ ------------------------------------------------------------------- 
+  12     Call to an undefined static method                                 
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest11::assertTrue().  
+         🪪  staticMethod.notFound                                          
+         ✏️  tests/AuditCoverage.bak/011-AuditBridgeTest011.php             
+ ------ ------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------- 
+  Line   tests/AuditCoverage.bak/012-AuditBridgeTest012.php                 
+ ------ ------------------------------------------------------------------- 
+  12     Call to an undefined static method                                 
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest12::assertTrue().  
+         🪪  staticMethod.notFound                                          
+         ✏️  tests/AuditCoverage.bak/012-AuditBridgeTest012.php             
+ ------ ------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------- 
+  Line   tests/AuditCoverage.bak/013-AuditBridgeTest013.php                 
+ ------ ------------------------------------------------------------------- 
+  12     Call to an undefined static method                                 
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest13::assertTrue().  
+         🪪  staticMethod.notFound                                          
+         ✏️  tests/AuditCoverage.bak/013-AuditBridgeTest013.php             
+ ------ ------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------- 
+  Line   tests/AuditCoverage.bak/014-AuditBridgeTest014.php                 
+ ------ ------------------------------------------------------------------- 
+  12     Call to an undefined static method                                 
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest14::assertTrue().  
+         🪪  staticMethod.notFound                                          
+         ✏️  tests/AuditCoverage.bak/014-AuditBridgeTest014.php             
+ ------ ------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------- 
+  Line   tests/AuditCoverage.bak/015-AuditBridgeTest015.php                 
+ ------ ------------------------------------------------------------------- 
+  12     Call to an undefined static method                                 
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest15::assertTrue().  
+         🪪  staticMethod.notFound                                          
+         ✏️  tests/AuditCoverage.bak/015-AuditBridgeTest015.php             
+ ------ ------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------- 
+  Line   tests/AuditCoverage.bak/016-AuditBridgeTest016.php                 
+ ------ ------------------------------------------------------------------- 
+  12     Call to an undefined static method                                 
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest16::assertTrue().  
+         🪪  staticMethod.notFound                                          
+         ✏️  tests/AuditCoverage.bak/016-AuditBridgeTest016.php             
+ ------ ------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------- 
+  Line   tests/AuditCoverage.bak/017-AuditBridgeTest017.php                 
+ ------ ------------------------------------------------------------------- 
+  12     Call to an undefined static method                                 
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest17::assertTrue().  
+         🪪  staticMethod.notFound                                          
+         ✏️  tests/AuditCoverage.bak/017-AuditBridgeTest017.php             
+ ------ ------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------- 
+  Line   tests/AuditCoverage.bak/018-AuditBridgeTest018.php                 
+ ------ ------------------------------------------------------------------- 
+  12     Call to an undefined static method                                 
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest18::assertTrue().  
+         🪪  staticMethod.notFound                                          
+         ✏️  tests/AuditCoverage.bak/018-AuditBridgeTest018.php             
+ ------ ------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------- 
+  Line   tests/AuditCoverage.bak/019-AuditBridgeTest019.php                 
+ ------ ------------------------------------------------------------------- 
+  12     Call to an undefined static method                                 
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest19::assertTrue().  
+         🪪  staticMethod.notFound                                          
+         ✏️  tests/AuditCoverage.bak/019-AuditBridgeTest019.php             
+ ------ ------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------- 
+  Line   tests/AuditCoverage.bak/020-AuditBridgeTest020.php                 
+ ------ ------------------------------------------------------------------- 
+  12     Call to an undefined static method                                 
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest20::assertTrue().  
+         🪪  staticMethod.notFound                                          
+         ✏️  tests/AuditCoverage.bak/020-AuditBridgeTest020.php             
+ ------ ------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------- 
+  Line   tests/AuditCoverage.bak/021-AuditBridgeTest021.php                 
+ ------ ------------------------------------------------------------------- 
+  12     Call to an undefined static method                                 
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest21::assertTrue().  
+         🪪  staticMethod.notFound                                          
+         ✏️  tests/AuditCoverage.bak/021-AuditBridgeTest021.php             
+ ------ ------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------- 
+  Line   tests/AuditCoverage.bak/022-AuditBridgeTest022.php                 
+ ------ ------------------------------------------------------------------- 
+  12     Call to an undefined static method                                 
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest22::assertTrue().  
+         🪪  staticMethod.notFound                                          
+         ✏️  tests/AuditCoverage.bak/022-AuditBridgeTest022.php             
+ ------ ------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------------------------- 
+  Line   tests/AuditCoverage.bak/023-AuditBridgeTest023.php                 
+ ------ ------------------------------------------------------------------- 
+  12     Call to an undefined static method                                 
+         Modules\Lang\Tests\AuditCoverage\AuditBridgeTest23::assertTrue().  
+         🪪  staticMethod.notFound                                          
+         ✏️  tests/AuditCoverage.bak/023-AuditBridgeTest023.php             
+ ------ ------------------------------------------------------------------- 
+
+ -- --------------------------------------------------------------------------- 
+     Error                                                                      
+ -- --------------------------------------------------------------------------- 
+     Ignored error pattern #PHPDoc tag @mixin contains unknown class # was not  
+     matched in reported errors.                                                
+ -- --------------------------------------------------------------------------- 
+
+ [ERROR] Found 24 errors                                                        
+
+
+=== END ANALYSIS ===

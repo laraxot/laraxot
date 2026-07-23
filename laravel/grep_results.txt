@@ -1,0 +1,169 @@
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Datas/PasswordData.php:            ->helperText($this->getHelperText());
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/OauthAuthCodeResource.php:                    ->tooltip(function (TextColumn $column): ?string {
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TeamUserResource.php:                        ->label('Team')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TeamUserResource.php:                        ->label('User')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TeamUserResource.php:                        ->label('Role')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TeamUserResource.php:                        ->helperText('Role of the user in the team'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantUserResource.php:                        ->label('Tenant')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantUserResource.php:                        ->label('User')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantUserResource.php:                        ->label('Role')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantUserResource.php:                        ->helperText('Role of the user in the tenant'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/OauthClientResource/Pages/EditOauthClient.php:                ->label(__('user::actions.oauth.revoke_client.label'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/OauthClientResource/Pages/ViewOauthClient.php:                ->label(__('user::actions.oauth.revoke_client.label'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                    ->label('ID')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                    ->label('Authenticatable Type')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                    ->label('User')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                    ->label('IP Address')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                    ->label('User Agent')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                    ->tooltip(fn (AuthenticationLog $record): ?string => $record->user_agent)
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                    ->label('Success')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                    ->label('Login Time')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                    ->label('Logout Time')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                    ->label('Cleared by User')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                            ->label('Login From'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                            ->label('Login Until'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                    ->label('View User')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                                ->label('Authenticatable Type')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                                ->label('Authenticatable ID')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                                ->label('IP Address')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                                ->placeholder('e.g., 192.168.1.1'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                                ->label('User Agent')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                                ->placeholder('User agent string'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                                ->label('Login Successful')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                                ->label('Login Time')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                                ->placeholder('YYYY-MM-DD HH:MM:SS'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                                ->label('Logout Time')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                                ->placeholder('YYYY-MM-DD HH:MM:SS'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/AuthenticationLogResource.php:                        ->label('Cleared by User')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/OauthPersonalAccessClientResource.php:                        ->label('Client')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/OauthPersonalAccessClientResource.php:                        ->helperText('Associated OAuth client'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/OauthPersonalAccessClientResource.php:                ->label('ID')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/OauthPersonalAccessClientResource.php:                ->label('Client')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/OauthPersonalAccessClientResource.php:                ->label('Created At')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/OauthPersonalAccessClientResource.php:                ->label('Updated At')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/OauthPersonalAccessClientResource.php:                ->label('Client')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/UserResource/RelationManagers/ClientsRelationManager.php:                ->label('Nome'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/UserResource/RelationManagers/ClientsRelationManager.php:                ->label('Client ID')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/UserResource/RelationManagers/ClientsRelationManager.php:                ->label('Client Secret')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/UserResource/RelationManagers/ClientsRelationManager.php:                ->tooltip('Il secret viene cifrato e non è più recuperabile: copia quello in chiaro al momento della creazione.'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/UserResource/RelationManagers/ClientsRelationManager.php:            ->label('Associa client esistente')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/UserResource/RelationManagers/ClientsRelationManager.php:                    ->label('Client')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/UserResource/RelationManagers/OauthTokensRelationManager.php:                ->tooltip(function (TextColumn $column): ?string {
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/UserResource/Pages/BaseListUsers.php:            'change_password' => ChangePasswordAction::make()->tooltip('Cambio Password')->iconButton(),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/UserResource/Pages/BaseListUsers.php:         * ->tooltip(__('filament-actions::delete.single.label'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/UserResource/Pages/ListUsers.php:            'change_password' => ChangePasswordAction::make()->tooltip('Cambio Password')->iconButton(),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/UserResource/Pages/ListUsers.php:                ->tooltip(__('filament-actions::delete.single.label'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/UserResource/Actions/SendOtpAction.php:        $this->tooltip(trans('user::otp.actions.send_otp'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantResource.php:                        ->placeholder('Nome del tenant')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantResource.php:                        ->helperText('Inserisci il nome del tenant'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantResource.php:                        ->helperText('Lo slug verrà generato automaticamente dal nome'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantResource.php:                        ->placeholder('dominio')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantResource.php:                        ->helperText('Il dominio del tenant'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantResource.php:                        ->placeholder('email@example.com')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantResource.php:                        ->helperText('Indirizzo email del tenant'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantResource.php:                        ->placeholder('Telefono')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantResource.php:                        ->helperText('Numero di telefono del tenant'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantResource.php:                        ->placeholder('Cellulare')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantResource.php:                        ->helperText('Numero di cellulare del tenant'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantResource.php:                    TextInput::make('address')->placeholder('Indirizzo')->helperText('Indirizzo del tenant'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantResource.php:                    ColorPicker::make('primary_color')->helperText('Colore primario del tenant'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/TenantResource.php:                    ColorPicker::make('secondary_color')->helperText('Colore secondario del tenant'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/DeviceResource.php:            'uuid' => TextInput::make('uuid')->label(__('user::device.fields.uuid.label'))->maxLength(255),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/DeviceResource.php:                ->label(__('user::device.fields.mobile_id.label'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/DeviceResource.php:                ->label(__('user::device.fields.languages.label'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/DeviceResource.php:                ->placeholder(__('user::device.fields.languages.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/DeviceResource.php:                ->helperText(__('user::device.fields.languages.help'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/DeviceResource.php:            'device' => TextInput::make('device')->label(__('user::device.fields.device.label'))->maxLength(255),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/DeviceResource.php:            'platform' => TextInput::make('platform')->label(__('user::device.fields.platform.label'))->maxLength(255),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/DeviceResource.php:            'browser' => TextInput::make('browser')->label(__('user::device.fields.browser.label'))->maxLength(255),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/DeviceResource.php:            'version' => TextInput::make('version')->label(__('user::device.fields.version.label'))->maxLength(255),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/DeviceResource.php:            'is_robot' => Toggle::make('is_robot')->label(__('user::device.fields.is_robot.label')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/DeviceResource.php:                ->label(__('user::device.fields.robot.label'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/DeviceResource.php:            'is_desktop' => Toggle::make('is_desktop')->label(__('user::device.fields.is_desktop.label')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/DeviceResource.php:            'is_mobile' => Toggle::make('is_mobile')->label(__('user::device.fields.is_mobile.label')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/DeviceResource.php:            'is_tablet' => Toggle::make('is_tablet')->label(__('user::device.fields.is_tablet.label')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/DeviceResource.php:            'is_phone' => Toggle::make('is_phone')->label(__('user::device.fields.is_phone.label')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/SocialProviderResource.php:                ->placeholder(__('fields.name.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/SocialProviderResource.php:                ->helperText(__('fields.name.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/SocialProviderResource.php:                // ->placeholder(static::trans('fields.scopes.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/SocialProviderResource.php:                ->helperText(__('fields.scopes.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/SocialProviderResource.php:                ->placeholder(__('fields.client_id.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/SocialProviderResource.php:                ->helperText(__('fields.client_id.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/SocialProviderResource.php:                ->placeholder(__('fields.client_secret.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/SocialProviderResource.php:                ->helperText(__('fields.client_secret.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/SocialProviderResource.php:                ->placeholder(__('fields.redirect.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/SocialProviderResource.php:                ->helperText(__('fields.redirect.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/SocialProviderResource.php:                // ->placeholder(static::trans('fields.parameters.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/SocialProviderResource.php:                ->helperText(__('fields.parameters.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/SocialProviderResource.php:            'stateless' => Toggle::make('stateless')->helperText(__('fields.stateless.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/SocialProviderResource.php:            'active' => Toggle::make('active')->helperText(__('fields.active.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/SocialProviderResource.php:            'socialite' => Toggle::make('socialite')->helperText(__('fields.socialite.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/SocialProviderResource.php:                ->placeholder(__('fields.svg.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/SocialProviderResource.php:                ->helperText(__('fields.svg.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/BaseProfileResource/Pages/ListProfiles.php:                ->placeholder(static::trans('filters.is_active.all'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Resources/OauthAccessTokenResource.php:                    ->tooltip(function (mixed $state): ?string {
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Traits/HasTwoFactorAuthentication.test:                ->placeholder(__('filament-jet::account/two-factor.fields.code'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Forms/Components/SingleRoleSelect.php:            ->placeholder('Select a role');
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Widgets/LogoutWidget.php.corrected:                ->label(__('Conferma Logout'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Widgets/LogoutWidget.php.corrected:                ->label(__('Annulla'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Widgets/Auth/LoginWidget.php: * VIETATO: ->label(), ->placeholder(), ->helperText(). Le traduzioni sono gestite
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Pages/Password.php:                    ->helperText(static::trans('fields.otp_expiration_minutes.help'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Pages/Password.php:                    ->helperText(static::trans('fields.otp_length.help'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Pages/Password.php:                TextInput::make('expires_in')->helperText(static::trans('fields.expires_in.help'))->numeric(), // The number of days before the password expires.
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Pages/Password.php:                TextInput::make('min')->helperText(static::trans('fields.min.help'))->numeric(), // = 6; // The minimum size of the password.
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Pages/Password.php:                Toggle::make('mixedCase')->helperText(static::trans('fields.mixedCase.help')), // = false; // If the password requires at least one uppercase and one lowercase letter.
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Pages/Password.php:                Toggle::make('letters')->helperText(static::trans('fields.letters.help')), // = false; // If the password requires at least one letter.
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Pages/Password.php:                Toggle::make('numbers')->helperText(static::trans('fields.numbers.help')), // = false; // If the password requires at least one number.
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Pages/Password.php:                Toggle::make('symbols')->helperText(static::trans('fields.symbols.help')), // = false; // If the password requires at least one symbol.
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Pages/Password.php:                Toggle::make('uncompromised')->helperText(static::trans('fields.uncompromised.help')), // = false; // If the password should not have been compromised in data leaks.
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Pages/Password.php:                    ->helperText(static::trans('fields.compromisedThreshold.help'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Socialite/Resources/SocialProviderResource.php:                ->placeholder(__('fields.name.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Socialite/Resources/SocialProviderResource.php:                ->helperText(__('fields.name.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Socialite/Resources/SocialProviderResource.php:                // ->placeholder(static::trans('fields.scopes.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Socialite/Resources/SocialProviderResource.php:                ->helperText(__('fields.scopes.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Socialite/Resources/SocialProviderResource.php:                ->placeholder(__('fields.client_id.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Socialite/Resources/SocialProviderResource.php:                ->helperText(__('fields.client_id.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Socialite/Resources/SocialProviderResource.php:                ->placeholder(__('fields.client_secret.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Socialite/Resources/SocialProviderResource.php:                ->helperText(__('fields.client_secret.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Socialite/Resources/SocialProviderResource.php:                ->placeholder(__('fields.redirect.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Socialite/Resources/SocialProviderResource.php:                ->helperText(__('fields.redirect.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Socialite/Resources/SocialProviderResource.php:                // ->placeholder(static::trans('fields.parameters.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Socialite/Resources/SocialProviderResource.php:                ->helperText(__('fields.parameters.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Socialite/Resources/SocialProviderResource.php:            'stateless' => Toggle::make('stateless')->helperText(__('fields.stateless.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Socialite/Resources/SocialProviderResource.php:            'active' => Toggle::make('active')->helperText(__('fields.active.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Socialite/Resources/SocialProviderResource.php:            'socialite' => Toggle::make('socialite')->helperText(__('fields.socialite.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Socialite/Resources/SocialProviderResource.php:                ->placeholder(__('fields.svg.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Socialite/Resources/SocialProviderResource.php:                ->helperText(__('fields.svg.helper_text')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Passport/Resources/OauthAuthCodeResource.php:                    ->label(static::trans('actions.revoke.label'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Passport/Resources/OauthClientResource/Pages/ListOauthClients.php:                ->label(static::trans('actions.create_personal.label'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Passport/Resources/OauthClientResource/Pages/ListOauthClients.php:                ->label(static::trans('actions.create_password.label'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Passport/Resources/OauthClientResource/Pages/ListOauthClients.php:                ->label(static::trans('actions.create_client_credentials.label'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Passport/Resources/OauthPersonalAccessClientResource.php:                        ->label('Client')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Passport/Resources/OauthPersonalAccessClientResource.php:                        ->helperText('Associated OAuth client'),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Passport/Resources/OauthPersonalAccessClientResource.php:                ->label('ID')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Passport/Resources/OauthPersonalAccessClientResource.php:                ->label('Client')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Passport/Resources/OauthPersonalAccessClientResource.php:                ->label('Created At')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Passport/Resources/OauthPersonalAccessClientResource.php:                ->label('Updated At')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Passport/Resources/OauthPersonalAccessClientResource.php:                ->label('Client')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Clusters/Passport/Resources/OauthAccessTokenResource.php:                    ->tooltip(function (mixed $state): ?string {
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Actions/Profile/ChangeProfilePasswordAction.php:            ->tooltip(__('user::user.actions.change_password'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Actions/Header/ChangePasswordHeaderAction.php:                     * ->placeholder(__('user::fields.new_password.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Actions/Header/ChangePasswordHeaderAction.php:                        ->placeholder(__('user::fields.confirm_password.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Filament/Actions/ChangePasswordAction.php:                        ->placeholder(__('user::fields.confirm_password.placeholder'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Http/Livewire/Auth/Login.php.no:                ->label(__('Email'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Http/Livewire/Auth/Login.php.no:                ->placeholder(__('Inserisci la tua email'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Http/Livewire/Auth/Login.php.no:                ->label(__('Password'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Http/Livewire/Auth/Login.php.no:                ->placeholder(__('Inserisci la tua password'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Http/Livewire/Auth/Login.php.no:                ->label(__('Ricordami'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Http/Livewire/Auth/Login.php.to_widget:                ->label(__('Email'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Http/Livewire/Auth/Login.php.to_widget:                ->placeholder(__('Inserisci la tua email'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Http/Livewire/Auth/Login.php.to_widget:                ->label(__('Password'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Http/Livewire/Auth/Login.php.to_widget:                ->placeholder(__('Inserisci la tua password'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Http/Livewire/Auth/Login.php.to_widget:                ->label(__('Ricordami')),
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Livewire/RegistrationForm.to_widget:                                ->label('Nome')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Livewire/RegistrationForm.to_widget:                                ->label('Cognome')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Livewire/RegistrationForm.to_widget:                                ->label('Email')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Livewire/RegistrationForm.to_widget:                                ->label('Password')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Livewire/RegistrationForm.to_widget:                                ->label('Conferma Password')
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Livewire/RegistrationForm.to_widget:                                ->label(new HtmlString('Accetto i <a href="#" class="text-primary-600 hover:underline">Termini di Servizio</a> e l\'<a href="#" class="text-primary-600 hover:underline">Informativa sulla Privacy</a>'))
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/User/app/Livewire/RegistrationForm.to_widget:                                ->label('Desidero ricevere aggiornamenti via email sul progetto '),

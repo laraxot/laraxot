@@ -1,0 +1,130 @@
+   ARGOMENTI PARITY PASS - 2026-04-03
+   Scoped only to the rendered argomenti page after structure alignment
+   ========================================================================== */
+main[data-page="argomenti"] > .container#main-container {
+  padding-top: 0.5rem;
+}
+
+main[data-page="argomenti"] > .container#main-container .cmp-breadcrumbs {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+main[data-page="argomenti"] > .container + .container {
+  border-top: 0 !important;
+}
+
+main[data-page="argomenti"] > .container .row-shadow {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+main[data-page="argomenti"] > .container .it-hero-wrapper {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+main[data-page="argomenti"] > .container .it-hero-text-wrapper {
+  padding-top: 0 !important;
+  padding-bottom: 3.75rem !important;
+}
+
+main[data-page="argomenti"] > .container .hero-text p {
+  max-width: 44rem;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: #17324d !important;
+}
+
+main[data-page="argomenti"] > .container.py-5,
+main[data-page="argomenti"] > .container#argomento {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+main[data-page="argomenti"] .it-grid-item-wrapper,
+main[data-page="argomenti"] .it-grid-item-wrapper .img-responsive,
+main[data-page="argomenti"] .it-grid-item-wrapper .img-wrapper {
+  border-radius: 0 !important;
+}
+
+main[data-page="argomenti"] .cmp-card-simple .card {
+  border-radius: 0 !important;
+}
+
+main[data-page="argomenti"] .cmp-card-simple .card-body {
+  min-height: 158px;
+  padding: 1rem 1.125rem 1rem !important;
+}
+
+main[data-page="argomenti"] .cmp-card-simple .description {
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+main[data-page="argomenti"] > .bg-primary {
+  padding-top: 2.75rem;
+  padding-bottom: 2.75rem;
+}
+
+main[data-page="argomenti"] > .bg-primary .cmp-rating {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+main[data-page="argomenti"] > .bg-primary .card-wrapper {
+  max-width: 580px;
+  margin: 0 auto;
+  border-radius: 0 !important;
+}
+
+main[data-page="argomenti"] .faq-rating-stars {
+  display: flex;
+  gap: 0.25rem;
+}
+
+main[data-page="argomenti"] .faq-rating-star {
+  border: 0;
+  background: transparent;
+  color: #bfc4c9;
+  font-size: 1.8rem;
+  line-height: 1;
+  padding: 0;
+}
+
+main[data-page="argomenti"] .faq-rating-star:hover,
+main[data-page="argomenti"] .faq-rating-star:focus-visible {
+  color: #ffb400;
+}
+
+main[data-page="argomenti"] > .bg-grey-card.shadow-contacts {
+  background: #eceff1 !important;
+  box-shadow: none !important;
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+main[data-page="argomenti"] > .bg-grey-card.shadow-contacts .card {
+  max-width: 540px;
+  margin: 0 auto;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+main[data-page="argomenti"] > .bg-grey-card.shadow-contacts .card-body {
+  padding: 1.5rem 1.75rem !important;
+}
+
+main[data-page="argomenti"] > .bg-grey-card.shadow-contacts .contact-list .list-item {
+  color: #0066cc !important;
+  border-bottom-color: #d9e1e8;
+}
+
+main[data-page="argomenti"] > .bg-grey-card.shadow-contacts .contact-list .list-item:hover {
+  color: #004b9a !important;
+}
+
+main[data-page="argomenti"] > .bg-grey-card.shadow-contacts .contact-list .icon {
+  color: #0066cc !important;
+  fill: currentColor;
+}

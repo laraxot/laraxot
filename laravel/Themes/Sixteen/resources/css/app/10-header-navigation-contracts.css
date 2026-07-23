@@ -1,0 +1,71 @@
+/*
+ * Header navigation component contract and fullscreen map root state.
+ * Extracted from resources/css/app.css to keep app.css as a small import index.
+ */
+
+/* Header navbar component contract: site-wide green, never page-scoped. */
+.it-header-navbar-wrapper,
+.it-header-navbar-wrapper .container,
+.it-header-navbar-wrapper .row,
+.it-header-navbar-wrapper .col-12,
+.it-header-navbar-wrapper .navbar,
+.it-header-navbar-wrapper .navbar-nav,
+.it-header-navbar-wrapper .navbar-secondary,
+.it-header-navbar-wrapper .nav-item {
+  background: #007a52 !important;
+  background-color: #007a52 !important;
+  color: #ffffff !important;
+}
+
+.it-header-navbar-wrapper .nav-link,
+.it-header-navbar-wrapper .nav-link span {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+.it-header-navbar-wrapper .nav-link:hover,
+.it-header-navbar-wrapper .nav-link:focus-visible {
+  background: #00684a !important;
+  background-color: #00684a !important;
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+
+/* D3: active state — white underline, no background fill (Design Comuni pattern) */
+.it-header-navbar-wrapper .nav-link.active {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border-bottom: 3px solid #ffffff !important;
+  text-decoration: none !important;
+}
+
+.it-header-navbar-wrapper .icon {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+html.geo-map-fullscreen-active,
+html.geo-map-fullscreen-active body {
+  overflow: hidden !important;
+}
+
+coordinate-picker-lit:fullscreen,
+coordinate-picker-lit:fullscreen .map-container,
+coordinate-picker-lit .map-container.is-fullscreen {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  z-index: 2147483647 !important;
+}
+
+coordinate-picker-lit:fullscreen .map-picker-leaflet-pane,
+coordinate-picker-lit .map-container.is-fullscreen .map-picker-leaflet-pane {
+  height: 100vh !important;
+}

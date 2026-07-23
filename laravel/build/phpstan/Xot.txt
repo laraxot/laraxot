@@ -1,0 +1,925 @@
+=== PHPStan Analysis for Xot ===
+Date: Thu Jul 16 10:15:16 AM CEST 2026
+Configuration: /var/www/_bases/base_techplanner_fila5/laravel/phpstan.neon
+============================================
+
+    0/1351 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%
+   20/1351 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   1%
+ 1351/1351 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+Instructions for interpreting errors
+---------
+
+Each error has an associated identifier, like `argument.type`
+or `return.missing`.
+
+Each error identifier has documentation at URL https://phpstan.org/error-identifiers/<identifier>
+This page contains code example, explanation why is this an error
+and instruction how to fix it.
+Before fixing the error, fetch the documentation page for its identifier.
+
+The error usually indicates a real bug or incorrect type in the code. Fix the underlying cause, do not just make the error go away.
+Do not add `@phpstan-ignore` comments, `@phpstan-ignore-next-line` comments, or baseline entries to suppress the error.
+Do not use assert() or inline @var PHPDoc tag to override PHPStan's inferred type.
+Do not add type casts just to silence errors.
+Do not widen parameter or return types just to make the error go away.
+ ------ ----------------------------------------------------------------------- 
+  Line   app/Filament/Widgets/XotBaseWidget.php                                 
+ ------ ----------------------------------------------------------------------- 
+  84     Parameter #1 $components of method                                     
+         Filament\Schemas\Schema::components() expects array<Illuminate\Contra  
+         cts\Support\Htmlable|string>|Closure|Illuminate\Contracts\Support\Htm  
+         lable|string, array<int, mixed> given.                                 
+         🪪  argument.type                                                      
+         ✏️  app/Filament/Widgets/XotBaseWidget.php                             
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Feature/Filament/XotBaseResourceCoverageTest.php                 
+ ------ ----------------------------------------------------------------------- 
+  5      Class TestCase not found.                                              
+         🪪  class.notFound                                                     
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols   
+         ✏️  tests/Feature/Filament/XotBaseResourceCoverageTest.php             
+  173    Method                                                                 
+         class@anonymous/tests/Feature/Filament/XotBaseResourceCoverageTest.ph  
+         p:167::execute() has parameter $attachments with no value type         
+         specified in iterable type array.                                      
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Feature/Filament/XotBaseResourceCoverageTest.php             
+  173    Method                                                                 
+         class@anonymous/tests/Feature/Filament/XotBaseResourceCoverageTest.ph  
+         p:167::execute() return type has no value type specified in iterable   
+         type array.                                                            
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Feature/Filament/XotBaseResourceCoverageTest.php             
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Feature/Filament/XotBaseResourceTest.php                        
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Feature/Filament/XotBaseResourceTest.php                    
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Feature/ModuleServiceIntegrationTest.php                        
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Feature/ModuleServiceIntegrationTest.php                    
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Support/PestFunctionBridge.php                                   
+ ------ ----------------------------------------------------------------------- 
+  956    Parameter $closure of function Modules\Blog\Tests\test() has invalid   
+         type Modules\Blog\Tests\TestCase.                                      
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  963    Parameter $closure of function Modules\Blog\Tests\it() has invalid     
+         type Modules\Blog\Tests\TestCase.                                      
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  970    Parameter $closure of function Modules\Blog\Tests\describe() has       
+         invalid type Modules\Blog\Tests\TestCase.                              
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  977    Parameter $closure of function Modules\Blog\Tests\beforeEach() has     
+         invalid type Modules\Blog\Tests\TestCase.                              
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  984    Parameter $closure of function Modules\Blog\Tests\afterEach() has      
+         invalid type Modules\Blog\Tests\TestCase.                              
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7271   Parameter $closure of function Modules\Predict\Tests\test() has        
+         invalid type Modules\Predict\Tests\TestCase.                           
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7278   Parameter $closure of function Modules\Predict\Tests\it() has invalid  
+         type Modules\Predict\Tests\TestCase.                                   
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7285   Parameter $closure of function Modules\Predict\Tests\describe() has    
+         invalid type Modules\Predict\Tests\TestCase.                           
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7292   Parameter $closure of function Modules\Predict\Tests\beforeEach() has  
+         invalid type Modules\Predict\Tests\TestCase.                           
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7299   Parameter $closure of function Modules\Predict\Tests\afterEach() has   
+         invalid type Modules\Predict\Tests\TestCase.                           
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7333   Parameter $closure of function Modules\Predict\Tests\Feature\test()    
+         has invalid type Modules\Predict\Tests\TestCase.                       
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7340   Parameter $closure of function Modules\Predict\Tests\Feature\it() has  
+         invalid type Modules\Predict\Tests\TestCase.                           
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7347   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\describe() has invalid type              
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7354   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\beforeEach() has invalid type            
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7361   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\afterEach() has invalid type             
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7395   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\Predict\test() has invalid type          
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7402   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\Predict\it() has invalid type            
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7409   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\Predict\describe() has invalid type      
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7416   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\Predict\beforeEach() has invalid type    
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7423   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\Predict\afterEach() has invalid type     
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7457   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\PredictiveMarkets\test() has invalid     
+         type Modules\Predict\Tests\TestCase.                                   
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7464   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\PredictiveMarkets\it() has invalid type  
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7471   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\PredictiveMarkets\describe() has         
+         invalid type Modules\Predict\Tests\TestCase.                           
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7478   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\PredictiveMarkets\beforeEach() has       
+         invalid type Modules\Predict\Tests\TestCase.                           
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7485   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\PredictiveMarkets\afterEach() has        
+         invalid type Modules\Predict\Tests\TestCase.                           
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7519   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\Seeders\test() has invalid type          
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7526   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\Seeders\it() has invalid type            
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7533   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\Seeders\describe() has invalid type      
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7540   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\Seeders\beforeEach() has invalid type    
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7547   Parameter $closure of function                                         
+         Modules\Predict\Tests\Feature\Seeders\afterEach() has invalid type     
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7581   Parameter $closure of function Modules\Predict\Tests\Unit\test() has   
+         invalid type Modules\Predict\Tests\TestCase.                           
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7588   Parameter $closure of function Modules\Predict\Tests\Unit\it() has     
+         invalid type Modules\Predict\Tests\TestCase.                           
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7595   Parameter $closure of function Modules\Predict\Tests\Unit\describe()   
+         has invalid type Modules\Predict\Tests\TestCase.                       
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7602   Parameter $closure of function                                         
+         Modules\Predict\Tests\Unit\beforeEach() has invalid type               
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7609   Parameter $closure of function Modules\Predict\Tests\Unit\afterEach()  
+         has invalid type Modules\Predict\Tests\TestCase.                       
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7643   Parameter $closure of function                                         
+         Modules\Predict\Tests\Unit\Actions\test() has invalid type             
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7650   Parameter $closure of function                                         
+         Modules\Predict\Tests\Unit\Actions\it() has invalid type               
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7657   Parameter $closure of function                                         
+         Modules\Predict\Tests\Unit\Actions\describe() has invalid type         
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7664   Parameter $closure of function                                         
+         Modules\Predict\Tests\Unit\Actions\beforeEach() has invalid type       
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7671   Parameter $closure of function                                         
+         Modules\Predict\Tests\Unit\Actions\afterEach() has invalid type        
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7705   Parameter $closure of function                                         
+         Modules\Predict\Tests\Unit\Actions\CalculateLmsrQuantity\test() has    
+         invalid type Modules\Predict\Tests\TestCase.                           
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7712   Parameter $closure of function                                         
+         Modules\Predict\Tests\Unit\Actions\CalculateLmsrQuantity\it() has      
+         invalid type Modules\Predict\Tests\TestCase.                           
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7719   Parameter $closure of function                                         
+         Modules\Predict\Tests\Unit\Actions\CalculateLmsrQuantity\describe()    
+         has invalid type Modules\Predict\Tests\TestCase.                       
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7726   Parameter $closure of function                                         
+         Modules\Predict\Tests\Unit\Actions\CalculateLmsrQuantity\beforeEach()  
+         has invalid type Modules\Predict\Tests\TestCase.                       
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7733   Parameter $closure of function                                         
+         Modules\Predict\Tests\Unit\Actions\CalculateLmsrQuantity\afterEach()   
+         has invalid type Modules\Predict\Tests\TestCase.                       
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7767   Parameter $closure of function                                         
+         Modules\Predict\Tests\Unit\Projectors\test() has invalid type          
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7774   Parameter $closure of function                                         
+         Modules\Predict\Tests\Unit\Projectors\it() has invalid type            
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7781   Parameter $closure of function                                         
+         Modules\Predict\Tests\Unit\Projectors\describe() has invalid type      
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7788   Parameter $closure of function                                         
+         Modules\Predict\Tests\Unit\Projectors\beforeEach() has invalid type    
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+  7795   Parameter $closure of function                                         
+         Modules\Predict\Tests\Unit\Projectors\afterEach() has invalid type     
+         Modules\Predict\Tests\TestCase.                                        
+         🪪  class.notFound                                                     
+         ✏️  tests/Support/PestFunctionBridge.php                               
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Arr/DiffAssocRecursiveActionTest.php               
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Arr/DiffAssocRecursiveActionTest.php           
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Arr/RangeIntersectActionTest.php                   
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Arr/RangeIntersectActionTest.php               
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Arr/SaveArrayActionTest.php                        
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Arr/SaveArrayActionTest.php                    
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Arr/SaveArrayActionsTest.php                       
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Arr/SaveArrayActionsTest.php                   
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Array/ArrayToRawJsActionTest.php                   
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Array/ArrayToRawJsActionTest.php               
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Array/DiffAssocRecursiveActionTest.php             
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Array/DiffAssocRecursiveActionTest.php         
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Array/RangeIntersectActionTest.php                 
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Array/RangeIntersectActionTest.php             
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Array/SaveArrayActionsTest.php                     
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Array/SaveArrayActionsTest.php                 
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Cast/EloquentCastActionsTest.php                   
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Cast/EloquentCastActionsTest.php               
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Cast/SafeArrayCastActionTest.php                    
+ ------ ----------------------------------------------------------------------- 
+  5      Class TestCase not found.                                              
+         🪪  class.notFound                                                     
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols   
+         ✏️  tests/Unit/Actions/Cast/SafeArrayCastActionTest.php                
+  29     Method                                                                 
+         class@anonymous/tests/Unit/Actions/Cast/SafeArrayCastActionTest.php:2  
+         7::toArray() return type has no value type specified in iterable type  
+         array.                                                                 
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Unit/Actions/Cast/SafeArrayCastActionTest.php                
+  38     Method                                                                 
+         class@anonymous/tests/Unit/Actions/Cast/SafeArrayCastActionTest.php:3  
+         6::__toArray() return type has no value type specified in iterable     
+         type array.                                                            
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Unit/Actions/Cast/SafeArrayCastActionTest.php                
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Cast/SafeBooleanCastActionTest.php                 
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Cast/SafeBooleanCastActionTest.php             
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Cast/SafeCastActionsTest.php                        
+ ------ ----------------------------------------------------------------------- 
+  5      Class TestCase not found.                                              
+         🪪  class.notFound                                                     
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols   
+         ✏️  tests/Unit/Actions/Cast/SafeCastActionsTest.php                    
+  26     Method                                                                 
+         class@anonymous/tests/Unit/Actions/Cast/SafeCastActionsTest.php:24::t  
+         oArray() return type has no value type specified in iterable type      
+         array.                                                                 
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Unit/Actions/Cast/SafeCastActionsTest.php                    
+  33     Method                                                                 
+         class@anonymous/tests/Unit/Actions/Cast/SafeCastActionsTest.php:31::_  
+         _toArray() return type has no value type specified in iterable type    
+         array.                                                                 
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Unit/Actions/Cast/SafeCastActionsTest.php                    
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Cast/SafeEloquentCastActionTest.php                
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Cast/SafeEloquentCastActionTest.php            
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Cast/SafeFloatCastActionTest.php                   
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Cast/SafeFloatCastActionTest.php               
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Cast/SafeIntCastActionTest.php                     
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Cast/SafeIntCastActionTest.php                 
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Cast/SafeNullableStringCastActionTest.php          
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Cast/SafeNullableStringCastActionTest.php      
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Cast/SafeObjectEloquentCastActionsTest.php          
+ ------ ----------------------------------------------------------------------- 
+  20     Property                                                               
+         class@anonymous/tests/Unit/Actions/Cast/SafeObjectEloquentCastActions  
+         Test.php:14::$arr type has no value type specified in iterable type    
+         array.                                                                 
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Unit/Actions/Cast/SafeObjectEloquentCastActionsTest.php      
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Cast/SafeStringCastActionTest.php                  
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Cast/SafeStringCastActionTest.php              
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Class/GetFilenameByClassnameActionTest.php         
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Class/GetFilenameByClassnameActionTest.php     
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Debug/MeasureActionTest.php                        
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Debug/MeasureActionTest.php                    
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Dummy/GetProductsArrayDummyActionTest.php          
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Dummy/GetProductsArrayDummyActionTest.php      
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/ExecuteArtisanCommandActionTest.php                
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/ExecuteArtisanCommandActionTest.php            
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/File/FileActionsTest.php                           
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/File/FileActionsTest.php                       
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/File/GetClassNameByPathActionTest.php              
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/File/GetClassNameByPathActionTest.php          
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/File/GetModulePathActionTest.php                   
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/File/GetModulePathActionTest.php               
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/GetModelActionsTest.php                            
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/GetModelActionsTest.php                        
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/GetTransKeyActionTest.php                          
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/GetTransKeyActionTest.php                      
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Model/HasColumnActionTest.php                      
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Model/HasColumnActionTest.php                  
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/ModelClass/CountActionsTest.php                    
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/ModelClass/CountActionsTest.php                
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/ModelTypeActionsTest.php                           
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/ModelTypeActionsTest.php                       
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Module/GetModuleConfigActionTest.php               
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Module/GetModuleConfigActionTest.php           
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Module/GetModuleNameActionsTest.php                
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Module/GetModuleNameActionsTest.php            
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Module/GetModulePathByGeneratorActionTest.php      
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Module/GetModulePathByGeneratorActionTest.php  
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Module/ModuleActionsTest.php                       
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Module/ModuleActionsTest.php                   
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Parse/ParsePrintPageStringActionTest.php           
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Parse/ParsePrintPageStringActionTest.php       
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Pdf/MakePdfSpatieTestActionTest.php                
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Pdf/MakePdfSpatieTestActionTest.php            
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Pdf/PdfActionsTest.php                             
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Pdf/PdfActionsTest.php                         
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Query/CreateTableIndexByModelClassColumnsActionTes  
+         t.php                                                                  
+ ------ ----------------------------------------------------------------------- 
+  5      Class TestCase not found.                                              
+         🪪  class.notFound                                                     
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols   
+         ✏️  tests/Unit/Actions/Query/CreateTableIndexByModelClassColumnsAction  
+         Test.php                                                               
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/Query/QueryActionsTest.php                         
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/Query/QueryActionsTest.php                     
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/String/GetPronounceablePasswordActionTest.php      
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/String/GetPronounceablePasswordActionTest.php  
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/String/GetStrBetweenStartsWithActionTest.php       
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/String/GetStrBetweenStartsWithActionTest.php   
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/String/NormalizeDriverNameActionTest.php           
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/String/NormalizeDriverNameActionTest.php       
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/String/SanitizeActionTest.php                      
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/String/SanitizeActionTest.php                  
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/String/StringActionsTest.php                       
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/String/StringActionsTest.php                   
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/View/GetViewByClassActionTest.php                  
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/View/GetViewByClassActionTest.php              
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/ViewActionsTest.php                                
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/ViewActionsTest.php                            
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/HasExtraTraitTest.php                                      
+ ------ ---------------------------------------------------------------------- 
+  61     Property Modules\Xot\Tests\Fixtures\Models\TestModelHasExtra::$extra  
+         is not writable.                                                      
+         🪪  assign.propertyReadOnly                                           
+         ✏️  tests/Unit/HasExtraTraitTest.php                                  
+  69     Property Modules\Xot\Tests\Fixtures\Models\TestModelHasExtra::$extra  
+         is not writable.                                                      
+         🪪  assign.propertyReadOnly                                           
+         ✏️  tests/Unit/HasExtraTraitTest.php                                  
+  85     Property Modules\Xot\Tests\Fixtures\Models\TestModelHasExtra::$extra  
+         is not writable.                                                      
+         🪪  assign.propertyReadOnly                                           
+         ✏️  tests/Unit/HasExtraTraitTest.php                                  
+  130    Property Modules\Xot\Tests\Fixtures\Models\TestModelHasExtra::$extra  
+         is not writable.                                                      
+         🪪  assign.propertyReadOnly                                           
+         ✏️  tests/Unit/HasExtraTraitTest.php                                  
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Models/XotBaseModelTest.php                                
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Models/XotBaseModelTest.php                            
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/SendMailByRecordActionTest.php                              
+ ------ ----------------------------------------------------------------------- 
+  24     Method                                                                 
+         class@anonymous/tests/Unit/SendMailByRecordActionTest.php:22::create(  
+         ) has parameter $data with no value type specified in iterable type    
+         array.                                                                 
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Unit/SendMailByRecordActionTest.php                          
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Services/ThemeServiceTest.php                              
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Services/ThemeServiceTest.php                          
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Services/UrlServiceTest.php                                
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Services/UrlServiceTest.php                            
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/SimpleModelsTest.php                                       
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/SimpleModelsTest.php                                   
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Traits/Filament/HasCustomModelLabelTest.php                
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Traits/Filament/HasCustomModelLabelTest.php            
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Traits/HasCustomRelationsTest.php                          
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Traits/HasCustomRelationsTest.php                      
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Traits/HasTableFunctionsTraitTest.php                      
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Traits/HasTableFunctionsTraitTest.php                  
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/ValueObjects/EmailValueObjectTest.php                      
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/ValueObjects/EmailValueObjectTest.php                  
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/ValueObjects/PhoneValueObjectTest.php                      
+ ------ ---------------------------------------------------------------------- 
+  5      Class TestCase not found.                                             
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/ValueObjects/PhoneValueObjectTest.php                  
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/XotBaseTestCase.php                                              
+ ------ ----------------------------------------------------------------------- 
+  134    Return type of method                                                  
+         Modules\Xot\Tests\XotBaseTestCase::expectsOnce() has typehint with     
+         internal class PHPUnit\Framework\MockObject\Rule\InvokedCount.         
+         🪪  return.internalClass                                               
+         ✏️  tests/XotBaseTestCase.php                                          
+  139    Return type of method                                                  
+         Modules\Xot\Tests\XotBaseTestCase::expectsExactly() has typehint with  
+         internal class PHPUnit\Framework\MockObject\Rule\InvokedCount.         
+         🪪  return.internalClass                                               
+         ✏️  tests/XotBaseTestCase.php                                          
+  144    Return type of method                                                  
+         Modules\Xot\Tests\XotBaseTestCase::expectsAtLeastOnce() has typehint   
+         with internal class                                                    
+         PHPUnit\Framework\MockObject\Rule\InvokedAtLeastOnce.                  
+         🪪  return.internalClass                                               
+         ✏️  tests/XotBaseTestCase.php                                          
+ ------ ----------------------------------------------------------------------- 
+
+ -- --------------------------------------------------------------------------- 
+     Error                                                                      
+ -- --------------------------------------------------------------------------- 
+     Ignored error pattern #PHPDoc tag @mixin contains unknown class # was not  
+     matched in reported errors.                                                
+ -- --------------------------------------------------------------------------- 
+
+ [ERROR] Found 124 errors                                                       
+
+
+=== END ANALYSIS ===

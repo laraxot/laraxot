@@ -1,0 +1,53 @@
+/* Wizard Spacing Fixes — generic .fi-sc-wizard scope (ALL wizard widgets in Sixteen theme) */
+
+/* Reduce space between titles and map */
+.fi-sc-wizard .fi-wiz-steps {
+  margin-bottom: 0.5rem;
+}
+
+.fi-sc-wizard .fi-wiz-steps .fi-wiz-step {
+  margin-bottom: 0.25rem;
+}
+
+.fi-sc-wizard .fi-wiz-steps .fi-wiz-step:not(:last-child) {
+  margin-right: 1rem;
+}
+
+/* Map section spacing */
+.fi-sc-wizard .fi-fo-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.fi-sc-wizard .fi-fo-section-header {
+  margin-bottom: 0.5rem;
+}
+
+.fi-sc-wizard .fi-fo-section-header + .fi-fo-section-body {
+  margin-top: 0;
+}
+
+/* Mobile specific spacing */
+@media (max-width: 768px) {
+  .fi-sc-wizard .fi-wiz-steps {
+    margin-bottom: 0.25rem;
+  }
+
+  .fi-sc-wizard .fi-fo-section-header {
+    margin-bottom: 0.25rem;
+  }
+
+  .fi-sc-wizard .fi-fo-section-header h2,
+  .fi-sc-wizard .fi-fo-section-header .fi-fo-section-header-heading {
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* Hide "informazioni richieste" text on mobile */
+@media (max-width: 768px) {
+  .fi-wiz-step-label-text:has(.fi-wiz-step:nth-child(1)),
+  .fi-wiz-step-label-text:has(.fi-wiz-step:nth-child(2)),
+  .fi-wiz-step-label-text:has(.fi-wiz-step:nth-child(3)) {
+    display: none;
+  }
+}

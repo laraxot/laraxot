@@ -1,0 +1,6 @@
+/* ========================================
+   IMPORT DESIGN COMUNI COMPONENT CLASSES
+   Bootstrap Italia classes → Tailwind CSS
+======================================= */
+@import '../components/header-footer-colors.css';
+@import '../components/bootstrap-italia-classes.css';

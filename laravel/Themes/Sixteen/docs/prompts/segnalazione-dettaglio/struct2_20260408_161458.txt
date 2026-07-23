@@ -1,0 +1,1348 @@
+<div class="min-h-dvh">
+  <section class="w-full max-w-7xl mx-auto p-4 sm:p-14 border-x border-dashed border-neutral-300 dark:border-white/[9%">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2 h-[56px]">
+        <div class="w-[18px] h-[18px] flex items-center justify-center bg-rose-500 rounded-md">
+          <svg class="text-white">
+            <path>
+            </path>
+            <path>
+            </path>
+          </svg>
+        </div>
+        <div class="font-medium text-sm text-neutral-900 dark:text-white">
+        </div>
+      </div>
+      <button class="text-sm rounded-md border px-3 h-8 flex items-center gap-2 transition-colors duration-200 ease-in-ou">
+        <svg class="w-3 h-3">
+          <g>
+            <path>
+            </path>
+          </g>
+          <defs>
+            <clippath id="clip0_14732_6079">
+              <rect>
+              </rect>
+            </clippath>
+          </defs>
+        </svg>
+        <svg class="w-3 h-3 text-emerald-500">
+          <path>
+          </path>
+        </svg>
+        <span>
+        </span>
+      </button>
+    </div>
+  </section>
+  <div class="h-0 w-full relative">
+    <div class="absolute top-[-1px] left-0 right-0 bottom-0 border-t border-dashed border-neutral-300 dark:border-wh">
+    </div>
+  </div>
+  <section class="w-full max-w-7xl mx-auto p-4 sm:p-14 border-x border-dashed border-neutral-300 dark:border-white/[9%">
+    <div class="flex flex-col pt-8 sm:pt-16 overflow-x-auto">
+      <div class="flex flex-col gap-5 mb-8">
+        <h1 class="text-3xl font-semibold text-neutral-950 dark:text-white">
+        </h1>
+        <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 -mt-3 text-xs">
+          <span>
+            <span class="text-neutral-500">
+            </span>
+          </span>
+        </div>
+        <p class="text-xl font-light text-neutral-800 dark:text-neutral-300">
+        </p>
+      </div>
+      <div class="flex items-start gap-2 mb-8 sm:mb-16">
+        <div class="bg-white dark:bg-white/[3%] border border-neutral-200 dark:border-white/10 divide-x divide-neutral-2">
+          <div class="flex items-center gap-1.5 h-6 px-[6px] font-mono text-[13px]">
+            <span class="text-neutral-400 dark:text-neutral-500">
+            </span>
+            <span class="text-neutral-500 dark:text-neutral-300">
+            </span>
+          </div>
+          <div class="flex items-center gap-1.5 h-6 px-[6px] font-mono text-[13px]">
+            <span class="text-neutral-400 dark:text-neutral-500">
+            </span>
+            <span class="text-neutral-500 dark:text-neutral-300">
+            </span>
+          </div>
+        </div>
+        <div class="inline-flex w-fit shrink-0 items-center justify-center gap-1 font-mono leading-3 uppercase transitio">
+          <svg class="w-2.5 h-2.5">
+            <g>
+              <path>
+              </path>
+            </g>
+            <defs>
+              <clippath id="clip0_14732_6105">
+                <rect>
+                </rect>
+              </clippath>
+            </defs>
+          </svg>
+        </div>
+        <div class="inline-flex w-fit shrink-0 items-center justify-center gap-1 font-mono leading-3 uppercase transitio">
+        </div>
+      </div>
+      <div class="bg-white dark:bg-[#1a1a1a] border border-neutral-200 dark:border-white/10 rounded-lg flex items-cent">
+        <div class="flex items-center gap-3 w-full">
+          <div class="inline-flex w-fit shrink-0 items-center justify-center gap-1 font-mono leading-3 uppercase transitio">
+            <svg class="w-2.5 h-2.5">
+              <g>
+                <path>
+                </path>
+              </g>
+              <defs>
+                <clippath id="clip0_14732_6105">
+                  <rect>
+                  </rect>
+                </clippath>
+              </defs>
+            </svg>
+          </div>
+          <div class="inline-flex w-fit shrink-0 items-center justify-center gap-1 font-mono leading-3 uppercase transitio">
+            <svg class="w-2.5 h-2.5">
+              <path>
+              </path>
+              <path>
+              </path>
+              <path>
+              </path>
+            </svg>
+          </div>
+          <div class="flex-1 text-sm font-light truncate text-neutral-950 dark:text-white">
+            <span>
+            </span>
+          </div>
+          <button class="rounded-md w-6 h-6 flex flex-shrink-0 items-center justify-center cursor-pointer border transition-c">
+            <svg class="w-3 h-3 text-neutral-400">
+              <g>
+                <path>
+                </path>
+              </g>
+              <defs>
+                <clippath id="clip0_14732_6079">
+                  <rect>
+                  </rect>
+                </clippath>
+              </defs>
+            </svg>
+            <svg class="w-3 h-3 text-emerald-500">
+              <path>
+              </path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="h-0 w-full relative -mt-5 -z-10">
+    <div class="absolute top-[-1px] left-0 right-0 bottom-0 border-t border-dashed border-neutral-300 dark:border-wh">
+    </div>
+  </div>
+  <section class="w-full max-w-7xl mx-auto p-4 sm:p-14 border-x border-dashed border-neutral-300 dark:border-white/[9%">
+    <div class="flex flex-col gap-2.5 bg-neutral-50 dark:bg-white/1 border border-neutral-200 dark:border-neutral-80">
+      <div class="flex items-center gap-2.5 p-2">
+        <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-white/5 rounded-md w-6 h-6 flex i">
+          <svg class="w-2.5 h-2.5 text-blue-500 dark:text-emerald-500">
+            <g>
+              <path>
+              </path>
+            </g>
+            <defs>
+              <clippath id="clip0_14732_6105">
+                <rect>
+                </rect>
+              </clippath>
+            </defs>
+          </svg>
+        </div>
+        <h3 class="text-base font-semibold text-neutral-900 dark:text-white">
+        </h3>
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <div class="group rounded-lg border border-neutral-200 dark:border-white/10 overflow-hidden shadow-xs">
+          <div class="flex h-11 items-center gap-3 bg-white pr-2.5 pl-4 overflow-x-auto dark:bg-white/3">
+            <div class="flex size-3 items-center justify-center flex-shrink-0">
+              <div class="size-2 rounded-full">
+              </div>
+            </div>
+            <div class="flex flex-1 items-center justify-between gap-6 min-w-0">
+              <div class="text-xs min-w-0">
+                <div>
+                </div>
+                <div>
+                  <pre class="truncate">
+                    <code>
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400">
+                <span>
+                  <span class="text-neutral-500">
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="flex-shrink-0">
+              <button type="button" class="flex h-6 w-6 cursor-pointer items-center justify-center rounded-md dark:border dark:border-white/8 g">
+                <svg>
+                  <g>
+                    <path>
+                    </path>
+                    <path>
+                    </path>
+                  </g>
+                  <defs>
+                    <clippath id="clip0_14550_6168">
+                      <rect>
+                      </rect>
+                    </clippath>
+                  </defs>
+                </svg>
+                <svg>
+                  <g>
+                    <path>
+                    </path>
+                    <path>
+                    </path>
+                  </g>
+                  <defs>
+                    <clippath id="clip0_14550_6155">
+                      <rect>
+                      </rect>
+                    </clippath>
+                  </defs>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="text-sm rounded-b-lg bg-neutral-50 border-t border-neutral-100 dark:bg-neutral-900 dark:border-white">
+            <div class="overflow-x-auto">
+              <div>
+              </div>
+              <div>
+                <pre>
+                  <code>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 bg-rose-20">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! dark:text-white!">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group rounded-lg border border-neutral-200 dark:border-white/5">
+          <div class="flex h-11 cursor-pointer items-center gap-3 rounded-lg pr-2.5 pl-4 hover:bg-white/50 dark:hover:bg-w">
+            <svg class="w-3 h-3 text-neutral-400">
+              <path>
+              </path>
+              <path>
+              </path>
+              <path>
+              </path>
+            </svg>
+            <svg class="w-3 h-3 text-blue-500 dark:text-emerald-500">
+              <g>
+                <path>
+                </path>
+                <path>
+                </path>
+              </g>
+              <defs>
+                <clippath id="clip0_14732_6211">
+                  <rect>
+                  </rect>
+                </clippath>
+              </defs>
+            </svg>
+            <div class="flex-1 font-mono text-xs leading-3 text-neutral-900 dark:text-neutral-400">
+            </div>
+            <button type="button" class="flex h-6 w-6 cursor-pointer items-center justify-center rounded-md dark:border dark:border-white/8 g">
+              <svg>
+                <g>
+                  <path>
+                  </path>
+                  <path>
+                  </path>
+                </g>
+                <defs>
+                  <clippath id="clip0_14550_6168">
+                    <rect>
+                    </rect>
+                  </clippath>
+                </defs>
+              </svg>
+              <svg>
+                <g>
+                  <path>
+                  </path>
+                  <path>
+                  </path>
+                </g>
+                <defs>
+                  <clippath id="clip0_14550_6155">
+                    <rect>
+                    </rect>
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+          <div class="flex flex-col rounded-b-lg divide-y divide-neutral-200 border-t border-neutral-200 dark:divide-white">
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group rounded-lg border border-neutral-200 dark:border-white/10 overflow-hidden shadow-xs">
+          <div class="flex h-11 items-center gap-3 bg-white pr-2.5 pl-4 overflow-x-auto dark:bg-white/3">
+            <div class="flex size-3 items-center justify-center flex-shrink-0">
+              <div class="size-2 rounded-full">
+              </div>
+            </div>
+            <div class="flex flex-1 items-center justify-between gap-6 min-w-0">
+              <div class="text-xs min-w-0">
+                <div>
+                </div>
+                <div>
+                  <pre class="truncate">
+                    <code>
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400">
+                <span>
+                  <span class="text-neutral-500">
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="flex-shrink-0">
+              <button type="button" class="flex h-6 w-6 cursor-pointer items-center justify-center rounded-md dark:border dark:border-white/8 g">
+                <svg>
+                  <g>
+                    <path>
+                    </path>
+                    <path>
+                    </path>
+                  </g>
+                  <defs>
+                    <clippath id="clip0_14550_6168">
+                      <rect>
+                      </rect>
+                    </clippath>
+                  </defs>
+                </svg>
+                <svg>
+                  <g>
+                    <path>
+                    </path>
+                    <path>
+                    </path>
+                  </g>
+                  <defs>
+                    <clippath id="clip0_14550_6155">
+                      <rect>
+                      </rect>
+                    </clippath>
+                  </defs>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="text-sm rounded-b-lg bg-neutral-50 border-t border-neutral-100 dark:bg-neutral-900 dark:border-white">
+            <div class="overflow-x-auto">
+              <div>
+              </div>
+              <div>
+                <pre>
+                  <code>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 bg-rose-20">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! dark:text-white!">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group rounded-lg border border-neutral-200 dark:border-white/5">
+          <div class="flex h-11 cursor-pointer items-center gap-3 rounded-lg pr-2.5 pl-4 hover:bg-white/50 dark:hover:bg-w">
+            <svg class="w-3 h-3 text-neutral-400">
+              <path>
+              </path>
+              <path>
+              </path>
+              <path>
+              </path>
+            </svg>
+            <svg class="w-3 h-3 text-blue-500 dark:text-emerald-500">
+              <g>
+                <path>
+                </path>
+                <path>
+                </path>
+              </g>
+              <defs>
+                <clippath id="clip0_14732_6211">
+                  <rect>
+                  </rect>
+                </clippath>
+              </defs>
+            </svg>
+            <div class="flex-1 font-mono text-xs leading-3 text-neutral-900 dark:text-neutral-400">
+            </div>
+            <button type="button" class="flex h-6 w-6 cursor-pointer items-center justify-center rounded-md dark:border dark:border-white/8 g">
+              <svg>
+                <g>
+                  <path>
+                  </path>
+                  <path>
+                  </path>
+                </g>
+                <defs>
+                  <clippath id="clip0_14550_6168">
+                    <rect>
+                    </rect>
+                  </clippath>
+                </defs>
+              </svg>
+              <svg>
+                <g>
+                  <path>
+                  </path>
+                  <path>
+                  </path>
+                </g>
+                <defs>
+                  <clippath id="clip0_14550_6155">
+                    <rect>
+                    </rect>
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+          <div class="flex flex-col rounded-b-lg divide-y divide-neutral-200 border-t border-neutral-200 dark:divide-white">
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group rounded-lg border border-neutral-200 dark:border-white/10 overflow-hidden shadow-xs">
+          <div class="flex h-11 items-center gap-3 bg-white pr-2.5 pl-4 overflow-x-auto dark:bg-white/3">
+            <div class="flex size-3 items-center justify-center flex-shrink-0">
+              <div class="size-2 rounded-full">
+              </div>
+            </div>
+            <div class="flex flex-1 items-center justify-between gap-6 min-w-0">
+              <div class="text-xs min-w-0">
+                <div>
+                </div>
+                <div>
+                  <pre class="truncate">
+                    <code>
+                    </code>
+                  </pre>
+                </div>
+              </div>
+              <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400">
+                <span>
+                  <span class="text-neutral-500">
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="flex-shrink-0">
+              <button type="button" class="flex h-6 w-6 cursor-pointer items-center justify-center rounded-md dark:border dark:border-white/8 g">
+                <svg>
+                  <g>
+                    <path>
+                    </path>
+                    <path>
+                    </path>
+                  </g>
+                  <defs>
+                    <clippath id="clip0_14550_6168">
+                      <rect>
+                      </rect>
+                    </clippath>
+                  </defs>
+                </svg>
+                <svg>
+                  <g>
+                    <path>
+                    </path>
+                    <path>
+                    </path>
+                  </g>
+                  <defs>
+                    <clippath id="clip0_14550_6155">
+                      <rect>
+                      </rect>
+                    </clippath>
+                  </defs>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="text-sm rounded-b-lg bg-neutral-50 border-t border-neutral-100 dark:bg-neutral-900 dark:border-white">
+            <div class="overflow-x-auto">
+              <div>
+              </div>
+              <div>
+                <pre>
+                  <code>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 bg-rose-20">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! dark:text-white!">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                    <span class="block px-4 py-1 h-7 even:bg-white odd:bg-white/2 even:dark:bg-white/2 odd:dark:bg-white/4 ">
+                      <span class="mr-6 text-neutral-500! dark:text-neutral-600! ">
+                      </span>
+                    </span>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group rounded-lg border border-neutral-200 dark:border-white/5">
+          <div class="flex h-11 cursor-pointer items-center gap-3 rounded-lg pr-2.5 pl-4 hover:bg-white/50 dark:hover:bg-w">
+            <svg class="w-3 h-3 text-neutral-400">
+              <path>
+              </path>
+              <path>
+              </path>
+              <path>
+              </path>
+            </svg>
+            <svg class="w-3 h-3 text-blue-500 dark:text-emerald-500">
+              <g>
+                <path>
+                </path>
+                <path>
+                </path>
+              </g>
+              <defs>
+                <clippath id="clip0_14732_6211">
+                  <rect>
+                  </rect>
+                </clippath>
+              </defs>
+            </svg>
+            <div class="flex-1 font-mono text-xs leading-3 text-neutral-900 dark:text-neutral-400">
+            </div>
+            <button type="button" class="flex h-6 w-6 cursor-pointer items-center justify-center rounded-md dark:border dark:border-white/8 g">
+              <svg>
+                <g>
+                  <path>
+                  </path>
+                  <path>
+                  </path>
+                </g>
+                <defs>
+                  <clippath id="clip0_14550_6168">
+                    <rect>
+                    </rect>
+                  </clippath>
+                </defs>
+              </svg>
+              <svg>
+                <g>
+                  <path>
+                  </path>
+                  <path>
+                  </path>
+                </g>
+                <defs>
+                  <clippath id="clip0_14550_6155">
+                    <rect>
+                    </rect>
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+          <div class="flex flex-col rounded-b-lg divide-y divide-neutral-200 border-t border-neutral-200 dark:divide-white">
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <div class="flex">
+                  <div class="text-xs min-w-0">
+                    <div>
+                    </div>
+                    <div>
+                      <pre class="truncate">
+                        <code>
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col divide-y divide-neutral-200 dark:divide-white/5">
+              <div class="grid gap-3 p-4 bg-neutral-50 dark:bg-transparent overflow-x-auto rounded-lg">
+                <span class="font-mono text-xs leading-3 text-neutral-500">
+                </span>
+                <div class="truncate font-mono text-xs text-neutral-500 dark:text-neutral-400 text-xs">
+                  <span>
+                    <span class="text-neutral-500">
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2.5 bg-neutral-50 dark:bg-white/1 border border-neutral-200 dark:border-neutral-80">
+      <div class="flex items-center justify-between p-2">
+        <div class="flex items-center gap-2.5">
+          <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-white/5 rounded-md w-6 h-6 flex i">
+            <svg class="w-2.5 h-2.5 text-blue-500 dark:text-emerald-500">
+              <path>
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-base font-semibold">
+          </h3>
+        </div>
+        <div class="text-sm text-neutral-500 dark:text-neutral-400 flex items-center gap-2">
+          <span>
+          </span>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1">
+        <div class="bg-white/[2%] border border-neutral-200 dark:border-neutral-800 rounded-md w-full p-5 uppercase text">
+          <span class="text-neutral-400 dark:text-neutral-600">
+          </span>
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-1 py-4 font-mono">
+        <button class="cursor-pointer flex items-center justify-center w-8 h-8 rounded-md transition-colors">
+          <svg class="w-3 h-3">
+            <path>
+            </path>
+            <path>
+            </path>
+          </svg>
+        </button>
+        <button class="cursor-pointer flex items-center justify-center w-8 h-8 rounded-md transition-colors">
+          <svg class="w-3 h-3">
+            <path>
+            </path>
+          </svg>
+        </button>
+        <template>
+          <div>
+            <template>
+              <span class="flex items-center justify-center w-8 h-8 text-neutral-500">
+              </span>
+            </template>
+            <template>
+              <button class="cursor-pointer flex items-center justify-center w-8 h-8 rounded-md text-sm font-medium transition-co">
+              </button>
+            </template>
+          </div>
+        </template>
+        <button class="cursor-pointer flex items-center justify-center w-8 h-8 rounded-md transition-colors">
+          <svg class="w-3 h-3">
+            <path>
+            </path>
+          </svg>
+        </button>
+        <button class="cursor-pointer flex items-center justify-center w-8 h-8 rounded-md transition-colors">
+          <svg class="w-3 h-3">
+            <path>
+            </path>
+            <path>
+            </path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+  <div class="h-0 w-full relative">
+    <div class="absolute top-[-1px] left-0 right-0 bottom-0 border-t border-dashed border-neutral-300 dark:border-wh">
+    </div>
+  </div>
+  <section class="w-full max-w-7xl mx-auto p-4 sm:p-14 border-x border-dashed border-neutral-300 dark:border-white/[9%">
+    <div class="flex flex-col gap-3">
+      <h2 class="text-lg font-semibold text-neutral-900 dark:text-white">
+      </h2>
+      <div class="flex flex-col">
+        <div class="flex max-w-full items-baseline gap-2 h-10 text-sm font-mono">
+          <div class="uppercase text-neutral-500 dark:text-neutral-400 shrink-0">
+          </div>
+          <div class="min-w-6 grow h-3 border-b-2 border-dotted border-neutral-300 dark:border-white/20">
+          </div>
+          <div class="truncate text-neutral-900 dark:text-white">
+            <span>
+            </span>
+          </div>
+        </div>
+        <div class="flex max-w-full items-baseline gap-2 h-10 text-sm font-mono">
+          <div class="uppercase text-neutral-500 dark:text-neutral-400 shrink-0">
+          </div>
+          <div class="min-w-6 grow h-3 border-b-2 border-dotted border-neutral-300 dark:border-white/20">
+          </div>
+          <div class="truncate text-neutral-900 dark:text-white">
+            <span>
+            </span>
+          </div>
+        </div>
+        <div class="flex max-w-full items-baseline gap-2 h-10 text-sm font-mono">
+          <div class="uppercase text-neutral-500 dark:text-neutral-400 shrink-0">
+          </div>
+          <div class="min-w-6 grow h-3 border-b-2 border-dotted border-neutral-300 dark:border-white/20">
+          </div>
+          <div class="truncate text-neutral-900 dark:text-white">
+            <span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-3">
+      <h2 class="text-lg font-semibold">
+      </h2>
+      <div class="bg-white/[2%] border border-neutral-200 dark:border-neutral-800 rounded-md w-full p-5 uppercase text">
+        <span class="text-neutral-400 dark:text-neutral-600">
+        </span>
+      </div>
+    </div>
+    <div class="flex flex-col gap-3">
+      <h2 class="text-lg font-semibold">
+      </h2>
+      <div class="flex flex-col">
+        <div class="bg-white/[2%] border border-neutral-200 dark:border-neutral-800 rounded-md w-full p-5 uppercase text">
+          <span class="text-neutral-400 dark:text-neutral-600">
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-3">
+      <h2 class="text-lg font-semibold">
+      </h2>
+      <div class="bg-white/[2%] border border-neutral-200 dark:border-neutral-800 rounded-md w-full p-5 uppercase text">
+        <span class="text-neutral-400 dark:text-neutral-600">
+        </span>
+      </div>
+    </div>
+  </section>
+  <div class="h-0 w-full relative">
+    <div class="absolute top-[-1px] left-0 right-0 bottom-0 border-t border-dashed border-neutral-300 dark:border-wh">
+    </div>
+  </div>
+  <section class="w-full max-w-7xl mx-auto p-4 sm:p-14 border-x border-dashed border-neutral-300 dark:border-white/[9%">
+    <div class="relative text-neutral-400 dark:text-neutral-400">
+      <div class="absolute w-full text-neutral-800 dark:text-neutral-100">
+        <svg>
+          <defs>
+            <path id="a">
+            </path>
+            <path id="b">
+            </path>
+          </defs>
+        </svg>
+      </div>
+      <svg>
+        <defs>
+          <path id="a">
+          </path>
+          <path id="b">
+          </path>
+        </defs>
+      </svg>
+    </div>
+  </section>
+</div>

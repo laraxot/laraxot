@@ -1,0 +1,191 @@
+/* Wizard Layout and Visibility Fixes — Critical for Data Step */
+/* This file addresses the 131 issues found in visual analysis */
+
+/* Fix container width and ensure form fields are visible */
+.fi-sc-wizard {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    min-width: 800px !important;
+}
+
+/* Form field visibility fixes */
+.fi-sc-wizard input[type="text"],
+.fi-sc-wizard input[type="email"],
+.fi-sc-wizard input[type="tel"],
+.fi-sc-wizard select,
+.fi-sc-wizard textarea,
+.fi-sc-wizard .filament-input,
+.fi-sc-wizard .fi-fo-input {
+    width: 100% !important;
+    min-height: 40px !important;
+    padding: 8px 12px !important;
+    margin: 8px 0 !important;
+    background-color: #ffffff !important;
+    border: 1px solid #3b82f6 !important;
+    border-radius: 6px !important;
+    color: #1f2937 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    box-sizing: border-box !important;
+}
+
+/* Ensure form sections are visible */
+.fi-sc-wizard .fi-fo-section,
+.fi-sc-wizard .wizard-section,
+.fi-sc-wizard .form-section {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    margin: 16px 0 !important;
+}
+
+/* Fix button visibility */
+.fi-sc-wizard button,
+.fi-sc-wizard .filament-button {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-block !important;
+    min-width: 120px !important;
+    min-height: 40px !important;
+    padding: 10px 20px !important;
+    margin: 8px !important;
+    background-color: #007a52 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+}
+
+/* Coordinate picker visibility */
+coordinate-picker-lit,
+[data-field="location"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    width: 100% !important;
+    min-height: 300px !important;
+    margin: 16px 0 !important;
+}
+
+/* Map container visibility */
+.fi-sc-wizard .leaflet-container,
+.fi-sc-wizard .map-container {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    width: 100% !important;
+    height: 400px !important;
+    margin: 16px 0 !important;
+}
+
+/* Fieldset and form group visibility */
+.fi-sc-wizard fieldset,
+.fi-sc-wizard .form-group,
+.fi-sc-wizard .fi-fo-fieldset {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    margin: 16px 0 !important;
+}
+
+/* Label visibility */
+.fi-sc-wizard label,
+.fi-sc-wizard .fi-fo-label {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    color: #1f2937 !important;
+    font-weight: 600 !important;
+    margin-bottom: 4px !important;
+}
+
+/* NOTE: Hidden attribute handling removed to rely on default Filament wizard behavior */
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+    .fi-sc-wizard {
+        min-width: 100% !important;
+        padding: 16px !important;
+    }
+    
+    .fi-sc-wizard input,
+    .fi-sc-wizard select,
+    .fi-sc-wizard textarea {
+        min-height: 44px !important;
+    }
+}
+
+/* Ensure wizard step content is visible only for the active step */
+.fi-sc-wizard .fi-sc-wizard-step.fi-active .wizard-step-content,
+.fi-sc-wizard .fi-sc-wizard-step.fi-active .step-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+/* Ensure form fields are not transparent */
+.fi-sc-wizard input[type="text"]:not([disabled]):not([readonly]),
+.fi-sc-wizard input[type="email"]:not([disabled]):not([readonly]),
+.fi-sc-wizard select:not([disabled]):not([readonly]),
+.fi-sc-wizard textarea:not([disabled]):not([readonly]) {
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+/* Fix any z-index issues */
+.fi-sc-wizard * {
+    z-index: auto !important;
+}
+
+/* Ensure proper positioning */
+.fi-sc-wizard .fi-fo-section-body,
+.fi-sc-wizard .section-body {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Action buttons visibility */
+.fi-sc-wizard .fi-sc-wizard-footer,
+.fi-sc-wizard .wizard-footer {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    padding: 20px 0 !important;
+}
+
+/* Progress bar visibility */
+.fi-sc-wizard .progress-bar,
+.fi-sc-wizard .fi-wiz-steps {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+/* Privacy notice text visibility */
+.fi-sc-wizard .privacy-notice,
+.fi-sc-wizard .gdpr-notice {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    background-color: #f8fafc !important;
+    padding: 12px !important;
+    border-radius: 6px !important;
+    margin: 16px 0 !important;
+}
+
+/* File upload visibility */
+.fi-sc-wizard input[type="file"],
+.fi-sc-wizard .spatie-media-library {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    width: 100% !important;
+    min-height: 60px !important;
+    background-color: #ffffff !important;
+    border: 2px dashed #d1d5db !important;
+    border-radius: 6px !important;
+    padding: 20px !important;
+}

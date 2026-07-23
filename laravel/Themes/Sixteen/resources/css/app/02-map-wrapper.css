@@ -1,0 +1,25 @@
+/*
+ * Map wrapper and fullscreen safety overrides.
+ * Extracted from resources/css/app.css to keep app.css as a small import index.
+ */
+/* ========================================
+   MAP FIXES FOR WIZARD STEPS
+   Fix map rendering and fullscreen issues
+======================================== */
+.map-wrapper {
+    pointer-events: auto;
+    background-color: #ffffff !important;
+    position: relative;
+    z-index: 1050;
+}
+
+.map-wrapper .dropdown-menu {
+    display: block !important;
+    position: relative;
+    z-index: 1060;
+}
+
+/* Fix fullscreen scrollbars */
+.map-wrapper.is-fullscreen {
+    overflow: hidden !important;
+}

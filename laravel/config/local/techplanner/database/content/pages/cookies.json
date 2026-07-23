@@ -1,0 +1,58 @@
+{
+    "id": "1",
+    "title": {
+        "it": "Cookie Policy",
+        "en": "Cookie Policy"
+    },
+    "slug": "cookies",
+    "middleware": null,
+    "content": null,
+    "content_blocks": {
+        "it": [
+            {
+                "type": "hero",
+                "slug": "hero-section",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.simple",
+                    "title": "Cookie Policy",
+                    "subtitle": "Informativa sull'utilizzo dei cookie ai sensi del Regolamento (UE) 2016/679 (GDPR)",
+                    "primary_cta_label": "Contattaci",
+                    "primary_cta_url": "/it/contatti"
+                }
+            },
+            {
+                "type": "content",
+                "slug": "cookies-content",
+                "data": {
+                    "view": "pub_theme::components.blocks.content.simple",
+                    "content": "<h2>1. Cosa sono i Cookie</h2><p>I cookie sono piccoli file di testo che vengono salvati sul tuo dispositivo quando visiti il nostro sito web. Servono a memorizzare le tue preferenze e migliorare la tua esperienza di navigazione.</p><h2>2. Tipi di Cookie Utilizzati</h2><h3>Cookie Tecnici</h3><p>Essenziali per il funzionamento del sito. Consentono di navigare tra le pagine, accedere alle aree sicure e utilizzare le funzionalità di base.</p><h3>Cookie di Analisi</h3><p>Ci aiutano a capire come i visitatori utilizzano il sito, raccogliendo informazioni anonime sulle pagine visitate e sul numero di visitatori.</p><h3>Cookie di Marketing</h3><p>Utilizzati per tracciare i visitatori attraverso i siti web e fornire annunci pertinenti in base alle loro preferenze.</p><h2>3. Gestione dei Cookie</h2><p>Puoi configurare il tuo browser per accettare o rifiutare i cookie. Nota che la disabilitazione di alcuni cookie potrebbe influire sulla funzionalità del sito.</p><h2>4. Cookie di Terze Parti</h2><p>Il nostro sito può utilizzare servizi di terze parti che utilizzano cookie:</p><ul><li><strong>Google Analytics:</strong> Per l'analisi del traffico</li><li><strong>Google AdSense:</strong> Per la visualizzazione di pubblicità pertinente</li></ul><h2>5. Durata dei Cookie</h2><ul><li>Cookie di sessione: Fino alla chiusura del browser</li><li>Cookie persistenti: Da 24 ore a 2 anni</li></ul><h2>6. I Tuoi Diritti</h2><p>Secondo il GDPR, hai il diritto di:</p><ul><li>Essere informato sull'uso dei cookie</li><li>Acconsentire o rifiutare l'uso dei cookie</li><li>Revocare il consenso in qualsiasi momento</li><li>Richiedere l'accesso e la cancellazione dei dati</li></ul><h2>7. Contatti</h2><p>Per domande relative ai cookie, contattaci:</p><p><strong>Email:</strong> sottanamarco@pec.it</p>"
+                }
+            }
+        ],
+        "en": [
+            {
+                "type": "hero",
+                "slug": "hero-section",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.simple",
+                    "title": "Cookie Policy",
+                    "subtitle": "Cookie usage information pursuant to Regulation (EU) 2016/679 (GDPR)",
+                    "primary_cta_label": "Contact Us",
+                    "primary_cta_url": "/en/contacts"
+                }
+            },
+            {
+                "type": "content",
+                "slug": "cookies-content",
+                "data": {
+                    "view": "pub_theme::components.blocks.content.simple",
+                    "content": "<h2>1. What are Cookies</h2><p>Cookies are small text files that are saved on your device when you visit our website. They help remember your preferences and improve your browsing experience.</p><h2>2. Types of Cookies Used</h2><h3>Technical Cookies</h3><p>Essential for the site to function. They allow navigation between pages, access secure areas, and use basic features.</p><h3>Analytics Cookies</h3><p>Help us understand how visitors use the site by collecting anonymous information about pages visited and visitor numbers.</p><h3>Marketing Cookies</h3><p>Used to track visitors across websites and provide relevant ads based on their preferences.</p><h2>3. Cookie Management</h2><p>You can configure your browser to accept or reject cookies. Note that disabling some cookies may affect site functionality.</p><h2>4. Third-Party Cookies</h2><p>Our site may use third-party services that use cookies:</p><ul><li><strong>Google Analytics:</strong> For traffic analysis</li><li><strong>Google AdSense:</strong> To display relevant advertising</li></ul><h2>5. Cookie Duration</h2><ul><li>Session cookies: Until browser close</li><li>Persistent cookies: From 24 hours to 2 years</li></ul><h2>6. Your Rights</h2><p>Under GDPR, you have the right to:</p><ul><li>Be informed about cookie usage</li><li>Accept or reject cookie usage</li><li>Withdraw consent at any time</li><li>Request access and deletion of data</li></ul><h2>7. Contacts</h2><p>For questions about cookies, please contact us:</p><p><strong>Email:</strong> sottanamarco@pec.it</p>"
+                }
+            }
+        ]
+    },
+    "created_at": "2025-07-08T09:02:57.000000Z",
+    "updated_at": "2026-02-06T22:40:00.000000Z",
+    "created_by": null,
+    "updated_by": "01985ae8-8039-71ea-88c7-54ebce6295b0"
+}

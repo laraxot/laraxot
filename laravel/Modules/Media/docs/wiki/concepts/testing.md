@@ -1,0 +1,30 @@
+---
+title: "Testing in Media"
+module: "Media"
+type: concept
+tags: [testing]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "testing"
+related:
+  - "./webm.md"
+---
+# Testing in Media
+
+Questo componente segue lo standard globale di progetto per il testing.
+
+## Pest PHP
+
+Tutti i test devono essere scritti utilizzando **Pest PHP**. L'uso di classi PHPUnit è vietato.
+
+### Convenzioni locali
+
+- Ogni test deve dichiarare `uses()` con la classe TestCase appropriata.
+- I test risiedono in `tests/Unit/` e `tests/Feature/`.
+
+### Quality Gate
+
+Prima di ogni commit, i test devono passare i seguenti controlli:
+1. Pest: `cd laravel && ./vendor/bin/pest laravel/Modules/Media/tests`
+2. PHPStan: `cd laravel && ./vendor/bin/phpstan analyse laravel/Modules/Media/tests --level=5`
+3. PHPMD: `phpmd laravel/Modules/Media/tests text phpmd.xml`

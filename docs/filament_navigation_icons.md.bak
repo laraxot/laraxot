@@ -1,0 +1,98 @@
+# Icone di Navigazione in Filament
+
+## Utilizzo degli SVG nelle Navigation Icons
+
+Le icone di navigazione in Filament possono utilizzare SVG personalizzati per una migliore qualità e consistenza visiva.
+
+### Posizionamento degli SVG
+Gli SVG personalizzati devono essere posizionati nella cartella `resources/svg` del modulo:
+```
+ModuloName/
+├── resources/
+│   ├── svg/
+│   │   ├── module.svg
+│   │   ├── health.svg
+│   │   ├── log.svg
+│   │   └── ...
+```
+
+### Riferimento agli SVG nei File di Traduzione
+```php
+return [
+    'navigation' => [
+        'icon' => 'xot-module', // Riferimento a resources/svg/module.svg
+        'group' => 'Sistema',
+        'label' => 'Gestione Moduli',
+        'sort' => 12,
+    ],
+];
+```
+
+### Convenzioni di Naming
+1. **File SVG**
+   - Usare kebab-case per i nomi dei file: `module-settings.svg`
+   - Prefissare con il nome del modulo: `xot-module.svg`
+   - Mantenere nomi descrittivi e coerenti
+
+2. **Riferimenti nelle Traduzioni**
+   - Usare lo stesso nome del file SVG senza estensione
+   - Mantenere il prefisso del modulo: `xot-module`
+
+### SVG Predefiniti nel Modulo Xot
+1. **Gestione Sistema**
+   - `xot-health.svg` - Monitoraggio sistema
+   - `xot-log.svg` - Visualizzazione log
+   - `xot-module.svg` - Gestione moduli
+   - `xot-cache.svg` - Gestione cache
+   - `xot-env.svg` - Configurazione ambiente
+
+2. **Operazioni Cache**
+   - `config-cache.svg` - Cache configurazione
+   - `route-cache.svg` - Cache route
+   - `view-cache.svg` - Cache viste
+   - `event-cache.svg` - Cache eventi
+
+3. **Comandi Artisan**
+   - `terminal.svg` - Console comandi
+   - `database-update.svg` - Migrazioni
+   - `optimize.svg` - Ottimizzazione
+   - `upgrade.svg` - Aggiornamenti
+   - `queue-restart.svg` - Gestione code
+
+### Best Practices per gli SVG
+1. **Dimensioni e Viewbox**
+   - Mantenere dimensioni consistenti (24x24 consigliato)
+   - Usare viewBox="0 0 24 24"
+   - Ottimizzare gli SVG per dimensioni ridotte
+
+2. **Stile**
+   - Usare stroke invece di fill dove possibile
+   - Mantenere uno stile coerente con Heroicons
+   - Evitare colori hardcoded, usare currentColor
+
+3. **Accessibilità**
+   - Includere attributi aria-hidden="true"
+   - Aggiungere role="img" quando appropriato
+   - Fornire descrizioni significative
+
+### Esempio di SVG Ottimizzato
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 24 24" 
+     fill="none" 
+     stroke="currentColor" 
+     stroke-width="2" 
+     stroke-linecap="round" 
+     stroke-linejoin="round"
+     aria-hidden="true"
+     role="img">
+  <!-- path definitions -->
+</svg>
+```
+
+### Note Importanti
+1. Gli SVG personalizzati hanno precedenza sulle Heroicons
+2. Mantenere gli SVG aggiornati e ottimizzati
+3. Documentare nuovi SVG aggiunti
+4. Testare la resa in diversi contesti (dark/light mode)
+5. Considerare la retrocompatibilità quando si modificano SVG esistenti

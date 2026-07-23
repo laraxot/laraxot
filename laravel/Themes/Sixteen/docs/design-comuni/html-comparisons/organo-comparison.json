@@ -1,0 +1,111 @@
+{
+  "page": "organo",
+  "timestamp": "2026-04-05T07:29:49.125Z",
+  "similarity": {
+    "score": 6,
+    "refTagCount": 20,
+    "localTagCount": 404,
+    "lcsLength": 13
+  },
+  "structuralDifferences": {
+    "missingTags": [
+      "strong",
+      "code"
+    ],
+    "extraTags": [
+      "header",
+      "button",
+      "span",
+      "svg",
+      "use",
+      "ul",
+      "li",
+      "image",
+      "nav",
+      "main",
+      "ol",
+      "section",
+      "h2",
+      "h3",
+      "form",
+      "label",
+      "input",
+      "footer",
+      "h4"
+    ]
+  },
+  "classDifferences": {
+    "missingClasses": [
+      "logo",
+      "logo-img-1x",
+      "logo-img-2x"
+    ],
+    "extraClasses": [
+      "page-tests",
+      "page-tests-organo",
+      "skiplink",
+      "visually-hidden-focusable",
+      "it-header-wrapper",
+      "it-header-slim-wrapper",
+      "row",
+      "col-12",
+      "it-header-slim-wrapper-content",
+      "d-lg-block",
+      "navbar-brand",
+      "it-header-slim-right-zone",
+      "nav-item",
+      "dropdown",
+      "nav-link",
+      "dropdown-toggle",
+      "visually-hidden",
+      "icon",
+      "dropdown-menu",
+      "link-list-wrapper",
+      "link-list",
+      "dropdown-item",
+      "list-item",
+      "btn",
+      "btn-primary",
+      "btn-icon",
+      "btn-full",
+      "rounded-icon",
+      "icon-primary",
+      "d-none",
+      "it-nav-wrapper",
+      "it-header-center-wrapper",
+      "it-header-center-content-wrapper",
+      "it-brand-wrapper",
+      "it-brand-text",
+      "it-brand-title",
+      "it-brand-tagline",
+      "d-md-block",
+      "it-right-zone",
+      "it-socials",
+      "d-lg-flex",
+      "icon-sm",
+      "icon-white",
+      "align-top",
+      "it-search-wrapper",
+      "search-link",
+      "it-header-navbar-wrapper",
+      "navbar",
+      "navbar-expand-lg",
+      "has-megamenu"
+    ],
+    "missingClassCount": 3,
+    "extraClassCount": 142
+  },
+  "idDifferences": {
+    "missingIds": [
+      "suggestions"
+    ],
+    "extraIds": [
+      "header-nav-wrapper",
+      "nav4",
+      "main-container",
+      "search-modal",
+      "autocomplete-two",
+      "footer"
+    ]
+  }
+}

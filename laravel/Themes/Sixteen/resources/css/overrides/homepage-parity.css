@@ -1,0 +1,356 @@
+/*
+ * Homepage parity overrides
+ * Colors match reference: https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html
+ * Reference uses: #007a52 (green), #17334f (dark), #FFFFFF (white)
+ */
+
+:root {
+  --dc-green: #007a52;
+  --dc-green-dark: #005c40;
+  --dc-blue: #007a52;
+  --dc-blue-dark: #005c40;
+  --dc-ink: #17324d;
+  --dc-muted: #5c6f82;
+  --dc-footer: #24323f;
+  --dc-footer-dark: #1b2733;
+  --dc-border: #d9e1e8;
+}
+
+html,
+body {
+  color: var(--dc-ink);
+  background: #fff;
+}
+
+/* ============================================
+   HEADER - Match reference colors exactly
+   Reference: slim=#007a52 (green), center=#007a52, navbar=#007a52
+   ============================================ */
+
+.it-header-slim-wrapper {
+  background: var(--dc-green) !important;
+}
+
+.it-header-center-wrapper {
+  background: var(--dc-green) !important;
+  border-bottom: none;
+}
+
+.it-header-navbar-wrapper {
+  background: var(--dc-green) !important;
+}
+
+/* Brand text in center header should be white */
+.dc-homepage-parity .it-header-center-wrapper .it-brand-title,
+.dc-homepage-parity .it-header-center-wrapper .it-brand-tagline {
+  color: #fff !important;
+}
+
+/* Socials and search text in center header */
+.dc-homepage-parity .it-header-center-wrapper .it-socials > span,
+.dc-homepage-parity .it-header-center-wrapper .it-search-wrapper span {
+  color: #fff !important;
+}
+
+/* Social icons in center header */
+.dc-homepage-parity .it-header-center-wrapper .it-socials a {
+  color: #fff !important;
+}
+
+/* Search button in center header */
+.dc-homepage-parity .it-header-center-wrapper .search-link {
+  background: #fff !important;
+  color: var(--dc-green) !important;
+}
+
+.dc-homepage-parity .it-header-center-wrapper .search-link .icon {
+  color: var(--dc-green) !important;
+}
+
+/* Nav links in navbar */
+.navbar-nav .nav-link,
+.navbar-secondary .nav-link {
+  color: #fff !important;
+}
+
+/* ============================================
+   HEAD SECTION - Match reference
+   Reference: card has no border, no shadow, white bg
+   ============================================ */
+
+.dc-homepage-parity #head-section {
+  margin-bottom: 2.5rem;
+}
+
+.dc-homepage-parity #head-section .card {
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+.dc-homepage-parity #head-section .card-body {
+  padding-right: 3rem;
+}
+
+.dc-homepage-parity #head-section .card-title {
+  color: var(--dc-green) !important;
+  font-size: 2.25rem;
+  line-height: 1.12;
+  font-weight: 700;
+}
+
+.dc-homepage-parity #head-section .img-fluid {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+/* ============================================
+   EVIDENCE SECTION - Match reference
+   Reference: green gradient overlay
+   ============================================ */
+
+.evidence-section .section::before {
+  background: linear-gradient(135deg, rgba(0, 122, 82, 0.97) 0%, rgba(0, 150, 136, 0.95) 50%, rgba(0, 122, 82, 0.97) 100%);
+}
+
+/* ============================================
+   BUTTONS - Match reference
+   Reference: green #007a52
+   ============================================ */
+
+.btn-primary,
+.input-group-append .btn {
+  background: var(--dc-green) !important;
+  border-color: var(--dc-green) !important;
+  color: #fff !important;
+  padding: 12px 24px !important;
+  font-size: 16px !important;
+  border-radius: 0 !important;
+}
+
+.btn-primary:hover,
+.input-group-append .btn:hover {
+  background: var(--dc-green-dark) !important;
+  border-color: var(--dc-green-dark) !important;
+}
+
+/* ============================================
+   FOOTER - Match reference
+   ============================================ */
+
+.it-footer {
+  background: var(--dc-footer);
+  color: #fff;
+}
+
+.it-footer-main {
+  background: var(--dc-footer);
+}
+
+.it-footer-secondary {
+  background: var(--dc-footer-dark);
+  border-top-color: rgba(255, 255, 255, 0.16);
+}
+
+.it-footer .it-brand-wrapper a,
+.it-footer .it-brand-text,
+.it-footer .footer-heading-title,
+.it-footer a,
+.it-footer p,
+.it-footer li,
+.it-footer span {
+  color: #fff !important;
+}
+
+.it-footer .footer-list li a,
+.it-footer .footer-info,
+.it-footer-secondary a,
+.it-footer-secondary p {
+  color: rgba(255, 255, 255, 0.82) !important;
+  text-decoration: none;
+}
+
+.it-footer .footer-list li a:hover,
+.it-footer-secondary a:hover {
+  color: #fff !important;
+}
+
+.it-footer .footer-bottom {
+  border-top-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Footer EU Logo */
+.dc-homepage-parity .it-footer-small-helper {
+  background: var(--dc-green);
+  text-align: center;
+}
+
+.dc-homepage-parity .it-footer-main .it-brand-wrapper {
+  padding: 1rem 0;
+}
+
+.dc-homepage-parity .it-footer-main .it-brand-wrapper a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+}
+
+.dc-homepage-parity .it-footer-main .it-brand-wrapper .it-brand-title {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* ============================================
+   RATING STARS
+   ============================================ */
+
+.rating .rating-star svg,
+.rating .rating-star.active svg,
+.rating input:checked ~ label.rating-star svg {
+  fill: #ffb400;
+}
+
+/* ============================================
+   SEARCH MODAL
+   ============================================ */
+
+.search-modal {
+  background: rgba(23, 50, 77, 0.56);
+}
+
+.search-modal .modal-dialog {
+  border-radius: 0;
+}
+
+/* ============================================
+   MOBILE NAV
+   ============================================ */
+
+@media (max-width: 991px) {
+  .it-header-center-content-wrapper {
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .it-brand-wrapper a {
+    align-items: flex-start;
+  }
+
+  .navbar-collapsable {
+    background: var(--dc-green) !important;
+  }
+
+  .menu-wrapper {
+    padding: 1.25rem;
+  }
+}
+.dc-homepage-parity .it-brand-wrapper > a > svg {
+  display: none !important;
+}
+
+.dc-homepage-parity .it-brand-wrapper > a::before {
+  content: '';
+  width: 82px;
+  height: 82px;
+  flex: 0 0 82px;
+  display: block;
+  background: url('/themes/Sixteen/images/logo.svg') center center / contain no-repeat;
+}
+
+.dc-homepage-parity .it-brand-wrapper .it-brand-text,
+.dc-homepage-parity .it-brand-wrapper .it-brand-title,
+.dc-homepage-parity .it-brand-wrapper .it-brand-tagline,
+.dc-homepage-parity .it-brand-wrapper a,
+.dc-homepage-parity .it-header-center-wrapper .it-brand-title,
+.dc-homepage-parity .it-header-center-wrapper .it-brand-tagline {
+  color: #fff !important;
+}
+
+.dc-homepage-parity #head-section .cmp-search {
+  display: none !important;
+}
+
+.dc-homepage-parity #head-section .card {
+  margin-bottom: 0 !important;
+}
+
+.dc-homepage-parity #head-section .card-body {
+  padding-bottom: 0 !important;
+  padding-right: 4rem;
+}
+
+.dc-homepage-parity #head-section .read-more {
+  padding-bottom: 0 !important;
+}
+
+.dc-homepage-parity .evidence-section,
+.dc-homepage-parity .evidence-section > .section,
+.dc-homepage-parity .evidence-section .section {
+  background: var(--dc-green) !important;
+}
+
+.dc-homepage-parity .evidence-section .section::before {
+  background: linear-gradient(135deg, rgba(0, 122, 82, 0.98) 0%, rgba(0, 122, 82, 0.94) 100%) !important;
+}
+
+.dc-homepage-parity .evidence-section .card-bg-blue {
+  background: #0b5b8a !important;
+}
+
+.dc-homepage-parity #calendario .splide__arrow,
+.dc-homepage-parity #calendario .splide__arrows {
+  display: none !important;
+}
+
+.dc-homepage-parity #calendario .splide__pagination {
+  bottom: -1.25rem;
+}
+
+.dc-homepage-parity #calendario .splide__pagination__page.is-active {
+  background: var(--dc-green) !important;
+}
+
+.dc-homepage-parity footer#footer,
+.dc-homepage-parity footer#footer .it-footer-main {
+  background: #24323f !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+.dc-homepage-parity footer#footer .container,
+.dc-homepage-parity footer#footer .row,
+.dc-homepage-parity footer#footer .footer-items-wrapper {
+  background: transparent !important;
+}
+
+.dc-homepage-parity footer#footer .footer-heading-title,
+.dc-homepage-parity footer#footer .it-brand-text h2,
+.dc-homepage-parity footer#footer .it-brand-wrapper a,
+.dc-homepage-parity footer#footer .footer-bottom a,
+.dc-homepage-parity footer#footer .footer-list a,
+.dc-homepage-parity footer#footer .footer-info,
+.dc-homepage-parity footer#footer .social a,
+.dc-homepage-parity footer#footer .icon,
+.dc-homepage-parity footer#footer svg,
+.dc-homepage-parity footer#footer span,
+.dc-homepage-parity footer#footer p,
+.dc-homepage-parity footer#footer li {
+  color: rgba(255, 255, 255, 0.82) !important;
+  fill: currentColor;
+}
+
+.dc-homepage-parity footer#footer .footer-heading-title,
+.dc-homepage-parity footer#footer .it-brand-text h2 {
+  color: #fff !important;
+}
+
+.dc-homepage-parity footer#footer .footer-heading-title {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+.dc-homepage-parity footer#footer .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.18) !important;
+}

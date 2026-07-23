@@ -1,0 +1,290 @@
+/* ===================================
+   Filament Widgets Styling
+   Theme: ZINC DARK MODE - Compact & Professional
+   =================================== */
+
+/* Widget Container - TRANSPARENT BACKGROUND */
+/* CRITICAL: Must override Filament's default white backgrounds */
+.filament-table-widget,
+.filament-widget,
+.fi-wi-widget,
+.fi-ta-content-grid,
+.fi-ta-ctn,
+.fi-widget,
+[data-livewire-id],
+.fi-ta,
+[class*="fi-ta"],
+[class*="filament-table"] {
+    background-color: transparent !important;
+    background: transparent !important;
+    --tw-bg-opacity: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Table container - dark zinc theme */
+.fi-ta-container {
+    @apply bg-zinc-900/80;
+    @apply dark:bg-zinc-900/60;
+    @apply backdrop-blur-md;
+    @apply border border-zinc-800/50;
+    @apply rounded-xl;
+    @apply overflow-hidden;
+}
+
+/* Table Widget - Glass Effect */
+.fi-ta-table,
+.fi-ta-content {
+    @apply bg-transparent;
+    @apply dark:bg-transparent;
+    @apply border-0;
+    @apply shadow-none;
+}
+
+/* Table Header - Transparent */
+.fi-ta-header {
+    @apply bg-transparent;
+    @apply border-0;
+}
+
+.fi-ta-header-heading {
+    @apply text-white font-bold;
+}
+
+/* Table Row - Transparent with Hover Glass */
+.fi-ta-row {
+    @apply bg-transparent;
+    @apply border-b border-white/5;
+    @apply transition-all duration-300;
+}
+
+/* Row on hover - Glassmorphism enhancement */
+.fi-ta-row:hover {
+    @apply bg-white/5;
+    @apply dark:bg-white/10;
+    @apply backdrop-blur-sm;
+    @apply border-white/10;
+    @apply scale-[1.01];
+    @apply shadow-md shadow-primary-500/5;
+}
+
+/* Text Colors - MUST match homepage */
+.fi-ta-row .text-primary {
+    @apply text-white;
+}
+
+.fi-ta-row .text-secondary {
+    @apply text-zinc-300;
+}
+
+.fi-ta-row .text-tertiary {
+    @apply text-zinc-400;
+}
+
+/* Compact Density - 48px row height, 1rem padding */
+.fi-ta-row-content {
+    @apply py-2 px-4;
+    min-height: 48px;
+}
+
+/* Grid Layout - Responsive like homepage */
+.predict-table-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+/* Full-Width Title - 2 lines max */
+.predict-table-title {
+    @apply w-full font-bold text-white text-sm;
+    @apply line-clamp-2;
+    @apply leading-tight;
+}
+
+/* Outcome Image - 64x64 with skeleton */
+.outcome-image {
+    @apply w-16 h-16 rounded-lg overflow-hidden flex-shrink-0;
+    @apply bg-zinc-800;
+}
+
+/* Skeleton Loading Animation */
+@keyframes skeleton-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.skeleton-loading {
+    @apply bg-zinc-700;
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+/* Probability Bar - Gradient like homepage */
+.probability-bar {
+    @apply h-3 rounded-full;
+    @apply bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-400;
+}
+
+/* Hot Badge - Orange like homepage */
+.hot-badge {
+    @apply inline-flex items-center gap-1 rounded-full;
+    @apply border border-orange-400/30 bg-orange-500/20;
+    @apply px-3 py-1 text-xs font-bold text-orange-300;
+    @apply backdrop-blur;
+}
+
+/* Trending Badge - Cyan like homepage */
+.trending-badge {
+    @apply inline-flex items-center gap-1 rounded-full;
+    @apply border border-cyan-400/30 bg-cyan-500/20;
+    @apply px-3 py-1 text-xs font-bold text-cyan-300;
+    @apply backdrop-blur;
+}
+
+/* Category Badge - White transparent like homepage */
+.category-badge {
+    @apply inline-flex rounded-full;
+    @apply border border-white/20 bg-white/10;
+    @apply px-3 py-1 text-xs font-semibold text-white;
+    @apply backdrop-blur;
+}
+
+/* CTA Button - Gradient like homepage */
+.cta-button {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply rounded-xl border border-cyan-400/30;
+    @apply bg-gradient-to-r from-cyan-500 to-sky-500;
+    @apply px-6 py-3 text-base font-bold text-slate-950;
+    @apply shadow-lg shadow-cyan-500/20;
+    @apply transition-all duration-300;
+}
+
+.cta-button:hover {
+    @apply scale-105 shadow-xl shadow-cyan-500/30;
+}
+
+/* Stats - Same as homepage */
+.stat-item {
+    @apply inline-flex items-center gap-1 text-xs text-slate-400;
+}
+
+/* Empty State - Same as homepage */
+.empty-state {
+    @apply col-span-full rounded-xl;
+    @apply border border-dashed border-zinc-700/50;
+    @apply bg-zinc-800/30;
+    @apply p-8 text-center;
+}
+
+.empty-state-icon {
+    @apply mx-auto mb-4 h-16 w-16 text-zinc-600;
+}
+
+.empty-state-title {
+    @apply mb-2 text-lg font-bold text-white;
+}
+
+.empty-state-description {
+    @apply text-zinc-400;
+}
+
+/* Filters & Search - Glass Input */
+.fi-ta-filters {
+    @apply bg-transparent;
+    @apply border-0;
+}
+
+.fi-ta-search input {
+    @apply bg-white/10; /* 10% white */
+    @apply dark:bg-white/5;
+    @apply border border-white/20;
+    @apply backdrop-blur-sm;
+    @apply text-white;
+    @apply placeholder-gray-400;
+    @apply rounded-xl;
+}
+
+.fi-ta-search input:focus {
+    @apply border-primary-500/50;
+    @apply ring-1 ring-primary-500/50;
+}
+
+/* Pagination - Transparent Glass Buttons */
+.fi-ta-pagination {
+    @apply bg-transparent;
+    @apply border-0;
+}
+
+.fi-ta-pagination button {
+    @apply bg-white/5;
+    @apply dark:bg-white/10;
+    @apply border border-white/10;
+    @apply backdrop-blur-sm;
+    @apply text-white;
+    @apply hover:bg-white/20;
+}
+
+.fi-ta-pagination button.active {
+    @apply bg-primary-500;
+    @apply text-white;
+    @apply shadow-lg shadow-primary-500/30;
+}
+
+/* Predict list page: keep table fully blended with page background */
+/* Force dark backgrounds on ALL Filament widget containers */
+.filament-table-widget--sexy,
+.filament-table-widget--sexy > div,
+.filament-table-widget--sexy .fi-section,
+.filament-table-widget--sexy .fi-ta,
+.filament-table-widget--sexy .fi-ta-ctn,
+.filament-table-widget--sexy .fi-ta-content,
+.filament-table-widget--sexy .fi-ta-content > div,
+.filament-table-widget--sexy .fi-ta-table,
+.filament-table-widget--sexy .fi-ta-header,
+.filament-table-widget--sexy .fi-ta-toolbar,
+.filament-table-widget--sexy .fi-ta-footer,
+.filament-table-widget--sexy .fi-pagination,
+.filament-table-widget--sexy .fi-livewire-root,
+.filament-table-widget--sexy [wire\:id],
+.filament-table-widget--sexy [data-livewire-id] {
+    background-color: transparent !important;
+    --tw-bg-opacity: 0 !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.filament-table-widget--sexy .fi-ta-row {
+    background-color: rgba(255, 255, 255, 0.01) !important;
+    backdrop-filter: blur(2px);
+}
+
+.filament-table-widget--sexy .fi-ta-row:hover {
+    background-color: rgba(34, 211, 238, 0.06) !important;
+    border-color: rgba(34, 211, 238, 0.28) !important;
+    box-shadow: 0 10px 28px rgba(34, 211, 238, 0.16);
+}
+
+/* Responsive - Mobile first */
+@media (max-width: 768px) {
+    .predict-table-grid {
+        @apply grid-cols-1 gap-4;
+    }
+    
+    .fi-ta-row {
+        @apply p-3;
+    }
+    
+    .predict-table-title {
+        @apply text-base;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .predict-table-grid {
+        @apply grid-cols-2;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .predict-table-grid {
+        @apply grid-cols-3;
+    }
+}

@@ -1,0 +1,25 @@
+allora in http://predict.local/it/predicts/  che utilizza il json laravel/config/local/predict/database/content/pages/predicts.index.json  c'e' dentro una griglia.. abbiamo detto che non facciamo "foreach" e cagate del genere.. ma usiamo un widget di tipo table di filament ! te lo devi ficcare dentro la testa ! 
+
+questa cartella Http/Livewire/  non deve essere mai piu' utilizzata perche' utilizziamo FILAMENT WIDGETS !
+
+
+La pagina per predicts.index è gestita dalla blade laravel/Themes/TwentyOne/resources/views/pages/[container0]/index.blade.php
+
+NO Themes/TwentyOne/Http/Livewire/  SI Modules/Predict/app/Filament/Widgets/ o se e' un compoente riutilizzabile Modules/UI/app/Filament/Widgets/, Themes/TwentyOne/ e' il vestito !
+
+
+
+la cartella ./laravel/docs non deve esistere ! utilizza ./docs   e comunque dentro ./docs ci devono essere pochi documenti perche' ogni tema e ogni modulo ha la sua cartella docs
+devi capire il perche' , la logica, la filosofia, la politica, la religione , lo zen , documentarle dentro le tue docs, le tue rules, le tue memories e le tue skills, 
+  aggiorna studia e migliora le tue docs, le tue rules, le tue memories, le tue skills, ricorda che dopo aver modificato un file devi controllarlo con phpstan,phpmd, phpinsights e pest, ricorda che questo task lo diamo a piu' agenti ai, percio' comportati di conseguenza e cerca di unire le forze con gli altri agenti ai
+
+
+  la pagina http://predict.local/it/predicts/  fai pure degli screenshots e analizzala se corrisponde ai criteri di bellezza e di ui/ux che ci siamo imposti 
+
+
+la traduzione 'predict::home.hero.cta_primary' e' sbagliata perche' non segue il prototipo  '<namespace>::<contesto>.<collezzione>.<key>.<tipo>'
+
+
+aggiorna studia e migliora le tue docs, le tue memories, le tue rules, le tue skills, questo identico task viene dato a piu' agenti ai, comportati di conseguenza e cerca di unire le forze con gli altri agenti ai 
+
+capisci il perche' la logica la filosofia la politica la religione e lo zen e li documenti dentro le cartelle docs dentro i moduli e dentro i temi, studia migliora e aggiorna le tue docs, le tue rules, le tue memories, le tue guidelines, le github issue e le gihub discussions, utilizza gh e mcp , installa e configurati gli mcp e le skills che vuoi , cercatele anche in internet 

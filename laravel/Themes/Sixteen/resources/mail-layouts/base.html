@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>{{ subject }}</title>
+    
+    <!-- Preheader Text -->
+    <div style="display: none; max-height: 0px; overflow: hidden; font-size: 0px; line-height: 0px;">
+        {{ preheader_text }}
+    </div>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset CSS */
+        body, table, td, p, a, li, blockquote { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; }
+        
+        /* Root Variables */
+        :root {
+            color-scheme: light dark;
+            --color-primary: #0066CC;
+            --color-text: #333333;
+            --color-bg: #ffffff;
+            --font-family-sans: 'Montserrat', 'Titillium Web', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        /* Base Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            background-color: #f3f4f6;
+            font-family: var(--font-family-sans);
+            color: var(--color-text);
+        }
+        
+        .email-wrapper {
+            background-color: #f3f4f6;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--color-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .email-header {
+            background: linear-gradient(135deg, #0052a3 0%, #003366 100%);
+            padding: 24px;
+            text-align: center;
+        }
+
+        .email-logo { max-width: 180px; }
+
+        .email-content { padding: 32px; }
+        .email-footer { background-color: #1f2937; color: #f9fafb; padding: 32px; text-align: center; font-size: 14px; }
+        .email-footer a { color: #9ec5f5; }
+
+        h1 { font-size: 28px; font-weight: 700; color: #111; margin: 0 0 16px; }
+        p { margin: 0 0 16px; font-size: 16px; line-height: 1.6; }
+        a { color: var(--color-primary); text-decoration: none; }
+        .btn { display: inline-block; padding: 12px 24px; background-color: var(--color-primary); color: #ffffff !important; text-decoration: none; border-radius: 4px; font-weight: 600; }
+        .social-icon { width: 32px; height: 32px; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border-width: 0; }
+        
+        /* Enhanced Dark Mode */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-text: #e5e7eb;
+                --color-bg: #1f2937;
+            }
+            body, .email-wrapper { background-color: #111827 !important; }
+            .email-container { background-color: var(--color-bg) !important; box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important; }
+            h1 { color: #ffffff !important; }
+            p, span, li { color: var(--color-text) !important; }
+            .email-footer { background-color: #111827 !important; }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f3f4f6; font-family: 'Montserrat', 'Titillium Web', sans-serif;">
+    <span class="sr-only" lang="it">Vai al contenuto principale</span>
+    
+    <table role="presentation" class="email-wrapper" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center" style="padding: 20px;">
+                
+                <table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0">
+                    
+                    <!-- Header -->
+                    <tr>
+                        <td class="email-header">
+                            <img src="{{ logo_header_base64 ? 'data:image/png;base64,'.logo_header_base64 : (logo_header ?: 'https://www.sottanaservice.it/logo_placeholder.png') }}" alt="{{ company_name }}" class="email-logo" style="margin: 0 auto; display: block;">
+                        </td>
+                    </tr>
+                    
+                    <!-- Main Content -->
+                    <tr>
+                        <td class="email-content">
+                            {{{ body }}}
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td class="email-footer">
+                            <p style="font-weight: 600; margin-bottom: 8px;">{{ company_name | default: "Sottana Service" }}</p>
+                            {{#if company_address}}<p style="font-size: 14px; margin-bottom: 16px;">{{ company_address }}</p>{{/if}}
+                            
+                            <!-- Social Links -->
+                            {{#if facebook_url or twitter_url or linkedin_url}}
+                            <div style="margin: 16px 0;">
+                                <table role="presentation" align="center" cellpadding="0" cellspacing="0" style="border-spacing: 16px;">
+                                    <tr>
+                                        {{#if facebook_url}}<td><a href="{{ facebook_url }}" aria-label="Facebook"><img src="https://i.imgur.com/3ss12yH.png" alt="Facebook" class="social-icon"></a></td>{{/if}}
+                                        {{#if twitter_url}}<td><a href="{{ twitter_url }}" aria-label="Twitter"><img src="https://i.imgur.com/A1pZ292.png" alt="Twitter" class="social-icon"></a></td>{{/if}}
+                                        {{#if linkedin_url}}<td><a href="{{ linkedin_url }}" aria-label="LinkedIn"><img src="https://i.imgur.com/J3lS4A2.png" alt="LinkedIn" class="social-icon"></a></td>{{/if}}
+                                    </tr>
+                                </table>
+                            </div>
+                            {{/if}}
+                            
+                            <p style="font-size: 12px; color: #9ca3af; margin-top: 16px;">
+                                {{#if site_url}}<a href="{{ site_url }}">Visita il sito</a> | {{/if}}
+                                <a href="{{ unsubscribe_url | default: '#' }}">Annulla iscrizione</a>
+                            </p>
+                            <p style="font-size: 11px; color: #6b7280; margin-top: 8px;">
+                                © {{ year | default: "2025" }} {{ company_name | default: "Sottana Service" }}. Tutti i diritti riservati.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+
+

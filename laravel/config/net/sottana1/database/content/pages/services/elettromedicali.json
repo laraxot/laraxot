@@ -1,0 +1,44 @@
+{
+    "id": "elettromedicali",
+    "title": {
+        "it": "Elettromedicali - Sottana Service",
+        "en": "Electromedical Equipment - Sottana Service"
+    },
+    "slug": "services/elettromedicali",
+    "content_blocks": {
+        "it": [
+            {
+                "type": "hero",
+                "slug": "service-hero",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.internal",
+                    "title": "Controllo Apparecchiature Elettromedicali",
+                    "subtitle": "Verifiche di sicurezza elettrica (IEC 62353) e manutenzione preventiva per dispositivi medici.",
+                    "image": "/themes/Two/images/medical-equipment.jpg"
+                }
+            },
+            {
+                "type": "content-section",
+                "slug": "safety-importance",
+                "data": {
+                    "view": "pub_theme::components.blocks.content.split",
+                    "title": "Sicurezza al Primo Posto",
+                    "content": "<p class='text-lg leading-relaxed text-gray-700'>Le apparecchiature elettromedicali richiedono controlli rigorosi per prevenire rischi di folgorazione o malfunzionamenti critici. Il nostro servizio di verifica assicura che ogni dispositivo nel tuo studio sia sicuro sia per il paziente che per l'operatore, rispendo gli standard internazionali IEC 62353.</p><p class='mt-4 text-gray-600'>Eseguiamo misurazioni di correnti di dispersione, resistenza di terra e verifiche funzionali complete, rilasciando il verbale di prova obbligatorio per ogni dispositivo controllato.</p>",
+                    "image": "/themes/Two/images/medical-equipment.jpg",
+                    "reverse": true
+                }
+            },
+            {
+                "type": "cta",
+                "slug": "booking-cta",
+                "data": {
+                    "view": "pub_theme::components.blocks.cta.simple",
+                    "title": "Metti in sicurezza il tuo parco macchine",
+                    "subtitle": "Pianifica oggi stesso le verifiche periodiche per i tuoi elettromedicali.",
+                    "cta_label": "Richiedi Info",
+                    "cta_url": "/it/contact"
+                }
+            }
+        ]
+    }
+}

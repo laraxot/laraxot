@@ -1,0 +1,303 @@
+/**
+ * Page-specific visual parity overrides.
+ *
+ * These rules intentionally stay scoped to the test pages and are activated
+ * by body classes injected from resources/js/app.js.
+ */
+
+:root {
+  --dc-surface-muted: #eef1f4;
+  --dc-surface-card: #ffffff;
+  --dc-heading: #17324d;
+  --dc-meta: #5b6f82;
+  --dc-shadow-soft: 0 10px 24px rgba(23, 50, 77, 0.08);
+}
+
+.page-content[data-slug="tests"] {
+  background: #fff;
+}
+
+.page-content[data-slug="tests"] #main-container {
+  overflow-x: clip;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-hero {
+  padding-top: 1.25rem;
+  padding-bottom: 1rem;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-hero .cmp-heading {
+  max-width: 760px;
+  padding-bottom: 0 !important;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-hero h1 {
+  color: var(--dc-heading);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin-bottom: 0.75rem;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-hero .lead {
+  color: var(--dc-meta);
+  font-size: 1.1rem;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 44rem;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-featured,
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-all-news {
+  padding-top: 2.5rem;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-featured h2,
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-all-news h2 {
+  color: var(--dc-heading);
+  font-size: clamp(1.8rem, 2.4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-all-news {
+  background: var(--dc-surface-muted);
+  margin: 2.5rem calc(50% - 50vw) 0;
+  padding: 3rem calc(50vw - 50% + 1rem) 4rem;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-all-news .cmp-input-search {
+  margin-bottom: 1.75rem !important;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-all-news .input-group {
+  max-width: 460px;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-all-news .form-control {
+  min-height: 48px;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-all-news .row.g-4 > .col-12.col-lg-6 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 992px) {
+  .page-content[data-slug="tests.lista-risorse"] .dc-lr-all-news .row.g-4 > .col-12.col-lg-6 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
+.page-content[data-slug="tests.lista-risorse"] .card.card-teaser {
+  background: var(--dc-surface-card);
+  border: 1px solid #dde3ea !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden;
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .card.card-teaser:hover {
+  box-shadow: var(--dc-shadow-soft) !important;
+  transform: translateY(-1px);
+}
+
+.page-content[data-slug="tests.lista-risorse"] .card-image-wrapper {
+  background: #d8e2ea;
+  overflow: hidden;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .card-image-wrapper .img-fluid {
+  aspect-ratio: 16 / 10;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .card.card-teaser .card-body {
+  padding: 1rem 1.125rem 1.125rem !important;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .category-top {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.875rem;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .badge.bg-primary {
+  background: var(--dc-green) !important;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.25rem 0.55rem;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .category-top .data {
+  color: var(--dc-meta);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .card-title {
+  color: var(--dc-heading);
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  line-height: 1.18;
+  margin-bottom: 0.6rem !important;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .card-title a {
+  color: inherit !important;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .card-text {
+  color: #4f6377;
+  font-family: "Titillium Web";
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-pagination-block {
+  padding-bottom: 0.5rem;
+  padding-top: 1.5rem;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .cmp-pagination .pagination {
+  align-items: center;
+  gap: 0.35rem;
+  justify-content: center;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .cmp-pagination .page-link {
+  border-radius: 0;
+  min-width: 2.5rem;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-feedback-band {
+  background: var(--dc-green);
+  margin: 2rem calc(50% - 50vw) 0;
+  padding: 2.5rem calc(50vw - 50% + 1rem) 2.75rem;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-feedback-band .cmp-rating {
+  margin-bottom: 0 !important;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-feedback-band .card-wrapper.card,
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-feedback-band .card.shadow.card-wrapper {
+  border: 0;
+  border-radius: 0;
+  box-shadow: var(--dc-shadow-soft) !important;
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-rating-feedback {
+  display: none;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-contact-search {
+  display: none;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-contacts-band {
+  background: var(--dc-surface-muted);
+  margin: 0 calc(50% - 50vw);
+  padding: 2.5rem calc(50vw - 50% + 1rem) 3rem;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-contacts-band .cmp-rating {
+  margin-bottom: 0 !important;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-contacts-band .card-wrapper.card,
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-contacts-band .card.shadow.card-wrapper {
+  border: 0;
+  border-radius: 0;
+  box-shadow: var(--dc-shadow-soft) !important;
+  margin: 0 auto;
+  max-width: 560px;
+}
+
+.page-content[data-slug="tests.lista-risorse"] #footer {
+  margin-top: 0 !important;
+}
+
+.page-content[data-slug="tests.mappa-sito"] .cmp-heading h1 {
+  color: var(--dc-heading);
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  line-height: 1.08;
+}
+
+.page-content[data-slug="tests.mappa-sito"] .cmp-heading + p,
+.page-content[data-slug="tests.mappa-sito"] .cmp-heading .lead {
+  color: var(--dc-meta);
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-feedback-band .card-body {
+  padding: 1.4rem 1.6rem 1.6rem !important;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-feedback-band h2 {
+  color: var(--dc-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem !important;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-feedback-band .rating {
+  align-items: center;
+  display: flex;
+  gap: 0.35rem;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-feedback-band .rating input {
+  position: absolute;
+  inset-inline-start: -9999px;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-feedback-band .rating label {
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0;
+  height: 2rem;
+  justify-content: center;
+  margin: 0;
+  width: 2rem;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-feedback-band .rating label::before {
+  color: #b7c3cf;
+  content: '★';
+  font-size: 1.85rem;
+  line-height: 1;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-feedback-band .rating label:hover::before,
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-feedback-band .rating input:checked + label::before {
+  color: #ffb400;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-feedback-band .rating:hover label::before {
+  color: #ffcf66;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-feedback-band .rating:hover input:checked + label::before,
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-feedback-band .rating label:hover::before {
+  color: #ffb400;
+}
+
+.page-content[data-slug="tests.lista-risorse"] .dc-lr-feedback-band .dc-lr-rating-feedback,
+.page-content[data-slug="tests.lista-risorse"] .useful-links-section {
+  display: none !important;
+}

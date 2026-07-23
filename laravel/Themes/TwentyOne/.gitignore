@@ -1,0 +1,81 @@
+# Auto-generated forbidden paths — do not edit manually
+# Reason: root cleanup policy (see docs/wiki/rules/root-cleanup-policy.md)
+
+bashscripts
+_bmad-output
+.circleci
+.claude-audit
+.devcontainer
+_docs
+docs/archive
+docs/archived
+docs/legacy
+docs/workbench
+.kilocode
+.kiro
+.ralph
+scripts
+test-results
+tests/.claude-audit
+/vendor/
+node_modules/
+npm-debug.log
+yarn-error.log
+# Laravel 4 specific
+bootstrap/compiled.php
+app/storage/
+# Laravel 5 & Lumen specific
+public/storage
+public/hot
+# Laravel 5 & Lumen specific with changed public path
+public_html/storage
+public_html/hot
+storage/*.key
+.env
+Homestead.yaml
+Homestead.json
+/.vagrant
+.phpunit.result.cache
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+node_modules
+dist-ssr
+*.local
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+vendor
+.git-blame-ignore-revs
+vendor/
+build/
+cache/
+# Standard ignores (auto)
+*.old
+*.old1
+*.bak
+*.bakcup
+*.backup.*
+# Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
+# Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
+*~HEAD
+*~BASE
+*~LOCAL
+*~REMOTE
+*.orig
+*.rej
+*~head
+tests/AuditCoverage
+# AI/TOOL SCAFFOLD — must never exist in module tree (see docs/wiki/rules/module-theme-root-cleanup.md)

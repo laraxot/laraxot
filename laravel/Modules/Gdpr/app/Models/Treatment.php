@@ -1,0 +1,174 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Gdpr\Models;
+
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Support\Carbon;
+use Modules\Xot\Contracts\ProfileContract;
+
+/**
+ * Modules\Gdpr\Models\Treatment.
+ *
+ * @property string               $id
+ * @property int                  $active
+ * @property int                  $required
+ * @property string               $name
+ * @property string               $description
+ * @property string|null          $documentVersion
+ * @property string|null          $documentUrl
+ * @property int                  $weight
+ * @property Carbon|null          $created_at
+ * @property Carbon|null          $updated_at
+ * @property string|null          $updated_by
+ * @property string|null          $created_by
+ * @property Carbon|null          $deleted_at
+ * @property string|null          $deleted_by
+ * @property string               $id
+ * @property int                  $active
+ * @property int                  $required
+ * @property string               $name
+ * @property string               $description
+ * @property string|null          $documentVersion
+ * @property string|null          $documentUrl
+ * @property int                  $weight
+ * @property Carbon|null          $created_at
+ * @property Carbon|null          $updated_at
+ * @property string|null          $updated_by
+ * @property string|null          $created_by
+ * @property Carbon|null          $deleted_at
+ * @property string|null          $deleted_by
+ * @property string               $id
+ * @property int                  $active
+ * @property int                  $required
+ * @property string               $name
+ * @property string               $description
+ * @property string|null          $documentVersion
+ * @property string|null          $documentUrl
+ * @property int                  $weight
+ * @property Carbon|null          $created_at
+ * @property Carbon|null          $updated_at
+ * @property string|null          $updated_by
+ * @property string|null          $created_by
+ * @property Carbon|null          $deleted_at
+ * @property string|null          $deleted_by
+ * @property string               $id
+ * @property int                  $active
+ * @property int                  $required
+ * @property string               $name
+ * @property string               $description
+ * @property string|null          $documentVersion
+ * @property string|null          $documentUrl
+ * @property int                  $weight
+ * @property Carbon|null          $created_at
+ * @property Carbon|null          $updated_at
+ * @property string|null          $updated_by
+ * @property string|null          $created_by
+ * @property Carbon|null          $deleted_at
+ * @property string|null          $deleted_by
+ * @property string               $id
+ * @property int                  $active
+ * @property int                  $required
+ * @property string               $name
+ * @property string               $description
+ * @property string|null          $documentVersion
+ * @property string|null          $documentUrl
+ * @property int                  $weight
+ * @property Carbon|null          $created_at
+ * @property Carbon|null          $updated_at
+ * @property string|null          $updated_by
+ * @property string|null          $created_by
+ * @property Carbon|null          $deleted_at
+ * @property string|null          $deleted_by
+ * @property string               $id
+ * @property int                  $active
+ * @property int                  $required
+ * @property string               $name
+ * @property string               $description
+ * @property string|null          $documentVersion
+ * @property string|null          $documentUrl
+ * @property int                  $weight
+ * @property Carbon|null          $created_at
+ * @property Carbon|null          $updated_at
+ * @property string|null          $updated_by
+ * @property string|null          $created_by
+ * @property Carbon|null          $deleted_at
+ * @property string|null          $deleted_by
+ * @property string               $id
+ * @property int                  $active
+ * @property int                  $required
+ * @property string               $name
+ * @property string               $description
+ * @property string|null          $documentVersion
+ * @property string|null          $documentUrl
+ * @property int                  $weight
+ * @property Carbon|null          $created_at
+ * @property Carbon|null          $updated_at
+ * @property string|null          $updated_by
+ * @property string|null          $created_by
+ * @property Carbon|null          $deleted_at
+ * @property string|null          $deleted_by
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
+ *
+ * @method static Builder<static>|Treatment newModelQuery()
+ * @method static Builder<static>|Treatment newQuery()
+ * @method static Builder<static>|Treatment query()
+ * @method static Builder<static>|Treatment whereActive($value)
+ * @method static Builder<static>|Treatment whereCreatedAt($value)
+ * @method static Builder<static>|Treatment whereCreatedBy($value)
+ * @method static Builder<static>|Treatment whereDeletedAt($value)
+ * @method static Builder<static>|Treatment whereDeletedBy($value)
+ * @method static Builder<static>|Treatment whereDescription($value)
+ * @method static Builder<static>|Treatment whereDocumentUrl($value)
+ * @method static Builder<static>|Treatment whereDocumentVersion($value)
+ * @method static Builder<static>|Treatment whereId($value)
+ * @method static Builder<static>|Treatment whereName($value)
+ * @method static Builder<static>|Treatment whereRequired($value)
+ * @method static Builder<static>|Treatment whereUpdatedAt($value)
+ * @method static Builder<static>|Treatment whereUpdatedBy($value)
+ * @method static Builder<static>|Treatment whereWeight($value)
+ *
+ * @property ProfileContract|null $deleter
+ *
+ * @method static \Modules\Gdpr\Database\Factories\TreatmentFactory factory($count = null, $state = [])
+ *
+ * @mixin \Eloquent
+ */
+class Treatment extends BaseModel
+{
+    use HasUuids;
+
+    public $incrementing = false;
+
+    protected static function booted(): void
+    {
+        if (! app()->environment('testing')) {
+            return;
+        }
+
+        static::creating(function (Treatment $treatment): void {
+            $name = $treatment->name;
+            if (! is_string($name) || '' === $name) {
+                return;
+            }
+
+            if (static::query()->where('name', $name)->exists()) {
+                $treatment->name = $name.'-'.uniqid('', true);
+            }
+        });
+    }
+
+    protected $fillable = [
+        'id',
+        'active',
+        'required',
+        'name',
+        'description',
+        'documentVersion',
+        'documentUrl',
+        'weight',
+    ];
+}

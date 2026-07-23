@@ -1,0 +1,472 @@
+{
+  "timestamp": "2026-04-03T11:25:09.934Z",
+  "summary": {
+    "total": 5,
+    "successful": 5,
+    "failed": 0,
+    "averageMatch": "74.8"
+  },
+  "results": [
+    {
+      "slug": "argomenti",
+      "timestamp": "2026-04-03T11:25:05.624Z",
+      "urls": {
+        "reference": "https://italia.github.io/design-comuni-pagine-statiche/sito/argomenti.html",
+        "local": "http://127.0.0.1:8000/it/tests/argomenti"
+      },
+      "sizes": {
+        "reference": 64479,
+        "local": 67153,
+        "difference": 2674
+      },
+      "elementCounts": {
+        "reference": {
+          "body": 1,
+          "div": 178,
+          "a": 48,
+          "header": 1,
+          "button": 1,
+          "main": 1,
+          "nav": 1,
+          "ol": 1,
+          "li": 20,
+          "section": 1,
+          "h1": 1,
+          "h2": 2,
+          "h3": 3,
+          "p": 21,
+          "form": 1,
+          "footer": 1,
+          "img": 1,
+          "svg": 1,
+          "h4": 6,
+          "ul": 8
+        },
+        "local": {
+          "body": 1,
+          "div": 169,
+          "a": 33,
+          "header": 1,
+          "button": 1,
+          "main": 1,
+          "nav": 1,
+          "ol": 1,
+          "li": 20,
+          "section": 1,
+          "h2": 2,
+          "h3": 2,
+          "p": 6,
+          "form": 1,
+          "footer": 1,
+          "img": 1,
+          "svg": 1,
+          "h4": 6,
+          "ul": 8
+        },
+        "differences": {
+          "div": {
+            "reference": 178,
+            "local": 169,
+            "diff": -9
+          },
+          "a": {
+            "reference": 48,
+            "local": 33,
+            "diff": -15
+          },
+          "h1": {
+            "reference": 1,
+            "local": 0,
+            "diff": -1
+          },
+          "h3": {
+            "reference": 3,
+            "local": 2,
+            "diff": -1
+          },
+          "p": {
+            "reference": 21,
+            "local": 6,
+            "diff": -15
+          }
+        }
+      },
+      "structuralMatch": "75.0",
+      "screenshots": {
+        "reference": "reference.png",
+        "local": "local.png"
+      }
+    },
+    {
+      "slug": "homepage",
+      "timestamp": "2026-04-03T11:25:05.375Z",
+      "urls": {
+        "reference": "https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html",
+        "local": "http://127.0.0.1:8000/it/tests/homepage"
+      },
+      "sizes": {
+        "reference": 73676,
+        "local": 88209,
+        "difference": 14533
+      },
+      "elementCounts": {
+        "reference": {
+          "body": 1,
+          "div": 127,
+          "a": 38,
+          "header": 1,
+          "button": 1,
+          "main": 1,
+          "h1": 1,
+          "section": 4,
+          "h2": 4,
+          "p": 2,
+          "img": 2,
+          "ul": 10,
+          "form": 1,
+          "footer": 1,
+          "svg": 1,
+          "h4": 6,
+          "li": 18
+        },
+        "local": {
+          "body": 1,
+          "div": 108,
+          "a": 29,
+          "header": 1,
+          "button": 1,
+          "main": 1,
+          "h1": 1,
+          "section": 4,
+          "h2": 4,
+          "form": 2,
+          "img": 2,
+          "footer": 1,
+          "svg": 1,
+          "h4": 6,
+          "ul": 8,
+          "li": 18,
+          "p": 1
+        },
+        "differences": {
+          "div": {
+            "reference": 127,
+            "local": 108,
+            "diff": -19
+          },
+          "a": {
+            "reference": 38,
+            "local": 29,
+            "diff": -9
+          },
+          "p": {
+            "reference": 2,
+            "local": 1,
+            "diff": -1
+          },
+          "ul": {
+            "reference": 10,
+            "local": 8,
+            "diff": -2
+          },
+          "form": {
+            "reference": 1,
+            "local": 2,
+            "diff": 1
+          }
+        }
+      },
+      "structuralMatch": "70.6",
+      "screenshots": {
+        "reference": "reference.png",
+        "local": "local.png"
+      }
+    },
+    {
+      "slug": "lista-categorie",
+      "timestamp": "2026-04-03T11:25:05.863Z",
+      "urls": {
+        "reference": "https://italia.github.io/design-comuni-pagine-statiche/sito/lista-categorie.html",
+        "local": "http://127.0.0.1:8000/it/tests/lista-categorie"
+      },
+      "sizes": {
+        "reference": 56000,
+        "local": 45095,
+        "difference": 10905
+      },
+      "elementCounts": {
+        "reference": {
+          "body": 1,
+          "div": 138,
+          "a": 37,
+          "header": 1,
+          "button": 1,
+          "main": 1,
+          "nav": 1,
+          "ol": 1,
+          "li": 20,
+          "section": 1,
+          "h1": 1,
+          "h2": 2,
+          "p": 13,
+          "form": 1,
+          "footer": 1,
+          "img": 1,
+          "svg": 1,
+          "h4": 6,
+          "ul": 8
+        },
+        "local": {
+          "body": 1,
+          "div": 76,
+          "a": 25,
+          "header": 1,
+          "button": 1,
+          "main": 1,
+          "nav": 1,
+          "ol": 1,
+          "li": 20,
+          "section": 1,
+          "h1": 1,
+          "h2": 1,
+          "form": 1,
+          "footer": 1,
+          "img": 1,
+          "svg": 1,
+          "h4": 6,
+          "ul": 8,
+          "p": 1
+        },
+        "differences": {
+          "div": {
+            "reference": 138,
+            "local": 76,
+            "diff": -62
+          },
+          "a": {
+            "reference": 37,
+            "local": 25,
+            "diff": -12
+          },
+          "h2": {
+            "reference": 2,
+            "local": 1,
+            "diff": -1
+          },
+          "p": {
+            "reference": 13,
+            "local": 1,
+            "diff": -12
+          }
+        }
+      },
+      "structuralMatch": "78.9",
+      "screenshots": {
+        "reference": "reference.png",
+        "local": "local.png"
+      }
+    },
+    {
+      "slug": "domande-frequenti",
+      "timestamp": "2026-04-03T11:25:08.690Z",
+      "urls": {
+        "reference": "https://italia.github.io/design-comuni-pagine-statiche/sito/domande-frequenti.html",
+        "local": "http://127.0.0.1:8000/it/tests/domande-frequenti"
+      },
+      "sizes": {
+        "reference": 87615,
+        "local": 100373,
+        "difference": 12758
+      },
+      "elementCounts": {
+        "reference": {
+          "body": 1,
+          "div": 152,
+          "a": 25,
+          "header": 1,
+          "button": 2,
+          "main": 1,
+          "nav": 1,
+          "ol": 1,
+          "li": 20,
+          "section": 1,
+          "h1": 1,
+          "label": 1,
+          "input": 1,
+          "span": 2,
+          "form": 1,
+          "footer": 1,
+          "img": 1,
+          "svg": 1,
+          "h4": 6,
+          "ul": 8,
+          "p": 1
+        },
+        "local": {
+          "body": 1,
+          "div": 136,
+          "a": 25,
+          "header": 1,
+          "button": 1,
+          "main": 1,
+          "nav": 1,
+          "ol": 1,
+          "li": 20,
+          "section": 1,
+          "h1": 1,
+          "label": 1,
+          "input": 1,
+          "span": 1,
+          "form": 1,
+          "footer": 1,
+          "img": 1,
+          "svg": 1,
+          "h4": 6,
+          "ul": 8,
+          "p": 1
+        },
+        "differences": {
+          "div": {
+            "reference": 152,
+            "local": 136,
+            "diff": -16
+          },
+          "button": {
+            "reference": 2,
+            "local": 1,
+            "diff": -1
+          },
+          "span": {
+            "reference": 2,
+            "local": 1,
+            "diff": -1
+          }
+        }
+      },
+      "structuralMatch": "85.7",
+      "screenshots": {
+        "reference": "reference.png",
+        "local": "local.png"
+      }
+    },
+    {
+      "slug": "risultati-ricerca",
+      "timestamp": "2026-04-03T11:25:08.890Z",
+      "urls": {
+        "reference": "https://italia.github.io/design-comuni-pagine-statiche/sito/risultati-ricerca.html",
+        "local": "http://127.0.0.1:8000/it/tests/risultati-ricerca"
+      },
+      "sizes": {
+        "reference": 97007,
+        "local": 78400,
+        "difference": 18607
+      },
+      "elementCounts": {
+        "reference": {
+          "body": 1,
+          "div": 110,
+          "a": 26,
+          "header": 1,
+          "button": 7,
+          "main": 1,
+          "h1": 1,
+          "nav": 1,
+          "ol": 1,
+          "li": 89,
+          "span": 7,
+          "svg": 4,
+          "use": 1,
+          "label": 1,
+          "input": 1,
+          "h2": 3,
+          "fieldset": 2,
+          "legend": 2,
+          "ul": 10,
+          "h3": 5,
+          "p": 5,
+          "img": 2,
+          "form": 1,
+          "footer": 1,
+          "h4": 6
+        },
+        "local": {
+          "body": 1,
+          "div": 92,
+          "a": 25,
+          "header": 1,
+          "button": 8,
+          "main": 1,
+          "nav": 1,
+          "ol": 1,
+          "li": 20,
+          "svg": 3,
+          "label": 1,
+          "input": 1,
+          "span": 7,
+          "h2": 3,
+          "fieldset": 2,
+          "legend": 2,
+          "ul": 10,
+          "use": 1,
+          "form": 1,
+          "footer": 1,
+          "img": 1,
+          "h4": 6,
+          "p": 1
+        },
+        "differences": {
+          "div": {
+            "reference": 110,
+            "local": 92,
+            "diff": -18
+          },
+          "a": {
+            "reference": 26,
+            "local": 25,
+            "diff": -1
+          },
+          "button": {
+            "reference": 7,
+            "local": 8,
+            "diff": 1
+          },
+          "h1": {
+            "reference": 1,
+            "local": 0,
+            "diff": -1
+          },
+          "li": {
+            "reference": 89,
+            "local": 20,
+            "diff": -69
+          },
+          "svg": {
+            "reference": 4,
+            "local": 3,
+            "diff": -1
+          },
+          "h3": {
+            "reference": 5,
+            "local": 0,
+            "diff": -5
+          },
+          "p": {
+            "reference": 5,
+            "local": 1,
+            "diff": -4
+          },
+          "img": {
+            "reference": 2,
+            "local": 1,
+            "diff": -1
+          }
+        }
+      },
+      "structuralMatch": "64.0",
+      "screenshots": {
+        "reference": "reference.png",
+        "local": "local.png"
+      }
+    }
+  ]
+}

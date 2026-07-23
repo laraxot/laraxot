@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>{{ subject }}</title>
+    
+    <!-- Preheader Text -->
+    <div style="display: none; max-height: 0px; overflow: hidden; font-size: 0px; line-height: 0px;">
+        {{ preheader_text }}
+    </div>
+    
+    <style>
+        /* Reset CSS per compatibilità client email */
+        body, table, td, p, a, li, blockquote {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            display: block;
+        }
+        
+        /* Root Variables - Christmas Theme Colors */
+        :root {
+            color-scheme: light dark;
+            --color-primary: #C8102E;      /* Rosso Natale */
+            --color-primary-dark: #9E0018;
+            --color-primary-light: #FF6B8B;
+            --color-secondary: #006400;    /* Verde Natale */
+            --color-secondary-dark: #004D00;
+            --color-accent: #FFD700;       /* Oro Natale */
+            --color-success: #00AA66;
+            --color-warning: #FF9900;
+            --color-danger: #C8102E;
+            --color-text: #1F2937;
+            --color-text-light: #6B7280;
+            --color-bg: #FFFFFF;
+            --color-bg-alt: #F8F9FA;
+            --color-border: #E5E7EB;
+            --font-family: 'Georgia', 'Times New Roman', serif; /* Font elegante per Natale */
+            --font-size-base: 16px;
+            --line-height-base: 1.6;
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            --border-radius: 4px;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Base Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+            font-family: var(--font-family);
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-base);
+            color: var(--color-text);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+        }
+        
+        /* Container Wrapper con Pattern Natalizio */
+        .email-wrapper {
+            width: 100%;
+            table-layout: fixed;
+            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+            background-image: 
+                repeating-linear-gradient(45deg, rgba(255, 215, 0, 0.02) 0px, rgba(255, 215, 0, 0.02) 1px, transparent 1px, transparent 10px),
+                repeating-linear-gradient(-45deg, rgba(200, 16, 46, 0.02) 0px, rgba(200, 16, 46, 0.02) 1px, transparent 1px, transparent 10px);
+            background-size: 40px 40px;
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Pattern Natalizio SVG Inline (email-safe) */
+        .christmas-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.15;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="snow" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23FFD700" opacity="0.4"/><circle cx="50" cy="20" r="0.8" fill="%23FFD700" opacity="0.3"/><circle cx="30" cy="50" r="1.2" fill="%23FFD700" opacity="0.35"/><circle cx="70" cy="40" r="0.9" fill="%23FFD700" opacity="0.3"/><circle cx="90" cy="80" r="1.1" fill="%23FFD700" opacity="0.4"/></pattern></defs><rect width="100%" height="100%" fill="url(%23snow)"/></svg>');
+            background-repeat: repeat;
+        }
+        
+        /* Christmas Snow Container */
+        .snow-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .snowflake {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+            opacity: 0.8;
+            animation: snowfall linear infinite;
+        }
+        
+        /* Snow animations */
+        @keyframes snowfall {
+            0% {
+                transform: translateY(-10%) translateX(0);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh) translateX(20px);
+                opacity: 0;
+            }
+        }
+        
+        /* Individual snowflake animations */
+        .snowflake:nth-child(1) { left: 5%; animation-duration: 12s; animation-delay: 0s; }
+        .snowflake:nth-child(2) { left: 10%; animation-duration: 14s; animation-delay: 1s; }
+        .snowflake:nth-child(3) { left: 15%; animation-duration: 11s; animation-delay: 2s; }
+        .snowflake:nth-child(4) { left: 20%; animation-duration: 15s; animation-delay: 0.5s; }
+        .snowflake:nth-child(5) { left: 25%; animation-duration: 13s; animation-delay: 3s; }
+        .snowflake:nth-child(6) { left: 30%; animation-duration: 10s; animation-delay: 1.5s; }
+        .snowflake:nth-child(7) { left: 35%; animation-duration: 12s; animation-delay: 2.5s; }
+        .snowflake:nth-child(8) { left: 40%; animation-duration: 14s; animation-delay: 0.8s; }
+        .snowflake:nth-child(9) { left: 45%; animation-duration: 11s; animation-delay: 3.5s; }
+        .snowflake:nth-child(10) { left: 50%; animation-duration: 13s; animation-delay: 1s; }
+        .snowflake:nth-child(11) { left: 55%; animation-duration: 12s; animation-delay: 2.2s; }
+        .snowflake:nth-child(12) { left: 60%; animation-duration: 15s; animation-delay: 0.3s; }
+        .snowflake:nth-child(13) { left: 65%; animation-duration: 11s; animation-delay: 3s; }
+        .snowflake:nth-child(14) { left: 70%; animation-duration: 14s; animation-delay: 1.8s; }
+        .snowflake:nth-child(15) { left: 75%; animation-duration: 10s; animation-delay: 2.7s; }
+        .snowflake:nth-child(16) { left: 80%; animation-duration: 13s; animation-delay: 0.5s; }
+        .snowflake:nth-child(17) { left: 85%; animation-duration: 12s; animation-delay: 3.2s; }
+        .snowflake:nth-child(18) { left: 90%; animation-duration: 14s; animation-delay: 1.1s; }
+        .snowflake:nth-child(19) { left: 95%; animation-duration: 11s; animation-delay: 2.8s; }
+        .snowflake:nth-child(20) { left: 75%; animation-duration: 13s; animation-delay: 0.9s; }
+        
+        /* Email Container con glassmorphism e profondità avanzata */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 16px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                0 8px 25px rgba(0, 0, 0, 0.2),
+                0 0 0 2px rgba(255, 215, 0, 0.15),
+                0 0 40px rgba(255, 215, 0, 0.1),
+                inset 0 2px 4px rgba(255, 255, 255, 0.9),
+                inset 0 -2px 4px rgba(200, 16, 46, 0.05);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+            border: 2px solid rgba(255, 215, 0, 0.4);
+        }
+        
+        /* Animated gradient background layer */
+        .email-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 215, 0, 0.03) 0%, 
+                rgba(200, 16, 46, 0.02) 25%, 
+                rgba(0, 100, 0, 0.02) 50%, 
+                rgba(255, 215, 0, 0.03) 75%, 
+                rgba(200, 16, 46, 0.02) 100%);
+            background-size: 400% 400%;
+            animation: gradient-shift 8s ease infinite;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.6;
+        }
+        
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        /* Header Styles - Professional Christmas con Animated Gradient e Glassmorphism */
+        .email-header {
+            background: linear-gradient(135deg, #C8102E 0%, #006400 50%, #9E0018 100%);
+            background-size: 200% 200%;
+            background-image: 
+                repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(255, 215, 0, 0.12) 30px, rgba(255, 215, 0, 0.12) 31px),
+                repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(255, 215, 0, 0.12) 30px, rgba(255, 215, 0, 0.12) 31px),
+                linear-gradient(135deg, #C8102E 0%, #006400 50%, #9E0018 100%);
+            animation: header-gradient-flow 10s ease infinite;
+            padding: 48px var(--spacing-xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid #FFD700;
+            box-shadow: 
+                0 8px 24px rgba(0, 0, 0, 0.4), 
+                inset 0 0 50px rgba(255, 215, 0, 0.15),
+                0 0 60px rgba(255, 215, 0, 0.2),
+                inset 0 2px 0 rgba(255, 255, 255, 0.1);
+        }
+        
+        @keyframes header-gradient-flow {
+            0%, 100% { background-position: 0% 50%, 0% 50%, 0% 50%; }
+            50% { background-position: 100% 50%, 100% 50%, 100% 50%; }
+        }
+        
+        /* Overlay shimmer effect sull'header */
+        .email-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        /* Christmas decorations in header - Più elaborate */
+        .header-decoration {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 28px;
+            opacity: 0.9;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            animation: float-decor 3s ease-in-out infinite;
+        }
+        
+        .header-decoration.right {
+            left: auto;
+            right: 10px;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes float-decor {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(5deg); }
+        }
+        
+        /* Stelle decorative nell'header */
+        .header-star {
+            position: absolute;
+            font-size: 16px;
+            color: #FFD700;
+            opacity: 0.7;
+            animation: twinkle-star 2s ease-in-out infinite;
+        }
+        
+        @keyframes twinkle-star {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); filter: drop-shadow(0 0 6px #FFD700); }
+        }
+        
+        .star1 { top: 20px; left: 50px; animation-delay: 0s; }
+        .star2 { top: 30px; right: 60px; animation-delay: 0.8s; }
+        .star3 { top: 50px; left: 80px; animation-delay: 1.6s; }
+        .star4 { top: 40px; right: 90px; animation-delay: 2.4s; }
+        
+        .email-logo {
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto;
+            position: relative;
+            z-index: 3;
+        }
+        
+        /* Christmas Tree Icon */
+        .christmas-tree {
+            display: block;
+            margin: 10px auto;
+            font-size: 40px;
+            line-height: 1;
+        }
+        
+        /* Content Styles con White Space Ottimizzato */
+        .email-content {
+            padding: 48px var(--spacing-xl);
+            background: linear-gradient(180deg, 
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.98) 100%);
+            color: var(--color-text);
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Subtle texture overlay per profondità */
+        .email-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(200, 16, 46, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* Holiday notice box - Glassmorphism e Profondità Avanzata */
+        .sottana-notice {
+            background: linear-gradient(135deg, 
+                rgba(255, 215, 0, 0.95) 0%, 
+                rgba(255, 248, 220, 0.98) 30%,
+                rgba(255, 236, 179, 0.95) 70%,
+                rgba(255, 215, 0, 0.95) 100%);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 3px solid rgba(255, 215, 0, 0.8);
+            border-radius: 16px;
+            padding: 40px 36px;
+            margin: var(--spacing-xl) 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 
+                0 20px 40px rgba(255, 215, 0, 0.35),
+                0 8px 20px rgba(0, 0, 0, 0.15),
+                0 0 30px rgba(255, 215, 0, 0.25),
+                inset 0 2px 6px rgba(255, 255, 255, 0.7),
+                inset 0 -2px 6px rgba(255, 215, 0, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Animated gradient overlay nel box */
+        .sottana-notice::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.1) 0%,
+                transparent 30%,
+                transparent 70%,
+                rgba(255, 215, 0, 0.05) 100%);
+            background-size: 200% 200%;
+            animation: notice-glow 6s ease infinite;
+            border-radius: 13px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        @keyframes notice-glow {
+            0%, 100% { background-position: 0% 50%; opacity: 0.5; }
+            50% { background-position: 100% 50%; opacity: 0.8; }
+        }
+        
+        /* Pattern decorativo nel box */
+        .sottana-notice::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 215, 0, 0.1) 10px, rgba(255, 215, 0, 0.1) 11px);
+            border-radius: 9px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* Decorazioni emoji sopra il box */
+        .notice-decoration {
+            position: absolute;
+            font-size: 32px;
+            z-index: 1;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+            animation: bounce-rotate 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce-rotate {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-8px) rotate(-5deg); }
+            75% { transform: translateY(-8px) rotate(5deg); }
+        }
+        
+        .notice-decoration.left {
+            top: -20px;
+            left: 30px;
+            animation-delay: 0s;
+        }
+        
+        .notice-decoration.right {
+            top: -20px;
+            right: 30px;
+            animation-delay: 1s;
+        }
+        
+        .notice-decoration.middle-left {
+            bottom: -15px;
+            left: 40px;
+            font-size: 24px;
+            animation-delay: 0.5s;
+        }
+        
+        .notice-decoration.middle-right {
+            bottom: -15px;
+            right: 40px;
+            font-size: 24px;
+            animation-delay: 1.5s;
+        }
+        
+        /* Typography - Bold e Elegante con Visual Hierarchy Migliorata */
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0 0 var(--spacing-md) 0;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--color-text);
+            letter-spacing: -0.02em;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        h1 { 
+            font-size: 32px; 
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+        h2 { 
+            font-size: 26px; 
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        h3 { 
+            font-size: 22px; 
+            font-weight: 700;
+        }
+        h4 { 
+            font-size: 20px; 
+            font-weight: 600;
+        }
+        h5 { 
+            font-size: 18px; 
+            font-weight: 600;
+        }
+        h6 { 
+            font-size: 16px; 
+            font-weight: 600;
+        }
+        
+        p {
+            margin: 0 0 var(--spacing-md) 0;
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-base);
+            color: var(--color-text);
+        }
+        
+        a {
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+        
+        a:hover {
+            color: var(--color-primary-dark);
+        }
+        
+        /* Button Styles - Premium con Micro-interactions */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: #FFFFFF !important;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 17px;
+            letter-spacing: 0.5px;
+            line-height: 1.5;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 4px 14px rgba(200, 16, 46, 0.35),
+                0 2px 6px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            transform: translateY(0);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.25);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+            pointer-events: none;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, #7A0014 100%);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 
+                0 8px 24px rgba(200, 16, 46, 0.45),
+                0 4px 12px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+        
+        .btn:active {
+            transform: translateY(0) scale(0.98);
+            box-shadow: 
+                0 2px 8px rgba(200, 16, 46, 0.3),
+                inset 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: var(--color-secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--color-secondary-dark);
+        }
+        
+        /* Footer Styles */
+        .email-footer {
+            background: linear-gradient(135deg, var(--color-secondary-dark) 0%, var(--color-secondary) 100%);
+            color: #F9FAFB;
+            padding: var(--spacing-xl);
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .email-footer a {
+            color: #60A5FA;
+            text-decoration: underline;
+        }
+        
+        .email-footer a:hover {
+            color: #93C5FD;
+        }
+        
+        /* Social Icons */
+        .social-icons {
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .social-icon {
+            display: inline-block;
+            margin: 0 var(--spacing-sm);
+            width: 32px;
+            height: 32px;
+            fill: #F9FAFB;
+        }
+        
+        /* Responsive Design - Mobile-First Optimized */
+        @media screen and (max-width: 600px) {
+            /* White space ottimizzato per mobile */
+            .email-wrapper {
+                padding: 0 !important;
+            }
+            
+            .email-container {
+                width: 100% !important;
+                max-width: 100% !important;
+                border-radius: 0 !important;
+                border-left: none !important;
+                border-right: none !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+            }
+            
+            .email-container::after {
+                display: none !important;
+            }
+            
+            /* Padding ottimizzato per leggibilità mobile */
+            .email-header {
+                padding: 32px 24px !important;
+            }
+            
+            .email-content {
+                padding: 32px 24px !important;
+            }
+            
+            .email-footer {
+                padding: 28px 24px !important;
+            }
+            
+            /* Typography scalata per mobile */
+            h1 { 
+                font-size: 26px !important; 
+                line-height: 1.2 !important;
+                margin-bottom: 12px !important;
+            }
+            h2 { 
+                font-size: 22px !important; 
+                line-height: 1.3 !important;
+                margin-bottom: 16px !important;
+            }
+            h3 { 
+                font-size: 20px !important; 
+                margin-bottom: 14px !important;
+            }
+            
+            p {
+                font-size: 16px !important;
+                line-height: 1.65 !important;
+                margin-bottom: 16px !important;
+            }
+            
+            /* Button full-width mobile */
+            .btn {
+                display: block !important;
+                width: 100% !important;
+                text-align: center !important;
+                padding: 16px 24px !important;
+                font-size: 16px !important;
+                margin: 16px 0 !important;
+            }
+            
+            .social-icons {
+                margin: var(--spacing-md) 0 !important;
+            }
+            
+            /* Hide animations on mobile for performance e batteria */
+            .snowflake {
+                display: none !important;
+            }
+            
+            .header-decoration, .christmas-tree, .header-star, .notice-decoration,
+            .svg-star, .svg-snowflake, .svg-christmas-tree {
+                display: none !important;
+            }
+            
+            .email-header::before,
+            .email-container::after,
+            .sottana-notice::after,
+            .christmas-pattern {
+                display: none !important;
+                animation: none !important;
+            }
+            
+            /* Ottimizzazione box per mobile */
+            .sottana-notice {
+                padding: 28px 20px !important;
+                margin: 24px 0 !important;
+                border-radius: 12px !important;
+            }
+            
+            /* Rimuovi backdrop-filter su mobile (performance) */
+            .email-container,
+            .sottana-notice {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+        }
+        
+        /* Dark Mode Support - Avanzato con Gradienti Dinamici */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-text: #F9FAFB;
+                --color-text-light: #9CA3AF;
+                --color-bg: #1F2937;
+                --color-bg-alt: #111827;
+                --color-border: #374151;
+            }
+            
+            body {
+                background: linear-gradient(135deg, #0A0E1A 0%, #1A1F3A 50%, #0F172A 100%) !important;
+                background-size: 200% 200%;
+                animation: dark-mode-bg-shift 15s ease infinite;
+            }
+            
+            @keyframes dark-mode-bg-shift {
+                0%, 100% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+            }
+            
+            .email-container {
+                background: linear-gradient(135deg, rgba(31, 41, 55, 0.98) 0%, rgba(30, 41, 59, 0.95) 100%) !important;
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                box-shadow: 
+                    0 20px 60px rgba(0, 0, 0, 0.6),
+                    0 8px 25px rgba(0, 0, 0, 0.4),
+                    0 0 0 2px rgba(255, 215, 0, 0.2),
+                    0 0 40px rgba(255, 215, 0, 0.15),
+                    inset 0 2px 4px rgba(255, 255, 255, 0.05),
+                    inset 0 -2px 4px rgba(200, 16, 46, 0.1) !important;
+            }
+            
+            .email-content {
+                background: linear-gradient(180deg, 
+                    rgba(31, 41, 55, 1) 0%,
+                    rgba(30, 41, 59, 0.98) 100%) !important;
+                color: #F9FAFB !important;
+            }
+            
+            .email-content::before {
+                background-image: 
+                    radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.04) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 70%, rgba(200, 16, 46, 0.04) 0%, transparent 50%);
+            }
+            
+            h1, h2, h3, h4, h5, h6 {
+                color: #F9FAFB !important;
+                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            }
+            
+            p {
+                color: #E5E7EB !important;
+            }
+            
+            .email-footer {
+                background: linear-gradient(135deg, #002D00 0%, #004D00 50%, #006400 100%) !important;
+                box-shadow: 
+                    0 -4px 20px rgba(0, 100, 0, 0.3),
+                    inset 0 2px 0 rgba(255, 255, 255, 0.05);
+            }
+            
+            .sottana-notice {
+                background: linear-gradient(135deg, 
+                    rgba(255, 215, 0, 0.25) 0%, 
+                    rgba(255, 248, 220, 0.3) 30%,
+                    rgba(255, 236, 179, 0.25) 70%,
+                    rgba(255, 215, 0, 0.25) 100%) !important;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border-color: rgba(255, 215, 0, 0.6) !important;
+            }
+        }
+        
+        /* Accessibility - Skip Links */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        /* Print Styles */
+        @media print {
+            .email-wrapper {
+                background: #FFFFFF !important;
+            }
+            
+            .email-container {
+                box-shadow: none !important;
+            }
+            
+            .snowflake {
+                display: none !important;
+            }
+            
+            .sottana-notice {
+                background: #FFF8DC !important;
+                border: 2px dashed gold !important;
+            }
+        }
+        
+        /* Webkit support for animations (Apple Mail, iOS Mail, etc.) */
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            .snowflake {
+                -webkit-animation: snowfall linear infinite;
+            }
+        }
+        
+        /* Bounce animation for Christmas decorations - Più sofisticato */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-10px) scale(1.05);
+            }
+        }
+        
+        /* Rotazione per albero di Natale */
+        @keyframes tree-glow {
+            0%, 100% {
+                filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+                transform: scale(1);
+            }
+            50% {
+                filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+                transform: scale(1.1);
+            }
+        }
+        
+        /* Pulsazione per elementi decorativi */
+        @keyframes pulse-gold {
+            0%, 100% {
+                opacity: 0.8;
+                filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
+            }
+            50% {
+                opacity: 1;
+                filter: drop-shadow(0 0 10px rgba(255, 215, 0, 1));
+            }
+        }
+        
+        /* Reduced motion support */
+        /* SVG Animated Decorations - Premium Sottana 2025 */
+        .svg-star {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            opacity: 0;
+            animation: svg-sottana-twinkle 5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes svg-sottana-twinkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0.8) rotate(0deg);
+                filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.5));
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.3) rotate(180deg);
+                filter: drop-shadow(0 0 14px rgba(255, 215, 0, 0.9));
+            }
+        }
+
+        .svg-star:nth-child(1) { top: 18%; left: 12%; animation-delay: 0s; }
+        .svg-star:nth-child(2) { top: 32%; right: 16%; animation-delay: 2s; }
+        .svg-star:nth-child(3) { top: 68%; left: 10%; animation-delay: 3s; }
+        .svg-star:nth-child(4) { top: 78%; right: 14%; animation-delay: 1.5s; }
+
+        .svg-snowflake {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            opacity: 0.85;
+            animation: svg-sottana-snowfall linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes svg-sottana-snowfall {
+            0% {
+                transform: translateY(-10%) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.9;
+            }
+            90% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(100vh) translateX(35px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .svg-snowflake:nth-child(1) { left: 8%; animation-duration: 13s; animation-delay: 0s; }
+        .svg-snowflake:nth-child(2) { left: 22%; animation-duration: 15s; animation-delay: 2.5s; }
+        .svg-snowflake:nth-child(3) { left: 38%; animation-duration: 12s; animation-delay: 4.5s; }
+        .svg-snowflake:nth-child(4) { left: 58%; animation-duration: 14s; animation-delay: 1.5s; }
+        .svg-snowflake:nth-child(5) { left: 78%; animation-duration: 16s; animation-delay: 3.5s; }
+        .svg-snowflake:nth-child(6) { left: 92%; animation-duration: 13s; animation-delay: 5.5s; }
+
+        .svg-christmas-tree {
+            display: inline-block;
+            width: 52px;
+            height: 60px;
+            animation: svg-sottana-tree-sway 5s ease-in-out infinite;
+        }
+
+        @keyframes svg-sottana-tree-sway {
+            0%, 100% {
+                transform: rotate(-2deg);
+                filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
+            }
+            50% {
+                transform: rotate(2deg);
+                filter: drop-shadow(0 0 20px rgba(255, 215, 0, 1));
+            }
+        }
+
+        /* Webkit support for SVG animations */
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            .svg-star {
+                -webkit-animation: svg-sottana-twinkle 5s ease-in-out infinite;
+            }
+            .svg-snowflake {
+                -webkit-animation: svg-sottana-snowfall linear infinite;
+            }
+            .svg-christmas-tree {
+                -webkit-animation: svg-sottana-tree-sway 5s ease-in-out infinite;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .snowflake, .header-decoration, .christmas-tree, .header-star, .notice-decoration,
+            .svg-star, .svg-snowflake, .svg-christmas-tree {
+                animation: none !important;
+                opacity: 0.5 !important;
+            }
+
+            /* Static decorations when motion reduced */
+            .header-decoration, .christmas-tree, .header-star, .notice-decoration {
+                opacity: 0.9 !important;
+                transform: none !important;
+            }
+
+            .email-header::before,
+            .email-container::after,
+            .sottana-notice::after {
+                animation: none !important;
+                display: none !important;
+            }
+            
+            .btn:hover {
+                transform: none !important;
+            }
+            
+            .btn::before {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background: linear-gradient(135deg, #1F2937 0%, #111827 100%); font-family: 'Georgia', 'Times New Roman', serif;">
+    <!-- Skip to main content for accessibility -->
+    <span class="sr-only">Vai al contenuto principale</span>
+    
+    <!-- Christmas Snow Effect -->
+    <div class="snow-container" aria-hidden="true">
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+
+        <!-- SVG Animated Snowflakes - Premium Sottana -->
+        <svg class="svg-snowflake" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; left: 8%; width: 18px; height: 18px; opacity: 0.85; animation: svg-sottana-snowfall linear infinite 13s 0s; pointer-events: none; z-index: 0;">
+            <path d="M25,2 L25,48 M2,25 L48,25 M10,10 L40,40 M40,10 L10,40" stroke="#FFD700" stroke-width="2.5" fill="none" opacity="0.95"/>
+            <circle cx="25" cy="25" r="4" fill="#FFFFFF" opacity="0.9">
+                <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+            </circle>
+        </svg>
+        <svg class="svg-snowflake" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; left: 22%; width: 18px; height: 18px; opacity: 0.85; animation: svg-sottana-snowfall linear infinite 15s 2.5s; pointer-events: none; z-index: 0;">
+            <path d="M25,2 L25,48 M2,25 L48,25 M10,10 L40,40 M40,10 L10,40" stroke="#FFD700" stroke-width="2.5" fill="none" opacity="0.95"/>
+            <circle cx="25" cy="25" r="4" fill="#FFFFFF" opacity="0.9">
+                <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+            </circle>
+        </svg>
+        <svg class="svg-snowflake" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; left: 38%; width: 18px; height: 18px; opacity: 0.85; animation: svg-sottana-snowfall linear infinite 12s 4.5s; pointer-events: none; z-index: 0;">
+            <path d="M25,2 L25,48 M2,25 L48,25 M10,10 L40,40 M40,10 L10,40" stroke="#FFD700" stroke-width="2.5" fill="none" opacity="0.95"/>
+            <circle cx="25" cy="25" r="4" fill="#FFFFFF" opacity="0.9">
+                <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+            </circle>
+        </svg>
+        <svg class="svg-snowflake" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; left: 58%; width: 18px; height: 18px; opacity: 0.85; animation: svg-sottana-snowfall linear infinite 14s 1.5s; pointer-events: none; z-index: 0;">
+            <path d="M25,2 L25,48 M2,25 L48,25 M10,10 L40,40 M40,10 L10,40" stroke="#FFD700" stroke-width="2.5" fill="none" opacity="0.95"/>
+            <circle cx="25" cy="25" r="4" fill="#FFFFFF" opacity="0.9">
+                <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+            </circle>
+        </svg>
+        <svg class="svg-snowflake" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; left: 78%; width: 18px; height: 18px; opacity: 0.85; animation: svg-sottana-snowfall linear infinite 16s 3.5s; pointer-events: none; z-index: 0;">
+            <path d="M25,2 L25,48 M2,25 L48,25 M10,10 L40,40 M40,10 L10,40" stroke="#FFD700" stroke-width="2.5" fill="none" opacity="0.95"/>
+            <circle cx="25" cy="25" r="4" fill="#FFFFFF" opacity="0.9">
+                <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+            </circle>
+        </svg>
+        <svg class="svg-snowflake" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; left: 92%; width: 18px; height: 18px; opacity: 0.85; animation: svg-sottana-snowfall linear infinite 13s 5.5s; pointer-events: none; z-index: 0;">
+            <path d="M25,2 L25,48 M2,25 L48,25 M10,10 L40,40 M40,10 L10,40" stroke="#FFD700" stroke-width="2.5" fill="none" opacity="0.95"/>
+            <circle cx="25" cy="25" r="4" fill="#FFFFFF" opacity="0.9">
+                <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+            </circle>
+        </svg>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+    </div>
+    
+    <!-- Email Wrapper con Pattern Natalizio -->
+    <table role="presentation" class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, #1F2937 0%, #111827 100%);">
+        <tr>
+            <td align="center" style="padding: 20px 0; position: relative;">
+                <!-- Pattern decorativo di sfondo -->
+                <div class="christmas-pattern" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.15;"></div>
+                
+                <!-- Email Container -->
+                <table role="presentation" class="email-container" width="600" cellpadding="0" cellspacing="0" style="background-color: #FFFFFF; border-radius: 8px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 215, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1); position: relative; z-index: 2; border: 1px solid rgba(255, 215, 0, 0.3);">
+                    
+                    <!-- Header -->
+                    <tr>
+                        <td class="email-header" style="background: linear-gradient(135deg, #C8102E 0%, #006400 50%, #9E0018 100%); padding: 40px 32px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #FFD700; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 0 30px rgba(255, 215, 0, 0.1);">
+                            <!-- Decorazioni Natalizie Elaborate -->
+                            <span class="header-decoration" style="position: absolute; top: 15px; left: 20px; font-size: 32px; opacity: 0.95; z-index: 3; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); animation: float-decor 3s ease-in-out infinite;">🎅</span>
+                            <span class="header-decoration right" style="position: absolute; top: 15px; right: 20px; font-size: 32px; opacity: 0.95; z-index: 3; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); animation: float-decor 3s ease-in-out infinite 1.5s;">🎁</span>
+                            
+                            <!-- SVG Animated Stars in Header - Premium Sottana -->
+                            <svg class="svg-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; top: 18%; left: 12%; width: 24px; height: 24px; opacity: 0; animation: svg-sottana-twinkle 5s ease-in-out infinite 0s; pointer-events: none;">
+                                <path d="M50,10 L61,35 L88,40 L69,59 L73,86 L50,73 L27,86 L31,59 L12,40 L39,35 Z"
+                                      fill="#FFD700" stroke="#FFC800" stroke-width="2.5" opacity="1">
+                                    <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
+                                </path>
+                            </svg>
+                            <svg class="svg-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; top: 32%; right: 16%; width: 24px; height: 24px; opacity: 0; animation: svg-sottana-twinkle 5s ease-in-out infinite 2s; pointer-events: none;">
+                                <path d="M50,10 L61,35 L88,40 L69,59 L73,86 L50,73 L27,86 L31,59 L12,40 L39,35 Z"
+                                      fill="#FFD700" stroke="#FFC800" stroke-width="2.5" opacity="1">
+                                    <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
+                                </path>
+                            </svg>
+                            <svg class="svg-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; top: 68%; left: 10%; width: 24px; height: 24px; opacity: 0; animation: svg-sottana-twinkle 5s ease-in-out infinite 3s; pointer-events: none;">
+                                <path d="M50,10 L61,35 L88,40 L69,59 L73,86 L50,73 L27,86 L31,59 L12,40 L39,35 Z"
+                                      fill="#FFD700" stroke="#FFC800" stroke-width="2.5" opacity="1">
+                                    <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
+                                </path>
+                            </svg>
+                            <svg class="svg-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position: absolute; top: 78%; right: 14%; width: 24px; height: 24px; opacity: 0; animation: svg-sottana-twinkle 5s ease-in-out infinite 1.5s; pointer-events: none;">
+                                <path d="M50,10 L61,35 L88,40 L69,59 L73,86 L50,73 L27,86 L31,59 L12,40 L39,35 Z"
+                                      fill="#FFD700" stroke="#FFC800" stroke-width="2.5" opacity="1">
+                                    <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
+                                </path>
+                            </svg>
+                            
+                            <!-- Stelle decorative nell'header (emoji fallback) -->
+                            <span class="header-star star1" style="position: absolute; top: 20px; left: 50px; font-size: 18px; color: #FFD700; opacity: 0.8; z-index: 3; animation: twinkle-star 2s ease-in-out infinite 0s;">⭐</span>
+                            <span class="header-star star2" style="position: absolute; top: 30px; right: 60px; font-size: 16px; color: #FFD700; opacity: 0.8; z-index: 3; animation: twinkle-star 2s ease-in-out infinite 0.8s;">✨</span>
+                            
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td align="center" style="position: relative; z-index: 2;">
+                                        <!-- SVG Christmas Tree - Premium Sottana -->
+                                        <svg class="svg-christmas-tree" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: 0 auto 16px auto;" aria-label="Christmas Tree">
+                                            <!-- Tree layers -->
+                                            <polygon points="50,10 20,45 35,45" fill="#006400" stroke="#004D00" stroke-width="2"/>
+                                            <polygon points="50,30 15,65 40,65" fill="#00AA44" stroke="#006400" stroke-width="2"/>
+                                            <polygon points="50,50 10,85 45,85" fill="#00CC66" stroke="#00AA44" stroke-width="2"/>
+                                            <polygon points="50,10 80,45 65,45" fill="#006400" stroke="#004D00" stroke-width="2"/>
+                                            <polygon points="50,30 85,65 60,65" fill="#00AA44" stroke="#006400" stroke-width="2"/>
+                                            <polygon points="50,50 90,85 55,85" fill="#00CC66" stroke="#00AA44" stroke-width="2"/>
+                                            <!-- Trunk -->
+                                            <rect x="43" y="85" width="14" height="20" fill="#8B4513" stroke="#654321" stroke-width="2"/>
+                                            <!-- Star on top -->
+                                            <path d="M50,2 L54,12 L65,12 L56,19 L59,29 L50,22 L41,29 L44,19 L35,12 L46,12 Z" fill="#FFD700" stroke="#FFC800" stroke-width="2">
+                                                <animate attributeName="opacity" values="0.7;1;0.7" dur="1.5s" repeatCount="indefinite"/>
+                                                <animateTransform attributeName="transform" type="rotate" values="0 50 15;360 50 15" dur="8s" repeatCount="indefinite"/>
+                                            </path>
+                                            <!-- Ornaments -->
+                                            <circle cx="50" cy="40" r="3.5" fill="#C8102E"/>
+                                            <circle cx="35" cy="55" r="3.5" fill="#FFD700"/>
+                                            <circle cx="65" cy="58" r="3.5" fill="#C8102E"/>
+                                            <circle cx="45" cy="70" r="3.5" fill="#FFD700"/>
+                                            <circle cx="55" cy="72" r="3.5" fill="#C8102E"/>
+                                        </svg>
+                                        
+                                        <!-- Decorazioni intorno all'albero -->
+                                        <span style="position: absolute; top: 50%; left: 15%; font-size: 20px; color: #FFD700; animation: pulse-gold 2s ease-in-out infinite 0s; z-index: 2;">🌟</span>
+                                        <span style="position: absolute; top: 50%; right: 15%; font-size: 20px; color: #FFD700; animation: pulse-gold 2s ease-in-out infinite 1s; z-index: 2;">🌟</span>
+                                        
+                                        
+                                        <!-- Titolo con Typography Premium -->
+                                        <h1 style="color: #FFFFFF; margin: 0; font-size: 38px; font-weight: 800; text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3), 0 0 40px rgba(255, 215, 0, 0.1); letter-spacing: 0.5px; line-height: 1.1; position: relative; z-index: 4;">
+                                            🎄 Buone Feste 🎄
+                                        </h1>
+                                        <p style="color: #FFD700; margin: 16px 0 0 0; font-size: 22px; font-weight: 700; font-style: italic; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 215, 0, 0.4); letter-spacing: 1px; position: relative; z-index: 4;">
+                                            Sottana Service
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    
+                    <!-- Main Content -->
+                    <tr>
+                        <td class="email-content" style="padding: 32px; background-color: #FFFFFF; color: #1F2937;">
+                            <!-- Auguri Staff Sottana Service - Box Decorato -->
+                            <div class="sottana-notice" style="background: linear-gradient(135deg, #FFD700 0%, #FFF8DC 50%, #FFECB3 100%); border: 3px solid #FFD700; border-radius: 12px; padding: 36px; margin: 36px 0; text-align: center; position: relative; box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 215, 0, 0.2); z-index: 1;">
+                                <!-- Pattern decorativo di sfondo nel box -->
+                                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 215, 0, 0.1) 10px, rgba(255, 215, 0, 0.1) 11px); border-radius: 9px; pointer-events: none; z-index: 0;"></div>
+                                
+                                <!-- Decorazioni Natalizie Animate Elaborate -->
+                                <div class="notice-decoration left" style="position: absolute; top: -22px; left: 30px; font-size: 36px; z-index: 2; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); animation: bounce-rotate 2s ease-in-out infinite 0s;">🎁</div>
+                                <div class="notice-decoration right" style="position: absolute; top: -22px; right: 30px; font-size: 36px; z-index: 2; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); animation: bounce-rotate 2s ease-in-out infinite 1s;">🎄</div>
+                                <div class="notice-decoration middle-left" style="position: absolute; bottom: -18px; left: 40px; font-size: 28px; z-index: 2; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); animation: bounce-rotate 2s ease-in-out infinite 0.5s;">⭐</div>
+                                <div class="notice-decoration middle-right" style="position: absolute; bottom: -18px; right: 40px; font-size: 28px; z-index: 2; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); animation: bounce-rotate 2s ease-in-out infinite 1.5s;">✨</div>
+                                
+                                <div style="position: relative; z-index: 2;">
+                                    <h2 style="color: #C8102E; margin: 0 0 28px 0; font-size: 28px; font-weight: 800; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2), 0 0 12px rgba(255, 215, 0, 0.4), 0 0 24px rgba(255, 215, 0, 0.2); letter-spacing: 0.3px; line-height: 1.2;">
+                                        🎄 Auguri di Buone Feste! 🎄
+                                    </h2>
+                                    
+                                    <p style="margin: 0 0 24px 0; font-size: 20px; color: #004D00; font-weight: 600; line-height: 1.85; position: relative; z-index: 2; letter-spacing: 0.02em;">
+                                        <strong style="color: #0071b0; font-size: 23px; font-weight: 800; text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6); display: block; margin-bottom: 8px;">Lo staff di Sottana Service</strong>
+                                        <span style="font-size: 19px; color: #1F2937; margin-top: 12px; display: block; font-weight: 500;">augura a tutti voi e alle vostre famiglie</span>
+                                        <span style="color: #C8102E; font-size: 24px; display: block; margin-top: 16px; font-weight: 800; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); letter-spacing: 0.5px;">🎅 Felici Feste Natalizie! 🎉</span>
+                                    </p>
+                                </div>
+                                
+                                <div style="border-top: 3px dashed rgba(255, 215, 0, 0.6); margin: 32px 0 0 0; padding-top: 28px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100%); border-radius: 12px; padding: 28px 24px; position: relative; z-index: 2; box-shadow: inset 0 3px 6px rgba(255, 215, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.08); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);">
+                                    <p style="margin: 0 0 20px 0; font-size: 19px; color: #1F2937; font-weight: 800; text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9); letter-spacing: 0.3px;">
+                                        📅 <strong style="color: #C8102E; font-size: 21px; font-weight: 800;">Informazioni Chiusura Ufficio</strong>
+                                    </p>
+                                    <p style="margin: 0 0 18px 0; font-size: 18px; color: #1F2937; line-height: 1.75; font-weight: 600; letter-spacing: 0.01em;">
+                                        L'ufficio sarà <strong style="color: #C8102E; font-size: 20px; font-weight: 800;">chiuso</strong><br>
+                                        <strong style="font-size: 20px; color: #9E0018; font-weight: 800;">dal 24 dicembre fino al 6 gennaio</strong>
+                                    </p>
+                                    <p style="margin: 0; font-size: 22px; color: #004D00; font-weight: 800; padding-top: 20px; border-top: 2px dashed rgba(255, 215, 0, 0.5); margin-top: 16px; text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6); letter-spacing: 0.5px;">
+                                        🎊 Ci rivediamo il <strong style="color: #0071b0; font-size: 24px; font-weight: 900;">7 gennaio</strong>! 🎊
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Dynamic Content -->
+                            {{{ body }}}
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td class="email-footer" style="background: linear-gradient(135deg, #004D00 0%, #006400 100%); color: #F9FAFB; padding: 32px; text-align: center; font-size: 14px; line-height: 1.6;">
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+                
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

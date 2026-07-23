@@ -1,0 +1,32 @@
+studia molto a fondo 
+https://laracasts.com/series/build-a-laravel-app-with-tdd
+https://dev.to/blamsa0mine/mastering-test-driven-development-tdd-with-laravel-12-a-complete-guide-5555
+https://medium.com/simform-engineering/how-to-implement-tdd-in-laravel-and-why-it-is-important-22f889b89657
+https://www.droptica.com/blog/test-driven-development-laravel/
+https://medium.com/@eloufirhatim/test-driven-development-tdd-laravel-bf490397bd54
+https://github.com/nWidart/laravel-modules
+https://pestphp.com/docs/installation
+https://www.html.it/pag/395013/introduzione-laravel-vs-approccio-from-scratch/
+https://wpwebinfotech.com/blog/laravel-tdd/
+https://dev.to/amritak27/guide-to-test-driven-development-tdd-in-laravel-a-step-by-step-example-2ae7
+https://github.com/5balloons/laravel-tdd-crud
+https://clouddevs.com/laravel/test-driven-development/
+https://laraveldaily.com/lesson/laravel-testing/tdd-how-it-works-example
+https://laracasts.com/discuss/channels/testing/tdd-vs-bdd-vs-ddd
+https://www.udemy.com/course/tdd-wth-laravel56/?srsltid=AfmBOopc3KfhlmQcH2ozJiWa4eyZ9phmYF9iCIFDkefWjnAnXcp0rXp4
+https://acquaintsoft.com/answers/what-is-tdd-test-driven-development-in-laravel
+https://dev.to/sethsandaru/tdd-unit-testing-with-laravel-with-real-life-project-2oi2
+https://jsdecena.medium.com/simple-tdd-in-laravel-with-11-steps-c475f8b1b214
+https://github.com/xingxingso/Build-A-Laravel-App-With-TDD
+https://sethphat.dev/learn-tddunit-testing-with-laravel-from-real-life-projects
+https://laracasts.com/series/lets-build-a-forum-with-laravel
+https://laravel.io/articles/building-an-api-using-tdd-in-laravel
+https://github.com/Zen0x7/laravel-tdd
+https://course.testdrivenlaravel.com/
+https://laravel-news.com/unlock-the-power-of-tdd
+https://www.honeybadger.io/blog/laravel-tdd/
+https://laraveldaily.com/lesson/testing-laravel/tdd-approach-simple-example
+https://github.com/leandrocfe/filament-tdd-example
+https://filamentphp.com/content/leandrocfe-how-to-write-tests-for-filament-admin-panels
+
+poi aggiorna,studia e migliora le cartelle docs dentro i moduli e dentro i temi e aggiorna le tue rules le tue memories e le tue skills

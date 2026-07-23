@@ -1,0 +1,52 @@
+/**
+ * Design Comuni - Tailwind CSS Implementation
+ * Replicates Bootstrap Italia Design Comuni template using ONLY Tailwind CSS + Alpine.js
+ */
+
+/* ========================================
+   DESIGN COMUNI THEME CONFIGURATION (Normalized)
+======================================== */
+@theme {
+  --color-italia-blue: #0066cc;
+  --color-italia-blue-dark: #003d73;
+  --color-italia-green: #007a52;
+  --color-italia-green-dark: #00402b;
+  --color-italia-gray-50: #f2f7fc;
+  --color-italia-gray-100: #d9e1e8;
+  --color-italia-gray-500: #5c6f82;
+  --color-italia-gray-900: #191919;
+}
+
+/* ========================================
+   GOOGLE FONTS
+======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+/* ========================================
+   LAYOUT UTILITIES
+======================================== */
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 1320px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.col-12 { flex: 0 0 100%; max-width: 100%; padding-left: 1rem; padding-right: 1rem; }
+
+@media (min-width: 992px) {
+  .col-lg-4 { flex: 0 0 33.333333%; max-width: 33.333333%; padding-left: 1rem; padding-right: 1rem; }
+  .col-lg-8 { flex: 0 0 66.666667%; max-width: 66.666667%; padding-left: 1rem; padding-right: 1rem; }
+  .col-lg-10 { flex: 0 0 83.333333%; max-width: 83.333333%; padding-left: 1rem; padding-right: 1rem; }
+}

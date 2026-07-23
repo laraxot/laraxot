@@ -1,0 +1,168 @@
+/* Mobile Header Fix - Filament Wizard Compatibility */
+/* Mobile-first approach for segnalazione page */
+
+/* Hide hamburger on desktop (navbar only — reference has no center toggler) */
+@media (min-width: 992px) {
+  .it-header-navbar-wrapper .custom-navbar-toggler {
+    display: none !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  /* Fix header overlapping - grid approach */
+  .it-nav-wrapper {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    position: relative !important;
+  }
+
+  /* Navbar wrapper - contains hamburger */
+  .it-header-navbar-wrapper {
+    position: relative !important;
+    height: auto !important;
+    background: white !important;
+    z-index: 1 !important;
+    pointer-events: auto !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  /* Center wrapper - logo and search */
+  .it-header-center-wrapper {
+    position: relative !important;
+    z-index: 20 !important;
+    pointer-events: none !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  /* Make center content clickable */
+  .it-header-center-content-wrapper {
+    pointer-events: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0.75rem 1rem !important;
+  }
+
+  /* Hamburger button - visible and clickable */
+  .custom-navbar-toggler {
+    position: relative !important;
+    top: auto !important;
+    left: 0.5rem !important;
+    z-index: 30 !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0.5rem !important;
+    margin: 0 !important;
+    transform: none !important;
+    color: #007A52 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+
+  .custom-navbar-toggler .icon {
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+    color: inherit !important;
+    fill: currentColor !important;
+  }
+
+  /* Slim header - compact version */
+  .it-header-slim-wrapper {
+    background: #003D73 !important;
+    padding: 0.25rem 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .it-header-slim-wrapper-content {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+
+  .it-header-slim-right-zone {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+  }
+
+  /* Language dropdown */
+  .it-header-slim-wrapper .dropdown {
+    position: relative !important;
+  }
+
+  .it-header-slim-wrapper .dropdown-toggle {
+    color: white !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0.25rem 0.5rem !important;
+    border-radius: 4px !important;
+  }
+
+  .it-header-slim-wrapper .dropdown-toggle::after {
+    display: none !important;
+  }
+
+  .it-header-slim-wrapper .dropdown-menu {
+    top: calc(100% + 0.25rem) !important;
+    right: 0 !important;
+    left: auto !important;
+    background: white !important;
+    border: 1px solid #dee2e6 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    min-width: 10rem !important;
+  }
+
+  /* Login button */
+  .btn-icon.btn-full {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.75) !important;
+    color: white !important;
+    padding: 0.25rem 0.75rem !important;
+    border-radius: 9999px !important;
+    font-size: 0.875rem !important;
+  }
+
+  .btn-icon.btn-full .rounded-icon {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    background: transparent !important;
+    border: none !important;
+    margin-right: 0.5rem !important;
+  }
+
+  /* Wizard specific adjustments */
+  .cmp-wizard-widget {
+    margin-top: 1rem !important;
+  }
+
+  /* Make sure mobile nav doesn't overlap wizard */
+  .navbar-collapsable {
+    margin-top: 5.5rem !important;
+    background: white !important;
+    border-top: 1px solid #dee2e6 !important;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .it-header-center-content-wrapper {
+    padding-left: 4rem !important;
+  }
+
+  .custom-navbar-toggler {
+    width: 2.75rem !important;
+    height: 2.75rem !important;
+  }
+
+  .custom-navbar-toggler .icon {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+  }
+}

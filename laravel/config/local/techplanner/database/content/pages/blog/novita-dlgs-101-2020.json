@@ -1,0 +1,41 @@
+{
+    "id": "novita-dlgs-101-2020",
+    "title": {
+        "it": "Le novità del D.Lgs 101/2020 per gli studi odontoiatrici",
+        "en": "New standard D.Lgs 101/2020 for dental clinics"
+    },
+    "slug": "blog/novita-dlgs-101-2020",
+    "content_blocks": {
+        "it": [
+            {
+                "type": "hero",
+                "slug": "article-hero",
+                "data": {
+                    "view": "pub_theme::components.blocks.hero.internal",
+                    "title": "Le novità del D.Lgs 101/2020",
+                    "subtitle": "Guida pratica ai cambiamenti normativi per la radioprotezione in ambito odontoiatrico.",
+                    "image": "/themes/Two/images/radiologia-veterinaria.jpg"
+                }
+            },
+            {
+                "type": "content",
+                "slug": "article-body",
+                "data": {
+                    "view": "pub_theme::components.blocks.content.text",
+                    "content": "<p class='mb-6 font-semibold text-lg'>Il Decreto Legislativo 101/2020 rappresenta una svolta significativa nella gestione della sicurezza radiologica in Italia.</p><p class='mb-4'>Per gli studi odontoiatrici, l'adeguamento non è solo formale ma sostanziale. Una delle novità principali riguarda la figura dell'Esperto di Radioprotezione (ex esperto di radioprotezione), i cui compiti sono stati ulteriormente definiti e ampliati.</p><h2 class='text-2xl font-bold mt-8 mb-4'>Cosa cambia per il titolare dello studio?</h2><p class='mb-4'>Il titolare ha ora l'obbligo di garantire che le verifiche di costanza siano eseguite con cadenze precise e che i risultati siano registrati in un apposito registro digitale o cartaceo, sempre disponibile per gli organi di vigilanza.</p><blockquote class='border-l-4 border-brand-orange pl-4 italic my-6 text-gray-700'>'La sicurezza dei pazienti e degli operatori passa attraverso una manutenzione rigorosa e controlli costanti.'</blockquote><h2 class='text-2xl font-bold mt-8 mb-4'>Verifiche di Qualità</h2><p class='mb-4'>Le apparecchiature come l'ortopantomografo e la CBCT richiedono protocolli di controllo più stringenti. È fondamentale che il software di acquisizione sia correttamente tarato per minimizzare la dose al paziente mantenendo un'alta qualità diagnostica.</p>"
+                }
+            },
+            {
+                "type": "cta",
+                "slug": "article-cta",
+                "data": {
+                    "view": "pub_theme::components.blocks.cta.simple",
+                    "title": "Il tuo studio è in regola?",
+                    "subtitle": "Richiedi un audit gratuito sulla conformità al D.Lgs 101/2020.",
+                    "cta_label": "Contattaci ora",
+                    "cta_url": "/it/contact"
+                }
+            }
+        ]
+    }
+}

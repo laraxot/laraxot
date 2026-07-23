@@ -1,0 +1,101 @@
+=== PHPStan Analysis for TechPlanner ===
+Date: Thu Jul 16 10:02:12 AM CEST 2026
+Configuration: /var/www/_bases/base_techplanner_fila5/laravel/phpstan.neon
+============================================
+
+   0/157 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%
+  20/157 [▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░]  12%
+ 157/157 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+Instructions for interpreting errors
+---------
+
+Each error has an associated identifier, like `argument.type`
+or `return.missing`.
+
+Each error identifier has documentation at URL https://phpstan.org/error-identifiers/<identifier>
+This page contains code example, explanation why is this an error
+and instruction how to fix it.
+Before fixing the error, fetch the documentation page for its identifier.
+
+The error usually indicates a real bug or incorrect type in the code. Fix the underlying cause, do not just make the error go away.
+Do not add `@phpstan-ignore` comments, `@phpstan-ignore-next-line` comments, or baseline entries to suppress the error.
+Do not use assert() or inline @var PHPDoc tag to override PHPStan's inferred type.
+Do not add type casts just to silence errors.
+Do not widen parameter or return types just to make the error go away.
+ ------ ----------------------------------------------------------------------- 
+  Line   app/Filament/Widgets/ClientMapWidget.php                               
+ ------ ----------------------------------------------------------------------- 
+  22     Return type (array<string, Filament\Schemas\Components\Component>) of  
+          method                                                                
+         Modules\TechPlanner\Filament\Widgets\ClientMapWidget::getFormSchema()  
+         should be compatible with return type (array<int, mixed>) of method M  
+         odules\Xot\Filament\Widgets\XotBaseWidget::getFormSchema()             
+         🪪  method.childReturnType                                             
+         ✏️  app/Filament/Widgets/ClientMapWidget.php                           
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   app/Filament/Widgets/CoordinatesWidget.php                             
+ ------ ----------------------------------------------------------------------- 
+  26     Return type (array<string, Filament\Schemas\Components\Component>) of  
+          method                                                                
+         Modules\TechPlanner\Filament\Widgets\CoordinatesWidget::getFormSchema  
+         () should be compatible with return type (array<int, mixed>) of metho  
+         d Modules\Xot\Filament\Widgets\XotBaseWidget::getFormSchema()          
+         🪪  method.childReturnType                                             
+         ✏️  app/Filament/Widgets/CoordinatesWidget.php                         
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   app/Filament/Widgets/MapWidget.php                                     
+ ------ ----------------------------------------------------------------------- 
+  20     Return type (array<string, Filament\Schemas\Components\Component>) of  
+          method                                                                
+         Modules\TechPlanner\Filament\Widgets\MapWidget::getFormSchema()        
+         should be compatible with return type (array<int, mixed>) of method M  
+         odules\Xot\Filament\Widgets\XotBaseWidget::getFormSchema()             
+         🪪  method.childReturnType                                             
+         ✏️  app/Filament/Widgets/MapWidget.php                                 
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Unit/Models/BaseModelTest.php                                    
+ ------ ----------------------------------------------------------------------- 
+  19     Call to method toBeInstanceOf() of internal class                      
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Models/BaseModelTest.php                                
+  23     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Models/BaseModelTest.php                                
+  27     Call to method toBeInstanceOf() of internal class                      
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Models/BaseModelTest.php                                
+  32     Call to method toBeInstanceOf() of internal class                      
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Models/BaseModelTest.php                                
+  33     Call to method toBeInstanceOf() of internal class                      
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Models/BaseModelTest.php                                
+  37     Call to method toBeTrue() of internal class Pest\Mixins\Expectation<T  
+         Value> from outside its root namespace Pest.                           
+         🪪  method.internalClass                                               
+         ✏️  tests/Unit/Models/BaseModelTest.php                                
+ ------ ----------------------------------------------------------------------- 
+
+ -- --------------------------------------------------------------------------- 
+     Error                                                                      
+ -- --------------------------------------------------------------------------- 
+     Ignored error pattern #PHPDoc tag @mixin contains unknown class # was not  
+     matched in reported errors.                                                
+ -- --------------------------------------------------------------------------- 
+
+ [ERROR] Found 10 errors                                                        
+
+
+=== END ANALYSIS ===

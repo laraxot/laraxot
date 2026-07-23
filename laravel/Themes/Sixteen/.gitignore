@@ -1,0 +1,84 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Lockfiles (managed at monorepo root)
+package-lock.json
+yarn.lock
+
+# Build outputs
+build/
+dist/
+test-results/
+
+# Cache / temp
+.cache/
+tmp/
+temp/
+docs/cache/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log
+yarn-error.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors / AI tool workspaces
+.vscode/
+.idea/
+.cursor/
+.windsurf/
+.claude-flow
+.supermemory
+agentdb.rvf
+ruvector.db
+
+# Stray browser-saved-page dump (not theme source, keep out of history)
+Main_files/
+
+# Backups / stray artifacts
+*.bak
+*.old
+*.old1
+*.backup
+*.backup.*
+*.bakcup
+
+# Merge/rebase leftovers — never commit
+*~HEAD
+*~BASE
+*~LOCAL
+*~REMOTE
+*~head
+*.orig
+*.rej
+
+# AI/TOOL SCAFFOLD — must never exist in module/theme tree (see docs/wiki/rules/module-theme-root-cleanup.md, Rule 5)
+# Reports/audit artifacts belong under the monorepo build/, not inside the theme tree.
+_docs/
+scripts/
+bashscripts/
+docs/archive/
+docs/archived/
+docs/legacy/
+docs/workbench/
+.circleci/
+.claude-audit/
+tests/.claude-audit/
+_bmad-output/
+.devcontainer/
+.kilocode/
+.kiro/
+.ralph/
+tests/AuditCoverage/
+
+# Git internals
+.git-blame-ignore-revs

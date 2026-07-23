@@ -1,0 +1,129 @@
+=== PHPStan Analysis for Media ===
+Date: Thu Jul 16 10:13:08 AM CEST 2026
+Configuration: /var/www/_bases/base_techplanner_fila5/laravel/phpstan.neon
+============================================
+
+   0/195 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%
+  20/195 [▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░]  10%
+ 195/195 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+Instructions for interpreting errors
+---------
+
+Each error has an associated identifier, like `argument.type`
+or `return.missing`.
+
+Each error identifier has documentation at URL https://phpstan.org/error-identifiers/<identifier>
+This page contains code example, explanation why is this an error
+and instruction how to fix it.
+Before fixing the error, fetch the documentation page for its identifier.
+
+The error usually indicates a real bug or incorrect type in the code. Fix the underlying cause, do not just make the error go away.
+Do not add `@phpstan-ignore` comments, `@phpstan-ignore-next-line` comments, or baseline entries to suppress the error.
+Do not use assert() or inline @var PHPDoc tag to override PHPStan's inferred type.
+Do not add type casts just to silence errors.
+Do not widen parameter or return types just to make the error go away.
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Support/HasMediaTestStub.php                                     
+ ------ ----------------------------------------------------------------------- 
+  22     Method Modules\Media\Tests\Support\HasMediaTestStub::update() has      
+         parameter $options with no value type specified in iterable type       
+         array.                                                                 
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Support/HasMediaTestStub.php                                 
+  27     Method Modules\Media\Tests\Support\HasMediaTestStub::media() return    
+         type with generic class                                                
+         Illuminate\Database\Eloquent\Relations\MorphMany does not specify its  
+         types: TRelatedModel, TDeclaringModel                                  
+         🪪  missingType.generics                                               
+         ✏️  tests/Support/HasMediaTestStub.php                                 
+  47     Method Modules\Media\Tests\Support\HasMediaTestStub::getMedia() has    
+         parameter $filters with no value type specified in iterable type       
+         array.                                                                 
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Support/HasMediaTestStub.php                                 
+  47     Method Modules\Media\Tests\Support\HasMediaTestStub::getMedia()        
+         return type with generic class Illuminate\Support\Collection does not  
+         specify its types: TKey, TValue                                        
+         🪪  missingType.generics                                               
+         ✏️  tests/Support/HasMediaTestStub.php                                 
+  57     Method                                                                 
+         Modules\Media\Tests\Support\HasMediaTestStub::clearMediaCollectionExc  
+         ept() has parameter $excludedMedia with generic class                  
+         Illuminate\Support\Collection but does not specify its types: TKey,    
+         TValue                                                                 
+         🪪  missingType.generics                                               
+         ✏️  tests/Support/HasMediaTestStub.php                                 
+  57     Method                                                                 
+         Modules\Media\Tests\Support\HasMediaTestStub::clearMediaCollectionExc  
+         ept() has parameter $excludedMedia with no value type specified in     
+         iterable type array.                                                   
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Support/HasMediaTestStub.php                                 
+  57     Method                                                                 
+         Modules\Media\Tests\Support\HasMediaTestStub::clearMediaCollectionExc  
+         ept() has parameter $excludedMedia with no value type specified in     
+         iterable type array|Illuminate\Support\Collection.                     
+         🪪  missingType.iterableValue                                          
+         💡  See:                                                               
+         https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-i  
+         terable-type                                                           
+         ✏️  tests/Support/HasMediaTestStub.php                                 
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/AttachMediaActionTest.php                          
+ ------ ---------------------------------------------------------------------- 
+  7      Class Modules\Media\Tests\Unit\Actions\TestCase not found.            
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/AttachMediaActionTest.php                      
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/Unit/Actions/GetAttachmentsSchemaActionTest.php                 
+ ------ ---------------------------------------------------------------------- 
+  7      Class Modules\Media\Tests\Unit\Actions\TestCase not found.            
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/Unit/Actions/GetAttachmentsSchemaActionTest.php             
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/unit/actions/AttachMediaActionTest.php                          
+ ------ ---------------------------------------------------------------------- 
+  7      Class Modules\Media\Tests\Unit\Actions\TestCase not found.            
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/unit/actions/AttachMediaActionTest.php                      
+ ------ ---------------------------------------------------------------------- 
+
+ ------ ---------------------------------------------------------------------- 
+  Line   tests/unit/actions/GetAttachmentsSchemaActionTest.php                 
+ ------ ---------------------------------------------------------------------- 
+  7      Class Modules\Media\Tests\Unit\Actions\TestCase not found.            
+         🪪  class.notFound                                                    
+         💡  Learn more at https://phpstan.org/user-guide/discovering-symbols  
+         ✏️  tests/unit/actions/GetAttachmentsSchemaActionTest.php             
+ ------ ---------------------------------------------------------------------- 
+
+ -- --------------------------------------------------------------------------- 
+     Error                                                                      
+ -- --------------------------------------------------------------------------- 
+     Ignored error pattern #PHPDoc tag @mixin contains unknown class # was not  
+     matched in reported errors.                                                
+ -- --------------------------------------------------------------------------- 
+
+ [ERROR] Found 12 errors                                                        
+
+
+=== END ANALYSIS ===

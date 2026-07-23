@@ -1,0 +1,165 @@
+/* Map Visual Fix - Prevent layout breaking when map is moved */
+
+/* Fix map container sizing */
+.latitude-longitude-map-shell {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 340px !important;
+  border-radius: 0.375rem !important;
+  overflow: hidden !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.latitude-longitude-map-canvas {
+  width: 100% !important;
+  height: 340px !important;
+  min-height: 340px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  border: 0 !important;
+  z-index: 1 !important;
+}
+
+/* Fix wizard layout when map is present */
+[data-widget="create-ticket-wizard"] .fi-fo-section:has(.latitude-longitude-map-shell) {
+  position: relative !important;
+}
+
+[data-widget="create-ticket-wizard"] .fi-fo-section:has(.latitude-longitude-map-shell) .fi-fo-section-body {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Prevent map from affecting layout */
+.leaflet-container {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.leaflet-map-pane,
+.leaflet-tile-pane {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 1 !important;
+}
+
+/* Marker/overlay panes need higher z-index than tile pane to be visible */
+.leaflet-overlay-pane {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 4 !important;
+}
+
+.leaflet-shadow-pane {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 500 !important;
+}
+
+.leaflet-marker-pane {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 600 !important;
+}
+
+.leaflet-popup-pane {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 700 !important;
+}
+
+/* map-picker-lit marker styles (divIcon rendered outside Shadow DOM in Leaflet marker pane) */
+.map-picker-marker--custom {
+  background: transparent !important;
+  border: none !important;
+}
+
+.map-picker-marker__inner {
+  display: block;
+  line-height: 0;
+}
+
+.map-picker-marker__inner svg {
+  display: block;
+  overflow: visible;
+}
+
+/* Fix controls positioning */
+.leaflet-control-container {
+  position: absolute !important;
+  z-index: 1000 !important;
+  top: 10px !important;
+  right: 10px !important;
+}
+
+/* Mobile map fixes */
+@media (max-width: 768px) {
+  .latitude-longitude-map-canvas {
+    height: 300px !important;
+    min-height: 300px !important;
+  }
+
+  .latitude-longitude-map-shell {
+    min-height: 300px !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .leaflet-control-container {
+    top: 5px !important;
+    right: 5px !important;
+  }
+}
+
+/* Tablet map fixes */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .latitude-longitude-map-canvas {
+    height: 320px !important;
+    min-height: 320px !important;
+  }
+
+  .latitude-longitude-map-shell {
+    min-height: 320px !important;
+  }
+}
+
+/* Fix wizard step layout when map is active */
+[data-widget="create-ticket-wizard"] .fi-wiz-steps {
+  position: relative !important;
+  z-index: 100 !important;
+  margin-bottom: 1rem !important;
+}
+
+[data-widget="create-ticket-wizard"] .fi-wiz-steps .fi-wiz-step {
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+/* Ensure map doesn't overlap with wizard controls */
+[data-widget="create-ticket-wizard"] .fi-wiz-actions {
+  position: relative !important;
+  z-index: 100 !important;
+  background: white !important;
+  padding-top: 1rem !important;
+}
+
+/* Fix for when map is in fullscreen */
+.latitude-longitude-map-shell.is-browser-fullscreen {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+.latitude-longitude-map-shell.is-browser-fullscreen .latitude-longitude-map-canvas {
+  height: 100vh !important;
+  min-height: 100vh !important;
+}

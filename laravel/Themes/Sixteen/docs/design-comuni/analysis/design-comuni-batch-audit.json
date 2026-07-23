@@ -1,0 +1,51 @@
+[
+    {
+        "slug": "argomenti",
+        "json_exists": true,
+        "reference_status": 200,
+        "local_status": 200,
+        "local_result": "renders",
+        "body_parity": 90,
+        "main_parity": 83,
+        "body_reference_children": [
+            "div.skiplink",
+            "header.it-header-wrapper",
+            "div.it-nav-wrapper",
+            "div#header-nav-wrapper.it-header-navbar-wrapper",
+            "li",
+            "main",
+            "div#search-modal.modal.fade.search-modal",
+            "footer#footer.it-footer",
+            "li.list-inline-item",
+            "div.row"
+        ],
+        "body_local_children": [
+            "div.skiplink",
+            "header.it-header-wrapper",
+            "div.it-nav-wrapper",
+            "div#header-nav-wrapper.it-header-navbar-wrapper",
+            "li",
+            "main#main-container",
+            "div#search-modal.modal.fade.search-modal",
+            "footer#footer.it-footer",
+            "li.list-inline-item",
+            "div.row"
+        ],
+        "main_reference_children": [
+            "div#main-container.container",
+            "div.container",
+            "div.container.py-5",
+            "div#argomento.container.py-5",
+            "div.bg-primary",
+            "div.bg-grey-card.shadow-contacts"
+        ],
+        "main_local_children": [
+            "div.row.justify-content-center",
+            "div.container",
+            "div.container.py-5",
+            "div#argomento.container.py-5",
+            "div.bg-primary",
+            "div.bg-grey-card.shadow-contacts"
+        ]
+    }
+]

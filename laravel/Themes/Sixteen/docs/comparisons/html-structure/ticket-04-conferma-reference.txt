@@ -1,0 +1,465 @@
+<body>
+  <div> .skiplink
+    <a> .visually-hidden-focusable "Vai ai contenuti"
+    <a> .visually-hidden-focusable "Vai al
+        footer"
+  <header[data-bs-target]> .it-header-wrapper
+    <div> .it-header-slim-wrapper
+      <div> .container
+        <div> .row
+          <div> .col-12
+            <div> .it-header-slim-wrapper-content
+              <a[aria-label]> .d-lg-block .navbar-brand "Nome della Regione"
+              <div[role="navigation"]> .it-header-slim-right-zone
+                <div> .dropdown .nav-item
+                  <button[data-bs-toggle]> .dropdown-toggle .nav-link
+                    <span> .visually-hidden "Lingua attiva:"
+                    <span> "ITA"
+                  <div> .dropdown-menu
+                    <div> .row
+                      <div> .col-12
+                        <div> .link-list-wrapper
+                          <ul> .link-list
+                            <li>
+                              <a> .dropdown-item .list-item
+                                <span>
+                                  <span> .visually-hidden "selezionata"
+                            <li>
+                              <a> .dropdown-item .list-item
+                                <span> "ENG"
+                <a[data-element]> .btn .btn-full .btn-icon .btn-primary
+                  <span> .rounded-icon
+                  <span> .d-lg-block .d-none "Accedi all'area personale"
+    <div> .it-nav-wrapper
+      <div> .it-header-center-wrapper
+        <div> .container
+          <div> .row
+            <div> .col-12
+              <div> .it-header-center-content-wrapper
+                <div> .it-brand-wrapper
+                  <a>
+                    <div> .it-brand-text
+                      <div> .it-brand-title "Il mio Comune"
+                      <div> .d-md-block .d-none .it-brand-tagline "Un comune da vivere"
+                <div> .it-right-zone
+                  <div> .d-lg-flex .d-none .it-socials
+                    <span> "Seguici su"
+                    <ul>
+                      <li>
+                        <a>
+                          <span> .visually-hidden "Twitter"
+                      <li>
+                        <a>
+                          <span> .visually-hidden "Facebook"
+                      <li>
+                        <a>
+                          <span> .visually-hidden "YouTube"
+                      <li>
+                        <a>
+                          <span> .visually-hidden "Telegram"
+                      <li>
+                        <a>
+                          <span> .visually-hidden "Whatsapp"
+                      <li>
+                        <a>
+                          <span> .visually-hidden "RSS"
+                  <div> .it-search-wrapper
+                    <span> .d-md-block .d-none "Cerca"
+                    <button[data-bs-toggle][data-bs-target][aria-label]> .rounded-icon .search-link
+      <div#header-nav-wrapper> .it-header-navbar-wrapper
+        <div> .container
+          <div> .row
+            <div> .col-12
+              <div> .has-megamenu .navbar .navbar-expand-lg
+                <button[aria-label][data-bs-target][data-bs-toggle]> .custom-navbar-toggler
+                <div#nav4> .navbar-collapsable
+                  <div> .overlay
+                  <div> .close-div
+                    <button> .btn .close-menu
+                      <span> .visually-hidden "Nascondi la navigazione"
+                  <div> .menu-wrapper
+                    <a> .logo-hamburger
+                      <div> .it-brand-text
+                        <div> .it-brand-title "Nome del Comune"
+                    <nav[aria-label]>
+                      <ul[data-element]> .navbar-nav
+                        <li> .nav-item
+                          <a[data-element]> .nav-link
+                            <span> "Amministrazione"
+                        <li> .nav-item
+                          <a[data-element]> .nav-link
+                            <span> "Novità"
+                        <li> .nav-item
+                          <a[data-element]> .active .nav-link
+                            <span> "Servizi"
+                        <li> .nav-item
+                          <a[data-element]> .nav-link
+                            <span> "Vivere il Comune"
+                    <nav[aria-label]>
+                      <ul> .navbar-nav .navbar-secondary
+                        <li> .nav-item
+                          <a> .nav-link "Iscrizioni"
+                        <li> .nav-item
+                          <a> .nav-link "Estate in città"
+                        <li> .nav-item
+                          <a> .nav-link "Polizia locale"
+                        <li> .nav-item
+                          <a[data-element]> .nav-link
+                            <span>
+                    <div> .it-socials
+                      <span> "Seguici su"
+                      <ul>
+                        <li>
+                          <a>
+                            <span> .visually-hidden "Twitter"
+                        <li>
+                          <a>
+                            <span> .visually-hidden "Facebook"
+                        <li>
+                          <a>
+                            <span> .visually-hidden "YouTube"
+                        <li>
+                          <a>
+                            <span> .visually-hidden "Telegram"
+                        <li>
+                          <a>
+                            <span> .visually-hidden "Whatsapp"
+                        <li>
+                          <a>
+                            <span> .visually-hidden "RSS"
+  <main>
+    <div#main-container> .container
+      <div> .justify-content-center .row
+        <div> .col-12 .col-lg-10
+          <div[role="navigation"]> .cmp-breadcrumbs
+            <nav[aria-label]> .breadcrumb-container
+              <ol[data-element]> .breadcrumb .p-0
+                <li> .breadcrumb-item
+                  <a> "Home"
+                  <span> .separator "/"
+                <li> .breadcrumb-item
+                  <a> "Servizi"
+                  <span> .separator "/"
+                <li> .active .breadcrumb-item "Segnalazione disservizio"
+          <div> .cmp-heading .p-0
+            <div> .categoryicon-top .d-flex
+              <h1> .title-xxxlarge "Segnalazione inviata"
+            <p> .subtitle-small
+              <strong> "segnalazione AN4059281."
+            <p> .subtitle-small
+              <a> .t-primary "lista di tutte segnalazioni"
+            <p> .pt-3 .pt-lg-4 .subtitle-small
+              <br>
+              <strong> "giulia.bianchi@gmail.com"
+            <button> .bg-white .btn .btn-outline-primary .fw-bold
+              <span> .rounded-icon
+              <span> "Scarica la ricevuta (PDF 100KB)"
+          <p> .mt-3
+            <a> .t-primary .text-paragraph "Consulta la richiesta"
+            <span> .text-paragraph "nella tua area riservata"
+      <hr> .d-lg-block .d-none .mb-0 .mt-40
+      <div> .justify-content-center .mb-3 .mb-md-5 .row
+        <div> .col-12 .col-lg-10
+          <div> .cmp-icon-list
+            <h2#related-service> .mb-2 .mb-lg-4 .mb-lg-4 .mt-40 .title-xxlarge "Servizi correlati"
+            <div> .link-list-wrapper
+              <ul> .link-list
+                <li> .mb-4 .shadow
+                  <a> .icon-left .list-item .t-primary .title-small-semi-bold
+                    <span> .list-item-title-icon-wrapper
+                      <span> .list-item-title .title-small-semi-bold "Richiesta appuntamento"
+    <div> .bg-primary
+      <div> .container
+        <div> .bg-primary .d-flex .justify-content-center .row
+          <div> .col-12 .col-lg-6 .p-lg-0 .px-4
+            <div#rating> .cmp-rating .pb-lg-80 .pt-lg-80
+              <div[data-element]> .card .card-wrapper .shadow
+                <div> .cmp-rating__card-first
+                  <div> .border-0 .card-header
+                    <h2[data-element]> .mb-0 .title-medium-2-semi-bold "Quanto è stato facile usare questo servizio?"
+                  <div> .card-body
+                    <fieldset> .rating
+                      <legend> .visually-hidden "Valuta da 1 a 5 stelle la pagina"
+                      <input#star5a>
+                      <label[data-element]> .active .full .rating-star
+                        <span#first-star> .visually-hidden "Valuta 5 stelle su 5"
+                      <input#star4a>
+                      <label[data-element]> .active .full .rating-star
+                        <span#second-star> .visually-hidden "Valuta 4 stelle su 5"
+                      <input#star3a>
+                      <label[data-element]> .active .full .rating-star
+                        <span#third-star> .visually-hidden "Valuta 3 stelle su 5"
+                      <input#star2a>
+                      <label[data-element]> .active .full .rating-star
+                        <span#fourth-star> .visually-hidden "Valuta 2 stelle su 5"
+                      <input#star1a>
+                      <label[data-element]> .active .full .rating-star
+                        <span#fifth-star> .visually-hidden "Valuta 1 stelle su 5"
+                <div[data-step]> .cmp-rating__card-second .d-none
+                  <div> .border-0 .card-header .mb-0
+                    <h2#rating-feedback> .mb-0 .title-medium-2-bold
+                <div> .d-none .form-rating
+                  <div[data-step]> .d-none
+                    <div> .cmp-steps-rating
+                      <fieldset[data-element]> .d-none .fieldset-rating-one
+                        <legend> .iscrizioni-header .w-100
+                          <h3> .align-items-lg-center .d-flex .drop-shadow .flex-column .flex-lg-row .justify-content-between .step-title
+                            <span[data-element]> .d-block .text-wrap "Quali sono stati gli aspetti che hai preferito?"
+                            <span> .step "1/2"
+                        <div> .cmp-steps-rating__body
+                          <div> .cmp-radio-list
+                            <div> .card .card-teaser .shadow-rating
+                              <div> .card-body
+                                <div> .form-check .m-0
+                                  <div> .border-bottom .border-light .cmp-radio-list__item .radio-body
+                                    <input#radio-1>
+                                    <label[data-element]> .active "Le indicazioni erano chiare"
+                                  <div> .border-bottom .border-light .cmp-radio-list__item .radio-body
+                                    <input#radio-2>
+                                    <label[data-element]> .active "Le indicazioni erano complete"
+                                  <div> .border-bottom .border-light .cmp-radio-list__item .radio-body
+                                    <input#radio-3>
+                                    <label[data-element]> .active "Capivo sempre che stavo procedendo correttamente"
+                                  <div> .border-bottom .border-light .cmp-radio-list__item .radio-body
+                                    <input#radio-4>
+                                    <label[data-element]> .active "Non ho avuto problemi tecnici"
+                                  <div> .border-bottom .border-light .cmp-radio-list__item .radio-body
+                                    <input#radio-5>
+                                    <label[data-element]> .active "Altro"
+                      <fieldset[data-element]> .d-none .fieldset-rating-two
+                        <legend> .iscrizioni-header .w-100
+                          <h3> .align-items-lg-center .d-flex .drop-shadow .flex-column .flex-lg-row .flex-wrap .justify-content-between .step-title
+                            <span[data-element]> .d-block .text-wrap "Dove hai incontrato le maggiori difficoltà?"
+                            <span> .step "1/2"
+                        <div> .cmp-steps-rating__body
+                          <div> .cmp-radio-list
+                            <div> .card .card-teaser .shadow-rating
+                              <div> .card-body
+                                <div> .form-check .m-0
+                                  <div> .border-bottom .border-light .cmp-radio-list__item .radio-body
+                                    <input#radio-6>
+                                    <label[data-element]> .active "A volte le indicazioni non erano chiare"
+                                  <div> .border-bottom .border-light .cmp-radio-list__item .radio-body
+                                    <input#radio-7>
+                                    <label[data-element]> .active "A volte le indicazioni non erano complete"
+                                  <div> .border-bottom .border-light .cmp-radio-list__item .radio-body
+                                    <input#radio-8>
+                                    <label[data-element]> .active "A volte non capivo se stavo procedendo correttamente"
+                                  <div> .border-bottom .border-light .cmp-radio-list__item .radio-body
+                                    <input#radio-9>
+                                    <label[data-element]> .active "Ho avuto problemi tecnici"
+                                  <div> .border-bottom .border-light .cmp-radio-list__item .radio-body
+                                    <input#radio-10>
+                                    <label[data-element]> .active "Altro"
+                  <div[data-step]> .d-none
+                    <div> .cmp-steps-rating
+                      <fieldset>
+                        <legend> .iscrizioni-header .w-100
+                          <h3> .align-items-lg-center .d-flex .drop-shadow .flex-column .flex-lg-row .flex-wrap .justify-content-between .step-title
+                            <span> .d-block .text-wrap "Vuoi aggiungere altri dettagli?"
+                            <span> .step "2/2"
+                        <div> .cmp-steps-rating__body
+                          <div> .form-group
+                            <label> "Dettaglio"
+                            <input#formGroupExampleInputWithHelp[data-element]> .form-control
+                            <small#formGroupExampleInputWithHelpDescription> .form-text "Inserire massimo 200 caratteri"
+                  <div> .button-shadow .d-flex .flex-nowrap .justify-content-center .pt-4 .w-100
+                    <button> .btn .btn-back .btn-outline-primary .fw-bold .me-4 "Indietro"
+                    <button> .btn .btn-next .btn-primary .fw-bold "Avanti"
+    <div> .bg-grey-card .shadow-contacts
+      <div> .container
+        <div> .row
+          <div> .col-12 .col-lg-6 .offset-lg-3 .p-contacts
+            <div> .cmp-contacts
+              <div> .card .w-100
+                <div> .card-body
+                  <h2> .title-medium-2-semi-bold "Contatta il comune"
+                  <ul> .contact-list .p-0
+                    <li>
+                      <a> .list-item
+                        <span> "Leggi le domande frequenti"
+                    <li>
+                      <a[data-element]> .list-item
+                        <span> "Richiedi assistenza"
+                    <li>
+                      <a> .list-item
+                        <span> "Chiama il numero verde 05 0505"
+                    <li>
+                      <a[data-element]> .list-item
+                        <span> "Prenota appuntamento"
+  <div#search-modal[role="dialog"]> .fade .modal .search-modal
+    <div[role="document"]> .modal-dialog .modal-lg
+      <div> .modal-content .perfect-scrollbar
+        <div> .modal-body
+          <form>
+            <div> .container
+              <div> .row .variable-gutters
+                <div> .col
+                  <div> .modal-title
+                    <button[data-bs-toggle][data-bs-target][aria-label]> .d-md-none .search-link
+                    <h2> "Cerca"
+                    <button[data-bs-toggle][data-bs-target][aria-label]> .d-md-block .d-none .search-link
+                  <div> .autocomplete-wrapper .form-group
+                    <label> .active .visually-hidden "Cerca nel sito"
+                    <input#autocomplete-two[data-bs-autocomplete]> .autocomplete .ps-5
+                    <ul> .autocomplete-list
+                    <span> .autocomplete-icon
+                    <button> .btn .btn-primary
+                      <span> "Cerca"
+              <div> .row .variable-gutters
+                <div> .col-lg-5
+                  <div> .searches-list-wrapper
+                    <div> .other-link-title "FORSE STAVI CERCANDO"
+                    <ul> .searches-list
+                      <li>
+                        <a> "Rilascio Carta Identità Elettronica (CIE)"
+                      <li>
+                        <a> "Cambio di residenza"
+                      <li>
+                        <a> "Tributi online"
+                      <li>
+                        <a> "Prenotazione appuntamenti"
+                      <li>
+                        <a> "Rilascio tessera elettorale"
+                      <li>
+                        <a> "Voucher connettività"
+  <footer#footer> .it-footer
+    <div> .it-footer-main
+      <div> .container
+        <div> .row
+          <div> .col-12 .footer-items-wrapper .logo-wrapper
+            <img> .ue-logo
+            <div> .it-brand-wrapper
+              <a>
+                <div> .it-brand-text
+                  <h2> .no_toc "Nome del Comune"
+        <div> .row
+          <div> .col-md-3 .footer-items-wrapper
+            <h4> .footer-heading-title "Amministrazione"
+            <ul> .footer-list
+              <li>
+                <a> "Organi di governo"
+              <li>
+                <a> "Aree amministrative"
+              <li>
+                <a> "Uffici"
+              <li>
+                <a> "Enti e fondazioni"
+              <li>
+                <a> "Politici"
+              <li>
+                <a> "Personale amministrativo"
+              <li>
+                <a> "Documenti e dati"
+          <div> .col-md-6 .footer-items-wrapper
+            <h4> .footer-heading-title "Categorie di servizio"
+            <div> .row
+              <div> .col-md-6
+                <ul> .footer-list
+                  <li>
+                    <a> "Anagrafe e stato civile"
+                  <li>
+                    <a> "Cultura e tempo libero"
+                  <li>
+                    <a> "Vita lavorativa"
+                  <li>
+                    <a> "Imprese e commercio"
+                  <li>
+                    <a> "Appalti pubblici"
+                  <li>
+                    <a> "Catasto e urbanistica"
+                  <li>
+                    <a> "Turismo"
+                  <li>
+                    <a> "Mobilità e trasporti"
+              <div> .col-md-6
+                <ul> .footer-list
+                  <li>
+                    <a> "Educazione e formazione"
+                  <li>
+                    <a> "Giustizia e sicurezza pubblica"
+                  <li>
+                    <a> "Tributi, finanze e contravvenzioni"
+                  <li>
+                    <a> "Ambiente"
+                  <li>
+                    <a> "Salute, benessere e assistenza"
+                  <li>
+                    <a> "Autorizzazioni"
+                  <li>
+                    <a> "Agricoltura e pesca"
+          <div> .col-md-3 .footer-items-wrapper
+            <h4> .footer-heading-title "Novità"
+            <ul> .footer-list
+              <li>
+                <a> "Notizie"
+              <li>
+                <a> "Comunicati"
+              <li>
+                <a> "Avvisi"
+            <h4> .footer-heading-title "Vivere il comune"
+            <ul> .footer-list
+              <li>
+                <a> "Luoghi"
+              <li>
+                <a> "Eventi"
+          <div> .col-md-9 .footer-items-wrapper .mt-md-4
+            <h4> .footer-heading-title "Contatti"
+            <div> .row
+              <div> .col-md-4
+                <p> .footer-info
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <a> "Ufficio Relazioni con il Pubblico"
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+              <div> .col-md-4
+                <ul> .footer-list
+                  <li>
+                    <a[data-element]> "Leggi le FAQ"
+                  <li>
+                    <a> "Prenotazione appuntamento"
+                  <li>
+                    <a[data-element]> "Segnalazione disservizio"
+                  <li>
+                    <a> "Richiesta d'assistenza"
+              <div> .col-md-4
+                <ul> .footer-list
+                  <li>
+                    <a> "Amministrazione trasparente"
+                  <li>
+                    <a[data-element]> "Informativa privacy"
+                  <li>
+                    <a[data-element]> "Note legali"
+                  <li>
+                    <a[data-element]> "Dichiarazione di accessibilità"
+          <div> .col-md-3 .footer-items-wrapper .mt-md-4
+            <h4> .footer-heading-title "Seguici su"
+            <ul> .list-inline .social .text-start
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "Twitter"
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "Facebook"
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "YouTube"
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "Telegram"
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "Whatsapp"
+              <li> .list-inline-item
+                <a> .p-1 .text-white
+                  <span> .visually-hidden "RSS"
+        <div> .row
+          <div> .col-12 .footer-items-wrapper
+            <div> .footer-bottom
+              <a> "Media policy"
+              <a> "Mappa del sito"

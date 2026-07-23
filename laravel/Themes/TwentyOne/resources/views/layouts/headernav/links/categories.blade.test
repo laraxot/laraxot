@@ -1,0 +1,36 @@
+<div class="hidden lg:block">
+	<button id="markets-dropdown-button" data-dropdown-toggle="markets-dropdown"
+		class="flex flex-col items-center p-2 capitalize transition-all ease-out bg-transparent rounded-lg hover:bg-white text-neutral-3 focus:bg-white">
+		<x-heroicon-o-globe-europe-africa class="w-6 h-6"/>
+		<span class="flex items-center gap-1 navlink-text">
+			<span>Markets</span>
+            <x-fas-chevron-down class="h-3" />
+		</span>
+	</button>
+
+	<div id="markets-dropdown"
+		class="absolute z-10 hidden p-10 overflow-hidden text-sm bg-white border border-gray-100 rounded-lg shadow-md">
+		<ul class="grid grid-cols-[repeat(5,180px)] gap-6">
+
+			{{-- {{ dddx($_theme->getMenu('navbar categories')) }} --}}
+            @foreach($_theme->getMenu('navbar categories') as $menu)
+				{{-- {{ dddx($category) }} --}}
+                <li class="flex flex-col gap-6">
+                    <a href="{{ url($menu['url']) }}">
+                        <div class="flex items-center gap-2">
+							{{-- <x-{!! $menu['icon'] !!} width="20px" padding="3px" style="color: grey"/> --}}
+							{{-- {{ $menu['icon'] }} --}}
+							@svg($menu['icon'], 'w-6 h-6', ['style' => 'color: grey'])
+                            <span class="max-w-[100px] font-semibold text-base leading-[14px]" style="color: grey">{{ $menu['title'] }}</span>
+                        </div>
+                    </a>
+                    {{-- @foreach($category->children as $child)
+                        <a class="p-2 -ml-2 rounded text-neutral-5 hover:bg-neutral-1" href="#category/2129/big-companies">
+                            {{ $child->title }}
+                        </a>
+                    @endforeach --}}
+                </li>
+            @endforeach
+		</ul>
+	</div>
+</div>
