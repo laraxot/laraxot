@@ -1,65 +1,120 @@
 {
 	"folders": [
 		{
+			"name": "base_workorder_fila5",
 			"path": "."
 		}
 	],
 	"settings": {
-		"better-phpunit.phpunitBinary": "phpunit",
-		"editor.formatOnSave": true,
+		"files.eol": "\n",
+		"files.trimTrailingWhitespace": true,
+		"files.insertFinalNewline": true,
+		"editor.wordWrap": "wordWrapColumn",
+		"editor.wordWrapColumn": 120,
+		"editor.formatOnSave": false,
+		"editor.formatOnType": true,
+		"editor.semanticHighlighting.enabled": true,
 		"editor.parameterHints.enabled": false,
-		"better-phpunit.phpunitBinary": "phpunit",
-		"editor.formatOnSave": true,
-		"editor.parameterHints.enabled": false,
-		"better-phpunit.phpunitBinary": "phpunit",
-		"editor.formatOnSave": true,
-		"editor.parameterHints.enabled": false,
+		"editor.defaultFormatter": "junstyle.php-cs-fixer",
+		"[php]": {
+			"editor.defaultFormatter": "junstyle.php-cs-fixer",
+			"editor.tabSize": 4,
+			"editor.insertSpaces": true
+		},
+		"[blade]": {
+			"editor.defaultFormatter": "shufo.vscode-blade-formatter"
+		},
+		"[json]": {
+			"editor.defaultFormatter": "vscode.json-language-features"
+		},
+		"[jsonc]": {
+			"editor.defaultFormatter": "vscode.json-language-features"
+		},
+		"[markdown]": {
+			"editor.wordWrap": "on",
+			"editor.defaultFormatter": "yzhang.markdown-all-in-one"
+		},
+
+		"php.validate.enable": true,
+		"php.suggest.basic": false,
+		"intelephense.environment.phpVersion": "8.3.0",
+		"intelephense.files.maxSize": 5000000,
+		"intelephense.files.exclude": [
+			"**/.git/**",
+			"**/node_modules/**",
+			"**/vendor/**/Tests/**",
+			"**/vendor/**/tests/**",
+			"**/storage/**",
+			"**/bootstrap/cache/**",
+			"**/public/build/**",
+			"**/public/hot",
+			"**/.phpunit.cache/**",
+			"**/_docs/**"
+		],
+
 		"php-cs-fixer.onsave": true,
 		"php-cs-fixer.formatHtml": true,
-		"php-cs-fixer.config": ".php-cs-fixer.php",
-		"vscode-php-cs-fixer.config": ".php-cs-fixer.php",
+		"php-cs-fixer.allowRisky": true,
+		"php-cs-fixer.config": "${workspaceFolder}/laravel/Modules/Xot/.php-cs-fixer.php",
 		"php-cs-fixer.executablePath": "php-cs-fixer",
 		"php-cs-fixer.executablePathWindows": "php-cs-fixer.bat",
 		"vscode-php-cs-fixer.allowRisky": true,
+		"vscode-php-cs-fixer.config": "${workspaceFolder}/laravel/Modules/Xot/.php-cs-fixer.php",
+		"vscode-php-cs-fixer.useCache": true,
+
 		"phpmd.enabled": false,
 		"phpmd.validate.rulesets": "cleancode,codesize,controversial,design,naming,unusedcode",
 		"phpmd.SuppressWarnings": true,
 		"phpmd.verbose": false,
-		"php-cs-fixer.allowRisky": true,
-		"phpformatter.composer": true,
-		"editor.defaultFormatter": "junstyle.php-cs-fixer",
-		"[php]": {
-			"editor.defaultFormatter": "junstyle.php-cs-fixer"
-		},
-		"editor.tokenColorCustomizations": {
-			"semanticHighlighting": true
-		},
-		"vscode-php-cs-fixer.useCache": true,
-		"editor.wordWrapColumn": 120,
-		"files.eol": "\n",
-		"git.autofetch": true,
-		"git.ignoreLimitWarning": true,
+
 		"git.autoRepositoryDetection": "subFolders",
-		"git.scanRepositories": [
-			"laravel/Modules/UI",
-			"laravel/Modules/Notify",
-			"laravel/Modules/User"
-		],
-		"deepscan.enable": true,
+		"git.repositoryScanMaxDepth": 4,
+		"git.autofetch": "all",
+		"git.ignoreLimitWarning": true,
+		"git.detectSubmodules": false,
+		"git.openRepositoryInParentFolders": "never",
+
+		"search.exclude": {
+			"**/node_modules": true,
+			"**/vendor": true,
+			"**/storage": true,
+			"**/bootstrap/cache": true,
+			"**/public/build": true,
+			"**/.phpunit.cache": true,
+			"**/_docs": true,
+			"**/*.lock": true,
+			"**/composer.lock": true,
+			"**/package-lock.json": true
+		},
+		"files.exclude": {
+			"**/.phpunit.cache": true,
+			"**/public/hot": true
+		},
 		"files.watcherExclude": {
 			"**/.git/objects/**": true,
 			"**/.git/subtree-cache/**": true,
-			"**/node_modules/*/**": true
+			"**/node_modules/**": true,
+			"**/vendor/**": true,
+			"**/storage/logs/**": true,
+			"**/storage/framework/**": true,
+			"**/bootstrap/cache/**": true,
+			"**/public/build/**": true,
+			"**/.phpunit.cache/**": true,
+			"**/_docs/**": true
 		}
 	},
 	"extensions": {
 		"recommendations": [
+			"bmewburn.vscode-intelephense-client",
 			"junstyle.php-cs-fixer",
 			"mehedidracula.php-namespace-resolver",
-			"bmewburn.vscode-intelephense-client"
+			"shufo.vscode-blade-formatter",
+			"onecentlin.laravel-blade",
+			"codingyu.laravel-goto-view",
+			"amiralizadeh9480.laravel-extra-intellisense",
+			"yzhang.markdown-all-in-one",
+			"redhat.vscode-yaml",
+			"eamodio.gitlens"
 		]
-	},
-	"files.exclude": {
-		"**/.git": false
 	}
 }
