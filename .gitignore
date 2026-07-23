@@ -122,3 +122,4 @@ bashscripts/ai/.agents/skills/ui-ux-pro-max/scripts/__pycache__/core.cpython-312
 build
 cache/*
 .gitmodules
+.opencode
