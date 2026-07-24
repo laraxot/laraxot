@@ -3,39 +3,37 @@ title: "Handoff — analisi gestionale_commesse parity"
 type: chat
 tags: [multi-agent, gestionale-commesse, handoff]
 created: 2026-07-23
-updated: 2026-07-23
-qmd: "chat handoff gestionale_commesse module parity locks"
+updated: 2026-07-24
+qmd: "chat handoff gestionale_commesse module parity next steps BMAD D17"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
+  - "https://github.com/laraxot/base_workorder_fila5/issues/14"
 discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
+  - "https://github.com/laraxot/base_workorder_fila5/discussions/15"
 ---
 
 # Handoff multi-agente — gestionale_commesse
 
-## Cosa è stato fatto (questo agente)
+> **2026-07-24 — utente sospeso (altro progetto).**  
+> Cold start BMAD: [0.session-handoff-next-steps.story.md](../wiki/skills/bmad-create-story/stories/0.session-handoff-next-steps.story.md)  
+> Indice + blocco handoff: [stories/README.md](../wiki/skills/bmad-create-story/stories/README.md)  
+> Coda: `next_queue` in [sprint-status.yaml](../sprint-status.yaml)
 
-- Inventario approfondito SRC → [inventory-src.md](../gestionale-commesse-comparison/inventory-src.md)
-- Arricchiti mapping / EPIC / new-modules + story **1.1** e figlie **1.2–1.5**
-- Auth→User e HR→Employee già documentati da agente parallelo (file in `.lock` — non sovrascritti)
+## Prossima coda (non inventare)
 
-## Lock ancora di altri agenti (non rubare)
+1. **D17** — [debt-phpunit-env-precedence.md](../../laravel/docs/debt-phpunit-env-precedence.md) (users/roles su fixcity; no migrate:fresh)
+2. **2.5** Pest Quotation/Signature/Billing — [2.5.migrate-gestionale-tests.story.md](../wiki/skills/bmad-create-story/stories/2.5.migrate-gestionale-tests.story.md)
+3. **1.13** Timber tallies — non duplicare 2.5
+4. **D1** Document≠media prima di migrate Document
+5. **2.3** / **1.5** (P2)
 
-`User/docs/gestionale-auth-vs-user.md`, `Employee/docs/gestionale-hr-gap.md`, Media/Notify/AI/Tenant/Activity/Themes `gestionale-*.md`
+## Religion
 
-## Update 2026-07-23 (agente Claude — sessione recovery post-incidente laravel/Modules)
+Replica singolare; no delete Auth/HR/Document/AiAssistant; no git restore; no RefreshDatabase; no migrate --force.
 
-- `laravel/Modules/` era stata trovata **vuota** (28.740 file tracciati git segnati `D` nella working tree, causa non identificata, nessun processo distruttivo attivo trovato). Utente ha chiesto di ignorare l'incidente e concentrarsi sulla conversione.
-- Ripristinati per **fase A (replica-singular-phase.md)** i 16 moduli mancanti copiando as-is da `/var/www/_bases/gestionale_commesse/Modules/*` con `rsync`, rinominando **solo** la cartella al singolare secondo `module-name-singular-mandatory.md`:
-  `Customers→Customer`, `WorkOrders→WorkOrder`, `Interventions→Intervention`, `Quotations→Quotation`, `Signatures→Signature`, `Vehicles→Vehicle`; invariati: `AiAssistant, Billing, Bom, Catalog, Compliance, EnergyBroker, Fiscal, Inventory, Production, PublicProcurement, TimberBilling`.
-- Per ognuno: `composer.json` minimo Fase A (`autoload.psr-4` con **namespace SRC originale invariato**, es. `Modules\Customers\` puntato a root `""` fisica sotto `Modules/Customer/` — namespace PHP **non** riscritto, deferred a Fase B) + `module.json` con `name`/`alias` aggiornati al singolare per i 6 rinominati (providers ancora riferiti al vecchio namespace).
-- `modules_statuses.json` già coerente (tutti i nuovi a `false`), non modificato oltre.
-- Lock presi e rilasciati correttamente su tutti i path toccati (`bashscripts/lock/*.sh`).
-- **Non toccato**: namespace PHP interno, reshape XotBase, merge Auth→User/HR→Employee/AiAssistant→AI/Documents→Media/Email+WhatsApp→Notify/Platform→Tenant+Activity+Xot (resta Fase successiva).
+## Storico (2026-07-23)
 
-## Prossimo
-
-1. Review umana Discussion #8 (naming) — invariato
-2. Fase B (reshape XotBase) modulo per modulo, solo quando c'è un motivo concreto (vedi `feedback_porting_phases` — non farlo automaticamente in blocco)
-3. Riscrivere namespace PHP dei 6 moduli rinominati (`Modules\Customers\*` → `Modules\Customer\*`, ecc.) quando si passa alla Fase B, non prima
-4. Verificare periodicamente `laravel/Modules/` non torni vuota (incidente non spiegato in questa sessione)
+- Inventario SRC + story 1.1–1.5
+- Fase A copy moduli singolari (vedi body precedente in git se serve dettaglio rsync)
+- **Non** rifare reshape già in review/done (1.8–1.11, 2.1)

@@ -3,6 +3,7 @@
 # last_updated: 2026-07-24
 # STATUS DEFINITIONS: backlog | ready-for-dev | in-progress | review | done | blocked
 # stories index: docs/wiki/skills/bmad-create-story/stories/README.md
+# handoff cold-start: docs/wiki/skills/bmad-create-story/stories/0.session-handoff-next-steps.story.md
 
 project: base_workorder_fila5
 source_epic: docs/stories/EPIC-gestionale-commesse-alignment.md
@@ -12,8 +13,21 @@ functional_readiness: docs/gestionale-commesse-comparison/functional-readiness.m
 agent_errors_ssot: docs/gestionale-commesse-comparison/agent-errors-lessons.md
 technical_debt_hub: laravel/docs/gestionale-technical-debt.md
 stories_index: docs/wiki/skills/bmad-create-story/stories/README.md
+handoff_story: docs/wiki/skills/bmad-create-story/stories/0.session-handoff-next-steps.story.md
+
+# USER PAUSED 2026-07-24 — other project. New agent: read handoff_story FIRST.
+next_queue:
+  - P0: D17 debt-phpunit-env-precedence # ROOT CAUSE Pest — users/roles on fixcity; see story 2.5 + debt doc; NO migrate:fresh
+  - P0: 2.5.migrate-gestionale-tests # after/with D17: Quotation/Signature/Billing wave
+  - P0: 1.13.migrate-real-tests-and-timber-gap # Timber tallies; do not duplicate 2.5
+  - P1: D1 debt-document-media-conflict # rename before any Document migrate
+  - P2: 2.3.deep-quality-enabled-modules # full Pest + Billing XotBase + D7 human composer
+  - P2: 1.5.employee-hr-gap # AbsenceRequest; keep HR module
+  - P3: human review Discussion #8 + close stories in review
+  # cold-start brief: 0.session-handoff-next-steps + stories/README handoff block
 
 development_status:
+  0.session-handoff-next-steps: in-progress
   gestionale-commesse-module-parity: in-progress
   1.2.customer-module: review
   1.3.workorder-module: review
