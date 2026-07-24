@@ -6,7 +6,7 @@ This document describes the migration strategy for the Job module, which manages
 
 **Module Path:** `laravel/Modules/Job/`
 
-**Parity Status:** 15 concrete models, 13 migrations (2-model mismatch)
+**Parity Status:** 15 concrete models, 14 migrations — full parity (as of 2026-07-24). The only remaining "gap", `JobsWaiting`, is an intentional subclass of `Job` that shares the `jobs` table.
 
 ---
 
@@ -44,20 +44,20 @@ Each migration represents the schema lifecycle for one or more models. Migration
 | — | **Aliases (no table)** | — | — | — | — |
 | 14 | `JobsWaiting` | ⊂ Job | (same as Job) | `jobs` | Alias for `Job` model; uses `jobs` table |
 | — | **Missing Migrations** | ✗ NO | — | — | — |
-| 15 | `TaskComment` | ✗ MISSING | (none) | `task_comments` | **ISSUE**: Table defined but no migration |
+| 14 | `TaskComment` | ✓ Migrated | `2026_07_24_000000_create_task_comments_table.php` | `task_comments` | Created 2026-07-24 (was missing) |
 
 ---
 
 ## Parity Analysis
 
 ### Summary
-- **Concrete models:** 15 (13 with migrations + 2 without)
-- **Migrations:** 13
-- **Mismatch:** +2 models
+- **Concrete models:** 15 (14 with own migration + 1 intentional table-sharing subclass)
+- **Migrations:** 14
+- **Mismatch:** 0 (parity reached — `JobsWaiting` shares `Job`'s table by design)
 
 ### Breakdown
 
-#### ✓ Models with Migrations (13)
+#### ✓ Models with Migrations (14)
 1. Job
 2. JobBatch
 3. Schedule
@@ -71,8 +71,9 @@ Each migration represents the schema lifecycle for one or more models. Migration
 11. Import
 12. Export
 13. FailedImportRow
+14. TaskComment
 
-#### ✗ Models without Migrations (2)
+#### ⊂ Models sharing another model's table (1)
 
 **1. JobsWaiting** (alias, expected)
 - Parent: `Job`
@@ -80,11 +81,12 @@ Each migration represents the schema lifecycle for one or more models. Migration
 - Status: ✓ EXPECTED (no separate table needed)
 - Action: No migration required
 
-**2. TaskComment** (standalone, unexpected)
+**2. TaskComment** (standalone) — RESOLVED
 - Parent: `BaseModel`
 - Table: `task_comments` (declared in model)
-- Status: ✗ **ISSUE** — Table exists in code but no migration
-- Action: **CREATE migration** `create_task_comments_table.php`
+- Status: ✓ **RESOLVED (2026-07-24)** — migration created
+- Migration: `2026_07_24_000000_create_task_comments_table.php`
+- Columns: `id`, `task_id` (unsignedInteger, matches `tasks.increments`), `user_id` (unsignedBigInteger, nullable), `comment` (text) + audit/soft-delete columns via `updateTimestamps(hasSoftDeletes: true)`
 
 ---
 
@@ -179,18 +181,16 @@ $this->tableUpdate(function (Blueprint $table): void {
 
 ## Known Issues
 
-### 1. TaskComment — Missing Migration
-- **Status:** ✗ CRITICAL
+### 1. TaskComment — Missing Migration (RESOLVED 2026-07-24)
+- **Status:** ✓ RESOLVED
 - **Model Path:** `app/Models/TaskComment.php`
-- **Issue:** Table `task_comments` declared in model but no migration file exists
-- **Impact:** Schema cannot be version-controlled or reliably deployed
-- **Resolution:** Create migration `create_task_comments_table.php` following XotBaseMigration pattern
-- **Columns needed** (inferred from TaskComment model):
-  - `id` (primary key)
-  - `task_id` (FK to tasks)
-  - `user_id` (FK to users)
+- **Resolution:** Created `2026_07_24_000000_create_task_comments_table.php` following the XotBaseMigration pattern (filename → model auto-resolution → `task_comments` table).
+- **Columns created:**
+  - `id` (increments primary key)
+  - `task_id` (unsignedInteger, indexed)
+  - `user_id` (unsignedBigInteger, nullable, indexed)
   - `comment` (text)
-  - Audit columns: `created_at`, `updated_at`, `deleted_at`, `created_by`, `updated_by`, `deleted_by`
+  - Audit + soft-delete columns via `updateTimestamps(hasSoftDeletes: true)`: `created_at`, `updated_at`, `created_by`, `updated_by`, `deleted_at`, `deleted_by`
 
 ### 2. Multiple Migrations with Same Timestamp
 - Files `2023_03_13_000000_*` (4 files) and `2024_03_12_082158_*` (2 files) share timestamps
@@ -283,8 +283,9 @@ php artisan migrate:rollback --path=Modules/Job/database/migrations/
 ## Session Notes
 
 **Created:** 2026-07-15  
-**Analysis:** Full parity audit (15 models vs 13 migrations)  
-**Key Finding:** TaskComment model missing migration — requires creation  
-**XotBaseMigration Status:** 13/13 migrations conform  
+**Updated:** 2026-07-24  
+**Analysis:** Full parity audit (15 models vs 14 migrations)  
+**Key Finding (resolved):** `TaskComment` migration created; `JobsWaiting` confirmed as intentional `Job` subclass sharing the `jobs` table  
+**XotBaseMigration Status:** 14/14 migrations conform  
 
 ---

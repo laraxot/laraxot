@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
+use Modules\TimberBilling\Database\Factories\TimberContactNoteFactory;
 use Modules\User\Models\User;
 
 /**
@@ -19,6 +21,9 @@ use Modules\User\Models\User;
  */
 final class TimberContactNote extends Model
 {
+    /** @use HasFactory<TimberContactNoteFactory> */
+    use HasFactory;
+
     protected $table = 'timber_contact_notes';
 
     /** @var array<int, string> */
@@ -34,5 +39,10 @@ final class TimberContactNote extends Model
     public function createdBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by_user_id');
+    }
+
+    protected static function newFactory(): TimberContactNoteFactory
+    {
+        return TimberContactNoteFactory::new();
     }
 }

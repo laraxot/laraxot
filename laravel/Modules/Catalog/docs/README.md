@@ -14,6 +14,7 @@ related:
   - "./import-status.md"
   - "./gestionale-commesse-port.md"
   - "./tests-migration.md"
+  - "./model-factory-seeder-status.md"
   - "../../../../docs/gestionale-commesse-comparison/functional-readiness.md"
   - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
   - "../../../../laravel/docs/migrate-gestionale-tests.md"
@@ -40,6 +41,7 @@ related:
 | [import-status.md](./import-status.md) | Checklist |
 | [gestionale-commesse-port.md](./gestionale-commesse-port.md) | Port |
 | [tests-migration.md](./tests-migration.md) | Pest SRC → DEST (11 passed) |
+| [model-factory-seeder-status.md](./model-factory-seeder-status.md) | Copertura modelli: migration + factory + seeder |
 
 ## Hub / BMAD
 

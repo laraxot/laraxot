@@ -13,6 +13,13 @@ class EmployeeDatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // $this->call([]);
+        $this->call([
+            DepartmentSeeder::class,
+            PositionSeeder::class,
+            AbsenceRequestSeeder::class,
+            TimeRecordSeeder::class,
+            TimeEntrySeeder::class,
+            WorkHourSeeder::class,
+        ]);
     }
 }

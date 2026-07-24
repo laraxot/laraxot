@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
+use Modules\TimberBilling\Database\Factories\TimberPriceListVersionFactory;
 
 /**
  * @property int $price_list_id
@@ -19,6 +21,9 @@ use Illuminate\Support\Carbon;
  */
 final class TimberPriceListVersion extends Model
 {
+    /** @use HasFactory<TimberPriceListVersionFactory> */
+    use HasFactory;
+
     protected $table = 'timber_price_list_versions';
 
     /** @var array<int, string> */
@@ -36,5 +41,10 @@ final class TimberPriceListVersion extends Model
     public function priceList(): BelongsTo
     {
         return $this->belongsTo(TimberPriceList::class, 'price_list_id');
+    }
+
+    protected static function newFactory(): TimberPriceListVersionFactory
+    {
+        return TimberPriceListVersionFactory::new();
     }
 }

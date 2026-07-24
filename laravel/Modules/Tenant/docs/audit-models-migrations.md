@@ -205,3 +205,46 @@ class Domain extends BaseModel
 **Audit By:** Claude Code (Agent)  
 **Audit Date:** 2026-07-15  
 **Module Status:** Locked during audit, ready for remediation
+
+---
+
+## Resolution (2026-07-24)
+
+Verified where each concrete model's table is defined and remediated the real gaps.
+Migration coverage decision per concrete model (`app/Models/*.php`, excluding
+abstract `BaseModel` / `BaseModelJsons`):
+
+| Model | Persistence | Table | Decision | Where the table lives |
+|-------|-------------|-------|----------|-----------------------|
+| `Tenant` | Eloquent (`tenant` conn) | `tenants` | **SKIP** — defined elsewhere | `Modules/User/database/migrations/2023_01_01_000008_create_tenants_table.php` and `2026_01_01_000001_create_tenants_table.php` (bound to `Modules\User\Models\Tenant`). The `tenant` connection is a runtime clone of the default connection, so both `Tenant` models share the same physical `tenants` table. |
+| `Domain` | Sushi (`use Sushi`, `getRows()` via `GetDomainsArrayAction`) | none | **SKIP** — non-DB | In-memory rows, no table. |
+| `TenantDomain` | Sushi (`use Sushi`, `getRows()`) | none | **SKIP** — non-DB | In-memory rows, no table. |
+| `TestSushiModel` | Sushi (`SushiToJson` trait) | none | **SKIP** — non-DB | JSON file storage (`storage/tests/sushi-json/…`). |
+| `TenantSetting` | Eloquent (`tenant` conn) | `tenant_settings` | **CREATE** — missing everywhere | New: `database/migrations/2026_07_24_000000_create_tenant_settings_table.php` |
+| `TenantSubscription` | Eloquent (`tenant` conn) | `tenant_subscriptions` | **CREATE** — missing everywhere | New: `database/migrations/2026_07_24_000001_create_tenant_subscriptions_table.php` |
+| `DatabaseConfig` | Eloquent (`tenant` conn) | `database_configs` | **CREATE** — missing everywhere | New: `database/migrations/2026_07_24_000002_create_database_configs_table.php` |
+
+### Why some tables were created after all
+
+The earlier audit hypothesised all Tenant tables were "managed externally". Verification
+across the whole repo (`Modules/*/database/migrations/` and `laravel/database/migrations/`)
+showed that only `tenants` is actually defined elsewhere (User module). For
+`tenant_settings`, `tenant_subscriptions` and `database_configs` **no table definition
+exists anywhere**, yet:
+
+- each is a concrete Eloquent model (extends `BaseModel`, **not** Sushi),
+- each has a factory + seeder, and the seeders call `xotSeedModelOnce()` →
+  `->createOne()`, which **persists** rows and therefore requires a real table.
+
+So these three were genuinely missing and are now created (forward-only,
+`XotBaseMigration` pattern, `updateTimestamps(hasSoftDeletes: true)`).
+`tenant_id` columns are typed `string` to match the shared `tenants.id` (string PK).
+
+### Confirmed architecture note
+
+`TenantServiceProvider::mergeModuleConnections()` clones the default DB connection into a
+`tenant` connection at boot. Tenant Eloquent models therefore live in the **default
+database** — the new migrations run there without an explicit `connection`, matching the
+existing User-module `tenants` migration behaviour.
+
+**Resolution By:** Claude Code (Agent) — 2026-07-24

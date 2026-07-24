@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
+use Modules\TimberBilling\Database\Factories\TimberAgentCommissionFactory;
 
 /**
  * @property int $agent_id
@@ -20,6 +22,9 @@ use Illuminate\Support\Carbon;
  */
 final class TimberAgentCommission extends Model
 {
+    /** @use HasFactory<TimberAgentCommissionFactory> */
+    use HasFactory;
+
     protected $table = 'timber_agent_commissions';
 
     /** @var array<int, string> */
@@ -43,5 +48,10 @@ final class TimberAgentCommission extends Model
     public function product(): BelongsTo
     {
         return $this->belongsTo(TimberProduct::class, 'product_id');
+    }
+
+    protected static function newFactory(): TimberAgentCommissionFactory
+    {
+        return TimberAgentCommissionFactory::new();
     }
 }
