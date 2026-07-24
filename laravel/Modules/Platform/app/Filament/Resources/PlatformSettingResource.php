@@ -36,7 +36,7 @@ final class PlatformSettingResource extends XotBaseResource
 
     protected static ?int $navigationSort = 1;
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('platform.settings');
     }
@@ -56,12 +56,12 @@ final class PlatformSettingResource extends XotBaseResource
         return self::isAvailableInCurrentPanel() && parent::canCreate();
     }
 
-    public static function canEdit($record): bool
+    public static function canEdit(Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && parent::canEdit($record);
     }
 
-    public static function canView($record): bool
+    public static function canView(Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && parent::canView($record);
     }
