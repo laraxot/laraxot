@@ -52,3 +52,31 @@ documenti con AI) è una verticale specialistica del settore energia, distante d
 gestionale commesse. Nessun segnale di domanda specifica nella base clienti attuale.
 Suggerito restare dormiente fino a una richiesta esplicita da un cliente broker
 energetico.
+
+## Test migrati dal sorgente (2026-07-24)
+
+Sorgente: `gestionale_commesse/tests/Feature/EnergyBroker/` (`EnergyBrokerImportWorkflowTest.php`,
+`EnergyBrokerLargeUploadTest.php`).
+
+- Aggiunto `tests/TestCase.php` + `tests/Pest.php` (mancavano, solo lo smoke test Unit esisteva).
+- Portato `tests/Feature/EnergyBrokerDocumentLifecycleTest.php`: estrazione PDF da ZIP
+  (`ExtractPdfFilesFromZipAction`) e pulizia documenti mal analizzati
+  (`DeletePoorlyAnalyzedEnergyBrokerDocumentsAction`) — le uniche parti del workflow
+  autosufficienti senza mock estesi di Google Document AI.
+- **Non portato** (fuori scopo per uno smoke pass su modulo dormiente): i test che
+  richiedono `Http::fake` su Google Document AI + customer matching completo
+  (`AnalyzeEnergyBrokerDocumentWithGoogleDocumentAiAction`, `ConfirmEnergyBrokerDocumentImportAction`)
+  e l'intero `EnergyBrokerLargeUploadTest.php` (upload a chunk, fuori scopo).
+- Namespace adattati: sorgente usava `Modules\EnergyBroker\Application\Actions\*` e
+  `Modules\EnergyBroker\Infrastructure\Models\*`; il modulo portato usa
+  `Modules\EnergyBroker\Actions\*` e `Modules\EnergyBroker\Models\*` (nessuna cartella
+  Application/Infrastructure).
+
+**Verifica 2026-07-24**: `vendor/bin/pest Modules/EnergyBroker/tests` in isolamento fallisce
+(2 dei 3 test) con lo stesso gap infrastrutturale già noto per Inventory — la connessione
+`xot` di test usa SQLite in-memory senza le migrazioni del modulo caricate (nessuna
+testsuite dedicata in `phpunit.xml`, nessun bootstrap che esegua `migrate` sulla
+connessione in-memory). Non è un problema del test in sé; richiede lo stesso fix
+descritto in `Modules/Inventory/docs/gestionale-commesse-port.md` (registrare le
+migrazioni/provider necessari nel bootstrap di test), rimandato per sforzo sproporzionato
+su un modulo dormiente.

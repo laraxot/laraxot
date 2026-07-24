@@ -60,3 +60,30 @@ gestionale (commesse/lavori). Non risultano segnali nella base clienti attuale d
 un'esigenza specifica per questo dominio (gestione manutenzioni caldaie/RCEE).
 Suggerito restare dormiente fino a una richiesta esplicita di un cliente in questo
 settore (impiantistica termica/manutenzione).
+
+## Test migrati dal sorgente (2026-07-24)
+
+Sorgente: `gestionale_commesse/tests/Feature/Compliance/` (`CustomerSystemTest.php`,
+`HeatingMaintenanceTest.php`; `ComplianceDemoSeederTest.php`, `ComplianceDocumentPreviewTest.php`
+e `ComplianceReadinessTest.php` non portati, vedi sotto).
+
+- Aggiunto `tests/TestCase.php` + `tests/Pest.php` (mancavano, solo lo smoke test Unit esisteva).
+- Portato `tests/Feature/CustomerSystemAndBoilerMaintenanceTest.php`: creazione
+  `CustomerSystem` con collegamento a `Customer` (via `CustomerFactory` esistente) e
+  `RegisterMaintenanceControlAction` (calcolo scadenza standard + override per caldaia).
+- **Non portato** (fuori scopo per uno smoke pass su modulo dormiente): allegato media
+  polimorfico (`CreateMediaFromStoredFileAction`, kind "schema"), generazione PDF RCEE
+  (`GenerateRceePdfAction`), generazione interventi di manutenzione
+  (`GenerateMaintenanceInterventionAction`, dipende dal modulo `Interventions` non
+  verificato), `GetHeatingComplianceOverviewQuery` (namespace fisico
+  `app/Application/Queries/` non ancora riallineato al PSR-4 `Modules\Compliance\Queries`),
+  `ComplianceDemoSeederTest`/`ComplianceDocumentPreviewTest`/`ComplianceReadinessTest`
+  (readiness/documenti legati a `WorkOrder` e AI, sforzo sproporzionato).
+- Namespace adattati: sorgente usava `Modules\Compliance\Application\Actions\*` e
+  `Modules\Compliance\Infrastructure\Models\*`; il modulo portato usa
+  `Modules\Compliance\Actions\*` e `Modules\Compliance\Models\*`.
+
+**Verifica 2026-07-24**: `vendor/bin/pest Modules/Compliance/tests` in isolamento fallisce
+(2 dei 3 test nuovi) per lo stesso gap infrastrutturale documentato in
+`Modules/Inventory/docs/gestionale-commesse-port.md` (connessione `xot` di test in
+SQLite in-memory senza le migrazioni del modulo). Non rincorso oltre in questa sessione.

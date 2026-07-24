@@ -60,3 +60,32 @@ Le factory (`ProductUnitFactory` ecc.) dipendono da `Modules\Catalog\Models\Prod
 Eseguito da solo, 3 test falliscono con `QueryException: no such table: products`. Nessuna
 testsuite `Inventory` in `phpunit.xml` root, quindi non gira mai in CI. Stesso fix di Bom/Production:
 registrare `CatalogServiceProvider` nel `TestCase` + aggiungere testsuite dedicata.
+
+## Test migrati dal sorgente (2026-07-24)
+
+Sorgente: `gestionale_commesse/tests/Feature/Inventory/` (`InventoryOverviewPageTest.php`,
+`WarehouseAndBomUiTest.php`).
+
+- Portato `tests/Feature/WarehouseAndInventoryMovementCrudTest.php`: CRUD completo
+  Warehouse (make/create/update/delete), collegamento WarehouseLocation→Warehouse,
+  creazione InventoryMovement e calcolo giacenza aggregata via
+  `GetInventoryOverviewRowsAction` su più magazzini — usa `Model::factory()->make()` per
+  il caso di sola validazione attributi, `->createOne()` dove serve persistenza per le FK.
+- **Non portato** (fuori scopo, richiede setup Filament/Livewire/permessi più ampio non
+  presente nel modulo ricostruito attuale): i test sulla pagina Filament
+  `InventoryOverview` con `ShieldPermissionsSeeder`/`PlatformSetting`/ruoli, il test
+  supplier `/supplier/warehouses` e i test BOM (`WarehouseAndBomUiTest.php` — BOM tree,
+  riferimenti circolari — dominio del modulo `Bom`, non `Inventory`).
+- Namespace adattati: sorgente usava `Modules\Inventory\Infrastructure\Models\*` e
+  `Modules\Inventory\Application\Queries\GetInventoryOverviewRowsQuery`; il modulo
+  portato usa `Modules\Inventory\Models\*` e `Modules\Inventory\Actions\GetInventoryOverviewRowsAction`.
+
+**Verifica 2026-07-24**: `vendor/bin/pest Modules/Inventory/tests` in isolamento fallisce
+(9 dei 10 test, incluso il test Unit preesistente) per il gap infrastrutturale già
+descritto sopra: la connessione `xot` di test usa SQLite in-memory e le migrazioni di
+Inventory (e dei suoi moduli collegati, es. `Catalog`) non vengono caricate su quella
+connessione in assenza di una testsuite dedicata in `phpunit.xml`. Verificato che le
+tabelle vengono correttamente create quando si punta il DB di test reale (`mariadb`,
+`.env.testing`) via `php artisan migrate --env=testing --path=Modules/Inventory/database/migrations`
+— quindi la logica applicativa dei test è corretta, il fallimento è solo di bootstrap
+dei test in isolamento (stesso gap per gli altri 4 moduli di questa sessione).

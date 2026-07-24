@@ -105,3 +105,22 @@ Nessun segnale di domanda specifica nella base clienti attuale del gestionale
 commesse. Suggerito restare dormiente fino a una richiesta esplicita da un cliente
 del settore legname/commercio all'ingrosso con necessità di fatturazione elettronica
 dedicata.
+
+## Test migrati dal sorgente — nota 2026-07-24 (sessione parallela)
+
+Sorgente: `gestionale_commesse/tests/Feature/TimberBilling/` (14 file). Al momento di
+questa sessione di migrazione multi-modulo, `Modules/TimberBilling/tests/` risultava
+**già esteso a 34 file** (`tests/Feature/*.php` + `tests/Unit/TimberBillingModuleSmokeTest.php`)
+da una sessione di lavoro concorrente in corso (vedi `git log` — commit "migrate tests
+from gestionale_commesse", debito D16 in `laravel/docs/gestionale-technical-debt.md`,
+"migrazione in corso 2026-07-24"), con modifiche non ancora committate su `app/Actions`,
+`app/Models/TimberDocument.php`, migrazioni e più file di `tests/Feature/`.
+
+Per non entrare in conflitto con quel lavoro attivo, questa sessione **non ha toccato**
+i file di test di TimberBilling. Verificato con
+`vendor/bin/pest Modules/TimberBilling/tests --no-coverage`: 70 passed / 120 failed
+(sull'insieme completo dei 5 moduli di questa sessione; il grosso dei failed è
+TimberBilling). I fallimenti osservati non sono legati al gap infrastrutturale xot/sqlite
+degli altri moduli dormienti, ma a business logic in corso di allineamento
+(es. `TimberWoodSpeciesTest` su seeding specie legnose, `RegisterTimberPurchaseAction`
+su validazione specie) — coerente con un porting ancora in corso nella sessione parallela.

@@ -47,3 +47,26 @@ specialistica non tipica per la base clienti attuale del gestionale (prevalentem
 commesse/lavori privati). Nessun segnale di domanda specifica in questo dominio.
 Suggerito restare dormiente fino a una richiesta esplicita da un cliente operante
 nel settore appalti pubblici.
+
+## Test migrati dal sorgente (2026-07-24)
+
+Sorgente: `gestionale_commesse/tests/Feature/PublicProcurement/PublicProcurementWorkflowTest.php`.
+
+- Aggiunto `tests/TestCase.php` + `tests/Pest.php` (mancavano, solo lo smoke test Unit esisteva).
+- Portato `tests/Feature/TenderEligibilityAndOpportunityTest.php`: valutazione
+  eleggibilità (`EvaluateTenderEligibilityAction`, casi eligible/blocked) e
+  costruzione+applicazione di una bozza AI testuale
+  (`BuildTenderOpportunityDraftFromTextAction` + `ApplyTenderOpportunityDraftAction`).
+- **Non portato** (fuori scopo per uno smoke pass su modulo dormiente):
+  `CreateContractFromOpportunityAction`/SAL (`GenerateProgressReportFromMeasurementsAction`,
+  dipende da `WorkOrder`), esecuzione da `AiActionProposal`/`ExecuteAiActionProposalAction`
+  (modulo `AiAssistant`), seeding demo (`PublicProcurementDemoSeeder`).
+- Namespace adattati: sorgente usava `Modules\PublicProcurement\Application\Actions\*` e
+  `Modules\PublicProcurement\Infrastructure\Models\*`; il modulo portato usa
+  `Modules\PublicProcurement\Actions\*` e `Modules\PublicProcurement\Models\*`.
+  `Modules\Compliance\Infrastructure\Models\ComplianceDocument` → `Modules\Compliance\Models\ComplianceDocument`.
+
+**Verifica 2026-07-24**: `vendor/bin/pest Modules/PublicProcurement/tests` in isolamento
+fallisce (2 dei 3 test nuovi) per lo stesso gap infrastrutturale documentato in
+`Modules/Inventory/docs/gestionale-commesse-port.md` (connessione `xot` di test in
+SQLite in-memory senza le migrazioni del modulo). Non rincorso oltre in questa sessione.
