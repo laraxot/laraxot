@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Customer\Filament\Resources;
 
+use App\Support\AccountFeatures;
 use App\Support\Concerns\HasAccountFeatureVisibility;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -15,9 +16,9 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Auth;
 use Modules\Customer\Filament\Resources\ResellerResource\Pages;
 use Modules\Customer\Models\Reseller;
 use Modules\Xot\Filament\Resources\XotBaseResource;
@@ -36,9 +37,23 @@ final class ResellerResource extends XotBaseResource
 
     private const ACCOUNT_FEATURE_OPERATOR_DEFAULT = false;
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
-        return __('customers.navigation');
+        return (string) __('customers.navigation');
+    }
+
+    /**
+     * Explicit feature wiring (constants referenced for PHPStan + AccountFeatures).
+     */
+    protected static function isAvailableInCurrentPanel(): bool
+    {
+        return AccountFeatures::currentPanelAllowsFeature(
+            Auth::user(),
+            adminFeature: self::ACCOUNT_FEATURE_ADMIN,
+            operatorFeature: self::ACCOUNT_FEATURE_OPERATOR,
+            operatorDefault: self::ACCOUNT_FEATURE_OPERATOR_DEFAULT,
+            fallback: false,
+        );
     }
 
     public static function getModelLabel(): string
@@ -51,9 +66,9 @@ final class ResellerResource extends XotBaseResource
         return __('resellers.resellers');
     }
 
-    public static function form(Schema $schema): Schema
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
@@ -75,7 +90,7 @@ final class ResellerResource extends XotBaseResource
                         ->columnSpanFull(),
                 ])
                 ->columns(2),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

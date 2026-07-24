@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\AiAssistant\Http\Controllers;
 
+use Carbon\CarbonInterface;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -52,7 +53,7 @@ final class AiProposalsController extends Controller
                 'preview' => (string) ($p->preview ?? ''),
                 'payload' => (array) ($p->payload ?? []),
                 'status' => (string) $p->status,
-                'created_at' => $p->created_at instanceof \Carbon\CarbonInterface
+                'created_at' => $p->created_at instanceof CarbonInterface
                     ? $p->created_at->toIso8601String()
                     : null,
             ])
@@ -89,4 +90,3 @@ final class AiProposalsController extends Controller
         };
     }
 }
-

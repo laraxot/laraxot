@@ -4,16 +4,33 @@ declare(strict_types=1);
 
 namespace Modules\Inventory\Models;
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Carbon;
 use Modules\Catalog\Models\Product;
 use Modules\Intervention\Models\Intervention;
+use Modules\Inventory\Database\Factories\InventoryMovementFactory;
+use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Models\XotBaseModel;
 
-final class InventoryMovement extends Model
+/**
+ * @property int $id
+ * @property int|null $product_id
+ * @property int|null $intervention_id
+ * @property int|null $work_order_id
+ * @property string|null $movement_type
+ * @property numeric-string|float|null $unit_price
+ * @property numeric-string|float|null $line_total
+ * @property Carbon|null $occurred_at
+ * @property-read Product|null $product
+ */
+final class InventoryMovement extends XotBaseModel
 {
+    /** @use HasFactory<InventoryMovementFactory> */
+    use HasFactory;
+
     protected $table = 'inventory_movements';
 
     /** @var array<int, string> */
@@ -84,4 +101,3 @@ final class InventoryMovement extends Model
         return $this->belongsToMany(ProductUnit::class, 'inventory_movement_product_units');
     }
 }
-

@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Quotation\Actions;
 
-use Modules\Quotation\Domain\Actions\CalculateQuotationTotalsAction;
-use Modules\Quotation\Domain\DTO\QuotationItemData;
+use Modules\Quotation\DTO\QuotationItemData;
 use Modules\Quotation\Models\Quotation;
+use Spatie\QueueableAction\QueueableAction;
 
-final readonly class RecalculateQuotationTotalsAction
+final class RecalculateQuotationTotalsAction
 {
+    use QueueableAction;
+
     public function __construct(
         private CalculateQuotationTotalsAction $calculator,
     ) {}
@@ -28,15 +30,15 @@ final readonly class RecalculateQuotationTotalsAction
 
         $totals = $this->calculator->execute($items, (float) $quotation->tax_percent);
 
-        $quotation->subtotal = (float) $totals->subtotal->asDecimalString();
-        $quotation->discount_amount = (float) $totals->discountAmount->asDecimalString();
-        $quotation->taxable_amount = (float) $totals->taxableAmount->asDecimalString();
-        $quotation->tax_amount = (float) $totals->taxAmount->asDecimalString();
-        $quotation->total = (float) $totals->total->asDecimalString();
+        $quotation->subtotal = $totals->subtotal->asDecimalString();
+        $quotation->discount_amount = $totals->discountAmount->asDecimalString();
+        $quotation->taxable_amount = $totals->taxableAmount->asDecimalString();
+        $quotation->tax_amount = $totals->taxAmount->asDecimalString();
+        $quotation->total = $totals->total->asDecimalString();
         $quotation->save();
 
         foreach ($quotation->items()->orderBy('sort_order')->orderBy('id')->get() as $idx => $item) {
-            $item->line_total = (float) $totals->lineTotals[$idx]->asDecimalString();
+            $item->line_total = $totals->lineTotals[$idx]->asDecimalString();
             $item->save();
         }
 

@@ -5,17 +5,17 @@ declare(strict_types=1);
 namespace Modules\Catalog\Filament\Resources\CatalogFrequencyResource\Pages;
 
 use Filament\Actions;
-use Filament\Resources\Pages\ListRecords;
 use Modules\Catalog\Filament\Resources\CatalogFrequencyResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
-final class ListCatalogFrequencies extends ListRecords
+final class ListCatalogFrequencies extends XotBaseListRecords
 {
     protected static string $resource = CatalogFrequencyResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            'create' => Actions\CreateAction::make(),
         ];
     }
 }

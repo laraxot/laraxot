@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\GoogleCalendar\Actions;
 
-use App\Models\User;
 use Carbon\CarbonInterface;
 use Modules\Intervention\GoogleCalendar\Contracts\GoogleCalendarClient;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\UserGoogleCalendarSetting;
+use Modules\User\Models\User;
 use Throwable;
 
 /**

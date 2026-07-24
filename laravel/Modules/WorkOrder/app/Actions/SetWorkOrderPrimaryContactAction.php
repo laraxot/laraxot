@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace Modules\WorkOrder\Actions;
 
 use Modules\WorkOrder\Models\WorkOrder;
+use Spatie\QueueableAction\QueueableAction;
 
 final class SetWorkOrderPrimaryContactAction
 {
+    use QueueableAction;
+
     public function execute(WorkOrder $workOrder, ?int $contactId): WorkOrder
     {
         $workOrder->primary_contact_id = $contactId !== null ? max(0, $contactId) : null;
@@ -16,4 +19,3 @@ final class SetWorkOrderPrimaryContactAction
         return $workOrder;
     }
 }
-

@@ -6,10 +6,35 @@ namespace Modules\Email\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 use Modules\AiAssistant\Models\AiActionProposal;
 use Modules\Intervention\Models\Intervention;
 use Modules\WorkOrder\Models\WorkOrder;
 
+/**
+ * @property int $id
+ * @property int $conversation_id
+ * @property int|null $work_order_id
+ * @property int|null $intervention_id
+ * @property int|null $ai_action_proposal_id
+ * @property string|null $external_message_id
+ * @property string $direction
+ * @property string|null $from_email
+ * @property string|null $from_name
+ * @property string|null $to_email
+ * @property string|null $subject
+ * @property string|null $body
+ * @property string $status
+ * @property string $processing_status
+ * @property array<string, mixed>|null $payload
+ * @property array<string, mixed>|null $ai_result
+ * @property string|null $error
+ * @property Carbon|null $received_at
+ * @property Carbon|null $sent_at
+ * @property Carbon|null $processed_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ */
 final class EmailMessage extends Model
 {
     protected $table = 'email_messages';

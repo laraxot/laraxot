@@ -20,5 +20,13 @@ related:
 - [x] Namespace `Modules\Vehicle\`
 - [x] `VehicleServiceProvider` → XotBaseServiceProvider
 - [x] composer PSR-4 → `app/`
-- [ ] Resources → XotBaseResource (wave)
-- [ ] PHPStan L10 + enable statuses
+- [x] Resources → XotBaseResource
+- [x] Migrazioni consolidate 1-per-modello (`create_vehicles_table`, `create_vehicle_documents_table`)
+- [x] `DocumentsRelationManager` → XotBaseRelationManager
+- [x] `VehiclePolicy` → `app/Models/Policies/VehicleBasePolicy`
+- [x] `lang/{it,en}/vehicles.php`
+- [x] `tests/{TestCase,Pest}.php` + `tests/Unit/VehicleModelTest.php` (8 assert, passano)
+- [x] PHPStan: 2 errori residui (falso positivo costanti lette per reflection) — vedi
+      `docs/gestionale-commesse-port.md`
+
+Dettaglio redo reshape 2026-07-23: [../../../docs/gestionale-commesse-port.md](../../../docs/gestionale-commesse-port.md).

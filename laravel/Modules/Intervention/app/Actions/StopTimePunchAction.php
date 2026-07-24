@@ -5,12 +5,15 @@ declare(strict_types=1);
 namespace Modules\Intervention\Actions;
 
 use Carbon\CarbonImmutable;
-use Modules\Intervention\Domain\Exceptions\NoOpenTimePunchToStop;
+use Modules\Intervention\Exceptions\NoOpenTimePunchToStop;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\TimePunch;
+use Spatie\QueueableAction\QueueableAction;
 
 final class StopTimePunchAction
 {
+    use QueueableAction;
+
     public function execute(Intervention $intervention, int $userId, ?CarbonImmutable $endedAt = null): TimePunch
     {
         $endedAt = $endedAt ?? CarbonImmutable::now();

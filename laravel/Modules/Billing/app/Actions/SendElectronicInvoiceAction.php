@@ -5,13 +5,17 @@ declare(strict_types=1);
 namespace Modules\Billing\Actions;
 
 use DateTimeInterface;
+use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Modules\Billing\Models\Invoice;
 use Modules\Platform\Settings\SettingsRepository;
+use Spatie\QueueableAction\QueueableAction;
 
 final class SendElectronicInvoiceAction
 {
+    use QueueableAction;
+
     public function __construct(
         private readonly SettingsRepository $settings,
     ) {}
@@ -98,7 +102,7 @@ final class SendElectronicInvoiceAction
                 'electronic_invoice_last_error' => $errorMessage,
             ])->save();
 
-            throw new \RuntimeException('Invio fattura elettronica fallito: ' . $errorMessage);
+            throw new \RuntimeException('Invio fattura elettronica fallito: '.$errorMessage);
         }
 
         /** @var mixed $json */
@@ -129,7 +133,7 @@ final class SendElectronicInvoiceAction
         ];
     }
 
-    private function extractErrorMessage(\Illuminate\Http\Client\Response $response): string
+    private function extractErrorMessage(Response $response): string
     {
         /** @var mixed $json */
         $json = $response->json();
@@ -142,10 +146,9 @@ final class SendElectronicInvoiceAction
 
         $body = trim($response->body());
         if ($body === '') {
-            return 'Errore HTTP ' . $response->status();
+            return 'Errore HTTP '.$response->status();
         }
 
         return mb_substr($body, 0, 1900);
     }
 }
-

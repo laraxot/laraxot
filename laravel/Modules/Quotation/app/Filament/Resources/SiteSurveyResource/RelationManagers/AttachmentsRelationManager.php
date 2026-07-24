@@ -10,23 +10,32 @@ use Filament\Actions\DeleteAction;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use Modules\Document\Models\Media;
+use Modules\Quotation\Models\SiteSurvey;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 /**
  * Foto, video e note vocali del sopralluogo: sono la sostanza del rilievo, non
- * un accessorio.
+ * un accessorio. Allegati gestiti via Spatie MediaLibrary (collection_name
+ * come "kind": photos, videos, voice_notes).
  */
-final class AttachmentsRelationManager extends RelationManager
+final class AttachmentsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'media';
+
+    /** @var array<string, string> */
+    private const KIND_TO_COLLECTION = [
+        'photo' => 'photos',
+        'video' => 'videos',
+        'audio' => 'voice_notes',
+    ];
 
     public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
@@ -45,9 +54,20 @@ final class AttachmentsRelationManager extends RelationManager
         ];
     }
 
-    public function form(Schema $schema): Schema
+    private static function collectionToKind(string $collection): string
     {
-        return $schema->components([
+        /** @var array<string, string> $flipped */
+        $flipped = array_flip(self::KIND_TO_COLLECTION);
+
+        return $flipped[$collection] ?? $collection;
+    }
+
+    /**
+     * @return array<int|string, Component>
+     */
+    public function getFormSchema(): array
+    {
+        return [
             Select::make('kind')
                 ->label(__('site_surveys.attachments.kind'))
                 ->options(self::kindOptions())
@@ -59,32 +79,32 @@ final class AttachmentsRelationManager extends RelationManager
             FileUpload::make('path')
                 ->label(__('site_surveys.attachments.file'))
                 ->disk('public')
-                ->directory(fn (): string => 'site-surveys/'.$this->getOwnerRecord()->getKey())
+                ->directory(fn (): string => 'site-surveys/'.(string) $this->getOwnerRecord()->getKey())
                 ->visibility('public')
                 ->maxSize(51200)
                 ->required()
                 ->columnSpanFull(),
-        ])->columns(2);
+        ];
     }
 
     public function table(Table $table): Table
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('kind')
+                Tables\Columns\TextColumn::make('collection_name')
                     ->label(__('site_surveys.attachments.kind'))
                     ->badge()
-                    ->color(fn (string $state): string => match ($state) {
+                    ->color(fn (string $state): string => match (self::collectionToKind($state)) {
                         'photo' => 'success',
                         'video' => 'info',
                         'audio' => 'warning',
                         default => 'gray',
                     })
-                    ->formatStateUsing(fn (string $state): string => self::kindOptions()[$state] ?? $state)
+                    ->formatStateUsing(fn (string $state): string => self::kindOptions()[self::collectionToKind($state)] ?? $state)
                     ->sortable(),
-                Tables\Columns\TextColumn::make('title')
+                Tables\Columns\TextColumn::make('name')
                     ->label(__('site_surveys.attachments.file_title'))
-                    ->formatStateUsing(fn (Media $record): string => (string) ($record->title ?: basename((string) $record->path)))
+                    ->formatStateUsing(fn (Media $record): string => $record->name !== '' ? $record->name : $record->file_name)
                     ->wrap()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
@@ -93,27 +113,40 @@ final class AttachmentsRelationManager extends RelationManager
                     ->sortable(),
             ])
             ->filters([
-                SelectFilter::make('kind')
+                SelectFilter::make('collection_name')
                     ->label(__('site_surveys.attachments.kind'))
-                    ->options(self::kindOptions()),
+                    ->options([
+                        'photos' => __('site_surveys.attachments.kinds.photo'),
+                        'videos' => __('site_surveys.attachments.kinds.video'),
+                        'voice_notes' => __('site_surveys.attachments.kinds.audio'),
+                    ]),
             ])
             ->headerActions([
                 CreateAction::make()
-                    ->mutateDataUsing(function (array $data): array {
+                    ->using(function (array $data): Media {
                         $path = $data['path'] ?? null;
-
                         if (is_array($path)) {
                             $path = reset($path);
                         }
+                        $path = is_string($path) ? $path : '';
 
-                        $data['path'] = is_string($path) ? $path : '';
-                        $data['disk'] = 'public';
-                        $data['uploaded_by_user_id'] = Auth::id();
+                        $kind = is_string($data['kind'] ?? null) ? $data['kind'] : 'photo';
+                        $collection = self::KIND_TO_COLLECTION[$kind] ?? 'voice_notes';
 
                         $title = trim((string) ($data['title'] ?? ''));
-                        $data['title'] = $title !== '' ? $title : basename($data['path']);
+                        $name = $title !== '' ? $title : basename($path);
 
-                        return $data;
+                        $userId = Auth::id();
+
+                        /** @var SiteSurvey $survey */
+                        $survey = $this->getOwnerRecord();
+
+                        $adder = $survey->addMediaFromDisk($path, 'public')->usingName($name);
+                        if (is_numeric($userId)) {
+                            $adder = $adder->withCustomProperties(['uploaded_by_user_id' => (int) $userId]);
+                        }
+
+                        return $adder->toMediaCollection($collection);
                     }),
             ])
             ->actions([
@@ -121,7 +154,7 @@ final class AttachmentsRelationManager extends RelationManager
                     ->label(__('site_surveys.attachments.download'))
                     ->icon('heroicon-o-arrow-down-tray')
                     ->action(fn (Media $record) => Storage::disk((string) $record->disk)
-                        ->download((string) $record->path, (string) ($record->title ?: basename((string) $record->path)))),
+                        ->download($record->getPathRelativeToRoot(), $record->name !== '' ? $record->name : $record->file_name)),
                 DeleteAction::make(),
             ]);
     }

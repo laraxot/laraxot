@@ -14,17 +14,18 @@ use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Modules\Catalog\Models\Product;
 use Modules\Intervention\Models\Intervention;
+use Modules\Inventory\Actions\GetStockSnapshotAction;
 use Modules\Inventory\Filament\Resources\InventoryMovementResource\Pages\CreateInventoryMovement;
 use Modules\Inventory\Filament\Resources\InventoryMovementResource\Pages\EditInventoryMovement;
 use Modules\Inventory\Filament\Resources\InventoryMovementResource\Pages\ListInventoryMovements;
@@ -34,8 +35,9 @@ use Modules\Inventory\Models\Warehouse;
 use Modules\Inventory\Models\WarehouseLocation;
 use Modules\Platform\Models\PlatformSetting;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class InventoryMovementResource extends Resource
+final class InventoryMovementResource extends XotBaseResource
 {
     protected static ?string $model = InventoryMovement::class;
 
@@ -56,17 +58,17 @@ final class InventoryMovementResource extends Resource
         return self::isAvailableInCurrentPanel() && parent::canCreate();
     }
 
-    public static function canEdit($record): bool
+    public static function canEdit(Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && parent::canEdit($record);
     }
 
-    public static function canView($record): bool
+    public static function canView(Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && parent::canView($record);
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('inventory.navigation');
     }
@@ -81,12 +83,15 @@ final class InventoryMovementResource extends Resource
         return __('inventory.movements');
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<int, Component>
+     */
+    public static function getFormSchema(): array
     {
         $storageZonesEnabled = self::storageZonesEnabled();
         $hasMovementType = fn (callable $get): bool => trim((string) ($get('movement_type') ?? '')) !== '';
 
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
@@ -224,7 +229,7 @@ final class InventoryMovementResource extends Resource
                         ->visible($hasMovementType)
                         ->columnSpanFull(),
                 ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -305,12 +310,18 @@ final class InventoryMovementResource extends Resource
             return [];
         }
 
-        return WarehouseLocation::query()
-            ->where('warehouse_id', $warehouseId)
-            ->where('is_active', true)
-            ->orderBy('code')
-            ->pluck('code', 'id')
-            ->all();
+        $options = [];
+        foreach (
+            WarehouseLocation::query()
+                ->where('warehouse_id', $warehouseId)
+                ->where('is_active', true)
+                ->orderBy('code')
+                ->get(['id', 'code']) as $location
+        ) {
+            $options[$location->id] = $location->code;
+        }
+
+        return $options;
     }
 
     private static function storageZonesEnabled(): bool
@@ -326,11 +337,17 @@ final class InventoryMovementResource extends Resource
         $requiresSourceStock = in_array($movementType, ['scarico', 'trasferimento', 'reso'], true);
 
         if (! $requiresSourceStock || $fromWarehouseId <= 0) {
-            return Product::query()
-                ->where('is_active', true)
-                ->orderBy('name')
-                ->pluck('name', 'id')
-                ->all();
+            $options = [];
+            foreach (
+                Product::query()
+                    ->where('is_active', true)
+                    ->orderBy('name')
+                    ->get(['id', 'name']) as $product
+            ) {
+                $options[(int) $product->getAttribute('id')] = (string) $product->getAttribute('name');
+            }
+
+            return $options;
         }
 
         $stockRows = self::stockSummaryByWarehouse($fromWarehouseId);
@@ -346,13 +363,16 @@ final class InventoryMovementResource extends Resource
 
         $options = [];
         foreach ($products as $product) {
-            $stock = $stockRows[(int) $product->id] ?? 0;
+            $productId = (int) $product->getAttribute('id');
+            $stock = $stockRows[$productId] ?? 0;
+            $sku = $product->getAttribute('sku');
+            $name = $product->getAttribute('name');
             $label = trim(implode(' - ', array_filter([
-                $product->sku,
-                $product->name,
+                is_scalar($sku) ? (string) $sku : null,
+                is_scalar($name) ? (string) $name : null,
             ])));
 
-            $options[(int) $product->id] = sprintf('%s (%s: %d)', $label, __('inventory.fields.available_stock'), $stock);
+            $options[$productId] = sprintf('%s (%s: %d)', $label, __('inventory.fields.available_stock'), $stock);
         }
 
         return $options;
@@ -380,7 +400,12 @@ final class InventoryMovementResource extends Resource
             ->pluck('available_stock', 'product_id')
             ->all();
 
-        return array_map(static fn ($value): int => (int) $value, $rows);
+        $result = [];
+        foreach ($rows as $productId => $value) {
+            $result[(int) $productId] = (int) $value;
+        }
+
+        return $result;
     }
 
     private static function sourceStockHint(string $movementType, int $productId, int $warehouseId, int $locationId): string
@@ -389,7 +414,7 @@ final class InventoryMovementResource extends Resource
             return 'Seleziona magazzino sorgente e prodotto per vedere la disponibilità.';
         }
 
-        $snapshot = app(\Modules\Inventory\Queries\GetStockSnapshotQuery::class)->execute(
+        $snapshot = app(GetStockSnapshotAction::class)->execute(
             $productId,
             $warehouseId,
             $locationId > 0 ? $locationId : null,
@@ -457,10 +482,10 @@ final class InventoryMovementResource extends Resource
         $label = implode(' - ', array_map(static fn ($value): string => (string) $value, $parts));
 
         if ($workOrder->site?->name !== null && trim((string) $workOrder->site->name) !== '') {
-            $label .= ' (' . $workOrder->site->name . ')';
+            $label .= ' ('.$workOrder->site->name.')';
         }
 
-        return $label !== '' ? $label : ('Commessa #' . $workOrder->id);
+        return $label !== '' ? $label : ('Commessa #'.$workOrder->id);
     }
 
     private static function interventionLabel(?Intervention $intervention): string
@@ -470,7 +495,7 @@ final class InventoryMovementResource extends Resource
         }
 
         $parts = [
-            '#' . $intervention->id,
+            '#'.$intervention->id,
             $intervention->workOrder?->customer?->legal_name,
         ];
 
@@ -478,7 +503,8 @@ final class InventoryMovementResource extends Resource
             $parts[] = $intervention->workOrder->site->name;
         }
 
-        $title = $intervention->workOrder?->title ?? $intervention->workOrder?->code;
+        $workOrder = $intervention->workOrder;
+        $title = $workOrder instanceof WorkOrder ? ($workOrder->title ?? $workOrder->code) : null;
         if (is_string($title) && trim($title) !== '') {
             $parts[] = $title;
         }
@@ -490,4 +516,3 @@ final class InventoryMovementResource extends Resource
         return implode(' - ', array_filter($parts, static fn ($value): bool => is_string($value) && trim($value) !== ''));
     }
 }
-

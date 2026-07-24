@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace Modules\Compliance\Models;
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Compliance\Actions\EvaluateWorkOrderReadinessAction;
 use Modules\Customer\Models\Customer;
 use Modules\Document\Models\Media;
 use Modules\HR\Models\Employee;
+use Modules\User\Models\User;
 use Modules\Vehicle\Models\Vehicle;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Models\XotBaseModel;
 
-final class ComplianceDocument extends Model
+final class ComplianceDocument extends XotBaseModel
 {
     use SoftDeletes;
 

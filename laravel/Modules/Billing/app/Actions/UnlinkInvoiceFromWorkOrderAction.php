@@ -6,9 +6,12 @@ namespace Modules\Billing\Actions;
 
 use Modules\Billing\Models\Invoice;
 use Modules\Billing\Models\InvoiceWorkOrderLink;
+use Spatie\QueueableAction\QueueableAction;
 
 final class UnlinkInvoiceFromWorkOrderAction
 {
+    use QueueableAction;
+
     public function execute(Invoice $invoice, int $workOrderId): void
     {
         InvoiceWorkOrderLink::query()
@@ -17,4 +20,3 @@ final class UnlinkInvoiceFromWorkOrderAction
             ->delete();
     }
 }
-

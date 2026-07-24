@@ -6,9 +6,12 @@ namespace Modules\WorkOrder\Actions;
 
 use Carbon\CarbonImmutable;
 use Modules\WorkOrder\Models\WorkOrderActivity;
+use Spatie\QueueableAction\QueueableAction;
 
 final class AddWorkOrderActivityAction
 {
+    use QueueableAction;
+
     public function execute(int $workOrderId, string $type, string $body, ?int $createdByUserId = null, ?CarbonImmutable $occurredAt = null): WorkOrderActivity
     {
         $occurredAt = $occurredAt ?? CarbonImmutable::now();
@@ -25,4 +28,3 @@ final class AddWorkOrderActivityAction
         return $activity;
     }
 }
-

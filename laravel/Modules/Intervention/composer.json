@@ -58,6 +58,22 @@
         {
             "type": "path",
             "url": "../UI"
+        },
+        {
+            "type": "path",
+            "url": "../Customer"
+        },
+        {
+            "type": "path",
+            "url": "../WorkOrder"
+        },
+        {
+            "type": "path",
+            "url": "../Signature"
+        },
+        {
+            "type": "path",
+            "url": "../Media"
         }
     ],
     "minimum-stability": "dev",

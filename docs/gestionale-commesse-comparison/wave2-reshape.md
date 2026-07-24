@@ -19,7 +19,8 @@ related:
 # Wave 2 reshape — 13 moduli restanti
 
 > Stesso pattern di [wave1-reshape.md](./wave1-reshape.md) (Customer/WorkOrder/Intervention), applicato a:
-> Billing, Bom, Catalog, Compliance, EnergyBroker, Fiscal, Inventory, Production, PublicProcurement, Quotations, Signatures, TimberBilling, Vehicles.
+> Billing, Bom, Catalog, Compliance, EnergyBroker, Fiscal, Inventory, Production, PublicProcurement, TimberBilling.  
+> **Quotation / Signature / Vehicle** (ex plurali) reshape layout+XotBase fatto 2026-07-23 sera — vedi [wave1-reshape.md](./wave1-reshape.md).
 
 ## Matrice gap (2026-07-23)
 

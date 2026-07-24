@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace Modules\Intervention\Actions;
 
 use Modules\Intervention\Models\Intervention;
+use Spatie\QueueableAction\QueueableAction;
 
 final class CreateInterventionAction
 {
+    use QueueableAction;
+
     /**
      * @param  array<string, mixed>  $data
      */

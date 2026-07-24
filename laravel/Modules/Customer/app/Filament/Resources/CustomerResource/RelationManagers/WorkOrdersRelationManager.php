@@ -5,17 +5,26 @@ declare(strict_types=1);
 namespace Modules\Customer\Filament\Resources\CustomerResource\RelationManagers;
 
 use Filament\Actions\ViewAction;
-use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Modules\WorkOrder\Filament\Resources\WorkOrderResource;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class WorkOrdersRelationManager extends RelationManager
+final class WorkOrdersRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'workOrders';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    /** @var class-string<WorkOrderResource> */
+    protected static string $resource = WorkOrderResource::class;
+
+    public function getFormSchema(): array
+    {
+        return [];
+    }
+
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('work_orders.work_orders');
     }

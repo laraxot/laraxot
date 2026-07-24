@@ -11,20 +11,22 @@ use Filament\Actions\RestoreBulkAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
+use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Modules\Billing\Filament\Resources\SupplierResource\Pages;
 use Modules\Billing\Models\Supplier;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 /**
  * Anagrafica fornitori: la testa del ciclo passivo.
  */
-final class SupplierResource extends Resource
+final class SupplierResource extends XotBaseResource
 {
     protected static ?string $model = Supplier::class;
 
@@ -46,9 +48,9 @@ final class SupplierResource extends Resource
     /**
      * @return array<string, string|null>
      */
-    public static function getGlobalSearchResultDetails(\Illuminate\Database\Eloquent\Model $record): array
+    public static function getGlobalSearchResultDetails(Model $record): array
     {
-        /** @var \Modules\Billing\Models\Supplier $record */
+        /** @var Supplier $record */
         return array_filter([
             'P.IVA' => $record->vat_number,
             'Email' => $record->email,
@@ -57,12 +59,12 @@ final class SupplierResource extends Resource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-building-storefront';
 
-    public static function getNavigationSort(): ?int
+    public static function getNavigationSort(): int
     {
         return 1;
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('suppliers.navigation');
     }
@@ -77,9 +79,12 @@ final class SupplierResource extends Resource
         return __('suppliers.suppliers');
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<int, Component>
+     */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
@@ -107,7 +112,7 @@ final class SupplierResource extends Resource
                     ]),
                 ])
                 ->columns(2),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -116,7 +121,7 @@ final class SupplierResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('legal_name')
                     ->label(__('suppliers.fields.legal_name'))
-                    ->weight(\Filament\Support\Enums\FontWeight::Bold)
+                    ->weight(FontWeight::Bold)
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('vat_number')

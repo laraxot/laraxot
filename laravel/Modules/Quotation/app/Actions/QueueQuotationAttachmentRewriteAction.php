@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Modules\Quotation\Jobs\RewriteQuotationAttachmentsJob;
 use Modules\Quotation\Models\Quotation;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Queues the AI rewrite of a quotation's attachment (and notes recompute) from its
@@ -15,8 +16,10 @@ use Modules\Quotation\Models\Quotation;
  * "re-prepare attachment" button. Adds a "being prepared" placeholder row when
  * there's a document to rewrite. Returns false when there's nothing to do.
  */
-final readonly class QueueQuotationAttachmentRewriteAction
+final class QueueQuotationAttachmentRewriteAction
 {
+    use QueueableAction;
+
     public function __construct(
         private AddQuotationAttachmentAction $attach,
     ) {}
@@ -33,7 +36,7 @@ final readonly class QueueQuotationAttachmentRewriteAction
             return false;
         }
 
-        $hasDocuments = $source->media()->where('kind', 'document')->exists();
+        $hasDocuments = $source->getMedia('documents')->isNotEmpty();
         $hasNotes = trim((string) $target->notes) !== '';
         if (! $hasDocuments && ! $hasNotes) {
             return false;
@@ -83,8 +86,7 @@ final readonly class QueueQuotationAttachmentRewriteAction
             __('quotations.voice.attachment_failed_title'),
         ];
 
-        foreach ($target->media()->where('kind', 'document')->whereIn('title', $titles)->get() as $media) {
-            Storage::disk((string) $media->disk)->delete((string) $media->path);
+        foreach ($target->getMedia('documents')->whereIn('name', $titles) as $media) {
             $media->delete();
         }
     }

@@ -6,6 +6,7 @@ namespace Modules\Catalog\Actions;
 
 use Modules\Catalog\Models\MetelCatalogItem;
 use Modules\Catalog\Models\Product;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Promotes a METEL catalog item into the shared products catalog so it can be
@@ -14,6 +15,8 @@ use Modules\Catalog\Models\Product;
  */
 final class LinkMetelItemToProductAction
 {
+    use QueueableAction;
+
     public function execute(MetelCatalogItem $item): Product
     {
         $price = $item->net_price !== null ? (float) $item->net_price : (float) $item->gross_price;

@@ -2,7 +2,15 @@
 
 declare(strict_types=1);
 
-it('has CustomerServiceProvider', function () {
-    $provider = new \Modules\Customer\Providers\CustomerServiceProvider(app());
-    expect($provider)->toBeInstanceOf(\Illuminate\Support\ServiceProvider::class);
+namespace Modules\Customer\Tests\Feature;
+
+use Illuminate\Support\ServiceProvider;
+use Modules\Customer\Providers\CustomerServiceProvider;
+use Modules\Customer\Tests\TestCase;
+use PHPUnit\Framework\Assert;
+
+uses(TestCase::class);
+
+it('has CustomerServiceProvider', function (): void {
+    Assert::assertInstanceOf(ServiceProvider::class, new CustomerServiceProvider(app()));
 });

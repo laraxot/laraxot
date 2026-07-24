@@ -4,13 +4,18 @@ declare(strict_types=1);
 
 namespace Modules\Inventory\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Modules\Catalog\Models\Product;
+use Modules\Inventory\Database\Factories\ProductUnitFactory;
+use Modules\Xot\Models\XotBaseModel;
 
-final class ProductUnit extends Model
+final class ProductUnit extends XotBaseModel
 {
+    /** @use HasFactory<ProductUnitFactory> */
+    use HasFactory;
+
     protected $table = 'product_units';
 
     /** @var array<int, string> */
@@ -48,4 +53,3 @@ final class ProductUnit extends Model
         return $this->belongsToMany(InventoryMovement::class, 'inventory_movement_product_units');
     }
 }
-

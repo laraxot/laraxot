@@ -7,7 +7,7 @@ namespace Modules\TimberBilling\Filament\Pages;
 use App\Support\AccountFeatures;
 use Filament\Pages\Page;
 use Illuminate\Support\Facades\Auth;
-use Modules\Fiscal\Domain\DTO\VatLiquidation;
+use Modules\Fiscal\Datas\VatLiquidation;
 use Modules\TimberBilling\Queries\GetTimberVatLiquidationQuery;
 
 final class TimberVatRegisterPage extends Page

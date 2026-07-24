@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\EnergyBroker\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Customer\Models\Customer;
+use Modules\Xot\Models\XotBaseModel;
 
-final class EnergyBrokerCustomerMatch extends Model
+final class EnergyBrokerCustomerMatch extends XotBaseModel
 {
     protected $table = 'energy_broker_customer_matches';
 

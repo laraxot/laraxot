@@ -9,9 +9,12 @@ use Modules\PublicProcurement\Models\PublicProcurementContract;
 use Modules\PublicProcurement\Models\PublicProcurementTenderOpportunity;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderStatus;
+use Spatie\QueueableAction\QueueableAction;
 
 final class CreateContractFromOpportunityAction
 {
+    use QueueableAction;
+
     public function execute(PublicProcurementTenderOpportunity $opportunity): PublicProcurementContract
     {
         /** @var Customer $customer */
@@ -30,7 +33,7 @@ final class CreateContractFromOpportunityAction
 
         /** @var WorkOrder $workOrder */
         $workOrder = WorkOrder::query()->firstOrCreate(
-            ['code' => 'PA-' . ($opportunity->cig ?: str_pad((string) $opportunity->id, 5, '0', STR_PAD_LEFT))],
+            ['code' => 'PA-'.($opportunity->cig ?: str_pad((string) $opportunity->id, 5, '0', STR_PAD_LEFT))],
             [
                 'customer_id' => $customer->id,
                 'status_id' => $status->id,
@@ -48,7 +51,7 @@ final class CreateContractFromOpportunityAction
                 'work_order_id' => $workOrder->id,
                 'customer_id' => $customer->id,
                 'status' => 'tender_participation',
-                'code' => 'APP-' . ($opportunity->cig ?: str_pad((string) $opportunity->id, 5, '0', STR_PAD_LEFT)),
+                'code' => 'APP-'.($opportunity->cig ?: str_pad((string) $opportunity->id, 5, '0', STR_PAD_LEFT)),
                 'title' => $opportunity->title,
                 'contracting_authority' => $opportunity->contracting_authority,
                 'cig' => $opportunity->cig,

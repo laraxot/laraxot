@@ -4,12 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\WhatsApp\Actions;
 
+use Carbon\CarbonImmutable;
 use Modules\Customer\Models\Customer;
 use Modules\Intervention\Models\Intervention;
 use Modules\Platform\Settings\SettingsRepository;
 use Modules\WhatsApp\Models\WhatsAppConversation;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderStatus;
+use Spatie\QueueableAction\QueueableAction;
+
+use function Safe\preg_replace;
 
 /**
  * Turns a WhatsApp service request into gestionale data: it recognizes an
@@ -24,6 +28,8 @@ use Modules\WorkOrder\Models\WorkOrderStatus;
  */
 final class OrganizeWhatsAppRequestAction
 {
+    use QueueableAction;
+
     /**
      * @param  array{customer_name?: string, address?: string, city?: string, problem?: string, scheduled_at?: string}  $data
      * @return array{customer_id: int, work_order_id: int|null, intervention_id: int, customer_created: bool, work_order_created: bool}
@@ -76,7 +82,7 @@ final class OrganizeWhatsAppRequestAction
     }
 
     /**
-     * @param  array{customer_name?: string, address?: string, city?: string, problem?: string}  $data
+     * @param  array{customer_name?: string, address?: string, city?: string, problem?: string, scheduled_at?: string}  $data
      * @return array{0: Customer, 1: bool}
      */
     private function resolveCustomer(WhatsAppConversation $conversation, array $data): array
@@ -114,14 +120,14 @@ final class OrganizeWhatsAppRequestAction
         return [$customer, true];
     }
 
-    private function parseScheduledAt(mixed $value): ?\Carbon\CarbonImmutable
+    private function parseScheduledAt(mixed $value): ?CarbonImmutable
     {
         if (! is_string($value) || trim($value) === '') {
             return null;
         }
 
         try {
-            return \Carbon\CarbonImmutable::parse($value);
+            return CarbonImmutable::parse($value);
         } catch (\Throwable) {
             return null;
         }
@@ -129,7 +135,7 @@ final class OrganizeWhatsAppRequestAction
 
     private function matchByPhone(string $phone): ?Customer
     {
-        $digits = preg_replace('/\D/', '', $phone) ?? '';
+        $digits = preg_replace('/\D/', '', $phone);
         if (mb_strlen($digits) < 6) {
             return null;
         }

@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Http;
 use Modules\WhatsApp\Settings\WhatsAppSettings;
 use Modules\WhatsApp\Models\WhatsAppMessage;
 
+use function Safe\json_decode;
+use function Safe\json_encode;
+
 final readonly class OpenAiWhatsAppMessageClassifier implements WhatsAppMessageClassifierInterface
 {
     public function __construct(private WhatsAppSettings $settings) {}
@@ -178,10 +181,24 @@ PROMPT;
             return [];
         }
 
-        /** @var mixed $decoded */
-        $decoded = json_decode(substr($trimmed, $start, $end - $start + 1), true);
+        try {
+            $decoded = json_decode(substr($trimmed, $start, $end - $start + 1), true);
+        } catch (\Safe\Exceptions\JsonException) {
+            return [];
+        }
 
-        return is_array($decoded) ? $decoded : [];
+        if (! is_array($decoded)) {
+            return [];
+        }
+
+        $result = [];
+        foreach ($decoded as $key => $value) {
+            if (is_string($key)) {
+                $result[$key] = $value;
+            }
+        }
+
+        return $result;
     }
 
     /**

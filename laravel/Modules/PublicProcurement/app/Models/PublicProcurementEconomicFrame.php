@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\PublicProcurement\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\Xot\Models\XotBaseModel;
 
-final class PublicProcurementEconomicFrame extends Model
+final class PublicProcurementEconomicFrame extends XotBaseModel
 {
     protected $table = 'public_procurement_economic_frames';
 

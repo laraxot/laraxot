@@ -1,0 +1,55 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'navigation' => 'Work Orders',
+    'work_order' => 'Work Order',
+    'work_orders' => 'Work Orders',
+    'activities' => 'Activities',
+    'assignments' => 'Assignments',
+    'statuses' => 'Statuses',
+    'fields' => [
+        'code' => 'Code',
+        'title' => 'Title',
+        'description' => 'Description',
+        'customer' => 'Customer',
+        'site' => 'Site',
+        'status' => 'Status',
+        'primary_contact' => 'Primary Contact',
+        'scheduled_at' => 'Scheduled At',
+        'started_at' => 'Started At',
+        'completed_at' => 'Completed At',
+        'opened_at' => 'Opened At',
+        'assigned_to' => 'Assigned To',
+        'assigned_at' => 'Assigned At',
+        'role' => 'Role',
+        'type' => 'Type',
+        'body' => 'Description',
+        'occurred_at' => 'Occurred At',
+        'from_status' => 'From Status',
+        'to_status' => 'To Status',
+        'changed_at' => 'Changed At',
+        'notes' => 'Notes',
+        'report_format' => 'Report Format',
+        'report_from' => 'Report From',
+        'report_to' => 'Report To',
+    ],
+    'activity_types' => [
+        'note' => 'Note',
+        'status' => 'Status Change',
+    ],
+    'effort' => [
+        'hint' => 'Estimate based on planned vs actual minutes.',
+        'not_planned' => 'Not planned',
+        'planned_minutes' => 'Planned Minutes',
+        'variance' => 'Variance',
+        'within_budget' => 'Within budget',
+        'over_budget' => 'Over budget',
+    ],
+    'actions' => [
+        'download_pdf' => 'Download PDF',
+        'export_report' => 'Export Report',
+        'restore_cascade' => 'Restore Work Order and Related Data',
+    ],
+];

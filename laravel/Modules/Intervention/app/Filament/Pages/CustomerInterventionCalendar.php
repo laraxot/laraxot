@@ -4,12 +4,17 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Filament\Pages;
 
-use Filament\Pages\Page;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
+use Modules\Customer\Models\Customer;
+use Modules\Customer\Models\CustomerSite;
 use Modules\Intervention\Filament\Concerns\InterventionCalendarColors;
 use Modules\Intervention\Models\Intervention;
+use Modules\User\Models\User;
+use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
-final class CustomerInterventionCalendar extends Page
+final class CustomerInterventionCalendar extends XotBasePage
 {
     use InterventionCalendarColors;
 
@@ -19,7 +24,7 @@ final class CustomerInterventionCalendar extends Page
 
     protected string $view = 'interventions::filament.pages.customer-intervention-calendar';
 
-    /** @var array<int, array<string, mixed>> */
+    /** @var array<string, mixed> */
     public array $selectedIntervention = [];
 
     public bool $showModal = false;
@@ -34,7 +39,7 @@ final class CustomerInterventionCalendar extends Page
         return request()->is('customer/*');
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return 'Cliente';
     }
@@ -57,7 +62,7 @@ final class CustomerInterventionCalendar extends Page
     /** @return array<int, array<string, mixed>> */
     public function getCalendarEvents(string $start, string $end): array
     {
-        /** @var \App\Models\User|null $user */
+        /** @var User|null $user */
         $user = Auth::user();
         $customerId = is_object($user) ? (int) ($user->customer_id ?? 0) : 0;
 
@@ -70,7 +75,7 @@ final class CustomerInterventionCalendar extends Page
             ->with(['workOrder.customer', 'workOrder.site', 'performedBy'])
             ->whereBetween('scheduled_at', [$start, $end])
             ->whereNotNull('scheduled_at')
-            ->whereHas('workOrder', fn ($q) => $q->where('customer_id', $customerId))
+            ->whereHas('workOrder', fn (Builder $q) => $q->where('customer_id', $customerId))
             ->get()
             ->map(function (Intervention $intervention): array {
                 $operatorId = (int) $intervention->performed_by_user_id;
@@ -78,10 +83,12 @@ final class CustomerInterventionCalendar extends Page
                 $textColor = self::eventTextColor($bgColor);
                 $borderColor = self::eventBorderColor($intervention->outcome_code);
 
-                $operatorName = $intervention->performedBy?->name ?? '—';
-                $customerName = $intervention->workOrder?->customer?->legal_name ?? '—';
-                $siteName = $intervention->workOrder?->site?->name ?? '';
-                $title = $intervention->workOrder?->title ?? '—';
+                $workOrder = $intervention->workOrder;
+                $performedBy = $intervention->performedBy;
+                $operatorName = $performedBy !== null ? ($performedBy->name ?? '—') : '—';
+                $customerName = self::customerName($workOrder, null) ?? '—';
+                $siteName = self::siteName($workOrder);
+                $title = self::workOrderTitle($workOrder);
 
                 $labelParts = array_filter([
                     $title !== '—' ? $title : null,
@@ -126,7 +133,7 @@ final class CustomerInterventionCalendar extends Page
 
     public function openInterventionDetail(int $id): void
     {
-        /** @var \App\Models\User|null $user */
+        /** @var User|null $user */
         $user = Auth::user();
         $customerId = is_object($user) ? (int) ($user->customer_id ?? 0) : 0;
         if ($customerId <= 0) {
@@ -135,7 +142,7 @@ final class CustomerInterventionCalendar extends Page
 
         $intervention = Intervention::query()
             ->with(['workOrder.customer', 'workOrder.site', 'performedBy'])
-            ->whereHas('workOrder', fn ($q) => $q->where('customer_id', $customerId))
+            ->whereHas('workOrder', fn (Builder $q) => $q->where('customer_id', $customerId))
             ->find($id);
 
         if ($intervention === null) {
@@ -143,13 +150,15 @@ final class CustomerInterventionCalendar extends Page
         }
 
         $operatorId = (int) $intervention->performed_by_user_id;
+        $workOrder = $intervention->workOrder;
+        $performedBy = $intervention->performedBy;
 
         $this->selectedIntervention = [
             'id' => $intervention->id,
-            'work_order_title' => $intervention->workOrder?->title ?? '—',
-            'customer' => $intervention->workOrder?->customer?->legal_name ?? '—',
-            'site' => $intervention->workOrder?->site?->name ?? '',
-            'operator' => $intervention->performedBy?->name ?? '—',
+            'work_order_title' => self::workOrderTitle($workOrder),
+            'customer' => self::customerName($workOrder, null) ?? '—',
+            'site' => self::siteName($workOrder),
+            'operator' => $performedBy !== null ? ($performedBy->name ?? '—') : '—',
             'operator_color' => self::operatorColorFor($operatorId),
             'scheduled_at' => $intervention->scheduled_at?->format('d/m/Y H:i') ?? '—',
             'started_at' => $intervention->started_at?->format('d/m/Y H:i') ?? '—',
@@ -173,7 +182,7 @@ final class CustomerInterventionCalendar extends Page
     /** @return array<int, array<string, string>> */
     public function getOperatorLegend(): array
     {
-        /** @var \App\Models\User|null $user */
+        /** @var User|null $user */
         $user = Auth::user();
         $customerId = is_object($user) ? (int) ($user->customer_id ?? 0) : 0;
 
@@ -184,21 +193,45 @@ final class CustomerInterventionCalendar extends Page
         return Intervention::query()
             ->with('performedBy')
             ->whereNotNull('scheduled_at')
-            ->whereHas('workOrder', fn ($q) => $q->where('customer_id', $customerId))
+            ->whereHas('workOrder', fn (Builder $q) => $q->where('customer_id', $customerId))
             ->select('performed_by_user_id')
             ->distinct()
             ->get()
             ->map(function (Intervention $i): array {
                 $operatorId = (int) $i->performed_by_user_id;
+                $performedBy = $i->performedBy;
 
                 return [
                     'id' => (string) $operatorId,
-                    'name' => $i->performedBy?->name ?? "Operatore #{$operatorId}",
+                    'name' => $performedBy !== null ? ($performedBy->name ?? "Operatore #{$operatorId}") : "Operatore #{$operatorId}",
                     'color' => self::operatorColorFor($operatorId),
                 ];
             })
             ->unique('id')
             ->values()
             ->all();
+    }
+
+    private static function workOrderTitle(?WorkOrder $workOrder): string
+    {
+        return $workOrder !== null ? (string) ($workOrder->title ?? '—') : '—';
+    }
+
+    private static function customerName(?WorkOrder $workOrder, ?Customer $customer): ?string
+    {
+        if ($workOrder !== null && $workOrder->customer !== null) {
+            return $workOrder->customer->legal_name;
+        }
+
+        return $customer?->legal_name;
+    }
+
+    private static function siteName(?WorkOrder $workOrder): string
+    {
+        if ($workOrder === null || ! $workOrder->site instanceof CustomerSite) {
+            return '';
+        }
+
+        return (string) ($workOrder->site->name ?? '');
     }
 }

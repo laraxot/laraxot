@@ -7,7 +7,8 @@ namespace Modules\Intervention\Filament\Resources\InterventionResource\Pages;
 use App\Support\AccountFeatures;
 use Filament\Actions\Action;
 use Filament\Actions\DeleteAction;
-use Filament\Resources\Pages\ViewRecord;
+use Filament\Infolists\Components\Entry;
+use Filament\Schemas\Components\Component;
 use Illuminate\Support\Facades\Auth;
 use Modules\AiAssistant\Filament\Pages\AiAssistantChat;
 use Modules\Intervention\Actions\CreateInterventionReportShareLinkAction;
@@ -18,13 +19,22 @@ use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
 use Modules\Signature\Filament\Pages\CaptureSignature;
 use Modules\Signature\Filament\Pages\CaptureSketch;
+use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
-final class ViewIntervention extends ViewRecord
+final class ViewIntervention extends XotBaseViewRecord
 {
     use ResolvesCalendarReturnUrl;
 
     protected static string $resource = InterventionResource::class;
+
+    /**
+     * @return array<string, Component|Entry>
+     */
+    protected function getInfolistSchema(): array
+    {
+        return InterventionResource::getInfolistSchema();
+    }
 
     protected function getHeaderActions(): array
     {
@@ -33,25 +43,25 @@ final class ViewIntervention extends ViewRecord
         $returnUrl = $this->getRequestedReturnUrl();
 
         return [
-            Action::make('voiceReport')
+            'voiceReport' => Action::make('voiceReport')
                 ->label(__('interventions.voice_report.title'))
                 ->icon('heroicon-o-microphone')
                 ->color('primary')
                 ->visible(fn (): bool => RecordInterventionReportPage::canAccess())
                 ->url(fn (): string => RecordInterventionReportPage::getUrl(['intervention' => $interventionId])),
-            Action::make('backToCalendar')
+            'backToCalendar' => Action::make('backToCalendar')
                 ->label('Torna al calendario')
                 ->icon('heroicon-o-arrow-left')
                 ->visible(fn (): bool => $returnUrl !== null)
                 ->url(fn (): ?string => $returnUrl),
-            Action::make('editIntervention')
+            'editIntervention' => Action::make('editIntervention')
                 ->label('Modifica')
                 ->icon('heroicon-o-pencil-square')
                 ->url(fn (): string => InterventionResource::getUrl('edit', [
                     'record' => $interventionId,
                     'return_to' => $returnUrl,
                 ])),
-            Action::make('openAiAssistant')
+            'openAiAssistant' => Action::make('openAiAssistant')
                 ->label('Assistente AI')
                 ->icon('heroicon-o-microphone')
                 ->visible(fn (): bool => request()->is('operator/*')
@@ -60,19 +70,19 @@ final class ViewIntervention extends ViewRecord
                     'intervention_id' => $interventionId,
                 ]))
                 ->openUrlInNewTab(),
-            DeleteAction::make()
+            'delete' => DeleteAction::make()
                 ->successRedirectUrl(fn (): ?string => $returnUrl),
-            Action::make('captureSignature')
+            'captureSignature' => Action::make('captureSignature')
                 ->label('Firma')
                 ->icon('heroicon-o-pencil')
                 ->url(fn (): string => CaptureSignature::getUrl(['interventionId' => $interventionId]))
                 ->openUrlInNewTab(),
-            Action::make('captureSketch')
+            'captureSketch' => Action::make('captureSketch')
                 ->label('Disegno')
                 ->icon('heroicon-o-pencil-square')
                 ->url(fn (): string => CaptureSketch::getUrl(['interventionId' => $interventionId]))
                 ->openUrlInNewTab(),
-            Action::make('downloadReport')
+            'downloadReport' => Action::make('downloadReport')
                 ->label(__('interventions.voice_report.download_pdf'))
                 ->icon('heroicon-o-document-arrow-down')
                 ->action(function () use ($interventionId): StreamedResponse {
@@ -85,7 +95,7 @@ final class ViewIntervention extends ViewRecord
                         ['Content-Type' => $pdf['mime']],
                     );
                 }),
-            Action::make('showToCustomer')
+            'showToCustomer' => Action::make('showToCustomer')
                 ->label(__('interventions.voice_report.show_to_customer'))
                 ->icon('heroicon-o-device-phone-mobile')
                 ->color('success')
@@ -93,7 +103,7 @@ final class ViewIntervention extends ViewRecord
                     ->execute(Intervention::query()->findOrFail($interventionId), (int) Auth::id())
                     ->publicUrl())
                 ->openUrlInNewTab(),
-            Action::make('shareReport')
+            'shareReport' => Action::make('shareReport')
                 ->label(__('interventions.voice_report.share_link'))
                 ->icon('heroicon-o-link')
                 ->modalHeading(__('interventions.voice_report.share_link'))
@@ -104,7 +114,10 @@ final class ViewIntervention extends ViewRecord
                     $share = app(CreateInterventionReportShareLinkAction::class)
                         ->execute($intervention, (int) Auth::id());
 
-                    return view('interventions::filament.share-report-link', [
+                    /** @var view-string $shareView */
+                    $shareView = 'interventions::filament.share-report-link';
+
+                    return view($shareView, [
                         'url' => $share->publicUrl(),
                     ]);
                 }),

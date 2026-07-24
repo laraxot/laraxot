@@ -4,15 +4,18 @@ declare(strict_types=1);
 
 namespace Modules\Quotation\Import;
 
-use Smalot\PdfParser\Parser as PdfParser;
+use Symfony\Component\Process\Process;
 use Throwable;
 use ZipArchive;
+
+use function Safe\file_get_contents;
+use function Safe\preg_replace;
 
 /**
  * Extracts plain text from an uploaded quotation document so the AI can read it.
  * Supports LibreOffice/OpenOffice (.ods/.odt/.odp), Office OOXML (.docx/.xlsx),
  * PDF, and CSV/TXT. ODF/OOXML are ZIP containers of XML — we read the relevant
- * parts and strip tags; PDF uses smalot/pdfparser.
+ * parts and strip tags; PDF uses the system pdftotext binary when available.
  */
 final class QuotationDocumentTextExtractor
 {
@@ -25,7 +28,7 @@ final class QuotationDocumentTextExtractor
             'docx' => $this->fromZip($path, ['word/document.xml']),
             'xlsx' => $this->fromXlsx($path),
             'pdf' => $this->fromPdf($path),
-            'csv', 'txt' => $this->normalize((string) @file_get_contents($path)),
+            'csv', 'txt' => $this->normalize(file_get_contents($path)),
             default => $this->fromUnknown($path),
         };
     }
@@ -35,7 +38,7 @@ final class QuotationDocumentTextExtractor
      */
     private function fromZip(string $path, array $entries): string
     {
-        $zip = new ZipArchive;
+        $zip = new ZipArchive();
         if ($zip->open($path) !== true) {
             return '';
         }
@@ -54,7 +57,7 @@ final class QuotationDocumentTextExtractor
 
     private function fromXlsx(string $path): string
     {
-        $zip = new ZipArchive;
+        $zip = new ZipArchive();
         if ($zip->open($path) !== true) {
             return '';
         }
@@ -75,7 +78,14 @@ final class QuotationDocumentTextExtractor
     private function fromPdf(string $path): string
     {
         try {
-            return $this->normalize((new PdfParser)->parseFile($path)->getText());
+            $process = new Process(['pdftotext', '-layout', '-nopgbrk', $path, '-']);
+            $process->run();
+
+            if (! $process->isSuccessful()) {
+                return '';
+            }
+
+            return $this->normalize($process->getOutput());
         } catch (Throwable) {
             return '';
         }
@@ -86,19 +96,19 @@ final class QuotationDocumentTextExtractor
         // Best effort: try as a ZIP (OOXML/ODF), else read raw.
         $asZip = $this->fromZip($path, ['content.xml', 'word/document.xml']);
 
-        return $asZip !== '' ? $asZip : $this->normalize((string) @file_get_contents($path));
+        return $asZip !== '' ? $asZip : $this->normalize(file_get_contents($path));
     }
 
     private function stripXml(string $xml): string
     {
         // Replace tags with a space so adjacent cell/run texts don't glue together.
-        $text = preg_replace('/<[^>]+>/', ' ', $xml) ?? '';
+        $text = preg_replace('/<[^>]+>/', ' ', $xml);
 
         return $this->normalize(html_entity_decode($text, ENT_QUOTES | ENT_XML1));
     }
 
     private function normalize(string $text): string
     {
-        return trim((string) preg_replace('/\s+/', ' ', $text));
+        return trim(preg_replace('/\s+/', ' ', $text));
     }
 }

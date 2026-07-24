@@ -11,27 +11,28 @@ use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use InvalidArgumentException;
 use Modules\Catalog\Models\Product;
 use Modules\Intervention\Models\Intervention;
 use Modules\Inventory\Actions\CreateInventoryMovementAction;
-use Modules\Inventory\Queries\GetStockSnapshotQuery;
+use Modules\Inventory\Actions\GetStockSnapshotAction;
 use Modules\Inventory\Models\InventoryMovement;
 use Modules\Inventory\Models\Warehouse;
 use Modules\Inventory\Models\WarehouseLocation;
 use Modules\Platform\Settings\SettingsRepository;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class InventoryMovementsRelationManager extends RelationManager
+final class InventoryMovementsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'inventoryMovements';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return 'Materiali impiegati';
     }
@@ -46,9 +47,9 @@ final class InventoryMovementsRelationManager extends RelationManager
         return app(SettingsRepository::class)->getBool('inventory.enable_storage_zones', false);
     }
 
-    public function form(Schema $schema): Schema
+    public function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Select::make('product_id')
                 ->label(__('inventory.fields.product'))
                 ->options(fn (): array => Product::query()
@@ -59,10 +60,11 @@ final class InventoryMovementsRelationManager extends RelationManager
                 ->searchable()
                 ->preload()
                 ->live()
-                ->afterStateUpdated(function (callable $set, $state): void {
+                ->afterStateUpdated(function (callable $set, mixed $state): void {
                     $productId = (int) ($state ?? 0);
-                    $product = $productId > 0 ? Product::query()->find($productId) : null;
-                    $rawUnitPrice = $product?->unit_price;
+                    $rawUnitPrice = $productId > 0
+                        ? Product::query()->whereKey($productId)->value('unit_price')
+                        : null;
 
                     $set('unit_price', is_numeric($rawUnitPrice) ? number_format((float) $rawUnitPrice, 2, '.', '') : '0.00');
                 })
@@ -111,7 +113,7 @@ final class InventoryMovementsRelationManager extends RelationManager
                         return 'Seleziona prodotto e magazzino per vedere la giacenza.';
                     }
 
-                    $snapshot = app(GetStockSnapshotQuery::class)->execute(
+                    $snapshot = app(GetStockSnapshotAction::class)->execute(
                         $productId,
                         $warehouseId,
                         $locationId > 0 ? $locationId : null,
@@ -128,13 +130,13 @@ final class InventoryMovementsRelationManager extends RelationManager
                 ->rows(3)
                 ->placeholder('Es. n.1 timer scale, n.2 lampade LED, morsetti quadro...')
                 ->columnSpanFull(),
-        ])->columns(2);
+        ];
     }
 
     public function table(Table $table): Table
     {
         return $table
-            ->modifyQueryUsing(fn ($query) => $query->where('movement_type', 'scarico')->latest('occurred_at'))
+            ->modifyQueryUsing(fn (Builder $query): Builder => $query->where('movement_type', 'scarico')->latest('occurred_at'))
             ->columns([
                 Tables\Columns\TextColumn::make('product.name')
                     ->label(__('inventory.fields.product'))
@@ -197,7 +199,7 @@ final class InventoryMovementsRelationManager extends RelationManager
 
                         self::assertLocationBelongsToWarehouse($warehouseId, $locationId, 'from_location_id');
 
-                        $snapshot = app(GetStockSnapshotQuery::class)->execute(
+                        $snapshot = app(GetStockSnapshotAction::class)->execute(
                             $productId,
                             $warehouseId,
                             $locationId > 0 ? $locationId : null,
@@ -220,7 +222,7 @@ final class InventoryMovementsRelationManager extends RelationManager
                                 note: (string) ($data['note'] ?? ''),
                                 workOrderId: (int) $intervention->work_order_id,
                                 interventionId: (int) $intervention->id,
-                                createdByUserId: Auth::id(),
+                                createdByUserId: Auth::id() !== null ? (int) Auth::id() : null,
                                 unitPrice: $unitPrice,
                                 fromLocationId: $locationId > 0 ? $locationId : null,
                             );
@@ -265,6 +267,7 @@ final class InventoryMovementsRelationManager extends RelationManager
             ->where('is_active', true)
             ->orderBy('code')
             ->pluck('code', 'id')
+            ->mapWithKeys(static fn (mixed $code, mixed $id): array => [(int) $id => (string) $code])
             ->all();
     }
 
@@ -275,7 +278,10 @@ final class InventoryMovementsRelationManager extends RelationManager
         }
 
         $location = WarehouseLocation::query()->find($locationId);
-        if (! $location instanceof WarehouseLocation || (int) $location->warehouse_id !== $warehouseId) {
+        $locationWarehouseId = $location instanceof WarehouseLocation
+            ? (int) ($location->getAttribute('warehouse_id') ?? 0)
+            : 0;
+        if (! $location instanceof WarehouseLocation || $locationWarehouseId !== $warehouseId) {
             throw ValidationException::withMessages([
                 $field => __('inventory.validation.location_mismatch'),
             ]);

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Quotation\Filament\Resources;
 
+use App\Support\AccountFeatures;
 use App\Support\Concerns\HasAccountFeatureVisibility;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -14,19 +15,24 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
+use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Modules\Customer\Models\Customer;
 use Modules\Quotation\Filament\Resources\QuotationResource\Pages;
 use Modules\Quotation\Filament\Resources\QuotationResource\RelationManagers\AttachmentsRelationManager;
 use Modules\Quotation\Filament\Resources\QuotationResource\RelationManagers\ItemsRelationManager;
 use Modules\Quotation\Models\Quotation;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class QuotationResource extends Resource
+use function Safe\json_encode;
+
+final class QuotationResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 
@@ -50,22 +56,33 @@ final class QuotationResource extends Resource
     /**
      * @return array<string, string|null>
      */
-    public static function getGlobalSearchResultDetails(\Illuminate\Database\Eloquent\Model $record): array
+    public static function getGlobalSearchResultDetails(Model $record): array
     {
-        /** @var \Modules\Quotation\Models\Quotation $record */
-        return array_filter([
-            __('quotations.fields.customer') => $record->customer?->legal_name,
-            __('quotations.fields.status') => $record->status_code ? __('quotations.statuses.'.$record->status_code) : null,
-        ]);
+        /** @var Quotation $record */
+        $details = [];
+
+        $customerName = $record->customer?->legal_name;
+        if (is_string($customerName) && $customerName !== '') {
+            $details[__('quotations.fields.customer')] = $customerName;
+        }
+
+        $statusCode = $record->status_code;
+        if ($statusCode !== '') {
+            $details[__('quotations.fields.status')] = (string) __('quotations.statuses.'.$statusCode);
+        }
+
+        return $details;
     }
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-document-text';
 
+    /** Read reflectively by HasAccountFeatureVisibility via defined()/constant(). */
     private const ACCOUNT_FEATURE_ADMIN = 'admin.quotations';
 
+    /** Read reflectively by HasAccountFeatureVisibility via defined()/constant(). */
     private const ACCOUNT_FEATURE_OPERATOR = 'operator.quotations';
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('quotations.navigation');
     }
@@ -80,9 +97,9 @@ final class QuotationResource extends Resource
         return __('quotations.quotations');
     }
 
-    public static function form(Schema $schema): Schema
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
@@ -117,7 +134,7 @@ final class QuotationResource extends Resource
                             TextInput::make('email')->label('Email')->email()->maxLength(255),
                             TextInput::make('phone')->label(__('quotations.voice.phone'))->maxLength(255),
                         ])
-                        ->createOptionUsing(fn (array $data): int => (int) \Modules\Customer\Models\Customer::query()->create([
+                        ->createOptionUsing(fn (array $data): int => (int) Customer::query()->create([
                             'legal_name' => $data['legal_name'],
                             'vat_number' => $data['vat_number'] ?? null,
                             'city' => $data['city'] ?? null,
@@ -196,8 +213,13 @@ final class QuotationResource extends Resource
                 ->collapsible()
                 ->collapsed()
                 ->columnSpanFull()
-                ->visible(fn ($record): bool => $record !== null
-                    && (filled($record->voice_transcript) || filled($record->voice_ai_response)))
+                ->visible(function ($record): bool {
+                    if (! $record instanceof Quotation) {
+                        return false;
+                    }
+
+                    return filled($record->voice_transcript) || filled($record->voice_ai_response);
+                })
                 ->components([
                     Textarea::make('voice_transcript')
                         ->label(__('quotations.voice.transcript_label'))
@@ -209,11 +231,11 @@ final class QuotationResource extends Resource
                         ->disabled()
                         ->rows(10)
                         ->formatStateUsing(fn (mixed $state): string => is_array($state)
-                            ? (string) json_encode($state, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)
+                            ? json_encode($state, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)
                             : (string) $state)
                         ->columnSpanFull(),
                 ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -222,7 +244,7 @@ final class QuotationResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('code')
                     ->label(__('quotations.fields.code'))
-                    ->weight(\Filament\Support\Enums\FontWeight::Bold)
+                    ->weight(FontWeight::Bold)
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('status_code')
@@ -283,5 +305,17 @@ final class QuotationResource extends Resource
             'view' => Pages\ViewQuotation::route('/{record}'),
             'edit' => Pages\EditQuotation::route('/{record}/edit'),
         ];
+    }
+
+    protected static function isAvailableInCurrentPanel(): bool
+    {
+        return AccountFeatures::currentPanelAllowsFeature(
+            Auth::user(),
+            adminFeature: self::ACCOUNT_FEATURE_ADMIN,
+            operatorFeature: self::ACCOUNT_FEATURE_OPERATOR,
+            adminDefault: true,
+            operatorDefault: true,
+            fallback: false,
+        );
     }
 }

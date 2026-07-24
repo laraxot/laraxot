@@ -4,17 +4,35 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Models;
 
-use App\Models\User;
-use App\Timber\Models\TimberCustomer;
-use App\Timber\Models\TimberDocument;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
+use Modules\Customer\Models\Customer;
 use Modules\TimberBilling\Database\Factories\TimberInvoiceFactory;
+use Modules\User\Models\User;
+use Modules\Xot\Models\XotBaseModel;
 
-final class TimberInvoice extends Model
+/**
+ * @property int $id
+ * @property string $kind
+ * @property string|null $number
+ * @property Carbon $invoice_date
+ * @property int|null $customer_id
+ * @property int|null $source_document_id
+ * @property string $status_code
+ * @property string|null $payment_method_code
+ * @property string|null $payment_terms
+ * @property string $taxable_amount
+ * @property string $vat_amount
+ * @property string $total_amount
+ * @property string|null $notes
+ * @property Carbon|null $issued_at
+ * @property Carbon|null $stock_posted_at
+ * @property int|null $created_by_user_id
+ */
+final class TimberInvoice extends XotBaseModel
 {
     /** @use HasFactory<TimberInvoiceFactory> */
     use HasFactory;
@@ -45,16 +63,10 @@ final class TimberInvoice extends Model
         return $this->hasMany(TimberInvoiceLine::class, 'invoice_id');
     }
 
-    /** @return BelongsTo<TimberCustomer, $this> */
+    /** @return BelongsTo<Customer, $this> */
     public function customer(): BelongsTo
     {
-        return $this->belongsTo(TimberCustomer::class, 'customer_id');
-    }
-
-    /** @return BelongsTo<TimberDocument, $this> */
-    public function sourceDocument(): BelongsTo
-    {
-        return $this->belongsTo(TimberDocument::class, 'source_document_id');
+        return $this->belongsTo(Customer::class, 'customer_id');
     }
 
     /** @return BelongsTo<User, $this> */

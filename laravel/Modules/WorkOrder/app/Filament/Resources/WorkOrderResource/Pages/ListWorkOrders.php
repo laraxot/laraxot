@@ -5,17 +5,17 @@ declare(strict_types=1);
 namespace Modules\WorkOrder\Filament\Resources\WorkOrderResource\Pages;
 
 use Filament\Actions;
-use Filament\Resources\Pages\ListRecords;
 use Modules\WorkOrder\Filament\Resources\WorkOrderResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
-final class ListWorkOrders extends ListRecords
+final class ListWorkOrders extends XotBaseListRecords
 {
     protected static string $resource = WorkOrderResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            'create' => Actions\CreateAction::make(),
         ];
     }
 
@@ -25,7 +25,6 @@ final class ListWorkOrders extends ListRecords
             return false;
         }
 
-        return parent::canCreate();
+        return WorkOrderResource::canCreate();
     }
 }
-

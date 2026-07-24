@@ -6,9 +6,12 @@ namespace Modules\PublicProcurement\Actions;
 
 use Modules\PublicProcurement\Models\PublicProcurementAiExtraction;
 use Modules\PublicProcurement\Models\PublicProcurementTenderOpportunity;
+use Spatie\QueueableAction\QueueableAction;
 
 final class ApplyTenderOpportunityDraftAction
 {
+    use QueueableAction;
+
     public function execute(PublicProcurementAiExtraction $draft): PublicProcurementTenderOpportunity
     {
         if ($draft->status !== 'draft') {
@@ -40,7 +43,7 @@ final class ApplyTenderOpportunityDraftAction
                 'confidence' => $draft->confidence,
             ],
             'raw_excerpt' => $draft->raw_text !== null ? mb_substr($draft->raw_text, 0, 2000) : null,
-            'notes' => 'Creata da bozza AI ' . $draft->public_id,
+            'notes' => 'Creata da bozza AI '.$draft->public_id,
         ]);
 
         $draft->forceFill([

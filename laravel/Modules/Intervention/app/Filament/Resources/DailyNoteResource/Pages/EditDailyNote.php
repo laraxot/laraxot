@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Filament\Resources\DailyNoteResource\Pages;
 
-use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Facades\Auth;
 use Modules\Intervention\Actions\SyncDailyNotePhotosAction;
-use Modules\Intervention\Support\DailyNoteHtml;
 use Modules\Intervention\Filament\Resources\DailyNoteResource;
 use Modules\Intervention\Models\DailyNote;
+use Modules\Intervention\Support\DailyNoteHtml;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
-final class EditDailyNote extends EditRecord
+final class EditDailyNote extends XotBaseEditRecord
 {
     protected static string $resource = DailyNoteResource::class;
 
@@ -42,7 +42,8 @@ final class EditDailyNote extends EditRecord
      */
     protected function mutateFormDataBeforeSave(array $data): array
     {
-        $this->photoPaths = array_values(array_map('strval', $data['photo_paths'] ?? []));
+        $photoPaths = is_array($data['photo_paths'] ?? null) ? $data['photo_paths'] : [];
+        $this->photoPaths = array_values(array_map(static fn (mixed $path): string => (string) $path, $photoPaths));
 
         $bodyHtml = DailyNoteHtml::sanitize((string) ($data['body_html'] ?? ''));
         $body = DailyNoteHtml::toPlainText($bodyHtml);
@@ -64,7 +65,7 @@ final class EditDailyNote extends EditRecord
         app(SyncDailyNotePhotosAction::class)->execute(
             dailyNote: $this->record,
             paths: $this->photoPaths,
-            uploadedByUserId: Auth::id(),
+            uploadedByUserId: Auth::id() !== null ? (int) Auth::id() : null,
         );
     }
 }

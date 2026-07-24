@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace Modules\WorkOrder\Actions;
 
 use Modules\WorkOrder\Models\WorkOrderAssignment;
+use Spatie\QueueableAction\QueueableAction;
 
 final class UnassignUserFromWorkOrderAction
 {
+    use QueueableAction;
+
     public function execute(int $workOrderId, int $userId): void
     {
         WorkOrderAssignment::query()
@@ -16,4 +19,3 @@ final class UnassignUserFromWorkOrderAction
             ->delete();
     }
 }
-

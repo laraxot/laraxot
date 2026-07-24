@@ -8,7 +8,22 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 
+/**
+ * @property int $id
+ * @property int $user_id
+ * @property string $type
+ * @property Carbon $starts_at
+ * @property Carbon $ends_at
+ * @property string|null $notes
+ * @property string $status
+ * @property int|null $decided_by_user_id
+ * @property Carbon|null $decided_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
+ */
 final class AbsenceRequest extends Model
 {
     use SoftDeletes;
@@ -41,4 +56,3 @@ final class AbsenceRequest extends Model
         return $this->belongsTo(User::class, 'decided_by_user_id');
     }
 }
-

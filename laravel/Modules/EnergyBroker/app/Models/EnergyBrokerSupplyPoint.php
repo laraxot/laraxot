@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\EnergyBroker\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
+use Modules\Xot\Models\XotBaseModel;
 
-final class EnergyBrokerSupplyPoint extends Model
+final class EnergyBrokerSupplyPoint extends XotBaseModel
 {
     use SoftDeletes;
 

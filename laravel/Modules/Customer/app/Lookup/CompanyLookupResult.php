@@ -18,6 +18,9 @@ final readonly class CompanyLookupResult
         public ?string $email = null,
     ) {}
 
+    /**
+     * @return array<string, string|null>
+     */
     public function toArray(): array
     {
         return [

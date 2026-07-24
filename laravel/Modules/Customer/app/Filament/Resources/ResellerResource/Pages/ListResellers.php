@@ -15,7 +15,7 @@ final class ListResellers extends XotBaseListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            'create' => CreateAction::make(),
         ];
     }
 }

@@ -4,13 +4,21 @@ declare(strict_types=1);
 
 namespace Modules\Email\Inbox;
 
+use IMAP\Connection;
 use Modules\Email\Settings\EmailSettings;
+use Safe\Exceptions\ImapException;
+
+use function Safe\imap_body;
+use function Safe\imap_check;
+use function Safe\imap_fetch_overview;
+use function Safe\imap_fetchbody;
+use function Safe\imap_fetchheader;
+use function Safe\imap_open;
+use function Safe\imap_setflag_full;
 
 final readonly class ImapEmailInboxClient implements EmailInboxClientInterface
 {
-    public function __construct(private EmailSettings $settings)
-    {
-    }
+    public function __construct(private EmailSettings $settings) {}
 
     public function fetchUnread(int $limit): array
     {
@@ -86,14 +94,11 @@ final readonly class ImapEmailInboxClient implements EmailInboxClientInterface
 
         return [
             'folder' => $folder,
-            'messages' => is_object($check) && isset($check->Nmsgs) ? (int) $check->Nmsgs : null,
+            'messages' => isset($check->Nmsgs) ? (int) $check->Nmsgs : null,
         ];
     }
 
-    /**
-     * @return resource
-     */
-    private function openMailbox(string $folder): mixed
+    private function openMailbox(string $folder): Connection
     {
         if (! function_exists('imap_open')) {
             throw new \RuntimeException('Estensione PHP imap non installata: impossibile leggere la inbox.');
@@ -103,17 +108,15 @@ final readonly class ImapEmailInboxClient implements EmailInboxClientInterface
             throw new \RuntimeException('Configurazione IMAP email incompleta.');
         }
 
-        $mailbox = imap_open(
-            $this->mailboxString($folder),
-            $this->settings->imapUsername(),
-            $this->settings->imapPassword(),
-        );
-
-        if ($mailbox === false) {
-            throw new \RuntimeException('Connessione IMAP fallita: ' . (imap_last_error() ?: 'errore sconosciuto'));
+        try {
+            return imap_open(
+                $this->mailboxString($folder),
+                $this->settings->imapUsername(),
+                $this->settings->imapPassword(),
+            );
+        } catch (ImapException $imapException) {
+            throw new \RuntimeException('Connessione IMAP fallita: '.$imapException->getMessage(), 0, $imapException);
         }
-
-        return $mailbox;
     }
 
     private function mailboxString(string $folder): string
@@ -134,19 +137,18 @@ final readonly class ImapEmailInboxClient implements EmailInboxClientInterface
     }
 
     /**
-     * @param resource $mailbox
      * @return array<string, mixed>
      */
-    private function messagePayload(mixed $mailbox, string $uid, string $direction, string $folder): array
+    private function messagePayload(Connection $mailbox, string $uid, string $direction, string $folder): array
     {
         $overviewItems = imap_fetch_overview($mailbox, $uid, FT_UID);
-        $overview = is_array($overviewItems) && isset($overviewItems[0]) && is_object($overviewItems[0])
+        $overview = isset($overviewItems[0]) && is_object($overviewItems[0])
             ? $overviewItems[0]
             : new \stdClass();
 
-        $headers = imap_rfc822_parse_headers((string) imap_fetchheader($mailbox, $uid, FT_UID | FT_PEEK));
-        $from = is_object($headers) && is_array($headers->from ?? null) ? ($headers->from[0] ?? null) : null;
-        $to = is_object($headers) && is_array($headers->to ?? null) ? ($headers->to[0] ?? null) : null;
+        $headers = imap_rfc822_parse_headers(imap_fetchheader($mailbox, (int) $uid, FT_UID | FT_PEEK));
+        $from = is_array($headers->from ?? null) ? ($headers->from[0] ?? null) : null;
+        $to = is_array($headers->to ?? null) ? ($headers->to[0] ?? null) : null;
 
         return [
             'uid' => $uid,
@@ -167,20 +169,17 @@ final readonly class ImapEmailInboxClient implements EmailInboxClientInterface
     {
         $header = $this->headerString($headerValue);
 
-        return $header !== '' ? $direction . ':' . $header : $direction . ':imap-' . $uid;
+        return $header !== '' ? $direction.':'.$header : $direction.':imap-'.$uid;
     }
 
-    /**
-     * @param resource $mailbox
-     */
-    private function body(mixed $mailbox, string $uid): string
+    private function body(Connection $mailbox, string $uid): string
     {
-        $body = imap_fetchbody($mailbox, $uid, '1', FT_UID | FT_PEEK);
-        if (! is_string($body) || trim($body) === '') {
-            $body = imap_body($mailbox, $uid, FT_UID | FT_PEEK);
+        $body = imap_fetchbody($mailbox, (int) $uid, '1', FT_UID | FT_PEEK);
+        if (trim($body) === '') {
+            $body = imap_body($mailbox, (int) $uid, FT_UID | FT_PEEK);
         }
 
-        return is_string($body) ? quoted_printable_decode($body) : '';
+        return quoted_printable_decode($body);
     }
 
     private function addressEmail(mixed $address): string
@@ -192,7 +191,7 @@ final readonly class ImapEmailInboxClient implements EmailInboxClientInterface
         $mailbox = is_string($address->mailbox ?? null) ? $address->mailbox : '';
         $host = is_string($address->host ?? null) ? $address->host : '';
 
-        return $mailbox !== '' && $host !== '' ? strtolower($mailbox . '@' . $host) : '';
+        return $mailbox !== '' && $host !== '' ? strtolower($mailbox.'@'.$host) : '';
     }
 
     private function addressName(mixed $address): string

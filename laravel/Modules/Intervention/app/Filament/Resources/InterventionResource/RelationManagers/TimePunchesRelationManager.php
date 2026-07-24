@@ -10,23 +10,23 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class TimePunchesRelationManager extends RelationManager
+final class TimePunchesRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'timePunches';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('interventions.time_punches');
     }
 
-    public function form(Schema $schema): Schema
+    public function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Select::make('user_id')
                 ->label(__('interventions.fields.user'))
                 ->relationship('user', 'name')
@@ -38,7 +38,7 @@ final class TimePunchesRelationManager extends RelationManager
                 ->required(),
             DateTimePicker::make('ended_at')
                 ->label(__('interventions.fields.ended_at')),
-        ])->columns(2);
+        ];
     }
 
     public function table(Table $table): Table

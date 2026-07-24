@@ -4,13 +4,27 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Models;
 
-use App\Timber\Models\TimberProduct;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\Catalog\Models\Product;
 use Modules\TimberBilling\Database\Factories\TimberInvoiceLineFactory;
+use Modules\Xot\Models\XotBaseModel;
 
-final class TimberInvoiceLine extends Model
+/**
+ * @property int $id
+ * @property int $invoice_id
+ * @property int|null $product_id
+ * @property string $description
+ * @property string $quantity
+ * @property string $unit_of_measure
+ * @property string $unit_price
+ * @property string $discount_percent
+ * @property string $vat_rate
+ * @property string|null $lot_code
+ * @property string $line_total
+ * @property int $position
+ */
+final class TimberInvoiceLine extends XotBaseModel
 {
     /** @use HasFactory<TimberInvoiceLineFactory> */
     use HasFactory;
@@ -38,10 +52,10 @@ final class TimberInvoiceLine extends Model
         return $this->belongsTo(TimberInvoice::class, 'invoice_id');
     }
 
-    /** @return BelongsTo<TimberProduct, $this> */
+    /** @return BelongsTo<Product, $this> */
     public function product(): BelongsTo
     {
-        return $this->belongsTo(TimberProduct::class, 'product_id');
+        return $this->belongsTo(Product::class, 'product_id');
     }
 
     protected static function newFactory(): TimberInvoiceLineFactory

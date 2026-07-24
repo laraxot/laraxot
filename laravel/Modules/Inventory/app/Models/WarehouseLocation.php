@@ -4,12 +4,25 @@ declare(strict_types=1);
 
 namespace Modules\Inventory\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Modules\Inventory\Database\Factories\WarehouseLocationFactory;
+use Modules\Xot\Models\XotBaseModel;
 
-final class WarehouseLocation extends Model
+/**
+ * @property int $id
+ * @property int $warehouse_id
+ * @property string $code
+ * @property string|null $label
+ * @property bool $is_active
+ * @property-read Warehouse|null $warehouse
+ */
+final class WarehouseLocation extends XotBaseModel
 {
+    /** @use HasFactory<WarehouseLocationFactory> */
+    use HasFactory;
+
     protected $table = 'warehouse_locations';
 
     /** @var array<int, string> */

@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Compliance\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -18,14 +19,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $generator_type
  * @property string|null $fuel_type
  * @property string|null $power_kw
- * @property \Carbon\CarbonInterface|null $installation_date
+ * @property CarbonInterface|null $installation_date
  * @property int|null $maintenance_interval_months
  * @property int|null $efficiency_check_interval_months
- * @property \Carbon\CarbonInterface|null $next_maintenance_due_on
- * @property \Carbon\CarbonInterface|null $next_efficiency_check_due_on
+ * @property CarbonInterface|null $next_maintenance_due_on
+ * @property CarbonInterface|null $next_efficiency_check_due_on
  * @property string|null $notes
  */
-final class Boiler extends Model
+final class Boiler extends XotBaseModel
 {
     use SoftDeletes;
 

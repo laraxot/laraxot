@@ -6,9 +6,12 @@ namespace Modules\Customer\Actions;
 
 use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\ContactRole;
+use Spatie\QueueableAction\QueueableAction;
 
 final class UpsertCustomerContactByEmailAction
 {
+    use QueueableAction;
+
     public function execute(
         int $customerId,
         string $fullName,

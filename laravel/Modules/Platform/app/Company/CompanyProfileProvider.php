@@ -6,6 +6,9 @@ namespace Modules\Platform\Company;
 
 use Modules\Platform\Settings\SettingsRepository;
 use Modules\Platform\ValueObjects\CompanyProfile;
+use Safe\Exceptions\FilesystemException;
+
+use function Safe\file_get_contents;
 
 /**
  * Risolve l'anagrafica dell'azienda emittente leggendo le impostazioni (chiave "company.profile"),
@@ -57,9 +60,9 @@ final class CompanyProfileProvider
             return null;
         }
 
-        $contents = file_get_contents($path);
-
-        if ($contents === false) {
+        try {
+            $contents = file_get_contents($path);
+        } catch (FilesystemException) {
             return null;
         }
 

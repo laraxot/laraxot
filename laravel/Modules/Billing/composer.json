@@ -20,7 +20,9 @@
         }
     ],
     "require": {
-        "php": "^8.3"
+        "php": "^8.3",
+        "barryvdh/laravel-dompdf": "*",
+        "spatie/laravel-queueable-action": "*"
     },
     "autoload": {
         "psr-4": {
@@ -58,6 +60,22 @@
         {
             "type": "path",
             "url": "../UI"
+        },
+        {
+            "type": "path",
+            "url": "../Customer"
+        },
+        {
+            "type": "path",
+            "url": "../WorkOrder"
+        },
+        {
+            "type": "path",
+            "url": "../Intervention"
+        },
+        {
+            "type": "path",
+            "url": "../Platform"
         }
     ],
     "minimum-stability": "dev",

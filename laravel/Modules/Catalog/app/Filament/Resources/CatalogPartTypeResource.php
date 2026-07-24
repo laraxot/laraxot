@@ -9,15 +9,15 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Catalog\Filament\Resources\CatalogPartTypeResource\Pages;
 use Modules\Catalog\Models\CatalogPartType;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class CatalogPartTypeResource extends Resource
+final class CatalogPartTypeResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 
@@ -25,11 +25,11 @@ final class CatalogPartTypeResource extends Resource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-tag';
 
-    private const ACCOUNT_FEATURE_ADMIN = 'admin.catalog';
+    protected const ACCOUNT_FEATURE_ADMIN = 'admin.catalog';
 
-    private const ACCOUNT_FEATURE_OPERATOR = 'operator.catalog';
+    protected const ACCOUNT_FEATURE_OPERATOR = 'operator.catalog';
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('catalog.navigation');
     }
@@ -44,16 +44,19 @@ final class CatalogPartTypeResource extends Resource
         return __('catalog.part_types');
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<int, Component>
+     */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()->columnSpanFull()->components([
                 TextInput::make('name')
                     ->label(__('catalog.fields.name'))
                     ->required()
                     ->maxLength(255),
             ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

@@ -6,11 +6,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+return new class() extends Migration
 {
     public function up(): void
     {
-        Schema::create('public_procurement_tender_sources', static function (Blueprint $table): void {
+        Schema::create('public_procurement_tender_sources', function (Blueprint $table): void {
             $table->id();
             $table->string('name');
             $table->string('source_type')->default('manual');
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->index(['source_type', 'is_active']);
         });
 
-        Schema::create('public_procurement_tender_opportunities', static function (Blueprint $table): void {
+        Schema::create('public_procurement_tender_opportunities', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('tender_source_id')->nullable()->constrained('public_procurement_tender_sources')->nullOnDelete();
             $table->foreignId('customer_id')->nullable()->constrained('customers')->nullOnDelete();
@@ -56,7 +56,7 @@ return new class extends Migration
             $table->unique(['tender_source_id', 'external_id'], 'pub_proc_tender_source_external_unique');
         });
 
-        Schema::create('public_procurement_contracts', static function (Blueprint $table): void {
+        Schema::create('public_procurement_contracts', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('work_order_id')->nullable()->constrained('work_orders')->nullOnDelete();
             $table->foreignId('tender_opportunity_id')->nullable()->constrained('public_procurement_tender_opportunities')->nullOnDelete();
@@ -94,7 +94,7 @@ return new class extends Migration
             $table->index(['work_order_id']);
         });
 
-        Schema::create('public_procurement_tender_eligibility_checks', static function (Blueprint $table): void {
+        Schema::create('public_procurement_tender_eligibility_checks', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('tender_opportunity_id')->nullable()->constrained('public_procurement_tender_opportunities')->cascadeOnDelete();
             $table->foreignId('public_procurement_contract_id')->nullable()->constrained('public_procurement_contracts')->cascadeOnDelete();
@@ -115,7 +115,7 @@ return new class extends Migration
             $table->index(['evaluated_at']);
         });
 
-        Schema::create('public_procurement_contacts', static function (Blueprint $table): void {
+        Schema::create('public_procurement_contacts', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('public_procurement_contract_id')->constrained('public_procurement_contracts')->cascadeOnDelete();
             $table->string('role');
@@ -129,7 +129,7 @@ return new class extends Migration
             $table->index(['public_procurement_contract_id', 'role']);
         });
 
-        Schema::create('public_procurement_deadlines', static function (Blueprint $table): void {
+        Schema::create('public_procurement_deadlines', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('public_procurement_contract_id')->constrained('public_procurement_contracts')->cascadeOnDelete();
             $table->string('type');
@@ -146,7 +146,7 @@ return new class extends Migration
             $table->index(['due_at']);
         });
 
-        Schema::create('public_procurement_document_requirements', static function (Blueprint $table): void {
+        Schema::create('public_procurement_document_requirements', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('public_procurement_contract_id')->nullable()->constrained('public_procurement_contracts')->cascadeOnDelete();
             $table->foreignId('tender_opportunity_id')->nullable()->constrained('public_procurement_tender_opportunities')->cascadeOnDelete();
@@ -167,7 +167,7 @@ return new class extends Migration
             $table->index(['tender_opportunity_id', 'phase']);
         });
 
-        Schema::create('public_procurement_economic_frames', static function (Blueprint $table): void {
+        Schema::create('public_procurement_economic_frames', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('public_procurement_contract_id')->constrained('public_procurement_contracts')->cascadeOnDelete();
             $table->string('label');
@@ -180,7 +180,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('public_procurement_price_items', static function (Blueprint $table): void {
+        Schema::create('public_procurement_price_items', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('public_procurement_contract_id')->constrained('public_procurement_contracts')->cascadeOnDelete();
             $table->string('code')->nullable();
@@ -197,7 +197,7 @@ return new class extends Migration
             $table->index(['public_procurement_contract_id', 'code']);
         });
 
-        Schema::create('public_procurement_measurements', static function (Blueprint $table): void {
+        Schema::create('public_procurement_measurements', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('public_procurement_contract_id')->constrained('public_procurement_contracts')->cascadeOnDelete();
             $table->foreignId('price_item_id')->nullable()->constrained('public_procurement_price_items')->nullOnDelete();
@@ -215,7 +215,7 @@ return new class extends Migration
             $table->index(['public_procurement_contract_id', 'status']);
         });
 
-        Schema::create('public_procurement_progress_reports', static function (Blueprint $table): void {
+        Schema::create('public_procurement_progress_reports', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('public_procurement_contract_id')->constrained('public_procurement_contracts')->cascadeOnDelete();
             $table->string('number');
@@ -235,7 +235,7 @@ return new class extends Migration
             $table->unique(['public_procurement_contract_id', 'number'], 'pub_proc_progress_number_unique');
         });
 
-        Schema::create('public_procurement_payment_certificates', static function (Blueprint $table): void {
+        Schema::create('public_procurement_payment_certificates', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('public_procurement_contract_id')->constrained('public_procurement_contracts')->cascadeOnDelete();
             $table->foreignId('progress_report_id')->nullable()->constrained('public_procurement_progress_reports')->nullOnDelete();
@@ -249,7 +249,7 @@ return new class extends Migration
             $table->softDeletes();
         });
 
-        Schema::create('public_procurement_official_records', static function (Blueprint $table): void {
+        Schema::create('public_procurement_official_records', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('public_procurement_contract_id')->constrained('public_procurement_contracts')->cascadeOnDelete();
             $table->foreignId('media_id')->nullable()->constrained('media')->nullOnDelete();
@@ -263,7 +263,7 @@ return new class extends Migration
             $table->softDeletes();
         });
 
-        Schema::create('public_procurement_guarantees', static function (Blueprint $table): void {
+        Schema::create('public_procurement_guarantees', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('public_procurement_contract_id')->constrained('public_procurement_contracts')->cascadeOnDelete();
             $table->foreignId('media_id')->nullable()->constrained('media')->nullOnDelete();
@@ -282,7 +282,7 @@ return new class extends Migration
             $table->index(['public_procurement_contract_id', 'expires_on']);
         });
 
-        Schema::create('public_procurement_ai_extractions', static function (Blueprint $table): void {
+        Schema::create('public_procurement_ai_extractions', function (Blueprint $table): void {
             $table->id();
             $table->uuid('public_id')->unique();
             $table->foreignId('media_id')->nullable()->constrained('media')->nullOnDelete();

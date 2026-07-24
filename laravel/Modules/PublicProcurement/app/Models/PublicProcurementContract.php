@@ -4,14 +4,46 @@ declare(strict_types=1);
 
 namespace Modules\PublicProcurement\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Customer;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Models\XotBaseModel;
 
-final class PublicProcurementContract extends Model
+/**
+ * @property int $id
+ * @property int|null $work_order_id
+ * @property int|null $tender_opportunity_id
+ * @property int|null $customer_id
+ * @property string $status
+ * @property string|null $code
+ * @property string $title
+ * @property string $contracting_authority
+ * @property string|null $procedure_type
+ * @property string|null $cig
+ * @property string|null $cup
+ * @property string|null $rup_name
+ * @property string|null $works_director_name
+ * @property string|null $safety_coordinator_name
+ * @property Carbon|null $awarded_on
+ * @property Carbon|null $signed_on
+ * @property Carbon|null $site_handover_on
+ * @property Carbon|null $works_start_on
+ * @property Carbon|null $works_due_on
+ * @property Carbon|null $works_completed_on
+ * @property string $contract_amount
+ * @property string $security_costs
+ * @property string $vat_rate
+ * @property string $discount_rate
+ * @property string $retention_rate
+ * @property array<string, mixed>|null $meta
+ * @property string|null $description
+ * @property string|null $notes
+ * @property Carbon|null $deleted_at
+ */
+final class PublicProcurementContract extends XotBaseModel
 {
     use SoftDeletes;
 

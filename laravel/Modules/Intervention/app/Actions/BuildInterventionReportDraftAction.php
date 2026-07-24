@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Actions;
 
-use Modules\Intervention\AI\InterventionReportExtractorInterface;
-use Modules\Intervention\Domain\DTO\DictatedMaterialLine;
-use Modules\Intervention\Domain\DTO\InterventionReportDraft;
+use Modules\Intervention\Contracts\InterventionReportExtractorContract;
+use Modules\Intervention\Data\DictatedMaterialLine;
+use Modules\Intervention\Data\InterventionReportDraft;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Orchestrates voice → report draft: runs the LLM extractor over the transcript,
@@ -15,11 +16,13 @@ use Modules\Intervention\Domain\DTO\InterventionReportDraft;
  */
 final class BuildInterventionReportDraftAction
 {
+    use QueueableAction;
+
     /** @var list<string> */
     private const ALLOWED_OUTCOMES = ['completed', 'suspended', 'quotation'];
 
     public function __construct(
-        private readonly InterventionReportExtractorInterface $extractor,
+        private readonly InterventionReportExtractorContract $extractor,
         private readonly MatchDictatedMaterialsToCatalogAction $matcher,
     ) {}
 

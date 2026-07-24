@@ -7,10 +7,22 @@ namespace Modules\Email\Models;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
 
+/**
+ * @property int $id
+ * @property string $email
+ * @property int|null $customer_id
+ * @property int|null $customer_site_id
+ * @property int|null $contact_id
+ * @property int|null $user_id
+ * @property array<string, mixed>|null $meta
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ */
 final class EmailContactIdentity extends Model
 {
     protected $table = 'email_contact_identities';

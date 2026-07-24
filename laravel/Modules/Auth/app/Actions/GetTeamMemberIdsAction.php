@@ -5,13 +5,15 @@ declare(strict_types=1);
 namespace Modules\Auth\Actions;
 
 use App\Models\User;
-use Modules\Auth\Actions\ResolveTeamMemberIdsAction;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Id del responsabile e di tutti i suoi collaboratori, a qualsiasi profondita'.
  */
-final readonly class GetTeamMemberIdsAction
+final class GetTeamMemberIdsAction
 {
+    use QueueableAction;
+
     public function __construct(
         private ResolveTeamMemberIdsAction $resolveTeamMemberIds,
     ) {}

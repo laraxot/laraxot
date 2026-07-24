@@ -7,6 +7,7 @@ namespace Modules\AiAssistant\Speech;
 use GuzzleHttp\Client;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Log;
+
 use function Safe\fopen;
 use function Safe\json_decode;
 use function Safe\preg_match;
@@ -139,7 +140,7 @@ final class OpenAiWhisperTranscriptionProvider implements SpeechTranscriptionPro
     /**
      * Heuristics/guard su output "verbose_json" di Whisper.
      *
-     * @param array<string, mixed> $json
+     * @param  array<string, mixed>  $json
      */
     public static function shouldRejectTranscriptionQuality(array $json): bool
     {
@@ -230,4 +231,3 @@ final class OpenAiWhisperTranscriptionProvider implements SpeechTranscriptionPro
         return 'audio/webm';
     }
 }
-

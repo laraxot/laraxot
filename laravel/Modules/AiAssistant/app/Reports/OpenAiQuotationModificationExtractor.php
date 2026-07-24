@@ -7,6 +7,8 @@ namespace Modules\AiAssistant\Reports;
 use Modules\AiAssistant\Llm\LlmChatJsonClient;
 use Modules\Quotation\AI\QuotationModificationExtractorInterface;
 
+use function Safe\json_encode;
+
 /**
  * LLM extractor for "copy an existing quotation and modify it": it is given the
  * source lines and the spoken request, and returns edit operations so the app can

@@ -2,27 +2,35 @@
 
 declare(strict_types=1);
 
-it('has Customer model', function () {
-    $model = new \Modules\Customer\Models\Customer();
-    expect($model)->toBeInstanceOf(\Illuminate\Database\Eloquent\Model::class);
+namespace Modules\Customer\Tests\Feature;
+
+use Illuminate\Database\Eloquent\Model;
+use Modules\Customer\Models\Contact;
+use Modules\Customer\Models\ContactRole;
+use Modules\Customer\Models\Customer;
+use Modules\Customer\Models\CustomerSite;
+use Modules\Customer\Models\Reseller;
+use Modules\Customer\Tests\TestCase;
+use PHPUnit\Framework\Assert;
+
+uses(TestCase::class);
+
+it('has Customer model', function (): void {
+    Assert::assertInstanceOf(Model::class, new Customer());
 });
 
-it('has CustomerSite model', function () {
-    $model = new \Modules\Customer\Models\CustomerSite();
-    expect($model)->toBeInstanceOf(\Illuminate\Database\Eloquent\Model::class);
+it('has CustomerSite model', function (): void {
+    Assert::assertInstanceOf(Model::class, new CustomerSite());
 });
 
-it('has Contact model', function () {
-    $model = new \Modules\Customer\Models\Contact();
-    expect($model)->toBeInstanceOf(\Illuminate\Database\Eloquent\Model::class);
+it('has Contact model', function (): void {
+    Assert::assertInstanceOf(Model::class, new Contact());
 });
 
-it('has ContactRole model', function () {
-    $model = new \Modules\Customer\Models\ContactRole();
-    expect($model)->toBeInstanceOf(\Illuminate\Database\Eloquent\Model::class);
+it('has ContactRole model', function (): void {
+    Assert::assertInstanceOf(Model::class, new ContactRole());
 });
 
-it('has Reseller model', function () {
-    $model = new \Modules\Customer\Models\Reseller();
-    expect($model)->toBeInstanceOf(\Illuminate\Database\Eloquent\Model::class);
+it('has Reseller model', function (): void {
+    Assert::assertInstanceOf(Model::class, new Reseller());
 });

@@ -1,0 +1,95 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'navigation' => 'Quotations',
+    'quotation' => 'Quotation',
+    'quotations' => 'Quotations',
+    'quotation_template' => 'Quotation template',
+    'quotation_templates' => 'Quotation templates',
+    'quotation_items' => 'Quotation items',
+
+    'fields' => [
+        'code' => 'Code',
+        'confirmed_at' => 'Confirmed at',
+        'customer' => 'Customer',
+        'description' => 'Description',
+        'discount_amount' => 'Discount',
+        'discount_percent' => 'Discount %',
+        'issued_at' => 'Issued at',
+        'line_total' => 'Line total',
+        'notes' => 'Notes',
+        'product' => 'Product',
+        'quantity' => 'Quantity',
+        'sort_order' => 'Order',
+        'status' => 'Status',
+        'subtotal' => 'Subtotal',
+        'taxable_amount' => 'Taxable amount',
+        'tax_amount' => 'Tax',
+        'tax_percent' => 'Tax %',
+        'title' => 'Title',
+        'total' => 'Total',
+        'unit_price' => 'Unit price',
+        'work_order' => 'Work order',
+    ],
+
+    'statuses' => [
+        'draft' => 'Draft',
+        'sent' => 'Sent',
+        'confirmed' => 'Confirmed',
+        'rejected' => 'Rejected',
+    ],
+
+    'actions' => [
+        'apply_template' => 'Apply template',
+        'create_work_order' => 'Create work order',
+        'download_confirmed_pdf' => 'Download confirmed PDF',
+        'download_pdf' => 'Download PDF',
+        'reprepare_attachment' => 'Re-prepare attachment',
+        'reprepare_queued' => 'Attachment re-preparation queued',
+        'reprepare_nothing' => 'Nothing to re-prepare',
+    ],
+
+    'attachments' => [
+        'title' => 'Attachments',
+        'add' => 'Add attachment',
+        'download' => 'Download',
+        'file' => 'File',
+        'file_title' => 'File title',
+        'file_title_hint' => 'Optional: the file name is used when left empty.',
+        'size' => 'Size',
+        'type' => 'Type',
+        'uploaded_at' => 'Uploaded at',
+    ],
+
+    'import' => [
+        'title' => 'Import quotation from file',
+        'file' => 'File',
+        'done' => 'Quotation imported successfully.',
+        'failed' => 'Import failed.',
+        'empty_document' => 'The document has no usable text.',
+        'no_customer' => 'Could not determine the customer from the document.',
+    ],
+
+    'voice' => [
+        'title' => 'Voice quotation',
+        'section_title' => 'Dictation',
+        'transcript_label' => 'Transcript',
+        'ai_response_label' => 'Raw AI response',
+        'empty_transcript' => 'Nothing to process yet.',
+        'customer_required' => 'Please provide a customer.',
+        'items_required' => 'Please add at least one line item.',
+        'created' => 'Quotation created.',
+        'recalculated' => 'Totals recalculated.',
+        'new' => 'New',
+        'create_similar' => 'Create a similar one for another customer',
+        'based_on_none' => 'No reference quotation found.',
+        'no_company_found' => 'No company found.',
+        'city' => 'City',
+        'phone' => 'Phone',
+        'attachment_preparing_title' => 'Attachment being prepared…',
+        'attachment_preparing_body' => 'The document is being regenerated and will be available shortly.',
+        'attachment_failed_title' => 'Attachment not generated',
+    ],
+];

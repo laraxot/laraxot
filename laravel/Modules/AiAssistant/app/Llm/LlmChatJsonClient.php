@@ -7,6 +7,8 @@ namespace Modules\AiAssistant\Llm;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
+use function Safe\json_decode;
+
 /**
  * Small shared client for "prompt in → JSON object out" LLM calls over the
  * OpenAI-compatible chat/completions API. Resolves the first configured provider
@@ -168,6 +170,17 @@ final class LlmChatJsonClient
         /** @var mixed $decoded */
         $decoded = json_decode(substr($trimmed, $start, $end - $start + 1), true);
 
-        return is_array($decoded) ? $decoded : [];
+        if (! is_array($decoded)) {
+            return [];
+        }
+
+        $payload = [];
+        foreach ($decoded as $key => $value) {
+            if (is_string($key)) {
+                $payload[$key] = $value;
+            }
+        }
+
+        return $payload;
     }
 }

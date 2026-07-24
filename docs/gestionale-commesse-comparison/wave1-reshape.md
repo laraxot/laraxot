@@ -27,20 +27,26 @@ related:
 
 Sbloccano Cliente → Commessa → Intervento. Senza XotBase su Model/Resource non si abilita il modulo in produzione Laraxot.
 
-## Matrice gap (aggiornata 2026-07-23 — BaseModel OK)
+## Matrice gap (aggiornata 2026-07-23 sera — singolari)
 
-| Item | Customers | WorkOrders | Interventions |
+> Canone cartella/NS: **Customer / WorkOrder / Intervention** (plurale SRC eliminato dal tree).
+
+| Item | Customer | WorkOrder | Intervention |
 |---|---|---|---|
 | Layout `app/` | OK | OK | OK |
 | Composer → `app/` | OK | OK | OK |
 | XotBaseServiceProvider | OK | OK | OK |
-| Actions → QueueableAction | OK (8) | OK (14) | OK (23) |
-| Resources CRUD → XotBaseResource | OK | OK | OK (Intervention, DailyNote) |
+| Actions → QueueableAction | OK (8) | OK (14) | OK (21) |
+| Resources CRUD → XotBaseResource + `getFormSchema` | OK | OK | OK (Intervention, DailyNote) |
 | Filament Pages custom (calendar/schedule) | n/a | n/a | TODO |
-| BaseModel / XotBaseModel | OK (`customers`) | OK (`work_orders`) | OK (`interventions`) |
-| Factories | TODO (0) | TODO (0) | TODO (0) |
-| Migrations 1/model | OK (1 file) | TODO (2 file) | TODO (14 file) |
-| PHPStan L10 + enable | TODO (`Themes/Two`) | TODO | TODO |
+| BaseModel / XotBaseModel | OK | OK | OK |
+| Factories | OK (5) | OK (5) | OK (8) |
+| Migrations 1/model | OK (5 XotBase) | OK (5 XotBase) | OK (8 XotBase) |
+| Artifact parity | OK | OK | OK |
+| PHPStan L10 `app/` | **0** | **0** | **0** |
+| Enable statuses | `false` (gate utente) | `false` | `false` |
+
+Anche **Quotation / Signature / Vehicle / Document / AiAssistant**: parity OK + PHPStan L10 `app/` = **0**. CanvasPad FO copiato in `laravel/app/Filament/Forms/Components/`.
 
 ### Shim AccountFeatures
 
@@ -51,14 +57,10 @@ Sbloccano Cliente → Commessa → Intervento. Senza XotBase su Model/Resource n
 1. ~~`BaseModel`~~  
 2. ~~Switch models~~  
 3. ~~Resources → XotBaseResource~~  
-4. Factories/Seeders  
-5. Consolidate migrations (dove serve)  
-6. Pest + PHPStan  
-7. `modules_statuses=true`
-
-## Rename (Fase C — dopo enable)
-
-`Customers`→`Customer`, `WorkOrders`→`WorkOrder`, `Interventions`→`Intervention` = story separata (evita churn durante XotBase).
+4. ~~Factories/Seeders~~  
+5. ~~Consolidate migrations~~  
+6. ~~PHPStan L10~~  
+7. `modules_statuses=true` (**solo ordine utente**) + Pest regressione
 
 ## FO / Themes
 

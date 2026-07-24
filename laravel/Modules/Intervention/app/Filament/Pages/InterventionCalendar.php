@@ -4,20 +4,22 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Filament\Pages;
 
-use App\Models\User;
 use App\Support\AccountFeatures;
 use Carbon\CarbonImmutable;
 use Filament\Actions\Action;
-use Filament\Pages\Page;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Support\Facades\Auth;
-use Modules\Intervention\GoogleCalendar\Actions\BuildGoogleOverlayEventsAction;
 use Modules\Intervention\Filament\Concerns\InterventionCalendarColors;
 use Modules\Intervention\Filament\Concerns\ResolvesCalendarReturnUrl;
 use Modules\Intervention\Filament\Resources\InterventionResource;
+use Modules\Intervention\GoogleCalendar\Actions\BuildGoogleOverlayEventsAction;
 use Modules\Intervention\Models\Intervention;
+use Modules\User\Models\User;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
-final class InterventionCalendar extends Page
+final class InterventionCalendar extends XotBasePage
 {
     use InterventionCalendarColors;
     use ResolvesCalendarReturnUrl;
@@ -28,7 +30,7 @@ final class InterventionCalendar extends Page
 
     protected string $view = 'interventions::filament.pages.intervention-calendar';
 
-    /** @var array<int, array<string, mixed>> */
+    /** @var array<string, mixed> */
     public array $selectedIntervention = [];
 
     public bool $showModal = false;
@@ -67,12 +69,12 @@ final class InterventionCalendar extends Page
         };
     }
 
-    public static function getNavigationSort(): ?int
+    public static function getNavigationSort(): int
     {
         return 1;
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('interventions.navigation');
     }
@@ -168,15 +170,18 @@ final class InterventionCalendar extends Page
 
             $borderColor = self::eventBorderColor($intervention->outcome_code);
 
+            $workOrder = $intervention->workOrder;
+            $customer = $intervention->customer;
+            $performedBy = $intervention->performedBy;
             $operatorName = $intervention->assignedUsers->pluck('name')->filter()->implode(', ');
             if ($operatorName === '') {
-                $operatorName = $intervention->performedBy?->name ?? '—';
+                $operatorName = $performedBy !== null ? ($performedBy->name ?? '—') : '—';
             }
-            $customerName = $intervention->workOrder?->customer?->legal_name
-                ?? $intervention->customer?->legal_name
+            $customerName = ($workOrder !== null && $workOrder->customer !== null ? $workOrder->customer->legal_name : null)
+                ?? ($customer !== null ? $customer->legal_name : null)
                 ?? '—';
-            $siteName = $intervention->workOrder?->site?->name ?? '';
-            $title = $intervention->workOrder?->title ?? '—';
+            $siteName = ($workOrder !== null && $workOrder->site !== null) ? (string) ($workOrder->site->name ?? '') : '';
+            $title = $workOrder !== null ? (string) ($workOrder->title ?? '—') : '—';
 
             $labelParts = array_filter([
                 $title !== '—' ? $title : null,
@@ -246,14 +251,19 @@ final class InterventionCalendar extends Page
 
         $operatorId = (int) $intervention->performed_by_user_id;
 
+        $workOrder = $intervention->workOrder;
+        $customer = $intervention->customer;
+        $performedBy = $intervention->performedBy;
+        $assignedNames = $intervention->assignedUsers->pluck('name')->filter()->implode(', ');
+
         $this->selectedIntervention = [
             'id' => $intervention->id,
-            'work_order_title' => $intervention->workOrder?->title ?? '—',
-            'customer' => $intervention->workOrder?->customer?->legal_name
-                ?? $intervention->customer?->legal_name
+            'work_order_title' => $workOrder !== null ? (string) ($workOrder->title ?? '—') : '—',
+            'customer' => ($workOrder !== null && $workOrder->customer !== null ? $workOrder->customer->legal_name : null)
+                ?? ($customer !== null ? $customer->legal_name : null)
                 ?? '—',
-            'site' => $intervention->workOrder?->site?->name ?? '',
-            'operator' => ($intervention->assignedUsers->pluck('name')->filter()->implode(', ')) ?: ($intervention->performedBy?->name ?? '—'),
+            'site' => ($workOrder !== null && $workOrder->site !== null) ? (string) ($workOrder->site->name ?? '') : '',
+            'operator' => $assignedNames !== '' ? $assignedNames : ($performedBy !== null ? ($performedBy->name ?? '—') : '—'),
             'operator_color' => self::operatorColorFor($operatorId),
             'scheduled_at' => $intervention->scheduled_at?->format('d/m/Y H:i') ?? '—',
             'started_at' => $intervention->started_at?->format('d/m/Y H:i') ?? '—',
@@ -296,7 +306,7 @@ final class InterventionCalendar extends Page
 
                 return [
                     'id' => (string) $operatorId,
-                    'name' => $i->performedBy?->name ?? "Operatore #{$operatorId}",
+                    'name' => $i->performedBy !== null ? ($i->performedBy->name ?? "Operatore #{$operatorId}") : "Operatore #{$operatorId}",
                     'color' => self::operatorColorFor($operatorId),
                 ];
             })
@@ -310,7 +320,7 @@ final class InterventionCalendar extends Page
         $user = Auth::user();
         $panelId = filament()->getCurrentPanel()?->getId();
 
-        if (! $user instanceof \App\Models\User || ! $user->can('Create:Intervention')) {
+        if (! $user instanceof User || ! $user->can('Create:Intervention')) {
             return false;
         }
 
@@ -325,11 +335,14 @@ final class InterventionCalendar extends Page
     {
         $user = Auth::user();
 
-        return $user instanceof \App\Models\User
+        return $user instanceof User
             && AccountFeatures::hasAssignedPerimeter($user)
             && AccountFeatures::hasAccountFeature($user, 'operator.force_self_assignment');
     }
 
+    /**
+     * @param  Builder<Intervention>  $query
+     */
     private function applyCurrentPanelVisibility(Builder $query): void
     {
         $panelId = filament()->getCurrentPanel()?->getId();
@@ -340,7 +353,7 @@ final class InterventionCalendar extends Page
 
         $user = Auth::user();
 
-        if (! $user instanceof \App\Models\User) {
+        if (! $user instanceof User) {
             $query->whereRaw('1=0');
 
             return;
@@ -350,7 +363,7 @@ final class InterventionCalendar extends Page
             $query->where(function (Builder $innerQuery) use ($user): void {
                 $innerQuery
                     ->where('performed_by_user_id', $user->id)
-                    ->orWhereExists(function ($subQuery) use ($user): void {
+                    ->orWhereExists(function (QueryBuilder $subQuery) use ($user): void {
                         $subQuery->selectRaw('1')
                             ->from('intervention_user_assignments')
                             ->whereColumn('intervention_user_assignments.intervention_id', 'interventions.id')
@@ -366,7 +379,9 @@ final class InterventionCalendar extends Page
             && AccountFeatures::hasAssignedPerimeter($user)
             && AccountFeatures::hasFeature($user, 'admin.team_interventions', true)
         ) {
-            AccountFeatures::scopeAssignedInterventions($query, $user);
+            /** @var Builder<Model> $scopedQuery */
+            $scopedQuery = $query;
+            AccountFeatures::scopeAssignedInterventions($scopedQuery, $user);
         }
     }
 }

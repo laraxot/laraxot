@@ -7,9 +7,10 @@ namespace Modules\TimberBilling\Actions;
 use App\Timber\Actions\RegisterTimberStockMovementAction;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
-use Modules\TimberBilling\Support\TimberInvoiceNumberGenerator;
 use Modules\TimberBilling\Models\TimberInvoice;
+use Modules\TimberBilling\Support\TimberInvoiceNumberGenerator;
 use RuntimeException;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Emette un documento fiscale: assegna il numero, ricalcola i totali IVA e,
@@ -18,6 +19,8 @@ use RuntimeException;
  */
 final class IssueTimberInvoiceAction
 {
+    use QueueableAction;
+
     public function __construct(
         private readonly RecalculateTimberInvoiceTotalsAction $recalculateTotals,
         private readonly TimberInvoiceNumberGenerator $numberGenerator,

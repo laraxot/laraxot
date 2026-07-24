@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\PublicProcurement\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Xot\Models\XotBaseModel;
 
-final class PublicProcurementTenderSource extends Model
+final class PublicProcurementTenderSource extends XotBaseModel
 {
     use SoftDeletes;
 

@@ -101,3 +101,8 @@ if (class_exists(XotData::class)) {
 
     XotData::make();
 }
+
+$aiAssistantPhpstanStubs = __DIR__.'/Modules/AiAssistant/phpstan-stubs/load.php';
+if (file_exists($aiAssistantPhpstanStubs)) {
+    require_once $aiAssistantPhpstanStubs;
+}

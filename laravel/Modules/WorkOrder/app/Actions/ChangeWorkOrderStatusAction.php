@@ -9,9 +9,12 @@ use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderActivity;
 use Modules\WorkOrder\Models\WorkOrderStatus;
 use Modules\WorkOrder\Models\WorkOrderStatusEvent;
+use Spatie\QueueableAction\QueueableAction;
 
 final class ChangeWorkOrderStatusAction
 {
+    use QueueableAction;
+
     public function execute(
         WorkOrder $workOrder,
         int $toStatusId,
@@ -59,4 +62,3 @@ final class ChangeWorkOrderStatusAction
         return $event;
     }
 }
-

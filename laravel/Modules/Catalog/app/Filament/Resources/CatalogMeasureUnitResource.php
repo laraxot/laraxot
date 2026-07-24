@@ -9,16 +9,16 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Catalog\Filament\Resources\CatalogMeasureUnitResource\Pages;
 use Modules\Catalog\Models\CatalogMeasureUnit;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class CatalogMeasureUnitResource extends Resource
+final class CatalogMeasureUnitResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 
@@ -26,11 +26,11 @@ final class CatalogMeasureUnitResource extends Resource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-scale';
 
-    private const ACCOUNT_FEATURE_ADMIN = 'admin.catalog';
+    protected const ACCOUNT_FEATURE_ADMIN = 'admin.catalog';
 
-    private const ACCOUNT_FEATURE_OPERATOR = 'operator.catalog';
+    protected const ACCOUNT_FEATURE_OPERATOR = 'operator.catalog';
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('catalog.navigation');
     }
@@ -45,9 +45,12 @@ final class CatalogMeasureUnitResource extends Resource
         return __('catalog.measure_units');
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<int, Component>
+     */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()->columnSpanFull()->components([
                 Grid::make(2)->components([
                     TextInput::make('name')
@@ -59,7 +62,7 @@ final class CatalogMeasureUnitResource extends Resource
                         ->maxLength(50),
                 ]),
             ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

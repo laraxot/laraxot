@@ -6,9 +6,12 @@ namespace Modules\Intervention\Actions;
 
 use Carbon\CarbonImmutable;
 use Modules\Intervention\Models\DailyNote;
+use Spatie\QueueableAction\QueueableAction;
 
 final class UpsertDailyNoteForUserAction
 {
+    use QueueableAction;
+
     public function execute(
         int $userId,
         CarbonImmutable $noteDate,

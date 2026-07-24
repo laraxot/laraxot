@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Vehicle\Filament\Resources;
 
+use App\Support\AccountFeatures;
 use App\Support\Concerns\HasAccountFeatureVisibility;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -11,20 +12,20 @@ use Filament\Actions\ForceDeleteBulkAction;
 use Filament\Actions\RestoreBulkAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Resources\Resource;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Auth;
 use Modules\Vehicle\Filament\Resources\VehicleResource\Pages;
 use Modules\Vehicle\Filament\Resources\VehicleResource\RelationManagers\DocumentsRelationManager;
 use Modules\Vehicle\Models\Vehicle;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class VehicleResource extends Resource
+final class VehicleResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 
@@ -32,13 +33,25 @@ final class VehicleResource extends Resource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-truck';
 
+    /** Read reflectively by HasAccountFeatureVisibility via defined()/constant(). */
     private const ACCOUNT_FEATURE_ADMIN = 'admin.vehicles';
 
+    /** Read reflectively by HasAccountFeatureVisibility via defined()/constant(). */
     private const ACCOUNT_FEATURE_OPERATOR = 'operator.vehicles';
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
-        return __('vehicles.navigation');
+        return (string) __('vehicles.navigation');
+    }
+
+    protected static function isAvailableInCurrentPanel(): bool
+    {
+        return AccountFeatures::currentPanelAllowsFeature(
+            Auth::user(),
+            adminFeature: self::ACCOUNT_FEATURE_ADMIN,
+            operatorFeature: self::ACCOUNT_FEATURE_OPERATOR,
+            fallback: false,
+        );
     }
 
     public static function getModelLabel(): string
@@ -51,9 +64,9 @@ final class VehicleResource extends Resource
         return __('vehicles.vehicles');
     }
 
-    public static function form(Schema $schema): Schema
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()->columnSpanFull()->components([
                 Grid::make(2)->components([
                     TextInput::make('plate_number')
@@ -81,7 +94,7 @@ final class VehicleResource extends Resource
                 Textarea::make('notes')->label(__('vehicles.fields.notes'))->columnSpanFull(),
                 Toggle::make('is_active')->label(__('vehicles.fields.is_active'))->default(true),
             ])->columns(2),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -142,4 +155,3 @@ final class VehicleResource extends Resource
         ];
     }
 }
-

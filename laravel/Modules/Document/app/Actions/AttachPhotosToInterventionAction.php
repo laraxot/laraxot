@@ -6,9 +6,12 @@ namespace Modules\Document\Actions;
 
 use Modules\Document\Models\Media;
 use Modules\Intervention\Models\Intervention;
+use Spatie\QueueableAction\QueueableAction;
 
 final class AttachPhotosToInterventionAction
 {
+    use QueueableAction;
+
     /**
      * @param  array<int, string>  $paths
      * @return array<int, Media>
@@ -32,4 +35,3 @@ final class AttachPhotosToInterventionAction
         return $created;
     }
 }
-

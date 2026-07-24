@@ -8,9 +8,12 @@ use Illuminate\Support\Facades\Event;
 use Modules\WorkOrder\Domain\Events\WorkOrderRestored;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderActivity;
+use Spatie\QueueableAction\QueueableAction;
 
 final class RestoreWorkOrderCascadeAction
 {
+    use QueueableAction;
+
     public function execute(WorkOrder $workOrder): void
     {
         if (! $workOrder->trashed()) {
@@ -27,4 +30,3 @@ final class RestoreWorkOrderCascadeAction
         Event::dispatch(new WorkOrderRestored((int) $workOrder->id));
     }
 }
-

@@ -7,6 +7,7 @@ namespace Modules\AiAssistant\Speech;
 use GuzzleHttp\Client;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Log;
+
 use function Safe\fopen;
 use function Safe\json_decode;
 
@@ -153,4 +154,3 @@ final class GroqWhisperTranscriptionProvider implements SpeechTranscriptionProvi
         return 'audio/webm';
     }
 }
-

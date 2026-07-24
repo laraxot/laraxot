@@ -6,9 +6,12 @@ namespace Modules\EnergyBroker\Actions;
 
 use Illuminate\Support\Facades\Storage;
 use Modules\EnergyBroker\Models\EnergyBrokerDocument;
+use Spatie\QueueableAction\QueueableAction;
 
 final class ReprocessEnergyBrokerDocumentPdfAction
 {
+    use QueueableAction;
+
     public function execute(EnergyBrokerDocument $document, string $binary, string $filename): EnergyBrokerDocument
     {
         if ($binary === '') {

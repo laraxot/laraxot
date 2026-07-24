@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\HR\Filament\Resources;
 
+use App\Models\User;
+use App\Support\AccountFeatures;
 use App\Support\Concerns\HasAccountFeatureVisibility;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -12,22 +14,22 @@ use Filament\Actions\RestoreBulkAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Resources\Resource;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Auth;
 use Modules\HR\Filament\Resources\EmployeeResource\Pages;
 use Modules\HR\Filament\Resources\EmployeeResource\RelationManagers\DocumentsRelationManager;
 use Modules\HR\Filament\Resources\EmployeeResource\RelationManagers\MedicalVisitsRelationManager;
 use Modules\HR\Filament\Resources\EmployeeResource\RelationManagers\TrainingsRelationManager;
 use Modules\HR\Models\Employee;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class EmployeeResource extends Resource
+final class EmployeeResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 
@@ -39,9 +41,18 @@ final class EmployeeResource extends Resource
 
     private const ACCOUNT_FEATURE_OPERATOR = 'operator.hr';
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('hr.navigation');
+    }
+
+    protected static function isAvailableInCurrentPanel(): bool
+    {
+        return AccountFeatures::currentPanelAllowsFeature(
+            Auth::user(),
+            adminFeature: self::ACCOUNT_FEATURE_ADMIN,
+            operatorFeature: self::ACCOUNT_FEATURE_OPERATOR,
+        );
     }
 
     public static function getModelLabel(): string
@@ -54,9 +65,9 @@ final class EmployeeResource extends Resource
         return __('hr.employees');
     }
 
-    public static function form(Schema $schema): Schema
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()->components([
                 Grid::make(2)->components([
                     TextInput::make('first_name')->label(__('hr.fields.first_name'))->required()->maxLength(255),
@@ -72,17 +83,17 @@ final class EmployeeResource extends Resource
                 ]),
                 Select::make('user_id')
                     ->label(__('hr.fields.user'))
-                    ->options(fn (): array => \App\Models\User::query()
+                    ->options(fn (): array => User::query()
                         ->orderBy('name')
                         ->get()
-                        ->mapWithKeys(fn (\App\Models\User $user): array => [$user->id => $user->name])
+                        ->mapWithKeys(fn (User $user): array => [$user->id => $user->name])
                         ->all())
                     ->searchable()
                     ->preload(),
                 Textarea::make('notes')->label(__('hr.fields.notes'))->columnSpanFull(),
                 Toggle::make('is_active')->label(__('hr.fields.is_active'))->default(true),
             ])->columnSpanFull()->columns(2),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -139,4 +150,3 @@ final class EmployeeResource extends Resource
         ];
     }
 }
-

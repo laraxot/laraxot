@@ -11,19 +11,20 @@ use Filament\Actions\ViewAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Inventory\Filament\Resources\WarehouseLocationResource\Pages;
 use Modules\Inventory\Models\Warehouse;
 use Modules\Inventory\Models\WarehouseLocation;
 use Modules\Platform\Models\PlatformSetting;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class WarehouseLocationResource extends Resource
+final class WarehouseLocationResource extends XotBaseResource
 {
     protected static ?string $model = WarehouseLocation::class;
 
@@ -44,17 +45,17 @@ final class WarehouseLocationResource extends Resource
         return self::isAvailableInCurrentPanel() && self::isEnabledByPlatform() && parent::canCreate();
     }
 
-    public static function canEdit($record): bool
+    public static function canEdit(Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && self::isEnabledByPlatform() && parent::canEdit($record);
     }
 
-    public static function canView($record): bool
+    public static function canView(Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && self::isEnabledByPlatform() && parent::canView($record);
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('inventory.navigation');
     }
@@ -69,9 +70,12 @@ final class WarehouseLocationResource extends Resource
         return __('inventory.locations');
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<int, Component>
+     */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
@@ -108,7 +112,7 @@ final class WarehouseLocationResource extends Resource
                         ->label(__('inventory.fields.is_active'))
                         ->default(true),
                 ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

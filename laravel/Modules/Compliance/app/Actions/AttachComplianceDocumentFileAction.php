@@ -8,9 +8,12 @@ use Illuminate\Support\Facades\Storage;
 use Modules\Compliance\Models\ComplianceDocument;
 use Modules\Document\Actions\CreateMediaFromStoredFileAction;
 use Modules\Document\Models\Media;
+use Spatie\QueueableAction\QueueableAction;
 
-final readonly class AttachComplianceDocumentFileAction
+final class AttachComplianceDocumentFileAction
 {
+    use QueueableAction;
+
     public function __construct(
         private CreateMediaFromStoredFileAction $createMediaFromStoredFile,
     ) {}

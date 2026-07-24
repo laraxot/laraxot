@@ -9,6 +9,20 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
+/**
+ * @property int $id
+ * @property \Illuminate\Support\Carbon $created_at
+ * @property int|null $actor_user_id
+ * @property string $action
+ * @property string $subject_type
+ * @property string $subject_id
+ * @property string|null $panel_id
+ * @property string|null $route
+ * @property string|null $ip
+ * @property string|null $user_agent
+ * @property array<string,mixed>|null $before
+ * @property array<string,mixed>|null $after
+ */
 final class AuditLog extends Model
 {
     protected $table = 'audit_logs';

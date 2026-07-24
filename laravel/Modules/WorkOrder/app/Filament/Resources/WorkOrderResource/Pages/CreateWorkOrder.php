@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace Modules\WorkOrder\Filament\Resources\WorkOrderResource\Pages;
 
 use Illuminate\Database\Eloquent\Model;
-use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Support\Facades\Auth;
 use Modules\WorkOrder\Actions\ChangeWorkOrderStatusAction;
 use Modules\WorkOrder\Filament\Resources\WorkOrderResource;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 
-final class CreateWorkOrder extends CreateRecord
+final class CreateWorkOrder extends XotBaseCreateRecord
 {
     protected static string $resource = WorkOrderResource::class;
 
@@ -29,10 +29,12 @@ final class CreateWorkOrder extends CreateRecord
         $workOrder = WorkOrder::query()->create($data);
 
         if ($statusId !== null) {
+            $authUserId = Auth::id();
+
             app(ChangeWorkOrderStatusAction::class)->execute(
                 workOrder: $workOrder,
                 toStatusId: $statusId,
-                changedByUserId: Auth::id(),
+                changedByUserId: $authUserId !== null ? (int) $authUserId : null,
                 note: null,
                 changedAt: null,
             );
@@ -41,4 +43,3 @@ final class CreateWorkOrder extends CreateRecord
         return $workOrder;
     }
 }
-

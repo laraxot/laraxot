@@ -20,7 +20,8 @@
         }
     ],
     "require": {
-        "php": "^8.3"
+        "php": "^8.3",
+        "spatie/queueable-action": "*"
     },
     "autoload": {
         "psr-4": {
@@ -58,6 +59,10 @@
         {
             "type": "path",
             "url": "../UI"
+        },
+        {
+            "type": "path",
+            "url": "../Catalog"
         }
     ],
     "minimum-stability": "dev",

@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace Modules\AI\Actions\Predict;
 
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
+use Modules\AI\Actions\Cast\ScalarCasterAction;
+use Modules\AI\Actions\Prediction\GetPredictionFallbackTemplatesAction;
+use OpenAI\Laravel\Facades\OpenAI;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 
@@ -33,6 +35,8 @@ final class GeneratePredictionDraftsAction
      *   liquidity: int,
      *   options: array<int, string>
      * }>
+     *
+     * @SuppressWarnings("PHPMD.StaticAccess")
      */
     public function execute(int $count): array
     {
@@ -44,30 +48,23 @@ final class GeneratePredictionDraftsAction
             return $this->fallbackDrafts($count);
         }
 
-        $apiKey = config('openai.api_key');
-        if (! is_string($apiKey) || $apiKey === '') {
-            return $this->fallbackDrafts($count);
-        }
-
-        $response = Http::withToken($apiKey)
-            ->post('https://api.openai.com/v1/chat/completions', [
-                'model' => $this->resolveModel(),
-                'temperature' => $this->resolveTemperature(),
-                'max_tokens' => min(3800, max(1200, $count * 320)),
-                'messages' => [
-                    [
-                        'role' => 'system',
-                        'content' => 'Sei un editor italiano specializzato in prediction market. Produci solo JSON valido, niente markdown e niente testo extra.',
-                    ],
-                    [
-                        'role' => 'user',
-                        'content' => $this->buildPrompt($count),
-                    ],
+        $response = OpenAI::chat()->create([
+            'model' => $this->resolveModel(),
+            'temperature' => $this->resolveTemperature(),
+            'max_tokens' => min(3800, max(1200, $count * 320)),
+            'messages' => [
+                [
+                    'role' => 'system',
+                    'content' => 'Sei un editor italiano specializzato in prediction market. Produci solo JSON valido, niente markdown e niente testo extra.',
                 ],
-            ]);
+                [
+                    'role' => 'user',
+                    'content' => $this->buildPrompt($count),
+                ],
+            ],
+        ]);
 
-        $rawData = $response->json();
-        $rawText = is_array($rawData) ? data_get($rawData, 'choices.0.message.content', '') : '';
+        $rawText = data_get($response, 'choices.0.message.content', '');
         $text = is_scalar($rawText) ? trim((string) $rawText) : '';
 
         return $this->parseDrafts($text, $count);
@@ -120,6 +117,8 @@ PROMPT;
      *   liquidity: int,
      *   options: array<int, string>
      * }>
+     *
+     * @SuppressWarnings("PHPMD.StaticAccess")
      */
     private function parseDrafts(string $text, int $expectedCount): array
     {
@@ -134,6 +133,7 @@ PROMPT;
             return $this->fallbackDrafts($expectedCount);
         }
 
+        /** @var list<array{title: string, subtitle: string, description: string, category: string, tags: array<int, string>, analysis: string, event_end_date: string, liquidity: int, options: array<int, string>}> $drafts */
         $drafts = [];
 
         foreach ($decoded as $item) {
@@ -141,43 +141,65 @@ PROMPT;
                 continue;
             }
 
-            $title = $this->toNormalizedString(Arr::get($item, 'title', ''));
-            $subtitle = $this->toNormalizedString(Arr::get($item, 'subtitle', ''));
-            $description = $this->toNormalizedString(Arr::get($item, 'description', ''));
-            $category = $this->toNormalizedString(Arr::get($item, 'category', 'Altro'));
-            $analysis = $this->toNormalizedString(Arr::get($item, 'analysis', ''));
-            $eventEndDate = $this->toNormalizedString(Arr::get($item, 'event_end_date', ''));
-            /** @var array<int, mixed> $tags */
-            $tags = array_values(Arr::wrap(Arr::get($item, 'tags', [])));
-            $rawLiquidity = Arr::get($item, 'liquidity', 5000);
-            $liquidity = is_numeric($rawLiquidity) ? (int) $rawLiquidity : 5000;
-            $options = $this->normalizeOptions(Arr::get($item, 'options', []));
-
-            if ($title === '' || $description === '' || $analysis === '') {
-                continue;
+            $draft = $this->mapDraftFromItem($item);
+            if ($draft !== null) {
+                $drafts[] = $draft;
             }
-
-            $drafts[] = [
-                'title' => Str::limit($title, 140, ''),
-                'subtitle' => $subtitle,
-                'description' => $description,
-                'category' => $category !== '' ? $category : 'Altro',
-                'tags' => $this->normalizeTags($tags),
-                'analysis' => $analysis,
-                'event_end_date' => $this->normalizeDate($eventEndDate),
-                'liquidity' => max(1000, min(50000, $liquidity)),
-                'options' => $options,
-            ];
         }
 
         if (count($drafts) < $expectedCount) {
             return $this->fallbackDrafts($expectedCount);
         }
 
-        /** @var array<int, array{title: string, subtitle: string, description: string, category: string, tags: array<int, string>, analysis: string, event_end_date: string, liquidity: int, options: array<int, string>}> $sliced */
-        $sliced = array_slice($drafts, 0, $expectedCount);
+        return array_slice($drafts, 0, $expectedCount);
+    }
 
-        return $sliced;
+    /**
+     * @param  array<mixed, mixed>  $item
+     * @return array{
+     *   title: string,
+     *   subtitle: string,
+     *   description: string,
+     *   category: string,
+     *   tags: array<int, string>,
+     *   analysis: string,
+     *   event_end_date: string,
+     *   liquidity: int,
+     *   options: array<int, string>
+     * }|null
+     */
+    private function mapDraftFromItem(array $item): ?array
+    {
+        $title = $this->toNormalizedString(Arr::get($item, 'title', ''));
+        $description = $this->toNormalizedString(Arr::get($item, 'description', ''));
+        $analysis = $this->toNormalizedString(Arr::get($item, 'analysis', ''));
+        if (! $this->hasRequiredDraftFields($title, $description, $analysis)) {
+            return null;
+        }
+
+        $category = $this->toNormalizedString(Arr::get($item, 'category', 'Altro'));
+        $eventEndDate = $this->toNormalizedString(Arr::get($item, 'event_end_date', ''));
+        /** @var array<int, mixed> $tags */
+        $tags = array_values(Arr::wrap(Arr::get($item, 'tags', [])));
+        $rawLiquidity = Arr::get($item, 'liquidity', 5000);
+        $liquidity = is_numeric($rawLiquidity) ? (int) $rawLiquidity : 5000;
+
+        return [
+            'title' => Str::limit($title, 140, ''),
+            'subtitle' => $this->toNormalizedString(Arr::get($item, 'subtitle', '')),
+            'description' => $description,
+            'category' => $category !== '' ? $category : 'Altro',
+            'tags' => $this->normalizeTags($tags),
+            'analysis' => $analysis,
+            'event_end_date' => $this->normalizeDate($eventEndDate),
+            'liquidity' => max(1000, min(50000, $liquidity)),
+            'options' => $this->normalizeOptions(Arr::get($item, 'options', [])),
+        ];
+    }
+
+    private function hasRequiredDraftFields(string $title, string $description, string $analysis): bool
+    {
+        return $title !== '' && $description !== '' && $analysis !== '';
     }
 
     private function resolveModel(): string
@@ -277,46 +299,47 @@ PROMPT;
      */
     private function fallbackDrafts(int $count): array
     {
-        $templates = app(GetPredictionDraftFallbackTemplatesAction::class)->execute();
-
+        $templates = app(GetPredictionFallbackTemplatesAction::class)->execute();
+        $caster = app(ScalarCasterAction::class);
         $drafts = [];
         $usedTitles = [];
 
         for ($index = 0; $index < $count; $index++) {
-            $templateIndex = $index % count($templates);
-            $template = $templates[$templateIndex];
-
-            // Generate unique title by adding index suffix for duplicates
-            $baseTitle = $template['title'];
-            $title = $baseTitle;
-            $suffix = 1;
-
-            while (in_array($title, $usedTitles, true)) {
-                // Add variation to make title unique
-                $trimmedBaseTitle = $this->replaceRegex('/\?$/', '', $baseTitle);
-                $title = $trimmedBaseTitle.' - Variante '.$suffix.'?';
-                $suffix++;
-            }
-
+            $template = $templates[$index % count($templates)];
+            $title = $this->uniqueFallbackTitle($caster->execute($template['title'] ?? ''), $usedTitles);
             $usedTitles[] = $title;
 
             $drafts[] = [
                 'title' => $title,
-                'subtitle' => $template['subtitle'].' ('.($index + 1).')',
-                'description' => $template['description'],
-                'category' => $template['category'],
-                'tags' => $template['tags'],
-                'analysis' => $template['analysis'],
+                'subtitle' => $caster->execute($template['subtitle'] ?? '').' ('.($index + 1).')',
+                'description' => $caster->execute($template['description'] ?? ''),
+                'category' => $caster->execute($template['category'] ?? ''),
+                'tags' => $caster->stringList($template['tags'] ?? []),
+                'analysis' => $caster->execute($template['analysis'] ?? ''),
                 'event_end_date' => now()->addDays(20 + ($index * 11))->toDateString(),
                 'liquidity' => 5000 + ($index * 750),
-                'options' => $template['options'],
+                'options' => $caster->stringList($template['options'] ?? []),
             ];
         }
 
-        /** @var list<array{title: string, subtitle: string, description: string, category: string, tags: array<int, string>, analysis: string, event_end_date: string, liquidity: int, options: array<int, string>}> $draftsList */
-        $draftsList = $drafts;
+        return $drafts;
+    }
 
-        return $draftsList;
+    /**
+     * @param  list<string>  $usedTitles
+     */
+    private function uniqueFallbackTitle(string $baseTitle, array $usedTitles): string
+    {
+        $title = $baseTitle;
+        $suffix = 1;
+
+        while (in_array($title, $usedTitles, true)) {
+            $trimmedBaseTitle = $this->replaceRegex('/\?$/', '', $baseTitle);
+            $title = $trimmedBaseTitle.' - Variante '.$suffix.'?';
+            $suffix++;
+        }
+
+        return $title;
     }
 
     private function replaceRegex(string $pattern, string $replacement, string $subject): string

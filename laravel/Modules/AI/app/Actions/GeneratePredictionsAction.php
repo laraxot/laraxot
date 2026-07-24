@@ -275,7 +275,7 @@ PROMPT;
             }
 
             $closedAt = new DateTime(trim((string) $rawClosedAt));
-            if ($closedAt <= new DateTime) {
+            if ($closedAt <= new DateTime()) {
                 throw new InvalidArgumentException('closed_at must be in the future');
             }
         } catch (Exception) {

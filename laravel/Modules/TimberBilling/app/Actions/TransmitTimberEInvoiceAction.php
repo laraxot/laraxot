@@ -6,6 +6,7 @@ namespace Modules\TimberBilling\Actions;
 
 use Modules\TimberBilling\Models\TimberEInvoice;
 use RuntimeException;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Segna la fattura elettronica come trasmessa al Sistema di Interscambio.
@@ -15,6 +16,8 @@ use RuntimeException;
  */
 final class TransmitTimberEInvoiceAction
 {
+    use QueueableAction;
+
     public function execute(TimberEInvoice $eInvoice, ?string $sdiIdentifier = null): TimberEInvoice
     {
         if ($eInvoice->sdi_status !== 'da_inviare') {

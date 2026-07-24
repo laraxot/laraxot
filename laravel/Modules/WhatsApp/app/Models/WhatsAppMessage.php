@@ -10,6 +10,29 @@ use Modules\AiAssistant\Models\AiActionProposal;
 use Modules\Intervention\Models\Intervention;
 use Modules\WorkOrder\Models\WorkOrder;
 
+/**
+ * @property int $id
+ * @property int $conversation_id
+ * @property int|null $work_order_id
+ * @property int|null $intervention_id
+ * @property int|null $ai_action_proposal_id
+ * @property string|null $meta_message_id
+ * @property string $direction
+ * @property string|null $from_number
+ * @property string|null $to_number
+ * @property string $message_type
+ * @property string|null $body
+ * @property string $status
+ * @property string $processing_status
+ * @property array<string, mixed>|null $payload
+ * @property array<string, mixed>|null $ai_result
+ * @property string|null $error
+ * @property \Illuminate\Support\Carbon|null $received_at
+ * @property \Illuminate\Support\Carbon|null $sent_at
+ * @property \Illuminate\Support\Carbon|null $processed_at
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ */
 final class WhatsAppMessage extends Model
 {
     protected $table = 'whatsapp_messages';

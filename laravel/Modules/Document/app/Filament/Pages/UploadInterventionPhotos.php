@@ -13,6 +13,7 @@ use Filament\Schemas\Schema;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Modules\Document\Actions\AttachPhotosToInterventionAction;
+use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
 
 final class UploadInterventionPhotos extends Page
@@ -42,7 +43,7 @@ final class UploadInterventionPhotos extends Page
 
         Gate::authorize('update', $this->intervention);
 
-        $this->form->fill([
+        $this->getSchema('form')?->fill([
             'intervention_id' => $this->intervention->id,
             'photos' => [],
         ]);
@@ -50,7 +51,7 @@ final class UploadInterventionPhotos extends Page
 
     public function form(Schema $schema): Schema
     {
-        $interventionId = $this->intervention?->id ?? 0;
+        $interventionId = $this->intervention->id ?? 0;
 
         return $schema
             ->statePath('data')
@@ -76,20 +77,23 @@ final class UploadInterventionPhotos extends Page
             Action::make('save')
                 ->label(__('documents.actions.save'))
                 ->action(function (): void {
-                    $state = $this->form->getState();
+                    $schema = $this->getSchema('form');
+                    $state = $schema?->getState() ?? [];
                     $paths = $state['photos'] ?? [];
 
                     if (! is_array($paths) || $this->intervention === null) {
                         return;
                     }
 
+                    $userId = Auth::id();
+
                     app(AttachPhotosToInterventionAction::class)->execute(
                         intervention: $this->intervention,
-                        paths: array_map('strval', $paths),
-                        uploadedByUserId: Auth::id(),
+                        paths: array_values(array_map(static fn (mixed $path): string => (string) $path, $paths)),
+                        uploadedByUserId: is_int($userId) ? $userId : null,
                     );
 
-                    $this->redirect(\Modules\Intervention\Filament\Resources\InterventionResource::getUrl('view', [
+                    $this->redirect(InterventionResource::getUrl('view', [
                         'record' => $this->intervention->id,
                     ]));
                 }),
@@ -101,4 +105,3 @@ final class UploadInterventionPhotos extends Page
         return __('documents.pages.upload_intervention_photos');
     }
 }
-

@@ -7,9 +7,12 @@ namespace Modules\Compliance\Actions;
 use Modules\Compliance\Models\ComplianceDocument;
 use Modules\Compliance\Models\Equipment;
 use Modules\WorkOrder\Models\WorkOrder;
+use Spatie\QueueableAction\QueueableAction;
 
 final class GeneratePosDraftForWorkOrderAction
 {
+    use QueueableAction;
+
     public function execute(WorkOrder $workOrder): ComplianceDocument
     {
         $workOrder->loadMissing(['customer', 'site', 'assignments.user']);

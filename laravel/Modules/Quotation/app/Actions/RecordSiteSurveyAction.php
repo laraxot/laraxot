@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Modules\Quotation\Actions;
 
 use Illuminate\Support\Facades\DB;
-use Modules\Document\Models\Media;
 use Modules\Quotation\DTO\SiteSurveyAttachment;
 use Modules\Quotation\Models\SiteSurvey;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Registra un sopralluogo e i suoi allegati (foto, video, note vocali).
@@ -17,6 +17,8 @@ use Modules\Quotation\Models\SiteSurvey;
  */
 final class RecordSiteSurveyAction
 {
+    use QueueableAction;
+
     /**
      * @param  array<int, SiteSurveyAttachment>  $attachments
      */
@@ -30,16 +32,23 @@ final class RecordSiteSurveyAction
             ])->save();
 
             foreach ($attachments as $attachment) {
-                Media::query()->create([
-                    'mediable_type' => $survey->getMorphClass(),
-                    'mediable_id' => $survey->getKey(),
-                    'uploaded_by_user_id' => $survey->performed_by_user_id,
-                    'kind' => $attachment->kind,
-                    'title' => $attachment->title,
-                    'disk' => $attachment->disk,
-                    'path' => $attachment->path,
-                    'meta' => $attachment->meta,
-                ]);
+                $collection = match ($attachment->kind) {
+                    'photo' => 'photos',
+                    'video' => 'videos',
+                    'audio' => 'voice_notes',
+                    default => 'documents',
+                };
+
+                $title = $attachment->title !== null ? trim($attachment->title) : '';
+                $name = $title !== '' ? $title : pathinfo($attachment->path, PATHINFO_FILENAME);
+
+                $adder = $survey->addMediaFromDisk($attachment->path, $attachment->disk)->usingName($name);
+
+                if ($attachment->meta !== null) {
+                    $adder = $adder->withCustomProperties($attachment->meta);
+                }
+
+                $adder->toMediaCollection($collection);
             }
 
             return $survey->refresh();

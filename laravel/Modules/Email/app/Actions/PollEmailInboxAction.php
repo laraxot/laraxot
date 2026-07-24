@@ -6,15 +6,17 @@ namespace Modules\Email\Actions;
 
 use Modules\Email\Inbox\EmailInboxClientInterface;
 use Modules\Email\Settings\EmailSettings;
+use Spatie\QueueableAction\QueueableAction;
 
-final readonly class PollEmailInboxAction
+final class PollEmailInboxAction
 {
+    use QueueableAction;
+
     public function __construct(
         private EmailInboxClientInterface $inbox,
         private StoreIncomingEmailMessageAction $storeIncoming,
         private EmailSettings $settings,
-    ) {
-    }
+    ) {}
 
     /**
      * @return array{ok: bool, fetched: int, fetched_inbound: int, fetched_outbound: int, stored: int, skipped: int, errors: array<int, string>}

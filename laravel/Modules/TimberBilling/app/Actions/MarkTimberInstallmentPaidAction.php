@@ -7,6 +7,7 @@ namespace Modules\TimberBilling\Actions;
 use DateTimeInterface;
 use Illuminate\Support\Facades\DB;
 use Modules\TimberBilling\Models\TimberPaymentInstallment;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Segna una rata come saldata; se tutte le rate della fattura risultano saldate,
@@ -14,6 +15,8 @@ use Modules\TimberBilling\Models\TimberPaymentInstallment;
  */
 final class MarkTimberInstallmentPaidAction
 {
+    use QueueableAction;
+
     public function execute(TimberPaymentInstallment $installment, ?DateTimeInterface $paidAt = null): TimberPaymentInstallment
     {
         return DB::transaction(function () use ($installment, $paidAt): TimberPaymentInstallment {

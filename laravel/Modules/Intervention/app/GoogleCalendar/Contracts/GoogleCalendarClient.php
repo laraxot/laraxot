@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\GoogleCalendar\Contracts;
 
-use App\Models\User;
 use Carbon\CarbonInterface;
 use Modules\Intervention\GoogleCalendar\DTO\GoogleCalendarEvent;
 use Modules\Intervention\GoogleCalendar\DTO\GoogleEventInput;
 use Modules\Intervention\Models\UserGoogleCalendarSetting;
+use Modules\User\Models\User;
 
 /**
  * The whole surface of the Google Calendar integration. The live implementation

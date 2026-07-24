@@ -4,11 +4,23 @@ declare(strict_types=1);
 
 namespace Modules\Billing\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
+use Modules\Xot\Models\XotBaseModel;
 
-final class Supplier extends Model
+/**
+ * @property int $id
+ * @property string $legal_name
+ * @property string|null $vat_number
+ * @property string|null $email
+ * @property string|null $phone
+ * @property bool $is_active
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
+ */
+final class Supplier extends XotBaseModel
 {
     use SoftDeletes;
 

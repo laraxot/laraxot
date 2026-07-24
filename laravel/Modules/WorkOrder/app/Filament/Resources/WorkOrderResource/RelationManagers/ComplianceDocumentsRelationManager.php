@@ -14,30 +14,30 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Components\Component;
+use Filament\Schemas\Components\Grid;
+use Filament\Tables;
+use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Compliance\Actions\AttachComplianceDocumentFileAction;
 use Modules\Compliance\Actions\GeneratePosDraftForWorkOrderAction;
 use Modules\Compliance\Models\ComplianceDocument;
 use Modules\WorkOrder\Models\WorkOrder;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Components\Grid;
-use Filament\Schemas\Schema;
-use Filament\Tables;
-use Filament\Tables\Table;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class ComplianceDocumentsRelationManager extends RelationManager
+final class ComplianceDocumentsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'complianceDocuments';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('compliance.documents');
     }
 
-    public function form(Schema $schema): Schema
+    public function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Grid::make(3)->components([
                 Select::make('type')->label(__('compliance.fields.type'))->required()->options([
                     'durc' => 'DURC',
@@ -62,7 +62,7 @@ final class ComplianceDocumentsRelationManager extends RelationManager
                 DatePicker::make('expires_on')->label(__('compliance.fields.expires_on')),
             ]),
             Textarea::make('notes')->label(__('compliance.fields.notes'))->columnSpanFull(),
-        ]);
+        ];
     }
 
     public function table(Table $table): Table
@@ -89,16 +89,19 @@ final class ComplianceDocumentsRelationManager extends RelationManager
                     ->form($this->createFormSchema())
                     ->using(function (array $data, string $model): Model {
                         $filePath = isset($data['file_path']) ? (string) $data['file_path'] : null;
-                        unset($data['file_path']);
+
+                        /** @var array<string, mixed> $attributes */
+                        $attributes = $data;
+                        unset($attributes['file_path']);
 
                         /** @var ComplianceDocument $document */
-                        $document = $this->getRelationship()->create($data);
+                        $document = $this->getRelationship()->create($attributes);
 
                         if ($filePath !== null && trim($filePath) !== '') {
                             app(AttachComplianceDocumentFileAction::class)->execute(
                                 document: $document,
                                 path: $filePath,
-                                uploadedByUserId: Auth::id(),
+                                uploadedByUserId: (($authId = Auth::id()) !== null ? (int) $authId : null),
                             );
                         }
 
@@ -109,7 +112,7 @@ final class ComplianceDocumentsRelationManager extends RelationManager
     }
 
     /**
-     * @return array<int, \Filament\Schemas\Components\Component>
+     * @return array<int, Component>
      */
     private function createFormSchema(): array
     {

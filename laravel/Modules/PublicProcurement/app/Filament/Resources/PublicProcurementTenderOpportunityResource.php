@@ -38,7 +38,7 @@ final class PublicProcurementTenderOpportunityResource extends Resource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-magnifying-glass-circle';
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('public_procurement.navigation');
     }
@@ -115,7 +115,8 @@ final class PublicProcurementTenderOpportunityResource extends Resource
                     ->icon('heroicon-o-shield-check')
                     ->color('warning')
                     ->action(function (PublicProcurementTenderOpportunity $record): void {
-                        app(EvaluateTenderEligibilityAction::class)->execute($record, Auth::id());
+                        $userId = Auth::id();
+                        app(EvaluateTenderEligibilityAction::class)->execute($record, is_int($userId) ? $userId : null);
                         Notification::make()->title(__('public_procurement.messages.eligibility_completed'))->success()->send();
                     }),
                 Action::make('createContract')

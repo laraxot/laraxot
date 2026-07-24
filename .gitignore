@@ -127,3 +127,4 @@ cache/*
 .planning
 laravel/Modules/Notify/docs/notification/archive
 laravel/Modules/docs
+*.lock

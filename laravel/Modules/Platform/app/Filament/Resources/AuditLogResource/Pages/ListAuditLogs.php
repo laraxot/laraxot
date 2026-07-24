@@ -12,6 +12,10 @@ use Modules\Platform\Filament\Resources\AuditLogResource;
 use Modules\Platform\Models\AuditLog;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
+use function Safe\fclose;
+use function Safe\fopen;
+use function Safe\fputcsv;
+
 final class ListAuditLogs extends ListRecords
 {
     protected static string $resource = AuditLogResource::class;
@@ -31,9 +35,6 @@ final class ListAuditLogs extends ListRecords
 
                     return response()->streamDownload(function () use ($query): void {
                         $out = fopen('php://output', 'w');
-                        if ($out === false) {
-                            return;
-                        }
 
                         fputcsv($out, [
                             'created_at',
@@ -48,9 +49,9 @@ final class ListAuditLogs extends ListRecords
 
                         $query->orderByDesc('created_at')->chunk(500, function ($logs) use ($out): void {
                             foreach ($logs as $log) {
-                                $actor = $log->actor?->email ?? $log->actor?->name ?? '';
+                                $actor = $log->actor->email ?? $log->actor->name ?? '';
                                 fputcsv($out, [
-                                    optional($log->created_at)->toISOString(),
+                                    $log->created_at->toISOString(),
                                     $actor,
                                     (string) $log->action,
                                     (string) $log->subject_type,

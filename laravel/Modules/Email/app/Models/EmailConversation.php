@@ -8,10 +8,26 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
 
+/**
+ * @property int $id
+ * @property string $email
+ * @property string|null $display_name
+ * @property int|null $identity_id
+ * @property int|null $customer_id
+ * @property int|null $customer_site_id
+ * @property int|null $contact_id
+ * @property int|null $user_id
+ * @property string $status
+ * @property Carbon|null $last_message_at
+ * @property array<string, mixed>|null $meta
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ */
 final class EmailConversation extends Model
 {
     protected $table = 'email_conversations';

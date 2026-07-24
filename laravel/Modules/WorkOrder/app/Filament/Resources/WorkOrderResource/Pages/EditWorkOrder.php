@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\WorkOrder\Filament\Resources\WorkOrderResource\Pages;
 
-use Illuminate\Database\Eloquent\Model;
 use Filament\Actions;
-use Filament\Resources\Pages\EditRecord;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\WorkOrder\Actions\ChangeWorkOrderStatusAction;
 use Modules\WorkOrder\Filament\Resources\WorkOrderResource;
+use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
-final class EditWorkOrder extends EditRecord
+final class EditWorkOrder extends XotBaseEditRecord
 {
     protected static string $resource = WorkOrderResource::class;
 
@@ -30,10 +31,16 @@ final class EditWorkOrder extends EditRecord
         $record->fill($data)->save();
 
         if ($newStatusId !== null && $newStatusId !== $oldStatusId) {
+            if (! $record instanceof WorkOrder) {
+                throw new \RuntimeException('Expected WorkOrder record.');
+            }
+
+            $authUserId = Auth::id();
+
             app(ChangeWorkOrderStatusAction::class)->execute(
                 workOrder: $record->refresh(),
                 toStatusId: $newStatusId,
-                changedByUserId: Auth::id(),
+                changedByUserId: $authUserId !== null ? (int) $authUserId : null,
                 note: null,
                 changedAt: null,
             );
@@ -45,10 +52,9 @@ final class EditWorkOrder extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
-            Actions\RestoreAction::make(),
-            Actions\ForceDeleteAction::make(),
+            'delete' => Actions\DeleteAction::make(),
+            'restore' => Actions\RestoreAction::make(),
+            'forceDelete' => Actions\ForceDeleteAction::make(),
         ];
     }
 }
-

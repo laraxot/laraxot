@@ -6,14 +6,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+return new class() extends Migration
 {
     public function up(): void
     {
         Schema::create('timber_payment_installments', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('invoice_id')->nullable()->constrained('timber_invoices')->cascadeOnDelete();
-            $table->foreignId('customer_id')->nullable()->constrained('timber_customers')->nullOnDelete();
+            $table->foreignId('customer_id')->nullable()->constrained('customers')->nullOnDelete();
             $table->string('direction')->default('in')->index(); // in = incasso, out = pagamento fornitore
             $table->date('due_date')->index();
             $table->decimal('amount', 14, 2)->default(0);

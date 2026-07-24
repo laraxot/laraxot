@@ -7,18 +7,21 @@ namespace Modules\Email\Actions;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Str;
 use Modules\Email\Jobs\ProcessEmailMessageJob;
-use Modules\Email\Settings\EmailSettings;
 use Modules\Email\Models\EmailConversation;
 use Modules\Email\Models\EmailMessage;
+use Modules\Email\Settings\EmailSettings;
+use Spatie\QueueableAction\QueueableAction;
 
-final readonly class StoreIncomingEmailMessageAction
+use function Safe\preg_match;
+
+final class StoreIncomingEmailMessageAction
 {
-    public function __construct(private EmailSettings $settings)
-    {
-    }
+    use QueueableAction;
+
+    public function __construct(private EmailSettings $settings) {}
 
     /**
-     * @param array<string, mixed> $payload
+     * @param  array<string, mixed>  $payload
      */
     public function execute(array $payload): EmailMessage
     {
@@ -73,7 +76,7 @@ final readonly class StoreIncomingEmailMessageAction
     }
 
     /**
-     * @param array<string, mixed> $payload
+     * @param  array<string, mixed>  $payload
      */
     private function conversationFor(string $email, array $payload, string $direction): EmailConversation
     {
@@ -95,7 +98,7 @@ final readonly class StoreIncomingEmailMessageAction
     }
 
     /**
-     * @param array<string, mixed> $payload
+     * @param  array<string, mixed>  $payload
      */
     private function messageBody(array $payload): string
     {
@@ -110,7 +113,7 @@ final readonly class StoreIncomingEmailMessageAction
     private function normalizeEmail(mixed $value): ?string
     {
         $email = strtolower($this->stringValue($value));
-        if (is_string($value) && preg_match('/<([^>]+)>/', $value, $matches) === 1) {
+        if (is_string($value) && preg_match('/<([^>]+)>/', $value, $matches) === 1 && isset($matches[1])) {
             $email = strtolower(trim($matches[1]));
         }
 

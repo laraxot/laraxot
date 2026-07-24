@@ -4,13 +4,27 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Models;
 
-use App\Timber\Models\TimberCustomer;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
+use Modules\Customer\Models\Customer;
 use Modules\TimberBilling\Database\Factories\TimberPaymentInstallmentFactory;
+use Modules\Xot\Models\XotBaseModel;
 
-final class TimberPaymentInstallment extends Model
+/**
+ * @property int $id
+ * @property int|null $invoice_id
+ * @property int|null $customer_id
+ * @property string $direction
+ * @property Carbon $due_date
+ * @property string $amount
+ * @property string|null $payment_method_code
+ * @property string $status_code
+ * @property Carbon|null $paid_at
+ * @property Carbon|null $reminded_at
+ * @property string|null $notes
+ */
+final class TimberPaymentInstallment extends XotBaseModel
 {
     /** @use HasFactory<TimberPaymentInstallmentFactory> */
     use HasFactory;
@@ -37,10 +51,10 @@ final class TimberPaymentInstallment extends Model
         return $this->belongsTo(TimberInvoice::class, 'invoice_id');
     }
 
-    /** @return BelongsTo<TimberCustomer, $this> */
+    /** @return BelongsTo<Customer, $this> */
     public function customer(): BelongsTo
     {
-        return $this->belongsTo(TimberCustomer::class, 'customer_id');
+        return $this->belongsTo(Customer::class, 'customer_id');
     }
 
     public function isSettled(): bool

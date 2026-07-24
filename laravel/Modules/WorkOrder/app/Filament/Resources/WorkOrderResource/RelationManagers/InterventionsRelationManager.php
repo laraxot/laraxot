@@ -4,22 +4,23 @@ declare(strict_types=1);
 
 namespace Modules\WorkOrder\Filament\Resources\WorkOrderResource\RelationManagers;
 
-use App\Models\User;
-use Filament\Forms\Components\TextInput;
 use Filament\Actions\ViewAction;
-use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Forms\Components\TextInput;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
+use Modules\User\Models\User;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class InterventionsRelationManager extends RelationManager
+final class InterventionsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'interventions';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('interventions.interventions');
     }
@@ -58,7 +59,11 @@ final class InterventionsRelationManager extends RelationManager
                         $manualMaterials = $record->materialLines()
                             ->orderBy('description')
                             ->get()
-                            ->map(static fn ($line): string => number_format((float) $line->quantity, 2, ',', '.') . 'x ' . (string) $line->description);
+                            ->map(static function ($line): string {
+                                $quantity = (float) ($line->getAttribute('quantity') ?? 0);
+
+                                return number_format($quantity, 2, ',', '.').'x '.(string) ($line->getAttribute('description') ?? '');
+                            });
 
                         if ($manualMaterials->isNotEmpty()) {
                             return $manualMaterials->implode(', ');
@@ -69,7 +74,19 @@ final class InterventionsRelationManager extends RelationManager
                             ->where('movement_type', 'scarico')
                             ->orderBy('occurred_at')
                             ->get()
-                            ->map(static fn ($movement): string => ((int) $movement->quantity) . 'x ' . ($movement->product?->name ?? 'Materiale'));
+                            ->map(static function ($movement): string {
+                                $quantity = (int) ($movement->getAttribute('quantity') ?? 0);
+                                $product = $movement->getRelationValue('product');
+                                $productName = 'Materiale';
+                                if ($product instanceof Model) {
+                                    $name = $product->getAttribute('name');
+                                    if ($name !== null) {
+                                        $productName = (string) $name;
+                                    }
+                                }
+
+                                return $quantity.'x '.$productName;
+                            });
 
                         return $inventoryMaterials->implode(', ');
                     })
@@ -94,7 +111,7 @@ final class InterventionsRelationManager extends RelationManager
                             return $query;
                         }
 
-                        return $query->where('notes', 'like', '%' . $term . '%');
+                        return $query->where('notes', 'like', '%'.$term.'%');
                     }),
                 Filter::make('material_search')
                     ->label('Materiale')
@@ -112,13 +129,13 @@ final class InterventionsRelationManager extends RelationManager
                         return $query->where(function (Builder $innerQuery) use ($term): void {
                             $innerQuery
                                 ->whereHas('materialLines', function (Builder $materialsQuery) use ($term): void {
-                                    $materialsQuery->where('description', 'like', '%' . $term . '%');
+                                    $materialsQuery->where('description', 'like', '%'.$term.'%');
                                 })
                                 ->orWhereHas('inventoryMovements.product', function (Builder $materialsQuery) use ($term): void {
-                                    $materialsQuery->where('name', 'like', '%' . $term . '%');
+                                    $materialsQuery->where('name', 'like', '%'.$term.'%');
                                 })
                                 ->orWhereHas('inventoryMovements', function (Builder $materialsQuery) use ($term): void {
-                                    $materialsQuery->where('note', 'like', '%' . $term . '%');
+                                    $materialsQuery->where('note', 'like', '%'.$term.'%');
                                 });
                         });
                     }),

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Filament\Resources;
 
-use App\Models\User;
 use App\Support\AccountFeatures;
 use Filament\Actions\Action;
 use Filament\Actions\DeleteBulkAction;
@@ -23,16 +22,16 @@ use Filament\Forms\Components\RichEditor\TextColor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
+use Filament\Notifications\Notification;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -47,9 +46,8 @@ use Modules\Intervention\Actions\StartTimePunchAction;
 use Modules\Intervention\Actions\StopTimePunchAction;
 use Modules\Intervention\Actions\SyncInterventionNotePhotosAction;
 use Modules\Intervention\Actions\SyncInterventionWorkMinutesFromTimePunchesAction;
-use Modules\Intervention\Support\DailyNoteHtml;
-use Modules\Intervention\Domain\Exceptions\NoOpenTimePunchToStop;
-use Modules\Intervention\Domain\Exceptions\OpenTimePunchAlreadyExists;
+use Modules\Intervention\Exceptions\NoOpenTimePunchToStop;
+use Modules\Intervention\Exceptions\OpenTimePunchAlreadyExists;
 use Modules\Intervention\Filament\Resources\InterventionResource\Pages;
 use Modules\Intervention\Filament\Resources\InterventionResource\RelationManagers\InventoryMovementsRelationManager;
 use Modules\Intervention\Filament\Resources\InterventionResource\RelationManagers\IssueReportsRelationManager;
@@ -60,9 +58,12 @@ use Modules\Intervention\Filament\Resources\InterventionResource\RelationManager
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionMaterialLine;
 use Modules\Intervention\Models\TimePunch;
+use Modules\Intervention\Support\DailyNoteHtml;
 use Modules\Platform\Settings\SettingsRepository;
+use Modules\User\Models\User;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class InterventionResource extends Resource
+final class InterventionResource extends XotBaseResource
 {
     protected static ?string $model = Intervention::class;
 
@@ -104,12 +105,12 @@ final class InterventionResource extends Resource
         return self::isAvailableInCurrentPanel() && parent::canViewAny();
     }
 
-    public static function getNavigationSort(): ?int
+    public static function getNavigationSort(): int
     {
         return 2;
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('interventions.navigation');
     }
@@ -147,9 +148,9 @@ final class InterventionResource extends Resource
         };
     }
 
-    public static function form(Schema $schema): Schema
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
@@ -174,7 +175,7 @@ final class InterventionResource extends Resource
                         Select::make('assigned_user_ids')
                             ->label(__('interventions.fields.performed_by'))
                             ->options(fn (): array => self::getAssignableOperatorOptions())
-                            ->getOptionLabelsUsing(fn (array $values): array => \App\Models\User::query()
+                            ->getOptionLabelsUsing(fn (array $values): array => User::query()
                                 ->whereIn('id', $values)
                                 ->pluck('name', 'id')
                                 ->map(static fn ($name): string => (string) $name)
@@ -199,7 +200,7 @@ final class InterventionResource extends Resource
                             ->disabled(fn (): bool => self::shouldForceSelfAssignment()),
 
                         Hidden::make('performed_by_user_id')
-                            ->default(fn (): ?int => self::shouldForceSelfAssignment() ? Auth::id() : null)
+                            ->default(fn (): ?int => self::shouldForceSelfAssignment() ? (Auth::id() !== null ? (int) Auth::id() : null) : null)
                             ->visible(fn (): bool => self::shouldForceSelfAssignment()),
                     ]),
 
@@ -457,7 +458,7 @@ final class InterventionResource extends Resource
                         ->columns(4),
                 ])
                 ->columns(2),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -477,8 +478,8 @@ final class InterventionResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('customer_display')
                     ->label(__('work_orders.fields.customer'))
-                    ->state(fn (Intervention $record): string => $record->workOrder?->customer?->legal_name
-                        ?? $record->customer?->legal_name
+                    ->state(fn (Intervention $record): string => $record->workOrder->customer->legal_name
+                        ?? $record->customer->legal_name
                         ?? '—')
                     ->searchable(query: function (Builder $query, string $search): Builder {
                         return $query->where(function (Builder $q) use ($search): void {
@@ -670,7 +671,7 @@ final class InterventionResource extends Resource
                         try {
                             app(StartTimePunchAction::class)->execute($record, $userId);
                         } catch (OpenTimePunchAlreadyExists $e) {
-                            \Filament\Notifications\Notification::make()
+                            Notification::make()
                                 ->title($e->getMessage())
                                 ->danger()
                                 ->send();
@@ -703,7 +704,7 @@ final class InterventionResource extends Resource
                             app(StopTimePunchAction::class)->execute($record, $userId);
                             app(SyncInterventionWorkMinutesFromTimePunchesAction::class)->execute($record->refresh());
                         } catch (NoOpenTimePunchToStop $e) {
-                            \Filament\Notifications\Notification::make()
+                            Notification::make()
                                 ->title($e->getMessage())
                                 ->warning()
                                 ->send();
@@ -750,13 +751,18 @@ final class InterventionResource extends Resource
                     ])
                     ->action(function (Intervention $record, array $data): void {
                         $userId = (int) Auth::id();
+                        $outcomeCode = (string) ($data['outcome_code'] ?? 'completed');
+                        if (! in_array($outcomeCode, ['completed', 'suspended', 'quotation'], true)) {
+                            $outcomeCode = 'completed';
+                        }
+
                         app(FinalizeInterventionReportAction::class)->execute(
                             intervention: $record,
                             validatedByUserId: $userId,
                             travelKm: (int) $data['travel_km'],
                             travelMinutes: (int) $data['travel_minutes'],
-                            notes: $data['notes'] ?? null,
-                            outcomeCode: (string) $data['outcome_code'],
+                            notes: isset($data['notes']) ? (is_string($data['notes']) ? $data['notes'] : null) : null,
+                            outcomeCode: $outcomeCode,
                         );
                     }),
 
@@ -805,7 +811,7 @@ final class InterventionResource extends Resource
                 $query->where(function (Builder $innerQuery) use ($userId): void {
                     $innerQuery
                         ->where('performed_by_user_id', $userId)
-                        ->orWhereExists(function ($subQuery) use ($userId): void {
+                        ->orWhereExists(function (QueryBuilder $subQuery) use ($userId): void {
                             $subQuery->selectRaw('1')
                                 ->from('intervention_user_assignments')
                                 ->whereColumn('intervention_user_assignments.intervention_id', 'interventions.id')
@@ -838,7 +844,7 @@ final class InterventionResource extends Resource
     {
         $user = Auth::user();
 
-        return $user instanceof \App\Models\User
+        return $user instanceof User
             && AccountFeatures::hasAssignedPerimeter($user)
             && AccountFeatures::hasAccountFeature($user, 'operator.force_self_assignment')
             && request()->is('operator/*');
@@ -881,7 +887,7 @@ final class InterventionResource extends Resource
             && AccountFeatures::hasAssignedPerimeter($user)
             && AccountFeatures::hasFeature($user, 'admin.team_interventions', true)
         ) {
-            $query->whereExists(function ($subQuery) use ($user): void {
+            $query->whereExists(function (QueryBuilder $subQuery) use ($user): void {
                 $subQuery->selectRaw('1')
                     ->from('work_order_assignments')
                     ->whereColumn('work_order_assignments.work_order_id', 'work_orders.id')
@@ -911,7 +917,7 @@ final class InterventionResource extends Resource
         /** @var User|null $user */
         $user = Auth::user();
         if ($user instanceof User && AccountFeatures::hasAssignedPerimeter($user)) {
-            $query->whereExists(function ($subQuery) use ($user): void {
+            $query->whereExists(function (QueryBuilder $subQuery) use ($user): void {
                 $subQuery->selectRaw('1')
                     ->from('work_orders')
                     ->join('work_order_assignments', 'work_order_assignments.work_order_id', '=', 'work_orders.id')
@@ -932,8 +938,8 @@ final class InterventionResource extends Resource
      */
     public static function normalizeFormData(array $data): array
     {
-        $assignedUserIds = collect($data['assigned_user_ids'] ?? [])
-            ->map(static fn ($id): int => (int) $id)
+        $assignedUserIds = collect(is_array($data['assigned_user_ids'] ?? null) ? $data['assigned_user_ids'] : [])
+            ->map(static fn (mixed $id): int => (int) $id)
             ->filter(static fn (int $id): bool => $id > 0)
             ->unique()
             ->values()
@@ -987,7 +993,8 @@ final class InterventionResource extends Resource
      */
     public static function extractPersistableData(array $data): array
     {
-        return Arr::only($data, [
+        /** @var array<string, mixed> $persisted */
+        $persisted = Arr::only($data, [
             'work_order_id',
             'customer_id',
             'performed_by_user_id',
@@ -1005,6 +1012,8 @@ final class InterventionResource extends Resource
             'materials_total',
             'total_amount',
         ]);
+
+        return $persisted;
     }
 
     /**
@@ -1012,8 +1021,8 @@ final class InterventionResource extends Resource
      */
     public static function syncSupplementalData(Intervention $record, array $data): void
     {
-        $assignedUserIds = collect($data['assigned_user_ids'] ?? [])
-            ->map(static fn ($id): int => (int) $id)
+        $assignedUserIds = collect(is_array($data['assigned_user_ids'] ?? null) ? $data['assigned_user_ids'] : [])
+            ->map(static fn (mixed $id): int => (int) $id)
             ->filter(static fn (int $id): bool => $id > 0)
             ->unique()
             ->values()
@@ -1021,8 +1030,19 @@ final class InterventionResource extends Resource
 
         $record->assignedUsers()->sync($assignedUserIds);
 
-        $manualLines = collect($data['manual_material_lines'] ?? [])
-            ->map(static function ($line): array {
+        $manualLines = collect(is_array($data['manual_material_lines'] ?? null) ? $data['manual_material_lines'] : [])
+            ->map(static function (mixed $line): array {
+                if (! is_array($line)) {
+                    return [
+                        'description' => '',
+                        'quantity' => 0.0,
+                        'unit' => 'pz',
+                        'unit_price' => 0.0,
+                        'line_total' => 0.0,
+                        'extra_status_code' => 'pending',
+                    ];
+                }
+
                 $description = trim((string) ($line['description'] ?? ''));
                 $quantity = round((float) ($line['quantity'] ?? 0), 2);
                 $unitPrice = round((float) ($line['unit_price'] ?? 0), 2);
@@ -1056,8 +1076,8 @@ final class InterventionResource extends Resource
 
         app(SyncInterventionNotePhotosAction::class)->execute(
             intervention: $record,
-            paths: array_values(array_map('strval', $data['notes_photo_paths'] ?? [])),
-            uploadedByUserId: Auth::id(),
+            paths: array_values(array_map(static fn (mixed $path): string => (string) $path, is_array($data['notes_photo_paths'] ?? null) ? $data['notes_photo_paths'] : [])),
+            uploadedByUserId: Auth::id() !== null ? (int) Auth::id() : null,
         );
 
         $record->refreshEconomicTotals();
@@ -1112,7 +1132,7 @@ final class InterventionResource extends Resource
         );
     }
 
-    private static function formatWorkOrderOptionLabel(mixed $row): string
+    private static function formatWorkOrderOptionLabel(object $row): string
     {
         $customer = trim((string) ($row->customer_name ?? ''));
         $site = trim((string) ($row->site_name ?? ''));
@@ -1130,12 +1150,12 @@ final class InterventionResource extends Resource
      */
     private static function getAssignableOperatorOptions(): array
     {
-        $modelHasRolesTable = config('permission.table_names.model_has_roles', 'model_has_roles');
-        $rolesTable = config('permission.table_names.roles', 'roles');
-        $userModel = config('auth.providers.users.model', \App\Models\User::class);
+        $modelHasRolesTable = (string) config('permission.table_names.model_has_roles', 'model_has_roles');
+        $rolesTable = (string) config('permission.table_names.roles', 'roles');
+        $userModel = (string) config('auth.providers.users.model', User::class);
 
         return DB::table('users')
-            ->whereExists(function ($query) use ($modelHasRolesTable, $rolesTable, $userModel): void {
+            ->whereExists(function (QueryBuilder $query) use ($modelHasRolesTable, $rolesTable, $userModel): void {
                 $query->selectRaw('1')
                     ->from($modelHasRolesTable)
                     ->join($rolesTable, $rolesTable.'.id', '=', $modelHasRolesTable.'.role_id')
@@ -1145,7 +1165,7 @@ final class InterventionResource extends Resource
             })
             ->orderBy('name')
             ->pluck('name', 'id')
-            ->map(static fn ($name): string => (string) $name)
+            ->mapWithKeys(static fn (mixed $name, mixed $id): array => [(int) $id => (string) $name])
             ->all();
     }
 

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Intervention\Actions;
 
 use Modules\Intervention\Models\Intervention;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Ricalcola l'extra preventivo partendo da un intervento.
@@ -14,8 +15,10 @@ use Modules\Intervention\Models\Intervention;
  * uscita. Valutando un intervento alla volta, il materiale distribuito su piu'
  * interventi risulterebbe sempre coperto e non verrebbe mai fatturato.
  */
-final readonly class SyncInterventionExtraMaterialsAction
+final class SyncInterventionExtraMaterialsAction
 {
+    use QueueableAction;
+
     public function __construct(
         private SyncWorkOrderExtraMaterialsAction $syncWorkOrderExtraMaterials,
     ) {}

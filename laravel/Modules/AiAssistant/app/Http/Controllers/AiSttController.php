@@ -5,20 +5,20 @@ declare(strict_types=1);
 namespace Modules\AiAssistant\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\UploadedFile;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Log;
 use Modules\AiAssistant\Speech\SpeechTranscriptionProviderInterface;
+
 use function Safe\preg_match;
 
 final class AiSttController extends Controller
 {
     public function __construct(
         private readonly SpeechTranscriptionProviderInterface $provider,
-    ) {
-    }
+    ) {}
 
     public function transcribe(Request $request): JsonResponse
     {
@@ -42,10 +42,8 @@ final class AiSttController extends Controller
         $langHeader = is_string($langValue) ? $langValue : 'it-IT';
         $language = 'it';
         $langHeader = strtolower(trim($langHeader));
-        if (preg_match('/^[a-z]{2}/', $langHeader, $m)) {
-            if (isset($m[0]) && is_string($m[0])) {
-                $language = $m[0];
-            }
+        if (preg_match('/^[a-z]{2}/', $langHeader, $m) === 1 && isset($m[0])) {
+            $language = $m[0];
         }
 
         try {
@@ -89,4 +87,3 @@ final class AiSttController extends Controller
         ]);
     }
 }
-

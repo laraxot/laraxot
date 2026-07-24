@@ -5,11 +5,24 @@ declare(strict_types=1);
 namespace Modules\TimberBilling\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 use Modules\TimberBilling\Database\Factories\TimberEInvoiceFactory;
+use Modules\Xot\Models\XotBaseModel;
 
-final class TimberEInvoice extends Model
+/**
+ * @property int $id
+ * @property int $invoice_id
+ * @property string $direction
+ * @property string $sdi_status
+ * @property string|null $sdi_identifier
+ * @property string|null $file_name
+ * @property string|null $xml_content
+ * @property Carbon|null $transmitted_at
+ * @property Carbon|null $delivered_at
+ * @property string|null $error_message
+ */
+final class TimberEInvoice extends XotBaseModel
 {
     /** @use HasFactory<TimberEInvoiceFactory> */
     use HasFactory;

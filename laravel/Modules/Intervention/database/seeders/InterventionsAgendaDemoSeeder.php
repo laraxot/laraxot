@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 /**
  * Makes the intervention calendar actually populated in the demo:
@@ -50,8 +51,8 @@ final class InterventionsAgendaDemoSeeder extends Seeder
     private function ensureDemoTechnicians(): void
     {
         // Make sure the role exists even when this seeder runs standalone.
-        if (class_exists(\Spatie\Permission\Models\Role::class)) {
-            \Spatie\Permission\Models\Role::findOrCreate('operator');
+        if (class_exists(Role::class)) {
+            Role::findOrCreate('operator');
         }
 
         $technicians = [

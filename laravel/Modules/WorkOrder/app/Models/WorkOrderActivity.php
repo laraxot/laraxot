@@ -4,12 +4,23 @@ declare(strict_types=1);
 
 namespace Modules\WorkOrder\Models;
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
+use Modules\User\Models\User;
 
-final class WorkOrderActivity extends Model
+/**
+ * @property int $id
+ * @property int $work_order_id
+ * @property int|null $created_by_user_id
+ * @property string $type
+ * @property string $body
+ * @property Carbon|null $occurred_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
+ */
+final class WorkOrderActivity extends BaseModel
 {
     use SoftDeletes;
 
@@ -39,4 +50,3 @@ final class WorkOrderActivity extends Model
         return $this->belongsTo(User::class, 'created_by_user_id');
     }
 }
-

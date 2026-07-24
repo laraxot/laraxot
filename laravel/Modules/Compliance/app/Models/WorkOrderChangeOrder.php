@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Compliance\Models;
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Compliance\Actions\EvaluateWorkOrderReadinessAction;
 use Modules\Document\Models\Media;
+use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Models\XotBaseModel;
 
-final class WorkOrderChangeOrder extends Model
+final class WorkOrderChangeOrder extends XotBaseModel
 {
     use SoftDeletes;
 

@@ -40,12 +40,14 @@ final class AiTtsController extends Controller
 
         $timeout = config('services.openai.tts_timeout', 30);
 
+        $text = $request->string('text')->toString();
+
         $response = Http::withToken($apiKey)
             ->timeout(is_numeric($timeout) ? (int) $timeout : 30)
             ->post('https://api.openai.com/v1/audio/speech', [
                 'model' => $model,
                 'voice' => $voice,
-                'input' => $validated['text'],
+                'input' => $text,
                 'response_format' => 'mp3',
             ]);
 

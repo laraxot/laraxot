@@ -7,9 +7,9 @@ namespace Modules\Quotation\Actions;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Modules\Customer\Models\Customer;
-use Modules\Document\Models\Media;
 use Modules\Quotation\Import\AiDocumentRewriter;
 use Modules\Quotation\Models\Quotation;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Copies the source quotation's document attachments to the target quotation,
@@ -21,6 +21,8 @@ use Modules\Quotation\Models\Quotation;
  */
 final class RewriteAndAttachQuotationDocumentsAction
 {
+    use QueueableAction;
+
     public function __construct(
         private readonly AiDocumentRewriter $rewriter,
         private readonly AddQuotationAttachmentAction $attach,
@@ -33,10 +35,9 @@ final class RewriteAndAttachQuotationDocumentsAction
         $quotationData = $this->quotationData($target, $newCustomerName, $source);
 
         $attached = 0;
-        /** @var Media $media */
-        foreach ($source->media()->where('kind', 'document')->get() as $media) {
+        foreach ($source->getMedia('documents') as $media) {
             $sourceDisk = (string) $media->disk;
-            $sourcePath = (string) $media->path;
+            $sourcePath = $media->getPathRelativeToRoot();
             if ($sourcePath === '' || ! Storage::disk($sourceDisk)->exists($sourcePath)) {
                 continue;
             }
@@ -58,7 +59,7 @@ final class RewriteAndAttachQuotationDocumentsAction
                 continue;
             }
 
-            $title = is_string($media->title) && $media->title !== '' ? $media->title : basename($sourcePath);
+            $title = $media->name !== '' ? $media->name : basename($sourcePath);
             $this->attach->execute($target, $destination, 'local', $userId, $title);
             $attached++;
         }

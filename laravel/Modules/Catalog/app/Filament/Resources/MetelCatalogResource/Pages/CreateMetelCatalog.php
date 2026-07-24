@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Catalog\Filament\Resources\MetelCatalogResource\Pages;
 
-use Filament\Resources\Pages\CreateRecord;
 use Modules\Catalog\Filament\Resources\MetelCatalogResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 
-final class CreateMetelCatalog extends CreateRecord
+final class CreateMetelCatalog extends XotBaseCreateRecord
 {
     protected static string $resource = MetelCatalogResource::class;
 }

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\AiAssistant\Filament\Pages;
 
-use Modules\User\Models\User;
 use App\Support\AccountFeatures;
+use Carbon\CarbonImmutable;
 use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Illuminate\Support\Facades\Auth;
@@ -19,8 +19,13 @@ use Modules\Email\Models\EmailMessage;
 use Modules\Intervention\Models\Intervention;
 use Modules\Inventory\Models\Warehouse;
 use Modules\Platform\Settings\SettingsRepository;
+use Modules\User\Models\User;
 use Modules\WhatsApp\Models\WhatsAppMessage;
 use Modules\WorkOrder\Models\WorkOrder;
+
+use function Safe\preg_match;
+use function Safe\preg_match_all;
+use function Safe\preg_replace;
 
 final class AiAssistantChat extends Page
 {
@@ -393,7 +398,7 @@ final class AiAssistantChat extends Page
     private function displayableAiMessageContent(string $content): string
     {
         if (preg_match_all('/(?:^|\R)<user_request>\s*(.*?)\s*<\/user_request>/su', $content, $matches) >= 1) {
-            $requests = $matches[1] ?? [];
+            $requests = $matches[1];
 
             return trim((string) end($requests));
         }
@@ -495,7 +500,9 @@ final class AiAssistantChat extends Page
         $this->proposalInterventionIds[$publicId] ??= is_numeric($payload['intervention_id'] ?? null) ? (int) $payload['intervention_id'] : '';
         $this->proposalBodies[$publicId] ??= (string) ($payload['body'] ?? $payload['notes'] ?? $payload['summary'] ?? '');
         $this->proposalScheduledAts[$publicId] ??= $this->formatScheduleForInput((string) ($payload['scheduled_at'] ?? ''));
-        $materialLine = is_array($payload['material_lines'][0] ?? null) ? $payload['material_lines'][0] : [];
+        $materialLines = is_array($payload['material_lines'] ?? null) ? $payload['material_lines'] : [];
+        $firstMaterialLine = $materialLines[0] ?? null;
+        $materialLine = is_array($firstMaterialLine) ? $firstMaterialLine : [];
         $this->proposalMaterialDescriptions[$publicId] ??= (string) ($materialLine['description'] ?? $this->guessMaterialDescription((string) ($payload['body'] ?? $payload['notes'] ?? '')));
         $messageText = (string) ($payload['body'] ?? $payload['notes'] ?? '');
         $materialCost = $this->positiveFloat($materialLine['unit_price'] ?? null) ?? $this->extractMaterialEuroAmount($messageText) ?? $this->extractEuroAmount($messageText);
@@ -546,7 +553,7 @@ final class AiAssistantChat extends Page
         }
 
         try {
-            return \Carbon\CarbonImmutable::parse($value)->format('Y-m-d\TH:i');
+            return CarbonImmutable::parse($value)->format('Y-m-d\TH:i');
         } catch (\Throwable) {
             return $value;
         }
@@ -580,11 +587,11 @@ final class AiAssistantChat extends Page
 
     private function extractEuroAmount(string $text): ?float
     {
-        if (preg_match('/(\d+(?:[,.]\d{1,2})?)\s*(?:euro|eur|€)/i', $text, $matches) !== 1) {
+        if (preg_match('/(\d+(?:[,.]\d{1,2})?)\s*(?:euro|eur|€)/i', $text, $matches) !== 1 || ! isset($matches[1])) {
             return null;
         }
 
-        return $this->positiveFloat($matches[1] ?? null);
+        return $this->positiveFloat($matches[1]);
     }
 
     private function extractMaterialEuroAmount(string $text): ?float
@@ -600,12 +607,12 @@ final class AiAssistantChat extends Page
     private function extractEuroAmountNearKeywords(string $text, string $keywordPattern): ?float
     {
         $amountPattern = '(\d+(?:[,.]\d{1,2})?)\s*(?:euro|eur|€)';
-        if (preg_match('/'.$keywordPattern.'[^\d€]{0,40}'.$amountPattern.'/i', $text, $matches) === 1) {
-            return $this->positiveFloat($matches[1] ?? null);
+        if (preg_match('/'.$keywordPattern.'[^\d€]{0,40}'.$amountPattern.'/i', $text, $matches) === 1 && isset($matches[1])) {
+            return $this->positiveFloat($matches[1]);
         }
 
-        if (preg_match('/'.$amountPattern.'[^\w]{0,20}(?:di|per)?[^\w]{0,10}'.$keywordPattern.'/i', $text, $matches) === 1) {
-            return $this->positiveFloat($matches[1] ?? null);
+        if (preg_match('/'.$amountPattern.'[^\w]{0,20}(?:di|per)?[^\w]{0,10}'.$keywordPattern.'/i', $text, $matches) === 1 && isset($matches[1])) {
+            return $this->positiveFloat($matches[1]);
         }
 
         return null;
@@ -637,7 +644,7 @@ final class AiAssistantChat extends Page
                 ->first(['subject', 'body']);
 
             if ($message instanceof EmailMessage) {
-                return trim(((string) $message->subject)."\n\n".((string) $message->body));
+                return trim(((string) data_get($message, 'subject', ''))."\n\n".((string) data_get($message, 'body', '')));
             }
         }
 
@@ -656,7 +663,26 @@ final class AiAssistantChat extends Page
 
         $context = is_array($message?->payload) ? ($message->payload['context'] ?? []) : [];
 
-        return is_array($context) ? $context : [];
+        return $this->stringKeyArray($context);
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    private function stringKeyArray(mixed $value): array
+    {
+        if (! is_array($value)) {
+            return [];
+        }
+
+        $normalized = [];
+        foreach ($value as $key => $item) {
+            if (is_string($key)) {
+                $normalized[$key] = $item;
+            }
+        }
+
+        return $normalized;
     }
 
     /**
@@ -979,6 +1005,6 @@ final class AiAssistantChat extends Page
         /** @var Warehouse|null $warehouse */
         $warehouse = Warehouse::query()->find($warehouseId);
 
-        return $warehouse instanceof Warehouse ? (string) $warehouse->name : null;
+        return $warehouse instanceof Warehouse ? (string) data_get($warehouse, 'name', '') : null;
     }
 }

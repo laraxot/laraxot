@@ -18,12 +18,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\HR\Actions\AddEmployeeDocumentAction;
 use Modules\HR\Models\Employee;
+use Modules\HR\Models\EmployeeDocument;
 
 final class DocumentsRelationManager extends RelationManager
 {
     protected static string $relationship = 'documents';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('hr.documents');
     }
@@ -62,7 +63,7 @@ final class DocumentsRelationManager extends RelationManager
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('title')
                     ->label(__('hr.fields.title'))
-                    ->description(fn ($record): string => basename((string) ($record->media?->path ?? '')))
+                    ->description(fn (EmployeeDocument $record): string => basename($record->media->path))
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -75,12 +76,14 @@ final class DocumentsRelationManager extends RelationManager
                         /** @var Employee $employee */
                         $employee = $this->getOwnerRecord();
 
+                        $uploadedByUserId = Auth::id();
+
                         return app(AddEmployeeDocumentAction::class)->execute(
                             employee: $employee,
                             path: (string) $data['path'],
-                            uploadedByUserId: Auth::id(),
-                            title: $data['title'] ?? null,
-                            kind: $data['kind'] ?? null,
+                            uploadedByUserId: is_int($uploadedByUserId) ? $uploadedByUserId : null,
+                            title: isset($data['title']) ? (string) $data['title'] : null,
+                            kind: isset($data['kind']) ? (string) $data['kind'] : null,
                         );
                     }),
             ])
@@ -89,8 +92,8 @@ final class DocumentsRelationManager extends RelationManager
                     ->label(__('documents.actions.download'))
                     ->icon('heroicon-o-arrow-down-tray')
                     ->color('gray')
-                    ->url(fn ($record): string => $record->media?->path
-                        ? asset('storage/' . ltrim((string) $record->media->path, '/'))
+                    ->url(fn (EmployeeDocument $record): string => $record->media->path !== ''
+                        ? asset('storage/'.ltrim($record->media->path, '/'))
                         : '#'
                     )
                     ->openUrlInNewTab(),
@@ -101,4 +104,3 @@ final class DocumentsRelationManager extends RelationManager
             ]);
     }
 }
-

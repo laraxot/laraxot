@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace Modules\Quotation\Actions;
 
 use Illuminate\Support\Facades\DB;
-use Modules\Quotation\Domain\DTO\DictatedQuotationItem;
-use Modules\Quotation\Domain\DTO\QuotationDraft;
+use Modules\Quotation\DTO\DictatedQuotationItem;
+use Modules\Quotation\DTO\QuotationDraft;
 use Modules\Quotation\Models\Quotation;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Persists a reviewed {@see QuotationDraft} as a brand-new quotation for the given
@@ -16,6 +17,8 @@ use Modules\Quotation\Models\Quotation;
  */
 final class CreateQuotationFromDraftAction
 {
+    use QueueableAction;
+
     private const DEFAULT_TAX_PERCENT = 22.0;
 
     public function __construct(

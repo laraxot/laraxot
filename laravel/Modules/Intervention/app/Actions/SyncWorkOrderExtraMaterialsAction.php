@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Actions;
 
-use Modules\Intervention\Domain\Actions\DetectExtraQuotationMaterialsAction;
-use Modules\Intervention\Domain\DTO\QuotedMaterial;
-use Modules\Intervention\Domain\DTO\UsedMaterial;
+use Modules\Intervention\Data\QuotedMaterial;
+use Modules\Intervention\Data\UsedMaterial;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionMaterialLine;
 use Modules\Quotation\Models\Quotation;
 use Modules\WorkOrder\Models\WorkOrder;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Ricalcola l'extra preventivo di una commessa intera.
@@ -24,8 +24,10 @@ use Modules\WorkOrder\Models\WorkOrder;
  * Gli interventi si consumano in ordine cronologico: il preventivo copre prima
  * le uscite piu' vecchie.
  */
-final readonly class SyncWorkOrderExtraMaterialsAction
+final class SyncWorkOrderExtraMaterialsAction
 {
+    use QueueableAction;
+
     public function __construct(
         private DetectExtraQuotationMaterialsAction $detectExtraMaterials,
     ) {}

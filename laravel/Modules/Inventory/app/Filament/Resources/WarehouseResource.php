@@ -11,18 +11,19 @@ use Filament\Actions\ViewAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Modules\Inventory\Filament\Resources\WarehouseResource\Pages;
 use Modules\Inventory\Models\Warehouse;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class WarehouseResource extends Resource
+final class WarehouseResource extends XotBaseResource
 {
     protected static ?string $model = Warehouse::class;
 
@@ -43,17 +44,17 @@ final class WarehouseResource extends Resource
         return self::isAvailableInCurrentPanel() && parent::canCreate();
     }
 
-    public static function canEdit($record): bool
+    public static function canEdit(Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && parent::canEdit($record);
     }
 
-    public static function canView($record): bool
+    public static function canView(Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && parent::canView($record);
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('inventory.navigation');
     }
@@ -68,9 +69,12 @@ final class WarehouseResource extends Resource
         return __('inventory.warehouses');
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<int, Component>
+     */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
@@ -90,7 +94,7 @@ final class WarehouseResource extends Resource
                             ->options(fn (): array => DB::table('vehicles')
                                 ->orderBy('plate_number')
                                 ->pluck('plate_number', 'id')
-                                ->map(fn ($plate, $id) => ($plate ?: ('#' . $id)))
+                                ->map(fn ($plate, $id) => ($plate ?: ('#'.$id)))
                                 ->all()
                             )
                             ->searchable()
@@ -107,7 +111,7 @@ final class WarehouseResource extends Resource
                             ->default(false),
                     ]),
                 ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -155,4 +159,3 @@ final class WarehouseResource extends Resource
         );
     }
 }
-

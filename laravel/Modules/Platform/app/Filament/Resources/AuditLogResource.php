@@ -7,9 +7,6 @@ namespace Modules\Platform\Filament\Resources;
 use App\Support\AccountFeatures;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\Select;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
@@ -19,8 +16,9 @@ use Illuminate\Support\Facades\Auth;
 use Modules\Platform\Filament\Resources\AuditLogResource\Pages\ListAuditLogs;
 use Modules\Platform\Filament\Resources\AuditLogResource\Pages\ViewAuditLog;
 use Modules\Platform\Models\AuditLog;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class AuditLogResource extends Resource
+final class AuditLogResource extends XotBaseResource
 {
     protected static ?string $model = AuditLog::class;
 
@@ -38,12 +36,12 @@ final class AuditLogResource extends Resource
         return self::isAvailableInCurrentPanel() && parent::canViewAny();
     }
 
-    public static function canView($record): bool
+    public static function canView(\Illuminate\Database\Eloquent\Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && parent::canView($record);
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('platform.settings');
     }
@@ -63,9 +61,9 @@ final class AuditLogResource extends Resource
         return __('platform.audit_log.model_plural');
     }
 
-    public static function form(Schema $schema): Schema
+    public static function getFormSchema(): array
     {
-        return $schema->components([]);
+        return [];
     }
 
     public static function table(Table $table): Table
@@ -128,7 +126,7 @@ final class AuditLogResource extends Resource
                         ->distinct()
                         ->orderBy('subject_type')
                         ->pluck('subject_type', 'subject_type')
-                        ->mapWithKeys(fn (string $v): array => [$v => class_basename($v)])
+                        ->mapWithKeys(fn (mixed $v): array => [(string) $v => class_basename((string) $v)])
                         ->all()),
                 Filter::make('created_between')
                     ->label(__('platform.audit_log.filters.date_range'))
@@ -140,10 +138,10 @@ final class AuditLogResource extends Resource
                         $from = $data['from'] ?? null;
                         $to = $data['to'] ?? null;
 
-                        if ($from) {
+                        if (is_string($from) && $from !== '') {
                             $query->whereDate('created_at', '>=', $from);
                         }
-                        if ($to) {
+                        if (is_string($to) && $to !== '') {
                             $query->whereDate('created_at', '<=', $to);
                         }
 
@@ -153,7 +151,7 @@ final class AuditLogResource extends Resource
             ->actions([
                 ViewAction::make()
                     ->label(__('platform.audit_log.actions.view'))
-                    ->url(fn (AuditLog $record): string => static::getUrl('view', ['record' => $record])),
+                    ->url(fn (AuditLog $record): string => self::getUrl('view', ['record' => $record])),
             ]);
     }
 
@@ -183,4 +181,3 @@ final class AuditLogResource extends Resource
         );
     }
 }
-

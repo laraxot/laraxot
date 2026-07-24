@@ -6,6 +6,8 @@ namespace Modules\Catalog\Support;
 
 use Modules\Catalog\DTO\MetelArticleData;
 
+use function Safe\preg_split;
+
 /**
  * Pure parser for METEL price-list records: delimited (CSV/Excel export handed
  * over by the wholesaler) and fixed-width (official "tracciato listino"). Layout
@@ -30,7 +32,9 @@ final readonly class MetelRecordParser
      */
     public function detectFormat(string $content): string
     {
-        foreach (preg_split('/\r\n|\r|\n/', $content) ?: [] as $line) {
+        foreach (preg_split('/\r\n|\r|\n/', $content) as $rawLine) {
+            $line = (string) $rawLine;
+
             if (trim($line) === '') {
                 continue;
             }

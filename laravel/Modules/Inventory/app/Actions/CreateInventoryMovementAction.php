@@ -10,11 +10,14 @@ use Modules\Catalog\Models\Product;
 use Modules\Inventory\Models\InventoryMovement;
 use Modules\Inventory\Models\ProductUnit;
 use Modules\Inventory\Models\WarehouseLocation;
+use Spatie\QueueableAction\QueueableAction;
 
 final class CreateInventoryMovementAction
 {
+    use QueueableAction;
+
     /**
-     * @param array<int, int> $productUnitIds
+     * @param  array<int, int>  $productUnitIds
      */
     public function execute(
         int $productId,
@@ -42,7 +45,7 @@ final class CreateInventoryMovementAction
         if ($resolvedUnitPrice === null) {
             /** @var Product|null $product */
             $product = Product::query()->find($productId);
-            $rawUnitPrice = $product?->unit_price;
+            $rawUnitPrice = $product?->getAttribute('unit_price');
             $resolvedUnitPrice = is_numeric($rawUnitPrice) ? (float) $rawUnitPrice : 0.0;
         }
 
@@ -102,4 +105,3 @@ final class CreateInventoryMovementAction
         }
     }
 }
-

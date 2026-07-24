@@ -20,5 +20,12 @@ related:
 - [x] Namespace `Modules\Quotation\`
 - [x] `QuotationServiceProvider` → XotBaseServiceProvider
 - [x] composer PSR-4 → `app/`
-- [ ] Resources → XotBaseResource (wave)
-- [ ] PHPStan L10 + enable statuses
+- [x] Resources → XotBaseResource
+- [x] Pages/RelationManagers → XotBase*
+- [x] `app/Domain/*` assorbito in `app/{DTO,Actions}`
+- [x] Media custom (Document\Models\Media) → Spatie MediaLibrary (HasMedia/InteractsWithMedia)
+- [x] Migrazioni 1-per-modello, XotBaseMigration
+- [x] tests/TestCase.php + Pest.php scaffold
+- [x] lang/{it,en} (quotations, site_surveys) + config/quotation_technical.php
+- [x] PHPStan (solo errori minori/noti residui, vedi `gestionale-commesse-port.md`)
+- [x] Registrato in `modules_statuses.json`

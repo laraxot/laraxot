@@ -17,6 +17,7 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 use Modules\TimberBilling\Actions\MarkTimberInstallmentPaidAction;
 use Modules\TimberBilling\Actions\SendTimberPaymentRemindersAction;
@@ -168,10 +169,10 @@ final class TimberPaymentInstallmentResource extends Resource
                     ->options(['in' => 'Entrate', 'out' => 'Uscite']),
                 Tables\Filters\Filter::make('overdue')
                     ->label('Solo scadute da saldare')
-                    ->query(fn ($query) => $query->where('status_code', '!=', 'saldato')->whereDate('due_date', '<=', now())),
+                    ->query(fn (Builder $query): Builder => $query->where('status_code', '!=', 'saldato')->whereDate('due_date', '<=', now())),
                 Tables\Filters\Filter::make('riba_to_issue')
                     ->label('RIBA da emettere')
-                    ->query(fn ($query) => $query->where('payment_method_code', 'riba')->where('status_code', 'da_saldare')),
+                    ->query(fn (Builder $query): Builder => $query->where('payment_method_code', 'riba')->where('status_code', 'da_saldare')),
             ])
             ->actions([
                 self::markPaidAction(),

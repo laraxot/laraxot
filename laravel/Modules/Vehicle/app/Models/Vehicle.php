@@ -4,12 +4,33 @@ declare(strict_types=1);
 
 namespace Modules\Vehicle\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
+use Modules\Vehicle\Database\Factories\VehicleFactory;
 
-final class Vehicle extends Model
+/**
+ * @property int $id
+ * @property string|null $uuid
+ * @property string $plate_number
+ * @property string|null $make
+ * @property string|null $model
+ * @property int|null $year
+ * @property int|null $odometer_km
+ * @property Carbon|null $last_service_on
+ * @property Carbon|null $insurance_expires_on
+ * @property string|null $notes
+ * @property bool $is_active
+ * @property Carbon|null $deleted_at
+ *
+ * @method static VehicleFactory factory($count = null, $state = [])
+ */
+final class Vehicle extends BaseModel
 {
+    /** @use HasFactory<VehicleFactory> */
+    use HasFactory;
+
     use SoftDeletes;
 
     protected $table = 'vehicles';
@@ -36,4 +57,3 @@ final class Vehicle extends Model
         return $this->hasMany(VehicleDocument::class);
     }
 }
-

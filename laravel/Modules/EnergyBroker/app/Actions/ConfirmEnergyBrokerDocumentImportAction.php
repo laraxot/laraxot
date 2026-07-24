@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\EnergyBroker\Actions;
 
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Modules\Customer\Actions\CreateCustomerAction;
 use Modules\Customer\Actions\CreateCustomerSiteAction;
@@ -14,15 +15,17 @@ use Modules\EnergyBroker\Models\EnergyBrokerCustomerMatch;
 use Modules\EnergyBroker\Models\EnergyBrokerDocument;
 use Modules\EnergyBroker\Models\EnergyBrokerSupplyHistory;
 use Modules\EnergyBroker\Models\EnergyBrokerSupplyPoint;
+use Spatie\QueueableAction\QueueableAction;
 
-final readonly class ConfirmEnergyBrokerDocumentImportAction
+final class ConfirmEnergyBrokerDocumentImportAction
 {
+    use QueueableAction;
+
     public function __construct(
         private CreateCustomerAction $createCustomer,
         private CreateCustomerSiteAction $createCustomerSite,
         private UpdateCustomerAction $updateCustomer,
-    ) {
-    }
+    ) {}
 
     /**
      * @return array{status: string, customer_id?: int}
@@ -103,7 +106,7 @@ final readonly class ConfirmEnergyBrokerDocumentImportAction
     }
 
     /**
-     * @param array<string, mixed> $customerData
+     * @param  array<string, mixed>  $customerData
      */
     private function findStrongCustomerMatch(array $customerData): ?Customer
     {
@@ -119,9 +122,9 @@ final readonly class ConfirmEnergyBrokerDocumentImportAction
     }
 
     /**
-     * @param array<string, mixed> $customerData
-     * @param array<string, mixed> $supplyData
-     * @return \Illuminate\Support\Collection<int, Customer>
+     * @param  array<string, mixed>  $customerData
+     * @param  array<string, mixed>  $supplyData
+     * @return Collection<int, Customer>
      */
     private function findReviewCandidates(array $customerData, array $supplyData)
     {
@@ -157,7 +160,7 @@ final readonly class ConfirmEnergyBrokerDocumentImportAction
     }
 
     /**
-     * @param array<string, mixed> $customerData
+     * @param  array<string, mixed>  $customerData
      * @return array<string, mixed>
      */
     private function customerAttributes(array $customerData, bool $mergeOnlyMissing = false): array
@@ -186,8 +189,8 @@ final readonly class ConfirmEnergyBrokerDocumentImportAction
     }
 
     /**
-     * @param array<string, mixed> $customerData
-     * @param array<string, mixed> $supplyData
+     * @param  array<string, mixed>  $customerData
+     * @param  array<string, mixed>  $supplyData
      */
     private function firstOrCreateSite(Customer $customer, array $customerData, array $supplyData): CustomerSite
     {
@@ -204,7 +207,7 @@ final readonly class ConfirmEnergyBrokerDocumentImportAction
         }
 
         return $this->createCustomerSite->execute($customer, [
-            'name' => $customer->legal_name . ' - Fornitura',
+            'name' => $customer->legal_name.' - Fornitura',
             'address_line1' => $address,
             'city' => $this->normalizedString($customerData['city'] ?? null),
             'postal_code' => $this->normalizedString($customerData['postal_code'] ?? null),
@@ -216,9 +219,9 @@ final readonly class ConfirmEnergyBrokerDocumentImportAction
     }
 
     /**
-     * @param array<string, mixed> $supplyData
-     * @param array<string, mixed> $contractData
-     * @param array<string, mixed> $documentData
+     * @param  array<string, mixed>  $supplyData
+     * @param  array<string, mixed>  $contractData
+     * @param  array<string, mixed>  $documentData
      */
     private function syncSupplyPoints(
         Customer $customer,
@@ -336,7 +339,7 @@ final readonly class ConfirmEnergyBrokerDocumentImportAction
     }
 
     /**
-     * @param array<string, mixed> $customerData
+     * @param  array<string, mixed>  $customerData
      */
     private function candidateScore(Customer $customer, array $customerData): float
     {

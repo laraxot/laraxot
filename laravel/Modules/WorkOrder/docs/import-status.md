@@ -1,24 +1,27 @@
 ---
 title: "Import status — WorkOrder"
 type: concept
-tags: [import, gestionale-commesse, workorder]
+tags: [import, workorder, gestionale-commesse, phpstan]
 created: 2026-07-23
 updated: 2026-07-23
-qmd: "import status WorkOrder normalize"
+qmd: "import status WorkOrder phpstan L10 DocumentExportBridge"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
 discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
 related:
   - "./README.md"
+  - "../../../../docs/gestionale-commesse-comparison/copy-then-normalize.md"
 ---
 
 # Import status — WorkOrder
 
-- [x] Cartella singolare / replica
-- [x] Layout `app/` (reshape)
-- [x] Namespace `Modules\WorkOrder\`
-- [x] `WorkOrderServiceProvider` → XotBaseServiceProvider
-- [x] composer PSR-4 → `app/`
-- [ ] Resources → XotBaseResource (wave)
-- [ ] PHPStan L10 + enable statuses
+- [x] Rename SRC `WorkOrders` → `WorkOrder`
+- [x] Layout `app/` + XotBase SP
+- [x] RelationManagers: `form()` → `getFormSchema()` (XotBase final)
+- [x] Seeders `*Factory::new()`
+- [x] PDF via `DocumentExportBridge` (soft-dep `barryvdh/laravel-dompdf`)
+- [x] DOCX: throw finché `composer require phpoffice/phpword`
+- [x] **PHPStan L10** — 0 errori reali (solo notice `@mixin` unmatched)
+- [ ] Enable statuses post Pest smoke
+- [ ] Opzionale: `composer require barryvdh/laravel-dompdf phpoffice/phpword` in root

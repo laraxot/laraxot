@@ -7,9 +7,12 @@ namespace Modules\EnergyBroker\Actions;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\File;
 use Modules\EnergyBroker\Models\EnergyBrokerLargeUpload;
+use Spatie\QueueableAction\QueueableAction;
 
 final class StoreEnergyBrokerLargeUploadChunkAction
 {
+    use QueueableAction;
+
     public function execute(EnergyBrokerLargeUpload $upload, int $chunkIndex, UploadedFile $chunk): EnergyBrokerLargeUpload
     {
         if ($upload->status !== 'uploading') {
@@ -20,7 +23,7 @@ final class StoreEnergyBrokerLargeUploadChunkAction
             throw new \RuntimeException('Indice chunk non valido.');
         }
 
-        $directory = storage_path('app/energy-broker/chunks/' . $upload->public_id);
+        $directory = storage_path('app/energy-broker/chunks/'.$upload->public_id);
         File::ensureDirectoryExists($directory);
 
         $chunk->move($directory, $this->chunkFilename($chunkIndex));
@@ -40,6 +43,6 @@ final class StoreEnergyBrokerLargeUploadChunkAction
 
     public function chunkFilename(int $chunkIndex): string
     {
-        return str_pad((string) $chunkIndex, 8, '0', STR_PAD_LEFT) . '.part';
+        return str_pad((string) $chunkIndex, 8, '0', STR_PAD_LEFT).'.part';
     }
 }

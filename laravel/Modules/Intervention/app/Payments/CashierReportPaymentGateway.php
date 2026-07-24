@@ -6,13 +6,13 @@ namespace Modules\Intervention\Payments;
 
 use Laravel\Cashier\Cashier;
 use Laravel\Cashier\Checkout;
-use Modules\Intervention\Payments\ReportPaymentGatewayInterface;
+use Modules\Intervention\Contracts\ReportPaymentGatewayContract;
 
 /**
  * Stripe-backed payment gateway using Laravel Cashier guest checkout.
  * Lives in Infrastructure so the Stripe SDK never leaks into use-cases.
  */
-final class CashierReportPaymentGateway implements ReportPaymentGatewayInterface
+final class CashierReportPaymentGateway implements ReportPaymentGatewayContract
 {
     public function createCheckout(
         int $amountCents,

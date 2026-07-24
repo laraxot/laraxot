@@ -6,9 +6,12 @@ namespace Modules\Billing\Actions;
 
 use Modules\Billing\Models\Invoice;
 use Modules\Billing\Models\InvoiceWorkOrderLink;
+use Spatie\QueueableAction\QueueableAction;
 
 final class LinkInvoiceToWorkOrderAction
 {
+    use QueueableAction;
+
     public function execute(Invoice $invoice, int $workOrderId): InvoiceWorkOrderLink
     {
         /** @var InvoiceWorkOrderLink $link */
@@ -26,4 +29,3 @@ final class LinkInvoiceToWorkOrderAction
         return $link;
     }
 }
-

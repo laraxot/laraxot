@@ -4,12 +4,30 @@ declare(strict_types=1);
 
 namespace Modules\Production\Models;
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
+use Modules\Production\Database\Factories\ProductionPhaseFactory;
+use Modules\User\Models\User;
+use Modules\Xot\Models\XotBaseModel;
 
-final class ProductionPhase extends Model
+/**
+ * @property int $id
+ * @property int $production_order_id
+ * @property string $name
+ * @property int $sort_order
+ * @property string $status
+ * @property int|null $assigned_to_user_id
+ * @property Carbon|null $started_at
+ * @property Carbon|null $completed_at
+ *
+ * @method static ProductionPhaseFactory factory($count = null, $state = [])
+ */
+final class ProductionPhase extends XotBaseModel
 {
+    /** @use HasFactory<ProductionPhaseFactory> */
+    use HasFactory;
+
     protected $table = 'production_phases';
 
     /** @var array<int, string> */
@@ -36,4 +54,3 @@ final class ProductionPhase extends Model
         return $this->belongsTo(User::class, 'assigned_to_user_id');
     }
 }
-

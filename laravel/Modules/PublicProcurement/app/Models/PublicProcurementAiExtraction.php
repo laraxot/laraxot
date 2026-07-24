@@ -4,13 +4,28 @@ declare(strict_types=1);
 
 namespace Modules\PublicProcurement\Models;
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 use Modules\Document\Models\Media;
+use Modules\User\Models\User;
+use Modules\Xot\Models\XotBaseModel;
 
-final class PublicProcurementAiExtraction extends Model
+/**
+ * @property int $id
+ * @property string $public_id
+ * @property int|null $media_id
+ * @property int|null $created_by_user_id
+ * @property string $document_type
+ * @property string $status
+ * @property string $confidence
+ * @property array<string, mixed>|null $extracted_payload
+ * @property string|null $raw_text
+ * @property Carbon|null $expires_at
+ * @property Carbon|null $applied_at
+ * @property Carbon|null $deleted_at
+ */
+final class PublicProcurementAiExtraction extends XotBaseModel
 {
     use SoftDeletes;
 

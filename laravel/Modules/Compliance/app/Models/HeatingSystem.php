@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Compliance\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
+use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -20,11 +21,11 @@ use Modules\Customer\Models\CustomerSite;
  * @property string|null $fuel_type
  * @property string|null $total_power_kw
  * @property string|null $plant_registry_code
- * @property \Carbon\CarbonInterface|null $installation_date
+ * @property CarbonInterface|null $installation_date
  * @property string|null $notes
  * @property bool $is_active
  */
-final class HeatingSystem extends Model
+final class HeatingSystem extends XotBaseModel
 {
     use SoftDeletes;
 

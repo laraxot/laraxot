@@ -6,10 +6,16 @@ namespace Modules\Customer\Lookup;
 
 use Illuminate\Support\Facades\Http;
 
+use function Safe\preg_match;
+use function Safe\preg_replace;
+
 final class OpenApiCompanyLookupProvider implements CompanyLookupProviderInterface
 {
     private const MAX_RESULTS = 5;
 
+    /**
+     * @return list<array<string, mixed>>
+     */
     public function search(string $query): array
     {
         $token = config('company_lookup.openapi_token');
@@ -49,7 +55,7 @@ final class OpenApiCompanyLookupProvider implements CompanyLookupProviderInterfa
             if (! is_array($row)) {
                 continue;
             }
-            $candidate = $this->mapRow($row);
+            $candidate = $this->mapRow($this->stringKeyed($row));
             if ($candidate !== null) {
                 $out[] = $candidate;
             }
@@ -61,6 +67,10 @@ final class OpenApiCompanyLookupProvider implements CompanyLookupProviderInterfa
         return $out;
     }
 
+    /**
+     * @param  array<string, mixed>  $row
+     * @return array<string, mixed>|null
+     */
     private function mapRow(array $row): ?array
     {
         $legalName = $this->nullableString($row['companyName'] ?? null);
@@ -68,10 +78,10 @@ final class OpenApiCompanyLookupProvider implements CompanyLookupProviderInterfa
             return null;
         }
 
-        $address = is_array($row['address'] ?? null) ? $row['address'] : [];
-        $office = is_array($address['registeredOffice'] ?? null) ? $address['registeredOffice'] : [];
-        $contacts = is_array($row['contacts'] ?? null) ? $row['contacts'] : [];
-        $mail = is_array($row['mail'] ?? null) ? $row['mail'] : [];
+        $address = $this->stringKeyed($row['address'] ?? null);
+        $office = $this->stringKeyed($address['registeredOffice'] ?? null);
+        $contacts = $this->stringKeyed($row['contacts'] ?? null);
+        $mail = $this->stringKeyed($row['mail'] ?? null);
 
         $phone = $this->nullableString($contacts['telephoneNumber'] ?? null)
             ?? $this->nullableString($contacts['phone'] ?? null);
@@ -93,14 +103,21 @@ final class OpenApiCompanyLookupProvider implements CompanyLookupProviderInterfa
 
     private function extractItalianVat(string $query): ?string
     {
-        $normalized = preg_replace('/\s+/', '', $query) ?? '';
-        if (preg_match('/(?:IT)?(\d{11})/i', $normalized, $matches) === 1) {
+        $normalized = preg_replace('/\s+/', '', $query);
+        $matches = [];
+        if (preg_match('/(?:IT)?(\d{11})/i', $normalized, $matches) === 1
+            && isset($matches[1])
+            && is_string($matches[1])
+        ) {
             return $matches[1];
         }
 
         return null;
     }
 
+    /**
+     * @param  array<string, mixed>  $office
+     */
     private function street(array $office): ?string
     {
         $parts = array_filter([
@@ -113,11 +130,31 @@ final class OpenApiCompanyLookupProvider implements CompanyLookupProviderInterfa
         return $line !== '' ? $line : null;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
+    private function stringKeyed(mixed $value): array
+    {
+        if (! is_array($value)) {
+            return [];
+        }
+
+        $out = [];
+        foreach ($value as $key => $item) {
+            if (is_string($key)) {
+                $out[$key] = $item;
+            }
+        }
+
+        return $out;
+    }
+
     private function nullableString(mixed $value): ?string
     {
         if (! is_string($value)) {
             return null;
         }
+
         $trimmed = trim($value);
 
         return $trimmed !== '' ? $trimmed : null;

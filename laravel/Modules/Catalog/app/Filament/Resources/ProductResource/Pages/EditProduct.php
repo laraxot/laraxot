@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Catalog\Filament\Resources\ProductResource\Pages;
 
-use Filament\Resources\Pages\EditRecord;
 use Modules\Catalog\Filament\Resources\ProductResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
-final class EditProduct extends EditRecord
+final class EditProduct extends XotBaseEditRecord
 {
     protected static string $resource = ProductResource::class;
 }

@@ -9,6 +9,8 @@ use Illuminate\Support\HtmlString;
 use Symfony\Component\HtmlSanitizer\HtmlSanitizer;
 use Symfony\Component\HtmlSanitizer\HtmlSanitizerConfig;
 
+use function Safe\preg_replace;
+
 final class DailyNoteHtml
 {
     public static function sanitize(?string $html): string
@@ -19,12 +21,12 @@ final class DailyNoteHtml
             return '';
         }
 
-        $config = (new HtmlSanitizerConfig)
+        $config = (new HtmlSanitizerConfig())
             ->allowSafeElements()
             ->allowRelativeLinks()
             ->allowElement('span', ['style'])
             ->allowAttribute('style', ['span'])
-            ->withAttributeSanitizer(new DailyNoteStyleAttributeSanitizer)
+            ->withAttributeSanitizer(new DailyNoteStyleAttributeSanitizer())
             ->withMaxInputLength(20000);
 
         return trim((new HtmlSanitizer($config))->sanitize($html));

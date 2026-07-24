@@ -7,6 +7,7 @@ namespace Modules\Quotation\Actions;
 use Modules\Quotation\Import\QuotationDocumentTextExtractor;
 use Modules\Quotation\Models\Quotation;
 use RuntimeException;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Imports a quotation from an uploaded document (ODF/OOXML/PDF/CSV): reads its
@@ -15,6 +16,8 @@ use RuntimeException;
  */
 final class ImportQuotationFromFileAction
 {
+    use QueueableAction;
+
     public function __construct(
         private readonly QuotationDocumentTextExtractor $extractor,
         private readonly BuildQuotationDraftAction $build,

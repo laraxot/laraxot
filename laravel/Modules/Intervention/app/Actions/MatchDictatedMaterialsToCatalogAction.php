@@ -5,7 +5,10 @@ declare(strict_types=1);
 namespace Modules\Intervention\Actions;
 
 use Modules\Catalog\Models\Product;
-use Modules\Intervention\Domain\DTO\DictatedMaterialLine;
+use Modules\Intervention\Data\DictatedMaterialLine;
+use Spatie\QueueableAction\QueueableAction;
+
+use function Safe\preg_split;
 
 /**
  * Matches voice-dictated materials against the catalog so the extra materials
@@ -14,6 +17,8 @@ use Modules\Intervention\Domain\DTO\DictatedMaterialLine;
  */
 final class MatchDictatedMaterialsToCatalogAction
 {
+    use QueueableAction;
+
     /**
      * @param  list<DictatedMaterialLine>  $materials
      * @return list<DictatedMaterialLine>
@@ -42,7 +47,8 @@ final class MatchDictatedMaterialsToCatalogAction
             return $line;
         }
 
-        $unitPrice = $product->unit_price !== null ? (float) $product->unit_price : null;
+        $rawUnitPrice = Product::query()->whereKey($product->id)->value('unit_price');
+        $unitPrice = is_numeric($rawUnitPrice) ? (float) $rawUnitPrice : null;
 
         return $line->withCatalogMatch((int) $product->id, $unitPrice);
     }
@@ -90,6 +96,7 @@ final class MatchDictatedMaterialsToCatalogAction
         $words = preg_split('/\s+/', $text) ?: [];
         $best = '';
         foreach ($words as $word) {
+            $word = is_string($word) ? $word : '';
             if (mb_strlen($word) > mb_strlen($best)) {
                 $best = $word;
             }

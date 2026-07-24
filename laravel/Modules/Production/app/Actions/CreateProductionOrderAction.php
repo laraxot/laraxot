@@ -6,16 +6,19 @@ namespace Modules\Production\Actions;
 
 use Illuminate\Support\Str;
 use Modules\Production\Models\ProductionOrder;
+use Spatie\QueueableAction\QueueableAction;
 
 final class CreateProductionOrderAction
 {
+    use QueueableAction;
+
     public function execute(
         int $productId,
         int $quantity,
         ?int $workOrderId,
         ?string $notes,
     ): ProductionOrder {
-        $code = 'PO-' . now()->format('Ymd') . '-' . Str::upper(Str::random(6));
+        $code = 'PO-'.now()->format('Ymd').'-'.Str::upper(Str::random(6));
 
         /** @var ProductionOrder $order */
         $order = ProductionOrder::query()->create([
@@ -30,4 +33,3 @@ final class CreateProductionOrderAction
         return $order;
     }
 }
-

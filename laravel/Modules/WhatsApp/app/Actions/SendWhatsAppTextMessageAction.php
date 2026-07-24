@@ -5,19 +5,21 @@ declare(strict_types=1);
 namespace Modules\WhatsApp\Actions;
 
 use Modules\WhatsApp\Meta\WhatsAppClientInterface;
-use Modules\WhatsApp\Settings\WhatsAppSettings;
-use Modules\WhatsApp\Support\PhoneNumberNormalizer;
 use Modules\WhatsApp\Models\WhatsAppConversation;
 use Modules\WhatsApp\Models\WhatsAppMessage;
+use Modules\WhatsApp\Settings\WhatsAppSettings;
+use Modules\WhatsApp\Support\PhoneNumberNormalizer;
+use Spatie\QueueableAction\QueueableAction;
 
-final readonly class SendWhatsAppTextMessageAction
+final class SendWhatsAppTextMessageAction
 {
+    use QueueableAction;
+
     public function __construct(
         private WhatsAppClientInterface $client,
         private PhoneNumberNormalizer $normalizer,
         private WhatsAppSettings $settings,
-    ) {
-    }
+    ) {}
 
     public function execute(string $toPhone, string $body): WhatsAppMessage
     {

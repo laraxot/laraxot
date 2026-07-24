@@ -6,6 +6,8 @@ namespace Modules\Intervention\Filament\Concerns;
 
 use Illuminate\Support\Str;
 
+use function Safe\parse_url;
+
 trait ResolvesCalendarReturnUrl
 {
     /**

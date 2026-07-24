@@ -15,19 +15,19 @@ use Filament\Actions\ViewAction;
 use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Modules\Auth\Actions\ApproveRegisteredUserAction;
 use Modules\Auth\Filament\Resources\UserResource\Pages;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use Spatie\Permission\Models\Role;
 
-final class UserResource extends Resource
+final class UserResource extends XotBaseResource
 {
     protected static ?string $model = User::class;
 
@@ -48,17 +48,17 @@ final class UserResource extends Resource
         return self::isAvailableInCurrentPanel() && parent::canCreate();
     }
 
-    public static function canEdit($record): bool
+    public static function canEdit(Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && parent::canEdit($record);
     }
 
-    public static function canView($record): bool
+    public static function canView(Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && parent::canView($record);
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('users.navigation');
     }
@@ -73,9 +73,9 @@ final class UserResource extends Resource
         return __('users.users');
     }
 
-    public static function form(Schema $schema): Schema
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()->columnSpanFull()->components([
                 Grid::make(2)->components([
                     TextInput::make('name')
@@ -129,16 +129,25 @@ final class UserResource extends Resource
                     ->columns(3)
                     ->required(static fn (string $operation): bool => $operation === 'create')
                     ->afterStateHydrated(function (CheckboxList $component, ?User $record): void {
-                        if (! $record) {
+                        if (! $record || ! method_exists($record, 'getRoleNames')) {
                             return;
                         }
-                        $component->state($record->getRoleNames()->all());
+                        $getRoleNames = 'getRoleNames';
+                        $roleNames = $record->{$getRoleNames}();
+                        if (! $roleNames instanceof \Illuminate\Support\Collection) {
+                            return;
+                        }
+                        $component->state($roleNames->all());
                     })
                     ->saveRelationshipsUsing(function (User $record, ?array $state): void {
-                        $record->syncRoles($state ?? []);
+                        if (! method_exists($record, 'syncRoles')) {
+                            return;
+                        }
+                        $syncRoles = 'syncRoles';
+                        $record->{$syncRoles}($state ?? []);
                     }),
             ])->columns(2),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -178,7 +187,14 @@ final class UserResource extends Resource
                     ->icon('heroicon-o-check-circle')
                     ->color('success')
                     ->requiresConfirmation()
-                    ->visible(static fn (User $record): bool => ! $record->isApproved())
+                    ->visible(static function (User $record): bool {
+                        if (! method_exists($record, 'isApproved')) {
+                            return false;
+                        }
+                        $isApproved = 'isApproved';
+
+                        return ! $record->{$isApproved}();
+                    })
                     ->action(function (User $record): void {
                         $approver = Auth::user();
                         if (! $approver instanceof User) {

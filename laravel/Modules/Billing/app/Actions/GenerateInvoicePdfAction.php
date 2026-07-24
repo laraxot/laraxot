@@ -8,9 +8,12 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\DB;
 use Modules\Billing\Models\Invoice;
 use Modules\Platform\Company\CompanyProfileProvider;
+use Spatie\QueueableAction\QueueableAction;
 
 final class GenerateInvoicePdfAction
 {
+    use QueueableAction;
+
     public function __construct(private readonly CompanyProfileProvider $companyProfile) {}
 
     public function execute(Invoice $invoice): string

@@ -7,9 +7,12 @@ namespace Modules\Compliance\Actions;
 use Modules\Compliance\Models\ComplianceDocument;
 use Modules\Compliance\Models\WorkOrderChangeOrder;
 use Modules\WorkOrder\Models\WorkOrder;
+use Spatie\QueueableAction\QueueableAction;
 
 final class SummarizeWorkOrderComplianceAction
 {
+    use QueueableAction;
+
     public function execute(WorkOrder $workOrder): string
     {
         $readiness = app(EvaluateWorkOrderReadinessAction::class)->execute($workOrder);

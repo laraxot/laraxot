@@ -8,6 +8,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Storage;
 use Modules\Document\Models\Media;
 use Modules\Intervention\Models\Intervention;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Generates the single-intervention report ("rapportino") PDF, embedding the
@@ -16,6 +17,8 @@ use Modules\Intervention\Models\Intervention;
  */
 final class GenerateInterventionReportPdfAction
 {
+    use QueueableAction;
+
     /**
      * @return array{content: string, mime: string, filename: string}
      */
@@ -28,7 +31,7 @@ final class GenerateInterventionReportPdfAction
             'assignedUsers',
             'materialLines',
             'media',
-            'signatures.media',
+            'signatures',
         ]);
 
         $operator = $intervention->assignedUsers->pluck('name')->filter()->implode(', ');
@@ -36,7 +39,10 @@ final class GenerateInterventionReportPdfAction
             $operator = $intervention->performedBy->name ?? '—';
         }
 
-        $content = Pdf::loadView('interventions::reports.intervention-report', [
+        /** @var view-string $reportView */
+        $reportView = 'interventions::reports.intervention-report';
+
+        $content = Pdf::loadView($reportView, [
             'intervention' => $intervention,
             'customer' => $this->resolveCustomerName($intervention),
             'operator' => $operator,
@@ -56,8 +62,12 @@ final class GenerateInterventionReportPdfAction
 
     private function resolveCustomerName(Intervention $intervention): string
     {
-        // @phpstan-ignore-next-line nullsafe.neverNull — the customer belongsTo is nullable at runtime
-        return $intervention->workOrder?->customer?->legal_name ?? $intervention->customer?->legal_name ?? '—';
+        $workOrder = $intervention->workOrder;
+        $customer = $intervention->customer;
+
+        return ($workOrder !== null && $workOrder->customer !== null ? $workOrder->customer->legal_name : null)
+            ?? ($customer !== null ? $customer->legal_name : null)
+            ?? '—';
     }
 
     /**
@@ -78,9 +88,20 @@ final class GenerateInterventionReportPdfAction
 
     private function signatureDataUri(Intervention $intervention): ?string
     {
-        $media = $intervention->signatures->sortByDesc('id')->first()?->media;
+        $signature = $intervention->signatures->sortByDesc('id')->first();
+        if ($signature === null || ! is_string($signature->path) || $signature->path === '') {
+            return null;
+        }
 
-        return $media !== null ? $this->mediaDataUri($media) : null;
+        $disk = $signature->disk ?? 'public';
+        $storage = Storage::disk($disk);
+        if (! $storage->exists($signature->path)) {
+            return null;
+        }
+
+        $mime = $signature->mime_type ?? 'image/png';
+
+        return 'data:'.$mime.';base64,'.base64_encode((string) $storage->get($signature->path));
     }
 
     private function mediaDataUri(Media $media): ?string

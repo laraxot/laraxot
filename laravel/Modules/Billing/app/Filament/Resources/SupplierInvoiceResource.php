@@ -14,37 +14,38 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
+use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Contracts\View\View;
 use Modules\Billing\Actions\ReconcileSupplierInvoiceWithDeliveryNotesAction;
-use Modules\Billing\Domain\DTO\ReconciliationDiscrepancy;
+use Modules\Billing\Datas\ReconciliationDiscrepancy;
 use Modules\Billing\Filament\Resources\SupplierInvoiceResource\Pages;
 use Modules\Billing\Filament\Resources\SupplierInvoiceResource\RelationManagers\LinesRelationManager;
 use Modules\Billing\Models\SupplierInvoice;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 /**
  * Fatture fornitore, con la conciliazione contro i DDT: e' l'unico momento in
  * cui quello che il fornitore fattura in piu' del consegnato e' ancora
  * contestabile.
  */
-final class SupplierInvoiceResource extends Resource
+final class SupplierInvoiceResource extends XotBaseResource
 {
     protected static ?string $model = SupplierInvoice::class;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-document-currency-euro';
 
-    public static function getNavigationSort(): ?int
+    public static function getNavigationSort(): int
     {
         return 3;
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('suppliers.navigation');
     }
@@ -96,7 +97,7 @@ final class SupplierInvoiceResource extends Resource
         /** @var \WeakMap<SupplierInvoice, array<int, ReconciliationDiscrepancy>>|null $computed */
         static $computed = null;
 
-        $computed ??= new \WeakMap;
+        $computed ??= new \WeakMap();
 
         if (! isset($computed[$invoice])) {
             $computed[$invoice] = app(ReconcileSupplierInvoiceWithDeliveryNotesAction::class)->execute($invoice);
@@ -130,9 +131,12 @@ final class SupplierInvoiceResource extends Resource
             });
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<int, Component>
+     */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
@@ -169,7 +173,7 @@ final class SupplierInvoiceResource extends Resource
                         ->columnSpanFull(),
                 ])
                 ->columns(2),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -178,7 +182,7 @@ final class SupplierInvoiceResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('number')
                     ->label(__('suppliers.fields.number'))
-                    ->weight(\Filament\Support\Enums\FontWeight::Bold)
+                    ->weight(FontWeight::Bold)
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('supplier.legal_name')

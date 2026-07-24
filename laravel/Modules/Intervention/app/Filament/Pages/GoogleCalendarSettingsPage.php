@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Filament\Pages;
 
-use App\Models\User;
 use App\Support\AccountFeatures;
 use Filament\Notifications\Notification;
-use Filament\Pages\Page;
 use Illuminate\Support\Facades\Auth;
 use Modules\Intervention\Models\UserGoogleCalendarSetting;
+use Modules\User\Models\User;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * Per-user Google Calendar connection settings: connect/disconnect the Google
  * account and choose the target calendar. Tokens are never shown or edited here.
  */
-final class GoogleCalendarSettingsPage extends Page
+final class GoogleCalendarSettingsPage extends XotBasePage
 {
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-calendar-days';
 
@@ -57,7 +57,7 @@ final class GoogleCalendarSettingsPage extends Page
         };
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('interventions.navigation');
     }
@@ -117,9 +117,9 @@ final class GoogleCalendarSettingsPage extends Page
             ? UserGoogleCalendarSetting::query()->where('user_id', (int) $userId)->first()
             : null;
 
-        $this->connected = $setting?->isConnected() ?? false;
-        $this->enabled = (bool) ($setting?->enabled ?? false);
-        $this->calendarId = (string) ($setting?->calendar_id ?? 'primary');
+        $this->connected = $setting !== null && $setting->isConnected();
+        $this->enabled = $setting !== null ? (bool) $setting->enabled : false;
+        $this->calendarId = $setting !== null ? (string) ($setting->calendar_id ?? 'primary') : 'primary';
         $this->googleEmail = $setting?->google_email;
         $this->lastSyncedAt = $setting?->last_synced_at?->format('d/m/Y H:i');
         $this->hasError = $setting?->last_sync_error_at !== null;

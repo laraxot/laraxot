@@ -20,5 +20,14 @@ related:
 - [x] Namespace `Modules\Signature\`
 - [x] `SignatureServiceProvider` → XotBaseServiceProvider
 - [x] composer PSR-4 → `app/`
-- [ ] Resources → XotBaseResource (wave)
-- [ ] PHPStan L10 + enable statuses
+- [x] `signable()`/`sketchable()` generici (nessun hardcode WorkOrder/Intervention)
+- [x] disk/path/mime_type diretti sul modello (no Spatie MediaLibrary FK, decisione esplicita)
+- [x] `lang/{it,en}/signatures.php`
+- [x] `tests/{TestCase,Pest}.php` + `tests/Unit/SignatureModelTest.php` (8 assert totali col modulo, passano)
+- [x] PHPStan: 0 errori residui su Actions/Models/seeders/tests
+- [ ] `app/Filament/Pages/{CaptureSignature,CaptureSketch}.php` — restano accoppiate a Intervention/WorkOrder e a
+      `App\Filament\Forms\Components\CanvasPad` (root app, class.notFound) + `Filament\Pages\Page` non-XotBase (55
+      errori PHPStan pre-esistenti, fuori perimetro di questo redo — vedi
+      `docs/gestionale-commesse-port.md`)
+
+Dettaglio redo reshape 2026-07-23: [../../../docs/gestionale-commesse-port.md](../../../docs/gestionale-commesse-port.md).

@@ -6,8 +6,21 @@ namespace Modules\HR\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 use Modules\Document\Models\Media;
 
+/**
+ * @property int $id
+ * @property int $employee_id
+ * @property int|null $media_id
+ * @property string|null $title
+ * @property Carbon $visited_at
+ * @property Carbon|null $expires_at
+ * @property string|null $notes
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Media|null $media
+ */
 final class EmployeeMedicalVisit extends Model
 {
     protected $table = 'employee_medical_visits';
@@ -36,4 +49,3 @@ final class EmployeeMedicalVisit extends Model
         return $this->belongsTo(Media::class);
     }
 }
-

@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Actions;
 
-use Modules\Intervention\Support\DailyNoteHtml;
-use Modules\Intervention\Domain\DTO\DictatedMaterialLine;
-use Modules\Intervention\Domain\DTO\InterventionReportDraft;
+use Modules\Intervention\Data\DictatedMaterialLine;
+use Modules\Intervention\Data\InterventionReportDraft;
 use Modules\Intervention\Models\Intervention;
+use Modules\Intervention\Support\DailyNoteHtml;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Persists a voice-generated report draft that the operator has reviewed and
@@ -19,6 +20,8 @@ use Modules\Intervention\Models\Intervention;
  */
 final class ApplyInterventionReportDraftAction
 {
+    use QueueableAction;
+
     public function execute(Intervention $intervention, InterventionReportDraft $draft): Intervention
     {
         $attributes = [];

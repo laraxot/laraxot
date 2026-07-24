@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Catalog\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Models\XotBaseModel;
 
-final class CatalogPartType extends Model
+final class CatalogPartType extends XotBaseModel
 {
     protected $table = 'catalog_part_types';
 

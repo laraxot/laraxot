@@ -4,11 +4,24 @@ declare(strict_types=1);
 
 namespace Modules\Quotation\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 use Modules\Catalog\Models\Product;
 
-final class QuotationItem extends Model
+/**
+ * @property int $id
+ * @property int $quotation_id
+ * @property int|null $product_id
+ * @property string $description
+ * @property string $quantity
+ * @property string $unit_price
+ * @property string $discount_percent
+ * @property string $line_total
+ * @property int $sort_order
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ */
+final class QuotationItem extends BaseModel
 {
     protected $table = 'quotation_items';
 
@@ -38,4 +51,3 @@ final class QuotationItem extends Model
         return $this->belongsTo(Product::class);
     }
 }
-

@@ -25,7 +25,7 @@ final class PublicProcurementTenderSourceResource extends Resource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-rss';
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('public_procurement.navigation');
     }

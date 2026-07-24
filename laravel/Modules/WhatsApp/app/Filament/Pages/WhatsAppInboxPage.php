@@ -47,7 +47,7 @@ final class WhatsAppInboxPage extends Page
         return self::shouldRegisterNavigation() && Gate::allows('manage-whatsapp-ai');
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return 'Comunicazioni';
     }

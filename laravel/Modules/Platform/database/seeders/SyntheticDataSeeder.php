@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Platform\Database\Seeders;
 
+use App\Models\User;
 use Carbon\CarbonImmutable;
 use Faker\Factory as FakerFactory;
 use Illuminate\Database\Seeder;
@@ -159,7 +160,7 @@ class SyntheticDataSeeder extends Seeder
 
             // Fallback so the seeder also works standalone (no RolesAndUsersSeeder run yet).
             if ($operatorUserId === null && $adminUserId === null) {
-                $operatorUserId = \App\Models\User::query()->firstOrCreate(
+                $operatorUserId = User::query()->firstOrCreate(
                     ['email' => 'operator@local.test'],
                     ['name' => 'Operatore', 'password' => bcrypt('ChangeMe123!'), 'approved_at' => $now],
                 )->id;
@@ -798,7 +799,7 @@ SVG,
                 $size = Storage::disk('public')->size($path);
 
                 DB::table('media')->insert([
-                    'mediable_type' => 'Modules\\Interventions\\Infrastructure\\Models\\Intervention',
+                    'mediable_type' => 'Modules\Interventions\\Infrastructure\\Models\\Intervention',
                     'mediable_id' => $interventionId,
                     'uploaded_by_user_id' => $operatorUserId ?? $adminUserId,
                     'kind' => 'photo',
@@ -1134,7 +1135,7 @@ SVG,
             }
 
             $mediaId = DB::table('media')->insertGetId([
-                'mediable_type' => 'Modules\\Platform\\Demo',
+                'mediable_type' => 'Modules\Platform\\Demo',
                 'mediable_id' => 1,
                 'uploaded_by_user_id' => $adminUserId,
                 'kind' => 'document',

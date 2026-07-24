@@ -10,6 +10,7 @@ use Modules\Catalog\DTO\MetelArticleData;
 use Modules\Catalog\Models\MetelCatalog;
 use Modules\Catalog\Models\MetelCatalogItem;
 use RuntimeException;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Synchronizes a catalog from the official METEL API (MOP / Data Pool gateway).
@@ -18,6 +19,8 @@ use RuntimeException;
  */
 final class FetchMetelCatalogViaApiAction
 {
+    use QueueableAction;
+
     /**
      * @return array{imported: int, skipped: int}
      */
@@ -60,7 +63,9 @@ final class FetchMetelCatalogViaApiAction
 
         DB::transaction(function () use ($catalog, $rawItems, $fieldMap, &$imported, &$skipped): void {
             foreach ($rawItems as $raw) {
-                $article = $this->mapArticle(is_array($raw) ? $raw : [], $fieldMap);
+                /** @var array<string, mixed> $rawArticle */
+                $rawArticle = is_array($raw) ? $raw : [];
+                $article = $this->mapArticle($rawArticle, $fieldMap);
 
                 if (! $article instanceof MetelArticleData) {
                     $skipped++;

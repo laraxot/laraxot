@@ -4,12 +4,22 @@ declare(strict_types=1);
 
 namespace Modules\AiAssistant\Models;
 
-use Modules\User\Models\User;
-use Modules\Xot\Models\XotBaseModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
+use Modules\User\Models\User;
 
-final class AiThread extends XotBaseModel
+/**
+ * @property int $id
+ * @property string $public_id
+ * @property int $created_by_user_id
+ * @property string $panel_id
+ * @property Carbon|null $last_message_at
+ * @property array<string, mixed>|null $meta
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ */
+final class AiThread extends BaseModel
 {
     protected $table = 'ai_threads';
 
@@ -50,4 +60,3 @@ final class AiThread extends XotBaseModel
         return $this->hasMany(AiToolLog::class);
     }
 }
-

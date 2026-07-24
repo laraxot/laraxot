@@ -4,20 +4,25 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Filament\Pages;
 
-use App\Models\User;
 use App\Support\AccountFeatures;
 use Carbon\CarbonImmutable;
 use Filament\Actions\Action;
 use Filament\Forms\Components\DatePicker;
-use Filament\Pages\Page;
 use Filament\Schemas\Schema;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Support\Facades\Auth;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\DailyNote;
 use Modules\Intervention\Models\Intervention;
 use Modules\Platform\Models\PlatformSetting;
+use Modules\User\Models\User;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
-final class MySchedule extends Page
+/**
+ * @property Schema $form
+ */
+final class MySchedule extends XotBasePage
 {
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-calendar-days';
 
@@ -68,7 +73,7 @@ final class MySchedule extends Page
         ]);
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('interventions.navigation');
     }
@@ -163,9 +168,13 @@ final class MySchedule extends Page
             return '-';
         }
 
-        return CarbonImmutable::parse($this->selectedDate)
-            ->locale(app()->getLocale())
-            ->isoFormat('dddd D MMMM YYYY');
+        $date = CarbonImmutable::parse((string) $this->selectedDate);
+        $localized = $date->locale((string) app()->getLocale());
+        if (! $localized instanceof CarbonImmutable) {
+            return $date->isoFormat('dddd D MMMM YYYY');
+        }
+
+        return $localized->isoFormat('dddd D MMMM YYYY');
     }
 
     /**
@@ -180,11 +189,11 @@ final class MySchedule extends Page
 
         return Intervention::query()
             ->with(['workOrder.customer', 'workOrder.site', 'customer'])
-            ->when(! (bool) config('app.demo_mode'), function ($query) use ($userId): void {
-                $query->where(function ($innerQuery) use ($userId): void {
+            ->when(! (bool) config('app.demo_mode'), function (Builder $query) use ($userId): void {
+                $query->where(function (Builder $innerQuery) use ($userId): void {
                     $innerQuery
                         ->where('performed_by_user_id', $userId)
-                        ->orWhereExists(function ($subQuery) use ($userId): void {
+                        ->orWhereExists(function (QueryBuilder $subQuery) use ($userId): void {
                             $subQuery->selectRaw('1')
                                 ->from('intervention_user_assignments')
                                 ->whereColumn('intervention_user_assignments.intervention_id', 'interventions.id')
@@ -219,7 +228,7 @@ final class MySchedule extends Page
     {
         $user = Auth::user();
 
-        return $user instanceof \App\Models\User
+        return $user instanceof User
             && AccountFeatures::hasFeature($user, 'operator.create_intervention_from_list', true)
             && $user->can('Create:Intervention');
     }

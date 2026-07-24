@@ -1,75 +1,81 @@
-# Auto-generated forbidden paths — do not edit manually
-# Reason: root cleanup policy (see docs/wiki/rules/root-cleanup-policy.md)
-
-bashscripts
-_bmad-output
-.circleci
-.claude-audit
-.devcontainer
-_docs
-docs/archive
-docs/archived
-docs/legacy
-docs/workbench
-.kilocode
-.kiro
-.ralph
-scripts
-test-results
-tests/.claude-audit
-# ==============================================
-# DEPENDENCIES
 /vendor/
-*.phar
 node_modules/
-package-lock.json
-# ENV & SECRETS
-.env
+venv/
+npm-debug.log
+yarn-error.log
+
+# Laravel 4 specific
+bootstrap/compiled.php
+app/storage/
+
+# Laravel 5 & Lumen specific
+public/storage
+public/hot
+
+# Laravel 5 & Lumen specific with changed public path
+public_html/storage
+public_html/hot
+
 storage/*.key
+.env
 Homestead.yaml
 Homestead.json
 /.vagrant
-# LARAVEL / LUMEN RUNTIME
-bootstrap/compiled.php
-app/storage/
-public/storage
-public/hot
-public_html/storage
-public_html/hot
-build/
-cache/
-docs/cache/
-bin/venv/
-venv/
-# CACHES & LOGS
+.phpunit.result.cache
+
+*.lock
+
+/vendor
+*.phar
 *.cache
 *.log
-npm-debug.log
-yarn-error.log
-.phpunit.result.cache
+*.lock
 .php-cs-fixer.cache
+package-lock.json
 .git-rewrite/
+.php-cs-fixer.cache
 *.git-blame-ignore-revs
 .git-blame-ignore-revs
-*.lock
-# PHPSTAN / DOCS CACHE
+node_modules
+node_modules
+vendor/
+build/
+docs/cache/
+cache/
+bin/venv/
+-e 
+# PHPStan documentation
 docs/phpstan/
-# BACKUP / MERGE RESIDUE (never commit)
+
+# Backup files
 *.old
 *.old1
 *.backup
 *.backup.*
-*.orig
-*.rej
+lang/lang/
+_docs/
+_docs/
+
+# Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
+docs/archive/
+docs/phpstan/
+docs/legacy/
+
+# Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
 *~HEAD
 *~BASE
 *~LOCAL
 *~REMOTE
+*.orig
+*.rej
 *~head
-# PROJECT SCRATCH
-lang/lang/
+
 agentdb.rvf
+audit-coverage/
+.cursor/
+.vscode/
+.windsurf/
+.devcontainer/
+.claude-audit/
+.claude-audit/
 tests/AuditCoverage
-# AI / TOOL SCAFFOLD — must never exist in the module tree
-# (see docs/module-root-hygiene.md and
-#  docs/wiki/rules/module-theme-root-cleanup.md)

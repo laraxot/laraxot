@@ -4,14 +4,30 @@ declare(strict_types=1);
 
 namespace Modules\Signature\Models;
 
-use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Modules\Document\Models\Media;
+use Modules\Signature\Database\Factories\SketchFactory;
+use Modules\User\Models\User;
 
-final class Sketch extends Model
+/**
+ * @property int $id
+ * @property string $sketchable_type
+ * @property int $sketchable_id
+ * @property int $user_id
+ * @property string|null $disk
+ * @property string|null $path
+ * @property string|null $mime_type
+ * @property array<string, mixed>|null $payload
+ *
+ * @method static SketchFactory factory($count = null, $state = [])
+ */
+final class Sketch extends BaseModel
 {
+    /** @use HasFactory<SketchFactory> */
+    use HasFactory;
+
     protected $table = 'sketches';
 
     /** @var array<int, string> */
@@ -25,7 +41,11 @@ final class Sketch extends Model
         ];
     }
 
-    /** @return MorphTo<Model, $this> */
+    /**
+     * Generic polymorphic owner of the sketch (e.g. Intervention, WorkOrder, ...).
+     *
+     * @return MorphTo<Model, $this>
+     */
     public function sketchable(): MorphTo
     {
         return $this->morphTo();
@@ -36,11 +56,4 @@ final class Sketch extends Model
     {
         return $this->belongsTo(User::class);
     }
-
-    /** @return BelongsTo<Media, $this> */
-    public function media(): BelongsTo
-    {
-        return $this->belongsTo(Media::class);
-    }
 }
-

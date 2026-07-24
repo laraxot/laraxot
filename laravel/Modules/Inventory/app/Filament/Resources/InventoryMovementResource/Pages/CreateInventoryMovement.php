@@ -26,7 +26,7 @@ final class CreateInventoryMovement extends CreateRecord
 
         if (! is_numeric($unitPrice) && $productId > 0) {
             $product = Product::query()->find($productId);
-            $unitPrice = $product?->unit_price;
+            $unitPrice = $product?->getAttribute('unit_price');
         }
 
         $resolvedUnitPrice = is_numeric($unitPrice) ? round((float) $unitPrice, 2) : 0.0;
@@ -62,4 +62,3 @@ final class CreateInventoryMovement extends CreateRecord
         }
     }
 }
-

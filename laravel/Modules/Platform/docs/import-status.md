@@ -1,24 +1,50 @@
 ---
-title: "Import status — Platform"
+title: "Import status — Platform (Wave 3 replica, DO NOT DELETE)"
 type: concept
-tags: [import, gestionale-commesse, platform]
+tags: [platform, replica, import, wave3, do-not-delete]
 created: 2026-07-23
 updated: 2026-07-23
-qmd: "import status Platform normalize"
-issues:
-  - "https://github.com/laraxot/base_workorder_fila5/issues/7"
-discussions:
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
+qmd: "Platform import status wave3 replica reshape do not delete"
 related:
-  - "./README.md"
+  - "./composer-manifest.md"
+  - "../../../../docs/gestionale-commesse-comparison/replica-singular-phase.md"
+  - "../../../../docs/wiki/rules/module-name-singular-mandatory.md"
 ---
 
 # Import status — Platform
 
-- [x] Cartella singolare / replica
-- [x] Layout `app/` (reshape)
-- [x] Namespace `Modules\Platform\`
-- [x] `PlatformServiceProvider` → XotBaseServiceProvider
-- [x] composer PSR-4 → `app/`
-- [ ] Resources → XotBaseResource (wave)
-- [ ] PHPStan L10 + enable statuses
+> **Fase:** replica Wave 3 (Auth, Document, Email, HR, Platform, WhatsApp).
+> Copiato da `gestionale_commesse`, reshape-ato come cartella indipendente.
+> **Non** merge in moduli nativi (User, Employee, Media, Notify, AI, Tenant).
+> **Non** cancellare.
+
+## Checklist reshape
+
+- [x] Layout sotto `app/` (Application/Domain/Infrastructure/Filament/Http/Console/Providers root rimossi)
+- [x] Database/Resources/Routes (capital) spostati in database/resources/routes (lowercase)
+- [x] Namespace PHP allineati al nuovo path (rimosso segmento Application/Domain/Infrastructure)
+- [x] ServiceProvider principale estende `XotBaseServiceProvider`
+- [x] `RouteServiceProvider` estende `XotBaseRouteServiceProvider`
+- [x] `EventServiceProvider` estende `Illuminate\Foundation\Support\Providers\EventServiceProvider`
+- [x] `composer.json` Laraxot PSR-4 → `app/` (namespace verificato: singolo backslash)
+- [x] Azioni con `execute()` → trait `Spatie\QueueableAction\QueueableAction` (rimosso `readonly` dalla classe, incompatibile con la property non-readonly del trait)
+- [x] Filament Resource CRUD principali → `extends XotBaseResource` (`form()` → `getFormSchema(): array`)
+- [ ] BaseModel → XotBaseModel (rimandato, TODO esplicito)
+- [ ] Factories/seeders/migrations parity/consolidamento (rimandato, TODO esplicito)
+- [ ] Pest test
+- [ ] Enable in `modules_statuses.json` solo dopo PHPStan pulito + ordine utente
+
+## PHPStan
+
+```
+cd laravel && ./vendor/bin/phpstan analyse Modules/Platform --memory-limit=-1
+```
+
+Esito: **1 (bloccante esterno: Intervention) errori** (baseline dopo reshape, in gran parte pre-esistenti nel sorgente originale:
+tipizzazioni Spatie Permission su `App\Models\User`, migrations generiche, ecc. — non introdotti da questo reshape).
+
+## TODO espliciti (rimandati da questo giro)
+
+- BaseModel → XotBaseModel per i model in `app/Models`
+- Consolidamento/dedup migrations, factories, seeders
+- Copertura Pest

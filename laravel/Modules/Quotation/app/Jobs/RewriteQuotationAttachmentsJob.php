@@ -9,11 +9,10 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Storage;
-use Modules\Document\Models\Media;
 use Modules\Quotation\Actions\RewriteAndAttachQuotationDocumentsAction;
 use Modules\Quotation\Import\QuotationNotesRewriterInterface;
 use Modules\Quotation\Models\Quotation;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 /**
  * Rewrites the source quotation's attachments into the newly created quotation via
@@ -55,7 +54,7 @@ final class RewriteQuotationAttachmentsJob implements ShouldQueue
 
             $this->recomputeNotes($target);
 
-            $attached = $source->media()->where('kind', 'document')->exists()
+            $attached = $source->getMedia('documents')->isNotEmpty()
                 ? app(RewriteAndAttachQuotationDocumentsAction::class)->execute($source, $target, $this->customerName, $this->userId)
                 : 0;
 
@@ -118,13 +117,12 @@ final class RewriteQuotationAttachmentsJob implements ShouldQueue
         }
 
         if ($success) {
-            Storage::disk((string) $media->disk)->delete((string) $media->path);
             $media->delete();
 
             return;
         }
 
-        $media->title = __('quotations.voice.attachment_failed_title');
+        $media->name = __('quotations.voice.attachment_failed_title');
         $media->save();
     }
 }

@@ -4,12 +4,23 @@ declare(strict_types=1);
 
 namespace Modules\Bom\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\Bom\Database\Factories\BomItemFactory;
 use Modules\Catalog\Models\Product;
+use Modules\Xot\Models\XotBaseModel;
 
-final class BomItem extends Model
+/**
+ * @property int $id
+ * @property int $bom_id
+ * @property int $component_product_id
+ * @property numeric-string $quantity
+ */
+final class BomItem extends XotBaseModel
 {
+    /** @use HasFactory<BomItemFactory> */
+    use HasFactory;
+
     protected $table = 'bom_items';
 
     /** @var array<int, string> */
@@ -27,4 +38,3 @@ final class BomItem extends Model
         return $this->belongsTo(Product::class, 'component_product_id');
     }
 }
-

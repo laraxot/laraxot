@@ -8,9 +8,12 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Modules\Auth\Notifications\EmailTwoFactorCodeNotification;
+use Spatie\QueueableAction\QueueableAction;
 
 final class StartEmailTwoFactorChallengeAction
 {
+    use QueueableAction;
+
     public function execute(User $user, Request $request, bool $force = false): void
     {
         if (! $force && $request->session()->has('auth.email_2fa.code_hash')) {

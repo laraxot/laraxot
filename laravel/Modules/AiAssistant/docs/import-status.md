@@ -18,18 +18,18 @@ related:
 
 # Import status — AiAssistant
 
-> **Fase:** replica. **Non** merge in `AI`. **Non** cancellare.  
-> 2026-07-23: cartella ripristinata da SRC dopo **3° delete** agente — albero di nuovo DDD (`Application/`/`Infrastructure/`); reshape `app/` da rifare.
+> **Fase:** replica. **Non** merge in `AI`. **Non** cancellare.
 
 ## Checklist
 
-- [ ] Layout sotto `app/` (dopo restore SRC è di nuovo DDD)
-- [ ] `composer.json` Laraxot PSR-4 → `app/`
-- [ ] Provider XotBase + Models BaseModel
-- [ ] QueueableAction / XotBaseResource
-- [ ] Factories/seeders/migrations parity
-- [ ] Pest + PHPStan L10
+- [x] Layout sotto `app/`
+- [x] `composer.json` PSR-4 → `app/`
+- [x] Provider XotBase + Models BaseModel (+ Route/Event)
+- [x] QueueableAction
+- [x] Factories/seeders/migrations parity (4/4)
+- [x] PHPStan L10 `Modules/AiAssistant/app` = 0
 - [ ] Enable solo post-gate + ordine utente
+- [ ] Pest smoke chat/operator
 
 ## Vietato
 

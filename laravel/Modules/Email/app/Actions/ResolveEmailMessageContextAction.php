@@ -11,9 +11,12 @@ use Modules\Email\Models\EmailContactIdentity;
 use Modules\Email\Models\EmailConversation;
 use Modules\Intervention\Models\Intervention;
 use Modules\WorkOrder\Models\WorkOrder;
+use Spatie\QueueableAction\QueueableAction;
 
-final readonly class ResolveEmailMessageContextAction
+final class ResolveEmailMessageContextAction
 {
+    use QueueableAction;
+
     /**
      * @return array<string, mixed>
      */
@@ -30,24 +33,24 @@ final readonly class ResolveEmailMessageContextAction
         $customerId = (int) ($conversation->customer_id ?? 0);
         $contactId = (int) ($conversation->contact_id ?? 0);
 
-        $workOrders = $customerId > 0
-            ? WorkOrder::query()
-                ->with(['customer', 'site', 'status'])
-                ->where('customer_id', $customerId)
-                ->orderByDesc('updated_at')
-                ->limit(5)
-                ->get()
-            : collect();
+        $workOrders = WorkOrder::query()
+            ->with(['customer', 'site', 'status'])
+            ->when($customerId > 0, fn ($query) => $query->where('customer_id', $customerId))
+            ->when($customerId <= 0, fn ($query) => $query->whereRaw('1 = 0'))
+            ->orderByDesc('updated_at')
+            ->limit(5)
+            ->get();
 
-        $interventions = $workOrders->isNotEmpty()
-            ? Intervention::query()
-                ->with(['workOrder.customer', 'workOrder.site'])
-                ->whereIn('work_order_id', $workOrders->pluck('id')->all())
-                ->orderByDesc('scheduled_at')
-                ->orderByDesc('updated_at')
-                ->limit(5)
-                ->get()
-            : collect();
+        $workOrderIds = $workOrders->pluck('id')->all();
+
+        $interventions = Intervention::query()
+            ->with(['workOrder.customer', 'workOrder.site'])
+            ->when($workOrderIds !== [], fn ($query) => $query->whereIn('work_order_id', $workOrderIds))
+            ->when($workOrderIds === [], fn ($query) => $query->whereRaw('1 = 0'))
+            ->orderByDesc('scheduled_at')
+            ->orderByDesc('updated_at')
+            ->limit(5)
+            ->get();
 
         return [
             'ok' => true,
@@ -85,17 +88,28 @@ final readonly class ResolveEmailMessageContextAction
         $contact = $this->findContactByEmail($email);
         $site = $this->findSiteByEmail($email);
         $customer = $this->findCustomerByEmail($email);
-        $customerId = $contact?->customer_id ?? $site?->customer_id ?? $customer?->id;
+
+        $contactCustomerId = $contact?->getAttribute('customer_id');
+        $siteCustomerId = $site?->getAttribute('customer_id');
+        $customerId = match (true) {
+            is_int($contactCustomerId) => $contactCustomerId,
+            is_int($siteCustomerId) => $siteCustomerId,
+            is_int($customer?->id) => $customer->id,
+            default => null,
+        };
 
         if ($customerId === null && $contact === null && $site === null) {
             return null;
         }
 
+        $contactCustomerSiteId = $contact?->getAttribute('customer_site_id');
+        $customerSiteId = is_int($contactCustomerSiteId) ? $contactCustomerSiteId : $site?->id;
+
         /** @var EmailContactIdentity $identity */
         $identity = EmailContactIdentity::query()->create([
             'email' => $email,
             'customer_id' => $customerId,
-            'customer_site_id' => $contact?->customer_site_id ?? $site?->id,
+            'customer_site_id' => $customerSiteId,
             'contact_id' => $contact?->id,
             'meta' => ['source' => 'auto_resolved'],
         ]);

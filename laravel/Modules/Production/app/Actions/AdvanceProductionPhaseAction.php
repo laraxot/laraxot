@@ -6,9 +6,12 @@ namespace Modules\Production\Actions;
 
 use Carbon\CarbonImmutable;
 use Modules\Production\Models\ProductionPhase;
+use Spatie\QueueableAction\QueueableAction;
 
 final class AdvanceProductionPhaseAction
 {
+    use QueueableAction;
+
     public function execute(ProductionPhase $phase, string $toStatus): ProductionPhase
     {
         $now = CarbonImmutable::now();
@@ -28,4 +31,3 @@ final class AdvanceProductionPhaseAction
         return $phase;
     }
 }
-

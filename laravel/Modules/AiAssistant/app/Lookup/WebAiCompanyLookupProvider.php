@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Http;
 use Modules\AiAssistant\Llm\LlmChatJsonClient;
 use Modules\Customer\Lookup\CompanyLookupProviderInterface;
 
+use function Safe\preg_replace;
+
 /**
  * Online company lookup: fetches public web results for a business name / VAT and
  * lets the LLM extract structured company candidates from the snippets. No paid

@@ -60,3 +60,18 @@ Analisi gap e eventuale allineamento con piattaforma (`User`/`AI`/…) è **wave
 3. Confondere **collisione di path** (Customers vs Customer) con **overlap funzionale** (Auth vs User)
 
 Canon naming: [module-name-singular-mandatory.md](../wiki/rules/module-name-singular-mandatory.md).
+
+## Progress reshape (2026-07-23 sera — gate chiuso codice)
+
+| Modulo | `app/` | parity N=N | PHPStan L10 `app/` | status |
+|---|---|---|---|---|
+| Customer | OK | OK | **0** | `false` |
+| WorkOrder | OK | OK | **0** | `false` |
+| Intervention | OK | OK | **0** | `false` |
+| Quotation | OK | OK | **0** | `false` |
+| Signature | OK | OK | **0** | `false` |
+| Vehicle | OK | OK | **0** | `false` |
+| Document | OK | OK | **0** | `false` |
+| AiAssistant | OK | OK | **0** | `false` |
+
+**Prossimo (solo umano):** enable selettivo `modules_statuses` + Pest + smoke FO. Mai enable senza ordine. Dettaglio: [wave1-reshape.md](./wave1-reshape.md).

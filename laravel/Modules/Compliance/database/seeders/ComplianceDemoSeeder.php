@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Compliance\Database\Seeders;
 
-use App\Models\User;
 use Carbon\CarbonImmutable;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
@@ -16,6 +15,7 @@ use Modules\Compliance\Models\Equipment;
 use Modules\Compliance\Models\Subcontractor;
 use Modules\Compliance\Models\WorkOrderChangeOrder;
 use Modules\Customer\Models\Customer;
+use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderStatus;
 

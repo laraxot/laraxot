@@ -8,12 +8,15 @@ use Illuminate\Support\Facades\Mail;
 use Modules\TimberBilling\Mail\TimberInvoiceMail;
 use Modules\TimberBilling\Models\TimberInvoice;
 use RuntimeException;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Invia via email al cliente il documento fiscale con il PDF in allegato.
  */
 final class SendTimberInvoiceByEmailAction
 {
+    use QueueableAction;
+
     public function __construct(
         private readonly GenerateTimberInvoicePdfAction $generatePdf,
     ) {}

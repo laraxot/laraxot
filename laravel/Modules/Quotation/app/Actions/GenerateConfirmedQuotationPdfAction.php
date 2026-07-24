@@ -4,13 +4,18 @@ declare(strict_types=1);
 
 namespace Modules\Quotation\Actions;
 
-use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\DB;
 use Modules\Customer\Models\Customer;
+use Modules\Quotation\Import\QuotationPdfRenderer;
 use Modules\Quotation\Models\Quotation;
+use Spatie\QueueableAction\QueueableAction;
 
 final class GenerateConfirmedQuotationPdfAction
 {
+    use QueueableAction;
+
+    public function __construct(private readonly QuotationPdfRenderer $pdfRenderer) {}
+
     public function execute(Quotation $quotation): string
     {
         $quotation->loadMissing(['items']);
@@ -24,10 +29,10 @@ final class GenerateConfirmedQuotationPdfAction
             $workOrderCode = DB::table('work_orders')->where('id', $quotation->work_order_id)->value('code');
         }
 
-        return Pdf::loadView('quotations::pdf.confirmed-quotation', [
+        return $this->pdfRenderer->render('quotations::pdf.confirmed-quotation', [
             'quotation' => $quotation,
             'customerName' => $customerName,
             'workOrderCode' => $workOrderCode,
-        ])->output();
+        ]);
     }
 }

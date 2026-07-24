@@ -34,7 +34,12 @@ trait RecordsSiteSurvey
                 Textarea::make('notes')
                     ->label(__('site_surveys.fields.notes'))
                     ->rows(4)
-                    ->default(fn (): ?string => $this->currentSiteSurvey()?->notes)
+                    ->default(function (): ?string {
+                        $survey = $this->currentSiteSurvey();
+                        $notes = $survey?->notes;
+
+                        return is_string($notes) ? $notes : null;
+                    })
                     ->helperText(__('site_surveys.actions.record_hint')),
 
                 Repeater::make('attachments')

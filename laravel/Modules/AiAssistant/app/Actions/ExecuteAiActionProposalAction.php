@@ -22,7 +22,7 @@ use Modules\Intervention\Actions\StopTimePunchAction;
 use Modules\Intervention\Actions\UpsertDailyNoteForUserAction;
 use Modules\Intervention\Models\Intervention;
 use Modules\Inventory\Actions\CreateInventoryMovementAction;
-use Modules\Inventory\Queries\GetStockSnapshotQuery;
+use Modules\Inventory\Actions\GetStockSnapshotAction;
 use Modules\Inventory\Models\InventoryMovement;
 use Modules\Platform\Settings\SettingsRepository;
 use Modules\Production\Actions\AdvanceProductionPhaseAction;
@@ -40,10 +40,13 @@ use Modules\WhatsApp\Models\WhatsAppMessage;
 use Modules\WorkOrder\Actions\AddWorkOrderActivityAction;
 use Modules\WorkOrder\Actions\ChangeWorkOrderStatusByCodeAction;
 use Modules\WorkOrder\Models\WorkOrder;
+use Spatie\QueueableAction\QueueableAction;
 use Throwable;
 
 final class ExecuteAiActionProposalAction
 {
+    use QueueableAction;
+
     /**
      * @return array<string, mixed>
      */
@@ -509,6 +512,13 @@ final class ExecuteAiActionProposalAction
             return ['ok' => false, 'error' => 'intervention_id/outcome_code mancanti.'];
         }
 
+        if (! in_array($outcomeCode, ['completed', 'quotation', 'suspended'], true)) {
+            return ['ok' => false, 'error' => 'outcome_code non valido.'];
+        }
+
+        /** @var 'completed'|'quotation'|'suspended' $outcomeCodeTyped */
+        $outcomeCodeTyped = $outcomeCode;
+
         /** @var Intervention $intervention */
         $intervention = Intervention::query()->findOrFail($interventionId);
         Gate::authorize('update', $intervention);
@@ -519,7 +529,7 @@ final class ExecuteAiActionProposalAction
             travelKm: $travelKm,
             travelMinutes: $travelMinutes,
             notes: is_string($notes) ? $notes : null,
-            outcomeCode: $outcomeCode,
+            outcomeCode: $outcomeCodeTyped,
         );
 
         return [
@@ -736,8 +746,8 @@ final class ExecuteAiActionProposalAction
         return [
             'ok' => true,
             'production_order_id' => $order->id,
-            'code' => (string) $order->code,
-            'status' => (string) $order->status,
+            'code' => (string) data_get($order, 'code', ''),
+            'status' => (string) data_get($order, 'status', ''),
         ];
     }
 
@@ -762,9 +772,9 @@ final class ExecuteAiActionProposalAction
         return [
             'ok' => true,
             'production_phase_id' => $updated->id,
-            'status' => (string) $updated->status,
-            'started_at' => $updated->started_at,
-            'completed_at' => $updated->completed_at,
+            'status' => (string) data_get($updated, 'status', ''),
+            'started_at' => data_get($updated, 'started_at'),
+            'completed_at' => data_get($updated, 'completed_at'),
         ];
     }
 
@@ -925,7 +935,7 @@ final class ExecuteAiActionProposalAction
         return [
             'ok' => true,
             'compliance_document_id' => $document->id,
-            'type' => $document->type,
+            'type' => (string) data_get($document, 'type', ''),
         ];
     }
 
@@ -989,7 +999,7 @@ final class ExecuteAiActionProposalAction
             'ok' => true,
             'work_order_id' => $workOrderId,
             'compliance_document_id' => $document->id,
-            'type' => $document->type,
+            'type' => (string) data_get($document, 'type', ''),
         ];
     }
 
@@ -1017,7 +1027,7 @@ final class ExecuteAiActionProposalAction
         return [
             'ok' => true,
             'tender_opportunity_id' => $opportunity->id,
-            'status' => $opportunity->status,
+            'status' => (string) data_get($opportunity, 'status', ''),
         ];
     }
 
@@ -1039,7 +1049,7 @@ final class ExecuteAiActionProposalAction
         return [
             'ok' => true,
             'public_procurement_contract_id' => $contract->id,
-            'work_order_id' => $contract->work_order_id,
+            'work_order_id' => data_get($contract, 'work_order_id'),
         ];
     }
 
@@ -1063,20 +1073,22 @@ final class ExecuteAiActionProposalAction
                 continue;
             }
 
-            $description = $this->payloadNullableString($item, 'description') ?? '';
+            $itemPayload = $this->payloadOfArray($item);
+
+            $description = $this->payloadNullableString($itemPayload, 'description') ?? '';
             if (trim($description) === '') {
                 continue;
             }
 
-            $quantity = $this->payloadNullableFloat($item, 'planned_quantity') ?? $this->payloadNullableFloat($item, 'quantity') ?? 0.0;
-            $unitPrice = $this->payloadNullableFloat($item, 'unit_price') ?? 0.0;
+            $quantity = $this->payloadNullableFloat($itemPayload, 'planned_quantity') ?? $this->payloadNullableFloat($itemPayload, 'quantity') ?? 0.0;
+            $unitPrice = $this->payloadNullableFloat($itemPayload, 'unit_price') ?? 0.0;
 
             PublicProcurementPriceItem::query()->create([
                 'public_procurement_contract_id' => $contract->id,
-                'code' => $this->payloadNullableString($item, 'code'),
-                'category' => $this->payloadNullableString($item, 'category'),
+                'code' => $this->payloadNullableString($itemPayload, 'code'),
+                'category' => $this->payloadNullableString($itemPayload, 'category'),
                 'description' => $description,
-                'unit' => $this->payloadNullableString($item, 'unit') ?? 'cad',
+                'unit' => $this->payloadNullableString($itemPayload, 'unit') ?? 'cad',
                 'planned_quantity' => $quantity,
                 'unit_price' => $unitPrice,
                 'planned_total' => round($quantity * $unitPrice, 2),
@@ -1129,6 +1141,24 @@ final class ExecuteAiActionProposalAction
             return [];
         }
 
+        $payload = [];
+        foreach ($rawPayload as $key => $value) {
+            if (! is_string($key)) {
+                continue;
+            }
+
+            $payload[$key] = $value;
+        }
+
+        return $payload;
+    }
+
+    /**
+     * @param  array<mixed, mixed>  $rawPayload
+     * @return array<string, mixed>
+     */
+    private function payloadOfArray(array $rawPayload): array
+    {
         $payload = [];
         foreach ($rawPayload as $key => $value) {
             if (! is_string($key)) {
@@ -1263,7 +1293,7 @@ final class ExecuteAiActionProposalAction
 
     private function ensureEnoughStock(int $productId, int $warehouseId, int $quantity): ?string
     {
-        $snapshot = app(GetStockSnapshotQuery::class)->execute($productId, $warehouseId);
+        $snapshot = app(GetStockSnapshotAction::class)->execute($productId, $warehouseId);
         $available = (int) ($snapshot['aggregate'] ?? 0);
 
         if ($available < $quantity) {

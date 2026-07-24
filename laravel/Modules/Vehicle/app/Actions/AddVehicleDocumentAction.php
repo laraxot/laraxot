@@ -7,13 +7,15 @@ namespace Modules\Vehicle\Actions;
 use Modules\Document\Actions\CreateMediaFromStoredFileAction;
 use Modules\Vehicle\Models\Vehicle;
 use Modules\Vehicle\Models\VehicleDocument;
+use Spatie\QueueableAction\QueueableAction;
 
-final readonly class AddVehicleDocumentAction
+final class AddVehicleDocumentAction
 {
+    use QueueableAction;
+
     public function __construct(
         private CreateMediaFromStoredFileAction $createMediaFromStoredFile,
-    ) {
-    }
+    ) {}
 
     public function execute(
         Vehicle $vehicle,
@@ -40,4 +42,3 @@ final readonly class AddVehicleDocumentAction
         return $link;
     }
 }
-

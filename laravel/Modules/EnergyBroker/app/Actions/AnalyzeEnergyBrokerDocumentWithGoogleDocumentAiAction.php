@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace Modules\EnergyBroker\Actions;
 
 use Illuminate\Support\Facades\Http;
+use Spatie\QueueableAction\QueueableAction;
 
 final class AnalyzeEnergyBrokerDocumentWithGoogleDocumentAiAction
 {
+    use QueueableAction;
+
     /**
      * @return array{provider: string, text: string, pages: int, raw_response: array<string, mixed>}
      */
@@ -51,7 +54,7 @@ final class AnalyzeEnergyBrokerDocumentWithGoogleDocumentAiAction
             ]);
 
         if (! $response->successful()) {
-            throw new \RuntimeException('Errore Google Document AI: ' . mb_substr($response->body(), 0, 500));
+            throw new \RuntimeException('Errore Google Document AI: '.mb_substr($response->body(), 0, 500));
         }
 
         $decoded = $response->json();
@@ -105,7 +108,7 @@ final class AnalyzeEnergyBrokerDocumentWithGoogleDocumentAiAction
             ]);
 
         if (! $response->successful()) {
-            throw new \RuntimeException('Errore OAuth Google Document AI: ' . mb_substr($response->body(), 0, 500));
+            throw new \RuntimeException('Errore OAuth Google Document AI: '.mb_substr($response->body(), 0, 500));
         }
 
         $accessToken = trim((string) data_get($response->json(), 'access_token', ''));
@@ -132,14 +135,14 @@ final class AnalyzeEnergyBrokerDocumentWithGoogleDocumentAiAction
             'exp' => $now + 3500,
         ], JSON_THROW_ON_ERROR));
 
-        $signingInput = $header . '.' . $payload;
+        $signingInput = $header.'.'.$payload;
         $signature = '';
         $didSign = openssl_sign($signingInput, $signature, $privateKey, OPENSSL_ALGO_SHA256);
         if (! $didSign) {
             throw new \RuntimeException('Impossibile firmare la richiesta Google Document AI.');
         }
 
-        return $signingInput . '.' . $this->base64UrlEncode($signature);
+        return $signingInput.'.'.$this->base64UrlEncode($signature);
     }
 
     private function base64UrlEncode(string $value): string

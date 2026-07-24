@@ -6,10 +6,16 @@ namespace Modules\Customer\Lookup;
 
 use Illuminate\Support\Facades\Http;
 
+use function Safe\preg_match;
+use function Safe\preg_replace;
+
 final class ViesCompanyLookupProvider implements CompanyLookupProviderInterface
 {
     private const ENDPOINT = 'https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/';
 
+    /**
+     * @return list<array<string, mixed>>
+     */
     public function search(string $query): array
     {
         $vat = $this->extractItalianVat($query);
@@ -60,28 +66,41 @@ final class ViesCompanyLookupProvider implements CompanyLookupProviderInterface
 
     private function extractItalianVat(string $query): ?string
     {
-        $normalized = preg_replace('/\s+/', '', $query) ?? '';
-        if (preg_match('/(?:IT)?(\d{11})/i', $normalized, $matches) === 1) {
+        $normalized = preg_replace('/\s+/', '', $query);
+        $matches = [];
+        if (preg_match('/(?:IT)?(\d{11})/i', $normalized, $matches) === 1
+            && isset($matches[1])
+            && is_string($matches[1])
+        ) {
             return $matches[1];
         }
 
         return null;
     }
 
+    /**
+     * @return array{0: ?string, 1: ?string, 2: ?string, 3: ?string}
+     */
     private function parseAddress(string $address): array
     {
-        $flat = trim((string) preg_replace('/\s+/', ' ', str_replace(["\n", "\r"], ' ', $address)));
+        $flat = trim(preg_replace('/\s+/', ' ', str_replace(["\n", "\r"], ' ', $address)));
         if ($flat === '') {
             return [null, null, null, null];
         }
 
+        $m = [];
         if (preg_match('/^(.*?)\s(\d{5})\s(.+?)(?:\s([A-Z]{2}))?$/', $flat, $m) === 1) {
-            $street = trim($m[1]) !== '' ? trim($m[1]) : null;
-            $postalCode = $m[2];
-            $city = trim($m[3]) !== '' ? trim($m[3]) : null;
-            $province = $m[4] ?? null;
+            $streetRaw = isset($m[1]) && is_string($m[1]) ? trim($m[1]) : '';
+            $postalCode = isset($m[2]) && is_string($m[2]) ? $m[2] : null;
+            $cityRaw = isset($m[3]) && is_string($m[3]) ? trim($m[3]) : '';
+            $province = isset($m[4]) && is_string($m[4]) ? $m[4] : null;
 
-            return [$street, $city, $postalCode, $province];
+            return [
+                $streetRaw !== '' ? $streetRaw : null,
+                $cityRaw !== '' ? $cityRaw : null,
+                $postalCode,
+                $province,
+            ];
         }
 
         return [$flat, null, null, null];

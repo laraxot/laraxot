@@ -4,11 +4,24 @@ declare(strict_types=1);
 
 namespace Modules\AiAssistant\Models;
 
-use Modules\User\Models\User;
-use Modules\Xot\Models\XotBaseModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
+use Modules\User\Models\User;
 
-final class AiToolLog extends XotBaseModel
+/**
+ * @property int $id
+ * @property int $ai_thread_id
+ * @property int|null $ai_action_proposal_id
+ * @property int|null $user_id
+ * @property string $tool_name
+ * @property array<string, mixed>|null $arguments
+ * @property array<string, mixed>|null $response
+ * @property string $status
+ * @property string|null $error
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ */
+final class AiToolLog extends BaseModel
 {
     protected $table = 'ai_tool_logs';
 
@@ -42,4 +55,3 @@ final class AiToolLog extends XotBaseModel
         return $this->belongsTo(User::class);
     }
 }
-

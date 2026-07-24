@@ -13,10 +13,10 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
+use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
@@ -25,23 +25,24 @@ use Modules\Billing\Filament\Resources\DeliveryNoteResource\RelationManagers\Lin
 use Modules\Billing\Models\DeliveryNote;
 use Modules\Billing\Models\Supplier;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 /**
  * DDT ricevuti: quello che il fornitore ha davvero consegnato, cioe' il metro
  * su cui si misura quello che poi fattura.
  */
-final class DeliveryNoteResource extends Resource
+final class DeliveryNoteResource extends XotBaseResource
 {
     protected static ?string $model = DeliveryNote::class;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-truck';
 
-    public static function getNavigationSort(): ?int
+    public static function getNavigationSort(): int
     {
         return 2;
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('suppliers.navigation');
     }
@@ -63,14 +64,17 @@ final class DeliveryNoteResource extends Resource
     {
         return Supplier::query()
             ->orderBy('legal_name')
-            ->pluck('legal_name', 'id')
-            ->map(static fn (mixed $name): string => (string) $name)
+            ->get(['id', 'legal_name'])
+            ->mapWithKeys(static fn (Supplier $supplier): array => [$supplier->id => $supplier->legal_name])
             ->all();
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<int, Component>
+     */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
@@ -107,7 +111,7 @@ final class DeliveryNoteResource extends Resource
                         ->columnSpanFull(),
                 ])
                 ->columns(2),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -116,7 +120,7 @@ final class DeliveryNoteResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('number')
                     ->label(__('suppliers.fields.number'))
-                    ->weight(\Filament\Support\Enums\FontWeight::Bold)
+                    ->weight(FontWeight::Bold)
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('supplier.legal_name')

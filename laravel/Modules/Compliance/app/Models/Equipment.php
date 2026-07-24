@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Compliance\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Models\XotBaseModel;
 
-final class Equipment extends Model
+final class Equipment extends XotBaseModel
 {
     use SoftDeletes;
 

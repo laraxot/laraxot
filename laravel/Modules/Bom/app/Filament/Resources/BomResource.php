@@ -11,9 +11,8 @@ use Filament\Actions\ViewAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Bom\Filament\Resources\BomResource\Pages\CreateBom;
@@ -23,8 +22,9 @@ use Modules\Bom\Filament\Resources\BomResource\Pages\ViewBom;
 use Modules\Bom\Filament\Resources\BomResource\RelationManagers\BomItemsRelationManager;
 use Modules\Bom\Models\Bom;
 use Modules\Catalog\Models\Product;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class BomResource extends Resource
+final class BomResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 
@@ -32,47 +32,50 @@ final class BomResource extends Resource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-list-bullet';
 
-    private const ACCOUNT_FEATURE_ADMIN = 'admin.bom';
+    protected const ACCOUNT_FEATURE_ADMIN = 'admin.bom';
 
-    private const ACCOUNT_FEATURE_OPERATOR = null;
+    protected const ACCOUNT_FEATURE_OPERATOR = null;
 
-    private const ACCOUNT_FEATURE_OPERATOR_DEFAULT = false;
+    protected const ACCOUNT_FEATURE_OPERATOR_DEFAULT = false;
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
-        return 'Produzione';
+        return __('boms.navigation');
     }
 
     public static function getModelLabel(): string
     {
-        return 'Distinta base';
+        return __('boms.bom');
     }
 
     public static function getPluralModelLabel(): string
     {
-        return 'Distinte base';
+        return __('boms.boms');
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<int, Component>
+     */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
                     Select::make('product_id')
-                        ->label('Prodotto padre')
+                        ->label(__('boms.fields.product_id'))
                         ->options(fn () => Product::query()->orderBy('name')->pluck('name', 'id')->all())
                         ->searchable()
                         ->preload()
                         ->required(),
                     TextInput::make('name')
-                        ->label('Nome/versione')
+                        ->label(__('boms.fields.name'))
                         ->maxLength(255),
                     Toggle::make('is_active')
-                        ->label('Attiva')
+                        ->label(__('boms.fields.is_active'))
                         ->default(true),
                 ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -80,9 +83,9 @@ final class BomResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('id')->label('#')->sortable(),
-                Tables\Columns\TextColumn::make('product.name')->label('Prodotto')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('name')->label('Nome')->toggleable(),
-                Tables\Columns\IconColumn::make('is_active')->label('Attiva')->boolean()->sortable(),
+                Tables\Columns\TextColumn::make('product.name')->label(__('boms.fields.product_id'))->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('name')->label(__('boms.fields.name'))->toggleable(),
+                Tables\Columns\IconColumn::make('is_active')->label(__('boms.fields.is_active'))->boolean()->sortable(),
                 Tables\Columns\TextColumn::make('updated_at')->dateTime()->toggleable(isToggledHiddenByDefault: true),
             ])
             ->defaultSort('id', 'desc')
@@ -112,4 +115,3 @@ final class BomResource extends Resource
         ];
     }
 }
-

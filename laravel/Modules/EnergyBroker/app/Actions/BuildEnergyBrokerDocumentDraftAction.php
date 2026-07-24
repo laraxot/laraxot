@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace Modules\EnergyBroker\Actions;
 
 use Carbon\CarbonImmutable;
+use Spatie\QueueableAction\QueueableAction;
 
 final class BuildEnergyBrokerDocumentDraftAction
 {
+    use QueueableAction;
+
     /**
      * @return array<string, mixed>
      */
@@ -71,7 +74,7 @@ final class BuildEnergyBrokerDocumentDraftAction
 
     private function detectDocumentType(string $filename, string $text): string
     {
-        $haystack = mb_strtoupper($filename . "\n" . $text);
+        $haystack = mb_strtoupper($filename."\n".$text);
 
         if (str_contains($haystack, 'PROPOSTA DI CONTRATTO') || str_contains($haystack, 'OPERAZIONE DI SWITCH')) {
             return 'supply_contract';
@@ -155,7 +158,7 @@ final class BuildEnergyBrokerDocumentDraftAction
 
     private function detectCurrentSupplier(string $filename, string $text): ?string
     {
-        $haystack = mb_strtoupper($filename . "\n" . $text);
+        $haystack = mb_strtoupper($filename."\n".$text);
 
         return match (true) {
             str_contains($haystack, 'DUFERCO') => 'DUFERCO ENERGIA',

@@ -5,9 +5,6 @@ declare(strict_types=1);
 namespace Modules\WorkOrder\Filament\Resources\WorkOrderResource\RelationManagers;
 
 use Carbon\CarbonImmutable;
-use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
 use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -16,26 +13,30 @@ use Filament\Actions\ForceDeleteAction;
 use Filament\Actions\ForceDeleteBulkAction;
 use Filament\Actions\RestoreAction;
 use Filament\Actions\RestoreBulkAction;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\WorkOrder\Actions\AddWorkOrderActivityAction;
+use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderActivity;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class ActivitiesRelationManager extends RelationManager
+final class ActivitiesRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'activities';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('work_orders.activities');
     }
 
-    public function form(Schema $schema): Schema
+    public function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Select::make('type')
                 ->label(__('work_orders.fields.type'))
                 ->options([
@@ -50,7 +51,7 @@ final class ActivitiesRelationManager extends RelationManager
                 ->columnSpanFull(),
             DateTimePicker::make('occurred_at')
                 ->label(__('work_orders.fields.occurred_at')),
-        ])->columns(2);
+        ];
     }
 
     public function table(Table $table): Table
@@ -76,14 +77,14 @@ final class ActivitiesRelationManager extends RelationManager
                             ? CarbonImmutable::parse((string) $data['occurred_at'])
                             : null;
 
-                        /** @var \Modules\WorkOrder\Models\WorkOrder $workOrder */
+                        /** @var WorkOrder $workOrder */
                         $workOrder = $this->getOwnerRecord();
 
                         return app(AddWorkOrderActivityAction::class)->execute(
                             workOrderId: (int) $workOrder->id,
                             type: (string) $data['type'],
                             body: (string) $data['body'],
-                            createdByUserId: Auth::id(),
+                            createdByUserId: (($authId = Auth::id()) !== null ? (int) $authId : null),
                             occurredAt: $occurredAt,
                         );
                     }),
@@ -101,4 +102,3 @@ final class ActivitiesRelationManager extends RelationManager
             ]);
     }
 }
-

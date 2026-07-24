@@ -5,17 +5,19 @@ declare(strict_types=1);
 namespace Modules\Email\AI;
 
 use Illuminate\Support\Facades\Http;
-use Modules\Email\Settings\EmailSettings;
 use Modules\Email\Models\EmailMessage;
+use Modules\Email\Settings\EmailSettings;
+use Safe\Exceptions\JsonException;
+
+use function Safe\json_decode;
+use function Safe\json_encode;
 
 final readonly class OpenAiEmailMessageClassifier implements EmailMessageClassifierInterface
 {
-    public function __construct(private EmailSettings $settings)
-    {
-    }
+    public function __construct(private EmailSettings $settings) {}
 
     /**
-     * @param array<string, mixed> $context
+     * @param  array<string, mixed>  $context
      * @return array<string, mixed>
      */
     public function classify(EmailMessage $message, array $context): array
@@ -42,7 +44,7 @@ final readonly class OpenAiEmailMessageClassifier implements EmailMessageClassif
             ]);
 
         if (! $response->successful()) {
-            return $this->fallbackResult($message, $context, 'openai_error: ' . mb_substr($response->body(), 0, 300));
+            return $this->fallbackResult($message, $context, 'openai_error: '.mb_substr($response->body(), 0, 300));
         }
 
         $parsed = $this->parseJsonObject($this->extractOutputText($response->json()));
@@ -53,7 +55,7 @@ final readonly class OpenAiEmailMessageClassifier implements EmailMessageClassif
     }
 
     /**
-     * @param array<string, mixed> $context
+     * @param  array<string, mixed>  $context
      */
     private function prompt(EmailMessage $message, array $context): string
     {
@@ -144,14 +146,29 @@ PROMPT;
             return [];
         }
 
-        $decoded = json_decode(substr($trimmed, $start, $end - $start + 1), true);
+        try {
+            $decoded = json_decode(substr($trimmed, $start, $end - $start + 1), true);
+        } catch (JsonException) {
+            return [];
+        }
 
-        return is_array($decoded) ? $decoded : [];
+        if (! is_array($decoded)) {
+            return [];
+        }
+
+        $result = [];
+        foreach ($decoded as $key => $value) {
+            if (is_string($key)) {
+                $result[$key] = $value;
+            }
+        }
+
+        return $result;
     }
 
     /**
-     * @param array<string, mixed> $parsed
-     * @param array<string, mixed> $context
+     * @param  array<string, mixed>  $parsed
+     * @param  array<string, mixed>  $context
      * @return array<string, mixed>
      */
     private function normalizeResult(array $parsed, EmailMessage $message, array $context): array
@@ -184,7 +201,7 @@ PROMPT;
     }
 
     /**
-     * @param array<string, mixed> $context
+     * @param  array<string, mixed>  $context
      * @return array<string, mixed>
      */
     private function fallbackResult(EmailMessage $message, array $context, string $reason): array

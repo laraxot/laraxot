@@ -24,12 +24,12 @@ class ActivityServiceProvider extends XotBaseServiceProvider
     /**
      * Directory del modulo.
      */
-    protected string $module_dir = __DIR__;
+    protected string $moduleDir = __DIR__;
 
     /**
      * Namespace del modulo.
      */
-    protected string $module_ns = __NAMESPACE__;
+    protected string $moduleNs = __NAMESPACE__;
 
     /**
      * Boot del service provider.

@@ -11,8 +11,9 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Filament\Support\Enums\Width;
 use Illuminate\Support\HtmlString;
-use Modules\Bom\Models\Bom;
 use Modules\Bom\Filament\Resources\BomResource;
+use Modules\Bom\Models\Bom;
+use Modules\Bom\Models\BomItem;
 
 final class ViewBom extends ViewRecord
 {
@@ -20,7 +21,7 @@ final class ViewBom extends ViewRecord
 
     private const MAX_TREE_DEPTH = 8;
 
-    public function getMaxContentWidth(): Width|string|null
+    public function getMaxContentWidth(): Width
     {
         return Width::Full;
     }
@@ -33,30 +34,30 @@ final class ViewBom extends ViewRecord
         return $schema
             ->columns(1)
             ->components([
-            Section::make('Riepilogo')
-                ->columnSpanFull()
-                ->columns(2)
-                ->schema([
-                    TextEntry::make('product.name')
-                        ->label('Prodotto padre')
-                        ->placeholder('—'),
-                    TextEntry::make('name')
-                        ->label('Nome/versione')
-                        ->placeholder('—'),
-                    TextEntry::make('items_count')
-                        ->label('Componenti diretti')
-                        ->state(fn (): int => $record->items->count()),
-                ]),
-            Section::make('Albero distinta base')
-                ->columnSpanFull()
-                ->description('Vista leggibile dei componenti collegati al prodotto principale.')
-                ->schema([
-                    TextEntry::make('bom_tree')
-                        ->label('Struttura')
-                        ->state(fn (): HtmlString => new HtmlString($this->renderBomTree($record)))
-                        ->html(),
-                ]),
-        ]);
+                Section::make('Riepilogo')
+                    ->columnSpanFull()
+                    ->columns(2)
+                    ->schema([
+                        TextEntry::make('product.name')
+                            ->label('Prodotto padre')
+                            ->placeholder('—'),
+                        TextEntry::make('name')
+                            ->label('Nome/versione')
+                            ->placeholder('—'),
+                        TextEntry::make('items_count')
+                            ->label('Componenti diretti')
+                            ->state(fn (): int => $record->items->count()),
+                    ]),
+                Section::make('Albero distinta base')
+                    ->columnSpanFull()
+                    ->description('Vista leggibile dei componenti collegati al prodotto principale.')
+                    ->schema([
+                        TextEntry::make('bom_tree')
+                            ->label('Struttura')
+                            ->state(fn (): HtmlString => new HtmlString($this->renderBomTree($record)))
+                            ->html(),
+                    ]),
+            ]);
     }
 
     protected function getHeaderActions(): array
@@ -68,7 +69,8 @@ final class ViewBom extends ViewRecord
 
     private function renderBomTree(Bom $bom): string
     {
-        $rootLabel = e((string) ($bom->product?->name ?? ('Prodotto #' . $bom->product_id)));
+        $productName = $bom->product?->getAttribute('name');
+        $rootLabel = e(is_string($productName) && $productName !== '' ? $productName : ('Prodotto #'.$bom->product_id));
         $directItemsCount = $bom->items->count();
         $maxDepth = (string) self::MAX_TREE_DEPTH;
         $cache = [
@@ -117,13 +119,17 @@ HTML;
     }
 
     /**
-     * @param array<int, bool> $pathProductIds
-     * @param array<int, Bom|null> $cache
+     * @param  array<int, bool>  $pathProductIds
+     * @param  array<int, Bom|null>  $cache
      */
     private function renderBomItemsTree(Bom $bom, float $parentMultiplier, array $pathProductIds, array &$cache, int $depth): string
     {
         $items = $bom->items
-            ->sortBy(fn ($item) => mb_strtolower((string) ($item->componentProduct?->name ?? '')))
+            ->sortBy(function (BomItem $item): string {
+                $name = $item->componentProduct?->getAttribute('name');
+
+                return mb_strtolower(is_string($name) ? $name : '');
+            })
             ->values();
 
         if ($items->isEmpty()) {
@@ -133,8 +139,9 @@ HTML;
         $html = '<ul class="space-y-4">';
 
         foreach ($items as $item) {
-            $componentProductId = (int) $item->component_product_id;
-            $componentLabel = e((string) ($item->componentProduct?->name ?? ('Componente #' . $componentProductId)));
+            $componentProductId = $item->component_product_id;
+            $componentProductName = $item->componentProduct?->getAttribute('name');
+            $componentLabel = e(is_string($componentProductName) && $componentProductName !== '' ? $componentProductName : ('Componente #'.$componentProductId));
             $unitQuantity = (float) $item->quantity;
             $totalQuantity = $parentMultiplier * $unitQuantity;
             $nestedHtml = '';
@@ -159,7 +166,7 @@ HTML;
                     );
 
                     if ($childHtml !== '') {
-                        $nestedHtml = '<div class="mt-4 rounded-2xl border border-gray-200/80 bg-gray-50/80 p-4 dark:border-gray-700 dark:bg-gray-800/40">' . $childHtml . '</div>';
+                        $nestedHtml = '<div class="mt-4 rounded-2xl border border-gray-200/80 bg-gray-50/80 p-4 dark:border-gray-700 dark:bg-gray-800/40">'.$childHtml.'</div>';
                     }
                 }
             }
@@ -197,7 +204,7 @@ HTML;
     }
 
     /**
-     * @param array<int, Bom|null> $cache
+     * @param  array<int, Bom|null>  $cache
      */
     private function getActiveBomForProduct(int $productId, array &$cache): ?Bom
     {
@@ -222,4 +229,3 @@ HTML;
         return $trimmed === '' ? '0' : $trimmed;
     }
 }
-

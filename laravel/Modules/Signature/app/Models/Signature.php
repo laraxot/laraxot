@@ -4,14 +4,32 @@ declare(strict_types=1);
 
 namespace Modules\Signature\Models;
 
-use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Modules\Document\Models\Media;
+use Illuminate\Support\Carbon;
+use Modules\Signature\Database\Factories\SignatureFactory;
+use Modules\User\Models\User;
 
-final class Signature extends Model
+/**
+ * @property int $id
+ * @property string $signable_type
+ * @property int $signable_id
+ * @property int $user_id
+ * @property string|null $disk
+ * @property string|null $path
+ * @property string|null $mime_type
+ * @property Carbon|null $signed_at
+ * @property array<string, mixed>|null $payload
+ *
+ * @method static SignatureFactory factory($count = null, $state = [])
+ */
+final class Signature extends BaseModel
 {
+    /** @use HasFactory<SignatureFactory> */
+    use HasFactory;
+
     protected $table = 'signatures';
 
     /** @var array<int, string> */
@@ -26,7 +44,11 @@ final class Signature extends Model
         ];
     }
 
-    /** @return MorphTo<Model, $this> */
+    /**
+     * Generic polymorphic owner of the signature (e.g. Intervention, WorkOrder, ...).
+     *
+     * @return MorphTo<Model, $this>
+     */
     public function signable(): MorphTo
     {
         return $this->morphTo();
@@ -37,11 +59,4 @@ final class Signature extends Model
     {
         return $this->belongsTo(User::class);
     }
-
-    /** @return BelongsTo<Media, $this> */
-    public function media(): BelongsTo
-    {
-        return $this->belongsTo(Media::class);
-    }
 }
-

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Modules\PublicProcurement\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as AuthUser;
 
 final class PublicProcurementPolicy
 {
@@ -20,7 +20,7 @@ final class PublicProcurementPolicy
 
     public function view(AuthUser $authUser, Model $record): bool
     {
-        return $authUser->can('View:' . class_basename($record))
+        return $authUser->can('View:'.class_basename($record))
             || $authUser->can('View:PublicProcurementContract');
     }
 
@@ -32,13 +32,13 @@ final class PublicProcurementPolicy
 
     public function update(AuthUser $authUser, Model $record): bool
     {
-        return $authUser->can('Update:' . class_basename($record))
+        return $authUser->can('Update:'.class_basename($record))
             || $authUser->can('Update:PublicProcurementContract');
     }
 
     public function delete(AuthUser $authUser, Model $record): bool
     {
-        return $authUser->can('Delete:' . class_basename($record))
+        return $authUser->can('Delete:'.class_basename($record))
             || $authUser->can('Delete:PublicProcurementContract');
     }
 }

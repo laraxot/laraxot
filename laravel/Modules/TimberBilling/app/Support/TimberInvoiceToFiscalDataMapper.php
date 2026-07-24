@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Modules\TimberBilling\Support;
 
 use Illuminate\Support\Carbon;
-use Modules\Fiscal\Domain\DTO\FiscalBuyer;
-use Modules\Fiscal\Domain\DTO\FiscalInvoiceData;
-use Modules\Fiscal\Domain\DTO\FiscalInvoiceLine;
-use Modules\Fiscal\Domain\DTO\FiscalSeller;
+use Modules\Fiscal\Datas\FiscalBuyer;
+use Modules\Fiscal\Datas\FiscalInvoiceData;
+use Modules\Fiscal\Datas\FiscalInvoiceLine;
+use Modules\Fiscal\Datas\FiscalSeller;
 use Modules\TimberBilling\Models\TimberInvoice;
 
 /**
@@ -85,22 +85,18 @@ final class TimberInvoiceToFiscalDataMapper
     {
         $customer = $invoice->customer;
 
-        $name = ($customer !== null && is_string($customer->business_name) && $customer->business_name !== '')
-            ? $customer->business_name
+        $name = ($customer !== null && is_string($customer->legal_name) && $customer->legal_name !== '')
+            ? $customer->legal_name
             : '';
 
         $vatNumber = ($customer !== null && is_string($customer->vat_number) && $customer->vat_number !== '')
             ? $customer->vat_number
             : null;
 
-        $sdiRecipientCode = ($customer !== null && is_string($customer->sdi_recipient_code) && $customer->sdi_recipient_code !== '')
-            ? $customer->sdi_recipient_code
-            : null;
-
         return new FiscalBuyer(
             name: $name,
             vatNumber: $vatNumber,
-            sdiRecipientCode: $sdiRecipientCode,
+            sdiRecipientCode: null,
         );
     }
 }

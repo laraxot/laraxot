@@ -14,24 +14,24 @@ use Filament\Actions\RestoreAction;
 use Filament\Actions\RestoreBulkAction;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Components\Grid;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class CustomerSitesRelationManager extends RelationManager
+final class CustomerSitesRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'sites';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('customers.sites');
     }
 
-    public function form(Schema $schema): Schema
+    public function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             TextInput::make('name')
                 ->label(__('customers.fields.name'))
                 ->maxLength(255),
@@ -46,7 +46,7 @@ final class CustomerSitesRelationManager extends RelationManager
             TextInput::make('email')->label(__('customers.fields.email'))->email()->maxLength(255),
             TextInput::make('phone')->label(__('customers.fields.phone'))->tel()->maxLength(255),
             Textarea::make('notes')->label(__('customers.fields.notes'))->columnSpanFull(),
-        ])->columns(2);
+        ];
     }
 
     public function table(Table $table): Table

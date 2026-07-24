@@ -7,9 +7,12 @@ namespace Modules\Document\Actions;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Modules\Document\Models\Media;
+use Spatie\QueueableAction\QueueableAction;
 
 final class CreateMediaFromStoredFileAction
 {
+    use QueueableAction;
+
     /**
      * @param  array<string, mixed>  $meta
      */
@@ -42,4 +45,3 @@ final class CreateMediaFromStoredFileAction
         return $media;
     }
 }
-

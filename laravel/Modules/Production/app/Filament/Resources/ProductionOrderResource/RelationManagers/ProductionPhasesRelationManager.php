@@ -10,19 +10,22 @@ use Filament\Actions\EditAction;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
-use App\Models\User;
+use Modules\User\Models\User;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class ProductionPhasesRelationManager extends RelationManager
+final class ProductionPhasesRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'phases';
 
-    public function form(Schema $schema): Schema
+    /**
+     * @return array<int, Component>
+     */
+    public function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             TextInput::make('name')
                 ->label(__('production.fields.name'))
                 ->required()
@@ -46,7 +49,7 @@ final class ProductionPhasesRelationManager extends RelationManager
                 ->searchable(),
             DateTimePicker::make('started_at')->label(__('production.fields.started_at')),
             DateTimePicker::make('completed_at')->label(__('production.fields.completed_at')),
-        ]);
+        ];
     }
 
     public function table(Table $table): Table
@@ -68,4 +71,3 @@ final class ProductionPhasesRelationManager extends RelationManager
             ]);
     }
 }
-

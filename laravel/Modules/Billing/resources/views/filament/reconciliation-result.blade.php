@@ -5,7 +5,7 @@
 --}}
 @php
     /** @var \Modules\Billing\Models\SupplierInvoice $invoice */
-    /** @var array<int, \Modules\Billing\Domain\DTO\ReconciliationDiscrepancy> $discrepancies */
+    /** @var array<int, \Modules\Billing\Datas\ReconciliationDiscrepancy> $discrepancies */
     $statusCode = (string) $invoice->status_code;
     $overcharge = collect($discrepancies)
         ->filter(fn ($discrepancy) => $discrepancy->amountDifference > 0)

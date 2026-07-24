@@ -6,6 +6,8 @@ namespace Modules\Customer\Support;
 
 use Modules\Customer\Models\Customer;
 
+use function Safe\preg_split;
+
 final class CustomerSimilarity
 {
     public static function find(string $name, float $threshold = 80.0): ?Customer
@@ -30,7 +32,7 @@ final class CustomerSimilarity
 
         $words = array_values(array_filter(
             preg_split('/\s+/', $needle) ?: [],
-            static fn (string $word): bool => mb_strlen($word) >= 4,
+            static fn (mixed $word): bool => is_string($word) && mb_strlen($word) >= 4,
         ));
         if ($words === []) {
             return null;
@@ -38,6 +40,9 @@ final class CustomerSimilarity
 
         $query = Customer::query();
         foreach ($words as $word) {
+            if (! is_string($word)) {
+                continue;
+            }
             $query->orWhereRaw('LOWER(legal_name) LIKE ?', ['%'.self::escape($word).'%']);
         }
 

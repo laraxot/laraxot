@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Modules\Document\Actions\CreateMediaFromStoredFileAction;
 use Modules\Intervention\Models\Intervention;
 use Modules\Signature\Actions\StoreSignatureForModelAction;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Attaches the photos and the customer's finger signature captured alongside a
@@ -18,6 +19,8 @@ use Modules\Signature\Actions\StoreSignatureForModelAction;
  */
 final class SaveInterventionReportAttachmentsAction
 {
+    use QueueableAction;
+
     /**
      * @param  list<string>  $photoPaths  Paths already stored on the public disk.
      * @return array{photos: int, signed: bool}

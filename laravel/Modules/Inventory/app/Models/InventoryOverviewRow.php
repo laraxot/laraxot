@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Inventory\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Models\XotBaseModel;
 
-final class InventoryOverviewRow extends Model
+final class InventoryOverviewRow extends XotBaseModel
 {
     protected $table = 'inventory_overview_rows';
 

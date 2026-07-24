@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Actions;
 
-use Modules\Intervention\Payments\ReportPaymentGatewayInterface;
-use Modules\Intervention\Domain\Exceptions\ReportPaymentNotAvailableException;
+use Modules\Intervention\Contracts\ReportPaymentGatewayContract;
+use Modules\Intervention\Exceptions\ReportPaymentNotAvailableException;
 use Modules\Intervention\Models\Intervention;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Starts a card payment for an intervention report and returns the hosted
@@ -14,7 +15,9 @@ use Modules\Intervention\Models\Intervention;
  */
 final class CreateInterventionReportCheckoutAction
 {
-    public function __construct(private readonly ReportPaymentGatewayInterface $gateway) {}
+    use QueueableAction;
+
+    public function __construct(private readonly ReportPaymentGatewayContract $gateway) {}
 
     public function execute(Intervention $intervention, string $successUrl, string $cancelUrl): string
     {

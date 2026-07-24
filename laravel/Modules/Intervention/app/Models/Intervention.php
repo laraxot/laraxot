@@ -4,23 +4,72 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Models;
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Customer;
 use Modules\Document\Models\Media;
+use Modules\Intervention\Database\Factories\InterventionFactory;
 use Modules\Intervention\Support\DailyNoteHtml;
 use Modules\Inventory\Models\InventoryMovement;
 use Modules\Signature\Models\Signature;
 use Modules\Signature\Models\Sketch;
+use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
 
-final class Intervention extends Model
+/**
+ * @property int $id
+ * @property int|null $work_order_id
+ * @property int|null $customer_id
+ * @property int|null $performed_by_user_id
+ * @property int|null $validated_by_user_id
+ * @property Carbon|null $scheduled_at
+ * @property Carbon|null $started_at
+ * @property Carbon|null $ended_at
+ * @property int|null $travel_km
+ * @property int|null $travel_minutes
+ * @property int|null $work_minutes
+ * @property numeric-string|float|null $amount
+ * @property numeric-string|float|null $callout_fee
+ * @property numeric-string|float|null $materials_total
+ * @property numeric-string|float|null $total_amount
+ * @property string|null $report_payment_session_id
+ * @property Carbon|null $report_paid_at
+ * @property string|null $notes
+ * @property string|null $notes_html
+ * @property string|null $google_event_id
+ * @property string|null $google_calendar_id
+ * @property string|null $google_sync_status
+ * @property Carbon|null $google_synced_at
+ * @property string|null $outcome_code
+ * @property Carbon|null $validated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
+ * @property-read Collection<int, InventoryMovement> $inventoryMovements
+ * @property-read Collection<int, InterventionMaterialLine> $materialLines
+ * @property-read Collection<int, User> $assignedUsers
+ * @property-read Collection<int, TimePunch> $timePunches
+ * @property-read Collection<int, IssueReport> $issueReports
+ * @property-read Collection<int, Media> $media
+ * @property-read Collection<int, Signature> $signatures
+ * @property-read Collection<int, Sketch> $sketches
+ * @property-read User|null $performedBy
+ * @property-read WorkOrder|null $workOrder
+ * @property-read Customer|null $customer
+ *
+ * @method static InterventionFactory factory($count = null, $state = [])
+ */
+final class Intervention extends BaseModel
 {
+    /** @use HasFactory<InterventionFactory> */
+    use HasFactory;
+
     use SoftDeletes;
 
     protected $table = 'interventions';
@@ -35,6 +84,7 @@ final class Intervention extends Model
             'scheduled_at' => 'datetime',
             'started_at' => 'datetime',
             'ended_at' => 'datetime',
+            'travel_km' => 'integer',
             'travel_minutes' => 'integer',
             'work_minutes' => 'integer',
             'amount' => 'decimal:2',

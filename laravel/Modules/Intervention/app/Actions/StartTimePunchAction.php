@@ -5,12 +5,15 @@ declare(strict_types=1);
 namespace Modules\Intervention\Actions;
 
 use Carbon\CarbonImmutable;
-use Modules\Intervention\Domain\Exceptions\OpenTimePunchAlreadyExists;
+use Modules\Intervention\Exceptions\OpenTimePunchAlreadyExists;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\TimePunch;
+use Spatie\QueueableAction\QueueableAction;
 
 final class StartTimePunchAction
 {
+    use QueueableAction;
+
     public function execute(Intervention $intervention, int $userId, ?CarbonImmutable $startedAt = null): TimePunch
     {
         $startedAt = $startedAt ?? CarbonImmutable::now();

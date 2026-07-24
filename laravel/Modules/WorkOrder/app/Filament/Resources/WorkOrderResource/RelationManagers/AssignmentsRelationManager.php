@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\WorkOrder\Filament\Resources\WorkOrderResource\RelationManagers;
 
-use App\Models\User;
 use Carbon\CarbonImmutable;
 use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
@@ -13,27 +12,29 @@ use Filament\Actions\EditAction;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Modules\User\Models\User;
 use Modules\WorkOrder\Actions\AssignUserToWorkOrderAction;
 use Modules\WorkOrder\Actions\UnassignUserFromWorkOrderAction;
+use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderAssignment;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class AssignmentsRelationManager extends RelationManager
+final class AssignmentsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'assignments';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('work_orders.assignments');
     }
 
-    public function form(Schema $schema): Schema
+    public function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Select::make('user_id')
                 ->label(__('work_orders.fields.assigned_to'))
                 ->options(fn () => User::query()
@@ -49,7 +50,7 @@ final class AssignmentsRelationManager extends RelationManager
                 ->maxLength(255),
             DateTimePicker::make('assigned_at')
                 ->label(__('work_orders.fields.assigned_at')),
-        ])->columns(2);
+        ];
     }
 
     public function table(Table $table): Table
@@ -76,14 +77,14 @@ final class AssignmentsRelationManager extends RelationManager
                             ? CarbonImmutable::parse((string) $data['assigned_at'])
                             : null;
 
-                        /** @var \Modules\WorkOrder\Models\WorkOrder $workOrder */
+                        /** @var WorkOrder $workOrder */
                         $workOrder = $this->getOwnerRecord();
 
                         return app(AssignUserToWorkOrderAction::class)->execute(
                             workOrderId: (int) $workOrder->id,
                             userId: (int) $data['user_id'],
-                            role: $data['role'] ?? null,
-                            assignedByUserId: Auth::id(),
+                            role: isset($data['role']) ? (string) $data['role'] : null,
+                            assignedByUserId: (($authId = Auth::id()) !== null ? (int) $authId : null),
                             assignedAt: $assignedAt,
                         );
                     }),
@@ -103,4 +104,3 @@ final class AssignmentsRelationManager extends RelationManager
             ]);
     }
 }
-

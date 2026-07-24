@@ -4,13 +4,25 @@ declare(strict_types=1);
 
 namespace Modules\Billing\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
+use Modules\Xot\Models\XotBaseModel;
 
 /** Documento di trasporto ricevuto dal fornitore. */
-final class DeliveryNote extends Model
+/**
+ * @property int $id
+ * @property int $supplier_id
+ * @property int|null $work_order_id
+ * @property string $number
+ * @property Carbon|null $received_on
+ * @property string|null $notes
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
+ */
+final class DeliveryNote extends XotBaseModel
 {
     use SoftDeletes;
 

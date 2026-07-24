@@ -5,7 +5,8 @@ declare(strict_types=1);
 namespace Modules\Quotation\Actions;
 
 use Modules\Catalog\Models\Product;
-use Modules\Quotation\Domain\DTO\DictatedQuotationItem;
+use Modules\Quotation\DTO\DictatedQuotationItem;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Recomputes the rule-governed line items of a quotation from the technical
@@ -15,6 +16,8 @@ use Modules\Quotation\Domain\DTO\DictatedQuotationItem;
  */
 final class ApplyTechnicalParamsToQuotationItemsAction
 {
+    use QueueableAction;
+
     /**
      * @param  list<DictatedQuotationItem>  $items
      * @param  array<string, mixed>  $params
@@ -44,7 +47,7 @@ final class ApplyTechnicalParamsToQuotationItemsAction
             $productId = (int) $product->id;
             $ruleProductIds[$productId] = true;
 
-            $condition = is_array($rule['active_when'] ?? null) ? $rule['active_when'] : [];
+            $condition = $this->stringKeyedArray($rule['active_when'] ?? null);
             if (! $this->isActive($condition, $params)) {
                 continue;
             }
@@ -55,9 +58,9 @@ final class ApplyTechnicalParamsToQuotationItemsAction
             }
 
             $ruleLines[] = new DictatedQuotationItem(
-                description: is_string($product->name) && $product->name !== '' ? $product->name : $sku,
+                description: $this->productName($product, $sku),
                 quantity: $quantity,
-                unitPrice: $product->unit_price !== null ? (float) $product->unit_price : null,
+                unitPrice: $this->productUnitPrice($product),
                 matchedProductId: $productId,
             );
         }
@@ -131,5 +134,38 @@ final class ApplyTechnicalParamsToQuotationItemsAction
     private function floatOr(mixed $value, float $default = 0.0): float
     {
         return is_numeric($value) ? (float) $value : $default;
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    private function stringKeyedArray(mixed $value): array
+    {
+        if (! is_array($value)) {
+            return [];
+        }
+
+        $result = [];
+        foreach ($value as $key => $item) {
+            if (is_string($key)) {
+                $result[$key] = $item;
+            }
+        }
+
+        return $result;
+    }
+
+    private function productName(Product $product, string $fallback): string
+    {
+        $name = $product->getAttribute('name');
+
+        return is_string($name) && $name !== '' ? $name : $fallback;
+    }
+
+    private function productUnitPrice(Product $product): ?float
+    {
+        $price = $product->getAttribute('unit_price');
+
+        return $price !== null ? (float) $price : null;
     }
 }

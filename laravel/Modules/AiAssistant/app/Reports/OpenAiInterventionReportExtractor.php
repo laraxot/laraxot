@@ -5,7 +5,10 @@ declare(strict_types=1);
 namespace Modules\AiAssistant\Reports;
 
 use Illuminate\Support\Facades\Http;
-use Modules\Intervention\AI\InterventionReportExtractorInterface;
+use Modules\Intervention\Contracts\InterventionReportExtractorContract;
+
+use function Safe\json_decode;
+use function Safe\json_encode;
 
 /**
  * Live LLM extractor: turns an operator's voice-note transcript into a loosely
@@ -13,8 +16,12 @@ use Modules\Intervention\AI\InterventionReportExtractorInterface;
  * OpenAI-compatible chat/completions API — the same provider selection as the
  * AI chat. Any failure returns an empty array; the caller normalizes it.
  */
-final class OpenAiInterventionReportExtractor implements InterventionReportExtractorInterface
+final class OpenAiInterventionReportExtractor implements InterventionReportExtractorContract
 {
+    /**
+     * @param  list<array<string, mixed>>  $pastInterventions
+     * @return array<string, mixed>
+     */
     public function extract(string $transcript, array $pastInterventions): array
     {
         if (trim($transcript) === '') {
@@ -158,6 +165,17 @@ PROMPT;
         /** @var mixed $decoded */
         $decoded = json_decode(substr($trimmed, $start, $end - $start + 1), true);
 
-        return is_array($decoded) ? $decoded : [];
+        if (! is_array($decoded)) {
+            return [];
+        }
+
+        $payload = [];
+        foreach ($decoded as $key => $value) {
+            if (is_string($key)) {
+                $payload[$key] = $value;
+            }
+        }
+
+        return $payload;
     }
 }

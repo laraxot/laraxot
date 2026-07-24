@@ -5,12 +5,13 @@ declare(strict_types=1);
 namespace Modules\Quotation\Actions;
 
 use Modules\Customer\Support\CustomerSimilarity;
-use Modules\Document\Models\Media;
 use Modules\Quotation\AI\QuotationDraftExtractorInterface;
-use Modules\Quotation\Domain\DTO\DictatedQuotationItem;
-use Modules\Quotation\Domain\DTO\QuotationCustomerDraft;
-use Modules\Quotation\Domain\DTO\QuotationDraft;
+use Modules\Quotation\DTO\DictatedQuotationItem;
+use Modules\Quotation\DTO\QuotationCustomerDraft;
+use Modules\Quotation\DTO\QuotationDraft;
 use Modules\Quotation\Models\Quotation;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Orchestrates voice → quotation draft: runs the LLM extractor over the
@@ -23,6 +24,8 @@ use Modules\Quotation\Models\Quotation;
  */
 final class BuildQuotationDraftAction
 {
+    use QueueableAction;
+
     public function __construct(
         private readonly QuotationDraftExtractorInterface $extractor,
         private readonly MatchDictatedItemsToCatalogAction $matcher,
@@ -86,9 +89,9 @@ final class BuildQuotationDraftAction
         $withAttachment = Quotation::query()
             ->where('customer_id', $customer->id)
             ->whereIn('id', Media::query()
-                ->where('mediable_type', Quotation::class)
-                ->where('kind', 'document')
-                ->select('mediable_id'))
+                ->where('model_type', Quotation::class)
+                ->where('collection_name', 'documents')
+                ->select('model_id'))
             ->orderByDesc('id')
             ->first();
 

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\WorkOrder\Filament\Resources;
 
-use App\Models\User;
 use App\Support\AccountFeatures;
 use Carbon\CarbonImmutable;
 use Filament\Actions\Action;
@@ -20,21 +19,24 @@ use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
+use Filament\Infolists\Components\Entry;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Billing\Actions\BuildWorkOrderPreInvoiceAction;
 use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
+use Modules\User\Models\User;
 use Modules\WorkOrder\Actions\ComputeWorkOrderEffortAction;
 use Modules\WorkOrder\Actions\GenerateWorkOrderReportAction;
 use Modules\WorkOrder\Filament\Resources\WorkOrderResource\Pages;
@@ -48,8 +50,9 @@ use Modules\WorkOrder\Filament\Resources\WorkOrderResource\RelationManagers\Read
 use Modules\WorkOrder\Filament\Resources\WorkOrderResource\RelationManagers\StatusEventsRelationManager;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderStatus;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class WorkOrderResource extends Resource
+final class WorkOrderResource extends XotBaseResource
 {
     protected static ?string $model = WorkOrder::class;
 
@@ -71,13 +74,16 @@ final class WorkOrderResource extends Resource
     /**
      * @return array<string, string|null>
      */
-    public static function getGlobalSearchResultDetails(\Illuminate\Database\Eloquent\Model $record): array
+    public static function getGlobalSearchResultDetails(Model $record): array
     {
-        /** @var \Modules\WorkOrder\Models\WorkOrder $record */
+        /** @var WorkOrder $record */
+
         return array_filter([
-            __('work_orders.fields.customer') => $record->customer?->legal_name,
+            __('work_orders.fields.customer') => $record->customer?->legal_name !== null
+                ? (string) $record->customer->legal_name
+                : null,
             __('work_orders.fields.title') => $record->title,
-        ]);
+        ], static fn (?string $value): bool => $value !== null);
     }
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-clipboard-document-list';
@@ -97,22 +103,22 @@ final class WorkOrderResource extends Resource
         return self::isAvailableInCurrentPanel() && parent::canCreate();
     }
 
-    public static function canEdit($record): bool
+    public static function canEdit(Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && parent::canEdit($record);
     }
 
-    public static function canView($record): bool
+    public static function canView(Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && parent::canView($record);
     }
 
-    public static function getNavigationSort(): ?int
+    public static function getNavigationSort(): int
     {
         return 3;
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('work_orders.navigation');
     }
@@ -127,9 +133,9 @@ final class WorkOrderResource extends Resource
         return __('work_orders.work_orders');
     }
 
-    public static function form(Schema $schema): Schema
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
@@ -235,7 +241,33 @@ final class WorkOrderResource extends Resource
                     ]),
                 ])
                 ->columns(2),
-        ]);
+        ];
+    }
+
+    /**
+     * @return array<string, Component|Entry>
+     */
+    public static function getInfolistSchema(): array
+    {
+        return [
+            'main' => Section::make()
+                ->columnSpanFull()
+                ->components([
+                    Grid::make(2)->components([
+                        TextEntry::make('code')->label(__('work_orders.fields.code')),
+                        TextEntry::make('status.name')->label(__('work_orders.fields.status')),
+                        TextEntry::make('customer.legal_name')->label(__('work_orders.fields.customer')),
+                        TextEntry::make('site.name')->label(__('work_orders.fields.site')),
+                        TextEntry::make('primaryContact.full_name')->label(__('work_orders.fields.primary_contact')),
+                        TextEntry::make('title')->label(__('work_orders.fields.title')),
+                        TextEntry::make('scheduled_at')->label(__('work_orders.fields.scheduled_at'))->dateTime(),
+                        TextEntry::make('planned_minutes')->label(__('work_orders.effort.planned_minutes')),
+                    ]),
+                    TextEntry::make('description')->label(__('work_orders.fields.description'))->columnSpanFull(),
+                    TextEntry::make('notes')->label(__('work_orders.fields.notes'))->columnSpanFull(),
+                ])
+                ->columns(2),
+        ];
     }
 
     /**
@@ -391,9 +423,9 @@ final class WorkOrderResource extends Resource
                 Filter::make('scheduled_between')
                     ->label(__('work_orders.fields.report_from').' / '.__('work_orders.fields.report_to'))
                     ->form([
-                        \Filament\Forms\Components\DatePicker::make('from')
+                        DatePicker::make('from')
                             ->label(__('work_orders.fields.report_from')),
-                        \Filament\Forms\Components\DatePicker::make('to')
+                        DatePicker::make('to')
                             ->label(__('work_orders.fields.report_to')),
                     ])
                     ->query(function (Builder $query, array $data): Builder {
@@ -448,7 +480,10 @@ final class WorkOrderResource extends Resource
                             ->required(),
                     ])
                     ->action(function (WorkOrder $record, array $data): mixed {
-                        $format = (string) ($data['format'] ?? 'pdf');
+                        $format = match ((string) ($data['format'] ?? 'pdf')) {
+                            'docx' => 'docx',
+                            default => 'pdf',
+                        };
                         $from = CarbonImmutable::parse((string) $data['from'])->startOfDay();
                         $to = CarbonImmutable::parse((string) $data['to'])->endOfDay();
 
@@ -511,7 +546,7 @@ final class WorkOrderResource extends Resource
         }
 
         if (request()->is('customer/*')) {
-            /** @var \App\Models\User|null $user */
+            /** @var User|null $user */
             $user = Auth::user();
             $customerId = is_object($user) ? (int) ($user->customer_id ?? 0) : 0;
             if ($customerId > 0) {
@@ -594,9 +629,14 @@ final class WorkOrderResource extends Resource
         $user = Auth::user();
 
         if (request()->is('admin/*') && $user instanceof User && AccountFeatures::hasAssignedPerimeter($user)) {
-            AccountFeatures::scopeAssignedCustomers($query, $user);
+            /** @var Builder<Model> $scopedQuery */
+            $scopedQuery = $query;
+            AccountFeatures::scopeAssignedCustomers($scopedQuery, $user);
         }
 
-        return $query->pluck('legal_name', 'id')->all();
+        /** @var array<int, string> */
+        return $query->pluck('legal_name', 'id')
+            ->map(static fn (mixed $name): string => (string) $name)
+            ->all();
     }
 }

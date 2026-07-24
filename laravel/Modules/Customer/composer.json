@@ -13,6 +13,18 @@
             "Modules\\Customer\\Database\\Seeders\\": "database/seeders/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Customer\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Davide Cavallini",
+            "email": "davidecavallini1987@gmail.com",
+            "role": "Developer"
+        }
+    ],
     "extra": {
         "laravel": {
             "providers": [

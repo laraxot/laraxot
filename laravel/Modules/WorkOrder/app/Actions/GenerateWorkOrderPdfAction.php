@@ -4,18 +4,20 @@ declare(strict_types=1);
 
 namespace Modules\WorkOrder\Actions;
 
-use Barryvdh\DomPDF\Facade\Pdf;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\WorkOrder\Support\DocumentExportBridge;
+use Spatie\QueueableAction\QueueableAction;
 
 final class GenerateWorkOrderPdfAction
 {
+    use QueueableAction;
+
     public function execute(WorkOrder $workOrder): string
     {
         $workOrder->loadMissing(['customer', 'site', 'primaryContact', 'status', 'activities', 'assignments', 'statusEvents']);
 
-        return Pdf::loadView('work_orders::pdf.work-order', [
+        return DocumentExportBridge::pdfFromView('work_orders::pdf.work-order', [
             'workOrder' => $workOrder,
-        ])->output();
+        ]);
     }
 }
-

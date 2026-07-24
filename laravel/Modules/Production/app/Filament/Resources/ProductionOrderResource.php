@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Production\Filament\Resources;
 
+use App\Support\AccountFeatures;
 use App\Support\Concerns\HasAccountFeatureVisibility;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -12,12 +13,12 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Auth;
 use Modules\Catalog\Models\Product;
 use Modules\Production\Filament\Resources\ProductionOrderResource\Pages\CreateProductionOrder;
 use Modules\Production\Filament\Resources\ProductionOrderResource\Pages\EditProductionOrder;
@@ -26,8 +27,9 @@ use Modules\Production\Filament\Resources\ProductionOrderResource\Pages\ViewProd
 use Modules\Production\Filament\Resources\ProductionOrderResource\RelationManagers\ProductionPhasesRelationManager;
 use Modules\Production\Models\ProductionOrder;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class ProductionOrderResource extends Resource
+final class ProductionOrderResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 
@@ -41,7 +43,18 @@ final class ProductionOrderResource extends Resource
 
     private const ACCOUNT_FEATURE_OPERATOR_DEFAULT = false;
 
-    public static function getNavigationGroup(): ?string
+    protected static function isAvailableInCurrentPanel(): bool
+    {
+        return AccountFeatures::currentPanelAllowsFeature(
+            Auth::user(),
+            adminFeature: self::ACCOUNT_FEATURE_ADMIN,
+            operatorFeature: self::ACCOUNT_FEATURE_OPERATOR,
+            operatorDefault: self::ACCOUNT_FEATURE_OPERATOR_DEFAULT,
+            fallback: false,
+        );
+    }
+
+    public static function getNavigationGroup(): string
     {
         return __('production.navigation');
     }
@@ -56,9 +69,12 @@ final class ProductionOrderResource extends Resource
         return __('production.production_orders');
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<int, Component>
+     */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
@@ -99,7 +115,7 @@ final class ProductionOrderResource extends Resource
                         ->label(__('production.fields.notes'))
                         ->columnSpanFull(),
                 ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -142,4 +158,3 @@ final class ProductionOrderResource extends Resource
         ];
     }
 }
-

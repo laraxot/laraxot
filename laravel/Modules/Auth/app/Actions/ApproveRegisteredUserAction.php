@@ -6,11 +6,14 @@ namespace Modules\Auth\Actions;
 
 use App\Models\User;
 use Spatie\Permission\Models\Role;
+use Spatie\QueueableAction\QueueableAction;
 
 final class ApproveRegisteredUserAction
 {
+    use QueueableAction;
+
     /**
-     * @param array<int, string> $roles
+     * @param  array<int, string>  $roles
      */
     public function execute(User $user, User $approver, array $roles = ['operator']): void
     {

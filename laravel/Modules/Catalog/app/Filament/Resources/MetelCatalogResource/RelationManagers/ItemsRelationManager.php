@@ -7,26 +7,21 @@ namespace Modules\Catalog\Filament\Resources\MetelCatalogResource\RelationManage
 use Filament\Actions\Action;
 use Filament\Actions\BulkAction;
 use Filament\Notifications\Notification;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Modules\Catalog\Actions\LinkMetelItemToProductAction;
 use Modules\Catalog\Models\MetelCatalogItem;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class ItemsRelationManager extends RelationManager
+final class ItemsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'items';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('metel.items');
-    }
-
-    public function form(Schema $schema): Schema
-    {
-        return $schema->components([]);
     }
 
     public function table(Table $table): Table

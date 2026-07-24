@@ -7,6 +7,8 @@ namespace Modules\AiAssistant\Import;
 use Modules\AiAssistant\Llm\LlmChatJsonClient;
 use Modules\Quotation\Import\QuotationNotesRewriterInterface;
 
+use function Safe\json_encode;
+
 /**
  * AI-backed notes rewriter: recomputes validity dates (from today) and payment
  * plans (from the new total) inside the commercial notes, returning JSON

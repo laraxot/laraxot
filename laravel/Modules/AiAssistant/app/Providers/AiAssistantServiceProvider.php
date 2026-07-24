@@ -7,6 +7,7 @@ namespace Modules\AiAssistant\Providers;
 use App\Support\AccountFeatures;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\RateLimiter;
@@ -24,7 +25,7 @@ use Modules\Customer\Lookup\CompositeCompanyLookupProvider;
 use Modules\Customer\Lookup\OpenApiCompanyLookupProvider;
 use Modules\Customer\Lookup\OpenCorporatesCompanyLookupProvider;
 use Modules\Customer\Lookup\ViesCompanyLookupProvider;
-use Modules\Intervention\AI\InterventionReportExtractorInterface;
+use Modules\Intervention\Contracts\InterventionReportExtractorContract;
 use Modules\Quotation\AI\QuotationDraftExtractorInterface;
 use Modules\Quotation\AI\QuotationModificationExtractorInterface;
 use Modules\Quotation\Import\QuotationDocumentRewriterInterface;
@@ -49,14 +50,14 @@ class AiAssistantServiceProvider extends XotBaseServiceProvider
             $provider = is_string($providerValue) ? $providerValue : 'groq_whisper';
 
             return match ($provider) {
-                'openai_whisper' => new OpenAiWhisperTranscriptionProvider,
-                'groq_whisper' => new GroqWhisperTranscriptionProvider,
-                default => new GroqWhisperTranscriptionProvider,
+                'openai_whisper' => new OpenAiWhisperTranscriptionProvider(),
+                'groq_whisper' => new GroqWhisperTranscriptionProvider(),
+                default => new GroqWhisperTranscriptionProvider(),
             };
         });
 
         $this->app->bind(
-            InterventionReportExtractorInterface::class,
+            InterventionReportExtractorContract::class,
             OpenAiInterventionReportExtractor::class,
         );
 
@@ -74,12 +75,17 @@ class AiAssistantServiceProvider extends XotBaseServiceProvider
         // OpenCorporates by name), then the best-effort web+AI scraper as fallback.
         $this->app->bind(
             CompanyLookupProviderInterface::class,
-            fn ($app): CompanyLookupProviderInterface => new CompositeCompanyLookupProvider([
-                $app->make(OpenApiCompanyLookupProvider::class),         // VAT + name (Registro Imprese, token) — richest
-                $app->make(ViesCompanyLookupProvider::class),            // VAT (free fallback)
-                $app->make(OpenCorporatesCompanyLookupProvider::class),  // name (free fallback)
-                $app->make(WebAiCompanyLookupProvider::class),           // web + AI (last resort)
-            ]),
+            function (Application $app): CompanyLookupProviderInterface {
+                /** @var list<CompanyLookupProviderInterface> $providers */
+                $providers = [
+                    $app->make(OpenApiCompanyLookupProvider::class),
+                    $app->make(ViesCompanyLookupProvider::class),
+                    $app->make(OpenCorporatesCompanyLookupProvider::class),
+                    $app->make(WebAiCompanyLookupProvider::class),
+                ];
+
+                return new CompositeCompanyLookupProvider($providers);
+            },
         );
 
         $this->app->bind(

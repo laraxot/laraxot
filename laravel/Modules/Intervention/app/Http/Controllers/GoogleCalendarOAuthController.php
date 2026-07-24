@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Modules\Intervention\GoogleCalendar\Contracts\GoogleCalendarClient;
+use Modules\User\Models\User;
 
 /**
  * Per-user Google Calendar OAuth: connect, callback, disconnect. The settings

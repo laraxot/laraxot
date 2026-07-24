@@ -8,6 +8,7 @@ use Carbon\CarbonInterface;
 use Modules\Compliance\Models\Boiler;
 use Modules\Compliance\Models\HeatingSystem;
 use Modules\Intervention\Models\Intervention;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Creates a scheduled intervention for a due heating-system maintenance or
@@ -16,6 +17,8 @@ use Modules\Intervention\Models\Intervention;
  */
 final class GenerateMaintenanceInterventionAction
 {
+    use QueueableAction;
+
     public function execute(
         HeatingSystem $system,
         ?Boiler $boiler,

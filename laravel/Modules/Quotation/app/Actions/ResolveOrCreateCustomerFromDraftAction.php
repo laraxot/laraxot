@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Quotation\Actions;
 
-use Modules\Customer\Support\CustomerSimilarity;
 use Modules\Customer\Models\Customer;
-use Modules\Quotation\Domain\DTO\QuotationCustomerDraft;
+use Modules\Customer\Support\CustomerSimilarity;
+use Modules\Quotation\DTO\QuotationCustomerDraft;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Resolves the target customer for a voice quotation: reuses an existing customer
@@ -15,6 +16,8 @@ use Modules\Quotation\Domain\DTO\QuotationCustomerDraft;
  */
 final class ResolveOrCreateCustomerFromDraftAction
 {
+    use QueueableAction;
+
     public function execute(QuotationCustomerDraft $draft): int
     {
         $vat = $draft->vatNumber !== null ? trim($draft->vatNumber) : '';

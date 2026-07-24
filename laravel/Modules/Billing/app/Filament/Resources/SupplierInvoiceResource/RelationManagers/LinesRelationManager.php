@@ -51,7 +51,7 @@ final class LinesRelationManager extends RelationManager
             ->mapWithKeys(static fn (DeliveryNoteLine $line): array => [
                 $line->id => sprintf(
                     '%s — %s (%s)',
-                    (string) ($line->deliveryNote?->number ?? '—'),
+                    $line->deliveryNote !== null ? $line->deliveryNote->number : '—',
                     (string) $line->description,
                     number_format((float) $line->quantity, 2, ',', '.'),
                 ),

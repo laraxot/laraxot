@@ -36,7 +36,7 @@ final readonly class MetaWhatsAppClient implements WhatsAppClientInterface
 
         $decoded = $response->json();
 
-        return is_array($decoded) ? $decoded : [];
+        return $this->toStringKeyedArray($decoded);
     }
 
     public function verifyConfiguration(?string $testRecipient = null): array
@@ -59,7 +59,7 @@ final readonly class MetaWhatsAppClient implements WhatsAppClientInterface
         }
 
         $result = $response->json();
-        $result = is_array($result) ? $result : [];
+        $result = $this->toStringKeyedArray($result);
 
         return [
             'ok' => true,
@@ -67,6 +67,25 @@ final readonly class MetaWhatsAppClient implements WhatsAppClientInterface
             'phone_number' => $result,
             'test_recipient' => $testRecipient,
         ];
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    private function toStringKeyedArray(mixed $value): array
+    {
+        if (! is_array($value)) {
+            return [];
+        }
+
+        $result = [];
+        foreach ($value as $key => $item) {
+            if (is_string($key)) {
+                $result[$key] = $item;
+            }
+        }
+
+        return $result;
     }
 
     private function endpoint(string $path): string

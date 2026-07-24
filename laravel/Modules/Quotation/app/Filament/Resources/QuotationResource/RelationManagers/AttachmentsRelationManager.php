@@ -11,19 +11,20 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use Modules\Document\Models\Media;
 use Modules\Quotation\Actions\AddQuotationAttachmentAction;
 use Modules\Quotation\Actions\QueueQuotationAttachmentRewriteAction;
 use Modules\Quotation\Models\Quotation;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-final class AttachmentsRelationManager extends RelationManager
+final class AttachmentsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'media';
 
@@ -49,18 +50,21 @@ final class AttachmentsRelationManager extends RelationManager
         'image/webp',
     ];
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('quotations.attachments.title');
     }
 
-    public function form(Schema $schema): Schema
+    /**
+     * @return array<int|string, Component>
+     */
+    public function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             FileUpload::make('path')
                 ->label(__('quotations.attachments.file'))
                 ->disk('local')
-                ->directory(fn (): string => 'quotation-attachments/'.$this->getOwnerRecord()->getKey())
+                ->directory(fn (): string => 'quotation-attachments/'.(string) $this->getOwnerRecord()->getKey())
                 ->visibility('private')
                 ->acceptedFileTypes(self::ACCEPTED_MIME_TYPES)
                 ->maxSize(20480)
@@ -73,24 +77,24 @@ final class AttachmentsRelationManager extends RelationManager
                 ->helperText(__('quotations.attachments.file_title_hint'))
                 ->maxLength(255)
                 ->columnSpanFull(),
-        ]);
+        ];
     }
 
     public function table(Table $table): Table
     {
         return $table
-            ->modifyQueryUsing(fn (Builder $query): Builder => $query->where('kind', 'document'))
+            ->modifyQueryUsing(fn (Builder $query): Builder => $query->where('collection_name', 'documents'))
             ->columns([
-                Tables\Columns\TextColumn::make('title')
+                Tables\Columns\TextColumn::make('name')
                     ->label(__('quotations.attachments.file_title'))
-                    ->formatStateUsing(fn (Media $record): string => (string) ($record->title ?: basename((string) $record->path)))
+                    ->formatStateUsing(fn (Media $record): string => $record->name !== '' ? $record->name : $record->file_name)
                     ->wrap()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('mime_type')
                     ->label(__('quotations.attachments.type'))
                     ->badge()
                     ->toggleable(),
-                Tables\Columns\TextColumn::make('size_bytes')
+                Tables\Columns\TextColumn::make('size')
                     ->label(__('quotations.attachments.size'))
                     ->formatStateUsing(fn (?int $state): string => $state !== null ? number_format($state / 1024, 0).' KB' : '—')
                     ->toggleable(),
@@ -104,7 +108,11 @@ final class AttachmentsRelationManager extends RelationManager
                     ->label(__('quotations.actions.reprepare_attachment'))
                     ->icon('heroicon-o-arrow-path')
                     ->color('warning')
-                    ->visible(fn (): bool => (bool) $this->getOwnerRecord()->source_quotation_id)
+                    ->visible(function (): bool {
+                        $owner = $this->getOwnerRecord();
+
+                        return $owner instanceof Quotation && $owner->source_quotation_id !== null;
+                    })
                     ->action(function (): void {
                         /** @var Quotation $quotation */
                         $quotation = $this->getOwnerRecord();
@@ -153,15 +161,9 @@ final class AttachmentsRelationManager extends RelationManager
                 Action::make('download')
                     ->label(__('quotations.attachments.download'))
                     ->icon('heroicon-o-arrow-down-tray')
-                    ->action(function (Media $record) {
-                        $name = $record->title ?: basename((string) $record->path);
-
-                        return Storage::disk((string) $record->disk)->download((string) $record->path, $name);
-                    }),
-                DeleteAction::make()
-                    ->before(function (Media $record): void {
-                        Storage::disk((string) $record->disk)->delete((string) $record->path);
-                    }),
+                    ->action(fn (Media $record) => Storage::disk((string) $record->disk)
+                        ->download($record->getPathRelativeToRoot(), $record->name !== '' ? $record->name : $record->file_name)),
+                DeleteAction::make(),
             ]);
     }
 }

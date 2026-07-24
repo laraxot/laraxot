@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\WorkOrder\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 use Modules\Compliance\Models\ComplianceDocument;
 use Modules\Compliance\Models\WorkOrderChangeOrder;
 use Modules\Compliance\Models\WorkOrderReadinessItem;
@@ -17,7 +17,27 @@ use Modules\Customer\Models\CustomerSite;
 use Modules\Intervention\Models\Intervention;
 use Modules\PublicProcurement\Models\PublicProcurementContract;
 
-final class WorkOrder extends Model
+/**
+ * @property int $id
+ * @property string|null $code
+ * @property int $customer_id
+ * @property int|null $customer_site_id
+ * @property int|null $primary_contact_id
+ * @property int|null $status_id
+ * @property string $title
+ * @property string|null $description
+ * @property string|null $notes
+ * @property Carbon|null $opened_at
+ * @property Carbon|null $scheduled_at
+ * @property int|null $planned_minutes
+ * @property Carbon|null $started_at
+ * @property Carbon|null $completed_at
+ * @property Carbon|null $closed_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
+ */
+final class WorkOrder extends BaseModel
 {
     use SoftDeletes;
 
@@ -32,6 +52,7 @@ final class WorkOrder extends Model
         return [
             'opened_at' => 'datetime',
             'scheduled_at' => 'datetime',
+            'planned_minutes' => 'integer',
             'started_at' => 'datetime',
             'completed_at' => 'datetime',
             'closed_at' => 'datetime',
@@ -110,6 +131,4 @@ final class WorkOrder extends Model
     {
         return $this->hasMany(PublicProcurementContract::class, 'work_order_id');
     }
-
 }
-

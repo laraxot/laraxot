@@ -7,13 +7,15 @@ namespace Modules\HR\Actions;
 use Modules\Document\Actions\CreateMediaFromStoredFileAction;
 use Modules\HR\Models\Employee;
 use Modules\HR\Models\EmployeeDocument;
+use Spatie\QueueableAction\QueueableAction;
 
-final readonly class AddEmployeeDocumentAction
+final class AddEmployeeDocumentAction
 {
+    use QueueableAction;
+
     public function __construct(
         private CreateMediaFromStoredFileAction $createMediaFromStoredFile,
-    ) {
-    }
+    ) {}
 
     public function execute(
         Employee $employee,
@@ -42,4 +44,3 @@ final readonly class AddEmployeeDocumentAction
         return $link;
     }
 }
-

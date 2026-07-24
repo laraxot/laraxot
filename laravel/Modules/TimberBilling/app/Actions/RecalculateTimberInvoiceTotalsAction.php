@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Actions;
 
-use Modules\Fiscal\Domain\Actions\CalculateInvoiceTotalsAction;
-use Modules\Fiscal\Domain\DTO\InvoiceLineData;
+use Modules\Fiscal\Actions\CalculateInvoiceTotalsAction;
+use Modules\Fiscal\Datas\InvoiceLineData;
 use Modules\TimberBilling\Models\TimberInvoice;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Recomputes each line total and the invoice fiscal totals (imponibile, IVA,
@@ -14,6 +15,8 @@ use Modules\TimberBilling\Models\TimberInvoice;
  */
 final class RecalculateTimberInvoiceTotalsAction
 {
+    use QueueableAction;
+
     public function __construct(
         private readonly CalculateInvoiceTotalsAction $calculator,
     ) {}

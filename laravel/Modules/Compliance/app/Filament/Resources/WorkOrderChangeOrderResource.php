@@ -27,7 +27,7 @@ final class WorkOrderChangeOrderResource extends Resource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-plus-circle';
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('compliance.navigation');
     }

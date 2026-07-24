@@ -5,16 +5,16 @@ declare(strict_types=1);
 namespace Modules\Intervention\Filament\Resources\DailyNoteResource\Pages;
 
 use Carbon\CarbonImmutable;
-use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Intervention\Actions\SyncDailyNotePhotosAction;
 use Modules\Intervention\Actions\UpsertDailyNoteForUserAction;
-use Modules\Intervention\Support\DailyNoteHtml;
 use Modules\Intervention\Filament\Resources\DailyNoteResource;
 use Modules\Intervention\Models\DailyNote;
+use Modules\Intervention\Support\DailyNoteHtml;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 
-final class CreateDailyNote extends CreateRecord
+final class CreateDailyNote extends XotBaseCreateRecord
 {
     protected static string $resource = DailyNoteResource::class;
 
@@ -27,7 +27,8 @@ final class CreateDailyNote extends CreateRecord
      */
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        $this->photoPaths = array_values(array_map('strval', $data['photo_paths'] ?? []));
+        $photoPaths = is_array($data['photo_paths'] ?? null) ? $data['photo_paths'] : [];
+        $this->photoPaths = array_values(array_map(static fn (mixed $path): string => (string) $path, $photoPaths));
 
         $bodyHtml = DailyNoteHtml::sanitize((string) ($data['body_html'] ?? ''));
         $body = DailyNoteHtml::toPlainText($bodyHtml);
@@ -64,7 +65,7 @@ final class CreateDailyNote extends CreateRecord
         app(SyncDailyNotePhotosAction::class)->execute(
             dailyNote: $this->record,
             paths: $this->photoPaths,
-            uploadedByUserId: Auth::id(),
+            uploadedByUserId: Auth::id() !== null ? (int) Auth::id() : null,
         );
     }
 }

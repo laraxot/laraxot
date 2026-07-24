@@ -5,13 +5,16 @@ declare(strict_types=1);
 namespace Modules\Intervention\Actions;
 
 use Carbon\CarbonImmutable;
-use Modules\Intervention\Support\DailyNoteHtml;
 use Modules\Intervention\Models\Intervention;
+use Modules\Intervention\Support\DailyNoteHtml;
 use Modules\WorkOrder\Actions\AddWorkOrderActivityAction;
 use Modules\WorkOrder\Actions\ChangeWorkOrderStatusByCodeAction;
+use Spatie\QueueableAction\QueueableAction;
 
 final class FinalizeInterventionReportAction
 {
+    use QueueableAction;
+
     /**
      * @param  'completed'|'suspended'|'quotation'  $outcomeCode
      */

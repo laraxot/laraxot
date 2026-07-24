@@ -4,15 +4,21 @@ declare(strict_types=1);
 
 namespace Modules\Quotation\Actions;
 
-use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\DB;
 use Modules\Customer\Models\Customer;
 use Modules\Platform\Company\CompanyProfileProvider;
+use Modules\Quotation\Import\QuotationPdfRenderer;
 use Modules\Quotation\Models\Quotation;
+use Spatie\QueueableAction\QueueableAction;
 
 final class GenerateQuotationPdfAction
 {
-    public function __construct(private readonly CompanyProfileProvider $companyProfile) {}
+    use QueueableAction;
+
+    public function __construct(
+        private readonly CompanyProfileProvider $companyProfile,
+        private readonly QuotationPdfRenderer $pdfRenderer,
+    ) {}
 
     public function execute(Quotation $quotation): string
     {
@@ -27,12 +33,12 @@ final class GenerateQuotationPdfAction
             $workOrderCode = DB::table('work_orders')->where('id', $quotation->work_order_id)->value('code');
         }
 
-        return Pdf::loadView('quotations::pdf.quotation', [
+        return $this->pdfRenderer->render('quotations::pdf.quotation', [
             'quotation' => $quotation,
             'customerName' => $customerName,
             'workOrderCode' => $workOrderCode,
             'supplier' => $this->companyProfile->current()->toSupplierArray(),
             'logo' => $this->companyProfile->logoDataUri(),
-        ])->output();
+        ]);
     }
 }

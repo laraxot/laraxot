@@ -4,15 +4,21 @@ declare(strict_types=1);
 
 namespace Modules\AiAssistant\Filament\Pages;
 
+use Carbon\CarbonImmutable;
 use Filament\Notifications\Notification;
 use Filament\Pages\Page;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Modules\AiAssistant\Actions\ExecuteAiActionProposalAction;
 use Modules\AiAssistant\Models\AiActionProposal;
 use Modules\Email\Models\EmailMessage;
+use Modules\Platform\Settings\SettingsRepository;
+use Modules\WhatsApp\Models\WhatsAppConversation;
 use Modules\WhatsApp\Models\WhatsAppMessage;
 use Modules\WorkOrder\Models\WorkOrder;
+
+use function Safe\preg_match;
 
 final class AiCommunicationsMonitor extends Page
 {
@@ -94,7 +100,7 @@ final class AiCommunicationsMonitor extends Page
         return $count > 0 ? (string) $count : null;
     }
 
-    public static function getNavigationBadgeColor(): ?string
+    public static function getNavigationBadgeColor(): string
     {
         return 'warning';
     }
@@ -204,20 +210,21 @@ final class AiCommunicationsMonitor extends Page
             ->map(fn (EmailMessage $message): array => $this->mapMessage(
                 channel: 'email',
                 id: (int) $message->id,
-                direction: (string) $message->direction,
-                contact: (string) ($message->conversation->email ?? $message->from_email ?? $message->to_email ?? ''),
-                title: (string) ($message->subject ?? 'Email senza oggetto'),
-                body: (string) ($message->body ?? ''),
-                status: (string) $message->status,
-                processingStatus: (string) $message->processing_status,
-                error: (string) ($message->error ?? ''),
-                aiResult: is_array($message->ai_result) ? $message->ai_result : [],
+                direction: (string) data_get($message, 'direction', ''),
+                contact: (string) (data_get($message, 'conversation.email') ?? data_get($message, 'from_email') ?? data_get($message, 'to_email') ?? ''),
+                title: (string) (data_get($message, 'subject') ?? 'Email senza oggetto'),
+                contactSub: '',
+                body: (string) data_get($message, 'body', ''),
+                status: (string) data_get($message, 'status', ''),
+                processingStatus: (string) data_get($message, 'processing_status', ''),
+                error: (string) data_get($message, 'error', ''),
+                aiResult: $this->stringKeyArray(data_get($message, 'ai_result')),
                 proposal: $message->proposal,
-                workOrderId: is_numeric($message->work_order_id) ? (int) $message->work_order_id : null,
-                interventionId: is_numeric($message->intervention_id) ? (int) $message->intervention_id : null,
-                receivedAt: $message->received_at?->format('d/m/Y H:i'),
-                processedAt: $message->processed_at?->format('d/m/Y H:i'),
-                sortAt: (string) ($message->created_at?->toIso8601String() ?? ''),
+                workOrderId: is_numeric(data_get($message, 'work_order_id')) ? (int) data_get($message, 'work_order_id') : null,
+                interventionId: is_numeric(data_get($message, 'intervention_id')) ? (int) data_get($message, 'intervention_id') : null,
+                receivedAt: $this->formatDateTime(data_get($message, 'received_at')),
+                processedAt: $this->formatDateTime(data_get($message, 'processed_at')),
+                sortAt: $this->iso8601(data_get($message, 'created_at')),
             ))
             ->all();
     }
@@ -230,7 +237,7 @@ final class AiCommunicationsMonitor extends Page
      */
     private function whatsAppConversations(int $limit): array
     {
-        $query = \Modules\WhatsApp\Models\WhatsAppConversation::query()
+        $query = WhatsAppConversation::query()
             ->with('customer')
             ->orderByDesc('last_message_at')
             ->orderByDesc('id')
@@ -242,8 +249,8 @@ final class AiCommunicationsMonitor extends Page
 
         $items = [];
         foreach ($query->get() as $conversation) {
-            $proposal = $conversation->active_proposal_id !== null
-                ? AiActionProposal::query()->find($conversation->active_proposal_id)
+            $proposal = data_get($conversation, 'active_proposal_id') !== null
+                ? AiActionProposal::query()->find(data_get($conversation, 'active_proposal_id'))
                 : null;
             $pendingProposal = $proposal instanceof AiActionProposal && $proposal->status === 'pending' ? $proposal : null;
 
@@ -254,17 +261,29 @@ final class AiCommunicationsMonitor extends Page
             $thread = $conversation->messages()
                 ->orderByDesc('created_at')->orderByDesc('id')->limit(15)->get()
                 ->reverse()
-                ->map(fn (WhatsAppMessage $message): array => [
-                    'from' => $message->direction === 'inbound' ? 'cliente' : 'noi',
-                    'text' => trim((string) $message->body),
-                    'at' => $message->created_at?->format('H:i'),
+                ->map(function (WhatsAppMessage $message): array {
+                    $createdAt = data_get($message, 'created_at');
+
+                    return [
+                        'from' => data_get($message, 'direction') === 'inbound' ? 'cliente' : 'noi',
+                        'text' => trim((string) data_get($message, 'body', '')),
+                        'at' => $createdAt instanceof Carbon ? $createdAt->format('H:i') : null,
+                    ];
+                })
+                ->map(static fn (array $entry): array => [
+                    'from' => (string) $entry['from'],
+                    'text' => (string) $entry['text'],
+                    'at' => is_string($entry['at'] ?? null) ? $entry['at'] : null,
                 ])
                 ->filter(fn (array $entry): bool => $entry['text'] !== '')
                 ->values()
                 ->all();
 
-            $phone = (string) $conversation->phone_e164;
-            $linkedName = trim((string) ($conversation->customer?->legal_name ?? ''));
+            $thread = $this->normalizeThread($thread);
+
+            $phone = (string) data_get($conversation, 'phone_e164', '');
+            $customer = $conversation->customer;
+            $linkedName = trim((string) ($customer !== null ? data_get($customer, 'legal_name', '') : ''));
             $extractedName = '';
             if ($pendingProposal instanceof AiActionProposal) {
                 $payload = $pendingProposal->payload ?? [];
@@ -280,16 +299,16 @@ final class AiCommunicationsMonitor extends Page
                 contactSub: $displayName !== $phone ? $phone : '',
                 title: 'Conversazione WhatsApp',
                 body: '',
-                status: (string) $conversation->status,
+                status: (string) data_get($conversation, 'status', ''),
                 processingStatus: $pendingProposal !== null ? 'needs_review' : 'processed',
                 error: '',
                 aiResult: [],
                 proposal: $pendingProposal,
                 workOrderId: null,
                 interventionId: null,
-                receivedAt: $conversation->last_message_at?->format('d/m/Y H:i'),
+                receivedAt: $this->formatDateTime(data_get($conversation, 'last_message_at')),
                 processedAt: null,
-                sortAt: (string) ($conversation->last_message_at?->toIso8601String() ?? ''),
+                sortAt: $this->iso8601(data_get($conversation, 'last_message_at')),
                 thread: $thread,
             );
         }
@@ -394,9 +413,6 @@ final class AiCommunicationsMonitor extends Page
     /**
      * @return array<string, mixed>
      */
-    /**
-     * @return array<string, mixed>
-     */
     private function fillProposalFormState(?AiActionProposal $proposal): array
     {
         if (! $proposal instanceof AiActionProposal || ! is_array($proposal->payload)) {
@@ -410,7 +426,9 @@ final class AiCommunicationsMonitor extends Page
         $this->proposalInterventionIds[$publicId] ??= is_numeric($payload['intervention_id'] ?? null) ? (int) $payload['intervention_id'] : '';
         $this->proposalBodies[$publicId] ??= (string) ($payload['body'] ?? $payload['notes'] ?? $payload['summary'] ?? '');
         $this->proposalScheduledAts[$publicId] ??= $this->formatScheduleForInput((string) ($payload['scheduled_at'] ?? ''));
-        $materialLine = is_array($payload['material_lines'][0] ?? null) ? $payload['material_lines'][0] : [];
+        $materialLines = is_array($payload['material_lines'] ?? null) ? $payload['material_lines'] : [];
+        $firstMaterialLine = $materialLines[0] ?? null;
+        $materialLine = is_array($firstMaterialLine) ? $firstMaterialLine : [];
         $this->proposalMaterialDescriptions[$publicId] ??= (string) ($materialLine['description'] ?? $this->guessMaterialDescription((string) ($payload['body'] ?? $payload['notes'] ?? '')));
         $messageText = (string) ($payload['body'] ?? $payload['notes'] ?? '');
         $materialCost = $this->positiveFloat($materialLine['unit_price'] ?? null) ?? $this->extractMaterialEuroAmount($messageText) ?? $this->extractEuroAmount($messageText);
@@ -423,7 +441,7 @@ final class AiCommunicationsMonitor extends Page
         $this->proposalAddresses[$publicId] ??= trim(((string) ($payload['address'] ?? '')).' '.((string) ($payload['city'] ?? '')));
         $this->proposalProblems[$publicId] ??= (string) ($payload['problem'] ?? $payload['summary'] ?? $messageText);
 
-        return $payload;
+        return $this->stringKeyArray($payload);
     }
 
     private function applyEditedPayload(AiActionProposal $proposal): bool
@@ -537,7 +555,7 @@ final class AiCommunicationsMonitor extends Page
     {
         if ($type === 'organize_whatsapp_request') {
             $name = trim((string) ($payload['customer_name'] ?? ''));
-            $directMode = app(\Modules\Platform\Settings\SettingsRepository::class)
+            $directMode = app(SettingsRepository::class)
                 ->getString('interventions.work_mode', 'work_order') === 'customer';
             $what = $directMode ? 'cliente e intervento' : 'cliente, commessa e intervento';
 
@@ -545,7 +563,7 @@ final class AiCommunicationsMonitor extends Page
             $scheduled = trim((string) ($payload['scheduled_at'] ?? ''));
             if ($scheduled !== '') {
                 try {
-                    $when = ' per '.\Carbon\CarbonImmutable::parse($scheduled)->translatedFormat('l d/m \a\l\l\e H:i');
+                    $when = ' per '.CarbonImmutable::parse($scheduled)->translatedFormat('l d/m \a\l\l\e H:i');
                 } catch (\Throwable) {
                 }
             }
@@ -593,7 +611,7 @@ final class AiCommunicationsMonitor extends Page
         }
 
         try {
-            return \Carbon\CarbonImmutable::parse($value)->format('Y-m-d\TH:i');
+            return CarbonImmutable::parse($value)->format('Y-m-d\TH:i');
         } catch (\Throwable) {
             return $value;
         }
@@ -627,11 +645,11 @@ final class AiCommunicationsMonitor extends Page
 
     private function extractEuroAmount(string $text): ?float
     {
-        if (preg_match('/(\d+(?:[,.]\d{1,2})?)\s*(?:euro|eur|€)/i', $text, $matches) !== 1) {
+        if (preg_match('/(\d+(?:[,.]\d{1,2})?)\s*(?:euro|eur|€)/i', $text, $matches) !== 1 || ! isset($matches[1])) {
             return null;
         }
 
-        return $this->positiveFloat($matches[1] ?? null);
+        return $this->positiveFloat($matches[1]);
     }
 
     private function extractMaterialEuroAmount(string $text): ?float
@@ -647,12 +665,12 @@ final class AiCommunicationsMonitor extends Page
     private function extractEuroAmountNearKeywords(string $text, string $keywordPattern): ?float
     {
         $amountPattern = '(\d+(?:[,.]\d{1,2})?)\s*(?:euro|eur|€)';
-        if (preg_match('/'.$keywordPattern.'[^\d€]{0,40}'.$amountPattern.'/i', $text, $matches) === 1) {
-            return $this->positiveFloat($matches[1] ?? null);
+        if (preg_match('/'.$keywordPattern.'[^\d€]{0,40}'.$amountPattern.'/i', $text, $matches) === 1 && isset($matches[1])) {
+            return $this->positiveFloat($matches[1]);
         }
 
-        if (preg_match('/'.$amountPattern.'[^\w]{0,20}(?:di|per)?[^\w]{0,10}'.$keywordPattern.'/i', $text, $matches) === 1) {
-            return $this->positiveFloat($matches[1] ?? null);
+        if (preg_match('/'.$amountPattern.'[^\w]{0,20}(?:di|per)?[^\w]{0,10}'.$keywordPattern.'/i', $text, $matches) === 1 && isset($matches[1])) {
+            return $this->positiveFloat($matches[1]);
         }
 
         return null;
@@ -675,7 +693,54 @@ final class AiCommunicationsMonitor extends Page
 
         $context = is_array($message?->payload) ? ($message->payload['context'] ?? []) : [];
 
-        return is_array($context) ? $context : [];
+        return $this->stringKeyArray($context);
+    }
+
+    /**
+     * @param  array<int, array<string, mixed>>  $thread
+     * @return list<array{from: string, text: string, at: string|null}>
+     */
+    private function normalizeThread(array $thread): array
+    {
+        $normalized = [];
+        foreach ($thread as $entry) {
+            $normalized[] = [
+                'from' => (string) ($entry['from'] ?? ''),
+                'text' => (string) ($entry['text'] ?? ''),
+                'at' => is_string($entry['at'] ?? null) ? $entry['at'] : null,
+            ];
+        }
+
+        return $normalized;
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    private function stringKeyArray(mixed $value): array
+    {
+        if (! is_array($value)) {
+            return [];
+        }
+
+        $normalized = [];
+        foreach ($value as $key => $item) {
+            if (is_string($key)) {
+                $normalized[$key] = $item;
+            }
+        }
+
+        return $normalized;
+    }
+
+    private function formatDateTime(mixed $value): ?string
+    {
+        return $value instanceof Carbon ? $value->format('d/m/Y H:i') : null;
+    }
+
+    private function iso8601(mixed $value): string
+    {
+        return $value instanceof Carbon ? $value->toIso8601String() : '';
     }
 
     /**

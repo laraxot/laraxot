@@ -6,9 +6,12 @@ namespace Modules\HR\Actions;
 
 use Carbon\CarbonImmutable;
 use Modules\HR\Models\AbsenceRequest;
+use Spatie\QueueableAction\QueueableAction;
 
 final class RejectAbsenceRequestAction
 {
+    use QueueableAction;
+
     public function execute(AbsenceRequest $request, int $decidedByUserId, ?CarbonImmutable $decidedAt = null): AbsenceRequest
     {
         $decidedAt = $decidedAt ?? CarbonImmutable::now();
@@ -22,4 +25,3 @@ final class RejectAbsenceRequestAction
         return $request;
     }
 }
-

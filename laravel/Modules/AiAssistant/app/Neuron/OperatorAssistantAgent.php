@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\AiAssistant\Neuron;
 
-use Modules\User\Models\User;
 use App\Support\AccountFeatures;
 use Carbon\CarbonImmutable;
 use Carbon\CarbonInterface;
+use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Support\Facades\DB;
 use Modules\AiAssistant\Actions\CreateAiActionProposalAction;
-use Modules\AiAssistant\Models\AiToolLog;
 use Modules\AiAssistant\Models\AiThread;
+use Modules\AiAssistant\Models\AiToolLog;
 use Modules\Bom\Models\Bom;
 use Modules\Bom\Models\BomItem;
 use Modules\Catalog\Models\Product;
@@ -19,19 +19,24 @@ use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
 use Modules\EnergyBroker\Models\EnergyBrokerDocument;
 use Modules\Intervention\Models\Intervention;
-use Modules\Inventory\Queries\GetStockSnapshotQuery;
+use Modules\Inventory\Actions\GetStockSnapshotAction;
 use Modules\Inventory\Models\Warehouse;
 use Modules\Platform\Settings\SettingsRepository;
 use Modules\Production\Models\ProductionPhase;
+use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
 use NeuronAI\Agent\Agent;
 use NeuronAI\Providers\AIProviderInterface;
 use NeuronAI\Providers\OpenAI\OpenAI;
 use NeuronAI\Providers\OpenAILike;
 use NeuronAI\Tools\PropertyType;
+use NeuronAI\Tools\ProviderToolInterface;
 use NeuronAI\Tools\Tool;
 use NeuronAI\Tools\ToolInterface;
+use NeuronAI\Tools\Toolkits\ToolkitInterface;
 use NeuronAI\Tools\ToolProperty;
+
+use function Safe\preg_replace;
 
 final class OperatorAssistantAgent extends Agent
 {
@@ -73,7 +78,7 @@ final class OperatorAssistantAgent extends Agent
     }
 
     /**
-     * @return array<int, \NeuronAI\Tools\ToolInterface|\NeuronAI\Tools\Toolkits\ToolkitInterface|\NeuronAI\Tools\ProviderToolInterface>
+     * @return array<int, ToolInterface|ToolkitInterface|ProviderToolInterface>
      */
     protected function tools(): array
     {
@@ -198,13 +203,13 @@ PROMPT;
                 $customers = Customer::query()
                     ->with(['sites'])
                     ->where(function ($inner) use ($search): void {
-                        $inner->where('legal_name', 'like', '%' . $search . '%')
-                            ->orWhere('address_line1', 'like', '%' . $search . '%')
-                            ->orWhere('city', 'like', '%' . $search . '%')
+                        $inner->where('legal_name', 'like', '%'.$search.'%')
+                            ->orWhere('address_line1', 'like', '%'.$search.'%')
+                            ->orWhere('city', 'like', '%'.$search.'%')
                             ->orWhereHas('sites', function ($siteQuery) use ($search): void {
-                                $siteQuery->where('name', 'like', '%' . $search . '%')
-                                    ->orWhere('address_line1', 'like', '%' . $search . '%')
-                                    ->orWhere('city', 'like', '%' . $search . '%');
+                                $siteQuery->where('name', 'like', '%'.$search.'%')
+                                    ->orWhere('address_line1', 'like', '%'.$search.'%')
+                                    ->orWhere('city', 'like', '%'.$search.'%');
                             });
                     })
                     ->orderBy('legal_name')
@@ -220,9 +225,9 @@ PROMPT;
                             'id' => (int) $customer->id,
                             'label' => $this->describeCustomerModel($customer, $site instanceof CustomerSite ? $site : null),
                             'customer' => (string) $customer->legal_name,
-                            'site' => $site instanceof CustomerSite ? $this->stringValue($site->name) : '',
+                            'site' => $site instanceof CustomerSite ? $this->stringValue(data_get($site, 'name')) : '',
                             'city' => $site instanceof CustomerSite
-                                ? $this->stringValue($site->city)
+                                ? $this->stringValue(data_get($site, 'city'))
                                 : $this->stringValue($customer->city),
                         ];
                     })->all(),
@@ -248,15 +253,15 @@ PROMPT;
                 $workOrders = WorkOrder::query()
                     ->with(['customer', 'site', 'status'])
                     ->where(function ($inner) use ($search): void {
-                        $inner->where('code', 'like', '%' . $search . '%')
-                            ->orWhere('title', 'like', '%' . $search . '%')
-                            ->orWhereHas('customer', fn ($customerQuery) => $customerQuery->where('legal_name', 'like', '%' . $search . '%'))
+                        $inner->where('code', 'like', '%'.$search.'%')
+                            ->orWhere('title', 'like', '%'.$search.'%')
+                            ->orWhereHas('customer', fn ($customerQuery) => $customerQuery->where('legal_name', 'like', '%'.$search.'%'))
                             ->orWhereHas('site', function ($siteQuery) use ($search): void {
-                                $siteQuery->where('name', 'like', '%' . $search . '%')
-                                    ->orWhere('address_line1', 'like', '%' . $search . '%')
-                                    ->orWhere('city', 'like', '%' . $search . '%');
+                                $siteQuery->where('name', 'like', '%'.$search.'%')
+                                    ->orWhere('address_line1', 'like', '%'.$search.'%')
+                                    ->orWhere('city', 'like', '%'.$search.'%');
                             })
-                            ->orWhereHas('status', fn ($statusQuery) => $statusQuery->where('name', 'like', '%' . $search . '%'));
+                            ->orWhereHas('status', fn ($statusQuery) => $statusQuery->where('name', 'like', '%'.$search.'%'));
                     })
                     ->orderByDesc('updated_at')
                     ->limit(8)
@@ -338,15 +343,15 @@ PROMPT;
 
                 if ($search !== '') {
                     $interventions->where(function ($inner) use ($search): void {
-                        $inner->where('notes', 'like', '%' . $search . '%')
+                        $inner->where('notes', 'like', '%'.$search.'%')
                             ->orWhereHas('workOrder', function ($workOrderQuery) use ($search): void {
-                                $workOrderQuery->where('title', 'like', '%' . $search . '%')
-                                    ->orWhere('code', 'like', '%' . $search . '%')
-                                    ->orWhereHas('customer', fn ($customerQuery) => $customerQuery->where('legal_name', 'like', '%' . $search . '%'))
+                                $workOrderQuery->where('title', 'like', '%'.$search.'%')
+                                    ->orWhere('code', 'like', '%'.$search.'%')
+                                    ->orWhereHas('customer', fn ($customerQuery) => $customerQuery->where('legal_name', 'like', '%'.$search.'%'))
                                     ->orWhereHas('site', function ($siteQuery) use ($search): void {
-                                        $siteQuery->where('name', 'like', '%' . $search . '%')
-                                            ->orWhere('address_line1', 'like', '%' . $search . '%')
-                                            ->orWhere('city', 'like', '%' . $search . '%');
+                                        $siteQuery->where('name', 'like', '%'.$search.'%')
+                                            ->orWhere('address_line1', 'like', '%'.$search.'%')
+                                            ->orWhere('city', 'like', '%'.$search.'%');
                                     });
                             });
                     });
@@ -393,8 +398,8 @@ PROMPT;
                 $products = Product::query()
                     ->where('is_active', true)
                     ->where(function ($inner) use ($search): void {
-                        $inner->where('name', 'like', '%' . $search . '%')
-                            ->orWhere('sku', 'like', '%' . $search . '%');
+                        $inner->where('name', 'like', '%'.$search.'%')
+                            ->orWhere('sku', 'like', '%'.$search.'%');
                     })
                     ->orderBy('name')
                     ->limit(8)
@@ -404,9 +409,9 @@ PROMPT;
                     'ok' => true,
                     'results' => $products->map(static fn (Product $product): array => [
                         'id' => (int) $product->id,
-                        'name' => (string) $product->name,
-                        'sku' => (string) ($product->sku ?? ''),
-                        'unit_price' => is_numeric($product->unit_price) ? (float) $product->unit_price : null,
+                        'name' => (string) data_get($product, 'name', ''),
+                        'sku' => (string) data_get($product, 'sku', ''),
+                        'unit_price' => is_numeric(data_get($product, 'unit_price')) ? (float) data_get($product, 'unit_price') : null,
                     ])->all(),
                 ];
             });
@@ -430,8 +435,8 @@ PROMPT;
                 $warehouses = Warehouse::query()
                     ->where('is_active', true)
                     ->where(function ($inner) use ($search): void {
-                        $inner->where('name', 'like', '%' . $search . '%')
-                            ->orWhere('code', 'like', '%' . $search . '%');
+                        $inner->where('name', 'like', '%'.$search.'%')
+                            ->orWhere('code', 'like', '%'.$search.'%');
                     })
                     ->orderBy('name')
                     ->limit(8)
@@ -441,8 +446,8 @@ PROMPT;
                     'ok' => true,
                     'results' => $warehouses->map(static fn (Warehouse $warehouse): array => [
                         'id' => (int) $warehouse->id,
-                        'name' => (string) $warehouse->name,
-                        'code' => (string) ($warehouse->code ?? ''),
+                        'name' => (string) data_get($warehouse, 'name', ''),
+                        'code' => (string) data_get($warehouse, 'code', ''),
                     ])->all(),
                 ];
             });
@@ -466,12 +471,12 @@ PROMPT;
                     ->whereNull('invoices.deleted_at');
 
                 if ($search !== '') {
-                    $baseQuery->where(function ($inner) use ($search): void {
-                        $inner->where('invoices.number', 'like', '%' . $search . '%')
-                            ->orWhere('customers.legal_name', 'like', '%' . $search . '%')
-                            ->orWhere('work_orders.code', 'like', '%' . $search . '%')
-                            ->orWhere('work_orders.title', 'like', '%' . $search . '%')
-                            ->orWhere('invoices.notes', 'like', '%' . $search . '%');
+                    $baseQuery->where(function (QueryBuilder $inner) use ($search): void {
+                        $inner->where('invoices.number', 'like', '%'.$search.'%')
+                            ->orWhere('customers.legal_name', 'like', '%'.$search.'%')
+                            ->orWhere('work_orders.code', 'like', '%'.$search.'%')
+                            ->orWhere('work_orders.title', 'like', '%'.$search.'%')
+                            ->orWhere('invoices.notes', 'like', '%'.$search.'%');
                     });
                 }
 
@@ -567,14 +572,14 @@ PROMPT;
                     ->leftJoin('customers', 'customers.id', '=', 'quotations.customer_id')
                     ->leftJoin('work_orders', 'work_orders.id', '=', 'quotations.work_order_id')
                     ->whereNull('quotations.deleted_at')
-                    ->where(function ($inner) use ($search): void {
-                        $inner->where('quotations.code', 'like', '%' . $search . '%')
-                            ->orWhere('quotations.title', 'like', '%' . $search . '%')
-                            ->orWhere('quotations.status_code', 'like', '%' . $search . '%')
-                            ->orWhere('customers.legal_name', 'like', '%' . $search . '%')
-                            ->orWhere('work_orders.code', 'like', '%' . $search . '%')
-                            ->orWhere('work_orders.title', 'like', '%' . $search . '%')
-                            ->orWhere('quotations.notes', 'like', '%' . $search . '%');
+                    ->where(function (QueryBuilder $inner) use ($search): void {
+                        $inner->where('quotations.code', 'like', '%'.$search.'%')
+                            ->orWhere('quotations.title', 'like', '%'.$search.'%')
+                            ->orWhere('quotations.status_code', 'like', '%'.$search.'%')
+                            ->orWhere('customers.legal_name', 'like', '%'.$search.'%')
+                            ->orWhere('work_orders.code', 'like', '%'.$search.'%')
+                            ->orWhere('work_orders.title', 'like', '%'.$search.'%')
+                            ->orWhere('quotations.notes', 'like', '%'.$search.'%');
                     })
                     ->orderByDesc('quotations.issued_at')
                     ->limit(8)
@@ -715,10 +720,10 @@ PROMPT;
                 $warehouseName = null;
                 if ($warehouse_id !== null) {
                     $wh = Warehouse::query()->find($warehouse_id);
-                    $warehouseName = $wh ? (string) $wh->name : null;
+                    $warehouseName = $wh ? (string) data_get($wh, 'name', '') : null;
                 }
 
-                $snap = app(GetStockSnapshotQuery::class)->execute($product_id, $warehouse_id);
+                $snap = app(GetStockSnapshotAction::class)->execute($product_id, $warehouse_id);
 
                 return [
                     'ok' => true,
@@ -755,8 +760,8 @@ PROMPT;
                 $out = [];
                 foreach ($items as $item) {
                     $out[] = [
-                        'component_product_id' => (int) $item->component_product_id,
-                        'quantity' => (float) $item->quantity * $quantity,
+                        'component_product_id' => (int) data_get($item, 'component_product_id'),
+                        'quantity' => (float) data_get($item, 'quantity') * $quantity,
                     ];
                 }
 
@@ -908,7 +913,7 @@ PROMPT;
                         $this->humanizeOutcomeCode($outcome_code),
                         $travel_km,
                         $travel_minutes,
-                    ) . ($notes ? " Nota: {$notes}" : ''),
+                    ).($notes ? " Nota: {$notes}" : ''),
                     toolName: 'proposeFinalizeInterventionReport',
                     arguments: [
                         'intervention_id' => $intervention_id,
@@ -954,19 +959,19 @@ PROMPT;
                     $this->describeProduct($product_id),
                 );
                 if ($from_warehouse_id) {
-                    $preview .= ' Da ' . $this->describeWarehouse($from_warehouse_id) . '.';
+                    $preview .= ' Da '.$this->describeWarehouse($from_warehouse_id).'.';
                 }
                 if ($to_warehouse_id) {
-                    $preview .= ' A ' . $this->describeWarehouse($to_warehouse_id) . '.';
+                    $preview .= ' A '.$this->describeWarehouse($to_warehouse_id).'.';
                 }
                 if ($unit_price !== null) {
-                    $preview .= ' Costo unitario €' . number_format($unit_price, 2, ',', '.') . '.';
+                    $preview .= ' Costo unitario €'.number_format($unit_price, 2, ',', '.').'.';
                 }
                 if ($work_order_id) {
-                    $preview .= ' Commessa: ' . $this->describeWorkOrder($work_order_id) . '.';
+                    $preview .= ' Commessa: '.$this->describeWorkOrder($work_order_id).'.';
                 }
                 if ($intervention_id) {
-                    $preview .= ' Intervento: ' . $this->describeIntervention($intervention_id) . '.';
+                    $preview .= ' Intervento: '.$this->describeIntervention($intervention_id).'.';
                 }
 
                 return $this->createProposal(
@@ -1020,7 +1025,7 @@ PROMPT;
                     $this->describeWorkOrder($work_order_id),
                 );
                 if ($unit_price !== null) {
-                    $preview .= ' Costo unitario €' . number_format($unit_price, 2, ',', '.');
+                    $preview .= ' Costo unitario €'.number_format($unit_price, 2, ',', '.');
                 }
 
                 return $this->createProposal(
@@ -1068,7 +1073,7 @@ PROMPT;
                     $this->describeIntervention($intervention_id),
                 );
                 if ($unit_price !== null) {
-                    $preview .= ' Costo unitario €' . number_format($unit_price, 2, ',', '.');
+                    $preview .= ' Costo unitario €'.number_format($unit_price, 2, ',', '.');
                 }
 
                 return $this->createProposal(
@@ -1108,7 +1113,7 @@ PROMPT;
             ->setCallable(function (int $product_id, int $quantity, ?int $work_order_id = null, ?string $notes = null): array {
                 $preview = "Crea ordine di produzione per {$this->describeProduct($product_id)} (qty={$quantity}).";
                 if ($work_order_id) {
-                    $preview .= ' Collegato a ' . $this->describeWorkOrder($work_order_id) . '.';
+                    $preview .= ' Collegato a '.$this->describeWorkOrder($work_order_id).'.';
                 }
 
                 return $this->createProposal(
@@ -1141,8 +1146,8 @@ PROMPT;
             ->addProperty(ToolProperty::make('to_status', PropertyType::STRING, 'Nuovo status: in_progress|completed', true, ['in_progress', 'completed']))
             ->setCallable(function (int $production_phase_id, string $to_status): array {
                 $phase = ProductionPhase::query()->find($production_phase_id);
-                $orderId = $phase ? (int) $phase->production_order_id : null;
-                $phaseName = $phase ? $this->stringValue($phase->name) : "fase #{$production_phase_id}";
+                $orderId = $phase ? (int) data_get($phase, 'production_order_id') : null;
+                $phaseName = $phase ? $this->stringValue(data_get($phase, 'name')) : "fase #{$production_phase_id}";
                 $preview = "Avanza {$phaseName} → {$this->humanizeStatusCode($to_status)}.";
                 if ($orderId) {
                     $preview .= " Ordine #{$orderId}.";
@@ -1182,9 +1187,9 @@ PROMPT;
                     ->with(['customer'])
                     ->when($search !== '', function ($documentQuery) use ($search): void {
                         $documentQuery->where(function ($inner) use ($search): void {
-                            $inner->where('source_file_name', 'like', '%' . $search . '%')
-                                ->orWhere('supplier_name', 'like', '%' . $search . '%')
-                                ->orWhereHas('customer', fn ($customerQuery) => $customerQuery->where('legal_name', 'like', '%' . $search . '%'));
+                            $inner->where('source_file_name', 'like', '%'.$search.'%')
+                                ->orWhere('supplier_name', 'like', '%'.$search.'%')
+                                ->orWhereHas('customer', fn ($customerQuery) => $customerQuery->where('legal_name', 'like', '%'.$search.'%'));
                         });
                     })
                     ->when($status !== '', fn ($documentQuery) => $documentQuery->where('analysis_status', $status))
@@ -1198,11 +1203,11 @@ PROMPT;
                     'results' => $documents->map(fn (EnergyBrokerDocument $document): array => [
                         'id' => (int) $document->id,
                         'label' => $this->describeEnergyBrokerDocumentModel($document),
-                        'source_file_name' => $this->stringValue($document->source_file_name),
-                        'document_type' => $this->stringValue($document->document_type),
-                        'service_type' => $this->stringValue($document->service_type),
-                        'supplier_name' => $this->stringValue($document->supplier_name),
-                        'analysis_status' => $this->stringValue($document->analysis_status),
+                        'source_file_name' => $this->stringValue(data_get($document, 'source_file_name')),
+                        'document_type' => $this->stringValue(data_get($document, 'document_type')),
+                        'service_type' => $this->stringValue(data_get($document, 'service_type')),
+                        'supplier_name' => $this->stringValue(data_get($document, 'supplier_name')),
+                        'analysis_status' => $this->stringValue(data_get($document, 'analysis_status')),
                         'customer' => $this->stringValue(data_get($document, 'customer.legal_name')),
                     ])->all(),
                 ];
@@ -1226,27 +1231,27 @@ PROMPT;
                     return ['ok' => false, 'error' => 'Documento Energy Broker non trovato.'];
                 }
 
-                $payload = is_array($document->normalized_payload) ? $document->normalized_payload : [];
+                $payload = is_array(data_get($document, 'normalized_payload')) ? data_get($document, 'normalized_payload') : [];
 
                 return [
                     'ok' => true,
                     'document' => [
                         'id' => (int) $document->id,
                         'label' => $this->describeEnergyBrokerDocumentModel($document),
-                        'source_file_name' => $this->stringValue($document->source_file_name),
-                        'document_type' => $this->stringValue($document->document_type),
-                        'service_type' => $this->stringValue($document->service_type),
-                        'supplier_name' => $this->stringValue($document->supplier_name),
-                        'analysis_status' => $this->stringValue($document->analysis_status),
-                        'confidence_score' => $document->confidence_score === null ? null : (float) $document->confidence_score,
+                        'source_file_name' => $this->stringValue(data_get($document, 'source_file_name')),
+                        'document_type' => $this->stringValue(data_get($document, 'document_type')),
+                        'service_type' => $this->stringValue(data_get($document, 'service_type')),
+                        'supplier_name' => $this->stringValue(data_get($document, 'supplier_name')),
+                        'analysis_status' => $this->stringValue(data_get($document, 'analysis_status')),
+                        'confidence_score' => (data_get($document, 'confidence_score')) === null ? null : (float) data_get($document, 'confidence_score'),
                         'customer' => data_get($payload, 'customer', []),
                         'supply' => data_get($payload, 'supply', []),
                         'contract' => data_get($payload, 'contract', []),
                         'review_candidates' => $document->customerMatches
                             ->map(fn ($match): array => [
                                 'customer' => $this->stringValue(data_get($match, 'customer.legal_name')),
-                                'score' => (float) $match->score,
-                                'reason' => $this->stringValue($match->reason),
+                                'score' => (float) data_get($match, 'score'),
+                                'reason' => $this->stringValue(data_get($match, 'reason')),
                             ])->all(),
                     ],
                 ];
@@ -1268,12 +1273,12 @@ PROMPT;
                     return ['ok' => false, 'error' => 'Documento Energy Broker non trovato.'];
                 }
 
-                $preview = 'Conferma import Energy Broker di ' . $this->describeEnergyBrokerDocumentModel($document) . '.';
-                if (in_array($document->analysis_status, ['needs_review', 'failed'], true)) {
+                $preview = 'Conferma import Energy Broker di '.$this->describeEnergyBrokerDocumentModel($document).'.';
+                if (in_array((string) data_get($document, 'analysis_status', ''), ['needs_review', 'failed'], true)) {
                     $preview .= ' Attenzione: il documento richiede revisione manuale prima di considerarlo definitivo.';
                 }
                 if ($review_note !== null && trim($review_note) !== '') {
-                    $preview .= ' Nota revisione: ' . trim($review_note);
+                    $preview .= ' Nota revisione: '.trim($review_note);
                 }
 
                 return $this->createProposal(
@@ -1411,7 +1416,7 @@ PROMPT;
             $when,
         ]));
 
-        return 'intervento ' . implode(' - ', $parts);
+        return 'intervento '.implode(' - ', $parts);
     }
 
     private function describeWorkOrder(int $workOrderId): string
@@ -1444,15 +1449,15 @@ PROMPT;
     private function describeEnergyBrokerDocumentModel(EnergyBrokerDocument $document): string
     {
         $parts = array_values(array_filter([
-            $this->stringValue($document->source_file_name),
-            $this->stringValue($document->document_type),
-            $this->stringValue($document->service_type),
-            $this->stringValue($document->supplier_name),
-            $this->stringValue($document->analysis_status),
+            $this->stringValue(data_get($document, 'source_file_name')),
+            $this->stringValue(data_get($document, 'document_type')),
+            $this->stringValue(data_get($document, 'service_type')),
+            $this->stringValue(data_get($document, 'supplier_name')),
+            $this->stringValue(data_get($document, 'analysis_status')),
         ]));
 
         return $parts === []
-            ? 'documento Energy Broker #' . (int) $document->id
+            ? 'documento Energy Broker #'.(int) $document->id
             : implode(' - ', $parts);
     }
 
@@ -1465,10 +1470,10 @@ PROMPT;
             return "prodotto #{$productId}";
         }
 
-        $sku = $this->stringValue($product->sku);
+        $sku = $this->stringValue(data_get($product, 'sku'));
 
         return trim(implode(' - ', array_values(array_filter([
-            $this->stringValue($product->name),
+            $this->stringValue(data_get($product, 'name')),
             $sku,
         ]))));
     }
@@ -1482,10 +1487,10 @@ PROMPT;
             return "magazzino #{$warehouseId}";
         }
 
-        $code = $this->stringValue($warehouse->code);
+        $code = $this->stringValue(data_get($warehouse, 'code'));
 
         return trim(implode(' - ', array_values(array_filter([
-            $this->stringValue($warehouse->name),
+            $this->stringValue(data_get($warehouse, 'name')),
             $code,
         ]))));
     }
@@ -1494,8 +1499,8 @@ PROMPT;
     {
         return trim(implode(' - ', array_values(array_filter([
             $this->stringValue($customer->legal_name),
-            $site instanceof CustomerSite ? $this->stringValue($site->name) : '',
-            $site instanceof CustomerSite ? $this->stringValue($site->city) : $this->stringValue($customer->city),
+            $site instanceof CustomerSite ? $this->stringValue(data_get($site, 'name')) : '',
+            $site instanceof CustomerSite ? $this->stringValue(data_get($site, 'city')) : $this->stringValue($customer->city),
         ]))));
     }
 
@@ -1524,8 +1529,8 @@ PROMPT;
     }
 
     /**
-     * @param array<string, mixed> $payload
-     * @param array<string, mixed> $arguments
+     * @param  array<string, mixed>  $payload
+     * @param  array<string, mixed>  $arguments
      * @return array<string, mixed>
      */
     private function createProposal(string $type, array $payload, string $preview, string $toolName, array $arguments): array
@@ -1572,4 +1577,3 @@ PROMPT;
         return is_scalar($value) ? (string) $value : '';
     }
 }
-

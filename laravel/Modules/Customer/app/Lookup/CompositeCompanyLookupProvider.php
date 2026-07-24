@@ -6,17 +6,24 @@ namespace Modules\Customer\Lookup;
 
 final class CompositeCompanyLookupProvider implements CompanyLookupProviderInterface
 {
+    /** @var list<CompanyLookupProviderInterface> */
     private readonly array $providers;
 
+    /**
+     * @param  list<CompanyLookupProviderInterface>  $providers
+     */
     public function __construct(
         array $providers,
     ) {
         $this->providers = array_values(array_filter(
             $providers,
-            static fn ($p) => $p instanceof CompanyLookupProviderInterface,
+            static fn ($p): bool => $p instanceof CompanyLookupProviderInterface,
         ));
     }
 
+    /**
+     * @return list<array<string, mixed>>
+     */
     public function search(string $query): array
     {
         foreach ($this->providers as $provider) {

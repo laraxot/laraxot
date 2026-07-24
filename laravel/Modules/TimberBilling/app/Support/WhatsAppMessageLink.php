@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Support;
 
+use function Safe\preg_replace;
+
 /**
  * Costruisce un link wa.me con messaggio precompilato (invio WhatsApp "manuale":
  * apre WhatsApp gia' pronto, l'invio lo fa l'operatore). Nessuna API richiesta.

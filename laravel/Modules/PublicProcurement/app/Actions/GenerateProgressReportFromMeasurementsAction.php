@@ -7,9 +7,12 @@ namespace Modules\PublicProcurement\Actions;
 use Carbon\CarbonImmutable;
 use Modules\PublicProcurement\Models\PublicProcurementContract;
 use Modules\PublicProcurement\Models\PublicProcurementProgressReport;
+use Spatie\QueueableAction\QueueableAction;
 
 final class GenerateProgressReportFromMeasurementsAction
 {
+    use QueueableAction;
+
     public function execute(
         PublicProcurementContract $contract,
         string $number,

@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace Modules\Quotation\Actions;
 
 use Modules\Quotation\AI\QuotationModificationExtractorInterface;
-use Modules\Quotation\Domain\DTO\DictatedQuotationItem;
-use Modules\Quotation\Domain\DTO\QuotationCustomerDraft;
-use Modules\Quotation\Domain\DTO\QuotationDraft;
+use Modules\Quotation\DTO\DictatedQuotationItem;
+use Modules\Quotation\DTO\QuotationCustomerDraft;
+use Modules\Quotation\DTO\QuotationDraft;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Applies an AI-recognized modification to an existing quotation: the extractor
@@ -19,6 +20,8 @@ use Modules\Quotation\Domain\DTO\QuotationDraft;
  */
 final class BuildQuotationModificationAction
 {
+    use QueueableAction;
+
     public function __construct(
         private readonly QuotationModificationExtractorInterface $extractor,
         private readonly MatchDictatedItemsToCatalogAction $matcher,

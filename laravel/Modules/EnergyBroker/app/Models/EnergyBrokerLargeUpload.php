@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\EnergyBroker\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Modules\EnergyBroker\Models\EnergyBrokerImportBatch;
+use Modules\Xot\Models\XotBaseModel;
 
-final class EnergyBrokerLargeUpload extends Model
+final class EnergyBrokerLargeUpload extends XotBaseModel
 {
     use SoftDeletes;
 
@@ -19,7 +18,7 @@ final class EnergyBrokerLargeUpload extends Model
 
     protected static function booted(): void
     {
-        static::creating(static function (self $upload): void {
+        self::creating(static function (self $upload): void {
             if (! $upload->public_id) {
                 $upload->public_id = (string) str()->uuid();
             }

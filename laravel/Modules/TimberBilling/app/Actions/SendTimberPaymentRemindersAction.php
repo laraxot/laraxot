@@ -6,6 +6,7 @@ namespace Modules\TimberBilling\Actions;
 
 use DateTimeInterface;
 use Modules\TimberBilling\Models\TimberPaymentInstallment;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Invia i solleciti: marca come "sollecitato" le rate in incasso scadute e
@@ -13,6 +14,8 @@ use Modules\TimberBilling\Models\TimberPaymentInstallment;
  */
 final class SendTimberPaymentRemindersAction
 {
+    use QueueableAction;
+
     public function execute(?DateTimeInterface $asOf = null): int
     {
         $asOfDate = ($asOf ?? now())->format('Y-m-d');

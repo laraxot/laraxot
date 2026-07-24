@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\AiAssistant\Chat;
 
+use Modules\AiAssistant\Models\AiMessage;
+use Modules\AiAssistant\Models\AiThread;
 use Modules\AiAssistant\Security\PromptInjectionGuard;
 use NeuronAI\Chat\History\ChatHistoryInterface;
 use NeuronAI\Chat\Messages\AssistantMessage;
 use NeuronAI\Chat\Messages\Message;
 use NeuronAI\Chat\Messages\UserMessage;
-use Modules\AiAssistant\Models\AiMessage;
-use Modules\AiAssistant\Models\AiThread;
 
 final class AiAssistantChatHistory implements ChatHistoryInterface
 {
@@ -102,4 +102,3 @@ final class AiAssistantChatHistory implements ChatHistoryInterface
         ];
     }
 }
-

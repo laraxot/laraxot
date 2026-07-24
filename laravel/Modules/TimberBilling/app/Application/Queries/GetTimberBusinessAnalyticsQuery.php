@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Queries;
 
-use App\Timber\Models\TimberCustomer;
 use App\Timber\Models\TimberDocument;
-use Modules\Quotation\Domain\ValueObjects\Money;
+use Illuminate\Support\Collection;
+use Modules\Customer\Models\Customer;
+use Modules\Quotation\DTO\Money;
 use Modules\TimberBilling\Domain\DTO\CustomerSalesRow;
 use Modules\TimberBilling\Domain\DTO\TimberAnalyticsSummary;
 use Modules\TimberBilling\Models\TimberInvoice;
@@ -54,7 +55,7 @@ final class GetTimberBusinessAnalyticsQuery
     }
 
     /**
-     * @param  \Illuminate\Support\Collection<int, TimberInvoice>  $invoices
+     * @param  Collection<int, TimberInvoice>  $invoices
      * @return array<int, CustomerSalesRow>
      */
     private function topCustomers($invoices, int $limit): array
@@ -70,7 +71,7 @@ final class GetTimberBusinessAnalyticsQuery
             return [];
         }
 
-        $names = TimberCustomer::query()
+        $names = Customer::query()
             ->whereIn('id', $byCustomer->keys()->all())
             ->pluck('business_name', 'id');
 

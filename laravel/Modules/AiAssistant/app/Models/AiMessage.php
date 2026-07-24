@@ -4,11 +4,21 @@ declare(strict_types=1);
 
 namespace Modules\AiAssistant\Models;
 
-use Modules\User\Models\User;
-use Modules\Xot\Models\XotBaseModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
+use Modules\User\Models\User;
 
-final class AiMessage extends XotBaseModel
+/**
+ * @property int $id
+ * @property int $ai_thread_id
+ * @property int|null $user_id
+ * @property string $role
+ * @property string|null $content
+ * @property array<string, mixed>|null $payload
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ */
+final class AiMessage extends BaseModel
 {
     protected $table = 'ai_messages';
 
@@ -35,4 +45,3 @@ final class AiMessage extends XotBaseModel
         return $this->belongsTo(User::class);
     }
 }
-

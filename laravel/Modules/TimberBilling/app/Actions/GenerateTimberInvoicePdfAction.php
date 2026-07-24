@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace Modules\TimberBilling\Actions;
 
 use Barryvdh\DomPDF\Facade\Pdf;
-use Modules\Fiscal\Domain\Actions\CalculateInvoiceTotalsAction;
-use Modules\Fiscal\Domain\DTO\InvoiceLineData;
+use Modules\Fiscal\Actions\CalculateInvoiceTotalsAction;
+use Modules\Fiscal\Datas\InvoiceLineData;
 use Modules\TimberBilling\Models\TimberInvoice;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Genera il PDF (anteprima/stampa) di un documento fiscale Timber
@@ -15,6 +16,8 @@ use Modules\TimberBilling\Models\TimberInvoice;
  */
 final class GenerateTimberInvoicePdfAction
 {
+    use QueueableAction;
+
     public function __construct(
         private readonly CalculateInvoiceTotalsAction $calculator,
     ) {}

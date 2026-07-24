@@ -4,15 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\Compliance\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
  * @property int $heating_system_id
  * @property int|null $boiler_id
  * @property string $control_type
- * @property \Carbon\CarbonInterface $performed_on
+ * @property CarbonInterface $performed_on
  * @property int|null $performed_by_user_id
  * @property int|null $intervention_id
  * @property string|null $rcee_type
@@ -27,10 +28,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string|null $draft_pa
  * @property string|null $bollino_code
  * @property bool $bollino_paid
- * @property \Carbon\CarbonInterface|null $next_due_on
+ * @property CarbonInterface|null $next_due_on
  * @property string|null $notes
  */
-final class MaintenanceControl extends Model
+final class MaintenanceControl extends XotBaseModel
 {
     protected $table = 'maintenance_controls';
 

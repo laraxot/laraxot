@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\EnergyBroker\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Customer\Models\Customer;
 use Modules\Document\Models\Media;
+use Modules\Xot\Models\XotBaseModel;
 
-final class EnergyBrokerDocument extends Model
+final class EnergyBrokerDocument extends XotBaseModel
 {
     use SoftDeletes;
 
@@ -21,7 +21,7 @@ final class EnergyBrokerDocument extends Model
 
     protected static function booted(): void
     {
-        static::creating(static function (self $document): void {
+        self::creating(static function (self $document): void {
             if (! $document->public_id) {
                 $document->public_id = (string) str()->uuid();
             }

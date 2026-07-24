@@ -6,9 +6,12 @@ namespace Modules\WorkOrder\Actions;
 
 use Carbon\CarbonImmutable;
 use Modules\WorkOrder\Models\WorkOrderAssignment;
+use Spatie\QueueableAction\QueueableAction;
 
 final class AssignUserToWorkOrderAction
 {
+    use QueueableAction;
+
     public function execute(
         int $workOrderId,
         int $userId,
@@ -34,4 +37,3 @@ final class AssignUserToWorkOrderAction
         return $assignment;
     }
 }
-

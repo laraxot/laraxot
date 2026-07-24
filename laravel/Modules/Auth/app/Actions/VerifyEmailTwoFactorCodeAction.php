@@ -8,9 +8,12 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
+use Spatie\QueueableAction\QueueableAction;
 
 final class VerifyEmailTwoFactorCodeAction
 {
+    use QueueableAction;
+
     public function execute(User $user, Request $request, string $code): void
     {
         $sessionUserId = (int) $request->session()->get('auth.email_2fa.user_id', 0);

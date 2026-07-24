@@ -6,9 +6,12 @@ namespace Modules\HR\Actions;
 
 use Carbon\CarbonImmutable;
 use Modules\HR\Models\AbsenceRequest;
+use Spatie\QueueableAction\QueueableAction;
 
 final class CreateAbsenceRequestAction
 {
+    use QueueableAction;
+
     public function execute(
         int $userId,
         string $type,
@@ -28,4 +31,3 @@ final class CreateAbsenceRequestAction
         return $request;
     }
 }
-

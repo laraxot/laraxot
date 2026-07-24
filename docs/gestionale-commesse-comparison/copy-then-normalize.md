@@ -4,7 +4,7 @@ type: concept
 tags: [gestionale-commesse, copy, normalize, replica, singular]
 created: 2026-07-23
 updated: 2026-07-23
-qmd: "copy then normalize replica singular AiAssistant Auth Document WorkOrder"
+qmd: "copy then normalize replica singular status Customer WorkOrder Billing app XotBase"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
 discussions:
@@ -12,49 +12,42 @@ discussions:
 related:
   - "./replica-singular-phase.md"
   - "./module-mapping.md"
+  - "./laraxot-compliance-audit.md"
+  - "./agent-errors-lessons.md"
   - "../wiki/concepts/module-structure-laraxot-canon.md"
   - "../wiki/rules/module-name-singular-mandatory.md"
 ---
 
 # Copy-then-normalize (fase replica)
 
-> Canon fase: [replica-singular-phase.md](./replica-singular-phase.md).  
-> Si **replicano** i moduli SRC; unica differenza di nome = **singolare**.
+> Canon: [replica-singular-phase.md](./replica-singular-phase.md).  
+> Replica SRC + nome **singolare** + reshape `app/` + XotBase SP.
 
-## Fase A — Copia → cartella singolare
+## Stato 2026-07-23 (sera)
 
-```bash
-SRC=/var/www/_bases/gestionale_commesse/Modules
-DST=/var/www/_bases/base_workorder_fila5/laravel/Modules
-# Esempio: plurale → singolare
-rsync -a --exclude node_modules --exclude vendor "$SRC/WorkOrders/" "$DST/WorkOrder/"
-rsync -a --exclude node_modules --exclude vendor "$SRC/AiAssistant/" "$DST/AiAssistant/"
-# Auth, HR, Email, … → stesso nome (già singolare)
-```
+| Cluster | Moduli | Layout `app/` | NS singolare | XotBase SP | statuses |
+|---|---|---|---|---|---|
+| Cuore | Customer, WorkOrder, Intervention | sì | sì | sì | `false` |
+| Preventivi/flotta | Quotation, Vehicle, Signature, Document | sì | sì | sì | `false` |
+| Manufacturing | Billing, Bom, Catalog, Compliance, Inventory, Production, PublicProcurement, TimberBilling, EnergyBroker, Fiscal | sì (reshape batch) | sì | sì | `false` |
+| Repliche piattaforma | AiAssistant, Auth, HR, Email, WhatsApp, Platform | sì | sì | sì | `false` |
 
-Poi: `modules_statuses.json` (`false` finché normalize+PHPStan), `composer.json` PSR-4, `composer dump-autoload`.
+### Fatto in questo passo
 
-## Fase B — Normalize Laraxot
+1. Reshape DDD root → `app/` (Billing, Bom, Catalog, Compliance, …)
+2. Namespace plurale SRC → singolare (`Modules\Customer\…`)
+3. `{Name}ServiceProvider` → `XotBaseServiceProvider` + Route/Event XotBase
+4. `composer.json` PSR-4 → `app/` + authors Marco+Davide
+5. `modules_statuses.json`: 23 chiavi singolari a `false` (niente plurali)
 
-1. PSR-4 `"Modules\\Name\\": "app/"`
-2. Spostare Domain/Application/Infrastructure → `app/`
-3. Namespace + XotBase* (Resource/Provider/Model)
-4. Root hygiene; `docs/` + `README.md`
-5. PHPStan L10; Pest smoke
-6. Aggiornare [module-mapping.md](./module-mapping.md)
+### Residuo (wave successiva)
+
+- Filament `extends Resource` → `XotBaseResource` (moduli non-cuore)
+- BaseModel + connection per modulo
+- PHPStan L10 batch successivo: Quotation, Billing, Catalog, …
+- Cuore **Customer / WorkOrder / Intervention**: PHPStan OK (0 reali)
+- Opzionale root: `composer require barryvdh/laravel-dompdf phpoffice/phpword`
 
 ## Non in questa fase
 
-| Vietato ora | Perché |
-|---|---|
-| Cancellare `AiAssistant` / `Auth` / `HR` / … | Sono **repliche**, non twin illegali |
-| Merge forzato in `AI` / `User` / `Employee` / `Notify` / `Media` | Fase gap **successiva** |
-| Lasciare enable `WorkOrders` + `WorkOrder` | Solo il **singolare** |
-
-## Stato
-
-| Step | Stato |
-|---|---|
-| Canon replica-singular | **done** |
-| Copia / reshape in corso | vedi audit |
-| Merge piattaforma | **backlog fase dopo** |
+Cancellare AiAssistant/Auth/… o merge in AI/User — [agent-errors-lessons.md](./agent-errors-lessons.md).

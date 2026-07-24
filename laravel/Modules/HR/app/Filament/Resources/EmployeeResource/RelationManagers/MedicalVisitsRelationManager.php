@@ -8,11 +8,10 @@ use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
-use Illuminate\Support\Facades\Storage;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
 use Filament\Tables;
@@ -21,12 +20,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\HR\Actions\AddEmployeeMedicalVisitAction;
 use Modules\HR\Models\Employee;
+use Modules\HR\Models\EmployeeMedicalVisit;
 
 final class MedicalVisitsRelationManager extends RelationManager
 {
     protected static string $relationship = 'medicalVisits';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('hr.medical_visits');
     }
@@ -75,7 +75,7 @@ final class MedicalVisitsRelationManager extends RelationManager
                     ->sortable(),
                 Tables\Columns\TextColumn::make('title')
                     ->label(__('hr.fields.title'))
-                    ->description(fn ($record): string => basename((string) ($record->attachment_path ?? '')))
+                    ->description(fn (EmployeeMedicalVisit $record): string => $record->media !== null ? basename($record->media->path) : '')
                     ->toggleable(),
             ])
             ->headerActions([
@@ -84,14 +84,16 @@ final class MedicalVisitsRelationManager extends RelationManager
                         /** @var Employee $employee */
                         $employee = $this->getOwnerRecord();
 
+                        $uploadedByUserId = Auth::id();
+
                         return app(AddEmployeeMedicalVisitAction::class)->execute(
                             employee: $employee,
                             visitedAt: (string) $data['visited_at'],
-                            expiresAt: $data['expires_at'] ?? null,
-                            notes: $data['notes'] ?? null,
-                            title: $data['title'] ?? null,
-                            attachmentPath: $data['attachment_path'] ?? null,
-                            uploadedByUserId: Auth::id(),
+                            expiresAt: isset($data['expires_at']) ? (string) $data['expires_at'] : null,
+                            notes: isset($data['notes']) ? (string) $data['notes'] : null,
+                            title: isset($data['title']) ? (string) $data['title'] : null,
+                            attachmentPath: isset($data['attachment_path']) ? (string) $data['attachment_path'] : null,
+                            uploadedByUserId: is_int($uploadedByUserId) ? $uploadedByUserId : null,
                         );
                     }),
             ])
@@ -100,9 +102,9 @@ final class MedicalVisitsRelationManager extends RelationManager
                     ->label(__('documents.actions.download'))
                     ->icon('heroicon-o-arrow-down-tray')
                     ->color('gray')
-                    ->visible(fn ($record): bool => (bool) ($record->attachment_path ?? false))
-                    ->url(fn ($record): string => $record->attachment_path
-                        ? asset('storage/' . ltrim((string) $record->attachment_path, '/'))
+                    ->visible(fn (EmployeeMedicalVisit $record): bool => $record->media !== null)
+                    ->url(fn (EmployeeMedicalVisit $record): string => $record->media !== null
+                        ? asset('storage/'.ltrim($record->media->path, '/'))
                         : '#'
                     )
                     ->openUrlInNewTab(),
@@ -113,4 +115,3 @@ final class MedicalVisitsRelationManager extends RelationManager
             ]);
     }
 }
-

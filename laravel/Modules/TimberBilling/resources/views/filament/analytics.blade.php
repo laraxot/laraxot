@@ -11,7 +11,7 @@
         <x-filament::button type="submit">Aggiorna</x-filament::button>
     </form>
 
-    @php($money = fn (\Modules\Quotation\Domain\ValueObjects\Money $m): string => '€ '.number_format($m->asFloat(), 2, ',', '.'))
+    @php($money = fn (\Modules\Quotation\DTO\Money $m): string => '€ '.number_format($m->asFloat(), 2, ',', '.'))
 
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div class="fi-section rounded-xl bg-white p-4 shadow dark:bg-gray-800">

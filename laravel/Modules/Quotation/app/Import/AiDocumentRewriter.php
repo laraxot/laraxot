@@ -6,6 +6,13 @@ namespace Modules\Quotation\Import;
 
 use ZipArchive;
 
+use function Safe\copy;
+use function Safe\file_get_contents;
+use function Safe\file_put_contents;
+use function Safe\preg_match;
+use function Safe\preg_replace_callback;
+use function Safe\simplexml_load_string;
+
 /**
  * Produces a modified copy of a quotation document by handing its editable parts
  * to an {@see QuotationDocumentRewriterInterface} (AI) together with the new
@@ -29,7 +36,7 @@ final class AiDocumentRewriter
      */
     public function rewrite(string $sourceAbsolutePath, string $extension, array $quotation, string $destinationAbsolutePath): bool
     {
-        @copy($sourceAbsolutePath, $destinationAbsolutePath);
+        copy($sourceAbsolutePath, $destinationAbsolutePath);
 
         return match (strtolower($extension)) {
             'ods', 'odt', 'odp' => $this->rewriteZipParts($destinationAbsolutePath, ['content.xml'], $quotation, xml: true),
@@ -46,7 +53,7 @@ final class AiDocumentRewriter
      */
     private function rewriteZipParts(string $path, array $entries, array $quotation, bool $xml): bool
     {
-        $zip = new ZipArchive;
+        $zip = new ZipArchive();
         if ($zip->open($path) !== true) {
             return false;
         }
@@ -118,8 +125,11 @@ final class AiDocumentRewriter
      */
     private function blankOrphanQuantities(string $xml): string
     {
-        return (string) preg_replace_callback('#<table:table-row\b.*?</table:table-row>#s', function (array $match): string {
-            $row = $match[0];
+        return preg_replace_callback('#<table:table-row\b.*?</table:table-row>#s', function (array $match): string {
+            $row = $match[0] ?? '';
+            if (! is_string($row)) {
+                return '';
+            }
 
             // Only rows that carry a numeric quantity are candidates.
             if (! str_contains($row, 'office:value-type="float"')) {
@@ -131,10 +141,17 @@ final class AiDocumentRewriter
             }
 
             // Orphan row: blank its numeric quantity cells, keeping only the style.
-            return (string) preg_replace_callback(
+            return preg_replace_callback(
                 '#<table:table-cell([^>]*?)\s+office:value-type="float"[^>]*>(?:<text:p>[^<]*</text:p>)?</table:table-cell>#',
                 static function (array $cell): string {
-                    $style = preg_match('/table:style-name="[^"]*"/', $cell[1], $s) === 1 ? ' '.$s[0] : '';
+                    $attributes = $cell[1] ?? '';
+                    if (! is_string($attributes)) {
+                        return is_string($cell[0] ?? null) ? $cell[0] : '';
+                    }
+                    $style = '';
+                    if (preg_match('/table:style-name="[^"]*"/', $attributes, $s) === 1 && isset($s[0])) {
+                        $style = ' '.$s[0];
+                    }
 
                     return '<table:table-cell'.$style.'/>';
                 },
@@ -180,8 +197,8 @@ final class AiDocumentRewriter
      */
     private function rewritePlainFile(string $path, array $quotation): bool
     {
-        $content = @file_get_contents($path);
-        if ($content === false || $content === '') {
+        $content = file_get_contents($path);
+        if ($content === '') {
             return false;
         }
 
@@ -190,7 +207,9 @@ final class AiDocumentRewriter
             return false;
         }
 
-        return @file_put_contents($path, $modified) !== false;
+        file_put_contents($path, $modified);
+
+        return true;
     }
 
     /**
@@ -199,7 +218,7 @@ final class AiDocumentRewriter
     private function xlsxEntries(string $path): array
     {
         $entries = ['xl/sharedStrings.xml'];
-        $zip = new ZipArchive;
+        $zip = new ZipArchive();
         if ($zip->open($path) === true) {
             for ($i = 0; $i < $zip->numFiles; $i++) {
                 $stat = $zip->statIndex($i);
@@ -217,10 +236,16 @@ final class AiDocumentRewriter
     private function isWellFormedXml(string $xml): bool
     {
         $previous = libxml_use_internal_errors(true);
-        $document = simplexml_load_string($xml);
-        libxml_clear_errors();
-        libxml_use_internal_errors($previous);
 
-        return $document !== false;
+        try {
+            simplexml_load_string($xml);
+
+            return true;
+        } catch (\Throwable) {
+            return false;
+        } finally {
+            libxml_clear_errors();
+            libxml_use_internal_errors($previous);
+        }
     }
 }

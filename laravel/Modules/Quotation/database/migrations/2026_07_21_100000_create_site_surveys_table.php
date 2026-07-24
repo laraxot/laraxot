@@ -2,22 +2,24 @@
 
 declare(strict_types=1);
 
-use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use Modules\Quotation\Models\SiteSurvey;
+use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 /**
  * Sopralluogo: il rilievo in loco che precede il preventivo.
  *
- * Vive nel modulo Quotations perche' e' la fase pre-vendita da cui nasce il
- * preventivo, non l'esecuzione (quella e' Interventions). Foto, video e note
- * audio sono allegati polimorfici sulla tabella `media` gia' esistente.
+ * Vive nel modulo Quotation perche' e' la fase pre-vendita da cui nasce il
+ * preventivo, non l'esecuzione (quella e' WorkOrder). Foto, video e note
+ * audio sono allegati gestiti via Spatie MediaLibrary (vedi SiteSurvey model).
  */
-return new class extends Migration
+return new class() extends XotBaseMigration
 {
+    protected ?string $model_class = SiteSurvey::class;
+
     public function up(): void
     {
-        Schema::create('site_surveys', static function (Blueprint $table): void {
+        $this->tableCreate(static function (Blueprint $table): void {
             $table->id();
             $table->string('code')->nullable()->unique();
             $table->foreignId('customer_id')->constrained('customers')->cascadeOnDelete();
@@ -34,16 +36,13 @@ return new class extends Migration
             $table->string('status_code', 32)->default('planned')->index();
             $table->dateTime('scheduled_at')->nullable();
             $table->dateTime('performed_at')->nullable();
-            $table->timestamps();
-            $table->softDeletes();
 
             $table->index(['customer_id']);
             $table->index(['work_order_id']);
         });
-    }
 
-    public function down(): void
-    {
-        Schema::dropIfExists('site_surveys');
+        $this->tableUpdate(function (Blueprint $table): void {
+            $this->updateTimestamps(table: $table, hasSoftDeletes: true);
+        });
     }
 };

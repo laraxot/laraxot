@@ -7,11 +7,14 @@ namespace Modules\EnergyBroker\Actions;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 use Modules\EnergyBroker\Models\EnergyBrokerDocument;
+use Spatie\QueueableAction\QueueableAction;
 
 final class DeletePoorlyAnalyzedEnergyBrokerDocumentsAction
 {
+    use QueueableAction;
+
     /**
-     * @param iterable<int, EnergyBrokerDocument> $documents
+     * @param  iterable<int, EnergyBrokerDocument>  $documents
      * @return array{deleted: int, skipped: int}
      */
     public function execute(iterable $documents, float $minimumConfidence = 0.60): array
@@ -22,6 +25,7 @@ final class DeletePoorlyAnalyzedEnergyBrokerDocumentsAction
         foreach ($documents as $document) {
             if (! $document instanceof EnergyBrokerDocument || ! $this->isPoorlyAnalyzed($document, $minimumConfidence)) {
                 $skipped++;
+
                 continue;
             }
 

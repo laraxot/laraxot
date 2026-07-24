@@ -6,13 +6,14 @@ namespace Modules\Intervention\Filament\Resources\InterventionResource\Pages;
 
 use App\Support\AccountFeatures;
 use Carbon\CarbonImmutable;
-use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Support\Facades\Auth;
 use Modules\Intervention\Filament\Concerns\ResolvesCalendarReturnUrl;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
+use Modules\User\Models\User;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 
-final class CreateIntervention extends CreateRecord
+final class CreateIntervention extends XotBaseCreateRecord
 {
     use ResolvesCalendarReturnUrl;
 
@@ -24,7 +25,7 @@ final class CreateIntervention extends CreateRecord
         $panelId = filament()->getCurrentPanel()?->getId();
 
         if ($panelId === 'operator' || request()->is('operator/*')) {
-            if (! $user instanceof \App\Models\User || ! $user->can('Create:Intervention')) {
+            if (! $user instanceof User || ! $user->can('Create:Intervention')) {
                 return false;
             }
 
@@ -96,7 +97,7 @@ final class CreateIntervention extends CreateRecord
     protected function afterCreate(): void
     {
         if ($this->record instanceof Intervention) {
-            InterventionResource::syncSupplementalData($this->record, $this->data);
+            InterventionResource::syncSupplementalData($this->record, is_array($this->data) ? $this->data : []);
         }
     }
 
@@ -118,7 +119,7 @@ final class CreateIntervention extends CreateRecord
     {
         $user = Auth::user();
 
-        return $user instanceof \App\Models\User
+        return $user instanceof User
             && AccountFeatures::hasAssignedPerimeter($user)
             && AccountFeatures::hasAccountFeature($user, 'operator.force_self_assignment')
             && request()->is('operator/*');

@@ -24,7 +24,7 @@ related:
 
 | Layer | Path | Fase replica |
 |---|---|---|
-| Dominio BO | `laravel/Modules/*` | `Customer`, `WorkOrder`, `AiAssistant`, `Auth`, … (singolare) |
+| Dominio BO | `laravel/Modules/*` | 23 repliche **singolari** reshape `app/` + XotBase SP (`statuses=false`) |
 | FO / skin | `laravel/Themes/*` | Folio, layout, Design Comuni |
 | Piattaforma | `User`, `AI`, `Media`, … | Coesistono; niente merge forzato ora |
 

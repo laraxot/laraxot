@@ -20,5 +20,12 @@ related:
 - [x] Namespace `Modules\Catalog\`
 - [x] `CatalogServiceProvider` → XotBaseServiceProvider
 - [x] composer PSR-4 → `app/`
-- [ ] Resources → XotBaseResource (wave)
-- [ ] PHPStan L10 + enable statuses
+- [x] Resources → XotBaseResource
+- [x] Pages → XotBase{Create,Edit,List,View}Record
+- [x] RelationManager → XotBaseRelationManager
+- [x] Migrazioni 1-per-modello, XotBaseMigration
+- [x] Actions → QueueableAction
+- [x] tests/TestCase.php + Pest.php scaffold
+- [x] lang/{it,en} + config/metel.php
+- [x] PHPStan (solo 2 categorie di errori minori/noti residue, vedi `gestionale-commesse-port.md`)
+- [x] Registrato in `modules_statuses.json`

@@ -11,6 +11,18 @@ use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
 
+/**
+ * @property int $id
+ * @property string $phone_e164
+ * @property string|null $wa_id
+ * @property int|null $customer_id
+ * @property int|null $customer_site_id
+ * @property int|null $contact_id
+ * @property int|null $user_id
+ * @property array<string, mixed>|null $meta
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ */
 final class WhatsAppContactIdentity extends Model
 {
     protected $table = 'whatsapp_contact_identities';

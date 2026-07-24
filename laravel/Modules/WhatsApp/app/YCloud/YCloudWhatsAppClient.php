@@ -37,7 +37,7 @@ final readonly class YCloudWhatsAppClient implements WhatsAppClientInterface
 
         $decoded = $response->json();
 
-        return is_array($decoded) ? $decoded : [];
+        return $this->toStringKeyedArray($decoded);
     }
 
     public function verifyConfiguration(?string $testRecipient = null): array
@@ -52,6 +52,25 @@ final readonly class YCloudWhatsAppClient implements WhatsAppClientInterface
             'webhook_secret_configured' => $this->settings->ycloudWebhookSecret() !== '',
             'test_recipient' => $testRecipient,
         ];
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    private function toStringKeyedArray(mixed $value): array
+    {
+        if (! is_array($value)) {
+            return [];
+        }
+
+        $result = [];
+        foreach ($value as $key => $item) {
+            if (is_string($key)) {
+                $result[$key] = $item;
+            }
+        }
+
+        return $result;
     }
 
     private function endpoint(string $path): string

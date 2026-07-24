@@ -6,15 +6,21 @@ namespace Modules\Customer\Actions;
 
 use Modules\Customer\Lookup\CompanyLookupProviderInterface;
 use Modules\Customer\Lookup\CompanyLookupResult;
+use Spatie\QueueableAction\QueueableAction;
 
 final class SearchCompanyOnlineAction
 {
+    use QueueableAction;
+
     private const MAX_RESULTS = 5;
 
     public function __construct(
         private readonly CompanyLookupProviderInterface $provider,
     ) {}
 
+    /**
+     * @return list<CompanyLookupResult>
+     */
     public function execute(string $query): array
     {
         if (trim($query) === '') {

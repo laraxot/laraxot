@@ -6,18 +6,19 @@ namespace Modules\WhatsApp\Actions;
 
 use Carbon\CarbonImmutable;
 use Modules\WhatsApp\Jobs\ProcessWhatsAppMessageJob;
-use Modules\WhatsApp\Support\PhoneNumberNormalizer;
 use Modules\WhatsApp\Models\WhatsAppConversation;
 use Modules\WhatsApp\Models\WhatsAppMessage;
+use Modules\WhatsApp\Support\PhoneNumberNormalizer;
+use Spatie\QueueableAction\QueueableAction;
 
-final readonly class StoreIncomingWhatsAppMessageAction
+final class StoreIncomingWhatsAppMessageAction
 {
-    public function __construct(private PhoneNumberNormalizer $normalizer)
-    {
-    }
+    use QueueableAction;
+
+    public function __construct(private PhoneNumberNormalizer $normalizer) {}
 
     /**
-     * @param array<string, mixed> $payload
+     * @param  array<string, mixed>  $payload
      * @return array<int, WhatsAppMessage>
      */
     public function execute(array $payload): array
@@ -33,6 +34,7 @@ final readonly class StoreIncomingWhatsAppMessageAction
             $existing = WhatsAppMessage::query()->where('meta_message_id', $messageId)->first();
             if ($existing instanceof WhatsAppMessage) {
                 $stored[] = $existing;
+
                 continue;
             }
 
@@ -70,7 +72,7 @@ final readonly class StoreIncomingWhatsAppMessageAction
     }
 
     /**
-     * @param array<string, mixed> $payload
+     * @param  array<string, mixed>  $payload
      * @return array<int, array<string, mixed>>
      */
     private function extractMessages(array $payload): array
@@ -115,7 +117,7 @@ final readonly class StoreIncomingWhatsAppMessageAction
     }
 
     /**
-     * @param array<string, mixed> $payload
+     * @param  array<string, mixed>  $payload
      * @return array<string, mixed>|null
      */
     private function extractYCloudMessage(array $payload): ?array
@@ -160,7 +162,7 @@ final readonly class StoreIncomingWhatsAppMessageAction
     }
 
     /**
-     * @param array<string, mixed> $messagePayload
+     * @param  array<string, mixed>  $messagePayload
      */
     private function conversationFor(string $from, array $messagePayload): WhatsAppConversation
     {
@@ -196,7 +198,7 @@ final readonly class StoreIncomingWhatsAppMessageAction
     }
 
     /**
-     * @param array<string, mixed> $messagePayload
+     * @param  array<string, mixed>  $messagePayload
      */
     private function messageBody(array $messagePayload, string $messageType): ?string
     {

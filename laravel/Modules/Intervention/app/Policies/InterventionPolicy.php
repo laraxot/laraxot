@@ -7,6 +7,7 @@ namespace Modules\Intervention\Policies;
 use App\Support\AccountFeatures;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Foundation\Auth\User as AuthUser;
+use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Models\Intervention;
 
 class InterventionPolicy
@@ -35,7 +36,7 @@ class InterventionPolicy
                 return true;
             }
 
-            return \Illuminate\Support\Facades\DB::table('intervention_user_assignments')
+            return DB::table('intervention_user_assignments')
                 ->where('intervention_id', $intervention->id)
                 ->where('user_id', $userId)
                 ->exists();
@@ -49,7 +50,7 @@ class InterventionPolicy
         $workOrderId = (int) $intervention->work_order_id;
 
         if ($workOrderId > 0) {
-            return \Illuminate\Support\Facades\DB::table('work_order_assignments')
+            return DB::table('work_order_assignments')
                 ->where('work_order_id', $workOrderId)
                 ->where('user_id', $userId)
                 ->exists();
@@ -61,7 +62,7 @@ class InterventionPolicy
             return false;
         }
 
-        return \Illuminate\Support\Facades\DB::table('work_order_assignments')
+        return DB::table('work_order_assignments')
             ->join('work_orders', 'work_orders.id', '=', 'work_order_assignments.work_order_id')
             ->where('work_orders.customer_id', $customerId)
             ->where('work_order_assignments.user_id', $userId)

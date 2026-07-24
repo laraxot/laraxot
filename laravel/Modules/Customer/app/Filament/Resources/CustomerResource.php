@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Customer\Filament\Resources;
 
-use App\Models\User;
 use App\Support\AccountFeatures;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -17,16 +16,18 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
+use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Customer\Filament\Resources\CustomerResource\Pages;
 use Modules\Customer\Filament\Resources\CustomerResource\RelationManagers\ContactsRelationManager;
 use Modules\Customer\Filament\Resources\CustomerResource\RelationManagers\CustomerSitesRelationManager;
 use Modules\Customer\Filament\Resources\CustomerResource\RelationManagers\WorkOrdersRelationManager;
 use Modules\Customer\Models\Customer;
+use Modules\User\Models\User;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
 final class CustomerResource extends XotBaseResource
@@ -40,12 +41,13 @@ final class CustomerResource extends XotBaseResource
         return ['legal_name', 'vat_number', 'tax_code', 'email', 'phone', 'city'];
     }
 
-    public static function getGlobalSearchResultDetails(\Illuminate\Database\Eloquent\Model $record): array
+    public static function getGlobalSearchResultDetails(Model $record): array
     {
+        /** @var Customer $record */
         return array_filter([
-            __('customers.fields.vat_number') => $record->vat_number,
-            __('customers.fields.city') => $record->city,
-            __('customers.fields.phone') => $record->phone,
+            (string) __('customers.fields.vat_number') => is_string($record->vat_number) ? $record->vat_number : null,
+            (string) __('customers.fields.city') => is_string($record->city) ? $record->city : null,
+            (string) __('customers.fields.phone') => is_string($record->phone) ? $record->phone : null,
         ]);
     }
 
@@ -66,24 +68,24 @@ final class CustomerResource extends XotBaseResource
         return self::isAvailableInCurrentPanel() && parent::canCreate();
     }
 
-    public static function canEdit($record): bool
+    public static function canEdit(Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && parent::canEdit($record);
     }
 
-    public static function canView($record): bool
+    public static function canView(Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && parent::canView($record);
     }
 
-    public static function getNavigationSort(): ?int
+    public static function getNavigationSort(): int
     {
         return 4;
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
-        return __('customers.navigation');
+        return (string) __('customers.navigation');
     }
 
     public static function getModelLabel(): string
@@ -96,9 +98,9 @@ final class CustomerResource extends XotBaseResource
         return __('customers.customers');
     }
 
-    public static function form(Schema $schema): Schema
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
@@ -188,7 +190,7 @@ final class CustomerResource extends XotBaseResource
                         ->default(true),
                 ])
                 ->columns(2),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -197,7 +199,7 @@ final class CustomerResource extends XotBaseResource
             ->columns([
                 Tables\Columns\TextColumn::make('legal_name')
                     ->label(__('customers.fields.legal_name'))
-                    ->weight(\Filament\Support\Enums\FontWeight::Bold)
+                    ->weight(FontWeight::Bold)
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('email')

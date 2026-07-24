@@ -7,6 +7,7 @@ namespace Modules\TimberBilling\Actions;
 use Modules\TimberBilling\Models\TimberEInvoice;
 use Modules\TimberBilling\Models\TimberInvoice;
 use RuntimeException;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Prepara la fattura elettronica di una fattura: genera l'XML FatturaPA e crea
@@ -14,6 +15,8 @@ use RuntimeException;
  */
 final class PrepareTimberEInvoiceAction
 {
+    use QueueableAction;
+
     public function __construct(
         private readonly GenerateFatturaElettronicaXmlAction $generateXml,
     ) {}

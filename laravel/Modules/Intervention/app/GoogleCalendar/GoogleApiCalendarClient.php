@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\GoogleCalendar;
 
-use App\Models\User;
 use Carbon\CarbonImmutable;
 use Carbon\CarbonInterface;
 use Google\Client;
-use Google\Service\Calendar;
+use Google\Service\Calendar\Calendar as GoogleCalendarService;
 use Google\Service\Calendar\Event;
 use Google\Service\Calendar\EventDateTime;
 use Google\Service\Exception as GoogleServiceException;
@@ -17,6 +16,7 @@ use Modules\Intervention\GoogleCalendar\Contracts\GoogleCalendarClient;
 use Modules\Intervention\GoogleCalendar\DTO\GoogleCalendarEvent;
 use Modules\Intervention\GoogleCalendar\DTO\GoogleEventInput;
 use Modules\Intervention\Models\UserGoogleCalendarSetting;
+use Modules\User\Models\User;
 use RuntimeException;
 
 /**
@@ -48,7 +48,7 @@ final class GoogleApiCalendarClient implements GoogleCalendarClient
 
         $calendarId = 'primary';
         try {
-            $items = (new Calendar($client))->calendarList->listCalendarList()->getItems();
+            $items = (new GoogleCalendarService($client))->calendarList->listCalendarList()->getItems();
             $first = $items[0] ?? null;
             if ($first !== null && is_string($first->getId())) {
                 $calendarId = $first->getId();
@@ -110,9 +110,9 @@ final class GoogleApiCalendarClient implements GoogleCalendarClient
 
     public function upsertEvent(User $user, string $calendarId, ?string $eventId, GoogleEventInput $input): string
     {
-        $calendar = new Calendar($this->authorizedClient($user));
+        $calendar = new GoogleCalendarService($this->authorizedClient($user));
 
-        $event = new Event;
+        $event = new Event();
         $event->setSummary($input->summary);
         if ($input->description !== null) {
             $event->setDescription($input->description);
@@ -132,7 +132,7 @@ final class GoogleApiCalendarClient implements GoogleCalendarClient
 
     public function deleteEvent(User $user, string $calendarId, string $eventId): void
     {
-        $calendar = new Calendar($this->authorizedClient($user));
+        $calendar = new GoogleCalendarService($this->authorizedClient($user));
 
         try {
             $calendar->events->delete($calendarId, $eventId);
@@ -145,7 +145,7 @@ final class GoogleApiCalendarClient implements GoogleCalendarClient
 
     public function getEvent(User $user, string $calendarId, string $eventId): ?GoogleCalendarEvent
     {
-        $calendar = new Calendar($this->authorizedClient($user));
+        $calendar = new GoogleCalendarService($this->authorizedClient($user));
 
         try {
             $event = $calendar->events->get($calendarId, $eventId);
@@ -164,7 +164,7 @@ final class GoogleApiCalendarClient implements GoogleCalendarClient
      */
     public function listEvents(User $user, CarbonInterface $startsAt, CarbonInterface $endsAt): array
     {
-        $calendar = new Calendar($this->authorizedClient($user));
+        $calendar = new GoogleCalendarService($this->authorizedClient($user));
         /** @var UserGoogleCalendarSetting $setting */
         $setting = UserGoogleCalendarSetting::query()->where('user_id', $user->id)->firstOrFail();
 
@@ -210,7 +210,7 @@ final class GoogleApiCalendarClient implements GoogleCalendarClient
 
     private function eventDateTime(CarbonInterface $moment, string $timeZone): EventDateTime
     {
-        $dt = new EventDateTime;
+        $dt = new EventDateTime();
         $dt->setDateTime($moment->format('Y-m-d\TH:i:s'));
         $dt->setTimeZone($timeZone);
 
@@ -226,14 +226,14 @@ final class GoogleApiCalendarClient implements GoogleCalendarClient
             throw new RuntimeException('Google Calendar non configurato: imposta GOOGLE_CALENDAR_CLIENT_ID e GOOGLE_CALENDAR_CLIENT_SECRET.');
         }
 
-        $client = new Client;
+        $client = new Client();
         $client->setClientId($clientId);
         $client->setClientSecret($clientSecret);
         $client->setRedirectUri(route('interventions.google-calendar.callback'));
         $client->setAccessType('offline');
         $client->setPrompt('consent');
         $client->setIncludeGrantedScopes(true);
-        $client->setScopes([Calendar::CALENDAR, Oauth2::USERINFO_EMAIL]);
+        $client->setScopes([GoogleCalendarService::CALENDAR, Oauth2::USERINFO_EMAIL]);
 
         return $client;
     }

@@ -1,0 +1,20 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\AiAssistant\Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Modules\AiAssistant\Models\AiMessage;
+
+class AiMessageSeeder extends Seeder
+{
+    public function run(): void
+    {
+        if (AiMessage::query()->exists()) {
+            return;
+        }
+
+        AiMessage::factory()->count(2)->create();
+    }
+}

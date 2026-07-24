@@ -53,4 +53,3 @@ final class AiActionConfirmController extends Controller
         ], ($result['ok'] ?? false) ? 200 : 422);
     }
 }
-

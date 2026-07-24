@@ -37,7 +37,7 @@ final class HeatingSystemResource extends Resource
 
     private const ACCOUNT_FEATURE_OPERATOR = 'operator.heating_maintenance';
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('heating.navigation');
     }

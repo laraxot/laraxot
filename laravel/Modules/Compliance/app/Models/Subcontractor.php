@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Compliance\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Xot\Models\XotBaseModel;
 
-final class Subcontractor extends Model
+final class Subcontractor extends XotBaseModel
 {
     use SoftDeletes;
 

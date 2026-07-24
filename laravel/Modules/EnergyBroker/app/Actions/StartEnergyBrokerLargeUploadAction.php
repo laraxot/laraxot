@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace Modules\EnergyBroker\Actions;
 
 use Modules\EnergyBroker\Models\EnergyBrokerLargeUpload;
+use Spatie\QueueableAction\QueueableAction;
 
 final class StartEnergyBrokerLargeUploadAction
 {
+    use QueueableAction;
+
     public function execute(
         string $originalName,
         int $totalSize,

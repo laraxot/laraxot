@@ -1,0 +1,95 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'navigation' => 'Preventivi',
+    'quotation' => 'Preventivo',
+    'quotations' => 'Preventivi',
+    'quotation_template' => 'Modello preventivo',
+    'quotation_templates' => 'Modelli preventivo',
+    'quotation_items' => 'Righe preventivo',
+
+    'fields' => [
+        'code' => 'Codice',
+        'confirmed_at' => 'Confermato il',
+        'customer' => 'Cliente',
+        'description' => 'Descrizione',
+        'discount_amount' => 'Sconto',
+        'discount_percent' => 'Sconto %',
+        'issued_at' => 'Emesso il',
+        'line_total' => 'Totale riga',
+        'notes' => 'Note',
+        'product' => 'Prodotto',
+        'quantity' => 'Quantità',
+        'sort_order' => 'Ordine',
+        'status' => 'Stato',
+        'subtotal' => 'Subtotale',
+        'taxable_amount' => 'Imponibile',
+        'tax_amount' => 'IVA',
+        'tax_percent' => 'IVA %',
+        'title' => 'Titolo',
+        'total' => 'Totale',
+        'unit_price' => 'Prezzo unitario',
+        'work_order' => 'Commessa',
+    ],
+
+    'statuses' => [
+        'draft' => 'Bozza',
+        'sent' => 'Inviato',
+        'confirmed' => 'Confermato',
+        'rejected' => 'Rifiutato',
+    ],
+
+    'actions' => [
+        'apply_template' => 'Applica modello',
+        'create_work_order' => 'Crea commessa',
+        'download_confirmed_pdf' => 'Scarica PDF confermato',
+        'download_pdf' => 'Scarica PDF',
+        'reprepare_attachment' => 'Rigenera allegato',
+        'reprepare_queued' => 'Rigenerazione allegato in coda',
+        'reprepare_nothing' => 'Nessun allegato da rigenerare',
+    ],
+
+    'attachments' => [
+        'title' => 'Allegati',
+        'add' => 'Aggiungi allegato',
+        'download' => 'Scarica',
+        'file' => 'File',
+        'file_title' => 'Titolo file',
+        'file_title_hint' => 'Facoltativo: se vuoto viene usato il nome del file.',
+        'size' => 'Dimensione',
+        'type' => 'Tipo',
+        'uploaded_at' => 'Caricato il',
+    ],
+
+    'import' => [
+        'title' => 'Importa preventivo da file',
+        'file' => 'File',
+        'done' => 'Preventivo importato correttamente.',
+        'failed' => 'Importazione non riuscita.',
+        'empty_document' => 'Il documento non contiene testo utile.',
+        'no_customer' => 'Impossibile determinare il cliente dal documento.',
+    ],
+
+    'voice' => [
+        'title' => 'Preventivo vocale',
+        'section_title' => 'Dettatura',
+        'transcript_label' => 'Trascrizione',
+        'ai_response_label' => 'Risposta AI (grezza)',
+        'empty_transcript' => 'Nessuna trascrizione da elaborare.',
+        'customer_required' => 'Indicare un cliente.',
+        'items_required' => 'Aggiungere almeno una riga.',
+        'created' => 'Preventivo creato.',
+        'recalculated' => 'Totali ricalcolati.',
+        'new' => 'Nuovo',
+        'create_similar' => 'Crea simile per un altro cliente',
+        'based_on_none' => 'Nessun preventivo di riferimento trovato.',
+        'no_company_found' => 'Nessuna azienda trovata.',
+        'city' => 'Città',
+        'phone' => 'Telefono',
+        'attachment_preparing_title' => 'Allegato in preparazione…',
+        'attachment_preparing_body' => 'Il documento è in fase di rigenerazione, sarà disponibile a breve.',
+        'attachment_failed_title' => 'Allegato non generato',
+    ],
+];

@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Actions;
 
-use DateTimeImmutable;
 use Illuminate\Support\Facades\DB;
-use Modules\Fiscal\Domain\Actions\CalculatePaymentPlanAction;
-use Modules\Quotation\Domain\ValueObjects\Money;
+use Modules\Fiscal\Actions\CalculatePaymentPlanAction;
+use Modules\Quotation\DTO\Money;
 use Modules\TimberBilling\Models\TimberInvoice;
 use Modules\TimberBilling\Models\TimberPaymentInstallment;
+use Safe\DateTimeImmutable;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Genera lo scadenzario di una fattura dal totale e dai parametri di rateazione.
@@ -17,6 +18,8 @@ use Modules\TimberBilling\Models\TimberPaymentInstallment;
  */
 final class GenerateTimberInvoicePaymentScheduleAction
 {
+    use QueueableAction;
+
     public function __construct(
         private readonly CalculatePaymentPlanAction $calculatePaymentPlan,
     ) {}

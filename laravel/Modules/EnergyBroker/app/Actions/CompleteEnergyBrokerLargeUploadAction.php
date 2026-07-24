@@ -6,9 +6,12 @@ namespace Modules\EnergyBroker\Actions;
 
 use Modules\EnergyBroker\Jobs\AssembleEnergyBrokerLargeUploadJob;
 use Modules\EnergyBroker\Models\EnergyBrokerLargeUpload;
+use Spatie\QueueableAction\QueueableAction;
 
 final class CompleteEnergyBrokerLargeUploadAction
 {
+    use QueueableAction;
+
     public function execute(EnergyBrokerLargeUpload $upload): EnergyBrokerLargeUpload
     {
         if ($upload->status !== 'uploading') {

@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace Modules\WorkOrder\Actions;
 
 use Modules\WorkOrder\Models\WorkOrder;
+use Spatie\QueueableAction\QueueableAction;
 
 final class GetWorkOrderDetailsAction
 {
+    use QueueableAction;
+
     public function execute(int $workOrderId): WorkOrder
     {
         /** @var WorkOrder $workOrder */
@@ -18,4 +21,3 @@ final class GetWorkOrderDetailsAction
         return $workOrder;
     }
 }
-

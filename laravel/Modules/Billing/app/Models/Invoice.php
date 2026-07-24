@@ -4,11 +4,28 @@ declare(strict_types=1);
 
 namespace Modules\Billing\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
+use Modules\Xot\Models\XotBaseModel;
 
-final class Invoice extends Model
+/**
+ * @property int $id
+ * @property int $customer_id
+ * @property int|null $work_order_id
+ * @property string|null $number
+ * @property Carbon|null $issued_on
+ * @property string $total
+ * @property string|null $notes
+ * @property string|null $electronic_invoice_provider
+ * @property string|null $electronic_invoice_external_id
+ * @property Carbon|null $electronic_invoice_sent_at
+ * @property string|null $electronic_invoice_last_error
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
+ */
+final class Invoice extends XotBaseModel
 {
     use SoftDeletes;
 
@@ -34,4 +51,3 @@ final class Invoice extends Model
         return $this->hasMany(InvoiceWorkOrderLink::class);
     }
 }
-

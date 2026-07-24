@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Modules\Quotation\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 
-final class QuotationTemplate extends Model
+/**
+ * @property int $id
+ * @property string $title
+ * @property string|null $notes
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
+ */
+final class QuotationTemplate extends BaseModel
 {
     use SoftDeletes;
 
@@ -31,4 +39,3 @@ final class QuotationTemplate extends Model
         return $this->hasMany(QuotationTemplateItem::class, 'quotation_template_id');
     }
 }
-

@@ -23,6 +23,7 @@ use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Illuminate\Filesystem\FilesystemAdapter;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\HtmlString;
 use Modules\Compliance\Actions\AnalyzeComplianceDocumentWithOpenAiAction;
@@ -37,7 +38,7 @@ final class ComplianceDocumentResource extends Resource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-shield-check';
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('compliance.navigation');
     }
@@ -148,7 +149,7 @@ final class ComplianceDocumentResource extends Resource
         }
 
         $disk = (string) ($media->disk ?: 'public');
-        /** @var \Illuminate\Filesystem\FilesystemAdapter $filesystem */
+        /** @var FilesystemAdapter $filesystem */
         $filesystem = Storage::disk($disk);
         $url = $filesystem->url($media->path);
         $title = e((string) ($media->title ?: $record?->title ?: 'Documento'));

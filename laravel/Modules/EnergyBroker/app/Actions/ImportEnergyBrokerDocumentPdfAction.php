@@ -7,11 +7,14 @@ namespace Modules\EnergyBroker\Actions;
 use Illuminate\Support\Facades\Storage;
 use Modules\Document\Actions\CreateMediaFromStoredFileAction;
 use Modules\EnergyBroker\Models\EnergyBrokerDocument;
+use Spatie\QueueableAction\QueueableAction;
 
 final class ImportEnergyBrokerDocumentPdfAction
 {
+    use QueueableAction;
+
     /**
-     * @param array<string, mixed> $mediaMeta
+     * @param  array<string, mixed>  $mediaMeta
      */
     public function execute(
         string $filename,
@@ -29,7 +32,7 @@ final class ImportEnergyBrokerDocumentPdfAction
             throw new \RuntimeException('PDF non leggibile o vuoto.');
         }
 
-        $storedPath = 'media/energy-broker/documents/' . str()->uuid() . '-' . basename($filename);
+        $storedPath = 'media/energy-broker/documents/'.str()->uuid().'-'.basename($filename);
         Storage::disk('public')->put($storedPath, $binary);
 
         $analysis = app(AnalyzeEnergyBrokerDocumentWithGoogleDocumentAiAction::class)->execute(
@@ -79,7 +82,7 @@ final class ImportEnergyBrokerDocumentPdfAction
     }
 
     /**
-     * @param array<string, mixed> $mediaMeta
+     * @param  array<string, mixed>  $mediaMeta
      */
     public function executeFromPath(
         string $filename,

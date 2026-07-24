@@ -4,10 +4,24 @@ declare(strict_types=1);
 
 namespace Modules\Catalog\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
+use Modules\Xot\Models\XotBaseModel;
 
-final class MetelCatalog extends Model
+/**
+ * @property int $id
+ * @property string $code
+ * @property string|null $brand_code
+ * @property string $name
+ * @property string|null $manufacturer
+ * @property string $source_type
+ * @property string|null $version
+ * @property Carbon|null $imported_at
+ * @property bool $is_active
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ */
+final class MetelCatalog extends XotBaseModel
 {
     protected $table = 'metel_catalogs';
 

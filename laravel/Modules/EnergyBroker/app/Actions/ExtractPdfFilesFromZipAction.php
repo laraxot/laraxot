@@ -5,10 +5,13 @@ declare(strict_types=1);
 namespace Modules\EnergyBroker\Actions;
 
 use Illuminate\Support\Facades\File;
+use Spatie\QueueableAction\QueueableAction;
 use ZipArchive;
 
 final class ExtractPdfFilesFromZipAction
 {
+    use QueueableAction;
+
     /**
      * @return array<int, array{original_name: string, extracted_path: string, file_hash: string}>
      */
@@ -23,7 +26,7 @@ final class ExtractPdfFilesFromZipAction
             throw new \RuntimeException('Impossibile aprire l\'archivio ZIP.');
         }
 
-        $targetDirectory = storage_path('app/tmp/energy-broker/' . str()->uuid());
+        $targetDirectory = storage_path('app/tmp/energy-broker/'.str()->uuid());
         File::ensureDirectoryExists($targetDirectory);
 
         $entries = [];
@@ -47,14 +50,14 @@ final class ExtractPdfFilesFromZipAction
                 continue;
             }
 
-            $filename = str_pad((string) $index, 5, '0', STR_PAD_LEFT) . '-' . basename($originalName);
-            $extractedPath = $targetDirectory . '/' . $filename;
+            $filename = str_pad((string) $index, 5, '0', STR_PAD_LEFT).'-'.basename($originalName);
+            $extractedPath = $targetDirectory.'/'.$filename;
 
             if (! $archive->extractTo($targetDirectory, [$originalName])) {
                 continue;
             }
 
-            $temporaryPath = $targetDirectory . '/' . $originalName;
+            $temporaryPath = $targetDirectory.'/'.$originalName;
             if (! is_file($temporaryPath) || filesize($temporaryPath) === 0) {
                 continue;
             }

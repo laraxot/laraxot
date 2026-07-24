@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Compliance\Filament\Pages;
 
-use App\Models\User;
 use App\Support\AccountFeatures;
 use Filament\Pages\Page;
 use Illuminate\Support\Facades\Auth;
 use Modules\Compliance\Queries\GetHeatingComplianceOverviewQuery;
+use Modules\User\Models\User;
 
 /**
  * Cross-customer overview of heating maintenance / RCEE deadlines, worst first,

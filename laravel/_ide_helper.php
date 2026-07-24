@@ -5,7 +5,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 12.42.0.
+ * Generated for Laravel 13.20.0.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -374,7 +374,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Get the path to the views directory.
-         * 
+         *
          * This method returns the first configured path in the array of view paths.
          *
          * @param string $path
@@ -458,7 +458,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Get the fully qualified path to the environment file.
+         * Get the fully-qualified path to the environment file.
          *
          * @return string
          * @static
@@ -1317,9 +1317,9 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Returns true if the container can return an entry for the given identifier.
-         * 
+         *
          * Returns false otherwise.
-         * 
+         *
          * `has($id)` returning true does not mean that `get($id)` will not throw an exception.
          * It does however mean that `get($id)` will not throw a `NotFoundExceptionInterface`.
          *
@@ -1703,6 +1703,8 @@ namespace Illuminate\Support\Facades {
          * @template TClass of object
          * @param string|class-string<TClass> $id
          * @return ($id is class-string<TClass> ? TClass : mixed)
+         * @throws \Illuminate\Contracts\Container\CircularDependencyException
+         * @throws \Illuminate\Container\EntryNotFoundException
          * @static
          */
         public static function get($id)
@@ -1733,13 +1735,14 @@ namespace Illuminate\Support\Facades {
          * Resolve a dependency based on an attribute.
          *
          * @return mixed
+         * @throws \Illuminate\Contracts\Container\BindingResolutionException
          * @static
          */
-        public static function resolveFromAttribute($attribute)
+        public static function resolveFromAttribute($attribute, $parameter)
         {
             //Method inherited from \Illuminate\Container\Container 
             /** @var \App\Application $instance */
-            return $instance->resolveFromAttribute($attribute);
+            return $instance->resolveFromAttribute($attribute, $parameter);
         }
 
         /**
@@ -1961,54 +1964,54 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if a given offset exists.
          *
-         * @param string $key
+         * @param string $offset
          * @static
          */
-        public static function offsetExists($key)
+        public static function offsetExists($offset)
         {
             //Method inherited from \Illuminate\Container\Container 
             /** @var \App\Application $instance */
-            return $instance->offsetExists($key);
+            return $instance->offsetExists($offset);
         }
 
         /**
          * Get the value at a given offset.
          *
-         * @param string $key
+         * @param string $offset
          * @static
          */
-        public static function offsetGet($key)
+        public static function offsetGet($offset)
         {
             //Method inherited from \Illuminate\Container\Container 
             /** @var \App\Application $instance */
-            return $instance->offsetGet($key);
+            return $instance->offsetGet($offset);
         }
 
         /**
          * Set the value at a given offset.
          *
-         * @param string $key
+         * @param string $offset
          * @param mixed $value
          * @static
          */
-        public static function offsetSet($key, $value)
+        public static function offsetSet($offset, $value)
         {
             //Method inherited from \Illuminate\Container\Container 
             /** @var \App\Application $instance */
-            return $instance->offsetSet($key, $value);
+            return $instance->offsetSet($offset, $value);
         }
 
         /**
          * Unset the value at a given offset.
          *
-         * @param string $key
+         * @param string $offset
          * @static
          */
-        public static function offsetUnset($key)
+        public static function offsetUnset($offset)
         {
             //Method inherited from \Illuminate\Container\Container 
             /** @var \App\Application $instance */
-            return $instance->offsetUnset($key);
+            return $instance->offsetUnset($offset);
         }
 
         /**
@@ -2316,7 +2319,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Attempt to get the guard from the local cache.
          *
-         * @param string|null $name
+         * @param \UnitEnum|string|null $name
          * @return \Illuminate\Contracts\Auth\Guard|\Illuminate\Contracts\Auth\StatefulGuard
          * @static
          */
@@ -2369,7 +2372,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Set the default guard driver the factory should serve.
          *
-         * @param string $name
+         * @param \UnitEnum|string|null $name
          * @return void
          * @static
          */
@@ -2382,7 +2385,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Set the default authentication driver name.
          *
-         * @param string $name
+         * @param \UnitEnum|string $name
          * @return void
          * @static
          */
@@ -2436,6 +2439,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $driver
          * @param \Closure $callback
+         * @param-closure-this $this  $callback
          * @return \Illuminate\Auth\AuthManager
          * @static
          */
@@ -2673,6 +2677,19 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Create a HMAC of the password hash for storage in cookies.
+         *
+         * @param string $passwordHash
+         * @return string
+         * @static
+         */
+        public static function hashPasswordForCookie($passwordHash)
+        {
+            /** @var \Illuminate\Auth\SessionGuard $instance */
+            return $instance->hashPasswordForCookie($passwordHash);
+        }
+
+        /**
          * Log the user out of the application.
          *
          * @return void
@@ -2686,7 +2703,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Log the user out of the application on their current device only.
-         * 
+         *
          * This method does not cycle the "remember" token.
          *
          * @return void
@@ -2700,7 +2717,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Invalidate other sessions for the current user.
-         * 
+         *
          * The application must be using the AuthenticateSession middleware.
          *
          * @param string $password
@@ -3378,7 +3395,7 @@ namespace Illuminate\Support\Facades {
          * Register a handler for custom directives.
          *
          * @param string $name
-         * @param callable $handler
+         * @param ($bind is true ? \Closure : callable) $handler
          * @param bool $bind
          * @return void
          * @throws \InvalidArgumentException
@@ -3664,7 +3681,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Register the routes for handling broadcast authentication and sockets.
-         * 
+         *
          * Alias of "routes" method.
          *
          * @param array|null $attributes
@@ -3750,22 +3767,22 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Get a driver instance.
+         * Get a broadcaster instance by name.
          *
-         * @param string|null $driver
+         * @param \UnitEnum|string|null $name
          * @return mixed
          * @static
          */
-        public static function connection($driver = null)
+        public static function connection($name = null)
         {
             /** @var \Illuminate\Broadcasting\BroadcastManager $instance */
-            return $instance->connection($driver);
+            return $instance->connection($name);
         }
 
         /**
          * Get a driver instance.
          *
-         * @param string|null $name
+         * @param \UnitEnum|string|null $name
          * @return mixed
          * @static
          */
@@ -3816,7 +3833,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Set the default driver name.
          *
-         * @param string $name
+         * @param \UnitEnum|string $name
          * @return void
          * @static
          */
@@ -3829,7 +3846,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Disconnect the given driver / connection and remove it from local cache.
          *
-         * @param string|null $name
+         * @param \UnitEnum|string|null $name
          * @return void
          * @static
          */
@@ -3844,6 +3861,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $driver
          * @param \Closure $callback
+         * @param-closure-this $this  $callback
          * @return \Illuminate\Broadcasting\BroadcastManager
          * @static
          */
@@ -3890,6 +3908,32 @@ namespace Illuminate\Support\Facades {
             return $instance->forgetDrivers();
         }
 
+        /**
+         * Resolve the default connection name for a given queueable instance.
+         *
+         * @param object $queueable
+         * @return string|null
+         * @static
+         */
+        public static function resolveConnectionFromQueueRoute($queueable)
+        {
+            /** @var \Illuminate\Broadcasting\BroadcastManager $instance */
+            return $instance->resolveConnectionFromQueueRoute($queueable);
+        }
+
+        /**
+         * Resolve the default queue name for a given queueable instance.
+         *
+         * @param object $queueable
+         * @return string|null
+         * @static
+         */
+        public static function resolveQueueFromQueueRoute($queueable)
+        {
+            /** @var \Illuminate\Broadcasting\BroadcastManager $instance */
+            return $instance->resolveQueueFromQueueRoute($queueable);
+        }
+
             }
     /**
      * @see \Illuminate\Bus\Dispatcher
@@ -3911,7 +3955,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Dispatch a command to its appropriate handler in the current process.
-         * 
+         *
          * Queueable jobs will be dispatched to the "sync" queue.
          *
          * @param mixed $command
@@ -3937,6 +3981,19 @@ namespace Illuminate\Support\Facades {
         {
             /** @var \Illuminate\Bus\Dispatcher $instance */
             return $instance->dispatchNow($command, $handler);
+        }
+
+        /**
+         * Dispatch multiple commands in bulk to their appropriate handlers on the queue.
+         *
+         * @param iterable $jobs
+         * @return void
+         * @static
+         */
+        public static function bulk($jobs)
+        {
+            /** @var \Illuminate\Bus\Dispatcher $instance */
+            $instance->bulk($jobs);
         }
 
         /**
@@ -4080,6 +4137,32 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Resolve the default connection name for a given queueable instance.
+         *
+         * @param object $queueable
+         * @return string|null
+         * @static
+         */
+        public static function resolveConnectionFromQueueRoute($queueable)
+        {
+            /** @var \Illuminate\Bus\Dispatcher $instance */
+            return $instance->resolveConnectionFromQueueRoute($queueable);
+        }
+
+        /**
+         * Resolve the default queue name for a given queueable instance.
+         *
+         * @param object $queueable
+         * @return string|null
+         * @static
+         */
+        public static function resolveQueueFromQueueRoute($queueable)
+        {
+            /** @var \Illuminate\Bus\Dispatcher $instance */
+            return $instance->resolveQueueFromQueueRoute($queueable);
+        }
+
+        /**
          * Specify the jobs that should be dispatched instead of faked.
          *
          * @param array|string $jobsToDispatch
@@ -4110,7 +4193,6 @@ namespace Illuminate\Support\Facades {
          * Assert if a job was pushed exactly once.
          *
          * @param string|\Closure $command
-         * @param int $times
          * @return void
          * @static
          */
@@ -4286,7 +4368,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Create a new assertion about a chained batch.
          *
-         * @param \Closure $callback
+         * @param \Closure(\Illuminate\Bus\PendingBatch):  bool  $callback
          * @return \Illuminate\Support\Testing\Fakes\ChainedBatchTruthTest
          * @static
          */
@@ -4299,7 +4381,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Assert if a batch was dispatched based on a truth-test callback.
          *
-         * @param callable $callback
+         * @param array|callable(\Illuminate\Bus\PendingBatch):  bool  $callback
          * @return void
          * @static
          */
@@ -4391,8 +4473,8 @@ namespace Illuminate\Support\Facades {
         /**
          * Get all of the pending batches matching a truth-test callback.
          *
-         * @param callable $callback
-         * @return \Illuminate\Support\Collection
+         * @param callable(\Illuminate\Bus\PendingBatch):  bool  $callback
+         * @return \Illuminate\Support\Collection<int, \Illuminate\Bus\PendingBatch>
          * @static
          */
         public static function batched($callback)
@@ -4500,7 +4582,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get a cache store instance by name, wrapped in a repository.
          *
-         * @param string|null $name
+         * @param \UnitEnum|string|null $name
          * @return \Illuminate\Contracts\Cache\Repository
          * @static
          */
@@ -4513,7 +4595,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get a cache driver instance.
          *
-         * @param string|null $driver
+         * @param \UnitEnum|string|null $driver
          * @return \Illuminate\Contracts\Cache\Repository
          * @static
          */
@@ -4526,7 +4608,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get a memoized cache driver instance.
          *
-         * @param string|null $driver
+         * @param \UnitEnum|string|null $driver
          * @return \Illuminate\Contracts\Cache\Repository
          * @static
          */
@@ -4555,6 +4637,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param array $config
          * @return \Illuminate\Cache\Repository
+         * @throws \InvalidArgumentException
          * @static
          */
         public static function build($config)
@@ -4604,7 +4687,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Set the default cache driver name.
          *
-         * @param string $name
+         * @param \UnitEnum|string $name
          * @return void
          * @static
          */
@@ -4617,7 +4700,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Unset the given driver instances.
          *
-         * @param array|string|null $name
+         * @param array|\UnitEnum|string|null $name
          * @return \Illuminate\Cache\CacheManager
          * @static
          */
@@ -4630,7 +4713,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Disconnect the given driver and remove from local cache.
          *
-         * @param string|null $name
+         * @param \UnitEnum|string|null $name
          * @return void
          * @static
          */
@@ -4669,10 +4752,22 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Register a callback to be invoked when an unserializable class is encountered.
+         *
+         * @param callable|null $callback
+         * @return void
+         * @static
+         */
+        public static function handleUnserializableClassUsing($callback)
+        {
+            /** @var \Illuminate\Cache\CacheManager $instance */
+            $instance->handleUnserializableClassUsing($callback);
+        }
+
+        /**
          * Determine if an item exists in the cache.
          *
-         * @param array|string $key
-         * @return bool
+         * @param \UnitEnum|array|string $key
          * @static
          */
         public static function has($key)
@@ -4684,7 +4779,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if an item doesn't exist in the cache.
          *
-         * @param string $key
+         * @param \UnitEnum|string $key
          * @return bool
          * @static
          */
@@ -4697,9 +4792,8 @@ namespace Illuminate\Support\Facades {
         /**
          * Retrieve an item from the cache by key.
          *
-         * @param array|string $key
+         * @param \UnitEnum|array|string $key
          * @param mixed $default
-         * @return mixed
          * @static
          */
         public static function get($key, $default = null)
@@ -4710,10 +4804,9 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Retrieve multiple items from the cache by key.
-         * 
+         *
          * Items not found in the cache will have a null value.
          *
-         * @param array $keys
          * @return array
          * @static
          */
@@ -4726,7 +4819,6 @@ namespace Illuminate\Support\Facades {
         /**
          * Obtains multiple cache items by their unique keys.
          *
-         * @return iterable
          * @param iterable<string> $keys A list of keys that can be obtained in a single operation.
          * @param mixed $default Default value to return for keys that do not exist.
          * @return iterable<string, mixed> A list of key => value pairs. Cache keys that do not exist or are stale will have $default as value.
@@ -4744,7 +4836,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Retrieve an item from the cache and delete it.
          *
-         * @param array|string $key
+         * @param \UnitEnum|array|string $key
          * @param mixed $default
          * @return mixed
          * @static
@@ -4756,9 +4848,80 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Retrieve a string item from the cache.
+         *
+         * @param \UnitEnum|string $key
+         * @param (\Closure():(string|null))|string|null $default
+         * @throws \InvalidArgumentException
+         * @static
+         */
+        public static function string($key, $default = null)
+        {
+            /** @var \Illuminate\Cache\Repository $instance */
+            return $instance->string($key, $default);
+        }
+
+        /**
+         * Retrieve an integer item from the cache.
+         *
+         * @param \UnitEnum|string $key
+         * @param (\Closure():(int|null))|int|null $default
+         * @throws \InvalidArgumentException
+         * @static
+         */
+        public static function integer($key, $default = null)
+        {
+            /** @var \Illuminate\Cache\Repository $instance */
+            return $instance->integer($key, $default);
+        }
+
+        /**
+         * Retrieve a float item from the cache.
+         *
+         * @param \UnitEnum|string $key
+         * @param (\Closure():(float|null))|float|null $default
+         * @throws \InvalidArgumentException
+         * @static
+         */
+        public static function float($key, $default = null)
+        {
+            /** @var \Illuminate\Cache\Repository $instance */
+            return $instance->float($key, $default);
+        }
+
+        /**
+         * Retrieve a boolean item from the cache.
+         *
+         * @param \UnitEnum|string $key
+         * @param (\Closure():(bool|null))|bool|null $default
+         * @throws \InvalidArgumentException
+         * @static
+         */
+        public static function boolean($key, $default = null)
+        {
+            /** @var \Illuminate\Cache\Repository $instance */
+            return $instance->boolean($key, $default);
+        }
+
+        /**
+         * Retrieve an array item from the cache.
+         *
+         * @param \UnitEnum|string $key
+         * @param (\Closure():(array<array-key, mixed>|null))|array<array-key, mixed>|null $default
+         * @return array<array-key, mixed>
+         * @throws \InvalidArgumentException
+         * @static
+         */
+        public static function array($key, $default = null)
+        {
+            /** @var \Illuminate\Cache\Repository $instance */
+            return $instance->array($key, $default);
+        }
+
+        /**
          * Store an item in the cache.
          *
-         * @param array|string $key
+         * @param \UnitEnum|array|string $key
          * @param mixed $value
          * @param \DateTimeInterface|\DateInterval|int|null $ttl
          * @return bool
@@ -4771,17 +4934,11 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Persists data in the cache, uniquely referenced by a key with an optional expiration TTL time.
+         * Store an item in the cache.
          *
-         * @return bool
-         * @param string $key The key of the item to store.
-         * @param mixed $value The value of the item to store, must be serializable.
-         * @param null|int|\DateInterval $ttl Optional. The TTL value of this item. If no value is sent and
-         *                                      the driver supports TTL then the library may set a default value
-         *                                      for it or let the driver take care of that.
-         * @return bool True on success and false on failure.
-         * @throws \Psr\SimpleCache\InvalidArgumentException
-         *   MUST be thrown if the $key string is not a legal value.
+         * @param \UnitEnum|array|string $key
+         * @param mixed $value
+         * @param \DateTimeInterface|\DateInterval|int|null $ttl
          * @static
          */
         public static function set($key, $value, $ttl = null)
@@ -4793,7 +4950,6 @@ namespace Illuminate\Support\Facades {
         /**
          * Store multiple items in the cache for a given number of seconds.
          *
-         * @param array $values
          * @param \DateTimeInterface|\DateInterval|int|null $ttl
          * @return bool
          * @static
@@ -4807,7 +4963,6 @@ namespace Illuminate\Support\Facades {
         /**
          * Persists a set of key => value pairs in the cache, with an optional TTL.
          *
-         * @return bool
          * @param iterable $values A list of key => value pairs for a multiple-set operation.
          * @param null|int|\DateInterval $ttl Optional. The TTL value of this item. If no value is sent and
          *                                       the driver supports TTL then the library may set a default value
@@ -4827,7 +4982,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Store an item in the cache if the key does not exist.
          *
-         * @param string $key
+         * @param \UnitEnum|array|string $key
          * @param mixed $value
          * @param \DateTimeInterface|\DateInterval|int|null $ttl
          * @return bool
@@ -4842,7 +4997,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Increment the value of an item in the cache.
          *
-         * @param string $key
+         * @param \UnitEnum|string $key
          * @param mixed $value
          * @return int|bool
          * @static
@@ -4856,7 +5011,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Decrement the value of an item in the cache.
          *
-         * @param string $key
+         * @param \UnitEnum|string $key
          * @param mixed $value
          * @return int|bool
          * @static
@@ -4870,7 +5025,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Store an item in the cache indefinitely.
          *
-         * @param string $key
+         * @param \UnitEnum|string $key
          * @param mixed $value
          * @return bool
          * @static
@@ -4885,7 +5040,7 @@ namespace Illuminate\Support\Facades {
          * Get an item from the cache, or execute the given Closure and store the result.
          *
          * @template TCacheValue
-         * @param string $key
+         * @param \UnitEnum|string $key
          * @param \Closure|\DateTimeInterface|\DateInterval|int|null $ttl
          * @param \Closure():  TCacheValue  $callback
          * @return TCacheValue
@@ -4898,10 +5053,26 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Get an item from the cache, or execute the given Closure and store the result.
+         *
+         * @template TCacheValue
+         * @param \UnitEnum|string $key
+         * @param \Closure|\DateTimeInterface|\DateInterval|int|null $ttl
+         * @param \Closure():  TCacheValue  $callback
+         * @return array{TCacheValue, bool} The cached value and whether it was warm.
+         * @static
+         */
+        public static function rememberWithWarmth($key, $ttl, $callback)
+        {
+            /** @var \Illuminate\Cache\Repository $instance */
+            return $instance->rememberWithWarmth($key, $ttl, $callback);
+        }
+
+        /**
          * Get an item from the cache, or execute the given Closure and store the result forever.
          *
          * @template TCacheValue
-         * @param string $key
+         * @param \UnitEnum|string $key
          * @param \Closure():  TCacheValue  $callback
          * @return TCacheValue
          * @static
@@ -4916,7 +5087,7 @@ namespace Illuminate\Support\Facades {
          * Get an item from the cache, or execute the given Closure and store the result forever.
          *
          * @template TCacheValue
-         * @param string $key
+         * @param \UnitEnum|string $key
          * @param \Closure():  TCacheValue  $callback
          * @return TCacheValue
          * @static
@@ -4931,7 +5102,7 @@ namespace Illuminate\Support\Facades {
          * Retrieve an item from the cache by key, refreshing it in the background if it is stale.
          *
          * @template TCacheValue
-         * @param string $key
+         * @param \UnitEnum|string $key
          * @param array{ 0: \DateTimeInterface|\DateInterval|int, 1: \DateTimeInterface|\DateInterval|int } $ttl
          * @param (callable(): TCacheValue) $callback
          * @param array{ seconds?: int, owner?: string }|null $lock
@@ -4946,9 +5117,55 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Set the expiration of a cached item.
+         *
+         * @param \UnitEnum|string $key
+         * @param \DateTimeInterface|\DateInterval|int $ttl
+         * @return bool
+         * @static
+         */
+        public static function touch($key, $ttl)
+        {
+            /** @var \Illuminate\Cache\Repository $instance */
+            return $instance->touch($key, $ttl);
+        }
+
+        /**
+         * Execute a callback while holding an atomic lock on a cache mutex to prevent overlapping calls.
+         *
+         * @template TReturn
+         * @param \UnitEnum|string $key
+         * @param callable():  TReturn  $callback
+         * @param int $lockFor
+         * @param int $waitFor
+         * @param string|null $owner
+         * @return TReturn
+         * @throws \Illuminate\Contracts\Cache\LockTimeoutException
+         * @static
+         */
+        public static function withoutOverlapping($key, $callback, $lockFor = 0, $waitFor = 10, $owner = null)
+        {
+            /** @var \Illuminate\Cache\Repository $instance */
+            return $instance->withoutOverlapping($key, $callback, $lockFor, $waitFor, $owner);
+        }
+
+        /**
+         * Funnel a callback for a maximum number of simultaneous executions.
+         *
+         * @param \UnitEnum|string $name
+         * @return \Illuminate\Cache\Limiters\ConcurrencyLimiterBuilder
+         * @static
+         */
+        public static function funnel($name)
+        {
+            /** @var \Illuminate\Cache\Repository $instance */
+            return $instance->funnel($name);
+        }
+
+        /**
          * Remove an item from the cache.
          *
-         * @param string $key
+         * @param \UnitEnum|array|string $key
          * @return bool
          * @static
          */
@@ -4959,13 +5176,9 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Delete an item from the cache by its unique key.
+         * Remove an item from the cache.
          *
-         * @return bool
-         * @param string $key The unique cache key of the item to delete.
-         * @return bool True if the item was successfully removed. False if there was an error.
-         * @throws \Psr\SimpleCache\InvalidArgumentException
-         *   MUST be thrown if the $key string is not a legal value.
+         * @param \UnitEnum|array|string $key
          * @static
          */
         public static function delete($key)
@@ -4977,7 +5190,6 @@ namespace Illuminate\Support\Facades {
         /**
          * Deletes multiple cache items in a single operation.
          *
-         * @return bool
          * @param iterable<string> $keys A list of string-based keys to be deleted.
          * @return bool True if the items were successfully removed. False if there was an error.
          * @throws \Psr\SimpleCache\InvalidArgumentException
@@ -4994,7 +5206,6 @@ namespace Illuminate\Support\Facades {
         /**
          * Wipes clean the entire cache's keys.
          *
-         * @return bool
          * @return bool True on success and false on failure.
          * @static
          */
@@ -5002,6 +5213,18 @@ namespace Illuminate\Support\Facades {
         {
             /** @var \Illuminate\Cache\Repository $instance */
             return $instance->clear();
+        }
+
+        /**
+         * Flush all locks from the cache store.
+         *
+         * @throws \BadMethodCallException
+         * @static
+         */
+        public static function flushLocks()
+        {
+            /** @var \Illuminate\Cache\Repository $instance */
+            return $instance->flushLocks();
         }
 
         /**
@@ -5040,6 +5263,17 @@ namespace Illuminate\Support\Facades {
         {
             /** @var \Illuminate\Cache\Repository $instance */
             return $instance->supportsTags();
+        }
+
+        /**
+         * Determine if the current store supports flushing locks.
+         *
+         * @static
+         */
+        public static function supportsFlushingLocks()
+        {
+            /** @var \Illuminate\Cache\Repository $instance */
+            return $instance->supportsFlushingLocks();
         }
 
         /**
@@ -5083,7 +5317,7 @@ namespace Illuminate\Support\Facades {
          * Set the cache store implementation.
          *
          * @param \Illuminate\Contracts\Cache\Store $store
-         * @return static
+         * @return \Illuminate\Cache\Repository
          * @static
          */
         public static function setStore($store)
@@ -5107,7 +5341,6 @@ namespace Illuminate\Support\Facades {
         /**
          * Set the event dispatcher instance.
          *
-         * @param \Illuminate\Contracts\Events\Dispatcher $events
          * @return void
          * @static
          */
@@ -5120,54 +5353,50 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if a cached value exists.
          *
-         * @param string $key
-         * @return bool
+         * @param \UnitEnum|string $offset
          * @static
          */
-        public static function offsetExists($key)
+        public static function offsetExists($offset)
         {
             /** @var \Illuminate\Cache\Repository $instance */
-            return $instance->offsetExists($key);
+            return $instance->offsetExists($offset);
         }
 
         /**
          * Retrieve an item from the cache by key.
          *
-         * @param string $key
-         * @return mixed
+         * @param \UnitEnum|string $offset
          * @static
          */
-        public static function offsetGet($key)
+        public static function offsetGet($offset)
         {
             /** @var \Illuminate\Cache\Repository $instance */
-            return $instance->offsetGet($key);
+            return $instance->offsetGet($offset);
         }
 
         /**
          * Store an item in the cache for the default time.
          *
-         * @param string $key
+         * @param \UnitEnum|string $offset
          * @param mixed $value
-         * @return void
          * @static
          */
-        public static function offsetSet($key, $value)
+        public static function offsetSet($offset, $value)
         {
             /** @var \Illuminate\Cache\Repository $instance */
-            $instance->offsetSet($key, $value);
+            return $instance->offsetSet($offset, $value);
         }
 
         /**
          * Remove an item from the cache.
          *
-         * @param string $key
-         * @return void
+         * @param \UnitEnum|string $offset
          * @static
          */
-        public static function offsetUnset($key)
+        public static function offsetUnset($offset)
         {
             /** @var \Illuminate\Cache\Repository $instance */
-            $instance->offsetUnset($key);
+            return $instance->offsetUnset($offset);
         }
 
         /**
@@ -5266,6 +5495,21 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Atomically refresh the expiration of a cache key if it matches the expected owner.
+         *
+         * @param string $key
+         * @param mixed $expectedOwner
+         * @param int $seconds
+         * @return bool
+         * @static
+         */
+        public static function refreshIfOwned($key, $expectedOwner, $seconds)
+        {
+            /** @var \Illuminate\Cache\FileStore $instance */
+            return $instance->refreshIfOwned($key, $expectedOwner, $seconds);
+        }
+
+        /**
          * Remove all items from the cache.
          *
          * @return bool
@@ -5352,9 +5596,21 @@ namespace Illuminate\Support\Facades {
             return $instance->getPrefix();
         }
 
+        /**
+         * Determine if the lock store is separate from the cache store.
+         *
+         * @return bool
+         * @static
+         */
+        public static function hasSeparateLockStore()
+        {
+            /** @var \Illuminate\Cache\FileStore $instance */
+            return $instance->hasSeparateLockStore();
+        }
+
             }
     /**
-     * @method static array run(\Closure|array $tasks)
+     * @method static array run(\Closure|array $tasks, \Carbon\CarbonInterval|int|null $timeout = null)
      * @method static \Illuminate\Support\Defer\DeferredCallback defer(\Closure|array $tasks)
      * @see \Illuminate\Concurrency\ConcurrencyManager
      */
@@ -5362,7 +5618,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get a driver instance by name.
          *
-         * @param string|null $name
+         * @param \UnitEnum|string|null $name
          * @return mixed
          * @static
          */
@@ -5375,41 +5631,38 @@ namespace Illuminate\Support\Facades {
         /**
          * Create an instance of the process concurrency driver.
          *
-         * @param array $config
          * @return \Illuminate\Concurrency\ProcessDriver
          * @static
          */
-        public static function createProcessDriver($config)
+        public static function createProcessDriver()
         {
             /** @var \Illuminate\Concurrency\ConcurrencyManager $instance */
-            return $instance->createProcessDriver($config);
+            return $instance->createProcessDriver();
         }
 
         /**
          * Create an instance of the fork concurrency driver.
          *
-         * @param array $config
          * @return \Illuminate\Concurrency\ForkDriver
          * @throws \RuntimeException
          * @static
          */
-        public static function createForkDriver($config)
+        public static function createForkDriver()
         {
             /** @var \Illuminate\Concurrency\ConcurrencyManager $instance */
-            return $instance->createForkDriver($config);
+            return $instance->createForkDriver();
         }
 
         /**
          * Create an instance of the sync concurrency driver.
          *
-         * @param array $config
          * @return \Illuminate\Concurrency\SyncDriver
          * @static
          */
-        public static function createSyncDriver($config)
+        public static function createSyncDriver()
         {
             /** @var \Illuminate\Concurrency\ConcurrencyManager $instance */
-            return $instance->createSyncDriver($config);
+            return $instance->createSyncDriver();
         }
 
         /**
@@ -5701,7 +5954,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get all of the configuration items for the application.
          *
-         * @return array
+         * @return array<string, mixed>
          * @static
          */
         public static function all()
@@ -5713,54 +5966,54 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if the given configuration option exists.
          *
-         * @param string $key
+         * @param string $offset
          * @return bool
          * @static
          */
-        public static function offsetExists($key)
+        public static function offsetExists($offset)
         {
             /** @var \Illuminate\Config\Repository $instance */
-            return $instance->offsetExists($key);
+            return $instance->offsetExists($offset);
         }
 
         /**
          * Get a configuration option.
          *
-         * @param string $key
+         * @param string $offset
          * @return mixed
          * @static
          */
-        public static function offsetGet($key)
+        public static function offsetGet($offset)
         {
             /** @var \Illuminate\Config\Repository $instance */
-            return $instance->offsetGet($key);
+            return $instance->offsetGet($offset);
         }
 
         /**
          * Set a configuration option.
          *
-         * @param string $key
+         * @param string $offset
          * @param mixed $value
          * @return void
          * @static
          */
-        public static function offsetSet($key, $value)
+        public static function offsetSet($offset, $value)
         {
             /** @var \Illuminate\Config\Repository $instance */
-            $instance->offsetSet($key, $value);
+            $instance->offsetSet($offset, $value);
         }
 
         /**
          * Unset a configuration option.
          *
-         * @param string $key
+         * @param string $offset
          * @return void
          * @static
          */
-        public static function offsetUnset($key)
+        public static function offsetUnset($offset)
         {
             /** @var \Illuminate\Config\Repository $instance */
-            $instance->offsetUnset($key);
+            $instance->offsetUnset($offset);
         }
 
         /**
@@ -6233,7 +6486,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * @template TReturn of mixed
-         * 
+         *
          * Run the callback function with the given context values and restore the original context state when complete.
          * @param (callable(): TReturn) $callback
          * @param array<string, mixed> $data
@@ -6263,7 +6516,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Execute the given callback when context is about to be dehydrated.
          *
-         * @param callable $callback
+         * @param (callable(static): void) $callback
          * @return \Illuminate\Log\Context\Repository
          * @static
          */
@@ -6276,7 +6529,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Execute the given callback when context has been hydrated.
          *
-         * @param callable $callback
+         * @param (callable(static): void) $callback
          * @return \Illuminate\Log\Context\Repository
          * @static
          */
@@ -6290,7 +6543,7 @@ namespace Illuminate\Support\Facades {
          * Handle unserialize exceptions using the given callback.
          *
          * @param callable|null $callback
-         * @return static
+         * @return \Illuminate\Log\Context\Repository
          * @static
          */
         public static function handleUnserializeExceptionsUsing($callback)
@@ -6749,6 +7002,18 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Determine if the given value appears to be encrypted by this encrypter.
+         *
+         * @param mixed $value
+         * @return bool
+         * @static
+         */
+        public static function appearsEncrypted($value)
+        {
+            return \Illuminate\Encryption\Encrypter::appearsEncrypted($value);
+        }
+
+        /**
          * Get the encryption key that the encrypter is currently using.
          *
          * @return string
@@ -6977,7 +7242,7 @@ namespace Illuminate\Support\Facades {
          * Build a database connection instance from the given configuration.
          *
          * @param array $config
-         * @return \Staudenmeir\LaravelCte\Connections\MySqlConnection
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
          * @static
          */
         public static function build($config)
@@ -7004,7 +7269,8 @@ namespace Illuminate\Support\Facades {
          * @param \UnitEnum|string $name
          * @param array $config
          * @param bool $force
-         * @return \Staudenmeir\LaravelCte\Connections\MySqlConnection
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
+         * @throws \RuntimeException
          * @static
          */
         public static function connectUsing($name, $config, $force = false)
@@ -7055,9 +7321,10 @@ namespace Illuminate\Support\Facades {
         /**
          * Set the default database connection for the callback execution.
          *
+         * @template TReturn
          * @param \UnitEnum|string $name
-         * @param callable $callback
-         * @return mixed
+         * @param (callable(): TReturn) $callback
+         * @return TReturn
          * @static
          */
         public static function usingConnection($name, $callback)
@@ -7254,9 +7521,63 @@ namespace Illuminate\Support\Facades {
          */
         public static function getDriverTitle()
         {
-            //Method inherited from \Illuminate\Database\MySqlConnection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            //Method inherited from \Illuminate\Database\MariaDbConnection 
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getDriverTitle();
+        }
+
+        /**
+         * Determine if the connected database is a MariaDB database.
+         *
+         * @return bool
+         * @static
+         */
+        public static function isMaria()
+        {
+            //Method inherited from \Illuminate\Database\MariaDbConnection 
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
+            return $instance->isMaria();
+        }
+
+        /**
+         * Get the server version for the connection.
+         *
+         * @return string
+         * @static
+         */
+        public static function getServerVersion()
+        {
+            //Method inherited from \Illuminate\Database\MariaDbConnection 
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
+            return $instance->getServerVersion();
+        }
+
+        /**
+         * Get a schema builder instance for the connection.
+         *
+         * @return \Illuminate\Database\Schema\MariaDbBuilder
+         * @static
+         */
+        public static function getSchemaBuilder()
+        {
+            //Method inherited from \Illuminate\Database\MariaDbConnection 
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
+            return $instance->getSchemaBuilder();
+        }
+
+        /**
+         * Get the schema state for the connection.
+         *
+         * @param \Illuminate\Filesystem\Filesystem|null $files
+         * @param callable|null $processFactory
+         * @return \Illuminate\Database\Schema\MariaDbSchemaState
+         * @static
+         */
+        public static function getSchemaState($files = null, $processFactory = null)
+        {
+            //Method inherited from \Illuminate\Database\MariaDbConnection 
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
+            return $instance->getSchemaState($files, $processFactory);
         }
 
         /**
@@ -7271,7 +7592,7 @@ namespace Illuminate\Support\Facades {
         public static function insert($query, $bindings = [], $sequence = null)
         {
             //Method inherited from \Illuminate\Database\MySqlConnection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->insert($query, $bindings, $sequence);
         }
 
@@ -7284,62 +7605,8 @@ namespace Illuminate\Support\Facades {
         public static function getLastInsertId()
         {
             //Method inherited from \Illuminate\Database\MySqlConnection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getLastInsertId();
-        }
-
-        /**
-         * Determine if the connected database is a MariaDB database.
-         *
-         * @return bool
-         * @static
-         */
-        public static function isMaria()
-        {
-            //Method inherited from \Illuminate\Database\MySqlConnection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
-            return $instance->isMaria();
-        }
-
-        /**
-         * Get the server version for the connection.
-         *
-         * @return string
-         * @static
-         */
-        public static function getServerVersion()
-        {
-            //Method inherited from \Illuminate\Database\MySqlConnection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
-            return $instance->getServerVersion();
-        }
-
-        /**
-         * Get a schema builder instance for the connection.
-         *
-         * @return \Illuminate\Database\Schema\MySqlBuilder
-         * @static
-         */
-        public static function getSchemaBuilder()
-        {
-            //Method inherited from \Illuminate\Database\MySqlConnection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
-            return $instance->getSchemaBuilder();
-        }
-
-        /**
-         * Get the schema state for the connection.
-         *
-         * @param \Illuminate\Filesystem\Filesystem|null $files
-         * @param callable|null $processFactory
-         * @return \Illuminate\Database\Schema\MySqlSchemaState
-         * @static
-         */
-        public static function getSchemaState($files = null, $processFactory = null)
-        {
-            //Method inherited from \Illuminate\Database\MySqlConnection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
-            return $instance->getSchemaState($files, $processFactory);
         }
 
         /**
@@ -7351,7 +7618,7 @@ namespace Illuminate\Support\Facades {
         public static function useDefaultQueryGrammar()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->useDefaultQueryGrammar();
         }
 
@@ -7364,7 +7631,7 @@ namespace Illuminate\Support\Facades {
         public static function useDefaultSchemaGrammar()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->useDefaultSchemaGrammar();
         }
 
@@ -7377,7 +7644,7 @@ namespace Illuminate\Support\Facades {
         public static function useDefaultPostProcessor()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->useDefaultPostProcessor();
         }
 
@@ -7392,7 +7659,7 @@ namespace Illuminate\Support\Facades {
         public static function table($table, $as = null)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->table($table, $as);
         }
 
@@ -7402,7 +7669,7 @@ namespace Illuminate\Support\Facades {
          */
         public static function query()
         {
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->query();
         }
 
@@ -7418,7 +7685,7 @@ namespace Illuminate\Support\Facades {
         public static function selectOne($query, $bindings = [], $useReadPdo = true)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->selectOne($query, $bindings, $useReadPdo);
         }
 
@@ -7435,7 +7702,7 @@ namespace Illuminate\Support\Facades {
         public static function scalar($query, $bindings = [], $useReadPdo = true)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->scalar($query, $bindings, $useReadPdo);
         }
 
@@ -7450,7 +7717,7 @@ namespace Illuminate\Support\Facades {
         public static function selectFromWriteConnection($query, $bindings = [])
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->selectFromWriteConnection($query, $bindings);
         }
 
@@ -7460,14 +7727,15 @@ namespace Illuminate\Support\Facades {
          * @param string $query
          * @param array $bindings
          * @param bool $useReadPdo
+         * @param array $fetchUsing
          * @return array
          * @static
          */
-        public static function select($query, $bindings = [], $useReadPdo = true)
+        public static function select($query, $bindings = [], $useReadPdo = true, $fetchUsing = [])
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
-            return $instance->select($query, $bindings, $useReadPdo);
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
+            return $instance->select($query, $bindings, $useReadPdo, $fetchUsing);
         }
 
         /**
@@ -7476,14 +7744,15 @@ namespace Illuminate\Support\Facades {
          * @param string $query
          * @param array $bindings
          * @param bool $useReadPdo
+         * @param array $fetchUsing
          * @return array
          * @static
          */
-        public static function selectResultSets($query, $bindings = [], $useReadPdo = true)
+        public static function selectResultSets($query, $bindings = [], $useReadPdo = true, $fetchUsing = [])
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
-            return $instance->selectResultSets($query, $bindings, $useReadPdo);
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
+            return $instance->selectResultSets($query, $bindings, $useReadPdo, $fetchUsing);
         }
 
         /**
@@ -7492,14 +7761,15 @@ namespace Illuminate\Support\Facades {
          * @param string $query
          * @param array $bindings
          * @param bool $useReadPdo
+         * @param array $fetchUsing
          * @return \Generator<int, \stdClass>
          * @static
          */
-        public static function cursor($query, $bindings = [], $useReadPdo = true)
+        public static function cursor($query, $bindings = [], $useReadPdo = true, $fetchUsing = [])
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
-            return $instance->cursor($query, $bindings, $useReadPdo);
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
+            return $instance->cursor($query, $bindings, $useReadPdo, $fetchUsing);
         }
 
         /**
@@ -7513,7 +7783,7 @@ namespace Illuminate\Support\Facades {
         public static function update($query, $bindings = [])
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->update($query, $bindings);
         }
 
@@ -7528,7 +7798,7 @@ namespace Illuminate\Support\Facades {
         public static function delete($query, $bindings = [])
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->delete($query, $bindings);
         }
 
@@ -7543,7 +7813,7 @@ namespace Illuminate\Support\Facades {
         public static function statement($query, $bindings = [])
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->statement($query, $bindings);
         }
 
@@ -7558,21 +7828,21 @@ namespace Illuminate\Support\Facades {
         public static function affectingStatement($query, $bindings = [])
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->affectingStatement($query, $bindings);
         }
 
         /**
          * Run a raw, unprepared query against the PDO connection.
          *
-         * @param string $query
+         * @param literal-string $query
          * @return bool
          * @static
          */
         public static function unprepared($query)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->unprepared($query);
         }
 
@@ -7585,7 +7855,7 @@ namespace Illuminate\Support\Facades {
         public static function threadCount()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->threadCount();
         }
 
@@ -7599,21 +7869,22 @@ namespace Illuminate\Support\Facades {
         public static function pretend($callback)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->pretend($callback);
         }
 
         /**
          * Execute the given callback without "pretending".
          *
-         * @param \Closure $callback
-         * @return mixed
+         * @template TReturn
+         * @param \Closure():  TReturn  $callback
+         * @return TReturn
          * @static
          */
         public static function withoutPretending($callback)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->withoutPretending($callback);
         }
 
@@ -7628,7 +7899,7 @@ namespace Illuminate\Support\Facades {
         public static function bindValues($statement, $bindings)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->bindValues($statement, $bindings);
         }
 
@@ -7642,7 +7913,7 @@ namespace Illuminate\Support\Facades {
         public static function prepareBindings($bindings)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->prepareBindings($bindings);
         }
 
@@ -7658,7 +7929,7 @@ namespace Illuminate\Support\Facades {
         public static function logQuery($query, $bindings, $time = null)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->logQuery($query, $bindings, $time);
         }
 
@@ -7673,7 +7944,7 @@ namespace Illuminate\Support\Facades {
         public static function whenQueryingForLongerThan($threshold, $handler)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->whenQueryingForLongerThan($threshold, $handler);
         }
 
@@ -7686,7 +7957,7 @@ namespace Illuminate\Support\Facades {
         public static function allowQueryDurationHandlersToRunAgain()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->allowQueryDurationHandlersToRunAgain();
         }
 
@@ -7699,7 +7970,7 @@ namespace Illuminate\Support\Facades {
         public static function totalQueryDuration()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->totalQueryDuration();
         }
 
@@ -7712,7 +7983,7 @@ namespace Illuminate\Support\Facades {
         public static function resetTotalQueryDuration()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->resetTotalQueryDuration();
         }
 
@@ -7725,7 +7996,7 @@ namespace Illuminate\Support\Facades {
         public static function reconnectIfMissingConnection()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->reconnectIfMissingConnection();
         }
 
@@ -7733,13 +8004,13 @@ namespace Illuminate\Support\Facades {
          * Register a hook to be run just before a database transaction is started.
          *
          * @param \Closure $callback
-         * @return \Staudenmeir\LaravelCte\Connections\MySqlConnection
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
          * @static
          */
         public static function beforeStartingTransaction($callback)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->beforeStartingTransaction($callback);
         }
 
@@ -7747,13 +8018,13 @@ namespace Illuminate\Support\Facades {
          * Register a hook to be run just before a database query is executed.
          *
          * @param \Closure $callback
-         * @return \Staudenmeir\LaravelCte\Connections\MySqlConnection
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
          * @static
          */
         public static function beforeExecuting($callback)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->beforeExecuting($callback);
         }
 
@@ -7767,21 +8038,21 @@ namespace Illuminate\Support\Facades {
         public static function listen($callback)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->listen($callback);
         }
 
         /**
          * Get a new raw query expression.
          *
-         * @param mixed $value
+         * @param literal-string|int|float $value
          * @return \Illuminate\Contracts\Database\Query\Expression
          * @static
          */
         public static function raw($value)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->raw($value);
         }
 
@@ -7797,7 +8068,7 @@ namespace Illuminate\Support\Facades {
         public static function escape($value, $binary = false)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->escape($value, $binary);
         }
 
@@ -7810,7 +8081,7 @@ namespace Illuminate\Support\Facades {
         public static function hasModifiedRecords()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->hasModifiedRecords();
         }
 
@@ -7824,7 +8095,7 @@ namespace Illuminate\Support\Facades {
         public static function recordsHaveBeenModified($value = true)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->recordsHaveBeenModified($value);
         }
 
@@ -7832,13 +8103,13 @@ namespace Illuminate\Support\Facades {
          * Set the record modification state.
          *
          * @param bool $value
-         * @return \Staudenmeir\LaravelCte\Connections\MySqlConnection
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
          * @static
          */
         public static function setRecordModificationState($value)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->setRecordModificationState($value);
         }
 
@@ -7851,7 +8122,7 @@ namespace Illuminate\Support\Facades {
         public static function forgetRecordModificationState()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->forgetRecordModificationState();
         }
 
@@ -7859,13 +8130,13 @@ namespace Illuminate\Support\Facades {
          * Indicate that the connection should use the write PDO connection for reads.
          *
          * @param bool $value
-         * @return \Staudenmeir\LaravelCte\Connections\MySqlConnection
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
          * @static
          */
         public static function useWriteConnectionWhenReading($value = true)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->useWriteConnectionWhenReading($value);
         }
 
@@ -7878,7 +8149,7 @@ namespace Illuminate\Support\Facades {
         public static function getPdo()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getPdo();
         }
 
@@ -7891,7 +8162,7 @@ namespace Illuminate\Support\Facades {
         public static function getRawPdo()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getRawPdo();
         }
 
@@ -7904,7 +8175,7 @@ namespace Illuminate\Support\Facades {
         public static function getReadPdo()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getReadPdo();
         }
 
@@ -7917,21 +8188,47 @@ namespace Illuminate\Support\Facades {
         public static function getRawReadPdo()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getRawReadPdo();
+        }
+
+        /**
+         * Get the current PDO connection used for direct connections.
+         *
+         * @return \PDO
+         * @static
+         */
+        public static function getDirectPdo()
+        {
+            //Method inherited from \Illuminate\Database\Connection 
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
+            return $instance->getDirectPdo();
+        }
+
+        /**
+         * Get the current direct PDO connection parameter without executing any reconnect logic.
+         *
+         * @return \PDO|\Closure|null
+         * @static
+         */
+        public static function getRawDirectPdo()
+        {
+            //Method inherited from \Illuminate\Database\Connection 
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
+            return $instance->getRawDirectPdo();
         }
 
         /**
          * Set the PDO connection.
          *
          * @param \PDO|\Closure|null $pdo
-         * @return \Staudenmeir\LaravelCte\Connections\MySqlConnection
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
          * @static
          */
         public static function setPdo($pdo)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->setPdo($pdo);
         }
 
@@ -7939,14 +8236,82 @@ namespace Illuminate\Support\Facades {
          * Set the PDO connection used for reading.
          *
          * @param \PDO|\Closure|null $pdo
-         * @return \Staudenmeir\LaravelCte\Connections\MySqlConnection
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
          * @static
          */
         public static function setReadPdo($pdo)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->setReadPdo($pdo);
+        }
+
+        /**
+         * Set the read PDO connection configuration.
+         *
+         * @param array $config
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
+         * @static
+         */
+        public static function setReadPdoConfig($config)
+        {
+            //Method inherited from \Illuminate\Database\Connection 
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
+            return $instance->setReadPdoConfig($config);
+        }
+
+        /**
+         * Set the PDO connection used for direct connections.
+         *
+         * @param \PDO|\Closure|null $pdo
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
+         * @static
+         */
+        public static function setDirectPdo($pdo)
+        {
+            //Method inherited from \Illuminate\Database\Connection 
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
+            return $instance->setDirectPdo($pdo);
+        }
+
+        /**
+         * Set the direct PDO connection configuration.
+         *
+         * @param array $config
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
+         * @static
+         */
+        public static function setDirectPdoConfig($config)
+        {
+            //Method inherited from \Illuminate\Database\Connection 
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
+            return $instance->setDirectPdoConfig($config);
+        }
+
+        /**
+         * Get the direct PDO connection configuration.
+         *
+         * @return array
+         * @static
+         */
+        public static function getDirectPdoConfig()
+        {
+            //Method inherited from \Illuminate\Database\Connection 
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
+            return $instance->getDirectPdoConfig();
+        }
+
+        /**
+         * Determine if this connection has a direct PDO connection configured.
+         *
+         * @return bool
+         * @static
+         */
+        public static function hasDirectConnection()
+        {
+            //Method inherited from \Illuminate\Database\Connection 
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
+            return $instance->hasDirectConnection();
         }
 
         /**
@@ -7958,12 +8323,12 @@ namespace Illuminate\Support\Facades {
         public static function getName()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getName();
         }
 
         /**
-         * Get the database connection full name.
+         * Get the database connection with its read / write type.
          *
          * @return string|null
          * @static
@@ -7971,7 +8336,7 @@ namespace Illuminate\Support\Facades {
         public static function getNameWithReadWriteType()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getNameWithReadWriteType();
         }
 
@@ -7985,7 +8350,7 @@ namespace Illuminate\Support\Facades {
         public static function getConfig($option = null)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getConfig($option);
         }
 
@@ -7998,7 +8363,7 @@ namespace Illuminate\Support\Facades {
         public static function getDriverName()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getDriverName();
         }
 
@@ -8011,7 +8376,7 @@ namespace Illuminate\Support\Facades {
         public static function getQueryGrammar()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getQueryGrammar();
         }
 
@@ -8019,13 +8384,13 @@ namespace Illuminate\Support\Facades {
          * Set the query grammar used by the connection.
          *
          * @param \Illuminate\Database\Query\Grammars\Grammar $grammar
-         * @return \Staudenmeir\LaravelCte\Connections\MySqlConnection
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
          * @static
          */
         public static function setQueryGrammar($grammar)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->setQueryGrammar($grammar);
         }
 
@@ -8038,7 +8403,7 @@ namespace Illuminate\Support\Facades {
         public static function getSchemaGrammar()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getSchemaGrammar();
         }
 
@@ -8046,13 +8411,13 @@ namespace Illuminate\Support\Facades {
          * Set the schema grammar used by the connection.
          *
          * @param \Illuminate\Database\Schema\Grammars\Grammar $grammar
-         * @return \Staudenmeir\LaravelCte\Connections\MySqlConnection
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
          * @static
          */
         public static function setSchemaGrammar($grammar)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->setSchemaGrammar($grammar);
         }
 
@@ -8065,7 +8430,7 @@ namespace Illuminate\Support\Facades {
         public static function getPostProcessor()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getPostProcessor();
         }
 
@@ -8073,26 +8438,26 @@ namespace Illuminate\Support\Facades {
          * Set the query post processor used by the connection.
          *
          * @param \Illuminate\Database\Query\Processors\Processor $processor
-         * @return \Staudenmeir\LaravelCte\Connections\MySqlConnection
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
          * @static
          */
         public static function setPostProcessor($processor)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->setPostProcessor($processor);
         }
 
         /**
          * Get the event dispatcher used by the connection.
          *
-         * @return \Illuminate\Contracts\Events\Dispatcher
+         * @return \Illuminate\Contracts\Events\Dispatcher|null
          * @static
          */
         public static function getEventDispatcher()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getEventDispatcher();
         }
 
@@ -8100,13 +8465,13 @@ namespace Illuminate\Support\Facades {
          * Set the event dispatcher instance on the connection.
          *
          * @param \Illuminate\Contracts\Events\Dispatcher $events
-         * @return \Staudenmeir\LaravelCte\Connections\MySqlConnection
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
          * @static
          */
         public static function setEventDispatcher($events)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->setEventDispatcher($events);
         }
 
@@ -8119,7 +8484,7 @@ namespace Illuminate\Support\Facades {
         public static function unsetEventDispatcher()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->unsetEventDispatcher();
         }
 
@@ -8127,13 +8492,13 @@ namespace Illuminate\Support\Facades {
          * Set the transaction manager instance on the connection.
          *
          * @param \Illuminate\Database\DatabaseTransactionsManager $manager
-         * @return \Staudenmeir\LaravelCte\Connections\MySqlConnection
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
          * @static
          */
         public static function setTransactionManager($manager)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->setTransactionManager($manager);
         }
 
@@ -8146,7 +8511,7 @@ namespace Illuminate\Support\Facades {
         public static function unsetTransactionManager()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->unsetTransactionManager();
         }
 
@@ -8159,7 +8524,7 @@ namespace Illuminate\Support\Facades {
         public static function pretending()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->pretending();
         }
 
@@ -8172,7 +8537,7 @@ namespace Illuminate\Support\Facades {
         public static function getQueryLog()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getQueryLog();
         }
 
@@ -8185,7 +8550,7 @@ namespace Illuminate\Support\Facades {
         public static function getRawQueryLog()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getRawQueryLog();
         }
 
@@ -8198,7 +8563,7 @@ namespace Illuminate\Support\Facades {
         public static function flushQueryLog()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->flushQueryLog();
         }
 
@@ -8211,7 +8576,7 @@ namespace Illuminate\Support\Facades {
         public static function enableQueryLog()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->enableQueryLog();
         }
 
@@ -8224,7 +8589,7 @@ namespace Illuminate\Support\Facades {
         public static function disableQueryLog()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->disableQueryLog();
         }
 
@@ -8237,7 +8602,7 @@ namespace Illuminate\Support\Facades {
         public static function logging()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->logging();
         }
 
@@ -8250,7 +8615,7 @@ namespace Illuminate\Support\Facades {
         public static function getDatabaseName()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getDatabaseName();
         }
 
@@ -8258,13 +8623,13 @@ namespace Illuminate\Support\Facades {
          * Set the name of the connected database.
          *
          * @param string $database
-         * @return \Staudenmeir\LaravelCte\Connections\MySqlConnection
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
          * @static
          */
         public static function setDatabaseName($database)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->setDatabaseName($database);
         }
 
@@ -8272,13 +8637,13 @@ namespace Illuminate\Support\Facades {
          * Set the read / write type of the connection.
          *
          * @param string|null $readWriteType
-         * @return \Staudenmeir\LaravelCte\Connections\MySqlConnection
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
          * @static
          */
         public static function setReadWriteType($readWriteType)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->setReadWriteType($readWriteType);
         }
 
@@ -8291,7 +8656,7 @@ namespace Illuminate\Support\Facades {
         public static function getTablePrefix()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->getTablePrefix();
         }
 
@@ -8299,27 +8664,28 @@ namespace Illuminate\Support\Facades {
          * Set the table prefix in use by the connection.
          *
          * @param string $prefix
-         * @return \Staudenmeir\LaravelCte\Connections\MySqlConnection
+         * @return \Staudenmeir\LaravelCte\Connections\MariaDbConnection
          * @static
          */
         public static function setTablePrefix($prefix)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->setTablePrefix($prefix);
         }
 
         /**
          * Execute the given callback without table prefix.
          *
-         * @param \Closure $callback
-         * @return mixed
+         * @template TReturn
+         * @param (\Closure($this): TReturn) $callback
+         * @return TReturn
          * @static
          */
         public static function withoutTablePrefix($callback)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->withoutTablePrefix($callback);
         }
 
@@ -8334,7 +8700,7 @@ namespace Illuminate\Support\Facades {
         public static function resolverFor($driver, $callback)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            \Staudenmeir\LaravelCte\Connections\MySqlConnection::resolverFor($driver, $callback);
+            \Staudenmeir\LaravelCte\Connections\MariaDbConnection::resolverFor($driver, $callback);
         }
 
         /**
@@ -8347,12 +8713,12 @@ namespace Illuminate\Support\Facades {
         public static function getResolver($driver)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            return \Staudenmeir\LaravelCte\Connections\MySqlConnection::getResolver($driver);
+            return \Staudenmeir\LaravelCte\Connections\MariaDbConnection::getResolver($driver);
         }
 
         /**
          * @template TReturn of mixed
-         * 
+         *
          * Execute a Closure within a transaction.
          * @param (\Closure(static): TReturn) $callback
          * @param int $attempts
@@ -8363,7 +8729,7 @@ namespace Illuminate\Support\Facades {
         public static function transaction($callback, $attempts = 1)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->transaction($callback, $attempts);
         }
 
@@ -8377,7 +8743,7 @@ namespace Illuminate\Support\Facades {
         public static function beginTransaction()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->beginTransaction();
         }
 
@@ -8391,7 +8757,7 @@ namespace Illuminate\Support\Facades {
         public static function commit()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->commit();
         }
 
@@ -8406,7 +8772,7 @@ namespace Illuminate\Support\Facades {
         public static function rollBack($toLevel = null)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->rollBack($toLevel);
         }
 
@@ -8419,7 +8785,7 @@ namespace Illuminate\Support\Facades {
         public static function transactionLevel()
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             return $instance->transactionLevel();
         }
 
@@ -8434,7 +8800,7 @@ namespace Illuminate\Support\Facades {
         public static function afterCommit($callback)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->afterCommit($callback);
         }
 
@@ -8449,7 +8815,7 @@ namespace Illuminate\Support\Facades {
         public static function afterRollBack($callback)
         {
             //Method inherited from \Illuminate\Database\Connection 
-            /** @var \Staudenmeir\LaravelCte\Connections\MySqlConnection $instance */
+            /** @var \Staudenmeir\LaravelCte\Connections\MariaDbConnection $instance */
             $instance->afterRollBack($callback);
         }
 
@@ -8650,7 +9016,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Set the database transaction manager resolver implementation.
          *
-         * @param (callable(): \Illuminate\Database\DatabaseTransactionsManager|null) $resolver
+         * @param (callable(): (\Illuminate\Database\DatabaseTransactionsManager|null)) $resolver
          * @return \Illuminate\Events\Dispatcher
          * @static
          */
@@ -8678,7 +9044,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Gets the raw, unprepared listeners.
          *
-         * @return array
+         * @return array<string, callable|array|class-string|null>
          * @static
          */
         public static function getRawListeners()
@@ -8739,6 +9105,32 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Resolve the default connection name for a given queueable instance.
+         *
+         * @param object $queueable
+         * @return string|null
+         * @static
+         */
+        public static function resolveConnectionFromQueueRoute($queueable)
+        {
+            /** @var \Illuminate\Events\Dispatcher $instance */
+            return $instance->resolveConnectionFromQueueRoute($queueable);
+        }
+
+        /**
+         * Resolve the default queue name for a given queueable instance.
+         *
+         * @param object $queueable
+         * @return string|null
+         * @static
+         */
+        public static function resolveQueueFromQueueRoute($queueable)
+        {
+            /** @var \Illuminate\Events\Dispatcher $instance */
+            return $instance->resolveQueueFromQueueRoute($queueable);
+        }
+
+        /**
          * Specify the events that should be dispatched instead of faked.
          *
          * @param array|string $eventsToDispatch
@@ -8783,7 +9175,6 @@ namespace Illuminate\Support\Facades {
          * Assert if an event was dispatched exactly once.
          *
          * @param string $event
-         * @param int $times
          * @return void
          * @static
          */
@@ -9216,7 +9607,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Guess the file extension from the mime-type of a given file.
+         * Guess the file extension from the MIME type of a given file.
          *
          * @param string $path
          * @return string|null
@@ -9233,7 +9624,7 @@ namespace Illuminate\Support\Facades {
          * Get the file type of a given file.
          *
          * @param string $path
-         * @return string
+         * @return string|false
          * @static
          */
         public static function type($path)
@@ -9243,7 +9634,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Get the mime-type of a given file.
+         * Get the MIME type of a given file.
          *
          * @param string $path
          * @return string|false
@@ -9491,7 +9882,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Recursively delete a directory.
-         * 
+         *
          * The directory itself may be optionally preserved.
          *
          * @param string $directory
@@ -9624,7 +10015,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if a given ability has been defined.
          *
-         * @param string|array $ability
+         * @param \UnitEnum|array|string $ability
          * @return bool
          * @static
          */
@@ -10122,7 +10513,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get a driver instance.
          *
-         * @param string|null $driver
+         * @param \UnitEnum|string|null $driver
          * @return mixed
          * @throws \InvalidArgumentException
          * @static
@@ -10138,7 +10529,7 @@ namespace Illuminate\Support\Facades {
          * Register a custom driver creator Closure.
          *
          * @param string $driver
-         * @param \Closure $callback
+         * @param-closure-this $this  $callback
          * @return \Illuminate\Hashing\HashManager
          * @static
          */
@@ -10152,7 +10543,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get all of the created "drivers".
          *
-         * @return array
+         * @return array<string, mixed>
          * @static
          */
         public static function getDrivers()
@@ -10238,6 +10629,7 @@ namespace Illuminate\Support\Facades {
      * @method static \Illuminate\Http\Client\PendingRequest withResponseMiddleware(callable $middleware)
      * @method static \Illuminate\Http\Client\PendingRequest withAttributes(array $attributes)
      * @method static \Illuminate\Http\Client\PendingRequest beforeSending(callable $callback)
+     * @method static \Illuminate\Http\Client\PendingRequest afterResponse(callable|null $callback)
      * @method static \Illuminate\Http\Client\PendingRequest throw(callable|null $callback = null)
      * @method static \Illuminate\Http\Client\PendingRequest throwIf(callable|bool $condition)
      * @method static \Illuminate\Http\Client\PendingRequest throwUnless(callable|bool $condition)
@@ -10245,11 +10637,12 @@ namespace Illuminate\Support\Facades {
      * @method static \Illuminate\Http\Client\PendingRequest dd()
      * @method static \Illuminate\Http\Client\Response|\GuzzleHttp\Promise\PromiseInterface get(string $url, array|string|null $query = null)
      * @method static \Illuminate\Http\Client\Response|\GuzzleHttp\Promise\PromiseInterface head(string $url, array|string|null $query = null)
+     * @method static \Illuminate\Http\Client\Response|\GuzzleHttp\Promise\PromiseInterface query(string $url, array|\JsonSerializable|\Illuminate\Contracts\Support\Arrayable $data = [])
      * @method static \Illuminate\Http\Client\Response|\GuzzleHttp\Promise\PromiseInterface post(string $url, array|\JsonSerializable|\Illuminate\Contracts\Support\Arrayable $data = [])
      * @method static \Illuminate\Http\Client\Response|\GuzzleHttp\Promise\PromiseInterface patch(string $url, array|\JsonSerializable|\Illuminate\Contracts\Support\Arrayable $data = [])
      * @method static \Illuminate\Http\Client\Response|\GuzzleHttp\Promise\PromiseInterface put(string $url, array|\JsonSerializable|\Illuminate\Contracts\Support\Arrayable $data = [])
      * @method static \Illuminate\Http\Client\Response|\GuzzleHttp\Promise\PromiseInterface delete(string $url, array|\JsonSerializable|\Illuminate\Contracts\Support\Arrayable $data = [])
-     * @method static array pool(callable $callback, int|null $concurrency = null)
+     * @method static array pool(callable $callback, int|null $concurrency = 0)
      * @method static \Illuminate\Http\Client\Batch batch(callable $callback)
      * @method static \Illuminate\Http\Client\Response|\Illuminate\Http\Client\Promises\LazyPromise send(string $method, string $url, array $options = [])
      * @method static \GuzzleHttp\Client buildClient()
@@ -10259,7 +10652,7 @@ namespace Illuminate\Support\Facades {
      * @method static \Closure buildBeforeSendingHandler()
      * @method static \Closure buildRecorderHandler()
      * @method static \Closure buildStubHandler()
-     * @method static \GuzzleHttp\Psr7\RequestInterface runBeforeSendingCallbacks(\GuzzleHttp\Psr7\RequestInterface $request, array $options)
+     * @method static \Psr\Http\Message\RequestInterface runBeforeSendingCallbacks(\Psr\Http\Message\RequestInterface $request, array $options)
      * @method static array mergeOptions(array ...$options)
      * @method static \Illuminate\Http\Client\PendingRequest stub(callable $callback)
      * @method static bool isAllowedRequestUrl(string $url)
@@ -10348,6 +10741,7 @@ namespace Illuminate\Support\Facades {
          * @param int $status
          * @param array<string, mixed> $headers
          * @return \GuzzleHttp\Psr7\Response
+         * @throws \InvalidArgumentException
          * @static
          */
         public static function psr7Response($body = null, $status = 200, $headers = [])
@@ -10426,6 +10820,7 @@ namespace Illuminate\Support\Facades {
          * @param string $url
          * @param \Illuminate\Http\Client\Response|\GuzzleHttp\Promise\PromiseInterface|callable|int|string|array|\Illuminate\Http\Client\ResponseSequence $callback
          * @return \Illuminate\Http\Client\Factory
+         * @throws \InvalidArgumentException
          * @static
          */
         public static function stubUrl($url, $callback)
@@ -10740,6 +11135,31 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Get the specified string translation value.
+         *
+         * @throws \InvalidArgumentException
+         * @static
+         */
+        public static function string($key, $replace = [], $locale = null, $fallback = true)
+        {
+            /** @var \Illuminate\Translation\Translator $instance */
+            return $instance->string($key, $replace, $locale, $fallback);
+        }
+
+        /**
+         * Get the specified array translation value.
+         *
+         * @return array<array-key, mixed>
+         * @throws \InvalidArgumentException
+         * @static
+         */
+        public static function array($key, $replace = [], $locale = null, $fallback = true)
+        {
+            /** @var \Illuminate\Translation\Translator $instance */
+            return $instance->array($key, $replace, $locale, $fallback);
+        }
+
+        /**
          * Get a translation according to an integer value.
          *
          * @param string $key
@@ -10789,7 +11209,7 @@ namespace Illuminate\Support\Facades {
          * Register a callback that is responsible for handling missing translation keys.
          *
          * @param callable|null $callback
-         * @return static
+         * @return \Illuminate\Translation\Translator
          * @static
          */
         public static function handleMissingKeysUsing($callback)
@@ -11076,7 +11496,7 @@ namespace Illuminate\Support\Facades {
      * @method static \Illuminate\Log\Logger withContext(array $context = [])
      * @method static void listen(\Closure $callback)
      * @method static \Psr\Log\LoggerInterface getLogger()
-     * @method static \Illuminate\Contracts\Events\Dispatcher getEventDispatcher()
+     * @method static \Illuminate\Contracts\Events\Dispatcher|null getEventDispatcher()
      * @method static void setEventDispatcher(\Illuminate\Contracts\Events\Dispatcher $dispatcher)
      * @method static \Illuminate\Log\Logger|mixed when(\Closure|mixed|null $value = null, callable|null $callback = null, callable|null $default = null)
      * @method static \Illuminate\Log\Logger|mixed unless(\Closure|mixed|null $value = null, callable|null $callback = null, callable|null $default = null)
@@ -11113,7 +11533,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get a log channel instance.
          *
-         * @param string|null $channel
+         * @param \UnitEnum|string|null $channel
          * @return \Psr\Log\LoggerInterface
          * @static
          */
@@ -11126,7 +11546,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get a log driver instance.
          *
-         * @param string|null $driver
+         * @param \UnitEnum|string|null $driver
          * @return \Psr\Log\LoggerInterface
          * @static
          */
@@ -11201,7 +11621,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Set the default log driver name.
          *
-         * @param string $name
+         * @param \UnitEnum|string $name
          * @return void
          * @static
          */
@@ -11267,7 +11687,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Action must be taken immediately.
-         * 
+         *
          * Example: Entire website down, database unavailable, etc. This should
          * trigger the SMS alerts and wake you up.
          *
@@ -11284,7 +11704,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Critical conditions.
-         * 
+         *
          * Example: Application component unavailable, unexpected exception.
          *
          * @param string|\Stringable $message
@@ -11315,7 +11735,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Exceptional occurrences that are not errors.
-         * 
+         *
          * Example: Use of deprecated APIs, poor use of an API, undesirable things
          * that are not necessarily wrong.
          *
@@ -11346,7 +11766,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Interesting events.
-         * 
+         *
          * Example: User logs in, SQL logs.
          *
          * @param string|\Stringable $message
@@ -11429,7 +11849,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get a mailer instance by name.
          *
-         * @param string|null $name
+         * @param \UnitEnum|string|null $name
          * @return \Illuminate\Contracts\Mail\Mailer
          * @static
          */
@@ -11442,7 +11862,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get a mailer driver instance.
          *
-         * @param string|null $driver
+         * @param \UnitEnum|string|null $driver
          * @return \Illuminate\Mail\Mailer
          * @static
          */
@@ -11494,7 +11914,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Set the default mail driver name.
          *
-         * @param string $name
+         * @param \UnitEnum|string $name
          * @return void
          * @static
          */
@@ -11507,7 +11927,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Disconnect the given mailer and remove from local cache.
          *
-         * @param string|null $name
+         * @param \UnitEnum|string|null $name
          * @return void
          * @static
          */
@@ -11583,6 +12003,20 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Assert if a mailable was sent a number of times.
+         *
+         * @param string $mailable
+         * @param int $times
+         * @return void
+         * @static
+         */
+        public static function assertSentTimes($mailable, $times = 1)
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\MailFake $instance */
+            $instance->assertSentTimes($mailable, $times);
+        }
+
+        /**
          * Determine if a mailable was not sent or queued to be sent based on a truth-test callback.
          *
          * @param string|\Closure $mailable
@@ -11646,6 +12080,20 @@ namespace Illuminate\Support\Facades {
         {
             /** @var \Illuminate\Support\Testing\Fakes\MailFake $instance */
             $instance->assertQueued($mailable, $callback);
+        }
+
+        /**
+         * Assert if a mailable was queued a number of times.
+         *
+         * @param string $mailable
+         * @param int $times
+         * @return void
+         * @static
+         */
+        public static function assertQueuedTimes($mailable, $times = 1)
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\MailFake $instance */
+            $instance->assertQueuedTimes($mailable, $times);
         }
 
         /**
@@ -11917,7 +12365,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get a channel instance.
          *
-         * @param string|null $name
+         * @param \UnitEnum|string|null $name
          * @return mixed
          * @static
          */
@@ -11925,6 +12373,19 @@ namespace Illuminate\Support\Facades {
         {
             /** @var \Illuminate\Notifications\ChannelManager $instance */
             return $instance->channel($name);
+        }
+
+        /**
+         * Get a driver instance.
+         *
+         * @param \UnitEnum|string|null $driver
+         * @return mixed
+         * @static
+         */
+        public static function driver($driver = null)
+        {
+            /** @var \Illuminate\Notifications\ChannelManager $instance */
+            return $instance->driver($driver);
         }
 
         /**
@@ -11978,25 +12439,10 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Get a driver instance.
-         *
-         * @param string|null $driver
-         * @return mixed
-         * @throws \InvalidArgumentException
-         * @static
-         */
-        public static function driver($driver = null)
-        {
-            //Method inherited from \Illuminate\Support\Manager 
-            /** @var \Illuminate\Notifications\ChannelManager $instance */
-            return $instance->driver($driver);
-        }
-
-        /**
          * Register a custom driver creator Closure.
          *
          * @param string $driver
-         * @param \Closure $callback
+         * @param-closure-this $this  $callback
          * @return \Illuminate\Notifications\ChannelManager
          * @static
          */
@@ -12010,7 +12456,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get all of the created "drivers".
          *
-         * @return array
+         * @return array<string, mixed>
          * @static
          */
         public static function getDrivers()
@@ -12058,6 +12504,83 @@ namespace Illuminate\Support\Facades {
             //Method inherited from \Illuminate\Support\Manager 
             /** @var \Illuminate\Notifications\ChannelManager $instance */
             return $instance->forgetDrivers();
+        }
+
+        /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param object|callable $macro
+         * @param-closure-this static  $macro
+         * @return void
+         * @static
+         */
+        public static function macro($name, $macro)
+        {
+            \Illuminate\Notifications\ChannelManager::macro($name, $macro);
+        }
+
+        /**
+         * Mix another object into the class.
+         *
+         * @param object $mixin
+         * @param bool $replace
+         * @return void
+         * @throws \ReflectionException
+         * @static
+         */
+        public static function mixin($mixin, $replace = true)
+        {
+            \Illuminate\Notifications\ChannelManager::mixin($mixin, $replace);
+        }
+
+        /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool
+         * @static
+         */
+        public static function hasMacro($name)
+        {
+            return \Illuminate\Notifications\ChannelManager::hasMacro($name);
+        }
+
+        /**
+         * Flush the existing macros.
+         *
+         * @return void
+         * @static
+         */
+        public static function flushMacros()
+        {
+            \Illuminate\Notifications\ChannelManager::flushMacros();
+        }
+
+        /**
+         * Resolve the default connection name for a given queueable instance.
+         *
+         * @param object $queueable
+         * @return string|null
+         * @static
+         */
+        public static function resolveConnectionFromQueueRoute($queueable)
+        {
+            /** @var \Illuminate\Notifications\ChannelManager $instance */
+            return $instance->resolveConnectionFromQueueRoute($queueable);
+        }
+
+        /**
+         * Resolve the default queue name for a given queueable instance.
+         *
+         * @param object $queueable
+         * @return string|null
+         * @static
+         */
+        public static function resolveQueueFromQueueRoute($queueable)
+        {
+            /** @var \Illuminate\Notifications\ChannelManager $instance */
+            return $instance->resolveQueueFromQueueRoute($queueable);
         }
 
         /**
@@ -12243,57 +12766,6 @@ namespace Illuminate\Support\Facades {
             return $instance->sentNotifications();
         }
 
-        /**
-         * Register a custom macro.
-         *
-         * @param string $name
-         * @param object|callable $macro
-         * @param-closure-this static  $macro
-         * @return void
-         * @static
-         */
-        public static function macro($name, $macro)
-        {
-            \Illuminate\Support\Testing\Fakes\NotificationFake::macro($name, $macro);
-        }
-
-        /**
-         * Mix another object into the class.
-         *
-         * @param object $mixin
-         * @param bool $replace
-         * @return void
-         * @throws \ReflectionException
-         * @static
-         */
-        public static function mixin($mixin, $replace = true)
-        {
-            \Illuminate\Support\Testing\Fakes\NotificationFake::mixin($mixin, $replace);
-        }
-
-        /**
-         * Checks if macro is registered.
-         *
-         * @param string $name
-         * @return bool
-         * @static
-         */
-        public static function hasMacro($name)
-        {
-            return \Illuminate\Support\Testing\Fakes\NotificationFake::hasMacro($name);
-        }
-
-        /**
-         * Flush the existing macros.
-         *
-         * @return void
-         * @static
-         */
-        public static function flushMacros()
-        {
-            \Illuminate\Support\Testing\Fakes\NotificationFake::flushMacros();
-        }
-
             }
     /**
      * @method static string sendResetLink(array $credentials, \Closure|null $callback = null)
@@ -12311,7 +12783,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Attempt to get the broker from the local cache.
          *
-         * @param string|null $name
+         * @param \UnitEnum|string|null $name
          * @return \Illuminate\Contracts\Auth\PasswordBroker
          * @static
          */
@@ -12336,7 +12808,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Set the default password broker name.
          *
-         * @param string $name
+         * @param \UnitEnum|string $name
          * @return void
          * @static
          */
@@ -12350,8 +12822,8 @@ namespace Illuminate\Support\Facades {
     /**
      * @method static \Illuminate\Process\PendingProcess command(array|string $command)
      * @method static \Illuminate\Process\PendingProcess path(string $path)
-     * @method static \Illuminate\Process\PendingProcess timeout(int $timeout)
-     * @method static \Illuminate\Process\PendingProcess idleTimeout(int $timeout)
+     * @method static \Illuminate\Process\PendingProcess timeout(\Carbon\CarbonInterval|int $timeout)
+     * @method static \Illuminate\Process\PendingProcess idleTimeout(\Carbon\CarbonInterval|int $timeout)
      * @method static \Illuminate\Process\PendingProcess forever()
      * @method static \Illuminate\Process\PendingProcess env(array $environment)
      * @method static \Illuminate\Process\PendingProcess input(\Traversable|resource|string|int|float|bool|null $input)
@@ -12768,9 +13240,24 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Set the queue route for the given class.
+         *
+         * @param array|class-string $class
+         * @param \UnitEnum|string|null $queue
+         * @param \UnitEnum|string|null $connection
+         * @return void
+         * @static
+         */
+        public static function route($class, $queue = null, $connection = null)
+        {
+            /** @var \Illuminate\Queue\QueueManager $instance */
+            $instance->route($class, $queue, $connection);
+        }
+
+        /**
          * Determine if the driver is connected.
          *
-         * @param string|null $name
+         * @param \UnitEnum|string|null $name
          * @return bool
          * @static
          */
@@ -12783,7 +13270,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Resolve a queue connection instance.
          *
-         * @param string|null $name
+         * @param \UnitEnum|string|null $name
          * @return \Illuminate\Contracts\Queue\Queue
          * @static
          */
@@ -12851,8 +13338,22 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Determine which of the given queues are currently paused.
+         *
+         * @param string $connection
+         * @param array $queues
+         * @return array
+         * @static
+         */
+        public static function getPausedQueues($connection, $queues)
+        {
+            /** @var \Illuminate\Queue\QueueManager $instance */
+            return $instance->getPausedQueues($connection, $queues);
+        }
+
+        /**
          * Indicate that queue workers should not poll for restart or pause signals.
-         * 
+         *
          * This prevents the workers from hitting the application cache to determine if they need to pause or restart.
          *
          * @return void
@@ -12907,7 +13408,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Set the name of the default queue connection.
          *
-         * @param string $name
+         * @param \UnitEnum|string $name
          * @return void
          * @static
          */
@@ -12956,6 +13457,32 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Resolve the default connection name for a given queueable instance.
+         *
+         * @param object $queueable
+         * @return string|null
+         * @static
+         */
+        public static function resolveConnectionFromQueueRoute($queueable)
+        {
+            /** @var \Illuminate\Queue\QueueManager $instance */
+            return $instance->resolveConnectionFromQueueRoute($queueable);
+        }
+
+        /**
+         * Resolve the default queue name for a given queueable instance.
+         *
+         * @param object $queueable
+         * @return string|null
+         * @static
+         */
+        public static function resolveQueueFromQueueRoute($queueable)
+        {
+            /** @var \Illuminate\Queue\QueueManager $instance */
+            return $instance->resolveQueueFromQueueRoute($queueable);
+        }
+
+        /**
          * Specify the jobs that should be queued instead of faked.
          *
          * @param array|string $jobsToBeQueued
@@ -12983,9 +13510,36 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Assert if a job was pushed a number of times.
+         *
+         * @param string $job
+         * @param int $times
+         * @return void
+         * @static
+         */
+        public static function assertPushedTimes($job, $times = 1)
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\QueueFake $instance */
+            $instance->assertPushedTimes($job, $times);
+        }
+
+        /**
+         * Assert if a job was pushed exactly once.
+         *
+         * @param string $job
+         * @return void
+         * @static
+         */
+        public static function assertPushedOnce($job)
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\QueueFake $instance */
+            $instance->assertPushedOnce($job);
+        }
+
+        /**
          * Assert if a job was pushed based on a truth-test callback.
          *
-         * @param string $queue
+         * @param \UnitEnum|string $queue
          * @param string|\Closure $job
          * @param callable|null $callback
          * @return void
@@ -13148,7 +13702,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the size of the queue.
          *
-         * @param string|null $queue
+         * @param \UnitEnum|string|null $queue
          * @return int
          * @static
          */
@@ -13161,7 +13715,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the number of pending jobs.
          *
-         * @param string|null $queue
+         * @param \UnitEnum|string|null $queue
          * @return int
          * @static
          */
@@ -13174,7 +13728,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the number of delayed jobs.
          *
-         * @param string|null $queue
+         * @param \UnitEnum|string|null $queue
          * @return int
          * @static
          */
@@ -13187,7 +13741,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the number of reserved jobs.
          *
-         * @param string|null $queue
+         * @param \UnitEnum|string|null $queue
          * @return int
          * @static
          */
@@ -13198,9 +13752,84 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Get the pending jobs for the given queue.
+         *
+         * @param \UnitEnum|string|null $queue
+         * @return \Illuminate\Support\Collection<int, \Illuminate\Queue\Jobs\InspectedJob>
+         * @static
+         */
+        public static function pendingJobs($queue = null)
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\QueueFake $instance */
+            return $instance->pendingJobs($queue);
+        }
+
+        /**
+         * Get the delayed jobs for the given queue.
+         *
+         * @param \UnitEnum|string|null $queue
+         * @return \Illuminate\Support\Collection<int, \Illuminate\Queue\Jobs\InspectedJob>
+         * @static
+         */
+        public static function delayedJobs($queue = null)
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\QueueFake $instance */
+            return $instance->delayedJobs($queue);
+        }
+
+        /**
+         * Get the reserved jobs for the given queue.
+         *
+         * @param \UnitEnum|string|null $queue
+         * @return \Illuminate\Support\Collection<int, \Illuminate\Queue\Jobs\InspectedJob>
+         * @static
+         */
+        public static function reservedJobs($queue = null)
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\QueueFake $instance */
+            return $instance->reservedJobs($queue);
+        }
+
+        /**
+         * Get all pending jobs across every queue.
+         *
+         * @return \Illuminate\Support\Collection<int, \Illuminate\Queue\Jobs\InspectedJob>
+         * @static
+         */
+        public static function allPendingJobs()
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\QueueFake $instance */
+            return $instance->allPendingJobs();
+        }
+
+        /**
+         * Get all delayed jobs across every queue.
+         *
+         * @return \Illuminate\Support\Collection<int, \Illuminate\Queue\Jobs\InspectedJob>
+         * @static
+         */
+        public static function allDelayedJobs()
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\QueueFake $instance */
+            return $instance->allDelayedJobs();
+        }
+
+        /**
+         * Get all reserved jobs across every queue.
+         *
+         * @return \Illuminate\Support\Collection<int, \Illuminate\Queue\Jobs\InspectedJob>
+         * @static
+         */
+        public static function allReservedJobs()
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\QueueFake $instance */
+            return $instance->allReservedJobs();
+        }
+
+        /**
          * Get the creation timestamp of the oldest pending job, excluding delayed jobs.
          *
-         * @param string|null $queue
+         * @param \UnitEnum|string|null $queue
          * @return int|null
          * @static
          */
@@ -13215,7 +13844,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string|object $job
          * @param mixed $data
-         * @param string|null $queue
+         * @param \UnitEnum|string|null $queue
          * @return mixed
          * @static
          */
@@ -13242,7 +13871,7 @@ namespace Illuminate\Support\Facades {
          * Push a raw payload onto the queue.
          *
          * @param string $payload
-         * @param string|null $queue
+         * @param \UnitEnum|string|null $queue
          * @param array $options
          * @return mixed
          * @static
@@ -13259,7 +13888,7 @@ namespace Illuminate\Support\Facades {
          * @param \DateTimeInterface|\DateInterval|int $delay
          * @param string|object $job
          * @param mixed $data
-         * @param string|null $queue
+         * @param \UnitEnum|string|null $queue
          * @return mixed
          * @static
          */
@@ -13272,7 +13901,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Push a new job onto the queue.
          *
-         * @param string $queue
+         * @param \UnitEnum|string $queue
          * @param string|object $job
          * @param mixed $data
          * @return mixed
@@ -13287,7 +13916,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Push a new job onto a specific queue after (n) seconds.
          *
-         * @param string $queue
+         * @param \UnitEnum|string $queue
          * @param \DateTimeInterface|\DateInterval|int $delay
          * @param string|object $job
          * @param mixed $data
@@ -13301,9 +13930,23 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Mark the given job as reserved.
+         *
+         * @param \Closure|string|object $job
+         * @param \UnitEnum|string|null $queue
+         * @return void
+         * @static
+         */
+        public static function reserve($job, $queue = null)
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\QueueFake $instance */
+            $instance->reserve($job, $queue);
+        }
+
+        /**
          * Pop the next job off of the queue.
          *
-         * @param string|null $queue
+         * @param \UnitEnum|string|null $queue
          * @return \Illuminate\Contracts\Queue\Job|null
          * @static
          */
@@ -13318,7 +13961,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param array $jobs
          * @param mixed $data
-         * @param string|null $queue
+         * @param \UnitEnum|string|null $queue
          * @return mixed
          * @static
          */
@@ -13363,6 +14006,56 @@ namespace Illuminate\Support\Facades {
         {
             /** @var \Illuminate\Support\Testing\Fakes\QueueFake $instance */
             return $instance->serializeAndRestore($serializeAndRestore);
+        }
+
+        /**
+         * Release the locks for all unique jobs that were pushed.
+         *
+         * @return void
+         * @static
+         */
+        public static function releaseUniqueJobLocks()
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\QueueFake $instance */
+            $instance->releaseUniqueJobLocks();
+        }
+
+        /**
+         * Clear all of the reserved jobs.
+         *
+         * @return void
+         * @static
+         */
+        public static function clearReserved()
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\QueueFake $instance */
+            $instance->clearReserved();
+        }
+
+        /**
+         * Register a callback to be invoked before pushing a job.
+         *
+         * @param callable $callback
+         * @return \Illuminate\Support\Testing\Fakes\QueueFake
+         * @static
+         */
+        public static function beforePushing($callback)
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\QueueFake $instance */
+            return $instance->beforePushing($callback);
+        }
+
+        /**
+         * Register a callback to be invoked after pushing a job.
+         *
+         * @param callable $callback
+         * @return \Illuminate\Support\Testing\Fakes\QueueFake
+         * @static
+         */
+        public static function afterPushing($callback)
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\QueueFake $instance */
+            return $instance->afterPushing($callback);
         }
 
         /**
@@ -13438,11 +14131,11 @@ namespace Illuminate\Support\Facades {
         /**
          * Delete all of the jobs from the queue.
          *
-         * @param string $queue
+         * @param string|null $queue
          * @return int
          * @static
          */
-        public static function clear($queue)
+        public static function clear($queue = null)
         {
             /** @var \Illuminate\Queue\DatabaseQueue $instance */
             return $instance->clear($queue);
@@ -13544,7 +14237,6 @@ namespace Illuminate\Support\Facades {
         /**
          * Set the queue configuration array.
          *
-         * @param array $config
          * @return \Illuminate\Queue\DatabaseQueue
          * @static
          */
@@ -13571,7 +14263,6 @@ namespace Illuminate\Support\Facades {
         /**
          * Set the IoC container instance.
          *
-         * @param \Illuminate\Container\Container $container
          * @return void
          * @static
          */
@@ -13588,9 +14279,9 @@ namespace Illuminate\Support\Facades {
      */
     class RateLimiter {
         /**
-         * Register a named limiter configuration.
+         * Register a named rate limiter configuration.
          *
-         * @param \BackedEnum|\UnitEnum|string $name
+         * @param \UnitEnum|string $name
          * @param \Closure $callback
          * @return \Illuminate\Cache\RateLimiter
          * @static
@@ -13604,7 +14295,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the given named rate limiter.
          *
-         * @param \BackedEnum|\UnitEnum|string $name
+         * @param \UnitEnum|string $name
          * @return \Closure|null
          * @static
          */
@@ -14436,12 +15127,13 @@ namespace Illuminate\Support\Facades {
 
         /**
          * This method belongs to Symfony HttpFoundation and is not usually needed when using Laravel.
-         * 
+         *
          * Instead, you may use the "input" method.
          *
          * @param string $key
          * @param mixed $default
          * @return mixed
+         * @deprecated use ->input() instead
          * @static
          */
         public static function get($key, $default = null)
@@ -14509,7 +15201,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Whether the request contains a Session object.
-         * 
+         *
          * This method does not give any information about the state of the session object,
          * like whether the session is started or not. It is just a way to check if this Request
          * is associated with a Session instance.
@@ -14526,6 +15218,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Gets the Session.
          *
+         * @throws \Symfony\Component\HttpFoundation\Exception\SessionNotFoundException
          * @throws SessionNotFoundException When session is not set properly
          * @static
          */
@@ -14757,7 +15450,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Sets the parameters for this request.
-         * 
+         *
          * This method also re-initializes all properties.
          *
          * @param array $query The GET parameters
@@ -14789,7 +15482,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Creates a Request based on a given URI and configuration.
-         * 
+         *
          * The information contained in the URI always take precedence
          * over the other information (server and parameters).
          *
@@ -14811,7 +15504,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Sets a callable able to create a Request instance.
-         * 
+         *
          * This is mainly useful when you need to override the Request class
          * to keep BC with an existing system. It should not be used for any
          * other purpose.
@@ -14826,7 +15519,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Overrides the PHP global variables according to this request instance.
-         * 
+         *
          * It overrides $_GET, $_POST, $_REQUEST, $_SERVER, $_COOKIE.
          * $_FILES is never overridden, see rfc1867
          *
@@ -14841,7 +15534,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Sets a list of trusted proxies.
-         * 
+         *
          * You should only list the reverse proxies that you manage directly.
          *
          * @param array $proxies A list of trusted proxies, the string 'REMOTE_ADDR' will be replaced with $_SERVER['REMOTE_ADDR'] and 'PRIVATE_SUBNETS' by IpUtils::PRIVATE_SUBNETS
@@ -14880,7 +15573,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Sets a list of trusted host patterns.
-         * 
+         *
          * You should only list the hosts you manage using regexs.
          *
          * @param array $hostPatterns A list of trusted host patterns
@@ -14906,7 +15599,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Normalizes a query string.
-         * 
+         *
          * It builds a normalized query string, where keys/value pairs are alphabetized,
          * have consistent escaping and unneeded delimiters are removed.
          *
@@ -14920,13 +15613,13 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Enables support for the _method request parameter to determine the intended HTTP method.
-         * 
+         *
          * Be warned that enabling this feature might lead to CSRF issues in your code.
          * Check that you are using CSRF tokens when required.
          * If the HTTP method parameter override is enabled, an html-form with method "POST" can be altered
          * and used to send a "PUT" or "DELETE" request via the _method request parameter.
          * If these methods are not protected against CSRF, this presents a possible vulnerability.
-         * 
+         *
          * The HTTP method can only be overridden when the real HTTP method is POST.
          *
          * @static
@@ -14950,7 +15643,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Sets the list of HTTP methods that can be overridden.
-         * 
+         *
          * Set to null to allow all methods to be overridden (default). Set to an
          * empty array to disallow overrides entirely. Otherwise, provide the list
          * of uppercased method names that are allowed.
@@ -15013,11 +15706,11 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Returns the client IP addresses.
-         * 
+         *
          * In the returned array the most trusted IP address is first, and the
          * least trusted one last. The "real" client IP address is the last one,
          * but this is also the least trusted one. Trusted proxies are stripped.
-         * 
+         *
          * Use this method carefully; you should use getClientIp() instead.
          *
          * @see getClientIp()
@@ -15032,16 +15725,12 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Returns the client IP address.
-         * 
+         *
          * This method can read the client IP address from the "X-Forwarded-For" header
          * when trusted proxies were set via "setTrustedProxies()". The "X-Forwarded-For"
          * header value is a comma+space separated list of IP addresses, the left-most
          * being the original client, and each successive proxy that passed the request
          * adding the IP address where it received the request from.
-         * 
-         * If your reverse proxy uses a different header name than "X-Forwarded-For",
-         * ("Client-Ip" for instance), configure it via the $trustedHeaderSet
-         * argument of the Request::setTrustedProxies() method instead.
          *
          * @see getClientIps()
          * @see https://wikipedia.org/wiki/X-Forwarded-For
@@ -15068,11 +15757,11 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Returns the path being requested relative to the executed script.
-         * 
+         *
          * The path info always starts with a /.
-         * 
+         *
          * Suppose this request is instantiated from /mysite on localhost:
-         * 
+         *
          *  * http://localhost/mysite              returns '/'
          *  * http://localhost/mysite/about        returns '/about'
          *  * http://localhost/mysite/enco%20ded   returns '/enco%20ded'
@@ -15090,9 +15779,9 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Returns the root path from which this request is executed.
-         * 
+         *
          * Suppose that an index.php file instantiates this request object:
-         * 
+         *
          *  * http://localhost/index.php         returns an empty string
          *  * http://localhost/index.php/page    returns an empty string
          *  * http://localhost/web/index.php     returns '/web'
@@ -15110,9 +15799,9 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Returns the root URL from which this request is executed.
-         * 
+         *
          * The base URL never ends with a /.
-         * 
+         *
          * This is similar to getBasePath(), except that it also includes the
          * script filename (e.g. index.php) if one exists.
          *
@@ -15140,10 +15829,10 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Returns the port on which the request is made.
-         * 
+         *
          * This method can read the client port from the "X-Forwarded-Port" header
          * when trusted proxies were set via "setTrustedProxies()".
-         * 
+         *
          * The "X-Forwarded-Port" header must contain the client port.
          *
          * @return int|string|null Can be a string if fetched from the server bag
@@ -15195,7 +15884,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Returns the HTTP host being requested.
-         * 
+         *
          * The port name will be appended to the host if it's non-standard.
          *
          * @static
@@ -15222,7 +15911,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Gets the scheme and HTTP host.
-         * 
+         *
          * If the URL was called with basic authentication, the user
          * and the password are not added to the generated string.
          *
@@ -15263,12 +15952,12 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Returns the path as relative reference from the current Request path.
-         * 
+         *
          * Only the URIs path component (no schema, host etc.) is relevant and must be given.
          * Both paths must be absolute and not contain relative parts.
          * Relative URLs from one resource to another are useful when generating self-contained downloadable document archives.
          * Furthermore, they can be used to reduce the link size in documents.
-         * 
+         *
          * Example target paths, given a base path of "/a/b/c/d":
          * - "/a/b/c/d"     -> ""
          * - "/a/b/c/"      -> "./"
@@ -15287,7 +15976,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Generates the normalized query string for the Request.
-         * 
+         *
          * It builds a normalized query string, where keys/value pairs are alphabetized
          * and have consistent escaping.
          *
@@ -15302,10 +15991,10 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Checks whether the request is secure or not.
-         * 
+         *
          * This method can read the client protocol from the "X-Forwarded-Proto" header
          * when trusted proxies were set via "setTrustedProxies()".
-         * 
+         *
          * The "X-Forwarded-Proto" header must contain the protocol: "https" or "http".
          *
          * @static
@@ -15319,10 +16008,10 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Returns the host name.
-         * 
+         *
          * This method can read the client host name from the "X-Forwarded-Host" header
          * when trusted proxies were set via "setTrustedProxies()".
-         * 
+         *
          * The "X-Forwarded-Host" header must contain the client host name.
          *
          * @throws SuspiciousOperationException when the host name is invalid or not trusted
@@ -15349,13 +16038,13 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Gets the request "intended" method.
-         * 
+         *
          * If the X-HTTP-Method-Override header is set, and if the method is a POST,
          * then it is used to determine the "real" intended HTTP method.
-         * 
+         *
          * The _method request parameter can also be used to determine the HTTP method,
          * but only if enableHttpMethodParameterOverride() has been called.
-         * 
+         *
          * The method is always an uppercased string.
          *
          * @see getRealMethod()
@@ -15407,7 +16096,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Gets the format associated with the mime type.
-         * 
+         *
          * Resolution order:
          *   1) Exact match on the full MIME type (e.g. "application/json").
          *   2) Match on the canonical MIME type (i.e. before the first ";" parameter).
@@ -15421,17 +16110,16 @@ namespace Illuminate\Support\Facades {
          * @param bool $subtypeFallback Whether to fall back to the subtype if no exact match is found
          * @static
          */
-        public static function getFormat($mimeType)
+        public static function getFormat($mimeType, $subtypeFallback = false)
         {
             //Method inherited from \Symfony\Component\HttpFoundation\Request 
             /** @var \Illuminate\Http\Request $instance */
-            return $instance->getFormat($mimeType);
+            return $instance->getFormat($mimeType, $subtypeFallback);
         }
 
         /**
          * Associates a format with mime types.
          *
-         * @param string $format The format to set
          * @param string|string[] $mimeTypes The associated mime types (the preferred one must be the first as it will be used as the content type)
          * @static
          */
@@ -15444,9 +16132,9 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Gets the request format.
-         * 
+         *
          * Here is the process to determine the format:
-         * 
+         *
          *  * format defined by the user (with setRequestFormat())
          *  * _format request attribute
          *  * $default
@@ -15587,7 +16275,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Returns the protocol version.
-         * 
+         *
          * If the application is behind a proxy, the protocol version used in the
          * requests between the client and the proxy and between the proxy and the
          * server might be different. This returns the former (from the "Via" header)
@@ -15657,7 +16345,7 @@ namespace Illuminate\Support\Facades {
          * Gets the preferred format for the response by inspecting, in the following order:
          *   * the request format set using setRequestFormat;
          *   * the values of the Accept HTTP header.
-         * 
+         *
          * Note that if you use this method, you should send the "Vary: Accept" header
          * in the response to prevent any issues with intermediary HTTP caches.
          *
@@ -15724,7 +16412,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Returns true if the request is an XMLHttpRequest.
-         * 
+         *
          * It works if your JavaScript library sets an X-Requested-With HTTP header.
          * It is known to work with common JavaScript frameworks:
          *
@@ -15753,7 +16441,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Indicates whether this request originated from a trusted proxy.
-         * 
+         *
          * This can be useful to determine whether or not to trust the
          * contents of a proxy-specific header.
          *
@@ -15840,6 +16528,18 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Determine if the current request is asking for Markdown.
+         *
+         * @return bool
+         * @static
+         */
+        public static function wantsMarkdown()
+        {
+            /** @var \Illuminate\Http\Request $instance */
+            return $instance->wantsMarkdown();
+        }
+
+        /**
          * Determines whether the current requests accepts a given content type.
          *
          * @param string|array $contentTypes
@@ -15887,6 +16587,18 @@ namespace Illuminate\Support\Facades {
         {
             /** @var \Illuminate\Http\Request $instance */
             return $instance->acceptsJson();
+        }
+
+        /**
+         * Determines whether a request accepts Markdown.
+         *
+         * @return bool
+         * @static
+         */
+        public static function acceptsMarkdown()
+        {
+            /** @var \Illuminate\Http\Request $instance */
+            return $instance->acceptsMarkdown();
         }
 
         /**
@@ -16192,6 +16904,17 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Retrieve a file from the request as an image instance.
+         *
+         * @static
+         */
+        public static function image($key)
+        {
+            /** @var \Illuminate\Http\Request $instance */
+            return $instance->image($key);
+        }
+
+        /**
          * Dump the items.
          *
          * @param mixed $keys
@@ -16259,10 +16982,12 @@ namespace Illuminate\Support\Facades {
         /**
          * Apply the callback if the instance contains the given key.
          *
+         * @template TReturn
+         * @template TReturnDefault = never
          * @param string $key
-         * @param callable $callback
-         * @param callable|null $default
-         * @return $this|mixed
+         * @param callable(mixed):  TReturn  $callback
+         * @param (callable(): TReturnDefault)|null $default
+         * @return $this|TReturn|\Illuminate\Http\TReturnDefault
          * @static
          */
         public static function whenHas($key, $callback, $default = null)
@@ -16313,16 +17038,37 @@ namespace Illuminate\Support\Facades {
         /**
          * Apply the callback if the instance contains a non-empty value for the given key.
          *
+         * @template TReturn
+         * @template TReturnDefault = never
          * @param string $key
-         * @param callable $callback
-         * @param callable|null $default
-         * @return $this|mixed
+         * @param callable(mixed):  TReturn  $callback
+         * @param (callable(): TReturnDefault)|null $default
+         * @return $this|TReturn|\Illuminate\Http\TReturnDefault
          * @static
          */
         public static function whenFilled($key, $callback, $default = null)
         {
             /** @var \Illuminate\Http\Request $instance */
             return $instance->whenFilled($key, $callback, $default);
+        }
+
+        /**
+         * Apply the callback if the instance contains a valid enum value for the given key.
+         *
+         * @template TEnum of \BackedEnum
+         * @template TReturn
+         * @template TReturnDefault = never
+         * @param string $key
+         * @param class-string<TEnum> $enumClass
+         * @param callable(TEnum):TReturn $callback
+         * @param (callable(): TReturnDefault)|null $default
+         * @return $this|TReturn|\Illuminate\Http\TReturnDefault
+         * @static
+         */
+        public static function whenEnum($key, $enumClass, $callback, $default = null)
+        {
+            /** @var \Illuminate\Http\Request $instance */
+            return $instance->whenEnum($key, $enumClass, $callback, $default);
         }
 
         /**
@@ -16341,10 +17087,12 @@ namespace Illuminate\Support\Facades {
         /**
          * Apply the callback if the instance is missing the given key.
          *
+         * @template TReturn
+         * @template TReturnDefault = never
          * @param string $key
-         * @param callable $callback
-         * @param callable|null $default
-         * @return $this|mixed
+         * @param callable(mixed):  TReturn  $callback
+         * @param (callable(): TReturnDefault)|null $default
+         * @return $this|TReturn|\Illuminate\Http\TReturnDefault
          * @static
          */
         public static function whenMissing($key, $callback, $default = null)
@@ -16383,7 +17131,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Retrieve data as a boolean value.
-         * 
+         *
          * Returns true when value is "1", "true", "on", and "yes". Otherwise, returns false.
          *
          * @param string|null $key
@@ -16426,6 +17174,22 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Retrieve data clamped between min and max values.
+         *
+         * @param string $key
+         * @param int|float $min
+         * @param int|float $max
+         * @param int|float $default
+         * @return float|int
+         * @static
+         */
+        public static function clamp($key, $min, $max, $default = 0)
+        {
+            /** @var \Illuminate\Http\Request $instance */
+            return $instance->clamp($key, $min, $max, $default);
+        }
+
+        /**
          * Retrieve data from the instance as a Carbon instance.
          *
          * @param string $key
@@ -16442,13 +17206,28 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Retrieve data from the instance as a CarbonInterval instance.
+         *
+         * @param string $key
+         * @param \Carbon\Unit|string|null $unit
+         * @return \Carbon\CarbonInterval|null
+         * @static
+         */
+        public static function interval($key, $unit = null)
+        {
+            /** @var \Illuminate\Http\Request $instance */
+            return $instance->interval($key, $unit);
+        }
+
+        /**
          * Retrieve data from the instance as an enum.
          *
          * @template TEnum of \BackedEnum
+         * @template TDefault of TEnum|null
          * @param string $key
          * @param class-string<TEnum> $enumClass
-         * @param TEnum|null $default
-         * @return TEnum|null
+         * @param TDefault $default
+         * @return TEnum|TDefault
          * @static
          */
         public static function enum($key, $enumClass, $default = null)
@@ -16982,6 +17761,7 @@ namespace Illuminate\Support\Facades {
             }
     /**
      * @method static \Illuminate\Routing\RouteRegistrar attribute(string $key, mixed $value)
+     * @method static \Illuminate\Routing\RouteRegistrar metadata(array $metadata)
      * @method static \Illuminate\Routing\RouteRegistrar whereAlpha(array|string $parameters)
      * @method static \Illuminate\Routing\RouteRegistrar whereAlphaNumeric(array|string $parameters)
      * @method static \Illuminate\Routing\RouteRegistrar whereNumber(array|string $parameters)
@@ -17592,7 +18372,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Add a middleware to the beginning of a middleware group.
-         * 
+         *
          * If the middleware is already in the group, it will not be added again.
          *
          * @param string $group
@@ -17608,7 +18388,7 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Add a middleware to the end of a middleware group.
-         * 
+         *
          * If the middleware is already in the group, it will not be added again.
          *
          * @param string $group
@@ -18074,6 +18854,28 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * @see \Livewire\Mechanisms\HandleRouting\HandleRouting::register()
+         * @param mixed $uri
+         * @param mixed $component
+         * @return \Illuminate\Routing\Route
+         * @static
+         */
+        public static function livewire($uri, $component)
+        {
+            return \Illuminate\Routing\Router::livewire($uri, $component);
+        }
+
+        /**
+         * @see \Spatie\Feed\FeedServiceProvider::registerRouteMacro()
+         * @param mixed $baseUrl
+         * @static
+         */
+        public static function feeds($baseUrl = '')
+        {
+            return \Illuminate\Routing\Router::feeds($baseUrl);
+        }
+
+        /**
          * @see \Spatie\PersonalDataExport\PersonalDataExportServiceProvider::packageBooted()
          * @param string $url
          * @static
@@ -18085,17 +18887,19 @@ namespace Illuminate\Support\Facades {
 
             }
     /**
-     * @method static \Illuminate\Console\Scheduling\PendingEventAttributes withoutOverlapping(int $expiresAt = 1440)
+     * @method static \Illuminate\Console\Scheduling\PendingEventAttributes withoutOverlapping(int $expiresAt = 1440, bool $releaseOnTerminationSignals = true)
      * @method static void mergeAttributes(\Illuminate\Console\Scheduling\Event $event)
      * @method static \Illuminate\Console\Scheduling\PendingEventAttributes user(string $user)
      * @method static \Illuminate\Console\Scheduling\PendingEventAttributes environments(mixed $environments)
      * @method static \Illuminate\Console\Scheduling\PendingEventAttributes evenInMaintenanceMode()
+     * @method static \Illuminate\Console\Scheduling\PendingEventAttributes evenWhenPaused()
      * @method static \Illuminate\Console\Scheduling\PendingEventAttributes onOneServer()
      * @method static \Illuminate\Console\Scheduling\PendingEventAttributes runInBackground()
      * @method static \Illuminate\Console\Scheduling\PendingEventAttributes when(\Closure|bool $callback)
      * @method static \Illuminate\Console\Scheduling\PendingEventAttributes skip(\Closure|bool $callback)
      * @method static \Illuminate\Console\Scheduling\PendingEventAttributes name(string $description)
      * @method static \Illuminate\Console\Scheduling\PendingEventAttributes description(string $description)
+     * @method static \Illuminate\Console\Scheduling\PendingEventAttributes withAttributes(array $attributes)
      * @method static \Illuminate\Console\Scheduling\PendingEventAttributes cron(string $expression)
      * @method static \Illuminate\Console\Scheduling\PendingEventAttributes between(string $startTime, string $endTime)
      * @method static \Illuminate\Console\Scheduling\PendingEventAttributes unlessBetween(string $startTime, string $endTime)
@@ -18211,7 +19015,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Create new schedule group.
          *
-         * @param \Illuminate\Console\Scheduling\Event $event
+         * @param \Closure $events
          * @return void
          * @throws \RuntimeException
          * @static
@@ -18276,6 +19080,19 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Get all of the events on the schedule which run on any of the provided environments.
+         *
+         * @param list<string> $environments
+         * @return \Illuminate\Console\Scheduling\Event[]
+         * @static
+         */
+        public static function eventsForEnvironments($environments)
+        {
+            /** @var \Illuminate\Console\Scheduling\Schedule $instance */
+            return $instance->eventsForEnvironments($environments);
+        }
+
+        /**
          * Specify the cache store that should be used to store mutexes.
          *
          * @param \UnitEnum|string $store
@@ -18286,6 +19103,19 @@ namespace Illuminate\Support\Facades {
         {
             /** @var \Illuminate\Console\Scheduling\Schedule $instance */
             return $instance->useCache($store);
+        }
+
+        /**
+         * Indicate that the scheduler should not poll for pause or interrupt signals.
+         *
+         * This prevents the scheduler from hitting the application cache to determine if it needs to pause or interrupt.
+         *
+         * @return void
+         * @static
+         */
+        public static function withoutInterruptionPolling()
+        {
+            \Illuminate\Console\Scheduling\Schedule::withoutInterruptionPolling();
         }
 
         /**
@@ -18367,7 +19197,8 @@ namespace Illuminate\Support\Facades {
          */
         public static function dropAllTables()
         {
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            //Method inherited from \Illuminate\Database\Schema\MySqlBuilder 
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             $instance->dropAllTables();
         }
 
@@ -18379,33 +19210,35 @@ namespace Illuminate\Support\Facades {
          */
         public static function dropAllViews()
         {
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            //Method inherited from \Illuminate\Database\Schema\MySqlBuilder 
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             $instance->dropAllViews();
         }
 
         /**
          * Get the names of current schemas for the connection.
          *
-         * @return string[]|null
+         * @return string[]
          * @static
          */
         public static function getCurrentSchemaListing()
         {
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            //Method inherited from \Illuminate\Database\Schema\MySqlBuilder 
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->getCurrentSchemaListing();
         }
 
         /**
          * Set the default string length for migrations.
          *
-         * @param int $length
+         * @param non-negative-int $length
          * @return void
          * @static
          */
         public static function defaultStringLength($length)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            \Illuminate\Database\Schema\MySqlBuilder::defaultStringLength($length);
+            \Illuminate\Database\Schema\MariaDbBuilder::defaultStringLength($length);
         }
 
         /**
@@ -18416,7 +19249,7 @@ namespace Illuminate\Support\Facades {
         public static function defaultTimePrecision($precision)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            return \Illuminate\Database\Schema\MySqlBuilder::defaultTimePrecision($precision);
+            return \Illuminate\Database\Schema\MariaDbBuilder::defaultTimePrecision($precision);
         }
 
         /**
@@ -18430,7 +19263,7 @@ namespace Illuminate\Support\Facades {
         public static function defaultMorphKeyType($type)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            \Illuminate\Database\Schema\MySqlBuilder::defaultMorphKeyType($type);
+            \Illuminate\Database\Schema\MariaDbBuilder::defaultMorphKeyType($type);
         }
 
         /**
@@ -18442,7 +19275,7 @@ namespace Illuminate\Support\Facades {
         public static function morphUsingUuids()
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            \Illuminate\Database\Schema\MySqlBuilder::morphUsingUuids();
+            \Illuminate\Database\Schema\MariaDbBuilder::morphUsingUuids();
         }
 
         /**
@@ -18454,7 +19287,7 @@ namespace Illuminate\Support\Facades {
         public static function morphUsingUlids()
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            \Illuminate\Database\Schema\MySqlBuilder::morphUsingUlids();
+            \Illuminate\Database\Schema\MariaDbBuilder::morphUsingUlids();
         }
 
         /**
@@ -18467,7 +19300,7 @@ namespace Illuminate\Support\Facades {
         public static function createDatabase($name)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->createDatabase($name);
         }
 
@@ -18481,7 +19314,7 @@ namespace Illuminate\Support\Facades {
         public static function dropDatabaseIfExists($name)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->dropDatabaseIfExists($name);
         }
 
@@ -18494,7 +19327,7 @@ namespace Illuminate\Support\Facades {
         public static function getSchemas()
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->getSchemas();
         }
 
@@ -18508,7 +19341,7 @@ namespace Illuminate\Support\Facades {
         public static function hasTable($table)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->hasTable($table);
         }
 
@@ -18522,7 +19355,7 @@ namespace Illuminate\Support\Facades {
         public static function hasView($view)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->hasView($view);
         }
 
@@ -18536,7 +19369,7 @@ namespace Illuminate\Support\Facades {
         public static function getTables($schema = null)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->getTables($schema);
         }
 
@@ -18551,7 +19384,7 @@ namespace Illuminate\Support\Facades {
         public static function getTableListing($schema = null, $schemaQualified = true)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->getTableListing($schema, $schemaQualified);
         }
 
@@ -18565,7 +19398,7 @@ namespace Illuminate\Support\Facades {
         public static function getViews($schema = null)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->getViews($schema);
         }
 
@@ -18573,13 +19406,13 @@ namespace Illuminate\Support\Facades {
          * Get the user-defined types that belong to the connection.
          *
          * @param string|string[]|null $schema
-         * @return \Illuminate\Database\Schema\list<array{name: string, schema: string, type: string, type: string, category: string, implicit: bool}>
+         * @return \Illuminate\Database\Schema\list<array{name: string, schema: string, schema_qualified_name: string, type: string, category: string, implicit: bool}>
          * @static
          */
         public static function getTypes($schema = null)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->getTypes($schema);
         }
 
@@ -18594,7 +19427,7 @@ namespace Illuminate\Support\Facades {
         public static function hasColumn($table, $column)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->hasColumn($table, $column);
         }
 
@@ -18609,7 +19442,7 @@ namespace Illuminate\Support\Facades {
         public static function hasColumns($table, $columns)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->hasColumns($table, $columns);
         }
 
@@ -18625,7 +19458,7 @@ namespace Illuminate\Support\Facades {
         public static function whenTableHasColumn($table, $column, $callback)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             $instance->whenTableHasColumn($table, $column, $callback);
         }
 
@@ -18641,7 +19474,7 @@ namespace Illuminate\Support\Facades {
         public static function whenTableDoesntHaveColumn($table, $column, $callback)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             $instance->whenTableDoesntHaveColumn($table, $column, $callback);
         }
 
@@ -18658,7 +19491,7 @@ namespace Illuminate\Support\Facades {
         public static function whenTableHasIndex($table, $index, $callback, $type = null)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             $instance->whenTableHasIndex($table, $index, $callback, $type);
         }
 
@@ -18675,7 +19508,7 @@ namespace Illuminate\Support\Facades {
         public static function whenTableDoesntHaveIndex($table, $index, $callback, $type = null)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             $instance->whenTableDoesntHaveIndex($table, $index, $callback, $type);
         }
 
@@ -18686,12 +19519,13 @@ namespace Illuminate\Support\Facades {
          * @param string $column
          * @param bool $fullDefinition
          * @return string
+         * @throws \InvalidArgumentException
          * @static
          */
         public static function getColumnType($table, $column, $fullDefinition = false)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->getColumnType($table, $column, $fullDefinition);
         }
 
@@ -18705,7 +19539,7 @@ namespace Illuminate\Support\Facades {
         public static function getColumnListing($table)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->getColumnListing($table);
         }
 
@@ -18713,13 +19547,13 @@ namespace Illuminate\Support\Facades {
          * Get the columns for a given table.
          *
          * @param string $table
-         * @return \Illuminate\Database\Schema\list<array{name: string, type: string, type_name: string, nullable: bool, default: mixed, auto_increment: bool, comment: string|null, generation: array{type: string, expression: string|null}|null}>
+         * @return \Illuminate\Database\Schema\list<array{name: string, type: string, type_name: string, collation: string|null, nullable: bool, default: mixed, auto_increment: bool, comment: string|null, generation: array{type: string, expression: string|null}|null}>
          * @static
          */
         public static function getColumns($table)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->getColumns($table);
         }
 
@@ -18733,7 +19567,7 @@ namespace Illuminate\Support\Facades {
         public static function getIndexes($table)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->getIndexes($table);
         }
 
@@ -18747,7 +19581,7 @@ namespace Illuminate\Support\Facades {
         public static function getIndexListing($table)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->getIndexListing($table);
         }
 
@@ -18763,21 +19597,36 @@ namespace Illuminate\Support\Facades {
         public static function hasIndex($table, $index, $type = null)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->hasIndex($table, $index, $type);
+        }
+
+        /**
+         * Determine if the table has a given foreign key.
+         *
+         * @param string $table
+         * @param array|string $foreignKey
+         * @return bool
+         * @static
+         */
+        public static function hasForeignKey($table, $foreignKey)
+        {
+            //Method inherited from \Illuminate\Database\Schema\Builder 
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
+            return $instance->hasForeignKey($table, $foreignKey);
         }
 
         /**
          * Get the foreign keys for a given table.
          *
          * @param string $table
-         * @return array
+         * @return \Illuminate\Database\Schema\list<array{name: string|null, columns: list<string>, foreign_schema: string|null, foreign_table: string, foreign_columns: list<string>, on_update: string|null, on_delete: string|null}>
          * @static
          */
         public static function getForeignKeys($table)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->getForeignKeys($table);
         }
 
@@ -18792,7 +19641,7 @@ namespace Illuminate\Support\Facades {
         public static function table($table, $callback)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             $instance->table($table, $callback);
         }
 
@@ -18807,7 +19656,7 @@ namespace Illuminate\Support\Facades {
         public static function create($table, $callback)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             $instance->create($table, $callback);
         }
 
@@ -18821,7 +19670,7 @@ namespace Illuminate\Support\Facades {
         public static function drop($table)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             $instance->drop($table);
         }
 
@@ -18835,7 +19684,7 @@ namespace Illuminate\Support\Facades {
         public static function dropIfExists($table)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             $instance->dropIfExists($table);
         }
 
@@ -18850,7 +19699,7 @@ namespace Illuminate\Support\Facades {
         public static function dropColumns($table, $columns)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             $instance->dropColumns($table, $columns);
         }
 
@@ -18864,7 +19713,7 @@ namespace Illuminate\Support\Facades {
         public static function dropAllTypes()
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             $instance->dropAllTypes();
         }
 
@@ -18879,7 +19728,7 @@ namespace Illuminate\Support\Facades {
         public static function rename($from, $to)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             $instance->rename($from, $to);
         }
 
@@ -18892,7 +19741,7 @@ namespace Illuminate\Support\Facades {
         public static function enableForeignKeyConstraints()
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->enableForeignKeyConstraints();
         }
 
@@ -18905,22 +19754,53 @@ namespace Illuminate\Support\Facades {
         public static function disableForeignKeyConstraints()
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->disableForeignKeyConstraints();
         }
 
         /**
          * Disable foreign key constraints during the execution of a callback.
          *
-         * @param \Closure $callback
-         * @return mixed
+         * @template TReturn
+         * @param (\Closure(): TReturn) $callback
+         * @return TReturn
          * @static
          */
         public static function withoutForeignKeyConstraints($callback)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->withoutForeignKeyConstraints($callback);
+        }
+
+        /**
+         * Create the vector extension on the schema if it does not exist.
+         *
+         * @param string|null $schema
+         * @return void
+         * @static
+         */
+        public static function ensureVectorExtensionExists($schema = null)
+        {
+            //Method inherited from \Illuminate\Database\Schema\Builder 
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
+            $instance->ensureVectorExtensionExists($schema);
+        }
+
+        /**
+         * Create a new extension on the schema if it does not exist.
+         *
+         * @param string $name
+         * @param string|null $schema
+         * @return void
+         * @throws \RuntimeException
+         * @static
+         */
+        public static function ensureExtensionExists($name, $schema = null)
+        {
+            //Method inherited from \Illuminate\Database\Schema\Builder 
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
+            $instance->ensureExtensionExists($name, $schema);
         }
 
         /**
@@ -18932,7 +19812,7 @@ namespace Illuminate\Support\Facades {
         public static function getCurrentSchemaName()
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->getCurrentSchemaName();
         }
 
@@ -18941,13 +19821,14 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $reference
          * @param string|bool|null $withDefaultSchema
-         * @return array
+         * @return array{string|null, string}
+         * @throws \InvalidArgumentException
          * @static
          */
         public static function parseSchemaAndTable($reference, $withDefaultSchema = null)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->parseSchemaAndTable($reference, $withDefaultSchema);
         }
 
@@ -18960,7 +19841,7 @@ namespace Illuminate\Support\Facades {
         public static function getConnection()
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             return $instance->getConnection();
         }
 
@@ -18974,7 +19855,7 @@ namespace Illuminate\Support\Facades {
         public static function blueprintResolver($resolver)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            /** @var \Illuminate\Database\Schema\MySqlBuilder $instance */
+            /** @var \Illuminate\Database\Schema\MariaDbBuilder $instance */
             $instance->blueprintResolver($resolver);
         }
 
@@ -18990,7 +19871,7 @@ namespace Illuminate\Support\Facades {
         public static function macro($name, $macro)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            \Illuminate\Database\Schema\MySqlBuilder::macro($name, $macro);
+            \Illuminate\Database\Schema\MariaDbBuilder::macro($name, $macro);
         }
 
         /**
@@ -19005,7 +19886,7 @@ namespace Illuminate\Support\Facades {
         public static function mixin($mixin, $replace = true)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            \Illuminate\Database\Schema\MySqlBuilder::mixin($mixin, $replace);
+            \Illuminate\Database\Schema\MariaDbBuilder::mixin($mixin, $replace);
         }
 
         /**
@@ -19018,7 +19899,7 @@ namespace Illuminate\Support\Facades {
         public static function hasMacro($name)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            return \Illuminate\Database\Schema\MySqlBuilder::hasMacro($name);
+            return \Illuminate\Database\Schema\MariaDbBuilder::hasMacro($name);
         }
 
         /**
@@ -19030,7 +19911,7 @@ namespace Illuminate\Support\Facades {
         public static function flushMacros()
         {
             //Method inherited from \Illuminate\Database\Schema\Builder 
-            \Illuminate\Database\Schema\MySqlBuilder::flushMacros();
+            \Illuminate\Database\Schema\MariaDbBuilder::flushMacros();
         }
 
             }
@@ -19113,7 +19994,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Set the default session driver name.
          *
-         * @param string $name
+         * @param \UnitEnum|string $name
          * @return void
          * @static
          */
@@ -19126,7 +20007,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get a driver instance.
          *
-         * @param string|null $driver
+         * @param \UnitEnum|string|null $driver
          * @return mixed
          * @throws \InvalidArgumentException
          * @static
@@ -19142,7 +20023,7 @@ namespace Illuminate\Support\Facades {
          * Register a custom driver creator Closure.
          *
          * @param string $driver
-         * @param \Closure $callback
+         * @param-closure-this $this  $callback
          * @return \Illuminate\Session\SessionManager
          * @static
          */
@@ -19156,7 +20037,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get all of the created "drivers".
          *
-         * @return array
+         * @return array<string, mixed>
          * @static
          */
         public static function getDrivers()
@@ -19283,7 +20164,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Checks if a key exists.
          *
-         * @param string|array $key
+         * @param \UnitEnum|string|array $key
          * @return bool
          * @static
          */
@@ -19296,7 +20177,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if the given key is missing from the session data.
          *
-         * @param string|array $key
+         * @param \UnitEnum|string|array $key
          * @return bool
          * @static
          */
@@ -19309,7 +20190,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if a key is present and not null.
          *
-         * @param string|array $key
+         * @param \UnitEnum|string|array $key
          * @return bool
          * @static
          */
@@ -19322,7 +20203,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if any of the given keys are present and not null.
          *
-         * @param string|array $key
+         * @param \UnitEnum|string|array $key
          * @return bool
          * @static
          */
@@ -19335,7 +20216,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get an item from the session.
          *
-         * @param string $key
+         * @param \UnitEnum|string $key
          * @param mixed $default
          * @return mixed
          * @static
@@ -19349,7 +20230,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the value of a given key and then forget it.
          *
-         * @param string $key
+         * @param \UnitEnum|string $key
          * @param mixed $default
          * @return mixed
          * @static
@@ -19403,7 +20284,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Put a key / value pair or array of key / value pairs in the session.
          *
-         * @param string|array $key
+         * @param \UnitEnum|string|array $key
          * @param mixed $value
          * @return void
          * @static
@@ -19417,7 +20298,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get an item from the session, or store the default value.
          *
-         * @param string $key
+         * @param \UnitEnum|string $key
          * @param \Closure $callback
          * @return mixed
          * @static
@@ -19431,7 +20312,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Push a value onto a session array.
          *
-         * @param string $key
+         * @param \UnitEnum|string $key
          * @param mixed $value
          * @return void
          * @static
@@ -19445,7 +20326,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Increment the value of an item in the session.
          *
-         * @param string $key
+         * @param \UnitEnum|string $key
          * @param int $amount
          * @return mixed
          * @static
@@ -19459,7 +20340,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Decrement the value of an item in the session.
          *
-         * @param string $key
+         * @param \UnitEnum|string $key
          * @param int $amount
          * @return int
          * @static
@@ -19473,7 +20354,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Flash a key / value pair to the session.
          *
-         * @param string $key
+         * @param \UnitEnum|string $key
          * @param mixed $value
          * @return void
          * @static
@@ -19487,7 +20368,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Flash a key / value pair to the session for immediate use.
          *
-         * @param string $key
+         * @param \UnitEnum|string $key
          * @param mixed $value
          * @return void
          * @static
@@ -19551,7 +20432,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Remove an item from the session, returning its value.
          *
-         * @param string $key
+         * @param \UnitEnum|string $key
          * @return mixed
          * @static
          */
@@ -19564,7 +20445,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Remove one or many items from the session.
          *
-         * @param string|array $keys
+         * @param \UnitEnum|string|array $keys
          * @return void
          * @static
          */
@@ -19951,7 +20832,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get a filesystem instance.
          *
-         * @param string|null $name
+         * @param \UnitEnum|string|null $name
          * @return \Illuminate\Filesystem\LocalFilesystemAdapter
          * @static
          */
@@ -20057,6 +20938,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param array $config
          * @return \Illuminate\Filesystem\LocalFilesystemAdapter
+         * @throws \InvalidArgumentException
          * @static
          */
         public static function createScopedDriver($config)
@@ -20134,6 +21016,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $driver
          * @param \Closure $callback
+         * @param-closure-this $this  $callback
          * @return \Illuminate\Filesystem\FilesystemManager
          * @static
          */
@@ -20169,18 +21052,47 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Determine if temporary upload URLs can be generated.
+         *
+         * @return bool
+         * @static
+         */
+        public static function providesTemporaryUploadUrls()
+        {
+            /** @var \Illuminate\Filesystem\LocalFilesystemAdapter $instance */
+            return $instance->providesTemporaryUploadUrls();
+        }
+
+        /**
          * Get a temporary URL for the file at the given path.
          *
          * @param string $path
          * @param \DateTimeInterface $expiration
          * @param array $options
          * @return string
+         * @throws \RuntimeException
          * @static
          */
         public static function temporaryUrl($path, $expiration, $options = [])
         {
             /** @var \Illuminate\Filesystem\LocalFilesystemAdapter $instance */
             return $instance->temporaryUrl($path, $expiration, $options);
+        }
+
+        /**
+         * Get a temporary upload URL for the file at the given path.
+         *
+         * @param string $path
+         * @param \DateTimeInterface $expiration
+         * @param array $options
+         * @return array
+         * @throws \RuntimeException
+         * @static
+         */
+        public static function temporaryUploadUrl($path, $expiration, $options = [])
+        {
+            /** @var \Illuminate\Filesystem\LocalFilesystemAdapter $instance */
+            return $instance->temporaryUploadUrl($path, $expiration, $options);
         }
 
         /**
@@ -20267,6 +21179,19 @@ namespace Illuminate\Support\Facades {
             //Method inherited from \Illuminate\Filesystem\FilesystemAdapter 
             /** @var \Illuminate\Filesystem\LocalFilesystemAdapter $instance */
             return $instance->assertDirectoryEmpty($path);
+        }
+
+        /**
+         * Assert that the disk contains no files.
+         *
+         * @return \Illuminate\Filesystem\LocalFilesystemAdapter
+         * @static
+         */
+        public static function assertEmpty()
+        {
+            //Method inherited from \Illuminate\Filesystem\FilesystemAdapter 
+            /** @var \Illuminate\Filesystem\LocalFilesystemAdapter $instance */
+            return $instance->assertEmpty();
         }
 
         /**
@@ -20404,6 +21329,7 @@ namespace Illuminate\Support\Facades {
          * @param array $headers
          * @param string|null $disposition
          * @return \Symfony\Component\HttpFoundation\StreamedResponse
+         * @throws UnableToRetrieveMetadata
          * @static
          */
         public static function response($path, $name = null, $headers = [], $disposition = 'inline')
@@ -20421,6 +21347,7 @@ namespace Illuminate\Support\Facades {
          * @param string|null $name
          * @param array $headers
          * @return \Symfony\Component\HttpFoundation\StreamedResponse
+         * @throws UnableToRetrieveMetadata
          * @static
          */
         public static function serve($request, $path, $name = null, $headers = [])
@@ -20437,6 +21364,7 @@ namespace Illuminate\Support\Facades {
          * @param string|null $name
          * @param array $headers
          * @return \Symfony\Component\HttpFoundation\StreamedResponse
+         * @throws UnableToRetrieveMetadata
          * @static
          */
         public static function download($path, $name = null, $headers = [])
@@ -20444,6 +21372,18 @@ namespace Illuminate\Support\Facades {
             //Method inherited from \Illuminate\Filesystem\FilesystemAdapter 
             /** @var \Illuminate\Filesystem\LocalFilesystemAdapter $instance */
             return $instance->download($path, $name, $headers);
+        }
+
+        /**
+         * Create an image instance from a file in storage.
+         *
+         * @static
+         */
+        public static function image($path)
+        {
+            //Method inherited from \Illuminate\Filesystem\FilesystemAdapter 
+            /** @var \Illuminate\Filesystem\LocalFilesystemAdapter $instance */
+            return $instance->image($path);
         }
 
         /**
@@ -20635,6 +21575,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $path
          * @return string|false
+         * @throws UnableToRetrieveMetadata
          * @static
          */
         public static function mimeType($path)
@@ -20701,23 +21642,6 @@ namespace Illuminate\Support\Facades {
             //Method inherited from \Illuminate\Filesystem\FilesystemAdapter 
             /** @var \Illuminate\Filesystem\LocalFilesystemAdapter $instance */
             return $instance->url($path);
-        }
-
-        /**
-         * Get a temporary upload URL for the file at the given path.
-         *
-         * @param string $path
-         * @param \DateTimeInterface $expiration
-         * @param array $options
-         * @return array
-         * @throws \RuntimeException
-         * @static
-         */
-        public static function temporaryUploadUrl($path, $expiration, $options = [])
-        {
-            //Method inherited from \Illuminate\Filesystem\FilesystemAdapter 
-            /** @var \Illuminate\Filesystem\LocalFilesystemAdapter $instance */
-            return $instance->temporaryUploadUrl($path, $expiration, $options);
         }
 
         /**
@@ -20871,6 +21795,20 @@ namespace Illuminate\Support\Facades {
             //Method inherited from \Illuminate\Filesystem\FilesystemAdapter 
             /** @var \Illuminate\Filesystem\LocalFilesystemAdapter $instance */
             $instance->buildTemporaryUrlsUsing($callback);
+        }
+
+        /**
+         * Define a custom temporary upload URL builder callback.
+         *
+         * @param \Closure $callback
+         * @return void
+         * @static
+         */
+        public static function buildTemporaryUploadUrlsUsing($callback)
+        {
+            //Method inherited from \Illuminate\Filesystem\FilesystemAdapter 
+            /** @var \Illuminate\Filesystem\LocalFilesystemAdapter $instance */
+            $instance->buildTemporaryUploadUrlsUsing($callback);
         }
 
         /**
@@ -23160,6 +24098,33 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Render font preload links and inline styles.
+         *
+         * @param list<string>|string|null $aliases
+         * @return \Illuminate\Support\HtmlString
+         * @throws \Illuminate\Foundation\ViteException
+         * @static
+         */
+        public static function fonts($aliases = null)
+        {
+            /** @var \Illuminate\Foundation\Vite $instance */
+            return $instance->fonts($aliases);
+        }
+
+        /**
+         * Set the font manifest filename.
+         *
+         * @param string $filename
+         * @return \Illuminate\Foundation\Vite
+         * @static
+         */
+        public static function useFontsManifestFilename($filename)
+        {
+            /** @var \Illuminate\Foundation\Vite $instance */
+            return $instance->useFontsManifestFilename($filename);
+        }
+
+        /**
          * Determine if the HMR server is running.
          *
          * @return bool
@@ -23284,32 +24249,108 @@ namespace AnourValar\EloquentSerialize\Facades {
             }
     }
 
-namespace Barryvdh\Debugbar\Facades {
+namespace Fruitcake\LaravelDebugbar\Facades {
     /**
-     * @method static void alert(mixed $message)
-     * @method static void critical(mixed $message)
-     * @method static void debug(mixed $message)
-     * @method static void emergency(mixed $message)
-     * @method static void error(mixed $message)
-     * @method static void info(mixed $message)
-     * @method static void log(mixed $message)
-     * @method static void notice(mixed $message)
-     * @method static void warning(mixed $message)
-     * @see \Barryvdh\Debugbar\LaravelDebugbar
+     * @method static void            alert(mixed $message)
+     * @method static void            critical(mixed $message)
+     * @method static void            debug(mixed $message)
+     * @method static void            emergency(mixed $message)
+     * @method static void            error(mixed $message)
+     * @method static void            info(mixed $message)
+     * @method static void            log(mixed $message)
+     * @method static void            notice(mixed $message)
+     * @method static void            warning(mixed $message)
+     * @see \Fruitcake\LaravelDebugbar\LaravelDebugbar
      */
-    class Debugbar extends \DebugBar\DebugBar {
+    class Debugbar {
         /**
-         * Returns the HTTP driver
-         * 
-         * If no http driver where defined, a PhpHttpDriver is automatically created
-         *
-         * @return \DebugBar\HttpDriverInterface
+         * @static
+         */
+        public static function setApplication($app)
+        {
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->setApplication($app);
+        }
+
+        /**
+         * @static
+         */
+        public static function setRequest($request)
+        {
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->setRequest($request);
+        }
+
+        /**
+         * @static
+         */
+        public static function setProcessingJob($job)
+        {
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->setProcessingJob($job);
+        }
+
+        /**
+         * @static
+         */
+        public static function getProcessingJob()
+        {
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->getProcessingJob();
+        }
+
+        /**
          * @static
          */
         public static function getHttpDriver()
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->getHttpDriver();
+        }
+
+        /**
+         * @static
+         */
+        public static function getRequestIdGenerator()
+        {
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->getRequestIdGenerator();
+        }
+
+        /**
+         * @static
+         */
+        public static function getTimeCollector()
+        {
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->getTimeCollector();
+        }
+
+        /**
+         * @static
+         */
+        public static function getMessagesCollector()
+        {
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->getMessagesCollector();
+        }
+
+        /**
+         * @static
+         */
+        public static function getExceptionsCollector()
+        {
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->getExceptionsCollector();
+        }
+
+        /**
+         * @static
+         */
+        public static function isCollecting()
+        {
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->isCollecting();
         }
 
         /**
@@ -23319,7 +24360,7 @@ namespace Barryvdh\Debugbar\Facades {
          */
         public static function enable()
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->enable();
         }
 
@@ -23330,47 +24371,45 @@ namespace Barryvdh\Debugbar\Facades {
          */
         public static function boot()
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->boot();
         }
 
         /**
          * @static
          */
-        public static function shouldCollect($name, $default = false)
+        public static function booted()
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
-            return $instance->shouldCollect($name, $default);
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->booted();
         }
 
         /**
-         * Adds a data collector
-         *
-         * @param \DebugBar\DataCollector\DataCollectorInterface $collector
-         * @throws DebugBarException
-         * @return \Barryvdh\Debugbar\LaravelDebugbar
          * @static
          */
-        public static function addCollector($collector)
+        public static function getJavascriptRenderer($baseUrl = null, $basePath = null)
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
-            return $instance->addCollector($collector);
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->getJavascriptRenderer($baseUrl, $basePath);
+        }
+
+        /**
+         * @static
+         */
+        public static function shouldCollect($name, $default = true)
+        {
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->shouldCollect($name, $default);
         }
 
         /**
          * Handle silenced errors
          *
-         * @param $level
-         * @param $message
-         * @param string $file
-         * @param int $line
-         * @param array $context
-         * @throws \ErrorException
          * @static
          */
         public static function handleError($level, $message, $file = '', $line = 0, $context = [])
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->handleError($level, $message, $file, $line, $context);
         }
 
@@ -23378,142 +24417,127 @@ namespace Barryvdh\Debugbar\Facades {
          * Starts a measure
          *
          * @param string $name Internal name, used to stop the measure
-         * @param string $label Public name
-         * @param string|null $collector
-         * @param string|null $group
+         * @param string|null $label Public name
          * @static
          */
         public static function startMeasure($name, $label = null, $collector = null, $group = null)
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->startMeasure($name, $label, $collector, $group);
         }
 
         /**
          * Stops a measure
          *
-         * @param string $name
          * @static
          */
         public static function stopMeasure($name)
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->stopMeasure($name);
         }
 
         /**
-         * Adds an exception to be profiled in the debug bar
+         * Alias for addThrowable
          *
-         * @param \Exception $e
-         * @deprecated in favor of addThrowable
          * @static
          */
         public static function addException($e)
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->addException($e);
         }
 
         /**
          * Adds an exception to be profiled in the debug bar
          *
-         * @param \Throwable $e
          * @static
          */
         public static function addThrowable($e)
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->addThrowable($e);
-        }
-
-        /**
-         * Returns a JavascriptRenderer for this instance
-         *
-         * @param string $baseUrl
-         * @param string $basePath
-         * @return \Barryvdh\Debugbar\JavascriptRenderer
-         * @static
-         */
-        public static function getJavascriptRenderer($baseUrl = null, $basePath = null)
-        {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
-            return $instance->getJavascriptRenderer($baseUrl, $basePath);
         }
 
         /**
          * Modify the response and inject the debugbar (or data in headers)
          *
-         * @param \Symfony\Component\HttpFoundation\Request $request
-         * @param \Symfony\Component\HttpFoundation\Response $response
-         * @return \Symfony\Component\HttpFoundation\Response
          * @static
          */
-        public static function modifyResponse($request, $response)
+        public static function handleResponse($request, $response)
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
-            return $instance->modifyResponse($request, $response);
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->handleResponse($request, $response);
+        }
+
+        /**
+         * @static
+         */
+        public static function canBeEnabled()
+        {
+            return \Fruitcake\LaravelDebugbar\LaravelDebugbar::canBeEnabled();
         }
 
         /**
          * Check if the Debugbar is enabled
          *
-         * @return boolean
          * @static
          */
         public static function isEnabled()
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->isEnabled();
         }
 
         /**
-         * Collects the data from the collectors
-         *
-         * @return array
          * @static
          */
-        public static function collect()
+        public static function isStorageOpen($request)
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
-            return $instance->collect();
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->isStorageOpen($request);
+        }
+
+        /**
+         * @static
+         */
+        public static function requestIsExcluded($request)
+        {
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->requestIsExcluded($request);
+        }
+
+        /**
+         * Collects meta data about the current request
+         *
+         * @static
+         */
+        public static function collectMetaData()
+        {
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->collectMetaData();
+        }
+
+        /**
+         * @static
+         */
+        public static function terminate()
+        {
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->terminate();
         }
 
         /**
          * Injects the web debug toolbar into the given Response.
          *
-         * @param \Symfony\Component\HttpFoundation\Response $response A Response instance
          * Based on https://github.com/symfony/WebProfilerBundle/blob/master/EventListener/WebDebugToolbarListener.php
+         *
          * @static
          */
         public static function injectDebugbar($response)
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->injectDebugbar($response);
-        }
-
-        /**
-         * Checks if there is stacked data in the session
-         *
-         * @return boolean
-         * @static
-         */
-        public static function hasStackedData()
-        {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
-            return $instance->hasStackedData();
-        }
-
-        /**
-         * Returns the data stacked in the session
-         *
-         * @param boolean $delete Whether to delete the data in the session
-         * @return array
-         * @static
-         */
-        public static function getStackedData($delete = true)
-        {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
-            return $instance->getStackedData($delete);
         }
 
         /**
@@ -23523,172 +24547,170 @@ namespace Barryvdh\Debugbar\Facades {
          */
         public static function disable()
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->disable();
+        }
+
+        /**
+         * @static
+         */
+        public static function reset()
+        {
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->reset();
         }
 
         /**
          * Adds a measure
          *
-         * @param string $label
-         * @param float $start
-         * @param float $end
-         * @param array|null $params
-         * @param string|null $collector
-         * @param string|null $group
          * @static
          */
-        public static function addMeasure($label, $start, $end, $params = [], $collector = null, $group = null)
+        public static function addMeasure($label, $start, $end = null, $params = [], $collector = null, $group = null)
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->addMeasure($label, $start, $end, $params, $collector, $group);
         }
 
         /**
          * Utility function to measure the execution of a Closure
          *
-         * @param string $label
-         * @param \Closure $closure
-         * @param string|null $collector
-         * @param string|null $group
-         * @return mixed
          * @static
          */
         public static function measure($label, $closure, $collector = null, $group = null)
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->measure($label, $closure, $collector, $group);
         }
 
         /**
-         * Collect data in a CLI request
+         * Adds a message to the MessagesCollector
          *
-         * @return array
+         * A message can be anything from an object to a string
+         *
          * @static
          */
-        public static function collectConsole()
+        public static function addMessage($message, $label = 'info', $context = [])
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
-            return $instance->collectConsole();
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->addMessage($message, $label, $context);
         }
 
         /**
-         * Adds a message to the MessagesCollector
-         * 
-         * A message can be anything from an object to a string
+         * Check the version of Laravel
          *
-         * @param mixed $message
-         * @param string $label
          * @static
          */
-        public static function addMessage($message, $label = 'info')
+        public static function checkVersion($version, $operator = '>=')
         {
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
-            return $instance->addMessage($message, $label);
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->checkVersion($version, $operator);
+        }
+
+        /**
+         * Adds a data collector
+         *
+         * @throws DebugBarException
+         * @return \Fruitcake\LaravelDebugbar\LaravelDebugbar
+         * @static
+         */
+        public static function addCollector($collector)
+        {
+            //Method inherited from \DebugBar\DebugBar 
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->addCollector($collector);
         }
 
         /**
          * Checks if a data collector has been added
          *
-         * @param string $name
          * @return boolean
          * @static
          */
         public static function hasCollector($name)
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->hasCollector($name);
         }
 
         /**
-         * Returns a data collector
-         *
-         * @param string $name
-         * @return \DebugBar\DataCollector\DataCollectorInterface
-         * @throws DebugBarException
          * @static
          */
         public static function getCollector($name)
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->getCollector($name);
+        }
+
+        /**
+         * @static
+         */
+        public static function removeCollector($name)
+        {
+            //Method inherited from \DebugBar\DebugBar 
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->removeCollector($name);
         }
 
         /**
          * Returns an array of all data collectors
          *
-         * @return array[DataCollectorInterface]
+         * @return array|\DebugBar\DataCollector\DataCollectorInterface[]
          * @static
          */
         public static function getCollectors()
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->getCollectors();
         }
 
         /**
          * Sets the request id generator
          *
-         * @param \DebugBar\RequestIdGeneratorInterface $generator
-         * @return \Barryvdh\Debugbar\LaravelDebugbar
+         * @return \Fruitcake\LaravelDebugbar\LaravelDebugbar
          * @static
          */
         public static function setRequestIdGenerator($generator)
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->setRequestIdGenerator($generator);
-        }
-
-        /**
-         * @return \DebugBar\RequestIdGeneratorInterface
-         * @static
-         */
-        public static function getRequestIdGenerator()
-        {
-            //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
-            return $instance->getRequestIdGenerator();
         }
 
         /**
          * Returns the id of the current request
          *
-         * @return string
          * @static
          */
         public static function getCurrentRequestId()
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->getCurrentRequestId();
         }
 
         /**
          * Sets the storage backend to use to store the collected data
          *
-         * @param \DebugBar\StorageInterface $storage
-         * @return \Barryvdh\Debugbar\LaravelDebugbar
+         * @return \Fruitcake\LaravelDebugbar\LaravelDebugbar
          * @static
          */
         public static function setStorage($storage = null)
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->setStorage($storage);
         }
 
         /**
-         * @return \DebugBar\StorageInterface
          * @static
          */
         public static function getStorage()
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->getStorage();
         }
 
@@ -23701,67 +24723,74 @@ namespace Barryvdh\Debugbar\Facades {
         public static function isDataPersisted()
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->isDataPersisted();
         }
 
         /**
          * Sets the HTTP driver
          *
-         * @param \DebugBar\HttpDriverInterface $driver
-         * @return \Barryvdh\Debugbar\LaravelDebugbar
+         * @return \Fruitcake\LaravelDebugbar\LaravelDebugbar
          * @static
          */
         public static function setHttpDriver($driver)
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->setHttpDriver($driver);
         }
 
         /**
+         * Collects the data from the collectors
+         *
+         * @static
+         */
+        public static function collect()
+        {
+            //Method inherited from \DebugBar\DebugBar 
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->collect();
+        }
+
+        /**
          * Returns collected data
-         * 
+         *
          * Will collect the data if none have been collected yet
          *
-         * @return array
          * @static
          */
         public static function getData()
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->getData();
         }
 
         /**
          * Returns an array of HTTP headers containing the data
          *
-         * @param string $headerName
          * @param integer $maxHeaderLength
-         * @return array
+         * @return array<string, string>
          * @static
          */
         public static function getDataAsHeaders($headerName = 'phpdebugbar', $maxHeaderLength = 4096, $maxTotalHeaderLength = 250000)
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->getDataAsHeaders($headerName, $maxHeaderLength, $maxTotalHeaderLength);
         }
 
         /**
          * Sends the data through the HTTP headers
          *
-         * @param bool $useOpenHandler
-         * @param string $headerName
          * @param integer $maxHeaderLength
-         * @return \Barryvdh\Debugbar\LaravelDebugbar
+         * @return \Fruitcake\LaravelDebugbar\LaravelDebugbar
          * @static
          */
         public static function sendDataInHeaders($useOpenHandler = null, $headerName = 'phpdebugbar', $maxHeaderLength = 4096)
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->sendDataInHeaders($useOpenHandler, $headerName, $maxHeaderLength);
         }
 
@@ -23773,34 +24802,69 @@ namespace Barryvdh\Debugbar\Facades {
         public static function stackData()
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->stackData();
+        }
+
+        /**
+         * Checks if there is stacked data in the session
+         *
+         * @return boolean
+         * @static
+         */
+        public static function hasStackedData()
+        {
+            //Method inherited from \DebugBar\DebugBar 
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->hasStackedData();
+        }
+
+        /**
+         * Returns the data stacked in the session
+         *
+         * @param boolean $delete Whether to delete the data in the session
+         * @return array[]
+         * @static
+         */
+        public static function getStackedData($delete = true)
+        {
+            //Method inherited from \DebugBar\DebugBar 
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->getStackedData($delete);
+        }
+
+        /**
+         * @static
+         */
+        public static function getStackedIds($delete = true)
+        {
+            //Method inherited from \DebugBar\DebugBar 
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->getStackedIds($delete);
         }
 
         /**
          * Sets the key to use in the $_SESSION array
          *
-         * @param string $ns
-         * @return \Barryvdh\Debugbar\LaravelDebugbar
+         * @return \Fruitcake\LaravelDebugbar\LaravelDebugbar
          * @static
          */
         public static function setStackDataSessionNamespace($ns)
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->setStackDataSessionNamespace($ns);
         }
 
         /**
          * Returns the key used in the $_SESSION array
          *
-         * @return string
          * @static
          */
         public static function getStackDataSessionNamespace()
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->getStackDataSessionNamespace();
         }
 
@@ -23809,13 +24873,13 @@ namespace Barryvdh\Debugbar\Facades {
          * if a storage is enabled
          *
          * @param boolean $enabled
-         * @return \Barryvdh\Debugbar\LaravelDebugbar
+         * @return \Fruitcake\LaravelDebugbar\LaravelDebugbar
          * @static
          */
         public static function setStackAlwaysUseSessionStorage($enabled = true)
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->setStackAlwaysUseSessionStorage($enabled);
         }
 
@@ -23829,48 +24893,87 @@ namespace Barryvdh\Debugbar\Facades {
         public static function isStackAlwaysUseSessionStorage()
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
             return $instance->isStackAlwaysUseSessionStorage();
         }
 
         /**
+         * Set the editor globally, e.g., `vscode`
+         *
          * @static
          */
-        public static function offsetSet($key, $value)
+        public static function setEditor($editor)
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
-            return $instance->offsetSet($key, $value);
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->setEditor($editor);
+        }
+
+        /**
+         * Set the editor link template globally,
+         * `%f` = file, `%l` = line, e.g., `vscode://file/%f:%l`
+         *
+         * @static
+         */
+        public static function setEditorTemplate($editorLinkTemplate, $shouldUseAjax = false)
+        {
+            //Method inherited from \DebugBar\DebugBar 
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->setEditorTemplate($editorLinkTemplate, $shouldUseAjax);
+        }
+
+        /**
+         * Set server path replacements, server paths will be mapped to local paths
+         * e.g., `['/var/www/remote/' => '/home/local/']`,
+         * '/var/www/remote/app/path' will become to '/home/local/app/path'
+         *
+         * @static
+         */
+        public static function setRemoteReplacements($remotePathReplacements)
+        {
+            //Method inherited from \DebugBar\DebugBar 
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->setRemoteReplacements($remotePathReplacements);
         }
 
         /**
          * @static
          */
-        public static function offsetGet($key)
+        public static function offsetSet($offset, $value)
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
-            return $instance->offsetGet($key);
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->offsetSet($offset, $value);
         }
 
         /**
          * @static
          */
-        public static function offsetExists($key)
+        public static function offsetGet($offset)
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
-            return $instance->offsetExists($key);
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->offsetGet($offset);
         }
 
         /**
          * @static
          */
-        public static function offsetUnset($key)
+        public static function offsetExists($offset)
         {
             //Method inherited from \DebugBar\DebugBar 
-            /** @var \Barryvdh\Debugbar\LaravelDebugbar $instance */
-            return $instance->offsetUnset($key);
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->offsetExists($offset);
+        }
+
+        /**
+         * @static
+         */
+        public static function offsetUnset($offset)
+        {
+            //Method inherited from \DebugBar\DebugBar 
+            /** @var \Fruitcake\LaravelDebugbar\LaravelDebugbar $instance */
+            return $instance->offsetUnset($offset);
         }
 
             }
@@ -23901,6 +25004,7 @@ namespace Telegram\Bot\Laravel\Facades {
      * @method static bool restrictChatMember(array $params)
      * @method static bool promoteChatMember(array $params)
      * @method static bool setChatAdministratorCustomTitle(array $params)
+     * @method static bool setChatMemberTag(array $params)
      * @method static bool banChatSenderChat(array $params)
      * @method static bool unbanChatSenderChat(array $params)
      * @method static bool setChatPermissions(array $params)
@@ -24142,7 +25246,7 @@ namespace Telegram\Bot\Laravel\Facades {
 namespace Jenssegers\Agent\Facades {
     /**
      */
-    class Agent extends \Mobile_Detect {
+    class Agent {
         /**
          * Get all detection rules. These rules include the additional
          * platforms and browsers and utilities.
@@ -24345,7 +25449,7 @@ namespace Jenssegers\Agent\Facades {
 
         /**
          * Get the current script version.
-         * 
+         *
          * This is useful for the demo.php file,
          * so people can check on what version they are testing
          * for mobile devices.
@@ -24388,7 +25492,7 @@ namespace Jenssegers\Agent\Facades {
 
         /**
          * Retrieves a particular header. If it doesn't exist, no exception/error is caused.
-         * 
+         *
          * Simply null is returned.
          *
          * @param string $header The name of the header to retrieve. Can be HTTP compliant such as
@@ -24582,7 +25686,7 @@ namespace Jenssegers\Agent\Facades {
 
         /**
          * Method gets the mobile detection rules + utilities.
-         * 
+         *
          * The reason this is separate is because utilities rules
          * don't necessary imply mobile. This method is used inside
          * the new $detect->is('stuff') method.
@@ -24600,7 +25704,7 @@ namespace Jenssegers\Agent\Facades {
 
         /**
          * Check the HTTP headers for signs of mobile.
-         * 
+         *
          * This is the fastest mobile check possible; it's used
          * inside isMobile() method.
          *
@@ -24616,7 +25720,7 @@ namespace Jenssegers\Agent\Facades {
 
         /**
          * Check if the device is mobile.
-         * 
+         *
          * Returns true if any type of mobile device detected, including special ones
          *
          * @param null $userAgent deprecated
@@ -24633,7 +25737,7 @@ namespace Jenssegers\Agent\Facades {
 
         /**
          * Check if the device is a tablet.
-         * 
+         *
          * Return true if any type of tablet device is detected.
          *
          * @param string $userAgent deprecated
@@ -24671,7 +25775,7 @@ namespace Jenssegers\Agent\Facades {
          * because of the diversity of devices, vendors and
          * their conventions in representing the User-Agent or
          * the HTTP headers.
-         * 
+         *
          * This method will be used to check custom regexes against
          * the User-Agent string.
          *
@@ -24722,16 +25826,15 @@ namespace Jenssegers\Agent\Facades {
 
 namespace Kreait\Laravel\Firebase\Facades {
     /**
-     * @method static \Kreait\Firebase\Contract\AppCheck appCheck()
-     * @method static \Kreait\Firebase\Contract\Auth auth()
-     * @method static \Kreait\Firebase\Contract\Database database()
-     * @method static \Kreait\Firebase\Contract\DynamicLinks dynamicLinks()
-     * @method static \Kreait\Firebase\Contract\Firestore firestore()
-     * @method static \Kreait\Firebase\Contract\Messaging messaging()
-     * @method static \Kreait\Firebase\Contract\RemoteConfig remoteConfig()
-     * @method static \Kreait\Firebase\Contract\Storage storage()
-     * @see \Kreait\Laravel\Firebase\FirebaseProjectManager
-     * @see \Kreait\Laravel\Firebase\FirebaseProject
+     * @method static AppCheck appCheck()
+     * @method static Auth auth()
+     * @method static Database database()
+     * @method static Firestore firestore()
+     * @method static Messaging messaging()
+     * @method static RemoteConfig remoteConfig()
+     * @method static Storage storage()
+     * @see FirebaseProjectManager
+     * @see FirebaseProject
      */
     class Firebase {
         /**
@@ -24764,19 +25867,174 @@ namespace Kreait\Laravel\Firebase\Facades {
             }
     }
 
+namespace Laravel\Mcp\Facades {
+    /**
+     * @see Registrar
+     */
+    class Mcp {
+        /**
+         * @param class-string<Server> $serverClass
+         * @static
+         */
+        public static function web($route, $serverClass)
+        {
+            /** @var \Laravel\Mcp\Server\Registrar $instance */
+            return $instance->web($route, $serverClass);
+        }
+
+        /**
+         * @param class-string<Server> $serverClass
+         * @static
+         */
+        public static function local($handle, $serverClass)
+        {
+            /** @var \Laravel\Mcp\Server\Registrar $instance */
+            return $instance->local($handle, $serverClass);
+        }
+
+        /**
+         * @param \Closure():  Client  $factory
+         * @static
+         */
+        public static function registerClient($name, $factory)
+        {
+            /** @var \Laravel\Mcp\Server\Registrar $instance */
+            return $instance->registerClient($name, $factory);
+        }
+
+        /**
+         * @static
+         */
+        public static function client($name)
+        {
+            /** @var \Laravel\Mcp\Server\Registrar $instance */
+            return $instance->client($name);
+        }
+
+        /**
+         * @param \Closure(string, TokenSet):  mixed|array{0: class-string, 1: string}  $handler
+         * @param array<int, string>|string $middleware
+         * @static
+         */
+        public static function oAuthRoutesFor($client, $handler, $middleware = 'web', $connectUri = null, $callbackUri = null)
+        {
+            /** @var \Laravel\Mcp\Server\Registrar $instance */
+            return $instance->oAuthRoutesFor($client, $handler, $middleware, $connectUri, $callbackUri);
+        }
+
+        /**
+         * @static
+         */
+        public static function getLocalServer($handle)
+        {
+            /** @var \Laravel\Mcp\Server\Registrar $instance */
+            return $instance->getLocalServer($handle);
+        }
+
+        /**
+         * @static
+         */
+        public static function getWebServer($route)
+        {
+            /** @var \Laravel\Mcp\Server\Registrar $instance */
+            return $instance->getWebServer($route);
+        }
+
+        /**
+         * @return array<string, callable|Route>
+         * @static
+         */
+        public static function servers()
+        {
+            /** @var \Laravel\Mcp\Server\Registrar $instance */
+            return $instance->servers();
+        }
+
+        /**
+         * @static
+         */
+        public static function oauthRoutes($oauthPrefix = 'oauth')
+        {
+            /** @var \Laravel\Mcp\Server\Registrar $instance */
+            return $instance->oauthRoutes($oauthPrefix);
+        }
+
+        /**
+         * @return array<string, string>
+         * @static
+         */
+        public static function ensureMcpScope()
+        {
+            return \Laravel\Mcp\Server\Registrar::ensureMcpScope();
+        }
+
+        /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param object|callable $macro
+         * @param-closure-this static  $macro
+         * @return void
+         * @static
+         */
+        public static function macro($name, $macro)
+        {
+            \Laravel\Mcp\Server\Registrar::macro($name, $macro);
+        }
+
+        /**
+         * Mix another object into the class.
+         *
+         * @param object $mixin
+         * @param bool $replace
+         * @return void
+         * @throws \ReflectionException
+         * @static
+         */
+        public static function mixin($mixin, $replace = true)
+        {
+            \Laravel\Mcp\Server\Registrar::mixin($mixin, $replace);
+        }
+
+        /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool
+         * @static
+         */
+        public static function hasMacro($name)
+        {
+            return \Laravel\Mcp\Server\Registrar::hasMacro($name);
+        }
+
+        /**
+         * Flush the existing macros.
+         *
+         * @return void
+         * @static
+         */
+        public static function flushMacros()
+        {
+            \Laravel\Mcp\Server\Registrar::flushMacros();
+        }
+
+            }
+    }
+
 namespace Laravel\Pennant {
     /**
      * @method static void discover(string $namespace = 'App\\Features', string|null $path = null)
-     * @method static void define(string $feature, mixed $resolver = null)
+     * @method static void define(\BackedEnum|\UnitEnum|string $feature, mixed $resolver = null)
      * @method static bool isResolverValidForScope(callable|string $resolver, mixed $scope)
      * @method static array defined()
      * @method static array stored()
-     * @method static void activateForEveryone(string|array $feature, mixed $value = true)
-     * @method static void deactivateForEveryone(string|array $feature)
-     * @method static void purge(string|array|null $features = null)
-     * @method static string name(string $feature)
+     * @method static void activateForEveryone(\BackedEnum|\UnitEnum|string|array $feature, mixed $value = true)
+     * @method static void deactivateForEveryone(\BackedEnum|\UnitEnum|string|array $feature)
+     * @method static void purge(\BackedEnum|\UnitEnum|string|array|null $features = null)
+     * @method static string name(\BackedEnum|\UnitEnum|string $feature)
      * @method static array nameMap()
-     * @method static mixed instance(string $name)
+     * @method static mixed instance(\BackedEnum|\UnitEnum|string $name)
      * @method static \Laravel\Pennant\Contracts\Driver getDriver()
      * @method static void macro(string $name, object|callable $macro)
      * @method static void mixin(object $mixin, bool $replace = true)
@@ -24784,23 +26042,23 @@ namespace Laravel\Pennant {
      * @method static void flushMacros()
      * @method static mixed macroCall(string $method, array $parameters)
      * @method static \Laravel\Pennant\PendingScopedFeatureInteraction for(mixed $scope)
-     * @method static array load(string|array $features)
-     * @method static array loadMissing(string|array $features)
+     * @method static array load(\BackedEnum|\UnitEnum|string|array $features)
+     * @method static array loadMissing(\BackedEnum|\UnitEnum|string|array $features)
      * @method static array loadAll()
-     * @method static mixed value(string $feature)
+     * @method static mixed value(\BackedEnum|\UnitEnum|string $feature)
      * @method static array values(array $features)
      * @method static array all()
-     * @method static bool active(string $feature)
+     * @method static bool active(\BackedEnum|\UnitEnum|string $feature)
      * @method static bool allAreActive(array $features)
      * @method static bool someAreActive(array $features)
-     * @method static bool inactive(string $feature)
+     * @method static bool inactive(\BackedEnum|\UnitEnum|string $feature)
      * @method static bool allAreInactive(array $features)
      * @method static bool someAreInactive(array $features)
-     * @method static mixed when(string $feature, \Closure $whenActive, \Closure|null $whenInactive = null)
-     * @method static mixed unless(string $feature, \Closure $whenInactive, \Closure|null $whenActive = null)
-     * @method static void activate(string|array $feature, mixed $value = true)
-     * @method static void deactivate(string|array $feature)
-     * @method static void forget(string|array $features)
+     * @method static mixed when(\BackedEnum|\UnitEnum|string $feature, \Closure $whenActive, \Closure|null $whenInactive = null)
+     * @method static mixed unless(\BackedEnum|\UnitEnum|string $feature, \Closure $whenInactive, \Closure|null $whenActive = null)
+     * @method static void activate(\BackedEnum|\UnitEnum|string|array $feature, mixed $value = true)
+     * @method static void deactivate(\BackedEnum|\UnitEnum|string|array $feature)
+     * @method static void forget(\BackedEnum|\UnitEnum|string|array $features)
      * @see \Laravel\Pennant\FeatureManager
      */
     class Feature {
@@ -24809,7 +26067,7 @@ namespace Laravel\Pennant {
          *
          * @param string|null $store
          * @return \Laravel\Pennant\Drivers\Decorator
-         * @throws \InvalidArgumentException
+         * @throws InvalidArgumentException
          * @static
          */
         public static function store($store = null)
@@ -24823,7 +26081,7 @@ namespace Laravel\Pennant {
          *
          * @param string|null $name
          * @return \Laravel\Pennant\Drivers\Decorator
-         * @throws \InvalidArgumentException
+         * @throws InvalidArgumentException
          * @static
          */
         public static function driver($name = null)
@@ -25105,7 +26363,7 @@ namespace Laravel\Pulse\Facades {
         /**
          * Filter items before storage using the provided filter.
          *
-         * @param (callable(\Laravel\Pulse\Entry|\Laravel\Pulse\Value): bool) $filter
+         * @param (callable(Entry|Value): bool) $filter
          * @static
          */
         public static function filter($filter)
@@ -25150,7 +26408,7 @@ namespace Laravel\Pulse\Facades {
         /**
          * Get the registered recorders.
          *
-         * @return \Illuminate\Support\Collection<int, object>
+         * @return Collection<int, object>
          * @static
          */
         public static function recorders()
@@ -25162,7 +26420,7 @@ namespace Laravel\Pulse\Facades {
         /**
          * Resolve the user details for the given user IDs.
          *
-         * @param \Illuminate\Support\Collection<int, string> $keys
+         * @param Collection<int, string> $keys
          * @static
          */
         public static function resolveUsers($keys)
@@ -25175,7 +26433,7 @@ namespace Laravel\Pulse\Facades {
          * Resolve the users' details using the given closure.
          *
          * @deprecated
-         * @param callable(\Illuminate\Support\Collection<int, mixed>):  ?iterable<int|string, array{name: string, email?: ?string, avatar?: ?string, extra?: ?string}>  $callback
+         * @param callable(Collection<int, mixed>):  ?iterable<int|string, array{name: string, email?: ?string, avatar?: ?string, extra?: ?string}>  $callback
          * @static
          */
         public static function users($callback)
@@ -25187,7 +26445,7 @@ namespace Laravel\Pulse\Facades {
         /**
          * Resolve the user's details using the given closure.
          *
-         * @param callable(\Illuminate\Contracts\Auth\Authenticatable):  array{name: string, email?: ?string, avatar?: ?string, extra?: ?string}  $callback
+         * @param callable(Authenticatable):  array{name: string, email?: ?string, avatar?: ?string, extra?: ?string}  $callback
          * @static
          */
         public static function user($callback)
@@ -25289,7 +26547,7 @@ namespace Laravel\Pulse\Facades {
         /**
          * Handle exceptions using the given callback.
          *
-         * @param (callable(\Throwable): mixed) $callback
+         * @param (callable(Throwable): mixed) $callback
          * @static
          */
         public static function handleExceptionsUsing($callback)
@@ -25342,7 +26600,7 @@ namespace Laravel\Pulse\Facades {
 namespace Laravel\Socialite\Facades {
     /**
      */
-    class Socialite extends \Illuminate\Support\Manager {
+    class Socialite {
         /**
          * Get a driver instance.
          *
@@ -25424,7 +26682,7 @@ namespace Laravel\Socialite\Facades {
         /**
          * Get a driver instance.
          *
-         * @param string|null $driver
+         * @param \UnitEnum|string|null $driver
          * @return mixed
          * @throws \InvalidArgumentException
          * @static
@@ -25440,7 +26698,7 @@ namespace Laravel\Socialite\Facades {
          * Register a custom driver creator Closure.
          *
          * @param string $driver
-         * @param \Closure $callback
+         * @param-closure-this $this  $callback
          * @return \Laravel\Socialite\SocialiteManager
          * @static
          */
@@ -25454,7 +26712,7 @@ namespace Laravel\Socialite\Facades {
         /**
          * Get all of the created "drivers".
          *
-         * @return array
+         * @return array<string, mixed>
          * @static
          */
         public static function getDrivers()
@@ -25519,6 +26777,15 @@ namespace Flux {
         {
             /** @var \Flux\FluxManager $instance */
             return $instance->markAssetsRendered();
+        }
+
+        /**
+         * @static
+         */
+        public static function nonce()
+        {
+            /** @var \Flux\FluxManager $instance */
+            return $instance->nonce();
         }
 
         /**
@@ -25668,10 +26935,10 @@ namespace Flux {
         /**
          * @static
          */
-        public static function toast($text, $heading = null, $duration = 5000, $variant = null, $position = null)
+        public static function toast($text, $heading = null, $duration = 5000, $variant = null, $position = null, $link = null)
         {
             /** @var \Flux\FluxManager $instance */
-            return $instance->toast($text, $heading, $duration, $variant, $position);
+            return $instance->toast($text, $heading, $duration, $variant, $position, $link);
         }
 
             }
@@ -25681,7 +26948,7 @@ namespace Livewire {
     /**
      * @see \Livewire\LivewireManager
      */
-    class Livewire extends \Livewire\LivewireManager {
+    class Livewire {
         /**
          * {@inheritDoc}
          *
@@ -25737,6 +27004,36 @@ namespace Livewire {
         /**
          * @static
          */
+        public static function addComponent($name, $viewPath = null, $class = null)
+        {
+            //Method inherited from \Livewire\LivewireManager 
+            /** @var \Livewire\Volt\LivewireManager $instance */
+            return $instance->addComponent($name, $viewPath, $class);
+        }
+
+        /**
+         * @static
+         */
+        public static function addLocation($viewPath = null, $classNamespace = null)
+        {
+            //Method inherited from \Livewire\LivewireManager 
+            /** @var \Livewire\Volt\LivewireManager $instance */
+            return $instance->addLocation($viewPath, $classNamespace);
+        }
+
+        /**
+         * @static
+         */
+        public static function addNamespace($namespace, $viewPath = null, $classNamespace = null, $classPath = null, $classViewPath = null)
+        {
+            //Method inherited from \Livewire\LivewireManager 
+            /** @var \Livewire\Volt\LivewireManager $instance */
+            return $instance->addNamespace($namespace, $viewPath, $classNamespace, $classPath, $classViewPath);
+        }
+
+        /**
+         * @static
+         */
         public static function componentHook($hook)
         {
             //Method inherited from \Livewire\LivewireManager 
@@ -25777,6 +27074,16 @@ namespace Livewire {
         /**
          * @static
          */
+        public static function prepareViewsForCompilationUsing($callback)
+        {
+            //Method inherited from \Livewire\LivewireManager 
+            /** @var \Livewire\Volt\LivewireManager $instance */
+            return $instance->prepareViewsForCompilationUsing($callback);
+        }
+
+        /**
+         * @static
+         */
         public static function new($name, $id = null)
         {
             //Method inherited from \Livewire\LivewireManager 
@@ -25785,6 +27092,7 @@ namespace Livewire {
         }
 
         /**
+         * @deprecated This method will be removed in a future version. Use exists() instead.
          * @static
          */
         public static function isDiscoverable($componentNameOrClass)
@@ -25792,6 +27100,16 @@ namespace Livewire {
             //Method inherited from \Livewire\LivewireManager 
             /** @var \Livewire\Volt\LivewireManager $instance */
             return $instance->isDiscoverable($componentNameOrClass);
+        }
+
+        /**
+         * @static
+         */
+        public static function exists($componentNameOrClass)
+        {
+            //Method inherited from \Livewire\LivewireManager 
+            /** @var \Livewire\Volt\LivewireManager $instance */
+            return $instance->exists($componentNameOrClass);
         }
 
         /**
@@ -25907,6 +27225,16 @@ namespace Livewire {
         /**
          * @static
          */
+        public static function getUriPrefix()
+        {
+            //Method inherited from \Livewire\LivewireManager 
+            /** @var \Livewire\Volt\LivewireManager $instance */
+            return $instance->getUriPrefix();
+        }
+
+        /**
+         * @static
+         */
         public static function getUpdateUri()
         {
             //Method inherited from \Livewire\LivewireManager 
@@ -25995,6 +27323,10 @@ namespace Livewire {
         }
 
         /**
+         * @template TComponent of \Livewire\Component
+         * @param class-string<TComponent>|TComponent|string|array<array-key, \Livewire\Component> $name
+         * @param array $params
+         * @return Testable<TComponent>
          * @static
          */
         public static function test($name, $params = [])
@@ -26007,11 +27339,11 @@ namespace Livewire {
         /**
          * @static
          */
-        public static function visit($name)
+        public static function visit($name, $args = [])
         {
             //Method inherited from \Livewire\LivewireManager 
             /** @var \Livewire\Volt\LivewireManager $instance */
-            return $instance->visit($name);
+            return $instance->visit($name, $args);
         }
 
         /**
@@ -26067,6 +27399,16 @@ namespace Livewire {
         /**
          * @static
          */
+        public static function zap()
+        {
+            //Method inherited from \Livewire\LivewireManager 
+            /** @var \Livewire\Volt\LivewireManager $instance */
+            return $instance->zap();
+        }
+
+        /**
+         * @static
+         */
         public static function flushState()
         {
             //Method inherited from \Livewire\LivewireManager 
@@ -26102,6 +27444,16 @@ namespace Livewire {
             //Method inherited from \Livewire\LivewireManager 
             /** @var \Livewire\Volt\LivewireManager $instance */
             return $instance->originalMethod();
+        }
+
+        /**
+         * @static
+         */
+        public static function isCspSafe()
+        {
+            //Method inherited from \Livewire\LivewireManager 
+            /** @var \Livewire\Volt\LivewireManager $instance */
+            return $instance->isCspSafe();
         }
 
             }
@@ -26806,7 +28158,7 @@ namespace Mcamara\LaravelLocalization\Facades {
 
         /**
          * Sets the translated routes list.
-         * 
+         *
          * Only useful from a cached routes context.
          *
          * @param string $serializedRoutes
@@ -26825,7 +28177,7 @@ namespace Nwidart\Modules\Facades {
     /**
      * @method static array getCached()
      */
-    class Module extends \Nwidart\Modules\FileRepository {
+    class Module {
         /**
          * Add other module location.
          *
@@ -27119,7 +28471,7 @@ namespace Nwidart\Modules\Facades {
         /**
          * Get module used for cli session.
          *
-         * @throws \Nwidart\Modules\Exceptions\ModuleNotFoundException
+         * @throws ModuleNotFoundException
          * @static
          */
         public static function getUsedNow()
@@ -27193,7 +28545,7 @@ namespace Nwidart\Modules\Facades {
         /**
          * Enabling a specific module.
          *
-         * @throws \Nwidart\Modules\Exceptions\ModuleNotFoundException
+         * @throws ModuleNotFoundException
          * @static
          */
         public static function enable($name)
@@ -27206,7 +28558,7 @@ namespace Nwidart\Modules\Facades {
         /**
          * Disabling a specific module.
          *
-         * @throws \Nwidart\Modules\Exceptions\ModuleNotFoundException
+         * @throws ModuleNotFoundException
          * @static
          */
         public static function disable($name)
@@ -27440,92 +28792,27 @@ namespace Spatie\Health\Facades {
             }
     }
 
-namespace Spatie\ResponseCache\Facades {
+namespace Spatie\Sluggable\Facades {
     /**
+     * @see SelfHealingManager
      */
-    class ResponseCache {
+    class SelfHealing {
         /**
          * @static
          */
-        public static function enabled($request)
+        public static function onStaleSelfHealingUrl($handler)
         {
-            /** @var \Spatie\ResponseCache\ResponseCache $instance */
-            return $instance->enabled($request);
+            /** @var \Spatie\Sluggable\SelfHealingManager $instance */
+            return $instance->onStaleSelfHealingUrl($handler);
         }
 
         /**
          * @static
          */
-        public static function shouldCache($request, $response)
+        public static function handleStaleUrl($model, $staleRouteKey, $request)
         {
-            /** @var \Spatie\ResponseCache\ResponseCache $instance */
-            return $instance->shouldCache($request, $response);
-        }
-
-        /**
-         * @static
-         */
-        public static function shouldBypass($request)
-        {
-            /** @var \Spatie\ResponseCache\ResponseCache $instance */
-            return $instance->shouldBypass($request);
-        }
-
-        /**
-         * @static
-         */
-        public static function cacheResponse($request, $response, $lifetimeInSeconds = null, $tags = [])
-        {
-            /** @var \Spatie\ResponseCache\ResponseCache $instance */
-            return $instance->cacheResponse($request, $response, $lifetimeInSeconds, $tags);
-        }
-
-        /**
-         * @static
-         */
-        public static function hasBeenCached($request, $tags = [])
-        {
-            /** @var \Spatie\ResponseCache\ResponseCache $instance */
-            return $instance->hasBeenCached($request, $tags);
-        }
-
-        /**
-         * @static
-         */
-        public static function getCachedResponseFor($request, $tags = [])
-        {
-            /** @var \Spatie\ResponseCache\ResponseCache $instance */
-            return $instance->getCachedResponseFor($request, $tags);
-        }
-
-        /**
-         * @static
-         */
-        public static function clear($tags = [])
-        {
-            /** @var \Spatie\ResponseCache\ResponseCache $instance */
-            return $instance->clear($tags);
-        }
-
-        /**
-         * @param string|array $uris
-         * @param string[] $tags
-         * @return \Spatie\ResponseCache\ResponseCache
-         * @static
-         */
-        public static function forget($uris, $tags = [])
-        {
-            /** @var \Spatie\ResponseCache\ResponseCache $instance */
-            return $instance->forget($uris, $tags);
-        }
-
-        /**
-         * @static
-         */
-        public static function selectCachedItems()
-        {
-            /** @var \Spatie\ResponseCache\ResponseCache $instance */
-            return $instance->selectCachedItems();
+            /** @var \Spatie\Sluggable\SelfHealingManager $instance */
+            return $instance->handleStaleUrl($model, $staleRouteKey, $request);
         }
 
             }
@@ -27540,7 +28827,8 @@ namespace Illuminate\Support {
      */
     class Collection {
         /**
-         * @see \Barryvdh\Debugbar\ServiceProvider::register()
+         * @see \Fruitcake\LaravelDebugbar\ServiceProvider::register()
+         * @return \Illuminate\Support\Collection
          * @static
          */
         public static function debug()
@@ -27574,6 +28862,26 @@ namespace Illuminate\Support {
             return \Illuminate\Support\Collection::storeExcel($filePath, $disk, $writerType, $withHeadings);
         }
 
+        /**
+         * @see \Parental\Providers\ParentalServiceProvider::bindEagerLoadingMacros()
+         * @param array $childrenRelationsMap
+         * @static
+         */
+        public static function loadChildren($childrenRelationsMap)
+        {
+            return \Illuminate\Support\Collection::loadChildren($childrenRelationsMap);
+        }
+
+        /**
+         * @see \Parental\Providers\ParentalServiceProvider::bindEagerLoadingMacros()
+         * @param array $childrenRelationsMap
+         * @static
+         */
+        public static function loadChildrenCount($childrenRelationsMap)
+        {
+            return \Illuminate\Support\Collection::loadChildrenCount($childrenRelationsMap);
+        }
+
             }
     /**
      */
@@ -27589,6 +28897,18 @@ namespace Illuminate\Support {
             return \Illuminate\Support\Str::sanitizeHtml($html);
         }
 
+        /**
+         * @see \Filament\Support\SupportServiceProvider::packageBooted()
+         * @param string|null $url
+         * @param array $allowedSchemes
+         * @return string|null
+         * @static
+         */
+        public static function sanitizeUrl($url, $allowedSchemes = [])
+        {
+            return \Illuminate\Support\Str::sanitizeUrl($url, $allowedSchemes);
+        }
+
             }
     /**
      */
@@ -27601,6 +28921,17 @@ namespace Illuminate\Support {
         public static function sanitizeHtml()
         {
             return \Illuminate\Support\Stringable::sanitizeHtml();
+        }
+
+        /**
+         * @see \Filament\Support\SupportServiceProvider::packageBooted()
+         * @param array $allowedSchemes
+         * @return \Illuminate\Support\Stringable
+         * @static
+         */
+        public static function sanitizeUrl($allowedSchemes = [])
+        {
+            return \Illuminate\Support\Stringable::sanitizeUrl($allowedSchemes);
         }
 
             }
@@ -27682,6 +29013,28 @@ namespace Illuminate\Routing {
      */
     class Router {
         /**
+         * @see \Livewire\Mechanisms\HandleRouting\HandleRouting::register()
+         * @param mixed $uri
+         * @param mixed $component
+         * @return \Illuminate\Routing\Route
+         * @static
+         */
+        public static function livewire($uri, $component)
+        {
+            return \Illuminate\Routing\Router::livewire($uri, $component);
+        }
+
+        /**
+         * @see \Spatie\Feed\FeedServiceProvider::registerRouteMacro()
+         * @param mixed $baseUrl
+         * @static
+         */
+        public static function feeds($baseUrl = '')
+        {
+            return \Illuminate\Routing\Router::feeds($baseUrl);
+        }
+
+        /**
          * @see \Spatie\PersonalDataExport\PersonalDataExportServiceProvider::packageBooted()
          * @param string $url
          * @static
@@ -27703,6 +29056,16 @@ namespace Illuminate\Routing {
         public static function lazy($enabled = true)
         {
             return \Illuminate\Routing\Route::lazy($enabled);
+        }
+
+        /**
+         * @see \Livewire\Features\SupportLazyLoading\SupportLazyLoading::registerRouteMacro()
+         * @param mixed $enabled
+         * @static
+         */
+        public static function defer($enabled = true)
+        {
+            return \Illuminate\Routing\Route::defer($enabled);
         }
 
         /**
@@ -28001,32 +29364,6 @@ namespace Illuminate\Database\Eloquent\Relations {
             return \Illuminate\Database\Eloquent\Relations\Relation::getPowerJoinExistenceCompareKey();
         }
 
-        /**
-         * @see \AaronFrancis\FastPaginate\RelationMixin::fastPaginate()
-         * @param mixed $perPage
-         * @param mixed $columns
-         * @param mixed $pageName
-         * @param mixed $page
-         * @static
-         */
-        public static function fastPaginate($perPage = null, $columns = [], $pageName = 'page', $page = null)
-        {
-            return \Illuminate\Database\Eloquent\Relations\Relation::fastPaginate($perPage, $columns, $pageName, $page);
-        }
-
-        /**
-         * @see \AaronFrancis\FastPaginate\RelationMixin::simpleFastPaginate()
-         * @param mixed $perPage
-         * @param mixed $columns
-         * @param mixed $pageName
-         * @param mixed $page
-         * @static
-         */
-        public static function simpleFastPaginate($perPage = null, $columns = [], $pageName = 'page', $page = null)
-        {
-            return \Illuminate\Database\Eloquent\Relations\Relation::simpleFastPaginate($perPage, $columns, $pageName, $page);
-        }
-
             }
     }
 
@@ -28222,13 +29559,6 @@ namespace Illuminate\View {
             }
     }
 
-namespace Nwidart\Modules {
-    /**
-     */
-    class Collection extends \Illuminate\Support\Collection {
-            }
-    }
-
 namespace Spatie\MediaLibrary\MediaCollections\Models\Collections {
     /**
      * @template TKey of array-key
@@ -28251,6 +29581,7 @@ namespace Illuminate\Database\Eloquent {
 
 namespace Livewire\Features\SupportTesting {
     /**
+     * @template TComponent of \Livewire\Component
      * @mixin \Illuminate\Testing\TestResponse
      */
     class Testable {
@@ -29674,6 +31005,30 @@ namespace Livewire\Features\SupportTesting {
         }
 
         /**
+         * @see \Filament\Schemas\Testing\TestsSchemas::assertSchemaComponentVisible()
+         * @param string $key
+         * @param string|null $schema
+         * @return static
+         * @static
+         */
+        public static function assertSchemaComponentVisible($key, $schema = null)
+        {
+            return \Livewire\Features\SupportTesting\Testable::assertSchemaComponentVisible($key, $schema);
+        }
+
+        /**
+         * @see \Filament\Schemas\Testing\TestsSchemas::assertSchemaComponentHidden()
+         * @param string $key
+         * @param string|null $schema
+         * @return static
+         * @static
+         */
+        public static function assertSchemaComponentHidden($key, $schema = null)
+        {
+            return \Livewire\Features\SupportTesting\Testable::assertSchemaComponentHidden($key, $schema);
+        }
+
+        /**
          * @see \Filament\Schemas\Testing\TestsSchemas::assertSchemaExists()
          * @param string $name
          * @return static
@@ -30482,6 +31837,17 @@ namespace Livewire\Features\SupportTesting {
         }
 
         /**
+         * @see \Filament\Tables\Testing\TestsColumns::assertTableRecordKeyExists()
+         * @param string|null $recordKey
+         * @return static
+         * @static
+         */
+        public static function assertTableRecordKeyExists($recordKey)
+        {
+            return \Livewire\Features\SupportTesting\Testable::assertTableRecordKeyExists($recordKey);
+        }
+
+        /**
          * @see \Filament\Tables\Testing\TestsColumns::assertTableColumnExists()
          * @param string $name
          * @param \Closure|null $checkColumnUsing
@@ -30877,6 +32243,136 @@ namespace Livewire\Features\SupportTesting {
             }
     }
 
+namespace Modules\AI\Filament\Pages {
+    /**
+     * @property Schema $form
+     * @property Schema $completionForm
+     */
+    class Completion extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class FineTuning extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    }
+
+namespace Modules\Xot\Filament\Pages {
+    /**
+     * Classe base astratta per tutte le pagine Filament *standalone* (non legate a risorse specifiche).
+     *
+     * Fornisce funzionalità comuni e standardizzate per la gestione delle pagine personalizzate.
+     *
+     * Implementa:
+     * - Sistema di traduzioni integrato
+     * - Gestione autorizzazioni
+     * - Integrazione con form
+     * - Rilevamento intelligente modello
+     * - Metodi helper comuni
+     *
+     * @property ?string              $model Il modello associato alla pagina
+     * @property array<string, mixed> $data  I dati del form
+     * @see \Modules\Xot\docs\xotbasepage_implementation.md Documentazione completa
+     */
+    class XotBasePage extends \Filament\Pages\Page {
+            }
+    /**
+     */
+    class XotBaseDashboard extends \Filament\Pages\Dashboard {
+            }
+    /**
+     * ---.
+     *
+     */
+    class ArtisanCommandsManager extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    /**
+     */
+    class EnvPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class HealthPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     * Class Modules\Xot\Filament\Pages\MainDashboard.
+     *
+     */
+    class MainDashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    /**
+     * @property Schema $form
+     */
+    class MetatagPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class Test extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    }
+
+namespace Filament\Pages {
+    /**
+     * @template TConfiguration of PageConfiguration = PageConfiguration
+     */
+    class Page extends \Filament\Pages\BasePage {
+            }
+    /**
+     */
+    class BasePage extends \Livewire\Component {
+            }
+    /**
+     */
+    class SimplePage extends \Filament\Pages\BasePage {
+            }
+    /**
+     */
+    class Dashboard extends \Filament\Pages\Page {
+            }
+    }
+
+namespace Filament\Auth\Pages {
+    /**
+     * @property-read Action $registerAction
+     * @property-read Schema $form
+     * @property-read Schema $multiFactorChallengeForm
+     */
+    class Login extends \Filament\Pages\SimplePage {
+            }
+    /**
+     * @property-read Schema $form
+     */
+    class EditProfile extends \Filament\Pages\Page {
+            }
+    /**
+     * @property-read Action $loginAction
+     * @property-read Schema $form
+     */
+    class Register extends \Filament\Pages\SimplePage {
+            }
+    }
+
+namespace Filament\Auth\Pages\PasswordReset {
+    /**
+     * @property-read Action $loginAction
+     * @property-read Schema $form
+     */
+    class RequestPasswordReset extends \Filament\Pages\SimplePage {
+            }
+    /**
+     * @property-read Schema $form
+     */
+    class ResetPassword extends \Filament\Pages\SimplePage {
+            }
+    }
+
 namespace Modules\Activity\Filament\Resources\ActivityResource\Pages {
     /**
      */
@@ -30905,22 +32401,22 @@ namespace Modules\Xot\Filament\Resources\Pages {
     /**
      * Base class for list records pages.
      *
-     * @property ?string $model
-     * @property ?string $resource
-     * @property ?string $slug
+     * @property ?string         $model
+     * @property ?string         $resource
+     * @property ?string         $slug
      * @property TableLayoutEnum $layoutView
      */
     class XotBaseListRecords extends \Filament\Resources\Pages\ListRecords {
             }
     /**
      * Base class for all custom pages in the application.
-     * 
+     *
      * This class provides common functionality for custom pages,
      * following the architectural pattern of never extending Filament classes directly.
      *
-     * @property ?string $model
-     * @property ?array  $data
-     * @property Schema  $form
+     * @property ?string              $model
+     * @property array<string, mixed> $data
+     * @property Schema               $form
      */
     class XotBasePage extends \Filament\Resources\Pages\Page {
             }
@@ -30929,14 +32425,23 @@ namespace Modules\Xot\Filament\Resources\Pages {
     class XotBaseViewRecord extends \Filament\Resources\Pages\ViewRecord {
             }
     /**
-     * ---
+     */
+    class XotBaseResourcePage extends \Filament\Resources\Pages\Page {
+            }
+    /**
+     * Base class for ManageRecords.
+     *
+     * Following Laraxot architectural pattern: never extend Filament classes directly.
+     * This class wraps Filament's ManageRecords to provide a XotBase layer.
+     *
+     */
+    class XotBaseManageRecords extends \Filament\Resources\Pages\ManageRecords {
+            }
+    /**
+     * Base page for Filament related-record managers.
      *
      */
     class XotBaseManageRelatedRecords extends \Filament\Resources\Pages\ManageRelatedRecords {
-            }
-    /**
-     */
-    class XotBaseResourcePage extends \Filament\Resources\Pages\Page {
             }
     /**
      */
@@ -30946,6 +32451,7 @@ namespace Modules\Xot\Filament\Resources\Pages {
 
 namespace Filament\Resources\Pages {
     /**
+     * @template TModel of Model = Model
      * @property-read Schema $form
      */
     class CreateRecord extends \Filament\Resources\Pages\Page {
@@ -30971,32 +32477,13 @@ namespace Filament\Resources\Pages {
     class ViewRecord extends \Filament\Resources\Pages\Page {
             }
     /**
-     * @template TModel of Model = Model
-     */
-    class ManageRelatedRecords extends \Filament\Resources\Pages\Page {
-            }
-    /**
      */
     class ManageRecords extends \Filament\Resources\Pages\ListRecords {
             }
-    }
-
-namespace Filament\Pages {
     /**
+     * @template TModel of Model = Model
      */
-    class Page extends \Filament\Pages\BasePage {
-            }
-    /**
-     */
-    class BasePage extends \Livewire\Component {
-            }
-    /**
-     */
-    class Dashboard extends \Filament\Pages\Page {
-            }
-    /**
-     */
-    class SimplePage extends \Filament\Pages\BasePage {
+    class ManageRelatedRecords extends \Filament\Resources\Pages\Page {
             }
     }
 
@@ -31038,10 +32525,10 @@ namespace Modules\Activity\Filament\Pages {
             }
     /**
      * Classe base per visualizzare lo storico delle attività di un record.
-     * 
+     *
      * ⚠️ IMPORTANTE: Estende XotBasePage da Resources/Pages/ (Resource Page)
      *                NON da Pages/ (Standalone Page)!
-     * 
+     *
      * Motivo: Questa classe è usata in getPages() delle Resources, quindi DEVE
      *         essere una Resource Page per avere il metodo route().
      *
@@ -31052,134 +32539,71 @@ namespace Modules\Activity\Filament\Pages {
             }
     }
 
-namespace Modules\Xot\Filament\Pages {
+namespace Modules\Customer\Filament\Resources\CustomerResource\Pages {
     /**
      */
-    class XotBaseDashboard extends \Filament\Pages\Dashboard {
-            }
-    /**
-     * Classe base astratta per tutte le pagine Filament non legate a risorse specifiche.
-     * 
-     * Fornisce funzionalità comuni e standardizzate per la gestione delle pagine.
-     * 
-     * Implementa:
-     * - Sistema di traduzioni integrato
-     * - Gestione autorizzazioni
-     * - Integrazione con form
-     * - Rilevamento intelligente modello
-     * - Metodi helper comuni
-     *
-     * @property ?string $model Il modello associato alla pagina
-     * @property array<string, mixed> $data I dati del form
-     * @see \Modules\Xot\docs\xotbasepage_implementation.md Documentazione completa
-     */
-    class XotBasePage extends \Filament\Pages\Page {
-            }
-    /**
-     * ---.
-     *
-     */
-    class ArtisanCommandsManager extends \Modules\Xot\Filament\Pages\XotBasePage {
+    class CreateCustomer extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
             }
     /**
      */
-    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+    class EditCustomer extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
             }
     /**
      */
-    class EnvPage extends \Filament\Pages\Page {
+    class ListCustomers extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
             }
     /**
      */
-    class HealthPage extends \Filament\Pages\Page {
-            }
-    /**
-     * Class Modules\Xot\Filament\Pages\MainDashboard.
-     *
-     */
-    class MainDashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
-            }
-    /**
-     * @property Schema $form
-     */
-    class MetatagPage extends \Filament\Pages\Page {
-            }
-    /**
-     */
-    class Test extends \Filament\Pages\Page {
+    class ViewCustomer extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
             }
     }
 
-namespace Filament\Livewire {
+namespace Modules\Customer\Filament\Resources\CustomerResource\RelationManagers {
     /**
      */
-    class DatabaseNotifications extends \Filament\Notifications\Livewire\DatabaseNotifications {
+    class ContactsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
             }
     /**
      */
-    class GlobalSearch extends \Livewire\Component {
+    class CustomerSitesRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
             }
     /**
      */
-    class Notifications extends \Filament\Notifications\Livewire\Notifications {
-            }
-    /**
-     */
-    class Sidebar extends \Livewire\Component {
-            }
-    /**
-     */
-    class SimpleUserMenu extends \Livewire\Component {
-            }
-    /**
-     */
-    class Topbar extends \Livewire\Component {
+    class WorkOrdersRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
             }
     }
 
-namespace Filament\Notifications\Livewire {
+namespace Modules\Xot\Filament\Resources\RelationManagers {
     /**
+     * @property class-string<Model> $resource
      */
-    class DatabaseNotifications extends \Livewire\Component {
-            }
-    /**
-     */
-    class Notifications extends \Livewire\Component {
+    class XotBaseRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
             }
     }
 
-namespace Filament\Auth\Pages {
+namespace Filament\Resources\RelationManagers {
     /**
-     * @property-read Schema $form
      */
-    class EditProfile extends \Filament\Pages\Page {
-            }
-    /**
-     * @property-read Action $registerAction
-     * @property-read Schema $form
-     * @property-read Schema $multiFactorChallengeForm
-     */
-    class Login extends \Filament\Pages\SimplePage {
-            }
-    /**
-     * @property-read Action $loginAction
-     * @property-read Schema $form
-     */
-    class Register extends \Filament\Pages\SimplePage {
+    class RelationManager extends \Livewire\Component {
             }
     }
 
-namespace Filament\Auth\Pages\PasswordReset {
+namespace Modules\Customer\Filament\Resources\ResellerResource\Pages {
     /**
-     * @property-read Action $loginAction
-     * @property-read Schema $form
      */
-    class RequestPasswordReset extends \Filament\Pages\SimplePage {
+    class CreateReseller extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
             }
     /**
-     * @property-read Schema $form
      */
-    class ResetPassword extends \Filament\Pages\SimplePage {
+    class EditReseller extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListResellers extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewReseller extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
             }
     }
 
@@ -31198,7 +32622,7 @@ namespace Modules\Employee\Filament\Resources\WorkHourResource\Pages {
             }
     /**
      * Class TimeClockPage
-     * 
+     *
      * Main page for employee time tracking and work hours management.
      * Displays the time clock widget and work hours list with filtering options.
      *
@@ -31217,7 +32641,7 @@ namespace Modules\Employee\Filament\Resources\WorkHourResource\Widgets {
 namespace Modules\Xot\Filament\Widgets {
     /**
      * Classe base per i widget StatsOverview del sistema Xot.
-     * 
+     *
      * Fornisce funzionalità comuni per tutti i widget di statistiche overview.
      * Estende Filament\Widgets\StatsOverviewWidget e aggiunge funzionalità specifiche del progetto.
      *
@@ -31225,21 +32649,49 @@ namespace Modules\Xot\Filament\Widgets {
     class XotBaseStatsOverviewWidget extends \Filament\Widgets\StatsOverviewWidget {
             }
     /**
+     * Widget con form Filament Schemas (v5).
+     *
+     * Estende {@see XotBaseWidget}. Delega campi a una `*Form` class tramite:
+     *  - `formClass(): string`   → FQCN della *Form class (default vuoto = legacy)
+     *  - `schemaMethod(): string` → metodo invocato sulla *Form (default `getFormSchema`)
+     *
+     * Esempio:
+     * ```php
+     * class LoginWidget extends XotBaseSchemaWidget {
+     *     protected static function formClass(): string  { return Schemas\UserForm::class; }
+     *     protected static function schemaMethod(): string { return 'getLoginFormSchema'; }
+     * }
+     * ```
+     *
+     * Religione: `Schema != Widget`. Il widget orchestra (mount/submit/redirect);
+     * validazione campi solo nello schema — submit usa `$this->form->getState()` (mai `validateForm()`).
+     * La *Form class è lo spartito (campi + regole + dehydrate). MAI duplicare TextInput nel widget.
+     *
+     * @property Schema                    $form
+     * @property array<string, mixed>|null $data
+     */
+    class XotBaseSchemaWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+            }
+    /**
      * Classe base astratta per tutti i widget Filament.
-     * 
+     *
      * Fornisce funzionalità comuni e standardizzate per la gestione dei widget.
      *
-     * @property bool $shouldRender Indica se il widget deve essere renderizzato
-     * @property string $title Titolo del widget
-     * @property string $icon Icona del widget
-     * @property array<string, mixed>|null $data Dati del form
-     * @property Schema $form
+     * @property bool                      $shouldRender Indica se il widget deve essere renderizzato
+     * @property string                    $title        Titolo del widget
+     * @property string                    $icon         Icona del widget
+     * @property array<string, mixed>|null $data         Dati del form
+     * @property Schema                    $form
      */
     class XotBaseWidget extends \Filament\Widgets\Widget {
             }
     /**
+     */
+    class XotBaseTableWidget extends \Filament\Widgets\TableWidget {
+            }
+    /**
      * Widget per visualizzare il trend delle registrazioni pazienti.
-     * 
+     *
      * Mostra un grafico a linee con il numero di pazienti registrati nel tempo.
      * I dati sono cacheati per 5 minuti per ottimizzare le performance.
      *
@@ -31248,20 +32700,19 @@ namespace Modules\Xot\Filament\Widgets {
             }
     /**
      */
-    class Clock extends \Filament\Widgets\Widget {
-            }
-    /**
-     * @property Schema $form
-     */
-    class EnvWidget extends \Filament\Widgets\Widget {
+    class Clock extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
             }
     /**
      */
-    class FilterFormWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class EnvWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      */
-    class HealthOverviewWidget extends \Filament\Widgets\StatsOverviewWidget {
+    class FilterFormWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
+            }
+    /**
+     */
+    class HealthOverviewWidget extends \Modules\Xot\Filament\Widgets\XotBaseStatsOverviewWidget {
             }
     /**
      */
@@ -31269,19 +32720,19 @@ namespace Modules\Xot\Filament\Widgets {
             }
     /**
      * Widget per mostrare una panoramica dei moduli disponibili.
-     * 
+     *
      * Utilizza l'action GetModulesNavigationItems per caricare dinamicamente i moduli.
      *
      */
-    class ModulesOverviewWidget extends \Filament\Widgets\Widget {
+    class ModulesOverviewWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
             }
     /**
      * Widget per la panoramica degli appuntamenti per stato.
-     * 
+     *
      * Mostra statistiche compatte degli appuntamenti raggruppati per stato.
      *
      */
-    class StateOverviewWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class StateOverviewWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      */
@@ -31291,11 +32742,60 @@ namespace Modules\Xot\Filament\Widgets {
      * Widget di test per verificare la registrazione Livewire.
      *
      */
-    class TestWidget extends \Filament\Widgets\Widget {
+    class TestWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
             }
     /**
+     * Base per widget FO/pannello che rendono un Infolist Filament v5 (schema unificato).
+     *
+     * Le sottoclassi forniscono record + componenti; la vista default espone {{ $this->infolist }}.
+     * Estende XotBaseWidget per coerenza con il pattern di widget XotBase*.
+     *
      */
-    class XotBaseTableWidget extends \Filament\Widgets\TableWidget {
+    class XotBaseInfolistWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+            }
+    /**
+     * Base per widget Filament che espongono un {@see Wizard} nello schema.
+     *
+     * **Perche esiste (visione / filosofia / religione / zen)**:
+     *
+     * ## Separazione delle Responsabilita
+     * - `XotBaseWidget` = contratto generico (senza schema: azioni, viste, traduzioni)
+     * - `XotBaseSchemaWidget` = contratto con schema (form lineare, getFormSchema)
+     * - `XotBaseWizardWidget` = specializzazione per wizard multi-step
+     *   - Gestisce: navigazione step, persistenza `?step=`, submit/render coerenti col vendor
+     * - Widget dominio (es. CreateTicketWizardWidget) = campi specifici e business logic
+     *
+     * ## DRY + KISS
+     * - UNA sola implementazione del protocollo wizard:
+     *   - `?step=` risolto una sola volta al mount, memorizzato in `$wizardStartStep`
+     *   - Persistenza step in query string (solo se consentito)
+     *   - Nessun helper che riscrive l'intero payload dopo `$this->form->getState()` — la forma
+     *     è schema/dehydrate + merge espliciti nel widget dominio
+     * - Ogni modulo NON reinventa la stessa logica
+     *
+     * ## Allineamento Filament
+     * - Navigazione delegata a `Wizard` / `Step` (documentazione ufficiale v5)
+     * - Stesso componente `Wizard`, contesto Livewire widget (frontoffice/CMS)
+     * - Questa classe NON sostituisce Filament, incornicia solo gli hook Laraxot comuni
+     * - Hook disponibili per override dominio-specifici:
+     *   - `configureWizardNextAction()` → label, tooltip, icon del pulsante Avanti
+     *   - `configureWizardPreviousAction()` → label, tooltip, icon del pulsante Indietro
+     *   - `getWizardSubmitAction()` → rendering pulsante Submit centralizzato in classe base
+     *
+     * ## Politica Sicurezza
+     * - Override `?step=` NON è mai implicito in produzione
+     * - Consentito SOLO se:
+     *   - `app()->isLocal()` → true
+     *   - `config('app.debug')` → true
+     *   - `wizardAllowStepQueryExtra()` → override modulo-specifico (default false)
+     *
+     * @see Wizard
+     * @see HasWizard
+     * @see \Filament\Resources\Pages\CreateRecord\Concerns\HasWizard
+     * @see LangServiceProvider
+     * @see AutoLabelAction
+     */
+    class XotBaseWizardWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     }
 
@@ -31321,13 +32821,13 @@ namespace Filament\Widgets {
 namespace Modules\Employee\Filament\Pages {
     /**
      * Dashboard per il modulo Employee.
-     * 
+     *
      * Estende XotBaseDashboard che gestisce automaticamente:
      * - Navigazione (icon, title, label, sort)
      * - Filtri del dashboard
      * - Struttura base del dashboard
-     * 
-     * 
+     *
+     *
      * REGOLA CRITICA: NON ridefinire proprietà di navigazione
      * che sono già gestite centralmente da XotBaseDashboard.
      *
@@ -31343,16 +32843,16 @@ namespace Modules\Employee\Filament\Pages {
 namespace Modules\Employee\Filament\Widgets {
     /**
      * Attendance overview widget showing next 7 days schedule.
-     * 
+     *
      * Displays upcoming absences, smart working, and transfers
      * with department filtering capabilities.
      *
      */
-    class AttendanceOverviewWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class AttendanceOverviewWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      * Widget panoramica dipendenti per il dashboard Employee.
-     * 
+     *
      * Fornisce statistiche chiave sui dipendenti inclusi:
      * - Totale dipendenti registrati
      * - Dipendenti attivi oggi
@@ -31364,33 +32864,33 @@ namespace Modules\Employee\Filament\Widgets {
             }
     /**
      * Leave balance widget showing vacation, ROL, permits and hour bank.
-     * 
+     *
      * Displays monthly and annual leave balances with visual progress bars.
      *
      */
-    class LeaveBalanceWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class LeaveBalanceWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      * PendingRequestsWidget - Employee Request Status Widget
-     * 
+     *
      * Displays pending approval requests for the current employee
      * with status tracking and illustrations for empty states.
      *
      */
-    class PendingRequestsWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class PendingRequestsWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      * Team presence widget showing who's present/absent today.
-     * 
+     *
      * Displays current team presence status with department filtering
      * and detailed view capabilities.
      *
      */
-    class TeamPresenceWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class TeamPresenceWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      * Enhanced Time Clock Widget - Primary time tracking interface with improved UI/UX.
-     * 
+     *
      * Features (2025 Enhanced Version):
      * - 3-column responsive layout: [Time+Date+Stats] | [Enhanced Sessions] | [Smart Action Button]
      * - Interactive session cards with status badges
@@ -31400,58 +32900,58 @@ namespace Modules\Employee\Filament\Widgets {
      * - Native Filament components (badges, buttons, icons)
      * - Smart Clock In/Out logic with visual feedback
      * - Complete time tracking functionality
-     * 
+     *
      * UI/UX Improvements:
      * - Badge-based time entries display for clear visual hierarchy
      * - Color-coded session status (success, danger, warning, info, gray)
      * - Duration calculation and display
      * - Enhanced mobile responsiveness
      * - Improved information architecture
-     * 
+     *
      * This is the ONLY time tracking widget - consolidates all time tracking features.
      *
      */
-    class TimeClockWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class TimeClockWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      * TimeOffBalanceWidget - Leave Balance Display Widget
-     * 
+     *
      * Displays monthly/annual leave balances including vacation days,
      * ROL, permits, overtime bank, and other time-off categories.
      *
      */
-    class TimeOffBalanceWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class TimeOffBalanceWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      * TodayPresenceWidget - Real-time Presence Tracking Widget
-     * 
+     *
      * Displays who is present today with real-time counters,
      * employee avatars, and detailed presence information.
      *
      */
-    class TodayPresenceWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class TodayPresenceWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      * TodoWidget - HR Task Management Widget
-     * 
+     *
      * Displays a list of HR tasks that need to be completed by the user.
      * Features priority-based styling and direct action links.
      *
      */
-    class TodoWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class TodoWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      * UpcomingScheduleWidget - 7-Day Schedule Overview Widget
-     * 
+     *
      * Displays upcoming events for the next 7 days including absences,
      * smart working, transfers, and other schedule items.
      *
      */
-    class UpcomingScheduleWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class UpcomingScheduleWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      * Weekly Time Table Widget - Replica esatta di dipendentincloud.it
-     * 
+     *
      * Implementa l'interfaccia complessa mostrata nell'immagine:
      * - Tabella settimanale con dipendente e summary ore
      * - Timeline visualization con fasce orarie 06:00-20:00
@@ -31460,11 +32960,11 @@ namespace Modules\Employee\Filament\Widgets {
      * - Navigazione settimana e export functionality
      *
      */
-    class WorkHoursBoardWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class WorkHoursBoardWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      */
-    class WorkHoursSummaryWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class WorkHoursSummaryWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     }
 
@@ -31516,7 +33016,7 @@ namespace Modules\Gdpr\Filament\Resources\ProfileResource\Pages {
 namespace Modules\User\Filament\Resources\BaseProfileResource\Pages {
     /**
      * 
-     * 
+     *
      * .
      *
      */
@@ -31577,10 +33077,44 @@ namespace Modules\Xot\Filament\Pages\Auth {
             }
     }
 
+namespace Modules\Gdpr\Filament\Widgets\Auth {
+    /**
+     * GDPR-Compliant Registration Widget.
+     *
+     * Flat form design following modern signup UX best practices.
+     * GDPR consents are Livewire public properties so the Blade view
+     * can render custom HTML with clickable links to privacy/terms pages.
+     *
+     */
+    class GdprConsentForm extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
+            }
+    /**
+     * GDPR-Compliant Registration Widget.
+     *
+     * Flat form design following modern signup UX best practices.
+     * GDPR consents are Livewire public properties so the Blade view
+     * can render custom HTML with clickable links to privacy/terms pages.
+     *
+     */
+    class RegisterWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+            }
+    }
+
 namespace Modules\Gdpr\Filament\Clusters {
     /**
+     * Cluster per la gestione del profilo GDPR.
+     *
+     * ⚠️ IMPORTANTE: Estende XotBaseCluster, MAI Filament\Clusters\Cluster direttamente!
+     *
      */
-    class Profile extends \Filament\Clusters\Cluster {
+    class Profile extends \Modules\Xot\Filament\Clusters\XotBaseCluster {
+            }
+    }
+
+namespace Modules\Xot\Filament\Clusters {
+    /**
+     */
+    class XotBaseCluster extends \Filament\Clusters\Cluster {
             }
     }
 
@@ -31717,53 +33251,75 @@ namespace Modules\Geo\Filament\Pages {
 
 namespace Modules\Geo\Filament\Widgets {
     /**
+     * @phpstan-type GeoDataset array{type: string, features: list<array{
+     *     type: string,
+     *     properties: array<string, scalar|null>,
+     *     geometry: array{type: string, coordinates: array<mixed>}
+     * }>}
+     * @phpstan-type GeoMapConfig array{
+     *     defaultZoom: int,
+     *     detailZoom: int,
+     *     aggregateZoom: int,
+     *     baseLayers: array{street: string, satellite: string},
+     *     layers: array{clusters: bool, points: bool, heatmap: bool, zones: bool},
+     *     categories: list<string>,
+     *     stats: array{total: int, points: int, zones: int, categories: int}
+     * }
      */
-    class LatLngWidget extends \Filament\Widgets\Widget {
+    class GeoMapWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+            }
+    /**
+     * Widget per coordinate lat/lng.
+     *
+     * Estende XotBaseWidget per coerenza con l'architettura XotBase.
+     *
+     */
+    class LatLngWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
             }
     /**
      */
-    class LocationMapTableWidget extends \Filament\Widgets\TableWidget {
+    class LocationMapTableWidget extends \Modules\Xot\Filament\Widgets\XotBaseTableWidget {
             }
     /**
      * Widget per visualizzare una mappa con una posizione.
-     * 
+     *
      * Questo widget estende MapWidget per mostrare una mappa interattiva
      * che può visualizzare una posizione specifica con un marker.
      * La mappa può essere configurata per mostrare diversi tipi di vista
      * (strada, satellite, ibrida) e può essere personalizzata con controlli
      * e stili specifici.
-     * 
+     *
      * DISABILITATO per compatibilità con Filament 4
      *
      */
-    class LocationMapWidget extends \Filament\Widgets\Widget {
+    class LocationMapWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
             }
     /**
      * Widget per la selezione della località.
-     * 
+     *
      * Questo widget fornisce un form per la selezione della località utilizzando
      * il form LocationForm.
      *
      * @see \Modules\Geo\docs\json-database.md
      */
-    class LocationWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class LocationWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      * Widget per visualizzare una mappa OpenStreetMap con le posizioni.
-     * 
+     *
      * DISABILITATO per compatibilità con Filament 4
      *
      */
-    class OSMMapWidget extends \Filament\Widgets\Widget {
+    class OSMMapWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
             }
     /**
      * Widget mappa temporaneamente disabilitato per migrazione Filament v4.
-     * 
+     *
      * Il pacchetto Webbingbrasil\FilamentMaps non è compatibile con Filament v4.
      *
      * @see https://github.com/webbingbrasil/filament-maps/issues
      */
-    class WebbingbrasilMap extends \Filament\Widgets\Widget {
+    class WebbingbrasilMap extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
             }
     }
 
@@ -31771,21 +33327,6 @@ namespace Modules\Media\Filament\Resources\HasMediaResource\RelationManagers {
     /**
      */
     class MediaRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
-            }
-    }
-
-namespace Modules\Xot\Filament\Resources\RelationManagers {
-    /**
-     * @property class-string<Model> $resource
-     */
-    class XotBaseRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
-            }
-    }
-
-namespace Filament\Resources\RelationManagers {
-    /**
-     */
-    class RelationManager extends \Livewire\Component {
             }
     }
 
@@ -31830,7 +33371,7 @@ namespace Modules\Media\Filament\Resources\MediaResource\Pages {
 namespace Modules\Media\Filament\Resources\MediaResource\Widgets {
     /**
      */
-    class ConvertWidget extends \Filament\Widgets\Widget {
+    class ConvertWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
             }
     }
 
@@ -31858,8 +33399,12 @@ namespace Modules\Media\Filament\Pages {
 
 namespace Modules\Media\Filament\Clusters {
     /**
+     * Cluster di test per il modulo Media.
+     *
+     * ⚠️ IMPORTANTE: Estende XotBaseCluster, MAI Filament\Clusters\Cluster direttamente!
+     *
      */
-    class Test extends \Filament\Clusters\Cluster {
+    class Test extends \Modules\Xot\Filament\Clusters\XotBaseCluster {
             }
     }
 
@@ -31872,7 +33417,6 @@ namespace Modules\Media\Filament\Clusters\Test\Pages {
      * S3Test Page for AWS S3 testing and diagnostics.
      *
      * @property array<string, mixed> $debugResults
-     * @phpstan-ignore-next-line
      */
     class S3Test extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
@@ -31909,14 +33453,14 @@ namespace Modules\Notify\Filament\Resources\MailTemplateResource\Pages {
     /**
      * @property MailTemplate $record
      */
-    class PreviewMailTemplate extends \Filament\Resources\Pages\Page {
+    class PreviewMailTemplate extends \Modules\Xot\Filament\Resources\Pages\XotBaseResourcePage {
             }
     }
 
 namespace Modules\Lang\Filament\Resources\Pages {
     /**
      * Class LangBaseCreateRecord.
-     * 
+     *
      * Classe base per la creazione di record con supporto multilingua.
      * Estende XotBaseCreateRecord e aggiunge funzionalità per la gestione delle traduzioni.
      *
@@ -31971,7 +33515,7 @@ namespace Modules\Notify\Filament\Resources\NotificationTemplateResource\Pages {
             }
     /**
      */
-    class PreviewNotificationTemplate extends \Filament\Resources\Pages\Page {
+    class PreviewNotificationTemplate extends \Modules\Xot\Filament\Resources\Pages\XotBaseResourcePage {
             }
     }
 
@@ -32014,285 +33558,162 @@ namespace Modules\Notify\Filament\Pages {
 
 namespace Modules\Notify\Filament\Clusters {
     /**
+     * Cluster di test per il modulo Notify.
+     *
+     * ⚠️ IMPORTANTE: Estende XotBaseCluster, MAI Filament\Clusters\Cluster direttamente!
+     *
      */
-    class Test extends \Filament\Clusters\Cluster {
+    class Test extends \Modules\Xot\Filament\Clusters\XotBaseCluster {
             }
     }
 
 namespace Modules\Notify\Filament\Clusters\Test\Pages {
     /**
-     * @property \Filament\Schemas\Schema $emailForm
+     * @property Schema $emailForm
      */
     class SendAwsEmailPage extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
-     * @property \Filament\Schemas\Schema $emailForm
+     * @property Schema $emailForm
      */
-    class SendEmail extends \Filament\Pages\Page {
+    class SendEmail extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
-     * @property \Filament\Schemas\Schema $emailForm
+     * @property Schema $emailForm
      */
     class SendEmailPage extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
-     * @property \Filament\Schemas\Schema $pushForm
+     * @property Schema $pushForm
      */
     class SendFirebasePushNotificationPage extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
-     * @property \Filament\Schemas\Schema $smsForm
+     * @property Schema $smsForm
      */
     class SendNetfunSmsPage extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
-     * @property \Filament\Schemas\Schema $notificationForm
+     * @property Schema $notificationForm
      */
-    class SendPushNotification extends \Filament\Pages\Page {
+    class SendPushNotification extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
-     * @property \Filament\Schemas\Schema $notificationForm
+     * @property Schema $notificationForm
      */
     class SendPushNotificationPage extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
-     * @property \Filament\Schemas\Schema $smsForm
+     * @property Schema $smsForm
      */
     class SendSmsPage extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
-     * @property \Filament\Schemas\Schema $emailForm
+     * @property Schema $emailForm
      */
     class SendSpatieEmailPage extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
-     * @property \Filament\Schemas\Schema $emailForm
+     * @property Schema $emailForm
      */
-    class SendTelegram extends \Filament\Pages\Page {
+    class SendTelegram extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
-     * @property \Filament\Schemas\Schema $telegramForm
+     * @property Schema $telegramForm
      */
     class SendTelegramPage extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
-     * @property \Filament\Schemas\Schema $whatsappForm
+     * @property Schema $whatsappForm
      */
     class SendWhatsAppPage extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
      */
-    class SlackNotification extends \Filament\Pages\Page {
+    class SlackNotification extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
      */
     class SlackNotificationPage extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
-     * @property \Filament\Schemas\Schema $emailForm
+     * @property Schema $emailForm
      */
     class TestSmtpPage extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     }
 
-namespace Modules\TechPlanner\Filament\Resources\AppointmentResource\Pages {
+namespace Modules\Rating\Filament\Resources\HasRatingResource\RelationManagers {
     /**
-     * Page per la creazione di un nuovo appuntamento.
-     * 
-     * Estende XotBaseCreateRecord seguendo le regole Laraxot.
+     */
+    class RatingsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    }
+
+namespace Modules\Rating\Filament\Resources\HasRatingResource\Widgets {
+    /**
+     * Undocumented class.
      *
+     * @property (Model&HasRatingContract)|null $record
      */
-    class CreateAppointment extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
-            }
-    /**
-     */
-    class EditAppointment extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
-            }
-    /**
-     * @property AppointmentResource $resource
-     */
-    class ListAppointments extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+    class StatsOverview extends \Modules\Xot\Filament\Widgets\XotBaseStatsOverviewWidget {
             }
     }
 
-namespace Modules\TechPlanner\Filament\Resources\ClientResource\Pages {
+namespace Modules\Rating\Filament\Resources\RatingMorphResource\Pages {
     /**
      */
-    class CreateClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+    class CreateRatingMorph extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
             }
     /**
      */
-    class EditClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
-            }
-    /**
-     * @property ClientResource $resource
-     */
-    class ListClients extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+    class EditRatingMorph extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
             }
     /**
      */
-    class ViewClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+    class ListRatingMorphs extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
             }
     }
 
-namespace Modules\TechPlanner\Filament\Resources\ClientResource\RelationManagers {
+namespace Modules\Rating\Filament\Resources\RatingResource\Pages {
     /**
      */
-    class AppointmentsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+    class BaseCreateRating extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
             }
     /**
      */
-    class DevicesRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+    class BaseEditRating extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
             }
     /**
      */
-    class LegalOfficesRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+    class BaseListRatings extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
             }
     /**
      */
-    class LegalRepresentativesRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+    class CreateRating extends \Modules\Rating\Filament\Resources\RatingResource\Pages\BaseCreateRating {
             }
     /**
      */
-    class MedicalDirectorsRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+    class EditRating extends \Modules\Rating\Filament\Resources\RatingResource\Pages\BaseEditRating {
             }
     /**
      */
-    class PhoneCallsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
-            }
-    }
-
-namespace Modules\TechPlanner\Filament\Resources\DeviceResource\Pages {
-    /**
-     */
-    class CreateDevice extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
-            }
-    /**
-     */
-    class EditDevice extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
-            }
-    /**
-     */
-    class ListDevices extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
-            }
-    /**
-     */
-    class ViewDevice extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+    class ListRatings extends \Modules\Rating\Filament\Resources\RatingResource\Pages\BaseListRatings {
             }
     }
 
-namespace Modules\TechPlanner\Filament\Resources\DeviceResource\RelationManagers {
-    /**
-     */
-    class DeviceVerificationsRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
-            }
-    }
-
-namespace Modules\TechPlanner\Filament\Resources\LegalOfficeResource\Pages {
-    /**
-     */
-    class CreateLegalOffice extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
-            }
-    /**
-     */
-    class EditLegalOffice extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
-            }
-    /**
-     */
-    class ListLegalOffices extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
-            }
-    }
-
-namespace Modules\TechPlanner\Filament\Resources\LegalRepresentativeResource\Pages {
-    /**
-     */
-    class CreateLegalRepresentative extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
-            }
-    /**
-     */
-    class EditLegalRepresentative extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
-            }
-    /**
-     */
-    class ListLegalRepresentatives extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
-            }
-    }
-
-namespace Modules\TechPlanner\Filament\Resources\MedicalDirectorResource\Pages {
-    /**
-     */
-    class CreateMedicalDirector extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
-            }
-    /**
-     */
-    class EditMedicalDirector extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
-            }
-    /**
-     */
-    class ListMedicalDirectors extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
-            }
-    }
-
-namespace Modules\TechPlanner\Filament\Resources\Pages {
-    /**
-     */
-    class CreateDevice extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
-            }
-    /**
-     */
-    class EditDevice extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
-            }
-    /**
-     */
-    class ListDevices extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
-            }
-    /**
-     */
-    class ViewDevice extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
-            }
-    }
-
-namespace Modules\TechPlanner\Filament\Resources\PhoneCallResource\Pages {
-    /**
-     */
-    class CreatePhoneCall extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
-            }
-    /**
-     */
-    class EditPhoneCall extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
-            }
-    /**
-     */
-    class ListPhoneCalls extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
-            }
-    }
-
-namespace Modules\TechPlanner\Filament\Resources\RelationManagers {
-    /**
-     */
-    class DeviceVerificationsRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
-            }
-    }
-
-namespace Modules\TechPlanner\Filament\Pages {
+namespace Modules\Rating\Filament\Pages {
     /**
      */
     class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
             }
     }
 
-namespace Modules\TechPlanner\Filament\Widgets {
+namespace Modules\Rating\Filament\Widgets {
     /**
+     * @property (Model&HasRatingContract)|null $record
      */
-    class ClientMapWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
-            }
-    /**
-     */
-    class CoordinatesWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
-            }
-    /**
-     */
-    class MapWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class StatsOverview extends \Modules\Xot\Filament\Widgets\XotBaseStatsOverviewWidget {
             }
     }
 
@@ -32313,26 +33734,26 @@ namespace Modules\UI\Filament\Pages {
 namespace Modules\UI\Filament\Widgets {
     /**
      */
-    class DarkModeSwitcherWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class DarkModeSwitcherWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      */
-    class GroupWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class GroupWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      */
-    class HeroWidget extends \Filament\Widgets\StatsOverviewWidget {
+    class HeroWidget extends \Modules\Xot\Filament\Widgets\XotBaseStatsOverviewWidget {
             }
     /**
      */
-    class OverlookWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class OverlookWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      * RedirectWidget - Widget per gestire redirect verso URL specifici.
-     * 
+     *
      * Questo widget è progettato per creare elementi UI (bottoni, link)
      * che reindirizzano l'utente verso URL specifici.
-     * 
+     *
      * Utilizzo tipico in configurazioni JSON:
      * {
      *     "type": "widget",
@@ -32344,38 +33765,87 @@ namespace Modules\UI\Filament\Widgets {
      * }
      *
      */
-    class RedirectWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class RedirectWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      */
-    class RowWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class RowWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      */
-    class StatWithIconWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class StatWithIconWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      */
-    class StatsOverviewWidget extends \Filament\Widgets\StatsOverviewWidget {
+    class StatsOverviewWidget extends \Modules\Xot\Filament\Widgets\XotBaseStatsOverviewWidget {
             }
     /**
      */
-    class TestChartWidget extends \Filament\Widgets\ChartWidget {
+    class TestChartWidget extends \Modules\Xot\Filament\Widgets\XotBaseChartWidget {
             }
     /**
      */
-    class TestWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class TestWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      */
-    class UserCalendarWidget extends \Filament\Widgets\Widget {
+    class UserCalendarWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     }
 
 namespace Modules\UI\Filament\Clusters {
     /**
+     * Cluster di test per il modulo UI.
+     *
+     * ⚠️ IMPORTANTE: Estende XotBaseCluster, MAI Filament\Clusters\Cluster direttamente!
+     *
      */
-    class Test extends \Filament\Clusters\Cluster {
+    class Test extends \Modules\Xot\Filament\Clusters\XotBaseCluster {
+            }
+    }
+
+namespace Modules\User\Filament\Resources\AuthenticationLogResource\Pages {
+    /**
+     * Class EditAuthenticationLog.
+     *
+     */
+    class EditAuthenticationLog extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     * Class ListAuthenticationLogs.
+     *
+     */
+    class ListAuthenticationLogs extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewAuthenticationLog extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Resources\ClientResource\Pages {
+    /**
+     */
+    class CreateClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListClients extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Resources\ClientResource\Widgets {
+    /**
+     */
+    class ClientHeader extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
             }
     }
 
@@ -32416,6 +33886,108 @@ namespace Modules\User\Filament\Resources\FeatureResource\Pages {
             }
     }
 
+namespace Modules\User\Filament\Resources\OauthAccessTokenResource\Pages {
+    /**
+     * Class EditOauthAccessTokens.
+     *
+     */
+    class EditOauthAccessTokens extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     * Class ListOauthAccessTokens.
+     *
+     */
+    class ListOauthAccessTokens extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewOauthAccessToken extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Resources\OauthAuthCodeResource\Pages {
+    /**
+     * Class ListOauthAuthCodes.
+     *
+     */
+    class ListOauthAuthCodes extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewOauthAuthCode extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Resources\OauthClientResource\Pages {
+    /**
+     * Class CreateOauthClient.
+     *
+     */
+    class CreateOauthClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     * Edit OAuth Client page.
+     *
+     */
+    class EditOauthClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     * Class ListOauthClients.
+     *
+     */
+    class ListOauthClients extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     * View OAuth Client page.
+     *
+     */
+    class ViewOauthClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Resources\OauthPersonalAccessClientResource\Pages {
+    /**
+     */
+    class CreateOauthPersonalAccessClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditOauthPersonalAccessClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListOauthPersonalAccessClients extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     * Class ViewOauthPersonalAccessClient.
+     *
+     */
+    class ViewOauthPersonalAccessClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Resources\OauthRefreshTokenResource\Pages {
+    /**
+     */
+    class ListOauthRefreshTokens extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewOauthRefreshToken extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Resources\PasswordResetResource\Pages {
+    /**
+     */
+    class ListPasswordResets extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewPasswordReset extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
 namespace Modules\User\Filament\Resources\PermissionResource\Pages {
     /**
      */
@@ -32439,6 +34011,13 @@ namespace Modules\User\Filament\Resources\PermissionResource\RelationManager {
     /**
      */
     class RoleRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    }
+
+namespace Modules\User\Filament\Resources\PersonalAccessTokenResource\Pages {
+    /**
+     */
+    class ManagePersonalAccessTokens extends \Modules\Xot\Filament\Resources\Pages\XotBaseManageRecords {
             }
     }
 
@@ -32472,7 +34051,7 @@ namespace Modules\User\Filament\Resources\RoleResource\Pages {
             }
     /**
      */
-    class ManageRolePermissions extends \Filament\Resources\Pages\ManageRelatedRecords {
+    class ManageRolePermissions extends \Modules\Xot\Filament\Resources\Pages\XotBaseManageRelatedRecords {
             }
     /**
      */
@@ -32487,7 +34066,7 @@ namespace Modules\User\Filament\Resources\RoleResource\RelationManagers {
             }
     /**
      * UsersRelationManager.
-     * 
+     *
      * Manages the relationship between users and roles, providing functionality
      * for viewing, filtering, and managing users associated with a specific role.
      *
@@ -32517,6 +34096,83 @@ namespace Modules\User\Filament\Resources\SocialProviderResource\Pages {
             }
     }
 
+namespace Modules\User\Filament\Resources\SocialiteUserResource\Pages {
+    /**
+     * Class EditSocialiteUser.
+     *
+     */
+    class EditSocialiteUser extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     * Class ListSocialiteUsers.
+     *
+     */
+    class ListSocialiteUsers extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewSocialiteUser extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Resources\SsoProviderResource\Pages {
+    /**
+     */
+    class CreateSsoProvider extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditSsoProvider extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListSsoProviders extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewSsoProvider extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Resources\SsoProviderResource\RelationManagers {
+    /**
+     * Users Relation Manager for SSO Provider Resource.
+     *
+     */
+    class UsersRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    }
+
+namespace Modules\User\Filament\Resources\TeamInvitationResource\Pages {
+    /**
+     * Class EditTeamInvitations.
+     *
+     */
+    class EditTeamInvitations extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     * Class ListTeamInvitations.
+     *
+     */
+    class ListTeamInvitations extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    }
+
+namespace Modules\User\Filament\Resources\TeamPermissionResource\Pages {
+    /**
+     */
+    class CreateTeamPermission extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditTeamPermission extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListTeamPermissions extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    }
+
 namespace Modules\User\Filament\Resources\TeamResource\Pages {
     /**
      */
@@ -32539,7 +34195,38 @@ namespace Modules\User\Filament\Resources\TeamResource\Pages {
 namespace Modules\User\Filament\Resources\TeamResource\RelationManagers {
     /**
      */
+    class TeamInvitationsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
     class UsersRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    }
+
+namespace Modules\User\Filament\Resources\TeamUserResource\Pages {
+    /**
+     * Class CreateTeamUser.
+     *
+     */
+    class CreateTeamUser extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     * Class EditTeamUser.
+     *
+     */
+    class EditTeamUser extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     * Class ListTeamUsers.
+     *
+     */
+    class ListTeamUsers extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     * Class ViewTeamUser.
+     *
+     */
+    class ViewTeamUser extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
             }
     }
 
@@ -32558,7 +34245,7 @@ namespace Modules\User\Filament\Resources\TenantResource\Pages {
             }
     /**
      */
-    class ManageTenants extends \Filament\Resources\Pages\ManageRecords {
+    class ManageTenants extends \Modules\Xot\Filament\Resources\Pages\XotBaseManageRecords {
             }
     /**
      */
@@ -32573,7 +34260,38 @@ namespace Modules\User\Filament\Resources\TenantResource\RelationManagers {
             }
     /**
      */
+    class ProfilesRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
     class UsersRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    }
+
+namespace Modules\User\Filament\Resources\TenantUserResource\Pages {
+    /**
+     * Class CreateTenantUser.
+     *
+     */
+    class CreateTenantUser extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     * Class EditTenantUser.
+     *
+     */
+    class EditTenantUser extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     * Class ListTenantUsers.
+     *
+     */
+    class ListTenantUsers extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     * Class ViewTenantUser.
+     *
+     */
+    class ViewTenantUser extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
             }
     }
 
@@ -32586,7 +34304,7 @@ namespace Modules\User\Filament\Resources\UserResource\Pages {
      * Pagina per la modifica degli utenti con particolare gestione della password.
      *
      */
-    class BaseEditUser extends \Filament\Resources\Pages\EditRecord {
+    class BaseEditUser extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
             }
     /**
      */
@@ -32594,7 +34312,7 @@ namespace Modules\User\Filament\Resources\UserResource\Pages {
             }
     /**
      * Base class for viewing user resources.
-     * 
+     *
      * This class provides the base configuration for viewing user resources
      * across the application. It should be extended by specific user type
      * view classes rather than used directly.
@@ -32626,12 +34344,24 @@ namespace Modules\User\Filament\Resources\UserResource\Pages {
 
 namespace Modules\User\Filament\Resources\UserResource\RelationManagers {
     /**
+     * Class AuthenticationLogsRelationManager.
+     *
+     */
+    class AuthenticationLogsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
      */
     class ClientsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
             }
     /**
      */
     class DevicesRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     * Class OauthTokensRelationManager.
+     *
+     */
+    class OauthTokensRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
             }
     /**
      */
@@ -32642,18 +34372,18 @@ namespace Modules\User\Filament\Resources\UserResource\RelationManagers {
     class RolesRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
             }
     /**
-     * Class Modules\User\Filament\Resources\UserResource\RelationManagers\SocialiteUsersRelationManager.
+     * Class SocialiteUsersRelationManager.
      *
      */
     class SocialiteUsersRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
             }
     /**
      */
-    class TeamsRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+    class TeamsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
             }
     /**
      * Manages the relationship between users and tenants.
-     * 
+     *
      * This class provides the form schema and table configuration for the "tenants" relationship
      * with strong typing and enhanced structure for stability and professionalism.
      *
@@ -32669,13 +34399,13 @@ namespace Modules\User\Filament\Resources\UserResource\RelationManagers {
 namespace Modules\User\Filament\Resources\UserResource\Widgets {
     /**
      */
-    class UserOverview extends \Filament\Widgets\Widget {
+    class UserOverview extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
             }
     /**
      * Simple widget used to verify page filters behaviour (shows start/end dates).
      *
      */
-    class UserWidget extends \Filament\Widgets\Widget {
+    class UserWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
             }
     }
 
@@ -32689,11 +34419,11 @@ namespace Modules\User\Filament\Pages\Auth {
     class Login extends \Modules\Xot\Filament\Pages\Auth\XotBaseLogin {
             }
     /**
-     * @property \Filament\Schemas\Schema $form
-     * @property \Filament\Schemas\Schema $editProfileForm
-     * @property \Filament\Schemas\Schema $editPasswordForm
+     * @property Schema $form
+     * @property Schema $editProfileForm
+     * @property Schema $editPasswordForm
      */
-    class PasswordExpired extends \Filament\Pages\Page {
+    class PasswordExpired extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
      */
@@ -32720,24 +34450,59 @@ namespace Modules\User\Filament\Pages {
      */
     class Password extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
+    /**
+     * Socialite OAuth Provider Settings Page.
+     *
+     * Allows administrators to configure OAuth providers (Google, GitHub, etc.)
+     * via Filament backoffice UI without editing .env files.
+     *
+     * Configuration is stored in: storage/app/private/socialite-config.php
+     * This file is loaded by SocialiteServiceProvider at boot time.
+     *
+     * @see https://developers.google.com/identity/protocols/oauth2/web-server
+     * @see laravel/Modules/User/docs/wiki/concepts/socialite-admin-configuration.md
+     */
+    class SocialiteProviderSettingsPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
     }
 
 namespace Modules\User\Filament\Pages\Tenancy {
     /**
      */
-    class EditTeamProfile extends \Filament\Pages\Tenancy\EditTenantProfile {
+    class EditTeamProfile extends \Modules\Xot\Filament\Pages\Tenancy\XotBaseEditTenantProfile {
             }
     /**
      */
-    class EditTenantProfile extends \Filament\Pages\Tenancy\EditTenantProfile {
+    class EditTenantProfile extends \Modules\Xot\Filament\Pages\Tenancy\XotBaseEditTenantProfile {
             }
     /**
      */
-    class RegisterTeam extends \Filament\Pages\Tenancy\RegisterTenant {
+    class RegisterTeam extends \Modules\Xot\Filament\Pages\Tenancy\XotBaseRegisterTenant {
             }
     /**
      */
-    class RegisterTenant extends \Filament\Pages\Tenancy\RegisterTenant {
+    class RegisterTenant extends \Modules\Xot\Filament\Pages\Tenancy\XotBaseRegisterTenant {
+            }
+    }
+
+namespace Modules\Xot\Filament\Pages\Tenancy {
+    /**
+     * Base class for EditTenantProfile.
+     *
+     * Following Laraxot architectural pattern: never extend Filament classes directly.
+     * This class wraps Filament's EditTenantProfile to provide a XotBase layer.
+     *
+     */
+    class XotBaseEditTenantProfile extends \Filament\Pages\Tenancy\EditTenantProfile {
+            }
+    /**
+     * Base class for RegisterTenant.
+     *
+     * Following Laraxot architectural pattern: never extend Filament classes directly.
+     * This class wraps Filament's RegisterTenant to provide a XotBase layer.
+     *
+     */
+    class XotBaseRegisterTenant extends \Filament\Pages\Tenancy\RegisterTenant {
             }
     }
 
@@ -32757,92 +34522,131 @@ namespace Filament\Pages\Tenancy {
 namespace Modules\User\Filament\Widgets\Auth {
     /**
      */
-    class BaseAuthWidget extends \Filament\Widgets\Widget {
+    class BaseAuthWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
             }
     /**
+     * ForgotPasswordWidget — invio link reset via email.
+     *
+     * Schema da `Schemas\UserForm::getForgotPasswordFormSchema()` — SSoT.
+     *
      * @property Schema $form
      */
-    class ForgotPasswordWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class ForgotPasswordWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
-     * LoginWidget: Widget di login conforme alle regole Windsurf/Xot.
-     * 
-     * - Estende XotBaseWidget
-     * - Usa solo componenti Filament importati
-     * - Validazione e sicurezza integrate
-     * - Facilmente estendibile (2FA, captcha, login social).
+     * LoginWidget: widget login con form Filament e "vestito" demandato al template tema.
      *
+     * Religione Schema!=Widget: schema da `UserForm::getLoginFormSchema()` (SSoT).
+     * Submit: `$this->form->getState()` — no `validateForm()`.
+     * il widget resta "thin": solo orchestrazione submit + Auth::attempt.
+     *
+     * MAI: ->label(), ->placeholder(), ->helperText() — traduzioni automatiche
+     * da LangServiceProvider tramite `user::login_widget` (lang/it/login_widget.php).
+     *
+     * @property Schema $form
      */
-    class LoginWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class LoginWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      * Logout widget for user session termination.
-     * 
+     *
      * Handles secure logout process with proper session management,
      * event dispatching, and audit logging following Laraxot
      * architectural patterns and security best practices.
      *
      */
-    class LogoutWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class LogoutWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
-     * Password Reset Confirmation Widget .
-     * 
-     * Handles the password reset confirmation flow using a token
-     * from the password reset email link.
+     * Centro notifiche in-app (FR-022 / STORY-035) — elenco DB + segna come letto.
+     *
+     */
+    class NotificationsCenterWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
+            }
+    /**
+     * PasswordResetConfirmWidget — conferma reset con token via URL.
+     *
+     * Schema da `Schemas\UserForm::getPasswordResetConfirmFormSchema()` — SSoT.
      *
      * @property Schema $form
      */
-    class PasswordResetConfirmWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class PasswordResetConfirmWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
-     * Password Reset Widget .
-     * 
-     * Handles password reset request flow using Filament forms
-     * with improved UX and validation.
+     * PasswordResetWidget — schermata di invio link reset (post-login, opzionale).
+     *
+     * Schema da `Schemas\UserForm::getPasswordResetFormSchema()` — SSoT.
      *
      * @property Schema $form
      */
-    class PasswordResetWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class PasswordResetWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
-     */
-    class RegisterWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
-            }
-    /**
-     * Reset password widget for user password reset functionality.
-     * 
-     * Handles password reset functionality with token validation,
-     * proper security measures, and user feedback. Follows Laraxot
-     * architectural patterns and security best practices.
+     * Register FO — schema SSoT in `Schemas\UserForm::getRegisterFormSchema()`.
      *
-     * @property Schema $form Form container from XotBaseWidget
+     * Religione R1 (form-fields-self-validate): NIENTE `validateForm()`, NIENTE
+     *  `Hash::make`, NIENTE `SafeStringCast` qui dentro. Il form ha già
+     *  `->dehydrateStateUsing(Hash::make)` sul campo `password`, quindi
+     *  `$this->form->getState()` ritorna la password GIÀ hashata.
+     *
+     * Religione R3 (no wrapper Action): `$user = $userClass::create($data + defaults)`
+     *  direttamente. Non creare `RegisterFoUserAction` per wrapping un create().
+     *
+     * Widget è il direttore d'orchestra sottile: lifecycle (mount, submit),
+     *  side effects (activity log opzionale, email verify, Auth::login, redirect).
+     *
+     * NOTA GDPR: per conformità Garante Italiano, usare `Modules\Gdpr\Filament\Widgets\Auth\RegisterWidget`
+     *  (con `privacy_accepted`/`terms_accepted`/`marketing_consent`). Questo widget
+     *  è un fallback non-GDPR (es. dev locale senza modulo Gdpr attivo).
+     *
      */
-    class ResetPasswordWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class RegisterWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
+            }
+    /**
+     * ResetPasswordWidget — token + nuova password (click sul link email).
+     *
+     * Schema da `Schemas\UserForm::getResetPasswordFormSchema()` — SSoT.
+     *
+     * @property Schema $form
+     */
+    class ResetPasswordWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
+            }
+    /**
+     * SocialLoginWidget: Widget riutilizzabile per pulsanti login OAuth (Google, Microsoft).
+     *
+     * Mostra i pulsanti solo per i provider configurati in config/services.
+     * Usabile in login, register e altre pagine auth.
+     *
+     * Regole Laraxot:
+     * - Estende XotBaseSchemaWidget
+     * - Traduzioni da user::auth.social
+     * - Route: socialite.oauth.redirect
+     *
+     */
+    class SocialLoginWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     }
 
 namespace Modules\User\Filament\Widgets {
     /**
      * EditUserWidget: Widget generico per la modifica dati utente.
-     * 
+     *
      * Segue il pattern di delegazione del RegistrationWidget:
      * - Raccoglie i dati dal form
      * - Determina dinamicamente la risorsa, il modello e l'action da eseguire
      * - Delega la logica di salvataggio a una UpdateAction specifica del modulo
      *
-     * @property string     $type
-     * @property string     $resource
-     * @property string     $model
-     * @property string     $action
-     * @property Model      $record
-     * @property array|null $data
+     * @property string $type
+     * @property string $resource
+     * @property string $model
+     * @property string $action
+     * @property Model  $record
      */
-    class EditUserWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class EditUserWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      * LoginWidget: Widget di login conforme alle regole Windsurf/Xot.
-     * 
+     *
      * - Estende XotBaseWidget
      * - Usa solo componenti Filament importati
      * - Validazione e sicurezza integrate
@@ -32850,11 +34654,11 @@ namespace Modules\User\Filament\Widgets {
      *
      * @property array<string, mixed>|null $data
      */
-    class LoginWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class LoginWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      * Provides a widget for user logout functionality within Filament admin panels.
-     * 
+     *
      * This widget handles the user logout process including session invalidation,
      * event dispatching, and proper redirection with localization support.
      *
@@ -32866,7 +34670,7 @@ namespace Modules\User\Filament\Widgets {
      * @property array<string, mixed>|null $data         Widget data array managed by XotBaseWidget.
      * @property bool                      $isLoggingOut Flag indicating if logout is in progress.
      */
-    class LogoutWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class LogoutWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      * Widget for handling expired password reset.
@@ -32877,15 +34681,19 @@ namespace Modules\User\Filament\Widgets {
      * @property string|null               $passwordConfirmation
      * @property array<string, mixed>|null $data
      */
-    class PasswordExpiredWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class PasswordExpiredWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      */
-    class RecentLoginsWidget extends \Filament\Widgets\TableWidget {
+    class RecentLoginsWidget extends \Modules\Xot\Filament\Widgets\XotBaseTableWidget {
             }
     /**
      */
-    class RegistrationWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class RegistrationWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
+            }
+    /**
+     */
+    class UserDropdown extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     /**
      */
@@ -32893,14 +34701,14 @@ namespace Modules\User\Filament\Widgets {
             }
     /**
      */
-    class UsersChartWidget extends \Filament\Widgets\ChartWidget {
+    class UsersChartWidget extends \Modules\Xot\Filament\Widgets\XotBaseChartWidget {
             }
     }
 
 namespace Modules\User\Filament\Clusters {
     /**
      * Cluster Appearance per raggruppare pagine di personalizzazione aspetto.
-     * 
+     *
      * ⚠️ IMPORTANTE: Estende XotBaseCluster, MAI Filament\Clusters\Cluster direttamente!
      *
      * @see XotBaseCluster
@@ -32908,19 +34716,31 @@ namespace Modules\User\Filament\Clusters {
      */
     class Appearance extends \Modules\Xot\Filament\Clusters\XotBaseCluster {
             }
-    }
-
-namespace Modules\Xot\Filament\Clusters {
     /**
+     * Cluster Passport per raggruppare tutte le risorse OAuth.
+     *
+     * Questo cluster organizza tutte le funzionalità relative a Laravel Passport
+     * in un'unica posizione per migliorare l'usabilità e l'organizzazione.
+     *
+     * ⚠️ IMPORTANTE: Estende XotBaseCluster, MAI Filament\Clusters\Cluster direttamente!
+     *
+     * @see XotBaseCluster
      */
-    class XotBaseCluster extends \Filament\Clusters\Cluster {
+    class Passport extends \Modules\Xot\Filament\Clusters\XotBaseCluster {
+            }
+    /**
+     * Cluster Socialite.
+     *
+     * @see XotBaseCluster
+     */
+    class Socialite extends \Modules\Xot\Filament\Clusters\XotBaseCluster {
             }
     }
 
 namespace Modules\User\Filament\Clusters\Appearance\Pages {
     /**
      * Pagina Alignment nel Cluster Appearance.
-     * 
+     *
      * ⚠️ IMPORTANTE: Estende XotBasePage (Standalone), MAI Filament\Pages\Page!
      *
      * @property Schema $form
@@ -32931,7 +34751,7 @@ namespace Modules\User\Filament\Clusters\Appearance\Pages {
             }
     /**
      * Pagina Background nel Cluster Appearance.
-     * 
+     *
      * ⚠️ IMPORTANTE: Estende XotBasePage (Standalone), MAI Filament\Pages\Page!
      *
      * @property Schema $form
@@ -32942,7 +34762,7 @@ namespace Modules\User\Filament\Clusters\Appearance\Pages {
             }
     /**
      * Pagina Colors nel Cluster Appearance.
-     * 
+     *
      * ⚠️ IMPORTANTE: Estende XotBasePage (Standalone), MAI Filament\Pages\Page!
      *
      * @property Schema $form
@@ -32965,6 +34785,201 @@ namespace Modules\User\Filament\Clusters\Appearance\Pages {
      * @property Schema $form
      */
     class Logo extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    }
+
+namespace Modules\User\Filament\Clusters\Passport\Pages {
+    /**
+     */
+    class PassportDashboard extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    }
+
+namespace Modules\User\Filament\Clusters\Passport\Resources\OauthAccessTokenResource\Pages {
+    /**
+     */
+    class CreateOauthAccessToken extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditOauthAccessToken extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     * Class EditOauthAccessTokens.
+     *
+     */
+    class EditOauthAccessTokens extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     * Class ListOauthAccessTokens.
+     *
+     */
+    class ListOauthAccessTokens extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewOauthAccessToken extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Clusters\Passport\Resources\OauthAuthCodeResource\Pages {
+    /**
+     */
+    class ListOauthAuthCodes extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewOauthAuthCode extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Clusters\Passport\Resources\OauthClientResource\Pages {
+    /**
+     */
+    class CreateOauthClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditOauthClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListOauthClients extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     * Class ViewOauthClient.
+     *
+     */
+    class ViewOauthClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Clusters\Passport\Resources\OauthClientResource\RelationManagers {
+    /**
+     * Relation manager per i token OAuth del client.
+     *
+     */
+    class TokensRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    }
+
+namespace Modules\User\Filament\Clusters\Passport\Resources\OauthDeviceCodeResource\Pages {
+    /**
+     */
+    class ListOauthDeviceCodes extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewOauthDeviceCode extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Clusters\Passport\Resources\OauthPersonalAccessClientResource\Pages {
+    /**
+     */
+    class CreateOauthPersonalAccessClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditOauthPersonalAccessClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListOauthPersonalAccessClients extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     * Class ViewOauthPersonalAccessClient.
+     *
+     */
+    class ViewOauthPersonalAccessClient extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Clusters\Passport\Resources\OauthRefreshTokenResource\Pages {
+    /**
+     */
+    class ListOauthRefreshTokens extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewOauthRefreshToken extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Clusters\Passport\Widgets {
+    /**
+     * Widget statistiche Passport per la dashboard OAuth.
+     *
+     */
+    class PassportStatsWidget extends \Modules\Xot\Filament\Widgets\XotBaseStatsOverviewWidget {
+            }
+    }
+
+namespace Modules\User\Filament\Clusters\Socialite\Resources\SocialProviderResource\Pages {
+    /**
+     */
+    class CreateSocialProvider extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditSocialProvider extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     * --.
+     *
+     */
+    class ListSocialProviders extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewSocialProvider extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Clusters\Socialite\Resources\SocialiteUserResource\Pages {
+    /**
+     * Class EditSocialiteUser.
+     *
+     */
+    class EditSocialiteUser extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     * Class ListSocialiteUsers.
+     *
+     */
+    class ListSocialiteUsers extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewSocialiteUser extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Clusters\Socialite\Resources\SsoProviderResource\Pages {
+    /**
+     */
+    class CreateSsoProvider extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditSsoProvider extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListSsoProviders extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewSsoProvider extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\User\Filament\Clusters\Socialite\Resources\SsoProviderResource\RelationManagers {
+    /**
+     * Users Relation Manager for SSO Provider Resource.
+     *
+     */
+    class UsersRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
             }
     }
 
@@ -33092,7 +35107,7 @@ namespace Modules\Xot\Filament\Resources\SessionResource\Pages {
 namespace Modules\Xot\Filament\Resources\XotBaseResource\Pages {
     /**
      * Classe base per la gestione delle relazioni nelle risorse Filament.
-     * 
+     *
      * Estende la classe ManageRelatedRecords di Filament e fornisce funzionalità aggiuntive
      * specifiche per il framework Laraxot.
      *
@@ -33202,14 +35217,18 @@ namespace Modules\Cms\Filament\Pages {
             }
     /**
      */
-    class Themes extends \Filament\Pages\Page {
+    class Themes extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     }
 
 namespace Modules\Cms\Filament\Clusters {
     /**
+     * Cluster per la gestione dell'aspetto visivo del CMS.
+     *
+     * ⚠️ IMPORTANTE: Estende XotBaseCluster, MAI Filament\Clusters\Cluster direttamente!
+     *
      */
-    class Appearance extends \Filament\Clusters\Cluster {
+    class Appearance extends \Modules\Xot\Filament\Clusters\XotBaseCluster {
             }
     }
 
@@ -33219,21 +35238,21 @@ namespace Modules\Cms\Filament\Clusters\Appearance\Pages {
      *
      * @property Schema $form
      */
-    class Breadcrumb extends \Filament\Pages\Page {
+    class Breadcrumb extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
      * Page class for managing footer appearance settings.
      *
      * @property Schema $form
      */
-    class Footer extends \Filament\Pages\Page {
+    class Footer extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
      * Page class for managing header navigation appearance settings.
      *
      * @property Schema $form
      */
-    class Headernav extends \Filament\Pages\Page {
+    class Headernav extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     }
 
@@ -33262,12 +35281,135 @@ namespace Modules\Lang\Filament\Pages {
 namespace Modules\Lang\Filament\Widgets {
     /**
      * Widget per il cambio di lingua.
-     * 
+     *
      * Fornisce un selettore dropdown per cambiare la lingua dell'interfaccia.
      * Utilizza il sistema di localizzazione di Laravel per gestire le traduzioni.
      *
      */
-    class LanguageSwitcherWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+    class LanguageSwitcherWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
+            }
+    }
+
+namespace Modules\Blog\Filament\Resources\ArticleResource\Pages {
+    /**
+     */
+    class CreateArticle extends \Modules\Lang\Filament\Resources\Pages\LangBaseCreateRecord {
+            }
+    /**
+     */
+    class EditArticle extends \Modules\Lang\Filament\Resources\Pages\LangBaseEditRecord {
+            }
+    /**
+     */
+    class ListArticles extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewArticle extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Blog\Filament\Resources\ArticleResource\RelationManagers {
+    /**
+     */
+    class RatingsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    }
+
+namespace Modules\Blog\Filament\Resources\BannerResource\Pages {
+    /**
+     */
+    class CreateBanner extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditBanner extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListBanners extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    }
+
+namespace Modules\Blog\Filament\Resources\CategoryResource\Pages {
+    /**
+     */
+    class CreateCategory extends \Modules\Lang\Filament\Resources\Pages\LangBaseCreateRecord {
+            }
+    /**
+     */
+    class EditCategory extends \Modules\Lang\Filament\Resources\Pages\LangBaseEditRecord {
+            }
+    /**
+     */
+    class ListCategories extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ManageCategories extends \Modules\Xot\Filament\Resources\Pages\XotBaseManageRecords {
+            }
+    }
+
+namespace Modules\Blog\Filament\Resources\ProfileResource\Pages {
+    /**
+     */
+    class CreateProfile extends \Modules\User\Filament\Resources\BaseProfileResource\Pages\CreateProfile {
+            }
+    /**
+     */
+    class EditProfile extends \Modules\User\Filament\Resources\BaseProfileResource\Pages\EditProfile {
+            }
+    /**
+     */
+    class ListProfiles extends \Modules\User\Filament\Resources\BaseProfileResource\Pages\ListProfiles {
+            }
+    /**
+     */
+    class ViewProfile extends \Modules\User\Filament\Resources\BaseProfileResource\Pages\ViewProfile {
+            }
+    }
+
+namespace Modules\Blog\Filament\Resources\ProfileResource\RelationManagers {
+    /**
+     */
+    class RatingMorphsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    }
+
+namespace Modules\Blog\Filament\Resources\TextWidgetResource\Pages {
+    /**
+     */
+    class CreateTextWidget extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditTextWidget extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListTextWidgets extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewTextWidget extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Blog\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    }
+
+namespace Modules\Blog\Filament\Widgets {
+    /**
+     */
+    class LatestArticlesWidget extends \Modules\Xot\Filament\Widgets\XotBaseTableWidget {
+            }
+    /**
+     */
+    class SampleChartWidget extends \Modules\Xot\Filament\Widgets\XotBaseChartWidget {
             }
     }
 
@@ -33348,14 +35490,14 @@ namespace Modules\Job\Filament\Resources\JobManagerResource\Pages {
 namespace Modules\Job\Filament\Resources\JobManagerResource\Widgets {
     /**
      */
-    class JobStatsOverview extends \Filament\Widgets\StatsOverviewWidget {
+    class JobStatsOverview extends \Modules\Xot\Filament\Widgets\XotBaseStatsOverviewWidget {
             }
     }
 
 namespace Modules\Job\Filament\Resources\JobResource\Pages {
     /**
      */
-    class BoardJobs extends \Filament\Resources\Pages\Page {
+    class BoardJobs extends \Modules\Xot\Filament\Resources\Pages\XotBaseResourcePage {
             }
     /**
      */
@@ -33374,7 +35516,7 @@ namespace Modules\Job\Filament\Resources\JobResource\Pages {
 namespace Modules\Job\Filament\Resources\JobResource\Widgets {
     /**
      */
-    class JobStatsOverview extends \Filament\Widgets\StatsOverviewWidget {
+    class JobStatsOverview extends \Modules\Xot\Filament\Widgets\XotBaseStatsOverviewWidget {
             }
     }
 
@@ -33400,11 +35542,11 @@ namespace Modules\Job\Filament\Resources\JobsWaitingResource\Pages {
 namespace Modules\Job\Filament\Resources\JobsWaitingResource\Widgets {
     /**
      * --.
-     * 
+     *
      * ...
      *
      */
-    class JobsWaitingOverview extends \Filament\Widgets\StatsOverviewWidget {
+    class JobsWaitingOverview extends \Modules\Xot\Filament\Widgets\XotBaseStatsOverviewWidget {
             }
     }
 
@@ -33423,7 +35565,7 @@ namespace Modules\Job\Filament\Resources\ScheduleResource\Pages {
             }
     /**
      */
-    class ViewSchedule extends \Filament\Resources\Pages\Page {
+    class ViewSchedule extends \Modules\Xot\Filament\Resources\Pages\XotBaseResourcePage {
             }
     }
 
@@ -33434,22 +35576,50 @@ namespace Modules\Job\Filament\Pages {
             }
     /**
      */
-    class JobMonitor extends \Filament\Pages\Page {
+    class JobMonitor extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     /**
      */
-    class JobStatus extends \Filament\Pages\Page {
+    class JobStatus extends \Modules\Xot\Filament\Pages\XotBasePage {
             }
     }
 
 namespace Modules\Job\Filament\Widgets {
     /**
      */
-    class ClockWidget extends \Filament\Widgets\Widget {
+    class ClockWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
             }
     /**
      */
-    class QueueListenWidget extends \Filament\Widgets\Widget {
+    class QueueListenWidget extends \Modules\Xot\Filament\Widgets\XotBaseWidget {
+            }
+    }
+
+namespace Modules\Comment\Filament\Resources\CommentResource\Pages {
+    /**
+     */
+    class ListComments extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    }
+
+namespace Modules\Comment\Filament\Widgets\Comment {
+    /**
+     */
+    class CommentWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
+            }
+    }
+
+namespace Modules\Comment\Filament\Widgets\Commentable {
+    /**
+     */
+    class CommentsWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
+            }
+    }
+
+namespace Modules\Comment\Filament\Widgets\Mention {
+    /**
+     */
+    class MentionSearchWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     }
 
@@ -33897,7 +36067,7 @@ namespace  {
          * Get the first record matching the attributes or instantiate it.
          *
          * @param array $attributes
-         * @param array $values
+         * @param (\Closure(): array)|array $values
          * @return TModel
          * @static
          */
@@ -33911,7 +36081,7 @@ namespace  {
          * Get the first record matching the attributes. If the record is not found, create it.
          *
          * @param array $attributes
-         * @param array $values
+         * @param (\Closure(): array)|array $values
          * @return TModel
          * @static
          */
@@ -33925,8 +36095,9 @@ namespace  {
          * Attempt to create the record. If a unique constraint violation occurs, attempt to find the matching record.
          *
          * @param array $attributes
-         * @param array $values
+         * @param (\Closure(): array)|array $values
          * @return TModel
+         * @throws \Illuminate\Database\UniqueConstraintViolationException
          * @static
          */
         public static function createOrFirst($attributes = [], $values = [])
@@ -33939,7 +36110,7 @@ namespace  {
          * Create or update a record matching the attributes, and fill it with values.
          *
          * @param array $attributes
-         * @param array $values
+         * @param (\Closure(): array)|array $values
          * @return TModel
          * @static
          */
@@ -34151,7 +36322,7 @@ namespace  {
          * @param string $pageName
          * @param int|null $page
          * @param \Closure|int|null $total
-         * @return \Illuminate\Pagination\LengthAwarePaginator
+         * @return \Illuminate\Pagination\LengthAwarePaginator<int, TModel>
          * @throws \InvalidArgumentException
          * @static
          */
@@ -34168,7 +36339,7 @@ namespace  {
          * @param array|string $columns
          * @param string $pageName
          * @param int|null $page
-         * @return \Illuminate\Contracts\Pagination\Paginator
+         * @return \Illuminate\Pagination\Paginator<int, TModel>
          * @static
          */
         public static function simplePaginate($perPage = null, $columns = [], $pageName = 'page', $page = null)
@@ -34184,7 +36355,7 @@ namespace  {
          * @param array|string $columns
          * @param string $cursorName
          * @param \Illuminate\Pagination\Cursor|string|null $cursor
-         * @return \Illuminate\Contracts\Pagination\CursorPaginator
+         * @return \Illuminate\Pagination\CursorPaginator<int, TModel>
          * @static
          */
         public static function cursorPaginate($perPage = null, $columns = [], $cursorName = 'cursor', $cursor = null)
@@ -34258,6 +36429,34 @@ namespace  {
         {
             /** @var \Illuminate\Database\Eloquent\Builder $instance */
             return $instance->upsert($values, $uniqueBy, $update);
+        }
+
+        /**
+         * Increment the given column's values by the given amounts.
+         *
+         * @param array<string, float|int|numeric-string> $columns
+         * @param array<string, mixed> $extra
+         * @return int
+         * @static
+         */
+        public static function incrementEach($columns, $extra = [])
+        {
+            /** @var \Illuminate\Database\Eloquent\Builder $instance */
+            return $instance->incrementEach($columns, $extra);
+        }
+
+        /**
+         * Decrement the given column's values by the given amounts.
+         *
+         * @param array<string, float|int|numeric-string> $columns
+         * @param array<string, mixed> $extra
+         * @return int
+         * @static
+         */
+        public static function decrementEach($columns, $extra = [])
+        {
+            /** @var \Illuminate\Database\Eloquent\Builder $instance */
+            return $instance->decrementEach($columns, $extra);
         }
 
         /**
@@ -34339,7 +36538,7 @@ namespace  {
 
         /**
          * Specify attributes that should be added to any new models created by this builder.
-         * 
+         *
          * The given key / value pairs will also be added as where conditions to the query.
          *
          * @param \Illuminate\Contracts\Database\Query\Expression|array|string $attributes
@@ -34676,7 +36875,7 @@ namespace  {
          * @param callable(\Illuminate\Support\Collection<int, TValue>, int):  mixed  $callback
          * @param string|null $column
          * @param string|null $alias
-         * @param bool $descending
+         * @param \SortDirection|bool $descending
          * @return bool
          * @throws \RuntimeException
          * @static
@@ -34920,7 +37119,7 @@ namespace  {
 
         /**
          * Add a relationship count / exists condition to the query with where clauses.
-         * 
+         *
          * Also load the relationship with the same condition.
          *
          * @param string $relation
@@ -35279,6 +37478,7 @@ namespace  {
          * @param \Illuminate\Database\Eloquent\Relations\MorphTo<*, *>|string $relation
          * @param \Illuminate\Database\Eloquent\Model|iterable<int, \Illuminate\Database\Eloquent\Model>|string|null $model
          * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @throws \InvalidArgumentException
          * @static
          */
         public static function whereMorphedTo($relation, $model, $boolean = 'and')
@@ -35293,6 +37493,7 @@ namespace  {
          * @param \Illuminate\Database\Eloquent\Relations\MorphTo<*, *>|string $relation
          * @param \Illuminate\Database\Eloquent\Model|iterable<int, \Illuminate\Database\Eloquent\Model>|string $model
          * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @throws \InvalidArgumentException
          * @static
          */
         public static function whereNotMorphedTo($relation, $model, $boolean = 'and')
@@ -35336,6 +37537,7 @@ namespace  {
          * @param string|null $relationshipName
          * @param string $boolean
          * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @throws \InvalidArgumentException
          * @throws \Illuminate\Database\Eloquent\RelationNotFoundException
          * @static
          */
@@ -35351,7 +37553,6 @@ namespace  {
          * @param \Illuminate\Database\Eloquent\Model $related
          * @param string|null $relationshipName
          * @return \Illuminate\Database\Eloquent\Builder<static>
-         * @throws \RuntimeException
          * @static
          */
         public static function orWhereBelongsTo($related, $relationshipName = null)
@@ -35367,6 +37568,7 @@ namespace  {
          * @param string|null $relationshipName
          * @param string $boolean
          * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @throws \InvalidArgumentException
          * @throws \Illuminate\Database\Eloquent\RelationNotFoundException
          * @static
          */
@@ -35975,32 +38177,6 @@ namespace  {
         }
 
         /**
-         * @see \AaronFrancis\FastPaginate\FastPaginate::paginate()
-         * @param mixed $perPage
-         * @param mixed $columns
-         * @param mixed $pageName
-         * @param mixed $page
-         * @static
-         */
-        public static function simpleFastPaginate($perPage = null, $columns = [], $pageName = 'page', $page = null)
-        {
-            return \Illuminate\Database\Eloquent\Builder::simpleFastPaginate($perPage, $columns, $pageName, $page);
-        }
-
-        /**
-         * @see \AaronFrancis\FastPaginate\FastPaginate::paginate()
-         * @param mixed $perPage
-         * @param mixed $columns
-         * @param mixed $pageName
-         * @param mixed $page
-         * @static
-         */
-        public static function fastPaginate($perPage = null, $columns = [], $pageName = 'page', $page = null)
-        {
-            return \Illuminate\Database\Eloquent\Builder::fastPaginate($perPage, $columns, $pageName, $page);
-        }
-
-        /**
          * Set the columns to be selected.
          *
          * @param mixed $columns
@@ -36029,9 +38205,23 @@ namespace  {
         }
 
         /**
+         * Add a select expression to the query.
+         *
+         * @param \Illuminate\Contracts\Database\Query\Expression|literal-string $expression
+         * @param string $as
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function selectExpression($expression, $as)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->selectExpression($expression, $as);
+        }
+
+        /**
          * Add a new "raw" select expression to the query.
          *
-         * @param string $expression
+         * @param literal-string $expression
          * @return \Illuminate\Database\Eloquent\Builder<static>
          * @static
          */
@@ -36057,9 +38247,9 @@ namespace  {
         }
 
         /**
-         * Add a raw from clause to the query.
+         * Add a raw "from" clause to the query.
          *
-         * @param string $expression
+         * @param literal-string $expression
          * @param mixed $bindings
          * @return \Illuminate\Database\Eloquent\Builder<static>
          * @static
@@ -36081,6 +38271,22 @@ namespace  {
         {
             /** @var \Illuminate\Database\Query\Builder $instance */
             return $instance->addSelect($column);
+        }
+
+        /**
+         * Add a vector-similarity selection to the query.
+         *
+         * @param \Illuminate\Contracts\Database\Query\Expression|string $column
+         * @param \Illuminate\Support\Collection<int, float>|\Illuminate\Contracts\Support\Arrayable|array<int, float>|string $vector
+         * @param string|null $as
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @throws \JsonException
+         * @static
+         */
+        public static function selectVectorDistance($column, $vector, $as = null)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->selectVectorDistance($column, $vector, $as);
         }
 
         /**
@@ -36149,7 +38355,7 @@ namespace  {
         }
 
         /**
-         * Add a join clause to the query.
+         * Add a "join" clause to the query.
          *
          * @param \Illuminate\Contracts\Database\Query\Expression|string $table
          * @param \Closure|\Illuminate\Contracts\Database\Query\Expression|string $first
@@ -36184,7 +38390,7 @@ namespace  {
         }
 
         /**
-         * Add a subquery join clause to the query.
+         * Add a "subquery join" clause to the query.
          *
          * @param \Closure|\Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder<*>|string $query
          * @param string $as
@@ -36204,7 +38410,7 @@ namespace  {
         }
 
         /**
-         * Add a lateral join clause to the query.
+         * Add a "lateral join" clause to the query.
          *
          * @param \Closure|\Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder<*>|string $query
          * @return \Illuminate\Database\Eloquent\Builder<static>
@@ -36358,7 +38564,56 @@ namespace  {
         }
 
         /**
-         * Merge an array of where clauses and bindings.
+         * Add a straight join to the query.
+         *
+         * @param \Illuminate\Contracts\Database\Query\Expression|string $table
+         * @param \Closure|string $first
+         * @param string|null $operator
+         * @param \Illuminate\Contracts\Database\Query\Expression|string|null $second
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function straightJoin($table, $first, $operator = null, $second = null)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->straightJoin($table, $first, $operator, $second);
+        }
+
+        /**
+         * Add a "straight join where" clause to the query.
+         *
+         * @param \Illuminate\Contracts\Database\Query\Expression|string $table
+         * @param \Closure|\Illuminate\Contracts\Database\Query\Expression|string $first
+         * @param string $operator
+         * @param \Illuminate\Contracts\Database\Query\Expression|string $second
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function straightJoinWhere($table, $first, $operator, $second)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->straightJoinWhere($table, $first, $operator, $second);
+        }
+
+        /**
+         * Add a subquery straight join to the query.
+         *
+         * @param \Closure|\Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder<*>|string $query
+         * @param string $as
+         * @param \Closure|\Illuminate\Contracts\Database\Query\Expression|string $first
+         * @param string|null $operator
+         * @param \Illuminate\Contracts\Database\Query\Expression|string|null $second
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function straightJoinSub($query, $as, $first, $operator = null, $second = null)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->straightJoinSub($query, $as, $first, $operator, $second);
+        }
+
+        /**
+         * Merge an array of "where" clauses and bindings.
          *
          * @param array $wheres
          * @param array $bindings
@@ -36419,9 +38674,57 @@ namespace  {
         }
 
         /**
-         * Add a raw where clause to the query.
+         * Add a vector similarity clause to the query, filtering by minimum similarity and ordering by similarity.
          *
-         * @param \Illuminate\Contracts\Database\Query\Expression|string $sql
+         * @param \Illuminate\Contracts\Database\Query\Expression|string $column
+         * @param \Illuminate\Support\Collection<int, float>|\Illuminate\Contracts\Support\Arrayable|array<int, float>|string $vector
+         * @param float $minSimilarity A value between 0.0 and 1.0, where 1.0 is identical.
+         * @param bool $order
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function whereVectorSimilarTo($column, $vector, $minSimilarity = 0.6, $order = true)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->whereVectorSimilarTo($column, $vector, $minSimilarity, $order);
+        }
+
+        /**
+         * Add a vector distance "where" clause to the query.
+         *
+         * @param \Illuminate\Contracts\Database\Query\Expression|string $column
+         * @param \Illuminate\Support\Collection<int, float>|\Illuminate\Contracts\Support\Arrayable|array<int, float>|string $vector
+         * @param float $maxDistance
+         * @param string $boolean
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @throws \JsonException
+         * @static
+         */
+        public static function whereVectorDistanceLessThan($column, $vector, $maxDistance, $boolean = 'and')
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->whereVectorDistanceLessThan($column, $vector, $maxDistance, $boolean);
+        }
+
+        /**
+         * Add a vector distance "or where" clause to the query.
+         *
+         * @param \Illuminate\Contracts\Database\Query\Expression|string $column
+         * @param \Illuminate\Support\Collection<int, float>|\Illuminate\Contracts\Support\Arrayable|array<int, float>|string $vector
+         * @param float $maxDistance
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function orWhereVectorDistanceLessThan($column, $vector, $maxDistance)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->orWhereVectorDistanceLessThan($column, $vector, $maxDistance);
+        }
+
+        /**
+         * Add a raw "where" clause to the query.
+         *
+         * @param \Illuminate\Contracts\Database\Query\Expression|literal-string $sql
          * @param mixed $bindings
          * @param string $boolean
          * @return \Illuminate\Database\Eloquent\Builder<static>
@@ -36434,9 +38737,9 @@ namespace  {
         }
 
         /**
-         * Add a raw or where clause to the query.
+         * Add a raw "or where" clause to the query.
          *
-         * @param string $sql
+         * @param literal-string $sql
          * @param mixed $bindings
          * @return \Illuminate\Database\Eloquent\Builder<static>
          * @static
@@ -36511,6 +38814,35 @@ namespace  {
         }
 
         /**
+         * Add a "where null safe equals" clause to the query.
+         *
+         * @param \Illuminate\Contracts\Database\Query\Expression|string $column
+         * @param mixed $value
+         * @param string $boolean
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function whereNullSafeEquals($column, $value, $boolean = 'and')
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->whereNullSafeEquals($column, $value, $boolean);
+        }
+
+        /**
+         * Add an "or where null safe equals" clause to the query.
+         *
+         * @param \Illuminate\Contracts\Database\Query\Expression|string $column
+         * @param mixed $value
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function orWhereNullSafeEquals($column, $value)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->orWhereNullSafeEquals($column, $value);
+        }
+
+        /**
          * Add a "where in" clause to the query.
          *
          * @param \Illuminate\Contracts\Database\Query\Expression|string $column
@@ -36518,6 +38850,7 @@ namespace  {
          * @param string $boolean
          * @param bool $not
          * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @throws \InvalidArgumentException
          * @static
          */
         public static function whereIn($column, $values, $boolean = 'and', $not = false)
@@ -36671,9 +39004,9 @@ namespace  {
         }
 
         /**
-         * Add a where between statement to the query.
+         * Add a "where between" statement to the query.
          *
-         * @param \Illuminate\Contracts\Database\Query\Expression|string $column
+         * @param \Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder<*>|\Illuminate\Contracts\Database\Query\Expression|string $column
          * @param string $boolean
          * @param bool $not
          * @return \Illuminate\Database\Eloquent\Builder<static>
@@ -36686,7 +39019,7 @@ namespace  {
         }
 
         /**
-         * Add a where between statement using columns to the query.
+         * Add a "where between" statement using columns to the query.
          *
          * @param \Illuminate\Contracts\Database\Query\Expression|string $column
          * @param string $boolean
@@ -36701,9 +39034,9 @@ namespace  {
         }
 
         /**
-         * Add an or where between statement to the query.
+         * Add an "or where between" statement to the query.
          *
-         * @param \Illuminate\Contracts\Database\Query\Expression|string $column
+         * @param \Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder<*>|\Illuminate\Contracts\Database\Query\Expression|string $column
          * @return \Illuminate\Database\Eloquent\Builder<static>
          * @static
          */
@@ -36714,7 +39047,7 @@ namespace  {
         }
 
         /**
-         * Add an or where between statement using columns to the query.
+         * Add an "or where between" statement using columns to the query.
          *
          * @param \Illuminate\Contracts\Database\Query\Expression|string $column
          * @return \Illuminate\Database\Eloquent\Builder<static>
@@ -36727,9 +39060,9 @@ namespace  {
         }
 
         /**
-         * Add a where not between statement to the query.
+         * Add a "where not between" statement to the query.
          *
-         * @param \Illuminate\Contracts\Database\Query\Expression|string $column
+         * @param \Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder<*>|\Illuminate\Contracts\Database\Query\Expression|string $column
          * @param string $boolean
          * @return \Illuminate\Database\Eloquent\Builder<static>
          * @static
@@ -36741,7 +39074,7 @@ namespace  {
         }
 
         /**
-         * Add a where not between statement using columns to the query.
+         * Add a "where not between" statement using columns to the query.
          *
          * @param \Illuminate\Contracts\Database\Query\Expression|string $column
          * @param string $boolean
@@ -36755,9 +39088,9 @@ namespace  {
         }
 
         /**
-         * Add an or where not between statement to the query.
+         * Add an "or where not between" statement to the query.
          *
-         * @param \Illuminate\Contracts\Database\Query\Expression|string $column
+         * @param \Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder<*>|\Illuminate\Contracts\Database\Query\Expression|string $column
          * @return \Illuminate\Database\Eloquent\Builder<static>
          * @static
          */
@@ -36768,7 +39101,7 @@ namespace  {
         }
 
         /**
-         * Add an or where not between statement using columns to the query.
+         * Add an "or where not between" statement using columns to the query.
          *
          * @param \Illuminate\Contracts\Database\Query\Expression|string $column
          * @return \Illuminate\Database\Eloquent\Builder<static>
@@ -36781,7 +39114,7 @@ namespace  {
         }
 
         /**
-         * Add a where between columns statement using a value to the query.
+         * Add a "where between columns" statement using a value to the query.
          *
          * @param mixed $value
          * @param array{\Illuminate\Contracts\Database\Query\Expression|string, \Illuminate\Contracts\Database\Query\Expression|string} $columns
@@ -36797,7 +39130,7 @@ namespace  {
         }
 
         /**
-         * Add an or where between columns statement using a value to the query.
+         * Add an "or where between columns" statement using a value to the query.
          *
          * @param mixed $value
          * @param array{\Illuminate\Contracts\Database\Query\Expression|string, \Illuminate\Contracts\Database\Query\Expression|string} $columns
@@ -36811,7 +39144,7 @@ namespace  {
         }
 
         /**
-         * Add a where not between columns statement using a value to the query.
+         * Add a "where not between columns" statement using a value to the query.
          *
          * @param mixed $value
          * @param array{\Illuminate\Contracts\Database\Query\Expression|string, \Illuminate\Contracts\Database\Query\Expression|string} $columns
@@ -36826,7 +39159,7 @@ namespace  {
         }
 
         /**
-         * Add an or where not between columns statement using a value to the query.
+         * Add an "or where not between columns" statement using a value to the query.
          *
          * @param mixed $value
          * @param array{\Illuminate\Contracts\Database\Query\Expression|string, \Illuminate\Contracts\Database\Query\Expression|string} $columns
@@ -37008,7 +39341,7 @@ namespace  {
         }
 
         /**
-         * Add a nested where statement to the query.
+         * Add a nested "where" statement to the query.
          *
          * @param string $boolean
          * @return \Illuminate\Database\Eloquent\Builder<static>
@@ -37047,7 +39380,7 @@ namespace  {
         }
 
         /**
-         * Add an exists clause to the query.
+         * Add an "exists" clause to the query.
          *
          * @param \Closure|\Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder<*> $callback
          * @param string $boolean
@@ -37062,7 +39395,7 @@ namespace  {
         }
 
         /**
-         * Add an or exists clause to the query.
+         * Add an "or where exists" clause to the query.
          *
          * @param \Closure|\Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder<*> $callback
          * @param bool $not
@@ -37076,7 +39409,7 @@ namespace  {
         }
 
         /**
-         * Add a where not exists clause to the query.
+         * Add a "where not exists" clause to the query.
          *
          * @param \Closure|\Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder<*> $callback
          * @param string $boolean
@@ -37090,7 +39423,7 @@ namespace  {
         }
 
         /**
-         * Add a where not exists clause to the query.
+         * Add an "or where not exists" clause to the query.
          *
          * @param \Closure|\Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder<*> $callback
          * @return \Illuminate\Database\Eloquent\Builder<static>
@@ -37103,7 +39436,7 @@ namespace  {
         }
 
         /**
-         * Add an exists clause to the query.
+         * Add an "exists" clause to the query.
          *
          * @param string $boolean
          * @param bool $not
@@ -37382,7 +39715,7 @@ namespace  {
         }
 
         /**
-         * Add a "or where fulltext" clause to the query.
+         * Add an "or where fulltext" clause to the query.
          *
          * @param string|string[] $columns
          * @param string $value
@@ -37502,9 +39835,9 @@ namespace  {
         }
 
         /**
-         * Add a raw groupBy clause to the query.
+         * Add a raw "groupBy" clause to the query.
          *
-         * @param string $sql
+         * @param literal-string $sql
          * @return \Illuminate\Database\Eloquent\Builder<static>
          * @static
          */
@@ -37546,7 +39879,7 @@ namespace  {
         }
 
         /**
-         * Add a nested having statement to the query.
+         * Add a nested "having" statement to the query.
          *
          * @param string $boolean
          * @return \Illuminate\Database\Eloquent\Builder<static>
@@ -37628,7 +39961,7 @@ namespace  {
         }
 
         /**
-         * Add a "having between " clause to the query.
+         * Add a "having between" clause to the query.
          *
          * @param string $column
          * @param string $boolean
@@ -37643,9 +39976,52 @@ namespace  {
         }
 
         /**
-         * Add a raw having clause to the query.
+         * Add a "having not between" clause to the query.
          *
-         * @param string $sql
+         * @param string $column
+         * @param iterable $values
+         * @param string $boolean
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function havingNotBetween($column, $values, $boolean = 'and')
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->havingNotBetween($column, $values, $boolean);
+        }
+
+        /**
+         * Add an "or having between" clause to the query.
+         *
+         * @param string $column
+         * @param iterable $values
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function orHavingBetween($column, $values)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->orHavingBetween($column, $values);
+        }
+
+        /**
+         * Add an "or having not between" clause to the query.
+         *
+         * @param string $column
+         * @param iterable $values
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function orHavingNotBetween($column, $values)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->orHavingNotBetween($column, $values);
+        }
+
+        /**
+         * Add a raw "having" clause to the query.
+         *
+         * @param literal-string $sql
          * @param string $boolean
          * @return \Illuminate\Database\Eloquent\Builder<static>
          * @static
@@ -37657,9 +40033,9 @@ namespace  {
         }
 
         /**
-         * Add a raw or having clause to the query.
+         * Add a raw "or having" clause to the query.
          *
-         * @param string $sql
+         * @param literal-string $sql
          * @return \Illuminate\Database\Eloquent\Builder<static>
          * @static
          */
@@ -37673,12 +40049,12 @@ namespace  {
          * Add an "order by" clause to the query.
          *
          * @param \Closure|\Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder<*>|\Illuminate\Contracts\Database\Query\Expression|string $column
-         * @param string $direction
+         * @param \SortDirection|'asc'|'desc' $direction
          * @return \Illuminate\Database\Eloquent\Builder<static>
          * @throws \InvalidArgumentException
          * @static
          */
-        public static function orderBy($column, $direction = 'asc')
+        public static function orderBy($column, $direction = \SortDirection::Ascending)
         {
             /** @var \Illuminate\Database\Query\Builder $instance */
             return $instance->orderBy($column, $direction);
@@ -37698,6 +40074,21 @@ namespace  {
         }
 
         /**
+         * Add a vector-distance "order by" clause to the query.
+         *
+         * @param \Illuminate\Contracts\Database\Query\Expression|string $column
+         * @param \Illuminate\Support\Collection<int, float>|\Illuminate\Contracts\Support\Arrayable|array<int, float> $vector
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @throws \JsonException
+         * @static
+         */
+        public static function orderByVectorDistance($column, $vector)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->orderByVectorDistance($column, $vector);
+        }
+
+        /**
          * Put the query's results in random order.
          *
          * @param string|int $seed
@@ -37711,9 +40102,23 @@ namespace  {
         }
 
         /**
+         * Add an "order by" clause to order results by a given sequence of values.
+         *
+         * @param \Illuminate\Contracts\Database\Query\Expression|string $column
+         * @param \Illuminate\Contracts\Support\Arrayable|array $values
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function inOrderOf($column, $values)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->inOrderOf($column, $values);
+        }
+
+        /**
          * Add a raw "order by" clause to the query.
          *
-         * @param string $sql
+         * @param literal-string $sql
          * @param array $bindings
          * @return \Illuminate\Database\Eloquent\Builder<static>
          * @static
@@ -37838,11 +40243,11 @@ namespace  {
          * Remove all existing orders and optionally add a new order.
          *
          * @param \Closure|\Illuminate\Database\Query\Builder|\Illuminate\Contracts\Database\Query\Expression|string|null $column
-         * @param string $direction
+         * @param \SortDirection|'asc'|'desc' $direction
          * @return \Illuminate\Database\Eloquent\Builder<static>
          * @static
          */
-        public static function reorder($column = null, $direction = 'asc')
+        public static function reorder($column = null, $direction = \SortDirection::Ascending)
         {
             /** @var \Illuminate\Database\Query\Builder $instance */
             return $instance->reorder($column, $direction);
@@ -37862,7 +40267,7 @@ namespace  {
         }
 
         /**
-         * Add a union statement to the query.
+         * Add a "union" statement to the query.
          *
          * @param \Closure|\Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder<*> $query
          * @param bool $all
@@ -37876,7 +40281,7 @@ namespace  {
         }
 
         /**
-         * Add a union all statement to the query.
+         * Add a "union all" statement to the query.
          *
          * @param \Closure|\Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder<*> $query
          * @return \Illuminate\Database\Eloquent\Builder<static>
@@ -37923,6 +40328,20 @@ namespace  {
         {
             /** @var \Illuminate\Database\Query\Builder $instance */
             return $instance->sharedLock();
+        }
+
+        /**
+         * Set a query execution timeout in seconds.
+         *
+         * @param int|null $seconds
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @throws InvalidArgumentException
+         * @static
+         */
+        public static function timeout($seconds)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->timeout($seconds);
         }
 
         /**
@@ -37976,6 +40395,7 @@ namespace  {
         /**
          * Get a single expression value from the first result of a query.
          *
+         * @param literal-string $expression
          * @return mixed
          * @static
          */
@@ -38191,6 +40611,20 @@ namespace  {
         }
 
         /**
+         * Insert new records into the database and returning specified columns with optional ignoring specific conflicts.
+         *
+         * @param non-empty-array<non-empty-string> $returning
+         * @param non-empty-string|non-empty-array<non-empty-string>|null $uniqueBy
+         * @return \Illuminate\Support\Collection
+         * @static
+         */
+        public static function insertOrIgnoreReturning($values, $returning = [], $uniqueBy = null)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->insertOrIgnoreReturning($values, $returning, $uniqueBy);
+        }
+
+        /**
          * Insert a new record and get the value of the primary key.
          *
          * @param string|null $sequence
@@ -38233,6 +40667,7 @@ namespace  {
          * Update records in a PostgreSQL database using the update from syntax.
          *
          * @return int
+         * @throws \LogicException
          * @static
          */
         public static function updateFrom($values)
@@ -38254,37 +40689,7 @@ namespace  {
         }
 
         /**
-         * Increment the given column's values by the given amounts.
-         *
-         * @param array<string, float|int|numeric-string> $columns
-         * @param array<string, mixed> $extra
-         * @return int<0, max>
-         * @throws \InvalidArgumentException
-         * @static
-         */
-        public static function incrementEach($columns, $extra = [])
-        {
-            /** @var \Illuminate\Database\Query\Builder $instance */
-            return $instance->incrementEach($columns, $extra);
-        }
-
-        /**
-         * Decrement the given column's values by the given amounts.
-         *
-         * @param array<string, float|int|numeric-string> $columns
-         * @param array<string, mixed> $extra
-         * @return int<0, max>
-         * @throws \InvalidArgumentException
-         * @static
-         */
-        public static function decrementEach($columns, $extra = [])
-        {
-            /** @var \Illuminate\Database\Query\Builder $instance */
-            return $instance->decrementEach($columns, $extra);
-        }
-
-        /**
-         * Run a truncate statement on the table.
+         * Run a "truncate" statement on the table.
          *
          * @return void
          * @static
@@ -38310,7 +40715,7 @@ namespace  {
         /**
          * Create a raw database expression.
          *
-         * @param mixed $value
+         * @param literal-string|int|float $value
          * @return \Illuminate\Contracts\Database\Query\Expression
          * @static
          */
@@ -38456,6 +40861,19 @@ namespace  {
         {
             /** @var \Illuminate\Database\Query\Builder $instance */
             return $instance->useWritePdo();
+        }
+
+        /**
+         * Specify arguments for the PDOStatement::fetchAll / fetch functions.
+         *
+         * @param mixed $fetchUsing
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function fetchUsing(...$fetchUsing)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->fetchUsing(...$fetchUsing);
         }
 
         /**
@@ -38863,10 +41281,11 @@ namespace  {
     class View extends \Illuminate\Support\Facades\View {}
     class Vite extends \Illuminate\Support\Facades\Vite {}
     class EloquentSerialize extends \AnourValar\EloquentSerialize\Facades\EloquentSerializeFacade {}
-    class Debugbar extends \Barryvdh\Debugbar\Facades\Debugbar {}
+    class Debugbar extends \Fruitcake\LaravelDebugbar\Facades\Debugbar {}
     class Telegram extends \Telegram\Bot\Laravel\Facades\Telegram {}
     class Agent extends \Jenssegers\Agent\Facades\Agent {}
     class Firebase extends \Kreait\Laravel\Firebase\Facades\Firebase {}
+    class Mcp extends \Laravel\Mcp\Facades\Mcp {}
     class Feature extends \Laravel\Pennant\Feature {}
     class Pulse extends \Laravel\Pulse\Facades\Pulse {}
     class Socialite extends \Laravel\Socialite\Facades\Socialite {}
@@ -38877,15 +41296,10 @@ namespace  {
     class Module extends \Nwidart\Modules\Facades\Module {}
     class FFMpeg extends \ProtoneMedia\LaravelFFMpeg\Support\FFMpeg {}
     class Health extends \Spatie\Health\Facades\Health {}
-    class ResponseCache extends \Spatie\ResponseCache\Facades\ResponseCache {}
+    class SelfHealing extends \Spatie\Sluggable\Facades\SelfHealing {}
 }
 
 
-namespace Facades\Livewire\Features\SupportFileUploads {
-    /**
-     * @mixin \Livewire\Features\SupportFileUploads\GenerateSignedUploadUrl     */
-    class GenerateSignedUploadUrl extends \Livewire\Features\SupportFileUploads\GenerateSignedUploadUrl {}
-}
 
 
 

@@ -17,8 +17,10 @@ use Modules\Quotation\Filament\Pages\RecordQuotationVoicePage;
 use Modules\Quotation\Filament\Resources\QuotationResource;
 use Modules\Quotation\Models\Quotation;
 use Modules\Quotation\Models\QuotationTemplate;
+use Modules\User\Models\User;
 use Modules\WorkOrder\Actions\AssignUserToWorkOrderAction;
 use Modules\WorkOrder\Actions\CreateWorkOrderAction;
+use Modules\WorkOrder\Filament\Resources\WorkOrderResource;
 use Modules\WorkOrder\Models\WorkOrder;
 
 final class ViewQuotation extends ViewRecord
@@ -45,7 +47,7 @@ final class ViewQuotation extends ViewRecord
                         function () use ($quotation): void {
                             echo app(GenerateQuotationPdfAction::class)->execute($quotation);
                         },
-                        sprintf('quotation-%s.pdf', $quotation->code ?: $quotation->id),
+                        sprintf('quotation-%s.pdf', $quotation->code ?? (string) $quotation->id),
                     );
                 }),
 
@@ -66,7 +68,7 @@ final class ViewQuotation extends ViewRecord
                         function () use ($quotation): void {
                             echo app(GenerateConfirmedQuotationPdfAction::class)->execute($quotation);
                         },
-                        sprintf('quotation-confirmed-%s.pdf', $quotation->code ?: $quotation->id),
+                        sprintf('quotation-confirmed-%s.pdf', $quotation->code ?? (string) $quotation->id),
                     );
                 }),
 
@@ -107,13 +109,13 @@ final class ViewQuotation extends ViewRecord
                             /** @var Quotation $quotation */
                             $quotation = $this->getRecord();
 
-                            return $quotation->title ?: ('Da preventivo '.($quotation->code ?: ('#'.$quotation->id)));
+                            return $quotation->title ?? ('Da preventivo '.($quotation->code ?? ('#'.$quotation->id)));
                         }),
                     DateTimePicker::make('scheduled_at')
                         ->label(__('work_orders.fields.scheduled_at')),
                     Select::make('assigned_user_id')
                         ->label(__('work_orders.fields.assigned_to'))
-                        ->options(fn (): array => \App\Models\User::query()->orderBy('name')->pluck('name', 'id')->all())
+                        ->options(fn (): array => User::query()->orderBy('name')->pluck('name', 'id')->all())
                         ->searchable()
                         ->preload(),
                 ])
@@ -152,7 +154,7 @@ final class ViewQuotation extends ViewRecord
                         );
                     }
 
-                    $this->redirect(\Modules\WorkOrder\Filament\Resources\WorkOrderResource::getUrl('view', ['record' => $workOrder->id]));
+                    $this->redirect(WorkOrderResource::getUrl('view', ['record' => $workOrder->id]));
                 }),
         ];
     }

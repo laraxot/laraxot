@@ -5,12 +5,14 @@ declare(strict_types=1);
 namespace Modules\Intervention\Actions;
 
 use Carbon\CarbonImmutable;
-use Modules\Intervention\Domain\Actions\ComputeWorkMinutesAction;
-use Modules\Intervention\Domain\ValueObjects\TimeInterval;
 use Modules\Intervention\Models\Intervention;
+use Modules\Intervention\ValueObjects\TimeInterval;
+use Spatie\QueueableAction\QueueableAction;
 
-final readonly class SyncInterventionWorkMinutesFromTimePunchesAction
+final class SyncInterventionWorkMinutesFromTimePunchesAction
 {
+    use QueueableAction;
+
     public function __construct(
         private ComputeWorkMinutesAction $computeWorkMinutes,
     ) {}

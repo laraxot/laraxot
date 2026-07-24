@@ -7,11 +7,14 @@ namespace Modules\AiAssistant\Actions;
 use Illuminate\Support\Str;
 use Modules\AiAssistant\Models\AiActionProposal;
 use Modules\AiAssistant\Models\AiThread;
+use Spatie\QueueableAction\QueueableAction;
 
 final class CreateAiActionProposalAction
 {
+    use QueueableAction;
+
     /**
-     * @param array<string, mixed> $payload
+     * @param  array<string, mixed>  $payload
      */
     public function execute(
         AiThread $thread,
@@ -34,4 +37,3 @@ final class CreateAiActionProposalAction
         return $proposal;
     }
 }
-

@@ -49,7 +49,7 @@ final class CustomerSystemResource extends Resource
         ];
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return 'Impianti';
     }

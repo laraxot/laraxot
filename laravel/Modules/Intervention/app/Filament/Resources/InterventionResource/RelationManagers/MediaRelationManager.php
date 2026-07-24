@@ -13,26 +13,27 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Modules\Document\Models\Media;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class MediaRelationManager extends RelationManager
+final class MediaRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'media';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('documents.media_plural');
     }
 
-    public function form(Schema $schema): Schema
+    public function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Hidden::make('uploaded_by_user_id')
-                ->default(fn (): ?int => Auth::id()),
+                ->default(fn (): ?int => Auth::id() !== null ? (int) Auth::id() : null),
             Hidden::make('disk')
                 ->default('public'),
             Select::make('kind')
@@ -59,7 +60,7 @@ final class MediaRelationManager extends RelationManager
                 ->previewable()
                 ->required()
                 ->columnSpanFull(),
-        ])->columns(2);
+        ];
     }
 
     public function table(Table $table): Table
@@ -82,7 +83,7 @@ final class MediaRelationManager extends RelationManager
                     ->visibility('public'),
                 Tables\Columns\TextColumn::make('title')
                     ->label(__('documents.fields.title'))
-                    ->description(fn ($record): string => basename((string) ($record->path ?? '')))
+                    ->description(fn (Media $record): string => basename((string) ($record->path ?? '')))
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('size_bytes')
                     ->label(__('documents.fields.size_bytes'))
@@ -102,7 +103,7 @@ final class MediaRelationManager extends RelationManager
                     ->label(__('documents.actions.download'))
                     ->icon('heroicon-o-arrow-down-tray')
                     ->color('gray')
-                    ->url(fn ($record): string => asset('storage/'.ltrim((string) ($record->path ?? ''), '/')))
+                    ->url(fn (Media $record): string => asset('storage/'.ltrim((string) ($record->path ?? ''), '/')))
                     ->openUrlInNewTab(),
                 EditAction::make(),
                 DeleteAction::make(),

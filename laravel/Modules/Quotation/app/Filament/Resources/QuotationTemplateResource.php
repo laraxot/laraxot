@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Quotation\Filament\Resources;
 
+use App\Support\AccountFeatures;
 use App\Support\Concerns\HasAccountFeatureVisibility;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -12,16 +13,16 @@ use Filament\Actions\RestoreBulkAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Auth;
 use Modules\Quotation\Filament\Resources\QuotationTemplateResource\Pages;
 use Modules\Quotation\Filament\Resources\QuotationTemplateResource\RelationManagers\ItemsRelationManager;
 use Modules\Quotation\Models\QuotationTemplate;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class QuotationTemplateResource extends Resource
+final class QuotationTemplateResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 
@@ -29,11 +30,13 @@ final class QuotationTemplateResource extends Resource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    /** Read reflectively by HasAccountFeatureVisibility via defined()/constant(). */
     private const ACCOUNT_FEATURE_ADMIN = 'admin.quotations';
 
+    /** Read reflectively by HasAccountFeatureVisibility via defined()/constant(). */
     private const ACCOUNT_FEATURE_OPERATOR = 'operator.quotations';
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('quotations.navigation');
     }
@@ -48,9 +51,9 @@ final class QuotationTemplateResource extends Resource
         return __('quotations.quotation_templates');
     }
 
-    public static function form(Schema $schema): Schema
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()->columnSpanFull()->components([
                 TextInput::make('title')
                     ->label(__('quotations.fields.title'))
@@ -60,7 +63,7 @@ final class QuotationTemplateResource extends Resource
                     ->label(__('quotations.fields.notes'))
                     ->columnSpanFull(),
             ])->columns(2),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -102,5 +105,16 @@ final class QuotationTemplateResource extends Resource
             'edit' => Pages\EditQuotationTemplate::route('/{record}/edit'),
         ];
     }
-}
 
+    protected static function isAvailableInCurrentPanel(): bool
+    {
+        return AccountFeatures::currentPanelAllowsFeature(
+            Auth::user(),
+            adminFeature: self::ACCOUNT_FEATURE_ADMIN,
+            operatorFeature: self::ACCOUNT_FEATURE_OPERATOR,
+            adminDefault: true,
+            operatorDefault: true,
+            fallback: false,
+        );
+    }
+}

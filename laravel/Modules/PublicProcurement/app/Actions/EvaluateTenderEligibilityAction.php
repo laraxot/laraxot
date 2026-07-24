@@ -9,9 +9,12 @@ use Modules\Compliance\Models\ComplianceDocument;
 use Modules\PublicProcurement\Models\PublicProcurementDocumentRequirement;
 use Modules\PublicProcurement\Models\PublicProcurementTenderEligibilityCheck;
 use Modules\PublicProcurement\Models\PublicProcurementTenderOpportunity;
+use Spatie\QueueableAction\QueueableAction;
 
 final class EvaluateTenderEligibilityAction
 {
+    use QueueableAction;
+
     /** @var array<string, string> */
     private const DEFAULT_DOCUMENTS = [
         'durc' => 'DURC valido',
@@ -19,7 +22,7 @@ final class EvaluateTenderEligibilityAction
     ];
 
     /**
-     * @param array<string, string> $requiredDocuments
+     * @param  array<string, string>  $requiredDocuments
      */
     public function execute(
         PublicProcurementTenderOpportunity $opportunity,
@@ -36,21 +39,23 @@ final class EvaluateTenderEligibilityAction
             $document = $this->latestComplianceDocument((string) $type);
             if (! $document instanceof ComplianceDocument) {
                 $missing[] = ['type' => (string) $type, 'label' => (string) $label];
-                $actions[] = 'Caricare o aggiornare: ' . (string) $label;
+                $actions[] = 'Caricare o aggiornare: '.(string) $label;
                 $this->upsertRequirement($opportunity, (string) $type, (string) $label, 'missing');
+
                 continue;
             }
 
             $status = $document->computedStatus();
             if ($status === 'expired') {
                 $expired[] = ['type' => (string) $type, 'label' => (string) $label, 'document_id' => $document->id];
-                $actions[] = 'Rinnovare documento scaduto: ' . (string) $label;
+                $actions[] = 'Rinnovare documento scaduto: '.(string) $label;
                 $this->upsertRequirement($opportunity, (string) $type, (string) $label, 'expired', $document);
+
                 continue;
             }
 
             if ($status === 'expiring') {
-                $warnings[] = 'Documento in scadenza: ' . (string) $label;
+                $warnings[] = 'Documento in scadenza: '.(string) $label;
             }
 
             $this->upsertRequirement($opportunity, (string) $type, (string) $label, 'ok', $document);
@@ -164,15 +169,15 @@ final class EvaluateTenderEligibilityAction
     }
 
     /**
-     * @param array<int, array<string, mixed>> $missing
-     * @param array<int, array<string, mixed>> $expired
-     * @param array<int, string> $warnings
+     * @param  array<int, array<string, mixed>>  $missing
+     * @param  array<int, array<string, mixed>>  $expired
+     * @param  array<int, string>  $warnings
      */
     private function summaryFor(string $status, array $missing, array $expired, array $warnings): string
     {
         return match ($status) {
             'eligible' => 'La gara risulta partecipabile con i documenti disponibili.',
-            'eligible_with_actions' => 'La gara è partecipabile, ma richiede verifiche o integrazioni: ' . implode('; ', $warnings),
+            'eligible_with_actions' => 'La gara è partecipabile, ma richiede verifiche o integrazioni: '.implode('; ', $warnings),
             default => sprintf('Non partecipabile finché non vengono risolti %d documenti mancanti e %d scaduti.', count($missing), count($expired)),
         };
     }

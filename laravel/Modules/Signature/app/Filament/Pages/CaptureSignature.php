@@ -9,19 +9,29 @@ use App\Support\AccountFeatures;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Concerns\InteractsWithForms;
+use Filament\Forms\Contracts\HasForms;
 use Filament\Pages\Page;
 use Filament\Schemas\Schema;
+use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Modules\Customer\Actions\UpsertCustomerContactByEmailAction;
+use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
 use Modules\Signature\Actions\StoreSignatureForModelAction;
+use Modules\User\Models\User;
 use Modules\WorkOrder\Actions\SetWorkOrderPrimaryContactAction;
 
-final class CaptureSignature extends Page
+/**
+ * @property Schema $form
+ */
+final class CaptureSignature extends Page implements HasForms
 {
+    use InteractsWithForms;
+
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-pencil';
 
     protected static ?string $title = 'Firma';
@@ -121,13 +131,14 @@ final class CaptureSignature extends Page
             Action::make('save')
                 ->label('Salva')
                 ->action(function (): void {
-                    $data = $this->form->getState();
+                    $data = $this->getValidatedFormState();
 
                     $resolvedInterventionId = (int) ($this->intervention?->getKey() ?? 0);
                     $userId = (int) ($data['user_id'] ?? Auth::id());
                     $interventionId = (int) ($data['intervention_id'] ?? $resolvedInterventionId);
 
-                    $signatory = $data['signatory'] ?? [];
+                    $signatoryRaw = $data['signatory'] ?? [];
+                    $signatory = $this->extractStringKeyedArray($signatoryRaw);
                     $signatoryFullName = isset($signatory['full_name']) ? trim((string) $signatory['full_name']) : null;
                     $signatoryEmail = isset($signatory['email']) ? trim((string) $signatory['email']) : null;
 
@@ -148,25 +159,51 @@ final class CaptureSignature extends Page
                         }
                     }
 
-                    /** @var array<string, mixed> $payload */
-                    $payload = is_array($data['payload'] ?? null) ? $data['payload'] : [];
+                    $payload = $this->extractStringKeyedArray($data['payload'] ?? null);
+                    $imageDataUrl = isset($payload['image']) ? (string) $payload['image'] : '';
                     unset($payload['image']);
 
                     app(StoreSignatureForModelAction::class)->execute(
-                        dataUrl: (string) ($data['payload']['image'] ?? ''),
+                        dataUrl: $imageDataUrl,
                         signableType: Intervention::class,
                         signableId: $interventionId,
                         userId: $userId,
                         signedAt: null,
                         payload: [
                             ...$payload,
-                            'signatory' => $data['signatory'] ?? null,
+                            'signatory' => $signatory !== [] ? $signatory : null,
                         ],
                     );
 
-                    $this->redirect(\Modules\Intervention\Filament\Resources\InterventionResource::getUrl('view', ['record' => $interventionId]));
+                    $this->redirect(InterventionResource::getUrl('view', ['record' => $interventionId]));
                 }),
         ];
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    private function getValidatedFormState(): array
+    {
+        return $this->extractStringKeyedArray($this->form->getState());
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    private function extractStringKeyedArray(mixed $value): array
+    {
+        if (! is_array($value)) {
+            return [];
+        }
+
+        $normalized = [];
+
+        foreach ($value as $key => $item) {
+            $normalized[(string) $key] = $item;
+        }
+
+        return $normalized;
     }
 
     /**
@@ -182,30 +219,32 @@ final class CaptureSignature extends Page
         }
 
         if (request()->is('operator/*')) {
-            return \App\Models\User::query()
+            return User::query()
                 ->whereKey($currentUserId)
                 ->pluck('name', 'id')
+                ->mapWithKeys(static fn (mixed $name, mixed $id): array => [(int) $id => (string) $name])
                 ->all();
         }
 
-        $workOrderId = (int) ($this->intervention?->work_order_id ?? 0);
+        $workOrderId = (int) ($this->intervention->work_order_id ?? 0);
 
         if ($workOrderId > 0 && AccountFeatures::hasAssignedPerimeter($currentUser)) {
-            return \App\Models\User::query()
-                ->whereIn('id', function ($query) use ($workOrderId): void {
+            return User::query()
+                ->whereIn('id', function (QueryBuilder $query) use ($workOrderId): void {
                     $query->select('user_id')
                         ->from('work_order_assignments')
                         ->where('work_order_id', $workOrderId);
                 })
                 ->orderBy('name')
                 ->pluck('name', 'id')
+                ->mapWithKeys(static fn (mixed $name, mixed $id): array => [(int) $id => (string) $name])
                 ->all();
         }
 
-        return \App\Models\User::query()
+        return User::query()
             ->orderBy('name')
             ->pluck('name', 'id')
+            ->mapWithKeys(static fn (mixed $name, mixed $id): array => [(int) $id => (string) $name])
             ->all();
     }
 }
-

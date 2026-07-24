@@ -1,5 +1,5 @@
 # Churn per contributor × estensione + snapshot cloc (HTML + summary).
-# Script: .github/ci/contributor-lines-report.mjs (no npm deps).
+# Script: scripts/ci/contributor-lines-report.mjs (no npm deps).
 name: Contributor Lines Report
 
 on:
@@ -41,7 +41,7 @@ jobs:
 
       - name: Generate report
         run: |
-          node .github/ci/contributor-lines-report.mjs \
+          node scripts/ci/contributor-lines-report.mjs \
             --since=${{ github.event.inputs.since_days || '90' }} \
             --out=reports/contributor-lines.html \
             --summary=reports/contributor-lines-summary.md

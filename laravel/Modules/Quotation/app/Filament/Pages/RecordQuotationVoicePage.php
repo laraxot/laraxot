@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Quotation\Filament\Pages;
 
-use App\Models\User;
 use App\Support\AccountFeatures;
 use Filament\Notifications\Notification;
-use Filament\Pages\Page;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Modules\Customer\Actions\SearchCompanyOnlineAction;
 use Modules\Customer\Lookup\CompanyLookupResult;
 use Modules\Quotation\Actions\ApplyTechnicalParamsToQuotationItemsAction;
@@ -18,11 +17,13 @@ use Modules\Quotation\Actions\CreateQuotationFromDraftAction;
 use Modules\Quotation\Actions\DuplicateQuotationAsDraftAction;
 use Modules\Quotation\Actions\QueueQuotationAttachmentRewriteAction;
 use Modules\Quotation\Actions\ResolveOrCreateCustomerFromDraftAction;
-use Modules\Quotation\Domain\DTO\DictatedQuotationItem;
-use Modules\Quotation\Domain\DTO\QuotationCustomerDraft;
-use Modules\Quotation\Domain\DTO\QuotationDraft;
+use Modules\Quotation\DTO\DictatedQuotationItem;
+use Modules\Quotation\DTO\QuotationCustomerDraft;
+use Modules\Quotation\DTO\QuotationDraft;
 use Modules\Quotation\Filament\Resources\QuotationResource;
 use Modules\Quotation\Models\Quotation;
+use Modules\User\Models\User;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * Mobile-first page: the plumber dictates a quotation by voice; the AI turns it
@@ -30,7 +31,7 @@ use Modules\Quotation\Models\Quotation;
  * existing quotation ("create a similar one for another customer"). The operator
  * reviews and confirms, creating a brand-new quotation.
  */
-final class RecordQuotationVoicePage extends Page
+final class RecordQuotationVoicePage extends XotBasePage
 {
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-microphone';
 
@@ -81,7 +82,7 @@ final class RecordQuotationVoicePage extends Page
 
     public string $quotationTitle = '';
 
-    /** @var list<array{description: string, quantity: float, unit_price: float|null, matched_product_id: int|null, is_matched: bool}> */
+    /** @var array<int, array{description: string, quantity: float, unit_price: float|null, matched_product_id: int|null, is_matched: bool}> */
     public array $items = [];
 
     public static function shouldRegisterNavigation(): bool
@@ -259,7 +260,7 @@ final class RecordQuotationVoicePage extends Page
     {
         $options = [0 => __('quotations.voice.based_on_none')];
 
-        $ids = \Illuminate\Support\Facades\DB::table('quotations')
+        $ids = DB::table('quotations')
             ->leftJoin('customers', 'customers.id', '=', 'quotations.customer_id')
             ->orderByDesc('quotations.id')
             ->limit(50)
@@ -271,7 +272,7 @@ final class RecordQuotationVoicePage extends Page
 
         // Keep the detected source visible even if it fell out of the recent list.
         if ($this->sourceId !== null && $this->sourceId > 0 && ! isset($options[$this->sourceId])) {
-            $source = Quotation::query()
+            $source = DB::table('quotations')
                 ->leftJoin('customers', 'customers.id', '=', 'quotations.customer_id')
                 ->where('quotations.id', $this->sourceId)
                 ->first(['quotations.id', 'quotations.title', 'customers.legal_name']);
@@ -285,10 +286,10 @@ final class RecordQuotationVoicePage extends Page
 
     private function sourceLabelFor(mixed $id, mixed $title, mixed $legalName): string
     {
-        $title = is_string($title) && trim($title) !== '' ? trim($title) : '#'.$id;
-        $legalName = is_string($legalName) && trim($legalName) !== '' ? trim($legalName) : '';
+        $idLabel = is_string($title) && trim($title) !== '' ? trim($title) : '#'.(string) $id;
+        $legalNameLabel = is_string($legalName) && trim($legalName) !== '' ? trim($legalName) : '';
 
-        return $legalName !== '' ? $title.' — '.$legalName : $title;
+        return $legalNameLabel !== '' ? $idLabel.' — '.$legalNameLabel : $idLabel;
     }
 
     public function searchCompany(): void

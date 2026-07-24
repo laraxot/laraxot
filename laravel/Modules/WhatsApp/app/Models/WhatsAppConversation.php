@@ -12,6 +12,24 @@ use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
 
+/**
+ * @property int $id
+ * @property string $phone_e164
+ * @property string|null $wa_id
+ * @property string|null $display_name
+ * @property int|null $identity_id
+ * @property int|null $customer_id
+ * @property int|null $customer_site_id
+ * @property int|null $contact_id
+ * @property int|null $user_id
+ * @property string $status
+ * @property int|null $active_proposal_id
+ * @property int|null $approved_up_to_message_id
+ * @property \Illuminate\Support\Carbon|null $last_message_at
+ * @property array<string, mixed>|null $meta
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ */
 final class WhatsAppConversation extends Model
 {
     protected $table = 'whatsapp_conversations';

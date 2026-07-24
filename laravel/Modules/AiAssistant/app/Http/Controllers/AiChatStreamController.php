@@ -9,14 +9,17 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
 use Modules\AiAssistant\Chat\AiAssistantChatHistory;
+use Modules\AiAssistant\Models\AiThread;
 use Modules\AiAssistant\Neuron\OperatorAssistantAgent;
 use Modules\AiAssistant\Security\PromptInjectionGuard;
 use Modules\AiAssistant\Speech\BuildSpokenSummaryAction;
-use Modules\AiAssistant\Models\AiThread;
 use NeuronAI\Chat\Messages\Stream\Chunks\TextChunk;
 use NeuronAI\Chat\Messages\UserMessage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Throwable;
+
+use function Safe\json_encode;
+use function Safe\ob_flush;
 
 final class AiChatStreamController extends Controller
 {
@@ -101,7 +104,7 @@ final class AiChatStreamController extends Controller
             try {
                 $history = new AiAssistantChatHistory($thread, (int) $user->id);
 
-                $agent = new OperatorAssistantAgent;
+                $agent = new OperatorAssistantAgent();
                 $agent->setChatHistory($history);
                 $agent->forSession($thread, (int) $user->id);
                 $agent->toolMaxRuns(10);

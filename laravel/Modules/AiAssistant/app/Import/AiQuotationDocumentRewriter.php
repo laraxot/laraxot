@@ -7,6 +7,8 @@ namespace Modules\AiAssistant\Import;
 use Modules\AiAssistant\Llm\LlmChatJsonClient;
 use Modules\Quotation\Import\QuotationDocumentRewriterInterface;
 
+use function Safe\json_encode;
+
 /**
  * AI-backed document rewriter. The model SEES the document part (large input is
  * fine) but returns only a small list of exact string REPLACEMENTS

@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Compliance\Actions;
 
+use Spatie\QueueableAction\QueueableAction;
+
 final class ClassifyComplianceDocumentTextAction
 {
+    use QueueableAction;
+
     /**
      * @return array{type: string, confidence: float, title: string, signals: array<int, string>}
      */

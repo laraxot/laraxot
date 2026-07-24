@@ -13,4 +13,3 @@ interface SpeechTranscriptionProviderInterface
      */
     public function transcribe(UploadedFile $audio, string $language): string;
 }
-

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Catalog\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Xot\Models\XotBaseModel;
 
-final class Product extends Model
+final class Product extends XotBaseModel
 {
     use SoftDeletes;
 

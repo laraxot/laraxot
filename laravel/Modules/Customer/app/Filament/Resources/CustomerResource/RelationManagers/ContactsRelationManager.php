@@ -15,24 +15,24 @@ use Filament\Actions\RestoreBulkAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Modules\Customer\Models\ContactRole;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class ContactsRelationManager extends RelationManager
+final class ContactsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'contacts';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('customers.contacts');
     }
 
-    public function form(Schema $schema): Schema
+    public function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             TextInput::make('full_name')
                 ->label(__('customers.fields.full_name'))
                 ->required()
@@ -57,7 +57,7 @@ final class ContactsRelationManager extends RelationManager
             Textarea::make('notes')
                 ->label(__('customers.fields.notes'))
                 ->columnSpanFull(),
-        ])->columns(2);
+        ];
     }
 
     public function table(Table $table): Table

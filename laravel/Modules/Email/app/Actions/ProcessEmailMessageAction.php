@@ -6,27 +6,31 @@ namespace Modules\Email\Actions;
 
 use App\Models\User;
 use Carbon\CarbonImmutable;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 use Modules\AiAssistant\Actions\CreateAiActionProposalAction;
 use Modules\AiAssistant\Models\AiActionProposal;
 use Modules\AiAssistant\Models\AiMessage;
 use Modules\AiAssistant\Models\AiThread;
 use Modules\Email\AI\EmailMessageClassifierInterface;
-use Modules\Email\Settings\EmailSettings;
+use Modules\Email\Models\EmailConversation;
 use Modules\Email\Models\EmailMessage;
+use Modules\Email\Settings\EmailSettings;
 use Modules\WorkOrder\Actions\AddWorkOrderActivityAction;
+use Spatie\QueueableAction\QueueableAction;
 use Throwable;
 
-final readonly class ProcessEmailMessageAction
+final class ProcessEmailMessageAction
 {
+    use QueueableAction;
+
     public function __construct(
         private ResolveEmailMessageContextAction $resolveContext,
         private EmailMessageClassifierInterface $classifier,
         private EmailSettings $settings,
         private AddWorkOrderActivityAction $addWorkOrderActivity,
         private CreateAiActionProposalAction $createProposal,
-    ) {
-    }
+    ) {}
 
     public function execute(int $messageId): EmailMessage
     {
@@ -39,8 +43,19 @@ final readonly class ProcessEmailMessageAction
 
         $message->forceFill(['processing_status' => 'processing', 'error' => null])->save();
 
+        $conversation = $message->conversation;
+        if (! $conversation instanceof EmailConversation) {
+            $message->forceFill([
+                'processing_status' => 'failed',
+                'processed_at' => now(),
+                'error' => 'Conversazione email mancante.',
+            ])->save();
+
+            return $message->refresh();
+        }
+
         try {
-            $context = $this->resolveContext->execute($message->conversation);
+            $context = $this->resolveContext->execute($conversation);
             $classification = $this->classifier->classify($message, $context);
 
             $message->forceFill([
@@ -62,7 +77,7 @@ final readonly class ProcessEmailMessageAction
                 return $message->refresh();
             }
 
-            $proposal = $this->createApprovalProposal($message, $classification, $context);
+            $proposal = $this->createApprovalProposal($message, $conversation, $classification, $context);
             if ($proposal !== null) {
                 $message->forceFill([
                     'ai_action_proposal_id' => $proposal->id,
@@ -92,7 +107,7 @@ final readonly class ProcessEmailMessageAction
     }
 
     /**
-     * @param array<string, mixed> $classification
+     * @param  array<string, mixed>  $classification
      */
     private function canAutoArchive(array $classification): bool
     {
@@ -104,18 +119,18 @@ final readonly class ProcessEmailMessageAction
     }
 
     /**
-     * @param array<string, mixed> $classification
+     * @param  array<string, mixed>  $classification
      */
     private function shouldIgnore(array $classification): bool
     {
-        $action = is_array($classification['proposed_action'] ?? null) ? $classification['proposed_action'] : [];
+        $action = $this->stringKeyedArray($classification['proposed_action'] ?? null);
 
         return (string) ($action['type'] ?? '') === 'none'
             && (bool) ($classification['requires_approval'] ?? false) === false;
     }
 
     /**
-     * @param array<string, mixed> $classification
+     * @param  array<string, mixed>  $classification
      */
     private function archiveAsWorkOrderActivity(EmailMessage $message, array $classification): void
     {
@@ -132,27 +147,27 @@ final readonly class ProcessEmailMessageAction
             'email',
             $body,
             null,
-            $message->received_at instanceof \Illuminate\Support\Carbon
+            $message->received_at instanceof Carbon
                 ? CarbonImmutable::instance($message->received_at)
                 : CarbonImmutable::now(),
         );
     }
 
     /**
-     * @param array<string, mixed> $classification
-     * @param array<string, mixed> $context
+     * @param  array<string, mixed>  $classification
+     * @param  array<string, mixed>  $context
      */
-    private function createApprovalProposal(EmailMessage $message, array $classification, array $context): ?AiActionProposal
+    private function createApprovalProposal(EmailMessage $message, EmailConversation $conversation, array $classification, array $context): ?AiActionProposal
     {
         $approverId = $this->resolveApproverId();
         if ($approverId === null) {
             return null;
         }
 
-        $thread = $this->threadFor($message, $approverId, $context);
-        $action = is_array($classification['proposed_action'] ?? null) ? $classification['proposed_action'] : [];
+        $thread = $this->threadFor($message, $conversation, $approverId, $context);
+        $action = $this->stringKeyedArray($classification['proposed_action'] ?? null);
         $type = $this->proposalType($action);
-        $payload = is_array($action['payload'] ?? null) ? $action['payload'] : [];
+        $payload = $this->stringKeyedArray($action['payload'] ?? null);
         $payload['email_message_id'] = (int) $message->id;
         $payload['source'] = 'email';
 
@@ -170,7 +185,7 @@ final readonly class ProcessEmailMessageAction
     }
 
     /**
-     * @param array<string, mixed> $action
+     * @param  array<string, mixed>  $action
      */
     private function proposalType(array $action): string
     {
@@ -184,9 +199,9 @@ final readonly class ProcessEmailMessageAction
     }
 
     /**
-     * @param array<string, mixed> $context
+     * @param  array<string, mixed>  $context
      */
-    private function threadFor(EmailMessage $message, int $approverId, array $context): AiThread
+    private function threadFor(EmailMessage $message, EmailConversation $conversation, int $approverId, array $context): AiThread
     {
         /** @var AiThread|null $existing */
         $existing = AiThread::query()
@@ -212,7 +227,7 @@ final readonly class ProcessEmailMessageAction
             'meta' => [
                 'source' => 'email',
                 'conversation_id' => (int) $message->conversation_id,
-                'email' => (string) $message->conversation->email,
+                'email' => (string) $conversation->email,
             ],
         ]);
 
@@ -222,7 +237,7 @@ final readonly class ProcessEmailMessageAction
     }
 
     /**
-     * @param array<string, mixed> $context
+     * @param  array<string, mixed>  $context
      */
     private function appendThreadMessage(AiThread $thread, EmailMessage $message, array $context): void
     {
@@ -230,7 +245,7 @@ final readonly class ProcessEmailMessageAction
             'ai_thread_id' => $thread->id,
             'user_id' => null,
             'role' => 'user',
-            'content' => 'Email: ' . trim(((string) $message->subject) . "\n\n" . (string) $message->body),
+            'content' => 'Email: '.trim(((string) $message->subject)."\n\n".(string) $message->body),
             'payload' => [
                 'source' => 'email',
                 'email_message_id' => (int) $message->id,
@@ -252,7 +267,7 @@ final readonly class ProcessEmailMessageAction
     }
 
     /**
-     * @param array<string, mixed> $classification
+     * @param  array<string, mixed>  $classification
      */
     private function defaultPreview(string $type, EmailMessage $message, array $classification): string
     {
@@ -260,9 +275,9 @@ final readonly class ProcessEmailMessageAction
         $summary = $summary !== '' ? $summary : mb_substr((string) $message->body, 0, 300);
 
         return match ($type) {
-            'create_intervention_from_email' => 'Creare un intervento da email: ' . $summary,
-            'update_intervention_schedule_from_email' => 'Aggiornare la pianificazione intervento da email: ' . $summary,
-            default => 'Archiviare sulla commessa il messaggio email: ' . $summary,
+            'create_intervention_from_email' => 'Creare un intervento da email: '.$summary,
+            'update_intervention_schedule_from_email' => 'Aggiornare la pianificazione intervento da email: '.$summary,
+            default => 'Archiviare sulla commessa il messaggio email: '.$summary,
         };
     }
 
@@ -275,5 +290,24 @@ final readonly class ProcessEmailMessageAction
         $int = (int) $value;
 
         return $int > 0 ? $int : null;
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    private function stringKeyedArray(mixed $value): array
+    {
+        if (! is_array($value)) {
+            return [];
+        }
+
+        $result = [];
+        foreach ($value as $key => $item) {
+            if (is_string($key)) {
+                $result[$key] = $item;
+            }
+        }
+
+        return $result;
     }
 }

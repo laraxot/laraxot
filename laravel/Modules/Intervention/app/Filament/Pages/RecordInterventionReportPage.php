@@ -4,21 +4,21 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Filament\Pages;
 
-use App\Models\User;
 use App\Support\AccountFeatures;
 use Filament\Notifications\Notification;
-use Filament\Pages\Page;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Livewire\WithFileUploads;
 use Modules\Intervention\Actions\ApplyInterventionReportDraftAction;
 use Modules\Intervention\Actions\BuildInterventionReportDraftAction;
 use Modules\Intervention\Actions\SaveInterventionReportAttachmentsAction;
-use Modules\Intervention\Queries\GetPastInterventionNotesForReportQuery;
-use Modules\Intervention\Domain\DTO\DictatedMaterialLine;
-use Modules\Intervention\Domain\DTO\InterventionReportDraft;
+use Modules\Intervention\Data\DictatedMaterialLine;
+use Modules\Intervention\Data\InterventionReportDraft;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
+use Modules\Intervention\Queries\GetPastInterventionNotesForReportQuery;
+use Modules\User\Models\User;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * Mobile-first page: the operator records a voice note, the AI turns it into a
@@ -27,7 +27,7 @@ use Modules\Intervention\Models\Intervention;
  * {@see ApplyInterventionReportDraftAction} and
  * {@see SaveInterventionReportAttachmentsAction}.
  */
-final class RecordInterventionReportPage extends Page
+final class RecordInterventionReportPage extends XotBasePage
 {
     use WithFileUploads;
 
@@ -51,7 +51,7 @@ final class RecordInterventionReportPage extends Page
 
     public ?string $outcomeCode = null;
 
-    /** @var list<array{description: string, quantity: float, unit_price: float|null, matched_product_id: int|null, is_matched: bool}> */
+    /** @var array<int, array{description: string, quantity: float, unit_price: float|null, matched_product_id: int|null, is_matched: bool}> */
     public array $materials = [];
 
     /** @var array<int, TemporaryUploadedFile> */
@@ -84,7 +84,7 @@ final class RecordInterventionReportPage extends Page
         };
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('interventions.navigation');
     }
@@ -295,10 +295,12 @@ final class RecordInterventionReportPage extends Page
 
     private function buildInterventionLabel(Intervention $intervention): string
     {
-        $customer = $intervention->workOrder?->customer?->legal_name
-            ?? $intervention->customer?->legal_name
+        $workOrder = $intervention->workOrder;
+        $customer = $intervention->customer;
+        $customerName = ($workOrder !== null && $workOrder->customer !== null ? $workOrder->customer->legal_name : null)
+            ?? ($customer !== null ? $customer->legal_name : null)
             ?? '—';
 
-        return sprintf('#%d · %s', $intervention->id, $customer);
+        return sprintf('#%d · %s', $intervention->id, $customerName);
     }
 }

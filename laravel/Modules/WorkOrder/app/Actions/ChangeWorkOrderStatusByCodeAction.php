@@ -8,9 +8,12 @@ use Carbon\CarbonImmutable;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderStatus;
 use Modules\WorkOrder\Models\WorkOrderStatusEvent;
+use Spatie\QueueableAction\QueueableAction;
 
 final class ChangeWorkOrderStatusByCodeAction
 {
+    use QueueableAction;
+
     public function execute(int $workOrderId, string $toStatusCode, ?int $changedByUserId = null, ?string $note = null): void
     {
         /** @var WorkOrder $workOrder */
@@ -35,4 +38,3 @@ final class ChangeWorkOrderStatusByCodeAction
         ]);
     }
 }
-

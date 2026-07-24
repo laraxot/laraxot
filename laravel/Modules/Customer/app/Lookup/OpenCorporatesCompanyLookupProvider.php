@@ -12,6 +12,9 @@ final class OpenCorporatesCompanyLookupProvider implements CompanyLookupProvider
 
     private const MAX_RESULTS = 5;
 
+    /**
+     * @return list<array<string, mixed>>
+     */
     public function search(string $query): array
     {
         $name = trim($query);

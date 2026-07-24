@@ -5,17 +5,18 @@ declare(strict_types=1);
 namespace Modules\WorkOrder\Filament\Resources\WorkOrderResource\RelationManagers;
 
 use Filament\Actions\Action;
-use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Modules\Compliance\Actions\EvaluateWorkOrderReadinessAction;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class ReadinessItemsRelationManager extends RelationManager
+final class ReadinessItemsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'readinessItems';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('compliance.readiness_items');
     }

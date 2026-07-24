@@ -18,18 +18,20 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Modules\Compliance\Actions\GenerateMaintenanceInterventionAction;
 use Modules\Compliance\Actions\RegisterMaintenanceControlAction;
 use Modules\Compliance\Models\Boiler;
 use Modules\Compliance\Models\HeatingSystem;
+use Modules\User\Models\User;
 
 final class BoilersRelationManager extends RelationManager
 {
     protected static string $relationship = 'boilers';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('heating.boilers');
     }
@@ -131,7 +133,7 @@ final class BoilersRelationManager extends RelationManager
                 DateTimePicker::make('scheduled_at')->label(__('heating.fields.scheduled_at'))->default(now()->addWeek())->required(),
                 Select::make('performed_by_user_id')
                     ->label(__('heating.fields.technician'))
-                    ->options(fn (): array => \App\Models\User::query()->orderBy('name')->pluck('name', 'id')->all())
+                    ->options(fn (): array => User::query()->orderBy('name')->pluck('name', 'id')->all())
                     ->searchable()->preload()->required(),
             ])
             ->action(function (array $data, Boiler $record): void {

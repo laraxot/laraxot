@@ -29,14 +29,21 @@ final class TimberAgendaPage extends Page
 
     public string $toDate = '';
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return 'Analisi';
     }
 
     public static function canAccess(): bool
     {
-        return AccountFeatures::canAccessPanel(Auth::user(), 'timber');
+        return AccountFeatures::currentPanelAllowsFeature(
+            Auth::user(),
+            adminFeature: 'admin.timber',
+            operatorFeature: 'operator.timber',
+            adminDefault: true,
+            operatorDefault: true,
+            fallback: false,
+        );
     }
 
     public function mount(): void

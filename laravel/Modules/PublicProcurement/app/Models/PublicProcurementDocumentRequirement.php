@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\PublicProcurement\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Compliance\Models\ComplianceDocument;
+use Modules\Xot\Models\XotBaseModel;
 
-final class PublicProcurementDocumentRequirement extends Model
+final class PublicProcurementDocumentRequirement extends XotBaseModel
 {
     use SoftDeletes;
 

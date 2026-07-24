@@ -45,8 +45,3 @@ cd laravel
 ## Sentiment fallback
 
 `BasicSentimentAnalyzer` usa word boundary (`Safe\preg_match`) per evitare falsi positivi (`happy` in `unhappy`). Le negazioni (`not happy`) non sono gestite — i test documentano il limite.
-
-
-## PSR-4 su filesystem case-sensitive
-
-Conservare solo `tests/Support`: una copia `tests/support` dichiara lo stesso FQCN e Composer la scarta. Il fake canonico resta `Modules\AI\Tests\Support\OpenAiHttpFake`.

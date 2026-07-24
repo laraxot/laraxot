@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Billing\Actions;
 
-use Modules\Billing\Domain\Actions\BuildPreInvoiceDraftAction;
-use Modules\Billing\Domain\DTO\PreInvoiceDraft;
-use Modules\Billing\Domain\DTO\PreInvoiceLine;
+use Modules\Billing\Datas\PreInvoiceDraft;
+use Modules\Billing\Datas\PreInvoiceLine;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionMaterialLine;
 use Modules\WorkOrder\Models\WorkOrder;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Pre-fatturazione: raccoglie tutto il consuntivo di una commessa e ne propone
@@ -18,8 +18,10 @@ use Modules\WorkOrder\Models\WorkOrder;
  * E' il momento in cui l'extra preventivo puo' ancora essere incassato: dopo
  * l'emissione e' regalato.
  */
-final readonly class BuildWorkOrderPreInvoiceAction
+final class BuildWorkOrderPreInvoiceAction
 {
+    use QueueableAction;
+
     public function __construct(
         private BuildPreInvoiceDraftAction $buildPreInvoiceDraft,
     ) {}

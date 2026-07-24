@@ -9,9 +9,12 @@ use Modules\Compliance\Models\ComplianceDocument;
 use Modules\Compliance\Models\WorkOrderChangeOrder;
 use Modules\Compliance\Models\WorkOrderReadinessItem;
 use Modules\WorkOrder\Models\WorkOrder;
+use Spatie\QueueableAction\QueueableAction;
 
 final class EvaluateWorkOrderReadinessAction
 {
+    use QueueableAction;
+
     /** @var array<int, string> */
     private const DEFAULT_REQUIRED_DOCUMENTS = ['durc', 'pos', 'dico'];
 

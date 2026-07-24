@@ -15,9 +15,8 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Notifications\Notification;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
@@ -26,9 +25,10 @@ use Modules\Catalog\Actions\ImportMetelPriceListFileAction;
 use Modules\Catalog\Filament\Resources\MetelCatalogResource\Pages;
 use Modules\Catalog\Filament\Resources\MetelCatalogResource\RelationManagers\ItemsRelationManager;
 use Modules\Catalog\Models\MetelCatalog;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use RuntimeException;
 
-final class MetelCatalogResource extends Resource
+final class MetelCatalogResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 
@@ -36,11 +36,11 @@ final class MetelCatalogResource extends Resource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-book-open';
 
-    private const ACCOUNT_FEATURE_ADMIN = 'admin.metel_catalogs';
+    protected const ACCOUNT_FEATURE_ADMIN = 'admin.metel_catalogs';
 
-    private const ACCOUNT_FEATURE_OPERATOR = 'operator.metel_catalogs';
+    protected const ACCOUNT_FEATURE_OPERATOR = 'operator.metel_catalogs';
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('metel.navigation');
     }
@@ -55,9 +55,12 @@ final class MetelCatalogResource extends Resource
         return __('metel.catalogs');
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<int, Component>
+     */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columns(2)
                 ->components([
@@ -92,7 +95,7 @@ final class MetelCatalogResource extends Resource
                         ->label(__('metel.fields.is_active'))
                         ->default(true),
                 ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -158,10 +161,17 @@ final class MetelCatalogResource extends Resource
                             return;
                         }
 
+                        $formatValue = (string) ($data['format'] ?? 'auto');
+                        $format = match ($formatValue) {
+                            'csv' => 'csv',
+                            'fixed' => 'fixed',
+                            default => 'auto',
+                        };
+
                         $result = app(ImportMetelPriceListFileAction::class)->execute(
                             catalog: $record,
                             content: (string) $file->get(),
-                            format: (string) ($data['format'] ?? 'auto'),
+                            format: $format,
                         );
 
                         Notification::make()

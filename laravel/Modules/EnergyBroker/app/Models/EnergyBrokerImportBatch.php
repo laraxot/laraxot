@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\EnergyBroker\Models;
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\User\Models\User;
+use Modules\Xot\Models\XotBaseModel;
 
-final class EnergyBrokerImportBatch extends Model
+final class EnergyBrokerImportBatch extends XotBaseModel
 {
     use SoftDeletes;
 

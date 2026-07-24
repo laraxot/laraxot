@@ -8,11 +8,10 @@ use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
-use Illuminate\Support\Facades\Storage;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
 use Filament\Tables;
@@ -21,12 +20,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\HR\Actions\AddEmployeeTrainingAction;
 use Modules\HR\Models\Employee;
+use Modules\HR\Models\EmployeeTraining;
 
 final class TrainingsRelationManager extends RelationManager
 {
     protected static string $relationship = 'trainings';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('hr.trainings');
     }
@@ -68,7 +68,7 @@ final class TrainingsRelationManager extends RelationManager
                     ->label(__('hr.fields.name'))
                     ->searchable()
                     ->sortable()
-                    ->description(fn ($record): string => basename((string) ($record->attachment_path ?? ''))),
+                    ->description(fn (EmployeeTraining $record): string => $record->media !== null ? basename($record->media->path) : ''),
                 Tables\Columns\TextColumn::make('expires_at')
                     ->label(__('hr.fields.expires_at'))
                     ->date()
@@ -81,15 +81,17 @@ final class TrainingsRelationManager extends RelationManager
                         /** @var Employee $employee */
                         $employee = $this->getOwnerRecord();
 
+                        $uploadedByUserId = Auth::id();
+
                         return app(AddEmployeeTrainingAction::class)->execute(
                             employee: $employee,
                             name: (string) $data['name'],
-                            completedAt: $data['completed_at'] ?? null,
-                            expiresAt: $data['expires_at'] ?? null,
-                            notes: $data['notes'] ?? null,
-                            title: $data['title'] ?? null,
-                            attachmentPath: $data['attachment_path'] ?? null,
-                            uploadedByUserId: Auth::id(),
+                            completedAt: isset($data['completed_at']) ? (string) $data['completed_at'] : null,
+                            expiresAt: isset($data['expires_at']) ? (string) $data['expires_at'] : null,
+                            notes: isset($data['notes']) ? (string) $data['notes'] : null,
+                            title: isset($data['title']) ? (string) $data['title'] : null,
+                            attachmentPath: isset($data['attachment_path']) ? (string) $data['attachment_path'] : null,
+                            uploadedByUserId: is_int($uploadedByUserId) ? $uploadedByUserId : null,
                         );
                     }),
             ])
@@ -98,9 +100,9 @@ final class TrainingsRelationManager extends RelationManager
                     ->label(__('documents.actions.download'))
                     ->icon('heroicon-o-arrow-down-tray')
                     ->color('gray')
-                    ->visible(fn ($record): bool => (bool) ($record->attachment_path ?? false))
-                    ->url(fn ($record): string => $record->attachment_path
-                        ? asset('storage/' . ltrim((string) $record->attachment_path, '/'))
+                    ->visible(fn (EmployeeTraining $record): bool => $record->media !== null)
+                    ->url(fn (EmployeeTraining $record): string => $record->media !== null
+                        ? asset('storage/'.ltrim($record->media->path, '/'))
                         : '#'
                     )
                     ->openUrlInNewTab(),
@@ -111,4 +113,3 @@ final class TrainingsRelationManager extends RelationManager
             ]);
     }
 }
-

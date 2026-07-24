@@ -6,20 +6,24 @@ namespace Modules\WhatsApp\Actions;
 
 use App\Models\User;
 use Carbon\CarbonImmutable;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 use Modules\AiAssistant\Actions\CreateAiActionProposalAction;
 use Modules\AiAssistant\Models\AiActionProposal;
 use Modules\AiAssistant\Models\AiMessage;
 use Modules\AiAssistant\Models\AiThread;
 use Modules\WhatsApp\AI\WhatsAppMessageClassifierInterface;
-use Modules\WhatsApp\Settings\WhatsAppSettings;
 use Modules\WhatsApp\Models\WhatsAppConversation;
 use Modules\WhatsApp\Models\WhatsAppMessage;
+use Modules\WhatsApp\Settings\WhatsAppSettings;
 use Modules\WorkOrder\Actions\AddWorkOrderActivityAction;
+use Spatie\QueueableAction\QueueableAction;
 use Throwable;
 
-final readonly class ProcessWhatsAppMessageAction
+final class ProcessWhatsAppMessageAction
 {
+    use QueueableAction;
+
     public function __construct(
         private ResolveWhatsAppMessageContextAction $resolveContext,
         private WhatsAppMessageClassifierInterface $classifier,
@@ -40,7 +44,12 @@ final readonly class ProcessWhatsAppMessageAction
         $message->forceFill(['processing_status' => 'processing', 'error' => null])->save();
 
         try {
-            $context = $this->resolveContext->execute($message->conversation);
+            $conversation = $message->conversation;
+            if (! $conversation instanceof WhatsAppConversation) {
+                throw new \RuntimeException("Conversazione WhatsApp mancante per il messaggio {$message->id}.");
+            }
+
+            $context = $this->resolveContext->execute($conversation);
             $classification = $this->classifier->classify($message, $context);
 
             $message->forceFill([
@@ -114,7 +123,7 @@ final readonly class ProcessWhatsAppMessageAction
      */
     private function shouldIgnore(array $classification): bool
     {
-        $action = is_array($classification['proposed_action'] ?? null) ? $classification['proposed_action'] : [];
+        $action = $this->stringKeyed($classification['proposed_action'] ?? null);
 
         return (string) ($action['type'] ?? '') === 'none'
             && (bool) ($classification['requires_approval'] ?? false) === false;
@@ -138,7 +147,7 @@ final readonly class ProcessWhatsAppMessageAction
             'whatsapp',
             $body,
             null,
-            $message->received_at instanceof \Illuminate\Support\Carbon
+            $message->received_at instanceof Carbon
                 ? CarbonImmutable::instance($message->received_at)
                 : CarbonImmutable::now(),
         );
@@ -148,7 +157,7 @@ final readonly class ProcessWhatsAppMessageAction
      * @param  array<string, mixed>  $classification
      * @param  array<string, mixed>  $context
      */
-    private function createApprovalProposal(WhatsAppMessage $message, array $classification, array $context): ?\Modules\AiAssistant\Models\AiActionProposal
+    private function createApprovalProposal(WhatsAppMessage $message, array $classification, array $context): ?AiActionProposal
     {
         $approverId = $this->resolveApproverId();
         if ($approverId === null) {
@@ -156,9 +165,9 @@ final readonly class ProcessWhatsAppMessageAction
         }
 
         $thread = $this->threadFor($message, $approverId, $context);
-        $action = is_array($classification['proposed_action'] ?? null) ? $classification['proposed_action'] : [];
+        $action = $this->stringKeyed($classification['proposed_action'] ?? null);
         $type = $this->proposalType($action);
-        $payload = is_array($action['payload'] ?? null) ? $action['payload'] : [];
+        $payload = $this->stringKeyed($action['payload'] ?? null);
         $payload['whatsapp_message_id'] = (int) $message->id;
         $payload['source'] = 'whatsapp';
 
@@ -222,6 +231,9 @@ final readonly class ProcessWhatsAppMessageAction
      */
     private function threadFor(WhatsAppMessage $message, int $approverId, array $context): AiThread
     {
+        $conversation = $message->conversation;
+        $phoneE164 = $conversation instanceof WhatsAppConversation ? (string) $conversation->phone_e164 : '';
+
         /** @var AiThread|null $existing */
         $existing = AiThread::query()
             ->where('created_by_user_id', $approverId)
@@ -246,7 +258,7 @@ final readonly class ProcessWhatsAppMessageAction
             'meta' => [
                 'source' => 'whatsapp',
                 'conversation_id' => (int) $message->conversation_id,
-                'phone_e164' => (string) $message->conversation->phone_e164,
+                'phone_e164' => $phoneE164,
             ],
         ]);
 
@@ -310,5 +322,24 @@ final readonly class ProcessWhatsAppMessageAction
         $int = (int) $value;
 
         return $int > 0 ? $int : null;
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    private function stringKeyed(mixed $value): array
+    {
+        if (! is_array($value)) {
+            return [];
+        }
+
+        $result = [];
+        foreach ($value as $key => $item) {
+            if (is_string($key)) {
+                $result[$key] = $item;
+            }
+        }
+
+        return $result;
     }
 }

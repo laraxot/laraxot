@@ -11,27 +11,28 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\WorkOrder\Actions\ChangeWorkOrderStatusAction;
+use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderStatus;
 use Modules\WorkOrder\Models\WorkOrderStatusEvent;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class StatusEventsRelationManager extends RelationManager
+final class StatusEventsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'statusEvents';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('work_orders.statuses');
     }
 
-    public function form(Schema $schema): Schema
+    public function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Select::make('to_status_id')
                 ->label(__('work_orders.fields.to_status'))
                 ->options(fn () => WorkOrderStatus::query()->orderBy('sort_order')->pluck('name', 'id')->all())
@@ -42,7 +43,7 @@ final class StatusEventsRelationManager extends RelationManager
             Textarea::make('note')
                 ->label(__('work_orders.fields.notes'))
                 ->columnSpanFull(),
-        ])->columns(2);
+        ];
     }
 
     public function table(Table $table): Table
@@ -74,14 +75,14 @@ final class StatusEventsRelationManager extends RelationManager
                             ? CarbonImmutable::parse((string) $data['changed_at'])
                             : null;
 
-                        /** @var \Modules\WorkOrder\Models\WorkOrder $workOrder */
+                        /** @var WorkOrder $workOrder */
                         $workOrder = $this->getOwnerRecord();
 
                         return app(ChangeWorkOrderStatusAction::class)->execute(
                             workOrder: $workOrder,
                             toStatusId: (int) $data['to_status_id'],
-                            changedByUserId: Auth::id(),
-                            note: $data['note'] ?? null,
+                            changedByUserId: (($authId = Auth::id()) !== null ? (int) $authId : null),
+                            note: isset($data['note']) ? (string) $data['note'] : null,
                             changedAt: $changedAt,
                         );
                     }),
@@ -94,4 +95,3 @@ final class StatusEventsRelationManager extends RelationManager
             ]);
     }
 }
-

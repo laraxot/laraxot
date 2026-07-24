@@ -1,0 +1,55 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'navigation' => 'Commesse',
+    'work_order' => 'Commessa',
+    'work_orders' => 'Commesse',
+    'activities' => 'Attività',
+    'assignments' => 'Assegnazioni',
+    'statuses' => 'Stati',
+    'fields' => [
+        'code' => 'Codice',
+        'title' => 'Titolo',
+        'description' => 'Descrizione',
+        'customer' => 'Cliente',
+        'site' => 'Sede',
+        'status' => 'Stato',
+        'primary_contact' => 'Referente Principale',
+        'scheduled_at' => 'Programmata il',
+        'started_at' => 'Iniziata il',
+        'completed_at' => 'Completata il',
+        'opened_at' => 'Aperta il',
+        'assigned_to' => 'Assegnata a',
+        'assigned_at' => 'Assegnata il',
+        'role' => 'Ruolo',
+        'type' => 'Tipo',
+        'body' => 'Descrizione',
+        'occurred_at' => 'Avvenuto il',
+        'from_status' => 'Da Stato',
+        'to_status' => 'A Stato',
+        'changed_at' => 'Cambiato il',
+        'notes' => 'Note',
+        'report_format' => 'Formato Report',
+        'report_from' => 'Report Dal',
+        'report_to' => 'Report Al',
+    ],
+    'activity_types' => [
+        'note' => 'Nota',
+        'status' => 'Cambio Stato',
+    ],
+    'effort' => [
+        'hint' => 'Stima basata sui minuti pianificati rispetto a quelli effettivi.',
+        'not_planned' => 'Non pianificato',
+        'planned_minutes' => 'Minuti Pianificati',
+        'variance' => 'Scostamento',
+        'within_budget' => 'Entro il budget',
+        'over_budget' => 'Oltre il budget',
+    ],
+    'actions' => [
+        'download_pdf' => 'Scarica PDF',
+        'export_report' => 'Esporta Report',
+        'restore_cascade' => 'Ripristina Commessa e Dati Collegati',
+    ],
+];

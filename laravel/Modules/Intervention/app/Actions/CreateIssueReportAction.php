@@ -7,9 +7,12 @@ namespace Modules\Intervention\Actions;
 use Carbon\CarbonImmutable;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\IssueReport;
+use Spatie\QueueableAction\QueueableAction;
 
 final class CreateIssueReportAction
 {
+    use QueueableAction;
+
     public function execute(Intervention $intervention, int $createdByUserId, string $body, ?CarbonImmutable $createdAt = null): IssueReport
     {
         $createdAt = $createdAt ?? CarbonImmutable::now();

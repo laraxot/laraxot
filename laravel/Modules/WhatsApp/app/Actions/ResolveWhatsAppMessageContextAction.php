@@ -8,14 +8,17 @@ use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
 use Modules\Intervention\Models\Intervention;
-use Modules\WhatsApp\Support\PhoneNumberNormalizer;
 use Modules\WhatsApp\Models\WhatsAppContactIdentity;
 use Modules\WhatsApp\Models\WhatsAppConversation;
 use Modules\WhatsApp\Models\WhatsAppMessage;
+use Modules\WhatsApp\Support\PhoneNumberNormalizer;
 use Modules\WorkOrder\Models\WorkOrder;
+use Spatie\QueueableAction\QueueableAction;
 
-final readonly class ResolveWhatsAppMessageContextAction
+final class ResolveWhatsAppMessageContextAction
 {
+    use QueueableAction;
+
     public function __construct(private PhoneNumberNormalizer $normalizer) {}
 
     /**
@@ -41,7 +44,7 @@ final readonly class ResolveWhatsAppMessageContextAction
                 ->orderByDesc('updated_at')
                 ->limit(5)
                 ->get()
-            : collect();
+            : WorkOrder::query()->whereRaw('1 = 0')->get();
 
         $interventions = $workOrders->isNotEmpty()
             ? Intervention::query()
@@ -51,7 +54,7 @@ final readonly class ResolveWhatsAppMessageContextAction
                 ->orderByDesc('updated_at')
                 ->limit(5)
                 ->get()
-            : collect();
+            : Intervention::query()->whereRaw('1 = 0')->get();
 
         $conversationHistory = $conversation->messages()
             ->orderByDesc('created_at')

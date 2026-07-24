@@ -7,14 +7,16 @@ namespace Modules\Intervention\Support;
 use Symfony\Component\HtmlSanitizer\HtmlSanitizerConfig;
 use Symfony\Component\HtmlSanitizer\Visitor\AttributeSanitizer\AttributeSanitizerInterface;
 
+use function Safe\preg_match;
+
 final class DailyNoteStyleAttributeSanitizer implements AttributeSanitizerInterface
 {
-    public function getSupportedElements(): ?array
+    public function getSupportedElements(): array
     {
         return ['span'];
     }
 
-    public function getSupportedAttributes(): ?array
+    public function getSupportedAttributes(): array
     {
         return ['style'];
     }

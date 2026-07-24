@@ -8,6 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\User;
 
+/**
+ * @property int $id
+ * @property string $key
+ * @property array<string,mixed>|null $value_json
+ * @property int|null $updated_by_user_id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ */
 final class PlatformSetting extends Model
 {
     protected $table = 'platform_settings';

@@ -8,11 +8,14 @@ use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Storage;
 use Modules\Compliance\Models\ComplianceDocument;
 use Modules\Document\Models\Media;
+use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\json_decode;
 
 final class AnalyzeComplianceDocumentWithOpenAiAction
 {
+    use QueueableAction;
+
     /**
      * @return array<string, mixed>
      */

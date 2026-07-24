@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\HR\Filament\Resources;
 
+use App\Support\AccountFeatures;
 use App\Support\Concerns\HasAccountFeatureVisibility;
 use Filament\Actions\Action;
 use Filament\Actions\DeleteBulkAction;
@@ -12,10 +13,8 @@ use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
-use Filament\Resources\Resource;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
@@ -26,8 +25,9 @@ use Modules\HR\Actions\ApproveAbsenceRequestAction;
 use Modules\HR\Actions\RejectAbsenceRequestAction;
 use Modules\HR\Filament\Resources\AbsenceRequestResource\Pages;
 use Modules\HR\Models\AbsenceRequest;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class AbsenceRequestResource extends Resource
+final class AbsenceRequestResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 
@@ -47,9 +47,18 @@ final class AbsenceRequestResource extends Resource
 
     private const ACCOUNT_FEATURE_OPERATOR = 'operator.hr';
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('hr.navigation');
+    }
+
+    protected static function isAvailableInCurrentPanel(): bool
+    {
+        return AccountFeatures::currentPanelAllowsFeature(
+            Auth::user(),
+            adminFeature: self::ACCOUNT_FEATURE_ADMIN,
+            operatorFeature: self::ACCOUNT_FEATURE_OPERATOR,
+        );
     }
 
     public static function getModelLabel(): string
@@ -62,9 +71,9 @@ final class AbsenceRequestResource extends Resource
         return __('hr.absence_requests');
     }
 
-    public static function form(Schema $schema): Schema
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
@@ -102,7 +111,7 @@ final class AbsenceRequestResource extends Resource
                         ->columnSpanFull(),
                 ])
                 ->columns(2),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -224,4 +233,3 @@ final class AbsenceRequestResource extends Resource
         return self::ABSENCE_TYPE_ALIASES[$normalized] ?? $normalized;
     }
 }
-

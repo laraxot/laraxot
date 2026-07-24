@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\AiAssistant\Speech;
 
+use function Safe\preg_match;
+use function Safe\preg_replace;
+use function Safe\preg_split;
+
 /**
  * Turns an assistant's markdown answer into a short, plain, speakable summary
  * for text-to-speech. Structured content (tables, code blocks, lists markers,
@@ -34,7 +38,7 @@ final class BuildSpokenSummaryAction
         $inFence = false;
 
         foreach ($lines as $line) {
-            $trimmed = trim($line);
+            $trimmed = trim(is_string($line) ? $line : (string) $line);
 
             // Toggle fenced code blocks and drop their content.
             if (str_starts_with($trimmed, '```')) {
@@ -105,7 +109,12 @@ final class BuildSpokenSummaryAction
     private function limit(string $text): string
     {
         $sentences = preg_split('/(?<=[.!?])\s+/', $text) ?: [$text];
-        $summary = trim(implode(' ', array_slice($sentences, 0, self::MAX_SENTENCES)));
+        $selected = array_slice($sentences, 0, self::MAX_SENTENCES);
+        $stringSentences = array_values(array_filter(
+            $selected,
+            static fn (mixed $sentence): bool => is_string($sentence) && trim($sentence) !== '',
+        ));
+        $summary = trim(implode(' ', $stringSentences));
 
         if (mb_strlen($summary) <= self::MAX_CHARS) {
             return $summary;

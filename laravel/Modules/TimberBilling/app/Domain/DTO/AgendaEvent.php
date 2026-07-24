@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Domain\DTO;
 
-use Modules\Quotation\Domain\ValueObjects\Money;
+use Modules\Quotation\DTO\Money;
 
 final readonly class AgendaEvent
 {

@@ -4,21 +4,43 @@ declare(strict_types=1);
 
 namespace Modules\Quotation\Models;
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
-use Modules\Document\Models\Media;
+use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 /**
  * Sopralluogo in loco: rilievo con foto, video e note audio da cui nasce il preventivo.
+ *
+ * Allegati gestiti via Spatie MediaLibrary (collections: photos, videos,
+ * voice_notes, documents) — non tramite il morph custom di Documents.
+ *
+ * @property int $id
+ * @property string|null $code
+ * @property int $customer_id
+ * @property int|null $customer_site_id
+ * @property int|null $work_order_id
+ * @property int|null $quotation_id
+ * @property int|null $performed_by_user_id
+ * @property string|null $title
+ * @property string|null $notes
+ * @property string $status_code
+ * @property Carbon|null $scheduled_at
+ * @property Carbon|null $performed_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
  */
-final class SiteSurvey extends Model
+final class SiteSurvey extends BaseModel implements HasMedia
 {
+    use InteractsWithMedia;
     use SoftDeletes;
 
     protected $table = 'site_surveys';
@@ -66,32 +88,26 @@ final class SiteSurvey extends Model
         return $this->belongsTo(User::class, 'performed_by_user_id');
     }
 
-    /** @return MorphMany<Media, $this> */
-    public function media(): MorphMany
+    /** @return Collection<int, Media> */
+    public function photos(): Collection
     {
-        return $this->morphMany(Media::class, 'mediable');
+        return $this->getMedia('photos');
     }
 
-    /** @return MorphMany<Media, $this> */
-    public function photos(): MorphMany
+    /** @return Collection<int, Media> */
+    public function videos(): Collection
     {
-        return $this->media()->where('kind', 'photo');
-    }
-
-    /** @return MorphMany<Media, $this> */
-    public function videos(): MorphMany
-    {
-        return $this->media()->where('kind', 'video');
+        return $this->getMedia('videos');
     }
 
     /**
      * Note vocali registrate in cantiere: spesso sono l'unica cosa che il tecnico
      * riesce davvero a lasciare mentre ha le mani occupate.
      *
-     * @return MorphMany<Media, $this>
+     * @return Collection<int, Media>
      */
-    public function voiceNotes(): MorphMany
+    public function voiceNotes(): Collection
     {
-        return $this->media()->where('kind', 'audio');
+        return $this->getMedia('voice_notes');
     }
 }

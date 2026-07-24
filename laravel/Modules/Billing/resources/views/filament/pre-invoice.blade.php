@@ -6,7 +6,7 @@
     l'emissione non si torna indietro.
 --}}
 @php
-    /** @var \Modules\Billing\Domain\DTO\PreInvoiceDraft $draft */
+    /** @var \Modules\Billing\Datas\PreInvoiceDraft $draft */
     $money = fn (float $amount): string => '€ ' . number_format($amount, 2, ',', '.');
     $sourceClasses = [
         'labor' => 'bg-primary-50 text-primary-700 ring-primary-600/20 dark:bg-primary-500/10 dark:text-primary-300 dark:ring-primary-400/30',

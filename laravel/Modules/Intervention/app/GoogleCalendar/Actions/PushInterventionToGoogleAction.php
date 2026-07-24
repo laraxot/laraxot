@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\GoogleCalendar\Actions;
 
-use App\Models\User;
 use Carbon\CarbonImmutable;
 use Modules\Customer\Models\Customer;
 use Modules\Intervention\GoogleCalendar\Contracts\GoogleCalendarClient;
 use Modules\Intervention\GoogleCalendar\DTO\GoogleEventInput;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\UserGoogleCalendarSetting;
+use Modules\User\Models\User;
 use Throwable;
 
 /**
@@ -175,7 +175,11 @@ final class PushInterventionToGoogleAction
             return null;
         }
 
-        $parts = array_filter([$site->name, $site->address_line1, $site->city]);
+        $parts = array_values(array_filter([
+            is_string($site->name ?? null) ? $site->name : null,
+            is_string($site->getAttribute('address_line1')) ? (string) $site->getAttribute('address_line1') : null,
+            is_string($site->getAttribute('city')) ? (string) $site->getAttribute('city') : null,
+        ], static fn (?string $part): bool => $part !== null && $part !== ''));
 
         return $parts !== [] ? implode(', ', $parts) : null;
     }

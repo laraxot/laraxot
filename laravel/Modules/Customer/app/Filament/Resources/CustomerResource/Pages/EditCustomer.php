@@ -15,9 +15,9 @@ final class EditCustomer extends XotBaseEditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
-            Actions\RestoreAction::make(),
-            Actions\ForceDeleteAction::make(),
+            'delete' => Actions\DeleteAction::make(),
+            'restore' => Actions\RestoreAction::make(),
+            'forceDelete' => Actions\ForceDeleteAction::make(),
         ];
     }
 }

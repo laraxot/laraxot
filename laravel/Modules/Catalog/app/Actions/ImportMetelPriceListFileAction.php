@@ -6,9 +6,12 @@ namespace Modules\Catalog\Actions;
 
 use Illuminate\Support\Facades\DB;
 use Modules\Catalog\DTO\MetelArticleData;
-use Modules\Catalog\Support\MetelRecordParser;
 use Modules\Catalog\Models\MetelCatalog;
 use Modules\Catalog\Models\MetelCatalogItem;
+use Modules\Catalog\Support\MetelRecordParser;
+use Spatie\QueueableAction\QueueableAction;
+
+use function Safe\preg_split;
 
 /**
  * Imports/updates a METEL catalog from a price-list file. Supports both the
@@ -17,6 +20,8 @@ use Modules\Catalog\Models\MetelCatalogItem;
  */
 final class ImportMetelPriceListFileAction
 {
+    use QueueableAction;
+
     /**
      * @param  'auto'|'csv'|'fixed'  $format
      * @return array{imported: int, skipped: int}
@@ -27,13 +32,17 @@ final class ImportMetelPriceListFileAction
 
         $resolvedFormat = $format === 'auto' ? $parser->detectFormat($content) : $format;
 
-        $lines = preg_split('/\r\n|\r|\n/', $content) ?: [];
+        $lines = preg_split('/\r\n|\r|\n/', $content);
 
         $imported = 0;
         $skipped = 0;
 
         DB::transaction(function () use ($catalog, $lines, $resolvedFormat, $parser, &$imported, &$skipped): void {
             foreach ($lines as $line) {
+                if (! is_string($line)) {
+                    continue;
+                }
+
                 $article = $resolvedFormat === 'fixed'
                     ? $parser->parseFixedLine($line)
                     : $parser->parseCsvLine($line);

@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace Modules\Intervention\Filament\Resources\InterventionResource\Pages;
 
 use Filament\Actions;
-use Filament\Resources\Pages\EditRecord;
-use Modules\Intervention\Support\DailyNoteHtml;
 use Modules\Intervention\Filament\Concerns\ResolvesCalendarReturnUrl;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
+use Modules\Intervention\Support\DailyNoteHtml;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
-final class EditIntervention extends EditRecord
+final class EditIntervention extends XotBaseEditRecord
 {
     use ResolvesCalendarReturnUrl;
 
@@ -46,15 +46,15 @@ final class EditIntervention extends EditRecord
 
     protected function afterSave(): void
     {
-        if ($this->record instanceof \Modules\Intervention\Models\Intervention) {
-            InterventionResource::syncSupplementalData($this->record, $this->data);
+        if ($this->record instanceof Intervention) {
+            InterventionResource::syncSupplementalData($this->record, is_array($this->data) ? $this->data : []);
         }
     }
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make()
+            'delete' => Actions\DeleteAction::make()
                 ->successRedirectUrl(fn (): ?string => $this->getRequestedReturnUrl()),
         ];
     }

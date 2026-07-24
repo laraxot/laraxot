@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace Modules\Intervention\Actions;
 
 use Illuminate\Support\Facades\Date;
-use Modules\Intervention\Payments\ReportPaymentGatewayInterface;
+use Modules\Intervention\Contracts\ReportPaymentGatewayContract;
 use Modules\Intervention\Models\Intervention;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Confirms a checkout session with the provider and marks the matching
@@ -14,7 +15,9 @@ use Modules\Intervention\Models\Intervention;
  */
 final class ConfirmInterventionReportPaymentAction
 {
-    public function __construct(private readonly ReportPaymentGatewayInterface $gateway) {}
+    use QueueableAction;
+
+    public function __construct(private readonly ReportPaymentGatewayContract $gateway) {}
 
     public function execute(string $sessionId): bool
     {

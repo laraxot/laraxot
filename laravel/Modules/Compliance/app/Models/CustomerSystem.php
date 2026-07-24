@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Compliance\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
 use Modules\Document\Models\Media;
+use Modules\Xot\Models\XotBaseModel;
 
 /**
  * Impianto installato presso un cliente (videosorveglianza, quadro elettrico, fotovoltaico).
@@ -26,11 +27,11 @@ use Modules\Document\Models\Media;
  * @property string|null $model
  * @property string|null $serial_number
  * @property string|null $power_kw
- * @property \Carbon\CarbonInterface|null $installation_date
+ * @property CarbonInterface|null $installation_date
  * @property bool $is_active
  * @property string|null $notes
  */
-final class CustomerSystem extends Model
+final class CustomerSystem extends XotBaseModel
 {
     use SoftDeletes;
 

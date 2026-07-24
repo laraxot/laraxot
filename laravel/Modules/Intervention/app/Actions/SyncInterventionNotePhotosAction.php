@@ -4,13 +4,17 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Actions;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Storage;
 use Modules\Document\Actions\CreateMediaFromStoredFileAction;
 use Modules\Document\Models\Media;
 use Modules\Intervention\Models\Intervention;
+use Spatie\QueueableAction\QueueableAction;
 
 final class SyncInterventionNotePhotosAction
 {
+    use QueueableAction;
+
     /**
      * @param  array<int, string>  $paths
      * @return array<int, Media>
@@ -23,7 +27,7 @@ final class SyncInterventionNotePhotosAction
             ->unique()
             ->values();
 
-        /** @var \Illuminate\Database\Eloquent\Collection<int, Media> $existingMedia */
+        /** @var Collection<int, Media> $existingMedia */
         $existingMedia = $intervention->media()
             ->where('kind', 'photo')
             ->where('meta->scope', 'intervention_note')
@@ -32,8 +36,9 @@ final class SyncInterventionNotePhotosAction
         /** @var array<string, Media> $existingMediaByPath */
         $existingMediaByPath = $existingMedia->all();
 
-        foreach ($existingMedia as $path => $media) {
-            if ($normalizedPaths->contains($path)) {
+        foreach ($existingMedia as $media) {
+            $storedPath = (string) $media->path;
+            if ($normalizedPaths->contains($storedPath)) {
                 continue;
             }
 

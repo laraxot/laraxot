@@ -5,11 +5,12 @@ declare(strict_types=1);
 namespace Modules\Quotation\Actions;
 
 use Modules\Customer\Models\Customer;
-use Modules\Quotation\Domain\DTO\DictatedQuotationItem;
-use Modules\Quotation\Domain\DTO\QuotationCustomerDraft;
-use Modules\Quotation\Domain\DTO\QuotationDraft;
+use Modules\Quotation\DTO\DictatedQuotationItem;
+use Modules\Quotation\DTO\QuotationCustomerDraft;
+use Modules\Quotation\DTO\QuotationDraft;
 use Modules\Quotation\Models\Quotation;
 use Modules\Quotation\Models\QuotationItem;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Turns an existing quotation into an editable draft to seed the "create a
@@ -19,6 +20,8 @@ use Modules\Quotation\Models\QuotationItem;
  */
 final class DuplicateQuotationAsDraftAction
 {
+    use QueueableAction;
+
     public function execute(Quotation $source): QuotationDraft
     {
         return new QuotationDraft(
@@ -27,8 +30,28 @@ final class DuplicateQuotationAsDraftAction
             notes: is_string($source->notes) && $source->notes !== '' ? $source->notes : null,
             items: $this->items($source),
             taxPercent: $source->tax_percent !== null ? (float) $source->tax_percent : null,
-            technicalParams: is_array($source->technical_params) ? $source->technical_params : [],
+            technicalParams: $this->technicalParams($source),
         );
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    private function technicalParams(Quotation $source): array
+    {
+        $params = $source->technical_params;
+        if (! is_array($params)) {
+            return [];
+        }
+
+        $result = [];
+        foreach ($params as $key => $value) {
+            if (is_string($key)) {
+                $result[$key] = $value;
+            }
+        }
+
+        return $result;
     }
 
     private function customerDraft(Quotation $source): ?QuotationCustomerDraft
@@ -44,11 +67,16 @@ final class DuplicateQuotationAsDraftAction
             taxCode: $customer->tax_code,
             email: $customer->email,
             phone: $customer->phone,
-            addressLine1: $customer->address_line1,
+            addressLine1: $this->nullableString($customer->getAttribute('address_line1')),
             city: $customer->city,
-            postalCode: $customer->postal_code,
-            province: $customer->province,
+            postalCode: $this->nullableString($customer->getAttribute('postal_code')),
+            province: $this->nullableString($customer->getAttribute('province')),
         );
+    }
+
+    private function nullableString(mixed $value): ?string
+    {
+        return is_string($value) && $value !== '' ? $value : null;
     }
 
     /**

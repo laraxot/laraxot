@@ -15,12 +15,14 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
+use Modules\PublicProcurement\Models\PublicProcurementContract;
 
 final class MeasurementsRelationManager extends RelationManager
 {
     protected static string $relationship = 'measurements';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return 'Libretto misure';
     }
@@ -30,7 +32,15 @@ final class MeasurementsRelationManager extends RelationManager
         return $schema->components([
             Select::make('price_item_id')
                 ->label('Voce computo')
-                ->options(fn (): array => $this->getOwnerRecord()->priceItems()->pluck('description', 'id')->all())
+                ->options(function (): array {
+                    $contract = $this->getOwnerRecord();
+
+                    if (! $contract instanceof PublicProcurementContract) {
+                        return [];
+                    }
+
+                    return $contract->priceItems()->pluck('description', 'id')->all();
+                })
                 ->searchable(),
             Select::make('status')->label('Stato')->options(['draft' => 'Bozza', 'approved' => 'Approvata', 'rejected' => 'Respinta'])->default('draft'),
             DatePicker::make('measured_on')->label('Data misura'),

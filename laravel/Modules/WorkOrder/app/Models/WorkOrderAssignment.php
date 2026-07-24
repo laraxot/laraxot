@@ -4,11 +4,21 @@ declare(strict_types=1);
 
 namespace Modules\WorkOrder\Models;
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
+use Modules\User\Models\User;
 
-final class WorkOrderAssignment extends Model
+/**
+ * @property int $id
+ * @property int $work_order_id
+ * @property int $user_id
+ * @property string|null $role
+ * @property int|null $assigned_by_user_id
+ * @property Carbon|null $assigned_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ */
+final class WorkOrderAssignment extends BaseModel
 {
     protected $table = 'work_order_assignments';
 
@@ -41,4 +51,3 @@ final class WorkOrderAssignment extends Model
         return $this->belongsTo(User::class, 'assigned_by_user_id');
     }
 }
-

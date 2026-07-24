@@ -14,20 +14,22 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Modules\Billing\Filament\Resources\InvoiceResource\Pages;
 use Modules\Billing\Filament\Resources\InvoiceResource\RelationManagers\WorkOrdersRelationManager;
 use Modules\Billing\Models\Invoice;
+use Modules\User\Models\User;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class InvoiceResource extends Resource
+final class InvoiceResource extends XotBaseResource
 {
     protected static ?string $model = Invoice::class;
 
@@ -43,7 +45,7 @@ final class InvoiceResource extends Resource
         return self::isAvailableInCurrentPanel() && parent::canViewAny();
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('billing.navigation');
     }
@@ -71,7 +73,7 @@ final class InvoiceResource extends Resource
         return parent::canCreate();
     }
 
-    public static function canEdit($record): bool
+    public static function canEdit(Model $record): bool
     {
         if (! self::isAvailableInCurrentPanel()) {
             return false;
@@ -84,14 +86,17 @@ final class InvoiceResource extends Resource
         return parent::canEdit($record);
     }
 
-    public static function canView($record): bool
+    public static function canView(Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && parent::canView($record);
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<int, Component>
+     */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
@@ -120,6 +125,7 @@ final class InvoiceResource extends Resource
                             if (! blank($customerId)) {
                                 $q->where('customer_id', $customerId);
                             }
+
                             return $q
                                 ->limit(200)
                                 ->get(['id', 'code', 'title'])
@@ -141,7 +147,7 @@ final class InvoiceResource extends Resource
                         ->columnSpanFull(),
                 ])
                 ->columns(2),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -195,7 +201,7 @@ final class InvoiceResource extends Resource
         $query = parent::getEloquentQuery();
 
         if (request()->is('customer/*')) {
-            /** @var \App\Models\User|null $user */
+            /** @var User|null $user */
             $user = Auth::user();
             $customerId = is_object($user) ? (int) ($user->customer_id ?? 0) : 0;
             if ($customerId > 0) {
@@ -237,4 +243,3 @@ final class InvoiceResource extends Resource
         );
     }
 }
-

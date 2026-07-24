@@ -4,14 +4,32 @@ declare(strict_types=1);
 
 namespace Modules\Production\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
 use Modules\Catalog\Models\Product;
+use Modules\Production\Database\Factories\ProductionOrderFactory;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Models\XotBaseModel;
 
-final class ProductionOrder extends Model
+/**
+ * @property int $id
+ * @property string|null $code
+ * @property int $product_id
+ * @property int $quantity
+ * @property string $status
+ * @property int|null $work_order_id
+ * @property string|null $notes
+ * @property Carbon|null $due_at
+ *
+ * @method static ProductionOrderFactory factory($count = null, $state = [])
+ */
+final class ProductionOrder extends XotBaseModel
 {
+    /** @use HasFactory<ProductionOrderFactory> */
+    use HasFactory;
+
     protected $table = 'production_orders';
 
     /** @var array<int, string> */
@@ -43,4 +61,3 @@ final class ProductionOrder extends Model
         return $this->hasMany(ProductionPhase::class, 'production_order_id');
     }
 }
-

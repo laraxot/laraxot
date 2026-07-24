@@ -8,6 +8,7 @@ use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Storage;
 use Modules\Document\Models\Media;
 use Modules\Intervention\Models\Intervention;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Builds the data for the public, client-facing intervention report page
@@ -15,6 +16,8 @@ use Modules\Intervention\Models\Intervention;
  */
 final class GetInterventionReportPublicDataAction
 {
+    use QueueableAction;
+
     /**
      * @return array{
      *   id: int,
@@ -40,7 +43,7 @@ final class GetInterventionReportPublicDataAction
     public function execute(Intervention $intervention): array
     {
         $intervention->loadMissing([
-            'workOrder.customer', 'customer', 'performedBy', 'assignedUsers', 'materialLines', 'media', 'signatures.media',
+            'workOrder.customer', 'customer', 'performedBy', 'assignedUsers', 'materialLines', 'media', 'signatures',
         ]);
 
         $operator = $intervention->assignedUsers->pluck('name')->filter()->implode(', ');
@@ -145,9 +148,17 @@ final class GetInterventionReportPublicDataAction
 
     private function signatureUrl(Intervention $intervention): ?string
     {
-        $media = $intervention->signatures->sortByDesc('id')->first()?->media;
+        $signature = $intervention->signatures->sortByDesc('id')->first();
+        if ($signature === null || ! is_string($signature->path) || $signature->path === '') {
+            return null;
+        }
 
-        return $media !== null ? $this->mediaUrl($media) : null;
+        $disk = Storage::disk($signature->disk ?? 'public');
+        if (! $disk->exists($signature->path)) {
+            return null;
+        }
+
+        return $disk->url($signature->path);
     }
 
     private function mediaUrl(Media $media): ?string

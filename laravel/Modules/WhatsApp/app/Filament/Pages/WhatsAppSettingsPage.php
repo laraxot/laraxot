@@ -83,7 +83,7 @@ final class WhatsAppSettingsPage extends Page
         return self::shouldRegisterNavigation() && Gate::allows('manage-whatsapp-ai');
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('platform.settings');
     }
@@ -227,7 +227,7 @@ final class WhatsAppSettingsPage extends Page
             ->orderBy('name')
             ->limit(100)
             ->pluck('name', 'id')
-            ->mapWithKeys(fn (string $name, int|string $id): array => [(int) $id => $name])
+            ->mapWithKeys(fn (mixed $name, int|string $id): array => [(int) $id => (string) $name])
             ->all();
     }
 

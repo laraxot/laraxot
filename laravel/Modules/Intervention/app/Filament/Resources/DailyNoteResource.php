@@ -15,20 +15,22 @@ use Filament\Forms\Components\RichEditor\TextColor;
 use Filament\Forms\Components\Select;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Components\ViewEntry;
-use Filament\Resources\Resource;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Intervention\Filament\Resources\DailyNoteResource\Pages;
 use Modules\Intervention\Models\DailyNote;
 use Modules\Platform\Models\PlatformSetting;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class DailyNoteResource extends Resource
+use function Safe\preg_replace;
+
+final class DailyNoteResource extends XotBaseResource
 {
     protected static ?string $model = DailyNote::class;
 
@@ -100,7 +102,7 @@ final class DailyNoteResource extends Resource
             && parent::canCreate();
     }
 
-    public static function canEdit($record): bool
+    public static function canEdit(Model $record): bool
     {
         return self::isEnabledByPlatform() && AccountFeatures::currentPanelAllowsFeature(
             Auth::user(),
@@ -113,7 +115,7 @@ final class DailyNoteResource extends Resource
             && parent::canEdit($record);
     }
 
-    public static function canView($record): bool
+    public static function canView(Model $record): bool
     {
         return self::isEnabledByPlatform() && AccountFeatures::currentPanelAllowsFeature(
             Auth::user(),
@@ -126,7 +128,7 @@ final class DailyNoteResource extends Resource
             && parent::canView($record);
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('interventions.navigation');
     }
@@ -141,9 +143,9 @@ final class DailyNoteResource extends Resource
         return __('interventions.daily_notes');
     }
 
-    public static function form(Schema $schema): Schema
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
@@ -154,7 +156,7 @@ final class DailyNoteResource extends Resource
                             ->searchable()
                             ->preload()
                             ->required()
-                            ->default(fn (): ?int => request()->is('operator/*') ? Auth::id() : null)
+                            ->default(fn (): ?int => request()->is('operator/*') && Auth::id() !== null ? (int) Auth::id() : null)
                             ->disabled(fn (): bool => request()->is('operator/*'))
                             ->dehydrated(),
                         DatePicker::make('note_date')
@@ -194,13 +196,19 @@ final class DailyNoteResource extends Resource
                         ->columnSpanFull(),
                 ])
                 ->columns(2),
-        ]);
+        ];
     }
 
-    public static function infolist(Schema $schema): Schema
+    /**
+     * @return array<string, Section>
+     */
+    public static function getInfolistSchema(): array
     {
-        return $schema->components([
-            Section::make()
+        /** @var view-string $dailyNoteView */
+        $dailyNoteView = 'interventions::filament.infolists.entries.daily-note-display';
+
+        return [
+            'main' => Section::make()
                 ->columnSpanFull()
                 ->components([
                     Grid::make(2)->components([
@@ -212,11 +220,11 @@ final class DailyNoteResource extends Resource
                     ]),
                     ViewEntry::make('daily_note_display')
                         ->hiddenLabel()
-                        ->view('interventions::filament.infolists.entries.daily-note-display')
+                        ->view($dailyNoteView)
                         ->columnSpanFull(),
                 ])
                 ->columns(2),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

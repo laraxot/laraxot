@@ -12,7 +12,7 @@ use Filament\Tables\Contracts\HasTable;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
-use Modules\Inventory\Queries\GetInventoryOverviewRowsQuery;
+use Modules\Inventory\Actions\GetInventoryOverviewRowsAction;
 use Modules\Inventory\Models\InventoryOverviewRow;
 use Modules\Inventory\Models\Warehouse;
 use Modules\Platform\Models\PlatformSetting;
@@ -41,7 +41,7 @@ final class InventoryOverview extends Page implements HasTable
         return self::isAvailableInCurrentPanel() && self::isEnabledByPlatform();
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('inventory.navigation');
     }
@@ -149,9 +149,10 @@ final class InventoryOverview extends Page implements HasTable
         ];
     }
 
+    /** @return Builder<InventoryOverviewRow> */
     private function overviewRowsQuery(): Builder
     {
-        $rows = app(GetInventoryOverviewRowsQuery::class)->execute(
+        $rows = app(GetInventoryOverviewRowsAction::class)->execute(
             groupByLocation: self::storageZonesEnabled(),
         );
 

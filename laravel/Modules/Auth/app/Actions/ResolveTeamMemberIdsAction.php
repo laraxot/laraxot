@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Auth\Actions;
 
+use Spatie\QueueableAction\QueueableAction;
+
 /**
  * Espande la gerarchia degli account: dato un responsabile restituisce se stesso
  * e tutti i collaboratori sotto di lui, a qualsiasi livello di profondita'.
@@ -13,6 +15,8 @@ namespace Modules\Auth\Actions;
  */
 final class ResolveTeamMemberIdsAction
 {
+    use QueueableAction;
+
     /**
      * @param  array<int, array<int, int>>  $subordinatesByManager  manager_id => [user_id, ...]
      * @return array<int, int> id del responsabile e di tutti i suoi collaboratori

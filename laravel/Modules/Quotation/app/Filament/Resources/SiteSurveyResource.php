@@ -13,10 +13,9 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
+use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
@@ -27,22 +26,23 @@ use Modules\Quotation\Filament\Resources\SiteSurveyResource\RelationManagers\Att
 use Modules\Quotation\Models\Quotation;
 use Modules\Quotation\Models\SiteSurvey;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 /**
  * Sopralluoghi: il rilievo in loco da cui nasce il preventivo.
  */
-final class SiteSurveyResource extends Resource
+final class SiteSurveyResource extends XotBaseResource
 {
     protected static ?string $model = SiteSurvey::class;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-map-pin';
 
-    public static function getNavigationSort(): ?int
+    public static function getNavigationSort(): int
     {
         return 1;
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('site_surveys.navigation');
     }
@@ -78,9 +78,9 @@ final class SiteSurveyResource extends Resource
         };
     }
 
-    public static function form(Schema $schema): Schema
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make(__('site_surveys.sections.general'))
                 ->columnSpanFull()
                 ->components([
@@ -191,7 +191,7 @@ final class SiteSurveyResource extends Resource
                         ->helperText(__('site_surveys.hints.no_attachments'))
                         ->columnSpanFull(),
                 ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -200,7 +200,7 @@ final class SiteSurveyResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('code')
                     ->label(__('site_surveys.fields.code'))
-                    ->weight(\Filament\Support\Enums\FontWeight::Bold)
+                    ->weight(FontWeight::Bold)
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('title')

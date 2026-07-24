@@ -8,9 +8,12 @@ use Illuminate\Support\Facades\Storage;
 use Modules\Document\Actions\CreateMediaFromStoredFileAction;
 use Modules\EnergyBroker\Models\EnergyBrokerDocument;
 use Modules\EnergyBroker\Models\EnergyBrokerImportBatch;
+use Spatie\QueueableAction\QueueableAction;
 
 final class ImportEnergyBrokerDocumentsFromZipAction
 {
+    use QueueableAction;
+
     /**
      * @return array{batch: EnergyBrokerImportBatch, total: int, imported: int, failed: int, skipped: int}
      */
@@ -162,7 +165,7 @@ final class ImportEnergyBrokerDocumentsFromZipAction
             return;
         }
 
-        $storedPath = 'media/energy-broker/documents/' . str()->uuid() . '-' . basename($originalName);
+        $storedPath = 'media/energy-broker/documents/'.str()->uuid().'-'.basename($originalName);
         $source = fopen($extractedPath, 'rb');
         if ($source === false) {
             return;

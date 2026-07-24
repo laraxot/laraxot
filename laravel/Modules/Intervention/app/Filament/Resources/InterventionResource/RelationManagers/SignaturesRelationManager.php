@@ -10,39 +10,39 @@ use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Forms\Components\Select;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Signature\Actions\StoreSignatureForModelAction;
 use Modules\Signature\Models\Signature;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class SignaturesRelationManager extends RelationManager
+final class SignaturesRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'signatures';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('signatures.signatures');
     }
 
-    public function form(Schema $schema): Schema
+    public function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Select::make('user_id')
                 ->label(__('signatures.fields.user'))
                 ->relationship('user', 'name')
                 ->searchable()
                 ->preload()
                 ->required()
-                ->default(fn (): ?int => Auth::id()),
+                ->default(fn (): ?int => Auth::id() !== null ? (int) Auth::id() : null),
             CanvasPad::make('payload.image')
                 ->label(__('signatures.fields.image'))
                 ->required()
                 ->height(220)
                 ->columnSpanFull(),
-        ])->columns(2);
+        ];
     }
 
     public function table(Table $table): Table
@@ -57,7 +57,7 @@ final class SignaturesRelationManager extends RelationManager
                     ->dateTime()
                     ->sortable()
                     ->toggleable(),
-                Tables\Columns\ImageColumn::make('media.path')
+                Tables\Columns\ImageColumn::make('path')
                     ->label(__('signatures.fields.image'))
                     ->disk('public')
                     ->height(60)
@@ -70,14 +70,20 @@ final class SignaturesRelationManager extends RelationManager
             ])
             ->headerActions([
                 CreateAction::make()
-                    ->using(function (array $data, RelationManager $livewire): Signature {
+                    ->using(function (array $data, self $livewire): Signature {
                         $userId = (int) ($data['user_id'] ?? Auth::id());
+                        $rawPayload = is_array($data['payload'] ?? null) ? $data['payload'] : [];
+                        $image = is_string($rawPayload['image'] ?? null) ? $rawPayload['image'] : '';
                         /** @var array<string, mixed> $payload */
-                        $payload = is_array($data['payload'] ?? null) ? $data['payload'] : [];
-                        unset($payload['image']);
+                        $payload = [];
+                        foreach ($rawPayload as $key => $value) {
+                            if (is_string($key) && $key !== 'image') {
+                                $payload[$key] = $value;
+                            }
+                        }
 
                         return app(StoreSignatureForModelAction::class)->execute(
-                            dataUrl: (string) ($data['payload']['image'] ?? ''),
+                            dataUrl: $image,
                             signableType: $livewire->getOwnerRecord()::class,
                             signableId: (int) $livewire->getOwnerRecord()->getKey(),
                             userId: $userId,
@@ -91,19 +97,17 @@ final class SignaturesRelationManager extends RelationManager
                     ->label(__('documents.actions.open'))
                     ->icon('heroicon-o-eye')
                     ->color('gray')
-                    ->url(fn ($record): string => $record->media?->path
-                        ? asset('storage/'.ltrim((string) $record->media->path, '/'))
-                        : '#'
-                    )
+                    ->url(fn (Signature $record): string => is_string($record->path) && $record->path !== ''
+                        ? asset('storage/'.ltrim($record->path, '/'))
+                        : '#')
                     ->openUrlInNewTab(),
                 Action::make('download')
                     ->label(__('documents.actions.download'))
                     ->icon('heroicon-o-arrow-down-tray')
                     ->color('gray')
-                    ->url(fn ($record): string => $record->media?->path
-                        ? asset('storage/'.ltrim((string) $record->media->path, '/'))
-                        : '#'
-                    )
+                    ->url(fn (Signature $record): string => is_string($record->path) && $record->path !== ''
+                        ? asset('storage/'.ltrim($record->path, '/'))
+                        : '#')
                     ->openUrlInNewTab(),
                 DeleteAction::make(),
             ])

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Compliance\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Models\XotBaseModel;
 
-final class WorkOrderReadinessItem extends Model
+final class WorkOrderReadinessItem extends XotBaseModel
 {
     protected $table = 'work_order_readiness_items';
 

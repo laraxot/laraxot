@@ -6,9 +6,12 @@ namespace Modules\Quotation\Actions;
 
 use Modules\Quotation\Models\Quotation;
 use Modules\Quotation\Models\QuotationTemplate;
+use Spatie\QueueableAction\QueueableAction;
 
 final class ApplyQuotationTemplateToQuotationAction
 {
+    use QueueableAction;
+
     public function execute(Quotation $quotation, QuotationTemplate $template): Quotation
     {
         foreach ($template->items()->orderBy('sort_order')->orderBy('id')->get() as $item) {

@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Modules\Email\Actions\PollEmailInboxAction;
 use Modules\Email\Inbox\EmailInboxClientInterface;
-use Modules\Email\Settings\EmailSettings;
 use Modules\Email\Models\EmailMessage;
+use Modules\Email\Settings\EmailSettings;
 use Modules\Platform\Models\PlatformSetting;
 
 final class EmailSettingsPage extends Page
@@ -82,7 +82,7 @@ final class EmailSettingsPage extends Page
         return self::shouldRegisterNavigation() && Gate::allows('manage-email-ai');
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return 'Comunicazioni';
     }
@@ -213,7 +213,7 @@ final class EmailSettingsPage extends Page
             ->orderBy('name')
             ->limit(100)
             ->pluck('name', 'id')
-            ->mapWithKeys(fn (string $name, int|string $id): array => [(int) $id => $name])
+            ->mapWithKeys(fn (mixed $name, int|string $id): array => [(int) $id => (string) $name])
             ->all();
     }
 

@@ -7,6 +7,7 @@ namespace Modules\Intervention\Actions;
 use Illuminate\Support\Str;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionReportShare;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Creates (or reuses) a public share link for an intervention's report PDF.
@@ -16,6 +17,8 @@ use Modules\Intervention\Models\InterventionReportShare;
  */
 final class CreateInterventionReportShareLinkAction
 {
+    use QueueableAction;
+
     public function execute(Intervention $intervention, ?int $userId = null): InterventionReportShare
     {
         $existing = InterventionReportShare::query()

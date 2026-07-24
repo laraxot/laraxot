@@ -7,13 +7,15 @@ namespace Modules\HR\Actions;
 use Modules\Document\Actions\CreateMediaFromStoredFileAction;
 use Modules\HR\Models\Employee;
 use Modules\HR\Models\EmployeeMedicalVisit;
+use Spatie\QueueableAction\QueueableAction;
 
-final readonly class AddEmployeeMedicalVisitAction
+final class AddEmployeeMedicalVisitAction
 {
+    use QueueableAction;
+
     public function __construct(
         private CreateMediaFromStoredFileAction $createMediaFromStoredFile,
-    ) {
-    }
+    ) {}
 
     public function execute(
         Employee $employee,
@@ -51,4 +53,3 @@ final readonly class AddEmployeeMedicalVisitAction
         return $visit;
     }
 }
-

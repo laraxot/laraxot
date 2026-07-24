@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\TimberBilling\Filament\Resources;
 
 use App\Support\AccountFeatures;
-use App\Timber\Models\TimberProduct;
 use Closure;
 use Filament\Actions\Action;
 use Filament\Actions\EditAction;
@@ -24,13 +23,14 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Modules\Catalog\Models\Product;
 use Modules\TimberBilling\Actions\GenerateTimberInvoicePdfAction;
 use Modules\TimberBilling\Actions\IssueTimberInvoiceAction;
 use Modules\TimberBilling\Actions\PrepareTimberEInvoiceAction;
 use Modules\TimberBilling\Actions\SendTimberInvoiceByEmailAction;
-use Modules\TimberBilling\Support\WhatsAppMessageLink;
 use Modules\TimberBilling\Filament\Resources\TimberInvoiceResource\Pages;
 use Modules\TimberBilling\Models\TimberInvoice;
+use Modules\TimberBilling\Support\WhatsAppMessageLink;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 final class TimberInvoiceResource extends Resource
@@ -133,7 +133,7 @@ final class TimberInvoiceResource extends Resource
                         ->schema([
                             Select::make('product_id')
                                 ->label('Prodotto')
-                                ->options(fn (): array => TimberProduct::query()
+                                ->options(fn (): array => Product::query()
                                     ->where('is_active', true)
                                     ->orderBy('description')
                                     ->pluck('description', 'id')
@@ -142,13 +142,15 @@ final class TimberInvoiceResource extends Resource
                                 ->preload()
                                 ->live()
                                 ->afterStateUpdated(function (Set $set, mixed $state): void {
-                                    $product = is_numeric($state) ? TimberProduct::query()->find($state) : null;
-                                    if ($product !== null) {
-                                        $set('description', $product->description);
-                                        $set('unit_of_measure', $product->unit_of_measure);
-                                        $set('unit_price', (float) ($product->priceForList('ben_b2b') ?? $product->last_cost ?? 0));
-                                        if (is_numeric($product->vat_rate_code)) {
-                                            $set('vat_rate', (float) $product->vat_rate_code);
+                                    $product = is_numeric($state) ? Product::query()->find($state) : null;
+                                    if ($product instanceof Product) {
+                                        $description = $product->getAttribute('description');
+                                        if (is_string($description) && $description !== '') {
+                                            $set('description', $description);
+                                        }
+                                        $unitPrice = $product->getAttribute('unit_price');
+                                        if (is_numeric($unitPrice)) {
+                                            $set('unit_price', (float) $unitPrice);
                                         }
                                     }
                                 })

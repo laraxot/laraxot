@@ -43,7 +43,7 @@ final class PublicProcurementContractResource extends Resource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-building-office-2';
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('public_procurement.navigation');
     }

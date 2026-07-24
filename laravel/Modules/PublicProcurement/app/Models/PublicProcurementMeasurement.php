@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\PublicProcurement\Models;
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Intervention\Models\Intervention;
+use Modules\User\Models\User;
+use Modules\Xot\Models\XotBaseModel;
 
-final class PublicProcurementMeasurement extends Model
+final class PublicProcurementMeasurement extends XotBaseModel
 {
     use SoftDeletes;
 

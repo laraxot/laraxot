@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\EnergyBroker\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\Xot\Models\XotBaseModel;
 
-final class EnergyBrokerSupplyHistory extends Model
+final class EnergyBrokerSupplyHistory extends XotBaseModel
 {
     protected $table = 'energy_broker_supply_histories';
 

@@ -4,20 +4,22 @@ declare(strict_types=1);
 
 namespace Modules\Billing\Actions;
 
-use Modules\Billing\Domain\Actions\ReconcileSupplierInvoiceAction;
-use Modules\Billing\Domain\DTO\ReconciliationDiscrepancy;
-use Modules\Billing\Domain\DTO\SupplierLine;
+use Modules\Billing\Datas\ReconciliationDiscrepancy;
+use Modules\Billing\Datas\SupplierLine;
 use Modules\Billing\Models\DeliveryNote;
 use Modules\Billing\Models\DeliveryNoteLine;
 use Modules\Billing\Models\SupplierInvoice;
 use Modules\Billing\Models\SupplierInvoiceLine;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Concilia una fattura fornitore con i DDT dello stesso fornitore e aggiorna lo
  * stato della fattura in base a quello che emerge.
  */
-final readonly class ReconcileSupplierInvoiceWithDeliveryNotesAction
+final class ReconcileSupplierInvoiceWithDeliveryNotesAction
 {
+    use QueueableAction;
+
     public function __construct(
         private ReconcileSupplierInvoiceAction $reconcileSupplierInvoice,
     ) {}

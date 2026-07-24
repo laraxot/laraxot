@@ -13,7 +13,7 @@ use Modules\Intervention\Actions\ConfirmInterventionReportPaymentAction;
 use Modules\Intervention\Actions\CreateInterventionReportCheckoutAction;
 use Modules\Intervention\Actions\GenerateInterventionReportPdfAction;
 use Modules\Intervention\Actions\GetInterventionReportPublicDataAction;
-use Modules\Intervention\Domain\Exceptions\ReportPaymentNotAvailableException;
+use Modules\Intervention\Exceptions\ReportPaymentNotAvailableException;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionReportShare;
 use Modules\Signature\Actions\StoreSignatureForModelAction;
@@ -25,7 +25,10 @@ final class PublicInterventionReportController extends Controller
     {
         $intervention = $this->resolveIntervention($token);
 
-        return view('interventions::reports.intervention-report-public', [
+        /** @var view-string $reportView */
+        $reportView = 'interventions::reports.intervention-report-public';
+
+        return view($reportView, [
             'report' => app(GetInterventionReportPublicDataAction::class)->execute($intervention),
             'pdfUrl' => route('interventions.report.public.pdf', ['token' => $token]),
             'payUrl' => route('interventions.report.public.pay', ['token' => $token]),

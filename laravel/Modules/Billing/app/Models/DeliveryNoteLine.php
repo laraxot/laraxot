@@ -4,10 +4,20 @@ declare(strict_types=1);
 
 namespace Modules\Billing\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
+use Modules\Xot\Models\XotBaseModel;
 
-final class DeliveryNoteLine extends Model
+/**
+ * @property int $id
+ * @property int $delivery_note_id
+ * @property string $description
+ * @property string $quantity
+ * @property string $unit_price
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ */
+final class DeliveryNoteLine extends XotBaseModel
 {
     protected $table = 'delivery_note_lines';
 

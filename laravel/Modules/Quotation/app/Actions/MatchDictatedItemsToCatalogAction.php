@@ -7,7 +7,10 @@ namespace Modules\Quotation\Actions;
 use Modules\Catalog\Actions\LinkMetelItemToProductAction;
 use Modules\Catalog\Models\MetelCatalogItem;
 use Modules\Catalog\Models\Product;
-use Modules\Quotation\Domain\DTO\DictatedQuotationItem;
+use Modules\Quotation\DTO\DictatedQuotationItem;
+use Spatie\QueueableAction\QueueableAction;
+
+use function Safe\preg_split;
 
 /**
  * Matches voice-dictated quotation items against the products catalog (fed by the
@@ -16,6 +19,8 @@ use Modules\Quotation\Domain\DTO\DictatedQuotationItem;
  */
 final class MatchDictatedItemsToCatalogAction
 {
+    use QueueableAction;
+
     /**
      * @param  list<DictatedQuotationItem>  $items
      * @return list<DictatedQuotationItem>
@@ -44,12 +49,12 @@ final class MatchDictatedItemsToCatalogAction
             return $item;
         }
 
-        $unitPrice = $product->unit_price !== null ? (float) $product->unit_price : null;
+        $unitPrice = $this->productUnitPrice($product);
 
         // Use the exact catalog article (name + price), so a matched line clearly
         // shows the real product from the listino/magazzino — not the dictated text.
         return new DictatedQuotationItem(
-            description: is_string($product->name) && $product->name !== '' ? $product->name : $item->description,
+            description: $this->productName($product, $item->description),
             quantity: $item->quantity,
             unitPrice: $unitPrice ?? $item->unitPrice,
             matchedProductId: (int) $product->id,
@@ -117,7 +122,11 @@ final class MatchDictatedItemsToCatalogAction
         $best = null;
         $bestScore = 0.0;
         foreach ($candidates as $product) {
-            foreach (preg_split('/\s+/', mb_strtolower((string) $product->name)) ?: [] as $word) {
+            $words = preg_split('/\s+/', mb_strtolower($this->productName($product, '')));
+            foreach ($words as $word) {
+                if (! is_string($word)) {
+                    continue;
+                }
                 if (mb_strlen($word) < 4) {
                     continue;
                 }
@@ -172,14 +181,31 @@ final class MatchDictatedItemsToCatalogAction
 
     private function longestWord(string $text): string
     {
-        $words = preg_split('/\s+/', $text) ?: [];
+        $words = preg_split('/\s+/', $text);
         $best = '';
         foreach ($words as $word) {
+            if (! is_string($word)) {
+                continue;
+            }
             if (mb_strlen($word) > mb_strlen($best)) {
                 $best = $word;
             }
         }
 
         return mb_strlen($best) >= 4 ? $best : '';
+    }
+
+    private function productName(Product $product, string $fallback): string
+    {
+        $name = $product->getAttribute('name');
+
+        return is_string($name) && $name !== '' ? $name : $fallback;
+    }
+
+    private function productUnitPrice(Product $product): ?float
+    {
+        $price = $product->getAttribute('unit_price');
+
+        return $price !== null ? (float) $price : null;
     }
 }

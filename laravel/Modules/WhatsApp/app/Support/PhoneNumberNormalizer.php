@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\WhatsApp\Support;
 
+use function Safe\preg_replace;
+
 final class PhoneNumberNormalizer
 {
     public function normalize(?string $value, string $defaultCountryPrefix = '+39'): ?string
@@ -15,7 +17,7 @@ final class PhoneNumberNormalizer
 
         $hasPlus = str_starts_with($raw, '+');
         $digits = preg_replace('/\D+/', '', $raw);
-        if (! is_string($digits) || $digits === '') {
+        if ($digits === '') {
             return null;
         }
 
@@ -24,7 +26,7 @@ final class PhoneNumberNormalizer
         }
 
         $defaultDigits = preg_replace('/\D+/', '', $defaultCountryPrefix);
-        $defaultDigits = is_string($defaultDigits) && $defaultDigits !== '' ? $defaultDigits : '39';
+        $defaultDigits = $defaultDigits !== '' ? $defaultDigits : '39';
 
         if (str_starts_with($digits, '00')) {
             return '+' . substr($digits, 2);

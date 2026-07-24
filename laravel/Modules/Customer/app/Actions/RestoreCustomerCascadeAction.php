@@ -7,9 +7,12 @@ namespace Modules\Customer\Actions;
 use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
+use Spatie\QueueableAction\QueueableAction;
 
 final class RestoreCustomerCascadeAction
 {
+    use QueueableAction;
+
     public function execute(Customer $customer): void
     {
         if (! $customer->trashed()) {

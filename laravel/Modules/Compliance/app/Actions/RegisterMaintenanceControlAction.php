@@ -8,6 +8,7 @@ use Carbon\CarbonImmutable;
 use Modules\Compliance\Models\Boiler;
 use Modules\Compliance\Models\HeatingSystem;
 use Modules\Compliance\Models\MaintenanceControl;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Records a maintenance or energy-efficiency (RCEE) control for a heating system,
@@ -17,6 +18,8 @@ use Modules\Compliance\Models\MaintenanceControl;
  */
 final class RegisterMaintenanceControlAction
 {
+    use QueueableAction;
+
     private const MAINTENANCE = 'maintenance';
 
     private const EFFICIENCY = 'efficiency_check';

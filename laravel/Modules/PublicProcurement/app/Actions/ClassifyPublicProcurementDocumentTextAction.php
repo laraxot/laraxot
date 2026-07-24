@@ -4,14 +4,18 @@ declare(strict_types=1);
 
 namespace Modules\PublicProcurement\Actions;
 
+use Spatie\QueueableAction\QueueableAction;
+
 final class ClassifyPublicProcurementDocumentTextAction
 {
+    use QueueableAction;
+
     /**
      * @return array{type: string, confidence: float, title: string, signals: array<int, string>}
      */
     public function execute(string $filename = '', string $text = ''): array
     {
-        $haystack = mb_strtolower($filename . ' ' . $text);
+        $haystack = mb_strtolower($filename.' '.$text);
         $rules = [
             'tender_notice' => ['bando', 'gara', 'procedura aperta', 'procedura negoziata', 'offerta economicamente'],
             'disciplinary' => ['disciplinare', 'criteri di aggiudicazione', 'requisiti di partecipazione'],

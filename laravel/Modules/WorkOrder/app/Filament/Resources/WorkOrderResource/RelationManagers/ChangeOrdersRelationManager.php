@@ -10,24 +10,24 @@ use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Components\Grid;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class ChangeOrdersRelationManager extends RelationManager
+final class ChangeOrdersRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'changeOrders';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('compliance.change_orders');
     }
 
-    public function form(Schema $schema): Schema
+    public function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Grid::make(3)->components([
                 TextInput::make('title')->label(__('compliance.fields.title'))->required()->maxLength(255),
                 TextInput::make('estimated_amount')->label(__('compliance.fields.estimated_amount'))->numeric()->prefix('EUR'),
@@ -41,7 +41,7 @@ final class ChangeOrdersRelationManager extends RelationManager
                 ]),
             ]),
             Textarea::make('description')->label(__('compliance.fields.description'))->columnSpanFull(),
-        ]);
+        ];
     }
 
     public function table(Table $table): Table

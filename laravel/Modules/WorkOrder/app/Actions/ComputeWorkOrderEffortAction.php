@@ -6,6 +6,7 @@ namespace Modules\WorkOrder\Actions;
 
 use Modules\WorkOrder\Domain\DTO\WorkOrderEffort;
 use Modules\WorkOrder\Models\WorkOrder;
+use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Calcola il consuntivo di una commessa sommando i minuti degli interventi e lo
@@ -13,6 +14,8 @@ use Modules\WorkOrder\Models\WorkOrder;
  */
 final class ComputeWorkOrderEffortAction
 {
+    use QueueableAction;
+
     public function execute(WorkOrder $workOrder): WorkOrderEffort
     {
         $actualMinutes = (int) $workOrder->interventions()->sum('work_minutes');

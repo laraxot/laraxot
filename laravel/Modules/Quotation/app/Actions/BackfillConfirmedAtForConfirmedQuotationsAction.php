@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace Modules\Quotation\Actions;
 
 use Illuminate\Support\Facades\DB;
+use Spatie\QueueableAction\QueueableAction;
 
 final class BackfillConfirmedAtForConfirmedQuotationsAction
 {
+    use QueueableAction;
+
     public function execute(): int
     {
         return (int) DB::table('quotations')

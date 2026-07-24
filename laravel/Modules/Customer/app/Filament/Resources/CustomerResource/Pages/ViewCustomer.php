@@ -8,6 +8,8 @@ use Carbon\CarbonImmutable;
 use Filament\Actions;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Radio;
+use Filament\Infolists\Components\Entry;
+use Filament\Schemas\Components\Component;
 use Modules\Customer\Actions\RestoreCustomerCascadeAction;
 use Modules\Customer\Filament\Resources\CustomerResource;
 use Modules\Customer\Models\Customer;
@@ -18,10 +20,18 @@ final class ViewCustomer extends XotBaseViewRecord
 {
     protected static string $resource = CustomerResource::class;
 
+    /**
+     * @return array<string, Component|Entry>
+     */
+    protected function getInfolistSchema(): array
+    {
+        return CustomerResource::getInfolistSchema();
+    }
+
     protected function getHeaderActions(): array
     {
         return [
-            Actions\Action::make('exportCustomerReport')
+            'exportCustomerReport' => Actions\Action::make('exportCustomerReport')
                 ->label('Rendicontazione')
                 ->icon('heroicon-o-document-chart-bar')
                 ->color('success')
@@ -47,7 +57,10 @@ final class ViewCustomer extends XotBaseViewRecord
                         ->required(),
                 ])
                 ->action(function (Customer $record, array $data): mixed {
-                    $format = (string) ($data['format'] ?? 'pdf');
+                    $format = match ((string) ($data['format'] ?? 'pdf')) {
+                        'docx' => 'docx',
+                        default => 'pdf',
+                    };
                     $from = CarbonImmutable::parse((string) $data['from'])->startOfDay();
                     $to = CarbonImmutable::parse((string) $data['to'])->endOfDay();
 
@@ -66,15 +79,23 @@ final class ViewCustomer extends XotBaseViewRecord
                         ['Content-Type' => $result['mime']],
                     );
                 }),
-            Actions\Action::make('restoreCascade')
+            'restoreCascade' => Actions\Action::make('restoreCascade')
                 ->label(__('customers.actions.restore_cascade'))
                 ->icon('heroicon-o-arrow-path')
-                ->visible(fn (): bool => $this->getRecord()->trashed())
+                ->visible(function (): bool {
+                    $record = $this->getRecord();
+
+                    return $record instanceof Customer && $record->trashed();
+                })
                 ->requiresConfirmation()
                 ->action(function (): void {
-                    app(RestoreCustomerCascadeAction::class)->execute($this->getRecord());
+                    $record = $this->getRecord();
+                    if (! $record instanceof Customer) {
+                        return;
+                    }
+                    app(RestoreCustomerCascadeAction::class)->execute($record);
                 }),
-            Actions\EditAction::make(),
+            'edit' => Actions\EditAction::make(),
         ];
     }
 }
