@@ -17,7 +17,7 @@ final class GetTimberDashboardStatsQuery
      */
     public function execute(): array
     {
-        $configuredStuckDays = config('timber.operational_parameters.material_stuck_alert_days.value', 30);
+        $configuredStuckDays = config('timberbilling.timber.operational_parameters.material_stuck_alert_days.value', 30);
         $stuckDays = is_numeric($configuredStuckDays) ? (int) $configuredStuckDays : 30;
 
         $processedInput = TimberProcessingStep::query()->get()->sum(static fn (TimberProcessingStep $step): float => (float) $step->input_quantity);

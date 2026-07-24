@@ -4,7 +4,7 @@ type: how-to
 tags: [pest, testing, gestionale-commesse, migration, bmad]
 created: 2026-07-24
 updated: 2026-07-24
-qmd: "migrate tests gestionale Feature Unit Modules Pest XotBase no RefreshDatabase"
+qmd: "migrate tests gestionale Feature Unit Modules Pest XotBase no RefreshDatabase Catalog HR metel"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/14"
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
@@ -25,6 +25,52 @@ In `/var/www/_bases/gestionale_commesse/tests` i test sono organizzati per domin
 In Laraxot ogni modulo è un package: i test vivono in `laravel/Modules/{Singolare}/tests/{Feature,Unit}/`.
 
 Obiettivo: **portare la BL testata**, non copiare ciechi file con namespace plurale / `RefreshDatabase` / `App\Models\User`.
+
+## Schema sqlite di test (obbligatorio per Feature migrati)
+
+I Feature usano `prepareSharedFixcitySqliteForTesting()` → file `database/fixcity_data.sqlite` (non `:memory:` vuoto).
+
+**Pattern TestCase (Customer / WorkOrder / Intervention / Catalog / HR):**
+
+1. `prepareSharedFixcitySqliteForTesting()` **prima** di `parent::setUp()`
+2. Eventuale `ensure*Schema()` (Artisan migrate `--path=Modules/X/database/migrations`, **no `--force`**) **prima** di `parent::setUp()` — altrimenti DDL resta nella transazione `DatabaseTransactions` e sparisce al rollback
+3. `$connectionsToTransact = ['sqlite', 'xot', …]`
+4. **Mai** `RefreshDatabase`
+
+Dopo nuove migrazioni wave, allineare lo schema sqlite (CLI o ensure* nel TestCase):
+
+```bash
+cd laravel
+php artisan migrate --database=sqlite --path=Modules/Customer/database/migrations --no-interaction
+php artisan migrate --database=sqlite --path=Modules/WorkOrder/database/migrations --no-interaction
+php artisan migrate --database=sqlite --path=Modules/Intervention/database/migrations --no-interaction
+php artisan migrate --database=sqlite --path=Modules/Catalog/database/migrations --no-interaction
+php artisan migrate --database=sqlite --path=Modules/HR/database/migrations --no-interaction
+# … Quotation Signature Vehicle AiAssistant
+```
+
+Senza questo passo: `no such table: work_orders` (e simili) su connection `xot` / `:memory:`.
+
+### Catalog (evidenza 2026-07-24)
+
+- `config('metel.*')` richiede `mergeConfigFrom(..., 'metel')` nello SP: XotBase registra solo `catalog.metel.*`
+- `fixed_layout` / `csv_map` devono essere popolati (non stub `[]`) — altrimenti Metel parser TypeError
+- Pest: **11 passed** (`CatalogCrudTest` + `MetelCatalogTest`)
+
+### HR (evidenza 2026-07-24)
+
+- Stub `users` (id string 36) prima della migrate HR: FK `employees.user_id` → `users`
+- Traduzioni Filament: chiavi `hr::hr.*` (non `hr.*`)
+- Skip documentati: media Document (**D1**), User factory + Spatie roles (**D6**)
+- Pest: **3 passed** + **5 skipped** (EmployeeCrud + type normalization)
+
+### Gap ancora aperti (conteggio SRC vs DEST file)
+
+| Dominio SRC | DEST | Note |
+|---|---|---|
+| Timber (32), Wts (20), Platform (21), Operator, Public, Localization | assenti / parziali | defer o story dedicata |
+| Documents (4) | smoke Media | **non** portare Feature finché D1 |
+| Compliance / Inventory / EnergyBroker | smoke | Feature UI SRC ancora da triage |
 
 ## Mapping cartelle SRC → modulo DEST
 

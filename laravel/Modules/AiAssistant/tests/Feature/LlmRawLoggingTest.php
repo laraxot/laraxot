@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 uses(\Modules\AiAssistant\Tests\TestCase::class);
 
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use Modules\AiAssistant\Application\Llm\LlmChatJsonClient;
+use Modules\AiAssistant\Llm\LlmChatJsonClient;
 
 function fakeChatResponse(string $content): void
 {
@@ -36,7 +37,7 @@ it('logs the raw LLM response when services.llm.log_raw is on', function (): voi
 it('returns an empty array (never throws) on a connection timeout', function (): void {
     config(['services.deepseek.key' => 'test-key', 'services.deepseek.base_uri' => 'https://api.deepseek.com/v1']);
     // Simulate cURL error 28 (timeout) — must be swallowed, not bubbled up.
-    Http::fake(fn () => throw new \Illuminate\Http\Client\ConnectionException('cURL error 28: Operation timed out'));
+    Http::fake(fn () => throw new ConnectionException('cURL error 28: Operation timed out'));
 
     expect(app(LlmChatJsonClient::class)->complete('system', 'user'))->toBe([]);
 });

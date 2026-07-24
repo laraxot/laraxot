@@ -25,4 +25,6 @@ Canon hub: [gestionale-docs-index.md](../../docs/gestionale-docs-index.md) · de
 
 Wave 1: operator field-service = Filament `*/admin`, **non** Folio Sixteen. Vedi [wave1-fo-operator-note.md](../../docs/wave1-fo-operator-note.md).
 
+I test operator migrati dal SRC vivono in `Modules/{Intervention,Signature,…}/tests` (Filament/panel), non in Themes — playbook [migrate-gestionale-tests.md](../../../docs/migrate-gestionale-tests.md).
+
 Runtime: [functional-readiness.md](../../../../docs/gestionale-commesse-comparison/functional-readiness.md).

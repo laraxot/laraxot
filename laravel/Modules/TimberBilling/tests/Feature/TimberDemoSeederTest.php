@@ -8,6 +8,7 @@ use Modules\TimberBilling\Tests\TestCase;
 
 uses(TestCase::class);
 
+use Modules\TimberBilling\Database\Seeders\TimberDemoSeeder;
 use Modules\TimberBilling\Models\TimberAgent;
 use Modules\TimberBilling\Models\TimberCustomer;
 use Modules\TimberBilling\Models\TimberDocument;
@@ -21,7 +22,6 @@ use Modules\TimberBilling\Models\TimberStockMovement;
 use Modules\TimberBilling\Models\TimberSupplier;
 use Modules\TimberBilling\Models\TimberTransporter;
 use Modules\TimberBilling\Queries\GetTimberStockMovementsQuery;
-use Database\Seeders\TimberDemoSeeder;
 
 it('populates suppliers, transporters, agents, purchases and lots in varied states', function (): void {
     app(TimberDemoSeeder::class)->run();

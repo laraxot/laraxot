@@ -46,6 +46,7 @@ Replica SRC `Customers` → cartella **singolare** `Customer` (non merge in altr
 | File | Scopo |
 |---|---|
 | [import-status.md](./import-status.md) | Checklist reshape + readiness |
+| [tests-migration.md](./tests-migration.md) | Porting test SRC |
 | [README.md](./README.md) | Questa mappa |
 
 ## Hub / BMAD

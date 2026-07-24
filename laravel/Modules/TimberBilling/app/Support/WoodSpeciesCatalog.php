@@ -107,7 +107,7 @@ final class WoodSpeciesCatalog
      */
     private static function configMap(): array
     {
-        $species = config('timber.wood_species', []);
+        $species = config('timberbilling.timber.wood_species', []);
 
         if (! is_array($species)) {
             return [];

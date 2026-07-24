@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Tests\Feature;
 
+use InvalidArgumentException;
 use Modules\TimberBilling\Tests\TestCase;
 
 uses(TestCase::class);

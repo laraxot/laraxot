@@ -107,14 +107,41 @@ abstract class TestCase extends XotBaseTestCase
 — le tabelle del modulo vengono comunque rese disponibili (probabilmente via convenzione Testbench che
 carica le migration del package/modulo in `getPackageProviders()`/`defineDatabaseMigrations()` a monte).
 
-**Perché non ha funzionato su Auth/HR ma sì su Customer**: ipotesi da verificare — Auth/HR hanno
-migrazioni con dipendenze incrociate (`users`, `roles`, `employees`) che potrebbero non risolversi
-nell'ordine giusto contro il file sqlite condiviso, mentre Customer ha uno schema più autonomo
-(customers/customer_sites/contacts/resellers, poche FK esterne). **Azione consigliata**: prima di
-scartare questo pattern per un modulo, provarlo per davvero (non assumere che fallisca come Auth/HR) —
-riapplicare lo stesso `TestCase.php` (copiare da `Modules/Customer/tests/TestCase.php`) e rieseguire i
-test. Se fallisce ancora su Auth/HR con lo stesso "no such table", il problema è probabilmente l'ordine
-di caricamento delle migration cross-modulo, non il meccanismo in sé.
+**Perché non ha funzionato su Auth/HR ma sì su Customer**: causa precisa isolata (2026-07-24, riprovato
+su `WorkOrder` che HA GIÀ il pattern `prepareSharedFixcitySqliteForTesting()` nel suo `TestCase.php` ma
+fallisce comunque su 16/43 test): **il file sqlite condiviso `database/fixcity_data.sqlite` non ha la
+tabella `users` migrata**. `Customer`/`Platform` passano perché i loro test non creano mai un vero
+`User::factory()->create()` (solo entità proprie del modulo); `WorkOrder` fallisce esattamente sui test
+che fanno `User::factory()->create()` (es. `WorkOrderInterventionSearchTest.php`) con
+`SQLSTATE[HY000]: ... no such table: users`. Non è quindi un problema di ordine-migrazione cross-modulo:
+è che **nessuno ha mai migrato `users` (e probabilmente altre tabelle piattaforma: `roles`,
+`employees`, ecc.) dentro `fixcity_data.sqlite`**, che a quanto pare appartiene a un altro progetto
+("fixcity") e non ha mai avuto lo schema applicativo di questo repo.
+
+**Fix consigliato, unico e definitivo** (va fatto una volta sola, non modulo per modulo): migrare lo
+schema applicativo core (`users`, `roles`, `permissions`, e le tabelle dei moduli nativi già enabled)
+dentro `database/fixcity_data.sqlite`, oppure — più pulito — creare un file sqlite dedicato a questo
+progetto (es. `database/testing_shared.sqlite`) con lo schema completo migrato una tantum, e cambiare
+`prepareSharedFixcitySqliteForTesting()` (o una sua variante) per puntare lì invece che al file
+"fixcity" di un altro progetto.
+
+**Tentativo 2026-07-24 (fermato di proposito, non eseguito)**: verificato che
+`Modules/User/database/migrations/` contiene **numerose migration duplicate/storiche** per `users` e
+`roles` (es. `2024_01_01_000001_create_users_table.php`, `2024_01_01_000002_create_users_table.php`,
+`2024_01_01_000006/000007_create_users_table.php`, `2026_02_13_172135/172136_create_users_table.php` —
+almeno 5 varianti diverse solo per `users`, più altrettante per `roles`/`permissions`). Lanciare
+`migrate --path=Modules/User/database/migrations` in blocco su `fixcity_data.sqlite` rischierebbe di
+applicare la migration "sbagliata" (una vecchia versione dello schema) o fallire per conflitti, con
+`fixcity_data.sqlite` **condiviso da più agenti in parallelo** in questo momento — un fallimento a metà
+lo corromperebbe per tutti. **Non eseguito di proposito.**
+
+**Prossimo passo corretto per chi riprende D17**:
+1. Determinare quale migration `users`/`roles`/`permissions` è quella "attiva" nell'ambiente reale
+   (`php artisan migrate:status` contro il DB mysql di sviluppo/test, non contro sqlite)
+2. Lanciare **solo quelle specifiche** (path esplicito al singolo file, non alla cartella) contro
+   `fixcity_data.sqlite`, con lock preso su quel file per tutta la durata dell'operazione
+3. Verificare con `php -r "..."` (PDO, sqlite3 CLI non è installato in questo ambiente) che le tabelle
+   compaiano e abbiano le colonne attese prima di considerare il fix chiuso
 
 ## DoD
 

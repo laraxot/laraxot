@@ -26,7 +26,7 @@ final class ApplyTechnicalParamsToQuotationItemsAction
     public function execute(array $items, array $params): array
     {
         /** @var list<array<string, mixed>> $rules */
-        $rules = array_values(array_filter((array) config('quotation_technical.rules', []), 'is_array'));
+        $rules = array_values(array_filter((array) config('quotation.quotation_technical.rules', []), 'is_array'));
 
         /** @var array<int, true> $ruleProductIds */
         $ruleProductIds = [];

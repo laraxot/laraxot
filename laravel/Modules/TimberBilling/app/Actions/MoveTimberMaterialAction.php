@@ -21,7 +21,7 @@ final class MoveTimberMaterialAction
         ?string $notes,
     ): TimberLot|TimberDerivedMaterial {
         $normalizedAreaCode = trim($toAreaCode);
-        $configuredAreas = config('timber.area_codes', []);
+        $configuredAreas = config('timberbilling.timber.area_codes', []);
         $allowedAreas = is_array($configuredAreas) ? array_keys($configuredAreas) : [];
 
         if ($normalizedAreaCode === '' || ! in_array($normalizedAreaCode, $allowedAreas, true)) {
@@ -43,7 +43,7 @@ final class MoveTimberMaterialAction
         // Spostamento di un semilavorato in un'area-tappa (essiccatoio/stagionatura):
         // arricchisce il codice tracciabile e ristampa l'etichetta.
         if ($material instanceof TimberDerivedMaterial) {
-            $markers = config('timber.area_stage_markers', []);
+            $markers = config('timberbilling.timber.area_stage_markers', []);
             $stageType = is_array($markers) && isset($markers[$normalizedAreaCode]) && is_string($markers[$normalizedAreaCode])
                 ? $markers[$normalizedAreaCode]
                 : null;

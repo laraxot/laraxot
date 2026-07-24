@@ -38,7 +38,7 @@ final class RegisterTimberPurchaseAction
         }
 
         $normalizedUnit = trim($unitOfMeasure);
-        $configuredUnits = config('timber.units_of_measure', []);
+        $configuredUnits = config('timberbilling.timber.units_of_measure', []);
         $allowedUnits = is_array($configuredUnits) ? array_keys($configuredUnits) : [];
         if ($normalizedUnit === '' || ! in_array($normalizedUnit, $allowedUnits, true)) {
             throw new InvalidArgumentException('L unita di misura non e valida.');
@@ -60,7 +60,7 @@ final class RegisterTimberPurchaseAction
             throw new InvalidArgumentException('Il prezzo di acquisto non puo essere negativo.');
         }
 
-        $configuredPriceUnits = config('timber.purchase_price_units', []);
+        $configuredPriceUnits = config('timberbilling.timber.purchase_price_units', []);
         $allowedPriceUnits = is_array($configuredPriceUnits) ? array_keys($configuredPriceUnits) : [];
         $normalizedPriceUnit = trim((string) $purchasePriceUnit);
         if ($normalizedPriceUnit === '' || ! in_array($normalizedPriceUnit, $allowedPriceUnits, true)) {

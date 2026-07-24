@@ -61,6 +61,7 @@ Distinto da: `docs/gestionale-commesse-comparison/` (stato porting), `docs/wiki/
 | File | Nota |
 |---|---|
 | [phpstan-roadmaps-index.md](./phpstan-roadmaps-index.md) | PHPStan moduli nativi + GC |
+| [migrate-gestionale-tests.md](./migrate-gestionale-tests.md) | Porting test SRC → `Modules/*/tests` (story 2.5) |
 | [pest_testing_setup.md](./pest_testing_setup.md) | Setup Pest |
 | [development/tdd-laravel-pest-guide.md](./development/tdd-laravel-pest-guide.md) | TDD |
 | [wiki/](./wiki/index.md) | Wiki locale laravel |

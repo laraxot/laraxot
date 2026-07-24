@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\TimberBilling\Tests\Feature;
 
 use Modules\TimberBilling\Tests\TestCase;
+use RuntimeException;
 
 uses(TestCase::class);
 

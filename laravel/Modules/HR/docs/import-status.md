@@ -43,7 +43,7 @@ related:
 - [x] Migrazioni consolidate 1-per-modello con `XotBaseMigration`/`tableCreate()`/`tableUpdate()`, FK verso `users` corretti a `foreignUuid` (2026-07-24)
 - [x] Factories create per tutti e 5 i model (2026-07-24, prima assenti)
 - [x] `lang/{it,en}/hr.php` (2026-07-24, prima assente)
-- [ ] Pest test
+- [x] Pest test — EmployeeCrud + type normalization **green**; media/workflow **skip** D1/D6 (2026-07-24) — [tests-migration.md](./tests-migration.md)
 - [x] `modules_statuses=true` (2026-07-24) — resta **replica**, non merge in Employee
 
 ## PHPStan

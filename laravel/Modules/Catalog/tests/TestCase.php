@@ -6,13 +6,23 @@ namespace Modules\Catalog\Tests;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Modules\Catalog\Providers\CatalogServiceProvider;
 use Modules\Xot\Tests\XotBaseTestCase;
 
+/**
+ * Feature Catalog: condividono lo schema sqlite di `database/fixcity_data.sqlite`
+ * (già con products/metel_* dopo migrate path Catalog). Senza
+ * prepareSharedFixcitySqliteForTesting() phpunit forza :memory: vuoto → no such table.
+ */
 abstract class TestCase extends XotBaseTestCase
 {
     use DatabaseTransactions;
+
+    /** @var list<string> */
+    protected $connectionsToTransact = ['sqlite', 'xot'];
 
     /**
      * @return array<int, class-string<ServiceProvider>>
@@ -23,5 +33,34 @@ abstract class TestCase extends XotBaseTestCase
             ...parent::getPackageProviders($app),
             CatalogServiceProvider::class,
         ];
+    }
+
+    protected function setUp(): void
+    {
+        $this->prepareSharedFixcitySqliteForTesting();
+
+        // Schema PRIMA di DatabaseTransactions: altrimenti DDL sul sqlite file
+        // resta nella transazione del test e sparisce al rollback.
+        $this->ensureCatalogSchema();
+
+        parent::setUp();
+    }
+
+    /**
+     * Idempotente: se lo schema Catalog manca sul fixture sqlite, applica solo
+     * Modules/Catalog/database/migrations (mai migrate globale, mai --force).
+     */
+    private function ensureCatalogSchema(): void
+    {
+        if (Schema::connection('sqlite')->hasTable('products')
+            && Schema::connection('sqlite')->hasTable('metel_catalogs')) {
+            return;
+        }
+
+        Artisan::call('migrate', [
+            '--database' => 'sqlite',
+            '--path' => 'Modules/Catalog/database/migrations',
+            '--no-interaction' => true,
+        ]);
     }
 }

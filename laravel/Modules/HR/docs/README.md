@@ -15,9 +15,12 @@ discussions:
 related:
   - "./import-status.md"
   - "./composer-manifest.md"
+  - "./tests-migration.md"
+  - "./gestionale-commesse-port.md"
   - "../../../../docs/gestionale-commesse-comparison/replica-singular-phase.md"
   - "../../../../docs/gestionale-commesse-comparison/STORY-002-hr-vs-employee.md"
   - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
+  - "../../../../laravel/docs/migrate-gestionale-tests.md"
 ---
 
 # HR
@@ -40,7 +43,8 @@ Replica HR SRC (persone/organigramma gestionale). Overlap con `Employee` ≠ lic
 |---|---|
 | [import-status.md](./import-status.md) | Checklist reshape |
 | [composer-manifest.md](./composer-manifest.md) | Manifest |
+| [tests-migration.md](./tests-migration.md) | Pest SRC → DEST (3 passed / 5 skip) |
 
 ## Hub / BMAD
 
-[Matrice](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md) · Story [2.4](../../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md)
+[Matrice](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md) · Story [2.4](../../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md) · Story [2.5](../../../../docs/wiki/skills/bmad-create-story/stories/2.5.migrate-gestionale-tests.story.md)

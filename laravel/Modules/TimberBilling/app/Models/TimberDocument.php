@@ -87,7 +87,7 @@ final class TimberDocument extends Model
 
     public function hasStockImpact(): bool
     {
-        $map = config('timber.document_stock_directions', []);
+        $map = config('timberbilling.timber.document_stock_directions', []);
 
         return is_array($map) && array_key_exists($this->document_type_code, $map);
     }

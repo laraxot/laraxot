@@ -462,7 +462,7 @@ final class RecordQuotationVoicePage extends XotBasePage
     public function technicalParamDefinitions(): array
     {
         /** @var list<array<string, mixed>> $definitions */
-        $definitions = array_values(array_filter((array) config('quotation_technical.params', []), 'is_array'));
+        $definitions = array_values(array_filter((array) config('quotation.quotation_technical.params', []), 'is_array'));
 
         $out = [];
         foreach ($definitions as $definition) {

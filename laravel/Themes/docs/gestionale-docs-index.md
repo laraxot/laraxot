@@ -20,6 +20,9 @@ related:
   - "./new-modules-panel-mapping.md"
   - "./aiassistant-vs-themes.md"
   - "./copy-normalize-modules-vs-themes.md"
+  - "./copy-normalize-modules-vs-themes.md"
+  - "../../docs/migrate-gestionale-tests.md"
+  - "../../../docs/wiki/skills/bmad-create-story/stories/2.5.migrate-gestionale-tests.story.md"
   - "../../../docs/gestionale-commesse-comparison/functional-readiness.md"
 ---
 
@@ -38,6 +41,10 @@ related:
 | [copy-normalize-modules-vs-themes.md](./copy-normalize-modules-vs-themes.md) | Copy/normalize non tocca Themes composer |
 | [composer-modules-not-themes.md](./composer-modules-not-themes.md) | Merge-plugin solo moduli |
 
+## Test FO vs moduli
+
+Operator / panel FO restano Filament nei moduli (non Themes). Copertura Pest: story [2.5](../../../docs/wiki/skills/bmad-create-story/stories/2.5.migrate-gestionale-tests.story.md) + playbook [migrate-gestionale-tests.md](../../docs/migrate-gestionale-tests.md). Catalog/HR green sul fixture sqlite; Document Feature bloccati da D1 media.
+
 ## Tema attivo FO
 
 Skin pubblica: [Sixteen/docs/README.md](../Sixteen/docs/README.md). Non spostare CRUD field-service nelle pages Folio finché story FO dedicata.
@@ -47,3 +54,7 @@ Stub gestionale (pointer al hub) anche in: [Zero](../Zero/docs/gestionale-panels
 ## BMAD
 
 Story [2.3](../../../docs/wiki/skills/bmad-create-story/stories/2.3.deep-quality-enabled-modules.story.md) · [2.4](../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md) · Issue [#14](https://github.com/laraxot/base_workorder_fila5/issues/14) · Discussion [#15](https://github.com/laraxot/base_workorder_fila5/discussions/15)
+
+## Test
+
+I test field-service non stanno nei Themes: [migrate-gestionale-tests.md](../../docs/migrate-gestionale-tests.md).

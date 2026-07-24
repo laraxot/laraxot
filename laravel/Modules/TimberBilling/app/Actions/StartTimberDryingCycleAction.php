@@ -39,7 +39,7 @@ final class StartTimberDryingCycleAction
             $cycle = $dryable->dryingCycles()->create([
                 'entered_at' => now(),
                 'expected_exit_at' => $expectedExitAt,
-                'target_humidity_percent' => $targetHumidityPercent ?? config('timber.operational_parameters.target_humidity_percent.value'),
+                'target_humidity_percent' => $targetHumidityPercent ?? config('timberbilling.timber.operational_parameters.target_humidity_percent.value'),
                 'available_quantity' => $availableQuantity,
                 'status_code' => 'in_progress',
                 'notes' => trim((string) $notes) !== '' ? trim((string) $notes) : null,

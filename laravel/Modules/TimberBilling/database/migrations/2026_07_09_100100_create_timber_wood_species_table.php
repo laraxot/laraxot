@@ -22,7 +22,7 @@ return new class() extends Migration
 
         // Popola con le specie attualmente definite in config, così la pagina è
         // subito operativa e resta la sorgente modificabile da UI.
-        $species = config('timber.wood_species', []);
+        $species = config('timberbilling.timber.wood_species', []);
         if (is_array($species)) {
             $order = 0;
             foreach ($species as $code => $name) {

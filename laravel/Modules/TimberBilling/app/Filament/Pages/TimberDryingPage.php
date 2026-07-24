@@ -53,10 +53,10 @@ final class TimberDryingPage extends Page
 
     public function mount(): void
     {
-        $standardDryingDays = config('timber.operational_parameters.standard_drying_days.value', 45);
+        $standardDryingDays = config('timberbilling.timber.operational_parameters.standard_drying_days.value', 45);
         $this->expectedExitAt = now()->addDays(is_numeric($standardDryingDays) ? (int) $standardDryingDays : 45)->toDateString();
 
-        $targetHumidity = config('timber.operational_parameters.target_humidity_percent.value', 18);
+        $targetHumidity = config('timberbilling.timber.operational_parameters.target_humidity_percent.value', 18);
         $this->targetHumidityPercent = is_scalar($targetHumidity) ? (string) $targetHumidity : '18';
 
         // Deep-link from TB-06 ("Essiccazione" button): preselect the derived material.

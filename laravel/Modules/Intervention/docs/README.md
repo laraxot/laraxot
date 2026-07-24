@@ -96,6 +96,7 @@ moduli gemelli già migrati.
 | File | Scopo |
 |---|---|
 | [import-status.md](./import-status.md) | Checklist |
+| [tests-migration.md](./tests-migration.md) | Porting test SRC |
 | [gestionale-commesse-port.md](./gestionale-commesse-port.md) | Note port SRC |
 | [README.md](./README.md) | Scopo + runtime |
 

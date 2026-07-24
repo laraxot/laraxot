@@ -27,3 +27,4 @@ related:
 - [x] `config/metel.php` senza `env()` (overlay in ServiceProvider)
 - [x] **PHPStan L10** — 0 errori reali (2026-07-24)
 - [x] `modules_statuses=true`
+- [x] Pest Feature SRC migrati — **11 passed** (2026-07-24): vedi [tests-migration.md](./tests-migration.md)

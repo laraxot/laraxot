@@ -17,7 +17,7 @@ final readonly class ConfiguredEasyfattGateway implements EasyfattGateway
      */
     public function fetchCustomers(): array
     {
-        $customersTable = config('timber.easyfatt.customers_table');
+        $customersTable = config('timberbilling.timber.easyfatt.customers_table');
         $rows = $this->fetchFromConfiguredDatabase(is_string($customersTable) ? $customersTable : '')
             ?? $this->fallbackRows('timber.easyfatt.fallback_customers');
 
@@ -41,7 +41,7 @@ final readonly class ConfiguredEasyfattGateway implements EasyfattGateway
      */
     public function fetchProducts(): array
     {
-        $productsTable = config('timber.easyfatt.products_table');
+        $productsTable = config('timberbilling.timber.easyfatt.products_table');
         $rows = $this->fetchFromConfiguredDatabase(is_string($productsTable) ? $productsTable : '')
             ?? $this->fallbackRows('timber.easyfatt.fallback_products');
 
@@ -67,8 +67,8 @@ final readonly class ConfiguredEasyfattGateway implements EasyfattGateway
      */
     private function fetchFromConfiguredDatabase(string $table): ?array
     {
-        $connectionName = config('timber.easyfatt.connection');
-        $enabled = (bool) config('timber.easyfatt.enabled', false);
+        $connectionName = config('timberbilling.timber.easyfatt.connection');
+        $enabled = (bool) config('timberbilling.timber.easyfatt.enabled', false);
 
         if (! $enabled || ! is_string($connectionName) || $connectionName === '' || $table === '') {
             return null;
@@ -114,7 +114,7 @@ final readonly class ConfiguredEasyfattGateway implements EasyfattGateway
             'product_unit_price' => 'unit_price',
         ];
 
-        $configured = config('timber.easyfatt.columns', []);
+        $configured = config('timberbilling.timber.easyfatt.columns', []);
         if (! is_array($configured)) {
             return $defaults;
         }

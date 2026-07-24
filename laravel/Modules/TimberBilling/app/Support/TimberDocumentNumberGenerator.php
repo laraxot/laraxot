@@ -37,7 +37,7 @@ final class TimberDocumentNumberGenerator
 
     private function prefixFor(string $documentTypeCode): string
     {
-        $prefixes = config('timber.document_number_prefixes', []);
+        $prefixes = config('timberbilling.timber.document_number_prefixes', []);
 
         if (is_array($prefixes) && isset($prefixes[$documentTypeCode]) && is_string($prefixes[$documentTypeCode])) {
             return $prefixes[$documentTypeCode];

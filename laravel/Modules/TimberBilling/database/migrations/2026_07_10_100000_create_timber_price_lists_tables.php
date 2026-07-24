@@ -50,7 +50,7 @@ return new class() extends Migration
         });
 
         // Seed dei listini dai codici gia' definiti in config.
-        $lists = config('timber.price_lists', []);
+        $lists = config('timberbilling.timber.price_lists', []);
         if (is_array($lists)) {
             foreach ($lists as $code => $name) {
                 DB::table('timber_price_lists')->insert([

@@ -88,3 +88,28 @@ funzionante altrove.
   non pertinente a questo scope).
 - `modules_statuses.json`: `"AiAssistant": true` confermato dopo verifica reale del contenuto,
   non lasciato per fiducia cieca nel flag precedente.
+
+## Test migrati dal sorgente (2026-07-24)
+
+Sorgente: `_bases/gestionale_commesse/tests/Feature/AiAssistant/*`. Al momento di questa
+sessione la cartella `tests/` del modulo conteneva già copie **non adattate** (namespace
+`Application\Speech`, `Application\Llm`, `Infrastructure\Models` inesistenti in questo
+modulo) di quasi tutti i test sorgente — bloccavano l'intera suite con
+`BindingResolutionException`. Sostituite con un porting reale:
+
+| Test sorgente | Esito | Note |
+|---|---|---|
+| `BuildSpokenSummaryTest.php` | Portato, namespace corretto (`Modules\AiAssistant\Speech\BuildSpokenSummaryAction`) | Nessuna logica applicativa toccata: la action è pura (markdown → riassunto vocale), nessuna dipendenza da altri moduli. |
+| `LlmRawLoggingTest.php` | Portato, namespace corretto (`Modules\AiAssistant\Llm\LlmChatJsonClient`) | `complete()`/`logRaw()`/config keys (`services.deepseek.*`, `services.llm.log_raw`) combaciano 1:1 col sorgente; solo il namespace era rotto nella copia precedente. |
+| `AiAssistantProposalsTest.php` | **Non portato** (out of scope) | Integrazione cross-modulo con `Inventory`, `Production`, `EnergyBroker`, `WorkOrders`, `Catalog` — moduli non nello scope di questo task di migrazione test. |
+| `AiAssistantChatPageTest.php` | **Non portato per intero**; 2 assert isolati salvati in `tests/Unit/OperatorAssistantAgentTest.php`, poi rimossi | Le due `it(...)` che esercitano `OperatorAssistantAgent::instructions()`/`normalizeInvoiceSearchQuery()` via reflection sono state isolate (nessuna dipendenza da pagine Filament o altri moduli), ma il pacchetto `neuron-ai/*` **non è installato** in questo ambiente (solo stub PHPStan in `phpstan-stubs/NeuronAI`): istanziare `OperatorAssistantAgent` fallisce con `Class "NeuronAI\Agent\Agent" not found`. Rimosso, non testabile a runtime qui. |
+| `AiAssistantSttTest.php` | **Non portato** (deferred) | STT/TTS deferred per questo modulo in questa fase. |
+| `AiAssistantStreamSecurityTest.php` | **Non portato** (deferred) | Rate limiter / prompt-injection guard deferred per questo modulo in questa fase. |
+
+Aggiunto ex novo `tests/Unit/AiAssistantModelsTest.php`: factory + relazioni per
+`AiThread`/`AiMessage`/`AiActionProposal`/`AiToolLog` (nessun test di modello esisteva
+prima in questo modulo). Usa `Factory::makeOne()` con FK esplicite (`ai_thread_id => 1`)
+per evitare la creazione implicita in DB delle factory annidate di Laravel.
+
+Verifica: `cd laravel && ./vendor/bin/pest Modules/AiAssistant/tests --no-coverage` → 20
+test, 40 assertion, tutti verdi (2026-07-24).

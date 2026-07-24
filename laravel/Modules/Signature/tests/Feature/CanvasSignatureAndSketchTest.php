@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 uses(\Modules\Signature\Tests\TestCase::class);
 
-use Modules\User\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Modules\Intervention\Models\Intervention;
@@ -12,6 +11,7 @@ use Modules\Signature\Actions\StoreSignatureForModelAction;
 use Modules\Signature\Actions\StoreSketchForModelAction;
 use Modules\Signature\Models\Signature;
 use Modules\Signature\Models\Sketch;
+use Modules\User\Models\User;
 
 it('stores signature and sketch from canvas data urls', function (): void {
     // Arrange
@@ -44,9 +44,6 @@ it('stores signature and sketch from canvas data urls', function (): void {
     $intervention = Intervention::query()->create([
         'work_order_id' => $workOrderId,
         'performed_by_user_id' => $user->id,
-        'started_at' => '2026-02-16 09:00:00',
-        'ended_at' => '2026-02-16 10:00:00',
-        'travel_km' => null,
         'work_minutes' => 60,
         'notes' => null,
     ]);
@@ -73,14 +70,18 @@ it('stores signature and sketch from canvas data urls', function (): void {
     );
 
     // Assert
+    //
+    // Adapted from the source gestionale_commesse test: this module's port stores
+    // disk/path/mime_type directly on the Signature/Sketch models instead of going
+    // through a Media FK (see docs/gestionale-commesse-port.md), so assertions on
+    // `$signature->media` are replaced with direct property assertions.
     expect($signature)->toBeInstanceOf(Signature::class);
-    expect($signature->media)->not()->toBeNull();
-    expect($signature->media->kind)->toBe('signature');
-    expect(Storage::disk('public')->exists($signature->media->path))->toBeTrue();
+    expect($signature->disk)->toBe('public');
+    expect($signature->mime_type)->toBe('image/png');
+    expect(Storage::disk('public')->exists((string) $signature->path))->toBeTrue();
 
     expect($sketch)->toBeInstanceOf(Sketch::class);
-    expect($sketch->media)->not()->toBeNull();
-    expect($sketch->media->kind)->toBe('sketch');
-    expect(Storage::disk('public')->exists($sketch->media->path))->toBeTrue();
+    expect($sketch->disk)->toBe('public');
+    expect($sketch->mime_type)->toBe('image/png');
+    expect(Storage::disk('public')->exists((string) $sketch->path))->toBeTrue();
 });
-

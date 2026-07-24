@@ -2,6 +2,7 @@
 
 # last_updated: 2026-07-24
 # STATUS DEFINITIONS: backlog | ready-for-dev | in-progress | review | done | blocked
+# stories index: docs/wiki/skills/bmad-create-story/stories/README.md
 
 project: base_workorder_fila5
 source_epic: docs/stories/EPIC-gestionale-commesse-alignment.md
@@ -9,6 +10,8 @@ comparison_index: docs/gestionale-commesse-comparison/README.md
 phase_canon: docs/gestionale-commesse-comparison/replica-singular-phase.md
 functional_readiness: docs/gestionale-commesse-comparison/functional-readiness.md
 agent_errors_ssot: docs/gestionale-commesse-comparison/agent-errors-lessons.md
+technical_debt_hub: laravel/docs/gestionale-technical-debt.md
+stories_index: docs/wiki/skills/bmad-create-story/stories/README.md
 
 development_status:
   gestionale-commesse-module-parity: in-progress
@@ -21,15 +24,18 @@ development_status:
   1.8.wave1-reshape-xotbase: review
   1.9.wave2-reshape-remaining-modules: review
   1.10.agent-errors-replica-singular-guardrails: done
-  1.11.wave3-reshape-remaining-src-modules: ready-for-dev
+  1.11.wave3-reshape-remaining-src-modules: done # 2026-07-24: BaseModel/migrations/PHPStan/modules_statuses tutti completati, incluso AiAssistant
   1.12.phpstan-zero-per-module: review
   1.13.functional-readiness-migrate-panels: review
+  1.13.migrate-real-tests-and-timber-gap: in-progress # sibling of 2.5, Timber tally — non duplicare lavoro
   2.1.copy-then-normalize-modules: done
   2.2.agent-errors-replica-singular: done
   2.3.deep-quality-enabled-modules: in-progress
   2.4.module-theme-docs-hygiene: review
-  # note: old key 2.4.compliance-phpstan-cleanup superseded by 2.3 (Compliance under Issue #14)
-  2.5.gestionale-tests-migration: ready-for-dev # blocked-by D17 (phpunit env precedence, see laravel/docs/debt-phpunit-env-precedence.md)
+  2.5.migrate-gestionale-tests: in-progress # SSoT acceptance (può essere .lock)
+  # 2.5.gestionale-tests-migration = ALIAS/registro dettagliato (stesso ID, non key separata)
+  # 2.4.compliance-phpstan-cleanup superseded by 2.3
+  2.6.technical-debt-playbooks: review # HOW in laravel/docs/debt-*
 
 github:
   issue_epic: https://github.com/laraxot/base_workorder_fila5/issues/7

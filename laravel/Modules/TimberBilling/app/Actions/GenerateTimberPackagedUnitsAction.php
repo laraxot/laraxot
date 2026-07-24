@@ -31,7 +31,7 @@ final class GenerateTimberPackagedUnitsAction
         ?string $traceableCode = null,
     ): Collection {
         $normalizedType = trim($packageTypeCode);
-        $configuredTypes = config('timber.package_types', []);
+        $configuredTypes = config('timberbilling.timber.package_types', []);
         $allowedTypes = is_array($configuredTypes) ? array_keys($configuredTypes) : [];
         if ($normalizedType === '' || ! in_array($normalizedType, $allowedTypes, true)) {
             throw new InvalidArgumentException('Il tipo di confezione non e valido.');

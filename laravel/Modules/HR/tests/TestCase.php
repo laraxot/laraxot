@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\HR\Tests;
 
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Modules\HR\Providers\HrServiceProvider;
 use Modules\User\Models\User;
@@ -13,23 +16,28 @@ use Modules\User\Providers\UserServiceProvider;
 use Modules\Xot\Tests\XotBaseTestCase;
 
 /**
- * Base test case per il modulo HR.
+ * Base test case modulo HR.
  *
- * NOTA: `prepareSharedFixcitySqliteForTesting()` (vedi Modules/Gdpr, Modules/Activity)
- * punta le connessioni sqlite su `database/fixcity_data.sqlite`, un fixture di UN ALTRO
- * progetto (tabelle: assets/customers/contacts/resellers/...). Non contiene `users`,
- * `roles`, `employees`: inutile qui, per questo non viene usato. Il database di test
- * reale per Auth/HR resta debito (vedi Modules/HR/docs/gestionale-commesse-port.md e
- * docs/gestionale-technical-debt.md D6/D13): senza un fixture sqlite pre-migrato per
- * QUESTO monorepo (o senza `techplanner_data_test` in MySQL), i test Feature che
- * scrivono su tabelle reali falliscono con "no such table" anche con questo TestCase.
+ * Schema sul fixture `database/fixcity_data.sqlite` **prima** di
+ * `parent::setUp()` / DatabaseTransactions: altrimenti la migrate resta nella
+ * transazione del test e sparisce al rollback (employees=N al run successivo).
+ *
+ * `employees.user_id` → FK `users` (uuid): stub minimo se manca la tabella users.
  */
 abstract class TestCase extends XotBaseTestCase
 {
     use DatabaseTransactions;
 
+    /** @var list<string> */
+    protected $connectionsToTransact = ['sqlite', 'xot'];
+
     protected function setUp(): void
     {
+        $this->prepareSharedFixcitySqliteForTesting();
+
+        $this->ensureUsersStubForHrFk();
+        $this->ensureHrSchema();
+
         parent::setUp();
 
         config(['auth.providers.users.model' => User::class]);
@@ -45,5 +53,39 @@ abstract class TestCase extends XotBaseTestCase
             UserServiceProvider::class,
             HrServiceProvider::class,
         ];
+    }
+
+    /**
+     * Stub `users` solo per soddisfare FK SQLite (id string 36 = User module).
+     */
+    private function ensureUsersStubForHrFk(): void
+    {
+        if (Schema::connection('sqlite')->hasTable('users')) {
+            return;
+        }
+
+        Schema::connection('sqlite')->create('users', static function (Blueprint $table): void {
+            $table->string('id', 36)->primary();
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Idempotente: schema HR sul fixture sqlite (path-only, no --force).
+     */
+    private function ensureHrSchema(): void
+    {
+        if (Schema::connection('sqlite')->hasTable('employees')
+            && Schema::connection('sqlite')->hasTable('absence_requests')) {
+            return;
+        }
+
+        Artisan::call('migrate', [
+            '--database' => 'sqlite',
+            '--path' => 'Modules/HR/database/migrations',
+            '--no-interaction' => true,
+        ]);
     }
 }

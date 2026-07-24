@@ -53,7 +53,7 @@ final class TimberTraceCode
 
     private static function prefixFor(string $stageTypeCode): string
     {
-        $prefixes = config('timber.stage_code_prefixes', []);
+        $prefixes = config('timberbilling.timber.stage_code_prefixes', []);
 
         if (is_array($prefixes) && isset($prefixes[$stageTypeCode]) && is_string($prefixes[$stageTypeCode])) {
             return $prefixes[$stageTypeCode];

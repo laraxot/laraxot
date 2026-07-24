@@ -24,10 +24,15 @@ Panel e schema wave sono up; la regressione di **business** non è protetta:
 | Modulo | Stato test (baseline docs) |
 |---|---|
 | Customer / WorkOrder | Smoke classi (esistenza Model/SP) — poco dominio |
-| Intervention | Directory test **vuota** (solo `.gitkeep`) |
-| Quotation / Signature / Vehicle / AiAssistant | Gap tipico: manca Feature su Actions |
+| Intervention | Directory test popolata da SRC; Platform-dependent → skip | [tests-migration.md](../../Modules/Intervention/docs/tests-migration.md) |
+| Customer | `CustomerActionsTest` consolidato green | [tests-migration.md](../../Modules/Customer/docs/tests-migration.md) |
+| WorkOrder | Feature migrati; Create green post schema sqlite | [tests-migration.md](../../Modules/WorkOrder/docs/tests-migration.md) |
+| Catalog | **11 passed** (CRUD + Metel) — TestCase fixcity + `mergeConfigFrom(metel)` | [tests-migration.md](../../Modules/Catalog/docs/tests-migration.md) |
+| HR | **3 passed / 5 skipped** (D1 media, D6 roles) — schema HR + stub users | [tests-migration.md](../../Modules/HR/docs/tests-migration.md) |
 
-Senza Pest, ogni reshape/migrate FK può rompere timbrature/stati in silenzio.
+Playbook completo: [migrate-gestionale-tests.md](./migrate-gestionale-tests.md).
+
+> **Nota D17:** `phpunit.xml` sqlite `:memory:` scavalca `.env.testing` — vedi [debt-phpunit-env-precedence.md](./debt-phpunit-env-precedence.md). Mitigazione wave: `prepareSharedFixcitySqliteForTesting()` + migrate path sul file fixture.
 
 ## Religione test
 

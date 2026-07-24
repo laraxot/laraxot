@@ -195,10 +195,10 @@ final class AbsenceRequestResource extends XotBaseResource
     private static function getAbsenceTypeOptions(): array
     {
         return [
-            'leave' => __('hr.absence_types.leave'),
-            'vacation' => __('hr.absence_types.vacation'),
-            'sick' => __('hr.absence_types.sick'),
-            'injury' => __('hr.absence_types.injury'),
+            'leave' => __('hr::hr.absence_types.leave'),
+            'vacation' => __('hr::hr.absence_types.vacation'),
+            'sick' => __('hr::hr.absence_types.sick'),
+            'injury' => __('hr::hr.absence_types.injury'),
         ];
     }
 
@@ -213,7 +213,8 @@ final class AbsenceRequestResource extends XotBaseResource
             return '-';
         }
 
-        $key = "hr.absence_types.{$normalized}";
+        // loadTranslationsFrom(..., 'hr') + file lang/{locale}/hr.php → hr::hr.*
+        $key = "hr::hr.absence_types.{$normalized}";
 
         if (Lang::has($key)) {
             return __($key);

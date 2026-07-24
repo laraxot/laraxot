@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 uses(\Modules\AiAssistant\Tests\TestCase::class);
 
-use Modules\AiAssistant\Application\Speech\BuildSpokenSummaryAction;
+use Modules\AiAssistant\Speech\BuildSpokenSummaryAction;
 
 function spoken(string $markdown): string
 {

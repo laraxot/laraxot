@@ -29,7 +29,7 @@ final class PostTimberDocumentStockAction
             throw new RuntimeException('Il documento e gia stato registrato a magazzino.');
         }
 
-        $directions = config('timber.document_stock_directions', []);
+        $directions = config('timberbilling.timber.document_stock_directions', []);
         $direction = is_array($directions) ? ($directions[$document->document_type_code] ?? null) : null;
 
         if (! is_string($direction)) {

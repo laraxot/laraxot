@@ -35,7 +35,7 @@ final class RegisterTimberProcessingAction
         }
 
         $normalizedStepType = trim($stepTypeCode);
-        $configuredSteps = config('timber.processing_step_types', []);
+        $configuredSteps = config('timberbilling.timber.processing_step_types', []);
         $allowedSteps = is_array($configuredSteps) ? array_keys($configuredSteps) : [];
         if ($normalizedStepType === '' || ! in_array($normalizedStepType, $allowedSteps, true)) {
             throw new InvalidArgumentException('Tipo di lavorazione non valido.');

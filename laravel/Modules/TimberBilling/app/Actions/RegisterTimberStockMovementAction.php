@@ -33,7 +33,7 @@ final class RegisterTimberStockMovementAction
         ?string $notes = null,
     ): TimberStockMovement {
         $normalizedDirection = trim($directionCode);
-        $configuredDirections = config('timber.stock_movement_directions', []);
+        $configuredDirections = config('timberbilling.timber.stock_movement_directions', []);
         $allowedDirections = is_array($configuredDirections) ? array_keys($configuredDirections) : [];
         if (! in_array($normalizedDirection, $allowedDirections, true)) {
             throw new InvalidArgumentException('Il tipo di movimento non e valido.');

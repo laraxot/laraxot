@@ -39,3 +39,8 @@ related:
 
 Document: `modules_statuses=true` ma **RISCHIO** tabella `media` — non migrate cieco.  
 SSoT enable: [gc-modules-runtime-matrix.md](./gc-modules-runtime-matrix.md) · [functional-readiness.md](../../../docs/gestionale-commesse-comparison/functional-readiness.md).
+
+## Test
+
+I test operator migrati dal SRC vivono in `Modules/*/tests` (Filament), **non** nei Themes.  
+Playbook: [migrate-gestionale-tests.md](../../docs/migrate-gestionale-tests.md).
