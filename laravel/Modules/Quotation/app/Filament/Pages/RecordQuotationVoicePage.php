@@ -37,7 +37,7 @@ final class RecordQuotationVoicePage extends XotBasePage
 
     protected static ?string $slug = 'voice-quotation';
 
-    protected string $view = 'quotations::filament.pages.record-quotation-voice';
+    protected string $view = 'quotation::filament.pages.record-quotation-voice';
 
     public ?int $sourceId = null;
 

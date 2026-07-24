@@ -17,33 +17,33 @@ uses(TestCase::class);
 // genuinamente utili: da riportare non appena i pacchetti sono installati.
 
 it('generates a PDF report for a work order with interventions', function (): void {
-    expect(true)->toBeTrue();
-})->skip('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+    $this->markTestSkipped('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+});
 
 it('generates a DOCX report for a work order with interventions', function (): void {
-    expect(true)->toBeTrue();
-})->skip('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+    $this->markTestSkipped('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+});
 
 it('generates a PDF report with no interventions in the period', function (): void {
-    expect(true)->toBeTrue();
-})->skip('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+    $this->markTestSkipped('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+});
 
 it('generates a DOCX report with no interventions in the period', function (): void {
-    expect(true)->toBeTrue();
-})->skip('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+    $this->markTestSkipped('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+});
 
 it('report filename contains work order code and date range', function (): void {
-    expect(true)->toBeTrue();
-})->skip('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+    $this->markTestSkipped('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+});
 
 it('covers site section and outcome variants in DOCX report', function (): void {
-    expect(true)->toBeTrue();
-})->skip('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+    $this->markTestSkipped('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+});
 
 it('generates reports also when interventions include material lines', function (): void {
-    expect(true)->toBeTrue();
-})->skip('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+    $this->markTestSkipped('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+});
 
 it('keeps reporting available when intervention materials are disabled in settings', function (): void {
-    expect(true)->toBeTrue();
-})->skip('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+    $this->markTestSkipped('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+});

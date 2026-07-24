@@ -18,29 +18,29 @@ uses(TestCase::class);
 // regressione utile da non perdere.
 
 it('generates the customer PDF report when an intervention has manual materials but no inventory movements', function (): void {
-    expect(true)->toBeTrue();
-})->skip('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+    $this->markTestSkipped('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+});
 
 it('generates the customer DOCX report when an intervention has manual materials but no inventory movements', function (): void {
-    expect(true)->toBeTrue();
-})->skip('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+    $this->markTestSkipped('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+});
 
 it('includes interventions linked directly to the customer (no work order)', function (): void {
-    expect(true)->toBeTrue();
-})->skip('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+    $this->markTestSkipped('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+});
 
 it('generates the report combining inventory and manual materials', function (): void {
-    expect(true)->toBeTrue();
-})->skip('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+    $this->markTestSkipped('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+});
 
 it('renders DOCX with outcome variants, callout fee, total amount and a deleted product', function (): void {
-    expect(true)->toBeTrue();
-})->skip('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+    $this->markTestSkipped('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+});
 
 it('renders DOCX using assigned users as operator names', function (): void {
-    expect(true)->toBeTrue();
-})->skip('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+    $this->markTestSkipped('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+});
 
 it('generates the customer report with no interventions in the period', function (): void {
-    expect(true)->toBeTrue();
-})->skip('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+    $this->markTestSkipped('needs phpoffice/phpword and barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+});

@@ -12,6 +12,9 @@ use Modules\WorkOrder\Tests\TestCase;
 
 uses(TestCase::class);
 
+/**
+ * @param  array<int, int>  $interventionMinutes
+ */
 function workOrderWithInterventions(?int $plannedMinutes, array $interventionMinutes): WorkOrder
 {
     $customerId = (int) DB::table('customers')->insertGetId([

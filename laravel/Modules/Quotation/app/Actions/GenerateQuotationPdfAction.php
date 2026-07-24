@@ -33,7 +33,7 @@ final class GenerateQuotationPdfAction
             $workOrderCode = DB::table('work_orders')->where('id', $quotation->work_order_id)->value('code');
         }
 
-        return $this->pdfRenderer->render('quotations::pdf.quotation', [
+        return $this->pdfRenderer->render('quotation::pdf.quotation', [
             'quotation' => $quotation,
             'customerName' => $customerName,
             'workOrderCode' => $workOrderCode,

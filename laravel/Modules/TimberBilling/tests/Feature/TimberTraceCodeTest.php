@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Tests\Feature;
 
+use DateTimeImmutable;
+
 use Modules\TimberBilling\Tests\TestCase;
 
 uses(TestCase::class);
