@@ -38,3 +38,17 @@ related:
 | Document (SRC) | vuole `media` | `mediable_*`, `kind`, `path`, … |
 
 Enable JSON ≠ schema safe. Matrice: [gc-modules-runtime-matrix.md](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md).
+
+## Test migrati dal sorgente
+
+Da `gestionale_commesse/tests/Feature/Documents/` → `tests/Feature/MediaActionsTest.php`:
+
+- `AttachInterventionDocumentTest.php` → "attaches a stored document to an intervention"
+- `AttachInterventionPhotosTest.php` → "attaches multiple uploaded photos to an intervention"
+- `MediaMetadataTest.php` → "fills mime type and size for stored media files"
+
+Adattamenti: `Modules\Documents\Application\Actions` → `Modules\Document\Actions`; `Modules\Interventions\Infrastructure\Models\Intervention` → `Modules\Intervention\Models\Intervention` (usa `Intervention::factory()->create()` al posto degli insert manuali `DB::table('customers'/'work_orders')` del sorgente).
+
+**Non portato:** `UploadInterventionPhotosPageTest.php` — la pagina chiama `Gate::authorize('update', $intervention)` in `mount()`; l'autorizzazione dipende da ruoli Shield + `App\Support\AccountFeatures` (shim che ritorna sempre il default), rendendo il test fragile senza una fixture di autenticazione dedicata. La action sottostante (`AttachPhotosToInterventionAction`) resta coperta.
+
+**Esito esecuzione (2026-07-24):** i tre test sopra falliscono nell'ambiente di test corrente con `SQLSTATE[HY000]: no such table` — le migrazioni non risultano applicate al DB sqlite `:memory:` usato da Pest (debito tecnico pre-esistente, vedi `laravel/docs/gestionale-commesse-debito-tecnico.md`), non un difetto di adattamento del test.

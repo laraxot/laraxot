@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 uses(\Modules\Quotation\Tests\TestCase::class);
 
-use Modules\Quotation\Domain\Actions\CalculateQuotationTotalsAction;
-use Modules\Quotation\Domain\DTO\QuotationItemData;
+use Modules\Quotation\Actions\CalculateQuotationTotalsAction;
+use Modules\Quotation\DTO\QuotationItemData;
 
 it('calculates totals with per-line discounts and VAT percent', function (): void {
     // Arrange
