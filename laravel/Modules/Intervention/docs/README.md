@@ -103,7 +103,7 @@ moduli gemelli già migrati.
 ## Hub / BMAD
 
 - [functional-readiness.md](../../../../docs/gestionale-commesse-comparison/functional-readiness.md)
-- Stories [1.4](../../../../docs/wiki/skills/bmad-create-story/stories/1.4.intervention-module.story.md) · [2.3](../../../../docs/wiki/skills/bmad-create-story/stories/2.3.deep-quality-enabled-modules.story.md)
+- Stories [1.4](../../../../docs/stories/1.4.intervention-module.story.md) · [2.3](../../../../docs/stories/2.3.deep-quality-enabled-modules.story.md)
 - [#7](https://github.com/laraxot/base_workorder_fila5/issues/7) · [#14](https://github.com/laraxot/base_workorder_fila5/issues/14)
 - Matrice statuses: [gc-modules-runtime-matrix.md](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md)
-- Story [2.4 docs hygiene](../../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md)
+- Story [2.4 docs hygiene](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md)

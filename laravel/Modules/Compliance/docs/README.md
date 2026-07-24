@@ -33,4 +33,4 @@ Conformità / readiness / equipment / documenti compliance di cantiere (SRC). Re
 
 Dettaglio checklist: [import-status.md](./import-status.md).  
 Matrice: [gc-modules-runtime-matrix.md](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md).  
-Story [2.4](../../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md) · [#14](https://github.com/laraxot/base_workorder_fila5/issues/14).
+Story [2.4](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md) · [#14](https://github.com/laraxot/base_workorder_fila5/issues/14).

@@ -42,7 +42,7 @@ cartella in singolare. Fonte di verità aggiornata:
 
 - `docs/wiki/rules/module-name-singular-mandatory.md` (sezione "CORREZIONE 2026-07-23")
 - `docs/gestionale-commesse-comparison/laraxot-compliance-audit.md` (sezione "CORREZIONE 2026-07-23")
-- `docs/wiki/skills/bmad-create-story/stories/1.6.copy-reshape-src-modules.story.md` (AC aggiornati)
+- `docs/stories/1.6.copy-reshape-src-modules.story.md` (AC aggiornati)
 
 Se stai pianificando o eseguendo un merge fisico di Auth/HR/Documents/Email/WhatsApp/Platform dentro
 User/Employee/Media/Notify/Tenant — fermati e rileggi questi tre documenti prima di procedere.
@@ -53,7 +53,7 @@ User/Employee/Media/Notify/Tenant — fermati e rileggi questi tre documenti pri
   `/var/www/_bases/gestionale_commesse/Modules/` come cartelle proprie in `laravel/Modules/`
 - Lanciato un agente in background (Wave 3) per reshape-arli (`app/`, XotBaseServiceProvider,
   composer.json, docs `import-status.md`) — se lo vedi ancora in corso o appena finito, controlla
-  `docs/wiki/skills/bmad-create-story/stories/1.11.wave3-reshape-remaining-src-modules.story.md`
+  `docs/stories/1.11.wave3-reshape-remaining-src-modules.story.md`
   prima di rifare lo stesso lavoro
 - Merge risolto del duplicato `Customer`/`Customers` (vecchio scaffold greenfield vs porting SRC):
   tenuto `Customer` (singolare, struttura Filament/migrazioni corretta), portate dentro Actions/

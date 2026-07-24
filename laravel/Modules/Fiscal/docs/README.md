@@ -30,4 +30,4 @@ Motore di calcolo fiscale (Actions/Datas) senza CRUD pesante — supporta Billin
 | `modules_statuses` | **true** |
 | PHPStan / Pest | 0 reali / 6 passed |
 
-[import-status.md](./import-status.md) · [matrice](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md) · Story [2.4](../../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md)
+[import-status.md](./import-status.md) · [matrice](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md) · Story [2.4](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md)

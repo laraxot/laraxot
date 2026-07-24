@@ -43,4 +43,4 @@ Dettaglio: [import-status.md](./import-status.md) · matrice [gc-modules-runtime
 
 ## Hub / BMAD
 
-Story [2.4](../../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md) · [#14](https://github.com/laraxot/base_workorder_fila5/issues/14)
+Story [2.4](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md) · [#14](https://github.com/laraxot/base_workorder_fila5/issues/14)

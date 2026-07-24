@@ -2,8 +2,8 @@
 
 # last_updated: 2026-07-24
 # STATUS DEFINITIONS: backlog | ready-for-dev | in-progress | review | done | blocked
-# stories index: docs/wiki/skills/bmad-create-story/stories/README.md
-# handoff cold-start: docs/wiki/skills/bmad-create-story/stories/0.session-handoff-next-steps.story.md
+# stories index: docs/stories/README.md
+# handoff cold-start: docs/stories/0.session-handoff-next-steps.story.md
 
 project: base_workorder_fila5
 source_epic: docs/stories/EPIC-gestionale-commesse-alignment.md
@@ -12,8 +12,8 @@ phase_canon: docs/gestionale-commesse-comparison/replica-singular-phase.md
 functional_readiness: docs/gestionale-commesse-comparison/functional-readiness.md
 agent_errors_ssot: docs/gestionale-commesse-comparison/agent-errors-lessons.md
 technical_debt_hub: laravel/docs/gestionale-technical-debt.md
-stories_index: docs/wiki/skills/bmad-create-story/stories/README.md
-handoff_story: docs/wiki/skills/bmad-create-story/stories/0.session-handoff-next-steps.story.md
+stories_index: docs/stories/README.md
+handoff_story: docs/stories/0.session-handoff-next-steps.story.md
 
 # USER PAUSED 2026-07-24 — other project. New agent: read handoff_story FIRST.
 next_queue:

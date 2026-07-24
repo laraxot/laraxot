@@ -107,7 +107,7 @@ usato in parallelo da altri agenti, quindi lasciato esplicitamente fuori scope.
 ## Hub / BMAD
 
 - [functional-readiness.md](../../../../docs/gestionale-commesse-comparison/functional-readiness.md)
-- Stories [1.3](../../../../docs/wiki/skills/bmad-create-story/stories/1.3.workorder-module.story.md) · [1.8](../../../../docs/wiki/skills/bmad-create-story/stories/1.8.wave1-reshape-xotbase.story.md) · [2.3](../../../../docs/wiki/skills/bmad-create-story/stories/2.3.deep-quality-enabled-modules.story.md)
+- Stories [1.3](../../../../docs/stories/1.3.workorder-module.story.md) · [1.8](../../../../docs/stories/1.8.wave1-reshape-xotbase.story.md) · [2.3](../../../../docs/stories/2.3.deep-quality-enabled-modules.story.md)
 - [#7](https://github.com/laraxot/base_workorder_fila5/issues/7) · [#14](https://github.com/laraxot/base_workorder_fila5/issues/14)
 - Matrice statuses: [gc-modules-runtime-matrix.md](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md)
-- Story [2.4 docs hygiene](../../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md)
+- Story [2.4 docs hygiene](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md)

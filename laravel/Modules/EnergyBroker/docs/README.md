@@ -30,4 +30,4 @@ Verticale energy-broker (documenti/pratiche SRC). Replica singolare — enable s
 | `modules_statuses` | **false** |
 | PHPStan L10 | 0 errori reali |
 
-[import-status.md](./import-status.md) · [matrice](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md) · Story [2.4](../../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md)
+[import-status.md](./import-status.md) · [matrice](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md) · Story [2.4](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md)

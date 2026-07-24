@@ -18,7 +18,7 @@ related:
   - "./README.md"
   - "../../../docs/gestionale-commesse-comparison/replica-singular-phase.md"
   - "../../../docs/gestionale-commesse-comparison/copy-then-normalize.md"
-  - "../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md"
+  - "../../../docs/stories/2.4.module-theme-docs-hygiene.story.md"
 ---
 
 # Temi vs moduli (fase replica)
@@ -41,4 +41,4 @@ related:
 - AiAssistant = modulo Filament, non Theme
 - Panel Operator → shell Theme + widget dai moduli
 
-Vedi [gestionale-panels-vs-themes.md](./gestionale-panels-vs-themes.md) · Story [2.4](../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md).
+Vedi [gestionale-panels-vs-themes.md](./gestionale-panels-vs-themes.md) · Story [2.4](../../../docs/stories/2.4.module-theme-docs-hygiene.story.md).

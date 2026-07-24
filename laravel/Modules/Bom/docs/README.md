@@ -37,5 +37,5 @@ Vedi file `.md` in questa cartella (`import-status`, eventuali `gestionale-comme
 ## Hub / BMAD
 
 - [functional-readiness.md](../../../../docs/gestionale-commesse-comparison/functional-readiness.md)
-- Story [2.3](../../../../docs/wiki/skills/bmad-create-story/stories/2.3.deep-quality-enabled-modules.story.md) · [2.4](../../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md)
+- Story [2.3](../../../../docs/stories/2.3.deep-quality-enabled-modules.story.md) · [2.4](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md)
 - [#14](https://github.com/laraxot/base_workorder_fila5/issues/14)

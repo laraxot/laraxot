@@ -453,7 +453,7 @@ Questa guida **non sostituisce** il tracciamento BMAD, lo completa:
 | Cosa | Dove |
 |---|---|
 | Stato avanzamento story (in-progress/review/done) | `docs/sprint-status.yaml` |
-| Story "deep quality moduli enabled" (in corso, copre parte di questa guida) | `docs/wiki/skills/bmad-create-story/stories/2.3.deep-quality-enabled-modules.story.md` — Issue [#14](https://github.com/laraxot/base_workorder_fila5/issues/14), Discussion [#15](https://github.com/laraxot/base_workorder_fila5/discussions/15) |
+| Story "deep quality moduli enabled" (in corso, copre parte di questa guida) | `docs/stories/2.3.deep-quality-enabled-modules.story.md` — Issue [#14](https://github.com/laraxot/base_workorder_fila5/issues/14), Discussion [#15](https://github.com/laraxot/base_workorder_fila5/discussions/15) |
 | Epic originale porting | `docs/stories/EPIC-gestionale-commesse-alignment.md` — Issue [#7](https://github.com/laraxot/base_workorder_fila5/issues/7), Discussion [#8](https://github.com/laraxot/base_workorder_fila5/discussions/8) |
 | Libro errori agenti (da non ripetere) | `docs/gestionale-commesse-comparison/agent-errors-lessons.md` — Issue [#9](https://github.com/laraxot/base_workorder_fila5/issues/9), Discussion [#10](https://github.com/laraxot/base_workorder_fila5/discussions/10) |
 

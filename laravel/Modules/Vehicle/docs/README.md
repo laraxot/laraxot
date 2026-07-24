@@ -45,4 +45,4 @@ related:
 - [functional-readiness.md](../../../../docs/gestionale-commesse-comparison/functional-readiness.md)
 - [#7](https://github.com/laraxot/base_workorder_fila5/issues/7)
 - Matrice statuses: [gc-modules-runtime-matrix.md](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md)
-- Story [2.4 docs hygiene](../../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md)
+- Story [2.4 docs hygiene](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md)

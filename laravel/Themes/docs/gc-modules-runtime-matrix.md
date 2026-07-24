@@ -18,7 +18,7 @@ related:
   - "./module-vs-theme-boundaries.md"
   - "../../../docs/gestionale-commesse-comparison/functional-readiness.md"
   - "../../../docs/gestionale-commesse-comparison/replica-singular-phase.md"
-  - "../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md"
+  - "../../../docs/stories/2.4.module-theme-docs-hygiene.story.md"
 ---
 
 # Matrice runtime moduli GC vs Themes
@@ -59,4 +59,4 @@ related:
 | Sixteen | FO attivo | **No** — solo Folio/skin |
 | Zero / TwentyOne / … | alternativi | **No** |
 
-Canon hub: [gestionale-docs-index.md](./gestionale-docs-index.md) · Story [2.4](../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md).
+Canon hub: [gestionale-docs-index.md](./gestionale-docs-index.md) · Story [2.4](../../../docs/stories/2.4.module-theme-docs-hygiene.story.md).

@@ -35,7 +35,7 @@ Replica HR SRC (persone/organigramma gestionale). Overlap con `Employee` ≠ lic
 |---|---|
 | `modules_statuses` | **true** (2026-07-24) |
 | Merge in Employee | **vietato** ora |
-| Gap analisi | [1.5 employee-hr](../../../../docs/wiki/skills/bmad-create-story/stories/1.5.employee-hr-gap.story.md) |
+| Gap analisi | [1.5 employee-hr](../../../../docs/stories/1.5.employee-hr-gap.story.md) |
 
 ## Indice docs
 
@@ -47,4 +47,4 @@ Replica HR SRC (persone/organigramma gestionale). Overlap con `Employee` ≠ lic
 
 ## Hub / BMAD
 
-[Matrice](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md) · Story [2.4](../../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md) · Story [2.5](../../../../docs/wiki/skills/bmad-create-story/stories/2.5.migrate-gestionale-tests.story.md)
+[Matrice](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md) · Story [2.4](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md) · Story [2.5](../../../../docs/stories/2.5.migrate-gestionale-tests.story.md)

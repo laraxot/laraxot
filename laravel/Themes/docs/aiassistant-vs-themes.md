@@ -37,4 +37,4 @@ related:
 Visibilità UI: [visibility.md](../../Modules/AiAssistant/docs/visibility.md).  
 Enable: [gc-modules-runtime-matrix.md](./gc-modules-runtime-matrix.md).  
 Fase: [replica-singular-phase.md](../../../docs/gestionale-commesse-comparison/replica-singular-phase.md).  
-Story [2.4](../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md).
+Story [2.4](../../../docs/stories/2.4.module-theme-docs-hygiene.story.md).
