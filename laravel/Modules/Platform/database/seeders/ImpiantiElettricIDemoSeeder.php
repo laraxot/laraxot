@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace Modules\Platform\Database\Seeders;
 
-use App\Support\AccountFeatures;
 use Carbon\CarbonImmutable;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Str;
 use Modules\Customer\Models\Customer;
 use Modules\Intervention\Models\Intervention;
 use Modules\Platform\Models\PlatformSetting;
+use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
-use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+
+use function Safe\json_encode;
 
 /**
  * Seeder demo per un impiantista elettrico.
@@ -122,7 +122,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
             $statusIdsByCode = DB::table('work_order_statuses')
                 ->select(['id', 'code'])
                 ->get()
-                ->mapWithKeys(fn ($row): array => [$row->code => $row->id])
+                ->mapWithKeys(fn ($row): array => [(string) $row->code => $row->id])
                 ->all();
 
             // ── Contact roles ────────────────────────────────────────────────
@@ -159,22 +159,6 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
             /** @var Role $adminRole */
             $adminRole = Role::findOrCreate('admin');
 
-            $syncAccountPermissionOverrides = static function (\App\Models\User $user): void {
-                $permissionNames = AccountFeatures::permissionOverridesFor($user);
-
-                if ($permissionNames === []) {
-                    $user->syncPermissions([]);
-
-                    return;
-                }
-
-                $permissions = Permission::query()
-                    ->whereIn('name', $permissionNames)
-                    ->get();
-
-                $user->syncPermissions($permissions);
-            };
-
             $operatorIds = [];
             foreach ($operatorData as $op) {
                 $existing = DB::table('users')->where('email', $op['email'])->first();
@@ -194,11 +178,9 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                 }
 
                 // Garantisce accesso al panel operator e visibilità degli interventi filtrati.
-                $userModel = \App\Models\User::query()->find($userId);
+                $userModel = User::query()->find($userId);
                 if ($userModel !== null) {
-                    $userModel->syncRoles([$operatorRole]);
-
-                    $syncAccountPermissionOverrides($userModel);
+                    $userModel->syncRoles(['operator']);
                 }
             }
 
@@ -213,10 +195,9 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                 ],
             );
             $gerardoUserId = (int) (DB::table('users')->where('email', 'info@gsbuildingservice.it')->value('id') ?: 0);
-            $gerardoUser = \App\Models\User::query()->find($gerardoUserId);
+            $gerardoUser = User::query()->find($gerardoUserId);
             if ($gerardoUser !== null) {
-                $gerardoUser->syncRoles([$adminRole, $operatorRole]);
-                $syncAccountPermissionOverrides($gerardoUser);
+                $gerardoUser->syncRoles(['admin', 'operator']);
             }
 
             $gerardoTeamDefinitions = [
@@ -248,10 +229,9 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                 );
 
                 $teamUserId = (int) (DB::table('users')->where('email', $teamMember['email'])->value('id') ?: 0);
-                $teamUser = \App\Models\User::query()->find($teamUserId);
+                $teamUser = User::query()->find($teamUserId);
                 if ($teamUser !== null) {
-                    $teamUser->syncRoles([$operatorRole]);
-                    $syncAccountPermissionOverrides($teamUser);
+                    $teamUser->syncRoles(['operator']);
                 }
 
                 $gerardoTeamUserIds[$teamMember['email']] = $teamUserId;
@@ -523,7 +503,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                     (int) $customerId,
                     'admin',
                     'admin/customers',
-                    '192.168.1.' . random_int(10, 240),
+                    '192.168.1.'.random_int(10, 240),
                     'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
                     null,
                     [
@@ -756,7 +736,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                     (int) $workOrderId,
                     'admin',
                     'admin/work-orders',
-                    '192.168.1.' . random_int(10, 240),
+                    '192.168.1.'.random_int(10, 240),
                     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)',
                     null,
                     [
@@ -811,62 +791,6 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
 
                     $interventionId = (int) DB::getPdo()->lastInsertId();
 
-                    $materials = $interventionDefinition['materials'] ?? [];
-                    if (
-                        is_array($materials)
-                        && $materials !== []
-                        && isset($gerardoWarehousesByKey['gerardo_van'])
-                    ) {
-                        foreach ($materials as $materialDefinition) {
-                            $productKey = (string) ($materialDefinition['product_key'] ?? '');
-                            $quantity = (int) ($materialDefinition['quantity'] ?? 0);
-                            $product = $gerardoProductsByKey[$productKey] ?? null;
-
-                            if ($product === null || $quantity <= 0) {
-                                continue;
-                            }
-
-                            $lineTotal = round($quantity * $product['unit_price'], 2);
-
-                            $movementId = (int) DB::table('inventory_movements')->insertGetId([
-                                'product_id' => $product['id'],
-                                'from_warehouse_id' => $gerardoWarehousesByKey['gerardo_van'],
-                                'to_warehouse_id' => null,
-                                'movement_type' => 'scarico',
-                                'quantity' => $quantity,
-                                'unit_price' => $product['unit_price'],
-                                'line_total' => $lineTotal,
-                                'note' => 'Materiale impiegato su intervento demo Gerardo: ' . $product['name'],
-                                'work_order_id' => $workOrderId,
-                                'intervention_id' => $interventionId,
-                                'created_by_user_id' => $operatorId > 0 ? $operatorId : null,
-                                'occurred_at' => $endedAt ?? $scheduledAt,
-                                'origin_auto' => false,
-                                'created_at' => $endedAt ?? $scheduledAt,
-                                'updated_at' => $endedAt ?? $scheduledAt,
-                            ]);
-
-                            $auditInsert(
-                                $endedAt ?? $scheduledAt,
-                                $operatorId > 0 ? $operatorId : null,
-                                'created',
-                                \Modules\Inventory\Models\InventoryMovement::class,
-                                $movementId,
-                                'operator',
-                                'operator/interventions/' . $interventionId,
-                                '10.0.1.' . random_int(2, 250),
-                                'Mozilla/5.0 (Linux; Android 14)',
-                                null,
-                                [
-                                    'product_id' => $product['id'],
-                                    'quantity' => $quantity,
-                                    'intervention_id' => $interventionId,
-                                    'line_total' => $lineTotal,
-                                ],
-                            );
-                        }
-                    }
-
                     $auditInsert(
                         $scheduledAt,
                         (int) $operatorId,
@@ -875,7 +799,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                         $interventionId,
                         'operator',
                         'operator/interventions',
-                        '10.0.0.' . random_int(2, 250),
+                        '10.0.0.'.random_int(2, 250),
                         'Mozilla/5.0 (Linux; Android 14)',
                         null,
                         [
@@ -893,7 +817,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                             $interventionId,
                             'operator',
                             'operator/interventions',
-                            '10.0.0.' . random_int(2, 250),
+                            '10.0.0.'.random_int(2, 250),
                             'Mozilla/5.0 (Linux; Android 14)',
                             [
                                 'outcome_code' => null,
@@ -1103,8 +1027,12 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                         continue;
                     }
 
-                    $invoiceTotal = collect($workOrderMeta['interventions'])
-                        ->sum(fn (array $intervention): float => (float) ($intervention['amount'] ?? 0));
+                    $workOrderInterventions = is_array($workOrderMeta['interventions'] ?? null)
+                        ? $workOrderMeta['interventions']
+                        : [];
+
+                    $invoiceTotal = collect($workOrderInterventions)
+                        ->sum(fn (mixed $intervention): float => is_array($intervention) ? (float) ($intervention['amount'] ?? 0) : 0.0);
 
                     $invoiceId = (int) DB::table('invoices')->insertGetId([
                         'customer_id' => (int) $workOrderMeta['customer_id'],
@@ -1114,7 +1042,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                         'total' => round($invoiceTotal, 2),
                         'notes' => $invoiceDefinition['notes'],
                         'electronic_invoice_provider' => 'demo-eu',
-                        'electronic_invoice_external_id' => 'DEMO-' . str_replace('-', '', $invoiceDefinition['number']),
+                        'electronic_invoice_external_id' => 'DEMO-'.str_replace('-', '', $invoiceDefinition['number']),
                         'electronic_invoice_sent_at' => CarbonImmutable::parse($invoiceDefinition['issued_on'])->addDay(),
                         'electronic_invoice_last_error' => null,
                         'created_at' => $now,
@@ -1162,6 +1090,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                 $dow = (int) $cursor->dayOfWeekIso;
                 if ($dow >= 6) {
                     $cursor = $cursor->addDay();
+
                     continue;
                 }
 
@@ -1171,6 +1100,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
 
                 if (! $shouldCreateBase) {
                     $cursor = $cursor->addDay();
+
                     continue;
                 }
 
@@ -1264,7 +1194,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                         $interventionId,
                         'operator',
                         'operator/interventions',
-                        '10.0.0.' . random_int(2, 250),
+                        '10.0.0.'.random_int(2, 250),
                         'Mozilla/5.0 (Linux; Android 14)',
                         null,
                         [
@@ -1282,7 +1212,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                             $interventionId,
                             'operator',
                             'operator/interventions',
-                            '10.0.0.' . random_int(2, 250),
+                            '10.0.0.'.random_int(2, 250),
                             'Mozilla/5.0 (Linux; Android 14)',
                             [
                                 'outcome_code' => null,
@@ -1361,6 +1291,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                 ],
             ];
 
+            /** @var array<string, array<string, mixed>> $gerardoCustomersByKey */
             $gerardoCustomersByKey = [];
             foreach ($gerardoCustomers as $customer) {
                 $customerId = (int) DB::table('customers')->insertGetId([
@@ -1376,7 +1307,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                     'phone' => $customer['phone'],
                     'tax_code' => $customer['tax_code'],
                     'payment_method' => 'bonifico',
-                    'iban' => 'IT60X0542811101000000' . (string) random_int(100000, 999999),
+                    'iban' => 'IT60X0542811101000000'.(string) random_int(100000, 999999),
                     'notes' => 'Dataset demo dedicato Gerardo Bologna.',
                     'is_active' => 1,
                     'created_at' => $now,
@@ -1426,7 +1357,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                     $customerId,
                     'admin',
                     'admin/customers',
-                    '192.168.1.' . random_int(10, 240),
+                    '192.168.1.'.random_int(10, 240),
                     'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
                     null,
                     [
@@ -1446,7 +1377,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                     'description' => 'Storico interventi sul condominio con rendicontazione periodica delle scale.',
                     'interventions' => [
                         [
-                            'scheduled_at' => CarbonImmutable::create(2024, 1, 2, 8, 0),
+                            'scheduled_at' => CarbonImmutable::createStrict(2024, 1, 2, 8, 0),
                             'operator_email' => 'info@gsbuildingservice.it',
                             'minutes' => 90,
                             'amount' => 100.00,
@@ -1458,7 +1389,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                             ],
                         ],
                         [
-                            'scheduled_at' => CarbonImmutable::create(2024, 1, 3, 9, 30),
+                            'scheduled_at' => CarbonImmutable::createStrict(2024, 1, 3, 9, 30),
                             'operator_email' => 'matteo.roversi@iter7.local',
                             'minutes' => 45,
                             'amount' => 50.00,
@@ -1478,7 +1409,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                     'description' => 'Casi ricorrenti su cancello automatico, citofonia e luci esterne.',
                     'interventions' => [
                         [
-                            'scheduled_at' => CarbonImmutable::create(2025, 8, 26, 10, 0),
+                            'scheduled_at' => CarbonImmutable::createStrict(2025, 8, 26, 10, 0),
                             'operator_email' => 'info@gsbuildingservice.it',
                             'minutes' => 120,
                             'amount' => 195.00,
@@ -1489,7 +1420,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                             ],
                         ],
                         [
-                            'scheduled_at' => CarbonImmutable::create(2025, 9, 5, 9, 0),
+                            'scheduled_at' => CarbonImmutable::createStrict(2025, 9, 5, 9, 0),
                             'operator_email' => 'nicolo.venturi@iter7.local',
                             'minutes' => 60,
                             'amount' => 85.00,
@@ -1500,7 +1431,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                             ],
                         ],
                         [
-                            'scheduled_at' => CarbonImmutable::create(2025, 10, 25, 8, 30),
+                            'scheduled_at' => CarbonImmutable::createStrict(2025, 10, 25, 8, 30),
                             'operator_email' => 'info@gsbuildingservice.it',
                             'minutes' => 90,
                             'amount' => 210.00,
@@ -1694,7 +1625,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                     $workOrderId,
                     'admin',
                     'admin/work-orders',
-                    '192.168.1.' . random_int(10, 240),
+                    '192.168.1.'.random_int(10, 240),
                     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)',
                     null,
                     [
@@ -1705,7 +1636,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                 );
 
                 foreach ($workOrderDefinition['interventions'] as $interventionDefinition) {
-                    $operatorEmail = (string) ($interventionDefinition['operator_email'] ?? 'info@gsbuildingservice.it');
+                    $operatorEmail = (string) $interventionDefinition['operator_email'];
                     $performedByUserId = (int) ($gerardoTeamUserIds[$operatorEmail] ?? $gerardoUserId);
                     $scheduledAt = $interventionDefinition['scheduled_at'];
                     $minutes = $interventionDefinition['minutes'];
@@ -1739,7 +1670,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                         $interventionId,
                         'operator',
                         'operator/interventions',
-                        '10.0.0.' . random_int(2, 250),
+                        '10.0.0.'.random_int(2, 250),
                         'Mozilla/5.0 (Linux; Android 14)',
                         null,
                         [
@@ -1848,7 +1779,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                         $settingId,
                         'admin',
                         'admin/platform-settings',
-                        '192.168.1.' . random_int(10, 240),
+                        '192.168.1.'.random_int(10, 240),
                         'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
                         ['value_json' => '[REDACTED]'],
                         ['value_json' => '[REDACTED]'],

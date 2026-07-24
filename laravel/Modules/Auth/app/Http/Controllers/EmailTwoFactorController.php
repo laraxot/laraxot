@@ -4,19 +4,31 @@ declare(strict_types=1);
 
 namespace Modules\Auth\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 use Modules\Auth\Actions\StartEmailTwoFactorChallengeAction;
 use Modules\Auth\Actions\VerifyEmailTwoFactorCodeAction;
+use Modules\User\Models\User;
 
 final class EmailTwoFactorController extends Controller
 {
-    public function show(): \Illuminate\View\View
+    public function show(): View
     {
-        return view('auth::email-two-factor');
+        return view($this->emailTwoFactorViewName());
+    }
+
+    /**
+     * @return view-string
+     */
+    private function emailTwoFactorViewName(): string
+    {
+        /** @phpstan-var view-string $view */
+        $view = 'auth::email-two-factor';
+
+        return $view;
     }
 
     public function verify(Request $request): RedirectResponse

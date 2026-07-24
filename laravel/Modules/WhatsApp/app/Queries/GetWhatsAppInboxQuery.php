@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\WhatsApp\Queries;
 
+use Carbon\CarbonInterface;
 use Illuminate\Support\Str;
 use Modules\WhatsApp\Models\WhatsAppConversation;
 use Modules\WhatsApp\Models\WhatsAppMessage;
@@ -83,7 +84,7 @@ final class GetWhatsAppInboxQuery
 
     private function formatTimestamp(mixed $value): ?string
     {
-        return $value instanceof \Carbon\CarbonInterface
+        return $value instanceof CarbonInterface
             ? $value->format('d/m/Y H:i')
             : null;
     }

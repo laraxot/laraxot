@@ -11,6 +11,8 @@ use Modules\WhatsApp\Models\WhatsAppMessage;
 use Modules\WhatsApp\Support\PhoneNumberNormalizer;
 use Spatie\QueueableAction\QueueableAction;
 
+use function Safe\json_encode;
+
 final class StoreIncomingWhatsAppMessageAction
 {
     use QueueableAction;
@@ -106,9 +108,16 @@ final class StoreIncomingWhatsAppMessageAction
                         continue;
                     }
 
-                    $message['_contact'] = $contact;
-                    $message['_metadata'] = is_array($value['metadata'] ?? null) ? $value['metadata'] : [];
-                    $messages[] = $message;
+                    $messageEntry = [];
+                    foreach ($message as $key => $item) {
+                        if (is_string($key)) {
+                            $messageEntry[$key] = $item;
+                        }
+                    }
+
+                    $messageEntry['_contact'] = $contact;
+                    $messageEntry['_metadata'] = is_array($value['metadata'] ?? null) ? $value['metadata'] : [];
+                    $messages[] = $messageEntry;
                 }
             }
         }

@@ -10,11 +10,11 @@ updated: 2026-06-05
 
 ## Overview
 
-Il modulo **Rating** fa parte dell'ecosistema [PROJECT_NAME] platform.
+Il modulo **Rating** fa parte dell'ecosistema Laraxot (`laraxot/module_rating_fila5`).
 
 ## Scopo
 
-Questo modulo gestisce [DESCRIZIONE SPECIFICA DA COMPLETARE].
+Gestisce rating/valutazioni ed evaluation con supporto schemaless (attributi dinamici), tramite morph relations (`RatingMorph`, `BaseRatingMorph`) applicabili a qualsiasi model tramite `HasRatingsTrait`/`HasRatingContract`. Verificato in codice: `app/Models/Rating.php`, `app/Models/RatingMorph.php`, `app/Models/Traits/HasRatingsTrait.php`.
 
 ## Struttura
 
@@ -37,7 +37,6 @@ Rating/
 
 ## Collegamenti
 
-- [Documentazione Root](../../../docs/RATING_MODULE.md)
 - [Regole Architecture](../Xot/docs/architecture/)
 
 ## Backlinks

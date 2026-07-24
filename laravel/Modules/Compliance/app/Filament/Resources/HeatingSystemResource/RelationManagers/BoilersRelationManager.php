@@ -40,10 +40,10 @@ final class BoilersRelationManager extends RelationManager
     {
         /** @var array<int|string, string> $generatorOptions */
         $generatorOptions = collect((array) config('heating.generator_types', []))
-            ->mapWithKeys(fn ($t): array => [(string) $t => __("heating.generators.{$t}")])->all();
+            ->mapWithKeys(fn ($t): array => [(string) $t => __('heating.generators.'.(string) $t)])->all();
         /** @var array<int|string, string> $fuelOptions */
         $fuelOptions = collect((array) config('heating.fuel_types', []))
-            ->mapWithKeys(fn ($f): array => [(string) $f => __("heating.fuels.{$f}")])->all();
+            ->mapWithKeys(fn ($f): array => [(string) $f => __('heating.fuels.'.(string) $f)])->all();
 
         return $schema->components([
             TextInput::make('brand')->label(__('heating.fields.brand'))->maxLength(255),
@@ -110,6 +110,7 @@ final class BoilersRelationManager extends RelationManager
                 Textarea::make('notes')->label(__('heating.fields.notes'))->columnSpanFull(),
             ])
             ->action(function (array $data, Boiler $record): void {
+                /** @var array<string, mixed> $data */
                 /** @var HeatingSystem $system */
                 $system = $this->getOwnerRecord();
                 $data['performed_by_user_id'] = Auth::id();

@@ -52,6 +52,8 @@
 - `resources/views/pages/tests/[slug].blade.php` - Folio page entry for `/it/tests/*`
 - `resources/views/pages/[container0]/[slug].blade.php` - Reference pattern for CMS-driven pages
 - `config/local/fixcity/database/content/pages/tests.segnalazione-crea.json` - Ticket wizard entrypoint
+  (verified 2026-07-24: path not found in repo — likely renamed/removed; needs re-check against current
+  Fixcity content seeding before relying on it)
 
 ### Vite + Lit Web Components Integration
 - [vite-lit-integration.md](./vite-lit-integration.md) — Vite configuration for building Lit Web Components (Lit 3.3.2, Leaflet 1.9.4)

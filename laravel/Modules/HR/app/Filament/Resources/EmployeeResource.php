@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\HR\Filament\Resources;
 
-use App\Models\User;
 use App\Support\AccountFeatures;
 use App\Support\Concerns\HasAccountFeatureVisibility;
 use Filament\Actions\DeleteBulkAction;
@@ -27,6 +26,7 @@ use Modules\HR\Filament\Resources\EmployeeResource\RelationManagers\DocumentsRel
 use Modules\HR\Filament\Resources\EmployeeResource\RelationManagers\MedicalVisitsRelationManager;
 use Modules\HR\Filament\Resources\EmployeeResource\RelationManagers\TrainingsRelationManager;
 use Modules\HR\Models\Employee;
+use Modules\User\Models\User;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
 final class EmployeeResource extends XotBaseResource

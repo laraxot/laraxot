@@ -17,4 +17,4 @@ discussions:
 > Indice tecnico del tema Barthelemy.
 
 - [Code Quality Improvement Report](code-quality-improvement-report.md)
-- [README del tema](../README.md)
+- [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) — struttura del tema (nessun README.md a livello di root tema, verificato 2026-07-24)

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Queries;
 
-use App\Timber\Models\TimberDocument;
 use Modules\Fiscal\Actions\CalculateVatLiquidationAction;
 use Modules\Fiscal\Datas\VatableAmount;
 use Modules\Fiscal\Datas\VatLiquidation;
+use Modules\TimberBilling\Models\TimberDocument;
 use Modules\TimberBilling\Models\TimberInvoice;
 
 /**

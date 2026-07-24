@@ -13,6 +13,11 @@
         {
             "name": "Marco Sottana",
             "email": "marco.sottana@gmail.com"
+        },
+        {
+            "name": "Davide Cavallini",
+            "email": "davidecavallini1987@gmail.com",
+            "role": "Developer"
         }
     ],
     "extra": {
@@ -24,6 +29,10 @@
             ],
             "aliases": {}
         }
+    },
+    "require": {
+        "php": "^8.3",
+        "spatie/queueable-action": "*"
     },
     "autoload": {
         "psr-4": {

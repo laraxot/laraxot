@@ -18,12 +18,12 @@ abstract class Agent
 
     abstract protected function instructions(): string;
 
-    public function setChatHistory(ChatHistoryInterface $history): self
+    public function setChatHistory(ChatHistoryInterface $history): static
     {
         return $this;
     }
 
-    public function toolMaxRuns(int $maxRuns): self
+    public function toolMaxRuns(int $maxRuns): static
     {
         return $this;
     }

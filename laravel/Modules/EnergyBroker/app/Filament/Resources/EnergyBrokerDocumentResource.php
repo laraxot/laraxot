@@ -50,25 +50,25 @@ final class EnergyBrokerDocumentResource extends Resource
             Section::make(__('energy_broker.sections.document_summary'))->columns(3)->columnSpanFull()->components([
                 Placeholder::make('source_file_name')
                     ->label(__('energy_broker.fields.source_file_name'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => (string) ($record?->source_file_name ?? '-')),
+                    ->content(fn (?EnergyBrokerDocument $record): string => (string) ($record->source_file_name ?? '-')),
                 Placeholder::make('document_type')
                     ->label(__('energy_broker.fields.document_type'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => (string) __('energy_broker.document_types.'.($record?->document_type ?? 'unknown'))),
+                    ->content(fn (?EnergyBrokerDocument $record): string => (string) __('energy_broker.document_types.'.($record->document_type ?? 'unknown'))),
                 Placeholder::make('service_type')
                     ->label(__('energy_broker.fields.service_type'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => (string) __('energy_broker.service_types.'.($record?->service_type ?? 'unknown'))),
+                    ->content(fn (?EnergyBrokerDocument $record): string => (string) __('energy_broker.service_types.'.($record->service_type ?? 'unknown'))),
                 Placeholder::make('supplier_name')
                     ->label(__('energy_broker.fields.supplier_name'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => (string) ($record?->supplier_name ?? '-')),
+                    ->content(fn (?EnergyBrokerDocument $record): string => (string) ($record->supplier_name ?? '-')),
                 Placeholder::make('analysis_status')
                     ->label(__('energy_broker.fields.analysis_status'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => (string) __('energy_broker.statuses.'.($record?->analysis_status ?? 'draft'))),
+                    ->content(fn (?EnergyBrokerDocument $record): string => (string) __('energy_broker.statuses.'.($record->analysis_status ?? 'draft'))),
                 Placeholder::make('confidence_score')
                     ->label(__('energy_broker.fields.confidence_score'))
                     ->content(fn (?EnergyBrokerDocument $record): string => $record?->confidence_score !== null ? (string) $record->confidence_score : '-'),
                 Placeholder::make('file')
                     ->label(__('energy_broker.fields.pdf_file'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => (string) ($record?->media?->title ?? '-')),
+                    ->content(fn (?EnergyBrokerDocument $record): string => (string) ($record->media->title ?? '-')),
             ]),
             Section::make(__('energy_broker.sections.customer_data'))->columns(3)->columnSpanFull()->components([
                 Placeholder::make('payload_customer_legal_name')
@@ -315,7 +315,7 @@ final class EnergyBrokerDocumentResource extends Resource
 
     private static function payloadValue(?EnergyBrokerDocument $record, string $path): string
     {
-        $value = data_get($record?->normalized_payload ?? [], $path);
+        $value = data_get($record->normalized_payload ?? [], $path);
 
         if (is_bool($value)) {
             return $value ? __('Yes') : __('No');

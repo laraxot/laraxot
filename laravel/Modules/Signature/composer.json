@@ -37,7 +37,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Modules\\Signature\\Providers\\SignatureServiceProvider"
+                "Modules\\Signature\\Providers\\SignatureServiceProvider",
+                "Modules\\Signature\\Providers\\Filament\\AdminPanelProvider"
             ],
             "aliases": {}
         }

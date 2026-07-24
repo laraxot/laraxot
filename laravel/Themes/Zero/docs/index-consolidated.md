@@ -12,6 +12,9 @@ related:
 
 # Theme Zero Documentation Index
 
+> **Note 2026-07-24**: redundant with [00-index.md](./00-index.md) (canonical, updated 2026-03-28).
+> See that file as the primary entry point for Zero theme docs.
+
 **Status**: Theme implementation for Laraxot monolith  
 **Last Updated**: January 2026
 

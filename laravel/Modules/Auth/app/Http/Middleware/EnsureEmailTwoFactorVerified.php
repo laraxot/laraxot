@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace Modules\Auth\Http\Middleware;
 
-use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Modules\Auth\Actions\StartEmailTwoFactorChallengeAction;
+use Modules\User\Models\User;
 use Symfony\Component\HttpFoundation\Response;
 
 final class EnsureEmailTwoFactorVerified
 {
     /**
-     * @param Closure(Request): Response $next
+     * @param  Closure(Request): Response  $next
      */
     public function handle(Request $request, Closure $next): Response
     {

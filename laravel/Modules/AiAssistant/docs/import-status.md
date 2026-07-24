@@ -1,37 +1,34 @@
 ---
-title: "Import status — AiAssistant (replica, DO NOT DELETE)"
+title: "Import status — AiAssistant"
 type: concept
-tags: [aiassistant, replica, import, do-not-delete]
+tags: [import, aiassistant, gestionale-commesse, filament]
 created: 2026-07-23
-updated: 2026-07-23
-qmd: "AiAssistant import status replica restore do not delete"
+updated: 2026-07-24
+qmd: "import status AiAssistant panel migrate uuid users phpstan"
 issues:
-  - "https://github.com/laraxot/base_workorder_fila5/issues/9"
+  - "https://github.com/laraxot/base_workorder_fila5/issues/7"
+  - "https://github.com/laraxot/base_workorder_fila5/issues/14"
 discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
+  - "https://github.com/laraxot/base_workorder_fila5/discussions/15"
 related:
   - "./README.md"
+  - "./laraxot-reshape-fix.md"
   - "./visibility.md"
-  - "../../../../docs/gestionale-commesse-comparison/agent-errors-lessons.md"
+  - "../../../../docs/gestionale-commesse-comparison/functional-readiness.md"
   - "../../../../docs/gestionale-commesse-comparison/replica-singular-phase.md"
+  - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
 ---
 
 # Import status — AiAssistant
 
-> **Fase:** replica. **Non** merge in `AI`. **Non** cancellare.
+**Perché esiste:** assistente AI field-service (thread/proposal/tool) — **replica**, non merge nel modulo `AI`.
 
-## Checklist
-
-- [x] Layout sotto `app/`
-- [x] `composer.json` PSR-4 → `app/`
-- [x] Provider XotBase + Models BaseModel (+ Route/Event)
-- [x] QueueableAction
-- [x] Factories/seeders/migrations parity (4/4)
-- [x] PHPStan L10 `Modules/AiAssistant/app` = 0
-- [ ] Enable solo post-gate + ordine utente
+- [x] Reshape + XotBaseModel + QueueableAction
+- [x] Migrazioni `ai_*`; user cols = `string(36)` no FK
+- [x] Enabled + panel `aiassistant/admin` (+ API routes)
+- [x] **PHPStan L10** — 0 errori reali (Neuron stub `static` fluent + seeders Factory)
 - [ ] Pest smoke chat/operator
+- [ ] **Non cancellare** / non merge in AI
 
-## Vietato
-
-- `rm -rf` / delete perché «esiste AI»
-- Rimuovere chiave `AiAssistant` da `modules_statuses.json`
+SSoT: [functional-readiness.md](../../../../docs/gestionale-commesse-comparison/functional-readiness.md) · religione [replica-singular-phase.md](../../../../docs/gestionale-commesse-comparison/replica-singular-phase.md).

@@ -1,31 +1,41 @@
 ---
 title: "Wave 1 — nota FO operator (Themes)"
 type: concept
-tags: [themes, wave1, operator, folio, filament]
+tags: [themes, wave1, operator, folio, filament, bmad]
 created: 2026-07-23
-updated: 2026-07-23
-qmd: "wave1 operator FO Themes Folio Interventions timbratura"
+updated: 2026-07-24
+qmd: "wave1 operator FO Themes Folio Interventions timbratura panels ready document media"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
+  - "https://github.com/laraxot/base_workorder_fila5/issues/14"
 discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
+  - "https://github.com/laraxot/base_workorder_fila5/discussions/15"
 related:
   - "./gestionale-panels-vs-themes.md"
   - "./module-vs-theme-boundaries.md"
+  - "./gc-modules-runtime-matrix.md"
+  - "./new-modules-panel-mapping.md"
   - "./README.md"
   - "../../../docs/gestionale-commesse-comparison/wave1-reshape.md"
+  - "../../../docs/gestionale-commesse-comparison/functional-readiness.md"
 ---
 
 # Wave 1 — nota FO operator (Themes)
 
-> Durante il reshape XotBase di Interventions/WorkOrders **non** migrare i flussi operator su Folio.
+> Themes = skin FO pubblico. Operator field-service = **panel Filament** finché story FO Folio dedicata.
 
-## Decisione Wave 1
+## Runtime 2026-07-24
 
-| Flusso SRC | Dove resta in Wave 1 |
+| Flusso SRC | Dove ora |
 |---|---|
-| Timbratura / convalida ore | Filament panel (Interventions) |
-| Firma / sketch | Filament pages (Signatures + Interventions) |
-| Login | User Folio (già Laraxot) — non Auth SRC |
+| Timbratura / convalida ore | `intervention/admin` (Filament) |
+| Firma / sketch | `signature/admin` (Capture* pages) |
+| Commesse | `workorder/admin` |
+| Preventivi / sopralluoghi | `quotation/admin` |
+| Clienti | `customer/admin` |
+| Assistente | `aiassistant/admin` |
+| Login FO pubblico | User Folio (Laraxot) — Auth SRC coesiste come replica |
 
-Themes (Sixteen/Zero) = skin FO pubblico. Operator field-service = panel Filament finché story FO dedicata.
+Document: `modules_statuses=true` ma **RISCHIO** tabella `media` — non migrate cieco.  
+SSoT enable: [gc-modules-runtime-matrix.md](./gc-modules-runtime-matrix.md) · [functional-readiness.md](../../../docs/gestionale-commesse-comparison/functional-readiness.md).

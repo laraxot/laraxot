@@ -84,6 +84,7 @@ return [
         'recalculated' => 'Totali ricalcolati.',
         'new' => 'Nuovo',
         'create_similar' => 'Crea simile per un altro cliente',
+        'based_on' => 'Basato su: :label',
         'based_on_none' => 'Nessun preventivo di riferimento trovato.',
         'no_company_found' => 'Nessuna azienda trovata.',
         'city' => 'Città',

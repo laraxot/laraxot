@@ -8,9 +8,7 @@ use Modules\Platform\Settings\SettingsRepository;
 
 final readonly class WhatsAppSettings
 {
-    public function __construct(private SettingsRepository $settings)
-    {
-    }
+    public function __construct(private SettingsRepository $settings) {}
 
     public function phoneNumberId(): string
     {
@@ -70,6 +68,7 @@ final readonly class WhatsAppSettings
     public function openAiModel(): string
     {
         $model = $this->stringSetting('whatsapp.openai_model', 'services.whatsapp.openai_model');
+
         return $model !== '' ? $model : 'gpt-4o-mini';
     }
 

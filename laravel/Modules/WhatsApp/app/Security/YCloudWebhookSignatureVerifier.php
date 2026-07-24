@@ -8,9 +8,7 @@ use Modules\WhatsApp\Settings\WhatsAppSettings;
 
 final readonly class YCloudWebhookSignatureVerifier
 {
-    public function __construct(private WhatsAppSettings $settings)
-    {
-    }
+    public function __construct(private WhatsAppSettings $settings) {}
 
     public function isValid(string $rawBody, ?string $signatureHeader): bool
     {
@@ -27,7 +25,7 @@ final readonly class YCloudWebhookSignatureVerifier
             return false;
         }
 
-        $expected = hash_hmac('sha256', $timestamp . '.' . $rawBody . '.', $secret);
+        $expected = hash_hmac('sha256', $timestamp.'.'.$rawBody.'.', $secret);
 
         return hash_equals($expected, $signature);
     }

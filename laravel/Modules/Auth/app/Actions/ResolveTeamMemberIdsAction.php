@@ -18,11 +18,12 @@ final class ResolveTeamMemberIdsAction
     use QueueableAction;
 
     /**
-     * @param  array<int, array<int, int>>  $subordinatesByManager  manager_id => [user_id, ...]
-     * @return array<int, int> id del responsabile e di tutti i suoi collaboratori
+     * @param  array<string, list<string>>  $subordinatesByManager  manager_id => [user_id, ...]
+     * @return array<int, string> id del responsabile e di tutti i suoi collaboratori
      */
-    public function execute(int $managerId, array $subordinatesByManager): array
+    public function execute(string $managerId, array $subordinatesByManager): array
     {
+        /** @var array<string, true> $resolved */
         $resolved = [];
         $queue = [$managerId];
 
@@ -44,6 +45,6 @@ final class ResolveTeamMemberIdsAction
             }
         }
 
-        return array_map(intval(...), array_keys($resolved));
+        return array_keys($resolved);
     }
 }

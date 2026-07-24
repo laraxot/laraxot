@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\HR\Filament\Resources\AbsenceRequestResource\Pages;
 
-use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\HR\Filament\Resources\AbsenceRequestResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 
-final class CreateAbsenceRequest extends CreateRecord
+final class CreateAbsenceRequest extends XotBaseCreateRecord
 {
     protected static string $resource = AbsenceRequestResource::class;
 
@@ -28,4 +28,3 @@ final class CreateAbsenceRequest extends CreateRecord
         return parent::handleRecordCreation($data);
     }
 }
-

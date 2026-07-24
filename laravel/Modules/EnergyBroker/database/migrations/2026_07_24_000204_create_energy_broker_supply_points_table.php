@@ -9,7 +9,7 @@ return new class() extends XotBaseMigration
 {
     public function up(): void
     {
-        $this->tableCreate(static function (Blueprint $table): void {
+        $this->tableCreate(function (Blueprint $table): void {
             $table->id();
             $table->foreignId('customer_id')->constrained('customers')->cascadeOnDelete();
             $table->foreignId('customer_site_id')->nullable()->constrained('customer_sites')->nullOnDelete();

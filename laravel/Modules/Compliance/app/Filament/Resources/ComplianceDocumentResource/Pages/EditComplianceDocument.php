@@ -47,10 +47,12 @@ final class EditComplianceDocument extends EditRecord
             return;
         }
 
+        $userId = Auth::id();
+
         app(AttachComplianceDocumentFileAction::class)->execute(
             document: $this->record,
             path: $this->filePath,
-            uploadedByUserId: Auth::id(),
+            uploadedByUserId: is_int($userId) ? $userId : null,
         );
     }
 }

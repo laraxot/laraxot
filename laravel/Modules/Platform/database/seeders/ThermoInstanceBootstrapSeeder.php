@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Platform\Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Modules\Platform\Company\CompanyProfileProvider;
-use Modules\Platform\ValueObjects\CompanyProfile;
 use Modules\Platform\Models\PlatformSetting;
+use Modules\Platform\ValueObjects\CompanyProfile;
+use Modules\User\Models\User;
 use Spatie\Permission\Models\Role;
 
 /**
@@ -37,7 +37,7 @@ abstract class ThermoInstanceBootstrapSeeder extends Seeder
             Role::findOrCreate($role);
         }
 
-        $envPassword = env($this->passwordEnvKey());
+        $envPassword = getenv($this->passwordEnvKey());
         $password = is_string($envPassword) && trim($envPassword) !== '' ? $envPassword : 'CambiaSubito!123';
 
         $owner = User::query()->firstOrCreate(

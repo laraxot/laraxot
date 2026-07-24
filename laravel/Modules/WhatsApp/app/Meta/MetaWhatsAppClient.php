@@ -9,9 +9,7 @@ use Modules\WhatsApp\Settings\WhatsAppSettings;
 
 final readonly class MetaWhatsAppClient implements WhatsAppClientInterface
 {
-    public function __construct(private WhatsAppSettings $settings)
-    {
-    }
+    public function __construct(private WhatsAppSettings $settings) {}
 
     public function sendText(string $toPhoneE164, string $body): array
     {
@@ -31,7 +29,7 @@ final readonly class MetaWhatsAppClient implements WhatsAppClientInterface
             ]);
 
         if (! $response->successful()) {
-            throw new \RuntimeException('Errore Meta WhatsApp: ' . mb_substr($response->body(), 0, 500));
+            throw new \RuntimeException('Errore Meta WhatsApp: '.mb_substr($response->body(), 0, 500));
         }
 
         $decoded = $response->json();
@@ -95,7 +93,7 @@ final readonly class MetaWhatsAppClient implements WhatsAppClientInterface
             $this->settings->baseUrl(),
             $this->settings->apiVersion(),
             $this->settings->phoneNumberId(),
-            $path !== '' ? '/' . ltrim($path, '/') : '',
+            $path !== '' ? '/'.ltrim($path, '/') : '',
         );
     }
 

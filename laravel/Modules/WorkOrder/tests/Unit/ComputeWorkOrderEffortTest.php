@@ -1,0 +1,84 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\WorkOrder\Tests\Unit;
+
+use Modules\Intervention\Models\Intervention;
+use Modules\User\Models\User;
+use Modules\WorkOrder\Actions\ComputeWorkOrderEffortAction;
+use Modules\WorkOrder\Domain\DTO\WorkOrderEffort;
+use Modules\WorkOrder\Models\WorkOrder;
+use Modules\WorkOrder\Tests\TestCase;
+
+uses(TestCase::class);
+
+// Adattato da gestionale_commesse tests/Feature/WorkOrders/ComputeWorkOrderEffortTest.php
+
+function workOrderWithInterventions(?int $plannedMinutes, array $interventionMinutes): WorkOrder
+{
+    $workOrder = WorkOrder::factory()->create([
+        'planned_minutes' => $plannedMinutes,
+    ]);
+
+    $user = User::factory()->create();
+
+    foreach ($interventionMinutes as $minutes) {
+        Intervention::query()->create([
+            'work_order_id' => $workOrder->id,
+            'performed_by_user_id' => $user->id,
+            'work_minutes' => $minutes,
+        ]);
+    }
+
+    return $workOrder;
+}
+
+it('sums the minutes of all interventions as actual effort', function (): void {
+    $workOrder = workOrderWithInterventions(600, [120, 180, 90]);
+
+    $effort = app(ComputeWorkOrderEffortAction::class)->execute($workOrder);
+
+    expect($effort->actualMinutes)->toBe(390)
+        ->and($effort->plannedMinutes)->toBe(600)
+        ->and($effort->varianceMinutes())->toBe(-210)
+        ->and($effort->isOverBudget())->toBeFalse();
+});
+
+it('flags a work order that went over the planned time', function (): void {
+    $workOrder = workOrderWithInterventions(300, [240, 180]);
+
+    $effort = app(ComputeWorkOrderEffortAction::class)->execute($workOrder);
+
+    expect($effort->actualMinutes)->toBe(420)
+        ->and($effort->varianceMinutes())->toBe(120)
+        ->and($effort->variancePercent())->toBe(40.0)
+        ->and($effort->isOverBudget())->toBeTrue();
+});
+
+it('reports no variance when nothing was planned', function (): void {
+    $workOrder = workOrderWithInterventions(null, [60]);
+
+    $effort = app(ComputeWorkOrderEffortAction::class)->execute($workOrder);
+
+    expect($effort->varianceMinutes())->toBeNull()
+        ->and($effort->variancePercent())->toBeNull()
+        ->and($effort->isOverBudget())->toBeFalse();
+});
+
+it('reports zero actual effort when there are no interventions yet', function (): void {
+    $workOrder = workOrderWithInterventions(480, []);
+
+    $effort = app(ComputeWorkOrderEffortAction::class)->execute($workOrder);
+
+    expect($effort->actualMinutes)->toBe(0)
+        ->and($effort->varianceMinutes())->toBe(-480);
+});
+
+it('avoids dividing by zero when the planned time is zero', function (): void {
+    $effort = new WorkOrderEffort(plannedMinutes: 0, actualMinutes: 120);
+
+    expect($effort->variancePercent())->toBeNull()
+        ->and($effort->varianceMinutes())->toBe(120)
+        ->and($effort->isOverBudget())->toBeTrue();
+});

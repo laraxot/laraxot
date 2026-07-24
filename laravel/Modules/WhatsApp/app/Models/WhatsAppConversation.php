@@ -5,12 +5,14 @@ declare(strict_types=1);
 namespace Modules\WhatsApp\Models;
 
 use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
+use Modules\WhatsApp\Database\Factories\WhatsAppConversationFactory;
 
 /**
  * @property int $id
@@ -25,13 +27,18 @@ use Modules\Customer\Models\CustomerSite;
  * @property string $status
  * @property int|null $active_proposal_id
  * @property int|null $approved_up_to_message_id
- * @property \Illuminate\Support\Carbon|null $last_message_at
+ * @property Carbon|null $last_message_at
  * @property array<string, mixed>|null $meta
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ *
+ * @method static \Modules\WhatsApp\Database\Factories\WhatsAppConversationFactory factory($count = null, $state = [])
  */
-final class WhatsAppConversation extends Model
+final class WhatsAppConversation extends BaseModel
 {
+    /** @use HasFactory<WhatsAppConversationFactory> */
+    use HasFactory;
+
     protected $table = 'whatsapp_conversations';
 
     /** @var array<int, string> */
@@ -80,5 +87,10 @@ final class WhatsAppConversation extends Model
     public function messages(): HasMany
     {
         return $this->hasMany(WhatsAppMessage::class, 'conversation_id');
+    }
+
+    protected static function newFactory(): WhatsAppConversationFactory
+    {
+        return WhatsAppConversationFactory::new();
     }
 }

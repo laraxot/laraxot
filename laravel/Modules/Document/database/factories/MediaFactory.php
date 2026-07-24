@@ -21,7 +21,7 @@ class MediaFactory extends Factory
     public function definition(): array
     {
         return [
-            'mediable_type' => 'Modules\Customer\\Models\\Customer',
+            'mediable_type' => 'Modules\Customer\Models\Customer',
             'mediable_id' => 1,
             'uploaded_by_user_id' => null,
             'kind' => 'document',

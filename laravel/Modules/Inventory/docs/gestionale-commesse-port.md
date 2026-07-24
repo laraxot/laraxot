@@ -52,3 +52,11 @@ Modulo più esteso dei tre (5 modelli, 3 resource Filament, pagina di overview c
 ## Non ancora fatto (debito noto, non bloccante)
 
 - I metodi `locationOptionsForWarehouse()`, `productOptionsForMovement()`, `stockSummaryByWarehouse()` in `InventoryMovementResource` dichiarano `@return array<int,string>`/`array<int,int>` ma restituiscono `array<mixed>` da `pluck()->all()` — richiederebbe cast espliciti riga per riga, rimandato per non allargare la superficie di modifica oltre il reshape strutturale richiesto in questa sessione.
+
+## Verificato 2026-07-24 — `vendor/bin/pest Modules/Inventory/tests` FALLISCE in isolamento
+
+Le factory (`ProductUnitFactory` ecc.) dipendono da `Modules\Catalog\Models\Product`, ma
+`Modules\Inventory\Tests\TestCase::getPackageProviders()` non registra `CatalogServiceProvider`.
+Eseguito da solo, 3 test falliscono con `QueryException: no such table: products`. Nessuna
+testsuite `Inventory` in `phpunit.xml` root, quindi non gira mai in CI. Stesso fix di Bom/Production:
+registrare `CatalogServiceProvider` nel `TestCase` + aggiungere testsuite dedicata.

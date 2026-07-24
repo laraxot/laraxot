@@ -10,6 +10,11 @@ updated: 2026-06-05
 
 > 🇮🇹 [Biglietto da visita (IT)](../README.md) · 🇬🇧 [Business card (EN)](./readme-en.md)
 
+## Gestionale / replica
+
+FO attivo per Design Comuni. BL field-service = moduli Filament, non Folio Sixteen.  
+Hub: [gestionale-docs-index.md](../../docs/gestionale-docs-index.md) · [matrice statuses](../../docs/gc-modules-runtime-matrix.md) · [panels vs Sixteen](./gestionale-panels-vs-themes.md).
+
 ## Overview
 The Sixteen theme is the primary frontend theme for the Fixcity application, built on top of Bootstrap Italia (Design Comuni) framework. It provides a modern, accessible, and responsive interface for all application features.
 

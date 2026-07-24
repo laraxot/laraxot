@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Auth\Actions;
 
-use App\Models\User;
+use Modules\User\Models\User;
 use Spatie\Permission\Models\Role;
 use Spatie\QueueableAction\QueueableAction;
 

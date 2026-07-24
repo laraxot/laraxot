@@ -1,21 +1,45 @@
 ---
-title: "Catalog — replica gestionale (normalize)"
+title: "Catalog — knowledge base"
 type: overview
-tags: [catalog, gestionale-commesse, replica]
+tags: [catalog, gestionale-commesse, docs, bmad]
 created: 2026-07-23
-updated: 2026-07-23
-qmd: "Catalog replica normalize Laraxot app XotBase"
+updated: 2026-07-24
+qmd: "Catalog docs README purpose prodotti listini"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
+  - "https://github.com/laraxot/base_workorder_fila5/issues/14"
 discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
 related:
   - "./import-status.md"
-  - "../../../../docs/gestionale-commesse-comparison/replica-singular-phase.md"
+  - "./gestionale-commesse-port.md"
+  - "../../../../docs/gestionale-commesse-comparison/functional-readiness.md"
+  - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
 ---
 
 # Catalog
 
-Replica da `gestionale_commesse` (nome singolare). Layout verso `app/` + XotBase.
+## Perché esiste
 
-Fase: [replica-singular-phase.md](../../../../docs/gestionale-commesse-comparison/replica-singular-phase.md).
+**Listino / prodotti / unità / tipi**: alimenta righe preventivo e materiali. Dipendenza soft di Quotation (`product_id`).
+
+## Runtime
+
+| Gate | Stato |
+|---|---|
+| Enabled | sì |
+| Schema | products + catalog_* migrate path OK |
+| Panel | da verificare/estendere (focus wave = CRUD Quotation) |
+
+## Indice docs
+
+| File | Scopo |
+|---|---|
+| [import-status.md](./import-status.md) | Checklist |
+| [gestionale-commesse-port.md](./gestionale-commesse-port.md) | Port |
+
+## Hub / BMAD
+
+- [functional-readiness.md](../../../../docs/gestionale-commesse-comparison/functional-readiness.md) · [#14](https://github.com/laraxot/base_workorder_fila5/issues/14)
+- Matrice statuses: [gc-modules-runtime-matrix.md](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md)
+- Story [2.4 docs hygiene](../../../../docs/wiki/skills/bmad-create-story/stories/2.4.module-theme-docs-hygiene.story.md)

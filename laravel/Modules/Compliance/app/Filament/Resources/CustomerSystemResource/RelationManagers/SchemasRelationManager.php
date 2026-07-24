@@ -68,7 +68,7 @@ final class SchemasRelationManager extends RelationManager
             FileUpload::make('path')
                 ->label('File schema')
                 ->disk('local')
-                ->directory(fn (): string => 'customer-system-schemas/'.$this->getOwnerRecord()->getKey())
+                ->directory(fn (): string => 'customer-system-schemas/'.(string) $this->getOwnerRecord()->getKey())
                 ->visibility('private')
                 ->acceptedFileTypes(self::ACCEPTED_MIME_TYPES)
                 ->maxSize(51200)

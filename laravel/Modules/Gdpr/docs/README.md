@@ -36,7 +36,6 @@ Gdpr/
 
 ## Collegamenti
 
-- [Documentazione Root](../../../docs/GDPR_MODULE.md)
 
 ## Backlinks
 

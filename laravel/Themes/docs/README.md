@@ -1,49 +1,57 @@
+---
+title: "Laravel Themes Documentation"
+type: index
+tags: [themes, docs, gestionale-commesse]
+created: 2026-06-05
+updated: 2026-07-24
+qmd: "Themes docs hub Sixteen gestionale panels index"
+issues:
+  - "https://github.com/laraxot/base_workorder_fila5/issues/7"
+discussions:
+  - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
+related:
+  - "./gestionale-docs-index.md"
+  - "./gc-modules-runtime-matrix.md"
+  - "./module-vs-theme-boundaries.md"
+  - "../Sixteen/docs/README.md"
+---
+
 # Laravel Themes Documentation
 
-This directory routes to the active documentation roots for the Laravel themes in this repository.
+Hub dei temi. Per il porting gestionale partire da **[gestionale-docs-index.md](./gestionale-docs-index.md)** e dalla **[matrice runtime](./gc-modules-runtime-matrix.md)**.
 
 ## Current Themes
 
 | Theme | Role | Status | Docs |
 | --- | --- | --- | --- |
-| `Sixteen` | active public-facing theme aligned with Design Comuni and Bootstrap Italia parity work | active | [README](../Sixteen/docs/README.md) |
-| `TwentyOne` | alternative theme with Vite and Tailwind-based frontoffice work | available | [README](../TwentyOne/docs/README.md) |
+| `Sixteen` | FO attivo (Design Comuni / BI) | active | [README](../Sixteen/docs/README.md) |
+| `TwentyOne` | FO alternativo Vite/Tailwind | available | [README](../TwentyOne/docs/README.md) |
+| `Zero` / altri | sperimentali / nicchie | available | rispettivi `docs/README.md` |
 
 ## Theme Rules
 
-- The active documentation home for a theme is `laravel/Themes/<Theme>/docs/README.md`.
-- Never create `lang/lang/` or `_docs/` in a theme; see [directory-structure-rules.md](./directory-structure-rules.md).
-- Keep root theme indexes short; they should route to the theme, not duplicate the theme docs.
-- Treat generated screenshots, vendor docs, and `node_modules/**/docs` as supporting material, not as canonical repository guidance.
-- Use project-level rules from [docs/project/docs-governance.md](../../../docs/project/docs-governance.md).
+- Home docs tema: `laravel/Themes/<Theme>/docs/README.md`
+- Vietato `lang/lang/` o `_docs/`: [directory-structure-rules.md](./directory-structure-rules.md)
+- Indici root corti: routing, non duplicare
+- Governance: [docs/project/docs-governance.md](../../../docs/project/docs-governance.md) (se presente)
 
-## Runtime Context
+## Gestionale / replica (SSoT temi)
 
-- Web document root: `public_html/`
-- Application code: `laravel/`
-- Theme assets are published under `public_html/themes/<Theme>/`
+| Doc | Scopo |
+|---|---|
+| **[gestionale-docs-index.md](./gestionale-docs-index.md)** | Indice unico |
+| [module-vs-theme-boundaries.md](./module-vs-theme-boundaries.md) | Confini |
+| [wave1-fo-operator-note.md](./wave1-fo-operator-note.md) | Operator = Filament |
+| [new-modules-panel-mapping.md](./new-modules-panel-mapping.md) | URL `*/admin` |
+| [copy-normalize-modules-vs-themes.md](./copy-normalize-modules-vs-themes.md) | Copy ≠ Themes |
+| Hub prodotto | [functional-readiness.md](../../../docs/gestionale-commesse-comparison/functional-readiness.md) |
 
 ## Fast Paths
 
-- Active theme docs: [Sixteen](../Sixteen/docs/README.md)
-- Alternative theme docs: [TwentyOne](../TwentyOne/docs/README.md)
-- Module index: [laravel/Modules/docs/README.md](../../Modules/docs/README.md)
-- LLM wiki workflow: [docs/wiki/README.md](../../../docs/wiki/README.md)
-- Themes note: [llm-wiki.md](./llm-wiki.md)
-- Shared project docs: [docs/README.md](../../../docs/README.md)
-- Agent rules: [AGENTS.md](../../../AGENTS.md)
-- Ridondanze documentazione temi: [ridondanze-documentazione-temi.md](./ridondanze-documentazione-temi.md)
+- [Sixteen](../Sixteen/docs/README.md) · [TwentyOne](../TwentyOne/docs/README.md)
+- [Modules docs](../../Modules/docs/README.md)
+- [llm-wiki.md](./llm-wiki.md) · [AGENTS.md](../../../AGENTS.md)
 
-## Documentation (hub — non duplicare nei temi)
+## Note legacy (UPPERCASE)
 
-- [On-Demand Pattern](./ON-DEMAND-PATTERN.md) — Pattern per caricamento efficiente
-- [QMD Setup](./QMD-SETUP.md) — Configurazione ricerca locale
-- [Performance](./PERFORMANCE-OPTIMIZATION.md) — Metriche e best practice
-- [Project Structure](./PROJECT-STRUCTURE.md) — Directory layout
-
-- [AiAssistant vs Themes](./aiassistant-vs-themes.md) — chat/proposal nel modulo, non nel tema; `statuses=false` ≠ cancellato.
-
-## Gestionale / replica
-
-- [Fase replica singolare](../../docs/gestionale-commesse-comparison/replica-singular-phase.md)
-- [Temi vs moduli replica](./copy-normalize-modules-vs-themes.md)
+File come `ON-DEMAND-PATTERN.md` / `DOCUMENTATION_INDEX.md` restano stub legacy: preferire wiki root e questo hub. Non crearne di nuovi in UPPERCASE.

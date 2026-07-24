@@ -6,7 +6,12 @@ namespace NeuronAI\Chat\Messages;
 
 class UserMessage extends Message
 {
-    public function __construct(string $content) {}
+    private string $content;
+
+    public function __construct(string $content)
+    {
+        $this->content = $content;
+    }
 
     public function getRole(): string
     {
@@ -15,12 +20,12 @@ class UserMessage extends Message
 
     public function getContent(): string
     {
-        return '';
+        return $this->content;
     }
 
     /** @return array<string, mixed> */
     public function jsonSerialize(): array
     {
-        return [];
+        return ['role' => 'user', 'content' => $this->content];
     }
 }

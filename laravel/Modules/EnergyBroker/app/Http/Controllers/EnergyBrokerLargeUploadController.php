@@ -6,6 +6,7 @@ namespace Modules\EnergyBroker\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Gate;
 use Modules\EnergyBroker\Actions\CompleteEnergyBrokerLargeUploadAction;
@@ -21,6 +22,7 @@ final class EnergyBrokerLargeUploadController extends Controller
     {
         Gate::authorize('create', EnergyBrokerDocument::class);
 
+        /** @var array{filename: string, total_size: int, chunk_size: int, mime_type?: string} $validated */
         $validated = $request->validate([
             'filename' => ['required', 'string', 'max:255'],
             'total_size' => ['required', 'integer', 'min:1'],
@@ -49,12 +51,13 @@ final class EnergyBrokerLargeUploadController extends Controller
 
         $upload = $this->findUpload($publicId);
 
+        /** @var array{chunk_index: int, chunk: UploadedFile} $validated */
         $validated = $request->validate([
             'chunk_index' => ['required', 'integer', 'min:0'],
             'chunk' => ['required', 'file'],
         ]);
 
-        /** @var \Illuminate\Http\UploadedFile $chunk */
+        /** @var UploadedFile $chunk */
         $chunk = $request->file('chunk');
         $upload = $action->execute($upload, (int) $validated['chunk_index'], $chunk);
 

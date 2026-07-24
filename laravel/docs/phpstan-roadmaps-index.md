@@ -1,5 +1,8 @@
 # PHPStan Level 10 - Roadmaps Index
 
+> Per il debito tecnico dei 23 moduli migrati da `gestionale_commesse` (campagna 2026-07-24, separata da
+> questa), vedi [gestionale-commesse-technical-debt.md](./gestionale-commesse-technical-debt.md).
+
 ## 📊 Stato Generale
 
 **Data Analisi**: Gennaio 2025  

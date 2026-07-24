@@ -1,5 +1,9 @@
 # Tema Zero - Documentazione
 
+## Gestionale / replica
+
+Tema alternativo/sperimentale. Enable moduli GC: [matrice](../../docs/gc-modules-runtime-matrix.md). Hub: [gestionale-docs-index.md](../../docs/gestionale-docs-index.md) · [panels vs Zero](./gestionale-panels-vs-themes.md).
+
 ## Overview
 
 Il tema **Zero** è il tema principale di default per l'applicazione Laraxot PTVX.

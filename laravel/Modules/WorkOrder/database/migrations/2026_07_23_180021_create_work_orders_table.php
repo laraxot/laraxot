@@ -14,7 +14,8 @@ return new class() extends XotBaseMigration
             $table->string('code')->nullable()->unique();
             $table->foreignId('customer_id')->constrained('customers')->cascadeOnDelete();
             $table->foreignId('customer_site_id')->nullable()->constrained('customer_sites')->nullOnDelete();
-            $table->foreignId('primary_contact_id')->nullable()->constrained('contacts')->nullOnDelete();
+            // contacts.id può essere preesistente (int) o bigint: no FK DB; relazione Eloquent.
+            $table->unsignedBigInteger('primary_contact_id')->nullable()->index();
             $table->foreignId('status_id')->nullable()->constrained('work_order_statuses')->nullOnDelete();
             $table->string('title');
             $table->text('description')->nullable();

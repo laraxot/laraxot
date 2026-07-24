@@ -80,7 +80,6 @@ $comment->markAsSpam();
 
 ### 🎨 **Filament Integration**
 - [MCP Server](mcp-server-recommended.md) - Server MCP consigliati
-- [Roadmap 2025](roadmap-2025.md) - Piano sviluppo
 
 ### 🔧 **Development**
 - [PHPStan Fixes](phpstan-fixes.md) - Correzioni PHPStan

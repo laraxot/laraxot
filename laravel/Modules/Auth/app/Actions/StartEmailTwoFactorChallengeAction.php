@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Auth\Actions;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Modules\Auth\Notifications\EmailTwoFactorCodeNotification;
+use Modules\User\Models\User;
 use Spatie\QueueableAction\QueueableAction;
 
 final class StartEmailTwoFactorChallengeAction

@@ -37,7 +37,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Modules\\Quotation\\Providers\\QuotationServiceProvider"
+                "Modules\\Quotation\\Providers\\QuotationServiceProvider",
+                "Modules\\Quotation\\Providers\\Filament\\AdminPanelProvider"
             ],
             "aliases": {}
         }

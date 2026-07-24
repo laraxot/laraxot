@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\HR\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Document\Models\Media;
+use Modules\HR\Database\Factories\EmployeeTrainingFactory;
+use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -22,8 +24,11 @@ use Modules\Document\Models\Media;
  * @property Carbon|null $updated_at
  * @property Media|null $media
  */
-final class EmployeeTraining extends Model
+final class EmployeeTraining extends XotBaseModel
 {
+    /** @use HasFactory<EmployeeTrainingFactory> */
+    use HasFactory;
+
     protected $table = 'employee_trainings';
 
     /** @var array<int, string> */

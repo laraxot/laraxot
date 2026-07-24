@@ -66,7 +66,6 @@ Modules/Cms/
 ├── docs/
 │   ├── README.md
 │   ├── architecture.md
-│   ├── content-management.md
 │   └── block-system.md
 ├── module.json
 └── composer.json
@@ -207,7 +206,6 @@ php -d memory_limit=-1 ./vendor/bin/phpstan analyse --level=max Modules/Cms
 ## Documentation Index
 
 - [Architecture Details](./architecture.md) — System design and patterns
-- [Content Management](./content-management.md) — Page and content handling
 - [Block System](./block-system.md) — Creating and using blocks
 - [Frontend Rendering](./frontend-rendering.md) — Display components
 - [Folio Integration](./folio-integration.md) — File-based routing
@@ -215,16 +213,13 @@ php -d memory_limit=-1 ./vendor/bin/phpstan analyse --level=max Modules/Cms
 
 ## Dipendenze / Moduli Correlati
 
-- [Xot - Framework Base](../Xot/docs/README.md) — Always dependency
-- [UI - Components](../UI/docs/README.md) — For UI components library
-- [Lang - Translations](../Lang/docs/README.md) — For i18n support
-- [Media - File Management](../Media/docs/README.md) — For image/file handling
+- [Xot - Framework Base](../../Xot/docs/README.md) — Always dependency
+- [UI - Components](../../UI/docs/README.md) — For UI components library
+- [Lang - Translations](../../Lang/docs/README.md) — For i18n support
+- [Media - File Management](../../Media/docs/README.md) — For image/file handling
 
 ## Documenti Correlati
 
-- [Content Management Best Practices](../../../docs/wiki/standards/content-management.md)
-- [Block System Patterns](../../../docs/wiki/standards/block-patterns.md)
-- [Frontend Architecture](../../../docs/architecture/frontend.md)
 - [PHPStan Configuration](../../../phpstan.neon)
 
 ## Regole Critiche
@@ -239,9 +234,9 @@ php -d memory_limit=-1 ./vendor/bin/phpstan analyse --level=max Modules/Cms
 
 ## Standard Rules & Workflow
 
-- [[BMAD Method](../../../docs/wiki/concepts/bmad-method.md)]
-- [[Context Engineering](../../../docs/wiki/concepts/context-engineering.md)]
-- [[LLM Wiki Governance](../../../docs/wiki/concepts/llm-wiki-governance.md)]
+- [[BMAD Method](../../../../docs/wiki/concepts/bmad-method.md)]
+- [[Context Engineering](../../../../docs/wiki/concepts/context-engineering.md)]
+- [[LLM Wiki Governance](../../../../docs/wiki/concepts/llm-wiki-governance.md)]
 
 ---
 

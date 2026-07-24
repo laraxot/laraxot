@@ -47,7 +47,7 @@ return [
         'total' => 'Total',
         'empty' => 'No lines to invoice.',
         'undecided_title' => 'Undecided quote extras',
-        'undecided_body' => 'There are quote extras not yet decided: issuing now means giving them away by omission.',
+        'undecided_body' => 'There are quote extras worth :amount not yet decided: issuing now means giving them away by omission.',
         'sources' => [
             'labor' => 'Labor',
             'callout' => 'Callout fee',

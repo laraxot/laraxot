@@ -16,6 +16,8 @@ use Modules\EnergyBroker\Models\EnergyBrokerImportBatch;
 use Modules\EnergyBroker\Models\EnergyBrokerLargeUpload;
 use Throwable;
 
+use function Safe\preg_match;
+
 final class ImportEnergyBrokerLargeUploadJob implements ShouldQueue
 {
     use Dispatchable;
@@ -25,9 +27,7 @@ final class ImportEnergyBrokerLargeUploadJob implements ShouldQueue
 
     public int $timeout = 0;
 
-    public function __construct(private readonly int $largeUploadId)
-    {
-    }
+    public function __construct(private readonly int $largeUploadId) {}
 
     public function handle(): void
     {

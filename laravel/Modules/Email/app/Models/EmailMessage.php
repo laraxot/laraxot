@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Email\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\AiAssistant\Models\AiActionProposal;
+use Modules\Email\Database\Factories\EmailMessageFactory;
 use Modules\Intervention\Models\Intervention;
 use Modules\WorkOrder\Models\WorkOrder;
 
@@ -34,9 +35,14 @@ use Modules\WorkOrder\Models\WorkOrder;
  * @property Carbon|null $processed_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
+ * @method static \Modules\Email\Database\Factories\EmailMessageFactory factory($count = null, $state = [])
  */
-final class EmailMessage extends Model
+final class EmailMessage extends BaseModel
 {
+    /** @use HasFactory<EmailMessageFactory> */
+    use HasFactory;
+
     protected $table = 'email_messages';
 
     /** @var array<int, string> */
@@ -76,5 +82,10 @@ final class EmailMessage extends Model
     public function proposal(): BelongsTo
     {
         return $this->belongsTo(AiActionProposal::class, 'ai_action_proposal_id');
+    }
+
+    protected static function newFactory(): EmailMessageFactory
+    {
+        return EmailMessageFactory::new();
     }
 }

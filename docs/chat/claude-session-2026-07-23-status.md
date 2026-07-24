@@ -78,3 +78,15 @@ ancora usato in questa sessione (lezione da applicare: vedi
    migrations, PHPStan L10 su tutti i 23 moduli)
 4. Rimuovere le cartelle plurali residue solo dopo conferma che il singolare corrispondente sia
    completo (non cancellare a scatola chiusa — vedi lezione #1 in session-lessons-learned.md)
+
+## Aggiornamento 2026-07-24 — `pint --dirty` NON è path-scoped
+
+Confermato da almeno 4 agenti diversi in questa sessione: `vendor/bin/pint --dirty` (anche se lanciato
+con un path esplicito come argomento) opera sul **diff git dell'intero repo**, non solo sul path passato,
+quindi riformatta/tocca file di ALTRI moduli modificati da altri agenti concorrenti. Ogni volta è stato
+recuperato con `git checkout -- <file-non-tuo>` subito dopo essersene accorti, ma è un rischio sistemico.
+
+**Regola per chi lavora in questa sessione multi-agente**: non usare `pint --dirty` per validare lo stile
+di un singolo modulo. Usare invece `vendor/bin/pint path/al/singolo/file.php` (path esplicito, non
+`--dirty`) oppure verificare lo stile manualmente. Se lo lanci per errore, verifica subito `git status`
+e fai `git checkout --` su qualunque file fuori dal tuo scope prima di continuare.

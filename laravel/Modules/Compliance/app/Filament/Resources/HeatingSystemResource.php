@@ -33,9 +33,9 @@ final class HeatingSystemResource extends Resource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-fire';
 
-    private const ACCOUNT_FEATURE_ADMIN = 'admin.heating_maintenance';
+    protected const ACCOUNT_FEATURE_ADMIN = 'admin.heating_maintenance';
 
-    private const ACCOUNT_FEATURE_OPERATOR = 'operator.heating_maintenance';
+    protected const ACCOUNT_FEATURE_OPERATOR = 'operator.heating_maintenance';
 
     public static function getNavigationGroup(): string
     {
@@ -56,7 +56,7 @@ final class HeatingSystemResource extends Resource
     {
         /** @var array<int|string, string> $fuelOptions */
         $fuelOptions = collect((array) config('heating.fuel_types', []))
-            ->mapWithKeys(fn ($f): array => [(string) $f => __("heating.fuels.{$f}")])
+            ->mapWithKeys(fn ($f): array => [(string) $f => __('heating.fuels.'.(string) $f)])
             ->all();
 
         return $schema->components([

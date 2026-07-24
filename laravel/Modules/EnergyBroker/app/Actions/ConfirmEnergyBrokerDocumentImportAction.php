@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\EnergyBroker\Actions;
 
-use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Support\Facades\DB;
 use Modules\Customer\Actions\CreateCustomerAction;
 use Modules\Customer\Actions\CreateCustomerSiteAction;
@@ -16,6 +16,9 @@ use Modules\EnergyBroker\Models\EnergyBrokerDocument;
 use Modules\EnergyBroker\Models\EnergyBrokerSupplyHistory;
 use Modules\EnergyBroker\Models\EnergyBrokerSupplyPoint;
 use Spatie\QueueableAction\QueueableAction;
+
+use function Safe\preg_match;
+use function Safe\preg_replace;
 
 final class ConfirmEnergyBrokerDocumentImportAction
 {
@@ -73,7 +76,7 @@ final class ConfirmEnergyBrokerDocumentImportAction
                     'status' => 'needs_review',
                     'matched_on' => [
                         'legal_name' => $candidate->legal_name === ($customerData['legal_name'] ?? null),
-                        'address_line1' => $candidate->address_line1 === ($customerData['address_line1'] ?? null),
+                        'address_line1' => $candidate->getAttribute('address_line1') === ($customerData['address_line1'] ?? null),
                         'tax_code_equal' => $candidate->tax_code !== null && $candidate->tax_code === ($customerData['tax_code'] ?? null),
                     ],
                     'reason' => 'Anagrafica simile ma non abbastanza forte per merge automatico.',
@@ -124,9 +127,9 @@ final class ConfirmEnergyBrokerDocumentImportAction
     /**
      * @param  array<string, mixed>  $customerData
      * @param  array<string, mixed>  $supplyData
-     * @return Collection<int, Customer>
+     * @return EloquentCollection<int, Customer>
      */
-    private function findReviewCandidates(array $customerData, array $supplyData)
+    private function findReviewCandidates(array $customerData, array $supplyData): EloquentCollection
     {
         $legalName = $this->normalizedString($customerData['legal_name'] ?? null);
         $pod = $this->normalizedString($supplyData['pod'] ?? null);
@@ -143,7 +146,7 @@ final class ConfirmEnergyBrokerDocumentImportAction
         }
 
         if ($pod === null && $pdr === null) {
-            return collect();
+            return new EloquentCollection();
         }
 
         $supplyPointQuery = EnergyBrokerSupplyPoint::query();
@@ -349,15 +352,18 @@ final class ConfirmEnergyBrokerDocumentImportAction
             $score += 60.0;
         }
 
-        if ($customer->address_line1 !== null && $customer->address_line1 === ($customerData['address_line1'] ?? null)) {
+        $addressLine1 = $customer->getAttribute('address_line1');
+        if ($addressLine1 !== null && $addressLine1 === ($customerData['address_line1'] ?? null)) {
             $score += 20.0;
         }
 
-        if ($customer->postal_code !== null && $customer->postal_code === ($customerData['postal_code'] ?? null)) {
+        $postalCode = $customer->getAttribute('postal_code');
+        if ($postalCode !== null && $postalCode === ($customerData['postal_code'] ?? null)) {
             $score += 10.0;
         }
 
-        if ($customer->province !== null && $customer->province === ($customerData['province'] ?? null)) {
+        $province = $customer->getAttribute('province');
+        if ($province !== null && $province === ($customerData['province'] ?? null)) {
             $score += 10.0;
         }
 
@@ -384,7 +390,7 @@ final class ConfirmEnergyBrokerDocumentImportAction
 
         $string = str_replace('.', '', $string);
         $string = str_replace(',', '.', $string);
-        $string = preg_replace('/[^0-9.]+/', '', $string) ?? $string;
+        $string = preg_replace('/[^0-9.]+/', '', $string);
 
         return $string !== '' ? $string : null;
     }

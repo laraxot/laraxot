@@ -4,19 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\HR\Providers;
 
-use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Modules\Xot\Providers\XotBaseEventServiceProvider;
 
-class EventServiceProvider extends ServiceProvider
-{
-    /**
-     * The event handler mappings for the application.
-     *
-     * @var array<string, array<int, string>>
-     */
-    protected $listen = [];
-
-    /**
-     * Indicates if events should be discovered.
-     */
-    protected static $shouldDiscoverEvents = true;
-}
+class EventServiceProvider extends XotBaseEventServiceProvider {}

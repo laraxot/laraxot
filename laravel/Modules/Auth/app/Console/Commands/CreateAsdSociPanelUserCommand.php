@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Auth\Console\Commands;
 
-use App\Models\User;
 use Illuminate\Console\Command;
+use Modules\User\Models\User;
 use Spatie\Permission\Models\Role;
 
 final class CreateAsdSociPanelUserCommand extends Command
@@ -88,7 +88,9 @@ final class CreateAsdSociPanelUserCommand extends Command
         $isNewUser = ! $user->exists;
 
         $user->name = $name;
-        $user->approved_at ??= now();
+        if ($user->getAttribute('approved_at') === null) {
+            $user->setAttribute('approved_at', now());
+        }
 
         if ($isNewUser || (bool) $this->option('force-password-reset')) {
             $user->password = $password;

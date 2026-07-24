@@ -4,14 +4,19 @@ declare(strict_types=1);
 
 namespace Modules\HR\Models;
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\HR\Database\Factories\EmployeeFactory;
+use Modules\User\Models\User;
+use Modules\Xot\Models\XotBaseModel;
 
-final class Employee extends Model
+final class Employee extends XotBaseModel
 {
+    /** @use HasFactory<EmployeeFactory> */
+    use HasFactory;
+
     use SoftDeletes;
 
     protected $table = 'employees';
@@ -54,4 +59,3 @@ final class Employee extends Model
         return $this->hasMany(EmployeeDocument::class);
     }
 }
-

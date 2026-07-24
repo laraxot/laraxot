@@ -11,6 +11,7 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
 use Illuminate\Support\Facades\Auth;
+use Modules\Employee\Models\AbsenceRequest;
 use Modules\Employee\Models\Employee;
 use Modules\Xot\Filament\Widgets\XotBaseSchemaWidget;
 use Override;
@@ -71,6 +72,9 @@ class LeaveBalanceWidget extends XotBaseSchemaWidget
     /**
      * Get monthly leave balances for employee.
      *
+     * Computed from real `AbsenceRequest` records (approved only), replacing
+     * the previous hardcoded balances.
+     *
      * @return array<string, array<string, mixed>>
      */
     protected function getMonthlyBalances(?Employee $employee): array
@@ -79,56 +83,18 @@ class LeaveBalanceWidget extends XotBaseSchemaWidget
             return $this->getDefaultBalances();
         }
 
-        // Calculate current month balances
-        $currentMonth = Carbon::now()->month;
-        $currentYear = Carbon::now()->year;
-
-        return [
-            'ferie' => [
-                'label' => __('employee::widgets.leave_balance.types.vacation'),
-                'hours' => 8,
-                'minutes' => 53,
-                'total_minutes' => 533,
-                'color' => 'blue',
-                'icon' => 'heroicon-o-sun',
-            ],
-            'rol' => [
-                'label' => __('employee::widgets.leave_balance.types.rol'),
-                'hours' => 0,
-                'minutes' => 0,
-                'total_minutes' => 0,
-                'color' => 'blue',
-                'icon' => 'heroicon-o-clock',
-            ],
-            'perm_ex_fs' => [
-                'label' => __('employee::widgets.leave_balance.types.former_holidays'),
-                'hours' => -2,
-                'minutes' => -32,
-                'total_minutes' => -152,
-                'color' => 'blue',
-                'icon' => 'heroicon-o-calendar',
-            ],
-            'banca_ore' => [
-                'label' => __('employee::widgets.leave_balance.types.hour_bank'),
-                'hours' => 0,
-                'minutes' => 0,
-                'total_minutes' => 0,
-                'color' => 'blue',
-                'icon' => 'heroicon-o-banknotes',
-            ],
-            'permessi' => [
-                'label' => __('employee::widgets.leave_balance.types.permits'),
-                'hours' => 0,
-                'minutes' => 0,
-                'total_minutes' => 0,
-                'color' => 'blue',
-                'icon' => 'heroicon-o-document-text',
-            ],
-        ];
+        return $this->buildBalances(
+            $employee,
+            Carbon::now()->startOfMonth(),
+            Carbon::now()->endOfMonth(),
+        );
     }
 
     /**
      * Get annual leave balances for employee.
+     *
+     * Computed from real `AbsenceRequest` records (approved only), replacing
+     * the previous hardcoded balances.
      *
      * @return array<string, array<string, mixed>>
      */
@@ -138,51 +104,54 @@ class LeaveBalanceWidget extends XotBaseSchemaWidget
             return $this->getDefaultBalances();
         }
 
-        // Calculate annual balances
-        $currentYear = Carbon::now()->year;
+        return $this->buildBalances(
+            $employee,
+            Carbon::now()->startOfYear(),
+            Carbon::now()->endOfYear(),
+        );
+    }
 
-        return [
-            'ferie' => [
-                'label' => __('employee::widgets.leave_balance.types.vacation'),
-                'hours' => 104,
-                'minutes' => 30,
-                'total_minutes' => 6270,
-                'color' => 'blue',
-                'icon' => 'heroicon-o-sun',
-            ],
-            'rol' => [
-                'label' => __('employee::widgets.leave_balance.types.rol'),
-                'hours' => 32,
-                'minutes' => 0,
-                'total_minutes' => 1920,
-                'color' => 'blue',
-                'icon' => 'heroicon-o-clock',
-            ],
-            'perm_ex_fs' => [
-                'label' => __('employee::widgets.leave_balance.types.former_holidays'),
-                'hours' => 8,
-                'minutes' => 0,
-                'total_minutes' => 480,
-                'color' => 'blue',
-                'icon' => 'heroicon-o-calendar',
-            ],
-            'banca_ore' => [
-                'label' => __('employee::widgets.leave_balance.types.hour_bank'),
-                'hours' => 12,
-                'minutes' => 45,
-                'total_minutes' => 765,
-                'color' => 'blue',
-                'icon' => 'heroicon-o-banknotes',
-            ],
-            'permessi' => [
-                'label' => __('employee::widgets.leave_balance.types.permits'),
-                'hours' => 88,
-                'minutes' => 0,
-                'total_minutes' => 5280,
-                'color' => 'blue',
-                'icon' => 'heroicon-o-document-text',
-            ],
+    /**
+     * Build the leave balances array by summing approved AbsenceRequest hours per type
+     * within the given period.
+     *
+     * @return array<string, array<string, mixed>>
+     */
+    protected function buildBalances(Employee $employee, Carbon $from, Carbon $to): array
+    {
+        $usedMinutesByType = AbsenceRequest::query()
+            ->where('user_id', $employee->getKey())
+            ->where('status', AbsenceRequest::STATUS_APPROVED)
+            ->whereBetween('starts_at', [$from, $to])
+            ->get()
+            ->groupBy('type')
+            ->map(fn ($requests) => (int) $requests->sum(
+                fn (AbsenceRequest $request): int => (int) $request->ends_at->diffInMinutes($request->starts_at)
+            ));
+
+        $definitions = [
+            'ferie' => ['type' => AbsenceRequest::TYPE_VACATION, 'label_key' => 'vacation', 'icon' => 'heroicon-o-sun'],
+            'permessi' => ['type' => AbsenceRequest::TYPE_LEAVE, 'label_key' => 'permits', 'icon' => 'heroicon-o-document-text'],
+            'malattia' => ['type' => AbsenceRequest::TYPE_SICK, 'label_key' => 'former_holidays', 'icon' => 'heroicon-o-heart'],
+            'infortunio' => ['type' => AbsenceRequest::TYPE_INJURY, 'label_key' => 'hour_bank', 'icon' => 'heroicon-o-banknotes'],
         ];
+
+        $balances = [];
+
+        foreach ($definitions as $key => $definition) {
+            $totalMinutes = (int) ($usedMinutesByType[$definition['type']] ?? 0);
+
+            $balances[$key] = [
+                'label' => __("employee::widgets.leave_balance.types.{$definition['label_key']}"),
+                'hours' => intdiv($totalMinutes, 60),
+                'minutes' => $totalMinutes % 60,
+                'total_minutes' => $totalMinutes,
+                'color' => 'blue',
+                'icon' => $definition['icon'],
+            ];
+        }
+
+        return $balances;
     }
 
     /**

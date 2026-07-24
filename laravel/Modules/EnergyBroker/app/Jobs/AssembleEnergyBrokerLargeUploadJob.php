@@ -14,6 +14,11 @@ use Modules\EnergyBroker\Actions\StoreEnergyBrokerLargeUploadChunkAction;
 use Modules\EnergyBroker\Models\EnergyBrokerLargeUpload;
 use Throwable;
 
+use function Safe\fclose;
+use function Safe\fopen;
+use function Safe\hash_file;
+use function Safe\stream_copy_to_stream;
+
 final class AssembleEnergyBrokerLargeUploadJob implements ShouldQueue
 {
     use Dispatchable;
@@ -23,9 +28,7 @@ final class AssembleEnergyBrokerLargeUploadJob implements ShouldQueue
 
     public int $timeout = 0;
 
-    public function __construct(private readonly int $largeUploadId)
-    {
-    }
+    public function __construct(private readonly int $largeUploadId) {}
 
     public function handle(StoreEnergyBrokerLargeUploadChunkAction $chunks): void
     {
@@ -33,21 +36,26 @@ final class AssembleEnergyBrokerLargeUploadJob implements ShouldQueue
         $upload = EnergyBrokerLargeUpload::query()->findOrFail($this->largeUploadId);
 
         try {
-            $chunkDirectory = storage_path('app/energy-broker/chunks/' . $upload->public_id);
+            $chunkDirectory = storage_path('app/energy-broker/chunks/'.$upload->public_id);
             $targetDirectory = storage_path('app/energy-broker/incoming');
             File::ensureDirectoryExists($targetDirectory);
 
-            $targetPath = $targetDirectory . '/' . $upload->public_id . '-' . basename($upload->original_name);
-            $target = fopen($targetPath, 'wb');
-            if ($target === false) {
+            $targetPath = $targetDirectory.'/'.$upload->public_id.'-'.basename($upload->original_name);
+
+            try {
+                $target = fopen($targetPath, 'wb');
+            } catch (Throwable) {
                 throw new \RuntimeException('Impossibile creare il file finale.');
             }
 
             for ($index = 0; $index < $upload->total_chunks; $index++) {
-                $chunkPath = $chunkDirectory . '/' . $chunks->chunkFilename($index);
-                $source = fopen($chunkPath, 'rb');
-                if ($source === false) {
+                $chunkPath = $chunkDirectory.'/'.$chunks->chunkFilename($index);
+
+                try {
+                    $source = fopen($chunkPath, 'rb');
+                } catch (Throwable) {
                     fclose($target);
+
                     throw new \RuntimeException("Chunk {$index} mancante o non leggibile.");
                 }
 

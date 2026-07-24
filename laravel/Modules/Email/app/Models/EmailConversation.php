@@ -5,13 +5,14 @@ declare(strict_types=1);
 namespace Modules\Email\Models;
 
 use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
+use Modules\Email\Database\Factories\EmailConversationFactory;
 
 /**
  * @property int $id
@@ -27,9 +28,14 @@ use Modules\Customer\Models\CustomerSite;
  * @property array<string, mixed>|null $meta
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
+ * @method static \Modules\Email\Database\Factories\EmailConversationFactory factory($count = null, $state = [])
  */
-final class EmailConversation extends Model
+final class EmailConversation extends BaseModel
 {
+    /** @use HasFactory<EmailConversationFactory> */
+    use HasFactory;
+
     protected $table = 'email_conversations';
 
     /** @var array<int, string> */
@@ -78,5 +84,10 @@ final class EmailConversation extends Model
     public function messages(): HasMany
     {
         return $this->hasMany(EmailMessage::class, 'conversation_id');
+    }
+
+    protected static function newFactory(): EmailConversationFactory
+    {
+        return EmailConversationFactory::new();
     }
 }

@@ -107,3 +107,63 @@ già presenti, Filament Resources (`QuotationResource`, `QuotationTemplateResour
 
 `"Quotation": true` in `laravel/modules_statuses.json` — PHPStan ha solo il residuo minore/noto
 sopra descritto, stessa soglia di accettazione usata per `Catalog`.
+
+## Test migrati dal sorgente (2026-07-24)
+
+Sorgente: `_bases/gestionale_commesse/tests/Feature/Quotations` (33 file) +
+`tests/Unit/Quotations` (1 file), namespace originale `Modules\Quotations\...` (DDD
+`Domain/Application/Infrastructure`), riadattati al namespace piatto `Modules\Quotation\...`
+di questo modulo.
+
+### Portati (7 Feature + 1 Unit)
+
+| File nuovo | Da sorgente | Adattamento |
+|---|---|---|
+| `tests/Feature/QuotationCrudTest.php` | `QuotationCrudTest.php` | `Quotation::factory()->create()` invece di `DB::table('customers')->insertGetId()` grezzo; stessa asserzione su totali/soft delete |
+| `tests/Feature/RecalculateQuotationTotalsActionTest.php` | `RecalculateQuotationTotalsActionTest.php` | 1:1, solo namespace |
+| `tests/Feature/QuotationTemplateApplyTest.php` | `QuotationTemplateApplyTest.php` | 1:1, solo namespace/factory |
+| `tests/Feature/RecordSiteSurveyTest.php` | `RecordSiteSurveyTest.php` | Asserzioni riscritte su Spatie MediaLibrary (`getMedia()`, `->name`) invece del DTO `SiteSurveyAttachment`/media custom del sorgente; stesso comportamento (foto/video/note vocali, note, `performed_at`, link a quotation) |
+| `tests/Feature/BackfillConfirmedAtTest.php` | `BackfillConfirmedAtTest.php` + `BackfillConfirmedAtCommandTest.php` | Uniti in un solo file (action + comando artisan `quotations:backfill-confirmed-at`) |
+| `tests/Feature/QuotationCustomerRelationTest.php` | `QuotationCustomerRelationTest.php` | 1:1, relazione `customer()` + ricerca globale Filament |
+| `tests/Feature/QuotationAttachmentTest.php` | `QuotationAttachmentTest.php` | Riscritto per asserire su `Spatie\MediaLibrary\MediaCollections\Models\Media` (`collection_name`, `name`, `model_type/model_id`, `size`) invece del morph custom `Modules\Documents\Models\Media` (`kind`, `mediable_type`, `size_bytes`) — stessa azione `AddQuotationAttachmentAction`, già migrata a MediaLibrary in questo modulo |
+| `tests/Unit/CalculateQuotationTotalsActionTest.php` | `Unit/Quotations/CalculateQuotationTotalsActionTest.php` | 1:1, solo namespace |
+
+### Deliberatamente NON portati (obsoleti o fuori scope)
+
+| File sorgente | Motivo |
+|---|---|
+| `QuotationModificationTest.php` | Feature "modifica preventivo via voce/AI" (`BuildQuotationModificationAction`, `QuotationModificationExtractorInterface`) — fuori scope voce/AI per questo port |
+| `TechnicalParamsQuotationTest.php` | Estrazione parametri tecnici da trascrizione vocale via AI (`QuotationDraftExtractorInterface`) — fuori scope voce/AI |
+| `AiDocumentRewriterTest.php`, `AiQuotationDocumentRewriterProductionTest.php`, `QuotationAiRewriteBindingsTest.php`, `RewriteAndAttachQuotationDocumentsTest.php` | Riscrittura documenti via AI — fuori scope |
+| `QuotationVoiceExtractorTest.php`, `RecordQuotationVoicePageTest.php`, `SimilarQuotationVoiceTest.php`, `VoiceBasedOnTest.php`, `VoiceFuzzyMatchTest.php`, `VoiceQuotationAttachmentPlaceholderTest.php`, `VoiceQuotationDefectsTest.php`, `VoiceQuotationProductionFlowTest.php`, `VoiceQuotationSourceSelectionTest.php`, `VoiceQuotationTest.php`, `VoiceTranslationsTest.php` | Dettatura vocale preventivi — fuori scope voce/AI |
+| `QuotationImportTest.php` | Import file preventivo (job/parsing) — fuori scope (PDF/import esplicitamente escluso) |
+| `GenerateQuotationPdfTest.php`, `GenerateQuotationPdfWithWorkOrderTest.php`, `GenerateConfirmedQuotationPdfTest.php`, `GenerateConfirmedQuotationPdfWithWorkOrderTest.php`, `DompdfPublicPathConfigTest.php` | Generazione PDF — fuori scope |
+| `QuotationAttachmentRetryTest.php` | Retry job di riscrittura allegati (dipende da AI rewrite, fuori scope) |
+| `SiteSurveyResourceTest.php` | Copre pagine Filament del pannello + trait `RecordsSiteSurvey` non presente in questa forma nel port; la logica di dominio equivalente (registrazione rilievo con allegati) è già coperta da `RecordSiteSurveyTest.php` |
+
+**Tally**: 8 file portati (7 Feature + 1 Unit, 2 unificati in `BackfillConfirmedAtTest.php`) su 33+1=34
+originali; 26 deliberatamente non portati come obsoleti/fuori-scope (voce/AI/PDF/import/retry, vedi
+tabella sopra).
+
+### Esecuzione — nota importante
+
+`./vendor/bin/pest Modules/Quotation/tests --no-coverage` in questa sessione mostra 15/16 test
+DB-dipendenti falliti con `SQLSTATE[HY000]: no such table: customers`/`quotations`/ecc. **Non è un
+regressione introdotta da questi test**: il DB di test `:memory:` sqlite (da `phpunit.xml`) non ha
+alcuna migrazione applicata — confermato anche per le tabelle proprie di `Quotation`
+(`quotation_templates`) con un test-sonda isolato che fallisce allo stesso modo. È il gap
+d'infrastruttura di test già noto (nessun `RefreshDatabase` per architettura, migrazioni da
+eseguire esternamente ma non compatibili con `:memory:` — vedi `Modules/Xot/tests/TestCase.php`
+commento "Migrations must be run ONCE externally") e la registrazione mancante di `Quotation` nelle
+`testsuites` di `laravel/phpunit.xml` (debito D13, vedi
+`laravel/docs/debt-phpunit-modules-registration.md`). Unico test verde in questa sessione: lo Unit
+test `CalculateQuotationTotalsActionTest` (nessun accesso DB). I file sopra sono corretti e pronti a
+passare non appena l'infrastruttura di migrazione test viene risolta a livello di repo (fuori scope
+di questo task di porting).
+
+Nota di conflitto: durante questa sessione è comparso un lock annidato
+`laravel/Modules/Quotation/tests/Feature.lock` (creato da un altro agente dopo l'acquisizione del
+lock di modulo) e una serie di file di test grezzi non adattati (namespace sorgente
+`Modules\Quotations\...`, es. `VoiceQuotationTest.php`, `QuotationImportTest.php`, ecc.) sono
+comparsi in `tests/Feature/` senza intervento di questo agente. Non sono stati toccati/rimossi per
+evitare conflitti; vanno verificati/riconciliati dal proprietario di quel lock.

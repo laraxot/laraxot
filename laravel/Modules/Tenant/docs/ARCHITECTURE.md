@@ -84,7 +84,7 @@ Per-tenant configuration files override system defaults, enabling customization 
 - **Methods:**
   - `scopeForTenant()` - Filter by current tenant
   - `getTenant()` - Retrieve associated tenant
-- **Important:** Applied automatically via `BelongsToTenantsScope`
+- **Important:** ⚠️ Verificato 2026-07-24: `BelongsToTenantsScope` **non esiste** nel codice (`find app -iname 'BelongsToTenantsScope.php'` → nessun risultato). Claim non verificabile.
 
 #### `SushiToJson`, `SushiToCsv`, `SushiToJsons`
 - **Purpose:** Convert Sushi (CSV-based) models to JSON/arrays for storage
@@ -93,12 +93,11 @@ Per-tenant configuration files override system defaults, enabling customization 
 ### Services & Actions
 
 #### `TenantService`
-- **Location:** `app/Services/TenantService.php`
-- **Responsibilities:**
-  - Retrieve current tenant from context
-  - Validate tenant access
-  - Switch tenant context
-  - Load tenant configuration
+- ⚠️ **Verificato 2026-07-24: la classe `TenantService` non esiste nel codice** (nessun `app/Services/`
+  neanche come cartella; `grep -rn "class TenantService"` non trova nulla se non un riferimento in
+  `docs/business-logic-deep-dive.md`, anch'esso probabilmente aspirazionale). Il coordinamento reale di
+  registrazione/config avviene in `app/Providers/TenantServiceProvider.php` e nelle Action sotto
+  (`app/Actions/Config/*`). Non chiamare `TenantService::` in nuovo codice finché la classe non esiste davvero.
 
 #### `GetTenantNameAction`
 - **Invokable:** QueueableAction

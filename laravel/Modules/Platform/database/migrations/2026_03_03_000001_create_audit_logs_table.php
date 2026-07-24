@@ -2,20 +2,25 @@
 
 declare(strict_types=1);
 
-use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-return new class extends Migration
+return new class() extends XotBaseMigration
 {
+    protected ?string $table_name = 'audit_logs';
+
     public function up(): void
     {
-        Schema::create('audit_logs', static function (Blueprint $table): void {
+        $this->tableCreate(function (Blueprint $table): void {
             $table->id();
 
             $table->timestamp('created_at')->useCurrent();
 
-            $table->foreignId('actor_user_id')->nullable()->constrained('users')->nullOnDelete();
+            // Platform's models live on the 'xot' connection, while User lives on a
+            // separate 'user' connection (possibly a different database entirely).
+            // A DB-level FK constraint across connections is not enforceable, so we
+            // keep this as a plain indexed column instead of ->constrained().
+            $table->uuid('actor_user_id')->nullable();
             $table->string('action');
 
             $table->string('subject_type');
@@ -35,10 +40,4 @@ return new class extends Migration
             $table->index(['action', 'created_at']);
         });
     }
-
-    public function down(): void
-    {
-        Schema::dropIfExists('audit_logs');
-    }
 };
-

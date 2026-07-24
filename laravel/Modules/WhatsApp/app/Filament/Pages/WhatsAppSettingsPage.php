@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Gate;
 use Modules\Platform\Models\PlatformSetting;
 use Modules\WhatsApp\Actions\SendWhatsAppTextMessageAction;
 use Modules\WhatsApp\Meta\WhatsAppClientInterface;
+use Modules\WhatsApp\Models\WhatsAppMessage;
 use Modules\WhatsApp\Settings\WhatsAppSettings;
 use Modules\WhatsApp\Support\PhoneNumberNormalizer;
-use Modules\WhatsApp\Models\WhatsAppMessage;
 
 final class WhatsAppSettingsPage extends Page
 {

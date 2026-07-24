@@ -9,7 +9,7 @@ use Modules\WhatsApp\Models\WhatsAppMessage;
 interface WhatsAppMessageClassifierInterface
 {
     /**
-     * @param array<string, mixed> $context
+     * @param  array<string, mixed>  $context
      * @return array<string, mixed>
      */
     public function classify(WhatsAppMessage $message, array $context): array;

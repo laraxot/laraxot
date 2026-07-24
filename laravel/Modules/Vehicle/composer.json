@@ -37,7 +37,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Modules\\Vehicle\\Providers\\VehicleServiceProvider"
+                "Modules\\Vehicle\\Providers\\VehicleServiceProvider",
+                "Modules\\Vehicle\\Providers\\Filament\\AdminPanelProvider"
             ],
             "aliases": {}
         }

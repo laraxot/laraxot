@@ -3,7 +3,7 @@
     "alias": "production",
     "description": "Production \u2014 replica gestionale_commesse (normalize Laraxot)",
     "keywords": [],
-    "priority": 0,
+    "priority": 120,
     "providers": [
         "Modules\\Production\\Providers\\ProductionServiceProvider"
     ],

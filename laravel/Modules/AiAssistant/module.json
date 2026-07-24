@@ -5,7 +5,8 @@
     "keywords": [],
     "priority": 0,
     "providers": [
-        "Modules\\AiAssistant\\Providers\\AiAssistantServiceProvider"
+        "Modules\\AiAssistant\\Providers\\AiAssistantServiceProvider",
+        "Modules\\AiAssistant\\Providers\\Filament\\AdminPanelProvider"
     ],
     "files": []
 }

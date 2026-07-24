@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\WhatsApp\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Collection;
 use Modules\AiAssistant\Models\AiActionProposal;
 use Modules\WhatsApp\Actions\ProcessWhatsAppMessageAction;
 use Modules\WhatsApp\Jobs\ProcessWhatsAppMessageJob;
@@ -26,7 +27,7 @@ final class ReprocessWhatsAppMessagesCommand extends Command
     {
         $phone = $this->option('phone');
 
-        /** @var \Illuminate\Support\Collection<int, WhatsAppConversation> $conversations */
+        /** @var Collection<int, WhatsAppConversation> $conversations */
         $conversations = WhatsAppConversation::query()
             ->when(is_string($phone) && $phone !== '', fn ($query) => $query->where('phone_e164', $phone))
             ->get();
@@ -42,7 +43,7 @@ final class ReprocessWhatsAppMessagesCommand extends Command
         WhatsAppConversation::query()->whereIn('id', $conversationIds)
             ->update(['active_proposal_id' => null, 'approved_up_to_message_id' => null]);
 
-        /** @var \Illuminate\Support\Collection<int, WhatsAppMessage> $messages */
+        /** @var Collection<int, WhatsAppMessage> $messages */
         $messages = WhatsAppMessage::query()
             ->whereIn('conversation_id', $conversationIds)
             ->where('direction', 'inbound')

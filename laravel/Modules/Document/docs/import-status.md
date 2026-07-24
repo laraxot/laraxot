@@ -1,50 +1,40 @@
 ---
-title: "Import status — Document (Wave 3 replica, DO NOT DELETE)"
+title: "Import status — Document (replica, media risk)"
 type: concept
-tags: [document, replica, import, wave3, do-not-delete]
+tags: [document, replica, import, media-conflict, bmad]
 created: 2026-07-23
-updated: 2026-07-23
-qmd: "Document import status wave3 replica reshape do not delete"
+updated: 2026-07-24
+qmd: "Document import status enabled media spat ie conflict risk"
+issues:
+  - "https://github.com/laraxot/base_workorder_fila5/issues/7"
+  - "https://github.com/laraxot/base_workorder_fila5/issues/14"
+discussions:
+  - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
+  - "https://github.com/laraxot/base_workorder_fila5/discussions/15"
 related:
   - "./composer-manifest.md"
+  - "./README.md"
+  - "../../../../docs/gestionale-commesse-comparison/functional-readiness.md"
   - "../../../../docs/gestionale-commesse-comparison/replica-singular-phase.md"
-  - "../../../../docs/wiki/rules/module-name-singular-mandatory.md"
+  - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
 ---
 
 # Import status — Document
 
-> **Fase:** replica Wave 3 (Auth, Document, Email, HR, Platform, WhatsApp).
-> Copiato da `gestionale_commesse`, reshape-ato come cartella indipendente.
-> **Non** merge in moduli nativi (User, Employee, Media, Notify, AI, Tenant).
-> **Non** cancellare.
+> Replica Wave 3. **Non** merge in Media. **Non** cancellare.
 
-## Checklist reshape
+## Stato runtime
 
-- [x] Layout sotto `app/` (Application/Domain/Infrastructure/Filament/Http/Console/Providers root rimossi)
-- [x] Database/Resources/Routes (capital) spostati in database/resources/routes (lowercase)
-- [x] Namespace PHP allineati al nuovo path (rimosso segmento Application/Domain/Infrastructure)
-- [x] ServiceProvider principale estende `XotBaseServiceProvider`
-- [x] `RouteServiceProvider` estende `XotBaseRouteServiceProvider`
-- [x] `EventServiceProvider` estende `Illuminate\Foundation\Support\Providers\EventServiceProvider`
-- [x] `composer.json` Laraxot PSR-4 → `app/` (namespace verificato: singolo backslash)
-- [x] Azioni con `execute()` → trait `Spatie\QueueableAction\QueueableAction` (rimosso `readonly` dalla classe, incompatibile con la property non-readonly del trait)
-- [x] Filament Resource CRUD principali → `extends XotBaseResource` (`form()` → `getFormSchema(): array`)
-- [ ] BaseModel → XotBaseModel (rimandato, TODO esplicito)
-- [ ] Factories/seeders/migrations parity/consolidamento (rimandato, TODO esplicito)
-- [ ] Pest test
-- [ ] Enable in `modules_statuses.json` solo dopo PHPStan pulito + ordine utente
+- [x] Reshape `app/` + XotBase SP / Resources
+- [x] `modules_statuses=true` (JSON 2026-07-24)
+- [ ] **Debito critico:** `Modules\Document\Models\Media` usa ancora `protected $table = 'media'` → conflitto Spatie/Media
+- [ ] Rename tabella dominio (`document_media`) o bridge esplicito **prima** di migrate/write massivi
 
-## PHPStan
+## Conflitto `media`
 
-```
-cd laravel && ./vendor/bin/phpstan analyse Modules/Document --memory-limit=-1
-```
+| Owner | Tabella | Schema |
+|---|---|---|
+| Spatie / Media module | `media` (già in DB) | `model_type`, `file_name`, … |
+| Document (SRC) | vuole `media` | `mediable_*`, `kind`, `path`, … |
 
-Esito: **17 errori** (baseline dopo reshape, in gran parte pre-esistenti nel sorgente originale:
-tipizzazioni Spatie Permission su `App\Models\User`, migrations generiche, ecc. — non introdotti da questo reshape).
-
-## TODO espliciti (rimandati da questo giro)
-
-- BaseModel → XotBaseModel per i model in `app/Models`
-- Consolidamento/dedup migrations, factories, seeders
-- Copertura Pest
+Enable JSON ≠ schema safe. Matrice: [gc-modules-runtime-matrix.md](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md).

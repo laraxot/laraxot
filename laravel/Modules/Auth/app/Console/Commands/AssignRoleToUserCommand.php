@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Auth\Console\Commands;
 
-use App\Models\User;
 use Illuminate\Console\Command;
 use Modules\Auth\Database\Seeders\ShieldPermissionsSeeder;
+use Modules\User\Models\User;
 
 final class AssignRoleToUserCommand extends Command
 {
@@ -34,6 +34,7 @@ final class AssignRoleToUserCommand extends Command
 
         if ($email === '') {
             $this->error('Email is required.');
+
             return self::FAILURE;
         }
 
@@ -42,6 +43,7 @@ final class AssignRoleToUserCommand extends Command
 
         if (! $user instanceof User) {
             $this->error(sprintf('User not found: %s', $email));
+
             return self::FAILURE;
         }
 
@@ -58,6 +60,7 @@ final class AssignRoleToUserCommand extends Command
 
         if (! in_array($role, ['admin', 'operator'], true)) {
             $this->error('Invalid role. Allowed: admin, operator.');
+
             return self::FAILURE;
         }
 
@@ -72,4 +75,3 @@ final class AssignRoleToUserCommand extends Command
         return self::SUCCESS;
     }
 }
-

@@ -4,15 +4,17 @@ declare(strict_types=1);
 
 namespace Modules\Platform\Models;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Support\Carbon;
+use Modules\User\Models\User;
+use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
- * @property \Illuminate\Support\Carbon $created_at
- * @property int|null $actor_user_id
+ * @property Carbon $created_at
+ * @property string|null $actor_user_id
  * @property string $action
  * @property string $subject_type
  * @property string $subject_id
@@ -23,7 +25,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property array<string,mixed>|null $before
  * @property array<string,mixed>|null $after
  */
-final class AuditLog extends Model
+final class AuditLog extends XotBaseModel
 {
     protected $table = 'audit_logs';
 
@@ -54,4 +56,3 @@ final class AuditLog extends Model
         return $this->morphTo(name: 'subject');
     }
 }
-

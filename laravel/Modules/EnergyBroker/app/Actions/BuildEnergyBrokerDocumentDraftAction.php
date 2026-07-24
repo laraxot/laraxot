@@ -7,6 +7,9 @@ namespace Modules\EnergyBroker\Actions;
 use Carbon\CarbonImmutable;
 use Spatie\QueueableAction\QueueableAction;
 
+use function Safe\preg_match;
+use function Safe\preg_replace;
+
 final class BuildEnergyBrokerDocumentDraftAction
 {
     use QueueableAction;
@@ -66,8 +69,8 @@ final class BuildEnergyBrokerDocumentDraftAction
     private function normalizeText(string $text): string
     {
         $text = str_replace(["\r\n", "\r"], "\n", $text);
-        $text = preg_replace('/[ \t]+/', ' ', $text) ?? $text;
-        $text = preg_replace('/\n{2,}/', "\n", $text) ?? $text;
+        $text = preg_replace('/[ \t]+/', ' ', $text);
+        $text = preg_replace('/\n{2,}/', "\n", $text);
 
         return trim($text);
     }
@@ -126,7 +129,7 @@ final class BuildEnergyBrokerDocumentDraftAction
             return null;
         }
 
-        return trim($matches[1]);
+        return trim((string) ($matches[1] ?? ''));
     }
 
     private function extractPostalCode(string $text): ?string
@@ -200,10 +203,12 @@ final class BuildEnergyBrokerDocumentDraftAction
         }
 
         try {
-            return CarbonImmutable::createFromFormat('d/m/Y', $value)->toDateString();
+            $date = CarbonImmutable::createFromFormat('d/m/Y', $value);
         } catch (\Throwable) {
             return null;
         }
+
+        return $date instanceof CarbonImmutable ? $date->toDateString() : null;
     }
 
     private function extractEmail(string $text): ?string
@@ -220,7 +225,7 @@ final class BuildEnergyBrokerDocumentDraftAction
 
         $value = str_replace('.', '', $value);
         $value = str_replace(',', '.', $value);
-        $value = preg_replace('/[^0-9.]+/', '', $value) ?? $value;
+        $value = preg_replace('/[^0-9.]+/', '', $value);
 
         return $value !== '' ? $value : null;
     }

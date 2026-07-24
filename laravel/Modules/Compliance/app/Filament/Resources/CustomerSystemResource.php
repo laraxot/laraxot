@@ -31,9 +31,9 @@ final class CustomerSystemResource extends Resource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-cpu-chip';
 
-    private const ACCOUNT_FEATURE_ADMIN = 'admin.customer_systems';
+    protected const ACCOUNT_FEATURE_ADMIN = 'admin.customer_systems';
 
-    private const ACCOUNT_FEATURE_ADMIN_DEFAULT = false;
+    protected const ACCOUNT_FEATURE_ADMIN_DEFAULT = false;
 
     /**
      * Tipi di impianto gestiti (videosorveglianza, quadro elettrico, fotovoltaico).

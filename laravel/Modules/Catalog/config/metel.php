@@ -2,14 +2,18 @@
 
 declare(strict_types=1);
 
+/**
+ * Metel API — defaults only (no env() here: Larastan forbids env outside root config/).
+ * Override via published config or CatalogServiceProvider merge from .env keys METEL_*.
+ */
 return [
     'api' => [
-        'enabled' => env('METEL_API_ENABLED', false),
-        'base_url' => env('METEL_API_BASE_URL', ''),
-        'api_key' => env('METEL_API_KEY', ''),
-        'articles_endpoint' => env('METEL_API_ARTICLES_ENDPOINT', '/articles'),
-        'items_path' => env('METEL_API_ITEMS_PATH', 'items'),
-        'timeout' => env('METEL_API_TIMEOUT', 60),
+        'enabled' => false,
+        'base_url' => '',
+        'api_key' => '',
+        'articles_endpoint' => '/articles',
+        'items_path' => 'items',
+        'timeout' => 60,
         'field_map' => [
             'metel_code' => 'code',
             'gross_price' => 'grossPrice',

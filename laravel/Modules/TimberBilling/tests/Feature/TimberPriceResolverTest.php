@@ -1,0 +1,51 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\TimberBilling\Tests\Feature;
+
+use Modules\TimberBilling\Tests\TestCase;
+
+uses(TestCase::class);
+
+use Modules\TimberBilling\Models\TimberCustomer;
+use Modules\TimberBilling\Models\TimberCustomerPrice;
+use Modules\TimberBilling\Models\TimberPriceList;
+use Modules\TimberBilling\Models\TimberPriceListItem;
+use Modules\TimberBilling\Models\TimberProduct;
+use Modules\TimberBilling\Support\TimberPriceResolver;
+
+it('resolves the price from the customer price list item', function (): void {
+    $customer = TimberCustomer::factory()->create(['price_list_code' => 'ben_b2b']);
+    $product = TimberProduct::factory()->create(['list_prices' => []]);
+    $list = TimberPriceList::query()->where('code', 'ben_b2b')->firstOrFail();
+    TimberPriceListItem::query()->create(['price_list_id' => $list->getKey(), 'product_id' => $product->getKey(), 'net_price' => 5.0]);
+
+    expect(app(TimberPriceResolver::class)->priceFor($customer, $product))->toBe(5.0);
+});
+
+it('lets a customer-specific price override the list', function (): void {
+    $customer = TimberCustomer::factory()->create(['price_list_code' => 'ben_b2b']);
+    $product = TimberProduct::factory()->create();
+    $list = TimberPriceList::query()->where('code', 'ben_b2b')->firstOrFail();
+    TimberPriceListItem::query()->create(['price_list_id' => $list->getKey(), 'product_id' => $product->getKey(), 'net_price' => 5.0]);
+    TimberCustomerPrice::query()->create(['customer_id' => $customer->getKey(), 'product_id' => $product->getKey(), 'net_price' => 3.5]);
+
+    expect(app(TimberPriceResolver::class)->priceFor($customer, $product))->toBe(3.5);
+});
+
+it('falls back to the legacy product price for the list code', function (): void {
+    $customer = TimberCustomer::factory()->create(['price_list_code' => 'ben_b2c']);
+    $product = TimberProduct::factory()->create([
+        'list_prices' => [['price_list_code' => 'ben_b2c', 'net_price' => 2.35]],
+    ]);
+
+    expect(app(TimberPriceResolver::class)->priceFor($customer, $product))->toBe(2.35);
+});
+
+it('returns null when no price is defined anywhere', function (): void {
+    $customer = TimberCustomer::factory()->create(['price_list_code' => 'ben_b2b']);
+    $product = TimberProduct::factory()->create(['list_prices' => []]);
+
+    expect(app(TimberPriceResolver::class)->priceFor($customer, $product))->toBeNull();
+});

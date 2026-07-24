@@ -30,7 +30,7 @@ final class ListEnergyBrokerDocuments extends ListRecords
                 ->color('warning')
                 ->modalSubmitAction(false)
                 ->modalCancelActionLabel('Chiudi')
-                ->modalContent(fn () => view('energybroker::filament.large-upload-modal')),
+                ->modalContent(fn () => view()->file($this->largeUploadModalViewPath())),
             Action::make('importZip')
                 ->label(__('energy_broker.actions.import_zip'))
                 ->icon('heroicon-o-arrow-up-tray')
@@ -52,7 +52,7 @@ final class ListEnergyBrokerDocuments extends ListRecords
 
                     $result = app(ImportEnergyBrokerDocumentsFromZipAction::class)->execute(
                         zipPath: Storage::disk('local')->path($path),
-                        uploadedByUserId: Auth::id(),
+                        uploadedByUserId: is_int(Auth::id()) ? Auth::id() : null,
                     );
 
                     Notification::make()
@@ -87,6 +87,11 @@ final class ListEnergyBrokerDocuments extends ListRecords
         ];
     }
 
+    private function largeUploadModalViewPath(): string
+    {
+        return __DIR__.'/../../../../../resources/views/filament/large-upload-modal.blade.php';
+    }
+
     private function importPdfAction(string $name, string $label): Action
     {
         return Action::make($name)
@@ -111,7 +116,7 @@ final class ListEnergyBrokerDocuments extends ListRecords
                 $document = app(ImportEnergyBrokerDocumentPdfAction::class)->execute(
                     filename: basename($path),
                     binary: (string) $disk->get($path),
-                    uploadedByUserId: Auth::id(),
+                    uploadedByUserId: is_int(Auth::id()) ? Auth::id() : null,
                     mediaMeta: [
                         'source' => 'single_pdf_upload',
                     ],

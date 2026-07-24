@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\WhatsApp\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 use Modules\AiAssistant\Models\AiActionProposal;
 use Modules\Intervention\Models\Intervention;
+use Modules\WhatsApp\Database\Factories\WhatsAppMessageFactory;
 use Modules\WorkOrder\Models\WorkOrder;
 
 /**
@@ -27,14 +29,19 @@ use Modules\WorkOrder\Models\WorkOrder;
  * @property array<string, mixed>|null $payload
  * @property array<string, mixed>|null $ai_result
  * @property string|null $error
- * @property \Illuminate\Support\Carbon|null $received_at
- * @property \Illuminate\Support\Carbon|null $sent_at
- * @property \Illuminate\Support\Carbon|null $processed_at
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property Carbon|null $received_at
+ * @property Carbon|null $sent_at
+ * @property Carbon|null $processed_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ *
+ * @method static \Modules\WhatsApp\Database\Factories\WhatsAppMessageFactory factory($count = null, $state = [])
  */
-final class WhatsAppMessage extends Model
+final class WhatsAppMessage extends BaseModel
 {
+    /** @use HasFactory<WhatsAppMessageFactory> */
+    use HasFactory;
+
     protected $table = 'whatsapp_messages';
 
     /** @var array<int, string> */
@@ -74,5 +81,10 @@ final class WhatsAppMessage extends Model
     public function proposal(): BelongsTo
     {
         return $this->belongsTo(AiActionProposal::class, 'ai_action_proposal_id');
+    }
+
+    protected static function newFactory(): WhatsAppMessageFactory
+    {
+        return WhatsAppMessageFactory::new();
     }
 }

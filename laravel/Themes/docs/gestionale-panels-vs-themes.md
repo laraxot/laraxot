@@ -3,17 +3,21 @@ title: "Panels Filament (SRC) vs Themes Laraxot"
 type: concept
 tags: [themes, filament-panels, gestionale-commesse, fo]
 created: 2026-07-23
-updated: 2026-07-23
-qmd: "Themes panels Operator Admin Folio gestionale_commesse Sixteen Zero"
+updated: 2026-07-24
+qmd: "Themes panels Operator Admin Folio gestionale_commesse Sixteen Zero readiness"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
 discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
 related:
   - "./README.md"
+  - "./gestionale-docs-index.md"
+  - "./new-modules-panel-mapping.md"
+  - "./wave1-fo-operator-note.md"
   - "./directory-structure-rules.md"
   - "./copy-normalize-modules-vs-themes.md"
   - "../../../docs/gestionale-commesse-comparison/replica-singular-phase.md"
+  - "../../../docs/gestionale-commesse-comparison/functional-readiness.md"
   - "../../../docs/gestionale-commesse-comparison/module-mapping.md"
   - "../Sixteen/docs/gestionale-panels-vs-themes.md"
   - "../Zero/docs/gestionale-panels-vs-themes.md"
@@ -22,7 +26,7 @@ related:
 # Panels Filament (SRC) vs Themes Laraxot
 
 > **Perché:** gestionale_commesse **non** ha package Themes. L’UX è multi-panel Filament. Noi: **moduli replica** (BO) + **Themes** (FO).  
-> Fase: [replica-singular-phase.md](../../../docs/gestionale-commesse-comparison/replica-singular-phase.md) — BL nei moduli singolari, non nei temi.
+> Runtime URL: [new-modules-panel-mapping.md](./new-modules-panel-mapping.md) · gate: [functional-readiness.md](../../../docs/gestionale-commesse-comparison/functional-readiness.md).
 
 ## SRC — panel (estratto)
 
@@ -55,3 +59,17 @@ Views FO limitate in `resources/views` (login/timber/wts…) — non Design Syst
 
 - Nessun theme SRC da “copiare”: da progettare shell Operator + Customer sul FO/panel nostri.
 - Parity visuale = nuovo lavoro UX, non sync file-for-file.
+
+## Stato 2026-07-24 (verifica post multi-agent revert)
+
+I 16 moduli backend (Customer, WorkOrder, Intervention, Catalog, Quotation, Billing, Fiscal,
+Inventory, Bom, Production, Signature, Vehicle, Compliance, PublicProcurement, EnergyBroker,
+TimberBilling) esistono ora con **33 Filament Resource reali su panel Admin** (conteggio
+`find app/Filament -iname '*Resource.php'` sui 16 moduli). Il gap FO/Themes descritto sopra
+resta quindi **ancora aperto e valido**: nessuno di questi moduli ha widget/Folio page sul lato
+Operator/Customer — solo backoffice Admin. Non serve correggere questo doc nel merito, ma va
+notato che il backend reale ora esiste per costruirci sopra la UX FO quando si deciderà di
+affrontarla (nessun altro cambiamento richiesto qui). Vedi
+`docs/gestionale-commesse-comparison/porting-final-status.md` per lo stato modulo-per-modulo
+verificato (modelli/migrazioni/test/PHPStan), che è la fonte autorevole più aggiornata di questo
+paragrafo.

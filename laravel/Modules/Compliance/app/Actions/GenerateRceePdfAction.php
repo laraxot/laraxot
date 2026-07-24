@@ -20,7 +20,10 @@ final class GenerateRceePdfAction
     {
         $control->loadMissing(['heatingSystem.customer', 'heatingSystem.site', 'boiler']);
 
-        return Pdf::loadView('compliance::pdf.rcee', [
+        /** @var view-string $view */
+        $view = 'compliance::pdf.rcee';
+
+        return Pdf::loadView($view, [
             'control' => $control,
         ])->output();
     }

@@ -3,8 +3,8 @@ title: "Panels SRC vs Themes Sixteen"
 type: concept
 tags: [sixteen, themes, gestionale-commesse]
 created: 2026-07-23
-updated: 2026-07-23
-qmd: "Sixteen themes panels gestionale_commesse"
+updated: 2026-07-24
+qmd: "Sixteen themes panels gestionale_commesse folio operator"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
 discussions:
@@ -12,17 +12,17 @@ discussions:
 related:
   - "./README.md"
   - "../../docs/gestionale-panels-vs-themes.md"
-  - "../../../../docs/gestionale-commesse-comparison/module-mapping.md"
+  - "../../docs/gestionale-docs-index.md"
+  - "../../docs/wave1-fo-operator-note.md"
+  - "../../../../docs/gestionale-commesse-comparison/functional-readiness.md"
 ---
 
 # Panels SRC vs Themes Sixteen
 
-> **Perché:** Sixteen è il FO attivo; il gestionale_commesse non fornisce un tema equivalente.
+> **Perché:** Sixteen è il FO attivo; il gestionale_commesse non fornisce un tema equivalente. La BL resta nei moduli.
 
-Canon dettagliato: [gestionale-panels-vs-themes.md](../../docs/gestionale-panels-vs-themes.md).
+Canon hub: [gestionale-docs-index.md](../../docs/gestionale-docs-index.md) · dettagli panel: [gestionale-panels-vs-themes.md](../../docs/gestionale-panels-vs-themes.md) · enable: [gc-modules-runtime-matrix.md](../../docs/gc-modules-runtime-matrix.md).
 
-Quando si porteranno flussi cliente/operatore in FO, partire da Sixteen (Folio) + widget User/Employee — non da blade `resources/views` del SRC.
+Wave 1: operator field-service = Filament `*/admin`, **non** Folio Sixteen. Vedi [wave1-fo-operator-note.md](../../docs/wave1-fo-operator-note.md).
 
-> Naming moduli dominio: singolare — vedi [module-name-singular-mandatory.md](../../../../docs/wiki/rules/module-name-singular-mandatory.md) · audit [laraxot-compliance-audit.md](../../../../docs/gestionale-commesse-comparison/laraxot-compliance-audit.md).
-
-> Fase replica + singolare: [replica-singular-phase.md](../../../../docs/gestionale-commesse-comparison/replica-singular-phase.md) · AiAssistant nel modulo, non nel tema.
+Runtime: [functional-readiness.md](../../../../docs/gestionale-commesse-comparison/functional-readiness.md).

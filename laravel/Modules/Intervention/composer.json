@@ -37,7 +37,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Modules\\Intervention\\Providers\\InterventionServiceProvider"
+                "Modules\\Intervention\\Providers\\InterventionServiceProvider",
+                "Modules\\Intervention\\Providers\\Filament\\AdminPanelProvider"
             ],
             "aliases": {}
         }

@@ -2,26 +2,25 @@
 
 declare(strict_types=1);
 
-use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-return new class extends Migration
+return new class() extends XotBaseMigration
 {
+    protected ?string $table_name = 'platform_settings';
+
     public function up(): void
     {
-        Schema::create('platform_settings', static function (Blueprint $table): void {
+        $this->tableCreate(function (Blueprint $table): void {
             $table->id();
             $table->string('key')->unique();
             $table->json('value_json')->nullable();
-            $table->foreignId('updated_by_user_id')->nullable()->constrained('users')->nullOnDelete();
-            $table->timestamps();
+            // Platform's models live on the 'xot' connection, while User lives on a
+            // separate 'user' connection (possibly a different database entirely).
+            // A DB-level FK constraint across connections is not enforceable, so we
+            // keep this as a plain indexed column instead of ->constrained().
+            $table->uuid('updated_by_user_id')->nullable()->index();
+            $this->updateTimestamps($table);
         });
     }
-
-    public function down(): void
-    {
-        Schema::dropIfExists('platform_settings');
-    }
 };
-

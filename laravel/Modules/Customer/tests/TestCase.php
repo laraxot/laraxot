@@ -14,6 +14,9 @@ abstract class TestCase extends XotBaseTestCase
 {
     use DatabaseTransactions;
 
+    /** @var list<string> */
+    protected $connectionsToTransact = ['sqlite', 'xot', 'customer'];
+
     /**
      * @return array<int, class-string<ServiceProvider>>
      */
@@ -23,5 +26,12 @@ abstract class TestCase extends XotBaseTestCase
             ...parent::getPackageProviders($app),
             CustomerServiceProvider::class,
         ];
+    }
+
+    protected function setUp(): void
+    {
+        $this->prepareSharedFixcitySqliteForTesting();
+
+        parent::setUp();
     }
 }

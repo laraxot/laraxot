@@ -47,7 +47,7 @@ return [
         'total' => 'Totale',
         'empty' => 'Nessuna voce da fatturare.',
         'undecided_title' => 'Extra preventivo da decidere',
-        'undecided_body' => 'Ci sono extra preventivo non ancora decisi: emettere adesso significa regalarli per omissione.',
+        'undecided_body' => 'Ci sono extra preventivo non ancora decisi per :amount: emettere adesso significa regalarli per omissione.',
         'sources' => [
             'labor' => 'Manodopera',
             'callout' => 'Diritto di chiamata',

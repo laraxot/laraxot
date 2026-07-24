@@ -1,5 +1,9 @@
 # Indice della Documentazione - Tema Zero
 
+> **Nota 2026-07-24**: indice storico senza frontmatter, ridondante rispetto a
+> [00-index.md](./00-index.md) (canonico, aggiornato 2026-03-28). Usare `00-index.md` come riferimento
+> primario; questo file non è stato consolidato per evitare di perdere la prosa introduttiva italiana.
+
 ## Panoramica
 Questo documento serve come indice centrale per il tema Zero, fornendo una guida per la personalizzazione e l'utilizzo del tema all'interno dell'applicazione Laravel. Il tema Zero è un tema basato su TailwindCSS con supporto per Vite e componenti Blade moderni.
 

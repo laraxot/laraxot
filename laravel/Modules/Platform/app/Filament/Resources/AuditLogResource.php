@@ -12,6 +12,7 @@ use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Platform\Filament\Resources\AuditLogResource\Pages\ListAuditLogs;
 use Modules\Platform\Filament\Resources\AuditLogResource\Pages\ViewAuditLog;
@@ -36,7 +37,7 @@ final class AuditLogResource extends XotBaseResource
         return self::isAvailableInCurrentPanel() && parent::canViewAny();
     }
 
-    public static function canView(\Illuminate\Database\Eloquent\Model $record): bool
+    public static function canView(Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && parent::canView($record);
     }

@@ -7,9 +7,25 @@ namespace Modules\Compliance\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\Xot\Models\XotBaseModel;
 
+/**
+ * @property int $id
+ * @property string $name
+ * @property string|null $type
+ * @property string|null $serial_number
+ * @property string $status
+ * @property Carbon|null $last_checked_on
+ * @property Carbon|null $next_check_due_on
+ * @property Carbon|null $maintenance_due_on
+ * @property int|null $assigned_work_order_id
+ * @property string|null $notes
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
+ */
 final class Equipment extends XotBaseModel
 {
     use SoftDeletes;

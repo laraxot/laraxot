@@ -1,31 +1,29 @@
 ---
 title: "Import status — Catalog"
 type: concept
-tags: [import, gestionale-commesse, catalog]
+tags: [import, gestionale-commesse, catalog, phpstan]
 created: 2026-07-23
-updated: 2026-07-23
-qmd: "import status Catalog normalize"
+updated: 2026-07-24
+qmd: "import status Catalog phpstan enabled metel"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
+  - "https://github.com/laraxot/base_workorder_fila5/issues/14"
 discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
+  - "https://github.com/laraxot/base_workorder_fila5/discussions/15"
 related:
   - "./README.md"
+  - "../../../../docs/gestionale-commesse-comparison/replica-singular-phase.md"
+  - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
 ---
 
 # Import status — Catalog
 
 - [x] Cartella singolare / replica
-- [x] Layout `app/` (reshape)
-- [x] Namespace `Modules\Catalog\`
-- [x] `CatalogServiceProvider` → XotBaseServiceProvider
-- [x] composer PSR-4 → `app/`
-- [x] Resources → XotBaseResource
-- [x] Pages → XotBase{Create,Edit,List,View}Record
-- [x] RelationManager → XotBaseRelationManager
-- [x] Migrazioni 1-per-modello, XotBaseMigration
-- [x] Actions → QueueableAction
-- [x] tests/TestCase.php + Pest.php scaffold
-- [x] lang/{it,en} + config/metel.php
-- [x] PHPStan (solo 2 categorie di errori minori/noti residue, vedi `gestionale-commesse-port.md`)
-- [x] Registrato in `modules_statuses.json`
+- [x] Layout `app/` + XotBase SP
+- [x] Resources / Pages / RelationManagers XotBase*
+- [x] Migrazioni 1-per-modello
+- [x] QueueableAction
+- [x] `config/metel.php` senza `env()` (overlay in ServiceProvider)
+- [x] **PHPStan L10** — 0 errori reali (2026-07-24)
+- [x] `modules_statuses=true`

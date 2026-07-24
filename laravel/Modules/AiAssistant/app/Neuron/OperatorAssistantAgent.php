@@ -44,7 +44,7 @@ final class OperatorAssistantAgent extends Agent
 
     private ?int $currentUserId = null;
 
-    public function forSession(AiThread $thread, int $currentUserId): self
+    public function forSession(AiThread $thread, int $currentUserId): static
     {
         $this->thread = $thread;
         $this->currentUserId = $currentUserId;

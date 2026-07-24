@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\HR\Models;
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
+use Modules\HR\Database\Factories\AbsenceRequestFactory;
+use Modules\User\Models\User;
+use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -24,8 +26,11 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
  */
-final class AbsenceRequest extends Model
+final class AbsenceRequest extends XotBaseModel
 {
+    /** @use HasFactory<AbsenceRequestFactory> */
+    use HasFactory;
+
     use SoftDeletes;
 
     protected $table = 'absence_requests';

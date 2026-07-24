@@ -3,9 +3,10 @@
     "alias": "signature",
     "description": "Signature \u2014 replica gestionale_commesse (normalize Laraxot)",
     "keywords": [],
-    "priority": 0,
+    "priority": 100,
     "providers": [
-        "Modules\\Signature\\Providers\\SignatureServiceProvider"
+        "Modules\\Signature\\Providers\\SignatureServiceProvider",
+        "Modules\\Signature\\Providers\\Filament\\AdminPanelProvider"
     ],
     "files": []
 }

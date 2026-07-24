@@ -44,7 +44,7 @@ final class HeatingDeadlinesPage extends Page
         };
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string
     {
         return __('heating.navigation');
     }

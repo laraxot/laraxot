@@ -20,9 +20,7 @@ final class ProcessEmailMessageJob implements ShouldQueue
 
     public int $tries = 3;
 
-    public function __construct(public readonly int $messageId)
-    {
-    }
+    public function __construct(public readonly int $messageId) {}
 
     public function handle(ProcessEmailMessageAction $action): void
     {

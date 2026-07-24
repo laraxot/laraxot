@@ -8,9 +8,7 @@ use Modules\Platform\Settings\SettingsRepository;
 
 final readonly class EmailSettings
 {
-    public function __construct(private SettingsRepository $settings)
-    {
-    }
+    public function __construct(private SettingsRepository $settings) {}
 
     public function inboundSecret(): string
     {

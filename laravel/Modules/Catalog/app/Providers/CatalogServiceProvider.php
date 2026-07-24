@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Catalog\Providers;
 
+use Illuminate\Support\Env;
 use Illuminate\Support\Facades\Gate;
 use Modules\Catalog\Models\CatalogFrequency;
 use Modules\Catalog\Models\CatalogMeasureUnit;
@@ -29,10 +30,30 @@ class CatalogServiceProvider extends XotBaseServiceProvider
     {
         parent::boot();
 
+        $this->applyMetelEnvOverrides();
+
         Gate::policy(Product::class, ProductPolicy::class);
         Gate::policy(CatalogFrequency::class, CatalogFrequencyPolicy::class);
         Gate::policy(CatalogMeasureUnit::class, CatalogMeasureUnitPolicy::class);
         Gate::policy(CatalogPartType::class, CatalogPartTypePolicy::class);
         Gate::policy(CatalogModel::class, CatalogModelPolicy::class);
+    }
+
+    /**
+     * Module config cannot call env() (Larastan). Overlay METEL_* from runtime env here.
+     */
+    private function applyMetelEnvOverrides(): void
+    {
+        $enabledRaw = Env::get('METEL_API_ENABLED');
+        $timeoutRaw = Env::get('METEL_API_TIMEOUT');
+
+        config([
+            'metel.api.enabled' => filter_var($enabledRaw ?? '0', FILTER_VALIDATE_BOOL),
+            'metel.api.base_url' => (string) (Env::get('METEL_API_BASE_URL') ?? config('metel.api.base_url')),
+            'metel.api.api_key' => (string) (Env::get('METEL_API_KEY') ?? config('metel.api.api_key')),
+            'metel.api.articles_endpoint' => (string) (Env::get('METEL_API_ARTICLES_ENDPOINT') ?? config('metel.api.articles_endpoint')),
+            'metel.api.items_path' => (string) (Env::get('METEL_API_ITEMS_PATH') ?? config('metel.api.items_path')),
+            'metel.api.timeout' => is_numeric($timeoutRaw) ? (int) $timeoutRaw : (int) config('metel.api.timeout', 60),
+        ]);
     }
 }

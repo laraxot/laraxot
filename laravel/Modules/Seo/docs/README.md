@@ -95,12 +95,9 @@ SEO::addStructuredData([
 
 ### 🏗️ **Architettura**
 - [Struttura Modulo](structure.md) - Architettura SEO
-- [Best Practices](best-practices.md) - Best practices SEO
 
 ### 🎨 **Components**
-- [Meta Tags](meta-tags.md) - Gestione meta tags
 - [Sitemap](sitemap.md) - Configurazione sitemap
-- [Structured Data](structured-data.md) - Schema.org
 
 ### 🔧 **Development**
 - [Configuration](configuration.md) - Configurazione modulo

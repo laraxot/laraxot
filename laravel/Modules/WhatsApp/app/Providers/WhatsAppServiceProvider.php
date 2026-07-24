@@ -34,7 +34,7 @@ class WhatsAppServiceProvider extends XotBaseServiceProvider
         $this->app->bind(WhatsAppClientInterface::class, function (): WhatsAppClientInterface {
             $settings = app(WhatsAppSettings::class);
 
-            return 'ycloud' === $settings->provider()
+            return $settings->provider() === 'ycloud'
                 ? new YCloudWhatsAppClient($settings)
                 : new MetaWhatsAppClient($settings);
         });

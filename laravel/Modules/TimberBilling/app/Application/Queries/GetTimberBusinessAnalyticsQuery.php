@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Queries;
 
-use App\Timber\Models\TimberDocument;
 use Illuminate\Support\Collection;
 use Modules\Customer\Models\Customer;
 use Modules\Quotation\DTO\Money;
 use Modules\TimberBilling\Domain\DTO\CustomerSalesRow;
 use Modules\TimberBilling\Domain\DTO\TimberAnalyticsSummary;
+use Modules\TimberBilling\Models\TimberDocument;
 use Modules\TimberBilling\Models\TimberInvoice;
 use Modules\TimberBilling\Models\TimberPaymentInstallment;
 

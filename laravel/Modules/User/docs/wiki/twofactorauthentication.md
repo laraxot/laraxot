@@ -15,6 +15,12 @@ related:
 
 # Two-Factor Authentication (2FA)
 
+> **Verificato 2026-07-24**: questo documento descrive un **design target**, non lo stato reale. `TwoFactorService`
+> e `TwoFactorMiddleware` **non esistono nel codice**; il trait Filament associato è disattivato
+> (`app/Filament/Traits/HasTwoFactorAuthentication.test`, estensione `.test` non `.php`). Vedi
+> `../2fa.md` per il dettaglio della verifica file-per-file. Trattare quanto segue come piano, non come feature
+> disponibile.
+
 The User module implements a robust 2FA system based on TOTP (Time-based One-Time Password), compatible with apps like Google Authenticator and Authy.
 
 ## 1. Core Architecture

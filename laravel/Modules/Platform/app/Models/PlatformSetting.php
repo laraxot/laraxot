@@ -4,19 +4,20 @@ declare(strict_types=1);
 
 namespace Modules\Platform\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use App\Models\User;
+use Illuminate\Support\Carbon;
+use Modules\User\Models\User;
+use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
  * @property string $key
  * @property array<string,mixed>|null $value_json
- * @property int|null $updated_by_user_id
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string|null $updated_by_user_id
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  */
-final class PlatformSetting extends Model
+final class PlatformSetting extends XotBaseModel
 {
     protected $table = 'platform_settings';
 
@@ -46,4 +47,3 @@ final class PlatformSetting extends Model
         return $this->belongsTo(User::class, 'updated_by_user_id');
     }
 }
-

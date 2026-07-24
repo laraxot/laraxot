@@ -4,20 +4,27 @@ module: "Tenant"
 type: concept
 tags: [configuration]
 created: 2026-07-14
-updated: 2026-07-14
+updated: 2026-07-24
 qmd: "configuration"
 related:
   - "./phpstan-corrections-january.md"
 ---
 # Tenant Configuration (source of truth)
 
+ > **Verificato 2026-07-24**: `TenantService` **non esiste come classe** nel codice — solo l'action
+ > `ResolveTenantConfigValueAction` (`app/Actions/Config/ResolveTenantConfigValueAction.php`) è reale, insieme a
+ > `GetTenantConfigArrayAction` e `SaveTenantConfigAction`. Le chiamate `TenantService::config(...)` sotto sono
+ > un'API pianificata, non disponibile oggi — usare direttamente le Action.
+
  ## Scopo
 
- Questo documento descrive la risoluzione **tenant-aware** dei valori di configurazione tramite `TenantService::config()` e l'action `ResolveTenantConfigValueAction`.
+ Questo documento descrive la risoluzione **tenant-aware** dei valori di configurazione tramite l'action
+ `ResolveTenantConfigValueAction` (il riferimento a `TenantService::config()` è aspirazionale, vedi nota sopra).
 
  ## Regola d'uso
 
- - Usare `TenantService::config('app.name')` quando il valore può variare per tenant.
+ - Usare `ResolveTenantConfigValueAction::execute('app.name')` (o l'invocazione equivalente) quando il valore può
+   variare per tenant — non `TenantService::config()`, che non esiste.
  - Evitare `config('app.name')` nel business code quando si richiede tenant-awareness.
 
  ## Strategia di merge

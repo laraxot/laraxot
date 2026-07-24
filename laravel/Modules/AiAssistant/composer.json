@@ -37,7 +37,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Modules\\AiAssistant\\Providers\\AiAssistantServiceProvider"
+                "Modules\\AiAssistant\\Providers\\AiAssistantServiceProvider",
+                "Modules\\AiAssistant\\Providers\\Filament\\AdminPanelProvider"
             ],
             "aliases": {}
         }

@@ -4,19 +4,20 @@ declare(strict_types=1);
 
 namespace Modules\Auth\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
+use Illuminate\View\View;
 use Modules\Auth\Actions\StartEmailTwoFactorChallengeAction;
+use Modules\User\Models\User;
 use Spatie\Permission\Models\Role;
 
 final class RegisterController extends Controller
 {
-    public function show(Request $request): RedirectResponse|\Illuminate\View\View
+    public function show(Request $request): RedirectResponse|View
     {
         abort_if($this->registrationIsBlockedForHost($request), 404);
 
@@ -24,9 +25,20 @@ final class RegisterController extends Controller
             return redirect()->to('/operator');
         }
 
-        return view('auth::register', [
+        return view($this->registerViewName(), [
             'isDemoRegistration' => $this->isDemoRegistration(),
         ]);
+    }
+
+    /**
+     * @return view-string
+     */
+    private function registerViewName(): string
+    {
+        /** @phpstan-var view-string $view */
+        $view = 'auth::register';
+
+        return $view;
     }
 
     public function store(Request $request): RedirectResponse

@@ -19,6 +19,26 @@ use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderStatus;
 
+use function Safe\imagealphablending;
+use function Safe\imagearc;
+use function Safe\imagecopy;
+use function Safe\imagecreatetruecolor;
+use function Safe\imagedestroy;
+use function Safe\imagefill;
+use function Safe\imagefilledrectangle;
+use function Safe\imageline;
+use function Safe\imagepng;
+use function Safe\imagerectangle;
+use function Safe\imagerotate;
+use function Safe\imagesavealpha;
+use function Safe\imagesetpixel;
+use function Safe\imagesetthickness;
+use function Safe\imagestring;
+use function Safe\imagettftext;
+use function Safe\ob_get_clean;
+use function Safe\ob_start;
+use function Safe\preg_split;
+
 final class ComplianceDemoSeeder extends Seeder
 {
     public function run(): void
@@ -500,7 +520,7 @@ final class ComplianceDemoSeeder extends Seeder
         $boldFont = is_file($boldFont) ? $boldFont : $font;
 
         $canvas = imagecreatetruecolor(1200, 1600);
-        imagefill($canvas, 0, 0, imagecolorallocate($canvas, 214, 224, 236));
+        imagefill($canvas, 0, 0, $this->color($canvas, 214, 224, 236));
 
         for ($i = 0; $i < 4200; $i++) {
             $shade = random_int(202, 236);
@@ -508,17 +528,17 @@ final class ComplianceDemoSeeder extends Seeder
                 $canvas,
                 random_int(0, 1199),
                 random_int(0, 1599),
-                imagecolorallocate($canvas, $shade, min(255, $shade + 4), min(255, $shade + 10)),
+                $this->color($canvas, $shade, min(255, $shade + 4), min(255, $shade + 10)),
             );
         }
 
         $doc = imagecreatetruecolor(1020, 1440);
-        $paper = imagecolorallocate($doc, 250, 249, 242);
+        $paper = $this->color($doc, 250, 249, 242);
         imagefill($doc, 0, 0, $paper);
 
         for ($i = 0; $i < 8500; $i++) {
             $shade = random_int(226, 252);
-            imagesetpixel($doc, random_int(0, 1019), random_int(0, 1439), imagecolorallocate($doc, $shade, $shade, $shade - 4));
+            imagesetpixel($doc, random_int(0, 1019), random_int(0, 1439), $this->color($doc, $shade, $shade, $shade - 4));
         }
 
         $accent = match ($scenario) {
@@ -534,11 +554,11 @@ final class ComplianceDemoSeeder extends Seeder
             default => 'VALIDO',
         };
 
-        $accentColor = imagecolorallocate($doc, $accent[0], $accent[1], $accent[2]);
-        $textColor = imagecolorallocate($doc, 30, 41, 59);
-        $mutedColor = imagecolorallocate($doc, 71, 85, 105);
-        $lineColor = imagecolorallocate($doc, 203, 213, 225);
-        $lightAccent = imagecolorallocate($doc, min(255, $accent[0] + 170), min(255, $accent[1] + 130), min(255, $accent[2] + 20));
+        $accentColor = $this->color($doc, $accent[0], $accent[1], $accent[2]);
+        $textColor = $this->color($doc, 30, 41, 59);
+        $mutedColor = $this->color($doc, 71, 85, 105);
+        $lineColor = $this->color($doc, 203, 213, 225);
+        $lightAccent = $this->color($doc, min(255, $accent[0] + 170), min(255, $accent[1] + 130), min(255, $accent[2] + 20));
 
         imagefilledrectangle($doc, 70, 78, 260, 156, $lightAccent);
         imagerectangle($doc, 70, 78, 260, 156, $accentColor);
@@ -549,7 +569,7 @@ final class ComplianceDemoSeeder extends Seeder
 
         $lines = array_slice(preg_split('/\R/', wordwrap($body, 64, "\n")) ?: [], 0, 14);
         foreach ($lines as $index => $line) {
-            $this->drawText($doc, $line, 95, 385 + ($index * 42), 18, $mutedColor, $font);
+            $this->drawText($doc, (string) $line, 95, 385 + ($index * 42), 18, $mutedColor, $font);
         }
 
         imagerectangle($doc, 95, 1065, 930, 1220, $lineColor);
@@ -559,21 +579,21 @@ final class ComplianceDemoSeeder extends Seeder
         $stampLayer = imagecreatetruecolor(360, 150);
         imagealphablending($stampLayer, false);
         imagesavealpha($stampLayer, true);
-        imagefill($stampLayer, 0, 0, imagecolorallocatealpha($stampLayer, 255, 255, 255, 127));
+        imagefill($stampLayer, 0, 0, $this->colorAlpha($stampLayer, 255, 255, 255, 127));
         imagerectangle($stampLayer, 8, 8, 350, 140, $accentColor);
         imagerectangle($stampLayer, 16, 16, 342, 132, $accentColor);
         $this->drawText($stampLayer, $stamp, 42, 92, 28, $accentColor, $boldFont);
-        $stampLayer = imagerotate($stampLayer, 12, imagecolorallocatealpha($stampLayer, 255, 255, 255, 127));
+        $stampLayer = imagerotate($stampLayer, 12, $this->colorAlpha($stampLayer, 255, 255, 255, 127));
         imagecopy($doc, $stampLayer, 620, 930, 0, 0, imagesx($stampLayer), imagesy($stampLayer));
         imagedestroy($stampLayer);
 
         imagesetthickness($doc, 4);
-        imagearc($doc, 790, 1310, 110, 72, 190, 20, imagecolorallocate($doc, 29, 78, 216));
-        imagearc($doc, 865, 1306, 170, 94, 175, 15, imagecolorallocate($doc, 29, 78, 216));
+        imagearc($doc, 790, 1310, 110, 72, 190, 20, $this->color($doc, 29, 78, 216));
+        imagearc($doc, 865, 1306, 170, 94, 175, 15, $this->color($doc, 29, 78, 216));
         imagesetthickness($doc, 1);
         $this->drawText($doc, 'Firma digitale/demo - documento sintetico per presentazione', 95, 1370, 15, $mutedColor, $font);
 
-        $rotated = imagerotate($doc, 2, imagecolorallocate($doc, 214, 224, 236));
+        $rotated = imagerotate($doc, 2, $this->color($doc, 214, 224, 236));
         imagedestroy($doc);
 
         imagecopy($canvas, $rotated, 80, 55, 0, 0, imagesx($rotated), imagesy($rotated));
@@ -605,6 +625,39 @@ final class ComplianceDemoSeeder extends Seeder
         imagestring($image, 5, $x, $y - 16, $text, $color);
     }
 
+    private function color(\GdImage $image, int $red, int $green, int $blue): int
+    {
+        $color = imagecolorallocate(
+            $image,
+            max(0, min(255, $red)),
+            max(0, min(255, $green)),
+            max(0, min(255, $blue)),
+        );
+
+        if ($color === false) {
+            throw new \RuntimeException('Unable to allocate GD color.');
+        }
+
+        return $color;
+    }
+
+    private function colorAlpha(\GdImage $image, int $red, int $green, int $blue, int $alpha): int
+    {
+        $color = imagecolorallocatealpha(
+            $image,
+            max(0, min(255, $red)),
+            max(0, min(255, $green)),
+            max(0, min(255, $blue)),
+            max(0, min(127, $alpha)),
+        );
+
+        if ($color === false) {
+            throw new \RuntimeException('Unable to allocate GD alpha color.');
+        }
+
+        return $color;
+    }
+
     private function documentSvg(
         string $title,
         string $type,
@@ -633,7 +686,7 @@ final class ComplianceDemoSeeder extends Seeder
             $lineSvg .= sprintf(
                 '<text x="170" y="%d" class="body">%s</text>',
                 365 + ($index * 38),
-                $this->e($line),
+                $this->e((string) $line),
             );
         }
 

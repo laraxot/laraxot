@@ -10,8 +10,7 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
@@ -19,19 +18,18 @@ use Illuminate\Support\Facades\Auth;
 use Modules\HR\Actions\AddEmployeeDocumentAction;
 use Modules\HR\Models\Employee;
 use Modules\HR\Models\EmployeeDocument;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class DocumentsRelationManager extends RelationManager
+final class DocumentsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'documents';
 
-    public static function getTitle(Model $ownerRecord, string $pageClass): string
+    /**
+     * @return array<int, Component>
+     */
+    public function getFormSchema(): array
     {
-        return __('hr.documents');
-    }
-
-    public function form(Schema $schema): Schema
-    {
-        return $schema->components([
+        return [
             TextInput::make('title')
                 ->label(__('hr.fields.title'))
                 ->maxLength(255),
@@ -48,7 +46,7 @@ final class DocumentsRelationManager extends RelationManager
                 ->previewable()
                 ->required()
                 ->columnSpanFull(),
-        ])->columns(2);
+        ];
     }
 
     public function table(Table $table): Table
@@ -89,7 +87,7 @@ final class DocumentsRelationManager extends RelationManager
             ])
             ->actions([
                 Action::make('download')
-                    ->label(__('documents.actions.download'))
+                    ->label(__('hr.actions.download'))
                     ->icon('heroicon-o-arrow-down-tray')
                     ->color('gray')
                     ->url(fn (EmployeeDocument $record): string => $record->media->path !== ''

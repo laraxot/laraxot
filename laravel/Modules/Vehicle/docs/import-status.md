@@ -1,32 +1,27 @@
 ---
 title: "Import status — Vehicle"
 type: concept
-tags: [import, gestionale-commesse, vehicle]
+tags: [import, vehicle, gestionale-commesse, filament]
 created: 2026-07-23
-updated: 2026-07-23
-qmd: "import status Vehicle normalize"
+updated: 2026-07-24
+qmd: "import status Vehicle panel media spatiefk"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
 discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
 related:
   - "./README.md"
+  - "../../../../docs/gestionale-commesse-comparison/functional-readiness.md"
+  - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
 ---
 
 # Import status — Vehicle
 
-- [x] Cartella singolare / replica
-- [x] Layout `app/` (reshape)
-- [x] Namespace `Modules\Vehicle\`
-- [x] `VehicleServiceProvider` → XotBaseServiceProvider
-- [x] composer PSR-4 → `app/`
-- [x] Resources → XotBaseResource
-- [x] Migrazioni consolidate 1-per-modello (`create_vehicles_table`, `create_vehicle_documents_table`)
-- [x] `DocumentsRelationManager` → XotBaseRelationManager
-- [x] `VehiclePolicy` → `app/Models/Policies/VehicleBasePolicy`
-- [x] `lang/{it,en}/vehicles.php`
-- [x] `tests/{TestCase,Pest}.php` + `tests/Unit/VehicleModelTest.php` (8 assert, passano)
-- [x] PHPStan: 2 errori residui (falso positivo costanti lette per reflection) — vedi
-      `docs/gestionale-commesse-port.md`
+**Perché esiste:** parco mezzi + documenti veicolo.
 
-Dettaglio redo reshape 2026-07-23: [../../../docs/gestionale-commesse-port.md](../../../docs/gestionale-commesse-port.md).
+- [x] Enabled + migrate `vehicles` / `vehicle_documents`
+- [x] Panel `vehicle/admin/vehicles`
+- [ ] Debito: `vehicle_documents.media_id` → Spatie `media` (Document disabled; tabella omonima diversa)
+- [ ] Pest smoke
+
+SSoT: [functional-readiness.md](../../../../docs/gestionale-commesse-comparison/functional-readiness.md).

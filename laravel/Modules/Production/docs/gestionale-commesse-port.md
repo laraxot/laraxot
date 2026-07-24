@@ -43,3 +43,11 @@ Come per Bom/Inventory, il modulo era tornato a uno stato intermedio: `app/Model
 
 - `php -l`: OK su tutti i file.
 - `phpstan analyse` (insieme a Bom/Inventory): nessun errore bloccante residuo (`final method`/`abstract method` risolti). Il rumore residuo (`missingType.generics` su HasFactory, `property.notFound` su proprietà magiche, `classConstant.unused` su `ACCOUNT_FEATURE_*`) è identico per categoria a quello già presente in moduli accettati (es. `Vehicle`).
+
+## Verificato 2026-07-24 — `vendor/bin/pest Modules/Production/tests` FALLISCE in isolamento
+
+`ProductionOrderFactory` dipende da `Modules\Catalog\Models\Product`, ma
+`Modules\Production\Tests\TestCase::getPackageProviders()` non registra `CatalogServiceProvider`.
+Eseguito da solo, 2 test falliscono con `QueryException: no such table: products`. Nessuna testsuite
+`Production` in `phpunit.xml` root, quindi non gira mai in CI. Stesso fix di Bom/Inventory:
+registrare `CatalogServiceProvider` nel `TestCase` + aggiungere testsuite dedicata.

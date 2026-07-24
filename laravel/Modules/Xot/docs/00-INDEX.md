@@ -49,8 +49,7 @@
 - [composer-root-skeleton-modular](./wiki/concepts/composer-root-skeleton-modular.md) — root skeleton + merge solo moduli
 - [theme-psr4-autoload-without-merge](./wiki/concepts/theme-psr4-autoload-without-merge.md) — autoload temi senza merge root
 - [Module Dependency Management](./composer-module-dependency-management.md)
-- [Composer Packages Reference](../../../../docs/composer-packages-reference.md) - Mappatura pacchetti per modulo
-- [Inventario completo 312 pacchetti](../../../../docs/architecture/composer-packages-full-inventory.md) - Tutti i pacchetti con versione e descrizione
+- [Composer Packages Reference](../../../../bashscripts/ai/wiki/memories/composer-packages-reference.md) - Mappatura pacchetti per modulo
 - [Composer Packages Deep Study (2026-03-02)](./composer-packages-deep-study.md)
 - [Composer Packages Full Catalog (2026-03-02)](./composer-packages-full-catalog.md) - Studio completo package-by-package da `composer show`
 - [Database Connection Configuration](./database-configuration-critical-rules.md)

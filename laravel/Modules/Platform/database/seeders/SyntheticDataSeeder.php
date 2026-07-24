@@ -7,6 +7,7 @@ namespace Modules\Platform\Database\Seeders;
 use App\Models\User;
 use Carbon\CarbonImmutable;
 use Faker\Factory as FakerFactory;
+use Faker\Provider\it_IT\Address as ItAddressProvider;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
@@ -14,6 +15,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Modules\Intervention\Database\Seeders\InterventionsAgendaDemoSeeder;
 use Modules\Platform\Database\Seeders\Support\TradeProfile;
+
+use function Safe\json_encode;
 
 class SyntheticDataSeeder extends Seeder
 {
@@ -29,6 +32,7 @@ class SyntheticDataSeeder extends Seeder
     public function run(): void
     {
         $faker = FakerFactory::create('it_IT');
+        $addressProvider = new ItAddressProvider($faker);
         $now = CarbonImmutable::now();
         $profile = $this->profile();
 
@@ -87,7 +91,7 @@ class SyntheticDataSeeder extends Seeder
         }
         Schema::enableForeignKeyConstraints();
 
-        DB::transaction(function () use ($faker, $now, $profile): void {
+        DB::transaction(function () use ($faker, $addressProvider, $now, $profile): void {
             // Contact roles (italiano, target demo)
             foreach (['Titolare', 'Responsabile commesse', 'Amministrazione', 'Ufficio tecnico', 'Capocantiere'] as $roleName) {
                 DB::table('contact_roles')->updateOrInsert(
@@ -117,7 +121,7 @@ class SyntheticDataSeeder extends Seeder
             $statusIdsByCode = DB::table('work_order_statuses')
                 ->select(['id', 'code'])
                 ->get()
-                ->mapWithKeys(fn ($row) => [$row->code => $row->id])
+                ->mapWithKeys(fn ($row) => [(string) $row->code => $row->id])
                 ->all();
 
             // Minimal catalog lookups
@@ -245,7 +249,7 @@ class SyntheticDataSeeder extends Seeder
                     'address_line1' => $faker->streetAddress(),
                     'city' => $faker->city(),
                     'postal_code' => $faker->postcode(),
-                    'province' => $faker->stateAbbr(),
+                    'province' => $addressProvider->stateAbbr(),
                     'country_code' => 'IT',
                     'payment_method' => $paymentMethod,
                     'iban' => $paymentMethod === 'bonifico' && $faker->boolean(70) ? Str::upper($faker->iban('IT')) : null,
@@ -259,14 +263,14 @@ class SyntheticDataSeeder extends Seeder
                 $siteCount = $faker->numberBetween(1, 3);
                 $siteIds = [];
                 for ($s = 0; $s < $siteCount; $s++) {
-                    $siteLabel = $faker->randomElement(['Showroom', 'Cantiere', 'Sede operativa', 'Magazzino cliente']);
+                    $siteLabel = (string) $faker->randomElement(['Showroom', 'Cantiere', 'Sede operativa', 'Magazzino cliente']);
                     $siteIds[] = DB::table('customer_sites')->insertGetId([
                         'customer_id' => $customerId,
                         'name' => $faker->boolean(80) ? ($siteLabel.' '.$faker->city()) : null,
                         'address_line1' => $faker->streetAddress(),
                         'city' => $faker->city(),
                         'postal_code' => $faker->postcode(),
-                        'province' => $faker->stateAbbr(),
+                        'province' => $addressProvider->stateAbbr(),
                         'country_code' => 'IT',
                         'email' => $faker->boolean(60) ? $faker->companyEmail() : null,
                         'phone' => $faker->boolean(80) ? $faker->phoneNumber() : null,
@@ -305,7 +309,7 @@ class SyntheticDataSeeder extends Seeder
             for ($i = 0; $i < 8; $i++) {
                 DB::table('resellers')->insert([
                     'user_id' => null,
-                    'name' => $faker->randomElement($profile->resellerPrefixes).' '.$faker->lastName(),
+                    'name' => (string) $faker->randomElement($profile->resellerPrefixes).' '.$faker->lastName(),
                     'notes' => $faker->boolean(45) ? $faker->randomElement($profile->resellerNotes) : null,
                     'created_at' => $now,
                     'updated_at' => $now,
@@ -334,7 +338,7 @@ class SyntheticDataSeeder extends Seeder
 
             for ($i = 0; $i < 40; $i++) {
                 $productIds[] = DB::table('products')->insertGetId([
-                    'name' => $faker->randomElement($profile->randomProductNames).' — '.$faker->randomElement($profile->randomProductSuffixes),
+                    'name' => (string) $faker->randomElement($profile->randomProductNames).' — '.(string) $faker->randomElement($profile->randomProductSuffixes),
                     'sku' => $faker->boolean(80) ? Str::upper($faker->bothify('SKU-####-??')) : null,
                     'description' => $faker->boolean(65) ? $faker->randomElement($profile->randomProductDescriptions) : null,
                     'catalog_model_id' => $faker->boolean(75) ? $faker->randomElement($catalogModelIds) : null,
@@ -419,7 +423,7 @@ class SyntheticDataSeeder extends Seeder
             // Product units (tracciabilità base per demo)
             $productUnitIdsByProduct = [];
             for ($i = 0; $i < 220; $i++) {
-                $pid = $faker->randomElement($productIds);
+                $pid = (int) $faker->randomElement($productIds);
                 $wid = $faker->randomElement($warehouseIds);
                 $serial = sprintf('PU-%s-%s', $now->format('Y'), Str::upper(Str::random(10)));
                 $unitId = DB::table('product_units')->insertGetId([
@@ -476,15 +480,15 @@ class SyntheticDataSeeder extends Seeder
                 $customerSiteId = DB::table('customer_sites')->where('customer_id', $customerId)->inRandomOrder()->value('id');
                 $primaryContactId = DB::table('contacts')->where('customer_id', $customerId)->inRandomOrder()->value('id');
 
-                $statusCode = $faker->randomElement(['draft', 'scheduled', 'in_progress', 'completed', 'cancelled']);
+                $statusCode = (string) $faker->randomElement(['draft', 'scheduled', 'in_progress', 'completed', 'cancelled']);
                 $scheduledAt = $faker->boolean(70) ? $now->subDays($faker->numberBetween(0, 20))->addDays($faker->numberBetween(0, 30)) : null;
                 $openedAt = $scheduledAt?->subDays($faker->numberBetween(1, 10));
                 $startedAt = in_array($statusCode, ['in_progress', 'completed'], true) ? ($scheduledAt ?? $now)->addHours($faker->numberBetween(0, 4)) : null;
                 $completedAt = $statusCode === 'completed' ? ($startedAt ?? $now)->addHours($faker->numberBetween(1, 6)) : null;
 
-                $workType = $faker->randomElement($profile->jobTypes);
-                $artifact = $faker->randomElement($profile->jobSubjects);
-                $finish = $faker->randomElement($profile->jobContexts);
+                $workType = (string) $faker->randomElement($profile->jobTypes);
+                $artifact = (string) $faker->randomElement($profile->jobSubjects);
+                $finish = (string) $faker->randomElement($profile->jobContexts);
                 $title = sprintf($profile->jobTitleFormat, $workType, $artifact, $finish);
                 $description = $faker->randomElement($profile->jobDescriptions);
                 $notes = $faker->boolean(35) ? $faker->randomElement($profile->jobNotes) : null;
@@ -599,7 +603,7 @@ class SyntheticDataSeeder extends Seeder
             for ($i = 0; $i < 120; $i++) {
                 $workOrderId = $faker->randomElement($workOrderIds);
                 $userId = $operatorUserId ?? $adminUserId;
-                $start = $now->subDays($faker->numberBetween(0, 30))->setTime($faker->numberBetween(7, 18), $faker->randomElement([0, 15, 30, 45]));
+                $start = $now->subDays($faker->numberBetween(0, 30))->setTime($faker->numberBetween(7, 18), (int) $faker->randomElement([0, 15, 30, 45]));
                 // Idraulici/elettricisti: di norma niente lavoro nel weekend.
                 if ($start->isWeekend()) {
                     continue;
@@ -837,7 +841,7 @@ SVG,
                 $workOrderId = $faker->boolean(55) ? $faker->randomElement($workOrderIds) : null;
                 $interventionId = $faker->boolean(35) ? DB::table('interventions')->inRandomOrder()->value('id') : null;
 
-                $movementProductId = $faker->randomElement($productIds);
+                $movementProductId = (int) $faker->randomElement($productIds);
                 $movementId = DB::table('inventory_movements')->insertGetId([
                     'product_id' => $movementProductId,
                     'from_warehouse_id' => $fromWarehouseId,
@@ -931,7 +935,7 @@ SVG,
                 $customerId = $faker->randomElement($customerIds);
                 $workOrderId = $faker->boolean(50) ? $faker->randomElement($workOrderIds) : null;
 
-                $taxPercent = $faker->randomElement([22.00, 22.00, 10.00, 0.00]);
+                $taxPercent = (float) $faker->randomElement([22.00, 22.00, 10.00, 0.00]);
 
                 $quotationId = DB::table('quotations')->insertGetId([
                     'customer_id' => $customerId,

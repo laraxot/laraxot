@@ -52,7 +52,7 @@ related:
 | Volt | latest | Livewire functional/class components |
 
 ### Anti-Patterns
-- **[QuestionChartAnswersTripleChartWidget](../../Modules/docs/anti-pattern-question-chart-answers-triple-widget.md)** - Why multi-chart widgets should be avoided
+- QuestionChartAnswersTripleChartWidget — why multi-chart widgets should be avoided (link removed 2026-07-24: target doc not found in repo, could not verify)
 
 ### Theme Characteristics
 - **Style**: Ultra-minimalist
@@ -61,9 +61,9 @@ related:
 
 ### Related Resources
 
-- [Cms Module](../../Modules/Cms/docs/README.md)
-- [UI Module](../../Modules/UI/docs/README.md)
-- [Xot Module](../../Modules/Xot/docs/00-index.md) - Base classes
+- [Cms Module](../../../Modules/Cms/docs/README.md)
+- [UI Module](../../../Modules/UI/docs/README.md)
+- [Xot Module](../../../Modules/Xot/docs/00-index.md) - Base classes
 - [AGENTS.md](../../../AGENTS.md) - Project guidelines
 
 ---

@@ -9,6 +9,8 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
+use function Safe\json_encode;
+
 final class OperationalLookupsSeeder extends Seeder
 {
     public function run(): void
@@ -175,7 +177,7 @@ final class OperationalLookupsSeeder extends Seeder
     }
 
     /** @param array<string, mixed> $attributes
-     *  @param array<string, mixed> $values
+     * @param  array<string, mixed>  $values
      */
     private function insertIfMissing(string $table, array $attributes, array $values): void
     {

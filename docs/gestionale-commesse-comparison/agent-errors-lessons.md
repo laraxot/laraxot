@@ -3,8 +3,8 @@ title: "Errori agente — porting gestionale (non rifare)"
 type: concept
 tags: [gestionale-commesse, agent-errors, lessons, replica, singular, anti-pattern]
 created: 2026-07-23
-updated: 2026-07-23
-qmd: "agent errors lessons gestionale replica singular AiAssistant twin merge delete never again"
+updated: 2026-07-24
+qmd: "agent errors lessons gestionale replica singular AiAssistant twin merge delete never again migrate panels"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/9"
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
@@ -51,6 +51,9 @@ related:
 | E8 | Merge plurale→singolare con `namespace Modules\WorkOrders` residuo nei file copiati | Autoload/PHPStan rotti | Grep zero su namespace plurale prima di chiudere |
 | E9 | Preferire story stale (1.6 «no cartella collisione») alla **correzione utente in chat** | Delete/skip contro intento | Priorità: ultima istruzione utente > story stale |
 | E10 | Delete AiAssistant **mentre** si documentava il divieto (concorrenza multi-agente) | Docs/visibility spariti a metà create-story | Lock multi-agente + statuses key check post-edit |
+| E11 | `foreignId()->constrained('users')` con `users.id` = `varchar(36)` UUID | Migrate FAIL 3780; tabelle orfane | User cols = `string(36)` **senza** constrained; relazione Eloquent |
+| E12 | Enable moduli Filament **senza** `AdminPanelProvider` in composer + module.json | Resources/pages invisibili (`route:list` vuoto) | Panel in entrambi i manifest + `package:discover` |
+| E13 | `php artisan migrate` globale con 100+ Pending legacy | Rischio FK/ordine/collisione | Solo `--path=Modules/{X}/database/migrations` |
 
 ## Checklist pre-azione (agente)
 

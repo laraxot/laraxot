@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\AiAssistant\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Modules\AiAssistant\Database\Factories\AiMessageFactory;
 use Modules\AiAssistant\Models\AiMessage;
 
 class AiMessageSeeder extends Seeder
@@ -15,6 +16,6 @@ class AiMessageSeeder extends Seeder
             return;
         }
 
-        AiMessage::factory()->count(2)->create();
+        AiMessageFactory::new()->count(2)->create();
     }
 }

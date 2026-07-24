@@ -12,8 +12,7 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
@@ -21,19 +20,18 @@ use Illuminate\Support\Facades\Auth;
 use Modules\HR\Actions\AddEmployeeTrainingAction;
 use Modules\HR\Models\Employee;
 use Modules\HR\Models\EmployeeTraining;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class TrainingsRelationManager extends RelationManager
+final class TrainingsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'trainings';
 
-    public static function getTitle(Model $ownerRecord, string $pageClass): string
+    /**
+     * @return array<int, Component>
+     */
+    public function getFormSchema(): array
     {
-        return __('hr.trainings');
-    }
-
-    public function form(Schema $schema): Schema
-    {
-        return $schema->components([
+        return [
             TextInput::make('title')
                 ->label(__('hr.fields.title'))
                 ->maxLength(255),
@@ -57,7 +55,7 @@ final class TrainingsRelationManager extends RelationManager
             Textarea::make('notes')
                 ->label(__('hr.fields.notes'))
                 ->columnSpanFull(),
-        ])->columns(2);
+        ];
     }
 
     public function table(Table $table): Table
@@ -97,7 +95,7 @@ final class TrainingsRelationManager extends RelationManager
             ])
             ->actions([
                 Action::make('download')
-                    ->label(__('documents.actions.download'))
+                    ->label(__('hr.actions.download'))
                     ->icon('heroicon-o-arrow-down-tray')
                     ->color('gray')
                     ->visible(fn (EmployeeTraining $record): bool => $record->media !== null)

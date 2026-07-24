@@ -17,6 +17,9 @@
         <testsuite name="AI">
             <directory>Modules/AI/tests</directory>
         </testsuite>
+        <testsuite name="Auth">
+            <directory>Modules/Auth/tests</directory>
+        </testsuite>
         <testsuite name="Cms">
             <directory>Modules/Cms/tests</directory>
         </testsuite>

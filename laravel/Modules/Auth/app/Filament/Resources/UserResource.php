@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Auth\Filament\Resources;
 
-use App\Models\User;
 use App\Support\AccountFeatures;
 use Filament\Actions\Action;
 use Filament\Actions\DeleteBulkAction;
@@ -24,6 +23,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Modules\Auth\Actions\ApproveRegisteredUserAction;
 use Modules\Auth\Filament\Resources\UserResource\Pages;
+use Modules\User\Models\User;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 use Spatie\Permission\Models\Role;
 
@@ -60,17 +60,17 @@ final class UserResource extends XotBaseResource
 
     public static function getNavigationGroup(): string
     {
-        return __('users.navigation');
+        return __('auth.navigation');
     }
 
     public static function getModelLabel(): string
     {
-        return __('users.user');
+        return __('auth.user');
     }
 
     public static function getPluralModelLabel(): string
     {
-        return __('users.users');
+        return __('auth.users');
     }
 
     public static function getFormSchema(): array
@@ -79,25 +79,25 @@ final class UserResource extends XotBaseResource
             Section::make()->columnSpanFull()->components([
                 Grid::make(2)->components([
                     TextInput::make('name')
-                        ->label(__('users.fields.name'))
+                        ->label(__('auth.fields.name'))
                         ->required()
                         ->maxLength(255),
                     TextInput::make('email')
-                        ->label(__('users.fields.email'))
+                        ->label(__('auth.fields.email'))
                         ->email()
                         ->required()
                         ->maxLength(255),
                 ]),
                 Grid::make(2)->components([
                     TextInput::make('password')
-                        ->label(__('users.fields.password'))
+                        ->label(__('auth.fields.password'))
                         ->password()
                         ->dehydrateStateUsing(static fn (?string $state): ?string => filled($state) ? Hash::make($state) : null)
                         ->dehydrated(static fn (?string $state): bool => filled($state))
                         ->required(static fn (string $operation): bool => $operation === 'create')
                         ->maxLength(255),
                     TextInput::make('password_confirmation')
-                        ->label(__('users.fields.password_confirmation'))
+                        ->label(__('auth.fields.password_confirmation'))
                         ->password()
                         ->same('password')
                         ->dehydrated(false)
@@ -107,8 +107,8 @@ final class UserResource extends XotBaseResource
                 // Gerarchia fra account: il responsabile vede il lavoro dei
                 // suoi collaboratori senza dover essere promosso ad admin.
                 Select::make('manager_id')
-                    ->label(__('users.hierarchy.manager'))
-                    ->helperText(__('users.hierarchy.manager_hint'))
+                    ->label(__('auth.hierarchy.manager'))
+                    ->helperText(__('auth.hierarchy.manager_hint'))
                     ->options(fn (?User $record): array => User::query()
                         // Un utente non puo' essere responsabile di se stesso.
                         ->when(
@@ -121,30 +121,21 @@ final class UserResource extends XotBaseResource
                         ->all())
                     ->searchable()
                     ->preload()
-                    ->placeholder(__('users.hierarchy.none')),
+                    ->placeholder(__('auth.hierarchy.none')),
 
                 CheckboxList::make('roles')
-                    ->label(__('users.fields.roles'))
+                    ->label(__('auth.fields.roles'))
                     ->options(static fn (): array => Role::query()->orderBy('name')->pluck('name', 'name')->all())
                     ->columns(3)
                     ->required(static fn (string $operation): bool => $operation === 'create')
                     ->afterStateHydrated(function (CheckboxList $component, ?User $record): void {
-                        if (! $record || ! method_exists($record, 'getRoleNames')) {
+                        if (! $record) {
                             return;
                         }
-                        $getRoleNames = 'getRoleNames';
-                        $roleNames = $record->{$getRoleNames}();
-                        if (! $roleNames instanceof \Illuminate\Support\Collection) {
-                            return;
-                        }
-                        $component->state($roleNames->all());
+                        $component->state($record->getRoleNames()->all());
                     })
                     ->saveRelationshipsUsing(function (User $record, ?array $state): void {
-                        if (! method_exists($record, 'syncRoles')) {
-                            return;
-                        }
-                        $syncRoles = 'syncRoles';
-                        $record->{$syncRoles}($state ?? []);
+                        $record->syncRoles($state ?? []);
                     }),
             ])->columns(2),
         ];
@@ -155,26 +146,26 @@ final class UserResource extends XotBaseResource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->label(__('users.fields.name'))
+                    ->label(__('auth.fields.name'))
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('email')
-                    ->label(__('users.fields.email'))
+                    ->label(__('auth.fields.email'))
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('manager.name')
-                    ->label(__('users.hierarchy.manager'))
-                    ->placeholder(__('users.hierarchy.none'))
+                    ->label(__('auth.hierarchy.manager'))
+                    ->placeholder(__('auth.hierarchy.none'))
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('roles.name')
-                    ->label(__('users.fields.roles'))
+                    ->label(__('auth.fields.roles'))
                     ->badge()
                     ->separator(', ')
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('approved_at')
-                    ->label(__('users.fields.approval_status'))
+                    ->label(__('auth.fields.approval_status'))
                     ->badge()
-                    ->formatStateUsing(static fn (mixed $state): string => $state === null ? __('users.status.pending') : __('users.status.approved'))
+                    ->formatStateUsing(static fn (mixed $state): string => $state === null ? __('auth.status.pending') : __('auth.status.approved'))
                     ->color(static fn (mixed $state): string => $state === null ? 'warning' : 'success')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('updated_at')
@@ -183,18 +174,11 @@ final class UserResource extends XotBaseResource
             ])
             ->actions([
                 Action::make('approve')
-                    ->label(__('users.actions.approve'))
+                    ->label(__('auth.actions.approve'))
                     ->icon('heroicon-o-check-circle')
                     ->color('success')
                     ->requiresConfirmation()
-                    ->visible(static function (User $record): bool {
-                        if (! method_exists($record, 'isApproved')) {
-                            return false;
-                        }
-                        $isApproved = 'isApproved';
-
-                        return ! $record->{$isApproved}();
-                    })
+                    ->visible(static fn (User $record): bool => $record->getAttribute('approved_at') === null)
                     ->action(function (User $record): void {
                         $approver = Auth::user();
                         if (! $approver instanceof User) {

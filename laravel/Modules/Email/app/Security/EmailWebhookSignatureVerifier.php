@@ -8,9 +8,7 @@ use Modules\Email\Settings\EmailSettings;
 
 final readonly class EmailWebhookSignatureVerifier
 {
-    public function __construct(private EmailSettings $settings)
-    {
-    }
+    public function __construct(private EmailSettings $settings) {}
 
     public function isValid(string $rawBody, ?string $signatureHeader): bool
     {

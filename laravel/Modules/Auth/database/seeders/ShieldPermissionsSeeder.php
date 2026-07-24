@@ -39,8 +39,9 @@ final class ShieldPermissionsSeeder extends Seeder
         Role::query()
             ->where('name', 'demo_gerardo')
             ->get()
-            ->each(fn (Role $role): bool|null => $role->delete());
+            ->each(fn (Role $role): ?bool => $role->delete());
 
+        /** @var array<int, string> $allPermissions */
         $allPermissions = Permission::query()->pluck('name')->all();
 
         // Admin gets all generated permissions.
@@ -110,4 +111,3 @@ final class ShieldPermissionsSeeder extends Seeder
         $supplierRole->syncPermissions($supplierPermissions);
     }
 }
-

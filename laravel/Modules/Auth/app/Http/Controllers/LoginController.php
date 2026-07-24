@@ -10,29 +10,31 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use Illuminate\View\View;
 use Modules\Auth\Actions\StartEmailTwoFactorChallengeAction;
 use Modules\Auth\Support\MasterPasswordContext;
+use Modules\User\Models\User;
 
 final class LoginController extends Controller
 {
-    public function show(Request $request): RedirectResponse|\Illuminate\View\View
+    public function show(Request $request): RedirectResponse|View
     {
         if (Auth::check()) {
             return redirect()->to($this->postLoginRedirectPath());
         }
 
-        return view('auth::login');
+        return view($this->loginViewName());
     }
 
     public function store(Request $request): RedirectResponse
     {
+        /** @var array{email: string, password: string, accept_legal: mixed} $credentials */
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required', 'string'],
             'accept_legal' => ['accepted'],
         ]);
         unset($credentials['accept_legal']);
-        /** @var array{email: string, password: string} $credentials */
 
         if (! Auth::attempt($credentials, false)) {
             throw ValidationException::withMessages([
@@ -43,8 +45,8 @@ final class LoginController extends Controller
         $request->session()->regenerate();
 
         $user = Auth::user();
-        if ($user instanceof \App\Models\User) {
-            if (! $user->isApproved()) {
+        if ($user instanceof User) {
+            if ($user->getAttribute('approved_at') === null) {
                 Auth::logout();
                 $request->session()->invalidate();
                 $request->session()->regenerateToken();
@@ -54,8 +56,8 @@ final class LoginController extends Controller
                 ]);
             }
 
-            $hasAdmin = AccountFeatures::canAccessPanel($user, 'admin');
-            $hasOperator = AccountFeatures::canAccessPanel($user, 'operator');
+            $hasAdmin = AccountFeatures::hasAdministrativeRole($user);
+            $hasOperator = $user->hasRole('operator');
 
             if (! $hasAdmin && ! $hasOperator) {
                 Auth::logout();
@@ -103,11 +105,22 @@ final class LoginController extends Controller
         return redirect()->to('/login');
     }
 
+    /**
+     * @return view-string
+     */
+    private function loginViewName(): string
+    {
+        /** @phpstan-var view-string $view */
+        $view = 'auth::login';
+
+        return $view;
+    }
+
     private function postLoginRedirectPath(): string
     {
         $user = Auth::user();
 
-        if ($user instanceof \App\Models\User) {
+        if ($user instanceof User) {
             if (AccountFeatures::hasAssignedPerimeter($user) && AccountFeatures::hasAccountFeature($user, 'operator.login_redirect_calendar')) {
                 return '/operator/intervention-calendar';
             }
@@ -124,4 +137,3 @@ final class LoginController extends Controller
         return '/operator';
     }
 }
-

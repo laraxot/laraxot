@@ -48,3 +48,13 @@ Il modulo era stato riportato ad una copia grezza DDD (rinominata singolare) da 
 ## Non ancora fatto (fuori scope minimale di questa sessione)
 
 - Nessuna Action dedicata: il modulo resta CRUD puro via Filament, coerente con la sorgente.
+
+## Verificato 2026-07-24 — `vendor/bin/pest Modules/Bom/tests` FALLISCE in isolamento
+
+`BomFactory` crea un `Modules\Catalog\Models\Product` (`Product::query()->create(...)`), ma
+`Modules\Bom\Tests\TestCase::getPackageProviders()` registra solo `BomServiceProvider`, non
+`CatalogServiceProvider`: eseguito da solo, il modulo non ha la tabella `products` e i 2 test in
+`BomModelTest` falliscono con `QueryException: no such table: products`. Non risulta nel
+`phpunit.xml` root (nessuna testsuite `Bom`), quindi non viene mai eseguito in CI. Da correggere:
+registrare `CatalogServiceProvider` nel `TestCase` di Bom (dipendenza esplicita, coerente con
+`composer.json` `repository path ../Catalog`) e aggiungere una testsuite `Bom` in `phpunit.xml`.

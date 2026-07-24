@@ -1,30 +1,40 @@
 # sprint-status — base_workorder_fila5 (BMAD)
 
-# last_updated: 2026-07-23
+# last_updated: 2026-07-24
 # STATUS DEFINITIONS: backlog | ready-for-dev | in-progress | review | done | blocked
 
 project: base_workorder_fila5
 source_epic: docs/stories/EPIC-gestionale-commesse-alignment.md
 comparison_index: docs/gestionale-commesse-comparison/README.md
 phase_canon: docs/gestionale-commesse-comparison/replica-singular-phase.md
+functional_readiness: docs/gestionale-commesse-comparison/functional-readiness.md
 agent_errors_ssot: docs/gestionale-commesse-comparison/agent-errors-lessons.md
 
 development_status:
-  gestionale-commesse-module-parity: ready-for-dev
-  1.2.customer-module: ready-for-dev
-  1.3.workorder-module: ready-for-dev
-  1.4.intervention-module: ready-for-dev
+  gestionale-commesse-module-parity: in-progress
+  1.2.customer-module: review
+  1.3.workorder-module: review
+  1.4.intervention-module: review
   1.5.employee-hr-gap: ready-for-dev
-  1.6.copy-reshape-src-modules: ready-for-dev
-  1.7.composer-json-new-modules: ready-for-dev
-  1.8.wave1-reshape-xotbase: ready-for-dev
-  1.9.wave2-reshape-remaining-modules: ready-for-dev
-  1.10.agent-errors-replica-singular-guardrails: ready-for-dev
-  2.1.copy-then-normalize-modules: ready-for-dev
-  2.2.agent-errors-replica-singular: ready-for-dev
+  1.6.copy-reshape-src-modules: done
+  1.7.composer-json-new-modules: done
+  1.8.wave1-reshape-xotbase: review
+  1.9.wave2-reshape-remaining-modules: review
+  1.10.agent-errors-replica-singular-guardrails: done
+  1.11.wave3-reshape-remaining-src-modules: ready-for-dev
+  1.12.phpstan-zero-per-module: review
+  1.13.functional-readiness-migrate-panels: review
+  2.1.copy-then-normalize-modules: done
+  2.2.agent-errors-replica-singular: done
+  2.3.deep-quality-enabled-modules: in-progress
+  2.4.module-theme-docs-hygiene: review
+  # note: old key 2.4.compliance-phpstan-cleanup superseded by 2.3 (Compliance under Issue #14)
+  2.5.gestionale-tests-migration: ready-for-dev # blocked-by D17 (phpunit env precedence, see laravel/docs/debt-phpunit-env-precedence.md)
 
 github:
   issue_epic: https://github.com/laraxot/base_workorder_fila5/issues/7
   discussion_epic: https://github.com/laraxot/base_workorder_fila5/discussions/8
   issue_guardrail: https://github.com/laraxot/base_workorder_fila5/issues/9
   discussion_lessons: https://github.com/laraxot/base_workorder_fila5/discussions/10
+  issue_deep_quality: https://github.com/laraxot/base_workorder_fila5/issues/14
+  discussion_deep_quality: https://github.com/laraxot/base_workorder_fila5/discussions/15

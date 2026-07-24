@@ -3,7 +3,7 @@
     "alias": "email",
     "description": "Email \u2014 replica gestionale_commesse (normalize Laraxot)",
     "keywords": [],
-    "priority": 0,
+    "priority": 140,
     "providers": [
         "Modules\\Email\\Providers\\EmailServiceProvider"
     ],

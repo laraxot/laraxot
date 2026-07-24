@@ -6,6 +6,7 @@ namespace Modules\Compliance\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 use Modules\Compliance\Actions\EvaluateWorkOrderReadinessAction;
 use Modules\Customer\Models\Customer;
 use Modules\Document\Models\Media;
@@ -15,6 +16,32 @@ use Modules\Vehicle\Models\Vehicle;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\Xot\Models\XotBaseModel;
 
+/**
+ * @property int $id
+ * @property string $type
+ * @property string $title
+ * @property string $status
+ * @property bool $is_required
+ * @property Carbon|null $issued_on
+ * @property Carbon|null $expires_on
+ * @property int|null $work_order_id
+ * @property int|null $customer_id
+ * @property int|null $employee_id
+ * @property int|null $vehicle_id
+ * @property int|null $subcontractor_id
+ * @property int|null $equipment_id
+ * @property int|null $media_id
+ * @property int|null $uploaded_by_user_id
+ * @property string|null $extracted_text
+ * @property array<string, mixed>|null $ai_classification
+ * @property array<string, mixed>|null $ai_extracted_fields
+ * @property Carbon|null $ai_processed_at
+ * @property array<string, mixed>|null $meta
+ * @property string|null $notes
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
+ */
 final class ComplianceDocument extends XotBaseModel
 {
     use SoftDeletes;

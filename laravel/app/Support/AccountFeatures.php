@@ -31,6 +31,24 @@ final class AccountFeatures
             );
     }
 
+    public static function canAccessPanel(mixed $user, string $panelId): bool
+    {
+        if (! $user instanceof User) {
+            return false;
+        }
+
+        if (self::hasAdministrativeRole($user)) {
+            return true;
+        }
+
+        return method_exists($user, 'hasRole')
+            && (
+                $user->hasRole($panelId)
+                || $user->hasRole($panelId.'_operator')
+                || $user->hasRole($panelId.'_admin')
+            );
+    }
+
     public static function hasFeature(mixed $user, string $feature, bool $default = false): bool
     {
         return $default;

@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace Modules\WhatsApp\AI;
 
 use Illuminate\Support\Facades\Http;
-use Modules\WhatsApp\Settings\WhatsAppSettings;
 use Modules\WhatsApp\Models\WhatsAppMessage;
+use Modules\WhatsApp\Settings\WhatsAppSettings;
+use Safe\Exceptions\JsonException;
 
 use function Safe\json_decode;
 use function Safe\json_encode;
@@ -183,7 +184,7 @@ PROMPT;
 
         try {
             $decoded = json_decode(substr($trimmed, $start, $end - $start + 1), true);
-        } catch (\Safe\Exceptions\JsonException) {
+        } catch (JsonException) {
             return [];
         }
 

@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace Modules\WhatsApp\Models;
 
 use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
+use Modules\WhatsApp\Database\Factories\WhatsAppContactIdentityFactory;
 
 /**
  * @property int $id
@@ -20,11 +22,16 @@ use Modules\Customer\Models\CustomerSite;
  * @property int|null $contact_id
  * @property int|null $user_id
  * @property array<string, mixed>|null $meta
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ *
+ * @method static \Modules\WhatsApp\Database\Factories\WhatsAppContactIdentityFactory factory($count = null, $state = [])
  */
-final class WhatsAppContactIdentity extends Model
+final class WhatsAppContactIdentity extends BaseModel
 {
+    /** @use HasFactory<WhatsAppContactIdentityFactory> */
+    use HasFactory;
+
     protected $table = 'whatsapp_contact_identities';
 
     /** @var array<int, string> */
@@ -60,5 +67,10 @@ final class WhatsAppContactIdentity extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    protected static function newFactory(): WhatsAppContactIdentityFactory
+    {
+        return WhatsAppContactIdentityFactory::new();
     }
 }

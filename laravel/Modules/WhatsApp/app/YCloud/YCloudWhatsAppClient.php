@@ -10,9 +10,7 @@ use Modules\WhatsApp\Settings\WhatsAppSettings;
 
 final readonly class YCloudWhatsAppClient implements WhatsAppClientInterface
 {
-    public function __construct(private WhatsAppSettings $settings)
-    {
-    }
+    public function __construct(private WhatsAppSettings $settings) {}
 
     public function sendText(string $toPhoneE164, string $body): array
     {
@@ -32,7 +30,7 @@ final readonly class YCloudWhatsAppClient implements WhatsAppClientInterface
             ]);
 
         if (! $response->successful()) {
-            throw new \RuntimeException('Errore YCloud WhatsApp: ' . mb_substr($response->body(), 0, 500));
+            throw new \RuntimeException('Errore YCloud WhatsApp: '.mb_substr($response->body(), 0, 500));
         }
 
         $decoded = $response->json();
@@ -75,7 +73,7 @@ final readonly class YCloudWhatsAppClient implements WhatsAppClientInterface
 
     private function endpoint(string $path): string
     {
-        return $this->settings->ycloudBaseUrl() . '/' . ltrim($path, '/');
+        return $this->settings->ycloudBaseUrl().'/'.ltrim($path, '/');
     }
 
     private function assertConfigured(): void

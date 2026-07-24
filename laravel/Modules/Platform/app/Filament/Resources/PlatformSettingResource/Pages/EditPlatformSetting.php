@@ -8,6 +8,9 @@ use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Facades\Auth;
 use Modules\Platform\Filament\Resources\PlatformSettingResource;
 use Modules\Platform\Models\PlatformSetting;
+use Safe\Exceptions\JsonException;
+
+use function Safe\json_encode;
 
 final class EditPlatformSetting extends EditRecord
 {
@@ -158,8 +161,12 @@ final class EditPlatformSetting extends EditRecord
                 if ($trimmed === '') {
                     $data['value_json'] = null;
                 } else {
-                    /** @var mixed $decoded */
-                    $decoded = json_decode($trimmed, true);
+                    try {
+                        /** @var mixed $decoded */
+                        $decoded = \Safe\json_decode($trimmed, true);
+                    } catch (JsonException) {
+                        $decoded = $trimmed;
+                    }
                     $data['value_json'] = is_array($decoded) ? $decoded : ['value' => $decoded];
                 }
             }
@@ -206,4 +213,3 @@ final class EditPlatformSetting extends EditRecord
         return $record instanceof PlatformSetting ? (string) $record->key : '';
     }
 }
-

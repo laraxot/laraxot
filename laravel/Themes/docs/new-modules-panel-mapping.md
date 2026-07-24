@@ -1,29 +1,58 @@
-## Mappatura nuovi moduli → panel
+---
+title: "Mappatura moduli gestionale → panel Filament"
+type: concept
+tags: [themes, filament, panels, gestionale-commesse]
+created: 2026-07-23
+updated: 2026-07-24
+qmd: "new modules panel mapping workorder quotation intervention admin urls Auth Document"
+issues:
+  - "https://github.com/laraxot/base_workorder_fila5/issues/7"
+  - "https://github.com/laraxot/base_workorder_fila5/issues/14"
+discussions:
+  - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
+  - "https://github.com/laraxot/base_workorder_fila5/discussions/15"
+related:
+  - "./gestionale-docs-index.md"
+  - "./gc-modules-runtime-matrix.md"
+  - "./gestionale-panels-vs-themes.md"
+  - "./wave1-fo-operator-note.md"
+  - "../../../docs/gestionale-commesse-comparison/functional-readiness.md"
+---
 
-I 16 nuovi moduli di dominio provenienti da `gestionale_commesse` vanno integrati nei panel Filament esistenti. Reference SRC: `gestionale-panels-vs-themes.md`.
+# Mappatura moduli gestionale → panel Filament
 
-### Panel admin (esistente)
-Tutti i moduli nuovi espongono le loro Resource nel panel admin principale:
-- Customer, WorkOrder, Intervention, Catalog, Quotation, Billing, Fiscal, Signature, Vehicle
-- Inventory, Bom, Production, Compliance, PublicProcurement, EnergyBroker, TimberBilling
+> Panel Filament vivono nei **moduli**, non nei Themes. Matrice enable: [gc-modules-runtime-matrix.md](./gc-modules-runtime-matrix.md).
 
-### Panel operator (da creare/estendere)
-I moduli operativi hanno visibilità anche su panel `operator`:
-- **WorkOrder** — lettura/scrittura assegnazioni
-- **Intervention** — timbratura, note, segnalazioni
-- **Signature** — acquisizione firma su intervento
-- **Quotation** — creazione preventivi (visibilità limitata)
+## URL runtime (cuore field-service)
 
-### Panel customer (futuro)
-Alcuni moduli potrebbero avere un panel `customer` in futuro:
-- **WorkOrder** — stato commessa in sola lettura
-- **Intervention** — storico interventi
-- **Billing** — fatture emesse
+| Modulo | Base panel | Note |
+|---|---|---|
+| Customer | `/customer/admin` | customers, resellers |
+| WorkOrder | `/workorder/admin` | work-orders |
+| Intervention | `/intervention/admin` | interventions, calendar, voice |
+| Quotation | `/quotation/admin` | quotations, templates |
+| Signature | `/signature/admin` | CaptureSignature / CaptureSketch |
+| Vehicle | `/vehicle/admin` | vehicles |
+| AiAssistant | `/aiassistant/admin` | chat + settings |
 
-### Temi FO (Folio/Volt)
-I moduli nuovi non hanno pagine FO dedicate in prima battuta (Wave 1). Tutta l'interazione è via Filament panel. Eventuali pagine FO (es. portale cliente) sono Wave 6+.
+## Altri moduli `statuses=true` (2026-07-24)
 
-### Vedi anche
-- `bmad-output/epics.md`
-- `bmad-output/stories/` — storie per ogni modulo
-- `../Modules/*/docs/README.md` — docs specifiche per modulo
+| Modulo | Panel dedicato | Attenzione |
+|---|---|---|
+| Billing, Catalog, Inventory, Production, Bom, Fiscal | resources nei propri provider / panel host | Fiscal = motore, poco UI |
+| Auth, HR, Email, WhatsApp, Platform | provider/routes SRC; overlap User/Employee/Notify | **non** merge; smoke dedicato |
+| Document | — | `statuses=true` ma **conflitto tabella `media`** — non migrate cieco |
+
+## Ancora `false`
+
+Compliance, EnergyBroker, PublicProcurement, TimberBilling — enable solo con gate + ordine.
+
+## Temi FO
+
+Wave 1: nessuna page Folio operator. Vedi [wave1-fo-operator-note.md](./wave1-fo-operator-note.md).
+
+## Vedi anche
+
+- [gestionale-docs-index.md](./gestionale-docs-index.md)
+- [functional-readiness.md](../../../docs/gestionale-commesse-comparison/functional-readiness.md)
+- `laravel/Modules/*/docs/README.md`

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Auth\Console\Commands;
 
-use App\Models\User;
 use Illuminate\Console\Command;
+use Modules\User\Models\User;
 use Spatie\Permission\Models\Role;
 
 final class CreateDdsPanelUserCommand extends Command

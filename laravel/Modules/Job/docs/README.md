@@ -44,7 +44,6 @@ Job\Services\QueueManager
 
 ## Collegamenti
 
-- [Documentazione Root](../../../docs/JOB_MODULE.md)
 - [Xot Base](../Xot/docs/)
 - [Notify Module](../Notify/docs/) - per notifiche job
 

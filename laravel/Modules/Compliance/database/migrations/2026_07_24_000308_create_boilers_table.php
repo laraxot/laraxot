@@ -9,7 +9,7 @@ return new class() extends XotBaseMigration
 {
     public function up(): void
     {
-        $this->tableCreate(static function (Blueprint $table): void {
+        $this->tableCreate(function (Blueprint $table): void {
             $table->id();
             $table->foreignId('heating_system_id')->constrained('heating_systems')->cascadeOnDelete();
 

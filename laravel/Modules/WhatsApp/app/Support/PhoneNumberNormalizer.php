@@ -22,20 +22,20 @@ final class PhoneNumberNormalizer
         }
 
         if ($hasPlus) {
-            return '+' . $digits;
+            return '+'.$digits;
         }
 
         $defaultDigits = preg_replace('/\D+/', '', $defaultCountryPrefix);
         $defaultDigits = $defaultDigits !== '' ? $defaultDigits : '39';
 
         if (str_starts_with($digits, '00')) {
-            return '+' . substr($digits, 2);
+            return '+'.substr($digits, 2);
         }
 
         if (str_starts_with($digits, $defaultDigits)) {
-            return '+' . $digits;
+            return '+'.$digits;
         }
 
-        return '+' . $defaultDigits . $digits;
+        return '+'.$defaultDigits.$digits;
     }
 }

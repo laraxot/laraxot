@@ -11,6 +11,7 @@ use Modules\Document\Models\Media;
 use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\json_decode;
+use function Safe\preg_replace;
 
 final class AnalyzeComplianceDocumentWithOpenAiAction
 {
@@ -39,7 +40,7 @@ final class AnalyzeComplianceDocumentWithOpenAiAction
         }
 
         $mimeType = (string) ($media->mime_type ?: Storage::disk($disk)->mimeType($path) ?: 'application/octet-stream');
-        $fileData = base64_encode(Storage::disk($disk)->get($path));
+        $fileData = base64_encode((string) Storage::disk($disk)->get($path));
         $filename = basename($path);
 
         $baseUrlValue = config('compliance.ocr.openai.base_url', 'https://api.openai.com/v1/');
@@ -153,7 +154,7 @@ PROMPT;
     }
 
     /**
-     * @param  array<string, mixed>  $decoded
+     * @param  array<array-key, mixed>  $decoded
      */
     private function extractOutputText(array $decoded): string
     {
@@ -162,12 +163,14 @@ PROMPT;
             return trim($outputText);
         }
 
+        $output = $decoded['output'] ?? [];
         $chunks = [];
-        foreach (($decoded['output'] ?? []) as $output) {
-            if (! is_array($output)) {
+        foreach (is_array($output) ? $output : [] as $item) {
+            if (! is_array($item)) {
                 continue;
             }
-            foreach (($output['content'] ?? []) as $content) {
+            $contents = $item['content'] ?? [];
+            foreach (is_array($contents) ? $contents : [] as $content) {
                 if (is_array($content) && isset($content['text']) && is_string($content['text'])) {
                     $chunks[] = $content['text'];
                 }
@@ -188,7 +191,19 @@ PROMPT;
         try {
             $decoded = json_decode($clean, true);
 
-            return is_array($decoded) ? $decoded : [];
+            if (! is_array($decoded)) {
+                return [];
+            }
+
+            /** @var array<string, mixed> $stringKeyed */
+            $stringKeyed = [];
+            foreach ($decoded as $key => $value) {
+                if (is_string($key)) {
+                    $stringKeyed[$key] = $value;
+                }
+            }
+
+            return $stringKeyed;
         } catch (\Throwable) {
             return [];
         }

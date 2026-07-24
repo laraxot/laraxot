@@ -3,9 +3,10 @@
     "alias": "vehicle",
     "description": "Vehicle \u2014 replica gestionale_commesse (normalize Laraxot)",
     "keywords": [],
-    "priority": 0,
+    "priority": 100,
     "providers": [
-        "Modules\\Vehicle\\Providers\\VehicleServiceProvider"
+        "Modules\\Vehicle\\Providers\\VehicleServiceProvider",
+        "Modules\\Vehicle\\Providers\\Filament\\AdminPanelProvider"
     ],
     "files": []
 }

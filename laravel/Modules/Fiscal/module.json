@@ -3,7 +3,7 @@
     "alias": "fiscal",
     "description": "Fiscal \u2014 replica gestionale_commesse (normalize Laraxot)",
     "keywords": [],
-    "priority": 0,
+    "priority": 130,
     "providers": [
         "Modules\\Fiscal\\Providers\\FiscalServiceProvider"
     ],

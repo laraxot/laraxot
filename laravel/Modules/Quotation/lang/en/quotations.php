@@ -84,6 +84,7 @@ return [
         'recalculated' => 'Totals recalculated.',
         'new' => 'New',
         'create_similar' => 'Create a similar one for another customer',
+        'based_on' => 'Based on: :label',
         'based_on_none' => 'No reference quotation found.',
         'no_company_found' => 'No company found.',
         'city' => 'City',

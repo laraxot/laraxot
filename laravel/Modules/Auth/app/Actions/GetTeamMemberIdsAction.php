@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Auth\Actions;
 
-use App\Models\User;
+use Modules\User\Models\User;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -19,20 +19,25 @@ final class GetTeamMemberIdsAction
     ) {}
 
     /**
-     * @return array<int, int>
+     * @return array<int, string>
      */
     public function execute(User $manager): array
     {
         // Una sola query: la mappa completa costa meno di una query per livello.
+        /** @var array<string, list<string>> $subordinatesByManager */
         $subordinatesByManager = [];
 
         User::query()
             ->whereNotNull('manager_id')
             ->get(['id', 'manager_id'])
             ->each(static function (User $user) use (&$subordinatesByManager): void {
-                $subordinatesByManager[(int) $user->manager_id][] = $user->id;
+                $managerId = $user->getAttribute('manager_id');
+                if (! is_string($managerId)) {
+                    return;
+                }
+                $subordinatesByManager[$managerId][] = (string) $user->id;
             });
 
-        return $this->resolveTeamMemberIds->execute($manager->id, $subordinatesByManager);
+        return $this->resolveTeamMemberIds->execute((string) $manager->id, $subordinatesByManager);
     }
 }

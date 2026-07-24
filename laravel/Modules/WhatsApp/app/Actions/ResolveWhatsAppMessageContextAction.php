@@ -116,18 +116,23 @@ final class ResolveWhatsAppMessageContextAction
         $site = $this->findSiteByPhone($phone);
         $customer = $this->findCustomerByPhone($phone);
 
-        $customerId = $contact?->customer_id ?? $site?->customer_id ?? $customer?->id;
+        $contactCustomerId = $contact !== null ? $contact->customer_id : null;
+        $siteCustomerId = $site !== null ? $site->customer_id : null;
+        $customerId = $contactCustomerId ?? $siteCustomerId ?? $customer?->id;
 
         if ($customerId === null && $contact === null && $site === null) {
             return null;
         }
+
+        $contactCustomerSiteId = $contact !== null ? $contact->customer_site_id : null;
+        $customerSiteId = $contactCustomerSiteId ?? $site?->id;
 
         /** @var WhatsAppContactIdentity $identity */
         $identity = WhatsAppContactIdentity::query()->create([
             'phone_e164' => $phone,
             'wa_id' => $conversation->wa_id,
             'customer_id' => $customerId,
-            'customer_site_id' => $contact?->customer_site_id ?? $site?->id,
+            'customer_site_id' => $customerSiteId,
             'contact_id' => $contact?->id,
             'meta' => ['source' => 'auto_resolved'],
         ]);
@@ -163,7 +168,7 @@ final class ResolveWhatsAppMessageContextAction
     {
         /** @var CustomerSite|null $match */
         $match = CustomerSite::query()->whereNotNull('phone')->get()
-            ->first(fn (CustomerSite $site): bool => $this->normalizer->normalize((string) $site->phone) === $phone);
+            ->first(fn (CustomerSite $site): bool => $this->normalizer->normalize((string) $site->getAttribute('phone')) === $phone);
 
         return $match;
     }

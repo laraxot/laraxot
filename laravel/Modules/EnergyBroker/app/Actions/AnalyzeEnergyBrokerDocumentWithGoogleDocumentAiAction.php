@@ -7,12 +7,16 @@ namespace Modules\EnergyBroker\Actions;
 use Illuminate\Support\Facades\Http;
 use Spatie\QueueableAction\QueueableAction;
 
+use function Safe\file_get_contents;
+use function Safe\json_decode;
+use function Safe\openssl_sign;
+
 final class AnalyzeEnergyBrokerDocumentWithGoogleDocumentAiAction
 {
     use QueueableAction;
 
     /**
-     * @return array{provider: string, text: string, pages: int, raw_response: array<string, mixed>}
+     * @return array{provider: string, text: string, pages: int, raw_response: array<array-key, mixed>}
      */
     public function execute(string $filename, string $mimeType, string $fileData): array
     {
@@ -121,12 +125,12 @@ final class AnalyzeEnergyBrokerDocumentWithGoogleDocumentAiAction
 
     private function buildJwtAssertion(string $clientEmail, string $privateKey): string
     {
-        $now = now()->timestamp;
-        $header = $this->base64UrlEncode(json_encode([
+        $now = (int) now()->timestamp;
+        $header = $this->base64UrlEncode((string) json_encode([
             'alg' => 'RS256',
             'typ' => 'JWT',
         ], JSON_THROW_ON_ERROR));
-        $payload = $this->base64UrlEncode(json_encode([
+        $payload = $this->base64UrlEncode((string) json_encode([
             'iss' => $clientEmail,
             'sub' => $clientEmail,
             'aud' => 'https://oauth2.googleapis.com/token',
@@ -137,12 +141,14 @@ final class AnalyzeEnergyBrokerDocumentWithGoogleDocumentAiAction
 
         $signingInput = $header.'.'.$payload;
         $signature = '';
-        $didSign = openssl_sign($signingInput, $signature, $privateKey, OPENSSL_ALGO_SHA256);
-        if (! $didSign) {
-            throw new \RuntimeException('Impossibile firmare la richiesta Google Document AI.');
+
+        try {
+            openssl_sign($signingInput, $signature, $privateKey, OPENSSL_ALGO_SHA256);
+        } catch (\Throwable $exception) {
+            throw new \RuntimeException('Impossibile firmare la richiesta Google Document AI.', previous: $exception);
         }
 
-        return $signingInput.'.'.$this->base64UrlEncode($signature);
+        return $signingInput.'.'.$this->base64UrlEncode((string) $signature);
     }
 
     private function base64UrlEncode(string $value): string

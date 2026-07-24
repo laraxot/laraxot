@@ -9,6 +9,8 @@ use Modules\Compliance\Models\Equipment;
 use Modules\WorkOrder\Models\WorkOrder;
 use Spatie\QueueableAction\QueueableAction;
 
+use function Safe\json_encode;
+
 final class GeneratePosDraftForWorkOrderAction
 {
     use QueueableAction;
@@ -18,7 +20,7 @@ final class GeneratePosDraftForWorkOrderAction
         $workOrder->loadMissing(['customer', 'site', 'assignments.user']);
 
         $workers = $workOrder->assignments
-            ->map(static fn ($assignment): string => trim((string) ($assignment->user?->name ?? 'Operatore assegnato')))
+            ->map(static fn ($assignment): string => trim((string) ($assignment->user->name ?? 'Operatore assegnato')))
             ->filter()
             ->values()
             ->all();

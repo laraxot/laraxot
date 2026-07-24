@@ -13,12 +13,12 @@ updated: 2026-06-05
 |-----------|-------| ---- |
 | **Content** | Blocks System | [blocks.md](blocks.md) |
 | **Features** | Comments | [comment.md](comment.md) |
-| **UI** | Visual Editor | [visual_editor.md](visual_editor.md) |
+| **UI** | Visual Editor | [visual-editor.md](visual-editor.md) |
 | **SEO** | Pages & SEO | [pages.md](pages.md) |
 | **Themes** | Styling | [themes.md](themes.md) |
 | **Tools** | Icon Picker | [iconpicker.md](iconpicker.md) |
 | **AI** | Integration | [ai.md](ai.md) |
-| **MCP** | Server Setup | [mcp_server_recommended.md](mcp_server_recommended.md) |
+| **MCP** | Server Setup | [mcp-server-recommended.md](mcp-server-recommended.md) |
 | **Analysis** | PHPStan | [phpstan-fixes.md](phpstan-fixes.md) |
 
 ## 🎯 Core Features
@@ -40,7 +40,7 @@ Il modulo segue la struttura modulare standard di Laravel:
 ├── app/                      # Codice sorgente principale
 │   ├── Actions/              # Actions per la logica di business
 │   ├── Casts/                # Casts personalizzati
-│   ├── DataObjects/          # Data Objects (Spatie)
+│   ├── Datas/                # Data Objects (Spatie Laravel Data) — NOTE: repo convention requires app/Datas/, not app/DataObjects/; module currently has both (see docs/wiki/rules/dataobjects-folders-prohibited.md)
 │   ├── Filament/             # Risorse Filament
 │   ├── Http/                 # Controllers, Middleware, ecc.
 │   ├── Models/               # Modelli Eloquent

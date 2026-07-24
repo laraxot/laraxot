@@ -249,18 +249,18 @@ All modules depend on **Xot**. Never have circular dependencies.
 
 ## 🔗 Related Documentation
 
-- [Module Documentation Pattern](../../../docs/wiki/rules/module-documentation-pattern.md)
+- [Module Documentation Pattern](../../../../docs/wiki/rules/module-documentation-pattern.md)
 - [Architecture Rules](../../../docs/wiki/rules/)
 - [PHPStan Configuration](../../../phpstan.neon)
 - [Testing Guidelines](../../../docs/wiki/standards/)
 
 ### Moduli Dipendenti
 
-- [User Module](../User/docs/README.md) - Authentication & Authorization
-- [Cms Module](../Cms/docs/README.md) - Content Management
-- [Tenant Module](../Tenant/docs/README.md) - Multi-tenancy
-- [Lang Module](../Lang/docs/README.md) - Translations
-- [Notify Module](../Notify/docs/README.md) - Notifications
+- [User Module](../../User/docs/README.md) - Authentication & Authorization
+- [Cms Module](../../Cms/docs/README.md) - Content Management
+- [Tenant Module](../../Tenant/docs/README.md) - Multi-tenancy
+- [Lang Module](../../Lang/docs/README.md) - Translations
+- [Notify Module](../../Notify/docs/README.md) - Notifications
 
 ## 🗺️ Roadmap
 
@@ -280,9 +280,9 @@ All modules depend on **Xot**. Never have circular dependencies.
 
 ## Standard Rules & Workflow
 
-- [[BMAD Method](../../../docs/wiki/concepts/bmad-method.md)]
-- [[Context Engineering](../../../docs/wiki/concepts/context-engineering.md)]
-- [[LLM Wiki Governance](../../../docs/wiki/concepts/llm-wiki-governance.md)]
+- [[BMAD Method](../../../../docs/wiki/concepts/bmad-method.md)]
+- [[Context Engineering](../../../../docs/wiki/concepts/context-engineering.md)]
+- [[LLM Wiki Governance](../../../../docs/wiki/concepts/llm-wiki-governance.md)]
 
 ---
 

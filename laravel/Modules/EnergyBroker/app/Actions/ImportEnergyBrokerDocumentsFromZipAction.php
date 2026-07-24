@@ -5,10 +5,14 @@ declare(strict_types=1);
 namespace Modules\EnergyBroker\Actions;
 
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Modules\Document\Actions\CreateMediaFromStoredFileAction;
 use Modules\EnergyBroker\Models\EnergyBrokerDocument;
 use Modules\EnergyBroker\Models\EnergyBrokerImportBatch;
 use Spatie\QueueableAction\QueueableAction;
+
+use function Safe\fclose;
+use function Safe\fopen;
 
 final class ImportEnergyBrokerDocumentsFromZipAction
 {
@@ -165,9 +169,11 @@ final class ImportEnergyBrokerDocumentsFromZipAction
             return;
         }
 
-        $storedPath = 'media/energy-broker/documents/'.str()->uuid().'-'.basename($originalName);
-        $source = fopen($extractedPath, 'rb');
-        if ($source === false) {
+        $storedPath = 'media/energy-broker/documents/'.Str::uuid().'-'.basename($originalName);
+
+        try {
+            $source = fopen($extractedPath, 'rb');
+        } catch (\Throwable) {
             return;
         }
 

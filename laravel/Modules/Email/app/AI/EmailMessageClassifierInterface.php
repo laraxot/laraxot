@@ -9,7 +9,7 @@ use Modules\Email\Models\EmailMessage;
 interface EmailMessageClassifierInterface
 {
     /**
-     * @param array<string, mixed> $context
+     * @param  array<string, mixed>  $context
      * @return array<string, mixed>
      */
     public function classify(EmailMessage $message, array $context): array;

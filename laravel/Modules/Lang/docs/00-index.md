@@ -67,7 +67,7 @@ related:
 | USER_RESEARCH.md | User Research |
 
 ## 📦 **Pacchetti Composer**
-- [Riferimento completo](../../../../docs/composer-packages-reference.md) | [Inventario 312 pacchetti](../../../../docs/architecture/composer-packages-full-inventory.md)
+- [Riferimento composer packages](../../../../bashscripts/ai/wiki/memories/composer-packages-reference.md)
 - [Package Dependency Chaos Map](./package-dependency-chaos-map.md)
 - `mcamara/laravel-localization` - URL localizzati
 - `lara-zeus/spatie-translatable` - Campi Filament tradotti

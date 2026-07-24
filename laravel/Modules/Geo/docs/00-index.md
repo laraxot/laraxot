@@ -8,7 +8,7 @@
 Gestisce tutto ciò che riguarda la geolocalizzazione: geocoding multi-provider (9 provider), database ANPR italiano (8000+ comuni), query spaziali, widget mappa interattivi per Filament.
 
 ## 🎯 **Lettura Essenziale**
-1. [README.md](./readme.md) - Panoramica completa, Multi-API e Comuni Italiani.
+1. [README.md](./README.md) - Panoramica completa, Multi-API e Comuni Italiani.
 2. [roadmap.md](./roadmap.md) - Obiettivi 2026 e miglioramenti geocoding.
 3. [philosophy.md](./philosophy.md) - Visione architetturale dei dati geografici.
 
@@ -31,7 +31,7 @@ Gestisce tutto ciò che riguarda la geolocalizzazione: geocoding multi-provider 
 - 🧹 **[PHPMD & Complexity](./cyclomatic-complexity-report.md)** - Analisi della pulizia del codice.
 
 ## 📦 **Pacchetti Composer**
-- [Riferimento](../../../../docs/composer-packages-reference.md) | [Inventario 312 pacchetti](../../../../docs/architecture/composer-packages-full-inventory.md) - Nessuna dipendenza diretta; usa Xot, Sushi (via Xot)
+- [Riferimento composer packages](../../../../bashscripts/ai/wiki/memories/composer-packages-reference.md) - Nessuna dipendenza diretta; usa Xot, Sushi (via Xot)
 
 ## 📄 Documenti Aggiuntivi
 
@@ -69,8 +69,8 @@ Gestisce tutto ciò che riguarda la geolocalizzazione: geocoding multi-provider 
 - [AGENTS.md](../../../../AGENTS.md) - Project guidelines
 
 ## 🔗 **Moduli Correlati**
-- [Xot](../../xot/docs/readme.md) - Core framework e Base Models.
-- [UI](../../ui/docs/readme.md) - Componenti grafici e widget mappa.
+- [Xot](../../Xot/docs/README.md) - Core framework e Base Models.
+- [UI](../../UI/docs/README.md) - Componenti grafici e widget mappa.
 
 ---
 *Documentazione conforme agli standard Laraxot - DRY + KISS + SOLID*

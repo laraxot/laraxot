@@ -5,8 +5,14 @@ declare(strict_types=1);
 namespace Modules\EnergyBroker\Actions;
 
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use Spatie\QueueableAction\QueueableAction;
 use ZipArchive;
+
+use function Safe\filesize;
+use function Safe\hash_file;
+use function Safe\preg_match;
+use function Safe\rename;
 
 final class ExtractPdfFilesFromZipAction
 {
@@ -26,7 +32,7 @@ final class ExtractPdfFilesFromZipAction
             throw new \RuntimeException('Impossibile aprire l\'archivio ZIP.');
         }
 
-        $targetDirectory = storage_path('app/tmp/energy-broker/'.str()->uuid());
+        $targetDirectory = storage_path('app/tmp/energy-broker/'.Str::uuid());
         File::ensureDirectoryExists($targetDirectory);
 
         $entries = [];

@@ -6,12 +6,31 @@ namespace Modules\Compliance\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 use Modules\Compliance\Actions\EvaluateWorkOrderReadinessAction;
 use Modules\Document\Models\Media;
 use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\Xot\Models\XotBaseModel;
 
+/**
+ * @property int $id
+ * @property int $work_order_id
+ * @property int|null $requested_by_user_id
+ * @property int|null $approved_by_user_id
+ * @property string $title
+ * @property string|null $description
+ * @property string|null $estimated_amount
+ * @property string $status
+ * @property Carbon|null $approved_at
+ * @property Carbon|null $executed_at
+ * @property Carbon|null $billed_at
+ * @property int|null $signature_media_id
+ * @property array<string, mixed>|null $meta
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
+ */
 final class WorkOrderChangeOrder extends XotBaseModel
 {
     use SoftDeletes;

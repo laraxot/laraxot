@@ -104,10 +104,10 @@ final class AiChatStreamController extends Controller
             try {
                 $history = new AiAssistantChatHistory($thread, (int) $user->id);
 
-                $agent = new OperatorAssistantAgent();
-                $agent->setChatHistory($history);
-                $agent->forSession($thread, (int) $user->id);
-                $agent->toolMaxRuns(10);
+                $agent = (new OperatorAssistantAgent())
+                    ->setChatHistory($history)
+                    ->forSession($thread, (int) $user->id)
+                    ->toolMaxRuns(10);
 
                 $handler = $agent->stream(new UserMessage(
                     $guard->frameIncomingUserMessage(

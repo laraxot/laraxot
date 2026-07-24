@@ -7,18 +7,37 @@ namespace Modules\EnergyBroker\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
 use Modules\Xot\Models\XotBaseModel;
 
+/**
+ * @property int $id
+ * @property int $customer_id
+ * @property int|null $customer_site_id
+ * @property string $service_type
+ * @property string|null $pod
+ * @property string|null $pdr
+ * @property string|null $supply_code
+ * @property string|null $supplier_name
+ * @property string|null $offer_name
+ * @property string|null $annual_consumption
+ * @property string|null $power_kw
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
+ */
 final class EnergyBrokerSupplyPoint extends XotBaseModel
 {
     use SoftDeletes;
 
     protected $table = 'energy_broker_supply_points';
 
+    /** @var array<int, string> */
     protected $guarded = [];
 
+    /** @return array<string, string> */
     protected function casts(): array
     {
         return [
@@ -28,16 +47,19 @@ final class EnergyBrokerSupplyPoint extends XotBaseModel
         ];
     }
 
+    /** @return BelongsTo<Customer, $this> */
     public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class);
     }
 
+    /** @return BelongsTo<CustomerSite, $this> */
     public function site(): BelongsTo
     {
         return $this->belongsTo(CustomerSite::class, 'customer_site_id');
     }
 
+    /** @return HasMany<EnergyBrokerSupplyHistory, $this> */
     public function histories(): HasMany
     {
         return $this->hasMany(EnergyBrokerSupplyHistory::class, 'energy_broker_supply_point_id');

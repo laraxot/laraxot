@@ -5,12 +5,13 @@ declare(strict_types=1);
 namespace Modules\Email\Models;
 
 use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
+use Modules\Email\Database\Factories\EmailContactIdentityFactory;
 
 /**
  * @property int $id
@@ -22,9 +23,14 @@ use Modules\Customer\Models\CustomerSite;
  * @property array<string, mixed>|null $meta
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
+ * @method static \Modules\Email\Database\Factories\EmailContactIdentityFactory factory($count = null, $state = [])
  */
-final class EmailContactIdentity extends Model
+final class EmailContactIdentity extends BaseModel
 {
+    /** @use HasFactory<EmailContactIdentityFactory> */
+    use HasFactory;
+
     protected $table = 'email_contact_identities';
 
     /** @var array<int, string> */
@@ -60,5 +66,10 @@ final class EmailContactIdentity extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    protected static function newFactory(): EmailContactIdentityFactory
+    {
+        return EmailContactIdentityFactory::new();
     }
 }

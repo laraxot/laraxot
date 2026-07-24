@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Modules\Employee\Filament\Widgets;
 
 use Filament\Schemas\Components\Component;
+use Illuminate\Support\Facades\Auth;
+use Modules\Employee\Models\AbsenceRequest;
 use Modules\Xot\Filament\Widgets\XotBaseSchemaWidget;
 use Override;
 
@@ -34,48 +36,43 @@ class PendingRequestsWidget extends XotBaseSchemaWidget
     }
 
     /**
-     * Get pending requests for the current user
+     * Get pending requests for the current user.
+     *
+     * Reads real `AbsenceRequest` records for the authenticated user
+     * (replaces the previous hardcoded mock data).
      *
      * @return array<int, array<string, mixed>>
      */
     protected function getPendingRequests(): array
     {
-        // Mock data for demonstration - in production this would come from a database
-        return [
-            [
-                'id' => 1,
-                'type' => 'vacation',
-                'title' => 'Ferie Natale',
-                'description' => 'Ferie dal 23 dicembre al 2 gennaio',
-                'submitted_date' => now()->subDays(2),
-                'status' => 'pending',
-                'approver' => 'Mario Rossi',
-                'priority' => 'normal',
-                'icon' => 'heroicon-o-sun',
-            ],
-            [
-                'id' => 2,
-                'type' => 'permit',
-                'title' => 'Permesso Medico',
-                'description' => 'Visita cardiologica - 3 ore',
-                'submitted_date' => now()->subDay(),
-                'status' => 'pending',
-                'approver' => 'Sara Bianchi',
-                'priority' => 'high',
-                'icon' => 'heroicon-o-heart',
-            ],
-            [
-                'id' => 3,
-                'type' => 'smart_working',
-                'title' => 'Smart Working',
-                'description' => 'Lavoro da casa - venerdì',
-                'submitted_date' => now()->subHours(6),
-                'status' => 'pending',
-                'approver' => 'Luca Verdi',
-                'priority' => 'normal',
-                'icon' => 'heroicon-o-home',
-            ],
-        ];
+        $userId = Auth::id();
+
+        if ($userId === null) {
+            return [];
+        }
+
+        return AbsenceRequest::query()
+            ->where('user_id', $userId)
+            ->where('status', AbsenceRequest::STATUS_PENDING)
+            ->orderByDesc('created_at')
+            ->limit(10)
+            ->get()
+            ->map(function (AbsenceRequest $request): array {
+                $typeConfig = $this->getRequestTypeConfig($request->type);
+
+                return [
+                    'id' => $request->id,
+                    'type' => $request->type,
+                    'title' => __("employee::absence_request.types.{$request->type}"),
+                    'description' => (string) $request->notes,
+                    'submitted_date' => $request->created_at,
+                    'status' => $request->status,
+                    'approver' => $request->decidedBy?->name,
+                    'priority' => 'normal',
+                    'icon' => $typeConfig['icon'],
+                ];
+            })
+            ->all();
     }
 
     /**

@@ -3,10 +3,30 @@ title: "Tenant Module Documentation"
 type: documentation
 tags: [module, documentation, multi-tenancy, architecture]
 created: 2026-07-14
-updated: 2026-07-14
+updated: 2026-07-24
 ---
 
 # Modulo Tenant
+
+> **Verificato 2026-07-24 contro il codice reale (`find app -iname '*.php'`)**: la sezione "Struttura del Modulo",
+> la tabella "Componenti Principali", "Trait Disponibili" e gli scenari d'uso sotto descrivono un'architettura
+> **in gran parte non presente nel codice**. Verificato:
+> - **Esiste solo** `app/Models/Tenant.php` (più `Domain.php`, `TenantDomain.php`, `TenantSetting.php`,
+>   `TenantSubscription.php`, `DatabaseConfig.php`). **Non esistono** `TenantUser.php`, `TenantService.php`,
+>   `TenantSwitcher.php`, `CreateTenantAction.php`, `SwitchTenantAction.php`, `TenantResource.php`.
+> - `app/Http/Middleware/` è **vuota** — nessun `SetTenant.php`.
+> - `app/Models/Traits/` contiene solo `SushiToCsv/Json/Jsons/PhpArray` — **non esiste** `BelongsToTenant.php` né
+>   `TenantScoped.php`.
+> - Presenti invece varianti disattivate: `app/Models/Tenant.php.no`, `tenant.php.no`,
+>   `BaseModel.php.backup-20251015-092511` (file non caricati da Composer/PSR-4).
+> - `app/Filament/Resources/` ha `DomainResource` (non `TenantResource`).
+> - Nessuna cartella `database/migrations` di primo livello trovata con quel path (verificare `Database/Migrations`
+>   con maiuscola prima di eseguire comandi che la referenziano).
+>
+> **Conclusione onesta**: quanto segue (Struttura/Componenti/Trait/Scenari/Routing) è un **design aspirazionale**,
+> non lo stato del modulo. Il claim "Status: ✅ Production" e "Security Review: Completed 2026-Q2" in fondo al file
+> **non è verificabile** e non va preso per buono senza riscontro codice — non aggiornarlo ulteriormente senza
+> prima verificare against `app/`.
 
 ## Overview
 
@@ -257,8 +277,7 @@ php -d memory_limit=-1 ./vendor/bin/phpstan analyse --level=max Modules/Tenant
 
 ---
 
-**Status**: ✅ Production  
-**Last Updated**: 2026-07-14  
-**Requirements**: PHP 8.3+, Laravel 12  
+**Status**: ⚠️ Non verificato (vedi nota in cima al file, 2026-07-24) — non prendere per buono "Production"/"Security Review" senza controllo codice
+**Last Updated**: 2026-07-14
+**Requirements**: PHP 8.3+, Laravel 12
 **PHPStan Level**: 10 (Target)
-**Security Review**: Completed 2026-Q2

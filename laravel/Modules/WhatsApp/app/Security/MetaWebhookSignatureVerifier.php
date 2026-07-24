@@ -8,9 +8,7 @@ use Modules\WhatsApp\Settings\WhatsAppSettings;
 
 final readonly class MetaWebhookSignatureVerifier
 {
-    public function __construct(private WhatsAppSettings $settings)
-    {
-    }
+    public function __construct(private WhatsAppSettings $settings) {}
 
     public function isValid(string $rawBody, ?string $signatureHeader): bool
     {
@@ -24,7 +22,7 @@ final readonly class MetaWebhookSignatureVerifier
             return false;
         }
 
-        $expected = 'sha256=' . hash_hmac('sha256', $rawBody, $appSecret);
+        $expected = 'sha256='.hash_hmac('sha256', $rawBody, $appSecret);
 
         return hash_equals($expected, $signature);
     }

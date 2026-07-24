@@ -7,7 +7,6 @@ namespace Modules\Platform\Filament\Resources\AuditLogResource\Pages;
 use Filament\Actions\Action;
 use Filament\Resources\Pages\ListRecords;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Str;
 use Modules\Platform\Filament\Resources\AuditLogResource;
 use Modules\Platform\Models\AuditLog;
 use Symfony\Component\HttpFoundation\StreamedResponse;
@@ -31,7 +30,7 @@ final class ListAuditLogs extends ListRecords
                     /** @var Builder<AuditLog> $query */
                     $query = $this->getFilteredTableQuery();
 
-                    $fileName = 'audit-log-' . now()->format('Ymd-His') . '.csv';
+                    $fileName = 'audit-log-'.now()->format('Ymd-His').'.csv';
 
                     return response()->streamDownload(function () use ($query): void {
                         $out = fopen('php://output', 'w');
@@ -71,4 +70,3 @@ final class ListAuditLogs extends ListRecords
         ];
     }
 }
-

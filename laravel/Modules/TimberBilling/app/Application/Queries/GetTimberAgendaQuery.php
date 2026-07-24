@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Queries;
 
-use App\Timber\Models\TimberDocument;
 use Illuminate\Support\Carbon;
 use Modules\Quotation\DTO\Money;
 use Modules\TimberBilling\Domain\DTO\AgendaEvent;
+use Modules\TimberBilling\Models\TimberDocument;
 use Modules\TimberBilling\Models\TimberInvoice;
 use Modules\TimberBilling\Models\TimberPaymentInstallment;
 

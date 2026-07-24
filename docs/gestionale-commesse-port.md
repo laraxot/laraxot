@@ -246,3 +246,218 @@ cd laravel
 
 `modules_statuses.json` aveva gia' `"Signature": true` e `"Vehicle": true` prima di questa sessione — nessuna
 modifica necessaria li' (stato confermato ragionevolmente pulito).
+
+## Document/Email/WhatsApp — reshape definitivo, moduli permanenti separati (2026-07-24)
+
+### Contesto e decisione
+
+Audit di readiness BMAD (2026-07-24) ha rilevato `Document` (gia' rinominato singolare da `Documents` sorgente),
+`Email`, `WhatsApp` ancora come copie DDD as-is da `gestionale_commesse`, `registered: false`, in limbo. **Decisione
+finale dell'utente**: questi diventano moduli **permanenti separati**, reshaped come gli altri moduli completati
+(Customer, WorkOrder, Catalog, ecc.) — **non** accorpati in Media/Notify. Il lavoro di gap-fill gia' fatto in
+Media/Notify resta invariato. Vedi sezione "Moduli gemelli — SUPERSEDUTO" in
+[porting-external-module-playbook.md](./wiki/concepts/porting-external-module-playbook.md).
+
+### Stato di partenza (ispezione diretta)
+
+A differenza di Billing/Fiscal/Signature/Vehicle sopra, i tre moduli **non** erano tornati a `Domain/Application/
+Infrastructure` grezzo: avevano gia' l'ossatura `app/{Models,Actions,Filament,Providers}`, `module.json`/
+`composer.json` gia' corretti (namespace PSR-4 → `app/`, provider `{Module}ServiceProvider`/`RouteServiceProvider`/
+`EventServiceProvider extends XotBase*`), routes `web.php`/`api.php` gia' presenti. Mancava pero':
+
+- **Document**: gia' effettivamente thin wrapper single-model come da assessment precedente — confermato, `Media`
+  gia' `extends XotBaseModel`, migrazione gia' `XotBaseMigration`/`tableCreate()`/`tableUpdate()`/
+  `updateTimestamps()`. Nessuna azione di reshape strutturale necessaria qui.
+- **Email/WhatsApp**: i 3 modelli ciascuno (`{Email,WhatsApp}ContactIdentity`, `{...}Conversation`, `{...}Message`)
+  estendevano `Illuminate\Database\Eloquent\Model` **diretto** (non `XotBaseModel`), e la migrazione era **una sola
+  migrazione con 3 `Schema::create()`** (`extends Migration` puro, non `XotBaseMigration`) — entrambe violazioni
+  esplicite delle regole del task. Zero `lang/`, zero `tests/`, zero `database/factories|seeders`.
+- **Cruft residuo**: 3 file `.lock` letterali dentro `Email/app/Actions/*.php.lock` (artefatti di lock a livello di
+  singolo file da uno script di lock-coordination di una sessione precedente mai rilasciati) — rimossi (non sono i
+  lock di modulo usati da `bashscripts/lock/`, che opera su directory).
+
+### Fatto in questa sessione
+
+- **Modelli → `XotBaseModel`**: creato `app/Models/BaseModel.php` (`abstract class BaseModel extends XotBaseModel`)
+  in `Email` e `WhatsApp` (pattern gia' presente in `Document`); i 6 modelli (`EmailContactIdentity`,
+  `EmailConversation`, `EmailMessage`, `WhatsAppContactIdentity`, `WhatsAppConversation`, `WhatsAppMessage`) ora
+  `extends BaseModel`. Aggiunto `use HasFactory` + `protected static function newFactory()` + `@method static
+  {Factory} factory(...)` su tutti e 6 (altrimenti `Model::factory()` risolve a `mixed` in PHPStan, stesso pattern
+  gia' documentato per Signature/Vehicle sopra).
+- **Migrazioni 1-per-modello**: `Email/database/migrations/2026_05_14_000001_create_email_tables.php` (1 file, 3
+  tabelle, `Migration` puro) → **3 file** `extends XotBaseMigration` con `tableCreate()`/`tableUpdate()` +
+  `updateTimestamps(hasSoftDeletes: false)`: `..._000001_create_email_contact_identities_table.php`,
+  `..._000002_create_email_conversations_table.php`, `..._000003_create_email_messages_table.php`. Stesso
+  trattamento per `WhatsApp/database/migrations/2026_05_14_000001_create_whatsapp_tables.php` → 3 file analoghi
+  (`whatsapp_contact_identities`, `whatsapp_conversations`, `whatsapp_messages`). La migrazione di alter successiva
+  `2026_07_10_120000_add_proposal_tracking_to_whatsapp_conversations.php` **non** e' stata convertita a
+  `XotBaseMigration`: le migrazioni di alter (non-`create_*_table`) restano `extends Migration` +
+  `Schema::table()` in tutto il repo (verificato su `Auth`/`Rating`), pattern confermato corretto.
+- **Bug reale trovato e corretto**: `Document/database/factories/MediaFactory.php` aveva
+  `'mediable_type' => 'Modules\Customer\\Models\\Customer'` — **doppio backslash letterale** in stringa a singolo
+  apice (mix inconsistente singolo/doppio backslash, non un normale `\` di namespace) → corretto in
+  `'Modules\Customer\Models\Customer'`. Nessun bug di doppio-backslash-nel-namespace-file (come visto in
+  Signature/Vehicle) nei factories/seeders di Email/WhatsApp perche' non esistevano ancora: creati da zero puliti.
+- **Factories/seeders creati da zero** per Email/WhatsApp (mancavano del tutto): `EmailContactIdentityFactory`,
+  `EmailConversationFactory`, `EmailMessageFactory`, `EmailDatabaseSeeder`; equivalenti per WhatsApp. Nota tecnica:
+  la prima versione di `{Email,WhatsApp}MessageFactory` referenziava `conversation_id => {Conversation}::factory()`
+  — Eloquent **persiste sempre** una factory-relation annidata anche con `makeOne()` (comportamento noto Laravel,
+  non un caso limite), causando `QueryException` nei test unitari no-DB; sostituito con `conversation_id => 1`
+  (default placeholder, sovrascritto esplicitamente dai seeder che persistono davvero).
+- **`lang/{it,en}/`**: creati da zero per tutti e 3 i moduli (mancavano del tutto) — `Document`: `media.php`;
+  `Email`: `email_conversation.php`, `email_message.php`, `email_contact_identity.php`; `WhatsApp`:
+  `whatsapp_conversation.php`, `whatsapp_message.php`, `whatsapp_contact_identity.php` (pattern label-per-field +
+  `navigation` come in `Media/lang/it/media.php`).
+- **Test Pest**: creati da zero per Email/WhatsApp (`tests/TestCase.php` + `tests/Unit/{Email,WhatsApp}MessageTest.php`,
+  no DB write, stesso motivo/pattern di Signature/Vehicle: factory `makeOne()` non persistite); aggiunto
+  `Document/tests/TestCase.php` + `Document/tests/Unit/MediaTest.php` (le cartelle `tests/Feature|Unit` esistevano
+  solo con `.gitkeep`, mai popolate). **8 test passano**.
+- **`module.json`**: `priority` alzata da `0` a `140` per tutti e 3 (i modelli referenziano `WorkOrder` [110],
+  `Intervention` [130], `AiAssistant` [0] — 140 li carica dopo tutte le loro dipendenze dirette, coerente con
+  `Billing`/`TimberBilling` che sono anch'essi a 140).
+- **`composer.json`**: aggiunto autore `Davide Cavallini <davidecavallini1987@gmail.com>` (mancava) accanto a
+  `Marco Sottana` in tutti e 3.
+- **`EventServiceProvider.php`**: verificato pattern `protected static $shouldDiscoverEvents = true;` **senza**
+  tipo `bool` dichiarato (coerente con la classe padre Laravel, che non lo dichiara) — il bug noto ("Type ... must
+  not be defined") descritto sopra per `Customer` **non** era presente in nessuno dei tre moduli, nessuna modifica
+  necessaria.
+- **Filament**: nessuna `app/Filament/Resources/` creata ex-novo. I tre moduli espongono gia' UI custom via
+  `app/Filament/Pages/` (`Document\UploadInterventionPhotos`, `Email\EmailSettingsPage`,
+  `WhatsApp\{WhatsAppSettingsPage,WhatsAppInboxPage}`), discoperte dal singolo `App\Providers\Filament\
+  AdminPanelProvider` centrale del progetto (**nessun modulo nel repo ha un proprio `Filament/AdminPanelProvider.php`
+  locale** — verificato via ricerca su tutto `Modules/`): costruire Resource CRUD complete per
+  `{Email,WhatsApp}{Conversation,Message}` sarebbe invenzione di scope UX non richiesta esplicitamente (le pagine
+  Inbox/Settings gia' esistenti coprono il caso d'uso conversazionale meglio di una tabella CRUD generica) —
+  tracciato come debito se in futuro serve gestione/CRUD diretta dei messaggi.
+- **IMAP/webhook client**: gia' implementati come stub reali funzionanti nel codice esistente
+  (`Email\Inbox\ImapEmailInboxClient`, `WhatsApp\Meta\MetaWhatsAppClient`, `WhatsApp\YCloud\YCloudWhatsAppClient`) —
+  non "TODO senza corpo": richiedono credenziali esterne (IMAP host/user/pass, Meta/YCloud API token) risolte da
+  Settings dedicate (`EmailSettings`, `WhatsAppSettings`), non hardcoded. Nessuna azione necessaria oltre alla
+  verifica che compilano/passano PHPStan.
+
+### Verifica finale
+
+```bash
+cd laravel
+./vendor/bin/phpstan analyse Modules/Document Modules/Email Modules/WhatsApp --memory-limit=-1
+# 0 errori reali (1 "errore" e' solo il pattern ignoreErrors globale @mixin non matchato
+# in questo subset ristretto di moduli — non un errore di Document/Email/WhatsApp)
+
+./vendor/bin/pest Modules/Document Modules/Email Modules/WhatsApp --no-coverage
+# Tests: 8 passed (19 assertions)
+
+php artisan module:list | grep -E 'Document|Email|WhatsApp'
+# tutti e 3 [Enabled], priority 140
+
+php artisan about --only=environment
+# boot applicativo pulito con i 3 moduli abilitati (nessun errore di provider/binding)
+```
+
+`modules_statuses.json`: `"Document"`, `"Email"`, `"WhatsApp"` impostati a `true` (erano `false`).
+
+## Employee — AbsenceRequest, redo dopo revert multi-agente (2026-07-24)
+
+### Contesto
+
+In una sessione precedente era stato implementato un sistema reale `AbsenceRequest` in `Modules/Employee`
+(sostituendo i dati hardcoded in `PendingRequestsWidget`/`LeaveBalanceWidget`), seguendo il gap analizzato in
+`docs/gestionale-commesse-comparison/STORY-002-hr-vs-employee.md` (confronto con `Modules/HR` di
+`gestionale_commesse`). Una verifica successiva ha trovato il lavoro **completamente sparito dal disco**: nessun
+file `Absence*` in `Modules/Employee`, effetto di un evento di revert multi-agente caotico avvenuto nella stessa
+sessione. Questa sezione documenta il **redo** completo.
+
+### Cosa è stato rifatto
+
+- `laravel/Modules/Employee/app/Models/AbsenceRequest.php` — estende `BaseModel` (che estende `XotBaseModel`),
+  con costanti `STATUS_*`/`TYPE_*`, relazioni `user()`/`decidedBy()` verso `Employee` (che è `User` via
+  `Parental\HasParent`), scope `pending()`/`forUser()`.
+- `laravel/Modules/Employee/database/migrations/2026_07_24_000001_create_absence_requests_table.php` — pattern
+  `XotBaseMigration::tableCreate()` + `updateTimestamps()`, **nessuna FK verso `users`** (connessione `xot` vs
+  connessione `user` del modulo User, stesso vincolo cross-database già documentato per `work_hours`).
+- `laravel/Modules/Employee/app/Actions/{Create,Approve,Reject}AbsenceRequestAction.php` — pattern
+  `Spatie\QueueableAction\QueueableAction`, un solo entry point `execute()`.
+- `laravel/Modules/Employee/app/Filament/Resources/AbsenceRequestResource.php` (+ `Schemas/AbsenceRequestForm.php`,
+  `Tables/AbsenceRequestsTable.php`, `Pages/{List,Create,Edit,View}AbsenceRequest.php`) — pattern `XotBaseResource`
+  di questo modulo (non lo stile clean-architecture `Application/Infrastructure` di HR), con azioni tabella
+  `approve`/`reject` visibili solo su richieste `pending` e scoping automatico (`getEloquentQuery()`: fuori dal
+  pannello `admin/*` ogni utente vede solo le proprie richieste).
+- `laravel/Modules/Employee/app/Policies/AbsenceRequestPolicy.php` — estende `UserBasePolicy` come le altre policy
+  del modulo (non il pattern standalone Shield-style di HR).
+- `laravel/Modules/Employee/app/Filament/Widgets/PendingRequestsWidget.php` e `LeaveBalanceWidget.php` — rimosso
+  il commento esplicito "Mock data for demonstration" e i saldi hardcoded; ora entrambi interrogano
+  `AbsenceRequest` per l'utente autenticato (pending requests, e saldi mensili/annuali calcolati sommando i minuti
+  delle richieste approvate per tipo).
+- `laravel/Modules/Employee/lang/{it,en}/absence_request.php`.
+- `laravel/Modules/Employee/tests/Unit/Models/AbsenceRequestTest.php` (Pest, no DB — stesso pattern di
+  `WorkHourTest.php` del modulo).
+
+### Non incluso in questo redo (gap noti, vedi STORY-002 punti 2-6)
+
+`EmployeeResource` per l'anagrafica dipendenti, `EmployeeDocument`/documenti allegati, visite mediche periodiche,
+formazione/corsi con scadenze, `EmployeePolicy` dedicata all'anagrafica. Questi restano debito verso `Modules/HR`
+di `gestionale_commesse`, da pianificare separatamente.
+
+### Verifica
+
+```bash
+cd laravel
+./vendor/bin/phpstan analyse Modules/Employee Modules/AI --memory-limit=-1
+# 17 errori, tutti pre-esistenti/non correlati (class.notFound su Modules\TechPlanner\Models\Profile,
+# riferito da @property-read PHPDoc su Department/Position/Employee/TimeEntry/TimeRecord/User/WorkHour) —
+# 0 errori nuovi introdotti da AbsenceRequest/AiActionProposal
+
+./vendor/bin/pest Modules/Employee/tests/Unit/Models/AbsenceRequestTest.php
+# Tests: 4 passed (17 assertions)
+```
+
+## AI — persistenza + action-proposal pattern, redo dopo revert multi-agente (2026-07-24)
+
+### Contesto
+
+Analogamente ad Employee, in una sessione precedente erano stati implementati i modelli reali `AiThread`,
+`AiMessage`, `AiActionProposal`, `AiToolLog` in `Modules/AI` (pattern "AI propone, umano conferma, sistema
+esegue", ispirato a `Modules/AiAssistant` di `gestionale_commesse` — vedi
+`docs/gestionale-commesse-comparison/STORY-003-aiassistant-vs-ai.md`). Anche questo lavoro è risultato
+**completamente assente** (`AI/app/Models/` vuota) dopo lo stesso evento di revert multi-agente. Redo completo in
+questa sezione.
+
+### Cosa è stato rifatto
+
+- `laravel/Modules/AI/app/Models/{AiThread,AiMessage,AiActionProposal,AiToolLog}.php` — estendono direttamente
+  `Modules\Xot\Models\XotBaseModel` (il modulo AI non aveva ancora un `BaseModel` di modulo dedicato). Stati
+  proposta: `pending|cancelled|confirmed|executed|failed`, replicando esattamente il lifecycle di
+  `AiActionProposal` in `AiAssistant`.
+- Una migrazione per modello (come richiesto): `2026_07_24_00000{1..4}_create_ai_{threads,messages,action_proposals,tool_logs}_table.php`,
+  stesso pattern `XotBaseMigration::tableCreate()`/`updateTimestamps()`, nessuna FK cross-connessione verso
+  `users` (solo FK interne fra le 4 tabelle stesse, tutte sulla connessione `xot`).
+- `laravel/Modules/AI/app/Contracts/AiActionHandlerContract.php` — interfaccia `type()`/`handle(AiActionProposal): array`.
+- `laravel/Modules/AI/app/Support/AiActionHandlerRegistry.php` — registry singleton (`register()`/`has()`/`get()`/`all()`),
+  registrato in `AIServiceProvider::register()` via `$this->app->singleton(...)`. È il punto di disaccoppiamento
+  per registrare handler futuri verso i moduli di dominio (WorkOrder, Intervention, ecc.) senza che il modulo AI
+  li conosca direttamente.
+- `laravel/Modules/AI/app/Actions/{Create,Confirm,Cancel}AiActionProposalAction.php` — `Spatie\QueueableAction`.
+  `ConfirmAiActionProposalAction` risolve l'handler dal registry per il `type` della proposta e la esegue,
+  aggiornando lo stato a `executed`/`failed` in base all'esito.
+- `laravel/Modules/AI/app/Filament/Resources/AiActionProposalResource.php` (+ Schemas/Tables/Pages) — azioni
+  tabella `confirm`/`cancel` visibili solo su proposte `pending`.
+- `laravel/Modules/AI/lang/{it,en}/action_proposal.php`.
+- `laravel/Modules/AI/tests/Unit/Models/AiActionProposalTest.php`,
+  `laravel/Modules/AI/tests/Unit/Support/AiActionHandlerRegistryTest.php` (Pest, no DB).
+
+### Deliberatamente escluso (come nella sessione originale)
+
+Il porting di `OperatorAssistantAgent` (~1575 righe di tool-calling hardcoded verso `Bom`/`Product`/`Customer`/
+`Intervention`/`Warehouse`/`ProductionPhase`/`WorkOrder`) resta fuori scope: i moduli di dominio omologhi in questo
+repository non hanno ancora la stessa interfaccia/maturità di quelli in `gestionale_commesse`. Dettagli e
+razionale in `laravel/Modules/AI/docs/deferred-operator-assistant-agent.md`.
+
+### Verifica
+
+```bash
+cd laravel
+./vendor/bin/phpstan analyse Modules/Employee Modules/AI --memory-limit=-1
+# vedi sezione Employee sopra — stesso comando, stesso esito (17 errori pre-esistenti, 0 nuovi)
+
+./vendor/bin/pest Modules/AI/tests/Unit/Models/AiActionProposalTest.php Modules/AI/tests/Unit/Support/AiActionHandlerRegistryTest.php
+# Tests: 3 passed (7 assertions)
+```

@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Storage;
 use Modules\EnergyBroker\Models\EnergyBrokerDocument;
 use Spatie\QueueableAction\QueueableAction;
 
+use function Safe\file_get_contents;
+
 final class ReprocessEnergyBrokerDocumentPdfAction
 {
     use QueueableAction;

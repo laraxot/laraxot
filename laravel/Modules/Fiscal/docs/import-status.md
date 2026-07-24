@@ -1,29 +1,31 @@
 ---
 title: "Import status — Fiscal"
 type: concept
-tags: [import, gestionale-commesse, fiscal]
+tags: [import, gestionale-commesse, fiscal, phpstan, bmad]
 created: 2026-07-23
-updated: 2026-07-23
-qmd: "import status Fiscal normalize"
+updated: 2026-07-24
+qmd: "import status Fiscal enabled phpstan pest"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
+  - "https://github.com/laraxot/base_workorder_fila5/issues/14"
 discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
+  - "https://github.com/laraxot/base_workorder_fila5/discussions/15"
 related:
   - "./README.md"
+  - "../../../../docs/gestionale-commesse-comparison/replica-singular-phase.md"
+  - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
 ---
 
 # Import status — Fiscal
 
 - [x] Cartella singolare / replica
-- [x] Layout `app/` (reshape) — **redo 2026-07-23**: `Domain/{Actions,DTO,ValueObjects}` → `app/{Actions,Datas}`
-- [x] Namespace `Modules\Fiscal\`
-- [x] `FiscalServiceProvider` → XotBaseServiceProvider
-- [x] composer PSR-4 → `app/`
-- [x] Action con trait `Spatie\QueueableAction\QueueableAction`
-- [x] 0 modelli persistibili confermato (motore di calcolo puro, nessuna migrazione)
-- [x] `tests/` (TestCase + Pest.php + 4 Unit test)
-- [x] `lang/{it,en}` scaffold
-- [ ] PHPStan bloccato da `Modules/Customer/app/Providers/EventServiceProvider.php` (non di nostra proprietà) —
-      vedi `docs/gestionale-commesse-port.md` root, verificato invece con `php -l` (pulito)
-- [ ] Resources → XotBaseResource (n/a: nessuna persistenza, nessun Resource previsto)
+- [x] Layout `app/` + XotBase SP
+- [x] QueueableAction
+- [x] 0 modelli persistibili (motore di calcolo)
+- [x] Pest: 6 passed (2026-07-24)
+- [x] PHPStan L10 — 0 errori reali
+- [x] `modules_statuses=true`
+- [ ] `lang/{it,en}` — assente (coerente: poca UI)
+
+Matrice: [gc-modules-runtime-matrix.md](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md).
