@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
-use Modules\User\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Modules\Intervention\Actions\SyncDailyNotePhotosAction;
 use Modules\Intervention\Models\DailyNote;
+use Modules\Intervention\Tests\TestCase;
+use Modules\User\Models\User;
 
 it('syncs daily note photos by creating and removing related media', function (): void {
     Storage::fake('public');

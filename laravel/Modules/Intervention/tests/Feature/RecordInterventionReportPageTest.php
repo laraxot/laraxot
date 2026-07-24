@@ -2,19 +2,20 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
-use Modules\User\Models\User;
 use Carbon\CarbonImmutable;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Livewire;
 use Modules\Catalog\Models\Product;
-use Modules\Intervention\Application\AI\InterventionReportExtractorInterface;
+use Modules\Intervention\Contracts\InterventionReportExtractorContract;
 use Modules\Intervention\Filament\Pages\RecordInterventionReportPage;
 use Modules\Intervention\Models\Intervention;
+use Modules\Intervention\Tests\TestCase;
 use Modules\Signature\Models\Signature;
+use Modules\User\Models\User;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -39,7 +40,7 @@ function operatorWithUpdatePermission(): User
  */
 function bindFakeReportExtractor(array $payload): void
 {
-    app()->bind(InterventionReportExtractorInterface::class, fn (): InterventionReportExtractorInterface => new class($payload) implements InterventionReportExtractorInterface
+    app()->bind(InterventionReportExtractorContract::class, fn (): InterventionReportExtractorContract => new class($payload) implements InterventionReportExtractorContract
     {
         /** @param array<string, mixed> $payload */
         public function __construct(private array $payload) {}

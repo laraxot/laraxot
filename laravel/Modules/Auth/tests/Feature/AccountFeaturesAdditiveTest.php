@@ -10,7 +10,7 @@ uses(TestCase::class);
 
 use App\Support\AccountFeatures;
 use Modules\User\Models\User;
-use Spatie\Permission\Models\Role;
+use Modules\User\Models\Role;
 
 beforeEach(function (): void {
     foreach (['admin', 'operator', 'timber_admin', 'timber_operator'] as $role) {

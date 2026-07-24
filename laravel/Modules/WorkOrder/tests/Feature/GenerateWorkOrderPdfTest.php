@@ -13,5 +13,5 @@ uses(TestCase::class);
 // monorepo — vedi laravel/docs/gestionale-commesse-debito-tecnico.md #5.
 
 it('generates a work order PDF', function (): void {
-    expect(true)->toBeTrue();
-})->skip('needs barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+    $this->markTestSkipped('needs barryvdh/laravel-dompdf - see debito-tecnico.md #5');
+});

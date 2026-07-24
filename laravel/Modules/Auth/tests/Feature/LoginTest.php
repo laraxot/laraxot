@@ -13,14 +13,11 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Modules\User\Models\User;
-use Spatie\Permission\Models\Role;
+use Modules\User\Models\Role;
 
-use function Pest\Laravel\actingAs;
-use function Pest\Laravel\get;
-use function Pest\Laravel\post;
 
 it('shows the legacy login page for guests', function (): void {
-    get('/login')
+    $this->get('/login')
         ->assertOk()
         ->assertSee('min-h-screen bg-slate-50 text-slate-950 antialiased', escape: false)
         ->assertSee('border border-slate-200 bg-white', escape: false)
@@ -40,7 +37,7 @@ it('redirects admin users to the admin panel after login', function (): void {
     $user->syncRoles([$adminRole]);
 
     // Act + Assert
-    post('/login', [
+    $this->post('/login', [
         'email' => $user->email,
         'password' => 'secret123',
         'accept_legal' => '1',
@@ -56,7 +53,7 @@ it('redirects administrator users to the admin panel after login', function (): 
     ]);
     $user->syncRoles([$adminRole]);
 
-    post('/login', [
+    $this->post('/login', [
         'email' => $user->email,
         'password' => 'secret123',
         'accept_legal' => '1',
@@ -74,7 +71,7 @@ it('redirects operator users to the operator panel after login', function (): vo
     $user->syncRoles([$operatorRole]);
 
     // Act + Assert
-    post('/login', [
+    $this->post('/login', [
         'email' => $user->email,
         'password' => 'secret123',
         'accept_legal' => '1',
@@ -90,7 +87,7 @@ it('redirects wts users to the wts panel after wts login', function (): void {
     ]);
     $user->syncRoles([$wtsRole]);
 
-    actingAs($user);
+    $this->actingAs($user);
 
     session()->forget('url.intended');
 
@@ -116,7 +113,7 @@ it('redirects timber users to the timber panel after timber login', function ():
     ]);
     $user->syncRoles([$timberRole]);
 
-    actingAs($user);
+    $this->actingAs($user);
 
     session()->forget('url.intended');
 
@@ -142,7 +139,7 @@ it('redirects dds users to the dds panel after dds login', function (): void {
     ]);
     $user->syncRoles([$ddsRole]);
 
-    actingAs($user);
+    $this->actingAs($user);
 
     session()->forget('url.intended');
 
@@ -168,7 +165,7 @@ it('redirects the gerardo account to the admin dashboard after legacy login', fu
     ]);
     $user->syncRoles([$adminRole, $operatorRole]);
 
-    post('/login', [
+    $this->post('/login', [
         'email' => $user->email,
         'password' => 'secret123',
         'accept_legal' => '1',
@@ -176,7 +173,7 @@ it('redirects the gerardo account to the admin dashboard after legacy login', fu
 });
 
 it('rejects invalid credentials', function (): void {
-    post('/login', [
+    $this->post('/login', [
         'email' => 'nope@test.local',
         'password' => 'wrong',
         'accept_legal' => '1',
@@ -184,7 +181,7 @@ it('rejects invalid credentials', function (): void {
 });
 
 it('requires accepting privacy and terms before login', function (): void {
-    post('/login', [
+    $this->post('/login', [
         'email' => 'nope@test.local',
         'password' => 'wrong',
     ])->assertSessionHasErrors('accept_legal');

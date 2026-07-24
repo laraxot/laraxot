@@ -2,12 +2,15 @@
 
 declare(strict_types=1);
 
-uses(\Modules\WorkOrder\Tests\TestCase::class);
+namespace Modules\WorkOrder\Tests\Feature;
 
 use Illuminate\Support\Facades\DB;
 use Modules\WorkOrder\Actions\ComputeWorkOrderEffortAction;
 use Modules\WorkOrder\Domain\DTO\WorkOrderEffort;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\WorkOrder\Tests\TestCase;
+
+uses(TestCase::class);
 
 function workOrderWithInterventions(?int $plannedMinutes, array $interventionMinutes): WorkOrder
 {

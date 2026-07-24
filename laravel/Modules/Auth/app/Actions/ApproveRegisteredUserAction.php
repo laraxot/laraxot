@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Modules\Auth\Actions;
 
 use Modules\User\Models\User;
-use Spatie\Permission\Models\Role;
+use Modules\User\Models\Role;
 use Spatie\QueueableAction\QueueableAction;
 
 final class ApproveRegisteredUserAction

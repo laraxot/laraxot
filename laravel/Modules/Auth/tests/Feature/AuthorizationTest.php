@@ -9,9 +9,8 @@ use Modules\Auth\Tests\TestCase;
 uses(TestCase::class);
 
 use Modules\User\Models\User;
-use Spatie\Permission\Models\Role;
+use Modules\User\Models\Role;
 
-use function Pest\Laravel\actingAs;
 
 it('blocks operator users from accessing the admin panel', function (): void {
     $operatorRole = Role::findOrCreate('operator');
@@ -19,7 +18,7 @@ it('blocks operator users from accessing the admin panel', function (): void {
     $user = User::factory()->create();
     $user->syncRoles([$operatorRole]);
 
-    actingAs($user)
+    $this->actingAs($user)
         ->get('/admin')
         ->assertStatus(403);
 });
@@ -30,7 +29,7 @@ it('allows admin users to access the admin panel', function (): void {
     $user = User::factory()->create();
     $user->syncRoles([$adminRole]);
 
-    actingAs($user)
+    $this->actingAs($user)
         ->get('/admin')
         ->assertStatus(200);
 });

@@ -129,3 +129,63 @@ raccomandazione "da NON portare").
 Resta un TODO esplicito il consolidamento delle migrazioni `users` (vedi sopra) — non bloccante per
 l'abilitazione perché le migration esistenti sono comunque valide/idempotenti singolarmente, ma da
 risolvere prima di eseguire `migrate` da zero in un ambiente che include anche il modulo `User`.
+
+## Test migrati dal sorgente (2026-07-24)
+
+Sorgente: `/var/www/_bases/gestionale_commesse/tests/Feature/Auth` (22 file) +
+`tests/Unit/Auth` (1 file). Non è stata fatta copia meccanica: ogni test è stato letto e
+adattato (namespace, modello utente reale, panel effettivamente registrati in questo monorepo).
+
+### Portati (21 file Feature + 1 Unit, `Modules/Auth/tests/`)
+
+Tutti i test del sorgente sono stati portati (nessuno scartato per contenuto), con adattamenti:
+
+- `Modules\User\Models\User` al posto di `App\Models\User` (modello di autenticazione reale
+  configurato in `config/auth.php`, id UUID stringa non intero).
+- `ResolveTeamMemberIdsAction::execute()` ora accetta `string $managerId` (UUID), non `int`: il
+  test Unit usa id stringa non numerici (`'u1'`, `'u2'`, ...) per evitare la conversione automatica
+  delle chiavi array PHP.
+- I test che nel sorgente atterravano su pannelli Filament `operator`/`wts`/`timber`/`dds`/
+  `customer`/`supplier` (`FilamentPanelLoginPageTest`, `RolePermissionsNavigationVisibilityTest`,
+  parte di `LoginTest`/`DemoRegistrationAndEmailTwoFactorTest`) sono stati **lasciati come nel
+  sorgente** (non riscritti per usare solo `/admin`): in questo monorepo esiste **solo** il panel
+  `admin` (`app/Providers/Filament/AdminPanelProvider.php`, unico in `bootstrap/providers.php`).
+  Questi test falliranno finché quei panel non verranno registrati — non è stato deciso di
+  cancellarli perché documentano un comportamento atteso del dominio originale (multi-pannello)
+  che potrebbe tornare rilevante; sono comunque eseguibili e la loro failure è diagnosticabile.
+- `App\Filament\Pages\Auth\PanelLogin` (usata da `FilamentLoginRedirectTest`) non esiste in questo
+  monorepo (il panel `admin` usa la pagina di login Filament di default, non personalizzata):
+  stesso discorso, test portato ma non eseguibile finché la classe non esiste.
+- `App\Support\AccountFeatures` **esiste** in questo monorepo (`app/Support/AccountFeatures.php`),
+  ma come shim Wave 1 dichiarato esplicitamente permissivo: `hasFeature()` ritorna sempre il
+  `$default` passato, senza logica basata su ruoli/config. `AccountFeaturesAdditiveTest` è stato
+  portato as-is (stessa asserzione del sorgente): con lo shim attuale le prime 3 `it()` falliscono
+  (comportamento additivo per ruolo non implementato), la quarta (override account) passa/fallisce
+  a seconda del default — vedi risultati sotto. Non riscritto per "far passare" lo shim: la
+  differenza di comportamento è reale e va segnalata, non nascosta.
+- `Modules\Intervention` (non `Interventions`) e `Modules\WorkOrder` (non `WorkOrders`, niente
+  `Infrastructure\Models`) in `DemoUserDisplayNameTest`: nomi corretti ai moduli reali. La feature di
+  "demo alias" sul nome utente **non esiste** in `Modules\User\Models\User` in questo monorepo
+  (nessuna logica `demo_mode` sul modello): il test è portato ma la prima `it()` fallirà finché la
+  feature non viene implementata qui.
+
+### Debito noto — infrastruttura di test (non introdotto da questa sessione)
+
+`phpunit.xml` forza tutte le connessioni sqlite su `:memory:` senza eseguire alcuna migrazione, e
+`.env.testing` punta a un database MySQL (`techplanner_data_test`) assente in questo ambiente. Il
+fixture sqlite condiviso usato da `Modules/Gdpr`/`Modules/Activity`
+(`prepareSharedFixcitySqliteForTesting()` → `database/fixcity_data.sqlite`) appartiene a un
+progetto diverso (tabelle `assets`/`customers`/`contacts`/...) e **non contiene** `users`/`roles`/
+`permissions`: non riutilizzabile per Auth. Vedi `Modules/Auth/tests/TestCase.php` per il dettaglio.
+
+### Risultato `vendor/bin/pest Modules/Auth/tests --no-coverage` (2026-07-24, questo ambiente)
+
+- **11-12 passed** (variano leggermente a seconda dei tentativi per via del gap di
+  infrastruttura descritto sopra, non della logica dei test): i test Unit puri
+  (`ResolveTeamMemberIdsActionTest`, 6 assert) e alcune `it()` di comando che verificano solo il
+  path di rifiuto (`assertExitCode(1)` senza toccare `roles`, es. "rejects unsupported ... roles").
+- **~62-67 failed**: quasi tutti `QueryException` "no such table: roles/users/..." — debito
+  infrastruttura test sopra, non bug nella logica portata. Una minoranza sono failure reali di
+  dominio (pannelli non registrati, shim `AccountFeatures` trivializzato, feature demo-alias
+  assente) documentate punto per punto sopra.
+- Nessun test è stato riscritto per "far passare" nascondendo queste differenze.

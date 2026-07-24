@@ -70,6 +70,52 @@ cd laravel && ./vendor/bin/pest Modules/Vehicle/tests/Feature --no-coverage
 
 `Modules/Vehicle/tests/Feature/VehicleCrudTest.php` e `AddVehicleDocumentActionTest.php` sono porting **corretti** (verificati contro il codice reale) del sorgente `gestionale_commesse`, ma **non passano ancora** per questo blocco — da ri-eseguire dopo la fix, non da riscrivere.
 
+Stesso blocco riconfermato **2026-07-24** portando i test `Auth` (22 Feature + 1 Unit) e `HR` (5
+Feature) da `gestionale_commesse` — vedi `Modules/Auth/docs/gestionale-commesse-port.md` e
+`Modules/HR/docs/gestionale-commesse-port.md` § "Test migrati dal sorgente". Anche qui: unico
+fixture sqlite condiviso disponibile (`database/fixcity_data.sqlite`, usato da
+`prepareSharedFixcitySqliteForTesting()` in `Modules/Gdpr`/`Modules/Activity`) appartiene a un
+progetto diverso e non contiene `users`/`roles`/`employees`/`absence_requests`: non riusabile per
+Auth/HR. Risultato onesto di quella sessione: Auth 11-12 passed / ~62-67 failed (quasi tutti
+`QueryException` "no such table"); HR 1 passed / 5 failed / 2 skipped (bug di tipo scoperto a
+parte, vedi doc HR). Nessun `RefreshDatabase` introdotto per aggirare il blocco.
+
+### ✅ Pattern che FUNZIONA davvero (verificato 2026-07-24, `Modules/Customer`)
+
+Contrariamente al risultato negativo su Auth/HR sopra, lo stesso identico meccanismo
+(`prepareSharedFixcitySqliteForTesting()`, definito in `Modules/Xot/tests/XotBaseTestCase.php:249`)
+**funziona per `Customer`**: 33/33 test passano (`vendor/bin/pest Modules/Customer/tests --no-coverage`
+rieseguito e confermato due volte). Il `TestCase.php` del modulo:
+
+```php
+abstract class TestCase extends XotBaseTestCase
+{
+    use DatabaseTransactions;
+
+    protected $connectionsToTransact = ['sqlite', 'xot', 'customer'];
+
+    protected function setUp(): void
+    {
+        $this->prepareSharedFixcitySqliteForTesting();
+        parent::setUp();
+    }
+}
+```
+
+`prepareSharedFixcitySqliteForTesting()` punta le connessioni `driver=sqlite` al file
+`database/fixcity_data.sqlite` (via `config()->set` + `DB::purge`), **non esegue migrazioni lui stesso**
+— le tabelle del modulo vengono comunque rese disponibili (probabilmente via convenzione Testbench che
+carica le migration del package/modulo in `getPackageProviders()`/`defineDatabaseMigrations()` a monte).
+
+**Perché non ha funzionato su Auth/HR ma sì su Customer**: ipotesi da verificare — Auth/HR hanno
+migrazioni con dipendenze incrociate (`users`, `roles`, `employees`) che potrebbero non risolversi
+nell'ordine giusto contro il file sqlite condiviso, mentre Customer ha uno schema più autonomo
+(customers/customer_sites/contacts/resellers, poche FK esterne). **Azione consigliata**: prima di
+scartare questo pattern per un modulo, provarlo per davvero (non assumere che fallisca come Auth/HR) —
+riapplicare lo stesso `TestCase.php` (copiare da `Modules/Customer/tests/TestCase.php`) e rieseguire i
+test. Se fallisce ancora su Auth/HR con lo stesso "no such table", il problema è probabilmente l'ordine
+di caricamento delle migration cross-modulo, non il meccanismo in sé.
+
 ## DoD
 
 - [ ] `phpunit.xml` non scavalca più `.env.testing` per `DB_CONNECTION`/`DB_DATABASE` (o profilo alternativo documentato e in uso)

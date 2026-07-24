@@ -2,25 +2,33 @@
 
 declare(strict_types=1);
 
-uses(\Modules\WorkOrder\Tests\TestCase::class);
+namespace Modules\WorkOrder\Tests\Feature;
 
-use Modules\User\Models\User;
 use Illuminate\Support\Facades\DB;
 use Modules\WorkOrder\Actions\ChangeWorkOrderStatusAction;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\WorkOrder\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('changes a work order status and records a status event and activity', function (): void {
     // Arrange
-    $user = User::factory()->create();
+    $userId = (int) DB::table('users')->insertGetId([
+        'name' => 'Utente Test',
+        'email' => 'status-user-'.uniqid().'@test.local',
+        'password' => bcrypt('secret'),
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
 
-    $customerId = DB::table('customers')->insertGetId([
+    $customerId = (int) DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',
         'is_active' => 1,
         'created_at' => now(),
         'updated_at' => now(),
     ]);
 
-    $openId = DB::table('work_order_statuses')->insertGetId([
+    $openId = (int) DB::table('work_order_statuses')->insertGetId([
         'code' => 'open',
         'name' => 'Open',
         'color' => null,
@@ -30,7 +38,7 @@ it('changes a work order status and records a status event and activity', functi
         'updated_at' => now(),
     ]);
 
-    $doneId = DB::table('work_order_statuses')->insertGetId([
+    $doneId = (int) DB::table('work_order_statuses')->insertGetId([
         'code' => 'done',
         'name' => 'Done',
         'color' => null,
@@ -45,33 +53,25 @@ it('changes a work order status and records a status event and activity', functi
         'customer_id' => $customerId,
         'title' => 'Test work order',
         'status_id' => $openId,
-        'description' => null,
-        'notes' => null,
-        'opened_at' => null,
-        'scheduled_at' => null,
-        'started_at' => null,
-        'completed_at' => null,
-        'closed_at' => null,
     ]);
 
     // Act
     $event = app(ChangeWorkOrderStatusAction::class)->execute(
         workOrder: $workOrder,
-        toStatusId: (int) $doneId,
-        changedByUserId: $user->id,
+        toStatusId: $doneId,
+        changedByUserId: $userId,
         note: 'Completed by test',
     );
 
     // Assert
     $workOrder->refresh();
-    expect((int) $workOrder->status_id)->toBe((int) $doneId);
+    expect($workOrder->status_id)->toBe($doneId);
 
-    expect((int) $event->work_order_id)->toBe((int) $workOrder->id);
-    expect((int) $event->from_status_id)->toBe((int) $openId);
-    expect((int) $event->to_status_id)->toBe((int) $doneId);
-    expect((int) $event->changed_by_user_id)->toBe((int) $user->id);
+    expect($event->work_order_id)->toBe($workOrder->id);
+    expect($event->from_status_id)->toBe($openId);
+    expect($event->to_status_id)->toBe($doneId);
+    expect($event->changed_by_user_id)->toBe($userId);
 
     expect(DB::table('work_order_status_events')->where('work_order_id', $workOrder->id)->count())->toBe(1);
     expect(DB::table('work_order_activities')->where('work_order_id', $workOrder->id)->where('type', 'status')->count())->toBe(1);
 });
-

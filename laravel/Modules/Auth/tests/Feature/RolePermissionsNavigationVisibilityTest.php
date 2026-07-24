@@ -21,8 +21,6 @@ beforeEach(function (): void {
 use Modules\Auth\Database\Seeders\ShieldPermissionsSeeder;
 use Modules\User\Models\User;
 
-use function Pest\Laravel\actingAs;
-use function Pest\Laravel\get;
 
 it('shows role permissions management in admin panel', function (): void {
     app(ShieldPermissionsSeeder::class)->run();
@@ -30,13 +28,13 @@ it('shows role permissions management in admin panel', function (): void {
     $admin = User::factory()->create();
     $admin->syncRoles(['admin']);
 
-    actingAs($admin);
+    $this->actingAs($admin);
 
-    get('/admin')
+    $this->get('/admin')
         ->assertOk()
         ->assertSee('/admin/shield/roles');
 
-    get('/admin/shield/roles')->assertOk();
+    $this->get('/admin/shield/roles')->assertOk();
 });
 
 it('hides role permissions navigation from operator panel', function (): void {
@@ -45,11 +43,11 @@ it('hides role permissions navigation from operator panel', function (): void {
     $operator = User::factory()->create();
     $operator->syncRoles(['operator']);
 
-    actingAs($operator);
+    $this->actingAs($operator);
 
-    get('/operator')
+    $this->get('/operator')
         ->assertOk()
         ->assertDontSee('/operator/shield/roles');
 
-    get('/operator/shield/roles')->assertForbidden();
+    $this->get('/operator/shield/roles')->assertForbidden();
 });

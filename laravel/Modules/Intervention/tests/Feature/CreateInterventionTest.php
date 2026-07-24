@@ -2,15 +2,16 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
 // NOTE: contains Platform deps — individual tests may need skip until Platform replica ready.
 
-use Modules\User\Models\User;
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Actions\CreateInterventionAction;
 use Modules\Intervention\Filament\Resources\InterventionResource;
+use Modules\Intervention\Tests\TestCase;
 use Modules\Platform\Infrastructure\Models\PlatformSetting;
+use Modules\User\Models\User;
 
 use function Pest\Laravel\actingAs;
 

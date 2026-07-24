@@ -2,19 +2,20 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
-use Modules\User\Models\User;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Modules\Intervention\Actions\ConfirmInterventionReportPaymentAction;
 use Modules\Intervention\Actions\CreateInterventionReportCheckoutAction;
 use Modules\Intervention\Actions\CreateInterventionReportShareLinkAction;
-use Modules\Intervention\Application\Payments\ReportPaymentGatewayInterface;
-use Modules\Intervention\Domain\Exceptions\ReportPaymentNotAvailableException;
+use Modules\Intervention\Contracts\ReportPaymentGatewayContract;
+use Modules\Intervention\Exceptions\ReportPaymentNotAvailableException;
 use Modules\Intervention\Models\Intervention;
+use Modules\Intervention\Tests\TestCase;
 use Modules\Signature\Actions\StoreSignatureForModelAction;
+use Modules\User\Models\User;
 
 const PAY_TINY_PNG = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=';
 
@@ -24,7 +25,7 @@ const PAY_TINY_PNG = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQA
  */
 function fakeGateway(): object
 {
-    return new class implements ReportPaymentGatewayInterface
+    return new class() implements ReportPaymentGatewayContract
     {
         /** @var array<string, mixed> */
         public array $lastCheckout = [];
@@ -89,7 +90,7 @@ beforeEach(fn () => Storage::fake('public'));
 
 it('creates a checkout for a signed, unpaid report and stores the session id', function (): void {
     $gateway = fakeGateway();
-    app()->instance(ReportPaymentGatewayInterface::class, $gateway);
+    app()->instance(ReportPaymentGatewayContract::class, $gateway);
 
     $intervention = payIntervention(['total_amount' => 150]);
     signPayIntervention($intervention);
@@ -105,7 +106,7 @@ it('creates a checkout for a signed, unpaid report and stores the session id', f
 });
 
 it('refuses checkout when there is no amount due', function (): void {
-    app()->instance(ReportPaymentGatewayInterface::class, fakeGateway());
+    app()->instance(ReportPaymentGatewayContract::class, fakeGateway());
     $intervention = payIntervention(['total_amount' => 0]);
     signPayIntervention($intervention);
 
@@ -114,7 +115,7 @@ it('refuses checkout when there is no amount due', function (): void {
 })->throws(ReportPaymentNotAvailableException::class);
 
 it('refuses checkout when the report is already paid', function (): void {
-    app()->instance(ReportPaymentGatewayInterface::class, fakeGateway());
+    app()->instance(ReportPaymentGatewayContract::class, fakeGateway());
     $intervention = payIntervention(['report_paid_at' => CarbonImmutable::now()]);
     signPayIntervention($intervention);
 
@@ -123,7 +124,7 @@ it('refuses checkout when the report is already paid', function (): void {
 })->throws(ReportPaymentNotAvailableException::class);
 
 it('refuses checkout when the report is not signed', function (): void {
-    app()->instance(ReportPaymentGatewayInterface::class, fakeGateway());
+    app()->instance(ReportPaymentGatewayContract::class, fakeGateway());
     $intervention = payIntervention();
 
     app(CreateInterventionReportCheckoutAction::class)
@@ -135,7 +136,7 @@ it('refuses checkout when the report is not signed', function (): void {
 it('marks the report paid when the session settled', function (): void {
     $gateway = fakeGateway();
     $gateway->paid = true;
-    app()->instance(ReportPaymentGatewayInterface::class, $gateway);
+    app()->instance(ReportPaymentGatewayContract::class, $gateway);
 
     $intervention = payIntervention(['report_payment_session_id' => 'cs_test_123']);
 
@@ -148,7 +149,7 @@ it('marks the report paid when the session settled', function (): void {
 it('does not mark paid when the session is not settled', function (): void {
     $gateway = fakeGateway();
     $gateway->paid = false;
-    app()->instance(ReportPaymentGatewayInterface::class, $gateway);
+    app()->instance(ReportPaymentGatewayContract::class, $gateway);
 
     $intervention = payIntervention(['report_payment_session_id' => 'cs_test_123']);
 
@@ -161,7 +162,7 @@ it('does not mark paid when the session is not settled', function (): void {
 it('returns false when no intervention matches the session', function (): void {
     $gateway = fakeGateway();
     $gateway->paid = true;
-    app()->instance(ReportPaymentGatewayInterface::class, $gateway);
+    app()->instance(ReportPaymentGatewayContract::class, $gateway);
 
     payIntervention(['report_payment_session_id' => 'cs_other']);
 
@@ -171,7 +172,7 @@ it('returns false when no intervention matches the session', function (): void {
 it('is idempotent and keeps the original paid timestamp', function (): void {
     $gateway = fakeGateway();
     $gateway->paid = true;
-    app()->instance(ReportPaymentGatewayInterface::class, $gateway);
+    app()->instance(ReportPaymentGatewayContract::class, $gateway);
 
     $paidAt = CarbonImmutable::parse('2026-05-20 08:00');
     $intervention = payIntervention(['report_payment_session_id' => 'cs_test_123', 'report_paid_at' => $paidAt]);
@@ -207,7 +208,7 @@ it('rejects an invalid signature payload', function (): void {
 });
 
 it('starts checkout from the public pay route and redirects to Stripe', function (): void {
-    app()->instance(ReportPaymentGatewayInterface::class, fakeGateway());
+    app()->instance(ReportPaymentGatewayContract::class, fakeGateway());
     $intervention = payIntervention(['total_amount' => 150]);
     signPayIntervention($intervention);
     $share = app(CreateInterventionReportShareLinkAction::class)->execute($intervention);
@@ -217,7 +218,7 @@ it('starts checkout from the public pay route and redirects to Stripe', function
 });
 
 it('redirects with an error when payment is unavailable', function (): void {
-    app()->instance(ReportPaymentGatewayInterface::class, fakeGateway());
+    app()->instance(ReportPaymentGatewayContract::class, fakeGateway());
     $intervention = payIntervention(['total_amount' => 0]);
     $share = app(CreateInterventionReportShareLinkAction::class)->execute($intervention);
 
@@ -228,7 +229,7 @@ it('redirects with an error when payment is unavailable', function (): void {
 it('confirms payment on the return route and marks it paid', function (): void {
     $gateway = fakeGateway();
     $gateway->paid = true;
-    app()->instance(ReportPaymentGatewayInterface::class, $gateway);
+    app()->instance(ReportPaymentGatewayContract::class, $gateway);
     $intervention = payIntervention(['total_amount' => 150, 'report_payment_session_id' => 'cs_test_123']);
     $share = app(CreateInterventionReportShareLinkAction::class)->execute($intervention);
 

@@ -2,17 +2,19 @@
 
 declare(strict_types=1);
 
-uses(\Modules\WorkOrder\Tests\TestCase::class);
+namespace Modules\WorkOrder\Tests\Feature;
 
-use Modules\User\Models\User;
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionMaterialLine;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\WorkOrder\Tests\TestCase;
+
+uses(TestCase::class);
 
 function makeSearchableWorkOrder(string $code, string $title, string $customerName): WorkOrder
 {
-    $customerId = DB::table('customers')->insertGetId([
+    $customerId = (int) DB::table('customers')->insertGetId([
         'legal_name' => $customerName,
         'is_active' => 1,
         'created_at' => now(),
@@ -23,27 +25,31 @@ function makeSearchableWorkOrder(string $code, string $title, string $customerNa
         'code' => $code,
         'customer_id' => $customerId,
         'title' => $title,
-        'created_at' => now(),
-        'updated_at' => now(),
     ]);
 }
 
 it('filters work orders by intervention note text', function (): void {
-    $user = User::factory()->create();
+    $userId = (int) DB::table('users')->insertGetId([
+        'name' => 'Ricercatore',
+        'email' => 'search-'.uniqid().'@test.local',
+        'password' => bcrypt('secret'),
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
 
     $matchingWorkOrder = makeSearchableWorkOrder('WO-SRCH-001', 'Commessa luci scala', 'Cliente Ricerca 1');
     $otherWorkOrder = makeSearchableWorkOrder('WO-SRCH-002', 'Commessa citofono', 'Cliente Ricerca 2');
 
     Intervention::query()->create([
         'work_order_id' => $matchingWorkOrder->id,
-        'performed_by_user_id' => $user->id,
+        'performed_by_user_id' => $userId,
         'scheduled_at' => now(),
         'notes' => 'Sostituzione lampadina LED corridoio piano 2',
     ]);
 
     Intervention::query()->create([
         'work_order_id' => $otherWorkOrder->id,
-        'performed_by_user_id' => $user->id,
+        'performed_by_user_id' => $userId,
         'scheduled_at' => now(),
         'notes' => 'Verifica pulsantiera citofono ingresso',
     ]);
@@ -58,14 +64,20 @@ it('filters work orders by intervention note text', function (): void {
 });
 
 it('filters work orders by intervention material text', function (): void {
-    $user = User::factory()->create();
+    $userId = (int) DB::table('users')->insertGetId([
+        'name' => 'Ricercatore Materiali',
+        'email' => 'search-mat-'.uniqid().'@test.local',
+        'password' => bcrypt('secret'),
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
 
     $matchingWorkOrder = makeSearchableWorkOrder('WO-SRCH-003', 'Commessa lampione', 'Cliente Ricerca 3');
     $otherWorkOrder = makeSearchableWorkOrder('WO-SRCH-004', 'Commessa emergenza', 'Cliente Ricerca 4');
 
     $matchingIntervention = Intervention::query()->create([
         'work_order_id' => $matchingWorkOrder->id,
-        'performed_by_user_id' => $user->id,
+        'performed_by_user_id' => $userId,
         'scheduled_at' => now(),
         'notes' => 'Ripristino linea esterna',
     ]);
@@ -80,7 +92,7 @@ it('filters work orders by intervention material text', function (): void {
 
     $otherIntervention = Intervention::query()->create([
         'work_order_id' => $otherWorkOrder->id,
-        'performed_by_user_id' => $user->id,
+        'performed_by_user_id' => $userId,
         'scheduled_at' => now(),
         'notes' => 'Controllo batteria tampone',
     ]);

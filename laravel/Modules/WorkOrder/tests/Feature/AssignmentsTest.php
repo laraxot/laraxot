@@ -2,68 +2,74 @@
 
 declare(strict_types=1);
 
-uses(\Modules\WorkOrder\Tests\TestCase::class);
+namespace Modules\WorkOrder\Tests\Feature;
 
-use Modules\User\Models\User;
 use Illuminate\Support\Facades\DB;
 use Modules\WorkOrder\Actions\AssignUserToWorkOrderAction;
 use Modules\WorkOrder\Actions\UnassignUserFromWorkOrderAction;
+use Modules\WorkOrder\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('assigns and unassigns a user to a work order idempotently', function (): void {
     // Arrange
-    $assigner = User::factory()->create();
-    $assignee = User::factory()->create();
+    $assignerId = (int) DB::table('users')->insertGetId([
+        'name' => 'Assegnatore',
+        'email' => 'assigner-'.uniqid().'@test.local',
+        'password' => bcrypt('secret'),
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+    $assigneeId = (int) DB::table('users')->insertGetId([
+        'name' => 'Assegnatario',
+        'email' => 'assignee-'.uniqid().'@test.local',
+        'password' => bcrypt('secret'),
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
 
-    $customerId = DB::table('customers')->insertGetId([
+    $customerId = (int) DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',
         'is_active' => 1,
         'created_at' => now(),
         'updated_at' => now(),
     ]);
 
-    $workOrderId = DB::table('work_orders')->insertGetId([
+    $workOrderId = (int) DB::table('work_orders')->insertGetId([
         'code' => 'WO-ASG-0001',
         'customer_id' => $customerId,
         'title' => 'Test work order',
-        'description' => null,
-        'notes' => null,
-        'opened_at' => null,
-        'scheduled_at' => null,
-        'started_at' => null,
-        'completed_at' => null,
-        'closed_at' => null,
         'created_at' => now(),
         'updated_at' => now(),
     ]);
 
     // Act (first time)
     $assignment1 = app(AssignUserToWorkOrderAction::class)->execute(
-        workOrderId: (int) $workOrderId,
-        userId: $assignee->id,
+        workOrderId: $workOrderId,
+        userId: $assigneeId,
         role: 'technician',
-        assignedByUserId: $assigner->id,
+        assignedByUserId: $assignerId,
     );
 
     // Act (idempotent update)
     $assignment2 = app(AssignUserToWorkOrderAction::class)->execute(
-        workOrderId: (int) $workOrderId,
-        userId: $assignee->id,
+        workOrderId: $workOrderId,
+        userId: $assigneeId,
         role: 'lead-technician',
-        assignedByUserId: $assigner->id,
+        assignedByUserId: $assignerId,
     );
 
     // Assert create/update
-    expect((int) $assignment1->id)->toBe((int) $assignment2->id);
+    expect($assignment1->id)->toBe($assignment2->id);
     expect(DB::table('work_order_assignments')->where('work_order_id', $workOrderId)->count())->toBe(1);
     expect(DB::table('work_order_assignments')->where('work_order_id', $workOrderId)->value('role'))->toBe('lead-technician');
 
     // Act (unassign)
     app(UnassignUserFromWorkOrderAction::class)->execute(
-        workOrderId: (int) $workOrderId,
-        userId: $assignee->id,
+        workOrderId: $workOrderId,
+        userId: $assigneeId,
     );
 
     // Assert delete
     expect(DB::table('work_order_assignments')->where('work_order_id', $workOrderId)->count())->toBe(0);
 });
-

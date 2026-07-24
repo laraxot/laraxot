@@ -17,16 +17,22 @@ use Modules\Xot\Tests\XotBaseTestCase;
  *
  * Usa MySQL da .env.testing (come Modules/User): utenti, ruoli e permessi
  * (Modules\User\Models\User/Role, Spatie Permission) vivono sulla connessione
- * "user"/mysql reale, già migrata esternamente (`php artisan migrate --env=testing`).
- * Non usare il fixture sqlite condiviso (fixcity_data.sqlite): non contiene le
- * tabelle users/roles/permissions.
+ * "user", creata dinamicamente da Modules\Tenant\Providers\TenantServiceProvider
+ * a partire da DB_DATABASE in .env.testing (`techplanner_data_test`, DB reale,
+ * gia' migrata con `php artisan migrate --env=testing`).
+ *
+ * NON includere "mysql" in $connectionsToTransact: `phpunit.xml` forza
+ * DB_CONNECTION=sqlite / DB_DATABASE=:memory: per la connessione di default,
+ * e quel valore :memory: si propaga anche a config('database.connections.mysql.database')
+ * (stessa env var DB_DATABASE), rompendo qualunque tentativo di aprire una
+ * transazione sulla connessione letterale "mysql".
  */
 abstract class TestCase extends XotBaseTestCase
 {
     use DatabaseTransactions;
 
     /** @var list<string> */
-    protected $connectionsToTransact = ['mysql', 'user'];
+    protected $connectionsToTransact = ['user'];
 
     protected function setUp(): void
     {

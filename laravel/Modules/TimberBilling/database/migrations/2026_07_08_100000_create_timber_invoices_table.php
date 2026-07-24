@@ -25,7 +25,8 @@ return new class() extends XotBaseMigration
             $table->text('notes')->nullable();
             $table->timestamp('issued_at')->nullable();
             $table->timestamp('stock_posted_at')->nullable();
-            $table->foreignId('created_by_user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->string('created_by_user_id', 36)->nullable()->index();
+            $table->foreign('created_by_user_id')->references('id')->on('users')->nullOnDelete();
 
             $table->unique(['kind', 'number']);
 

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Modules\Auth\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Role;
+use Modules\User\Models\Role;
 
 final class TimberRolesSeeder extends Seeder
 {

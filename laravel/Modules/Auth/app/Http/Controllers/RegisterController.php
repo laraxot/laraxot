@@ -13,7 +13,7 @@ use Illuminate\Validation\Rules\Password;
 use Illuminate\View\View;
 use Modules\Auth\Actions\StartEmailTwoFactorChallengeAction;
 use Modules\User\Models\User;
-use Spatie\Permission\Models\Role;
+use Modules\User\Models\Role;
 
 final class RegisterController extends Controller
 {

@@ -2,15 +2,16 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
-use Modules\User\Models\User;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Modules\Intervention\Actions\SaveInterventionReportAttachmentsAction;
 use Modules\Intervention\Models\Intervention;
+use Modules\Intervention\Tests\TestCase;
 use Modules\Signature\Models\Signature;
+use Modules\User\Models\User;
 
 // A minimal valid 1x1 transparent PNG.
 const TINY_PNG_DATA_URL = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=';

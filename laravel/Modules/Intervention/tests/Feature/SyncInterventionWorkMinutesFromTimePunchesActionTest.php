@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
-use Modules\User\Models\User;
 use Illuminate\Support\Facades\DB;
+use Modules\Intervention\Actions\ComputeWorkMinutesAction;
 use Modules\Intervention\Actions\SyncInterventionWorkMinutesFromTimePunchesAction;
-use Modules\Intervention\Domain\Actions\ComputeWorkMinutesAction;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\TimePunch;
+use Modules\Intervention\Tests\TestCase;
+use Modules\User\Models\User;
 
 it('syncs intervention work minutes from closed time punches', function (): void {
     // Arrange
@@ -69,7 +70,7 @@ it('syncs intervention work minutes from closed time punches', function (): void
         'ended_at' => null,
     ]);
 
-    $action = new SyncInterventionWorkMinutesFromTimePunchesAction(new ComputeWorkMinutesAction);
+    $action = new SyncInterventionWorkMinutesFromTimePunchesAction(new ComputeWorkMinutesAction());
 
     // Act
     $updated = $action->execute($intervention->refresh());

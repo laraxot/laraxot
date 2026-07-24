@@ -2,23 +2,24 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
 use Modules\Catalog\Models\Product;
 use Modules\Intervention\Actions\BuildInterventionReportDraftAction;
 use Modules\Intervention\Actions\MatchDictatedMaterialsToCatalogAction;
-use Modules\Intervention\Application\AI\InterventionReportExtractorInterface;
-use Modules\Intervention\Domain\DTO\DictatedMaterialLine;
-use Modules\Intervention\Domain\DTO\InterventionReportDraft;
+use Modules\Intervention\Contracts\InterventionReportExtractorContract;
+use Modules\Intervention\Data\DictatedMaterialLine;
+use Modules\Intervention\Data\InterventionReportDraft;
+use Modules\Intervention\Tests\TestCase;
 
 // ── Test double: a deterministic extractor returning a fixed payload ─────────
 
 /**
  * @param  array<string, mixed>  $payload
  */
-function fakeExtractor(array $payload): InterventionReportExtractorInterface
+function fakeExtractor(array $payload): InterventionReportExtractorContract
 {
-    return new class($payload) implements InterventionReportExtractorInterface
+    return new class($payload) implements InterventionReportExtractorContract
     {
         /** @param array<string, mixed> $payload */
         public function __construct(private array $payload) {}
@@ -30,7 +31,7 @@ function fakeExtractor(array $payload): InterventionReportExtractorInterface
     };
 }
 
-function buildDraftAction(InterventionReportExtractorInterface $extractor): BuildInterventionReportDraftAction
+function buildDraftAction(InterventionReportExtractorContract $extractor): BuildInterventionReportDraftAction
 {
     return new BuildInterventionReportDraftAction($extractor, app(MatchDictatedMaterialsToCatalogAction::class));
 }

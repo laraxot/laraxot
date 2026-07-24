@@ -140,3 +140,42 @@ Problemi trovati a inizio sessione:
 ## Stato registrazione
 
 `HR` **abilitato** (`true`) in `modules_statuses.json` in questa sessione, dopo PHPStan pulito.
+
+## Test migrati dal sorgente (2026-07-24)
+
+Sorgente: `/var/www/_bases/gestionale_commesse/tests/Feature/HR` (5 file). Tutti e 5 portati in
+`Modules/HR/tests/Feature/` con adattamenti (nessuno scartato per contenuto):
+
+- `Modules\HR\Models\{Employee,AbsenceRequest}` e `Modules\HR\Actions\*` al posto dei namespace
+  `Application\Actions`/`Infrastructure\Models` del sorgente (questo modulo è piatto: `app/Actions`,
+  `app/Models`, non `app/Application`/`app/Infrastructure`).
+- `EmployeeCrudTest`, `AddEmployeeAttachmentsTest`, `AddEmployeeDocumentActionMutationTest`,
+  `AbsenceRequestResourceTypeNormalizationTest`: portati 1:1, stesse asserzioni del sorgente
+  (le signature delle Action coinvolte combaciano con l'originale).
+- `AbsenceRequestWorkflowTest`: **`->skip()` esplicito con motivazione inline**, non riscritto per
+  aggirare il problema. `CreateAbsenceRequestAction::execute()`/`Approve/RejectAbsenceRequestAction`
+  dichiarano `int $userId`/`int $decidedByUserId` (`declare(strict_types=1)`), ma
+  `absence_requests.user_id`/`decided_by_user_id` sono `foreignUuid` (id utente reale =
+  `Modules\User\Models\User`, stringa UUID, vedi migrazione
+  `2026_02_17_120000_create_absence_requests_table.php`). Passare l'id UUID reale di un utente
+  causerebbe un `TypeError` immediato; passare un intero fittizio (comportamento accettato dalla
+  firma attuale) violerebbe comunque il vincolo FK verso `users`. **Bug scoperto portando questo
+  test**, non presente nel sorgente (dove `user_id` è un intero coerente con lo schema originale):
+  la firma delle due Action andrebbe cambiata da `int` a `string` in una story dedicata (fuori
+  scope di questo porting di test).
+
+### Debito noto — infrastruttura di test (non introdotto da questa sessione)
+
+Stesso gap descritto in `Modules/Auth/docs/gestionale-commesse-port.md` § Test migrati: nessun
+database di test migrato (né sqlite né MySQL) contiene le tabelle `employees`/`absence_requests`/
+`employee_documents`/ecc. di questo modulo in questo ambiente.
+
+### Risultato `vendor/bin/pest Modules/HR/tests --no-coverage` (2026-07-24, questo ambiente)
+
+- **1 passed**: `AbsenceRequestResourceTypeNormalizationTest` (2 assert, nessuna dipendenza da DB,
+  usa reflection su metodi privati statici di `AbsenceRequestResource`).
+- **2 skipped**: `AbsenceRequestWorkflowTest` (bug di tipo int/UUID descritto sopra).
+- **5 failed**: `QueryException` "no such table: employees" — debito infrastruttura test (sopra),
+  non bug nella logica portata (le stesse Action, chiamate con un `Employee` già persistito,
+  funzionano; è la creazione dell'`Employee` stesso a fallire per assenza di migrazioni nel DB di
+  test).

@@ -2,14 +2,16 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
-use Modules\User\Models\User;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
+use Livewire\Features\SupportTesting\Testable;
 use Livewire\Livewire;
 use Modules\Intervention\Filament\Pages\InterventionCalendar;
 use Modules\Intervention\Models\Intervention;
+use Modules\Intervention\Tests\TestCase;
+use Modules\User\Models\User;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -86,7 +88,7 @@ it('returns calendar events with expected props', function (): void {
     ]);
 
     // Act
-    /** @var \Livewire\Features\SupportTesting\Testable<InterventionCalendar> $component */
+    /** @var Testable<InterventionCalendar> $component */
     $component = Livewire::test(InterventionCalendar::class);
     $events = $component->instance()->getCalendarEvents('2026-01-01', '2026-01-31');
 
@@ -144,7 +146,7 @@ it('filters calendar events by operator when in operator panel', function (): vo
     actingAs($currentOperator);
 
     // Act
-    /** @var \Livewire\Features\SupportTesting\Testable<InterventionCalendar> $component */
+    /** @var Testable<InterventionCalendar> $component */
     $component = Livewire::test(InterventionCalendar::class);
     $events = $component->instance()->getCalendarEvents('2026-02-01', '2026-02-28');
 
@@ -202,7 +204,7 @@ it('keeps gerardo operator calendar limited to his own interventions', function 
     filament()->setCurrentPanel('operator');
     actingAs($gerardo);
 
-    /** @var \Livewire\Features\SupportTesting\Testable<InterventionCalendar> $component */
+    /** @var Testable<InterventionCalendar> $component */
     $component = Livewire::test(InterventionCalendar::class);
     $events = $component->instance()->getCalendarEvents('2026-02-01', '2026-02-28');
     $legend = $component->instance()->getOperatorLegend();
@@ -267,7 +269,7 @@ it('shows gerardo the interventions of his assigned team in admin calendar', fun
     filament()->setCurrentPanel('admin');
     actingAs($gerardo);
 
-    /** @var \Livewire\Features\SupportTesting\Testable<InterventionCalendar> $component */
+    /** @var Testable<InterventionCalendar> $component */
     $component = Livewire::test(InterventionCalendar::class);
     $events = $component->instance()->getCalendarEvents('2026-02-01', '2026-02-28');
     $legend = $component->instance()->getOperatorLegend();
@@ -300,7 +302,7 @@ it('opens and closes the intervention detail modal', function (): void {
         'amount' => 195.00,
     ]);
 
-    /** @var \Livewire\Features\SupportTesting\Testable<InterventionCalendar> $component */
+    /** @var Testable<InterventionCalendar> $component */
     $component = Livewire::test(InterventionCalendar::class);
 
     // Act + Assert (open)
@@ -349,7 +351,7 @@ it('returns operator legend and respects operator panel filtering', function ():
 
     // Act (admin / no panel filter)
     filament()->setCurrentPanel(null);
-    /** @var \Livewire\Features\SupportTesting\Testable<InterventionCalendar> $component */
+    /** @var Testable<InterventionCalendar> $component */
     $component = Livewire::test(InterventionCalendar::class);
     $legend = $component->instance()->getOperatorLegend();
 
@@ -381,7 +383,7 @@ it('keeps calendar creation disabled for the gerardo operator context', function
     filament()->setCurrentPanel('operator');
     actingAs($user);
 
-    /** @var \Livewire\Features\SupportTesting\Testable<InterventionCalendar> $component */
+    /** @var Testable<InterventionCalendar> $component */
     $component = Livewire::test(InterventionCalendar::class);
     $url = $component->instance()->getCreateInterventionUrl('2026-04-12', true, 'timeGridWeek', '2026-04-07');
 
@@ -400,7 +402,7 @@ it('builds create url from a timed calendar click when operator calendar creatio
     filament()->setCurrentPanel('operator');
     actingAs($user);
 
-    /** @var \Livewire\Features\SupportTesting\Testable<InterventionCalendar> $component */
+    /** @var Testable<InterventionCalendar> $component */
     $component = Livewire::test(InterventionCalendar::class);
     $url = $component->instance()->getCreateInterventionUrl('2026-04-12T14:30:00', false, 'timeGridDay', '2026-04-12');
 
@@ -427,7 +429,7 @@ it('normalizes timed calendar clicks to all-day scheduling for Gerardo', functio
     filament()->setCurrentPanel('admin');
     actingAs($user);
 
-    /** @var \Livewire\Features\SupportTesting\Testable<InterventionCalendar> $component */
+    /** @var Testable<InterventionCalendar> $component */
     $component = Livewire::test(InterventionCalendar::class);
     $url = $component->instance()->getCreateInterventionUrl('2026-04-12T14:30:00', false, 'timeGridDay', '2026-04-12');
 
@@ -458,7 +460,7 @@ it('adds a visual end time for scheduled interventions without an actual end', f
         'amount' => null,
     ]);
 
-    /** @var \Livewire\Features\SupportTesting\Testable<InterventionCalendar> $component */
+    /** @var Testable<InterventionCalendar> $component */
     $component = Livewire::test(InterventionCalendar::class);
     $events = $component->instance()->getCalendarEvents('2026-03-01', '2026-03-31');
 
@@ -489,7 +491,7 @@ it('stores a calendar-aware view url when opening intervention detail', function
         'work_minutes' => 30,
     ]);
 
-    /** @var \Livewire\Features\SupportTesting\Testable<InterventionCalendar> $component */
+    /** @var Testable<InterventionCalendar> $component */
     $component = Livewire::test(InterventionCalendar::class);
 
     $component->call('openInterventionDetail', $intervention->id, 'timeGridWeek', '2026-04-13')

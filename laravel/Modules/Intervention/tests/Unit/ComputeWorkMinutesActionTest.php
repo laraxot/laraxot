@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
 use Carbon\CarbonImmutable;
-use Modules\Intervention\Domain\Actions\ComputeWorkMinutesAction;
-use Modules\Intervention\Domain\Exceptions\InvalidTimeInterval;
-use Modules\Intervention\Domain\ValueObjects\TimeInterval;
+use Modules\Intervention\Actions\ComputeWorkMinutesAction;
+use Modules\Intervention\Exceptions\InvalidTimeInterval;
+use Modules\Intervention\Tests\TestCase;
+use Modules\Intervention\ValueObjects\TimeInterval;
 
 it('computes total minutes from intervals', function (): void {
     // Arrange
@@ -37,4 +38,3 @@ it('rejects invalid intervals', function (): void {
         CarbonImmutable::parse('2026-02-16 09:00:00'),
     );
 })->throws(InvalidTimeInterval::class);
-

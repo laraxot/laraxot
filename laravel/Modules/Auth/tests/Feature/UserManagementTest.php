@@ -10,7 +10,7 @@ uses(TestCase::class);
 
 use Illuminate\Support\Facades\Hash;
 use Modules\User\Models\User;
-use Spatie\Permission\Models\Role;
+use Modules\User\Models\Role;
 
 it('creates a user and assigns roles', function (): void {
     Role::query()->firstOrCreate(['name' => 'admin']);

@@ -13,22 +13,19 @@ use Illuminate\Support\Facades\Notification;
 use Modules\Auth\Actions\ApproveRegisteredUserAction;
 use Modules\Auth\Notifications\EmailTwoFactorCodeNotification;
 use Modules\User\Models\User;
-use Spatie\Permission\Models\Role;
+use Modules\User\Models\Role;
 
-use function Pest\Laravel\actingAs;
-use function Pest\Laravel\get;
-use function Pest\Laravel\post;
 
 it('shows approval based registration when demo mode is disabled', function (): void {
     config()->set('app.demo_mode', false);
 
-    get('/register')
+    $this->get('/register')
         ->assertOk()
         ->assertSee('Richiedi accesso');
 
     config()->set('app.demo_mode', true);
 
-    get('/register')
+    $this->get('/register')
         ->assertOk()
         ->assertSee('Crea account demo');
 });
@@ -38,7 +35,7 @@ it('registers a production user as pending approval without roles or login', fun
     config()->set('app.demo_mode', false);
     config()->set('auth.email_2fa.enabled', true);
 
-    post('/register', [
+    $this->post('/register', [
         'name' => 'Utente Da Approvare',
         'email' => 'pending@example.com',
         'password' => 'Password12345',
@@ -62,7 +59,7 @@ it('blocks login for users pending admin approval', function (): void {
     ]);
     $user->syncRoles([Role::findOrCreate('operator')]);
 
-    post('/login', [
+    $this->post('/login', [
         'email' => 'blocked@example.com',
         'password' => 'Password12345',
         'accept_legal' => '1',
@@ -90,7 +87,7 @@ it('registers a demo user and sends the email two factor code', function (): voi
     Role::findOrCreate('admin');
     Role::findOrCreate('operator');
 
-    post('/register', [
+    $this->post('/register', [
         'name' => 'Nuovo Demo',
         'email' => 'nuovo.demo@example.com',
         'password' => 'Password12345',
@@ -114,9 +111,9 @@ it('requires email two factor verification before accessing a panel', function (
     $user = User::factory()->create();
     $user->syncRoles([$role]);
 
-    actingAs($user);
+    $this->actingAs($user);
 
-    get('/operator')
+    $this->get('/operator')
         ->assertRedirect(route('email-two-factor.challenge'));
 
     Notification::assertSentTo($user, EmailTwoFactorCodeNotification::class);
@@ -127,7 +124,7 @@ it('accepts a valid email two factor code', function (): void {
 
     $user = User::factory()->create();
 
-    actingAs($user)
+    $this->actingAs($user)
         ->withSession([
             'auth.email_2fa.user_id' => $user->id,
             'auth.email_2fa.code_hash' => Hash::make('123456'),
@@ -135,7 +132,7 @@ it('accepts a valid email two factor code', function (): void {
             'auth.email_2fa.intended_url' => url('/operator'),
         ]);
 
-    post('/email-two-factor', [
+    $this->post('/email-two-factor', [
         'code' => '123456',
     ])->assertRedirect('/operator');
 

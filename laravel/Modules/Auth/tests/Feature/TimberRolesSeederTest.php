@@ -9,7 +9,7 @@ use Modules\Auth\Tests\TestCase;
 uses(TestCase::class);
 
 use Modules\Auth\Database\Seeders\TimberRolesSeeder;
-use Spatie\Permission\Models\Role;
+use Modules\User\Models\Role;
 
 it('creates the timber, timber_operator and timber_admin roles', function (): void {
     app(TimberRolesSeeder::class)->run();

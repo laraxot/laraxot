@@ -2,20 +2,23 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
 // NOTE: contains Platform deps — individual tests may need skip until Platform replica ready.
 
-use Modules\User\Models\User;
+use Illuminate\Support\Facades\DB;
 use Livewire\Livewire;
 use Modules\Auth\Database\Seeders\ShieldPermissionsSeeder;
 use Modules\Catalog\Models\Product;
 use Modules\Intervention\Filament\Resources\InterventionResource\Pages\EditIntervention;
 use Modules\Intervention\Filament\Resources\InterventionResource\RelationManagers\InventoryMovementsRelationManager;
+use Modules\Intervention\Models\Intervention;
+use Modules\Intervention\Tests\TestCase;
 use Modules\Inventory\Models\InventoryMovement;
 use Modules\Inventory\Models\Warehouse;
 use Modules\Inventory\Models\WarehouseLocation;
 use Modules\Platform\Infrastructure\Models\PlatformSetting;
+use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrderStatus;
 
 use function Pest\Laravel\actingAs;
@@ -31,7 +34,7 @@ it('hides intervention materials section when inventory link to interventions is
         ['value_json' => ['value' => false], 'updated_by_user_id' => $user->id],
     );
 
-    $customerId = \Illuminate\Support\Facades\DB::table('customers')->insertGetId([
+    $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Cliente Test Materiali',
         'is_active' => 1,
         'created_at' => now(),
@@ -43,7 +46,7 @@ it('hides intervention materials section when inventory link to interventions is
         ['name' => 'In lavorazione', 'color' => 'amber', 'is_terminal' => 0, 'sort_order' => 30, 'created_at' => now(), 'updated_at' => now()],
     );
 
-    $workOrderId = \Illuminate\Support\Facades\DB::table('work_orders')->insertGetId([
+    $workOrderId = DB::table('work_orders')->insertGetId([
         'code' => 'WO-MAT-OFF',
         'customer_id' => $customerId,
         'status_id' => $status->id,
@@ -52,7 +55,7 @@ it('hides intervention materials section when inventory link to interventions is
         'updated_at' => now(),
     ]);
 
-    $interventionId = \Illuminate\Support\Facades\DB::table('interventions')->insertGetId([
+    $interventionId = DB::table('interventions')->insertGetId([
         'work_order_id' => $workOrderId,
         'performed_by_user_id' => $user->id,
         'scheduled_at' => now(),
@@ -81,7 +84,7 @@ it('saves intervention materials with warehouse location from the relation manag
         ['value_json' => ['value' => true], 'updated_by_user_id' => $user->id],
     );
 
-    $customerId = \Illuminate\Support\Facades\DB::table('customers')->insertGetId([
+    $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Cliente Test Materiali Con Ubicazione',
         'is_active' => 1,
         'created_at' => now(),
@@ -93,7 +96,7 @@ it('saves intervention materials with warehouse location from the relation manag
         ['name' => 'In lavorazione', 'color' => 'amber', 'is_terminal' => 0, 'sort_order' => 30, 'created_at' => now(), 'updated_at' => now()],
     );
 
-    $workOrderId = \Illuminate\Support\Facades\DB::table('work_orders')->insertGetId([
+    $workOrderId = DB::table('work_orders')->insertGetId([
         'code' => 'WO-MAT-LOC',
         'customer_id' => $customerId,
         'status_id' => $status->id,
@@ -102,7 +105,7 @@ it('saves intervention materials with warehouse location from the relation manag
         'updated_at' => now(),
     ]);
 
-    $interventionId = \Illuminate\Support\Facades\DB::table('interventions')->insertGetId([
+    $interventionId = DB::table('interventions')->insertGetId([
         'work_order_id' => $workOrderId,
         'performed_by_user_id' => $user->id,
         'scheduled_at' => now(),
@@ -146,7 +149,7 @@ it('saves intervention materials with warehouse location from the relation manag
     actingAs($user);
 
     Livewire::test(InventoryMovementsRelationManager::class, [
-        'ownerRecord' => \Modules\Intervention\Models\Intervention::query()->findOrFail($interventionId),
+        'ownerRecord' => Intervention::query()->findOrFail($interventionId),
         'pageClass' => EditIntervention::class,
     ])->callTableAction('create', data: [
         'product_id' => $product->id,

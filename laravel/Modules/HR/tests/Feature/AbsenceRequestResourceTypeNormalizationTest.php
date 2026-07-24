@@ -2,11 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\HR\Tests\Feature;
-
-use Modules\HR\Tests\TestCase;
-
-uses(TestCase::class);
+uses(\Modules\HR\Tests\TestCase::class);
 
 use Modules\HR\Filament\Resources\AbsenceRequestResource;
 
@@ -36,3 +32,4 @@ it('translates legacy and canonical absence type values in italian', function ()
         app()->setLocale($previousLocale);
     }
 });
+

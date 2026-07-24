@@ -2,13 +2,24 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Customer\Tests\TestCase::class);
+namespace Modules\Customer\Tests\Feature;
 
+use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Http;
-use Modules\Customer\Application\Lookup\CompanyLookupProviderInterface;
-use Modules\Customer\Application\Lookup\CompositeCompanyLookupProvider;
-use Modules\Customer\Application\Lookup\OpenCorporatesCompanyLookupProvider;
-use Modules\Customer\Application\Lookup\ViesCompanyLookupProvider;
+use Modules\AiAssistant\Lookup\WebAiCompanyLookupProvider;
+use Modules\Customer\Lookup\CompanyLookupProviderInterface;
+use Modules\Customer\Lookup\CompositeCompanyLookupProvider;
+use Modules\Customer\Lookup\OpenApiCompanyLookupProvider;
+use Modules\Customer\Lookup\OpenCorporatesCompanyLookupProvider;
+use Modules\Customer\Lookup\ViesCompanyLookupProvider;
+use Modules\Customer\Tests\TestCase;
+
+/*
+ * Migrato da gestionale_commesse/tests/Feature/Customers/CompanyLookupSourcesTest.php.
+ * Namespace adattato: Modules\Customers\Application\Lookup -> Modules\Customer\Lookup.
+ * WebAiCompanyLookupProvider vive ora in Modules\AiAssistant\Lookup (era Application\Lookup).
+ */
+uses(TestCase::class);
 
 it('resolves a company from its VAT via VIES (free, no captcha)', function (): void {
     Http::fake(['ec.europa.eu/*' => Http::response([
@@ -52,7 +63,7 @@ it('searches by NAME via OpenAPI Italia (Registro Imprese) when a token is set',
         ]],
     ], 200)]);
 
-    $results = app(\Modules\Customer\Application\Lookup\OpenApiCompanyLookupProvider::class)->search('Biellemec');
+    $results = app(OpenApiCompanyLookupProvider::class)->search('Biellemec');
 
     expect($results)->toHaveCount(1);
     expect($results[0]['legal_name'])->toBe('BIELLEMEC S.R.L.');
@@ -76,7 +87,7 @@ it('resolves a company by VAT via OpenAPI /IT-advanced (phone, email/PEC include
         ]],
     ], 200)]);
 
-    $results = app(\Modules\Customer\Application\Lookup\OpenApiCompanyLookupProvider::class)->search('IT00154900269');
+    $results = app(OpenApiCompanyLookupProvider::class)->search('IT00154900269');
 
     expect($results)->toHaveCount(1);
     expect($results[0]['legal_name'])->toBe('TOGNANA PORCELLANE S.P.A.');
@@ -88,14 +99,14 @@ it('resolves a company by VAT via OpenAPI /IT-advanced (phone, email/PEC include
     expect($results[0]['email'])->toBe('tognana@pec.it');
 
     // The VAT endpoint (not the name search) was used.
-    Http::assertSent(fn ($request): bool => str_contains((string) $request->url(), '/IT-advanced/00154900269'));
+    Http::assertSent(fn (Request $request): bool => str_contains($request->url(), '/IT-advanced/00154900269'));
 });
 
 it('OpenAPI Italia is disabled (no call) without a token', function (): void {
     config(['company_lookup.openapi_token' => '']);
     Http::fake();
 
-    expect(app(\Modules\Customer\Application\Lookup\OpenApiCompanyLookupProvider::class)->search('Biellemec'))->toBe([]);
+    expect(app(OpenApiCompanyLookupProvider::class)->search('Biellemec'))->toBe([]);
     Http::assertNothingSent();
 });
 
@@ -145,18 +156,18 @@ it('uses Brave Search (no captcha) instead of DuckDuckGo when a key is set', fun
         'api.search.brave.com/*' => Http::response(['web' => ['results' => [
             ['title' => 'Tognana Porcellane S.p.A.', 'url' => 'https://tognana.com', 'description' => 'P.IVA IT00154900269 - Selvana di Treviso (TV)'],
         ]]], 200),
-        '*/chat/completions' => Http::response(['choices' => [['message' => ['content' => json_encode(['candidates' => [
+        '*/chat/completions' => Http::response(['choices' => [['message' => ['content' => \Safe\json_encode(['candidates' => [
             ['legal_name' => 'Tognana Porcellane S.p.A.', 'vat_number' => 'IT00154900269', 'city' => 'Selvana di Treviso'],
         ]])]]]], 200),
     ]);
 
-    $results = app(\Modules\AiAssistant\Application\Lookup\WebAiCompanyLookupProvider::class)->search('Tognana');
+    $results = app(WebAiCompanyLookupProvider::class)->search('Tognana');
 
     expect($results)->toHaveCount(1);
     expect($results[0]['legal_name'])->toBe('Tognana Porcellane S.p.A.');
     // Brave used (with its auth header), DuckDuckGo not touched.
-    Http::assertSent(fn ($request): bool => str_contains((string) $request->url(), 'api.search.brave.com') && $request->hasHeader('X-Subscription-Token', 'brave-key-123'));
-    Http::assertNotSent(fn ($request): bool => str_contains((string) $request->url(), 'duckduckgo'));
+    Http::assertSent(fn (Request $request): bool => str_contains($request->url(), 'api.search.brave.com') && $request->hasHeader('X-Subscription-Token', 'brave-key-123'));
+    Http::assertNotSent(fn (Request $request): bool => str_contains($request->url(), 'duckduckgo'));
 });
 
 it('web+AI skips the LLM when DuckDuckGo returns an antibot/captcha page', function (): void {
@@ -166,11 +177,11 @@ it('web+AI skips the LLM when DuckDuckGo returns an antibot/captcha page', funct
         '*/chat/completions' => Http::response(['choices' => [['message' => ['content' => '{"candidates":[]}']]]], 200),
     ]);
 
-    $results = app(\Modules\AiAssistant\Application\Lookup\WebAiCompanyLookupProvider::class)->search('Idraulica Verdi');
+    $results = app(WebAiCompanyLookupProvider::class)->search('Idraulica Verdi');
 
     expect($results)->toBe([]);
     // No wasted LLM call on the captcha page.
-    Http::assertNotSent(fn ($request): bool => str_contains((string) $request->url(), 'chat/completions'));
+    Http::assertNotSent(fn (Request $request): bool => str_contains($request->url(), 'chat/completions'));
 });
 
 it('the bound provider is the composite (VIES + OpenCorporates + web)', function (): void {

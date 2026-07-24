@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
-use Modules\User\Models\User;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Actions\CreateInterventionReportShareLinkAction;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionReportShare;
+use Modules\Intervention\Tests\TestCase;
+use Modules\User\Models\User;
 
 function makeShareIntervention(): Intervention
 {

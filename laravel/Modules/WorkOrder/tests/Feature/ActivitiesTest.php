@@ -2,11 +2,14 @@
 
 declare(strict_types=1);
 
-uses(\Modules\WorkOrder\Tests\TestCase::class);
+namespace Modules\WorkOrder\Tests\Feature;
 
-use Modules\User\Models\User;
 use Illuminate\Support\Facades\DB;
+use Modules\User\Models\User;
 use Modules\WorkOrder\Actions\AddWorkOrderActivityAction;
+use Modules\WorkOrder\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('adds a work order activity', function (): void {
     // Arrange
@@ -49,4 +52,3 @@ it('adds a work order activity', function (): void {
     expect($activity->body)->toBe('Hello activity');
     expect(DB::table('work_order_activities')->where('work_order_id', $workOrderId)->count())->toBe(1);
 });
-

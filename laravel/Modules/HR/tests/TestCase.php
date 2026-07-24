@@ -15,20 +15,21 @@ use Modules\Xot\Tests\XotBaseTestCase;
 /**
  * Base test case per il modulo HR.
  *
- * Usa fixcity_data.sqlite condiviso (no RefreshDatabase / migrate:fresh).
- * prepareSharedFixcitySqliteForTesting() gira prima dell'inizio delle transazioni.
+ * NOTA: `prepareSharedFixcitySqliteForTesting()` (vedi Modules/Gdpr, Modules/Activity)
+ * punta le connessioni sqlite su `database/fixcity_data.sqlite`, un fixture di UN ALTRO
+ * progetto (tabelle: assets/customers/contacts/resellers/...). Non contiene `users`,
+ * `roles`, `employees`: inutile qui, per questo non viene usato. Il database di test
+ * reale per Auth/HR resta debito (vedi Modules/HR/docs/gestionale-commesse-port.md e
+ * docs/gestionale-technical-debt.md D6/D13): senza un fixture sqlite pre-migrato per
+ * QUESTO monorepo (o senza `techplanner_data_test` in MySQL), i test Feature che
+ * scrivono su tabelle reali falliscono con "no such table" anche con questo TestCase.
  */
 abstract class TestCase extends XotBaseTestCase
 {
     use DatabaseTransactions;
 
-    /** @var list<string> */
-    protected $connectionsToTransact = ['sqlite'];
-
     protected function setUp(): void
     {
-        $this->prepareSharedFixcitySqliteForTesting();
-
         parent::setUp();
 
         config(['auth.providers.users.model' => User::class]);

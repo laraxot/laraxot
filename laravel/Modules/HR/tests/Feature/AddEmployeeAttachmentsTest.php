@@ -2,11 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\HR\Tests\Feature;
-
-use Modules\HR\Tests\TestCase;
-
-uses(TestCase::class);
+uses(\Modules\HR\Tests\TestCase::class);
 
 use Illuminate\Support\Facades\Storage;
 use Modules\HR\Actions\AddEmployeeDocumentAction;
@@ -79,3 +75,4 @@ it('adds employee documents, medical visits, and trainings with optional attachm
     expect($training->completed_at?->toDateString())->toBe('2026-01-10');
     expect($training->expires_at?->toDateString())->toBe('2027-01-10');
 });
+

@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
-use Modules\User\Models\User;
 use Carbon\CarbonImmutable;
 use Modules\Intervention\Actions\UpsertDailyNoteForUserAction;
 use Modules\Intervention\Models\DailyNote;
+use Modules\Intervention\Tests\TestCase;
+use Modules\User\Models\User;
 
 it('upserts a daily note for a user and date', function (): void {
     $user = User::factory()->create();

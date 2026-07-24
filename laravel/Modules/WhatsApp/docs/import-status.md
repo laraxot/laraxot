@@ -30,3 +30,20 @@ related:
 - [ ] PHPStan L10 rieseguire post-enable
 
 Matrice: [gc-modules-runtime-matrix.md](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md).
+
+## Test migrati dal sorgente
+
+Da `gestionale_commesse/tests/Feature/WhatsApp/`:
+
+- `OrganizeWhatsAppRequestActionTest.php` → `tests/Feature/OrganizeWhatsAppRequestActionTest.php` (tutti gli 8 scenari: work-order mode, customer mode, appuntamento valido/non valido, match per telefono/nome, riuso work order aperto, fallback placeholder).
+- `GetWhatsAppInboxQueryTest.php` → `tests/Feature/GetWhatsAppInboxQueryTest.php` (tutti e 4 gli scenari: riepilogo ordinato per recency, conversazione senza messaggi, limite, thread cronologico).
+- `WhatsAppInboxPageTest.php` → `tests/Feature/WhatsAppInboxPageTest.php` (tutti e 3 gli scenari, testati via `Livewire::test()` senza autenticazione: `mount()`/`conversationList()`/`thread()` non invocano il Gate).
+- `WhatsAppAiIntegrationTest.php` + `ExecuteOrganizeWhatsAppProposalTest.php` → `tests/Feature/WhatsAppAiIntegrationTest.php`: webhook Meta/YCloud idempotenti, invio outbound Meta/YCloud, esecuzione proposta `organize_whatsapp_request` (successo + fallimento senza messaggio collegato).
+
+Adattamenti: `Modules\WhatsApp\{Application\Actions,Application\Queries,Application\Jobs,Infrastructure\Models}` → `Modules\WhatsApp\{Actions,Queries,Jobs,Models}`; `Modules\Customers\Infrastructure\Models` → `Modules\Customer\Models`; `Modules\WorkOrders\Infrastructure\Models` → `Modules\WorkOrder\Models`; `Modules\AiAssistant\Infrastructure\Models` → `Modules\AiAssistant\Models`; `Modules\Platform\Infrastructure\Models` → `Modules\Platform\Models`.
+
+**Non portato:**
+- "classifies an inbound WhatsApp message with OpenAI ..." e "keeps a single live proposal per conversation ..." (`ProcessWhatsAppMessageAction` end-to-end) e "executes a WhatsApp proposal by appending an activity ..." — stessa ragione documentata per Email: dipendono da `ShieldPermissionsSeeder`/ruoli admin generati via Artisan `shield:generate`, non eseguibile in modo affidabile in questo ambiente di test.
+- "renders the WhatsApp AI settings page and persists configuration" — `WhatsAppSettingsPage::canAccess()` usa `Gate::allows('manage-whatsapp-ai')`, sempre negato dallo shim `App\Support\AccountFeatures::hasFeature()` (debito tecnico noto, non specifico di WhatsApp).
+
+**Esito esecuzione (2026-07-24):** tutti i test con scritture DB falliscono con `SQLSTATE[HY000]: no such table` (`whatsapp_conversations`, `platform_settings`, `ai_threads`, …) — le migrazioni non sono applicate al DB `:memory:` di Pest in questo ambiente (vedi `laravel/docs/gestionale-commesse-debito-tecnico.md`), non un difetto di adattamento del test.

@@ -2,24 +2,34 @@
 
 declare(strict_types=1);
 
-uses(\Modules\WorkOrder\Tests\TestCase::class);
+namespace Modules\WorkOrder\Tests\Feature;
 
-use Modules\User\Models\User;
 use Illuminate\Support\Facades\DB;
+use Modules\Billing\Actions\BuildWorkOrderPreInvoiceAction;
 use Modules\Intervention\Models\Intervention;
 use Modules\WorkOrder\Filament\Resources\WorkOrderResource;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\WorkOrder\Tests\TestCase;
+
+uses(TestCase::class);
 
 function makeWorkOrderWithEffort(?int $plannedMinutes, int $actualMinutes): WorkOrder
 {
-    $customerId = DB::table('customers')->insertGetId([
+    $customerId = (int) DB::table('customers')->insertGetId([
         'legal_name' => 'Cliente Tempi',
         'is_active' => 1,
         'created_at' => now(),
         'updated_at' => now(),
     ]);
 
-    /** @var WorkOrder $workOrder */
+    $userId = (int) DB::table('users')->insertGetId([
+        'name' => 'Tecnico Effort',
+        'email' => 'effort-'.uniqid().'@test.local',
+        'password' => bcrypt('secret'),
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
     $workOrder = WorkOrder::query()->create([
         'customer_id' => $customerId,
         'title' => 'Impianto radiante',
@@ -28,7 +38,7 @@ function makeWorkOrderWithEffort(?int $plannedMinutes, int $actualMinutes): Work
 
     Intervention::query()->create([
         'work_order_id' => $workOrder->id,
-        'performed_by_user_id' => User::factory()->create()->id,
+        'performed_by_user_id' => $userId,
         'scheduled_at' => now(),
         'work_minutes' => $actualMinutes,
         'amount' => 200,
@@ -78,7 +88,6 @@ it('summarises planned, actual and variance for the work order form', function (
 it('warns on the pre-invoice when there are undecided extras', function (): void {
     $workOrder = makeWorkOrderWithEffort(plannedMinutes: 120, actualMinutes: 120);
 
-    /** @var Intervention $intervention */
     $intervention = $workOrder->interventions()->firstOrFail();
 
     // Materiale fuori preventivo su cui nessuno ha ancora deciso.
@@ -93,8 +102,7 @@ it('warns on the pre-invoice when there are undecided extras', function (): void
         'extra_status_code' => 'pending',
     ]);
 
-    $draft = app(\Modules\Billing\Actions\BuildWorkOrderPreInvoiceAction::class)
-        ->execute($workOrder);
+    $draft = app(BuildWorkOrderPreInvoiceAction::class)->execute($workOrder);
 
     expect($draft->hasUndecidedExtras())->toBeTrue()
         ->and($draft->pendingExtraTotal)->toBe(90.0)
@@ -105,7 +113,6 @@ it('warns on the pre-invoice when there are undecided extras', function (): void
 it('puts the extra in the invoice total once it is marked to bill', function (): void {
     $workOrder = makeWorkOrderWithEffort(plannedMinutes: 120, actualMinutes: 120);
 
-    /** @var Intervention $intervention */
     $intervention = $workOrder->interventions()->firstOrFail();
 
     $line = $intervention->materialLines()->create([
@@ -118,8 +125,7 @@ it('puts the extra in the invoice total once it is marked to bill', function ():
 
     $line->update(['extra_status_code' => 'to_bill']);
 
-    $draft = app(\Modules\Billing\Actions\BuildWorkOrderPreInvoiceAction::class)
-        ->execute($workOrder->refresh());
+    $draft = app(BuildWorkOrderPreInvoiceAction::class)->execute($workOrder->refresh());
 
     expect($draft->hasUndecidedExtras())->toBeFalse()
         ->and($draft->total)->toBe(320.0);

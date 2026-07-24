@@ -14,7 +14,6 @@ use Modules\Intervention\Models\Intervention;
 use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
 
-use function Pest\Laravel\actingAs;
 
 it('masks real user names when demo mode is enabled', function (): void {
     config()->set('app.demo_mode', true);
@@ -52,7 +51,7 @@ it('uses demo aliases in operator calendar events', function (): void {
         'scheduled_at' => '2026-05-07 08:30:00',
     ]);
 
-    actingAs($user);
+    $this->actingAs($user);
     filament()->setCurrentPanel('operator');
 
     $events = app(InterventionCalendar::class)->getCalendarEvents('2026-05-01', '2026-05-31');

@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
-use Modules\User\Models\User;
 use Carbon\CarbonImmutable;
 use Modules\Customer\Models\Customer;
 use Modules\Intervention\Actions\FinalizeInterventionReportAction;
 use Modules\Intervention\Models\Intervention;
+use Modules\Intervention\Tests\TestCase;
+use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderStatus;
 

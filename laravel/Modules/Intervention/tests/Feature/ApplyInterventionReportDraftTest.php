@@ -2,16 +2,17 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
-use Modules\User\Models\User;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Actions\ApplyInterventionReportDraftAction;
-use Modules\Intervention\Application\Queries\GetPastInterventionNotesForReportQuery;
-use Modules\Intervention\Domain\DTO\DictatedMaterialLine;
-use Modules\Intervention\Domain\DTO\InterventionReportDraft;
+use Modules\Intervention\Data\DictatedMaterialLine;
+use Modules\Intervention\Data\InterventionReportDraft;
 use Modules\Intervention\Models\Intervention;
+use Modules\Intervention\Queries\GetPastInterventionNotesForReportQuery;
+use Modules\Intervention\Tests\TestCase;
+use Modules\User\Models\User;
 
 function makeReportCustomerId(string $name = 'Cliente Report S.r.l.'): int
 {

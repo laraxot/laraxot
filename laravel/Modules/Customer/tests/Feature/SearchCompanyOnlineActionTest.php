@@ -16,15 +16,22 @@ use Modules\Customer\Tests\TestCase;
 uses(TestCase::class);
 
 /**
- * @param  list<array<string, mixed>>  $candidates
+ * Deliberately typed as `list<mixed>`: some tests feed malformed candidates
+ * (a bare string, missing keys) to exercise SearchCompanyOnlineAction's
+ * defensive `is_array($candidate)` / legal-name guards.
+ *
+ * @param  list<mixed>  $candidates
  */
 function customerFakeCompanyProvider(array $candidates): CompanyLookupProviderInterface
 {
     return new class($candidates) implements CompanyLookupProviderInterface
     {
-        /** @param list<array<string, mixed>> $candidates */
+        /** @param list<mixed> $candidates */
         public function __construct(private array $candidates) {}
 
+        /**
+         * @return list<mixed>
+         */
         public function search(string $query): array
         {
             return $this->candidates;

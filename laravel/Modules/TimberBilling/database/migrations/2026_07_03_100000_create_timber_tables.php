@@ -73,7 +73,8 @@ return new class() extends Migration
             $table->string('photo_path')->nullable();
             $table->text('notes')->nullable();
             $table->string('status_code')->default('registered')->index();
-            $table->foreignId('created_by_user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->string('created_by_user_id', 36)->nullable()->index();
+            $table->foreign('created_by_user_id')->references('id')->on('users')->nullOnDelete();
             $table->timestamp('received_at')->nullable();
             $table->timestamps();
         });
@@ -99,7 +100,8 @@ return new class() extends Migration
             $table->decimal('waste_quantity', 12, 2)->nullable();
             $table->decimal('recoverable_quantity', 12, 2)->nullable();
             $table->string('unit_of_measure');
-            $table->foreignId('executed_by_user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->string('executed_by_user_id', 36)->nullable()->index();
+            $table->foreign('executed_by_user_id')->references('id')->on('users')->nullOnDelete();
             $table->timestamp('executed_at');
             $table->text('notes')->nullable();
             $table->json('meta')->nullable();
@@ -123,7 +125,7 @@ return new class() extends Migration
         Schema::create('timber_processing_step_processable', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('processing_step_id')->constrained('timber_processing_steps')->cascadeOnDelete();
-            $table->morphs('processable');
+            $table->morphs('processable', 'timber_step_processable_morph_idx');
             $table->unique(['processing_step_id', 'processable_type', 'processable_id'], 'timber_step_processable_unique');
         });
 
@@ -145,7 +147,8 @@ return new class() extends Migration
             $table->foreignId('drying_cycle_id')->constrained('timber_drying_cycles')->cascadeOnDelete();
             $table->timestamp('checked_at');
             $table->decimal('humidity_percent', 5, 2);
-            $table->foreignId('checked_by_user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->string('checked_by_user_id', 36)->nullable()->index();
+            $table->foreign('checked_by_user_id')->references('id')->on('users')->nullOnDelete();
             $table->text('notes')->nullable();
             $table->timestamps();
         });
@@ -167,7 +170,8 @@ return new class() extends Migration
             $table->morphs('movable');
             $table->string('from_area_code')->nullable();
             $table->string('to_area_code');
-            $table->foreignId('moved_by_user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->string('moved_by_user_id', 36)->nullable()->index();
+            $table->foreign('moved_by_user_id')->references('id')->on('users')->nullOnDelete();
             $table->timestamp('moved_at');
             $table->text('notes')->nullable();
             $table->timestamps();
@@ -179,7 +183,8 @@ return new class() extends Migration
             $table->string('label_code')->unique();
             $table->string('qr_payload');
             $table->string('print_reason_code')->default('initial_print');
-            $table->foreignId('printed_by_user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->string('printed_by_user_id', 36)->nullable()->index();
+            $table->foreign('printed_by_user_id')->references('id')->on('users')->nullOnDelete();
             $table->timestamp('printed_at');
             $table->timestamps();
         });

@@ -2,11 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\HR\Tests\Feature;
-
-use Modules\HR\Tests\TestCase;
-
-uses(TestCase::class);
+uses(\Modules\HR\Tests\TestCase::class);
 
 use Illuminate\Support\Facades\Storage;
 use Modules\HR\Actions\AddEmployeeDocumentAction;
@@ -69,3 +65,4 @@ it('persists the employee document kind when provided', function (): void {
     expect($doc->media)->not->toBeNull();
     expect($doc->media?->kind)->toBe('contract');
 });
+

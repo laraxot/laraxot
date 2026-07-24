@@ -2,20 +2,21 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
-use Modules\User\Models\User;
 use Carbon\CarbonImmutable;
 use Carbon\CarbonInterface;
 use Illuminate\Support\Facades\DB;
-use Modules\Intervention\Application\GoogleCalendar\Actions\BuildGoogleOverlayEventsAction;
-use Modules\Intervention\Application\GoogleCalendar\Actions\PullGoogleCalendarChangesAction;
-use Modules\Intervention\Application\GoogleCalendar\Actions\PushInterventionToGoogleAction;
-use Modules\Intervention\Application\GoogleCalendar\Contracts\GoogleCalendarClient;
-use Modules\Intervention\Application\GoogleCalendar\DTO\GoogleCalendarEvent;
-use Modules\Intervention\Application\GoogleCalendar\DTO\GoogleEventInput;
+use Modules\Intervention\GoogleCalendar\Actions\BuildGoogleOverlayEventsAction;
+use Modules\Intervention\GoogleCalendar\Actions\PullGoogleCalendarChangesAction;
+use Modules\Intervention\GoogleCalendar\Actions\PushInterventionToGoogleAction;
+use Modules\Intervention\GoogleCalendar\Contracts\GoogleCalendarClient;
+use Modules\Intervention\GoogleCalendar\DTO\GoogleCalendarEvent;
+use Modules\Intervention\GoogleCalendar\DTO\GoogleEventInput;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\UserGoogleCalendarSetting;
+use Modules\Intervention\Tests\TestCase;
+use Modules\User\Models\User;
 
 /**
  * In-memory double so no test touches the Google SDK.
@@ -44,7 +45,7 @@ final class FakeGoogleCalendarClient implements GoogleCalendarClient
 
     public function handleAuthorizationCode(User $user, string $code): UserGoogleCalendarSetting
     {
-        return new UserGoogleCalendarSetting;
+        return new UserGoogleCalendarSetting();
     }
 
     public function disconnect(User $user): void {}
@@ -103,7 +104,7 @@ function makeSyncIntervention(User $owner, array $overrides = []): Intervention
 
 function useFakeGoogle(): FakeGoogleCalendarClient
 {
-    $fake = new FakeGoogleCalendarClient;
+    $fake = new FakeGoogleCalendarClient();
     app()->instance(GoogleCalendarClient::class, $fake);
 
     return $fake;

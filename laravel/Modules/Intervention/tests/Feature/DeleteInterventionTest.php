@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
-use Modules\User\Models\User;
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Actions\SoftDeleteInterventionAction;
 use Modules\Intervention\Models\Intervention;
+use Modules\Intervention\Tests\TestCase;
+use Modules\User\Models\User;
 
 it('soft-deletes an intervention', function (): void {
     // Arrange

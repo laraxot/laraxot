@@ -6,7 +6,7 @@ namespace Modules\Auth\Console\Commands;
 
 use Illuminate\Console\Command;
 use Modules\User\Models\User;
-use Spatie\Permission\Models\Role;
+use Modules\User\Models\Role;
 
 final class CreateDdsPanelUserCommand extends Command
 {

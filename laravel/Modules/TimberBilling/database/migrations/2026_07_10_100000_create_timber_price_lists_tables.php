@@ -44,7 +44,8 @@ return new class() extends Migration
             $table->foreignId('price_list_id')->constrained('timber_price_lists')->cascadeOnDelete();
             $table->json('items');
             $table->text('note')->nullable();
-            $table->foreignId('created_by_user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->string('created_by_user_id', 36)->nullable()->index();
+            $table->foreign('created_by_user_id')->references('id')->on('users')->nullOnDelete();
             $table->timestamps();
         });
 

@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
-use Modules\User\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Modules\Document\Actions\AttachPhotosToInterventionAction;
 use Modules\Intervention\Actions\SyncInterventionNotePhotosAction;
 use Modules\Intervention\Models\Intervention;
+use Modules\Intervention\Tests\TestCase;
+use Modules\User\Models\User;
 
 it('syncs only intervention note photos without touching other intervention photos', function (): void {
     Storage::fake('public');

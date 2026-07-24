@@ -10,12 +10,12 @@ use Illuminate\Support\ServiceProvider;
 use Modules\Intervention\Providers\InterventionServiceProvider;
 use Modules\Xot\Tests\XotBaseTestCase;
 
-/**
- * Base test case per il modulo Intervention.
- */
 abstract class TestCase extends XotBaseTestCase
 {
     use DatabaseTransactions;
+
+    /** @var list<string> */
+    protected $connectionsToTransact = ['sqlite', 'xot'];
 
     /**
      * @return array<int, class-string<ServiceProvider>>
@@ -26,5 +26,12 @@ abstract class TestCase extends XotBaseTestCase
             ...parent::getPackageProviders($app),
             InterventionServiceProvider::class,
         ];
+    }
+
+    protected function setUp(): void
+    {
+        $this->prepareSharedFixcitySqliteForTesting();
+
+        parent::setUp();
     }
 }

@@ -6,7 +6,7 @@ uses(\Modules\Quotation\Tests\TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Modules\Quotation\Actions\RecalculateQuotationTotalsAction;
-use Modules\Quotation\Domain\Actions\CalculateQuotationTotalsAction;
+use Modules\Quotation\Actions\CalculateQuotationTotalsAction;
 use Modules\Quotation\Models\Quotation;
 use Modules\Quotation\Models\QuotationItem;
 

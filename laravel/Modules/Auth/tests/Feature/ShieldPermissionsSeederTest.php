@@ -19,8 +19,8 @@ beforeEach(function (): void {
 });
 
 use Modules\Auth\Database\Seeders\ShieldPermissionsSeeder;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
+use Modules\User\Models\Permission;
+use Modules\User\Models\Role;
 
 it('generates shield permissions and assigns a restricted set to operators', function (): void {
     // Act

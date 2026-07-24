@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Actions\SyncWorkOrderExtraMaterialsAction;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionMaterialLine;
+use Modules\Intervention\Tests\TestCase;
 use Modules\WorkOrder\Models\WorkOrder;
 
 /**

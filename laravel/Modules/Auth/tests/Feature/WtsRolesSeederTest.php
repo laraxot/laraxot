@@ -9,7 +9,7 @@ use Modules\Auth\Tests\TestCase;
 uses(TestCase::class);
 
 use Modules\Auth\Database\Seeders\WtsRolesSeeder;
-use Spatie\Permission\Models\Role;
+use Modules\User\Models\Role;
 
 it('creates the wts, wts_operator and wts_admin roles', function (): void {
     app(WtsRolesSeeder::class)->run();

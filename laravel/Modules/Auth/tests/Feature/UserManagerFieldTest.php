@@ -23,7 +23,6 @@ use Modules\Auth\Database\Seeders\ShieldPermissionsSeeder;
 use Modules\Auth\Filament\Resources\UserResource;
 use Modules\User\Models\User;
 
-use function Pest\Laravel\actingAs;
 
 it('loads the user edit page with the manager field', function (): void {
     app(ShieldPermissionsSeeder::class)->run();
@@ -36,8 +35,8 @@ it('loads the user edit page with the manager field', function (): void {
 
     filament()->setCurrentPanel('admin');
 
-    actingAs($admin)->get(UserResource::getUrl('index'))->assertStatus(200);
-    actingAs($admin)
+    $this->actingAs($admin)->get(UserResource::getUrl('index'))->assertStatus(200);
+    $this->actingAs($admin)
         ->get(UserResource::getUrl('edit', ['record' => $member->id]))
         ->assertStatus(200)
         // Il responsabile scelto deve essere leggibile nella pagina.

@@ -117,3 +117,53 @@ sul completare i pezzi mancanti/incoerenti piuttosto che rifare da zero.
 - `modules_statuses.json`: **non registrato `"Intervention": true`** in questa sessione, perché
   PHPStan non ha potuto girare fino in fondo per causa esterna (vedi sopra). Da abilitare non
   appena la verifica PHPStan risulta pulita.
+
+## Test migrati dal sorgente
+
+I 23 file di `gestionale_commesse/tests/Feature/Interventions/` e i 2 file di
+`tests/Unit/Interventions/` erano già stati portati in `Modules/Intervention/tests/` da una
+sessione/agente precedente (lavoro trovato già presente all'ispezione, nessuna duplicazione
+creata). Verifica e correzione svolte in questa sessione:
+
+- **`tests/Unit/ComputeWorkMinutesActionTest.php`** e
+  **`tests/Unit/DetectExtraQuotationMaterialsActionTest.php`**: import ancora sul namespace DDD
+  del sorgente (`Modules\Intervention\Domain\Actions\*`, `Modules\Intervention\Domain\DTO\*`),
+  mai aggiornati al namespace canonico effettivo del modulo
+  (`Modules\Intervention\Actions\*`, `Modules\Intervention\Data\*`,
+  `Modules\Intervention\Exceptions\*`, `Modules\Intervention\ValueObjects\*`) — corretto.
+- **`tests/Feature/GoogleCalendarSyncTest.php`**: stesso problema su
+  `Modules\Intervention\Application\GoogleCalendar\*` → `Modules\Intervention\GoogleCalendar\*`;
+  causava un **fatal error** (`Interface ... not found`) che interrompeva l'intera esecuzione
+  della suite combinata `Modules/WorkOrder Modules/Intervention` — corretto.
+- **`tests/Feature/{ApplyInterventionReportDraftTest,OperatorTimePunchWorkflowTest,
+  RecordInterventionReportPageTest,VoiceInterventionReportTest,
+  SyncInterventionWorkMinutesFromTimePunchesActionTest,InterventionReportPaymentTest}.php`**:
+  stessa correzione di namespace (`Domain\*` → namespace piatto, `Application\AI\
+  InterventionReportExtractorInterface` → `Contracts\InterventionReportExtractorContract`,
+  `Application\Payments\ReportPaymentGatewayInterface` →
+  `Contracts\ReportPaymentGatewayContract`, `Application\Queries\*` → `Queries\*`), inclusi i
+  riferimenti al nome breve della classe nel corpo dei test (`implements
+  InterventionReportExtractorInterface` ecc.).
+
+Non sono stati aggiunti nuovi file di test per `Intervention`: la copertura del sorgente era
+già presente e, dopo le correzioni sopra, l'intera suite combinata esegue senza errori fatali.
+
+### Esito esecuzione
+
+`./vendor/bin/pest Modules/Intervention/tests --no-coverage` (24 luglio 2026): **103 failed, 19
+passed**. Categorie di fallimento residue (nessuna riconducibile a bug introdotto qui):
+
+- **`QueryException: no such table: X`** (la maggioranza) — stesso gap infrastrutturale
+  documentato in
+  [gestionale-commesse-debito-tecnico.md §2](../../../docs/gestionale-commesse-debito-tecnico.md)
+  (nessuna migration eseguita sul DB SQLite `:memory:` dei test).
+- **`CommandNotFoundException: shield:generate`** — `filament/spatie-laravel-shield` non
+  installato/configurato per l'ambiente di test; setup condiviso, non specifico di
+  `Intervention`.
+- **`RouteNotFoundException: interventions.report.public[.pdf]`** — route pubbliche non
+  registrate nel bootstrap di test (`RouteServiceProvider`/gruppo rotte non caricato in
+  ambiente Testbench); da verificare lato `routes/web.php` del modulo o bootstrap condiviso.
+
+I 19 test passati sono quelli senza scrittura DB o senza dipendenza dalle rotte/permessi
+mancanti (es. i 2 test Unit puri su `ComputeWorkMinutesAction`/
+`DetectExtraQuotationMaterialsAction`).

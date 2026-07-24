@@ -6,8 +6,8 @@ namespace Modules\Auth\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Artisan;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
+use Modules\User\Models\Permission;
+use Modules\User\Models\Role;
 
 final class ShieldPermissionsSeeder extends Seeder
 {

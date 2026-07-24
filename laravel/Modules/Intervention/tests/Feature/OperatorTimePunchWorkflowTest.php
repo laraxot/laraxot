@@ -2,16 +2,19 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
-use Modules\User\Models\User;
+use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Actions\FinalizeInterventionReportAction;
 use Modules\Intervention\Actions\StartTimePunchAction;
 use Modules\Intervention\Actions\StopTimePunchAction;
-use Modules\Intervention\Domain\Exceptions\OpenTimePunchAlreadyExists;
+use Modules\Intervention\Actions\SyncInterventionWorkMinutesFromTimePunchesAction;
+use Modules\Intervention\Exceptions\OpenTimePunchAlreadyExists;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\TimePunch;
+use Modules\Intervention\Tests\TestCase;
+use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderStatus;
 
@@ -67,12 +70,12 @@ it('starts and stops a time punch and computes work minutes', function (): void 
     ]);
 
     // Act
-    $startedAt = Carbon\CarbonImmutable::parse('2026-02-16 09:00:00');
-    $endedAt = Carbon\CarbonImmutable::parse('2026-02-16 10:30:00');
+    $startedAt = CarbonImmutable::parse('2026-02-16 09:00:00');
+    $endedAt = CarbonImmutable::parse('2026-02-16 10:30:00');
 
     app(StartTimePunchAction::class)->execute($intervention, $user->id, $startedAt);
     app(StopTimePunchAction::class)->execute($intervention, $user->id, $endedAt);
-    app(\Modules\Intervention\Actions\SyncInterventionWorkMinutesFromTimePunchesAction::class)->execute($intervention->refresh());
+    app(SyncInterventionWorkMinutesFromTimePunchesAction::class)->execute($intervention->refresh());
 
     // Assert
     $intervention->refresh();
@@ -144,10 +147,10 @@ it('prevents multiple open punches for the same user', function (): void {
     ]);
 
     // Act
-    app(StartTimePunchAction::class)->execute($a, $user->id, Carbon\CarbonImmutable::parse('2026-02-16 09:00:00'));
+    app(StartTimePunchAction::class)->execute($a, $user->id, CarbonImmutable::parse('2026-02-16 09:00:00'));
 
     // Assert
-    expect(fn () => app(StartTimePunchAction::class)->execute($b, $user->id, Carbon\CarbonImmutable::parse('2026-02-16 09:10:00')))
+    expect(fn () => app(StartTimePunchAction::class)->execute($b, $user->id, CarbonImmutable::parse('2026-02-16 09:10:00')))
         ->toThrow(OpenTimePunchAlreadyExists::class);
 });
 

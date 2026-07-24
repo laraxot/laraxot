@@ -11,19 +11,17 @@ uses(TestCase::class);
 use Illuminate\Support\Facades\Hash;
 use Modules\User\Models\User;
 
-use function Pest\Laravel\actingAs;
-use function Pest\Laravel\post;
 
 it('redirects authenticated users away from /login', function (): void {
     $user = User::factory()->create();
 
-    actingAs($user)->get('/login')->assertRedirect('/operator');
+    $this->actingAs($user)->get('/login')->assertRedirect('/operator');
 });
 
 it('logs out users and redirects to /login', function (): void {
     $user = User::factory()->create();
 
-    actingAs($user)->post('/logout')->assertRedirect('/login');
+    $this->actingAs($user)->post('/logout')->assertRedirect('/login');
 });
 
 it('rejects login for users without roles (cannot access any panel)', function (): void {
@@ -32,7 +30,7 @@ it('rejects login for users without roles (cannot access any panel)', function (
         'password' => Hash::make('secret123'),
     ]);
 
-    post('/login', [
+    $this->post('/login', [
         'email' => $user->email,
         'password' => 'secret123',
         'accept_legal' => '1',

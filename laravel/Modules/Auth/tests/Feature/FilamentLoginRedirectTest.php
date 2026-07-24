@@ -12,7 +12,7 @@ use App\Filament\Pages\Auth\PanelLogin;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Livewire;
 use Modules\User\Models\User;
-use Spatie\Permission\Models\Role;
+use Modules\User\Models\Role;
 
 afterEach(function (): void {
     filament()->setCurrentPanel(null);
