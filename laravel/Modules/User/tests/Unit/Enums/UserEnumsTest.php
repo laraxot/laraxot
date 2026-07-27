@@ -38,4 +38,5 @@ test('LanguageEnum enum has expected cases', function (): void {
     Assert::assertContains('en', $values);
 });
 
-test('UserType has getLabel method', function (): void {});
+test('UserType has getLabel method', function (): void {
+});

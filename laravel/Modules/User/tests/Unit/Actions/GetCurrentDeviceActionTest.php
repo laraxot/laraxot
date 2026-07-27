@@ -12,7 +12,7 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 /**
- * @param  array<string, mixed>  $expected
+ * @param array<string, mixed> $expected
  */
 function assertDeviceMatches(Device $device, array $expected): void
 {

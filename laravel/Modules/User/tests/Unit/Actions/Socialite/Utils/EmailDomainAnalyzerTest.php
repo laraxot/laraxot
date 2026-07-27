@@ -25,7 +25,8 @@ describe('EmailDomainAnalyzer', function () {
         Config::set('services.google.email_domains.client.tld', null);
     });
 
-    it('throws for empty provider', function () {});
+    it('throws for empty provider', function () {
+    });
 
     it('detects first party domain', function () {
         Config::set('services.google.email_domains.first_party.tld', '@company.com');

@@ -19,7 +19,7 @@ use Spatie\Sluggable\SlugOptions;
 uses(TestCase::class);
 
 /**
- * @param  array<string, mixed>  $overrides
+ * @param array<string, mixed> $overrides
  */
 function createPersistedTenant(array $overrides = []): Tenant
 {

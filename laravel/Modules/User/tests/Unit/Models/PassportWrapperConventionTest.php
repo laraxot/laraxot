@@ -15,7 +15,7 @@ test('every vendor passport eloquent model has a local oauth wrapper', function 
 
     /** @var list<string> $passportFiles */
     $passportFiles = glob($passportSrc.'/*.php');
-    if ($passportFiles === []) {
+    if ([] === $passportFiles) {
         Assert::fail('Unable to read Passport source directory.');
     }
 

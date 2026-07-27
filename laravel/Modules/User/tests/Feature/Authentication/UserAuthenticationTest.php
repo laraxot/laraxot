@@ -117,7 +117,7 @@ describe('User Password Management', function () {
         ]);
         \assert($user instanceof User);
         $passwordExpiresAt = $user->password_expires_at;
-        \assert($passwordExpiresAt !== null);
+        \assert(null !== $passwordExpiresAt);
 
         expect($passwordExpiresAt->isPast())->toBe(true);
     });
@@ -129,7 +129,7 @@ describe('User Password Management', function () {
         ]);
 
         $passwordExpiresAt = $this->requireFreshUser($this->requireUser())->password_expires_at;
-        \assert($passwordExpiresAt !== null);
+        \assert(null !== $passwordExpiresAt);
 
         expect($passwordExpiresAt->toDateString())
             ->toBe($expirationDate->toDateString());
@@ -169,7 +169,7 @@ describe('User Email Verification', function () {
         $user->markEmailAsVerified();
 
         $fresh = $user->fresh();
-        \assert($fresh !== null);
+        \assert(null !== $fresh);
 
         expect($fresh->email_verified_at)->not->toBeNull();
     });

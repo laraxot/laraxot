@@ -99,7 +99,7 @@ describe('User Resource', function (): void {
 
         $nameField = userResourceFindComponentByName($section01Schema, 'name');
 
-        if ($nameField === null) {
+        if (null === $nameField) {
             $this->skipTest('name field not found in section01 schema');
         }
 
@@ -114,7 +114,7 @@ describe('User Resource', function (): void {
 
         $emailField = userResourceFindComponentByName($section01Schema, 'email');
 
-        if ($emailField === null) {
+        if (null === $emailField) {
             $this->skipTest('email field not found in section01 schema');
         }
 
@@ -129,7 +129,7 @@ describe('User Resource', function (): void {
 
         $passwordField = userResourceFindComponentByName($section01Schema, 'password');
 
-        if ($passwordField === null) {
+        if (null === $passwordField) {
             $this->skipTest('password field not found in section01 schema');
         }
 
@@ -157,7 +157,7 @@ describe('User Resource', function (): void {
 
         $emailField = userResourceFindComponentByName($section01Schema, 'email');
 
-        if ($emailField === null) {
+        if (null === $emailField) {
             $this->skipTest('email field not found in section01 schema');
         }
 
@@ -172,7 +172,7 @@ describe('User Resource', function (): void {
 
         $createdAtField = userResourceFindComponentByName($section02Schema, 'created_at');
 
-        if ($createdAtField === null) {
+        if (null === $createdAtField) {
             $this->skipTest('created_at field not found in section02 schema');
         }
 
