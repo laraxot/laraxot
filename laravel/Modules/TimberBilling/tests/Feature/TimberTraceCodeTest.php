@@ -2,15 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Modules\TimberBilling\Tests\Feature;
-
-use DateTimeImmutable;
-
+use Modules\TimberBilling\Support\TimberTraceCode;
 use Modules\TimberBilling\Tests\TestCase;
+use Safe\DateTimeImmutable;
 
 uses(TestCase::class);
-
-use Modules\TimberBilling\Support\TimberTraceCode;
 
 it('builds a dated stage segment from the step type', function (): void {
     $date = new DateTimeImmutable('2026-07-03');

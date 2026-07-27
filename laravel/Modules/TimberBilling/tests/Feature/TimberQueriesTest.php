@@ -2,12 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\TimberBilling\Tests\Feature;
-
-use Modules\TimberBilling\Tests\TestCase;
-
-uses(TestCase::class);
-
+use Illuminate\Support\Facades\DB;
 use Modules\TimberBilling\Actions\RegisterTimberProcessingAction;
 use Modules\TimberBilling\Actions\StartTimberDryingCycleAction;
 use Modules\TimberBilling\Models\TimberDerivedMaterial;
@@ -22,22 +17,33 @@ use Modules\TimberBilling\Queries\GetTimberDryingOverviewQuery;
 use Modules\TimberBilling\Queries\GetTimberInventoryOverviewQuery;
 use Modules\TimberBilling\Queries\GetTimberYardOverviewQuery;
 use Modules\TimberBilling\Queries\SearchTimberTraceabilityQuery;
+use Modules\TimberBilling\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('filters the yard overview by area and search term', function (): void {
-    TimberLot::factory()->create(['lot_code' => 'LOT-YARD-A', 'wood_species' => 'abete', 'current_area_code' => 'piazzale', 'status_code' => 'available']);
-    TimberLot::factory()->create(['lot_code' => 'LOT-YARD-B', 'wood_species' => 'faggio', 'current_area_code' => 'zona_taglio', 'status_code' => 'available']);
+    TimberLot::factory()->createOne(['lot_code' => 'LOT-YARD-A', 'wood_species' => 'abete', 'current_area_code' => 'piazzale', 'status_code' => 'available']);
+    TimberLot::factory()->createOne(['lot_code' => 'LOT-YARD-B', 'wood_species' => 'faggio', 'current_area_code' => 'zona_taglio', 'status_code' => 'available']);
 
     $overview = app(GetTimberYardOverviewQuery::class)->execute('piazzale', null);
+    $firstLot = $overview['lots']->first();
+    expect($firstLot)->not->toBeNull();
+    assert($firstLot instanceof TimberLot);
+
     expect($overview['lots'])->toHaveCount(1)
-        ->and($overview['lots']->first()->lot_code)->toBe('LOT-YARD-A');
+        ->and($firstLot->lot_code)->toBe('LOT-YARD-A');
 
     $searched = app(GetTimberYardOverviewQuery::class)->execute(null, 'YARD-B');
+    $searchedLot = $searched['lots']->first();
+    expect($searchedLot)->not->toBeNull();
+    assert($searchedLot instanceof TimberLot);
+
     expect($searched['lots'])->toHaveCount(1)
-        ->and($searched['lots']->first()->lot_code)->toBe('LOT-YARD-B');
+        ->and($searchedLot->lot_code)->toBe('LOT-YARD-B');
 });
 
 it('returns only drying cycles matching the requested status', function (): void {
-    $lot = TimberLot::factory()->create(['quantity_available' => 100]);
+    $lot = TimberLot::factory()->createOne(['quantity_available' => 100]);
     app(StartTimberDryingCycleAction::class)->execute($lot, null, null, null);
 
     $cycles = app(GetTimberDryingOverviewQuery::class)->execute('in_progress');
@@ -48,10 +54,10 @@ it('returns only drying cycles matching the requested status', function (): void
 });
 
 it('computes inventory overview stats per status', function (): void {
-    TimberLot::factory()->create(['status_code' => 'available']);
-    TimberDerivedMaterial::factory()->create(['status_code' => 'da_lavorare', 'is_waste' => false, 'quantity' => 10]);
-    TimberDerivedMaterial::factory()->create(['status_code' => 'pronto_per_vendita', 'is_waste' => false, 'quantity' => 10]);
-    TimberDerivedMaterial::factory()->create(['status_code' => 'scarto', 'is_waste' => true, 'quantity' => 50]);
+    TimberLot::factory()->createOne(['status_code' => 'available']);
+    TimberDerivedMaterial::factory()->createOne(['status_code' => 'da_lavorare', 'is_waste' => false, 'quantity' => 10]);
+    TimberDerivedMaterial::factory()->createOne(['status_code' => 'pronto_per_vendita', 'is_waste' => false, 'quantity' => 10]);
+    TimberDerivedMaterial::factory()->createOne(['status_code' => 'scarto', 'is_waste' => true, 'quantity' => 50]);
 
     $overview = app(GetTimberInventoryOverviewQuery::class)->execute();
 
@@ -62,15 +68,15 @@ it('computes inventory overview stats per status', function (): void {
 });
 
 it('computes dashboard stats including yield percent and stuck lots', function (): void {
-    TimberPurchaseRecord::factory()->create(['received_at' => now()]);
+    TimberPurchaseRecord::factory()->createOne(['received_at' => now()]);
 
-    $stuckLot = TimberLot::factory()->create(['status_code' => 'available']);
-    \Illuminate\Support\Facades\DB::table('timber_lots')->where('id', $stuckLot->id)->update(['updated_at' => now()->subDays(60)]);
+    $stuckLot = TimberLot::factory()->createOne(['status_code' => 'available']);
+    DB::table('timber_lots')->where('id', $stuckLot->id)->update(['updated_at' => now()->subDays(60)]);
 
-    $freshLot = TimberLot::factory()->create(['status_code' => 'available']);
+    $freshLot = TimberLot::factory()->createOne(['status_code' => 'available']);
 
-    $step = TimberProcessingStep::factory()->create(['input_quantity' => 100, 'output_quantity' => 80]);
-    TimberDerivedMaterial::factory()->create(['processing_step_id' => $step->id, 'is_waste' => true, 'quantity' => 20]);
+    $step = TimberProcessingStep::factory()->createOne(['input_quantity' => 100, 'output_quantity' => 80]);
+    TimberDerivedMaterial::factory()->createOne(['processing_step_id' => $step->id, 'is_waste' => true, 'quantity' => 20]);
 
     $stats = app(GetTimberDashboardStatsQuery::class)->execute();
 
@@ -89,7 +95,7 @@ it('reports a null yield percent when no processing has been recorded', function
 });
 
 it('searches traceability by lot code and reconstructs the chain', function (): void {
-    $lot = TimberLot::factory()->create(['lot_code' => 'LOT-TRACE-01', 'status_code' => 'available']);
+    $lot = TimberLot::factory()->createOne(['lot_code' => 'LOT-TRACE-01', 'status_code' => 'available']);
 
     $step = app(RegisterTimberProcessingAction::class)->execute(
         selectedLotIds: [$lot->id],
@@ -103,14 +109,17 @@ it('searches traceability by lot code and reconstructs the chain', function (): 
     );
 
     $result = app(SearchTimberTraceabilityQuery::class)->execute('LOT-TRACE-01');
+    $firstStep = $result['processingSteps']->first();
+    expect($firstStep)->not->toBeNull();
+    assert($firstStep instanceof TimberProcessingStep);
 
     expect($result['lot']?->lot_code)->toBe('LOT-TRACE-01')
         ->and($result['processingSteps'])->toHaveCount(1)
-        ->and($result['processingSteps']->first()->id)->toBe($step->id);
+        ->and($firstStep->id)->toBe($step->id);
 });
 
 it('searches traceability by packaged unit code', function (): void {
-    $unit = TimberPackagedUnit::factory()->create(['package_code' => 'PKG-TRACE-01']);
+    $unit = TimberPackagedUnit::factory()->createOne(['package_code' => 'PKG-TRACE-01']);
 
     $result = app(SearchTimberTraceabilityQuery::class)->execute('PKG-TRACE-01');
 
@@ -127,15 +136,15 @@ it('returns empty results for an unknown traceability search term', function ():
 });
 
 it('groups derived material quantity by status and lot quantity by wood species', function (): void {
-    TimberDerivedMaterial::factory()->create(['status_code' => 'da_lavorare', 'quantity' => 100, 'is_waste' => false]);
-    TimberDerivedMaterial::factory()->create(['status_code' => 'da_lavorare', 'quantity' => 50, 'is_waste' => false]);
-    TimberDerivedMaterial::factory()->create(['status_code' => 'pronto_per_vendita', 'quantity' => 30, 'is_waste' => false]);
-    TimberDerivedMaterial::factory()->create(['status_code' => 'scarto', 'quantity' => 0, 'is_waste' => true]);
+    TimberDerivedMaterial::factory()->createOne(['status_code' => 'da_lavorare', 'quantity' => 100, 'is_waste' => false]);
+    TimberDerivedMaterial::factory()->createOne(['status_code' => 'da_lavorare', 'quantity' => 50, 'is_waste' => false]);
+    TimberDerivedMaterial::factory()->createOne(['status_code' => 'pronto_per_vendita', 'quantity' => 30, 'is_waste' => false]);
+    TimberDerivedMaterial::factory()->createOne(['status_code' => 'scarto', 'quantity' => 0, 'is_waste' => true]);
 
-    TimberLot::factory()->create(['status_code' => 'available', 'wood_species' => 'abete', 'quantity_available' => 200]);
-    TimberLot::factory()->create(['status_code' => 'available', 'wood_species' => 'abete', 'quantity_available' => 100]);
-    TimberLot::factory()->create(['status_code' => 'available', 'wood_species' => 'faggio', 'quantity_available' => 40]);
-    TimberLot::factory()->create(['status_code' => 'esaurito', 'wood_species' => 'quercia', 'quantity_available' => 0]);
+    TimberLot::factory()->createOne(['status_code' => 'available', 'wood_species' => 'abete', 'quantity_available' => 200]);
+    TimberLot::factory()->createOne(['status_code' => 'available', 'wood_species' => 'abete', 'quantity_available' => 100]);
+    TimberLot::factory()->createOne(['status_code' => 'available', 'wood_species' => 'faggio', 'quantity_available' => 40]);
+    TimberLot::factory()->createOne(['status_code' => 'esaurito', 'wood_species' => 'quercia', 'quantity_available' => 0]);
 
     $charts = app(GetTimberDashboardChartsQuery::class)->execute();
 
@@ -149,15 +158,17 @@ it('groups derived material quantity by status and lot quantity by wood species'
 });
 
 it('builds an 8 week purchases trend bucketing quantity by week', function (): void {
-    TimberPurchaseRecord::factory()->create(['quantity' => 400, 'received_at' => now()]);
-    TimberPurchaseRecord::factory()->create(['quantity' => 100, 'received_at' => now()]);
-    TimberPurchaseRecord::factory()->create(['quantity' => 999, 'received_at' => now()->subWeeks(20)]);
+    TimberPurchaseRecord::factory()->createOne(['quantity' => 400, 'received_at' => now()]);
+    TimberPurchaseRecord::factory()->createOne(['quantity' => 100, 'received_at' => now()]);
+    TimberPurchaseRecord::factory()->createOne(['quantity' => 999, 'received_at' => now()->subWeeks(20)]);
 
     $charts = app(GetTimberDashboardChartsQuery::class)->execute();
 
     expect($charts['purchasesTrend'])->toHaveCount(8);
 
     $currentWeek = end($charts['purchasesTrend']);
+    expect($currentWeek)->toBeArray();
+    assert(is_array($currentWeek));
     expect($currentWeek['quantity'])->toBe(500.0);
 
     $totalTracked = array_sum(array_column($charts['purchasesTrend'], 'quantity'));
@@ -165,12 +176,12 @@ it('builds an 8 week purchases trend bucketing quantity by week', function (): v
 });
 
 it('ranks the top 5 suppliers by total purchased quantity', function (): void {
-    $topSupplier = TimberSupplier::factory()->create(['legal_name' => 'Fornitore Top']);
-    $secondSupplier = TimberSupplier::factory()->create(['legal_name' => 'Fornitore Secondo']);
+    $topSupplier = TimberSupplier::factory()->createOne(['legal_name' => 'Fornitore Top']);
+    $secondSupplier = TimberSupplier::factory()->createOne(['legal_name' => 'Fornitore Secondo']);
 
-    TimberPurchaseRecord::factory()->create(['supplier_id' => $topSupplier->id, 'quantity' => 1000]);
-    TimberPurchaseRecord::factory()->create(['supplier_id' => $topSupplier->id, 'quantity' => 500]);
-    TimberPurchaseRecord::factory()->create(['supplier_id' => $secondSupplier->id, 'quantity' => 300]);
+    TimberPurchaseRecord::factory()->createOne(['supplier_id' => $topSupplier->id, 'quantity' => 1000]);
+    TimberPurchaseRecord::factory()->createOne(['supplier_id' => $topSupplier->id, 'quantity' => 500]);
+    TimberPurchaseRecord::factory()->createOne(['supplier_id' => $secondSupplier->id, 'quantity' => 300]);
 
     $charts = app(GetTimberDashboardChartsQuery::class)->execute();
 

@@ -2,21 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Modules\TimberBilling\Tests\Feature;
-
-use Modules\TimberBilling\Tests\TestCase;
-
-uses(TestCase::class);
-
+use InvalidArgumentException;
 use Modules\TimberBilling\Actions\CompleteTimberDryingCycleAction;
 use Modules\TimberBilling\Actions\RecordTimberHumidityCheckAction;
 use Modules\TimberBilling\Actions\StartTimberDryingCycleAction;
 use Modules\TimberBilling\Models\TimberDerivedMaterial;
 use Modules\TimberBilling\Models\TimberDryingCycle;
 use Modules\TimberBilling\Models\TimberLot;
+use Modules\TimberBilling\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('starts a drying cycle for a raw lot and moves it to the drying area', function (): void {
-    $lot = TimberLot::factory()->create([
+    $lot = TimberLot::factory()->createOne([
         'quantity_available' => 500,
         'current_area_code' => 'piazzale',
         'status_code' => 'available',
@@ -32,7 +30,7 @@ it('starts a drying cycle for a raw lot and moves it to the drying area', functi
 });
 
 it('starts a drying cycle for a derived material', function (): void {
-    $material = TimberDerivedMaterial::factory()->create(['quantity' => 300]);
+    $material = TimberDerivedMaterial::factory()->createOne(['quantity' => 300]);
 
     $cycle = app(StartTimberDryingCycleAction::class)->execute($material, null, null, null);
 
@@ -42,19 +40,21 @@ it('starts a drying cycle for a derived material', function (): void {
 });
 
 it('rejects starting a drying cycle without available quantity', function (): void {
-    $lot = TimberLot::factory()->create(['quantity_available' => 0]);
+    $lot = TimberLot::factory()->createOne(['quantity_available' => 0]);
 
-    app(StartTimberDryingCycleAction::class)->execute($lot, null, null, null);
-})->throws(InvalidArgumentException::class);
+    expect(fn (): mixed => app(StartTimberDryingCycleAction::class)->execute($lot, null, null, null))
+        ->toThrow(InvalidArgumentException::class);
+});
 
 it('rejects an out of range target humidity', function (): void {
-    $lot = TimberLot::factory()->create(['quantity_available' => 100]);
+    $lot = TimberLot::factory()->createOne(['quantity_available' => 100]);
 
-    app(StartTimberDryingCycleAction::class)->execute($lot, null, 150.0, null);
-})->throws(InvalidArgumentException::class);
+    expect(fn (): mixed => app(StartTimberDryingCycleAction::class)->execute($lot, null, 150.0, null))
+        ->toThrow(InvalidArgumentException::class);
+});
 
 it('records a humidity check on an in progress cycle', function (): void {
-    $lot = TimberLot::factory()->create(['quantity_available' => 100]);
+    $lot = TimberLot::factory()->createOne(['quantity_available' => 100]);
     $cycle = app(StartTimberDryingCycleAction::class)->execute($lot, null, null, null);
 
     $check = app(RecordTimberHumidityCheckAction::class)->execute($cycle, 32.5, null, 'controllo');
@@ -64,22 +64,29 @@ it('records a humidity check on an in progress cycle', function (): void {
 });
 
 it('rejects a humidity check on a completed cycle', function (): void {
-    $lot = TimberLot::factory()->create(['quantity_available' => 100]);
+    $lot = TimberLot::factory()->createOne(['quantity_available' => 100]);
     $cycle = app(StartTimberDryingCycleAction::class)->execute($lot, null, null, null);
     app(CompleteTimberDryingCycleAction::class)->execute($cycle);
 
-    app(RecordTimberHumidityCheckAction::class)->execute($cycle->fresh(), 20.0, null, null);
-})->throws(InvalidArgumentException::class);
+    $refreshedCycle = $cycle->fresh();
+    expect($refreshedCycle)->not->toBeNull();
+    assert($refreshedCycle instanceof TimberDryingCycle);
+
+    expect(function () use ($refreshedCycle): void {
+        app(RecordTimberHumidityCheckAction::class)->execute($refreshedCycle, 20.0, null, null);
+    })->toThrow(InvalidArgumentException::class);
+});
 
 it('rejects an out of range humidity check', function (): void {
-    $lot = TimberLot::factory()->create(['quantity_available' => 100]);
+    $lot = TimberLot::factory()->createOne(['quantity_available' => 100]);
     $cycle = app(StartTimberDryingCycleAction::class)->execute($lot, null, null, null);
 
-    app(RecordTimberHumidityCheckAction::class)->execute($cycle, 250.0, null, null);
-})->throws(InvalidArgumentException::class);
+    expect(fn (): mixed => app(RecordTimberHumidityCheckAction::class)->execute($cycle, 250.0, null, null))
+        ->toThrow(InvalidArgumentException::class);
+});
 
 it('completes a drying cycle for a raw lot returning it to available status', function (): void {
-    $lot = TimberLot::factory()->create(['quantity_available' => 100]);
+    $lot = TimberLot::factory()->createOne(['quantity_available' => 100]);
     $cycle = app(StartTimberDryingCycleAction::class)->execute($lot, null, null, null);
 
     $completed = app(CompleteTimberDryingCycleAction::class)->execute($cycle);
@@ -91,7 +98,7 @@ it('completes a drying cycle for a raw lot returning it to available status', fu
 });
 
 it('completes a drying cycle for a derived material marking it ready to package', function (): void {
-    $material = TimberDerivedMaterial::factory()->create(['quantity' => 100]);
+    $material = TimberDerivedMaterial::factory()->createOne(['quantity' => 100]);
     $cycle = app(StartTimberDryingCycleAction::class)->execute($material, null, null, null);
 
     app(CompleteTimberDryingCycleAction::class)->execute($cycle);
@@ -101,9 +108,14 @@ it('completes a drying cycle for a derived material marking it ready to package'
 });
 
 it('rejects completing a cycle that is not in progress', function (): void {
-    $lot = TimberLot::factory()->create(['quantity_available' => 100]);
+    $lot = TimberLot::factory()->createOne(['quantity_available' => 100]);
     $cycle = app(StartTimberDryingCycleAction::class)->execute($lot, null, null, null);
     app(CompleteTimberDryingCycleAction::class)->execute($cycle);
 
-    app(CompleteTimberDryingCycleAction::class)->execute($cycle->fresh());
-})->throws(InvalidArgumentException::class);
+    $refreshedCycle = $cycle->fresh();
+    expect($refreshedCycle)->not->toBeNull();
+    assert($refreshedCycle instanceof TimberDryingCycle);
+
+    expect(fn (): mixed => app(CompleteTimberDryingCycleAction::class)->execute($refreshedCycle))
+        ->toThrow(InvalidArgumentException::class);
+});

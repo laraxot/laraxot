@@ -2,21 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Modules\TimberBilling\Tests\Feature;
-
 use InvalidArgumentException;
-use Modules\TimberBilling\Tests\TestCase;
-
-uses(TestCase::class);
-
 use Modules\TimberBilling\Actions\RegisterTimberStockMovementAction;
 use Modules\TimberBilling\Models\TimberCustomer;
 use Modules\TimberBilling\Models\TimberProduct;
 use Modules\TimberBilling\Models\TimberStockMovement;
 use Modules\TimberBilling\Queries\GetTimberStockMovementsQuery;
+use Modules\TimberBilling\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('registers a load movement and increases product stock', function (): void {
-    $product = TimberProduct::factory()->create(['unit_of_measure' => 'quintali']);
+    $product = TimberProduct::factory()->createOne(['unit_of_measure' => 'quintali']);
 
     $movement = app(RegisterTimberStockMovementAction::class)->execute(
         product: $product,
@@ -30,49 +27,52 @@ it('registers a load movement and increases product stock', function (): void {
     expect($movement->direction_code)->toBe('load')
         ->and((float) $movement->quantity)->toBe(100.0)
         ->and($movement->category)->toBe($product->category)
-        ->and(app(GetTimberStockMovementsQuery::class)->stockForProduct($product->getKey()))->toBe(100.0);
+        ->and(app(GetTimberStockMovementsQuery::class)->stockForProduct($product->id))->toBe(100.0);
 });
 
 it('decreases stock on an unload movement', function (): void {
-    $product = TimberProduct::factory()->create();
+    $product = TimberProduct::factory()->createOne();
     $action = app(RegisterTimberStockMovementAction::class);
 
     $action->execute($product, 'load', 100.0, 'quintali');
     $action->execute($product, 'unload', 30.0, 'quintali');
 
-    expect(app(GetTimberStockMovementsQuery::class)->stockForProduct($product->getKey()))->toBe(70.0);
+    expect(app(GetTimberStockMovementsQuery::class)->stockForProduct($product->id))->toBe(70.0);
 });
 
 it('applies a signed adjustment to stock', function (): void {
-    $product = TimberProduct::factory()->create();
+    $product = TimberProduct::factory()->createOne();
     $action = app(RegisterTimberStockMovementAction::class);
 
     $action->execute($product, 'load', 50.0, 'quintali');
     $action->execute($product, 'adjustment', -12.0, 'quintali');
 
-    expect(app(GetTimberStockMovementsQuery::class)->stockForProduct($product->getKey()))->toBe(38.0);
+    expect(app(GetTimberStockMovementsQuery::class)->stockForProduct($product->id))->toBe(38.0);
 });
 
 it('rejects an unknown direction', function (): void {
-    $product = TimberProduct::factory()->create();
+    $product = TimberProduct::factory()->createOne();
 
-    app(RegisterTimberStockMovementAction::class)->execute($product, 'teleport', 10.0, 'quintali');
-})->throws(InvalidArgumentException::class);
+    expect(fn (): mixed => app(RegisterTimberStockMovementAction::class)->execute($product, 'teleport', 10.0, 'quintali'))
+        ->toThrow(InvalidArgumentException::class);
+});
 
 it('rejects a non-positive load quantity', function (): void {
-    $product = TimberProduct::factory()->create();
+    $product = TimberProduct::factory()->createOne();
 
-    app(RegisterTimberStockMovementAction::class)->execute($product, 'load', 0.0, 'quintali');
-})->throws(InvalidArgumentException::class);
+    expect(fn (): mixed => app(RegisterTimberStockMovementAction::class)->execute($product, 'load', 0.0, 'quintali'))
+        ->toThrow(InvalidArgumentException::class);
+});
 
 it('rejects a zero adjustment', function (): void {
-    $product = TimberProduct::factory()->create();
+    $product = TimberProduct::factory()->createOne();
 
-    app(RegisterTimberStockMovementAction::class)->execute($product, 'adjustment', 0.0, 'quintali');
-})->throws(InvalidArgumentException::class);
+    expect(fn (): mixed => app(RegisterTimberStockMovementAction::class)->execute($product, 'adjustment', 0.0, 'quintali'))
+        ->toThrow(InvalidArgumentException::class);
+});
 
 it('updates last and weighted average cost on a valued load', function (): void {
-    $product = TimberProduct::factory()->create(['average_cost' => null, 'last_cost' => null]);
+    $product = TimberProduct::factory()->createOne(['average_cost' => null, 'last_cost' => null]);
     $action = app(RegisterTimberStockMovementAction::class);
 
     $action->execute($product, 'load', 100.0, 'quintali', unitCost: 8.0);
@@ -85,8 +85,8 @@ it('updates last and weighted average cost on a valued load', function (): void 
 });
 
 it('filters movements by direction, product and lot', function (): void {
-    $productA = TimberProduct::factory()->create();
-    $productB = TimberProduct::factory()->create();
+    $productA = TimberProduct::factory()->createOne();
+    $productB = TimberProduct::factory()->createOne();
     $action = app(RegisterTimberStockMovementAction::class);
 
     $action->execute($productA, 'load', 10.0, 'quintali', lotCode: 'LOT-A');
@@ -96,13 +96,13 @@ it('filters movements by direction, product and lot', function (): void {
     $query = app(GetTimberStockMovementsQuery::class);
 
     expect($query->execute(directionCode: 'load')->count())->toBe(2)
-        ->and($query->execute(productId: $productA->getKey())->count())->toBe(2)
+        ->and($query->execute(productId: $productA->id)->count())->toBe(2)
         ->and($query->execute(lotCode: 'LOT-B')->count())->toBe(1);
 });
 
 it('links a movement to a customer', function (): void {
-    $product = TimberProduct::factory()->create();
-    $customer = TimberCustomer::factory()->create();
+    $product = TimberProduct::factory()->createOne();
+    $customer = TimberCustomer::factory()->createOne();
 
     $movement = app(RegisterTimberStockMovementAction::class)->execute(
         product: $product,
@@ -112,6 +112,6 @@ it('links a movement to a customer', function (): void {
         customer: $customer,
     );
 
-    expect($movement->customer_id)->toBe($customer->getKey())
-        ->and(TimberStockMovement::query()->where('customer_id', $customer->getKey())->exists())->toBeTrue();
+    expect($movement->customer_id)->toBe($customer->id)
+        ->and(TimberStockMovement::query()->where('customer_id', $customer->id)->exists())->toBeTrue();
 });
