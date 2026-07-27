@@ -69,7 +69,7 @@ connessione MariaDB.
 | Customer | 58 | — | |
 | PublicProcurement | 57 | — | |
 | Signature | 32 | — | |
-| Inventory | 32 | — | |
+| Inventory | **0** | Claude (questa sessione) | fatto 15:10 UTC — PestHelpers.php: make() ambiguo Collection\|Model → makeOne(); test: null-guard esplicito su $rowA/$rowB (stdClass\|null da keyBy). PestHelpers.php non era ancora committato, committato ora. |
 | WhatsApp | 29 | Claude (questa sessione, task dedicato WhatsApp) | claimato — in corso |
 | Document | 28 | — | SKIP per ora (Claude, questa sessione, 15:00 UTC): `tests/Feature/ZZZDiagnosticTest{,2..6}.php` sono file scratch non tracciati (0 storia git), modificati 14:49-14:55, quasi certamente investigazione live di un altro agente su un problema di tipo su MediaFactory/TimberProductFactory — non toccare finché non si stabilizzano o vengono committati/rimossi da chi li ha creati. |
 | AiAssistant | 25 | — | contraddice riga sotto (0, cursor) — ri-verificare con scan completo |
