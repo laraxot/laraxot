@@ -2,20 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Modules\TimberBilling\Tests\Feature;
-
 use InvalidArgumentException;
-use Modules\TimberBilling\Tests\TestCase;
-
-uses(TestCase::class);
-
 use Modules\TimberBilling\Actions\MoveTimberMaterialAction;
 use Modules\TimberBilling\Models\TimberDerivedMaterial;
 use Modules\TimberBilling\Models\TimberLot;
 use Modules\TimberBilling\Models\TimberMovement;
+use Modules\TimberBilling\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('moves a lot to a valid area and records the movement history', function (): void {
-    $lot = TimberLot::factory()->create(['current_area_code' => 'piazzale']);
+    $lot = TimberLot::factory()->createOne(['current_area_code' => 'piazzale']);
 
     $moved = app(MoveTimberMaterialAction::class)->execute($lot, 'zona_taglio', null, 'Spostamento test');
 
@@ -29,7 +26,7 @@ it('moves a lot to a valid area and records the movement history', function (): 
 });
 
 it('moves a derived material to a valid area', function (): void {
-    $material = TimberDerivedMaterial::factory()->create(['current_area_code' => 'zona_taglio']);
+    $material = TimberDerivedMaterial::factory()->createOne(['current_area_code' => 'zona_taglio']);
 
     $moved = app(MoveTimberMaterialAction::class)->execute($material, 'deposito_semilavorati', null, null);
 
@@ -37,13 +34,15 @@ it('moves a derived material to a valid area', function (): void {
 });
 
 it('rejects an unknown area code', function (): void {
-    $lot = TimberLot::factory()->create();
+    $lot = TimberLot::factory()->createOne();
 
-    app(MoveTimberMaterialAction::class)->execute($lot, 'area-inesistente', null, null);
-})->throws(InvalidArgumentException::class);
+    expect(fn (): mixed => app(MoveTimberMaterialAction::class)->execute($lot, 'area-inesistente', null, null))
+        ->toThrow(InvalidArgumentException::class);
+});
 
 it('rejects an empty area code', function (): void {
-    $lot = TimberLot::factory()->create();
+    $lot = TimberLot::factory()->createOne();
 
-    app(MoveTimberMaterialAction::class)->execute($lot, '', null, null);
-})->throws(InvalidArgumentException::class);
+    expect(fn (): mixed => app(MoveTimberMaterialAction::class)->execute($lot, '', null, null))
+        ->toThrow(InvalidArgumentException::class);
+});

@@ -2,17 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Modules\TimberBilling\Tests\Feature;
-
-use Modules\TimberBilling\Tests\TestCase;
-
-uses(TestCase::class);
-
+use Modules\Catalog\Models\Product;
+use Modules\Customer\Models\Customer;
 use Modules\TimberBilling\Actions\SyncEasyfattCustomersAction;
 use Modules\TimberBilling\Actions\SyncEasyfattProductsAction;
 use Modules\TimberBilling\Legacy\ConfiguredEasyfattGateway;
-use Modules\Catalog\Infrastructure\Models\Product;
-use Modules\Customers\Infrastructure\Models\Customer;
+use Modules\TimberBilling\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('falls back to the demo dataset when the easyfatt connection is disabled', function (): void {
     $gateway = app(ConfiguredEasyfattGateway::class);

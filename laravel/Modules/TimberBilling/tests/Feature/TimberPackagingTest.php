@@ -2,19 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Modules\TimberBilling\Tests\Feature;
-
 use InvalidArgumentException;
+use Modules\TimberBilling\Actions\GenerateTimberPackagedUnitsAction;
+use Modules\TimberBilling\Models\TimberDerivedMaterial;
+use Modules\TimberBilling\Models\TimberPackagedUnit;
 use Modules\TimberBilling\Tests\TestCase;
 
 uses(TestCase::class);
 
-use Modules\TimberBilling\Actions\GenerateTimberPackagedUnitsAction;
-use Modules\TimberBilling\Models\TimberDerivedMaterial;
-use Modules\TimberBilling\Models\TimberPackagedUnit;
-
 it('generates packaged units, decrements the source material and prints labels', function (): void {
-    $material = TimberDerivedMaterial::factory()->create([
+    $material = TimberDerivedMaterial::factory()->createOne([
         'quantity' => 1000,
         'unit_of_measure' => 'kg',
         'is_waste' => false,
@@ -28,6 +25,9 @@ it('generates packaged units, decrements the source material and prints labels',
         ->and((float) $material->fresh()?->quantity)->toBe(200.0);
 
     $firstUnit = $units->first();
+    expect($firstUnit)->not->toBeNull();
+    assert($firstUnit instanceof TimberPackagedUnit);
+
     expect($firstUnit->package_type_code)->toBe('bancale')
         ->and($firstUnit->status_code)->toBe('pronto_per_vendita')
         ->and($firstUnit->labelPrints)->toHaveCount(1)
@@ -35,7 +35,7 @@ it('generates packaged units, decrements the source material and prints labels',
 });
 
 it('marks the source material ready for sale once fully packaged', function (): void {
-    $material = TimberDerivedMaterial::factory()->create([
+    $material = TimberDerivedMaterial::factory()->createOne([
         'quantity' => 400,
         'is_waste' => false,
         'status_code' => 'pronto_da_confezionare',
@@ -48,31 +48,36 @@ it('marks the source material ready for sale once fully packaged', function (): 
 });
 
 it('rejects an unknown package type', function (): void {
-    $material = TimberDerivedMaterial::factory()->create(['quantity' => 100, 'is_waste' => false]);
+    $material = TimberDerivedMaterial::factory()->createOne(['quantity' => 100, 'is_waste' => false]);
 
-    app(GenerateTimberPackagedUnitsAction::class)->execute($material, 'not-a-type', 1, 10.0, null);
-})->throws(InvalidArgumentException::class);
+    expect(fn (): mixed => app(GenerateTimberPackagedUnitsAction::class)->execute($material, 'not-a-type', 1, 10.0, null))
+        ->toThrow(InvalidArgumentException::class);
+});
 
 it('rejects a non positive units count', function (): void {
-    $material = TimberDerivedMaterial::factory()->create(['quantity' => 100, 'is_waste' => false]);
+    $material = TimberDerivedMaterial::factory()->createOne(['quantity' => 100, 'is_waste' => false]);
 
-    app(GenerateTimberPackagedUnitsAction::class)->execute($material, 'bancale', 0, 10.0, null);
-})->throws(InvalidArgumentException::class);
+    expect(fn (): mixed => app(GenerateTimberPackagedUnitsAction::class)->execute($material, 'bancale', 0, 10.0, null))
+        ->toThrow(InvalidArgumentException::class);
+});
 
 it('rejects a non positive quantity per unit', function (): void {
-    $material = TimberDerivedMaterial::factory()->create(['quantity' => 100, 'is_waste' => false]);
+    $material = TimberDerivedMaterial::factory()->createOne(['quantity' => 100, 'is_waste' => false]);
 
-    app(GenerateTimberPackagedUnitsAction::class)->execute($material, 'bancale', 1, 0.0, null);
-})->throws(InvalidArgumentException::class);
+    expect(fn (): mixed => app(GenerateTimberPackagedUnitsAction::class)->execute($material, 'bancale', 1, 0.0, null))
+        ->toThrow(InvalidArgumentException::class);
+});
 
 it('rejects packaging a waste material', function (): void {
-    $material = TimberDerivedMaterial::factory()->create(['quantity' => 100, 'is_waste' => true]);
+    $material = TimberDerivedMaterial::factory()->createOne(['quantity' => 100, 'is_waste' => true]);
 
-    app(GenerateTimberPackagedUnitsAction::class)->execute($material, 'bancale', 1, 10.0, null);
-})->throws(InvalidArgumentException::class);
+    expect(fn (): mixed => app(GenerateTimberPackagedUnitsAction::class)->execute($material, 'bancale', 1, 10.0, null))
+        ->toThrow(InvalidArgumentException::class);
+});
 
 it('rejects packaging a quantity exceeding the material availability', function (): void {
-    $material = TimberDerivedMaterial::factory()->create(['quantity' => 100, 'is_waste' => false]);
+    $material = TimberDerivedMaterial::factory()->createOne(['quantity' => 100, 'is_waste' => false]);
 
-    app(GenerateTimberPackagedUnitsAction::class)->execute($material, 'bancale', 2, 100.0, null);
-})->throws(InvalidArgumentException::class);
+    expect(fn (): mixed => app(GenerateTimberPackagedUnitsAction::class)->execute($material, 'bancale', 2, 100.0, null))
+        ->toThrow(InvalidArgumentException::class);
+});

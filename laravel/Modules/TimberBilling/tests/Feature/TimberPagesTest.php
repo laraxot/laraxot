@@ -2,12 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Modules\TimberBilling\Tests\Feature;
-
-use Modules\TimberBilling\Tests\TestCase;
-
-uses(TestCase::class);
-
+use Livewire\Component;
+use Modules\TimberBilling\Actions\RegisterTimberPurchaseAction;
 use Modules\TimberBilling\Filament\Pages\TimberCuttingPage;
 use Modules\TimberBilling\Filament\Pages\TimberDashboard;
 use Modules\TimberBilling\Filament\Pages\TimberDryingPage;
@@ -22,7 +18,6 @@ use Modules\TimberBilling\Filament\Pages\TimberSelectionPage;
 use Modules\TimberBilling\Filament\Pages\TimberSplittingPage;
 use Modules\TimberBilling\Filament\Pages\TimberTraceabilityPage;
 use Modules\TimberBilling\Filament\Pages\TimberYardPage;
-use Modules\User\Models\User;
 use Modules\TimberBilling\Models\TimberDerivedMaterial;
 use Modules\TimberBilling\Models\TimberDryingCycle;
 use Modules\TimberBilling\Models\TimberLot;
@@ -31,34 +26,33 @@ use Modules\TimberBilling\Models\TimberProcessingStep;
 use Modules\TimberBilling\Models\TimberPurchaseRecord;
 use Modules\TimberBilling\Models\TimberSupplier;
 use Modules\TimberBilling\Models\TimberWoodSpecies;
-use Livewire\Livewire;
-use Spatie\Permission\Models\Role;
+use Modules\TimberBilling\Tests\TestCase;
+
+uses(TestCase::class);
 
 beforeEach(function (): void {
-    Role::findOrCreate('timber_operator');
-    $this->timberUser = User::factory()->create();
-    $this->timberUser->syncRoles(['timber_operator']);
+    filament()->setCurrentPanel('timber');
+    actingAsTimberOperator();
 });
 
 it('exposes the wood species name, not the stored code, on stock models', function (): void {
     TimberWoodSpecies::query()->delete();
-    TimberWoodSpecies::factory()->create(['code' => 'ciliegio', 'name' => 'Ciliegio selvatico', 'is_active' => true]);
+    TimberWoodSpecies::factory()->createOne(['code' => 'ciliegio', 'name' => 'Ciliegio selvatico', 'is_active' => true]);
 
-    $lot = TimberLot::factory()->create(['wood_species' => 'ciliegio']);
-    $material = TimberDerivedMaterial::factory()->create(['wood_species' => 'ciliegio']);
+    $lot = TimberLot::factory()->createOne(['wood_species' => 'ciliegio']);
+    $material = TimberDerivedMaterial::factory()->createOne(['wood_species' => 'ciliegio']);
 
     expect($lot->wood_species_name)->toBe('Ciliegio selvatico')
         ->and($material->wood_species_name)->toBe('Ciliegio selvatico');
 
     // An unknown/legacy code still renders readably (capitalized code).
-    expect(TimberLot::factory()->create(['wood_species' => 'zzz_legacy'])->wood_species_name)->toBe('Zzz_legacy');
+    expect(TimberLot::factory()->createOne(['wood_species' => 'zzz_legacy'])->wood_species_name)->toBe('Zzz_legacy');
 });
 
 it('registers a purchase from the purchases page', function (): void {
-    $supplier = TimberSupplier::factory()->create();
+    $supplier = TimberSupplier::factory()->createOne();
 
-    Livewire::actingAs($this->timberUser)
-        ->test(TimberPurchasesPage::class)
+    testTimberLivewire(TimberPurchasesPage::class)
         ->set('supplierId', $supplier->id)
         ->set('woodSpecies', 'abete')
         ->set('quantity', '1200')
@@ -71,17 +65,15 @@ it('registers a purchase from the purchases page', function (): void {
 
 it('defaults the purchase species to the first available catalog option instead of a hardcoded value', function (): void {
     TimberWoodSpecies::query()->delete();
-    TimberWoodSpecies::factory()->create(['code' => 'ciliegio', 'name' => 'Ciliegio', 'sort_order' => 1]);
-    TimberWoodSpecies::factory()->create(['code' => 'noce', 'name' => 'Noce', 'sort_order' => 2]);
+    TimberWoodSpecies::factory()->createOne(['code' => 'ciliegio', 'name' => 'Ciliegio', 'sort_order' => 1]);
+    TimberWoodSpecies::factory()->createOne(['code' => 'noce', 'name' => 'Noce', 'sort_order' => 2]);
 
-    Livewire::actingAs($this->timberUser)
-        ->test(TimberPurchasesPage::class)
+    testTimberLivewire(TimberPurchasesPage::class)
         ->assertSet('woodSpecies', 'ciliegio');
 });
 
 it('shows a warning when registering a purchase without a supplier', function (): void {
-    Livewire::actingAs($this->timberUser)
-        ->test(TimberPurchasesPage::class)
+    testTimberLivewire(TimberPurchasesPage::class)
         ->set('quantity', '100')
         ->call('registerPurchase')
         ->assertHasNoErrors();
@@ -90,8 +82,8 @@ it('shows a warning when registering a purchase without a supplier', function ()
 });
 
 it('moves a lot from the lot detail page', function (): void {
-    $record = app(\Modules\TimberBilling\Actions\RegisterTimberPurchaseAction::class)->execute(
-        supplier: TimberSupplier::factory()->create(),
+    $record = app(RegisterTimberPurchaseAction::class)->execute(
+        supplier: TimberSupplier::factory()->createOne(),
         transporter: null,
         originForest: null,
         ddtNumber: null,
@@ -108,22 +100,22 @@ it('moves a lot from the lot detail page', function (): void {
         userId: null,
     );
 
-    Livewire::actingAs($this->timberUser)
-        ->withQueryParams(['lot' => $record->lot->id])
-        ->test(TimberLotDetailPage::class)
+    $lot = $record->lot;
+    expect($lot)->not->toBeNull();
+    assert($lot instanceof TimberLot);
+
+    testTimberLivewireWithQuery(TimberLotDetailPage::class, ['lot' => $lot->id])
         ->set('moveToArea', 'zona_taglio')
         ->call('moveLot')
         ->assertHasNoErrors();
 
-    expect($record->lot->fresh()?->current_area_code)->toBe('zona_taglio');
+    expect($lot->fresh()?->current_area_code)->toBe('zona_taglio');
 });
 
 it('prints the incoming lot label from the lot detail page', function (): void {
-    $lot = TimberLot::factory()->create(['lot_code' => 'LOT-2026-0500']);
+    $lot = TimberLot::factory()->createOne(['lot_code' => 'LOT-2026-0500']);
 
-    Livewire::actingAs($this->timberUser)
-        ->withQueryParams(['lot' => $lot->id])
-        ->test(TimberLotDetailPage::class)
+    testTimberLivewireWithQuery(TimberLotDetailPage::class, ['lot' => $lot->id])
         ->call('printLotLabel')
         ->assertHasNoErrors();
 
@@ -131,11 +123,10 @@ it('prints the incoming lot label from the lot detail page', function (): void {
 });
 
 it('moves lots and materials from the yard page', function (): void {
-    $lot = TimberLot::factory()->create(['current_area_code' => 'piazzale']);
-    $material = TimberDerivedMaterial::factory()->create(['current_area_code' => 'zona_taglio', 'is_waste' => false]);
+    $lot = TimberLot::factory()->createOne(['current_area_code' => 'piazzale']);
+    $material = TimberDerivedMaterial::factory()->createOne(['current_area_code' => 'zona_taglio', 'is_waste' => false]);
 
-    Livewire::actingAs($this->timberUser)
-        ->test(TimberYardPage::class)
+    testTimberLivewire(TimberYardPage::class)
         ->call('moveLot', $lot->id, 'zona_taglio')
         ->call('moveMaterial', $material->id, 'deposito_semilavorati')
         ->assertHasNoErrors();
@@ -144,12 +135,14 @@ it('moves lots and materials from the yard page', function (): void {
         ->and($material->fresh()?->current_area_code)->toBe('deposito_semilavorati');
 });
 
-it('registers processing from the dispatcher and specialized processing pages', function (string $pageClass, string $expectedStepType): void {
-    $lot = TimberLot::factory()->create(['status_code' => 'available', 'quantity_available' => 300]);
+/**
+ * @param  class-string<Component>  $pageClass
+ */
+function assertTimberProcessingPageRegisters(string $pageClass, string $expectedStepType): void
+{
+    $lot = TimberLot::factory()->createOne(['status_code' => 'available', 'quantity_available' => 300]);
 
-    $component = Livewire::actingAs($this->timberUser)
-        ->withQueryParams(['lot' => $lot->id])
-        ->test($pageClass);
+    $component = testTimberLivewireWithQuery($pageClass, ['lot' => $lot->id]);
 
     if ($pageClass === TimberProcessingPage::class) {
         $component->set('stepTypeCode', $expectedStepType);
@@ -165,23 +158,32 @@ it('registers processing from the dispatcher and specialized processing pages', 
 
     // The output species is inherited from the processed lot, not picked by hand.
     expect(TimberDerivedMaterial::query()->where('wood_species', $lot->wood_species)->where('quantity', 250)->exists())->toBeTrue();
-})->with([
-    [TimberProcessingPage::class, 'taglio'],
-    [TimberCuttingPage::class, 'taglio'],
-    [TimberSplittingPage::class, 'spaccatura'],
-    [TimberSelectionPage::class, 'selezione'],
-]);
+}
+
+it('registers processing from the dispatcher page', function (): void {
+    assertTimberProcessingPageRegisters(TimberProcessingPage::class, 'taglio');
+});
+
+it('registers processing from the cutting page', function (): void {
+    assertTimberProcessingPageRegisters(TimberCuttingPage::class, 'taglio');
+});
+
+it('registers processing from the splitting page', function (): void {
+    assertTimberProcessingPageRegisters(TimberSplittingPage::class, 'spaccatura');
+});
+
+it('registers processing from the selection page', function (): void {
+    assertTimberProcessingPageRegisters(TimberSelectionPage::class, 'selezione');
+});
 
 it('generates packaged units from the packaging page', function (): void {
-    $material = TimberDerivedMaterial::factory()->create([
+    $material = TimberDerivedMaterial::factory()->createOne([
         'quantity' => 400,
         'is_waste' => false,
         'status_code' => 'pronto_da_confezionare',
     ]);
 
-    Livewire::actingAs($this->timberUser)
-        ->withQueryParams(['material' => $material->id])
-        ->test(TimberPackagingPage::class)
+    testTimberLivewireWithQuery(TimberPackagingPage::class, ['material' => $material->id])
         ->set('unitsCount', 2)
         ->set('quantityPerUnit', '200')
         ->call('generatePackagedUnits')
@@ -191,10 +193,9 @@ it('generates packaged units from the packaging page', function (): void {
 });
 
 it('runs the full drying cycle flow from the drying page', function (): void {
-    $lot = TimberLot::factory()->create(['status_code' => 'available', 'quantity_available' => 100]);
+    $lot = TimberLot::factory()->createOne(['status_code' => 'available', 'quantity_available' => 100]);
 
-    Livewire::actingAs($this->timberUser)
-        ->test(TimberDryingPage::class)
+    testTimberLivewire(TimberDryingPage::class)
         ->set('sourceType', 'lot')
         ->set('sourceId', $lot->id)
         ->call('startDrying')
@@ -202,16 +203,14 @@ it('runs the full drying cycle flow from the drying page', function (): void {
 
     $cycle = TimberDryingCycle::query()->where('dryable_type', TimberLot::class)->where('dryable_id', $lot->id)->firstOrFail();
 
-    Livewire::actingAs($this->timberUser)
-        ->test(TimberDryingPage::class)
+    testTimberLivewire(TimberDryingPage::class)
         ->set('humidityPercent', '25')
         ->call('recordHumidity', $cycle->id)
         ->assertHasNoErrors();
 
     expect($cycle->humidityChecks()->count())->toBe(1);
 
-    Livewire::actingAs($this->timberUser)
-        ->test(TimberDryingPage::class)
+    testTimberLivewire(TimberDryingPage::class)
         ->call('completeDrying', $cycle->id)
         ->assertHasNoErrors();
 
@@ -219,41 +218,35 @@ it('runs the full drying cycle flow from the drying page', function (): void {
 });
 
 it('preselects a derived material on the drying page when deep-linked from the outputs page', function (): void {
-    $material = TimberDerivedMaterial::factory()->create(['is_waste' => false, 'quantity' => 120]);
+    $material = TimberDerivedMaterial::factory()->createOne(['is_waste' => false, 'quantity' => 120]);
 
-    Livewire::actingAs($this->timberUser)
-        ->withQueryParams(['material' => $material->id])
-        ->test(TimberDryingPage::class)
+    testTimberLivewireWithQuery(TimberDryingPage::class, ['material' => $material->id])
         ->assertSet('sourceType', 'material')
         ->assertSet('sourceId', $material->id);
 });
 
 it('ignores the drying deep-link for a waste or depleted derived material', function (): void {
-    $waste = TimberDerivedMaterial::factory()->create(['is_waste' => true, 'quantity' => 120]);
+    $waste = TimberDerivedMaterial::factory()->createOne(['is_waste' => true, 'quantity' => 120]);
 
-    Livewire::actingAs($this->timberUser)
-        ->withQueryParams(['material' => $waste->id])
-        ->test(TimberDryingPage::class)
+    testTimberLivewireWithQuery(TimberDryingPage::class, ['material' => $waste->id])
         ->assertSet('sourceType', 'lot')
         ->assertSet('sourceId', null);
 });
 
 it('renders the outputs page with materials and packaged units', function (): void {
-    TimberDerivedMaterial::factory()->create();
-    TimberPackagedUnit::factory()->create();
+    TimberDerivedMaterial::factory()->createOne();
+    TimberPackagedUnit::factory()->createOne();
 
-    Livewire::actingAs($this->timberUser)
-        ->test(TimberOutputsPage::class)
+    testTimberLivewire(TimberOutputsPage::class)
         ->assertOk();
 });
 
 it('downloads a label pdf for a lot, a material and a packaged unit', function (): void {
-    $lot = TimberLot::factory()->create();
-    $material = TimberDerivedMaterial::factory()->create();
-    $packagedUnit = TimberPackagedUnit::factory()->create();
+    $lot = TimberLot::factory()->createOne();
+    $material = TimberDerivedMaterial::factory()->createOne();
+    $packagedUnit = TimberPackagedUnit::factory()->createOne();
 
-    Livewire::actingAs($this->timberUser)
-        ->test(TimberLabelsPage::class)
+    testTimberLivewire(TimberLabelsPage::class)
         ->call('downloadLotLabel', $lot->id)
         ->call('downloadMaterialLabel', $material->id)
         ->call('downloadPackagedUnitLabel', $packagedUnit->id)
@@ -261,11 +254,9 @@ it('downloads a label pdf for a lot, a material and a packaged unit', function (
 });
 
 it('searches and downloads traceability from the traceability page', function (): void {
-    $lot = TimberLot::factory()->create(['lot_code' => 'LOT-PAGE-TEST']);
+    $lot = TimberLot::factory()->createOne(['lot_code' => 'LOT-PAGE-TEST']);
 
-    Livewire::actingAs($this->timberUser)
-        ->withQueryParams(['search' => 'LOT-PAGE-TEST'])
-        ->test(TimberTraceabilityPage::class)
+    testTimberLivewireWithQuery(TimberTraceabilityPage::class, ['search' => 'LOT-PAGE-TEST'])
         ->assertSet('search', 'LOT-PAGE-TEST')
         ->call('downloadTraceabilityPdf')
         ->assertHasNoErrors();
@@ -274,22 +265,20 @@ it('searches and downloads traceability from the traceability page', function ()
 });
 
 it('downloads the inventory pdf from the inventory page', function (): void {
-    TimberLot::factory()->create();
+    TimberLot::factory()->createOne();
 
-    Livewire::actingAs($this->timberUser)
-        ->test(TimberInventoryPage::class)
+    testTimberLivewire(TimberInventoryPage::class)
         ->call('downloadInventoryPdf')
         ->assertHasNoErrors();
 });
 
 it('renders the dashboard with all four charts', function (): void {
-    $supplier = TimberSupplier::factory()->create(['legal_name' => 'Boschi Test Srl']);
-    TimberDerivedMaterial::factory()->create(['status_code' => 'pronto_per_vendita', 'quantity' => 120, 'is_waste' => false]);
-    TimberLot::factory()->create(['status_code' => 'available', 'wood_species' => 'abete', 'quantity_available' => 500]);
-    TimberPurchaseRecord::factory()->create(['supplier_id' => $supplier->id, 'quantity' => 250, 'received_at' => now()]);
+    $supplier = TimberSupplier::factory()->createOne(['legal_name' => 'Boschi Test Srl']);
+    TimberDerivedMaterial::factory()->createOne(['status_code' => 'pronto_per_vendita', 'quantity' => 120, 'is_waste' => false]);
+    TimberLot::factory()->createOne(['status_code' => 'available', 'wood_species' => 'abete', 'quantity_available' => 500]);
+    TimberPurchaseRecord::factory()->createOne(['supplier_id' => $supplier->id, 'quantity' => 250, 'received_at' => now()]);
 
-    Livewire::actingAs($this->timberUser)
-        ->test(TimberDashboard::class)
+    testTimberLivewire(TimberDashboard::class)
         ->assertOk()
         ->assertSee('Composizione materiale per stato')
         ->assertSee('Giacenza per specie legnosa')
@@ -304,17 +293,15 @@ it('renders the dashboard with all four charts', function (): void {
 it('renders the dashboard without crashing when a lot has a numeric species code', function (): void {
     // Numeric strings become int array keys in PHP; the species-bar builder must
     // not choke on that (regression: ucfirst(int) TypeError).
-    TimberLot::factory()->create(['status_code' => 'available', 'wood_species' => '323', 'quantity_available' => 90]);
+    TimberLot::factory()->createOne(['status_code' => 'available', 'wood_species' => '323', 'quantity_available' => 90]);
 
-    Livewire::actingAs($this->timberUser)
-        ->test(TimberDashboard::class)
+    testTimberLivewire(TimberDashboard::class)
         ->assertOk()
         ->assertSee('Giacenza per specie legnosa');
 });
 
 it('renders the dashboard empty states when there is no data', function (): void {
-    Livewire::actingAs($this->timberUser)
-        ->test(TimberDashboard::class)
+    testTimberLivewire(TimberDashboard::class)
         ->assertOk()
         ->assertSee('Nessun materiale derivato registrato.')
         ->assertSee('Nessun lotto disponibile.')
