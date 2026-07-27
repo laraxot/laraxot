@@ -2,12 +2,14 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Vehicle\Tests\TestCase::class);
+namespace Modules\Vehicle\Tests\Feature;
 
 use Modules\Vehicle\Models\Vehicle;
+use Modules\Vehicle\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('creates and soft-deletes a vehicle', function (): void {
-    /** @var Vehicle $vehicle */
     $vehicle = Vehicle::query()->create([
         'plate_number' => 'AB123CD',
         'year' => 2020,
@@ -25,4 +27,3 @@ it('creates and soft-deletes a vehicle', function (): void {
     $vehicle->delete();
     expect($vehicle->refresh()->trashed())->toBeTrue();
 });
-

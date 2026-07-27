@@ -2,11 +2,15 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Vehicle\Tests\TestCase::class);
+namespace Modules\Vehicle\Tests\Feature;
 
 use Illuminate\Support\Facades\Storage;
 use Modules\Vehicle\Actions\AddVehicleDocumentAction;
 use Modules\Vehicle\Models\Vehicle;
+use Modules\Vehicle\Tests\TestCase;
+use RuntimeException;
+
+uses(TestCase::class);
 
 it('adds a vehicle document and stores media metadata', function (): void {
     // Arrange
@@ -36,8 +40,12 @@ it('adds a vehicle document and stores media metadata', function (): void {
     // Assert
     expect($link->vehicle_id)->toBe($vehicle->id);
     expect($link->title)->toBe('Libretto');
-    expect($link->media)->not()->toBeNull();
-    expect($link->media->mime_type)->not()->toBeNull();
-    expect($link->media->size_bytes)->toBe(5);
-});
 
+    $media = $link->media;
+    if ($media === null) {
+        throw new RuntimeException('Expected media to be set on the link.');
+    }
+
+    expect($media->mime_type)->not()->toBeNull();
+    expect($media->size_bytes)->toBe(5);
+});
