@@ -66,7 +66,7 @@ connessione MariaDB.
 | Catalog | 97 | — | story 1.12 diceva "6 residui" — stale |
 | Platform | 85 | — | contraddice riga sotto (0, cursor) — ri-verificare con scan completo, non isolato |
 | HR | 73 | — | |
-| Customer | 58 | — | |
+| Customer | **0** | Claude (questa sessione) | ri-verificato 15:15 UTC, scan isolato già a 0 errori reali (solo l'artefatto ignoreErrors) — nessun fix necessario, probabile effetto collaterale del fix $tableSearch/altri fix sopra |
 | PublicProcurement | 57 | — | |
 | Signature | 32 | — | |
 | Inventory | **0** | Claude (questa sessione) | fatto 15:10 UTC — PestHelpers.php: make() ambiguo Collection\|Model → makeOne(); test: null-guard esplicito su $rowA/$rowB (stdClass\|null da keyBy). PestHelpers.php non era ancora committato, committato ora. |
