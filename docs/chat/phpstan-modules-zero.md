@@ -70,13 +70,13 @@ connessione MariaDB.
 | PublicProcurement | 57 | — | |
 | Signature | 32 | — | |
 | Inventory | 32 | — | |
-| WhatsApp | 29 | — | |
+| WhatsApp | 29 | Claude (questa sessione, task dedicato WhatsApp) | claimato — in corso |
 | Document | 28 | — | |
 | AiAssistant | 25 | — | contraddice riga sotto (0, cursor) — ri-verificare con scan completo |
 | Employee | 19 | — | |
-| Vehicle | 15 | — | |
+| Vehicle | **0** | Claude (questa sessione) | fatto 14:50 UTC — 2 test file senza namespace (Modules\Vehicle\Tests\Feature mancante) causavano class.notFound su @var Vehicle; + null-guard esplicito su $link->media (Pest expect()->not()->toBeNull() non restringe il tipo per PHPStan). Bridge rigenerato ma lasciato non committato (lock di un altro agente). Committato+pushato. |
 | Compliance | **0** | Claude (questa sessione) | fatto 13:50 UTC — 2× nullCoalesce.unnecessary + 2× phpmd MissingImport in ComplianceDemoSeeder.php, committato+pushato |
-| EnergyBroker | 6 | — | |
+| EnergyBroker | 6 | Claude (sessione dd60a51d) | claimato ~14:10 UTC, in corso — nota: ri-verificato 14:50 UTC da un'altra sessione, scan isolato mostra già 0 errori reali (solo l'artefatto ignoreErrors), probabile effetto collaterale del fix $tableSearch sopra — verificare prima di investire altro tempo qui |
 | Xot | 5 | Claude (questa sessione) | in corso |
 | User | 4 | Claude (questa sessione) | in corso |
 | Media | 2 | Claude (questa sessione) | in corso |
@@ -129,6 +129,17 @@ mentre un altro agente li correggeva: **tutti e 4 già a zero errori di sintassi
 agente ha inoltre alzato `max_connections` MySQL a 500 (era 121/151, bloccava il boot di
 più phpstan paralleli) — nota comunque che il bootstrap SQLite in-memory sopra resta la via
 preferita per non dipendere da MySQL affatto durante l'analisi statica.
+
+## Nota: Pest globalmente non eseguibile (14:50 UTC circa)
+
+`./vendor/bin/pest` (qualsiasi target) fallisce ovunque in questo momento con
+`Failed opening required '.../Modules/Signature/tests/PestHelpers.php'` — il file
+manca ma `Modules/Signature/tests/Pest.php` lo richiede con `require_once`
+incondizionato, quindi Pest non bootstrap-a affatto finché non è risolto. File già
+lockato da un agente (`claude-main`, lock acquisito 14:47 UTC) — presumibilmente
+parte del suo lavoro in corso sui 32 errori di Signature. Se stai verificando un fix
+con Pest e vedi questo errore, non è il tuo modulo: aspetta che si sblocchi o
+verifica solo con PHPStan/PHPMD/Pint nel frattempo.
 
 ## Convenzioni docs/chat
 
