@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-uses(TestCase::class);
-
 use Illuminate\Support\Facades\DB;
 use Modules\Quotation\Actions\RecordSiteSurveyAction;
 use Modules\Quotation\DTO\SiteSurveyAttachment;
@@ -11,10 +9,11 @@ use Modules\Quotation\Filament\Resources\SiteSurveyResource;
 use Modules\Quotation\Filament\Resources\SiteSurveyResource\Concerns\RecordsSiteSurvey;
 use Modules\Quotation\Models\SiteSurvey;
 use Modules\Quotation\Tests\TestCase;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Database\Seeders\PermissionsSeeder;
 use Modules\User\Models\User;
 
-use function Pest\Laravel\actingAs;
+uses(TestCase::class);
 
 /**
  * Espone il trait dell'azione "Registra rilievo" senza montare la pagina
@@ -29,13 +28,18 @@ final class SiteSurveyAttachmentMapperProbe
     {
         return self::toAttachments($rows);
     }
+
+    private function getRecord(): null
+    {
+        return null;
+    }
 }
 
 function siteSurveyAdmin(): User
 {
     app(PermissionsSeeder::class)->run();
 
-    $user = User::factory()->create();
+    $user = UserFactory::new()->createOne();
     $user->syncRoles(['admin']);
 
     return $user;
@@ -50,7 +54,6 @@ function makeSiteSurvey(): SiteSurvey
         'updated_at' => now(),
     ]);
 
-    /** @var SiteSurvey $survey */
     $survey = SiteSurvey::query()->create([
         'code' => 'SL-0001',
         'customer_id' => $customerId,
@@ -68,10 +71,10 @@ it('loads the site survey list, create and edit pages in the admin panel', funct
 
     filament()->setCurrentPanel('admin');
 
-    actingAs($user)->get(SiteSurveyResource::getUrl('index'))->assertStatus(200);
-    actingAs($user)->get(SiteSurveyResource::getUrl('create'))->assertStatus(200);
-    actingAs($user)->get(SiteSurveyResource::getUrl('edit', ['record' => $survey->id]))->assertStatus(200);
-    actingAs($user)->get(SiteSurveyResource::getUrl('view', ['record' => $survey->id]))->assertStatus(200);
+    $this->actingAs($user)->get(SiteSurveyResource::getUrl('index'))->assertStatus(200);
+    $this->actingAs($user)->get(SiteSurveyResource::getUrl('create'))->assertStatus(200);
+    $this->actingAs($user)->get(SiteSurveyResource::getUrl('edit', ['record' => $survey->id]))->assertStatus(200);
+    $this->actingAs($user)->get(SiteSurveyResource::getUrl('view', ['record' => $survey->id]))->assertStatus(200);
 });
 
 it('maps repeater rows to attachment DTOs and drops the ones without a file', function (): void {

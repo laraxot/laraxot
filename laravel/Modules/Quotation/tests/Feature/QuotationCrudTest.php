@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
 use Illuminate\Support\Facades\DB;
 use Modules\Quotation\Actions\RecalculateQuotationTotalsAction;
 use Modules\Quotation\Models\Quotation;
+use Modules\Quotation\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('creates a quotation and recalculates totals after adding and removing items', function (): void {
     // Arrange
@@ -17,7 +18,6 @@ it('creates a quotation and recalculates totals after adding and removing items'
         'updated_at' => now(),
     ]);
 
-    /** @var Quotation $quotation */
     $quotation = Quotation::query()->create([
         'code' => 'Q-CRUD-0001',
         'customer_id' => $customerId,
@@ -64,7 +64,6 @@ it('creates a quotation and recalculates totals after adding and removing items'
     expect($quotation->items()->count())->toBe(2);
 
     // Act: remove one item and recalc
-    /** @var \Modules\Quotation\Models\QuotationItem|null $item */
     $item = $quotation->items()->orderByDesc('id')->first();
     if ($item !== null) {
         $item->delete();
@@ -82,4 +81,3 @@ it('creates a quotation and recalculates totals after adding and removing items'
     // Assert quotation soft deleted
     expect($quotation->refresh()->trashed())->toBeTrue();
 });
-

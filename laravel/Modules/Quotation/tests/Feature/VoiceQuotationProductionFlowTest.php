@@ -2,22 +2,21 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
-use Modules\User\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
-use Livewire\Livewire;
 use Modules\AiAssistant\Reports\OpenAiQuotationDraftExtractor;
 use Modules\Catalog\Models\Product;
 use Modules\Document\Models\Media;
 use Modules\Quotation\AI\QuotationDraftExtractorInterface;
-use Modules\Quotation\Filament\Pages\RecordQuotationVoicePage;
 use Modules\Quotation\Models\Quotation;
-use Spatie\Permission\Models\Role;
+use Modules\Quotation\Tests\TestCase;
+
+uses(TestCase::class);
 
 use function Pest\Laravel\actingAs;
+use function Safe\file_get_contents;
+use function Safe\json_encode;
 
 /**
  * PRODUCTION-FAITHFUL test: runs the REAL LLM extractor (real prompt + real JSON
@@ -49,10 +48,7 @@ beforeEach(function (): void {
 it('reproduces the exact voice flow end-to-end against the real extractor (Http-faked LLM)', function (): void {
     Storage::fake('local');
 
-    $role = Role::findOrCreate('operator');
-    $user = User::factory()->create();
-    $user->syncRoles([$role]);
-    actingAs($user);
+    actingAs(quotationOperator());
 
     // Source customer stored with the file's typo ("Pico Pallino") + a real .ods.
     $sourceCustomerId = DB::table('customers')->insertGetId([
@@ -60,7 +56,6 @@ it('reproduces the exact voice flow end-to-end against the real extractor (Http-
     ]);
     // Source quotation mirrors the .ods fixture (its lines/prices/total appear
     // verbatim in the document) so the substitution can be verified end-to-end.
-    /** @var Quotation $source */
     $source = Quotation::query()->create([
         'customer_id' => $sourceCustomerId, 'status_code' => 'draft',
         'title' => 'Preventivo per sostituzione caldaia', 'subtotal' => 2792.0, 'total' => 2764.08,
@@ -69,7 +64,7 @@ it('reproduces the exact voice flow end-to-end against the real extractor (Http-
     $source->items()->create(['description' => 'Fornitura e posa di canna fumaria a parete o tetto (prezzo a corpo)', 'quantity' => 1, 'unit_price' => 190.0, 'line_total' => 190.0, 'sort_order' => 1]);
 
     $path = 'quotation-attachments/'.$source->id.'/pico.ods';
-    Storage::disk('local')->put($path, (string) file_get_contents(base_path('tests/Fixtures/quotations/pinco-pallino.ods')));
+    Storage::disk('local')->put($path, file_get_contents(base_path('tests/Fixtures/quotations/pinco-pallino.ods')));
     Media::query()->create([
         'mediable_type' => Quotation::class, 'mediable_id' => $source->id,
         'kind' => 'document', 'disk' => 'local', 'path' => $path, 'title' => 'Preventivo Pico Pallino.ods',
@@ -91,7 +86,7 @@ it('reproduces the exact voice flow end-to-end against the real extractor (Http-
         'items' => [['description' => 'scaldabagno elettrico', 'quantity' => 1, 'unit_price' => null]],
     ]);
 
-    Livewire::test(RecordQuotationVoicePage::class)
+    testQuotationVoicePage()
         ->set('transcript', 'Copia il preventivo di picco pallino e fallo per Davide Cavallini e metteci solo uno scaldabagno')
         ->call('generateDraft')
         ->assertSet('hasDraft', true)
@@ -108,9 +103,9 @@ it('reproduces the exact voice flow end-to-end against the real extractor (Http-
     // New quotation belongs to Davide (not Pico). The attachment rewrite is AI-driven
     // and covered end-to-end by RewriteAndAttachQuotationDocumentsTest.
     $newCustomerId = DB::table('customers')->where('legal_name', 'Davide Cavallini')->value('id');
-    /** @var Quotation $created */
     $created = Quotation::query()->where('customer_id', $newCustomerId)->latest('id')->firstOrFail();
     expect((int) $created->id)->not->toBe((int) $source->id);
     expect($created->items()->count())->toBe(1);
-    expect($created->items()->first()->description)->toBe('Scaldabagno elettrico 80 lt verticale');
+    $item = $created->items()->firstOrFail();
+    expect($item->description)->toBe('Scaldabagno elettrico 80 lt verticale');
 });

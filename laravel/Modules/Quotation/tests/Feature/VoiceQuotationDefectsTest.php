@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
 use Illuminate\Support\Facades\DB;
 use Modules\Catalog\Models\Product;
 use Modules\Quotation\Actions\BuildQuotationDraftAction;
@@ -11,7 +9,13 @@ use Modules\Quotation\Actions\MatchDictatedItemsToCatalogAction;
 use Modules\Quotation\AI\QuotationDraftExtractorInterface;
 use Modules\Quotation\DTO\DictatedQuotationItem;
 use Modules\Quotation\Models\Quotation;
+use Modules\Quotation\Tests\TestCase;
 
+uses(TestCase::class);
+
+/**
+ * @param  array<string, mixed>  $payload
+ */
 function defectExtractor(array $payload): QuotationDraftExtractorInterface
 {
     return new class($payload) implements QuotationDraftExtractorInterface
@@ -47,7 +51,6 @@ it('copies the referenced customer quotation without making them the recipient',
     $pincoId = DB::table('customers')->insertGetId([
         'legal_name' => 'Pinco Pallino', 'is_active' => 1, 'created_at' => now(), 'updated_at' => now(),
     ]);
-    /** @var Quotation $pinco */
     $pinco = Quotation::query()->create(['customer_id' => $pincoId, 'status_code' => 'draft', 'title' => 'Caldaia']);
     $pinco->items()->create(['description' => 'Fornitura e posa di Ariston Clas One Wifi 24', 'quantity' => 1, 'unit_price' => 1158.0, 'line_total' => 1158.0, 'sort_order' => 0]);
     $pinco->items()->create(['description' => 'Fornitura e posa di canna fumaria', 'quantity' => 1, 'unit_price' => 190.0, 'line_total' => 190.0, 'sort_order' => 1]);

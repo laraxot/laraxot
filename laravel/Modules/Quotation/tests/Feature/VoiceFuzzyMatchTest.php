@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
 use Illuminate\Support\Facades\DB;
 use Modules\Catalog\Models\Product;
 use Modules\Customer\Models\Customer;
@@ -14,7 +12,13 @@ use Modules\Quotation\AI\QuotationDraftExtractorInterface;
 use Modules\Quotation\DTO\DictatedQuotationItem;
 use Modules\Quotation\DTO\QuotationCustomerDraft;
 use Modules\Quotation\Models\Quotation;
+use Modules\Quotation\Tests\TestCase;
 
+uses(TestCase::class);
+
+/**
+ * @param  array<string, mixed>  $payload
+ */
 function fuzzyExtractor(array $payload): QuotationDraftExtractorInterface
 {
     return new class($payload) implements QuotationDraftExtractorInterface
@@ -68,7 +72,6 @@ it('does not duplicate an article already present in the copied quotation', func
     $pincoId = DB::table('customers')->insertGetId([
         'legal_name' => 'Pinco Pallino', 'is_active' => 1, 'created_at' => now(), 'updated_at' => now(),
     ]);
-    /** @var Quotation $pinco */
     $pinco = Quotation::query()->create(['customer_id' => $pincoId, 'status_code' => 'draft', 'title' => 'X']);
     $pinco->items()->create(['product_id' => $product->id, 'description' => 'Scaldabagno elettrico 80 lt', 'quantity' => 1, 'unit_price' => 210.0, 'line_total' => 210.0, 'sort_order' => 0]);
 

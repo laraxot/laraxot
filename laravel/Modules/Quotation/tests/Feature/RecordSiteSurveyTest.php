@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
 use Illuminate\Support\Facades\DB;
 use Modules\Quotation\Actions\RecordSiteSurveyAction;
 use Modules\Quotation\DTO\SiteSurveyAttachment;
 use Modules\Quotation\Models\SiteSurvey;
+use Modules\Quotation\Tests\TestCase;
+
+uses(TestCase::class);
 
 function surveyForCustomer(): SiteSurvey
 {
@@ -45,7 +46,7 @@ it('records the survey with photos, videos and voice notes', function (): void {
         ->and($recorded->photos()->count())->toBe(1)
         ->and($recorded->videos()->count())->toBe(1)
         ->and($recorded->voiceNotes()->count())->toBe(1)
-        ->and($recorded->voiceNotes()->first()?->title)->toBe('Nota vocale');
+        ->and($recorded->voiceNotes()->firstOrFail()->name)->toBe('Nota vocale');
 });
 
 it('records a survey without attachments', function (): void {

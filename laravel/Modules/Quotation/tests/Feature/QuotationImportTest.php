@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
 use Modules\Catalog\Models\MetelCatalog;
 use Modules\Catalog\Models\Product;
 use Modules\Customer\Models\Customer;
@@ -11,9 +9,12 @@ use Modules\Quotation\Actions\DuplicateQuotationAsDraftAction;
 use Modules\Quotation\Actions\ImportQuotationFromFileAction;
 use Modules\Quotation\Actions\MatchDictatedItemsToCatalogAction;
 use Modules\Quotation\AI\QuotationDraftExtractorInterface;
-use Modules\Quotation\Import\QuotationDocumentTextExtractor;
 use Modules\Quotation\DTO\DictatedQuotationItem;
+use Modules\Quotation\Import\QuotationDocumentTextExtractor;
 use Modules\Quotation\Models\Quotation;
+use Modules\Quotation\Tests\TestCase;
+
+uses(TestCase::class);
 
 function pincoFixturePath(): string
 {
@@ -41,6 +42,9 @@ function pincoExtractorPayload(): array
     ];
 }
 
+/**
+ * @param  array<string, mixed>  $payload
+ */
 function bindImportExtractor(array $payload): void
 {
     app()->bind(QuotationDraftExtractorInterface::class, fn (): QuotationDraftExtractorInterface => new class($payload) implements QuotationDraftExtractorInterface
@@ -107,7 +111,6 @@ it('duplicates a quotation keeping every line verbatim (copy, then modify)', fun
 // ─── 4. METEL-aware matching: articles from the METEL catalog become usable ───
 
 it('matches a dictated article against the imported METEL catalog and prices it', function (): void {
-    /** @var MetelCatalog $catalog */
     $catalog = MetelCatalog::query()->create(['code' => 'demo', 'name' => 'Demo', 'source_type' => 'file', 'is_active' => true]);
     $catalog->items()->create([
         'metel_code' => 'DMO0100010',

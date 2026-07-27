@@ -2,40 +2,35 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
-use Modules\User\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
-use Livewire\Livewire;
 use Modules\Catalog\Models\Product;
 use Modules\Document\Models\Media;
-use Modules\Quotation\Filament\Pages\RecordQuotationVoicePage;
 use Modules\Quotation\Models\Quotation;
-use Spatie\Permission\Models\Role;
+use Modules\Quotation\Tests\TestCase;
+use Modules\User\Models\User;
+
+uses(TestCase::class);
 
 use function Pest\Laravel\actingAs;
-
-function sourceSelectOperator(): User
-{
-    $role = Role::findOrCreate('operator');
-    $user = User::factory()->create();
-    $user->syncRoles([$role]);
-
-    return $user;
-}
 
 beforeEach(function (): void {
     filament()->setCurrentPanel('operator');
     actingAs(sourceSelectOperator());
 });
 
+function sourceSelectOperator(): User
+{
+    return quotationOperator();
+}
+
 it('offers a "none" option plus recent quotations labelled by title and customer', function (): void {
     $customerId = DB::table('customers')->insertGetId(['legal_name' => 'Pico Pallino', 'is_active' => 1, 'created_at' => now(), 'updated_at' => now()]);
     $q = Quotation::query()->create(['customer_id' => $customerId, 'status_code' => 'draft', 'title' => 'Sostituzione caldaia']);
 
-    $options = Livewire::test(RecordQuotationVoicePage::class)->instance()->sourceOptions();
+    /** @var array<int|string, string> $options */
+    $options = testQuotationVoicePage()->instance()->sourceOptions();
 
     // "None" is present and first.
     expect($options[0] ?? null)->toBe(__('quotations.voice.based_on_none'));
@@ -47,7 +42,7 @@ it('preselects the detected source and keeps it in the options', function (): vo
     $customerId = DB::table('customers')->insertGetId(['legal_name' => 'Rossi SRL', 'is_active' => 1, 'created_at' => now(), 'updated_at' => now()]);
     $q = Quotation::query()->create(['customer_id' => $customerId, 'status_code' => 'draft', 'title' => 'Impianto']);
 
-    $component = Livewire::test(RecordQuotationVoicePage::class)->set('sourceId', (int) $q->id);
+    $component = testQuotationVoicePage()->set('sourceId', (int) $q->id);
 
     $component->assertSet('sourceId', (int) $q->id);
     expect($component->instance()->sourceOptions())->toHaveKey((int) $q->id);
@@ -66,7 +61,7 @@ it('does not copy any attachment when the source is set to "none"', function ():
     Media::query()->create(['mediable_type' => Quotation::class, 'mediable_id' => $source->id, 'kind' => 'document', 'disk' => 'local', 'path' => $path, 'title' => 'doc']);
 
     // ...but the operator chose "none" (0) in the dropdown.
-    Livewire::test(RecordQuotationVoicePage::class)
+    testQuotationVoicePage()
         ->set('hasDraft', true)
         ->set('sourceId', 0)
         ->set('customerLegalName', 'Nuovo Cliente')

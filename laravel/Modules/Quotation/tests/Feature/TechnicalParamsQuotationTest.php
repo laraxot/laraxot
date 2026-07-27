@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
 use Illuminate\Support\Facades\DB;
 use Modules\Catalog\Models\Product;
 use Modules\Quotation\Actions\ApplyTechnicalParamsToQuotationItemsAction;
@@ -16,6 +14,9 @@ use Modules\Quotation\DTO\DictatedQuotationItem;
 use Modules\Quotation\DTO\QuotationCustomerDraft;
 use Modules\Quotation\DTO\QuotationDraft;
 use Modules\Quotation\Models\Quotation;
+use Modules\Quotation\Tests\TestCase;
+
+uses(TestCase::class);
 
 /**
  * @param  array<string, mixed>  $payload
@@ -122,7 +123,7 @@ it('parses and whitelists technical params from the extractor payload', function
         ],
     ]);
 
-    $draft = (new BuildQuotationDraftAction($extractor, new MatchDictatedItemsToCatalogAction))->execute('x');
+    $draft = (new BuildQuotationDraftAction($extractor, new MatchDictatedItemsToCatalogAction()))->execute('x');
 
     expect($draft->technicalParams)->toBe([
         'surface_m2' => 80.0,
@@ -155,7 +156,6 @@ it('carries technical params when duplicating a source quotation', function (): 
         'legal_name' => 'Origine Tecnica', 'is_active' => 1, 'created_at' => now(), 'updated_at' => now(),
     ]);
 
-    /** @var Quotation $source */
     $source = Quotation::query()->create([
         'customer_id' => $customerId, 'status_code' => 'draft', 'title' => 'X',
         'technical_params' => ['flue_length_m' => 7.0],

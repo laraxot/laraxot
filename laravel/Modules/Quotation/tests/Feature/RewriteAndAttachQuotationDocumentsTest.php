@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
+use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
@@ -11,13 +10,22 @@ use Modules\Document\Models\Media;
 use Modules\Quotation\Actions\RewriteAndAttachQuotationDocumentsAction;
 use Modules\Quotation\Import\QuotationDocumentTextExtractor;
 use Modules\Quotation\Models\Quotation;
+use Modules\Quotation\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
+
+use function Safe\file_get_contents;
+use function Safe\json_encode;
+
+/**
+ * @param  list<array{0: string, 1: float}>  $lines
+ */
 function quotationWithAttachment(string $legalName, string $title, array $lines, string $fixturePath): Quotation
 {
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => $legalName, 'is_active' => 1, 'created_at' => now(), 'updated_at' => now(),
     ]);
-    /** @var Quotation $q */
     $q = Quotation::query()->create(['customer_id' => $customerId, 'status_code' => 'draft', 'title' => $title]);
     $sort = 0;
     foreach ($lines as [$desc, $price]) {
@@ -25,7 +33,7 @@ function quotationWithAttachment(string $legalName, string $title, array $lines,
     }
 
     $path = 'quotation-attachments/'.$q->id.'/doc.ods';
-    Storage::disk('local')->put($path, (string) file_get_contents($fixturePath));
+    Storage::disk('local')->put($path, file_get_contents($fixturePath));
     Media::query()->create([
         'mediable_type' => Quotation::class, 'mediable_id' => $q->id,
         'kind' => 'document', 'disk' => 'local', 'path' => $path, 'title' => 'Preventivo.ods',
@@ -41,8 +49,10 @@ it('AI-rewrites the source attachment into the new quotation document and attach
     // The AI returns a valid, rewritten content.xml (here minimal) reflecting the new quotation.
     $capturedPrompt = '';
     Http::fake([
-        '*/chat/completions' => function ($request) use (&$capturedPrompt) {
-            $capturedPrompt = json_encode($request->data()['messages'] ?? []);
+        '*/chat/completions' => function (Request $request) use (&$capturedPrompt) {
+            $data = httpClientRequestData($request);
+            $messages = $data['messages'] ?? [];
+            $capturedPrompt = json_encode(is_array($messages) ? $messages : []);
             // The AI returns only small find/replace edits applied to the body.
             $payload = ['replacements' => [
                 ['find' => 'Ariston Clas One Wifi 24', 'replace' => 'Scaldabagno elettrico 80 lt verticale'],
@@ -73,7 +83,7 @@ it('AI-rewrites the source attachment into the new quotation document and attach
 
     // The attached document has the AI's replacements applied (the layout is kept).
     $media = $target->media()->where('kind', 'document')->first();
-    expect($media)->not->toBeNull();
+    Assert::assertInstanceOf(Media::class, $media);
     $text = app(QuotationDocumentTextExtractor::class)->extract(Storage::disk('local')->path((string) $media->path), 'x.ods');
     expect($text)->toContain('Scaldabagno elettrico 80 lt verticale');
     expect($text)->not->toContain('Ariston');
@@ -85,9 +95,13 @@ it('gives the AI todays date, the new total and instructions to recompute validi
 
     $capturedPrompt = '';
     Http::fake([
-        '*/chat/completions' => function ($request) use (&$capturedPrompt) {
-            $messages = $request->data()['messages'] ?? [];
-            $capturedPrompt = implode("\n", array_map(static fn (array $m): string => (string) ($m['content'] ?? ''), $messages));
+        '*/chat/completions' => function (Request $request) use (&$capturedPrompt) {
+            $data = httpClientRequestData($request);
+            $messages = $data['messages'] ?? [];
+            if (! is_array($messages)) {
+                $messages = [];
+            }
+            $capturedPrompt = httpMessagesPrompt($messages);
 
             return Http::response(['choices' => [['message' => ['content' => json_encode(['replacements' => [['find' => 'Ariston', 'replace' => 'Scaldabagno']]])]]]], 200);
         },

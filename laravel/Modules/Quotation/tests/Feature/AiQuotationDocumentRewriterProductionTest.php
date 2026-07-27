@@ -2,12 +2,18 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
+use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Http;
 use Modules\Quotation\Import\QuotationDocumentRewriterInterface;
+use Modules\Quotation\Tests\TestCase;
 
-/** @param callable(string):array $byModel returns the "replacements" array for a model */
+uses(TestCase::class);
+
+use function Safe\json_encode;
+
+/**
+ * @param  callable(string): list<array{find: string, replace: string}>  $byModel
+ */
 function fakeRewriterHttp(callable $byModel): void
 {
     config([
@@ -18,8 +24,9 @@ function fakeRewriterHttp(callable $byModel): void
     ]);
 
     Http::fake([
-        '*/chat/completions' => function ($request) use ($byModel) {
-            $model = (string) ($request->data()['model'] ?? '');
+        '*/chat/completions' => function (Request $request) use ($byModel) {
+            $data = httpClientRequestData($request);
+            $model = (string) ($data['model'] ?? '');
             $payload = ['replacements' => $byModel($model)];
 
             return Http::response(['choices' => [['message' => ['content' => json_encode($payload, JSON_UNESCAPED_UNICODE)]]]], 200);
@@ -80,7 +87,7 @@ it('retries with the pro model when the first attempt returns no replacements', 
 
     expect($out)->toBe('<p>Selmec</p>');
     Http::assertSentCount(2);
-    Http::assertSent(fn ($request): bool => ($request->data()['model'] ?? '') === 'deepseek-reasoner');
+    Http::assertSent(fn (Request $request): bool => (httpClientRequestData($request)['model'] ?? '') === 'deepseek-reasoner');
 });
 
 it('returns null when no replacement matches / none are produced', function (): void {
@@ -106,9 +113,13 @@ it('sends the new quotation data to the model in the prompt', function (): void 
         'lines' => [['description' => 'Scaldabagno elettrico 80 lt', 'unit_price' => 210.0]],
     ]);
 
-    Http::assertSent(function ($request): bool {
-        $messages = $request->data()['messages'] ?? [];
-        $prompt = implode("\n", array_map(static fn (array $m): string => (string) ($m['content'] ?? ''), $messages));
+    Http::assertSent(function (Request $request): bool {
+        $data = httpClientRequestData($request);
+        $messages = $data['messages'] ?? [];
+        if (! is_array($messages)) {
+            return false;
+        }
+        $prompt = httpMessagesPrompt($messages);
 
         return str_contains($prompt, 'Selmec S.p.A.')
             && str_contains($prompt, 'Scaldabagno elettrico 80 lt')

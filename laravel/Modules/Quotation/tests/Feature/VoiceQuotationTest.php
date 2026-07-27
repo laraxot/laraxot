@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
 use Illuminate\Support\Facades\DB;
 use Modules\Catalog\Models\Product;
 use Modules\Customer\Models\Customer;
@@ -17,13 +15,21 @@ use Modules\Quotation\DTO\DictatedQuotationItem;
 use Modules\Quotation\DTO\QuotationCustomerDraft;
 use Modules\Quotation\DTO\QuotationDraft;
 use Modules\Quotation\Models\Quotation;
+use Modules\Quotation\Tests\TestCase;
 
+uses(TestCase::class);
+
+/**
+ * @param  array<string, mixed>  $payload
+ */
 function fakeQuotationExtractor(array $payload): QuotationDraftExtractorInterface
 {
     return new class($payload) implements QuotationDraftExtractorInterface
     {
+        /** @param array<string, mixed> $payload */
         public function __construct(private array $payload) {}
 
+        /** @return array<string, mixed> */
         public function extract(string $transcript): array
         {
             return $this->payload;
@@ -31,16 +37,14 @@ function fakeQuotationExtractor(array $payload): QuotationDraftExtractorInterfac
     };
 }
 
+/** @param array<string, mixed> $attrs */
 function makeProduct(array $attrs): Product
 {
-    /** @var Product $p */
-    $p = Product::query()->create(array_merge([
+    return Product::query()->create(array_merge([
         'name' => 'Prodotto',
         'is_active' => true,
         'unit_price' => 10,
     ], $attrs));
-
-    return $p;
 }
 
 // ─── DTOs ────────────────────────────────────────────────────────────────────
@@ -141,7 +145,7 @@ it('builds a normalized quotation draft from an untrusted extractor payload', fu
         ],
     ]);
 
-    $draft = (new BuildQuotationDraftAction($extractor, new MatchDictatedItemsToCatalogAction))->execute('bla');
+    $draft = (new BuildQuotationDraftAction($extractor, new MatchDictatedItemsToCatalogAction()))->execute('bla');
 
     expect($draft->customer?->legalName)->toBe('Idraulica Bianchi');
     expect($draft->customer?->city)->toBe('Trento');
@@ -155,7 +159,7 @@ it('builds a normalized quotation draft from an untrusted extractor payload', fu
 });
 
 it('returns a draft with no customer and no items when the extractor is empty', function (): void {
-    $draft = (new BuildQuotationDraftAction(fakeQuotationExtractor([]), new MatchDictatedItemsToCatalogAction))->execute('x');
+    $draft = (new BuildQuotationDraftAction(fakeQuotationExtractor([]), new MatchDictatedItemsToCatalogAction()))->execute('x');
 
     expect($draft->customer)->toBeNull();
     expect($draft->items)->toBe([]);
@@ -165,7 +169,7 @@ it('returns a draft with no customer and no items when the extractor is empty', 
 it('ignores a customer payload without legal name or vat', function (): void {
     $draft = (new BuildQuotationDraftAction(
         fakeQuotationExtractor(['customer' => ['city' => 'Trento']]),
-        new MatchDictatedItemsToCatalogAction,
+        new MatchDictatedItemsToCatalogAction(),
     ))->execute('x');
 
     expect($draft->customer)->toBeNull();
@@ -180,7 +184,6 @@ it('turns an existing quotation into an editable draft', function (): void {
     ]);
     $product = makeProduct(['name' => 'Tubo', 'unit_price' => 2.0]);
 
-    /** @var Quotation $source */
     $source = Quotation::query()->create([
         'customer_id' => $customerId, 'status_code' => 'draft',
         'title' => 'Origine', 'notes' => 'note origine', 'tax_percent' => 10,
@@ -203,7 +206,6 @@ it('duplicates a quotation whose customer is missing and header is empty', funct
     $customerId = (int) $customer->id;
     $customer->delete();
 
-    /** @var Quotation $source */
     $source = Quotation::query()->create([
         'customer_id' => $customerId, 'status_code' => 'draft', 'title' => '', 'notes' => '',
     ]);

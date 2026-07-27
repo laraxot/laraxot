@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
 use Illuminate\Support\Facades\DB;
-use Modules\Quotation\Actions\RecalculateQuotationTotalsAction;
 use Modules\Quotation\Actions\CalculateQuotationTotalsAction;
+use Modules\Quotation\Actions\RecalculateQuotationTotalsAction;
 use Modules\Quotation\Models\Quotation;
 use Modules\Quotation\Models\QuotationItem;
+use Modules\Quotation\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('recalculates totals and persists line totals', function (): void {
     // Arrange
@@ -71,7 +72,6 @@ it('recalculates totals and persists line totals', function (): void {
     expect($updated->total)->toBe('134.20');
 
     $items = $updated->items()->orderBy('sort_order')->get()->values();
-    expect($items[0]->line_total)->toBe('20.00');
-    expect($items[1]->line_total)->toBe('90.00');
+    expect($items[0]?->line_total)->toBe('20.00');
+    expect($items[1]?->line_total)->toBe('90.00');
 });
-

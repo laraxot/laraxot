@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
-use Modules\User\Models\User;
 use Livewire\Livewire;
 use Modules\Catalog\Models\Product;
 use Modules\Customer\Lookup\CompanyLookupProviderInterface;
@@ -12,18 +9,11 @@ use Modules\Customer\Models\Customer;
 use Modules\Quotation\AI\QuotationDraftExtractorInterface;
 use Modules\Quotation\Filament\Pages\RecordQuotationVoicePage;
 use Modules\Quotation\Models\Quotation;
-use Spatie\Permission\Models\Role;
+use Modules\Quotation\Tests\TestCase;
+
+uses(TestCase::class);
 
 use function Pest\Laravel\actingAs;
-
-function voiceOperator(): User
-{
-    $role = Role::findOrCreate('operator');
-    $user = User::factory()->create(['name' => 'Idraulico']);
-    $user->syncRoles([$role]);
-
-    return $user;
-}
 
 /**
  * @param  array<string, mixed>  $payload
@@ -56,7 +46,7 @@ it('generates a quotation draft from the transcript and matches items to catalog
             ['description' => 'Manodopera', 'quantity' => 1, 'unit_price' => 30],
         ],
     ]);
-    actingAs(voiceOperator());
+    actingAs(quotationOperator(['name' => 'Idraulico']));
 
     Livewire::test(RecordQuotationVoicePage::class)
         ->set('transcript', 'rifacimento bagno per Idraulica Verdi, due miscelatori')
@@ -76,7 +66,7 @@ it('stores the transcript and the raw AI response on the created quotation', fun
         'customer' => ['legal_name' => 'Idraulica Blu'],
         'items' => [['description' => 'Valvola', 'quantity' => 1]],
     ]);
-    actingAs(voiceOperator());
+    actingAs(quotationOperator(['name' => 'Idraulico']));
 
     Livewire::test(RecordQuotationVoicePage::class)
         ->set('transcript', 'fammi un preventivo per Idraulica Blu con una valvola')
@@ -88,12 +78,12 @@ it('stores the transcript and the raw AI response on the created quotation', fun
     $quotation = Quotation::query()->where('customer_id', $customer->id)->firstOrFail();
 
     expect($quotation->voice_transcript)->toContain('Idraulica Blu');
-    expect($quotation->voice_ai_response['customer']['legal_name'] ?? null)->toBe('Idraulica Blu');
-    expect($quotation->voice_ai_response['items'][0]['description'] ?? null)->toBe('Valvola');
+    expect(data_get($quotation->voice_ai_response, 'customer.legal_name'))->toBe('Idraulica Blu');
+    expect(data_get($quotation->voice_ai_response, 'items.0.description'))->toBe('Valvola');
 });
 
 it('warns and does nothing when the transcript is empty', function (): void {
-    actingAs(voiceOperator());
+    actingAs(quotationOperator(['name' => 'Idraulico']));
 
     Livewire::test(RecordQuotationVoicePage::class)
         ->set('transcript', '   ')
@@ -103,7 +93,7 @@ it('warns and does nothing when the transcript is empty', function (): void {
 
 it('creates a new quotation on confirm, resolving/creating the customer', function (): void {
     $product = Product::query()->create(['name' => 'Valvola', 'unit_price' => 8.0, 'is_active' => true]);
-    actingAs(voiceOperator());
+    actingAs(quotationOperator(['name' => 'Idraulico']));
 
     Livewire::test(RecordQuotationVoicePage::class)
         ->set('hasDraft', true)
@@ -124,14 +114,14 @@ it('creates a new quotation on confirm, resolving/creating the customer', functi
 });
 
 it('searches a company online and prefills the customer fields on pick', function (): void {
-    app()->bind(CompanyLookupProviderInterface::class, fn (): CompanyLookupProviderInterface => new class implements CompanyLookupProviderInterface
+    app()->bind(CompanyLookupProviderInterface::class, fn (): CompanyLookupProviderInterface => new class() implements CompanyLookupProviderInterface
     {
         public function search(string $query): array
         {
             return [['legal_name' => 'Idraulica Verdi SRL', 'vat_number' => 'IT0099', 'city' => 'Trento', 'email' => 'info@verdi.it']];
         }
     });
-    actingAs(voiceOperator());
+    actingAs(quotationOperator(['name' => 'Idraulico']));
 
     Livewire::test(RecordQuotationVoicePage::class)
         ->set('companyQuery', 'verdi idraulica')
@@ -147,7 +137,7 @@ it('searches a company online and prefills the customer fields on pick', functio
 
 it('recomputes rule-driven lines from technical parameters, keeping manual ones', function (): void {
     Product::query()->create(['sku' => 'THERMO-CANNA-1M', 'name' => 'Canna fumaria al metro', 'unit_price' => 28.0, 'is_active' => true]);
-    actingAs(voiceOperator());
+    actingAs(quotationOperator(['name' => 'Idraulico']));
 
     Livewire::test(RecordQuotationVoicePage::class)
         ->set('hasDraft', true)
@@ -163,7 +153,7 @@ it('recomputes rule-driven lines from technical parameters, keeping manual ones'
 });
 
 it('blocks confirm when there is no customer identity', function (): void {
-    actingAs(voiceOperator());
+    actingAs(quotationOperator(['name' => 'Idraulico']));
 
     Livewire::test(RecordQuotationVoicePage::class)
         ->set('hasDraft', true)

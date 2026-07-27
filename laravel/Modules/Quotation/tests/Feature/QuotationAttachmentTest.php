@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use Modules\Document\Models\Media;
 use Modules\Quotation\Actions\AddQuotationAttachmentAction;
 use Modules\Quotation\Models\Quotation;
+use Modules\Quotation\Tests\TestCase;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+
+uses(TestCase::class);
 
 function makeQuotationForAttachment(): Quotation
 {
@@ -20,8 +21,7 @@ function makeQuotationForAttachment(): Quotation
         'updated_at' => now(),
     ]);
 
-    /** @var Quotation $quotation */
-    $quotation = Quotation::query()->create([
+    return Quotation::query()->create([
         'code' => 'Q-ATT-0001',
         'customer_id' => $customerId,
         'work_order_id' => null,
@@ -29,8 +29,6 @@ function makeQuotationForAttachment(): Quotation
         'title' => 'Preventivo con allegati',
         'tax_percent' => 22,
     ]);
-
-    return $quotation;
 }
 
 it('attaches a stored file to a quotation as a document media record', function (): void {
@@ -50,15 +48,15 @@ it('attaches a stored file to a quotation as a document media record', function 
     );
 
     expect($media)->toBeInstanceOf(Media::class);
-    expect($media->kind)->toBe('document');
+    expect($media->collection_name)->toBe('documents');
     expect($media->disk)->toBe('local');
-    expect($media->title)->toBe('Capitolato');
-    expect($media->mediable_type)->toBe(Quotation::class);
-    expect((int) $media->mediable_id)->toBe((int) $quotation->id);
-    expect($media->size_bytes)->toBeGreaterThan(0);
+    expect($media->name)->toBe('Capitolato');
+    expect($media->model_type)->toBe(Quotation::class);
+    expect((int) $media->model_id)->toBe((int) $quotation->id);
+    expect($media->size)->toBeGreaterThan(0);
 
     Storage::disk('local')->assertExists((string) $path);
-    expect($quotation->media()->where('kind', 'document')->count())->toBe(1);
+    expect($quotation->getMedia('documents')->count())->toBe(1);
 });
 
 it('falls back to a null title when a blank title is given', function (): void {
@@ -75,6 +73,6 @@ it('falls back to a null title when a blank title is given', function (): void {
         title: '   ',
     );
 
-    expect($media->title)->toBeNull();
-    expect($media->kind)->toBe('document');
+    expect($media->name)->toBe('scheda');
+    expect($media->collection_name)->toBe('documents');
 });

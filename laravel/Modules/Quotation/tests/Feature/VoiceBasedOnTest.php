@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
 use Illuminate\Support\Facades\DB;
 use Modules\Catalog\Models\Product;
 use Modules\Document\Models\Media;
@@ -12,7 +10,13 @@ use Modules\Quotation\Actions\MatchDictatedItemsToCatalogAction;
 use Modules\Quotation\AI\QuotationDraftExtractorInterface;
 use Modules\Quotation\DTO\DictatedQuotationItem;
 use Modules\Quotation\Models\Quotation;
+use Modules\Quotation\Tests\TestCase;
 
+uses(TestCase::class);
+
+/**
+ * @param  array<string, mixed>  $payload
+ */
 function basedOnExtractor(array $payload): QuotationDraftExtractorInterface
 {
     return new class($payload) implements QuotationDraftExtractorInterface
@@ -27,12 +31,14 @@ function basedOnExtractor(array $payload): QuotationDraftExtractorInterface
     };
 }
 
+/**
+ * @param  list<array{0: string, 1: float}>  $lines
+ */
 function quotationWithItems(string $legalName, array $lines): Quotation
 {
     $customerId = DB::table('customers')->where('legal_name', $legalName)->value('id')
         ?? DB::table('customers')->insertGetId(['legal_name' => $legalName, 'is_active' => 1, 'created_at' => now(), 'updated_at' => now()]);
 
-    /** @var Quotation $q */
     $q = Quotation::query()->create(['customer_id' => $customerId, 'status_code' => 'draft', 'title' => 'X']);
     $sort = 0;
     foreach ($lines as [$desc, $price]) {

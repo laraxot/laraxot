@@ -2,10 +2,14 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
+use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Http;
 use Modules\Quotation\AI\QuotationDraftExtractorInterface;
+use Modules\Quotation\Tests\TestCase;
+
+uses(TestCase::class);
+
+use function Safe\json_encode;
 
 it('extracts a quotation JSON payload from a transcript via the LLM client', function (): void {
     config()->set('services.deepseek.key', '');
@@ -26,11 +30,12 @@ it('extracts a quotation JSON payload from a transcript via the LLM client', fun
         ], 200),
     ]);
 
+    /** @var array<string, mixed> $result */
     $result = app(QuotationDraftExtractorInterface::class)->extract('rifacimento bagno per Idraulica Verdi a Trento, due miscelatori');
 
-    expect($result['customer']['legal_name'])->toBe('Idraulica Verdi');
-    expect($result['title'])->toBe('Rifacimento bagno');
-    expect($result['items'][0]['description'])->toBe('Miscelatore');
+    expect(data_get($result, 'customer.legal_name'))->toBe('Idraulica Verdi');
+    expect(data_get($result, 'title'))->toBe('Rifacimento bagno');
+    expect(data_get($result, 'items.0.description'))->toBe('Miscelatore');
 });
 
 it('sends a prompt built with placeholders, never leaking concrete example values', function (): void {
@@ -41,9 +46,13 @@ it('sends a prompt built with placeholders, never leaking concrete example value
 
     app(QuotationDraftExtractorInterface::class)->extract('un preventivo qualsiasi');
 
-    Http::assertSent(function ($request): bool {
-        $messages = $request->data()['messages'] ?? [];
-        $prompt = implode("\n", array_map(static fn (array $m): string => (string) ($m['content'] ?? ''), $messages));
+    Http::assertSent(function (Request $request): bool {
+        $data = httpClientRequestData($request);
+        $messages = $data['messages'] ?? [];
+        if (! is_array($messages)) {
+            return false;
+        }
+        $prompt = httpMessagesPrompt($messages);
 
         // The few-shot example must be an abstract template...
         expect($prompt)->toContain('⟨ARTICOLO⟩');

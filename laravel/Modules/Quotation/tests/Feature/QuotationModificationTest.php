@@ -2,15 +2,19 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
 use Modules\Catalog\Models\Product;
 use Modules\Quotation\Actions\BuildQuotationModificationAction;
 use Modules\Quotation\Actions\MatchDictatedItemsToCatalogAction;
 use Modules\Quotation\AI\QuotationModificationExtractorInterface;
 use Modules\Quotation\DTO\DictatedQuotationItem;
 use Modules\Quotation\DTO\QuotationCustomerDraft;
+use Modules\Quotation\Tests\TestCase;
 
+uses(TestCase::class);
+
+/**
+ * @param  array<string, mixed>  $ops
+ */
 function fakeModificationExtractor(array $ops): QuotationModificationExtractorInterface
 {
     return new class($ops) implements QuotationModificationExtractorInterface
@@ -18,6 +22,7 @@ function fakeModificationExtractor(array $ops): QuotationModificationExtractorIn
         /** @param array<string, mixed> $ops */
         public function __construct(private array $ops) {}
 
+        /** @return array<string, mixed> */
         public function extract(string $transcript, array $context): array
         {
             return $this->ops;
@@ -25,17 +30,20 @@ function fakeModificationExtractor(array $ops): QuotationModificationExtractorIn
     };
 }
 
+/** @param array<string, mixed> $ops */
 function modBuilder(array $ops): BuildQuotationModificationAction
 {
     return new BuildQuotationModificationAction(fakeModificationExtractor($ops), app(MatchDictatedItemsToCatalogAction::class));
 }
 
-/** @return array<string, DictatedQuotationItem> */
+/** @param list<DictatedQuotationItem> $items
+ * @return array<string, DictatedQuotationItem>
+ */
 function byDesc(array $items): array
 {
     $map = [];
-    foreach ($items as $i) {
-        $map[$i->description] = $i;
+    foreach ($items as $item) {
+        $map[$item->description] = $item;
     }
 
     return $map;

@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
 use Illuminate\Support\Facades\DB;
 use Modules\Quotation\Actions\GenerateConfirmedQuotationPdfAction;
 use Modules\Quotation\Models\Quotation;
+use Modules\Quotation\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('generates a confirmed quotation PDF', function (): void {
     // Arrange
@@ -17,7 +18,6 @@ it('generates a confirmed quotation PDF', function (): void {
         'updated_at' => now(),
     ]);
 
-    /** @var Quotation $quotation */
     $quotation = Quotation::query()->create([
         'code' => 'Q-CNF-0001',
         'customer_id' => $customerId,
@@ -42,4 +42,3 @@ it('generates a confirmed quotation PDF', function (): void {
     expect($pdf)->toStartWith('%PDF');
     expect(strlen($pdf))->toBeGreaterThan(1000);
 });
-

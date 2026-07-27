@@ -2,40 +2,30 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
-use Modules\User\Models\User;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
-use Livewire\Livewire;
 use Modules\Catalog\Models\Product;
 use Modules\Document\Models\Media;
 use Modules\Quotation\Jobs\RewriteQuotationAttachmentsJob;
-use Modules\Quotation\Filament\Pages\RecordQuotationVoicePage;
 use Modules\Quotation\Models\Quotation;
-use Spatie\Permission\Models\Role;
+use Modules\Quotation\Tests\TestCase;
+use PHPUnit\Framework\Assert;
+
+uses(TestCase::class);
 
 use function Pest\Laravel\actingAs;
-
-function placeholderOperator(): User
-{
-    $role = Role::findOrCreate('operator');
-    $user = User::factory()->create();
-    $user->syncRoles([$role]);
-
-    return $user;
-}
+use function Safe\file_get_contents;
+use function Safe\json_encode;
 
 function sourceQuotationWithOds(): Quotation
 {
     $customerId = DB::table('customers')->insertGetId(['legal_name' => 'Pico Pallino', 'is_active' => 1, 'created_at' => now(), 'updated_at' => now()]);
-    /** @var Quotation $source */
     $source = Quotation::query()->create(['customer_id' => $customerId, 'status_code' => 'draft', 'title' => 'Caldaia']);
     $source->items()->create(['description' => 'Fornitura e posa di Ariston', 'quantity' => 1, 'unit_price' => 1158.0, 'line_total' => 1158.0, 'sort_order' => 0]);
     $path = 'quotation-attachments/'.$source->id.'/doc.ods';
-    Storage::disk('local')->put($path, (string) file_get_contents(base_path('tests/Fixtures/quotations/pinco-pallino.ods')));
+    Storage::disk('local')->put($path, file_get_contents(base_path('tests/Fixtures/quotations/pinco-pallino.ods')));
     Media::query()->create(['mediable_type' => Quotation::class, 'mediable_id' => $source->id, 'kind' => 'document', 'disk' => 'local', 'path' => $path, 'title' => 'Preventivo']);
 
     return $source;
@@ -43,7 +33,7 @@ function sourceQuotationWithOds(): Quotation
 
 function confirmFromSource(Quotation $source): Quotation
 {
-    Livewire::test(RecordQuotationVoicePage::class)
+    testQuotationVoicePage()
         ->set('hasDraft', true)
         ->set('sourceId', (int) $source->id)
         ->set('customerLegalName', 'Selmec S.p.A.')
@@ -56,7 +46,7 @@ function confirmFromSource(Quotation $source): Quotation
 
 beforeEach(function (): void {
     filament()->setCurrentPanel('operator');
-    actingAs(placeholderOperator());
+    actingAs(quotationOperator());
     Storage::fake('local');
     Product::query()->create(['name' => 'Scaldabagno', 'unit_price' => 210.0, 'is_active' => true]);
 });
@@ -69,7 +59,7 @@ it('shows a "being prepared" placeholder row and queues the rewrite job', functi
 
     // A placeholder attachment is visible in the table right away.
     $media = $new->media()->where('kind', 'document')->first();
-    expect($media)->not->toBeNull();
+    Assert::assertInstanceOf(Media::class, $media);
     expect($media->title)->toBe(__('quotations.voice.attachment_preparing_title'));
 
     Bus::assertDispatched(RewriteQuotationAttachmentsJob::class, fn (RewriteQuotationAttachmentsJob $job): bool => $job->targetId === (int) $new->id && $job->placeholderMediaId === (int) $media->id);
@@ -88,8 +78,10 @@ it('swaps the placeholder for the real document when the job succeeds', function
     $docs = $new->media()->where('kind', 'document')->get();
     // Only the real (.ods) attachment remains; the placeholder is gone.
     expect($docs)->toHaveCount(1);
-    expect($docs->first()->title)->not->toBe(__('quotations.voice.attachment_preparing_title'));
-    expect(strtolower((string) $docs->first()->path))->toEndWith('.ods');
+    $firstDoc = $docs->first();
+    Assert::assertInstanceOf(Media::class, $firstDoc);
+    expect($firstDoc->title)->not->toBe(__('quotations.voice.attachment_preparing_title'));
+    expect(strtolower((string) $firstDoc->path))->toEndWith('.ods');
 });
 
 it('recomputes the quotation notes (validity/payments) via AI in the job', function (): void {
@@ -102,7 +94,7 @@ it('recomputes the quotation notes (validity/payments) via AI in the job', funct
     $customerId = DB::table('customers')->insertGetId(['legal_name' => 'Pico Pallino', 'is_active' => 1, 'created_at' => now(), 'updated_at' => now()]);
     $source = Quotation::query()->create(['customer_id' => $customerId, 'status_code' => 'draft', 'title' => 'Caldaia']);
 
-    Livewire::test(RecordQuotationVoicePage::class)
+    testQuotationVoicePage()
         ->set('hasDraft', true)
         ->set('sourceId', (int) $source->id)
         ->set('customerLegalName', 'Selmec S.p.A.')
@@ -128,5 +120,7 @@ it('marks the placeholder as failed when the AI cannot produce a document', func
 
     $docs = $new->media()->where('kind', 'document')->get();
     expect($docs)->toHaveCount(1);
-    expect($docs->first()->title)->toBe(__('quotations.voice.attachment_failed_title'));
+    $firstDoc = $docs->first();
+    Assert::assertInstanceOf(Media::class, $firstDoc);
+    expect($firstDoc->title)->toBe(__('quotations.voice.attachment_failed_title'));
 });

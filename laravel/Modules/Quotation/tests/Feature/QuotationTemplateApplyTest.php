@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
 use Illuminate\Support\Facades\DB;
 use Modules\Quotation\Actions\ApplyQuotationTemplateToQuotationAction;
 use Modules\Quotation\Models\Quotation;
 use Modules\Quotation\Models\QuotationTemplate;
+use Modules\Quotation\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('applies a quotation template to a quotation and recalculates totals', function (): void {
     // Arrange
@@ -18,7 +19,6 @@ it('applies a quotation template to a quotation and recalculates totals', functi
         'updated_at' => now(),
     ]);
 
-    /** @var QuotationTemplate $template */
     $template = QuotationTemplate::query()->create([
         'title' => 'Template A',
         'notes' => null,
@@ -43,7 +43,6 @@ it('applies a quotation template to a quotation and recalculates totals', functi
         'sort_order' => 2,
     ]);
 
-    /** @var Quotation $quotation */
     $quotation = Quotation::query()->create([
         'code' => 'Q-TPL-0001',
         'customer_id' => $customerId,
@@ -69,4 +68,3 @@ it('applies a quotation template to a quotation and recalculates totals', functi
     expect($quotation->items()->count())->toBe(2);
     expect((float) $quotation->total)->toBeGreaterThan(0);
 });
-
