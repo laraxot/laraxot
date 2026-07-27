@@ -28,11 +28,17 @@ per l'applicazione: niente rotte, niente migrazioni, niente Eloquent.
 
 ## 2. Tenant-scoped — `config/{tenant}/modules_statuses.json`
 
-Risolto dinamicamente per hostname:
+Risolto dinamicamente per hostname. Per workorder, `config/local/workorder/modules.php` **sovrascrive** anche l’activator nwidart:
+
+```php
+'statuses-file' => base_path('config/local/workorder/modules_statuses.json'),
+```
+
+Catena navigazione:
 
 ```
 GetTenantNameAction::execute()
-  → reversed hostname (es. workorder.local → local/workorder), fallback 'localhost'
+  → reversed hostname (es. workorder.local → local/workorder)
 GetTenantFilePathAction::execute('modules_statuses.json')
   → config_path("{tenant}/modules_statuses.json")
 GetTenantModulesAction::execute()
@@ -66,5 +72,8 @@ diff <(php -r 'echo implode("\n", array_keys(json_decode(file_get_contents("modu
      <(php -r 'echo implode("\n", array_keys(json_decode(file_get_contents("config/local/workorder/modules_statuses.json"), true)));' | sort)
 ```
 
-Quando si aggiunge o rimuove un modulo (creazione, porting, decisione di rimozione
-come Auth/Blog/Comment), aggiornare **entrambi** i file — non solo quello root.
+Quando si aggiunge o rimuove un modulo, aggiornare **entrambi** i file JSON (root e tenant) — non solo quello root.
+
+Rigenerazione: `bash bashscripts/tools/sync-tenant-modules-statuses.sh local/workorder`
+
+Riferimenti: [session-learnings-modules-config.md](../../session-learnings-modules-config.md) · [Themes/tenant-modules-navigation-discipline.md](../../../../Themes/docs/tenant-modules-navigation-discipline.md)

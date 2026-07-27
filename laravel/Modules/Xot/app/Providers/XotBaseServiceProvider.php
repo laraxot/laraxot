@@ -58,7 +58,7 @@ abstract class XotBaseServiceProvider extends ServiceProvider
 
     public function registerBladeIcons(): void
     {
-        if ('' === $this->name) {
+        if ($this->name === '') {
             throw new \Exception('name is empty on ['.static::class.']');
         }
 
@@ -86,17 +86,22 @@ abstract class XotBaseServiceProvider extends ServiceProvider
 
     public function registerViews(): void
     {
-        if ('' === $this->name) {
+        if ($this->name === '') {
             throw new \Exception('name is empty on ['.static::class.']');
         }
 
         $viewPath = module_path($this->name, 'resources/views');
+
+        if (! is_dir($viewPath)) {
+            return;
+        }
+
         $this->loadViewsFrom($viewPath, $this->nameLower);
     }
 
     public function registerTranslations(): void
     {
-        if ('' === $this->name) {
+        if ($this->name === '') {
             throw new \Exception('name is empty on ['.static::class.']');
         }
 
@@ -116,10 +121,12 @@ abstract class XotBaseServiceProvider extends ServiceProvider
     {
         $componentViewPath = app(GetModulePathByGeneratorAction::class)->execute($this->name, 'component-view');
 
-        try {
-            Blade::anonymousComponentPath($componentViewPath);
-        } catch (\Exception $e) {
-            // Ignore invalid or unavailable anonymous component paths.
+        if (is_dir($componentViewPath)) {
+            try {
+                Blade::anonymousComponentPath($componentViewPath);
+            } catch (\Exception $e) {
+                // Ignore invalid or unavailable anonymous component paths.
+            }
         }
 
         $componentClassPath = app(GetModulePathByGeneratorAction::class)->execute($this->name, 'component-class');
@@ -147,7 +154,7 @@ abstract class XotBaseServiceProvider extends ServiceProvider
                 'Modules\\'.$this->name.'\\Console\\Commands',
                 $prefix,
             );
-        if (0 === $comps->count()) {
+        if ($comps->count() === 0) {
             return;
         }
         $commands = $comps->toArray();
@@ -196,10 +203,9 @@ abstract class XotBaseServiceProvider extends ServiceProvider
         }
     }
 
-
     protected function registerPublicAssets(): void
     {
-        if ('' === $this->name) {
+        if ($this->name === '') {
             throw new \Exception('name is empty on ['.static::class.']');
         }
 
@@ -212,8 +218,6 @@ abstract class XotBaseServiceProvider extends ServiceProvider
         $destinationPath = public_path(
             'assets/'.$this->nameLower
         );
-
-        
 
         $this->publishes(
             [

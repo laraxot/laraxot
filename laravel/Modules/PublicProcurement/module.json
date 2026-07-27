@@ -5,7 +5,8 @@
     "keywords": [],
     "priority": 150,
     "providers": [
-        "Modules\\PublicProcurement\\Providers\\PublicProcurementServiceProvider"
+        "Modules\\PublicProcurement\\Providers\\PublicProcurementServiceProvider",
+        "Modules\\PublicProcurement\\Providers\\Filament\\AdminPanelProvider"
     ],
     "files": []
 }

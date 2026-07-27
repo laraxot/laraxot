@@ -5,7 +5,8 @@
     "keywords": [],
     "priority": 110,
     "providers": [
-        "Modules\\EnergyBroker\\Providers\\EnergyBrokerServiceProvider"
+        "Modules\\EnergyBroker\\Providers\\EnergyBrokerServiceProvider",
+        "Modules\\EnergyBroker\\Providers\\Filament\\AdminPanelProvider"
     ],
     "files": []
 }

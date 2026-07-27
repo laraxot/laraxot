@@ -3,7 +3,7 @@ title: "Sixteen Theme Wiki Index"
 type: index
 tags: [sixteen, theme, wiki, index, frontoffice]
 created: 2026-04-15
-updated: 2026-06-13
+updated: 2026-07-27
 qmd: "sixteen theme wiki index frontoffice folio filament parity docs"
 issues:
   - "https://github.com/laraxot/theme_sixteen_fila5/issues/54"
@@ -34,6 +34,15 @@ Le regole generiche di context compression restano nel wiki root e nel modulo AI
 - [second-brain-theme-boundary](./concepts/second-brain-theme-boundary.md) — confine memoria tema
 - [llm-wiki prompt](../../../../bashscripts/tools/prompts/llm-wiki.txt) — router agente
 - [bmad/architecture](../../../../docs/wiki/bmad/architecture.md)
+
+## Gestionale / moduli (2026-07-27)
+
+Menu admin Filament **non** dipende dal tema — dipende da `config/local/workorder/modules_statuses.json`:
+
+- [tenant-modules-navigation-discipline.md](../../docs/tenant-modules-navigation-discipline.md) — hub Themes
+- [runtime-config-religion-hub.md](../../docs/shared-components/runtime-config-religion-hub.md) — permission + config.php + statuses + Dashboard
+- [module-dashboard-page-mandatory.md](../../../Modules/Xot/docs/wiki/concepts/module-dashboard-page-mandatory.md) — landing `{modulo}/admin`
+- [tenant-module-status-registry](../../../Modules/Tenant/docs/tenant-module-status-registry.md) — canon Tenant
 
 ## Testing / PHPStan (2026-06-13)
 

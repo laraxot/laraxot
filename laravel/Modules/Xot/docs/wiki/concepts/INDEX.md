@@ -9,24 +9,37 @@ Index for Xot module concepts.
 qmd search "Xot concepts" --limit 5
 ```
 
-## See Also
-- [composer-merge-plugin-modules-only](./composer-merge-plugin-modules-only.md) — merge solo moduli, mai temi
-- [composer-merge-plugin-modules-only](./composer-merge-plugin-modules-only.md) — merge solo moduli, mai temi
-- [composer-merge-plugin-modules-only](./composer-merge-plugin-modules-only.md) — merge solo moduli, mai temi
-- [composer-root-skeleton-modular](./composer-root-skeleton-modular.md) — Root Composer minimo: skeleton Laravel + `nwidart/laravel-modules`; moduli owner delle dipendenze.
-- [module-testcase-xotbase-hierarchy](./module-testcase-xotbase-hierarchy.md) — TestCase moduli -> XotBaseTestCase; Nwidart v13 non fornisce BaseTestCase.
+## Moduli & skeleton (2026-07-27)
+
+- [module-config-php-religion.md](./module-config-php-religion.md) — **obbligatorio** `Modules/{M}/config/config.php`
+- [module-dashboard-page-mandatory.md](./module-dashboard-page-mandatory.md) — **obbligatorio** `app/Filament/Pages/Dashboard.php`
+- [module-admin-panel-provider-mandatory.md](./module-admin-panel-provider-mandatory.md) — `AdminPanelProvider` + `module.json`
+- [module-config-config-php.md](./module-config-config-php.md) — contratto campi panel
+- [module-model-artifact-parity.md](./module-model-artifact-parity.md) — N modelli = N migrate + factory + seeder
+- [composer-root-skeleton-modular.md](./composer-root-skeleton-modular.md) — Root Composer minimo
+- [module-testcase-xotbase-hierarchy.md](./module-testcase-xotbase-hierarchy.md) — TestCase → XotBaseTestCase
+
+## Migrazioni & Filament
+
+- [migration-foreign-id-for.md](./migration-foreign-id-for.md) — FK via modello
+- [xotbase-filament-widget-hierarchy.md](./xotbase-filament-widget-hierarchy.md)
+- [no-app-support-queueable-actions.md](./no-app-support-queueable-actions.md) — Actions, non Services
+
+## PHPStan & qualità
+
+- [phpstan-trait-probes.md](./phpstan-trait-probes.md) — trait `unused` → probe host
+- [trend-action-delegation.md](./trend-action-delegation.md) — Action come confine
 - [Ridondanze cross-cutting (hub)](./ridondanze-cross-cutting-codebase.md)
-- [migration-foreign-id-for](./migration-foreign-id-for.md) — FK via modello; `constrained()` solo stessa connection
+
+## Composer
+
+- [composer-merge-plugin-modules-only.md](./composer-merge-plugin-modules-only.md) — merge solo moduli, mai temi
+
+## See Also
+
 - [Root Trigger Map](../../../../../docs/wiki/rules/00-TRIGGER_MAP.md)
-- [Root Wiki](../../../docs/wiki/)
+- Hub temi: [runtime-config-religion-hub](../../../../Themes/docs/shared-components/runtime-config-religion-hub.md)
+- Audit: `bash bashscripts/tools/audit-module-config-php.sh`
 
 ---
-*Updated: 2026-05-11*
-- [xotbase-filament-widget-hierarchy](./xotbase-filament-widget-hierarchy.md)
-- [phpstan-trait-probes](./phpstan-trait-probes.md) — trait `unused` → probe host + registry Helper
-- [no-app-support-queueable-actions](./no-app-support-queueable-actions.md) — Services/Support migrati a Action contestuali con `QueueableAction::execute()`.
-- [trend-action-delegation](./trend-action-delegation.md) — Action come confine; motore SQL/periodi delegato a `flowframe/laravel-trend`.
-- [phpstan-trait-probes](./phpstan-trait-probes.md) — trait `unused` → probe host + registry Helper
-- [no-app-support-queueable-actions](./no-app-support-queueable-actions.md) — Services/Support migrati a Action contestuali con `QueueableAction::execute()`.
-- [trend-action-delegation](./trend-action-delegation.md) — Action come confine; motore SQL/periodi delegato a `flowframe/laravel-trend`.
-- [phpstan-trait-probes](./phpstan-trait-probes.md) — trait `unused` → probe host + registry Helper
+*Updated: 2026-07-27*

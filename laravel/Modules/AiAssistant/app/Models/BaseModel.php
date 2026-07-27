@@ -6,4 +6,8 @@ namespace Modules\AiAssistant\Models;
 
 use Modules\Xot\Models\XotBaseModel;
 
-abstract class BaseModel extends XotBaseModel {}
+abstract class BaseModel extends XotBaseModel
+{
+    /** @var string */
+    protected $connection = 'ai_assistant';
+}

@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Catalog\Models\Product;
 use Modules\TimberBilling\Database\Factories\TimberInvoiceLineFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -24,7 +23,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property string $line_total
  * @property int $position
  */
-final class TimberInvoiceLine extends XotBaseModel
+final class TimberInvoiceLine extends BaseModel
 {
     /** @use HasFactory<TimberInvoiceLineFactory> */
     use HasFactory;

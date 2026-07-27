@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\AI\Filament\Pages;
 
-use Modules\Xot\Filament\Pages\XotBasePage;
+use Modules\Xot\Filament\Pages\XotBaseDashboard;
 
-class Dashboard extends XotBasePage
+class Dashboard extends XotBaseDashboard
 {
-    protected string $view = 'ai::filament.pages.dashboard';
 }

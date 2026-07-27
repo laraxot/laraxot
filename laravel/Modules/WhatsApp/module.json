@@ -5,7 +5,8 @@
     "keywords": [],
     "priority": 140,
     "providers": [
-        "Modules\\WhatsApp\\Providers\\WhatsAppServiceProvider"
+        "Modules\\WhatsApp\\Providers\\WhatsAppServiceProvider",
+        "Modules\\WhatsApp\\Providers\\Filament\\AdminPanelProvider"
     ],
     "files": []
 }

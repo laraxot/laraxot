@@ -3,7 +3,7 @@ title: "Laravel Themes Documentation"
 type: index
 tags: [themes, docs, gestionale-commesse]
 created: 2026-06-05
-updated: 2026-07-24
+updated: 2026-07-27
 qmd: "Themes docs hub Sixteen gestionale panels index"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
@@ -18,7 +18,7 @@ related:
 
 # Laravel Themes Documentation
 
-Hub dei temi. Per il porting gestionale partire da **[gestionale-docs-index.md](./gestionale-docs-index.md)** e dalla **[matrice runtime](./gc-modules-runtime-matrix.md)**.
+Hub dei temi. Porting gestionale: **[gestionale-docs-index.md](./gestionale-docs-index.md)** · **[tenant-modules-navigation-discipline.md](./tenant-modules-navigation-discipline.md)** (menu admin / JSON tenant).
 
 ## Current Themes
 
@@ -39,6 +39,7 @@ Hub dei temi. Per il porting gestionale partire da **[gestionale-docs-index.md](
 
 | Doc | Scopo |
 |---|---|
+| **[runtime-config-religion-hub.md](./shared-components/runtime-config-religion-hub.md)** | Hub lezioni 2026-07-27 (permission, config, statuses) |
 | **[gestionale-docs-index.md](./gestionale-docs-index.md)** | Indice unico |
 | [module-vs-theme-boundaries.md](./module-vs-theme-boundaries.md) | Confini |
 | [wave1-fo-operator-note.md](./wave1-fo-operator-note.md) | Operator = Filament |

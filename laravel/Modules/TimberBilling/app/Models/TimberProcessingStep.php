@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\TimberBilling\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
@@ -29,7 +28,7 @@ use Modules\User\Models\User;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class TimberProcessingStep extends Model
+final class TimberProcessingStep extends BaseModel
 {
     /** @use HasFactory<TimberProcessingStepFactory> */
     use HasFactory;

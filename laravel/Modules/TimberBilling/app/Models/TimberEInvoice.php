@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\TimberBilling\Database\Factories\TimberEInvoiceFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -22,7 +21,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $delivered_at
  * @property string|null $error_message
  */
-final class TimberEInvoice extends XotBaseModel
+final class TimberEInvoice extends BaseModel
 {
     /** @use HasFactory<TimberEInvoiceFactory> */
     use HasFactory;

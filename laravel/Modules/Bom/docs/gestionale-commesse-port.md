@@ -35,7 +35,7 @@ Il modulo era stato riportato ad una copia grezza DDD (rinominata singolare) da 
    - `2026_02_25_000020_create_boms_table.php`
    - `2026_02_25_000021_create_bom_items_table.php`
    - (il vecchio file unico `create_bom_tables.php` rimosso)
-3. **composer.json**: aggiunta dipendenza `spatie/queueable-action` in `require`, repository path `../Catalog` (dipendenza da `Modules\Catalog\Models\Product`).
+3. **composer.json**: aggiunta dipendenza `spatie/laravel-queueable-action` in `require`, repository path `../Catalog` (dipendenza da `Modules\Catalog\Models\Product`).
 4. **lang/{it,en}/boms.php**: chiavi `navigation`, `bom`, `boms`, `fields.*` — sostituite le label hardcoded italiane nel Resource/RelationManager.
 5. **tests/**: `TestCase extends XotBaseTestCase`, `Pest.php`, `tests/Unit/BomModelTest.php` (creazione Bom, link BomItem→Bom); `database/factories/BomFactory.php`, `BomItemFactory.php` (con `HasFactory` aggiunto ai model).
 6. **PHPStan**: fix `ViewBom::getMaxContentWidth()` return type (`Width|string|null` → `Width`, mai null/string in pratica).

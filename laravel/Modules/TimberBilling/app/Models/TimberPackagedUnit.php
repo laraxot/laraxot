@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\TimberBilling\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Carbon;
@@ -25,7 +24,7 @@ use Modules\TimberBilling\Database\Factories\TimberPackagedUnitFactory;
  * @property string|null $article_code
  * @property string|null $traceable_code
  */
-final class TimberPackagedUnit extends Model
+final class TimberPackagedUnit extends BaseModel
 {
     /** @use HasFactory<TimberPackagedUnitFactory> */
     use HasFactory;

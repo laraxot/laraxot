@@ -12,7 +12,6 @@ use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Customer;
 use Modules\TimberBilling\Database\Factories\TimberInvoiceFactory;
 use Modules\User\Models\User;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -32,7 +31,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $stock_posted_at
  * @property int|null $created_by_user_id
  */
-final class TimberInvoice extends XotBaseModel
+final class TimberInvoice extends BaseModel
 {
     /** @use HasFactory<TimberInvoiceFactory> */
     use HasFactory;

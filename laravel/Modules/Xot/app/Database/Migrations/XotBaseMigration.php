@@ -280,6 +280,24 @@ abstract class XotBaseMigration extends LaravelMigration
         }
     }
 
+    /**
+     * Se la tabella da config (getTable()) non esiste ma esiste il plurale Laravel
+     * dello stesso nome (legacy Spatie default), rinomina legacy → config.
+     * Nessun nome tabella hardcoded: target dal modello, legacy = Str::plural(target).
+     */
+    protected function adoptPluralLegacyTableNameIfNeeded(): void
+    {
+        $target = $this->getTable();
+        if ($this->tableExists($target)) {
+            return;
+        }
+
+        $legacy = Str::plural($target);
+        if ($legacy !== $target && $this->hasTable($legacy)) {
+            $this->getConn()->rename($legacy, $target);
+        }
+    }
+
     public function tableUpdate(\Closure $next, ?string $table = null): void
     {
         $tableName = $table ?? $this->getTable();

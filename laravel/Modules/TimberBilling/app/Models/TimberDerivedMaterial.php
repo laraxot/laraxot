@@ -6,7 +6,6 @@ namespace Modules\TimberBilling\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
@@ -33,7 +32,7 @@ use Modules\TimberBilling\Support\WoodSpeciesCatalog;
  * @property string|null $stage_type_code
  * @property array<int, mixed>|null $stage_history
  */
-final class TimberDerivedMaterial extends Model
+final class TimberDerivedMaterial extends BaseModel
 {
     /** @use HasFactory<TimberDerivedMaterialFactory> */
     use HasFactory;

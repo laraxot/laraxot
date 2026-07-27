@@ -22,7 +22,7 @@ use Modules\User\Models\User;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class TimberLabelPrint extends Model
+final class TimberLabelPrint extends BaseModel
 {
     /** @use HasFactory<TimberLabelPrintFactory> */
     use HasFactory;

@@ -3,6 +3,13 @@
 declare(strict_types=1);
 
 return [
+    'name' => 'Geo',
+    'description' => 'Geocoding, mappe e indirizzi',
+    'icon' => 'heroicon-o-map-pin',
+    'navigation' => [
+        'enabled' => true,
+        'sort' => 60,
+    ],
     /*
      * |--------------------------------------------------------------------------
      * | API Keys

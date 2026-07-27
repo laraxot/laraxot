@@ -26,8 +26,15 @@ related:
 - [ ] Resources → XotBaseResource (wave)
 - [x] PHPStan L10: **pulito** (0 errori reali; era 190). Verificato con
       `./vendor/bin/phpstan analyse Modules/EnergyBroker --memory-limit=-1`.
-      Il modulo resta **disabilitato** in `modules_statuses.json` (non toccato,
-      come da istruzioni).
+- [x] `modules_statuses=true` — riabilitato 2026-07-27, confermato dall'utente
+      ("certo che devi riabilitare... fa anche phpstan e pest").
+- [x] Pest: **3/3 passed**. Fix applicati 2026-07-27:
+      `tests/Feature/EnergyBrokerDocumentLifecycleTest.php` usava
+      `file_put_contents`/`@unlink` non wrappati (`Safe\*`); `tests/TestCase.php`
+      non chiamava `prepareSharedFixcitySqliteForTesting()` prima di
+      `parent::setUp()` (pattern Customer/Catalog/HR/TimberBilling) → connessione
+      `sqlite` puntava al path sbagliato. Schema modulo migrato in
+      `database/fixcity_data.sqlite` (`migrate --database=sqlite --path=Modules/EnergyBroker/database/migrations`).
 
 ## PHPStan — sessione 2026-07-24
 
@@ -96,5 +103,3 @@ integrazione per le Action/Job (import PDF/ZIP, chunked upload, ecc.).
   (`StoreEnergyBrokerLargeUploadChunkAction` → `AssembleEnergyBrokerLargeUploadJob`
   → `ImportEnergyBrokerLargeUploadJob`).
 - Resources → XotBaseResource (wave) ancora da fare, come già annotato.
-- Modulo resta disattivato in `modules_statuses.json` (non toccato, come da
-  istruzioni).

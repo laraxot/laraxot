@@ -29,8 +29,33 @@ Per una guida completa e dettagliata su tutti i breaking changes e le procedure 
 - **XotBasePages**: `XotBaseListRecords`, `XotBaseEditRecord`, etc. rimangono compatibili
 - **XotBaseWidgets**: Tutte le classi widget rimangono valide
 - **XotBaseActions**: Actions, TableActions, BulkActions non richiedono modifiche
-- **Schemas**: Form, Table, Infolist continuano a funzionare
+- **Table**: `Filament\Tables\Table` esiste ancora, nessun cambiamento
 - **Resources**: Tutti i pattern esistenti rimangono validi
+
+### ⚠️ Correzione verificata (2026-07-27): Form/Infolist NON esistono più
+
+Contrariamente a quanto scritto in precedenza in questo file ("Schemas: Form,
+Table, Infolist continuano a funzionare"), sull'installazione reale di questo
+progetto (`filament/filament` v5.7.3, verificato con
+`php artisan tinker --execute="var_dump(class_exists(...))"`):
+
+- `Filament\Forms\Form` → **non esiste più** (`class_exists` = `false`)
+- `Filament\Infolists\Infolist` → **non esiste più** (`class_exists` = `false`)
+- `Filament\Schemas\Schema` → esiste ed è la classe unificata che li sostituisce
+
+Filament 5 ha unificato Form e Infolist in un'unica astrazione `Schema`
+(`Filament\Schemas\Schema`), coerente con la documentazione ufficiale:
+<https://filamentphp.com/docs/5.x/components/schema>. Qualunque metodo/typehint
+che referenzi ancora `Filament\Forms\Form` o `Filament\Infolists\Infolist` è
+**codice morto o un bug latente** (fatal error se mai istanziato/tipizzato
+davvero), non solo un dettaglio storico.
+
+**Trovato e corretto**: `Modules/Xot/app/Filament/Resources/Pages/
+XotBaseEditRecord.php` importava `use Filament\Forms\Form;` (mai referenziato nel
+file, import morto) — rimosso insieme all'import altrettanto inutilizzato di
+`Filament\Schemas\Schema`. Verificato con
+`grep -rl "use Filament\\\\Forms\\\\Form;\|use Filament\\\\Infolists\\\\Infolist;" laravel/Modules --include="*.php"`:
+nessun'altra occorrenza nel resto del progetto.
 
 ### Cosa Cambia (Livewire 4)
 
@@ -94,16 +119,17 @@ Nel progetto: verificare `filament/spatie-laravel-media-library-plugin` e altri 
 - **Documentazione**: dopo l’upgrade, verificare [filament.md](filament.md), [filament-v4-migration-guide.md](filament-v4-migration-guide.md) e [filament-best-practices.md](filament-best-practices.md) per eventuali adattamenti a v5.
 - **Configurazioni globali**: se in XotServiceProvider o AdminPanelProvider ci sono `configureUsing()` per Section/Grid/Fieldset/Table (es. v4), confrontare con il comportamento v5 e adattare se necessario.
 
-## Stato upgrade (base_<nome progetto>)
+## Stato upgrade (base_workorder_fila5)
 
 - [x] Documentazione creata (filament-5-upgrade-guide.md)
 - [x] Script `vendor/bin/filament-v5` eseguito con directory `app,Modules` – modifiche applicate
 - [x] Root `composer.json`: `filament/filament` aggiornato a `^5.0`
 - [x] Modulo Xot: `livewire/livewire` aggiornato a `^4.0`; Pest e plugin test aggiornati a v4 (pest ^4.3, pest-plugin-livewire ^4.1, pest-plugin-type-coverage ^4.0)
 - [x] Fix conflitto nome in `Modules/User/.../ListOauthClients.php`: import duplicato `Filament\Notifications\Notification` e `CreateClientAction` rimossi; uso `Notification as FilamentNotification` e `Action` da Filament\Actions
-- [ ] **Composer update**: completare `composer update -W` (può fallire per errore filesystem su vendor, es. "Could not delete .../sebastianbergmann-phpunit-..."). **Soluzione**: chiudere IDE e processi che usano `vendor/`; dalla root laravel: `rm -rf vendor composer.lock` poi `composer install -W`. In alternativa riprovare `composer update -W` dopo aver chiuso tutto.
-- [ ] Dopo update: `composer remove filament/upgrade --dev`
-- [ ] Config Livewire 4: verificare `config/livewire.php` (layout → component_layout, lazy_placeholder → component_placeholder) se pubblicato
+- [x] **Composer update completato** (verificato 2026-07-27): `filament/filament` installato v5.7.3, `laravel/framework` v13.22.0, `livewire/livewire` v4.3.3 (`composer show <pkg>`)
+- [x] `composer remove filament/upgrade --dev` completato (assente da `composer.json`, verificato 2026-07-27)
+- [ ] **Config Livewire 4 NON ancora rinominata**: `config/livewire.php` usa ancora le chiavi legacy `'layout' => 'components.layouts.app'` e `'lazy_placeholder' => null` invece di `component_layout`/`component_placeholder` (verificato 2026-07-27). L'app funziona comunque (probabile compat legacy in Livewire 4.3), ma va allineato quando si tocca quel file.
+- [x] `Filament\Forms\Form` / `Filament\Infolists\Infolist` audit completato (2026-07-27): rimossi da `XotBaseEditRecord.php`, nessun'altra occorrenza nel progetto — vedi sezione sopra.
 - [ ] PHPStan livello 10 su moduli Filament
 - [ ] Verificare pannello admin Filament (login, risorse, widget)
 

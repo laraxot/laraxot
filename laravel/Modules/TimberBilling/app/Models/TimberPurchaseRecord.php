@@ -6,7 +6,6 @@ namespace Modules\TimberBilling\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Carbon;
@@ -37,7 +36,7 @@ use Modules\User\Models\User;
  * @property Carbon|null $updated_at
  * @property string $purchase_price_unit
  */
-final class TimberPurchaseRecord extends Model
+final class TimberPurchaseRecord extends BaseModel
 {
     /** @use HasFactory<TimberPurchaseRecordFactory> */
     use HasFactory;

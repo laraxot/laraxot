@@ -5,7 +5,8 @@
     "keywords": [],
     "priority": 140,
     "providers": [
-        "Modules\\TimberBilling\\Providers\\TimberBillingServiceProvider"
+        "Modules\\TimberBilling\\Providers\\TimberBillingServiceProvider",
+        "Modules\\TimberBilling\\Providers\\Filament\\AdminPanelProvider"
     ],
     "files": []
 }

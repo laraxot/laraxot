@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Modules\TimberBilling\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Modules\TimberBilling\Database\Factories\TimberProcessingStepProcessableFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * Pivot polimorfica: TimberProcessingStep ↔ TimberLot|TimberDerivedMaterial.
@@ -17,7 +17,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property string $processable_type
  * @property int $processable_id
  */
-final class TimberProcessingStepProcessable extends XotBaseModel
+final class TimberProcessingStepProcessable extends BaseModel
 {
     /** @use HasFactory<TimberProcessingStepProcessableFactory> */
     use HasFactory;
@@ -35,7 +35,7 @@ final class TimberProcessingStepProcessable extends XotBaseModel
         return $this->belongsTo(TimberProcessingStep::class, 'processing_step_id');
     }
 
-    /** @return MorphTo<\Illuminate\Database\Eloquent\Model, $this> */
+    /** @return MorphTo<Model, $this> */
     public function processable(): MorphTo
     {
         return $this->morphTo();

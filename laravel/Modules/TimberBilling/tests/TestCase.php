@@ -15,7 +15,7 @@ abstract class TestCase extends XotBaseTestCase
     use DatabaseTransactions;
 
     /** @var list<string> */
-    protected $connectionsToTransact = ['sqlite', 'xot'];
+    protected $connectionsToTransact = ['sqlite', 'xot', 'timber_billing'];
 
     /**
      * @return array<int, class-string<ServiceProvider>>

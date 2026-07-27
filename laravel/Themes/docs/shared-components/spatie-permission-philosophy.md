@@ -219,6 +219,13 @@ use Spatie\Permission\Models\Permission;  // Confuso se si estende
 - [Class Responsibility Separation](../xot/docs/critical-architecture-rules.md)
 - [Spatie Permission Methods](spatie-permissions-methods.md)
 - [Roles and Permissions](roles_permissions.md)
+- [User — config SSoT nomi tabella pivot](../../Modules/User/docs/wiki/concepts/spatie-permission-table-names.md) — **mai** hardcodare tabella in migrazione/modello; `ModelHasRole::getTable()` legge `config/permission.php`
+
+## Config tabella pivot (2026-07-27)
+
+Spatie risolve i pivot da `config('permission.table_names.*')` — valori **immutabili** in `laravel/config/permission.php`. Modelli pivot: `getTable()` da config. Migrazioni: modello dal nome file, zero stringhe tabella. Mismatch → fix schema, **mai** edit config.
+
+Dettaglio: [bugfix-permission-table-names-singular.md](../../Modules/User/docs/bugfix-permission-table-names-singular.md)
 
 ## ✅ **VERIFICA STATO ATTUALE**
 

@@ -3,7 +3,7 @@ title: "Panels Filament (SRC) vs Themes Laraxot"
 type: concept
 tags: [themes, filament-panels, gestionale-commesse, fo]
 created: 2026-07-23
-updated: 2026-07-24
+updated: 2026-07-27
 qmd: "Themes panels Operator Admin Folio gestionale_commesse Sixteen Zero readiness"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
@@ -26,6 +26,7 @@ related:
 # Panels Filament (SRC) vs Themes Laraxot
 
 > **Perché:** gestionale_commesse **non** ha package Themes. L’UX è multi-panel Filament. Noi: **moduli replica** (BO) + **Themes** (FO).  
+> Ogni modulo BO espone `{modulo}/admin` con **Dashboard** obbligatoria (`XotBaseDashboard`) — [module-dashboard-page-mandatory.md](../../Modules/Xot/docs/wiki/concepts/module-dashboard-page-mandatory.md).  
 > Runtime URL: [new-modules-panel-mapping.md](./new-modules-panel-mapping.md) · gate: [functional-readiness.md](../../../docs/gestionale-commesse-comparison/functional-readiness.md).
 
 ## SRC — panel (estratto)

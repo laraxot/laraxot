@@ -11,6 +11,7 @@ class WorkOrderDatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
+            ProfileSeeder::class,
             WorkOrderStatusSeeder::class,
             WorkOrderSeeder::class,
             WorkOrderAssignmentSeeder::class,

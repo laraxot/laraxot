@@ -8,7 +8,6 @@ uses(TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Livewire\Livewire;
-use Modules\Auth\Database\Seeders\ShieldPermissionsSeeder;
 use Modules\Catalog\Models\Product;
 use Modules\Intervention\Filament\Resources\InterventionResource\Pages\EditIntervention;
 use Modules\Intervention\Filament\Resources\InterventionResource\RelationManagers\InventoryMovementsRelationManager;
@@ -18,13 +17,14 @@ use Modules\Inventory\Models\InventoryMovement;
 use Modules\Inventory\Models\Warehouse;
 use Modules\Inventory\Models\WarehouseLocation;
 use Modules\Platform\Infrastructure\Models\PlatformSetting;
+use Modules\User\Database\Seeders\PermissionsSeeder;
 use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrderStatus;
 
 use function Pest\Laravel\actingAs;
 
 it('hides intervention materials section when inventory link to interventions is disabled', function (): void {
-    app(ShieldPermissionsSeeder::class)->run();
+    app(PermissionsSeeder::class)->run();
 
     $user = User::factory()->create();
     $user->syncRoles(['admin']);
@@ -70,7 +70,7 @@ it('hides intervention materials section when inventory link to interventions is
 });
 
 it('saves intervention materials with warehouse location from the relation manager', function (): void {
-    app(ShieldPermissionsSeeder::class)->run();
+    app(PermissionsSeeder::class)->run();
 
     $user = User::factory()->create();
     $user->syncRoles(['admin']);

@@ -4,7 +4,17 @@
 **Theme**: Sixteen  
 **Pattern**: Filament v5 + XotBase Hybrid  
 **Related**: TicketInfolist, TicketForm  
-**Last Updated**: 2026-05-05
+**Last Updated**: 2026-07-27
+
+## View cache (obbligatorio)
+
+Dopo edit Blade che toccano Filament:
+
+```bash
+cd laravel && php artisan view:cache
+```
+
+Canon root: [filament-v5-form-in-blade.md](../../../../../docs/wiki/concepts/filament-v5-form-in-blade.md) · [view-cache-filament-v5-prerequisites.md](../../../../../docs/wiki/concepts/view-cache-filament-v5-prerequisites.md)
 
 ## Overview
 

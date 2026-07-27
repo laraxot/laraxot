@@ -40,6 +40,6 @@ related:
 4. **Non** cancellare repliche (`AiAssistant`, `Auth`, `HR`, …) «perché esiste User/AI».
 5. AiAssistant: [aiassistant-vs-themes.md](./aiassistant-vs-themes.md).
 6. Panels: [gestionale-panels-vs-themes.md](./gestionale-panels-vs-themes.md).
-7. Status enable: [gc-modules-runtime-matrix.md](./gc-modules-runtime-matrix.md).
+7. Status enable: [gc-modules-runtime-matrix.md](./gc-modules-runtime-matrix.md) · [tenant-modules-navigation-discipline.md](./tenant-modules-navigation-discipline.md).
 7. Runtime gate: [functional-readiness.md](../../../docs/gestionale-commesse-comparison/functional-readiness.md).
 8. SSoT fase: [replica-singular-phase.md](../../../docs/gestionale-commesse-comparison/replica-singular-phase.md).

@@ -1,6 +1,7 @@
 {
     "Activity": true,
     "Cms": true,
+    "Comment": true,
     "Employee": true,
     "Gdpr": true,
     "Geo": true,
@@ -14,8 +15,6 @@
     "User": true,
     "Xot": true,
     "AI": true,
-    "Blog": true,
-    "Comment": true,
     "Rating": true,
     "Seo": true,
     "Setting": true

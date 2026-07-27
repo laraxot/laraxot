@@ -35,6 +35,8 @@ Canon: [migration-xotbase-one-per-model.md](./wiki/concepts/migration-xotbase-on
 
 | Gate | Stato |
 |---|---|
-| `modules_statuses` | **false** |
+| `modules_statuses` | **true** (riabilitato 2026-07-27, confermato dall'utente) |
+| PHPStan L10 | 0 errori reali (riverificato 2026-07-27, dopo refactor `BaseModel`) |
+| Pest | 86/169 passed — residuo quasi tutto legato a ruoli/permessi assenti (vedi sotto), non bug TimberBilling |
 
 [import-status.md](./import-status.md) · [users FK 1824](./bugfix-users-cross-db-fk.md) · [matrice](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md)

@@ -3,8 +3,8 @@ title: "Import status — TimberBilling"
 type: concept
 tags: [import, gestionale-commesse, timberbilling, bmad]
 created: 2026-07-23
-updated: 2026-07-24
-qmd: "import status TimberBilling disabled gate"
+updated: 2026-07-27
+qmd: "import status TimberBilling enabled gate basemodel connection foreignIdFor ordering"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
   - "https://github.com/laraxot/base_workorder_fila5/issues/14"
@@ -17,6 +17,53 @@ related:
 ---
 
 # Import status — TimberBilling
+
+## 2026-07-27 — Riabilitato, BaseModel, 8 bug FK/naming corretti
+
+`modules_statuses.json`: **true** (riabilitato, confermato dall'utente). PHPStan e Pest
+riverificati da zero, non presunti dallo stato di sessioni precedenti.
+
+### `Modules/TimberBilling/app/Models/BaseModel.php` — creato (mancava)
+
+29 modelli su 29 estendevano `Illuminate\Database\Eloquent\Model` o `XotBaseModel`
+direttamente, nessuno dichiarava una connection esplicita (violazione
+`docs/wiki/rules/basemodel-connection`, skill `basemodel-connection`). Creato
+`Modules/TimberBilling/app/Models/BaseModel.php extends XotBaseModel` con
+`protected $connection = 'timber_billing';` (= `Module::find('TimberBilling')->getSnakeName()`);
+tutti i 29 modelli ora `extends BaseModel` (namespace condiviso, nessun nuovo `use`
+necessario). `tests/TestCase.php`: `$connectionsToTransact` aggiornato con
+`'timber_billing'` (altrimenti le scritture su quella connection non rientrano nel
+rollback per-test → dati che sopravvivono tra test, causa di
+`UniqueConstraintViolationException` intermittenti osservate prima del fix).
+
+### Bug reali corretti (FK ordering / naming — non solo infra)
+
+| File | Problema | Fix |
+|---|---|---|
+| `create_timber_agent_commissions_table` | FK `agent_id`→`timber_agents` creata dopo (timestamp) | bump timestamp dopo `timber_agents` |
+| `create_timber_derived_materials_table` | FK verso `timber_lots`/`timber_processing_steps` create dopo | bump timestamp tra le due dipendenze e il suo dipendente (`timber_packaged_units`) |
+| `create_timber_processing_step_processable_table` | nome vincolo FK auto-generato >64 char (MySQL 1059) | `constrained(indexName: 'timber_step_processable_step_fk')` |
+| stesso file | colonna FK generata come `timber_processing_step_id` ma il model (`morphedByMany(..., 'processing_step_id')`) si aspettava `processing_step_id` | `foreignIdFor(TimberProcessingStep::class, 'processing_step_id')` |
+| `create_timber_purchase_records_table` | `foreignIdFor(TimberSupplier::class)`/`(TimberTransporter::class)` senza 2° argomento → colonna `timber_supplier_id`/`timber_transporter_id`, ma model/Action si aspettano `supplier_id`/`transporter_id` | aggiunto nome colonna esplicito a entrambi |
+| `create_timber_invoice_lines_table` | stesso pattern: `TimberInvoice::class` → colonna attesa `invoice_id`, non `timber_invoice_id` | nome esplicito |
+| `create_timber_lots_table` | stesso pattern: `TimberPurchaseRecord::class` → atteso `purchase_record_id` | nome esplicito |
+| `create_timber_humidity_checks_table` | stesso pattern: `TimberDryingCycle::class` → atteso `drying_cycle_id` | nome esplicito |
+| `create_timber_packaged_units_table` | stesso pattern: `TimberDerivedMaterial::class` → atteso `derived_material_id` | nome esplicito |
+| `2026_07_09_100300_drop_unique_label_code_on_timber_label_prints` | interamente ridondante: `create_timber_label_prints_table` corrente crea già `label_code` come indice non-unique | archiviato in `_bak/*.merged` |
+
+**Pattern sistemico**: `foreignIdFor(Model::class)` senza secondo argomento genera il
+nome colonna dalla classe intera (es. `timber_processing_step_id`), non dal nome
+"naturale" più corto che modelli/Action esistenti si aspettano. Da verificare per
+ogni futura conversione `foreignId()→foreignIdFor()` in questo modulo: controllare
+sempre le relazioni `belongsTo()` del modello target prima di omettere il 2° argomento.
+
+### Pest: 86/169 passed (era 13/169 in sessione 2026-07-24, poi 0 con DB test assente)
+
+Residuo (~80 fail) quasi tutto `Table 'roles' doesn't exist` — **non un bug
+TimberBilling**: conseguenza diretta della rimozione di `Modules/Auth` (proprietario
+di ruoli/permessi) decisa dall'utente 2026-07-27, vedi
+`docs/chat/modules-auth-blog-comment-removed.md`. Non risolvibile dentro questo
+modulo; richiede una decisione di design su dove vive ora la gestione ruoli/permessi.
 
 - [x] Cartella / reshape `app/` + XotBase SP
 - [ ] Resources → XotBaseResource (wave)
@@ -150,10 +197,12 @@ Filament/ruoli/config): `TimberCommissionResolverTest`, `TimberTraceCodeTest`,
 
 ### Aperto
 
-- Riabilitare `modules_statuses.json` (fuori scope, vietato in questa sessione) per far
-  bootare il ServiceProvider e sbloccare `config('timberbilling.timber.*')` nei test.
-- Estendere `database/fixcity_data.sqlite` con `users`/`roles`/`permissions`/
-  `model_has_roles` per i test Filament/Livewire (impatta anche altri moduli, es. Auth).
+- Estendere il DB di test (`workorder_data_test` / `database/fixcity_data.sqlite`) con
+  `roles`/`permissions`/`model_has_roles` — **assenti dopo la rimozione di `Modules/Auth`**
+  (decisione utente 2026-07-27, non un bug di TimberBilling). Causa la maggioranza dei
+  fallimenti Pest residui (assert su ruoli `timber_admin`/`timber_operator`). Richiede
+  prima una decisione di design su dove vive ora la gestione ruoli/permessi in questo
+  progetto (era in Auth), non risolvibile dentro TimberBilling.
 - Decidere se `IssueTimberInvoiceAction` deve fatturare sui modelli Timber-nativi
   (`TimberProduct`/`TimberCustomer`) o sui modelli Catalog/Customer del resto del
   monorepo — oggi sono mischiati e PHPStan lo segnala come `argument.type`.

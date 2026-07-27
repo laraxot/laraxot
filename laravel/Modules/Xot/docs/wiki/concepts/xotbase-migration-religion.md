@@ -13,7 +13,7 @@ discussions:
 related:
   - ./migration-foreign-id-for.md
   - ./migration-update-timestamps-only.md
-  - ../../../../../docs/wiki/concepts/xotbase-migration-religion.md
+  - ../../../../../docs/wiki/concepts/basemodel-connection-religion.md
   - ../../../../../docs/wiki/bmad/architecture-one-migration-per-model.md
 ---
 
@@ -21,7 +21,7 @@ related:
 
 ## Zen (una frase)
 
-Una tabella = un file `create_{table}_table.php` che estende `XotBaseMigration`; tabella e connection arrivano dal **Model**, non da stringhe duplicate.
+Una tabella = un file `create_{table}_table.php` che estende `XotBaseMigration`; tabella e connection arrivano dal **Model** (`BaseModel::$connection`), non dalla migrazione.
 
 ## Perché (logica / politica / filosofia)
 
@@ -82,6 +82,24 @@ Esempi:
 - `Schema::create('nome_tabella', …)` — usa `$this->tableCreate`
 - `extends Migration` — solo `XotBaseMigration` (vendor/packages esclusi)
 - `$table->timestamps()` + `$table->softDeletes()` + `created_by` a mano se chiami `updateTimestamps`
+- **Editare `table_names`/`table_name` in un file di config di package** (es.
+  `config('permission.table_names.*')` di spatie/laravel-permission) per farlo combaciare con lo
+  schema fisico esistente. **La config è la convenzione scelta dall'utente/progetto — non si tocca
+  per "far quadrare" un mismatch.** Se schema e config non combaciano, è lo **schema** ad essere
+  sbagliato: si corregge con una migrazione vera (`Schema::rename` con il nome letto da
+  `$this->getTable()`/dal model, non hardcoded — vedi punto sotto), mai editando la config per
+  inseguire lo stato accidentale del database. Regola generale, non solo per spatie/permission:
+  **le query vanno a prendere la tabella configurata, non il contrario.**
+  Caso reale: [Modules/User/docs/bugfix-permission-table-names-singular.md](../../../../User/docs/bugfix-permission-table-names-singular.md).
+- Passare un nome tabella **letterale** come secondo argomento a `tableCreate($closure, 'nome')` /
+  `tableUpdate($closure, 'nome')` per bypassare `$model_class` — anche quando lo scopo è allineare lo
+  schema alla config (il caso legittimo, sopra), il nome tabella target **deve** venire da
+  `$this->getTable()` (cioè dal model, che a sua volta legge la config), mai da una stringa scritta a
+  mano nella migrazione — altrimenti la migrazione stessa smette di seguire la config se questa
+  cambia di nuovo in futuro. Il secondo argomento esiste **solo** per il caso limite di una tabella
+  senza *alcun* model plausibile (vedi `timber_processing_step_processable` nell'audit
+  `docs/chat/audit-models-migrations-seeders-factories.md`).
+  Incidente reale (Passo 3): [Modules/User/docs/bugfix-permission-table-names-singular.md](../../../../User/docs/bugfix-permission-table-names-singular.md).
 
 ## `$model_class`
 

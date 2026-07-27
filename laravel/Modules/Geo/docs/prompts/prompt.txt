@@ -85,7 +85,7 @@
 
 ## BEST PRACTICES
 - Utilizzare spatie/laravel-data invece di services
-- Utilizzare spatie/queueable-actions
+- Utilizzare spatie/laravel-queueable-action
 - Evitare l'uso di "mixed" (solo come ultima risorsa)
 - Analizzare moduli esistenti prima di implementare nuove funzionalità
 
@@ -246,7 +246,7 @@ non voglio  ->label(   le label son gestite tramite langserviceprovider coi file
 
 ## BEST PRACTICES
 - Utilizzare spatie/laravel-data invece di services
-- Utilizzare spatie/queueable-actions
+- Utilizzare spatie/laravel-queueable-action
 - Evitare l'uso di "mixed" (solo come ultima risorsa)
 - Analizzare moduli esistenti prima di implementare nuove funzionalità
 
@@ -415,7 +415,7 @@ non voglio  ->label(   le label son gestite tramite langserviceprovider coi file
 
 ## BEST PRACTICES
 - Utilizzare spatie/laravel-data invece di services
-- Utilizzare spatie/queueable-actions
+- Utilizzare spatie/laravel-queueable-action
 - Evitare l'uso di "mixed" (solo come ultima risorsa)
 - Analizzare moduli esistenti prima di implementare nuove funzionalità
 
@@ -539,7 +539,7 @@ e puoi aggiungere anche tooltip e placeholder anche actions stessa logina ma puo
 
 ## BEST PRACTICES
 - Utilizzare spatie/laravel-data invece di services
-- Utilizzare spatie/queueable-actions
+- Utilizzare spatie/laravel-queueable-action
 - Evitare l'uso di "mixed" (solo come ultima risorsa)
 - Analizzare moduli esistenti prima di implementare nuove funzionalità
 
@@ -707,7 +707,7 @@ non voglio  ->label(   le label son gestite tramite langserviceprovider coi file
 
 ## BEST PRACTICES
 - Utilizzare spatie/laravel-data invece di services
-- Utilizzare spatie/queueable-actions
+- Utilizzare spatie/laravel-queueable-action
 - Evitare l'uso di "mixed" (solo come ultima risorsa)
 - Analizzare moduli esistenti prima di implementare nuove funzionalità
 

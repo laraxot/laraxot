@@ -2,15 +2,17 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
+uses(TestCase::class);
 
-use Modules\User\Models\User;
 use Illuminate\Support\Facades\DB;
-use Modules\Auth\Database\Seeders\ShieldPermissionsSeeder;
+use Modules\Quotation\Actions\RecordSiteSurveyAction;
 use Modules\Quotation\DTO\SiteSurveyAttachment;
 use Modules\Quotation\Filament\Resources\SiteSurveyResource;
 use Modules\Quotation\Filament\Resources\SiteSurveyResource\Concerns\RecordsSiteSurvey;
 use Modules\Quotation\Models\SiteSurvey;
+use Modules\Quotation\Tests\TestCase;
+use Modules\User\Database\Seeders\PermissionsSeeder;
+use Modules\User\Models\User;
 
 use function Pest\Laravel\actingAs;
 
@@ -31,7 +33,7 @@ final class SiteSurveyAttachmentMapperProbe
 
 function siteSurveyAdmin(): User
 {
-    app(ShieldPermissionsSeeder::class)->run();
+    app(PermissionsSeeder::class)->run();
 
     $user = User::factory()->create();
     $user->syncRoles(['admin']);
@@ -101,7 +103,7 @@ it('records a survey with its attachments through the resource action mapping', 
         ['kind' => 'audio', 'path' => 'site-surveys/3.m4a'],
     ]);
 
-    app(\Modules\Quotation\Actions\RecordSiteSurveyAction::class)->execute(
+    app(RecordSiteSurveyAction::class)->execute(
         survey: $survey,
         attachments: $attachments,
         notes: 'Tubazione da rifare',

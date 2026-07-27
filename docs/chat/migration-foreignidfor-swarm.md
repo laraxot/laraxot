@@ -70,3 +70,11 @@ _nessuno finora_
   timestamp → errore MySQL 1824 "Failed to open the referenced table" per ordering, non per
   cross-connection (entrambe le tabelle sono su connection `xot`). Fix: bump timestamp di questo
   file a dopo 000303, o sposta compliance_documents prima. Da riprocessare se ancora irrisolto.
+
+### Nota separata: Blog/Auth/Comment module removal (richiesta utente 2026-07-27)
+
+Utente ha confermato: moduli Blog, Auth, Comment non servono in questo progetto (workorder).
+Auth già rimosso da altro processo. Sto rimuovendo Blog e Comment + fixando riferimenti incrociati.
+`laravel/Modules/Cms/app/config/xra.php` (minuscolo, duplicato case di app/Config/xra.php) è
+lockato da un altro processo (PID 1310489) — skippato, contiene ancora riferimenti a
+`Modules\Blog\Models\Article/Category` da rimuovere quando si libera.

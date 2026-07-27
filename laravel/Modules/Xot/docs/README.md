@@ -3,7 +3,7 @@ title: "Xot Module - Updated Documentation (Clean)"
 type: documentation
 tags: [module, documentation, framework, template]
 created: 2026-07-14
-updated: 2026-07-14
+updated: 2026-07-27
 ---
 
 # 🏗️ Xot Module - Il Cuore del Framework Laraxot
@@ -14,7 +14,9 @@ updated: 2026-07-14
 [![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
 [![Modular Architecture](https://img.shields.io/badge/Architecture-Modular%20Monolith-yellow.svg)](https://martinfowler.com/articles/modular-monolith.html)
 
-> **🚀 Xot Module**: Framework base e cuore architetturale di Laraxot - fornisce classi base, traits, convenzioni e infrastruttura core per tutti i moduli dell'ecosistema.
+> **🚀 Xot Module**: Framework base e cuore architetturale di Laraxot.
+
+**Wiki operativo (2026-07-27):** [wiki/index.md](./wiki/index.md) — `config/config.php`, **`Filament/Pages/Dashboard.php`**, `BaseModel::$connection`, tenant `modules_statuses`.
 
 ## 📋 Overview
 

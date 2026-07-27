@@ -69,7 +69,7 @@ Problemi trovati a inizio sessione:
    ciascuna) estendevano `Filament\Resources\Pages\*` invece di
    `Modules\Xot\Filament\Resources\Pages\XotBase*`.
 9. **`composer.json`**: nessun secondo autore, nessun blocco `require` con
-   `spatie/queueable-action`.
+   `spatie/laravel-queueable-action`.
 
 ## Interventi di questa sessione
 
@@ -105,7 +105,7 @@ Problemi trovati a inizio sessione:
    `Bom/BomItemsRelationManager`), `table(Table)` invariato (non `final` nella classe base).
 8. **Filament Pages**: tutte e 8 convertite a `XotBase{ListRecords,CreateRecord,EditRecord,ViewRecord}`
    (drop-in, nessun metodo astratto aggiuntivo richiesto).
-9. **`composer.json`**: aggiunto secondo autore (Davide Cavallini) e `require.spatie/queueable-action`.
+9. **`composer.json`**: aggiunto secondo autore (Davide Cavallini) e `require.spatie/laravel-queueable-action`.
 
 ## Non ancora fatto (TODO esplicito)
 

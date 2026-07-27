@@ -20,7 +20,11 @@ related:
 
 - [x] Cartella / reshape `app/` + XotBase SP
 - [ ] Resources → XotBaseResource (wave)
-- [ ] PHPStan L10 zero reali
-- [ ] `modules_statuses=false` — **voluto** finché gate chiuso
+- [x] PHPStan L10 zero reali (riverificato 2026-07-27, `./vendor/bin/phpstan analyse Modules/Compliance --memory-limit=-1`)
+- [x] `modules_statuses=true` — riabilitato 2026-07-27, confermato dall'utente
+- [x] Pest: passed. Fix applicato: `tests/TestCase.php` non chiamava
+      `prepareSharedFixcitySqliteForTesting()` prima di `parent::setUp()` →
+      connessione `sqlite` puntava al path sbagliato. Schema modulo migrato in
+      `database/fixcity_data.sqlite`.
 
 Matrice: [gc-modules-runtime-matrix.md](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md).

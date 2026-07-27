@@ -28,6 +28,8 @@ Verticale appalti / public procurement SRC. Replica — **non** enable senza gat
 
 | Gate | Stato |
 |---|---|
-| `modules_statuses` | **false** |
+| `modules_statuses` | **true** (riabilitato 2026-07-27, confermato dall'utente) |
+| PHPStan L10 | 0 errori reali (riverificato 2026-07-27) |
+| Pest | passed (`Modules/PublicProcurement/tests`, eseguito insieme a Compliance: 8/8) |
 
 [import-status.md](./import-status.md) · [bugfix index ≤64](./bugfix-mysql-identifier-64.md) · [matrice](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md) · Story [2.4](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md)

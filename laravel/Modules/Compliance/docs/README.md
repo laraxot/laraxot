@@ -27,9 +27,9 @@ Conformità / readiness / equipment / documenti compliance di cantiere (SRC). Re
 
 | Gate | Stato |
 |---|---|
-| `modules_statuses` | **false** (gate enable aperto) |
-| PHPStan L10 | 0 errori (verificato in sessione qualità) |
-| Pest | smoke minimo |
+| `modules_statuses` | **true** (riabilitato 2026-07-27, confermato dall'utente) |
+| PHPStan L10 | 0 errori (riverificato 2026-07-27) |
+| Pest | passed (`Modules/Compliance/tests`, eseguito insieme a PublicProcurement: 8/8) |
 
 Dettaglio checklist: [import-status.md](./import-status.md).  
 Matrice: [gc-modules-runtime-matrix.md](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md).  

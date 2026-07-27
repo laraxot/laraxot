@@ -28,7 +28,8 @@ Verticale energy-broker (documenti/pratiche SRC). Replica singolare — enable s
 
 | Gate | Stato |
 |---|---|
-| `modules_statuses` | **false** |
-| PHPStan L10 | 0 errori reali |
+| `modules_statuses` | **true** (riabilitato 2026-07-27, confermato dall'utente) |
+| PHPStan L10 | 0 errori reali (riverificato 2026-07-27) |
+| Pest | 3/3 passed (`Modules/EnergyBroker/tests`) |
 
 [import-status.md](./import-status.md) · [bugfix index ≤64](./bugfix-mysql-identifier-64.md) · [models-persistence-status.md](./models-persistence-status.md) · [matrice](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md) · Story [2.4](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md)

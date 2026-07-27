@@ -27,4 +27,11 @@ abstract class TestCase extends XotBaseTestCase
             ComplianceServiceProvider::class,
         ];
     }
+
+    protected function setUp(): void
+    {
+        $this->prepareSharedFixcitySqliteForTesting();
+
+        parent::setUp();
+    }
 }

@@ -3,10 +3,12 @@ title: "Tenant Module Documentation"
 type: documentation
 tags: [module, documentation, multi-tenancy, architecture]
 created: 2026-07-14
-updated: 2026-07-24
+updated: 2026-07-27
 ---
 
 # Modulo Tenant
+
+> **Aggiornamento 2026-07-27:** registro moduli tenant, navigazione Filament, lezioni sessione → [tenant-module-status-registry.md](./tenant-module-status-registry.md) · [session-learnings-modules-config.md](./session-learnings-modules-config.md) · [it/config/modules-statuses.md](./it/config/modules-statuses.md)
 
 > **Verificato 2026-07-24 contro il codice reale (`find app -iname '*.php'`)**: la sezione "Struttura del Modulo",
 > la tabella "Componenti Principali", "Trait Disponibili" e gli scenari d'uso sotto descrivono un'architettura

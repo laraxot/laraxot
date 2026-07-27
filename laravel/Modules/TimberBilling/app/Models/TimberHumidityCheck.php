@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\TimberBilling\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\TimberBilling\Database\Factories\TimberHumidityCheckFactory;
@@ -21,7 +20,7 @@ use Modules\User\Models\User;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class TimberHumidityCheck extends Model
+final class TimberHumidityCheck extends BaseModel
 {
     /** @use HasFactory<TimberHumidityCheckFactory> */
     use HasFactory;

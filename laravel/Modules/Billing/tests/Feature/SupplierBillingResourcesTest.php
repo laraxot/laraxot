@@ -2,10 +2,8 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Billing\Tests\TestCase::class);
+uses(TestCase::class);
 
-use Modules\User\Models\User;
-use Modules\Auth\Database\Seeders\ShieldPermissionsSeeder;
 use Modules\Billing\Domain\DTO\ReconciliationDiscrepancy;
 use Modules\Billing\Filament\Resources\DeliveryNoteResource;
 use Modules\Billing\Filament\Resources\SupplierInvoiceResource;
@@ -13,12 +11,15 @@ use Modules\Billing\Filament\Resources\SupplierResource;
 use Modules\Billing\Models\DeliveryNote;
 use Modules\Billing\Models\Supplier;
 use Modules\Billing\Models\SupplierInvoice;
+use Modules\Billing\Tests\TestCase;
+use Modules\User\Database\Seeders\PermissionsSeeder;
+use Modules\User\Models\User;
 
 use function Pest\Laravel\actingAs;
 
 function supplierBillingAdmin(): User
 {
-    app(ShieldPermissionsSeeder::class)->run();
+    app(PermissionsSeeder::class)->run();
 
     $user = User::factory()->create();
     $user->syncRoles(['admin']);

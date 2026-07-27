@@ -2,7 +2,7 @@
 
 ## Gestionale / replica
 
-Tema alternativo/sperimentale. Enable moduli GC: [matrice](../../docs/gc-modules-runtime-matrix.md). Hub: [gestionale-docs-index.md](../../docs/gestionale-docs-index.md) · [panels vs Zero](./gestionale-panels-vs-themes.md).
+Tema alternativo/sperimentale. Hub: [gestionale-docs-index.md](../../docs/gestionale-docs-index.md) · [tenant-modules-navigation-discipline.md](../../docs/tenant-modules-navigation-discipline.md) · [panels vs Zero](./gestionale-panels-vs-themes.md).
 
 ## Overview
 

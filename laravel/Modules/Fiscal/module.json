@@ -5,7 +5,8 @@
     "keywords": [],
     "priority": 130,
     "providers": [
-        "Modules\\Fiscal\\Providers\\FiscalServiceProvider"
+        "Modules\\Fiscal\\Providers\\FiscalServiceProvider",
+        "Modules\\Fiscal\\Providers\\Filament\\AdminPanelProvider"
     ],
     "files": []
 }

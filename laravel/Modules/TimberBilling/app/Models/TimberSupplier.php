@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\TimberBilling\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -32,7 +31,7 @@ use Modules\TimberBilling\Database\Factories\TimberSupplierFactory;
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
  */
-final class TimberSupplier extends Model
+final class TimberSupplier extends BaseModel
 {
     /** @use HasFactory<TimberSupplierFactory> */
     use HasFactory;

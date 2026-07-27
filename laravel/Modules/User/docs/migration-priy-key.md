@@ -134,7 +134,7 @@ $this->tableCreate(static function (Blueprint $table): void {
 
 ## Collegamenti
 
-- [Teams Migration Compliance](./teams-migration-laraxot-compliance.md)
+- [Teams owner_id fix](./migration-teams-owner-id-fix.md)
 - [Migration Best Practices](../../xot/docs/migration-standards.md)
 - [Primary Key Rules](../../../../docs/development/migration_fixes_summary.md)
 

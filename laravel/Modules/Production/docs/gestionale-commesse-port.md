@@ -35,7 +35,7 @@ Come per Bom/Inventory, il modulo era tornato a uno stato intermedio: `app/Model
 3. **Migrazioni**: consolidate 1-per-modello, `XotBaseMigration`, `tableCreate()`/`tableUpdate()` + `updateTimestamps()`:
    - `2026_02_25_000030_create_production_orders_table.php`
    - `2026_02_25_000031_create_production_phases_table.php`
-4. **composer.json**: `spatie/queueable-action` in `require`, repository path `../Catalog`.
+4. **composer.json**: `spatie/laravel-queueable-action` in `require`, repository path `../Catalog`.
 5. **lang/{it,en}/production.php**: chiavi `navigation`, `production_order(s)`, `phase`, `fields.*`, `statuses.*` (planned/in_progress/completed/cancelled/blocked).
 6. **tests/**: `TestCase`, `Pest.php`, `tests/Unit/ProductionOrderModelTest.php` (creazione ordine, link fase→ordine); `database/factories/ProductionOrderFactory.php`, `ProductionPhaseFactory.php`; `HasFactory` aggiunto ai model.
 

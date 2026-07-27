@@ -1,0 +1,21 @@
+---
+title: "Moduli Laraxot — config/config.php"
+type: concept
+tags: [theme, module, config, cross-reference]
+updated: 2026-07-27
+related:
+  - ../../Modules/Xot/docs/wiki/concepts/module-config-php-religion.md
+  - ./module-structure.md
+---
+
+# config/config.php (moduli)
+
+I **moduli** in `laravel/Modules/<Modulo>/` devono avere `config/config.php` con `name`, `icon`, `navigation`.
+
+I **temi** usano `theme.json` per metadati nwidart; non duplicare panel config nel tema — leggere dal modulo owner o da config tema root se applicabile.
+
+Quando un agente lavora su FO/panel: verificare sempre che il modulo referenziato abbia `config/config.php` valido.
+
+Audit: `bash bashscripts/tools/audit-module-config-php.sh`
+
+Canon completo: [module-config-php-religion](../../Modules/Xot/docs/wiki/concepts/module-config-php-religion.md)

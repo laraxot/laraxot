@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 return [
     'name' => 'TimberBilling',
+    'description' => 'Fatturazione e documenti fiscali Timber',
+    'icon' => 'heroicon-o-receipt-percent',
+    'navigation' => [
+        'enabled' => true,
+        'sort' => 150,
+    ],
 
     // Tipi di documento fiscale gestiti dall'aggregato TimberInvoice.
     'invoice_kinds' => [

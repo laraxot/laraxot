@@ -217,8 +217,6 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  *
  * @method static Builder<static>|Admin whereAgeRange($value)
  *
- * @mixin IdeHelperAdmin
- *
  * @property-read Collection<int, Tenant> $tenants
  * @property-read int|null $tenants_count
  *

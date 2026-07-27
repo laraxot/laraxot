@@ -19,7 +19,7 @@ use Modules\User\Models\User;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class TimberContactNote extends Model
+final class TimberContactNote extends BaseModel
 {
     /** @use HasFactory<TimberContactNoteFactory> */
     use HasFactory;

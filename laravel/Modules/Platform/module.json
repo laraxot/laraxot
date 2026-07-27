@@ -5,7 +5,8 @@
     "keywords": [],
     "priority": 200,
     "providers": [
-        "Modules\\Platform\\Providers\\PlatformServiceProvider"
+        "Modules\\Platform\\Providers\\PlatformServiceProvider",
+        "Modules\\Platform\\Providers\\Filament\\AdminPanelProvider"
     ],
     "files": []
 }

@@ -6,7 +6,6 @@ namespace Modules\TimberBilling\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
@@ -26,7 +25,7 @@ use Modules\TimberBilling\Support\WoodSpeciesCatalog;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class TimberLot extends Model
+final class TimberLot extends BaseModel
 {
     /** @use HasFactory<TimberLotFactory> */
     use HasFactory;

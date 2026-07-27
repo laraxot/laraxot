@@ -23,7 +23,7 @@ use Modules\TimberBilling\Database\Factories\TimberDryingCycleFactory;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class TimberDryingCycle extends Model
+final class TimberDryingCycle extends BaseModel
 {
     /** @use HasFactory<TimberDryingCycleFactory> */
     use HasFactory;

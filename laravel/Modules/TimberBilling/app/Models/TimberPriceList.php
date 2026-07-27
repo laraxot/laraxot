@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\TimberBilling\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Modules\TimberBilling\Database\Factories\TimberPriceListFactory;
@@ -18,7 +17,7 @@ use Modules\TimberBilling\Database\Factories\TimberPriceListFactory;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class TimberPriceList extends Model
+final class TimberPriceList extends BaseModel
 {
     /** @use HasFactory<TimberPriceListFactory> */
     use HasFactory;

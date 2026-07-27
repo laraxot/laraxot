@@ -3,7 +3,7 @@ title: "Gestionale — indice docs Themes"
 type: index
 tags: [themes, gestionale-commesse, folio, filament, bmad]
 created: 2026-07-24
-updated: 2026-07-24
+updated: 2026-07-27
 qmd: "themes gestionale docs index panels boundaries wave1 operator matrix"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
@@ -32,7 +32,9 @@ related:
 
 | Doc | Scopo |
 |---|---|
-| [gc-modules-runtime-matrix.md](./gc-modules-runtime-matrix.md) | **SSoT** `modules_statuses` + rischi (Document/media) |
+| [runtime-config-religion-hub.md](./shared-components/runtime-config-religion-hub.md) | Hub lezioni runtime (permission, config, statuses, **Dashboard**) |
+| [tenant-modules-navigation-discipline.md](./tenant-modules-navigation-discipline.md) | JSON tenant, menu admin, impatto temi |
+| [gc-modules-runtime-matrix.md](./gc-modules-runtime-matrix.md) | `modules_statuses` + rischi (Document/media) |
 | [module-vs-theme-boundaries.md](./module-vs-theme-boundaries.md) | Modules vs Themes vs app |
 | [wave1-fo-operator-note.md](./wave1-fo-operator-note.md) | Operator resta Filament in Wave 1 |
 | [gestionale-panels-vs-themes.md](./gestionale-panels-vs-themes.md) | Panel SRC vs tema |
@@ -40,6 +42,17 @@ related:
 | [aiassistant-vs-themes.md](./aiassistant-vs-themes.md) | AiAssistant non va nei temi |
 | [copy-normalize-modules-vs-themes.md](./copy-normalize-modules-vs-themes.md) | Copy/normalize non tocca Themes composer |
 | [composer-modules-not-themes.md](./composer-modules-not-themes.md) | Merge-plugin solo moduli |
+
+## Runtime config (shared)
+
+| Doc | Scopo |
+|---|---|
+| [runtime-config-religion-hub.md](./shared-components/runtime-config-religion-hub.md) | Hub cross-cutting: permission, panel trinità, tenant statuses |
+| [permission-table-names-religion.md](./shared-components/permission-table-names-religion.md) | Spatie `table_names` immutabili |
+| [tenant-modules-statuses-religion.md](./shared-components/tenant-modules-statuses-religion.md) | Root vs `config/local/{tenant}/` |
+| [module-config-php-religion.md](./shared-components/module-config-php-religion.md) | Obbligo `config/config.php` per modulo |
+| [module-dashboard-page-religion.md](./shared-components/module-dashboard-page-religion.md) | Obbligo `Dashboard.php` — landing `{modulo}/admin` |
+| [module-admin-panel-provider-religion.md](./shared-components/module-admin-panel-provider-religion.md) | Obbligo `AdminPanelProvider` registrato |
 
 ## Test FO vs moduli
 

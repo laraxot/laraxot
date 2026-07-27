@@ -1,84 +1,85 @@
 {
-    "name": "laraxot/module_hr_fila5",
-    "description": "HR module",
-    "keywords": [
-        "laraxot",
-        "laravel",
-        "filament",
-        "module_hr"
+  "name": "laraxot/module_hr_fila5",
+  "description": "HR module",
+  "keywords": [
+    "laraxot",
+    "laravel",
+    "filament",
+    "module_hr"
+  ],
+  "homepage": "https://github.com/laraxot/module_hr_fila5",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marco Sottana",
+      "email": "marco.sottana@gmail.com"
+    },
+    {
+      "name": "Davide Cavallini",
+      "email": "davidecavallini1987@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Modules\\HR\\Providers\\HrServiceProvider",
+        "Modules\\HR\\Providers\\RouteServiceProvider",
+        "Modules\\HR\\Providers\\EventServiceProvider",
+        "Modules\\HR\\Providers\\Filament\\AdminPanelProvider"
+      ],
+      "aliases": {}
+    }
+  },
+  "require": {
+    "php": "^8.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Modules\\HR\\": "app/",
+      "Modules\\HR\\Database\\Factories\\": "database/factories/",
+      "Modules\\HR\\Database\\Seeders\\": "database/seeders/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Modules\\HR\\Tests\\": "tests/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../Xot"
+    },
+    {
+      "type": "path",
+      "url": "../Tenant"
+    },
+    {
+      "type": "path",
+      "url": "../UI"
+    }
+  ],
+  "scripts": {
+    "post-autoload-dump1": [
+      "@php vendor/bin/testbench package:discover --ansi"
     ],
-    "homepage": "https://github.com/laraxot/module_hr_fila5",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Marco Sottana",
-            "email": "marco.sottana@gmail.com"
-        },
-        {
-            "name": "Davide Cavallini",
-            "email": "davidecavallini1987@gmail.com",
-            "role": "Developer"
-        }
+    "post-update-cmd": [
+      "Illuminate\\Foundation\\ComposerScripts::postUpdate"
     ],
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Modules\\HR\\Providers\\HrServiceProvider",
-                "Modules\\HR\\Providers\\RouteServiceProvider",
-                "Modules\\HR\\Providers\\EventServiceProvider"
-            ],
-            "aliases": {}
-        }
-    },
-    "require": {
-        "php": "^8.3"
-    },
-    "autoload": {
-        "psr-4": {
-            "Modules\\HR\\": "app/",
-            "Modules\\HR\\Database\\Factories\\": "database/factories/",
-            "Modules\\HR\\Database\\Seeders\\": "database/seeders/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Modules\\HR\\Tests\\": "tests/"
-        }
-    },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../Xot"
-        },
-        {
-            "type": "path",
-            "url": "../Tenant"
-        },
-        {
-            "type": "path",
-            "url": "../UI"
-        }
-    ],
-    "scripts": {
-        "post-autoload-dump1": [
-            "@php vendor/bin/testbench package:discover --ansi"
-        ],
-        "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate"
-        ],
-        "analyse": "vendor/bin/phpstan analyse",
-        "test": "./vendor/bin/pest --no-coverage",
-        "test-coverage": "vendor/bin/pest --coverage-html coverage",
-        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
-    },
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "pestphp/pest-plugin": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "wikimedia/composer-merge-plugin": true
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "analyse": "vendor/bin/phpstan analyse",
+    "test": "./vendor/bin/pest --no-coverage",
+    "test-coverage": "vendor/bin/pest --coverage-html coverage",
+    "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "wikimedia/composer-merge-plugin": true
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }

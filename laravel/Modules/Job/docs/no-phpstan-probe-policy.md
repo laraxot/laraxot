@@ -16,9 +16,20 @@ Nel modulo `Job` non devono esistere:
 
 Questi file sono modelli o classi artificiali create solo per far passare PHPStan. Se un trait risulta non usato nel modulo, si aggiunge `@phpstan-ignore trait.unused` nel docblock del trait. Se un test deve esercitare un trait, si usa una classe anonima all'interno del test.
 
+Il ragionamento completo (logica/politica/filosofia/religione/zen di questo divieto) è
+in `Modules/Xot/docs/wiki/concepts/phpstan-trait-probes.md`.
+
+## Storico (2026-07-27)
+
+Rimosso `Modules/Job/app/Phpstan/FormatSecondsPhpstanProbe.php` (e la cartella
+`app/Phpstan/`): il trait `FormatSeconds` era già usato direttamente da tre widget
+Filament (`JobStatsOverview`, `JobsWaitingOverview`), quindi visibile a PHPStan senza
+alcun probe — il file era zavorra rimasta da un refactor precedente. Nessuna
+annotazione `@phpstan-ignore` è stata necessaria sul trait.
+
 ## Riferimento
 
 Vedi anche:
 
-- `@/var/www/_bases/base_ptvx_fila5/.windsurf/rules/no-phpstan-probe-models.md`
-- `@/var/www/_bases/base_ptvx_fila5/laravel/Modules/Xot/docs/phpstan-modules-fix-log.md`
+- `bashscripts/ai/wiki/rules/no-phpstan-probe-models.md`
+- `Modules/Xot/docs/phpstan-modules-fix-log.md`

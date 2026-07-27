@@ -9,8 +9,6 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Modules\Xot\Actions\View\GetViewsSiblingsAndSelfAction;
 
-// use Modules\Blog\Models\Article;
-
 class MapBlock
 {
     public static function make(string $name = 'map', string $context = 'form'): Block
@@ -34,6 +32,6 @@ class MapBlock
                     ->required(),
             ])
             ->label('Map')
-            ->columns('form' === $context ? 2 : 1);
+            ->columns($context === 'form' ? 2 : 1);
     }
 }

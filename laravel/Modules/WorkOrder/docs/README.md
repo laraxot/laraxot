@@ -3,7 +3,7 @@ title: "WorkOrder — knowledge base"
 type: overview
 tags: [workorder, gestionale-commesse, docs, bmad]
 created: 2026-07-23
-updated: 2026-07-24
+updated: 2026-07-27
 qmd: "WorkOrder docs README purpose commessa panel quality"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
@@ -13,6 +13,7 @@ discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/15"
 related:
   - "./import-status.md"
+  - "./basemodel-connection.md"
   - "../../../../docs/gestionale-commesse-comparison/functional-readiness.md"
   - "../../../../docs/gestionale-commesse-comparison/glossary-align.md"
   - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
@@ -47,6 +48,9 @@ Lingua: *Commessa* = WorkOrder ([glossary](../../../../docs/gestionale-commesse-
 | File | Scopo |
 |---|---|
 | [import-status.md](./import-status.md) | Checklist import/reshape |
+| [modules-statuses-workorder.md](./modules-statuses-workorder.md) | Tenant `modules_statuses.json` (38 moduli) |
+| [profile-schema-ownership.md](./profile-schema-ownership.md) | Owner schema `profiles` |
+| [basemodel-connection.md](./basemodel-connection.md) | `$connection` BaseModel |
 | [tests-migration.md](./tests-migration.md) | Porting test SRC |
 | [README.md](./README.md) | Scopo + qualità |
 
@@ -110,4 +114,5 @@ usato in parallelo da altri agenti, quindi lasciato esplicitamente fuori scope.
 - Stories [1.3](../../../../docs/stories/1.3.workorder-module.story.md) · [1.8](../../../../docs/stories/1.8.wave1-reshape-xotbase.story.md) · [2.3](../../../../docs/stories/2.3.deep-quality-enabled-modules.story.md)
 - [#7](https://github.com/laraxot/base_workorder_fila5/issues/7) · [#14](https://github.com/laraxot/base_workorder_fila5/issues/14)
 - Matrice statuses: [gc-modules-runtime-matrix.md](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md)
+- Hub runtime: [runtime-config-religion-hub.md](../../../../laravel/Themes/docs/shared-components/runtime-config-religion-hub.md)
 - Story [2.4 docs hygiene](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md)

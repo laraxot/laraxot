@@ -5,7 +5,8 @@
     "keywords": [],
     "priority": 120,
     "providers": [
-        "Modules\\Bom\\Providers\\BomServiceProvider"
+        "Modules\\Bom\\Providers\\BomServiceProvider",
+        "Modules\\Bom\\Providers\\Filament\\AdminPanelProvider"
     ],
     "files": []
 }

@@ -16,9 +16,12 @@ Nel modulo `Lang` non devono esistere:
 
 Il trait `Modules\Lang\Models\Traits\HasStrictTranslations` è condiviso e può non avere consumer diretti nel modulo. Invece di creare un modello probe, si usa `@phpstan-ignore trait.unused` nel docblock del trait.
 
+Il ragionamento completo (logica/politica/filosofia/religione/zen di questo divieto) è
+in `Modules/Xot/docs/wiki/concepts/phpstan-trait-probes.md`.
+
 ## Riferimento
 
 Vedi anche:
 
-- `@/var/www/_bases/base_ptvx_fila5/.windsurf/rules/no-phpstan-probe-models.md`
-- `@/var/www/_bases/base_ptvx_fila5/laravel/Modules/Xot/docs/phpstan-modules-fix-log.md`
+- `bashscripts/ai/wiki/rules/no-phpstan-probe-models.md`
+- `Modules/Xot/docs/phpstan-modules-fix-log.md`

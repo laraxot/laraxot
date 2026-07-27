@@ -3,7 +3,7 @@ title: "User Module Documentation"
 type: documentation
 tags: [module, documentation]
 created: 2026-06-05
-updated: 2026-06-05
+updated: 2026-07-27
 ---
 
 # Modulo User - Documentazione Completa
@@ -68,11 +68,21 @@ In compliance with the [Global Rule](../../../docs/wiki/rules/module-root-php-fo
 Per evitare crash dei parallel workers su analisi massive, usare sempre:
 `php -d memory_limit=-1 ./vendor/bin/phpstan analyse [target] --memory-limit=-1`
 
-### Profiles migration governance
-- La tabella `profiles` deve avere sia `id` sia `uuid`.
-- Il modulo User usa **una sola migrazione autorevole** per `profiles`: `*_create_profiles_table.php`.
-- Se manca una colonna come `uuid`, si corregge quella migrazione e si aggiorna il timestamp del file; non si crea una migrazione `add_uuid_to_profiles`.
-- Riferimento canonico: [wiki/concepts/profile-migration-uuid-contract.md](./wiki/concepts/profile-migration-uuid-contract.md)
+### Profiles migration governance (workorder)
+
+**Owner schema = WorkOrder** (`main_module`), non User:
+
+- [profile-schema-ownership.md](../WorkOrder/docs/profile-schema-ownership.md)
+- [wiki/concepts/profile-migration-uuid-contract.md](./wiki/concepts/profile-migration-uuid-contract.md)
+- Migrazione canonica: `WorkOrder/database/migrations/2026_07_27_111500_create_profiles_table.php`
+- Duplicati User archiviati in `database/migrations/_bak/*.merged`
+
+### Spatie Permission — `table_names` intoccabile
+
+- `laravel/config/permission.php` → nomi pivot **singolari** (`model_has_role`, …)
+- Vietato modificare `table_names` o hardcodare nomi tabella in migrazioni/modelli
+- [wiki/concepts/spatie-permission-table-names.md](./wiki/concepts/spatie-permission-table-names.md)
+- [wiki/concepts/spatie-permission-migration-no-table-name.md](./wiki/concepts/spatie-permission-migration-no-table-name.md)
 
 ### No Log calls in production code
 `Log::info()`, `Log::debug()`, `Log::error()` are forbidden in Actions, Models, Services, and Widgets.

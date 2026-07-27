@@ -5,7 +5,8 @@
     "keywords": [],
     "priority": 140,
     "providers": [
-        "Modules\\Email\\Providers\\EmailServiceProvider"
+        "Modules\\Email\\Providers\\EmailServiceProvider",
+        "Modules\\Email\\Providers\\Filament\\AdminPanelProvider"
     ],
     "files": []
 }

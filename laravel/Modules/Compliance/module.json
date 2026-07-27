@@ -5,7 +5,8 @@
     "keywords": [],
     "priority": 120,
     "providers": [
-        "Modules\\Compliance\\Providers\\ComplianceServiceProvider"
+        "Modules\\Compliance\\Providers\\ComplianceServiceProvider",
+        "Modules\\Compliance\\Providers\\Filament\\AdminPanelProvider"
     ],
     "files": []
 }
