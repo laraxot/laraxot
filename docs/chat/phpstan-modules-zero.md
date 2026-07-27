@@ -60,7 +60,7 @@ connessione MariaDB.
 |---|---|---|---|
 | Intervention | 820 | Claude sub-agent (parallel) | claimato 13:35 UTC |
 | Quotation | 577 | Claude sub-agent (parallel) | claimato 13:35 UTC |
-| TimberBilling | 395 | Claude sub-agent (parallel) | claimato 13:35 UTC |
+| TimberBilling | **0** | Claude (questa sessione) | fatto 13:05 UTC — root cause unico: `uses(TestCase::class);` dichiarato *prima* dell'import `use Modules\TimberBilling\Tests\TestCase;` in 25/25 file `tests/Feature/*.php` (PHPStan risolve i nomi top-down nell'AST, quindi al momento di `uses(...)` l'alias non è ancora noto → `class.notFound`; a runtime invece funziona sempre, perché PHP risolve gli `use` per l'intero file indipendentemente dall'ordine — verificato coi test che passano). Fix meccanico identico in tutti e 25 i file: spostare `uses(TestCase::class);` dopo l'ultimo `use`, stesso pattern già in uso in `Modules/Compliance`. Scan isolato `Modules/TimberBilling`: 0 errori residui (a parte l'artefatto noto `@mixin contains unknown class` non matchato). Pint/PHPMD puliti su `tests/Feature`. Pest: alcuni test falliscono per un gap di infrastruttura pre-esistente e non causato da questo fix (tabella `roles` mancante nel DB di test `workorder_data_test`/fixture condivisa — stesso genere di problema del blocco Pest globale già notato sopra; non ho toccato altro). Committato in 4 batch (`0a147d55`, parte di `80397077` per bundling di un altro agente, `39150f6e`, `7a78935c`) + pushato. Nota: molti di questi file contenevano già, non committato, un refactor di modernizzazione dei test (helper `testTimberLivewire()`/`actingAsTimberAdmin()`, `createOne()`) fatto da un altro agente prima di me — non l'ho toccato oltre al riordino import. **Confermato anche con scan completo `Modules` (13:xx UTC, dopo i miei commit): 0 occorrenze di `TimberBilling` su un totale di soli 6 errori residui in tutto il progetto, tutti già noti e fuori scope (i `Document/tests/Feature/ZZZDiagnosticTest*.php` scratch flagged sopra).** |
 | Billing | 165 | — | |
 | Geo | 105 | — | |
 | Catalog | 97 | — | story 1.12 diceva "6 residui" — stale |
@@ -116,7 +116,7 @@ modulo (vedi nota sopra) invece di scan completo — oppure fix landati DOPO
 quello scan e PRIMA di questo. Chi riprende questi due moduli: ri-verificare
 con lo scan completo, non fidarsi di nessuno dei due numeri senza rieseguire.
 
-| **Totale Modules** | **2641** | swarm | `./vendor/bin/phpstan analyse Modules --memory-limit=-1` — coordinare via tabella sopra |
+| **Totale Modules** | **2641** (13:25 UTC) → **6** (13:xx UTC, dopo lavoro swarm + fix TimberBilling in questa sessione) | swarm | `./vendor/bin/phpstan analyse Modules --memory-limit=-1` — coordinare via tabella sopra. I 6 residui sono tutti in `Modules/Document/tests/Feature/ZZZDiagnosticTest*.php` (già flaggati sopra come scratch di un altro agente, non toccare). Se qualcuno rilegge questa riga più tardi: rieseguire lo scan, non fidarsi del numero senza verifica — il progetto si muove velocemente. |
 
 ## Blocco iniziale parse-error (risolto, 2026-07-27 ~13:00)
 
