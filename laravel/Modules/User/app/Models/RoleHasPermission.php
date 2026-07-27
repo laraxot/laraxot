@@ -46,4 +46,16 @@ class RoleHasPermission extends BasePivot
      * @psalm-var list{'permission_id', 'role_id'}
      */
     protected $fillable = ['permission_id', 'role_id'];
+
+    /**
+     * Laravel's non-morph Pivot base class singularizes the table name by
+     * default (Illuminate\Database\Eloquent\Relations\Concerns\AsPivot::getTable()).
+     * Read from config on every call instead — never hardcode, the value can
+     * change at any time via `config('permission.table_names.role_has_permissions')`.
+     */
+    #[\Override]
+    public function getTable(): string
+    {
+        return config('permission.table_names.role_has_permissions');
+    }
 }
