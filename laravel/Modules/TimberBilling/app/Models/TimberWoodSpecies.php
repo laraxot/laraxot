@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\TimberBilling\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use Modules\TimberBilling\Database\Factories\TimberWoodSpeciesFactory;
 
@@ -18,7 +17,7 @@ use Modules\TimberBilling\Database\Factories\TimberWoodSpeciesFactory;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class TimberWoodSpecies extends Model
+final class TimberWoodSpecies extends BaseModel
 {
     /** @use HasFactory<TimberWoodSpeciesFactory> */
     use HasFactory;

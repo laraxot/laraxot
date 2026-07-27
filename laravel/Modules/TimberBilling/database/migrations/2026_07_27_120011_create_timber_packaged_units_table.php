@@ -15,7 +15,7 @@ return new class() extends XotBaseMigration
     {
         $this->tableCreate(function (Blueprint $table): void {
             $table->id();
-            $table->foreignIdFor(TimberDerivedMaterial::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(TimberDerivedMaterial::class, 'derived_material_id')->constrained()->cascadeOnDelete();
             $table->string('package_code')->unique();
             $table->string('qr_code')->unique();
             $table->string('package_type_code')->index();

@@ -19,8 +19,8 @@ return new class() extends XotBaseMigration
 
         $this->tableCreate(function (Blueprint $table) use ($userClass): void {
             $table->id();
-            $table->foreignIdFor(TimberSupplier::class)->constrained()->restrictOnDelete();
-            $table->foreignIdFor(TimberTransporter::class)->nullable()->constrained()->nullOnDelete();
+            $table->foreignIdFor(TimberSupplier::class, 'supplier_id')->constrained()->restrictOnDelete();
+            $table->foreignIdFor(TimberTransporter::class, 'transporter_id')->nullable()->constrained()->nullOnDelete();
             $table->string('origin_forest')->nullable();
             $table->string('ddt_number')->nullable()->index();
             $table->date('ddt_date')->nullable();

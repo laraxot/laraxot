@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
 use Modules\AiAssistant\Models\AiActionProposal;
-use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
 use Modules\WhatsApp\Models\WhatsAppContactIdentity;
@@ -28,7 +27,10 @@ return new class() extends XotBaseMigration
             $table->foreignIdFor(WhatsAppContactIdentity::class, 'identity_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(Customer::class, 'customer_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(CustomerSite::class, 'customer_site_id')->nullable()->constrained()->nullOnDelete();
-            $table->foreignIdFor(Contact::class, 'contact_id')->nullable()->constrained()->nullOnDelete();
+            // contacts.id e' unsignedInteger (non bigint): stesso pattern esplicito
+            // usato in Modules/Email/database/migrations/*_create_email_contact_identities_table.php.
+            $table->unsignedInteger('contact_id')->nullable()->index();
+            $table->foreign('contact_id')->references('id')->on('contacts')->nullOnDelete();
             $table->foreignIdFor($user_class, 'user_id')->nullable()->index();
             $table->string('status')->default('open');
             $table->timestamp('last_message_at')->nullable();

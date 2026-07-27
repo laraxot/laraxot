@@ -18,7 +18,7 @@ return new class() extends XotBaseMigration
 
         $this->tableCreate(function (Blueprint $table) use ($userClass): void {
             $table->id();
-            $table->foreignIdFor(TimberDryingCycle::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(TimberDryingCycle::class, 'drying_cycle_id')->constrained()->cascadeOnDelete();
             $table->timestamp('checked_at');
             $table->decimal('humidity_percent', 5, 2);
             $table->foreignIdFor($userClass, 'checked_by_user_id')->nullable()->index();

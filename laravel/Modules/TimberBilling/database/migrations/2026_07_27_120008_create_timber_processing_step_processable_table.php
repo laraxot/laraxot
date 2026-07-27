@@ -15,7 +15,9 @@ return new class() extends XotBaseMigration
     {
         $this->tableCreate(function (Blueprint $table): void {
             $table->id();
-            $table->foreignIdFor(TimberProcessingStep::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(TimberProcessingStep::class, 'processing_step_id')
+                ->constrained(indexName: 'timber_step_processable_step_fk')
+                ->cascadeOnDelete();
             $table->morphs('processable', 'timber_step_processable_morph_idx');
             $table->unique(
                 ['processing_step_id', 'processable_type', 'processable_id'],

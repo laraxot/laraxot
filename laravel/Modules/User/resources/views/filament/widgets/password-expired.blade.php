@@ -15,11 +15,11 @@ declare(strict_types=1);
         <p class="mt-2 text-gray-600">{{ __('user::password_expired.sub_heading') }}</p>
     </div>
     
-    <x-filament-schemas::form wire:submit="resetPassword">
+    <form wire:submit="resetPassword">
         {{ $this->form }}
         
         <x-filament::button type="submit" class="mt-4">
             @lang('user::password_expired.actions.reset_password.label') <x-filament::loading-indicator class="h-5 w-5" wire:loading wire:target="submit"/>
         </x-filament::button>
-    </x-filament-schemas::form>
+    </form>
 </x-filament-widgets::widget>

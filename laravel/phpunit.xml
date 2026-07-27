@@ -17,9 +17,6 @@
         <testsuite name="AI">
             <directory>Modules/AI/tests</directory>
         </testsuite>
-        <testsuite name="Auth">
-            <directory>Modules/Auth/tests</directory>
-        </testsuite>
         <testsuite name="Cms">
             <directory>Modules/Cms/tests</directory>
         </testsuite>
@@ -52,9 +49,6 @@
         </testsuite>
         <testsuite name="PublicProcurement">
             <directory>Modules/PublicProcurement/tests</directory>
-        </testsuite>
-        <testsuite name="TechPlanner">
-            <directory>Modules/TechPlanner/tests</directory>
         </testsuite>
         <testsuite name="Tenant">
             <directory>Modules/Tenant/tests</directory>

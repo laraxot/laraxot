@@ -15,7 +15,7 @@ return new class() extends XotBaseMigration
     {
         $this->tableCreate(function (Blueprint $table): void {
             $table->id();
-            $table->foreignIdFor(TimberPurchaseRecord::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(TimberPurchaseRecord::class, 'purchase_record_id')->constrained()->cascadeOnDelete();
             $table->string('lot_code')->unique();
             $table->string('status_code')->default('available')->index();
             $table->string('current_area_code')->default('piazzale')->index();

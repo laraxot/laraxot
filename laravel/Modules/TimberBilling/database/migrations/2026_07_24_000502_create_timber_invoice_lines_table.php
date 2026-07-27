@@ -16,7 +16,7 @@ return new class() extends XotBaseMigration
     {
         $this->tableCreate(function (Blueprint $table): void {
             $table->id();
-            $table->foreignIdFor(TimberInvoice::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(TimberInvoice::class, 'invoice_id')->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Product::class)->nullable()->index();
             $table->string('description');
             $table->decimal('quantity', 14, 3)->default(0);

@@ -42,7 +42,7 @@ Modulo più esteso dei tre (5 modelli, 3 resource Filament, pagina di overview c
    - `2026_02_25_000014_create_inventory_movement_product_units_table.php` (pivot puro senza model dedicato: `$model_class` esplicito su `InventoryMovement` solo per il costruttore di `XotBaseMigration`, ma `$table->timestamps()` diretto nella tabella pivot — evita il mismatch di `getTable()` che altrimenti punterebbe a `inventory_movements`).
    - Rimossi i 4 file di migrazione originali (`create_inventory_tables`, 3× `add_*`).
    - `InventoryOverviewRow` resta senza migrazione dedicata: è alimentato da una subquery (`GetInventoryOverviewRowsAction`), non da una tabella fisica.
-4. **composer.json**: `spatie/queueable-action` in `require`, repository path `../Catalog`.
+4. **composer.json**: `spatie/laravel-queueable-action` in `require`, repository path `../Catalog`.
 5. **lang/{it,en}/inventory.php**: chiavi `navigation`, `warehouse(s)`, `location(s)`, `movement(s)`, `fields.*`, `help.is_final_destination`, `movement_types.*` — coprono tutte le chiavi già referenziate nei Resource esistenti più quelle aggiunte in fase di conversione a `getFormSchema()`.
 6. **tests/**: `TestCase`, `Pest.php`, `tests/Unit/InventoryModelTest.php` (creazione Warehouse, link WarehouseLocation→Warehouse, creazione InventoryMovement); `database/factories/{Warehouse,WarehouseLocation,ProductUnit,InventoryMovement}Factory.php`; `HasFactory` aggiunto ai 4 model persistibili principali (non a `InventoryOverviewRow`, che non è persistibile).
 
