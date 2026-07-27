@@ -1,3 +1,14 @@
+---
+title: "_filters"
+module: "Xot"
+type: concept
+tags: [filters, 2]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "filters 2"
+related:
+  - "./eloquent-magic-properties-rule.md"
+---
 # _filters
 
 <!-- Contenuto migrato da _docs/_filters.txt -->

@@ -11,7 +11,7 @@ discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
 related:
   - "./gestionale-commesse-parity-handoff.md"
-  - "./session-errors-2026-07-23.md"
+  - "./session-errors-log.md"
   - "../gestionale-commesse-comparison/session-lessons-learned.md"
   - "../wiki/rules/module-name-singular-mandatory.md"
 ---

@@ -105,7 +105,6 @@
 	},
 	"extensions": {
 		"recommendations": [
-			"bmewburn.vscode-intelephense-client",
 			"junstyle.php-cs-fixer",
 			"mehedidracula.php-namespace-resolver",
 			"shufo.vscode-blade-formatter",

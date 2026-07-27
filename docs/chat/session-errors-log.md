@@ -1,4 +1,10 @@
-# Session Errors — 2026-07-23
+---
+title: "Session Errors Log"
+type: chat
+created: 2026-07-23
+---
+
+# Session Errors Log
 
 Tutti gli errori commessi in questa sessione, documentati per non ripeterli.
 

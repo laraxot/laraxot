@@ -27,6 +27,29 @@ Vietato in root: `Main_files/`, `Resources/`, `Config/`, `Helpers/`, …
 
 Il nome modulo/tema (`WorkOrder`, `Sixteen`) in PascalCase **non** è una violazione.
 
+## 1bis. File `.md` in root — solo 3 ammessi
+
+`README.md`, `CHANGELOG.md`, `LICENSE.md`. Qualunque altro `.md` in root (non dentro
+`docs/`) è un residuo — spesso di una migrazione automatica da vecchie cartelle `_docs/*.txt`
+andata male (frontmatter perso, nomi troncati con trattini iniziali `-nome.md`, file vuoti
+da 0 byte). Se il file ha un omonimo già in `docs/`, confrontare: spesso la copia in root ha
+frontmatter YAML che manca nella copia in `docs/` (versione migliore) — in quel caso
+sovrascrivere `docs/{nome}` con la versione di root, poi rimuovere la root. Se il file in
+root è vuoto (0 byte) o senza omonimo sensato in `docs/`, va solo cancellato.
+
+```bash
+# Audit
+find laravel/Modules/{M} laravel/Themes/{T} -maxdepth 1 -iname "*.md" \
+  ! -iname "README.md" ! -iname "CHANGELOG.md" ! -iname "LICENSE.md"
+```
+
+Incidente reale (2026-07-27): `Modules/Xot/` aveva 52 file `.md` in root fuori da questi 3
+— 44 vuoti (0 byte, cancellati), 8 con contenuto reale duplicato di un omonimo in `docs/`
+ma con frontmatter migliore (migrati sovrascrivendo `docs/{nome}`, poi rimossi da root).
+`Modules/Xot/docs/` stesso conserva tracce della stessa migrazione mal riuscita (file con
+heading `# _nome` invece di frontmatter) — bonifica più ampia di `docs/` non ancora fatta,
+fuori scope di questa singola pulizia root.
+
 ## 2. `.code-workspace` — esattamente uno
 
 Derivato da repo Git (`gitmodules.ini` o `git remote get-url origin`):
@@ -38,7 +61,7 @@ module_activity_fila5  →  _module_activity.code-workspace
 
 Moduli solo monorepo (remote `base_*`): fallback `_module_{alias}` da `module.json`.
 
-Fix: `bash bashscripts/tools/fix-module-theme-workspaces.sh`
+Fix: `bash bashscripts/tools/fix-module-theme-root-hygiene.sh` (completo) · `fix-module-theme-workspaces.sh` (solo workspace)
 
 ## 3. IDE folders — vietate in root
 
@@ -51,6 +74,7 @@ Fix: `bash bashscripts/tools/ensure-module-theme-ide-gitignore.sh`
 ```bash
 bash bashscripts/tools/audit-module-theme-root-hygiene.sh
 bash bashscripts/tools/audit-module-root-hygiene.sh
+bash bashscripts/tools/fix-module-theme-root-hygiene.sh   # bonifica automatica
 ```
 
 ## Incidente (2026-07-27)

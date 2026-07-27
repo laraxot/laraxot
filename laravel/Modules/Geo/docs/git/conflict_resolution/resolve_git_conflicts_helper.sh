@@ -3,11 +3,7 @@
 # Script per risolvere conflitti Git nel file Helper.php
 # Mantiene sempre la versione HEAD (prima del =======)
 
-<<<<<<< HEAD
 FILE_PATH="Modules/Xot/helpers/Helper.php"
-=======
-FILE_PATH="Modules/Xot/Helpers/Helper.php"
->>>>>>> 12dc0c78b (.)
 
 if [ ! -f "$FILE_PATH" ]; then
     echo "File $FILE_PATH non trovato!"

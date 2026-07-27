@@ -1,10 +1,6 @@
 #!/bin/bash
 
-<<<<<<< HEAD
 FILE_PATH="Modules/Xot/helpers/Helper.php"
-=======
-FILE_PATH="Modules/Xot/Helpers/Helper.php"
->>>>>>> 12dc0c78b (.)
 
 echo "Risoluzione completa conflitti Git in $FILE_PATH..."
 

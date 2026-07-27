@@ -148,3 +148,4 @@ docs/**/bashscripts/
 .devcontainer/
 .vscode/
 .windsurf/
+.claude

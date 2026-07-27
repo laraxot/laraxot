@@ -25,13 +25,13 @@ fix_php_file() {
     local file="$1"
     local dir=$(dirname "$file")
     local current_basename=$(basename "$file" .php)
-    
+
     # Estrae il nome della classe dal file
     local class_name=$(get_class_name "$file")
-    
+
     if [[ -n "$class_name" && "$class_name" != "$current_basename" ]]; then
         local new_file="$dir/$class_name.php"
-        
+
         # Verifica che il nuovo file non esista già
         if [[ ! -f "$new_file" ]]; then
             echo "Rinomino: $file -> $new_file (classe: $class_name)"
@@ -66,14 +66,10 @@ echo "3. FASE 3: Correzione file Helper.php mancante"
 echo "=============================================="
 
 # Verifica e corregge il problema del file Helper.php mancante
-<<<<<<< HEAD
 HELPER_FILE="$LARAVEL_ROOT/Modules/Xot/helpers/Helper.php"
-=======
-HELPER_FILE="$LARAVEL_ROOT/Modules/Xot/Helpers/Helper.php"
->>>>>>> 12dc0c78b (.)
 if [[ ! -f "$HELPER_FILE" ]]; then
     echo "⚠️  File Helper.php mancante: $HELPER_FILE"
-    
+
     # Cerca file helper con nomi simili
     find "$LARAVEL_ROOT/Modules/Xot" -name "*helper*" -type f | while read -r file; do
         echo "Trovato file helper simile: $file"
@@ -96,15 +92,15 @@ find "$LARAVEL_ROOT/Modules" -name "*.php" -type f -path "*/app/*" | while read 
     if [[ "$file" =~ vendor|test|Test ]]; then
         continue
     fi
-    
+
     local current_basename=$(basename "$file" .php)
     local class_name=$(get_class_name "$file")
-    
+
     # Se il nome del file non corrisponde al nome della classe, correggi
     if [[ -n "$class_name" && "$class_name" != "$current_basename" ]]; then
         local dir=$(dirname "$file")
         local new_file="$dir/$class_name.php"
-        
+
         if [[ ! -f "$new_file" ]]; then
             echo "Correzione: $(basename "$file") -> $class_name.php (modulo: $(echo "$file" | sed 's|.*/Modules/\([^/]*\)/.*|\1|'))"
             mv "$file" "$new_file"
