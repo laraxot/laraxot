@@ -148,3 +148,7 @@ tests/AuditCoverage
 .vscode/
 .windsurf/
 tests/AuditCoverage/
+
+# Laraxot — quality tool configs forbidden in module/theme root (use laravel/phpinsights.php, laravel/rector.php)
+phpinsights.php
+rector.php
