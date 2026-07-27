@@ -125,3 +125,28 @@ corretta, applicata da altro agente: model dedicato reale
 standard con `$model_class = TimberProcessingStepProcessable::class`. Nessuna pivot
 è mai "senza model" in questo codebase — vedi anche `RatingMorph`, `Taggable`.
 Skill canonica: `xotbase-migration-religion`.
+
+## Incidente — Comment module rimosso, Blog\Article dipendeva ancora (2026-07-27)
+
+`composer go` (`composer update -W` + `artisan package:discover`) ha fatto emergere
+che `Modules/Comment` (490 file) era stato rimosso dal disco (non committato, da un
+altro agente) mentre `Modules/Blog/app/Models/Article.php` importava ancora
+`Modules\Comment\Models\{Comment,CommentNotificationSubscription,Concerns\HasComments,Contracts\SupportsCommentNotifications}`
+→ fatal error su **qualsiasi** comando `php artisan` (bootstrap rotto per tutti gli
+agenti). Utente confermato: il modulo Comment non serve in questo progetto.
+
+Fix applicato:
+- Rimossi import/trait/interfaccia/metodi Comment-dipendenti da `Article.php`
+  (`use HasComments`, `implements SupportsCommentNotifications`, i due
+  `@property` doc, i metodi `commentableName()`/`commentUrl()` richiesti
+  dall'interfaccia ora rimossa).
+- Rimossa entry `"Comment": true` da `modules_statuses.json` (root).
+- Rimosso `config/comments.php` orfano (referenziava `Spatie\Comments\*`, pacchetto
+  non installato).
+- Verificato: nessun altro riferimento reale a `Modules\Comment` nel codebase
+  (solo `Modules/Xot/tests/Support/PestFunctionBridge.php`, stub Pest generato,
+  namespace-only, innocuo).
+
+Nessun `git checkout`/restore usato (regola git-forward-only): la rimozione delle
+490 file di Comment è stata lasciata come stato di fatto (deciso da altro agente,
+confermato dall'utente), non ripristinata.
