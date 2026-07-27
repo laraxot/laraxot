@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 return [
     'name' => 'Seo',
-    // 'icon' => 'heroicon-o-x-mark',
-    'icon' => 'fas-superscript',
+    'icon' => 'seo-icon',
     'navigation_sort' => 1,
 ];

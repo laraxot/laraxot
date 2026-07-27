@@ -1,11 +1,12 @@
 <?php
 
 declare(strict_types=1);
+use Illuminate\Support\Env;
 
 return [
     'name' => 'Geo',
     'description' => 'Geocoding, mappe e indirizzi',
-    'icon' => 'heroicon-o-map-pin',
+    'icon' => 'geo-icon',
     'navigation' => [
         'enabled' => true,
         'sort' => 60,
@@ -19,9 +20,9 @@ return [
      * |
      */
     'api_keys' => [
-        'google_maps' => Illuminate\Support\Env::get('GOOGLE_MAPS_API_KEY'),
-        'bing_maps' => Illuminate\Support\Env::get('BING_MAPS_API_KEY'),
-        'mapbox' => Illuminate\Support\Env::get('MAPBOX_API_KEY'),
+        'google_maps' => Env::get('GOOGLE_MAPS_API_KEY'),
+        'bing_maps' => Env::get('BING_MAPS_API_KEY'),
+        'mapbox' => Env::get('MAPBOX_API_KEY'),
     ],
     /*
      * |--------------------------------------------------------------------------
@@ -46,7 +47,7 @@ return [
      * | posti (qui per documentare i driver disponibili, nell'Action per il dispatch).
      * |
      */
-    'driver' => Illuminate\Support\Env::get('GEO_DRIVER', 'google_maps'),
+    'driver' => Env::get('GEO_DRIVER', 'google_maps'),
     /*
      * |--------------------------------------------------------------------------
      * | Rate Limiting

@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'Vehicle',
     'description' => 'Anagrafica veicoli aziendali',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'vehicle-icon',
 
     'navigation' => [
         'enabled' => true,

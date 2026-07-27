@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'Media',
     'description' => 'Modulo per la gestione dei file multimediali e documenti',
-    'icon' => 'heroicon-o-photo',
+    'icon' => 'media-icon',
     'navigation' => [
         'enabled' => true,
         'sort' => 60,

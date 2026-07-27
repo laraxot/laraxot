@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'Compliance',
     'description' => 'Conformita normativa e controlli',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'compliance-icon',
 
     'navigation' => [
         'enabled' => true,

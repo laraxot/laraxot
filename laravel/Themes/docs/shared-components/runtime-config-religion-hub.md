@@ -17,6 +17,7 @@ related:
   - ../../Modules/Tenant/docs/tenant-module-status-registry.md
   - ../../Modules/User/docs/bugfix-permission-table-names-singular.md
   - ../../Modules/Xot/docs/wiki/concepts/module-config-php-religion.md
+  - ./module-config-icon-svg-religion.md
 ---
 
 # Runtime config — cosa imparare lavorando su temi
@@ -59,6 +60,7 @@ bash bashscripts/tools/audit-module-providers-dual-registration.sh
 bash bashscripts/tools/audit-module-config-php.sh
 bash bashscripts/tools/audit-module-admin-panel-provider.sh
 bash bashscripts/tools/audit-module-dashboard-page.sh
+bash bashscripts/tools/audit-module-config-icon-svg.sh
 ```
 
 → [module-filament-panel-triad.md](../../Modules/Xot/docs/wiki/concepts/module-filament-panel-triad.md) · [module-providers-dual-registration-religion.md](./module-providers-dual-registration-religion.md) · [module-config-php-religion.md](./module-config-php-religion.md) · [module-admin-panel-provider-religion.md](./module-admin-panel-provider-religion.md) · [module-dashboard-page-religion.md](./module-dashboard-page-religion.md)
@@ -77,6 +79,13 @@ Una sola `create_profiles_table`; legacy UUID PK → `convertIdFromUuidToBigintI
 
 → [profile-id-bigint-uuid-fix](../../Modules/User/docs/wiki/concepts/profile-id-bigint-uuid-fix.md)
 
+### 6. Icona panel — `icon.svg` + `{alias}-icon`
+
+Se esiste `Modules/{M}/resources/svg/icon.svg`, `config.php` deve usare `{alias}-icon` (alias da `module.json`).
+Placeholder `heroicon-o-square-3-stack-3d` vietato.
+
+→ [module-config-icon-svg-religion.md](./module-config-icon-svg-religion.md) · [canon Xot](../../Modules/Xot/docs/wiki/concepts/module-config-icon-svg.md)
+
 ## Verifica rapida (solo lettura)
 
 ```bash
@@ -86,6 +95,7 @@ bash bashscripts/tools/audit-module-providers-dual-registration.sh
 bash bashscripts/tools/audit-module-config-php.sh
 bash bashscripts/tools/audit-module-admin-panel-provider.sh
 bash bashscripts/tools/audit-module-dashboard-page.sh
+bash bashscripts/tools/audit-module-config-icon-svg.sh
 ```
 
 ## Trigger map

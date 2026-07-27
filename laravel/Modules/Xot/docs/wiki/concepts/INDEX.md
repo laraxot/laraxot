@@ -15,6 +15,7 @@ qmd search "Xot concepts" --limit 5
 - [module-providers-dual-registration-mandatory.md](./module-providers-dual-registration-mandatory.md) — **min 2 provider** in `module.json` + `composer.json`
 - [module-filament-panel-triad.md](./module-filament-panel-triad.md) — **SSoT** trinità panel
 - [module-config-php-religion.md](./module-config-php-religion.md) — **obbligatorio** `Modules/{M}/config/config.php`
+- [module-config-icon-svg.md](./module-config-icon-svg.md) — `resources/svg/icon.svg` → `{alias}-icon`
 - [module-admin-panel-provider-mandatory.md](./module-admin-panel-provider-mandatory.md) — `AdminPanelProvider` + doppia registrazione
 - [module-dashboard-page-mandatory.md](./module-dashboard-page-mandatory.md) — **obbligatorio** `app/Filament/Pages/Dashboard.php`
 - [module-providers-dual-registration-mandatory.md](./module-providers-dual-registration-mandatory.md) — `module.json` + `composer.json`

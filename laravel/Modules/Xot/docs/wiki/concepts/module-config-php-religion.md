@@ -63,8 +63,52 @@ return [
 - Modulo senza `config/config.php`
 - `env()` in `config/config.php` modulo (solo `.env` root + `config/local/{tenant}/`)
 - Duplicare name/icon in `AdminPanelProvider` hardcoded
+- **`'icon' => 'heroicon-o-square-3-stack-3d'`** — placeholder generico usato durante lo
+  scaffolding automatico dei moduli portati da gestionale_commesse. Va sempre sostituito
+  con un'icona semanticamente pertinente al dominio del modulo prima che il modulo sia
+  considerato completo (vedi sezione successiva).
 
-## Audit
+## Scelta dell'icona: due percorsi validi (verificati nel sorgente)
+
+**Opzione A — Heroicon esistente (default, più semplice):** qualunque nome file presente
+in `vendor/blade-ui-kit/blade-heroicons/resources/svg/o-{nome}.svg` (outline) o
+`s-{nome}.svg` (solid), referenziato come `heroicon-o-{nome}`/`heroicon-s-{nome}`.
+Verificare che il nome esista realmente prima di usarlo:
+```bash
+ls vendor/blade-ui-kit/blade-heroicons/resources/svg/o-{nome}.svg
+```
+o a runtime: `php artisan tinker --execute="echo svg('heroicon-o-{nome}')->toHtml();"`
+(lancia eccezione se il nome non esiste — non fidarsi del solo "sembra plausibile").
+
+**Opzione B — SVG custom del modulo (per branding/icone specifiche non coperte da Heroicons):**
+`Modules/<Modulo>/resources/svg/{file}.svg` → auto-registrato da
+`XotBaseServiceProvider::registerBladeIcons()` (verificato in
+`Modules/Xot/app/Providers/XotBaseServiceProvider.php`) con
+`$factory->add($this->nameLower, ['path' => $svgPath, 'prefix' => $this->nameLower])`.
+Riferimento nell'icona: `'{nome_modulo_lower}-{file_senza_estensione}'`, dove
+`{nome_modulo_lower}` è `Illuminate\Support\Str::lower($module->name)` — **attenzione**:
+`Str::lower()` non è `Str::snake()`, quindi un modulo `PublicProcurement` diventa
+`publicprocurement` (una parola sola, nessun trattino interno), non `public-procurement`.
+Esempio reale già in uso: `Modules/Employee/resources/svg/icon2.svg` →
+`'icon' => 'employee-icon2'`.
+
+**Quando scegliere B invece di A**: quando esiste già (o serve) un'icona di dominio/branding
+non coperta da Heroicons — **`resources/svg/icon.svg`** + `'icon' => '{alias}-icon'`.
+Se `icon.svg` è presente, **B è obbligatorio** (sync/audit lo impongono).
+
+Per placeholder `heroicon-o-square-3-stack-3d` e batch sync: [module-config-icon-svg.md](./module-config-icon-svg.md).
+
+Esempi in repo (2026-07-27): `WorkOrder` → `workorder-icon`, `Billing` → `billing-icon`,
+`Employee` → `employee-icon2` (override filename custom).
+
+## Audit icona SVG
+
+```bash
+bash bashscripts/tools/audit-module-config-icon-svg.sh
+bash bashscripts/tools/sync-module-config-icon-svg.sh
+```
+
+## Audit config modulo
 
 ```bash
 bash bashscripts/tools/audit-module-config-php.sh

@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'Document',
     'description' => 'Gestione documenti e allegati',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'document-icon',
 
     'navigation' => [
         'enabled' => true,

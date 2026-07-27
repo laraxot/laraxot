@@ -88,7 +88,7 @@ return [
             'name' => 'Confini',
             'plural' => 'Confini',
             'description' => 'Gestione dei confini amministrativi',
-            'icon' => 'heroicon-o-square-3-stack-3d',
+            'icon' => 'geo-icon',
         ],
         'areas' => [
             'name' => 'Aree',

@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'PublicProcurement',
     'description' => 'Gare di appalto pubbliche',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'publicprocurement-icon',
 
     'navigation' => [
         'enabled' => true,

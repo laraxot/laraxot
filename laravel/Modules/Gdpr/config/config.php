@@ -5,7 +5,6 @@ declare(strict_types=1);
 return [
     'name' => 'Gdpr',
     'description' => 'Modulo per il Gdpr',
-    // 'icon' => 'heroicon-o-clock',
     'icon' => 'gdpr-icon',
     'navigation' => [
         'enabled' => true,

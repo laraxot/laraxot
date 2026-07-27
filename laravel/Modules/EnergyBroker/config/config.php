@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'EnergyBroker',
     'description' => 'Broker energetico: import, matching, commissioni agenti',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'energybroker-icon',
 
     'navigation' => [
         'enabled' => true,

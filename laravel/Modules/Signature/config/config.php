@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'Signature',
     'description' => 'Firma digitale documenti',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'signature-icon',
 
     'navigation' => [
         'enabled' => true,

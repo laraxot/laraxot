@@ -18,4 +18,12 @@ Quando un agente lavora su FO/panel: verificare sempre che il modulo referenziat
 
 Audit: `bash bashscripts/tools/audit-module-config-php.sh` · `bash bashscripts/tools/audit-module-dashboard-page.sh`
 
+**Icona modulo**: mai `heroicon-o-square-3-stack-3d` (placeholder generico) — o un
+Heroicon esistente e pertinente al dominio (verificare che il file `o-{nome}.svg` esista
+davvero in `vendor/blade-ui-kit/blade-heroicons`), o un SVG custom in
+`resources/svg/{file}.svg` auto-registrato da `XotBaseServiceProvider` e richiamabile come
+`{modulo_lower}-{file}` (`Str::lower()`, non `Str::snake()` — es. `PublicProcurement` →
+`publicprocurement-icon`, tutto attaccato). Dettagli e criterio di scelta:
+[module-config-php-religion § Scelta dell'icona](../../Modules/Xot/docs/wiki/concepts/module-config-php-religion.md#scelta-dellicona-due-percorsi-validi-verificati-nel-sorgente).
+
 Canon completo: [module-config-php-religion](../../Modules/Xot/docs/wiki/concepts/module-config-php-religion.md)

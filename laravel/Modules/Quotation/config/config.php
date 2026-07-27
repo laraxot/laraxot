@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'Quotation',
     'description' => 'Preventivi e offerte commerciali',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'quotation-icon',
 
     'navigation' => [
         'enabled' => true,

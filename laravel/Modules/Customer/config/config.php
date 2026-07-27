@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'Customer',
     'description' => 'Anagrafica clienti: cliente, sedi, referenti, ruoli referente, rivenditori',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'customer-icon',
 
     'navigation' => [
         'enabled' => true,

@@ -9,7 +9,7 @@ declare(strict_types=1);
 return [
     'name' => '{Modulo}',
     'description' => 'Descrizione breve del modulo',
-    'icon' => 'heroicon-o-cube',
+    'icon' => '{alias}-icon', // dopo resources/svg/icon.svg (registerBladeIcons)
     'navigation' => [
         'enabled' => true,
         'sort' => 100,

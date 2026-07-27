@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'Production',
     'description' => 'Gestione produzione e lavorazioni',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'production-icon',
 
     'navigation' => [
         'enabled' => true,

@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'Inventory',
     'description' => 'Gestione magazzino e movimenti inventario',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'inventory-icon',
 
     'navigation' => [
         'enabled' => true,

@@ -59,3 +59,15 @@ bash bashscripts/tools/audit-module-root-hygiene.sh
 - `Job/Config`, `UI/Config` duplicati rimossi
 - IDE folders rimosse da Activity, Job, Lang, Media, UI, Zero
 - Workspace duplicati/errati normalizzati su 41 moduli/temi
+
+**Bug strutturale negli script di audit/fix stessi**: sia
+`audit-module-theme-root-hygiene.sh` sia `ensure-module-theme-ide-gitignore.sh`
+richiedevano `theme.json` per processare un tema. `Themes/Barthelemy` e `Themes/Meetup`
+(entrambi temi reali, già conformi, ma condivisi sul remote del monorepo — nessun
+`theme.json`, nessun remote dedicato) risultavano quindi invisibili a entrambi gli
+script — non "falliti", proprio mai controllati, silenziosamente. Corretto: rimosso il
+requisito `theme.json` dal loop di discovery dei temi in entrambi gli script (basta
+essere una directory sotto `Themes/`, esclusa `docs/`); aggiunto fallback finale su nome
+directory lowercased (`theme_barthelemy`, `theme_meetup`) quando mancano sia remote
+dedicato sia manifest. Verificato: `Checked: 43 | Failed: 0` (38 moduli + 5 temi — prima
+solo 41 risultavano visibili all'audit).

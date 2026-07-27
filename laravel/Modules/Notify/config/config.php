@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'Notify',
     'description' => 'Modulo per la gestione delle notifiche e comunicazioni',
-    'icon' => 'heroicon-o-bell',
+    'icon' => 'notify-icon',
     'navigation' => [
         'enabled' => true,
         'sort' => 70,

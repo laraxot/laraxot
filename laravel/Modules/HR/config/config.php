@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'HR',
     'description' => 'Gestione risorse umane',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'hr-icon',
 
     'navigation' => [
         'enabled' => true,

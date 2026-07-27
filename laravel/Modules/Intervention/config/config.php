@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'Intervention',
     'description' => 'Interventi tecnici sul campo',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'intervention-icon',
 
     'navigation' => [
         'enabled' => true,

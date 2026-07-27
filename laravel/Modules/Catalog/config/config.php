@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'Catalog',
     'description' => 'Catalogo prodotti e categorie',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'catalog-icon',
 
     'navigation' => [
         'enabled' => true,

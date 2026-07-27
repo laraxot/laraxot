@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'Bom',
     'description' => 'Distinta base e componenti prodotto',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'bom-icon',
 
     'navigation' => [
         'enabled' => true,

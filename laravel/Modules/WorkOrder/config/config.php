@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'WorkOrder',
     'description' => 'Commesse e ordini di lavoro',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'workorder-icon',
 
     'navigation' => [
         'enabled' => true,

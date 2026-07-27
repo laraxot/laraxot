@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'WhatsApp',
     'description' => 'Integrazione WhatsApp Business',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'whatsapp-icon',
 
     'navigation' => [
         'enabled' => true,

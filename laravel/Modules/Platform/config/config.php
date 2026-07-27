@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'Platform',
     'description' => 'Configurazioni e funzionalita di piattaforma',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'platform-icon',
 
     'navigation' => [
         'enabled' => true,

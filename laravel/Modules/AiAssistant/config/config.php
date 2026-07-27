@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'AiAssistant',
     'description' => 'Assistente AI per automazioni e proposte',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'aiassistant-icon',
 
     'navigation' => [
         'enabled' => true,

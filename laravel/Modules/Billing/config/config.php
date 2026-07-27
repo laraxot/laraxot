@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'Billing',
     'description' => 'Fatturazione e documenti contabili',
-    'icon' => 'heroicon-o-square-3-stack-3d',
+    'icon' => 'billing-icon',
 
     'navigation' => [
         'enabled' => true,

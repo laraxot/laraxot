@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'TimberBilling',
     'description' => 'Fatturazione e documenti fiscali Timber',
-    'icon' => 'heroicon-o-receipt-percent',
+    'icon' => 'timberbilling-icon',
     'navigation' => [
         'enabled' => true,
         'sort' => 150,
