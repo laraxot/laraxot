@@ -71,6 +71,18 @@ _nessuno finora_
   cross-connection (entrambe le tabelle sono su connection `xot`). Fix: bump timestamp di questo
   file a dopo 000303, o sposta compliance_documents prima. Da riprocessare se ancora irrisolto.
 
+### Nota per chi lavora Batch 7 (Document, Media)
+
+Prima di toccare le migration `media` di `Modules\Document` o `Modules\Media`: c'è una
+collisione strutturale nota, non una FK da convertire. Le connessioni `document` e
+`media` puntano allo stesso database fisico in test, quindi `tableCreate('media')` di
+uno dei due moduli trova la tabella già creata dall'altro e resta no-op silenzioso —
+lo schema applicato a runtime è quello sbagliato per uno dei due modelli `Media`.
+Dettagli e opzioni di fix (non applicate, decisione owner) in
+`docs/chat/document-media-table-collision-blocker.md`. Convertire le FK con
+`foreignIdFor()` in queste due migration è comunque corretto/utile, ma non risolve
+(e non è bloccato da) il problema di collisione — sono ortogonali.
+
 ### Nota separata: Blog/Auth/Comment module removal (richiesta utente 2026-07-27)
 
 Utente ha confermato: moduli Blog, Auth, Comment non servono in questo progetto (workorder).
