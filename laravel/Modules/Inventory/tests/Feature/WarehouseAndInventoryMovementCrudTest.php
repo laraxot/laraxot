@@ -3,9 +3,6 @@
 declare(strict_types=1);
 
 use Modules\Inventory\Actions\GetInventoryOverviewRowsAction;
-use Modules\Inventory\Database\Factories\InventoryMovementFactory;
-use Modules\Inventory\Database\Factories\WarehouseFactory;
-use Modules\Inventory\Database\Factories\WarehouseLocationFactory;
 use Modules\Inventory\Models\InventoryMovement;
 use Modules\Inventory\Models\Warehouse;
 use Modules\Inventory\Models\WarehouseLocation;
@@ -25,7 +22,7 @@ use Modules\Inventory\Tests\TestCase;
 uses(TestCase::class);
 
 it('validates warehouse attributes without persisting', function (): void {
-    $warehouse = WarehouseFactory::new()->make(['name' => 'Deposito Nord', 'code' => 'DEP-NORD']);
+    $warehouse = inventoryMakeWarehouse(['name' => 'Deposito Nord', 'code' => 'DEP-NORD']);
 
     expect($warehouse->name)->toBe('Deposito Nord')
         ->and($warehouse->code)->toBe('DEP-NORD')
@@ -34,7 +31,7 @@ it('validates warehouse attributes without persisting', function (): void {
 });
 
 it('creates a warehouse and reads it back', function (): void {
-    $warehouse = WarehouseFactory::new()->createOne(['name' => 'Deposito Sud', 'code' => 'DEP-SUD']);
+    $warehouse = inventoryCreateWarehouse(['name' => 'Deposito Sud', 'code' => 'DEP-SUD']);
 
     $found = Warehouse::query()->find($warehouse->id);
 
@@ -43,7 +40,7 @@ it('creates a warehouse and reads it back', function (): void {
 });
 
 it('updates a warehouse', function (): void {
-    $warehouse = WarehouseFactory::new()->createOne(['is_active' => true]);
+    $warehouse = inventoryCreateWarehouse(['is_active' => true]);
 
     $warehouse->update(['is_active' => false]);
 
@@ -51,7 +48,7 @@ it('updates a warehouse', function (): void {
 });
 
 it('deletes a warehouse', function (): void {
-    $warehouse = WarehouseFactory::new()->createOne();
+    $warehouse = inventoryCreateWarehouse();
     $id = $warehouse->id;
 
     $warehouse->delete();
@@ -60,8 +57,8 @@ it('deletes a warehouse', function (): void {
 });
 
 it('links a warehouse location to its warehouse and cascades the relation', function (): void {
-    $warehouse = WarehouseFactory::new()->createOne();
-    $location = WarehouseLocationFactory::new()->createOne(['warehouse_id' => $warehouse->id]);
+    $warehouse = inventoryCreateWarehouse();
+    $location = inventoryCreateLocation(['warehouse_id' => $warehouse->id]);
 
     expect($location->warehouse_id)->toBe($warehouse->id)
         ->and($warehouse->locations()->count())->toBe(1)
@@ -69,8 +66,8 @@ it('links a warehouse location to its warehouse and cascades the relation', func
 });
 
 it('creates an inventory movement of type carico bound to a warehouse', function (): void {
-    $warehouse = WarehouseFactory::new()->createOne();
-    $movement = InventoryMovementFactory::new()->createOne([
+    $warehouse = inventoryCreateWarehouse();
+    $movement = inventoryCreateMovement([
         'to_warehouse_id' => $warehouse->id,
         'movement_type' => 'carico',
         'quantity' => 12,
@@ -82,10 +79,10 @@ it('creates an inventory movement of type carico bound to a warehouse', function
 });
 
 it('computes aggregate stock across warehouses via the overview action', function (): void {
-    $warehouseA = WarehouseFactory::new()->createOne();
-    $warehouseB = WarehouseFactory::new()->createOne();
+    $warehouseA = inventoryCreateWarehouse();
+    $warehouseB = inventoryCreateWarehouse();
 
-    $movement = InventoryMovementFactory::new()->createOne([
+    $movement = inventoryCreateMovement([
         'to_warehouse_id' => $warehouseA->id,
         'movement_type' => 'carico',
         'quantity' => 10,
@@ -105,6 +102,13 @@ it('computes aggregate stock across warehouses via the overview action', functio
         fn ($row): string => (string) $row->warehouse_id
     );
 
-    expect((int) $rows[(string) $warehouseA->id]->aggregate_stock)->toBe(6)
-        ->and((int) $rows[(string) $warehouseB->id]->aggregate_stock)->toBe(4);
+    $rowA = $rows[(string) $warehouseA->id] ?? null;
+    $rowB = $rows[(string) $warehouseB->id] ?? null;
+
+    if ($rowA === null || $rowB === null) {
+        throw new RuntimeException('Expected both warehouse overview rows to be present.');
+    }
+
+    expect((int) $rowA->aggregate_stock)->toBe(6);
+    expect((int) $rowB->aggregate_stock)->toBe(4);
 });
