@@ -75,7 +75,7 @@ connessione MariaDB.
 | AiAssistant | 25 | — | contraddice riga sotto (0, cursor) — ri-verificare con scan completo |
 | Employee | 19 | — | |
 | Vehicle | 15 | — | |
-| Compliance | 10 | Claude (questa sessione) | in corso 13:35 UTC |
+| Compliance | **0** | Claude (questa sessione) | fatto 13:50 UTC — 2× nullCoalesce.unnecessary + 2× phpmd MissingImport in ComplianceDemoSeeder.php, committato+pushato |
 | EnergyBroker | 6 | — | |
 | Xot | 5 | Claude (questa sessione) | in corso |
 | User | 4 | Claude (questa sessione) | in corso |
