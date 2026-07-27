@@ -49,12 +49,15 @@ Errore “table doesn't exist” → schema/migrazione/modello pivot, **non** co
 
 → [User — spatie-permission-migration-no-table-name](../../Modules/User/docs/wiki/concepts/spatie-permission-migration-no-table-name.md)
 
-### 3. Ogni modulo — `config/config.php` + Dashboard + AdminPanelProvider
+### 3. Trinità panel — `config.php` + `AdminPanelProvider` + `Dashboard.php`
 
-Audit config: `bash bashscripts/tools/audit-module-config-php.sh`  
-Audit dashboard: `bash bashscripts/tools/audit-module-dashboard-page.sh`
+```bash
+bash bashscripts/tools/audit-module-config-php.sh
+bash bashscripts/tools/audit-module-admin-panel-provider.sh
+bash bashscripts/tools/audit-module-dashboard-page.sh
+```
 
-→ [module-config-php-religion.md](./module-config-php-religion.md) · [module-dashboard-page-religion.md](./module-dashboard-page-religion.md) · [module-admin-panel-provider-religion.md](./module-admin-panel-provider-religion.md)
+→ [module-filament-panel-triad.md](../../Modules/Xot/docs/wiki/concepts/module-filament-panel-triad.md) · [module-config-php-religion.md](./module-config-php-religion.md) · [module-admin-panel-provider-religion.md](./module-admin-panel-provider-religion.md) · [module-dashboard-page-religion.md](./module-dashboard-page-religion.md)
 
 ### 4. Tenant workorder — `modules_statuses.json`
 
@@ -70,30 +73,16 @@ Una sola `create_profiles_table`; legacy UUID PK → `convertIdFromUuidToBigintI
 
 → [profile-id-bigint-uuid-fix](../../Modules/User/docs/wiki/concepts/profile-id-bigint-uuid-fix.md)
 
-### 6. Ogni modulo — `app/Filament/Pages/Dashboard.php`
-
-`XotBasePanelProvider` fa `discoverPages()` su quella cartella. Senza `Dashboard extends XotBaseDashboard`, `{modulo}/admin` non ha landing.
-
-Audit:
-
-```bash
-for d in laravel/Modules/*/; do
-  [ -f "$d/module.json" ] || continue
-  [ -f "$d/app/Filament/Pages/Dashboard.php" ] || echo "MISSING: $(basename "$d")"
-done
-```
-
-→ [module-dashboard-page-mandatory.md](../../Modules/Xot/docs/wiki/concepts/module-dashboard-page-mandatory.md)
-
 ## Verifica rapida (solo lettura)
 
 ```bash
 php artisan config:show permission.table_names
 jq 'keys | length' laravel/config/local/workorder/modules_statuses.json
 bash bashscripts/tools/audit-module-config-php.sh
+bash bashscripts/tools/audit-module-admin-panel-provider.sh
 bash bashscripts/tools/audit-module-dashboard-page.sh
 ```
 
 ## Trigger map
 
-[00-TRIGGER_MAP.md](../../../../docs/wiki/rules/00-TRIGGER_MAP.md) — righe permission pivot, `config/config.php`, `modules_statuses`.
+[00-TRIGGER_MAP.md](../../../../docs/wiki/rules/00-TRIGGER_MAP.md) — permission pivot, panel trinità, `modules_statuses`.

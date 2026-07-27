@@ -42,6 +42,8 @@ Menu admin Filament **non** dipende dal tema — dipende da `config/local/workor
 - [tenant-modules-navigation-discipline.md](../../docs/tenant-modules-navigation-discipline.md) — hub Themes
 - [runtime-config-religion-hub.md](../../docs/shared-components/runtime-config-religion-hub.md) — permission + config.php + statuses + Dashboard
 - [module-dashboard-page-mandatory.md](../../../Modules/Xot/docs/wiki/concepts/module-dashboard-page-mandatory.md) — landing `{modulo}/admin`
+- [module-admin-panel-provider-mandatory.md](../../../Modules/Xot/docs/wiki/concepts/module-admin-panel-provider-mandatory.md) — panel `{modulo}/admin`
+- [module-filament-panel-triad.md](../../../Modules/Xot/docs/wiki/concepts/module-filament-panel-triad.md) — trinità config + provider + dashboard
 - [tenant-module-status-registry](../../../Modules/Tenant/docs/tenant-module-status-registry.md) — canon Tenant
 
 ## Testing / PHPStan (2026-06-13)

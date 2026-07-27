@@ -32,15 +32,23 @@ Ogni modulo deve elencare **almeno 2 provider**, negli **stessi** in entrambi i 
 
 ## Perché due file, non uno solo
 
-Sono **due meccanismi di scoperta indipendenti**: un modulo installato/risolto solo
-come dipendenza Composer (path repository) userebbe l'auto-discovery di
-`composer.json`; lo stesso modulo eseguito dentro l'app via `nwidart/laravel-modules`
-usa `module.json`. In questo monorepo entrambi i percorsi sono attivi
-contemporaneamente (i moduli si richiedono a vicenda via `repositories` path in
-`composer.json`, es. `TimberBilling` → `../Xot`), quindi **serve la stessa lista in
-entrambi** — un provider registrato in uno solo dei due file boota in un contesto ma
-non nell'altro, con sintomi silenziosi e difficili da diagnosticare (nessun errore
-esplicito, semplicemente il panel/le risorse non compaiono in un contesto specifico).
+Sono **due meccanismi di scoperta indipendenti**: `module.json` → `providers` è quello
+che `nwidart/laravel-modules` legge davvero per il boot **in questo monorepo, oggi**
+(`ModuleManifest`/`FileActivator`). `composer.json` → `extra.laravel.providers` è letto
+dal Package Discovery nativo di Laravel — nel percorso di boot attuale di questo
+monorepo **non è quello che fa effettivamente partire i provider** (verificato: un
+provider assente solo da `composer.json` ma presente in `module.json` boota comunque
+oggi, senza errori).
+
+**Non è quindi un requisito "tecnicamente indispensabile ora" — è una convenzione
+esplicita e voluta dall'utente**, forward-looking: tenere `composer.json` coerente
+con `module.json` rende ogni modulo un package Composer autoconsistente, rilevante se
+un modulo viene mai estratto/installato standalone fuori da questo monorepo (dove
+Package Discovery leggerebbe *davvero* quella chiave). **Non concludere da soli che
+"composer.json qui è vestigiale/ridondante quindi non serve tenerlo aggiornato"** — è
+già successo in questa sessione, l'utente ha corretto esplicitamente: entrambi i file
+vanno sempre allineati, indipendentemente da quale dei due il runtime attuale consulti
+davvero.
 
 ## I due provider minimi e perché servono entrambi
 

@@ -113,5 +113,8 @@ Aggiornato: 2026-07-27
 |-----------|-----|
 | `config/config.php` obbligatorio | [module-config-php-religion.md](./concepts/module-config-php-religion.md) |
 | `Filament/Pages/Dashboard.php` | [module-dashboard-page-mandatory.md](./concepts/module-dashboard-page-mandatory.md) |
+| `AdminPanelProvider` + `module.json` | [module-admin-panel-provider-mandatory.md](./concepts/module-admin-panel-provider-mandatory.md) |
+| Trinità panel (config + provider + dashboard) | [module-filament-panel-triad.md](./concepts/module-filament-panel-triad.md) |
+| `AdminPanelProvider` | [module-admin-panel-provider-mandatory.md](./concepts/module-admin-panel-provider-mandatory.md) |
 | Hub runtime cross-modulo | [runtime-config-religion-hub](../../../../Themes/docs/shared-components/runtime-config-religion-hub.md) |
 | Tenant `modules_statuses` | [tenant-module-status-registry](../../Tenant/docs/tenant-module-status-registry.md) |

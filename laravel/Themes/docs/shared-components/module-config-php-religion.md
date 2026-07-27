@@ -14,8 +14,8 @@ I **moduli** in `laravel/Modules/<Modulo>/` devono avere `config/config.php` con
 
 I **temi** usano `theme.json` per metadati nwidart; non duplicare panel config nel tema — leggere dal modulo owner o da config tema root se applicabile.
 
-Quando un agente lavora su FO/panel: verificare sempre che il modulo referenziato abbia `config/config.php` valido.
+Quando un agente lavora su FO/panel: verificare sempre che il modulo referenziato abbia `config/config.php` valido **e** `app/Filament/Pages/Dashboard.php` ([module-dashboard-page-religion.md](./module-dashboard-page-religion.md)).
 
-Audit: `bash bashscripts/tools/audit-module-config-php.sh`
+Audit: `bash bashscripts/tools/audit-module-config-php.sh` · `bash bashscripts/tools/audit-module-dashboard-page.sh`
 
 Canon completo: [module-config-php-religion](../../Modules/Xot/docs/wiki/concepts/module-config-php-religion.md)

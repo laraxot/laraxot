@@ -1,26 +1,8 @@
-# Auto-generated forbidden paths — do not edit manually
-# Reason: root cleanup policy (see docs/wiki/rules/root-cleanup-policy.md)
-
-bashscripts
-_bmad-output
-.circleci
-.claude-audit
-.devcontainer
-_docs
-docs/archive
-docs/archived
-docs/legacy
-docs/workbench
-.kilocode
-.kiro
-.ralph
-scripts
-test-results
-tests/.claude-audit
 # Dependencies and packages
 /vendor/
 /node_modules/
 /docs/vendor/
+
 # Lock files and cache
 *.lock
 *.cache
@@ -32,13 +14,16 @@ npm-debug.log
 composer.lock
 .phpunit.result.cache
 .php-cs-fixer.cache
+
 # Log files
 *.log
 error_log
+
 # Build directories
 /build/
 /build
 build/
+
 # Laravel specific
 bootstrap/compiled.php
 app/storage/
@@ -48,21 +33,26 @@ public_html/storage
 public_html/hot
 storage/*.key
 .env
+
 # Database directories
 database/Factories_
 database/Factories_old
 database/Migrations_old
+
 # Local configurations
 Homestead.yaml
 Homestead.json
 /.vagrant
+
 # IDE specific
 /.idea
 .phpintel
+
 # Git specific
 .git-blame-ignore-revs
 .git-rewrite/
 .git-rewrite
+
 # Temporary and system files
 *.tmp
 *.swp
@@ -74,11 +64,24 @@ Homestead.json
 # Dependencies
 vendor/
 node_modules/
+package-lock.json
+
 # Build and compiled files
+/build
 docs/cache/
 cache/
+
 # Cache and temporary files
+*.cache
+*.lock
+*.phar
+*.log
+.php-cs-fixer.cache
+
 # Git related
+.git-rewrite/
+.git-blame-ignore-revs
+
 # Backup files
 *.old
 *.old1
@@ -86,24 +89,39 @@ cache/
 *.backup.*
 *.bak
 *.new
+
 # Documentation and cache
 docs/phpstan/
+docs/cache/
+cache/
+
 # Development tools
 .windsurf/
 .cursor/
+
 # PHPStan documentation
+docs/phpstan/
+
 # Old directories
 resources/views/Components_old
+database/Migrations_old
 database/Seeders_old
+database/Factories_old
 database_old
+
 # Other
 -e
+
 # 🚫 File specifici del progetto
 *.fila2
 laravel
 public_html
 lang/lang/
+_docs/
+_docs/
+
 # Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
+docs/archive/
 # Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
 *~HEAD
 *~BASE
@@ -112,9 +130,5 @@ lang/lang/
 *.orig
 *.rej
 *~head
+
 agentdb.rvf
-audit-coverage/
-tests/AuditCoverage/
-.vscode/
-tests/AuditCoverage
-# AI/TOOL SCAFFOLD — must never exist in module tree (see docs/wiki/rules/module-theme-root-cleanup.md)

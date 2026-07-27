@@ -34,18 +34,6 @@ Storico correzioni PHPMD e PHPStan.
 ## PHPStan Issues
 
 - [x] No errors found.
-- [x] 2026-07-16 — Rimosso `app/Models/GdprPhpstanTraitProbe.php`: modello "probe"
-  vietato dalla regola [no-phpstan-probe-models](../../../../docs/wiki/rules/no-phpstan-probe-models.md).
-  Il trait `HasGdpr` è realmente usato da `Modules/Employee/app/Models/User.php`
-  e già esercitato dalla fixture di test `tests/Fixtures/HasGdprDummy.php`, quindi
-  il probe era codice morto ridondante. La sua rimozione non introduce
-  `trait.unused` (la fixture lo mantiene in scope). Dettaglio:
-  [phpstan-probe-model-removal](../concepts/phpstan-probe-model-removal.md).
-- [x] L'unico "errore" residuo del run scoped su `Modules/Gdpr`
-  (`Ignored error pattern #PHPDoc tag @mixin contains unknown class # was not
-  matched`) è un falso positivo noto da analisi a scope parziale — vedi
-  `Modules/Xot/docs/wiki/concepts/phpstan-partial-scope-false-positives.md`.
-  Non è un errore di codice e non si corregge nel modulo (config immutabile).
 
 ## PHPInsights Issues
 

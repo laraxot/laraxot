@@ -79,7 +79,8 @@ I temi (`laravel/Themes/<Tema>/`) usano `theme.json` per metadati nwidart-tema. 
 ## Nuovo modulo
 
 1. Copiare [module-config-php.stub.php](../templates/module-config-php.stub.php)
-2. Creare `app/Filament/Pages/Dashboard.php` → `extends XotBaseDashboard` (classe vuota)
-3. Audit prima di merge
+2. Creare `app/Providers/Filament/AdminPanelProvider.php` + voce in `module.json` (e `composer.json` extra.laravel.providers)
+3. Creare `app/Filament/Pages/Dashboard.php` → `extends XotBaseDashboard` (classe vuota)
+4. Audit prima di merge
 
-Vedi anche [module-dashboard-page-mandatory.md](./module-dashboard-page-mandatory.md).
+Vedi [module-filament-panel-triad.md](./module-filament-panel-triad.md) · [module-admin-panel-provider-mandatory.md](./module-admin-panel-provider-mandatory.md).

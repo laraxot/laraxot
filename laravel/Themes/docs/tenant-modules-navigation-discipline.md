@@ -68,6 +68,7 @@ php artisan tinker --execute="print_r(app(\Modules\Tenant\Actions\Modules\GetTen
 
 ## Riferimenti per tema
 
+- [module-dashboard-page-religion.md](./shared-components/module-dashboard-page-religion.md) — landing `{modulo}/admin` obbligatoria
 - [module-dashboard-page-mandatory.md](../../Modules/Xot/docs/wiki/concepts/module-dashboard-page-mandatory.md) — landing panel BO
 - [module-vs-theme-boundaries.md](./module-vs-theme-boundaries.md) — confini layer
 - [gc-modules-runtime-matrix.md](./gc-modules-runtime-matrix.md) — matrice enable + rischi runtime

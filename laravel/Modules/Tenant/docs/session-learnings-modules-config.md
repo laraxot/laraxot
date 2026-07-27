@@ -63,9 +63,17 @@ Ogni modulo dichiara `protected $connection = '{snake}'` nel proprio `BaseModel`
 
 **Problema:** panel `{modulo}/admin` senza landing — `discoverPages()` non trova `Dashboard`.
 
-**Regola:** classe vuota `extends XotBaseDashboard` in ogni modulo con `module.json` (anche senza `AdminPanelProvider` ancora attivo).
+**Regola:** classe vuota `extends XotBaseDashboard`.
 
 **Doc:** [Xot/module-dashboard-page-mandatory.md](../Xot/docs/wiki/concepts/module-dashboard-page-mandatory.md)
+
+## 7. `app/Providers/Filament/AdminPanelProvider.php` + `module.json`
+
+**Problema:** nessun panel `{modulo}/admin` — file assente o non in `providers[]` di `module.json`.
+
+**Regola:** `extends XotBasePanelProvider` + `protected string $module = '{Name}'` + registrazione obbligatoria in `module.json`.
+
+**Doc:** [Xot/module-admin-panel-provider-mandatory.md](../Xot/docs/wiki/concepts/module-admin-panel-provider-mandatory.md) · [trinità panel](../Xot/docs/wiki/concepts/module-filament-panel-triad.md)
 
 ## Perché gli audit precedenti non bastavano
 
@@ -75,9 +83,18 @@ Ogni modulo dichiara `protected $connection = '{snake}'` nel proprio `BaseModel`
 | PHPStan / migrate runtime | Navigazione Filament (`GetTenantModulesAction`) |
 | `laravel/modules_statuses.json` root | Override `config/local/workorder/modules.php` |
 
-**Regola:** nuovo modulo → `module.json` + `config/config.php` + `app/Filament/Pages/Dashboard.php` + **entrambi** i `modules_statuses.json` (root e tenant) + migrazione owner se ha modelli.
+**Regola:** nuovo modulo → trinità Filament (`config/config.php` + `AdminPanelProvider` in `module.json` + `Dashboard.php`) + **entrambi** i `modules_statuses.json` + migrazione owner se ha modelli.
 
-**Sync:** `bash bashscripts/tools/sync-tenant-modules-statuses.sh local/workorder`
+**Audit trinità:**
+
+```bash
+bash bashscripts/tools/audit-module-config-php.sh
+bash bashscripts/tools/audit-module-admin-panel-provider.sh
+bash bashscripts/tools/audit-module-admin-panel-provider.sh
+bash bashscripts/tools/audit-module-dashboard-page.sh
+```
+
+**Sync tenant:** `bash bashscripts/tools/sync-tenant-modules-statuses.sh local/workorder`
 
 ## Themes
 

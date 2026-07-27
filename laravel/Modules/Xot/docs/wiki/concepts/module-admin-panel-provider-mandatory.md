@@ -8,7 +8,8 @@ updated: 2026-07-27
 related:
   - ./module-dashboard-page-mandatory.md
   - ./module-config-config-php.md
-  - ../../../../../docs/wiki/concepts/tenant-config-directory-sacred.md
+  - ./module-filament-panel-triad.md
+  - ./module-providers-dual-registration-mandatory.md
 ---
 
 # `app/Providers/Filament/AdminPanelProvider.php` — obbligatorio per ogni modulo
@@ -66,17 +67,13 @@ class AdminPanelProvider extends XotBasePanelProvider
 ## Audit
 
 ```bash
-for d in laravel/Modules/*/; do
-  m=$(basename "$d")
-  [ -f "$d/module.json" ] || continue
-  [ -f "$d/app/Providers/Filament/AdminPanelProvider.php" ] || echo "FILE MISSING: $m"
-  python3 -c "
-import json, sys
-p = json.load(open('$d/module.json')).get('providers', [])
-sys.exit(0 if any('AdminPanelProvider' in x for x in p) else 1)
-" || echo "NOT REGISTERED in module.json: $m"
-done
+bash bashscripts/tools/audit-module-admin-panel-provider.sh
+bash bashscripts/tools/guard-nwidart-module-skeleton.sh
 ```
+
+Stub: [module-admin-panel-provider.stub.php](../templates/module-admin-panel-provider.stub.php)
+
+Trinità con `config/config.php` e `Dashboard.php`: [module-filament-panel-triad.md](./module-filament-panel-triad.md)
 
 ## Verifica runtime (dopo ogni fix)
 
@@ -129,6 +126,4 @@ del file sia della voce in `module.json` — nessun panel, coerente con l'assenz
 stesso passaggio. Un sedicesimo caso (`Catalog`) aveva **il file presente ma non registrato**
 in `module.json`: il panel non bootava comunque, nonostante Resources/Dashboard/Widgets
 fossero già scritti — la lezione è che l'esistenza del file da sola non garantisce nulla,
-va sempre verificata anche la registrazione. Creati/registrati tutti e 16; verificato con
-`Filament::getPanel()` che tutti e 4 i panel campione (`billing`, `catalog`, `seo`,
-`timberbilling`) risolvono correttamente.
+va sempre verificata anche la registrazione. **Stato 2026-07-27:** 38/38 moduli conformi (audit script OK).

@@ -107,7 +107,22 @@ class Consent extends BaseModel
         'updated_by',
         'ip_address',
         'user_agent',
+        'metadata',
+        'revoked_at',
+        'revoked_ip_address',
     ];
+
+    /**
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'metadata' => 'array',
+            'accepted_at' => 'datetime',
+            'revoked_at' => 'datetime',
+        ];
+    }
 
     /**
      * @return BelongsTo<Treatment, $this>

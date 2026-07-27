@@ -39,7 +39,8 @@ Hub dei temi. Porting gestionale: **[gestionale-docs-index.md](./gestionale-docs
 
 | Doc | Scopo |
 |---|---|
-| **[runtime-config-religion-hub.md](./shared-components/runtime-config-religion-hub.md)** | Hub lezioni 2026-07-27 (permission, config, statuses) |
+| **[runtime-config-religion-hub.md](./shared-components/runtime-config-religion-hub.md)** | Hub lezioni runtime (permission, panel trinità, statuses) |
+| **[module-dashboard-page-religion.md](./shared-components/module-dashboard-page-religion.md)** | Landing `{modulo}/admin` obbligatoria |
 | **[gestionale-docs-index.md](./gestionale-docs-index.md)** | Indice unico |
 | [module-vs-theme-boundaries.md](./module-vs-theme-boundaries.md) | Confini |
 | [wave1-fo-operator-note.md](./wave1-fo-operator-note.md) | Operator = Filament |
