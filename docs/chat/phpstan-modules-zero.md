@@ -73,7 +73,7 @@ connessione MariaDB.
 | WhatsApp | 29 | Claude (questa sessione, task dedicato WhatsApp) | claimato — in corso |
 | Document | 28 | — | |
 | AiAssistant | 25 | — | contraddice riga sotto (0, cursor) — ri-verificare con scan completo |
-| Employee | 19 | — | |
+| Employee | **0** | Claude (questa sessione) | fatto 15:00 UTC — nullCoalesce.unnecessary in BuildTimelineVisualizationAction.php + argument.type (Carbon::setTime, faker mixed→int) in TimeEntryFactory.php via SafeIntCastAction. Committato+pushato (root + submodule module_employee_fila5). |
 | Vehicle | **0** | Claude (questa sessione) | fatto 14:50 UTC — 2 test file senza namespace (Modules\Vehicle\Tests\Feature mancante) causavano class.notFound su @var Vehicle; + null-guard esplicito su $link->media (Pest expect()->not()->toBeNull() non restringe il tipo per PHPStan). Bridge rigenerato ma lasciato non committato (lock di un altro agente). Committato+pushato. |
 | Compliance | **0** | Claude (questa sessione) | fatto 13:50 UTC — 2× nullCoalesce.unnecessary + 2× phpmd MissingImport in ComplianceDemoSeeder.php, committato+pushato |
 | EnergyBroker | 6 | Claude (sessione dd60a51d) | claimato ~14:10 UTC, in corso — nota: ri-verificato 14:50 UTC da un'altra sessione, scan isolato mostra già 0 errori reali (solo l'artefatto ignoreErrors), probabile effetto collaterale del fix $tableSearch sopra — verificare prima di investire altro tempo qui |
