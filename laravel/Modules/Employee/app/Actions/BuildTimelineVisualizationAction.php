@@ -215,7 +215,7 @@ class BuildTimelineVisualizationAction
     private function determineSessionColor(array $session): string
     {
         $startTime = $session['startTime'];
-        $endTime = $session['endTime'] ?? null;
+        $endTime = $session['endTime'];
 
         if (! $endTime) {
             return 'orange'; // Sessione in corso

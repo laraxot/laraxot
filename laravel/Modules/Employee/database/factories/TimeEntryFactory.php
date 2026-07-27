@@ -7,6 +7,7 @@ namespace Modules\Employee\Database\Factories;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Employee\Models\TimeEntry;
+use Modules\Xot\Actions\Cast\SafeIntCastAction;
 
 /** @extends Factory<TimeEntry> */
 class TimeEntryFactory extends Factory
@@ -23,8 +24,9 @@ class TimeEntryFactory extends Factory
      */
     public function definition(): array
     {
+        $clockInMinute = app(SafeIntCastAction::class)->execute($this->faker->randomElement([0, 15, 30, 45]));
         $clockIn = Carbon::instance($this->faker->dateTimeBetween('-30 days', 'now'))
-            ->setTime($this->faker->numberBetween(7, 9), $this->faker->randomElement([0, 15, 30, 45]), 0);
+            ->setTime($this->faker->numberBetween(7, 9), $clockInMinute, 0);
         $clockOut = $clockIn->copy()->addHours($this->faker->numberBetween(6, 9));
         $breakStart = $clockIn->copy()->addHours($this->faker->numberBetween(3, 5));
         $breakEnd = $breakStart->copy()->addMinutes($this->faker->numberBetween(30, 60));
