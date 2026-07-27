@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
-use Modules\Intervention\Tests\TestCase;
 use Modules\Quotation\Models\Quotation;
-use Modules\User\Models\User;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\WorkOrder\Models\WorkOrder;
 
 /**
@@ -55,10 +56,9 @@ function makeInterventionWithQuotation(float $quotedQuantity): Intervention
         'sort_order' => 1,
     ]);
 
-    /** @var Intervention $intervention */
     $intervention = Intervention::query()->create([
         'work_order_id' => $workOrder->id,
-        'performed_by_user_id' => User::factory()->create()->id,
+        'performed_by_user_id' => UserFactory::new()->createOne()->id,
         'scheduled_at' => now(),
         'work_minutes' => 60,
     ]);

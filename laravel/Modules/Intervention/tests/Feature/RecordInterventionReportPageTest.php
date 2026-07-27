@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Carbon\CarbonImmutable;
@@ -13,8 +15,8 @@ use Modules\Catalog\Models\Product;
 use Modules\Intervention\Contracts\InterventionReportExtractorContract;
 use Modules\Intervention\Filament\Pages\RecordInterventionReportPage;
 use Modules\Intervention\Models\Intervention;
-use Modules\Intervention\Tests\TestCase;
 use Modules\Signature\Models\Signature;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -28,7 +30,7 @@ function operatorWithUpdatePermission(): User
     $role = Role::findOrCreate('operator');
     Permission::findOrCreate('Update:Intervention');
 
-    $operator = User::factory()->create(['name' => 'Operatore Voce']);
+    $operator = UserFactory::new()->createOne(['name' => 'Operatore Voce']);
     $operator->syncRoles([$role]);
     $operator->givePermissionTo('Update:Intervention');
 
@@ -52,6 +54,9 @@ function bindFakeReportExtractor(array $payload): void
     });
 }
 
+/**
+ * @return array{0: User, 1: Intervention}
+ */
 function makeOperatorWithIntervention(): array
 {
     $operator = operatorWithUpdatePermission();

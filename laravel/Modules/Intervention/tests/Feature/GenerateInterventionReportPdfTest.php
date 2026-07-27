@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Carbon\CarbonImmutable;
@@ -10,9 +12,8 @@ use Illuminate\Support\Facades\Storage;
 use Modules\Document\Models\Media;
 use Modules\Intervention\Actions\GenerateInterventionReportPdfAction;
 use Modules\Intervention\Models\Intervention;
-use Modules\Intervention\Tests\TestCase;
 use Modules\Signature\Actions\StoreSignatureForModelAction;
-use Modules\User\Models\User;
+use Modules\User\Database\Factories\UserFactory;
 
 const PDF_TINY_PNG = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=';
 
@@ -26,12 +27,15 @@ function makePdfCustomerId(string $name = 'Cliente PDF S.r.l.'): int
     ]);
 }
 
+/**
+ * @param  array<string, mixed>  $overrides
+ */
 function makePdfIntervention(array $overrides = []): Intervention
 {
     $attributes = array_merge([
         'work_order_id' => null,
         'customer_id' => null,
-        'performed_by_user_id' => User::factory()->create(['name' => 'Operatore PDF'])->id,
+        'performed_by_user_id' => UserFactory::new()->createOne(['name' => 'Operatore PDF'])->id,
         'scheduled_at' => CarbonImmutable::now(),
         'started_at' => CarbonImmutable::now(),
         'work_minutes' => 90,
@@ -95,7 +99,7 @@ it('generates the PDF for a work-order customer with assigned operators and no a
     ]);
 
     $intervention = makePdfIntervention(['work_order_id' => $workOrderId, 'outcome_code' => 'suspended', 'notes' => null]);
-    $assignee = User::factory()->create(['name' => 'Tecnico Assegnato']);
+    $assignee = UserFactory::new()->createOne(['name' => 'Tecnico Assegnato']);
     $intervention->assignedUsers()->attach($assignee->id);
 
     $result = app(GenerateInterventionReportPdfAction::class)->execute($intervention);

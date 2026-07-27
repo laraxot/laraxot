@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Actions\SyncWorkOrderExtraMaterialsAction;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionMaterialLine;
-use Modules\Intervention\Tests\TestCase;
 use Modules\WorkOrder\Models\WorkOrder;
 
 /**
@@ -57,6 +58,9 @@ function workOrderExtraScenario(): array
     return ['workOrder' => $workOrder, 'userId' => $userId, 'customerId' => $customerId];
 }
 
+/**
+ * @param  array{workOrder: WorkOrder, userId: int, customerId: int}  $scenario
+ */
 function interventionWithValves(array $scenario, string $startedAt, float $quantity): InterventionMaterialLine
 {
     $intervention = Intervention::query()->create([

@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Carbon\CarbonImmutable;
@@ -15,7 +17,7 @@ use Modules\Intervention\GoogleCalendar\DTO\GoogleCalendarEvent;
 use Modules\Intervention\GoogleCalendar\DTO\GoogleEventInput;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\UserGoogleCalendarSetting;
-use Modules\Intervention\Tests\TestCase;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 
 /**
@@ -75,7 +77,6 @@ final class FakeGoogleCalendarClient implements GoogleCalendarClient
 
 function connectGoogle(User $user, string $calendarId = 'primary'): UserGoogleCalendarSetting
 {
-    /** @var UserGoogleCalendarSetting $setting */
     $setting = UserGoogleCalendarSetting::query()->create([
         'user_id' => $user->id,
         'enabled' => true,
@@ -87,9 +88,11 @@ function connectGoogle(User $user, string $calendarId = 'primary'): UserGoogleCa
     return $setting;
 }
 
+/**
+ * @param  array<string, mixed>  $overrides
+ */
 function makeSyncIntervention(User $owner, array $overrides = []): Intervention
 {
-    /** @var Intervention $intervention */
     $intervention = Intervention::query()->create(array_merge([
         'work_order_id' => null,
         'performed_by_user_id' => $owner->id,
@@ -111,18 +114,19 @@ function useFakeGoogle(): FakeGoogleCalendarClient
 }
 
 it('encrypts the stored google tokens', function (): void {
-    $user = User::factory()->create();
+    $user = UserFactory::new()->createOne();
     $setting = connectGoogle($user);
 
     $raw = DB::table('user_google_calendar_settings')->where('id', $setting->id)->value('access_token');
     expect($raw)->not->toBe('access-tok');           // stored encrypted
-    expect($setting->fresh()->access_token)->toBe('access-tok'); // decrypted on read
+    $setting->refresh();
+    expect($setting->access_token)->toBe('access-tok'); // decrypted on read
     expect($setting->isConnected())->toBeTrue();
 });
 
 it('pushes a new intervention to google and stores the event id', function (): void {
     $fake = useFakeGoogle();
-    $owner = User::factory()->create();
+    $owner = UserFactory::new()->createOne();
     connectGoogle($owner);
     $intervention = makeSyncIntervention($owner);
 
@@ -137,7 +141,7 @@ it('pushes a new intervention to google and stores the event id', function (): v
 
 it('updates the existing google event when already linked', function (): void {
     $fake = useFakeGoogle();
-    $owner = User::factory()->create();
+    $owner = UserFactory::new()->createOne();
     connectGoogle($owner);
     $intervention = makeSyncIntervention($owner, ['google_event_id' => 'evt-9', 'google_sync_status' => 'synced']);
 
@@ -149,7 +153,7 @@ it('updates the existing google event when already linked', function (): void {
 
 it('marks the intervention disabled when the owner has no connection', function (): void {
     $fake = useFakeGoogle();
-    $owner = User::factory()->create(); // no setting
+    $owner = UserFactory::new()->createOne(); // no setting
     $intervention = makeSyncIntervention($owner);
 
     app(PushInterventionToGoogleAction::class)->execute($intervention);
@@ -160,7 +164,7 @@ it('marks the intervention disabled when the owner has no connection', function 
 
 it('deletes the google event when mirroring an intervention deletion', function (): void {
     $fake = useFakeGoogle();
-    $owner = User::factory()->create();
+    $owner = UserFactory::new()->createOne();
     connectGoogle($owner);
     $intervention = makeSyncIntervention($owner, ['google_event_id' => 'evt-del', 'google_calendar_id' => 'primary']);
 
@@ -172,7 +176,7 @@ it('deletes the google event when mirroring an intervention deletion', function 
 
 it('pulls a newer google event back into the intervention schedule', function (): void {
     $fake = useFakeGoogle();
-    $owner = User::factory()->create();
+    $owner = UserFactory::new()->createOne();
     connectGoogle($owner);
     $intervention = makeSyncIntervention($owner, [
         'google_event_id' => 'evt-9',
@@ -201,7 +205,7 @@ it('pulls a newer google event back into the intervention schedule', function ()
 it('marks an intervention when its google event was deleted remotely', function (): void {
     $fake = useFakeGoogle();
     $fake->getEventNull = true;
-    $owner = User::factory()->create();
+    $owner = UserFactory::new()->createOne();
     connectGoogle($owner);
     $intervention = makeSyncIntervention($owner, ['google_event_id' => 'evt-gone', 'google_sync_status' => 'synced']);
 
@@ -213,7 +217,7 @@ it('marks an intervention when its google event was deleted remotely', function 
 
 it('overlays google events on the calendar, excluding app-linked ones', function (): void {
     $fake = useFakeGoogle();
-    $owner = User::factory()->create();
+    $owner = UserFactory::new()->createOne();
     connectGoogle($owner);
     makeSyncIntervention($owner, ['google_event_id' => 'evt-linked']);
 
@@ -229,15 +233,20 @@ it('overlays google events on the calendar, excluding app-linked ones', function
     );
 
     expect($overlay)->toHaveCount(1);
-    expect($overlay[0]['id'])->toBe('google-gext-1');
-    expect($overlay[0]['title'])->toBe('[Google] Riunione fornitore');
-    expect($overlay[0]['extendedProps']['source'])->toBe('google');
+    $firstOverlay = $overlay[0];
+    expect($firstOverlay['id'])->toBe('google-gext-1');
+    expect($firstOverlay['title'])->toBe('[Google] Riunione fornitore');
+    $overlayProps = $firstOverlay['extendedProps'];
+    if (! is_array($overlayProps)) {
+        throw new RuntimeException('Missing overlay extended props');
+    }
+    expect($overlayProps['source'])->toBe('google');
 });
 
 it('auto-pushes via the observer when google calendar is configured', function (): void {
     config()->set('services.google.calendar.client_id', 'test-client-id');
     $fake = useFakeGoogle();
-    $owner = User::factory()->create();
+    $owner = UserFactory::new()->createOne();
     connectGoogle($owner);
 
     $intervention = makeSyncIntervention($owner); // create -> observer -> push

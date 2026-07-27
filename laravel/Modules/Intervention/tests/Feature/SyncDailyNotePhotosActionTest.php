@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Illuminate\Support\Facades\Storage;
 use Modules\Intervention\Actions\SyncDailyNotePhotosAction;
 use Modules\Intervention\Models\DailyNote;
-use Modules\Intervention\Tests\TestCase;
-use Modules\User\Models\User;
+use Modules\User\Database\Factories\UserFactory;
 
 it('syncs daily note photos by creating and removing related media', function (): void {
     Storage::fake('public');
 
-    $user = User::factory()->create();
+    $user = UserFactory::new()->createOne();
 
-    /** @var DailyNote $dailyNote */
     $dailyNote = DailyNote::query()->create([
         'user_id' => $user->id,
         'note_date' => '2026-03-26',
@@ -34,15 +34,15 @@ it('syncs daily note photos by creating and removing related media', function ()
     app(SyncDailyNotePhotosAction::class)->execute(
         dailyNote: $dailyNote,
         paths: [$keepPath, $removePath],
-        uploadedByUserId: $user->id,
+        uploadedByUserId: (int) $user->id,
     );
 
     expect($dailyNote->media()->where('kind', 'photo')->count())->toBe(2);
 
     app(SyncDailyNotePhotosAction::class)->execute(
-        dailyNote: $dailyNote->fresh(),
+        dailyNote: $dailyNote->fresh() ?? $dailyNote,
         paths: [$keepPath, $newPath],
-        uploadedByUserId: $user->id,
+        uploadedByUserId: (int) $user->id,
     );
 
     $dailyNote->refresh();

@@ -2,16 +2,15 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
-use Livewire\Features\SupportTesting\Testable;
-use Livewire\Livewire;
 use Modules\Intervention\Filament\Pages\InterventionCalendar;
 use Modules\Intervention\Models\Intervention;
-use Modules\Intervention\Tests\TestCase;
-use Modules\User\Models\User;
+use Modules\User\Database\Factories\UserFactory;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -35,6 +34,9 @@ function makeCalendarWorkOrderId(string $code, string $title, string $customerNa
     ]);
 }
 
+/**
+ * @return list<string>
+ */
 function calendarColors(): array
 {
     // Deve restare allineata alla palette di InterventionCalendar
@@ -69,7 +71,7 @@ it('returns calendar events with expected props', function (): void {
     filament()->setCurrentPanel(null);
 
     $operatorRole = Role::findOrCreate('operator');
-    $operator = User::factory()->create(['name' => 'Operatore Calendario']);
+    $operator = UserFactory::new()->createOne(['name' => 'Operatore Calendario']);
     $operator->syncRoles([$operatorRole]);
 
     $workOrderId = makeCalendarWorkOrderId('WO-CAL-0001', 'Impianto citofonico', 'Condominio Test');
@@ -88,37 +90,41 @@ it('returns calendar events with expected props', function (): void {
     ]);
 
     // Act
-    /** @var Testable<InterventionCalendar> $component */
-    $component = Livewire::test(InterventionCalendar::class);
+    $component = calendarComponent();
     $events = $component->instance()->getCalendarEvents('2026-01-01', '2026-01-31');
 
     // Assert
-    expect($events)->toBeArray()->and(count($events))->toBe(1);
-    expect($events[0]['id'])->toBe($intervention->id);
-    expect($events[0]['title'])->toContain('Condominio Test');
+    expect($events)->toBeArray()->toHaveCount(1);
+    $event = $events[0];
+    expect($event['id'])->toBe($intervention->id);
+    expect($event['title'])->toContain('Condominio Test');
     // The event chip must carry the full intervention text, not just the time.
-    expect($events[0]['title'])->toContain('Impianto citofonico');
-    expect($events[0]['start'])->toBeString();
-    expect($events[0]['extendedProps']['operator_name'])->toBe('Operatore Calendario');
-    expect($events[0]['extendedProps']['notes'])->toContain('Sostituzione timer');
+    expect($event['title'])->toContain('Impianto citofonico');
+    expect($event['start'])->toBeString();
+    $extendedProps = $event['extendedProps'];
+    if (! is_array($extendedProps)) {
+        throw new RuntimeException('Missing calendar extended props');
+    }
+    expect($extendedProps['operator_name'])->toBe('Operatore Calendario');
+    expect($extendedProps['notes'])->toContain('Sostituzione timer');
 
     $palette = calendarColors();
-    $expectedColor = $palette[$operator->id % count($palette)];
+    $expectedColor = $palette[(int) $operator->id % count($palette)];
     $expectedTextColor = calendarTextColor($expectedColor);
-    expect($events[0]['backgroundColor'])->toBe($expectedColor);
-    expect($events[0]['textColor'])->toBe($expectedTextColor);
-    expect($events[0]['extendedProps']['color'])->toBe($expectedColor);
-    expect($events[0]['extendedProps']['text_color'])->toBe($expectedTextColor);
+    expect($event['backgroundColor'])->toBe($expectedColor);
+    expect($event['textColor'])->toBe($expectedTextColor);
+    expect($extendedProps['color'])->toBe($expectedColor);
+    expect($extendedProps['text_color'])->toBe($expectedTextColor);
 });
 
 it('filters calendar events by operator when in operator panel', function (): void {
     // Arrange
     $operatorRole = Role::findOrCreate('operator');
 
-    $currentOperator = User::factory()->create(['name' => 'Operatore A']);
+    $currentOperator = UserFactory::new()->createOne(['name' => 'Operatore A']);
     $currentOperator->syncRoles([$operatorRole]);
 
-    $otherOperator = User::factory()->create(['name' => 'Operatore B']);
+    $otherOperator = UserFactory::new()->createOne(['name' => 'Operatore B']);
     $otherOperator->syncRoles([$operatorRole]);
 
     $workOrderId = makeCalendarWorkOrderId('WO-CAL-0002', 'Allarme - verifica sensori', 'Cliente Calendario');
@@ -146,8 +152,7 @@ it('filters calendar events by operator when in operator panel', function (): vo
     actingAs($currentOperator);
 
     // Act
-    /** @var Testable<InterventionCalendar> $component */
-    $component = Livewire::test(InterventionCalendar::class);
+    $component = calendarComponent();
     $events = $component->instance()->getCalendarEvents('2026-02-01', '2026-02-28');
 
     // Assert
@@ -158,16 +163,16 @@ it('keeps gerardo operator calendar limited to his own interventions', function 
     $adminRole = Role::findOrCreate('admin');
     $operatorRole = Role::findOrCreate('operator');
 
-    $gerardo = User::factory()->create([
+    $gerardo = UserFactory::new()->createOne([
         'name' => 'Gerardo Demo',
         'email' => 'info@gsbuildingservice.it',
     ]);
     $gerardo->syncRoles([$adminRole, $operatorRole]);
 
-    $apprentice = User::factory()->create(['name' => 'Apprendista Demo']);
+    $apprentice = UserFactory::new()->createOne(['name' => 'Apprendista Demo']);
     $apprentice->syncRoles([$operatorRole]);
 
-    $outsider = User::factory()->create(['name' => 'Operatore Esterno']);
+    $outsider = UserFactory::new()->createOne(['name' => 'Operatore Esterno']);
     $outsider->syncRoles([$operatorRole]);
 
     $assignedWorkOrderId = makeCalendarWorkOrderId('WO-CAL-0002A', 'Manutenzione team Gerardo', 'Cliente Team');
@@ -204,8 +209,7 @@ it('keeps gerardo operator calendar limited to his own interventions', function 
     filament()->setCurrentPanel('operator');
     actingAs($gerardo);
 
-    /** @var Testable<InterventionCalendar> $component */
-    $component = Livewire::test(InterventionCalendar::class);
+    $component = calendarComponent();
     $events = $component->instance()->getCalendarEvents('2026-02-01', '2026-02-28');
     $legend = $component->instance()->getOperatorLegend();
 
@@ -217,16 +221,16 @@ it('shows gerardo the interventions of his assigned team in admin calendar', fun
     $adminRole = Role::findOrCreate('admin');
     $operatorRole = Role::findOrCreate('operator');
 
-    $gerardo = User::factory()->create([
+    $gerardo = UserFactory::new()->createOne([
         'name' => 'Gerardo Demo',
         'email' => 'info@gsbuildingservice.it',
     ]);
     $gerardo->syncRoles([$adminRole, $operatorRole]);
 
-    $apprentice = User::factory()->create(['name' => 'Apprendista Demo']);
+    $apprentice = UserFactory::new()->createOne(['name' => 'Apprendista Demo']);
     $apprentice->syncRoles([$operatorRole]);
 
-    $outsider = User::factory()->create(['name' => 'Operatore Esterno']);
+    $outsider = UserFactory::new()->createOne(['name' => 'Operatore Esterno']);
     $outsider->syncRoles([$operatorRole]);
 
     $assignedWorkOrderId = makeCalendarWorkOrderId('WO-CAL-0002C', 'Manutenzione team Gerardo', 'Cliente Team');
@@ -262,15 +266,12 @@ it('shows gerardo the interventions of his assigned team in admin calendar', fun
 
     // Enable the assigned-perimeter feature for this account so the admin
     // calendar is scoped to the assigned team, regardless of the production default.
-    $accounts = config('account_features.accounts');
-    $accounts['info@gsbuildingservice.it']['features']['admin.assigned_perimeter'] = true;
-    config(['account_features.accounts' => $accounts]);
+    config(['account_features.accounts.info@gsbuildingservice.it.features.admin.assigned_perimeter' => true]);
 
     filament()->setCurrentPanel('admin');
     actingAs($gerardo);
 
-    /** @var Testable<InterventionCalendar> $component */
-    $component = Livewire::test(InterventionCalendar::class);
+    $component = calendarComponent();
     $events = $component->instance()->getCalendarEvents('2026-02-01', '2026-02-28');
     $legend = $component->instance()->getOperatorLegend();
 
@@ -284,7 +285,7 @@ it('opens and closes the intervention detail modal', function (): void {
     filament()->setCurrentPanel(null);
 
     $operatorRole = Role::findOrCreate('operator');
-    $operator = User::factory()->create(['name' => 'Operatore Dettaglio']);
+    $operator = UserFactory::new()->createOne(['name' => 'Operatore Dettaglio']);
     $operator->syncRoles([$operatorRole]);
 
     $workOrderId = makeCalendarWorkOrderId('WO-CAL-0003', 'Videosorveglianza - installazione', 'Condominio Dettagli');
@@ -302,8 +303,7 @@ it('opens and closes the intervention detail modal', function (): void {
         'amount' => 195.00,
     ]);
 
-    /** @var Testable<InterventionCalendar> $component */
-    $component = Livewire::test(InterventionCalendar::class);
+    $component = calendarComponent();
 
     // Act + Assert (open)
     $component->call('openInterventionDetail', $intervention->id)
@@ -323,10 +323,10 @@ it('returns operator legend and respects operator panel filtering', function ():
     // Arrange
     $operatorRole = Role::findOrCreate('operator');
 
-    $op1 = User::factory()->create(['name' => 'Op Legend 1']);
+    $op1 = UserFactory::new()->createOne(['name' => 'Op Legend 1']);
     $op1->syncRoles([$operatorRole]);
 
-    $op2 = User::factory()->create(['name' => 'Op Legend 2']);
+    $op2 = UserFactory::new()->createOne(['name' => 'Op Legend 2']);
     $op2->syncRoles([$operatorRole]);
 
     $workOrderId = makeCalendarWorkOrderId('WO-CAL-0004', 'Rete dati - cablaggio', 'Cliente Legenda');
@@ -351,8 +351,7 @@ it('returns operator legend and respects operator panel filtering', function ():
 
     // Act (admin / no panel filter)
     filament()->setCurrentPanel(null);
-    /** @var Testable<InterventionCalendar> $component */
-    $component = Livewire::test(InterventionCalendar::class);
+    $component = calendarComponent();
     $legend = $component->instance()->getOperatorLegend();
 
     // Assert
@@ -363,7 +362,7 @@ it('returns operator legend and respects operator panel filtering', function ():
     // Act (operator panel filter)
     filament()->setCurrentPanel('operator');
     actingAs($op1);
-    $component2 = Livewire::test(InterventionCalendar::class);
+    $component2 = calendarComponent();
     $legend2 = $component2->instance()->getOperatorLegend();
 
     // Assert
@@ -374,7 +373,7 @@ it('returns operator legend and respects operator panel filtering', function ():
 it('keeps calendar creation disabled for the gerardo operator context', function (): void {
     $permission = Permission::findOrCreate('Create:Intervention');
     $role = Role::findOrCreate('operator');
-    $user = User::factory()->create([
+    $user = UserFactory::new()->createOne([
         'email' => 'info@gsbuildingservice.it',
     ]);
     $user->syncRoles([$role]);
@@ -383,8 +382,7 @@ it('keeps calendar creation disabled for the gerardo operator context', function
     filament()->setCurrentPanel('operator');
     actingAs($user);
 
-    /** @var Testable<InterventionCalendar> $component */
-    $component = Livewire::test(InterventionCalendar::class);
+    $component = calendarComponent();
     $url = $component->instance()->getCreateInterventionUrl('2026-04-12', true, 'timeGridWeek', '2026-04-07');
 
     expect($url)->toBe('');
@@ -393,7 +391,7 @@ it('keeps calendar creation disabled for the gerardo operator context', function
 it('builds create url from a timed calendar click when operator calendar creation is enabled', function (): void {
     $permission = Permission::findOrCreate('Create:Intervention');
     $role = Role::findOrCreate('admin');
-    $user = User::factory()->create([
+    $user = UserFactory::new()->createOne([
         'email' => 'enabled-calendar-create@test.local',
     ]);
     $user->syncRoles([$role]);
@@ -402,8 +400,7 @@ it('builds create url from a timed calendar click when operator calendar creatio
     filament()->setCurrentPanel('operator');
     actingAs($user);
 
-    /** @var Testable<InterventionCalendar> $component */
-    $component = Livewire::test(InterventionCalendar::class);
+    $component = calendarComponent();
     $url = $component->instance()->getCreateInterventionUrl('2026-04-12T14:30:00', false, 'timeGridDay', '2026-04-12');
 
     expect($url)->toContain('/operator/interventions/create')
@@ -414,7 +411,7 @@ it('builds create url from a timed calendar click when operator calendar creatio
 it('normalizes timed calendar clicks to all-day scheduling for Gerardo', function (): void {
     $permission = Permission::findOrCreate('Create:Intervention');
     $role = Role::findOrCreate('admin');
-    $user = User::factory()->create([
+    $user = UserFactory::new()->createOne([
         'email' => 'info@gsbuildingservice.it',
     ]);
     $user->syncRoles([$role]);
@@ -422,15 +419,12 @@ it('normalizes timed calendar clicks to all-day scheduling for Gerardo', functio
 
     // Enable the assigned-perimeter feature for this account so timed clicks
     // are normalized to all-day scheduling, regardless of the production default.
-    $accounts = config('account_features.accounts');
-    $accounts['info@gsbuildingservice.it']['features']['admin.assigned_perimeter'] = true;
-    config(['account_features.accounts' => $accounts]);
+    config(['account_features.accounts.info@gsbuildingservice.it.features.admin.assigned_perimeter' => true]);
 
     filament()->setCurrentPanel('admin');
     actingAs($user);
 
-    /** @var Testable<InterventionCalendar> $component */
-    $component = Livewire::test(InterventionCalendar::class);
+    $component = calendarComponent();
     $url = $component->instance()->getCreateInterventionUrl('2026-04-12T14:30:00', false, 'timeGridDay', '2026-04-12');
 
     expect($url)->toContain('/admin/interventions/create')
@@ -442,7 +436,7 @@ it('adds a visual end time for scheduled interventions without an actual end', f
     filament()->setCurrentPanel(null);
 
     $operatorRole = Role::findOrCreate('operator');
-    $operator = User::factory()->create(['name' => 'Operatore Pianificato']);
+    $operator = UserFactory::new()->createOne(['name' => 'Operatore Pianificato']);
     $operator->syncRoles([$operatorRole]);
 
     $workOrderId = makeCalendarWorkOrderId('WO-CAL-0005', 'Impianto luci cortile', 'Condominio Pianificato');
@@ -460,8 +454,7 @@ it('adds a visual end time for scheduled interventions without an actual end', f
         'amount' => null,
     ]);
 
-    /** @var Testable<InterventionCalendar> $component */
-    $component = Livewire::test(InterventionCalendar::class);
+    $component = calendarComponent();
     $events = $component->instance()->getCalendarEvents('2026-03-01', '2026-03-31');
 
     expect($events)->toHaveCount(1)
@@ -474,7 +467,7 @@ it('stores a calendar-aware view url when opening intervention detail', function
     filament()->setCurrentPanel('operator');
 
     $operatorRole = Role::findOrCreate('operator');
-    $operator = User::factory()->create(['name' => 'Operatore Return To']);
+    $operator = UserFactory::new()->createOne(['name' => 'Operatore Return To']);
     $operator->syncRoles([$operatorRole]);
 
     actingAs($operator);
@@ -491,13 +484,19 @@ it('stores a calendar-aware view url when opening intervention detail', function
         'work_minutes' => 30,
     ]);
 
-    /** @var Testable<InterventionCalendar> $component */
-    $component = Livewire::test(InterventionCalendar::class);
+    $component = calendarComponent();
 
     $component->call('openInterventionDetail', $intervention->id, 'timeGridWeek', '2026-04-13')
         ->assertSet('selectedIntervention.id', $intervention->id);
 
-    $viewUrl = $component->get('selectedIntervention')['view_url'];
+    $selectedIntervention = $component->get('selectedIntervention');
+    if (! is_array($selectedIntervention)) {
+        throw new RuntimeException('Missing selected intervention payload');
+    }
+    $viewUrl = $selectedIntervention['view_url'];
+    if (! is_string($viewUrl)) {
+        throw new RuntimeException('Missing selected intervention view url');
+    }
 
     expect($viewUrl)->toContain('/operator/interventions/'.$intervention->id)
         ->and(urldecode($viewUrl))->toContain('return_to=http://localhost/operator/intervention-calendar?calendar_view=timeGridWeek&calendar_date=2026-04-13');

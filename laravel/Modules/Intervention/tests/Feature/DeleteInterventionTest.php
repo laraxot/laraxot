@@ -2,17 +2,18 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Actions\SoftDeleteInterventionAction;
 use Modules\Intervention\Models\Intervention;
-use Modules\Intervention\Tests\TestCase;
-use Modules\User\Models\User;
+use Modules\User\Database\Factories\UserFactory;
 
 it('soft-deletes an intervention', function (): void {
     // Arrange
-    $user = User::factory()->create();
+    $user = UserFactory::new()->createOne();
 
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',
@@ -28,7 +29,6 @@ it('soft-deletes an intervention', function (): void {
         'updated_at' => now(),
     ]);
 
-    /** @var Intervention $intervention */
     $intervention = Intervention::query()->create([
         'work_order_id' => $workOrderId,
         'performed_by_user_id' => $user->id,

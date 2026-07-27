@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Modules\Catalog\Models\Product;
@@ -10,7 +12,6 @@ use Modules\Intervention\Actions\MatchDictatedMaterialsToCatalogAction;
 use Modules\Intervention\Contracts\InterventionReportExtractorContract;
 use Modules\Intervention\Data\DictatedMaterialLine;
 use Modules\Intervention\Data\InterventionReportDraft;
-use Modules\Intervention\Tests\TestCase;
 
 // ── Test double: a deterministic extractor returning a fixed payload ─────────
 
@@ -38,7 +39,7 @@ function buildDraftAction(InterventionReportExtractorContract $extractor): Build
 
 // ── DictatedMaterialLine DTO ──────────────────────────────────────────────────
 
-it('computes line total and match state for a dictated material', function (): void {
+test('computes line total and match state for a dictated material', function (): void {
     $free = new DictatedMaterialLine('Valvola', 3.0, 5.0);
     expect($free->isMatched())->toBeFalse()
         ->and($free->lineTotal())->toBe(15.0);
@@ -64,7 +65,7 @@ it('computes line total and match state for a dictated material', function (): v
 
 // ── InterventionReportDraft DTO ───────────────────────────────────────────────
 
-it('aggregates totals and unmatched state on the draft', function (): void {
+test('aggregates totals and unmatched state on the draft', function (): void {
     $draft = new InterventionReportDraft(
         notes: 'Sostituito quadro',
         workMinutes: 90,
@@ -88,7 +89,7 @@ it('aggregates totals and unmatched state on the draft', function (): void {
         ]);
 });
 
-it('reports no unmatched materials when all are matched', function (): void {
+test('reports no unmatched materials when all are matched', function (): void {
     $draft = new InterventionReportDraft(
         notes: '',
         workMinutes: null,
@@ -101,7 +102,7 @@ it('reports no unmatched materials when all are matched', function (): void {
 
 // ── MatchDictatedMaterialsToCatalogAction ─────────────────────────────────────
 
-it('matches dictated materials to the catalog and prices them', function (): void {
+test('matches dictated materials to the catalog and prices them', function (): void {
     Product::query()->create(['name' => 'Valvola a sfera', 'unit_price' => 7.50, 'is_active' => true]);
     $exact = Product::query()->create(['name' => 'Raccordo', 'unit_price' => 2.20, 'is_active' => true]);
 
@@ -118,7 +119,7 @@ it('matches dictated materials to the catalog and prices them', function (): voi
         ->and($result[2]->isMatched())->toBeFalse();
 });
 
-it('falls back to a partial match when there is no exact one', function (): void {
+test('falls back to a partial match when there is no exact one', function (): void {
     $product = Product::query()->create(['name' => 'Valvola a sfera 1/2 pollice ottone', 'unit_price' => 9.0, 'is_active' => true]);
 
     $result = app(MatchDictatedMaterialsToCatalogAction::class)->execute([
@@ -129,7 +130,7 @@ it('falls back to a partial match when there is no exact one', function (): void
         ->and($result[0]->unitPrice)->toBe(9.0);
 });
 
-it('matches a similar material by its most significant word', function (): void {
+test('matches a similar material by its most significant word', function (): void {
     $product = Product::query()->create(['name' => 'Valvola a sfera', 'unit_price' => 8.0, 'is_active' => true]);
 
     // Dictated text is not a substring of the catalog name, but shares the key word.
@@ -141,7 +142,7 @@ it('matches a similar material by its most significant word', function (): void 
         ->and($result[0]->unitPrice)->toBe(8.0);
 });
 
-it('leaves a material free when only short words are dictated with no catalog hit', function (): void {
+test('leaves a material free when only short words are dictated with no catalog hit', function (): void {
     $result = app(MatchDictatedMaterialsToCatalogAction::class)->execute([
         new DictatedMaterialLine('x y', 1.0),
     ]);
@@ -149,7 +150,7 @@ it('leaves a material free when only short words are dictated with no catalog hi
     expect($result[0]->isMatched())->toBeFalse();
 });
 
-it('keeps a matched product with no price without overriding the dictated price', function (): void {
+test('keeps a matched product with no price without overriding the dictated price', function (): void {
     Product::query()->create(['name' => 'Guarnizione', 'unit_price' => null, 'is_active' => true]);
 
     $result = app(MatchDictatedMaterialsToCatalogAction::class)->execute([
@@ -160,7 +161,7 @@ it('keeps a matched product with no price without overriding the dictated price'
         ->and($result[0]->unitPrice)->toBe(1.5);
 });
 
-it('ignores inactive products and empty or pre-matched lines', function (): void {
+test('ignores inactive products and empty or pre-matched lines', function (): void {
     Product::query()->create(['name' => 'Fusibile', 'unit_price' => 1.0, 'is_active' => false]);
 
     $preMatched = new DictatedMaterialLine('Cavo', 1.0, 2.0, matchedProductId: 99);
@@ -177,7 +178,7 @@ it('ignores inactive products and empty or pre-matched lines', function (): void
 
 // ── BuildInterventionReportDraftAction ────────────────────────────────────────
 
-it('builds a full draft from the extractor output with catalog matching', function (): void {
+test('builds a full draft from the extractor output with catalog matching', function (): void {
     Product::query()->create(['name' => 'Valvola', 'unit_price' => 4.0, 'is_active' => true]);
 
     $draft = buildDraftAction(fakeExtractor([
@@ -202,7 +203,7 @@ it('builds a full draft from the extractor output with catalog matching', functi
         ->and($draft->hasUnmatchedMaterials())->toBeTrue();
 });
 
-it('normalizes messy or missing extractor output to safe defaults', function (): void {
+test('normalizes messy or missing extractor output to safe defaults', function (): void {
     $draft = buildDraftAction(fakeExtractor([
         'notes' => 42,                 // not a string → ''
         'work_minutes' => 'abc',       // not numeric → null
@@ -218,7 +219,7 @@ it('normalizes messy or missing extractor output to safe defaults', function ():
         ->and($draft->materials)->toBe([]);
 });
 
-it('skips invalid material entries and defaults missing quantity to one', function (): void {
+test('skips invalid material entries and defaults missing quantity to one', function (): void {
     $draft = buildDraftAction(fakeExtractor([
         'materials' => [
             'not-an-array',                          // skipped
@@ -234,15 +235,17 @@ it('skips invalid material entries and defaults missing quantity to one', functi
         ->and($draft->materials[1]->quantity)->toBe(1.0);
 });
 
-it('accepts each valid outcome code', function (string $outcome): void {
-    $draft = buildDraftAction(fakeExtractor(['outcome_code' => $outcome]))->execute('x');
+foreach (['completed', 'suspended', 'quotation'] as $outcome) {
+    test('accepts valid outcome code '.$outcome, function () use ($outcome): void {
+        $draft = buildDraftAction(fakeExtractor(['outcome_code' => $outcome]))->execute('x');
 
-    expect($draft->outcomeCode)->toBe($outcome);
-})->with(['completed', 'suspended', 'quotation']);
+        expect($draft->outcomeCode)->toBe($outcome);
+    });
+}
 
 // ── Container wiring (real extractor bound, no HTTP for an empty transcript) ──
 
-it('resolves the build action from the container with the live extractor bound', function (): void {
+test('resolves the build action from the container with the live extractor bound', function (): void {
     config()->set('services.openai.key', '');
 
     // Empty transcript short-circuits the live extractor before any HTTP call.

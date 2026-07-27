@@ -2,16 +2,17 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Actions\CreateInterventionAction;
 use Modules\Intervention\Filament\Resources\InterventionResource;
-use Modules\Intervention\Tests\TestCase;
-use Modules\User\Models\User;
+use Modules\User\Database\Factories\UserFactory;
 
-it('creates an intervention', function (): void {
-    $user = User::factory()->create();
+test('creates an intervention', function (): void {
+    $user = UserFactory::new()->createOne();
 
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',
@@ -42,15 +43,11 @@ it('creates an intervention', function (): void {
     expect((int) $intervention->work_order_id)->toBe((int) $workOrderId);
 });
 
-it('normalizes Gerardo scheduled date-only input', function (): void {
-    // Defer: dipende da Modules\Platform\... e panel name SRC `admin`.
-})->skip('Platform replica / panel alias — vedi laravel/docs/migrate-gestionale-tests.md');
+test('normalizes Gerardo scheduled date-only input', function (): void {
+    interventionTest()->skipTest('Platform replica / panel alias — vedi laravel/docs/migrate-gestionale-tests.md');
+});
 
-it('strips non database form fields before persistence', function (): void {
-    if (! method_exists(InterventionResource::class, 'extractPersistableData')) {
-        $this->markTestSkipped('InterventionResource::extractPersistableData non presente post-reshape');
-    }
-
+test('strips non database form fields before persistence', function (): void {
     $data = InterventionResource::extractPersistableData([
         'work_order_id' => 10,
         'performed_by_user_id' => 5,

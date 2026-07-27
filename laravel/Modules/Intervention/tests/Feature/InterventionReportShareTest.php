@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Carbon\CarbonImmutable;
@@ -9,8 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Actions\CreateInterventionReportShareLinkAction;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionReportShare;
-use Modules\Intervention\Tests\TestCase;
-use Modules\User\Models\User;
+use Modules\User\Database\Factories\UserFactory;
 
 function makeShareIntervention(): Intervention
 {
@@ -20,7 +21,7 @@ function makeShareIntervention(): Intervention
 
     $id = DB::table('interventions')->insertGetId([
         'customer_id' => $customerId,
-        'performed_by_user_id' => User::factory()->create()->id,
+        'performed_by_user_id' => UserFactory::new()->createOne()->id,
         'scheduled_at' => CarbonImmutable::now(),
         'started_at' => CarbonImmutable::now(),
         'work_minutes' => 30,
@@ -38,11 +39,11 @@ function makeShareIntervention(): Intervention
 
 it('creates a share link with a token and public url', function (): void {
     $intervention = makeShareIntervention();
-    $user = User::factory()->create();
+    $user = UserFactory::new()->createOne();
 
-    $share = app(CreateInterventionReportShareLinkAction::class)->execute($intervention, $user->id);
+    $share = app(CreateInterventionReportShareLinkAction::class)->execute($intervention, (int) $user->id);
 
-    expect($share->token)->toHaveLength(48)
+    expect(strlen($share->token))->toBe(48)
         ->and($share->intervention_id)->toBe($intervention->id)
         ->and($share->created_by_user_id)->toBe($user->id)
         ->and($share->isExpired())->toBeFalse()

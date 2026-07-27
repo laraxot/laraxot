@@ -2,15 +2,16 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Carbon\CarbonImmutable;
 use Modules\Intervention\Actions\ComputeWorkMinutesAction;
 use Modules\Intervention\Exceptions\InvalidTimeInterval;
-use Modules\Intervention\Tests\TestCase;
 use Modules\Intervention\ValueObjects\TimeInterval;
 
-it('computes total minutes from intervals', function (): void {
+test('computes total minutes from intervals', function (): void {
     // Arrange
     $action = new ComputeWorkMinutesAction();
 
@@ -32,9 +33,9 @@ it('computes total minutes from intervals', function (): void {
     expect($minutes)->toBe(105);
 });
 
-it('rejects invalid intervals', function (): void {
-    new TimeInterval(
+test('rejects invalid intervals', function (): void {
+    expect(fn (): TimeInterval => new TimeInterval(
         CarbonImmutable::parse('2026-02-16 10:00:00'),
         CarbonImmutable::parse('2026-02-16 09:00:00'),
-    );
-})->throws(InvalidTimeInterval::class);
+    ))->toThrow(InvalidTimeInterval::class);
+});

@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Actions\SyncInterventionExtraMaterialsAction;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionMaterialLine;
-use Modules\Intervention\Tests\TestCase;
 
 /**
  * @return array{intervention: Intervention, workOrderId: int, customerId: int}

@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Carbon\CarbonImmutable;
@@ -11,8 +13,7 @@ use Modules\Intervention\Data\DictatedMaterialLine;
 use Modules\Intervention\Data\InterventionReportDraft;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Queries\GetPastInterventionNotesForReportQuery;
-use Modules\Intervention\Tests\TestCase;
-use Modules\User\Models\User;
+use Modules\User\Database\Factories\UserFactory;
 
 function makeReportCustomerId(string $name = 'Cliente Report S.r.l.'): int
 {
@@ -24,12 +25,15 @@ function makeReportCustomerId(string $name = 'Cliente Report S.r.l.'): int
     ]);
 }
 
+/**
+ * @param  array<string, mixed>  $overrides
+ */
 function makeIntervention(array $overrides = []): Intervention
 {
     $attributes = array_merge([
         'work_order_id' => null,
         'customer_id' => null,
-        'performed_by_user_id' => User::factory()->create()->id,
+        'performed_by_user_id' => UserFactory::new()->createOne()->id,
         'scheduled_at' => CarbonImmutable::now(),
         'started_at' => CarbonImmutable::now(),
         'work_minutes' => 0,
@@ -69,10 +73,11 @@ it('applies a confirmed draft: notes, minutes, outcome and material lines', func
         ->and((float) $result->materials_total)->toBe(14.5);
 
     $lines = $result->materialLines()->orderBy('id')->get();
-    expect($lines)->toHaveCount(2)
-        ->and((float) $lines[0]->line_total)->toBe(10.0)
-        ->and($lines[0]->unit)->toBe('pz')
-        ->and((float) $lines[1]->line_total)->toBe(4.5);
+    expect($lines)->toHaveCount(2);
+    [$line0, $line1] = $lines->values()->all();
+    expect((float) $line0->line_total)->toBe(10.0)
+        ->and($line0->unit)->toBe('pz')
+        ->and((float) $line1->line_total)->toBe(4.5);
 });
 
 it('appends dictated materials to existing lines and recomputes the total', function (): void {

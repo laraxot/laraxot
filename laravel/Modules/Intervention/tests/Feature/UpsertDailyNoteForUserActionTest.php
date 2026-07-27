@@ -2,16 +2,17 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Carbon\CarbonImmutable;
 use Modules\Intervention\Actions\UpsertDailyNoteForUserAction;
 use Modules\Intervention\Models\DailyNote;
-use Modules\Intervention\Tests\TestCase;
-use Modules\User\Models\User;
+use Modules\User\Database\Factories\UserFactory;
 
 it('upserts a daily note for a user and date', function (): void {
-    $user = User::factory()->create();
+    $user = UserFactory::new()->createOne();
     $date = CarbonImmutable::parse('2026-02-01');
 
     $note1 = app(UpsertDailyNoteForUserAction::class)->execute(

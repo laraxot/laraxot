@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Carbon\CarbonImmutable;
@@ -13,14 +15,13 @@ use Modules\Intervention\Actions\SyncInterventionWorkMinutesFromTimePunchesActio
 use Modules\Intervention\Exceptions\OpenTimePunchAlreadyExists;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\TimePunch;
-use Modules\Intervention\Tests\TestCase;
-use Modules\User\Models\User;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderStatus;
 
 it('starts and stops a time punch and computes work minutes', function (): void {
     // Arrange
-    $user = User::factory()->create();
+    $user = UserFactory::new()->createOne();
 
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',
@@ -73,8 +74,8 @@ it('starts and stops a time punch and computes work minutes', function (): void 
     $startedAt = CarbonImmutable::parse('2026-02-16 09:00:00');
     $endedAt = CarbonImmutable::parse('2026-02-16 10:30:00');
 
-    app(StartTimePunchAction::class)->execute($intervention, $user->id, $startedAt);
-    app(StopTimePunchAction::class)->execute($intervention, $user->id, $endedAt);
+    app(StartTimePunchAction::class)->execute($intervention, (int) $user->id, $startedAt);
+    app(StopTimePunchAction::class)->execute($intervention, (int) $user->id, $endedAt);
     app(SyncInterventionWorkMinutesFromTimePunchesAction::class)->execute($intervention->refresh());
 
     // Assert
@@ -87,7 +88,7 @@ it('starts and stops a time punch and computes work minutes', function (): void 
 
 it('prevents multiple open punches for the same user', function (): void {
     // Arrange
-    $user = User::factory()->create();
+    $user = UserFactory::new()->createOne();
 
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',
@@ -147,16 +148,16 @@ it('prevents multiple open punches for the same user', function (): void {
     ]);
 
     // Act
-    app(StartTimePunchAction::class)->execute($a, $user->id, CarbonImmutable::parse('2026-02-16 09:00:00'));
+    app(StartTimePunchAction::class)->execute($a, (int) $user->id, CarbonImmutable::parse('2026-02-16 09:00:00'));
 
     // Assert
-    expect(fn () => app(StartTimePunchAction::class)->execute($b, $user->id, CarbonImmutable::parse('2026-02-16 09:10:00')))
+    expect(fn () => app(StartTimePunchAction::class)->execute($b, (int) $user->id, CarbonImmutable::parse('2026-02-16 09:10:00')))
         ->toThrow(OpenTimePunchAlreadyExists::class);
 });
 
 it('finalizes the intervention report and updates the work order status', function (): void {
     // Arrange
-    $user = User::factory()->create();
+    $user = UserFactory::new()->createOne();
 
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',
@@ -200,7 +201,7 @@ it('finalizes the intervention report and updates the work order status', functi
     // Act
     $updated = app(FinalizeInterventionReportAction::class)->execute(
         intervention: $intervention,
-        validatedByUserId: $user->id,
+        validatedByUserId: (int) $user->id,
         travelKm: 12,
         travelMinutes: 30,
         notes: 'All good',

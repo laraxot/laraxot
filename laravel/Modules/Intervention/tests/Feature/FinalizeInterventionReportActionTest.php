@@ -2,19 +2,20 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Carbon\CarbonImmutable;
 use Modules\Customer\Models\Customer;
 use Modules\Intervention\Actions\FinalizeInterventionReportAction;
 use Modules\Intervention\Models\Intervention;
-use Modules\Intervention\Tests\TestCase;
-use Modules\User\Models\User;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderStatus;
 
 it('finalizes an intervention with outcome completed and updates work order status', function (): void {
-    $admin = User::factory()->create();
+    $admin = UserFactory::new()->createOne();
 
     $customer = Customer::query()->create([
         'legal_name' => 'Acme S.p.A.',
@@ -74,7 +75,7 @@ it('finalizes an intervention with outcome completed and updates work order stat
 });
 
 it('finalizes an intervention with outcome suspended (keeps work order in progress)', function (): void {
-    $user = User::factory()->create();
+    $user = UserFactory::new()->createOne();
 
     $customer = Customer::query()->create([
         'legal_name' => 'Acme S.p.A.',
@@ -126,7 +127,7 @@ it('finalizes an intervention with outcome suspended (keeps work order in progre
 });
 
 it('finalizes an intervention with outcome quotation and adds an activity', function (): void {
-    $user = User::factory()->create();
+    $user = UserFactory::new()->createOne();
 
     $customer = Customer::query()->create([
         'legal_name' => 'Acme S.p.A.',

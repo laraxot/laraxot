@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Carbon\CarbonImmutable;
@@ -9,16 +11,15 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Modules\Intervention\Actions\SaveInterventionReportAttachmentsAction;
 use Modules\Intervention\Models\Intervention;
-use Modules\Intervention\Tests\TestCase;
 use Modules\Signature\Models\Signature;
-use Modules\User\Models\User;
+use Modules\User\Database\Factories\UserFactory;
 
 // A minimal valid 1x1 transparent PNG.
 const TINY_PNG_DATA_URL = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=';
 
 function makeAttachmentIntervention(): Intervention
 {
-    $userId = User::factory()->create()->id;
+    $userId = UserFactory::new()->createOne()->id;
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Cliente Allegati',
         'is_active' => 1,

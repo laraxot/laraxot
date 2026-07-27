@@ -2,18 +2,19 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Actions\CreateIssueReportAction;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\IssueReport;
-use Modules\Intervention\Tests\TestCase;
-use Modules\User\Models\User;
+use Modules\User\Database\Factories\UserFactory;
 
 it('creates an issue report for an intervention', function (): void {
     // Arrange
-    $user = User::factory()->create();
+    $user = UserFactory::new()->createOne();
 
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',
@@ -41,7 +42,7 @@ it('creates an issue report for an intervention', function (): void {
     // Act
     $report = app(CreateIssueReportAction::class)->execute(
         intervention: $intervention,
-        createdByUserId: $user->id,
+        createdByUserId: (int) $user->id,
         body: 'Found an issue on site',
     );
 

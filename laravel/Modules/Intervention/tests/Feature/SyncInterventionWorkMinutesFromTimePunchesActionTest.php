@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Illuminate\Support\Facades\DB;
@@ -9,12 +11,11 @@ use Modules\Intervention\Actions\ComputeWorkMinutesAction;
 use Modules\Intervention\Actions\SyncInterventionWorkMinutesFromTimePunchesAction;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\TimePunch;
-use Modules\Intervention\Tests\TestCase;
-use Modules\User\Models\User;
+use Modules\User\Database\Factories\UserFactory;
 
 it('syncs intervention work minutes from closed time punches', function (): void {
     // Arrange
-    $user = User::factory()->create();
+    $user = UserFactory::new()->createOne();
 
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',

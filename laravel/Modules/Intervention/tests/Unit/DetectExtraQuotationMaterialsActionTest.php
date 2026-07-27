@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Modules\Intervention\Actions\DetectExtraQuotationMaterialsAction;
 use Modules\Intervention\Data\QuotedMaterial;
 use Modules\Intervention\Data\UsedMaterial;
-use Modules\Intervention\Tests\TestCase;
 
 it('marks the whole line as extra when the material was never quoted', function (): void {
     $lines = (new DetectExtraQuotationMaterialsAction())->execute(

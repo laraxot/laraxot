@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Illuminate\Support\Facades\DB;
@@ -9,13 +11,12 @@ use Illuminate\Support\Facades\Storage;
 use Modules\Document\Actions\AttachPhotosToInterventionAction;
 use Modules\Intervention\Actions\SyncInterventionNotePhotosAction;
 use Modules\Intervention\Models\Intervention;
-use Modules\Intervention\Tests\TestCase;
-use Modules\User\Models\User;
+use Modules\User\Database\Factories\UserFactory;
 
 it('syncs only intervention note photos without touching other intervention photos', function (): void {
     Storage::fake('public');
 
-    $user = User::factory()->create();
+    $user = UserFactory::new()->createOne();
 
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Cliente test',
@@ -32,7 +33,6 @@ it('syncs only intervention note photos without touching other intervention phot
         'updated_at' => now(),
     ]);
 
-    /** @var Intervention $intervention */
     $intervention = Intervention::query()->create([
         'work_order_id' => $workOrderId,
         'performed_by_user_id' => $user->id,
@@ -53,19 +53,19 @@ it('syncs only intervention note photos without touching other intervention phot
     app(AttachPhotosToInterventionAction::class)->execute(
         intervention: $intervention,
         paths: [$genericPhotoPath],
-        uploadedByUserId: $user->id,
+        uploadedByUserId: (int) $user->id,
     );
 
     app(SyncInterventionNotePhotosAction::class)->execute(
         intervention: $intervention->refresh(),
         paths: [$notePhotoPathOne],
-        uploadedByUserId: $user->id,
+        uploadedByUserId: (int) $user->id,
     );
 
     app(SyncInterventionNotePhotosAction::class)->execute(
         intervention: $intervention->refresh(),
         paths: [$notePhotoPathTwo],
-        uploadedByUserId: $user->id,
+        uploadedByUserId: (int) $user->id,
     );
 
     $intervention->refresh();

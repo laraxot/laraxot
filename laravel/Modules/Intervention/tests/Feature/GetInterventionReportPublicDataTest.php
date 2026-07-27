@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Modules\Intervention\Tests\TestCase;
+
 uses(TestCase::class);
 
 use Carbon\CarbonImmutable;
@@ -10,9 +12,8 @@ use Illuminate\Support\Facades\Storage;
 use Modules\Document\Models\Media;
 use Modules\Intervention\Actions\GetInterventionReportPublicDataAction;
 use Modules\Intervention\Models\Intervention;
-use Modules\Intervention\Tests\TestCase;
 use Modules\Signature\Actions\StoreSignatureForModelAction;
-use Modules\User\Models\User;
+use Modules\User\Database\Factories\UserFactory;
 
 const PUB_TINY_PNG = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=';
 
@@ -23,12 +24,15 @@ function pubCustomerId(string $name): int
     ]);
 }
 
+/**
+ * @param  array<string, mixed>  $overrides
+ */
 function pubIntervention(array $overrides = []): Intervention
 {
     $attributes = array_merge([
         'work_order_id' => null,
         'customer_id' => null,
-        'performed_by_user_id' => User::factory()->create(['name' => 'Operatore'])->id,
+        'performed_by_user_id' => UserFactory::new()->createOne(['name' => 'Operatore'])->id,
         'scheduled_at' => CarbonImmutable::parse('2026-05-25 09:30'),
         'started_at' => CarbonImmutable::now(),
         'work_minutes' => 90,
@@ -66,8 +70,8 @@ it('builds full report data: work-order customer wins, operators, materials, pho
     ]);
 
     // Assigned operators take precedence over the performer.
-    $mario = User::factory()->create(['name' => 'Mario']);
-    $luigi = User::factory()->create(['name' => 'Luigi']);
+    $mario = UserFactory::new()->createOne(['name' => 'Mario']);
+    $luigi = UserFactory::new()->createOne(['name' => 'Luigi']);
     $intervention->assignedUsers()->attach([$mario->id, $luigi->id]);
 
     $intervention->materialLines()->create(['description' => 'Valvola', 'quantity' => 2.5, 'unit' => 'pz', 'unit_price' => 7.5, 'line_total' => 18.75]);
@@ -132,7 +136,7 @@ it('exposes payment flags for a paid report with payments enabled', function ():
 });
 
 it('falls back to the performer and direct customer, suspended, no attachments', function (): void {
-    $performer = User::factory()->create(['name' => 'Solo Operatore']);
+    $performer = UserFactory::new()->createOne(['name' => 'Solo Operatore']);
     $intervention = pubIntervention([
         'customer_id' => pubCustomerId('Cliente Diretto'),
         'performed_by_user_id' => $performer->id,
