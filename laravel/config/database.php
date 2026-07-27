@@ -34,7 +34,10 @@ return [
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DB_URL'),
-            'database' => env('DB_DATABASE', database_path('database.sqlite')),
+            // Non usare env('DB_DATABASE'): quella env var e' la connessione
+            // primaria (mariadb in questo progetto). I test la sovrascrivono
+            // sempre a runtime con la fixture condivisa (fixcity_data.sqlite).
+            'database' => database_path('database.sqlite'),
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
             'busy_timeout' => null,
