@@ -4,3 +4,4 @@
 .devcontainer/
 .vscode/
 .windsurf/
+tests/AuditCoverage/

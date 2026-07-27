@@ -186,3 +186,4 @@ ruvector.db
 .devcontainer/
 .vscode/
 .windsurf/
+tests/AuditCoverage/

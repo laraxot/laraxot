@@ -207,3 +207,4 @@ docs/archived/
 .devcontainer/
 .vscode/
 .windsurf/
+tests/AuditCoverage/

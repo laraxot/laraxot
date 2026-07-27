@@ -138,3 +138,4 @@ agentdb.rvf
 .devcontainer/
 .vscode/
 .windsurf/
+tests/AuditCoverage/

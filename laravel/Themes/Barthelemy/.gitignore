@@ -33,3 +33,4 @@ tests/AuditCoverage
 .devcontainer/
 .vscode/
 .windsurf/
+tests/AuditCoverage/
