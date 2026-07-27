@@ -2,19 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Modules\TimberBilling\Tests\Feature;
-
-use Modules\TimberBilling\Tests\TestCase;
-
-uses(TestCase::class);
-
 use Modules\TimberBilling\Filament\Resources\TimberCustomerResource\Pages\CreateTimberCustomer;
 use Modules\TimberBilling\Filament\Resources\TimberCustomerResource\Pages\EditTimberCustomer;
 use Modules\TimberBilling\Filament\Resources\TimberCustomerResource\Pages\ListTimberCustomers;
-use Modules\User\Models\User;
 use Modules\TimberBilling\Models\TimberCustomer;
-use Livewire\Livewire;
+use Modules\TimberBilling\Tests\TestCase;
 use Spatie\Permission\Models\Role;
+
+uses(TestCase::class);
 
 beforeEach(function (): void {
     Role::findOrCreate('timber_admin');
@@ -22,18 +17,15 @@ beforeEach(function (): void {
 });
 
 it('lists and creates customers as a timber_admin', function (): void {
-    $admin = User::factory()->create();
-    $admin->syncRoles(['timber_admin']);
+    actingAsTimberAdmin();
 
-    TimberCustomer::factory()->create(['business_name' => 'Falegnameria Rossi Srl']);
+    TimberCustomer::factory()->createOne(['business_name' => 'Falegnameria Rossi Srl']);
 
-    Livewire::actingAs($admin)
-        ->test(ListTimberCustomers::class)
+    testTimberLivewire(ListTimberCustomers::class)
         ->assertOk()
         ->assertSee('Falegnameria Rossi Srl');
 
-    Livewire::actingAs($admin)
-        ->test(CreateTimberCustomer::class)
+    testTimberLivewire(CreateTimberCustomer::class)
         ->fillForm([
             'business_name' => 'Legnami Bianchi Snc',
             'vat_number' => 'IT01234567890',
@@ -46,22 +38,18 @@ it('lists and creates customers as a timber_admin', function (): void {
 });
 
 it('requires a business name', function (): void {
-    $admin = User::factory()->create();
-    $admin->syncRoles(['timber_admin']);
+    actingAsTimberAdmin();
 
-    Livewire::actingAs($admin)
-        ->test(CreateTimberCustomer::class)
+    testTimberLivewire(CreateTimberCustomer::class)
         ->fillForm(['business_name' => null])
         ->call('create')
         ->assertHasFormErrors(['business_name' => 'required']);
 });
 
 it('validates the email address on the commercial tab', function (): void {
-    $admin = User::factory()->create();
-    $admin->syncRoles(['timber_admin']);
+    actingAsTimberAdmin();
 
-    Livewire::actingAs($admin)
-        ->test(CreateTimberCustomer::class)
+    testTimberLivewire(CreateTimberCustomer::class)
         ->fillForm([
             'business_name' => 'Test Srl',
             'email' => 'not-an-email',
@@ -71,11 +59,9 @@ it('validates the email address on the commercial tab', function (): void {
 });
 
 it('stores the full commercial profile of a supplier customer', function (): void {
-    $admin = User::factory()->create();
-    $admin->syncRoles(['timber_admin']);
+    actingAsTimberAdmin();
 
-    Livewire::actingAs($admin)
-        ->test(CreateTimberCustomer::class)
+    testTimberLivewire(CreateTimberCustomer::class)
         ->fillForm([
             'business_name' => 'Iper Mobili Spa',
             'is_customer' => true,
@@ -99,13 +85,11 @@ it('stores the full commercial profile of a supplier customer', function (): voi
 });
 
 it('edits an existing customer', function (): void {
-    $admin = User::factory()->create();
-    $admin->syncRoles(['timber_admin']);
+    actingAsTimberAdmin();
 
-    $customer = TimberCustomer::factory()->create(['business_name' => 'Vecchio Nome Srl']);
+    $customer = TimberCustomer::factory()->createOne(['business_name' => 'Vecchio Nome Srl']);
 
-    Livewire::actingAs($admin)
-        ->test(EditTimberCustomer::class, ['record' => $customer->getKey()])
+    testTimberLivewire(EditTimberCustomer::class, ['record' => $customer->id])
         ->fillForm(['business_name' => 'Nuovo Nome Srl'])
         ->call('save')
         ->assertHasNoFormErrors();

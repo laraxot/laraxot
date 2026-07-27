@@ -2,21 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Modules\TimberBilling\Tests\Feature;
-
-use Modules\TimberBilling\Tests\TestCase;
-
-uses(TestCase::class);
-
 use Modules\TimberBilling\Filament\Resources\TimberDocumentResource\Pages\CreateTimberDocument;
 use Modules\TimberBilling\Filament\Resources\TimberDocumentResource\Pages\ListTimberDocuments;
-use Modules\User\Models\User;
 use Modules\TimberBilling\Models\TimberCustomer;
 use Modules\TimberBilling\Models\TimberDocument;
 use Modules\TimberBilling\Models\TimberProduct;
 use Modules\TimberBilling\Models\TimberStockMovement;
-use Livewire\Livewire;
+use Modules\TimberBilling\Tests\TestCase;
 use Spatie\Permission\Models\Role;
+
+uses(TestCase::class);
 
 beforeEach(function (): void {
     Role::findOrCreate('timber_admin');
@@ -24,35 +19,31 @@ beforeEach(function (): void {
 });
 
 it('lists documents as a timber_admin', function (): void {
-    $admin = User::factory()->create();
-    $admin->syncRoles(['timber_admin']);
+    actingAsTimberAdmin();
 
-    TimberDocument::factory()->create(['number' => 'DDT-2026-0100']);
+    TimberDocument::factory()->createOne(['number' => 'DDT-2026-0100']);
 
-    Livewire::actingAs($admin)
-        ->test(ListTimberDocuments::class)
+    testTimberLivewire(ListTimberDocuments::class)
         ->assertOk()
         ->assertSee('DDT-2026-0100');
 });
 
 it('creates a document with lines, auto-numbers it and computes totals', function (): void {
-    $admin = User::factory()->create();
-    $admin->syncRoles(['timber_admin']);
+    $admin = actingAsTimberAdmin();
 
-    $customer = TimberCustomer::factory()->create();
-    $product = TimberProduct::factory()->create();
+    $customer = TimberCustomer::factory()->createOne();
+    $product = TimberProduct::factory()->createOne();
 
-    Livewire::actingAs($admin)
-        ->test(CreateTimberDocument::class)
+    testTimberLivewire(CreateTimberDocument::class)
         ->fillForm([
             'document_type_code' => 'ddt',
             'number' => null,
             'document_date' => now()->toDateString(),
-            'customer_id' => $customer->getKey(),
+            'customer_id' => $customer->id,
             'status_code' => 'confirmed',
             'lines' => [
                 [
-                    'product_id' => $product->getKey(),
+                    'product_id' => $product->id,
                     'description' => 'Legna abete',
                     'quantity' => 10,
                     'unit_of_measure' => 'quintali',
@@ -65,32 +56,31 @@ it('creates a document with lines, auto-numbers it and computes totals', functio
         ->call('create')
         ->assertHasNoFormErrors();
 
-    $document = TimberDocument::query()->where('customer_id', $customer->getKey())->firstOrFail();
+    $document = TimberDocument::query()->where('customer_id', $customer->id)->firstOrFail();
 
     expect($document->number)->toBe('DDT-'.now()->format('Y').'-0001')
         ->and($document->lines()->count())->toBe(1)
         ->and((float) $document->total_amount)->toBe(81.0)
-        ->and($document->created_by_user_id)->toBe($admin->getKey());
+        ->and($document->created_by_user_id)->toBe($admin->id);
 });
 
 it('posts a confirmed DDT to the warehouse via the row action', function (): void {
-    $admin = User::factory()->create();
-    $admin->syncRoles(['timber_admin']);
+    actingAsTimberAdmin();
 
-    $product = TimberProduct::factory()->create();
-    TimberStockMovement::factory()->create([
-        'product_id' => $product->getKey(),
+    $product = TimberProduct::factory()->createOne();
+    TimberStockMovement::factory()->createOne([
+        'product_id' => $product->id,
         'direction_code' => 'load',
         'quantity' => 50,
     ]);
 
-    $document = TimberDocument::factory()->create([
+    $document = TimberDocument::factory()->createOne([
         'document_type_code' => 'ddt',
         'number' => 'DDT-2026-0200',
         'status_code' => 'confirmed',
     ]);
     $document->lines()->create([
-        'product_id' => $product->getKey(),
+        'product_id' => $product->id,
         'description' => $product->description,
         'quantity' => 20,
         'unit_of_measure' => 'quintali',
@@ -99,8 +89,7 @@ it('posts a confirmed DDT to the warehouse via the row action', function (): voi
         'line_total' => 180,
     ]);
 
-    Livewire::actingAs($admin)
-        ->test(ListTimberDocuments::class)
+    testTimberLivewire(ListTimberDocuments::class)
         ->callTableAction('postToStock', $document);
 
     expect($document->refresh()->stock_posted_at)->not->toBeNull()

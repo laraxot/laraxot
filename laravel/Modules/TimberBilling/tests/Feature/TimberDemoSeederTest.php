@@ -2,12 +2,6 @@
 
 declare(strict_types=1);
 
-namespace Modules\TimberBilling\Tests\Feature;
-
-use Modules\TimberBilling\Tests\TestCase;
-
-uses(TestCase::class);
-
 use Modules\TimberBilling\Database\Seeders\TimberDemoSeeder;
 use Modules\TimberBilling\Models\TimberAgent;
 use Modules\TimberBilling\Models\TimberCustomer;
@@ -22,6 +16,9 @@ use Modules\TimberBilling\Models\TimberStockMovement;
 use Modules\TimberBilling\Models\TimberSupplier;
 use Modules\TimberBilling\Models\TimberTransporter;
 use Modules\TimberBilling\Queries\GetTimberStockMovementsQuery;
+use Modules\TimberBilling\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('populates suppliers, transporters, agents, purchases and lots in varied states', function (): void {
     app(TimberDemoSeeder::class)->run();
@@ -59,7 +56,7 @@ it('populates the Easyfatt-style commercial tables with coherent relations', fun
     // A posted inbound document leaves positive stock, and the DDT reduced it coherently.
     $stockQuery = app(GetTimberStockMovementsQuery::class);
     $product = TimberProduct::query()->whereHas('supplier')->firstOrFail();
-    expect($stockQuery->stockForProduct($product->getKey()))->toBeGreaterThan(0.0);
+    expect($stockQuery->stockForProduct($product->id))->toBeGreaterThan(0.0);
 });
 
 it('is safe to run more than once without duplicating registries', function (): void {

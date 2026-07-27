@@ -2,42 +2,43 @@
 
 declare(strict_types=1);
 
-namespace Modules\TimberBilling\Tests\Feature;
-
+use Modules\TimberBilling\Filament\Resources\TimberCustomerResource\Pages\EditTimberCustomer;
+use Modules\TimberBilling\Models\TimberContactNote;
+use Modules\TimberBilling\Models\TimberCustomer;
+use Modules\TimberBilling\Models\TimberSupplier;
 use Modules\TimberBilling\Tests\TestCase;
+use Spatie\Permission\Models\Role;
 
 uses(TestCase::class);
 
-use Modules\TimberBilling\Filament\Resources\TimberCustomerResource\Pages\EditTimberCustomer;
-use Modules\User\Models\User;
-use Modules\TimberBilling\Models\TimberCustomer;
-use Modules\TimberBilling\Models\TimberSupplier;
-use Livewire\Livewire;
-use Spatie\Permission\Models\Role;
-
 it('relates notes polymorphically to customers and suppliers', function (): void {
-    $customer = TimberCustomer::factory()->create();
-    $supplier = TimberSupplier::factory()->create();
+    $customer = TimberCustomer::factory()->createOne();
+    $supplier = TimberSupplier::factory()->createOne();
 
     $customer->contactNotes()->create(['body' => 'Cliente da richiamare']);
     $supplier->contactNotes()->create(['body' => 'Fornitore affidabile']);
 
+    $customerNote = $customer->contactNotes()->first();
+    $supplierNote = $supplier->contactNotes()->first();
+    expect($customerNote)->not->toBeNull();
+    expect($supplierNote)->not->toBeNull();
+    assert($customerNote instanceof TimberContactNote);
+    assert($supplierNote instanceof TimberContactNote);
+
     expect($customer->contactNotes()->count())->toBe(1)
-        ->and($customer->contactNotes()->first()->body)->toBe('Cliente da richiamare')
+        ->and($customerNote->body)->toBe('Cliente da richiamare')
         ->and($supplier->contactNotes()->count())->toBe(1)
-        ->and($supplier->contactNotes()->first()->noteable)->toBeInstanceOf(TimberSupplier::class);
+        ->and($supplierNote->noteable)->toBeInstanceOf(TimberSupplier::class);
 });
 
 it('adds a note to a customer via the edit form', function (): void {
     Role::findOrCreate('timber_admin');
     filament()->setCurrentPanel('timber');
-    $admin = User::factory()->create();
-    $admin->syncRoles(['timber_admin']);
+    actingAsTimberAdmin();
 
-    $customer = TimberCustomer::factory()->create();
+    $customer = TimberCustomer::factory()->createOne();
 
-    Livewire::actingAs($admin)
-        ->test(EditTimberCustomer::class, ['record' => $customer->getKey()])
+    testTimberLivewire(EditTimberCustomer::class, ['record' => $customer->id])
         ->fillForm(['contactNotes' => [['body' => 'Preferisce consegna al mattino']]])
         ->call('save')
         ->assertHasNoFormErrors();
