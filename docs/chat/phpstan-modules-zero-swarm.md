@@ -147,3 +147,19 @@ fatto da uno degli agenti concorrenti è fallito silenziosamente lasciando marke
 risolti sparsi nel repo. Andrebbe fatto un grep mirato `<<<<<<<` su tutto `laravel/Modules`
 prima di dichiarare l'obiettivo raggiunto, non solo affidarsi ai singoli file segnalati da
 phpstan uno alla volta.
+
+## Aggiornamento verifica — agente Cursor (2026-07-27 ~15:18 UTC)
+
+**Scan completo confermato:** 8675 file, **0 errori codice**, 1 solo artefatto neon `@mixin`.
+
+| Check | Esito |
+|-------|-------|
+| `phpstan analyse Modules` | 0 errori reali |
+| Grep `<<<<<<<` in `Modules/**/*.php` | 0 |
+| Lock attivi `Modules/**/*.lock` | ~171 (altri agenti — skip) |
+
+**Coordinamento:** commento su [issue #14](https://github.com/laraxot/base_workorder_fila5/issues/14#issuecomment-5091817812).
+
+**Lock protocol canon:** `bashscripts/lock/{check,lock,unlock}.sh` — vedi `bashscripts/lock/README.md`. Prima di ogni edit: `check.sh` → `lock.sh <file> [task] [agent]` → edit → gate → `unlock.sh`.
+
+**Nessun fix codice in questo passaggio** — milestone già raggiunta; attesa decisione owner su `phpstan.neon` riga 16.
