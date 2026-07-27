@@ -2,19 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Modules\TimberBilling\Tests\Feature;
-
-use Modules\TimberBilling\Tests\TestCase;
-
-uses(TestCase::class);
-
 use Modules\TimberBilling\Filament\Resources\TimberProductResource\Pages\CreateTimberProduct;
 use Modules\TimberBilling\Filament\Resources\TimberProductResource\Pages\EditTimberProduct;
 use Modules\TimberBilling\Filament\Resources\TimberProductResource\Pages\ListTimberProducts;
-use Modules\User\Models\User;
 use Modules\TimberBilling\Models\TimberProduct;
-use Livewire\Livewire;
+use Modules\TimberBilling\Tests\TestCase;
 use Spatie\Permission\Models\Role;
+
+uses(TestCase::class);
 
 beforeEach(function (): void {
     Role::findOrCreate('timber_admin');
@@ -22,18 +17,15 @@ beforeEach(function (): void {
 });
 
 it('lists and creates products as a timber_admin', function (): void {
-    $admin = User::factory()->create();
-    $admin->syncRoles(['timber_admin']);
+    actingAsTimberAdmin();
 
-    TimberProduct::factory()->create(['description' => 'Legna in stanga essenza conifera']);
+    TimberProduct::factory()->createOne(['description' => 'Legna in stanga essenza conifera']);
 
-    Livewire::actingAs($admin)
-        ->test(ListTimberProducts::class)
+    testTimberLivewire(ListTimberProducts::class)
         ->assertOk()
         ->assertSee('Legna in stanga essenza conifera');
 
-    Livewire::actingAs($admin)
-        ->test(CreateTimberProduct::class)
+    testTimberLivewire(CreateTimberProduct::class)
         ->fillForm([
             'code' => '0000000000077',
             'description' => 'Legna in stanga essenza conifera/pioppo',
@@ -48,24 +40,20 @@ it('lists and creates products as a timber_admin', function (): void {
 });
 
 it('requires a description', function (): void {
-    $admin = User::factory()->create();
-    $admin->syncRoles(['timber_admin']);
+    actingAsTimberAdmin();
 
-    Livewire::actingAs($admin)
-        ->test(CreateTimberProduct::class)
+    testTimberLivewire(CreateTimberProduct::class)
         ->fillForm(['description' => null])
         ->call('create')
         ->assertHasFormErrors(['description' => 'required']);
 });
 
 it('rejects a duplicate product code', function (): void {
-    $admin = User::factory()->create();
-    $admin->syncRoles(['timber_admin']);
+    actingAsTimberAdmin();
 
-    TimberProduct::factory()->create(['code' => 'DUP-1']);
+    TimberProduct::factory()->createOne(['code' => 'DUP-1']);
 
-    Livewire::actingAs($admin)
-        ->test(CreateTimberProduct::class)
+    testTimberLivewire(CreateTimberProduct::class)
         ->fillForm([
             'code' => 'DUP-1',
             'description' => 'Altro prodotto',
@@ -77,11 +65,9 @@ it('rejects a duplicate product code', function (): void {
 });
 
 it('stores multiple price-list prices and supplier data', function (): void {
-    $admin = User::factory()->create();
-    $admin->syncRoles(['timber_admin']);
+    actingAsTimberAdmin();
 
-    Livewire::actingAs($admin)
-        ->test(CreateTimberProduct::class)
+    testTimberLivewire(CreateTimberProduct::class)
         ->fillForm([
             'code' => 'PF-9001',
             'description' => 'Chips per affumicatura essenza Ciliegio',
@@ -107,13 +93,11 @@ it('stores multiple price-list prices and supplier data', function (): void {
 });
 
 it('edits an existing product', function (): void {
-    $admin = User::factory()->create();
-    $admin->syncRoles(['timber_admin']);
+    actingAsTimberAdmin();
 
-    $product = TimberProduct::factory()->create(['description' => 'Descrizione vecchia']);
+    $product = TimberProduct::factory()->createOne(['description' => 'Descrizione vecchia']);
 
-    Livewire::actingAs($admin)
-        ->test(EditTimberProduct::class, ['record' => $product->getKey()])
+    testTimberLivewire(EditTimberProduct::class, ['record' => $product->id])
         ->fillForm(['description' => 'Descrizione nuova'])
         ->call('save')
         ->assertHasNoFormErrors();

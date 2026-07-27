@@ -2,13 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\TimberBilling\Tests\Feature;
-
 use InvalidArgumentException;
-use Modules\TimberBilling\Tests\TestCase;
-
-uses(TestCase::class);
-
 use Modules\TimberBilling\Actions\BuildTimberQrPayloadAction;
 use Modules\TimberBilling\Actions\GenerateTimberInventoryPdfAction;
 use Modules\TimberBilling\Actions\GenerateTimberLabelPdfAction;
@@ -19,9 +13,12 @@ use Modules\TimberBilling\Models\TimberLot;
 use Modules\TimberBilling\Models\TimberPackagedUnit;
 use Modules\TimberBilling\Models\TimberPurchaseRecord;
 use Modules\TimberBilling\Models\TimberSupplier;
+use Modules\TimberBilling\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('builds a qr payload for a lot', function (): void {
-    $lot = TimberLot::factory()->create(['lot_code' => 'LOT-2026-0099', 'wood_species' => 'abete']);
+    $lot = TimberLot::factory()->createOne(['lot_code' => 'LOT-2026-0099', 'wood_species' => 'abete']);
 
     $payload = app(BuildTimberQrPayloadAction::class)->execute($lot);
 
@@ -31,12 +28,12 @@ it('builds a qr payload for a lot', function (): void {
 });
 
 it('includes supplier and DDT in the incoming lot qr payload', function (): void {
-    $supplier = TimberSupplier::factory()->create(['legal_name' => 'Boschi Veneti Srl']);
-    $record = TimberPurchaseRecord::factory()->create([
+    $supplier = TimberSupplier::factory()->createOne(['legal_name' => 'Boschi Veneti Srl']);
+    $record = TimberPurchaseRecord::factory()->createOne([
         'supplier_id' => $supplier->getKey(),
         'ddt_number' => 'DDT-2026-00101',
     ]);
-    $lot = TimberLot::factory()->create([
+    $lot = TimberLot::factory()->createOne([
         'purchase_record_id' => $record->getKey(),
         'lot_code' => 'LOT-2026-0099',
         'wood_species' => 'castagno',
@@ -51,7 +48,7 @@ it('includes supplier and DDT in the incoming lot qr payload', function (): void
 });
 
 it('builds a qr payload for a derived material', function (): void {
-    $material = TimberDerivedMaterial::factory()->create(['output_code' => 'MAT-2026-0001']);
+    $material = TimberDerivedMaterial::factory()->createOne(['output_code' => 'MAT-2026-0001']);
 
     $payload = app(BuildTimberQrPayloadAction::class)->execute($material);
 
@@ -59,7 +56,7 @@ it('builds a qr payload for a derived material', function (): void {
 });
 
 it('builds a qr payload for a packaged unit', function (): void {
-    $unit = TimberPackagedUnit::factory()->create(['package_code' => 'PKG-2026-0001', 'package_type_code' => 'bancale']);
+    $unit = TimberPackagedUnit::factory()->createOne(['package_code' => 'PKG-2026-0001', 'package_type_code' => 'bancale']);
 
     $payload = app(BuildTimberQrPayloadAction::class)->execute($unit);
 
@@ -68,10 +65,11 @@ it('builds a qr payload for a packaged unit', function (): void {
 });
 
 it('rejects building a qr payload for an unsupported model', function (): void {
-    $supplier = TimberSupplier::factory()->create();
+    $supplier = TimberSupplier::factory()->createOne();
 
-    app(BuildTimberQrPayloadAction::class)->execute($supplier);
-})->throws(InvalidArgumentException::class);
+    expect(fn (): mixed => app(BuildTimberQrPayloadAction::class)->execute($supplier))
+        ->toThrow(InvalidArgumentException::class);
+});
 
 it('renders a qr svg and a data uri', function (): void {
     $action = app(RenderTimberQrSvgAction::class);
@@ -84,7 +82,7 @@ it('renders a qr svg and a data uri', function (): void {
 });
 
 it('generates a label pdf for a lot', function (): void {
-    $lot = TimberLot::factory()->create();
+    $lot = TimberLot::factory()->createOne();
 
     $pdf = app(GenerateTimberLabelPdfAction::class)->execute($lot);
 
@@ -94,7 +92,7 @@ it('generates a label pdf for a lot', function (): void {
 });
 
 it('generates an inventory pdf', function (): void {
-    TimberLot::factory()->create();
+    TimberLot::factory()->createOne();
 
     $pdf = app(GenerateTimberInventoryPdfAction::class)->execute(null, null);
 
@@ -102,7 +100,7 @@ it('generates an inventory pdf', function (): void {
 });
 
 it('generates a traceability pdf', function (): void {
-    $lot = TimberLot::factory()->create(['lot_code' => 'LOT-2026-0055']);
+    $lot = TimberLot::factory()->createOne(['lot_code' => 'LOT-2026-0055']);
 
     $pdf = app(GenerateTimberTraceabilityPdfAction::class)->execute('LOT-2026-0055');
 

@@ -2,39 +2,31 @@
 
 declare(strict_types=1);
 
-namespace Modules\TimberBilling\Tests\Feature;
-
+use Modules\TimberBilling\Filament\Resources\TimberPriceListResource\Pages\CreateTimberPriceList;
+use Modules\TimberBilling\Filament\Resources\TimberPriceListResource\Pages\ListTimberPriceLists;
+use Modules\TimberBilling\Models\TimberPriceList;
+use Modules\TimberBilling\Models\TimberPriceListItem;
+use Modules\TimberBilling\Models\TimberPriceListVersion;
+use Modules\TimberBilling\Models\TimberProduct;
 use Modules\TimberBilling\Tests\TestCase;
 
 uses(TestCase::class);
 
-use Modules\TimberBilling\Filament\Resources\TimberPriceListResource\Pages\CreateTimberPriceList;
-use Modules\TimberBilling\Filament\Resources\TimberPriceListResource\Pages\ListTimberPriceLists;
-use Modules\User\Models\User;
-use Modules\TimberBilling\Models\TimberPriceList;
-use Modules\TimberBilling\Models\TimberProduct;
-use Livewire\Livewire;
-use Spatie\Permission\Models\Role;
-
 beforeEach(function (): void {
-    Role::findOrCreate('timber_admin');
     filament()->setCurrentPanel('timber');
-    $this->admin = User::factory()->create();
-    $this->admin->syncRoles(['timber_admin']);
+    actingAsTimberAdmin();
 });
 
 it('lists the seeded price lists', function (): void {
-    Livewire::actingAs($this->admin)
-        ->test(ListTimberPriceLists::class)
+    testTimberLivewire(ListTimberPriceLists::class)
         ->assertOk()
         ->assertSee('Ben B2B');
 });
 
 it('creates a price list with product prices and snapshots a version', function (): void {
-    $product = TimberProduct::factory()->create(['description' => 'Legna abete']);
+    $product = TimberProduct::factory()->createOne(['description' => 'Legna abete']);
 
-    Livewire::actingAs($this->admin)
-        ->test(CreateTimberPriceList::class)
+    testTimberLivewire(CreateTimberPriceList::class)
         ->fillForm([
             'code' => 'estate_2026',
             'name' => 'Estate 2026',
@@ -46,9 +38,15 @@ it('creates a price list with product prices and snapshots a version', function 
         ->assertHasNoFormErrors();
 
     $list = TimberPriceList::query()->where('code', 'estate_2026')->firstOrFail();
+    $firstItem = $list->items()->first();
+    $firstVersion = $list->versions()->first();
+    expect($firstItem)->not->toBeNull();
+    expect($firstVersion)->not->toBeNull();
+    assert($firstItem instanceof TimberPriceListItem);
+    assert($firstVersion instanceof TimberPriceListVersion);
 
     expect($list->items()->count())->toBe(1)
-        ->and((float) $list->items()->first()->net_price)->toBe(9.5)
+        ->and((float) $firstItem->net_price)->toBe(9.5)
         ->and($list->versions()->count())->toBe(1)
-        ->and($list->versions()->first()->items)->toHaveCount(1);
+        ->and($firstVersion->items)->toHaveCount(1);
 });

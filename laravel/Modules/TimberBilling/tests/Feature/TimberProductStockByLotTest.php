@@ -2,29 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Modules\TimberBilling\Tests\Feature;
-
-use DateTimeImmutable;
-
-use Modules\TimberBilling\Tests\TestCase;
-
-uses(TestCase::class);
-
 use Modules\TimberBilling\Actions\PostTimberDocumentStockAction;
 use Modules\TimberBilling\Actions\RegisterTimberStockMovementAction;
 use Modules\TimberBilling\Models\TimberDocument;
 use Modules\TimberBilling\Models\TimberProduct;
 use Modules\TimberBilling\Queries\GetTimberProductStockByLotQuery;
+use Modules\TimberBilling\Tests\TestCase;
+use Safe\DateTimeImmutable;
+
+uses(TestCase::class);
 
 it('returns available stock per lot for a product in FIFO order', function (): void {
-    $product = TimberProduct::factory()->create();
+    $product = TimberProduct::factory()->createOne();
     $action = app(RegisterTimberStockMovementAction::class);
 
     $action->execute($product, 'load', 100.0, 'quintali', lotCode: 'LOT-A', movementDate: new DateTimeImmutable('2026-07-01'));
     $action->execute($product, 'load', 50.0, 'quintali', lotCode: 'LOT-B', movementDate: new DateTimeImmutable('2026-07-02'));
     $action->execute($product, 'unload', 30.0, 'quintali', lotCode: 'LOT-A', movementDate: new DateTimeImmutable('2026-07-03'));
 
-    $rows = app(GetTimberProductStockByLotQuery::class)->execute($product->getKey());
+    $rows = app(GetTimberProductStockByLotQuery::class)->execute($product->id);
 
     expect($rows)->toHaveCount(2)
         ->and($rows[0])->toBe(['lot_code' => 'LOT-A', 'available' => 70.0]) // FIFO: LOT-A first
@@ -32,7 +28,7 @@ it('returns available stock per lot for a product in FIFO order', function (): v
 });
 
 it('excludes fully-consumed lots and totals the availability', function (): void {
-    $product = TimberProduct::factory()->create();
+    $product = TimberProduct::factory()->createOne();
     $action = app(RegisterTimberStockMovementAction::class);
 
     $action->execute($product, 'load', 40.0, 'quintali', lotCode: 'LOT-X');
@@ -41,28 +37,28 @@ it('excludes fully-consumed lots and totals the availability', function (): void
 
     $query = app(GetTimberProductStockByLotQuery::class);
 
-    expect($query->execute($product->getKey()))->toBe([['lot_code' => 'LOT-Y', 'available' => 25.0]])
-        ->and($query->totalAvailable($product->getKey()))->toBe(25.0);
+    expect($query->execute($product->id))->toBe([['lot_code' => 'LOT-Y', 'available' => 25.0]])
+        ->and($query->totalAvailable($product->id))->toBe(25.0);
 });
 
 it('returns nothing for a product without stock', function (): void {
-    $product = TimberProduct::factory()->create();
+    $product = TimberProduct::factory()->createOne();
 
-    expect(app(GetTimberProductStockByLotQuery::class)->execute($product->getKey()))->toBe([])
-        ->and(app(GetTimberProductStockByLotQuery::class)->totalAvailable($product->getKey()))->toBe(0.0);
+    expect(app(GetTimberProductStockByLotQuery::class)->execute($product->id))->toBe([])
+        ->and(app(GetTimberProductStockByLotQuery::class)->totalAvailable($product->id))->toBe(0.0);
 });
 
 it('a DDT unloads from the indicated lot and the availability drops', function (): void {
-    $product = TimberProduct::factory()->create();
+    $product = TimberProduct::factory()->createOne();
     app(RegisterTimberStockMovementAction::class)->execute($product, 'load', 100.0, 'quintali', lotCode: 'LOT-A');
 
-    $ddt = TimberDocument::factory()->create([
+    $ddt = TimberDocument::factory()->createOne([
         'document_type_code' => 'ddt',
         'status_code' => 'confirmed',
         'number' => 'DDT-2026-0900',
     ]);
     $ddt->lines()->create([
-        'product_id' => $product->getKey(),
+        'product_id' => $product->id,
         'description' => $product->description,
         'quantity' => 30,
         'unit_of_measure' => 'quintali',
@@ -74,6 +70,6 @@ it('a DDT unloads from the indicated lot and the availability drops', function (
 
     app(PostTimberDocumentStockAction::class)->execute($ddt);
 
-    expect(app(GetTimberProductStockByLotQuery::class)->execute($product->getKey()))
+    expect(app(GetTimberProductStockByLotQuery::class)->execute($product->id))
         ->toBe([['lot_code' => 'LOT-A', 'available' => 70.0]]);
 });

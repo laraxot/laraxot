@@ -2,20 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Modules\TimberBilling\Tests\Feature;
-
 use InvalidArgumentException;
-use Modules\TimberBilling\Tests\TestCase;
-
-uses(TestCase::class);
-
 use Modules\TimberBilling\Actions\RegisterTimberProcessingAction;
 use Modules\TimberBilling\Models\TimberDerivedMaterial;
 use Modules\TimberBilling\Models\TimberLot;
 use Modules\TimberBilling\Models\TimberProcessingStep;
+use Modules\TimberBilling\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('registers a processing step from a lot producing usable and waste outputs', function (): void {
-    $lot = TimberLot::factory()->create([
+    $lot = TimberLot::factory()->createOne([
         'status_code' => 'available',
         'quantity_available' => 1000,
         'unit_of_measure' => 'kg',
@@ -47,6 +44,10 @@ it('registers a processing step from a lot producing usable and waste outputs', 
 
     $wasteMaterial = $step->derivedMaterials->firstWhere('is_waste', true);
     $goodMaterial = $step->derivedMaterials->firstWhere('is_waste', false);
+    expect($wasteMaterial)->not->toBeNull();
+    expect($goodMaterial)->not->toBeNull();
+    assert($wasteMaterial instanceof TimberDerivedMaterial);
+    assert($goodMaterial instanceof TimberDerivedMaterial);
 
     expect($wasteMaterial->status_code)->toBe('scarto')
         ->and($wasteMaterial->current_area_code)->toBe('area_scarti')
@@ -58,7 +59,7 @@ it('registers a processing step from a lot producing usable and waste outputs', 
 });
 
 it('registers a processing step using a derived material as input', function (): void {
-    $material = TimberDerivedMaterial::factory()->create([
+    $material = TimberDerivedMaterial::factory()->createOne([
         'quantity' => 500,
         'wood_species' => 'larice',
         'is_waste' => false,
@@ -82,22 +83,24 @@ it('registers a processing step using a derived material as input', function ():
 });
 
 it('rejects processing with no lot or material selected', function (): void {
-    app(RegisterTimberProcessingAction::class)->execute(
-        selectedLotIds: [],
-        selectedDerivedMaterialIds: [],
-        stepTypeCode: 'taglio',
-        performedByUserId: null,
-        recoverableQuantity: null,
-        unitOfMeasure: 'kg',
-        notes: null,
-        outputDefinitions: [['wood_species' => 'abete', 'quantity' => 10]],
-    );
-})->throws(InvalidArgumentException::class);
+    expect(function (): void {
+        app(RegisterTimberProcessingAction::class)->execute(
+            selectedLotIds: [],
+            selectedDerivedMaterialIds: [],
+            stepTypeCode: 'taglio',
+            performedByUserId: null,
+            recoverableQuantity: null,
+            unitOfMeasure: 'kg',
+            notes: null,
+            outputDefinitions: [['wood_species' => 'abete', 'quantity' => 10]],
+        );
+    })->toThrow(InvalidArgumentException::class);
+});
 
 it('rejects an invalid step type', function (): void {
-    $lot = TimberLot::factory()->create();
+    $lot = TimberLot::factory()->createOne();
 
-    app(RegisterTimberProcessingAction::class)->execute(
+    expect(fn (): mixed => app(RegisterTimberProcessingAction::class)->execute(
         selectedLotIds: [$lot->id],
         selectedDerivedMaterialIds: [],
         stepTypeCode: 'not-a-step',
@@ -106,13 +109,13 @@ it('rejects an invalid step type', function (): void {
         unitOfMeasure: 'kg',
         notes: null,
         outputDefinitions: [['wood_species' => 'abete', 'quantity' => 10]],
-    );
-})->throws(InvalidArgumentException::class);
+    ))->toThrow(InvalidArgumentException::class);
+});
 
 it('rejects processing a lot that is not available', function (): void {
-    $lot = TimberLot::factory()->create(['status_code' => 'esaurito']);
+    $lot = TimberLot::factory()->createOne(['status_code' => 'esaurito']);
 
-    app(RegisterTimberProcessingAction::class)->execute(
+    expect(fn (): mixed => app(RegisterTimberProcessingAction::class)->execute(
         selectedLotIds: [$lot->id],
         selectedDerivedMaterialIds: [],
         stepTypeCode: 'taglio',
@@ -121,13 +124,13 @@ it('rejects processing a lot that is not available', function (): void {
         unitOfMeasure: 'kg',
         notes: null,
         outputDefinitions: [['wood_species' => 'abete', 'quantity' => 10]],
-    );
-})->throws(InvalidArgumentException::class);
+    ))->toThrow(InvalidArgumentException::class);
+});
 
 it('rejects processing a derived material without available quantity', function (): void {
-    $material = TimberDerivedMaterial::factory()->create(['quantity' => 0]);
+    $material = TimberDerivedMaterial::factory()->createOne(['quantity' => 0]);
 
-    app(RegisterTimberProcessingAction::class)->execute(
+    expect(fn (): mixed => app(RegisterTimberProcessingAction::class)->execute(
         selectedLotIds: [],
         selectedDerivedMaterialIds: [$material->id],
         stepTypeCode: 'selezione',
@@ -136,13 +139,13 @@ it('rejects processing a derived material without available quantity', function 
         unitOfMeasure: 'kg',
         notes: null,
         outputDefinitions: [['wood_species' => 'abete', 'quantity' => 10]],
-    );
-})->throws(InvalidArgumentException::class);
+    ))->toThrow(InvalidArgumentException::class);
+});
 
 it('rejects an empty list of output definitions', function (): void {
-    $lot = TimberLot::factory()->create();
+    $lot = TimberLot::factory()->createOne();
 
-    app(RegisterTimberProcessingAction::class)->execute(
+    expect(fn (): mixed => app(RegisterTimberProcessingAction::class)->execute(
         selectedLotIds: [$lot->id],
         selectedDerivedMaterialIds: [],
         stepTypeCode: 'taglio',
@@ -151,11 +154,11 @@ it('rejects an empty list of output definitions', function (): void {
         unitOfMeasure: 'kg',
         notes: null,
         outputDefinitions: [],
-    );
-})->throws(InvalidArgumentException::class);
+    ))->toThrow(InvalidArgumentException::class);
+});
 
 it('forces the output species to the input species and builds the traceable code', function (): void {
-    $lot = TimberLot::factory()->create([
+    $lot = TimberLot::factory()->createOne([
         'status_code' => 'available',
         'quantity_available' => 1000,
         'wood_species' => 'castagno',
@@ -175,6 +178,8 @@ it('forces the output species to the input species and builds the traceable code
     );
 
     $material = $step->derivedMaterials->firstWhere('is_waste', false);
+    expect($material)->not->toBeNull();
+    assert($material instanceof TimberDerivedMaterial);
 
     expect($material->wood_species)->toBe('castagno')
         ->and($material->root_lot_id)->toBe($lot->id)
@@ -183,7 +188,7 @@ it('forces the output species to the input species and builds the traceable code
 });
 
 it('extends the traceable code when processing a semi-finished material further', function (): void {
-    $lot = TimberLot::factory()->create(['wood_species' => 'faggio', 'lot_code' => 'LOT-2026-0010', 'status_code' => 'available', 'quantity_available' => 500]);
+    $lot = TimberLot::factory()->createOne(['wood_species' => 'faggio', 'lot_code' => 'LOT-2026-0010', 'status_code' => 'available', 'quantity_available' => 500]);
 
     $cut = app(RegisterTimberProcessingAction::class)->execute(
         selectedLotIds: [$lot->id],
@@ -196,6 +201,8 @@ it('extends the traceable code when processing a semi-finished material further'
         outputDefinitions: [['wood_species' => 'faggio', 'quantity' => 400, 'is_waste' => false]],
     );
     $semi = $cut->derivedMaterials->firstWhere('is_waste', false);
+    expect($semi)->not->toBeNull();
+    assert($semi instanceof TimberDerivedMaterial);
 
     $pack = app(RegisterTimberProcessingAction::class)->execute(
         selectedLotIds: [],
@@ -208,6 +215,8 @@ it('extends the traceable code when processing a semi-finished material further'
         outputDefinitions: [['wood_species' => 'faggio', 'quantity' => 380, 'is_waste' => false]],
     );
     $packed = $pack->derivedMaterials->firstWhere('is_waste', false);
+    expect($packed)->not->toBeNull();
+    assert($packed instanceof TimberDerivedMaterial);
 
     expect($packed->traceable_code)->toBe('LOT-2026-0010·TAG-'.now()->format('md').'·CNF-'.now()->format('md'))
         ->and($packed->root_lot_id)->toBe($lot->id)
@@ -215,9 +224,9 @@ it('extends the traceable code when processing a semi-finished material further'
 });
 
 it('rejects an output definition with a non positive quantity', function (): void {
-    $lot = TimberLot::factory()->create();
+    $lot = TimberLot::factory()->createOne();
 
-    app(RegisterTimberProcessingAction::class)->execute(
+    expect(fn (): mixed => app(RegisterTimberProcessingAction::class)->execute(
         selectedLotIds: [$lot->id],
         selectedDerivedMaterialIds: [],
         stepTypeCode: 'taglio',
@@ -226,13 +235,13 @@ it('rejects an output definition with a non positive quantity', function (): voi
         unitOfMeasure: 'kg',
         notes: null,
         outputDefinitions: [['wood_species' => 'abete', 'quantity' => 0]],
-    );
-})->throws(InvalidArgumentException::class);
+    ))->toThrow(InvalidArgumentException::class);
+});
 
 it('rejects a negative recoverable quantity', function (): void {
-    $lot = TimberLot::factory()->create();
+    $lot = TimberLot::factory()->createOne();
 
-    app(RegisterTimberProcessingAction::class)->execute(
+    expect(fn (): mixed => app(RegisterTimberProcessingAction::class)->execute(
         selectedLotIds: [$lot->id],
         selectedDerivedMaterialIds: [],
         stepTypeCode: 'taglio',
@@ -241,31 +250,35 @@ it('rejects a negative recoverable quantity', function (): void {
         unitOfMeasure: 'kg',
         notes: null,
         outputDefinitions: [['wood_species' => 'abete', 'quantity' => 10]],
-    );
-})->throws(InvalidArgumentException::class);
+    ))->toThrow(InvalidArgumentException::class);
+});
 
 it('rejects unknown lot ids', function (): void {
-    app(RegisterTimberProcessingAction::class)->execute(
-        selectedLotIds: [999999],
-        selectedDerivedMaterialIds: [],
-        stepTypeCode: 'taglio',
-        performedByUserId: null,
-        recoverableQuantity: null,
-        unitOfMeasure: 'kg',
-        notes: null,
-        outputDefinitions: [['wood_species' => 'abete', 'quantity' => 10]],
-    );
-})->throws(InvalidArgumentException::class);
+    expect(function (): void {
+        app(RegisterTimberProcessingAction::class)->execute(
+            selectedLotIds: [999999],
+            selectedDerivedMaterialIds: [],
+            stepTypeCode: 'taglio',
+            performedByUserId: null,
+            recoverableQuantity: null,
+            unitOfMeasure: 'kg',
+            notes: null,
+            outputDefinitions: [['wood_species' => 'abete', 'quantity' => 10]],
+        );
+    })->toThrow(InvalidArgumentException::class);
+});
 
 it('rejects unknown derived material ids', function (): void {
-    app(RegisterTimberProcessingAction::class)->execute(
-        selectedLotIds: [],
-        selectedDerivedMaterialIds: [999999],
-        stepTypeCode: 'taglio',
-        performedByUserId: null,
-        recoverableQuantity: null,
-        unitOfMeasure: 'kg',
-        notes: null,
-        outputDefinitions: [['wood_species' => 'abete', 'quantity' => 10]],
-    );
-})->throws(InvalidArgumentException::class);
+    expect(function (): void {
+        app(RegisterTimberProcessingAction::class)->execute(
+            selectedLotIds: [],
+            selectedDerivedMaterialIds: [999999],
+            stepTypeCode: 'taglio',
+            performedByUserId: null,
+            recoverableQuantity: null,
+            unitOfMeasure: 'kg',
+            notes: null,
+            outputDefinitions: [['wood_species' => 'abete', 'quantity' => 10]],
+        );
+    })->toThrow(InvalidArgumentException::class);
+});
