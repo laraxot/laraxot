@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\WorkOrder\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -16,6 +17,7 @@ use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
 use Modules\Intervention\Models\Intervention;
 use Modules\PublicProcurement\Models\PublicProcurementContract;
+use Modules\WorkOrder\Database\Factories\WorkOrderFactory;
 
 /**
  * @property int $id
@@ -39,6 +41,9 @@ use Modules\PublicProcurement\Models\PublicProcurementContract;
  */
 final class WorkOrder extends BaseModel
 {
+    /** @use HasFactory<WorkOrderFactory> */
+    use HasFactory;
+
     use SoftDeletes;
 
     protected $table = 'work_orders';

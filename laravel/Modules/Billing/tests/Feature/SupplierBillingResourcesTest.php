@@ -2,26 +2,29 @@
 
 declare(strict_types=1);
 
+use Modules\Billing\Tests\TestCase;
+
 uses(TestCase::class);
 
-use Modules\Billing\Domain\DTO\ReconciliationDiscrepancy;
+use Modules\Billing\Datas\ReconciliationDiscrepancy;
 use Modules\Billing\Filament\Resources\DeliveryNoteResource;
 use Modules\Billing\Filament\Resources\SupplierInvoiceResource;
 use Modules\Billing\Filament\Resources\SupplierResource;
 use Modules\Billing\Models\DeliveryNote;
 use Modules\Billing\Models\Supplier;
 use Modules\Billing\Models\SupplierInvoice;
-use Modules\Billing\Tests\TestCase;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Database\Seeders\PermissionsSeeder;
 use Modules\User\Models\User;
 
 use function Pest\Laravel\actingAs;
+use function Pest\Laravel\get;
 
 function supplierBillingAdmin(): User
 {
     app(PermissionsSeeder::class)->run();
 
-    $user = User::factory()->create();
+    $user = UserFactory::new()->createOne();
     $user->syncRoles(['admin']);
 
     return $user;
@@ -29,28 +32,23 @@ function supplierBillingAdmin(): User
 
 function makeSupplier(): Supplier
 {
-    /** @var Supplier $supplier */
-    $supplier = Supplier::query()->create([
+    return Supplier::query()->create([
         'legal_name' => 'Idraulica Rossi S.r.l.',
         'vat_number' => '01234567890',
         'is_active' => true,
     ]);
-
-    return $supplier;
 }
 
 it('loads suppliers, delivery notes and supplier invoices in the admin panel', function (): void {
     $user = supplierBillingAdmin();
     $supplier = makeSupplier();
 
-    /** @var DeliveryNote $deliveryNote */
     $deliveryNote = DeliveryNote::query()->create([
         'supplier_id' => $supplier->id,
         'number' => 'DDT-001',
         'received_on' => now()->toDateString(),
     ]);
 
-    /** @var SupplierInvoice $invoice */
     $invoice = SupplierInvoice::query()->create([
         'supplier_id' => $supplier->id,
         'number' => 'FT-001',
@@ -61,18 +59,18 @@ it('loads suppliers, delivery notes and supplier invoices in the admin panel', f
 
     filament()->setCurrentPanel('admin');
 
-    actingAs($user)->get(SupplierResource::getUrl('index'))->assertStatus(200);
-    actingAs($user)->get(SupplierResource::getUrl('edit', ['record' => $supplier->id]))->assertStatus(200);
-    actingAs($user)->get(DeliveryNoteResource::getUrl('index'))->assertStatus(200);
-    actingAs($user)->get(DeliveryNoteResource::getUrl('edit', ['record' => $deliveryNote->id]))->assertStatus(200);
-    actingAs($user)->get(SupplierInvoiceResource::getUrl('index'))->assertStatus(200);
-    actingAs($user)->get(SupplierInvoiceResource::getUrl('edit', ['record' => $invoice->id]))->assertStatus(200);
+    actingAs($user);
+    get(SupplierResource::getUrl('index'))->assertStatus(200);
+    get(SupplierResource::getUrl('edit', ['record' => $supplier->id]))->assertStatus(200);
+    get(DeliveryNoteResource::getUrl('index'))->assertStatus(200);
+    get(DeliveryNoteResource::getUrl('edit', ['record' => $deliveryNote->id]))->assertStatus(200);
+    get(SupplierInvoiceResource::getUrl('index'))->assertStatus(200);
+    get(SupplierInvoiceResource::getUrl('edit', ['record' => $invoice->id]))->assertStatus(200);
 });
 
 it('marks an invoice as disputed and lists what the supplier is overcharging', function (): void {
     $supplier = makeSupplier();
 
-    /** @var DeliveryNote $deliveryNote */
     $deliveryNote = DeliveryNote::query()->create([
         'supplier_id' => $supplier->id,
         'number' => 'DDT-002',
@@ -86,7 +84,6 @@ it('marks an invoice as disputed and lists what the supplier is overcharging', f
         'unit_price' => 2.00,
     ]);
 
-    /** @var SupplierInvoice $invoice */
     $invoice = SupplierInvoice::query()->create([
         'supplier_id' => $supplier->id,
         'number' => 'FT-002',
@@ -117,7 +114,6 @@ it('marks an invoice as disputed and lists what the supplier is overcharging', f
 it('reconciles an invoice that matches the delivery notes', function (): void {
     $supplier = makeSupplier();
 
-    /** @var DeliveryNote $deliveryNote */
     $deliveryNote = DeliveryNote::query()->create([
         'supplier_id' => $supplier->id,
         'number' => 'DDT-003',
@@ -130,7 +126,6 @@ it('reconciles an invoice that matches the delivery notes', function (): void {
         'unit_price' => 12.00,
     ]);
 
-    /** @var SupplierInvoice $invoice */
     $invoice = SupplierInvoice::query()->create([
         'supplier_id' => $supplier->id,
         'number' => 'FT-003',

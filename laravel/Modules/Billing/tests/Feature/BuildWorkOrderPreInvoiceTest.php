@@ -2,11 +2,13 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Billing\Tests\TestCase::class);
+use Modules\Billing\Tests\TestCase;
+
+uses(TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Modules\Billing\Actions\BuildWorkOrderPreInvoiceAction;
-use Modules\Billing\Domain\DTO\PreInvoiceLine;
+use Modules\Billing\Datas\PreInvoiceLine;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionMaterialLine;
 use Modules\Quotation\Models\Quotation;
