@@ -119,7 +119,6 @@ database/Factories_old/
 database/Factories_
 database_old/
 lang/lang/
-Helpers/
 docs/assets/
 # --- Project-specific (Xot) ---
 *.fila2
