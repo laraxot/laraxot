@@ -33,7 +33,7 @@ Modules\User\Models\User extends BaseModel
 // Team management
 Modules\User\Models\Team
 
-// Tenant isolation  
+// Tenant isolation
 Modules\User\Models\Tenant
 ```
 
@@ -60,7 +60,7 @@ Modules\User\Models\Tenant
 ## Architectural Rules — Violations Fixed
 
 ### Module Directory Structure Standard
-In compliance with the [Global Rule](../../../docs/wiki/rules/module-root-php-folders-forbidden.md), all root-level capitalized directories (`Actions/`, `Application/`, `Database/`, `Events/`, `Listeners/`) have been moved into `app/` or renamed to lowercase `database/`. 
+In compliance with the [Global Rule](../../../docs/wiki/rules/module-root-php-folders-forbidden.md), all root-level capitalized directories (`Actions/`, `Application/`, `Database/`, `Events/`, `Listeners/`) have been moved into `app/` or renamed to lowercase `database/`.
 - **app/**: Home for all PHP functional code (mapped via PSR-4).
 - **database/**: Strictly lowercase for migrations/factories/seeders.
 
@@ -90,7 +90,7 @@ Found and removed from `RegisterWidget`. Laravel logs unhandled exceptions autom
 See: [no-log-in-production.md](./no-log-in-production.md)
 
 ### Git merge conflicts in migrations
-46 migration files in `database/migrations/` had unresolved conflict markers (`<<<<<<< HEAD`, `=======`, `>>>>>>>`).
+46 migration files in `database/migrations/` had unresolved conflict markers .
 These break PHP syntax and halt PHPStan entirely. All were resolved.
 Rule: never commit files with conflict markers. Fix immediately when found.
 

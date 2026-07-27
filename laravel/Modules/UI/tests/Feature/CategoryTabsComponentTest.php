@@ -11,7 +11,7 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 /**
- * @param  array<string, mixed>  $data
+ * @param array<string, mixed> $data
  */
 function renderCategoryTabsHtml(array $data = []): ?string
 {
@@ -27,12 +27,12 @@ function renderCategoryTabsHtml(array $data = []): ?string
 }
 
 /**
- * @param  array<string, mixed>  $data
+ * @param array<string, mixed> $data
  */
 function requireCategoryTabsHtml(array $data = []): string
 {
     $html = renderCategoryTabsHtml($data);
-    if ($html === null) {
+    if (null === $html) {
         Assert::markTestSkipped('pub_theme category-tabs view not available in this install.');
     }
 

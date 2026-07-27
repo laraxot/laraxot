@@ -47,12 +47,17 @@ test('Welcome page has instanceModel property', function () {
     Assert::assertSame('instanceModel', $property->getName());
 });
 
-test('Welcome page has mount method', function () {});
+test('Welcome page has mount method', function () {
+});
 
-test('Welcome page has getViewData method', function () {});
+test('Welcome page has getViewData method', function () {
+});
 
-test('Welcome page has initView method', function () {});
+test('Welcome page has initView method', function () {
+});
 
-test('Welcome page has url method', function () {});
+test('Welcome page has url method', function () {
+});
 
-test('Welcome page has setModel method', function () {});
+test('Welcome page has setModel method', function () {
+});

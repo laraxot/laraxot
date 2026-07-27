@@ -1,0 +1,99 @@
+# BMAD Method Workflow Status
+# Generated: 2026-07-27T17:09:00+02:00
+# Project: base_workorder_fila5
+# Note: dual track — planning in bmad-output/; implementation stories in docs/stories/
+
+project_name: "base_workorder_fila5"
+project_type: "web-app"
+project_level: 2
+track: "bmad-method"
+communication_language: "Italian"
+output_language: "Italian"
+last_updated: "2026-07-27T17:40:00+02:00"
+
+# Status values:
+#   required | optional | recommended | conditional
+#   "{file-path}" = completed
+#   skipped
+
+workflow_status:
+  # Phase 1: Analysis
+  - name: document-project
+    phase: 1
+    status: "bmad-output/project-documentation.md"
+    description: "Brownfield deep scan 2026-07-27 — ground truth moduli/stack/patterns"
+
+  - name: product-brief
+    phase: 1
+    status: "skipped"
+    description: "Product brief — saltato; contesto in gestionale-commesse docs + project-context"
+
+  - name: brainstorm-project
+    phase: 1
+    status: "skipped"
+    description: "Brainstorm — non richiesto"
+
+  - name: research
+    phase: 1
+    status: "skipped"
+    description: "Research — SRC gestionale_commesse già analizzato"
+
+  # Phase 2: Planning
+  - name: prd
+    phase: 2
+    status: "bmad-output/prd.md"
+    description: "Product Requirements Document"
+
+  - name: tech-spec
+    phase: 2
+    status: "optional"
+    description: "Technical Specification (opzionale a Level 2 / BMad Method)"
+
+  - name: create-ux-design
+    phase: 2
+    status: "optional"
+    description: "UX/UI design"
+
+  # Phase 3: Solutioning
+  - name: architecture
+    phase: 3
+    status: "bmad-output/architecture.md"
+    description: "System architecture"
+
+  - name: epics-and-stories
+    phase: 3
+    status: "bmad-output/epics.md"
+    description: "Epics + planning stories in bmad-output/stories/"
+
+  - name: solutioning-gate-check
+    phase: 3
+    status: "optional"
+    description: "Validate architecture vs PRD"
+
+  # Phase 4: Implementation (tracked in sprint-status.yaml)
+  - name: sprint-planning
+    phase: 4
+    status: "docs/sprint-status.yaml"
+    description: "Sprint queue — implementation stories in docs/stories/"
+
+  - name: handoff
+    phase: 4
+    status: "in-progress"
+    description: "Implementation in corso — vedi next_queue in sprint-status"
+
+paths:
+  planning_output: "bmad-output"
+  planning_stories: "bmad-output/stories"
+  implementation_stories: "docs/stories"
+  sprint_status: "docs/sprint-status.yaml"
+  project_config_legacy: "bmad/config.yaml"
+  project_config_plugin: "bmad-output/config.yaml"
+  project_context: "bmad-output/project-context.md"
+  project_documentation: "bmad-output/project-documentation.md"
+  decision_log: "bmad-output/decision-log.md"
+
+github:
+  epic_issue: "https://github.com/laraxot/base_workorder_fila5/issues/7"
+  epic_discussion: "https://github.com/laraxot/base_workorder_fila5/discussions/8"
+  agents_on_demand_issue: "https://github.com/laraxot/base_workorder_fila5/issues/16"
+  agents_on_demand_discussion: "https://github.com/laraxot/base_workorder_fila5/discussions/17"

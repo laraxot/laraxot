@@ -9,4 +9,6 @@ use Modules\Geo\Tests\Fixtures\Traits\HasAddressTestModel;
 /**
  * Alias fixture per HasAddressTestModel (legacy path).
  */
-class HasAddressTest extends HasAddressTestModel {}
+class HasAddressTest extends HasAddressTestModel
+{
+}

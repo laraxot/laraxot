@@ -38,10 +38,14 @@ test('Home page has items property', function () {
     Assert::assertIsArray($property->getValue($page));
 });
 
-test('Home page has mount method', function () {});
+test('Home page has mount method', function () {
+});
 
-test('Home page has getViewData method', function () {});
+test('Home page has getViewData method', function () {
+});
 
-test('Home page has initView method', function () {});
+test('Home page has initView method', function () {
+});
 
-test('Home page has url method', function () {});
+test('Home page has url method', function () {
+});

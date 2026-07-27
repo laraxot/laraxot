@@ -130,7 +130,7 @@ return [
         'SendRecordsNotificationBulkAction' => ['label' => 'SendRecordsNotificationBulkAction', 'icon' => 'SendRecordsNotificationBulkAction', 'tooltip' => 'SendRecordsNotificationBulkAction'],
         'changePassword' => ['label' => 'changePassword', 'icon' => 'changePassword', 'tooltip' => 'changePassword'],
         'test' => ['label' => 'test', 'icon' => 'test', 'tooltip' => 'test'],
-        'register' => ['tooltip' => 'register', 'icon' => 'register'],
+        'register' => ['tooltip' => 'register', 'icon' => 'register', 'label' => 'register'],
     ],
     'sections' => [
         'address' => ['label' => 'address', 'heading' => 'address'],

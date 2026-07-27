@@ -64,5 +64,6 @@ describe('PageContent Model', function (): void {
         $model = new PageContent();
     });
 
-    test('page content model has sluggable method', function (): void {});
+    test('page content model has sluggable method', function (): void {
+    });
 });

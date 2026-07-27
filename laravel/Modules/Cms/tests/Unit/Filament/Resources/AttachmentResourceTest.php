@@ -46,5 +46,6 @@ describe('AttachmentResource', function (): void {
         Assert::assertTrue(property_exists(AttachmentResource::class, 'navigationLabel'));
     });
 
-    test('attachment resource has plural label', function (): void {});
+    test('attachment resource has plural label', function (): void {
+    });
 });

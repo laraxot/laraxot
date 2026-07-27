@@ -22,12 +22,12 @@ class GetGeoMapDatasetStatsAction
         foreach ($features as $feature) {
             $geometryType = $feature['geometry']['type'];
 
-            if ($geometryType === 'Point') {
-                $points++;
+            if ('Point' === $geometryType) {
+                ++$points;
             }
 
-            if ($geometryType === 'Polygon' || $geometryType === 'MultiPolygon') {
-                $zones++;
+            if ('Polygon' === $geometryType || 'MultiPolygon' === $geometryType) {
+                ++$zones;
             }
         }
 

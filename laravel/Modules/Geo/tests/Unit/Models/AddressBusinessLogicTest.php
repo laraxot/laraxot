@@ -12,7 +12,8 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 describe('Address Business Logic', function () {
-    test('address extends base model', function () {});
+    test('address extends base model', function () {
+    });
 
     test('address has expected fillable fields for postal address', function () {
         $address = new Address();

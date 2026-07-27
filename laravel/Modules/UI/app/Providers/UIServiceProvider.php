@@ -20,21 +20,12 @@ use Modules\Xot\Providers\XotBaseServiceProvider;
  */
 class UIServiceProvider extends XotBaseServiceProvider
 {
-    /**
-     * Nome del modulo.
-     */
     public string $name = 'UI';
 
-    /**
-     * Directory del modulo.
-     */
     protected string $module_dir = __DIR__;
 
     protected string $module_ns = __NAMESPACE__;
 
-    /**
-     * Restituisce il percorso delle viste dei componenti UI.
-     */
     public function getComponentViewPath(): string
     {
         return app(GetModulePathByGeneratorAction::class)->execute($this->name, 'component-view');

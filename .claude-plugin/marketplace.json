@@ -1,0 +1,29 @@
+{
+  "name": "bmad-method-harness",
+  "owner": {
+    "name": "AJ Geddes",
+    "url": "https://github.com/aj-geddes"
+  },
+  "description": "Project-local BMAD Planning & Orchestrator (aj-geddes harness for BMAD Method v6.x)",
+  "version": "0.5.0",
+  "metadata": {
+    "installedCommit": "27dca0e28960f4bb2db474837a14122ae83ab160",
+    "sourceRepo": "https://github.com/aj-geddes/claude-code-bmad-skills"
+  },
+  "plugins": [
+    {
+      "name": "bmad-planning-orchestrator",
+      "source": "./bmad/upstream/claude-code-bmad-skills/bmad-planning-orchestrator",
+      "description": "BMAD planning lifecycle — stops at ready-for-dev stories; does not write application code.",
+      "category": "planning",
+      "keywords": [
+        "bmad",
+        "bmad-method",
+        "planning",
+        "orchestration",
+        "prd",
+        "architecture"
+      ]
+    }
+  ]
+}

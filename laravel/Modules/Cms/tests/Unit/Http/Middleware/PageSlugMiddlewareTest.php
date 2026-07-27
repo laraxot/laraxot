@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 uses(TestCase::class);
 /**
- * @param  array<int, mixed>  $args
+ * @param array<int, mixed> $args
  */
 function invokeProtected(object $object, string $method, array $args = []): mixed
 {

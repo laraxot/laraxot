@@ -3,15 +3,17 @@ title: "BMAD stories — indice gestionale_commesse"
 type: index
 tags: [bmad, stories, index, gestionale-commesse]
 created: 2026-07-24
-updated: 2026-07-24
+updated: 2026-07-27
 status: active
-qmd: "index bmad stories gestionale workorder fila5 sprint"
+qmd: "index bmad stories gestionale workorder fila5 sprint agents on-demand"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
   - "https://github.com/laraxot/base_workorder_fila5/issues/14"
+  - "https://github.com/laraxot/base_workorder_fila5/issues/16"
 discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
   - "https://github.com/laraxot/base_workorder_fila5/discussions/15"
+  - "https://github.com/laraxot/base_workorder_fila5/discussions/17"
 related:
   - "./0.session-handoff-next-steps.story.md"
   - "../sprint-status.yaml"
@@ -84,6 +86,7 @@ Canon fase: [replica-singular-phase.md](../gestionale-commesse-comparison/replic
 | [**2.5 migrate-gestionale-tests SSoT**](./2.5.migrate-gestionale-tests.story.md) | in-progress | Catalog **11** / HR **3+5skip**; **prossimi passi** |
 | [2.5 registro dettagliato](./2.5.gestionale-tests-migration.story.md) | in-progress | Alias + coda residuale |
 | [**2.6 technical-debt playbooks**](./2.6.technical-debt-playbooks.story.md) | review | HOW `debt-*`; chiusura review #14 |
+| [**2.7 agents on-demand compact**](./2.7.agents-skills-rules-on-demand-compact.story.md) | ready-for-dev | stub wave done; #16 / #17 |
 
 ## Religion (non negoziabile)
 

@@ -2,6 +2,8 @@
 
 | Slug | Ambito | Stato |
 |------|--------|-------|
+| [bmad-deep-document-project](bmad-deep-document-project.md) | BMAD deep scan codice → project-documentation + religion | completato 2026-07-27 |
+| [second-brain-max-power-always](second-brain-max-power-always.md) | Rule alwaysApply + bootstrap/skill — QMD obbligatorio ogni task | attivo 2026-07-27 |
 | [audit-models-migrations-seeders-factories](audit-models-migrations-seeders-factories.md) | Audit modelli↔migration↔seeder↔factory tutti i moduli + fix swarm | completato (14 agenti, esito in fondo al file) |
 | [phpstan-modules-zero](phpstan-modules-zero.md) | PHPStan level-max su tutti Modules + coordinamento swarm | completato (0 errori codice, 2026-07-27) |
 | [phpstan-modules-zero-swarm](phpstan-modules-zero-swarm.md) | Handoff swarm PHPStan — milestone e pattern | completato |

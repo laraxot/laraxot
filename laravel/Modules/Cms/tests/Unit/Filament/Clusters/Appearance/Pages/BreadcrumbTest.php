@@ -30,8 +30,11 @@ test('Breadcrumb page has data property', function () {
     Assert::assertIsArray($property->getValue($page));
 });
 
-test('Breadcrumb page has mount method', function () {});
+test('Breadcrumb page has mount method', function () {
+});
 
-test('Breadcrumb page has schema method', function () {});
+test('Breadcrumb page has schema method', function () {
+});
 
-test('Breadcrumb page has updateData method', function () {});
+test('Breadcrumb page has updateData method', function () {
+});

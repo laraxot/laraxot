@@ -15,7 +15,8 @@ describe('VerifyComponent', function (): void {
         Assert::assertInstanceOf(VoltComponent::class, $component);
     });
 
-    test('verify component has resend method', function (): void {});
+    test('verify component has resend method', function (): void {
+    });
 
     test('resend method returns void', function (): void {
         $reflection = new ReflectionClass(VerifyComponent::class);

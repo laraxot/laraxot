@@ -33,7 +33,8 @@ describe('LoginComponent', function (): void {
         Assert::assertTrue((new ReflectionClass($component))->hasProperty('remember'));
     });
 
-    test('login component has authenticate method', function (): void {});
+    test('login component has authenticate method', function (): void {
+    });
 
     test('login component uses correct namespace', function (): void {
         $reflector = new ReflectionClass(LoginComponent::class);

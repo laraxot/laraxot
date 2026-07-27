@@ -14,8 +14,7 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 test('HasAddresses trait can be used', function (): void {
-    $withAddresses = new class() extends BaseModel
-    {
+    $withAddresses = new class extends BaseModel {
         use HasAddresses;
 
         /** @var list<string> */
@@ -25,8 +24,7 @@ test('HasAddresses trait can be used', function (): void {
 
         protected $table = 'test_models';
     };
-    $withPlace = new class() extends BaseModel
-    {
+    $withPlace = new class extends BaseModel {
         use HasPlaceTrait;
 
         /** @var list<string> */

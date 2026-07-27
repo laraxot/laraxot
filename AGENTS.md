@@ -5,18 +5,14 @@ Regole, skill e memorie vivono solo in `docs/wiki/`. Caricamento on-demand via Q
 ## Read First
 
 1. [Bootstrap compatto](docs/wiki/concepts/agent-bootstrap-compact.md)
-2. [Trigger Map](docs/wiki/rules/00-TRIGGER_MAP.md) — una riga per task
-3. `bashscripts/docs/second-brain-healthcheck.sh "<topic>"`
-4. `bashscripts/docs/llm-wiki-qmd.sh search "<topic>" -c techplanner-wiki -n 5 --files`
-5. Prompt harness: [bashscripts/tools/prompts/llm-wiki.txt](bashscripts/tools/prompts/llm-wiki.txt)
-
-## Laravel app
-
-- [laravel/AGENTS.md](laravel/AGENTS.md) — entrypoint codice PHP/Filament
-- PHPStan L10, Pest, XotBase — dettagli in wiki, non qui
+2. [Second brain max](docs/wiki/skills/cursor-second-brain-max-workflow.md) — rule `.cursor/rules/second-brain-max-power.mdc`
+3. [Trigger Map](docs/wiki/rules/00-TRIGGER_MAP.md) — una riga per task
+4. `bashscripts/docs/second-brain-healthcheck.sh "<topic>"`
+5. `bashscripts/docs/llm-wiki-qmd.sh search "<topic>" -n 5 --files`
 
 ## Critical (always)
 
+- **Second brain prima di codice** — healthcheck + QMD + wiki owner + write-back
 - Mai Controllers FO — Folio + Volt + Laraxot
 - Mai estendere Filament diretto — XotBase / LangBase
 - Mai `RefreshDatabase` — `.env.testing` SQLite

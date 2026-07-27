@@ -1,10 +1,7 @@
 # Code quality — modulo Xot
 
-<<<<<<< HEAD
 > **Nota 2026-07-24:** eventuali path `app/Actions/AI/Ollama/*` in report storici non sono più validi — Ollama vive in `Modules/AI`. Canon: [no-domain-actions-in-xot](wiki/concepts/no-domain-actions-in-xot.md).
 
-=======
->>>>>>> 6fcd70c2 (.)
 Report locale (2026-07-17). Metodo: `phpstan analyse` livello max, `phpmd` (ruleset codesize+unusedcode), grep mirati (TODO/FIXME/@deprecated, dd()/dump(), facade in app/Actions, extends Filament diretto), rapporto file test/app.
 
 ## Numeri

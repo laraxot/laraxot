@@ -46,6 +46,13 @@ return new class extends XotBaseMigration
             if ($this->hasColumn('model_id')) {
                 $table->string('model_id', 36)->nullable()->change();
             }
+            // 'user_id' NOT NULL senza default blocca ogni insert (nessun codice/trait la
+            // valorizza: l'audit "chi ha caricato" e' gia' gestito da created_by/updated_by
+            // via il trait Updater). Resa nullable, non rimossa, per non perdere dati
+            // eventualmente gia' presenti. Vedi module_quaeris_fila5#23.
+            if ($this->hasColumn('user_id')) {
+                $table->integer('user_id')->nullable()->change();
+            }
             $this->updateTimestamps($table, true);
         });
     }

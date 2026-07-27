@@ -13,7 +13,8 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 /**
- * @param  array<string, mixed>  $schema
+ * @param array<string, mixed> $schema
+ *
  * @return array<string, mixed>
  */
 function pageSchemaMainEntity(array $schema): array

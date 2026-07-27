@@ -6,15 +6,24 @@ tags:
   - qmd
   - techplanner
 created: "2026-06-06"
-updated: "2026-07-23"
-qmd: "tp-wiki-root workorder AiAssistant visibility"
+updated: "2026-07-27"
+qmd: "tp-wiki-root workorder AiAssistant visibility second-brain-max-power"
 issues:
+  - "https://github.com/laraxot/base_workorder_fila5/issues/14"
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
 discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
 ---
 
 # TechPlanner LLM Wiki Log
+
+## 2026-07-27
+
+- **BMAD document-project deep scan:** `bmad-output/project-documentation.md` + sync `project-context.md` (dominio già presente). Religione: [bmad-deep-code-documentation-religion.md](./concepts/bmad-deep-code-documentation-religion.md). Decision 005.
+- **BMAD Method v6** reinstall da [`aj-geddes/claude-code-bmad-skills`](https://github.com/aj-geddes/claude-code-bmad-skills): commit `27dca0e`, plugin `bmad-planning-orchestrator` 0.5.0, 20 skill symlink; `--force` gestisce upstream non-git.
+- **Second brain max power alwaysApply:** rule `.cursor/rules/second-brain-max-power.mdc`; bootstrap + skill + memory aggiornati.
+- **`.agents/` compact on-demand:** 1117 skill/rule stubbed → `archive/`; HOT manifest + audit `audit-agents-on-demand-stubs.sh`.
+- Hygiene: `tests/AuditCoverage/` vietata — `ensure-audit-coverage-gitignore.sh`.
 
 ## 2026-07-23
 

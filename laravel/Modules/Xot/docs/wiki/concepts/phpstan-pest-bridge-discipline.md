@@ -6,6 +6,8 @@ tags: [xot, phpstan, pest, testing, bridge]
 created: 2026-06-10
 updated: 2026-07-24
 qmd: "Xot phpstan pest bridge discipline public assertions tests stay pest helper"
+updated: 2026-07-22
+qmd: "Xot phpstan pest bridge discipline Assert method.internalClass Mockery allows"
 issues:
   - "https://github.com/laraxot/module_xot_fila5/issues/28"
 discussions:
@@ -44,6 +46,7 @@ Xot e' il posto giusto per pattern condivisi di test/static analysis, ma il brid
 - **Fixcity:** helper `ticket()`, `authUser()`, … — [phpstan-pest-testcase-helpers](../../../Fixcity/docs/wiki/concepts/phpstan-pest-testcase-helpers.md); `PestHelper.php` tipizzato
 - **Notify:** `notificationManager()` + trait doubles — [phpstan-pest-test-doubles](../../../Notify/docs/wiki/concepts/phpstan-pest-test-doubles.md)
 - **Xot:** test File — no `@var TestCase $this` se la closure non usa `$this`; no `assertIsString(tempnam())`
+- **Xot Blade:** `RegisterBladeComponentsActionTest` — `Assert::assertSame` sul count collection; Mockery `allows(['execute' => …])` + `@var Action&MockInterface`; no `expect()->toBe*` se PHPStan emette `method.internalClass` (vedi [PHPSTAN-BEST-PRACTICES](../PHPSTAN-BEST-PRACTICES.md) §7–8)
 - **Tenant:** non ridefinire `mockService()`; non re-tipizzare `$model`/`$baseModel` se il parent ha `mixed`
 - **UI:** `createStub` + `willReturn(null)` per action mock; no `andReturnNull()` Mockery
 

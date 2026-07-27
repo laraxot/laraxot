@@ -30,7 +30,7 @@ function supportedTestLocales(): array
     /** @var list<string> $locales */
     $locales = array_values(array_map(strval(...), array_keys($supported)));
 
-    return $locales !== [] ? $locales : ['de', 'en', 'it'];
+    return [] !== $locales ? $locales : ['de', 'en', 'it'];
 }
 
 describe('Locale Routing', function (): void {
@@ -60,7 +60,7 @@ describe('Locale Routing', function (): void {
                 continue;
             }
 
-            if ($status !== 200) {
+            if (200 !== $status) {
                 cmsSkipTest("Route /{$locale} returned {$status} (redirect). Cannot check HTML lang attribute.");
 
                 continue;
@@ -81,7 +81,7 @@ describe('Locale Routing', function (): void {
             return;
         }
 
-        if ($status !== 200) {
+        if (200 !== $status) {
             cmsSkipTest("Route /de returned {$status} (redirect). Cannot verify locale.");
 
             return;
@@ -103,7 +103,7 @@ describe('Locale Routing', function (): void {
             return;
         }
 
-        if ($status !== 200) {
+        if (200 !== $status) {
             cmsSkipTest("Route /it returned {$status} (redirect).");
 
             return;
@@ -125,7 +125,7 @@ describe('Locale Routing', function (): void {
             return;
         }
 
-        if ($status !== 200) {
+        if (200 !== $status) {
             cmsSkipTest("Route /en returned {$status} (redirect).");
 
             return;

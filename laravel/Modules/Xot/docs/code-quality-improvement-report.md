@@ -4,20 +4,31 @@ type: report
 tags: [code-quality, phpstan, pest, maintainability]
 module: "Xot"
 created: 2026-07-17
-updated: 2026-07-17
-qmd: "code quality baseline PHPStan Pest strict types Laraxot Xot"
+updated: 2026-07-27
+qmd: "code quality baseline PHPStan Pest strict types Laraxot Xot git remote"
 story: STORY-001
-issues:
-  - "https://github.com/laraxot/base_techplanner_fila5/issues/46"
-discussions:
-  - "https://github.com/laraxot/base_techplanner_fila5/discussions/47"
+# GRAVE: issue/discussion del modulo — mai base_techplanner / base_workorder / mono.
+# Resolve: cd laravel/Modules/Xot && git remote -v → laraxot/module_xot_fila5
+issues: []
+discussions: []
 related:
   - "../../../../docs/stories/STORY-001-code-quality-moduli-temi.md"
+  - "../../../../docs/wiki/memories/module-github-remote-discipline.md"
 ---
 
 # Code Quality Improvement Report — Xot
 
 > Baseline statica riproducibile per orientare il miglioramento. I conteggi sono segnali, non sostituiscono PHPStan, Pest o la review del flusso reale.
+
+
+## GitHub (repo del componente)
+
+```bash
+cd laravel/Modules/Xot && git remote -v
+# atteso: laraxot/module_xot_fila5
+```
+
+**Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate (`base_techplanner_*` vs `base_workorder_*`). Non scegliere a caso: `git remote -v` nella cartella del modulo/tema.
 
 ## Baseline
 

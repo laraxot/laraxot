@@ -6,9 +6,10 @@ namespace Modules\Cms\Tests\Feature\Frontoffice;
 
 use Illuminate\Support\Facades\Auth;
 use Modules\Cms\Tests\TestCase;
-use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\get;
+
+use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 

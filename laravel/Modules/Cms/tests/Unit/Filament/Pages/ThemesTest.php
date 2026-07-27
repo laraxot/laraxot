@@ -20,6 +20,8 @@ test('Themes page has themes property', function () {
     Assert::assertIsArray($property->getValue($page));
 });
 
-test('Themes page has changePubTheme method', function () {});
+test('Themes page has changePubTheme method', function () {
+});
 
-test('Themes page has getViewData method', function () {});
+test('Themes page has getViewData method', function () {
+});

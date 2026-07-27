@@ -15,7 +15,8 @@ describe('XotPanelController', function (): void {
         Assert::assertInstanceOf(BaseController::class, $controller);
     });
 
-    test('xot panel controller has __call method', function (): void {});
+    test('xot panel controller has __call method', function (): void {
+    });
 
     test('xot panel controller uses correct namespace', function (): void {
         $reflector = new ReflectionClass(XotPanelController::class);

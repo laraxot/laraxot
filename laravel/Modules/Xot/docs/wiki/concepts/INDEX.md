@@ -31,6 +31,7 @@ qmd search "Xot concepts" --limit 5
 
 ## PHPStan & qualità
 
+- [xotbasemodel-get-class-name.md](./xotbasemodel-get-class-name.md) — sibling model nel namespace leaf (`static::getClassName`)
 - [phpstan-trait-probes.md](./phpstan-trait-probes.md) — trait `unused` → probe host
 - [trend-action-delegation.md](./trend-action-delegation.md) — Action come confine
 - [Ridondanze cross-cutting (hub)](./ridondanze-cross-cutting-codebase.md)
