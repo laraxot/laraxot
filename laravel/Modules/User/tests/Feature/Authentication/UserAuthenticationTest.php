@@ -21,7 +21,7 @@ use Modules\User\Tests\TestCase;
 uses(TestCase::class);
 
 beforeEach(function () {
-    $user = UserFactory::new()->create([
+    $user = UserFactory::new()->createOne([
         'password' => Hash::make('password123'),
         'is_active' => true,
         'email_verified_at' => now(),
@@ -64,7 +64,7 @@ describe('User Authentication', function () {
     it('cannot authenticate inactive user', function () {
         /** @var User $inactiveUser */
         /** @var User $inactiveUser */
-        $inactiveUser = UserFactory::new()->create([
+        $inactiveUser = UserFactory::new()->createOne([
             'password' => Hash::make('password123'),
             'is_active' => false,
         ]);
@@ -92,7 +92,7 @@ describe('User Password Management', function () {
     it('can hash password on creation', function () {
         /** @var User $user */
         /** @var User $user */
-        $user = UserFactory::new()->create([
+        $user = UserFactory::new()->createOne([
             'password' => Hash::make('testpassword'),
         ]);
         \assert($user instanceof User);
@@ -112,12 +112,12 @@ describe('User Password Management', function () {
 
     it('can check password expiration', function () {
         /** @var User $user */
-        $user = UserFactory::new()->create([
+        $user = UserFactory::new()->createOne([
             'password_expires_at' => now()->subDays(1),
         ]);
         \assert($user instanceof User);
         $passwordExpiresAt = $user->password_expires_at;
-        \assert(null !== $passwordExpiresAt);
+        \assert($passwordExpiresAt !== null);
 
         expect($passwordExpiresAt->isPast())->toBe(true);
     });
@@ -129,7 +129,7 @@ describe('User Password Management', function () {
         ]);
 
         $passwordExpiresAt = $this->requireFreshUser($this->requireUser())->password_expires_at;
-        \assert(null !== $passwordExpiresAt);
+        \assert($passwordExpiresAt !== null);
 
         expect($passwordExpiresAt->toDateString())
             ->toBe($expirationDate->toDateString());
@@ -159,7 +159,7 @@ describe('User Remember Token', function () {
 describe('User Email Verification', function () {
     it('can mark email as verified', function () {
         /** @var User $user */
-        $user = UserFactory::new()->create([
+        $user = UserFactory::new()->createOne([
             'email_verified_at' => null,
         ]);
         \assert($user instanceof User);
@@ -169,20 +169,20 @@ describe('User Email Verification', function () {
         $user->markEmailAsVerified();
 
         $fresh = $user->fresh();
-        \assert(null !== $fresh);
+        \assert($fresh !== null);
 
         expect($fresh->email_verified_at)->not->toBeNull();
     });
 
     it('can check if email is verified', function () {
         /** @var User $verifiedUser */
-        $verifiedUser = UserFactory::new()->create([
+        $verifiedUser = UserFactory::new()->createOne([
             'email_verified_at' => now(),
         ]);
         \assert($verifiedUser instanceof User);
 
         /** @var User $unverifiedUser */
-        $unverifiedUser = UserFactory::new()->create([
+        $unverifiedUser = UserFactory::new()->createOne([
             'email_verified_at' => null,
         ]);
         \assert($unverifiedUser instanceof User);
@@ -193,7 +193,7 @@ describe('User Email Verification', function () {
 
     it('can send email verification notification', function () {
         /** @var User $user */
-        $user = UserFactory::new()->create([
+        $user = UserFactory::new()->createOne([
             'email_verified_at' => null,
         ]);
         \assert($user instanceof User);
@@ -340,7 +340,7 @@ describe('User Two Factor Authentication', function () {
 
     it('handles otp authentication workflow', function () {
         /** @var User $user */
-        $user = UserFactory::new()->create([
+        $user = UserFactory::new()->createOne([
             'is_otp' => true,
             'password' => Hash::make('password123'),
         ]);

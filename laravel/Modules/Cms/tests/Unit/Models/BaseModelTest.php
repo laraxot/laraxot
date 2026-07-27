@@ -4,15 +4,17 @@ declare(strict_types=1);
 
 use Illuminate\Database\Eloquent\Model;
 use Modules\Cms\Models\BaseModel;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 /**
  * @return BaseModel&Model
  */
 function createCmsBaseModelTestDouble(): BaseModel
 {
-    return new class extends BaseModel {
+    return new class() extends BaseModel
+    {
         protected $table = 'test_cms_table';
     };
 }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Tenant\Tests\Unit;
 
 use Mockery;
+use Mockery\Expectation;
 use Modules\Tenant\Actions\Domains\GetDomainsArrayAction;
 use Modules\Tenant\Models\Domain;
 use Modules\Tenant\Tests\TestCase;
@@ -16,7 +17,7 @@ afterEach(function (): void {
 });
 
 test('domain model can be instantiated', function (): void {
-    $domain = new Domain;
+    $domain = new Domain();
 
     expect($domain)->toBeInstanceOf(Domain::class);
 });
@@ -24,7 +25,7 @@ test('domain model can be instantiated', function (): void {
 test('get rows method works correctly', function (): void {
     $mock = Mockery::mock(GetDomainsArrayAction::class);
     $expectation = $mock->shouldReceive('execute');
-    assert($expectation instanceof \Mockery\Expectation);
+    assert($expectation instanceof Expectation);
     $expectation->once()->andReturn([
         ['id' => 1, 'name' => 'test-domain.com'],
         ['id' => 2, 'name' => 'example.org'],
@@ -32,7 +33,7 @@ test('get rows method works correctly', function (): void {
 
     app()->instance(GetDomainsArrayAction::class, $mock);
 
-    $domain = new Domain;
+    $domain = new Domain();
     $rows = $domain->getRows();
 
     expect($rows)->toBeArray();

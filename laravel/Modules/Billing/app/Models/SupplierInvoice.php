@@ -10,8 +10,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\Xot\Models\XotBaseModel;
 
-/** Fattura ricevuta dal fornitore (ciclo passivo). */
 /**
+ * Fattura ricevuta dal fornitore (ciclo passivo).
+ *
  * @property int $id
  * @property int $supplier_id
  * @property string $number
@@ -22,6 +23,8 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
+ *
+ * @method static \Modules\Billing\Database\Factories\SupplierInvoiceFactory factory($count = null, $state = [])
  */
 final class SupplierInvoice extends XotBaseModel
 {

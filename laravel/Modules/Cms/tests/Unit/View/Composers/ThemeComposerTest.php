@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
+use Modules\Cms\Tests\TestCase;
 use Modules\Cms\View\Composers\ThemeComposer;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('ThemeComposer can be instantiated', function () {
     $composer = new ThemeComposer();
     Assert::assertInstanceOf(ThemeComposer::class, $composer);

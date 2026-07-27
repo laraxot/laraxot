@@ -33,7 +33,7 @@ test('action generates correct URL for activity log page', function (): void {
     $action = ListLogActivitiesAction::make();
 
     $livewire = ListLogActivitiesActionTestPage::usingResource(ListLogActivitiesActionTestResource::class);
-    $record = new ListLogActivitiesActionTestRecord;
+    $record = new ListLogActivitiesActionTestRecord();
 
     $action->livewire($livewire);
     $action->record($record);

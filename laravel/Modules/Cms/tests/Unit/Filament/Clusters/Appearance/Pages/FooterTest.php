@@ -3,9 +3,10 @@
 declare(strict_types=1);
 
 use Modules\Cms\Filament\Clusters\Appearance\Pages\Footer;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('Footer page can be instantiated', function () {
     $page = new Footer();
 });
@@ -29,17 +30,12 @@ test('Footer page has footerData property', function () {
     Assert::assertSame('footerData', $property->getName());
 });
 
-test('Footer page has mount method', function () {
-});
+test('Footer page has mount method', function () {});
 
-test('Footer page has schema method', function () {
-});
+test('Footer page has schema method', function () {});
 
-test('Footer page has updateData method', function () {
-});
+test('Footer page has updateData method', function () {});
 
-test('Footer page has fillForms method', function () {
-});
+test('Footer page has fillForms method', function () {});
 
-test('Footer page has getUpdateFormActions method', function () {
-});
+test('Footer page has getUpdateFormActions method', function () {});

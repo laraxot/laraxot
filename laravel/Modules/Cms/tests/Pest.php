@@ -8,7 +8,7 @@ declare(strict_types=1);
  * |--------------------------------------------------------------------------
  * |
  * | Il TestCase di default per tutti i test del modulo Cms.
- * | Ogni file di test dichiara esplicitamente uses(Modules\Cms\Tests\TestCase::class),
+ * | Ogni file di test dichiara esplicitamente uses(\Modules\Cms\Tests\TestCase::class),
  * | seguendo il pattern DRY comune a tutti i moduli (vedi Modules/Xot/tests/Pest.php).
  * | Nessun ->in() qui: e' un metodo interno al namespace Pest, non analizzabile
  * | da PHPStan al di fuori di esso (method.internalClass).
@@ -28,15 +28,6 @@ declare(strict_types=1);
 
 require_once __DIR__.'/PestHelpers.php';
 require_once __DIR__.'/PestStubs.php';
-
-expect()->extend('toBeSubclassOf', function (string $parentClass) {
-    $class = $this->value;
-    if (! is_string($class)) {
-        throw new InvalidArgumentException('Expected a class name string');
-    }
-
-    return $this->and(is_subclass_of($class, $parentClass));
-});
 
 /*
  * |--------------------------------------------------------------------------

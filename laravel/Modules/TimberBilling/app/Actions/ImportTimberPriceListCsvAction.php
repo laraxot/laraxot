@@ -9,6 +9,8 @@ use Modules\TimberBilling\Models\TimberPriceList;
 use Modules\TimberBilling\Models\TimberPriceListItem;
 use Modules\TimberBilling\Models\TimberProduct;
 
+use function Safe\preg_split;
+
 /**
  * Importa/aggiorna i prezzi di un listino da un CSV (codice prodotto, [descrizione,] prezzo).
  * L'ultima colonna numerica e' il prezzo; il prodotto e' abbinato per codice.
@@ -28,7 +30,8 @@ final class ImportTimberPriceListCsvAction
         $imported = 0;
         $skipped = 0;
 
-        $lines = preg_split('/\r\n|\r|\n/', trim($csvContent)) ?: [];
+        /** @var list<string> $lines */
+        $lines = preg_split('/\r\n|\r|\n/', trim($csvContent));
 
         DB::transaction(function () use ($priceList, $lines, &$imported, &$skipped): void {
             foreach ($lines as $line) {

@@ -2,12 +2,14 @@
 
 declare(strict_types=1);
 
-uses(\Modules\HR\Tests\TestCase::class);
+namespace Modules\HR\Tests\Feature;
 
 use Modules\HR\Models\Employee;
+use Modules\HR\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('creates and soft-deletes an employee', function (): void {
-    /** @var Employee $employee */
     $employee = Employee::query()->create([
         'first_name' => 'Mario',
         'last_name' => 'Rossi',
@@ -22,4 +24,3 @@ it('creates and soft-deletes an employee', function (): void {
     $employee->delete();
     expect($employee->refresh()->trashed())->toBeTrue();
 });
-

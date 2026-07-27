@@ -11,23 +11,21 @@ namespace Modules\Activity\Tests\Security;
  * and audit trail functionality.
  */
 
-use Modules\Activity\Database\Factories\ActivityFactory;
 use Modules\Activity\Models\Policies\ActivityPolicy;
 use Modules\Activity\Tests\TestCase;
-use Modules\User\Database\Factories\UserFactory;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
 it('denies activity viewAny to users without permission', function (): void {
-    $user = (new UserFactory())->createOne();
+    $user = activityCreateUser();
     $policy = new ActivityPolicy();
 
     Assert::assertFalse($policy->viewAny($user));
 });
 
 it('allows activity viewAny to users with the correct permission', function (): void {
-    $user = (new UserFactory())->createOne();
+    $user = activityCreateUser();
     $user->givePermissionTo('activity.viewAny');
     $policy = new ActivityPolicy();
 
@@ -35,14 +33,14 @@ it('allows activity viewAny to users with the correct permission', function (): 
 });
 
 it('denies activity view to users without permission', function (): void {
-    $user = (new UserFactory())->createOne();
+    $user = activityCreateUser();
     $policy = new ActivityPolicy();
 
     Assert::assertFalse($policy->view($user));
 });
 
 it('super-admin bypasses activity policy checks via before()', function (): void {
-    $superAdmin = (new UserFactory())->createOne();
+    $superAdmin = activityCreateUser();
     $superAdmin->assignRole('super-admin');
     $policy = new ActivityPolicy();
 
@@ -51,7 +49,7 @@ it('super-admin bypasses activity policy checks via before()', function (): void
 });
 
 it('validates activity log data integrity', function (): void {
-    $activity = (new ActivityFactory())->createOne([
+    $activity = activityCreateActivity([
         'description' => 'Valid description',
     ]);
 

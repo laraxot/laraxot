@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 use Modules\Cms\Filament\Resources\SectionResource;
 use Modules\Cms\Models\Section;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 describe('SectionResource', function (): void {
     test('section resource has correct model', function (): void {
         $resource = new SectionResource();

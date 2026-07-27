@@ -6,6 +6,11 @@ use Modules\Platform\Company\CompanyProfileProvider;
 use Modules\Platform\Models\PlatformSetting;
 use Modules\Platform\Tests\TestCase;
 
+use function Safe\base64_decode;
+use function Safe\file_put_contents;
+use function Safe\tempnam;
+use function Safe\unlink;
+
 uses(TestCase::class);
 
 /**
@@ -77,23 +82,65 @@ it('encodes an existing logo file as a base64 data URI', function (): void {
     expect($uri)->toStartWith('data:image/png;base64,')
         ->and($uri)->toBe('data:image/png;base64,'.base64_encode($png));
 
-    @unlink($path);
+    unlink($path);
 });
 
-it('detects the mime type from the extension', function (string $extension, string $expectedMime): void {
-    $path = tempnam(sys_get_temp_dir(), 'logo').'.'.$extension;
+it('detects the mime type from the extension for jpg files', function (): void {
+    $path = tempnam(sys_get_temp_dir(), 'logo').'.jpg';
     file_put_contents($path, 'binary-content');
 
     storePlatformCompanyProfile(['logo_path' => $path]);
 
     expect(app(CompanyProfileProvider::class)->logoDataUri())
-        ->toStartWith('data:'.$expectedMime.';base64,');
+        ->toStartWith('data:image/jpeg;base64,');
 
-    @unlink($path);
-})->with([
-    'jpg' => ['jpg', 'image/jpeg'],
-    'jpeg' => ['jpeg', 'image/jpeg'],
-    'gif' => ['gif', 'image/gif'],
-    'svg' => ['svg', 'image/svg+xml'],
-    'unknown' => ['bin', 'application/octet-stream'],
-]);
+    unlink($path);
+});
+
+it('detects the mime type from the extension for jpeg files', function (): void {
+    $path = tempnam(sys_get_temp_dir(), 'logo').'.jpeg';
+    file_put_contents($path, 'binary-content');
+
+    storePlatformCompanyProfile(['logo_path' => $path]);
+
+    expect(app(CompanyProfileProvider::class)->logoDataUri())
+        ->toStartWith('data:image/jpeg;base64,');
+
+    unlink($path);
+});
+
+it('detects the mime type from the extension for gif files', function (): void {
+    $path = tempnam(sys_get_temp_dir(), 'logo').'.gif';
+    file_put_contents($path, 'binary-content');
+
+    storePlatformCompanyProfile(['logo_path' => $path]);
+
+    expect(app(CompanyProfileProvider::class)->logoDataUri())
+        ->toStartWith('data:image/gif;base64,');
+
+    unlink($path);
+});
+
+it('detects the mime type from the extension for svg files', function (): void {
+    $path = tempnam(sys_get_temp_dir(), 'logo').'.svg';
+    file_put_contents($path, 'binary-content');
+
+    storePlatformCompanyProfile(['logo_path' => $path]);
+
+    expect(app(CompanyProfileProvider::class)->logoDataUri())
+        ->toStartWith('data:image/svg+xml;base64,');
+
+    unlink($path);
+});
+
+it('detects the mime type from the extension for unknown files', function (): void {
+    $path = tempnam(sys_get_temp_dir(), 'logo').'.bin';
+    file_put_contents($path, 'binary-content');
+
+    storePlatformCompanyProfile(['logo_path' => $path]);
+
+    expect(app(CompanyProfileProvider::class)->logoDataUri())
+        ->toStartWith('data:application/octet-stream;base64,');
+
+    unlink($path);
+});

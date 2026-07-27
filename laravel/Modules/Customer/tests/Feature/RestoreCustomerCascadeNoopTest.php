@@ -2,10 +2,13 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Customer\Tests\TestCase::class);
+namespace Modules\Customer\Tests\Feature;
 
 use Modules\Customer\Actions\RestoreCustomerCascadeAction;
 use Modules\Customer\Models\Customer;
+use Modules\Customer\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('does nothing when restoring a non-trashed customer', function (): void {
     $customer = Customer::query()->create([
@@ -20,4 +23,3 @@ it('does nothing when restoring a non-trashed customer', function (): void {
     $customer->refresh();
     expect($customer->trashed())->toBeFalse();
 });
-

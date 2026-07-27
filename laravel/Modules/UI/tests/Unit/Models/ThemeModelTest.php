@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\UI\Tests\Unit\Models;
 
+use Modules\UI\Models\Theme;
 use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
@@ -32,7 +33,7 @@ beforeEach(function (): void {
 describe('Theme Model', function (): void {
     test('it can create a theme with valid data', function (): void {
         /** @phpstan-ignore-next-line class.notFound, method.nonObject (Theme model absent from artifact set (test skipped at runtime)) */
-        $theme = \Modules\UI\Models\Theme::factory()->createOne([
+        $theme = Theme::factory()->createOne([
             'name' => 'Test Theme',
             'is_active' => true,
         ]);
@@ -45,7 +46,7 @@ describe('Theme Model', function (): void {
 
     test('it has fillable attributes', function (): void {
         /** @phpstan-ignore-next-line class.notFound (Theme model absent from artifact set) */
-        $theme = new \Modules\UI\Models\Theme();
+        $theme = new Theme();
         $expected = ['name', 'description', 'is_active', 'config', 'parent_id', 'source_path', 'compiled_path', 'needs_compilation'];
 
         foreach ($expected as $field) {
@@ -56,7 +57,7 @@ describe('Theme Model', function (): void {
 
     test('it casts is active to boolean', function (): void {
         /** @phpstan-ignore-next-line class.notFound, method.nonObject (Theme model absent from artifact set) */
-        $theme = \Modules\UI\Models\Theme::factory()->createOne(['is_active' => '1']);
+        $theme = Theme::factory()->createOne(['is_active' => '1']);
 
         /* @phpstan-ignore-next-line property.nonObject (Theme model absent from artifact set) */
         Assert::assertIsBool($theme->is_active);
@@ -66,7 +67,7 @@ describe('Theme Model', function (): void {
 
     test('it casts config to array', function (): void {
         /** @phpstan-ignore-next-line class.notFound, method.nonObject (Theme model absent from artifact set) */
-        $theme = \Modules\UI\Models\Theme::factory()->createOne([
+        $theme = Theme::factory()->createOne([
             'config' => ['primary_color' => '#ff0000', 'font_family' => 'Roboto'],
         ]);
 
@@ -78,7 +79,7 @@ describe('Theme Model', function (): void {
 
     test('it casts needs compilation to boolean', function (): void {
         /** @phpstan-ignore-next-line class.notFound, method.nonObject (Theme model absent from artifact set) */
-        $theme = \Modules\UI\Models\Theme::factory()->createOne(['needs_compilation' => true]);
+        $theme = Theme::factory()->createOne(['needs_compilation' => true]);
 
         /* @phpstan-ignore-next-line property.nonObject (Theme model absent from artifact set) */
         Assert::assertIsBool($theme->needs_compilation);
@@ -88,9 +89,9 @@ describe('Theme Model', function (): void {
 
     test('theme can have parent theme', function (): void {
         /** @phpstan-ignore-next-line class.notFound, method.nonObject (Theme model absent from artifact set) */
-        $parent = \Modules\UI\Models\Theme::factory()->createOne(['name' => 'Parent Theme']);
+        $parent = Theme::factory()->createOne(['name' => 'Parent Theme']);
         /** @phpstan-ignore-next-line class.notFound, method.nonObject, property.nonObject (Theme model absent from artifact set) */
-        $child = \Modules\UI\Models\Theme::factory()->createOne(['name' => 'Child Theme', 'parent_id' => $parent->id]);
+        $child = Theme::factory()->createOne(['name' => 'Child Theme', 'parent_id' => $parent->id]);
 
         /* @phpstan-ignore-next-line property.nonObject (Theme model absent from artifact set) */
         Assert::assertSame('Parent Theme', $child->parent->name);
@@ -98,7 +99,7 @@ describe('Theme Model', function (): void {
 
     test('theme can be active', function (): void {
         /** @phpstan-ignore-next-line class.notFound, method.nonObject (Theme model absent from artifact set) */
-        $theme = \Modules\UI\Models\Theme::factory()->createOne(['is_active' => true]);
+        $theme = Theme::factory()->createOne(['is_active' => true]);
 
         /* @phpstan-ignore-next-line property.nonObject (Theme model absent from artifact set) */
         Assert::assertTrue($theme->is_active);
@@ -106,7 +107,7 @@ describe('Theme Model', function (): void {
 
     test('theme can be inactive', function (): void {
         /** @phpstan-ignore-next-line class.notFound, method.nonObject (Theme model absent from artifact set) */
-        $theme = \Modules\UI\Models\Theme::factory()->createOne(['is_active' => false]);
+        $theme = Theme::factory()->createOne(['is_active' => false]);
 
         /* @phpstan-ignore-next-line property.nonObject (Theme model absent from artifact set) */
         Assert::assertFalse($theme->is_active);
@@ -114,7 +115,7 @@ describe('Theme Model', function (): void {
 
     test('theme has timestamps', function (): void {
         /** @phpstan-ignore-next-line class.notFound, method.nonObject (Theme model absent from artifact set) */
-        $theme = \Modules\UI\Models\Theme::factory()->createOne();
+        $theme = Theme::factory()->createOne();
 
         /* @phpstan-ignore-next-line property.nonObject (Theme model absent from artifact set) */
         Assert::assertNotNull($theme->created_at);

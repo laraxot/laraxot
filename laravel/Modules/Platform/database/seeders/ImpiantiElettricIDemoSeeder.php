@@ -350,7 +350,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                         [
                             'product_id' => $product['id'],
                             'from_warehouse_id' => null,
-                            'to_warehouse_id' => $gerardoWarehousesByKey['central'] ?? null,
+                            'to_warehouse_id' => $gerardoWarehousesByKey['central'],
                             'movement_type' => 'carico',
                             'quantity' => $stockLoad['central'],
                             'unit_price' => $product['unit_price'],
@@ -366,8 +366,8 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                         ],
                         [
                             'product_id' => $product['id'],
-                            'from_warehouse_id' => $gerardoWarehousesByKey['central'] ?? null,
-                            'to_warehouse_id' => $gerardoWarehousesByKey['gerardo_van'] ?? null,
+                            'from_warehouse_id' => $gerardoWarehousesByKey['central'],
+                            'to_warehouse_id' => $gerardoWarehousesByKey['gerardo_van'],
                             'movement_type' => 'trasferimento',
                             'quantity' => $stockLoad['van'],
                             'unit_price' => $product['unit_price'],

@@ -18,6 +18,9 @@ use Modules\WhatsApp\Tests\TestCase;
  */
 uses(TestCase::class);
 
+/**
+ * @param  array<string, mixed>  $overrides
+ */
 function inboxMakeConversation(array $overrides = []): WhatsAppConversation
 {
     return WhatsAppConversation::query()->create(array_merge([

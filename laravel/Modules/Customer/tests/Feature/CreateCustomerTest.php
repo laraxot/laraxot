@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Customer\Tests\TestCase::class);
+namespace Modules\Customer\Tests\Feature;
 
 use Illuminate\Support\Facades\DB;
 use Modules\Customer\Actions\CreateCustomerAction;
+use Modules\Customer\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('creates a customer', function (): void {
-    // Act
     $customer = app(CreateCustomerAction::class)->execute([
         'legal_name' => 'Acme S.p.A.',
         'vat_number' => 'IT12345678901',
@@ -27,8 +29,6 @@ it('creates a customer', function (): void {
         'is_active' => 1,
     ]);
 
-    // Assert
     expect($customer->id)->not->toBeNull();
     expect(DB::table('customers')->where('id', $customer->id)->value('legal_name'))->toBe('Acme S.p.A.');
 });
-

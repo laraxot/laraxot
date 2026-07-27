@@ -7,6 +7,7 @@ namespace Modules\User\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
 use Modules\Xot\Contracts\ProfileContract;
+use Webmozart\Assert\Assert;
 
 /**
  * Modules\User\Models\RoleHasPermission.
@@ -56,6 +57,8 @@ class RoleHasPermission extends BasePivot
     #[\Override]
     public function getTable(): string
     {
-        return config('permission.table_names.role_has_permissions');
+        Assert::string($table = config('permission.table_names.role_has_permissions'));
+
+        return $table;
     }
 }

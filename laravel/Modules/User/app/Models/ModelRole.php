@@ -7,15 +7,16 @@ namespace Modules\User\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
 use Modules\Xot\Contracts\ProfileContract;
+use Webmozart\Assert\Assert;
 
 /**
  * Modules\User\Models\ModelHasRole.
  *
- * @property string      $id
- * @property string      $role_id
- * @property string      $model_type
- * @property string      $model_id
- * @property int|null    $team_id
+ * @property string $id
+ * @property string $role_id
+ * @property string $model_type
+ * @property string $model_id
+ * @property int|null $team_id
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $updated_by
@@ -51,6 +52,8 @@ class ModelRole extends BaseMorphPivot
     #[\Override]
     public function getTable(): string
     {
-        return config('permission.table_names.model_has_roles');
+        Assert::string($table = config('permission.table_names.model_has_roles'));
+
+        return $table;
     }
 }

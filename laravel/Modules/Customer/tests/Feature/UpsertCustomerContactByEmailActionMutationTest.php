@@ -2,13 +2,16 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Customer\Tests\TestCase::class);
+namespace Modules\Customer\Tests\Feature;
 
 use Modules\Customer\Actions\CreateCustomerAction;
 use Modules\Customer\Actions\CreateCustomerSiteAction;
 use Modules\Customer\Actions\UpsertCustomerContactByEmailAction;
 use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\ContactRole;
+use Modules\Customer\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('does not create a contact role when position is empty or whitespace', function (): void {
     $customer = app(CreateCustomerAction::class)->execute([
@@ -241,4 +244,3 @@ it('persists and updates notes when upserting by email', function (): void {
     expect($updated->id)->toBe($contact->id);
     expect(Contact::query()->where('id', $contact->id)->value('notes'))->toBe('Updated notes');
 });
-

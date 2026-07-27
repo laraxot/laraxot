@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Features\SupportTesting\Testable;
@@ -105,7 +106,7 @@ test('getUserClass returns valid class', function (): void {
 
 test('createTestUser creates valid instances', function (): void {
     $user = TestCase::pestCreateTestUser();
-    /** @var class-string<Illuminate\Database\Eloquent\Model&UserContract> $userClass */
+    /** @var class-string<Model&UserContract> $userClass */
     $userClass = XotData::make()->getUserClass();
     $foundUser = $userClass::query()->where('email', $user->email)->first();
     Assert::assertInstanceOf(UserContract::class, $foundUser);

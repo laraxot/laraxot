@@ -2,12 +2,15 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Customer\Tests\TestCase::class);
+namespace Modules\Customer\Tests\Feature;
 
 use Modules\Customer\Actions\RestoreCustomerCascadeAction;
 use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
+use Modules\Customer\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('restores a customer and restores related sites and contacts', function (): void {
     // Arrange
@@ -69,4 +72,3 @@ it('restores a customer and restores related sites and contacts', function (): v
     expect(CustomerSite::query()->whereKey($site->id)->exists())->toBeTrue();
     expect(Contact::query()->whereKey($contact->id)->exists())->toBeTrue();
 });
-

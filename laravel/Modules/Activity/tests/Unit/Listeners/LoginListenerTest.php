@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 use Illuminate\Auth\Events\Login;
-use Modules\Activity\Providers\EventServiceProvider;
 use Modules\Activity\Listeners\LoginListener;
+use Modules\Activity\Providers\EventServiceProvider;
 use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
@@ -21,20 +21,20 @@ test('login listener is registered for login event', function () {
 });
 
 test('login listener can be instantiated', function () {
-    $listener = new LoginListener;
+    $listener = new LoginListener();
 
     Assert::assertInstanceOf(LoginListener::class, $listener);
 });
 
 test('login listener has handle method', function () {
-    $listener = new LoginListener;
+    $listener = new LoginListener();
     $reflection = new ReflectionClass($listener);
 
     Assert::assertTrue($reflection->hasMethod('handle'));
 });
 
 test('login listener handle method is callable', function () {
-    $listener = new LoginListener;
+    $listener = new LoginListener();
 
     $listener->handle();
 });

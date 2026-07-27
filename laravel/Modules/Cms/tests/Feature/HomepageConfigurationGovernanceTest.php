@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 use function Safe\glob;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */

@@ -8,6 +8,7 @@ use App\Support\AccountFeatures;
 use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
 use Modules\TimberBilling\Actions\BuildTimberQrPayloadAction;
@@ -138,7 +139,7 @@ final class TimberLotDetailPage extends Page
         $lot = TimberLot::query()->with([
             'purchaseRecord.supplier',
             'purchaseRecord.transporter',
-            'movements' => fn ($query) => $query->latest('moved_at'),
+            'movements' => fn (Relation $query) => $query->latest('moved_at'),
             'processingSteps.derivedMaterials',
             'dryingCycles.humidityChecks',
         ])->find($this->lotId);

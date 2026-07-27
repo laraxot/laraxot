@@ -6,7 +6,9 @@ namespace Modules\Customer\Models;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Customer\Database\Factories\CustomerFactory;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * @property int $id
@@ -18,10 +20,13 @@ use Modules\WorkOrder\Models\WorkOrder;
  * @property string|null $city
  * @property bool $is_active
  *
- * @method static \Modules\Customer\Database\Factories\CustomerFactory factory($count = null, $state = [])
+ * @method static CustomerFactory factory($count = null, $state = [])
  */
 final class Customer extends BaseModel
 {
+    /** @phpstan-use HasXotFactory<CustomerFactory> */
+    use HasXotFactory;
+
     use SoftDeletes;
 
     protected $guarded = [];

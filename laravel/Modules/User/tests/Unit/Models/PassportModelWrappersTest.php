@@ -13,12 +13,13 @@ use Modules\User\Models\OauthClient;
 use Modules\User\Models\OauthDeviceCode;
 use Modules\User\Models\OauthRefreshToken;
 use Modules\User\Models\OauthToken;
+use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 /**
- * @param class-string $wrapperClass
+ * @param  class-string  $wrapperClass
  */
 function passportWrapperConnectionName(string $wrapperClass): ?string
 {
@@ -31,7 +32,7 @@ function passportWrapperConnectionName(string $wrapperClass): ?string
         $property->setAccessible(true);
         $connection = $property->getValue($reflection->newInstanceWithoutConstructor());
 
-        if (is_string($connection) && '' !== $connection) {
+        if (is_string($connection) && $connection !== '') {
             return $connection;
         }
     }

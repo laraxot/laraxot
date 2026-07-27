@@ -2,28 +2,23 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Catalog\Tests\TestCase::class);
+namespace Modules\Catalog\Tests\Feature;
 
 use Modules\Catalog\Models\CatalogFrequency;
 use Modules\Catalog\Models\CatalogMeasureUnit;
 use Modules\Catalog\Models\CatalogModel;
 use Modules\Catalog\Models\CatalogPartType;
 use Modules\Catalog\Models\Product;
+use Modules\Catalog\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('creates catalog lookups and a product', function (): void {
-    /** @var CatalogModel $model */
     $model = CatalogModel::query()->create(['name' => 'Model X']);
-
-    /** @var CatalogPartType $partType */
     $partType = CatalogPartType::query()->create(['name' => 'Part']);
-
-    /** @var CatalogMeasureUnit $unit */
     $unit = CatalogMeasureUnit::query()->create(['name' => 'pcs']);
-
-    /** @var CatalogFrequency $freq */
     $freq = CatalogFrequency::query()->create(['name' => 'once']);
 
-    /** @var Product $product */
     $product = Product::query()->create([
         'name' => 'Test product',
         'sku' => 'SKU-001',
@@ -39,4 +34,3 @@ it('creates catalog lookups and a product', function (): void {
     expect($product->id)->not->toBeNull();
     expect(Product::query()->count())->toBe(1);
 });
-

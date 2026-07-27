@@ -12,7 +12,7 @@ uses(TestCase::class);
 
 describe('GetTaskFrequenciesAction', function (): void {
     test('can be instantiated', function (): void {
-        $action = new GetTaskFrequenciesAction;
+        $action = new GetTaskFrequenciesAction();
         Assert::assertInstanceOf(GetTaskFrequenciesAction::class, $action);
     });
 

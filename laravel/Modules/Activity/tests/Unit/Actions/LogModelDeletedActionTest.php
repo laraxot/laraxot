@@ -11,7 +11,7 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 test('LogModelDeletedAction can be instantiated', function () {
-    $model = new class extends Model
+    $model = new class() extends Model
     {
         protected $table = 'test_models';
 

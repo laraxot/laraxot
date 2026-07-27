@@ -6,7 +6,6 @@ use Illuminate\Database\Schema\Blueprint;
 use Modules\TimberBilling\Models\TimberEInvoice;
 use Modules\TimberBilling\Models\TimberInvoice;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
-use Modules\Xot\Datas\XotData;
 
 return new class() extends XotBaseMigration
 {
@@ -14,9 +13,7 @@ return new class() extends XotBaseMigration
 
     public function up(): void
     {
-        $userClass = XotData::make()->getUserClass();
-
-        $this->tableCreate(function (Blueprint $table) use ($userClass): void {
+        $this->tableCreate(function (Blueprint $table): void {
             $table->id();
             $table->foreignIdFor(TimberInvoice::class, 'invoice_id')->constrained('timber_invoices')->cascadeOnDelete();
             $table->string('direction')->default('out')->index();

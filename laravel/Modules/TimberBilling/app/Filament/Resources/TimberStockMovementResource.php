@@ -19,6 +19,7 @@ use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 use Modules\TimberBilling\Filament\Resources\TimberStockMovementResource\Pages;
 use Modules\TimberBilling\Models\TimberProduct;
@@ -220,7 +221,7 @@ final class TimberStockMovementResource extends Resource
                     ->schema([
                         TextInput::make('lot_code')->label('Lotto / Seriale'),
                     ])
-                    ->query(function ($query, array $data) {
+                    ->query(function (Builder $query, array $data): Builder {
                         $value = trim((string) ($data['lot_code'] ?? ''));
 
                         return $value === ''
@@ -232,10 +233,10 @@ final class TimberStockMovementResource extends Resource
                         DatePicker::make('from')->label('Dal'),
                         DatePicker::make('until')->label('Al'),
                     ])
-                    ->query(function ($query, array $data) {
+                    ->query(function (Builder $query, array $data): Builder {
                         return $query
-                            ->when($data['from'] ?? null, fn ($q, $date) => $q->whereDate('movement_date', '>=', $date))
-                            ->when($data['until'] ?? null, fn ($q, $date) => $q->whereDate('movement_date', '<=', $date));
+                            ->when($data['from'] ?? null, fn (Builder $q, mixed $date): Builder => $q->whereDate('movement_date', '>=', is_string($date) ? $date : null))
+                            ->when($data['until'] ?? null, fn (Builder $q, mixed $date): Builder => $q->whereDate('movement_date', '<=', is_string($date) ? $date : null));
                     }),
             ])
             ->actions([

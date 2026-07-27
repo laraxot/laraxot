@@ -2,23 +2,25 @@
 
 declare(strict_types=1);
 
-uses(TestCase::class);
+namespace Modules\HR\Tests\Feature;
 
 use Illuminate\Support\Facades\Storage;
 use Modules\HR\Actions\AddEmployeeDocumentAction;
 use Modules\HR\Actions\AddEmployeeMedicalVisitAction;
 use Modules\HR\Actions\AddEmployeeTrainingAction;
-use Modules\HR\Models\Employee;
 use Modules\HR\Tests\TestCase;
 
+uses(TestCase::class);
+
 it('adds employee documents, medical visits, and trainings with optional attachments', function (): void {
-    // Arrange
+    hrSkipTest('D1: Document Media $table=media — laravel/docs/debt-document-media-conflict.md');
+
     Storage::fake('public');
     Storage::disk('public')->put('media/employees/documents/doc.txt', 'doc');
     Storage::disk('public')->put('media/employees/medical-visits/visit.txt', 'visit');
     Storage::disk('public')->put('media/employees/trainings/training.txt', 'training');
 
-    $employee = Employee::query()->create([
+    $employee = hrCreateEmployee([
         'user_id' => null,
         'first_name' => 'Mario',
         'last_name' => 'Rossi',
@@ -30,7 +32,6 @@ it('adds employee documents, medical visits, and trainings with optional attachm
         'is_active' => true,
     ]);
 
-    // Act
     $doc = app(AddEmployeeDocumentAction::class)->execute(
         employee: $employee,
         path: 'media/employees/documents/doc.txt',
@@ -60,7 +61,6 @@ it('adds employee documents, medical visits, and trainings with optional attachm
         uploadedByUserId: null,
     );
 
-    // Assert
     expect($doc->employee_id)->toBe($employee->id);
     expect($doc->media)->not()->toBeNull();
     expect($visit->employee_id)->toBe($employee->id);
@@ -75,4 +75,4 @@ it('adds employee documents, medical visits, and trainings with optional attachm
     expect($training->notes)->toBe('ok');
     expect($training->completed_at?->toDateString())->toBe('2026-01-10');
     expect($training->expires_at?->toDateString())->toBe('2027-01-10');
-})->skip('D1: Document Media $table=media — laravel/docs/debt-document-media-conflict.md');
+});

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Billing\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Modules\Billing\Database\Factories\SupplierInvoiceLineFactory;
 use Modules\Billing\Models\SupplierInvoiceLine;
 
 class SupplierInvoiceLineSeeder extends Seeder
@@ -15,6 +16,6 @@ class SupplierInvoiceLineSeeder extends Seeder
             return;
         }
 
-        SupplierInvoiceLine::factory()->count(3)->create();
+        SupplierInvoiceLineFactory::new()->count(3)->create();
     }
 }

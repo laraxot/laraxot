@@ -7,6 +7,7 @@ namespace Modules\PublicProcurement\Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\PublicProcurement\Models\PublicProcurementContract;
 use Modules\PublicProcurement\Models\PublicProcurementDocumentRequirement;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 
 /**
  * @extends Factory<PublicProcurementDocumentRequirement>
@@ -21,7 +22,7 @@ class PublicProcurementDocumentRequirementFactory extends Factory
      */
     public function definition(): array
     {
-        $code = $this->faker->randomElement(['durc', 'soa', 'insurance', 'site_visit', 'financial_statement']);
+        $code = SafeStringCastAction::cast($this->faker->randomElement(['durc', 'soa', 'insurance', 'site_visit', 'financial_statement']));
 
         return [
             'public_procurement_contract_id' => PublicProcurementContract::factory(),

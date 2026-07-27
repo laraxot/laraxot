@@ -20,7 +20,7 @@ it('exposes a belongsToMany devices relation on the user model', function (): vo
 it('attaches and retrieves devices for a user', function (): void {
     $user = TestCase::createTestUser();
 
-    $device = Device::factory()->create();
+    $device = Device::factory()->createOne();
 
     $user->devices()->attach($device->getKey());
 
@@ -32,7 +32,7 @@ it('attaches and retrieves devices for a user', function (): void {
 
 it('detaches devices from a user', function (): void {
     $user = TestCase::createTestUser();
-    $device = Device::factory()->create();
+    $device = Device::factory()->createOne();
 
     $user->devices()->attach($device->getKey());
     expect($user->refresh()->devices)->toHaveCount(1);

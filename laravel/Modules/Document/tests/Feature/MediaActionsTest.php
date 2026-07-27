@@ -8,30 +8,13 @@ use Illuminate\Support\Facades\Storage;
 use Modules\Document\Actions\AttachPhotosToInterventionAction;
 use Modules\Document\Actions\CreateMediaFromStoredFileAction;
 use Modules\Document\Tests\TestCase;
-use Modules\Intervention\Models\Intervention;
 
-/*
- * Migrato da gestionale_commesse/tests/Feature/Documents/{AttachInterventionDocumentTest,
- * AttachInterventionPhotosTest,MediaMetadataTest}.php.
- *
- * Adattamenti:
- * - Namespace: Modules\Documents\{Application\Actions,Infrastructure\Models} -> Modules\Document\{Actions,Models}.
- * - Modules\Interventions\Infrastructure\Models\Intervention -> Modules\Intervention\Models\Intervention
- *   (usa Intervention::factory()->create() invece dei DB::table('customers'/'work_orders')->insertGetId()
- *   manuali del sorgente: la factory crea già il WorkOrder correlato).
- *
- * NON portato: UploadInterventionPhotosPageTest.php — la pagina Livewire richiede
- * Gate::authorize('update', $intervention) in mount(); nell'ambiente attuale l'autorizzazione
- * dipende da ruoli Shield + AccountFeatures (shim che ritorna sempre il default), rendendo il test
- * fragile/non deterministico senza un fixture di autenticazione dedicato. La action sottostante
- * (AttachPhotosToInterventionAction) è comunque coperta qui.
- */
 uses(TestCase::class);
 
 it('attaches a stored document to an intervention', function (): void {
     Storage::fake('public');
 
-    $intervention = Intervention::factory()->create();
+    $intervention = documentCreateIntervention();
 
     $path = 'media/interventions/'.$intervention->id.'/docs/test.txt';
     Storage::disk('public')->put($path, 'hello');
@@ -55,7 +38,7 @@ it('attaches a stored document to an intervention', function (): void {
 it('attaches multiple uploaded photos to an intervention', function (): void {
     Storage::fake('public');
 
-    $intervention = Intervention::factory()->create();
+    $intervention = documentCreateIntervention();
 
     Storage::disk('public')->put('media/interventions/'.$intervention->id.'/photos/a.jpg', 'a');
     Storage::disk('public')->put('media/interventions/'.$intervention->id.'/photos/b.jpg', 'bb');
@@ -79,7 +62,7 @@ it('attaches multiple uploaded photos to an intervention', function (): void {
 it('fills mime type and size for stored media files', function (): void {
     Storage::fake('public');
 
-    $intervention = Intervention::factory()->create();
+    $intervention = documentCreateIntervention();
 
     $path = 'media/test.txt';
     Storage::disk('public')->put($path, 'hello');

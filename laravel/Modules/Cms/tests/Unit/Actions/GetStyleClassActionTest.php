@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Config;
 use Modules\Cms\Actions\GetStyleClassAction;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('GetStyleClassAction can be executed', function () {
     $action = new GetStyleClassAction();
 

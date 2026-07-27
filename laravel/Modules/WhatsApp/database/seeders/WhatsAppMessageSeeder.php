@@ -21,7 +21,8 @@ class WhatsAppMessageSeeder extends Seeder
         $conversations = WhatsAppConversation::query()->get();
 
         if ($conversations->isEmpty()) {
-            $conversations = WhatsAppConversationFactory::new()->count(3)->create();
+            WhatsAppConversationFactory::new()->count(3)->create();
+            $conversations = WhatsAppConversation::query()->get();
         }
 
         foreach ($conversations as $conversation) {

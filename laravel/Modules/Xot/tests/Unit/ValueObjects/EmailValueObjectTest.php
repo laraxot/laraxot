@@ -14,5 +14,4 @@ it('accepts valid email', function (): void {
     Assert::assertSame($email, $vo->email);
 });
 
-it('throws on invalid email', function (): void {
-});
+it('throws on invalid email', function (): void {});

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Quotation\Tests;
 
+require_once __DIR__.'/Support/quotation-media-helpers.php';
+
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\ServiceProvider;

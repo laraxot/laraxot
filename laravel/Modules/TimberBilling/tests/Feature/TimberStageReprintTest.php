@@ -1,13 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
-namespace Modules\TimberBilling\Tests\Feature;
-
-use Modules\TimberBilling\Tests\TestCase;
-
-uses(TestCase::class);
-
 use Modules\TimberBilling\Actions\CompleteTimberDryingCycleAction;
 use Modules\TimberBilling\Actions\MoveTimberMaterialAction;
 use Modules\TimberBilling\Actions\StartTimberDryingCycleAction;
@@ -16,7 +9,7 @@ use Modules\TimberBilling\Models\TimberLot;
 
 function semiFinished(string $code): TimberDerivedMaterial
 {
-    return TimberDerivedMaterial::factory()->create([
+    return TimberDerivedMaterial::factory()->createOne([
         'traceable_code' => $code,
         'quantity' => 100,
         'is_waste' => false,
@@ -69,7 +62,7 @@ it('does not append the same stage marker twice in a row', function (): void {
 });
 
 it('moves a lot without touching a traceable code', function (): void {
-    $lot = TimberLot::factory()->create(['current_area_code' => 'piazzale']);
+    $lot = TimberLot::factory()->createOne(['current_area_code' => 'piazzale']);
 
     app(MoveTimberMaterialAction::class)->execute($lot, 'area_stagionatura', null, null);
 

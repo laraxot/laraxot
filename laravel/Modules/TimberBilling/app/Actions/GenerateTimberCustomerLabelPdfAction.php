@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Actions;
 
-use Barryvdh\DomPDF\Facade\Pdf;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 use Modules\TimberBilling\Models\TimberCustomer;
 
 /**
@@ -14,8 +15,14 @@ final class GenerateTimberCustomerLabelPdfAction
 {
     public function execute(TimberCustomer $customer): string
     {
-        return Pdf::loadView('timber.pdf.customer-label', [
-            'customer' => $customer,
-        ])->setPaper([0, 0, 288, 180])->output();
+        /** @var view-string $view */
+        $view = 'timber.pdf.customer-label';
+
+        $dompdf = new Dompdf(new Options());
+        $dompdf->loadHtml(view($view, ['customer' => $customer])->render());
+        $dompdf->setPaper([0, 0, 288, 180]);
+        $dompdf->render();
+
+        return (string) $dompdf->output();
     }
 }

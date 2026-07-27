@@ -6,7 +6,6 @@ namespace Modules\Geo\Models\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Modules\Geo\Enums\AddressItemEnum;
@@ -29,8 +28,9 @@ use function Safe\preg_replace;
  * @property string|null $city
  * @property string|null $province
  * @property string|int $id
+ *
+ * @phpstan-ignore trait.unused
  */
-/** @phpstan-ignore trait.unused */
 trait HasAddress
 {
     /**
@@ -216,17 +216,8 @@ trait HasAddress
      * @param  bool  $setPrimary  Se impostare questo indirizzo come principale
      */
     public function addAddress(array $data, bool $setPrimary = false): Address // @phpstan-ignore missingType.iterableValue, return.type
-    {// Se è il primo indirizzo o è richiesto esplicitamente, impostalo come principale
-<<<<<<< HEAD
-                                            if ($setPrimary || 0 === $this->addresses()->count()) {
-                                                $data['is_primary'] = true;
-
-                                                // Rimuovi il flag is_primary da tutti gli altri indirizzi
-                                                if ($this->addresses()->count() > 0) {
-                                                    $this->addresses()->update(['is_primary' => false]);
-                                                }
-                                            }
-=======
+    {
+        // Se è il primo indirizzo o è richiesto esplicitamente, impostalo come principale
         if ($setPrimary || $this->addresses()->count() === 0) {
             $data['is_primary'] = true;
 
@@ -235,10 +226,9 @@ trait HasAddress
                 $this->addresses()->update(['is_primary' => false]);
             }
         }
->>>>>>> 99f3c29 (.)
 
-        /** @var Address $address */
         $address = $this->addresses()->create($data); // @phpstan-ignore argument.type
+        Assert::isInstanceOf($address, Address::class);
 
         return $address;
     }
@@ -262,10 +252,10 @@ trait HasAddress
 
     /**
      * Scope per filtrare i modelli in base alla città dell'indirizzo.
+     *
+     * @phpstan-ignore-next-line
      */
-    /** @param Builder<Model> $query
-     *  @return Builder<Model> */
-    public function scopeInCity(Builder $query, string $city): Builder // @phpstan-ignore missingType.generics
+    public function scopeInCity(Builder $query, string $city): Builder
     {
         return $query->whereHas('addresses', function (Builder $q) use ($city): void {
             $q->where('locality', $city);
@@ -275,10 +265,9 @@ trait HasAddress
     /**
      * Scope per filtrare i modelli in base alla provincia dell'indirizzo.
      *
-     * @param  Builder<Model>  $query
-     * @return Builder<Model>
+     * @phpstan-ignore-next-line
      */
-    public function scopeInProvince(Builder $query, string $province): Builder // @phpstan-ignore missingType.generics
+    public function scopeInProvince(Builder $query, string $province): Builder
     {
         return $query->whereHas('addresses', function (Builder $q) use ($province): void {
             $q->where('administrative_area_level_3', $province);
@@ -288,10 +277,9 @@ trait HasAddress
     /**
      * Scope per filtrare i modelli in base alla regione dell'indirizzo.
      *
-     * @param  Builder<Model>  $query
-     * @return Builder<Model>
+     * @phpstan-ignore-next-line
      */
-    public function scopeInRegion(Builder $query, string $region): Builder // @phpstan-ignore missingType.generics
+    public function scopeInRegion(Builder $query, string $region): Builder
     {
         return $query->whereHas('addresses', function (Builder $q) use ($region): void {
             $q->where('administrative_area_level_2', $region);
@@ -301,10 +289,9 @@ trait HasAddress
     /**
      * Scope per filtrare i modelli in base al CAP dell'indirizzo.
      *
-     * @param  Builder<Model>  $query
-     * @return Builder<Model>
+     * @phpstan-ignore-next-line
      */
-    public function scopeInPostalCode(Builder $query, string $postalCode): Builder // @phpstan-ignore missingType.generics
+    public function scopeInPostalCode(Builder $query, string $postalCode): Builder
     {
         return $query->whereHas('addresses', function (Builder $q) use ($postalCode): void {
             $q->where('postal_code', $postalCode);

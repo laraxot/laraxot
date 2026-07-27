@@ -6,5 +6,4 @@ use Modules\Xot\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('basic test works', function (): void {
-});
+it('basic test works', function (): void {});

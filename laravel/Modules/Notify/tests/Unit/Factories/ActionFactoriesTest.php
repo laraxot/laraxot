@@ -27,7 +27,7 @@ test('sms action resolves default smsfactor driver instance', function () {
 test('telegram action factory creates official driver instance', function () {
     config()->set('services.telegram.token', 'telegram-token');
 
-    $factory = new TelegramActionFactory;
+    $factory = new TelegramActionFactory();
     $action = $factory->create('official');
 
     Assert::assertInstanceOf(TelegramProviderActionInterface::class, $action);
@@ -35,7 +35,7 @@ test('telegram action factory creates official driver instance', function () {
 
 test('telegram action factory throws for unsupported driver', function () {
     \assertNotifyThrows(
-        fn () => (new TelegramActionFactory)->create('unsupported'),
+        fn () => (new TelegramActionFactory())->create('unsupported'),
         \Exception::class,
     );
 });
@@ -44,7 +44,7 @@ test('whatsapp action factory creates twilio driver instance', function () {
     config()->set('services.twilio.account_sid', 'sid-123');
     config()->set('services.twilio.auth_token', 'token-123');
 
-    $factory = new WhatsAppActionFactory;
+    $factory = new WhatsAppActionFactory();
     $action = $factory->create('twilio');
 
     Assert::assertInstanceOf(WhatsAppProviderActionInterface::class, $action);
@@ -52,7 +52,7 @@ test('whatsapp action factory creates twilio driver instance', function () {
 
 test('whatsapp action factory throws for unsupported driver', function () {
     \assertNotifyThrows(
-        fn () => (new WhatsAppActionFactory)->create('unsupported'),
+        fn () => (new WhatsAppActionFactory())->create('unsupported'),
         \Exception::class,
     );
 });

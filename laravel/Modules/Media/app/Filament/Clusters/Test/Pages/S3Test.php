@@ -368,7 +368,7 @@ class S3Test extends XotBasePage
                     'Bucket Accessible' => '❌ No',
                     'Error Code' => $e->getAwsErrorCode() ?? 'UnknownError',
                     'Message' => $e->getMessage(),
-                    'Solution' => $this->getSolutionForError($e->getAwsErrorCode() ?? null),
+                    'Solution' => $this->getSolutionForError($e->getAwsErrorCode()),
                 ],
             ];
         }

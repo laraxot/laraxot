@@ -5,13 +5,16 @@ declare(strict_types=1);
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
+use Mockery\MockInterface;
 use Modules\Cms\Http\Middleware\PageSlugMiddleware;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Symfony\Component\HttpFoundation\Response;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 /**
- * @param array<int, mixed> $args
+ * @param  array<int, mixed>  $args
  */
 function invokeProtected(object $object, string $method, array $args = []): mixed
 {
@@ -45,7 +48,7 @@ test('resolveCmsPageSlug prefers folio route name when it matches a cms page', f
     $middleware = new PageSlugMiddleware();
     $request = Request::create('/it/tickets/create', 'GET');
     $request->setRouteResolver(static function () use ($request) {
-        return new Illuminate\Routing\Route(['GET'], '/it/tickets/create', static fn (): string => 'ok')
+        return new Route(['GET'], '/it/tickets/create', static fn (): string => 'ok')
             ->name('tickets.create')
             ->bind($request);
     });
@@ -59,7 +62,7 @@ test('resolveCmsPageSlug builds container0.slug0 for nested folio pages', functi
     $middleware = new PageSlugMiddleware();
     $request = Request::create('/it/tickets/foo', 'GET');
     $request->setRouteResolver(static function () use ($request) {
-        $route = new Illuminate\Routing\Route(['GET'], '/it/{container0}/{slug0}', static fn (): string => 'ok');
+        $route = new Route(['GET'], '/it/{container0}/{slug0}', static fn (): string => 'ok');
         $route->name('container0.view');
         $route->bind($request);
         $route->setParameter('container0', 'tickets');
@@ -97,7 +100,7 @@ test('parseMiddleware splits name and parameters', function (): void {
 
 test('resolveMiddlewareClass returns mapped class for alias', function (): void {
     $middleware = new PageSlugMiddleware();
-    /** @var Kernel&Mockery\MockInterface $kernel */
+    /** @var Kernel&MockInterface $kernel */
     $kernel = Mockery::mock(Kernel::class);
     $kernel->allows([
         'getRouteMiddleware' => ['auth' => Authenticate::class],

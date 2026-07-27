@@ -76,7 +76,10 @@ final readonly class ConfiguredEasyfattGateway implements EasyfattGateway
 
         $rows = $this->connections->connection($connectionName)->table($table)->get();
 
-        return $rows->map(static fn (object $row): array => (array) $row)->all();
+        /** @var array<int, array<string, mixed>> $mapped */
+        $mapped = $rows->map(static fn (object $row): array => (array) $row)->all();
+
+        return $mapped;
     }
 
     /**
@@ -92,6 +95,7 @@ final readonly class ConfiguredEasyfattGateway implements EasyfattGateway
         $normalized = [];
         foreach ($rows as $row) {
             if (is_array($row)) {
+                /** @var array<string, mixed> $row */
                 $normalized[] = $row;
             }
         }

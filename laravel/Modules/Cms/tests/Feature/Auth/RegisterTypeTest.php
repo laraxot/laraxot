@@ -2,9 +2,12 @@
 
 declare(strict_types=1);
 
+use Illuminate\Http\Response;
+use Illuminate\Testing\TestResponse;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
@@ -51,7 +54,7 @@ describe('Registration Page Content', function () use ($userTypes): void {
 
         test("{$type} registration page has proper HTML structure", function () use ($type): void {
             $response = get("/it/auth/{$type}/register");
-            /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+            /** @var TestResponse<Response> $response */
             $content = (string) $response->getContent();
             Assert::assertStringContainsString('<!DOCTYPE html>', $content);
             Assert::assertStringContainsString('<html', $content);
@@ -82,7 +85,7 @@ describe('Registration Page Performance', function () use ($userTypes): void {
             $startTime = microtime(true);
 
             $response = get("/it/auth/{$type}/register");
-            /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+            /** @var TestResponse<Response> $response */
             $loadTime = microtime(true) - $startTime;
 
             Assert::assertSame(200, $response->status());

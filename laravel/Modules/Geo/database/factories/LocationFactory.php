@@ -73,7 +73,7 @@ class LocationFactory extends Factory
         $state = SafeStringCastAction::cast($this->faker->randomElement($italianRegions));
 
         return [
-            'name' => $this->faker->optional()->words(2, true) ?? null,
+            'name' => $this->faker->optional()->words(2, true),
             'lat' => $this->faker->latitude(35.0, 47.0), // Italy bounds
             'lng' => $this->faker->longitude(6.0, 19.0),
             'street' => $street.' '.SafeStringCastAction::cast($this->faker->numberBetween(1, 999)),
@@ -81,7 +81,7 @@ class LocationFactory extends Factory
             'state' => $state,
             'zip' => SafeStringCastAction::cast($this->faker->regexify('[0-9]{5}')), // Italian ZIP code
             'formatted_address' => sprintf('%s, %s, %s, Italia', $street, $city, $state),
-            'description' => $this->faker->optional()->sentence() ?? null,
+            'description' => $this->faker->optional()->sentence(),
             'processed' => $this->faker->boolean(80), // 80% processed
         ];
     }

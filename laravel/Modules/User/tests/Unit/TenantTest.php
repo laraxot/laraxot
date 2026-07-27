@@ -11,14 +11,15 @@ use Modules\User\Contracts\TenantContract;
 use Modules\User\Database\Factories\TenantFactory;
 use Modules\User\Models\BaseTenant;
 use Modules\User\Models\Tenant;
+use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\Sluggable\SlugOptions;
 
-uses(Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 /**
- * @param array<string, mixed> $overrides
+ * @param  array<string, mixed>  $overrides
  */
 function createPersistedTenant(array $overrides = []): Tenant
 {

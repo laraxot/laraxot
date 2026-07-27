@@ -3,9 +3,12 @@
 declare(strict_types=1);
 
 use Modules\Cms\Models\Menu;
+use Modules\Cms\Tests\TestCase;
+use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
+use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('Menu model can be instantiated', function () {
     $menu = new Menu();
 
@@ -26,12 +29,12 @@ test('Menu model implements HasRecursiveRelationships', function () {
     $reflection = new ReflectionClass(Menu::class);
     $traits = $reflection->getTraitNames();
 
-    Assert::assertTrue(in_array(Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships::class, $traits));
+    Assert::assertTrue(in_array(HasRecursiveRelationships::class, $traits));
 });
 
 test('Menu model uses SushiToJsons trait', function () {
     $reflection = new ReflectionClass(Menu::class);
     $traits = $reflection->getTraitNames();
 
-    Assert::assertTrue(in_array(Modules\Tenant\Models\Traits\SushiToJsons::class, $traits));
+    Assert::assertTrue(in_array(SushiToJsons::class, $traits));
 });

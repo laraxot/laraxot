@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Filament\Resources\TimberStockMovementResource\Pages;
 
-use DateTimeImmutable;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
@@ -12,6 +11,7 @@ use Modules\TimberBilling\Actions\RegisterTimberStockMovementAction;
 use Modules\TimberBilling\Filament\Resources\TimberStockMovementResource;
 use Modules\TimberBilling\Models\TimberCustomer;
 use Modules\TimberBilling\Models\TimberProduct;
+use Safe\DateTimeImmutable;
 
 final class CreateTimberStockMovement extends CreateRecord
 {

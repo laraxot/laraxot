@@ -2,18 +2,19 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Signature\Tests\TestCase::class);
-
-use Modules\User\Models\User;
 use Illuminate\Support\Facades\DB;
 use Modules\Customer\Actions\UpsertCustomerContactByEmailAction;
 use Modules\Intervention\Models\Intervention;
+use Modules\Signature\Tests\TestCase;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\WorkOrder\Actions\SetWorkOrderPrimaryContactAction;
 use Modules\WorkOrder\Models\WorkOrder;
 
+uses(TestCase::class);
+
 it('upserts a customer contact for a signatory and assigns it as the work order primary contact', function (): void {
     // Arrange
-    $operator = User::factory()->create();
+    $operator = UserFactory::new()->createOne();
 
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',
@@ -22,7 +23,6 @@ it('upserts a customer contact for a signatory and assigns it as the work order 
         'updated_at' => now(),
     ]);
 
-    /** @var WorkOrder $workOrder */
     $workOrder = WorkOrder::query()->create([
         'code' => 'WO-SIGN-0001',
         'customer_id' => $customerId,
@@ -34,7 +34,6 @@ it('upserts a customer contact for a signatory and assigns it as the work order 
         'notes' => null,
     ]);
 
-    /** @var Intervention $intervention */
     $intervention = Intervention::query()->create([
         'work_order_id' => $workOrder->id,
         'performed_by_user_id' => $operator->id,
@@ -58,4 +57,3 @@ it('upserts a customer contact for a signatory and assigns it as the work order 
     expect((int) $workOrder->primary_contact_id)->toBe((int) $contact->id);
     expect($intervention->workOrder()->first()?->id)->toBe($workOrder->id);
 });
-

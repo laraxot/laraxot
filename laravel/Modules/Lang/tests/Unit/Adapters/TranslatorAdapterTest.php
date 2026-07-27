@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Tests\Unit\Actions;
 
+use Illuminate\Contracts\Translation\Loader;
+use Illuminate\Translation\Translator;
 use Modules\Lang\Adapters\TranslatorAdapter;
 use Modules\Lang\Tests\TestCase;
 use PHPUnit\Framework\Assert;
@@ -12,7 +14,7 @@ uses(TestCase::class);
 
 function makeTranslatorAdapter(): TranslatorAdapter
 {
-    /** @var \Illuminate\Contracts\Translation\Loader $loader */
+    /** @var Loader $loader */
     $loader = app('translation.loader');
 
     return new TranslatorAdapter($loader, app()->getLocale());
@@ -34,7 +36,7 @@ describe('TranslatorAdapter business logic', function () {
     });
 
     it('extends the Laravel translator', function () {
-        Assert::assertInstanceOf(\Illuminate\Translation\Translator::class, makeTranslatorAdapter());
+        Assert::assertInstanceOf(Translator::class, makeTranslatorAdapter());
     });
 
     it('has correct namespace', function () {

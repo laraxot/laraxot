@@ -44,7 +44,7 @@ it('exposes users relationship', function (): void {
 
     /** @var UserFactory $userFactory */
     $userFactory = User::factory();
-    $user = $userFactory->createOne([
+    $user = $userFactory->create([
         'name' => 'Tenant User',
         'email' => 'user@tenant.example.com',
     ]);

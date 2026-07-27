@@ -6,6 +6,7 @@ namespace Modules\PublicProcurement\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\PublicProcurement\Models\PublicProcurementContract;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 
 /**
  * @extends Factory<PublicProcurementContract>
@@ -29,7 +30,7 @@ class PublicProcurementContractFactory extends Factory
             'customer_id' => null,
             'status' => $this->faker->randomElement(['draft', 'active', 'completed']),
             'code' => strtoupper($this->faker->unique()->bothify('APP-####-??')),
-            'title' => 'Contratto '.$this->faker->words(4, true),
+            'title' => 'Contratto '.SafeStringCastAction::cast($this->faker->words(4, true)),
             'contracting_authority' => 'Comune di '.$this->faker->city(),
             'procedure_type' => $this->faker->randomElement(['open', 'restricted', 'negotiated', 'direct']),
             'cig' => strtoupper($this->faker->bothify('?#########')),

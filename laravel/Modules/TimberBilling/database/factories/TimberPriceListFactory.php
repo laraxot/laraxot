@@ -20,7 +20,8 @@ final class TimberPriceListFactory extends Factory
      */
     public function definition(): array
     {
-        $name = ucfirst((string) $this->faker->unique()->words(2, true));
+        $words = $this->faker->unique()->words(2, true);
+        $name = ucfirst(is_string($words) ? $words : implode(' ', array_map(static fn (mixed $word): string => (string) $word, $words)));
 
         return [
             'code' => Str::slug($name, '_'),

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Intervention\Models;
 
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -21,6 +20,7 @@ use Modules\Signature\Models\Signature;
 use Modules\Signature\Models\Sketch;
 use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * @property int $id
@@ -67,8 +67,8 @@ use Modules\WorkOrder\Models\WorkOrder;
  */
 final class Intervention extends BaseModel
 {
-    /** @use HasFactory<InterventionFactory> */
-    use HasFactory;
+    /** @phpstan-use HasXotFactory<InterventionFactory> */
+    use HasXotFactory;
 
     use SoftDeletes;
 

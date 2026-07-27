@@ -30,6 +30,9 @@ function organizeSetWorkMode(string $mode): void
     );
 }
 
+/**
+ * @param  array<string, mixed>  $overrides
+ */
 function organizeMakeInboundConversation(array $overrides = []): WhatsAppConversation
 {
     return WhatsAppConversation::query()->create(array_merge([

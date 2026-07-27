@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\Document\Models\Media;
+use Modules\PublicProcurement\Database\Factories\PublicProcurementAiExtractionFactory;
 use Modules\User\Models\User;
+use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
 /**
@@ -24,9 +26,14 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $expires_at
  * @property Carbon|null $applied_at
  * @property Carbon|null $deleted_at
+ *
+ * @method static PublicProcurementAiExtractionFactory factory($count = null, $state = [])
  */
 final class PublicProcurementAiExtraction extends XotBaseModel
 {
+    /** @phpstan-use HasXotFactory<PublicProcurementAiExtractionFactory> */
+    use HasXotFactory;
+
     use SoftDeletes;
 
     protected $table = 'public_procurement_ai_extractions';

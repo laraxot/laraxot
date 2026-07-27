@@ -14,7 +14,10 @@ final class GenerateTimberCustomerSheetPdfAction
 {
     public function execute(TimberCustomer $customer): string
     {
-        return Pdf::loadView('timber.pdf.customer-sheet', [
+        /** @var view-string $view */
+        $view = 'timber.pdf.customer-sheet';
+
+        return Pdf::loadView($view, [
             'customer' => $customer->loadMissing('agent'),
         ])->output();
     }

@@ -3,9 +3,10 @@
 declare(strict_types=1);
 
 use Modules\Cms\Filament\Front\Pages\Welcome;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('Welcome page can be instantiated', function () {
     $page = new Welcome();
 });
@@ -46,17 +47,12 @@ test('Welcome page has instanceModel property', function () {
     Assert::assertSame('instanceModel', $property->getName());
 });
 
-test('Welcome page has mount method', function () {
-});
+test('Welcome page has mount method', function () {});
 
-test('Welcome page has getViewData method', function () {
-});
+test('Welcome page has getViewData method', function () {});
 
-test('Welcome page has initView method', function () {
-});
+test('Welcome page has initView method', function () {});
 
-test('Welcome page has url method', function () {
-});
+test('Welcome page has url method', function () {});
 
-test('Welcome page has setModel method', function () {
-});
+test('Welcome page has setModel method', function () {});

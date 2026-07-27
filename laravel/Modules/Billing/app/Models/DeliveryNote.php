@@ -10,8 +10,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\Xot\Models\XotBaseModel;
 
-/** Documento di trasporto ricevuto dal fornitore. */
 /**
+ * Documento di trasporto ricevuto dal fornitore.
+ *
  * @property int $id
  * @property int $supplier_id
  * @property int|null $work_order_id
@@ -21,6 +22,8 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
+ *
+ * @method static \Modules\Billing\Database\Factories\DeliveryNoteFactory factory($count = null, $state = [])
  */
 final class DeliveryNote extends XotBaseModel
 {

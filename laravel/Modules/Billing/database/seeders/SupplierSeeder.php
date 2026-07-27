@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Billing\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Modules\Billing\Database\Factories\SupplierFactory;
 use Modules\Billing\Models\Supplier;
 
 class SupplierSeeder extends Seeder
@@ -15,6 +16,6 @@ class SupplierSeeder extends Seeder
             return;
         }
 
-        Supplier::factory()->count(3)->create();
+        SupplierFactory::new()->count(3)->create();
     }
 }

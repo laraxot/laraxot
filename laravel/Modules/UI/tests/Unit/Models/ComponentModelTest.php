@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\UI\Tests\Unit\Models;
 
+use Modules\UI\Models\Component;
 use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
@@ -33,14 +34,14 @@ beforeEach(function (): void {
 describe('Component Model', function (): void {
     test('can be instantiated', function (): void {
         /** @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
-        $component = new \Modules\UI\Models\Component();
+        $component = new Component();
         /* @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
-        Assert::assertInstanceOf(\Modules\UI\Models\Component::class, $component);
+        Assert::assertInstanceOf(Component::class, $component);
     });
 
     test('has fillable attributes', function (): void {
         /** @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
-        $component = new \Modules\UI\Models\Component();
+        $component = new Component();
         $expected = [
             'name', 'theme_id', 'is_active', 'version', 'dependencies',
             'template', 'is_cacheable', 'cache_ttl', 'validation_rules',
@@ -57,7 +58,7 @@ describe('Component Model', function (): void {
 
     test('has casts defined', function (): void {
         /** @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
-        $component = new \Modules\UI\Models\Component();
+        $component = new Component();
         /** @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
         $casts = $component->getCasts();
         Assert::assertIsArray($casts);
@@ -74,26 +75,26 @@ describe('Component Model', function (): void {
 
     test('has theme relationship', function (): void {
         /** @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
-        $reflection = new \ReflectionClass(\Modules\UI\Models\Component::class);
+        $reflection = new \ReflectionClass(Component::class);
         Assert::assertTrue($reflection->hasMethod('theme'));
     });
 
     test('has correct table name', function (): void {
         /** @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
-        $component = new \Modules\UI\Models\Component();
+        $component = new Component();
         /* @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
         Assert::assertSame('components', $component->getTable());
     });
 
     test('extends base model', function (): void {
         /** @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
-        $reflection = new \ReflectionClass(\Modules\UI\Models\Component::class);
+        $reflection = new \ReflectionClass(Component::class);
         Assert::assertTrue($reflection->isSubclassOf('Modules\UI\Models\BaseModel'));
     });
 
     test('uses strict types', function (): void {
         /** @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
-        $reflection = new \ReflectionClass(\Modules\UI\Models\Component::class);
+        $reflection = new \ReflectionClass(Component::class);
         $fileName = $reflection->getFileName();
         Assert::assertNotFalse($fileName);
         $content = file_get_contents($fileName);
@@ -102,7 +103,7 @@ describe('Component Model', function (): void {
 
     test('has correct namespace', function (): void {
         /** @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
-        $reflection = new \ReflectionClass(\Modules\UI\Models\Component::class);
+        $reflection = new \ReflectionClass(Component::class);
         Assert::assertSame('Modules\UI\Models', $reflection->getNamespaceName());
     });
 });

@@ -14,6 +14,24 @@ abstract class TestCase extends XotBaseTestCase
 {
     use DatabaseTransactions;
 
+    public static ?self $currentTest = null;
+
+    public int $userId = 1;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        self::$currentTest = $this;
+    }
+
+    protected function tearDown(): void
+    {
+        self::$currentTest = null;
+
+        parent::tearDown();
+    }
+
     /**
      * @return array<int, class-string<ServiceProvider>>
      */

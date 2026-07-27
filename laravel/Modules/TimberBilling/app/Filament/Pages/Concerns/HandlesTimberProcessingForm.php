@@ -81,7 +81,7 @@ trait HandlesTimberProcessingForm
     }
 
     /**
-     * @return array{lot: TimberLot|null, material: TimberDerivedMaterial|null, lots: Collection<int, TimberLot>, materials: Collection<int, TimberDerivedMaterial>, woodSpecies: array<string, string>, stepTypes: array<string, string>}
+     * @return array{lot: TimberLot|null, material: TimberDerivedMaterial|null, lots: Collection<int, TimberLot>, materials: Collection<int, TimberDerivedMaterial>, inputWoodSpeciesName: string, stepTypes: array<string, string>}
      */
     protected function getViewData(): array
     {

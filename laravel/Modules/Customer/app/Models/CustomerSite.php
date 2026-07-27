@@ -7,16 +7,21 @@ namespace Modules\Customer\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Customer\Database\Factories\CustomerSiteFactory;
+use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * @property int $id
  * @property int $customer_id
  * @property string|null $name
  *
- * @method static \Modules\Customer\Database\Factories\CustomerSiteFactory factory($count = null, $state = [])
+ * @method static CustomerSiteFactory factory($count = null, $state = [])
  */
 final class CustomerSite extends BaseModel
 {
+    /** @phpstan-use HasXotFactory<CustomerSiteFactory> */
+    use HasXotFactory;
+
     use SoftDeletes;
 
     protected $table = 'customer_sites';

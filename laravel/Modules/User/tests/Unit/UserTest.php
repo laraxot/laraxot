@@ -170,8 +170,8 @@ describe('User', function (): void {
             $factory = UserFactory::new();
             \assert($factory instanceof Factory);
 
-            $boUser = $factory->createOne(['type' => UserType::BoUser]);
-            $customerUser = $factory->createOne(['type' => UserType::CustomerUser]);
+            $boUser = $factory->create(['type' => UserType::BoUser]);
+            $customerUser = $factory->create(['type' => UserType::CustomerUser]);
             \assert($boUser instanceof User);
             \assert($customerUser instanceof User);
 

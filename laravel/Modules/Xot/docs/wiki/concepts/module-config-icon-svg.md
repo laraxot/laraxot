@@ -23,6 +23,8 @@ $factory->add($this->nameLower, ['path' => $svgPath, 'prefix' => $this->nameLowe
 
 Filament legge la chiave grezza da `config/config.php` → `GetModulesNavigationItems` → `->icon($icon)`.
 
+**Test senza namespace (448 file):** il generatore aggiunge blocco `namespace { … }` con stub `expect()` → `PestExpectation` (2026-07-27).
+
 Naming Blade UI Icons: **`{alias}-{filename-senza-estensione}`**.
 
 | File | `alias` module.json | Valore in `config.php` |

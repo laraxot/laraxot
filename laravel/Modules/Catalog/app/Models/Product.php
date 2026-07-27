@@ -6,10 +6,29 @@ namespace Modules\Catalog\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Catalog\Database\Factories\ProductFactory;
+use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
+/**
+ * @property int $id
+ * @property string $name
+ * @property string $sku
+ * @property string|null $description
+ * @property float|string $unit_price
+ * @property bool $is_active
+ * @property int|null $catalog_model_id
+ * @property int|null $catalog_part_type_id
+ * @property int|null $catalog_measure_unit_id
+ * @property int|null $catalog_frequency_id
+ *
+ * @method static ProductFactory factory($count = null, $state = [])
+ */
 final class Product extends XotBaseModel
 {
+    /** @phpstan-use HasXotFactory<ProductFactory> */
+    use HasXotFactory;
+
     use SoftDeletes;
 
     protected $table = 'products';

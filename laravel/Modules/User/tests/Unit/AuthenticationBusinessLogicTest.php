@@ -3,9 +3,10 @@
 declare(strict_types=1);
 
 use Carbon\Carbon;
+use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 function authBizSuspiciousLogin(): bool
 {
@@ -178,16 +179,16 @@ describe('Authentication Business Logic', function (): void {
             Assert::assertNotSame('', (string) $user['email']);
 
             $profileScore = 0;
-            if ('' !== $user['name']) {
+            if ($user['name'] !== '') {
                 $profileScore += 25;
             }
-            if ('' !== $user['email']) {
+            if ($user['email'] !== '') {
                 $profileScore += 25;
             }
             if ($user['email_verified_at'] instanceof Carbon) {
                 $profileScore += 25;
             }
-            if ('' !== $user['profile_photo_path']) {
+            if ($user['profile_photo_path'] !== '') {
                 $profileScore += 25;
             }
 
@@ -364,7 +365,7 @@ describe('Authentication Business Logic', function (): void {
         it('validates push notification setup', function (): void {
             $device = authBizDeviceData();
 
-            if ('mobile' === $device['device_type']) {
+            if ($device['device_type'] === 'mobile') {
                 $pushToken = (string) $device['push_token'];
                 Assert::assertGreaterThan(20, strlen($pushToken));
             }

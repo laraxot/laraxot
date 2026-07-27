@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Billing\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Modules\Billing\Database\Factories\DeliveryNoteLineFactory;
 use Modules\Billing\Models\DeliveryNoteLine;
 
 class DeliveryNoteLineSeeder extends Seeder
@@ -15,6 +16,6 @@ class DeliveryNoteLineSeeder extends Seeder
             return;
         }
 
-        DeliveryNoteLine::factory()->count(3)->create();
+        DeliveryNoteLineFactory::new()->count(3)->create();
     }
 }

@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Illuminate\Support\Env;
+
 return [
     'name' => 'TimberBilling',
     'description' => 'Fatturazione e documenti fiscali Timber',
@@ -70,15 +72,15 @@ return [
 
     // Dati del cedente/prestatore per la fattura elettronica (configurabili per installazione).
     'company' => [
-        'vat_number' => env('TIMBER_BILLING_VAT', '01234567890'),
-        'tax_code' => env('TIMBER_BILLING_TAX_CODE', '01234567890'),
-        'name' => env('TIMBER_BILLING_NAME', 'ECO-TRON SNC'),
-        'tax_regime' => env('TIMBER_BILLING_REGIME', 'RF01'),
-        'address' => env('TIMBER_BILLING_ADDRESS', 'Via delle Segherie 1'),
-        'postal_code' => env('TIMBER_BILLING_CAP', '38100'),
-        'city' => env('TIMBER_BILLING_CITY', 'Trento'),
-        'province' => env('TIMBER_BILLING_PROVINCE', 'TN'),
-        'country' => env('TIMBER_BILLING_COUNTRY', 'IT'),
+        'vat_number' => Env::get('TIMBER_BILLING_VAT', '01234567890'),
+        'tax_code' => Env::get('TIMBER_BILLING_TAX_CODE', '01234567890'),
+        'name' => Env::get('TIMBER_BILLING_NAME', 'ECO-TRON SNC'),
+        'tax_regime' => Env::get('TIMBER_BILLING_REGIME', 'RF01'),
+        'address' => Env::get('TIMBER_BILLING_ADDRESS', 'Via delle Segherie 1'),
+        'postal_code' => Env::get('TIMBER_BILLING_CAP', '38100'),
+        'city' => Env::get('TIMBER_BILLING_CITY', 'Trento'),
+        'province' => Env::get('TIMBER_BILLING_PROVINCE', 'TN'),
+        'country' => Env::get('TIMBER_BILLING_COUNTRY', 'IT'),
     ],
 
     'sdi_statuses' => [

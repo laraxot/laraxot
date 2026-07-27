@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('route home returns successful response with correct view', function (): void {
     $response = cmsGetOrSkipOnServerError('/');
     $status = $response->status();

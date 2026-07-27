@@ -44,12 +44,11 @@ describe('XotBaseTransition', function (): void {
     it('can send notifications without errors', function (): void {
         $record = UserFactory::new()->createOne();
 
-        $transition = new class($record) extends XotBaseTransition {
+        $transition = new class($record) extends XotBaseTransition
+        {
             public static string $name = 'test_transition';
 
-            public function sendRecipientNotification(RecordNotificationData $recipient, array $data): void
-            {
-            }
+            public function sendRecipientNotification(RecordNotificationData $recipient, array $data): void {}
         };
 
         $transition->sendNotifications();
@@ -64,7 +63,8 @@ describe('XotBaseTransition', function (): void {
     it('returns correct notification recipients structure', function (): void {
         $record = UserFactory::new()->createOne();
 
-        $transition = new class($record) extends XotBaseTransition {
+        $transition = new class($record) extends XotBaseTransition
+        {
             public static string $name = 'test_transition';
         };
 
@@ -83,7 +83,8 @@ describe('XotBaseTransition', function (): void {
     it('processes recipients correctly in sendNotifications', function (): void {
         $record = UserFactory::new()->createOne();
 
-        $transition = new class($record) extends XotBaseTransition {
+        $transition = new class($record) extends XotBaseTransition
+        {
             public static string $name = 'test_mixed_transition';
 
             /**
@@ -96,9 +97,7 @@ describe('XotBaseTransition', function (): void {
                 ];
             }
 
-            public function sendRecipientNotification(RecordNotificationData $recipient, array $data): void
-            {
-            }
+            public function sendRecipientNotification(RecordNotificationData $recipient, array $data): void {}
         };
 
         $transition->sendNotifications();

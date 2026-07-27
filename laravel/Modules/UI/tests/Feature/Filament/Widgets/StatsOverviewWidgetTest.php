@@ -53,7 +53,7 @@ test('stats overview widget has correct strict types declaration', function (): 
     $reflection = new \ReflectionClass(StatsOverviewWidget::class);
     $filename = $reflection->getFileName();
 
-    if (false !== $filename) {
+    if ($filename !== false) {
         $content = file_get_contents($filename);
         Assert::assertStringContainsString('declare(strict_types=1)', $content);
     }
@@ -78,7 +78,7 @@ test('stats overview widget has correct use statements', function (): void {
     $reflection = new \ReflectionClass(StatsOverviewWidget::class);
     $filename = $reflection->getFileName();
 
-    if (false !== $filename) {
+    if ($filename !== false) {
         $content = file_get_contents($filename);
         Assert::assertStringContainsString('use Filament\\Widgets\\StatsOverviewWidget as BaseWidget;', $content);
     }

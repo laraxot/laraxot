@@ -88,9 +88,6 @@ class UploadFileAction extends BaseS3Action
                 'bucket' => $this->bucketName,
             ];
         } catch (Exception $exception) {
-            // Initialize $sourceFile as null if not already defined
-            $sourceFile ??= null;
-
             if (isset($sourceFile) && is_resource($sourceFile)) {
                 fclose($sourceFile);
             }

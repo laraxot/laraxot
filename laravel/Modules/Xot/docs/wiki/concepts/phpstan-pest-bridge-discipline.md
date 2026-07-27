@@ -25,7 +25,7 @@ Xot e' il posto giusto per pattern condivisi di test/static analysis, ma il brid
 - PHPStan resta governato dal solo `laravel/phpstan.neon` utente.
 - Bridge/helper condivisi devono rendere tipizzabili le assertion ricorrenti, non mascherare errori.
 - Bridge `PestFunctionBridge.php`: `uses|test|it|describe` → `void`; `expect()` → `PestExpectation` (evita `function.resultUnused` e catene `function.void`).
-- Rigenerare bridge: `php bashscripts/tools/generate-pest-phpstan-bridge.php` (213 namespace, 2026-07-24; il generatore auto-formatta l'output con `pint` subito dopo la scrittura, nessun fixup manuale necessario).
+- Rigenerare bridge: `php bashscripts/tools/generate-pest-phpstan-bridge.php` (214 namespace + blocco `namespace {}` per test senza declare namespace, 2026-07-27).
 - Rigenerare **sempre** dopo aver rimosso o rinominato un modulo: il generatore scansiona `namespace ...;` in ogni file sotto `*/tests/*`, quindi un blocco riferito a un modulo cancellato resta stale nel bridge (`@param-closure-this \Modules\{Removed}\Tests\TestCase` non risolvibile → `class.notFound` per PHPStan). Caso reale 2026-07-24: modulo `Comment` rimosso interamente, bridge non rigenerato → 25 errori PHPStan (28% di uno sweep da 90).
 - `uses(\Modules\<M>\Tests\TestCase::class)` sempre **dopo** gli `import use` nel file Pest.
 

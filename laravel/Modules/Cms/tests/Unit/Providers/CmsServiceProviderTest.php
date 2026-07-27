@@ -2,13 +2,16 @@
 
 declare(strict_types=1);
 
+use Illuminate\Support\ServiceProvider;
 use Modules\Cms\Providers\CmsServiceProvider;
 use Modules\Cms\Providers\EventServiceProvider;
 use Modules\Cms\Providers\FolioVoltServiceProvider;
 use Modules\Cms\Providers\RouteServiceProvider;
+use Modules\Cms\Tests\TestCase;
+use Modules\Xot\Providers\XotBaseServiceProvider;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('CmsServiceProvider has correct name', function () {
     $provider = new CmsServiceProvider(app());
     $reflection = new ReflectionClass($provider);
@@ -19,7 +22,7 @@ test('CmsServiceProvider has correct name', function () {
 });
 
 test('CmsServiceProvider extends XotBaseServiceProvider', function () {
-    Assert::assertInstanceOf(Modules\Xot\Providers\XotBaseServiceProvider::class, new CmsServiceProvider(app()));
+    Assert::assertInstanceOf(XotBaseServiceProvider::class, new CmsServiceProvider(app()));
 });
 
 test('EventServiceProvider has empty event listeners', function () {
@@ -67,7 +70,7 @@ test('RouteServiceProvider has registerMyMiddleware method', function () {
 });
 
 test('FolioVoltServiceProvider extends ServiceProvider', function () {
-    Assert::assertInstanceOf(Illuminate\Support\ServiceProvider::class, new FolioVoltServiceProvider(app()));
+    Assert::assertInstanceOf(ServiceProvider::class, new FolioVoltServiceProvider(app()));
 });
 
 test('FolioVoltServiceProvider has register method', function () {

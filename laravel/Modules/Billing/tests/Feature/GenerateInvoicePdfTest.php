@@ -7,7 +7,10 @@ use Modules\Billing\Tests\TestCase;
 uses(TestCase::class);
 
 it('generates an invoice PDF', function (): void {
+    skip('needs barryvdh/laravel-dompdf - see gestionale-commesse-technical-debt.md (DomPDF vendor)');
     // GenerateInvoicePdfAction dipende da Barryvdh\DomPDF\Facade\Pdf.
-})->skip('needs barryvdh/laravel-dompdf - see gestionale-commesse-technical-debt.md (DomPDF vendor)');
+});
 
-it('generates an invoice PDF when linked to a work order', function (): void {})->skip('needs barryvdh/laravel-dompdf - see gestionale-commesse-technical-debt.md (DomPDF vendor)');
+it('generates an invoice PDF when linked to a work order', function (): void {
+    skip('needs barryvdh/laravel-dompdf - see gestionale-commesse-technical-debt.md (DomPDF vendor)');
+});

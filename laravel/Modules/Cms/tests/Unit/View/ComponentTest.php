@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Modules\Cms\Tests\TestCase;
 use Modules\Cms\View\Components\AppLayout;
 use Modules\Cms\View\Components\GuestLayout;
 use Modules\Cms\View\Components\Metatags;
@@ -10,7 +11,7 @@ use Modules\Cms\View\Components\PageContent;
 use Modules\Cms\View\Components\Section;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('AppLayout can be instantiated', function () {
     $component = new AppLayout();
 

@@ -21,7 +21,8 @@ class EmailMessageSeeder extends Seeder
         $conversations = EmailConversation::query()->get();
 
         if ($conversations->isEmpty()) {
-            $conversations = EmailConversationFactory::new()->count(3)->create();
+            EmailConversationFactory::new()->count(3)->create();
+            $conversations = EmailConversation::query()->get();
         }
 
         foreach ($conversations as $conversation) {

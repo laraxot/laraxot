@@ -90,7 +90,7 @@ class GetAddressFromMapboxLatLngAction
     }
 
     /**
-     * @param array<mixed> $response
+     * @param  array<mixed>  $response
      */
     private function parseResponse(array $response): MapboxMapData
     {
@@ -160,16 +160,16 @@ class GetAddressFromMapboxLatLngAction
         return new AddressData(
             latitude: (float) ($res['center'][1] ?? 0),
             longitude: (float) ($res['center'][0] ?? 0),
-            country: $res['context']['country'] ?? null,
-            city: $res['context']['place'] ?? null,
+            country: $res['context']['country'],
+            city: $res['context']['place'],
             country_code: strtoupper($res['context']['country_code'] ?? 'IT'),
             postal_code: (int) ($res['context']['postcode'] ?? 0),
-            locality: $res['context']['locality'] ?? null,
-            county: $res['context']['region'] ?? null,
-            street: $res['text'] ?? null,
-            street_number: $res['address'] ?? null,
-            district: $res['context']['neighborhood'] ?? null,
-            state: $res['context']['region'] ?? null,
+            locality: $res['context']['locality'],
+            county: $res['context']['region'],
+            street: $res['text'],
+            street_number: $res['address'],
+            district: $res['context']['neighborhood'],
+            state: $res['context']['region'],
         );
     }
 }

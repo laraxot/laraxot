@@ -13,7 +13,8 @@ uses(TestCase::class);
 
 function makeLangBaseModel(): BaseModel
 {
-    return new class extends BaseModel {
+    return new class() extends BaseModel
+    {
         protected $table = 'test_lang_table';
     };
 }

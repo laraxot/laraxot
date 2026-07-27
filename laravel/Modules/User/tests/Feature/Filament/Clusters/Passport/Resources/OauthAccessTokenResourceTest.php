@@ -1,14 +1,12 @@
 <?php
 
 declare(strict_types=1);
+use Modules\User\Tests\TestCase;
 
-uses(Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
-it('oauth access token resource class exists', function () {
-});
+it('oauth access token resource class exists', function () {});
 
-it('can render oauth access token resource page', function () {
-});
+it('can render oauth access token resource page', function () {});
 
-it('can list oauth access tokens', function () {
-});
+it('can list oauth access tokens', function () {});

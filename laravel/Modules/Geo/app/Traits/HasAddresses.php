@@ -14,8 +14,11 @@ use Modules\Geo\Models\Address;
  * Trait HasAddresses.
  *
  * Questo trait fornisce funzionalità per gestire indirizzi multipli su qualsiasi modello.
+ *
+ * @property int|string $id
+ *
+ * @phpstan-ignore trait.unused
  */
-/** @phpstan-ignore trait.unused */
 trait HasAddresses
 {
     /** @return MorphMany<Address, $this> */
@@ -75,7 +78,7 @@ trait HasAddresses
     /**
      * Aggiunge un nuovo indirizzo.
      *
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     public function addAddress(array $data, bool $isPrimary = false): Address
     {

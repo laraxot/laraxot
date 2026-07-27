@@ -2,9 +2,13 @@
 
 declare(strict_types=1);
 
-uses(\Modules\HR\Tests\TestCase::class);
+namespace Modules\HR\Tests\Feature;
 
 use Modules\HR\Filament\Resources\AbsenceRequestResource;
+use Modules\HR\Tests\TestCase;
+use ReflectionMethod;
+
+uses(TestCase::class);
 
 it('normalizes legacy italian absence type values to canonical codes', function (): void {
     $normalizeMethod = new ReflectionMethod(AbsenceRequestResource::class, 'normalizeAbsenceType');
@@ -32,4 +36,3 @@ it('translates legacy and canonical absence type values in italian', function ()
         app()->setLocale($previousLocale);
     }
 });
-

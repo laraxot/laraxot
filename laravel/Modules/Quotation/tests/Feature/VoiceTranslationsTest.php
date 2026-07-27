@@ -1,8 +1,12 @@
 <?php
 
 declare(strict_types=1);
+use Modules\Quotation\Tests\TestCase;
 
-uses(\Modules\Quotation\Tests\TestCase::class);
+uses(TestCase::class);
+
+use function Safe\file_get_contents;
+use function Safe\preg_match_all;
 
 /**
  * @return list<string>

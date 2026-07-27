@@ -3,18 +3,19 @@
 declare(strict_types=1);
 
 use Illuminate\Database\Eloquent\Model;
+use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 use function Safe\glob;
 
-uses(Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('every vendor passport eloquent model has a local oauth wrapper', function (): void {
     $passportSrc = base_path('vendor/laravel/passport/src');
 
     /** @var list<string> $passportFiles */
     $passportFiles = glob($passportSrc.'/*.php');
-    if ([] === $passportFiles) {
+    if ($passportFiles === []) {
         Assert::fail('Unable to read Passport source directory.');
     }
 

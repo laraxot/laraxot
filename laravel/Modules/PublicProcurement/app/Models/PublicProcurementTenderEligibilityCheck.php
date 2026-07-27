@@ -6,11 +6,27 @@ namespace Modules\PublicProcurement\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
+use Modules\PublicProcurement\Database\Factories\PublicProcurementTenderEligibilityCheckFactory;
 use Modules\User\Models\User;
+use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
+/**
+ * @property int $id
+ * @property string $status
+ * @property int $score
+ * @property array<int, string>|null $expired_documents
+ * @property array<int, string>|null $missing_documents
+ * @property Carbon|null $evaluated_at
+ *
+ * @method static PublicProcurementTenderEligibilityCheckFactory factory($count = null, $state = [])
+ */
 final class PublicProcurementTenderEligibilityCheck extends XotBaseModel
 {
+    /** @phpstan-use HasXotFactory<PublicProcurementTenderEligibilityCheckFactory> */
+    use HasXotFactory;
+
     use SoftDeletes;
 
     protected $table = 'public_procurement_tender_eligibility_checks';

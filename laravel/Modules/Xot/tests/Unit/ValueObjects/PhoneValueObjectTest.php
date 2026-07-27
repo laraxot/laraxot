@@ -14,5 +14,4 @@ it('accepts valid phone', function (): void {
     Assert::assertSame($phone, $vo->toString());
 });
 
-it('throws on invalid phone', function (): void {
-});
+it('throws on invalid phone', function (): void {});

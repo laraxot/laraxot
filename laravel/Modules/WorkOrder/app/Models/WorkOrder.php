@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\WorkOrder\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -18,6 +17,7 @@ use Modules\Customer\Models\CustomerSite;
 use Modules\Intervention\Models\Intervention;
 use Modules\PublicProcurement\Models\PublicProcurementContract;
 use Modules\WorkOrder\Database\Factories\WorkOrderFactory;
+use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * @property int $id
@@ -41,8 +41,8 @@ use Modules\WorkOrder\Database\Factories\WorkOrderFactory;
  */
 final class WorkOrder extends BaseModel
 {
-    /** @use HasFactory<WorkOrderFactory> */
-    use HasFactory;
+    /** @phpstan-use HasXotFactory<WorkOrderFactory> */
+    use HasXotFactory;
 
     use SoftDeletes;
 

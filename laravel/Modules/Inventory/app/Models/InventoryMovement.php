@@ -20,7 +20,10 @@ use Modules\Xot\Models\XotBaseModel;
  * @property int|null $product_id
  * @property int|null $intervention_id
  * @property int|null $work_order_id
+ * @property int|null $to_warehouse_id
+ * @property int|null $from_warehouse_id
  * @property string|null $movement_type
+ * @property int|float|string|null $quantity
  * @property numeric-string|float|null $unit_price
  * @property numeric-string|float|null $line_total
  * @property Carbon|null $occurred_at

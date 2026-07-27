@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Employee\Database\Factories\TimeEntryFactory;
-use Modules\TechPlanner\Models\Profile;
+use Modules\Xot\Contracts\ProfileContract;
 
 /**
  * Class TimeEntry.
@@ -44,9 +44,9 @@ use Modules\TechPlanner\Models\Profile;
  * @property numeric|null $location_lng GPS longitude coordinate
  * @property string|null $location_name Human readable location name
  * @property string|null $photo_path Path to verification photo
- * @property-read Profile|null $creator
- * @property-read Profile|null $deleter
- * @property-read Profile|null $updater
+ * @property-read ProfileContract|null $creator
+ * @property-read ProfileContract|null $deleter
+ * @property-read ProfileContract|null $updater
  *
  * @method static TimeEntryFactory factory($count = null, $state = [])
  * @method static Builder<static>|TimeEntry forEmployee(int $employeeId)
@@ -144,7 +144,7 @@ final class TimeEntry extends BaseModel
     /**
      * Scope to get pending entries.
      *
-     * @param Builder<self> $query
+     * @param  Builder<self>  $query
      * @return Builder<self>
      */
     public function scopePending(Builder $query): Builder
@@ -155,7 +155,7 @@ final class TimeEntry extends BaseModel
     /**
      * Scope to get entries for a specific employee.
      *
-     * @param Builder<self> $query
+     * @param  Builder<self>  $query
      * @return Builder<self>
      */
     public function scopeForEmployee(Builder $query, int $employeeId): Builder
@@ -166,7 +166,7 @@ final class TimeEntry extends BaseModel
     /**
      * Scope to get entries with anomalies.
      *
-     * @param Builder<self> $query
+     * @param  Builder<self>  $query
      * @return Builder<self>
      */
     public function scopeWithAnomalies(Builder $query): Builder

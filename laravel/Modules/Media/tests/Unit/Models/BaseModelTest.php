@@ -13,7 +13,7 @@ uses(TestCase::class);
 if (! function_exists(__NAMESPACE__.'\\makeMediaTestBaseModel')) {
     function makeMediaTestBaseModel(): BaseModel
     {
-        return new class extends BaseModel
+        return new class() extends BaseModel
         {
             protected $table = 'test_media_table';
         };

@@ -13,8 +13,7 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 /**
- * @param MockInterface&Table $tableMock
- *
+ * @param  MockInterface&Table  $tableMock
  * @return MockInterface&Table
  */
 function stubTableChain(MockInterface $tableMock): MockInterface

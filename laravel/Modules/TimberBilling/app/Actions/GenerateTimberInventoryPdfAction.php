@@ -17,7 +17,10 @@ final readonly class GenerateTimberInventoryPdfAction
     {
         $overview = $this->inventoryQuery->execute($woodSpecies, $statusCode);
 
-        return Pdf::loadView('timber.pdf.inventory', [
+        /** @var view-string $view */
+        $view = 'timber.pdf.inventory';
+
+        return Pdf::loadView($view, [
             'lots' => $overview['lots'],
             'materials' => $overview['materials'],
             'packagedUnits' => $overview['packagedUnits'],

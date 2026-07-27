@@ -11,6 +11,13 @@ use Modules\Inventory\Database\Factories\WarehouseFactory;
 use Modules\Vehicle\Models\Vehicle;
 use Modules\Xot\Models\XotBaseModel;
 
+/**
+ * @property int $id
+ * @property string $name
+ * @property string $code
+ * @property bool $is_active
+ * @property bool $is_final_destination
+ */
 final class Warehouse extends XotBaseModel
 {
     /** @use HasFactory<WarehouseFactory> */

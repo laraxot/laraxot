@@ -3,14 +3,14 @@
 declare(strict_types=1);
 
 use Modules\User\Datas\PasswordData;
+use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use ReflectionNamedType;
+use Spatie\LaravelData\Data;
 
 use function Safe\file_get_contents;
 
-use Spatie\LaravelData\Data;
-
-uses(Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 function samplePasswordData(): PasswordData
 {

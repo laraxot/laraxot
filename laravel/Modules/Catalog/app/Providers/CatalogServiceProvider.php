@@ -33,7 +33,7 @@ class CatalogServiceProvider extends XotBaseServiceProvider
         // XotBase registra config/metel.php come catalog.metel.*; Actions/test SRC
         // usano config('metel.*') come nel gestionale (root config/metel.php).
         $metelPath = module_path($this->name, 'config/metel.php');
-        if (is_string($metelPath) && is_file($metelPath)) {
+        if (is_file($metelPath)) {
             $this->mergeConfigFrom($metelPath, 'metel');
         }
     }

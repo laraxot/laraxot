@@ -2,15 +2,17 @@
 
 declare(strict_types=1);
 
+use Livewire\Volt\Component;
 use Modules\Cms\Http\Volt\LoginComponent;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 describe('LoginComponent', function (): void {
     test('login component extends volt component', function (): void {
         $component = new LoginComponent();
 
-        Assert::assertInstanceOf(Livewire\Volt\Component::class, $component);
+        Assert::assertInstanceOf(Component::class, $component);
     });
 
     test('login component has email property', function (): void {
@@ -31,8 +33,7 @@ describe('LoginComponent', function (): void {
         Assert::assertTrue((new ReflectionClass($component))->hasProperty('remember'));
     });
 
-    test('login component has authenticate method', function (): void {
-    });
+    test('login component has authenticate method', function (): void {});
 
     test('login component uses correct namespace', function (): void {
         $reflector = new ReflectionClass(LoginComponent::class);

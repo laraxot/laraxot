@@ -40,7 +40,7 @@ it('can create a test tenant', function () {
 it('can resolve a sushi module row', function () {
     $module = Module::query()->first();
 
-    if (null === $module) {
+    if ($module === null) {
         $this->markTestSkipped('No nwidart modules registered in test runtime.');
     }
 

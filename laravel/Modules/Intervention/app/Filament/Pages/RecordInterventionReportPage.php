@@ -260,10 +260,10 @@ final class RecordInterventionReportPage extends XotBasePage
                 $quantity = 1.0;
             }
 
-            $rawPrice = $material['unit_price'] ?? null;
+            $rawPrice = $material['unit_price'];
             $unitPrice = is_numeric($rawPrice) ? (float) $rawPrice : null;
 
-            $rawProductId = $material['matched_product_id'] ?? null;
+            $rawProductId = $material['matched_product_id'];
             $productId = is_numeric($rawProductId) ? (int) $rawProductId : null;
 
             $lines[] = new DictatedMaterialLine(

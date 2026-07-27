@@ -7,15 +7,12 @@ namespace Modules\Cms\Tests\Feature;
 use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
+use PHPUnit\Framework\Assert;
+use Spatie\LaravelData\DataCollection;
 
 use function Pest\Laravel\get;
-
-use PHPUnit\Framework\Assert;
-
 use function Safe\file_get_contents;
 use function Safe\json_decode;
-
-use Spatie\LaravelData\DataCollection;
 
 uses(TestCase::class);
 
@@ -95,7 +92,7 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         expect($allBlocks->count())->toBeGreaterThan(0);
 
         // Verify CMS blocks are discovered
-        $cmsBlocks = $allBlocks->filter(fn ($block) => 'Cms' === $block->module);
+        $cmsBlocks = $allBlocks->filter(fn ($block) => $block->module === 'Cms');
         if ($cmsBlocks->count() > 0) {
             $cmsBlocks->each(function ($block) {
                 expect($block->toArray())->toHaveKeys(['name', 'class', 'module', 'path']);
@@ -255,7 +252,7 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         $blocks = $contentBlocks[$this->lang];
         $landingBlock = collect($blocks)->firstWhere('type', 'landing-page');
 
-        if (null !== $landingBlock) {
+        if ($landingBlock !== null) {
             /** @var array<string, mixed> $landingBlock */
             $landingBlockData = $landingBlock['data'];
             Assert::assertIsArray($landingBlockData);

@@ -9,7 +9,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Customer;
+use Modules\PublicProcurement\Database\Factories\PublicProcurementContractFactory;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
 /**
@@ -42,9 +44,14 @@ use Modules\Xot\Models\XotBaseModel;
  * @property string|null $description
  * @property string|null $notes
  * @property Carbon|null $deleted_at
+ *
+ * @method static PublicProcurementContractFactory factory($count = null, $state = [])
  */
 final class PublicProcurementContract extends XotBaseModel
 {
+    /** @phpstan-use HasXotFactory<PublicProcurementContractFactory> */
+    use HasXotFactory;
+
     use SoftDeletes;
 
     protected $table = 'public_procurement_contracts';

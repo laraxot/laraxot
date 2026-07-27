@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
+use Modules\Cms\Tests\TestCase;
 use Modules\Cms\View\Components\Page;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 /*
 
  * Pure unit tests for Modules\Cms\View\Components\Page (the Blade VIEW component).

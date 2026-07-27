@@ -46,7 +46,7 @@ function inboxPageConversationWithMessage(string $phone, string $body): WhatsApp
 it('lists conversations on the inbox page', function (): void {
     inboxPageConversationWithMessage('+393201234567', 'Ciao, ho bisogno di assistenza');
 
-    $list = Livewire::test(WhatsAppInboxPage::class)->instance()->conversationList();
+    $list = whatsAppInboxComponent()->instance()->conversationList();
 
     expect($list)->toHaveCount(1)
         ->and($list[0]['last_message'])->toBe('Ciao, ho bisogno di assistenza');
@@ -55,7 +55,7 @@ it('lists conversations on the inbox page', function (): void {
 it('selects a conversation and exposes its thread', function (): void {
     $conversation = inboxPageConversationWithMessage('+393209876543', 'Primo messaggio');
 
-    $component = Livewire::test(WhatsAppInboxPage::class)
+    $component = whatsAppInboxComponent()
         ->call('selectConversation', $conversation->id)
         ->assertSet('selectedConversationId', $conversation->id);
 
@@ -66,5 +66,5 @@ it('selects a conversation and exposes its thread', function (): void {
 });
 
 it('returns an empty thread when no conversation is selected', function (): void {
-    expect(Livewire::test(WhatsAppInboxPage::class)->instance()->thread())->toBe([]);
+    expect(whatsAppInboxComponent()->instance()->thread())->toBe([]);
 });

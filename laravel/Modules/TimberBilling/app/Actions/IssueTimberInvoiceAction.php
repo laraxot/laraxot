@@ -6,7 +6,9 @@ namespace Modules\TimberBilling\Actions;
 
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use Modules\TimberBilling\Models\TimberCustomer;
 use Modules\TimberBilling\Models\TimberInvoice;
+use Modules\TimberBilling\Models\TimberProduct;
 use Modules\TimberBilling\Support\TimberInvoiceNumberGenerator;
 use RuntimeException;
 use Spatie\QueueableAction\QueueableAction;
@@ -62,17 +64,23 @@ final class IssueTimberInvoiceAction
             return;
         }
 
-        $customer = $invoice->customer;
+        $customer = $invoice->customer_id !== null
+            ? TimberCustomer::query()->find($invoice->customer_id)
+            : null;
         $movementDate = Carbon::parse($invoice->invoice_date);
 
         foreach ($invoice->lines()->with('product')->get() as $line) {
-            $product = $line->product;
-            if ($product === null) {
+            if ($line->product_id === null) {
+                continue;
+            }
+
+            $timberProduct = TimberProduct::query()->find($line->product_id);
+            if ($timberProduct === null) {
                 continue;
             }
 
             $this->registerStockMovement->execute(
-                product: $product,
+                product: $timberProduct,
                 directionCode: $direction,
                 quantity: (float) $line->quantity,
                 unitOfMeasure: (string) $line->unit_of_measure,

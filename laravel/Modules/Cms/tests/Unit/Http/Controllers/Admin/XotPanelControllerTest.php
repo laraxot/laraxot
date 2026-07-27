@@ -3,18 +3,19 @@
 declare(strict_types=1);
 
 use Modules\Cms\Http\Controllers\Admin\XotPanelController;
+use Modules\Cms\Http\Controllers\BaseController;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 describe('XotPanelController', function (): void {
     test('xot panel controller extends base controller', function (): void {
         $controller = new XotPanelController();
 
-        Assert::assertInstanceOf(Modules\Cms\Http\Controllers\BaseController::class, $controller);
+        Assert::assertInstanceOf(BaseController::class, $controller);
     });
 
-    test('xot panel controller has __call method', function (): void {
-    });
+    test('xot panel controller has __call method', function (): void {});
 
     test('xot panel controller uses correct namespace', function (): void {
         $reflector = new ReflectionClass(XotPanelController::class);

@@ -10,14 +10,16 @@ use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Str;
 use Modules\AiAssistant\Actions\CreateAiActionProposalAction;
 use Modules\AiAssistant\Actions\ExecuteAiActionProposalAction;
-use Modules\AiAssistant\Models\AiActionProposal;
 use Modules\AiAssistant\Models\AiThread;
+use Modules\Customer\Models\Customer;
 use Modules\Platform\Models\PlatformSetting;
 use Modules\WhatsApp\Actions\SendWhatsAppTextMessageAction;
 use Modules\WhatsApp\Jobs\ProcessWhatsAppMessageJob;
 use Modules\WhatsApp\Models\WhatsAppConversation;
 use Modules\WhatsApp\Models\WhatsAppMessage;
 use Modules\WhatsApp\Tests\TestCase;
+use Modules\WorkOrder\Models\WorkOrder;
+use Modules\WorkOrder\Models\WorkOrderStatus;
 
 use function Pest\Laravel\get;
 use function Pest\Laravel\postJson;
@@ -143,7 +145,7 @@ it('sends outbound WhatsApp messages through YCloud when configured', function (
 
 it('executes an organize_whatsapp_request proposal creating customer, work order and intervention', function (): void {
     PlatformSetting::query()->updateOrCreate(['key' => 'interventions.work_mode'], ['value_json' => ['value' => 'work_order']]);
-    \Modules\WorkOrder\Models\WorkOrderStatus::query()->firstOrCreate(['code' => 'in_progress'], ['name' => 'In lavorazione', 'color' => 'amber', 'is_terminal' => 0, 'sort_order' => 10]);
+    WorkOrderStatus::query()->firstOrCreate(['code' => 'in_progress'], ['name' => 'In lavorazione', 'color' => 'amber', 'is_terminal' => 0, 'sort_order' => 10]);
 
     $conversation = WhatsAppConversation::query()->create([
         'phone_e164' => '+393331234567',
@@ -186,8 +188,8 @@ it('executes an organize_whatsapp_request proposal creating customer, work order
         ->and($result['customer_created'])->toBeTrue()
         ->and($result['work_order_id'])->not->toBeNull();
 
-    expect(\Modules\Customer\Models\Customer::query()->where('legal_name', 'Rosa Bianchi')->exists())->toBeTrue()
-        ->and(\Modules\WorkOrder\Models\WorkOrder::query()->whereKey($result['work_order_id'])->exists())->toBeTrue();
+    expect(Customer::query()->where('legal_name', 'Rosa Bianchi')->exists())->toBeTrue()
+        ->and(WorkOrder::query()->whereKey($result['work_order_id'])->exists())->toBeTrue();
 
     $message->refresh();
     expect($message->processing_status)->toBe('processed')

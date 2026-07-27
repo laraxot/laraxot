@@ -12,6 +12,10 @@ use Modules\TimberBilling\Data\TimberTraceabilityRow;
 use Modules\TimberBilling\Queries\GetTimberTraceabilityRegisterQuery;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
+use function Safe\fclose;
+use function Safe\fopen;
+use function Safe\fputcsv;
+
 final class TimberTraceabilityRegisterPage extends Page
 {
     protected static bool $isDiscovered = false;

@@ -3,9 +3,11 @@
 declare(strict_types=1);
 
 use Modules\Cms\Models\Attachment;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+use Spatie\MediaLibrary\HasMedia;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('Attachment model can be instantiated', function () {
     $attachment = new Attachment();
 
@@ -41,5 +43,5 @@ test('Attachment model has expected casts', function () {
 test('Attachment model implements HasMedia interface', function () {
     $attachment = new Attachment();
 
-    Assert::assertInstanceOf(Spatie\MediaLibrary\HasMedia::class, $attachment);
+    Assert::assertInstanceOf(HasMedia::class, $attachment);
 });

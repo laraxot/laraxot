@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-
 namespace Modules\Notify\Tests\Unit\Actions;
+
 use Modules\Notify\Actions\NetfunSendAction;
 use Modules\Notify\Datas\SmsData;
 use Modules\Notify\Tests\TestCase;

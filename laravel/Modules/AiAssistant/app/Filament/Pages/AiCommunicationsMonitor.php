@@ -273,7 +273,7 @@ final class AiCommunicationsMonitor extends Page
                 ->map(static fn (array $entry): array => [
                     'from' => (string) $entry['from'],
                     'text' => (string) $entry['text'],
-                    'at' => is_string($entry['at'] ?? null) ? $entry['at'] : null,
+                    'at' => is_string($entry['at']) ? $entry['at'] : null,
                 ])
                 ->filter(fn (array $entry): bool => $entry['text'] !== '')
                 ->values()

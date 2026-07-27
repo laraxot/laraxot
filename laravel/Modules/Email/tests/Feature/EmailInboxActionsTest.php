@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Email\Tests\Feature;
 
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Queue;
 use Modules\Email\Actions\PollEmailInboxAction;
 use Modules\Email\Actions\ProcessEmailMessageAction;
@@ -69,7 +68,7 @@ it('stores incoming signed email webhooks idempotently', function (): void {
 
 it('polls the configured inbox and stores unread emails', function (): void {
     Queue::fake();
-    app()->bind(EmailInboxClientInterface::class, fn (): EmailInboxClientInterface => new class implements EmailInboxClientInterface
+    app()->bind(EmailInboxClientInterface::class, fn (): EmailInboxClientInterface => new class() implements EmailInboxClientInterface
     {
         /** @return array<int, array<string, mixed>> */
         public function fetchUnread(int $limit): array

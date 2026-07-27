@@ -18,7 +18,7 @@ describe('Notify Traits Coverage', function (): void {
         config()->set('notify.rate_limiting.max_attempts', 1);
         config()->set('notify.rate_limiting.decay_minutes', 1);
 
-        $dummy = new NotifyRateLimitDummy;
+        $dummy = new NotifyRateLimitDummy();
         $key = $dummy->key('mail', 'id-'.uniqid());
         $dummy->reset($key);
 
@@ -36,7 +36,7 @@ describe('Notify Traits Coverage', function (): void {
         config()->set('notify.tracking.pixel.enabled', false);
         config()->set('notify.tracking.links.enabled', false);
 
-        $dummy = new NotifyTrackingDummy;
+        $dummy = new NotifyTrackingDummy();
         $html = '<a href="https://example.com/path">click</a>';
 
         $tracked = $dummy->addTrackingPublic($html, 'track-1');
@@ -47,11 +47,11 @@ describe('Notify Traits Coverage', function (): void {
     });
 
     test('_tenant_notification_helpers_check_tenant_ownership', function (): void {
-        $tenant = new Tenant;
+        $tenant = new Tenant();
         $tenant->setAttribute('id', 'tenant-42');
         Filament::setTenant($tenant, isQuiet: true);
 
-        $dummy = new NotifyTenantDummyModel;
+        $dummy = new NotifyTenantDummyModel();
         $dummy->tenant_id = 'tenant-42';
 
         Assert::assertTrue($dummy->belongsToTenant('tenant-42'));

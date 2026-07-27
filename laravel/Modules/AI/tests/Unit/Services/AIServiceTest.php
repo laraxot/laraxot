@@ -12,7 +12,7 @@ uses(TestCase::class);
 
 beforeEach(function (): void {
     /** @var TestCase $this */
-    $this->action = new CompletionAction;
+    $this->action = new CompletionAction();
 });
 
 describe('CompletionAction', function (): void {

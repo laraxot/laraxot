@@ -539,8 +539,8 @@ final class RecordQuotationVoicePage extends XotBasePage
                 $quantity = 1.0;
             }
 
-            $rawPrice = $item['unit_price'] ?? null;
-            $rawProductId = $item['matched_product_id'] ?? null;
+            $rawPrice = $item['unit_price'];
+            $rawProductId = $item['matched_product_id'];
 
             $lines[] = new DictatedQuotationItem(
                 description: $description,

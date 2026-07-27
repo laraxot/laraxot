@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Signature\Tests\TestCase::class);
-
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Modules\Intervention\Models\Intervention;
@@ -11,13 +9,16 @@ use Modules\Signature\Actions\StoreSignatureForModelAction;
 use Modules\Signature\Actions\StoreSketchForModelAction;
 use Modules\Signature\Models\Signature;
 use Modules\Signature\Models\Sketch;
-use Modules\User\Models\User;
+use Modules\Signature\Tests\TestCase;
+use Modules\User\Database\Factories\UserFactory;
+
+uses(TestCase::class);
 
 it('stores signature and sketch from canvas data urls', function (): void {
     // Arrange
     Storage::fake('public');
 
-    $user = User::factory()->create();
+    $user = UserFactory::new()->createOne();
 
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',

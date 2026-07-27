@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Modules\AiAssistant\Tests\Unit;
+
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\AiAssistant\Database\Factories\AiActionProposalFactory;

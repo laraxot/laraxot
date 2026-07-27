@@ -3,9 +3,11 @@
 declare(strict_types=1);
 
 use Modules\User\Filament\Widgets\LogoutWidget;
+use Modules\User\Tests\TestCase;
+use Modules\Xot\Filament\Widgets\XotBaseSchemaWidget;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('LogoutWidget', function (): void {
     test('logout widget can be instantiated', function (): void {
@@ -17,7 +19,7 @@ describe('LogoutWidget', function (): void {
     test('logout widget extends xot base widget', function (): void {
         $widget = new LogoutWidget();
 
-        Assert::assertInstanceOf(Modules\Xot\Filament\Widgets\XotBaseSchemaWidget::class, $widget);
+        Assert::assertInstanceOf(XotBaseSchemaWidget::class, $widget);
     });
 
     test('logout widget has is logging out flag', function (): void {

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Modules\Billing\Models\Invoice;
 use Modules\Billing\Tests\TestCase;
+use Modules\User\Database\Factories\UserFactory;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -15,6 +15,7 @@ use function Pest\Laravel\get;
 uses(TestCase::class);
 
 it('creates and lists invoices', function (): void {
+    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabelle gestionale-commesse migrate');
     // Arrange
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',
@@ -38,16 +39,17 @@ it('creates and lists invoices', function (): void {
     expect($invoice->id)->not->toBeNull();
     expect(Invoice::query()->count())->toBeGreaterThan(0);
     expect(DB::table('invoices')->where('id', $invoice->id)->value('number'))->toBe('FAT-2026-0001');
-})->skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabelle gestionale-commesse migrate');
+});
 
 it('shows create invoice action in admin list when user can create invoices', function (): void {
+    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabelle gestionale-commesse migrate');
     $adminRole = Role::findOrCreate('admin');
     $adminRole->givePermissionTo([
         Permission::findOrCreate('ViewAny:Invoice'),
         Permission::findOrCreate('Create:Invoice'),
     ]);
 
-    $user = User::factory()->create();
+    $user = UserFactory::new()->createOne();
     $user->syncRoles(['admin']);
 
     actingAs($user);
@@ -55,4 +57,4 @@ it('shows create invoice action in admin list when user can create invoices', fu
     get('/admin/invoices')
         ->assertOk()
         ->assertSee('/admin/invoices/create', escape: false);
-})->skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabelle gestionale-commesse migrate');
+});

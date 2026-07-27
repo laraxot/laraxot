@@ -2,29 +2,24 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Customer\Tests\TestCase::class);
+namespace Modules\Customer\Tests\Feature;
 
 use Modules\Customer\Actions\SoftDeleteCustomerSiteAction;
-use Modules\Customer\Models\Customer;
-use Modules\Customer\Models\CustomerSite;
+use Modules\Customer\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('soft-deletes a customer site', function (): void {
-    // Arrange
-    /** @var Customer $customer */
-    $customer = Customer::query()->create([
+    $customer = customerCreate([
         'legal_name' => 'Acme S.p.A.',
         'is_active' => 1,
     ]);
 
-    /** @var CustomerSite $site */
-    $site = $customer->sites()->create([
+    $site = customerCreateSite($customer, [
         'name' => 'HQ',
     ]);
 
-    // Act
     app(SoftDeleteCustomerSiteAction::class)->execute($site);
 
-    // Assert
     expect($site->refresh()->trashed())->toBeTrue();
 });
-

@@ -108,12 +108,12 @@ it('password data get form components returns array', function (): void {
 it('events can be instantiated', function (): void {
     $userFactory = UserFactory::new();
     \assert($userFactory instanceof Factory);
-    $owner = $userFactory->createOne();
+    $owner = $userFactory->create();
     \assert($owner instanceof User);
 
     $socialiteFactory = SocialiteUserFactory::new();
     \assert($socialiteFactory instanceof Factory);
-    $socialiteUser = $socialiteFactory->createOne([
+    $socialiteUser = $socialiteFactory->create([
         'user_id' => (string) $owner->getKey(),
         'provider' => 'github',
         'provider_id' => 'provider-'.uniqid(),
@@ -134,12 +134,12 @@ it('events can be instantiated', function (): void {
 it('events have dispatchable trait', function (): void {
     $userFactory = UserFactory::new();
     \assert($userFactory instanceof Factory);
-    $owner = $userFactory->createOne();
+    $owner = $userFactory->create();
     \assert($owner instanceof User);
 
     $socialiteFactory = SocialiteUserFactory::new();
     \assert($socialiteFactory instanceof Factory);
-    $socialiteUser = $socialiteFactory->createOne([
+    $socialiteUser = $socialiteFactory->create([
         'user_id' => (string) $owner->getKey(),
         'provider' => 'github',
         'provider_id' => 'provider-'.uniqid(),

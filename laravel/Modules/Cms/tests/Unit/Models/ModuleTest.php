@@ -2,10 +2,12 @@
 
 declare(strict_types=1);
 
+use Modules\Cms\Models\BaseModel;
 use Modules\Cms\Models\Module;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('Module model can be instantiated', function () {
     $module = new Module();
 
@@ -25,7 +27,7 @@ test('Module model has expected fillable fields', function () {
 test('Module model extends BaseModel', function () {
     $module = new Module();
 
-    Assert::assertInstanceOf(Modules\Cms\Models\BaseModel::class, $module);
+    Assert::assertInstanceOf(BaseModel::class, $module);
 });
 
 test('Module model uses Sushi trait', function () {

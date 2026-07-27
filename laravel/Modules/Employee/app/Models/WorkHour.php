@@ -11,8 +11,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Employee\Database\Factories\WorkHourFactory;
 use Modules\Employee\Enums\WorkHourStatusEnum;
 use Modules\Employee\Enums\WorkHourTypeEnum;
-use Modules\TechPlanner\Models\Profile;
 use Modules\User\Models\User;
+use Modules\Xot\Contracts\ProfileContract;
 
 /**
  * Class WorkHour.
@@ -34,11 +34,11 @@ use Modules\User\Models\User;
  * @property Carbon|null $updated_at
  * @property-read Employee $employee
  * @property-read User|null $approvedBy
- * @property-read Profile|null $creator
+ * @property-read ProfileContract|null $creator
  * @property-read string $formatted_date
  * @property-read string $formatted_date_time
  * @property-read string $formatted_time
- * @property-read Profile|null $updater
+ * @property-read ProfileContract|null $updater
  *
  * @method static Builder<static>|WorkHour forDate(\Carbon\Carbon $date)
  * @method static Builder<static>|WorkHour forEmployee(int $employeeId)
@@ -63,7 +63,7 @@ use Modules\User\Models\User;
  * @method static Builder<static>|WorkHour whereType($value)
  * @method static Builder<static>|WorkHour whereUpdatedAt($value)
  *
- * @property-read Profile|null $deleter
+ * @property-read ProfileContract|null $deleter
  *
  * @method static WorkHourFactory factory($count = null, $state = [])
  *

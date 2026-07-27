@@ -6,16 +6,17 @@ use Modules\Customer\Models\Customer;
 use Modules\Platform\Models\AuditLog;
 use Modules\Platform\Models\PlatformSetting;
 use Modules\Platform\Tests\TestCase;
-use Modules\User\Models\User;
+
+use function Safe\json_encode;
 
 uses(TestCase::class);
 
 it('writes an audit log entry when creating a customer', function (): void {
-    $user = User::factory()->create();
+    $user = platformCreateUser();
 
-    test()->actingAs($user);
+    platformActingAs($user);
 
-    $customer = Customer::factory()->create();
+    $customer = Customer::factory()->createOne();
 
     /** @var AuditLog $log */
     $log = AuditLog::query()
@@ -29,9 +30,9 @@ it('writes an audit log entry when creating a customer', function (): void {
 });
 
 it('redacts sensitive keys in audit payloads', function (): void {
-    $user = User::factory()->create();
+    $user = platformCreateUser();
 
-    test()->actingAs($user);
+    platformActingAs($user);
 
     /** @var PlatformSetting $setting */
     $setting = PlatformSetting::query()->create([

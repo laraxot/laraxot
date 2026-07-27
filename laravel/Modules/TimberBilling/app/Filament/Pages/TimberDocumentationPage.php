@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 
+use function Safe\file_get_contents;
+
 final class TimberDocumentationPage extends Page
 {
     protected static bool $isDiscovered = false;

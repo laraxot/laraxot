@@ -29,7 +29,7 @@ test('action generates a log-activity URL containing record key', function (): v
     $action = ListLogActivitiesAction::make();
 
     $livewire = ListLogActivitiesActionTestPage::usingResource(ListLogActivitiesActionTestResourceSimple::class);
-    $record = new ListLogActivitiesActionTestRecord;
+    $record = new ListLogActivitiesActionTestRecord();
 
     $action->livewire($livewire);
     $action->record($record);

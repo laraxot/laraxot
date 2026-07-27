@@ -2,9 +2,12 @@
 
 declare(strict_types=1);
 
-uses(\Modules\AiAssistant\Tests\TestCase::class);
+namespace Modules\AiAssistant\Tests\Feature;
 
 use Modules\AiAssistant\Speech\BuildSpokenSummaryAction;
+use Modules\AiAssistant\Tests\TestCase;
+
+uses(TestCase::class);
 
 function spoken(string $markdown): string
 {

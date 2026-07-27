@@ -16,7 +16,7 @@ uses(TestCase::class);
 
 function actionsNotificationManagerRecipient(): Model
 {
-    return new class extends Model
+    return new class() extends Model
     {
         protected $guarded = [];
 
@@ -25,7 +25,7 @@ function actionsNotificationManagerRecipient(): Model
 }
 
 beforeEach(function (): void {
-    $this->notificationManager = new NotificationManager;
+    $this->notificationManager = new NotificationManager();
 });
 
 afterEach(function (): void {

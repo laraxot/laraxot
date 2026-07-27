@@ -2,12 +2,15 @@
 
 declare(strict_types=1);
 
-uses(\Modules\AiAssistant\Tests\TestCase::class);
+namespace Modules\AiAssistant\Tests\Feature;
 
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Modules\AiAssistant\Llm\LlmChatJsonClient;
+use Modules\AiAssistant\Tests\TestCase;
+
+uses(TestCase::class);
 
 function fakeChatResponse(string $content): void
 {
@@ -19,24 +22,46 @@ function fakeChatResponse(string $content): void
     ]);
 }
 
+/**
+ * @return list<array{level: mixed, message: mixed, context: mixed}>
+ */
+function captureLogEntries(): array
+{
+    $entries = [];
+    Log::listen(function (mixed $level, mixed $message, mixed $context = []) use (&$entries): void {
+        $entries[] = [
+            'level' => $level,
+            'message' => $message,
+            'context' => $context,
+        ];
+    });
+
+    return $entries;
+}
+
 it('logs the raw LLM response when services.llm.log_raw is on', function (): void {
     config(['services.llm.log_raw' => true]);
     fakeChatResponse('{"based_on_customer":"Pinco Pallino","customer":{"legal_name":"Davide"}}');
 
-    Log::spy();
+    $entries = captureLogEntries();
 
     app(LlmChatJsonClient::class)->complete('system', 'user prompt');
 
-    Log::shouldHaveReceived('info')->withArgs(function (string $message, array $context): bool {
-        return str_contains($message, '[LLM]')
-            && is_string($context['raw_content'] ?? null)
-            && str_contains($context['raw_content'], 'Pinco Pallino');
-    })->once();
+    $infoLogs = array_values(array_filter(
+        $entries,
+        static fn (array $entry): bool => $entry['level'] === 'info'
+            && is_string($entry['message'])
+            && str_contains($entry['message'], '[LLM]')
+            && is_array($entry['context'])
+            && is_string($entry['context']['raw_content'] ?? null)
+            && str_contains($entry['context']['raw_content'], 'Pinco Pallino'),
+    ));
+
+    expect($infoLogs)->toHaveCount(1);
 });
 
 it('returns an empty array (never throws) on a connection timeout', function (): void {
     config(['services.deepseek.key' => 'test-key', 'services.deepseek.base_uri' => 'https://api.deepseek.com/v1']);
-    // Simulate cURL error 28 (timeout) — must be swallowed, not bubbled up.
     Http::fake(fn () => throw new ConnectionException('cURL error 28: Operation timed out'));
 
     expect(app(LlmChatJsonClient::class)->complete('system', 'user'))->toBe([]);
@@ -46,23 +71,35 @@ it('does NOT log when services.llm.log_raw is off', function (): void {
     config(['services.llm.log_raw' => false]);
     fakeChatResponse('{"customer":{"legal_name":"Davide"}}');
 
-    Log::spy();
+    $entries = captureLogEntries();
 
     app(LlmChatJsonClient::class)->complete('system', 'user prompt');
 
-    Log::shouldNotHaveReceived('info');
+    $infoLogs = array_values(array_filter(
+        $entries,
+        static fn (array $entry): bool => $entry['level'] === 'info',
+    ));
+
+    expect($infoLogs)->toBeEmpty();
 });
 
 it('logs the raw body even when the provider returns an HTTP error', function (): void {
     config(['services.llm.log_raw' => true, 'services.deepseek.key' => 'test-key', 'services.deepseek.base_uri' => 'https://api.deepseek.com/v1']);
     Http::fake(['*/chat/completions' => Http::response('rate limited', 429)]);
 
-    Log::spy();
+    $entries = captureLogEntries();
 
     $result = app(LlmChatJsonClient::class)->complete('system', 'user prompt');
 
     expect($result)->toBe([]);
-    Log::shouldHaveReceived('info')->withArgs(function (string $message, array $context): bool {
-        return ($context['ok'] ?? null) === false && ($context['status'] ?? null) === 429;
-    })->once();
+
+    $errorLogs = array_values(array_filter(
+        $entries,
+        static fn (array $entry): bool => $entry['level'] === 'info'
+            && is_array($entry['context'])
+            && ($entry['context']['ok'] ?? null) === false
+            && ($entry['context']['status'] ?? null) === 429,
+    ));
+
+    expect($errorLogs)->toHaveCount(1);
 });

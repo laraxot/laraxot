@@ -2,10 +2,12 @@
 
 declare(strict_types=1);
 
+use Modules\Cms\Models\BaseModel;
 use Modules\Cms\Models\PageContent;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('PageContent model can be instantiated', function () {
     $pageContent = new PageContent();
 
@@ -27,7 +29,7 @@ test('PageContent model has expected fillable fields', function () {
 test('PageContent model extends BaseModel', function () {
     $pageContent = new PageContent();
 
-    Assert::assertInstanceOf(Modules\Cms\Models\BaseModel::class, $pageContent);
+    Assert::assertInstanceOf(BaseModel::class, $pageContent);
 });
 
 test('PageContent model has translatable fields', function () {

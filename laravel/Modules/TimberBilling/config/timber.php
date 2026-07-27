@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Illuminate\Support\Env;
+
 return [
     'wood_species' => [
         'abete' => 'Abete',
@@ -158,17 +160,17 @@ return [
     ],
 
     'easyfatt' => [
-        'enabled' => env('TIMBER_EASYFATT_ENABLED', false),
-        'connection' => env('TIMBER_EASYFATT_CONNECTION'),
-        'customers_table' => env('TIMBER_EASYFATT_CUSTOMERS_TABLE'),
-        'products_table' => env('TIMBER_EASYFATT_PRODUCTS_TABLE'),
+        'enabled' => Env::get('TIMBER_EASYFATT_ENABLED', false),
+        'connection' => Env::get('TIMBER_EASYFATT_CONNECTION'),
+        'customers_table' => Env::get('TIMBER_EASYFATT_CUSTOMERS_TABLE'),
+        'products_table' => Env::get('TIMBER_EASYFATT_PRODUCTS_TABLE'),
         'columns' => [
-            'customer_code' => env('TIMBER_EASYFATT_MAP_CUSTOMER_CODE', 'customer_code'),
-            'customer_name' => env('TIMBER_EASYFATT_MAP_CUSTOMER_NAME', 'customer_name'),
-            'customer_vat_number' => env('TIMBER_EASYFATT_MAP_CUSTOMER_VAT', 'vat_number'),
-            'product_code' => env('TIMBER_EASYFATT_MAP_PRODUCT_CODE', 'product_code'),
-            'product_name' => env('TIMBER_EASYFATT_MAP_PRODUCT_NAME', 'product_name'),
-            'product_unit_price' => env('TIMBER_EASYFATT_MAP_PRODUCT_PRICE', 'unit_price'),
+            'customer_code' => Env::get('TIMBER_EASYFATT_MAP_CUSTOMER_CODE', 'customer_code'),
+            'customer_name' => Env::get('TIMBER_EASYFATT_MAP_CUSTOMER_NAME', 'customer_name'),
+            'customer_vat_number' => Env::get('TIMBER_EASYFATT_MAP_CUSTOMER_VAT', 'vat_number'),
+            'product_code' => Env::get('TIMBER_EASYFATT_MAP_PRODUCT_CODE', 'product_code'),
+            'product_name' => Env::get('TIMBER_EASYFATT_MAP_PRODUCT_NAME', 'product_name'),
+            'product_unit_price' => Env::get('TIMBER_EASYFATT_MAP_PRODUCT_PRICE', 'unit_price'),
         ],
         'fallback_customers' => [
             [

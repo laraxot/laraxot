@@ -58,7 +58,8 @@ final class GenerateTimberPackagedUnitsAction
         $normalizedTrace = trim((string) $traceableCode) !== '' ? trim((string) $traceableCode) : null;
 
         return DB::transaction(function () use ($material, $normalizedType, $unitsCount, $quantityPerUnit, $userId, $totalQuantity, $normalizedArticle, $normalizedTrace): Collection {
-            $generatedUnits = collect();
+            /** @var Collection<int, TimberPackagedUnit> $generatedUnits */
+            $generatedUnits = new Collection();
 
             for ($sequence = 1; $sequence <= $unitsCount; $sequence++) {
                 $packageCode = $this->buildPackageCode($material->output_code, $normalizedType, $sequence);

@@ -17,6 +17,8 @@ use Modules\Xot\Models\XotBaseModel;
  * @property string $unit_price
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
+ * @method static \Modules\Billing\Database\Factories\SupplierInvoiceLineFactory factory($count = null, $state = [])
  */
 final class SupplierInvoiceLine extends XotBaseModel
 {

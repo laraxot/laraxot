@@ -2,10 +2,13 @@
 
 declare(strict_types=1);
 
+use Modules\Cms\Models\BaseModel;
 use Modules\Cms\Models\BaseTreeModel;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('BaseTreeModel is abstract and extends BaseModel', function () {
     $reflection = new ReflectionClass(BaseTreeModel::class);
 
@@ -13,19 +16,20 @@ test('BaseTreeModel is abstract and extends BaseModel', function () {
 
     $parent = $reflection->getParentClass();
     Assert::assertInstanceOf(ReflectionClass::class, $parent);
-    Assert::assertSame(Modules\Cms\Models\BaseModel::class, $parent->getName());
+    Assert::assertSame(BaseModel::class, $parent->getName());
 });
 
 test('BaseTreeModel implements HasRecursiveRelationships', function () {
     $reflection = new ReflectionClass(BaseTreeModel::class);
     $traits = $reflection->getTraitNames();
 
-    Assert::assertTrue(in_array(Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships::class, $traits));
+    Assert::assertTrue(in_array(HasRecursiveRelationships::class, $traits));
 });
 
 test('BaseTreeModel has expected fillable fields', function () {
     // Create a concrete implementation for testing
-    $model = new class extends BaseTreeModel {
+    $model = new class() extends BaseTreeModel
+    {
         protected $table = 'test';
     };
 
@@ -40,7 +44,8 @@ test('BaseTreeModel has expected fillable fields', function () {
 
 test('BaseTreeModel has expected casts', function () {
     // Create a concrete implementation for testing
-    $model = new class extends BaseTreeModel {
+    $model = new class() extends BaseTreeModel
+    {
         protected $table = 'test';
     };
 

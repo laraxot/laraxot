@@ -11,11 +11,13 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 it('creates custom relation', function (): void {
-    $relatedModel = new class extends Model {
+    $relatedModel = new class() extends Model
+    {
         protected $table = 'related';
     };
 
-    $parentModel = new class extends Model {
+    $parentModel = new class() extends Model
+    {
         use HasCustomRelations;
 
         protected $table = 'parent';

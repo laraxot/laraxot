@@ -11,6 +11,7 @@ use Modules\Billing\Tests\TestCase;
 uses(TestCase::class);
 
 it('links and unlinks invoices to work orders idempotently', function (): void {
+    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabelle gestionale-commesse migrate');
     // Arrange
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',
@@ -52,4 +53,4 @@ it('links and unlinks invoices to work orders idempotently', function (): void {
     // Assert
     expect(DB::table('invoice_work_order_links')->where('invoice_id', $invoice->id)->where('work_order_id', $workOrderId)->count())
         ->toBe(0);
-})->skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabelle gestionale-commesse migrate');
+});

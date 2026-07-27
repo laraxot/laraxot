@@ -4,21 +4,19 @@ declare(strict_types=1);
 
 namespace Modules\TimberBilling\Actions;
 
-use BaconQrCode\Renderer\Image\SvgImageBackEnd;
-use BaconQrCode\Renderer\ImageRenderer;
-use BaconQrCode\Renderer\RendererStyle\RendererStyle;
-use BaconQrCode\Writer;
+use chillerlan\QRCode\QRCode;
+use chillerlan\QRCode\QROptions;
 
 final class RenderTimberQrSvgAction
 {
     public function execute(string $payload, int $size = 260): string
     {
-        $renderer = new ImageRenderer(
-            new RendererStyle($size),
-            new SvgImageBackEnd(),
-        );
+        $options = new QROptions([
+            'outputType' => QRCode::OUTPUT_MARKUP_SVG,
+            'scale' => max(1, (int) round($size / 25)),
+        ]);
 
-        return (new Writer($renderer))->writeString($payload);
+        return (string) (new QRCode($options))->render($payload);
     }
 
     public function dataUri(string $payload, int $size = 260): string

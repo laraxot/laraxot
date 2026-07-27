@@ -14,7 +14,7 @@ final class SettingsRepository
      */
     public function getJson(string $key): ?array
     {
-        if (! Schema::hasTable('platform_settings')) {
+        if (! $this->platformSettingsTableExists()) {
             return null;
         }
 
@@ -46,24 +46,27 @@ final class SettingsRepository
     public function getString(string $key, ?string $default = null): ?string
     {
         $value = $this->getScalar($key);
+
         return is_string($value) ? $value : $default;
     }
 
     public function getBool(string $key, bool $default = false): bool
     {
         $value = $this->getScalar($key);
+
         return is_bool($value) ? $value : $default;
     }
 
     public function getInt(string $key, int $default = 0): int
     {
         $value = $this->getScalar($key);
+
         return is_int($value) ? $value : $default;
     }
 
     private function getScalar(string $key): mixed
     {
-        if (! Schema::hasTable('platform_settings')) {
+        if (! $this->platformSettingsTableExists()) {
             return null;
         }
 
@@ -82,5 +85,13 @@ final class SettingsRepository
 
         return $value;
     }
-}
 
+    private function platformSettingsTableExists(): bool
+    {
+        try {
+            return Schema::hasTable('platform_settings');
+        } catch (\Throwable) {
+            return false;
+        }
+    }
+}

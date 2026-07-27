@@ -2,61 +2,34 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Catalog\Tests\TestCase::class);
+namespace Modules\Catalog\Tests\Feature;
 
 use Illuminate\Support\Facades\Http;
 use Modules\Catalog\Actions\FetchMetelCatalogViaApiAction;
 use Modules\Catalog\Actions\ImportMetelPriceListFileAction;
 use Modules\Catalog\Actions\LinkMetelItemToProductAction;
-use Modules\Catalog\Support\MetelRecordParser;
 use Modules\Catalog\Database\Seeders\MetelDemoSeeder;
+use Modules\Catalog\DTO\MetelArticleData;
 use Modules\Catalog\Models\MetelCatalog;
 use Modules\Catalog\Models\MetelCatalogItem;
 use Modules\Catalog\Models\Product;
+use Modules\Catalog\Support\MetelRecordParser;
+use Modules\Catalog\Tests\TestCase;
+use PHPUnit\Framework\Assert;
+use RuntimeException;
 
-function makeMetelCatalog(array $overrides = []): MetelCatalog
-{
-    /** @var MetelCatalog $catalog */
-    $catalog = MetelCatalog::query()->create(array_merge([
-        'code' => 'test-cat',
-        'brand_code' => 'TST',
-        'name' => 'Catalogo Test',
-        'source_type' => 'file',
-        'is_active' => true,
-    ], $overrides));
-
-    return $catalog;
-}
-
-function buildFixedMetelLine(): string
-{
-    // Layout from config/metel.php: brand[0,3] code[3,16] desc[57,50]
-    // unit[107,3] pack[110,6] gross[116,11] barcode[127,13].
-    $line = str_repeat(' ', 140);
-    $put = static function (string $line, int $start, string $value, int $length): string {
-        return substr_replace($line, str_pad(substr($value, 0, $length), $length), $start, $length);
-    };
-
-    $line = $put($line, 0, 'TST', 3);
-    $line = $put($line, 3, 'TST0100010', 16);
-    $line = $put($line, 57, 'Tubo multistrato 16x2', 50);
-    $line = $put($line, 107, 'MT', 3);
-    $line = $put($line, 110, '100', 6);
-    $line = $put($line, 116, '185', 11); // implied /100 => 1.85
-
-    return $put($line, 127, '8000000010017', 13);
-}
+uses(TestCase::class);
 
 it('parses a delimited CSV line into a normalized article', function (): void {
     $parser = new MetelRecordParser(
-        fixedLayout: config('metel.fixed_layout'),
-        fixedPriceDivisor: (int) config('metel.fixed_price_divisor'),
-        csvMap: config('metel.csv_map'),
+        fixedLayout: catalogMetelFixedLayout(),
+        fixedPriceDivisor: catalogMetelFixedPriceDivisor(),
+        csvMap: catalogMetelCsvMap(),
     );
 
     $article = $parser->parseCsvLine('TST0100010;Tubo 16x2;MT;100;1,85;8000000010017;EC000123');
 
-    expect($article)->not->toBeNull();
+    Assert::assertInstanceOf(MetelArticleData::class, $article);
     expect($article->metelCode)->toBe('TST0100010');
     expect($article->description)->toBe('Tubo 16x2');
     expect($article->grossPrice)->toBe(1.85);
@@ -66,7 +39,7 @@ it('parses a delimited CSV line into a normalized article', function (): void {
 });
 
 it('returns null for header rows and blank lines', function (): void {
-    $parser = new MetelRecordParser(config('metel.fixed_layout'), (int) config('metel.fixed_price_divisor'), config('metel.csv_map'));
+    $parser = new MetelRecordParser(catalogMetelFixedLayout(), catalogMetelFixedPriceDivisor(), catalogMetelCsvMap());
 
     expect($parser->parseCsvLine('codice;descrizione;um;imballo;prezzo;ean;etim'))->toBeNull();
     expect($parser->parseCsvLine('   '))->toBeNull();
@@ -77,11 +50,11 @@ it('returns null for header rows and blank lines', function (): void {
 });
 
 it('parses a fixed-width METEL record applying the price divisor', function (): void {
-    $parser = new MetelRecordParser(config('metel.fixed_layout'), (int) config('metel.fixed_price_divisor'), config('metel.csv_map'));
+    $parser = new MetelRecordParser(catalogMetelFixedLayout(), catalogMetelFixedPriceDivisor(), catalogMetelCsvMap());
 
     $article = $parser->parseFixedLine(buildFixedMetelLine());
 
-    expect($article)->not->toBeNull();
+    Assert::assertInstanceOf(MetelArticleData::class, $article);
     expect($article->metelCode)->toBe('TST0100010');
     expect($article->description)->toBe('Tubo multistrato 16x2');
     expect($article->grossPrice)->toBe(1.85);
@@ -93,11 +66,11 @@ it('imports a CSV price list, skipping invalid rows and updating on re-import', 
     $catalog = makeMetelCatalog();
 
     $csv = implode("\n", [
-        'codice;descrizione;um;imballo;prezzo;ean;etim', // header -> skipped
+        'codice;descrizione;um;imballo;prezzo;ean;etim',
         'TST0100010;Tubo 16x2;MT;100;1,85;8000000010017;EC000123',
         'TST0200016;Gomito 16;PZ;10;4,90;8000000020016;EC000210',
-        '', // blank -> ignored
-        'BADROW;senza prezzo;PZ;1;nonnumerico;;', // invalid price -> skipped
+        '',
+        'BADROW;senza prezzo;PZ;1;nonnumerico;;',
     ]);
 
     $result = app(ImportMetelPriceListFileAction::class)->execute($catalog, $csv);
@@ -107,7 +80,6 @@ it('imports a CSV price list, skipping invalid rows and updating on re-import', 
     expect($catalog->items()->count())->toBe(2);
     expect($catalog->refresh()->imported_at)->not->toBeNull();
 
-    // Re-import with a changed price updates the same item (no duplicate).
     app(ImportMetelPriceListFileAction::class)->execute($catalog, 'TST0100010;Tubo 16x2;MT;100;2,10;8000000010017;EC000123');
 
     $item = MetelCatalogItem::query()->where('metel_code', 'TST0100010')->firstOrFail();
@@ -128,7 +100,6 @@ it('imports a fixed-width price list when the format is forced', function (): vo
 
 it('promotes a METEL item into the products catalog preferring the net price', function (): void {
     $catalog = makeMetelCatalog();
-    /** @var MetelCatalogItem $item */
     $item = $catalog->items()->create([
         'metel_code' => 'TST0300012',
         'description' => 'Valvola a sfera 1/2"',
@@ -143,8 +114,6 @@ it('promotes a METEL item into the products catalog preferring the net price', f
     expect((float) $product->unit_price)->toBe(3.90);
     expect((int) $item->refresh()->product_id)->toBe((int) $product->id);
 
-    // Linking a second item that matches an existing SKU updates, not duplicates.
-    /** @var MetelCatalogItem $again */
     $again = $catalog->items()->create([
         'metel_code' => 'TST0300012b',
         'description' => 'Valvola senza netto',
@@ -180,7 +149,7 @@ it('syncs from the METEL API when configured and maps items', function (): void 
         'mop.example.test/*' => Http::response([
             'items' => [
                 ['code' => 'API000001', 'description' => 'Articolo API', 'grossPrice' => 5.5, 'netPrice' => 2.75, 'unit' => 'PZ', 'packaging' => '1', 'ean' => '8000000099999', 'etim' => 'EC001'],
-                ['description' => 'Senza codice', 'grossPrice' => 1.0], // invalid -> skipped
+                ['description' => 'Senza codice', 'grossPrice' => 1.0],
             ],
         ], 200),
     ]);
@@ -201,8 +170,9 @@ it('throws a clear error when the METEL API is not configured', function (): voi
     config()->set('metel.api.base_url', '');
     config()->set('metel.api.api_key', '');
 
-    app(FetchMetelCatalogViaApiAction::class)->execute(makeMetelCatalog());
-})->throws(RuntimeException::class);
+    expect(fn (): mixed => app(FetchMetelCatalogViaApiAction::class)->execute(makeMetelCatalog()))
+        ->toThrow(RuntimeException::class);
+});
 
 it('reports API request failures', function (): void {
     config()->set('metel.api', [
@@ -215,12 +185,13 @@ it('reports API request failures', function (): void {
     ]);
     Http::fake(['mop.example.test/*' => Http::response('nope', 500)]);
 
-    app(FetchMetelCatalogViaApiAction::class)->execute(makeMetelCatalog());
-})->throws(RuntimeException::class);
+    expect(fn (): mixed => app(FetchMetelCatalogViaApiAction::class)->execute(makeMetelCatalog()))
+        ->toThrow(RuntimeException::class);
+});
 
 it('seeds an idempotent demo METEL catalog', function (): void {
-    (new MetelDemoSeeder)->run();
-    (new MetelDemoSeeder)->run(); // idempotent
+    (new MetelDemoSeeder())->run();
+    (new MetelDemoSeeder())->run();
 
     $catalog = MetelCatalog::query()->where('code', 'demo-idro')->firstOrFail();
     expect($catalog->items()->count())->toBe(12);

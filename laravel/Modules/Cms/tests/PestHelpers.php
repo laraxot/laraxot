@@ -12,6 +12,7 @@ use Modules\User\Models\User;
 use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
 use PHPUnit\Framework\Assert;
+use PHPUnit\Framework\MockObject\MockObject;
 
 use function Safe\file_get_contents;
 use function Safe\json_decode;
@@ -23,7 +24,7 @@ use function Safe\json_decode;
  */
 function cmsTest(): TestCase
 {
-    if (null !== TestCase::$currentTest) {
+    if (TestCase::$currentTest !== null) {
         return TestCase::$currentTest;
     }
 
@@ -40,7 +41,7 @@ function cmsGenerateUniqueEmail(): string
 }
 
 /**
- * @param array<string, mixed> $attributes
+ * @param  array<string, mixed>  $attributes
  */
 function cmsCreateTestUser(array $attributes = []): UserContract
 {
@@ -48,19 +49,21 @@ function cmsCreateTestUser(array $attributes = []): UserContract
 }
 
 /**
- * @param array<string, mixed> $attributes
+ * @param  array<string, mixed>  $attributes
  */
 function cmsCreateUnverifiedUser(array $attributes = []): User
 {
-    return UserFactory::new()->unverified()->createOne($attributes);
+    $user = UserFactory::new()->unverified()->createOne($attributes);
+    assert($user instanceof User);
+
+    return $user;
 }
 
 /**
  * @template T of object
  *
- * @param class-string<T> $class
- *
- * @return T&PHPUnit\Framework\MockObject\MockObject
+ * @param  class-string<T>  $class
+ * @return T&MockObject
  */
 function cmsCreateMock(string $class): object
 {
@@ -89,8 +92,7 @@ function cmsJsonDecodeFile(string $path): array
 }
 
 /**
- * @param array<string, string> $headers
- *
+ * @param  array<string, string>  $headers
  * @return TestResponse<Response>
  */
 function cmsGet(string $uri, array $headers = []): TestResponse
@@ -99,8 +101,7 @@ function cmsGet(string $uri, array $headers = []): TestResponse
 }
 
 /**
- * @param array<string, string> $headers
- *
+ * @param  array<string, string>  $headers
  * @return TestResponse<Response>
  */
 function cmsGetOrSkipOnServerError(string $uri, array $headers = []): TestResponse
@@ -115,9 +116,8 @@ function cmsGetOrSkipOnServerError(string $uri, array $headers = []): TestRespon
 }
 
 /**
- * @param array<string, mixed>  $data
- * @param array<string, string> $headers
- *
+ * @param  array<string, mixed>  $data
+ * @param  array<string, string>  $headers
  * @return TestResponse<Response>
  */
 function cmsPost(string $uri, array $data = [], array $headers = []): TestResponse
@@ -146,8 +146,7 @@ function cmsAssertGuest(?string $guard = null): void
 }
 
 /**
- * @param array<string, mixed> $data
- *
+ * @param  array<string, mixed>  $data
  * @return TestResponse<Response>
  */
 function cmsActingAsGet(Authenticatable $user, string $uri, array $data = []): TestResponse

@@ -16,6 +16,7 @@ uses(TestCase::class);
  * un errore di Blade si scoprirebbe solo davanti al cliente.
  */
 it('renders the pre-invoice modal with the undecided-extra warning', function (): void {
+    skip('XotBaseTestCase forza un translator ArrayLoader vuoto in setUp(): le stringhe lang reali del modulo non sono caricate in test, :amount non viene interpolato');
     $draft = new PreInvoiceDraft(
         lines: [
             new PreInvoiceLine('Manodopera intervento #1', 200.0, PreInvoiceLine::SOURCE_LABOR),
@@ -31,7 +32,7 @@ it('renders the pre-invoice modal with the undecided-extra warning', function ()
         ->and($html)->toContain('€ 45,00')
         ->and($html)->toContain('€ 290,00')
         ->and($html)->toContain(__('billing.pre_invoice.sources.extra'));
-})->skip('XotBaseTestCase forza un translator ArrayLoader vuoto in setUp(): le stringhe lang reali del modulo non sono caricate in test, :amount non viene interpolato');
+});
 
 it('renders the pre-invoice modal without the warning when every extra is decided', function (): void {
     $draft = new PreInvoiceDraft(lines: [], total: 0.0, pendingExtraTotal: 0.0);
@@ -44,6 +45,7 @@ it('renders the pre-invoice modal without the warning when every extra is decide
 });
 
 it('renders the reconciliation modal with each discrepancy explained', function (): void {
+    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabella suppliers migrata');
     /** @var Supplier $supplier */
     $supplier = Supplier::query()->create(['legal_name' => 'Idraulica Rossi', 'is_active' => true]);
 
@@ -75,9 +77,10 @@ it('renders the reconciliation modal with each discrepancy explained', function 
         ->and($html)->toContain(__('suppliers.reconciliation.explanations.quantity_over'))
         ->and($html)->toContain('Raccordo')
         ->and($html)->toContain('€ 4,00');
-})->skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabella suppliers migrata');
+});
 
 it('renders the reconciliation modal as clean when the invoice matches', function (): void {
+    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabella suppliers migrata');
     /** @var Supplier $supplier */
     $supplier = Supplier::query()->create(['legal_name' => 'Idraulica Rossi', 'is_active' => true]);
 
@@ -96,4 +99,4 @@ it('renders the reconciliation modal as clean when the invoice matches', functio
 
     expect($html)->toContain(__('suppliers.reconciliation.clean_title'))
         ->and($html)->toContain(__('suppliers.reconciliation.clean_body'));
-})->skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabella suppliers migrata');
+});

@@ -7,6 +7,7 @@ namespace Modules\PublicProcurement\Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\PublicProcurement\Models\PublicProcurementTenderOpportunity;
 use Modules\PublicProcurement\Models\PublicProcurementTenderSource;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 
 /**
  * @extends Factory<PublicProcurementTenderOpportunity>
@@ -30,7 +31,7 @@ class PublicProcurementTenderOpportunityFactory extends Factory
             'external_id' => $this->faker->optional()->numerify('EXT-#######'),
             'source_url' => $this->faker->optional()->url(),
             'contracting_authority' => 'Comune di '.$this->faker->city(),
-            'title' => 'Appalto '.$this->faker->words(4, true),
+            'title' => 'Appalto '.SafeStringCastAction::cast($this->faker->words(4, true)),
             'cig' => strtoupper($this->faker->bothify('?#########')),
             'cup' => strtoupper($this->faker->bothify('?##?######?####')),
             'cpv_code' => $this->faker->numerify('########-#'),

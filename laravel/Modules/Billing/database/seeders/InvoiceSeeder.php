@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Billing\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Modules\Billing\Database\Factories\InvoiceFactory;
 use Modules\Billing\Models\Invoice;
 
 class InvoiceSeeder extends Seeder
@@ -15,6 +16,6 @@ class InvoiceSeeder extends Seeder
             return;
         }
 
-        Invoice::factory()->count(3)->create();
+        InvoiceFactory::new()->count(3)->create();
     }
 }

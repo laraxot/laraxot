@@ -52,7 +52,7 @@ describe('Send notification flow', function (): void {
     });
 
     test('send action can be invoked with mocked handle', function (): void {
-        /** @var \Modules\Notify\Tests\TestCase $this */
+        /** @var TestCase $this */
         NotificationTemplateFactory::new()->createOne([
             'code' => 'action-send-template',
             'is_active' => true,
@@ -64,7 +64,7 @@ describe('Send notification flow', function (): void {
         $calls = 0;
         $action = $this->createUnitMock(SendNotificationAction::class);
         $action->method('handle')->willReturnCallback(function () use (&$calls, $notification): Notification {
-            ++$calls;
+            $calls++;
 
             return $notification;
         });
@@ -84,7 +84,7 @@ describe('Send notification flow', function (): void {
     });
 
     test('send action throws when template missing', function (): void {
-        /** @var \Modules\Notify\Tests\TestCase $this */
+        /** @var TestCase $this */
         $this->expectApplicationException(Exception::class);
 
         $recipient = UserFactory::new()->createOne();

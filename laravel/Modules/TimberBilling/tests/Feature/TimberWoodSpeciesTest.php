@@ -1,19 +1,10 @@
 <?php
 
 declare(strict_types=1);
-
-namespace Modules\TimberBilling\Tests\Feature;
-
-use Modules\TimberBilling\Tests\TestCase;
-
-uses(TestCase::class);
-
 use Modules\TimberBilling\Filament\Resources\TimberWoodSpeciesResource\Pages\CreateTimberWoodSpecies;
 use Modules\TimberBilling\Filament\Resources\TimberWoodSpeciesResource\Pages\ListTimberWoodSpecies;
-use Modules\User\Models\User;
 use Modules\TimberBilling\Models\TimberWoodSpecies;
 use Modules\TimberBilling\Support\WoodSpeciesCatalog;
-use Livewire\Livewire;
 use Spatie\Permission\Models\Role;
 
 it('seeds the config species into the table via migration', function (): void {
@@ -43,16 +34,13 @@ it('lists and creates wood species as a timber_admin', function (): void {
     Role::findOrCreate('timber_admin');
     filament()->setCurrentPanel('timber');
 
-    $admin = User::factory()->create();
-    $admin->syncRoles(['timber_admin']);
+    actingAsTimberAdmin();
 
-    Livewire::actingAs($admin)
-        ->test(ListTimberWoodSpecies::class)
+    testTimberLivewire(ListTimberWoodSpecies::class)
         ->assertOk()
         ->assertSee('Abete');
 
-    Livewire::actingAs($admin)
-        ->test(CreateTimberWoodSpecies::class)
+    testTimberLivewire(CreateTimberWoodSpecies::class)
         ->fillForm(['name' => 'Rovere', 'code' => 'rovere'])
         ->call('create')
         ->assertHasNoFormErrors();
