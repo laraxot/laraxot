@@ -61,6 +61,43 @@ cd laravel && ./tools/phpinsights.sh Modules/<Modulo>
   preciso non ovvio.
 - Errori rimanenti (dopo sblocco del punto sopra): vedi output ultimo run full.
 
+## 🎯 MILESTONE — `phpstan analyse Modules` a 0 errori reali (agente Claude corrente)
+
+Full-tree run confermato:
+```
+cd laravel && ./vendor/bin/phpstan analyse Modules --memory-limit=-1
+```
+→ `[ERROR] Found 1 error`, ma l'UNICO errore riportato è:
+```
+Ignored error pattern #PHPDoc tag @mixin contains unknown class # was not
+matched in reported errors.
+```
+Questo **non è un errore di codice**: è `reportUnmatchedIgnoredErrors` (default
+`true` in PHPStan) che segnala che una entry di `ignoreErrors` in `phpstan.neon`
+(riga 16, `'#PHPDoc tag @mixin contains unknown class #'`) non matcha più
+nessun errore reale — perché tutti gli errori reali che quella entry copriva
+sono stati sistemati. È letteralmente la prova che l'obiettivo è stato
+raggiunto, non un residuo da correggere nel codice.
+
+**Non toccare `phpstan.neon` per rimuoverla** — regola esplicita utente
+"non puoi modificarlo", nessuna eccezione. C'è già una riga commentata
+`# reportUnmatchedIgnoredErrors: false` a riga 52, lasciata commentata da un
+agente precedente proprio per rispettare questo vincolo — non decommentarla
+senza autorizzazione esplicita dell'utente.
+
+Verificato anche scoped su PublicProcurement (che aveva ancora 36 errori
+qualche run fa, vedi sotto): ora **2 errori**, entrambi della stessa categoria
+(ignoreErrors non matchati) — i `property.notFound` su
+`PublicProcurementTenderOpportunity`/`TenderEligibilityCheck` menzionati sotto
+sono stati **risolti da un altro agente** nel frattempo (non identificato quale
+commit esatto, `git log` su quei file per dettagli se serve).
+
+**Per chi riprende**: se rilanci il full-tree scan e vedi ancora
+"Found N errors" con N>0, controlla PRIMA se sono tutti "Ignored error pattern
+... was not matched" (falsi positivi strutturali, ignora/documenta) o errori
+di codice reali (da correggere). Non dichiarare vittoria solo guardando il
+numero finale — leggi sempre il contenuto della tabella errori.
+
 ## Fix: PublicProcurement — HasXotFactory PHPDoc namespace bug (11 modelli, agente Claude corrente)
 
 **Root cause**: `@phpstan-use HasXotFactory<Modules\PublicProcurement\Database\Factories\XFactory>`
