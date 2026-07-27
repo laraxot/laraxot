@@ -80,3 +80,48 @@
 - ⚠️ Violazione dipendenza Geo→UI: `Modules/UI/app/Filament/Forms/Components/LocationSelector.php:11` importa `Modules\Geo\Models\Comune`.
 - 🧹 File backup spuri in Lang: `Post.php.fixed`, `post.php.fixed`.
 - 📌 TimberBilling: 5 modelli ora con `HasFactory` + `newFactory()` (patch necessaria per seeder funzionanti).
+
+## Nota coordinamento — timber_processing_step_processable (2026-07-27)
+
+Deciso definitivamente: **plain `Migration`** (non `XotBaseMigration`), hardcoded
+table name OK — è l'eccezione pivot-senza-model di
+`docs/wiki/rules/009-one-migration-per-model.md`. Nessun model Eloquent dedicato
+esiste (`TimberProcessingStep::inputLots()/inputDerivedMaterials()` usano
+`morphedByMany()` con la tabella raw, senza pivot model). Non ri-convertire a
+XotBaseMigration: `getModelClass()` non ha nulla da risolvere per questa tabella.
+
+## Aggiornamento — timber_processing_step_processable, soluzione finale (2026-07-27)
+
+Superata la nota precedente. Soluzione adottata (file:
+`Modules/TimberBilling/database/migrations/2026_07_03_100008_create_timber_processing_step_processable_table.php`):
+`XotBaseMigration` con `$model_class = TimberProcessingStep::class` (il model
+proprietario, solo per soddisfare il costruttore) + nome tabella esplicito passato
+come secondo argomento a `tableCreate($closure, 'timber_processing_step_processable')`.
+Evita sia `extends Migration` nudo sia un model-pivot fittizio mai usato altrove.
+Pattern riutilizzabile per altre pivot morph senza model dedicato.
+
+## Deduplicazione TimberBilling (2026-07-27)
+
+Due agenti hanno splittato in parallelo lo stesso `create_timber_tables.php` legacy
+in file 1-modello-1-migration, con timestamp diversi (`07_03_1000xx` vs
+`07_24_0008xx`). Risolto mantenendo un solo file per modello: tenuto `07_03_1000xx`
+per agents/purchase_records/lots/processing_steps/drying_cycles/humidity_checks/
+packaged_units/movements/label_prints/processing_step_processable; tenuto invece
+`07_24_000807_create_timber_derived_materials_table.php` (07_24) per
+`timber_derived_materials` perché include le colonne di tracciabilità
+(`root_lot_id`, `traceable_code`, `stage_type_code`, `stage_history`) già live in
+DB, assenti nella versione `07_03_100007` (rimossa). Righe orfane in `migrations`
+ripulite di conseguenza. `php artisan migrate` → 0 pending, verificato pulito dopo
+il merge.
+
+## Correzione — pivot SEMPRE con model dedicato (2026-07-27, seconda revisione)
+
+Le mie due note precedenti su `timber_processing_step_processable` (prima "plain
+Migration senza model", poi "XotBaseMigration con model_class del proprietario +
+tableCreate(closure, tableName)") sono **entrambe superate**. Soluzione finale e
+corretta, applicata da altro agente: model dedicato reale
+`TimberProcessingStepProcessable extends XotBaseModel` (con relazioni
+`processingStep()`/`processable()`, factory propria) + migration XotBaseMigration
+standard con `$model_class = TimberProcessingStepProcessable::class`. Nessuna pivot
+è mai "senza model" in questo codebase — vedi anche `RatingMorph`, `Taggable`.
+Skill canonica: `xotbase-migration-religion`.

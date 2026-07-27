@@ -9,3 +9,5 @@ updated: 2026-05-11
 # concepts Index — Blog
 
 Concetti specifici del modulo Blog. Carica on-demand via `qmd search` o consulta il [trigger map root](/docs/wiki/rules/00-TRIGGER_MAP.md).
+
+- [migration-cross-database-user-refs](./migration-cross-database-user-refs.md) — `foreignIdFor` per `user_id` su connessione `blog`

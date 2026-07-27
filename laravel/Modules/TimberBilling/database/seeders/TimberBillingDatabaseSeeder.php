@@ -40,6 +40,7 @@ final class TimberBillingDatabaseSeeder extends Seeder
             TimberLotSeeder::class,
             TimberMovementSeeder::class,
             TimberProcessingStepSeeder::class,
+            TimberProcessingStepProcessableSeeder::class,
             TimberDerivedMaterialSeeder::class,
             TimberDryingCycleSeeder::class,
             TimberHumidityCheckSeeder::class,

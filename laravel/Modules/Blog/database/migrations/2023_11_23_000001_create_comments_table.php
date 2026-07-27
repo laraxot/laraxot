@@ -3,24 +3,30 @@
 declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
+use Modules\Blog\Models\Article;
+use Modules\Blog\Models\Comment;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
+use Modules\Xot\Datas\XotData;
 
 /*
  * Class CreateLiveuserUsersTable.
  */
-return new class extends XotBaseMigration {
+return new class() extends XotBaseMigration
+{
     /**
      * Run the migrations.
      */
     public function up(): void
     {
+        $userClass = XotData::make()->getUserClass();
+
         // -- CREATE --
         $this->tableCreate(
-            static function (Blueprint $table): void {
+            static function (Blueprint $table) use ($userClass): void {
                 $table->id();
                 $table->longText('comment');
-                $table->foreignId('post_id'); // ->constrained();
-                $table->foreignId('user_id'); // ->constrained();
+                $table->foreignIdFor(Article::class, 'post_id');
+                $table->foreignIdFor($userClass, 'user_id')->nullable()->index();
                 $table->timestamps();
             }
         );
@@ -28,11 +34,8 @@ return new class extends XotBaseMigration {
         $this->tableUpdate(
             function (Blueprint $table): void {
                 if (! $this->hasColumn('parent_id')) {
-                    $table->foreignId('parent_id')->nullable();
+                    $table->foreignIdFor(Comment::class, 'parent_id')->nullable();
                 }
-                // if (! $this->hasColumn('profile_photo_path')) {
-                //    $table->string('profile_photo_path', 2048)->nullable();
-                // }
             }
         );
     }

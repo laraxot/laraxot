@@ -75,7 +75,7 @@ Risultato: `SQLSTATE... no such table: customers/products/daily_notes`. Non è
 un problema introdotto da questa migrazione: lo stesso identico fallimento si
 riproduce lanciando `vendor/bin/pest Modules/WorkOrder/tests` (modulo già
 migrato in precedenza, invariato). Provando a puntare al DB mysql di test già
-migrato (`techplanner_data_test`, da `.env.testing`) la tabella richiesta
+migrato (`workorder_data_test`, da `.env.testing`) la tabella richiesta
 (`customers`) non esiste comunque (lo schema reale usa `clients`), quindi
 nemmeno quella via sblocca l'esecuzione. Serve un intervento infra a monte
 (fixture DB/migrate per i test, fuori scope di questo task) prima che sia

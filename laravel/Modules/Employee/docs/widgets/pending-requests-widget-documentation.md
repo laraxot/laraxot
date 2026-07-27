@@ -5,18 +5,18 @@
 The **PendingRequestsWidget** represents the "LE MIE RICHIESTE IN ATTESA" (My Pending Requests) section in the dashboard. It displays pending approval requests submitted by the current employee with status tracking and illustrations for empty states.
 
 ### Dashboard Position
-- **Location**: Right sidebar widget 
+- **Location**: Right sidebar widget
 - **Title**: "LE MIE RICHIESTE IN ATTESA"
 - **Column Span**: Full width
 - **Sort Priority**: 5 (appears fifth in widget order)
 
-## 🎯 Functionality  
+## 🎯 Functionality
 
 ### Core Purpose
 The PendingRequestsWidget serves as a personal request tracking system for:
 - **Leave Requests**: Vacation, sick leave, personal time off
 - **Work Arrangement**: Smart working and remote work requests
-- **Business Travel**: Transfer and travel authorization requests  
+- **Business Travel**: Transfer and travel authorization requests
 - **Permit Requests**: Medical appointments, personal errands
 - **Status Monitoring**: Real-time approval workflow tracking
 
@@ -32,7 +32,7 @@ The PendingRequestsWidget serves as a personal request tracking system for:
 
 ### Widget Class Structure
 
-**File**: `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Employee/app/Filament/Widgets/PendingRequestsWidget.php`
+**File**: `/var/www/html/_bases/base_workorder_fila3_mono/laravel/Modules/Employee/app/Filament/Widgets/PendingRequestsWidget.php`
 
 ```php
 class PendingRequestsWidget extends XotBaseWidget
@@ -72,7 +72,7 @@ Returns visual configuration for different request types:
 'vacation' => [
     'icon' => 'heroicon-o-sun',
     'color' => 'text-orange-600',
-    'bg' => 'bg-orange-50', 
+    'bg' => 'bg-orange-50',
     'border' => 'border-orange-200',
 ],
 'sick' => [
@@ -93,7 +93,7 @@ Returns visual configuration for different request types:
 
 **`getStatusBadgeColor(string $status): string`**
 - **Pending**: `bg-yellow-100 text-yellow-800`
-- **Approved**: `bg-green-100 text-green-800`  
+- **Approved**: `bg-green-100 text-green-800`
 - **Rejected**: `bg-red-100 text-red-800`
 - **Under Review**: `bg-blue-100 text-blue-800`
 
@@ -107,7 +107,7 @@ Returns visual configuration for different request types:
 ### Request Item Schema
 ```php
 [
-    'id' => int,                    // Unique request identifier  
+    'id' => int,                    // Unique request identifier
     'type' => string,               // vacation|sick|permit|smart_working|transfer
     'title' => string,              // Request title/summary
     'description' => string,        // Detailed description
@@ -133,7 +133,7 @@ Returns visual configuration for different request types:
 
 3. **Permit** (`permit`)
    - Medical appointments, personal errands
-   - Blue color scheme (`text-blue-600`) 
+   - Blue color scheme (`text-blue-600`)
    - Document icon (`heroicon-o-document-text`)
 
 4. **Smart Working** (`smart_working`)
@@ -150,7 +150,7 @@ Returns visual configuration for different request types:
 The widget includes example request scenarios (commented out):
 
 1. **Vacation Request**
-   - Title: "Richiesta Ferie Agosto"  
+   - Title: "Richiesta Ferie Agosto"
    - Description: "Ferie dal 15 al 30 agosto 2024"
    - Status: Pending
    - Approver: Mario Rossi
@@ -158,7 +158,7 @@ The widget includes example request scenarios (commented out):
 
 2. **Medical Permit**
    - Title: "Permesso Medico"
-   - Description: "Visita specialistica - 2 ore"  
+   - Description: "Visita specialistica - 2 ore"
    - Status: Pending
    - Approver: Sara Bianchi
    - Priority: High
@@ -172,7 +172,7 @@ The widget includes example request scenarios (commented out):
 | **Vacation** | `text-orange-600` | `bg-orange-50` | `border-orange-200` | Personal time off |
 | **Sick** | `text-red-600` | `bg-red-50` | `border-red-200` | Medical leave |
 | **Permit** | `text-blue-600` | `bg-blue-50` | `border-blue-200` | Short absences |
-| **Smart Working** | `text-green-600` | `bg-green-50` | `border-green-200` | Remote work |  
+| **Smart Working** | `text-green-600` | `bg-green-50` | `border-green-200` | Remote work |
 | **Transfer** | `text-purple-600` | `bg-purple-50` | `border-purple-200` | Business travel |
 
 ### Status Indicators
@@ -203,21 +203,21 @@ The widget includes example request scenarios (commented out):
 │            🎯 [LIGHTBULB ICON]          │
 │                                         │
 │     Tutte le tue richieste sono         │
-│     state gestite dall'amministratore   │  
+│     state gestite dall'amministratore   │
 │                                         │
 │               [Illustration]            │
 │                                         │
 └─────────────────────────────────────────┘
 ```
 
-### Active Requests Layout  
-```  
+### Active Requests Layout
+```
 ┌─────────────────────────────────────────┐
 │        LE MIE RICHIESTE IN ATTESA       │
 ├─────────────────────────────────────────┤
 │ 🌅 Richiesta Ferie Agosto    [PENDING] │
 │     Ferie dal 15 al 30 agosto 2024     │
-│     Submitted: 3 days ago               │  
+│     Submitted: 3 days ago               │
 │     Approver: Mario Rossi               │
 ├─────────────────────────────────────────┤
 │ ❤️ Permesso Medico           [PENDING] │
@@ -230,7 +230,7 @@ The widget includes example request scenarios (commented out):
 ### Visual Hierarchy
 1. **Request Icon**: Visual type identifier
 2. **Request Title**: Bold primary heading
-3. **Description**: Detailed context information  
+3. **Description**: Detailed context information
 4. **Status Badge**: Current approval status
 5. **Metadata**: Submission date and approver info
 6. **Priority Indicator**: Urgency level (if applicable)
@@ -241,7 +241,7 @@ The widget includes example request scenarios (commented out):
 
 For production use, replace mock data with real database queries:
 
-```php  
+```php
 protected function getPendingRequests(): array
 {
     return Request::where('employee_id', auth()->id())
@@ -283,14 +283,14 @@ protected function getRequestTypeConfig(string $type): array
         ],
         'sick' => [
             'icon' => 'heroicon-o-heart',
-            'color' => 'text-red-600', 
+            'color' => 'text-red-600',
             'bg' => 'bg-red-50',
             'border' => 'border-red-200',
         ],
         'permit' => [
             'icon' => 'heroicon-o-document-text',
             'color' => 'text-blue-600',
-            'bg' => 'bg-blue-50', 
+            'bg' => 'bg-blue-50',
             'border' => 'border-blue-200',
         ],
         'smart_working' => [
@@ -302,7 +302,7 @@ protected function getRequestTypeConfig(string $type): array
         'transfer' => [
             'icon' => 'heroicon-o-map-pin',
             'color' => 'text-purple-600',
-            'bg' => 'bg-purple-50', 
+            'bg' => 'bg-purple-50',
             'border' => 'border-purple-200',
         ],
         'training' => [
@@ -327,7 +327,7 @@ protected function getRequestTypeConfig(string $type): array
 }
 ```
 
-### Empty State Customization  
+### Empty State Customization
 
 Customize the empty state message and illustration:
 
@@ -352,10 +352,10 @@ protected function getEmptyStateConfig(): array
 protected function getPendingRequests(): array
 {
     return Request::select([
-            'id', 'type', 'title', 'description', 
+            'id', 'type', 'title', 'description',
             'submitted_at', 'status', 'priority', 'approver_id'
         ])
-        ->where('employee_id', auth()->id()) 
+        ->where('employee_id', auth()->id())
         ->where('status', 'pending')
         ->with(['approver:id,first_name,last_name'])
         ->orderByRaw("FIELD(priority, 'high', 'normal', 'low')")
@@ -398,7 +398,7 @@ public function refreshRequests()
 - [ ] Pending requests display correctly
 - [ ] Empty state shows when no requests
 - [ ] Request types have correct colors/icons
-- [ ] Status badges display proper states  
+- [ ] Status badges display proper states
 - [ ] Priority ordering works correctly
 - [ ] Submission dates format properly
 - [ ] Approver names display correctly
@@ -412,7 +412,7 @@ public function refreshRequests()
 - [ ] Text overflow handling
 - [ ] Loading states
 
-### User Experience Testing  
+### User Experience Testing
 - [ ] Empty state messaging is encouraging
 - [ ] Request information is clear and complete
 - [ ] Status progression is understandable
@@ -430,7 +430,7 @@ public function refreshRequests()
 ### Data Dependencies
 - Employee authentication and permissions
 - Request submission and approval system
-- Manager/approver assignment logic  
+- Manager/approver assignment logic
 - Request type configuration
 - Status workflow definitions
 
@@ -450,7 +450,7 @@ public function refreshRequests()
 5. **Conditional Logic**: Dynamic form fields based on type
 
 ### User Experience Improvements
-1. **Progress Indicators**: Multi-step approval visualization  
+1. **Progress Indicators**: Multi-step approval visualization
 2. **Estimated Timeline**: Predicted approval timeframes
 3. **Comments System**: Two-way communication with approvers
 4. **File Attachments**: Supporting documentation uploads
@@ -473,15 +473,15 @@ public function refreshRequests()
 - **Cache Hit Rate**: > 80% for repeat views
 
 ### Success Indicators
-- **Request Visibility**: > 95% status accuracy  
+- **Request Visibility**: > 95% status accuracy
 - **User Engagement**: > 70% daily widget interaction
 - **Approval Efficiency**: < 48h average approval time
 - **User Satisfaction**: > 85% positive feedback on clarity
 
 ---
 
-**Last Updated**: January 2025  
-**Status**: Production Ready  
-**Widget Class**: `PendingRequestsWidget`  
-**View Template**: `employee::filament.widgets.pending-requests-widget`  
+**Last Updated**: January 2025
+**Status**: Production Ready
+**Widget Class**: `PendingRequestsWidget`
+**View Template**: `employee::filament.widgets.pending-requests-widget`
 **Dependencies**: Filament 3.x, XotBaseWidget, Request Model

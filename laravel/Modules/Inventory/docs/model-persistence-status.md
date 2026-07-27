@@ -3,8 +3,11 @@ title: "Inventory — Model persistence coverage (migration / seeder / factory)"
 type: status
 tags: [inventory, seeders, factories, migrations, coverage]
 created: 2026-07-24
-updated: 2026-07-24
-qmd: "Inventory model migration seeder factory coverage status"
+updated: 2026-07-27
+qmd: "Inventory model migration seeder factory coverage status warehouses vehicle_id"
+related:
+  - "./bugfix-warehouses-vehicle-fk-order.md"
+  - "./README.md"
 ---
 
 # Inventory — Model persistence coverage
@@ -16,7 +19,7 @@ deve avere migration + seeder + factory. Stato aggiornato al 2026-07-24.
 
 | Modello             | Tabella               | Migration | Factory | Seeder |
 |---------------------|-----------------------|-----------|---------|--------|
-| Warehouse           | warehouses            | OK        | OK      | OK (nuovo) |
+| Warehouse           | warehouses            | OK (`2026_07_24_000701`, dopo `vehicles`; vedi [bugfix vehicle FK](./bugfix-warehouses-vehicle-fk-order.md)) | OK | OK |
 | WarehouseLocation   | warehouse_locations   | OK        | OK      | OK (nuovo) |
 | InventoryMovement   | inventory_movements   | OK        | OK      | OK (nuovo) |
 | ProductUnit         | product_units         | OK        | OK      | OK (nuovo) |

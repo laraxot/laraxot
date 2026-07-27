@@ -11,9 +11,9 @@ created: "2026-06-06"
 updated: "2026-06-06"
 qmd: "tp-wiki-root"
 issues:
-  - "https://github.com/laraxot/base_techplanner_fila5/issues/4"
+  - "https://github.com/laraxot/base_workorder_fila5/issues/4"
 discussions:
-  - "https://github.com/laraxot/base_techplanner_fila5/discussions/6"
+  - "https://github.com/laraxot/base_workorder_fila5/discussions/6"
 ---
 
 # Public Theme Resolution and Vite Assets

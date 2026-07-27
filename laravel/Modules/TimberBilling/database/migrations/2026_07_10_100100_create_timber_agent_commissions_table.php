@@ -2,27 +2,29 @@
 
 declare(strict_types=1);
 
-use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use Modules\TimberBilling\Models\TimberAgent;
+use Modules\TimberBilling\Models\TimberAgentCommission;
+use Modules\TimberBilling\Models\TimberProduct;
+use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-return new class() extends Migration
+return new class() extends XotBaseMigration
 {
+    protected ?string $model_class = TimberAgentCommission::class;
+
     public function up(): void
     {
-        Schema::create('timber_agent_commissions', function (Blueprint $table): void {
+        $this->tableCreate(function (Blueprint $table): void {
             $table->id();
-            $table->foreignId('agent_id')->constrained('timber_agents')->cascadeOnDelete();
+            $table->foreignIdFor(TimberAgent::class, 'agent_id')->constrained()->cascadeOnDelete();
             $table->string('scope_type')->default('default'); // default | category | product
             $table->string('category')->nullable();
-            $table->foreignId('product_id')->nullable()->constrained('timber_products')->cascadeOnDelete();
+            $table->foreignIdFor(TimberProduct::class, 'product_id')->nullable()->constrained()->cascadeOnDelete();
             $table->decimal('rate_percent', 5, 2)->default(0);
-            $table->timestamps();
         });
-    }
 
-    public function down(): void
-    {
-        Schema::dropIfExists('timber_agent_commissions');
+        $this->tableUpdate(function (Blueprint $table): void {
+            $this->updateTimestamps(table: $table, hasSoftDeletes: false);
+        });
     }
 };

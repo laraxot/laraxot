@@ -5,14 +5,14 @@
 The **TodayPresenceWidget** represents the "CHI C'È OGGI" (Who's Here Today) section in the dashboard. It displays real-time presence information for all employees, showing who is present today with detailed presence counters, employee avatars, work types, and absence information.
 
 ### Dashboard Position
-- **Location**: Bottom center widget area  
+- **Location**: Bottom center widget area
 - **Title**: "CHI C'È OGGI"
 - **Column Span**: Full width
 - **Sort Priority**: 4 (fourth in widget order)
 
 ## 🎯 Functionality
 
-### Core Purpose  
+### Core Purpose
 The TodayPresenceWidget serves as a comprehensive team presence overview for:
 - **Real-time Attendance**: Live view of who is currently at work
 - **Work Type Tracking**: Office, remote, or travel status for each employee
@@ -32,7 +32,7 @@ The TodayPresenceWidget serves as a comprehensive team presence overview for:
 
 ### Widget Class Structure
 
-**File**: `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Employee/app/Filament/Widgets/TodayPresenceWidget.php`
+**File**: `/var/www/html/_bases/base_workorder_fila3_mono/laravel/Modules/Employee/app/Filament/Widgets/TodayPresenceWidget.php`
 
 ```php
 class TodayPresenceWidget extends XotBaseWidget
@@ -55,7 +55,7 @@ Returns comprehensive presence data structure:
         [
             'id' => 1,
             'name' => 'Mario Rossi',
-            'initials' => 'MR', 
+            'initials' => 'MR',
             'department' => 'SVILUPPO',
             'check_in_time' => '08:30',
             'location' => 'Ufficio',
@@ -69,7 +69,7 @@ Returns comprehensive presence data structure:
             'id' => 2,
             'name' => 'Sara Bianchi',
             'initials' => 'SB',
-            'department' => 'MARKETING', 
+            'department' => 'MARKETING',
             'absence_type' => 'vacation',
             'absence_reason' => 'Ferie',
             'return_date' => '2025-01-15',
@@ -105,7 +105,7 @@ Returns configuration for different work arrangements:
 ],
 'remote' => [
     'icon' => 'heroicon-o-home',
-    'color' => 'text-green-600', 
+    'color' => 'text-green-600',
     'bg' => 'bg-green-50',
 ],
 'travel' => [
@@ -122,10 +122,10 @@ Returns visual configuration for absence types:
 'vacation' => [
     'icon' => 'heroicon-o-sun',
     'color' => 'text-orange-600',
-    'bg' => 'bg-orange-50', 
+    'bg' => 'bg-orange-50',
 ],
 'sick' => [
-    'icon' => 'heroicon-o-heart', 
+    'icon' => 'heroicon-o-heart',
     'color' => 'text-red-600',
     'bg' => 'bg-red-50',
 ],
@@ -142,7 +142,7 @@ Returns visual configuration for absence types:
 ```php
 [
     'id' => int,                    // Employee unique identifier
-    'name' => string,               // Full employee name  
+    'name' => string,               // Full employee name
     'initials' => string,           // 2-letter initials for avatar
     'department' => string,         // Department/team name
     'check_in_time' => string,      // Time when employee checked in (HH:MM)
@@ -157,7 +157,7 @@ Returns visual configuration for absence types:
 [
     'id' => int,                    // Employee unique identifier
     'name' => string,               // Full employee name
-    'initials' => string,           // 2-letter initials for avatar  
+    'initials' => string,           // 2-letter initials for avatar
     'department' => string,         // Department/team name
     'absence_type' => string,       // vacation|sick|permit
     'absence_reason' => string,     // Localized absence description
@@ -173,13 +173,13 @@ Returns visual configuration for absence types:
    - Building office icon (`heroicon-o-building-office`)
 
 2. **Remote Work** (`remote`)
-   - Working from home or other remote location  
+   - Working from home or other remote location
    - Green color scheme (`text-green-600`)
    - Home icon (`heroicon-o-home`)
 
 3. **Business Travel** (`travel`)
    - On-site client work, business trips
-   - Purple color scheme (`text-purple-600`)  
+   - Purple color scheme (`text-purple-600`)
    - Map pin icon (`heroicon-o-map-pin`)
 
 ### Absence Types Supported
@@ -203,7 +203,7 @@ Returns visual configuration for absence types:
 Current mock logic creates realistic workplace scenarios:
 - First 6 employees marked as present (alternating office/remote)
 - Remaining employees marked as absent with vacation
-- Departments: SVILUPPO (Development), MARKETING  
+- Departments: SVILUPPO (Development), MARKETING
 - Staggered check-in times (08:30, 08:35, 08:40, etc.)
 
 ## 🎨 Visual Design System
@@ -216,7 +216,7 @@ Current mock logic creates realistic workplace scenarios:
 | **Remote** | 🏠 Home | `text-green-600` | `bg-green-50` | Working from home |
 | **Travel** | 📍 Map Pin | `text-purple-600` | `bg-purple-50` | Business travel/client site |
 
-### Absence Type Color Coding  
+### Absence Type Color Coding
 
 | Absence Type | Icon | Color | Background | Meaning |
 |-------------|------|-------|------------|---------|
@@ -226,7 +226,7 @@ Current mock logic creates realistic workplace scenarios:
 
 ### Avatar Color System
 12 predefined colors ensure visual variety while maintaining consistency:
-- **Warm Colors**: red-500, orange-500, yellow-500, amber-500  
+- **Warm Colors**: red-500, orange-500, yellow-500, amber-500
 - **Cool Colors**: blue-500, cyan-500, teal-500, green-500
 - **Accent Colors**: purple-500, pink-500, indigo-500, lime-500
 
@@ -255,11 +255,11 @@ Current mock logic creates realistic workplace scenarios:
 └─────────────────────────────────────────┘
 ```
 
-### Individual Employee Card  
+### Individual Employee Card
 ```
 ┌─────────────────────────────────────┐
 │  [MR]  Mario Rossi                  │
-│        SVILUPPO                     │  
+│        SVILUPPO                     │
 │        🏢 Ufficio • 08:30           │
 │        Status: Present              │
 └─────────────────────────────────────┘
@@ -267,14 +267,14 @@ Current mock logic creates realistic workplace scenarios:
 ┌─────────────────────────────────────┐
 │  [SB]  Sara Bianchi                 │
 │        MARKETING                    │
-│        ☀️ Ferie                     │ 
+│        ☀️ Ferie                     │
 │        Return: 15/01/2025           │
 └─────────────────────────────────────┘
 ```
 
 ### Visual Hierarchy
 1. **Summary Counters**: Total present/absent numbers
-2. **Section Headers**: "PRESENTI" and "ASSENTI" groupings  
+2. **Section Headers**: "PRESENTI" and "ASSENTI" groupings
 3. **Employee Avatars**: Colored circles with initials
 4. **Employee Names**: Bold primary identification
 5. **Department Labels**: Secondary organizational context
@@ -291,7 +291,7 @@ For production use, replace mock data with real employee queries:
 protected function getTodayPresence(): array
 {
     $today = now()->toDateString();
-    
+
     // Get all employees with today's attendance
     $employees = Employee::with(['timeEntries' => function($query) use ($today) {
             $query->whereDate('date', $today)
@@ -302,10 +302,10 @@ protected function getTodayPresence(): array
         }])
         ->where('status', 'active')
         ->get();
-    
+
     $present = [];
     $absent = [];
-    
+
     foreach ($employees as $employee) {
         if ($employee->timeEntries->isNotEmpty()) {
             // Employee has time entries today - present
@@ -335,7 +335,7 @@ protected function getTodayPresence(): array
         }
         // Note: Employees with no entries and no absences are not shown
     }
-    
+
     return [
         'present' => $present,
         'absent' => $absent,
@@ -353,16 +353,16 @@ Implement logic to determine work type from time entry data:
 protected function determineWorkType(TimeEntry $entry): string
 {
     // Check location or entry type to determine work arrangement
-    if (str_contains(strtolower($entry->location ?? ''), 'casa') || 
+    if (str_contains(strtolower($entry->location ?? ''), 'casa') ||
         str_contains(strtolower($entry->location ?? ''), 'remoto')) {
         return 'remote';
     }
-    
+
     if (str_contains(strtolower($entry->location ?? ''), 'trasferta') ||
         str_contains(strtolower($entry->location ?? ''), 'cliente')) {
-        return 'travel';  
+        return 'travel';
     }
-    
+
     return 'office'; // Default to office work
 }
 ```
@@ -375,7 +375,7 @@ Connect with organizational structure:
 protected function groupByDepartment(array $employees): array
 {
     $grouped = [];
-    
+
     foreach ($employees as $employee) {
         $dept = $employee['department'];
         if (!isset($grouped[$dept])) {
@@ -383,10 +383,10 @@ protected function groupByDepartment(array $employees): array
         }
         $grouped[$dept][] = $employee;
     }
-    
+
     // Sort departments by name
     ksort($grouped);
-    
+
     return $grouped;
 }
 ```
@@ -423,12 +423,12 @@ public function mount()
 protected function getTodayPresence(): array
 {
     $today = now()->toDateString();
-    
+
     // Optimized query with minimal data
     return Employee::select(['id', 'first_name', 'last_name', 'department_id'])
         ->with([
             'department:id,name',
-            'todayTimeEntries:id,employee_id,start_time,location', 
+            'todayTimeEntries:id,employee_id,start_time,location',
             'todayAbsences:id,employee_id,type,reason,end_date'
         ])
         ->where('status', 'active')
@@ -444,7 +444,7 @@ protected function getTodayPresence(): array
         ->pipe(function ($partitioned) {
             return [
                 'present' => $partitioned[0]->values()->toArray(),
-                'absent' => $partitioned[1]->values()->toArray(), 
+                'absent' => $partitioned[1]->values()->toArray(),
                 'total_present' => $partitioned[0]->count(),
                 'total_absent' => $partitioned[1]->count(),
             ];
@@ -457,7 +457,7 @@ protected function getTodayPresence(): array
 protected function getTodayPresence(): array
 {
     $cacheKey = 'today_presence_' . now()->format('Y-m-d_H:i');
-    
+
     return cache()->remember($cacheKey, now()->addMinutes(5), function () {
         return $this->calculateTodayPresence();
     });
@@ -467,7 +467,7 @@ protected function getTodayPresence(): array
 public function invalidatePresenceCache(): void
 {
     $pattern = 'today_presence_' . now()->format('Y-m-d') . '*';
-    
+
     // Clear all today's presence cache entries
     collect(cache()->getRedis()->keys($pattern))
         ->each(fn($key) => cache()->forget($key));
@@ -477,7 +477,7 @@ public function invalidatePresenceCache(): void
 ### Memory Optimization
 - Limit result sets to prevent memory issues
 - Use select() to fetch only required columns
-- Implement pagination for large organizations  
+- Implement pagination for large organizations
 - Cache initials and avatar colors to avoid recalculation
 
 ## 🧪 Testing Scenarios
@@ -509,7 +509,7 @@ public function invalidatePresenceCache(): void
 ### Visual Testing
 - [ ] Avatar colors provide sufficient variety
 - [ ] Icons display properly across all devices
-- [ ] Text truncation works for long names/departments  
+- [ ] Text truncation works for long names/departments
 - [ ] Mobile responsive layout
 - [ ] Color contrast meets accessibility standards
 - [ ] Loading states display appropriately
@@ -519,7 +519,7 @@ public function invalidatePresenceCache(): void
 ### Related Models
 - **Employee**: Core personnel information and relationships
 - **TimeEntry**: Daily attendance and time tracking records
-- **Absence**: Approved absence requests and leave scheduling  
+- **Absence**: Approved absence requests and leave scheduling
 - **Department**: Organizational structure and team groupings
 - **WorkLocation**: Office locations and remote work designations
 
@@ -530,7 +530,7 @@ public function invalidatePresenceCache(): void
 - Department assignments and organizational structure
 - Work location definitions and remote work policies
 
-### External Services  
+### External Services
 - Time tracking hardware (badge scanners, biometric systems)
 - HR information systems for employee data
 - Calendar integration for absence scheduling
@@ -550,7 +550,7 @@ public function invalidatePresenceCache(): void
 1. **Live Check-in Notifications**: Toast messages for arrivals/departures
 2. **Presence Forecasting**: Predict tomorrow's attendance
 3. **Schedule Integration**: Show expected vs actual presence
-4. **Absence Reminders**: Upcoming absence notifications  
+4. **Absence Reminders**: Upcoming absence notifications
 5. **Overtime Tracking**: Identify extended work hours
 
 ### Analytics & Insights
@@ -573,7 +573,7 @@ public function invalidatePresenceCache(): void
 - **Load Time**: < 400ms for presence display (including avatars)
 - **Update Speed**: < 200ms for real-time presence changes
 - **Memory Usage**: < 8MB for widget data (50+ employees)
-- **Database Queries**: < 4 queries per render  
+- **Database Queries**: < 4 queries per render
 - **Cache Hit Rate**: > 85% for repeated requests
 
 ### Success Indicators
@@ -585,8 +585,8 @@ public function invalidatePresenceCache(): void
 
 ---
 
-**Last Updated**: January 2025  
-**Status**: Production Ready  
-**Widget Class**: `TodayPresenceWidget`  
-**View Template**: `employee::filament.widgets.today-presence-widget`  
+**Last Updated**: January 2025
+**Status**: Production Ready
+**Widget Class**: `TodayPresenceWidget`
+**View Template**: `employee::filament.widgets.today-presence-widget`
 **Dependencies**: Filament 3.x, XotBaseWidget, Employee Model

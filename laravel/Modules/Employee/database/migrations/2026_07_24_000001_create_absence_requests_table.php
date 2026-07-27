@@ -18,7 +18,7 @@ return new class() extends XotBaseMigration
     public function up(): void
     {
         // Nota: nessuna FK verso 'users' perché la tabella users è sulla connessione 'user',
-        // mentre absence_requests è sulla connessione 'xot' (techplanner_data). MySQL non
+        // mentre absence_requests è sulla connessione 'xot' (workorder_data). MySQL non
         // permette FK cross-database. Le relazioni sono gestite a livello applicativo (Eloquent).
         $this->tableCreate(function (Blueprint $table): void {
             $table->id();

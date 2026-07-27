@@ -11,7 +11,7 @@ return new class() extends XotBaseMigration
     {
         $this->tableCreate(function (Blueprint $table): void {
             $table->id();
-            $table->foreignId('public_procurement_contract_id')->constrained('public_procurement_contracts')->cascadeOnDelete();
+            $table->foreignId('public_procurement_contract_id')->constrained(table: 'public_procurement_contracts', indexName: 'pp_deadlines_contract_id_foreign')->cascadeOnDelete();
             $table->string('type');
             $table->string('title');
             $table->string('status')->default('open');
@@ -20,8 +20,8 @@ return new class() extends XotBaseMigration
             $table->string('severity')->default('warning');
             $table->text('notes')->nullable();
 
-            $table->index(['public_procurement_contract_id', 'status']);
-            $table->index(['due_at']);
+            $table->index(['public_procurement_contract_id', 'status'], 'pp_deadlines_contract_status_idx');
+            $table->index(['due_at'], 'pp_deadlines_due_at_idx');
 
             $this->updateTimestamps($table, hasSoftDeletes: true);
         });

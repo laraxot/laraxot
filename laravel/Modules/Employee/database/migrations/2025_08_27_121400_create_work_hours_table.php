@@ -24,7 +24,7 @@ return new class() extends XotBaseMigration
 
         // -- CREATE --
         // Nota: nessuna FK verso 'users' perché la tabella users è sulla connessione 'user',
-        // mentre work_hours è sulla connessione 'xot' (techplanner_data). MySQL non permette
+        // mentre work_hours è sulla connessione 'xot' (workorder_data). MySQL non permette
         // FK cross-database. Le relazioni sono gestite a livello applicativo (Eloquent).
         $this->tableCreate(static function (Blueprint $table): void {
             $table->id();

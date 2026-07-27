@@ -7,11 +7,13 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Modules\Blog\Models\Profile;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
+use Modules\Xot\Datas\XotData;
 
 /*
  * Class CreateProfilesTable.
  */
-return new class extends XotBaseMigration {
+return new class() extends XotBaseMigration
+{
     protected ?string $model_class = Profile::class;
 
     /**
@@ -19,11 +21,13 @@ return new class extends XotBaseMigration {
      */
     public function up(): void
     {
+        $userClass = XotData::make()->getUserClass();
+
         $this->convertIdFromUuidToBigintIfNeeded(
-            static function (Blueprint $table): void {
+            static function (Blueprint $table) use ($userClass): void {
                 $table->id();
                 $table->string('uuid', 36)->nullable()->index();
-                $table->string('user_id', 36)->nullable()->index();
+                $table->foreignIdFor($userClass, 'user_id')->nullable()->index();
                 $table->string('first_name')->nullable();
                 $table->string('last_name')->nullable();
                 $table->string('email')->nullable();
@@ -53,10 +57,10 @@ return new class extends XotBaseMigration {
             ],
         );
 
-        $this->tableCreate(static function (Blueprint $table): void {
+        $this->tableCreate(static function (Blueprint $table) use ($userClass): void {
             $table->id();
             $table->string('uuid', 36)->nullable()->index();
-            $table->string('user_id', 36)->nullable()->index();
+            $table->foreignIdFor($userClass, 'user_id')->nullable()->index();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('email')->nullable();
@@ -71,10 +75,6 @@ return new class extends XotBaseMigration {
         });
 
         $this->tableUpdate(function (Blueprint $table): void {
-            if ($this->hasColumn('user_id')) {
-                $table->string('user_id')->nullable()->change();
-            }
-
             if (! $this->hasColumn('uuid')) {
                 $table->string('uuid', 36)->nullable()->index()->after('id');
             }

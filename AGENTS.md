@@ -20,6 +20,7 @@ Regole, skill e memorie vivono solo in `docs/wiki/`. Caricamento on-demand via Q
 - Mai Controllers FO — Folio + Volt + Laraxot
 - Mai estendere Filament diretto — XotBase / LangBase
 - Mai `RefreshDatabase` — `.env.testing` SQLite
+- **Git solo avanti** — studia con `git show`; **mai** restore/checkout/reset/revert/rollback
 - Commit solo su richiesta esplicita utente
 - Stesso task multi-agente → `docs/chat/INDEX.md` + issue GitHub (`git remote -v`)
 

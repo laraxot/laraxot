@@ -2,17 +2,26 @@
 
 declare(strict_types=1);
 
-use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use Modules\TimberBilling\Models\TimberLabelPrint;
+use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-return new class() extends Migration
+/*
+ * La migrazione modifica il taglio delle stampe per eliminarne l'unicità.
+ *
+ * Conformità alle convenzioni XotBaseMigration:
+ * - Extends XotBaseMigration invece di Migration
+ * - Utilizza $this->getTable() invece di hardcodare il nome della tabella
+ * - Usa $this->tableUpdate() per le modifiche alle tabelle esistenti
+ */
+
+return new class() extends XotBaseMigration
 {
+    protected ?string $model_class = TimberLabelPrint::class;
+
     public function up(): void
     {
-        // Lo storico stampe e' un log: la stessa etichetta puo' essere ristampata
-        // piu' volte (ogni tappa/spostamento), quindi label_code non e' univoco.
-        Schema::table('timber_label_prints', function (Blueprint $table): void {
+        $this->tableUpdate(function (Blueprint $table): void {
             $table->dropUnique('timber_label_prints_label_code_unique');
             $table->index('label_code');
         });
@@ -20,7 +29,7 @@ return new class() extends Migration
 
     public function down(): void
     {
-        Schema::table('timber_label_prints', function (Blueprint $table): void {
+        $this->tableUpdate(function (Blueprint $table): void {
             $table->dropIndex(['label_code']);
             $table->unique('label_code');
         });

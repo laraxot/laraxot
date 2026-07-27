@@ -3,8 +3,6 @@
     "description": "Customer management: anagrafica clienti, sedi, referenti, ruoli referente, rivenditori",
     "type": "library",
     "require": {
-        "laravel/framework": "*",
-        "spatie/queueable-action": "*"
     },
     "autoload": {
         "psr-4": {

@@ -4,19 +4,22 @@ declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
+use Modules\Xot\Datas\XotData;
 
 return new class() extends XotBaseMigration
 {
     public function up(): void
     {
         $this->tableCreate(function (Blueprint $table): void {
+            $user_class = XotData::make()->getUserClass();
+
             $table->id();
             $table->foreignId('heating_system_id')->constrained('heating_systems')->cascadeOnDelete();
             $table->foreignId('boiler_id')->nullable()->constrained('boilers')->nullOnDelete();
 
             $table->string('control_type'); // maintenance | efficiency_check
             $table->date('performed_on');
-            $table->foreignId('performed_by_user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignIdFor($user_class, 'performed_by_user_id')->nullable()->index();
             $table->foreignId('intervention_id')->nullable()->constrained('interventions')->nullOnDelete();
 
             $table->string('rcee_type')->nullable(); // RCEE allegato (tipo1 | tipo2 | ...)

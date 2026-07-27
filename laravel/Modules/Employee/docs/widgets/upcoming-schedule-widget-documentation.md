@@ -7,7 +7,7 @@ The **UpcomingScheduleWidget** represents the "PROSSIMI 7 GIORNI" (Next 7 Days) 
 ### Dashboard Position
 - **Location**: Center widget area (main content)
 - **Title**: "PROSSIMI 7 GIORNI"
-- **Column Span**: Full width  
+- **Column Span**: Full width
 - **Sort Priority**: 2 (second in order)
 
 ## 🎯 Functionality
@@ -17,7 +17,7 @@ The UpcomingScheduleWidget serves as a comprehensive scheduling overview that in
 - **Absence Management**: Vacation days, sick leave, personal time
 - **Remote Work**: Smart working and work-from-home schedules
 - **Business Travel**: Transfers and business trips
-- **Team Coordination**: Visibility into colleague availability  
+- **Team Coordination**: Visibility into colleague availability
 - **Approval Tracking**: Status of pending schedule requests
 
 ### Key Features
@@ -32,7 +32,7 @@ The UpcomingScheduleWidget serves as a comprehensive scheduling overview that in
 
 ### Widget Class Structure
 
-**File**: `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Employee/app/Filament/Widgets/UpcomingScheduleWidget.php`
+**File**: `/var/www/html/_bases/base_workorder_fila3_mono/laravel/Modules/Employee/app/Filament/Widgets/UpcomingScheduleWidget.php`
 
 ```php
 class UpcomingScheduleWidget extends XotBaseWidget
@@ -75,13 +75,13 @@ Returns visual configuration for different event types:
     'badge_color' => 'bg-red-100 text-red-800',
 ],
 'smart_working' => [
-    'icon' => 'heroicon-o-home', 
+    'icon' => 'heroicon-o-home',
     'color' => 'text-blue-600 bg-blue-50 border-blue-200',
     'badge_color' => 'bg-blue-100 text-blue-800',
 ],
 'transfer' => [
     'icon' => 'heroicon-o-map-pin',
-    'color' => 'text-purple-600 bg-purple-50 border-purple-200', 
+    'color' => 'text-purple-600 bg-purple-50 border-purple-200',
     'badge_color' => 'bg-purple-100 text-purple-800',
 ]
 ```
@@ -90,7 +90,7 @@ Returns visual configuration for different event types:
 
 **`getStatusBadgeColor(string $status): string`**
 - **Approved**: `bg-green-100 text-green-800`
-- **Pending**: `bg-yellow-100 text-yellow-800`  
+- **Pending**: `bg-yellow-100 text-yellow-800`
 - **Rejected**: `bg-red-100 text-red-800`
 
 **`getAvatarColor(string $initials): string`**
@@ -109,7 +109,7 @@ Returns visual configuration for different event types:
     'event_type' => string,         // absence|smart_working|transfer
     'event_title' => string,        // Localized event title
     'start_date' => Carbon,         // Event start date/time
-    'end_date' => Carbon,           // Event end date/time  
+    'end_date' => Carbon,           // Event end date/time
     'status' => string,             // approved|pending|rejected
     'location' => ?string,          // Location info (optional)
     'notes' => ?string,             // Additional context (optional)
@@ -122,7 +122,7 @@ Returns visual configuration for different event types:
    - Red color scheme (`text-red-600`)
    - X-circle icon
 
-2. **Smart Working** (`smart_working`) 
+2. **Smart Working** (`smart_working`)
    - Remote work, work from home
    - Blue color scheme (`text-blue-600`)
    - Home icon
@@ -142,7 +142,7 @@ Current implementation includes representative scenarios:
    - Notes: "Ferie programmate"
 
 2. **Sara Bianchi - Smart Working**
-   - Type: Remote work 
+   - Type: Remote work
    - Duration: 1 day
    - Location: Casa
    - Status: Approved
@@ -187,7 +187,7 @@ Current implementation includes representative scenarios:
 │            PROSSIMI 7 GIORNI            │
 ├─────────────────────────────────────────┤
 │ [MR] Mario Rossi          [APPROVED]    │
-│      📅 Ferie                           │ 
+│      📅 Ferie                           │
 │      15/01 - 17/01 • Ferie programmate  │
 ├─────────────────────────────────────────┤
 │ [SB] Sara Bianchi         [APPROVED]    │
@@ -202,7 +202,7 @@ Current implementation includes representative scenarios:
 
 ### Visual Hierarchy
 1. **Employee Avatar**: Colored circle with initials
-2. **Employee Name**: Bold primary text  
+2. **Employee Name**: Bold primary text
 3. **Event Type**: Icon + localized title
 4. **Date Range**: Clear start/end dates
 5. **Location**: Geographic context when relevant
@@ -259,13 +259,13 @@ protected function getEventTypeConfig(string $type): array
         ],
         'smart_working' => [
             'icon' => 'heroicon-o-home',
-            'color' => 'text-blue-600 bg-blue-50 border-blue-200', 
+            'color' => 'text-blue-600 bg-blue-50 border-blue-200',
             'badge_color' => 'bg-blue-100 text-blue-800',
         ],
         'transfer' => [
             'icon' => 'heroicon-o-map-pin',
             'color' => 'text-purple-600 bg-purple-50 border-purple-200',
-            'badge_color' => 'bg-purple-100 text-purple-800', 
+            'badge_color' => 'bg-purple-100 text-purple-800',
         ],
         'training' => [
             'icon' => 'heroicon-o-academic-cap',
@@ -295,7 +295,7 @@ protected function getEventTitle(string $type): string
 {
     return match ($type) {
         'absence' => 'Assenza',
-        'smart_working' => 'Smart Working', 
+        'smart_working' => 'Smart Working',
         'transfer' => 'Trasferta',
         'vacation' => 'Ferie',
         'sick_leave' => 'Malattia',
@@ -316,9 +316,9 @@ protected function getUpcomingEvents(): array
 {
     $startDate = now()->startOfDay();
     $endDate = now()->addDays(7)->endOfDay();
-    
+
     return WorkHour::select([
-            'id', 'employee_id', 'date', 'end_date', 
+            'id', 'employee_id', 'date', 'end_date',
             'work_hour_type_id', 'location', 'notes', 'approval_status'
         ])
         ->with(['employee:id,first_name,last_name', 'workHourType:id,code,name'])
@@ -355,14 +355,14 @@ protected function getUpcomingEvents(): array
 
 ### Functional Testing
 - [ ] Events display in chronological order
-- [ ] Date ranges calculate correctly  
+- [ ] Date ranges calculate correctly
 - [ ] Status badges show proper colors
 - [ ] Employee names and initials display
 - [ ] Event types map correctly
 - [ ] Location information appears when available
 - [ ] Notes truncate appropriately
 
-### Visual Testing  
+### Visual Testing
 - [ ] Avatar colors remain consistent
 - [ ] Event type icons display properly
 - [ ] Status badges have correct colors
@@ -400,7 +400,7 @@ protected function getUpcomingEvents(): array
 
 ### Advanced Features
 1. **Calendar Integration**: Sync with Outlook/Google Calendar
-2. **Conflict Detection**: Alert on scheduling conflicts  
+2. **Conflict Detection**: Alert on scheduling conflicts
 3. **Team View**: Department-wide schedule visibility
 4. **Recurring Events**: Support for repeated schedules
 5. **Time Zone Support**: Multi-location company support
@@ -434,8 +434,8 @@ protected function getUpcomingEvents(): array
 
 ---
 
-**Last Updated**: January 2025  
-**Status**: Production Ready  
-**Widget Class**: `UpcomingScheduleWidget`  
-**View Template**: `employee::filament.widgets.upcoming-schedule-widget`  
+**Last Updated**: January 2025
+**Status**: Production Ready
+**Widget Class**: `UpcomingScheduleWidget`
+**View Template**: `employee::filament.widgets.upcoming-schedule-widget`
 **Dependencies**: Filament 3.x, XotBaseWidget, Employee Model

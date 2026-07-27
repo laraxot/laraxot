@@ -21,25 +21,7 @@ related:
 # 🔐 TWO-FACTOR AUTHENTICATION (2FA) - GUIDA IMPLEMENTAZIONE
 
 **Versione**: 1.0  
-**Status**: 🚧 60% Implementato (claim originale, **non verificata** — vedi nota sotto)
-
-> **Verificato 2026-07-24**: il codice sotto descrive un design/piano, non lo stato reale del modulo. Verifica
-> puntuale contro `laravel/Modules/User/app`:
-> - **Non esiste** `Modules\User\Services\TwoFactorService` (nessun file `TwoFactorService.php` nel modulo).
-> - **Non esiste** la Filament Page `TwoFactorAuthentication` né `Modules\User\Http\Middleware\TwoFactorMiddleware`.
-> - Esistono solo: i Contracts (`app/Contracts/TwoFactorAuthenticatableContract.php`,
->   `TwoFactorAuthenticationProvider.php`), gli Events (`TwoFactorAuthentication{Enabled,Disabled,Confirmed,Challenged}`)
->   e la migrazione con le colonne `two_factor_secret`/`two_factor_recovery_codes`/`two_factor_confirmed_at`/
->   `two_factor_enabled` su `users` (`database/migrations/2024_01_01_000002_create_users_table.php`).
-> - Il trait Filament `app/Filament/Traits/HasTwoFactorAuthentication.test` esiste ma ha estensione `.test` (non
->   `.php`): **non è caricato da PHP/Composer, il codice è disattivato**.
-> - `tests/Feature/TwoFactorServiceTest.php` esiste e usa funzioni helper (`enableTwoFactorForUser`, ecc.) non
->   una classe `TwoFactorService` — la suite skippa se le colonne non esistono (`skipUnlessUserColumn`).
-> - Nessuna route `2fa.*` o `email-two-factor` trovata in `Routes/`.
->
-> **Conclusione onesta**: il 2FA in `User` è allo stato di *scaffolding* (contratti, eventi, colonne DB, un trait
-> disattivato), non un flusso funzionante end-to-end come il codice PHP sotto lascia intendere. Non riscrivere
-> questo documento come se fosse già implementato senza aver prima verificato il codice.
+**Status**: 🚧 60% Implementato  
 
 ---
 

@@ -105,7 +105,7 @@ trait NavigationPageLabelTrait
     {
         return static::trans('navigation.name');
     }
-    
+
     public function getTitle(): string               // NON-STATIC - matches base
     {
         return static::trans('title');
@@ -128,7 +128,7 @@ class MyPage extends XotBasePage
     {
         return 'Title';
     }
-    
+
     // public function getTitle(): string|Htmlable   // ❌ INCORRECT - union type not compatible
 }
 ```
@@ -148,7 +148,7 @@ class MyPage extends XotBasePage
     {
         return [];
     }
-    
+
     // protected function getFormActions(): array    // ❌ INCORRECT - more restrictive
 }
 ```
@@ -175,7 +175,7 @@ class MyPage extends XotBasePage
 ### Application Startup Test
 ```bash
 # Test application startup to catch method signature errors immediately
-cd /var/www/html/_bases/base_techplanner_fila3_mono/laravel
+cd /var/www/html/_bases/base_workorder_fila3_mono/laravel
 php artisan serve --host=127.0.0.1 --port=8003
 
 # Check for fatal errors
@@ -202,7 +202,7 @@ trait NavigationPageLabelTrait
     // STATIC methods for label/navigation
     public static function getModelLabel(): string
     public static function getPluralModelLabel(): string
-    
+
     // INSTANCE methods for page content
     public function getTitle(): string
     public function getHeading(): string
@@ -217,7 +217,7 @@ abstract class XotBasePage
     // STATIC methods
     public static function getModelLabel(): string;
     public static function getPluralModelLabel(): string;
-    
+
     // INSTANCE methods
     public function getTitle(): string;
     public function getHeading(): string;
@@ -232,7 +232,7 @@ abstract class XotBaseWidget
 {
     // INSTANCE methods - all public
     public function getFormSchema(): array;
-    
+
     // STATIC methods for navigation
     public static function getNavigationLabel(): string;
 }

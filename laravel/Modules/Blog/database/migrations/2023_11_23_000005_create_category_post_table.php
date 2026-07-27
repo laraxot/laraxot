@@ -3,12 +3,15 @@
 declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
+use Modules\Blog\Models\Article;
+use Modules\Blog\Models\Category;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 /*
  * Class CreateLiveuserUsersTable.
  */
-return new class extends XotBaseMigration {
+return new class() extends XotBaseMigration
+{
     /**
      * Run the migrations.
      */
@@ -18,20 +21,14 @@ return new class extends XotBaseMigration {
         $this->tableCreate(
             static function (Blueprint $table): void {
                 $table->id();
-                $table->foreignId('category_id'); // ->references('id')->on('categories')->onDelete('cascade');
-                $table->foreignId('post_id'); // ->references('id')->on('posts')->onDelete('cascade');
+                $table->foreignIdFor(Category::class, 'category_id');
+                $table->foreignIdFor(Article::class, 'post_id');
                 $table->timestamps();
             }
         );
         // -- UPDATE --
         $this->tableUpdate(
             function (Blueprint $table): void {
-                // if (! $this->hasColumn('current_team_id')) {
-                //    $table->foreignId('current_team_id')->nullable();
-                // }
-                // if (! $this->hasColumn('profile_photo_path')) {
-                //    $table->string('profile_photo_path', 2048)->nullable();
-                // }
                 $this->updateTimestamps(table: $table, hasSoftDeletes: true);
             }
         );

@@ -6,9 +6,9 @@ created: "2026-04-28"
 updated: "2026-07-06"
 qmd: "themes wiki log second brain module root hygiene"
 issues:
-  - "https://github.com/laraxot/base_techplanner_fila5/issues/39"
+  - "https://github.com/laraxot/base_workorder_fila5/issues/39"
 discussions:
-  - "https://github.com/laraxot/base_techplanner_fila5/discussions/12"
+  - "https://github.com/laraxot/base_workorder_fila5/discussions/12"
 ---
 
 ## [2026-07-06] module-root hygiene | tema non impattato

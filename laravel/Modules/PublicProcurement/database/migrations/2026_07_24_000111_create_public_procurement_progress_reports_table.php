@@ -11,7 +11,7 @@ return new class() extends XotBaseMigration
     {
         $this->tableCreate(function (Blueprint $table): void {
             $table->id();
-            $table->foreignId('public_procurement_contract_id')->constrained('public_procurement_contracts')->cascadeOnDelete();
+            $table->foreignId('public_procurement_contract_id')->constrained(table: 'public_procurement_contracts', indexName: 'pp_progress_reports_contract_id_foreign')->cascadeOnDelete();
             $table->string('number');
             $table->string('status')->default('draft');
             $table->date('issued_on')->nullable();

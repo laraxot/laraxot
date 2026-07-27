@@ -6,9 +6,9 @@ tags: [employee, wiki, index, dipendenti, timesheet, presenze]
 created: 2026-07-06
 updated: 2026-07-06
 issues:
-  - "https://github.com/laraxot/base_techplanner_fila5/issues/11"
+  - "https://github.com/laraxot/base_workorder_fila5/issues/11"
 discussions:
-  - "https://github.com/laraxot/base_techplanner_fila5/discussions/12"
+  - "https://github.com/laraxot/base_workorder_fila5/discussions/12"
 related:
   - ../../../../../docs/wiki/concepts/agent-bootstrap-compact.md
   - ../architecture.md

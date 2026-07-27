@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
+use Modules\Xot\Datas\XotData;
 
 return new class() extends XotBaseMigration
 {
     public function up(): void
     {
         $this->tableCreate(function (Blueprint $table): void {
+            $user_class = XotData::make()->getUserClass();
+
             $table->id();
             $table->string('type');
             $table->string('title');
@@ -24,7 +27,7 @@ return new class() extends XotBaseMigration
             $table->foreignId('subcontractor_id')->nullable()->constrained('subcontractors')->cascadeOnDelete();
             $table->foreignId('equipment_id')->nullable()->constrained('equipment')->nullOnDelete();
             $table->foreignId('media_id')->nullable()->constrained('media')->nullOnDelete();
-            $table->foreignId('uploaded_by_user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignIdFor($user_class, 'uploaded_by_user_id')->nullable()->index();
             $table->longText('extracted_text')->nullable();
             $table->json('ai_classification')->nullable();
             $table->json('ai_extracted_fields')->nullable();

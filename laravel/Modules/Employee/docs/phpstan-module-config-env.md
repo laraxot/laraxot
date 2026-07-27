@@ -6,10 +6,10 @@ created: 2026-07-03
 updated: 2026-07-03
 qmd: "phpstan larastan module config env employee Env get"
 issues:
-  - "https://github.com/laraxot/base_techplanner_fila5/issues/34"
+  - "https://github.com/laraxot/base_workorder_fila5/issues/34"
   - "https://github.com/laraxot/module_employee_fila5/issues/2"
 discussions:
-  - "https://github.com/laraxot/base_techplanner_fila5/discussions/35"
+  - "https://github.com/laraxot/base_workorder_fila5/discussions/35"
 ---
 
 # PHPStan module config env discipline

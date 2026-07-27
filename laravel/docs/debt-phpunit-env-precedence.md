@@ -36,10 +36,10 @@ Errore: `SQLSTATE[HY000]: General error: 1 no such table: vehicles (Connection: 
 Causa isolata passo per passo:
 
 1. `laravel/phpunit.xml` → `<env name="DB_CONNECTION" value="sqlite"/>`, `<env name="DB_DATABASE" value=":memory:"/>` (variabili di **processo**, impostate prima del boot app).
-2. `Modules/Xot/tests/CreatesApplication.php` carica poi `.env.testing` (`DB_CONNECTION=mysql`, `DB_DATABASE=techplanner_data_test`, verificato con `grep DB_ laravel/.env.testing`).
+2. `Modules/Xot/tests/CreatesApplication.php` carica poi `.env.testing` (`DB_CONNECTION=mysql`, `DB_DATABASE=workorder_data_test`, verificato con `grep DB_ laravel/.env.testing`).
 3. Dotenv di Laravel **non sovrascrive** variabili di processo già impostate → le `<env>` di phpunit.xml vincono per le chiavi in comune.
 4. Risultato: qualunque `XotBaseModel` con `$connection` di default (`'xot'`, non sovrascritto) risolve su SQLite `:memory:` vuoto invece che sul MySQL reale.
-5. Verificato che `techplanner_data_test` **esiste ed è raggiungibile** (`mysql -h127.0.0.1 -P3306 -umarco -pmarco -e "SHOW TABLES" techplanner_data_test` → tabelle presenti, es. `appointments`, `clients`) ma **non ha ancora nessuna tabella dei moduli gestionale_commesse** (`SHOW TABLES LIKE '%vehicle%'` → vuoto) — quindi due problemi in serie, non uno solo.
+5. Verificato che `workorder_data_test` **esiste ed è raggiungibile** (`mysql -h127.0.0.1 -P3306 -umarco -pmarco -e "SHOW TABLES" workorder_data_test` → tabelle presenti, es. `appointments`, `clients`) ma **non ha ancora nessuna tabella dei moduli gestionale_commesse** (`SHOW TABLES LIKE '%vehicle%'` → vuoto) — quindi due problemi in serie, non uno solo.
 
 ## Come risolvere
 
@@ -59,7 +59,7 @@ php artisan migrate --path=Modules/Vehicle/database/migrations --env=testing --n
 ## Come verificare la fix
 
 ```bash
-mysql -h127.0.0.1 -P3306 -umarco -pmarco -e "SHOW TABLES LIKE '%vehicle%'" techplanner_data_test
+mysql -h127.0.0.1 -P3306 -umarco -pmarco -e "SHOW TABLES LIKE '%vehicle%'" workorder_data_test
 # deve mostrare vehicles, vehicle_documents
 
 cd laravel && ./vendor/bin/pest Modules/Vehicle/tests/Feature --no-coverage
@@ -146,7 +146,7 @@ lo corromperebbe per tutti. **Non eseguito di proposito.**
 ## DoD
 
 - [ ] `phpunit.xml` non scavalca più `.env.testing` per `DB_CONNECTION`/`DB_DATABASE` (o profilo alternativo documentato e in uso)
-- [ ] `techplanner_data_test` ha le tabelle dei moduli GC enabled migrate
+- [ ] `workorder_data_test` ha le tabelle dei moduli GC enabled migrate
 - [ ] `./vendor/bin/pest Modules/Vehicle/tests/Feature` passa senza errori di connessione
 
 ## Non fare

@@ -7,6 +7,9 @@ use Modules\EnergyBroker\Actions\ExtractPdfFilesFromZipAction;
 use Modules\EnergyBroker\Models\EnergyBrokerDocument;
 use Modules\EnergyBroker\Tests\TestCase;
 
+use function Safe\file_put_contents;
+use function Safe\unlink;
+
 /*
 |--------------------------------------------------------------------------
 | Migrato da gestionale_commesse (tests/Feature/EnergyBroker) — 2026-07-24
@@ -41,9 +44,9 @@ it('extracts pdf files from a zip archive for batch imports', function (): void 
     expect($entries)->toHaveCount(1)
         ->and($entries[0]['original_name'] ?? null)->toBe('first.pdf');
 
-    @unlink($zipPath);
-    @unlink($firstPdf);
-    @unlink($ignoredFile);
+    unlink($zipPath);
+    unlink($firstPdf);
+    unlink($ignoredFile);
 });
 
 it('deletes only poorly analyzed energy broker documents', function (): void {

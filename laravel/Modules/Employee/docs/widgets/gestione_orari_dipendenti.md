@@ -62,7 +62,7 @@ class WorkHoursPage extends XotBasePage
         $weekData = app(BuildWeeklyTimeTableAction::class)->execute(...);
         return [/* 15+ array elements */];
     }
-    
+
     public function previousWeek() { /* logica navigazione */ }
     public function nextWeek() { /* logica navigazione */ }
     public function updateDateRange() { /* logica date */ }
@@ -73,7 +73,7 @@ class WorkHoursPage extends XotBasePage
 class WorkHoursPage extends XotBasePage
 {
     protected static string $view = 'employee::filament.pages.work-hours';
-    
+
     protected function getHeaderWidgets(): array {
         return [
             WeekNavigationWidget::class,
@@ -100,7 +100,7 @@ class WorkHoursPage extends XotBasePage
 ```php
 // Da WorkHoursPage.php - LINEE 64-95
 public function updateDateRange(string $start, string $end): void
-public function previousWeek(): void  
+public function previousWeek(): void
 public function nextWeek(): void
 public function currentWeek(): void
 
@@ -109,7 +109,7 @@ public function currentWeek(): void
 
 #### 2. Logica Export (15+ righe)
 ```php
-// Da WorkHoursPage.php - LINEE 108-118  
+// Da WorkHoursPage.php - LINEE 108-118
 public function exportData(): void {
     app(ExportTimeDataAction::class)->onQueue('exports')->execute(...);
     $this->notify('Export avviato...');
@@ -158,12 +158,12 @@ class WeekNavigationWidget extends XotBaseWidget
 {
     public Carbon $startDate;
     public Carbon $endDate;
-    
+
     public function mount(): void {
         $this->startDate = Carbon::now()->startOfWeek();
         $this->endDate = Carbon::now()->endOfWeek();
     }
-    
+
     public function previousWeek(): void {
         $this->startDate = $this->startDate->subWeek();
         $this->endDate = $this->endDate->subWeek();
@@ -172,9 +172,9 @@ class WeekNavigationWidget extends XotBaseWidget
             'end' => $this->endDate->toDateString()
         ]);
     }
-    
+
     public function nextWeek(): void {
-        $this->startDate = $this->startDate->addWeek(); 
+        $this->startDate = $this->startDate->addWeek();
         $this->endDate = $this->endDate->addWeek();
         $this->dispatch('week-changed', [
             'start' => $this->startDate->toDateString(),
@@ -186,9 +186,9 @@ class WeekNavigationWidget extends XotBaseWidget
 
 ### 2. WorkHoursTimelineWidget (UPGRADE ESISTENTE)
 
-**Basato su:** `WorkHoursBoardWidget.php` esistente  
+**Basato su:** `WorkHoursBoardWidget.php` esistente
 **Miglioramenti:**
-- Listener per eventi `week-changed` 
+- Listener per eventi `week-changed`
 - Caching dedicato per performance
 - Ottimizzazioni query con scope
 
@@ -196,7 +196,7 @@ class WeekNavigationWidget extends XotBaseWidget
 class WorkHoursTimelineWidget extends XotBaseWidget
 {
     protected $listeners = ['week-changed' => 'updateWeekRange'];
-    
+
     #[Computed(cache: true, keep: false)]
     public function weekData(): array {
         return Cache::remember(
@@ -223,25 +223,25 @@ class WorkHoursStatsWidget extends XotBaseStatsOverviewWidget
 {
     protected function getStats(): array {
         $data = $this->getCachedWeekData();
-        
+
         return [
             Stat::make('Ore Lavorate', $this->formatHours($data['worked_minutes']))
                 ->description('Questa settimana')
                 ->descriptionIcon('heroicon-m-clock')
                 ->color('success'),
-                
+
             Stat::make('Ore Programmate', $this->formatHours($data['scheduled_minutes']))
                 ->description('Target settimanale')
                 ->descriptionIcon('heroicon-m-calendar')
                 ->color('primary'),
-                
+
             Stat::make('Differenza', $this->formatDifference($data['difference_minutes']))
                 ->description($data['difference_minutes'] >= 0 ? 'Surplus' : 'Deficit')
                 ->descriptionIcon('heroicon-m-chart-bar')
                 ->color($data['difference_minutes'] >= 0 ? 'success' : 'danger'),
         ];
     }
-    
+
     private function formatHours(int $minutes): string {
         $hours = intdiv($minutes, 60);
         $mins = $minutes % 60;
@@ -263,18 +263,18 @@ class ExportActionsWidget extends XotBaseWidget
 {
     public function exportWeekData(string $format = 'xlsx'): void {
         $userId = Auth::id();
-        
+
         app(ExportTimeDataAction::class)
             ->onQueue('exports')
             ->execute($userId, $this->startDate, $this->endDate, $format);
-            
+
         Notification::make()
             ->title('Export Avviato')
             ->body("Riceverai una notifica quando il file $format sarà pronto")
             ->success()
             ->send();
     }
-    
+
     public function importTemplate(): void {
         return response()->download(
             storage_path('app/templates/work-hours-template.xlsx')
@@ -289,7 +289,7 @@ class ExportActionsWidget extends XotBaseWidget
 
 #### Fase 1: Creazione Widget Base
 1. Creare `WeekNavigationWidget` con logica navigazione
-2. Estrarre `exportData()` in `ExportActionsWidget`  
+2. Estrarre `exportData()` in `ExportActionsWidget`
 3. Spostare `formatMinutesToHours()` in `WorkHoursStatsWidget`
 
 #### Fase 2: Event-Driven Communication
@@ -302,7 +302,7 @@ public function weekChanged(): void {
     ]);
 }
 
-// WorkHoursTimelineWidget.php  
+// WorkHoursTimelineWidget.php
 protected $listeners = [
     'week-range-updated' => 'updateWeekData'
 ];
@@ -321,21 +321,21 @@ public function updateWeekData($range): void {
 class WorkHoursPage extends XotBasePage
 {
     protected static string $view = 'employee::filament.pages.work-hours';
-    
+
     protected function getHeaderWidgets(): array {
         return [
             WeekNavigationWidget::class,
             ExportActionsWidget::class,
         ];
     }
-    
+
     protected function getWidgets(): array {
         return [
             WorkHoursTimelineWidget::class,
             WorkHoursStatsWidget::class,
         ];
     }
-    
+
     // Rimossi tutti i metodi di logica business!
 }
 ```
@@ -350,7 +350,7 @@ class WorkHoursPage extends XotBasePage
 │ WeekNavigationWidget | ExportActionsWgt │
 ├─────────────────────────────────────────┤
 │           WorkHoursTimelineWidget       │
-├─────────────────────────────────────────┤  
+├─────────────────────────────────────────┤
 │            WorkHoursStatsWidget         │
 └─────────────────────────────────────────┘
 ```
@@ -413,10 +413,10 @@ $workHours = WorkHour::where('employee_id', $userId)
         $hour->employee->name; // N+1!
     });
 
-// Dopo: Single query with eager loading  
+// Dopo: Single query with eager loading
 $workHours = WorkHour::with(['employee:id,first_name,last_name'])
     ->where('employee_id', $userId)
-    ->whereDate('created_at', today()) 
+    ->whereDate('created_at', today())
     ->get();
 ```
 
@@ -443,26 +443,26 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 describe('WeekNavigationWidget', function () {
     uses(DatabaseTransactions::class);
-    
+
     beforeEach(function () {
         $this->user = User::factory()->create();
         $this->actingAs($this->user);
         $this->widget = Livewire::test(WeekNavigationWidget::class);
     });
-    
+
     it('initializes with current week', function () {
         $this->widget
             ->assertSet('startDate', Carbon::now()->startOfWeek())
             ->assertSet('endDate', Carbon::now()->endOfWeek());
     });
-    
+
     it('navigates to previous week correctly', function () {
         $this->widget->call('previousWeek');
-        
+
         expect($this->widget->get('startDate'))
             ->toEqual(Carbon::now()->subWeek()->startOfWeek());
     });
-    
+
     it('dispatches week-changed event', function () {
         $this->widget
             ->call('nextWeek')
@@ -471,35 +471,35 @@ describe('WeekNavigationWidget', function () {
 });
 ```
 
-#### WorkHoursTimelineWidget Test  
+#### WorkHoursTimelineWidget Test
 ```php
 describe('WorkHoursTimelineWidget', function () {
     uses(DatabaseTransactions::class);
-    
+
     it('loads work hours for authenticated user', function () {
         $user = User::factory()->create();
         WorkHour::factory()->count(5)->create(['employee_id' => $user->id]);
-        
+
         $this->actingAs($user);
-        
+
         $widget = Livewire::test(WorkHoursTimelineWidget::class);
-        
+
         expect($widget->get('weekData'))
             ->toHaveKey('summary')
             ->toHaveKey('byDate');
     });
-    
+
     it('responds to week-changed events', function () {
         $widget = Livewire::test(WorkHoursTimelineWidget::class);
-        
+
         $newStart = Carbon::now()->addWeek()->startOfWeek();
         $newEnd = Carbon::now()->addWeek()->endOfWeek();
-        
+
         $widget->dispatch('week-changed', [
             'start' => $newStart->toDateString(),
             'end' => $newEnd->toDateString()
         ]);
-        
+
         expect($widget->get('startDate'))->toEqual($newStart);
         expect($widget->get('endDate'))->toEqual($newEnd);
     });
@@ -513,28 +513,28 @@ describe('WorkHoursTimelineWidget', function () {
 it('completes full week navigation and export flow', function () {
     $user = User::factory()->create();
     WorkHour::factory()->count(10)->create(['employee_id' => $user->id]);
-    
+
     $this->actingAs($user);
-    
+
     // Test page loads with all widgets
     $this->get('/employee/work-hours')
         ->assertSeeLivewire(WeekNavigationWidget::class)
         ->assertSeeLivewire(WorkHoursTimelineWidget::class)
         ->assertSeeLivewire(WorkHoursStatsWidget::class)
         ->assertSeeLivewire(ExportActionsWidget::class);
-        
+
     // Test widget interactions
     Livewire::test(WeekNavigationWidget::class)
         ->call('nextWeek')
         ->assertDispatched('week-changed');
-        
+
     // Test export functionality
     Queue::fake();
-    
+
     Livewire::test(ExportActionsWidget::class)
         ->call('exportWeekData', 'xlsx')
         ->assertNotified('Export Avviato');
-        
+
     Queue::assertPushed(ExportTimeDataAction::class);
 });
 ```
@@ -544,7 +544,7 @@ it('completes full week navigation and export flow', function () {
 ### Checklist Pre-Migration
 
 - [ ] **Backup Database**: Full backup prima dei cambiamenti
-- [ ] **Code Analysis**: Identificare tutte le dipendenze di `WorkHoursPage`  
+- [ ] **Code Analysis**: Identificare tutte le dipendenze di `WorkHoursPage`
 - [ ] **Widget Creation**: Creare tutti i widget necessari prima della migrazione
 - [ ] **Event Testing**: Testare comunicazione tra widget in ambiente dev
 - [ ] **Performance Baseline**: Misurare performance attuali per comparazione
@@ -554,7 +554,7 @@ it('completes full week navigation and export flow', function () {
 ```bash
 # Creare i nuovi widget
 php artisan make:widget WeekNavigationWidget --employee
-php artisan make:widget WorkHoursStatsWidget --employee  
+php artisan make:widget WorkHoursStatsWidget --employee
 php artisan make:widget ExportActionsWidget --employee
 
 # Spostare logica dai pages
@@ -570,14 +570,14 @@ class WorkHoursPage extends XotBasePage
 {
     // Mantenere metodi legacy temporaneamente
     public function legacyPreviousWeek() { /* old logic */ }
-    
+
     protected function getHeaderWidgets(): array {
         return [
             WeekNavigationWidget::class, // Nuovo
             // Altri widget...
         ];
     }
-    
+
     // Rimuovere gradualmente metodi legacy
 }
 ```
@@ -604,7 +604,7 @@ class WorkHoursPage extends XotBasePage
 
 #### Code Quality
 - **WorkHoursPage.php**: Da 130+ righe a ~30-40 righe (-70%)
-- **Cyclomatic Complexity**: Riduzione da 15+ a 3-5 
+- **Cyclomatic Complexity**: Riduzione da 15+ a 3-5
 - **Code Reusability**: Widget riutilizzabili in altre dashboard
 - **Test Coverage**: Da ~40% a 85%+ con unit test specifici
 
@@ -614,7 +614,7 @@ class WorkHoursPage extends XotBasePage
 - **Database Queries**: Ottimizzazione N+1 queries
 - **User Experience**: Interfaccia più reattiva e modulare
 
-#### Maintainability  
+#### Maintainability
 - **Separation of Concerns**: Logica business isolata nei widget
 - **Single Responsibility**: Ogni widget ha una funzionalità specifica
 - **Event-Driven Architecture**: Comunicazione pulita tra componenti
@@ -622,14 +622,14 @@ class WorkHoursPage extends XotBasePage
 
 ---
 
-**Documento aggiornato**: Gennaio 2025  
-**Versione**: 2.0 - Widget-Driven Architecture  
-**Stato**: Pronto per implementazione  
+**Documento aggiornato**: Gennaio 2025
+**Versione**: 2.0 - Widget-Driven Architecture
+**Stato**: Pronto per implementazione
 
 ## Collegamenti di Riferimento
 
-- [TimeClockWidget Implementation](/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Employee/app/Filament/Widgets/TimeClockWidget.php)
-- [WorkHoursBoardWidget](/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Employee/app/Filament/Widgets/WorkHoursBoardWidget.php)  
-- [Employee Module Architecture](/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Employee/docs/architecture/)
+- [TimeClockWidget Implementation](/var/www/html/_bases/base_workorder_fila3_mono/laravel/Modules/Employee/app/Filament/Widgets/TimeClockWidget.php)
+- [WorkHoursBoardWidget](/var/www/html/_bases/base_workorder_fila3_mono/laravel/Modules/Employee/app/Filament/Widgets/WorkHoursBoardWidget.php)
+- [Employee Module Architecture](/var/www/html/_bases/base_workorder_fila3_mono/laravel/Modules/Employee/docs/architecture/)
 - [Filament Widgets Documentation](https://filamentphp.com/docs/3.x/widgets)
-- [Laraxot Widget Patterns](/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Employee/docs/development/filament3_widget_patterns.md)
+- [Laraxot Widget Patterns](/var/www/html/_bases/base_workorder_fila3_mono/laravel/Modules/Employee/docs/development/filament3_widget_patterns.md)

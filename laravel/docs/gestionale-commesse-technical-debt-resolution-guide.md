@@ -20,10 +20,10 @@ related:
 
 # Guida risoluzione debito tecnico — porting gestionale_commesse
 
-> **Navigazione:** inventario SSoT + playbook ID → [gestionale-technical-debt.md](./gestionale-technical-debt.md) e `debt-*.md`.  
+> **Navigazione:** inventario SSoT + playbook ID → [gestionale-technical-debt.md](./gestionale-technical-debt.md) e `debt-*.md`.
 > Questo file è **complementare** (narrativa lunga con evidenze 2026-07-24). In caso di conflitto di priorità, vince l’inventario.
 >
-> **Solo documentazione.** Nessun file di codice è stato modificato per produrre questa guida — comandi in sola lettura (`grep`, `find`, `migrate:status`, analisi statica).  
+> **Solo documentazione.** Nessun file di codice è stato modificato per produrre questa guida — comandi in sola lettura (`grep`, `find`, `migrate:status`, analisi statica).
 > Vive in `laravel/docs` (stabile) e non in `docs/gestionale-commesse-comparison/` (stato volatile multi-agente).
 
 ## Indice
@@ -354,9 +354,9 @@ Catena di causa, verificata passo per passo:
    <env name="DB_DATABASE" value=":memory:"/>
    ```
 2. `Modules/Xot/tests/CreatesApplication.php` carica poi `.env.testing` con `$app->loadEnvironmentFrom('.env.testing')`.
-3. `.env.testing` dichiara `DB_CONNECTION=mysql`, `DB_DATABASE=techplanner_data_test` (verificato: `grep DB_ laravel/.env.testing`) — l'intenzione è chiaramente quella di usare un **DB MySQL reale e persistente per i test**, coerente con la policy generale del repo "mai `RefreshDatabase`/`migrate:fresh`" (i test si aspettano uno schema già migrato una volta, non ricreato ad ogni run).
-4. Ma **Laravel/Dotenv non sovrascrive variabili d'ambiente già impostate** (comportamento di default, "immutable load"): le `<env>` di `phpunit.xml`, essendo diventate vere variabili di processo prima del boot dell'app, **vincono** su `.env.testing` per le chiavi che si sovrappongono (`DB_CONNECTION`, `DB_DATABASE`). Risultato: qualunque modello con connessione di default `xot` (cioè **tutti** i modelli `XotBaseModel` che non sovrascrivono `$connection`, la stragrande maggioranza dei moduli portati in questa sessione) finisce su un SQLite `:memory:` vuoto, mai migrato, invece che sul MySQL `techplanner_data_test`.
-5. Verificato anche che **il DB MySQL `techplanner_data_test` esiste ed è raggiungibile** (`mysql -h127.0.0.1 -P3306 -umarco -pmarco -e "SHOW TABLES" techplanner_data_test` → decine di tabelle presenti, es. `appointments`, `clients`, `authentications`), ma **non contiene ancora nessuna tabella dei moduli gestionale_commesse** (`SHOW TABLES LIKE '%vehicle%'` → vuoto). Quindi anche risolvendo il conflitto di precedenza env, il secondo passo obbligatorio è comunque migrare le tabelle nuove contro quel DB.
+3. `.env.testing` dichiara `DB_CONNECTION=mysql`, `DB_DATABASE=workorder_data_test` (verificato: `grep DB_ laravel/.env.testing`) — l'intenzione è chiaramente quella di usare un **DB MySQL reale e persistente per i test**, coerente con la policy generale del repo "mai `RefreshDatabase`/`migrate:fresh`" (i test si aspettano uno schema già migrato una volta, non ricreato ad ogni run).
+4. Ma **Laravel/Dotenv non sovrascrive variabili d'ambiente già impostate** (comportamento di default, "immutable load"): le `<env>` di `phpunit.xml`, essendo diventate vere variabili di processo prima del boot dell'app, **vincono** su `.env.testing` per le chiavi che si sovrappongono (`DB_CONNECTION`, `DB_DATABASE`). Risultato: qualunque modello con connessione di default `xot` (cioè **tutti** i modelli `XotBaseModel` che non sovrascrivono `$connection`, la stragrande maggioranza dei moduli portati in questa sessione) finisce su un SQLite `:memory:` vuoto, mai migrato, invece che sul MySQL `workorder_data_test`.
+5. Verificato anche che **il DB MySQL `workorder_data_test` esiste ed è raggiungibile** (`mysql -h127.0.0.1 -P3306 -umarco -pmarco -e "SHOW TABLES" workorder_data_test` → decine di tabelle presenti, es. `appointments`, `clients`, `authentications`), ma **non contiene ancora nessuna tabella dei moduli gestionale_commesse** (`SHOW TABLES LIKE '%vehicle%'` → vuoto). Quindi anche risolvendo il conflitto di precedenza env, il secondo passo obbligatorio è comunque migrare le tabelle nuove contro quel DB.
 
 ### Perché è "critico" e non "basso"
 
@@ -380,7 +380,7 @@ php artisan migrate --path=Modules/Customer/database/migrations --env=testing --
 
 ```bash
 cd laravel
-mysql -h127.0.0.1 -P3306 -umarco -pmarco -e "SHOW TABLES LIKE '%vehicle%'" techplanner_data_test
+mysql -h127.0.0.1 -P3306 -umarco -pmarco -e "SHOW TABLES LIKE '%vehicle%'" workorder_data_test
 # deve mostrare vehicles, vehicle_documents
 
 ./vendor/bin/pest Modules/Vehicle/tests/Feature --no-coverage

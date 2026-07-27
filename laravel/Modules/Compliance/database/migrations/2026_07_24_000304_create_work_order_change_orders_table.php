@@ -4,16 +4,19 @@ declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
+use Modules\Xot\Datas\XotData;
 
 return new class() extends XotBaseMigration
 {
     public function up(): void
     {
         $this->tableCreate(function (Blueprint $table): void {
+            $user_class = XotData::make()->getUserClass();
+
             $table->id();
             $table->foreignId('work_order_id')->constrained('work_orders')->cascadeOnDelete();
-            $table->foreignId('requested_by_user_id')->nullable()->constrained('users')->nullOnDelete();
-            $table->foreignId('approved_by_user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignIdFor($user_class, 'requested_by_user_id')->nullable()->index();
+            $table->foreignIdFor($user_class, 'approved_by_user_id')->nullable()->index();
             $table->string('title');
             $table->text('description')->nullable();
             $table->decimal('estimated_amount', 12, 2)->nullable();

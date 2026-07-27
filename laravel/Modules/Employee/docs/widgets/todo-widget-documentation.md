@@ -6,7 +6,7 @@ The **TodoWidget** represents the "COSE DA FARE" (Things To Do) section in the d
 
 ### Dashboard Position
 - **Location**: Left sidebar widget
-- **Title**: "COSE DA FARE" 
+- **Title**: "COSE DA FARE"
 - **Column Span**: Full width
 - **Sort Priority**: 1 (appears first)
 
@@ -16,7 +16,7 @@ The **TodoWidget** represents the "COSE DA FARE" (Things To Do) section in the d
 The TodoWidget serves as a centralized task management system for HR-related activities including:
 - **Payroll Tasks**: Review payslips and salary documents
 - **Profile Management**: Update employee information
-- **Leave Management**: Confirm vacation dates and requests  
+- **Leave Management**: Confirm vacation dates and requests
 - **Training**: Complete mandatory safety courses
 - **Compliance**: Handle various HR compliance tasks
 
@@ -31,7 +31,7 @@ The TodoWidget serves as a centralized task management system for HR-related act
 
 ### Widget Class Structure
 
-**File**: `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Employee/app/Filament/Widgets/TodoWidget.php`
+**File**: `/var/www/html/_bases/base_workorder_fila3_mono/laravel/Modules/Employee/app/Filament/Widgets/TodoWidget.php`
 
 ```php
 class TodoWidget extends XotBaseWidget
@@ -64,7 +64,7 @@ Returns an array of todo items with complete task information:
 **`getPriorityColor(string $priority): string`**
 - Returns CSS classes for priority-based background, text, and border colors
 - High: Red styling (`text-red-600 bg-red-50 border-red-200`)
-- Medium: Yellow styling (`text-yellow-600 bg-yellow-50 border-yellow-200`) 
+- Medium: Yellow styling (`text-yellow-600 bg-yellow-50 border-yellow-200`)
 - Low: Green styling (`text-green-600 bg-green-50 border-green-200`)
 
 **`getPriorityBadgeColor(string $priority): string`**
@@ -123,7 +123,7 @@ The widget currently uses mock data representing typical HR tasks:
 
 ### Icon Categories
 - **Documents**: `heroicon-o-document-text` (Payroll, contracts)
-- **Profile**: `heroicon-o-user` (Personal information)  
+- **Profile**: `heroicon-o-user` (Personal information)
 - **Calendar**: `heroicon-o-calendar-days` (Time off, scheduling)
 - **Security**: `heroicon-o-shield-check` (Training, compliance)
 
@@ -306,8 +306,8 @@ protected function getTodoItems(): array
 
 ---
 
-**Last Updated**: January 2025  
-**Status**: Production Ready  
-**Widget Class**: `TodoWidget`  
-**View Template**: `employee::filament.widgets.todo-widget`  
+**Last Updated**: January 2025
+**Status**: Production Ready
+**Widget Class**: `TodoWidget`
+**View Template**: `employee::filament.widgets.todo-widget`
 **Dependencies**: Filament 3.x, XotBaseWidget

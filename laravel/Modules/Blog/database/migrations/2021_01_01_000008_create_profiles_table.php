@@ -5,11 +5,13 @@ declare(strict_types=1);
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Blog\Models\Profile;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
+use Modules\Xot\Datas\XotData;
 
 /*
  * Migrazione per la creazione della tabella dei profili utente.
  */
-return new class extends XotBaseMigration {
+return new class() extends XotBaseMigration
+{
     protected ?string $model_class = Profile::class;
 
     /**
@@ -17,13 +19,12 @@ return new class extends XotBaseMigration {
      */
     public function up(): void
     {
+        $userClass = XotData::make()->getUserClass();
+
         $this->tableCreate(
-            static function (Blueprint $table): void {
+            static function (Blueprint $table) use ($userClass): void {
                 $table->id();
-                $table->foreignId('user_id')
-                    ->nullable()
-                    ->constrained('users')
-                    ->nullOnDelete();
+                $table->foreignIdFor($userClass, 'user_id')->nullable()->index();
                 $table->string('first_name')->nullable();
                 $table->string('last_name')->nullable();
                 $table->string('email')->nullable();

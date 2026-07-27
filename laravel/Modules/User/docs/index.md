@@ -80,20 +80,37 @@ This document serves as the central index for the User module, providing guidanc
 
 ## Sottocartelle
 
-> **Verificato 2026-07-24**: nessuna delle sottocartelle `models/`, `traits/`, `blade/`, `components/` esiste
-> sotto `User/docs/` (né in minuscolo né in `Models/`/`Blade/` maiuscolo) — i link sotto erano tutti rotti e sono
-> stati rimossi. Se questa documentazione va ricreata, farlo come file singoli in `docs/` (vedi
-> `docs-chat-filename-no-dates` / convenzioni naming del repo) invece di sottocartelle vuote.
+### Models
+- [Index](./models/index.md) - Indice della documentazione sui modelli
+- [Documentazione Traits](./traits/index.md) - Documentazione sui trait utilizzati
+
+### Folio e Blade
+- [Documentazione Blade](./blade/index.md) - Documentazione sui template Blade
+- [Componenti](./components/index.md) - Documentazione sui componenti
+- [Index](./Models/INDEX.md) - Indice della documentazione sui modelli
+- [Documentazione Traits](./traits/INDEX.md) - Documentazione sui trait utilizzati
+
+### Folio e Blade
+- [Documentazione Blade](./blade/INDEX.md) - Documentazione sui template Blade
+- [Componenti](./components/INDEX.md) - Documentazione sui componenti
 
 ## Roadmap e Sviluppo Futuro
 - [Roadmap](./roadmap.md) - Piano di sviluppo futuro del modulo User
 
+## Note sulla Manutenzione
+Questa documentazione viene aggiornata regolarmente. Prima di apportare modifiche al codice, consultare la documentazione pertinente e aggiornare i documenti correlati.
+
+
+# Indice Documentazione User
+
+- [filament-best-practices.mdc](./filament-best-practices.mdc) — **Regola fondamentale:** chi estende XotBaseResource NON deve dichiarare $navigationGroup, $navigationLabel, né il metodo statico table(Table $table): Table. Seguire sempre questa regola per evitare errori di override e garantire coerenza tra i moduli.
+Ultimo aggiornamento: 14 Maggio 2025
+
+# Indice Documentazione User
+
 ## Best Practices e Convenzioni
 
 - [filament-best-practices.mdc](./filament-best-practices.mdc) — **Regola fondamentale:** chi estende XotBaseResource NON deve dichiarare $navigationGroup, $navigationLabel, né il metodo statico table(Table $table): Table. Seguire sempre questa regola per evitare errori di override e garantire coerenza tra i moduli.
-
-## Note sulla Manutenzione
-Questa documentazione viene aggiornata regolarmente. Prima di apportare modifiche al codice, consultare la documentazione pertinente e aggiornare i documenti correlati.
 
 ## Modelli e Database
 

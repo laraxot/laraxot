@@ -16,6 +16,7 @@ qmd search "Xot concepts" --limit 5
 - [composer-root-skeleton-modular](./composer-root-skeleton-modular.md) — Root Composer minimo: skeleton Laravel + `nwidart/laravel-modules`; moduli owner delle dipendenze.
 - [module-testcase-xotbase-hierarchy](./module-testcase-xotbase-hierarchy.md) — TestCase moduli -> XotBaseTestCase; Nwidart v13 non fornisce BaseTestCase.
 - [Ridondanze cross-cutting (hub)](./ridondanze-cross-cutting-codebase.md)
+- [migration-foreign-id-for](./migration-foreign-id-for.md) — FK via modello; `constrained()` solo stessa connection
 - [Root Trigger Map](../../../../../docs/wiki/rules/00-TRIGGER_MAP.md)
 - [Root Wiki](../../../docs/wiki/)
 

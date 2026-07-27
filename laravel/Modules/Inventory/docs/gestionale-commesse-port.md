@@ -3,16 +3,18 @@ title: "Porting gestionale_commesse — Inventory (redo reshape)"
 type: concept
 tags: [import, gestionale-commesse, inventory, xotbase, reshape, redo]
 created: 2026-07-23
-updated: 2026-07-23
-qmd: "porting Inventory gestionale_commesse XotBase reshape redo"
+updated: 2026-07-27
+qmd: "porting Inventory gestionale_commesse XotBase reshape redo warehouses vehicle_id"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
 discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
 related:
   - "./import-status.md"
+  - "./bugfix-warehouses-vehicle-fk-order.md"
   - "../../../../docs/wiki/concepts/laraxot-module-canonical-structure.md"
   - "../../../../docs/wiki/concepts/porting-external-module-playbook.md"
+  - "../../../../docs/wiki/concepts/migration-foreign-id-for.md"
 ---
 
 # Porting gestionale_commesse — Inventory (redo reshape, 2026-07-23)
@@ -33,8 +35,8 @@ Modulo più esteso dei tre (5 modelli, 3 resource Filament, pagina di overview c
 1. **Actions**: spostate `GetInventoryOverviewRowsQuery`→`app/Actions/GetInventoryOverviewRowsAction.php` e `GetStockSnapshotQuery`→`app/Actions/GetStockSnapshotAction.php`, namespace corretto `Modules\Inventory\Actions` (allineato a PSR-4), trait `QueueableAction` aggiunto; aggiornati tutti i riferimenti in `InventoryOverview.php` e `InventoryMovementResource.php`. Aggiunto `QueueableAction` anche a `CreateInventoryMovementAction`.
 2. **Filament**: le 3 Resource ora `extends XotBaseResource` con `getFormSchema(): array` (invece di `form(Schema): Schema`, dato che `XotBaseResource::form()` è `final`); `canEdit()`/`canView()` tipizzati `\Illuminate\Database\Eloquent\Model $record` (erano untyped, causavano `argument.type`/`missingType.parameter`); `getNavigationGroup()` tipizzato `string` (mai null).
 3. **Migrazioni**: consolidate 1-per-modello + 1 per pivot, `XotBaseMigration`, `tableCreate()`/`tableUpdate()` + `updateTimestamps()`:
-   - `2026_02_25_000010_create_warehouses_table.php` (con `vehicle_id` incluso, era in migrazione separata)
-   - `2026_02_25_000011_create_warehouse_locations_table.php`
+   - `2026_07_24_000701_create_warehouses_table.php` (con `vehicle_id` incluso; **timestamp dopo** `Vehicle` `2026_07_23_183001` — vedi [bugfix-warehouses-vehicle-fk-order.md](./bugfix-warehouses-vehicle-fk-order.md))
+   - `2026_07_24_000702_create_warehouse_locations_table.php`
    - `2026_02_25_000012_create_inventory_movements_table.php` (con `from/to_location_id`, `unit_price`, `line_total` incluse, erano in migrazioni evolutive separate)
    - `2026_02_25_000013_create_product_units_table.php` (con `current_location_id` incluso)
    - `2026_02_25_000014_create_inventory_movement_product_units_table.php` (pivot puro senza model dedicato: `$model_class` esplicito su `InventoryMovement` solo per il costruttore di `XotBaseMigration`, ma `$table->timestamps()` diretto nella tabella pivot — evita il mismatch di `getTable()` che altrimenti punterebbe a `inventory_movements`).

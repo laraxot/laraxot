@@ -23,6 +23,12 @@
         <testsuite name="Cms">
             <directory>Modules/Cms/tests</directory>
         </testsuite>
+        <testsuite name="Compliance">
+            <directory>Modules/Compliance/tests</directory>
+        </testsuite>
+        <testsuite name="EnergyBroker">
+            <directory>Modules/EnergyBroker/tests</directory>
+        </testsuite>
         <testsuite name="Employee">
             <directory>Modules/Employee/tests</directory>
         </testsuite>
@@ -44,11 +50,17 @@
         <testsuite name="Notify">
             <directory>Modules/Notify/tests</directory>
         </testsuite>
+        <testsuite name="PublicProcurement">
+            <directory>Modules/PublicProcurement/tests</directory>
+        </testsuite>
         <testsuite name="TechPlanner">
             <directory>Modules/TechPlanner/tests</directory>
         </testsuite>
         <testsuite name="Tenant">
             <directory>Modules/Tenant/tests</directory>
+        </testsuite>
+        <testsuite name="TimberBilling">
+            <directory>Modules/TimberBilling/tests</directory>
         </testsuite>
         <testsuite name="UI">
             <directory>Modules/UI/tests</directory>
@@ -73,8 +85,6 @@
         <env name="APP_MAINTENANCE_DRIVER" value="file"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="CACHE_STORE" value="array"/>
-        <env name="DB_CONNECTION" value="sqlite"/>
-        <env name="DB_DATABASE" value=":memory:"/>
         <env name="MAIL_MAILER" value="array"/>
         <env name="QUEUE_CONNECTION" value="sync"/>
         <env name="SESSION_DRIVER" value="array"/>

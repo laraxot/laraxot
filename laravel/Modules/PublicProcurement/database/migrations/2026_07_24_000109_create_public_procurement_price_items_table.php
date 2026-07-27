@@ -11,7 +11,7 @@ return new class() extends XotBaseMigration
     {
         $this->tableCreate(function (Blueprint $table): void {
             $table->id();
-            $table->foreignId('public_procurement_contract_id')->constrained('public_procurement_contracts')->cascadeOnDelete();
+            $table->foreignId('public_procurement_contract_id')->constrained(table: 'public_procurement_contracts', indexName: 'pp_price_items_contract_id_foreign')->cascadeOnDelete();
             $table->string('code')->nullable();
             $table->string('category')->nullable();
             $table->text('description');
@@ -21,7 +21,7 @@ return new class() extends XotBaseMigration
             $table->decimal('planned_total', 14, 2)->default(0);
             $table->json('meta')->nullable();
 
-            $table->index(['public_procurement_contract_id', 'code']);
+            $table->index(['public_procurement_contract_id', 'code'], 'pp_price_items_contract_code_idx');
 
             $this->updateTimestamps($table, hasSoftDeletes: true);
         });

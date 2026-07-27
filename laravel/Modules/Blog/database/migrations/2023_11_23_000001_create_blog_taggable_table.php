@@ -3,13 +3,15 @@
 declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
+use Modules\Blog\Models\Tag;
 use Modules\Blog\Models\Taggable;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 /*
  * Class CreateBlogTaggableTable.
  */
-return new class extends XotBaseMigration {
+return new class() extends XotBaseMigration
+{
     protected ?string $model_class = Taggable::class;
 
     /**
@@ -21,8 +23,7 @@ return new class extends XotBaseMigration {
         $this->tableCreate(
             static function (Blueprint $table): void {
                 $table->id();
-                // $table->foreignId('tag_id')->constrained()->cascadeOnDelete();
-                $table->foreignId('tag_id'); // ->cascadeOnDelete();
+                $table->foreignIdFor(Tag::class, 'tag_id');
 
                 $table->morphs('taggable');
                 // $table->unique(['tag_id', 'taggable_id', 'taggable_type']);

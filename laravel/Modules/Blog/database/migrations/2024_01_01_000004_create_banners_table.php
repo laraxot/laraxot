@@ -5,16 +5,20 @@ declare(strict_types=1);
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
+use Modules\Xot\Datas\XotData;
 
 /*
  * Class .
  */
-return new class extends XotBaseMigration {
+return new class() extends XotBaseMigration
+{
     /**
      * Run the migrations.
      */
     public function up(): void
     {
+        $userClass = XotData::make()->getUserClass();
+
         // -- CREATE --
         $this->tableCreate(
             static function (Blueprint $table): void {
@@ -39,7 +43,7 @@ return new class extends XotBaseMigration {
         );
         // -- UPDATE --
         $this->tableUpdate(
-            function (Blueprint $table): void {
+            function (Blueprint $table) use ($userClass): void {
                 $tableName = $this->getTable();
 
                 // Add timestamps only if they don't exist
@@ -55,13 +59,13 @@ return new class extends XotBaseMigration {
 
                 // Add audit columns
                 if (! Schema::connection($this->model->getConnectionName())->hasColumn($tableName, 'created_by')) {
-                    $table->foreignId('created_by')->nullable();
+                    $table->foreignIdFor($userClass, 'created_by')->nullable();
                 }
                 if (! Schema::connection($this->model->getConnectionName())->hasColumn($tableName, 'updated_by')) {
-                    $table->foreignId('updated_by')->nullable();
+                    $table->foreignIdFor($userClass, 'updated_by')->nullable();
                 }
                 if (! Schema::connection($this->model->getConnectionName())->hasColumn($tableName, 'deleted_by')) {
-                    $table->foreignId('deleted_by')->nullable();
+                    $table->foreignIdFor($userClass, 'deleted_by')->nullable();
                 }
 
                 if (! Schema::connection($this->model->getConnectionName())->hasColumn($tableName, 'pos')) {

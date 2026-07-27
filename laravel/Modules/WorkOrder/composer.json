@@ -20,9 +20,7 @@
         }
     ],
     "require": {
-        "php": "^8.3",
-        "laravel/framework": "*",
-        "spatie/queueable-action": "*"
+        "php": "^8.3"
     },
     "autoload": {
         "psr-4": {

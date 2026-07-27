@@ -79,7 +79,7 @@ protected function casts(): array
 {
     return [
         'timestamp' => 'datetime',
-        'approved_at' => 'datetime', 
+        'approved_at' => 'datetime',
         'type' => WorkHourTypeEnum::class, // ✅ DA AGGIUNGERE
         'status' => WorkHourStatusEnum::class, // ✅ DA AGGIUNGERE
     ];
@@ -93,7 +93,7 @@ protected function casts(): array
 // public const TYPE_CLOCK_OUT = 'clock_out';
 // public const TYPE_BREAK_START = 'break_start';
 // public const TYPE_BREAK_END = 'break_end';
-// 
+//
 // public const STATUS_PENDING = 'pending';
 // public const STATUS_APPROVED = 'approved';
 // public const STATUS_REJECTED = 'rejected';
@@ -110,7 +110,7 @@ use Modules\Employee\Enums\WorkHourStatusEnum;
 
 ### PHPStan Livello 10
 ```bash
-cd /var/www/html/_bases/base_techplanner_fila3_mono/laravel
+cd /var/www/html/_bases/base_workorder_fila3_mono/laravel
 ./vendor/bin/phpstan analyze Modules/Employee/app/Models/WorkHour.php --level=10
 ./vendor/bin/phpstan analyze Modules/Employee/app/Enums/ --level=10
 ```
@@ -148,7 +148,7 @@ $label = $workHour->status->getItalianLabel();
 
 1. **Completare migrazione model** (casts + rimozione costanti)
 2. **Validare PHPStan livello 10**
-3. **Testare TimeClockWidget compatibilità** 
+3. **Testare TimeClockWidget compatibilità**
 4. **Aggiornare eventuali test**
 5. **Documentare pattern per altri moduli**
 
@@ -168,6 +168,6 @@ Questo approccio può essere replicato per:
 
 ---
 
-*Documento creato: 02/09/2025*  
-*Stato migrazione: 85% completata*  
+*Documento creato: 02/09/2025*
+*Stato migrazione: 85% completata*
 *PHPStan compliance: Da verificare*

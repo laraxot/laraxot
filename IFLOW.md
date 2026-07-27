@@ -64,7 +64,7 @@ AI 助手**必须始终**确定操作的顺序和优先级。这是确保效率�
 1. 克隆仓库：
    ```bash
    git clone <repository-url>
-   cd base_techplanner_fila4_mono
+   cd base_workorder_fila4_mono
    ```
 
 2. 进入 Laravel 目录并安装 PHP 依赖：
@@ -415,7 +415,7 @@ done
 **CRITICAL**: Dopo ogni modifica al codice frontend, pulire tutte le cache.
 
 ```bash
-cd /var/www/_bases/base_techplanner_fila5/laravel
+cd /var/www/_bases/base_workorder_fila5/laravel
 rm -rf bootstrap/cache/*
 php artisan cache:clear
 php artisan config:clear

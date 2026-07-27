@@ -3,14 +3,15 @@ title: "Vehicle — knowledge base"
 type: overview
 tags: [vehicle, gestionale-commesse, docs, bmad]
 created: 2026-07-23
-updated: 2026-07-24
-qmd: "Vehicle docs README purpose flotta media debito"
+updated: 2026-07-27
+qmd: "Vehicle docs README purpose flotta media debito inventory warehouse"
 issues:
   - "https://github.com/laraxot/base_workorder_fila5/issues/7"
 discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
 related:
   - "./import-status.md"
+  - "../../../Inventory/docs/bugfix-warehouses-vehicle-fk-order.md"
   - "../../../../docs/gestionale-commesse-comparison/functional-readiness.md"
   - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
 ---
@@ -20,6 +21,7 @@ related:
 ## Perché esiste
 
 **Parco mezzi** e documenti veicolo: asset logistici del field-service (chi va dove, con quale mezzo, con quali scadenze documentali).
+Inventory può collegare un magazzino mobile (`warehouses.vehicle_id`) — parent obbligatorio in migrate: vedi [bugfix Inventory](../../Inventory/docs/bugfix-warehouses-vehicle-fk-order.md).
 
 ## Cosa NON è
 

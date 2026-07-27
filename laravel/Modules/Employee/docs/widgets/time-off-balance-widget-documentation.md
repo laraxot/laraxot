@@ -4,9 +4,9 @@
 
 The **TimeOffBalanceWidget** represents the "LE MIE RIMANENZE DI SETTEMBRE" (My September Balances) section in the dashboard. It displays monthly and annual leave balances including vacation days, ROL, permits, overtime bank, and other time-off categories with visual progress bars and detailed statistics.
 
-### Dashboard Position  
+### Dashboard Position
 - **Location**: Bottom left widget area
-- **Title**: "LE MIE RIMANENZE DI SETTEMBRE" 
+- **Title**: "LE MIE RIMANENZE DI SETTEMBRE"
 - **Column Span**: Full width
 - **Sort Priority**: 3 (third in widget order)
 
@@ -15,14 +15,14 @@ The **TimeOffBalanceWidget** represents the "LE MIE RIMANENZE DI SETTEMBRE" (My 
 ### Core Purpose
 The TimeOffBalanceWidget serves as a comprehensive time-off balance tracker for:
 - **Vacation Management**: Annual vacation day allocation and usage
-- **ROL Tracking**: Recupero Ore Lavoro (Work Hour Recovery) balance  
+- **ROL Tracking**: Recupero Ore Lavoro (Work Hour Recovery) balance
 - **Permit Monitoring**: Ex-festivities and general permit hours
 - **Overtime Banking**: Accumulated overtime hours available
 - **Balance Analysis**: Visual progress indicators and remaining allocations
 
 ### Key Features
 - **Multiple Balance Types**: Support for various Italian labor law categories
-- **Visual Progress Bars**: Graphical representation of usage vs. allocation  
+- **Visual Progress Bars**: Graphical representation of usage vs. allocation
 - **Negative Balance Handling**: Clear indication of overdrawn accounts
 - **Hour/Minute Formatting**: Precise time display (e.g., "8h 53m")
 - **Color-Coded Categories**: Different colors for each balance type
@@ -32,13 +32,13 @@ The TimeOffBalanceWidget serves as a comprehensive time-off balance tracker for:
 
 ### Widget Class Structure
 
-**File**: `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Employee/app/Filament/Widgets/TimeOffBalanceWidget.php`
+**File**: `/var/www/html/_bases/base_workorder_fila3_mono/laravel/Modules/Employee/app/Filament/Widgets/TimeOffBalanceWidget.php`
 
 ```php
 class TimeOffBalanceWidget extends XotBaseWidget
 {
     protected static string $view = 'employee::filament.widgets.time-off-balance-widget';
-    protected int|string|array $columnSpan = 'full';  
+    protected int|string|array $columnSpan = 'full';
     protected static ?int $sort = 3;
 }
 ```
@@ -67,7 +67,7 @@ Returns balance data for all time-off categories:
 **`formatHoursMinutes(float $hours): string`**
 Converts decimal hours to readable format:
 - `8.88` → `"8h 53m"`
-- `0.0` → `"0"`  
+- `0.0` → `"0"`
 - `-2.53` → `"-2h 32m"`
 - `12.25` → `"12h 15m"`
 
@@ -79,7 +79,7 @@ Calculates usage percentage for progress bars:
 - Handles unlimited categories (null total)
 - Prevents overflow beyond 100%
 
-#### Color Management  
+#### Color Management
 
 **`getColorClasses(string $color, float $balance): array`**
 Returns comprehensive color scheme for balance display:
@@ -112,7 +112,7 @@ Returns comprehensive color scheme for balance display:
    - Sun icon (`heroicon-o-sun`)
    - Typical allocation: 22 days/year
 
-2. **ROL** (`rol`)  
+2. **ROL** (`rol`)
    - Recupero Ore Lavoro (Work Hour Recovery)
    - Green color theme (`bg-green-50`)
    - Clock icon (`heroicon-o-clock`)
@@ -120,7 +120,7 @@ Returns comprehensive color scheme for balance display:
 
 3. **Ex-Festivities Permits** (`permits_ex_fs`)
    - Former holiday compensation hours
-   - Red color theme (`bg-red-50`) 
+   - Red color theme (`bg-red-50`)
    - Document icon (`heroicon-o-document-text`)
    - Typical allocation: 4 hours/year
 
@@ -144,7 +144,7 @@ Current implementation includes realistic Italian workplace scenarios:
    - Used: 13h 12m already consumed
    - Status: Positive balance, 40% used
 
-2. **ROL Balance**  
+2. **ROL Balance**
    - Remaining: 0h (fully consumed)
    - Allocation: 8 hours total
    - Status: Fully utilized
@@ -178,7 +178,7 @@ Current implementation includes realistic Italian workplace scenarios:
 
 ### Negative Balance Handling
 When `current_balance < 0`, all balances automatically switch to red theme:
-- Background: `bg-red-50`  
+- Background: `bg-red-50`
 - Border: `border-red-200`
 - Text: `text-red-900`
 - Progress: `bg-red-500`
@@ -187,7 +187,7 @@ When `current_balance < 0`, all balances automatically switch to red theme:
 ### Progress Bar Design
 - **Background**: Light theme color (`bg-blue-100`)
 - **Fill**: Primary theme color (`bg-blue-500`)
-- **Width**: Proportional to usage percentage  
+- **Width**: Proportional to usage percentage
 - **Height**: Consistent 4px height
 - **Border Radius**: Rounded corners for modern appearance
 
@@ -199,9 +199,9 @@ When `current_balance < 0`, all balances automatically switch to red theme:
 │      LE MIE RIMANENZE DI SETTEMBRE      │
 ├─────────────────────────────────────────┤
 │ 🌅 Ferie                    8h 53m      │
-│ ████████░░░░░░░░ 60%                    │ 
+│ ████████░░░░░░░░ 60%                    │
 │ Used: 13h 12m • Total: 22h             │
-├─────────────────────────────────────────┤ 
+├─────────────────────────────────────────┤
 │ 🕐 ROL                         0        │
 │ ████████████████ 100%                   │
 │ Used: 8h • Total: 8h                   │
@@ -218,7 +218,7 @@ When `current_balance < 0`, all balances automatically switch to red theme:
 
 ### Visual Hierarchy
 1. **Category Icon**: Visual identifier for balance type
-2. **Category Label**: Localized Italian name  
+2. **Category Label**: Localized Italian name
 3. **Current Balance**: Prominent remaining hours display
 4. **Progress Bar**: Visual usage indicator
 5. **Usage Statistics**: Detailed used/total breakdown
@@ -230,7 +230,7 @@ When `current_balance < 0`, all balances automatically switch to red theme:
 - **Mobile**: Single column with optimized touch targets
 - **Print**: Simplified text-only layout
 
-## 🔧 Implementation Guidelines  
+## 🔧 Implementation Guidelines
 
 ### Database Integration
 
@@ -241,7 +241,7 @@ protected function getTimeOffBalances(): array
 {
     $employeeId = auth()->id();
     $currentYear = now()->year;
-    
+
     return TimeOffBalance::where('employee_id', $employeeId)
         ->where('year', $currentYear)
         ->with(['timeOffType'])
@@ -272,7 +272,7 @@ protected function getBalanceIcon(string $type): string
 {
     return match ($type) {
         'vacation' => 'heroicon-o-sun',
-        'rol' => 'heroicon-o-clock',  
+        'rol' => 'heroicon-o-clock',
         'permits_ex_fs' => 'heroicon-o-document-text',
         'overtime_bank' => 'heroicon-o-banknotes',
         'permits' => 'heroicon-o-hand-raised',
@@ -284,12 +284,12 @@ protected function getBalanceIcon(string $type): string
     };
 }
 
-protected function getBalanceColor(string $type): string  
+protected function getBalanceColor(string $type): string
 {
     return match ($type) {
         'vacation' => 'blue',
         'rol' => 'green',
-        'permits_ex_fs' => 'red', 
+        'permits_ex_fs' => 'red',
         'overtime_bank' => 'purple',
         'permits' => 'yellow',
         'sick_leave' => 'red',
@@ -311,17 +311,17 @@ protected function formatHoursMinutes(float $hours, string $locale = 'it'): stri
     if ($hours == 0) {
         return '0';
     }
-    
+
     $isNegative = $hours < 0;
     $absHours = abs($hours);
     $wholeHours = floor($absHours);
     $minutes = round(($absHours - $wholeHours) * 60);
-    
+
     if ($minutes == 60) {
         $wholeHours++;
         $minutes = 0;
     }
-    
+
     $parts = [];
     if ($wholeHours > 0) {
         $parts[] = $wholeHours . ($locale === 'it' ? 'h' : 'hrs');
@@ -329,7 +329,7 @@ protected function formatHoursMinutes(float $hours, string $locale = 'it'): stri
     if ($minutes > 0) {
         $parts[] = $minutes . ($locale === 'it' ? 'm' : 'min');
     }
-    
+
     $formatted = implode(' ', $parts);
     return ($isNegative ? '-' : '') . $formatted;
 }
@@ -367,7 +367,7 @@ protected function getTimeOffBalances(): array
 protected function getTimeOffBalances(): array
 {
     $cacheKey = 'time_off_balances_' . auth()->id() . '_' . now()->year;
-    
+
     return cache()->remember($cacheKey, now()->addHours(4), function () {
         return $this->calculateTimeOffBalances();
     });
@@ -377,7 +377,7 @@ protected function getTimeOffBalances(): array
 public function updateBalance(int $balanceId, float $hoursUsed): void
 {
     // Update database...
-    
+
     // Clear cache
     $cacheKey = 'time_off_balances_' . auth()->id() . '_' . now()->year;
     cache()->forget($cacheKey);
@@ -394,7 +394,7 @@ public function updateBalance(int $balanceId, float $hoursUsed): void
 
 ### Functional Testing
 - [ ] Balance calculations are accurate
-- [ ] Progress percentages display correctly  
+- [ ] Progress percentages display correctly
 - [ ] Negative balances show red styling
 - [ ] Hour formatting handles edge cases
 - [ ] Icons display for all balance types
@@ -427,7 +427,7 @@ public function updateBalance(int $balanceId, float $hoursUsed): void
 
 ## 🔄 Integration Points
 
-### Related Models  
+### Related Models
 - **TimeOffBalance**: Core balance entity with usage tracking
 - **TimeOffType**: Balance category definitions and configuration
 - **Employee**: Balance ownership and permissions
@@ -438,12 +438,12 @@ public function updateBalance(int $balanceId, float $hoursUsed): void
 - Employee authentication and authorization
 - Annual balance allocation rules
 - Time-off request approval system
-- Labor law compliance calculations  
+- Labor law compliance calculations
 - Payroll integration for balance adjustments
 
 ### External Services
 - Payroll system integration
-- HR information system synchronization  
+- HR information system synchronization
 - Government reporting compliance
 - Mobile app balance notifications
 - Calendar integration for planned time off
@@ -452,7 +452,7 @@ public function updateBalance(int $balanceId, float $hoursUsed): void
 
 ### Advanced Features
 1. **Balance Forecasting**: Predict future balance levels
-2. **Usage Analytics**: Historical trend analysis  
+2. **Usage Analytics**: Historical trend analysis
 3. **Smart Recommendations**: Optimal time-off scheduling
 4. **Multi-Year View**: Historical balance progression
 5. **Team Comparisons**: Department-wide balance insights
@@ -473,7 +473,7 @@ public function updateBalance(int $balanceId, float $hoursUsed): void
 
 ## ⚡ Performance Metrics
 
-### Target Benchmarks  
+### Target Benchmarks
 - **Load Time**: < 250ms for balance display
 - **Calculation Speed**: < 50ms for balance updates
 - **Memory Usage**: < 5MB for widget data
@@ -481,7 +481,7 @@ public function updateBalance(int $balanceId, float $hoursUsed): void
 - **Cache Hit Rate**: > 90% for repeat views
 
 ### Success Indicators
-- **Balance Accuracy**: 100% calculation precision  
+- **Balance Accuracy**: 100% calculation precision
 - **User Engagement**: > 85% monthly widget usage
 - **Performance**: < 300ms average response time
 - **Error Rate**: < 0.1% calculation errors
@@ -489,8 +489,8 @@ public function updateBalance(int $balanceId, float $hoursUsed): void
 
 ---
 
-**Last Updated**: January 2025  
-**Status**: Production Ready  
-**Widget Class**: `TimeOffBalanceWidget`  
-**View Template**: `employee::filament.widgets.time-off-balance-widget`  
+**Last Updated**: January 2025
+**Status**: Production Ready
+**Widget Class**: `TimeOffBalanceWidget`
+**View Template**: `employee::filament.widgets.time-off-balance-widget`
 **Dependencies**: Filament 3.x, XotBaseWidget, TimeOffBalance Model

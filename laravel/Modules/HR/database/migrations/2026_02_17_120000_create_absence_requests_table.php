@@ -4,14 +4,17 @@ declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
+use Modules\Xot\Datas\XotData;
 
 return new class() extends XotBaseMigration
 {
     public function up(): void
     {
         $this->tableCreate(function (Blueprint $table): void {
+            $user_class = XotData::make()->getUserClass();
+
             $table->id();
-            $table->foreignUuid('user_id')->constrained('users')->cascadeOnDelete();
+            $table->foreignIdFor($user_class, 'user_id')->index();
 
             $table->string('type');
             $table->dateTime('starts_at');
@@ -19,7 +22,7 @@ return new class() extends XotBaseMigration
             $table->text('notes')->nullable();
 
             $table->string('status')->default('pending');
-            $table->foreignUuid('decided_by_user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignIdFor($user_class, 'decided_by_user_id')->nullable()->index();
             $table->dateTime('decided_at')->nullable();
 
             $table->index(['user_id', 'starts_at']);

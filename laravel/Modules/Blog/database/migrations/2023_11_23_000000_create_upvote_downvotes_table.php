@@ -3,36 +3,35 @@
 declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
+use Modules\Blog\Models\Article;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
+use Modules\Xot\Datas\XotData;
 
 /*
  * Class CreateUpvoteDownvotesTable.
  */
-return new class extends XotBaseMigration {
+return new class() extends XotBaseMigration
+{
     /**
      * Run the migrations.
      */
     public function up(): void
     {
+        $userClass = XotData::make()->getUserClass();
+
         // -- CREATE --
         $this->tableCreate(
-            static function (Blueprint $table): void {
+            static function (Blueprint $table) use ($userClass): void {
                 $table->id();
                 $table->boolean('is_upvote');
-                $table->foreignId('post_id'); // ->references('id')->on('posts')->onDelete('cascade');
-                $table->foreignId('user_id'); // ->references('id')->on('users')->onDelete('cascade');
+                $table->foreignIdFor(Article::class, 'post_id');
+                $table->foreignIdFor($userClass, 'user_id')->nullable()->index();
                 $table->timestamps();
             }
         );
         // -- UPDATE --
         $this->tableUpdate(
             function (Blueprint $table): void {
-                // if (! $this->hasColumn('parent_id')) {
-                //    $table->foreignId('parent_id')->nullable();
-                // }
-                // if (! $this->hasColumn('profile_photo_path')) {
-                //    $table->string('profile_photo_path', 2048)->nullable();
-                // }
                 $this->updateTimestamps(table: $table, hasSoftDeletes: true);
             }
         );
