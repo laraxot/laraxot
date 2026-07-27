@@ -11,6 +11,7 @@ use Modules\Rating\Models\RatingMorph;
 /**
  * Trait HasRating.
  */
+/** @phpstan-ignore trait.unused */
 trait HasRating
 {
     /** @return MorphToMany<Rating, $this, RatingMorph, 'pivot'> */

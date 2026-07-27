@@ -44,7 +44,7 @@ describe('Rating', function (): void {
         ]);
 
         Assert::assertTrue(
-            DB::connection('rating')->table('rating_morphs')
+            DB::connection('rating')->table((new RatingMorph())->getTable())
                 ->where('id', $ratingMorph->id)
                 ->where('rating_id', $rating->id)
                 ->exists()
@@ -55,7 +55,7 @@ describe('Rating', function (): void {
         $locale = SupportedLocale::IT;
 
         Assert::assertEquals('it', $locale->value);
-        Assert::assertEquals('rating::supported_locale.values.it.label', $locale->getLabel());
+        Assert::assertEquals('Italiano', $locale->getLabel());
 
         $localeFromString = SupportedLocale::fromString('en');
         Assert::assertEquals(SupportedLocale::EN, $localeFromString);
