@@ -6,6 +6,7 @@ namespace Modules\Notify\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Support\Facades\Blade;
 use Modules\Media\Models\Media;
 use Modules\Notify\Database\Factories\NotificationTemplateFactory;
@@ -99,7 +100,10 @@ use Spatie\Translatable\HasTranslations;
 class NotificationTemplate extends BaseModel implements HasMedia
 {
     use HasTranslations;
+    use HasUuids;
     use InteractsWithMedia;
+
+    public $incrementing = false;
 
     /** @var list<string> */
     public array $translatable = [
