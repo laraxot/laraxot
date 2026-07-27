@@ -18,6 +18,7 @@ use Modules\Customer\Models\Customer;
 use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderStatus;
+use RuntimeException;
 
 use function Safe\imagealphablending;
 use function Safe\imagearc;
@@ -324,8 +325,8 @@ final class ComplianceDemoSeeder extends Seeder
                 continue;
             }
 
-            $issuedOn = is_int($documentData['issue'] ?? null) ? $now->addDays((int) $documentData['issue'])->toDateString() : null;
-            $expiresOn = is_int($documentData['expire'] ?? null) ? $now->addDays((int) $documentData['expire'])->toDateString() : null;
+            $issuedOn = is_int($documentData['issue']) ? $now->addDays((int) $documentData['issue'])->toDateString() : null;
+            $expiresOn = is_int($documentData['expire']) ? $now->addDays((int) $documentData['expire'])->toDateString() : null;
             $type = (string) $documentData['type'];
             $title = (string) $documentData['title'];
             $text = $this->documentText($type, $title, $workOrder, $issuedOn, $expiresOn);
@@ -635,7 +636,7 @@ final class ComplianceDemoSeeder extends Seeder
         );
 
         if ($color === false) {
-            throw new \RuntimeException('Unable to allocate GD color.');
+            throw new RuntimeException('Unable to allocate GD color.');
         }
 
         return $color;
@@ -652,7 +653,7 @@ final class ComplianceDemoSeeder extends Seeder
         );
 
         if ($color === false) {
-            throw new \RuntimeException('Unable to allocate GD alpha color.');
+            throw new RuntimeException('Unable to allocate GD alpha color.');
         }
 
         return $color;
