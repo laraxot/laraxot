@@ -71,7 +71,7 @@ connessione MariaDB.
 | Signature | 32 | — | |
 | Inventory | 32 | — | |
 | WhatsApp | 29 | Claude (questa sessione, task dedicato WhatsApp) | claimato — in corso |
-| Document | 28 | — | |
+| Document | 28 | — | SKIP per ora (Claude, questa sessione, 15:00 UTC): `tests/Feature/ZZZDiagnosticTest{,2..6}.php` sono file scratch non tracciati (0 storia git), modificati 14:49-14:55, quasi certamente investigazione live di un altro agente su un problema di tipo su MediaFactory/TimberProductFactory — non toccare finché non si stabilizzano o vengono committati/rimossi da chi li ha creati. |
 | AiAssistant | 25 | — | contraddice riga sotto (0, cursor) — ri-verificare con scan completo |
 | Employee | **0** | Claude (questa sessione) | fatto 15:00 UTC — nullCoalesce.unnecessary in BuildTimelineVisualizationAction.php + argument.type (Carbon::setTime, faker mixed→int) in TimeEntryFactory.php via SafeIntCastAction. Committato+pushato (root + submodule module_employee_fila5). |
 | Vehicle | **0** | Claude (questa sessione) | fatto 14:50 UTC — 2 test file senza namespace (Modules\Vehicle\Tests\Feature mancante) causavano class.notFound su @var Vehicle; + null-guard esplicito su $link->media (Pest expect()->not()->toBeNull() non restringe il tipo per PHPStan). Bridge rigenerato ma lasciato non committato (lock di un altro agente). Committato+pushato. |
