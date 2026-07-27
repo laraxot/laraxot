@@ -7,6 +7,9 @@ namespace Modules\Xot\Tests\Unit\Support;
 use Filament\Tables\Table;
 use Modules\Xot\Filament\Traits\HasXotTable;
 
+/**
+ * @property string|null $tableSearch
+ */
 class HasTableWithoutOptionalMethodsTestClass
 {
     use HasXotTable;

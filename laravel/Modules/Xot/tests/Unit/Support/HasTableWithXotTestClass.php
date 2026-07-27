@@ -8,6 +8,9 @@ use Filament\Tables\Table;
 use Illuminate\Support\Collection;
 use Modules\Xot\Filament\Traits\HasXotTable;
 
+/**
+ * @property string|null $tableSearch
+ */
 class HasTableWithXotTestClass
 {
     use HasXotTable;
