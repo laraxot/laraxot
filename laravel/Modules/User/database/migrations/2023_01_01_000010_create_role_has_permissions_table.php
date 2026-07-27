@@ -3,12 +3,17 @@
 declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
+use Modules\User\Models\RoleHasPermission;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 /*
- * Class CreateModelHasRolesTable.
+ * Pivot Spatie HasRoles — tabella e connessione dal modello
+ * (RoleHasPermission::getTable() legge config('permission.table_names.role_has_permissions')
+ * a ogni chiamata). Vietato hardcodare il nome tabella in migrazione.
  */
 return new class extends XotBaseMigration {
+    protected ?string $model_class = RoleHasPermission::class;
+
     /**
      * Run the migrations.
      */
