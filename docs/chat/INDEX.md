@@ -5,6 +5,7 @@
 | [audit-models-migrations-seeders-factories](audit-models-migrations-seeders-factories.md) | Audit modelli↔migration↔seeder↔factory tutti i moduli + fix swarm | completato (14 agenti, esito in fondo al file) |
 | [phpstan-modules-zero](phpstan-modules-zero.md) | PHPStan level-max su tutti Modules + coordinamento swarm | completato (0 errori codice, 2026-07-27) |
 | [phpstan-modules-zero-swarm](phpstan-modules-zero-swarm.md) | Handoff swarm PHPStan — milestone e pattern | completato |
+| [phpstan-zero-structural-blocker](phpstan-zero-structural-blocker.md) | Unico errore residuo: ignore @mixin non matchato in neon | documentato |
 | [migration-foreignidfor-swarm](migration-foreignidfor-swarm.md) | Conversione foreignIdFor() in migration | in corso |
 
 ## Swarm attivo (migration-foreignidfor-swarm)

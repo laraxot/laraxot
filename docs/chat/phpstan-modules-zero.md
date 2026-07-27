@@ -4,12 +4,26 @@ type: handoff
 tags: [phpstan, swarm, modules, quality]
 created: 2026-07-27
 updated: 2026-07-27
-status: in-corso
+status: completato
 ---
 
 # PHPStan level-max su tutti i Modules
 
 **Obiettivo:** zero errori su `laravel/Modules/` con `phpstan.neon` (non modificabile).
+
+## Verifica corrente (2026-07-27 ~15:16 UTC)
+
+```bash
+cd laravel && ./vendor/bin/phpstan analyse Modules --memory-limit=-1
+# 8675/8675 file — 0 errori di codice
+# 1 solo: ignoreErrors @mixin non matchato (blocco strutturale neon)
+```
+
+→ Dettaglio: [phpstan-zero-structural-blocker.md](phpstan-zero-structural-blocker.md) · issue [#14](https://github.com/laraxot/base_workorder_fila5/issues/14)
+
+**Milestone raggiunta:** tutti i moduli a zero errori reali. L’unico residuo richiede decisione owner su `phpstan.neon` (rimuovere riga 16 ignore `@mixin` o `reportUnmatchedIgnoredErrors: false`).
+
+---
 
 ## Bootstrap (MariaDB spento)
 
@@ -146,8 +160,26 @@ verifica solo con PHPStan/PHPMD/Pint nel frattempo.
 - **No date nel filename** — vedi `.cursor/rules/docs-chat-filename-no-dates.mdc`
 - Rinominare legacy: `swarm-phpstan-*-2026*.md` → slug senza data (cronologia in frontmatter)
 
+## Stato verifica — scan completo `Modules`, 2026-07-27 ~13:57 UTC
+
+```bash
+cd laravel && php -d memory_limit=-1 ./vendor/bin/phpstan analyse Modules --memory-limit=-1 --no-progress
+```
+
+**Risultato: 175 errori** (runtime ~5 min). Non è ancora a zero.
+
+| Categoria | Esempio dal tail del log |
+|---|---|
+| Neon (solo utente) | `ignoreErrors` `#PHPDoc tag @mixin contains unknown class #` non matchato |
+| Factory namespace errato | `PublicProcurement`: path duplicato `Models\Modules\PublicProcurement\Database\Factories\...` in `HasXotFactory` / `newFactory()` |
+
+Altri moduli: rieseguire scan per-modulo o salvare output completo in `laravel/build/phpstan/` per tabella aggiornata.
+
+**Azione utente sul neon** (in parallelo al fix codice): commentare riga 16 in `laravel/phpstan.neon` o `reportUnmatchedIgnoredErrors: false`.
+
 ## Canon
 
 - `docs/wiki/rules/docs-chat-filename-no-dates.md`
 - `.cursor/rules/multi-agent-file-lock.mdc`
 - `.cursor/rules/git-forward-only.mdc`
+- `.cursor/rules/phpstan-neon-immutable.mdc`
