@@ -1,3 +1,22 @@
+---
+title: "Notifiche"
+type: index
+tags: [notify, docs, notifications]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione notifications readme notifiche index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../README.md
+  - ../wiki/index.md
+  - readme.md
+  - ../integrations/readme.md
+  - ../templates/readme.md
+---
 # Notifiche
 
 ## Panoramica

@@ -1,23 +1,3 @@
----
-title: "Correzioni e Audit Qualità - Modulo UI (PHPStan Level 10)"
-type: concept
-tags: [phpstan, fixes]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phpstan-fixes correzioni e audit qualità - modulo ui (phpstan level 10)"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Correzioni e Audit Qualità - Modulo UI (PHPStan Level 10)
 
 Questo documento traccia l'audit di qualità e le correzioni basate sulla "PHPStan Code Quality Guide - Laraxot".
@@ -74,34 +54,17 @@ if (isset($record->attribute)) {
 ---
 
 ## ✅ Checklist di Verifica
-- [x] PHPStan Level 10 (0 errori)
-- [x] PHPMD (Complexity < 10)
-- [x] PHP Insights (Quality > 94%)
-- [x] Pint formatting (OK)
-- [x] Zero TODO/Codice commentato
+- [x] PHPStan Level 10 (Analisi Modulo: OK)
+- [ ] PHPMD (Complexity < 10)
+- [ ] PHP Insights (Quality > 80%)
+- [ ] Pint formatting (`--dirty`)
+- [ ] Zero TODO/Codice commentato
 # PHPStan Status: Modules/UI
 
-## Analysis 2026-06-18
+## Analysis
+- **Date**: 2025-12-24
 - **Total Errors**: 0
 - **Status**: Passed
 
-## Correzioni Effettuate
-
-### 1. Cancellazione Test Obsoleti
-- Cancellati `MockCalendarWidget.php` e fixture (riferivano a classi inesistenti)
-
-### 2. Rimozione Trait Duplicato
-- Cancellato `Modules/UI/app/Traits/TableLayoutTrait.php` (duplicato di `Filament/Actions/Table/TableLayoutTrait`)
-
-### 3. Fix HasTableLayoutPage.php
-- Rinominato `setLayoutView()` → `applyLayoutView()` (naming comportamentale)
-- Corretti commenti `@phpstan-var` per evitare "inline doc comment"
-- Spezzate linee >80 caratteri
-- Rimossa variabile inutile `$layout` in `readLayoutFrom()`
-
-## PHPInsights Results
-- **HasTableLayoutPage.php**: CODE 100pts, COMPLEXITY 100pts, ARCHITECTURE 94.1pts, MISC 100pts
-
 ## Verification
 - UI module is compliant with current PHPStan configuration.
-- PHPInsights quality >94% across all metrics.

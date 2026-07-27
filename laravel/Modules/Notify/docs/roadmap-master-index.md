@@ -1,23 +1,3 @@
----
-title: "🗺️ FixCity - Master Roadmap Index"
-type: concept
-tags: [roadmap, master, index]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "roadmap-master-index 🗺️ fixcity - master roadmap index"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # 🗺️ FixCity - Master Roadmap Index
 
 **Progetto**: FixCity - Piattaforma Segnalazione Cittadina  
@@ -236,8 +216,8 @@ related:
 ## 📚 DOCUMENTAZIONE CORRELATA
 
 ### Session Reports
-- [📊 Session Summary 2025-10-01](./phpstan/session-summary-.md.md)
-- [📝 Final Report 2025-10-01](./phpstan/final-report-session-.md.md)
+- [📊 Session Summary 2025-10-01](./phpstan/session-summary-2025-10-01.md)
+- [📝 Final Report 2025-10-01](./phpstan/final-report-session-2025-10-01.md)
 - [🛠️ Fixes Session](./phpstan/filament-v4-fixes-session.md)
 
 ### Project Overview

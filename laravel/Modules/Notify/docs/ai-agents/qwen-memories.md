@@ -1,23 +1,3 @@
----
-title: "QWEN Memories"
-type: concept
-tags: [qwen, memories]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "qwen-memories qwen memories"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./01-gsd-workflow.md"
-  - "./02-bmad-workflow.md"
-  - "./03-architecture-zen.md"
-  - "./04-filament-philosophy.md"
-  - "./05-front-office-audit.md"
-  - "./06-cinematic-effects.md"
-  - "./07-mcp-tailwind-ui.md"
----
-
 # QWEN Memories
 
 Memorie e lesson learned accumulate da Qwen.
@@ -240,5 +220,5 @@ Usare `cinematic-particles` per background hero:
 
 - [Indice QWEN](./qwen-split-index.md)
 - [memories.md](./memories.md) - Più memorie
-- [qwen.md originale](../../qwen.md)
+- [QWEN.md originale](../../QWEN.md)
 - [Index principale](./index.md)

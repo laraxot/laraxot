@@ -1,23 +1,3 @@
----
-title: "Utilizzo di Enum e Config"
-type: concept
-tags: [enum, config, usage]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "enum-config-usage-1 utilizzo di enum e config"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Utilizzo di Enum e Config
 
 Questo documento definisce le best practices per l'utilizzo di Enum e file di configurazione nel sistema <nome progetto>, con particolare attenzione alla gestione delle opzioni nei componenti Filament.

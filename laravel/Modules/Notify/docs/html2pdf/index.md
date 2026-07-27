@@ -3,11 +3,7 @@ title: "html2pdf index — puntatore"
 type: reference
 updated: 2026-05-21
 related:
-  - "./advanced.md"
-  - "./laravel.md"
-  - "./security.md"
-  - "./styling.md"
-  - "./usage.md"
+  - "../../../Media/docs/html2pdf/index.md"
 ---
 
 # Html2Pdf — index

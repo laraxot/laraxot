@@ -1,23 +1,3 @@
----
-title: "FixCity - Analisi Completa del Progetto e Roadmap"
-type: concept
-tags: [project, analysis, roadmap]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "project-analysis-and-roadmap fixcity - analisi completa del progetto e roadmap"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # FixCity - Analisi Completa del Progetto e Roadmap
 
 **Data Analisi**: 1 Ottobre 2025  

@@ -1,30 +1,10 @@
----
-title: "Piano di Refactor DRY/KISS - Documentazione Modulo Notify"
-type: concept
-tags: [refactor, planry, kiss]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "refactor-planry-kiss piano di refactor dry/kiss - documentazione modulo notify"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Piano di Refactor DRY/KISS - Documentazione Modulo Notify
 
 ## Problema Identificato
 La cartella `docs/` del modulo Notify viola massivamente i principi DRY/KISS:
 
 ### Violazioni DRY (Don't Repeat Yourself)
-- **File duplicati**: `analisi-completa.md` e `analisi-completa.md`
+- **File duplicati**: `analisi-completa.md` e `analisi_completa.md`
 - **Contenuto ripetuto**: 8+ file `analisi-dettagliata-X.md` con contenuti sovrapposti
 - **Naming inconsistente**: Mix di trattini e underscore per stesso contenuto
 - **Documentazione frammentata**: Informazioni sparse in decine di file
@@ -41,14 +21,14 @@ La cartella `docs/` del modulo Notify viola massivamente i principi DRY/KISS:
 Identificare e unificare file con contenuto identico o sovrapposto:
 
 #### Gruppo "Analisi"
-- `analisi-completa.md` + `analisi-completa.md` → `analysis-complete.md`
+- `analisi-completa.md` + `analisi_completa.md` → `analysis-complete.md`
 - `analisi-dettagliata-[1-8].md` + `analisi_dettagliata_[1-8].md` → `analysis-detailed.md`
 - `analisi-miglioramenti.md` + `analisi_miglioramenti.md` → `improvements-analysis.md`
 
 #### Gruppo "Email Templates"
 - `email-templates-*.md` → `email-templates.md` (consolidato)
-- `mail-templates.md` + `mail-templates-1.md` → `mail-templates.md`
-- `improved-email-templates.md` + `improved_email-templates.md` → Integrato in `email-templates.md`
+- `mail-templates.md` + `mail_templates.md` → `mail-templates.md`
+- `improved-email-templates.md` + `improved_email_templates.md` → Integrato in `email-templates.md`
 
 #### Gruppo "Best Practices"
 - `best-practices.md` + `best_practices.md` → `best-practices.md`
@@ -90,7 +70,7 @@ docs/
 Applicare convenzioni consistenti:
 
 #### Regole Naming
-- **Kebab-case**: `email-templates.md` (non `email-templates.md`)
+- **Kebab-case**: `email-templates.md` (non `email_templates.md`)
 - **Inglese**: Nomi file in inglese per coerenza progetto
 - **Descrittivi**: Nomi che indicano chiaramente il contenuto
 - **Gerarchici**: Struttura cartelle logica
@@ -98,7 +78,7 @@ Applicare convenzioni consistenti:
 #### Esempi Trasformazioni
 - `analisi-dettagliata-1.md` → `architecture/detailed-analysis.md`
 - `email-templates-spatie.md` → `integrations/spatie-email.md`
-- `sms_netfun-channel-2.md` → `sms/netfun-provider.md`
+- `sms_netfun_channel.md` → `sms/netfun-provider.md`
 
 ### Fase 4: Collegamenti Bidirezionali
 Creare sistema di navigazione coerente:

@@ -1,18 +1,3 @@
----
-title: "Model And Docs Naming Governance"
-type: concept
-tags: [model, docs, naming, governance]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "model-and-docs-naming-governance model and docs naming governance"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./file-patterns-and-docs-standards.md"
-  - "./modules-themes-docs-audit.md"
----
-
 # Model And Docs Naming Governance
 
 ## Scope

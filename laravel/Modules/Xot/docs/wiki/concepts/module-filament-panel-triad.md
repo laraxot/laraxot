@@ -6,6 +6,7 @@ tags: [filament, panel, module, convention, dashboard, provider, config]
 created: 2026-07-27
 updated: 2026-07-27
 related:
+  - ./module-providers-dual-registration-mandatory.md
   - ./module-config-php-religion.md
   - ./module-admin-panel-provider-mandatory.md
   - ./module-dashboard-page-mandatory.md
@@ -19,13 +20,13 @@ Ogni modulo nwidart con UI backoffice espone un panel su `/{modulo}/admin`. Funz
 | # | Artefatto | Ruolo | Registrazione |
 |---|-----------|--------|----------------|
 | 1 | `config/config.php` | `name`, `icon`, `navigation` per menu/panel | `XotBaseServiceProvider::registerConfig()` |
-| 2 | `app/Providers/Filament/AdminPanelProvider.php` | Crea panel + `discover*()` su Resources/Pages/Widgets | **`module.json` → `providers[]`** |
+| 2 | `app/Providers/Filament/AdminPanelProvider.php` | Crea panel + `discover*()` su Resources/Pages/Widgets | **`module.json` + `composer.json`** (stessi 2 provider) |
 | 3 | `app/Filament/Pages/Dashboard.php` | Landing `GET /{modulo}/admin` | Scoperta da `discoverPages()` |
 
 ## Catena runtime
 
 ```
-module.json providers[]
+module.json + composer.json providers[]  (minimo 2: ServiceProvider + AdminPanelProvider)
   → AdminPanelProvider::panel()
     → path: {modulo}/admin
     → discoverPages() → Dashboard extends XotBaseDashboard
@@ -40,11 +41,13 @@ module.json providers[]
 | Nessuna route `/billing/admin` | `AdminPanelProvider` assente o **non** in `module.json` |
 | 404 su `/billing/admin`, Resource OK | Manca `Dashboard.php` |
 | Panel senza nome/icona | Manca o incompleto `config/config.php` |
+| Panel bootato solo in un contesto | `AdminPanelProvider` in un solo manifest | 
 | File provider presente ma panel morto | Solo file, **zero** voce in `module.json` (caso Catalog 2026-07-27) |
 
 ## Audit (tutti e tre)
 
 ```bash
+bash bashscripts/tools/audit-module-providers-dual-registration.sh
 bash bashscripts/tools/audit-module-config-php.sh
 bash bashscripts/tools/audit-module-admin-panel-provider.sh
 bash bashscripts/tools/audit-module-dashboard-page.sh
@@ -53,9 +56,9 @@ bash bashscripts/tools/guard-nwidart-module-skeleton.sh
 
 ## Nuovo modulo — ordine
 
-1. `module.json` + `{Module}ServiceProvider`
-2. `config/config.php` (stub in `wiki/templates/module-config-php.stub.php`)
-3. `AdminPanelProvider.php` + voce in `providers` (stub `module-admin-panel-provider.stub.php`)
+1. `module.json` + `composer.json` con 2 provider allineati + `{Module}ServiceProvider`
+2. `config/config.php` (stub `module-config-php.stub.php`)
+3. `AdminPanelProvider.php` (stub `module-admin-panel-provider.stub.php`)
 4. `Dashboard.php` vuoto `extends XotBaseDashboard`
 5. `modules_statuses.json` root + tenant
 

@@ -1,23 +1,3 @@
----
-title: "Correct Course Task"
-type: concept
-tags: [correct, course]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "correct-course correct course task"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./advanced-elicitation.md"
-  - "./apply-qa-fixes.md"
-  - "./brownfield-create-epic.md"
-  - "./brownfield-create-story.md"
-  - "./create-brownfield-story.md"
-  - "./create-deep-research-prompt.md"
-  - "./create-doc.md"
-  - "./create-next-story.md"
----
-
 ### Task: correct-course
 Source: .bmad-core/tasks/correct-course.md
 - How to use: "Use task correct-course with the appropriate agent" and paste relevant parts as needed.

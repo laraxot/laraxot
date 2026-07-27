@@ -1,16 +1,3 @@
----
-title: "PHPStan Session Report - Ottobre 2025"
-type: concept
-tags: [phpstan, session, report]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phpstan-session-report phpstan session report - ottobre 2025"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./phpmd-analysis.md"
----
-
 # PHPStan Session Report - Ottobre 2025
 
 ## 🎆 RISULTATI FINALI STRAORDINARI

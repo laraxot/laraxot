@@ -1,23 +1,3 @@
----
-title: "Sistema di Design per Icone SVG dei Moduli"
-type: concept
-tags: [module, icons, design, system]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "module-icons-design-system sistema di design per icone svg dei moduli"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Sistema di Design per Icone SVG dei Moduli
 
 ## Principi di Design
@@ -160,7 +140,8 @@ return [
 - **Colori sbagliati**: Verificare uso di `currentColor` invece di colori fissi
 
 ## Collegamenti
-- [UI Module Icons](../laravel/modules/ui/docs/icons.md)
-- [Filament Icon Registration](../laravel/modules/xot/docs/filament-assets.md)
-- [Accessibility Guidelines](../../docs/accessibility-standards.md)
+- [UI Module Icons](../laravel/Modules/UI/docs/icons.md)
+- [Filament Icon Registration](../laravel/Modules/Xot/docs/filament-assets.md)
+- [Accessibility Guidelines](../docs/accessibility-standards.md)
 
+*Ultimo aggiornamento: Agosto 2025*

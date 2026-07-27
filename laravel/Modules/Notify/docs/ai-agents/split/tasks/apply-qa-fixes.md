@@ -1,23 +1,3 @@
----
-title: "apply-qa-fixes"
-type: concept
-tags: [apply, fixes]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "apply-qa-fixes apply-qa-fixes"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./advanced-elicitation.md"
-  - "./brownfield-create-epic.md"
-  - "./brownfield-create-story.md"
-  - "./correct-course.md"
-  - "./create-brownfield-story.md"
-  - "./create-deep-research-prompt.md"
-  - "./create-doc.md"
-  - "./create-next-story.md"
----
-
 ### Task: apply-qa-fixes
 Source: .bmad-core/tasks/apply-qa-fixes.md
 - How to use: "Use task apply-qa-fixes with the appropriate agent" and paste relevant parts as needed.

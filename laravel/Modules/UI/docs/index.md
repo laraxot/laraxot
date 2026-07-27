@@ -1,23 +1,3 @@
----
-title: "UI Module Documentation"
-type: concept
-tags: [index]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "index ui module documentation"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # UI Module Documentation
 
 ## Overview
@@ -1160,10 +1140,10 @@ Common issues and solutions:
 7. **Testing**: Test components with various data types and edge cases
 
 ## Related Modules
-- [Chart Module](../chart/docs/index.md) - Chart generation and data processing
+- [Chart Module](../Chart/docs/index.md) - Chart generation and data processing
 - [Quaeris Module](../Quaeris/docs/index.md) - Survey management and question charts
-- [LimeSurvey Module](../limesurvey/docs/index.md) - Survey data access with dynamic models
-- [Xot Module](../xot/docs/index.md) - Base UI infrastructure and component patterns
+- [LimeSurvey Module](../Limesurvey/docs/index.md) - Survey data access with dynamic models
+- [Xot Module](../Xot/docs/index.md) - Base UI infrastructure and component patterns
 
 ## Statistical Analysis for Question Type Y
 
@@ -1403,4 +1383,3 @@ Specialized UI components for displaying statistics of Y type questions:
     </script>
 </div>
 ```
-- [Conflict Resolution](conflict-resolution.md)

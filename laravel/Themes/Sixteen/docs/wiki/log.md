@@ -1,3 +1,8 @@
+## [2026-07-24] second-brain | max workflow + composer-go concept
+
+- Link da [composer-go-theme-impact](concepts/composer-go-theme-impact.md) a skill second-brain max
+- Disciplina: ogni fix tema → update `docs/wiki/` Sixteen + questo log
+
 - 2026-06-10: docs Folio FO — fo-folio-routing-zen, route-not-found-view-cache, header `notifications` vs `area-personale.notifiche`
 ## [2026-06-09] cta/ticket | NO FrontofficeUrl — LaravelLocalization only
 

@@ -1,20 +1,3 @@
----
-title: "Superpowers - Documentazione Installazione e Utilizzo"
-type: concept
-tags: [superpowers]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "superpowers superpowers - documentazione installazione e utilizzo"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./installation-summary.md"
-  - "./installation.md"
-  - "./installazione.md"
-  - "./skills-reference.md"
-  - "./workflow.md"
----
-
 # Superpowers - Documentazione Installazione e Utilizzo
 
 ## Cos'è Superpowers

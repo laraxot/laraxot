@@ -29,6 +29,8 @@ final class SendPlivoSMSAction implements SmsActionContract
 
     /**
      * Create a new action instance.
+     *
+     * @return void
      */
     public function __construct()
     {

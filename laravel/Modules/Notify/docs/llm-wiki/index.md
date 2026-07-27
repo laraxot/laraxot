@@ -1,17 +1,22 @@
 ---
 title: "Notify Module Wiki Index"
-type: concept
-tags: [index]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "index notify module wiki index"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+type: index
+tags: [notify, docs, llm-wiki]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione llm wiki index notify module wiki index index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
 related:
-  - "./agents.md"
-  - "./log.md"
+  - ../README.md
+  - ../wiki/index.md
+  - ../notifications/readme.md
+  - ../integrations/readme.md
+  - ../templates/readme.md
 ---
-
 # Notify Module Wiki Index
 
 > **Module**: Notify

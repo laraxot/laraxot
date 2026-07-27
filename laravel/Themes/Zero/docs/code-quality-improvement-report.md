@@ -8,9 +8,15 @@ updated: 2026-07-17
 qmd: "code quality baseline PHPStan Pest strict types Laraxot Zero"
 story: STORY-001
 issues:
+<<<<<<< HEAD
+  - "https://github.com/laraxot/base_techplanner_fila5/issues/46"
+discussions:
+  - "https://github.com/laraxot/base_techplanner_fila5/discussions/47"
+=======
   - "https://github.com/laraxot/base_workorder_fila5/issues/46"
 discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/47"
+>>>>>>> 8125a85 (Update documentation indices to clarify redundancy and provide updated references. Added notes indicating that several index files are outdated and should refer to the canonical `00-index.md`. Adjusted links in various documents for consistency and accuracy. Enhanced README with additional information about the alternative theme documentation.)
 related:
   - "../../../../docs/stories/STORY-001-code-quality-moduli-temi.md"
 ---

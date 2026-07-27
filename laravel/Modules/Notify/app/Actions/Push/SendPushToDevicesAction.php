@@ -6,6 +6,7 @@ namespace Modules\Notify\Actions\Push;
 
 use Exception;
 use Illuminate\Support\Facades\Log;
+use Modules\Notify\Datas\PushNotificationData;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 
@@ -18,11 +19,10 @@ class SendPushToDevicesAction
 
     /**
      * @param  list<string>  $tokens
-     * @param  array<string, mixed>  $notification
      * @param  array<string, mixed>  $data
      * @return array<string, array<string, mixed>>
      */
-    public function execute(array $tokens, array $notification, array $data = []): array
+    public function execute(array $tokens, PushNotificationData $notification, array $data = []): array
     {
         $results = [];
 
@@ -53,11 +53,10 @@ class SendPushToDevicesAction
 
     /**
      * @param  list<string>  $tokens
-     * @param  array<string, mixed>  $notification
      * @param  array<string, mixed>  $data
      * @return array<string, mixed>
      */
-    private function sendBatchToPlatform(string $platform, array $tokens, array $notification, array $data): array
+    private function sendBatchToPlatform(string $platform, array $tokens, PushNotificationData $notification, array $data): array
     {
         $results = [];
         $successCount = 0;

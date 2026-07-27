@@ -9,6 +9,8 @@ use PHPUnit\Framework\Assert;
 use Modules\Notify\Models\MailTemplate;
 use Modules\Notify\Tests\TestCase;
 use Modules\Notify\Database\Factories\MailTemplateFactory;
+use function Pest\Laravel\get;
+
 uses(\Modules\Notify\Tests\TestCase::class);
 
 beforeEach(function (): void {

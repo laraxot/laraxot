@@ -1,23 +1,3 @@
----
-title: "REGOLA CRITICA: MAI usare ->label()"
-type: rule
-tags: [never, use, label, rule]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "never-use-label-rule regola critica: mai usare ->label()"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # REGOLA CRITICA: MAI usare ->label()
 
 ## ❌ ERRORE CRITICO - NON FARE MAI QUESTO
@@ -174,9 +154,9 @@ rules:
 
 ## Collegamenti
 
-- [Translation Standards](../../../../docs/translation-standards.md)
-- [Filament Best Practices](../../../../docs/filament-best-practices.md)
-- [LangServiceProvider Documentation](../../../../docs/lang-service-provider.md)
+- [Translation Standards](../../../docs/translation-standards.md)
+- [Filament Best Practices](../../../docs/filament-best-practices.md)
+- [LangServiceProvider Documentation](../../../docs/lang-service-provider.md)
 
 ## Memoria Permanente
 
@@ -188,7 +168,7 @@ rules:
 - SEMPRE testare le traduzioni prima del commit
 # REGOLA CRITICA: MAI usare ->label()
 
-## Data: [DATE]
+## Data: 2025-01-06
 
 ## ❌ ERRORE CRITICO - NON FARE MAI QUESTO
 
@@ -353,9 +333,9 @@ rules:
 
 ## Collegamenti
 
-- [Translation Standards](../../../../docs/translation-standards.md)
-- [Filament Best Practices](../../../../docs/filament-best-practices.md)
-- [LangServiceProvider Documentation](../../../../docs/lang-service-provider.md)
+- [Translation Standards](../../../docs/translation-standards.md)
+- [Filament Best Practices](../../../docs/filament-best-practices.md)
+- [LangServiceProvider Documentation](../../../docs/lang-service-provider.md)
 
 ## Memoria Permanente
 
@@ -371,3 +351,4 @@ rules:
 
 - SEMPRE testare le traduzioni prima del commit
 
+*Ultimo aggiornamento: 2025-01-06*

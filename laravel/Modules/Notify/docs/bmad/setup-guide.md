@@ -1,17 +1,3 @@
----
-title: "bmad method: setup e configurazione (fixcity)"
-type: guide
-tags: [setup, guide]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "setup-guide bmad method: setup e configurazione (fixcity)"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./antigravity-integration.md"
-  - "./quick-reference.md"
----
-
 # bmad method: setup e configurazione (fixcity)
 
 ## scopo

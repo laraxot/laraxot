@@ -1,24 +1,4 @@
 ---
-title: "Translation Keys Rules"
-type: rule
-tags: [translation, keys, rules]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "translation-keys-rules translation keys rules"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
----
 
 ## [2024-07-07] Aggiornamento regole e best practice traduzioni modulo Notify
 

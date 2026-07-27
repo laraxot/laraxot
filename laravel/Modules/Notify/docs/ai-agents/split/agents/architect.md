@@ -1,23 +1,3 @@
----
-title: "All commands require * prefix when used (e.g., *help)"
-type: concept
-tags: [architect]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "architect all commands require * prefix when used (e.g., *help)"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./bmad-master.md"
-  - "./bmad-orchestrator.md"
-  - "./business-analyst.md"
-  - "./full-stack-developer.md"
-  - "./product-manager.md"
-  - "./product-owner.md"
-  - "./scrum-master.md"
-  - "./test-architect.md"
----
-
 ### Architect (id: architect)
 Source: .bmad-core/agents/architect.md
 

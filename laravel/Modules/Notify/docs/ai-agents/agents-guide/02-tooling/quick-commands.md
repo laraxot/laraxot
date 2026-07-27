@@ -1,17 +1,3 @@
----
-title: "Quick Commands"
-type: concept
-tags: [quick, commands]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "quick-commands quick commands"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./build-lint-test-commands.md"
----
-
 # Quick Commands
 
 ## Testing

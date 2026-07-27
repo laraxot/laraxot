@@ -1,23 +1,3 @@
----
-title: "Rifattorizzazione Completa delle Cartelle Docs"
-type: concept
-tags: [rifattorizzazione, completata]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "rifattorizzazione-completata rifattorizzazione completa delle cartelle docs"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./2025-excellence-achievement.md"
-  - "./agid-implementation-guide.md"
-  - "./architecture.md"
-  - "./complete-refactoring-analysis.md"
-  - "./documentation-status.md"
-  - "./final-implementation-report-.md"
-  - "./final-implementation-report-1.md"
-  - "./final-implementation-report.md"
----
-
 # Rifattorizzazione Completa delle Cartelle Docs
 
 ## Obiettivo Raggiunto

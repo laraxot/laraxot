@@ -1,23 +1,3 @@
----
-title: "Proposta: Aggiunta del Parametro Slug per Email Template"
-type: concept
-tags: [email, template, slug, proposal]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "email-template-slug-proposal proposta: aggiunta del parametro slug per email template"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Proposta: Aggiunta del Parametro Slug per Email Template
 
 ## Introduzione
@@ -255,6 +235,6 @@ MailTemplate::all()->each(function ($template) {
 
 ## Collegamenti Correlati
 
-- [Documentazione Email Template](./email-templates.md)
+- [Documentazione Email Template](./EMAIL_TEMPLATES.md)
 - [Gestione Traduzioni](../Lang/docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
 - [Configurazione Email](../../../docs/email-configuration.md) 

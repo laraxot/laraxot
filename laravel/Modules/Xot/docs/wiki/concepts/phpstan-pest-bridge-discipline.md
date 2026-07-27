@@ -4,9 +4,7 @@ type: concept
 module: Xot
 tags: [xot, phpstan, pest, testing, bridge]
 created: 2026-06-10
-updated: 2026-06-30
-updated: 2026-06-30
-updated: 2026-06-30
+updated: 2026-07-24
 qmd: "Xot phpstan pest bridge discipline public assertions tests stay pest helper"
 issues:
   - "https://github.com/laraxot/module_xot_fila5/issues/28"
@@ -27,9 +25,8 @@ Xot e' il posto giusto per pattern condivisi di test/static analysis, ma il brid
 - PHPStan resta governato dal solo `laravel/phpstan.neon` utente.
 - Bridge/helper condivisi devono rendere tipizzabili le assertion ricorrenti, non mascherare errori.
 - Bridge `PestFunctionBridge.php`: `uses|test|it|describe` → `void`; `expect()` → `PestExpectation` (evita `function.resultUnused` e catene `function.void`).
-- Rigenerare bridge: `php bashscripts/tools/generate-pest-phpstan-bridge.php` (195 namespace, 2026-06-30).
-- Rigenerare bridge: `php bashscripts/tools/generate-pest-phpstan-bridge.php` (195 namespace, 2026-06-30).
-- Rigenerare bridge: `php bashscripts/tools/generate-pest-phpstan-bridge.php` (195 namespace, 2026-06-30).
+- Rigenerare bridge: `php bashscripts/tools/generate-pest-phpstan-bridge.php` (213 namespace, 2026-07-24; il generatore auto-formatta l'output con `pint` subito dopo la scrittura, nessun fixup manuale necessario).
+- Rigenerare **sempre** dopo aver rimosso o rinominato un modulo: il generatore scansiona `namespace ...;` in ogni file sotto `*/tests/*`, quindi un blocco riferito a un modulo cancellato resta stale nel bridge (`@param-closure-this \Modules\{Removed}\Tests\TestCase` non risolvibile → `class.notFound` per PHPStan). Caso reale 2026-07-24: modulo `Comment` rimosso interamente, bridge non rigenerato → 25 errori PHPStan (28% di uno sweep da 90).
 - `uses(\Modules\<M>\Tests\TestCase::class)` sempre **dopo** gli `import use` nel file Pest.
 
 ## Helper XotBaseTestCase (usare nei moduli)
@@ -57,8 +54,6 @@ Hub piattaforma: [platform-completion-roadmap](../overviews/platform-completion-
 Centralizzare solo se il pattern e' usato da piu' moduli:
 
 - helper per database assertion senza `$this` ambiguo;
-- helper per factory `createOne()` e narrowing del modello (`bashscripts/tools/fix-test-factory-createone.php`);
-- helper per factory `createOne()` e narrowing del modello (`bashscripts/tools/fix-test-factory-createone.php`);
 - helper per factory `createOne()` e narrowing del modello (`bashscripts/tools/fix-test-factory-createone.php`);
 - wrapper assertion per stringhe, array shape o class-string.
 

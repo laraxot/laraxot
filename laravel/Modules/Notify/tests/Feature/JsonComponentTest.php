@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\File;
 use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use function Safe\json_decode;
+use function Pest\Laravel\get;
 
 uses(\Modules\Notify\Tests\TestCase::class);
 

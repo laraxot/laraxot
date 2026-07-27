@@ -3,14 +3,7 @@ title: "organizzativa-money — puntatore"
 type: reference
 updated: 2026-05-21
 related:
-  - "./claude-audit-static.md"
-  - "./code-redundancy-notify.md"
-  - "./composer-root-minimal-nwidart.md"
-  - "./context-overflow-prevention.md"
-  - "./enum-standards.md"
-  - "./llm-wiki-governance.md"
-  - "./method-name-homonyms.md"
-  - "./module-root-uppercase-folders-archive.md"
+  - "../../../../Xot/docs/wiki/concepts/organizzativa-money.md"
 ---
 
 # organizzativa money

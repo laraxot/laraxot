@@ -1,23 +1,3 @@
----
-title: "Spatie Mail Templates: Struttura Corretta"
-type: concept
-tags: [spatie, mail, templates, structure]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "spatie-mail-templates-structure spatie mail templates: struttura corretta"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./attachments.md"
-  - "./email-best-practices-1.md"
-  - "./email-best-practices.md"
-  - "./email-layouts-best-practices-1.md"
-  - "./email-layouts-best-practices.md"
-  - "./email-templates-best-practices-1.md"
-  - "./email-templates-best-practices.md"
-  - "./email-templates-guide-1.md"
----
-
 # Spatie Mail Templates: Struttura Corretta
 
 Questa documentazione spiega la struttura corretta dell'implementazione di `spatie/laravel-database-mail-templates` nel modulo Notify.

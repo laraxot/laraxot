@@ -1,23 +1,3 @@
----
-title: "Raccomandazioni di Ottimizzazione - Modulo Notify"
-type: concept
-tags: [optimization, recommendations]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "optimization-recommendations-1 raccomandazioni di ottimizzazione - modulo notify"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Raccomandazioni di Ottimizzazione - Modulo Notify
 
 ## 🎯 Stato Attuale e Problemi Critici
@@ -285,7 +265,7 @@ php artisan notify:benchmark
 
 ## Collegamenti
 
-- [Linee Guida Riusabilità](reusability-guidelines-2.md)
+- [Linee Guida Riusabilità](reusability_guidelines.md)
 - [Piano Implementazione](../../../../docs/module_reusability_implementation_plan.md)
 - [Script Controllo](../../../bashscripts/check_module_reusability.sh)
 

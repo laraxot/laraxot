@@ -1,23 +1,3 @@
----
-title: "Best Practices per Email Transazionali"
-type: concept
-tags: [email, best, practices]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "email-best-practices best practices per email transazionali"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./attachments.md"
-  - "./email-best-practices-1.md"
-  - "./email-layouts-best-practices-1.md"
-  - "./email-layouts-best-practices.md"
-  - "./email-templates-best-practices-1.md"
-  - "./email-templates-best-practices.md"
-  - "./email-templates-guide-1.md"
-  - "./email-templates-guide.md"
----
-
 # Best Practices per Email Transazionali
 
 ## Introduzione
@@ -134,7 +114,7 @@ $mailTemplate->send($user->email, [
 
 ## Riferimenti
 
-- [Guida Layout Email](../mail-layouts-guide-2.md)
-- [Integrazione MailPace](./mailpace-templates-integration-1.md)
-- [HTML Email Compatibility](./html-email-compatibility-1.md)
-- [Spatie Email Usage Guide](../spatie-email-usage-guide-1.md)
+- [Guida Layout Email](../mail_layouts_guide.md)
+- [Integrazione MailPace](./mailpace_templates_integration.md)
+- [HTML Email Compatibility](./html_email_compatibility.md)
+- [Spatie Email Usage Guide](../spatie_email_usage_guide.md)

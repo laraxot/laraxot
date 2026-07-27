@@ -1,23 +1,3 @@
----
-title: "PHPStan Errori Modulo Notify - 2025-01-22"
-type: concept
-tags: [phpstan, fixes]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phpstan-fixes- phpstan errori modulo notify - 2025-01-22"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # PHPStan Errori Modulo Notify - 2025-01-22
 
 ## Analisi Completa
@@ -208,4 +188,4 @@ $message = "Using driver: {$driverString}";
 
 - [Safe Functions Guide](../xot/docs/safe-functions.md)
 - [Type Narrowing Patterns](../xot/docs/type-narrowing.md)
-- [SMS Configuration](./sms-global-vs-specific-params-1.md)
+- [SMS Configuration](./sms_global_vs_specific_params.md)

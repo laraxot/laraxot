@@ -1,23 +1,3 @@
----
-title: "Visualizzazione Parametri come Badge - Mail Templates"
-type: concept
-tags: [params, badges, feature]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "params-badges-feature visualizzazione parametri come badge - mail templates"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./attachments.md"
-  - "./email-best-practices-1.md"
-  - "./email-best-practices.md"
-  - "./email-layouts-best-practices-1.md"
-  - "./email-layouts-best-practices.md"
-  - "./email-templates-best-practices-1.md"
-  - "./email-templates-best-practices.md"
-  - "./email-templates-guide-1.md"
----
-
 # Visualizzazione Parametri come Badge - Mail Templates
 
 ## Panoramica
@@ -182,10 +162,10 @@ Badge: [user_name] [reset_link] [expiry_time]
 
 ## Collegamenti
 
-- [Implementation Notes](./implementation-notes-1.md#visualizzazione-parametri-come-badge)
+- [Implementation Notes](./implementation_notes.md#visualizzazione-parametri-come-badge)
 - [Mail Templates Index](./index.md)
-- [Filament UI Enhancements](./filament-ui-enhancements-2.md)
-- [Email Templates Guide](./email-templates-guide-1.md)
+- [Filament UI Enhancements](./filament_ui_enhancements.md)
+- [Email Templates Guide](./email_templates_guide.md)
 
 ---
 

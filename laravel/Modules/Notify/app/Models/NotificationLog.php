@@ -34,6 +34,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @property string|null $error
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @property-read ProfileContract|null $creator
  * @property-read ProfileContract|null $deleter
  * @property-read MediaCollection<int, Media> $media
@@ -113,6 +114,7 @@ class NotificationLog extends BaseModel
 
     /**
      * @param  Builder<static>  $query
+     *
      * @return Builder<static>
      */
     public function scopeWithStatus(Builder $query, string $status): Builder
@@ -122,6 +124,7 @@ class NotificationLog extends BaseModel
 
     /**
      * @param  Builder<static>  $query
+     *
      * @return Builder<static>
      */
     public function scopeForChannel(Builder $query, string $channel): Builder
@@ -131,6 +134,7 @@ class NotificationLog extends BaseModel
 
     /**
      * @param  Builder<static>  $query
+     *
      * @return Builder<static>
      */
     public function scopeForNotifiable(Builder $query, Model $notifiable): Builder

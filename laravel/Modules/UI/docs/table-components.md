@@ -1,23 +1,3 @@
----
-title: "Componenti Table"
-type: concept
-tags: [table, components]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "table-components componenti table"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Componenti Table
 
 ## Introduzione
@@ -159,7 +139,7 @@ class UserTable extends Component
 - [Componenti Form](./form-components.md)
 - [Componenti Chart](./chart-components.md)
 - [Componenti Layout](./layout-components.md)
-- [Documentazione Frontend](../cms/docs/frontend-architecture.md)
+- [Documentazione Frontend](../Cms/docs/frontend-architecture.md)
 # Componenti Table
 
 ## Introduzione
@@ -301,6 +281,6 @@ class UserTable extends Component
 - [Componenti Form](./form-components.md)
 - [Componenti Chart](./chart-components.md)
 - [Componenti Layout](./layout-components.md)
-- [Documentazione Frontend](../cms/project_docs/frontend-architecture.md)
-- [Documentazione Frontend](../cms/project_docs/frontend-architecture.md)
-- [Documentazione Frontend](../cms/project_docs/frontend-architecture.md)
+- [Documentazione Frontend](../Cms/project_docs/frontend-architecture.md)
+- [Documentazione Frontend](../Cms/project_docs/frontend-architecture.md)
+- [Documentazione Frontend](../Cms/project_docs/frontend-architecture.md)

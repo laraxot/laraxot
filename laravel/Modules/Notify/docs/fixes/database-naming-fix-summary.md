@@ -1,19 +1,3 @@
----
-title: "📁 Database Naming Convention - Fix Summary"
-type: concept
-tags: [database, naming, fix, summary]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "database-naming-fix-summary 📁 database naming convention - fix summary"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./critical-bug-sync-script-deleted.md"
-  - "./database-directory-naming-fix.md"
-  - "./database-naming-verification-report.md"
-  - "./sqlite-permission-fix.md"
----
-
 # 📁 Database Naming Convention - Fix Summary
 
 > **Date**: 2026-03-13  

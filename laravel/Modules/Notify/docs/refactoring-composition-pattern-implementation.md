@@ -1,23 +1,3 @@
----
-title: "Refactoring Summary: SendRecordsNotificationBulkAction Implementation"
-type: pattern
-tags: [refactoring, composition, pattern, implementation]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "refactoring-composition-pattern-implementation refactoring summary: sendrecordsnotificationbulkaction implementation"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Refactoring Summary: SendRecordsNotificationBulkAction Implementation
 
 **Date**: 18 Dicembre 2025  

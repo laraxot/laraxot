@@ -6,6 +6,7 @@ namespace Modules\Notify\Actions\Push;
 
 use DateTime;
 use Illuminate\Support\Facades\Cache;
+use Modules\Notify\Datas\PushNotificationData;
 use Modules\Notify\Jobs\SendScheduledPushNotification;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -18,16 +19,15 @@ class SchedulePushNotificationAction
 
     /**
      * @param  list<string>  $tokens
-     * @param  array<string, mixed>  $notification
      * @param  array<string, mixed>  $data
      */
-    public function execute(array $tokens, array $notification, array $data, DateTime $scheduleTime): string
+    public function execute(array $tokens, PushNotificationData $notification, array $data, DateTime $scheduleTime): string
     {
         $jobId = uniqid('push_', true);
 
         Cache::put("scheduled_push:{$jobId}", [
             'tokens' => $tokens,
-            'notification' => $notification,
+            'notification' => $notification->toArray(),
             'data' => $data,
             'schedule_time' => $scheduleTime->getTimestamp(),
         ], $scheduleTime);

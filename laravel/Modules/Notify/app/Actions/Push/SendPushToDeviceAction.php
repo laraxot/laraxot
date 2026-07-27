@@ -6,6 +6,7 @@ namespace Modules\Notify\Actions\Push;
 
 use Exception;
 use Illuminate\Support\Facades\Log;
+use Modules\Notify\Datas\PushNotificationData;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 
@@ -20,11 +21,10 @@ class SendPushToDeviceAction
     private array $platforms = ['fcm', 'apns', 'webpush'];
 
     /**
-     * @param  array<string, mixed>  $notification
      * @param  array<string, mixed>  $data
      * @return array<string, array<string, mixed>>
      */
-    public function execute(string $token, array $notification, array $data = []): array
+    public function execute(string $token, PushNotificationData $notification, array $data = []): array
     {
         $results = [];
 
@@ -36,7 +36,7 @@ class SendPushToDeviceAction
                 Log::error("Push notification failed for platform {$platform}", [
                     'error' => $e->getMessage(),
                     'token' => $token,
-                    'notification' => $notification,
+                    'notification' => $notification->toArray(),
                 ]);
 
                 $results[$platform] = [

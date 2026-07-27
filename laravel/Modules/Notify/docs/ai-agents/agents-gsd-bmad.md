@@ -1,23 +1,3 @@
----
-title: "AGENTS GSD BMAD Workflow"
-type: concept
-tags: [agents, gsd, bmad]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "agents-gsd-bmad agents gsd bmad workflow"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./01-gsd-workflow.md"
-  - "./02-bmad-workflow.md"
-  - "./03-architecture-zen.md"
-  - "./04-filament-philosophy.md"
-  - "./05-front-office-audit.md"
-  - "./06-cinematic-effects.md"
-  - "./07-mcp-tailwind-ui.md"
----
-
 # AGENTS GSD BMAD Workflow
 
 Workflow per AI-driven development usando GSD e BMAD.
@@ -116,10 +96,10 @@ bmad-verify-work [N]         # Verifica
 ### Workflow
 
 1. **Leggere prima** [gsd-and-bmad-workflow.md](../../docs/project/gsd-and-bmad-workflow.md)
-2. **Verificare** `.planning/state.md` per stato corrente
+2. **Verificare** `.planning/STATE.md` per stato corrente
 3. **Non duplicare** — se un agente ha già iniziato, continua da lì
 4. **Commit atomici** — un commit per task
-5. **Aggiornare** `state.md` e coordination doc
+5. **Aggiornare** `STATE.md` e coordination doc
 
 ---
 

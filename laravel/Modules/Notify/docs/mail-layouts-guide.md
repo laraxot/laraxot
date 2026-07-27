@@ -1,23 +1,3 @@
----
-title: "Guida ai Layout Email nel Modulo Notify"
-type: guide
-tags: [mail, layouts, guide]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "mail-layouts-guide guida ai layout email nel modulo notify"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Guida ai Layout Email nel Modulo Notify
 
 ## Introduzione
@@ -155,6 +135,6 @@ I layout attuali sono compatibili con l'approccio utilizzato da [mailpace/templa
 ## Riferimenti
 
 - [Laravel Mail Documentation](https://laravel.com/docs/mail)
-- [Spatie Email Documentation](./spatie-email-usage-guide.md)
+- [Spatie Email Documentation](./SPATIE_EMAIL_USAGE_GUIDE.md)
 - [Email Best Practices](./mail-templates/EMAIL_BEST_PRACTICES.md)
 - [HTML Email Compatibility Guide](./mail-templates/HTML_EMAIL_COMPATIBILITY.md)

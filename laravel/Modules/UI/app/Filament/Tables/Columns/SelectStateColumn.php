@@ -59,6 +59,7 @@ class SelectStateColumn extends XotBaseSelectColumn
                             $stateNameProperty = \is_string($nameProperty) ? $nameProperty : null;
                         }
                     } catch (\ReflectionException) {
+                        // Intentionally ignored: fall back to $stateNameProperty === null below.
                     }
                     if (null !== $stateNameProperty) {
                         $statesValues = array_values($states);

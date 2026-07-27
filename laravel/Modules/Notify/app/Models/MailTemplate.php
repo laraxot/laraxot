@@ -67,10 +67,9 @@ use Spatie\Translatable\HasTranslations;
  * @method static Builder<static>|MailTemplate whereCounter($value)
  * @method static Builder<static>|MailTemplate whereSmsTemplate($value)
  * @method static Builder<static>|MailTemplate whereWhatsappTemplate($value)
+ *
  * @method static Builder<static>|MailTemplate whereHtmlLayoutPath($value)
  * @method static Builder<static>|MailTemplate whereVersion($value)
- *
- * @property-read array<int, string> $translatable_columns_from
  *
  * @mixin \Eloquent
  */
@@ -114,6 +113,7 @@ class MailTemplate extends SpatieMailTemplate implements MailTemplateInterface
 
     /**
      * @param  Builder<static>  $query
+     *
      * @return Builder<static>
      */
     public function scopeForMailable(Builder $query, Mailable $mailable): Builder

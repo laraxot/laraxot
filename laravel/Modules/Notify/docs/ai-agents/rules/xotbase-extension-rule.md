@@ -1,23 +1,3 @@
----
-title: "🔴 XotBase Extension Rule - PHILOSOPHY"
-type: rule
-tags: [xotbase, extension, rule]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "xotbase-extension-rule 🔴 xotbase extension rule - philosophy"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./bash-commands-auto-allow.md"
-  - "./llm-wiki-rule.md"
-  - "./multi-outcome-no-binary-fields.md"
-  - "./one-migration-per-model.md"
-  - "./phpmd-phar-installation.md"
-  - "./translation-structure-5-levels-mandatory.md"
-  - "./translation-structure-5-levels.md"
----
-
 # 🔴 XotBase Extension Rule - PHILOSOPHY
 
 **Path**: `.agents/docs/rules/xotbase-extension-rule.md`  
@@ -291,7 +271,7 @@ class OutcomesTableWidget extends XotBaseTableWidget
 - **[XotBaseTableWidget](../../laravel/Modules/Xot/app/Filament/Widgets/XotBaseTableWidget.php)** - Base class
 
 ### AI Agents Docs
-- **[Rules Index](00-index-1.md)** - All rules
+- **[Rules Index](00-INDEX.md)** - All rules
 - **[Reusable Components](../guidelines/reusable-components-philosophy.md)** - DRY+KISS philosophy
 
 ---

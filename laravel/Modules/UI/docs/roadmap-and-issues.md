@@ -1,23 +1,3 @@
----
-title: "UI Module - Roadmap, Issues & Optimization"
-type: concept
-tags: [roadmap, issues]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "roadmap-and-issues ui module - roadmap, issues & optimization"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # UI Module - Roadmap, Issues & Optimization
 
 **Modulo**: UI (User Interface Components)
@@ -217,7 +197,7 @@ php phpmd.phar Modules/UI/database/factories text cleancode,codesize,controversi
 - [ ] **AI-Powered Components**
   - Smart forms
   - Auto-completion
-  - <nome progetto>ive inputs
+  - Predictive inputs
 
 - [ ] **Real-Time Components**
   - Live updates
@@ -294,7 +274,7 @@ php phpmd.phar Modules/UI/database/factories text cleancode,codesize,controversi
 
 ## 🔗 Collegamenti
 
-- [← UI Module README](../readme.md)
+- [← UI Module README](../README.md)
 - [← Components Documentation](./components.md)
 - [← Project Roadmap](../../../docs/project-analysis-and-roadmap.md)
 - [← Root Documentation](../../../docs/index.md)

@@ -1,18 +1,6 @@
----
-title: "Filament Widget Tables Policy"
-type: concept
-tags: [filament, widget, tables, policy]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament-widget-tables-policy filament widget tables policy"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
----
-
 # Filament Widget Tables Policy
 
-> Indice: [./00-index-1.md](./00-index-1.md)
+> Indice: [./00-INDEX.md](./00-INDEX.md)
 > Regola correlata: [../../rules/filament-widget-tables-rule.md](../../rules/filament-widget-tables-rule.md)
 > Skill correlata: [../../skills/filament-widget-tables-governance/SKILL.md](../../skills/filament-widget-tables-governance/SKILL.md)
 

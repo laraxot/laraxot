@@ -1,25 +1,6 @@
----
-title: "Audit e Correzione Colonne Filament - Modulo UI"
-type: concept
-tags: [audit, columns, laraxot, compliance]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "audit-columns-laraxot-compliance audit e correzione colonne filament - modulo ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Audit e Correzione Colonne Filament - Modulo UI
 
+**Data**: 11 Novembre 2025
 **Status**: ✅ COMPLETATO
 
 ## Analisi Completa

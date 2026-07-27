@@ -1,23 +1,3 @@
----
-title: "Implementazione transClass() negli Enum del Modulo UI"
-type: concept
-tags: [enum, transclass, implementation]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "enum-transclass-implementation implementazione transclass() negli enum del modulo ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Implementazione transClass() negli Enum del Modulo UI
 
 ## Principio Fondamentale per il Modulo UI
@@ -153,7 +133,8 @@ grep -r "__(" Modules/UI/app/Enums/
 **"Ogni enum del modulo UI DEVE utilizzare transClass() per TUTTE le sue proprietà traducibili."**
 
 ## Collegamenti
-- [../../../../../docs/enum-transclass-rule.md](../../../../../docs/enum-transclass-rule.md)
+- [../../../../docs/enum-transclass-rule.md](../../../../docs/enum-transclass-rule.md)
 - [../filament/no-label-rule.md](../filament/no-label-rule.md)
 - [../clean-code/no-obvious-comments.md](../clean-code/no-obvious-comments.md)
 
+*Ultimo aggiornamento: 2025-08-04*

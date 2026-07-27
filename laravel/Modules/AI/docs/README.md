@@ -3,10 +3,21 @@ title: "AI Module Documentation"
 type: documentation
 tags: [module, documentation]
 created: 2026-06-05
-updated: 2026-06-05
+updated: 2026-07-24
 ---
 
 # 🤖 AI Module - Integrazione MCP
+
+## Ownership Actions (obbligatorio)
+
+Le Actions di dominio AI (Ollama, compression, predictions) vivono in
+`app/Actions/` di **questo** modulo — mai in `Modules/Xot/app/Actions/AI/`.
+
+| Doc | Link |
+|-----|------|
+| Wiki ownership | [wiki/concepts/ollama-actions-ownership.md](wiki/concepts/ollama-actions-ownership.md) |
+| Move 2026-07-24 | [ollama-actions-moved-from-xot.md](ollama-actions-moved-from-xot.md) |
+| Root rule | [domain-actions-belong-to-domain-module](../../../../docs/wiki/rules/domain-actions-belong-to-domain-module.md) |
 
 ## 📋 Quick Reference
 | Categoria | Guida | File |

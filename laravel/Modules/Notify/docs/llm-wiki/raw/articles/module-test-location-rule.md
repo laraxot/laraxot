@@ -1,15 +1,3 @@
----
-title: "Regola: Posizione dei Test nei Moduli Laraxot"
-type: rule
-tags: [module, test, location, rule]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "module-test-location-rule regola: posizione dei test nei moduli laraxot"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
----
-
 # Regola: Posizione dei Test nei Moduli Laraxot
 
 **Fonte:** Incidente del 2026-04-21 — test del modulo Notify creati erroneamente nella root del progetto

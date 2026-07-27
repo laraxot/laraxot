@@ -5,14 +5,7 @@ module: UI
 tags: [redundancy, components, config, design-system]
 created: 2026-05-21
 related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
+  - https://github.com/laraxot/base_fixcity_fila5/issues/89
 ---
 
 # UI redundancy audit 2026-05-21
@@ -21,7 +14,7 @@ High-risk findings:
 - Config files exist in both `Config/` and `config/`, including `config.php`, `laravel-localization.php`, and `laravellocalization.php`.
 - Many UI components are byte-identical with `Modules/User`, including `button`, `modal`, `input`, `checkbox`, `badge`, `link`, `nav-link`, `text-link`, `placeholder`, and marketing/layout components.
 - Block stats are duplicated under both `archived/` and `superseded/`.
-- Docs have case-only duplicates such as `architecture-1.md` and `architecture.md`, plus duplicate index variants.
+- Docs have case-only duplicates such as `ARCHITECTURE.md` and `architecture.md`, plus duplicate index variants.
 
 Risk:
 - UI should be the shared owner. Duplicating primitives in User makes fixes diverge.

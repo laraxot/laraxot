@@ -1,23 +1,3 @@
----
-title: "FileUpload Component in Filament"
-type: concept
-tags: [filament, fileupload]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament-fileupload fileupload component in filament"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # FileUpload Component in Filament
 
 ## Metodi Disponibili
@@ -109,9 +89,9 @@ return [
    - Segui le convenzioni di naming
 
 ## Collegamenti
-- [Translation System](../../lang/docs/translation-system.md)
-- [Form Components](../../patient/docs/filament-form-components.md)
-- [Best Practices](../../xot/docs/filament-best-practices.md)
+- [Translation System](../../Lang/docs/translation-system.md)
+- [Form Components](../../Patient/docs/filament-form-components.md)
+- [Best Practices](../../Xot/docs/filament-best-practices.md)
 
 ## Vedi Anche
 - [Filament File Upload](https://filamentphp.com/docs/forms/fields/file-upload)
@@ -207,9 +187,9 @@ return [
    - Segui le convenzioni di naming
 
 ## Collegamenti
-- [Translation System](../../lang/project_docs/translation-system.md)
-- [Form Components](../../patient/project_docs/filament-form-components.md)
-- [Best Practices](../../xot/project_docs/filament-best-practices.md)
+- [Translation System](../../Lang/project_docs/translation-system.md)
+- [Form Components](../../Patient/project_docs/filament-form-components.md)
+- [Best Practices](../../Xot/project_docs/filament-best-practices.md)
 
 ## Vedi Anche
 - [Filament File Upload](https://filamentphp.com/project_docs/forms/fields/file-upload)

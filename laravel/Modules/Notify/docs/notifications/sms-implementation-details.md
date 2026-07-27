@@ -1,23 +1,3 @@
----
-title: "Implementazione SMS : Guida Dettagliata"
-type: concept
-tags: [sms, implementation, details]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "sms-implementation-details implementazione sms : guida dettagliata"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./errori-comuni-da-evitare-1.md"
-  - "./errori-comuni-da-evitare.md"
-  - "./index.md"
-  - "./multi-channel-notifications-1.md"
-  - "./multi-channel-notifications-2.md"
-  - "./multi-channel-notifications.md"
-  - "./netfun-sms-implementation-1.md"
-  - "./netfun-sms-implementation.md"
----
-
 # Implementazione SMS : Guida Dettagliata
 
 Questa documentazione fornisce una guida dettagliata all'implementazione delle notifiche SMS , con confronto tra diversi provider e best practices specifiche per il contesto italiano.
@@ -808,7 +788,7 @@ class ConsentLog extends Model
 
 ## Collegamenti alla Documentazione Correlata
 
-- [MULTI_CHANNEL_NOTIFICATIONS.md](./multi-channel-notifications-2.md)
-- [SMS_PROVIDER_CONFIGURATION.md](./sms-provider-configuration-2.md)
-- [NOTIFICATIONS_IMPLEMENTATION_GUIDE.md](./notifications-implementation-guide-1.md)
-- [TELEGRAM_NOTIFICATIONS_GUIDE.md](./telegram-notifications-guide-1.md)
+- [MULTI_CHANNEL_NOTIFICATIONS.md](./multi_channel_notifications.md)
+- [SMS_PROVIDER_CONFIGURATION.md](./sms_provider_configuration.md)
+- [NOTIFICATIONS_IMPLEMENTATION_GUIDE.md](./notifications_implementation_guide.md)
+- [TELEGRAM_NOTIFICATIONS_GUIDE.md](./telegram_notifications_guide.md)

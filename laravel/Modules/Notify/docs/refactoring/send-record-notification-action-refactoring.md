@@ -1,23 +1,3 @@
----
-title: "Refactoring Report: SendRecordNotificationAction"
-type: concept
-tags: [send, record, notification, action]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "send-record-notification-action-refactoring refactoring report: sendrecordnotificationaction"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./channel-enum-implementation-complete.md"
-  - "./channel-enum-implementation-update.md"
-  - "./channel-enum-refactoring.md"
-  - "./extract-method-pattern.md"
-  - "./final-verification-report-channel-enum.md"
-  - "./quality-assurance-report.md"
-  - "./record-notification-constructor-slug.md"
-  - "./record-notification-zen-constructor.md"
----
-
 # Refactoring Report: SendRecordNotificationAction
 
 **Date**: 2025-12-18  

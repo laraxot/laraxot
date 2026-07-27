@@ -1,16 +1,3 @@
----
-title: "`WhatsAppChannel`"
-type: concept
-tags: [whatsapp, channel]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "whatsapp-channel `whatsappchannel`"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./sms-channel.md"
----
-
 # `WhatsAppChannel`
 
 This document describes the `WhatsAppChannel`, a custom Laravel Notification Channel designed to send WhatsApp messages. It provides a placeholder for integration with WhatsApp API providers and aims to extend the application's notification capabilities.

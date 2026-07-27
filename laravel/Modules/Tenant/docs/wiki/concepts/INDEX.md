@@ -13,6 +13,7 @@ Concetti specifici del modulo Tenant. Carica on-demand via `qmd search` o consul
 ## Runtime tenant (2026-07-27)
 
 - [tenant-module-status-registry](../../tenant-module-status-registry.md) — `modules_statuses.json` per overlay `config/local/{tenant}/`
+- [module-filament-panel-triad.md](../../../../Modules/Xot/docs/wiki/concepts/module-filament-panel-triad.md) — trinità panel BO modulo
 - [tenant-config-restoration-incident.md](./tenant-config-restoration-incident.md) — config tenant sacri
 - Hub temi: [runtime-config-religion-hub](../../../../Themes/docs/shared-components/runtime-config-religion-hub.md)
 

@@ -1,23 +1,3 @@
----
-title: "Guida ai Componenti UI"
-type: guide
-tags: [components, guide]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "components-guide guida ai componenti ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Guida ai Componenti UI
 
 ## Layout
@@ -191,8 +171,6 @@ Il componente loading indicator di Filament mostra lo stato di caricamento:
 
 ## Volt e Folio
 
-Nel progetto la sintassi di default per i componenti Volt interattivi è **class-based** (`new class extends Livewire\Volt\Component`). Gli esempi qui sotto che usano `use function Livewire\Volt\{state, mount\}` sono **legacy/mantenimento**.
-
 ### Componenti Volt
 - Utilizzare la direttiva `@volt` per i componenti Volt
 - Struttura standard:
@@ -238,8 +216,8 @@ Nel progetto la sintassi di default per i componenti Volt interattivi è **class
   ```
 
 ### Gestione dello Stato
-- In class-based, usa proprietà `public` e inizializza in `mount(): void`
-- Gli helper functional `state()` / `computed()` sono legacy/mantenimento (non per nuovi componenti)
+- Utilizzare `state()` per definire le proprietà
+- Utilizzare `mount()` per l'inizializzazione
 - Gestire gli errori con try/catch
 - Implementare stati di loading
 
@@ -649,8 +627,6 @@ Il componente loading indicator di Filament mostra lo stato di caricamento:
 
 ## Volt e Folio
 
-Nel progetto la sintassi di default per i componenti Volt interattivi è **class-based** (`new class extends Livewire\Volt\Component`). Gli esempi qui sotto che usano `use function Livewire\Volt\{state, mount\}` sono **legacy/mantenimento**.
-
 ### Componenti Volt
 - Utilizzare la direttiva `@volt` per i componenti Volt
 - Struttura standard:
@@ -696,8 +672,8 @@ Nel progetto la sintassi di default per i componenti Volt interattivi è **class
   ```
 
 ### Gestione dello Stato
-- In class-based, usa proprietà `public` e inizializza in `mount(): void`
-- Gli helper functional `state()` / `computed()` sono legacy/mantenimento (non per nuovi componenti)
+- Utilizzare `state()` per definire le proprietà
+- Utilizzare `mount()` per l'inizializzazione
 - Gestire gli errori con try/catch
 - Implementare stati di loading
 

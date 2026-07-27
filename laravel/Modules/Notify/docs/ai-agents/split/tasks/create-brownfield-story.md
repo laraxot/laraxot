@@ -1,23 +1,3 @@
----
-title: "Create Brownfield Story Task"
-type: concept
-tags: [create, brownfield, story]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "create-brownfield-story create brownfield story task"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./advanced-elicitation.md"
-  - "./apply-qa-fixes.md"
-  - "./brownfield-create-epic.md"
-  - "./brownfield-create-story.md"
-  - "./correct-course.md"
-  - "./create-deep-research-prompt.md"
-  - "./create-doc.md"
-  - "./create-next-story.md"
----
-
 ### Task: create-brownfield-story
 Source: .bmad-core/tasks/create-brownfield-story.md
 - How to use: "Use task create-brownfield-story with the appropriate agent" and paste relevant parts as needed.

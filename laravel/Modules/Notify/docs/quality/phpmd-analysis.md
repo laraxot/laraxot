@@ -1,16 +1,3 @@
----
-title: "PHPMD Analysis - Modulo Notify"
-type: concept
-tags: [phpmd, analysis]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phpmd-analysis phpmd analysis - modulo notify"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./phpstan-session-report.md"
----
-
 # PHPMD Analysis - Modulo Notify
 
 ## 📊 Analisi Filosofica Errori PHPMD

@@ -6,6 +6,8 @@
     "priority": 140,
     "providers": [
         "Modules\\WhatsApp\\Providers\\WhatsAppServiceProvider",
+        "Modules\\WhatsApp\\Providers\\RouteServiceProvider",
+        "Modules\\WhatsApp\\Providers\\EventServiceProvider",
         "Modules\\WhatsApp\\Providers\\Filament\\AdminPanelProvider"
     ],
     "files": []

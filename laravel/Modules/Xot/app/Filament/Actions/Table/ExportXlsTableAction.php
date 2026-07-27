@@ -40,7 +40,7 @@ class ExportXlsTableAction extends XotBaseAction
                 $transKey = app(GetTransKeyAction::class)->execute($livewire_class);
                 $transKey .= '.fields';
                 $query = $livewire->getFilteredTableQuery();
-                if ($query === null) {
+                if (null === $query) {
                     throw new \Exception('Query is null');
                 }
                 // ->getQuery(); // Staudenmeir\LaravelCte\Query\Builder

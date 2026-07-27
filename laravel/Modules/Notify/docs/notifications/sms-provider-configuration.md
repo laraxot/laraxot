@@ -1,23 +1,3 @@
----
-title: "Configurazione Provider SMS per le Notifiche"
-type: concept
-tags: [sms, provider, configuration]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "sms-provider-configuration configurazione provider sms per le notifiche"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./errori-comuni-da-evitare-1.md"
-  - "./errori-comuni-da-evitare.md"
-  - "./index.md"
-  - "./multi-channel-notifications-1.md"
-  - "./multi-channel-notifications-2.md"
-  - "./multi-channel-notifications.md"
-  - "./netfun-sms-implementation-1.md"
-  - "./netfun-sms-implementation.md"
----
-
 # Configurazione Provider SMS per le Notifiche 
 
 Questa documentazione descrive le opzioni disponibili per l'integrazione di servizi SMS nei sistemi di notifica di <nome progetto>, con focus sui diversi provider e sulla loro configurazione.
@@ -487,6 +467,6 @@ Log::info('SMS sent', [
 
 ## Collegamenti alla Documentazione Correlata
 
-- [MULTI_CHANNEL_NOTIFICATIONS.md](./multi-channel-notifications-2.md)
-- [NOTIFICATIONS_IMPLEMENTATION_GUIDE.md](./notifications-implementation-guide-1.md)
-- [TELEGRAM_NOTIFICATIONS_GUIDE.md](./telegram-notifications-guide-1.md)
+- [MULTI_CHANNEL_NOTIFICATIONS.md](./multi_channel_notifications.md)
+- [NOTIFICATIONS_IMPLEMENTATION_GUIDE.md](./notifications_implementation_guide.md)
+- [TELEGRAM_NOTIFICATIONS_GUIDE.md](./telegram_notifications_guide.md)

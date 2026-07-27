@@ -26,10 +26,6 @@ class TableLayoutToggleHeaderAction extends XotBaseAction
             // ->icon(trans('setting::database_connection.actions.database-backup.icon'))
             // ->icon($this->listIcon)
             /*
-             * /*
-             * /*
-             * /*
-             * /*
              * @param object{layoutView?: string|null} $livewire
              */
             ->icon(function (object $livewire): string {
@@ -44,13 +40,9 @@ class TableLayoutToggleHeaderAction extends XotBaseAction
                 return $this->listIcon; // default icon
             })
             /*
-             * /*
-             * /*
-             * /*
-             * /*
              * @param object{layoutView?: string|null} $livewire
              */
-            ->action(function (object $livewire): void {
+            ->action(static function (object $livewire): void {
                 // ✅ isset() invece di property_exists() - funziona con magic properties Livewire
                 if (! isset($livewire->layoutView)) {
                     return;

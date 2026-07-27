@@ -1,23 +1,3 @@
----
-title: "Email Templates Update Guide"
-type: concept
-tags: [email, templates, update]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "email-templates-update email templates update guide"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./attachments.md"
-  - "./email-best-practices-1.md"
-  - "./email-best-practices.md"
-  - "./email-layouts-best-practices-1.md"
-  - "./email-layouts-best-practices.md"
-  - "./email-templates-best-practices-1.md"
-  - "./email-templates-best-practices.md"
-  - "./email-templates-guide-1.md"
----
-
 # Email Templates Update Guide
 
 ## Struttura Corretta per i Layout Email
@@ -104,6 +84,6 @@ I modelli base si trovano in:
 ## Documentazione Correlata
 
 - [Email Templates Structure](./EMAIL_TEMPLATES_STRUCTURE.md)
-- [Responsive Email Design](./responsive-email-templates.md)
+- [Responsive Email Design](./RESPONSIVE_EMAIL_TEMPLATES.md)
 - [Email HTML Best Practices](../EMAIL_HTML_BEST_PRACTICES.md)
 - [Email Templates Implementation](../EMAIL_TEMPLATES.md)

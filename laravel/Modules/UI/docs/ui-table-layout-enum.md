@@ -1,23 +1,3 @@
----
-title: "TableLayoutEnum - Sistema di Layout per Tabelle Filament"
-type: concept
-tags: [table, layout, enum]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "ui-table-layout-enum tablelayoutenum - sistema di layout per tabelle filament"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # TableLayoutEnum - Sistema di Layout per Tabelle Filament
 
 ## Panoramica
@@ -179,10 +159,10 @@ Seleziona le colonne appropriate in base al layout corrente.
 
 ## Collegamenti
 
-- [Documentazione Completa TableLayoutEnum](../../laravel/modules/ui/docs/table-layout-enum-complete-guide.md)
-- [Modulo UI](../../laravel/modules/ui/docs/readme.md)
+- [Documentazione Completa TableLayoutEnum](../../laravel/Modules/UI/docs/table-layout-enum-complete-guide.md)
+- [Modulo UI](../../laravel/Modules/UI/docs/README.md)
 - [Enum Standards](enum_standards.md)
 - [Filament Best Practices](filament-widget-best-practices.md)
 
 ## Ultimo Aggiornamento
-[DATE] - Documentazione TableLayoutEnum nella root docs
+2025-01-27 - Documentazione TableLayoutEnum nella root docs

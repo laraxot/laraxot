@@ -1,23 +1,3 @@
----
-title: "Sistema di Blocchi"
-type: concept
-tags: [blocks, system]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "blocks-system sistema di blocchi"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Sistema di Blocchi
 
 ## Introduzione
@@ -41,7 +21,7 @@ laravel/Modules/Cms/
 
 ### Tipi di Blocchi
 
-1. **[NavigationBlock](../laravel/modules/cms/docs/blocks/navigation-block.md)**
+1. **[NavigationBlock](../laravel/Modules/Cms/docs/blocks/navigation-block.md)**
    - Gestione menu di navigazione
    - Header e footer
    - Menu multilivello
@@ -145,9 +125,9 @@ laravel/Modules/Cms/
 
 ### Tipi di Blocchi
 
-1. **[NavigationBlock](../laravel/modules/cms/project_docs/blocks/navigation-block.md)**
-1. **[NavigationBlock](../laravel/modules/cms/project_docs/blocks/navigation-block.md)**
-1. **[NavigationBlock](../laravel/modules/cms/project_docs/blocks/navigation-block.md)**
+1. **[NavigationBlock](../laravel/Modules/Cms/project_docs/blocks/navigation-block.md)**
+1. **[NavigationBlock](../laravel/Modules/Cms/project_docs/blocks/navigation-block.md)**
+1. **[NavigationBlock](../laravel/Modules/Cms/project_docs/blocks/navigation-block.md)**
    - Gestione menu di navigazione
    - Header e footer
    - Menu multilivello

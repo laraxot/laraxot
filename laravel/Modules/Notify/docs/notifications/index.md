@@ -1,23 +1,22 @@
 ---
 title: "Indice Documentazione Notifiche"
-type: concept
-tags: [index]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "index indice documentazione notifiche"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+type: index
+tags: [notify, docs, notifications]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione notifications index indice documentazione notifiche index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
 related:
-  - "./errori-comuni-da-evitare-1.md"
-  - "./errori-comuni-da-evitare.md"
-  - "./multi-channel-notifications-1.md"
-  - "./multi-channel-notifications-2.md"
-  - "./multi-channel-notifications.md"
-  - "./netfun-sms-implementation-1.md"
-  - "./netfun-sms-implementation.md"
-  - "./notifications-implementation-guide-1.md"
+  - ../README.md
+  - ../wiki/index.md
+  - readme.md
+  - ../integrations/readme.md
+  - ../templates/readme.md
 ---
-
 # Indice Documentazione Notifiche
 
 ## Collegamenti Correlati
@@ -27,29 +26,29 @@ related:
 - [Collegamenti Documentazione](../../../../../../docs/collegamenti-documentazione.md)
 
 ## Guida Implementazione
-- [Guida Implementazione Notifiche](./notifications-implementation-guide-1.md) - Guida generale all'implementazione delle notifiche
-- [Notifiche Multi-Canale](./multi-channel-notifications-2.md) - Implementazione di notifiche su più canali
-- [Errori Comuni da Evitare](./errori-comuni-da-evitare-1.md) - Problemi comuni e come evitarli
+- [Guida Implementazione Notifiche](./notifications_implementation_guide.md) - Guida generale all'implementazione delle notifiche
+- [Notifiche Multi-Canale](./multi_channel_notifications.md) - Implementazione di notifiche su più canali
+- [Errori Comuni da Evitare](./errori_comuni_da_evitare.md) - Problemi comuni e come evitarli
 
 ## Canali di Notifica
 
 ### SMS
-- [Implementazione SMS Dettagliata](./sms-implementation-details-2.md) - Dettagli implementativi per il canale SMS
-- [Configurazione Provider SMS](./sms-provider-configuration-2.md) - Configurazione dei provider SMS
-- [Implementazione Netfun SMS](./netfun-sms-implementation-1.md) - Implementazione specifica per il provider Netfun
+- [Implementazione SMS Dettagliata](./sms_implementation_details.md) - Dettagli implementativi per il canale SMS
+- [Configurazione Provider SMS](./sms_provider_configuration.md) - Configurazione dei provider SMS
+- [Implementazione Netfun SMS](./netfun_sms_implementation.md) - Implementazione specifica per il provider Netfun
 
 ### Telegram
-- [Guida Notifiche Telegram](./telegram-notifications-guide-1.md) - Implementazione delle notifiche Telegram
+- [Guida Notifiche Telegram](./telegram_notifications_guide.md) - Implementazione delle notifiche Telegram
 
 ## Architettura e Pattern
-- [Factory Pattern per Provider](../factory-pattern-analysis-1.md) - Analisi del pattern Factory per i provider
-- [Provider vs DTO](../channel-vs-dto-provider-selection-1.md) - Selezione tra provider e DTO
-- [Architettura Provider](../provider-actions-architecture-2.md) - Architettura delle azioni provider
+- [Factory Pattern per Provider](../factory_pattern_analysis.md) - Analisi del pattern Factory per i provider
+- [Provider vs DTO](../channel_vs_dto_provider_selection.md) - Selezione tra provider e DTO
+- [Architettura Provider](../provider_actions_architecture.md) - Architettura delle azioni provider
 
 ## Documentazione Correlata
-- [Implementazione SMS](../sms-implementation-1.md) - Panoramica dell'implementazione SMS
-- [Canale WhatsApp](../whatsapp-channel-2.md) - Documentazione del canale WhatsApp
-- [Canale Telegram](../telegram-channel-2.md) - Documentazione del canale Telegram
+- [Implementazione SMS](../sms_implementation.md) - Panoramica dell'implementazione SMS
+- [Canale WhatsApp](../whatsapp_channel.md) - Documentazione del canale WhatsApp
+- [Canale Telegram](../telegram_channel.md) - Documentazione del canale Telegram
 
 ## Note Importanti
 - Quaeris utilizza il pattern Factory per la creazione delle azioni di invio messaggi

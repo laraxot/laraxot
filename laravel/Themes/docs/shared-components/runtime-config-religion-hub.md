@@ -10,7 +10,7 @@ related:
   - ./tenant-modules-statuses-religion.md
   - ./module-config-php-religion.md
   - ./module-dashboard-page-religion.md
-  - ./module-admin-panel-provider-religion.md
+  - ./module-providers-dual-registration-religion.md
   - ./spatie-permission-philosophy.md
   - ../gestionale-docs-index.md
   - ../gc-modules-runtime-matrix.md
@@ -49,15 +49,19 @@ Errore “table doesn't exist” → schema/migrazione/modello pivot, **non** co
 
 → [User — spatie-permission-migration-no-table-name](../../Modules/User/docs/wiki/concepts/spatie-permission-migration-no-table-name.md)
 
-### 3. Trinità panel — `config.php` + `AdminPanelProvider` + `Dashboard.php`
+### 3. Trinità panel + doppia registrazione provider
+
+Minimo 2 provider **identici** in `module.json` e `composer.json`:
+`{M}ServiceProvider` + `AdminPanelProvider`.
 
 ```bash
+bash bashscripts/tools/audit-module-providers-dual-registration.sh
 bash bashscripts/tools/audit-module-config-php.sh
 bash bashscripts/tools/audit-module-admin-panel-provider.sh
 bash bashscripts/tools/audit-module-dashboard-page.sh
 ```
 
-→ [module-filament-panel-triad.md](../../Modules/Xot/docs/wiki/concepts/module-filament-panel-triad.md) · [module-config-php-religion.md](./module-config-php-religion.md) · [module-admin-panel-provider-religion.md](./module-admin-panel-provider-religion.md) · [module-dashboard-page-religion.md](./module-dashboard-page-religion.md)
+→ [module-filament-panel-triad.md](../../Modules/Xot/docs/wiki/concepts/module-filament-panel-triad.md) · [module-providers-dual-registration-religion.md](./module-providers-dual-registration-religion.md) · [module-config-php-religion.md](./module-config-php-religion.md) · [module-admin-panel-provider-religion.md](./module-admin-panel-provider-religion.md) · [module-dashboard-page-religion.md](./module-dashboard-page-religion.md)
 
 ### 4. Tenant workorder — `modules_statuses.json`
 
@@ -78,6 +82,7 @@ Una sola `create_profiles_table`; legacy UUID PK → `convertIdFromUuidToBigintI
 ```bash
 php artisan config:show permission.table_names
 jq 'keys | length' laravel/config/local/workorder/modules_statuses.json
+bash bashscripts/tools/audit-module-providers-dual-registration.sh
 bash bashscripts/tools/audit-module-config-php.sh
 bash bashscripts/tools/audit-module-admin-panel-provider.sh
 bash bashscripts/tools/audit-module-dashboard-page.sh

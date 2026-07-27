@@ -1,3 +1,22 @@
+---
+title: "GitHub Issues & Discussions - FixCity Platform"
+type: index
+tags: [notify, docs, github]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione github readme github issues & discussions - fixcity platform index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../README.md
+  - ../wiki/index.md
+  - ../notifications/readme.md
+  - ../integrations/readme.md
+  - ../templates/readme.md
+---
 # GitHub Issues & Discussions - FixCity Platform
 
 > **Last Updated**: 2026-03-13  

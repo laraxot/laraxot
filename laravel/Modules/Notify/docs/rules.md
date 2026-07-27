@@ -1,23 +1,3 @@
----
-title: "Regole per lo Sviluppo"
-type: rule
-tags: [rules]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "rules regole per lo sviluppo"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Regole per lo Sviluppo
 
 ## Notifiche e Email
@@ -45,7 +25,7 @@ related:
 - ✅ Usare classi dedicate per le notifiche
 - ✅ Documentare il codice
 - ❌ Non mischiare responsabilità
-- ❌ Non usare mai il segmento `App` nei namespace, anche se il file è in `app/`. Per i Data Object usare sempre `Modules\<NomeModulo>\Datas`. Vedi [PATH_AND_NAMESPACE_RULES.md](./path-and-namespace-rules-1.md) per dettagli.
+- ❌ Non usare mai il segmento `App` nei namespace, anche se il file è in `app/`. Per i Data Object usare sempre `Modules\<NomeModulo>\Datas`. Vedi [PATH_AND_NAMESPACE_RULES.md](./path_and_namespace_rules.md) per dettagli.
 
 ### 5. Testing
 - ✅ Testare con dati validi

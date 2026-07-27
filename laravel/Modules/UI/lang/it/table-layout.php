@@ -20,7 +20,7 @@ return [
         'icon' => 'heroicon-o-squares-2x2',
     ],
     'toggle' => [
-        'label' => 'Cambia Layout!!!',
+        'label' => 'Cambia Layout',
         'tooltip' => 'Alterna tra visualizzazione lista e griglia',
         'helper_text' => 'Cambia il tipo di visualizzazione',
     ],

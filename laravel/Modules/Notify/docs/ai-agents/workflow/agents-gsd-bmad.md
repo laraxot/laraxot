@@ -1,16 +1,3 @@
----
-title: "🚀 GSD + BMAD Workflow"
-type: concept
-tags: [agents, gsd, bmad]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "agents-gsd-bmad 🚀 gsd + bmad workflow"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
----
-
 # 🚀 GSD + BMAD Workflow
 
 **File**: `.agents/docs/workflow/agents-gsd-bmad.md`  
@@ -137,7 +124,7 @@ docs/project/
 - [ ] **1. Leggi Documentazione Esistente**
   - [ ] `docs/project/` per architettura
   - [ ] `.agents/docs/` per regole AI
-  - [ ] `qwen.md`, `AGENTS.md` per contesto
+  - [ ] `QWEN.md`, `AGENTS.md` per contesto
 
 - [ ] **2. Apri GitHub Issue**
   - [ ] Descrivi problema/feature
@@ -245,7 +232,7 @@ jobs:
 - `docs/project/gsd-and-bmad-workflow.md`
 - `docs/project/gsd-agent-coordination.md`
 - `AGENTS.md`
-- `qwen.md`
+- `QWEN.md`
 
 ### Risorse Esterne
 - [GSD GitHub](https://github.com/gsd-build/get-shit-done)

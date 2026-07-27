@@ -10,7 +10,8 @@ related:
   - ./it/config/modules-statuses.md
   - ../WorkOrder/docs/modules-statuses-workorder.md
   - ../User/docs/wiki/concepts/spatie-permission-table-names.md
-  - ../Xot/docs/wiki/concepts/module-config-php-religion.md
+  - ../Xot/docs/wiki/concepts/module-admin-panel-provider-mandatory.md
+  - ../Xot/docs/wiki/concepts/module-filament-panel-triad.md
   - ../Xot/docs/wiki/concepts/basemodel-connection-religion.md
   - ../WorkOrder/docs/profile-schema-ownership.md
 ---
@@ -67,13 +68,13 @@ Ogni modulo dichiara `protected $connection = '{snake}'` nel proprio `BaseModel`
 
 **Doc:** [Xot/module-dashboard-page-mandatory.md](../Xot/docs/wiki/concepts/module-dashboard-page-mandatory.md)
 
-## 7. `app/Providers/Filament/AdminPanelProvider.php` + `module.json`
+## 7. `AdminPanelProvider` + doppia registrazione
 
-**Problema:** nessun panel `{modulo}/admin` — file assente o non in `providers[]` di `module.json`.
+**Problema:** nessun panel `{modulo}/admin` — file assente, non in `module.json`, o mancante in `composer.json`.
 
-**Regola:** `extends XotBasePanelProvider` + `protected string $module = '{Name}'` + registrazione obbligatoria in `module.json`.
+**Regola:** `extends XotBasePanelProvider` + `protected string $module` + **stessi provider** in `module.json` e `composer.json`.
 
-**Doc:** [Xot/module-admin-panel-provider-mandatory.md](../Xot/docs/wiki/concepts/module-admin-panel-provider-mandatory.md) · [trinità panel](../Xot/docs/wiki/concepts/module-filament-panel-triad.md)
+**Doc:** [module-admin-panel-provider-mandatory.md](../Xot/docs/wiki/concepts/module-admin-panel-provider-mandatory.md) · [trinità panel](../Xot/docs/wiki/concepts/module-filament-panel-triad.md) · [doppia registrazione](../../Themes/docs/shared-components/module-providers-dual-registration-religion.md)
 
 ## Perché gli audit precedenti non bastavano
 
@@ -83,13 +84,13 @@ Ogni modulo dichiara `protected $connection = '{snake}'` nel proprio `BaseModel`
 | PHPStan / migrate runtime | Navigazione Filament (`GetTenantModulesAction`) |
 | `laravel/modules_statuses.json` root | Override `config/local/workorder/modules.php` |
 
-**Regola:** nuovo modulo → trinità Filament (`config/config.php` + `AdminPanelProvider` in `module.json` + `Dashboard.php`) + **entrambi** i `modules_statuses.json` + migrazione owner se ha modelli.
+**Regola:** nuovo modulo → 2 provider allineati in `module.json` + `composer.json` + trinità Filament + **entrambi** i `modules_statuses.json` + migrazione owner se ha modelli.
 
-**Audit trinità:**
+**Audit:**
 
 ```bash
+bash bashscripts/tools/audit-module-providers-dual-registration.sh
 bash bashscripts/tools/audit-module-config-php.sh
-bash bashscripts/tools/audit-module-admin-panel-provider.sh
 bash bashscripts/tools/audit-module-admin-panel-provider.sh
 bash bashscripts/tools/audit-module-dashboard-page.sh
 ```

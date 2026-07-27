@@ -1,16 +1,34 @@
 ---
-title: "phpstan-fixes-2026-05-06"
-type: concept
-tags: [deprecated]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phpstan-fixes-2026-05-06 deprecated"
-status: deprecated
-related:
-  - "./phpstan-fixes-.md"
-  - "./phpstan-fixes-1.md"
-  - "./phpstan-fixes-2.md"
-  - "./phpstan-fixes.md"
+title: "PHPStan Fixes 2026-05-06"
+type: troubleshooting
+sources: ["phpstan_modules_initial.json"]
+confidence: verified
+created: 2026-05-06
+updated: 2026-05-06
+tags: [phpstan, notify, data, action]
 ---
 
-> Questo file è stato rinominato in [phpstan-fixes-2.md](phpstan-fixes-2.md). Non aggiungere date nel filename; usare `created/updated` nel front matter.
+# PHPStan Fixes - 2026-05-06
+
+## Issue: Modules\Notify\Actions\BuildMailMessageAction
+
+PHPStan reported:
+- `offsetAccess.nonOffsetAccessible`: `Cannot access offset 'from_email' on mixed`.
+
+## Root Cause
+`app(Get::class)` returns `mixed`. Even though `execute()` return type is known, PHPStan doesn't automatically resolve the service container output without a type hint or `@var`.
+
+## Fix Strategy
+1. Add explicit `@var` for the `$theme` object.
+
+## Issue: Modules\Notify\Datas\*
+
+PHPStan reported:
+- `missingType.property`: Properties like `$view`, `$title`, `$colors` have no type specified.
+
+## Root Cause
+In level 10, even with PHP 8.x typed properties, PHPStan might require explicit PHPDoc types for properties that are uninitialized or have complex array types.
+
+## Fix Strategy
+1. Add explicit PHPDoc `@var` for all properties reporting this error.
+2. Specify array shapes/types (e.g., `array<string, mixed>`).

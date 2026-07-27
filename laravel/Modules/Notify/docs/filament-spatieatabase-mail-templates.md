@@ -1,23 +1,3 @@
----
-title: "Analisi Repository: filament-spatie-laravel-database-mail-templates"
-type: concept
-tags: [filament, spatieatabase, mail, templates]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament-spatieatabase-mail-templates analisi repository: filament-spatie-laravel-database-mail-templates"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Analisi Repository: filament-spatie-laravel-database-mail-templates
 
 **Repository**: https://github.com/olivierguerriat/filament-spatie-laravel-database-mail-templates  

@@ -1,15 +1,6 @@
 ---
 name: llm-wiki rule
 description: Ensure every module and theme includes a `docs/wiki/` directory and related llm‑wiki scaffolding.
-related:
-  - "./00-index.md"
-  - "./bash-commands-auto-allow.md"
-  - "./multi-outcome-no-binary-fields.md"
-  - "./one-migration-per-model.md"
-  - "./phpmd-phar-installation.md"
-  - "./translation-structure-5-levels-mandatory.md"
-  - "./translation-structure-5-levels.md"
-  - "./use-models-not-db-table.md"
 ---
 
 # LLM‑Wiki Rule

@@ -1,23 +1,3 @@
----
-title: "Guida alla Migrazione di MailTemplate"
-type: concept
-tags: [mail, template, migration]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "mail-template-migration guida alla migrazione di mailtemplate"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Guida alla Migrazione di MailTemplate
 
 ## Panoramica
@@ -147,9 +127,9 @@ if (!$this->hasColumn('nuovo_campo')) {
 
 Per una comprensione completa, consultare anche:
 
-- [Struttura della Migrazione](./mail-templates/migration-structure-1.md) - Dettagli sulla struttura di migrazione
-- [Implementazione del Campo Slug](./mail-templates/slug-field-implementation-1.md) - Guida completa all'implementazione e utilizzo del campo slug
-- [Spatie Email Usage Guide](./spatie-email-usage-guide-1.md) - Come utilizzare SpatieEmail con i template
+- [Struttura della Migrazione](./mail-templates/migration_structure.md) - Dettagli sulla struttura di migrazione
+- [Implementazione del Campo Slug](./mail-templates/slug_field_implementation.md) - Guida completa all'implementazione e utilizzo del campo slug
+- [Spatie Email Usage Guide](./spatie_email_usage_guide.md) - Come utilizzare SpatieEmail con i template
 
 ## Vantaggi del Pattern XotBaseMigration
 
@@ -288,9 +268,9 @@ if (!$this->hasColumn('nuovo_campo')) {
 
 Per una comprensione completa, consultare anche:
 
-- [Struttura della Migrazione](./mail-templates/migration-structure-1.md) - Dettagli sulla struttura di migrazione
-- [Implementazione del Campo Slug](./mail-templates/slug-field-implementation-1.md) - Guida completa all'implementazione e utilizzo del campo slug
-- [Spatie Email Usage Guide](./spatie-email-usage-guide-1.md) - Come utilizzare SpatieEmail con i template
+- [Struttura della Migrazione](./mail-templates/migration_structure.md) - Dettagli sulla struttura di migrazione
+- [Implementazione del Campo Slug](./mail-templates/slug_field_implementation.md) - Guida completa all'implementazione e utilizzo del campo slug
+- [Spatie Email Usage Guide](./spatie_email_usage_guide.md) - Come utilizzare SpatieEmail con i template
 
 ## Vantaggi del Pattern XotBaseMigration
 

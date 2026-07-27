@@ -1,23 +1,3 @@
----
-title: "Bmad Orchestrator"
-type: concept
-tags: [bmad, orchestrator]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "bmad-orchestrator bmad orchestrator"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./architect.md"
-  - "./bmad-master.md"
-  - "./business-analyst.md"
-  - "./full-stack-developer.md"
-  - "./product-manager.md"
-  - "./product-owner.md"
-  - "./scrum-master.md"
-  - "./test-architect.md"
----
-
 ### BMad Master Orchestrator (id: bmad-orchestrator)
 Source: .bmad-core/agents/bmad-orchestrator.md
 

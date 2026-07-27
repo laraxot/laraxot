@@ -13,6 +13,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use Modules\Notify\Actions\Push\SendPushToDevicesAction;
+use Modules\Notify\Datas\PushNotificationData;
 use Throwable;
 use Webmozart\Assert\Assert;
 
@@ -26,14 +27,18 @@ class SendScheduledPushNotification implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    /**
+     * @return void
+     */
     public function __construct(
         private string $jobId
-    ) {}
+    ) {
+    }
 
     /**
      * Execute the job.
      */
-    public function handle(SendPushToDevicesAction $sendPushToDevicesAction): void
+    public function handle(): void
     {
         try {
             // Recupera dati notifica programmata
@@ -56,15 +61,14 @@ class SendScheduledPushNotification implements ShouldQueue
 
             $rawNotification = $notificationData['notification'] ?? [];
             Assert::isArray($rawNotification, 'Notification must be array');
-            /** @var array<string, mixed> $notification */
-            $notification = $rawNotification;
+            $notification = PushNotificationData::from($rawNotification);
 
             $rawData = $notificationData['data'] ?? [];
             Assert::isArray($rawData, 'Data must be array');
             /** @var array<string, mixed> $data */
             $data = $rawData;
 
-            $result = $sendPushToDevicesAction->execute(
+            $result = app(SendPushToDevicesAction::class)->execute(
                 $tokens,
                 $notification,
                 $data

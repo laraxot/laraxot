@@ -1,23 +1,3 @@
----
-title: "GEMINI Super Mucca"
-type: concept
-tags: [gemini, super, mucca]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "gemini-super-mucca gemini super mucca"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./01-gsd-workflow.md"
-  - "./02-bmad-workflow.md"
-  - "./03-architecture-zen.md"
-  - "./04-filament-philosophy.md"
-  - "./05-front-office-audit.md"
-  - "./06-cinematic-effects.md"
-  - "./07-mcp-tailwind-ui.md"
----
-
 # GEMINI Super Mucca
 
 > Metodologia "Super Mucca" - Laraxot Zen
@@ -123,5 +103,5 @@ Prima di toccare **qualsiasi** codice, devi comprendere:
 
 - [Indice GEMINI](./gemini-split-index.md)
 - [memories.md](./memories.md)
-- [gemini.md originale](../../gemini.md)
+- [GEMINI.md originale](../../GEMINI.md)
 - [Index principale](./index.md)

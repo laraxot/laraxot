@@ -9,10 +9,9 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Modules\Notify\Actions\NotifyTheme\Get;
 use Modules\Notify\Datas\AttachmentData;
 use Modules\Notify\Datas\NotifyThemeData;
+use function Safe\mb_convert_encoding;
 use Spatie\LaravelData\DataCollection;
 use Spatie\QueueableAction\QueueableAction;
-
-use function Safe\mb_convert_encoding;
 
 class BuildMailMessageAction
 {
@@ -61,7 +60,7 @@ class BuildMailMessageAction
         $viewParams['body_html'] = $bodyHtml;
         $viewParams['subject'] = $subject;
 
-        $email = (new MailMessage)
+        $email = (new MailMessage())
             ->from($fromAddress, $fromName)
             ->subject($subject)
             ->view($view_html, $viewParams);

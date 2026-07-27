@@ -1,15 +1,3 @@
----
-title: "Strategie di Gestione delle Traduzioni"
-type: concept
-tags: [strategies]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "strategies strategie di gestione delle traduzioni"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
----
-
 # Strategie di Gestione delle Traduzioni
 
 ## Indice

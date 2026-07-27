@@ -1,23 +1,3 @@
----
-title: "ERRORI CRITICI ContactColumn.php - Anti-Pattern da NON Ripetere MAI"
-type: concept
-tags: [contactcolumn, antis, ands]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "contactcolumn-antis-ands errori critici contactcolumn.php - anti-pattern da non ripetere mai"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # ERRORI CRITICI ContactColumn.php - Anti-Pattern da NON Ripetere MAI
 
 ## 🚨 ERRORI ARCHITETTURALI GRAVISSIMI COMMESSI

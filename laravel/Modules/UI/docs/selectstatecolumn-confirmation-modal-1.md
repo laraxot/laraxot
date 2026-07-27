@@ -1,23 +1,3 @@
----
-title: "SelectStateColumn - Aggiunta Modal di Conferma"
-type: concept
-tags: [selectstatecolumn, confirmation, modal]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "selectstatecolumn-confirmation-modal-1 selectstatecolumn - aggiunta modal di conferma"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # SelectStateColumn - Aggiunta Modal di Conferma
 
 ## Panoramica
@@ -54,7 +34,7 @@ Questo documento descrive l'implementazione di una modale di conferma con textar
 - Verificare i permessi dell'utente prima di consentire la transizione
 
 ## Documentazione Correlata
-- [SelectStateColumn.md](./selectstatecolumn.md)
+- [SelectStateColumn.md](./SelectStateColumn.md)
 - [Filament Modals Documentation](https://filamentphp.com/docs/3.x/panels/modals)
 - [State Management](./state-management.md)
 

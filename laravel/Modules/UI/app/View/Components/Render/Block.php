@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\View\Component;
 use Illuminate\View\View;
-use Modules\Cms\Actions\ResolveLocalizedBlockDataAction;
+use Modules\UI\Actions\Block\ResolveLocalizedBlockDataAction;
 use Webmozart\Assert\Assert;
 
 /**
@@ -44,22 +44,22 @@ class Block extends Component
         $view = $this->view;
         if (! view()->exists(is_string($view) ? $view : ((string) $view))) {
             $message = 'view not exists ['.$view.'] ! <pre>'.print_r($this->block, true).'</pre>';
-            $view_params = [
+            $viewParams = [
                 'title' => 'deprecated',
                 'message' => $message,
             ];
 
-            return view('ui::alert', $view_params);
+            return view('ui::alert', $viewParams);
         }
-        $view_params = $this->normalizeViewData($this->block['data'] ?? []);
-        $view_params = app(ResolveLocalizedBlockDataAction::class)->execute($view_params);
-        $view_params = $this->normalizeViewData($view_params);
+        $viewParams = $this->normalizeViewData($this->block['data'] ?? []);
+        $viewParams = app(ResolveLocalizedBlockDataAction::class)->execute($viewParams);
+        $viewParams = $this->normalizeViewData($viewParams);
         Assert::string($view, __FILE__.':'.__LINE__.' - '.class_basename(self::class));
         if (! view()->exists($view)) {
             throw new \Exception('view not found ['.$view.']');
         }
 
-        return view($view, $view_params);
+        return view($view, $viewParams);
     }
 
     /**

@@ -6,14 +6,15 @@ namespace Modules\Notify\Channels;
 
 use Exception;
 use Illuminate\Notifications\Notification;
+use Modules\Notify\Actions\SMS\SendSmsFactorSMSAction;
 use Modules\Notify\Datas\SmsData;
-use Modules\Notify\Factories\SmsActionFactory;
 
 class NetfunChannel
 {
     public function __construct(
-        private readonly SmsActionFactory $factory,
-    ) {}
+        private readonly SendSmsFactorSMSAction $action,
+    ) {
+    }
 
     /**
      * @return array<string, mixed>|null
@@ -43,8 +44,6 @@ class NetfunChannel
             'from' => '',
         ]);
 
-        $action = $this->factory->create();
-
-        return $action->execute($smsData);
+        return $this->action->execute($smsData);
     }
 }

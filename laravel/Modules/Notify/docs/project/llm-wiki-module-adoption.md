@@ -1,23 +1,3 @@
----
-title: "LLM Wiki — Adozione per Moduli e Temi"
-type: concept
-tags: [llm, wiki, module, adoption]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "llm-wiki-module-adoption llm wiki — adozione per moduli e temi"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./2-1-1-plan.md"
-  - "./2-1-context.md"
-  - "./agents.md"
-  - "./ai-agent-lessons-learned.md"
-  - "./ai-skills-and-plugins-complete.md"
-  - "./commit-message.md"
-  - "./configuration.md"
-  - "./design-comuni-bmad-master-plan.md"
----
-
 # LLM Wiki — Adozione per Moduli e Temi
 
 > Stato: adottato
@@ -33,7 +13,7 @@ Il pattern originale di Karpathy usa tre cartelle distinte alla root del progett
 project/
 ├── raw/     # fonti immutabili
 ├── wiki/    # conoscenza compilata dall'LLM
-└── schema/  # claude.md / AGENTS.md
+└── schema/  # CLAUDE.md / AGENTS.md
 ```
 
 Nel nostro caso, ogni modulo e tema ha già una cartella `docs/`. Il mapping naturale è:

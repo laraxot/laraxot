@@ -1,3 +1,22 @@
+---
+title: "AI Assistant Documentation"
+type: index
+tags: [notify, docs, ai-agents, split]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione ai agents split readme ai assistant documentation index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../../README.md
+  - ../../wiki/index.md
+  - ../../notifications/readme.md
+  - ../../integrations/readme.md
+  - ../../templates/readme.md
+---
 # AI Assistant Documentation
 
 **Purpose**: Centralized documentation for all AI assistants used in the FixCity project  
@@ -10,9 +29,9 @@
 | Assistant | Original File | Split Files | Index |
 |-----------|--------------|----|----|
 | BMad Agents | [AGENTS.md](../../../AGENTS.md) | 32 files | [agents/INDEX.md](agents/INDEX.md) + [tasks/INDEX.md](tasks/INDEX.md) |
-| Claude/Laravel Boost | [claude.md](../../../docs/claude.md) | 21 files | [claude/INDEX.md](claude/INDEX.md) |
-| Gemini | [gemini.md](../../../laravel/gemini.md) | 14 files | [gemini/INDEX.md](gemini/INDEX.md) |
-| Qwen | [qwen.md](../../../qwen.md) | 1 file (no split needed) | — |
+| Claude/Laravel Boost | [CLAUDE.md](../../../docs/CLAUDE.md) | 21 files | [claude/INDEX.md](claude/INDEX.md) |
+| Gemini | [GEMINI.md](../../../laravel/GEMINI.md) | 14 files | [gemini/INDEX.md](gemini/INDEX.md) |
+| Qwen | [QWEN.md](../../../QWEN.md) | 1 file (no split needed) | — |
 
 **Total**: 68 split files across 4 assistants
 
@@ -52,7 +71,7 @@
 │   ├── foundation-rules.md
 │   ├── ... (11 more)
 └── qwen/                       ← Qwen rules (no split needed)
-    └── (referenced from ../../../qwen.md)
+    └── (referenced from ../../../QWEN.md)
 ```
 
 ---
@@ -61,8 +80,8 @@
 
 The original files were very large:
 - **AGENTS.md**: 5,349 lines → 32 focused files
-- **claude.md**: 833 lines → 21 focused files
-- **gemini.md**: 581 lines → 14 focused files
+- **CLAUDE.md**: 833 lines → 21 focused files
+- **GEMINI.md**: 581 lines → 14 focused files
 
 Splitting improves:
 - **Readability**: Each file focuses on one topic
@@ -104,7 +123,7 @@ Every split file contains links back to:
 ### Changelog
 | Date | Change | Author |
 |------|--------|--------|
-| 2026-04-11 | Initial split of AGENTS.md, claude.md, gemini.md | Qwen |
+| 2026-04-11 | Initial split of AGENTS.md, CLAUDE.md, GEMINI.md | Qwen |
 
 ---
 

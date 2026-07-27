@@ -1,23 +1,3 @@
----
-title: "PHPStan Fixes - November 2025"
-type: concept
-tags: [phpstan, fixes, november]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phpstan-fixes-november- phpstan fixes - november 2025"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # PHPStan Fixes - November 2025
 
 **Data:** 11 Novembre 2025
@@ -205,8 +185,8 @@ Quando serve fare type narrowing di una variabile usata più volte, estrarre il 
 
 - [PHPStan Level 10 Documentation](https://phpstan.org/user-guide/rule-levels)
 - [PHPStan Compliance Report](phpstan-compliance.md)
-- [UI Module README](readme.md)
-- [Architecture Rules](architecture-rules-1.md)
+- [UI Module README](README.md)
+- [Architecture Rules](architecture_rules.md)
 
 ---
 
@@ -214,3 +194,4 @@ Quando serve fare type narrowing di una variabile usata più volte, estrarre il 
 
 ---
 
+*Ultimo aggiornamento: 11 Novembre 2025*

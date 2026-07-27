@@ -1,20 +1,3 @@
----
-title: "Risoluzione dei Problemi nelle Email"
-type: concept
-tags: [email, troubleshooting]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "email-troubleshooting risoluzione dei problemi nelle email"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./attachments-usage-1.md"
-  - "./attachments-usage-2.md"
-  - "./attachments-usage.md"
-  - "./email-troubleshooting-1.md"
-  - "./email-troubleshooting-2.md"
----
-
 # Risoluzione dei Problemi nelle Email 
 
 Questa documentazione fornisce soluzioni per i problemi comuni che possono verificarsi durante l'invio di email nel modulo Notify.
@@ -62,7 +45,7 @@ L'implementazione attuale include:
 3. **Gestione opzionale di nome e MIME type**: Personalizzazione flessibile degli allegati
 4. **Documentazione PHPDoc completa**: Miglior supporto IDE e type hints
 
-Per maggiori dettagli, consultare [ATTACHMENTS_USAGE.md](./attachments-usage-2.md).
+Per maggiori dettagli, consultare [ATTACHMENTS_USAGE.md](./attachments_usage.md).
 
 ### 2. Errore: "View [notify::emails.template-name] not found"
 
@@ -221,6 +204,6 @@ public function test_can_send_email_with_attachments()
 
 ## Collegamenti alla Documentazione Correlata
 
-- [ATTACHMENTS_USAGE.md](./attachments-usage-2.md)
-- [EMAIL_LAYOUTS_BEST_PRACTICES.md](../mail-templates/email-layouts-best-practices-1.md)
-- [SPATIE_MAIL_TEMPLATES_STRUCTURE.md](../mail-templates/spatie_mail-templates-structure-1.md)
+- [ATTACHMENTS_USAGE.md](./attachments_usage.md)
+- [EMAIL_LAYOUTS_BEST_PRACTICES.md](../mail-templates/email_layouts_best_practices.md)
+- [SPATIE_MAIL_TEMPLATES_STRUCTURE.md](../mail-templates/spatie_mail_templates_structure.md)

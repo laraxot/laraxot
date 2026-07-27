@@ -34,7 +34,12 @@ class Pdf
         Assert::string($file_name, __FILE__.':'.__LINE__.' - '.class_basename(self::class));
         $file_path = Storage::disk('cache')->path($file_name);
 
-        app(HtmlToPdfAction::class)->execute($html, 'file', 'P', $file_path);
+        app(HtmlToPdfAction::class)->execute(
+            filename: $file_path,
+            html: $html,
+            out: 'file',
+            pdforientation: 'P',
+        );
 
         return AttachmentData::from([
             'path' => $file_path,

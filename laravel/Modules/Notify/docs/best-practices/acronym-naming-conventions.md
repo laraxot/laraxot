@@ -1,23 +1,22 @@
 ---
 title: "Convenzioni di Naming per Acronimi"
 type: concept
-tags: [acronym, naming, conventions]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "acronym-naming-conventions convenzioni di naming per acronimi"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+tags: [notify, docs, best-practices, acronym, naming, conventions]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione best practices acronym naming conventions convenzioni di naming per acronimi frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
 related:
-  - "./filament-naming-conventions.md"
-  - "./filament-template-conventions.md"
-  - "./form-schema-conventions.md"
-  - "./inheritance-conventions.md"
-  - "./kdown-linking-conventions.md"
-  - "./laravel-path-conventions.md"
-  - "./markdown-linking-conventions.md"
-  - "./naming-conventions.md"
+  - ../README.md
+  - ../architecture/README.md
+  - ../conventions/README.md
+  - ../rules/README.md
+  - naming-conventions.md
 ---
-
 # Convenzioni di Naming per Acronimi 
 
 ## Regola Fondamentale

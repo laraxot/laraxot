@@ -1,23 +1,3 @@
----
-title: "Working with Claude"
-type: concept
-tags: [working, claude]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "working-with-claude working with claude"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./01-gsd-workflow.md"
-  - "./02-bmad-workflow.md"
-  - "./03-architecture-zen.md"
-  - "./04-filament-philosophy.md"
-  - "./05-front-office-audit.md"
-  - "./06-cinematic-effects.md"
-  - "./07-mcp-tailwind-ui.md"
----
-
 # Working with Claude
 
 ## Expectations
@@ -30,7 +10,7 @@ When working with my code:
 4. **Ask clarifying questions** when requirements are ambiguous
 5. **Think from first principles** - don't make assumptions
 6. **Assess refactoring after every green** - Look for opportunities to improve code structure, but only refactor if it adds value
-7. **Keep project docs current** - Update claude.md whenever you introduce meaningful changes.
+7. **Keep project docs current** - Update CLAUDE.md whenever you introduce meaningful changes.
 
    **At the end of every significant change, ask: "What do I wish I'd known at the start?"**
 

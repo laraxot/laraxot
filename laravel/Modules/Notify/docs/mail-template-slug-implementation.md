@@ -1,30 +1,10 @@
----
-title: "Implementazione del Campo Slug in MailTemplate"
-type: concept
-tags: [mail, template, slug, implementation]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "mail-template-slug-implementation implementazione del campo slug in mailtemplate"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Implementazione del Campo Slug in MailTemplate
 
 ## Collegamenti correlati
 
 - [README del modulo Notify](./readme.md)
-- [Guida all'utilizzo di SpatieEmail](./spatie-email-usage-guide-1.md)
-- [Documentazione Template Email](./email-templates.md)
+- [Guida all'utilizzo di SpatieEmail](./spatie_email_usage_guide.md)
+- [Documentazione Template Email](./email_templates.md)
 - [Documentazione Root](../../../../../docs/collegamenti-documentazione.md)
 
 ## Approccio Corretto per l'Implementazione

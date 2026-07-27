@@ -1,23 +1,3 @@
----
-title: "Progresso Standardizzazione Traduzioni"
-type: rule
-tags: [translation, standards, progress]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "translation-standards-progress progresso standardizzazione traduzioni"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Progresso Standardizzazione Traduzioni
 
 ## Stato Attuale - 12/05/2025
@@ -99,9 +79,9 @@ related:
    - [Best Practices per le Traduzioni](../../Lang/docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
 
 2. **Guide Specifiche per Notify**
-   - [Convenzioni di Traduzione nel Modulo Notify](./translation-conventions.md)
-   - [Regole di Naming per i File di Traduzione](./translation-file-naming-rules.md)
-   - [Guida alla Struttura dei File di Traduzione](./translation-file-structure-guide.md)
+   - [Convenzioni di Traduzione nel Modulo Notify](./TRANSLATION_CONVENTIONS.md)
+   - [Regole di Naming per i File di Traduzione](./TRANSLATION_FILE_NAMING_RULES.md)
+   - [Guida alla Struttura dei File di Traduzione](./TRANSLATION_FILE_STRUCTURE_GUIDE.md)
 
 ## Appendice: Elenco Completo dei File Non Conformi
 
@@ -199,9 +179,9 @@ Modules/Notify/lang/it/create_mail_template.php
    - [Best Practices per le Traduzioni](../../Lang/docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
 
 2. **Guide Specifiche per Notify**
-   - [Convenzioni di Traduzione nel Modulo Notify](./translation-conventions.md)
-   - [Regole di Naming per i File di Traduzione](./translation-file-naming-rules.md)
-   - [Guida alla Struttura dei File di Traduzione](./translation-file-structure-guide.md)
+   - [Convenzioni di Traduzione nel Modulo Notify](./TRANSLATION_CONVENTIONS.md)
+   - [Regole di Naming per i File di Traduzione](./TRANSLATION_FILE_NAMING_RULES.md)
+   - [Guida alla Struttura dei File di Traduzione](./TRANSLATION_FILE_STRUCTURE_GUIDE.md)
 
 ## Appendice: Elenco Completo dei File Non Conformi
 

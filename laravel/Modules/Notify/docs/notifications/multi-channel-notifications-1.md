@@ -1,23 +1,3 @@
----
-title: "Implementazione di Notifiche Multi-Canale"
-type: concept
-tags: [multi, channel, notifications]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "multi-channel-notifications-1 implementazione di notifiche multi-canale"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./errori-comuni-da-evitare-1.md"
-  - "./errori-comuni-da-evitare.md"
-  - "./index.md"
-  - "./multi-channel-notifications-2.md"
-  - "./multi-channel-notifications.md"
-  - "./netfun-sms-implementation-1.md"
-  - "./netfun-sms-implementation.md"
-  - "./notifications-implementation-guide-1.md"
----
-
 # Implementazione di Notifiche Multi-Canale
 
 Questa documentazione descrive come implementare correttamente notifiche multi-canale (email, SMS, Telegram) nel modulo Notify di <nome progetto>.
@@ -810,6 +790,6 @@ TELEGRAM_BOT_TOKEN=12345:ABC...
 
 ## Collegamenti alla Documentazione Correlata
 
-- [NOTIFICATIONS_IMPLEMENTATION_GUIDE.md](./notifications-implementation-guide-1.md)
-- [SMS_PROVIDER_CONFIGURATION.md](./sms-provider-configuration-2.md)
-- [TELEGRAM_NOTIFICATIONS_GUIDE.md](./telegram-notifications-guide-1.md)
+- [NOTIFICATIONS_IMPLEMENTATION_GUIDE.md](./notifications_implementation_guide.md)
+- [SMS_PROVIDER_CONFIGURATION.md](./sms_provider_configuration.md)
+- [TELEGRAM_NOTIFICATIONS_GUIDE.md](./telegram_notifications_guide.md)

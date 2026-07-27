@@ -1,23 +1,22 @@
 ---
 title: "XotBasePivot - Strategia di Implementazione Progetto"
 type: concept
-tags: [xotbasepivot, strategy]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "xotbasepivot-strategy xotbasepivot - strategia di implementazione progetto"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+tags: [notify, docs, architecture, xotbasepivot, strategy]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione architecture xotbasepivot strategy xotbasepivot - strategia di implementazione progetto frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
 related:
-  - "./config-structure.md"
-  - "./document-root-architecture.md"
-  - "./dto-structure-conventions.md"
-  - "./dto-structure-rules.md"
-  - "./interface-structure-clarification.md"
-  - "./mail-templates-structure.md"
-  - "./queueable-action-pattern.md"
-  - "./sms-config-structure.md"
+  - ../README.md
+  - README.md
+  - ../conventions/README.md
+  - ../rules/README.md
+  - ../best-practices/naming-conventions.md
 ---
-
 # XotBasePivot - Strategia di Implementazione Progetto
 
 ## 🎯 Overview

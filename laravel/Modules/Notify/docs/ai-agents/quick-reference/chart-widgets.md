@@ -1,19 +1,3 @@
----
-title: "Quick Reference - Chart Widgets"
-type: concept
-tags: [chart, widgets]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "chart-widgets quick reference - chart widgets"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./filament.md"
-  - "./queue-jobs.md"
-  - "./tenant-config.md"
----
-
 # Quick Reference - Chart Widgets
 
 ## Errori comuni

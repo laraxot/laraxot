@@ -3,11 +3,7 @@ title: "html2pdf laravel — puntatore"
 type: reference
 updated: 2026-05-21
 related:
-  - "./advanced.md"
-  - "./index.md"
-  - "./security.md"
-  - "./styling.md"
-  - "./usage.md"
+  - "../../../Media/docs/html2pdf/laravel.md"
 ---
 
 # Html2Pdf — laravel

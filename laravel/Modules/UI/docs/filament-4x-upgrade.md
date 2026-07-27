@@ -1,25 +1,6 @@
----
-title: "Filament 4.x Upgrade - Modulo UI"
-type: concept
-tags: [filament, upgrade]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament-4x-upgrade filament 4.x upgrade - modulo ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Filament 4.x Upgrade - Modulo UI
 
+**Data**: 2025-09-30
 **Status**: ✅ COMPLETATO
 **Versione Filament**: 4.0.20
 
@@ -164,10 +145,11 @@ La view `ui::filament.widgets.user-calendar` deve essere aggiornata per mostrare
 3. **Funzionalità**: Metodi `fetchEvents()`, `getFormSchema()`, `onDateSelect()` sono pronti per la riattivazione
 4. **Testing**: Testare approfonditamente il widget quando il pacchetto sarà aggiornato
 
-*Ultimo aggiornamento: [DATE]*
+*Ultimo aggiornamento: 2025-09-30*
 *Modulo UI compatibile con Filament 4.0.20*
 # Filament 4.x Upgrade - Modulo UI
 
+**Data**: 2025-09-30
 **Status**: ✅ COMPLETATO
 **Versione Filament**: 4.0.20
 
@@ -312,5 +294,5 @@ La view `ui::filament.widgets.user-calendar` deve essere aggiornata per mostrare
 3. **Funzionalità**: Metodi `fetchEvents()`, `getFormSchema()`, `onDateSelect()` sono pronti per la riattivazione
 4. **Testing**: Testare approfonditamente il widget quando il pacchetto sarà aggiornato
 
-*Ultimo aggiornamento: [DATE]*
+*Ultimo aggiornamento: 2025-09-30*
 *Modulo UI compatibile con Filament 4.0.20*

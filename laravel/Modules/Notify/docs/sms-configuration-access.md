@@ -1,23 +1,3 @@
----
-title: "Pattern di Accesso alla Configurazione SMS"
-type: concept
-tags: [sms, configuration, access]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "sms-configuration-access pattern di accesso alla configurazione sms"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Pattern di Accesso alla Configurazione SMS
 
 ## Problema Identificato
@@ -60,7 +40,7 @@ $timeout = (int) config('sms.timeout', 30);
 1. **Coerenza**: Tutte le configurazioni relative agli SMS devono provenire dal file `config/sms.php`
 2. **Modularità**: Ogni modulo gestisce le proprie configurazioni
 3. **Manutenibilità**: Facilita la manutenzione avendo un'unica fonte di verità per le configurazioni
-4. **Standardizzazione**: Segue la struttura standardizzata documentata in [SMS_CONFIG_STRUCTURE.md](./sms-config-structure.md)
+4. **Standardizzazione**: Segue la struttura standardizzata documentata in [SMS_CONFIG_STRUCTURE.md](./sms_config_structure.md)
 
 ## Checklist di Verifica
 
@@ -74,6 +54,6 @@ Per ogni azione SMS, verificare che:
 
 ## Collegamenti
 
-- [Struttura della Configurazione SMS](./sms-config-structure.md)
-- [Requisiti di Configurazione Netfun](./netfun-config-requirements-1.md)
-- [Pattern Factory per SMS](./sms-action-factory-analysis-1.md)
+- [Struttura della Configurazione SMS](./sms_config_structure.md)
+- [Requisiti di Configurazione Netfun](./netfun_config_requirements.md)
+- [Pattern Factory per SMS](./sms_action_factory_analysis.md)

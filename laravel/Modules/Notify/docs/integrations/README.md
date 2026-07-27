@@ -1,3 +1,22 @@
+---
+title: "Integrazioni"
+type: index
+tags: [notify, docs, integrations]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione integrations readme integrazioni index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../README.md
+  - ../wiki/index.md
+  - ../notifications/readme.md
+  - readme.md
+  - ../templates/readme.md
+---
 # Integrazioni
 
 ## Panoramica

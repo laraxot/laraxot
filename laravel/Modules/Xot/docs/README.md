@@ -16,7 +16,7 @@ updated: 2026-07-27
 
 > **🚀 Xot Module**: Framework base e cuore architetturale di Laraxot.
 
-**Wiki operativo (2026-07-27):** [wiki/index.md](./wiki/index.md) — `config/config.php`, **`Filament/Pages/Dashboard.php`**, `BaseModel::$connection`, tenant `modules_statuses`.
+**Wiki operativo (2026-07-27):** [wiki/index.md](./wiki/index.md) — trinità panel (`config.php` + `AdminPanelProvider` + `Dashboard.php`), tenant `modules_statuses`.
 
 ## 📋 Overview
 

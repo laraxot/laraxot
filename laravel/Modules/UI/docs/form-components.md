@@ -1,23 +1,3 @@
----
-title: "Componenti Form"
-type: concept
-tags: [form, components]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "form-components componenti form"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Componenti Form
 
 ## Introduzione
@@ -28,7 +8,7 @@ Un componente avanzato per la selezione di date che mostra un calendario inline 
 ```php
 use Modules\UI\Filament\Forms\Components\InlineDatePicker;
 InlineDatePicker::make('appointment_date')
-    ->enabledDates(['[DATE]', '[DATE]', '[DATE]'])
+    ->enabledDates(['2025-06-05', '2025-06-21', '2025-06-25'])
     ->calendarConfig([
         'locale' => 'it',
         'firstDayOfWeek' => 1, // Lunedì come primo giorno della settimana
@@ -80,7 +60,7 @@ Lo stile del componente può essere personalizzato sovrascrivendo le classi CSS 
 // Ottenere le date abilitate
 $enabledDates = $datePicker->getEnabledDates();
 // Verificare se una data è abilitata
-$isEnabled = $datePicker->isDateEnabled('[DATE]');
+$isEnabled = $datePicker->isDateEnabled('2025-06-15');
 // Generare la griglia di un mese specifico
 $monthGrid = $datePicker->generateMonthGrid(2025, 6);
 #### Best Practice
@@ -224,13 +204,13 @@ form.addEventListener('submit', (e) => {
 - [Componenti Table](./table-components.md)
 - [Componenti Chart](./chart-components.md)
 - [Componenti Layout](./layout-components.md)
-- [Documentazione Frontend](../cms/project_docs/frontend-architecture.md)
+- [Documentazione Frontend](../Cms/project_docs/frontend-architecture.md)
 ## Collegamenti tra versioni di form-components.md
-* [form-components.md](../../../ui/project_docs/form-components.md)
-* [form-components.md](../../../ui/project_docs/roadmap/form-components.md)
-- [Documentazione Frontend](../cms/docs/frontend-architecture.md)
-* [form-components.md](../../../ui/docs/form-components.md)
-* [form-components.md](../../../ui/docs/roadmap/form-components.md)
+* [form-components.md](../../../UI/project_docs/form-components.md)
+* [form-components.md](../../../UI/project_docs/roadmap/form-components.md)
+- [Documentazione Frontend](../Cms/docs/frontend-architecture.md)
+* [form-components.md](../../../UI/docs/form-components.md)
+* [form-components.md](../../../UI/docs/roadmap/form-components.md)
 # Componenti Form
 
 ## Introduzione
@@ -247,7 +227,7 @@ Un componente avanzato per la selezione di date che mostra un calendario inline 
 use Modules\UI\Filament\Forms\Components\InlineDatePicker;
 
 InlineDatePicker::make('appointment_date')
-    ->enabledDates(['[DATE]', '[DATE]', '[DATE]'])
+    ->enabledDates(['2025-06-05', '2025-06-21', '2025-06-25'])
     ->calendarConfig([
         'locale' => 'it',
         'firstDayOfWeek' => 1, // Lunedì come primo giorno della settimana
@@ -320,7 +300,7 @@ InlineDatePicker::make('appointment_date')
 $enabledDates = $datePicker->getEnabledDates();
 
 // Verificare se una data è abilitata
-$isEnabled = $datePicker->isDateEnabled('[DATE]');
+$isEnabled = $datePicker->isDateEnabled('2025-06-15');
 
 // Generare la griglia di un mese specifico
 $monthGrid = $datePicker->generateMonthGrid(2025, 6);
@@ -521,7 +501,7 @@ form.addEventListener('submit', (e) => {
 - [Componenti Table](./table-components.md)
 - [Componenti Chart](./chart-components.md)
 - [Componenti Layout](./layout-components.md)
-- [Documentazione Frontend](../cms/project_docs/frontend-architecture.md)
+- [Documentazione Frontend](../Cms/project_docs/frontend-architecture.md)
 ## Collegamenti tra versioni di form-components.md
-* [form-components.md](../../../ui/project_docs/form-components.md)
-* [form-components.md](../../../ui/project_docs/roadmap/form-components.md)
+* [form-components.md](../../../UI/project_docs/form-components.md)
+* [form-components.md](../../../UI/project_docs/roadmap/form-components.md)

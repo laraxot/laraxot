@@ -1,23 +1,3 @@
----
-title: "Gestione degli Allegati nelle Email"
-type: concept
-tags: [attachments]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "attachments gestione degli allegati nelle email"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./email-best-practices-1.md"
-  - "./email-best-practices.md"
-  - "./email-layouts-best-practices-1.md"
-  - "./email-layouts-best-practices.md"
-  - "./email-templates-best-practices-1.md"
-  - "./email-templates-best-practices.md"
-  - "./email-templates-guide-1.md"
-  - "./email-templates-guide.md"
----
-
 # Gestione degli Allegati nelle Email
 
 ## Implementazione Corretta

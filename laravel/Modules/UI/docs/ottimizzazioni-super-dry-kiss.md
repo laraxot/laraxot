@@ -1,23 +1,3 @@
----
-title: "Ottimizzazioni Super DRY + KISS - Modulo UI"
-type: concept
-tags: [ottimizzazioni, super, dry, kiss]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "ottimizzazioni-super-dry-kiss ottimizzazioni super dry + kiss - modulo ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Ottimizzazioni Super DRY + KISS - Modulo UI
 
 ## 🎯 Panoramica
@@ -311,10 +291,10 @@ class ExampleComponent extends Component
 
 ## 🔗 Collegamenti
 
-- [Documentazione Core](../../../../docs/core/)
-- [Best Practices Filament](../../../../docs/core/filament-best-practices.md)
-- [Convenzioni Sistema](../../../../docs/core/conventions.md)
-- [Template Modulo](../../../../docs/templates/module-template.md)
+- [Documentazione Core](../../../docs/core/)
+- [Best Practices Filament](../../../docs/core/filament-best-practices.md)
+- [Convenzioni Sistema](../../../docs/core/conventions.md)
+- [Template Modulo](../../../docs/templates/module-template.md)
 
 ---
 

@@ -1,23 +1,3 @@
----
-title: "Design Comuni Conversion Roadmap"
-type: concept
-tags: [design, conversion, roadmap]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "design-conversion-roadmap design comuni conversion roadmap"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./agents.md"
-  - "./changelog.md"
-  - "./claude.md"
-  - "./design-conversion-roadmap-1.md"
-  - "./files-created-session-007-1.md"
-  - "./files-created-session-007.md"
-  - "./files-created-session-replikate.md"
-  - "./firebase-1.md"
----
-
 # Design Comuni Conversion Roadmap
 
 **Status**: 🟢 Phase 1 Complete - Visual Parity Assessment Done
@@ -131,7 +111,7 @@ related:
 ### For Every Page (Automated)
 ```
 laravel/Themes/Sixteen/docs/pages/<page-name>/
-├── DETAILED-analysis.md           # Metrics and recommendations
+├── DETAILED-ANALYSIS.md           # Metrics and recommendations
 ├── HTML-STRUCTURE-DIFF.md         # Element comparison
 ├── VISUAL-COMPARISON.md           # Screenshots
 ├── local-full.png                 # Full page local
@@ -274,7 +254,7 @@ node bashscripts/github/create-design-issues.mjs
 node bashscripts/analysis/page-detailed-analysis.mjs persona
 
 # 4. View the analysis
-open laravel/Themes/Sixteen/docs/pages/persona/DETAILED-analysis.md
+open laravel/Themes/Sixteen/docs/pages/persona/DETAILED-ANALYSIS.md
 ```
 
 ### This Week (Complete Phase 1-2)
@@ -306,7 +286,7 @@ open laravel/Themes/Sixteen/docs/pages/persona/DETAILED-analysis.md
 - Screenshots: Attach before/after screenshots to issues
 
 ### Documentation
-- Keep `docs/pages/<page>/DETAILED-analysis.md` updated
+- Keep `docs/pages/<page>/DETAILED-ANALYSIS.md` updated
 - Add CSS change notes directly in issues
 - Link related issues (e.g., similar form pages)
 

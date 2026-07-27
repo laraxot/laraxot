@@ -1,15 +1,3 @@
----
-title: "🔧 Console Commands FixCity"
-type: concept
-tags: [commands]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "commands 🔧 console commands fixcity"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
----
-
 # 🔧 Console Commands FixCity
 
 > **Laravel 11**: Comandi auto-registrati da `app/Console/Commands/`

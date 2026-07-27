@@ -58,9 +58,6 @@ _docs/
 
 # Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
 docs/archive/
-docs/phpstan/
-docs/legacy/
-
 # Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
 *~HEAD
 *~BASE
@@ -71,11 +68,19 @@ docs/legacy/
 *~head
 
 agentdb.rvf
+
+# Pest + audit-coverage bridge (claude-audit — path /tests/ nel matcher)
+!tests/
+!tests/**
+
+tests/AuditCoverage/*
+
+# claude-audit bridge (non committare)
 audit-coverage/
+tests/AuditCoverage/*
+
+# Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
 .cursor/
+.devcontainer/
 .vscode/
 .windsurf/
-.devcontainer/
-.claude-audit/
-.claude-audit/
-tests/AuditCoverage

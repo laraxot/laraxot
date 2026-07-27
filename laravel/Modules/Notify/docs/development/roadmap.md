@@ -1,16 +1,3 @@
----
-title: "Notify Module Roadmap"
-type: concept
-tags: [roadmap]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "roadmap notify module roadmap"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./roadmap-root-symlink.md"
----
-
 # Notify Module Roadmap
 
 ## Module Progress Overview

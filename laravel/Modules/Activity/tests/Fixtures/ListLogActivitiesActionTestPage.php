@@ -10,7 +10,6 @@ use Webmozart\Assert\Assert;
 
 final class ListLogActivitiesActionTestPage extends XotBaseListRecords
 {
-    /** @var class-string<XotBaseResource> */
     private static string $resourceClass = ListLogActivitiesActionTestResource::class;
 
     /**
@@ -22,7 +21,7 @@ final class ListLogActivitiesActionTestPage extends XotBaseListRecords
 
         self::$resourceClass = $resourceClass;
 
-        return new self;
+        return new self();
     }
 
     /**

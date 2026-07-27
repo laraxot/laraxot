@@ -1,23 +1,3 @@
----
-title: "🧘 Zen Seasonal Strategy - Notify & Xot"
-type: concept
-tags: [zen, strategy]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "zen-strategy 🧘 zen seasonal strategy - notify & xot"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./channel-enum-implementation-complete.md"
-  - "./channel-enum-implementation-update.md"
-  - "./channel-enum-refactoring.md"
-  - "./extract-method-pattern.md"
-  - "./final-verification-report-channel-enum.md"
-  - "./quality-assurance-report.md"
-  - "./record-notification-constructor-slug.md"
-  - "./record-notification-zen-constructor.md"
----
-
 # 🧘 Zen Seasonal Strategy - Notify & Xot
 
 ## 🕉️ Philosophy

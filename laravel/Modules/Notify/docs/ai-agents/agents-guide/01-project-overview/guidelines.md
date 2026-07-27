@@ -1,18 +1,3 @@
----
-title: "Guidelines for Claude/Gemini"
-type: guide
-tags: [guidelines]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "guidelines guidelines for claude/gemini"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./links.md"
-  - "./project-overview.md"
----
-
 # Guidelines for Claude/Gemini
 
 - **ALWAYS use short array syntax `[]`** - NEVER use `array()` in PHP files.

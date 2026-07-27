@@ -1,20 +1,3 @@
----
-title: "Homepage Visual Comparison - CSS Fixes Required"
-type: concept
-tags: [visual, comparison]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "visual-comparison homepage visual comparison - css fixes required"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./body-structure-parity.md"
-  - "./homepage-comparison.md"
-  - "./index.md"
-  - "./results.md"
-  - "./status.md"
----
-
 # Homepage Visual Comparison - CSS Fixes Required
 
 ## Screenshots Analysis

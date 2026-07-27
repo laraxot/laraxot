@@ -1,15 +1,3 @@
----
-title: "Argomenti Page Analysis"
-type: concept
-tags: [argomenti]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "argomenti argomenti page analysis"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
----
-
 # Argomenti Page Analysis
 
 ## Status: IN PROGRESS

@@ -1,15 +1,3 @@
----
-title: "Apache VirtualHost - fixcity.local"
-type: concept
-tags: [vhost, fixcity]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "vhost-fixcity apache virtualhost - fixcity.local"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
----
-
 # Apache VirtualHost - fixcity.local
 
 **Status**: ✅ Active  

@@ -35,8 +35,6 @@ final class IconStateSplitColumn extends XotBaseColumn
      *
      * @param string $stateClass The state machine class (e.g., AppointmentState::class)
      * @param string $modelClass The model class (e.g., Appointment::class)
-     * @param string $stateClass The state machine class (e.g., AppointmentState::class)
-     * @param string $modelClass The model class (e.g., Appointment::class)
      */
     public function stateClass(string $stateClass, string $modelClass): static
     {
@@ -223,7 +221,6 @@ final class IconStateSplitColumn extends XotBaseColumn
     }
 
     /**
-     * @param array{class: StateContract, icon: string, label: string, color: string, tooltip: string} $stateData
      * @param array{class: StateContract, icon: string, label: string, color: string, tooltip: string} $stateData
      */
     private function getTransitionAction(string $stateKey, array $stateData): ?Action

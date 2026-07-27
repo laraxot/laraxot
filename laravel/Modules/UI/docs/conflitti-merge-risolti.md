@@ -1,26 +1,6 @@
----
-title: "Conflitti di Merge Risolti nel Modulo UI"
-type: concept
-tags: [conflitti, merge, risolti]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "conflitti-merge-risolti conflitti di merge risolti nel modulo ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Conflitti di Merge Risolti nel Modulo UI
 
-## Conflitti Risolti ([DATE])
+## Conflitti Risolti (2025-05-13)
 
 ### 1. UIServiceProvider.php
 
@@ -76,15 +56,15 @@ La strategia adottata per la risoluzione dei conflitti si è basata sui seguenti
 Questa documentazione integra le informazioni sui conflitti risolti, fornendo dettagli sui problemi, le soluzioni adottate e le motivazioni, per mantenere la memoria storica delle scelte e facilitare la comprensione dell'evoluzione del sistema.
 
 ## Backlink
-- [Torna a docs/links.md](../../../../../docs/links.md)
-- [Vedi anche: UI/docs/README.md](./readme.md)
-- [Vedi anche: Xot/docs/README.md](../../xot/docs/readme.md)
-- [Vedi anche: Blog/docs/README.md](../../blog/docs/readme.md)
-- [Vedi anche: Cms/docs/README.md](../../cms/docs/readme.md)
-- [Vedi anche: Comment/docs/README.md](../../comment/docs/readme.md)
+- [Torna a docs/links.md](../../../../docs/links.md)
+- [Vedi anche: UI/docs/README.md](./README.md)
+- [Vedi anche: Xot/docs/README.md](../../Xot/docs/README.md)
+- [Vedi anche: Blog/docs/README.md](../../Blog/docs/README.md)
+- [Vedi anche: Cms/docs/README.md](../../Cms/docs/README.md)
+- [Vedi anche: Comment/docs/README.md](../../Comment/docs/README.md)
 # Conflitti di Merge Risolti nel Modulo UI
 
-## Conflitti Risolti ([DATE])
+## Conflitti Risolti (2025-05-13)
 
 ### 1. UIServiceProvider.php
 
@@ -140,9 +120,9 @@ La strategia adottata per la risoluzione dei conflitti si è basata sui seguenti
 Questa documentazione integra le informazioni sui conflitti risolti, fornendo dettagli sui problemi, le soluzioni adottate e le motivazioni, per mantenere la memoria storica delle scelte e facilitare la comprensione dell'evoluzione del sistema.
 
 ## Backlink
-- [Torna a docs/links.md](../../../../../docs/links.md)
-- [Vedi anche: UI/docs/README.md](./readme.md)
-- [Vedi anche: Xot/docs/README.md](../../xot/docs/readme.md)
-- [Vedi anche: Blog/docs/README.md](../../blog/docs/readme.md)
-- [Vedi anche: Cms/docs/README.md](../../cms/docs/readme.md)
-- [Vedi anche: Comment/docs/README.md](../../comment/docs/readme.md)
+- [Torna a docs/links.md](../../../../docs/links.md)
+- [Vedi anche: UI/docs/README.md](./README.md)
+- [Vedi anche: Xot/docs/README.md](../../Xot/docs/README.md)
+- [Vedi anche: Blog/docs/README.md](../../Blog/docs/README.md)
+- [Vedi anche: Cms/docs/README.md](../../Cms/docs/README.md)
+- [Vedi anche: Comment/docs/README.md](../../Comment/docs/README.md)

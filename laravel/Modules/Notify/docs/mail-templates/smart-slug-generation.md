@@ -1,23 +1,3 @@
----
-title: "Generazione Intelligente di Slug in Filament"
-type: concept
-tags: [smart, slug, generation]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "smart-slug-generation generazione intelligente di slug in filament"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./attachments.md"
-  - "./email-best-practices-1.md"
-  - "./email-best-practices.md"
-  - "./email-layouts-best-practices-1.md"
-  - "./email-layouts-best-practices.md"
-  - "./email-templates-best-practices-1.md"
-  - "./email-templates-best-practices.md"
-  - "./email-templates-guide-1.md"
----
-
 # Generazione Intelligente di Slug in Filament
 
 ## Introduzione
@@ -188,7 +168,7 @@ public static function getFormSchema(): array
 
 ### 1. Pacchetto TitleWithSlugInput
 
-Come documentato in [TITLE_WITH_SLUG_COMPONENT.md](./title-with-slug-component-1.md), il pacchetto `filament-title-with-slug` offre funzionalità simili con un'interfaccia più ricca. Tuttavia, l'approccio presentato qui può essere implementato senza dipendenze aggiuntive.
+Come documentato in [TITLE_WITH_SLUG_COMPONENT.md](./title_with_slug_component.md), il pacchetto `filament-title-with-slug` offre funzionalità simili con un'interfaccia più ricca. Tuttavia, l'approccio presentato qui può essere implementato senza dipendenze aggiuntive.
 
 ### 2. Reindirizzamenti Automatici
 
@@ -209,6 +189,6 @@ Per il modulo Notify di <nome progetto>, questa soluzione rappresenta un equilib
 
 - [Articolo Laravel News](https://laravel-news.com/generating-slugs-from-a-title-in-filament)
 - [Documentazione Filament Forms](https://filamentphp.com/docs/3.x/forms/advanced)
-- [Implementazione Modello con Slug](./model-slug-implementation-1.md)
-- [Componente TitleWithSlug](./title-with-slug-component-1.md)
-- [Miglioramenti UI/UX per Slug](./ui-ux-enhancements-1.md)
+- [Implementazione Modello con Slug](./model_slug_implementation.md)
+- [Componente TitleWithSlug](./title_with_slug_component.md)
+- [Miglioramenti UI/UX per Slug](./ui_ux_enhancements.md)

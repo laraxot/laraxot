@@ -1,23 +1,3 @@
----
-title: "Document an Existing Project"
-type: concept
-tags: [document, project]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "document-project document an existing project"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./advanced-elicitation.md"
-  - "./apply-qa-fixes.md"
-  - "./brownfield-create-epic.md"
-  - "./brownfield-create-story.md"
-  - "./correct-course.md"
-  - "./create-brownfield-story.md"
-  - "./create-deep-research-prompt.md"
-  - "./create-doc.md"
----
-
 ### Task: document-project
 Source: .bmad-core/tasks/document-project.md
 - How to use: "Use task document-project with the appropriate agent" and paste relevant parts as needed.

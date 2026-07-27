@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Filament\Forms\Components;
 
+use Filament\Forms\Components\Select;
 use Illuminate\Support\Arr;
 use Modules\Xot\Actions\File\AssetAction;
-use Modules\Xot\Filament\Forms\Components\XotBaseSelect;
 
 /**
  * National Flag Select Component.
@@ -14,7 +14,7 @@ use Modules\Xot\Filament\Forms\Components\XotBaseSelect;
  * A Filament Select component that displays countries with their flags
  * and supports searching by country name using localized translations.
  */
-class NationalFlagSelect extends XotBaseSelect
+class NationalFlagSelect extends Select
 {
     /**
      * Set up the component configuration.

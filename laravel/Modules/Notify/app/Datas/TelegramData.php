@@ -24,6 +24,8 @@ class TelegramData extends Data
      * @param  array<string, mixed>|null  $replyMarkup
      * @param  list<string>|null  $media
      * @param  string  $type  Tipo di messaggio: 'text', 'photo', 'video', 'document', 'audio', 'animation'
+     *
+     * @return void
      */
     public function __construct(
         public string $chatId,
@@ -35,5 +37,6 @@ class TelegramData extends Data
         public ?array $replyMarkup = null,
         public ?array $media = null,
         public string $type = 'text',
-    ) {}
+    ) {
+    }
 }

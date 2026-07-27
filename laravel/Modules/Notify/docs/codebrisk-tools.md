@@ -1,23 +1,3 @@
----
-title: "Analisi Tool CodeBrisk per Email in Laravel"
-type: concept
-tags: [codebrisk, tools]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "codebrisk-tools analisi tool codebrisk per email in laravel"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Analisi Tool CodeBrisk per Email in Laravel
 
 Questo documento analizza in dettaglio tre risorse del blog CodeBrisk e i relativi package, con vantaggi, svantaggi, snippet di implementazione e consigli d’uso.

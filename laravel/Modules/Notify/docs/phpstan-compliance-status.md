@@ -1,31 +1,9 @@
----
-title: "PHPStan Level 10 Compliance Status"
-type: concept
-tags: [phpstan, compliance, status]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phpstan-compliance-status phpstan level 10 compliance status"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # PHPStan Level 10 Compliance Status
 
-**Last Updated**: 2026-07-06
+**Last Updated**: 2026-06-13 (sessione test doubles + helper manager)
 **Status**: ✅ FULLY COMPLIANT (0 errors, level max)
 
 Baseline STORY-289: 279 → 0. Pattern: `notify-env.php` + `MergesNotifyConfigFromEnv`, PushNotificationService PHPDoc.
-
-Baseline sessione 2026-07-06: 193 → 0. Molti file in `tests/Unit/Actions` (SMS providers) mancavano di `namespace` e/o `uses(TestCase::class)`, oppure avevano un helper `assertReflectionTypeName()` locale corrotto (parametri senza nome, sintassi rotta) che duplicava quello già definito in `tests/Pest.php`. Corretti aggiungendo namespace/`uses()` mancanti e rimuovendo le ridefinizioni corrotte.
 
 ## Summary
 The Notify module is now fully compliant with PHPStan Level 10 analysis. All static analysis errors have been resolved, ensuring type safety and code quality.
@@ -95,20 +73,3 @@ To maintain PHPStan compliance:
 - [Push Notification Services](push-notification-services.md)
 - [Notification Patterns](notification-patterns.md)
 - [Service Architecture](service-architecture.md)
-
-## Aggiornamento 2026-07-06
-
-Ri-verificato a zero errori (`./vendor/bin/phpstan analyse Modules/Notify --no-progress`).
-Fix applicati in questa sessione:
-- Nessuna estensione PHPStan/Larastan per Mockery in questo progetto: creato
-  `tests/Support/helpers.php` (`typedMock()`, `mockExpectation()`), stesso
-  pattern di `Modules/User/tests/Support/helpers.php::typedMock()`.
-- `NotificationManagerTest.php`: asserzioni tautologiche rimosse, mock
-  tipizzati, test strutturali senza valore (`method_exists`) rimossi.
-- 8 file `Send*SMSActionTest.php` + `NetfunSendActionTest.php`: pattern
-  rotto `getType()?->getName()` (solo `ReflectionNamedType` ha `getName()`),
-  import `Safe\*` mancanti, sintassi corrotta da un refactor automatico
-  precedente.
-- Rimossi i probe PHPStan morti (`*PhpstanProbe*`).
-
-Dettagli completi: `docs/chat/phpstan-notify-module-zero-2026-07-06.md` (root repo).

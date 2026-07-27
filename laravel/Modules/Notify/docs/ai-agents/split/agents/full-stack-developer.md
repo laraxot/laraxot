@@ -1,23 +1,3 @@
----
-title: "All commands require * prefix when used (e.g., *help)"
-type: concept
-tags: [full, stack, developer]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "full-stack-developer all commands require * prefix when used (e.g., *help)"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./architect.md"
-  - "./bmad-master.md"
-  - "./bmad-orchestrator.md"
-  - "./business-analyst.md"
-  - "./product-manager.md"
-  - "./product-owner.md"
-  - "./scrum-master.md"
-  - "./test-architect.md"
----
-
 ### Full Stack Developer (id: dev)
 Source: .bmad-core/agents/dev.md
 

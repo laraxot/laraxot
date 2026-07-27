@@ -18,7 +18,8 @@ class SuggestSolutionsAction
         private readonly ?string $title = null,
         private readonly ?string $description = null,
         private readonly ?string $category = null,
-    ) {}
+    ) {
+    }
 
     /**
      * @return array<string, mixed>

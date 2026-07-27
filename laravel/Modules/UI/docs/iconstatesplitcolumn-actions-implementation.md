@@ -1,23 +1,3 @@
----
-title: "IconStateSplitColumn Actions Implementation - Soluzione Semplice"
-type: concept
-tags: [iconstatesplitcolumn, actions, implementation]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "iconstatesplitcolumn-actions-implementation iconstatesplitcolumn actions implementation - soluzione semplice"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # IconStateSplitColumn Actions Implementation - Soluzione Semplice
 
 ## Problem Statement
@@ -160,7 +140,8 @@ La soluzione semplice è la migliore perché:
 
 ---
 
-
+**Last Updated**: June 2025
+**Version**: 2.3
 **Compatibility**: Filament 3.x, Laravel 10.x
 # IconStateSplitColumn Actions Implementation - Soluzione Semplice
 
@@ -304,7 +285,8 @@ La soluzione semplice è la migliore perché:
 
 ---
 
-
+**Last Updated**: June 2025
+**Version**: 2.3
 **Compatibility**: Filament 3.x, Laravel 10.x
 **Compatibility**: Filament 3.x, Laravel 10.x
 **Compatibility**: Filament 3.x, Laravel 10.x

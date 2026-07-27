@@ -1,16 +1,3 @@
----
-title: "Homepage Visual Comparison Analysis"
-type: concept
-tags: [analysis]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "analysis homepage visual comparison analysis"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./action.md"
----
-
 # Homepage Visual Comparison Analysis
 
 ## Goal

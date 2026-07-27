@@ -1,23 +1,3 @@
----
-title: "Errori Comuni nei Componenti Filament UI"
-type: concept
-tags: [filament, components, errors]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament-components-errors errori comuni nei componenti filament ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Errori Comuni nei Componenti Filament UI
 
 ## ⚠️ Errori di Metodi Non Supportati
@@ -157,7 +137,7 @@ TextInput::make('first_name')  // ✅ Il LangServiceProvider gestirà automatica
 
 ## Collegamenti Bidirezionali
 
-- [Documentazione Componenti Filament](../../../../docs/filament/components.md)
+- [Documentazione Componenti Filament](../../../docs/filament/components.md)
 - [Best Practices UI](../../best-practices.md)
 - [Errori Comuni UI](../../common-errors.md)
 - [Implementazione Corretta](../../examples/correct-implementation.md)
@@ -330,9 +310,9 @@ TextInput::make('first_name')  // ✅ Il LangServiceProvider gestirà automatica
 
 ## Collegamenti Bidirezionali
 
-- [Documentazione Componenti Filament](../../../../docs/project/filament/components.md)
-- [Documentazione Componenti Filament](../../../../docs/project/filament/components.md)
-- [Documentazione Componenti Filament](../../../../docs/project/filament/components.md)
+- [Documentazione Componenti Filament](../../../project_docs/filament/components.md)
+- [Documentazione Componenti Filament](../../../project_docs/filament/components.md)
+- [Documentazione Componenti Filament](../../../project_docs/filament/components.md)
 - [Best Practices UI](../../best-practices.md)
 - [Errori Comuni UI](../../common-errors.md)
 - [Implementazione Corretta](../../examples/correct-implementation.md)

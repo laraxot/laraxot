@@ -1,20 +1,3 @@
----
-title: "🦸 Superpowers Installation Guide"
-type: concept
-tags: [installation]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "installation 🦸 superpowers installation guide"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./installation-summary.md"
-  - "./installazione.md"
-  - "./skills-reference.md"
-  - "./superpowers.md"
-  - "./workflow.md"
----
-
 # 🦸 Superpowers Installation Guide
 
 > **Last Updated**: 2026-03-31  

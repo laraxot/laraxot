@@ -49,7 +49,7 @@ class SanitizeFieldsHeaderAction extends XotBaseAction
                         if ($string !== $item) {
                             $row->{$fieldName} = $string;
                             $save = true;
-                            $c++;
+                            ++$c;
                         }
                     }
                     if ($save) {
@@ -64,7 +64,7 @@ class SanitizeFieldsHeaderAction extends XotBaseAction
     }
 
     /**
-     * @param  list<string>  $fields
+     * @param list<string> $fields
      */
     public function setFields(array $fields): self
     {

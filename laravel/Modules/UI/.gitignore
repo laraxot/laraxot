@@ -37,6 +37,11 @@ public/css/compiled/
 public/js/compiled/
 public/mix-manifest.json
 # --- Cache & temporary ---
+
+
+# ==============================================
+# CACHE & TEMPORARY FILES
+# ==============================================
 *.cache
 *.lock
 *.phar
@@ -50,12 +55,25 @@ v8-compile-cache-*
 .php-cs-fixer.cache
 .phpunit.result.cache
 # --- Logs ---
+
+.php-cs-fixer.cache
+.phpunit.result.cache
+
+
+# ==============================================
+# LOG FILES
+# ==============================================
 *.log
 error_log
 npm-debug.log*
 yarn-error.log*
 lerna-debug.log*
 # --- Laravel runtime ---
+
+
+# ==============================================
+# LARAVEL SPECIFIC
+# ==============================================
 /storage/*.key
 /public/storage
 /public/hot
@@ -65,6 +83,15 @@ lerna-debug.log*
 .env.*
 !.env.example
 # --- Environment & IDE ---
+
+.env
+.env.*
+!.env.example
+
+
+# ==============================================
+# ENVIRONMENT & IDE
+# ==============================================
 Homestead.yaml
 Homestead.json
 /.vagrant
@@ -94,6 +121,11 @@ ehthumbs.db
 Thumbs.db
 agentdb.rvf
 # --- Backup / old files ---
+
+
+# ==============================================
+# BACKUP FILES
+# ==============================================
 *.old
 *.old1
 *.old2
@@ -106,6 +138,32 @@ agentdb.rvf
 # --- Legacy directories (historic cleanup) ---
 resources/views/Components_old/
 resources/lang/
+
+
+# ==============================================
+# DEVELOPMENT TOOLS
+# ==============================================
+.windsurf/
+.cursor/
+
+
+# ==============================================
+# DOCUMENTATION & ANALYSIS CACHE
+# ==============================================
+docs/phpstan/
+docs/cache/
+
+
+# ==============================================
+# LANGUAGE FILES (generated / duplicated)
+# ==============================================
+resources/lang/
+
+
+# ==============================================
+# OLD DIRECTORIES (LEGACY CLEANUP)
+# ==============================================
+resources/views/Components_old/
 database/Migrations_old/
 database/Seeders_old/
 database/Factories_old/
@@ -117,6 +175,21 @@ laravel
 public_html
 config/local.php
 config/development.php
+
+
+# ==============================================
+# MODULE SPECIFIC - UI
+# ==============================================
+# Config locale
+config/local.php
+config/development.php
+
+# Asset UI compilati
+public/css/compiled/
+public/js/compiled/
+public/mix-manifest.json
+
+# Design / UI tools
 *.psd
 *.sketch
 *.fig
@@ -134,3 +207,38 @@ docs/**/legacy/
 docs/**/workbench/
 docs/**/scripts/
 docs/**/bashscripts/
+
+
+# ==============================================
+# PROJECT-SPECIFIC
+# ==============================================
+*.fila2
+laravel
+public_html
+
+
+# ==============================================
+# END OF UI .GITIGNORE
+# ==============================================
+lang/lang/
+_docs/
+docs/legacy/
+docs/legacy/**
+
+# -----------------------------------------------------------------------------
+# Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
+# -----------------------------------------------------------------------------
+*~HEAD
+*~BASE
+*~LOCAL
+*~REMOTE
+*.orig
+*.rej
+*~head
+
+
+# Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
+.cursor/
+.devcontainer/
+.vscode/
+.windsurf/

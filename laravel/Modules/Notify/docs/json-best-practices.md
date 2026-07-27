@@ -1,23 +1,3 @@
----
-title: "Best Practices per Migrazioni JSON"
-type: concept
-tags: [json, best, practices]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "json-best-practices best practices per migrazioni json"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Best Practices per Migrazioni JSON
 
 ## Introduzione
@@ -226,7 +206,7 @@ protected function rollback(): void
 
 ## Collegamenti Correlati
 
-- [Documentazione Migrazioni](./migration-rules-1.md)
+- [Documentazione Migrazioni](./migration_rules.md)
 - [Gestione Errori](./error_handling.md)
 - [Best Practices Database](./database_best_practices.md)
 

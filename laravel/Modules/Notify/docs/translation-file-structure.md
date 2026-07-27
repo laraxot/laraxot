@@ -1,23 +1,3 @@
----
-title: "Guida alla Struttura dei File di Traduzione"
-type: concept
-tags: [translation, file, structure]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "translation-file-structure guida alla struttura dei file di traduzione"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Guida alla Struttura dei File di Traduzione
 
 ## Struttura Standard Obbligatoria
@@ -168,5 +148,5 @@ return [
 ```
 
 ## Riferimenti
-- [Regole di Naming per i File di Traduzione](./translation-file-naming-rules-1.md)
-- [Regole Generali per le Traduzioni](../../lang/docs/translation-keys-rules-1.md)
+- [Regole di Naming per i File di Traduzione](./translation_file_naming_rules.md)
+- [Regole Generali per le Traduzioni](../../lang/docs/translation_keys_rules.md)

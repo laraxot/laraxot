@@ -6,12 +6,6 @@ confidence: verified
 created: 2026-05-06
 updated: 2026-05-06
 tags: [phpstan, ui, filament, component]
-related:
-  - "./git-merge-conflict-inventory-1.md"
-  - "./git-merge-conflict-inventory.md"
-  - "./git-push-lfs-missing-objects.md"
-  - "./module-theme-root-hygiene.md"
-  - "./phpstan-fixes-1.md"
 ---
 
 # PHPStan Fixes - 2026-05-06

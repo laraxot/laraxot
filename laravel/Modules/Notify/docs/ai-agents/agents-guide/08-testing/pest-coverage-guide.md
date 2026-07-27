@@ -1,18 +1,3 @@
----
-title: "Pest Coverage Guide"
-type: guide
-tags: [pest, coverage, guide]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "pest-coverage-guide pest coverage guide"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./coverage-gaps-analysis-guide.md"
-  - "./testing-guidelines.md"
----
-
 # Pest Coverage Guide
 
 ## Overview

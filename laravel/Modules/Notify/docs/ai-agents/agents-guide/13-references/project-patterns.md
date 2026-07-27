@@ -1,17 +1,3 @@
----
-title: "Action Pattern (CRITICAL)"
-type: pattern
-tags: [project, patterns]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "project-patterns action pattern (critical)"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./key-documentation-references.md"
----
-
 # Action Pattern (CRITICAL)
 
 PTVX uses Spatie QueueableAction for business logic.

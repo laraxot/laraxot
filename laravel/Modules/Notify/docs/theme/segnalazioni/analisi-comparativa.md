@@ -1,15 +1,3 @@
----
-title: "Analisi Comparativa: Pagine Segnalazioni"
-type: concept
-tags: [analisi, comparativa]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "analisi-comparativa analisi comparativa: pagine segnalazioni"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
----
-
 # Analisi Comparativa: Pagine Segnalazioni
 
 ## Obiettivo

@@ -1,20 +1,3 @@
----
-title: "Homepage Visual Comparison - RESULTS"
-type: concept
-tags: [results]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "results homepage visual comparison - results"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./body-structure-parity.md"
-  - "./homepage-comparison.md"
-  - "./index.md"
-  - "./status.md"
-  - "./visual-comparison.md"
----
-
 # Homepage Visual Comparison - RESULTS
 
 ## Comparison Screenshots

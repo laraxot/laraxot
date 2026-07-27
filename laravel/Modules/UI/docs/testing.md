@@ -1,23 +1,3 @@
----
-title: "Testing Documentation"
-type: concept
-tags: [testing]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "testing testing documentation"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Testing Documentation
 
 ## Overview
@@ -195,7 +175,7 @@ protected function createApplication()
     $app = parent::createApplication();
     
     $app['config']->set([
-'database.connections.ui.database' => 'Quaeris_data_test',
+        'database.connections.ui.database' => 'quaeris_data_test',
     ]);
     
     return $app;
@@ -281,9 +261,9 @@ protected function createApplication()
 
 ### Internal Resources
 
-- [Testing Setup Guide](../../../docs/testing-setup.md)
-- [Testing Best Practices](../../../docs/testing-best-practices.md)
-- [Troubleshooting Guide](../../../docs/troubleshooting.md)
+- [Testing Setup Guide](../../docs/testing-setup.md)
+- [Testing Best Practices](../../docs/testing-best-practices.md)
+- [Troubleshooting Guide](../../docs/troubleshooting.md)
 
 ## Testing Examples
 
@@ -379,4 +359,4 @@ Remember: Good tests are the foundation of reliable software development.
 
 ---
 
-*
+*Last updated: January 2025*

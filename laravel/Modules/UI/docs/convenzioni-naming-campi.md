@@ -1,23 +1,3 @@
----
-title: "Convenzioni di Naming dei Campi"
-type: concept
-tags: [convenzioni, naming, campi]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "convenzioni-naming-campi convenzioni di naming dei campi"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Convenzioni di Naming dei Campi
 
 ## Collegamenti Bidirezionali
@@ -121,10 +101,10 @@ TextInput::make('full_name')
 ## Collegamenti Correlati
 
 - [Documentazione Filament Forms](https://filamentphp.com/docs/3.x/forms/fields/text-input)
-- [Best Practices Database](../../../../docs/database/best-practices.md)
-- [Convenzioni API](../../../../docs/api/convenzioni.md)
+- [Best Practices Database](../../../docs/database/best-practices.md)
+- [Convenzioni API](../../../docs/api/convenzioni.md)
 ## Collegamenti tra versioni di convenzioni-naming-campi.md
-* [convenzioni-naming-campi.md](../../../../../docs/convenzioni-naming-campi.md)
+* [convenzioni-naming-campi.md](../../../../docs/convenzioni-naming-campi.md)
 # Convenzioni di Naming dei Campi
 
 ## Collegamenti Bidirezionali
@@ -228,10 +208,10 @@ TextInput::make('full_name')
 ## Collegamenti Correlati
 
 - [Documentazione Filament Forms](https://filamentphp.com/project_docs/3.x/forms/fields/text-input)
-- [Best Practices Database](../../../../docs/project/database/best-practices.md)
-- [Convenzioni API](../../../../docs/project/api/convenzioni.md)
+- [Best Practices Database](../../../project_docs/database/best-practices.md)
+- [Convenzioni API](../../../project_docs/api/convenzioni.md)
 ## Collegamenti tra versioni di convenzioni-naming-campi.md
-* [convenzioni-naming-campi.md](../../../../../docs/project/convenzioni-naming-campi.md)
+* [convenzioni-naming-campi.md](../../../../project_docs/convenzioni-naming-campi.md)
 - [Documentazione Filament Forms](https://filamentphp.com/project_docs/3.x/forms/fields/text-input)
-- [Best Practices Database](../../../../docs/project/database/best-practices.md)
-- [Convenzioni API](../../../../docs/project/api/convenzioni.md)
+- [Best Practices Database](../../../project_docs/database/best-practices.md)
+- [Convenzioni API](../../../project_docs/api/convenzioni.md)

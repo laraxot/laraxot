@@ -1,23 +1,22 @@
 ---
 title: "QueueableAction Pattern Guide"
-type: pattern
-tags: [queueable, action, pattern]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "queueable-action-pattern queueableaction pattern guide"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+type: concept
+tags: [notify, docs, architecture, queueable, action, pattern]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione architecture queueable action pattern queueableaction pattern guide frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
 related:
-  - "./config-structure.md"
-  - "./document-root-architecture.md"
-  - "./dto-structure-conventions.md"
-  - "./dto-structure-rules.md"
-  - "./interface-structure-clarification.md"
-  - "./mail-templates-structure.md"
-  - "./sms-config-structure.md"
-  - "./standardized-sms-config-structure.md"
+  - ../README.md
+  - README.md
+  - ../conventions/README.md
+  - ../rules/README.md
+  - ../best-practices/naming-conventions.md
 ---
-
 # QueueableAction Pattern Guide
 
 ## 📖 **Introduzione**

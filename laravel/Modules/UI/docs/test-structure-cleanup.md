@@ -1,23 +1,3 @@
----
-title: "UI Module Test Structure Cleanup"
-type: concept
-tags: [test, structure, cleanup]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "test-structure-cleanup ui module test structure cleanup"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # UI Module Test Structure Cleanup
 
 ## Problem Identified
@@ -125,7 +105,7 @@ Modules/UI/
 - Minimal disruption to existing code
 - Clear migration path
 
-### 4. **Autoloader <nome progetto>ability**
+### 4. **Autoloader Predictability**
 - Eliminates ambiguous class resolution
 - Consistent namespace-to-directory mapping
 - Reliable test discovery and execution
@@ -192,7 +172,7 @@ composer dump-autoload 2>&1 | grep -i "ui"
 After cleanup:
 
 - ✅ No more PSR-4 autoloading warnings
-- ✅ Clear, <nome progetto>able test structure
+- ✅ Clear, predictable test structure
 - ✅ Consistent with Laravel conventions
 - ✅ Compatible with module system
 - ✅ Maintains all existing test functionality

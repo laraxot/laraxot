@@ -1,17 +1,3 @@
----
-title: "5.1. Theme & pub_theme Namespace - CRITICAL RULE"
-type: rule
-tags: [pub, theme, namespace, critical]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "pub-theme-namespace-critical-rule 5.1. theme & pub_theme namespace - critical rule"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./theme-translations-critical-rule.md"
----
-
 # 5.1. Theme & pub_theme Namespace - CRITICAL RULE
 
 **ALWAYS use `pub_theme::` namespace for theme components, NOT the theme name!**

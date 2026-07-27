@@ -1,16 +1,3 @@
----
-title: "`SmsChannel`"
-type: concept
-tags: [sms, channel]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "sms-channel `smschannel`"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./whatsapp-channel.md"
----
-
 # `SmsChannel`
 
 This document describes the `SmsChannel`, a custom Laravel Notification Channel designed to send SMS messages. It integrates with the application's phone number normalization logic and provides a placeholder for actual SMS gateway integration.

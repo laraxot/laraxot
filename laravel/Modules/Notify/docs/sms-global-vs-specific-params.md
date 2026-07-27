@@ -1,23 +1,3 @@
----
-title: "Parametri a Livello di Root vs Specifici per Provider nella Configurazione SMS"
-type: concept
-tags: [sms, global, specific, params]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "sms-global-vs-specific-params parametri a livello di root vs specifici per provider nella configurazione sms"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Parametri a Livello di Root vs Specifici per Provider nella Configurazione SMS
 
 ## Introduzione
@@ -191,8 +171,8 @@ Prima di modificare la configurazione SMS, verificare che:
 
 ## Riferimenti
 
-- [Struttura Standardizzata della Configurazione SMS](./standardized-sms-config-structure.md)
-- [Configurazione Netfun](./netfun-config-requirements-1.md)
+- [Struttura Standardizzata della Configurazione SMS](./standardized_sms_config_structure.md)
+- [Configurazione Netfun](./netfun_config_requirements.md)
 - [Laravel Configuration Best Practices](https://laravel.com/docs/configuration)
 
 ---

@@ -1,23 +1,3 @@
----
-title: "S3Test Component Documentation"
-type: concept
-tags: [s3test]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "s3test s3test component documentation"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # S3Test Component Documentation
 
 ## Overview
@@ -126,7 +106,7 @@ All AWS operations are wrapped in try-catch blocks to handle exceptions graceful
 ## Related Documentation
 - [AWS Test Bugfix Documentation](./awstest-bugfix-undefined-variable.md)
 - [Bugfix: Undefined Variable in AWS Test](./bugfix-awstest-undefined-variable.md)
-- [Root Documentation: AWS Testing](../../../docs/aws-testing.md)
+- [Root Documentation: AWS Testing](../../docs/aws-testing.md)
 
 ## PHPStan Compliance
 The component has been updated to comply with PHPStan level 9 requirements:
@@ -137,4 +117,4 @@ The component has been updated to comply with PHPStan level 9 requirements:
 - Correct parameter typing
 - Safe function usage
 
-*
+*Last Updated: August 2025*

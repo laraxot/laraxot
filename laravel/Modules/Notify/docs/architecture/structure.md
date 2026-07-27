@@ -1,23 +1,22 @@
 ---
 title: "Modulo Notify"
 type: concept
-tags: [structure]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "structure modulo notify"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+tags: [notify, docs, architecture, structure]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione architecture structure modulo notify frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
 related:
-  - "./config-structure.md"
-  - "./document-root-architecture.md"
-  - "./dto-structure-conventions.md"
-  - "./dto-structure-rules.md"
-  - "./interface-structure-clarification.md"
-  - "./mail-templates-structure.md"
-  - "./queueable-action-pattern.md"
-  - "./sms-config-structure.md"
+  - ../README.md
+  - README.md
+  - ../conventions/README.md
+  - ../rules/README.md
+  - ../best-practices/naming-conventions.md
 ---
-
 # Modulo Notify
 
 Data: 2025-04-23 19:09:56

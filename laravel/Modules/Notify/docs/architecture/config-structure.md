@@ -1,23 +1,22 @@
 ---
 title: "Struttura di Configurazione nei Moduli"
 type: concept
-tags: [config, structure]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "config-structure struttura di configurazione nei moduli"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+tags: [notify, docs, architecture, config, structure]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione architecture config structure struttura di configurazione nei moduli frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
 related:
-  - "./document-root-architecture.md"
-  - "./dto-structure-conventions.md"
-  - "./dto-structure-rules.md"
-  - "./interface-structure-clarification.md"
-  - "./mail-templates-structure.md"
-  - "./queueable-action-pattern.md"
-  - "./sms-config-structure.md"
-  - "./standardized-sms-config-structure.md"
+  - ../README.md
+  - README.md
+  - ../conventions/README.md
+  - ../rules/README.md
+  - ../best-practices/naming-conventions.md
 ---
-
 # Struttura di Configurazione nei Moduli
 # Struttura di Configurazione nei Moduli <nome progetto>
 

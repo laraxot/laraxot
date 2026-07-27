@@ -7,16 +7,14 @@ created: 2026-06-05
 updated: 2026-06-05
 qmd: "notify second brain stub canonical xot harness hackernoon llm-wiki"
 issues:
+  - "https://github.com/laraxot/base_fixcity_fila5/issues/272"
 discussions:
+  - "https://github.com/laraxot/base_fixcity_fila5/discussions/273"
 related:
-  - "./claude-audit-static.md"
-  - "./code-redundancy-notify.md"
-  - "./composer-root-minimal-nwidart.md"
-  - "./context-overflow-prevention.md"
-  - "./enum-standards.md"
-  - "./llm-wiki-governance.md"
-  - "./method-name-homonyms.md"
-  - "./module-root-uppercase-folders-archive.md"
+  - ../../../../Xot/docs/wiki/concepts/second-brain-local-discipline.md
+  - ../../../../docs/wiki/concepts/ai-harness-module-discipline.md
+  - ../../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md
+  - ../../../../../../bashscripts/tools/prompts/llm-wiki.txt
 ---
 
 # Contratto wiki locale — stub Notify

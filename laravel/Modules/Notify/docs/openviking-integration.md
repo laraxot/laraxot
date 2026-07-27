@@ -1,23 +1,3 @@
----
-title: "OpenViking Integration Guide"
-type: concept
-tags: [openviking, integration]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "openviking-integration openviking integration guide"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # OpenViking Integration Guide
 
 ## Overview
@@ -115,7 +95,7 @@ Use `viking://` URIs in BMAD documentation:
 # 2. Store project context
 openviking add --type=project \
   --title="FixCity Platform" \
-  --file="project.md"
+  --file="PROJECT.md"
 
 # 3. During phase execution
 /gsd-discuss-phase 1

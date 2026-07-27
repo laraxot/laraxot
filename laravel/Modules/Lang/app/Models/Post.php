@@ -5,15 +5,14 @@ declare(strict_types=1);
 namespace Modules\Lang\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
-// --- traits ---
 use Modules\Lang\Database\Factories\PostFactory;
-// use Laravel\Scout\Searchable;
+// --- traits ---
 use Modules\Xot\Contracts\ProfileContract;
+// use Laravel\Scout\Searchable;
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Traits\Updater;
 use Spatie\Sluggable\HasSlug;
@@ -119,8 +118,7 @@ use Spatie\Sluggable\SlugOptions;
 class Post extends BaseModel
 {
     use HasSlug;
-
-    /** @phpstan-use HasXotFactory<Factory<static>> */
+    /** @phpstan-use HasXotFactory<\Illuminate\Database\Eloquent\Factories\Factory<static>> */
     use HasXotFactory;
 
     // use Cachable;

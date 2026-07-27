@@ -1,16 +1,3 @@
----
-title: "13. Pre-Commit Checklist"
-type: concept
-tags: [pre, commit, checklist]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "pre-commit-checklist 13. pre-commit checklist"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
----
-
 # 13. Pre-Commit Checklist
 
 Before committing or pushing:

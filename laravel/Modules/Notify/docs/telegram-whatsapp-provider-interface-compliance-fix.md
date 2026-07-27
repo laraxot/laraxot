@@ -1,23 +1,3 @@
----
-title: "Telegram/WhatsApp provider action interface compliance fix"
-type: concept
-tags: [telegram, whatsapp, provider, interface]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "telegram-whatsapp-provider-interface-compliance-fix telegram/whatsapp provider action interface compliance fix"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Telegram/WhatsApp provider action interface compliance fix
 
 ## Summary
@@ -129,7 +109,7 @@ Twilio test.
 
 ## Related docs
 
-- `Modules/Notify/docs/telegram-provider-architecture-2.md` and
+- `Modules/Notify/docs/telegram_provider_architecture.md` and
   `Modules/Notify/docs/whatsapp-provider-architecture.md` describe an
   aspirational/example architecture (e.g. `SendBotTelegramAction`,
   `SendApiTelegramAction`) that does not match the actual driver class names

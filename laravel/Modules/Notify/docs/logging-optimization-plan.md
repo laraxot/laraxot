@@ -1,23 +1,3 @@
----
-title: "Notify Module - Logging Optimization Plan"
-type: concept
-tags: [logging, optimization, plan]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "logging-optimization-plan notify module - logging optimization plan"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Notify Module - Logging Optimization Plan
 
 ## Current Issues
@@ -258,7 +238,7 @@ After:
 // Remove all Log::info() examples
 // Add error handling examples only
 
-// docs/sms-best-practices-1.md
+// docs/sms_best_practices.md
 // Update to reflect new logging practices
 ```
 

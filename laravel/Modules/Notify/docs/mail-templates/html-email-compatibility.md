@@ -1,23 +1,3 @@
----
-title: "Guida alla Compatibilità HTML per Email"
-type: concept
-tags: [html, email, compatibility]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "html-email-compatibility guida alla compatibilità html per email"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./attachments.md"
-  - "./email-best-practices-1.md"
-  - "./email-best-practices.md"
-  - "./email-layouts-best-practices-1.md"
-  - "./email-layouts-best-practices.md"
-  - "./email-templates-best-practices-1.md"
-  - "./email-templates-best-practices.md"
-  - "./email-templates-guide-1.md"
----
-
 # Guida alla Compatibilità HTML per Email
 
 ## Introduzione
@@ -148,7 +128,7 @@ I template nella directory `mail-layouts` seguono queste linee guida di compatib
 
 ## Riferimenti
 
-- [Guida ai Layout Email](../mail-layouts-guide-2.md)
-- [Integrazione MailPace](./mailpace-templates-integration-1.md)
+- [Guida ai Layout Email](../mail_layouts_guide.md)
+- [Integrazione MailPace](./mailpace_templates_integration.md)
 - [Campaign Monitor Guide](https://www.campaignmonitor.com/css/)
 - [Email Client Market Share](https://emailclientmarketshare.com/)

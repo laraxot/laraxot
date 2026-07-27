@@ -9,6 +9,8 @@ use PHPUnit\Framework\Assert;
 use Modules\Notify\Models\Notification;
 use Modules\Notify\Tests\TestCase;
 use Modules\Notify\Database\Factories\NotificationFactory;
+use function Pest\Laravel\get;
+
 uses(\Modules\Notify\Tests\TestCase::class);
 
 beforeEach(function (): void {

@@ -6,7 +6,6 @@ namespace Modules\UI\Filament\Forms\Components;
 
 use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
-use InvalidArgumentException;
 use Modules\Xot\Filament\Forms\Components\XotBaseSelect;
 
 /**
@@ -31,12 +30,12 @@ final class EnumSelect extends XotBaseSelect
 
     /**
      * Create a new EnumSelect component.
-     * Signature mirrors Filament; null delegates default-name resolution to the parent.
+     * Signature must match Filament\\Forms\\Components\\Field::make(?string $name = null).
      */
     public static function make(?string $name = null): static
     {
         /** @var static $component */
-        $component = null === $name ? parent::make() : parent::make($name);
+        $component = parent::make($name);
 
         return $component->native(false);
     }
@@ -200,11 +199,11 @@ final class EnumSelect extends XotBaseSelect
     protected function validateEnumClass(string $enumClass): void
     {
         if (! enum_exists($enumClass)) {
-            throw new InvalidArgumentException("Enum class [{$enumClass}] does not exist.");
+            throw new \InvalidArgumentException("Enum class [{$enumClass}] does not exist.");
         }
 
         if (! is_subclass_of($enumClass, \BackedEnum::class)) {
-            throw new InvalidArgumentException("Enum class [{$enumClass}] must be a backed enum.");
+            throw new \InvalidArgumentException("Enum class [{$enumClass}] must be a backed enum.");
         }
     }
 }

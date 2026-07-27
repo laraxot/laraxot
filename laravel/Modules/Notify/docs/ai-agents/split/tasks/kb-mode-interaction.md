@@ -1,23 +1,3 @@
----
-title: "KB Mode Interaction Task"
-type: concept
-tags: [mode, interaction]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "kb-mode-interaction kb mode interaction task"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./advanced-elicitation.md"
-  - "./apply-qa-fixes.md"
-  - "./brownfield-create-epic.md"
-  - "./brownfield-create-story.md"
-  - "./correct-course.md"
-  - "./create-brownfield-story.md"
-  - "./create-deep-research-prompt.md"
-  - "./create-doc.md"
----
-
 ### Task: kb-mode-interaction
 Source: .bmad-core/tasks/kb-mode-interaction.md
 - How to use: "Use task kb-mode-interaction with the appropriate agent" and paste relevant parts as needed.

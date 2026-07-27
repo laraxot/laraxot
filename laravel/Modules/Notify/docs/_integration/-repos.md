@@ -1,23 +1,3 @@
----
-title: "_repos"
-type: concept
-tags: [repos]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "-repos _repos"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./-todo.md"
-  - "./firebase.md"
-  - "./links.md"
-  - "./login.md"
-  - "./notifications.md"
-  - "./repos.md"
-  - "./telegram.md"
-  - "./test-smtp-1.md"
----
-
 # _repos
 
 <!-- Contenuto migrato da _docs/_repos.txt -->

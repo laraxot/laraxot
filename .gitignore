@@ -127,4 +127,11 @@ cache/*
 .planning
 laravel/Modules/Notify/docs/notification/archive
 laravel/Modules/docs
+# Moduli/temi: vietato docs/archive, docs/legacy, docs/archived (no-docs-archive)
+laravel/Modules/*/docs/archive/
+laravel/Modules/*/docs/legacy/
+laravel/Modules/*/docs/archived/
+laravel/Themes/*/docs/archive/
+laravel/Themes/*/docs/legacy/
+laravel/Themes/*/docs/archived/
 *.lock

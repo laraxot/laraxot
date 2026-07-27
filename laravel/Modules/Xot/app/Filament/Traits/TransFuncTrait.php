@@ -57,7 +57,7 @@ trait TransFuncTrait
             */
             return 'fix:'.$key;
 
-            //return null;
+            // return null;
         }
 
         if ($key !== $trans) {

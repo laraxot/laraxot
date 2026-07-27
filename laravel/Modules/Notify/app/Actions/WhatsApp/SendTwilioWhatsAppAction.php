@@ -10,9 +10,8 @@ use GuzzleHttp\Exception\ClientException;
 use Illuminate\Support\Facades\Log;
 use Modules\Notify\Contracts\WhatsAppProviderActionInterface;
 use Modules\Notify\Datas\WhatsAppData;
-use Spatie\QueueableAction\QueueableAction;
-
 use function Safe\json_decode;
+use Spatie\QueueableAction\QueueableAction;
 
 final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
 {
@@ -35,6 +34,8 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
 
     /**
      * Create a new action instance.
+     *
+     * @return void
      */
     public function __construct()
     {
@@ -65,6 +66,7 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
      * Execute the action.
      *
      * @param  WhatsAppData  $whatsAppData  I dati del messaggio WhatsApp
+     *
      * @return array<string, mixed> Risultato dell'operazione
      *
      * @throws Exception In caso di errore durante l'invio
@@ -99,8 +101,9 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
 
             $statusCode = $response->getStatusCode();
             $responseContent = $response->getBody()->getContents();
-            /** @var array<string, mixed>|null $responseData */
-            $responseData = json_decode($responseContent, true) ?: [];
+            $decodedResponse = json_decode($responseContent, true);
+            /** @var array<string, mixed> $responseData */
+            $responseData = is_array($decodedResponse) ? $decodedResponse : [];
 
             // Salva i dati della risposta nelle variabili dell'azione
             $this->vars['status_code'] = $statusCode;
@@ -123,8 +126,9 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
         } catch (ClientException $e) {
             $response = $e->getResponse();
             $statusCode = $response->getStatusCode();
-            /** @var array<string, mixed>|null $responseBody */
-            $responseBody = json_decode($response->getBody()->getContents(), true) ?: [];
+            $decodedBody = json_decode($response->getBody()->getContents(), true);
+            /** @var array<string, mixed> $responseBody */
+            $responseBody = is_array($decodedBody) ? $decodedBody : [];
 
             // Salva i dati dell'errore nelle variabili dell'azione
             $this->vars['error_code'] = $statusCode;

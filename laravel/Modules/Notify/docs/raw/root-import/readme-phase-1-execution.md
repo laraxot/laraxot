@@ -1,23 +1,3 @@
----
-title: "📖 README - PHASE 1 EXECUTION"
-type: concept
-tags: [readme, phase, execution]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "readme-phase-1-execution 📖 readme - phase 1 execution"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./agents.md"
-  - "./changelog.md"
-  - "./claude.md"
-  - "./design-conversion-roadmap-1.md"
-  - "./design-conversion-roadmap.md"
-  - "./files-created-session-007-1.md"
-  - "./files-created-session-007.md"
-  - "./files-created-session-replikate.md"
----
-
 # 📖 README - PHASE 1 EXECUTION
 ## Entry Point for All Team Members
 
@@ -49,16 +29,16 @@ related:
 ### 🎯 STATUS & COORDINATION (START HERE)
 | Document | Purpose | Read Time |
 |----------|---------|-----------|
-| **phase-1-execution-dashboard.md** | Multi-agent coordination board | 5 min |
+| **PHASE-1-EXECUTION-DASHBOARD.md** | Multi-agent coordination board | 5 min |
 | **PHASE-1-EXECUTION-STATUS.md** | Real-time progress tracking | 5 min |
-| **phase-1-research-complete.md** | Session summary (Italian) | 10 min |
+| **PHASE-1-RESEARCH-COMPLETE.md** | Session summary (Italian) | 10 min |
 
 ### 📋 STRATEGY & PLANNING
 | Document | Purpose | Read Time |
 |----------|---------|-----------|
 | **PHASE-1-STRATEGY.md** | Complete research & strategy | 20 min |
 | **GSD-PHASE-1-EXECUTION.md** | Execution plan with all 6 subtasks | 15 min |
-| **00-index-1.md** | Master documentation index | 10 min |
+| **00-INDEX.md** | Master documentation index | 10 min |
 
 ### 🔧 TOOLS & SCRIPTS
 | Document | Purpose | Read Time |
@@ -77,7 +57,7 @@ related:
 laravel/Themes/Sixteen/docs/
 ├─ PHASE-1-STRATEGY.md                    (strategy)
 ├─ GSD-PHASE-1-EXECUTION.md               (execution plan)
-├─ 00-index-1.md                            (master index)
+├─ 00-INDEX.md                            (master index)
 ├─ PHASE-1-EXECUTION-STATUS.md            (progress tracking)
 ├─ body-structure-comparison/
 │  └─ segnalazioni-elenco/
@@ -130,7 +110,7 @@ laravel/Themes/Sixteen/docs/
 **Subtask 6** (LATER):
 - ⏳ Input: Final comparison results from Subtask 5
 - 📝 Create: PHASE-1-COMPLETION-REPORT.md
-- 🔄 Update: 00-index-1.md with Phase 1 status
+- 🔄 Update: 00-INDEX.md with Phase 1 status
 
 **Read First**:
 1. PHASE-1-EXECUTION-STATUS.md (overview)
@@ -166,10 +146,10 @@ laravel/Themes/Sixteen/docs/
 
 **Getting up to speed in 30 minutes:**
 
-1. **Read (5 min)**: phase-1-research-complete.md
+1. **Read (5 min)**: PHASE-1-RESEARCH-COMPLETE.md
    - Understand what was researched and why
 
-2. **Read (5 min)**: phase-1-execution-dashboard.md
+2. **Read (5 min)**: PHASE-1-EXECUTION-DASHBOARD.md
    - Understand current status and your role
 
 3. **Read (10 min)**: PHASE-1-STRATEGY.md § Executive Summary + segnalazioni-elenco Analysis
@@ -308,8 +288,8 @@ Before starting your subtask:
 ## 🎓 LEARNING RESOURCES
 
 **Quick (5-10 min)**:
-- phase-1-research-complete.md (Italian summary)
-- phase-1-execution-dashboard.md (status board)
+- PHASE-1-RESEARCH-COMPLETE.md (Italian summary)
+- PHASE-1-EXECUTION-DASHBOARD.md (status board)
 
 **Medium (15-20 min)**:
 - PHASE-1-STRATEGY.md (strategy overview)
@@ -367,7 +347,7 @@ Before starting your subtask:
 |------|------|----------|--------|
 | Strategy | PHASE-1-STRATEGY.md | laravel/Themes/Sixteen/docs/ | ✅ DONE |
 | Execution Plan | GSD-PHASE-1-EXECUTION.md | laravel/Themes/Sixteen/docs/ | ✅ DONE |
-| Master Index | 00-index-1.md | laravel/Themes/Sixteen/docs/ | ✅ DONE |
+| Master Index | 00-INDEX.md | laravel/Themes/Sixteen/docs/ | ✅ DONE |
 | Tool Docs | bashscripts/docs/html/INDEX.md | bashscripts/docs/html/ | ✅ DONE |
 | Comparison Script | html-structure-compare.sh | bashscripts/body/ | ✅ READY |
 | Blade Fixes | [slug].blade.php | laravel/Themes/Sixteen/resources/views/pages/tests/ | ⏳ PENDING |

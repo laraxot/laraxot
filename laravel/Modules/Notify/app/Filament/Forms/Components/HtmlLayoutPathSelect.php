@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Filament\Forms\Components;
 
+use Filament\Forms\Components\Select;
 use Illuminate\Support\Facades\File;
 use Modules\Xot\Datas\XotData;
-use Modules\Xot\Filament\Forms\Components\XotBaseSelect;
 
-class HtmlLayoutPathSelect extends XotBaseSelect
+class HtmlLayoutPathSelect extends Select
 {
     protected function setUp(): void
     {

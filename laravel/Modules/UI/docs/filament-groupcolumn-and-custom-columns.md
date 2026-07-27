@@ -1,45 +1,4 @@
----
-title: "Guida all'utilizzo di GroupColumn e Colonne Custom"
-type: concept
-tags: [filament, groupcolumn, custom, columns]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament-groupcolumn-and-custom-columns guida all'utilizzo di groupcolumn e colonne custom"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Guida all'utilizzo di GroupColumn e Colonne Custom
-
-> **REGOLA IMPORTANTE**: Quando esiste una colonna personalizzata come `WorkerColumn`, `ValutatoreColumn`, ecc., USARLA invece di creare TextColumns separati. Le colonne personalizzate encapsulano la logica e mantengono DRY.
-
-## Esempio: Usare WorkerColumn
-
-```php
-// ❌ SBAGLIATO - Non usare TextColumns separati
-TextColumn::make('matr')->searchable(),
-TextColumn::make('cognome')->searchable(),
-TextColumn::make('nome')->searchable(),
-
-// ✅ CORRETTO - Usare WorkerColumn quando disponibile
-WorkerColumn::make('lavoratore'),
-```
-
-Le colonne personalizzate come `WorkerColumn` sono pre-configurate con:
-- Schema dei campi (matr, cognome, nome, email)
-- Searchable a livello di gruppo
-- Styling consistente
-
----
 
 Questo documento spiega le cause e le soluzioni per un problema comune riscontrato con il componente custom `GroupColumn`: la mancata visualizzazione di dati provenienti da relazioni Eloquent (campi con notazione "dot notation").
 

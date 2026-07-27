@@ -8,9 +8,15 @@ updated: 2026-07-17
 qmd: "code quality baseline PHPStan Pest strict types Laraxot Lang"
 story: STORY-001
 issues:
+<<<<<<< HEAD
+  - "https://github.com/laraxot/base_techplanner_fila5/issues/46"
+discussions:
+  - "https://github.com/laraxot/base_techplanner_fila5/discussions/47"
+=======
   - "https://github.com/laraxot/base_workorder_fila5/issues/46"
 discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/47"
+>>>>>>> 677f1f5 (.)
 related:
   - "../../../../docs/stories/STORY-001-code-quality-moduli-temi.md"
 ---

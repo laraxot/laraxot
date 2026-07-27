@@ -3,7 +3,7 @@ title: "Rimosso InteractiveMap — violava regola "UI non importa Geo""
 type: concept
 tags: [geo, dependency, violation, interactive]
 created: 2026-07-14
-updated: 2026-07-14
+updated: 2026-07-21
 qmd: "geo-dependency-violation-interactive-map rimosso interactivemap — violava regola "ui non importa geo""
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]

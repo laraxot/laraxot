@@ -1,23 +1,3 @@
----
-title: "Errori Comuni da Evitare nelle Implementazioni di Moduli"
-type: concept
-tags: [errori, comuni, evitare]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "errori-comuni-da-evitare errori comuni da evitare nelle implementazioni di moduli"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./errori-comuni-da-evitare-1.md"
-  - "./index.md"
-  - "./multi-channel-notifications-1.md"
-  - "./multi-channel-notifications-2.md"
-  - "./multi-channel-notifications.md"
-  - "./netfun-sms-implementation-1.md"
-  - "./netfun-sms-implementation.md"
-  - "./notifications-implementation-guide-1.md"
----
-
 # Errori Comuni da Evitare nelle Implementazioni di Moduli
 # Errori Comuni da Evitare nelle Implementazioni di Moduli <nome progetto>
 

@@ -1,23 +1,3 @@
----
-title: "Guida all'utilizzo di SpatieEmail"
-type: concept
-tags: [spatie, email, usage]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "spatie-email-usage guida all'utilizzo di spatieemail"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Guida all'utilizzo di SpatieEmail
 
 ## Introduzione
@@ -27,8 +7,8 @@ Questa guida illustra come utilizzare la classe `SpatieEmail` per inviare email 
 ## Collegamenti correlati
 
 - [README del modulo Notify](./readme.md)
-- [Documentazione Email Templates](./email-templates.md)
-- [Email Specifiche per Dottori](./doctor-emails-1.md)
+- [Documentazione Email Templates](./email_templates.md)
+- [Email Specifiche per Dottori](./doctor_emails.md)
 - [Implementazione Database Mail](./database-mail.md)
 - [Documentazione Centrale](../../../../../docs/collegamenti-documentazione.md)
 - [Modulo Xot](../../../xot/docs/readme.md)

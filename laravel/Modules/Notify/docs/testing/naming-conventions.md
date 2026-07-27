@@ -1,15 +1,3 @@
----
-title: "Convenzioni di Naming per i Test"
-type: concept
-tags: [naming, conventions]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "naming-conventions convenzioni di naming per i test"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
----
-
 # Convenzioni di Naming per i Test
 
 ## Problema: Duplicati Lowercase in Filesystem Case-Insensitive

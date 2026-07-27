@@ -1,23 +1,3 @@
----
-title: "AGENTS Module Architecture"
-type: concept
-tags: [agents, module, architecture]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "agents-module-architecture agents module architecture"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./01-gsd-workflow.md"
-  - "./02-bmad-workflow.md"
-  - "./03-architecture-zen.md"
-  - "./04-filament-philosophy.md"
-  - "./05-front-office-audit.md"
-  - "./06-cinematic-effects.md"
-  - "./07-mcp-tailwind-ui.md"
----
-
 # AGENTS Module Architecture
 
 Regole di architettura modulare per il progetto.

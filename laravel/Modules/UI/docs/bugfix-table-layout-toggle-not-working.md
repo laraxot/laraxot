@@ -1,69 +1,76 @@
 ---
 module: UI
 topic: table-layout-toggle
-status: resolved
+status: open
 related_issue: provtv/base_ptv_fila5_mono
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
+related_module_repo: laraxot/module_ui_fila5
 ---
 
-# Bug: «Cambia layout» richiedeva due click
+# Bug: «Cambia layout» non alterna lista/griglia
+
+## Scopo del bottone (business)
+
+Il bottone **Cambia layout** (`TableLayoutToggleTableAction`) è un controllo **solo UX** sulle liste Filament: consente all’operatore di passare tra due presentazioni degli **stessi record**, senza modificare query, filtri o dati.
+
+| Layout | Esperienza utente | Caso d’uso |
+|--------|-------------------|------------|
+| **Lista** | Tabella classica righe/colonne | Confronto denso di molti campi (es. ASZ in Progressioni) |
+| **Griglia** | Card responsive | Scansione visiva con meno colonne per card |
+
+È registrato automaticamente da `HasXotTable::getTableHeaderActions()` su tutte le `XotBaseListRecords`.
 
 ## Sintomo
 
-Click su **Cambia layout** → la tabella non cambiava al primo click.
+- Il bottone è visibile in header tabella (es. `/progressioni/admin/asz00fs`).
+- Dopo il click la tabella **resta in layout lista** (o non cambia in modo affidabile).
+- In alcuni casi precedenti: crash `SvgNotFound` perché l’icona non risolveva la traduzione (fix separato su `transClass` + `table_layout_enum.php`).
 
-## Causa
+## Causa radice
 
-Dopo `setTableLayout()` la sessione era aggiornata, ma Filament/Livewire **non ricalcolava** `HasXotTable::table()` con il nuovo layout. `$layoutView` restava quello del mount finché la pagina non veniva forzata a riallinearsi.
+Due fonti di verità **non sincronizzate**:
 
-## Fix minimo (quello che funziona)
+| Componente | Cosa legge/scrive | Chiave / proprietà |
+|------------|-------------------|--------------------|
+| `HasXotTable::table()` | **render** colonne e griglia | `$this->layoutView` (Livewire) |
+| `TableLayoutToggleTableAction` | **toggle** al click | sessione `table_layout_default` via `TableLayoutTrait` |
 
-In `TableLayoutToggleTableAction::toggleLayout()`, **dopo** `setTableLayout()`:
+Il toggle salvava in sessione e faceva `$refresh`, ma **non aggiornava** `$livewire->layoutView`. La tabella continuava a usare il valore iniziale (`TableLayoutEnum::LIST`).
 
-```php
-$livewire->resetTable();
-$livewire->js('$wire.$refresh()');
-```
+Inoltre:
 
-Opzionale ma presente nel codice: `$livewire->dispatch('$refresh')` prima delle due righe sopra.
+- `setUp()` dell’azione leggeva layout da sessione **una sola volta** (icona/tooltip statici).
+- Default incoerente: `getCurrentLayout()` tornava `GRID` senza sessione, mentre `XotBaseListRecords` inizializza `LIST`.
 
-### Perché funziona
+## Contratto corretto (single source of truth)
 
-1. `setTableLayout()` persiste in sessione (`table_layout_default`).
-2. `resetTable()` invalida lo stato tabella Filament (cache record, pagina, filtri form).
-3. `$wire.$refresh()` forza il re-render Livewire → `bootHasXotTable()` → `mountTableLayoutFromSession()` rilegge la sessione in `$layoutView`.
-4. `HasXotTable::table()` usa il `$layoutView` aggiornato.
+1. **Runtime**: `$layoutView` sulla pagina Livewire guida `HasXotTable::table()`.
+2. **Persistenza**: sessione tramite `TableLayoutTrait` (stesso identifier).
+3. **Mount**: caricare sessione → `$layoutView`.
+4. **Toggle**: aggiornare `$layoutView` + sessione + `resetTable()` / refresh.
+5. **Icona/tooltip**: closure dinamiche su `$layoutView` corrente.
 
-**Non serve** spostare logica su altri trait, rimuovere `TableLayoutTrait` dall’Action, né introdurre `toggleTableLayout()` parallelo.
+## File coinvolti
 
-## Anti-pattern agente (imperdonabile)
+- `Modules/UI/app/Filament/Actions/Table/TableLayoutToggleTableAction.php`
+- `Modules/UI/app/Filament/Actions/Table/TableLayoutTrait.php`
+- `Modules/UI/app/Filament/Traits/HasTableLayoutPage.php` (sync mount)
+- `Modules/Xot/app/Filament/Resources/Pages/XotBaseListRecords.php`
+- `Modules/Xot/app/Filament/Traits/HasXotTable.php`
 
-| Tentativo sbagliato | Perché è merda |
-|--------------------|----------------|
-| `HasTableLayoutPage::toggleTableLayout()` nuovo | Duplica responsabilità già nell’Action + trait sessione |
-| Rimuovere `TableLayoutTrait` dall’Action | Rompe il contratto esistente senza motivo |
-| `readLayoutFrom` / `applyLayoutTo` statici nell’Action | Indirection, viola KISS |
-| Closure dinamiche su icona/tooltip | Refactor cosmetico non richiesto |
-| Accusare `dispatch('$refresh')` come «cargo cult» | Il vero gap era **mancanza** di `resetTable()` + `$wire.$refresh()` |
+## Fix applicato
 
-**Regola:** prima di refactorare, verificare se **2 righe** dopo la persistenza risolvono il render. Se sì → KISS vince.
+Vedi commit associato all’issue GitHub. In sintesi: trait `HasTableLayoutPage`, toggle che scrive su `layoutView`, default allineato a `LIST`, closure dinamiche per icona.
 
-## Verifica
+## Verifica manuale
 
-1. Lista `HasXotTable` (es. ASZ Progressioni).
-2. Un click → lista ↔ griglia.
-3. Reload → layout persistito in sessione.
+1. Aprire una lista con `HasXotTable` (es. ASZ Progressioni).
+2. Click **Cambia layout** → passaggio visivo lista ↔ griglia.
+3. Ricaricare pagina → layout persistito in sessione.
+4. Icona e tooltip coerenti col layout attivo.
 
 ## Collegamenti
 
-- [Architettura azione](./actions/table-layout-toggle.md)
-- [Disciplina agente — non over-engineerare](../../../docs/wiki/memories/agent-table-layout-toggle-discipline.md)
-- [Contratto Xot](../../Xot/docs/filament/table-layout-toggle-contract.md)
+- [TableLayoutToggleTableAction](./actions/table-layout-toggle.md)
+- [HasXotTable — layout tabella](../../Xot/docs/filament/traits/has-xot-table.md)
+- [TableLayoutEnum](./table-layout-enum-complete-guide.md)
+- [Handoff agenti](../../../docs/chat/handoff-table-layout-toggle-not-working.md)

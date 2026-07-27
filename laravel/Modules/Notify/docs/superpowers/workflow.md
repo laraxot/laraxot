@@ -1,20 +1,3 @@
----
-title: "🦸 Superpowers Workflow Guide"
-type: concept
-tags: [workflow]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "workflow 🦸 superpowers workflow guide"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./installation-summary.md"
-  - "./installation.md"
-  - "./installazione.md"
-  - "./skills-reference.md"
-  - "./superpowers.md"
----
-
 # 🦸 Superpowers Workflow Guide
 
 > **Last Updated**: 2026-03-31  

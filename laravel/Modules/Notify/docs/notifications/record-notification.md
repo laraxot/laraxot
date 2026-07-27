@@ -1,23 +1,3 @@
----
-title: "`RecordNotification`"
-type: concept
-tags: [record, notification]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "record-notification `recordnotification`"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./errori-comuni-da-evitare-1.md"
-  - "./errori-comuni-da-evitare.md"
-  - "./index.md"
-  - "./multi-channel-notifications-1.md"
-  - "./multi-channel-notifications-2.md"
-  - "./multi-channel-notifications.md"
-  - "./netfun-sms-implementation-1.md"
-  - "./netfun-sms-implementation.md"
----
-
 # `RecordNotification`
 
 This document describes the `RecordNotification` class, a Laravel Notification that acts as a **Bridge** between Laravel's notification system and the `SpatieEmail` mailable system. It delegates all template resolution, placeholder replacement, and layout logic to `SpatieEmail`, following the **Zen Delegation Pattern**.

@@ -8,14 +8,7 @@ qmd: "istruzioni agenti LLM wiki modulo"
 issues: []
 discussions: []
 related:
-  - "./bmad-method.md"
-  - "./index.md"
-  - "./log.md"
-  - "./notify-conflict-check-.md"
-  - "./notify-conflict-check-1.md"
-  - "./notify-conflict-check.md"
-  - "./notify-restore-.md"
-  - "./notify-restore-1.md"
+  - ./coding-agent-manifests.md
 ---
 
 # LLM Wiki Agent Instructions
@@ -590,5 +583,5 @@ Logarithmic Market Scoring Rule (LMSR) is the core pricing mechanism...
 
 - [Token Efficiency Religion](../token-efficiency-religion.md)
 - [Documentation Standards](../rules/docs-standards.md)
-- [Multi-Agent Collaboration](../multi-agent-collaboration.md)
+- [Multi-Agent Collaboration](../MULTI_AGENT_COLLABORATION.md)
 - [Karpathy's Original Gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)

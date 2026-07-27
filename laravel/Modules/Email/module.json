@@ -6,6 +6,8 @@
     "priority": 140,
     "providers": [
         "Modules\\Email\\Providers\\EmailServiceProvider",
+        "Modules\\Email\\Providers\\RouteServiceProvider",
+        "Modules\\Email\\Providers\\EventServiceProvider",
         "Modules\\Email\\Providers\\Filament\\AdminPanelProvider"
     ],
     "files": []

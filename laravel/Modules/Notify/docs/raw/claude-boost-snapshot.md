@@ -1,20 +1,7 @@
----
-title: "claudeMd"
-type: concept
-tags: [claude, boost, snapshot]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "claude-boost-snapshot claudemd"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./index.md"
----
-
 # claudeMd
 Codebase and user instructions are shown below. Be sure to adhere to these instructions. IMPORTANT: These instructions OVERRIDE any default behavior and you MUST follow them exactly as written.
 
-Contents of /var/www/html/_bases/base_fixcity_fila5_mono/laravel/claude.md (project instructions, checked into the codebase):
+Contents of /var/www/html/_bases/base_fixcity_fila5_mono/laravel/CLAUDE.md (project instructions, checked into the codebase):
 
 <laravel-boost-guidelines>
 === foundation rules ===

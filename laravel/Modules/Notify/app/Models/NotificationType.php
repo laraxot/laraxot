@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
-use Modules\Notify\Database\Factories\NotificationTypeFactory;
 use Override;
 
 /**
@@ -51,7 +50,7 @@ use Override;
  */
 class NotificationType extends Model
 {
-    /** @use HasFactory<NotificationTypeFactory> */
+    /** @use HasFactory<\Modules\Notify\Database\Factories\NotificationTypeFactory> */
     use HasFactory;
 
     /** @var list<string> */

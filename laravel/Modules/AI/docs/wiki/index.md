@@ -4,28 +4,35 @@ type: index
 module: AI
 tags: [ai, wiki, index, ollama, mcp]
 created: 2026-04-15
-updated: 2026-06-05
-qmd: "ai module wiki index ollama mcp second brain harness"
+updated: 2026-07-24
+qmd: "ai module wiki index ollama mcp second brain harness ownership actions"
 issues:
-  - "https://github.com/laraxot/base_fixcity_fila5/issues/272"
-discussions:
-  - "https://github.com/laraxot/base_fixcity_fila5/discussions/273"
+  - "https://github.com/laraxot/base_techplanner_fila5/issues/18"
+discussions: []
 related:
   - ../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md
   - ../../../../docs/wiki/bmad/architecture.md
   - ../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md
-  - ../../docs/wiki/concepts/ai-harness-module-discipline.md
+  - ../../../../docs/wiki/rules/domain-actions-belong-to-domain-module.md
+  - ./concepts/ollama-actions-ownership.md
+  - ./concepts/second-brain-local-discipline.md
 ---
 
 # AI Module LLM Wiki
+
+## Ownership Actions (2026-07-24)
+
+- [ollama-actions-ownership](./concepts/ollama-actions-ownership.md) — Ollama/ContextCompressor in **AI**, non Xot
+- Raw move note: [ollama-actions-moved-from-xot.md](../ollama-actions-moved-from-xot.md)
+- Root rule: [domain-actions-belong-to-domain-module](../../../../docs/wiki/rules/domain-actions-belong-to-domain-module.md)
 
 ## AI / second brain
 
 - [hackernoon-ai-coding-tips-fixcity-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md)
 - [bmad/architecture](../../../../docs/wiki/bmad/architecture.md)
 - [frontmatter + GitHub](../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md)
-- [ai-harness-module-discipline](../../docs/wiki/concepts/ai-harness-module-discipline.md)
 - [second-brain-local-discipline](./concepts/second-brain-local-discipline.md) → canon Xot
+- [local-first-ollama-strategy](./concepts/local-first-ollama-strategy.md)
 
 
 Indice operativo del wiki AI.

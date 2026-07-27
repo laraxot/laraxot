@@ -1,23 +1,3 @@
----
-title: "Implementazione Correzioni PHPStan - Modulo Notify"
-type: concept
-tags: [phpstan, fixes, implementation]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phpstan-fixes-implementation-1 implementazione correzioni phpstan - modulo notify"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Implementazione Correzioni PHPStan - Modulo Notify
 
 ## 🎯 Errori Risolti
@@ -280,8 +260,8 @@ Applicare gli stessi pattern di type safety agli altri moduli:
 
 ## Collegamenti
 
-- [Optimization Recommendations](optimization-recommendations-2.md)
-- [Reusability Guidelines](reusability-guidelines-2.md)
+- [Optimization Recommendations](optimization_recommendations.md)
+- [Reusability Guidelines](reusability_guidelines.md)
 - [PHPStan Best Practices](../../../../docs/phpstan-best-practices.md)
 
 *Ultimo aggiornamento: gennaio 2025*

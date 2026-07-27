@@ -1,20 +1,22 @@
 ---
 title: "Theme Sixteen Analysis Index"
-type: concept
-tags: [index]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "index theme sixteen analysis index"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+type: index
+tags: [notify, docs, theme, sixteen, analysis]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione theme sixteen analysis index theme sixteen analysis index index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
 related:
-  - "./body-structure-parity.md"
-  - "./homepage-comparison.md"
-  - "./results.md"
-  - "./status.md"
-  - "./visual-comparison.md"
+  - ../../../README.md
+  - ../../../wiki/index.md
+  - ../../../notifications/readme.md
+  - ../../../integrations/readme.md
+  - ../../../templates/readme.md
 ---
-
 # Theme Sixteen Analysis Index
 
 ## Homepage Comparison

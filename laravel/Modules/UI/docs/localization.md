@@ -1,23 +1,3 @@
----
-title: "Localizzazione UI"
-type: concept
-tags: [localization]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "localization localizzazione ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Localizzazione UI
 
 ## Integrazione con Laravel Localization
@@ -145,5 +125,5 @@ Modules/UI/
 - [Documentazione Laravel Localization](https://github.com/mcamara/laravel-localization)
 - [Documentazione Filament](https://filamentphp.com/docs)
 - [Documentazione Folio](https://laravel.com/docs/folio)
-- [Best Practices UI](./ui_best-practices-2.md)
-- [Guida Componenti](./components-guide-1.md)
+- [Best Practices UI](./UI_BEST_PRACTICES.md)
+- [Guida Componenti](./COMPONENTS_GUIDE.md)

@@ -1,29 +1,9 @@
----
-title: "PHPStan Level 10 Cleanup Session - [DATE]"
-type: concept
-tags: [phpstan, level, cleanup]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phpstan-level-10-cleanup phpstan level 10 cleanup session - [date]"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
-# PHPStan Level 10 Cleanup Session - [DATE]
+# PHPStan Level 10 Cleanup Session - 2025-11-06
 
 ## Executive Summary
 
-- Session precedente ([DATE]): ✅ zero errori PHPStan Level 10.
-- Nuova esecuzione ([DATE]): ⚠️ rilevato 1 parse error in `UI/app/Filament/Blocks/Title.php` (`unexpected EOF`).
+- Session precedente (2025-11-06): ✅ zero errori PHPStan Level 10.
+- Nuova esecuzione (2025-11-15): ⚠️ rilevato 1 parse error in `UI/app/Filament/Blocks/Title.php` (`unexpected EOF`).
 - Obiettivo attuale: ripristinare il blocco Title seguendo le specifiche documentate in `./index.md` e `./core/architecture.md`, quindi rilanciare `phpstan`.
 
 **Metriche aggiornate**:

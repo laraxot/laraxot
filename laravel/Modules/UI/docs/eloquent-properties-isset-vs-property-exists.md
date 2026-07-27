@@ -1,23 +1,3 @@
----
-title: "Eloquent Properties: isset() vs property_exists() - Guida Completa"
-type: concept
-tags: [eloquent, properties, isset, property]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "eloquent-properties-isset-vs-property-exists eloquent properties: isset() vs property_exists() - guida completa"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Eloquent Properties: isset() vs property_exists() - Guida Completa
 
 ## 🚨 Regola Critica
@@ -184,9 +164,9 @@ Prima di commit, verifica:
 
 ## Documentazione Completa
 
-- **Guida Master**: [Xot: Eloquent Models Critical Rules](../../xot/docs/eloquent-models-critical-rules.md)
-- **Cast Actions**: [Xot: Cast Actions](../../xot/docs/cast-actions.md)
-- **Best Practices**: [Xot: Eloquent Properties Best Practices](../../xot/docs/eloquent-properties-best-practices.md)
+- **Guida Master**: [Xot: Eloquent Models Critical Rules](../../Xot/docs/eloquent-models-critical-rules.md)
+- **Cast Actions**: [Xot: Cast Actions](../../Xot/docs/cast-actions.md)
+- **Best Practices**: [Xot: Eloquent Properties Best Practices](../../Xot/docs/eloquent-properties-best-practices.md)
 
 ## Risorse
 
@@ -202,7 +182,7 @@ Prima di commit, verifica:
 
 ---
 
-**Progetto**: base_<nome progetto>_fila5_mono
+**Progetto**: base_<nome progetto>_fila4_mono
 **PHPStan**: Level 10
 **Status**: ✅ 0 Errors
-**Ultimo aggiornamento**: [DATE]
+**Ultimo aggiornamento**: 2025-01-06

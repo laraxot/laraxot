@@ -1,23 +1,3 @@
----
-title: "Integrazione MailPace Templates"
-type: concept
-tags: [mailpace, templates, integration]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "mailpace-templates-integration integrazione mailpace templates"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./attachments.md"
-  - "./email-best-practices-1.md"
-  - "./email-best-practices.md"
-  - "./email-layouts-best-practices-1.md"
-  - "./email-layouts-best-practices.md"
-  - "./email-templates-best-practices-1.md"
-  - "./email-templates-best-practices.md"
-  - "./email-templates-guide-1.md"
----
-
 # Integrazione MailPace Templates
 
 ## Panoramica
@@ -115,5 +95,5 @@ $mailTemplate->send($user->email, [
 
 - [Documentazione Maizzle](https://maizzle.com/docs/)
 - [Repository MailPace Templates](https://github.com/mailpace/templates)
-- [Guida Spatie Email](../spatie-email-usage-guide-1.md)
-- [Implementazione Slug Field](./slug-field-implementation-1.md)
+- [Guida Spatie Email](../spatie_email_usage_guide.md)
+- [Implementazione Slug Field](./slug_field_implementation.md)

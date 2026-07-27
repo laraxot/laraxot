@@ -1,17 +1,3 @@
----
-title: "Regola Critica: Naming File Test - PascalCase Obbligatorio"
-type: concept
-tags: [test, naming, pascalcase]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "test-naming-pascalcase regola critica: naming file test - pascalcase obbligatorio"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./naming-conventions.md"
-  - "./phpstan-test-mai-escludere.md"
----
-
 # Regola Critica: Naming File Test - PascalCase Obbligatorio
 
 **Data:** 10 Ottobre 2025  

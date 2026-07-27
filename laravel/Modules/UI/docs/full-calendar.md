@@ -1,23 +1,3 @@
----
-title: "FullCalendar (saade/filament-fullcalendar) – Integrazione PTVX"
-type: concept
-tags: [full, calendar]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "full-calendar fullcalendar (saade/filament-fullcalendar) – integrazione ptvx"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # FullCalendar (saade/filament-fullcalendar) – Integrazione PTVX
 
 ## Introduzione
@@ -176,8 +156,8 @@ public function eventDidMount(): string
 - [Documentazione ufficiale](https://filamentphp.com/plugins/saade-fullcalendar)
 - [GitHub](https://github.com/saade/filament-fullcalendar)
 - [Esempio Laravel Daily](https://laraveldaily.com/post/filament-show-calendar-of-tasks-with-fullcalendar)
-- [Modules/UI/docs/full-calendar.md](../modules/ui/docs/full-calendar.md)
+- [Modules/UI/docs/full-calendar.md](../Modules/UI/docs/full-calendar.md)
 - [Regole .mdc](../.cursor/rules/cursor.mdc), [../.windsurf/rules/windsurf.mdc]
 
 ## Ultimo aggiornamento
-[DATE]
+2025-06-04

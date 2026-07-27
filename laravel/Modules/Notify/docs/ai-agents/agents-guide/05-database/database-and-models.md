@@ -1,16 +1,3 @@
----
-title: "5. Database & Models"
-type: concept
-tags: [database, models]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "database-and-models 5. database & models"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
----
-
 # 5. Database & Models
 
 ### Database Config (Laravel 12 Standard)

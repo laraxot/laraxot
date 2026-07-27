@@ -6,9 +6,7 @@ confidence: high
 created: {{date}}
 updated: {{date}}
 tags: [person, organization, module]
-related:
-  - "./concept.md"
-  - "./source.md"
+related: []
 ---
 
 # {{title}}

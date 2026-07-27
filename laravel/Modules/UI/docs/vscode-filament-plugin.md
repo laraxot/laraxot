@@ -1,23 +1,3 @@
----
-title: "Plugin VSCode per Filament"
-type: concept
-tags: [vscode, filament, plugin]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "vscode-filament-plugin plugin vscode per filament"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Plugin VSCode per Filament
 
 ## Overview
@@ -216,7 +196,7 @@ TextInput::make('full_name')
 ## Collegamenti
 - [Form Components](form-components.md)
 - [Naming Conventions](naming-conventions.md)
-- [Translation System](../../lang/docs/translation-system.md)
+- [Translation System](../../Lang/docs/translation-system.md)
 
 ## Vedi Anche
 - [VSCode PHP Setup](vscode-php-setup.md)
@@ -420,9 +400,9 @@ TextInput::make('full_name')
 ## Collegamenti
 - [Form Components](form-components.md)
 - [Naming Conventions](naming-conventions.md)
-- [Translation System](../../lang/project_docs/translation-system.md)
-- [Translation System](../../lang/project_docs/translation-system.md)
-- [Translation System](../../lang/project_docs/translation-system.md)
+- [Translation System](../../Lang/project_docs/translation-system.md)
+- [Translation System](../../Lang/project_docs/translation-system.md)
+- [Translation System](../../Lang/project_docs/translation-system.md)
 
 ## Vedi Anche
 - [VSCode PHP Setup](vscode-php-setup.md)

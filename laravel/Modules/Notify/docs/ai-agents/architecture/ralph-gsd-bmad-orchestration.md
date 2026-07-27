@@ -1,18 +1,3 @@
----
-title: "Ralph + GSD + BMAD Orchestration"
-type: concept
-tags: [ralph, gsd, bmad, orchestration]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "ralph-gsd-bmad-orchestration ralph + gsd + bmad orchestration"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./agents-filament-widgets.md"
-  - "./filament-table-vs-blade-component.md"
----
-
 # Ralph + GSD + BMAD Orchestration
 
 **Path**: `bashscripts/ai/.agents/docs/architecture/ralph-gsd-bmad-orchestration.md`
@@ -96,8 +81,8 @@ Nel repo prevalgono sempre i quality gate locali, anche quando il loop Ralph sug
 
 ## Riferimenti
 
-- [AI agents docs index](../00-index-1.md)
-- [Architecture index](./00-index-1.md)
+- [AI agents docs index](../00-INDEX.md)
+- [Architecture index](./00-INDEX.md)
 - [Ralph local README](../../ralph/README.md)
 - [GSD + BMAD guide](../gsd-bmad-comprehensive-guide.md)
 - [AGENTS.md](../../../../AGENTS.md)

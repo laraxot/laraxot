@@ -1,15 +1,22 @@
 ---
 title: "Database Directory Naming Convention"
 type: concept
-tags: [database, naming]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "database-naming database directory naming convention"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+tags: [notify, docs, conventions, database, naming]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione conventions database naming database directory naming convention frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
 related:
+  - ../README.md
+  - ../architecture/README.md
+  - README.md
+  - ../rules/README.md
+  - ../best-practices/naming-conventions.md
 ---
-
 # Database Directory Naming Convention
 
 > **Last Updated**: 2026-03-13  

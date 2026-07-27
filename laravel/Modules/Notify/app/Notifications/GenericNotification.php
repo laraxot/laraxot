@@ -59,6 +59,7 @@ class GenericNotification extends Notification implements ShouldQueue
      * Ottiene i canali di consegna della notifica.
      *
      * @param  mixed  $_notifiable  L'entità da notificare (oggetto che riceverà la notifica)
+     *
      * @return array<int, string>
      */
     public function via(mixed $_notifiable): array
@@ -71,7 +72,7 @@ class GenericNotification extends Notification implements ShouldQueue
      */
     public function toMail(mixed $notifiable): MailMessage
     {
-        $mail = (new MailMessage)
+        $mail = (new MailMessage())
             ->subject($this->title)
             ->greeting('Gentile '.$this->getRecipientName($notifiable))
             ->line($this->message);

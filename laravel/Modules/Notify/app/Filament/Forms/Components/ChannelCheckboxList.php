@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Filament\Forms\Components;
 
+use Filament\Forms\Components\CheckboxList;
 use Modules\Notify\Enums\ChannelEnum;
-use Modules\Xot\Filament\Forms\Components\XotBaseCheckboxList;
 
 /**
  * Reusable CheckboxList component for ChannelEnum selection.
@@ -22,7 +22,7 @@ use Modules\Xot\Filament\Forms\Components\XotBaseCheckboxList;
  *     ->minItems(1) // Optional: require at least one channel
  * ```
  */
-class ChannelCheckboxList extends XotBaseCheckboxList
+class ChannelCheckboxList extends CheckboxList
 {
     /**
      * Set up the component configuration.

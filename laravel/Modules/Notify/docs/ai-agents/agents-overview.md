@@ -1,23 +1,3 @@
----
-title: "Agents overview"
-type: concept
-tags: [agents, overview]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "agents-overview agents overview"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./01-gsd-workflow.md"
-  - "./02-bmad-workflow.md"
-  - "./03-architecture-zen.md"
-  - "./04-filament-philosophy.md"
-  - "./05-front-office-audit.md"
-  - "./06-cinematic-effects.md"
-  - "./07-mcp-tailwind-ui.md"
----
-
 # Agents overview
 
 Panoramica delle preferenze utente e del canone operativo del repository.
@@ -45,6 +25,6 @@ Panoramica delle preferenze utente e del canone operativo del repository.
 
 ## Riferimenti
 
-- [Main docs index](./00-index-1.md)
-- [Architecture index](./architecture/00-index-1.md)
+- [Main docs index](./00-INDEX.md)
+- [Architecture index](./architecture/00-INDEX.md)
 - [Filament table vs blade component](./architecture/filament-table-vs-blade-component.md)

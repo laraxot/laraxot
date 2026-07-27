@@ -8,11 +8,15 @@ use Spatie\LaravelData\Data;
 
 class NetfunSmsData extends Data
 {
+    /**
+     * @return void
+     */
     public function __construct(
         public string $recipient,
         public string $message,
         public string $sender,
         public ?string $reference = null,
         public ?string $scheduledDate = null,
-    ) {}
+    ) {
+    }
 }

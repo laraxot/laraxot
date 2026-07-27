@@ -37,7 +37,7 @@ related:
 | [gc-modules-runtime-matrix.md](./gc-modules-runtime-matrix.md) | `modules_statuses` + rischi (Document/media) |
 | [module-vs-theme-boundaries.md](./module-vs-theme-boundaries.md) | Modules vs Themes vs app |
 | [wave1-fo-operator-note.md](./wave1-fo-operator-note.md) | Operator resta Filament in Wave 1 |
-| [gestionale-panels-vs-themes.md](./gestionale-panels-vs-themes.md) | Panel SRC vs tema |
+| [module-filament-panel-triad.md](../../Modules/Xot/docs/wiki/concepts/module-filament-panel-triad.md) | Trinità panel BO (config + provider + dashboard) |
 | [new-modules-panel-mapping.md](./new-modules-panel-mapping.md) | URL `*/admin` |
 | [aiassistant-vs-themes.md](./aiassistant-vs-themes.md) | AiAssistant non va nei temi |
 | [copy-normalize-modules-vs-themes.md](./copy-normalize-modules-vs-themes.md) | Copy/normalize non tocca Themes composer |
@@ -52,7 +52,9 @@ related:
 | [tenant-modules-statuses-religion.md](./shared-components/tenant-modules-statuses-religion.md) | Root vs `config/local/{tenant}/` |
 | [module-config-php-religion.md](./shared-components/module-config-php-religion.md) | Obbligo `config/config.php` per modulo |
 | [module-dashboard-page-religion.md](./shared-components/module-dashboard-page-religion.md) | Obbligo `Dashboard.php` — landing `{modulo}/admin` |
-| [module-admin-panel-provider-religion.md](./shared-components/module-admin-panel-provider-religion.md) | Obbligo `AdminPanelProvider` registrato |
+| [module-filament-panel-triad.md](../../Modules/Xot/docs/wiki/concepts/module-filament-panel-triad.md) | **SSoT** trinità panel BO modulo |
+| [module-admin-panel-provider-religion.md](./shared-components/module-admin-panel-provider-religion.md) | `AdminPanelProvider` — boot panel `{modulo}/admin` |
+| [module-theme-root-hygiene-religion.md](./shared-components/module-theme-root-hygiene-religion.md) | Root lowercase, workspace, no IDE folders |
 
 ## Test FO vs moduli
 

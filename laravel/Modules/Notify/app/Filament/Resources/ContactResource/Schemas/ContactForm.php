@@ -27,6 +27,5 @@ class ContactForm extends XotBaseResourceForm
                 ->tel()
                 ->maxLength(255),
         ];
-
     }
 }

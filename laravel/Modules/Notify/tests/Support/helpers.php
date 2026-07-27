@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Mockery\CompositeExpectation;
 use Mockery\MockInterface;
 
 if (! function_exists('typedMock')) {
@@ -29,29 +28,15 @@ if (! function_exists('typedMock')) {
 
 if (! function_exists('mockExpectation')) {
     /**
-     * Mockery::shouldReceive() dichiara nativamente il tipo di ritorno
-     * `Expectation|ExpectationInterface|HigherOrderMessage` (vedi
-     * vendor/mockery/mockery/library/Mockery/LegacyMockInterface.php). Quando
-     * viene chiamato con un singolo nome di metodo (non un array, non senza
-     * argomenti) restituisce sempre una `Expectation` concreta a runtime, ma
-     * PHPStan non puo' restringere l'unione in base al valore dell'argomento.
-     * Questo helper incapsula quella certezza runtime in un punto solo, cosi'
-     * `->with()`, `->andReturn()`, `->once()`, `->times()` restano disponibili
-     * senza `method.notFound`/`method.nonObject` sparsi in ogni test.
-     *
-     * Nota: chiamato con un singolo nome di metodo, `Mock::shouldReceive()`
-     * restituisce a runtime una `Mockery\Expectation` concreta (vedi
-     * vendor/mockery/mockery/library/Mockery/Mock.php::shouldReceive()), che
-     * espone nativamente `with()`, `andReturn()`, `once()`, `times()`. La firma
-     * nativa dichiara pero' l'unione `ExpectationInterface|Expectation|
-     * HigherOrderMessage`: questo helper la restringe in un punto solo cosi'
-     * quei metodi restano disponibili senza `method.notFound`/`method.nonObject`
-     * sparsi in ogni test.
+     * Mockery::shouldReceive($singleMethod) restituisce a runtime una
+     * {@see \Mockery\Expectation} concreta. La firma nativa dichiara l'unione
+     * `ExpectationInterface|Expectation|HigherOrderMessage`, quindi PHPStan
+     * non vede `with()`/`once()`/`times()`. Questo helper restringe il tipo.
      */
-    function mockExpectation(MockInterface $mock, string $method): CompositeExpectation
+    function mockExpectation(MockInterface $mock, string $method): \Mockery\Expectation
     {
-        /** @var CompositeExpectation $expectation */
         $expectation = $mock->shouldReceive($method);
+        assert($expectation instanceof \Mockery\Expectation);
 
         return $expectation;
     }

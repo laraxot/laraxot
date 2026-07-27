@@ -6,14 +6,7 @@ tags: [agents, confidence, verification]
 created: "2026-05-26"
 updated: "2026-05-26"
 related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-edit-discipline.md"
-  - "./ai-methodologies.md"
+  - "../../../../docs/wiki/rules/agent-confidence-protocol.md"
 ---
 
 # Massima confidenza agente

@@ -1,17 +1,3 @@
----
-title: "🔧 STRUMENTI QUALITÀ CODICE PHP - FIXCITY PLATFORM"
-type: concept
-tags: [php, quality, tools]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "php-quality-tools 🔧 strumenti qualità codice php - fixcity platform"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./phpstan-analysis.md"
-  - "./quality-tools-ecosystem.md"
----
-
 # 🔧 STRUMENTI QUALITÀ CODICE PHP - FIXCITY PLATFORM
 
 **Versione**: 1.0  

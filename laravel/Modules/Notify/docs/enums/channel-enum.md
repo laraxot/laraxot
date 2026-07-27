@@ -1,16 +1,3 @@
----
-title: "`ChannelEnum`"
-type: concept
-tags: [channel, enum]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "channel-enum `channelenum`"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./contact-type-enum.md"
----
-
 # `ChannelEnum`
 
 This document describes the `ChannelEnum`, an enumeration (Enum) defining the various notification channels supported by the `Notify` module. It is designed to provide a type-safe and standardized way to reference notification channels throughout the application, especially in Filament actions and other notification-related logic.

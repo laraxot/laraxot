@@ -29,6 +29,8 @@ final class SendTwilioSMSAction implements SmsActionContract
 
     /**
      * Create a new action instance.
+     *
+     * @return void
      */
     public function __construct()
     {

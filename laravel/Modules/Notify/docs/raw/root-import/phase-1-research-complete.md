@@ -1,23 +1,3 @@
----
-title: "✅ PHASE 1 - RICERCA COMPLETATA"
-type: concept
-tags: [phase, research, complete]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phase-1-research-complete ✅ phase 1 - ricerca completata"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./agents.md"
-  - "./changelog.md"
-  - "./claude.md"
-  - "./design-conversion-roadmap-1.md"
-  - "./design-conversion-roadmap.md"
-  - "./files-created-session-007-1.md"
-  - "./files-created-session-007.md"
-  - "./files-created-session-replikate.md"
----
-
 # ✅ PHASE 1 - RICERCA COMPLETATA
 
 **Data**: 2026-04-08  
@@ -58,7 +38,7 @@ related:
    - Rimuove scripts, styles, noscript
    - Preserva hierarchy, classes, attributes
 
-5. **laravel/Themes/Sixteen/docs/00-index-1.md** (12.926 caratteri)
+5. **laravel/Themes/Sixteen/docs/00-INDEX.md** (12.926 caratteri)
    - Master index documentazione
    - Navigazione per topic
    - Fase progression timeline
@@ -201,7 +181,7 @@ Verifica: parity ≥ 90%
 
 ### PASSO 5: Researcher documenta (Subtask 6)
 Crea: `PHASE-1-COMPLETION-REPORT.md`
-Aggiorna: `00-index-1.md`
+Aggiorna: `00-INDEX.md`
 ⏱️ ~20-25 min
 
 **TOTAL TIME**: 90-150 minuti (120-150 sequenziale, ~90 parallelizzato)
@@ -247,7 +227,7 @@ return [
 
 **Leggi in questo ordine**:
 
-1. **[00-index-1.md](laravel/Themes/Sixteen/docs/00-index-1.md)** - Master index (sei qui, ma online)
+1. **[00-INDEX.md](laravel/Themes/Sixteen/docs/00-INDEX.md)** - Master index (sei qui, ma online)
 2. **[PHASE-1-STRATEGY.md](laravel/Themes/Sixteen/docs/PHASE-1-STRATEGY.md)** - Strategia completa (22k chars)
 3. **[GSD-PHASE-1-EXECUTION.md](laravel/Themes/Sixteen/docs/GSD-PHASE-1-EXECUTION.md)** - Piano esecuzione (19k chars)
 4. **[bashscripts/docs/html/INDEX.md](bashscripts/docs/html/INDEX.md)** - Documentazione strumenti

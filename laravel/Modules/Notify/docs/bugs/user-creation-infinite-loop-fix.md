@@ -1,16 +1,3 @@
----
-title: "Fix: Infinite Loop in User Creation (make:filament-user)"
-type: concept
-tags: [user, creation, infinite, loop]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "user-creation-infinite-loop-fix fix: infinite loop in user creation (make:filament-user)"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./summary.md"
----
-
 # Fix: Infinite Loop in User Creation (make:filament-user)
 
 ## Data

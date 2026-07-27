@@ -1,23 +1,3 @@
----
-title: "Best Practices UI"
-type: concept
-tags: [best, practices]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "best-practices best practices ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Best Practices UI
 
 ## Principi Generali
@@ -262,9 +242,9 @@ class AdvancedForm extends Component
 - Breaking changes
 ## Collegamenti tra versioni di best-practices.md
 * [best-practices.md](docs/tecnico/filament/best-practices.md)
-* [best-practices.md](../../../xot/docs/laraxot/best-practices.md)
-* [best-practices.md](../../../ui/docs/best-practices.md)
-* [best-practices.md](../../../../themes/one/docs/best-practices.md)
+* [best-practices.md](../../../Xot/docs/laraxot/best-practices.md)
+* [best-practices.md](../../../UI/docs/best-practices.md)
+* [best-practices.md](../../../../Themes/One/docs/best-practices.md)
 
 ### Versione Incoming
 
@@ -515,15 +495,15 @@ class AdvancedForm extends Component
 - Breaking changes
 ## Collegamenti tra versioni di best-practices.md
 * [best-practices.md](docs/tecnico/filament/best-practices.md)
-* [best-practices.md](../../../xot/project_docs/laraxot/best-practices.md)
-* [best-practices.md](../../../ui/project_docs/best-practices.md)
-* [best-practices.md](../../../../themes/one/project_docs/best-practices.md)
-* [best-practices.md](../../../xot/project_docs/laraxot/best-practices.md)
-* [best-practices.md](../../../ui/project_docs/best-practices.md)
-* [best-practices.md](../../../../themes/one/project_docs/best-practices.md)
-* [best-practices.md](../../../xot/project_docs/laraxot/best-practices.md)
-* [best-practices.md](../../../ui/project_docs/best-practices.md)
-* [best-practices.md](../../../../themes/one/project_docs/best-practices.md)
+* [best-practices.md](../../../Xot/project_docs/laraxot/best-practices.md)
+* [best-practices.md](../../../UI/project_docs/best-practices.md)
+* [best-practices.md](../../../../Themes/One/project_docs/best-practices.md)
+* [best-practices.md](../../../Xot/project_docs/laraxot/best-practices.md)
+* [best-practices.md](../../../UI/project_docs/best-practices.md)
+* [best-practices.md](../../../../Themes/One/project_docs/best-practices.md)
+* [best-practices.md](../../../Xot/project_docs/laraxot/best-practices.md)
+* [best-practices.md](../../../UI/project_docs/best-practices.md)
+* [best-practices.md](../../../../Themes/One/project_docs/best-practices.md)
 
 ### Versione Incoming
 

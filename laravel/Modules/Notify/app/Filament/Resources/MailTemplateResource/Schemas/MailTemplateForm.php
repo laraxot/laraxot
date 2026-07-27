@@ -70,6 +70,5 @@ class MailTemplateForm extends XotBaseResourceForm
             'sms_template' => Textarea::make('sms_template')
                 ->columnSpanFull(),
         ];
-
     }
 }

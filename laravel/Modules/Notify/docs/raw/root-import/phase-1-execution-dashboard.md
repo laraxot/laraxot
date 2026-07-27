@@ -1,23 +1,3 @@
----
-title: "🎯 PHASE 1 EXECUTION DASHBOARD"
-type: concept
-tags: [phase, execution, dashboard]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phase-1-execution-dashboard 🎯 phase 1 execution dashboard"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./agents.md"
-  - "./changelog.md"
-  - "./claude.md"
-  - "./design-conversion-roadmap-1.md"
-  - "./design-conversion-roadmap.md"
-  - "./files-created-session-007-1.md"
-  - "./files-created-session-007.md"
-  - "./files-created-session-replikate.md"
----
-
 # 🎯 PHASE 1 EXECUTION DASHBOARD
 ## Multi-Agent Coordination Board
 
@@ -320,7 +300,7 @@ Phase 2 planning can begin
 - [ ] PHASE-1-COMPLETION-REPORT.md created
 - [ ] Metrics documented
 - [ ] Lessons learned captured
-- [ ] 00-index-1.md updated
+- [ ] 00-INDEX.md updated
 - [ ] Phase 2 strategy outlined
 
 ---
@@ -347,7 +327,7 @@ Phase 2 planning can begin
 ## 🔗 DOCUMENTATION REFERENCE
 
 **Quick Start** (5 min read):
-- phase-1-research-complete.md
+- PHASE-1-RESEARCH-COMPLETE.md
 - PHASE-1-EXECUTION-STATUS.md
 
 **In-Depth** (20-30 min read):

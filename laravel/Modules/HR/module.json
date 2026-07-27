@@ -6,6 +6,8 @@
     "priority": 0,
     "providers": [
         "Modules\\HR\\Providers\\HrServiceProvider",
+        "Modules\\HR\\Providers\\RouteServiceProvider",
+        "Modules\\HR\\Providers\\EventServiceProvider",
         "Modules\\HR\\Providers\\Filament\\AdminPanelProvider"
     ],
     "files": []

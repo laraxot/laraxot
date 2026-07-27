@@ -1,23 +1,3 @@
----
-title: "File Validation Multilingua - Modulo UI"
-type: concept
-tags: [validation, files, multilingua]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "validation-files-multilingua file validation multilingua - modulo ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # File Validation Multilingua - Modulo UI
 
 ## Panoramica
@@ -210,8 +190,8 @@ Verificare che i parametri `:day` e `:session` vengano sostituiti correttamente 
 
 ## Collegamenti
 - [Opening Hours Rule](../app/Rules/OpeningHoursRule.php)
-- [TransTrait Documentation](../../xot/docs/trans_trait.md)
-- [Opening Hours Field](./opening-hours-field.md)
+- [TransTrait Documentation](../../Xot/docs/trans_trait.md)
+- [Opening Hours Field](./opening_hours_field.md)
 - [Localization Guidelines](./localization_guidelines.md)
 
 *Implementazione completata: gennaio 2025*
@@ -407,8 +387,8 @@ Verificare che i parametri `:day` e `:session` vengano sostituiti correttamente 
 
 ## Collegamenti
 - [Opening Hours Rule](../app/Rules/OpeningHoursRule.php)
-- [TransTrait Documentation](../../xot/docs/trans_trait.md)
-- [Opening Hours Field](./opening-hours-field.md)
+- [TransTrait Documentation](../../Xot/docs/trans_trait.md)
+- [Opening Hours Field](./opening_hours_field.md)
 - [Localization Guidelines](./localization_guidelines.md)
 
 *Implementazione completata: gennaio 2025*

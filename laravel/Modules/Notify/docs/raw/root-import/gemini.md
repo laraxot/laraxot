@@ -1,23 +1,3 @@
----
-title: "Gemini Rules (Modular)"
-type: concept
-tags: [gemini]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "gemini gemini rules (modular)"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./agents.md"
-  - "./changelog.md"
-  - "./claude.md"
-  - "./design-conversion-roadmap-1.md"
-  - "./design-conversion-roadmap.md"
-  - "./files-created-session-007-1.md"
-  - "./files-created-session-007.md"
-  - "./files-created-session-replikate.md"
----
-
 # Gemini Rules (Modular)
 
 Questa documentazione è stata divisa in moduli per una gestione più efficiente del contesto.
@@ -34,8 +14,8 @@ Questa documentazione è stata divisa in moduli per una gestione più efficiente
 
 ---
 **See also:**
-- [claude.md](./claude.md)
+- [CLAUDE.md](./CLAUDE.md)
 - [AGENTS.md](./AGENTS.md)
-- [qwen.md](./qwen.md)
+- [QWEN.md](./QWEN.md)
 
 *Ultimo aggiornamento: Aprile 2026*

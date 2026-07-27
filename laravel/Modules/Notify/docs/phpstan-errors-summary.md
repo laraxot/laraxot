@@ -1,23 +1,3 @@
----
-title: "Phpstan Errors Summary"
-type: concept
-tags: [phpstan, errors, summary]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phpstan-errors-summary phpstan errors summary"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 ## PHPStan Errors Summary - Modules (Level 10, JSON Report)
 
 Fonte: `./vendor/bin/phpstan analyse Modules --level=10 --memory-limit=2G --error-format=json > /tmp/phpstan-errors.json`  

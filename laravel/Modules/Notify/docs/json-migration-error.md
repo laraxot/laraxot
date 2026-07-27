@@ -1,23 +1,3 @@
----
-title: "Errore di Migrazione JSON e Soluzione"
-type: concept
-tags: [json, migration, error]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "json-migration-error errore di migrazione json e soluzione"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Errore di Migrazione JSON e Soluzione
 
 ## Errore Riscontrato
@@ -164,8 +144,8 @@ if ($validRecords !== $totalRecords) {
 
 ## Collegamenti Correlati
 
-- [Documentazione Migrazioni](./migration-rules.md)
-- [Best Practices JSON](./json-best-practices.md)
+- [Documentazione Migrazioni](./MIGRATION_RULES.md)
+- [Best Practices JSON](./JSON_BEST_PRACTICES.md)
 - [Gestione Errori](./ERROR_HANDLING.md)
 
 ## Note Importanti

@@ -1,23 +1,3 @@
----
-title: "Email Layouts Best Practices"
-type: concept
-tags: [email, layouts, best, practices]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "email-layouts-best-practices email layouts best practices"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./attachments.md"
-  - "./email-best-practices-1.md"
-  - "./email-best-practices.md"
-  - "./email-layouts-best-practices-1.md"
-  - "./email-templates-best-practices-1.md"
-  - "./email-templates-best-practices.md"
-  - "./email-templates-guide-1.md"
-  - "./email-templates-guide.md"
----
-
 # Email Layouts Best Practices 
 
 Questa documentazione descrive le best practices da seguire per i layout email quando si utilizza `spatie/laravel-database-mail-templates` nel modulo Notify di Quaeris.
@@ -223,6 +203,6 @@ Il supporto per la Dark Mode migliora l'esperienza utente e riduce l'affaticamen
 ## Riferimenti
 
 - [Documentazione Spatie Laravel Database Mail Templates](https://github.com/spatie/laravel-database-mail-templates)
-- [Email Templates Guide](./email-templates-guide-1.md)
-- [Spatie Mail Templates Structure](./spatie-mail-templates-structure-1.md)
-- [Template Content Examples](./template-content-examples-1.md)
+- [Email Templates Guide](./email_templates_guide.md)
+- [Spatie Mail Templates Structure](./spatie_mail_templates_structure.md)
+- [Template Content Examples](./template_content_examples.md)

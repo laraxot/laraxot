@@ -1,23 +1,3 @@
----
-title: "Ottimizzazioni Approfondite Modulo UI - DRY + KISS"
-type: concept
-tags: [ottimizzazioni, approfondite, modulo]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "ottimizzazioni-approfondite-modulo-ui ottimizzazioni approfondite modulo ui - dry + kiss"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Ottimizzazioni Approfondite Modulo UI - DRY + KISS
 
 ## Panoramica
@@ -86,10 +66,10 @@ app/
 **Impatto:** Riduzione da 30+ a 10-15 file
 
 **Guide da consolidare:**
-- **PHPStan:** Fare riferimento a `../../../docs/core/phpstan-guide.md`
-- **Filament:** Fare riferimento a `../../../docs/core/filament-best-practices.md`
-- **Testing:** Fare riferimento a `../../../docs/core/testing-guide.md`
-- **Code Quality:** Fare riferimento a `../../../docs/core/code-quality-guide.md`
+- **PHPStan:** Fare riferimento a `../../docs/core/phpstan-guide.md`
+- **Filament:** Fare riferimento a `../../docs/core/filament-best-practices.md`
+- **Testing:** Fare riferimento a `../../docs/core/testing-guide.md`
+- **Code Quality:** Fare riferimento a `../../docs/core/code-quality-guide.md`
 
 ### 2. Standardizzazione Naming File
 **Azione:** Rinominare tutti i file seguendo convenzioni corrette
@@ -99,9 +79,9 @@ app/
 **File da rinominare:**
 ```bash
 # Esempi di rinominazione
-navigation-components-2.md → navigation-components.md
-table-components-2.md → table-components.md
-form-components-2.md → form-components.md
+navigation_components.md → navigation-components.md
+table_components.md → table-components.md
+form_components.md → form-components.md
 phpstan_analysis.md → phpstan-analysis.md
 filament_widgets.md → filament-widgets.md
 ```
@@ -199,9 +179,9 @@ fi
 ```bash
 # Eliminare file duplicati
 cd docs/
-rm navigation-components-2.md
-rm table-components-2.md
-rm form-components-2.md
+rm navigation_components.md
+rm table_components.md
+rm form_components.md
 rm phpstan_analysis.md
 rm filament_widgets.md
 
@@ -296,11 +276,11 @@ php artisan test --testsuite=UI
 
 ## 🔗 Collegamenti Sistema
 
-- [**Documentazione Core Sistema**](../../../docs/core/)
-- [**PHPStan Guide**](../../../docs/core/phpstan-guide.md)
-- [**Filament Best Practices**](../../../docs/core/filament-best-practices.md)
-- [**Convenzioni Sistema**](../../../docs/core/conventions.md)
-- [**Template Moduli**](../../../docs/templates/)
+- [**Documentazione Core Sistema**](../../docs/core/)
+- [**PHPStan Guide**](../../docs/core/phpstan-guide.md)
+- [**Filament Best Practices**](../../docs/core/filament-best-practices.md)
+- [**Convenzioni Sistema**](../../docs/core/conventions.md)
+- [**Template Moduli**](../../docs/templates/)
 
 ---
 

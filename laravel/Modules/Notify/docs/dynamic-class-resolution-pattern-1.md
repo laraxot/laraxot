@@ -1,23 +1,3 @@
----
-title: "Pattern di Risoluzione Dinamica delle Classi vs Pattern Match"
-type: pattern
-tags: [dynamic, class, resolution, pattern]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "dynamic-class-resolution-pattern-1 pattern di risoluzione dinamica delle classi vs pattern match"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Pattern di Risoluzione Dinamica delle Classi vs Pattern Match
 
 Questo documento analizza i vantaggi e gli svantaggi dell'utilizzo di una formula di calcolo dinamico per la risoluzione delle classi rispetto all'approccio attuale con match nel factory pattern di <nome progetto>.

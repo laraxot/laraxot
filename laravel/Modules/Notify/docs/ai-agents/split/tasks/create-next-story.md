@@ -1,23 +1,3 @@
----
-title: "Create Next Story Task"
-type: concept
-tags: [create, next, story]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "create-next-story create next story task"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./advanced-elicitation.md"
-  - "./apply-qa-fixes.md"
-  - "./brownfield-create-epic.md"
-  - "./brownfield-create-story.md"
-  - "./correct-course.md"
-  - "./create-brownfield-story.md"
-  - "./create-deep-research-prompt.md"
-  - "./create-doc.md"
----
-
 ### Task: create-next-story
 Source: .bmad-core/tasks/create-next-story.md
 - How to use: "Use task create-next-story with the appropriate agent" and paste relevant parts as needed.

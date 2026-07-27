@@ -1,23 +1,3 @@
----
-title: "Files Created - REPLIKATE Session (2026-04-07)"
-type: concept
-tags: [files, created, session, replikate]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "files-created-session-replikate files created - replikate session (2026-04-07)"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./agents.md"
-  - "./changelog.md"
-  - "./claude.md"
-  - "./design-conversion-roadmap-1.md"
-  - "./design-conversion-roadmap.md"
-  - "./files-created-session-007-1.md"
-  - "./files-created-session-007.md"
-  - "./firebase-1.md"
----
-
 # Files Created - REPLIKATE Session (2026-04-07)
 
 ## 📋 Documentation Files
@@ -29,7 +9,7 @@ laravel/Themes/Sixteen/docs/
 ├── prompts/
 │   └── replikate.txt                   ✅ UPDATED - Full protocol
 └── design-comuni/
-    ├── 00-index-1.md                     ✅ NEW - Navigation hub
+    ├── 00-INDEX.md                     ✅ NEW - Navigation hub
     └── pages/
         └── homepage-structure-diff.md  ✅ NEW - Detailed analysis + fixes
 ```
@@ -47,8 +27,8 @@ bashscripts/design-analysis/
 ### Session Files
 ```
 Project Root:
-├── replikate-phase-1-complete.md       ✅ NEW - Phase 1 summary
-└── files-created-session-replikate.md  ✅ THIS FILE
+├── REPLIKATE-PHASE-1-COMPLETE.md       ✅ NEW - Phase 1 summary
+└── FILES-CREATED-SESSION-REPLIKATE.md  ✅ THIS FILE
 ```
 
 ---
@@ -75,12 +55,12 @@ Project Root:
 | REPLIKATE-MASTER-INDEX.md | Navigation | 7.2K | Master hub for all docs | [View](./laravel/Themes/Sixteen/docs/REPLIKATE-MASTER-INDEX.md) |
 | replikate.txt | Protocol | 3.8K | Execution framework | [View](./laravel/Themes/Sixteen/docs/prompts/replikate.txt) |
 | homepage-structure-diff.md | Analysis | 7.3K | Detailed structural analysis | [View](./laravel/Themes/Sixteen/docs/design-comuni/pages/homepage-structure-diff.md) |
-| design-comuni/00-index-1.md | Hub | 4.1K | Design Comuni navigation | [View](./laravel/Themes/Sixteen/docs/design-comuni/00-index-1.md) |
+| design-comuni/00-INDEX.md | Hub | 4.1K | Design Comuni navigation | [View](./laravel/Themes/Sixteen/docs/design-comuni/00-INDEX.md) |
 | replikate-workflow.sh | Script | 2.4K | Automated analysis | [View](./bashscripts/design-analysis/replikate-workflow.sh) |
 | replikate-workflow.md | Doc | 2.1K | Script documentation | [View](./bashscripts/design-analysis/docs/replikate-workflow.md) |
 | bashscripts README.md | Module | 1.3K | Module overview | [View](./bashscripts/design-analysis/README.md) |
 | bashscripts docs README.md | Index | 1.3K | Docs index | [View](./bashscripts/design-analysis/docs/README.md) |
-| PHASE-1-COMPLETE.md | Summary | 8.4K | Session completion report | [View](./replikate-phase-1-complete.md) |
+| PHASE-1-COMPLETE.md | Summary | 8.4K | Session completion report | [View](./REPLIKATE-PHASE-1-COMPLETE.md) |
 
 ---
 
@@ -188,7 +168,7 @@ REPLIKATE Master Index
 - [REPLIKATE Master Index](./laravel/Themes/Sixteen/docs/REPLIKATE-MASTER-INDEX.md)
 
 **Phase 1 Output**:
-- [Phase 1 Completion Summary](./replikate-phase-1-complete.md)
+- [Phase 1 Completion Summary](./REPLIKATE-PHASE-1-COMPLETE.md)
 
 **Phase 2 Action Items**:
 - [Homepage Structure Diff](./laravel/Themes/Sixteen/docs/design-comuni/pages/homepage-structure-diff.md)

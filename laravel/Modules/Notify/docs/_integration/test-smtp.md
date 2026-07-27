@@ -1,23 +1,3 @@
----
-title: "test_smtp"
-type: concept
-tags: [test, smtp]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "test-smtp test_smtp"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./firebase.md"
-  - "./links.md"
-  - "./login.md"
-  - "./notifications.md"
-  - "./repos.md"
-  - "./telegram.md"
-  - "./test-smtp-1.md"
-  - "./test-smtp-2.md"
----
-
 # test_smtp
 
 <!-- Contenuto migrato da _docs/test_smtp.txt -->
@@ -63,7 +43,6 @@ Mail::raw('Test SMTP', function($m){ $m->to('tuo@email.com')->subject('Test SMTP
 - (Opzionale) Permetti l'override dei parametri SMTP da form, come in `TestSmtpPage`.
 
 ## Approfondimenti
-- [TestSmtpPage vs SendEmail: differenze architetturali](./test-smtp-2.md)
-- [Best practice per la configurazione SMTP](./email-best-practices.md)
-- [Best practice per la configurazione SMTP](./email-best-practices.md)
+- [TestSmtpPage vs SendEmail: differenze architetturali](./test_smtp.md)
+- [Best practice per la configurazione SMTP](./EMAIL_BEST_PRACTICES.md)
 - [Documentazione Laravel Mail](https://laravel.com/project_docs/mail)

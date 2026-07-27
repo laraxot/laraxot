@@ -1,23 +1,3 @@
----
-title: "Risoluzione Conflitti File di Traduzione UI"
-type: concept
-tags: [conflict, resolution, translation, files]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "conflict-resolution-translation-files risoluzione conflitti file di traduzione ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Risoluzione Conflitti File di Traduzione UI
 
 ## Problema Identificato
@@ -152,8 +132,8 @@ Applicare la stessa logica a tutti i file di traduzione con conflitti simili:
 
 ## Collegamenti Correlati
 
-- [Translation Standards](../../../../docs/translation-standards.md)
-- [PHP Strict Types](./strict-types-implementation-1.md)
+- [Translation Standards](../../../docs/translation-standards.md)
+- [PHP Strict Types](./strict_types_implementation.md)
 - [UI Module Structure](./structure.md)
 - [Best Practices](./best-practices.md)
 
@@ -305,8 +285,8 @@ Applicare la stessa logica a tutti i file di traduzione con conflitti simili:
 
 ## Collegamenti Correlati
 
-- [Translation Standards](../../../../docs/project/translation-standards.md)
-- [PHP Strict Types](./strict-types-implementation-1.md)
+- [Translation Standards](../../../project_docs/translation-standards.md)
+- [PHP Strict Types](./strict_types_implementation.md)
 - [UI Module Structure](./structure.md)
 - [Best Practices](./best-practices.md)
 

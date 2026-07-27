@@ -1,23 +1,3 @@
----
-title: "Laravel Folio + Volt - Best Practices and Patterns Analysis"
-type: concept
-tags: [folio, volt, best, practices]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "folio-volt-best-practices laravel folio + volt - best practices and patterns analysis"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Laravel Folio + Volt - Best Practices and Patterns Analysis
 
 ## Overview
@@ -42,17 +22,9 @@ Example of a Volt component in a Folio page:
 ```blade
 <?php
 use App\Models\Event;
-use Livewire\Volt\Component;
+use function Livewire\Volt\{computed, mount};
 
-new class extends Component {
-    /** @var list<\App\Models\Event> */
-    public array $events = [];
-
-    public function mount(): void
-    {
-        $this->events = Event::upcoming()->get()->all();
-    }
-};
+$events = computed(fn () => Event::upcoming()->get());
 ?>
 
 <x-layout>
@@ -81,8 +53,9 @@ new class extends Component {
 - Implement a consistent navigation component that can be included across pages
 
 ### 5. Data Handling
-- In class-based components, keep state in `public` properties and initialize in `mount()`
-- For derived values, prefer methods/getters in the class (functional `computed()` / `state()` is legacy/mantenimento)
+- Use `computed()` for data that should be cached until dependencies change
+- Use `state()` for reactive properties
+- Use `mount()` for initialization logic when component loads
 - Sushi package can be used for dummy data in development
 
 ### 6. Middleware Application
@@ -127,4 +100,4 @@ middleware(['auth', 'verified']);
 - Genesis Starter Kit: https://github.com/thedevdojo/genesis
 
 ## Date
-[DATE]
+2025-11-29

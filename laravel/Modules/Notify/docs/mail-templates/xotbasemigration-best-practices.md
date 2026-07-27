@@ -1,23 +1,3 @@
----
-title: "XotBaseMigration: Best Practices"
-type: concept
-tags: [xotbasemigration, best, practices]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "xotbasemigration-best-practices xotbasemigration: best practices"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./attachments.md"
-  - "./email-best-practices-1.md"
-  - "./email-best-practices.md"
-  - "./email-layouts-best-practices-1.md"
-  - "./email-layouts-best-practices.md"
-  - "./email-templates-best-practices-1.md"
-  - "./email-templates-best-practices.md"
-  - "./email-templates-guide-1.md"
----
-
 # XotBaseMigration: Best Practices
 
 ## Introduzione
@@ -134,4 +114,4 @@ Quando si utilizza `Schema::hasColumn()` direttamente, si bypassa tutta questa l
 ## Riferimenti
 
 - [Xot Module Documentation](/var/www/html/Quaeris/laravel/modules/xot/docs/migrations.md)
-- [JSON Migration Best Practices](/var/www/html/Quaeris/laravel/modules/notify/docs/mail-templates/json-migration-fixes-1.md)
+- [JSON Migration Best Practices](/var/www/html/Quaeris/laravel/modules/notify/docs/mail-templates/json_migration_fixes.md)

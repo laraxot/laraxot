@@ -1,20 +1,3 @@
----
-title: "Superpowers - Installazione e Configurazione"
-type: concept
-tags: [installazione]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "installazione superpowers - installazione e configurazione"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./installation-summary.md"
-  - "./installation.md"
-  - "./skills-reference.md"
-  - "./superpowers.md"
-  - "./workflow.md"
----
-
 # Superpowers - Installazione e Configurazione
 
 ## Panoramica

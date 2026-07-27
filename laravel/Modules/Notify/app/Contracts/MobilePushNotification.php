@@ -16,6 +16,7 @@ interface MobilePushNotification
      * Get the array representation of the notification.
      *
      * @param  object|null  $notifiable  The entity to be notified
+     *
      * @return array<string, mixed>
      */
     public function toArray(?object $notifiable): array;

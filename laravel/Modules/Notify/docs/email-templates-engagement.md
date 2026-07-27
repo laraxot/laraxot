@@ -1,23 +1,3 @@
----
-title: "Template Email per Alto Engagement"
-type: concept
-tags: [email, templates, engagement]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "email-templates-engagement template email per alto engagement"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Template Email per Alto Engagement
 
 ## Introduzione
@@ -241,9 +221,9 @@ Questo documento definisce le best practices per la creazione di template email 
 
 ## Collegamenti Correlati
 
-- [Struttura Template](./mail-templates-structure.md)
-- [Best Practices HTML](./email-html-best-practices.md)
-- [Template Base](./base-templates.md)
+- [Struttura Template](./MAIL_TEMPLATES_STRUCTURE.md)
+- [Best Practices HTML](./EMAIL_HTML_BEST_PRACTICES.md)
+- [Template Base](./BASE_TEMPLATES.md)
 
 ## Supporto
 

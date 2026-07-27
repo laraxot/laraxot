@@ -32,6 +32,8 @@ final class SendGammuSMSAction implements SmsActionContract
 
     /**
      * Create a new action instance.
+     *
+     * @return void
      */
     public function __construct()
     {

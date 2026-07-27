@@ -1,15 +1,3 @@
----
-title: "SmsFactorData Class Documentation"
-type: concept
-tags: [data, class]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "data-class smsfactordata class documentation"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
----
-
 # SmsFactorData Class Documentation
 
 ## Overview

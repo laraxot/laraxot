@@ -4,8 +4,8 @@ type: log
 module: Xot
 tags: [xot, phpstan, pest, qmd, ponytail-audit]
 created: 2026-04-20
-updated: 2026-06-30
-qmd: "Xot log phpstan pest bridge discipline ponytail audit"
+updated: 2026-07-24
+qmd: "Xot log phpstan pest bridge discipline ponytail audit domain actions"
 issues:
   - "https://github.com/laraxot/module_xot_fila5/issues/28"
   - "https://github.com/laraxot/base_predict_fila5/issues/237"
@@ -14,6 +14,12 @@ discussions:
 ---
 
 # Activity Log — Xot
+
+## [2026-07-24] architecture | no domain Actions in Xot
+
+- Concept: [no-domain-actions-in-xot.md](concepts/no-domain-actions-in-xot.md)
+- Rimosse/spostate: AI/Ollama → AI, ContextCompressor → AI, Geo duplicati eliminati
+- Root: `domain-actions-belong-to-domain-module` · skill `xot-is-framework-base`
 
 ## [2026-06-30] governance | no legacy folders + model seeder parity
 

@@ -29,6 +29,5 @@ class NotificationForm extends XotBaseResourceForm
             'created_by' => TextInput::make('created_by')->label('Created By')->disabled(),
             'updated_by' => TextInput::make('updated_by')->label('Updated By')->disabled(),
         ];
-
     }
 }

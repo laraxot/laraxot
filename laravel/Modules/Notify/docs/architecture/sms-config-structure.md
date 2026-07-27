@@ -1,23 +1,22 @@
 ---
 title: "Struttura della Configurazione SMS"
 type: concept
-tags: [sms, config, structure]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "sms-config-structure struttura della configurazione sms"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+tags: [notify, docs, architecture, sms, config, structure]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione architecture sms config structure struttura della configurazione sms frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
 related:
-  - "./config-structure.md"
-  - "./document-root-architecture.md"
-  - "./dto-structure-conventions.md"
-  - "./dto-structure-rules.md"
-  - "./interface-structure-clarification.md"
-  - "./mail-templates-structure.md"
-  - "./queueable-action-pattern.md"
-  - "./standardized-sms-config-structure.md"
+  - ../README.md
+  - README.md
+  - ../conventions/README.md
+  - ../rules/README.md
+  - ../best-practices/naming-conventions.md
 ---
-
 # Struttura della Configurazione SMS 
 
 ## Introduzione
@@ -171,8 +170,8 @@ $retryDelay = $config['drivers'][$driver]['retry_delay'] ?? $config['retry']['de
 
 ## Collegamenti
 
-- [Configurazione Netfun](./netfun-config-requirements-1.md)
-- [Provider SMS Supportati](./notifications/sms-provider-configuration-2.md)
+- [Configurazione Netfun](./netfun_config_requirements.md)
+- [Provider SMS Supportati](./notifications/sms_provider_configuration.md)
 
 ---
 

@@ -38,6 +38,10 @@ Zero/
 2. **Output files**: `phpstan*.json` ignorati (NON committare)
 3. **Namespace**: `Themes\Zero\`
 
+## Repo indipendente
+
+Path in `gitmodules.ini`: `laravel/Themes/Zero` → remote `laraxot/theme_zero_fila5`. Entrare con `cd`, non trattarlo come submodule della root. Protocollo: [17-gitmodules-path-iteration.md](../../../../bashscripts/tools/prompts/17-gitmodules-path-iteration.md).
+
 ## Collegamenti
 
 - [PHPStan Docs](./phpstan.md)

@@ -1,3 +1,10 @@
+## [2026-07-24] architecture | Ollama Actions ownership in AI
+
+- Canon locale: [ollama-actions-ownership.md](concepts/ollama-actions-ownership.md)
+- Path: `Modules\AI\Actions\Ollama\{Chat,Generate}OllamaAction` + `ContextCompressorAction`
+- Root: `domain-actions-belong-to-domain-module` · skill `xot-is-framework-base`
+- Second brain max: healthcheck + QMD + write-back modulo
+
 ## [2026-06-11] test | pest AI suite green (36 test)
 
 - `Modules/AI/tests/TestCase` → `XotBaseTestCase` (no `RefreshDatabase`)
@@ -57,3 +64,15 @@
 - summary:
   - compiled the first durable AI module syntheses from MCP and local-first runtime docs
   - aligned the module wiki with the project-level LLM wiki model
+
+## [2026-07-12] quality | claude-audit Actions QueueableAction contract
+
+- Scope swarm: `Modules/AI`.
+- Decisione riusabile: ogni classe sotto `app/Actions` deve usare `Spatie\QueueableAction\QueueableAction` ed esporre `execute(...)`; eventuale `handle()` resta solo wrapper legacy.
+- Verifica locale aggiunta: `tests/Unit/Actions/QueueableActionContractTest.php`.
+- Nota audit: `claude-audit --static` usa euristiche di test coverage non sempre allineate ai test Pest presenti.
+
+## [2026-07-12] phpstan | prediction fallback typed actions
+
+- `GetPredictionFallbackTemplatesAction` espone template con ` list<array{...}>`, non `array<string,mixed>`.
+- `CastScalarToStringListAction::execute()` usa return nativo `array` con PHPDoc `list<string>`: `list<string>` non e un return type PHP valido.

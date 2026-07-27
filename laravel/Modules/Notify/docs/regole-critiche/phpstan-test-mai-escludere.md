@@ -1,17 +1,3 @@
----
-title: "🚨 REGOLA CRITICA PROGETTO: PHPStan e Test"
-type: concept
-tags: [phpstan, test, mai, escludere]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phpstan-test-mai-escludere 🚨 regola critica progetto: phpstan e test"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./naming-conventions.md"
-  - "./test-naming-pascalcase.md"
----
-
 # 🚨 REGOLA CRITICA PROGETTO: PHPStan e Test
 
 ## ⚠️ REGOLA ASSOLUTA - NON DEROGABILE

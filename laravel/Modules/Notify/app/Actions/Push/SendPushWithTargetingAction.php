@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Actions\Push;
 
+use Modules\Notify\Datas\PushCriteriaData;
+use Modules\Notify\Datas\PushNotificationData;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -14,12 +16,10 @@ class SendPushWithTargetingAction
     use QueueableAction;
 
     /**
-     * @param  array<string, mixed>  $criteria
-     * @param  array<string, mixed>  $notification
      * @param  array<string, mixed>  $data
      * @return array<string, mixed>
      */
-    public function execute(array $criteria, array $notification, array $data = []): array
+    public function execute(PushCriteriaData $criteria, PushNotificationData $notification, array $data = []): array
     {
         $tokens = $this->getTokensByCriteria($criteria);
 
@@ -34,10 +34,9 @@ class SendPushWithTargetingAction
     }
 
     /**
-     * @param  array<string, mixed>  $criteria
      * @return list<string>
      */
-    private function getTokensByCriteria(array $criteria): array
+    private function getTokensByCriteria(PushCriteriaData $criteria): array
     {
         return [];
     }

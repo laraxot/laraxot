@@ -1,25 +1,6 @@
----
-title: "🔧 PSR-4 Fix Implementation Plan - UI Module"
-type: concept
-tags: [psr4, fix, implementation, plan]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "psr4-fix-implementation-plan 🔧 psr-4 fix implementation plan - ui module"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # 🔧 PSR-4 Fix Implementation Plan - UI Module
 
+**Data**: Dicembre 15, 2025
 **Modulo**: UI
 **Tipo Fix**: Namespace correction (Modules\Notify → Modules\UI)
 

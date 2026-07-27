@@ -1,23 +1,3 @@
----
-title: "🔴 ONE MIGRATION PER MODEL - CRITICAL RULE"
-type: concept
-tags: [one, migration, per, model]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "one-migration-per-model 🔴 one migration per model - critical rule"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./bash-commands-auto-allow.md"
-  - "./llm-wiki-rule.md"
-  - "./multi-outcome-no-binary-fields.md"
-  - "./phpmd-phar-installation.md"
-  - "./translation-structure-5-levels-mandatory.md"
-  - "./translation-structure-5-levels.md"
-  - "./use-models-not-db-table.md"
----
-
 # 🔴 ONE MIGRATION PER MODEL - CRITICAL RULE
 
 **Path**: `.agents/docs/rules/one-migration-per-model.md`  
@@ -208,7 +188,7 @@ Tutto il resto è **RUMORE**.
 ## 🔗 Related Documentation
 
 ### AI Agents Docs
-- **[Rules Index](00-index-1.md)** - All rules
+- **[Rules Index](00-INDEX.md)** - All rules
 - **[DRY Principle](../guidelines/dry-kiss.md)** - DRY + KISS
 - **[Translation Structure](translation-structure-5-levels.md)** - 5 levels rule
 

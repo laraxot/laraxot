@@ -1,3 +1,22 @@
+---
+title: "Template Email"
+type: index
+tags: [notify, docs, templates]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione templates readme template email index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../README.md
+  - ../wiki/index.md
+  - ../notifications/readme.md
+  - ../integrations/readme.md
+  - readme.md
+---
 # Template Email
 
 ## Panoramica

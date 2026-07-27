@@ -1,25 +1,6 @@
----
-title: "MCP Servers per UI/UX - Modulo UI"
-type: concept
-tags: [mcp]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "mcp-ui-ux mcp servers per ui/ux - modulo ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # MCP Servers per UI/UX - Modulo UI
 
+> Ultimo aggiornamento: Febbraio 2026
 
 ## Scopo
 
@@ -54,7 +35,7 @@ Il modulo UI fornisce componenti Blade condivisi in `resources/views/components/
 
 ## Collegamenti
 
-- [MCP UI/UX Tema Two](../../themes/two/docs/mcp-ui-ux.md)
-- [Status MCP Progetto](../../../../docs/mcp-servers-status.md)
+- [MCP UI/UX Tema Two](../../Themes/Two/docs/mcp-ui-ux.md)
+- [Status MCP Progetto](../../../docs/mcp-servers-status.md)
 - [Skill MCP UI/UX](../../../.windsurf/skills/mcp-ui-ux/skill.md)
 - [Workflow MCP UI/UX](../../../.windsurf/workflows/mcp-ui-ux.md)

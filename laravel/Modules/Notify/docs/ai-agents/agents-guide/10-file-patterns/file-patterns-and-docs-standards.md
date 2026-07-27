@@ -1,18 +1,3 @@
----
-title: "10. File Patterns"
-type: pattern
-tags: [file, patterns, docs, standards]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "file-patterns-and-docs-standards 10. file patterns"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./model-and-docs-naming-governance.md"
-  - "./modules-themes-docs-audit.md"
----
-
 # 10. File Patterns
 
 ### Include

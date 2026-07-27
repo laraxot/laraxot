@@ -6,16 +6,18 @@ tags: [filament, provider, composer, module-json, module-convention]
 created: 2026-07-27
 updated: 2026-07-27
 related:
-  - ./module-adminpanelprovider-mandatory.md
+  - ./module-admin-panel-provider-mandatory.md
   - ./module-dashboard-page-mandatory.md
-  - ./module-config-config-php.md
+  - ./module-config-php-religion.md
+  - ./module-filament-panel-triad.md
+  - ../../../../Themes/docs/shared-components/module-providers-dual-registration-religion.md
 ---
 
 # Doppia registrazione provider — `composer.json` + `module.json`
 
-## Regola
+## Regola (convenzione Laraxot)
 
-Ogni modulo deve elencare **almeno 2 provider**, negli **stessi** in entrambi i file:
+Ogni modulo con `module.json` deve elencare **almeno 2 provider**, **identici** in entrambi i file:
 
 ```json
 "providers": [
@@ -24,73 +26,74 @@ Ogni modulo deve elencare **almeno 2 provider**, negli **stessi** in entrambi i 
 ]
 ```
 
-- `composer.json` → chiave `extra.laravel.providers` (auto-discovery Composer/Laravel
-  quando il modulo è installato/risolto come package, es. `repositories` path-type tra
-  moduli — vedi `TimberBilling/composer.json` che richiede `../Xot` così).
-- `module.json` → chiave `providers` (meccanismo di boot interno di
-  `nwidart/laravel-modules`, letto da `ModuleManifest`/`FileActivator`).
+| File | Chiave |
+|------|--------|
+| `module.json` | `providers` |
+| `composer.json` | `extra.laravel.providers` |
+
+**Liste allineate** — stessi FQCN, preferibilmente stesso ordine (ServiceProvider, poi AdminPanelProvider).
+
+## I due provider minimi
+
+| # | Provider | Perché |
+|---|----------|--------|
+| 1 | `{Nome}ServiceProvider` | Boot modulo: config, views, lang, migrations, bindings |
+| 2 | `Providers\Filament\AdminPanelProvider` | Panel BO `/{modulo}/admin` + `discoverResources/Pages/Widgets` |
+
+Senza (1) il modulo non boota. Senza (2) in **entrambi** i manifest, il panel Filament può mancare in un contesto di caricamento.
 
 ## Perché due file, non uno solo
 
-Sono **due meccanismi di scoperta indipendenti**: `module.json` → `providers` è quello
-che `nwidart/laravel-modules` legge davvero per il boot **in questo monorepo, oggi**
-(`ModuleManifest`/`FileActivator`). `composer.json` → `extra.laravel.providers` è letto
-dal Package Discovery nativo di Laravel — nel percorso di boot attuale di questo
-monorepo **non è quello che fa effettivamente partire i provider** (verificato: un
-provider assente solo da `composer.json` ma presente in `module.json` boota comunque
-oggi, senza errori).
+| Meccanismo | File | Ruolo oggi |
+|------------|------|------------|
+| nwidart `ModuleManifest` | `module.json` | **Boot effettivo** in questo monorepo |
+| Laravel Package Discovery | `composer.json` | Package Composer autoconsistente; rilevante standalone / path-repo |
 
-**Non è quindi un requisito "tecnicamente indispensabile ora" — è una convenzione
-esplicita e voluta dall'utente**, forward-looking: tenere `composer.json` coerente
-con `module.json` rende ogni modulo un package Composer autoconsistente, rilevante se
-un modulo viene mai estratto/installato standalone fuori da questo monorepo (dove
-Package Discovery leggerebbe *davvero* quella chiave). **Non concludere da soli che
-"composer.json qui è vestigiale/ridondante quindi non serve tenerlo aggiornato"** — è
-già successo in questa sessione, l'utente ha corretto esplicitamente: entrambi i file
-vanno sempre allineati, indipendentemente da quale dei due il runtime attuale consulti
-davvero.
+**Convenzione esplicita utente:** non ottimizzare via l'entry in `composer.json` perché "qui non la legge nessuno". Entrambi i file vanno sempre allineati.
 
-## I due provider minimi e perché servono entrambi
+## Pattern da studiare (WorkOrder)
 
-1. **`{Nome}ServiceProvider`** — boot generico del modulo (config merge, rotte, view,
-   traduzioni, migration path, ecc.).
-2. **`Providers\Filament\AdminPanelProvider`** — registra il panel Filament dedicato
-   del modulo (vedi
-   [module-adminpanelprovider-mandatory.md](./module-adminpanelprovider-mandatory.md)).
-   Senza questo in **entrambi** i file, l'intera UI Filament del modulo resta
-   irraggiungibile in almeno uno dei due contesti di caricamento.
+`module.json`:
+
+```json
+"providers": [
+    "Modules\\WorkOrder\\Providers\\WorkOrderServiceProvider",
+    "Modules\\WorkOrder\\Providers\\Filament\\AdminPanelProvider"
+]
+```
+
+`composer.json` → `extra.laravel.providers`: **stesso array**.
 
 ## Audit
 
 ```bash
-for d in laravel/Modules/*/; do
-  m=$(basename "$d")
-  [ -f "$d/module.json" ] || continue
-  c_ok=$(grep -q "AdminPanelProvider" "$d/composer.json" 2>/dev/null && echo yes || echo no)
-  m_ok=$(grep -q "AdminPanelProvider" "$d/module.json" 2>/dev/null && echo yes || echo no)
-  [ "$c_ok" = "no" ] || [ "$m_ok" = "no" ] && echo "$m: composer.json=$c_ok module.json=$m_ok"
-done
+bash bashscripts/tools/audit-module-providers-dual-registration.sh
+bash bashscripts/tools/audit-module-providers-dual-registration.sh WorkOrder
+bash bashscripts/tools/audit-module-provider-manifest.sh WorkOrder
+bash bashscripts/tools/audit-module-admin-panel-provider.sh
 ```
 
-Validare anche la sintassi JSON di entrambi i file dopo qualunque modifica manuale:
+Template: [module-providers-dual-registration.stub.json](../templates/module-providers-dual-registration.stub.json)
 
-```bash
-php -r 'json_decode(file_get_contents("Modules/{Nome}/composer.json")); echo json_last_error()===JSON_ERROR_NONE?"ok\n":"INVALID\n";'
-```
+## Collegamento trinità panel
+
+I 2 provider sono il **lato boot** della trinità Filament. Completano:
+
+- `config/config.php` — metadati panel
+- `Dashboard.php` — landing panel
+
+→ [module-filament-panel-triad.md](./module-filament-panel-triad.md)
 
 ## Incidente (2026-07-27)
 
-`TimberBilling/composer.json` aveva solo `TimberBillingServiceProvider`, mancava
-`AdminPanelProvider` (presente invece in `module.json`) — asimmetria tra i due file
-individuata seguendo l'istruzione esplicita dell'utente di controllare entrambi.
-Verificato che tutti i 38 moduli reali ora hanno gli stessi 2 provider in entrambi i
-file, JSON valido ovunque.
+- `TimberBilling/composer.json` — solo `ServiceProvider`, panel solo in `module.json`
+- **7 moduli** con liste diverse: Document/Email/HR/Platform/WhatsApp (`Route`+`Event` solo in composer); Geo/User (`Livewire` solo in composer)
+- Script audit aveva bug PHP (`{Module}` in stringa) — fix + helper `lib/audit-module-providers-dual-registration.php`
+
+**Stato:** 38/38 moduli, liste identiche, minimo 2 provider.
 
 ## Non fare
 
-- Non assumere che aggiornare `module.json` sia sufficiente — verificare sempre anche
-  `composer.json` con lo stesso audit.
-- Non inventare provider aggiuntivi "per sicurezza" — il minimo di 2 è quello che
-  serve; provider extra vanno aggiunti solo quando il modulo ne registra davvero altri
-  (event service provider, route service provider dedicati, ecc.), non per convenzione
-  di questo documento.
+- Aggiornare solo `module.json`
+- `$this->app->register(ChildServiceProvider::class)` nel provider padre — usare manifest ([module-providers-manifest.md](../../../../../docs/wiki/rules/module-providers-manifest.md))
+- Inventare provider extra "per sicurezza" — minimo 2; altri solo se il modulo ne ha davvero bisogno

@@ -1,18 +1,3 @@
----
-title: "🎯 Filament Table vs Blade Component - Decision Guide"
-type: concept
-tags: [filament, table, blade, component]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament-table-vs-blade-component 🎯 filament table vs blade component - decision guide"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./agents-filament-widgets.md"
-  - "./ralph-gsd-bmad-orchestration.md"
----
-
 # 🎯 Filament Table vs Blade Component - Decision Guide
 
 **Data**: 2026-03-26  

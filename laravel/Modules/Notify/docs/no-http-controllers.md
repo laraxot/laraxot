@@ -1,23 +1,3 @@
----
-title: "No HTTP controllers in any module"
-type: concept
-tags: [http, controllers]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "no-http-controllers no http controllers in any module"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # No HTTP controllers in any module
 
 ## Rule
@@ -36,7 +16,7 @@ This controller handled email open/click tracking via HTTP GET requests. It was 
 
 ### Architecture contract
 
-The project's claude.md defines the only valid patterns for HTTP request handling:
+The project's CLAUDE.md defines the only valid patterns for HTTP request handling:
 
 | Use case | Correct mechanism |
 |---|---|
@@ -94,6 +74,6 @@ This keeps the HTTP surface in Folio (the correct location) while the business l
 
 ## Related
 
-- claude.md rule 1: "NEVER use traditional controllers or routes in web.php/api.php for front office"
-- `laravel/claude.md` rule 2: Architecture frontend — NO Controller, NO Routes in web.php
+- CLAUDE.md rule 1: "NEVER use traditional controllers or routes in web.php/api.php for front office"
+- `laravel/CLAUDE.md` rule 2: Architecture frontend — NO Controller, NO Routes in web.php
 - Folio routing docs: `Themes/Meetup/docs/folio-pages-json-only-rule.md`

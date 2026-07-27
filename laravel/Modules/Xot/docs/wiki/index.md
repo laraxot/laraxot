@@ -4,8 +4,8 @@ type: index
 module: Xot
 tags: [xot, wiki, index, xotbase, migrations, phpstan]
 created: 2026-04-28
-updated: 2026-06-13
-qmd: "xot module wiki index XotBase migrations phpstan filament actions pest ReflectionClass global imports"
+updated: 2026-07-24
+qmd: "xot module wiki index XotBase migrations phpstan filament actions pest domain ownership"
 issues:
   - "https://github.com/laraxot/module_xot_fila5/issues/28"
 discussions:
@@ -15,12 +15,20 @@ related:
   - ./concepts/module-model-artifact-parity.md
   - ./concepts/ai-harness-xot-discipline.md
   - ./concepts/second-brain-local-discipline.md
+  - ./concepts/no-domain-actions-in-xot.md
   - ./rules/module-testcase-xotbase-hierarchy.md
   - ../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md
   - ../../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md
+  - ../../../../../docs/wiki/rules/domain-actions-belong-to-domain-module.md
 ---
 
 # Xot Module LLM Wiki
+
+## Boundaries (2026-07-24)
+
+- [no-domain-actions-in-xot](./concepts/no-domain-actions-in-xot.md) — niente `Actions/AI|Geo|…`
+- Raw: [no-domain-logic-in-xot.md](../no-domain-logic-in-xot.md)
+- AI owner: [ollama-actions-ownership](../../AI/docs/wiki/concepts/ollama-actions-ownership.md)
 
 Indice operativo del wiki Xot (core framework).
 
@@ -111,10 +119,10 @@ Aggiornato: 2026-07-27
 
 | Argomento | Doc |
 |-----------|-----|
-| `config/config.php` obbligatorio | [module-config-php-religion.md](./concepts/module-config-php-religion.md) |
-| `Filament/Pages/Dashboard.php` | [module-dashboard-page-mandatory.md](./concepts/module-dashboard-page-mandatory.md) |
-| `AdminPanelProvider` + `module.json` | [module-admin-panel-provider-mandatory.md](./concepts/module-admin-panel-provider-mandatory.md) |
-| Trinità panel (config + provider + dashboard) | [module-filament-panel-triad.md](./concepts/module-filament-panel-triad.md) |
-| `AdminPanelProvider` | [module-admin-panel-provider-mandatory.md](./concepts/module-admin-panel-provider-mandatory.md) |
+| Doppia registrazione provider | [module-providers-dual-registration-mandatory.md](./concepts/module-providers-dual-registration-mandatory.md) |
+| Trinità panel Filament (SSoT) | [module-filament-panel-triad.md](./concepts/module-filament-panel-triad.md) |
+| `config/config.php` | [module-config-php-religion.md](./concepts/module-config-php-religion.md) |
+| `AdminPanelProvider` + doppia registrazione | [module-admin-panel-provider-mandatory.md](./concepts/module-admin-panel-provider-mandatory.md) |
+| `Dashboard.php` | [module-dashboard-page-mandatory.md](./concepts/module-dashboard-page-mandatory.md) |
 | Hub runtime cross-modulo | [runtime-config-religion-hub](../../../../Themes/docs/shared-components/runtime-config-religion-hub.md) |
 | Tenant `modules_statuses` | [tenant-module-status-registry](../../Tenant/docs/tenant-module-status-registry.md) |

@@ -1,23 +1,3 @@
----
-title: "Filament Custom Columns - Relationship Resolution Ultimate Guide"
-type: concept
-tags: [filament, custom, columns, relationship]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament-custom-columns-relationship-resolution filament custom columns - relationship resolution ultimate guide"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Filament Custom Columns - Relationship Resolution Ultimate Guide
 
 ## Executive Summary
@@ -186,7 +166,7 @@ class ValutatoreColumn extends GroupColumn
 
 ```php
 // In your Model (e.g., Schede.php)
-class Scheda extends BaseModel
+class Schede extends BaseModel
 {
     protected function valutatoreNomeDiri(): Attribute
     {

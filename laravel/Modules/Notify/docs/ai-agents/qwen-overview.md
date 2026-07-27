@@ -1,23 +1,3 @@
----
-title: "QWEN Overview"
-type: concept
-tags: [qwen, overview]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "qwen-overview qwen overview"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./01-gsd-workflow.md"
-  - "./02-bmad-workflow.md"
-  - "./03-architecture-zen.md"
-  - "./04-filament-philosophy.md"
-  - "./05-front-office-audit.md"
-  - "./06-cinematic-effects.md"
-  - "./07-mcp-tailwind-ui.md"
----
-
 # QWEN Overview
 
 Panoramica e stato attuale del progetto Base Predict Fila5.
@@ -82,5 +62,5 @@ Never: git revert (only forward!)
 ## 🔗 Link
 
 - [Indice QWEN](./qwen-split-index.md)
-- [qwen.md originale](../../qwen.md)
+- [QWEN.md originale](../../QWEN.md)
 - [Index principale](./index.md)

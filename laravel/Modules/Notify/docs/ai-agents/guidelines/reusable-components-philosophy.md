@@ -1,17 +1,3 @@
----
-title: "🧩 Componenti Riutilizzabili - Filosofia Zen"
-type: concept
-tags: [reusable, components, philosophy]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "reusable-components-philosophy 🧩 componenti riutilizzabili - filosofia zen"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./semantic-html-css.md"
----
-
 # 🧩 Componenti Riutilizzabili - Filosofia Zen
 
 **Version**: 1.0.0  
@@ -278,18 +264,18 @@ it('displays F1 predict detail page', function () {
 ## 🔗 Related Documentation
 
 ### Module Docs
-- **[Components Index](laravel/Modules/Predict/resources/views/components/predict-view/00-index-1.md)** - All components
+- **[Components Index](laravel/Modules/Predict/resources/views/components/predict-view/00-INDEX.md)** - All components
 - **[Reusable Architecture](laravel/Modules/Predict/docs/components/reusable-architecture.md)** - Design principles
 - **[Multi-Outcome Fundamental](laravel/Modules/Predict/docs/MULTI-OUTCOME-FUNDAMENTAL.md)** - Core principle
 
 ### Theme Docs
-- **[Theme Zero Components](laravel/Themes/Zero/docs/components/00-index-1.md)** - Theme components
+- **[Theme Zero Components](laravel/Themes/Zero/docs/components/00-INDEX.md)** - Theme components
 - **[TwentyOne Integration](laravel/Themes/TwentyOne/docs/predict-integration.md)** - Theme integration
 
 ### AI Agents Docs
-- **[Rules Index](.agents/docs/rules/00-index-1.md)** - Filament Tables rule
-- **[Skills Index](.agents/docs/skills/00-index-1.md)** - Component skills
-- **[Guidelines Index](.agents/docs/guidelines/00-index-1.md)** - Best practices
+- **[Rules Index](.agents/docs/rules/00-INDEX.md)** - Filament Tables rule
+- **[Skills Index](.agents/docs/skills/00-INDEX.md)** - Component skills
+- **[Guidelines Index](.agents/docs/guidelines/00-INDEX.md)** - Best practices
 
 ---
 

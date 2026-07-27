@@ -1,26 +1,6 @@
----
-title: "UI Module - Architecture Guide (2025)"
-type: concept
-tags: [architecture]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "architecture ui module - architecture guide (2025)"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # UI Module - Architecture Guide (2025)
 
-> **
+> **Last Updated:** 2025-11-19
 > **PHPStan Level:** 10
 > **Status:** Shared UI Components & Filament Customizations
 
@@ -564,27 +544,6 @@ class MyFormComponent extends Field
         $this->validateUsing([/* validation rules */]);
     }
 }
-
-// Non aggiungere route manualmente
-Route::get('/example', [ExampleController::class, 'index']);
-
-// Non creare middleware personalizzati
-class CustomMiddleware
-{
-    public function handle($request, Closure $next)
-    {
-        // ...
-    }
-}
-
-// Non hardcodare percorsi delle risorse
-<img src="/var/www/html/Quaeris/laravel/public/images/avatar.png">
-
-// Non duplicare la registrazione dei componenti
-Blade::component('ui::components.icon', 'ui.icon');
-
-// Non creare componenti personalizzati se esiste un equivalente Filament
-<x-ui.button>Click me</x-ui.button>
 ```
 
 ### Widget Development
@@ -691,4 +650,5 @@ The UI module is a **well-architected, feature-rich Filament customization layer
 ---
 
 **Document Version:** 1.0
+**Generated:** 2025-11-19
 **Author:** Claude Code Analysis

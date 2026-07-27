@@ -1,23 +1,3 @@
----
-title: "Enum Standards - Notify Module"
-type: rule
-tags: [enum, standards]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "enum-standards enum standards - notify module"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./claude-audit-static.md"
-  - "./code-redundancy-notify.md"
-  - "./composer-root-minimal-nwidart.md"
-  - "./context-overflow-prevention.md"
-  - "./llm-wiki-governance.md"
-  - "./method-name-homonyms.md"
-  - "./module-root-uppercase-folders-archive.md"
-  - "./no-app-support-queueable-actions.md"
----
-
 # Enum Standards - Notify Module
 
 ## Overview

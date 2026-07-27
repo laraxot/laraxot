@@ -40,7 +40,8 @@ Hub dei temi. Porting gestionale: **[gestionale-docs-index.md](./gestionale-docs
 | Doc | Scopo |
 |---|---|
 | **[runtime-config-religion-hub.md](./shared-components/runtime-config-religion-hub.md)** | Hub lezioni runtime (permission, panel trinità, statuses) |
-| **[module-dashboard-page-religion.md](./shared-components/module-dashboard-page-religion.md)** | Landing `{modulo}/admin` obbligatoria |
+| **[module-filament-panel-triad.md](../../Modules/Xot/docs/wiki/concepts/module-filament-panel-triad.md)** | SSoT trinità panel (`config` + provider + dashboard) |
+| **[module-admin-panel-provider-religion.md](./shared-components/module-admin-panel-provider-religion.md)** | Boot panel `{modulo}/admin` |
 | **[gestionale-docs-index.md](./gestionale-docs-index.md)** | Indice unico |
 | [module-vs-theme-boundaries.md](./module-vs-theme-boundaries.md) | Confini |
 | [wave1-fo-operator-note.md](./wave1-fo-operator-note.md) | Operator = Filament |

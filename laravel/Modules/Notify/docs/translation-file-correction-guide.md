@@ -1,23 +1,3 @@
----
-title: "Guida alla Correzione dei File di Traduzione"
-type: guide
-tags: [translation, file, correction, guide]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "translation-file-correction-guide guida alla correzione dei file di traduzione"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Guida alla Correzione dei File di Traduzione
 
 ## Procedura Sistematica per la Standardizzazione
@@ -179,9 +159,9 @@ return [
 
 ## Riferimenti
 
-- [Regole di Naming per i File di Traduzione](./translation-file-naming-rules.md)
-- [Guida alla Struttura dei File di Traduzione](./translation-file-structure-guide.md)
-- [Progresso della Standardizzazione](./translation-standards-progress.md)
+- [Regole di Naming per i File di Traduzione](./TRANSLATION_FILE_NAMING_RULES.md)
+- [Guida alla Struttura dei File di Traduzione](./TRANSLATION_FILE_STRUCTURE_GUIDE.md)
+- [Progresso della Standardizzazione](./TRANSLATION_STANDARDS_PROGRESS.md)
 # Guida alla Correzione dei File di Traduzione
 
 ## Procedura Sistematica per la Standardizzazione
@@ -331,6 +311,6 @@ declare(strict_types=1);
 
 ## Riferimenti
 
-- [Regole di Naming per i File di Traduzione](./translation-file-naming-rules.md)
-- [Guida alla Struttura dei File di Traduzione](./translation-file-structure-guide.md)
-- [Progresso della Standardizzazione](./translation-standards-progress.md)
+- [Regole di Naming per i File di Traduzione](./TRANSLATION_FILE_NAMING_RULES.md)
+- [Guida alla Struttura dei File di Traduzione](./TRANSLATION_FILE_STRUCTURE_GUIDE.md)
+- [Progresso della Standardizzazione](./TRANSLATION_STANDARDS_PROGRESS.md)

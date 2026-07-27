@@ -1,15 +1,3 @@
----
-title: "AI Module"
-type: concept
-tags: [module]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "ai-module ai module"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
----
-
 # AI Module
 
 > Updated: 2026-04-15

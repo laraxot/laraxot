@@ -1,23 +1,3 @@
----
-title: "Decision Log: Rimozione Azioni Seasonal Over-Engineered"
-type: concept
-tags: [ision, log, removal, seasonal]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "ision-log-removal-seasonal-action decision log: rimozione azioni seasonal over-engineered"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Decision Log: Rimozione Azioni Seasonal Over-Engineered
 
 **Decisione**: Rimozione delle classi GetSeasonalEmailLayoutAction e DetermineSeasonalLayoutPathAction  

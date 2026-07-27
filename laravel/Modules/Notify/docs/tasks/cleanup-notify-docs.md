@@ -1,22 +1,3 @@
----
-title: "Task: Cleanup Notify Docs"
-type: concept
-tags: [cleanup, notify, docs]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "cleanup-notify-docs task: cleanup notify docs"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./001-notification-system.md"
-  - "./filament-v5-notify.md"
-  - "./notification-system.md"
-  - "./notify-cleanup-docs.md"
-  - "./notify-filament-v5.md"
-  - "./notify-test-coverage.md"
-  - "./tasks-index.md"
----
-
 # Task: Cleanup Notify Docs
 
 ## 📋 Obiettivo

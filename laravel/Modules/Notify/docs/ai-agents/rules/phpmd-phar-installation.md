@@ -1,23 +1,3 @@
----
-title: "🔧 PHPMD Installation - .phar NOT Composer"
-type: concept
-tags: [phpmd, phar, installation]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phpmd-phar-installation 🔧 phpmd installation - .phar not composer"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./bash-commands-auto-allow.md"
-  - "./llm-wiki-rule.md"
-  - "./multi-outcome-no-binary-fields.md"
-  - "./one-migration-per-model.md"
-  - "./translation-structure-5-levels-mandatory.md"
-  - "./translation-structure-5-levels.md"
-  - "./use-models-not-db-table.md"
----
-
 # 🔧 PHPMD Installation - .phar NOT Composer
 
 **Path**: `.agents/docs/rules/phpmd-phar-installation.md`  
@@ -196,7 +176,7 @@ sudo mv phpmd.phar /usr/local/bin/phpmd
 ## 🔗 Related Documentation
 
 ### AI Agents Docs
-- **[Rules Index](00-index-1.md)** - All rules
+- **[Rules Index](00-INDEX.md)** - All rules
 - **[Quality Gates](quality-gates.md)** - Quality gates
 - **[PHP Best Practices](php-best-practices.md)** - PHP best practices
 

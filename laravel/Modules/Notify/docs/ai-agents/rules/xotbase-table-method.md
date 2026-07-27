@@ -1,23 +1,3 @@
----
-title: "🔴 XotBaseTableWidget - NO table() Method Rule"
-type: concept
-tags: [xotbase, table, method]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "xotbase-table-method 🔴 xotbasetablewidget - no table() method rule"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./bash-commands-auto-allow.md"
-  - "./llm-wiki-rule.md"
-  - "./multi-outcome-no-binary-fields.md"
-  - "./one-migration-per-model.md"
-  - "./phpmd-phar-installation.md"
-  - "./translation-structure-5-levels-mandatory.md"
-  - "./translation-structure-5-levels.md"
----
-
 # 🔴 XotBaseTableWidget - NO table() Method Rule
 
 **Path**: `.agents/docs/rules/xotbase-table-method.md`  
@@ -287,7 +267,7 @@ class MyWidget extends XotBaseTableWidget
 ## 🔗 Related Documentation
 
 ### AI Agents Docs
-- **[Rules Index](00-index-1.md)** - All rules
+- **[Rules Index](00-INDEX.md)** - All rules
 - **[XotBase Extension Rule](xotbase-extension-rule.md)** - Why extend XotBase
 - **[Bash Commands Auto-Allow](bash-commands-auto-allow.md)** - Bash permissions
 

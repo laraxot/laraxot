@@ -1,23 +1,3 @@
----
-title: "UI Module Analysis"
-type: concept
-tags: [analysis]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "analysis ui module analysis"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # UI Module Analysis
 
 ## Overview
@@ -81,19 +61,19 @@ Modules/UI/
 ### Versione HEAD
 
 ## Collegamenti tra versioni di analysis.md
-* [analysis.md](../../../notify/docs/analysis.md)
-* [analysis.md](../../../notify/docs/phpstan/analysis.md)
-* [analysis.md](../../../xot/docs/analysis.md)
-* [analysis.md](../../../xot/docs/phpstan/analysis.md)
-* [analysis.md](../../../user/docs/analysis.md)
-* [analysis.md](../../../user/docs/phpstan/analysis.md)
-* [analysis.md](../../../ui/docs/analysis.md)
-* [analysis.md](../../../ui/docs/phpstan/analysis.md)
-* [analysis.md](../../../job/docs/analysis.md)
-* [analysis.md](../../../job/docs/phpstan/analysis.md)
-* [analysis.md](../../../media/docs/analysis.md)
-* [analysis.md](../../../media/docs/phpstan/analysis.md)
-* [analysis.md](../../../../themes/one/docs/analysis.md)
+* [analysis.md](../../../Notify/docs/analysis.md)
+* [analysis.md](../../../Notify/docs/phpstan/analysis.md)
+* [analysis.md](../../../Xot/docs/analysis.md)
+* [analysis.md](../../../Xot/docs/phpstan/analysis.md)
+* [analysis.md](../../../User/docs/analysis.md)
+* [analysis.md](../../../User/docs/phpstan/analysis.md)
+* [analysis.md](../../../UI/docs/analysis.md)
+* [analysis.md](../../../UI/docs/phpstan/analysis.md)
+* [analysis.md](../../../Job/docs/analysis.md)
+* [analysis.md](../../../Job/docs/phpstan/analysis.md)
+* [analysis.md](../../../Media/docs/analysis.md)
+* [analysis.md](../../../Media/docs/phpstan/analysis.md)
+* [analysis.md](../../../../Themes/One/docs/analysis.md)
 
 ### Versione Incoming
 

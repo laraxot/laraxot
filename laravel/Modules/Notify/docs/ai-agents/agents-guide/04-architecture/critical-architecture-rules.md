@@ -1,17 +1,3 @@
----
-title: "4. Critical Architecture Rules"
-type: rule
-tags: [critical, architecture, rules]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "critical-architecture-rules 4. critical architecture rules"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./critical-rules-summary.md"
----
-
 # 4. Critical Architecture Rules
 
 ### Translation Management - AUTOMATIC ONLY!

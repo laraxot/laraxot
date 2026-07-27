@@ -1,27 +1,7 @@
----
-title: "claudeMd"
-type: rule
-tags: [foundation, rules]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "foundation-rules claudemd"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./boost-rules.md"
-  - "./filament-rules.md"
-  - "./filament-v3-rules.md"
-  - "./fluxui-rules.md"
-  - "./folio-rules.md"
-  - "./laravel-core-rules.md"
-  - "./laravel-v11-rules.md"
-  - "./livewire-rules.md"
----
-
 # claudeMd
 Codebase and user instructions are shown below. Be sure to adhere to these instructions. IMPORTANT: These instructions OVERRIDE any default behavior and you MUST follow them exactly as written.
 
-Contents of /var/www/html/_bases/base_fixcity_fila5_mono/laravel/../../../../docs/claude.md (project instructions, checked into the codebase):
+Contents of /var/www/html/_bases/base_fixcity_fila5_mono/laravel/../../../../docs/CLAUDE.md (project instructions, checked into the codebase):
 
 <laravel-boost-guidelines>
 === foundation rules ===
@@ -77,5 +57,5 @@ This application is a Laravel application and its main Laravel ecosystems packag
 
 - ← [CLAUDE Index](INDEX.md) — All Laravel Boost guidelines
 - ← [Main AI Docs Index](../INDEX.md) — Master index
-- ← [../../../../docs/claude.md](../../../../docs/../../../../docs/claude.md) — Original source
+- ← [../../../../docs/CLAUDE.md](../../../../docs/../../../../docs/CLAUDE.md) — Original source
 

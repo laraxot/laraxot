@@ -23,7 +23,7 @@ class PasswordStrengthField extends XotBaseTextInput
 
     public function evaluateStrength(): static
     {
-        $this->afterStateUpdated(function (string $state): void {
+        $this->afterStateUpdated(static function (string $state): void {
             unset($state);
             // $zxcvbn = new Zxcvbn();
             // $result = $zxcvbn->passwordStrength($state);

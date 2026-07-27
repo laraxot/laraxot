@@ -1,23 +1,3 @@
----
-title: "Modifiche alla Migrazione Mail Templates"
-type: concept
-tags: [migration, changes]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "migration-changes modifiche alla migrazione mail templates"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Modifiche alla Migrazione Mail Templates
 
 ## Modifiche Effettuate
@@ -109,7 +89,7 @@ related:
 
 ## Collegamenti Correlati
 
-- [Regole Migrazioni](./migration-rules-1.md)
-- [Documentazione Template](./email-templates.md)
+- [Regole Migrazioni](./migration_rules.md)
+- [Documentazione Template](./email_templates.md)
 - [Best Practices Database](../../../../docs/best-practices/database.md)
-- [Proposta Slug Template](./email-template-slug-proposal-1.md) 
+- [Proposta Slug Template](./email_template_slug_proposal.md) 

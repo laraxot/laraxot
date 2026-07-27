@@ -1,19 +1,3 @@
----
-title: "Quick Reference - Queue / Jobs"
-type: concept
-tags: [queue, jobs]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "queue-jobs quick reference - queue / jobs"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./chart-widgets.md"
-  - "./filament.md"
-  - "./tenant-config.md"
----
-
 # Quick Reference - Queue / Jobs
 
 ## Errori comuni

@@ -1,23 +1,3 @@
----
-title: "Ottimizzazioni Modulo UI - DRY + KISS"
-type: concept
-tags: [ottimizzazioni, modulo]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "ottimizzazioni-modulo-ui ottimizzazioni modulo ui - dry + kiss"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Ottimizzazioni Modulo UI - DRY + KISS
 
 ## Panoramica
@@ -27,9 +7,9 @@ Questo documento identifica e propone ottimizzazioni per il modulo UI seguendo i
 
 ### 1. Duplicazione Documentazione Componenti
 - **File duplicati con naming inconsistente:**
-  - `navigation-components.md` vs `navigation-components-2.md`
-  - `table-components-2.md` vs `table-layout-enum-analysis-1.md`
-  - `form-components-2.md` vs `form-filament-widgets-1.md`
+  - `navigation-components.md` vs `navigation_components.md`
+  - `table_components.md` vs `table_layout_enum_analysis.md`
+  - `form_components.md` vs `form_filament_widgets.md`
 
 - **Contenuto duplicato:**
   - Guide PHPStan ripetute in 6+ file diversi
@@ -38,10 +18,10 @@ Questo documento identifica e propone ottimizzazioni per il modulo UI seguendo i
 
 ### 2. Naming Convention Inconsistente
 - **Pattern misti:**
-  - Underscore: `table-components-2.md`
+  - Underscore: `table_components.md`
   - Trattini: `table-layout-enum.md`
-  - CamelCase: `iconstatesplitcolumn-implementation-2.md`
-  - Snake_case: `filament-components-location-studio-2.md`
+  - CamelCase: `iconstatesplitcolumn_implementation.md`
+  - Snake_case: `filament_components_location_studio.md`
 
 ### 3. Organizzazione Caotica
 - **Documenti correlati sparsi:**
@@ -364,20 +344,21 @@ echo "✅ Consolidamento completato!"
 ## Collegamenti Bidirezionali
 
 ### Documentazione Correlata
-- [README](../readme.md) - Panoramica modulo UI
+- [README](../README.md) - Panoramica modulo UI
 - [Architettura](./core/architecture.md) - Architettura modulo
 - [Convenzioni](./core/conventions.md) - Convenzioni unificate
 
 ### Documentazione Root
-- [docs/ottimizzazioni-sistema.md](../../../../docs/ottimizzazioni-sistema.md) - Ottimizzazioni sistema generale
-- [docs/architettura-moduli.md](../../../../docs/architettura-moduli.md) - Architettura moduli
+- [docs/ottimizzazioni-sistema.md](../../../docs/ottimizzazioni-sistema.md) - Ottimizzazioni sistema generale
+- [docs/architettura-moduli.md](../../../docs/architettura-moduli.md) - Architettura moduli
 
 ### Documentazione Moduli Correlati
-- [Xot/docs/ottimizzazioni-modulo-xot.md](../../xot/docs/ottimizzazioni-modulo-xot.md) - Ottimizzazioni modulo Xot
-- [User/docs/ottimizzazioni-modulo-user.md](../../user/docs/ottimizzazioni-modulo-user.md) - Ottimizzazioni modulo User
+- [Xot/docs/ottimizzazioni-modulo-xot.md](../../Xot/docs/ottimizzazioni-modulo-xot.md) - Ottimizzazioni modulo Xot
+- [User/docs/ottimizzazioni-modulo-user.md](../../User/docs/ottimizzazioni-modulo-user.md) - Ottimizzazioni modulo User
 
 ---
 
+**Ultimo aggiornamento:** 2025-01-06
 **Stato:** In implementazione
 **Responsabile:** Team Sviluppo UI
 **Priorità:** ALTA (duplicazioni massive identificate)

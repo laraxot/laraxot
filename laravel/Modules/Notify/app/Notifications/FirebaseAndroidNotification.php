@@ -32,15 +32,19 @@ class FirebaseAndroidNotification extends Notification implements MobilePushNoti
      * Create a new notification instance.
      *
      * @param  FirebaseNotificationData  $data  The Firebase notification data (I dati della notifica Firebase)
+     *
+     * @return void
      */
     public function __construct(
         public FirebaseNotificationData $data,
-    ) {}
+    ) {
+    }
 
     /**
      * Get the notification's delivery channels.
      *
      * @param  object  $_notifiable  The entity to be notified (l'entità da notificare)
+     *
      * @return array<int, class-string>
      */
     public function via(object $_notifiable): array
@@ -95,6 +99,7 @@ class FirebaseAndroidNotification extends Notification implements MobilePushNoti
      * Get the array representation of the notification.
      *
      * @param  object|null  $notifiable  The entity to be notified
+     *
      * @return array<string, mixed>
      */
     #[Override]

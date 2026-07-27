@@ -1,20 +1,3 @@
----
-title: "Homepage CSS/JS Fix - Status"
-type: concept
-tags: [status]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "status homepage css/js fix - status"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./body-structure-parity.md"
-  - "./homepage-comparison.md"
-  - "./index.md"
-  - "./results.md"
-  - "./visual-comparison.md"
----
-
 # Homepage CSS/JS Fix - Status
 
 ## Build Completo

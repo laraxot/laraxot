@@ -6,10 +6,10 @@ namespace Modules\Notify\Tests\Unit\Notifications\Channels;
 
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Log;
+use Modules\Notify\Actions\SMS\SendSmsFactorSMSAction;
 use Modules\Notify\Contracts\CanThemeNotificationContract;
 use Modules\Notify\Contracts\SMS\SmsActionContract;
 use Modules\Notify\Datas\SmsData;
-use Modules\Notify\Factories\SmsActionFactory;
 use Modules\Notify\Notifications\Channels\NetfunChannel;
 use Modules\Notify\Notifications\Channels\TelegramChannel;
 use Modules\Notify\Notifications\ThemeNotification;
@@ -62,18 +62,12 @@ test('netfun notifications channel sends and increases counter', function () {
     config()->set('sms.default', 'smsfactor');
     config()->set('sms.drivers.smsfactor.token', 'token-123');
 
-    app()->instance(SmsActionFactory::class, new class extends SmsActionFactory
+    app()->instance(SendSmsFactorSMSAction::class, new class implements SmsActionContract
     {
-        public function create(?string $driver = null): SmsActionContract
+        /** @return array{status_code: int, status_txt: string} */
+        public function execute(SmsData $smsData): array
         {
-            return new class implements SmsActionContract
-            {
-                /** @return array{status_code: int, status_txt: string} */
-                public function execute(SmsData $smsData): array
-                {
-                    return ['status_code' => 200, 'status_txt' => 'ok'];
-                }
-            };
+            return ['status_code' => 200, 'status_txt' => 'ok'];
         }
     });
 

@@ -7,6 +7,7 @@ created: 2026-04-21
 updated: 2026-04-21
 tags: [testing, architecture, laraxot, bounded-context, ddd, modules]
 related:
+  - concepts/laraxot-architecture.md
 ---
 
 # Regola: I Test Appartengono al Modulo

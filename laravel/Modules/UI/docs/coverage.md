@@ -1,25 +1,6 @@
----
-title: "Code Coverage: UI"
-type: concept
-tags: [coverage]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "coverage code coverage: ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Code Coverage: UI
 
+**Date:** 2026-01-17
 **Lines Coverage:** N/A (Failed to parse)
 **Test Exit Code:** 2
 

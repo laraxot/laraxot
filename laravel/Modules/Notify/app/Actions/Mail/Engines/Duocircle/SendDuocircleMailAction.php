@@ -44,6 +44,6 @@ class SendDuocircleMailAction
 
         $this->vars = array_merge($this->vars, $vars);
 
-        throw new RuntimeException('WIP ['.__LINE__.']['.__CLASS__.']');
+        throw new RuntimeException('WIP ['.__LINE__.']['.self::class.']');
     }
 }

@@ -1,23 +1,3 @@
----
-title: "Correzione Estensione Filament - S3Test.php"
-type: concept
-tags: [filament, extension, fixes]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament-extension-fixes correzione estensione filament - s3test.php"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Correzione Estensione Filament - S3Test.php
 
 ## Problema Identificato
@@ -100,6 +80,9 @@ class S3Test extends XotBasePage
 
 ## Collegamenti
 - [Regole Estensione Filament](../../../.cursor/rules/filament-extension-rules.mdc)
-- [XotBasePage Implementation](../../xot/project_docs/xotbasepage_implementation.md)
-- [Filament Best Practices](../../../../docs/project/filament-best-practices.md)
+*Ultimo aggiornamento: 2025-01-06*
+- [XotBasePage Implementation](../../Xot/project_docs/xotbasepage_implementation.md)
+- [Filament Best Practices](../../../project_docs/FILAMENT-BEST-PRACTICES.md)
 
+*Ultimo aggiornamento: 2025-01-06*
+*Ultimo aggiornamento: 2025-01-06*

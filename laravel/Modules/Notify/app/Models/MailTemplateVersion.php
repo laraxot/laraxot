@@ -31,6 +31,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @property Carbon|null $deleted_at
  * @property string|null $updated_by
  * @property string|null $deleted_by
+ *
  * @property-read ProfileContract|null $creator
  * @property-read MediaCollection<int, Media> $media
  * @property-read int|null $media_count

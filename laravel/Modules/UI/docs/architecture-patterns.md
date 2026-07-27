@@ -6,14 +6,9 @@ status: approved
 tags: [architecture, components, ui-library, design-system]
 updated: "2026-06-18"
 related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
+  - ./README.md
+  - ../app
+  - ../../Xot/docs/architecture-patterns.md
 ---
 
 # Architecture Patterns — UI Module
@@ -441,10 +436,10 @@ IconService
 - **Root README**: [UI Module](./README.md)
 - **Framework Base**: [Xot Architecture Patterns](../../Xot/docs/architecture-patterns.md)
 - **Disabled Components**: [disabled-components.md](./disabled-components.md)
-- **Architecture Overview**: [architecture-1.md](./architecture-1.md)
+- **Architecture Overview**: [ARCHITECTURE.md](./ARCHITECTURE.md)
 - **Index**: [INDEX.md](./INDEX.md)
-- **Design System**: [design-comuni-implementation.md](./design-comuni-implementation.md)
-- **Icon Integration**: [brands-icons-integration.md](./brands-icons-integration.md)
+- **Design System**: [DESIGN_COMUNI_IMPLEMENTATION.md](./DESIGN_COMUNI_IMPLEMENTATION.md)
+- **Icon Integration**: [BRANDS_ICONS_INTEGRATION.md](./BRANDS_ICONS_INTEGRATION.md)
 
 ---
 

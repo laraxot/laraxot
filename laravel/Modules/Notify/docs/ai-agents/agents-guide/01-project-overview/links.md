@@ -1,18 +1,3 @@
----
-title: "Key Documentation Links"
-type: concept
-tags: [links]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "links key documentation links"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./guidelines.md"
-  - "./project-overview.md"
----
-
 # Key Documentation Links
 
 - [Agent docs index](../index.md)

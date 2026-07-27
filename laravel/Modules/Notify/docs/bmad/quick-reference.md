@@ -1,17 +1,3 @@
----
-title: "bmad method: quick reference (fixcity)"
-type: concept
-tags: [quick, reference]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "quick-reference bmad method: quick reference (fixcity)"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./antigravity-integration.md"
-  - "./setup-guide.md"
----
-
 # bmad method: quick reference (fixcity)
 
 ## comandi rapidi

@@ -1,26 +1,6 @@
----
-title: "Development Workflow Rules - UI Module"
-type: rule
-tags: [development, workflow, rules]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "development-workflow-rules development workflow rules - ui module"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Development Workflow Rules - UI Module
 
-**Date**: [DATE]
+**Date**: 2025-12-15
 **Status**: Active
 **Purpose**: Document the mandatory development workflow for UI module
 
@@ -166,10 +146,10 @@ related:
 
 ## 📚 Related Documentation
 
-- [Xot Philosophy](../xot/docs/philosophy-complete.md)
+- [Xot Philosophy](../Xot/docs/philosophy-complete.md)
 - [PSR-4 Autoloading Error Analysis](./psr4-autoloading-error-analysis.md)
-- [Development Guidelines](../../../../docs/development/readme.md)
-- [Git Workflow](../../../../docs/git-conflict-resolution/readme.md)
+- [Development Guidelines](../../../docs/development/README.md)
+- [Git Workflow](../../../docs/git-conflict-resolution/README.md)
 
 ## ⚠️ Consequences of Skipping Steps
 

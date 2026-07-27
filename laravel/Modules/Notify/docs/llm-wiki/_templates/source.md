@@ -6,9 +6,7 @@ confidence: high
 created: {{date}}
 updated: {{date}}
 tags: [article, paper, documentation]
-related:
-  - "./concept.md"
-  - "./entity.md"
+related: []
 ---
 
 # {{title}}

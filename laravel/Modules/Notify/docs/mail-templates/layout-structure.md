@@ -1,23 +1,3 @@
----
-title: "Struttura Layout Email"
-type: concept
-tags: [layout, structure]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "layout-structure struttura layout email"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./attachments.md"
-  - "./email-best-practices-1.md"
-  - "./email-best-practices.md"
-  - "./email-layouts-best-practices-1.md"
-  - "./email-layouts-best-practices.md"
-  - "./email-templates-best-practices-1.md"
-  - "./email-templates-best-practices.md"
-  - "./email-templates-guide-1.md"
----
-
 # Struttura Layout Email
 
 ## 1. Separazione dei File

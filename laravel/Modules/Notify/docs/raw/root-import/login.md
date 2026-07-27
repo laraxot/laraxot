@@ -1,23 +1,3 @@
----
-title: "Login"
-type: concept
-tags: [login]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "login login"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./agents.md"
-  - "./changelog.md"
-  - "./claude.md"
-  - "./design-conversion-roadmap-1.md"
-  - "./design-conversion-roadmap.md"
-  - "./files-created-session-007-1.md"
-  - "./files-created-session-007.md"
-  - "./files-created-session-replikate.md"
----
-
 -----------------------------------------------------------------------------------------------
 A Blade Component to Quickly Login to Your Local Environment
 https://codebrisk.com/blog/a-blade-component-to-quickly-login-to-your-local-environment

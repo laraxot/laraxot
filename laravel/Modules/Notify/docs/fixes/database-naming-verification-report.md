@@ -1,19 +1,3 @@
----
-title: "✅ Database Directory Naming - Verification Report"
-type: concept
-tags: [database, naming, verification, report]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "database-naming-verification-report ✅ database directory naming - verification report"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./critical-bug-sync-script-deleted.md"
-  - "./database-directory-naming-fix.md"
-  - "./database-naming-fix-summary.md"
-  - "./sqlite-permission-fix.md"
----
-
 # ✅ Database Directory Naming - Verification Report
 
 > **Date**: 2026-03-13  

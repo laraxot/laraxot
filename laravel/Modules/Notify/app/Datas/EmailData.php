@@ -28,6 +28,8 @@ class EmailData extends Data
 
     /**
      * @param  list<string>  $attachments
+     *
+     * @return void
      */
     public function __construct(
         string $recipient,
@@ -77,7 +79,7 @@ class EmailData extends Data
             $this->body = strip_tags($this->body_html);
         }
 
-        $email = (new MimeEmail)
+        $email = (new MimeEmail())
             ->from($this->getFrom())
             ->to($this->recipient)
             ->subject(strip_tags($this->subject))

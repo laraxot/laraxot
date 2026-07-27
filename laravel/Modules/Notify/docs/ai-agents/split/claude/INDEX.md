@@ -1,6 +1,25 @@
-# Laravel Boost Guidelines (../../../../docs/claude.md) Index
+---
+title: "Laravel Boost Guidelines (../../../../docs/CLAUDE.md) Index"
+type: index
+tags: [notify, docs, ai-agents, split, claude]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione ai agents split claude index laravel boost guidelines (../../../../docs/claude.md) index index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../../../README.md
+  - ../../../wiki/index.md
+  - ../../../notifications/readme.md
+  - ../../../integrations/readme.md
+  - ../../../templates/readme.md
+---
+# Laravel Boost Guidelines (../../../../docs/CLAUDE.md) Index
 
-**Source**: [`docs/../../../../docs/claude.md`](../../../../../../docs/../../../../docs/claude.md) (833 lines)  
+**Source**: [`docs/../../../../docs/CLAUDE.md`](../../../../../../docs/../../../../docs/CLAUDE.md) (833 lines)  
 **Split Into**: 20 focused files  
 **Last Updated**: 2026-04-11  
 
@@ -78,14 +97,14 @@
 
 ### Bidirectional Links
 - ← Back to [Main AI Docs Index](../INDEX.md)
-- ← Back to [../../../../docs/claude.md](../../../../../../docs/../../../../docs/claude.md) (original source)
+- ← Back to [../../../../docs/CLAUDE.md](../../../../../../docs/../../../../docs/CLAUDE.md) (original source)
 - ← Back to [Project Docs](../../../docs/README.md)
 
 ---
 
 ## Usage
 
-These guidelines are automatically loaded by Claude/Laravel Boost MCP. For manual reference, see the original [`docs/../../../../docs/claude.md`](../../../../../../docs/../../../../docs/claude.md).
+These guidelines are automatically loaded by Claude/Laravel Boost MCP. For manual reference, see the original [`docs/../../../../docs/CLAUDE.md`](../../../../../../docs/../../../../docs/CLAUDE.md).
 
 ---
 

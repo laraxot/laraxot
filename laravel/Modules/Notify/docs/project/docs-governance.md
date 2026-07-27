@@ -1,23 +1,3 @@
----
-title: "Documentation Governance"
-type: concept
-tags: [docs, governance]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "docs-governance documentation governance"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./2-1-1-plan.md"
-  - "./2-1-context.md"
-  - "./agents.md"
-  - "./ai-agent-lessons-learned.md"
-  - "./ai-skills-and-plugins-complete.md"
-  - "./commit-message.md"
-  - "./configuration.md"
-  - "./design-comuni-bmad-master-plan.md"
----
-
 # Documentation Governance
 
 ## Purpose
@@ -42,7 +22,7 @@ For every active documentation root, prefer exactly one canonical entrypoint:
 - lowercase, date-free filenames for topic documents
 - `CHANGELOG.md` only when a changelog is truly needed
 
-Do not create new parallel entry files such as `INDEX.md`, `00-index-1.md`, `00-index.md`, or `index.md`
+Do not create new parallel entry files such as `INDEX.md`, `00-INDEX.md`, `00-index.md`, or `index.md`
 when `README.md` already plays the same role. Existing variants may remain temporarily, but new work must
 link to the canonical file instead of multiplying entrypoints.
 

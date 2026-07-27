@@ -1,15 +1,3 @@
----
-title: "Risoluzione Conflitti Git - Progetto Base FixCity Fila3 Mono"
-type: concept
-tags: [git, conflicts, resolution]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "git-conflicts-resolution risoluzione conflitti git - progetto base fixcity fila3 mono"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
----
-
 # Risoluzione Conflitti Git - Progetto Base FixCity Fila3 Mono
 
 ## Panoramica

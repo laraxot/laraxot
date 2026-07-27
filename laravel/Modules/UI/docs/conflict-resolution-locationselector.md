@@ -1,23 +1,3 @@
----
-title: "Risoluzione Conflitto LocationSelector.php"
-type: concept
-tags: [conflict, resolution, locationselector]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "conflict-resolution-locationselector risoluzione conflitto locationselector.php"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Risoluzione Conflitto LocationSelector.php
 
 ## Problema Identificato
@@ -96,8 +76,9 @@ Il conflitto riguarda la logica di recupero e gestione dei dati geografici.
 
 - [filament-components-location-studio.md](filament-components-location-studio.md)
 - [components.md](components.md)
-- [Modules/UI/docs/](../../docs/)
+- [Modules/UI/docs/](../docs/)
 
+*Ultimo aggiornamento: 29 luglio 2025*
 # Risoluzione Conflitto LocationSelector.php
 
 ## Problema Identificato
@@ -180,3 +161,4 @@ Il conflitto riguarda la logica di recupero e gestione dei dati geografici.
 - [Modules/UI/project_docs/](../project_docs/)
 - [Modules/UI/project_docs/](../project_docs/)
 
+*Ultimo aggiornamento: 29 luglio 2025*

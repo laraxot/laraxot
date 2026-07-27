@@ -1,23 +1,3 @@
----
-title: "Notify Module Documentation"
-type: concept
-tags: [index, conflict]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "index-conflict notify module documentation"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Notify Module Documentation
 
 ## Overview
@@ -66,11 +46,11 @@ This document serves as the central index for the Notify module, providing guida
 - Update this index if new features or significant changes are introduced to the Notify module.
 
 ## Links to Related Documentation
-- [Architecture Overview](./architecture.md)
-- [Notification Channels Implementation](./notification-channels-implementation.md)
-- [Email Templates](./email-templates.md)
-- [SMS Implementation](./sms-implementation.md)
-- [Troubleshooting](./troubleshooting.md)
+- [Architecture Overview](./ARCHITECTURE.md)
+- [Notification Channels Implementation](./NOTIFICATION_CHANNELS_IMPLEMENTATION.md)
+- [Email Templates](./EMAIL_TEMPLATES.md)
+- [SMS Implementation](./SMS_IMPLEMENTATION.md)
+- [Troubleshooting](./TROUBLESHOOTING.md)
 
 # Indice della Documentazione - Modulo Notify
 
@@ -104,47 +84,47 @@ Questo documento serve come indice centrale per il modulo Notify, fornendo una g
 
 ### Architettura e Struttura
 - [README](./README.md) - Panoramica generale del modulo
-- [Architettura](./architecture.md) - Architettura generale del modulo
+- [Architettura](./ARCHITECTURE.md) - Architettura generale del modulo
 - [Struttura](./structure.md) - Struttura delle directory e dei componenti
 - [Modelli](./models.md) - Documentazione dei modelli Eloquent
 - [Eventi](./events.md) - Eventi e listeners
 
 ### Sistema Email
 - [Sistema Email Database](./database-mail-system.md) - Sistema di gestione delle email basato su database
-- [Code Email](./database-mail-queue-2.md) - Sistema di code per l'invio di email
-- [Template Email](./email-templates.md) - Struttura e utilizzo dei template email
-- [Best Practices Email](./email-best-practices.md) - Linee guida per le email
-- [Template Responsivi](./responsive-email-templates.md) - Implementazione di template email responsivi
+- [Code Email](./database_mail_queue.md) - Sistema di code per l'invio di email
+- [Template Email](./EMAIL_TEMPLATES.md) - Struttura e utilizzo dei template email
+- [Best Practices Email](./EMAIL_BEST_PRACTICES.md) - Linee guida per le email
+- [Template Responsivi](./RESPONSIVE_EMAIL_TEMPLATES.md) - Implementazione di template email responsivi
 
 ### Canali di Notifica
-- [Implementazione Canali](./notification-channels-implementation.md) - Implementazione dei canali di notifica
-- [SMS](./sms-implementation.md) - Implementazione del canale SMS
-- [WhatsApp](./whatsapp-channel.md) - Implementazione del canale WhatsApp
-- [Telegram](./telegram-channel.md) - Implementazione del canale Telegram
+- [Implementazione Canali](./NOTIFICATION_CHANNELS_IMPLEMENTATION.md) - Implementazione dei canali di notifica
+- [SMS](./SMS_IMPLEMENTATION.md) - Implementazione del canale SMS
+- [WhatsApp](./WHATSAPP_CHANNEL.md) - Implementazione del canale WhatsApp
+- [Telegram](./TELEGRAM_CHANNEL.md) - Implementazione del canale Telegram
 
 ### Filament UI
 - [Risorse Filament](./filament-resources.md) - Componenti Filament Resources
 - [Pagine Filament](./filament-pages.md) - Componenti Filament Pages
-- [Convenzioni Filament](./filament-extension-pattern.md) - Pattern di estensione per Filament
+- [Convenzioni Filament](./FILAMENT_EXTENSION_PATTERN.md) - Pattern di estensione per Filament
 
 ### Configurazione
-- [Struttura Config](./config-structure.md) - Struttura dei file di configurazione
-- [Configurazione SMS](./sms-config-structure.md) - Struttura della configurazione SMS
-- [Principi di Configurazione](./configurations-usage-principles.md) - Principi per l'utilizzo delle configurazioni
+- [Struttura Config](./CONFIG_STRUCTURE.md) - Struttura dei file di configurazione
+- [Configurazione SMS](./SMS_CONFIG_STRUCTURE.md) - Struttura della configurazione SMS
+- [Principi di Configurazione](./CONFIGURATIONS_USAGE_PRINCIPLES.md) - Principi per l'utilizzo delle configurazioni
 
 ### Pattern e Architettura
-- [Pattern Factory](./factory-pattern-analysis.md) - Analisi del pattern Factory
-- [Risoluzione Dinamica delle Classi](./dynamic-class-resolution.md) - Pattern di risoluzione dinamica delle classi
+- [Pattern Factory](./FACTORY_PATTERN_ANALYSIS.md) - Analisi del pattern Factory
+- [Risoluzione Dinamica delle Classi](./DYNAMIC_CLASS_RESOLUTION.md) - Pattern di risoluzione dinamica delle classi
 - [Queueable Actions](./queueable-action.md) - Utilizzo di Spatie Queueable Actions
 
 ### Standard e Traduzioni
-- [Convenzioni di Naming](./naming-conventions.md) - Standard per i nomi di file e classi
+- [Convenzioni di Naming](./NAMING_CONVENTIONS.md) - Standard per i nomi di file e classi
 - [Traduzioni](./translations.md) - Sistema di traduzioni
-- [Standard Traduzioni](./translation-standards.md) - Standard per le chiavi di traduzione
+- [Standard Traduzioni](./TRANSLATION_STANDARDS.md) - Standard per le chiavi di traduzione
 
 ### Testing e Qualità
-- [PHPStan Level 10](./phpstan-level10-fixes.md) - Correzioni per PHPStan Level 10
-- [Testing](./testing.md) - Strategie e approcci per il testing
+- [PHPStan Level 10](./PHPSTAN_LEVEL10_FIXES.md) - Correzioni per PHPStan Level 10
+- [Testing](./TESTING.md) - Strategie e approcci per il testing
 
 ## Linee Guida per l'Implementazione
 
@@ -200,11 +180,11 @@ Implementare una gestione robusta degli errori per gestire i fallimenti nella co
 - [Index](./notifications/INDEX.md) - Indice della documentazione sulle notifiche
 
 ## Collegamenti alla Documentazione Correlata
-- [Panoramica Architettura](./architecture.md)
-- [Implementazione Canali Notifica](./notification-channels-implementation.md)
-- [Template Email](./email-templates.md)
-- [Implementazione SMS](./sms-implementation.md)
-- [Troubleshooting](./troubleshooting.md)
+- [Panoramica Architettura](./ARCHITECTURE.md)
+- [Implementazione Canali Notifica](./NOTIFICATION_CHANNELS_IMPLEMENTATION.md)
+- [Template Email](./EMAIL_TEMPLATES.md)
+- [Implementazione SMS](./SMS_IMPLEMENTATION.md)
+- [Troubleshooting](./TROUBLESHOOTING.md)
 
 ## Note sulla Manutenzione
 Questa documentazione viene aggiornata regolarmente. Prima di apportare modifiche al codice, consultare la documentazione pertinente e aggiornare i documenti correlati.
@@ -237,9 +217,9 @@ Questa documentazione viene aggiornata regolarmente. Prima di apportare modifich
 ## Risoluzione Conflitti e Standard
 - **Gennaio 2025**: Risoluzione sistematica di tutti i conflitti Git nei file di documentazione:
   - `index.md` - Unificato contenuto italiano e inglese mantenendo struttura completa
-  - `database-mail-queue-2.md` - Rimossi marcatori conflitto, aggiornati path di sistema
-  - `database-mail-system.md` - Puliti conflitti nelle sezioni bash e riferimenti
-  - `database-mail.md` - Risolti conflitti nei template e riferimenti esterni
+  - `database_mail_queue.md` - Rimossi marcatori conflitto, aggiornati path di sistema
+  - `database_mail_system.md` - Puliti conflitti nelle sezioni bash e riferimenti
+  - `database_mail.md` - Risolti conflitti nei template e riferimenti esterni
 - Il file `lang/it/notify_theme.php` è stato risolto manualmente mantenendo PSR-12, strict_types, array short syntax e solo chiavi effettive, come richiesto dagli standard PHPStan livello 10
 - Il file `NOTIFICATION_CHANNELS_IMPLEMENTATION.md` è stato risolto manualmente mantenendo la versione più aggiornata e coerente con le best practice architetturali del modulo Notify
 - **Filosofia di risoluzione**: Approccio olistico con analisi manuale approfondita, mantenimento integrità architetturale, documentazione bidirezionale aggiornata

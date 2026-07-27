@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Lang\Actions;
 
 use Illuminate\Support\Facades\File;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Spatie\QueueableAction\QueueableAction;
 
 class SyncTranslationsAction
@@ -270,7 +271,7 @@ class SyncTranslationsAction
                 $content .= $this->arrayToPhp($this->filterStringKeyArray($value), $indent + 1);
                 $content .= $indentStr."],\n";
             } else {
-                $content .= "'".addslashes((string) $value)."',\n";
+                $content .= "'".addslashes(SafeStringCastAction::cast($value))."',\n";
             }
         }
 

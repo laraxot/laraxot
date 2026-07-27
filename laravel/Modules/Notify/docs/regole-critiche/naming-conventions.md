@@ -1,17 +1,3 @@
----
-title: "Naming Conventions - Database Folders"
-type: concept
-tags: [naming, conventions]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "naming-conventions naming conventions - database folders"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./phpstan-test-mai-escludere.md"
-  - "./test-naming-pascalcase.md"
----
-
 # Naming Conventions - Database Folders
 
 ## Regola Mandatoria

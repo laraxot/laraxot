@@ -1,18 +1,3 @@
----
-title: "🏛 Filament Widgets Architecture"
-type: concept
-tags: [agents, filament, widgets]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "agents-filament-widgets 🏛 filament widgets architecture"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./filament-table-vs-blade-component.md"
-  - "./ralph-gsd-bmad-orchestration.md"
----
-
 # 🏛 Filament Widgets Architecture
 
 **File**: `.agents/docs/architecture/agents-filament-widgets.md`  
@@ -221,7 +206,7 @@ Prima di commitare una pagina list/grid:
 
 ### Project Documentation
 - `docs/project/FILAMENT_WIDGETS_FOR_LISTS_RULE.md`
-- `docs/project/FILAMENT_WIDGETS_architecture.md`
+- `docs/project/FILAMENT_WIDGETS_ARCHITECTURE.md`
 - `docs/project/FILAMENT_ZEN_PHILOSOPHY.md`
 
 ### Filament Documentation

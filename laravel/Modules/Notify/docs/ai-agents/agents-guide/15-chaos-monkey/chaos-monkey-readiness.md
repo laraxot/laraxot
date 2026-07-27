@@ -1,16 +1,3 @@
----
-title: "Chaos Monkey Readiness"
-type: concept
-tags: [chaos, monkey, readiness]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "chaos-monkey-readiness chaos monkey readiness"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
----
-
 # Chaos Monkey Readiness
 
 ## Overview

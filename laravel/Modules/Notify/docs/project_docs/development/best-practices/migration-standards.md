@@ -1,15 +1,3 @@
----
-title: "Standard per le Migrazioni"
-type: rule
-tags: [migration, standards]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "migration-standards standard per le migrazioni"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
----
-
 # Standard per le Migrazioni
 
 ## Introduzione

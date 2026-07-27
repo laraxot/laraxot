@@ -1,23 +1,3 @@
----
-title: "Guida alla Migrazione di MailTemplate"
-type: guide
-tags: [mail, template, migration, guide]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "mail-template-migration-guide-1 guida alla migrazione di mailtemplate"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Guida alla Migrazione di MailTemplate
 
 ## Panoramica
@@ -147,7 +127,7 @@ Per una comprensione completa, consultare anche:
 
 - [Struttura della Migrazione](./mail-templates/MIGRATION_STRUCTURE.md) - Dettagli sulla struttura di migrazione
 - [Implementazione del Campo Slug](./mail-templates/SLUG_FIELD_IMPLEMENTATION.md) - Guida completa all'implementazione e utilizzo del campo slug
-- [Spatie Email Usage Guide](./spatie-email-usage-guide.md) - Come utilizzare SpatieEmail con i template
+- [Spatie Email Usage Guide](./SPATIE_EMAIL_USAGE_GUIDE.md) - Come utilizzare SpatieEmail con i template
 
 ## Vantaggi del Pattern XotBaseMigration
 

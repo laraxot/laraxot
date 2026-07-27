@@ -1,5 +1,7 @@
 # LoginWidget Form Data Binding - Fix e Pattern
 
+> **2026-07-24:** base class canonica = `XotBaseSchemaWidget` (non `XotBaseWidget`). API Filament 5 = `Schema` + `getState()` + `fill()`. Vedi [filament-v5-form-in-blade](../../../../../../docs/wiki/concepts/filament-v5-form-in-blade.md). Dopo edit Blade: `php artisan view:cache`.
+
 ## Problema Risolto
 
 Il `LoginWidget` mostrava un errore indicando che i campi email e password "non sono popolati" anche quando l'utente inseriva i valori nei campi del form.

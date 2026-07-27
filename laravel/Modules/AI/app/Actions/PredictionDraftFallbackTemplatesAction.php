@@ -7,6 +7,8 @@
  * the primary prediction generation fails or when mock data is needed.
  * Each template includes category, title, subtitle, description, analysis,
  * tags, and options arrays.
+ *
+ * @package Modules\AI\Actions
  */
 
 namespace Modules\AI\Actions;
@@ -32,7 +34,6 @@ use Spatie\QueueableAction\QueueableAction;
 final class PredictionDraftFallbackTemplatesAction
 {
     use QueueableAction;
-
     /**
      * Execute the action and return fallback templates.
      *

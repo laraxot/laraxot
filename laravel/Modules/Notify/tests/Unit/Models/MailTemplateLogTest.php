@@ -8,6 +8,7 @@ use function Safe\json_encode;
 use PHPUnit\Framework\Assert;
 use Modules\Notify\Models\MailTemplateLog;
 use Modules\Notify\Tests\TestCase;
+use function Pest\Laravel\get;
 
 uses(\Modules\Notify\Tests\TestCase::class);
 

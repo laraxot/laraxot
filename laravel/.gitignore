@@ -26,3 +26,9 @@ config/net/sottana/database/content/information_schema_tables.json
 config/local/techplanner/database/content/information_schema_tables.json
 config/local/techplanner/database/content/information_schema_tables.json
 ruvector.db
+
+# Nessuna cartella docs/archive o docs/legacy in nessun modulo/tema
+Modules/*/docs/archive/
+Modules/*/docs/legacy/
+Themes/*/docs/archive/
+Themes/*/docs/legacy/

@@ -1,23 +1,3 @@
----
-title: "🎨 Sistema Icone UI"
-type: concept
-tags: [icon, system]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "icon-system 🎨 sistema icone ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # 🎨 Sistema Icone UI
 
 ## Panoramica
@@ -203,11 +183,6 @@ class StatsWidget extends Widget
 2. **Usa un nome descrittivo** (es. `user-profile.svg`)
 3. **L'icona sarà disponibile** come `ui-user-profile`
 
-### Sottocartelle (es. brands)
-
-- `brands/github.svg` → `ui-brands.github` (punto = separatore path)
-- **Vietato** SVG inline nelle Blade: vedi [no-svg-hardcoded-in-blade.md](no-svg-hardcoded-in-blade.md)
-
 ### Esempio di Icona SVG
 
 ```svg
@@ -351,12 +326,12 @@ Tutte le icone sono compatibili con Filament 4.x e versioni successive.
 
 ## 📝 Changelog
 
-### v1.1.0 - [DATE]
+### v1.1.0 - 2025-01-27
 - **🔧 Icone Aggiuntive**: Aggiunte icone mancanti (cancel, save, logout, showPassword, user-main, user-team, user-user-tenant)
 - **🐛 Bug Fix**: Risolto errore "SvgNotFound" per icona "cancel"
 - **📝 Traduzioni**: Aggiornati file di traduzione per utilizzare prefisso "ui-" corretto
 
-### v1.0.0 - [DATE]
+### v1.0.0 - 2025-01-27
 - **🎨 Sistema Icone**: Implementato sistema completo di icone SVG
 - **🔧 Registrazione Automatica**: Icone registrate automaticamente
 - **📚 Documentazione**: Documentazione completa del sistema

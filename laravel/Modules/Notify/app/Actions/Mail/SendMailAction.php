@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Notify\Actions\Mail;
 
 use Illuminate\Support\Str;
+use RuntimeException;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 
@@ -49,12 +50,12 @@ class SendMailAction
         $this->vars = array_merge($this->vars, $vars);
 
         $engineClass = '\\Modules\\Notify\\Actions\\Mail\\Engines\\'.Str::studly($this->driver).'\\Send'.Str::studly($this->driver).'MailAction';
-        Assert::classExists($engineClass, '['.__LINE__.']['.__CLASS__.'] engine non trovato: '.$this->driver);
+        Assert::classExists($engineClass, '['.__LINE__.']['.self::class.'] engine non trovato: '.$this->driver);
 
         $engine = app($engineClass);
         $execute = [$engine, 'execute'];
         if (! is_callable($execute)) {
-            throw new \RuntimeException(sprintf('Engine [%s] privo di execute().', $engineClass));
+            throw new RuntimeException(sprintf('Engine [%s] privo di execute().', $engineClass));
         }
 
         $execute($this->vars);

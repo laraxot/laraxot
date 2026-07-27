@@ -14,6 +14,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @property array<string, mixed>|null $config
  * @property bool|null $is_enabled
  * @property int|null $priority
+ *
  * @property-read ProfileContract|null $creator
  * @property-read ProfileContract|null $deleter
  * @property-read MediaCollection<int, Media> $media

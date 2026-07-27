@@ -1,16 +1,3 @@
----
-title: "ContactTypeEnum - The Universal Contact Field Schema"
-type: concept
-tags: [contact, type, enum]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "contact-type-enum contacttypeenum - the universal contact field schema"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./channel-enum.md"
----
-
 # ContactTypeEnum - The Universal Contact Field Schema
 
 ## Scopo (Purpose)
@@ -370,32 +357,27 @@ Le traduzioni sono definite in:
 - `Modules/Notify/lang/it/contact_type_enum.php`
 - `Modules/Notify/lang/de/contact_type_enum.php`
 
-Struttura (**obbligatorio** l'incapsulamento in `values`, richiesto da `EnumTrait::getIcon()`/`getLabel()`/`getColor()`/`getDescription()` che risolvono la chiave `values.{case}.{campo}`):
+Struttura:
 
 ```php
 return [
-    'values' => [
-        'phone' => [
-            'label' => 'Phone',
-            'description' => 'Landline phone number',
-            'icon' => 'heroicon-o-phone',
-            'color' => 'text-green-600',
-            'hex_color' => '#16a34a',
-        ],
-        'email' => [
-            'label' => 'Email',
-            'description' => 'Email address',
-            'icon' => 'heroicon-o-envelope',
-            'color' => 'text-blue-600',
-            'hex_color' => '#2563eb',
-        ],
-        // ... tutti i case dell'enum
+    'phone' => [
+        'label' => 'Phone',
+        'description' => 'Landline phone number',
+        'icon' => 'heroicon-o-phone',
+        'color' => 'text-green-600',
+        'hex_color' => '#16a34a',
     ],
-    // 'navigation', 'label', 'plural_label', 'fields', 'actions' restano a livello root, fuori da 'values'
+    'email' => [
+        'label' => 'Email',
+        'description' => 'Email address',
+        'icon' => 'heroicon-o-envelope',
+        'color' => 'text-blue-600',
+        'hex_color' => '#2563eb',
+    ],
+    // ... tutti i case dell'enum
 ];
 ```
-
-> **Errore comune**: se `values` manca, `EnumTrait::transClass()` non trova la chiave e ritorna `fix:{module}::{file}.values.{case}.{campo}` invece del valore reale — causa nota di `BladeUI\Icons\Exceptions\SvgNotFound` quando il campo mancante è `icon`.
 
 ## Best Practices
 

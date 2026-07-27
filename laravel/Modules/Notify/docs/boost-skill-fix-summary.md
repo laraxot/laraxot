@@ -1,23 +1,3 @@
----
-title: "Boost Skill Fix Summary - Notify Module"
-type: concept
-tags: [boost, skill, fix, summary]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "boost-skill-fix-summary boost skill fix summary - notify module"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Boost Skill Fix Summary - Notify Module
 
 **Date**: 2026-03-02  
@@ -42,7 +22,7 @@ The Notify module couldn't:
 
 ## Solution Applied
 
-See `/docs/boost-skill-solution-plan.md` for complete solution details.
+See `/docs/BOOST_SKILL_SOLUTION_PLAN.md` for complete solution details.
 
 ## Dependencies Restored
 
@@ -62,8 +42,8 @@ Critical dependencies for Notify module:
 
 ## Related Documentation
 
-- `/docs/boost-skill-installation-error.md` - Issue analysis
-- `/docs/boost-skill-solution-plan.md` - Solution plan
+- `/docs/BOOST_SKILL_INSTALLATION_ERROR.md` - Issue analysis
+- `/docs/BOOST_SKILL_SOLUTION_PLAN.md` - Solution plan
 
 ## Lessons Learned
 

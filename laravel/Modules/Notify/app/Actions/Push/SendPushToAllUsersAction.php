@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Actions\Push;
 
+use Modules\Notify\Datas\PushNotificationData;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -14,11 +15,10 @@ class SendPushToAllUsersAction
     use QueueableAction;
 
     /**
-     * @param  array<string, mixed>  $notification
      * @param  array<string, mixed>  $data
      * @return array<string, mixed>
      */
-    public function execute(array $notification, array $data = []): array
+    public function execute(PushNotificationData $notification, array $data = []): array
     {
         $tokens = $this->getAllActiveTokens();
 

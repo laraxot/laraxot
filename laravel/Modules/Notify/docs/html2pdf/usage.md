@@ -3,11 +3,7 @@ title: "html2pdf usage — puntatore"
 type: reference
 updated: 2026-05-21
 related:
-  - "./advanced.md"
-  - "./index.md"
-  - "./laravel.md"
-  - "./security.md"
-  - "./styling.md"
+  - "../../../Media/docs/html2pdf/usage.md"
 ---
 
 # Html2Pdf — usage

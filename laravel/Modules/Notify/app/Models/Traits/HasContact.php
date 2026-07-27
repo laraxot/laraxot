@@ -16,6 +16,7 @@ use Modules\Notify\Enums\ContactTypeEnum;
  *
  * @property Collection<int, Address> $addresses
  */
+/** @phpstan-ignore trait.unused */
 trait HasContact
 {
     /**

@@ -1,23 +1,3 @@
----
-title: "Risoluzione Conflitti SmsChannel.php"
-type: concept
-tags: [conflict, resolution, smschannel]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "conflict-resolution-smschannel risoluzione conflitti smschannel.php"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Risoluzione Conflitti SmsChannel.php
 
 ## Contesto del Conflitto
@@ -71,7 +51,7 @@ return $action->execute($smsData);
 
 ## Collegamenti
 - [Notify Module Documentation](readme.md)
-- [SMS Channel Architecture](sms-channel-action-resolution-1.md)
+- [SMS Channel Architecture](sms_channel_action_resolution.md)
 - [Root Conflict Resolution Guidelines](../../../../docs/project/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
@@ -128,7 +108,7 @@ return $action->execute($smsData);
 
 ## Collegamenti
 - [Notify Module Documentation](README.md)
-- [SMS Channel Architecture](sms-channel-action-resolution-1.md)
+- [SMS Channel Architecture](sms_channel_action_resolution.md)
 - [Root Conflict Resolution Guidelines](../../../../docs/project/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*

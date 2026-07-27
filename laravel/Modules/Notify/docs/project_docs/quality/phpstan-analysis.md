@@ -1,17 +1,3 @@
----
-title: "PHPStan Analysis Report"
-type: concept
-tags: [phpstan, analysis]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phpstan-analysis phpstan analysis report"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./php-quality-tools.md"
-  - "./quality-tools-ecosystem.md"
----
-
 # PHPStan Analysis Report
 
 **Data**: 2025-01-11
@@ -209,7 +195,7 @@ test('example', function (): void {
 ### Fase 3: Documentazione
 - [ ] Creare docs specifiche per ogni modulo con errori
 - [ ] Documentare pattern di fix comuni
-- [ ] Aggiornare claude.md con lezioni apprese
+- [ ] Aggiornare CLAUDE.md con lezioni apprese
 
 ### Fase 4: Baseline Management
 - [ ] Valutare errori da aggiungere al baseline temporaneamente
@@ -221,7 +207,7 @@ test('example', function (): void {
 - **PHPStan Configuration**: `phpstan.neon`
 - **Baseline**: `phpstan-baseline.neon`
 - **Quality Rules**: `Modules/Activity/docs/PHPSTAN_QUALITY_RULES.md`
-- **claude.md**: Linee guida generali di qualità
+- **CLAUDE.md**: Linee guida generali di qualità
 
 ## ⚠️ Note Importanti
 

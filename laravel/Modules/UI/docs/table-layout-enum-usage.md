@@ -1,23 +1,3 @@
----
-title: "TableLayoutEnum Usage Guide"
-type: concept
-tags: [table, layout, enum, usage]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "table-layout-enum-usage tablelayoutenum usage guide"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # TableLayoutEnum Usage Guide
 
 ## Nuovo Approccio (Corretto)
@@ -294,12 +274,12 @@ $columns = $this->layout->getTableColumns($listColumns, $gridColumns);
 
 ## Related Documentation
 
-- [UI Module Architecture](architecture-rules-1.md)
+- [UI Module Architecture](architecture_rules.md)
 - [Filament Components Guide](components.md)
 - [Translation Standards](translations.md)
 - [Table Components](table-components.md)
-- [HasXotTable Trait](../../xot/docs/has-xot-table.md)
-- [Root Documentation: UI Components](../../../../docs/components/ui-components.md)
+- [HasXotTable Trait](../../Xot/docs/has-xot-table.md)
+- [Root Documentation: UI Components](../../../docs/components/ui-components.md)
 # TableLayoutEnum Usage Guide
 
 ## Nuovo Approccio (Corretto)

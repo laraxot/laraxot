@@ -47,6 +47,7 @@ trait HasTenantNotifications
      * Scope per filtrare le notifiche per tenant.
      *
      * @param  Builder<static>  $query
+     *
      * @return Builder<static>
      */
     public function scopeForTenant(Builder $query, ?string $tenantId = null): Builder

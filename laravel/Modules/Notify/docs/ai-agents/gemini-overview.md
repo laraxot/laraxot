@@ -1,23 +1,3 @@
----
-title: "GEMINI Overview"
-type: concept
-tags: [gemini, overview]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "gemini-overview gemini overview"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./01-gsd-workflow.md"
-  - "./02-bmad-workflow.md"
-  - "./03-architecture-zen.md"
-  - "./04-filament-philosophy.md"
-  - "./05-front-office-audit.md"
-  - "./06-cinematic-effects.md"
-  - "./07-mcp-tailwind-ui.md"
----
-
 # GEMINI Overview
 
 Panoramica del progetto Laravel per agenti Gemini.
@@ -82,5 +62,5 @@ composer run test
 ## 🔗 Link
 
 - [Indice GEMINI](./gemini-split-index.md)
-- [gemini.md originale](../../gemini.md)
+- [GEMINI.md originale](../../GEMINI.md)
 - [Index principale](./index.md)

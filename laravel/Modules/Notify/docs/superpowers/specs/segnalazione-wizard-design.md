@@ -1,19 +1,3 @@
----
-title: "Design: Ticket Wizard Widget (Filament)"
-type: concept
-tags: [segnalazione, wizard, design]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "segnalazione-wizard-design design: ticket wizard widget (filament)"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./fixcity-hero-marketing-1.md"
-  - "./fixcity-hero-marketing.md"
-  - "./llm-wiki-layout-design-1.md"
-  - "./llm-wiki-layout-design.md"
----
-
 # Design: Ticket Wizard Widget (Filament)
 
 ## Obiettivo

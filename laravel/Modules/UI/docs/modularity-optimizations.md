@@ -1,23 +1,3 @@
----
-title: "Modulo UI - Ottimizzazioni per Modularità"
-type: concept
-tags: [modularity, optimizations]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "modularity-optimizations modulo ui - ottimizzazioni per modularità"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Modulo UI - Ottimizzazioni per Modularità
 
 ## Problemi Identificati
@@ -230,10 +210,10 @@ Dopo l'ottimizzazione completa, i comandi devono restituire **0 occorrenze**.
 
 ## Documentazione Correlata
 
-- [Root Docs: Modularity Hardcoded Names](../../../../docs/modularity-hardcoded-names.md)
+- [Root Docs: Modularity Hardcoded Names](../../../docs/modularity-hardcoded-names.md)
 - [Regole Cursor: Modularity Rules](../../../.cursor/rules/modularity-hardcoded-names.mdc)
 - [UI Architecture Overview](./architecture-overview.md)
-- [UI Best Practices](./best-practices/readme.md)
+- [UI Best Practices](./best-practices/README.md)
 
 ## Note di Implementazione
 

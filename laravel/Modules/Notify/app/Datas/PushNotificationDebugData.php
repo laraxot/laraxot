@@ -17,11 +17,15 @@ use Spatie\LaravelData\Data;
  */
 final class PushNotificationDebugData extends Data implements Arrayable
 {
+    /**
+     * @return void
+     */
     public function __construct(
         private readonly CanReceivePushNotifications $notifiable,
         private readonly MobilePushNotification $notification,
         private readonly MulticastSendReport $sendReport,
-    ) {}
+    ) {
+    }
 
     public static function make(
         CanReceivePushNotifications $notifiable,

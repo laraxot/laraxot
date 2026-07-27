@@ -1,3 +1,22 @@
+---
+title: "Architettura Progetto - Indice"
+type: index
+tags: [notify, docs, architecture]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione architecture readme architettura progetto - indice index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../README.md
+  - ../wiki/index.md
+  - ../notifications/readme.md
+  - ../integrations/readme.md
+  - ../templates/readme.md
+---
 # Architettura Progetto - Indice
 
 ## 📚 Documentazione Architetturale

@@ -21,7 +21,6 @@ use Modules\Xot\Actions\View\GetViewByClassAction;
  */
 abstract class XotBaseViewColumn extends FilamentViewColumn
 {
-
     protected function setUp(): void
     {
         parent::setUp();

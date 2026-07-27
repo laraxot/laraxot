@@ -1,26 +1,6 @@
----
-title: "Documentation standards"
-type: rule
-tags: [documentation, standards]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "documentation-standards documentation standards"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./01-gsd-workflow.md"
-  - "./02-bmad-workflow.md"
-  - "./03-architecture-zen.md"
-  - "./04-filament-philosophy.md"
-  - "./05-front-office-audit.md"
-  - "./06-cinematic-effects.md"
-  - "./07-mcp-tailwind-ui.md"
----
-
 # Documentation standards
 
-> Source: [IFLOW.md](../../bashscripts/ai/IFLOW.md) | [claude.md](../../claude.md)
+> Source: [IFLOW.md](../../bashscripts/ai/IFLOW.md) | [CLAUDE.md](../../CLAUDE.md)
 > Back: [index](index.md)
 
 ## File naming conventions (CRITICAL)
@@ -41,7 +21,7 @@ WRONG:   ModelArchitecture.md
 Never include dates in filenames:
 ```
 CORRECT: dry-kiss-analysis.md
-WRONG:   dry-kiss-analysis-.md.md
+WRONG:   dry-kiss-analysis-2025-10-15.md
 WRONG:   phpstan-fixes-january-2026.md
 ```
 
@@ -50,7 +30,7 @@ WRONG:   phpstan-fixes-january-2026.md
 `README.md` is the ONLY file allowed with uppercase:
 ```
 CORRECT: phpstan-fixes.md, README.md
-WRONG:   phpstan-fixes-1.md, PHPStan-Fixes.md
+WRONG:   PHPSTAN_FIXES.md, PHPStan-Fixes.md
 ```
 
 ### 4. No duplicates

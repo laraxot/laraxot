@@ -1,23 +1,3 @@
----
-title: "Localizzazione OpeningHoursRule - Modulo UI"
-type: rule
-tags: [opening, hours, rule, localization]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "opening-hours-rule-localization localizzazione openinghoursrule - modulo ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Localizzazione OpeningHoursRule - Modulo UI
 
 ## Problema Identificato
@@ -198,7 +178,7 @@ $rule = new OpeningHoursRule();
 - **Eliminati hardcoded** che causano problemi di manutenzione
 
 ## Collegamenti
-- [Opening Hours Field](./opening-hours-field.md)
+- [Opening Hours Field](./opening_hours_field.md)
 - [Validation System](./validation_system.md)
 - [Localization Guidelines](./localization_guidelines.md)
 
@@ -383,7 +363,7 @@ $rule = new OpeningHoursRule();
 - **Eliminati hardcoded** che causano problemi di manutenzione
 
 ## Collegamenti
-- [Opening Hours Field](./opening-hours-field.md)
+- [Opening Hours Field](./opening_hours_field.md)
 - [Validation System](./validation_system.md)
 - [Localization Guidelines](./localization_guidelines.md)
 

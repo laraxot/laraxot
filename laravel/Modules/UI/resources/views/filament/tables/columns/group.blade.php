@@ -21,7 +21,10 @@ declare(strict_types=1);
      
         @php
             $name = $field->getName();
-            $value = $record->{$name} ?? null;
+            $value = $field->getState();
+            if ($value === null) {
+                $value = data_get($record, $name);
+            }
             // Skip empty values to save space
             if (empty($value) && $value !== 0 && $value !== '0') {
                 continue;

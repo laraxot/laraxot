@@ -1,23 +1,3 @@
----
-title: "🚨 PSR-4 Namespace Violations - UI Module"
-type: concept
-tags: [psr4, namespace, violations]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "psr4-namespace-violations 🚨 psr-4 namespace violations - ui module"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # 🚨 PSR-4 Namespace Violations - UI Module
 
 **Data Scoperta**: Dicembre 15, 2025
@@ -415,9 +395,9 @@ composer dump-autoload = Manifestation of Truth
 - [Wikimedia Composer Merge Plugin](https://github.com/wikimedia/composer-merge-plugin)
 
 **Documentazione Interna**:
-- [../../../../docs/modules-index.md](../../../../docs/modules-index.md) - Module Index
-- [../../Xot/docs/README.md](../../xot/docs/readme.md) - XotBase Pattern
-- [./README.md](./readme.md) - UI Module Overview
+- [../../../docs/modules-index.md](../../../docs/modules-index.md) - Module Index
+- [../../Xot/docs/README.md](../../Xot/docs/README.md) - XotBase Pattern
+- [./README.md](./README.md) - UI Module Overview
 
 ---
 

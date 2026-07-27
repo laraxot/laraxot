@@ -1,24 +1,13 @@
----
-title: "Token Optimization — La Religione dell'Efficienza"
-type: concept
-tags: [token, efficiency, religion]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "token-efficiency-religion token optimization — la religione dell'efficienza"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Token Optimization — La Religione dell'Efficienza
+
+> **Canonico**: questo è l'unico file attivo su token optimization in
+> `Modules/Notify/docs/`. `TOKEN-OPTIMIZATION-STRATEGY.md.old`,
+> `token-optimization-strategy.md.old` e `token-optimization.md.old`
+> (quest'ultimo già si autodichiarava storico) sono stati rinominati
+> `.old` il 2026-07-24 per deduplicazione — contenuto preservato per
+> riferimento, non cancellato. `token-optimization-strategy.md.old`
+> conteneva un riferimento GitHub errato di un altro progetto
+> (`provtv/base_ptv_fila5`), copiato per errore.
 
 **Status**: Active  
 **Created**: 2026-04-14  

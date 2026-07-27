@@ -1,23 +1,3 @@
----
-title: "FixCity - Filosofia, Logica, Visione e Zen del Progetto"
-type: concept
-tags: [philosophy]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "philosophy fixcity - filosofia, logica, visione e zen del progetto"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./2-1-1-plan.md"
-  - "./2-1-context.md"
-  - "./agents.md"
-  - "./ai-agent-lessons-learned.md"
-  - "./ai-skills-and-plugins-complete.md"
-  - "./commit-message.md"
-  - "./configuration.md"
-  - "./design-comuni-bmad-master-plan.md"
----
-
 # FixCity - Filosofia, Logica, Visione e Zen del Progetto
 
 ## La Visione
@@ -145,6 +125,6 @@ FixCity è più di un progetto software. È un esperimento sociale tecnologico c
 
 ## Riferimenti
 
-- [project.md](./project.md) - Visione e obiettivi
+- [PROJECT.md](./PROJECT.md) - Visione e obiettivi
 - [AGENTS.md](./AGENTS.md) - Regole per agenti AI
 - [docs/](../docs/) - Documentazione completa

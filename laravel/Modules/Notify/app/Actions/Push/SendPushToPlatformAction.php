@@ -8,6 +8,7 @@ use Exception;
 use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
+use Modules\Notify\Datas\PushNotificationData;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -22,11 +23,10 @@ class SendPushToPlatformAction
     use QueueableAction;
 
     /**
-     * @param  array<string, mixed>  $notification
      * @param  array<string, mixed>  $data
      * @return array<string, mixed>
      */
-    public function execute(string $platform, string $token, array $notification, array $data = []): array
+    public function execute(string $platform, string $token, PushNotificationData $notification, array $data = []): array
     {
         return match ($platform) {
             'fcm' => $this->sendFCMNotification($token, $notification, $data),
@@ -37,24 +37,23 @@ class SendPushToPlatformAction
     }
 
     /**
-     * @param  array<string, mixed>  $notification
      * @param  array<string, mixed>  $data
      * @return array<string, mixed>
      */
-    private function sendFCMNotification(string $token, array $notification, array $data): array
+    private function sendFCMNotification(string $token, PushNotificationData $notification, array $data): array
     {
         $payload = [
             'to' => $token,
             'notification' => [
-                'title' => $notification['title'],
-                'body' => $notification['body'],
-                'icon' => $notification['icon'] ?? '/icons/icon-192x192.png',
-                'sound' => $notification['sound'] ?? 'default',
-                'badge' => $notification['badge'] ?? 1,
+                'title' => $notification->title,
+                'body' => $notification->body,
+                'icon' => $notification->icon ?? '/icons/icon-192x192.png',
+                'sound' => $notification->sound ?? 'default',
+                'badge' => $notification->badge ?? 1,
             ],
             'data' => $data,
-            'priority' => $notification['priority'] ?? 'high',
-            'ttl' => $notification['ttl'] ?? 3600,
+            'priority' => $notification->priority ?? 'high',
+            'ttl' => $notification->ttl ?? 3600,
         ];
 
         $serverKey = SafeStringCastAction::cast(config('notify.fcm.server_key'));
@@ -99,21 +98,20 @@ class SendPushToPlatformAction
     }
 
     /**
-     * @param  array<string, mixed>  $notification
      * @param  array<string, mixed>  $data
      * @return array<string, mixed>
      */
-    private function sendWebPushNotification(array $notification, array $data): array
+    private function sendWebPushNotification(PushNotificationData $notification, array $data): array
     {
         json_encode([
-            'title' => $notification['title'],
-            'body' => $notification['body'],
-            'icon' => $notification['icon'] ?? '/icons/icon-192x192.png',
-            'badge' => $notification['badge'] ?? '/icons/badge-72x72.png',
+            'title' => $notification->title,
+            'body' => $notification->body,
+            'icon' => $notification->icon ?? '/icons/icon-192x192.png',
+            'badge' => $notification->badge ?? '/icons/badge-72x72.png',
             'data' => $data,
-            'actions' => $notification['actions'] ?? [],
-            'requireInteraction' => $notification['requireInteraction'] ?? false,
-            'silent' => $notification['silent'] ?? false,
+            'actions' => $notification->actions ?? [],
+            'requireInteraction' => $notification->requireInteraction ?? false,
+            'silent' => $notification->silent ?? false,
         ]);
 
         return [

@@ -1,23 +1,3 @@
----
-title: "Project Context"
-type: concept
-tags: [project, context]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "project-context project context"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./01-gsd-workflow.md"
-  - "./02-bmad-workflow.md"
-  - "./03-architecture-zen.md"
-  - "./04-filament-philosophy.md"
-  - "./05-front-office-audit.md"
-  - "./06-cinematic-effects.md"
-  - "./07-mcp-tailwind-ui.md"
----
-
 # Project Context
 
 > Contesto generale del progetto PTVX Fila5 Mono.
@@ -50,5 +30,5 @@ related:
 **Precedente:** [INDEX](INDEX.md) | **Successivo:** [Module Architecture](module-architecture.md)
 
 **Di ritorno:**
-- [claude.md](../../claude.md)
+- [CLAUDE.md](../../CLAUDE.md)
 - [AGENTS.md](../../AGENTS.md)

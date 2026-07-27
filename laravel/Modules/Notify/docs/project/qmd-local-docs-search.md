@@ -1,23 +1,3 @@
----
-title: "QMD — ricerca locale su documentazione e note"
-type: concept
-tags: [qmd, local, docs, search]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "qmd-local-docs-search qmd — ricerca locale su documentazione e note"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./2-1-1-plan.md"
-  - "./2-1-context.md"
-  - "./agents.md"
-  - "./ai-agent-lessons-learned.md"
-  - "./ai-skills-and-plugins-complete.md"
-  - "./commit-message.md"
-  - "./configuration.md"
-  - "./design-comuni-bmad-master-plan.md"
----
-
 # QMD — ricerca locale su documentazione e note
 
 **Riferimento upstream**: [github.com/tobi/qmd](https://github.com/tobi/qmd) (MIT). Documentazione dettagliata: [README](https://github.com/tobi/qmd/blob/main/README.md), [CHANGELOG](https://github.com/tobi/qmd/blob/main/CHANGELOG.md), sintassi query: [docs/SYNTAX.md](https://github.com/tobi/qmd/blob/main/docs/SYNTAX.md) (se presente nel tag che usi).

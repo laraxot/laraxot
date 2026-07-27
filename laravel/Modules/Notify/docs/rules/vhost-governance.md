@@ -1,16 +1,22 @@
 ---
 title: "🌐 VHost Governance Rules"
-type: concept
-tags: [vhost, governance]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "vhost-governance 🌐 vhost governance rules"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+type: rule
+tags: [notify, docs, rules, vhost, governance]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione rules vhost governance 🌐 vhost governance rules frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
 related:
-  - "./no-bootstrap-italia.md"
+  - ../README.md
+  - ../architecture/README.md
+  - ../conventions/README.md
+  - README.md
+  - ../best-practices/naming-conventions.md
 ---
-
 # 🌐 VHost Governance Rules
 
 > **Last Updated**: 2026-03-31  

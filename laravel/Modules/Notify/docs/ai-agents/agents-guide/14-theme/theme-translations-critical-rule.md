@@ -1,17 +1,3 @@
----
-title: "14. Theme Translations - CRITICAL RULE"
-type: rule
-tags: [theme, translations, critical, rule]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "theme-translations-critical-rule 14. theme translations - critical rule"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./pub-theme-namespace-critical-rule.md"
----
-
 # 14. Theme Translations - CRITICAL RULE
 
 **ALWAYS use `pub_theme::` namespace for theme translations, NEVER the theme name!**

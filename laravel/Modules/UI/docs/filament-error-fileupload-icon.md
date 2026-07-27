@@ -1,23 +1,3 @@
----
-title: "Errore: Metodo `icon()` su FileUpload di Filament"
-type: concept
-tags: [filament, error, fileupload, icon]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament-error-fileupload-icon errore: metodo `icon()` su fileupload di filament"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Errore: Metodo `icon()` su FileUpload di Filament
 
 ## Descrizione
@@ -37,11 +17,11 @@ Il metodo `icon()` **NON esiste** sul componente `Filament\Forms\Components\File
 - Seguire la tabella di compatibilità dei metodi nei componenti Filament (vedi doc di modulo Patient e Xot).
 
 ## Collegamenti
-- [Errore e best practice modulo Patient](../../patient/docs/filament-error-fileupload-icon.md)
+- [Errore e best practice modulo Patient](../../Patient/docs/filament-error-fileupload-icon.md)
 - [Tabella metodi supportati](filament-component-methods.md)
 
 ## Collegamenti tra versioni di filament-error-fileupload-icon.md
-* [filament-error-fileupload-icon.md](../../patient/docs/filament-error-fileupload-icon.md)
+* [filament-error-fileupload-icon.md](../../Patient/docs/filament-error-fileupload-icon.md)
 # Errore: Metodo `icon()` su FileUpload di Filament
 
 ## Descrizione
@@ -61,8 +41,8 @@ Il metodo `icon()` **NON esiste** sul componente `Filament\Forms\Components\File
 - Seguire la tabella di compatibilità dei metodi nei componenti Filament (vedi doc di modulo Patient e Xot).
 
 ## Collegamenti
-- [Errore e best practice modulo Patient](../../patient/project_docs/filament-error-fileupload-icon.md)
+- [Errore e best practice modulo Patient](../../Patient/project_docs/filament-error-fileupload-icon.md)
 - [Tabella metodi supportati](filament-component-methods.md)
 
 ## Collegamenti tra versioni di filament-error-fileupload-icon.md
-* [filament-error-fileupload-icon.md](../../patient/project_docs/filament-error-fileupload-icon.md)
+* [filament-error-fileupload-icon.md](../../Patient/project_docs/filament-error-fileupload-icon.md)

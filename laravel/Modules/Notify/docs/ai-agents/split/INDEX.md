@@ -1,3 +1,22 @@
+---
+title: "AI Agents Documentation Index"
+type: index
+tags: [notify, docs, ai-agents, split]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione ai agents split index ai agents documentation index index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../../README.md
+  - ../../wiki/index.md
+  - ../../notifications/readme.md
+  - ../../integrations/readme.md
+  - ../../templates/readme.md
+---
 # AI Agents Documentation Index
 
 **Project**: FixCity Platform  
@@ -12,9 +31,9 @@ This directory contains split documentation files for AI assistants used in the 
 
 **Original Files** (kept for backward compatibility):
 - [`AGENTS.md`](../../../../AGENTS.md) — 5349 lines, comprehensive BMad agents + tasks
-- [`docs/claude.md`](../../../../docs/claude.md) — 833 lines, Laravel Boost guidelines
-- [`qwen.md`](../../../../qwen.md) — 47 lines, Qwen output language rules
-- [`laravel/gemini.md`](../../../../laravel/gemini.md) — 581 lines, Gemini-specific rules
+- [`docs/CLAUDE.md`](../../../../docs/CLAUDE.md) — 833 lines, Laravel Boost guidelines
+- [`QWEN.md`](../../../../QWEN.md) — 47 lines, Qwen output language rules
+- [`laravel/GEMINI.md`](../../../../laravel/GEMINI.md) — 581 lines, Gemini-specific rules
 
 ---
 
@@ -69,9 +88,9 @@ This directory contains split documentation files for AI assistants used in the 
 
 ---
 
-## Laravel Boost (claude.md)
+## Laravel Boost (CLAUDE.md)
 
-Split from [`docs/claude.md`](../../../../docs/claude.md):
+Split from [`docs/CLAUDE.md`](../../../../docs/CLAUDE.md):
 
 | Section | File | Lines |
 |---------|----|----|
@@ -93,7 +112,7 @@ Split from [`docs/claude.md`](../../../../docs/claude.md):
 
 ## Gemini Rules
 
-Split from [`laravel/gemini.md`](../../../../laravel/gemini.md):
+Split from [`laravel/GEMINI.md`](../../../../laravel/GEMINI.md):
 
 | Section | File | Lines |
 |---------|----|----|
@@ -109,7 +128,7 @@ Split from [`laravel/gemini.md`](../../../../laravel/gemini.md):
 
 | File | Lines | Notes |
 |----|----|----|
-| [qwen.md](../../../../qwen.md) | 47 | Too small to split — kept as single file |
+| [QWEN.md](../../../../QWEN.md) | 47 | Too small to split — kept as single file |
 
 ---
 
@@ -126,9 +145,9 @@ Split from [`laravel/gemini.md`](../../../../laravel/gemini.md):
 - ← Back to [Project Root](../../)
 - ← Back to [Docs Index](../../docs/README.md)
 - ← Back to [AGENTS.md](../../../../AGENTS.md) (original)
-- ← Back to [claude.md](../../../../docs/claude.md) (original)
-- ← Back to [gemini.md](../../../../laravel/gemini.md) (original)
-- ← Back to [qwen.md](../../../../qwen.md) (original)
+- ← Back to [CLAUDE.md](../../../../docs/CLAUDE.md) (original)
+- ← Back to [GEMINI.md](../../../../laravel/GEMINI.md) (original)
+- ← Back to [QWEN.md](../../../../QWEN.md) (original)
 
 ---
 
@@ -148,4 +167,4 @@ Split from [`laravel/gemini.md`](../../../../laravel/gemini.md):
 ### Changelog
 | Date | Change | Author |
 |------|--------|--------|
-| 2026-04-11 | Initial split of AGENTS.md, claude.md, gemini.md | Qwen |
+| 2026-04-11 | Initial split of AGENTS.md, CLAUDE.md, GEMINI.md | Qwen |

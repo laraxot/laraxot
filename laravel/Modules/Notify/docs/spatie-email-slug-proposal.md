@@ -1,23 +1,3 @@
----
-title: "Proposta: Aggiunta Slug a SpatieEmail e MailTemplate"
-type: concept
-tags: [spatie, email, slug, proposal]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "spatie-email-slug-proposal proposta: aggiunta slug a spatieemail e mailtemplate"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Proposta: Aggiunta Slug a SpatieEmail e MailTemplate
 
 ## Introduzione
@@ -264,8 +244,8 @@ Nonostante i potenziali svantaggi, i benefici superano i costi di implementazion
 ## Collegamenti Correlati
 
 - [Documentazione Spatie Mail Templates](https://github.com/spatie/laravel-database-mail-templates)
-- [Sistema di Template Email](./email-templates.md)
-- [Email per i Dottori](./doctor-emails.md)
+- [Sistema di Template Email](./EMAIL_TEMPLATES.md)
+- [Email per i Dottori](./DOCTOR_EMAILS.md)
 - [Filament Resources](./filament-resources.md)
 
 ## Implementazione Migrazione

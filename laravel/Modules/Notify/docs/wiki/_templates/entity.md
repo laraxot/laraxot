@@ -6,10 +6,7 @@ confidence: high
 created: {{date}}
 updated: {{date}}
 tags: [person, organization, module]
-related:
-  - "./comparison.md"
-  - "./concept.md"
-  - "./source.md"
+related: []
 ---
 
 # {{title}}

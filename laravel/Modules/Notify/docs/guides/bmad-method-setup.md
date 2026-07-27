@@ -1,15 +1,3 @@
----
-title: "BMAD Method - Guida Installazione e Configurazione"
-type: concept
-tags: [bmad, method, setup]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "bmad-method-setup bmad method - guida installazione e configurazione"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
----
-
 # BMAD Method - Guida Installazione e Configurazione
 
 **Versione:** 6.2.2  

@@ -1,23 +1,3 @@
----
-title: "Analisi: Logica di Selezione del Driver nel DTO vs Factory vs Canale"
-type: concept
-tags: [dto, factory]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "dto-vs-factory analisi: logica di selezione del driver nel dto vs factory vs canale"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Analisi: Logica di Selezione del Driver nel DTO vs Factory vs Canale
 
 Questo documento analizza in dettaglio i vantaggi e gli svantaggi di posizionare la logica di selezione del driver SMS all'interno del DTO `SmsData`, confrontando questo approccio con il pattern Factory implementato e con l'approccio originale (nel canale).

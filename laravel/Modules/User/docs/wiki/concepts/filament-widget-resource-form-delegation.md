@@ -3,8 +3,8 @@ title: "Filament widget — delega schema a *ResourceForm"
 type: concept
 confidence: high
 created: 2026-06-04
-updated: 2026-06-04
-tags: [user, filament, dry, register, widget, auth-forms]
+updated: 2026-07-24
+tags: [user, filament, dry, register, widget, auth-forms, schema]
 related:
   - "./ai-harness-user-discipline.md"
   - "./baseuser-hierarchy.md"
@@ -14,9 +14,17 @@ related:
   - "./filament-langserviceprovider-governance.md"
   - "./filament-widget-linear-crud-model-create.md"
   - "./folio-pages-owner-pattern.md"
+  - "../../../../../../docs/wiki/concepts/filament-v5-form-in-blade.md"
+  - "../../../../../../docs/wiki/memories/view-cache-gate-mandatory.md"
 ---
 
 # Widget Filament → schema in `*Form` (SSoT)
+
+Allineato a Filament 5:
+- [Schema](https://filamentphp.com/docs/5.x/components/schema) → `HasSchemas`, render `{{ $this->{method} }}`
+- [Form](https://filamentphp.com/docs/5.x/components/form) → widget `XotBaseSchemaWidget`, submit `$this->form->getState()`, Blade `<form wire:submit>` + `{{ $this->form }}`
+- Chiusura: `php artisan view:cache`
+- Canon: [schema](../../../../../../docs/wiki/concepts/filament-v5-schema-in-blade.md) · [form](../../../../../../docs/wiki/concepts/filament-v5-form-in-blade.md)
 
 ## Regola
 

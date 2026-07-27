@@ -1,3 +1,22 @@
+---
+title: "PHPStan Configuration - Progetto Base FixCity Fila3 Mono"
+type: index
+tags: [notify, docs, project_docs, development, phpstan]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione project_docs development phpstan readme phpstan configuration - progetto base fixcity fila3 mono index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../../../README.md
+  - ../../../wiki/index.md
+  - ../../../notifications/readme.md
+  - ../../../integrations/readme.md
+  - ../../../templates/readme.md
+---
 # PHPStan Configuration - Progetto Base FixCity Fila3 Mono
 
 ## Panoramica
@@ -42,7 +61,7 @@ Questa sezione contiene la documentazione per la configurazione e l'utilizzo di 
 
 ### File di Bootstrap
 - `./phpstan_constants.php`
-- `./Modules/Xot/Helpers/Helper.php`
+- `./Modules/Xot/helpers/Helper.php`
 
 ## Processo di Analisi
 

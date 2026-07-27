@@ -1,16 +1,3 @@
----
-title: "12. MCP (Model Context Protocol) for Autonomous AI Agents"
-type: concept
-tags: [mcp, autonomous, agents]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "mcp-autonomous-agents 12. mcp (model context protocol) for autonomous ai agents"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
----
-
 # 12. MCP (Model Context Protocol) for Autonomous AI Agents
 
 LaravelPizza project includes complete MCP configuration for autonomous AI agent capabilities across multiple development environments (Claude Desktop, Cursor, Windsurf, Antigravity).

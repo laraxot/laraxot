@@ -1,23 +1,3 @@
----
-title: "Quick Reference & Super Mucca"
-type: concept
-tags: [quick, reference]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "quick-reference quick reference & super mucca"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./01-gsd-workflow.md"
-  - "./02-bmad-workflow.md"
-  - "./03-architecture-zen.md"
-  - "./04-filament-philosophy.md"
-  - "./05-front-office-audit.md"
-  - "./06-cinematic-effects.md"
-  - "./07-mcp-tailwind-ui.md"
----
-
 # Quick Reference & Super Mucca
 
 Guida per Claude: quick reference, workflow, risorse.

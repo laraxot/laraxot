@@ -1,23 +1,3 @@
----
-title: "Filament Rules"
-type: rule
-tags: [filament, rules]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament-rules filament rules"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./boost-rules.md"
-  - "./filament-v3-rules.md"
-  - "./fluxui-rules.md"
-  - "./folio-rules.md"
-  - "./foundation-rules.md"
-  - "./laravel-core-rules.md"
-  - "./laravel-v11-rules.md"
-  - "./livewire-rules.md"
----
-
 === filament/core rules ===
 
 ## Filament
@@ -108,5 +88,5 @@ Forms\Components\Select::make('user_id')
 
 - ← [CLAUDE Index](INDEX.md) — All Laravel Boost guidelines
 - ← [Main AI Docs Index](../INDEX.md) — Master index
-- ← [../../../../docs/claude.md](../../../../docs/../../../../docs/claude.md) — Original source
+- ← [../../../../docs/CLAUDE.md](../../../../docs/../../../../docs/CLAUDE.md) — Original source
 

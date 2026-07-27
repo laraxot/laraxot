@@ -67,6 +67,5 @@ class NotificationTemplateForm extends XotBaseResourceForm
                 ->columnSpan(['lg' => 3])
                 ->helperText(__('notify::template.form.attachments.helper')),
         ];
-
     }
 }

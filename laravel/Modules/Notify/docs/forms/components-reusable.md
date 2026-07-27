@@ -1,15 +1,3 @@
----
-title: "Componenti Form Riutilizzabili - Notify Module"
-type: concept
-tags: [components, reusable]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "components-reusable componenti form riutilizzabili - notify module"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
----
-
 # Componenti Form Riutilizzabili - Notify Module
 
 **Stato**: ✅ Implementato  

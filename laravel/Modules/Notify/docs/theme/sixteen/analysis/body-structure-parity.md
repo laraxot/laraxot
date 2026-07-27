@@ -1,20 +1,3 @@
----
-title: "Body Structure Parity Bridge"
-type: concept
-tags: [body, structure, parity]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "body-structure-parity body structure parity bridge"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./homepage-comparison.md"
-  - "./index.md"
-  - "./results.md"
-  - "./status.md"
-  - "./visual-comparison.md"
----
-
 # Body Structure Parity Bridge
 
 This note links the agnostic comparison tooling in `bashscripts` with the Sixteen theme parity reports.

@@ -11,7 +11,7 @@ return [
     'table_layout' => [
         'actions' => [
             'toggle' => [
-                'label' => 'Cambia Layout!',
+                'label' => 'Cambia Layout',
                 'tooltip' => 'Passa da vista a elenco a vista a griglia',
                 'helper_text' => 'Cambia il tipo di visualizzazione',
             ],

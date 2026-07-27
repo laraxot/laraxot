@@ -90,20 +90,20 @@ class IconStateGroupColumn extends XotBaseColumnGroup
             $column->action(
                 Action::make($stateKey.'-action')
                     ->requiresConfirmation()
-                    ->modalHeading(function (Model $record) use ($stateInstance) {
+                    ->modalHeading(static function (Model $record) use ($stateInstance) {
                         // StateContract provides modalHeading()
                         return $stateInstance->modalHeading();
                     })
-                    ->modalDescription(function (Model $record) use ($stateInstance) {
+                    ->modalDescription(static function (Model $record) use ($stateInstance) {
                         // StateContract provides modalDescription()
                         return $stateInstance->modalDescription();
                     })
-                    ->schema(function (Model $record) use ($stateInstance) {
+                    ->schema(static function (Model $record) use ($stateInstance) {
                         // StateContract provides modalFormSchema()
                         return $stateInstance->modalFormSchema();
                     })
                     ->fillForm($stateInstance->modalFillFormByRecord(...))
-                    ->action(function (Model $record, array $data) use ($stateInstance): void {
+                    ->action(static function (Model $record, array $data) use ($stateInstance): void {
                         // Ensure data is treated as array<string, mixed> for PHPStan and StateContract
                         /** @var array<string, mixed> $typedData */
                         $typedData = $data;
@@ -112,7 +112,8 @@ class IconStateGroupColumn extends XotBaseColumnGroup
                     })
             );
 
-            $column->visible((bool) ($this->data[$visibleKey] ?? false));
+            $visibleValue = $this->data[$visibleKey] ?? false;
+            $column->visible((bool) $visibleValue);
             $columns[] = $column;
         }
 

@@ -5,15 +5,6 @@ tags: [notify, notifications, migration, database, user-connection, xotbasemigra
 created: 2026-06-10
 updated: 2026-06-10
 qmd: notifications database notify owner xotbasemigration user forbidden
-related:
-  - "./claude-audit-static.md"
-  - "./code-redundancy-notify.md"
-  - "./composer-root-minimal-nwidart.md"
-  - "./context-overflow-prevention.md"
-  - "./enum-standards.md"
-  - "./llm-wiki-governance.md"
-  - "./method-name-homonyms.md"
-  - "./module-root-uppercase-folders-archive.md"
 ---
 
 # notifications — schema Notify, runtime User

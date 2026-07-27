@@ -1,23 +1,3 @@
----
-title: "🎨 **UI Module** - Sistema Avanzato Componenti Interfaccia"
-type: concept
-tags: [overview, extended]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "overview-extended 🎨 **ui module** - sistema avanzato componenti interfaccia"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # 🎨 **UI Module** - Sistema Avanzato Componenti Interfaccia
 
 [![Laravel 12.x](https://img.shields.io/badge/Laravel-12.x-red.svg)](https://laravel.com/)
@@ -119,9 +99,9 @@ Il modulo UI fornisce componenti, widget e funzionalità di interfaccia utente c
 - `table-layout.php` - **NUOVO**: Traduzioni per TableLayoutEnum (IT/EN/DE)
 
 ### Fix Implementati
-- [Fix Traduzioni Opening Hours Field](opening-hours-translation-fix-1.md) - **REGOLA CRITICA**: Sincronizzazione obbligatoria tra lingue IT/EN
+- [Fix Traduzioni Opening Hours Field](opening_hours_translation_fix.md) - **REGOLA CRITICA**: Sincronizzazione obbligatoria tra lingue IT/EN
 - [Fix Traduzioni Opening Hours](opening_hours_translation_improvement.md) - Miglioramento traduzioni orari
-- [Analisi TableLayoutEnum](table-layout-enum-analysis-1.md) - **NUOVO**: Documentazione completa enum layout tabelle
+- [Analisi TableLayoutEnum](table_layout_enum_analysis.md) - **NUOVO**: Documentazione completa enum layout tabelle
 
 ## Regole Critiche
 
@@ -250,7 +230,7 @@ php artisan ui:test-components
 ### 🏗️ **Architettura**
 - [Components Guide](components.md) - Guida completa componenti
 - [Design System](design-system.md) - Sistema design modulare
-- [Architecture Rules](architecture-rules-1.md) - Regole architetturali
+- [Architecture Rules](architecture_rules.md) - Regole architetturali
 - [Best Practices](best-practices.md) - Linee guida sviluppo
 
 ### 🔗 **Collegamenti Moduli**
@@ -268,7 +248,7 @@ php artisan ui:test-components
 
 ### 🎨 **Filament Integration**
 - [Filament Components](filament-components.md) - Componenti Filament
-- [Widget System](widget-optimization.md) - Sistema widget personalizzati
+- [Widget System](widgets.md) - Sistema widget personalizzati
 - [TableLayoutEnum](table-layout-enum-complete-guide.md) - Guida completa enum layout
 - [File Upload Components](filament-fileupload.md) - Componenti upload file
 
@@ -573,12 +553,12 @@ protected TableLayoutEnum $layout = TableLayoutEnum::GRID;
 
 - [Documentazione Root](../../../docs/translation_standards_links.md)
 - [Regole Traduzioni](translation_rules.md)
-- [Best Practices Filament](filament_best-practices-2.md)
+- [Best Practices Filament](filament_best_practices.md)
 - [Componenti UI](components.md)
-- [TableLayoutEnum Analysis](table-layout-enum-analysis-1.md)
+- [TableLayoutEnum Analysis](table_layout_enum_analysis.md)
 - [TableLayoutEnum Usage](table-layout-enum-usage.md)
-- **[REGOLA CRITICA: MAI usare ->label()](never-use-label-rule-1.md)**
-- **[REGOLA CRITICA: SEMPRE usa transClass()](transclass-rule-1.md)**
+- **[REGOLA CRITICA: MAI usare ->label()](never_use_label_rule.md)**
+- **[REGOLA CRITICA: SEMPRE usa transClass()](transclass_rule.md)**
 
 *Ultimo aggiornamento: gennaio 2025* 
 *Ultimo aggiornamento: gennaio 2025* 

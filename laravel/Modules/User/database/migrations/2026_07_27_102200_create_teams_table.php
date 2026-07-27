@@ -7,13 +7,12 @@ use Modules\User\Models\Team;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 use Modules\Xot\Datas\XotData;
 
-/**
+/*
  * Team — unica migrazione owner (1 model = 1 create_*).
  *
  * owner_id → User (senza constrained cross-DB).
  */
-return new class() extends XotBaseMigration
-{
+return new class extends XotBaseMigration {
     protected ?string $model_class = Team::class;
 
     public function up(): void

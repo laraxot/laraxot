@@ -1,23 +1,3 @@
----
-title: "PHPStan Errori LocationSelector - Analisi e Correzione"
-type: concept
-tags: [phpstan, errors, locationselector]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phpstan-errors-locationselector phpstan errori locationselector - analisi e correzione"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # PHPStan Errori LocationSelector - Analisi e Correzione
 
 ## Problema Identificato
@@ -128,4 +108,5 @@ Aggiungere `@phpstan-ignore` e gestione errori:
 - Valutare se Geo deve essere modulo separato o parte di UI
 - Documentare struttura dati JSON attesa
 
+*Ultimo aggiornamento: 2025-01-27*
 

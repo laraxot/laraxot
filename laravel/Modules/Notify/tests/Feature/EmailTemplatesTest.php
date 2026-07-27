@@ -7,6 +7,7 @@ namespace Modules\Notify\Tests\Feature;
 use Illuminate\Support\Facades\File;
 use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+use function Pest\Laravel\get;
 
 uses(\Modules\Notify\Tests\TestCase::class);
 

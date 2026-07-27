@@ -1,23 +1,3 @@
----
-title: "Struttura della Migrazione MailTemplate"
-type: concept
-tags: [migration, structure]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "migration-structure struttura della migrazione mailtemplate"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./attachments.md"
-  - "./email-best-practices-1.md"
-  - "./email-best-practices.md"
-  - "./email-layouts-best-practices-1.md"
-  - "./email-layouts-best-practices.md"
-  - "./email-templates-best-practices-1.md"
-  - "./email-templates-best-practices.md"
-  - "./email-templates-guide-1.md"
----
-
 # Struttura della Migrazione MailTemplate
 
 ## Informazioni Generali

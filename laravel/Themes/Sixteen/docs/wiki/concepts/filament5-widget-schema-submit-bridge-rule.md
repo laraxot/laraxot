@@ -18,7 +18,7 @@ $this->getForm('form')
 
 ## Perche
 
-`XotBaseWidget` e `XotBaseWizardWidget` sono schema-based (`InteractsWithSchemas`). La proprieta dinamica usata dalla Blade e' `$this->form`, coerente con:
+`XotBaseWizardWidget` (estende `XotBaseSchemaWidget`) e' schema-based (`InteractsWithSchemas`) in senso stretto. `XotBaseWidget` (la classe base) espone lo stesso `$this->form` tramite `Filament\Forms\Concerns\InteractsWithForms`, che in v5 e' un compat-shim deprecato che delega internamente a `InteractsWithSchemas` — funziona identico, ma non e' l'API canon diretta. Dettaglio verificato (vendor source + doc ufficiale): [`docs/wiki/concepts/filament-v5-form-in-blade.md`](../../../../../../docs/wiki/concepts/filament-v5-form-in-blade.md#hasformsinteractswithforms-sono-deprecati-in-v5--stato-reale-nel-repo). La proprieta dinamica usata dalla Blade resta comunque `$this->form` in entrambi i casi, coerente con:
 
 ```blade
 {{ $this->form }}

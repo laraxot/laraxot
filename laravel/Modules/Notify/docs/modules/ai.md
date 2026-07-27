@@ -1,20 +1,3 @@
----
-title: "Modulo AI – Collegamento Bidirezionale"
-type: concept
-tags: [docs]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "ai modulo ai – collegamento bidirezionale"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./activity.md"
-  - "./cms.md"
-  - "./index.md"
-  - "./themes-sixteen.md"
-  - "./ui.md"
----
-
 # Modulo AI – Collegamento Bidirezionale
 
 - Documentazione PHPStan livello 1: [Modules/AI/docs/phpstan/level_1.md](../../Modules/AI/docs/phpstan/level_1.md)

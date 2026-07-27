@@ -1,23 +1,3 @@
----
-title: "Create Brownfield Epic Task"
-type: concept
-tags: [brownfield, create, epic]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "brownfield-create-epic create brownfield epic task"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./advanced-elicitation.md"
-  - "./apply-qa-fixes.md"
-  - "./brownfield-create-story.md"
-  - "./correct-course.md"
-  - "./create-brownfield-story.md"
-  - "./create-deep-research-prompt.md"
-  - "./create-doc.md"
-  - "./create-next-story.md"
----
-
 ### Task: brownfield-create-epic
 Source: .bmad-core/tasks/brownfield-create-epic.md
 - How to use: "Use task brownfield-create-epic with the appropriate agent" and paste relevant parts as needed.

@@ -1,23 +1,3 @@
----
-title: "Chiarimento sulle Convenzioni di Traduzione nel Modulo Notify"
-type: concept
-tags: [translation, conventions, clarification]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "translation-conventions-clarification chiarimento sulle convenzioni di traduzione nel modulo notify"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Chiarimento sulle Convenzioni di Traduzione nel Modulo Notify
 
 ## Identificazione di Convenzioni Contrastanti
@@ -108,7 +88,7 @@ Il file `send_whats_app.php` e altri file simili nel modulo Notify seguono corre
 ## Riferimenti
 
 - [Convenzioni Generali di Traduzione](../../Lang/docs/TRANSLATION_KEYS_RULES.md)
-- [Convenzioni Specifiche del Modulo Notify](./translation-conventions.md)
+- [Convenzioni Specifiche del Modulo Notify](./TRANSLATION_CONVENTIONS.md)
 - [Regole per le Chiavi di Traduzione](../../Lang/docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
 # Chiarimento sulle Convenzioni di Traduzione nel Modulo Notify
 
@@ -198,5 +178,5 @@ Il file `send_whats_app.php` e altri file simili nel modulo Notify seguono corre
 ## Riferimenti
 
 - [Convenzioni Generali di Traduzione](../../Lang/docs/TRANSLATION_KEYS_RULES.md)
-- [Convenzioni Specifiche del Modulo Notify](./translation-conventions.md)
+- [Convenzioni Specifiche del Modulo Notify](./TRANSLATION_CONVENTIONS.md)
 - [Regole per le Chiavi di Traduzione](../../Lang/docs/TRANSLATION_KEYS_BEST_PRACTICES.md)

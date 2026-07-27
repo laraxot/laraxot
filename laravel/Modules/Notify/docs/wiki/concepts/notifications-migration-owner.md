@@ -7,14 +7,7 @@ created: 2026-06-10
 updated: 2026-06-10
 tags: [migration, notifications, module-owner, notify, user]
 related:
-  - "./claude-audit-static.md"
-  - "./code-redundancy-notify.md"
-  - "./composer-root-minimal-nwidart.md"
-  - "./context-overflow-prevention.md"
-  - "./enum-standards.md"
-  - "./llm-wiki-governance.md"
-  - "./method-name-homonyms.md"
-  - "./module-root-uppercase-folders-archive.md"
+  - ../../../../wiki/rules/one-migration-per-model.md
 ---
 
 # Notifications Migration Ownership

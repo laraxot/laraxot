@@ -1,23 +1,3 @@
----
-title: "🧘 Pattern: Extract Method (Clean Code)"
-type: pattern
-tags: [extract, method, pattern]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "extract-method-pattern 🧘 pattern: extract method (clean code)"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./channel-enum-implementation-complete.md"
-  - "./channel-enum-implementation-update.md"
-  - "./channel-enum-refactoring.md"
-  - "./final-verification-report-channel-enum.md"
-  - "./quality-assurance-report.md"
-  - "./record-notification-constructor-slug.md"
-  - "./record-notification-zen-constructor.md"
-  - "./record-notification-zen-delegation.md"
----
-
 # 🧘 Pattern: Extract Method (Clean Code)
 
 **Status**: ✅ Pattern Consolidato  

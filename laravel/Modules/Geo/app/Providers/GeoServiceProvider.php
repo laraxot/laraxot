@@ -4,13 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Providers;
 
-use Filament\Support\Assets\Css;
-use Filament\Support\Assets\Js;
-use Filament\Support\Facades\FilamentAsset;
 use Modules\Xot\Providers\XotBaseServiceProvider;
-
-use function Safe\file_get_contents;
-use function Safe\json_decode;
 
 class GeoServiceProvider extends XotBaseServiceProvider
 {
@@ -24,6 +18,4 @@ class GeoServiceProvider extends XotBaseServiceProvider
 
         // $this->registerMapAssets();
     }
-
-    
 }

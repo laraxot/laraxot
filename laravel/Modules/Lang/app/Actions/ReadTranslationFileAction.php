@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Actions;
 
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 
@@ -93,7 +94,7 @@ class ReadTranslationFileAction
                 $content .= $this->arrayToPhp($nestedValue, $indent + 1);
                 $content .= $indentStr."],\n";
             } else {
-                $content .= "'".addslashes((string) $value)."',\n";
+                $content .= "'".addslashes(SafeStringCastAction::cast($value))."',\n";
             }
         }
 

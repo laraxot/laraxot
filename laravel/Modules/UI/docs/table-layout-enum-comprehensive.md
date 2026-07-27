@@ -1,23 +1,3 @@
----
-title: "TableLayoutEnum - Documentazione Completa"
-type: concept
-tags: [table, layout, enum, comprehensive]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "table-layout-enum-comprehensive tablelayoutenum - documentazione completa"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # TableLayoutEnum - Documentazione Completa
 
 ## Panoramica
@@ -418,10 +398,10 @@ Restituisce il testo di aiuto tradotto per il layout.
 
 ## Collegamenti
 
-- [TransTrait Documentation](../../xot/docs/filament/trans-trait.md)
-- [UI Module Architecture](architecture-rules-1.md)
-- [Filament Best Practices](../../../../docs/filament_best-practices-2.md)
-- [Translation Standards](../../../../docs/translation_standards.md)
+- [TransTrait Documentation](../../Xot/docs/filament/trans-trait.md)
+- [UI Module Architecture](architecture_rules.md)
+- [Filament Best Practices](../../../docs/filament_best_practices.md)
+- [Translation Standards](../../../docs/translation_standards.md)
 - [Table Components](table-components.md)
 
 ---

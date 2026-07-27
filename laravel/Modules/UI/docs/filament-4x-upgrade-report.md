@@ -1,25 +1,6 @@
----
-title: "Rapporto Aggiornamento Filament 4.x - Modulo UI"
-type: concept
-tags: [filament, upgrade, report]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament-4x-upgrade-report rapporto aggiornamento filament 4.x - modulo ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Rapporto Aggiornamento Filament 4.x - Modulo UI
 
+**Data**: 2025-01-27
 **Status**: ✅ COMPLETATO
 **Versione Filament**: 4.0.17
 
@@ -106,7 +87,7 @@ class SimpleCalendarWidget extends \Filament\Widgets\Widget
 
 - [Guida Ufficiale Filament 4.x](https://filamentphp.com/docs/4.x/upgrade-guide)
 - [Pacchetto FullCalendar](https://github.com/saade/filament-fullcalendar)
-- [Documentazione Modulo UI](../readme.md)
+- [Documentazione Modulo UI](../README.md)
 
 ## 📋 Checklist Completata
 
@@ -131,9 +112,10 @@ class SimpleCalendarWidget extends \Filament\Widgets\Widget
 - Widget base di Filament 4.x
 - Sistema di autenticazione e autorizzazione
 
-*Ultimo aggiornamento: [DATE]*
+*Ultimo aggiornamento: 2025-01-27*
 # Rapporto Aggiornamento Filament 4.x - Modulo UI
 
+**Data**: 2025-01-27
 **Status**: ✅ COMPLETATO
 **Versione Filament**: 4.0.17
 
@@ -220,7 +202,7 @@ class SimpleCalendarWidget extends \Filament\Widgets\Widget
 
 - [Guida Ufficiale Filament 4.x](https://filamentphp.com/docs/4.x/upgrade-guide)
 - [Pacchetto FullCalendar](https://github.com/saade/filament-fullcalendar)
-- [Documentazione Modulo UI](../readme.md)
+- [Documentazione Modulo UI](../README.md)
 
 ## 📋 Checklist Completata
 
@@ -245,4 +227,4 @@ class SimpleCalendarWidget extends \Filament\Widgets\Widget
 - Widget base di Filament 4.x
 - Sistema di autenticazione e autorizzazione
 
-*Ultimo aggiornamento: [DATE]*
+*Ultimo aggiornamento: 2025-01-27*

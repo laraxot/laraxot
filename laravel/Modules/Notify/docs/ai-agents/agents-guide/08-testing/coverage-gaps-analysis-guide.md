@@ -1,18 +1,3 @@
----
-title: "Coverage Gaps Analysis & Test Implementation Guide"
-type: guide
-tags: [coverage, gaps, analysis, guide]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "coverage-gaps-analysis-guide coverage gaps analysis & test implementation guide"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./pest-coverage-guide.md"
-  - "./testing-guidelines.md"
----
-
 # Coverage Gaps Analysis & Test Implementation Guide
 
 ## Overview

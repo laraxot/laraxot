@@ -1,16 +1,3 @@
----
-title: "Convenzioni per Form Schema in Filament"
-type: concept
-tags: [form, schema, conventions]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "form-schema-conventions convenzioni per form schema in filament"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./resource-rules.md"
----
-
 # Convenzioni per Form Schema in Filament
 
 ## Regola Fondamentale

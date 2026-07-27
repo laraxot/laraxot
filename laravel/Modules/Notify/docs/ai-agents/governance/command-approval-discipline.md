@@ -1,19 +1,6 @@
----
-title: "Command Approval Discipline"
-type: concept
-tags: [command, approval, discipline]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "command-approval-discipline command approval discipline"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./reusable-components-and-indexes.md"
----
-
 # Command Approval Discipline
 
-> Indice: [./00-index-1.md](./00-index-1.md)
+> Indice: [./00-INDEX.md](./00-INDEX.md)
 > Governance correlata: [./reusable-components-and-indexes.md](./reusable-components-and-indexes.md)
 
 ## Regola operativa

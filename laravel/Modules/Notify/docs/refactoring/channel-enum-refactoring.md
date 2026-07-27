@@ -1,23 +1,3 @@
----
-title: "Refactoring: Replace CHANNEL_CONFIG with Smart Enum"
-type: concept
-tags: [channel, enum, refactoring]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "channel-enum-refactoring refactoring: replace channel_config with smart enum"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./channel-enum-implementation-complete.md"
-  - "./channel-enum-implementation-update.md"
-  - "./extract-method-pattern.md"
-  - "./final-verification-report-channel-enum.md"
-  - "./quality-assurance-report.md"
-  - "./record-notification-constructor-slug.md"
-  - "./record-notification-zen-constructor.md"
-  - "./record-notification-zen-delegation.md"
----
-
 # Refactoring: Replace CHANNEL_CONFIG with Smart Enum
 
 ## Goal

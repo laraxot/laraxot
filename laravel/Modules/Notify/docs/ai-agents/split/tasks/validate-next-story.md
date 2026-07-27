@@ -1,23 +1,3 @@
----
-title: "Validate Next Story Task"
-type: concept
-tags: [validate, next, story]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "validate-next-story validate next story task"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./advanced-elicitation.md"
-  - "./apply-qa-fixes.md"
-  - "./brownfield-create-epic.md"
-  - "./brownfield-create-story.md"
-  - "./correct-course.md"
-  - "./create-brownfield-story.md"
-  - "./create-deep-research-prompt.md"
-  - "./create-doc.md"
----
-
 ### Task: validate-next-story
 Source: .bmad-core/tasks/validate-next-story.md
 - How to use: "Use task validate-next-story with the appropriate agent" and paste relevant parts as needed.

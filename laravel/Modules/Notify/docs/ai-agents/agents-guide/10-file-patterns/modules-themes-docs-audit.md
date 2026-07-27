@@ -1,18 +1,3 @@
----
-title: "Modules/Themes Docs Audit (2026-03-10)"
-type: concept
-tags: [modules, themes, docs, audit]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "modules-themes-docs-audit modules/themes docs audit (2026-03-10)"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./file-patterns-and-docs-standards.md"
-  - "./model-and-docs-naming-governance.md"
----
-
 # Modules/Themes Docs Audit (2026-03-10)
 
 ## Scope

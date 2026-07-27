@@ -12,11 +12,15 @@ class TicketStatusChangedNotification extends Notification
 {
     use Queueable;
 
+    /**
+     * @return void
+     */
     public function __construct(
         public mixed $ticket, // Using mixed type since Ticket model doesn't exist
         public string $oldStatus,
         public string $newStatus
-    ) {}
+    ) {
+    }
 
     /**
      * @return list<string>
@@ -28,7 +32,7 @@ class TicketStatusChangedNotification extends Notification
 
     public function toMail(mixed $notifiable): MailMessage
     {
-        return (new MailMessage)
+        return (new MailMessage())
             ->subject('Ticket Status Changed')
             ->line("Ticket status has changed from {$this->oldStatus} to {$this->newStatus}")
             ->action('View Ticket', url('/'));

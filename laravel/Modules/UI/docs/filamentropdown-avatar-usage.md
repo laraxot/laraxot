@@ -1,28 +1,8 @@
----
-title: "Utilizzo dei Componenti Filament Dropdown e Avatar"
-type: concept
-tags: [filamentropdown, avatar, usage]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filamentropdown-avatar-usage utilizzo dei componenti filament dropdown e avatar"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Utilizzo dei Componenti Filament Dropdown e Avatar 
 
 ## Collegamenti correlati
 - [README modulo UI](/laravel/modules/ui/docs/readme.md)
-- [Utilizzo Componenti Filament](/laravel/modules/ui/docs/filament-components-usage-1.md)
+- [Utilizzo Componenti Filament](/laravel/modules/ui/docs/filament_components_usage.md)
 - [Architettura Modulare](/docs/architettura-modulare.md)
 - [Collegamenti Documentazione](/docs/collegamenti-documentazione.md)
 

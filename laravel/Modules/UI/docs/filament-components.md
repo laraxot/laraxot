@@ -1,23 +1,3 @@
----
-title: "Componenti Filament UI"
-type: concept
-tags: [filament, components]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament-components componenti filament ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Componenti Filament UI
 
 ## Collegamenti Bidirezionali
@@ -77,10 +57,10 @@ related:
 3. Seguire le convenzioni di naming del progetto
 4. Aggiornare la documentazione quando vengono aggiunti nuovi componenti
 ## Collegamenti tra versioni di filament-components.md
-* [filament-components.md](../../user/docs/best-practices/filament-components.md)
-* [filament-components.md](../../cms/docs/best-practices/filament-components.md)
-* [filament-components.md](../../cms/docs/filament-components.md)
-* [filament-components.md](../../../../docs/rules/filament-components.md)
+* [filament-components.md](../../User/docs/best-practices/filament-components.md)
+* [filament-components.md](../../Cms/docs/best-practices/filament-components.md)
+* [filament-components.md](../../Cms/docs/filament-components.md)
+* [filament-components.md](../../../docs/rules/filament-components.md)
 # Componenti Filament UI
 
 ## Collegamenti Bidirezionali
@@ -142,7 +122,7 @@ related:
 3. Seguire le convenzioni di naming del progetto
 4. Aggiornare la documentazione quando vengono aggiunti nuovi componenti
 ## Collegamenti tra versioni di filament-components.md
-* [filament-components.md](../../user/project_docs/best-practices/filament-components.md)
-* [filament-components.md](../../cms/project_docs/best-practices/filament-components.md)
-* [filament-components.md](../../cms/project_docs/filament-components.md)
-* [filament-components.md](../../../../docs/project/rules/filament-components.md)
+* [filament-components.md](../../User/project_docs/best-practices/filament-components.md)
+* [filament-components.md](../../Cms/project_docs/best-practices/filament-components.md)
+* [filament-components.md](../../Cms/project_docs/filament-components.md)
+* [filament-components.md](../../../project_docs/rules/filament-components.md)

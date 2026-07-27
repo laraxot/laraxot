@@ -1,23 +1,3 @@
----
-title: "Regole Namespace PSR-4 per il Modulo Notify"
-type: concept
-tags: [namespace]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "namespace regole namespace psr-4 per il modulo notify"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Regole Namespace PSR-4 per il Modulo Notify
 
 ## Regola Fondamentale
@@ -45,7 +25,7 @@ namespace Modules\Notify\Console\Commands;
   - Namespace: `Modules\Notify\Console\Commands`
 
 ## Collegamenti e Regole Generali
-- Questa regola è valida per tutti i moduli: vedi [Xot Namespace Rules](../../xot/docs/namespace-rules-1.md)
+- Questa regola è valida per tutti i moduli: vedi [Xot Namespace Rules](../../xot/docs/namespace_rules.md)
 - Collegamento alla documentazione generale: [Regole Namespace Moduli - Root Docs](../../../../docs/namespace-moduli.md)
 
 ---

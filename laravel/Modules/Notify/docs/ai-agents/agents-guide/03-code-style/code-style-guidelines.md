@@ -1,16 +1,3 @@
----
-title: "3. Code Style Guidelines"
-type: guide
-tags: [code, style, guidelines]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "code-style-guidelines 3. code style guidelines"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
----
-
 # 3. Code Style Guidelines
 
 ### PHP Strict Types

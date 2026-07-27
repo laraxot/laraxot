@@ -1,23 +1,22 @@
 ---
 title: "Struttura Template Email"
 type: concept
-tags: [mail, templates, structure]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "mail-templates-structure struttura template email"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+tags: [notify, docs, architecture, mail, templates, structure]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione architecture mail templates structure struttura template email frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
 related:
-  - "./config-structure.md"
-  - "./document-root-architecture.md"
-  - "./dto-structure-conventions.md"
-  - "./dto-structure-rules.md"
-  - "./interface-structure-clarification.md"
-  - "./queueable-action-pattern.md"
-  - "./sms-config-structure.md"
-  - "./standardized-sms-config-structure.md"
+  - ../README.md
+  - README.md
+  - ../conventions/README.md
+  - ../rules/README.md
+  - ../best-practices/naming-conventions.md
 ---
-
 # Struttura Template Email
 
 ## Introduzione
@@ -140,8 +139,8 @@ $attachments = [
 ## Collegamenti Correlati
 
 - [Documentazione MailPace](https://github.com/mailpace/templates)
-- [Best Practices Email HTML](./email-html-best-practices.md)
-- [Guida Testing](./email-testing.md)
+- [Best Practices Email HTML](./EMAIL_HTML_BEST_PRACTICES.md)
+- [Guida Testing](./EMAIL_TESTING.md)
 
 ## Supporto
 

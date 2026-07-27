@@ -1,23 +1,3 @@
----
-title: "LLM Wiki Governance"
-type: concept
-tags: [llm, wiki, governance]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "llm-wiki-governance llm wiki governance"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./claude-audit-static.md"
-  - "./code-redundancy-notify.md"
-  - "./composer-root-minimal-nwidart.md"
-  - "./context-overflow-prevention.md"
-  - "./enum-standards.md"
-  - "./method-name-homonyms.md"
-  - "./module-root-uppercase-folders-archive.md"
-  - "./no-app-support-queueable-actions.md"
----
-
 # LLM Wiki Governance
 
 > Updated: 2026-04-15
@@ -32,7 +12,7 @@ This page defines how the Karpathy-style LLM wiki maps onto the FixCity reposito
 
 - Raw corpus: `docs/` excluding `docs/wiki/**`
 - Compiled wiki: `docs/wiki/`
-- Schema: `AGENTS.md`, `claude.md`, `qwen.md`, `gemini.md`, and project docs governance
+- Schema: `AGENTS.md`, `CLAUDE.md`, `QWEN.md`, `GEMINI.md`, and project docs governance
 
 ## Ingest
 

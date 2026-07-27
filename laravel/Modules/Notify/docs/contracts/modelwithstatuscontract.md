@@ -1,15 +1,3 @@
----
-title: "ModelWithStatusContract"
-type: concept
-tags: [modelwithstatuscontract]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "modelwithstatuscontract modelwithstatuscontract"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
----
-
 # ModelWithStatusContract
 
 Per la documentazione completa, consulta il file originale in [Modules/Xot/docs/contracts/ModelWithStatusContract.md](../../Modules/Xot/docs/contracts/ModelWithStatusContract.md)

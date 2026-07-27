@@ -1,23 +1,3 @@
----
-title: "Componenti FileUpload in Filament"
-type: concept
-tags: [filament, fileupload, components]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament-fileupload-components componenti fileupload in filament"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Componenti FileUpload in Filament
 
 ## Errore Comune: prefixIcon
@@ -75,13 +55,13 @@ Forms\Components\FileUpload::make('certifications')
    - Fornire feedback di progresso
 
 ## Collegamenti
-- [README](../../patient/docs/readme.md)
-- [Filament Resources](../../patient/docs/filament-resources.md)
-- [Form Components](../../patient/docs/filament-form-components.md)
+- [README](../../Patient/docs/README.md)
+- [Filament Resources](../../Patient/docs/filament-resources.md)
+- [Form Components](../../Patient/docs/filament-form-components.md)
 
 ## Vedi Anche
 - [Filament FileUpload Documentation](https://filamentphp.com/docs/forms/fields#file-upload)
-- [Best Practices](../../xot/docs/filament-best-practices.md)
+- [Best Practices](../../Xot/docs/filament-best-practices.md)
 # Componenti FileUpload in Filament
 
 ## Errore Comune: prefixIcon
@@ -139,10 +119,10 @@ Forms\Components\FileUpload::make('certifications')
    - Fornire feedback di progresso
 
 ## Collegamenti
-- [README](../../patient/project_docs/readme.md)
-- [Filament Resources](../../patient/project_docs/filament-resources.md)
-- [Form Components](../../patient/project_docs/filament-form-components.md)
+- [README](../../Patient/project_docs/README.md)
+- [Filament Resources](../../Patient/project_docs/filament-resources.md)
+- [Form Components](../../Patient/project_docs/filament-form-components.md)
 
 ## Vedi Anche
 - [Filament FileUpload Documentation](https://filamentphp.com/project_docs/forms/fields#file-upload)
-- [Best Practices](../../xot/project_docs/filament-best-practices.md)
+- [Best Practices](../../Xot/project_docs/filament-best-practices.md)

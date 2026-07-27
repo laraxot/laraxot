@@ -8,12 +8,12 @@ use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Support\Facades\Log;
+use Modules\Notify\Contracts\WhatsAppProviderActionInterface;
 use Modules\Notify\Datas\WhatsAppData;
+use function Safe\json_decode;
 use Spatie\QueueableAction\QueueableAction;
 
-use function Safe\json_decode;
-
-final class SendVonageWhatsAppAction
+final class SendVonageWhatsAppAction implements WhatsAppProviderActionInterface
 {
     use QueueableAction;
 
@@ -34,6 +34,8 @@ final class SendVonageWhatsAppAction
 
     /**
      * Create a new action instance.
+     *
+     * @return void
      */
     public function __construct()
     {
@@ -61,6 +63,7 @@ final class SendVonageWhatsAppAction
      * Execute the action.
      *
      * @param  WhatsAppData  $whatsAppData  I dati del messaggio WhatsApp
+     *
      * @return array<string, mixed> Risultato dell'operazione
      *
      * @throws Exception In caso di errore durante l'invio
@@ -122,8 +125,9 @@ final class SendVonageWhatsAppAction
 
             $statusCode = $response->getStatusCode();
             $responseContent = $response->getBody()->getContents();
+            $decodedResponse = json_decode($responseContent, true);
             /** @var array<string, mixed> $responseData */
-            $responseData = json_decode($responseContent, true) ?: [];
+            $responseData = is_array($decodedResponse) ? $decodedResponse : [];
 
             // Salva i dati della risposta nelle variabili dell'azione
             $this->vars['status_code'] = $statusCode;
@@ -146,8 +150,9 @@ final class SendVonageWhatsAppAction
         } catch (ClientException $e) {
             $response = $e->getResponse();
             $statusCode = $response->getStatusCode();
+            $decodedBody = json_decode($response->getBody()->getContents(), true);
             /** @var array<string, mixed> $responseBody */
-            $responseBody = json_decode($response->getBody()->getContents(), true) ?: [];
+            $responseBody = is_array($decodedBody) ? $decodedBody : [];
 
             // Salva i dati dell'errore nelle variabili dell'azione
             $this->vars['error_code'] = $statusCode;
@@ -175,6 +180,7 @@ final class SendVonageWhatsAppAction
      * Determina il tipo di media basato sull'URL o sull'estensione del file.
      *
      * @param  string  $url  URL del media
+     *
      * @return string Tipo di media (image, video, audio, file)
      */
     private function determineMediaType(string $url): string

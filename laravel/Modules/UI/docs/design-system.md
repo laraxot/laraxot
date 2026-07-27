@@ -1,23 +1,3 @@
----
-title: "Design System"
-type: concept
-tags: [design, system]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "design-system design system"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Design System
 
 ## Panoramica
@@ -144,14 +124,14 @@ Il design system definisce gli standard visivi e di interazione per garantire co
    - Layout fluido
 
 ## Collegamenti Bidirezionali
-- [README](readme.md)
+- [README](README.md)
 - [Componenti](components.md)
 - [Layout](layouts-and-themes.md)
 
 ## Vedi Anche
 - [Tailwind Config](../config/tailwind.config.js)
 - [Theme Config](../config/theme.php)
-- [Filament UI](../../cms/docs/filament-components.md)
+- [Filament UI](../../Cms/docs/filament-components.md)
 # Design System
 
 ## Panoramica
@@ -278,13 +258,13 @@ Il design system definisce gli standard visivi e di interazione per garantire co
    - Layout fluido
 
 ## Collegamenti Bidirezionali
-- [README](readme.md)
+- [README](README.md)
 - [Componenti](components.md)
 - [Layout](layouts-and-themes.md)
 
 ## Vedi Anche
 - [Tailwind Config](../config/tailwind.config.js)
 - [Theme Config](../config/theme.php)
-- [Filament UI](../../cms/project_docs/filament-components.md)
-- [Filament UI](../../cms/project_docs/filament-components.md)
-- [Filament UI](../../cms/project_docs/filament-components.md)
+- [Filament UI](../../Cms/project_docs/filament-components.md)
+- [Filament UI](../../Cms/project_docs/filament-components.md)
+- [Filament UI](../../Cms/project_docs/filament-components.md)

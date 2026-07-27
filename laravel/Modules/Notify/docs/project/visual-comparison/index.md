@@ -1,15 +1,22 @@
 ---
 title: "Project Visual Comparison - Homepage Parity"
-type: concept
-tags: [index]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "index project visual comparison - homepage parity"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+type: index
+tags: [notify, docs, project, visual-comparison]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione project visual comparison index project visual comparison - homepage parity index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
 related:
+  - ../../README.md
+  - ../../wiki/index.md
+  - ../../notifications/readme.md
+  - ../../integrations/readme.md
+  - ../../templates/readme.md
 ---
-
 # Project Visual Comparison - Homepage Parity
 
 **Date**: 2026-04-02

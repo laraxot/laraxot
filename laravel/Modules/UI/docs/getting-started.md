@@ -3,15 +3,6 @@ title: Getting Started
 description: Getting started with Jigsaw's docs starter template is as easy as 1, 2, 3.
 extends: _layouts.documentation
 section: content
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
 ---
 
 # Getting Started {#getting-started}
@@ -90,16 +81,16 @@ npm run dev
 ### Versione HEAD
 
 ## Collegamenti tra versioni di getting-started.md
-* [getting-started.md](../../../gdpr/project_docs/getting-started.md)
-* [getting-started.md](../../../xot/project_docs/getting-started.md)
-* [getting-started.md](../../../ui/project_docs/getting-started.md)
-* [getting-started.md](../../../tenant/project_docs/it/getting-started.md)
-* [getting-started.md](../../../cms/project_docs/getting-started.md)
-* [getting-started.md](../../../gdpr/docs/getting-started.md)
-* [getting-started.md](../../../xot/docs/getting-started.md)
-* [getting-started.md](../../../ui/docs/getting-started.md)
-* [getting-started.md](../../../tenant/docs/it/getting-started.md)
-* [getting-started.md](../../../cms/docs/getting-started.md)
+* [getting-started.md](../../../Gdpr/project_docs/getting-started.md)
+* [getting-started.md](../../../Xot/project_docs/getting-started.md)
+* [getting-started.md](../../../UI/project_docs/getting-started.md)
+* [getting-started.md](../../../Tenant/project_docs/it/getting-started.md)
+* [getting-started.md](../../../Cms/project_docs/getting-started.md)
+* [getting-started.md](../../../Gdpr/docs/getting-started.md)
+* [getting-started.md](../../../Xot/docs/getting-started.md)
+* [getting-started.md](../../../UI/docs/getting-started.md)
+* [getting-started.md](../../../Tenant/docs/it/getting-started.md)
+* [getting-started.md](../../../Cms/docs/getting-started.md)
 
 ### Versione Incoming
 
@@ -188,11 +179,11 @@ npm run dev
 ### Versione HEAD
 
 ## Collegamenti tra versioni di getting-started.md
-* [getting-started.md](../../../gdpr/project_docs/getting-started.md)
-* [getting-started.md](../../../xot/project_docs/getting-started.md)
-* [getting-started.md](../../../ui/project_docs/getting-started.md)
-* [getting-started.md](../../../tenant/project_docs/it/getting-started.md)
-* [getting-started.md](../../../cms/project_docs/getting-started.md)
+* [getting-started.md](../../../Gdpr/project_docs/getting-started.md)
+* [getting-started.md](../../../Xot/project_docs/getting-started.md)
+* [getting-started.md](../../../UI/project_docs/getting-started.md)
+* [getting-started.md](../../../Tenant/project_docs/it/getting-started.md)
+* [getting-started.md](../../../Cms/project_docs/getting-started.md)
 
 ### Versione Incoming
 

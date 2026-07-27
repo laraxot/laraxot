@@ -1,165 +1,70 @@
 ---
-title: "XotBaseSchemaWidget — pattern dichiarativo Filament 4"
+title: "XotBaseSchemaWidget — pattern Filament 5 (codice reale)"
 type: concept
-tags: [xot, filament, widget, religion-r1, code, architecture, opencode-minimax-m3]
+module: Xot
+tags: [xot, filament, schema, widget]
 created: 2026-06-05
-updated: 2026-06-05
-qmd: "xotbase schemawidget filament widget religion r1 form fields self validate opencode minimax"
+updated: 2026-07-24
+qmd: "xotbase schemawidget filament 5 HasSchemas formClass getState"
 issues:
-  - "https://github.com/laraxot/base_fixcity_fila5/issues/264"
-  - "https://github.com/laraxot/module_xot_fila5/issues/27"
-discussions:
-  - "https://github.com/laraxot/base_fixcity_fila5/discussions/265"
+  - "https://github.com/laraxot/base_techplanner_fila5/issues/18"
 related:
-  - base-classes-additional-fix.md
-  - ../../User/docs/r1-form-fields-self-validate.md
-  - ../../Themes/Sixteen/docs/r2-ux-register-form-stacked-password.md
-  - ../../../docs/chat/register-flow-religions-r1-r6.md
-  - ../../../docs/wiki/memories/form-fields-self-validate-religion.md
+  - ./wiki/concepts/filament-page-form-wrapper.md
+  - ./filament-v5-form-wrapper-blade-pattern.md
+  - ../../../../docs/wiki/concepts/filament-v5-schema-in-blade.md
+  - ../../../../docs/wiki/concepts/filament-v5-form-in-blade.md
 ---
 
-# XotBaseSchemaWidget — pattern dichiarativo Filament 4
+# XotBaseSchemaWidget — pattern Filament 5
 
-> Modulo: `Xot` · Autore code: opencode (MiniMax-M3) · Issue tracking: base #264
+Fonte codice: `Modules/Xot/app/Filament/Widgets/XotBaseSchemaWidget.php` (letto 2026-07-24).  
+Upstream: [schema](https://filamentphp.com/docs/5.x/components/schema) · [form](https://filamentphp.com/docs/5.x/components/form).
 
-## Problema
-
-Prima di questa implementazione (2026-06-05), `Modules\Xot\Filament\Widgets\XotBaseSchemaWidget` era **referenziata da 20+ widget** ma **NON esisteva come file**. Risultato: 500 error `Class "XotBaseSchemaWidget" not found` su tutte le pagine che li usavano.
-
-## Soluzione
-
-`laravel/Modules/Xot/app/Filament/Widgets/XotBaseSchemaWidget.php`:
+## Contratto reale (estratto verificato)
 
 ```php
-namespace Modules\Xot\Filament\Widgets;
-
-use Filament\Schemas\Schema;
-use Filament\Widgets\Widget;
-use Modules\Xot\Filament\Traits\InteractsWithSchemas;
-use Modules\Xot\Actions\Filament\GetViewByClassAction;
-
-abstract class XotBaseSchemaWidget extends Widget implements HasSchemas
+abstract class XotBaseSchemaWidget extends XotBaseWidget implements HasSchemas
 {
-    use InteractsWithSchemas;
+    use InteractsWithSchemas; // Filament\Schemas\Concerns\…
 
-    protected static string $baseSchemaClass = '';
+    public ?array $data = [];
 
-    protected string $view = '';
+    protected static function formClass(): ?string { return null; }
+    protected static function schemaMethod(): string { return 'getFormSchema'; }
 
-    /** 1) Hook: quale Form class usare (override nei child per specializzare) */
-    protected static function formClass(): string
-    {
-        return static::$baseSchemaClass;
-    }
-
-    /** 2) Hook: quale metodo della Form class invocare (default getFormSchema) */
-    protected static function schemaMethod(): string
-    {
-        return 'getFormSchema';
-    }
-
-    /** 3) Hook: stato Livewire (override se serve path custom) */
-    protected function statePath(): ?string
-    {
-        return 'data';
-    }
-
-    /** 4) Implementazione concreta: delega al formClass + schemaMethod */
     public function form(Schema $schema): Schema
     {
-        $formClass = static::formClass();
-        $method = static::schemaMethod();
-
-        if ($formClass !== '' && method_exists($formClass, $method)) {
-            return $formClass::$method($schema, $this->getRecord());
-        }
-
-        return $this->getFormSchema($schema);
+        // se formClass(): FormClass::{schemaMethod()}() → components + statePath('data')
+        // else: $this->getFormSchema() → components + statePath('data')
     }
 
-    /** 5) Hook: schema locale (fallback) */
-    public function getFormSchema(Schema $schema): Schema
+    public function mount(): void
     {
-        return $schema;
-    }
-
-    /** 6) Hook: vista (Filament 4 NON auto-fall-through su temi) */
-    public function getView(): string
-    {
-        if ($this->view !== '') {
-            return $this->view;
-        }
-        return app(GetViewByClassAction::class)->execute(static::class);
+        $this->form->fill([]);
     }
 }
 ```
 
-## Simmetria con `XotBaseInfolistWidget`
+## Religione
 
-`XotBaseSchemaWidget` (write) ↔ `XotBaseInfolistWidget` (read) condividono il pattern:
-- `infolist(Schema)` ↔ `form(Schema)`
-- `getInfolistSchema()` ↔ `getFormSchema(Schema)`
-- `getInfolistRecord()` ↔ `getRecord()`
+| Pezzo | Owner |
+|-------|--------|
+| Campi + rules | `*Form::get*Schema()` via `formClass` / `schemaMethod` |
+| Widget | orchestrazione mount/submit/redirect |
+| Submit | `$this->form->getState()` — mai `validateForm()` |
+| Blade | `<form wire:submit>` + `{{ $this->form }}` |
 
-## Pattern d'uso nei widget
+## Schema non-form (infolist)
 
-```php
-namespace Modules\User\Filament\Widgets\Auth;
+Per UI read-only: `XotBaseInfolistWidget` → metodo `infolist(Schema)` → Blade `{{ $this->infolist }}` (pattern [schema in Blade](https://filamentphp.com/docs/5.x/components/schema)).
 
-use Modules\User\Filament\Widgets\Auth\Schemas\UserForm;
-use Modules\Xot\Filament\Widgets\XotBaseSchemaWidget;
+## Documentazione obsoleta
 
-class LoginWidget extends XotBaseSchemaWidget
-{
-    protected static string $baseSchemaClass = UserForm::class;
+Versioni precedenti di questo file citavano `Modules\Xot\Filament\Traits\InteractsWithSchemas` e firme `getFormSchema(Schema $schema): Schema` sulle Form class — **non corrispondono** al file PHP attuale. Ignorarle; usare questo aggiornamento.
 
-    public function login(): void
-    {
-        $data = $this->form->getState(); // GIÀ validato + deidratato
-        if (Auth::attempt($data)) {
-            session()->regenerate();
-            redirect()->intended($this->getRedirectUrl());
-        }
-    }
-}
+## Verifica
+
+```bash
+php -l Modules/Xot/app/Filament/Widgets/XotBaseSchemaWidget.php
+cd laravel && php artisan view:cache
 ```
-
-E `Modules/User/Filament/Widgets/Auth/Schemas/UserForm.php`:
-
-```php
-public static function getLoginFormSchema(Schema $schema, ?Model $record = null): Schema
-{
-    return $schema->components([
-        TextInput::make('email')
-            ->required()
-            ->email()
-            ->autofocus()
-            ->autocomplete('email')
-            ->extraInputAttributes(['class' => 'fo-auth-input']),
-        TextInput::make('password')
-            ->required()
-            ->password()
-            ->autocomplete('current-password')
-            ->extraInputAttributes(['class' => 'fo-auth-input fo-auth-input--password']),
-        Checkbox::make('remember')->label('Ricordami'),
-    ])->statePath('data');
-}
-```
-
-## Decisioni aperte
-
-Vedi discussion #265 per dibattito su:
-1. **Pattern dichiarativo vs imperativo** — reflection vs interface marker.
-2. **Widget-level Form class vs backoffice Form class** — DRY trade-off.
-3. **RegisterWidget submit()** — `Model::create()` diretto vs `RegistrationService`.
-4. **R8 Gdpr vs User RegisterWidget** — quale usare in produzione.
-
-## Riferimenti
-
-- Issue base: #264 (`STORY-144: R1 religion code work — XotBaseSchemaWidget base class + 6 auth widgets migrated`)
-- Discussion base: #265 (`Filament R1 religion code: XotBaseSchemaWidget + 6 auth widgets — coordinate Codex/STORY-140 docs`)
-- Story complementare: STORY-140 (Codex - GPT-5) — https://github.com/laraxot/base_fixcity_fila5/issues/248
-- Cross-repo issue modulo: da aprire su `laraxot/module_xot_fila5`
-
----
-*opencode (MiniMax-M3) · 2026-06-05*

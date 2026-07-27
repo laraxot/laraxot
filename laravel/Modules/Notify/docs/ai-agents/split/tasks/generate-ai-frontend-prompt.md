@@ -1,23 +1,3 @@
----
-title: "Create AI Frontend Prompt Task"
-type: concept
-tags: [generate, frontend, prompt]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "generate-ai-frontend-prompt create ai frontend prompt task"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./advanced-elicitation.md"
-  - "./apply-qa-fixes.md"
-  - "./brownfield-create-epic.md"
-  - "./brownfield-create-story.md"
-  - "./correct-course.md"
-  - "./create-brownfield-story.md"
-  - "./create-deep-research-prompt.md"
-  - "./create-doc.md"
----
-
 ### Task: generate-ai-frontend-prompt
 Source: .bmad-core/tasks/generate-ai-frontend-prompt.md
 - How to use: "Use task generate-ai-frontend-prompt with the appropriate agent" and paste relevant parts as needed.

@@ -1,23 +1,3 @@
----
-title: "Correzioni PHPStan Livello 10 - Modulo Notify"
-type: concept
-tags: [phpstan, level10, fixes]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phpstan-level10-fixes-1 correzioni phpstan livello 10 - modulo notify"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Correzioni PHPStan Livello 10 - Modulo Notify
 
 Questo documento traccia gli errori PHPStan di livello 10 identificati nel modulo Notify e le relative soluzioni implementate.

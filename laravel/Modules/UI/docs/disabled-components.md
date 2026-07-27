@@ -1,27 +1,7 @@
----
-title: "Disabled/Stale Components in UI Module"
-type: concept
-tags: [disabled, components]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "disabled-components disabled/stale components in ui module"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Disabled/Stale Components in UI Module
 
 **Status**: Documentation of unavailable dependencies  
-**Date**: 2026-07-08
+**Date**: 2026-06-18
 
 ## Overview
 
@@ -56,8 +36,10 @@ use Modules\Geo\Services\MapService;
 - `GeocodingService::getSuggestions()` — Autocomplete address suggestions
 
 #### Restoration Steps
-Do not reactivate this component inside `UI`.
-If map features are needed, create the component in `Modules/Geo` and let `Geo` depend on generic UI primitives.
+If `Modules/Geo` is installed:
+1. Rename `InteractiveMap.php.old` → `InteractiveMap.php`
+2. Verify Geo module exports the required services
+3. Test geocoding and export functionality
 
 ### 2. Cms Action Dependency
 
@@ -124,8 +106,7 @@ When UI module needs features from optional modules:
 
 ## Future Work
 
-- [ ] Keep geographic components out of `UI`
-- [ ] Create `Modules/Geo` only when geographic features are needed
+- [ ] Create `Modules/Geo` when geographic features are needed
 - [ ] Merge CMS localization pattern into Xot base
 - [ ] Document pattern for optional module dependencies in wiki
 

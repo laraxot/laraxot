@@ -1,23 +1,3 @@
----
-title: "🔧 Bash Commands - Auto-Allow List"
-type: concept
-tags: [bash, commands, auto, allow]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "bash-commands-auto-allow 🔧 bash commands - auto-allow list"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./llm-wiki-rule.md"
-  - "./multi-outcome-no-binary-fields.md"
-  - "./one-migration-per-model.md"
-  - "./phpmd-phar-installation.md"
-  - "./translation-structure-5-levels-mandatory.md"
-  - "./translation-structure-5-levels.md"
-  - "./use-models-not-db-table.md"
----
-
 # 🔧 Bash Commands - Auto-Allow List
 
 **Path**: `.agents/docs/rules/bash-commands-auto-allow.md`  
@@ -158,7 +138,7 @@ File: `.qwen-code-rules.md`
 ## 🔗 Related Documentation
 
 ### AI Agents Docs
-- **[Rules Index](00-index-1.md)** - All rules
+- **[Rules Index](00-INDEX.md)** - All rules
 - **[XotBase Extension Rule](xotbase-extension-rule.md)** - XotBase philosophy
 
 ### Project Rules

@@ -6,6 +6,8 @@
     "priority": 140,
     "providers": [
         "Modules\\Document\\Providers\\DocumentServiceProvider",
+        "Modules\\Document\\Providers\\RouteServiceProvider",
+        "Modules\\Document\\Providers\\EventServiceProvider",
         "Modules\\Document\\Providers\\Filament\\AdminPanelProvider"
     ],
     "files": []

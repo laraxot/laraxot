@@ -7,8 +7,8 @@ namespace Modules\User\Models\Traits;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Modules\User\Models\Role;
-use Webmozart\Assert\Assert;
 use Spatie\Permission\Traits\HasRoles as SpatieHasRoles;
+use Webmozart\Assert\Assert;
 
 /** @phpstan-ignore trait.unused */
 trait HasRoles

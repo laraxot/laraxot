@@ -1,23 +1,3 @@
----
-title: "AwsTest Bugfix: Undefined Variable e Problemi Strutturali"
-type: concept
-tags: [awstest, bugfix, undefined, variable]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "awstest-bugfix-undefined-variable awstest bugfix: undefined variable e problemi strutturali"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # AwsTest Bugfix: Undefined Variable e Problemi Strutturali
 
 ## Problemi Risolti
@@ -171,7 +151,7 @@ Per tutti i widget che utilizzano AWS SDK:
 ## Collegamenti
 
 - [S3Test Bugfix](s3test-bugfix-null-errorcode.md) - Problema simile risolto
-- [PHPStan Level 9 Guidelines](../../../docs/phpstan-level9-guidelines.md)
+- [PHPStan Level 9 Guidelines](../../docs/phpstan-level9-guidelines.md)
 - [Filament ViewField Documentation](https://filamentphp.com/docs/3.x/forms/fields/view)
 
 ## Verifica dello Status

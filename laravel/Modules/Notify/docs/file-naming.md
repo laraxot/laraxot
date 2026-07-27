@@ -1,23 +1,3 @@
----
-title: "Regole di Naming per File"
-type: concept
-tags: [file, naming]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "file-naming regole di naming per file"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Regole di Naming per File
 
 ## 🎯 Regola Fondamentale: NO Duplicati Case-Insensitive
@@ -55,10 +35,10 @@ Su filesystem case-insensitive (Windows, macOS default), file con nomi che diffe
 ```
 ✅ CORRETTO:
 - README.md (maiuscolo - convenzione universale)
-- roadmap.md (maiuscolo - convenzione universale)
+- ROADMAP.md (maiuscolo - convenzione universale)
 - CHANGELOG.md (maiuscolo - convenzione universale)
 - LICENSE.md (maiuscolo - convenzione universale)
-- contributing.md (maiuscolo - convenzione universale)
+- CONTRIBUTING.md (maiuscolo - convenzione universale)
 - SECURITY.md (maiuscolo - convenzione universale)
 
 - Tutti gli altri: kebab-case minuscolo
@@ -107,7 +87,7 @@ find Modules -type f \( -name "*.php" -o -name "*.md" \) -exec bash -c '
 1. **README.md vs readme.md** → Elimina `readme.md`
 2. **Activity.php vs activity.php** → Elimina `activity.php`
 3. **ListRecords.md vs listrecords.md** → Elimina `listrecords.md`
-4. **roadmap.md vs roadmap.md** → Elimina `roadmap.md` (tranne se contiene info diverse)
+4. **ROADMAP.md vs roadmap.md** → Elimina `roadmap.md` (tranne se contiene info diverse)
 
 ### Eccezioni
 

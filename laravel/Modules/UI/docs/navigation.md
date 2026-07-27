@@ -3,15 +3,6 @@ title: Navigation
 description: Building a navigation menu for your site
 extends: _layouts.documentation
 section: content
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
 ---
 
 # Navigation {#navigation}
@@ -44,12 +35,12 @@ $page->navigation
 ### Versione HEAD
 
 ## Collegamenti tra versioni di navigation.md
-* [navigation.md](../../../gdpr/docs/navigation.md)
-* [navigation.md](../../../xot/docs/navigation.md)
-* [navigation.md](../../../ui/docs/navigation.md)
-* [navigation.md](../../../cms/docs/blocks/navigation.md)
-* [navigation.md](../../../cms/docs/navigation.md)
-* [navigation.md](../../../cms/docs/components/navigation.md)
+* [navigation.md](../../../Gdpr/docs/navigation.md)
+* [navigation.md](../../../Xot/docs/navigation.md)
+* [navigation.md](../../../UI/docs/navigation.md)
+* [navigation.md](../../../Cms/docs/blocks/navigation.md)
+* [navigation.md](../../../Cms/docs/navigation.md)
+* [navigation.md](../../../Cms/docs/components/navigation.md)
 
 ### Versione Incoming
 

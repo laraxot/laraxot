@@ -1,23 +1,3 @@
----
-title: "StudioCardSelector Component - Modulo UI"
-type: concept
-tags: [studio, card, selector, implementation]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "studio-card-selector-implementation studiocardselector component - modulo ui"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # StudioCardSelector Component - Modulo UI
 
 ## 🎯 **Panoramica**
@@ -238,15 +218,15 @@ return [
 ---
 **Component Status**: 📋 Documented - Ready for Implementation
 **Reusability**: 🔄 High - Cross-module compatible
-
-
+**Last Updated**: January 2025
+**Last Updated**: January 2025
         ],
 
 ---
 **Component Status**: 📋 Documented - Ready for Implementation
 **Reusability**: 🔄 High - Cross-module compatible
-
-
+**Last Updated**: January 2025
+**Last Updated**: January 2025
         ],
         'phone' => [
             'label' => 'Telefono',
@@ -275,20 +255,20 @@ return [
 ---
 **Component Status**: 📋 Documented - Ready for Implementation
 **Reusability**: 🔄 High - Cross-module compatible
-
-
-
-
----
-**Component Status**: 📋 Documented - Ready for Implementation
-**Reusability**: 🔄 High - Cross-module compatible
-
-
+**Last Updated**: January 2025
+**Last Updated**: January 2025
+**Last Updated**: January 2025
 
 ---
 **Component Status**: 📋 Documented - Ready for Implementation
 **Reusability**: 🔄 High - Cross-module compatible
-
+**Last Updated**: January 2025
+**Last Updated**: January 2025
+**Last Updated**: January 2025
+---
+**Component Status**: 📋 Documented - Ready for Implementation
+**Reusability**: 🔄 High - Cross-module compatible
+**Last Updated**: January 2025
 # StudioCardSelector Component - Modulo UI
 
 ## 🎯 **Panoramica**
@@ -482,6 +462,6 @@ return [
 
 **Component Status**: 📋 Documented - Ready for Implementation
 **Reusability**: 🔄 High - Cross-module compatible
-
-
-
+**Last Updated**: January 2025
+**Last Updated**: January 2025
+**Last Updated**: January 2025

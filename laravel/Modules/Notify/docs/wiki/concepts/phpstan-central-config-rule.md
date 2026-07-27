@@ -5,15 +5,7 @@ tags: [phpstan, quality, workflow, governance]
 sources: [AGENTS.md]
 created: 2026-04-16
 updated: 2026-04-16
-related:
-  - "./claude-audit-static.md"
-  - "./code-redundancy-notify.md"
-  - "./composer-root-minimal-nwidart.md"
-  - "./context-overflow-prevention.md"
-  - "./enum-standards.md"
-  - "./llm-wiki-governance.md"
-  - "./method-name-homonyms.md"
-  - "./module-root-uppercase-folders-archive.md"
+related: [llm-wiki-governance.md, ../project/qmd-local-docs-search.md]
 ---
 
 # PHPStan Central Config Rule

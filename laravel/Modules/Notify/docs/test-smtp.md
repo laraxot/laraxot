@@ -1,23 +1,3 @@
----
-title: "Come far funzionare la pagina SendEmail"
-type: concept
-tags: [test, smtp]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "test-smtp come far funzionare la pagina sendemail"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 //----------------------------------------------------------------------------
 Test Laravel SMTP Mail via Tinker
 https://medium.com/@azishapidin/test-laravel-smtp-mail-via-tinker-cec59999214
@@ -59,6 +39,6 @@ Mail::raw('Test SMTP', function($m){ $m->to('tuo@email.com')->subject('Test SMTP
 - (Opzionale) Permetti l'override dei parametri SMTP da form, come in `TestSmtpPage`.
 
 ## Approfondimenti
-- [TestSmtpPage vs SendEmail: differenze architetturali](./test-smtp-2.md)
-- [Best practice per la configurazione SMTP](./email-best-practices-1.md)
+- [TestSmtpPage vs SendEmail: differenze architetturali](./test_smtp.md)
+- [Best practice per la configurazione SMTP](./email_best_practices.md)
 - [Documentazione Laravel Mail](https://laravel.com/docs/mail)

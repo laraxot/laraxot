@@ -1,26 +1,6 @@
----
-title: "Analisi Completa TableLayoutEnum"
-type: concept
-tags: [table, layout, enum, analysis]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "table-layout-enum-analysis analisi completa tablelayoutenum"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Analisi Completa TableLayoutEnum
 
-## Data: [DATE]
+## Data: 2025-01-06
 
 ## Panoramica
 
@@ -350,12 +330,13 @@ class TableLayoutEnumTest extends TestCase
 
 - [Usage Guide](table-layout-enum-usage.md)
 - [Conflict Resolution](conflict-resolution-tablelayoutenum.md)
-- [Translation Standards](../../../../docs/translation_standards.md)
-- [Filament Best Practices](../../../../docs/filament_best-practices-2.md)
+- [Translation Standards](../../../docs/translation_standards.md)
+- [Filament Best Practices](../../../docs/filament_best_practices.md)
 
+*Ultimo aggiornamento: 2025-01-06*
 # Analisi Completa TableLayoutEnum
 
-## Data: [DATE]
+## Data: 2025-01-06
 
 ## Panoramica
 
@@ -685,6 +666,7 @@ class TableLayoutEnumTest extends TestCase
 
 - [Usage Guide](table-layout-enum-usage.md)
 - [Conflict Resolution](conflict-resolution-tablelayoutenum.md)
-- [Translation Standards](../../../../docs/translation_standards.md)
-- [Filament Best Practices](../../../../docs/filament_best-practices-2.md)
+- [Translation Standards](../../../docs/translation_standards.md)
+- [Filament Best Practices](../../../docs/filament_best_practices.md)
 
+*Ultimo aggiornamento: 2025-01-06*

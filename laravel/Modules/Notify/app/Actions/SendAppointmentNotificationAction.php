@@ -34,8 +34,7 @@ class SendAppointmentNotificationAction
         array $additionalData = []
     ): bool {
         try {
-            // Carica il paziente con le relazioni necessarie
-            $patient = null; // Patient::with('user')->find($appointment->patient_id);
+            // Patient::with('user')->find($appointment->patient_id); — modello non disponibile in questo progetto
 
             // Since patient models are not available in this project,
             // we return early with logging

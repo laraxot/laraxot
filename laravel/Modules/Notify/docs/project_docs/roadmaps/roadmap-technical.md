@@ -1,23 +1,3 @@
----
-title: "🛠️ ROADMAP TECNICA - FIXCITY PLATFORM"
-type: concept
-tags: [roadmap, technical]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "roadmap-technical 🛠️ roadmap tecnica - fixcity platform"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./agid-analysis-implementation-.md"
-  - "./agid-analysis-implementation-1.md"
-  - "./agid-analysis-implementation.md"
-  - "./changelog-docs-update-.md"
-  - "./changelog-docs-update-1.md"
-  - "./changelog-docs-update.md"
-  - "./code-quality-improvements-.md"
-  - "./code-quality-improvements-1.md"
----
-
 # 🛠️ ROADMAP TECNICA - FIXCITY PLATFORM
 
 **Versione**: 1.0  

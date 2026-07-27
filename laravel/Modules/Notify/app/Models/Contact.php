@@ -7,7 +7,6 @@ namespace Modules\Notify\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
 use Modules\Notify\Database\Factories\ContactFactory;
-use Modules\Notify\Models\Traits\HasContact;
 use Modules\Xot\Contracts\ProfileContract;
 use Override;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
@@ -110,6 +109,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  *
  * @property-read ProfileContract|null $creator
  * @property-read ProfileContract|null $updater
+ *
  * @property MediaCollection<int, Media> $media
  * @property int|null $media_count
  * @property Carbon|null $deleted_at
@@ -124,8 +124,6 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  */
 class Contact extends BaseModel
 {
-    use HasContact;
-
     /** @var list<string> */
     protected $fillable = [
         'model_id',

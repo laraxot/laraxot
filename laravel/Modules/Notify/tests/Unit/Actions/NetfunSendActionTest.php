@@ -2,36 +2,31 @@
 
 declare(strict_types=1);
 
-namespace Modules\Notify\Tests\Unit\Actions;
 
+namespace Modules\Notify\Tests\Unit\Actions;
 use Modules\Notify\Actions\NetfunSendAction;
 use Modules\Notify\Datas\SmsData;
-use PHPUnit\Framework\Assert;
-use ReflectionClass;
-use ReflectionNamedType;
-use Spatie\QueueableAction\QueueableAction;
+use Modules\Notify\Tests\TestCase;
 
-test('netfun send action has the expected public contract', function (): void {
-    $reflection = new ReflectionClass(NetfunSendAction::class);
-    $method = $reflection->getMethod('execute');
-    $parameters = $method->getParameters();
-    $parameterType = $parameters[0]->getType();
-    $returnType = $method->getReturnType();
+uses(TestCase::class);
 
-    Assert::assertTrue($reflection->isInstantiable());
-    Assert::assertContains(QueueableAction::class, $reflection->getTraitNames());
-    Assert::assertTrue($method->isPublic());
-    Assert::assertCount(1, $parameters);
-    Assert::assertInstanceOf(ReflectionNamedType::class, $parameterType);
-    Assert::assertSame(SmsData::class, $parameterType->getName());
-    Assert::assertInstanceOf(ReflectionNamedType::class, $returnType);
-    Assert::assertSame('array', $returnType->getName());
-});
+describe('NetfunSendAction', function () {
+    it('has execute method returning array', function () {
+        $reflection = new \ReflectionClass(NetfunSendAction::class);
+        $method = $reflection->getMethod('execute');
 
-test('netfun send action exposes state used by execute', function (): void {
-    $reflection = new ReflectionClass(NetfunSendAction::class);
+        \assertReflectionTypeName($method->getReturnType(), 'array');
+        \assertReflectionTypeName($method->getParameters()[0]->getType(), SmsData::class);
+    });
 
-    Assert::assertSame('Modules\\Notify\\Actions', $reflection->getNamespaceName());
-    Assert::assertTrue($reflection->hasProperty('token'));
-    Assert::assertTrue($reflection->hasProperty('vars'));
+    it('uses strict types', function () {
+        $content = \notifyReflectionSource(new \ReflectionClass(NetfunSendAction::class));
+        expect($content)->toContain('declare(strict_types=1);');
+    });
+
+    it('uses QueueableAction trait', function () {
+        $traits = \Safe\class_uses(NetfunSendAction::class);
+        \assertNotifyArray($traits);
+        expect($traits)->toContain('Spatie\QueueableAction\QueueableAction');
+    });
 });

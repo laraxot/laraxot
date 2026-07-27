@@ -35,6 +35,8 @@ final class SendNetfunSMSAction implements SmsActionContract
     /**
      * Create a new action instance.
      *
+     * @return void
+     *
      * @throws Exception Se il token API non è configurato
      */
     public function __construct()

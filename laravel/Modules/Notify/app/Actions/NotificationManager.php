@@ -21,25 +21,7 @@ class NotificationManager
      * @param  array<string, mixed>  $data
      * @param  list<string>  $channels
      * @param  array<string, mixed>  $options
-     */
-    public function execute(
-        Model $recipient,
-        string $templateCode,
-        array $data = [],
-        array $channels = [],
-        array $options = [],
-    ): ?Notification {
-        return $this->send($recipient, $templateCode, $data, $channels, $options);
-    }
-
-    /**
-     * Invia una notifica a un destinatario.
-     *
-     * @param  Model  $recipient  Il destinatario della notifica
-     * @param  string  $templateCode  Il codice del template da utilizzare
-     * @param  array<string, mixed>  $data  I dati per compilare il template
-     * @param  list<string>  $channels  I canali da utilizzare (opzionale)
-     * @param  array<string, mixed>  $options  Opzioni aggiuntive per l'invio
+     * @return Notification|null
      */
     public function send(
         Model $recipient,

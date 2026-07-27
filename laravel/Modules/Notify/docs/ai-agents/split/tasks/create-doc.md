@@ -1,23 +1,3 @@
----
-title: "Create Document from Template (YAML Driven)"
-type: concept
-tags: [create, doc]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "create-doc create document from template (yaml driven)"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./advanced-elicitation.md"
-  - "./apply-qa-fixes.md"
-  - "./brownfield-create-epic.md"
-  - "./brownfield-create-story.md"
-  - "./correct-course.md"
-  - "./create-brownfield-story.md"
-  - "./create-deep-research-prompt.md"
-  - "./create-next-story.md"
----
-
 ### Task: create-doc
 Source: .bmad-core/tasks/create-doc.md
 - How to use: "Use task create-doc with the appropriate agent" and paste relevant parts as needed.

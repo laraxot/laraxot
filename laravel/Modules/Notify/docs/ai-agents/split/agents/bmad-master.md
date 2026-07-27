@@ -1,23 +1,3 @@
----
-title: "Bmad Master"
-type: concept
-tags: [bmad, master]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "bmad-master bmad master"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./architect.md"
-  - "./bmad-orchestrator.md"
-  - "./business-analyst.md"
-  - "./full-stack-developer.md"
-  - "./product-manager.md"
-  - "./product-owner.md"
-  - "./scrum-master.md"
-  - "./test-architect.md"
----
-
 ### BMad Master Task Executor (id: bmad-master)
 Source: .bmad-core/agents/bmad-master.md
 

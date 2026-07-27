@@ -1,23 +1,3 @@
----
-title: "🔴 TRANSLATION STRUCTURE - 5 LEVELS MANDATORY"
-type: concept
-tags: [translation, structure, levels, mandatory]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "translation-structure-5-levels-mandatory 🔴 translation structure - 5 levels mandatory"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./bash-commands-auto-allow.md"
-  - "./llm-wiki-rule.md"
-  - "./multi-outcome-no-binary-fields.md"
-  - "./one-migration-per-model.md"
-  - "./phpmd-phar-installation.md"
-  - "./translation-structure-5-levels.md"
-  - "./use-models-not-db-table.md"
----
-
 # 🔴 TRANSLATION STRUCTURE - 5 LEVELS MANDATORY
 
 **Path**: `.agents/docs/rules/translation-structure-5-levels-mandatory.md`  
@@ -166,7 +146,7 @@ actions.trade.market.label      → Etichetta azione trade
 ## 🔗 Related Documentation
 
 ### AI Agents Docs
-- **[Rules Index](00-index-1.md)** - All rules
+- **[Rules Index](00-INDEX.md)** - All rules
 - **[Translation Structure](translation-structure-5-levels.md)** - Original rule
 
 ### Module Docs

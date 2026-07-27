@@ -1,23 +1,3 @@
----
-title: "Template Email di Base"
-type: concept
-tags: [base, templates]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "base-templates template email di base"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Template Email di Base
 
 ## Introduzione
@@ -260,8 +240,8 @@ Ogni template accetta le seguenti variabili comuni:
 ## Collegamenti Correlati
 
 - [Documentazione MailPace](https://github.com/mailpace/templates)
-- [Struttura Template](./mail-templates-structure.md)
-- [Best Practices](./email-html-best-practices.md)
+- [Struttura Template](./MAIL_TEMPLATES_STRUCTURE.md)
+- [Best Practices](./EMAIL_HTML_BEST_PRACTICES.md)
 
 ## Supporto
 

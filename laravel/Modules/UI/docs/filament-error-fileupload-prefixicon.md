@@ -1,23 +1,3 @@
----
-title: "Errore UI: Uso di `prefixIcon` su FileUpload di Filament"
-type: concept
-tags: [filament, error, fileupload, prefixicon]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament-error-fileupload-prefixicon errore ui: uso di `prefixicon` su fileupload di filament"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Errore UI: Uso di `prefixIcon` su FileUpload di Filament
 
 ## Descrizione
@@ -45,12 +25,12 @@ Se serve un’icona, usare solo i metodi previsti dalla documentazione Filament.
 ---
 
 **Collegamento bidirezionale:**
-- Questo errore si è manifestato nel modulo Patient: vedere [Patient/docs/filament-error-fileupload-prefixicon.md](../../patient/docs/filament-error-fileupload-prefixicon.md)
+- Questo errore si è manifestato nel modulo Patient: vedere [Patient/docs/filament-error-fileupload-prefixicon.md](../../Patient/docs/filament-error-fileupload-prefixicon.md)
 
 **Questa regola è parte delle convenzioni UI trasversali a tutti i moduli.**
 
 ## Collegamenti tra versioni di filament-error-fileupload-prefixicon.md
-* [filament-error-fileupload-prefixicon.md](../../patient/docs/filament-error-fileupload-prefixicon.md)
+* [filament-error-fileupload-prefixicon.md](../../Patient/docs/filament-error-fileupload-prefixicon.md)
 # Errore UI: Uso di `prefixIcon` su FileUpload di Filament
 
 ## Descrizione
@@ -78,13 +58,13 @@ Se serve un’icona, usare solo i metodi previsti dalla documentazione Filament.
 ---
 
 **Collegamento bidirezionale:**
-- Questo errore si è manifestato nel modulo Patient: vedere [Patient/project_docs/filament-error-fileupload-prefixicon.md](../../patient/project_docs/filament-error-fileupload-prefixicon.md)
-- Questo errore si è manifestato nel modulo Patient: vedere [Patient/project_docs/filament-error-fileupload-prefixicon.md](../../patient/project_docs/filament-error-fileupload-prefixicon.md)
-- Questo errore si è manifestato nel modulo Patient: vedere [Patient/project_docs/filament-error-fileupload-prefixicon.md](../../patient/project_docs/filament-error-fileupload-prefixicon.md)
+- Questo errore si è manifestato nel modulo Patient: vedere [Patient/project_docs/filament-error-fileupload-prefixicon.md](../../Patient/project_docs/filament-error-fileupload-prefixicon.md)
+- Questo errore si è manifestato nel modulo Patient: vedere [Patient/project_docs/filament-error-fileupload-prefixicon.md](../../Patient/project_docs/filament-error-fileupload-prefixicon.md)
+- Questo errore si è manifestato nel modulo Patient: vedere [Patient/project_docs/filament-error-fileupload-prefixicon.md](../../Patient/project_docs/filament-error-fileupload-prefixicon.md)
 
 **Questa regola è parte delle convenzioni UI trasversali a tutti i moduli.**
 
 ## Collegamenti tra versioni di filament-error-fileupload-prefixicon.md
-* [filament-error-fileupload-prefixicon.md](../../patient/project_docs/filament-error-fileupload-prefixicon.md)
-* [filament-error-fileupload-prefixicon.md](../../patient/project_docs/filament-error-fileupload-prefixicon.md)
-* [filament-error-fileupload-prefixicon.md](../../patient/project_docs/filament-error-fileupload-prefixicon.md)
+* [filament-error-fileupload-prefixicon.md](../../Patient/project_docs/filament-error-fileupload-prefixicon.md)
+* [filament-error-fileupload-prefixicon.md](../../Patient/project_docs/filament-error-fileupload-prefixicon.md)
+* [filament-error-fileupload-prefixicon.md](../../Patient/project_docs/filament-error-fileupload-prefixicon.md)

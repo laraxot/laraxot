@@ -1,23 +1,3 @@
----
-title: "Template di Struttura per le Traduzioni"
-type: concept
-tags: [translations, structure, template]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "translations-structure-template template di struttura per le traduzioni"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Template di Struttura per le Traduzioni
 
 ## Struttura Generale per i File di Traduzione

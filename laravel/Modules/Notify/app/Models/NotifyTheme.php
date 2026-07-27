@@ -68,6 +68,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  *
  * @property-read ProfileContract|null $creator
  * @property-read ProfileContract|null $updater
+ *
  * @property Carbon|null $deleted_at
  * @property string|null $deleted_by
  *
@@ -75,8 +76,6 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @method static Builder<static>|NotifyTheme whereDeletedBy($value)
  *
  * @property-read ProfileContract|null $deleter
- *
- * @mixin Eloquent
  */
 class NotifyTheme extends BaseModel
 {
@@ -106,6 +105,7 @@ class NotifyTheme extends BaseModel
 
     /**
      * @param  array<string, mixed>|null  $value
+     *
      * @return array<string, mixed>
      */
     public function getLogoAttribute(?array $value): array

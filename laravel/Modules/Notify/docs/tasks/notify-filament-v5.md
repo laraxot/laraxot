@@ -1,22 +1,3 @@
----
-title: "Task: Notify Filament v5 Alignment (Clusters)"
-type: concept
-tags: [notify, filament]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "notify-filament-v5 task: notify filament v5 alignment (clusters)"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./001-notification-system.md"
-  - "./cleanup-notify-docs.md"
-  - "./filament-v5-notify.md"
-  - "./notification-system.md"
-  - "./notify-cleanup-docs.md"
-  - "./notify-test-coverage.md"
-  - "./tasks-index.md"
----
-
 # Task: Notify Filament v5 Alignment (Clusters)
 
 ## 📋 Obiettivo

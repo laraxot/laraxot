@@ -1,23 +1,3 @@
----
-title: "Integrazione con Spatie Laravel Database Mail Templates"
-type: concept
-tags: [spatieatabase, mail, templates]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "spatieatabase-mail-templates integrazione con spatie laravel database mail templates"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Integrazione con Spatie Laravel Database Mail Templates
 
 Questa guida documenta l'uso del pacchetto [spatie/laravel-database-mail-templates](https://github.com/spatie/laravel-database-mail-templates) all'interno del modulo **Notify**.

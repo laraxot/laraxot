@@ -1,23 +1,22 @@
 ---
 title: "Guida alla Struttura dei File di Traduzione"
-type: guide
-tags: [translation, file, structure, guide]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "translation-file-structure-guide guida alla struttura dei file di traduzione"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+type: concept
+tags: [notify, docs, architecture, translation, file, structure]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione architecture translation file structure guide guida alla struttura dei file di traduzione frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
 related:
-  - "./config-structure.md"
-  - "./document-root-architecture.md"
-  - "./dto-structure-conventions.md"
-  - "./dto-structure-rules.md"
-  - "./interface-structure-clarification.md"
-  - "./mail-templates-structure.md"
-  - "./queueable-action-pattern.md"
-  - "./sms-config-structure.md"
+  - ../README.md
+  - README.md
+  - ../conventions/README.md
+  - ../rules/README.md
+  - ../best-practices/naming-conventions.md
 ---
-
 # Guida alla Struttura dei File di Traduzione
 
 ## Struttura Standard Obbligatoria
@@ -168,7 +167,7 @@ return [
 ```
 
 ## Riferimenti
-- [Regole di Naming per i File di Traduzione](./translation-file-naming-rules.md)
+- [Regole di Naming per i File di Traduzione](./TRANSLATION_FILE_NAMING_RULES.md)
 - [Regole Generali per le Traduzioni](../../Lang/docs/TRANSLATION_KEYS_RULES.md)
-- [Regole di Naming per i File di Traduzione](./translation-file-naming-rules.md)
+- [Regole di Naming per i File di Traduzione](./TRANSLATION_FILE_NAMING_RULES.md)
 - [Regole Generali per le Traduzioni](../../Lang/docs/TRANSLATION_KEYS_RULES.md)

@@ -1,23 +1,3 @@
----
-title: "Struttura delle Filament Resources"
-type: concept
-tags: [filament, resources, structure]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament-resources-structure struttura delle filament resources"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Struttura delle Filament Resources
 
 ## Panoramica
@@ -72,7 +52,7 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
 ## Documentazione Correlata
 
-- [Filament class extension rules (Xot)](../xot/docs/filament-class-extension-rules.md)
+- [Filament class extension rules (Xot)](../Xot/docs/filament-class-extension-rules.md)
 
 ## Best Practices
 1. **Namespace**
@@ -155,12 +135,12 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 ```
 
 ## Documentazione Correlata
-- [Documentazione CMS Module](../laravel/modules/cms/project_docs/filament-resources.md)
-- [Documentazione Xot Module](../laravel/modules/xot/project_docs/filament-resources.md)
-- [Documentazione CMS Module](../laravel/modules/cms/project_docs/filament-resources.md)
-- [Documentazione Xot Module](../laravel/modules/xot/project_docs/filament-resources.md)
-- [Documentazione CMS Module](../laravel/modules/cms/project_docs/filament-resources.md)
-- [Documentazione Xot Module](../laravel/modules/xot/project_docs/filament-resources.md)
+- [Documentazione CMS Module](../laravel/Modules/Cms/project_docs/filament-resources.md)
+- [Documentazione Xot Module](../laravel/Modules/Xot/project_docs/filament-resources.md)
+- [Documentazione CMS Module](../laravel/Modules/Cms/project_docs/filament-resources.md)
+- [Documentazione Xot Module](../laravel/Modules/Xot/project_docs/filament-resources.md)
+- [Documentazione CMS Module](../laravel/Modules/Cms/project_docs/filament-resources.md)
+- [Documentazione Xot Module](../laravel/Modules/Xot/project_docs/filament-resources.md)
 
 ## Best Practices
 1. **Namespace**

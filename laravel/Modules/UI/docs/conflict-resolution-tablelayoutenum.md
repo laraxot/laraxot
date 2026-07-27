@@ -1,23 +1,3 @@
----
-title: "Risoluzione Conflitto TableLayoutEnum"
-type: concept
-tags: [conflict, resolution, tablelayoutenum]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "conflict-resolution-tablelayoutenum risoluzione conflitto tablelayoutenum"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Risoluzione Conflitto TableLayoutEnum
 
 ## Problema Identificato
@@ -85,9 +65,9 @@ Il file `Modules/UI/app/Enums/TableLayoutEnum.php` presenta un conflitto Git nel
 ## Collegamenti Correlati
 
 - [UI Components](../components/volt.md)
-- [PHPStan Level 10 Fixes](../../xot/docs/phpstan-level10-fixes.md)
-- [Translation Standards](../../lang/docs/translation-standards.md)
-- [Best Practices](../../xot/docs/translation-keys-best-practices.md)
+- [PHPStan Level 10 Fixes](../../Xot/docs/phpstan-level10-fixes.md)
+- [Translation Standards](../../Lang/docs/translation-standards.md)
+- [Best Practices](../../Xot/docs/translation-keys-best-practices.md)
 
 ## Note per Sviluppatori Futuri
 
@@ -170,15 +150,15 @@ Il file `Modules/UI/app/Enums/TableLayoutEnum.php` presenta un conflitto Git nel
 ## Collegamenti Correlati
 
 - [UI Components](../components/volt.md)
-- [PHPStan Level 10 Fixes](../../xot/project_docs/phpstan-level10-fixes.md)
-- [Translation Standards](../../lang/project_docs/translation-standards.md)
-- [Best Practices](../../xot/project_docs/translation-keys-best-practices.md)
-- [PHPStan Level 10 Fixes](../../xot/project_docs/phpstan-level10-fixes.md)
-- [Translation Standards](../../lang/project_docs/translation-standards.md)
-- [Best Practices](../../xot/project_docs/translation-keys-best-practices.md)
-- [PHPStan Level 10 Fixes](../../xot/project_docs/phpstan-level10-fixes.md)
-- [Translation Standards](../../lang/project_docs/translation-standards.md)
-- [Best Practices](../../xot/project_docs/translation-keys-best-practices.md)
+- [PHPStan Level 10 Fixes](../../Xot/project_docs/phpstan-level10-fixes.md)
+- [Translation Standards](../../Lang/project_docs/translation-standards.md)
+- [Best Practices](../../Xot/project_docs/translation-keys-best-practices.md)
+- [PHPStan Level 10 Fixes](../../Xot/project_docs/phpstan-level10-fixes.md)
+- [Translation Standards](../../Lang/project_docs/translation-standards.md)
+- [Best Practices](../../Xot/project_docs/translation-keys-best-practices.md)
+- [PHPStan Level 10 Fixes](../../Xot/project_docs/phpstan-level10-fixes.md)
+- [Translation Standards](../../Lang/project_docs/translation-standards.md)
+- [Best Practices](../../Xot/project_docs/translation-keys-best-practices.md)
 
 ## Note per Sviluppatori Futuri
 

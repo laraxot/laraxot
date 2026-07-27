@@ -1,19 +1,3 @@
----
-title: "Quick Reference - Filament"
-type: concept
-tags: [filament]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament quick reference - filament"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./chart-widgets.md"
-  - "./queue-jobs.md"
-  - "./tenant-config.md"
----
-
 # Quick Reference - Filament
 
 ## Errori comuni

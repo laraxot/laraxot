@@ -12,8 +12,8 @@ discussions:
 related:
   - ../overviews/ai-module.md
   - ../troubleshooting/pest-test-suite-fixes.md
-  - ../../../Xot/docs/wiki/overviews/platform-completion-roadmap.md
-  - ../../../Xot/docs/wiki/concepts/phpstan-pest-bridge-discipline.md
+  - ../../../../Xot/docs/wiki/overviews/platform-completion-roadmap.md
+  - ../../../../Xot/docs/wiki/concepts/phpstan-pest-bridge-discipline.md
 ---
 
 # Testing in AI
@@ -51,4 +51,4 @@ php -d memory_limit=2048M ./vendor/bin/phpstan analyse Modules/AI
 
 ## Hub piattaforma
 
-[platform-completion-roadmap](../../../Xot/docs/wiki/overviews/platform-completion-roadmap.md)
+[platform-completion-roadmap](../../../../Xot/docs/wiki/overviews/platform-completion-roadmap.md)

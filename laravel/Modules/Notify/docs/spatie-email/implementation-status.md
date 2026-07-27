@@ -1,16 +1,3 @@
----
-title: "Stato Implementazione SpatieEmail"
-type: concept
-tags: [implementation, status]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "implementation-status stato implementazione spatieemail"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./index.md"
----
-
 # Stato Implementazione SpatieEmail
 
 Questo documento tiene traccia dello stato di implementazione delle email utilizzando il pacchetto Spatie per le email multilingua nel modulo Notify.

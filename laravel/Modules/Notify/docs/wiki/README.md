@@ -1,3 +1,22 @@
+---
+title: "FixCity LLM Wiki"
+type: index
+tags: [notify, docs, wiki]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione wiki readme fixcity llm wiki index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../README.md
+  - index.md
+  - ../notifications/readme.md
+  - ../integrations/readme.md
+  - ../templates/readme.md
+---
 # FixCity LLM Wiki
 
 This directory is the canonical compiled wiki layer for the Karpathy-style workflow in this repository.
@@ -6,7 +25,7 @@ This directory is the canonical compiled wiki layer for the Karpathy-style workf
 
 - Raw corpus: `docs/` excluding `docs/wiki/**`
 - Compiled wiki: `docs/wiki/`
-- Schema layer: `AGENTS.md`, `claude.md`, `qwen.md`, `gemini.md`, `docs/project/docs-governance.md`
+- Schema layer: `AGENTS.md`, `CLAUDE.md`, `QWEN.md`, `GEMINI.md`, `docs/project/docs-governance.md`
 
 ## Operations
 

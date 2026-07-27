@@ -1,23 +1,3 @@
----
-title: "Changelog Migrazioni Notify Module"
-type: concept
-tags: [migrations, changelog]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "migrations-changelog changelog migrazioni notify module"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Changelog Migrazioni Notify Module
 
 ## [DATE]: Aggiunta Campo Slug a Mail Templates
@@ -49,6 +29,6 @@ related:
 - Mantenuta compatibilità con codice esistente
 
 ### Collegamenti Correlati
-- [Proposta Slug](./spatie-email-slug-proposal-1.md)
-- [Sistema Template Email](./email-templates.md)
-- [Email Dottori](./doctor-emails-1.md) 
+- [Proposta Slug](./spatie_email_slug_proposal.md)
+- [Sistema Template Email](./email_templates.md)
+- [Email Dottori](./doctor_emails.md) 

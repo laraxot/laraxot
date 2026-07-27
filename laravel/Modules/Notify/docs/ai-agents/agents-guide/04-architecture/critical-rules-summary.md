@@ -1,17 +1,3 @@
----
-title: "Critical Rules Summary"
-type: rule
-tags: [critical, rules, summary]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "critical-rules-summary critical rules summary"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./critical-architecture-rules.md"
----
-
 # Critical Rules Summary
 
 1. **PHPStan Level 10** — all errors must be fixed (no ignores).

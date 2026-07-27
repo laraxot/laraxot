@@ -1,23 +1,3 @@
----
-title: "Linee Guida per la Riusabilità del Modulo Notify"
-type: concept
-tags: [reusabilitylines]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "reusabilitylines linee guida per la riusabilità del modulo notify"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
-  - "./acronym-naming-conventions.md"
-  - "./action-plan-immediate.md"
----
-
 # Linee Guida per la Riusabilità del Modulo Notify
 
 ## Principio Fondamentale
@@ -183,7 +163,7 @@ grep -r "database.*Quaeris\|app.*Quaeris" Modules/Notify/
 
 ## Collegamenti
 
-- [../../../../docs/module_reusability-guidelines-2.md](../../../../docs/module_reusability-guidelines-2.md)
+- [../../../../docs/module_reusability_guidelines.md](../../../../docs/module_reusability_guidelines.md)
 - [../../Xot/docs/xotdata_usage.md](../../xot/docs/xotdata_usage.md)
 - [testing_best_practices.md](testing_best_practices.md)
 

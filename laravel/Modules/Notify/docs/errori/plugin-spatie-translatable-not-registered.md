@@ -1,15 +1,3 @@
----
-title: "Errore: Plugin spatie-translatable Not Registered"
-type: concept
-tags: [plugin, spatie, translatable, not]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "plugin-spatie-translatable-not-registered errore: plugin spatie-translatable not registered"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
----
-
 # Errore: Plugin spatie-translatable Not Registered
 
 ## Errore

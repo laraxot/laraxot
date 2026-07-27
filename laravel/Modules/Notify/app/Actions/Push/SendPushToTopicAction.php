@@ -9,6 +9,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Modules\Notify\Datas\PushNotificationData;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
@@ -24,11 +25,10 @@ class SendPushToTopicAction
     private array $platforms = ['fcm', 'apns', 'webpush'];
 
     /**
-     * @param  array<string, mixed>  $notification
      * @param  array<string, mixed>  $data
      * @return array<string, array<string, mixed>>
      */
-    public function execute(string $topic, array $notification, array $data = []): array
+    public function execute(string $topic, PushNotificationData $notification, array $data = []): array
     {
         $results = [];
 
@@ -53,11 +53,10 @@ class SendPushToTopicAction
     }
 
     /**
-     * @param  array<string, mixed>  $notification
      * @param  array<string, mixed>  $data
      * @return array<string, mixed>
      */
-    private function sendTopicToPlatform(string $platform, string $topic, array $notification, array $data): array
+    private function sendTopicToPlatform(string $platform, string $topic, PushNotificationData $notification, array $data): array
     {
         return match ($platform) {
             'fcm' => $this->sendFCMTopicNotification($topic, $notification, $data),
@@ -78,18 +77,17 @@ class SendPushToTopicAction
     }
 
     /**
-     * @param  array<string, mixed>  $notification
      * @param  array<string, mixed>  $data
      * @return array<string, mixed>
      */
-    private function sendFCMTopicNotification(string $topic, array $notification, array $data): array
+    private function sendFCMTopicNotification(string $topic, PushNotificationData $notification, array $data): array
     {
         $payload = [
             'to' => "/topics/{$topic}",
             'notification' => [
-                'title' => $notification['title'],
-                'body' => $notification['body'],
-                'icon' => $notification['icon'] ?? '/icons/icon-192x192.png',
+                'title' => $notification->title,
+                'body' => $notification->body,
+                'icon' => $notification->icon ?? '/icons/icon-192x192.png',
             ],
             'data' => $data,
         ];

@@ -180,7 +180,8 @@ class TenantServiceProvider extends XotBaseServiceProvider
         $typedMap = [];
 
         foreach ($map as $alias => $class) {
-            if (! is_string($alias) || ! is_string($class) || ! class_exists($class)) {
+            // ponytail: @ suppresses autoload ErrorException for missing modules
+            if (! is_string($alias) || ! is_string($class) || ! @class_exists($class)) {
                 continue;
             }
 

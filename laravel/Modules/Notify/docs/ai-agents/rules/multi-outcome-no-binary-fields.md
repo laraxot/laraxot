@@ -1,23 +1,3 @@
----
-title: "🔴 MULTI-OUTCOME UNIVERSAL - NO BINARY FIELDS"
-type: concept
-tags: [multi, outcome, binary, fields]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "multi-outcome-no-binary-fields 🔴 multi-outcome universal - no binary fields"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./bash-commands-auto-allow.md"
-  - "./llm-wiki-rule.md"
-  - "./one-migration-per-model.md"
-  - "./phpmd-phar-installation.md"
-  - "./translation-structure-5-levels-mandatory.md"
-  - "./translation-structure-5-levels.md"
-  - "./use-models-not-db-table.md"
----
-
 # 🔴 MULTI-OUTCOME UNIVERSAL - NO BINARY FIELDS
 
 **Path**: `.agents/docs/rules/multi-outcome-no-binary-fields.md`  
@@ -209,7 +189,7 @@ $pivot->percentage  // ✅ Unico campo valido
 ## 🔗 Related Documentation
 
 ### AI Agents Docs
-- **[Rules Index](00-index-1.md)** - All rules
+- **[Rules Index](00-INDEX.md)** - All rules
 - **[Multi-Outcome Universal](multi-outcome-universal.md)** - Core principle
 - **[Use Models Not DB::Table](use-models-not-db-table.md)** - Model usage
 

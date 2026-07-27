@@ -1,23 +1,3 @@
----
-title: "links"
-type: concept
-tags: [links]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "links links"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./firebase.md"
-  - "./login.md"
-  - "./notifications.md"
-  - "./repos.md"
-  - "./telegram.md"
-  - "./test-smtp-1.md"
-  - "./test-smtp-2.md"
-  - "./test-smtp.md"
----
-
 # links
 
 <!-- Contenuto migrato da _docs/links.txt -->

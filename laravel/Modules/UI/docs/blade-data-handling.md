@@ -1,23 +1,3 @@
----
-title: "Data Handling in Blade Components"
-type: concept
-tags: [blade, data, handling]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "blade-data-handling data handling in blade components"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # Data Handling in Blade Components
 
 This document outlines best practices for data handling in Blade components, particularly in theme blocks used for content sections.
@@ -149,9 +129,9 @@ Components should never rely on variables that haven't been explicitly defined a
 
 ## Related Documentation
 
-- [Block Components Overview](./blocks/readme.md)
-- [Component Architecture](./components/readme.md)
-- [Section Architecture](./sections/readme.md)
+- [Block Components Overview](./blocks/README.md)
+- [Component Architecture](./components/README.md)
+- [Section Architecture](./sections/README.md)
 
 > **Note**: This document is the primary reference for Blade data handling patterns across all modules.
 > All module-specific implementations should link back to this document.
@@ -288,9 +268,9 @@ Components should never rely on variables that haven't been explicitly defined a
 
 ## Related Documentation
 
-- [Block Components Overview](./blocks/readme.md)
-- [Component Architecture](./components/readme.md)
-- [Section Architecture](./sections/readme.md)
+- [Block Components Overview](./blocks/README.md)
+- [Component Architecture](./components/README.md)
+- [Section Architecture](./sections/README.md)
 
 > **Note**: This document is the primary reference for Blade data handling patterns across all modules.
 > All module-specific implementations should link back to this document.

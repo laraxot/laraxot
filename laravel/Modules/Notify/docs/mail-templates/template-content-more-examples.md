@@ -1,23 +1,3 @@
----
-title: "Esempi Aggiuntivi di Contenuto per Template Email"
-type: concept
-tags: [template, content, more, examples]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "template-content-more-examples esempi aggiuntivi di contenuto per template email"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./attachments.md"
-  - "./email-best-practices-1.md"
-  - "./email-best-practices.md"
-  - "./email-layouts-best-practices-1.md"
-  - "./email-layouts-best-practices.md"
-  - "./email-templates-best-practices-1.md"
-  - "./email-templates-best-practices.md"
-  - "./email-templates-guide-1.md"
----
-
 # Esempi Aggiuntivi di Contenuto per Template Email
 
 Questo documento contiene esempi aggiuntivi di contenuto HTML per template email da memorizzare nel database, seguendo l'architettura corretta di `spatie/laravel-database-mail-templates`.

@@ -32,6 +32,6 @@ class MapBlock
                     ->required(),
             ])
             ->label('Map')
-            ->columns($context === 'form' ? 2 : 1);
+            ->columns('form' === $context ? 2 : 1);
     }
 }

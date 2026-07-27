@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\AI\Actions\Prompt;
 
 use InvalidArgumentException;
-use Modules\AI\Datas\AIPromptTemplates;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 

@@ -48,7 +48,6 @@ class NotifyThemeForm extends XotBaseResourceForm
             'body' => Textarea::make('body')->columnSpanFull(),
             'body_html' => RichEditor::make('body_html')->columnSpanFull(),
         ];
-
     }
 
     /**
@@ -73,6 +72,5 @@ class NotifyThemeForm extends XotBaseResourceForm
             ],
             default => [],
         };
-
     }
 }

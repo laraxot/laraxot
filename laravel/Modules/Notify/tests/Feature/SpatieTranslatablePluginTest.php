@@ -16,6 +16,8 @@ use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
 
+use function Pest\Laravel\actingAs;
+
 uses(\Modules\Notify\Tests\TestCase::class);
 
 beforeEach(function (): void {
@@ -24,7 +26,7 @@ beforeEach(function (): void {
     Assert::assertInstanceOf(Authenticatable::class, $user);
     $user->assignRole('notify::admin');
 
-    $this->actingAs($user);
+    actingAs($user);
 
     Filament::setCurrentPanel(
         Filament::getPanel('notify::admin')

@@ -1,23 +1,3 @@
----
-title: "InlineDatePicker Component"
-type: concept
-tags: [inline, date, picker]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "inline-date-picker inlinedatepicker component"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./04-datas.md"
-  - "./advanced-form-components-1.md"
-  - "./advanced-form-components.md"
-  - "./agent-confidence-discipline.md"
-  - "./agent-confidence-protocol.md"
-  - "./agent-edit-discipline.md"
----
-
 # InlineDatePicker Component
 
 A customizable inline date picker component for Filament forms with month navigation and enabled/disabled date support.
@@ -59,7 +39,7 @@ InlineDatePicker::make('appointment_date')
 Specify which dates should be selectable. Other dates will be disabled.
 
 ```php
-->enabledDates(['[DATE]', '[DATE]', '[DATE]'])
+->enabledDates(['2023-06-15', '2023-06-20', '2023-06-25'])
 
 // Or using a closure
 ->enabledDates(fn () => \App\Models\Appointment::pluck('date')->toArray())
@@ -202,8 +182,8 @@ When writing tests for forms that use the InlineDatePicker, you can interact wit
 ```php
 // Select a date
 Livewire::test(YourForm::class)
-    ->set('appointment_date', '[DATE]')
-    ->assertSet('appointment_date', '[DATE]');
+    ->set('appointment_date', '2023-06-15')
+    ->assertSet('appointment_date', '2023-06-15');
 
 // Test validation
 Livewire::test(YourForm::class)
@@ -276,7 +256,7 @@ InlineDatePicker::make('appointment_date')
 Specify which dates should be selectable. Other dates will be disabled.
 
 ```php
-->enabledDates(['[DATE]', '[DATE]', '[DATE]'])
+->enabledDates(['2023-06-15', '2023-06-20', '2023-06-25'])
 
 // Or using a closure
 ->enabledDates(fn () => \App\Models\Appointment::pluck('date')->toArray())
@@ -419,8 +399,8 @@ When writing tests for forms that use the InlineDatePicker, you can interact wit
 ```php
 // Select a date
 Livewire::test(YourForm::class)
-    ->set('appointment_date', '[DATE]')
-    ->assertSet('appointment_date', '[DATE]');
+    ->set('appointment_date', '2023-06-15')
+    ->assertSet('appointment_date', '2023-06-15');
 
 // Test validation
 Livewire::test(YourForm::class)

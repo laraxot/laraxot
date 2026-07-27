@@ -1,23 +1,3 @@
----
-title: "Refactoring RecordNotification Constructor - Slug Pattern"
-type: concept
-tags: [record, notification, constructor, slug]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "record-notification-constructor-slug refactoring recordnotification constructor - slug pattern"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./channel-enum-implementation-complete.md"
-  - "./channel-enum-implementation-update.md"
-  - "./channel-enum-refactoring.md"
-  - "./extract-method-pattern.md"
-  - "./final-verification-report-channel-enum.md"
-  - "./quality-assurance-report.md"
-  - "./record-notification-zen-constructor.md"
-  - "./record-notification-zen-delegation.md"
----
-
 # Refactoring RecordNotification Constructor - Slug Pattern
 
 **Stato**: ✅ Implementato  
@@ -257,7 +237,7 @@ $notification = new RecordNotification($record, 'welcome');
 
 ## 🔗 Riferimenti
 
-- [RECORD_NOTIFICATION_ZEN_CONSTRUCTOR.md](./record-notification-zen-constructor.md) - Filosofia Zen per costruttore
+- [RECORD_NOTIFICATION_ZEN_CONSTRUCTOR.md](./record_notification_zen_constructor.md) - Filosofia Zen per costruttore
 - [RecordNotification Zen Delegation](./record-notification-zen-delegation.md) - **✅ Pattern attuale**: Delega completa a SpatieEmail
 - [record-notification.md](../notifications/record-notification.md) - Documentazione completa RecordNotification
 - [send-record-notification-action.md](../actions/send-record-notification-action.md) - Documentazione SendRecordNotificationAction

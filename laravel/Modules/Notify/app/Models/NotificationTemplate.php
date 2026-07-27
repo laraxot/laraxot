@@ -41,8 +41,11 @@ use Spatie\Translatable\HasTranslations;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Carbon|null $deleted_at
+ *
  * @property-read string $channels_label
+ *
  * @property NotificationTypeEnum $type
+ *
  * @property-read ProfileContract|null $creator
  * @property-read int|null $logs_count
  * @property-read MediaCollection<int, Media> $media
@@ -64,6 +67,7 @@ use Spatie\Translatable\HasTranslations;
  * @method static Builder<static>|NotificationTemplate whereLocales(string $column, array<int, string> $locales)
  *
  * @property-read ProfileContract|null $deleter
+ *
  * @property string|null $updated_by
  * @property string|null $created_by
  * @property string|null $deleted_by
@@ -92,8 +96,6 @@ use Spatie\Translatable\HasTranslations;
  * @method static Builder<static>|NotificationTemplate whereUpdatedBy($value)
  * @method static Builder<static>|NotificationTemplate whereVariables($value)
  * @method static Builder<static>|NotificationTemplate whereVersion($value)
- *
- * @property-read array<int, string> $translatable_columns_from
  *
  * @mixin \Eloquent
  */
@@ -178,6 +180,7 @@ class NotificationTemplate extends BaseModel implements HasMedia
      * Compile the template with the given data.
      *
      * @param  array<string, mixed>  $data  The data to compile the template with
+     *
      * @return array{subject: string, body_html: string|null, body_text: string|null}
      */
     public function compile(array $data = []): array
@@ -218,6 +221,7 @@ class NotificationTemplate extends BaseModel implements HasMedia
      * Preview the template with the given data.
      *
      * @param  array<string, mixed>  $data  Additional data to merge with preview data
+     *
      * @return array{subject: string, body_html: string|null, body_text: string|null}
      */
     public function preview(array $data = []): array
@@ -235,6 +239,7 @@ class NotificationTemplate extends BaseModel implements HasMedia
      */
     /**
      * @param  Builder<static>  $query
+     *
      * @return Builder<static>
      */
     public function scopeActive(Builder $query): Builder
@@ -247,6 +252,7 @@ class NotificationTemplate extends BaseModel implements HasMedia
      */
     /**
      * @param  Builder<static>  $query
+     *
      * @return Builder<static>
      */
     public function scopeForChannel(Builder $query, string $channel): Builder
@@ -259,6 +265,7 @@ class NotificationTemplate extends BaseModel implements HasMedia
      */
     /**
      * @param  Builder<static>  $query
+     *
      * @return Builder<static>
      */
     public function scopeForCategory(Builder $query, string $category): Builder
