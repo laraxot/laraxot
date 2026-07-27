@@ -7,11 +7,19 @@ namespace Modules\PublicProcurement\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Intervention\Models\Intervention;
+use Modules\PublicProcurement\Database\Factories\PublicProcurementMeasurementFactory;
 use Modules\User\Models\User;
+use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
+/**
+ * @method static PublicProcurementMeasurementFactory factory($count = null, $state = [])
+ */
 final class PublicProcurementMeasurement extends XotBaseModel
 {
+    /** @phpstan-use HasXotFactory<PublicProcurementMeasurementFactory> */
+    use HasXotFactory;
+
     use SoftDeletes;
 
     protected $table = 'public_procurement_measurements';

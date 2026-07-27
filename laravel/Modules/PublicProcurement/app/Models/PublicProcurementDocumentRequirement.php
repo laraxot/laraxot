@@ -7,10 +7,18 @@ namespace Modules\PublicProcurement\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Compliance\Models\ComplianceDocument;
+use Modules\PublicProcurement\Database\Factories\PublicProcurementDocumentRequirementFactory;
+use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
+/**
+ * @method static PublicProcurementDocumentRequirementFactory factory($count = null, $state = [])
+ */
 final class PublicProcurementDocumentRequirement extends XotBaseModel
 {
+    /** @phpstan-use HasXotFactory<PublicProcurementDocumentRequirementFactory> */
+    use HasXotFactory;
+
     use SoftDeletes;
 
     protected $table = 'public_procurement_document_requirements';

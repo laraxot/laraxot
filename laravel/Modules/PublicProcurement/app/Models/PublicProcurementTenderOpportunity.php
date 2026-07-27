@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Customer;
+use Modules\PublicProcurement\Database\Factories\PublicProcurementTenderOpportunityFactory;
+use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
 /**
@@ -35,9 +37,14 @@ use Modules\Xot\Models\XotBaseModel;
  * @property string|null $raw_excerpt
  * @property string|null $notes
  * @property Carbon|null $deleted_at
+ *
+ * @method static PublicProcurementTenderOpportunityFactory factory($count = null, $state = [])
  */
 final class PublicProcurementTenderOpportunity extends XotBaseModel
 {
+    /** @phpstan-use HasXotFactory<PublicProcurementTenderOpportunityFactory> */
+    use HasXotFactory;
+
     use SoftDeletes;
 
     protected $table = 'public_procurement_tender_opportunities';

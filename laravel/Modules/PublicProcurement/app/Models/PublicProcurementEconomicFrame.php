@@ -5,10 +5,18 @@ declare(strict_types=1);
 namespace Modules\PublicProcurement\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\PublicProcurement\Database\Factories\PublicProcurementEconomicFrameFactory;
+use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
+/**
+ * @method static PublicProcurementEconomicFrameFactory factory($count = null, $state = [])
+ */
 final class PublicProcurementEconomicFrame extends XotBaseModel
 {
+    /** @phpstan-use HasXotFactory<PublicProcurementEconomicFrameFactory> */
+    use HasXotFactory;
+
     protected $table = 'public_procurement_economic_frames';
 
     /** @var array<int, string> */

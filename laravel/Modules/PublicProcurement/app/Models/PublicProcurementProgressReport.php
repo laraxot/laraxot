@@ -7,10 +7,18 @@ namespace Modules\PublicProcurement\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\PublicProcurement\Database\Factories\PublicProcurementProgressReportFactory;
+use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
+/**
+ * @method static PublicProcurementProgressReportFactory factory($count = null, $state = [])
+ */
 final class PublicProcurementProgressReport extends XotBaseModel
 {
+    /** @phpstan-use HasXotFactory<PublicProcurementProgressReportFactory> */
+    use HasXotFactory;
+
     use SoftDeletes;
 
     protected $table = 'public_procurement_progress_reports';
