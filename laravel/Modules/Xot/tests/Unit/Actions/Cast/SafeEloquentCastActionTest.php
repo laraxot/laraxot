@@ -44,8 +44,8 @@ it('casts generic typed getter and validation helpers', function (): void {
     Assert::assertSame('Mario', $action->getTypedAttribute($model, 'name', 'string'));
     Assert::assertSame(42, $action->getTypedAttribute($model, 'age', 'int'));
 
-    $ok = $action->getValidatedAttribute($model, 'age', 'int', fn (int $v): bool => $v === 42, 0);
-    $ko = $action->getValidatedAttribute($model, 'age', 'int', fn (int $v): bool => $v === 0, 0);
+    $ok = $action->getValidatedAttribute($model, 'age', 'int', fn (int $v): bool => 42 === $v, 0);
+    $ko = $action->getValidatedAttribute($model, 'age', 'int', fn (int $v): bool => 0 === $v, 0);
 
     Assert::assertSame(42, $ok);
     Assert::assertSame(0, $ko);
@@ -55,7 +55,7 @@ it('checks condition and fallback helpers', function (): void {
     [$action, $model] = safeEloquentCastFixture();
     $model->setAttribute('nickname', 'SuperMario');
 
-    Assert::assertTrue($action->hasAttributeCondition($model, 'age', fn (mixed $v): bool => SafeStringCastAction::cast($v) === '42'));
+    Assert::assertTrue($action->hasAttributeCondition($model, 'age', fn (mixed $v): bool => '42' === SafeStringCastAction::cast($v)));
     Assert::assertSame('Mario', $action->getAttributeWithFallback($model, 'name', 'missing', 'string'));
     Assert::assertSame('SuperMario', $action->getAttributeWithFallback($model, 'missing', 'nickname', 'string'));
 });

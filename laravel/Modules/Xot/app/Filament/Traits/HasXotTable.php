@@ -137,7 +137,7 @@ trait HasXotTable
 
                 $gridColumn->formatStateUsing(
                     static function (mixed $state) use ($labelText): string {
-                        if ($state === null || $state === '') {
+                        if (null === $state || '' === $state) {
                             return $labelText.': —';
                         }
 
@@ -224,12 +224,12 @@ trait HasXotTable
         // Configurazioni opzionali personalizzabili
         $sortColumn = $this->getDefaultTableSortColumn();
         $sortDirection = $this->getDefaultTableSortDirection();
-        if ($sortColumn !== null && $sortDirection !== null) {
+        if (null !== $sortColumn && null !== $sortDirection) {
             $table = $table->defaultSort($sortColumn, $sortDirection);
         }
 
         $pollInterval = $this->getTablePollInterval();
-        if ($pollInterval !== null) {
+        if (null !== $pollInterval) {
             $table = $table->poll($pollInterval);
         }
 
@@ -346,10 +346,9 @@ trait HasXotTable
     /**
      * Get model class.
      *
+     * @throws \Exception Se non viene trovata una classe modello valida
      *
      * @return class-string<Model>
-     *
-     * @throws \Exception Se non viene trovata una classe modello valida
      */
     public function getModelClass(): string
     {
@@ -385,7 +384,7 @@ trait HasXotTable
 
         $trimmed = Str::trim(SafeStringCastAction::cast($tableSearch));
 
-        return $trimmed !== '' ? $trimmed : null;
+        return '' !== $trimmed ? $trimmed : null;
     }
 
     /**

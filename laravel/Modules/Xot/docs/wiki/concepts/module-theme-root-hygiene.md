@@ -69,11 +69,25 @@ Fix: `bash bashscripts/tools/fix-module-theme-root-hygiene.sh` (completo) · `fi
 
 Fix: `bash bashscripts/tools/ensure-module-theme-ide-gitignore.sh`
 
+## 4. `tests/AuditCoverage/` — vietata ovunque
+
+Artefatto scratch di `claude-audit-module-static-boost.sh` (namespace
+`Modules\{Modulo}\AuditCoverage\Tests`) — non deve mai esistere come cartella fisica
+committata. Se PHPUnit/Pest la trova dentro `tests/`, la scansiona come se contenesse
+test veri (rumore, falsi positivi, tempi inutili). Ogni `.gitignore` di modulo/tema deve
+contenere `tests/AuditCoverage/`.
+
+Fix: `bash bashscripts/tools/ensure-audit-coverage-gitignore.sh` (rimuove la cartella se
+presente + aggiorna `.gitignore`)
+
+Dettagli: `docs/wiki/rules/tests-auditcoverage-forbidden.md` (root second-brain)
+
 ## Audit
 
 ```bash
 bash bashscripts/tools/audit-module-theme-root-hygiene.sh
 bash bashscripts/tools/audit-module-root-hygiene.sh
+bash bashscripts/tools/audit-no-audit-coverage-dir.sh
 bash bashscripts/tools/fix-module-theme-root-hygiene.sh   # bonifica automatica
 ```
 

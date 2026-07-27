@@ -126,8 +126,8 @@ describe('Module Business Logic', function (): void {
 
         Assert::assertTrue((bool) $enabledModule->enabled);
         Assert::assertFalse((bool) $disabledModule->enabled);
-        Assert::assertTrue($enabledModule->enabled === true);
-        Assert::assertTrue($disabledModule->enabled === false);
+        Assert::assertTrue(true === $enabledModule->enabled);
+        Assert::assertTrue(false === $disabledModule->enabled);
     });
 
     test('can manage module metadata', function (): void {

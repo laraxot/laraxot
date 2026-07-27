@@ -32,6 +32,7 @@ La cartella `tests/AuditCoverage/` **non deve esistere** nel tree di nessun modu
 ```bash
 bash bashscripts/tools/ensure-audit-coverage-gitignore.sh   # fix
 bash bashscripts/tools/audit-no-audit-coverage-dir.sh       # verifica
+bash bashscripts/tools/audit-module-theme-root-hygiene.sh   # include AuditCoverage
 ```
 
 ## Blocco `.gitignore` standard

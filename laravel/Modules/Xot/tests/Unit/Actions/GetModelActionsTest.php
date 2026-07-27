@@ -79,7 +79,8 @@ it('throws when model id is provided but record is missing', function (): void {
 });
 
 it('returns snake model type from model contract instance', function (): void {
-    $model = new class() extends Model implements ModelContract {};
+    $model = new class extends Model implements ModelContract {
+    };
 
     $result = app(GetModelTypeByModelAction::class)->execute($model);
 

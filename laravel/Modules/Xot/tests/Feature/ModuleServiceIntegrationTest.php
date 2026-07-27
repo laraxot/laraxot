@@ -11,7 +11,8 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 describe('ModuleAction Integration', function () {
-    beforeEach(function () {});
+    beforeEach(function () {
+    });
 
     it('integrates with Nwidart Modules system', function () {
         Assert::assertTrue(class_exists('Nwidart\Modules\Facades\Module'));
@@ -201,7 +202,7 @@ describe('ModuleAction Integration', function () {
     it('handles concurrent access correctly', function () {
         // Test multiple simultaneous calls
         $results = [];
-        for ($i = 0; $i < 3; $i++) {
+        for ($i = 0; $i < 3; ++$i) {
             $service = new ModuleAction('Xot');
             $results[] = $service->getModels();
         }

@@ -43,6 +43,14 @@ Ammessi **solo** questi nomi in root:
 
 Tutto il resto → `docs/raw/root-import/` o `docs/wiki/`. Duplicati `changelog.md` / `CHANGELOG.MD` → un solo `CHANGELOG.md`.
 
+### Cartella `tests/AuditCoverage/` — vietata
+
+- **VIETATO** in ogni modulo/tema (scaffold AI, mai committare)
+- Se presente: `rm -rf tests/AuditCoverage`
+- `.gitignore` deve contenere `tests/AuditCoverage/`
+- Canon: [tests-audit-coverage-forbidden](../concepts/tests-audit-coverage-forbidden.md)
+- Fix: `bash bashscripts/tools/ensure-audit-coverage-gitignore.sh`
+
 ### Cartelle maiuscole
 
 - **VIETATO** nella root (`Config/`, `Helpers/`, …)

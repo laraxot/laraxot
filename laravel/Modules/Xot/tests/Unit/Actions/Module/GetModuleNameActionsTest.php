@@ -28,8 +28,7 @@ it('returns extracted fragment for non-module class signatures', function (): vo
 });
 
 it('delegates model instance class to model class action', function (): void {
-    $model = new class() extends Model
-    {
+    $model = new class extends Model {
         protected $table = 'test';
     };
     $delegate = Mockery::mock(GetModuleNameByModelClassAction::class);

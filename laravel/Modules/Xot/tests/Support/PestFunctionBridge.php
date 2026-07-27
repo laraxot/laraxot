@@ -27,39 +27,53 @@ namespace Modules\AI\Tests\Support {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\AI\Tests\Unit\Actions {
@@ -75,39 +89,53 @@ namespace Modules\AI\Tests\Unit\Actions {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\AI\Tests\Unit\Models {
@@ -123,39 +151,53 @@ namespace Modules\AI\Tests\Unit\Models {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\AI\Tests\Unit\Services {
@@ -171,39 +213,53 @@ namespace Modules\AI\Tests\Unit\Services {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\AI\Tests\Unit\Support {
@@ -219,39 +275,53 @@ namespace Modules\AI\Tests\Unit\Support {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Activity\Tests\Feature {
@@ -267,39 +337,53 @@ namespace Modules\Activity\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Activity\Tests\Fixtures {
@@ -315,39 +399,53 @@ namespace Modules\Activity\Tests\Fixtures {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Activity\Tests\Security {
@@ -363,39 +461,53 @@ namespace Modules\Activity\Tests\Security {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Activity\Tests\Unit {
@@ -411,39 +523,53 @@ namespace Modules\Activity\Tests\Unit {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Activity\Tests\Unit\Actions {
@@ -459,39 +585,53 @@ namespace Modules\Activity\Tests\Unit\Actions {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Activity\Tests\Unit\Events {
@@ -507,39 +647,53 @@ namespace Modules\Activity\Tests\Unit\Events {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Activity\Tests\Unit\Listeners {
@@ -555,39 +709,53 @@ namespace Modules\Activity\Tests\Unit\Listeners {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Activity\Tests\Unit\Models {
@@ -603,39 +771,53 @@ namespace Modules\Activity\Tests\Unit\Models {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Activity\Tests\Unit\Providers {
@@ -651,39 +833,53 @@ namespace Modules\Activity\Tests\Unit\Providers {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Activity\Tests\Unit\Traits {
@@ -699,39 +895,53 @@ namespace Modules\Activity\Tests\Unit\Traits {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\AiAssistant\Tests\Feature {
@@ -747,39 +957,53 @@ namespace Modules\AiAssistant\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\AiAssistant\Tests\Unit {
@@ -795,39 +1019,53 @@ namespace Modules\AiAssistant\Tests\Unit {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Catalog\Tests\Feature {
@@ -843,39 +1081,53 @@ namespace Modules\Catalog\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Cms\Tests {
@@ -890,39 +1142,53 @@ namespace Modules\Cms\Tests {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Cms\Tests\Feature {
@@ -938,39 +1204,53 @@ namespace Modules\Cms\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Cms\Tests\Feature\Auth {
@@ -986,39 +1266,53 @@ namespace Modules\Cms\Tests\Feature\Auth {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Cms\Tests\Feature\Frontoffice {
@@ -1034,39 +1328,53 @@ namespace Modules\Cms\Tests\Feature\Frontoffice {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Cms\Tests\Feature\Frontoffice\FolioRoutes {
@@ -1082,39 +1390,53 @@ namespace Modules\Cms\Tests\Feature\Frontoffice\FolioRoutes {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Cms\Tests\Unit\Actions {
@@ -1130,39 +1452,53 @@ namespace Modules\Cms\Tests\Unit\Actions {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Cms\Tests\Unit\Http\Volt {
@@ -1178,39 +1514,53 @@ namespace Modules\Cms\Tests\Unit\Http\Volt {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Cms\Tests\Unit\Models {
@@ -1226,39 +1576,53 @@ namespace Modules\Cms\Tests\Unit\Models {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Cms\Tests\Unit\Support {
@@ -1274,39 +1638,53 @@ namespace Modules\Cms\Tests\Unit\Support {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Compliance\Tests\Unit {
@@ -1322,39 +1700,53 @@ namespace Modules\Compliance\Tests\Unit {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Customer\Tests\Feature {
@@ -1370,39 +1762,53 @@ namespace Modules\Customer\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Document\Tests\Feature {
@@ -1418,39 +1824,53 @@ namespace Modules\Document\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Email\Tests\Feature {
@@ -1466,39 +1886,53 @@ namespace Modules\Email\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Employee\Tests\Feature {
@@ -1514,39 +1948,53 @@ namespace Modules\Employee\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Employee\Tests\Feature\Widgets {
@@ -1562,39 +2010,53 @@ namespace Modules\Employee\Tests\Feature\Widgets {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Employee\Tests\Unit {
@@ -1610,39 +2072,53 @@ namespace Modules\Employee\Tests\Unit {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Employee\Tests\Unit\Models {
@@ -1658,39 +2134,53 @@ namespace Modules\Employee\Tests\Unit\Models {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\EnergyBroker\Tests\Unit {
@@ -1706,39 +2196,53 @@ namespace Modules\EnergyBroker\Tests\Unit {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Gdpr\Tests\Feature {
@@ -1754,39 +2258,53 @@ namespace Modules\Gdpr\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Gdpr\Tests\Feature\Auth {
@@ -1802,39 +2320,53 @@ namespace Modules\Gdpr\Tests\Feature\Auth {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Gdpr\Tests\Fixtures {
@@ -1850,39 +2382,53 @@ namespace Modules\Gdpr\Tests\Fixtures {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Gdpr\Tests\Unit\Actions {
@@ -1898,39 +2444,53 @@ namespace Modules\Gdpr\Tests\Unit\Actions {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Gdpr\Tests\Unit\Filament\Resources {
@@ -1946,39 +2506,53 @@ namespace Modules\Gdpr\Tests\Unit\Filament\Resources {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Gdpr\Tests\Unit\Models {
@@ -1994,39 +2568,53 @@ namespace Modules\Gdpr\Tests\Unit\Models {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Gdpr\Tests\Unit\Providers {
@@ -2042,39 +2630,53 @@ namespace Modules\Gdpr\Tests\Unit\Providers {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Gdpr\Tests\Unit\Traits {
@@ -2090,39 +2692,53 @@ namespace Modules\Gdpr\Tests\Unit\Traits {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests {
@@ -2137,39 +2753,53 @@ namespace Modules\Geo\Tests {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Feature {
@@ -2185,39 +2815,53 @@ namespace Modules\Geo\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Feature\Filament\Forms\Components {
@@ -2233,39 +2877,53 @@ namespace Modules\Geo\Tests\Feature\Filament\Forms\Components {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Fixtures {
@@ -2281,39 +2939,53 @@ namespace Modules\Geo\Tests\Fixtures {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Fixtures\Traits {
@@ -2329,39 +3001,53 @@ namespace Modules\Geo\Tests\Fixtures\Traits {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Support {
@@ -2377,39 +3063,53 @@ namespace Modules\Geo\Tests\Support {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit {
@@ -2425,39 +3125,53 @@ namespace Modules\Geo\Tests\Unit {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Actions {
@@ -2473,39 +3187,53 @@ namespace Modules\Geo\Tests\Unit\Actions {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Actions\Bing {
@@ -2521,39 +3249,53 @@ namespace Modules\Geo\Tests\Unit\Actions\Bing {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Actions\Elevation {
@@ -2569,39 +3311,53 @@ namespace Modules\Geo\Tests\Unit\Actions\Elevation {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Actions\GeoData {
@@ -2617,39 +3373,53 @@ namespace Modules\Geo\Tests\Unit\Actions\GeoData {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Actions\GoogleMaps {
@@ -2665,39 +3435,53 @@ namespace Modules\Geo\Tests\Unit\Actions\GoogleMaps {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Actions\Here {
@@ -2713,39 +3497,53 @@ namespace Modules\Geo\Tests\Unit\Actions\Here {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Actions\IPGeolocation {
@@ -2761,39 +3559,53 @@ namespace Modules\Geo\Tests\Unit\Actions\IPGeolocation {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Actions\LocationIQ {
@@ -2809,39 +3621,53 @@ namespace Modules\Geo\Tests\Unit\Actions\LocationIQ {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Actions\Mapbox {
@@ -2857,39 +3683,53 @@ namespace Modules\Geo\Tests\Unit\Actions\Mapbox {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Actions\Nominatim {
@@ -2905,39 +3745,53 @@ namespace Modules\Geo\Tests\Unit\Actions\Nominatim {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Adapters {
@@ -2953,39 +3807,53 @@ namespace Modules\Geo\Tests\Unit\Adapters {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\DataTransferObjects {
@@ -3001,39 +3869,53 @@ namespace Modules\Geo\Tests\Unit\DataTransferObjects {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Datas {
@@ -3049,39 +3931,53 @@ namespace Modules\Geo\Tests\Unit\Datas {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Enums {
@@ -3097,39 +3993,53 @@ namespace Modules\Geo\Tests\Unit\Enums {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Filament {
@@ -3145,39 +4055,53 @@ namespace Modules\Geo\Tests\Unit\Filament {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Filament\Forms {
@@ -3193,39 +4117,53 @@ namespace Modules\Geo\Tests\Unit\Filament\Forms {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Filament\Forms\Components {
@@ -3241,39 +4179,53 @@ namespace Modules\Geo\Tests\Unit\Filament\Forms\Components {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Filament\Widgets {
@@ -3289,39 +4241,53 @@ namespace Modules\Geo\Tests\Unit\Filament\Widgets {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Models {
@@ -3337,39 +4303,53 @@ namespace Modules\Geo\Tests\Unit\Models {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Models\Policies {
@@ -3385,39 +4365,53 @@ namespace Modules\Geo\Tests\Unit\Models\Policies {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Traits {
@@ -3433,39 +4427,53 @@ namespace Modules\Geo\Tests\Unit\Traits {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Geo\Tests\Unit\Transformers {
@@ -3481,39 +4489,53 @@ namespace Modules\Geo\Tests\Unit\Transformers {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\HR\Tests\Feature {
@@ -3529,39 +4551,53 @@ namespace Modules\HR\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Job\Tests\Feature {
@@ -3577,39 +4613,53 @@ namespace Modules\Job\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Job\Tests\Unit\Actions {
@@ -3625,39 +4675,53 @@ namespace Modules\Job\Tests\Unit\Actions {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Job\Tests\Unit\Actions\Command {
@@ -3673,39 +4737,53 @@ namespace Modules\Job\Tests\Unit\Actions\Command {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Job\Tests\Unit\Actions\Schedule {
@@ -3721,39 +4799,53 @@ namespace Modules\Job\Tests\Unit\Actions\Schedule {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Job\Tests\Unit\Enums {
@@ -3769,39 +4861,53 @@ namespace Modules\Job\Tests\Unit\Enums {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Job\Tests\Unit\Events {
@@ -3817,39 +4923,53 @@ namespace Modules\Job\Tests\Unit\Events {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Job\Tests\Unit\Models {
@@ -3865,39 +4985,53 @@ namespace Modules\Job\Tests\Unit\Models {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Job\Tests\Unit\Providers {
@@ -3913,39 +5047,53 @@ namespace Modules\Job\Tests\Unit\Providers {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Job\Tests\Unit\Services {
@@ -3961,39 +5109,53 @@ namespace Modules\Job\Tests\Unit\Services {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Job\Tests\Unit\Traits {
@@ -4009,39 +5171,53 @@ namespace Modules\Job\Tests\Unit\Traits {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Lang\Tests\Unit\Actions {
@@ -4057,39 +5233,53 @@ namespace Modules\Lang\Tests\Unit\Actions {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Lang\Tests\Unit\Models {
@@ -4105,39 +5295,53 @@ namespace Modules\Lang\Tests\Unit\Models {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Lang\Tests\Unit\Services {
@@ -4153,39 +5357,53 @@ namespace Modules\Lang\Tests\Unit\Services {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Media\Tests\Feature {
@@ -4201,39 +5419,53 @@ namespace Modules\Media\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Media\Tests\Filament\Resources {
@@ -4249,39 +5481,53 @@ namespace Modules\Media\Tests\Filament\Resources {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Media\Tests\Support {
@@ -4297,39 +5543,53 @@ namespace Modules\Media\Tests\Support {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Media\Tests\Unit\Actions {
@@ -4345,39 +5605,53 @@ namespace Modules\Media\Tests\Unit\Actions {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Media\Tests\Unit\Models {
@@ -4393,39 +5667,53 @@ namespace Modules\Media\Tests\Unit\Models {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Feature {
@@ -4441,39 +5729,53 @@ namespace Modules\Notify\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Fixtures {
@@ -4489,39 +5791,53 @@ namespace Modules\Notify\Tests\Fixtures {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit {
@@ -4537,39 +5853,53 @@ namespace Modules\Notify\Tests\Unit {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Actions {
@@ -4585,39 +5915,53 @@ namespace Modules\Notify\Tests\Unit\Actions {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Actions\Mail {
@@ -4633,39 +5977,53 @@ namespace Modules\Notify\Tests\Unit\Actions\Mail {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Actions\NotifyTheme {
@@ -4681,39 +6039,53 @@ namespace Modules\Notify\Tests\Unit\Actions\NotifyTheme {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Actions\NotifyTheme\Attachment {
@@ -4729,39 +6101,53 @@ namespace Modules\Notify\Tests\Unit\Actions\NotifyTheme\Attachment {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Actions\SMS {
@@ -4777,39 +6163,53 @@ namespace Modules\Notify\Tests\Unit\Actions\SMS {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Actions\Telegram {
@@ -4825,39 +6225,53 @@ namespace Modules\Notify\Tests\Unit\Actions\Telegram {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Actions\WhatsApp {
@@ -4873,39 +6287,53 @@ namespace Modules\Notify\Tests\Unit\Actions\WhatsApp {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Channels {
@@ -4921,39 +6349,53 @@ namespace Modules\Notify\Tests\Unit\Channels {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Console {
@@ -4969,39 +6411,53 @@ namespace Modules\Notify\Tests\Unit\Console {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Console\Commands {
@@ -5017,39 +6473,53 @@ namespace Modules\Notify\Tests\Unit\Console\Commands {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Datas {
@@ -5065,39 +6535,53 @@ namespace Modules\Notify\Tests\Unit\Datas {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Datas\SMS {
@@ -5113,39 +6597,53 @@ namespace Modules\Notify\Tests\Unit\Datas\SMS {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Emails {
@@ -5161,39 +6659,53 @@ namespace Modules\Notify\Tests\Unit\Emails {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Enums {
@@ -5209,39 +6721,53 @@ namespace Modules\Notify\Tests\Unit\Enums {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Factories {
@@ -5257,39 +6783,53 @@ namespace Modules\Notify\Tests\Unit\Factories {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Filament\Actions {
@@ -5305,39 +6845,53 @@ namespace Modules\Notify\Tests\Unit\Filament\Actions {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Filament\Forms\Components {
@@ -5353,39 +6907,53 @@ namespace Modules\Notify\Tests\Unit\Filament\Forms\Components {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Filament\Pages {
@@ -5401,39 +6969,53 @@ namespace Modules\Notify\Tests\Unit\Filament\Pages {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Filament\Resources {
@@ -5449,39 +7031,53 @@ namespace Modules\Notify\Tests\Unit\Filament\Resources {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Models {
@@ -5497,39 +7093,53 @@ namespace Modules\Notify\Tests\Unit\Models {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Models\Policies {
@@ -5545,39 +7155,53 @@ namespace Modules\Notify\Tests\Unit\Models\Policies {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Models\Traits {
@@ -5593,39 +7217,53 @@ namespace Modules\Notify\Tests\Unit\Models\Traits {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Notifications {
@@ -5641,39 +7279,53 @@ namespace Modules\Notify\Tests\Unit\Notifications {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Notifications\Channels {
@@ -5689,39 +7341,53 @@ namespace Modules\Notify\Tests\Unit\Notifications\Channels {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Providers {
@@ -5737,39 +7403,53 @@ namespace Modules\Notify\Tests\Unit\Providers {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Services {
@@ -5785,39 +7465,53 @@ namespace Modules\Notify\Tests\Unit\Services {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Notify\Tests\Unit\Traits {
@@ -5833,39 +7527,53 @@ namespace Modules\Notify\Tests\Unit\Traits {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\PublicProcurement\Tests\Unit {
@@ -5881,39 +7589,53 @@ namespace Modules\PublicProcurement\Tests\Unit {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Rating\Tests\Feature {
@@ -5929,39 +7651,53 @@ namespace Modules\Rating\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Rating\Tests\Unit {
@@ -5977,39 +7713,53 @@ namespace Modules\Rating\Tests\Unit {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Seo\Tests\Feature {
@@ -6025,39 +7775,53 @@ namespace Modules\Seo\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Seo\Tests\Unit\Actions {
@@ -6073,39 +7837,53 @@ namespace Modules\Seo\Tests\Unit\Actions {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Seo\Tests\Unit\Data {
@@ -6121,39 +7899,53 @@ namespace Modules\Seo\Tests\Unit\Data {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Seo\Tests\Unit\Facades {
@@ -6169,39 +7961,53 @@ namespace Modules\Seo\Tests\Unit\Facades {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Seo\Tests\Unit\Filament\Widgets {
@@ -6217,39 +8023,53 @@ namespace Modules\Seo\Tests\Unit\Filament\Widgets {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Seo\Tests\Unit\Providers {
@@ -6265,39 +8085,53 @@ namespace Modules\Seo\Tests\Unit\Providers {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Seo\Tests\Unit\Services {
@@ -6313,39 +8147,53 @@ namespace Modules\Seo\Tests\Unit\Services {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Tenant\Tests {
@@ -6360,39 +8208,53 @@ namespace Modules\Tenant\Tests {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Tenant\Tests\Feature {
@@ -6408,39 +8270,53 @@ namespace Modules\Tenant\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Tenant\Tests\Integration {
@@ -6456,39 +8332,53 @@ namespace Modules\Tenant\Tests\Integration {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Tenant\Tests\Integration\Traits {
@@ -6504,39 +8394,53 @@ namespace Modules\Tenant\Tests\Integration\Traits {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Tenant\Tests\Performance {
@@ -6552,39 +8456,53 @@ namespace Modules\Tenant\Tests\Performance {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Tenant\Tests\Unit {
@@ -6600,39 +8518,53 @@ namespace Modules\Tenant\Tests\Unit {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Tenant\Tests\Unit\Actions {
@@ -6648,39 +8580,53 @@ namespace Modules\Tenant\Tests\Unit\Actions {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Tenant\Tests\Unit\Actions\Config {
@@ -6696,39 +8642,53 @@ namespace Modules\Tenant\Tests\Unit\Actions\Config {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Tenant\Tests\Unit\Actions\Domains {
@@ -6744,39 +8704,53 @@ namespace Modules\Tenant\Tests\Unit\Actions\Domains {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Tenant\Tests\Unit\Actions\Markdown {
@@ -6792,39 +8766,53 @@ namespace Modules\Tenant\Tests\Unit\Actions\Markdown {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Tenant\Tests\Unit\Actions\Models {
@@ -6840,39 +8828,53 @@ namespace Modules\Tenant\Tests\Unit\Actions\Models {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Tenant\Tests\Unit\Models {
@@ -6888,39 +8890,53 @@ namespace Modules\Tenant\Tests\Unit\Models {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Tenant\Tests\Unit\Traits {
@@ -6936,39 +8952,53 @@ namespace Modules\Tenant\Tests\Unit\Traits {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\TimberBilling\Tests\Unit {
@@ -6984,39 +9014,53 @@ namespace Modules\TimberBilling\Tests\Unit {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\UI\Tests\Feature {
@@ -7032,39 +9076,53 @@ namespace Modules\UI\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\UI\Tests\Feature\Filament\Widgets {
@@ -7080,39 +9138,53 @@ namespace Modules\UI\Tests\Feature\Filament\Widgets {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\UI\Tests\Support {
@@ -7128,39 +9200,53 @@ namespace Modules\UI\Tests\Support {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\UI\Tests\Unit {
@@ -7176,39 +9262,53 @@ namespace Modules\UI\Tests\Unit {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\UI\Tests\Unit\Components {
@@ -7224,39 +9324,53 @@ namespace Modules\UI\Tests\Unit\Components {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\UI\Tests\Unit\Datas {
@@ -7272,39 +9386,53 @@ namespace Modules\UI\Tests\Unit\Datas {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\UI\Tests\Unit\Enums {
@@ -7320,39 +9448,53 @@ namespace Modules\UI\Tests\Unit\Enums {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\UI\Tests\Unit\Filament\Widgets {
@@ -7368,39 +9510,53 @@ namespace Modules\UI\Tests\Unit\Filament\Widgets {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\UI\Tests\Unit\Models {
@@ -7416,39 +9572,53 @@ namespace Modules\UI\Tests\Unit\Models {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\UI\Tests\Unit\Traits {
@@ -7464,39 +9634,53 @@ namespace Modules\UI\Tests\Unit\Traits {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\UI\Tests\Unit\Widgets {
@@ -7512,39 +9696,53 @@ namespace Modules\UI\Tests\Unit\Widgets {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\UI\Tests\Unit\Widgets\Fixtures {
@@ -7560,39 +9758,53 @@ namespace Modules\UI\Tests\Unit\Widgets\Fixtures {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Fakes {
@@ -7608,39 +9820,53 @@ namespace Modules\User\Tests\Fakes {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Feature {
@@ -7656,39 +9882,53 @@ namespace Modules\User\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Feature\Actions {
@@ -7704,39 +9944,53 @@ namespace Modules\User\Tests\Feature\Actions {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Feature\Actions\Socialite {
@@ -7752,39 +10006,53 @@ namespace Modules\User\Tests\Feature\Actions\Socialite {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Feature\Authentication {
@@ -7800,39 +10068,53 @@ namespace Modules\User\Tests\Feature\Authentication {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Feature\Database\Migrations {
@@ -7848,39 +10130,53 @@ namespace Modules\User\Tests\Feature\Database\Migrations {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Feature\Filament {
@@ -7896,39 +10192,53 @@ namespace Modules\User\Tests\Feature\Filament {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Feature\Filament\Actions {
@@ -7944,39 +10254,53 @@ namespace Modules\User\Tests\Feature\Filament\Actions {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Feature\Filament\Clusters {
@@ -7992,39 +10316,53 @@ namespace Modules\User\Tests\Feature\Filament\Clusters {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Feature\Filament\Pages {
@@ -8040,39 +10378,53 @@ namespace Modules\User\Tests\Feature\Filament\Pages {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Feature\Filament\Resources {
@@ -8088,39 +10440,53 @@ namespace Modules\User\Tests\Feature\Filament\Resources {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Feature\Filament\Widgets {
@@ -8136,39 +10502,53 @@ namespace Modules\User\Tests\Feature\Filament\Widgets {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Feature\Filament\Widgets\Auth {
@@ -8184,39 +10564,53 @@ namespace Modules\User\Tests\Feature\Filament\Widgets\Auth {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Feature\Models {
@@ -8232,39 +10626,53 @@ namespace Modules\User\Tests\Feature\Models {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Feature\Passport {
@@ -8280,39 +10688,53 @@ namespace Modules\User\Tests\Feature\Passport {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Support {
@@ -8328,39 +10750,53 @@ namespace Modules\User\Tests\Support {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Traits {
@@ -8376,39 +10812,53 @@ namespace Modules\User\Tests\Traits {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Unit {
@@ -8424,39 +10874,53 @@ namespace Modules\User\Tests\Unit {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Unit\Actions\Socialite\Fixtures {
@@ -8472,39 +10936,53 @@ namespace Modules\User\Tests\Unit\Actions\Socialite\Fixtures {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Unit\Actions\Socialite\Utils {
@@ -8520,39 +10998,53 @@ namespace Modules\User\Tests\Unit\Actions\Socialite\Utils {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Unit\Datas {
@@ -8568,39 +11060,53 @@ namespace Modules\User\Tests\Unit\Datas {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Unit\Events {
@@ -8616,39 +11122,53 @@ namespace Modules\User\Tests\Unit\Events {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Unit\Models {
@@ -8664,39 +11184,53 @@ namespace Modules\User\Tests\Unit\Models {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Unit\Models\Fixtures {
@@ -8712,39 +11246,53 @@ namespace Modules\User\Tests\Unit\Models\Fixtures {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Unit\Models\Traits {
@@ -8760,39 +11308,53 @@ namespace Modules\User\Tests\Unit\Models\Traits {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Unit\Models\Traits\Fixtures {
@@ -8808,39 +11370,53 @@ namespace Modules\User\Tests\Unit\Models\Traits\Fixtures {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Unit\QuickWins\Fixtures {
@@ -8856,39 +11432,53 @@ namespace Modules\User\Tests\Unit\QuickWins\Fixtures {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Unit\Traits {
@@ -8904,39 +11494,53 @@ namespace Modules\User\Tests\Unit\Traits {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\User\Tests\Unit\Traits\Fixtures {
@@ -8952,39 +11556,53 @@ namespace Modules\User\Tests\Unit\Traits\Fixtures {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Vehicle\Tests\Feature {
@@ -9000,39 +11618,53 @@ namespace Modules\Vehicle\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\WhatsApp\Tests\Feature {
@@ -9048,39 +11680,53 @@ namespace Modules\WhatsApp\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\WorkOrder\Tests\Feature {
@@ -9096,39 +11742,53 @@ namespace Modules\WorkOrder\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests {
@@ -9143,39 +11803,53 @@ namespace Modules\Xot\Tests {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Feature {
@@ -9191,39 +11865,53 @@ namespace Modules\Xot\Tests\Feature {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Feature\Actions\Pdf {
@@ -9239,39 +11927,53 @@ namespace Modules\Xot\Tests\Feature\Actions\Pdf {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Feature\Filament {
@@ -9287,39 +11989,53 @@ namespace Modules\Xot\Tests\Feature\Filament {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Feature\Filament\MockResourceWithRelations\RelationManagers {
@@ -9335,39 +12051,53 @@ namespace Modules\Xot\Tests\Feature\Filament\MockResourceWithRelations\RelationM
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Fixtures {
@@ -9383,39 +12113,53 @@ namespace Modules\Xot\Tests\Fixtures {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Fixtures\Enums {
@@ -9431,39 +12175,53 @@ namespace Modules\Xot\Tests\Fixtures\Enums {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Fixtures\Filament\Resources {
@@ -9479,39 +12237,53 @@ namespace Modules\Xot\Tests\Fixtures\Filament\Resources {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Fixtures\Filament\Resources\ProbeResource\Pages {
@@ -9527,39 +12299,53 @@ namespace Modules\Xot\Tests\Fixtures\Filament\Resources\ProbeResource\Pages {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Fixtures\Filament\Resources\ProbeResource\RelationManagers {
@@ -9575,39 +12361,53 @@ namespace Modules\Xot\Tests\Fixtures\Filament\Resources\ProbeResource\RelationMa
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Fixtures\Models {
@@ -9623,39 +12423,53 @@ namespace Modules\Xot\Tests\Fixtures\Models {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Fixtures\Traits {
@@ -9671,39 +12485,53 @@ namespace Modules\Xot\Tests\Fixtures\Traits {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Support {
@@ -9718,39 +12546,53 @@ namespace Modules\Xot\Tests\Support {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Unit {
@@ -9766,39 +12608,53 @@ namespace Modules\Xot\Tests\Unit {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Unit\Actions\Arr {
@@ -9814,39 +12670,53 @@ namespace Modules\Xot\Tests\Unit\Actions\Arr {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Unit\Actions\Array {
@@ -9862,39 +12732,53 @@ namespace Modules\Xot\Tests\Unit\Actions\Array {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Unit\Actions\Blade {
@@ -9910,39 +12794,53 @@ namespace Modules\Xot\Tests\Unit\Actions\Blade {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Unit\Actions\Cast {
@@ -9958,39 +12856,53 @@ namespace Modules\Xot\Tests\Unit\Actions\Cast {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Unit\Actions\Config {
@@ -10006,39 +12918,53 @@ namespace Modules\Xot\Tests\Unit\Actions\Config {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Unit\Actions\File {
@@ -10054,39 +12980,53 @@ namespace Modules\Xot\Tests\Unit\Actions\File {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Unit\Actions\Model {
@@ -10102,39 +13042,53 @@ namespace Modules\Xot\Tests\Unit\Actions\Model {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Unit\Datas {
@@ -10150,39 +13104,53 @@ namespace Modules\Xot\Tests\Unit\Datas {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Unit\Filament {
@@ -10198,39 +13166,53 @@ namespace Modules\Xot\Tests\Unit\Filament {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Unit\Helpers {
@@ -10246,39 +13228,53 @@ namespace Modules\Xot\Tests\Unit\Helpers {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Unit\Support {
@@ -10294,39 +13290,53 @@ namespace Modules\Xot\Tests\Unit\Support {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace Modules\Xot\Tests\Unit\Traits {
@@ -10342,39 +13352,53 @@ namespace Modules\Xot\Tests\Unit\Traits {
     /**
      * @param-closure-this TestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this TestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }
 
 namespace {
@@ -10390,37 +13414,51 @@ namespace {
     /**
      * @param-closure-this XotBaseTestCase $closure
      */
-    function test(string $description, ?Closure $closure = null): void {}
+    function test(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this XotBaseTestCase $closure
      */
-    function it(string $description, ?Closure $closure = null): void {}
+    function it(string $description, ?Closure $closure = null): void
+    {
+    }
 
     /**
      * @param-closure-this XotBaseTestCase $closure
      */
-    function describe(string $description, Closure $closure): void {}
+    function describe(string $description, Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this XotBaseTestCase $closure
      */
-    function beforeEach(Closure $closure): void {}
+    function beforeEach(Closure $closure): void
+    {
+    }
 
     /**
      * @param-closure-this XotBaseTestCase $closure
      */
-    function afterEach(Closure $closure): void {}
+    function afterEach(Closure $closure): void
+    {
+    }
 
     /**
-     * @param  class-string  ...$classes
+     * @param class-string ...$classes
      */
-    function uses(string ...$classes): void {}
+    function uses(string ...$classes): void
+    {
+    }
 
     /**
      * Pest skip helper — stub per PHPStan (runtime: Pest globale).
      *
-     * @param  string|bool  ...$arguments
+     * @param string|bool ...$arguments
      */
-    function skip(mixed ...$arguments): void {}
+    function skip(mixed ...$arguments): void
+    {
+    }
 }

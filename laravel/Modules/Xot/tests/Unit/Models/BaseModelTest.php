@@ -9,8 +9,7 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
-$baseModel = new class() extends BaseModel
-{
+$baseModel = new class extends BaseModel {
     protected $table = 'test_table';
 };
 

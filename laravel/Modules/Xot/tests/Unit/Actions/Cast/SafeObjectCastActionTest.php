@@ -54,8 +54,7 @@ it('manages object properties safely', function (): void {
         return $v > 200;
     }, 0));
     // Methods
-    $complexObj = new class()
-    {
+    $complexObj = new class {
         public function test(mixed $p): mixed
         {
             return $p;

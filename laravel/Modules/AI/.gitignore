@@ -73,15 +73,12 @@ agentdb.rvf
 !tests/
 !tests/**
 
-tests/AuditCoverage/*
-
-# claude-audit bridge (non committare)
+# Laraxot — claude-audit bridge + tests/AuditCoverage forbidden (never commit)
 audit-coverage/
-tests/AuditCoverage/*
+tests/AuditCoverage/
 
 # Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
 .cursor/
 .devcontainer/
 .vscode/
 .windsurf/
-tests/AuditCoverage/
