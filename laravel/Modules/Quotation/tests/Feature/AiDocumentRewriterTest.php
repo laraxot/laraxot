@@ -2,11 +2,17 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Quotation\Tests\TestCase::class);
-
 use Modules\Quotation\Import\AiDocumentRewriter;
 use Modules\Quotation\Import\QuotationDocumentRewriterInterface;
 use Modules\Quotation\Import\QuotationDocumentTextExtractor;
+use Modules\Quotation\Tests\TestCase;
+
+use function Safe\file_get_contents;
+use function Safe\file_put_contents;
+use function Safe\tempnam;
+use function Safe\unlink;
+
+uses(TestCase::class);
 
 /** A rewriter that returns a fixed string (or null) regardless of input. */
 function fakeRewriter(?string $return): QuotationDocumentRewriterInterface
@@ -26,7 +32,7 @@ function fakeRewriter(?string $return): QuotationDocumentRewriterInterface
 function odsWith(string $contentXml): string
 {
     $path = (string) tempnam(sys_get_temp_dir(), 'rw_').'.ods';
-    $zip = new ZipArchive;
+    $zip = new ZipArchive();
     $zip->open($path, ZipArchive::CREATE | ZipArchive::OVERWRITE);
     $zip->addFromString('content.xml', $contentXml);
     $zip->close();
@@ -64,7 +70,8 @@ it('sends only the <office:body> to the AI (not the bulky styles) and splices it
     {
         public function __construct(public string &$seen) {}
 
-        public function rewrite(string $content, string $partName, array $quotation): ?string
+        /** @param array<string, mixed> $quotation */
+        public function rewrite(string $content, string $partName, array $quotation): string
         {
             $this->seen = $content;
 
@@ -103,9 +110,10 @@ it('blanks orphan quantities on deleted rows but keeps the kept line quantity', 
     $dest = (string) tempnam(sys_get_temp_dir(), 'rwout_').'.ods';
 
     // The AI just makes a trivial change so the pipeline proceeds to the cleanup.
-    $rewriter = new class implements QuotationDocumentRewriterInterface
+    $rewriter = new class() implements QuotationDocumentRewriterInterface
     {
-        public function rewrite(string $content, string $partName, array $quotation): ?string
+        /** @param array<string, mixed> $quotation */
+        public function rewrite(string $content, string $partName, array $quotation): string
         {
             return str_replace('Scaldabagno', 'Scaldabagno elettrico', $content);
         }
@@ -113,7 +121,7 @@ it('blanks orphan quantities on deleted rows but keeps the kept line quantity', 
 
     (new AiDocumentRewriter($rewriter))->rewrite($source, 'ods', [], $dest);
 
-    $zip = new ZipArchive;
+    $zip = new ZipArchive();
     $zip->open($dest);
     $out = (string) $zip->getFromName('content.xml');
     $zip->close();
