@@ -108,7 +108,8 @@
             "pestphp/pest-plugin": true,
             "php-http/discovery": true,
             "wikimedia/composer-merge-plugin": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "codewithkyrian/transformers-libsloader": true
         }
     },
     "minimum-stability": "dev",

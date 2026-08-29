@@ -14,6 +14,13 @@ parameters:
 
     ignoreErrors:
         - '#Cannot cast mixed to (string|float|double|int|bool|boolean).#'
+        # PHPStan >=2.2 bleedingEdge marca @internal le Expectation di Pest: chiamarle nei test
+        # è l'uso previsto del framework. Falso positivo da upgrade toolchain (2026-08-29),
+        # scoping ristretto a identifier+tests. Vedi docs/gestionale-commesse-comparison/delta-second-tranche.md
+        -
+            identifier: method.internalClass
+            path: ./Modules/*/tests/*
+            reportUnmatched: false
 
     excludePaths:
         - ./*/vendor/*
