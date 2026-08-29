@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Modules\Platform\Observers;
 
 use Illuminate\Database\Eloquent\Model;
-use Modules\Platform\Services\AuditLogger;
 use Modules\Platform\Models\PlatformSetting;
+use Modules\Platform\Services\AuditLogger;
 
 final class AuditObserver
 {
@@ -101,4 +101,3 @@ final class AuditObserver
         return $payload;
     }
 }
-

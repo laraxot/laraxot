@@ -62,3 +62,24 @@ Includendo `tests/` nello scope emergono ~62-83 errori `method.internalClass` (`
 - Riverificare `PHPStan L10` includendo `tests/` una volta risolta l'incompatibilità Pest/Larastan globale (non bloccante per questo modulo).
 - Valutare, modulo per modulo, quali dei 18 test SRC non migrati siano adattabili con giudizio (in particolare i seeder-test, se le tabelle referenziate esistono con nomi equivalenti).
 - `EventServiceProvider → XotBaseEventServiceProvider` resta aperto (invariato da prima di questa sessione).
+
+## Delta seconda tranche 2026-08-29 — NavigationGate portato ✅
+
+Portato dal sorgente (delta `15f07e80..HEAD`): sistema di navigazione runtime.
+- `app/Models/NavigationPreference` (XotBaseModel, fillable, casts()) + migration XotBase
+  `navigation_preferences` (uuid updated_by_user_id, niente FK cross-connection)
+- `app/Support/Navigation/{NavigationGate,NavigationClassifier,NavigationCatalog}`
+- `app/Filament/Concerns/{GatesResourceNavigation,GatesPageNavigation}` +
+  `app/Filament/Resources/GatedXotBaseResource` (equivalente Laraxot del GatedResource sorgente,
+  necessario perché due trait con gli stessi metodi statici collidono)
+- `NavigationSettingsPage` (XotBasePage) + view `platform::filament.pages.navigation-settings`
+  + chiavi lang it/en `platform.navigation_settings.*`
+- PlatformSettingResource e AuditLogResource → GatedXotBaseResource
+- Test: NavigationGateTest (7) + NavigationSettingsPageTest (4) portati e adattati
+  (panel catalog::admin, permission Shield ViewAny:Product, UserFactory)
+
+Non portati (differiti): seeders demo BoutiqueIdraulica/IdroclimaRecaldini/Tomasi — dipendono
+da classi Compliance (CalculateFGasObligationAction, ThermalPlantRegistry) del delta Compliance;
+verranno portati insieme a quello. I diff M restanti del sorgente erano solo stile Pint.
+
+Suite Platform+Catalog: 49 passed, PHPStan = 0.

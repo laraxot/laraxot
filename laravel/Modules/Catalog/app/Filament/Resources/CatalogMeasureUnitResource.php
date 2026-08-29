@@ -16,9 +16,9 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Catalog\Filament\Resources\CatalogMeasureUnitResource\Pages;
 use Modules\Catalog\Models\CatalogMeasureUnit;
-use Modules\Xot\Filament\Resources\XotBaseResource;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 
-final class CatalogMeasureUnitResource extends XotBaseResource
+final class CatalogMeasureUnitResource extends GatedXotBaseResource
 {
     use HasAccountFeatureVisibility;
 

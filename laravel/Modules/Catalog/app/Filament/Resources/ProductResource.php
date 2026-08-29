@@ -21,9 +21,9 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Catalog\Filament\Resources\ProductResource\Pages;
 use Modules\Catalog\Models\Product;
-use Modules\Xot\Filament\Resources\XotBaseResource;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 
-final class ProductResource extends XotBaseResource
+final class ProductResource extends GatedXotBaseResource
 {
     use HasAccountFeatureVisibility;
 

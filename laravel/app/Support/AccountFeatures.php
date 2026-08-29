@@ -306,6 +306,14 @@ final class AccountFeatures
             return self::hasFeature($user, 'supplier.'.($adminFeature ?? $operatorFeature ?? 'access'), true);
         }
 
+        // Panel Laraxot per-modulo ({modulo}::admin, normalizzato alla chiave corta):
+        // sono superfici amministrative, si applica la semantica del ramo 'admin'.
+        if ($panelId !== null && $panelId !== '') {
+            return $adminFeature !== null
+                ? self::hasFeature($user, $adminFeature, $adminDefault)
+                : $adminDefault;
+        }
+
         return match (true) {
             request()->is('admin') || request()->is('admin/*') => $adminFeature !== null
                 ? self::hasFeature($user, $adminFeature, $adminDefault)

@@ -86,12 +86,14 @@ final class AuditLogger
 
             if ($shouldRedact) {
                 $result[(string) $key] = '[REDACTED]';
+
                 continue;
             }
 
             if (is_array($value)) {
                 /** @var array<string, mixed> $value */
                 $result[(string) $key] = $this->sanitizePayload($value);
+
                 continue;
             }
 
@@ -101,4 +103,3 @@ final class AuditLogger
         return $result;
     }
 }
-

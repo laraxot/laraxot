@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Platform\ValueObjects;
 
+use Modules\Platform\Company\CompanyProfileProvider;
+
 /**
  * Anagrafica dell'azienda che possiede l'istanza (emittente/cedente su preventivi e fatture).
  *
  * Non esisteva un concetto centralizzato: questo VO lo rappresenta e viene risolto da
- * {@see \Modules\Platform\Company\CompanyProfileProvider} leggendo le impostazioni,
+ * {@see CompanyProfileProvider} leggendo le impostazioni,
  * con fallback ai valori di default dell'installazione.
  */
 final readonly class CompanyProfile

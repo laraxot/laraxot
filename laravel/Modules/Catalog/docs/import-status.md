@@ -28,3 +28,10 @@ related:
 - [x] **PHPStan L10** — 0 errori reali (2026-07-24)
 - [x] `modules_statuses=true`
 - [x] Pest Feature SRC migrati — **11 passed** (2026-07-24): vedi [tests-migration.md](./tests-migration.md)
+
+## Delta seconda tranche 2026-08-29 ✅
+
+Unico delta sorgente (`15f07e80..HEAD`): adozione GatedResource sulle 6 Resource.
+In questa base: `extends GatedXotBaseResource` (Modules\Platform) — navigation gate runtime
+attivo su Product/MetelCatalog/CatalogPartType/CatalogModel/CatalogMeasureUnit/CatalogFrequency.
+Verificato dal test Platform `blocks direct access to a resource once its item is disabled`.

@@ -16,9 +16,9 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Catalog\Filament\Resources\CatalogFrequencyResource\Pages;
 use Modules\Catalog\Models\CatalogFrequency;
-use Modules\Xot\Filament\Resources\XotBaseResource;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 
-final class CatalogFrequencyResource extends XotBaseResource
+final class CatalogFrequencyResource extends GatedXotBaseResource
 {
     use HasAccountFeatureVisibility;
 
