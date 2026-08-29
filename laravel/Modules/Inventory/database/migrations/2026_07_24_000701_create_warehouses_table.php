@@ -71,7 +71,7 @@ return new class() extends XotBaseMigration
         $foreignKeys = $connection->getSchemaBuilder()->getForeignKeys('warehouses');
 
         foreach ($foreignKeys as $foreignKey) {
-            $columns = is_array($foreignKey['columns'] ?? null) ? $foreignKey['columns'] : [];
+            $columns = $foreignKey['columns'];
             if (in_array('vehicle_id', $columns, true)) {
                 return true;
             }

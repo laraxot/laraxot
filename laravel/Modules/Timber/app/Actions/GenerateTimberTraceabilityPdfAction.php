@@ -18,7 +18,7 @@ final readonly class GenerateTimberTraceabilityPdfAction
         $result = $this->traceabilityQuery->execute($search);
 
         /** @var view-string $view */
-        $view = 'timber.pdf.traceability';
+        $view = 'timber::pdf.traceability';
 
         return Pdf::loadView($view, [
             'purchaseRecord' => $result['purchaseRecord'],

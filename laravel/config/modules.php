@@ -170,7 +170,7 @@ return [
     ],
 
     'modules' => [
-        'TechPlanner',
+        'WorkOrder',
         // 'TechPlanner', // Temporarily disabled
     ],
 

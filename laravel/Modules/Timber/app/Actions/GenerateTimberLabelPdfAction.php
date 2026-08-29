@@ -19,7 +19,7 @@ final readonly class GenerateTimberLabelPdfAction
         $payload = $this->payloadAction->execute($labelable);
 
         /** @var view-string $view */
-        $view = 'timber.pdf.label';
+        $view = 'timber::pdf.label';
 
         return Pdf::loadView($view, [
             'labelable' => $labelable,

@@ -32,7 +32,7 @@ final class TimberInventoryPage extends Page
 
     protected static ?int $navigationSort = 9;
 
-    protected string $view = 'filament.timber.pages.inventory';
+    protected string $view = 'timber::filament.pages.inventory';
 
     public string $woodSpecies = '';
 

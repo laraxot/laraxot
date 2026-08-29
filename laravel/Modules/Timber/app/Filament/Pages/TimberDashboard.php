@@ -27,7 +27,7 @@ final class TimberDashboard extends Dashboard
 
     protected static ?int $navigationSort = 0;
 
-    protected string $view = 'filament.timber.pages.dashboard';
+    protected string $view = 'timber::filament.pages.dashboard';
 
     /**
      * @var array<string, string>

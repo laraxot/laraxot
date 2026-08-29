@@ -30,7 +30,7 @@ final class TimberPackagingPage extends Page
 
     protected static ?int $navigationSort = 43;
 
-    protected string $view = 'filament.timber.pages.packaging';
+    protected string $view = 'timber::filament.pages.packaging';
 
     public ?int $materialId = null;
 

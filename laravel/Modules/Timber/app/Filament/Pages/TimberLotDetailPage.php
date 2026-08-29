@@ -34,7 +34,7 @@ final class TimberLotDetailPage extends Page
 
     protected static ?int $navigationSort = 2;
 
-    protected string $view = 'filament.timber.pages.lot-detail';
+    protected string $view = 'timber::filament.pages.lot-detail';
 
     public ?int $lotId = null;
 

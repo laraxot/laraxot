@@ -8,4 +8,3 @@ declare(strict_types=1);
  * Ogni file test dichiara uses(\Modules\Xot\Tests\TestCase::class).
  */
 
-require_once __DIR__.'/PestStubs.php';

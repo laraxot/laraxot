@@ -74,11 +74,8 @@
         "orchestra/testbench": "*",
         "pestphp/pest": "*",
         "pestphp/pest-plugin-type-coverage": "*",
-        "thecodingmachine/phpstan-safe-rule": "*"
-    },
-    "require-dev_comment": {
-        "pestphp/pest-plugin-laravel": "*",
-        "spatie/laravel-error-solutions": "*"
+        "thecodingmachine/phpstan-safe-rule": "*",
+        "pestphp/pest-plugin-laravel": "*"
     },
     "repositories_comment": "Local path packages (coolsam/panel-modules) moved to root composer.json for proper priority. DO NOT add Packagist here - it must remain non-canonical in root.",
     "repositories": [
@@ -138,5 +135,8 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "require-dev_comment": {
+        "spatie/laravel-error-solutions": "*"
+    }
 }

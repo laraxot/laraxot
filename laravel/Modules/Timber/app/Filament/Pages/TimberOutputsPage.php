@@ -28,7 +28,7 @@ final class TimberOutputsPage extends Page
 
     protected static ?int $navigationSort = 6;
 
-    protected string $view = 'filament.timber.pages.outputs';
+    protected string $view = 'timber::filament.pages.outputs';
 
     public string $statusFilter = '';
 

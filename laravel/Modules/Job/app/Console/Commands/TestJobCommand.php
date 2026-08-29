@@ -29,7 +29,6 @@ class TestJobCommand extends Command
     public function handle(): int
     {
         $this->info('Hello the test worked.');
-        Log::debug('Hello the test worked.');
 
         return 0;
     }

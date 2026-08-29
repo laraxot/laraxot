@@ -30,7 +30,7 @@ final class TimberTraceabilityRegisterPage extends Page
 
     protected static ?int $navigationSort = 85;
 
-    protected string $view = 'filament.timber.pages.traceability-register';
+    protected string $view = 'timber::filament.pages.traceability-register';
 
     public static function canAccess(): bool
     {

@@ -254,6 +254,19 @@ abstract class XotBaseTestCase extends BaseTestCase
 
         $database = database_path('fixcity_data.sqlite');
 
+        // La connessione opzionale 'user' (driver mysql) senza database configurato
+        // (DB_DATABASE_USER vuoto) ripiega su sqlite condiviso: stesso fallback di
+        // XotBaseMigration::resolveConnectionName(), altrimenti ogni insert su users
+        // fallisce con "No database selected" sulle macchine senza il DB dedicato.
+        if ('' === (string) config('database.connections.user.database')) {
+            $this->app['config']->set('database.connections.user', [
+                'driver' => 'sqlite',
+                'database' => $database,
+                'prefix' => '',
+                'foreign_key_constraints' => true,
+            ]);
+        }
+
         /** @var array<string, array<string, mixed>> $connections */
         $connections = config('database.connections', []);
 

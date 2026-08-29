@@ -26,7 +26,7 @@ final class TimberDocumentationPage extends Page
 
     protected static ?int $navigationSort = 10;
 
-    protected string $view = 'filament.timber.pages.documentation';
+    protected string $view = 'timber::filament.pages.documentation';
 
     public string $document = 'README.md';
 

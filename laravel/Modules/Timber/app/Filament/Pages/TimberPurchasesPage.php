@@ -36,7 +36,7 @@ final class TimberPurchasesPage extends Page
 
     protected static ?int $navigationSort = 1;
 
-    protected string $view = 'filament.timber.pages.purchases';
+    protected string $view = 'timber::filament.pages.purchases';
 
     public ?int $supplierId = null;
 

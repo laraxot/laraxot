@@ -32,7 +32,7 @@ final class TimberDryingPage extends Page
 
     protected static ?int $navigationSort = 5;
 
-    protected string $view = 'filament.timber.pages.drying';
+    protected string $view = 'timber::filament.pages.drying';
 
     public string $sourceType = 'lot';
 

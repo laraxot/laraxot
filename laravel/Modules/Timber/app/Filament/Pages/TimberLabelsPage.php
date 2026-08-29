@@ -32,7 +32,7 @@ final class TimberLabelsPage extends Page
 
     protected static ?int $navigationSort = 7;
 
-    protected string $view = 'filament.timber.pages.labels';
+    protected string $view = 'timber::filament.pages.labels';
 
     public static function canAccess(): bool
     {

@@ -25,7 +25,7 @@ final class TimberSplittingPage extends Page
 
     protected static ?int $navigationSort = 41;
 
-    protected string $view = 'filament.timber.pages.processing';
+    protected string $view = 'timber::filament.pages.processing';
 
     public bool $allowStepTypeSelection = false;
 

@@ -32,7 +32,7 @@ final class TimberYardPage extends Page
 
     protected static ?int $navigationSort = 3;
 
-    protected string $view = 'filament.timber.pages.yard';
+    protected string $view = 'timber::filament.pages.yard';
 
     public string $areaFilter = '';
 

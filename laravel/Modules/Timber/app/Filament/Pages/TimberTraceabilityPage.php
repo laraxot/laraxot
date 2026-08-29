@@ -25,7 +25,7 @@ final class TimberTraceabilityPage extends Page
 
     protected static ?int $navigationSort = 8;
 
-    protected string $view = 'filament.timber.pages.traceability';
+    protected string $view = 'timber::filament.pages.traceability';
 
     public string $search = '';
 

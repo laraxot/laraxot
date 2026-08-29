@@ -16,7 +16,7 @@ final class GenerateTimberCustomerLabelPdfAction
     public function execute(TimberCustomer $customer): string
     {
         /** @var view-string $view */
-        $view = 'timber.pdf.customer-label';
+        $view = 'timber::pdf.customer-label';
 
         $dompdf = new Dompdf(new Options());
         $dompdf->loadHtml(view($view, ['customer' => $customer])->render());

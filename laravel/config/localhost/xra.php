@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'adm_theme' => 'AdminLTE', // non serve piu
     'enable_ads' => '1',
-    'main_module' => 'TechPlanner',
+    'main_module' => 'WorkOrder',
     'primary_lang' => 'it',
     'pub_theme' => 'Zero',
     'pub_theme' => 'Sixteen',
