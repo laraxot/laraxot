@@ -217,3 +217,21 @@ allineato al dominio (screaming architecture). Non spezzato: i 4 modelli invoice
 la fatturazione generica resta nel modulo `Billing`. Rinominati: cartella, namespace `Modules\Timber`,
 `TimberServiceProvider`, alias `timber`, config `config('timber.*')`, testsuite phpunit, `modules_statuses.json`.
 Tabelle DB invariate (`timber_*`). Vedi `docs/gestionale-commesse-comparison/delta-second-tranche.md`.
+
+## Stato suite test 2026-08-29 (sessione seconda tranche)
+
+Suite eseguibile per la prima volta in questa base: **129 passed / 40 failed** (da 1/169).
+
+Sbloccato in questa sessione: fixture sqlite migrata (188 tabelle), connessione `user`
+fallback sqlite, main_module WorkOrder, pest-plugin-laravel reale, view pdf/pages portate,
+binding EasyfattGateway.
+
+Failure residue (prossima sessione):
+1. **62 pagine Filament estendono classi Filament direttamente** (CreateRecord/EditRecord/
+   ListRecords/ViewRecord/Page) — reshape XotBase* mai fatto su questo modulo. Da qui derivano
+   i 15 `getDefaultTestingSchemaName() on null` (fillForm) e parte dei 9 `403`.
+2. 9×403: permessi/policy da seedare o policy XotBase da collegare ai ruoli timber_admin/operator
+3. 2×TimberPriceList ModelNotFound + asserzioni di dominio (essiccazione 18.0 vs 0.0, giacenze)
+4. TimberEasyfattTest (3): gateway configurato ma risposta mock da rivedere
+
+Comando run locale: `APP_ENV=testing DB_CONNECTION=sqlite DB_DATABASE_USER= ./vendor/bin/pest Modules/Timber/tests`

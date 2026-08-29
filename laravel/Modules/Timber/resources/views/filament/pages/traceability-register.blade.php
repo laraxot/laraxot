@@ -1,5 +1,5 @@
 <x-filament-panels::page>
-    @php($split = [\App\Filament\Timber\Pages\TimberTraceabilityRegisterPage::class, 'splitDate'])
+    @php($split = [\Modules\Timber\Filament\Pages\TimberTraceabilityRegisterPage::class, 'splitDate'])
 
     <div class="flex justify-end">
         <x-filament::button wire:click="exportCsv" icon="heroicon-o-arrow-down-tray">

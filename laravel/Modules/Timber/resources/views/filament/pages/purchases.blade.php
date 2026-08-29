@@ -99,7 +99,7 @@
             <h3 class="text-base font-semibold text-slate-950 dark:text-slate-100">Ultimi acquisti</h3>
             <div class="mt-4 space-y-3">
                 @forelse ($purchaseRecords as $record)
-                    <a href="{{ \App\Filament\Timber\Pages\TimberLotDetailPage::getUrl(panel: 'timber', parameters: ['lot' => $record->lot?->id]) }}"
+                    <a href="{{ \Modules\Timber\Filament\Pages\TimberLotDetailPage::getUrl(panel: 'timber', parameters: ['lot' => $record->lot?->id]) }}"
                         class="block rounded-xl bg-slate-50 p-4 transition hover:bg-amber-50 dark:bg-slate-800">
                         <p class="text-sm font-semibold text-slate-950 dark:text-slate-100">{{ $record->lot?->lot_code ?? 'N/D' }} - {{ $record->wood_species_name }}</p>
                         <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">{{ $record->supplier?->legal_name }} - DDT {{ $record->ddt_number }}</p>

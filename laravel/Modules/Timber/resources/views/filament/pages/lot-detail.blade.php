@@ -4,7 +4,7 @@
             <h3 class="text-base font-semibold text-slate-950 dark:text-slate-100">Lotti</h3>
             <div class="mt-4 space-y-2">
                 @foreach ($lots as $lot)
-                    <a href="{{ \App\Filament\Timber\Pages\TimberLotDetailPage::getUrl(panel: 'timber', parameters: ['lot' => $lot->id]) }}"
+                    <a href="{{ \Modules\Timber\Filament\Pages\TimberLotDetailPage::getUrl(panel: 'timber', parameters: ['lot' => $lot->id]) }}"
                         class="block rounded-xl p-3 text-sm transition {{ $selectedLot?->id === $lot->id ? 'bg-amber-100 dark:bg-amber-500/20' : 'bg-slate-50 hover:bg-amber-50 dark:bg-slate-800' }}">
                         <p class="font-semibold text-slate-950 dark:text-slate-100">{{ $lot->lot_code }}</p>
                         <p class="text-xs text-slate-500 dark:text-slate-400">{{ $lot->wood_species_name }} - {{ $lot->status_code }} - {{ $lot->current_area_code }}</p>
@@ -44,11 +44,11 @@
                             class="inline-flex h-11 items-center justify-center rounded-xl border border-amber-300 px-5 text-sm font-semibold text-amber-800 transition hover:bg-amber-50 dark:border-amber-500/40 dark:text-amber-200 dark:hover:bg-amber-500/10">
                             Stampa etichetta lotto (QR)
                         </button>
-                        <a href="{{ \App\Filament\Timber\Pages\TimberProcessingPage::getUrl(panel: 'timber', parameters: ['lot' => $selectedLot->id]) }}"
+                        <a href="{{ \Modules\Timber\Filament\Pages\TimberProcessingPage::getUrl(panel: 'timber', parameters: ['lot' => $selectedLot->id]) }}"
                             class="inline-flex h-11 items-center justify-center rounded-xl border border-slate-300 px-5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">
                             Avvia lavorazione
                         </a>
-                        <a href="{{ \App\Filament\Timber\Pages\TimberDryingPage::getUrl(panel: 'timber') }}"
+                        <a href="{{ \Modules\Timber\Filament\Pages\TimberDryingPage::getUrl(panel: 'timber') }}"
                             class="inline-flex h-11 items-center justify-center rounded-xl border border-slate-300 px-5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">
                             Avvia essiccazione
                         </a>

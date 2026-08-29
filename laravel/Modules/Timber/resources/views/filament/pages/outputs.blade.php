@@ -36,7 +36,7 @@
                                 <td>{{ $material->current_area_code }}</td>
                                 <td class="text-right">
                                     @if (! $material->is_waste && (float) $material->quantity > 0)
-                                        <a href="{{ \App\Filament\Timber\Pages\TimberDryingPage::getUrl(panel: 'timber', parameters: ['material' => $material->id]) }}"
+                                        <a href="{{ \Modules\Timber\Filament\Pages\TimberDryingPage::getUrl(panel: 'timber', parameters: ['material' => $material->id]) }}"
                                             class="inline-flex items-center gap-1 rounded-lg bg-amber-700 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-amber-600">
                                             Essiccazione
                                         </a>
