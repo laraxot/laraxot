@@ -12,7 +12,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
-use Filament\Resources\Resource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Filament\Tables;
@@ -24,7 +24,7 @@ use Modules\Timber\Actions\SendTimberPaymentRemindersAction;
 use Modules\Timber\Filament\Resources\TimberPaymentInstallmentResource\Pages;
 use Modules\Timber\Models\TimberPaymentInstallment;
 
-final class TimberPaymentInstallmentResource extends Resource
+final class TimberPaymentInstallmentResource extends XotBaseResource
 {
     protected static ?string $model = TimberPaymentInstallment::class;
 
@@ -73,9 +73,10 @@ final class TimberPaymentInstallmentResource extends Resource
         return 'Scadenzario / Pagamenti';
     }
 
-    public static function form(Schema $schema): Schema
+    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columns(2)
                 ->components([
@@ -115,7 +116,7 @@ final class TimberPaymentInstallmentResource extends Resource
                         ->rows(2)
                         ->columnSpanFull(),
                 ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

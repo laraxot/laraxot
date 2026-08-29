@@ -15,7 +15,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Resources\Resource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
@@ -28,7 +28,7 @@ use Modules\Timber\Filament\Resources\TimberAgentResource\Pages;
 use Modules\Timber\Models\TimberAgent;
 use Modules\Timber\Models\TimberProduct;
 
-final class TimberAgentResource extends Resource
+final class TimberAgentResource extends XotBaseResource
 {
     protected static ?string $model = TimberAgent::class;
 
@@ -87,9 +87,10 @@ final class TimberAgentResource extends Resource
         return 'Agenti';
     }
 
-    public static function form(Schema $schema): Schema
+    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
@@ -172,7 +173,7 @@ final class TimberAgentResource extends Resource
                         ->addActionLabel('Aggiungi regola')
                         ->defaultItems(0),
                 ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

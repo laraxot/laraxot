@@ -6,7 +6,7 @@ namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
 use Filament\Notifications\Notification;
-use Filament\Pages\Page;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
@@ -14,7 +14,7 @@ use Modules\Timber\Actions\GenerateTimberPackagedUnitsAction;
 use Modules\Timber\Filament\Pages\Concerns\NormalizesTimberConfigMaps;
 use Modules\Timber\Models\TimberDerivedMaterial;
 
-final class TimberPackagingPage extends Page
+final class TimberPackagingPage extends XotBasePage
 {
     use NormalizesTimberConfigMaps;
 

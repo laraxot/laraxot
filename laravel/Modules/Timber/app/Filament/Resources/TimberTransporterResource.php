@@ -13,7 +13,7 @@ use Filament\Actions\ViewAction;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Resources\Resource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Filament\Resources\TimberTransporterResource\Pages;
 use Modules\Timber\Models\TimberTransporter;
 
-final class TimberTransporterResource extends Resource
+final class TimberTransporterResource extends XotBaseResource
 {
     protected static ?string $model = TimberTransporter::class;
 
@@ -83,9 +83,10 @@ final class TimberTransporterResource extends Resource
         return 'Trasportatori';
     }
 
-    public static function form(Schema $schema): Schema
+    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columnSpanFull()
                 ->components([
@@ -122,7 +123,7 @@ final class TimberTransporterResource extends Resource
                         ->columnSpanFull(),
                 ])
                 ->columns(2),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

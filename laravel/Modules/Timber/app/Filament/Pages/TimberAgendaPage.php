@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Filament\Pages\Page;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Queries\GetTimberAgendaQuery;
 
-final class TimberAgendaPage extends Page
+final class TimberAgendaPage extends XotBasePage
 {
     protected static bool $isDiscovered = false;
 

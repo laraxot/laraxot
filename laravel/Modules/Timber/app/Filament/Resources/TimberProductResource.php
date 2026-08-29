@@ -15,7 +15,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Resources\Resource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
@@ -30,7 +30,7 @@ use Modules\Timber\Filament\Resources\TimberProductResource\Pages;
 use Modules\Timber\Models\TimberProduct;
 use Modules\Timber\Models\TimberSupplier;
 
-final class TimberProductResource extends Resource
+final class TimberProductResource extends XotBaseResource
 {
     protected static ?string $model = TimberProduct::class;
 
@@ -89,9 +89,10 @@ final class TimberProductResource extends Resource
         return 'Prodotti';
     }
 
-    public static function form(Schema $schema): Schema
+    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Tabs::make('product')
                 ->columnSpanFull()
                 ->tabs([
@@ -99,7 +100,7 @@ final class TimberProductResource extends Resource
                     Tab::make('Caratteristiche')->schema(self::featureFields()),
                     Tab::make('Magazzino')->schema(self::warehouseFields()),
                 ]),
-        ]);
+        ];
     }
 
     /** @return array<int, Component> */

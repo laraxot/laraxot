@@ -13,7 +13,7 @@ use Modules\Timber\Tests\TestCase;
 uses(TestCase::class);
 
 beforeEach(function (): void {
-    filament()->setCurrentPanel('timber');
+    filament()->setCurrentPanel('timber::admin');
     actingAsTimberAdmin();
 });
 

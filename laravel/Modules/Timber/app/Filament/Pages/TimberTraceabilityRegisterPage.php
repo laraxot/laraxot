@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Filament\Pages\Page;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Data\TimberTraceabilityRow;
@@ -16,7 +16,7 @@ use function Safe\fclose;
 use function Safe\fopen;
 use function Safe\fputcsv;
 
-final class TimberTraceabilityRegisterPage extends Page
+final class TimberTraceabilityRegisterPage extends XotBasePage
 {
     protected static bool $isDiscovered = false;
 

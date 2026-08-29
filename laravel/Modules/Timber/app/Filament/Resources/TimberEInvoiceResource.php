@@ -7,7 +7,7 @@ namespace Modules\Timber\Filament\Resources;
 use App\Support\AccountFeatures;
 use Filament\Actions\Action;
 use Filament\Notifications\Notification;
-use Filament\Resources\Resource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -17,7 +17,7 @@ use Modules\Timber\Filament\Resources\TimberEInvoiceResource\Pages;
 use Modules\Timber\Models\TimberEInvoice;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
-final class TimberEInvoiceResource extends Resource
+final class TimberEInvoiceResource extends XotBaseResource
 {
     protected static ?string $model = TimberEInvoice::class;
 
@@ -66,9 +66,10 @@ final class TimberEInvoiceResource extends Resource
         return 'Fatture elettroniche';
     }
 
-    public static function form(Schema $schema): Schema
+    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    public static function getFormSchema(): array
     {
-        return $schema->components([]);
+        return [];
     }
 
     public static function table(Table $table): Table

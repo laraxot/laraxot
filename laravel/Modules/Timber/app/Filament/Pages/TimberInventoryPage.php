@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Filament\Pages\Page;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Actions\GenerateTimberInventoryPdfAction;
@@ -16,7 +16,7 @@ use Modules\Timber\Models\TimberPackagedUnit;
 use Modules\Timber\Queries\GetTimberInventoryOverviewQuery;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
-final class TimberInventoryPage extends Page
+final class TimberInventoryPage extends XotBasePage
 {
     use NormalizesTimberConfigMaps;
 

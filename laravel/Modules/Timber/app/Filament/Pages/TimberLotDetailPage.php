@@ -6,7 +6,7 @@ namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
 use Filament\Notifications\Notification;
-use Filament\Pages\Page;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +18,7 @@ use Modules\Timber\Filament\Pages\Concerns\NormalizesTimberConfigMaps;
 use Modules\Timber\Models\TimberLot;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
-final class TimberLotDetailPage extends Page
+final class TimberLotDetailPage extends XotBasePage
 {
     use NormalizesTimberConfigMaps;
 

@@ -6,7 +6,7 @@ namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
 use Filament\Notifications\Notification;
-use Filament\Pages\Page;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
@@ -18,7 +18,7 @@ use Modules\Timber\Models\TimberDryingCycle;
 use Modules\Timber\Models\TimberLot;
 use Modules\Timber\Queries\GetTimberDryingOverviewQuery;
 
-final class TimberDryingPage extends Page
+final class TimberDryingPage extends XotBasePage
 {
     protected static bool $isDiscovered = false;
 

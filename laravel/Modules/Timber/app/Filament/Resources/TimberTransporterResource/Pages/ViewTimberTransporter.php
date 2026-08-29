@@ -4,10 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\Timber\Filament\Resources\TimberTransporterResource\Pages;
 
-use Filament\Resources\Pages\ViewRecord;
+use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
 use Modules\Timber\Filament\Resources\TimberTransporterResource;
 
-final class ViewTimberTransporter extends ViewRecord
+final class ViewTimberTransporter extends XotBaseViewRecord
 {
     protected static string $resource = TimberTransporterResource::class;
+
+    /** @return array<string, \Filament\Schemas\Components\Component> */
+    protected function getInfolistSchema(): array
+    {
+        return [];
+    }
 }

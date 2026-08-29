@@ -318,13 +318,15 @@ abstract class BaseUser extends Authenticatable implements FilamentUser, HasAuth
         // $panel->default('admin');
         if ('admin' !== $panel->getId()) {
             $role = $panel->getId();
-            /*
-             * $xot = XotData::make();
-             * if ($xot->super_admin === $this->email) {
-             * $role = Role::firstOrCreate(['name' => $role]);
-             * $this->assignRole($role);
-             * }
-             */
+
+            // Matrice pannelli/ruoli del gestionale (config/account_features.php):
+            // copre i ruoli di dominio (timber_admin, wts_operator, …) senza richiedere
+            // un ruolo omonimo al panel id. I panel Laraxot usano id "{modulo}::admin":
+            // alla matrice va passata la chiave modulo. hasRole(panelId) resta come fallback.
+            $panelKey = str_contains($role, '::') ? (string) strtok($role, ':') : $role;
+            if (\App\Support\AccountFeatures::canAccessPanel($this, $panelKey)) {
+                return true;
+            }
 
             return $this->hasRole($role);
         }

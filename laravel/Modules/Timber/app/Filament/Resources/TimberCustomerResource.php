@@ -17,7 +17,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Resources\Resource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
@@ -35,7 +35,7 @@ use Modules\Timber\Models\TimberAgent;
 use Modules\Timber\Models\TimberCustomer;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
-final class TimberCustomerResource extends Resource
+final class TimberCustomerResource extends XotBaseResource
 {
     protected static ?string $model = TimberCustomer::class;
 
@@ -94,9 +94,10 @@ final class TimberCustomerResource extends Resource
         return 'Clienti';
     }
 
-    public static function form(Schema $schema): Schema
+    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Tabs::make('customer')
                 ->columnSpanFull()
                 ->tabs([
@@ -107,7 +108,7 @@ final class TimberCustomerResource extends Resource
                     Tab::make('Varie')
                         ->schema(self::extraFields()),
                 ]),
-        ]);
+        ];
     }
 
     /** @return array<int, Component> */

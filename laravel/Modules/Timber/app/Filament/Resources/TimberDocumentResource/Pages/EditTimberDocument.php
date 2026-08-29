@@ -5,19 +5,19 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Resources\TimberDocumentResource\Pages;
 
 use Filament\Actions\DeleteAction;
-use Filament\Resources\Pages\EditRecord;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 use Modules\Timber\Filament\Resources\TimberDocumentResource;
 use Modules\Timber\Models\TimberDocument;
 
-final class EditTimberDocument extends EditRecord
+final class EditTimberDocument extends XotBaseEditRecord
 {
     protected static string $resource = TimberDocumentResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            TimberDocumentResource::postToStockAction(),
-            DeleteAction::make(),
+            'post_to_stock' => TimberDocumentResource::postToStockAction(),
+            'delete' => DeleteAction::make(),
         ];
     }
 

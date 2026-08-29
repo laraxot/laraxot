@@ -33,7 +33,7 @@ it('relates notes polymorphically to customers and suppliers', function (): void
 
 it('adds a note to a customer via the edit form', function (): void {
     Role::findOrCreate('timber_admin');
-    filament()->setCurrentPanel('timber');
+    filament()->setCurrentPanel('timber::admin');
     actingAsTimberAdmin();
 
     $customer = TimberCustomer::factory()->createOne();

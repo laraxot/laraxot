@@ -11,7 +11,7 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
@@ -25,7 +25,7 @@ use Modules\Timber\Filament\Resources\TimberStockMovementResource\Pages;
 use Modules\Timber\Models\TimberProduct;
 use Modules\Timber\Models\TimberStockMovement;
 
-final class TimberStockMovementResource extends Resource
+final class TimberStockMovementResource extends XotBaseResource
 {
     protected static ?string $model = TimberStockMovement::class;
 
@@ -74,9 +74,10 @@ final class TimberStockMovementResource extends Resource
         return 'Movimenti magazzino';
     }
 
-    public static function form(Schema $schema): Schema
+    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columns(2)
                 ->components([
@@ -158,7 +159,7 @@ final class TimberStockMovementResource extends Resource
                         ->rows(2)
                         ->columnSpanFull(),
                 ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

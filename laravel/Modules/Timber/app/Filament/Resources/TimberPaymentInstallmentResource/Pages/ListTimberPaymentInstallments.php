@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Resources\TimberPaymentInstallmentResource\Pages;
 
 use Filament\Actions\CreateAction;
-use Filament\Resources\Pages\ListRecords;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 use Modules\Timber\Filament\Resources\TimberPaymentInstallmentResource;
 
-final class ListTimberPaymentInstallments extends ListRecords
+final class ListTimberPaymentInstallments extends XotBaseListRecords
 {
     protected static string $resource = TimberPaymentInstallmentResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            TimberPaymentInstallmentResource::sendRemindersAction(),
-            CreateAction::make()->label('Nuova scadenza'),
+            'send_reminders' => TimberPaymentInstallmentResource::sendRemindersAction(),
+            'create' => CreateAction::make()->label('Nuova scadenza'),
         ];
     }
 }

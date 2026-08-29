@@ -9,7 +9,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Filament\Tables;
@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Filament\Resources\TimberCustomerPriceResource\Pages;
 use Modules\Timber\Models\TimberCustomerPrice;
 
-final class TimberCustomerPriceResource extends Resource
+final class TimberCustomerPriceResource extends XotBaseResource
 {
     protected static ?string $model = TimberCustomerPrice::class;
 
@@ -73,9 +73,10 @@ final class TimberCustomerPriceResource extends Resource
         return 'Prezzi per cliente';
     }
 
-    public static function form(Schema $schema): Schema
+    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columns(3)
                 ->components([
@@ -97,7 +98,7 @@ final class TimberCustomerPriceResource extends Resource
                         ->minValue(0)
                         ->required(),
                 ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

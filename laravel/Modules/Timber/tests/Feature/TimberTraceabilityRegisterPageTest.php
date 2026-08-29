@@ -9,7 +9,7 @@ use Modules\Timber\Models\TimberPurchaseRecord;
 use Modules\Timber\Models\TimberSupplier;
 
 beforeEach(function (): void {
-    filament()->setCurrentPanel('timber');
+    filament()->setCurrentPanel('timber::admin');
     actingAsTimberOperator();
 });
 

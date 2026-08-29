@@ -9,7 +9,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Resources\Resource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
@@ -23,7 +23,7 @@ use Illuminate\Support\Str;
 use Modules\Timber\Filament\Resources\TimberWoodSpeciesResource\Pages;
 use Modules\Timber\Models\TimberWoodSpecies;
 
-final class TimberWoodSpeciesResource extends Resource
+final class TimberWoodSpeciesResource extends XotBaseResource
 {
     protected static ?string $model = TimberWoodSpecies::class;
 
@@ -77,9 +77,10 @@ final class TimberWoodSpeciesResource extends Resource
         return 'Specie legnose';
     }
 
-    public static function form(Schema $schema): Schema
+    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->columns(2)
                 ->components([
@@ -110,7 +111,7 @@ final class TimberWoodSpeciesResource extends Resource
                             ->default(true),
                     ]),
                 ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

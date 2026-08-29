@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Timber\Filament\Resources\TimberPriceListResource\Pages;
 
-use Filament\Resources\Pages\CreateRecord;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Actions\SnapshotTimberPriceListAction;
 use Modules\Timber\Filament\Resources\TimberPriceListResource;
 use Modules\Timber\Models\TimberPriceList;
 
-final class CreateTimberPriceList extends CreateRecord
+final class CreateTimberPriceList extends XotBaseCreateRecord
 {
     protected static string $resource = TimberPriceListResource::class;
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Timber\Filament\Resources\TimberStockMovementResource\Pages;
 
-use Filament\Resources\Pages\CreateRecord;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Actions\RegisterTimberStockMovementAction;
@@ -13,7 +13,7 @@ use Modules\Timber\Models\TimberCustomer;
 use Modules\Timber\Models\TimberProduct;
 use Safe\DateTimeImmutable;
 
-final class CreateTimberStockMovement extends CreateRecord
+final class CreateTimberStockMovement extends XotBaseCreateRecord
 {
     protected static string $resource = TimberStockMovementResource::class;
 

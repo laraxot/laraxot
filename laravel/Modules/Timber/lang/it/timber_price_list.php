@@ -1,0 +1,49 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'actions' => [
+        'create' => ['label' => 'create', 'icon' => 'create', 'tooltip' => 'create'],
+        'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
+        'edit' => ['label' => 'edit', 'icon' => 'edit', 'tooltip' => 'edit'],
+        'delete' => ['label' => 'delete', 'icon' => 'delete', 'tooltip' => 'delete'],
+        'layout' => ['label' => 'layout', 'icon' => 'layout', 'tooltip' => 'layout'],
+        'exportCsv' => ['label' => 'exportCsv', 'icon' => 'exportCsv', 'tooltip' => 'exportCsv'],
+        'importCsv' => ['label' => 'importCsv', 'icon' => 'importCsv', 'tooltip' => 'importCsv'],
+        'applyFilters' => ['label' => 'applyFilters', 'icon' => 'applyFilters', 'tooltip' => 'applyFilters'],
+        'openFilters' => ['label' => 'openFilters', 'icon' => 'openFilters', 'tooltip' => 'openFilters'],
+        'resetFilters' => ['label' => 'resetFilters', 'icon' => 'resetFilters', 'tooltip' => 'resetFilters'],
+        'applyTableColumnManager' => ['label' => 'applyTableColumnManager', 'icon' => 'applyTableColumnManager', 'tooltip' => 'applyTableColumnManager'],
+        'openColumnManager' => ['label' => 'openColumnManager', 'icon' => 'openColumnManager', 'tooltip' => 'openColumnManager'],
+        'resetColumnManager' => ['label' => 'resetColumnManager', 'icon' => 'resetColumnManager', 'tooltip' => 'resetColumnManager'],
+        'reorderRecords' => ['label' => 'reorderRecords', 'icon' => 'reorderRecords', 'tooltip' => 'reorderRecords'],
+        'createAnother' => ['label' => 'createAnother', 'icon' => 'createAnother', 'tooltip' => 'createAnother'],
+        'cancel' => ['label' => 'cancel', 'icon' => 'cancel', 'tooltip' => 'cancel'],
+        'add' => ['label' => 'add', 'icon' => 'add', 'tooltip' => 'add'],
+        'addBetween' => ['label' => 'addBetween', 'icon' => 'addBetween', 'tooltip' => 'addBetween'],
+        'clone' => ['label' => 'clone', 'icon' => 'clone', 'tooltip' => 'clone'],
+        'collapse' => ['label' => 'collapse', 'icon' => 'collapse', 'tooltip' => 'collapse'],
+        'collapseAll' => ['label' => 'collapseAll', 'icon' => 'collapseAll', 'tooltip' => 'collapseAll'],
+        'expand' => ['label' => 'expand', 'icon' => 'expand', 'tooltip' => 'expand'],
+        'expandAll' => ['label' => 'expandAll', 'icon' => 'expandAll', 'tooltip' => 'expandAll'],
+        'moveDown' => ['label' => 'moveDown', 'icon' => 'moveDown', 'tooltip' => 'moveDown'],
+        'moveUp' => ['label' => 'moveUp', 'icon' => 'moveUp', 'tooltip' => 'moveUp'],
+        'reorder' => ['label' => 'reorder', 'icon' => 'reorder', 'tooltip' => 'reorder'],
+    ],
+    'fields' => [
+        'name' => ['label' => 'name', 'placeholder' => 'name', 'helper_text' => 'name', 'description' => 'name'],
+        'code' => ['label' => 'code', 'placeholder' => 'code', 'helper_text' => 'code', 'description' => 'code'],
+        'items_count' => ['label' => 'items_count'],
+        'versions_count' => ['label' => 'versions_count'],
+        'is_active' => ['label' => 'is_active', 'placeholder' => 'is_active', 'helper_text' => 'is_active', 'description' => 'is_active'],
+        'file' => ['label' => 'file', 'placeholder' => 'file', 'helper_text' => 'file', 'description' => 'file'],
+        'items' => ['label' => 'items', 'placeholder' => 'items', 'helper_text' => 'items', 'description' => 'items'],
+        'product_id' => ['label' => 'product_id', 'placeholder' => 'product_id', 'helper_text' => 'product_id', 'description' => 'product_id'],
+        'net_price' => ['label' => 'net_price', 'placeholder' => 'net_price', 'helper_text' => 'net_price', 'description' => 'net_price'],
+    ],
+    'sections' => [
+        'empty' => ['label' => 'empty', 'heading' => 'empty'],
+        'Prezzi prodotti' => ['label' => 'Prezzi prodotti', 'heading' => 'Prezzi prodotti'],
+    ],
+];

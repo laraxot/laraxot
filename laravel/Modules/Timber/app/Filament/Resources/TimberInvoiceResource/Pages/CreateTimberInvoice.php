@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Timber\Filament\Resources\TimberInvoiceResource\Pages;
 
-use Filament\Resources\Pages\CreateRecord;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Actions\RecalculateTimberInvoiceTotalsAction;
 use Modules\Timber\Filament\Resources\TimberInvoiceResource;
 use Modules\Timber\Models\TimberInvoice;
 
-final class CreateTimberInvoice extends CreateRecord
+final class CreateTimberInvoice extends XotBaseCreateRecord
 {
     protected static string $resource = TimberInvoiceResource::class;
 

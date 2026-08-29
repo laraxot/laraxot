@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Filament\Pages\Page;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Support\Facades\Auth;
 use Modules\Fiscal\Datas\VatLiquidation;
 use Modules\Timber\Queries\GetTimberVatLiquidationQuery;
 
-final class TimberVatRegisterPage extends Page
+final class TimberVatRegisterPage extends XotBasePage
 {
     protected static bool $isDiscovered = false;
 

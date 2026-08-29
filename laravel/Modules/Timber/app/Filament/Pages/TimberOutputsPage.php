@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Filament\Pages\Page;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Filament\Pages\Concerns\NormalizesTimberConfigMaps;
 use Modules\Timber\Models\TimberDerivedMaterial;
 use Modules\Timber\Models\TimberPackagedUnit;
 
-final class TimberOutputsPage extends Page
+final class TimberOutputsPage extends XotBasePage
 {
     use NormalizesTimberConfigMaps;
 

@@ -5,17 +5,17 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Resources\TimberInvoiceResource\Pages;
 
 use Filament\Actions\CreateAction;
-use Filament\Resources\Pages\ListRecords;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 use Modules\Timber\Filament\Resources\TimberInvoiceResource;
 
-final class ListTimberInvoices extends ListRecords
+final class ListTimberInvoices extends XotBaseListRecords
 {
     protected static string $resource = TimberInvoiceResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make()->label('Nuovo documento'),
+            'create' => CreateAction::make()->label('Nuovo documento'),
         ];
     }
 }

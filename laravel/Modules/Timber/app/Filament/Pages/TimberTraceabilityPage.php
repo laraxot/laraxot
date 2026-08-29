@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Filament\Pages\Page;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Actions\GenerateTimberTraceabilityPdfAction;
 use Modules\Timber\Queries\SearchTimberTraceabilityQuery;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
-final class TimberTraceabilityPage extends Page
+final class TimberTraceabilityPage extends XotBasePage
 {
     protected static bool $isDiscovered = false;
 

@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Filament\Pages\Page;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 
 use function Safe\file_get_contents;
 
-final class TimberDocumentationPage extends Page
+final class TimberDocumentationPage extends XotBasePage
 {
     protected static bool $isDiscovered = false;
 

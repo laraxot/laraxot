@@ -16,7 +16,7 @@ use Spatie\Permission\Models\Role;
 
 beforeEach(function (): void {
     Role::findOrCreate('timber_admin');
-    filament()->setCurrentPanel('timber');
+    filament()->setCurrentPanel('timber::admin');
 });
 
 it('lists and creates suppliers as a timber_admin', function (): void {

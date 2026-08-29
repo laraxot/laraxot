@@ -5,17 +5,17 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Resources\TimberPriceListResource\Pages;
 
 use Filament\Actions\CreateAction;
-use Filament\Resources\Pages\ListRecords;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 use Modules\Timber\Filament\Resources\TimberPriceListResource;
 
-final class ListTimberPriceLists extends ListRecords
+final class ListTimberPriceLists extends XotBaseListRecords
 {
     protected static string $resource = TimberPriceListResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make()->label('Nuovo listino'),
+            'create' => CreateAction::make()->label('Nuovo listino'),
         ];
     }
 }

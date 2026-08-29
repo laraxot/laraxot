@@ -13,7 +13,7 @@ uses(TestCase::class);
 
 it('creates a per-customer price override', function (): void {
     Role::findOrCreate('timber_admin');
-    filament()->setCurrentPanel('timber');
+    filament()->setCurrentPanel('timber::admin');
     actingAsTimberAdmin();
 
     $customer = TimberCustomer::factory()->createOne();

@@ -12,7 +12,7 @@ uses(TestCase::class);
 
 it('creates an agent with a commission rule', function (): void {
     Role::findOrCreate('timber_admin');
-    filament()->setCurrentPanel('timber');
+    filament()->setCurrentPanel('timber::admin');
     actingAsTimberAdmin();
 
     testTimberLivewire(CreateTimberAgent::class)

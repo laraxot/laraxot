@@ -34,7 +34,7 @@ it('keeps config and database codes valid so legacy species are never rejected',
 
 it('lists and creates wood species as a timber_admin', function (): void {
     Role::findOrCreate('timber_admin');
-    filament()->setCurrentPanel('timber');
+    filament()->setCurrentPanel('timber::admin');
 
     actingAsTimberAdmin();
 

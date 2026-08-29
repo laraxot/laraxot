@@ -14,7 +14,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Notifications\Notification;
-use Filament\Resources\Resource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -30,7 +30,7 @@ use Modules\Timber\Models\TimberPriceList;
 use Modules\Timber\Models\TimberProduct;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
-final class TimberPriceListResource extends Resource
+final class TimberPriceListResource extends XotBaseResource
 {
     protected static ?string $model = TimberPriceList::class;
 
@@ -84,9 +84,10 @@ final class TimberPriceListResource extends Resource
         return 'Listini';
     }
 
-    public static function form(Schema $schema): Schema
+    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make()
                 ->components([
                     Grid::make(3)->components([
@@ -131,7 +132,7 @@ final class TimberPriceListResource extends Resource
                         ->addActionLabel('Aggiungi prezzo')
                         ->defaultItems(0),
                 ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

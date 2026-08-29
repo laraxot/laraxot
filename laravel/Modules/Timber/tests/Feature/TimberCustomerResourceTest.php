@@ -13,7 +13,7 @@ uses(TestCase::class);
 
 beforeEach(function (): void {
     Role::findOrCreate('timber_admin');
-    filament()->setCurrentPanel('timber');
+    filament()->setCurrentPanel('timber::admin');
 });
 
 it('lists and creates customers as a timber_admin', function (): void {

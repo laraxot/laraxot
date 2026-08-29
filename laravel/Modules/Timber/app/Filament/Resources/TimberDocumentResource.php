@@ -14,7 +14,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
-use Filament\Resources\Resource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
@@ -28,7 +28,7 @@ use Modules\Timber\Models\TimberDocument;
 use Modules\Timber\Models\TimberProduct;
 use Modules\Timber\Queries\GetTimberProductStockByLotQuery;
 
-final class TimberDocumentResource extends Resource
+final class TimberDocumentResource extends XotBaseResource
 {
     protected static ?string $model = TimberDocument::class;
 
@@ -77,9 +77,10 @@ final class TimberDocumentResource extends Resource
         return 'Documenti';
     }
 
-    public static function form(Schema $schema): Schema
+    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make('Testata')
                 ->columns(3)
                 ->components([
@@ -201,7 +202,7 @@ final class TimberDocumentResource extends Resource
                 ->label('Note')
                 ->rows(3)
                 ->columnSpanFull(),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
