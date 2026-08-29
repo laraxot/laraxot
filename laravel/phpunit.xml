@@ -53,8 +53,8 @@
         <testsuite name="Tenant">
             <directory>Modules/Tenant/tests</directory>
         </testsuite>
-        <testsuite name="TimberBilling">
-            <directory>Modules/TimberBilling/tests</directory>
+        <testsuite name="Timber">
+            <directory>Modules/Timber/tests</directory>
         </testsuite>
         <testsuite name="UI">
             <directory>Modules/UI/tests</directory>

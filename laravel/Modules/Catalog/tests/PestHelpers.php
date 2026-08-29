@@ -10,7 +10,7 @@ use PHPUnit\Framework\Assert;
  * Helper Pest/PHPStan — modulo Catalog.
  *
  * @see Modules/Intervention/tests/PestHelpers.php
- * @see Modules/TimberBilling/tests/PestHelpers.php
+ * @see Modules/Timber/tests/PestHelpers.php
  */
 function catalogTest(): TestCase
 {

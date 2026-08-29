@@ -1,0 +1,12 @@
+{
+    "name": "Timber",
+    "alias": "timber",
+    "description": "Timber \u2014 replica gestionale_commesse (normalize Laraxot)",
+    "keywords": [],
+    "priority": 140,
+    "providers": [
+        "Modules\\Timber\\Providers\\TimberServiceProvider",
+        "Modules\\Timber\\Providers\\Filament\\AdminPanelProvider"
+    ],
+    "files": []
+}

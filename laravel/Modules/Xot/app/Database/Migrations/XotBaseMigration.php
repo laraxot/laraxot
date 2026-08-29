@@ -112,7 +112,13 @@ abstract class XotBaseMigration extends LaravelMigration
             return is_string($default) ? $default : 'mariadb';
         }
 
-        return $connectionName ?? 'mariadb';
+        if (null === $connectionName) {
+            $default = config('database.default');
+
+            return is_string($default) ? $default : 'mariadb';
+        }
+
+        return $connectionName;
     }
 
     /**
@@ -489,7 +495,7 @@ abstract class XotBaseMigration extends LaravelMigration
         }
 
         $table = $this->getTable();
-        $conn = DB::connection($this->model->getConnectionName());
+        $conn = DB::connection($this->getConnection());
 
         $conn->table($table)->orderBy('id')->chunk(100, function ($rows) use ($table, $conn): void {
             foreach ($rows as $row) {
@@ -516,7 +522,7 @@ abstract class XotBaseMigration extends LaravelMigration
         array $dataColumns,
         array $options,
     ): void {
-        $conn = DB::connection($this->model->getConnectionName());
+        $conn = DB::connection($this->getConnection());
 
         if (! $this->hasColumn('uuid')) {
             $this->tableUpdate(function (Blueprint $blueprint): void {
@@ -551,7 +557,7 @@ abstract class XotBaseMigration extends LaravelMigration
      */
     protected function copyDataWithUuidToBigintMapping(string $oldTable, string $newTable, array $dataColumns): void
     {
-        $conn = DB::connection($this->model->getConnectionName());
+        $conn = DB::connection($this->getConnection());
         $rows = $conn->table($oldTable)->orderBy('id')->get();
         $newId = 1;
         $this->uuidToBigintIdMapping = [];
@@ -572,7 +578,7 @@ abstract class XotBaseMigration extends LaravelMigration
 
     protected function updatePivotTableFkFromUuidToBigint(string $sourceTable, string $pivotTable, string $fkColumn): void
     {
-        $conn = DB::connection($this->model->getConnectionName());
+        $conn = DB::connection($this->getConnection());
         $rows = $conn->table($sourceTable)->get(['id', 'uuid']);
 
         foreach ($rows as $p) {

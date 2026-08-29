@@ -38,11 +38,7 @@
     "require-dev": {
         "codewithkyrian/transformers": "^0.5.2",
         "laravel/pint": "^1.13",
-        "nunomaduro/phpinsights": "^2.11",
         "larastan/larastan": "*",
-        "vimeo/psalm": "^5.17",
-        "psalm/plugin-laravel": "^2.8",
-        "enlightn/enlightn": "^2.7",
         "driftingly/rector-laravel": "^2.5",
         "symplify/phpstan-rules": "*",
         "rector/rector": "^2.2.7",

@@ -65,19 +65,18 @@ return new class() extends XotBaseMigration
 
     private function hasVehicleForeignKey(): bool
     {
-        $database = $this->getConn()->getConnection()->getDatabaseName();
+        $connection = DB::connection($this->getConnection());
 
-        $rows = DB::connection($this->getConnection())->select(
-            'select 1 as ok
-             from information_schema.TABLE_CONSTRAINTS
-             where CONSTRAINT_SCHEMA = ?
-               and TABLE_NAME = ?
-               and CONSTRAINT_NAME = ?
-               and CONSTRAINT_TYPE = ?
-             limit 1',
-            [$database, 'warehouses', 'warehouses_vehicle_id_foreign', 'FOREIGN KEY'],
-        );
+        // Schema::getForeignKeys è driver-agnostico (information_schema è MySQL-only e rompe SQLite)
+        $foreignKeys = $connection->getSchemaBuilder()->getForeignKeys('warehouses');
 
-        return $rows !== [];
+        foreach ($foreignKeys as $foreignKey) {
+            $columns = is_array($foreignKey['columns'] ?? null) ? $foreignKey['columns'] : [];
+            if (in_array('vehicle_id', $columns, true)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 };

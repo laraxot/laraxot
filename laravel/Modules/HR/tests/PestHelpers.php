@@ -14,7 +14,7 @@ use Spatie\Permission\Models\Role;
  * Helper Pest/PHPStan — modulo HR.
  *
  * @see Modules/Intervention/tests/PestHelpers.php
- * @see Modules/TimberBilling/tests/PestHelpers.php
+ * @see Modules/Timber/tests/PestHelpers.php
  */
 function hrTest(): TestCase
 {

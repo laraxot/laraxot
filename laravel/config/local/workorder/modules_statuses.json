@@ -30,7 +30,7 @@
     "Seo": true,
     "Signature": true,
     "Tenant": true,
-    "TimberBilling": true,
+    "Timber": true,
     "UI": true,
     "User": true,
     "Vehicle": true,

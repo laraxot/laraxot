@@ -13,7 +13,7 @@ use PHPUnit\Framework\Assert;
  * Helper Pest/PHPStan — modulo Customer.
  *
  * @see Modules/Intervention/tests/PestHelpers.php
- * @see Modules/TimberBilling/tests/PestHelpers.php
+ * @see Modules/Timber/tests/PestHelpers.php
  */
 function customerTest(): TestCase
 {

@@ -1,0 +1,70 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Timber\Filament\Pages;
+
+use App\Support\AccountFeatures;
+use Filament\Pages\Page;
+use Illuminate\Support\Facades\Auth;
+use Modules\Fiscal\Datas\VatLiquidation;
+use Modules\Timber\Queries\GetTimberVatLiquidationQuery;
+
+final class TimberVatRegisterPage extends Page
+{
+    protected static bool $isDiscovered = false;
+
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-calculator';
+
+    protected static ?string $navigationLabel = 'Registri e liquidazione IVA';
+
+    protected static ?string $title = 'Registri e liquidazione IVA';
+
+    protected static ?string $slug = 'vat-register';
+
+    protected static ?int $navigationSort = 30;
+
+    protected string $view = 'timber::filament.vat-register';
+
+    public string $fromDate = '';
+
+    public string $toDate = '';
+
+    public static function getNavigationGroup(): string
+    {
+        return 'Strumenti';
+    }
+
+    public static function canAccess(): bool
+    {
+        return AccountFeatures::currentPanelAllowsFeature(
+            Auth::user(),
+            adminFeature: 'admin.timber',
+            operatorFeature: 'operator.timber',
+            adminDefault: true,
+            operatorDefault: true,
+            fallback: false,
+        );
+    }
+
+    public function mount(): void
+    {
+        $this->fromDate = now()->startOfMonth()->toDateString();
+        $this->toDate = now()->endOfMonth()->toDateString();
+    }
+
+    public function liquidation(): VatLiquidation
+    {
+        return app(GetTimberVatLiquidationQuery::class)->execute($this->fromDate, $this->toDate);
+    }
+
+    /**
+     * @return array{liquidation: VatLiquidation}
+     */
+    protected function getViewData(): array
+    {
+        return [
+            'liquidation' => $this->liquidation(),
+        ];
+    }
+}
