@@ -1,0 +1,110 @@
+---
+title: "Porting gestionale_commesse — seconda tranche (delta post 2026-07-22)"
+type: concept
+tags: [porting, gestionale-commesse, delta, tranche-2, inventory]
+created: 2026-08-29
+updated: 2026-08-29
+qmd: "delta seconda tranche porting gestionale commesse anchor 15f07e80 inventario moduli"
+related:
+  - "./porting-final-status.md"
+  - "./copy-reshape-playbook.md"
+  - "./module-mapping.md"
+  - "./multitenant-plan-for-review.md"
+---
+
+# Seconda tranche di porting — inventario delta (fonte di verità)
+
+> **Anchor**: commit sorgente `15f07e80` (2026-07-22 16:41), ultimo commit coperto dalla prima tranche.
+> **HEAD sorgente**: `f5936f8` (2026-08-28). Delta = `git -C ~/gestionale_commesse diff 15f07e80..HEAD`.
+> ~132 commit, ~37k righe fuori `Modules/`, ~19k dentro.
+
+## Regole di questa tranche
+
+- Ciclo per modulo: `lock.sh` → diff → **reuse-check** (cosa copre già la base?) → test Pest prima (RED) →
+  port+reshape (GREEN) → PHPStan zero → docs `import-status.md` → commit atomico → `unlock.sh`
+- **Multitenant: NON in questa tranche.** Solo piano in [multitenant-plan-for-review.md](./multitenant-plan-for-review.md)
+  (revisione: Marco Sottana)
+- Decisione architetturale: **`TimberBilling` → rename `Timber`** (bounded context completo del verticale legno,
+  non solo fatturazione; non si spezza — la fatturazione timber-specifica resta sotto-dominio interno)
+
+## Delta per modulo sorgente (file toccati `15f07e80..HEAD`)
+
+| Sorgente | Dest | File delta | Note |
+|---|---|---:|---|
+| WorkOrders | WorkOrder | 46 | |
+| Quotations | Quotation | 28 | dest era "no test reali" |
+| Platform | Platform | 25 | |
+| AiAssistant | AiAssistant | 25 | storico conflitto multi-agente: verificare stato prima |
+| Inventory | Inventory | 23 | dormant (fix TestCase Catalog) |
+| WhatsApp | WhatsApp | 22 | grosso delta funzionale (de-approvazione, comandi interattivi) |
+| Customers | Customer | 22 | |
+| Compliance | Compliance | 17 | gap, disabilitato |
+| EnergyBroker | EnergyBroker | 16 | gap, disabilitato |
+| Production | Production | 14 | dormant |
+| Vehicles | Vehicle | 13 | |
+| Email | Email | 11 | |
+| PublicProcurement | PublicProcurement | 11 | gap, disabilitato |
+| Billing | Billing | 30+ | cash-flow, aging, job margins, payment tracking |
+| HR | HR | 30 | |
+| Auth | User | 19 | reuse-check forte: la base ha già spatie roles/auth |
+| Bom | Bom | 12 | dormant |
+| Signatures | Signature | 7 | |
+| Catalog | Catalog | 6 | |
+| Documents | Document | 6 | |
+| TimberBilling | Timber (rename) | 6 | |
+| Interventions | Intervention | 25 | tariffe manodopera, pricing, recap materiali |
+
+## Moduli sorgente MAI portati (nuovi in questa tranche)
+
+| Sorgente | Dest | File | Dominio |
+|---|---|---:|---|
+| MetalWorks | **MetalWork** | 52 | preventivi da disegno CAD, distinta dai solidi |
+| Signage | **Signage** | 60 | segnaletica |
+| Costing | **Costing** | 8 | costificazione |
+
+Struttura sorgente DDD-lite (`Domain/Application/Infrastructure` in root) → reshape sotto `app/`
+secondo [canonical-module-structure.md](./canonical-module-structure.md).
+
+## Codice `app/` sorgente mai portato
+
+| Sorgente | Dest | Note |
+|---|---|---|
+| `app/Wts/**` (11 modelli) + `app/Filament/Wts` + `WtsPanelProvider` | **nuovo modulo `Wts`** | conferimenti/ECOS/audit-trail; zero accoppiamenti con Timber (verificato) |
+| `app/Timber` + `app/Filament/Timber` | **Timber** (delta-align) | già assorbito in dest; `app/Timber` ha 0 file delta dall'anchor — verificare solo parity |
+| `app/Filament/EnergyBroker` | **EnergyBroker** | Filament del modulo |
+| `app/Filament/Thermo` + panel | nuovo modulo **Thermo** | verticale demo solo-Pages |
+| `app/Filament/GivebackPlatform` + panel | nuovo modulo **Giveback** | idem |
+| `app/Filament/Dds` + panel | nuovo modulo **Dds** | idem |
+| `app/Filament/AsdSoci` + panel | nuovo modulo **AsdSoci** | idem |
+| `MetalWorksPanelProvider` | **MetalWork** | |
+| Panel Admin/Operator/Customer/Supplier | modulo proprietario, riscritti `XotBasePanelProvider` | niente `base_path()` hardcoded |
+| `app/Filament/{Widgets,Support,Forms}`, `GatedPage/GatedResource`, `NavigationClassifier` | reuse-check UI/Xot | portare solo il mancante |
+| `RoleResource`, `Pages/Auth` | reuse-check User | base ha già spatie roles |
+
+## Delta root sorgente
+
+| Area | File | Destinazione |
+|---|---:|---|
+| `tests/` | 166 | test nel modulo di pertinenza (Pest); smoke rotte 5xx → Xot/Cms |
+| `lang/` | 37 | lang del modulo pertinente, struttura espansa it/en |
+| `database/` | 15 | migration/seeder nel modulo pertinente (XotBaseMigration) |
+| `config/` | 7 | config modulo o `config/` per-dominio base |
+| `scripts/` | 13 | `bashscripts/` o Console command di modulo |
+| `routes/` | 2 | routes modulo |
+
+## Ordine di esecuzione
+
+0. Baseline + questo doc + doc multitenant (fatto)
+1. **Fase 1a**: rename `TimberBilling` → `Timber`
+2. **Fase 1**: delta moduli già portati (ordine: dal più piccolo per validare il ciclo — Catalog, Document,
+   Signature → poi i grossi WorkOrder, Quotation, WhatsApp, Billing, HR, Intervention…)
+3. **Fase 2**: MetalWork, Signage, Costing
+4. **Fase 3**: `app/` → moduli (Wts, verticali demo, panel, condivisi)
+5. **Fase 4**: riabilitazione gap (Compliance, EnergyBroker, Timber, PublicProcurement) + fix TestCase
+   Bom/Inventory/Production + testsuite in `phpunit.xml`
+6. **Fase 5**: validazione finale (PHPStan Modules = 0, Pest suite, `php artisan about`, aggiornamento
+   `porting-final-status.md`)
+
+## Baseline (registrata a inizio tranche)
+
+Vedi sezione aggiornata a fine Fase 0 con i numeri di `vendor/bin/pest` e `phpstan analyse Modules`.
