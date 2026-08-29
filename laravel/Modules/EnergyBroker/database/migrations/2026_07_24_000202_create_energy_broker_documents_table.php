@@ -14,7 +14,7 @@ return new class() extends XotBaseMigration
             $table->uuid('public_id')->nullable()->unique();
             $table->foreignId('energy_broker_import_batch_id')->nullable()->constrained('energy_broker_import_batches')->nullOnDelete();
             $table->foreignId('customer_id')->nullable()->constrained('customers')->nullOnDelete();
-            $table->foreignId('media_id')->nullable()->constrained('media')->nullOnDelete();
+            $table->foreignId('media_id')->nullable()->constrained('document_media')->nullOnDelete();
 
             $table->string('source_file_name');
             $table->string('file_hash')->nullable()->index();

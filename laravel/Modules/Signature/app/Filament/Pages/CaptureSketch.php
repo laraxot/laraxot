@@ -9,25 +9,21 @@ use App\Support\AccountFeatures;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Concerns\InteractsWithForms;
-use Filament\Forms\Contracts\HasForms;
-use Filament\Pages\Page;
 use Filament\Schemas\Schema;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\Signature\Actions\StoreSketchForModelAction;
 use Modules\User\Models\User;
 
 /**
  * @property Schema $form
  */
-final class CaptureSketch extends Page implements HasForms
+final class CaptureSketch extends GatedXotBasePage
 {
-    use InteractsWithForms;
-
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-pencil-square';
 
     protected static ?string $title = 'Disegno';

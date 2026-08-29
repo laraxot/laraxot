@@ -13,7 +13,7 @@ return new class() extends XotBaseMigration
             $table->id();
             $table->uuid('uuid')->nullable()->unique();
             $table->foreignId('vehicle_id')->constrained('vehicles')->cascadeOnDelete();
-            $table->foreignId('media_id')->constrained('media')->cascadeOnDelete();
+            $table->foreignId('media_id')->constrained('document_media')->cascadeOnDelete();
             $table->string('title')->nullable();
             $table->unique(['vehicle_id', 'media_id']);
         });

@@ -36,7 +36,7 @@ final class Media extends BaseModel
 
     use SoftDeletes;
 
-    protected $table = 'media';
+    protected $table = 'document_media';
 
     /** @var array<int, string> */
     protected $guarded = [];

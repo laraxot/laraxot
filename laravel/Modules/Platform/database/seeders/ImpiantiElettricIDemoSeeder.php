@@ -515,7 +515,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
 
                 // Contatto principale
                 $contactRoleId = DB::table('contact_roles')->where('name', 'Amministratore')->value('id');
-                $primaryContactId = (int) DB::table('contacts')->insertGetId([
+                $primaryContactId = (int) DB::table('customer_contacts')->insertGetId([
                     'customer_id' => $customerId,
                     'customer_site_id' => null,
                     'contact_role_id' => $contactRoleId ?: null,
@@ -1314,7 +1314,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                     'updated_at' => $now,
                 ]);
 
-                $contactId = (int) DB::table('contacts')->insertGetId([
+                $contactId = (int) DB::table('customer_contacts')->insertGetId([
                     'customer_id' => $customerId,
                     'customer_site_id' => null,
                     'contact_role_id' => $gerardoContactRoleId ?: null,

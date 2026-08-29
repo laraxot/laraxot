@@ -30,7 +30,7 @@ return new class() extends XotBaseMigration
             // contacts.id e' unsignedInteger (non bigint): stesso pattern esplicito
             // usato in Modules/Email/database/migrations/*_create_email_contact_identities_table.php.
             $table->unsignedInteger('contact_id')->nullable()->index();
-            $table->foreign('contact_id')->references('id')->on('contacts')->nullOnDelete();
+            $table->foreign('contact_id')->references('id')->on('customer_contacts')->nullOnDelete();
             $table->foreignIdFor($user_class, 'user_id')->nullable()->index();
             $table->string('status')->default('open');
             $table->timestamp('last_message_at')->nullable();

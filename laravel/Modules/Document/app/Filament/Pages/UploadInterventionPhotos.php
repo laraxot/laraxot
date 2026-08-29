@@ -8,15 +8,15 @@ use App\Support\AccountFeatures;
 use Filament\Actions\Action;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
-use Filament\Pages\Page;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Modules\Document\Actions\AttachPhotosToInterventionAction;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 
-final class UploadInterventionPhotos extends Page
+final class UploadInterventionPhotos extends GatedXotBasePage
 {
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-camera';
 

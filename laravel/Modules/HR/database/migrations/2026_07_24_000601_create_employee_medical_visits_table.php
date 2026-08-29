@@ -12,7 +12,7 @@ return new class() extends XotBaseMigration
         $this->tableCreate(function (Blueprint $table): void {
             $table->id();
             $table->foreignId('employee_id')->constrained('employees')->cascadeOnDelete();
-            $table->foreignId('media_id')->nullable()->constrained('media')->nullOnDelete();
+            $table->foreignId('media_id')->nullable()->constrained('document_media')->nullOnDelete();
             $table->string('title')->nullable();
             $table->date('visited_at');
             $table->date('expires_at')->nullable();

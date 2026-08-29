@@ -114,3 +114,28 @@ spettano all'owner del progetto, non un fix "silenzioso" da parte di un agente.
   test è necessaria.
 
 GitHub issue di riferimento: laraxot/base_workorder_fila5#14
+
+---
+
+## Risoluzione applicata (2026-08-29, tranche 2 porting)
+
+Applicata l'**opzione 2 — rename module-prefixed** per entrambe le collisioni:
+
+| Modulo | Modello | Tabella prima | Tabella dopo |
+| --- | --- | --- | --- |
+| Document | `Modules\Document\Models\Media` | `media` (collisione con Spatie/Modules\Media) | `document_media` |
+| Customer | `Modules\Customer\Models\Contact` | `contacts` (collisione con Modules\Notify) | `customer_contacts` |
+
+Interventi:
+
+- `$table` esplicito sui modelli; migration di creazione rinominate con nuovo timestamp
+  (`2026_08_29_120010_create_document_media_table`, `2026_08_29_120005_create_customer_contacts_table`,
+  quest'ultima con `model_class = Contact::class` perché il nome file non deriva il modello).
+- Retarget FK in 14 migration dipendenti (HR, Compliance, Email, WhatsApp, EnergyBroker,
+  Vehicle, PublicProcurement): `constrained('media'|'contacts')` → tabelle prefissate.
+- Raw refs nei seeder demo Platform aggiornati.
+- Fixture test `database/fixcity_data.sqlite` migrata forward-only
+  (`DATABASE_URL="sqlite:///$PWD/database/fixcity_data.sqlite"` — servono 4 slash per path assoluto).
+
+Nota: sulle installazioni esistenti le tabelle dipendenti già create mantengono la FK verso il
+vecchio nome; su migrate fresco tutto punta ai nomi nuovi. Suites Document (7) + Signature (8) verdi.

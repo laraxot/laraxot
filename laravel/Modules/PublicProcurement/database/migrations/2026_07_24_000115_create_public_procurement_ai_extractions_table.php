@@ -15,7 +15,7 @@ return new class() extends XotBaseMigration
 
             $table->id();
             $table->uuid('public_id')->unique();
-            $table->foreignId('media_id')->nullable()->constrained('media')->nullOnDelete();
+            $table->foreignId('media_id')->nullable()->constrained('document_media')->nullOnDelete();
             $table->foreignIdFor($user_class, 'created_by_user_id')->nullable()->index();
             $table->string('document_type')->default('unknown');
             $table->string('status')->default('draft');

@@ -24,7 +24,7 @@ return new class() extends XotBaseMigration
             $table->dateTime('approved_at')->nullable();
             $table->dateTime('executed_at')->nullable();
             $table->dateTime('billed_at')->nullable();
-            $table->foreignId('signature_media_id')->nullable()->constrained('media')->nullOnDelete();
+            $table->foreignId('signature_media_id')->nullable()->constrained('document_media')->nullOnDelete();
             $table->json('meta')->nullable();
 
             $table->index(['work_order_id', 'status']);

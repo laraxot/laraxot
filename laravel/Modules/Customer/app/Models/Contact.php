@@ -22,6 +22,13 @@ final class Contact extends BaseModel
 {
     use SoftDeletes;
 
+    /**
+     * Tabella module-prefixed: la tabella `contacts` è già occupata dal modulo
+     * Notify della base (collisione documentata in
+     * docs/chat/document-media-table-collision-blocker.md, issue #14).
+     */
+    protected $table = 'customer_contacts';
+
     protected $guarded = [];
 
     protected function casts(): array

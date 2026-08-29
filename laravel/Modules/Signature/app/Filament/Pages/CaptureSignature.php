@@ -11,9 +11,6 @@ use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Concerns\InteractsWithForms;
-use Filament\Forms\Contracts\HasForms;
-use Filament\Pages\Page;
 use Filament\Schemas\Schema;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Support\Facades\Auth;
@@ -21,6 +18,7 @@ use Illuminate\Support\Facades\Gate;
 use Modules\Customer\Actions\UpsertCustomerContactByEmailAction;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\Signature\Actions\StoreSignatureForModelAction;
 use Modules\User\Models\User;
 use Modules\WorkOrder\Actions\SetWorkOrderPrimaryContactAction;
@@ -28,10 +26,8 @@ use Modules\WorkOrder\Actions\SetWorkOrderPrimaryContactAction;
 /**
  * @property Schema $form
  */
-final class CaptureSignature extends Page implements HasForms
+final class CaptureSignature extends GatedXotBasePage
 {
-    use InteractsWithForms;
-
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-pencil';
 
     protected static ?string $title = 'Firma';

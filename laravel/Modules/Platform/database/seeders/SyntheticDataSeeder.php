@@ -282,7 +282,7 @@ class SyntheticDataSeeder extends Seeder
 
                 $contactCount = $faker->numberBetween(1, 3);
                 for ($c = 0; $c < $contactCount; $c++) {
-                    DB::table('contacts')->insert([
+                    DB::table('customer_contacts')->insert([
                         'customer_id' => $customerId,
                         'customer_site_id' => $faker->boolean(65) ? $faker->randomElement($siteIds) : null,
                         'contact_role_id' => $faker->randomElement($contactRoleIds),
@@ -478,7 +478,7 @@ class SyntheticDataSeeder extends Seeder
             for ($i = 0; $i < 60; $i++) {
                 $customerId = $faker->randomElement($customerIds);
                 $customerSiteId = DB::table('customer_sites')->where('customer_id', $customerId)->inRandomOrder()->value('id');
-                $primaryContactId = DB::table('contacts')->where('customer_id', $customerId)->inRandomOrder()->value('id');
+                $primaryContactId = DB::table('customer_contacts')->where('customer_id', $customerId)->inRandomOrder()->value('id');
 
                 $statusCode = (string) $faker->randomElement(['draft', 'scheduled', 'in_progress', 'completed', 'cancelled']);
                 $scheduledAt = $faker->boolean(70) ? $now->subDays($faker->numberBetween(0, 20))->addDays($faker->numberBetween(0, 30)) : null;
@@ -802,7 +802,7 @@ SVG,
                 Storage::disk('public')->put($path, $svg);
                 $size = Storage::disk('public')->size($path);
 
-                DB::table('media')->insert([
+                DB::table('document_media')->insert([
                     'mediable_type' => 'Modules\Interventions\\Infrastructure\\Models\\Intervention',
                     'mediable_id' => $interventionId,
                     'uploaded_by_user_id' => $operatorUserId ?? $adminUserId,
@@ -1138,7 +1138,7 @@ SVG,
                 Storage::disk('public')->put($demoFilePath, "Documento demo (generato automaticamente).\n");
             }
 
-            $mediaId = DB::table('media')->insertGetId([
+            $mediaId = DB::table('document_media')->insertGetId([
                 'mediable_type' => 'Modules\Platform\\Demo',
                 'mediable_id' => 1,
                 'uploaded_by_user_id' => $adminUserId,

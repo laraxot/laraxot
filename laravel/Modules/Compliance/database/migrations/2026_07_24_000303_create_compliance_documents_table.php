@@ -26,7 +26,7 @@ return new class() extends XotBaseMigration
             $table->foreignId('vehicle_id')->nullable()->constrained('vehicles')->nullOnDelete();
             $table->foreignId('subcontractor_id')->nullable()->constrained('subcontractors')->cascadeOnDelete();
             $table->foreignId('equipment_id')->nullable()->constrained('equipment')->nullOnDelete();
-            $table->foreignId('media_id')->nullable()->constrained('media')->nullOnDelete();
+            $table->foreignId('media_id')->nullable()->constrained('document_media')->nullOnDelete();
             $table->foreignIdFor($user_class, 'uploaded_by_user_id')->nullable()->index();
             $table->longText('extracted_text')->nullable();
             $table->json('ai_classification')->nullable();
