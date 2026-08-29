@@ -108,3 +108,31 @@ secondo [canonical-module-structure.md](./canonical-module-structure.md).
 ## Baseline (registrata a inizio tranche)
 
 Vedi sezione aggiornata a fine Fase 0 con i numeri di `vendor/bin/pest` e `phpstan analyse Modules`.
+
+## Stato sessione 2026-08-29 (checkpoint)
+
+### Fatto
+- **Fase 0** completa: questo doc + [multitenant-plan-for-review.md](./multitenant-plan-for-review.md) (per Marco)
+- **Fase 1a** completa: rename `TimberBilling` → `Timber` (namespace, provider, alias, connection
+  `timber`, phpunit, statuses, docs; tabelle DB invariate)
+- **Ambiente sbloccato su questa macchina** (prima nessun vendor/, nessun DB test):
+  - `composer update` necessario (lock privo di testbench/pest — documentato); dev-deps
+    incompatibili PHP8.4/L13 rimossi da AI/Seo (psalm, enlightn, phpinsights)
+  - `pest-plugin-laravel` riabilitato (era `require-dev_comment`); `PestStubs.php` rimosso
+    (shadowava il plugin a runtime)
+  - fixture `database/fixcity_data.sqlite` migrata forward-only: **188 tabelle**
+  - fix sqlite-compat: XotBaseMigration fallback default-conn, team_user guard integer,
+    Inventory FK check driver-agnostico; XotBaseTestCase fallback conn `user`→sqlite
+  - config: `main_module` TechPlanner→WorkOrder (workorder+localhost), APP_URL→workorder.local
+- Suite Timber: da 1/169 a **129 passed / 40 failed**; PHPStan Modules/Timber = 0
+
+### Baseline PHPStan post-upgrade toolchain (phpstan 2.2.9 / larastan 3.10 / pest 4.7.8)
+- **Codice (non-tests): 0 errori** (i 2 trovati — Inventory, Job — corretti in sessione)
+- **tests/: 2448 errori** nuovi da drift toolchain (variable.undefined/method.nonObject su
+  closure Pest) — workstream separato, non blocca il porting; ignore chirurgico
+  `method.internalClass` per Expectation Pest già in phpstan.neon
+
+### Prossimi passi (in ordine)
+1. Timber: reshape XotBase* delle 62 pagine Filament (causa principale dei 40 failed) + policy/permessi
+2. Fase 1: delta moduli già portati (partire da Catalog/Document/Signature)
+3. Fase 2-5 come da piano sopra
