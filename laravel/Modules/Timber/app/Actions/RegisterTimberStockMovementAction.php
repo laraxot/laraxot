@@ -23,7 +23,7 @@ final class RegisterTimberStockMovementAction
         string $directionCode,
         float $quantity,
         string $unitOfMeasure,
-        ?int $userId = null,
+        int|string|null $userId = null,
         ?TimberCustomer $customer = null,
         ?string $documentTypeCode = null,
         ?string $documentReference = null,

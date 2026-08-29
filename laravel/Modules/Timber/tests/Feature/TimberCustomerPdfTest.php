@@ -6,6 +6,7 @@ uses(\Modules\Timber\Tests\TestCase::class);
 use Modules\Timber\Actions\GenerateTimberCustomerLabelPdfAction;
 use Modules\Timber\Actions\GenerateTimberCustomerSheetPdfAction;
 use Modules\Timber\Models\TimberCustomer;
+use Modules\Timber\Tests\TestCase;
 
 it('generates the customer sheet PDF', function (): void {
     $customer = TimberCustomer::factory()->createOne(['business_name' => 'Falegnameria Rossi Srl']);

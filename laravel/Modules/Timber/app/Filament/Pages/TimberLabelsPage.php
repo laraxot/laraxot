@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
@@ -16,6 +15,7 @@ use Modules\Timber\Models\TimberDerivedMaterial;
 use Modules\Timber\Models\TimberLabelPrint;
 use Modules\Timber\Models\TimberLot;
 use Modules\Timber\Models\TimberPackagedUnit;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 final class TimberLabelsPage extends XotBasePage

@@ -226,7 +226,27 @@ Sbloccato in questa sessione: fixture sqlite migrata (188 tabelle), connessione 
 fallback sqlite, main_module WorkOrder, pest-plugin-laravel reale, view pdf/pages portate,
 binding EasyfattGateway.
 
-Failure residue (prossima sessione):
+## Aggiornamento 2026-08-29 (stessa sessione, sera): SUITE VERDE ✅
+
+**169 passed / 0 failed (534 assertions)** — `phpstan analyse Modules/Timber` = 0 errori, pint applicato.
+
+Interventi che hanno chiuso i 40 failed:
+1. Reshape XotBase: 62 pagine → XotBase*, 13 Resource → XotBaseResource (form→getFormSchema,
+   colonne/azioni/filtri table() → getTableColumns/getTableActions/getTableFilters nelle List page)
+2. AccountFeatures reale + `normalizePanelId` ({modulo}::admin → chiave corta matrice);
+   BaseUser::canAccessPanel delega alla matrice ruoli di dominio
+3. Panel: pagine con $isDiscovered=false registrate esplicitamente nell'AdminPanelProvider
+   (come nel sorgente); panel refs 'timber' → 'timber::admin' in view/test
+4. Config: chiavi brevi rimappate (config/timber.php → timber.timber.*, config/config.php →
+   timber.config.*), TimberConfigMap unico punto DRY con fallback
+5. Migration price_lists: seed idempotente listini da config (timestamp bumped)
+6. userId int → int|string (utenti UUID della base); QR imageBase64=false;
+   binding EasyfattGateway; view classi App\Filament\Timber → Modules\Timber\Filament
+
+Debito residuo dichiarato: label hardcoded nei componenti Filament (regola no-label) — pass di
+traduzioni da fare quando si allineano i lang del modulo.
+
+Failure residue registrate al checkpoint precedente (ora risolte):
 1. **62 pagine Filament estendono classi Filament direttamente** (CreateRecord/EditRecord/
    ListRecords/ViewRecord/Page) — reshape XotBase* mai fatto su questo modulo. Da qui derivano
    i 15 `getDefaultTestingSchemaName() on null` (fillForm) e parte dei 9 `403`.

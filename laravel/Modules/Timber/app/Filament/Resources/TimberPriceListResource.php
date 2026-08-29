@@ -6,20 +6,15 @@ namespace Modules\Timber\Filament\Resources;
 
 use App\Support\AccountFeatures;
 use Filament\Actions\Action;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Notifications\Notification;
-use Modules\Xot\Filament\Resources\XotBaseResource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
-use Filament\Tables;
-use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
@@ -28,6 +23,7 @@ use Modules\Timber\Actions\ImportTimberPriceListCsvAction;
 use Modules\Timber\Filament\Resources\TimberPriceListResource\Pages;
 use Modules\Timber\Models\TimberPriceList;
 use Modules\Timber\Models\TimberProduct;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 final class TimberPriceListResource extends XotBaseResource
@@ -84,7 +80,7 @@ final class TimberPriceListResource extends XotBaseResource
         return 'Listini';
     }
 
-    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    /** @return array<int|string, Component> */
     public static function getFormSchema(): array
     {
         return [
@@ -135,38 +131,6 @@ final class TimberPriceListResource extends XotBaseResource
         ];
     }
 
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('name')
-                    ->label('Nome')
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('code')
-                    ->label('Codice')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('items_count')
-                    ->label('Prezzi')
-                    ->counts('items'),
-                Tables\Columns\TextColumn::make('versions_count')
-                    ->label('Versioni')
-                    ->counts('versions')
-                    ->toggleable(),
-                Tables\Columns\IconColumn::make('is_active')
-                    ->label('Attivo')
-                    ->boolean(),
-            ])
-            ->actions([
-                self::exportCsvAction(),
-                self::importCsvAction(),
-                EditAction::make(),
-            ])
-            ->bulkActions([
-                DeleteBulkAction::make(),
-            ]);
-    }
-
     public static function exportCsvAction(): Action
     {
         return Action::make('exportCsv')
@@ -210,7 +174,7 @@ final class TimberPriceListResource extends XotBaseResource
                 $result = app(ImportTimberPriceListCsvAction::class)->execute(
                     $record,
                     $content,
-                    Auth::id() !== null ? (int) Auth::id() : null,
+                    Auth::id(),
                 );
 
                 Notification::make()

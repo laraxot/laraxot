@@ -44,6 +44,7 @@ return [
         'document_type_code' => ['label' => 'document_type_code', 'placeholder' => 'document_type_code', 'helper_text' => 'document_type_code', 'description' => 'document_type_code'],
         'unit_cost' => ['label' => 'unit_cost', 'placeholder' => 'unit_cost', 'helper_text' => 'unit_cost', 'description' => 'unit_cost'],
         'notes' => ['label' => 'notes', 'placeholder' => 'notes', 'helper_text' => 'notes', 'description' => 'notes'],
+        'value' => ['label' => 'value', 'placeholder' => 'value', 'helper_text' => 'value', 'description' => 'value'],
     ],
     'sections' => [
         'empty' => ['label' => 'empty', 'heading' => 'empty'],

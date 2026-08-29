@@ -34,7 +34,7 @@ it('starts a drying cycle for a derived material', function (): void {
 
     $cycle = app(StartTimberDryingCycleAction::class)->execute($material, null, null, null);
 
-    expect((float) $cycle->target_humidity_percent)->toBe((float) config('timber.operational_parameters.target_humidity_percent.value'))
+    expect((float) $cycle->target_humidity_percent)->toBe((float) config('timber.timber.operational_parameters.target_humidity_percent.value'))
         ->and($material->fresh()?->status_code)->toBe('in_essiccazione')
         ->and($material->fresh()?->current_area_code)->toBe('essiccatoio');
 });

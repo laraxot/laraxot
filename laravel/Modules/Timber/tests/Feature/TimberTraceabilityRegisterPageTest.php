@@ -7,6 +7,7 @@ use Modules\Timber\Filament\Pages\TimberTraceabilityRegisterPage;
 use Modules\Timber\Models\TimberLot;
 use Modules\Timber\Models\TimberPurchaseRecord;
 use Modules\Timber\Models\TimberSupplier;
+use Modules\Timber\Tests\TestCase;
 
 beforeEach(function (): void {
     filament()->setCurrentPanel('timber::admin');

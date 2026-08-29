@@ -65,6 +65,7 @@ return [
         'warehouse_location' => ['label' => 'warehouse_location', 'placeholder' => 'warehouse_location', 'helper_text' => 'warehouse_location', 'description' => 'warehouse_location'],
         'average_cost' => ['label' => 'average_cost', 'placeholder' => 'average_cost', 'helper_text' => 'average_cost', 'description' => 'average_cost'],
         'last_cost' => ['label' => 'last_cost', 'placeholder' => 'last_cost', 'helper_text' => 'last_cost', 'description' => 'last_cost'],
+        'value' => ['label' => 'value', 'placeholder' => 'value', 'helper_text' => 'value', 'description' => 'value'],
     ],
     'sections' => [
         'Prezzi netti' => ['label' => 'Prezzi netti', 'heading' => 'Prezzi netti'],

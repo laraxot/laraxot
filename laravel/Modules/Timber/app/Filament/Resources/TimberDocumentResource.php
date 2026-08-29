@@ -6,27 +6,24 @@ namespace Modules\Timber\Filament\Resources;
 
 use App\Support\AccountFeatures;
 use Filament\Actions\Action;
-use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
-use Modules\Xot\Filament\Resources\XotBaseResource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
-use Filament\Schemas\Schema;
-use Filament\Tables;
-use Filament\Tables\Table;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Actions\PostTimberDocumentStockAction;
 use Modules\Timber\Filament\Resources\TimberDocumentResource\Pages;
 use Modules\Timber\Models\TimberDocument;
 use Modules\Timber\Models\TimberProduct;
 use Modules\Timber\Queries\GetTimberProductStockByLotQuery;
+use Modules\Timber\Support\TimberConfigMap;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 final class TimberDocumentResource extends XotBaseResource
 {
@@ -77,7 +74,7 @@ final class TimberDocumentResource extends XotBaseResource
         return 'Documenti';
     }
 
-    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    /** @return array<int|string, Component> */
     public static function getFormSchema(): array
     {
         return [
@@ -86,7 +83,7 @@ final class TimberDocumentResource extends XotBaseResource
                 ->components([
                     Select::make('document_type_code')
                         ->label('Tipo documento')
-                        ->options(self::configMap('timber.document_types'))
+                        ->options(TimberConfigMap::get('timber.document_types'))
                         ->default('ddt')
                         ->required(),
                     TextInput::make('number')
@@ -104,7 +101,7 @@ final class TimberDocumentResource extends XotBaseResource
                         ->preload(),
                     Select::make('status_code')
                         ->label('Stato')
-                        ->options(self::configMap('timber.document_statuses'))
+                        ->options(TimberConfigMap::get('timber.document_statuses'))
                         ->default('draft')
                         ->required(),
                     TextInput::make('reference')
@@ -163,7 +160,7 @@ final class TimberDocumentResource extends XotBaseResource
                                 ->required(),
                             Select::make('unit_of_measure')
                                 ->label('U.m.')
-                                ->options(self::configMap('timber.units_of_measure'))
+                                ->options(TimberConfigMap::get('timber.units_of_measure'))
                                 ->default('quintali')
                                 ->required(),
                             TextInput::make('unit_price')
@@ -205,55 +202,6 @@ final class TimberDocumentResource extends XotBaseResource
         ];
     }
 
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->defaultSort('document_date', 'desc')
-            ->columns([
-                Tables\Columns\TextColumn::make('document_type_code')
-                    ->label('Tipo')
-                    ->formatStateUsing(fn (?string $state): string => self::configMap('timber.document_types')[$state] ?? (string) $state)
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('number')
-                    ->label('Numero')
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('document_date')
-                    ->label('Data')
-                    ->date('d/m/Y')
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('customer.business_name')
-                    ->label('Cliente / Fornitore')
-                    ->searchable()
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('status_code')
-                    ->label('Stato')
-                    ->badge()
-                    ->formatStateUsing(fn (?string $state): string => self::configMap('timber.document_statuses')[$state] ?? (string) $state),
-                Tables\Columns\TextColumn::make('total_amount')
-                    ->label('Totale')
-                    ->money('EUR')
-                    ->sortable(),
-                Tables\Columns\IconColumn::make('stock_posted_at')
-                    ->label('A magazzino')
-                    ->boolean()
-                    ->getStateUsing(fn (TimberDocument $record): bool => $record->stock_posted_at !== null),
-            ])
-            ->filters([
-                Tables\Filters\SelectFilter::make('document_type_code')
-                    ->label('Tipo')
-                    ->options(self::configMap('timber.document_types')),
-                Tables\Filters\SelectFilter::make('status_code')
-                    ->label('Stato')
-                    ->options(self::configMap('timber.document_statuses')),
-            ])
-            ->actions([
-                self::postToStockAction(),
-                ViewAction::make(),
-                EditAction::make(),
-            ]);
-    }
-
     public static function postToStockAction(): Action
     {
         return Action::make('postToStock')
@@ -264,7 +212,7 @@ final class TimberDocumentResource extends XotBaseResource
             ->visible(fn (TimberDocument $record): bool => $record->hasStockImpact() && $record->stock_posted_at === null)
             ->action(function (TimberDocument $record): void {
                 try {
-                    app(PostTimberDocumentStockAction::class)->execute($record, (int) Auth::id());
+                    app(PostTimberDocumentStockAction::class)->execute($record, Auth::id());
                     Notification::make()->title('Documento registrato a magazzino')->success()->send();
                 } catch (\RuntimeException $exception) {
                     Notification::make()->title($exception->getMessage())->warning()->send();
@@ -275,26 +223,6 @@ final class TimberDocumentResource extends XotBaseResource
     private static function formatQuantity(float $quantity): string
     {
         return rtrim(rtrim(number_format($quantity, 3, ',', '.'), '0'), ',');
-    }
-
-    /**
-     * @return array<string, string>
-     */
-    private static function configMap(string $key): array
-    {
-        $value = config($key, []);
-
-        if (! is_array($value)) {
-            return [];
-        }
-
-        /** @var array<string, string> $map */
-        $map = [];
-        foreach ($value as $code => $label) {
-            $map[(string) $code] = is_string($label) ? $label : (string) $code;
-        }
-
-        return $map;
     }
 
     public static function getPages(): array

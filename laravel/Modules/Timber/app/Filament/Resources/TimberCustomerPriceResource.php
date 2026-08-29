@@ -5,19 +5,15 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Resources;
 
 use App\Support\AccountFeatures;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Modules\Xot\Filament\Resources\XotBaseResource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
-use Filament\Tables;
-use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Filament\Resources\TimberCustomerPriceResource\Pages;
 use Modules\Timber\Models\TimberCustomerPrice;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 final class TimberCustomerPriceResource extends XotBaseResource
 {
@@ -73,7 +69,7 @@ final class TimberCustomerPriceResource extends XotBaseResource
         return 'Prezzi per cliente';
     }
 
-    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    /** @return array<int|string, Component> */
     public static function getFormSchema(): array
     {
         return [
@@ -99,36 +95,6 @@ final class TimberCustomerPriceResource extends XotBaseResource
                         ->required(),
                 ]),
         ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('customer.business_name')
-                    ->label('Cliente')
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('product.description')
-                    ->label('Prodotto')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('net_price')
-                    ->label('Prezzo netto')
-                    ->money('EUR'),
-            ])
-            ->filters([
-                Tables\Filters\SelectFilter::make('customer_id')
-                    ->label('Cliente')
-                    ->relationship('customer', 'business_name')
-                    ->searchable()
-                    ->preload(),
-            ])
-            ->actions([
-                EditAction::make(),
-            ])
-            ->bulkActions([
-                DeleteBulkAction::make(),
-            ]);
     }
 
     public static function getPages(): array

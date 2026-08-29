@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Data\TimberTraceabilityRow;
 use Modules\Timber\Queries\GetTimberTraceabilityRegisterQuery;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 use function Safe\fclose;

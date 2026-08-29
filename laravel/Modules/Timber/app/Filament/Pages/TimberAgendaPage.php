@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Support\Facades\Auth;
+use Modules\Timber\Domain\DTO\AgendaEvent;
 use Modules\Timber\Queries\GetTimberAgendaQuery;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 final class TimberAgendaPage extends XotBasePage
 {
@@ -53,7 +54,7 @@ final class TimberAgendaPage extends XotBasePage
     }
 
     /**
-     * @return array{events: array<int, \Modules\Timber\Domain\DTO\AgendaEvent>}
+     * @return array{events: array<int, AgendaEvent>}
      */
     protected function getViewData(): array
     {

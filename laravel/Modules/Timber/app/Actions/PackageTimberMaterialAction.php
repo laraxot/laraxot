@@ -28,7 +28,7 @@ final class PackageTimberMaterialAction
      * @param  array<int, array{product_id:int, package_type_code:string, packages_count:int, quantity_per_package:float}>  $lines
      * @return Collection<int, TimberPackagedUnit>
      */
-    public function execute(TimberDerivedMaterial $material, array $lines, ?int $userId = null): Collection
+    public function execute(TimberDerivedMaterial $material, array $lines, int|string|null $userId = null): Collection
     {
         if ($lines === []) {
             throw new InvalidArgumentException('Indicare almeno un articolo da confezionare.');

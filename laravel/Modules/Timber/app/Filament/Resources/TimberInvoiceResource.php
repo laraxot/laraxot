@@ -7,20 +7,15 @@ namespace Modules\Timber\Filament\Resources;
 use App\Support\AccountFeatures;
 use Closure;
 use Filament\Actions\Action;
-use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
-use Modules\Xot\Filament\Resources\XotBaseResource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Set;
-use Filament\Schemas\Schema;
-use Filament\Tables;
-use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Catalog\Models\Product;
@@ -30,7 +25,9 @@ use Modules\Timber\Actions\PrepareTimberEInvoiceAction;
 use Modules\Timber\Actions\SendTimberInvoiceByEmailAction;
 use Modules\Timber\Filament\Resources\TimberInvoiceResource\Pages;
 use Modules\Timber\Models\TimberInvoice;
+use Modules\Timber\Support\TimberConfigMap;
 use Modules\Timber\Support\WhatsAppMessageLink;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 final class TimberInvoiceResource extends XotBaseResource
@@ -92,7 +89,7 @@ final class TimberInvoiceResource extends XotBaseResource
         return 'Fatture e documenti fiscali';
     }
 
-    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    /** @return array<int|string, Component> */
     public static function getFormSchema(): array
     {
         return [
@@ -101,7 +98,7 @@ final class TimberInvoiceResource extends XotBaseResource
                 ->components([
                     Select::make('kind')
                         ->label('Tipo')
-                        ->options(self::configMap('timber.invoice_kinds'))
+                        ->options(TimberConfigMap::get('timber.invoice_kinds'))
                         ->default('fattura')
                         ->required()
                         ->disabledOn('edit'),
@@ -120,7 +117,7 @@ final class TimberInvoiceResource extends XotBaseResource
                         ->preload(),
                     Select::make('payment_method_code')
                         ->label('Metodo pagamento')
-                        ->options(self::configMap('timber.payment_methods')),
+                        ->options(TimberConfigMap::get('timber.payment_methods')),
                     TextInput::make('payment_terms')
                         ->label('Termini pagamento')
                         ->maxLength(255),
@@ -175,7 +172,7 @@ final class TimberInvoiceResource extends XotBaseResource
                                 }),
                             Select::make('unit_of_measure')
                                 ->label('U.m.')
-                                ->options(self::configMap('timber.units_of_measure'))
+                                ->options(TimberConfigMap::get('timber.units_of_measure'))
                                 ->default('quintali')
                                 ->required(),
                             TextInput::make('unit_price')
@@ -191,7 +188,7 @@ final class TimberInvoiceResource extends XotBaseResource
                                 ->default(0),
                             Select::make('vat_rate')
                                 ->label('IVA %')
-                                ->options(self::configMap('timber.vat_rates'))
+                                ->options(TimberConfigMap::get('timber.vat_rates'))
                                 ->default('22')
                                 ->required(),
                             TextInput::make('lot_code')
@@ -208,63 +205,6 @@ final class TimberInvoiceResource extends XotBaseResource
                 ->rows(3)
                 ->columnSpanFull(),
         ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->defaultSort('invoice_date', 'desc')
-            ->columns([
-                Tables\Columns\TextColumn::make('kind')
-                    ->label('Tipo')
-                    ->formatStateUsing(fn (?string $state): string => self::configMap('timber.invoice_kinds')[$state] ?? (string) $state)
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('number')
-                    ->label('Numero')
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('invoice_date')
-                    ->label('Data')
-                    ->date('d/m/Y')
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('customer.business_name')
-                    ->label('Cliente')
-                    ->searchable()
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('status_code')
-                    ->label('Stato')
-                    ->badge()
-                    ->formatStateUsing(fn (?string $state): string => self::configMap('timber.invoice_statuses')[$state] ?? (string) $state),
-                Tables\Columns\TextColumn::make('taxable_amount')
-                    ->label('Imponibile')
-                    ->money('EUR')
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('vat_amount')
-                    ->label('IVA')
-                    ->money('EUR')
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('total_amount')
-                    ->label('Totale')
-                    ->money('EUR')
-                    ->sortable(),
-            ])
-            ->filters([
-                Tables\Filters\SelectFilter::make('kind')
-                    ->label('Tipo')
-                    ->options(self::configMap('timber.invoice_kinds')),
-                Tables\Filters\SelectFilter::make('status_code')
-                    ->label('Stato')
-                    ->options(self::configMap('timber.invoice_statuses')),
-            ])
-            ->actions([
-                self::downloadPdfAction(),
-                self::sendEmailAction(),
-                self::whatsAppAction(),
-                self::issueAction(),
-                self::prepareEInvoiceAction(),
-                ViewAction::make(),
-                EditAction::make(),
-            ]);
     }
 
     public static function downloadPdfAction(): Action
@@ -353,32 +293,12 @@ final class TimberInvoiceResource extends XotBaseResource
             ->visible(fn (TimberInvoice $record): bool => $record->issued_at === null)
             ->action(function (TimberInvoice $record): void {
                 try {
-                    app(IssueTimberInvoiceAction::class)->execute($record, (int) Auth::id());
+                    app(IssueTimberInvoiceAction::class)->execute($record, Auth::id());
                     Notification::make()->title('Documento emesso: '.$record->refresh()->number)->success()->send();
                 } catch (\RuntimeException $exception) {
                     Notification::make()->title($exception->getMessage())->warning()->send();
                 }
             });
-    }
-
-    /**
-     * @return array<string, string>
-     */
-    private static function configMap(string $key): array
-    {
-        $value = config($key, []);
-
-        if (! is_array($value)) {
-            return [];
-        }
-
-        /** @var array<string, string> $map */
-        $map = [];
-        foreach ($value as $code => $label) {
-            $map[(string) $code] = is_string($label) ? $label : (string) $code;
-        }
-
-        return $map;
     }
 
     public static function getPages(): array

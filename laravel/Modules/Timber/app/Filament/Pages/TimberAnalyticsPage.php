@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Support\Facades\Auth;
-use Modules\Timber\Queries\GetTimberBusinessAnalyticsQuery;
 use Modules\Timber\Domain\DTO\TimberAnalyticsSummary;
+use Modules\Timber\Queries\GetTimberBusinessAnalyticsQuery;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 final class TimberAnalyticsPage extends XotBasePage
 {

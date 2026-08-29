@@ -93,7 +93,7 @@ final class GetTimberBusinessAnalyticsQuery
      */
     private function purchaseTypes(): array
     {
-        $types = config('timber.vat_purchase_document_types', []);
+        $types = config('timber.config.vat_purchase_document_types', []);
 
         return is_array($types) ? array_values(array_filter($types, 'is_string')) : [];
     }

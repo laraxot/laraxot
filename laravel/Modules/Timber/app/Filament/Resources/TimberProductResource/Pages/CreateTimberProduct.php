@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Timber\Filament\Resources\TimberProductResource\Pages;
 
-use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 use Modules\Timber\Filament\Resources\TimberProductResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 
 final class CreateTimberProduct extends XotBaseCreateRecord
 {

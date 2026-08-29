@@ -19,7 +19,7 @@ final readonly class ConfiguredEasyfattGateway implements EasyfattGateway
     {
         $customersTable = config('timber.timber.easyfatt.customers_table');
         $rows = $this->fetchFromConfiguredDatabase(is_string($customersTable) ? $customersTable : '')
-            ?? $this->fallbackRows('timber.easyfatt.fallback_customers');
+            ?? $this->fallbackRows('timber.timber.easyfatt.fallback_customers');
 
         $mapping = $this->columnMapping();
         $customers = [];
@@ -43,7 +43,7 @@ final readonly class ConfiguredEasyfattGateway implements EasyfattGateway
     {
         $productsTable = config('timber.timber.easyfatt.products_table');
         $rows = $this->fetchFromConfiguredDatabase(is_string($productsTable) ? $productsTable : '')
-            ?? $this->fallbackRows('timber.easyfatt.fallback_products');
+            ?? $this->fallbackRows('timber.timber.easyfatt.fallback_products');
 
         $mapping = $this->columnMapping();
         $products = [];

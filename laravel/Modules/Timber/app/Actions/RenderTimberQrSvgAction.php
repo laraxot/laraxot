@@ -14,6 +14,8 @@ final class RenderTimberQrSvgAction
         $options = new QROptions([
             'outputType' => QRCode::OUTPUT_MARKUP_SVG,
             'scale' => max(1, (int) round($size / 25)),
+            // render() deve restituire il markup SVG grezzo: il data URI lo costruisce dataUri()
+            'imageBase64' => false,
         ]);
 
         return (string) (new QRCode($options))->render($payload);

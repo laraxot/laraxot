@@ -4,9 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Timber\Filament\Resources\TimberSupplierResource\Pages;
 
+use Filament\Actions\Action;
+use Filament\Actions\ActionGroup;
 use Filament\Actions\CreateAction;
-use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
+use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Tables;
+use Filament\Tables\Columns\Column;
 use Modules\Timber\Filament\Resources\TimberSupplierResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
 final class ListTimberSuppliers extends XotBaseListRecords
 {
@@ -16,6 +22,38 @@ final class ListTimberSuppliers extends XotBaseListRecords
     {
         return [
             'create' => CreateAction::make(),
+        ];
+    }
+
+    /** @return array<string, Column> */
+    public function getTableColumns(): array
+    {
+        return [
+            'legal_name' => Tables\Columns\TextColumn::make('legal_name')
+                ->label('Ragione sociale')
+                ->searchable()
+                ->sortable(),
+            'vat_number' => Tables\Columns\TextColumn::make('vat_number')
+                ->label('Partita IVA')
+                ->toggleable(),
+            'city' => Tables\Columns\TextColumn::make('city')
+                ->label('Citta')
+                ->toggleable(),
+            'is_active' => Tables\Columns\IconColumn::make('is_active')
+                ->label('Attivo')
+                ->boolean(),
+            'updated_at' => Tables\Columns\TextColumn::make('updated_at')
+                ->dateTime()
+                ->toggleable(isToggledHiddenByDefault: true),
+        ];
+    }
+
+    /** @return array<string, Action|ActionGroup> */
+    public function getTableActions(): array
+    {
+        return [
+            'view' => ViewAction::make(),
+            'edit' => EditAction::make(),
         ];
     }
 }

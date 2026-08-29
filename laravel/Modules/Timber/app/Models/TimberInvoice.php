@@ -76,7 +76,7 @@ final class TimberInvoice extends BaseModel
 
     public function hasStockImpact(): bool
     {
-        $map = config('timber.invoice_stock_directions', []);
+        $map = config('timber.config.invoice_stock_directions', []);
 
         return is_array($map) && array_key_exists($this->kind, $map);
     }

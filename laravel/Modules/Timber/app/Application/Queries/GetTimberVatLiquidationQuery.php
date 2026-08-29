@@ -37,7 +37,7 @@ final class GetTimberVatLiquidationQuery
      */
     private function salesAmounts(string $fromDate, string $toDate): array
     {
-        $kinds = config('timber.vat_register_kinds', []);
+        $kinds = config('timber.config.vat_register_kinds', []);
         $kinds = is_array($kinds) ? $kinds : [];
 
         $amounts = [];
@@ -63,7 +63,7 @@ final class GetTimberVatLiquidationQuery
      */
     private function purchaseAmounts(string $fromDate, string $toDate): array
     {
-        $types = config('timber.vat_purchase_document_types', []);
+        $types = config('timber.config.vat_purchase_document_types', []);
         $types = is_array($types) ? $types : [];
 
         $amounts = [];

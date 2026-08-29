@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Timber\Filament\Resources\TimberDocumentResource\Pages;
 
-use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Filament\Resources\TimberDocumentResource;
 use Modules\Timber\Models\TimberDocument;
 use Modules\Timber\Support\TimberDocumentNumberGenerator;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 
 final class CreateTimberDocument extends XotBaseCreateRecord
 {

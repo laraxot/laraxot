@@ -19,7 +19,7 @@ final class PostTimberDocumentStockAction
      * Post a document to the warehouse, generating one stock movement per line.
      * DDTs unload stock; inbound goods documents load it. Idempotent guard.
      */
-    public function execute(TimberDocument $document, ?int $userId = null): TimberDocument
+    public function execute(TimberDocument $document, int|string|null $userId = null): TimberDocument
     {
         if (! $document->hasStockImpact()) {
             throw new RuntimeException('Questo tipo di documento non genera movimenti di magazzino.');

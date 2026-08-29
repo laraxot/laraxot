@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Support;
 
-use Modules\User\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Modules\User\Models\User;
 
 final class AccountFeatures
 {
@@ -32,14 +32,16 @@ final class AccountFeatures
      * Pagine WTS visibili al wts_operator in "modalità Brondi": solo lo snodo lavorazioni
      * e le 4 pagine di lavorazione. Il wts_admin invece vede tutto.
      *
-     * @var list<class-string>
+     * Stringhe (non ::class): il modulo Wts non è ancora portato in questa base.
+     *
+     * @var list<string>
      */
     public const WTS_OPERATOR_PAGES = [
-        \Modules\Wts\Filament\Pages\WtsProcessingPage::class,
-        \Modules\Wts\Filament\Pages\WtsSortingPage::class,
-        \Modules\Wts\Filament\Pages\WtsUnpackagingPage::class,
-        \Modules\Wts\Filament\Pages\WtsGrindingWashingPage::class,
-        \Modules\Wts\Filament\Pages\WtsPressingPage::class,
+        'Modules\\Wts\\Filament\\Pages\\WtsProcessingPage',
+        'Modules\\Wts\\Filament\\Pages\\WtsSortingPage',
+        'Modules\\Wts\\Filament\\Pages\\WtsUnpackagingPage',
+        'Modules\\Wts\\Filament\\Pages\\WtsGrindingWashingPage',
+        'Modules\\Wts\\Filament\\Pages\\WtsPressingPage',
     ];
 
     /**
@@ -97,7 +99,6 @@ final class AccountFeatures
             default => false,
         };
     }
-
 
     /**
      * I panel Laraxot hanno id "{modulo}::admin" (es. timber::admin): la matrice
@@ -333,7 +334,7 @@ final class AccountFeatures
      */
     public static function scopeAssignedWorkOrders(Builder $query, User $user, string $workOrdersTable = 'work_orders'): Builder
     {
-        return $query->whereExists(function ($subQuery) use ($user, $workOrdersTable): void {
+        return $query->whereExists(function (\Illuminate\Database\Query\Builder $subQuery) use ($user, $workOrdersTable): void {
             $subQuery->selectRaw('1')
                 ->from('work_order_assignments')
                 ->whereColumn('work_order_assignments.work_order_id', $workOrdersTable.'.id')
@@ -351,7 +352,7 @@ final class AccountFeatures
     {
         return $query->where(function (Builder $q) use ($user, $interventionsTable): void {
             // Via work order assignment
-            $q->whereExists(function ($sub) use ($user, $interventionsTable): void {
+            $q->whereExists(function (\Illuminate\Database\Query\Builder $sub) use ($user, $interventionsTable): void {
                 $sub->selectRaw('1')
                     ->from('work_order_assignments')
                     ->whereColumn('work_order_assignments.work_order_id', $interventionsTable.'.work_order_id')
@@ -360,7 +361,7 @@ final class AccountFeatures
             // Direct-customer intervention: customer must be in the perimeter
                 ->orWhere(function (Builder $direct) use ($user, $interventionsTable): void {
                     $direct->whereNotNull($interventionsTable.'.customer_id')
-                        ->whereExists(function ($sub) use ($user, $interventionsTable): void {
+                        ->whereExists(function (\Illuminate\Database\Query\Builder $sub) use ($user, $interventionsTable): void {
                             $sub->selectRaw('1')
                                 ->from('work_orders')
                                 ->join('work_order_assignments', 'work_order_assignments.work_order_id', '=', 'work_orders.id')
@@ -379,7 +380,7 @@ final class AccountFeatures
      */
     public static function scopeAssignedCustomers(Builder $query, User $user, string $customersTable = 'customers'): Builder
     {
-        return $query->whereExists(function ($subQuery) use ($user, $customersTable): void {
+        return $query->whereExists(function (\Illuminate\Database\Query\Builder $subQuery) use ($user, $customersTable): void {
             $subQuery->selectRaw('1')
                 ->from('work_orders')
                 ->join('work_order_assignments', 'work_order_assignments.work_order_id', '=', 'work_orders.id')

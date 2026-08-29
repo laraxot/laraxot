@@ -6,7 +6,6 @@ namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
 use Filament\Notifications\Notification;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
@@ -18,6 +17,7 @@ use Modules\Timber\Models\TimberPurchaseRecord;
 use Modules\Timber\Models\TimberSupplier;
 use Modules\Timber\Models\TimberTransporter;
 use Modules\Timber\Support\WoodSpeciesCatalog;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 final class TimberPurchasesPage extends XotBasePage
 {

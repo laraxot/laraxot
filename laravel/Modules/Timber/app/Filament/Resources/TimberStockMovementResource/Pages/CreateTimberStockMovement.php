@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Timber\Filament\Resources\TimberStockMovementResource\Pages;
 
-use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Actions\RegisterTimberStockMovementAction;
 use Modules\Timber\Filament\Resources\TimberStockMovementResource;
 use Modules\Timber\Models\TimberCustomer;
 use Modules\Timber\Models\TimberProduct;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 use Safe\DateTimeImmutable;
 
 final class CreateTimberStockMovement extends XotBaseCreateRecord
@@ -42,7 +42,7 @@ final class CreateTimberStockMovement extends XotBaseCreateRecord
             directionCode: self::asString($data['direction_code'] ?? null) ?? '',
             quantity: is_numeric($data['quantity'] ?? null) ? (float) $data['quantity'] : 0.0,
             unitOfMeasure: self::asString($data['unit_of_measure'] ?? null) ?? '',
-            userId: (int) Auth::id(),
+            userId: Auth::id(),
             customer: $customer,
             documentTypeCode: self::asString($data['document_type_code'] ?? null),
             documentReference: self::asString($data['document_reference'] ?? null),

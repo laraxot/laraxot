@@ -38,7 +38,7 @@ final class TimberInvoiceNumberGenerator
 
     private function prefixFor(string $kind): string
     {
-        $prefixes = config('timber.invoice_number_prefixes', []);
+        $prefixes = config('timber.config.invoice_number_prefixes', []);
 
         if (is_array($prefixes) && isset($prefixes[$kind]) && is_string($prefixes[$kind])) {
             return $prefixes[$kind];

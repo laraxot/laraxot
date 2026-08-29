@@ -5,23 +5,19 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Resources;
 
 use App\Support\AccountFeatures;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Modules\Xot\Filament\Resources\XotBaseResource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
-use Filament\Schemas\Schema;
-use Filament\Tables;
-use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Modules\Timber\Filament\Resources\TimberWoodSpeciesResource\Pages;
 use Modules\Timber\Models\TimberWoodSpecies;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 final class TimberWoodSpeciesResource extends XotBaseResource
 {
@@ -77,7 +73,7 @@ final class TimberWoodSpeciesResource extends XotBaseResource
         return 'Specie legnose';
     }
 
-    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    /** @return array<int|string, Component> */
     public static function getFormSchema(): array
     {
         return [
@@ -112,37 +108,6 @@ final class TimberWoodSpeciesResource extends XotBaseResource
                     ]),
                 ]),
         ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->defaultSort('sort_order')
-            ->reorderable('sort_order')
-            ->columns([
-                Tables\Columns\TextColumn::make('name')
-                    ->label('Nome')
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('code')
-                    ->label('Codice')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('sort_order')
-                    ->label('Ordine')
-                    ->sortable(),
-                Tables\Columns\IconColumn::make('is_active')
-                    ->label('Attiva')
-                    ->boolean(),
-            ])
-            ->filters([
-                Tables\Filters\TernaryFilter::make('is_active')->label('Attiva'),
-            ])
-            ->actions([
-                EditAction::make(),
-            ])
-            ->bulkActions([
-                DeleteBulkAction::make(),
-            ]);
     }
 
     public static function getPages(): array

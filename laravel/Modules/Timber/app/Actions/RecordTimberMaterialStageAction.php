@@ -20,7 +20,7 @@ final class RecordTimberMaterialStageAction
     public function execute(
         TimberDerivedMaterial $material,
         string $stageTypeCode,
-        ?int $userId = null,
+        int|string|null $userId = null,
         bool $appendSegment = true,
         string $reasonCode = 'reprint',
     ): TimberDerivedMaterial {

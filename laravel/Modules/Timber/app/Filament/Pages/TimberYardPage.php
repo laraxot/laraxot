@@ -6,7 +6,6 @@ namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
 use Filament\Notifications\Notification;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
@@ -15,6 +14,7 @@ use Modules\Timber\Filament\Pages\Concerns\NormalizesTimberConfigMaps;
 use Modules\Timber\Models\TimberDerivedMaterial;
 use Modules\Timber\Models\TimberLot;
 use Modules\Timber\Queries\GetTimberYardOverviewQuery;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 final class TimberYardPage extends XotBasePage
 {

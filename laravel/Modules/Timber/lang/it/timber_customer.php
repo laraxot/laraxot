@@ -42,6 +42,7 @@ return [
         'contactNotes' => ['label' => 'contactNotes', 'placeholder' => 'contactNotes', 'helper_text' => 'contactNotes', 'description' => 'contactNotes'],
         'body' => ['label' => 'body', 'placeholder' => 'body', 'helper_text' => 'body', 'description' => 'body'],
         'is_active' => ['label' => 'is_active', 'placeholder' => 'is_active', 'helper_text' => 'is_active', 'description' => 'is_active'],
+        'value' => ['label' => 'value', 'placeholder' => 'value', 'helper_text' => 'value', 'description' => 'value'],
     ],
     'sections' => [
         'Sede operativa' => ['label' => 'Sede operativa', 'heading' => 'Sede operativa'],

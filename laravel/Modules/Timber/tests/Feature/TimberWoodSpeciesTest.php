@@ -7,6 +7,7 @@ use Modules\Timber\Filament\Resources\TimberWoodSpeciesResource\Pages\CreateTimb
 use Modules\Timber\Filament\Resources\TimberWoodSpeciesResource\Pages\ListTimberWoodSpecies;
 use Modules\Timber\Models\TimberWoodSpecies;
 use Modules\Timber\Support\WoodSpeciesCatalog;
+use Modules\Timber\Tests\TestCase;
 use Spatie\Permission\Models\Role;
 
 it('seeds the config species into the table via migration', function (): void {

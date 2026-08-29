@@ -29,7 +29,7 @@ final class RegisterTimberPurchaseAction
         ?string $certifications,
         ?string $photoPath,
         ?string $notes,
-        ?int $userId,
+        int|string|null $userId,
         ?string $purchasePriceUnit = null,
     ): TimberPurchaseRecord {
         $normalizedSpecies = trim($woodSpecies);

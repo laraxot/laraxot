@@ -5,12 +5,13 @@ declare(strict_types=1);
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Timber\Models\TimberCustomer;
 use Modules\Timber\Models\TimberProduct;
+use Modules\Timber\Models\TimberStockMovement;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 use Modules\Xot\Datas\XotData;
 
 return new class() extends XotBaseMigration
 {
-    protected ?string $model_class = \Modules\Timber\Models\TimberStockMovement::class;
+    protected ?string $model_class = TimberStockMovement::class;
 
     public function up(): void
     {

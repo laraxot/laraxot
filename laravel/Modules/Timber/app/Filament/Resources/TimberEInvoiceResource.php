@@ -7,14 +7,12 @@ namespace Modules\Timber\Filament\Resources;
 use App\Support\AccountFeatures;
 use Filament\Actions\Action;
 use Filament\Notifications\Notification;
-use Modules\Xot\Filament\Resources\XotBaseResource;
-use Filament\Schemas\Schema;
-use Filament\Tables;
-use Filament\Tables\Table;
+use Filament\Schemas\Components\Component;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Actions\TransmitTimberEInvoiceAction;
 use Modules\Timber\Filament\Resources\TimberEInvoiceResource\Pages;
 use Modules\Timber\Models\TimberEInvoice;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 final class TimberEInvoiceResource extends XotBaseResource
@@ -66,58 +64,10 @@ final class TimberEInvoiceResource extends XotBaseResource
         return 'Fatture elettroniche';
     }
 
-    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    /** @return array<int|string, Component> */
     public static function getFormSchema(): array
     {
         return [];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->defaultSort('created_at', 'desc')
-            ->columns([
-                Tables\Columns\TextColumn::make('invoice.number')
-                    ->label('Fattura')
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('invoice.customer.business_name')
-                    ->label('Cliente')
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('direction')
-                    ->label('Flusso')
-                    ->formatStateUsing(fn (?string $state): string => $state === 'in' ? 'Ricevuta' : 'Emessa')
-                    ->badge(),
-                Tables\Columns\TextColumn::make('sdi_status')
-                    ->label('Stato SdI')
-                    ->badge()
-                    ->formatStateUsing(fn (?string $state): string => self::configMap('timber.sdi_statuses')[$state] ?? (string) $state)
-                    ->color(fn (?string $state): string => match ($state) {
-                        'consegnata' => 'success',
-                        'inviata' => 'info',
-                        'scartata', 'non_consegnata' => 'danger',
-                        default => 'gray',
-                    }),
-                Tables\Columns\TextColumn::make('file_name')
-                    ->label('File')
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('transmitted_at')
-                    ->label('Trasmessa il')
-                    ->dateTime('d/m/Y H:i')
-                    ->toggleable(),
-            ])
-            ->filters([
-                Tables\Filters\SelectFilter::make('sdi_status')
-                    ->label('Stato SdI')
-                    ->options(self::configMap('timber.sdi_statuses')),
-                Tables\Filters\SelectFilter::make('direction')
-                    ->label('Flusso')
-                    ->options(['out' => 'Emesse', 'in' => 'Ricevute']),
-            ])
-            ->actions([
-                self::transmitAction(),
-                self::downloadXmlAction(),
-            ]);
     }
 
     public static function transmitAction(): Action
@@ -152,26 +102,6 @@ final class TimberEInvoiceResource extends XotBaseResource
                     echo $xml;
                 }, $name, ['Content-Type' => 'application/xml']);
             });
-    }
-
-    /**
-     * @return array<string, string>
-     */
-    private static function configMap(string $key): array
-    {
-        $value = config($key, []);
-
-        if (! is_array($value)) {
-            return [];
-        }
-
-        /** @var array<string, string> $map */
-        $map = [];
-        foreach ($value as $code => $label) {
-            $map[(string) $code] = is_string($label) ? $label : (string) $code;
-        }
-
-        return $map;
     }
 
     public static function getPages(): array

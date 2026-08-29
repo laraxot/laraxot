@@ -5,24 +5,17 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Resources;
 
 use App\Support\AccountFeatures;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\ForceDeleteBulkAction;
-use Filament\Actions\RestoreBulkAction;
-use Filament\Actions\ViewAction;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Modules\Xot\Filament\Resources\XotBaseResource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
-use Filament\Tables;
-use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Filament\Resources\TimberTransporterResource\Pages;
 use Modules\Timber\Models\TimberTransporter;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 final class TimberTransporterResource extends XotBaseResource
 {
@@ -83,7 +76,7 @@ final class TimberTransporterResource extends XotBaseResource
         return 'Trasportatori';
     }
 
-    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    /** @return array<int|string, Component> */
     public static function getFormSchema(): array
     {
         return [
@@ -124,35 +117,6 @@ final class TimberTransporterResource extends XotBaseResource
                 ])
                 ->columns(2),
         ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('legal_name')
-                    ->label('Ragione sociale')
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('vehicle_plate')
-                    ->label('Targa mezzo')
-                    ->toggleable(),
-                Tables\Columns\IconColumn::make('is_active')
-                    ->label('Attivo')
-                    ->boolean(),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->actions([
-                ViewAction::make(),
-                EditAction::make(),
-            ])
-            ->bulkActions([
-                DeleteBulkAction::make(),
-                RestoreBulkAction::make(),
-                ForceDeleteBulkAction::make(),
-            ]);
     }
 
     public static function getPages(): array

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Timber\Filament\Resources\TimberPriceListResource\Pages;
 
-use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Actions\SnapshotTimberPriceListAction;
 use Modules\Timber\Filament\Resources\TimberPriceListResource;
 use Modules\Timber\Models\TimberPriceList;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 
 final class CreateTimberPriceList extends XotBaseCreateRecord
 {
@@ -18,7 +18,7 @@ final class CreateTimberPriceList extends XotBaseCreateRecord
     {
         $record = $this->record;
         if ($record instanceof TimberPriceList) {
-            app(SnapshotTimberPriceListAction::class)->execute($record, Auth::id() !== null ? (int) Auth::id() : null, 'Creazione listino');
+            app(SnapshotTimberPriceListAction::class)->execute($record, Auth::id(), 'Creazione listino');
         }
     }
 }

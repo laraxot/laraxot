@@ -35,7 +35,7 @@
                         @forelse ($lots as $lot)
                             <tr class="border-t border-slate-100 dark:border-slate-800">
                                 <td class="py-2 font-semibold text-slate-950 dark:text-slate-100">
-                                    <a href="{{ \Modules\Timber\Filament\Pages\TimberLotDetailPage::getUrl(panel: 'timber', parameters: ['lot' => $lot->id]) }}">{{ $lot->lot_code }}</a>
+                                    <a href="{{ \Modules\Timber\Filament\Pages\TimberLotDetailPage::getUrl(panel: 'timber::admin', parameters: ['lot' => $lot->id]) }}">{{ $lot->lot_code }}</a>
                                 </td>
                                 <td>{{ $lot->wood_species_name }}</td>
                                 <td>{{ number_format((float) $lot->quantity_available, 2, ',', '.') }} {{ $lot->unit_of_measure }}</td>

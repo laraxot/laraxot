@@ -25,7 +25,7 @@ final class ImportTimberPriceListCsvAction
     /**
      * @return array{imported: int, skipped: int}
      */
-    public function execute(TimberPriceList $priceList, string $csvContent, ?int $userId = null): array
+    public function execute(TimberPriceList $priceList, string $csvContent, int|string|null $userId = null): array
     {
         $imported = 0;
         $skipped = 0;

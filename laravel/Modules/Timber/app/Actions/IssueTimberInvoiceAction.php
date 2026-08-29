@@ -28,7 +28,7 @@ final class IssueTimberInvoiceAction
         private readonly RegisterTimberStockMovementAction $registerStockMovement,
     ) {}
 
-    public function execute(TimberInvoice $invoice, ?int $userId = null): TimberInvoice
+    public function execute(TimberInvoice $invoice, int|string|null $userId = null): TimberInvoice
     {
         if ($invoice->issued_at !== null) {
             throw new RuntimeException('Il documento e gia stato emesso.');
@@ -55,9 +55,9 @@ final class IssueTimberInvoiceAction
         });
     }
 
-    private function postStock(TimberInvoice $invoice, ?int $userId): void
+    private function postStock(TimberInvoice $invoice, int|string|null $userId): void
     {
-        $directions = config('timber.invoice_stock_directions', []);
+        $directions = config('timber.config.invoice_stock_directions', []);
         $direction = is_array($directions) ? ($directions[$invoice->kind] ?? null) : null;
 
         if (! is_string($direction)) {

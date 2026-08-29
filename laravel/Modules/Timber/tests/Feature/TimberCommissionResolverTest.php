@@ -7,6 +7,7 @@ use Modules\Timber\Models\TimberAgent;
 use Modules\Timber\Models\TimberAgentCommission;
 use Modules\Timber\Models\TimberProduct;
 use Modules\Timber\Support\TimberCommissionResolver;
+use Modules\Timber\Tests\TestCase;
 
 function commission(TimberAgent $agent, TimberProduct $product): float
 {

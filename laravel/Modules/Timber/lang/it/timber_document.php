@@ -52,6 +52,7 @@ return [
         'discount_percent' => ['label' => 'discount_percent', 'placeholder' => 'discount_percent', 'helper_text' => 'discount_percent', 'description' => 'discount_percent'],
         'lot_code' => ['label' => 'lot_code', 'placeholder' => 'lot_code', 'helper_text' => 'lot_code', 'description' => 'lot_code'],
         'notes' => ['label' => 'notes', 'placeholder' => 'notes', 'helper_text' => 'notes', 'description' => 'notes'],
+        'value' => ['label' => 'value', 'placeholder' => 'value', 'helper_text' => 'value', 'description' => 'value'],
     ],
     'sections' => [
         'Testata' => ['label' => 'Testata', 'heading' => 'Testata'],

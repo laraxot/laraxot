@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Resources\TimberPriceListResource\Pages;
 
 use Filament\Actions\DeleteAction;
-use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Actions\SnapshotTimberPriceListAction;
 use Modules\Timber\Filament\Resources\TimberPriceListResource;
 use Modules\Timber\Models\TimberPriceList;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
 final class EditTimberPriceList extends XotBaseEditRecord
 {
@@ -26,7 +26,7 @@ final class EditTimberPriceList extends XotBaseEditRecord
     {
         $record = $this->record;
         if ($record instanceof TimberPriceList) {
-            app(SnapshotTimberPriceListAction::class)->execute($record, Auth::id() !== null ? (int) Auth::id() : null, 'Modifica listino');
+            app(SnapshotTimberPriceListAction::class)->execute($record, Auth::id(), 'Modifica listino');
         }
     }
 }

@@ -17,7 +17,7 @@ final class MoveTimberMaterialAction
     public function execute(
         TimberLot|TimberDerivedMaterial $material,
         string $toAreaCode,
-        ?int $userId,
+        int|string|null $userId,
         ?string $notes,
     ): TimberLot|TimberDerivedMaterial {
         $normalizedAreaCode = trim($toAreaCode);

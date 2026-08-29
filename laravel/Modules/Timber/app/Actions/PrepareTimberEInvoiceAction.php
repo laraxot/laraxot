@@ -32,7 +32,7 @@ final class PrepareTimberEInvoiceAction
         }
 
         $xml = $this->generateXml->execute($invoice);
-        $vat = config('timber.company.vat_number', '00000000000');
+        $vat = config('timber.config.company.vat_number', '00000000000');
         $progressive = strtoupper(str_pad(base_convert((string) $invoice->id, 10, 36), 5, '0', STR_PAD_LEFT));
         $fileName = sprintf('IT%s_%s.xml', is_scalar($vat) ? (string) $vat : '00000000000', $progressive);
 

@@ -6,23 +6,20 @@ namespace Modules\Timber\Filament\Resources;
 
 use App\Support\AccountFeatures;
 use Filament\Actions\Action;
-use Filament\Actions\EditAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
-use Modules\Xot\Filament\Resources\XotBaseResource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
-use Filament\Tables;
-use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Actions\MarkTimberInstallmentPaidAction;
 use Modules\Timber\Actions\SendTimberPaymentRemindersAction;
 use Modules\Timber\Filament\Resources\TimberPaymentInstallmentResource\Pages;
 use Modules\Timber\Models\TimberPaymentInstallment;
+use Modules\Timber\Support\TimberConfigMap;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 final class TimberPaymentInstallmentResource extends XotBaseResource
 {
@@ -73,7 +70,7 @@ final class TimberPaymentInstallmentResource extends XotBaseResource
         return 'Scadenzario / Pagamenti';
     }
 
-    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    /** @return array<int|string, Component> */
     public static function getFormSchema(): array
     {
         return [
@@ -105,10 +102,10 @@ final class TimberPaymentInstallmentResource extends XotBaseResource
                         ->required(),
                     Select::make('payment_method_code')
                         ->label('Metodo')
-                        ->options(self::configMap('timber.payment_methods')),
+                        ->options(TimberConfigMap::get('timber.payment_methods')),
                     Select::make('status_code')
                         ->label('Stato')
-                        ->options(self::configMap('timber.payment_statuses'))
+                        ->options(TimberConfigMap::get('timber.payment_statuses'))
                         ->default('da_saldare')
                         ->required(),
                     Textarea::make('notes')
@@ -117,68 +114,6 @@ final class TimberPaymentInstallmentResource extends XotBaseResource
                         ->columnSpanFull(),
                 ]),
         ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->defaultSort('due_date', 'asc')
-            ->columns([
-                Tables\Columns\TextColumn::make('due_date')
-                    ->label('Scadenza')
-                    ->date('d/m/Y')
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('invoice.number')
-                    ->label('Documento')
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('customer.business_name')
-                    ->label('Cliente')
-                    ->searchable()
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('direction')
-                    ->label('Tipo')
-                    ->formatStateUsing(fn (?string $state): string => $state === 'out' ? 'Uscita' : 'Entrata')
-                    ->badge()
-                    ->color(fn (?string $state): string => $state === 'out' ? 'warning' : 'success'),
-                Tables\Columns\TextColumn::make('amount')
-                    ->label('Importo')
-                    ->money('EUR')
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('payment_method_code')
-                    ->label('Metodo')
-                    ->formatStateUsing(fn (?string $state): string => self::configMap('timber.payment_methods')[$state] ?? (string) $state)
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('status_code')
-                    ->label('Stato')
-                    ->badge()
-                    ->formatStateUsing(fn (?string $state): string => self::configMap('timber.payment_statuses')[$state] ?? (string) $state)
-                    ->color(fn (?string $state): string => match ($state) {
-                        'saldato' => 'success',
-                        'sollecitato' => 'warning',
-                        default => 'gray',
-                    }),
-            ])
-            ->filters([
-                Tables\Filters\SelectFilter::make('status_code')
-                    ->label('Stato')
-                    ->options(self::configMap('timber.payment_statuses')),
-                Tables\Filters\SelectFilter::make('payment_method_code')
-                    ->label('Metodo')
-                    ->options(self::configMap('timber.payment_methods')),
-                Tables\Filters\SelectFilter::make('direction')
-                    ->label('Tipo')
-                    ->options(['in' => 'Entrate', 'out' => 'Uscite']),
-                Tables\Filters\Filter::make('overdue')
-                    ->label('Solo scadute da saldare')
-                    ->query(fn (Builder $query): Builder => $query->where('status_code', '!=', 'saldato')->whereDate('due_date', '<=', now())),
-                Tables\Filters\Filter::make('riba_to_issue')
-                    ->label('RIBA da emettere')
-                    ->query(fn (Builder $query): Builder => $query->where('payment_method_code', 'riba')->where('status_code', 'da_saldare')),
-            ])
-            ->actions([
-                self::markPaidAction(),
-                EditAction::make(),
-            ]);
     }
 
     public static function markPaidAction(): Action
@@ -206,26 +141,6 @@ final class TimberPaymentInstallmentResource extends XotBaseResource
                 $count = app(SendTimberPaymentRemindersAction::class)->execute();
                 Notification::make()->title($count.' solleciti inviati')->success()->send();
             });
-    }
-
-    /**
-     * @return array<string, string>
-     */
-    private static function configMap(string $key): array
-    {
-        $value = config($key, []);
-
-        if (! is_array($value)) {
-            return [];
-        }
-
-        /** @var array<string, string> $map */
-        $map = [];
-        foreach ($value as $code => $label) {
-            $map[(string) $code] = is_string($label) ? $label : (string) $code;
-        }
-
-        return $map;
     }
 
     public static function getPages(): array

@@ -6,24 +6,21 @@ namespace Modules\Timber\Filament\Resources;
 
 use App\Support\AccountFeatures;
 use Closure;
-use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Modules\Xot\Filament\Resources\XotBaseResource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
-use Filament\Schemas\Schema;
-use Filament\Tables;
-use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Filament\Resources\TimberStockMovementResource\Pages;
 use Modules\Timber\Models\TimberProduct;
 use Modules\Timber\Models\TimberStockMovement;
+use Modules\Timber\Support\TimberConfigMap;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 final class TimberStockMovementResource extends XotBaseResource
 {
@@ -74,7 +71,7 @@ final class TimberStockMovementResource extends XotBaseResource
         return 'Movimenti magazzino';
     }
 
-    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    /** @return array<int|string, Component> */
     public static function getFormSchema(): array
     {
         return [
@@ -87,7 +84,7 @@ final class TimberStockMovementResource extends XotBaseResource
                         ->required(),
                     Select::make('direction_code')
                         ->label('Tipo movimento')
-                        ->options(self::configMap('timber.stock_movement_directions'))
+                        ->options(TimberConfigMap::get('timber.stock_movement_directions'))
                         ->default('load')
                         ->required(),
                     Select::make('product_id')
@@ -131,7 +128,7 @@ final class TimberStockMovementResource extends XotBaseResource
                         Select::make('unit_of_measure')
                             ->label('U.m.')
                             ->key('unit_of_measure')
-                            ->options(self::configMap('timber.units_of_measure'))
+                            ->options(TimberConfigMap::get('timber.units_of_measure'))
                             ->default('quintali')
                             ->required(),
                     ]),
@@ -142,7 +139,7 @@ final class TimberStockMovementResource extends XotBaseResource
                         ->preload(),
                     Select::make('document_type_code')
                         ->label('Tipo documento')
-                        ->options(self::configMap('timber.document_types')),
+                        ->options(TimberConfigMap::get('timber.document_types')),
                     TextInput::make('document_reference')
                         ->label('Causale / Documento')
                         ->maxLength(255),
@@ -160,109 +157,6 @@ final class TimberStockMovementResource extends XotBaseResource
                         ->columnSpanFull(),
                 ]),
         ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->defaultSort('movement_date', 'desc')
-            ->columns([
-                Tables\Columns\TextColumn::make('movement_date')
-                    ->label('Data')
-                    ->date('d/m/Y')
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('product.code')
-                    ->label('Cod.')
-                    ->searchable()
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('product.description')
-                    ->label('Prodotto')
-                    ->searchable()
-                    ->wrap(),
-                Tables\Columns\TextColumn::make('customer.business_name')
-                    ->label('Cliente / Fornitore')
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('document_reference')
-                    ->label('Causale')
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('loaded')
-                    ->label('Caricato')
-                    ->getStateUsing(fn (TimberStockMovement $record): ?string => $record->signedQuantity() > 0
-                        ? rtrim(rtrim(number_format(abs($record->signedQuantity()), 3, ',', '.'), '0'), ',')
-                        : null)
-                    ->alignEnd(),
-                Tables\Columns\TextColumn::make('lot_code')
-                    ->label('Lotto/Seriale')
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('unloaded')
-                    ->label('Scaricato')
-                    ->getStateUsing(fn (TimberStockMovement $record): ?string => $record->signedQuantity() < 0
-                        ? rtrim(rtrim(number_format(abs($record->signedQuantity()), 3, ',', '.'), '0'), ',')
-                        : null)
-                    ->alignEnd(),
-                Tables\Columns\TextColumn::make('category')
-                    ->label('Categoria')
-                    ->toggleable(),
-            ])
-            ->filters([
-                Tables\Filters\SelectFilter::make('direction_code')
-                    ->label('Stato')
-                    ->options(self::configMap('timber.stock_movement_directions')),
-                Tables\Filters\SelectFilter::make('product_id')
-                    ->label('Prodotto')
-                    ->relationship('product', 'description')
-                    ->searchable()
-                    ->preload(),
-                Tables\Filters\SelectFilter::make('customer_id')
-                    ->label('Cliente / Fornitore')
-                    ->relationship('customer', 'business_name')
-                    ->searchable()
-                    ->preload(),
-                Tables\Filters\Filter::make('lot_code')
-                    ->schema([
-                        TextInput::make('lot_code')->label('Lotto / Seriale'),
-                    ])
-                    ->query(function (Builder $query, array $data): Builder {
-                        $value = trim((string) ($data['lot_code'] ?? ''));
-
-                        return $value === ''
-                            ? $query
-                            : $query->where('lot_code', 'like', "%{$value}%");
-                    }),
-                Tables\Filters\Filter::make('period')
-                    ->schema([
-                        DatePicker::make('from')->label('Dal'),
-                        DatePicker::make('until')->label('Al'),
-                    ])
-                    ->query(function (Builder $query, array $data): Builder {
-                        return $query
-                            ->when($data['from'] ?? null, fn (Builder $q, mixed $date): Builder => $q->whereDate('movement_date', '>=', is_string($date) ? $date : null))
-                            ->when($data['until'] ?? null, fn (Builder $q, mixed $date): Builder => $q->whereDate('movement_date', '<=', is_string($date) ? $date : null));
-                    }),
-            ])
-            ->actions([
-                ViewAction::make(),
-            ]);
-    }
-
-    /**
-     * @return array<string, string>
-     */
-    private static function configMap(string $key): array
-    {
-        $value = config($key, []);
-
-        if (! is_array($value)) {
-            return [];
-        }
-
-        /** @var array<string, string> $map */
-        $map = [];
-        foreach ($value as $code => $label) {
-            $map[(string) $code] = is_string($label) ? $label : (string) $code;
-        }
-
-        return $map;
     }
 
     public static function getPages(): array

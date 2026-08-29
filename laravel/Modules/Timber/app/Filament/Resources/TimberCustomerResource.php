@@ -6,26 +6,17 @@ namespace Modules\Timber\Filament\Resources;
 
 use App\Support\AccountFeatures;
 use Filament\Actions\Action;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\ForceDeleteBulkAction;
-use Filament\Actions\RestoreBulkAction;
-use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Modules\Xot\Filament\Resources\XotBaseResource;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
-use Filament\Schemas\Schema;
-use Filament\Tables;
-use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Actions\GenerateTimberCustomerLabelPdfAction;
@@ -33,6 +24,7 @@ use Modules\Timber\Actions\GenerateTimberCustomerSheetPdfAction;
 use Modules\Timber\Filament\Resources\TimberCustomerResource\Pages;
 use Modules\Timber\Models\TimberAgent;
 use Modules\Timber\Models\TimberCustomer;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 final class TimberCustomerResource extends XotBaseResource
@@ -94,7 +86,7 @@ final class TimberCustomerResource extends XotBaseResource
         return 'Clienti';
     }
 
-    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    /** @return array<int|string, Component> */
     public static function getFormSchema(): array
     {
         return [
@@ -310,55 +302,6 @@ final class TimberCustomerResource extends XotBaseResource
                 ->label('Attivo')
                 ->default(true),
         ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('code')
-                    ->label('Codice')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('business_name')
-                    ->label('Denominazione')
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('vat_number')
-                    ->label('Partita IVA')
-                    ->searchable()
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('city')
-                    ->label('Citta')
-                    ->toggleable(),
-                Tables\Columns\IconColumn::make('is_customer')
-                    ->label('Cliente')
-                    ->boolean()
-                    ->toggleable(),
-                Tables\Columns\IconColumn::make('is_supplier')
-                    ->label('Fornitore')
-                    ->boolean()
-                    ->toggleable(),
-                Tables\Columns\IconColumn::make('is_active')
-                    ->label('Attivo')
-                    ->boolean(),
-            ])
-            ->filters([
-                Tables\Filters\TernaryFilter::make('is_customer')->label('Cliente'),
-                Tables\Filters\TernaryFilter::make('is_supplier')->label('Fornitore'),
-            ])
-            ->actions([
-                self::printSheetAction(),
-                self::printLabelAction(),
-                ViewAction::make(),
-                EditAction::make(),
-            ])
-            ->bulkActions([
-                DeleteBulkAction::make(),
-                RestoreBulkAction::make(),
-                ForceDeleteBulkAction::make(),
-            ]);
     }
 
     public static function printSheetAction(): Action

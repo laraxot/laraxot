@@ -8,6 +8,7 @@ use Modules\Timber\Actions\MoveTimberMaterialAction;
 use Modules\Timber\Actions\StartTimberDryingCycleAction;
 use Modules\Timber\Models\TimberDerivedMaterial;
 use Modules\Timber\Models\TimberLot;
+use Modules\Timber\Tests\TestCase;
 
 function semiFinished(string $code): TimberDerivedMaterial
 {

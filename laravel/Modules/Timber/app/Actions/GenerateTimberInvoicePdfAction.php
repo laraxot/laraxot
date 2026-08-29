@@ -37,8 +37,8 @@ final class GenerateTimberInvoicePdfAction
                 ->all(),
         );
 
-        $company = config('timber.company', []);
-        $kinds = config('timber.invoice_kinds', []);
+        $company = config('timber.config.company', []);
+        $kinds = config('timber.config.invoice_kinds', []);
 
         return Pdf::loadView('timber::pdf.invoice', [
             'invoice' => $invoice,

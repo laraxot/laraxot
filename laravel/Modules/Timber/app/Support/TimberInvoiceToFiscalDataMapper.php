@@ -49,7 +49,7 @@ final class TimberInvoiceToFiscalDataMapper
 
     private function seller(): FiscalSeller
     {
-        $config = config('timber.company', []);
+        $config = config('timber.config.company', []);
         $config = is_array($config) ? $config : [];
 
         $defaults = [

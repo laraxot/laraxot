@@ -31,7 +31,7 @@ final class SendTimberInvoiceByEmailAction
         }
 
         $pdf = $this->generatePdf->execute($invoice);
-        $kinds = config('timber.invoice_kinds', []);
+        $kinds = config('timber.config.invoice_kinds', []);
         $label = is_array($kinds) && isset($kinds[$invoice->kind]) && is_string($kinds[$invoice->kind])
             ? $kinds[$invoice->kind]
             : 'Documento';

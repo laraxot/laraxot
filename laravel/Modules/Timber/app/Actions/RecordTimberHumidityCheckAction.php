@@ -13,7 +13,7 @@ final class RecordTimberHumidityCheckAction
     public function execute(
         TimberDryingCycle $cycle,
         float $humidityPercent,
-        ?int $userId,
+        int|string|null $userId,
         ?string $notes,
     ): TimberHumidityCheck {
         if ($cycle->status_code !== 'in_progress') {

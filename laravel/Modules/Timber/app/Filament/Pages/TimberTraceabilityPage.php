@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Actions\GenerateTimberTraceabilityPdfAction;
 use Modules\Timber\Queries\SearchTimberTraceabilityQuery;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 final class TimberTraceabilityPage extends XotBasePage

@@ -17,4 +17,11 @@ return [
         'resetColumnManager' => ['label' => 'resetColumnManager', 'icon' => 'resetColumnManager', 'tooltip' => 'resetColumnManager'],
         'reorderRecords' => ['label' => 'reorderRecords', 'icon' => 'reorderRecords', 'tooltip' => 'reorderRecords'],
     ],
+    'fields' => [
+        'name' => ['label' => 'name'],
+        'code' => ['label' => 'code'],
+        'sort_order' => ['label' => 'sort_order'],
+        'is_active' => ['label' => 'is_active'],
+        'value' => ['label' => 'value', 'placeholder' => 'value', 'helper_text' => 'value', 'description' => 'value'],
+    ],
 ];

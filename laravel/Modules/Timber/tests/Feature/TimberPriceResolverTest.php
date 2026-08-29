@@ -9,6 +9,7 @@ use Modules\Timber\Models\TimberPriceList;
 use Modules\Timber\Models\TimberPriceListItem;
 use Modules\Timber\Models\TimberProduct;
 use Modules\Timber\Support\TimberPriceResolver;
+use Modules\Timber\Tests\TestCase;
 
 it('resolves the price from the customer price list item', function (): void {
     $customer = TimberCustomer::factory()->createOne(['price_list_code' => 'ben_b2b']);

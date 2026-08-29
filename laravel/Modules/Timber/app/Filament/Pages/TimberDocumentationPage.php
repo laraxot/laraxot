@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 use function Safe\file_get_contents;
 

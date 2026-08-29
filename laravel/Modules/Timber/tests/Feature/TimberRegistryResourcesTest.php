@@ -12,6 +12,7 @@ use Modules\Timber\Filament\Resources\TimberTransporterResource\Pages\ListTimber
 use Modules\Timber\Models\TimberAgent;
 use Modules\Timber\Models\TimberSupplier;
 use Modules\Timber\Models\TimberTransporter;
+use Modules\Timber\Tests\TestCase;
 use Spatie\Permission\Models\Role;
 
 beforeEach(function (): void {

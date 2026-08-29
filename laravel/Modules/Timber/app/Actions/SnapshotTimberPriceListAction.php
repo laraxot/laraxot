@@ -12,7 +12,7 @@ use Modules\Timber\Models\TimberPriceListVersion;
  */
 final class SnapshotTimberPriceListAction
 {
-    public function execute(TimberPriceList $priceList, ?int $userId = null, ?string $note = null): TimberPriceListVersion
+    public function execute(TimberPriceList $priceList, int|string|null $userId = null, ?string $note = null): TimberPriceListVersion
     {
         $items = $priceList->items()->with('product')->get()
             ->map(static fn ($item): array => [

@@ -26,7 +26,7 @@ final class GenerateTimberPackagedUnitsAction
         string $packageTypeCode,
         int $unitsCount,
         float $quantityPerUnit,
-        ?int $userId = null,
+        int|string|null $userId = null,
         ?string $articleCode = null,
         ?string $traceableCode = null,
     ): Collection {

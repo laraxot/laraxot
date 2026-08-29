@@ -5,30 +5,23 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Resources;
 
 use App\Support\AccountFeatures;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\ForceDeleteBulkAction;
-use Filament\Actions\RestoreBulkAction;
-use Filament\Actions\ViewAction;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Modules\Xot\Filament\Resources\XotBaseResource;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
-use Filament\Schemas\Schema;
-use Filament\Tables;
-use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Filament\Resources\TimberProductResource\Pages;
 use Modules\Timber\Models\TimberProduct;
 use Modules\Timber\Models\TimberSupplier;
+use Modules\Timber\Support\TimberConfigMap;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 final class TimberProductResource extends XotBaseResource
 {
@@ -89,7 +82,7 @@ final class TimberProductResource extends XotBaseResource
         return 'Prodotti';
     }
 
-    /** @return array<int|string, \Filament\Schemas\Components\Component> */
+    /** @return array<int|string, Component> */
     public static function getFormSchema(): array
     {
         return [
@@ -114,7 +107,7 @@ final class TimberProductResource extends XotBaseResource
                     ->maxLength(255),
                 Select::make('product_type_code')
                     ->label('Tipologia')
-                    ->options(self::configMap('timber.product_types'))
+                    ->options(TimberConfigMap::get('timber.product_types'))
                     ->default('lot_managed')
                     ->required(),
                 TextInput::make('description')
@@ -130,7 +123,7 @@ final class TimberProductResource extends XotBaseResource
                     ->maxLength(255),
                 Select::make('unit_of_measure')
                     ->label('U.m.')
-                    ->options(self::configMap('timber.units_of_measure'))
+                    ->options(TimberConfigMap::get('timber.units_of_measure'))
                     ->default('quintali')
                     ->required(),
             ]),
@@ -142,7 +135,7 @@ final class TimberProductResource extends XotBaseResource
                         ->schema([
                             Select::make('price_list_code')
                                 ->label('Listino')
-                                ->options(self::configMap('timber.price_lists'))
+                                ->options(TimberConfigMap::get('timber.price_lists'))
                                 ->required(),
                             TextInput::make('net_price')
                                 ->label('Prezzo netto')
@@ -173,7 +166,7 @@ final class TimberProductResource extends XotBaseResource
                     ->maxLength(255),
                 Select::make('vat_rate_code')
                     ->label('Aliquota IVA')
-                    ->options(self::configMap('timber.vat_rates')),
+                    ->options(TimberConfigMap::get('timber.vat_rates')),
                 TextInput::make('commission_class')
                     ->label('Classe provvig.')
                     ->maxLength(255),
@@ -262,69 +255,6 @@ final class TimberProductResource extends XotBaseResource
                 ->label('Attivo')
                 ->default(true),
         ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('category')
-                    ->label('Categoria')
-                    ->toggleable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('code')
-                    ->label('Codice')
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('description')
-                    ->label('Descrizione')
-                    ->searchable()
-                    ->wrap(),
-                Tables\Columns\TextColumn::make('unit_of_measure')
-                    ->label('U.m.')
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('product_type_code')
-                    ->label('Tipologia')
-                    ->formatStateUsing(fn (?string $state): string => self::configMap('timber.product_types')[$state] ?? (string) $state)
-                    ->toggleable(),
-                Tables\Columns\IconColumn::make('is_active')
-                    ->label('Attivo')
-                    ->boolean(),
-            ])
-            ->filters([
-                Tables\Filters\SelectFilter::make('product_type_code')
-                    ->label('Tipologia')
-                    ->options(self::configMap('timber.product_types')),
-            ])
-            ->actions([
-                ViewAction::make(),
-                EditAction::make(),
-            ])
-            ->bulkActions([
-                DeleteBulkAction::make(),
-                RestoreBulkAction::make(),
-                ForceDeleteBulkAction::make(),
-            ]);
-    }
-
-    /**
-     * @return array<string, string>
-     */
-    private static function configMap(string $key): array
-    {
-        $value = config($key, []);
-
-        if (! is_array($value)) {
-            return [];
-        }
-
-        /** @var array<string, string> $map */
-        $map = [];
-        foreach ($value as $code => $label) {
-            $map[(string) $code] = is_string($label) ? $label : (string) $code;
-        }
-
-        return $map;
     }
 
     public static function getPages(): array
