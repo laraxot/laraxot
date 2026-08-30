@@ -8,6 +8,7 @@ use App\Support\AccountFeatures;
 use Filament\Actions\Action;
 use Filament\Actions\DeleteAction;
 use Filament\Infolists\Components\Entry;
+use Filament\Notifications\Notification;
 use Filament\Schemas\Components\Component;
 use Illuminate\Support\Facades\Auth;
 use Modules\AiAssistant\Filament\Pages\AiAssistantChat;
@@ -17,8 +18,10 @@ use Modules\Intervention\Filament\Concerns\ResolvesCalendarReturnUrl;
 use Modules\Intervention\Filament\Pages\RecordInterventionReportPage;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
+use Modules\Quotation\Actions\CreateQuotationFromInterventionAction;
+use Modules\Quotation\Filament\Resources\QuotationResource;
+use Modules\Quotation\Models\Quotation;
 use Modules\Signature\Filament\Pages\CaptureSignature;
-use Modules\Signature\Filament\Pages\CaptureSketch;
 use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
@@ -77,11 +80,35 @@ final class ViewIntervention extends XotBaseViewRecord
                 ->icon('heroicon-o-pencil')
                 ->url(fn (): string => CaptureSignature::getUrl(['interventionId' => $interventionId]))
                 ->openUrlInNewTab(),
-            'captureSketch' => Action::make('captureSketch')
-                ->label('Disegno')
-                ->icon('heroicon-o-pencil-square')
-                ->url(fn (): string => CaptureSketch::getUrl(['interventionId' => $interventionId]))
-                ->openUrlInNewTab(),
+            'createQuotation' => Action::make('createQuotation')
+                ->label(__('quotations.from_intervention.action'))
+                ->icon('heroicon-o-calculator')
+                ->color('warning')
+                ->requiresConfirmation()
+                ->modalHeading(__('quotations.from_intervention.action'))
+                ->modalDescription(__('quotations.from_intervention.confirm'))
+                ->action(function () use ($interventionId): void {
+                    $intervention = Intervention::query()->findOrFail($interventionId);
+                    $quotation = app(CreateQuotationFromInterventionAction::class)->execute($intervention);
+
+                    if (! $quotation instanceof Quotation) {
+                        Notification::make()
+                            ->warning()
+                            ->title(__('quotations.from_intervention.nothing_to_quote'))
+                            ->body(__('quotations.from_intervention.nothing_to_quote_body'))
+                            ->send();
+
+                        return;
+                    }
+
+                    Notification::make()
+                        ->success()
+                        ->title(__('quotations.from_intervention.created'))
+                        ->body(__('quotations.from_intervention.created_body'))
+                        ->send();
+
+                    $this->redirect(QuotationResource::getUrl('edit', ['record' => $quotation->getKey()]));
+                }),
             'downloadReport' => Action::make('downloadReport')
                 ->label(__('interventions.voice_report.download_pdf'))
                 ->icon('heroicon-o-document-arrow-down')
@@ -100,27 +127,9 @@ final class ViewIntervention extends XotBaseViewRecord
                 ->icon('heroicon-o-device-phone-mobile')
                 ->color('success')
                 ->url(fn (): string => app(CreateInterventionReportShareLinkAction::class)
-                    ->execute(Intervention::query()->findOrFail($interventionId), (int) Auth::id())
+                    ->execute(Intervention::query()->findOrFail($interventionId), Auth::id())
                     ->publicUrl())
                 ->openUrlInNewTab(),
-            'shareReport' => Action::make('shareReport')
-                ->label(__('interventions.voice_report.share_link'))
-                ->icon('heroicon-o-link')
-                ->modalHeading(__('interventions.voice_report.share_link'))
-                ->modalSubmitAction(false)
-                ->modalCancelActionLabel(__('interventions.voice_report.close'))
-                ->modalContent(function () use ($interventionId) {
-                    $intervention = Intervention::query()->findOrFail($interventionId);
-                    $share = app(CreateInterventionReportShareLinkAction::class)
-                        ->execute($intervention, (int) Auth::id());
-
-                    /** @var view-string $shareView */
-                    $shareView = 'interventions::filament.share-report-link';
-
-                    return view($shareView, [
-                        'url' => $share->publicUrl(),
-                    ]);
-                }),
         ];
     }
 }

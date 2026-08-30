@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Modules\Intervention\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Intervention\Tests\TestCase::class);
 
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
@@ -41,7 +41,7 @@ it('creates a share link with a token and public url', function (): void {
     $intervention = makeShareIntervention();
     $user = UserFactory::new()->createOne();
 
-    $share = app(CreateInterventionReportShareLinkAction::class)->execute($intervention, (int) $user->id);
+    $share = app(CreateInterventionReportShareLinkAction::class)->execute($intervention, $user->id);
 
     expect(strlen($share->token))->toBe(48)
         ->and($share->intervention_id)->toBe($intervention->id)

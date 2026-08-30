@@ -27,3 +27,32 @@ related:
 - [ ] Pest smoke
 
 SSoT: [functional-readiness.md](../../../../docs/gestionale-commesse-comparison/functional-readiness.md).
+
+## Delta seconda tranche (2026-08-30)
+
+Portato il delta sorgente `15f07e80..HEAD` (rapportino vocale con tariffa manodopera,
+recap extra-materiali, preventivo da intervento, gating navigazione):
+
+- **Data**: `LabourTariff`, `LabourQuote`, `InterventionPricing`, `ExtraMaterialsRecap`;
+  aggiornati `DictatedMaterialLine` (unit) e `InterventionReportDraft` (issues, operatori,
+  travel_km, labour/callout espliciti).
+- **Actions**: `CalculateLabourAmountAction`, `ResolveInterventionPricingAction`,
+  `ResolveDictatedOperatorsAction`; riallineati `Apply/BuildInterventionReportDraftAction`.
+- **Queries/Settings**: `GetExtraMaterialsRecapQuery`, `InterventionTariffSettings`
+  (legge da `Modules\Platform\Settings\SettingsRepository`).
+- **Filament**: `LabourTariffSettingsPage` (+ blade), `RecordInterventionReportPage`
+  riallineata (preview manodopera con maggiorazioni, issues, operatori dettati),
+  `InterventionResource` (materialLinesFormState + afterStateHydrated: fix righe
+  materiale che sparivano in edit; previewMaterialsTotal con scarichi magazzino),
+  `ViewIntervention` (azione "crea preventivo da intervento"),
+  widget `ExtraMaterialsRecapStats` (da app/Filament sorgente, su XotBaseStatsOverviewWidget).
+- **Gating**: resource → `GatedXotBaseResource`, pages → `GatedXotBasePage` (Platform).
+- **Panel**: creato `OperatorPanelProvider` (Platform) con id semantico `operator`;
+  il panel WorkOrder e il panel root `admin` scoprono le resource/pages Intervention
+  (XotBasePanelProvider ora espone `$panelId/$panelPath` overridabili).
+- **Viste**: namespace unificato `intervention::` (era misto `interventions::`),
+  aggiunte `reports/intervention-report{,-public}`. Asset FullCalendar spostato in
+  `resources/assets/js/intervention-calendar.js`: **TODO** integrarlo nella build del
+  tema (in questa base si compilano solo i temi); nei test `withoutVite()` in XotBaseTestCase.
+- **Test**: +7 file portati/creati (labour, pricing, recap, hydration, tariff page);
+  fix chiavi config con email puntata (dot-syntax spezzava `accounts.info@...it`).

@@ -7,7 +7,7 @@ use Modules\Quotation\Actions\GenerateConfirmedQuotationPdfAction;
 use Modules\Quotation\Models\Quotation;
 use Modules\Quotation\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Quotation\Tests\TestCase::class);
 
 it('generates a confirmed quotation PDF', function (): void {
     // Arrange

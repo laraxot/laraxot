@@ -12,7 +12,7 @@ use function Safe\file_put_contents;
 use function Safe\tempnam;
 use function Safe\unlink;
 
-uses(TestCase::class);
+uses(\Modules\Quotation\Tests\TestCase::class);
 
 /** A rewriter that returns a fixed string (or null) regardless of input. */
 function fakeRewriter(?string $return): QuotationDocumentRewriterInterface

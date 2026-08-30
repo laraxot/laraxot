@@ -13,11 +13,14 @@ namespace Modules\Intervention\Data;
  */
 final readonly class DictatedMaterialLine
 {
+    public const DEFAULT_UNIT = 'pz';
+
     public function __construct(
         public string $description,
         public float $quantity,
         public ?float $unitPrice = null,
         public ?int $matchedProductId = null,
+        public string $unit = self::DEFAULT_UNIT,
     ) {}
 
     public function isMatched(): bool
@@ -41,6 +44,7 @@ final readonly class DictatedMaterialLine
             quantity: $this->quantity,
             unitPrice: $unitPrice ?? $this->unitPrice,
             matchedProductId: $productId,
+            unit: $this->unit,
         );
     }
 
@@ -50,6 +54,7 @@ final readonly class DictatedMaterialLine
         return [
             'description' => $this->description,
             'quantity' => $this->quantity,
+            'unit' => $this->unit,
             'unit_price' => $this->unitPrice,
             'matched_product_id' => $this->matchedProductId,
             'line_total' => $this->lineTotal(),

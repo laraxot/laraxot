@@ -43,6 +43,11 @@ final class BuildInterventionReportDraftAction
             outcomeCode: $this->parseOutcome($raw['outcome_code'] ?? null),
             materials: $materials,
             suggestedAmount: $this->parseNullablePositiveFloat($raw['suggested_amount'] ?? null),
+            issues: $this->parseStringList($raw['issues'] ?? null),
+            operatorNames: $this->parseStringList($raw['operators'] ?? null),
+            travelKm: $this->parseNullablePositiveInt($raw['travel_km'] ?? null),
+            labourAmount: $this->parseNullablePositiveFloat($raw['labour_amount'] ?? null),
+            calloutFee: $this->parseNullablePositiveFloat($raw['callout_fee'] ?? null),
         );
     }
 
@@ -72,6 +77,7 @@ final class BuildInterventionReportDraftAction
                 description: $description,
                 quantity: $quantity,
                 unitPrice: $this->parseNullablePositiveFloat($item['unit_price'] ?? null),
+                unit: $this->parseUnit($item['unit'] ?? null),
             );
         }
 
@@ -81,6 +87,46 @@ final class BuildInterventionReportDraftAction
     private function parseString(mixed $value): string
     {
         return is_string($value) ? trim($value) : '';
+    }
+
+    /**
+     * Free-text lists coming back from the model: anything that is not a
+     * non-empty string is dropped rather than coerced, and duplicates are
+     * collapsed so a repeated remark does not become two records.
+     *
+     * @return list<string>
+     */
+    private function parseStringList(mixed $value): array
+    {
+        if (! is_array($value)) {
+            return [];
+        }
+
+        $items = [];
+        foreach ($value as $entry) {
+            $text = $this->parseString($entry);
+            if ($text === '' || in_array($text, $items, true)) {
+                continue;
+            }
+
+            $items[] = $text;
+        }
+
+        return $items;
+    }
+
+    /**
+     * The unit of measure decides whether "three metres of pipe" is billed as
+     * three metres or three pieces, so an unrecognisable value falls back to
+     * the previous hardcoded default instead of reaching the invoice.
+     */
+    private function parseUnit(mixed $value): string
+    {
+        $unit = mb_strtolower($this->parseString($value));
+
+        return $unit !== '' && mb_strlen($unit) <= 8
+            ? $unit
+            : DictatedMaterialLine::DEFAULT_UNIT;
     }
 
     private function parseOutcome(mixed $value): ?string

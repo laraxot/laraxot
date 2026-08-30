@@ -13,7 +13,7 @@ use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Database\Seeders\PermissionsSeeder;
 use Modules\User\Models\User;
 
-uses(TestCase::class);
+uses(\Modules\Quotation\Tests\TestCase::class);
 
 /**
  * Espone il trait dell'azione "Registra rilievo" senza montare la pagina

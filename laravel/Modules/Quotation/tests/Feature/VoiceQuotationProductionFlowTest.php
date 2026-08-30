@@ -12,7 +12,7 @@ use Modules\Quotation\AI\QuotationDraftExtractorInterface;
 use Modules\Quotation\Models\Quotation;
 use Modules\Quotation\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Quotation\Tests\TestCase::class);
 
 use function Pest\Laravel\actingAs;
 use function Safe\file_get_contents;

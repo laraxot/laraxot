@@ -16,7 +16,7 @@ use Modules\Quotation\DTO\QuotationDraft;
 use Modules\Quotation\Models\Quotation;
 use Modules\Quotation\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Quotation\Tests\TestCase::class);
 
 /**
  * @param  array<string, mixed>  $payload

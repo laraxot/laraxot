@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Modules\Intervention\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Intervention\Tests\TestCase::class);
 
 // NOTE: contains Platform deps — individual tests may need skip until Platform replica ready.
 

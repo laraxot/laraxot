@@ -10,7 +10,7 @@ use Modules\Quotation\Models\Quotation;
 use Modules\Quotation\Tests\TestCase;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-uses(TestCase::class);
+uses(\Modules\Quotation\Tests\TestCase::class);
 
 function makeQuotationForAttachment(): Quotation
 {

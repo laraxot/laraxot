@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Modules\Intervention\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Intervention\Tests\TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Actions\CreateIssueReportAction;

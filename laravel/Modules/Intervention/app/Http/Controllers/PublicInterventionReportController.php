@@ -26,7 +26,7 @@ final class PublicInterventionReportController extends Controller
         $intervention = $this->resolveIntervention($token);
 
         /** @var view-string $reportView */
-        $reportView = 'interventions::reports.intervention-report-public';
+        $reportView = 'intervention::reports.intervention-report-public';
 
         return view($reportView, [
             'report' => app(GetInterventionReportPublicDataAction::class)->execute($intervention),

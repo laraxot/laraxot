@@ -16,10 +16,10 @@ use Modules\Intervention\Filament\Concerns\ResolvesCalendarReturnUrl;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\GoogleCalendar\Actions\BuildGoogleOverlayEventsAction;
 use Modules\Intervention\Models\Intervention;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\User\Models\User;
-use Modules\Xot\Filament\Pages\XotBasePage;
 
-final class InterventionCalendar extends XotBasePage
+final class InterventionCalendar extends GatedXotBasePage
 {
     use InterventionCalendarColors;
     use ResolvesCalendarReturnUrl;
@@ -28,7 +28,7 @@ final class InterventionCalendar extends XotBasePage
 
     protected static ?string $slug = 'intervention-calendar';
 
-    protected string $view = 'interventions::filament.pages.intervention-calendar';
+    protected string $view = 'intervention::filament.pages.intervention-calendar';
 
     /** @var array<string, mixed> */
     public array $selectedIntervention = [];

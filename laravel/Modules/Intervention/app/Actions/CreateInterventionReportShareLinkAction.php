@@ -19,7 +19,7 @@ final class CreateInterventionReportShareLinkAction
 {
     use QueueableAction;
 
-    public function execute(Intervention $intervention, ?int $userId = null): InterventionReportShare
+    public function execute(Intervention $intervention, int|string|null $userId = null): InterventionReportShare
     {
         $existing = InterventionReportShare::query()
             ->where('intervention_id', $intervention->id)

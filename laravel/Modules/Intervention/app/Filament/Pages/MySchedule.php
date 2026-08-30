@@ -15,14 +15,14 @@ use Illuminate\Support\Facades\Auth;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\DailyNote;
 use Modules\Intervention\Models\Intervention;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\Platform\Models\PlatformSetting;
 use Modules\User\Models\User;
-use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * @property Schema $form
  */
-final class MySchedule extends XotBasePage
+final class MySchedule extends GatedXotBasePage
 {
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-calendar-days';
 
@@ -32,7 +32,7 @@ final class MySchedule extends XotBasePage
 
     protected static ?string $slug = 'my-schedule';
 
-    protected string $view = 'interventions::filament.pages.my-schedule';
+    protected string $view = 'intervention::filament.pages.my-schedule';
 
     public ?string $selectedDate = null;
 

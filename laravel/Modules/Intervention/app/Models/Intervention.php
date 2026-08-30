@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Customer;
@@ -104,11 +105,16 @@ final class Intervention extends BaseModel
         return $this->belongsTo(User::class, 'performed_by_user_id');
     }
 
-    /** @return BelongsToMany<User, $this> */
+    /**
+     * belongsToManyX: pivot InterventionUser auto-scoperto, gestisce il
+     * cross-connection intervention↔user (belongsToMany nudo perdeva
+     * l'accessor pivot in eager load).
+     *
+     * @return BelongsToMany<User, $this, Pivot, 'pivot'>
+     */
     public function assignedUsers(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'intervention_user_assignments')
-            ->withTimestamps();
+        return $this->belongsToManyX(User::class);
     }
 
     /** @return BelongsTo<WorkOrder, $this> */

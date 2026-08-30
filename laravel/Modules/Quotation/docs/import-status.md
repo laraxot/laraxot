@@ -103,3 +103,15 @@ Test che dipendono da queste tabelle/comando (falliscono per questo, non per bug
   di questa migrazione test-only (segnalato per follow-up separato).
 
 SSoT: [functional-readiness.md](../../../../docs/gestionale-commesse-comparison/functional-readiness.md).
+
+## Delta seconda tranche (2026-08-30, parziale)
+
+Anticipato dal delta Intervention (dipendenza cross-modulo):
+
+- `CreateQuotationFromInterventionAction` + `BuildQuotationLinesFromInterventionAction`
+  ("Turn an intervention report into a draft quotation"): materiali (righe manuali +
+  scarichi magazzino al prezzo di listino), poi manodopera, poi diritto di chiamata;
+  bozza mai inviata. Il sorgente non aveva test Pest → creato
+  `tests/Feature/CreateQuotationFromInterventionTest.php` (3 test, verdi).
+
+Il resto del delta Quotation (28 file) verrà lavorato nel suo ciclo Fase 1.

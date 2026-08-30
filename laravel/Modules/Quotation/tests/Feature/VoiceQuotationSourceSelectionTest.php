@@ -11,7 +11,7 @@ use Modules\Quotation\Models\Quotation;
 use Modules\Quotation\Tests\TestCase;
 use Modules\User\Models\User;
 
-uses(TestCase::class);
+uses(\Modules\Quotation\Tests\TestCase::class);
 
 use function Pest\Laravel\actingAs;
 

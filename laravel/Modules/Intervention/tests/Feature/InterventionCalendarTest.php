@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Modules\Intervention\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Intervention\Tests\TestCase::class);
 
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
@@ -266,7 +266,10 @@ it('shows gerardo the interventions of his assigned team in admin calendar', fun
 
     // Enable the assigned-perimeter feature for this account so the admin
     // calendar is scoped to the assigned team, regardless of the production default.
-    config(['account_features.accounts.info@gsbuildingservice.it.features.admin.assigned_perimeter' => true]);
+    // NB: niente dot-syntax qui — i punti nell'email spezzerebbero la chiave.
+    $accounts = (array) config('account_features.accounts', []);
+    $accounts['info@gsbuildingservice.it']['features']['admin.assigned_perimeter'] = true;
+    config(['account_features.accounts' => $accounts]);
 
     filament()->setCurrentPanel('admin');
     actingAs($gerardo);
@@ -405,7 +408,7 @@ it('builds create url from a timed calendar click when operator calendar creatio
 
     expect($url)->toContain('/operator/interventions/create')
         ->and(urldecode($url))->toContain('scheduled_at=2026-04-12 14:30:00')
-        ->and(urldecode($url))->toContain('return_to=http://localhost/operator/intervention-calendar?calendar_view=timeGridDay&calendar_date=2026-04-12');
+        ->and(urldecode($url))->toContain('return_to=http://workorder.local/operator/intervention-calendar?calendar_view=timeGridDay&calendar_date=2026-04-12');
 });
 
 it('normalizes timed calendar clicks to all-day scheduling for Gerardo', function (): void {
@@ -419,7 +422,10 @@ it('normalizes timed calendar clicks to all-day scheduling for Gerardo', functio
 
     // Enable the assigned-perimeter feature for this account so timed clicks
     // are normalized to all-day scheduling, regardless of the production default.
-    config(['account_features.accounts.info@gsbuildingservice.it.features.admin.assigned_perimeter' => true]);
+    // NB: niente dot-syntax qui — i punti nell'email spezzerebbero la chiave.
+    $accounts = (array) config('account_features.accounts', []);
+    $accounts['info@gsbuildingservice.it']['features']['admin.assigned_perimeter'] = true;
+    config(['account_features.accounts' => $accounts]);
 
     filament()->setCurrentPanel('admin');
     actingAs($user);
@@ -429,7 +435,7 @@ it('normalizes timed calendar clicks to all-day scheduling for Gerardo', functio
 
     expect($url)->toContain('/admin/interventions/create')
         ->and(urldecode($url))->toContain('scheduled_at=2026-04-12 08:00:00')
-        ->and(urldecode($url))->toContain('return_to=http://localhost/admin/intervention-calendar?calendar_view=timeGridDay&calendar_date=2026-04-12');
+        ->and(urldecode($url))->toContain('return_to=http://workorder.local/admin/intervention-calendar?calendar_view=timeGridDay&calendar_date=2026-04-12');
 });
 
 it('adds a visual end time for scheduled interventions without an actual end', function (): void {
@@ -499,5 +505,5 @@ it('stores a calendar-aware view url when opening intervention detail', function
     }
 
     expect($viewUrl)->toContain('/operator/interventions/'.$intervention->id)
-        ->and(urldecode($viewUrl))->toContain('return_to=http://localhost/operator/intervention-calendar?calendar_view=timeGridWeek&calendar_date=2026-04-13');
+        ->and(urldecode($viewUrl))->toContain('return_to=http://workorder.local/operator/intervention-calendar?calendar_view=timeGridWeek&calendar_date=2026-04-13');
 });

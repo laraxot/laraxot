@@ -3,4 +3,4 @@
     $record = $getRecord();
 @endphp
 
-@include('interventions::filament.components.daily-note-display', ['note' => $record])
+@include('intervention::filament.components.daily-note-display', ['note' => $record])

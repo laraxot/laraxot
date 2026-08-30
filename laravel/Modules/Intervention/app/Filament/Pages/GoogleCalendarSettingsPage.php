@@ -8,20 +8,20 @@ use App\Support\AccountFeatures;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
 use Modules\Intervention\Models\UserGoogleCalendarSetting;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\User\Models\User;
-use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * Per-user Google Calendar connection settings: connect/disconnect the Google
  * account and choose the target calendar. Tokens are never shown or edited here.
  */
-final class GoogleCalendarSettingsPage extends XotBasePage
+final class GoogleCalendarSettingsPage extends GatedXotBasePage
 {
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-calendar-days';
 
     protected static ?string $slug = 'google-calendar';
 
-    protected string $view = 'interventions::filament.pages.google-calendar-settings';
+    protected string $view = 'intervention::filament.pages.google-calendar-settings';
 
     public bool $enabled = false;
 

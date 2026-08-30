@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 use Modules\Quotation\AI\QuotationDraftExtractorInterface;
 use Modules\Quotation\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Quotation\Tests\TestCase::class);
 
 use function Safe\json_encode;
 

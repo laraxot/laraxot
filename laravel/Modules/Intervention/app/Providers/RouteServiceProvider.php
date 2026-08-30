@@ -10,5 +10,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 {
     public string $name = 'Intervention';
 
+    protected string $module_dir = __DIR__;
+
     protected string $moduleNamespace = 'Modules\Intervention\Http\Controllers';
 }

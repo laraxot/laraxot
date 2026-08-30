@@ -40,7 +40,7 @@ final class GenerateInterventionReportPdfAction
         }
 
         /** @var view-string $reportView */
-        $reportView = 'interventions::reports.intervention-report';
+        $reportView = 'intervention::reports.intervention-report';
 
         $content = Pdf::loadView($reportView, [
             'intervention' => $intervention,

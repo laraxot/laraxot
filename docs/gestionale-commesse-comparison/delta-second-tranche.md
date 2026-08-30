@@ -136,3 +136,21 @@ Vedi sezione aggiornata a fine Fase 0 con i numeri di `vendor/bin/pest` e `phpst
 1. Timber: reshape XotBase* delle 62 pagine Filament (causa principale dei 40 failed) + policy/permessi
 2. Fase 1: delta moduli già portati (partire da Catalog/Document/Signature)
 3. Fase 2-5 come da piano sopra
+
+## Checkpoint 2026-08-30
+
+- **Document/Signature/Customer**: collisioni tabelle risolte (opzione 2, issue #14):
+  `media`→`document_media`, `contacts`→`customer_contacts`; FK ritargetizzate in 14
+  migration; fixture rigenerata forward-only. Suites verdi. Commit `f1ddb3f5`.
+- **Vehicle**: delta = solo gating → `GatedXotBaseResource`. Verde.
+- **Intervention**: delta completo portato (tariffa manodopera, rapportino vocale v2,
+  recap extra-materiali, preventivo-da-intervento, gating). 11/11 calendario verdi.
+- **Quotation (parziale)**: portate le 2 action preventivo-da-intervento + test nuovo.
+- **Panel trasversali (anticipo Fase 3)**: `OperatorPanelProvider` in Platform
+  (id `operator`); `XotBasePanelProvider` con `$panelId/$panelPath` overridabili;
+  panel root `admin` e panel WorkOrder scoprono i moduli operativi.
+- **Infra test**: `withoutVite()` in XotBaseTestCase (niente build Vite nei test;
+  in questa base si compilano solo i temi). Asset `intervention-calendar.js` in
+  `Modules/Intervention/resources/assets/js/` — TODO integrazione build tema.
+- **Debito noto**: 14 errori PHPStan pre-esistenti in `app/` (Application, User,
+  FilamentOptimizationServiceProvider) — fuori perimetro delta, da workstream dedicato.

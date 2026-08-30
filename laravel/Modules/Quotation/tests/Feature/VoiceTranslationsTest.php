@@ -3,7 +3,7 @@
 declare(strict_types=1);
 use Modules\Quotation\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Quotation\Tests\TestCase::class);
 
 use function Safe\file_get_contents;
 use function Safe\preg_match_all;

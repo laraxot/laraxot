@@ -13,7 +13,7 @@ use Modules\Quotation\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-uses(TestCase::class);
+uses(\Modules\Quotation\Tests\TestCase::class);
 
 function sourceWithOds(): Quotation
 {

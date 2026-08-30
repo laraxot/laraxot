@@ -59,11 +59,11 @@ use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionMaterialLine;
 use Modules\Intervention\Models\TimePunch;
 use Modules\Intervention\Support\DailyNoteHtml;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Platform\Settings\SettingsRepository;
 use Modules\User\Models\User;
-use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class InterventionResource extends XotBaseResource
+final class InterventionResource extends GatedXotBaseResource
 {
     protected static ?string $model = Intervention::class;
 
@@ -259,10 +259,10 @@ final class InterventionResource extends XotBaseResource
                             ->helperText('Lascia 0 se non applichi il diritto di chiamata.'),
                         Placeholder::make('total_amount_preview')
                             ->label(__('interventions.fields.total_amount'))
-                            ->content(function (callable $get): string {
+                            ->content(function (callable $get, ?Intervention $record): string {
                                 $laborAmount = (float) ($get('amount') ?: 0);
                                 $calloutFee = (float) ($get('callout_fee') ?: 0);
-                                $materialsTotal = self::computeManualMaterialsTotal($get('manual_material_lines'));
+                                $materialsTotal = self::previewMaterialsTotal($get('manual_material_lines'), $record);
 
                                 return number_format($laborAmount + $calloutFee + $materialsTotal, 2, ',', '.').' €';
                             })
@@ -286,8 +286,8 @@ final class InterventionResource extends XotBaseResource
                             ->visible(fn (): bool => ! self::isDirectCustomerMode()),
                         Placeholder::make('materials_total_preview')
                             ->label(__('interventions.fields.materials_total'))
-                            ->content(function (callable $get): string {
-                                return number_format(self::computeManualMaterialsTotal($get('manual_material_lines')), 2, ',', '.').' €';
+                            ->content(function (callable $get, ?Intervention $record): string {
+                                return number_format(self::previewMaterialsTotal($get('manual_material_lines'), $record), 2, ',', '.').' €';
                             })
                             ->live(),
                     ]),
@@ -437,21 +437,20 @@ final class InterventionResource extends XotBaseResource
                             Hidden::make('extra_quantity'),
                             Hidden::make('extra_amount'),
                         ])
-                        ->default(fn (?Intervention $record): array => $record instanceof Intervention
-                            ? $record->materialLines()
-                                ->orderBy('id')
-                                ->get(['description', 'quantity', 'unit', 'unit_price', 'extra_quantity', 'extra_amount', 'extra_status_code'])
-                                ->map(static fn (InterventionMaterialLine $line): array => [
-                                    'description' => (string) $line->description,
-                                    'quantity' => (float) $line->quantity,
-                                    'unit' => (string) ($line->unit ?? 'pz'),
-                                    'unit_price' => (float) $line->unit_price,
-                                    'extra_quantity' => (float) $line->extra_quantity,
-                                    'extra_amount' => (float) $line->extra_amount,
-                                    'extra_status_code' => (string) ($line->extra_status_code ?? 'pending'),
-                                ])
-                                ->all()
-                            : [])
+                        ->default(fn (?Intervention $record): array => self::materialLinesFormState($record))
+                        // `manual_material_lines` non è una colonna: il fill da record
+                        // esistente lo lascia vuoto (il default vale solo in create).
+                        // Senza questo il repeater si apriva vuoto in edit e, poiché il
+                        // salvataggio ricostruisce le righe da zero (materialLines()->delete()),
+                        // aprire e salvare un intervento cancellava le righe appena scritte
+                        // dal rapportino vocale.
+                        ->afterStateHydrated(function (Repeater $component, ?Intervention $record): void {
+                            if (! $record instanceof Intervention) {
+                                return;
+                            }
+
+                            $component->state(self::materialLinesFormState($record));
+                        })
                         ->dehydrated(false)
                         ->reorderable(false)
                         ->addActionLabel('Aggiungi materiale')
@@ -1167,6 +1166,55 @@ final class InterventionResource extends XotBaseResource
             ->pluck('name', 'id')
             ->mapWithKeys(static fn (mixed $name, mixed $id): array => [(int) $id => (string) $name])
             ->all();
+    }
+
+    /**
+     * The material lines of an intervention, in the shape the repeater expects.
+     *
+     * @return array<int, array<string, mixed>>
+     */
+    public static function materialLinesFormState(?Intervention $record): array
+    {
+        if (! $record instanceof Intervention) {
+            return [];
+        }
+
+        return $record->materialLines()
+            ->orderBy('id')
+            ->get(['description', 'quantity', 'unit', 'unit_price', 'extra_quantity', 'extra_amount', 'extra_status_code'])
+            ->map(static fn (InterventionMaterialLine $line): array => [
+                'description' => (string) $line->description,
+                'quantity' => (float) $line->quantity,
+                'unit' => (string) ($line->unit ?? 'pz'),
+                'unit_price' => (float) $line->unit_price,
+                'extra_quantity' => (float) $line->extra_quantity,
+                'extra_amount' => (float) $line->extra_amount,
+                'extra_status_code' => (string) ($line->extra_status_code ?? 'pending'),
+            ])
+            ->all();
+    }
+
+    /**
+     * Il materiale di un intervento sta in due posti: le righe scritte a mano
+     * nel form e gli scarichi di magazzino. L'anteprima deve mostrare il più
+     * alto dei due totali (stessa regola di refreshEconomicTotals), non la
+     * somma: sono modi alternativi di registrare lo stesso materiale.
+     */
+    private static function previewMaterialsTotal(mixed $lines, ?Intervention $record): float
+    {
+        $manualTotal = self::computeManualMaterialsTotal($lines);
+
+        if (! $record instanceof Intervention || $record->getKey() === null) {
+            return $manualTotal;
+        }
+
+        $rawWarehouseTotal = $record->inventoryMovements()
+            ->where('movement_type', 'scarico')
+            ->sum('line_total');
+
+        $warehouseTotal = is_numeric($rawWarehouseTotal) ? (float) $rawWarehouseTotal : 0.0;
+
+        return round(max($manualTotal, $warehouseTotal), 2);
     }
 
     private static function computeManualMaterialsTotal(mixed $lines): float

@@ -10,11 +10,11 @@ use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
 use Modules\Intervention\Filament\Concerns\InterventionCalendarColors;
 use Modules\Intervention\Models\Intervention;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
-use Modules\Xot\Filament\Pages\XotBasePage;
 
-final class CustomerInterventionCalendar extends XotBasePage
+final class CustomerInterventionCalendar extends GatedXotBasePage
 {
     use InterventionCalendarColors;
 
@@ -22,7 +22,7 @@ final class CustomerInterventionCalendar extends XotBasePage
 
     protected static ?string $slug = 'intervention-calendar';
 
-    protected string $view = 'interventions::filament.pages.customer-intervention-calendar';
+    protected string $view = 'intervention::filament.pages.customer-intervention-calendar';
 
     /** @var array<string, mixed> */
     public array $selectedIntervention = [];

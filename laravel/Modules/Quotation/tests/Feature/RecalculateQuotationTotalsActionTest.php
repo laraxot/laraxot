@@ -9,7 +9,7 @@ use Modules\Quotation\Models\Quotation;
 use Modules\Quotation\Models\QuotationItem;
 use Modules\Quotation\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Quotation\Tests\TestCase::class);
 
 it('recalculates totals and persists line totals', function (): void {
     // Arrange

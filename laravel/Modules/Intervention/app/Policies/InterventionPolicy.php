@@ -25,14 +25,16 @@ class InterventionPolicy
             return false;
         }
 
-        $userId = (int) $authIdentifier;
+        // Id utente come stringa: in questa base gli id sono UUID e il cast
+        // a int azzererebbe il confronto (ogni uuid ~ 0), aprendo l'ownership.
+        $userId = (string) $authIdentifier;
 
         if (request()->is('admin/*') && AccountFeatures::hasAssignedPerimeter($authUser)) {
             return $this->hasAssignedWorkOrderAccess($userId, $intervention);
         }
 
         if (method_exists($authUser, 'hasRole') && ($authUser->hasRole('operator') || AccountFeatures::hasAdministrativeRole($authUser))) {
-            if ((int) $intervention->performed_by_user_id === $userId) {
+            if ((string) $intervention->performed_by_user_id === $userId) {
                 return true;
             }
 
@@ -45,7 +47,7 @@ class InterventionPolicy
         return false;
     }
 
-    private function hasAssignedWorkOrderAccess(int $userId, Intervention $intervention): bool
+    private function hasAssignedWorkOrderAccess(string $userId, Intervention $intervention): bool
     {
         $workOrderId = (int) $intervention->work_order_id;
 

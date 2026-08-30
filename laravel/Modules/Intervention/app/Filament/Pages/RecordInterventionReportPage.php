@@ -11,14 +11,16 @@ use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Livewire\WithFileUploads;
 use Modules\Intervention\Actions\ApplyInterventionReportDraftAction;
 use Modules\Intervention\Actions\BuildInterventionReportDraftAction;
+use Modules\Intervention\Actions\ResolveInterventionPricingAction;
 use Modules\Intervention\Actions\SaveInterventionReportAttachmentsAction;
 use Modules\Intervention\Data\DictatedMaterialLine;
 use Modules\Intervention\Data\InterventionReportDraft;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Queries\GetPastInterventionNotesForReportQuery;
+use Modules\Intervention\Settings\InterventionTariffSettings;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\User\Models\User;
-use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * Mobile-first page: the operator records a voice note, the AI turns it into a
@@ -27,7 +29,7 @@ use Modules\Xot\Filament\Pages\XotBasePage;
  * {@see ApplyInterventionReportDraftAction} and
  * {@see SaveInterventionReportAttachmentsAction}.
  */
-final class RecordInterventionReportPage extends XotBasePage
+final class RecordInterventionReportPage extends GatedXotBasePage
 {
     use WithFileUploads;
 
@@ -35,7 +37,7 @@ final class RecordInterventionReportPage extends XotBasePage
 
     protected static ?string $slug = 'voice-report';
 
-    protected string $view = 'interventions::filament.pages.record-intervention-report';
+    protected string $view = 'intervention::filament.pages.record-intervention-report';
 
     public ?int $interventionId = null;
 
@@ -51,8 +53,33 @@ final class RecordInterventionReportPage extends XotBasePage
 
     public ?string $outcomeCode = null;
 
-    /** @var array<int, array{description: string, quantity: float, unit_price: float|null, matched_product_id: int|null, is_matched: bool}> */
+    /** @var array<int, array{description: string, quantity: float, unit: string, unit_price: float|null, matched_product_id: int|null, is_matched: bool}> */
     public array $materials = [];
+
+    /** @var array<int, string> Faults noticed on site but not fixed; each one becomes an issue report. */
+    public array $issues = [];
+
+    /** @var array<int, string> Names of the other people on the job, as dictated. */
+    public array $operatorNames = [];
+
+    public ?int $travelKm = null;
+
+    /**
+     * Live preview of what the dictated minutes are worth, shown while the
+     * operator reviews. The surcharge is spelled out rather than folded into
+     * the figure: "60,00 € (+50% weekend)" is the moment the app earns its
+     * keep, because that is money the trade routinely forgets to bill.
+     */
+    public ?float $labourAmount = null;
+
+    public ?string $labourSurchargeCode = null;
+
+    public int $labourSurchargePercent = 0;
+
+    public ?float $calloutFee = null;
+
+    /** True when there are hours to bill but no rate configured to bill them at. */
+    public bool $labourNeedsTariff = false;
 
     /** @var array<int, TemporaryUploadedFile> */
     public array $photos = [];
@@ -77,11 +104,17 @@ final class RecordInterventionReportPage extends XotBasePage
         $user = Auth::user();
         $panelId = filament()->getCurrentPanel()?->getId();
 
-        return match ($panelId) {
-            'operator' => AccountFeatures::hasFeature($user, 'operator.voice_report', true),
-            'admin' => AccountFeatures::hasFeature($user, 'admin.voice_report', true),
-            default => false,
-        };
+        if ($panelId === 'operator') {
+            return AccountFeatures::hasFeature($user, 'operator.voice_report', true);
+        }
+
+        // Base Laraxot: la pagina vive sui panel per-modulo ({modulo}::admin) e
+        // sul panel 'admin' aggregato; entrambi hanno semantica amministrativa.
+        return AccountFeatures::currentPanelAllowsFeature(
+            $user,
+            adminFeature: 'admin.voice_report',
+            operatorFeature: 'operator.voice_report',
+        );
     }
 
     public static function getNavigationGroup(): string
@@ -160,12 +193,17 @@ final class RecordInterventionReportPage extends XotBasePage
             static fn (DictatedMaterialLine $line): array => [
                 'description' => $line->description,
                 'quantity' => $line->quantity,
+                'unit' => $line->unit,
                 'unit_price' => $line->unitPrice,
                 'matched_product_id' => $line->matchedProductId,
                 'is_matched' => $line->isMatched(),
             ],
             $draft->materials,
         );
+        $this->issues = $draft->issues;
+        $this->operatorNames = $draft->operatorNames;
+        $this->travelKm = $draft->travelKm;
+        $this->refreshLabourPreview($intervention, $draft);
         $this->hasDraft = true;
 
         if ($aiEmpty) {
@@ -181,6 +219,7 @@ final class RecordInterventionReportPage extends XotBasePage
         $this->materials[] = [
             'description' => '',
             'quantity' => 1.0,
+            'unit' => DictatedMaterialLine::DEFAULT_UNIT,
             'unit_price' => null,
             'matched_product_id' => null,
             'is_matched' => false,
@@ -193,6 +232,46 @@ final class RecordInterventionReportPage extends XotBasePage
         $this->materials = array_values($this->materials);
     }
 
+    /**
+     * Recomputes the labour preview with the same action the save path uses, so
+     * what the operator approves is exactly what gets written.
+     */
+    private function refreshLabourPreview(Intervention $intervention, InterventionReportDraft $draft): void
+    {
+        $pricing = app(ResolveInterventionPricingAction::class)->execute(
+            currentAmount: is_numeric($intervention->amount) ? (float) $intervention->amount : null,
+            currentCalloutFee: is_numeric($intervention->callout_fee) ? (float) $intervention->callout_fee : null,
+            currentTravelKm: $intervention->travel_km !== null ? (int) $intervention->travel_km : null,
+            draft: $draft,
+            tariff: app(InterventionTariffSettings::class)->current(),
+            performedAt: $intervention->started_at ?? $intervention->scheduled_at,
+            fallbackMinutes: (int) ($intervention->work_minutes ?? 0),
+        );
+
+        $this->labourAmount = $pricing->amount;
+        $this->labourSurchargeCode = $pricing->surchargeCode;
+        $this->labourSurchargePercent = $pricing->surchargePercent;
+        $this->calloutFee = $pricing->calloutFee;
+        $this->labourNeedsTariff = $pricing->labourNeedsTariff;
+    }
+
+    public function addIssueRow(): void
+    {
+        $this->issues[] = '';
+    }
+
+    public function removeIssue(int $index): void
+    {
+        unset($this->issues[$index]);
+        $this->issues = array_values($this->issues);
+    }
+
+    public function removeOperator(int $index): void
+    {
+        unset($this->operatorNames[$index]);
+        $this->operatorNames = array_values($this->operatorNames);
+    }
+
     public function confirm(): void
     {
         $intervention = $this->requireIntervention();
@@ -202,9 +281,14 @@ final class RecordInterventionReportPage extends XotBasePage
             workMinutes: $this->workMinutes,
             outcomeCode: $this->outcomeCode,
             materials: $this->materialsFromState(),
+            issues: $this->issuesFromState(),
+            operatorNames: array_values($this->operatorNames),
+            travelKm: $this->travelKm,
+            labourAmount: $this->labourAmount,
+            calloutFee: $this->calloutFee,
         );
 
-        app(ApplyInterventionReportDraftAction::class)->execute($intervention, $draft);
+        app(ApplyInterventionReportDraftAction::class)->execute($intervention, $draft, (int) Auth::id());
 
         app(SaveInterventionReportAttachmentsAction::class)->execute(
             intervention: $intervention,
@@ -266,15 +350,34 @@ final class RecordInterventionReportPage extends XotBasePage
             $rawProductId = $material['matched_product_id'];
             $productId = is_numeric($rawProductId) ? (int) $rawProductId : null;
 
+            $unit = trim((string) ($material['unit'] ?? ''));
+
             $lines[] = new DictatedMaterialLine(
                 description: $description,
                 quantity: $quantity,
                 unitPrice: $unitPrice,
                 matchedProductId: $productId,
+                unit: $unit !== '' ? $unit : DictatedMaterialLine::DEFAULT_UNIT,
             );
         }
 
         return $lines;
+    }
+
+    /**
+     * @return list<string>
+     */
+    private function issuesFromState(): array
+    {
+        $issues = [];
+        foreach ($this->issues as $issue) {
+            $text = trim((string) $issue);
+            if ($text !== '') {
+                $issues[] = $text;
+            }
+        }
+
+        return $issues;
     }
 
     private function requireIntervention(): Intervention

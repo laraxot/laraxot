@@ -45,7 +45,7 @@
 
             @php($note = $this->dailyNoteForSelectedDate())
             <div class="mt-3">
-                @include('interventions::filament.components.daily-note-display', ['note' => $note])
+                @include('intervention::filament.components.daily-note-display', ['note' => $note])
             </div>
         </div>
 

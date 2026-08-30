@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 use Modules\Intervention\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Intervention\Tests\TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Actions\SyncWorkOrderExtraMaterialsAction;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionMaterialLine;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\WorkOrder\Models\WorkOrder;
 
 /**
@@ -24,13 +25,7 @@ function workOrderExtraScenario(): array
         'updated_at' => now(),
     ]);
 
-    $userId = (int) DB::table('users')->insertGetId([
-        'name' => 'Tecnico',
-        'email' => 'tec'.uniqid().'@test.local',
-        'password' => bcrypt('secret'),
-        'created_at' => now(),
-        'updated_at' => now(),
-    ]);
+    $userId = UserFactory::new()->createOne()->id;
 
     $workOrder = WorkOrder::query()->create([
         'customer_id' => $customerId,

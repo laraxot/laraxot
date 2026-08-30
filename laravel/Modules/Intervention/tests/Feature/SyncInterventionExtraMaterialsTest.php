@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 use Modules\Intervention\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Intervention\Tests\TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Actions\SyncInterventionExtraMaterialsAction;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionMaterialLine;
+use Modules\User\Database\Factories\UserFactory;
 
 /**
  * @return array{intervention: Intervention, workOrderId: int, customerId: int}
@@ -31,13 +32,7 @@ function extraMaterialsScenario(): array
         'updated_at' => now(),
     ]);
 
-    $userId = (int) DB::table('users')->insertGetId([
-        'name' => 'Tecnico Botti',
-        'email' => 'tecnico'.uniqid().'@test.local',
-        'password' => bcrypt('secret'),
-        'created_at' => now(),
-        'updated_at' => now(),
-    ]);
+    $userId = UserFactory::new()->createOne()->id;
 
     $intervention = Intervention::query()->create([
         'work_order_id' => $workOrderId,

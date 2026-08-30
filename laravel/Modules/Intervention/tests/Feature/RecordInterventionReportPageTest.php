@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Modules\Intervention\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Intervention\Tests\TestCase::class);
 
 use Carbon\CarbonImmutable;
 use Illuminate\Http\UploadedFile;
@@ -82,7 +82,7 @@ function makeOperatorWithIntervention(): array
 }
 
 beforeEach(function (): void {
-    filament()->setCurrentPanel('operator');
+    filament()->setCurrentPanel('intervention::admin');
 });
 
 it('generates a draft from the transcript and exposes it for review', function (): void {

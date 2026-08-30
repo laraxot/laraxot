@@ -25,12 +25,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Intervention\Filament\Resources\DailyNoteResource\Pages;
 use Modules\Intervention\Models\DailyNote;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Platform\Models\PlatformSetting;
-use Modules\Xot\Filament\Resources\XotBaseResource;
 
 use function Safe\preg_replace;
 
-final class DailyNoteResource extends XotBaseResource
+final class DailyNoteResource extends GatedXotBaseResource
 {
     protected static ?string $model = DailyNote::class;
 
@@ -205,7 +205,7 @@ final class DailyNoteResource extends XotBaseResource
     public static function getInfolistSchema(): array
     {
         /** @var view-string $dailyNoteView */
-        $dailyNoteView = 'interventions::filament.infolists.entries.daily-note-display';
+        $dailyNoteView = 'intervention::filament.infolists.entries.daily-note-display';
 
         return [
             'main' => Section::make()
