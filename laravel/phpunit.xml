@@ -65,6 +65,69 @@
         <testsuite name="Xot">
             <directory>Modules/Xot/tests</directory>
         </testsuite>
+        <testsuite name="AiAssistant">
+            <directory>Modules/AiAssistant/tests</directory>
+        </testsuite>
+        <testsuite name="Billing">
+            <directory>Modules/Billing/tests</directory>
+        </testsuite>
+        <testsuite name="Bom">
+            <directory>Modules/Bom/tests</directory>
+        </testsuite>
+        <testsuite name="Catalog">
+            <directory>Modules/Catalog/tests</directory>
+        </testsuite>
+        <testsuite name="Costing">
+            <directory>Modules/Costing/tests</directory>
+        </testsuite>
+        <testsuite name="Customer">
+            <directory>Modules/Customer/tests</directory>
+        </testsuite>
+        <testsuite name="Document">
+            <directory>Modules/Document/tests</directory>
+        </testsuite>
+        <testsuite name="Email">
+            <directory>Modules/Email/tests</directory>
+        </testsuite>
+        <testsuite name="Fiscal">
+            <directory>Modules/Fiscal/tests</directory>
+        </testsuite>
+        <testsuite name="HR">
+            <directory>Modules/HR/tests</directory>
+        </testsuite>
+        <testsuite name="Intervention">
+            <directory>Modules/Intervention/tests</directory>
+        </testsuite>
+        <testsuite name="Inventory">
+            <directory>Modules/Inventory/tests</directory>
+        </testsuite>
+        <testsuite name="Platform">
+            <directory>Modules/Platform/tests</directory>
+        </testsuite>
+        <testsuite name="Production">
+            <directory>Modules/Production/tests</directory>
+        </testsuite>
+        <testsuite name="Quotation">
+            <directory>Modules/Quotation/tests</directory>
+        </testsuite>
+        <testsuite name="Rating">
+            <directory>Modules/Rating/tests</directory>
+        </testsuite>
+        <testsuite name="Seo">
+            <directory>Modules/Seo/tests</directory>
+        </testsuite>
+        <testsuite name="Signature">
+            <directory>Modules/Signature/tests</directory>
+        </testsuite>
+        <testsuite name="Vehicle">
+            <directory>Modules/Vehicle/tests</directory>
+        </testsuite>
+        <testsuite name="WhatsApp">
+            <directory>Modules/WhatsApp/tests</directory>
+        </testsuite>
+        <testsuite name="WorkOrder">
+            <directory>Modules/WorkOrder/tests</directory>
+        </testsuite>
     </testsuites>
     <source>
         <include>

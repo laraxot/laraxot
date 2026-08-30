@@ -1,0 +1,11 @@
+{
+    "name": "Costing",
+    "alias": "costing",
+    "description": "Centri di lavoro e ricarichi condivisi tra i moduli di preventivazione",
+    "keywords": [],
+    "priority": 110,
+    "providers": [
+        "Modules\\Costing\\Providers\\CostingServiceProvider"
+    ],
+    "files": []
+}

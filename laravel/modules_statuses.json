@@ -8,6 +8,7 @@
     "Chart": false,
     "Cms": true,
     "Compliance": true,
+    "Costing": true,
     "Customer": true,
     "DbForge": true,
     "Document": true,
