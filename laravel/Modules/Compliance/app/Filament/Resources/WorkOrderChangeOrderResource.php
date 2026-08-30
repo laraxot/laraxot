@@ -19,10 +19,13 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Modules\Compliance\Filament\Resources\WorkOrderChangeOrderResource\Pages;
 use Modules\Compliance\Models\WorkOrderChangeOrder;
+use Modules\Platform\Filament\Concerns\GatesResourceNavigation;
 use Modules\WorkOrder\Models\WorkOrder;
 
 final class WorkOrderChangeOrderResource extends Resource
 {
+    use GatesResourceNavigation;
+
     protected static ?string $model = WorkOrderChangeOrder::class;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-plus-circle';

@@ -44,8 +44,21 @@ return new class() extends XotBaseMigration
             $table->index(['heating_system_id']);
             $table->index(['control_type']);
             $table->index(['performed_on']);
+            $table->date('registry_submitted_on')->nullable();
+            $table->string('registry_reference')->nullable();
 
             $this->updateTimestamps($table);
+        });
+
+        $this->tableUpdate(function (Blueprint $table): void {
+            if (! $this->hasColumn('registry_submitted_on')) {
+                $table->date('registry_submitted_on')->nullable();
+            }
+
+            if (! $this->hasColumn('registry_reference')) {
+                $table->string('registry_reference')->nullable();
+            }
+
         });
     }
 };

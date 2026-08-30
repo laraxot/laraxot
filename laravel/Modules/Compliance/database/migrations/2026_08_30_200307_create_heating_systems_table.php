@@ -19,6 +19,8 @@ return new class() extends XotBaseMigration
             $table->string('fuel_type')->nullable(); // metano | gpl | gasolio | biomassa | altro
             $table->decimal('total_power_kw', 8, 2)->nullable();
             $table->string('plant_registry_code')->nullable(); // codice catasto / libretto impianto
+            $table->string('region', 64)->nullable();
+            $table->string('registry_code', 32)->nullable();
             $table->date('installation_date')->nullable();
             $table->text('notes')->nullable();
             $table->boolean('is_active')->default(true);
@@ -26,6 +28,17 @@ return new class() extends XotBaseMigration
             $table->index(['customer_id']);
 
             $this->updateTimestamps($table, hasSoftDeletes: true);
+        });
+
+        $this->tableUpdate(function (Blueprint $table): void {
+            if (! $this->hasColumn('region')) {
+                $table->string('region', 64)->nullable();
+            }
+
+            if (! $this->hasColumn('registry_code')) {
+                $table->string('registry_code', 32)->nullable();
+            }
+
         });
     }
 };

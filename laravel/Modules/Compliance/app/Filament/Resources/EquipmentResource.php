@@ -19,10 +19,13 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Compliance\Filament\Resources\EquipmentResource\Pages;
 use Modules\Compliance\Models\Equipment;
+use Modules\Platform\Filament\Concerns\GatesResourceNavigation;
 use Modules\WorkOrder\Models\WorkOrder;
 
 final class EquipmentResource extends Resource
 {
+    use GatesResourceNavigation;
+
     protected static ?string $model = Equipment::class;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-wrench-screwdriver';

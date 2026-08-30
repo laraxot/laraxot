@@ -30,10 +30,13 @@ use Modules\Compliance\Actions\AnalyzeComplianceDocumentWithOpenAiAction;
 use Modules\Compliance\Filament\Resources\ComplianceDocumentResource\Pages;
 use Modules\Compliance\Models\ComplianceDocument;
 use Modules\Document\Models\Media;
+use Modules\Platform\Filament\Concerns\GatesResourceNavigation;
 use Modules\WorkOrder\Models\WorkOrder;
 
 final class ComplianceDocumentResource extends Resource
 {
+    use GatesResourceNavigation;
+
     protected static ?string $model = ComplianceDocument::class;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-shield-check';

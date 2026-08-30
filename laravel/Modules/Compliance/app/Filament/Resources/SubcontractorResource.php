@@ -18,9 +18,12 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Compliance\Filament\Resources\SubcontractorResource\Pages;
 use Modules\Compliance\Models\Subcontractor;
+use Modules\Platform\Filament\Concerns\GatesResourceNavigation;
 
 final class SubcontractorResource extends Resource
 {
+    use GatesResourceNavigation;
+
     protected static ?string $model = Subcontractor::class;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-building-office-2';
