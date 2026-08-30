@@ -25,9 +25,9 @@ use Modules\HR\Actions\ApproveAbsenceRequestAction;
 use Modules\HR\Actions\RejectAbsenceRequestAction;
 use Modules\HR\Filament\Resources\AbsenceRequestResource\Pages;
 use Modules\HR\Models\AbsenceRequest;
-use Modules\Xot\Filament\Resources\XotBaseResource;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 
-final class AbsenceRequestResource extends XotBaseResource
+final class AbsenceRequestResource extends GatedXotBaseResource
 {
     use HasAccountFeatureVisibility;
 

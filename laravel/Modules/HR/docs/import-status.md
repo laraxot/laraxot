@@ -60,3 +60,10 @@ tipizzazioni Spatie Permission su `App\Models\User`, migrations generiche, ecc. 
 - BaseModel → XotBaseModel per i model in `app/Models`
 - Consolidamento/dedup migrations, factories, seeders
 - Copertura Pest
+
+## Delta seconda tranche (2026-08-30)
+
+Sostanza del delta sorgente: solo gating navigazione —
+`AbsenceRequestResource` ed `EmployeeResource` → `GatedXotBaseResource`
+(il resto era riallineamento Pint). Suite: 3 pass / 5 skip (gli skip sono
+guard-clause su tabelle non presenti nella fixture condivisa).
