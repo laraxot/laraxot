@@ -9,7 +9,7 @@ use Modules\Tenant\Models\TestSushiModel;
 use Modules\Tenant\Tests\TestCase;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 
-uses(TestCase::class);
+uses(\Modules\Tenant\Tests\TestCase::class);
 
 function tenantJsonPath(string $tenantName): string
 {

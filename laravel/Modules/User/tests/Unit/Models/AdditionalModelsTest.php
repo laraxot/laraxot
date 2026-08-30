@@ -26,7 +26,7 @@ use Modules\User\Models\TeamPermission;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 test('Notification model can be instantiated', function () {
     $model = new Notification();

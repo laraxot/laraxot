@@ -18,7 +18,7 @@ use PHPUnit\Framework\Assert;
 use function Safe\file_put_contents;
 use function Safe\mkdir;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 it('covers model resolution and model cache', function (): void {
     ProbeResource::resetModelCache();

@@ -10,7 +10,7 @@ use Modules\Gdpr\Models\Treatment;
 use Modules\Gdpr\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Gdpr\Tests\TestCase::class);
 
 test('treatment_fillable_attributes', function (): void {
     $treatment = new Treatment();

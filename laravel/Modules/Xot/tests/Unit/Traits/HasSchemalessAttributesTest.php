@@ -9,7 +9,7 @@ use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\SchemalessAttributes\SchemalessAttributes;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 it('handles extra attributes scope', function (): void {
     /** @var MockInterface&Builder<SchemalessTestModel> $builder */

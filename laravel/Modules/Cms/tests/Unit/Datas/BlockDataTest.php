@@ -10,7 +10,7 @@ use Spatie\LaravelData\Concerns\WireableData;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 test('BlockData can be instantiated with type and data', function (): void {
     $blockData = new BlockData('hero', ['view' => 'ui::empty', 'title' => 'Test']);
 

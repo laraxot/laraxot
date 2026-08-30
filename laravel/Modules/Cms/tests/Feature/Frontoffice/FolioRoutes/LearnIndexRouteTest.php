@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 it('GET /it/learn acceptable', function (): void {
     $res = cmsGet('/it/learn');
 

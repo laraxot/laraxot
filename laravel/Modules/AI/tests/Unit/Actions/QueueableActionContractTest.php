@@ -9,7 +9,7 @@ use PHPUnit\Framework\Assert;
 use ReflectionClass;
 use Spatie\QueueableAction\QueueableAction;
 
-uses(TestCase::class);
+uses(\Modules\AI\Tests\TestCase::class);
 
 it('keeps AI actions queueable with execute entrypoints', function (): void {
     $actionsPath = dirname(__DIR__, 3).'/app/Actions';

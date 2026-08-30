@@ -7,7 +7,7 @@ namespace Modules\AiAssistant\Tests\Feature;
 use Modules\AiAssistant\Speech\BuildSpokenSummaryAction;
 use Modules\AiAssistant\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\AiAssistant\Tests\TestCase::class);
 
 function spoken(string $markdown): string
 {

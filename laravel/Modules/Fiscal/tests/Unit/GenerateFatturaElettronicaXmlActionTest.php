@@ -11,7 +11,7 @@ use Modules\Fiscal\Datas\FiscalSeller;
 use Modules\Fiscal\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Fiscal\Tests\TestCase::class);
 
 it('generates a valid FatturaPA xml document', function (): void {
     $action = new GenerateFatturaElettronicaXmlAction(new CalculateInvoiceTotalsAction());

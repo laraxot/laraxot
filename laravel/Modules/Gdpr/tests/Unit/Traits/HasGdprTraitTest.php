@@ -8,7 +8,7 @@ use Modules\Gdpr\Models\Traits\HasGdpr;
 use Modules\Gdpr\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Gdpr\Tests\TestCase::class);
 
 test('has_gdpr_trait_is_trait', function (): void {
     Assert::assertTrue(trait_exists(HasGdpr::class));

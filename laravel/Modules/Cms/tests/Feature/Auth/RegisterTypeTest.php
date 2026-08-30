@@ -7,7 +7,7 @@ use Illuminate\Testing\TestResponse;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */

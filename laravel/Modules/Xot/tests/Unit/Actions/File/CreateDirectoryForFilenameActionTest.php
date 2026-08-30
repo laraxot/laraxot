@@ -9,7 +9,7 @@ use Modules\Xot\Actions\File\CreateDirectoryForFilenameAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 beforeEach(function (): void {
     /* @var \Modules\Xot\Tests\TestCase $this */

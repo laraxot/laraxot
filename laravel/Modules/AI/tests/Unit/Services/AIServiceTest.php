@@ -8,7 +8,7 @@ use Modules\AI\Actions\CompletionAction;
 use Modules\AI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\AI\Tests\TestCase::class);
 
 beforeEach(function (): void {
     /** @var TestCase $this */

@@ -18,7 +18,7 @@ use Modules\Timber\Models\TimberTransporter;
 use Modules\Timber\Queries\GetTimberStockMovementsQuery;
 use Modules\Timber\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 it('populates suppliers, transporters, agents, purchases and lots in varied states', function (): void {
     app(TimberDemoSeeder::class)->run();

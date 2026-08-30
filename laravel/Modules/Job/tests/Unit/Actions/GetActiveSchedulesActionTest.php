@@ -9,7 +9,7 @@ use Modules\Job\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\QueueableAction\QueueableAction;
 
-uses(TestCase::class);
+uses(\Modules\Job\Tests\TestCase::class);
 
 describe('GetActiveSchedulesAction', function () {
     it('can be instantiated', function () {

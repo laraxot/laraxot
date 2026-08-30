@@ -11,7 +11,7 @@ use Modules\Geo\Traits\HandlesCoordinates;
 use Modules\Geo\Traits\HasAddresses;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Geo\Tests\TestCase::class);
 
 test('HasAddresses trait can be used', function (): void {
     $withAddresses = new class extends BaseModel {

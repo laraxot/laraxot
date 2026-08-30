@@ -9,7 +9,7 @@ use Modules\Geo\Actions\GoogleMaps\GoogleMapsHttpAction;
 use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Geo\Tests\TestCase::class);
 
 test('CalculateGeoDistanceAction can be resolved', function (): void {
     $action = app(CalculateGeoDistanceAction::class);

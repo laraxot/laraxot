@@ -8,7 +8,7 @@ use Modules\Xot\Tests\TestCase;
 use Modules\Xot\Traits\Updater;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 test('xot base model extends eloquent model', function (): void {
     $reflection = new ReflectionClass(XotBaseModel::class);

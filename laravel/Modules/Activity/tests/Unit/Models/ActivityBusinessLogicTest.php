@@ -6,7 +6,7 @@ use Modules\Activity\Models\Activity;
 use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Activity\Tests\TestCase::class);
 
 test('Activity Business Logic', function () {
     test('activity has correct connection configured', function () {

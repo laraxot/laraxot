@@ -8,7 +8,7 @@ use Modules\Xot\Models\XotBaseModel;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 test('safe array by model cast action works', function () {
     $model = new class extends XotBaseModel {

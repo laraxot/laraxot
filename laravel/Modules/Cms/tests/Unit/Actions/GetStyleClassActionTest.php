@@ -7,7 +7,7 @@ use Modules\Cms\Actions\GetStyleClassAction;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 test('GetStyleClassAction can be executed', function () {
     $action = new GetStyleClassAction();
 

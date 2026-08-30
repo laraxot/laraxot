@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\View;
 use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 /**
  * @param array<string, mixed> $data

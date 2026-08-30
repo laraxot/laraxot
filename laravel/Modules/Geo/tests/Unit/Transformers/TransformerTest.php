@@ -9,7 +9,7 @@ use Modules\Geo\Transformers\GeoJsonCollection;
 use Modules\Geo\Transformers\GeoJsonResource;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Geo\Tests\TestCase::class);
 test('GeoJsonResource can be instantiated', function () {
     Assert::assertTrue(class_exists(GeoJsonResource::class));
 

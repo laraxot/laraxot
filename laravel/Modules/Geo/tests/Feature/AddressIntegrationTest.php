@@ -8,7 +8,7 @@ use Modules\Geo\Enums\AddressTypeEnum;
 use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Geo\Tests\TestCase::class);
 
 /**
  * In-memory Address tests (no factories / DB / container).

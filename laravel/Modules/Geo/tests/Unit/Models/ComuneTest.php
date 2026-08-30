@@ -12,7 +12,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
 
-uses(TestCase::class);
+uses(\Modules\Geo\Tests\TestCase::class);
 
 beforeEach(function (): void {
     $comuneFixtureRows = [

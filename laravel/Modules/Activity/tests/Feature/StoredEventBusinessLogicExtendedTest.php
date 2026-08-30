@@ -23,7 +23,7 @@ use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\SchemalessAttributes\SchemalessAttributes;
 
-uses(TestCase::class);
+uses(\Modules\Activity\Tests\TestCase::class);
 
 // Pest test — Activity module regression case
 test('can handle event with empty properties', function (): void {

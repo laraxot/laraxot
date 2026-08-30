@@ -40,7 +40,7 @@ use Modules\User\Models\User;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 describe('User Events Coverage', function (): void {
     test('instantiates team and membership events', function (): void {

@@ -11,7 +11,7 @@ use Modules\User\Tests\TestCase;
 use Modules\Xot\Datas\XotData;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 beforeEach(function (): void {
     /* @var \Modules\User\Tests\TestCase $this */

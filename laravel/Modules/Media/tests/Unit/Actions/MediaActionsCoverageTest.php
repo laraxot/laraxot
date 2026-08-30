@@ -21,7 +21,7 @@ use Modules\Media\Actions\Video\GetVideoScreenshotAction;
 use Modules\Media\Tests\TestCase;
 use ReflectionClass;
 
-uses(TestCase::class);
+uses(\Modules\Media\Tests\TestCase::class);
 
 describe('Media Actions Coverage', function () {
     describe('Image Merge Action', function () {

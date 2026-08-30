@@ -11,7 +11,7 @@ use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\ContactRole;
 use Modules\Customer\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Customer\Tests\TestCase::class);
 
 it('does not create a contact role when position is empty or whitespace', function (): void {
     $customer = app(CreateCustomerAction::class)->execute([

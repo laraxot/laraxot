@@ -8,7 +8,7 @@ use Modules\Media\Actions\AttachMediaAction;
 use Modules\Media\Tests\TestCase;
 use Spatie\QueueableAction\QueueableAction;
 
-uses(TestCase::class);
+uses(\Modules\Media\Tests\TestCase::class);
 
 describe('AttachMediaAction', function () {
     it('uses QueueableAction trait', function (): void {

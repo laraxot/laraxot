@@ -10,7 +10,7 @@ use Modules\UI\Enums\TableLayoutEnum;
 use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 it('has enum values', function (): void {
     Assert::assertSame('list', TableLayoutEnum::LIST->value);

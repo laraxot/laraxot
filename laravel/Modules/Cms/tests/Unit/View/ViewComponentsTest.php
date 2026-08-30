@@ -8,7 +8,7 @@ use Modules\Cms\View\Components\GuestLayout;
 use Modules\Cms\View\Components\Metatags;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 test('AppLayout component can be instantiated', function () {
     $component = new AppLayout();
     Assert::assertInstanceOf(AppLayout::class, $component);

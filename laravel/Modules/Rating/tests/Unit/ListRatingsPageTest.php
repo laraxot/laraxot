@@ -6,7 +6,7 @@ use Modules\Rating\Filament\Resources\RatingResource\Pages\ListRatings;
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Rating\Tests\TestCase::class);
 
 test('defines expected table columns without labels', function (): void {
     $page = new ListRatings();

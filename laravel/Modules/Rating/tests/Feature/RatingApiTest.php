@@ -7,7 +7,7 @@ namespace Modules\Rating\Tests\Feature;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Rating\Tests\TestCase::class);
 
 it('can list ratings', function (): void {
     Rating::create([

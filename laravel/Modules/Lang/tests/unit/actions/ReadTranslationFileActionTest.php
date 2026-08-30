@@ -12,7 +12,7 @@ use function Safe\chmod;
 use function Safe\file_put_contents;
 use function Safe\unlink;
 
-uses(TestCase::class);
+uses(\Modules\Lang\Tests\TestCase::class);
 
 /**
  * @return array<string, mixed>

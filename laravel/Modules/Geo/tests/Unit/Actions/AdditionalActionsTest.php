@@ -13,7 +13,7 @@ use Modules\Geo\Actions\ValidateCoordinatesAction;
 use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Geo\Tests\TestCase::class);
 test('UpdateCoordinatesAction can be instantiated', function () {
     // Wrap in try-catch to handle any dependency issues
     try {

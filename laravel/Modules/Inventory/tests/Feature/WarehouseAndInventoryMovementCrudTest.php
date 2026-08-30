@@ -19,7 +19,7 @@ use Modules\Inventory\Tests\TestCase;
 | duplica Modules/Inventory/tests/Unit/InventoryModelTest.php.
 */
 
-uses(TestCase::class);
+uses(\Modules\Inventory\Tests\TestCase::class);
 
 it('validates warehouse attributes without persisting', function (): void {
     $warehouse = inventoryMakeWarehouse(['name' => 'Deposito Nord', 'code' => 'DEP-NORD']);

@@ -6,7 +6,7 @@ use Modules\Timber\Support\TimberTraceCode;
 use Modules\Timber\Tests\TestCase;
 use Safe\DateTimeImmutable;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 it('builds a dated stage segment from the step type', function (): void {
     $date = new DateTimeImmutable('2026-07-03');

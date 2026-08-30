@@ -10,7 +10,7 @@ use Modules\Job\Models\ScheduleHistory;
 use Modules\Job\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Job\Tests\TestCase::class);
 
 describe('Schedule Business Logic', function (): void {
     test('_can_create_schedule_with_basic_information', function (): void {

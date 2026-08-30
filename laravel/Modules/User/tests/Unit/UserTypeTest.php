@@ -9,7 +9,7 @@ use Modules\User\Enums\UserType;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 test('user type enum has correct cases', function (): void {
     Assert::assertCount(5, UserType::cases());

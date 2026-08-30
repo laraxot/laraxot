@@ -9,7 +9,7 @@ use Modules\User\Models\BaseUser;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 test('admin panel requires admin or super-admin role', function (): void {
     $user = new class extends BaseUser {

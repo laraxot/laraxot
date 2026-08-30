@@ -12,7 +12,7 @@ use Modules\Gdpr\Tests\TestCase;
 use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Gdpr\Tests\TestCase::class);
 
 /*
  * Form Validation Tests for Registration.

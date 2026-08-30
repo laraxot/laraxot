@@ -15,7 +15,7 @@ use PHPUnit\Framework\Assert;
 use function Safe\json_encode;
 use function Safe\unserialize;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 function createXotBaseModelFixture(): BaseModel
 {

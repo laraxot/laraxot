@@ -18,7 +18,7 @@ use function Pest\Laravel\actingAs;
 
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 beforeEach(function (): void {
     /* @var TestCase $this */

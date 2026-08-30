@@ -10,7 +10,7 @@ use Modules\HR\Actions\AddEmployeeMedicalVisitAction;
 use Modules\HR\Actions\AddEmployeeTrainingAction;
 use Modules\HR\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\HR\Tests\TestCase::class);
 
 it('adds employee documents, medical visits, and trainings with optional attachments', function (): void {
     hrSkipTest('D1: Document Media $table=media — laravel/docs/debt-document-media-conflict.md');

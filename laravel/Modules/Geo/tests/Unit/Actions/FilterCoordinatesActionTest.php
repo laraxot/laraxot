@@ -8,7 +8,7 @@ use Modules\Geo\Actions\FilterCoordinatesAction;
 use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Geo\Tests\TestCase::class);
 it('filters coordinates within radius correctly', function (): void {
     $action = new FilterCoordinatesAction();
 

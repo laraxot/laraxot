@@ -28,7 +28,7 @@ use Modules\Timber\Models\TimberSupplier;
 use Modules\Timber\Models\TimberWoodSpecies;
 use Modules\Timber\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 beforeEach(function (): void {
     filament()->setCurrentPanel('timber::admin');

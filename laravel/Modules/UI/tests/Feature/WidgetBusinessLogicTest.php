@@ -19,7 +19,7 @@ use Modules\UI\Tests\TestCase;
 use Modules\Xot\Filament\Widgets\XotBaseSchemaWidget;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class, DatabaseTransactions::class);
+uses(\Modules\UI\Tests\TestCase::class, DatabaseTransactions::class);
 
 function concreteRowWidget(): RowWidget
 {

@@ -8,7 +8,7 @@ use Modules\Lang\Actions\TransArrayAction;
 use Modules\Lang\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Lang\Tests\TestCase::class);
 
 function makeTransArrayAction(): TransArrayAction
 {

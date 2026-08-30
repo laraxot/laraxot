@@ -10,7 +10,7 @@ use Modules\User\Console\Commands\SuperAdminCommand;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 test('AssignRoleCommand can be instantiated', function () {
     try {

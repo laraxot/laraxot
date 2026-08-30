@@ -9,7 +9,7 @@ use Modules\Activity\Models\Policies\StoredEventPolicy;
 use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Activity\Tests\TestCase::class);
 
 test('ActivityPolicy can be instantiated', function () {
     $policy = new ActivityPolicy();

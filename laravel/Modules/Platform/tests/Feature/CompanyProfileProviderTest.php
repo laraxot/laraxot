@@ -11,7 +11,7 @@ use function Safe\file_put_contents;
 use function Safe\tempnam;
 use function Safe\unlink;
 
-uses(TestCase::class);
+uses(\Modules\Platform\Tests\TestCase::class);
 
 /**
  * @param  array<string, mixed>  $data

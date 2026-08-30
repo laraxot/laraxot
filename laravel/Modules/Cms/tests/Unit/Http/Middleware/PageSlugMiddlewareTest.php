@@ -12,7 +12,7 @@ use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Symfony\Component\HttpFoundation\Response;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 /**
  * @param array<int, mixed> $args
  */

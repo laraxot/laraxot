@@ -11,7 +11,7 @@ use function Safe\file_get_contents;
 
 use Spatie\LaravelData\Data;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 function samplePasswordData(): PasswordData
 {

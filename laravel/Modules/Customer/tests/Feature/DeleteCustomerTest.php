@@ -7,7 +7,7 @@ namespace Modules\Customer\Tests\Feature;
 use Modules\Customer\Actions\SoftDeleteCustomerAction;
 use Modules\Customer\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Customer\Tests\TestCase::class);
 
 it('soft-deletes a customer', function (): void {
     $customer = customerCreate([

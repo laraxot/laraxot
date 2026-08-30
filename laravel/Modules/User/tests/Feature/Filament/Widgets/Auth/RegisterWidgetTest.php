@@ -12,7 +12,7 @@ use Modules\User\Filament\Widgets\Auth\RegisterWidget;
 use Modules\User\Models\User;
 use Modules\User\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 beforeEach(function (): void {
     /* @var TestCase $this */

@@ -10,7 +10,7 @@ use Modules\User\Database\Factories\UserFactory;
 use Modules\WorkOrder\Actions\SetWorkOrderPrimaryContactAction;
 use Modules\WorkOrder\Models\WorkOrder;
 
-uses(TestCase::class);
+uses(\Modules\Signature\Tests\TestCase::class);
 
 it('upserts a customer contact for a signatory and assigns it as the work order primary contact', function (): void {
     // Arrange

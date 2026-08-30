@@ -7,7 +7,7 @@ namespace Modules\Gdpr\Tests\Feature;
 use Modules\Gdpr\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
 
-uses(TestCase::class);
+uses(\Modules\Gdpr\Tests\TestCase::class);
 
 // ---------------------------------------------------------------------------
 // Page rendering tests

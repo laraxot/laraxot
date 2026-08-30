@@ -9,7 +9,7 @@ use Modules\Timber\Models\TimberSupplier;
 use Modules\Timber\Tests\TestCase;
 use Spatie\Permission\Models\Role;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 it('relates notes polymorphically to customers and suppliers', function (): void {
     $customer = TimberCustomer::factory()->createOne();

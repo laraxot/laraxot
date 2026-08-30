@@ -7,7 +7,7 @@ use Modules\Xot\Actions\Query\StartQueryLogAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 test('start query log action works', function (): void {
     $action = app(StartQueryLogAction::class);

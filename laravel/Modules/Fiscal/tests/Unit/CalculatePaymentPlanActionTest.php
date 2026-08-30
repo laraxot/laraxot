@@ -8,7 +8,7 @@ use Modules\Quotation\DTO\Money;
 use PHPUnit\Framework\Assert;
 use Safe\DateTimeImmutable;
 
-uses(TestCase::class);
+uses(\Modules\Fiscal\Tests\TestCase::class);
 
 it('splits the total into equal installments', function (): void {
     $action = new CalculatePaymentPlanAction();

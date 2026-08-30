@@ -8,7 +8,7 @@ use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 describe('GetNewPasswordAction', function (): void {
     it('generates and stores a new hashed password for the user', function (): void {

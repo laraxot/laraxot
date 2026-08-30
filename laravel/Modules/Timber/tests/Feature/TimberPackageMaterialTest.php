@@ -10,7 +10,7 @@ use Modules\Timber\Models\TimberProduct;
 use Modules\Timber\Queries\GetTimberStockMovementsQuery;
 use Modules\Timber\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 it('packages a semi-finished into multiple articles, tracing and loading stock', function (): void {
     $material = TimberDerivedMaterial::factory()->createOne([

@@ -3,7 +3,7 @@
 declare(strict_types=1);
 use Modules\Cms\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 beforeEach(function (): void {
     cmsSkipTest('Requires admin panel + role seeding not available in minimal Cms test bootstrap.');
 });

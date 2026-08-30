@@ -11,7 +11,7 @@ use Modules\Rating\Models\RatingMorph;
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Rating\Tests\TestCase::class);
 
 describe('Rating', function (): void {
     test('can create rating', function (): void {

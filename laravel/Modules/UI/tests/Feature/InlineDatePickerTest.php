@@ -14,7 +14,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\file_get_contents;
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 test('it can be instantiated', function (): void {
     $component = InlineDatePicker::make('test');

@@ -10,7 +10,7 @@ use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 use Webmozart\Assert\Assert as WebmozartAssert;
 
-uses(TestCase::class);
+uses(\Modules\Tenant\Tests\TestCase::class);
 
 it('can create a tenant', function (): void {
     $tenant = createTenant([

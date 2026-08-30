@@ -10,7 +10,7 @@ use Modules\Gdpr\Tests\TestCase;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Gdpr\Tests\TestCase::class);
 
 test('profile_resource_extends_xot_base_resource', function (): void {
     Assert::assertInstanceOf(XotBaseResource::class, new ProfileResource());

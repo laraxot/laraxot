@@ -16,7 +16,7 @@ use PHPUnit\Framework\Assert;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\Sluggable\SlugOptions;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 /**
  * @param array<string, mixed> $overrides

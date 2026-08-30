@@ -14,7 +14,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\glob;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 test('every eloquent passport model has a local oauth wrapper', function (): void {
     /** @var list<string> $files */

@@ -6,7 +6,7 @@ use Modules\Cms\Filament\Forms\Components\DownloadAttachmentPlaceHolder;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 test('DownloadAttachmentPlaceHolder extends XotBasePlaceholder', function () {
     Assert::assertTrue(class_exists(DownloadAttachmentPlaceHolder::class));
 });

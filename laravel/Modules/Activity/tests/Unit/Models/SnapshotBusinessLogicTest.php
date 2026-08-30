@@ -6,7 +6,7 @@ use Modules\Activity\Models\Snapshot;
 use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Activity\Tests\TestCase::class);
 
 test('Snapshot Business Logic', function () {
     test('snapshot has correct connection configured', function () {

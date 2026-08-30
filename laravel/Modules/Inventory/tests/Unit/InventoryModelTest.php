@@ -11,7 +11,7 @@ use Modules\Inventory\Models\WarehouseLocation;
 use Modules\Inventory\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Inventory\Tests\TestCase::class);
 
 it('creates a warehouse', function (): void {
     $warehouse = WarehouseFactory::new()->createOne();

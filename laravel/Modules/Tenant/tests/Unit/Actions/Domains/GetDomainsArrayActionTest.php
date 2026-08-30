@@ -8,7 +8,7 @@ use Modules\Tenant\Actions\Domains\GetDomainsArrayAction;
 use Modules\Tenant\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Tenant\Tests\TestCase::class);
 
 it('gets domains array by scanning config directory', function (): void {
     // This test is a bit tricky because recurse() instantiates Filesystem internally

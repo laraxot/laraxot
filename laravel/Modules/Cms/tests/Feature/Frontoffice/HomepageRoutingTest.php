@@ -6,7 +6,7 @@ use Modules\Cms\Tests\TestCase;
 use Nwidart\Modules\Facades\Module;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 
 beforeEach(function (): void {
     if (! Module::isEnabled('Cms')) {

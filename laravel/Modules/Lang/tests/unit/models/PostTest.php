@@ -11,7 +11,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\class_uses;
 
-uses(TestCase::class);
+uses(\Modules\Lang\Tests\TestCase::class);
 
 describe('Post Model', function () {
     test('extends BaseModel', function () {

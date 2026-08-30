@@ -11,7 +11,7 @@ use Modules\Media\Models\Media;
 use Modules\Media\Tests\TestCase;
 use Spatie\MediaLibrary\MediaCollections\FileAdder;
 
-uses(TestCase::class);
+uses(\Modules\Media\Tests\TestCase::class);
 
 beforeEach(function (): void {
     Storage::fake('attachments');

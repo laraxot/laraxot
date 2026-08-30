@@ -10,7 +10,7 @@ use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 
 describe('Page', function (): void {
     test('page model can be instantiated', function (): void {

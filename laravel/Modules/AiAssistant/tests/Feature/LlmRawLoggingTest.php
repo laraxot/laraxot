@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Log;
 use Modules\AiAssistant\Llm\LlmChatJsonClient;
 use Modules\AiAssistant\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\AiAssistant\Tests\TestCase::class);
 
 function fakeChatResponse(string $content): void
 {

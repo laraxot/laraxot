@@ -9,7 +9,7 @@ use Modules\Geo\Actions\GetAddressDataFromFullAddressAction;
 use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Geo\Tests\TestCase::class);
 it('returns AddressData when first service succeeds', function (): void {
     $action = new GetAddressDataFromFullAddressAction();
 

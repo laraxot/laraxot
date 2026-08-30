@@ -10,7 +10,7 @@ use Modules\Xot\Models\XotBaseModel;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 it('creates table index correctly', function (): void {
     // We use User model for testing as it surely has 'id' and 'email'

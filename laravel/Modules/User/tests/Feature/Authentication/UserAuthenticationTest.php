@@ -18,7 +18,7 @@ use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 use Modules\User\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 beforeEach(function () {
     $user = UserFactory::new()->createOne([

@@ -19,7 +19,7 @@ use Modules\Timber\Queries\GetTimberYardOverviewQuery;
 use Modules\Timber\Queries\SearchTimberTraceabilityQuery;
 use Modules\Timber\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 it('filters the yard overview by area and search term', function (): void {
     TimberLot::factory()->createOne(['lot_code' => 'LOT-YARD-A', 'wood_species' => 'abete', 'current_area_code' => 'piazzale', 'status_code' => 'available']);

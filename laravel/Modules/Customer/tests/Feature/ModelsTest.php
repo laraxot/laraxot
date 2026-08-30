@@ -13,7 +13,7 @@ use Modules\Customer\Models\Reseller;
 use Modules\Customer\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Customer\Tests\TestCase::class);
 
 it('has Customer model', function (): void {
     Assert::assertInstanceOf(Model::class, new Customer());

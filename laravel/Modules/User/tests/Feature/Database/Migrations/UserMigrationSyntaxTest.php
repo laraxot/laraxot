@@ -9,7 +9,7 @@ use function Safe\exec;
 use function Safe\file_get_contents;
 use function Safe\glob;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 /** @return list<string> */
 function getUserMigrationFiles(): array

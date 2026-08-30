@@ -10,7 +10,7 @@ use PHPUnit\Framework\Assert;
 use function Safe\json_decode;
 use function Safe\tempnam;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 test('save array action saves as php by default', function () {
     $data = ['foo' => 'bar'];

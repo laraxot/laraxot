@@ -8,7 +8,7 @@ use Modules\Timber\Models\TimberDerivedMaterial;
 use Modules\Timber\Models\TimberPackagedUnit;
 use Modules\Timber\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 it('generates packaged units, decrements the source material and prints labels', function (): void {
     $material = TimberDerivedMaterial::factory()->createOne([

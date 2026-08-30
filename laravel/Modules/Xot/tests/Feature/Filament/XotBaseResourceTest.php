@@ -8,7 +8,7 @@ use Modules\Xot\Tests\Fixtures\Filament\Resources\NavigationProbeResource;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 test('xot base resource extends filament resource', function (): void {
     Assert::assertInstanceOf(Resource::class, new NavigationProbeResource());

@@ -8,7 +8,7 @@ use Modules\Geo\Actions\Here\GetHereRouteSummaryAction;
 use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Geo\Tests\TestCase::class);
 
 it('can be resolved from container', function (): void {
     $action = app(GetHereRouteSummaryAction::class);

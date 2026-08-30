@@ -13,7 +13,7 @@ use Modules\Xot\Actions\Model\GetAllModelsByModuleNameAction;
 use Nwidart\Modules\Facades\Module;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Tenant\Tests\TestCase::class);
 
 it('resolves tenant model class from config', function (): void {
     /** @var TestCase $this */

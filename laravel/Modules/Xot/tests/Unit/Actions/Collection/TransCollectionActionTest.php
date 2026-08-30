@@ -8,7 +8,7 @@ use Modules\Xot\Actions\Collection\TransCollectionAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 it('translates collection items correctly', function (): void {
     $collection = collect(['apple', 'banana', 'orange.juice']);

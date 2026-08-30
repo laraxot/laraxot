@@ -8,7 +8,7 @@ use Modules\User\Database\Factories\OauthClientFactory;
 use Modules\User\Database\Factories\OauthRefreshTokenFactory;
 use Modules\User\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 it('oauth factories expose the expected definition keys', function (): void {
     $clientDefinition = (new OauthClientFactory())->definition();

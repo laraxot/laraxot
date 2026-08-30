@@ -12,7 +12,7 @@ use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\class_uses;
 
-uses(TestCase::class);
+uses(\Modules\Notify\Tests\TestCase::class);
 
 describe('NotifyTheme\Attachment\Pdf', function () {
     it('can be instantiated', function () {

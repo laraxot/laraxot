@@ -9,7 +9,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\fopen;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 it('casts various values to array correctly', function (): void {
     $action = app(SafeArrayCastAction::class);

@@ -7,7 +7,7 @@ namespace Modules\Vehicle\Tests\Feature;
 use Modules\Vehicle\Models\Vehicle;
 use Modules\Vehicle\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Vehicle\Tests\TestCase::class);
 
 it('creates and soft-deletes a vehicle', function (): void {
     $vehicle = Vehicle::query()->create([

@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 function authBizSuspiciousLogin(): bool
 {

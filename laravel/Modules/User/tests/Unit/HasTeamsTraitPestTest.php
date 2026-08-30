@@ -17,7 +17,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 /**
  * @param array<string, mixed> $attributes

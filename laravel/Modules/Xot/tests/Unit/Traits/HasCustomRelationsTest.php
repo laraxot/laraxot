@@ -8,7 +8,7 @@ use Modules\Xot\Tests\TestCase;
 use Modules\Xot\Traits\HasCustomRelations;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 it('creates custom relation', function (): void {
     $relatedModel = new class extends Model {

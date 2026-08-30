@@ -10,7 +10,7 @@ use Modules\Gdpr\Tests\TestCase;
 use Modules\User\Models\BaseProfile;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Gdpr\Tests\TestCase::class);
 
 test('profile_extends_base_profile', function (): void {
     $profile = new Profile();

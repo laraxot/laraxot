@@ -12,7 +12,7 @@ use Modules\Tenant\Tests\TestCase;
 
 use function Safe\json_encode;
 
-uses(TestCase::class, DatabaseTransactions::class);
+uses(\Modules\Tenant\Tests\TestCase::class, DatabaseTransactions::class);
 
 /**
  * @param  array<array-key, mixed>  $data

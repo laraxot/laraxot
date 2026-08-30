@@ -9,7 +9,7 @@ use Modules\Timber\Models\TimberLot;
 use Modules\Timber\Models\TimberMovement;
 use Modules\Timber\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 it('moves a lot to a valid area and records the movement history', function (): void {
     $lot = TimberLot::factory()->createOne(['current_area_code' => 'piazzale']);

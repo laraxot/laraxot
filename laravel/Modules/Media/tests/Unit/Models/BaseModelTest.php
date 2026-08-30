@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Media\Models\BaseModel;
 use Modules\Media\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Media\Tests\TestCase::class);
 
 if (! function_exists(__NAMESPACE__.'\\makeMediaTestBaseModel')) {
     function makeMediaTestBaseModel(): BaseModel

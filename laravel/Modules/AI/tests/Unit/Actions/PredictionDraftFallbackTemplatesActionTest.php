@@ -5,7 +5,7 @@ namespace Modules\AI\Tests\Unit\Actions;
 use Modules\AI\Actions\PredictionDraftFallbackTemplatesAction;
 use Modules\AI\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\AI\Tests\TestCase::class);
 
 describe('PredictionDraftFallbackTemplates Action', function (): void {
     test('_returns_expected_template_categories', function (): void {

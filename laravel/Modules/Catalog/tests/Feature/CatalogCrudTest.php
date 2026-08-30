@@ -11,7 +11,7 @@ use Modules\Catalog\Models\CatalogPartType;
 use Modules\Catalog\Models\Product;
 use Modules\Catalog\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Catalog\Tests\TestCase::class);
 
 it('creates catalog lookups and a product', function (): void {
     $model = CatalogModel::query()->create(['name' => 'Model X']);

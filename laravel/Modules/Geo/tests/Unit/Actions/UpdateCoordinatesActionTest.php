@@ -6,4 +6,4 @@ namespace Modules\Geo\Tests\Unit\Actions;
 
 use Modules\Geo\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Geo\Tests\TestCase::class);

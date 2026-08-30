@@ -18,7 +18,7 @@ use Modules\Notify\Datas\WhatsAppData;
 use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Notify\Tests\TestCase::class);
 
 test('netfun sms request and response data can be created from arrays', function () {
     $request = NetfunSmsRequestData::fromArray([

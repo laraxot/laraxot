@@ -13,7 +13,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\class_uses;
 
-uses(TestCase::class);
+uses(\Modules\Geo\Tests\TestCase::class);
 
 describe('Location Business Logic', function () {
     test('location extends base model', function () {

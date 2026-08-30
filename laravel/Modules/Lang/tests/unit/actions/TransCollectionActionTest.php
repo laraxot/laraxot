@@ -9,7 +9,7 @@ use Modules\Lang\Actions\TransCollectionAction;
 use Modules\Lang\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Lang\Tests\TestCase::class);
 
 function makeTransCollectionAction(): TransCollectionAction
 {

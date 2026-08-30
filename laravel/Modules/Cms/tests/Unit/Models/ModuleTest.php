@@ -7,7 +7,7 @@ use Modules\Cms\Models\Module;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 test('Module model can be instantiated', function () {
     $module = new Module();
 

@@ -15,7 +15,7 @@ use Modules\Timber\Models\TimberPurchaseRecord;
 use Modules\Timber\Models\TimberSupplier;
 use Modules\Timber\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 it('builds a qr payload for a lot', function (): void {
     $lot = TimberLot::factory()->createOne(['lot_code' => 'LOT-2026-0099', 'wood_species' => 'abete']);

@@ -13,7 +13,7 @@ use Modules\UI\Filament\Widgets\UserCalendarWidget;
 use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 function createTestCalendarWidget(): UserCalendarWidget
 {

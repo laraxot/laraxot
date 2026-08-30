@@ -6,7 +6,7 @@ use Modules\Xot\Tests\TestCase;
 use Modules\Xot\ValueObjects\EmailValueObject;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 it('accepts valid email', function (): void {
     $email = 'test@example.com';

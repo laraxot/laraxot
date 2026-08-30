@@ -25,7 +25,7 @@ use Modules\Customer\Tests\TestCase;
  * Namespace adattato da Modules\Customers\Infrastructure\Models a Modules\Customer\Models,
  * Actions da Modules\Customers\Application\Actions a Modules\Customer\Actions (stessa firma).
  */
-uses(TestCase::class);
+uses(\Modules\Customer\Tests\TestCase::class);
 
 it('creates a customer', function (): void {
     $customer = app(CreateCustomerAction::class)->execute([

@@ -9,7 +9,7 @@ use Modules\Timber\Actions\SyncEasyfattProductsAction;
 use Modules\Timber\Legacy\ConfiguredEasyfattGateway;
 use Modules\Timber\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 it('falls back to the demo dataset when the easyfatt connection is disabled', function (): void {
     $gateway = app(ConfiguredEasyfattGateway::class);

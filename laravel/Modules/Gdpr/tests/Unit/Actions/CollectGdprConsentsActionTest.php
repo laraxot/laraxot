@@ -8,7 +8,7 @@ use Modules\Gdpr\Actions\Consent\CollectGdprConsentsAction;
 use Modules\Gdpr\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Gdpr\Tests\TestCase::class);
 
 test('CollectGdprConsentsAction returns correct array', function () {
     $action = new CollectGdprConsentsAction();

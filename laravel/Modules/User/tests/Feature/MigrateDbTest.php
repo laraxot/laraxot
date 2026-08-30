@@ -6,7 +6,7 @@ namespace Modules\User\Tests\Feature;
 
 use Modules\User\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 describe('Migrate Db', function (): void {
     test('it migrates the test database', function (): void {

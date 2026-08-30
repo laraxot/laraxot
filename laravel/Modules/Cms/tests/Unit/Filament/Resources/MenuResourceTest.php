@@ -8,7 +8,7 @@ use Modules\Cms\Models\Menu;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 describe('MenuResource', function (): void {
     test('menu resource has correct model', function (): void {
         $resource = new MenuResource();

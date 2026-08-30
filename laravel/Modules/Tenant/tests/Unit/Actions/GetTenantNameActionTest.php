@@ -8,7 +8,7 @@ use Modules\Tenant\Actions\GetTenantNameAction;
 use Modules\Tenant\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Tenant\Tests\TestCase::class);
 
 test('get tenant name action returns correct tenant name from server name', function (): void {
     $_SERVER['SERVER_NAME'] = 'myapp.example.com';

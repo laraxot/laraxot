@@ -7,7 +7,7 @@ use Modules\Cms\Http\Controllers\BaseController;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 describe('XotPanelController', function (): void {
     test('xot panel controller extends base controller', function (): void {
         $controller = new XotPanelController();

@@ -10,7 +10,7 @@ use Modules\Timber\Queries\GetTimberProductStockByLotQuery;
 use Modules\Timber\Tests\TestCase;
 use Safe\DateTimeImmutable;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 it('returns available stock per lot for a product in FIFO order', function (): void {
     $product = TimberProduct::factory()->createOne();

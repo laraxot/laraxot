@@ -17,7 +17,7 @@ use Modules\User\Models\Team;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 describe('User Business Logic', function (): void {
     test('enforces password complexity requirements', function (): void {

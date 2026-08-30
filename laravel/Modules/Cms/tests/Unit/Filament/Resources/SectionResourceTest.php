@@ -7,7 +7,7 @@ use Modules\Cms\Models\Section;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 describe('SectionResource', function (): void {
     test('section resource has correct model', function (): void {
         $resource = new SectionResource();

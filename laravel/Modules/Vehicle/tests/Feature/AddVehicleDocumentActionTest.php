@@ -10,7 +10,7 @@ use Modules\Vehicle\Models\Vehicle;
 use Modules\Vehicle\Tests\TestCase;
 use RuntimeException;
 
-uses(TestCase::class);
+uses(\Modules\Vehicle\Tests\TestCase::class);
 
 it('adds a vehicle document and stores media metadata', function (): void {
     // Arrange

@@ -14,7 +14,7 @@ use Modules\Tenant\Tests\TestCase;
 
 use function Safe\json_decode;
 
-uses(TestCase::class, DatabaseTransactions::class);
+uses(\Modules\Tenant\Tests\TestCase::class, DatabaseTransactions::class);
 
 beforeEach(function (): void {
     $this->model = new TestSushiModel();

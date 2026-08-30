@@ -7,7 +7,7 @@ use Modules\Fiscal\Datas\VatableAmount;
 use Modules\Fiscal\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Fiscal\Tests\TestCase::class);
 
 it('computes the period balance between sales and purchases', function (): void {
     $action = new CalculateVatLiquidationAction();

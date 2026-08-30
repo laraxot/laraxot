@@ -11,7 +11,7 @@ use Modules\Cms\Models\Section;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
     cmsSkipTest('Requires full Cms DB schema + container wiring; not available in minimal sqlite test bootstrap.');

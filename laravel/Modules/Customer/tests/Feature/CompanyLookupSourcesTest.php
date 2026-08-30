@@ -19,7 +19,7 @@ use Modules\Customer\Tests\TestCase;
  * Namespace adattato: Modules\Customers\Application\Lookup -> Modules\Customer\Lookup.
  * WebAiCompanyLookupProvider vive ora in Modules\AiAssistant\Lookup (era Application\Lookup).
  */
-uses(TestCase::class);
+uses(\Modules\Customer\Tests\TestCase::class);
 
 it('resolves a company from its VAT via VIES (free, no captcha)', function (): void {
     Http::fake(['ec.europa.eu/*' => Http::response([

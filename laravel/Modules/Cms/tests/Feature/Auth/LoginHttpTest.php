@@ -13,7 +13,7 @@ use function Pest\Laravel\actingAs;
 
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 
 describe('Login Http', function (): void {
     test('login page can be rendered', function (): void {

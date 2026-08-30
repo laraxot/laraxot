@@ -22,7 +22,7 @@ use function Safe\file_get_contents;
  * (see CategoryModelTest) and drop the ignores.
  */
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 beforeEach(function (): void {
     /* @var \Modules\UI\Tests\TestCase $this */

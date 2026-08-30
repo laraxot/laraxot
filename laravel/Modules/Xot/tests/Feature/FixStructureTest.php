@@ -14,7 +14,7 @@ use function Safe\file_get_contents;
 use function Safe\file_put_contents;
 use function Safe\mkdir;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 beforeEach(function (): void {
     /* @var \Modules\Xot\Tests\TestCase $this */

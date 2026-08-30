@@ -9,7 +9,7 @@ use function Pest\Laravel\get;
 
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 it('redirects guests from notifiche page', function (): void {
     $response = get('/it/area-personale/notifications');

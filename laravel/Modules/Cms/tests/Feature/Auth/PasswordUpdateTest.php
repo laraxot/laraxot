@@ -3,7 +3,7 @@
 declare(strict_types=1);
 use Modules\Cms\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 test('password can be updated', function (): void {
 });
 

@@ -9,7 +9,7 @@ use PHPUnit\Framework\Assert;
 use function Safe\preg_match;
 use function Safe\preg_split;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 
 /** @return string[] */
 function getFolioPaths(): array

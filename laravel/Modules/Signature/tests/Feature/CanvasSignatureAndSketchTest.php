@@ -12,7 +12,7 @@ use Modules\Signature\Models\Sketch;
 use Modules\Signature\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
 
-uses(TestCase::class);
+uses(\Modules\Signature\Tests\TestCase::class);
 
 it('stores signature and sketch from canvas data urls', function (): void {
     // Arrange

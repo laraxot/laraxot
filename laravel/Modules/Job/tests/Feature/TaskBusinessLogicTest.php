@@ -9,7 +9,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
 
-uses(TestCase::class);
+uses(\Modules\Job\Tests\TestCase::class);
 
 it('can create task with basic information', function (): void {
     /** @var TestCase $this */

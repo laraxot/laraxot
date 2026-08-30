@@ -17,7 +17,7 @@ use Modules\AiAssistant\Models\AiToolLog;
 use Modules\AiAssistant\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\AiAssistant\Tests\TestCase::class);
 
 // No database writes here: factories are used unpersisted (makeOne()), mirroring
 // the Signature/Vehicle module test convention for this repo's shared sqlite fixture.

@@ -8,7 +8,7 @@ use Filament\Forms\Components\FileUpload;
 use Modules\Media\Actions\GetAttachmentsSchemaAction;
 use Modules\Media\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Media\Tests\TestCase::class);
 
 /**
  * Test that the action returns attachment schema correctly.

@@ -9,7 +9,7 @@ use Modules\Geo\Actions\GoogleMaps\CalculateDistanceMatrixAction;
 use Modules\Geo\Tests\Fixtures\CalculateDistanceMatrixQueueStub;
 use Modules\Geo\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Geo\Tests\TestCase::class);
 
 /**
  * Bind the sequenced distance-matrix stub into the container and resolve the

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Modules\Xot\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 it('basic test works', function (): void {
 });

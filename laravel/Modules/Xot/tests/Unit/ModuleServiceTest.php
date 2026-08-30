@@ -6,7 +6,7 @@ use Modules\Xot\Actions\ModuleAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 describe('ModuleAction', function (): void {
     $service = new ModuleAction();

@@ -8,7 +8,7 @@ use Modules\Customer\Actions\RestoreCustomerCascadeAction;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Customer\Tests\TestCase::class);
 
 it('does nothing when restoring a non-trashed customer', function (): void {
     $customer = Customer::query()->create([

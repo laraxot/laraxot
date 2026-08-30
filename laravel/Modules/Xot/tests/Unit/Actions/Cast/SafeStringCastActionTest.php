@@ -6,7 +6,7 @@ use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 it('casts various values to string correctly', function (): void {
     $action = app(SafeStringCastAction::class);

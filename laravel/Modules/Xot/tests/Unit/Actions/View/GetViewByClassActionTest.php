@@ -7,7 +7,7 @@ use Modules\Xot\Actions\View\GetViewByClassAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 it('converts class names to view names correctly', function (): void {
     $action = app(GetViewByClassAction::class);

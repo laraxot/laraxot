@@ -9,7 +9,7 @@ use Modules\Timber\Models\TimberCustomer;
 use Modules\Timber\Tests\TestCase;
 use Spatie\Permission\Models\Role;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 beforeEach(function (): void {
     Role::findOrCreate('timber_admin');

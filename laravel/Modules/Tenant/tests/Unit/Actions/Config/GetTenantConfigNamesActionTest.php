@@ -10,7 +10,7 @@ use Modules\Tenant\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Symfony\Component\Finder\SplFileInfo;
 
-uses(TestCase::class);
+uses(\Modules\Tenant\Tests\TestCase::class);
 
 it('gets tenant config names', function (): void {
     $file1 = mock(SplFileInfo::class);

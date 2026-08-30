@@ -11,7 +11,7 @@ use Modules\Geo\Exceptions\DistanceCalculationException;
 use Modules\Geo\Tests\Fixtures\CalculateDistanceMatrixActionStub;
 use Modules\Geo\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Geo\Tests\TestCase::class);
 
 /**
  * Bind the distance-matrix stub into the container and resolve the action

@@ -12,7 +12,7 @@ use function Safe\mkdir;
 use function Safe\rmdir;
 use function Safe\unlink;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 it('returns config array from module config file', function (): void {
     $tempDir = sys_get_temp_dir().'/xot_modcfg_'.uniqid('', true);

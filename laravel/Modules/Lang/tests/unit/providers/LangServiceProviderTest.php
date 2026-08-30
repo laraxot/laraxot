@@ -10,7 +10,7 @@ use Modules\Lang\Providers\LangServiceProvider;
 use Modules\Lang\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Lang\Tests\TestCase::class);
 
 function makeLangServiceProvider(): LangServiceProvider
 {

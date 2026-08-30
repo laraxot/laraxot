@@ -8,7 +8,7 @@ use Modules\Job\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use stdClass;
 
-uses(TestCase::class);
+uses(\Modules\Job\Tests\TestCase::class);
 
 describe('TaskFrequencies Integration', function () {
     beforeEach(function () {

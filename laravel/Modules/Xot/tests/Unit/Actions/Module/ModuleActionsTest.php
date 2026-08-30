@@ -13,7 +13,7 @@ use function Safe\mkdir;
 use function Safe\tempnam;
 use function Safe\unlink;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 test('get module name by class action works', function (): void {
     $action = app(GetModuleNameByClassAction::class);

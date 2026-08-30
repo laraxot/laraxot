@@ -19,7 +19,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
 
-uses(TestCase::class);
+uses(\Modules\Activity\Tests\TestCase::class);
 
 test('activity module models work together in integrated scenarios', function () {
     $user = UserFactory::new()->createOne();

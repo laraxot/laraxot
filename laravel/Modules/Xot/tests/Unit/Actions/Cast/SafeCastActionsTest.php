@@ -9,7 +9,7 @@ use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 test('safe array cast action works', function (): void {
     $action = app(SafeArrayCastAction::class);

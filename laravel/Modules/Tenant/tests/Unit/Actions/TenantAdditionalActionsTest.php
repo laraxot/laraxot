@@ -10,7 +10,7 @@ use Modules\Tenant\Actions\Translations\TranslateTenantKeyAction;
 use Modules\Tenant\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Tenant\Tests\TestCase::class);
 
 describe('Tenant Additional Actions Coverage', function (): void {
     test('GetTenantModulesAction is accessible', function (): void {

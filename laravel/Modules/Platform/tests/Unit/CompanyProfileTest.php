@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Modules\Platform\Tests\TestCase;
 use Modules\Platform\ValueObjects\CompanyProfile;
 
-uses(TestCase::class);
+uses(\Modules\Platform\Tests\TestCase::class);
 
 function platformDefaultsFixture(): CompanyProfile
 {

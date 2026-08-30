@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Modules\Customer\Actions\CreateCustomerAction;
 use Modules\Customer\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Customer\Tests\TestCase::class);
 
 it('creates a customer', function (): void {
     $customer = app(CreateCustomerAction::class)->execute([

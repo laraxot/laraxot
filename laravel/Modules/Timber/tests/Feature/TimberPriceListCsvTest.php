@@ -9,7 +9,7 @@ use Modules\Timber\Models\TimberPriceListItem;
 use Modules\Timber\Models\TimberProduct;
 use Modules\Timber\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 it('exports a price list to CSV', function (): void {
     $list = TimberPriceList::factory()->createOne(['code' => 'listino_a']);

@@ -9,7 +9,7 @@ use Modules\Customer\Providers\CustomerServiceProvider;
 use Modules\Customer\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Customer\Tests\TestCase::class);
 
 it('has CustomerServiceProvider', function (): void {
     Assert::assertInstanceOf(ServiceProvider::class, new CustomerServiceProvider(app()));

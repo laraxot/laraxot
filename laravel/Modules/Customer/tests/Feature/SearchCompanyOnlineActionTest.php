@@ -13,7 +13,7 @@ use Modules\Customer\Tests\TestCase;
  * Namespace adattato: Modules\Customers\Application\{Actions,Lookup} -> Modules\Customer\{Actions,Lookup}.
  * Nessun accesso DB: verifica solo la normalizzazione dei candidati del provider.
  */
-uses(TestCase::class);
+uses(\Modules\Customer\Tests\TestCase::class);
 
 /**
  * Deliberately typed as `list<mixed>`: some tests feed malformed candidates

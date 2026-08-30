@@ -8,7 +8,7 @@ use Modules\User\Actions\Otp\SendOtpByUserAction;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 describe('User Misc Actions Coverage', function (): void {
     test('GetCurrentDeviceAction is accessible', function (): void {

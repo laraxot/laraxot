@@ -12,7 +12,7 @@ use Modules\Notify\Actions\SendNotificationAction;
 use Modules\Notify\Models\NotificationTemplate;
 use Modules\Notify\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Notify\Tests\TestCase::class);
 
 function actionsNotificationManagerRecipient(): Model
 {

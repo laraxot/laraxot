@@ -9,7 +9,7 @@ use Modules\Platform\Tests\TestCase;
 
 use function Safe\json_encode;
 
-uses(TestCase::class);
+uses(\Modules\Platform\Tests\TestCase::class);
 
 it('writes an audit log entry when creating a customer', function (): void {
     $user = platformCreateUser();

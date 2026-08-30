@@ -9,7 +9,7 @@ use Modules\Lang\Actions\SyncTranslationsAction;
 use Modules\Lang\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Lang\Tests\TestCase::class);
 
 describe('Lang Actions Coverage', function (): void {
     test('PublishTranslationAction is accessible', function (): void {

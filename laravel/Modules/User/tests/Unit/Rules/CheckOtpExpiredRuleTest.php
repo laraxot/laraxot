@@ -7,7 +7,7 @@ use Modules\User\Rules\CheckOtpExpiredRule;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 test('CheckOtpExpiredRule can be instantiated', function () {
     $user = UserFactory::new()->makeOne();

@@ -17,7 +17,7 @@ use Modules\Notify\Notifications\GenericNotification;
 use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Notify\Tests\TestCase::class);
 
 /**
  * @param  array<string, mixed>  $attributes

@@ -8,7 +8,7 @@ use Modules\Xot\Actions\ExecuteArtisanCommandAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 it('executes allowed artisan command correctly', function (): void {
     Event::fake();

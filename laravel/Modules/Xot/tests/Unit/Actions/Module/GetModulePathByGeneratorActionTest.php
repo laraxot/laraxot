@@ -6,7 +6,7 @@ use Modules\Xot\Actions\Module\GetModulePathByGeneratorAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 it('returns path using module_path helper in happy path', function (): void {
     config()->set('modules.paths.generator.config.path', 'config');

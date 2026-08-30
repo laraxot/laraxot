@@ -9,7 +9,7 @@ use Modules\Activity\Tests\TestCase;
 use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Activity\Tests\TestCase::class);
 
 describe('Activity Policy', function (): void {
     test('user with permission can view', function (): void {

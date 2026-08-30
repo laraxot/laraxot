@@ -8,7 +8,7 @@ use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\Data;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 test('HeadernavData can be instantiated', function (): void {
     $headernavData = new HeadernavData();
 

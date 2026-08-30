@@ -10,7 +10,7 @@ use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
 use Modules\Customer\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Customer\Tests\TestCase::class);
 
 it('restores a customer and restores related sites and contacts', function (): void {
     // Arrange

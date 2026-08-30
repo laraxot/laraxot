@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Modules\User\Models\Device;
 use Modules\User\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 it('exposes a belongsToMany devices relation on the user model', function (): void {
     $user = TestCase::createTestUser();

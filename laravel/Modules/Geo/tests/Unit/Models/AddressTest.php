@@ -11,7 +11,7 @@ use Modules\Geo\Models\Address;
 use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Geo\Tests\TestCase::class);
 test('address can be created', function (): void {
     $address = AddressFactory::new()->createOne();
 

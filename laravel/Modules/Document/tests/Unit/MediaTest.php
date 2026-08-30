@@ -8,7 +8,7 @@ use Modules\Document\Models\Media;
 use Modules\Document\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Document\Tests\TestCase::class);
 
 // No database writes here: factories are used unpersisted (makeOne()).
 

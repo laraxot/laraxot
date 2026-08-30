@@ -11,7 +11,7 @@ use Modules\HR\Actions\RejectAbsenceRequestAction;
 use Modules\HR\Models\AbsenceRequest;
 use Modules\HR\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\HR\Tests\TestCase::class);
 
 it('creates and approves an absence request', function (): void {
     hrSkipTest('D6: User factory + Spatie roles su fixture sqlite — laravel/docs/debt-pest-field-service-coverage.md');

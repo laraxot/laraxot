@@ -11,7 +11,7 @@ use Modules\Timber\Models\TimberTransporter;
 use Modules\Timber\Models\TimberWoodSpecies;
 use Modules\Timber\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 /**
  * @param  array{

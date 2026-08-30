@@ -9,7 +9,7 @@ use Modules\User\Models\TeamUser;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 it('returns only the placeholder when the authenticated user has no teams', function (): void {
     $user = TestCase::createTestUser();

@@ -7,7 +7,7 @@ use Modules\Xot\Actions\Pdf\PdfEngineEnum;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 it('executes pdf by html action correctly', function (): void {
     $action = app(PdfByHtmlAction::class);

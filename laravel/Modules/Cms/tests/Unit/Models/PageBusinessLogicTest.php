@@ -11,7 +11,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\class_uses;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 
 describe('Page Business Logic', function (): void {
     test('page has expected fillable fields', function (): void {

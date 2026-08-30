@@ -7,7 +7,7 @@ use Modules\Cms\View\Components\PageContent;
 use Modules\Cms\View\Components\Section;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 /*
  * Smoke tests for Section and PageContent view components.
  *

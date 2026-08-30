@@ -9,7 +9,7 @@ use Modules\Media\Models\Media;
 use Modules\Media\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Media\Tests\TestCase::class);
 
 test('can create media with minimal data', function (): void {
     $media = MediaFactory::new()->createOne([

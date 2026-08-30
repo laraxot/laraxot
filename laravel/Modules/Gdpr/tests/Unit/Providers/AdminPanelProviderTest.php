@@ -9,7 +9,7 @@ use Modules\Gdpr\Tests\TestCase;
 use Modules\Xot\Providers\Filament\XotBasePanelProvider;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Gdpr\Tests\TestCase::class);
 
 test('admin_panel_provider_extends_xot_base_panel_provider', function (): void {
     $provider = new AdminPanelProvider(app());

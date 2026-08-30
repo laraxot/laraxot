@@ -18,7 +18,7 @@ use Modules\User\Datas\SuperAdminData;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 test('PermissionData can be instantiated', function () {
     $permissionData = PermissionData::from([

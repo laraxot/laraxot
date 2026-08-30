@@ -9,7 +9,7 @@ use Modules\Tenant\Actions\Domains\GetDomainsArrayAction;
 use Modules\Tenant\Models\Domain;
 use Modules\Tenant\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Tenant\Tests\TestCase::class);
 
 test('domain model can be instantiated', function (): void {
     $domain = new Domain();

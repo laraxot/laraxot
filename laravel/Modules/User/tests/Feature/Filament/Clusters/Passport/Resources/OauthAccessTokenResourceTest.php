@@ -3,7 +3,7 @@
 declare(strict_types=1);
 use Modules\User\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 it('oauth access token resource class exists', function () {
 });

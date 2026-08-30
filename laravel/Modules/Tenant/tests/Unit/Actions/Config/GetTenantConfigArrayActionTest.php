@@ -8,7 +8,7 @@ use Modules\Tenant\Actions\Config\GetTenantConfigArrayAction;
 use Modules\Tenant\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Tenant\Tests\TestCase::class);
 
 it('returns empty array for non-existent config', function (): void {
     $action = app(GetTenantConfigArrayAction::class);

@@ -19,7 +19,7 @@ use Modules\User\Events\TwoFactorAuthenticationEnabled;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 describe('Event Classes', function (): void {
     test('recovery codes generated event can be instantiated', function (): void {

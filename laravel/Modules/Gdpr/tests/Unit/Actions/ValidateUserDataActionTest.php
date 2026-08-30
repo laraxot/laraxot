@@ -9,7 +9,7 @@ use Modules\Gdpr\Actions\Validation\ValidateUserDataAction;
 use Modules\Gdpr\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Gdpr\Tests\TestCase::class);
 
 test('ValidateUserDataAction returns valid user data', function () {
     $action = new ValidateUserDataAction();

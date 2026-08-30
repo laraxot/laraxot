@@ -8,7 +8,7 @@ use Modules\UI\View\Components\Render\Blocks;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\DataCollection;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 test('blocks discovery returns a data collection', function (): void {
     $allBlocks = app(GetAllBlocksAction::class)->execute();
 

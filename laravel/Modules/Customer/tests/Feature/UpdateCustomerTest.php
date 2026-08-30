@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Modules\Customer\Actions\UpdateCustomerAction;
 use Modules\Customer\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Customer\Tests\TestCase::class);
 
 it('updates a customer', function (): void {
     $customer = customerCreate([

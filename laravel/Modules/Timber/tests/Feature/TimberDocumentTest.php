@@ -12,7 +12,7 @@ use Modules\Timber\Support\TimberDocumentNumberGenerator;
 use Modules\Timber\Tests\TestCase;
 use RuntimeException;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 it('computes line and document totals', function (): void {
     $document = TimberDocument::factory()->createOne();

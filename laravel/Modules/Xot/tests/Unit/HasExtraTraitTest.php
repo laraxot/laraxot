@@ -16,7 +16,7 @@ use function Safe\class_uses;
 
 use Spatie\SchemalessAttributes\SchemalessAttributes;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 /**
  * @param array<string, mixed> $values

@@ -10,7 +10,7 @@ use Modules\Email\Models\EmailMessage;
 use Modules\Email\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Email\Tests\TestCase::class);
 
 // No database writes here: factories are used unpersisted (makeOne()).
 

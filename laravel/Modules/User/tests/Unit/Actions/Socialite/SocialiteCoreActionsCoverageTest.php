@@ -18,7 +18,7 @@ use Modules\User\Tests\TestCase;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 test('builds user attributes from oauth user', function (): void {
     $oauthUser = configureMock(SocialiteUserContract::class, function (MockInterface $mock): void {

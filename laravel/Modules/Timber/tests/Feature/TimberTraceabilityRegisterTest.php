@@ -13,7 +13,7 @@ use Modules\Timber\Models\TimberSupplier;
 use Modules\Timber\Queries\GetTimberTraceabilityRegisterQuery;
 use Modules\Timber\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 it('projects a full chain into a traceability register row like the Excel sheet', function (): void {
     $supplier = TimberSupplier::factory()->createOne(['legal_name' => 'Boschi Veneti Srl', 'vat_number' => 'IT01234567890']);

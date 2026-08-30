@@ -8,7 +8,7 @@ use Modules\Platform\Models\PlatformSetting;
 use Modules\Platform\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Platform\Tests\TestCase::class);
 
 it('has PlatformSetting model', function (): void {
     Assert::assertInstanceOf(Model::class, new PlatformSetting());

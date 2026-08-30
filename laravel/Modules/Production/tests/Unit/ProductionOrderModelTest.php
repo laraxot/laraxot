@@ -9,7 +9,7 @@ use Modules\Production\Models\ProductionPhase;
 use Modules\Production\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Production\Tests\TestCase::class);
 
 it('creates a production order', function (): void {
     $order = ProductionOrderFactory::new()->createOne();

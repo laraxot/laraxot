@@ -7,7 +7,7 @@ use Modules\Xot\Datas\MetatagData;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 test('MetatagData puo essere istanziata', function () {
     $metatagData = new MetatagData();

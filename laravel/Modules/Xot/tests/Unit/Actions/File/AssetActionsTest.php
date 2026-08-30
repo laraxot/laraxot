@@ -13,7 +13,7 @@ use Modules\Xot\Tests\TestCase;
 use Nwidart\Modules\Facades\Module;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 it('handles absolute urls in AssetAction', function (): void {
     $action = app(AssetAction::class);

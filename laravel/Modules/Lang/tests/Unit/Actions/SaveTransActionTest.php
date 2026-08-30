@@ -8,7 +8,7 @@ use Modules\Lang\Actions\SaveTransAction;
 use Modules\Lang\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Lang\Tests\TestCase::class);
 
 describe('SaveTransAction', function (): void {
     test('it has execute method', function (): void {

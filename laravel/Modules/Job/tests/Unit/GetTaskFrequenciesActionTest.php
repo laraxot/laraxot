@@ -8,7 +8,7 @@ use PHPUnit\Framework\Assert;
 use function Safe\class_uses;
 use function Safe\file_get_contents;
 
-uses(TestCase::class);
+uses(\Modules\Job\Tests\TestCase::class);
 
 describe('GetTaskFrequenciesAction', function (): void {
     test('can be instantiated', function (): void {

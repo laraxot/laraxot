@@ -9,7 +9,7 @@ use Illuminate\Testing\TestResponse;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 
 describe('Individual Folio Routes', function (): void {
     test('cms route get locale homepage', function (): void {

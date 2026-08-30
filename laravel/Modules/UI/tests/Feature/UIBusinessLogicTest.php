@@ -10,7 +10,7 @@ use Modules\UI\Models\Collection;
 use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 describe('UI Business Logic Integration', function (): void {
     describe('Category management', function (): void {

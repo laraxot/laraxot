@@ -13,7 +13,7 @@ use Modules\User\Filament\Resources\UserResource\Widgets\UserOverview;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 beforeEach(function (): void {
     /* @var TestCase $this */

@@ -10,7 +10,7 @@ use Modules\Xot\Actions\Pdf\GetPdfContentByRecordAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 beforeEach(function (): void {
     $this->action = new GetPdfContentByRecordAction();

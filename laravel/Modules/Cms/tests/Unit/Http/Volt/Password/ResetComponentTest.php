@@ -7,7 +7,7 @@ use Modules\Cms\Http\Volt\Password\ResetComponent;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 describe('Password ResetComponent', function (): void {
     test('reset component extends volt component', function (): void {
         $component = new ResetComponent();

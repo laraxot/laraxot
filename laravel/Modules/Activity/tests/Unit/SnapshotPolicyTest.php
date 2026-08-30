@@ -10,7 +10,7 @@ use Modules\User\Models\Policies\UserBasePolicy;
 use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Activity\Tests\TestCase::class);
 
 describe('Snapshot Policy', function (): void {
     test('policy extends user base policy', function (): void {

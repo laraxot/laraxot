@@ -6,7 +6,7 @@ use Modules\Cms\Tests\TestCase;
 use Modules\Cms\View\Components\Page;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 /*
 
  * Pure unit tests for Modules\Cms\View\Components\Page (the Blade VIEW component).

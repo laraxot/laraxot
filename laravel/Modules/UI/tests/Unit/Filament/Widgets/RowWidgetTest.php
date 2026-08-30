@@ -10,7 +10,7 @@ use Modules\UI\Tests\TestCase;
 use Modules\Xot\Filament\Widgets\XotBaseSchemaWidget;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 test('row widget extends filament widget', function (): void {
     $widget = new class extends RowWidget {

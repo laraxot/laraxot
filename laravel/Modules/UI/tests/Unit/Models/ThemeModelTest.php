@@ -21,7 +21,7 @@ use PHPUnit\Framework\Assert;
  * the ignores.
  */
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 beforeEach(function (): void {
     /* @var \Modules\UI\Tests\TestCase $this */

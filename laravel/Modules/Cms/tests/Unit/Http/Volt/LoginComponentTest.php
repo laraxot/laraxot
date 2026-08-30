@@ -7,7 +7,7 @@ use Modules\Cms\Http\Volt\LoginComponent;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 describe('LoginComponent', function (): void {
     test('login component extends volt component', function (): void {
         $component = new LoginComponent();

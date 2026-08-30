@@ -8,7 +8,7 @@ use Modules\Seo\Filament\Widgets\SocialShareWidget;
 use Modules\Seo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Seo\Tests\TestCase::class);
 
 it('builds social links and exposes platforms in widget view data', function (): void {
     /** @var TestCase $this */

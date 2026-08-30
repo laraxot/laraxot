@@ -9,7 +9,7 @@ use Modules\Activity\Tests\Fixtures\ListLogActivitiesActionTestResourceSimple;
 use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Activity\Tests\TestCase::class);
 
 test('action can be instantiated', function (): void {
     $action = ListLogActivitiesAction::make();

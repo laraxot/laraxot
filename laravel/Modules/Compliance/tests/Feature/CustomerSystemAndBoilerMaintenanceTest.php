@@ -21,7 +21,7 @@ use Modules\Customer\Database\Factories\CustomerFactory;
 | principale.
 */
 
-uses(TestCase::class);
+uses(\Modules\Compliance\Tests\TestCase::class);
 
 it('persists a customer system with its type and customer link', function (): void {
     $customer = CustomerFactory::new()->createOne();

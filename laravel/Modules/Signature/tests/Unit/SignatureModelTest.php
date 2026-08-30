@@ -10,7 +10,7 @@ use Modules\Signature\Models\Sketch;
 use Modules\Signature\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Signature\Tests\TestCase::class);
 
 // No database writes here: this module's test infrastructure does not run
 // migrations automatically, so factories are used unpersisted (makeOne()).

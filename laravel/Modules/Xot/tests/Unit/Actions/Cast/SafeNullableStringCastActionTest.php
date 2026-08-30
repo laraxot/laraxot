@@ -6,7 +6,7 @@ use Modules\Xot\Actions\Cast\SafeNullableStringCastAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 it('casts nullable string values consistently', function (): void {
     $action = app(SafeNullableStringCastAction::class);

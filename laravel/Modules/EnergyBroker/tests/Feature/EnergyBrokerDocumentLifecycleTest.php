@@ -23,7 +23,7 @@ use function Safe\unlink;
 | Infrastructure\Models\/Application\Actions\).
 */
 
-uses(TestCase::class);
+uses(\Modules\EnergyBroker\Tests\TestCase::class);
 
 it('extracts pdf files from a zip archive for batch imports', function (): void {
     $zipPath = storage_path('app/test-energy-broker-import.zip');

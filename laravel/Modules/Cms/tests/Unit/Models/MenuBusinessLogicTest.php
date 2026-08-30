@@ -15,7 +15,7 @@ use function Safe\class_uses;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 
 describe('Menu Business Logic', function (): void {
     test('menu implements recursive relationships contract', function (): void {

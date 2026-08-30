@@ -6,7 +6,7 @@ use Modules\User\Actions\Otp\Hasher;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 it('makes hashed value', function (): void {
     $hasher = app(Hasher::class);

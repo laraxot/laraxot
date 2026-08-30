@@ -24,7 +24,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
 
-uses(TestCase::class);
+uses(\Modules\Notify\Tests\TestCase::class);
 
 beforeEach(function (): void {
     /** @var TestCase $this */

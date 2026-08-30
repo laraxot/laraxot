@@ -7,7 +7,7 @@ use Modules\Activity\Listeners\LogoutListener;
 use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Activity\Tests\TestCase::class);
 
 test('LoginListener can be instantiated', function () {
     $listener = new LoginListener();

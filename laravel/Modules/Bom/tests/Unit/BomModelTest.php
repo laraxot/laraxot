@@ -9,7 +9,7 @@ use Modules\Bom\Models\BomItem;
 use Modules\Bom\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Bom\Tests\TestCase::class);
 
 it('creates a bom', function (): void {
     $bom = BomFactory::new()->createOne();

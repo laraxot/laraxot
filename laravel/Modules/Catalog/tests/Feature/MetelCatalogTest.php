@@ -18,7 +18,7 @@ use Modules\Catalog\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use RuntimeException;
 
-uses(TestCase::class);
+uses(\Modules\Catalog\Tests\TestCase::class);
 
 it('parses a delimited CSV line into a normalized article', function (): void {
     $parser = new MetelRecordParser(

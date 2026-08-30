@@ -9,7 +9,7 @@ use Modules\Document\Actions\AttachPhotosToInterventionAction;
 use Modules\Document\Actions\CreateMediaFromStoredFileAction;
 use Modules\Document\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Document\Tests\TestCase::class);
 
 it('attaches a stored document to an intervention', function (): void {
     Storage::fake('public');

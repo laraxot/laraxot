@@ -10,7 +10,7 @@ use Modules\Timber\Models\TimberPriceListVersion;
 use Modules\Timber\Models\TimberProduct;
 use Modules\Timber\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 beforeEach(function (): void {
     filament()->setCurrentPanel('timber::admin');

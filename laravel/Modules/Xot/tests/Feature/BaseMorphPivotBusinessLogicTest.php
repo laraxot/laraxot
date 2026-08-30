@@ -9,7 +9,7 @@ use Modules\Xot\Tests\Fixtures\Models\TestConcreteMorphPivot;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 describe('Base Morph Pivot Business Logic', function (): void {
     test('it extends pivot class', function (): void {

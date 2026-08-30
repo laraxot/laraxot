@@ -8,7 +8,7 @@ use Modules\Timber\Models\TimberAgentCommission;
 use Modules\Timber\Tests\TestCase;
 use Spatie\Permission\Models\Role;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 it('creates an agent with a commission rule', function (): void {
     Role::findOrCreate('timber_admin');

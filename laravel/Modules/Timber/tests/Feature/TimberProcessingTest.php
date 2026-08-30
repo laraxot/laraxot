@@ -9,7 +9,7 @@ use Modules\Timber\Models\TimberLot;
 use Modules\Timber\Models\TimberProcessingStep;
 use Modules\Timber\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 it('registers a processing step from a lot producing usable and waste outputs', function (): void {
     $lot = TimberLot::factory()->createOne([

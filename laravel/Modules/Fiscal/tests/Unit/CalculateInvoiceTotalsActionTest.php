@@ -7,7 +7,7 @@ use Modules\Fiscal\Datas\InvoiceLineData;
 use Modules\Fiscal\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Fiscal\Tests\TestCase::class);
 
 it('computes taxable, vat and total for a single line', function (): void {
     $action = new CalculateInvoiceTotalsAction();

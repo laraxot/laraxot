@@ -10,7 +10,7 @@ use Modules\Geo\Models\Address;
 use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Geo\Tests\TestCase::class);
 describe('Address Business Logic', function () {
     test('address extends base model', function () {
     });

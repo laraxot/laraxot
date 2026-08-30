@@ -11,7 +11,7 @@ use Modules\Cms\Tests\TestCase;
 use Modules\Xot\Providers\XotBaseServiceProvider;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 test('CmsServiceProvider has correct name', function () {
     $provider = new CmsServiceProvider(app());
     $reflection = new ReflectionClass($provider);

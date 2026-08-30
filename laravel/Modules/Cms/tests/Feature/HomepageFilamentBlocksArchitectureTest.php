@@ -17,7 +17,7 @@ use function Safe\json_decode;
 
 use Spatie\LaravelData\DataCollection;
 
-uses(TestCase::class);
+uses(\Modules\Cms\Tests\TestCase::class);
 
 /**
  * Carica il JSON dell'homepage usato da questa suite, con narrowing esplicito

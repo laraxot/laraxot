@@ -9,7 +9,7 @@ use Modules\User\Tests\TestCase;
 use Modules\Xot\Filament\Widgets\XotBaseSchemaWidget;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 describe('LoginWidget', function (): void {
     test('login widget can be instantiated', function (): void {

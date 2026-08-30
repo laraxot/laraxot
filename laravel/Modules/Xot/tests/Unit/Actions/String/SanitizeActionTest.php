@@ -6,7 +6,7 @@ use Modules\Xot\Actions\String\SanitizeAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 it('sanitizes strings correctly', function (): void {
     $action = app(SanitizeAction::class);

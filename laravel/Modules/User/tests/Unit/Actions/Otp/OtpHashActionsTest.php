@@ -8,7 +8,7 @@ use Modules\User\Actions\Otp\VerifyOtpHashAction;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 it('makes hashed value', function (): void {
     $hash = app(HashOtpValueAction::class)->execute('test-otp-code');

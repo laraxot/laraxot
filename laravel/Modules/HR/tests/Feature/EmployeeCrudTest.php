@@ -7,7 +7,7 @@ namespace Modules\HR\Tests\Feature;
 use Modules\HR\Models\Employee;
 use Modules\HR\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\HR\Tests\TestCase::class);
 
 it('creates and soft-deletes an employee', function (): void {
     $employee = Employee::query()->create([

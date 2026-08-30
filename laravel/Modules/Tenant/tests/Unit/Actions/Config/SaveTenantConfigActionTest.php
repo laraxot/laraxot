@@ -11,7 +11,7 @@ use Modules\Tenant\Actions\Config\SaveTenantConfigAction;
 use Modules\Tenant\Tests\TestCase;
 use Modules\Xot\Actions\Arr\SaveArrayAction;
 
-uses(TestCase::class);
+uses(\Modules\Tenant\Tests\TestCase::class);
 
 it('saves tenant config by merging with existing data', function (): void {
     /** @var TestCase $this */

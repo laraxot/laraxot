@@ -11,7 +11,7 @@ use Modules\Xot\Tests\TestCase;
 use Nwidart\Modules\Facades\Module;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 test('fix path action works', function (): void {
     $action = app(FixPathAction::class);

@@ -11,7 +11,7 @@ use Modules\Timber\Models\TimberDryingCycle;
 use Modules\Timber\Models\TimberLot;
 use Modules\Timber\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 it('starts a drying cycle for a raw lot and moves it to the drying area', function (): void {
     $lot = TimberLot::factory()->createOne([

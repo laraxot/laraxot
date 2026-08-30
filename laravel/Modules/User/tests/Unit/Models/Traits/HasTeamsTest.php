@@ -12,7 +12,7 @@ use Modules\User\Tests\TestCase;
 use Modules\User\Tests\Unit\Models\Traits\Fixtures\MockUserWithTeams;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\User\Tests\TestCase::class);
 
 function traitsHasTeamsMockUser(string $id = 'mock-user-1'): MockUserWithTeams
 {

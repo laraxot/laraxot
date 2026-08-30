@@ -8,7 +8,7 @@ use Modules\Notify\Actions\NetfunSendAction;
 use Modules\Notify\Datas\SmsData;
 use Modules\Notify\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Notify\Tests\TestCase::class);
 
 describe('NetfunSendAction', function () {
     it('has execute method returning array', function () {

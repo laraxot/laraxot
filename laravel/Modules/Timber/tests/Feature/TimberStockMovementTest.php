@@ -10,7 +10,7 @@ use Modules\Timber\Models\TimberStockMovement;
 use Modules\Timber\Queries\GetTimberStockMovementsQuery;
 use Modules\Timber\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Timber\Tests\TestCase::class);
 
 it('registers a load movement and increases product stock', function (): void {
     $product = TimberProduct::factory()->createOne(['unit_of_measure' => 'quintali']);
