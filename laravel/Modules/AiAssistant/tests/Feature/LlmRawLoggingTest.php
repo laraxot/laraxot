@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\AiAssistant\Tests\Feature;
 
+use ArrayObject;
 use Illuminate\Http\Client\ConnectionException;
+use Illuminate\Log\Events\MessageLogged;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Modules\AiAssistant\Llm\LlmChatJsonClient;
@@ -23,16 +25,24 @@ function fakeChatResponse(string $content): void
 }
 
 /**
- * @return list<array{level: mixed, message: mixed, context: mixed}>
+ * Il contenitore va restituito per riferimento: i log arrivano *dopo* questa
+ * chiamata, quindi un array restituito per valore resterebbe vuoto per sempre.
+ *
+ * @return ArrayObject<int, array{level: mixed, message: mixed, context: mixed}>
  */
-function captureLogEntries(): array
+function captureLogEntries(): ArrayObject
 {
-    $entries = [];
-    Log::listen(function (mixed $level, mixed $message, mixed $context = []) use (&$entries): void {
+    /** @var ArrayObject<int, array{level: mixed, message: mixed, context: mixed}> $entries */
+    $entries = new ArrayObject();
+
+    // Da Laravel 9 il listener riceve un solo MessageLogged, non i tre argomenti
+    // separati della firma storica: con la vecchia firma la closure esplode al
+    // primo log emesso.
+    Log::listen(function (MessageLogged $event) use ($entries): void {
         $entries[] = [
-            'level' => $level,
-            'message' => $message,
-            'context' => $context,
+            'level' => $event->level,
+            'message' => $event->message,
+            'context' => $event->context,
         ];
     });
 
@@ -48,7 +58,7 @@ it('logs the raw LLM response when services.llm.log_raw is on', function (): voi
     app(LlmChatJsonClient::class)->complete('system', 'user prompt');
 
     $infoLogs = array_values(array_filter(
-        $entries,
+        $entries->getArrayCopy(),
         static fn (array $entry): bool => $entry['level'] === 'info'
             && is_string($entry['message'])
             && str_contains($entry['message'], '[LLM]')
@@ -76,7 +86,7 @@ it('does NOT log when services.llm.log_raw is off', function (): void {
     app(LlmChatJsonClient::class)->complete('system', 'user prompt');
 
     $infoLogs = array_values(array_filter(
-        $entries,
+        $entries->getArrayCopy(),
         static fn (array $entry): bool => $entry['level'] === 'info',
     ));
 
@@ -94,7 +104,7 @@ it('logs the raw body even when the provider returns an HTTP error', function ()
     expect($result)->toBe([]);
 
     $errorLogs = array_values(array_filter(
-        $entries,
+        $entries->getArrayCopy(),
         static fn (array $entry): bool => $entry['level'] === 'info'
             && is_array($entry['context'])
             && ($entry['context']['ok'] ?? null) === false

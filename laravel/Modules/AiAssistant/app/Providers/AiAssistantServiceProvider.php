@@ -17,6 +17,7 @@ use Modules\AiAssistant\Lookup\WebAiCompanyLookupProvider;
 use Modules\AiAssistant\Reports\OpenAiInterventionReportExtractor;
 use Modules\AiAssistant\Reports\OpenAiQuotationDraftExtractor;
 use Modules\AiAssistant\Reports\OpenAiQuotationModificationExtractor;
+use Modules\AiAssistant\Security\AiActionPolicy;
 use Modules\AiAssistant\Speech\GroqWhisperTranscriptionProvider;
 use Modules\AiAssistant\Speech\OpenAiWhisperTranscriptionProvider;
 use Modules\AiAssistant\Speech\SpeechTranscriptionProviderInterface;
@@ -44,6 +45,19 @@ class AiAssistantServiceProvider extends XotBaseServiceProvider
     public function register(): void
     {
         parent::register();
+
+        // L'elenco dei tipi ammessi e' una allow-list voluta: un tipo nuovo aggiunto
+        // domani all'esecutore resta rifiutato finche' qualcuno non lo elenca,
+        // invece di passare perche' nessuno ha pensato a vietarlo.
+        $this->app->singleton(AiActionPolicy::class, function (): AiActionPolicy {
+            /** @var array<int, mixed> $allowed */
+            $allowed = (array) config('ai_security.allowed_action_types', []);
+
+            return new AiActionPolicy(
+                allowedTypes: array_values(array_filter($allowed, 'is_string')),
+                maxProposalsPerWindow: max(1, (int) config('ai_security.max_proposals_per_window', 30)),
+            );
+        });
 
         $this->app->singleton(SpeechTranscriptionProviderInterface::class, function () {
             $providerValue = config('speech.transcription.provider', 'groq_whisper');
