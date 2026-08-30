@@ -258,3 +258,29 @@ storico del modulo era proprio questo).
    forma corta: sanato a tappeto su 678 file (commit `3e43324f`).
 7. **Suite in parallelo sulla stessa fixture sqlite** danno falsi rossi
    (WhatsApp 2 fail in parallelo, 42/42 da solo). Lanciarle in serie.
+
+## Checkpoint 2026-08-30 (notte, 2) — Compliance, Platform, AiAssistant, dormienti
+
+- **Compliance**: F-Gas (circuiti refrigeranti, controlli fughe, obbligo calcolato dal
+  CO2 equivalente) + registri regionali. PHPStan 16→0, 21 test verdi.
+  Corretto `$connectionsToTransact` che includeva `mariadb`: DatabaseTransactions
+  apriva una connessione MySQL reale e *ogni* test del modulo moriva prima di partire.
+- **Platform**: 3 seeder demo, incluso lo scenario della commessa che si mangia il
+  margine (tre sopralluoghi invece di uno) — il caso che il controllo di gestione
+  deve saper mostrare.
+- **Inventory/Production**: gating + TestCase senza fixture condivisa. 11 rossi → 12 verdi.
+- **HR**: i 5 test marcati come bloccati da debiti (factory utente con ruoli, conflitto
+  media) passano **senza toccare il codice**: i debiti erano già chiusi di sponda.
+  3 verdi → 8.
+- **WorkOrder**: ripristinato il test PDF, era vuoto perché dompdf mancava (c'è).
+- **AiAssistant**: guardie di sicurezza (allow-list azioni, tetto proposte per utente,
+  redazione a due livelli). Corretto il test del logging LLM che usava la firma di
+  `Log::listen()` a tre argomenti (abbandonata da Laravel 9) e restituiva l'array per
+  valore quando i log arrivano dopo. 2 rossi → 20 verdi.
+
+### Auth → User: rimandato alla Fase 3
+
+Il delta del modulo Auth è **interamente** logica del panel WTS (`isWtsPanel()`,
+ruoli `wts_admin`/`wts_operator`, `AccountFeatures::isWtsAdmin`). Il panel e il
+modulo Wts non esistono ancora nella base: il delta va portato **insieme** a Wts
+nella Fase 3, altrimenti sarebbe codice morto che referenzia classi assenti.
