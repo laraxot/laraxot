@@ -212,7 +212,9 @@ describe('User Model', function (): void {
 
         $freshModel1 = $user->fresh();
         Assert::assertNotNull($freshModel1);
-        Assert::assertTrue($freshModel1->teams->contains('id', $team->id));
+        // BaseUser aliasa HasTeams::teams in membershipTeams: la property
+        // `teams` è la relazione spatie/permission (model_has_role), non team_user.
+        Assert::assertTrue($freshModel1->membershipTeams->contains('id', $team->id));
     });
 
     test('can leave ateam', function (): void {
@@ -341,8 +343,8 @@ describe('User Model', function (): void {
         $verifiedUsers = User::whereNotNull('email_verified_at')->get();
         $unverifiedUsers = User::whereNull('email_verified_at')->get();
 
-        Assert::assertSame(true, $verifiedUsers->every(fn ($user) => null !== $user->email_verified_at));
-        Assert::assertSame(true, $unverifiedUsers->every(fn ($user) => null === $user->email_verified_at));
+        Assert::assertSame(true, $verifiedUsers->every(fn ($user) => $user->email_verified_at !== null));
+        Assert::assertSame(true, $unverifiedUsers->every(fn ($user) => $user->email_verified_at === null));
     });
 
     test('can filter by language', function (): void {
@@ -352,7 +354,7 @@ describe('User Model', function (): void {
         $italianUsers = User::where('lang', 'it')->get();
         $englishUsers = User::where('lang', 'en')->get();
 
-        Assert::assertSame(true, $italianUsers->every(fn ($user) => 'it' === $user->lang));
-        Assert::assertSame(true, $englishUsers->every(fn ($user) => 'en' === $user->lang));
+        Assert::assertSame(true, $italianUsers->every(fn ($user) => $user->lang === 'it'));
+        Assert::assertSame(true, $englishUsers->every(fn ($user) => $user->lang === 'en'));
     });
 });
