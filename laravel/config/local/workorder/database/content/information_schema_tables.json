@@ -152,5 +152,38 @@
         "updated_by": "019fa29a-05ef-71e4-a5c1-cd73012da050",
         "created_by": "019fa29a-05ef-71e4-a5c1-cd73012da050",
         "table_rows": 0
+    },
+    {
+        "table_schema": "\/home\/davide\/base_workorder_fila5\/laravel\/database\/fixcity_data.sqlite",
+        "model_class": "Modules\\Catalog\\Models\\MetelCatalog",
+        "table_name": "metel_catalogs",
+        "id": 15,
+        "updated_at": "2026-08-29T12:31:19.000000Z",
+        "created_at": "2026-08-29T12:31:19.000000Z",
+        "updated_by": "9459636c-a503-43c1-ae8c-461c7bbc584b",
+        "created_by": "9459636c-a503-43c1-ae8c-461c7bbc584b",
+        "table_rows": 0
+    },
+    {
+        "table_schema": "\/home\/davide\/base_workorder_fila5\/laravel\/database\/fixcity_data.sqlite",
+        "model_class": "Modules\\Catalog\\Models\\Product",
+        "table_name": "products",
+        "id": 16,
+        "updated_at": "2026-08-29T12:31:19.000000Z",
+        "created_at": "2026-08-29T12:31:19.000000Z",
+        "updated_by": "9459636c-a503-43c1-ae8c-461c7bbc584b",
+        "created_by": "9459636c-a503-43c1-ae8c-461c7bbc584b",
+        "table_rows": 0
+    },
+    {
+        "table_schema": "\/home\/davide\/base_workorder_fila5\/laravel\/database\/fixcity_data.sqlite",
+        "model_class": "Modules\\User\\Models\\User",
+        "table_name": "users",
+        "id": 17,
+        "updated_at": "2026-08-30T11:34:33.000000Z",
+        "created_at": "2026-08-30T11:34:33.000000Z",
+        "updated_by": "db7a1d05-3d78-4af4-b0e2-bea020461ff8",
+        "created_by": "db7a1d05-3d78-4af4-b0e2-bea020461ff8",
+        "table_rows": 2
     }
 ]
