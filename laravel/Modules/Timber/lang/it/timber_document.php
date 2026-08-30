@@ -58,4 +58,5 @@ return [
         'Testata' => ['label' => 'Testata', 'heading' => 'Testata'],
         'Righe' => ['label' => 'Righe', 'heading' => 'Righe'],
     ],
+    'navigation' => ['label' => 'timber document.navigation'],
 ];

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'learning_rate' => 'Tasso di apprendimento',
     'learning_rate_helper' => 'Es. 0.001',
@@ -15,4 +17,5 @@ return [
     'error_title' => 'Errore!',
     'error_body' => 'Si è verificato un errore durante l\'avvio del fine-tuning.',
     'action_label' => 'Avvia Fine-Tuning',
+    'navigation' => ['group' => 'fine tuning.navigation'],
 ];

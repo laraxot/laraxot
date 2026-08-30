@@ -50,4 +50,5 @@ return [
         'resetColumnManager' => ['label' => 'resetColumnManager', 'icon' => 'resetColumnManager', 'tooltip' => 'resetColumnManager'],
         'reorderRecords' => ['label' => 'reorderRecords', 'icon' => 'reorderRecords', 'tooltip' => 'reorderRecords'],
     ],
+    'navigation' => ['label' => 'timber agent.navigation'],
 ];

@@ -72,4 +72,5 @@ return [
         'Campi liberi' => ['label' => 'Campi liberi', 'heading' => 'Campi liberi'],
         'Fornitore' => ['label' => 'Fornitore', 'heading' => 'Fornitore'],
     ],
+    'navigation' => ['label' => 'timber product.navigation'],
 ];

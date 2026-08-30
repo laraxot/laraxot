@@ -46,4 +46,5 @@ return [
         'empty' => ['label' => 'empty', 'heading' => 'empty'],
         'Prezzi prodotti' => ['label' => 'Prezzi prodotti', 'heading' => 'Prezzi prodotti'],
     ],
+    'navigation' => ['label' => 'timber price list.navigation'],
 ];

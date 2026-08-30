@@ -50,4 +50,5 @@ return [
         'empty' => ['label' => 'empty', 'heading' => 'empty'],
         'Foglio appunti' => ['label' => 'Foglio appunti', 'heading' => 'Foglio appunti'],
     ],
+    'navigation' => ['label' => 'timber supplier.navigation'],
 ];

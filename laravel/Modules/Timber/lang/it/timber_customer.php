@@ -84,4 +84,5 @@ return [
         'reorderRecords' => ['label' => 'reorderRecords', 'icon' => 'reorderRecords', 'tooltip' => 'reorderRecords'],
         'createAnother' => ['label' => 'createAnother', 'icon' => 'createAnother', 'tooltip' => 'createAnother'],
     ],
+    'navigation' => ['label' => 'timber customer.navigation'],
 ];

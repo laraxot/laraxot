@@ -16,4 +16,5 @@ return [
         'createAnother' => ['label' => 'createAnother', 'icon' => 'createAnother', 'tooltip' => 'createAnother'],
         'cancel' => ['label' => 'cancel', 'icon' => 'cancel', 'tooltip' => 'cancel'],
     ],
+    'navigation' => ['label' => 'timber customer price.navigation'],
 ];

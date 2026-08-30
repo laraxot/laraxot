@@ -34,4 +34,5 @@ return [
     'sections' => [
         'empty' => ['label' => 'empty', 'heading' => 'empty'],
     ],
+    'navigation' => ['label' => 'timber transporter.navigation'],
 ];

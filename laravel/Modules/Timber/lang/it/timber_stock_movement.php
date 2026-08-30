@@ -49,4 +49,5 @@ return [
     'sections' => [
         'empty' => ['label' => 'empty', 'heading' => 'empty'],
     ],
+    'navigation' => ['label' => 'timber stock movement.navigation'],
 ];
