@@ -284,3 +284,65 @@ Il delta del modulo Auth è **interamente** logica del panel WTS (`isWtsPanel()`
 ruoli `wts_admin`/`wts_operator`, `AccountFeatures::isWtsAdmin`). Il panel e il
 modulo Wts non esistono ancora nella base: il delta va portato **insieme** a Wts
 nella Fase 3, altrimenti sarebbe codice morto che referenzia classi assenti.
+
+## Checkpoint 2026-08-31 — Fase 2 completa: tre moduli nuovi
+
+### Costing (nuovo)
+Centri di lavoro e ricarichi condivisi. Signage e MetalWork avevano ciascuno la
+propria tabella con le stesse colonne e la stessa aritmetica duplicata: ora una sola
+tabella separata per contesto e una sola implementazione della regola («vince il
+primo candidato non nullo, dal più specifico al più generico»). La decisione porta
+con sé **la provenienza**, non solo la percentuale: all'operatore mostriamo il calcolo
+di ogni riga e deve distinguere «il centro di lavoro dice 40%» da «non l'ha detto
+nessuno». Uno zero impostato di proposito vince su un valore ereditato: è una scelta,
+non un vuoto. 10 test, PHPStan pulito.
+
+### MetalWork (nuovo, ex MetalWorks)
+Preventivi carpenteria dai disegni STEP. Un STEP è una rappresentazione a contorno,
+non un mesh: il volume esatto non è calcolabile senza un tassellatore. Perciò quando
+i solidi si distinguono il pezzo si costa riga per riga (ogni riga è un acquisto reale
+a un prezzo fatturato) e solo altrimenti si ricade sul peso derivato dall'ingombro per
+un fattore di riempimento che l'operatore corregge a schermo.
+Rinominato al singolare con tutto quello che ne segue: tabelle, config, path del
+pannello, ruoli, e la voce corrispondente in `AccountFeatures`.
+42 test, PHPStan da 165 errori a **zero** sul codice di produzione.
+
+### Signage (nuovo)
+Preventivi insegne dal file grafico .ai (contenitore PDF). Estrae il testo con le
+coordinate, lo rimette in righe per linea di base, riconosce i componenti, li prezza
+dal listino fornitori col ricarico di Costing.
+52 test, PHPStan da 129 errori a **zero** sul codice di produzione.
+
+### Nuova dipendenza
+`smalot/pdfparser` — serve a MetalWork per leggere le fatture fornitore in PDF.
+
+### Lezioni di questo giro
+
+1. **Il reshape automatico non tocca le dichiarazioni `namespace`**: rimappa gli
+   `use` ma lascia `namespace Modules\X\Infrastructure\Models;`, e la classe risulta
+   dichiarata due volte sotto nomi diversi. Verificare sempre con
+   `grep "namespace.*Infrastructure\|namespace.*Application"` dopo un porting.
+2. **Sostituire `use Illuminate\...\Model` con `XotBaseModel` a tappeto rompe i
+   RelationManager**, dove `Model` è il tipo del metodo padre. La sostituzione va
+   fatta solo dentro `app/Models/`.
+3. **Le funzioni `Safe\*` cambiano la semantica dei parser**: non tornano mai `false`,
+   quindi tutti i check `=== false` diventano morti, e i tipi di `$matches` si
+   restringono al punto che PHPStan chiede guardie sugli offset. Vanno introdotte
+   *insieme* alla ripulitura dei controlli, non prima.
+4. **Una variabile riusata come array di match e come stringa** (`$reference`) passa
+   inosservata con `preg_match` nativo e diventa un TypeError con quello Safe.
+5. **XotBase registra i config di modulo come `{modulo}.{file}.*`**: se il codice legge
+   `config('modulo.*')` serve l'alias esplicito nel provider (schema già usato da
+   Catalog per `metel`).
+6. **Un pannello senza pagina sulla radice** ricade sul redirect di Filament e manda
+   l'utente sulla prima resource che capita: la dashboard va montata a mano se si
+   dichiara `$isDiscovered = false`.
+
+### Stato del piano
+
+- **Fase 1** (delta moduli portati): completa, tranne Auth→User che dipende da Wts.
+- **Fase 2** (moduli nuovi): completa — MetalWork, Signage, Costing.
+- **Fase 4** (gap): Compliance, EnergyBroker, PublicProcurement hanno PHPStan pulito
+  e test verdi; testsuite di tutti i moduli aggiunte a `phpunit.xml`.
+- **Fase 3** (codice `app/` → moduli): da fare — Wts, Thermo, Giveback, Dds, AsdSoci,
+  EnergyBroker Filament, panel Customer/Supplier.
