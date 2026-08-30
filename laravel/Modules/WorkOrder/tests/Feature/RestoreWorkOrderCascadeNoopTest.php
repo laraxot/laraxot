@@ -9,7 +9,7 @@ use Modules\WorkOrder\Actions\RestoreWorkOrderCascadeAction;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\WorkOrder\Tests\TestCase::class);
 
 it('does nothing when restoring a non-trashed work order', function (): void {
     $customerId = (int) DB::table('customers')->insertGetId([

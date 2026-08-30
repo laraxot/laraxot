@@ -40,6 +40,9 @@ return [
         'status' => 'Cambio Stato',
     ],
     'effort' => [
+        'planned' => 'Previsto',
+        'actual' => 'Consuntivo',
+        'summary' => 'Previsto :planned · Consuntivo :actual · Scostamento :variance',
         'hint' => 'Stima basata sui minuti pianificati rispetto a quelli effettivi.',
         'not_planned' => 'Non pianificato',
         'planned_minutes' => 'Minuti Pianificati',

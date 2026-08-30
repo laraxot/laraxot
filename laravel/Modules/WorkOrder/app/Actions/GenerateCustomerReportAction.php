@@ -114,7 +114,7 @@ final class GenerateCustomerReportAction
         float $materialsTotalAmount,
         float $totalAmount,
     ): array {
-        $content = DocumentExportBridge::pdfFromView('work_orders::reports.rendicontazione-cliente', [
+        $content = DocumentExportBridge::pdfFromView('workorder::reports.rendicontazione-cliente', [
             'customer' => $customer,
             'interventions' => $interventions,
             'from' => $from,

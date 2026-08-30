@@ -5,20 +5,15 @@ declare(strict_types=1);
 namespace Modules\WorkOrder\Tests\Feature;
 
 use Illuminate\Support\Facades\DB;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\WorkOrder\Actions\AddWorkOrderActivityAction;
 use Modules\WorkOrder\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\WorkOrder\Tests\TestCase::class);
 
 it('adds a work order activity', function (): void {
     // Arrange
-    $userId = (int) DB::table('users')->insertGetId([
-        'name' => 'Autore Attivita',
-        'email' => 'activity-'.uniqid().'@test.local',
-        'password' => bcrypt('secret'),
-        'created_at' => now(),
-        'updated_at' => now(),
-    ]);
+    $userId = UserFactory::new()->createOne(['name' => 'Autore Attivita', 'email' => 'activity-'.uniqid().'@test.local'])->id;
 
     $customerId = (int) DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',

@@ -13,7 +13,7 @@ use Modules\WorkOrder\Models\WorkOrderStatusEvent;
 use Modules\WorkOrder\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\WorkOrder\Tests\TestCase::class);
 
 it('has WorkOrder model', function (): void {
     Assert::assertInstanceOf(Model::class, new WorkOrder());

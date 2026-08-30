@@ -7,11 +7,12 @@ namespace Modules\WorkOrder\Tests\Feature;
 use Illuminate\Support\Facades\DB;
 use Modules\Billing\Actions\BuildWorkOrderPreInvoiceAction;
 use Modules\Intervention\Models\Intervention;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\WorkOrder\Filament\Resources\WorkOrderResource;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\WorkOrder\Tests\TestCase::class);
 
 function makeWorkOrderWithEffort(?int $plannedMinutes, int $actualMinutes): WorkOrder
 {
@@ -22,13 +23,7 @@ function makeWorkOrderWithEffort(?int $plannedMinutes, int $actualMinutes): Work
         'updated_at' => now(),
     ]);
 
-    $userId = (int) DB::table('users')->insertGetId([
-        'name' => 'Tecnico Effort',
-        'email' => 'effort-'.uniqid().'@test.local',
-        'password' => bcrypt('secret'),
-        'created_at' => now(),
-        'updated_at' => now(),
-    ]);
+    $userId = UserFactory::new()->createOne(['name' => 'Tecnico Effort', 'email' => 'effort-'.uniqid().'@test.local'])->id;
 
     $workOrder = WorkOrder::query()->create([
         'customer_id' => $customerId,
@@ -53,7 +48,7 @@ it('flags a work order that is running over the planned time', function (): void
 
     expect(WorkOrderResource::effortColor($workOrder))->toBe('danger')
         ->and(WorkOrderResource::effortBadge($workOrder))
-        ->toContain(__('work_orders.effort.over_budget'))
+        ->toContain(__('workorder::work_orders.effort.over_budget'))
         // 80 minuti oltre il previsto, con il segno che lo dice.
         ->toContain('+1h 20m');
 });
@@ -63,15 +58,15 @@ it('shows a work order still within the planned time as healthy', function (): v
 
     expect(WorkOrderResource::effortColor($workOrder))->toBe('success')
         ->and(WorkOrderResource::effortBadge($workOrder))
-        ->toContain(__('work_orders.effort.within_budget'));
+        ->toContain(__('workorder::work_orders.effort.within_budget'));
 });
 
 it('says nothing was planned instead of pretending the work order is on time', function (): void {
     $workOrder = makeWorkOrderWithEffort(plannedMinutes: null, actualMinutes: 90);
 
     expect(WorkOrderResource::effortColor($workOrder))->toBe('gray')
-        ->and(WorkOrderResource::effortBadge($workOrder))->toBe(__('work_orders.effort.not_planned'))
-        ->and(WorkOrderResource::effortSummary($workOrder))->toBe(__('work_orders.effort.not_planned'));
+        ->and(WorkOrderResource::effortBadge($workOrder))->toBe(__('workorder::work_orders.effort.not_planned'))
+        ->and(WorkOrderResource::effortSummary($workOrder))->toBe(__('workorder::work_orders.effort.not_planned'));
 });
 
 it('summarises planned, actual and variance for the work order form', function (): void {

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\WorkOrder\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -32,12 +33,15 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  * @property Carbon|null $opened_at
  * @property Carbon|null $scheduled_at
  * @property int|null $planned_minutes
+ * @property int $progress_percent
+ * @property Carbon|null $delivery_due_at
  * @property Carbon|null $started_at
  * @property Carbon|null $completed_at
  * @property Carbon|null $closed_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
+ * @property-read Collection<int, WorkOrderMaterial> $materials
  */
 final class WorkOrder extends BaseModel
 {
@@ -55,6 +59,8 @@ final class WorkOrder extends BaseModel
     protected function casts(): array
     {
         return [
+            'delivery_due_at' => 'datetime',
+            'progress_percent' => 'integer',
             'opened_at' => 'datetime',
             'scheduled_at' => 'datetime',
             'planned_minutes' => 'integer',
@@ -93,6 +99,12 @@ final class WorkOrder extends BaseModel
     public function activities(): HasMany
     {
         return $this->hasMany(WorkOrderActivity::class);
+    }
+
+    /** @return HasMany<WorkOrderMaterial, $this> */
+    public function materials(): HasMany
+    {
+        return $this->hasMany(WorkOrderMaterial::class, 'work_order_id')->orderBy('sort_order');
     }
 
     /** @return HasMany<WorkOrderReadinessItem, $this> */

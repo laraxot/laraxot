@@ -7,10 +7,11 @@ namespace Modules\WorkOrder\Tests\Feature;
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionMaterialLine;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\WorkOrder\Tests\TestCase::class);
 
 function makeSearchableWorkOrder(string $code, string $title, string $customerName): WorkOrder
 {
@@ -29,13 +30,7 @@ function makeSearchableWorkOrder(string $code, string $title, string $customerNa
 }
 
 it('filters work orders by intervention note text', function (): void {
-    $userId = (int) DB::table('users')->insertGetId([
-        'name' => 'Ricercatore',
-        'email' => 'search-'.uniqid().'@test.local',
-        'password' => bcrypt('secret'),
-        'created_at' => now(),
-        'updated_at' => now(),
-    ]);
+    $userId = UserFactory::new()->createOne(['name' => 'Ricercatore', 'email' => 'search-'.uniqid().'@test.local'])->id;
 
     $matchingWorkOrder = makeSearchableWorkOrder('WO-SRCH-001', 'Commessa luci scala', 'Cliente Ricerca 1');
     $otherWorkOrder = makeSearchableWorkOrder('WO-SRCH-002', 'Commessa citofono', 'Cliente Ricerca 2');
@@ -64,13 +59,7 @@ it('filters work orders by intervention note text', function (): void {
 });
 
 it('filters work orders by intervention material text', function (): void {
-    $userId = (int) DB::table('users')->insertGetId([
-        'name' => 'Ricercatore Materiali',
-        'email' => 'search-mat-'.uniqid().'@test.local',
-        'password' => bcrypt('secret'),
-        'created_at' => now(),
-        'updated_at' => now(),
-    ]);
+    $userId = UserFactory::new()->createOne(['name' => 'Ricercatore Materiali', 'email' => 'search-mat-'.uniqid().'@test.local'])->id;
 
     $matchingWorkOrder = makeSearchableWorkOrder('WO-SRCH-003', 'Commessa lampione', 'Cliente Ricerca 3');
     $otherWorkOrder = makeSearchableWorkOrder('WO-SRCH-004', 'Commessa emergenza', 'Cliente Ricerca 4');

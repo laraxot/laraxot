@@ -11,7 +11,8 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
  * Contract: id bigint AUTO_INCREMENT + uuid char(36) indexed (Laraxot id+uuid).
  * Legacy repair: convertIdFromUuidToBigintIfNeeded when id is char/varchar UUID PK.
  */
-return new class extends XotBaseMigration {
+return new class() extends XotBaseMigration
+{
     protected ?string $model_class = Profile::class;
 
     /** @var list<string> */

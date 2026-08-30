@@ -6,8 +6,5 @@ namespace Modules\WorkOrder\Domain\Events;
 
 final readonly class WorkOrderRestored
 {
-    public function __construct(public int $workOrderId)
-    {
-    }
+    public function __construct(public int $workOrderId) {}
 }
-

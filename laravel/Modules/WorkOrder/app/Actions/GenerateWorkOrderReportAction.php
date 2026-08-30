@@ -107,7 +107,7 @@ final class GenerateWorkOrderReportAction
         float $materialsTotalAmount,
         float $totalAmount,
     ): array {
-        $content = DocumentExportBridge::pdfFromView('work_orders::reports.rendicontazione', [
+        $content = DocumentExportBridge::pdfFromView('workorder::reports.rendicontazione', [
             'workOrder' => $workOrder,
             'interventions' => $interventions,
             'from' => $from,

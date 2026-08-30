@@ -31,26 +31,26 @@ final class ActivitiesRelationManager extends XotBaseRelationManager
 
     public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
-        return __('work_orders.activities');
+        return __('workorder::work_orders.activities');
     }
 
     public function getFormSchema(): array
     {
         return [
             Select::make('type')
-                ->label(__('work_orders.fields.type'))
+                ->label(__('workorder::work_orders.fields.type'))
                 ->options([
-                    'note' => __('work_orders.activity_types.note'),
-                    'status' => __('work_orders.activity_types.status'),
+                    'note' => __('workorder::work_orders.activity_types.note'),
+                    'status' => __('workorder::work_orders.activity_types.status'),
                 ])
                 ->default('note')
                 ->required(),
             Textarea::make('body')
-                ->label(__('work_orders.fields.body'))
+                ->label(__('workorder::work_orders.fields.body'))
                 ->required()
                 ->columnSpanFull(),
             DateTimePicker::make('occurred_at')
-                ->label(__('work_orders.fields.occurred_at')),
+                ->label(__('workorder::work_orders.fields.occurred_at')),
         ];
     }
 
@@ -59,14 +59,14 @@ final class ActivitiesRelationManager extends XotBaseRelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('type')
-                    ->label(__('work_orders.fields.type'))
+                    ->label(__('workorder::work_orders.fields.type'))
                     ->badge(),
                 Tables\Columns\TextColumn::make('body')
-                    ->label(__('work_orders.fields.body'))
+                    ->label(__('workorder::work_orders.fields.body'))
                     ->limit(60)
                     ->wrap(),
                 Tables\Columns\TextColumn::make('occurred_at')
-                    ->label(__('work_orders.fields.occurred_at'))
+                    ->label(__('workorder::work_orders.fields.occurred_at'))
                     ->dateTime()
                     ->sortable(),
             ])

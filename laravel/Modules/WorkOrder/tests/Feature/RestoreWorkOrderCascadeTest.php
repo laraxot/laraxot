@@ -6,13 +6,14 @@ namespace Modules\WorkOrder\Tests\Feature;
 
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Models\Intervention;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\WorkOrder\Actions\RestoreWorkOrderCascadeAction;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderActivity;
 use Modules\WorkOrder\Models\WorkOrderStatus;
 use Modules\WorkOrder\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\WorkOrder\Tests\TestCase::class);
 
 it('restores a work order and restores related activities and interventions', function (): void {
     // Arrange
@@ -43,13 +44,7 @@ it('restores a work order and restores related activities and interventions', fu
         'occurred_at' => now(),
     ]);
 
-    $userId = (int) DB::table('users')->insertGetId([
-        'name' => 'U1',
-        'email' => 'u1-'.uniqid().'@local.test',
-        'password' => bcrypt('password'),
-        'created_at' => now(),
-        'updated_at' => now(),
-    ]);
+    $userId = UserFactory::new()->createOne(['name' => 'U1', 'email' => 'u1-'.uniqid().'@local.test'])->id;
 
     $intervention = Intervention::query()->create([
         'work_order_id' => $workOrder->id,

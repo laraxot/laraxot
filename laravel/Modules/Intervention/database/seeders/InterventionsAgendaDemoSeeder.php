@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Database\Seeders;
 
-use App\Models\User;
+use Modules\User\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;

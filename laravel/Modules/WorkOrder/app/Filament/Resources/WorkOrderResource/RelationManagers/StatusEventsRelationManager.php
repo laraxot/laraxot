@@ -27,21 +27,21 @@ final class StatusEventsRelationManager extends XotBaseRelationManager
 
     public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
-        return __('work_orders.statuses');
+        return __('workorder::work_orders.statuses');
     }
 
     public function getFormSchema(): array
     {
         return [
             Select::make('to_status_id')
-                ->label(__('work_orders.fields.to_status'))
+                ->label(__('workorder::work_orders.fields.to_status'))
                 ->options(fn () => WorkOrderStatus::query()->orderBy('sort_order')->pluck('name', 'id')->all())
                 ->searchable()
                 ->preload(),
             DateTimePicker::make('changed_at')
-                ->label(__('work_orders.fields.changed_at')),
+                ->label(__('workorder::work_orders.fields.changed_at')),
             Textarea::make('note')
-                ->label(__('work_orders.fields.notes'))
+                ->label(__('workorder::work_orders.fields.notes'))
                 ->columnSpanFull(),
         ];
     }
@@ -51,19 +51,19 @@ final class StatusEventsRelationManager extends XotBaseRelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('fromStatus.name')
-                    ->label(__('work_orders.fields.from_status'))
+                    ->label(__('workorder::work_orders.fields.from_status'))
                     ->badge()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('toStatus.name')
-                    ->label(__('work_orders.fields.to_status'))
+                    ->label(__('workorder::work_orders.fields.to_status'))
                     ->badge()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('changed_at')
-                    ->label(__('work_orders.fields.changed_at'))
+                    ->label(__('workorder::work_orders.fields.changed_at'))
                     ->dateTime()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('note')
-                    ->label(__('work_orders.fields.notes'))
+                    ->label(__('workorder::work_orders.fields.notes'))
                     ->limit(60)
                     ->wrap()
                     ->toggleable(),

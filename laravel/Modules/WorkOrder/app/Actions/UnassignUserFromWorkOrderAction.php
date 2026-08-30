@@ -11,7 +11,7 @@ final class UnassignUserFromWorkOrderAction
 {
     use QueueableAction;
 
-    public function execute(int $workOrderId, int $userId): void
+    public function execute(int $workOrderId, int|string $userId): void
     {
         WorkOrderAssignment::query()
             ->where('work_order_id', $workOrderId)

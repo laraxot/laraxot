@@ -23,7 +23,7 @@
 <body>
     <div class="header">
         <div class="title">
-            {{ __('work_orders.work_order') }} {{ $workOrder->code ?: ('#' . $workOrder->id) }}
+            {{ __('workorder::work_orders.work_order') }} {{ $workOrder->code ?: ('#' . $workOrder->id) }}
         </div>
         <div class="meta">
             {{ $workOrder->title }}
@@ -34,7 +34,7 @@
         <tr>
             <td style="width: 50%;">
                 <div class="box">
-                    <div><strong>{{ __('work_orders.fields.customer') }}:</strong> {{ $workOrder->customer?->legal_name ?? '-' }}</div>
+                    <div><strong>{{ __('workorder::work_orders.fields.customer') }}:</strong> {{ $workOrder->customer?->legal_name ?? '-' }}</div>
                     <div class="muted">{{ $workOrder->site?->name ?? '' }}</div>
                     <div class="muted">
                         {{ $workOrder->site?->address_line1 ?? $workOrder->customer?->address_line1 ?? '' }}
@@ -45,11 +45,11 @@
             </td>
             <td style="width: 50%;">
                 <div class="box">
-                    <div><strong>{{ __('work_orders.fields.status') }}:</strong> {{ $workOrder->status?->name ?? '-' }}</div>
-                    <div><strong>{{ __('work_orders.fields.opened_at') }}:</strong> {{ optional($workOrder->opened_at)->format('Y-m-d H:i') ?: '-' }}</div>
-                    <div><strong>{{ __('work_orders.fields.scheduled_at') }}:</strong> {{ optional($workOrder->scheduled_at)->format('Y-m-d H:i') ?: '-' }}</div>
-                    <div><strong>{{ __('work_orders.fields.started_at') }}:</strong> {{ optional($workOrder->started_at)->format('Y-m-d H:i') ?: '-' }}</div>
-                    <div><strong>{{ __('work_orders.fields.completed_at') }}:</strong> {{ optional($workOrder->completed_at)->format('Y-m-d H:i') ?: '-' }}</div>
+                    <div><strong>{{ __('workorder::work_orders.fields.status') }}:</strong> {{ $workOrder->status?->name ?? '-' }}</div>
+                    <div><strong>{{ __('workorder::work_orders.fields.opened_at') }}:</strong> {{ optional($workOrder->opened_at)->format('Y-m-d H:i') ?: '-' }}</div>
+                    <div><strong>{{ __('workorder::work_orders.fields.scheduled_at') }}:</strong> {{ optional($workOrder->scheduled_at)->format('Y-m-d H:i') ?: '-' }}</div>
+                    <div><strong>{{ __('workorder::work_orders.fields.started_at') }}:</strong> {{ optional($workOrder->started_at)->format('Y-m-d H:i') ?: '-' }}</div>
+                    <div><strong>{{ __('workorder::work_orders.fields.completed_at') }}:</strong> {{ optional($workOrder->completed_at)->format('Y-m-d H:i') ?: '-' }}</div>
                 </div>
             </td>
         </tr>
@@ -57,34 +57,34 @@
 
     @if($workOrder->description)
         <div class="section">
-            <h2>{{ __('work_orders.fields.description') }}</h2>
+            <h2>{{ __('workorder::work_orders.fields.description') }}</h2>
             <div class="box">{!! nl2br(e($workOrder->description)) !!}</div>
         </div>
     @endif
 
     @if($workOrder->notes)
         <div class="section">
-            <h2>{{ __('work_orders.fields.notes') }}</h2>
+            <h2>{{ __('workorder::work_orders.fields.notes') }}</h2>
             <div class="box">{!! nl2br(e($workOrder->notes)) !!}</div>
         </div>
     @endif
 
     @if($workOrder->activities->count() > 0)
         <div class="section">
-            <h2>{{ __('work_orders.activities') }}</h2>
+            <h2>{{ __('workorder::work_orders.activities') }}</h2>
             <table class="items">
                 <thead>
                     <tr>
-                        <th style="width: 140px;">{{ __('work_orders.fields.occurred_at') }}</th>
-                        <th style="width: 110px;">{{ __('work_orders.fields.type') }}</th>
-                        <th>{{ __('work_orders.fields.body') }}</th>
+                        <th style="width: 140px;">{{ __('workorder::work_orders.fields.occurred_at') }}</th>
+                        <th style="width: 110px;">{{ __('workorder::work_orders.fields.type') }}</th>
+                        <th>{{ __('workorder::work_orders.fields.body') }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($workOrder->activities->sortByDesc('occurred_at')->take(20) as $activity)
                         <tr>
                             <td>{{ optional($activity->occurred_at)->format('Y-m-d H:i') ?: '-' }}</td>
-                            <td>{{ __('work_orders.activity_types.' . $activity->type) }}</td>
+                            <td>{{ __('workorder::work_orders.activity_types.' . $activity->type) }}</td>
                             <td>{!! nl2br(e($activity->body)) !!}</td>
                         </tr>
                     @endforeach

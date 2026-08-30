@@ -5,12 +5,13 @@ declare(strict_types=1);
 namespace Modules\WorkOrder\Tests\Feature;
 
 use Illuminate\Support\Facades\DB;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\WorkOrder\Actions\ComputeWorkOrderEffortAction;
 use Modules\WorkOrder\Domain\DTO\WorkOrderEffort;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\WorkOrder\Tests\TestCase::class);
 
 /**
  * @param  array<int, int>  $interventionMinutes
@@ -24,13 +25,7 @@ function workOrderWithInterventions(?int $plannedMinutes, array $interventionMin
         'updated_at' => now(),
     ]);
 
-    $userId = (int) DB::table('users')->insertGetId([
-        'name' => 'Tecnico',
-        'email' => 'tecnico'.uniqid().'@test.local',
-        'password' => bcrypt('secret'),
-        'created_at' => now(),
-        'updated_at' => now(),
-    ]);
+    $userId = UserFactory::new()->createOne(['name' => 'Tecnico', 'email' => 'tecnico'.uniqid().'@test.local'])->id;
 
     $workOrder = WorkOrder::query()->create([
         'customer_id' => $customerId,

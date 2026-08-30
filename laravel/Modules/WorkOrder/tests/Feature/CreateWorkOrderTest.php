@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Modules\WorkOrder\Actions\CreateWorkOrderAction;
 use Modules\WorkOrder\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\WorkOrder\Tests\TestCase::class);
 
 it('creates a work order', function (): void {
     // Arrange

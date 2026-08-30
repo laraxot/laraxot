@@ -14,9 +14,9 @@ final class AssignUserToWorkOrderAction
 
     public function execute(
         int $workOrderId,
-        int $userId,
+        int|string $userId,
         ?string $role = null,
-        ?int $assignedByUserId = null,
+        int|string|null $assignedByUserId = null,
         ?CarbonImmutable $assignedAt = null,
     ): WorkOrderAssignment {
         $assignedAt = $assignedAt ?? CarbonImmutable::now();

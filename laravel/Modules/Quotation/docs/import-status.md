@@ -115,3 +115,10 @@ Anticipato dal delta Intervention (dipendenza cross-modulo):
   `tests/Feature/CreateQuotationFromInterventionTest.php` (3 test, verdi).
 
 Il resto del delta Quotation (28 file) verrà lavorato nel suo ciclo Fase 1.
+
+## Anticipi dal ciclo WorkOrder (2026-08-30)
+
+- Migration quotations bumped: +project, +cost_total, +delivery_at, +lead_time_days
+  (base del job costing; il resto del delta Quotation resta da portare).
+- QuotationResource: helper `marginSummary`/`marginColour` (margine €/% in lista).
+- Widget `QuotationsMarginByProjectChart` (da app/Filament sorgente).

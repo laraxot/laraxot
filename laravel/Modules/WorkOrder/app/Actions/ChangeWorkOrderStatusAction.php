@@ -18,7 +18,7 @@ final class ChangeWorkOrderStatusAction
     public function execute(
         WorkOrder $workOrder,
         int $toStatusId,
-        ?int $changedByUserId = null,
+        int|string|null $changedByUserId = null,
         ?string $note = null,
         ?CarbonImmutable $changedAt = null,
         bool $alsoAddActivity = true,

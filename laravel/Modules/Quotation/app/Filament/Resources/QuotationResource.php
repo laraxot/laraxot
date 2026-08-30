@@ -318,4 +318,57 @@ final class QuotationResource extends XotBaseResource
             fallback: false,
         );
     }
+
+    /**
+     * Margine in euro e percento, leggibile in lista: quanto resta del
+     * ricavo dopo i costi. Sconosciuto finché non c'è un costo caricato.
+     */
+    public static function marginSummary(?Quotation $quotation): string
+    {
+        if (! $quotation instanceof Quotation || ! $quotation->exists) {
+            return (string) __('quotations.margin.unknown');
+        }
+
+        $cost = (float) $quotation->cost_total;
+        $revenue = (float) $quotation->taxable_amount > 0.0
+            ? (float) $quotation->taxable_amount
+            : (float) $quotation->subtotal;
+
+        if ($cost <= 0.0) {
+            return (string) __('quotations.margin.unknown');
+        }
+
+        $margin = $revenue - $cost;
+        $percent = $revenue > 0.0 ? ($margin / $revenue) * 100 : 0.0;
+
+        return sprintf(
+            '%s € (%s%%)',
+            number_format($margin, 2, ',', '.'),
+            number_format($percent, 1, ',', '.'),
+        );
+    }
+
+    /**
+     * Ambra sotto il 15%% di margine, rosso in perdita: un lavoro venduto
+     * sotto costo deve urlare dalla lista.
+     */
+    public static function marginColour(Quotation $quotation): string
+    {
+        $cost = (float) $quotation->cost_total;
+        $revenue = (float) $quotation->taxable_amount > 0.0
+            ? (float) $quotation->taxable_amount
+            : (float) $quotation->subtotal;
+
+        if ($cost <= 0.0 || $revenue <= 0.0) {
+            return 'gray';
+        }
+
+        $percent = (($revenue - $cost) / $revenue) * 100;
+
+        return match (true) {
+            $percent < 0 => 'danger',
+            $percent < 15 => 'warning',
+            default => 'success',
+        };
+    }
 }

@@ -40,6 +40,9 @@ return [
         'status' => 'Status Change',
     ],
     'effort' => [
+        'planned' => 'Planned',
+        'actual' => 'Actual',
+        'summary' => 'Planned :planned · Actual :actual · Variance :variance',
         'hint' => 'Estimate based on planned vs actual minutes.',
         'not_planned' => 'Not planned',
         'planned_minutes' => 'Planned Minutes',

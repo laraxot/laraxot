@@ -9,7 +9,7 @@ use Modules\WorkOrder\Providers\WorkOrderServiceProvider;
 use Modules\WorkOrder\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\WorkOrder\Tests\TestCase::class);
 
 it('has WorkOrderServiceProvider', function (): void {
     Assert::assertInstanceOf(ServiceProvider::class, new WorkOrderServiceProvider(app()));

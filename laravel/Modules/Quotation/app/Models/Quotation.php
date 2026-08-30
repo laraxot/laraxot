@@ -20,6 +20,10 @@ use Spatie\MediaLibrary\InteractsWithMedia;
  * @property int $customer_id
  * @property int|null $source_quotation_id
  * @property int|null $work_order_id
+ * @property string|null $project
+ * @property float|string|null $cost_total
+ * @property Carbon|null $delivery_at
+ * @property int|null $lead_time_days
  * @property string|null $code
  * @property string $status_code
  * @property string|null $title
@@ -56,6 +60,9 @@ final class Quotation extends BaseModel implements HasMedia
     protected function casts(): array
     {
         return [
+            'delivery_at' => 'datetime',
+            'lead_time_days' => 'integer',
+            'cost_total' => 'decimal:2',
             'issued_at' => 'datetime',
             'confirmed_at' => 'datetime',
             'subtotal' => 'decimal:2',

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Platform\Database\Seeders;
 
-use App\Models\User;
+use Modules\User\Models\User;
 use Carbon\CarbonImmutable;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;

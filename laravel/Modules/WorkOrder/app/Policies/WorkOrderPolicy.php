@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\WorkOrder\Policies;
 
+use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Foundation\Auth\User as AuthUser;
 use Modules\WorkOrder\Models\WorkOrder;
-use Illuminate\Auth\Access\HandlesAuthorization;
 
 class WorkOrderPolicy
 {
     use HandlesAuthorization;
-    
+
     public function viewAny(AuthUser $authUser): bool
     {
         return $authUser->can('ViewAny:WorkOrder');
@@ -66,5 +66,4 @@ class WorkOrderPolicy
     {
         return $authUser->can('Reorder:WorkOrder');
     }
-
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\WorkOrder\Models;
 
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 
 /**
@@ -29,5 +30,11 @@ final class WorkOrderStatus extends BaseModel
         return [
             'is_terminal' => 'bool',
         ];
+    }
+
+    /** @return HasMany<WorkOrder, $this> */
+    public function workOrders(): HasMany
+    {
+        return $this->hasMany(WorkOrder::class, 'status_id');
     }
 }

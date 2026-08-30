@@ -32,9 +32,12 @@ return new class() extends XotBaseMigration
             $table->decimal('tax_percent', 5, 2)->default(22);
             $table->decimal('tax_amount', 12, 2)->default(0);
             $table->decimal('total', 12, 2)->default(0);
+            $table->decimal('cost_total', 12, 2)->default(0);
 
             $table->dateTime('issued_at')->nullable();
             $table->dateTime('confirmed_at')->nullable();
+            $table->dateTime('delivery_at')->nullable();
+            $table->unsignedInteger('lead_time_days')->nullable();
 
             $table->index(['customer_id']);
             $table->index(['work_order_id']);
@@ -43,6 +46,17 @@ return new class() extends XotBaseMigration
 
         $this->tableUpdate(function (Blueprint $table): void {
             $this->updateTimestamps(table: $table, hasSoftDeletes: true);
+
+            foreach ([
+                'project' => static fn (Blueprint $t) => $t->string('project')->nullable(),
+                'cost_total' => static fn (Blueprint $t) => $t->decimal('cost_total', 12, 2)->default(0),
+                'delivery_at' => static fn (Blueprint $t) => $t->dateTime('delivery_at')->nullable(),
+                'lead_time_days' => static fn (Blueprint $t) => $t->unsignedInteger('lead_time_days')->nullable(),
+            ] as $column => $add) {
+                if (! $this->hasColumn($column)) {
+                    $add($table);
+                }
+            }
         });
     }
 };

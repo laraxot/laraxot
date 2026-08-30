@@ -22,7 +22,10 @@ return new class() extends XotBaseMigration
             $table->text('notes')->nullable();
             $table->dateTime('opened_at')->nullable();
             $table->dateTime('scheduled_at')->nullable();
+            $table->dateTime('delivery_due_at')->nullable();
             $table->unsignedInteger('planned_minutes')->nullable();
+            // SAL e data di consegna promessa: per rispondere a "siamo in tempo?".
+            $table->unsignedTinyInteger('progress_percent')->default(0);
             $table->dateTime('started_at')->nullable();
             $table->dateTime('completed_at')->nullable();
             $table->dateTime('closed_at')->nullable();
@@ -33,6 +36,14 @@ return new class() extends XotBaseMigration
 
         $this->tableUpdate(function (Blueprint $table): void {
             $this->updateTimestamps(table: $table, hasSoftDeletes: true);
+
+            if (! $this->hasColumn('progress_percent')) {
+                $table->unsignedTinyInteger('progress_percent')->default(0);
+            }
+
+            if (! $this->hasColumn('delivery_due_at')) {
+                $table->dateTime('delivery_due_at')->nullable();
+            }
         });
     }
 };

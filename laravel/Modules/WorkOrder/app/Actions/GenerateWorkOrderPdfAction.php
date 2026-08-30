@@ -16,7 +16,7 @@ final class GenerateWorkOrderPdfAction
     {
         $workOrder->loadMissing(['customer', 'site', 'primaryContact', 'status', 'activities', 'assignments', 'statusEvents']);
 
-        return DocumentExportBridge::pdfFromView('work_orders::pdf.work-order', [
+        return DocumentExportBridge::pdfFromView('workorder::pdf.work-order', [
             'workOrder' => $workOrder,
         ]);
     }

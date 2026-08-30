@@ -175,3 +175,41 @@ Vedi sezione aggiornata a fine Fase 0 con i numeri di `vendor/bin/pest` e `phpst
   - Scanner comandi Xot: `_components.json` congela la discovery.
 - **Regressioni**: Email+Intervention 159 pass/0 fail; Vehicle/Customer/Document/
   Signature/Quotation invariati verdi.
+
+## Checkpoint 2026-08-30 (notte) — WorkOrder + anticipi Quotation
+
+Delta portato: **"distinta base da preventivo, margini, SAL e consegne"** +
+**"resoconto periodico"**.
+
+- **Migrazioni** (bump del `create_` con timestamp nuovo, vecchia rimossa, guard
+  `hasColumn` nel `tableUpdate`): `work_orders` +`progress_percent`/+`delivery_due_at`;
+  nuova `work_order_materials`; `quotations` +`project`/`cost_total`/`delivery_at`/
+  `lead_time_days`. Fixture sqlite condivisa rigenerata.
+- **WorkOrder**: modello `WorkOrderMaterial` + relazioni; `CreateWorkOrderFromQuotationAction`
+  (commessa da preventivo con distinta copiata e data consegna dedotta),
+  `BuildPeriodicSummaryAction`, `GeneratePeriodicSummaryPdfAction`;
+  `MaterialsRelationManager`, `WorkOrderStatusResource` + 3 pagine, `PeriodicSummaryPage`
+  gated + 2 blade; `WorkOrderResource` con SAL, consegna e `deliveryColour`.
+- **Quotation (anticipi)**: `marginSummary`/`marginColour` su `QuotationResource`,
+  widget `QuotationsMarginByProjectChart`, casts+PHPDoc sul modello.
+- **Test**: +3 file (23 test). Suite modulo da **16 failed → 0**: 50 passed, 16 skipped.
+
+### Debiti sistemici della base emersi qui
+
+1. **Chiavi lang senza namespace**: 242 riferimenti `__('work_orders.…')` in WorkOrder
+   mentre `lang/` di root non esiste → ogni etichetta del modulo rendeva la chiave
+   grezza. Corretti in `workorder::…` (hint = `nameLower`). Restano cross-modulo:
+   `compliance.` (37) e `public_procurement.` (17) — quei moduli hanno solo
+   `module.php`, le chiavi non esistono affatto; `interventions.` (6) — il modulo
+   espone `intervention.php` singolare; `quotations.` (2). → Fase 4.
+2. **UUID troncati**: altre 4 Actions WorkOrder con `int $userId` / `?int $…ByUserId`
+   (memoria `uuid-int-cast-truncation`). Il grep va rifatto a **ogni** modulo.
+3. **`DB::table('users')->insertGetId()`** in 7 test WorkOrder: `users.id` è varchar
+   UUID, non autoincrement → violazione NOT NULL. Sostituito con `UserFactory`.
+4. **Lang auto-generati**: il LangServiceProvider crea file con `label` = nome chiave
+   (`'code' => ['label' => 'code']`). Vanno riscritti a mano in it **e** en.
+5. **pint riconverte** `uses(\Modules\X\Tests\TestCase::class)` in forma corta →
+   il re-FQCN va rifatto **dopo** ogni pint (script idempotente).
+
+PHPStan WorkOrder+Quotation: **zero errori sul codice di produzione**; 68 residui
+tutti test-only (pattern `mixed` di Pest/Livewire, debito toolchain condiviso).

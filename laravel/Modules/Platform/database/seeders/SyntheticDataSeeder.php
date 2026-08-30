@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Platform\Database\Seeders;
 
-use App\Models\User;
+use Modules\User\Models\User;
 use Carbon\CarbonImmutable;
 use Faker\Factory as FakerFactory;
 use Faker\Provider\it_IT\Address as ItAddressProvider;

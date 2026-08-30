@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Modules\WorkOrder\Actions\GetWorkOrderDetailsAction;
 use Modules\WorkOrder\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\WorkOrder\Tests\TestCase::class);
 
 it('loads work order details with related records', function (): void {
     // Arrange

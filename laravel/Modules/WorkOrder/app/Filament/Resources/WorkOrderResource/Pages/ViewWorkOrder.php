@@ -33,7 +33,7 @@ final class ViewWorkOrder extends XotBaseViewRecord
     {
         return [
             'downloadPdf' => Actions\Action::make('downloadPdf')
-                ->label(__('work_orders.actions.download_pdf'))
+                ->label(__('workorder::work_orders.actions.download_pdf'))
                 ->icon('heroicon-o-arrow-down-tray')
                 ->action(function (): mixed {
                     $workOrder = $this->resolveWorkOrderRecord();
@@ -46,12 +46,12 @@ final class ViewWorkOrder extends XotBaseViewRecord
                     );
                 }),
             'exportReport' => Actions\Action::make('exportReport')
-                ->label(__('work_orders.actions.export_report'))
+                ->label(__('workorder::work_orders.actions.export_report'))
                 ->icon('heroicon-o-document-chart-bar')
                 ->color('success')
                 ->form([
                     Radio::make('format')
-                        ->label(__('work_orders.fields.report_format'))
+                        ->label(__('workorder::work_orders.fields.report_format'))
                         ->options([
                             'pdf' => 'PDF',
                             'docx' => 'Word (DOCX)',
@@ -60,12 +60,12 @@ final class ViewWorkOrder extends XotBaseViewRecord
                         ->required()
                         ->inline(),
                     DatePicker::make('from')
-                        ->label(__('work_orders.fields.report_from'))
+                        ->label(__('workorder::work_orders.fields.report_from'))
                         ->displayFormat('d/m/Y')
                         ->default(now()->startOfMonth()->toDateString())
                         ->required(),
                     DatePicker::make('to')
-                        ->label(__('work_orders.fields.report_to'))
+                        ->label(__('workorder::work_orders.fields.report_to'))
                         ->displayFormat('d/m/Y')
                         ->default(now()->endOfMonth()->toDateString())
                         ->required(),
@@ -95,7 +95,7 @@ final class ViewWorkOrder extends XotBaseViewRecord
                     );
                 }),
             'restoreCascade' => Actions\Action::make('restoreCascade')
-                ->label(__('work_orders.actions.restore_cascade'))
+                ->label(__('workorder::work_orders.actions.restore_cascade'))
                 ->icon('heroicon-o-arrow-path')
                 ->visible(function (): bool {
                     $record = $this->getRecord();

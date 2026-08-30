@@ -9,7 +9,7 @@ use Modules\WorkOrder\Actions\SoftDeleteWorkOrderAction;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\WorkOrder\Tests\TestCase::class);
 
 it('soft-deletes a work order', function (): void {
     // Arrange

@@ -29,14 +29,14 @@ final class AssignmentsRelationManager extends XotBaseRelationManager
 
     public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
-        return __('work_orders.assignments');
+        return __('workorder::work_orders.assignments');
     }
 
     public function getFormSchema(): array
     {
         return [
             Select::make('user_id')
-                ->label(__('work_orders.fields.assigned_to'))
+                ->label(__('workorder::work_orders.fields.assigned_to'))
                 ->options(fn () => User::query()
                     ->orderBy('name')
                     ->get()
@@ -46,10 +46,10 @@ final class AssignmentsRelationManager extends XotBaseRelationManager
                 ->preload()
                 ->required(),
             TextInput::make('role')
-                ->label(__('work_orders.fields.role'))
+                ->label(__('workorder::work_orders.fields.role'))
                 ->maxLength(255),
             DateTimePicker::make('assigned_at')
-                ->label(__('work_orders.fields.assigned_at')),
+                ->label(__('workorder::work_orders.fields.assigned_at')),
         ];
     }
 
@@ -58,14 +58,14 @@ final class AssignmentsRelationManager extends XotBaseRelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user.name')
-                    ->label(__('work_orders.fields.assigned_to'))
+                    ->label(__('workorder::work_orders.fields.assigned_to'))
                     ->sortable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('role')
-                    ->label(__('work_orders.fields.role'))
+                    ->label(__('workorder::work_orders.fields.role'))
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('assigned_at')
-                    ->label(__('work_orders.fields.assigned_at'))
+                    ->label(__('workorder::work_orders.fields.assigned_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(),

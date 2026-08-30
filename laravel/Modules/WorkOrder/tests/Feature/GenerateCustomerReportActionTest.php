@@ -6,7 +6,7 @@ namespace Modules\WorkOrder\Tests\Feature;
 
 use Modules\WorkOrder\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\WorkOrder\Tests\TestCase::class);
 
 // Adattato da gestionale_commesse tests/Feature/WorkOrders/GenerateCustomerReportActionTest.php
 // GenerateCustomerReportAction dipende da PhpOffice\PhpWord\IOFactory e

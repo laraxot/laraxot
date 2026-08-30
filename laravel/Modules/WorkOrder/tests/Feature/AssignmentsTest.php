@@ -5,28 +5,17 @@ declare(strict_types=1);
 namespace Modules\WorkOrder\Tests\Feature;
 
 use Illuminate\Support\Facades\DB;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\WorkOrder\Actions\AssignUserToWorkOrderAction;
 use Modules\WorkOrder\Actions\UnassignUserFromWorkOrderAction;
 use Modules\WorkOrder\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\WorkOrder\Tests\TestCase::class);
 
 it('assigns and unassigns a user to a work order idempotently', function (): void {
     // Arrange
-    $assignerId = (int) DB::table('users')->insertGetId([
-        'name' => 'Assegnatore',
-        'email' => 'assigner-'.uniqid().'@test.local',
-        'password' => bcrypt('secret'),
-        'created_at' => now(),
-        'updated_at' => now(),
-    ]);
-    $assigneeId = (int) DB::table('users')->insertGetId([
-        'name' => 'Assegnatario',
-        'email' => 'assignee-'.uniqid().'@test.local',
-        'password' => bcrypt('secret'),
-        'created_at' => now(),
-        'updated_at' => now(),
-    ]);
+    $assignerId = UserFactory::new()->createOne(['name' => 'Assegnatore', 'email' => 'assigner-'.uniqid().'@test.local'])->id;
+    $assigneeId = UserFactory::new()->createOne(['name' => 'Assegnatario', 'email' => 'assignee-'.uniqid().'@test.local'])->id;
 
     $customerId = (int) DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',

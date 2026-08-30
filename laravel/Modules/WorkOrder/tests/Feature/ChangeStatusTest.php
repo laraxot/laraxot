@@ -5,21 +5,16 @@ declare(strict_types=1);
 namespace Modules\WorkOrder\Tests\Feature;
 
 use Illuminate\Support\Facades\DB;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\WorkOrder\Actions\ChangeWorkOrderStatusAction;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\WorkOrder\Tests\TestCase::class);
 
 it('changes a work order status and records a status event and activity', function (): void {
     // Arrange
-    $userId = (int) DB::table('users')->insertGetId([
-        'name' => 'Utente Test',
-        'email' => 'status-user-'.uniqid().'@test.local',
-        'password' => bcrypt('secret'),
-        'created_at' => now(),
-        'updated_at' => now(),
-    ]);
+    $userId = UserFactory::new()->createOne(['name' => 'Utente Test', 'email' => 'status-user-'.uniqid().'@test.local'])->id;
 
     $customerId = (int) DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',
