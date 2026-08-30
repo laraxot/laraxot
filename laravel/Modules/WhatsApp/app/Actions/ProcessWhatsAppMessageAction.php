@@ -4,14 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\WhatsApp\Actions;
 
-use App\Models\User;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Modules\AiAssistant\Actions\CreateAiActionProposalAction;
+use Modules\AiAssistant\Exceptions\AiActionNotAllowedException;
 use Modules\AiAssistant\Models\AiActionProposal;
 use Modules\AiAssistant\Models\AiMessage;
 use Modules\AiAssistant\Models\AiThread;
+use Modules\User\Models\User;
 use Modules\WhatsApp\AI\WhatsAppMessageClassifierInterface;
 use Modules\WhatsApp\Models\WhatsAppConversation;
 use Modules\WhatsApp\Models\WhatsAppMessage;
@@ -190,7 +192,19 @@ final class ProcessWhatsAppMessageAction
             return $active;
         }
 
-        $proposal = $this->createProposal->execute($thread, $approverId, $type, $payload, $preview);
+        try {
+            $proposal = $this->createProposal->execute($thread, $approverId, $type, $payload, $preview);
+        } catch (AiActionNotAllowedException $e) {
+            // Rifiutata dalla policy: il messaggio inbound resta processato e
+            // salvato, semplicemente non produce proposta (esito sicuro).
+            Log::warning('WhatsApp proposal refused by AI policy', [
+                'whatsapp_message_id' => $message->id,
+                'type' => $e->actionType,
+                'reason' => $e->reason,
+            ]);
+
+            return null;
+        }
 
         if ($message->conversation instanceof WhatsAppConversation) {
             $message->conversation->forceFill(['active_proposal_id' => $proposal->id])->save();

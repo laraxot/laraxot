@@ -6,11 +6,8 @@ namespace Modules\WhatsApp\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
-use Modules\AiAssistant\Models\AiActionProposal;
-use Modules\WhatsApp\Actions\ProcessWhatsAppMessageAction;
-use Modules\WhatsApp\Jobs\ProcessWhatsAppMessageJob;
+use Modules\WhatsApp\Actions\ResetWhatsAppConversationApprovalAction;
 use Modules\WhatsApp\Models\WhatsAppConversation;
-use Modules\WhatsApp\Models\WhatsAppMessage;
 
 /**
  * Re-marks WhatsApp messages as to-be-processed and re-runs the AI on them
@@ -23,7 +20,7 @@ final class ReprocessWhatsAppMessagesCommand extends Command
 
     protected $description = 'Rimette da elaborare i messaggi WhatsApp e li rianalizza con l\'AI.';
 
-    public function handle(): int
+    public function handle(ResetWhatsAppConversationApprovalAction $reset): int
     {
         $phone = $this->option('phone');
 
@@ -38,44 +35,12 @@ final class ReprocessWhatsAppMessagesCommand extends Command
             return self::SUCCESS;
         }
 
-        $conversationIds = $conversations->pluck('id')->all();
-
-        WhatsAppConversation::query()->whereIn('id', $conversationIds)
-            ->update(['active_proposal_id' => null, 'approved_up_to_message_id' => null]);
-
-        /** @var Collection<int, WhatsAppMessage> $messages */
-        $messages = WhatsAppMessage::query()
-            ->whereIn('conversation_id', $conversationIds)
-            ->where('direction', 'inbound')
-            ->orderBy('id')
-            ->get();
-
-        $proposalIds = $messages->pluck('ai_action_proposal_id')->filter()->unique()->values()->all();
-        if ($proposalIds !== []) {
-            AiActionProposal::query()->whereIn('id', $proposalIds)->where('status', 'pending')
-                ->update(['status' => 'cancelled']);
+        $conversationIds = [];
+        foreach ($conversations as $conversation) {
+            $conversationIds[] = (int) $conversation->id;
         }
-
         $sync = (bool) $this->option('sync');
-        $count = 0;
-
-        foreach ($messages as $message) {
-            $message->forceFill([
-                'processing_status' => 'pending',
-                'ai_action_proposal_id' => null,
-                'work_order_id' => null,
-                'intervention_id' => null,
-                'error' => null,
-            ])->save();
-
-            if ($sync) {
-                app(ProcessWhatsAppMessageAction::class)->execute((int) $message->id);
-            } else {
-                ProcessWhatsAppMessageJob::dispatch((int) $message->id);
-            }
-
-            $count++;
-        }
+        $count = $reset->execute($conversationIds, $sync);
 
         $this->info("Rimessi da elaborare {$count} messaggi in ".count($conversationIds).' conversazioni.'
             .($sync ? ' Elaborati subito.' : ' Messi in coda (serve il queue worker).'));

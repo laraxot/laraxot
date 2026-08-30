@@ -16,7 +16,7 @@ use Modules\WhatsApp\Tests\TestCase;
  * Namespace adattato: Modules\WhatsApp\Application\Queries -> Modules\WhatsApp\Queries,
  * Modules\WhatsApp\Infrastructure\Models -> Modules\WhatsApp\Models (stessa API della query).
  */
-uses(TestCase::class);
+uses(\Modules\WhatsApp\Tests\TestCase::class);
 
 /**
  * @param  array<string, mixed>  $overrides

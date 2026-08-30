@@ -43,14 +43,14 @@ use function Pest\Laravel\postJson;
  *   dallo shim App\Support\AccountFeatures. La action ExecuteAiActionProposalAction per i tipi
  *   "organize_whatsapp_request" e "append_work_order_activity_from_whatsapp" resta invece coperta.
  */
-uses(TestCase::class);
+uses(\Modules\WhatsApp\Tests\TestCase::class);
 
 it('verifies and stores incoming Meta webhook messages idempotently', function (): void {
     Queue::fake();
     PlatformSetting::query()->create(['key' => 'whatsapp.verify_token', 'value_json' => ['value' => 'verify-demo']]);
     PlatformSetting::query()->create(['key' => 'whatsapp.app_secret', 'value_json' => ['value' => 'secret-demo']]);
 
-    get('/webhooks/whatsapp/meta?hub.mode=subscribe&hub.verify_token=verify-demo&hub.challenge=ok-123')
+    get('/api/webhooks/whatsapp/meta?hub.mode=subscribe&hub.verify_token=verify-demo&hub.challenge=ok-123')
         ->assertOk()
         ->assertSee('ok-123');
 
@@ -58,11 +58,11 @@ it('verifies and stores incoming Meta webhook messages idempotently', function (
     $raw = json_encode($payload, JSON_THROW_ON_ERROR);
     $signature = 'sha256='.hash_hmac('sha256', $raw, 'secret-demo');
 
-    postJson('/webhooks/whatsapp/meta', $payload, ['X-Hub-Signature-256' => $signature])
+    postJson('/api/webhooks/whatsapp/meta', $payload, ['X-Hub-Signature-256' => $signature])
         ->assertOk()
         ->assertJson(['ok' => true, 'stored_messages' => 1]);
 
-    postJson('/webhooks/whatsapp/meta', $payload, ['X-Hub-Signature-256' => $signature])
+    postJson('/api/webhooks/whatsapp/meta', $payload, ['X-Hub-Signature-256' => $signature])
         ->assertOk()
         ->assertJson(['ok' => true, 'stored_messages' => 1]);
 
@@ -79,11 +79,11 @@ it('stores incoming YCloud webhook messages idempotently', function (): void {
     $timestamp = (string) now()->timestamp;
     $signature = hash_hmac('sha256', $timestamp.'.'.$raw.'.', 'ycloud-secret');
 
-    postJson('/webhooks/whatsapp/ycloud', $payload, ['YCloud-Signature' => "t={$timestamp},s={$signature}"])
+    postJson('/api/webhooks/whatsapp/ycloud', $payload, ['YCloud-Signature' => "t={$timestamp},s={$signature}"])
         ->assertOk()
         ->assertJson(['ok' => true, 'provider' => 'ycloud', 'stored_messages' => 1]);
 
-    postJson('/webhooks/whatsapp/ycloud', $payload, ['YCloud-Signature' => "t={$timestamp},s={$signature}"])
+    postJson('/api/webhooks/whatsapp/ycloud', $payload, ['YCloud-Signature' => "t={$timestamp},s={$signature}"])
         ->assertOk()
         ->assertJson(['ok' => true, 'provider' => 'ycloud', 'stored_messages' => 1]);
 

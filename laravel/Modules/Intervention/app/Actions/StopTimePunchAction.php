@@ -14,7 +14,7 @@ final class StopTimePunchAction
 {
     use QueueableAction;
 
-    public function execute(Intervention $intervention, int $userId, ?CarbonImmutable $endedAt = null): TimePunch
+    public function execute(Intervention $intervention, int|string $userId, ?CarbonImmutable $endedAt = null): TimePunch
     {
         $endedAt = $endedAt ?? CarbonImmutable::now();
 

@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace Modules\WhatsApp\Filament\Pages;
 
-use App\Models\User;
 use App\Support\AccountFeatures;
 use Filament\Notifications\Notification;
-use Filament\Pages\Page;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\Platform\Models\PlatformSetting;
+use Modules\User\Models\User;
 use Modules\WhatsApp\Actions\SendWhatsAppTextMessageAction;
 use Modules\WhatsApp\Meta\WhatsAppClientInterface;
 use Modules\WhatsApp\Models\WhatsAppMessage;
 use Modules\WhatsApp\Settings\WhatsAppSettings;
 use Modules\WhatsApp\Support\PhoneNumberNormalizer;
 
-final class WhatsAppSettingsPage extends Page
+final class WhatsAppSettingsPage extends GatedXotBasePage
 {
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-chat-bubble-left-right';
 

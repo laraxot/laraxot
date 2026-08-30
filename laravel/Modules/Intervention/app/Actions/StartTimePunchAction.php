@@ -14,7 +14,7 @@ final class StartTimePunchAction
 {
     use QueueableAction;
 
-    public function execute(Intervention $intervention, int $userId, ?CarbonImmutable $startedAt = null): TimePunch
+    public function execute(Intervention $intervention, int|string $userId, ?CarbonImmutable $startedAt = null): TimePunch
     {
         $startedAt = $startedAt ?? CarbonImmutable::now();
 

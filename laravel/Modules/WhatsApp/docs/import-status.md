@@ -47,3 +47,34 @@ Adattamenti: `Modules\WhatsApp\{Application\Actions,Application\Queries,Applicat
 - "renders the WhatsApp AI settings page and persists configuration" — `WhatsAppSettingsPage::canAccess()` usa `Gate::allows('manage-whatsapp-ai')`, sempre negato dallo shim `App\Support\AccountFeatures::hasFeature()` (debito tecnico noto, non specifico di WhatsApp).
 
 **Esito esecuzione (2026-07-24):** tutti i test con scritture DB falliscono con `SQLSTATE[HY000]: no such table` (`whatsapp_conversations`, `platform_settings`, `ai_threads`, …) — le migrazioni non sono applicate al DB `:memory:` di Pest in questo ambiente (vedi `laravel/docs/gestionale-commesse-debito-tecnico.md`), non un difetto di adattamento del test.
+
+## Delta seconda tranche (2026-08-30)
+
+Portato il delta sorgente: de-approvazione selettiva, eliminazione conversazioni,
+segna-come-elaborata, guard AI sulle proposte.
+
+- **Actions**: DeleteWhatsAppConversation, MarkWhatsAppConversationProcessed,
+  ResetWhatsAppConversationApproval; ProcessWhatsAppMessageAction con catch
+  `AiActionNotAllowedException` (messaggio processato, nessuna proposta, warning).
+- **Console**: 3 comandi nuovi (whatsapp:deapprove / delete-conversation /
+  mark-processed) + concern `PicksWhatsAppConversations` (in `Console/Concerns`,
+  fuori dallo scanner comandi) + ReprocessWhatsAppMessagesCommand rifattorizzato.
+- **Pages**: Inbox e Settings → `GatedXotBasePage`.
+- **Test**: +6 file portati; helper inbox ora autentica un admin con feature
+  `admin.whatsapp_ai` via matrix (niente shim permissivo).
+
+Fix dest contestuali:
+- `RouteServiceProvider`: `$module_dir` mancante → api.php mai caricato; webhook
+  Meta/YCloud ora sotto `/api/webhooks/whatsapp/*` (aggiornare URL sul provider).
+- **`use App\Models\User` nei moduli portati**: è una classe ORFANA della base
+  (≠ `Modules\User\Models\User`) → ogni `instanceof`/Gate falliva in silenzio.
+  Bonificati Email/Intervention/WhatsApp (11 file). Da controllare a ogni ciclo.
+- `AccountFeatures::canAccessPanel`: default per panel modulo non in matrix →
+  semantica admin (come currentPanelAllowsFeature).
+- `CreateAiActionProposalAction`: `proposedByUserId` ora `int|string` (UUID).
+- Scanner comandi Xot: manifest `_components.json` congela la discovery — va
+  rimosso quando si aggiungono comandi.
+- Fixture: ricreata `whatsapp_messages` (la sua migration aggiunge il checkpoint
+  `approved_up_to_message_id` a conversations).
+
+Suite modulo: 42/42 verdi.

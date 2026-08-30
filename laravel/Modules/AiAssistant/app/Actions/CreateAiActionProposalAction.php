@@ -18,7 +18,7 @@ final class CreateAiActionProposalAction
      */
     public function execute(
         AiThread $thread,
-        int $proposedByUserId,
+        int|string $proposedByUserId,
         string $type,
         array $payload,
         ?string $preview = null,

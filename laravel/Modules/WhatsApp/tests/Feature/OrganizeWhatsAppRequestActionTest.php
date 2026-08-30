@@ -20,7 +20,7 @@ use Modules\WorkOrder\Models\WorkOrderStatus;
  * Modules\WorkOrders\Infrastructure -> Modules\WorkOrder\Models,
  * Modules\Platform\Infrastructure -> Modules\Platform\Models, stessa API dell'action.
  */
-uses(TestCase::class);
+uses(\Modules\WhatsApp\Tests\TestCase::class);
 
 function organizeSetWorkMode(string $mode): void
 {

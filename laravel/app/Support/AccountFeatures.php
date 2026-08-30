@@ -139,7 +139,10 @@ final class AccountFeatures
             'metalworks' => self::hasPanelRole($user, 'metalworks') || self::hasPanelRole($user, 'admin'),
             'customer' => self::hasPanelRole($user, 'customer'),
             'supplier' => self::hasPanelRole($user, 'supplier'),
-            default => false,
+            // Panel Laraxot per-modulo non elencati nella matrix: superfici
+            // amministrative, stessa semantica del ramo 'admin' (coerente con
+            // currentPanelAllowsFeature).
+            default => self::hasPanelRole($user, 'admin'),
         };
     }
 

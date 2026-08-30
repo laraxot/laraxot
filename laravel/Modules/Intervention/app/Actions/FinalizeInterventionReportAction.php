@@ -20,7 +20,7 @@ final class FinalizeInterventionReportAction
      */
     public function execute(
         Intervention $intervention,
-        int $validatedByUserId,
+        int|string $validatedByUserId,
         int $travelKm,
         int $travelMinutes,
         ?string $notes,

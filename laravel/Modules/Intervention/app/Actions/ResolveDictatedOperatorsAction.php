@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Actions;
 
-use App\Models\User;
+use Modules\User\Models\User;
 use Illuminate\Support\Collection;
 use Spatie\QueueableAction\QueueableAction;
 

@@ -10,7 +10,7 @@ use Modules\WhatsApp\Models\WhatsAppMessage;
 use Modules\WhatsApp\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\WhatsApp\Tests\TestCase::class);
 
 // No database writes here: factories are used unpersisted (makeOne()).
 

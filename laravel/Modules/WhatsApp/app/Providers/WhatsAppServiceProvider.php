@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\WhatsApp\Providers;
 
-use App\Models\User;
 use App\Support\AccountFeatures;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\RateLimiter;
+use Modules\User\Models\User;
 use Modules\WhatsApp\AI\OpenAiWhatsAppMessageClassifier;
 use Modules\WhatsApp\AI\WhatsAppMessageClassifierInterface;
 use Modules\WhatsApp\Meta\MetaWhatsAppClient;

@@ -9,6 +9,7 @@ use Modules\User\Models\User;
 use Modules\WhatsApp\Filament\Pages\WhatsAppInboxPage;
 use Modules\WhatsApp\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+use Spatie\Permission\Models\Role;
 
 /**
  * Helper Pest/PHPStan — modulo WhatsApp.
@@ -40,5 +41,18 @@ function whatsAppUserId(): int
  */
 function whatsAppInboxComponent(): Testable
 {
-    return Livewire::test(WhatsAppInboxPage::class);
+    // canAccess() richiede la feature admin.whatsapp_ai (Gate manage-whatsapp-ai)
+    // e un panel con semantica admin: autentichiamo un admin abilitato via matrix.
+    $email = 'whatsapp-admin@test.local';
+    $accounts = (array) config('account_features.accounts', []);
+    $accounts[$email]['features']['admin.whatsapp_ai'] = true;
+    config(['account_features.accounts' => $accounts]);
+
+    Role::findOrCreate('admin');
+    $user = UserFactory::new()->createOne(['email' => $email]);
+    $user->syncRoles(['admin']);
+
+    filament()->setCurrentPanel('whatsapp::admin');
+
+    return Livewire::actingAs($user)->test(WhatsAppInboxPage::class);
 }

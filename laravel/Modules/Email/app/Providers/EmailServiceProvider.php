@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Email\Providers;
 
-use App\Models\User;
+use Modules\User\Models\User;
 use App\Support\AccountFeatures;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;

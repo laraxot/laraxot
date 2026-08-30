@@ -12,7 +12,7 @@ final class AddWorkOrderActivityAction
 {
     use QueueableAction;
 
-    public function execute(int $workOrderId, string $type, string $body, ?int $createdByUserId = null, ?CarbonImmutable $occurredAt = null): WorkOrderActivity
+    public function execute(int $workOrderId, string $type, string $body, int|string|null $createdByUserId = null, ?CarbonImmutable $occurredAt = null): WorkOrderActivity
     {
         $occurredAt = $occurredAt ?? CarbonImmutable::now();
 

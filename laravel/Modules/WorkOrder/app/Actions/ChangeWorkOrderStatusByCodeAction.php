@@ -14,7 +14,7 @@ final class ChangeWorkOrderStatusByCodeAction
 {
     use QueueableAction;
 
-    public function execute(int $workOrderId, string $toStatusCode, ?int $changedByUserId = null, ?string $note = null): void
+    public function execute(int $workOrderId, string $toStatusCode, int|string|null $changedByUserId = null, ?string $note = null): void
     {
         /** @var WorkOrder $workOrder */
         $workOrder = WorkOrder::query()->findOrFail($workOrderId);

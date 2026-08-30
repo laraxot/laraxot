@@ -74,8 +74,8 @@ it('starts and stops a time punch and computes work minutes', function (): void 
     $startedAt = CarbonImmutable::parse('2026-02-16 09:00:00');
     $endedAt = CarbonImmutable::parse('2026-02-16 10:30:00');
 
-    app(StartTimePunchAction::class)->execute($intervention, (int) $user->id, $startedAt);
-    app(StopTimePunchAction::class)->execute($intervention, (int) $user->id, $endedAt);
+    app(StartTimePunchAction::class)->execute($intervention, $user->id, $startedAt);
+    app(StopTimePunchAction::class)->execute($intervention, $user->id, $endedAt);
     app(SyncInterventionWorkMinutesFromTimePunchesAction::class)->execute($intervention->refresh());
 
     // Assert
@@ -148,10 +148,10 @@ it('prevents multiple open punches for the same user', function (): void {
     ]);
 
     // Act
-    app(StartTimePunchAction::class)->execute($a, (int) $user->id, CarbonImmutable::parse('2026-02-16 09:00:00'));
+    app(StartTimePunchAction::class)->execute($a, $user->id, CarbonImmutable::parse('2026-02-16 09:00:00'));
 
     // Assert
-    expect(fn () => app(StartTimePunchAction::class)->execute($b, (int) $user->id, CarbonImmutable::parse('2026-02-16 09:10:00')))
+    expect(fn () => app(StartTimePunchAction::class)->execute($b, $user->id, CarbonImmutable::parse('2026-02-16 09:10:00')))
         ->toThrow(OpenTimePunchAlreadyExists::class);
 });
 
@@ -201,7 +201,7 @@ it('finalizes the intervention report and updates the work order status', functi
     // Act
     $updated = app(FinalizeInterventionReportAction::class)->execute(
         intervention: $intervention,
-        validatedByUserId: (int) $user->id,
+        validatedByUserId: $user->id,
         travelKm: 12,
         travelMinutes: 30,
         notes: 'All good',

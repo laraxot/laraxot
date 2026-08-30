@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Email\Filament\Pages;
 
-use App\Models\User;
+use Modules\User\Models\User;
 use App\Support\AccountFeatures;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;

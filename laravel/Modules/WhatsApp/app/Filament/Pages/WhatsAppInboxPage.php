@@ -5,16 +5,16 @@ declare(strict_types=1);
 namespace Modules\WhatsApp\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Filament\Pages\Page;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\WhatsApp\Queries\GetWhatsAppInboxQuery;
 
 /**
  * Inbox that organizes incoming WhatsApp messages inside the gestionale:
  * conversations grouped per contact/customer, with the message thread.
  */
-final class WhatsAppInboxPage extends Page
+final class WhatsAppInboxPage extends GatedXotBasePage
 {
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-inbox-arrow-down';
 

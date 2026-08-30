@@ -10,5 +10,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 {
     public string $name = 'WhatsApp';
 
+    protected string $module_dir = __DIR__;
+
     protected string $moduleNamespace = 'Modules\WhatsApp\Http\Controllers';
 }

@@ -154,3 +154,24 @@ Vedi sezione aggiornata a fine Fase 0 con i numeri di `vendor/bin/pest` e `phpst
   `Modules/Intervention/resources/assets/js/` — TODO integrazione build tema.
 - **Debito noto**: 14 errori PHPStan pre-esistenti in `app/` (Application, User,
   FilamentOptimizationServiceProvider) — fuori perimetro delta, da workstream dedicato.
+
+## Checkpoint 2026-08-30 (sera)
+
+- **Email**: delta completo (guard AI catch, pagina gated). 6/6 verdi. Commit `2672d25c…`.
+- **WhatsApp**: delta completo (deapprove/delete/mark-processed + comandi console,
+  guard AI, pagine gated, +6 test). 42/42 verdi.
+- **Fix trasversali scoperti in questo giro**:
+  - `use App\Models\User` = classe ORFANA della base → instanceof/Gate false
+    silenziosi. Bonificati Email/Intervention/WhatsApp (11 file). Check obbligatorio
+    a ogni ciclo (memoria `app-models-user-orphan`).
+  - `RouteServiceProvider` senza `$module_dir` → routes modulo mai caricate
+    (Intervention, Email, WhatsApp). Webhook esterni ora sotto `/api/...`.
+  - `AccountFeatures::canAccessPanel`: default panel-modulo → semantica admin.
+  - Sweep uuid `int→int|string`: punch chain (Start/Stop/Finalize),
+    AddWorkOrderActivity, ChangeWorkOrderStatusByCode, CreateAiActionProposal,
+    eccezioni punch. `(int) Auth::id()` residui in Resource = debito registrato.
+  - Pattern PHP: `uses(TestCase::class)` PRIMA dell'import non risolve (gli
+    `use` valgono dal punto di dichiarazione) → sempre FQCN nei test Pest.
+  - Scanner comandi Xot: `_components.json` congela la discovery.
+- **Regressioni**: Email+Intervention 159 pass/0 fail; Vehicle/Customer/Document/
+  Signature/Quotation invariati verdi.

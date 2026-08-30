@@ -8,7 +8,7 @@ use DomainException;
 
 final class NoOpenTimePunchToStop extends DomainException
 {
-    public static function forUserAndIntervention(int $userId, int $interventionId): self
+    public static function forUserAndIntervention(int|string $userId, int $interventionId): self
     {
         return new self("No open time punch found for user {$userId} on intervention {$interventionId}.");
     }

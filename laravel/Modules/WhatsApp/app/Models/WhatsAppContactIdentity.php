@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\WhatsApp\Models;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
+use Modules\User\Models\User;
 use Modules\WhatsApp\Database\Factories\WhatsAppContactIdentityFactory;
 
 /**

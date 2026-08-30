@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Email\Actions;
 
-use App\Models\User;
+use Modules\User\Models\User;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Log;

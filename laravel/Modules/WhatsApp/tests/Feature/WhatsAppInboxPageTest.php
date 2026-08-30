@@ -21,7 +21,7 @@ use Modules\WhatsApp\Tests\TestCase;
  * Gate::allows('manage-whatsapp-ai') — sempre negato in questo ambiente. mount()/conversationList()/
  * thread() però NON invocano il gate, quindi il componente Livewire resta testabile direttamente.
  */
-uses(TestCase::class);
+uses(\Modules\WhatsApp\Tests\TestCase::class);
 
 function inboxPageConversationWithMessage(string $phone, string $body): WhatsAppConversation
 {
