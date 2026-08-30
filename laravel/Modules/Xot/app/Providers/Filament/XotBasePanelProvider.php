@@ -32,6 +32,16 @@ abstract class XotBasePanelProvider extends PanelProvider
 
     protected bool $navigation = true;
 
+    /**
+     * Id/path del panel. Di default derivano dal modulo ({modulo}::admin,
+     * {modulo}/admin); i panel trasversali (operator, customer, supplier)
+     * li sovrascrivono perché Filament vieta di ri-assegnare l'id dopo
+     * la prima chiamata a ->id().
+     */
+    protected ?string $panelId = null;
+
+    protected ?string $panelPath = null;
+
     public function panel(Panel $panel): Panel
     {
         $moduleNamespace = $this->getModuleNamespace();
@@ -58,8 +68,8 @@ abstract class XotBasePanelProvider extends PanelProvider
             // ->tenant($teamClass)
             // ->tenant($teamClass,ownershipRelationship:'users')
             // ->tenant($teamClass)
-            ->id($moduleLow.'::admin')
-            ->path($moduleLow.'/admin')
+            ->id($this->panelId ?? $moduleLow.'::admin')
+            ->path($this->panelPath ?? $moduleLow.'/admin')
             // Configure Filament discovery for module components (unconditional; dirs are expected to exist)
             ->discoverResources(
                 base_path('Modules/'.$this->module.'/app/Filament/Resources'),

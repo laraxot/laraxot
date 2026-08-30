@@ -8,7 +8,8 @@
         "Modules\\Platform\\Providers\\PlatformServiceProvider",
         "Modules\\Platform\\Providers\\RouteServiceProvider",
         "Modules\\Platform\\Providers\\EventServiceProvider",
-        "Modules\\Platform\\Providers\\Filament\\AdminPanelProvider"
+        "Modules\\Platform\\Providers\\Filament\\AdminPanelProvider",
+        "Modules\\Platform\\Providers\\Filament\\OperatorPanelProvider"
     ],
     "files": []
 }
