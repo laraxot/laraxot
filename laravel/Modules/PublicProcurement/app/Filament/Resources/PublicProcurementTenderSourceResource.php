@@ -14,6 +14,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Modules\Platform\Filament\Concerns\GatesResourceNavigation;
 use Modules\PublicProcurement\Filament\Resources\PublicProcurementTenderSourceResource\Pages\CreatePublicProcurementTenderSource;
 use Modules\PublicProcurement\Filament\Resources\PublicProcurementTenderSourceResource\Pages\EditPublicProcurementTenderSource;
 use Modules\PublicProcurement\Filament\Resources\PublicProcurementTenderSourceResource\Pages\ListPublicProcurementTenderSources;
@@ -21,6 +22,8 @@ use Modules\PublicProcurement\Models\PublicProcurementTenderSource;
 
 final class PublicProcurementTenderSourceResource extends Resource
 {
+    use GatesResourceNavigation;
+
     protected static ?string $model = PublicProcurementTenderSource::class;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-rss';

@@ -22,6 +22,7 @@ use Filament\Tables;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Modules\Customer\Models\Customer;
+use Modules\Platform\Filament\Concerns\GatesResourceNavigation;
 use Modules\PublicProcurement\Actions\GenerateProgressReportFromMeasurementsAction;
 use Modules\PublicProcurement\Filament\Resources\PublicProcurementContractResource\Pages\CreatePublicProcurementContract;
 use Modules\PublicProcurement\Filament\Resources\PublicProcurementContractResource\Pages\EditPublicProcurementContract;
@@ -39,6 +40,8 @@ use Modules\WorkOrder\Models\WorkOrder;
 
 final class PublicProcurementContractResource extends Resource
 {
+    use GatesResourceNavigation;
+
     protected static ?string $model = PublicProcurementContract::class;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-building-office-2';

@@ -22,6 +22,7 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Auth;
 use Modules\Customer\Models\Customer;
+use Modules\Platform\Filament\Concerns\GatesResourceNavigation;
 use Modules\PublicProcurement\Actions\CreateContractFromOpportunityAction;
 use Modules\PublicProcurement\Actions\EvaluateTenderEligibilityAction;
 use Modules\PublicProcurement\Filament\Resources\PublicProcurementTenderOpportunityResource\Pages\CreatePublicProcurementTenderOpportunity;
@@ -34,6 +35,8 @@ use Modules\PublicProcurement\Models\PublicProcurementTenderSource;
 
 final class PublicProcurementTenderOpportunityResource extends Resource
 {
+    use GatesResourceNavigation;
+
     protected static ?string $model = PublicProcurementTenderOpportunity::class;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-magnifying-glass-circle';

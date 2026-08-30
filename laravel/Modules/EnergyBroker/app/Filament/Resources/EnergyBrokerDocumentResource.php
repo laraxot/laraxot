@@ -22,9 +22,12 @@ use Modules\EnergyBroker\Actions\DeletePoorlyAnalyzedEnergyBrokerDocumentsAction
 use Modules\EnergyBroker\Actions\ReprocessEnergyBrokerDocumentPdfAction;
 use Modules\EnergyBroker\Filament\Resources\EnergyBrokerDocumentResource\Pages;
 use Modules\EnergyBroker\Models\EnergyBrokerDocument;
+use Modules\Platform\Filament\Concerns\GatesResourceNavigation;
 
 final class EnergyBrokerDocumentResource extends Resource
 {
+    use GatesResourceNavigation;
+
     protected static ?string $model = EnergyBrokerDocument::class;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-document-text';
