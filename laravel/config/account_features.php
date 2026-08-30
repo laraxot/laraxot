@@ -12,7 +12,7 @@ return [
                 'energy-broker' => true,
                 'asd-soci' => true,
                 'timber' => true,
-                'metalworks' => true,
+                'metalwork' => true,
                 'customer' => true,
                 'supplier' => true,
             ],
@@ -32,7 +32,7 @@ return [
                 'energy-broker' => true,
                 'asd-soci' => true,
                 'timber' => true,
-                'metalworks' => true,
+                'metalwork' => true,
             ],
             'features' => [
                 '*' => true,
@@ -50,7 +50,7 @@ return [
                 'energy-broker' => true,
                 'asd-soci' => true,
                 'timber' => true,
-                'metalworks' => true,
+                'metalwork' => true,
             ],
             'features' => [
                 '*' => true,
@@ -107,26 +107,26 @@ return [
                 'timber.*' => true,
             ],
         ],
-        'metalworks_operator' => [
+        'metalwork_operator' => [
             'panels' => [
-                'metalworks' => true,
+                'metalwork' => true,
             ],
             'features' => [
-                'metalworks.dashboard' => true,
-                'metalworks.quotation' => true,
-                'metalworks.drawings' => true,
-                'metalworks.estimates' => true,
+                'metalwork.dashboard' => true,
+                'metalwork.quotation' => true,
+                'metalwork.drawings' => true,
+                'metalwork.estimates' => true,
                 // Prices and rates are the workshop's margin: read-only for the
                 // operator, who quotes with them but does not set them.
-                'metalworks.registries' => false,
+                'metalwork.registries' => false,
             ],
         ],
-        'metalworks_admin' => [
+        'metalwork_admin' => [
             'panels' => [
-                'metalworks' => true,
+                'metalwork' => true,
             ],
             'features' => [
-                'metalworks.*' => true,
+                'metalwork.*' => true,
             ],
         ],
         'dds_admin' => [

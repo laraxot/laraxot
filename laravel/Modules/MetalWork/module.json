@@ -1,0 +1,12 @@
+{
+    "name": "MetalWork",
+    "alias": "metalwork",
+    "description": "Preventivi carpenteria metallica da disegni CAD",
+    "keywords": [],
+    "priority": 115,
+    "providers": [
+        "Modules\\MetalWork\\Providers\\MetalWorkServiceProvider",
+        "Modules\\MetalWork\\Providers\\Filament\\AdminPanelProvider"
+    ],
+    "files": []
+}

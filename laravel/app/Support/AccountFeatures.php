@@ -93,7 +93,7 @@ final class AccountFeatures
                 || $user->hasRole('giveback_merchant')
                 || $user->hasRole('giveback_support'),
             'timber' => $user->hasRole('timber_operator') || $user->hasRole('timber_admin'),
-            'metalworks' => $user->hasRole('metalworks_operator') || $user->hasRole('metalworks_admin'),
+            'metalwork' => $user->hasRole('metalwork_operator') || $user->hasRole('metalwork_admin'),
             'customer' => $user->hasRole('customer'),
             'supplier' => $user->hasRole('supplier'),
             default => false,
@@ -136,7 +136,7 @@ final class AccountFeatures
             'asd-soci' => self::hasPanelRole($user, 'asd-soci') || self::hasPanelRole($user, 'admin'),
             'giveback-platform' => self::hasPanelRole($user, 'giveback-platform') || self::hasPanelRole($user, 'admin'),
             'timber' => self::hasPanelRole($user, 'timber') || self::hasPanelRole($user, 'admin'),
-            'metalworks' => self::hasPanelRole($user, 'metalworks') || self::hasPanelRole($user, 'admin'),
+            'metalwork' => self::hasPanelRole($user, 'metalwork') || self::hasPanelRole($user, 'admin'),
             'customer' => self::hasPanelRole($user, 'customer'),
             'supplier' => self::hasPanelRole($user, 'supplier'),
             // Panel Laraxot per-modulo non elencati nella matrix: superfici

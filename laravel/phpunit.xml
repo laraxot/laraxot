@@ -128,6 +128,9 @@
         <testsuite name="WorkOrder">
             <directory>Modules/WorkOrder/tests</directory>
         </testsuite>
+        <testsuite name="MetalWork">
+            <directory>Modules/MetalWork/tests</directory>
+        </testsuite>
     </testsuites>
     <source>
         <include>
