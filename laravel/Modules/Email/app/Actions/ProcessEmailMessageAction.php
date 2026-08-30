@@ -7,8 +7,10 @@ namespace Modules\Email\Actions;
 use App\Models\User;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Modules\AiAssistant\Actions\CreateAiActionProposalAction;
+use Modules\AiAssistant\Exceptions\AiActionNotAllowedException;
 use Modules\AiAssistant\Models\AiActionProposal;
 use Modules\AiAssistant\Models\AiMessage;
 use Modules\AiAssistant\Models\AiThread;
@@ -181,7 +183,20 @@ final class ProcessEmailMessageAction
             $preview = $this->defaultPreview($type, $message, $classification);
         }
 
-        return $this->createProposal->execute($thread, $approverId, $type, $payload, $preview);
+        try {
+            return $this->createProposal->execute($thread, $approverId, $type, $payload, $preview);
+        } catch (AiActionNotAllowedException $e) {
+            // Rifiutata dalla policy: tipo non permesso o troppe proposte in
+            // coda per l'approvatore. La mail resta processata e salvata; non
+            // produce proposta, che è l'esito sicuro.
+            Log::warning('Email proposal refused by AI policy', [
+                'email_message_id' => $message->id,
+                'type' => $e->actionType,
+                'reason' => $e->reason,
+            ]);
+
+            return null;
+        }
     }
 
     /**

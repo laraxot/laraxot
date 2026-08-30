@@ -32,3 +32,10 @@ related:
 - [ ] **Non cancellare** / non merge in AI
 
 SSoT: [functional-readiness.md](../../../../docs/gestionale-commesse-comparison/functional-readiness.md) · religione [replica-singular-phase.md](../../../../docs/gestionale-commesse-comparison/replica-singular-phase.md).
+
+## 2026-08-30 — anticipo dal ciclo Email
+
+Portata `Exceptions/AiActionNotAllowedException` (namespace dest flat
+`Modules\AiAssistant\Exceptions`): serve al catch dei processor Email/WhatsApp.
+Il resto del delta guard AI (policy in `CreateAiActionProposalAction`, redazione
+log/persistenza, stream chat) verrà portato nel ciclo AiAssistant.

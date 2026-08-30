@@ -51,11 +51,11 @@ it('stores incoming signed email webhooks idempotently', function (): void {
     $raw = json_encode($payload, JSON_THROW_ON_ERROR);
     $signature = hash_hmac('sha256', $raw, 'email-secret');
 
-    postJson('/webhooks/email-ai/inbound', $payload, ['X-Email-AI-Signature' => $signature])
+    postJson('/api/webhooks/email-ai/inbound', $payload, ['X-Email-AI-Signature' => $signature])
         ->assertOk()
         ->assertJson(['ok' => true]);
 
-    postJson('/webhooks/email-ai/inbound', $payload, ['X-Email-AI-Signature' => $signature])
+    postJson('/api/webhooks/email-ai/inbound', $payload, ['X-Email-AI-Signature' => $signature])
         ->assertOk()
         ->assertJson(['ok' => true]);
 

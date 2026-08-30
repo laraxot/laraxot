@@ -7,16 +7,16 @@ namespace Modules\Email\Filament\Pages;
 use App\Models\User;
 use App\Support\AccountFeatures;
 use Filament\Notifications\Notification;
-use Filament\Pages\Page;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Modules\Email\Actions\PollEmailInboxAction;
 use Modules\Email\Inbox\EmailInboxClientInterface;
 use Modules\Email\Models\EmailMessage;
 use Modules\Email\Settings\EmailSettings;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\Platform\Models\PlatformSetting;
 
-final class EmailSettingsPage extends Page
+final class EmailSettingsPage extends GatedXotBasePage
 {
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-envelope';
 

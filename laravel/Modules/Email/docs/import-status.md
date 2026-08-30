@@ -46,3 +46,24 @@ Adattamenti: `Modules\Customers\Infrastructure\Models\{Contact,Customer}` → `M
 - "renders the Email AI settings page and persists inbox configuration" — `EmailSettingsPage::canAccess()` usa `Gate::allows('manage-email-ai')`, che dipende da `App\Support\AccountFeatures::hasFeature()`: uno shim che ritorna sempre il `$default` passato (qui `false`), quindi il gate risulta sempre negato indipendentemente dall'utente autenticato. Debito tecnico noto, non specifico di Email.
 
 **Esito esecuzione (2026-07-24):** i test portati falliscono con `SQLSTATE[HY000]: no such table` (`platform_settings`, `email_conversations`, …) — le migrazioni non sono applicate al DB `:memory:` di Pest in questo ambiente (vedi `laravel/docs/gestionale-commesse-debito-tecnico.md`), non un difetto di adattamento.
+
+## Delta seconda tranche (2026-08-30)
+
+Sostanza del delta sorgente (`15f07e80..HEAD`, il resto era riallineamento Pint):
+
+- `ProcessEmailMessageAction`: catch di `AiActionNotAllowedException` — la mail
+  resta processata/salvata ma non produce proposta quando la policy AI rifiuta
+  (tipo non permesso o troppe proposte in coda); log warning con il motivo.
+  L'eccezione è stata portata in `Modules\AiAssistant\Exceptions` (il wiring
+  completo dei guard arriverà col ciclo AiAssistant).
+- `EmailSettingsPage` → `GatedXotBasePage` (gating navigazione Platform).
+
+Fix dest contestuali:
+- `RouteServiceProvider`: mancava `$module_dir = __DIR__` → routes del modulo
+  mai caricate (stesso bug visto su Intervention).
+- Webhook inbound: in questa base le rotte api montano sotto prefisso `api/` →
+  l'endpoint è `POST /api/webhooks/email-ai/inbound` (aggiornare l'URL sul
+  provider quando si configura il forwarding). Test adeguati.
+- `tests/TestCase`: redirect fixture sqlite condivisa (`prepareShared…`).
+
+Suite modulo: 6/6 verdi.

@@ -10,5 +10,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 {
     public string $name = 'Email';
 
+    protected string $module_dir = __DIR__;
+
     protected string $moduleNamespace = 'Modules\Email\Http\Controllers';
 }
