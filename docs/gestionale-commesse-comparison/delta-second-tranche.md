@@ -213,3 +213,48 @@ Delta portato: **"distinta base da preventivo, margini, SAL e consegne"** +
 
 PHPStan WorkOrder+Quotation: **zero errori sul codice di produzione**; 68 residui
 tutti test-only (pattern `mixed` di Pest/Livewire, debito toolchain condiviso).
+
+## Checkpoint 2026-08-30 (notte) — Quotation + Billing
+
+### Quotation (delta chiuso)
+Margini, progetto/brand, consegne (`delivery_at`/`lead_time_days`), gating delle 4
+superfici Filament, `ViewQuotation` che crea la commessa portandosi dietro la distinta.
+Coperto da `WorkOrder/JobCostingUiTest`. PHPStan produzione: 0.
+
+Debito lasciato: 14 test media rossi **pre-esistenti** (verificato con stash). Il
+sorgente non usa Spatie MediaLibrary ma un modello `Media` custom; il porting ha
+giustamente riusato Spatie ma i test sono stati copiati senza adattare le asserzioni
+(`disk` di destinazione ≠ di origine; `name` che ricade su un path già hashato →
+l'utente vedrebbe `ECJHc5zZ...` come nome allegato). Ciclo dedicato al layer media.
+
+### Billing (delta chiuso)
+Controllo di gestione completo: aging crediti, proiezione di cassa, margine per
+commessa (costi separati per famiglia), pagina gated + blade, payment tracking su
+fatture cliente e fornitore, gating delle 4 resource.
+**Da 30 test rossi a 80 verdi. PHPStan produzione da 62 errori a 0** (il debito
+storico del modulo era proprio questo).
+
+### Difetti sistemici della base emersi in questi due cicli
+
+1. **Policy che esplodono su permesso mancante** — `hasPermissionTo()` di spatie
+   **lancia** `PermissionDoesNotExist`. Una sola resource nel panel con permesso non
+   seedato manda in 500 il rendering dell'intera sidebar Filament. Corretto in
+   `VehicleBasePolicy` con un `allows()` che cattura e risponde `false`.
+   **Il pattern è in decine di policy** (Cms, Activity, Gdpr, Geo, Lang, Job…):
+   la correzione generale richiede `checkPermissionTo()` su `UserContract` (Xot)
+   + sweep → ciclo di hardening dedicato.
+2. **`skip('...')` non esiste in Pest**: 22 occorrenze usate come marcatori di debito
+   facevano *fallire* i test. Cercarle a tappeto: `grep -rn "^\s*skip(" Modules/*/tests`.
+3. **TestCase di modulo senza `prepareSharedFixcitySqliteForTesting()`**: il modulo
+   gira su uno sqlite senza tabelle. Da verificare in ogni modulo prima di dare per
+   buono un "rosso pre-esistente".
+4. **Chiavi lang senza namespace**: terzo modulo di fila (WorkOrder, Quotation,
+   Billing). Il sintomo peggiore non è l'etichetta brutta ma i **parametri non
+   interpolati** (`:amount` mai sostituito).
+5. **Lang auto-generati dal LangServiceProvider** con `label` = nome chiave: vanno
+   riscritti a mano in it **e** en (già capitato per `material`, `work_order_status`,
+   `work_order`, `site_survey`).
+6. **`uses(TestCase::class)` prima dell'import** non risolve e pint riconverte alla
+   forma corta: sanato a tappeto su 678 file (commit `3e43324f`).
+7. **Suite in parallelo sulla stessa fixture sqlite** danno falsi rossi
+   (WhatsApp 2 fail in parallelo, 42/42 da solo). Lanciarle in serie.
