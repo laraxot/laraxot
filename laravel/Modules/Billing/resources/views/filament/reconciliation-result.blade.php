@@ -26,19 +26,19 @@
     ])>
         <p class="font-semibold">
             {{ $statusCode === 'reconciled'
-                ? __('suppliers.reconciliation.clean_title')
-                : __('suppliers.reconciliation.disputed_title') }}
+                ? __('billing::suppliers.reconciliation.clean_title')
+                : __('billing::suppliers.reconciliation.disputed_title') }}
         </p>
         <p class="mt-1 text-sm">
             {{ $statusCode === 'reconciled'
-                ? __('suppliers.reconciliation.clean_body')
-                : __('suppliers.reconciliation.disputed_body', ['count' => count($discrepancies)]) }}
+                ? __('billing::suppliers.reconciliation.clean_body')
+                : __('billing::suppliers.reconciliation.disputed_body', ['count' => count($discrepancies)]) }}
         </p>
     </div>
 
     @if (count($discrepancies) > 0)
         <p class="text-sm text-gray-600 dark:text-gray-400">
-            {{ __('suppliers.reconciliation.summary', [
+            {{ __('billing::suppliers.reconciliation.summary', [
                 'count' => count($discrepancies),
                 'amount' => '€ ' . number_format((float) $overcharge, 2, ',', '.'),
             ]) }}
@@ -48,13 +48,13 @@
             <table class="w-full min-w-[52rem] text-sm">
                 <thead class="text-left text-xs uppercase text-gray-500 dark:text-gray-400">
                     <tr class="border-b border-gray-200 dark:border-white/10">
-                        <th class="py-2 pr-3">{{ __('suppliers.reconciliation.columns.type') }}</th>
-                        <th class="py-2 pr-3">{{ __('suppliers.reconciliation.columns.description') }}</th>
-                        <th class="py-2 pr-3 text-right">{{ __('suppliers.reconciliation.columns.delivered_quantity') }}</th>
-                        <th class="py-2 pr-3 text-right">{{ __('suppliers.reconciliation.columns.invoiced_quantity') }}</th>
-                        <th class="py-2 pr-3 text-right">{{ __('suppliers.reconciliation.columns.delivered_unit_price') }}</th>
-                        <th class="py-2 pr-3 text-right">{{ __('suppliers.reconciliation.columns.invoiced_unit_price') }}</th>
-                        <th class="py-2 text-right">{{ __('suppliers.reconciliation.columns.amount_difference') }}</th>
+                        <th class="py-2 pr-3">{{ __('billing::suppliers.reconciliation.columns.type') }}</th>
+                        <th class="py-2 pr-3">{{ __('billing::suppliers.reconciliation.columns.description') }}</th>
+                        <th class="py-2 pr-3 text-right">{{ __('billing::suppliers.reconciliation.columns.delivered_quantity') }}</th>
+                        <th class="py-2 pr-3 text-right">{{ __('billing::suppliers.reconciliation.columns.invoiced_quantity') }}</th>
+                        <th class="py-2 pr-3 text-right">{{ __('billing::suppliers.reconciliation.columns.delivered_unit_price') }}</th>
+                        <th class="py-2 pr-3 text-right">{{ __('billing::suppliers.reconciliation.columns.invoiced_unit_price') }}</th>
+                        <th class="py-2 text-right">{{ __('billing::suppliers.reconciliation.columns.amount_difference') }}</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100 dark:divide-white/5">
@@ -65,10 +65,10 @@
                                     'inline-flex whitespace-nowrap rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset',
                                     $typeClasses[$discrepancy->typeCode] ?? $typeClasses['not_invoiced'],
                                 ])>
-                                    {{ __('suppliers.reconciliation.types.' . $discrepancy->typeCode) }}
+                                    {{ __('billing::suppliers.reconciliation.types.' . $discrepancy->typeCode) }}
                                 </span>
                                 <p class="mt-1 max-w-[16rem] text-xs text-gray-500 dark:text-gray-400">
-                                    {{ __('suppliers.reconciliation.explanations.' . $discrepancy->typeCode) }}
+                                    {{ __('billing::suppliers.reconciliation.explanations.' . $discrepancy->typeCode) }}
                                 </p>
                             </td>
                             <td class="py-2 pr-3 align-top font-medium text-gray-900 dark:text-white">

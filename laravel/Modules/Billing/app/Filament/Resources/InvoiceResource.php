@@ -26,10 +26,10 @@ use Illuminate\Support\Facades\DB;
 use Modules\Billing\Filament\Resources\InvoiceResource\Pages;
 use Modules\Billing\Filament\Resources\InvoiceResource\RelationManagers\WorkOrdersRelationManager;
 use Modules\Billing\Models\Invoice;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\User\Models\User;
-use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class InvoiceResource extends XotBaseResource
+final class InvoiceResource extends GatedXotBaseResource
 {
     protected static ?string $model = Invoice::class;
 
@@ -47,17 +47,17 @@ final class InvoiceResource extends XotBaseResource
 
     public static function getNavigationGroup(): string
     {
-        return __('billing.navigation');
+        return __('billing::billing.navigation');
     }
 
     public static function getModelLabel(): string
     {
-        return __('billing.invoice');
+        return __('billing::billing.invoice');
     }
 
     public static function getPluralModelLabel(): string
     {
-        return __('billing.invoices');
+        return __('billing::billing.invoices');
     }
 
     public static function canCreate(): bool
@@ -102,14 +102,14 @@ final class InvoiceResource extends XotBaseResource
                 ->components([
                     Grid::make(2)->components([
                         TextInput::make('number')
-                            ->label(__('billing.fields.number'))
+                            ->label(__('billing::billing.fields.number'))
                             ->maxLength(255),
                         DatePicker::make('issued_on')
-                            ->label(__('billing.fields.issued_on')),
+                            ->label(__('billing::billing.fields.issued_on')),
                     ]),
 
                     Select::make('customer_id')
-                        ->label(__('billing.fields.customer'))
+                        ->label(__('billing::billing.fields.customer'))
                         ->options(fn (): array => DB::table('customers')->orderBy('legal_name')->pluck('legal_name', 'id')->all())
                         ->searchable()
                         ->preload()
@@ -118,7 +118,7 @@ final class InvoiceResource extends XotBaseResource
                         ->required(),
 
                     Select::make('work_order_id')
-                        ->label(__('billing.fields.work_order'))
+                        ->label(__('billing::billing.fields.work_order'))
                         ->options(function (callable $get): array {
                             $q = DB::table('work_orders')->orderByDesc('id');
                             $customerId = $get('customer_id');
@@ -138,12 +138,12 @@ final class InvoiceResource extends XotBaseResource
                         ->preload(),
 
                     TextInput::make('total')
-                        ->label(__('billing.fields.total'))
+                        ->label(__('billing::billing.fields.total'))
                         ->numeric()
                         ->default(0),
 
                     Textarea::make('notes')
-                        ->label(__('billing.fields.notes'))
+                        ->label(__('billing::billing.fields.notes'))
                         ->columnSpanFull(),
                 ])
                 ->columns(2),
@@ -155,30 +155,30 @@ final class InvoiceResource extends XotBaseResource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('number')
-                    ->label(__('billing.fields.number'))
+                    ->label(__('billing::billing.fields.number'))
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('customer_id')
-                    ->label(__('billing.fields.customer'))
+                    ->label(__('billing::billing.fields.customer'))
                     ->formatStateUsing(fn ($state): string => (string) (DB::table('customers')->where('id', $state)->value('legal_name') ?? 'Cliente non disponibile'))
                     ->toggleable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('issued_on')
-                    ->label(__('billing.fields.issued_on'))
+                    ->label(__('billing::billing.fields.issued_on'))
                     ->date()
                     ->toggleable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('total')
-                    ->label(__('billing.fields.total'))
+                    ->label(__('billing::billing.fields.total'))
                     ->money('EUR')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('electronic_invoice_sent_at')
-                    ->label(__('billing.fields.einvoice_sent_at'))
+                    ->label(__('billing::billing.fields.einvoice_sent_at'))
                     ->dateTime()
                     ->toggleable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('electronic_invoice_external_id')
-                    ->label(__('billing.fields.einvoice_external_id'))
+                    ->label(__('billing::billing.fields.einvoice_external_id'))
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()

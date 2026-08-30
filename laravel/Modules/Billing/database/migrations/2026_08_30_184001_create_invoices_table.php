@@ -20,6 +20,9 @@ return new class() extends XotBaseMigration
             $table->string('number')->nullable();
             $table->date('issued_on')->nullable();
             $table->decimal('total', 12, 2)->default(0);
+            $table->date('due_on')->nullable();
+            $table->date('paid_on')->nullable();
+            $table->decimal('paid_amount', 12, 2)->default(0);
             $table->text('notes')->nullable();
 
             // Tracciamento invio fattura elettronica al provider SDI configurato.
@@ -29,6 +32,8 @@ return new class() extends XotBaseMigration
             $table->text('electronic_invoice_last_error')->nullable();
 
             $table->index(['customer_id']);
+            $table->index(['due_on']);
+            $table->index(['paid_on']);
             $table->index(['work_order_id']);
         });
 
@@ -47,6 +52,17 @@ return new class() extends XotBaseMigration
 
             if (! $this->hasColumn('electronic_invoice_last_error')) {
                 $table->text('electronic_invoice_last_error')->nullable();
+            }
+            if (! $this->hasColumn('due_on')) {
+                $table->date('due_on')->nullable();
+            }
+
+            if (! $this->hasColumn('paid_on')) {
+                $table->date('paid_on')->nullable();
+            }
+
+            if (! $this->hasColumn('paid_amount')) {
+                $table->decimal('paid_amount', 12, 2)->default(0);
             }
 
             $this->updateTimestamps(table: $table, hasSoftDeletes: true);

@@ -20,11 +20,11 @@
 <body>
     <div class="header">
         <div class="title">
-            {{ __('billing.invoice') }} {{ $invoice->number ?: ('#' . $invoice->id) }}
+            {{ __('billing::billing.invoice') }} {{ $invoice->number ?: ('#' . $invoice->id) }}
         </div>
         <div class="meta">
-            {{ __('billing.fields.issued_on') }}: {{ optional($invoice->issued_on)->format('d/m/Y') ?: '-' }}
-            — {{ __('billing.fields.customer') }}: {{ $customerName }}
+            {{ __('billing::billing.fields.issued_on') }}: {{ optional($invoice->issued_on)->format('d/m/Y') ?: '-' }}
+            — {{ __('billing::billing.fields.customer') }}: {{ $customerName }}
         </div>
     </div>
 
@@ -35,20 +35,20 @@
                     @if (!empty($logo))
                         <img src="{{ $logo }}" alt="" style="max-height: 48px; margin-bottom: 6px;">
                     @endif
-                    <div><strong>{{ __('billing.sections.supplier') }}</strong></div>
+                    <div><strong>{{ __('billing::billing.sections.supplier') }}</strong></div>
                     <div style="margin-top: 6px;">
                         <div>{{ $supplier['legal_name'] ?? '' }}</div>
                         <div class="muted">{{ $supplier['address'] ?? '' }}</div>
                         <div class="muted">
-                            {{ __('billing.fields.vat_number') }}: {{ $supplier['vat_number'] ?? '-' }}
+                            {{ __('billing::billing.fields.vat_number') }}: {{ $supplier['vat_number'] ?? '-' }}
                             @if (!empty($supplier['tax_code']))
-                                — {{ __('billing.fields.tax_code') }}: {{ $supplier['tax_code'] }}
+                                — {{ __('billing::billing.fields.tax_code') }}: {{ $supplier['tax_code'] }}
                             @endif
                         </div>
                         <div class="muted">
-                            {{ __('billing.fields.phone') }}: {{ $supplier['phone'] ?? '-' }}
+                            {{ __('billing::billing.fields.phone') }}: {{ $supplier['phone'] ?? '-' }}
                             @if (!empty($supplier['email']))
-                                — {{ __('billing.fields.email') }}: {{ $supplier['email'] }}
+                                — {{ __('billing::billing.fields.email') }}: {{ $supplier['email'] }}
                             @endif
                         </div>
                     </div>
@@ -56,7 +56,7 @@
             </td>
             <td style="padding-left: 8px;">
                 <div class="box">
-                    <div><strong>{{ __('billing.sections.customer') }}</strong></div>
+                    <div><strong>{{ __('billing::billing.sections.customer') }}</strong></div>
                     <div style="margin-top: 6px;">
                         <div>{{ $customerName }}</div>
                         @if ($customer)
@@ -74,15 +74,15 @@
                                 @endif
                             </div>
                             <div class="muted">
-                                {{ __('billing.fields.vat_number') }}: {{ $customer->vat_number ?: '-' }}
+                                {{ __('billing::billing.fields.vat_number') }}: {{ $customer->vat_number ?: '-' }}
                                 @if ($customer->tax_code)
-                                    — {{ __('billing.fields.tax_code') }}: {{ $customer->tax_code }}
+                                    — {{ __('billing::billing.fields.tax_code') }}: {{ $customer->tax_code }}
                                 @endif
                             </div>
                             <div class="muted">
-                                {{ __('billing.fields.phone') }}: {{ $customer->phone ?: '-' }}
+                                {{ __('billing::billing.fields.phone') }}: {{ $customer->phone ?: '-' }}
                                 @if ($customer->email)
-                                    — {{ __('billing.fields.email') }}: {{ $customer->email }}
+                                    — {{ __('billing::billing.fields.email') }}: {{ $customer->email }}
                                 @endif
                             </div>
                         @endif
@@ -94,21 +94,21 @@
 
     <div class="box">
         <div>
-            <strong>{{ __('billing.fields.number') }}:</strong>
+            <strong>{{ __('billing::billing.fields.number') }}:</strong>
             {{ $invoice->number ?: ('#' . $invoice->id) }}
         </div>
         <div>
-            <strong>{{ __('billing.fields.total') }}:</strong>
+            <strong>{{ __('billing::billing.fields.total') }}:</strong>
             {{ number_format((float) $invoice->total, 2, ',', '.') }} EUR
         </div>
         @if (!empty($linkedWorkOrders))
             <div style="margin-top: 6px;">
-                <strong>{{ __('billing.sections.work_orders_linked') }}:</strong>
+                <strong>{{ __('billing::billing.sections.work_orders_linked') }}:</strong>
                 {{ implode(', ', $linkedWorkOrders) }}
             </div>
         @elseif ($workOrderCode)
             <div style="margin-top: 6px;">
-                <strong>{{ __('billing.fields.work_order') }}:</strong>
+                <strong>{{ __('billing::billing.fields.work_order') }}:</strong>
                 {{ $workOrderCode }}
             </div>
         @endif
@@ -118,10 +118,10 @@
     <table class="items">
         <thead>
         <tr>
-            <th>{{ __('billing.fields.number') }}</th>
-            <th>{{ __('billing.fields.customer') }}</th>
-            <th>{{ __('billing.fields.work_orders') }}</th>
-            <th class="right">{{ __('billing.fields.total') }}</th>
+            <th>{{ __('billing::billing.fields.number') }}</th>
+            <th>{{ __('billing::billing.fields.customer') }}</th>
+            <th>{{ __('billing::billing.fields.work_orders') }}</th>
+            <th class="right">{{ __('billing::billing.fields.total') }}</th>
         </tr>
         </thead>
         <tbody>
@@ -136,17 +136,17 @@
 
     @if($invoice->notes)
         <div class="box">
-            <strong>{{ __('billing.fields.notes') }}:</strong><br>
+            <strong>{{ __('billing::billing.fields.notes') }}:</strong><br>
             {!! nl2br(e($invoice->notes)) !!}
         </div>
     @endif
 
     @if($invoice->electronic_invoice_sent_at)
         <div class="box muted">
-            {{ __('billing.fields.einvoice_sent_at') }}:
+            {{ __('billing::billing.fields.einvoice_sent_at') }}:
             {{ optional($invoice->electronic_invoice_sent_at)->format('d/m/Y H:i') ?: '-' }}
             @if($invoice->electronic_invoice_external_id)
-                — {{ __('billing.fields.einvoice_external_id') }}: {{ $invoice->electronic_invoice_external_id }}
+                — {{ __('billing::billing.fields.einvoice_external_id') }}: {{ $invoice->electronic_invoice_external_id }}
             @endif
         </div>
     @endif

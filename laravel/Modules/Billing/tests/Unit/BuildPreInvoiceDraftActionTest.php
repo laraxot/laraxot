@@ -7,7 +7,7 @@ use Modules\Billing\Datas\PreInvoiceLine;
 use Modules\Billing\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Billing\Tests\TestCase::class);
 
 it('sums line amounts into the draft total', function (): void {
     $action = new BuildPreInvoiceDraftAction();

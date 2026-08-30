@@ -25,7 +25,7 @@ final class LinesRelationManager extends RelationManager
 
     public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
-        return __('suppliers.supplier_invoice_lines');
+        return __('billing::suppliers.supplier_invoice_lines');
     }
 
     /**
@@ -63,19 +63,19 @@ final class LinesRelationManager extends RelationManager
     {
         return $schema->components([
             TextInput::make('description')
-                ->label(__('suppliers.fields.description'))
+                ->label(__('billing::suppliers.fields.description'))
                 ->required()
                 ->maxLength(255)
                 ->columnSpanFull(),
             TextInput::make('quantity')
-                ->label(__('suppliers.fields.quantity'))
+                ->label(__('billing::suppliers.fields.quantity'))
                 ->numeric()
                 ->minValue(0)
                 ->step(0.01)
                 ->default(1)
                 ->required(),
             TextInput::make('unit_price')
-                ->label(__('suppliers.fields.unit_price'))
+                ->label(__('billing::suppliers.fields.unit_price'))
                 ->numeric()
                 ->minValue(0)
                 ->step(0.01)
@@ -83,7 +83,7 @@ final class LinesRelationManager extends RelationManager
                 ->default(0)
                 ->required(),
             Select::make('delivery_note_line_id')
-                ->label(__('suppliers.fields.delivery_note_line'))
+                ->label(__('billing::suppliers.fields.delivery_note_line'))
                 ->options(fn (): array => $this->deliveryNoteLineOptions())
                 ->searchable()
                 ->preload()
@@ -96,26 +96,26 @@ final class LinesRelationManager extends RelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('description')
-                    ->label(__('suppliers.fields.description'))
+                    ->label(__('billing::suppliers.fields.description'))
                     ->wrap()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('quantity')
-                    ->label(__('suppliers.fields.quantity'))
+                    ->label(__('billing::suppliers.fields.quantity'))
                     ->numeric(decimalPlaces: 2)
                     ->sortable(),
                 Tables\Columns\TextColumn::make('unit_price')
-                    ->label(__('suppliers.fields.unit_price'))
+                    ->label(__('billing::suppliers.fields.unit_price'))
                     ->money('EUR')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('line_total')
-                    ->label(__('suppliers.fields.line_total'))
+                    ->label(__('billing::suppliers.fields.line_total'))
                     ->state(fn (SupplierInvoiceLine $record): float => round(
                         (float) $record->quantity * (float) $record->unit_price,
                         2,
                     ))
                     ->money('EUR'),
                 Tables\Columns\TextColumn::make('deliveryNoteLine.deliveryNote.number')
-                    ->label(__('suppliers.fields.delivery_note_line'))
+                    ->label(__('billing::suppliers.fields.delivery_note_line'))
                     ->badge()
                     ->placeholder('—')
                     ->toggleable(),

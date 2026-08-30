@@ -9,14 +9,13 @@ use Modules\Billing\Models\Supplier;
 use Modules\Billing\Models\SupplierInvoice;
 use Modules\Billing\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Billing\Tests\TestCase::class);
 
 /**
  * Le due viste vivono dentro modali Filament: senza un test che le renderizzi,
  * un errore di Blade si scoprirebbe solo davanti al cliente.
  */
 it('renders the pre-invoice modal with the undecided-extra warning', function (): void {
-    skip('XotBaseTestCase forza un translator ArrayLoader vuoto in setUp(): le stringhe lang reali del modulo non sono caricate in test, :amount non viene interpolato');
     $draft = new PreInvoiceDraft(
         lines: [
             new PreInvoiceLine('Manodopera intervento #1', 200.0, PreInvoiceLine::SOURCE_LABOR),
@@ -28,10 +27,10 @@ it('renders the pre-invoice modal with the undecided-extra warning', function ()
 
     $html = view('billing::filament.pre-invoice', ['draft' => $draft])->render();
 
-    expect($html)->toContain(__('billing.pre_invoice.undecided_title'))
+    expect($html)->toContain(e(__('billing::billing.pre_invoice.undecided_title')))
         ->and($html)->toContain('€ 45,00')
         ->and($html)->toContain('€ 290,00')
-        ->and($html)->toContain(__('billing.pre_invoice.sources.extra'));
+        ->and($html)->toContain(e(__('billing::billing.pre_invoice.sources.extra')));
 });
 
 it('renders the pre-invoice modal without the warning when every extra is decided', function (): void {
@@ -39,13 +38,12 @@ it('renders the pre-invoice modal without the warning when every extra is decide
 
     $html = view('billing::filament.pre-invoice', ['draft' => $draft])->render();
 
-    expect($html)->not->toContain(__('billing.pre_invoice.undecided_title'))
+    expect($html)->not->toContain(e(__('billing::billing.pre_invoice.undecided_title')))
         // Blade fa l'escape: l'apostrofo della stringa italiana diventa un'entita'.
-        ->and($html)->toContain(e(__('billing.pre_invoice.empty')));
+        ->and($html)->toContain(e(__('billing::billing.pre_invoice.empty')));
 });
 
 it('renders the reconciliation modal with each discrepancy explained', function (): void {
-    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabella suppliers migrata');
     /** @var Supplier $supplier */
     $supplier = Supplier::query()->create(['legal_name' => 'Idraulica Rossi', 'is_active' => true]);
 
@@ -72,15 +70,14 @@ it('renders the reconciliation modal with each discrepancy explained', function 
         ],
     ])->render();
 
-    expect($html)->toContain(__('suppliers.reconciliation.disputed_title'))
-        ->and($html)->toContain(__('suppliers.reconciliation.types.quantity_over'))
-        ->and($html)->toContain(__('suppliers.reconciliation.explanations.quantity_over'))
+    expect($html)->toContain(e(__('billing::suppliers.reconciliation.disputed_title')))
+        ->and($html)->toContain(e(__('billing::suppliers.reconciliation.types.quantity_over')))
+        ->and($html)->toContain(e(__('billing::suppliers.reconciliation.explanations.quantity_over')))
         ->and($html)->toContain('Raccordo')
         ->and($html)->toContain('€ 4,00');
 });
 
 it('renders the reconciliation modal as clean when the invoice matches', function (): void {
-    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabella suppliers migrata');
     /** @var Supplier $supplier */
     $supplier = Supplier::query()->create(['legal_name' => 'Idraulica Rossi', 'is_active' => true]);
 
@@ -97,6 +94,6 @@ it('renders the reconciliation modal as clean when the invoice matches', functio
         'discrepancies' => [],
     ])->render();
 
-    expect($html)->toContain(__('suppliers.reconciliation.clean_title'))
-        ->and($html)->toContain(__('suppliers.reconciliation.clean_body'));
+    expect($html)->toContain(e(__('billing::suppliers.reconciliation.clean_title')))
+        ->and($html)->toContain(e(__('billing::suppliers.reconciliation.clean_body')));
 });

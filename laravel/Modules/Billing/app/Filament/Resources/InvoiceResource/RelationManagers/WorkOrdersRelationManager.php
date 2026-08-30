@@ -6,28 +6,31 @@ namespace Modules\Billing\Filament\Resources\InvoiceResource\RelationManagers;
 
 use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
+use Filament\Forms\Components\Select;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Modules\Billing\Actions\LinkInvoiceToWorkOrderAction;
+use Modules\Billing\Models\Invoice;
 use Modules\Billing\Models\InvoiceWorkOrderLink;
 
 final class WorkOrdersRelationManager extends RelationManager
 {
     protected static string $relationship = 'workOrderLinks';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
-        return __('billing.sections.work_orders_linked');
+        return __('billing::billing.sections.work_orders_linked');
     }
 
     public function form(Schema $schema): Schema
     {
         return $schema->components([
-            \Filament\Forms\Components\Select::make('work_order_id')
-                ->label(__('billing.fields.work_order'))
+            Select::make('work_order_id')
+                ->label(__('billing::billing.fields.work_order'))
                 ->options(fn (): array => DB::table('work_orders')
                     ->orderByDesc('id')
                     ->limit(200)
@@ -49,7 +52,7 @@ final class WorkOrdersRelationManager extends RelationManager
             ->recordTitleAttribute('work_order_id')
             ->columns([
                 Tables\Columns\TextColumn::make('work_order_id')
-                    ->label(__('billing.fields.work_order'))
+                    ->label(__('billing::billing.fields.work_order'))
                     ->formatStateUsing(function ($state): string {
                         $record = DB::table('work_orders')->where('id', $state)->first(['code', 'title']);
 
@@ -62,8 +65,9 @@ final class WorkOrdersRelationManager extends RelationManager
                 CreateAction::make()
                     ->visible(fn (): bool => ! request()->is('customer/*'))
                     ->using(function (array $data): InvoiceWorkOrderLink {
-                        /** @var \Modules\Billing\Models\Invoice $invoice */
+                        /** @var Invoice $invoice */
                         $invoice = $this->getOwnerRecord();
+
                         return app(LinkInvoiceToWorkOrderAction::class)->execute(
                             invoice: $invoice,
                             workOrderId: (int) $data['work_order_id'],
@@ -76,4 +80,3 @@ final class WorkOrdersRelationManager extends RelationManager
             ]);
     }
 }
-

@@ -18,6 +18,9 @@ return new class() extends XotBaseMigration
             $table->string('number');
             $table->date('issued_on')->nullable();
             $table->decimal('total', 12, 2)->default(0);
+            $table->date('due_on')->nullable();
+            $table->date('paid_on')->nullable();
+            $table->decimal('paid_amount', 12, 2)->default(0);
             // pending = da conciliare, reconciled = tutto quadra,
             // disputed = ci sono differenze da contestare al fornitore.
             $table->string('status_code', 32)->default('pending')->index();
@@ -27,6 +30,18 @@ return new class() extends XotBaseMigration
         });
 
         $this->tableUpdate(function (Blueprint $table): void {
+            if (! $this->hasColumn('due_on')) {
+                $table->date('due_on')->nullable();
+            }
+
+            if (! $this->hasColumn('paid_on')) {
+                $table->date('paid_on')->nullable();
+            }
+
+            if (! $this->hasColumn('paid_amount')) {
+                $table->decimal('paid_amount', 12, 2)->default(0);
+            }
+
             $this->updateTimestamps(table: $table, hasSoftDeletes: true);
         });
     }

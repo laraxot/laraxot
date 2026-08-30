@@ -21,12 +21,12 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Billing\Filament\Resources\SupplierResource\Pages;
 use Modules\Billing\Models\Supplier;
-use Modules\Xot\Filament\Resources\XotBaseResource;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 
 /**
  * Anagrafica fornitori: la testa del ciclo passivo.
  */
-final class SupplierResource extends XotBaseResource
+final class SupplierResource extends GatedXotBaseResource
 {
     protected static ?string $model = Supplier::class;
 
@@ -66,17 +66,17 @@ final class SupplierResource extends XotBaseResource
 
     public static function getNavigationGroup(): string
     {
-        return __('suppliers.navigation');
+        return __('billing::suppliers.navigation');
     }
 
     public static function getModelLabel(): string
     {
-        return __('suppliers.supplier');
+        return __('billing::suppliers.supplier');
     }
 
     public static function getPluralModelLabel(): string
     {
-        return __('suppliers.suppliers');
+        return __('billing::suppliers.suppliers');
     }
 
     /**
@@ -89,25 +89,25 @@ final class SupplierResource extends XotBaseResource
                 ->columnSpanFull()
                 ->components([
                     TextInput::make('legal_name')
-                        ->label(__('suppliers.fields.legal_name'))
+                        ->label(__('billing::suppliers.fields.legal_name'))
                         ->required()
                         ->maxLength(255)
                         ->columnSpanFull(),
 
                     Grid::make(2)->components([
                         TextInput::make('vat_number')
-                            ->label(__('suppliers.fields.vat_number'))
+                            ->label(__('billing::suppliers.fields.vat_number'))
                             ->maxLength(255),
                         TextInput::make('phone')
-                            ->label(__('suppliers.fields.phone'))
+                            ->label(__('billing::suppliers.fields.phone'))
                             ->tel()
                             ->maxLength(255),
                         TextInput::make('email')
-                            ->label(__('suppliers.fields.email'))
+                            ->label(__('billing::suppliers.fields.email'))
                             ->email()
                             ->maxLength(255),
                         Toggle::make('is_active')
-                            ->label(__('suppliers.fields.is_active'))
+                            ->label(__('billing::suppliers.fields.is_active'))
                             ->default(true),
                     ]),
                 ])
@@ -120,38 +120,38 @@ final class SupplierResource extends XotBaseResource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('legal_name')
-                    ->label(__('suppliers.fields.legal_name'))
+                    ->label(__('billing::suppliers.fields.legal_name'))
                     ->weight(FontWeight::Bold)
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('vat_number')
-                    ->label(__('suppliers.fields.vat_number'))
+                    ->label(__('billing::suppliers.fields.vat_number'))
                     ->searchable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('email')
-                    ->label(__('suppliers.fields.email'))
+                    ->label(__('billing::suppliers.fields.email'))
                     ->searchable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('phone')
-                    ->label(__('suppliers.fields.phone'))
+                    ->label(__('billing::suppliers.fields.phone'))
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('delivery_notes_count')
-                    ->label(__('suppliers.fields.delivery_notes_count'))
+                    ->label(__('billing::suppliers.fields.delivery_notes_count'))
                     ->counts('deliveryNotes')
                     ->badge(),
                 Tables\Columns\TextColumn::make('invoices_count')
-                    ->label(__('suppliers.fields.invoices_count'))
+                    ->label(__('billing::suppliers.fields.invoices_count'))
                     ->counts('invoices')
                     ->badge(),
                 Tables\Columns\IconColumn::make('is_active')
-                    ->label(__('suppliers.fields.is_active'))
+                    ->label(__('billing::suppliers.fields.is_active'))
                     ->boolean()
                     ->sortable(),
             ])
             ->defaultSort('legal_name')
             ->filters([
                 TernaryFilter::make('is_active')
-                    ->label(__('suppliers.fields.is_active')),
+                    ->label(__('billing::suppliers.fields.is_active')),
             ])
             ->actions([
                 ViewAction::make(),

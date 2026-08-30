@@ -10,10 +10,9 @@ use Modules\Billing\Models\Invoice;
 use Modules\Billing\Tests\TestCase;
 use Modules\Platform\Models\PlatformSetting;
 
-uses(TestCase::class);
+uses(\Modules\Billing\Tests\TestCase::class);
 
 it('sends electronic invoice with provider settings and stores tracking data', function (): void {
-    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabelle gestionale-commesse migrate');
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',
         'email' => 'amministrazione@acme.test',
@@ -72,7 +71,6 @@ it('sends electronic invoice with provider settings and stores tracking data', f
 });
 
 it('fails sending electronic invoice when api key is missing', function (): void {
-    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabelle gestionale-commesse migrate');
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'No Api Key S.r.l.',
         'is_active' => 1,
@@ -98,7 +96,6 @@ it('fails sending electronic invoice when api key is missing', function (): void
 });
 
 it('stores last error when provider responds with an error', function (): void {
-    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabelle gestionale-commesse migrate');
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Provider Error S.p.A.',
         'is_active' => 1,
@@ -133,7 +130,6 @@ it('stores last error when provider responds with an error', function (): void {
 });
 
 it('fails sending electronic invoice when provider is disabled', function (): void {
-    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabelle gestionale-commesse migrate');
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Provider Disabled S.r.l.',
         'is_active' => 1,
@@ -158,7 +154,6 @@ it('fails sending electronic invoice when provider is disabled', function (): vo
 });
 
 it('fails sending electronic invoice when endpoint is missing', function (): void {
-    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabelle gestionale-commesse migrate');
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'No Endpoint S.r.l.',
         'is_active' => 1,
@@ -185,7 +180,6 @@ it('fails sending electronic invoice when endpoint is missing', function (): voi
 });
 
 it('extracts external id from data.id and normalizes timeout to default', function (): void {
-    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabelle gestionale-commesse migrate');
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'ExternalId DataId S.r.l.',
         'is_active' => 1,
@@ -218,7 +212,6 @@ it('extracts external id from data.id and normalizes timeout to default', functi
 });
 
 it('stores http status error message when response body is empty', function (): void {
-    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabelle gestionale-commesse migrate');
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Empty Body S.r.l.',
         'is_active' => 1,
@@ -252,7 +245,6 @@ it('stores http status error message when response body is empty', function (): 
 });
 
 it('stores provider response body when error json is missing', function (): void {
-    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabelle gestionale-commesse migrate');
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Plain Body S.r.l.',
         'is_active' => 1,

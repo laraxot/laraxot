@@ -26,7 +26,7 @@ final class CreateWorkOrderFromQuotationAction
     use QueueableAction;
 
     /**
-     * @param  array{title?: string, scheduled_at?: mixed, delivery_due_at?: mixed, status_code?: string}  $overrides
+     * @param  array{title?: string, scheduled_at?: mixed, delivery_due_at?: mixed, status_code?: string|null}  $overrides
      */
     public function execute(Quotation $quotation, array $overrides = []): WorkOrder
     {
@@ -78,7 +78,7 @@ final class CreateWorkOrderFromQuotationAction
     }
 
     /**
-     * @param  array{title?: string, scheduled_at?: mixed, delivery_due_at?: mixed, status_code?: string}  $overrides
+     * @param  array{title?: string, scheduled_at?: mixed, delivery_due_at?: mixed, status_code?: string|null}  $overrides
      */
     private function title(Quotation $quotation, array $overrides): string
     {
@@ -100,7 +100,7 @@ final class CreateWorkOrderFromQuotationAction
     }
 
     /**
-     * @param  array{title?: string, scheduled_at?: mixed, delivery_due_at?: mixed, status_code?: string}  $overrides
+     * @param  array{title?: string, scheduled_at?: mixed, delivery_due_at?: mixed, status_code?: string|null}  $overrides
      */
     private function deliveryDueAt(Quotation $quotation, array $overrides): ?CarbonImmutable
     {

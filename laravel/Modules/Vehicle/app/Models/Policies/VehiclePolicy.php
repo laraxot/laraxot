@@ -11,36 +11,36 @@ class VehiclePolicy extends VehicleBasePolicy
 {
     public function viewAny(UserContract $user): bool
     {
-        return $user->hasPermissionTo('vehicle.viewAny');
+        return $this->allows($user, 'vehicle.viewAny');
     }
 
     public function view(UserContract $user, Vehicle $_vehicle): bool
     {
-        return $user->hasPermissionTo('vehicle.view');
+        return $this->allows($user, 'vehicle.view');
     }
 
     public function create(UserContract $user): bool
     {
-        return $user->hasPermissionTo('vehicle.create');
+        return $this->allows($user, 'vehicle.create');
     }
 
     public function update(UserContract $user, Vehicle $_vehicle): bool
     {
-        return $user->hasPermissionTo('vehicle.update');
+        return $this->allows($user, 'vehicle.update');
     }
 
     public function delete(UserContract $user, Vehicle $_vehicle): bool
     {
-        return $user->hasPermissionTo('vehicle.delete');
+        return $this->allows($user, 'vehicle.delete');
     }
 
     public function restore(UserContract $user, Vehicle $_vehicle): bool
     {
-        return $user->hasPermissionTo('vehicle.restore');
+        return $this->allows($user, 'vehicle.restore');
     }
 
     public function forceDelete(UserContract $user, Vehicle $_vehicle): bool
     {
-        return $user->hasPermissionTo('vehicle.forceDelete');
+        return $this->allows($user, 'vehicle.forceDelete');
     }
 }

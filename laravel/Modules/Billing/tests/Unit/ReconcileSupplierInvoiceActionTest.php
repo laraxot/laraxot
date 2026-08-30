@@ -8,7 +8,7 @@ use Modules\Billing\Datas\SupplierLine;
 use Modules\Billing\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Billing\Tests\TestCase::class);
 
 it('finds no discrepancy when invoice matches delivery notes', function (): void {
     $action = new ReconcileSupplierInvoiceAction();

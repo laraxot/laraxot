@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Modules\Billing\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Billing\Tests\TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Modules\Billing\Actions\BuildWorkOrderPreInvoiceAction;
@@ -12,6 +12,7 @@ use Modules\Billing\Datas\PreInvoiceLine;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionMaterialLine;
 use Modules\Quotation\Models\Quotation;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\WorkOrder\Models\WorkOrder;
 
 /**
@@ -26,13 +27,7 @@ function preInvoiceScenario(float $labor = 0, float $callout = 0): array
         'updated_at' => now(),
     ]);
 
-    $userId = (int) DB::table('users')->insertGetId([
-        'name' => 'Tecnico',
-        'email' => 'tec'.uniqid().'@test.local',
-        'password' => bcrypt('secret'),
-        'created_at' => now(),
-        'updated_at' => now(),
-    ]);
+    $userId = UserFactory::new()->createOne(['name' => 'Tecnico', 'email' => 'tec'.uniqid().'@test.local'])->id;
 
     $workOrder = WorkOrder::query()->create([
         'customer_id' => $customerId,

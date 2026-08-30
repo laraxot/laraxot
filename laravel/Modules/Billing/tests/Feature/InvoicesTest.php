@@ -12,10 +12,9 @@ use Spatie\Permission\Models\Role;
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\get;
 
-uses(TestCase::class);
+uses(\Modules\Billing\Tests\TestCase::class);
 
 it('creates and lists invoices', function (): void {
-    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabelle gestionale-commesse migrate');
     // Arrange
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',
@@ -42,7 +41,6 @@ it('creates and lists invoices', function (): void {
 });
 
 it('shows create invoice action in admin list when user can create invoices', function (): void {
-    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabelle gestionale-commesse migrate');
     $adminRole = Role::findOrCreate('admin');
     $adminRole->givePermissionTo([
         Permission::findOrCreate('ViewAny:Invoice'),

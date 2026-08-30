@@ -24,14 +24,14 @@ use Modules\Billing\Filament\Resources\DeliveryNoteResource\Pages;
 use Modules\Billing\Filament\Resources\DeliveryNoteResource\RelationManagers\LinesRelationManager;
 use Modules\Billing\Models\DeliveryNote;
 use Modules\Billing\Models\Supplier;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\WorkOrder\Models\WorkOrder;
-use Modules\Xot\Filament\Resources\XotBaseResource;
 
 /**
  * DDT ricevuti: quello che il fornitore ha davvero consegnato, cioe' il metro
  * su cui si misura quello che poi fattura.
  */
-final class DeliveryNoteResource extends XotBaseResource
+final class DeliveryNoteResource extends GatedXotBaseResource
 {
     protected static ?string $model = DeliveryNote::class;
 
@@ -44,17 +44,17 @@ final class DeliveryNoteResource extends XotBaseResource
 
     public static function getNavigationGroup(): string
     {
-        return __('suppliers.navigation');
+        return __('billing::suppliers.navigation');
     }
 
     public static function getModelLabel(): string
     {
-        return __('suppliers.delivery_note');
+        return __('billing::suppliers.delivery_note');
     }
 
     public static function getPluralModelLabel(): string
     {
-        return __('suppliers.delivery_notes');
+        return __('billing::suppliers.delivery_notes');
     }
 
     /**
@@ -80,20 +80,20 @@ final class DeliveryNoteResource extends XotBaseResource
                 ->components([
                     Grid::make(2)->components([
                         Select::make('supplier_id')
-                            ->label(__('suppliers.fields.supplier'))
+                            ->label(__('billing::suppliers.fields.supplier'))
                             ->options(fn (): array => self::supplierOptions())
                             ->searchable()
                             ->preload()
                             ->required(),
                         TextInput::make('number')
-                            ->label(__('suppliers.fields.number'))
+                            ->label(__('billing::suppliers.fields.number'))
                             ->required()
                             ->maxLength(255),
                         DatePicker::make('received_on')
-                            ->label(__('suppliers.fields.received_on'))
+                            ->label(__('billing::suppliers.fields.received_on'))
                             ->displayFormat('d/m/Y'),
                         Select::make('work_order_id')
-                            ->label(__('suppliers.fields.work_order'))
+                            ->label(__('billing::suppliers.fields.work_order'))
                             ->options(fn (): array => WorkOrder::query()
                                 ->orderByDesc('id')
                                 ->limit(200)
@@ -107,7 +107,7 @@ final class DeliveryNoteResource extends XotBaseResource
                     ]),
 
                     Textarea::make('notes')
-                        ->label(__('suppliers.fields.notes'))
+                        ->label(__('billing::suppliers.fields.notes'))
                         ->columnSpanFull(),
                 ])
                 ->columns(2),
@@ -119,31 +119,31 @@ final class DeliveryNoteResource extends XotBaseResource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('number')
-                    ->label(__('suppliers.fields.number'))
+                    ->label(__('billing::suppliers.fields.number'))
                     ->weight(FontWeight::Bold)
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('supplier.legal_name')
-                    ->label(__('suppliers.fields.supplier'))
+                    ->label(__('billing::suppliers.fields.supplier'))
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('received_on')
-                    ->label(__('suppliers.fields.received_on'))
+                    ->label(__('billing::suppliers.fields.received_on'))
                     ->date('d/m/Y')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('lines_count')
-                    ->label(__('suppliers.fields.lines_count'))
+                    ->label(__('billing::suppliers.fields.lines_count'))
                     ->counts('lines')
                     ->badge(),
                 Tables\Columns\TextColumn::make('notes')
-                    ->label(__('suppliers.fields.notes'))
+                    ->label(__('billing::suppliers.fields.notes'))
                     ->limit(50)
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->defaultSort('received_on', 'desc')
             ->filters([
                 SelectFilter::make('supplier_id')
-                    ->label(__('suppliers.fields.supplier'))
+                    ->label(__('billing::suppliers.fields.supplier'))
                     ->options(fn (): array => self::supplierOptions())
                     ->searchable(),
             ])

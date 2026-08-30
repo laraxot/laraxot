@@ -20,7 +20,7 @@ final class ViewInvoice extends ViewRecord
     {
         return [
             Action::make('downloadPdf')
-                ->label(__('billing.actions.download_pdf'))
+                ->label(__('billing::billing.actions.download_pdf'))
                 ->icon('heroicon-o-arrow-down-tray')
                 ->action(function () {
                     /** @var Invoice $invoice */
@@ -34,7 +34,7 @@ final class ViewInvoice extends ViewRecord
                     );
                 }),
             Action::make('sendElectronicInvoice')
-                ->label(__('billing.actions.send_einvoice'))
+                ->label(__('billing::billing.actions.send_einvoice'))
                 ->icon('heroicon-o-paper-airplane')
                 ->requiresConfirmation()
                 ->visible(fn (): bool => request()->is('admin/*'))
@@ -51,9 +51,9 @@ final class ViewInvoice extends ViewRecord
 
                         Notification::make()
                             ->success()
-                            ->title(__('billing.notifications.einvoice_sent_title'))
+                            ->title(__('billing::billing.notifications.einvoice_sent_title'))
                             ->body(
-                                __('billing.notifications.einvoice_sent_body', [
+                                __('billing::billing.notifications.einvoice_sent_body', [
                                     'provider' => (string) ($result['provider'] ?? '-'),
                                     'external_id' => $externalId ?? '-',
                                 ]),
@@ -62,7 +62,7 @@ final class ViewInvoice extends ViewRecord
                     } catch (\Throwable $exception) {
                         Notification::make()
                             ->danger()
-                            ->title(__('billing.notifications.einvoice_failed_title'))
+                            ->title(__('billing::billing.notifications.einvoice_failed_title'))
                             ->body($exception->getMessage())
                             ->send();
                     }
@@ -70,4 +70,3 @@ final class ViewInvoice extends ViewRecord
         ];
     }
 }
-

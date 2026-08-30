@@ -38,7 +38,13 @@ final class SupplierInvoice extends XotBaseModel
     /** @return array<string, string> */
     protected function casts(): array
     {
-        return ['issued_on' => 'date', 'total' => 'decimal:2'];
+        return [
+            'issued_on' => 'date',
+            'due_on' => 'date',
+            'paid_on' => 'date',
+            'total' => 'decimal:2',
+            'paid_amount' => 'decimal:2',
+        ];
     }
 
     /** @return BelongsTo<Supplier, $this> */

@@ -8,10 +8,9 @@ use Modules\Billing\Actions\UnlinkInvoiceFromWorkOrderAction;
 use Modules\Billing\Models\Invoice;
 use Modules\Billing\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Billing\Tests\TestCase::class);
 
 it('links and unlinks invoices to work orders idempotently', function (): void {
-    skip('DEBITO CRITICO #12 (gestionale-commesse-technical-debt-resolution-guide.md): phpunit.xml forza sqlite :memory: senza tabelle gestionale-commesse migrate');
     // Arrange
     $customerId = DB::table('customers')->insertGetId([
         'legal_name' => 'Acme S.p.A.',

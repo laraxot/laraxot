@@ -14,6 +14,13 @@ abstract class TestCase extends XotBaseTestCase
 {
     use DatabaseTransactions;
 
+    protected function setUp(): void
+    {
+        $this->prepareSharedFixcitySqliteForTesting();
+
+        parent::setUp();
+    }
+
     /**
      * @return array<int, class-string<ServiceProvider>>
      */

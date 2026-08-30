@@ -27,14 +27,14 @@ use Modules\Billing\Datas\ReconciliationDiscrepancy;
 use Modules\Billing\Filament\Resources\SupplierInvoiceResource\Pages;
 use Modules\Billing\Filament\Resources\SupplierInvoiceResource\RelationManagers\LinesRelationManager;
 use Modules\Billing\Models\SupplierInvoice;
-use Modules\Xot\Filament\Resources\XotBaseResource;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 
 /**
  * Fatture fornitore, con la conciliazione contro i DDT: e' l'unico momento in
  * cui quello che il fornitore fattura in piu' del consegnato e' ancora
  * contestabile.
  */
-final class SupplierInvoiceResource extends XotBaseResource
+final class SupplierInvoiceResource extends GatedXotBaseResource
 {
     protected static ?string $model = SupplierInvoice::class;
 
@@ -47,17 +47,17 @@ final class SupplierInvoiceResource extends XotBaseResource
 
     public static function getNavigationGroup(): string
     {
-        return __('suppliers.navigation');
+        return __('billing::suppliers.navigation');
     }
 
     public static function getModelLabel(): string
     {
-        return __('suppliers.supplier_invoice');
+        return __('billing::suppliers.supplier_invoice');
     }
 
     public static function getPluralModelLabel(): string
     {
-        return __('suppliers.supplier_invoices');
+        return __('billing::suppliers.supplier_invoices');
     }
 
     /**
@@ -66,9 +66,9 @@ final class SupplierInvoiceResource extends XotBaseResource
     public static function statusOptions(): array
     {
         return [
-            'pending' => __('suppliers.statuses.pending'),
-            'reconciled' => __('suppliers.statuses.reconciled'),
-            'disputed' => __('suppliers.statuses.disputed'),
+            'pending' => __('billing::suppliers.statuses.pending'),
+            'reconciled' => __('billing::suppliers.statuses.reconciled'),
+            'disputed' => __('billing::suppliers.statuses.disputed'),
         ];
     }
 
@@ -115,12 +115,12 @@ final class SupplierInvoiceResource extends XotBaseResource
     public static function reconcileAction(): Action
     {
         return Action::make('reconcileWithDeliveryNotes')
-            ->label(__('suppliers.reconciliation.action'))
+            ->label(__('billing::suppliers.reconciliation.action'))
             ->icon('heroicon-o-scale')
             ->color('warning')
-            ->modalHeading(__('suppliers.reconciliation.title'))
+            ->modalHeading(__('billing::suppliers.reconciliation.title'))
             ->modalSubmitAction(false)
-            ->modalCancelActionLabel(__('suppliers.reconciliation.submit'))
+            ->modalCancelActionLabel(__('billing::suppliers.reconciliation.submit'))
             ->modalContent(function (SupplierInvoice $record): View {
                 $discrepancies = self::reconcile($record);
 
@@ -142,34 +142,34 @@ final class SupplierInvoiceResource extends XotBaseResource
                 ->components([
                     Grid::make(2)->components([
                         Select::make('supplier_id')
-                            ->label(__('suppliers.fields.supplier'))
+                            ->label(__('billing::suppliers.fields.supplier'))
                             ->options(fn (): array => DeliveryNoteResource::supplierOptions())
                             ->searchable()
                             ->preload()
                             ->required(),
                         TextInput::make('number')
-                            ->label(__('suppliers.fields.number'))
+                            ->label(__('billing::suppliers.fields.number'))
                             ->required()
                             ->maxLength(255),
                         DatePicker::make('issued_on')
-                            ->label(__('suppliers.fields.issued_on'))
+                            ->label(__('billing::suppliers.fields.issued_on'))
                             ->displayFormat('d/m/Y'),
                         TextInput::make('total')
-                            ->label(__('suppliers.fields.total'))
+                            ->label(__('billing::suppliers.fields.total'))
                             ->numeric()
                             ->minValue(0)
                             ->step(0.01)
                             ->prefix('€')
                             ->default(0),
                         Select::make('status_code')
-                            ->label(__('suppliers.fields.status'))
+                            ->label(__('billing::suppliers.fields.status'))
                             ->options(self::statusOptions())
                             ->default('pending')
                             ->required(),
                     ]),
 
                     Textarea::make('notes')
-                        ->label(__('suppliers.fields.notes'))
+                        ->label(__('billing::suppliers.fields.notes'))
                         ->columnSpanFull(),
                 ])
                 ->columns(2),
@@ -181,40 +181,40 @@ final class SupplierInvoiceResource extends XotBaseResource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('number')
-                    ->label(__('suppliers.fields.number'))
+                    ->label(__('billing::suppliers.fields.number'))
                     ->weight(FontWeight::Bold)
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('supplier.legal_name')
-                    ->label(__('suppliers.fields.supplier'))
+                    ->label(__('billing::suppliers.fields.supplier'))
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('issued_on')
-                    ->label(__('suppliers.fields.issued_on'))
+                    ->label(__('billing::suppliers.fields.issued_on'))
                     ->date('d/m/Y')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('total')
-                    ->label(__('suppliers.fields.total'))
+                    ->label(__('billing::suppliers.fields.total'))
                     ->money('EUR')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('status_code')
-                    ->label(__('suppliers.fields.status'))
+                    ->label(__('billing::suppliers.fields.status'))
                     ->badge()
                     ->color(fn (string $state): string => self::statusColor($state))
                     ->formatStateUsing(fn (string $state): string => __("suppliers.statuses.{$state}"))
                     ->sortable(),
                 Tables\Columns\TextColumn::make('lines_count')
-                    ->label(__('suppliers.fields.lines_count'))
+                    ->label(__('billing::suppliers.fields.lines_count'))
                     ->counts('lines')
                     ->badge(),
             ])
             ->defaultSort('issued_on', 'desc')
             ->filters([
                 SelectFilter::make('status_code')
-                    ->label(__('suppliers.fields.status'))
+                    ->label(__('billing::suppliers.fields.status'))
                     ->options(self::statusOptions()),
                 SelectFilter::make('supplier_id')
-                    ->label(__('suppliers.fields.supplier'))
+                    ->label(__('billing::suppliers.fields.supplier'))
                     ->options(fn (): array => DeliveryNoteResource::supplierOptions())
                     ->searchable(),
             ])

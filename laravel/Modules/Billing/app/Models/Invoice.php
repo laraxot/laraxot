@@ -41,7 +41,10 @@ final class Invoice extends XotBaseModel
     {
         return [
             'issued_on' => 'date',
+            'due_on' => 'date',
+            'paid_on' => 'date',
             'total' => 'decimal:2',
+            'paid_amount' => 'decimal:2',
             'electronic_invoice_sent_at' => 'datetime',
             'deleted_at' => 'datetime',
         ];

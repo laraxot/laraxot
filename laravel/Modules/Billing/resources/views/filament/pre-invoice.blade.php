@@ -21,26 +21,26 @@
         <div class="rounded-lg bg-danger-50 p-4 ring-1 ring-danger-600/20 dark:bg-danger-500/10 dark:ring-danger-400/30">
             <p class="flex items-center gap-2 font-semibold text-danger-800 dark:text-danger-200">
                 <x-filament::icon icon="heroicon-o-exclamation-triangle" class="h-5 w-5" />
-                {{ __('billing.pre_invoice.undecided_title') }}
+                {{ __('billing::billing.pre_invoice.undecided_title') }}
             </p>
             <p class="mt-1 text-sm text-danger-700 dark:text-danger-300">
-                {{ __('billing.pre_invoice.undecided_body', ['amount' => $money($draft->pendingExtraTotal)]) }}
+                {{ __('billing::billing.pre_invoice.undecided_body', ['amount' => $money($draft->pendingExtraTotal)]) }}
             </p>
         </div>
     @endif
 
     @if (count($draft->lines) === 0)
         <p class="text-sm text-gray-500 dark:text-gray-400">
-            {{ __('billing.pre_invoice.empty') }}
+            {{ __('billing::billing.pre_invoice.empty') }}
         </p>
     @else
         <div class="overflow-x-auto">
             <table class="w-full min-w-[32rem] text-sm">
                 <thead class="text-left text-xs uppercase text-gray-500 dark:text-gray-400">
                     <tr class="border-b border-gray-200 dark:border-white/10">
-                        <th class="py-2 pr-3">{{ __('billing.pre_invoice.source') }}</th>
-                        <th class="py-2 pr-3">{{ __('billing.pre_invoice.description') }}</th>
-                        <th class="py-2 text-right">{{ __('billing.pre_invoice.amount') }}</th>
+                        <th class="py-2 pr-3">{{ __('billing::billing.pre_invoice.source') }}</th>
+                        <th class="py-2 pr-3">{{ __('billing::billing.pre_invoice.description') }}</th>
+                        <th class="py-2 text-right">{{ __('billing::billing.pre_invoice.amount') }}</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100 dark:divide-white/5">
@@ -51,7 +51,7 @@
                                     'inline-flex whitespace-nowrap rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset',
                                     $sourceClasses[$line->sourceCode] ?? $sourceClasses['material'],
                                 ])>
-                                    {{ __('billing.pre_invoice.sources.' . $line->sourceCode) }}
+                                    {{ __('billing::billing.pre_invoice.sources.' . $line->sourceCode) }}
                                 </span>
                             </td>
                             <td class="py-2 pr-3 align-top text-gray-900 dark:text-white">
@@ -66,7 +66,7 @@
                 <tfoot>
                     <tr class="border-t-2 border-gray-300 dark:border-white/20">
                         <td class="py-3 pr-3 font-semibold text-gray-900 dark:text-white" colspan="2">
-                            {{ __('billing.pre_invoice.total') }}
+                            {{ __('billing::billing.pre_invoice.total') }}
                         </td>
                         <td class="py-3 text-right text-base font-bold tabular-nums text-gray-900 dark:text-white">
                             {{ $money($draft->total) }}
