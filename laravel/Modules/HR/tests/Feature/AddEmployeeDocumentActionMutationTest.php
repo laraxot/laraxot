@@ -11,7 +11,6 @@ use Modules\HR\Tests\TestCase;
 uses(\Modules\HR\Tests\TestCase::class);
 
 it('defaults media kind to document when kind is not provided', function (): void {
-    hrSkipTest('D1: Document Media $table=media — laravel/docs/debt-document-media-conflict.md');
 
     Storage::fake('public');
     Storage::disk('public')->put('media/employees/documents/doc.txt', 'doc');
@@ -41,7 +40,6 @@ it('defaults media kind to document when kind is not provided', function (): voi
 });
 
 it('persists the employee document kind when provided', function (): void {
-    hrSkipTest('D1: Document Media $table=media — laravel/docs/debt-document-media-conflict.md');
 
     Storage::fake('public');
     Storage::disk('public')->put('media/employees/documents/contract.txt', 'contract');

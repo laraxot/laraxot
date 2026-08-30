@@ -14,7 +14,6 @@ use Modules\HR\Tests\TestCase;
 uses(\Modules\HR\Tests\TestCase::class);
 
 it('creates and approves an absence request', function (): void {
-    hrSkipTest('D6: User factory + Spatie roles su fixture sqlite — laravel/docs/debt-pest-field-service-coverage.md');
 
     $operator = hrUserWithRole('operator');
     $admin = hrUserWithRole('admin');
@@ -44,7 +43,6 @@ it('creates and approves an absence request', function (): void {
 });
 
 it('rejects an absence request', function (): void {
-    hrSkipTest('D6: User factory + Spatie roles su fixture sqlite — laravel/docs/debt-pest-field-service-coverage.md');
 
     $operator = hrUserWithRole('operator');
     $admin = hrUserWithRole('admin');

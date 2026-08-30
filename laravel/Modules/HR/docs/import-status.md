@@ -67,3 +67,16 @@ Sostanza del delta sorgente: solo gating navigazione —
 `AbsenceRequestResource` ed `EmployeeResource` → `GatedXotBaseResource`
 (il resto era riallineamento Pint). Suite: 3 pass / 5 skip (gli skip sono
 guard-clause su tabelle non presenti nella fixture condivisa).
+
+## Sblocco test 2026-08-30
+
+I 5 test marcati come debito passano tutti senza modifiche al codice: i due
+impedimenti citati erano già stati rimossi altrove.
+
+- **D6** (User factory + ruoli Spatie su fixture sqlite): risolto dai cicli
+  WorkOrder/Billing — `UserFactory::new()->createOne()` e `Role::findOrCreate()`
+  funzionano sulla fixture condivisa.
+- **D1** (conflitto `$table = 'media'` del modulo Document): non si manifesta più.
+
+Da 3 verdi + 5 skip a **8 verdi**. Prima di dare per buono uno skip storico conviene
+sempre rilanciarlo: i debiti si chiudono anche di sponda.

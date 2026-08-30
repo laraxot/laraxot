@@ -13,7 +13,6 @@ use Modules\HR\Tests\TestCase;
 uses(\Modules\HR\Tests\TestCase::class);
 
 it('adds employee documents, medical visits, and trainings with optional attachments', function (): void {
-    hrSkipTest('D1: Document Media $table=media — laravel/docs/debt-document-media-conflict.md');
 
     Storage::fake('public');
     Storage::disk('public')->put('media/employees/documents/doc.txt', 'doc');
