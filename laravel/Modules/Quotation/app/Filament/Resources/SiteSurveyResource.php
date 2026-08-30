@@ -21,17 +21,17 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Quotation\Filament\Resources\SiteSurveyResource\Pages;
 use Modules\Quotation\Filament\Resources\SiteSurveyResource\RelationManagers\AttachmentsRelationManager;
 use Modules\Quotation\Models\Quotation;
 use Modules\Quotation\Models\SiteSurvey;
 use Modules\WorkOrder\Models\WorkOrder;
-use Modules\Xot\Filament\Resources\XotBaseResource;
 
 /**
  * Sopralluoghi: il rilievo in loco da cui nasce il preventivo.
  */
-final class SiteSurveyResource extends XotBaseResource
+final class SiteSurveyResource extends GatedXotBaseResource
 {
     protected static ?string $model = SiteSurvey::class;
 

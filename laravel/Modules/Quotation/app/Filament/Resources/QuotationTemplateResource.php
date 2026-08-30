@@ -17,12 +17,12 @@ use Filament\Schemas\Components\Section;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Auth;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Quotation\Filament\Resources\QuotationTemplateResource\Pages;
 use Modules\Quotation\Filament\Resources\QuotationTemplateResource\RelationManagers\ItemsRelationManager;
 use Modules\Quotation\Models\QuotationTemplate;
-use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class QuotationTemplateResource extends XotBaseResource
+final class QuotationTemplateResource extends GatedXotBaseResource
 {
     use HasAccountFeatureVisibility;
 

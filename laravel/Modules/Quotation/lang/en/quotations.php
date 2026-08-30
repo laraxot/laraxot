@@ -11,6 +11,13 @@ return [
     'quotation_items' => 'Quotation items',
 
     'fields' => [
+        'project' => 'Project / brand',
+        'project_hint' => 'Groups quotations and margins by brand or customer project.',
+        'cost_total' => 'Total cost',
+        'cost_total_hint' => 'Internal cost of the job: without it the margin cannot be worked out.',
+        'delivery_at' => 'Expected delivery',
+        'lead_time_days' => 'Lead time (days)',
+        'lead_time_days_hint' => 'Used to propose the job order delivery date when no date is set.',
         'code' => 'Code',
         'confirmed_at' => 'Confirmed at',
         'customer' => 'Customer',
@@ -125,5 +132,9 @@ return [
             'boiler_power_kw' => 'Boiler power',
             'thermostat_present' => 'Thermostat',
         ],
+    ],
+    'margin' => [
+        'label' => 'Margin',
+        'unknown' => 'Cost not set',
     ],
 ];

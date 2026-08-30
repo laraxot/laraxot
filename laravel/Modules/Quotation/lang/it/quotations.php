@@ -11,6 +11,13 @@ return [
     'quotation_items' => 'Righe preventivo',
 
     'fields' => [
+        'project' => 'Progetto / brand',
+        'project_hint' => 'Serve a raggruppare preventivi e margini per brand o commessa cliente.',
+        'cost_total' => 'Costo totale',
+        'cost_total_hint' => 'Costo interno del lavoro: senza questo il margine non è calcolabile.',
+        'delivery_at' => 'Consegna prevista',
+        'lead_time_days' => 'Tempi di consegna (giorni)',
+        'lead_time_days_hint' => 'Usato per proporre la data di consegna della commessa se non fissi una data.',
         'code' => 'Codice',
         'confirmed_at' => 'Confermato il',
         'customer' => 'Cliente',
@@ -125,5 +132,9 @@ return [
             'boiler_power_kw' => 'Potenza caldaia',
             'thermostat_present' => 'Termostato',
         ],
+    ],
+    'margin' => [
+        'label' => 'Margine',
+        'unknown' => 'Costo non indicato',
     ],
 ];

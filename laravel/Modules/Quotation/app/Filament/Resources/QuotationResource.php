@@ -12,6 +12,7 @@ use Filament\Actions\ForceDeleteBulkAction;
 use Filament\Actions\RestoreBulkAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -24,15 +25,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Modules\Customer\Models\Customer;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Quotation\Filament\Resources\QuotationResource\Pages;
 use Modules\Quotation\Filament\Resources\QuotationResource\RelationManagers\AttachmentsRelationManager;
 use Modules\Quotation\Filament\Resources\QuotationResource\RelationManagers\ItemsRelationManager;
 use Modules\Quotation\Models\Quotation;
-use Modules\Xot\Filament\Resources\XotBaseResource;
 
 use function Safe\json_encode;
 
-final class QuotationResource extends XotBaseResource
+final class QuotationResource extends GatedXotBaseResource
 {
     use HasAccountFeatureVisibility;
 
@@ -119,6 +120,11 @@ final class QuotationResource extends XotBaseResource
                             ->default('draft'),
                     ]),
 
+                    TextInput::make('project')
+                        ->label(__('quotations.fields.project'))
+                        ->helperText(__('quotations.fields.project_hint'))
+                        ->maxLength(255),
+
                     Select::make('customer_id')
                         ->label(__('quotations.fields.customer'))
                         ->options(fn (): array => DB::table('customers')->orderBy('legal_name')->pluck('legal_name', 'id')->all())
@@ -178,6 +184,15 @@ final class QuotationResource extends XotBaseResource
                         DateTimePicker::make('confirmed_at')->label(__('quotations.fields.confirmed_at')),
                     ]),
 
+                    Grid::make(2)->components([
+                        DateTimePicker::make('delivery_at')->label(__('quotations.fields.delivery_at')),
+                        TextInput::make('lead_time_days')
+                            ->label(__('quotations.fields.lead_time_days'))
+                            ->helperText(__('quotations.fields.lead_time_days_hint'))
+                            ->numeric()
+                            ->minValue(0),
+                    ]),
+
                     Textarea::make('notes')
                         ->label(__('quotations.fields.notes'))
                         ->columnSpanFull(),
@@ -205,6 +220,17 @@ final class QuotationResource extends XotBaseResource
                             ->label(__('quotations.fields.total'))
                             ->numeric()
                             ->disabled(),
+                    ]),
+
+                    Grid::make(2)->components([
+                        TextInput::make('cost_total')
+                            ->label(__('quotations.fields.cost_total'))
+                            ->helperText(__('quotations.fields.cost_total_hint'))
+                            ->numeric()
+                            ->minValue(0),
+                        Placeholder::make('margin_summary')
+                            ->label(__('quotations.margin.label'))
+                            ->content(fn (?Quotation $record): string => self::marginSummary($record)),
                     ]),
                 ])
                 ->columns(2),
@@ -268,6 +294,26 @@ final class QuotationResource extends XotBaseResource
                 Tables\Columns\TextColumn::make('total')
                     ->label(__('quotations.fields.total'))
                     ->money('EUR')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('cost_total')
+                    ->label(__('quotations.fields.cost_total'))
+                    ->money('EUR')
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('margin')
+                    ->label(__('quotations.margin.label'))
+                    ->state(fn (Quotation $record): string => self::marginSummary($record))
+                    ->badge()
+                    ->color(fn (Quotation $record): string => self::marginColour($record))
+                    ->toggleable(),
+                Tables\Columns\TextColumn::make('project')
+                    ->label(__('quotations.fields.project'))
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('delivery_at')
+                    ->label(__('quotations.fields.delivery_at'))
+                    ->dateTime()
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->sortable(),
                 Tables\Columns\TextColumn::make('issued_at')
                     ->label(__('quotations.fields.issued_at'))

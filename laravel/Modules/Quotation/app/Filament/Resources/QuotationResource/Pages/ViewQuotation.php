@@ -19,9 +19,10 @@ use Modules\Quotation\Models\Quotation;
 use Modules\Quotation\Models\QuotationTemplate;
 use Modules\User\Models\User;
 use Modules\WorkOrder\Actions\AssignUserToWorkOrderAction;
-use Modules\WorkOrder\Actions\CreateWorkOrderAction;
+use Modules\WorkOrder\Actions\CreateWorkOrderFromQuotationAction;
 use Modules\WorkOrder\Filament\Resources\WorkOrderResource;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\WorkOrder\Models\WorkOrderStatus;
 
 final class ViewQuotation extends ViewRecord
 {
@@ -113,6 +114,19 @@ final class ViewQuotation extends ViewRecord
                         }),
                     DateTimePicker::make('scheduled_at')
                         ->label(__('work_orders.fields.scheduled_at')),
+                    DateTimePicker::make('delivery_due_at')
+                        ->label(__('workorder::work_orders.fields.delivery_due_at'))
+                        ->default(function (): ?string {
+                            /** @var Quotation $quotation */
+                            $quotation = $this->getRecord();
+
+                            return $quotation->delivery_at !== null
+                                ? (string) $quotation->delivery_at
+                                : null;
+                        }),
+                    Select::make('status_code')
+                        ->label(__('workorder::work_orders.fields.status'))
+                        ->options(fn (): array => WorkOrderStatus::query()->orderBy('sort_order')->pluck('name', 'code')->all()),
                     Select::make('assigned_user_id')
                         ->label(__('work_orders.fields.assigned_to'))
                         ->options(fn (): array => User::query()->orderBy('name')->pluck('name', 'id')->all())
@@ -124,26 +138,17 @@ final class ViewQuotation extends ViewRecord
                     $quotation = $this->getRecord();
 
                     /** @var WorkOrder $workOrder */
-                    $workOrder = app(CreateWorkOrderAction::class)->execute([
-                        'code' => null,
-                        'customer_id' => (int) $quotation->customer_id,
-                        'customer_site_id' => null,
-                        'primary_contact_id' => null,
-                        'status_id' => null,
+                    $workOrder = app(CreateWorkOrderFromQuotationAction::class)->execute($quotation, [
                         'title' => (string) $data['title'],
-                        'description' => null,
-                        'notes' => null,
-                        'opened_at' => now(),
                         'scheduled_at' => $data['scheduled_at'] ?? null,
+                        'delivery_due_at' => $data['delivery_due_at'] ?? null,
+                        'status_code' => is_string($data['status_code'] ?? null) ? $data['status_code'] : null,
                     ]);
 
-                    $quotation->work_order_id = $workOrder->id;
-                    $quotation->save();
-
-                    $assignedUserId = isset($data['assigned_user_id']) && $data['assigned_user_id'] ? (int) $data['assigned_user_id'] : null;
+                    $rawAssignee = $data['assigned_user_id'] ?? null;
+                    $assignedUserId = (is_int($rawAssignee) || (is_string($rawAssignee) && $rawAssignee !== '')) ? $rawAssignee : null;
                     if ($assignedUserId !== null) {
-                        $assignedBy = Auth::id();
-                        $assignedByUserId = is_int($assignedBy) ? $assignedBy : (is_string($assignedBy) ? (int) $assignedBy : null);
+                        $assignedByUserId = Auth::id();
 
                         app(AssignUserToWorkOrderAction::class)->execute(
                             workOrderId: (int) $workOrder->id,

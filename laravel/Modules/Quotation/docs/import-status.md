@@ -122,3 +122,49 @@ Il resto del delta Quotation (28 file) verrà lavorato nel suo ciclo Fase 1.
   (base del job costing; il resto del delta Quotation resta da portare).
 - QuotationResource: helper `marginSummary`/`marginColour` (margine €/% in lista).
 - Widget `QuotationsMarginByProjectChart` (da app/Filament sorgente).
+
+## Delta seconda tranche (2026-08-30)
+
+Portato il delta "margini, progetto e consegne" (`15f07e80..295d281^`):
+
+- **Migrazione** (bump `create_quotations_table`): `project`, `cost_total`,
+  `delivery_at`, `lead_time_days`.
+- **Modello**: casts + PHPDoc per i quattro campi nuovi.
+- **QuotationResource**: campo progetto/brand, griglia consegna (data + lead time),
+  costo totale con placeholder margine calcolato; colonne `cost_total`, `margin`
+  (badge colorato), `project`, `delivery_at`. `marginSummary()` dice "costo non
+  indicato" invece di stampare uno zero che sembrerebbe pareggio; `marginColour()`
+  è rosso sotto zero, ambra sotto il 15% (soglia sottile per un'officina su commessa).
+- **ViewQuotation**: la creazione commessa passa da `CreateWorkOrderAction` a
+  `CreateWorkOrderFromQuotationAction` (copia la distinta), con data consegna
+  precompilata dal preventivo e scelta dello stato iniziale.
+- **Gating**: `QuotationResource`, `QuotationTemplateResource`, `SiteSurveyResource`,
+  `RecordQuotationVoicePage` passano a `GatedXotBaseResource`/`GatedXotBasePage`
+  (equivalente Laraxot del `GatedResource` sorgente).
+- **Lang** it/en: `fields.project*`, `fields.cost_total*`, `fields.delivery_at`,
+  `fields.lead_time_days*`, blocco `margin`.
+
+Copertura del delta: `WorkOrder/tests/Feature/JobCostingUiTest.php` (7 test) esercita
+`marginSummary`/`marginColour` e il flusso preventivo→commessa.
+PHPStan: **zero errori sul codice di produzione**.
+
+### Debito: 14 test media rossi (pre-esistente, non di questa tranche)
+
+`QuotationAttachment*`, `VoiceQuotationAttachmentPlaceholder*`, `RewriteAndAttach*`,
+`RecordSiteSurvey*`, `SiteSurveyResource*`, `SimilarQuotationVoice`, `VoiceBasedOn`
+falliscono **identici anche senza le modifiche di questo ciclo** (verificato con stash).
+
+Causa radice: il sorgente non usa Spatie MediaLibrary ma un modello `Media` custom
+(`mediable_type`/`kind`/`title`/`disk`/`path`, vedi
+`Modules/Documents/Application/Actions/CreateMediaFromStoredFileAction`). Il porting
+ha giustamente riusato Spatie (regola "allegati → modulo Media"), ma i test sono stati
+copiati **senza adattare le asserzioni** alla semantica Spatie:
+
+- `$media->disk` in Spatie è il disk di *destinazione* (`config('media-library.disk_name')`,
+  qui `public`), non quello di origine passato all'action.
+- `$media->name` con title vuoto ricade su `pathinfo($path, PATHINFO_FILENAME)`, ma il
+  path arriva già hashato da `UploadedFile::store()` → nome illeggibile.
+  Difetto UX reale: l'utente vedrebbe `ECJHc5zZ...` come nome allegato.
+
+Va chiuso in un ciclo dedicato al layer media (tocca anche il modulo Document),
+non dentro il delta margini.

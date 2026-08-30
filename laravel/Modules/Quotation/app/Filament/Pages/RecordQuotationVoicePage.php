@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Modules\Customer\Actions\SearchCompanyOnlineAction;
 use Modules\Customer\Lookup\CompanyLookupResult;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\Quotation\Actions\ApplyTechnicalParamsToQuotationItemsAction;
 use Modules\Quotation\Actions\BuildQuotationDraftAction;
 use Modules\Quotation\Actions\BuildQuotationModificationAction;
@@ -23,7 +24,6 @@ use Modules\Quotation\DTO\QuotationDraft;
 use Modules\Quotation\Filament\Resources\QuotationResource;
 use Modules\Quotation\Models\Quotation;
 use Modules\User\Models\User;
-use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * Mobile-first page: the plumber dictates a quotation by voice; the AI turns it
@@ -31,7 +31,7 @@ use Modules\Xot\Filament\Pages\XotBasePage;
  * existing quotation ("create a similar one for another customer"). The operator
  * reviews and confirms, creating a brand-new quotation.
  */
-final class RecordQuotationVoicePage extends XotBasePage
+final class RecordQuotationVoicePage extends GatedXotBasePage
 {
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-microphone';
 
