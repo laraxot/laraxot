@@ -26,3 +26,8 @@ related:
 - [x] **PHPStan L10** — 0 errori reali (2026-07-24)
 - [x] `modules_statuses=true`
 - [ ] Spot-check Resources → XotBaseResource (wave)
+
+## Delta seconda tranche (2026-08-30)
+
+Sostanza: solo `BomResource` → `GatedXotBaseResource`. Fix dest: TestCase con
+`CatalogServiceProvider` (dipendenza Catalog) e redirect fixture sqlite. 2/2 verdi.

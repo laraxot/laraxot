@@ -8,11 +8,19 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\ServiceProvider;
 use Modules\Bom\Providers\BomServiceProvider;
+use Modules\Catalog\Providers\CatalogServiceProvider;
 use Modules\Xot\Tests\XotBaseTestCase;
 
 abstract class TestCase extends XotBaseTestCase
 {
     use DatabaseTransactions;
+
+    protected function setUp(): void
+    {
+        $this->prepareSharedFixcitySqliteForTesting();
+
+        parent::setUp();
+    }
 
     /**
      * @return array<int, class-string<ServiceProvider>>
@@ -21,6 +29,7 @@ abstract class TestCase extends XotBaseTestCase
     {
         return [
             ...parent::getPackageProviders($app),
+            CatalogServiceProvider::class,
             BomServiceProvider::class,
         ];
     }
