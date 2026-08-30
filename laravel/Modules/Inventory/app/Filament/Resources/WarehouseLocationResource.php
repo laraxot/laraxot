@@ -21,10 +21,10 @@ use Illuminate\Support\Facades\Auth;
 use Modules\Inventory\Filament\Resources\WarehouseLocationResource\Pages;
 use Modules\Inventory\Models\Warehouse;
 use Modules\Inventory\Models\WarehouseLocation;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Platform\Models\PlatformSetting;
-use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class WarehouseLocationResource extends XotBaseResource
+final class WarehouseLocationResource extends GatedXotBaseResource
 {
     protected static ?string $model = WarehouseLocation::class;
 

@@ -20,6 +20,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Auth;
 use Modules\Catalog\Models\Product;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Production\Filament\Resources\ProductionOrderResource\Pages\CreateProductionOrder;
 use Modules\Production\Filament\Resources\ProductionOrderResource\Pages\EditProductionOrder;
 use Modules\Production\Filament\Resources\ProductionOrderResource\Pages\ListProductionOrders;
@@ -27,9 +28,8 @@ use Modules\Production\Filament\Resources\ProductionOrderResource\Pages\ViewProd
 use Modules\Production\Filament\Resources\ProductionOrderResource\RelationManagers\ProductionPhasesRelationManager;
 use Modules\Production\Models\ProductionOrder;
 use Modules\WorkOrder\Models\WorkOrder;
-use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class ProductionOrderResource extends XotBaseResource
+final class ProductionOrderResource extends GatedXotBaseResource
 {
     use HasAccountFeatureVisibility;
 

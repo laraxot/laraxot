@@ -15,10 +15,12 @@ use Illuminate\Support\Facades\Auth;
 use Modules\Inventory\Actions\GetInventoryOverviewRowsAction;
 use Modules\Inventory\Models\InventoryOverviewRow;
 use Modules\Inventory\Models\Warehouse;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
 use Modules\Platform\Models\PlatformSetting;
 
 final class InventoryOverview extends Page implements HasTable
 {
+    use GatesPageNavigation;
     use InteractsWithTable;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-clipboard-document-list';
