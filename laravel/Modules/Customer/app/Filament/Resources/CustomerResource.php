@@ -27,10 +27,10 @@ use Modules\Customer\Filament\Resources\CustomerResource\RelationManagers\Contac
 use Modules\Customer\Filament\Resources\CustomerResource\RelationManagers\CustomerSitesRelationManager;
 use Modules\Customer\Filament\Resources\CustomerResource\RelationManagers\WorkOrdersRelationManager;
 use Modules\Customer\Models\Customer;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\User\Models\User;
-use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class CustomerResource extends XotBaseResource
+final class CustomerResource extends GatedXotBaseResource
 {
     protected static ?string $model = Customer::class;
 

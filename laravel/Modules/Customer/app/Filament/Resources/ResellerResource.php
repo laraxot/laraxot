@@ -21,9 +21,9 @@ use Filament\Tables\Table;
 use Illuminate\Support\Facades\Auth;
 use Modules\Customer\Filament\Resources\ResellerResource\Pages;
 use Modules\Customer\Models\Reseller;
-use Modules\Xot\Filament\Resources\XotBaseResource;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 
-final class ResellerResource extends XotBaseResource
+final class ResellerResource extends GatedXotBaseResource
 {
     use HasAccountFeatureVisibility;
 

@@ -72,3 +72,9 @@ per includere i nuovi namespace dei test e azzerare gli errori `method.internalC
 migrazioni Catalog/Quotation applicate al sqlite condiviso (non è un compito di questo modulo).
 
 SSoT readiness: [functional-readiness.md](../../../../docs/gestionale-commesse-comparison/functional-readiness.md).
+
+## Delta seconda tranche (2026-08-30)
+
+Sostanza: `CustomerResource` e `ResellerResource` → `GatedXotBaseResource`.
+Suite 46/46 verdi. (Il rename tabella `contacts`→`customer_contacts` era già
+stato applicato nel ciclo collisioni, vedi issue #14.)
