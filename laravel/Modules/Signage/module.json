@@ -1,0 +1,12 @@
+{
+    "name": "Signage",
+    "alias": "signage",
+    "description": "Preventivi insegne da file grafici",
+    "keywords": [],
+    "priority": 115,
+    "providers": [
+        "Modules\\Signage\\Providers\\SignageServiceProvider",
+        "Modules\\Signage\\Providers\\Filament\\AdminPanelProvider"
+    ],
+    "files": []
+}

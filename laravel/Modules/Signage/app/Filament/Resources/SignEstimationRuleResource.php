@@ -1,0 +1,129 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Signage\Filament\Resources;
+
+use Filament\Actions\DeleteAction;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
+use Filament\Forms\Components\Field;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Components\Component;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Section;
+use Filament\Tables;
+use Filament\Tables\Table;
+use Modules\Platform\Filament\Resources\GatedXotBaseResource;
+use Modules\Signage\Filament\Resources\SignEstimationRuleResource\Pages;
+use Modules\Signage\Models\SignEstimationRule;
+
+final class SignEstimationRuleResource extends GatedXotBaseResource
+{
+    protected static ?string $model = SignEstimationRule::class;
+
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-calculator';
+
+    protected static ?int $navigationSort = 90;
+
+    public static function getNavigationGroup(): string
+    {
+        return (string) __('signage::signage.navigation');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('signage::signage.estimation_rule');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('signage::signage.estimation_rules');
+    }
+
+    /**
+     * @return array<string, Component|Field>
+     */
+    public static function getFormSchema(): array
+    {
+        return [
+            'main' => Section::make()
+                ->columnSpanFull()
+                ->components([
+                    Grid::make(3)->components([
+                        Select::make('role_code')
+                            ->label(__('signage::signage.fields.role_code'))
+                            ->options(__('signage::signage.roles'))
+                            ->required()
+                            ->unique(ignoreRecord: true),
+                        Select::make('unit_code')
+                            ->label(__('signage::signage.fields.unit_code'))
+                            ->options(__('signage::signage.units'))
+                            ->required(),
+                        Select::make('strategy_code')
+                            ->label(__('signage::signage.fields.strategy_code'))
+                            ->options(__('signage::signage.strategies'))
+                            ->helperText(__('signage::signage.help.strategy'))
+                            ->required(),
+                    ]),
+                    Grid::make(3)->components([
+                        TextInput::make('factor')
+                            ->label(__('signage::signage.fields.factor'))
+                            ->numeric()
+                            ->default(1),
+                        TextInput::make('base_value')
+                            ->label(__('signage::signage.fields.base_value'))
+                            ->numeric()
+                            ->default(0),
+                        TextInput::make('min_per_piece')
+                            ->label(__('signage::signage.fields.min_per_piece'))
+                            ->numeric()
+                            ->nullable(),
+                    ]),
+                    Textarea::make('notes')
+                        ->label(__('signage::signage.fields.notes'))
+                        ->helperText(__('signage::signage.help.formula'))
+                        ->rows(2),
+                    Toggle::make('is_active')
+                        ->label(__('signage::signage.fields.is_active'))
+                        ->default(true),
+                ]),
+        ];
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+                Tables\Columns\TextColumn::make('role_code')
+                    ->label(__('signage::signage.fields.role_code'))
+                    ->formatStateUsing(fn (string $state): string => __('signage::signage.roles.'.$state))
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('strategy_code')
+                    ->label(__('signage::signage.fields.strategy_code'))
+                    ->formatStateUsing(fn (string $state): string => __('signage::signage.strategies.'.$state)),
+                Tables\Columns\TextColumn::make('unit_code')->label(__('signage::signage.fields.unit_code')),
+                Tables\Columns\TextColumn::make('factor')->label(__('signage::signage.fields.factor'))->numeric(),
+                Tables\Columns\TextColumn::make('base_value')->label(__('signage::signage.fields.base_value'))->numeric(),
+                Tables\Columns\TextColumn::make('min_per_piece')->label(__('signage::signage.fields.min_per_piece'))->numeric()->placeholder('—'),
+                Tables\Columns\IconColumn::make('is_active')->label(__('signage::signage.fields.is_active'))->boolean(),
+            ])
+            ->actions([
+                EditAction::make(),
+                DeleteAction::make(),
+            ])
+            ->bulkActions([
+                DeleteBulkAction::make(),
+            ]);
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListSignEstimationRules::route('/'),
+        ];
+    }
+}

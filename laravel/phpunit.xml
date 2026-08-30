@@ -131,6 +131,9 @@
         <testsuite name="MetalWork">
             <directory>Modules/MetalWork/tests</directory>
         </testsuite>
+        <testsuite name="Signage">
+            <directory>Modules/Signage/tests</directory>
+        </testsuite>
     </testsuites>
     <source>
         <include>

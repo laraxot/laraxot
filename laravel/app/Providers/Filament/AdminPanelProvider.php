@@ -17,7 +17,7 @@ class AdminPanelProvider extends XotBaseMainPanelProvider
         // sorgente espone le superfici operative dei moduli verticali, così le
         // pagine cross-panel (calendario interventi, rapportino) possono
         // costruire URL con panel 'admin'.
-        foreach (['Customer', 'WorkOrder', 'Intervention', 'Catalog', 'Quotation', 'Vehicle', 'HR', 'Billing'] as $module) {
+        foreach (['Customer', 'WorkOrder', 'Intervention', 'Catalog', 'Quotation', 'Vehicle', 'HR', 'Billing', 'Signage', 'MetalWork'] as $module) {
             $panel = $panel->discoverResources(
                 base_path('Modules/'.$module.'/app/Filament/Resources'),
                 sprintf('Modules\\%s\\Filament\\Resources', $module),

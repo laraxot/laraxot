@@ -1,0 +1,1 @@
+[{"name":"extract-sign-artwork-command","class":"ExtractSignArtworkCommand","module":null,"path":null,"ns":"Modules\\Signage\\Console\\Commands\\ExtractSignArtworkCommand"},{"name":"price-sign-spec-command","class":"PriceSignSpecCommand","module":null,"path":null,"ns":"Modules\\Signage\\Console\\Commands\\PriceSignSpecCommand"}]

@@ -30,7 +30,7 @@ class OperatorPanelProvider extends XotBasePanelProvider
     {
         $panel = parent::panel($panel);
 
-        foreach (['Customer', 'WorkOrder', 'Intervention', 'Catalog', 'Quotation', 'Vehicle', 'HR', 'Billing'] as $module) {
+        foreach (['Customer', 'WorkOrder', 'Intervention', 'Catalog', 'Quotation', 'Vehicle', 'HR', 'Billing', 'Signage', 'MetalWork'] as $module) {
             $panel = $panel->discoverResources(
                 base_path('Modules/'.$module.'/app/Filament/Resources'),
                 sprintf('Modules\\%s\\Filament\\Resources', $module),
