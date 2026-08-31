@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Modules\User\Database\Factories\UserFactory;
+use Modules\User\Models\User;
 use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;
@@ -14,7 +15,7 @@ use function Pest\Laravel\get;
  */
 uses(\Modules\Platform\Tests\TestCase::class);
 
-function externalPanelUser(string $role): object
+function externalPanelUser(string $role): User
 {
     Role::findOrCreate($role);
     $user = UserFactory::new()->createOne();
