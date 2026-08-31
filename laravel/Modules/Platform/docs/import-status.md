@@ -106,3 +106,32 @@ come referer assente — e' quello che il codice voleva dire davvero.
 
 Test `DashboardWidgetsTest`: monta tutti e cinque i widget. Interrogano tre moduli
 diversi, quindi un nome di colonna o una relazione cambiata altrove si vede subito qui.
+
+## 2026-08-31 — Panel cliente e fornitore
+
+Portati da `app/Providers/Filament/{Customer,Supplier}PanelProvider` e riscritti su
+`XotBasePanelProvider`. Stanno in Platform come l'operator panel: definiscono una
+superficie per un tipo di utente, non un dominio.
+
+- `/customer`: commesse, fatture, calendario interventi del cliente;
+- `/supplier`: magazzini e movimentazioni.
+
+### Perche' e' nato `discoverModuleComponents`
+
+`XotBasePanelProvider` scopre automaticamente resource, pagine e widget del modulo
+proprietario. Per un pannello aperto a utenti esterni questo e' sbagliato: il pannello
+cliente si ritrovava dentro `AuditLogResource` di Platform e — verificato con un test —
+rispondeva **200 a un cliente qualunque** su `/customer/audit-logs`.
+
+Il gate della resource non bastava: `AccountFeatures::currentPanelAllowsFeature()` nel
+ramo `customer` traduce `admin.audit_log` in `customer.admin.audit_log` con default
+**true**, perche' quel default serve a far vedere al cliente le sue commesse e le sue
+fatture. Alzare la barriera li' avrebbe chiuso anche quelle.
+
+La causa vera era un'altra: quelle schermate non dovevano proprio essere nel pannello.
+`XotBasePanelProvider::$discoverModuleComponents` (default `true`, invariato per tutti
+gli altri) permette di spegnere la scoperta; i due pannelli esterni montano a mano le
+poche schermate che servono. Il gate resta come seconda linea, non come unica.
+
+`ExternalPanelsTest` copre entrambi i lati: cosa vede il cliente, cosa non vede, e che
+un cliente non entri nel pannello del fornitore.

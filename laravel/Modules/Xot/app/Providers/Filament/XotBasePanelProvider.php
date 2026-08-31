@@ -42,6 +42,16 @@ abstract class XotBasePanelProvider extends PanelProvider
 
     protected ?string $panelPath = null;
 
+    /**
+     * Scoperta automatica di resource, pagine, widget e cluster del modulo.
+     *
+     * I panel per utenti esterni (customer, supplier) la spengono: montano a mano
+     * la manciata di schermate che quell'utente deve vedere, e non devono
+     * ritrovarsi dentro le resource amministrative del modulo che li ospita solo
+     * perche' stanno nella stessa cartella.
+     */
+    protected bool $discoverModuleComponents = true;
+
     public function panel(Panel $panel): Panel
     {
         $moduleNamespace = $this->getModuleNamespace();
@@ -70,23 +80,6 @@ abstract class XotBasePanelProvider extends PanelProvider
             // ->tenant($teamClass)
             ->id($this->panelId ?? $moduleLow.'::admin')
             ->path($this->panelPath ?? $moduleLow.'/admin')
-            // Configure Filament discovery for module components (unconditional; dirs are expected to exist)
-            ->discoverResources(
-                base_path('Modules/'.$this->module.'/app/Filament/Resources'),
-                sprintf('%s\\Filament\\Resources', $moduleNamespace),
-            )
-            ->discoverPages(
-                base_path('Modules/'.$this->module.'/app/Filament/Pages'),
-                sprintf('%s\\Filament\\Pages', $moduleNamespace),
-            )
-            ->discoverWidgets(
-                base_path('Modules/'.$this->module.'/app/Filament/Widgets'),
-                sprintf('%s\\Filament\\Widgets', $moduleNamespace),
-            )
-            ->discoverClusters(
-                base_path('Modules/'.$this->module.'/app/Filament/Clusters'),
-                sprintf('%s\\Filament\\Clusters', $moduleNamespace),
-            )
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
@@ -101,6 +94,26 @@ abstract class XotBasePanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ]);
+
+        if ($this->discoverModuleComponents) {
+            $panel
+                ->discoverResources(
+                    base_path('Modules/'.$this->module.'/app/Filament/Resources'),
+                    sprintf('%s\\Filament\\Resources', $moduleNamespace),
+                )
+                ->discoverPages(
+                    base_path('Modules/'.$this->module.'/app/Filament/Pages'),
+                    sprintf('%s\\Filament\\Pages', $moduleNamespace),
+                )
+                ->discoverWidgets(
+                    base_path('Modules/'.$this->module.'/app/Filament/Widgets'),
+                    sprintf('%s\\Filament\\Widgets', $moduleNamespace),
+                )
+                ->discoverClusters(
+                    base_path('Modules/'.$this->module.'/app/Filament/Clusters'),
+                    sprintf('%s\\Filament\\Clusters', $moduleNamespace),
+                );
+        }
 
         return $panel;
     }
