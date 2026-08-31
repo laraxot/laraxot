@@ -61,15 +61,15 @@ it('adds employee documents, medical visits, and trainings with optional attachm
     );
 
     expect($doc->employee_id)->toBe($employee->id);
-    expect($doc->media)->not()->toBeNull();
+    expect($doc->media?->getKey())->not->toBeEmpty();
     expect($visit->employee_id)->toBe($employee->id);
-    expect($visit->media)->not()->toBeNull();
+    expect($visit->media?->getKey())->not->toBeEmpty();
     expect($visit->title)->toBe('Visita annuale');
     expect($visit->notes)->toBe('ok');
     expect($visit->visited_at?->toDateString())->toBe('2026-02-01');
     expect($visit->expires_at?->toDateString())->toBe('2027-02-01');
     expect($training->employee_id)->toBe($employee->id);
-    expect($training->media)->not()->toBeNull();
+    expect($training->media?->getKey())->not->toBeEmpty();
     expect($training->title)->toBe('Corso sicurezza');
     expect($training->notes)->toBe('ok');
     expect($training->completed_at?->toDateString())->toBe('2026-01-10');

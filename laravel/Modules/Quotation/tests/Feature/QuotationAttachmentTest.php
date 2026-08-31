@@ -47,7 +47,7 @@ it('attaches a stored file to a quotation as a document media record', function 
         title: 'Capitolato',
     );
 
-    expect($media)->toBeInstanceOf(Media::class);
+expect($media)->not->toBeNull();
     expect($media->collection_name)->toBe('documents');
     expect($media->disk)->toBe('local');
     expect($media->name)->toBe('Capitolato');

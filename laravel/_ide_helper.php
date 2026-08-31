@@ -29577,6 +29577,109 @@ namespace Spatie\Health\Facades {
             }
     }
 
+namespace Spatie\ResponseCache\Facades {
+    /**
+     * @method static ?Response getCachedResponseFor(Request $request, array $tags = [])
+     */
+    class ResponseCache {
+        /**
+         * @static
+         */
+        public static function enabled($request)
+        {
+            /** @var \Spatie\ResponseCache\ResponseCache $instance */
+            return $instance->enabled($request);
+        }
+
+        /**
+         * @static
+         */
+        public static function shouldCache($request, $response)
+        {
+            /** @var \Spatie\ResponseCache\ResponseCache $instance */
+            return $instance->shouldCache($request, $response);
+        }
+
+        /**
+         * @static
+         */
+        public static function shouldBypass($request)
+        {
+            /** @var \Spatie\ResponseCache\ResponseCache $instance */
+            return $instance->shouldBypass($request);
+        }
+
+        /**
+         * @static
+         */
+        public static function cacheResponse($request, $response, $lifetimeInSeconds = null, $tags = [])
+        {
+            /** @var \Spatie\ResponseCache\ResponseCache $instance */
+            return $instance->cacheResponse($request, $response, $lifetimeInSeconds, $tags);
+        }
+
+        /**
+         * @static
+         */
+        public static function hasBeenCached($request, $tags = [])
+        {
+            /** @var \Spatie\ResponseCache\ResponseCache $instance */
+            return $instance->hasBeenCached($request, $tags);
+        }
+
+        /**
+         * @static
+         */
+        public static function getCachedResponseFor($request, $tags = [])
+        {
+            /** @var \Spatie\ResponseCache\ResponseCache $instance */
+            return $instance->getCachedResponseFor($request, $tags);
+        }
+
+        /**
+         * @static
+         */
+        public static function clear($tags = [])
+        {
+            /** @var \Spatie\ResponseCache\ResponseCache $instance */
+            return $instance->clear($tags);
+        }
+
+        /**
+         * @param string[] $tags
+         * @static
+         */
+        public static function forget($uris, $tags = [])
+        {
+            /** @var \Spatie\ResponseCache\ResponseCache $instance */
+            return $instance->forget($uris, $tags);
+        }
+
+        /**
+         * @static
+         */
+        public static function selectCachedItems()
+        {
+            /** @var \Spatie\ResponseCache\ResponseCache $instance */
+            return $instance->selectCachedItems();
+        }
+
+        /**
+         * Get a cached response using flexible/SWR (stale-while-revalidate) strategy.
+         *
+         * @param array{0: int, 1: int} $seconds [fresh_seconds, total_seconds]
+         * @param \Closure $callback Callback that returns a Response object
+         * @static
+         */
+        public static function flexible($key, $seconds, $callback, $tags = [])
+        {
+            /** @var \Spatie\ResponseCache\ResponseCache $instance */
+            return $instance->flexible($key, $seconds, $callback, $tags);
+        }
+
+            }
+    }
+
 namespace Spatie\Sluggable\Facades {
     /**
      * @see SelfHealingManager
@@ -44136,6 +44239,7 @@ namespace  {
     class Module extends \Nwidart\Modules\Facades\Module {}
     class FFMpeg extends \ProtoneMedia\LaravelFFMpeg\Support\FFMpeg {}
     class Health extends \Spatie\Health\Facades\Health {}
+    class ResponseCache extends \Spatie\ResponseCache\Facades\ResponseCache {}
     class SelfHealing extends \Spatie\Sluggable\Facades\SelfHealing {}
 }
 

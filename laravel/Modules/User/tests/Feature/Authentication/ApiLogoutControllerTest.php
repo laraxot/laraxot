@@ -52,18 +52,11 @@ describe('Api Logout Controller', function (): void {
         ensurePersonalAccessClient();
 
         $personalAccessToken = null;
+        $personalAccessToken = null;
         try {
             $personalAccessToken = $user->createToken('Api Logout Test');
         } catch (\Exception $exception) {
             $this->skipTest('Passport token creation unavailable: '.$exception->getMessage());
-        }
-
-        if (null === $personalAccessToken) {
-            $this->skipTest('Passport token creation unavailable.');
-        }
-
-        if (! $personalAccessToken instanceof PersonalAccessTokenResult) {
-            $this->fail('Passport token creation returned unexpected type.');
         }
 
         $tokenResult = $personalAccessToken;

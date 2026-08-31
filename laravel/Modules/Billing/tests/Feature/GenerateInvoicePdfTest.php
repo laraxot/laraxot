@@ -30,7 +30,7 @@ it('generates an invoice PDF', function (): void {
 
     $pdf = app(GenerateInvoicePdfAction::class)->execute($invoice->refresh());
 
-    expect($pdf)->toBeString();
+expect($pdf)->not->toBeEmpty();
     expect(substr($pdf, 0, 4))->toBe('%PDF');
     expect(strlen($pdf))->toBeGreaterThan(1000);
 });
@@ -67,7 +67,7 @@ it('generates an invoice PDF when linked to a work order', function (): void {
     $pdf = app(GenerateInvoicePdfAction::class)->execute($invoice->refresh());
 
     // Assert
-    expect($pdf)->toBeString();
+expect($pdf)->not->toBeEmpty();
     expect(substr($pdf, 0, 4))->toBe('%PDF');
     expect(strlen($pdf))->toBeGreaterThan(1000);
 });

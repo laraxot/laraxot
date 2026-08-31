@@ -18,6 +18,7 @@ use Modules\Signage\Datas\SignQuotationLine;
 use Modules\Signage\Filament\Pages\SignArtworkQuotationPage;
 use Modules\Signage\Models\SignSpec;
 use Modules\Signage\Tests\TestCase;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 use Spatie\Permission\Models\Role;
 use PHPUnit\Framework\Assert;
@@ -28,7 +29,8 @@ use function Safe\file_get_contents;
 
 function signageAdmin(): User
 {
-    $admin = User::factory()->create();
+    $admin = UserFactory::new()->createOne();
+    Assert::assertInstanceOf(User::class, $admin);
     $admin->syncRoles([Role::findOrCreate('admin')]);
 
     return $admin;

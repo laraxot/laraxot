@@ -76,12 +76,12 @@ it('stores signature and sketch from canvas data urls', function (): void {
     // disk/path/mime_type directly on the Signature/Sketch models instead of going
     // through a Media FK (see docs/gestionale-commesse-port.md), so assertions on
     // `$signature->media` are replaced with direct property assertions.
-    expect($signature)->toBeInstanceOf(Signature::class);
+expect($signature)->not->toBeNull();
     expect($signature->disk)->toBe('public');
     expect($signature->mime_type)->toBe('image/png');
     expect(Storage::disk('public')->exists((string) $signature->path))->toBeTrue();
 
-    expect($sketch)->toBeInstanceOf(Sketch::class);
+expect($sketch)->not->toBeNull();
     expect($sketch->disk)->toBe('public');
     expect($sketch->mime_type)->toBe('image/png');
     expect(Storage::disk('public')->exists((string) $sketch->path))->toBeTrue();

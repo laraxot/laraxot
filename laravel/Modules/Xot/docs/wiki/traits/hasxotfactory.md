@@ -8,6 +8,22 @@ updated: 2026-08-24
 
 # HasXotFactory Trait
 
+## Contratto PHPStan (2026-08-31) — non rompere
+
+```php
+/** @template TFactory of Factory */
+trait HasXotFactory { /* @return TFactory newFactory() */ }
+```
+
+- **Sì:** `@template TFactory of Factory` (Factory *senza* type arg — evita invarianti).
+- **No:** `@template TFactory of Factory<Model>` → `generics.notSubtype` su ogni `XFactory`.
+- **No:** aggiungere `getFactory(): Factory` con `@return static<…>` (centinaia di errori).
+- **No:** strippare `@template` (i `@use HasXotFactory<XFactory>` diventano `generics.notGeneric`).
+- Modello concreto: `@use HasXotFactory<\Modules\Foo\Database\Factories\FooFactory>`
+- Base Xot: `@use HasXotFactory<\Illuminate\Database\Eloquent\Factories\Factory<static>>`
+
+Handoff: `docs/chat/phpstan-modules-zero-swarm.md`.
+
 ## Panoramica
 
 Il trait `HasXotFactory` estende il comportamento standard di Laravel `HasFactory` per supportare la generazione automatica di factory per i modelli nell'architettura modulare Laraxot.

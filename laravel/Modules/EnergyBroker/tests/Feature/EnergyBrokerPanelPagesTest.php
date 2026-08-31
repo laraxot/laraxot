@@ -15,6 +15,8 @@ use Modules\User\Models\User;
 use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;
+use PHPUnit\Framework\Assert;
+
 use function Pest\Laravel\get;
 
 /*
@@ -34,9 +36,8 @@ function energyBrokerUser(string $role = 'energy_broker_admin'): User
 }
 
 it('opens every page of the panel for an energy broker admin', function (string $path): void {
-    actingAs(energyBrokerUser())
-        ->get($path)
-        ->assertOk();
+    actingAs(energyBrokerUser());
+    get($path)->assertOk();
 })->with([
     '/energy-broker',
     '/energy-broker/crm',
@@ -50,8 +51,9 @@ it('opens every page of the panel for an energy broker admin', function (string 
 ]);
 
 it('registers each mounted page in the panel', function (string $page): void {
-    expect(class_exists($page))->toBeTrue()
-        ->and($page::getUrl(panel: 'energy-broker'))->toBeString();
+    Assert::assertTrue(class_exists($page));
+    /** @var class-string<\Filament\Pages\Page> $page */
+    Assert::assertNotEmpty($page::getUrl(panel: 'energy-broker'));
 })->with([
     EnergyBrokerDashboard::class,
     EnergyBrokerCrmPage::class,
@@ -68,9 +70,8 @@ it('keeps the panel closed to a user without the broker role', function (): void
     $outsider = UserFactory::new()->createOne();
     $outsider->syncRoles(['operator']);
 
-    actingAs($outsider)
-        ->get('/energy-broker')
-        ->assertForbidden();
+    actingAs($outsider);
+    get('/energy-broker')->assertForbidden();
 });
 
 it('denies a guest', function (): void {

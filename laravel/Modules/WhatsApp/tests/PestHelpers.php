@@ -44,7 +44,11 @@ function whatsAppInboxComponent(): Testable
     // canAccess() richiede la feature admin.whatsapp_ai (Gate manage-whatsapp-ai)
     // e un panel con semantica admin: autentichiamo un admin abilitato via matrix.
     $email = 'whatsapp-admin@test.local';
-    $accounts = (array) config('account_features.accounts', []);
+    /** @var array<string, array{features?: array<string, bool|int|string>}> $accounts */
+    $accounts = config('account_features.accounts', []);
+    if (! is_array($accounts)) {
+        $accounts = [];
+    }
     $accounts[$email]['features']['admin.whatsapp_ai'] = true;
     config(['account_features.accounts' => $accounts]);
 
@@ -54,5 +58,7 @@ function whatsAppInboxComponent(): Testable
 
     filament()->setCurrentPanel('whatsapp::admin');
 
-    return Livewire::actingAs($user)->test(WhatsAppInboxPage::class);
+    Livewire::actingAs($user);
+
+    return Livewire::test(WhatsAppInboxPage::class);
 }

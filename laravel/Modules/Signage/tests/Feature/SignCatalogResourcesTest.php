@@ -21,6 +21,7 @@ use Modules\Signage\Models\SignCatalogItemComponent;
 use Modules\Signage\Models\SignPriceList;
 use Modules\Signage\Support\SignageCosting;
 use Modules\Signage\Tests\TestCase;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 use Spatie\Permission\Models\Role;
 
@@ -30,7 +31,8 @@ use function Pest\Laravel\actingAs;
 
 function signageCatalogAdmin(): User
 {
-    $admin = User::factory()->create();
+    $admin = UserFactory::new()->createOne();
+    Assert::assertInstanceOf(User::class, $admin);
     $admin->syncRoles([Role::findOrCreate('admin')]);
 
     return $admin;

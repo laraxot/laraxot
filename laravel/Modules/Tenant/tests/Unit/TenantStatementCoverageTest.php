@@ -374,8 +374,8 @@ describe('Tenant statement coverage — models and policies', function (): void 
         Assert::assertNull((new TenantBasePolicyCoverage())->before($user, 'view'));
     });
 
-    test('DomainResource getFormSchemaOld is executable', function (): void {
-        $schema = DomainResource::getFormSchemaOld();
+    test('DomainResource getFormSchema is executable', function (): void {
+        $schema = DomainResource::getFormSchema();
         Assert::assertArrayHasKey('title', $schema);
         Assert::assertArrayHasKey('price', $schema);
     });

@@ -60,7 +60,7 @@ it('shows a "being prepared" placeholder row and queues the rewrite job', functi
     // A placeholder attachment is visible in the table right away.
     $media = $new->media()->where('kind', 'document')->first();
     Assert::assertInstanceOf(Media::class, $media);
-    expect($media->title)->toBe(__('quotations.voice.attachment_preparing_title'));
+    Assert::assertSame(__('quotations.voice.attachment_preparing_title'), $media->title);
 
     Bus::assertDispatched(RewriteQuotationAttachmentsJob::class, fn (RewriteQuotationAttachmentsJob $job): bool => $job->targetId === (int) $new->id && $job->placeholderMediaId === (int) $media->id);
 });
@@ -80,7 +80,7 @@ it('swaps the placeholder for the real document when the job succeeds', function
     expect($docs)->toHaveCount(1);
     $firstDoc = $docs->first();
     Assert::assertInstanceOf(Media::class, $firstDoc);
-    expect($firstDoc->title)->not->toBe(__('quotations.voice.attachment_preparing_title'));
+    Assert::assertNotSame(__('quotations.voice.attachment_preparing_title'), $firstDoc->title);
     expect(strtolower((string) $firstDoc->path))->toEndWith('.ods');
 });
 
@@ -122,5 +122,5 @@ it('marks the placeholder as failed when the AI cannot produce a document', func
     expect($docs)->toHaveCount(1);
     $firstDoc = $docs->first();
     Assert::assertInstanceOf(Media::class, $firstDoc);
-    expect($firstDoc->title)->toBe(__('quotations.voice.attachment_failed_title'));
+    Assert::assertSame(__('quotations.voice.attachment_failed_title'), $firstDoc->title);
 });

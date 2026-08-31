@@ -25,29 +25,28 @@ function externalPanelUser(string $role): User
 }
 
 it('lets a customer into their own panel', function (): void {
-    actingAs(externalPanelUser('customer'))
-        ->get('/customer')
-        ->assertOk();
+    actingAs(externalPanelUser('customer'));
+    get('/customer')->assertOk();
 });
 
 it('lets a supplier into their own panel', function (): void {
-    actingAs(externalPanelUser('supplier'))
-        ->get('/supplier')
-        ->assertOk();
+    actingAs(externalPanelUser('supplier'));
+    get('/supplier')->assertOk();
 });
 
 it('keeps a customer out of the supplier panel and vice versa', function (): void {
-    actingAs(externalPanelUser('customer'))->get('/supplier')->assertForbidden();
-    actingAs(externalPanelUser('supplier'))->get('/customer')->assertForbidden();
+    actingAs(externalPanelUser('customer'));
+    get('/supplier')->assertForbidden();
+    actingAs(externalPanelUser('supplier'));
+    get('/customer')->assertForbidden();
 });
 
 it('does not expose the audit log to a customer', function (): void {
     // Con la discovery accesa il pannello cliente ereditava le resource
     // amministrative del modulo Platform, e l'audit log rispondeva 200 a un
     // cliente qualunque. Ora quella rotta nel pannello non esiste proprio.
-    actingAs(externalPanelUser('customer'))
-        ->get('/customer/audit-logs')
-        ->assertNotFound();
+    actingAs(externalPanelUser('customer'));
+    get('/customer/audit-logs')->assertNotFound();
 });
 
 it('sends a guest to the login of each external panel', function (string $path): void {

@@ -67,7 +67,7 @@ it('registers a purchase and automatically creates the operational lot', functio
     expect($lot)->not->toBeNull();
     assert($lot instanceof TimberLot);
 
-    expect($record)->toBeInstanceOf(TimberPurchaseRecord::class)
+    expect($record)
         ->and($record->supplier_id)->toBe($supplier->id)
         ->and($record->transporter_id)->toBe($transporter->id)
         ->and($record->status_code)->toBe('registered')

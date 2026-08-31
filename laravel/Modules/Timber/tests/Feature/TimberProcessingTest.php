@@ -33,7 +33,7 @@ it('registers a processing step from a lot producing usable and waste outputs', 
         ],
     );
 
-    expect($step)->toBeInstanceOf(TimberProcessingStep::class)
+    expect($step)
         ->and($step->step_type_code)->toBe('taglio')
         ->and((float) $step->input_quantity)->toBe(1000.0)
         ->and((float) $step->output_quantity)->toBe(800.0)

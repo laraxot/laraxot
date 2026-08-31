@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Modules\WhatsApp\Tests\Feature;
 
 use Carbon\CarbonImmutable;
-use Livewire\Livewire;
 use Modules\WhatsApp\Filament\Pages\WhatsAppInboxPage;
 use Modules\WhatsApp\Models\WhatsAppConversation;
 use Modules\WhatsApp\Models\WhatsAppMessage;
 use Modules\WhatsApp\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
 /*
  * Migrato da gestionale_commesse/tests/Feature/WhatsApp/WhatsAppInboxPageTest.php.
@@ -46,10 +46,12 @@ function inboxPageConversationWithMessage(string $phone, string $body): WhatsApp
 it('lists conversations on the inbox page', function (): void {
     inboxPageConversationWithMessage('+393201234567', 'Ciao, ho bisogno di assistenza');
 
-    $list = whatsAppInboxComponent()->instance()->conversationList();
+    $page = whatsAppInboxComponent()->instance();
+    Assert::assertInstanceOf(WhatsAppInboxPage::class, $page);
+    $list = $page->conversationList();
 
-    expect($list)->toHaveCount(1)
-        ->and($list[0]['last_message'])->toBe('Ciao, ho bisogno di assistenza');
+    expect($list)->toHaveCount(1);
+    expect($list[0]['last_message'] ?? null)->toBe('Ciao, ho bisogno di assistenza');
 });
 
 it('selects a conversation and exposes its thread', function (): void {
@@ -59,12 +61,16 @@ it('selects a conversation and exposes its thread', function (): void {
         ->call('selectConversation', $conversation->id)
         ->assertSet('selectedConversationId', $conversation->id);
 
-    $thread = $component->instance()->thread();
+    $page = $component->instance();
+    Assert::assertInstanceOf(WhatsAppInboxPage::class, $page);
+    $thread = $page->thread();
 
-    expect($thread)->toHaveCount(1)
-        ->and($thread[0]['body'])->toBe('Primo messaggio');
+    expect($thread)->toHaveCount(1);
+    expect($thread[0]['body'] ?? null)->toBe('Primo messaggio');
 });
 
 it('returns an empty thread when no conversation is selected', function (): void {
-    expect(whatsAppInboxComponent()->instance()->thread())->toBe([]);
+    $page = whatsAppInboxComponent()->instance();
+    Assert::assertInstanceOf(WhatsAppInboxPage::class, $page);
+    expect($page->thread())->toBe([]);
 });

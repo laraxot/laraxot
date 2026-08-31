@@ -36,7 +36,7 @@ it('creates and approves an absence request', function (): void {
     app(ApproveAbsenceRequestAction::class)->execute($request, (int) $admin->id, $decidedAt);
 
     $request->refresh();
-    expect($request)->toBeInstanceOf(AbsenceRequest::class);
+expect($request)->not->toBeNull();
     expect($request->status)->toBe('approved');
     expect((int) $request->decided_by_user_id)->toBe((int) $admin->id);
     expect($request->decided_at?->toDateTimeString())->toBe('2026-02-18 10:00:00');

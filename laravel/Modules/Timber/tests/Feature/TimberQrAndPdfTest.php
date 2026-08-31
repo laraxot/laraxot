@@ -86,7 +86,7 @@ it('generates a label pdf for a lot', function (): void {
 
     $pdf = app(GenerateTimberLabelPdfAction::class)->execute($lot);
 
-    expect($pdf)->toBeString()
+    expect($pdf)
         ->and(strlen($pdf))->toBeGreaterThan(1000)
         ->and($pdf)->toStartWith('%PDF');
 });

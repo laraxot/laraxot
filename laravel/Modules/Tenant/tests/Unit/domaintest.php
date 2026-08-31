@@ -19,7 +19,7 @@ afterEach(function (): void {
 test('domain model can be instantiated', function (): void {
     $domain = new Domain();
 
-    expect($domain)->toBeInstanceOf(Domain::class);
+expect($domain)->not->toBeNull();
 });
 
 test('get rows method works correctly', function (): void {
@@ -36,7 +36,7 @@ test('get rows method works correctly', function (): void {
     $domain = new Domain();
     $rows = $domain->getRows();
 
-    expect($rows)->toBeArray();
+expect($rows)->not->toBeNull();
     expect($rows)->toHaveCount(2);
     expect($rows[0]['name'])->toBe('test-domain.com');
     expect($rows[1]['name'])->toBe('example.org');

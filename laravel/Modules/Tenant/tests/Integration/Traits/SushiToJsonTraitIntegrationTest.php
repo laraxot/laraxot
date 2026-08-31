@@ -38,7 +38,7 @@ beforeEach(function (): void {
     // Imposta il tenant corrente
     TestCase::setCurrentTenant(TestCase::tenantModel());
 
-    TestCase::$model = new TestSushiModel();
+    TestCase::$sushiModel = new TestSushiModel();
     TestCase::$testJsonPath = app(GetTenantFilePathAction::class)->execute('database/content/test_sushi.json');
 
     if (File::exists(TestCase::sushiJsonPath())) {

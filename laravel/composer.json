@@ -25,7 +25,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "phpstan_constants.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

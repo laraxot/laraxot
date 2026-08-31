@@ -32,6 +32,9 @@ si devono stubbare le funzioni Pest nei namespace test.
   che esce con codice 1 — non rigenerare mai il bridge.
 - Canon progetto: `docs/wiki/rules/pest-phpstan-bridge.md`.
 - `uses(\Modules\<M>\Tests\TestCase::class)` sempre **dopo** gli `import use` nel file Pest.
+- File Pest: **niente** `namespace …;` in cima (rompe il parser PHPStan su `uses()`).
+- HTTP: `actingAs($user); get($url)->assertOk();` — non chainare `actingAs()->get()` (Pest tipizza `actingAs` → `TestCase` / overload confusi).
+- `@var` nelle closure Pest: preferire **FQCN** anche se c’è `use` in testa al file.
 
 ## Helper XotBaseTestCase (usare nei moduli)
 

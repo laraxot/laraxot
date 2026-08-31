@@ -35,7 +35,6 @@ it('defaults media kind to document when kind is not provided', function (): voi
         kind: null,
     );
 
-    expect($doc->media)->not()->toBeNull();
     expect($doc->media?->kind)->toBe('document');
 });
 
@@ -66,6 +65,5 @@ it('persists the employee document kind when provided', function (): void {
 
     expect($doc->title)->toBe('Contratto');
     expect($doc->kind)->toBe('contract');
-    expect($doc->media)->not()->toBeNull();
     expect($doc->media?->kind)->toBe('contract');
 });

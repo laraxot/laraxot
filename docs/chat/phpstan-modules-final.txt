@@ -1,0 +1,5 @@
+Note: Using configuration file /var/www/_bases/base_workorder_fila5/laravel/phpstan.neon.
+
+ [OK] No errors                                                                 
+
+2026-08-31T19:38:27+02:00

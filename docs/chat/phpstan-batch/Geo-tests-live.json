@@ -1,0 +1,111 @@
+
+   Symfony\Component\ErrorHandler\Error\FatalError 
+
+  Trait method Parental\HasChildren::scopeChildrenWith has not been applied as Modules\Blog\Models\Article::scopeChildrenWith, because of collision with Modules\Blog\Models\Concerns\ArticleQueryScopes::scopeChildrenWith
+
+  at Modules/Blog/app/Models/Article.php:232
+
+   Symfony\Component\ErrorHandler\Error\FatalError 
+
+  Trait method Parental\HasChildren::scopeChildrenWith has not been applied as Modules\Blog\Models\Article::scopeChildrenWith, because of collision with Modules\Blog\Models\Concerns\ArticleQueryScopes::scopeChildrenWith
+
+  at Modules/Blog/app/Models/Article.php:232
+    228▕  * @method static EloquentBuilder<static>|Article childrenWithCount(array<string, mixed> $relations)
+    229▕  *
+    230▕  * @mixin \Eloquent
+    231▕  */
+  ➜ 232▕ class Article extends BaseModel implements Feedable, HasTranslationsContract, SupportsCommentNotifications
+    233▕ {
+    234▕     use ArticleFeedable;
+    235▕     use ArticleQueryScopes;
+    236▕     use HasChildren;
+
+
+   Whoops\Exception\ErrorException 
+
+  Trait method Parental\HasChildren::scopeChildrenWith has not been applied as Modules\Blog\Models\Article::scopeChildrenWith, because of collision with Modules\Blog\Models\Concerns\ArticleQueryScopes::scopeChildrenWith
+
+  at Modules/Blog/app/Models/Article.php:232
+    228▕  * @method static EloquentBuilder<static>|Article childrenWithCount(array<string, mixed> $relations)
+    229▕  *
+    230▕  * @mixin \Eloquent
+    231▕  */
+  ➜ 232▕ class Article extends BaseModel implements Feedable, HasTranslationsContract, SupportsCommentNotifications
+    233▕ {
+    234▕     use ArticleFeedable;
+    235▕     use ArticleQueryScopes;
+    236▕     use HasChildren;
+
+      [2m+1 vendor frames [22m
+
+  2   [internal]:0
+      Whoops\Run::handleShutdown()
+
+    228▕  * @method static EloquentBuilder<static>|Article childrenWithCount(array<string, mixed> $relations)
+    229▕  *
+    230▕  * @mixin \Eloquent
+    231▕  */
+  ➜ 232▕ class Article extends BaseModel implements Feedable, HasTranslationsContract, SupportsCommentNotifications
+    233▕ {
+    234▕     use ArticleFeedable;
+    235▕     use ArticleQueryScopes;
+    236▕     use HasChildren;
+
+
+   Whoops\Exception\ErrorException 
+
+  Trait method Parental\HasChildren::scopeChildrenWith has not been applied as Modules\Blog\Models\Article::scopeChildrenWith, because of collision with Modules\Blog\Models\Concerns\ArticleQueryScopes::scopeChildrenWith
+
+  at Modules/Blog/app/Models/Article.php:232
+    228▕  * @method static EloquentBuilder<static>|Article childrenWithCount(array<string, mixed> $relations)
+    229▕  *
+    230▕  * @mixin \Eloquent
+    231▕  */
+  ➜ 232▕ class Article extends BaseModel implements Feedable, HasTranslationsContract, SupportsCommentNotifications
+    233▕ {
+    234▕     use ArticleFeedable;
+    235▕     use ArticleQueryScopes;
+    236▕     use HasChildren;
+
+      [2m+1 vendor frames [22m
+
+  2   [internal]:0
+      Whoops\Run::handleShutdown()
+
+
+   Symfony\Component\ErrorHandler\Error\FatalError 
+
+  Trait method Parental\HasChildren::scopeChildrenWith has not been applied as Modules\Blog\Models\Article::scopeChildrenWith, because of collision with Modules\Blog\Models\Concerns\ArticleQueryScopes::scopeChildrenWith
+
+  at Modules/Blog/app/Models/Article.php:232
+    228▕  * @method static EloquentBuilder<static>|Article childrenWithCount(array<string, mixed> $relations)
+    229▕  *
+    230▕  * @mixin \Eloquent
+    231▕  */
+  ➜ 232▕ class Article extends BaseModel implements Feedable, HasTranslationsContract, SupportsCommentNotifications
+    233▕ {
+    234▕     use ArticleFeedable;
+    235▕     use ArticleQueryScopes;
+    236▕     use HasChildren;
+
+
+   Whoops\Exception\ErrorException 
+
+  Trait method Parental\HasChildren::scopeChildrenWith has not been applied as Modules\Blog\Models\Article::scopeChildrenWith, because of collision with Modules\Blog\Models\Concerns\ArticleQueryScopes::scopeChildrenWith
+
+  at Modules/Blog/app/Models/Article.php:232
+    228▕  * @method static EloquentBuilder<static>|Article childrenWithCount(array<string, mixed> $relations)
+    229▕  *
+    230▕  * @mixin \Eloquent
+    231▕  */
+  ➜ 232▕ class Article extends BaseModel implements Feedable, HasTranslationsContract, SupportsCommentNotifications
+    233▕ {
+    234▕     use ArticleFeedable;
+    235▕     use ArticleQueryScopes;
+    236▕     use HasChildren;
+
+      [2m+1 vendor frames [22m
+
+  2   [internal]:0
+      Whoops\Run::handleShutdown()
+

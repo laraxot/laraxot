@@ -1,0 +1,721 @@
+{
+  "files": {
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Billing/tests/Feature/GenerateInvoicePdfTest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeString() on Expectation<string>; assertion is redundant.",
+          "line": 33,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeString().",
+          "identifier": "pest.expectation.redundant"
+        },
+        {
+          "message": "Calling toBeString() on Expectation<string>; assertion is redundant.",
+          "line": 70,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeString().",
+          "identifier": "pest.expectation.redundant"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Comment/tests/Unit/Actions/SanitizeCommentTextActionTest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeString() on Expectation<string>; assertion is redundant.",
+          "line": 15,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeString().",
+          "identifier": "pest.expectation.redundant"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Customer/tests/Feature/CompanyLookupSourcesTest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeInstanceOf() on Expectation<Modules\\Customer\\Lookup\\CompositeCompanyLookupProvider>; assertion is redundant.",
+          "line": 188,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeInstanceOf().",
+          "identifier": "pest.expectation.redundant"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/EnergyBroker/tests/Feature/EnergyBrokerPanelPagesTest.php": {
+      "messages": [
+        {
+          "message": "Call to an undefined method Illuminate\\Testing\\TestResponse<Illuminate\\Http\\Response>::get().",
+          "line": 38,
+          "ignorable": true,
+          "identifier": "method.notFound"
+        },
+        {
+          "message": "Cannot call method assertOk() on mixed.",
+          "line": 39,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        },
+        {
+          "message": "Unable to resolve the template type TAndValue in call to method Pest\\Expectation<true>::and()",
+          "line": 54,
+          "ignorable": true,
+          "tip": "See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type",
+          "identifier": "argument.templateType"
+        },
+        {
+          "message": "Call to an undefined method Illuminate\\Testing\\TestResponse<Illuminate\\Http\\Response>::get().",
+          "line": 72,
+          "ignorable": true,
+          "identifier": "method.notFound"
+        },
+        {
+          "message": "Cannot call method assertForbidden() on mixed.",
+          "line": 73,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Gdpr/tests/Feature/conflictresolutiontest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeInstanceOf() on Expectation<Modules\\Gdpr\\Models\\Treatment>; assertion is redundant.",
+          "line": 14,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeInstanceOf().",
+          "identifier": "pest.expectation.redundant"
+        },
+        {
+          "message": "Calling toBeInstanceOf() on Expectation<Modules\\Gdpr\\Models\\Profile>; assertion is redundant.",
+          "line": 15,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeInstanceOf().",
+          "identifier": "pest.expectation.redundant"
+        },
+        {
+          "message": "Calling toBeArray() on Expectation<array<string>>; assertion is redundant.",
+          "line": 23,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeArray().",
+          "identifier": "pest.expectation.redundant"
+        },
+        {
+          "message": "Calling toBeArray() on Expectation<array<string>>; assertion is redundant.",
+          "line": 24,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeArray().",
+          "identifier": "pest.expectation.redundant"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/HR/tests/Feature/AbsenceRequestWorkflowTest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeInstanceOf() on Expectation<Modules\\HR\\Models\\AbsenceRequest>; assertion is redundant.",
+          "line": 39,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeInstanceOf().",
+          "identifier": "pest.expectation.redundant"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/HR/tests/Feature/AddEmployeeAttachmentsTest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeNull() on Expectation<Modules\\Document\\Models\\Media>; assertion is impossible.",
+          "line": 64,
+          "ignorable": true,
+          "tip": "The expectation value is Modules\\Document\\Models\\Media, which can never satisfy toBeNull().",
+          "identifier": "pest.expectation.impossible"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/HR/tests/Feature/AddEmployeeDocumentActionMutationTest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeNull() on Expectation<Modules\\Document\\Models\\Media>; assertion is impossible.",
+          "line": 38,
+          "ignorable": true,
+          "tip": "The expectation value is Modules\\Document\\Models\\Media, which can never satisfy toBeNull().",
+          "identifier": "pest.expectation.impossible"
+        },
+        {
+          "message": "Calling toBeNull() on Expectation<Modules\\Document\\Models\\Media>; assertion is impossible.",
+          "line": 69,
+          "ignorable": true,
+          "tip": "The expectation value is Modules\\Document\\Models\\Media, which can never satisfy toBeNull().",
+          "identifier": "pest.expectation.impossible"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Job/tests/Unit/JobExecuteCoverage50Test.php": {
+      "messages": [
+        {
+          "message": "Call to an undefined static method Modules\\Job\\Filament\\Resources\\ScheduleResource::getFormSchemaOld().",
+          "line": 131,
+          "ignorable": true,
+          "identifier": "staticMethod.notFound"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Platform/tests/Feature/DashboardWidgetsTest.php": {
+      "messages": [
+        {
+          "message": "Unable to resolve the template type TComponent in call to method Livewire\\LivewireManager::test()",
+          "line": 27,
+          "ignorable": true,
+          "tip": "See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type",
+          "identifier": "argument.templateType"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Platform/tests/Feature/ExternalPanelsTest.php": {
+      "messages": [
+        {
+          "message": "Call to an undefined method Illuminate\\Testing\\TestResponse<Illuminate\\Http\\Response>::get().",
+          "line": 29,
+          "ignorable": true,
+          "identifier": "method.notFound"
+        },
+        {
+          "message": "Cannot call method assertOk() on mixed.",
+          "line": 30,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        },
+        {
+          "message": "Call to an undefined method Illuminate\\Testing\\TestResponse<Illuminate\\Http\\Response>::get().",
+          "line": 35,
+          "ignorable": true,
+          "identifier": "method.notFound"
+        },
+        {
+          "message": "Cannot call method assertOk() on mixed.",
+          "line": 36,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        },
+        {
+          "message": "Call to an undefined method Illuminate\\Testing\\TestResponse<Illuminate\\Http\\Response>::get().",
+          "line": 40,
+          "ignorable": true,
+          "identifier": "method.notFound"
+        },
+        {
+          "message": "Cannot call method assertForbidden() on mixed.",
+          "line": 40,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        },
+        {
+          "message": "Call to an undefined method Illuminate\\Testing\\TestResponse<Illuminate\\Http\\Response>::get().",
+          "line": 41,
+          "ignorable": true,
+          "identifier": "method.notFound"
+        },
+        {
+          "message": "Cannot call method assertForbidden() on mixed.",
+          "line": 41,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        },
+        {
+          "message": "Call to an undefined method Illuminate\\Testing\\TestResponse<Illuminate\\Http\\Response>::get().",
+          "line": 49,
+          "ignorable": true,
+          "identifier": "method.notFound"
+        },
+        {
+          "message": "Cannot call method assertNotFound() on mixed.",
+          "line": 50,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Platform/tests/Feature/NavigationSettingsPageTest.php": {
+      "messages": [
+        {
+          "message": "Call to an undefined method Illuminate\\Testing\\TestResponse<Illuminate\\Http\\Response>::get().",
+          "line": 83,
+          "ignorable": true,
+          "identifier": "method.notFound"
+        },
+        {
+          "message": "Cannot call method assertOk() on mixed.",
+          "line": 83,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        },
+        {
+          "message": "Call to an undefined method Illuminate\\Testing\\TestResponse<Illuminate\\Http\\Response>::get().",
+          "line": 91,
+          "ignorable": true,
+          "identifier": "method.notFound"
+        },
+        {
+          "message": "Cannot call method assertForbidden() on mixed.",
+          "line": 91,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Quotation/tests/Feature/CreateQuotationFromInterventionTest.php": {
+      "messages": [
+        {
+          "message": "Function interventionForQuotation() has parameter $attributes with no value type specified in iterable type array.",
+          "line": 13,
+          "ignorable": true,
+          "tip": "See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type",
+          "identifier": "missingType.iterableValue"
+        },
+        {
+          "message": "Cannot access property $description on mixed.",
+          "line": 50,
+          "ignorable": true,
+          "identifier": "property.nonObject"
+        },
+        {
+          "message": "Cannot access property $description on mixed.",
+          "line": 51,
+          "ignorable": true,
+          "identifier": "property.nonObject"
+        },
+        {
+          "message": "Cannot access property $unit_price on mixed.",
+          "line": 52,
+          "ignorable": true,
+          "identifier": "property.nonObject"
+        },
+        {
+          "message": "Cannot access property $unit_price on mixed.",
+          "line": 53,
+          "ignorable": true,
+          "identifier": "property.nonObject"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Quotation/tests/Feature/GenerateQuotationPdfTest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeString() on Expectation<string>; assertion is redundant.",
+          "line": 61,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeString().",
+          "identifier": "pest.expectation.redundant"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Quotation/tests/Feature/GenerateQuotationPdfWithWorkOrderTest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeString() on Expectation<string>; assertion is redundant.",
+          "line": 54,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeString().",
+          "identifier": "pest.expectation.redundant"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Quotation/tests/Feature/QuotationAiRewriteBindingsTest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeInstanceOf() on Expectation<Modules\\AiAssistant\\Import\\AiQuotationDocumentRewriter>; assertion is redundant.",
+          "line": 16,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeInstanceOf().",
+          "identifier": "pest.expectation.redundant"
+        },
+        {
+          "message": "Calling toBeInstanceOf() on Expectation<Modules\\AiAssistant\\Import\\AiQuotationNotesRewriter>; assertion is redundant.",
+          "line": 17,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeInstanceOf().",
+          "identifier": "pest.expectation.redundant"
+        },
+        {
+          "message": "Calling toBeInstanceOf() on Expectation<Modules\\Quotation\\Actions\\RewriteAndAttachQuotationDocumentsAction>; assertion is redundant.",
+          "line": 20,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeInstanceOf().",
+          "identifier": "pest.expectation.redundant"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Quotation/tests/Feature/QuotationAttachmentRetryTest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeInstanceOf() on Expectation<Spatie\\MediaLibrary\\MediaCollections\\Models\\Media>; assertion is redundant.",
+          "line": 82,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeInstanceOf().",
+          "identifier": "pest.expectation.redundant"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Quotation/tests/Feature/QuotationAttachmentTest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeInstanceOf() on Expectation<Spatie\\MediaLibrary\\MediaCollections\\Models\\Media>; assertion is redundant.",
+          "line": 50,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeInstanceOf().",
+          "identifier": "pest.expectation.redundant"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Quotation/tests/Feature/VoiceQuotationAttachmentPlaceholderTest.php": {
+      "messages": [
+        {
+          "message": "Unable to resolve the template type TValue in call to function expect",
+          "line": 63,
+          "ignorable": true,
+          "tip": "See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type",
+          "identifier": "argument.templateType"
+        },
+        {
+          "message": "Unable to resolve the template type TValue in call to function expect",
+          "line": 83,
+          "ignorable": true,
+          "tip": "See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type",
+          "identifier": "argument.templateType"
+        },
+        {
+          "message": "Unable to resolve the template type TValue in call to function expect",
+          "line": 125,
+          "ignorable": true,
+          "tip": "See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type",
+          "identifier": "argument.templateType"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Signature/tests/Feature/CanvasSignatureAndSketchTest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeInstanceOf() on Expectation<Modules\\Signature\\Models\\Signature>; assertion is redundant.",
+          "line": 79,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeInstanceOf().",
+          "identifier": "pest.expectation.redundant"
+        },
+        {
+          "message": "Calling toBeInstanceOf() on Expectation<Modules\\Signature\\Models\\Sketch>; assertion is redundant.",
+          "line": 84,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeInstanceOf().",
+          "identifier": "pest.expectation.redundant"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Tenant/tests/TestCase.php": {
+      "messages": [
+        {
+          "message": "Static property Modules\\Tenant\\Tests\\TestCase::$model overrides non-static property Modules\\Xot\\Tests\\XotBaseTestCase::$model.",
+          "line": 46,
+          "ignorable": false,
+          "identifier": "property.static"
+        },
+        {
+          "message": "Static property Modules\\Tenant\\Tests\\TestCase::$baseModel overrides non-static property Modules\\Xot\\Tests\\XotBaseTestCase::$baseModel.",
+          "line": 49,
+          "ignorable": false,
+          "identifier": "property.static"
+        },
+        {
+          "message": "Method Modules\\Tenant\\Tests\\TestCase::runArtisanCommand() has parameter $parameters with no value type specified in iterable type array.",
+          "line": 325,
+          "ignorable": true,
+          "tip": "See: https://phpstan.org/blog/solving-phpstan-no-value-type-specified-in-iterable-type",
+          "identifier": "missingType.iterableValue"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Tenant/tests/Unit/TenantStatementCoverageTest.php": {
+      "messages": [
+        {
+          "message": "Call to an undefined static method Modules\\Tenant\\Filament\\Resources\\DomainResource::getFormSchemaOld().",
+          "line": 378,
+          "ignorable": true,
+          "identifier": "staticMethod.notFound"
+        },
+        {
+          "message": "Parameter #2 $array of static method PHPUnit\\Framework\\Assert::assertArrayHasKey() expects array<mixed>|ArrayAccess<(int|string), covariant mixed>, mixed given.",
+          "line": 379,
+          "ignorable": true,
+          "identifier": "argument.type"
+        },
+        {
+          "message": "Parameter #2 $array of static method PHPUnit\\Framework\\Assert::assertArrayHasKey() expects array<mixed>|ArrayAccess<(int|string), covariant mixed>, mixed given.",
+          "line": 380,
+          "ignorable": true,
+          "identifier": "argument.type"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Tenant/tests/Unit/domaintest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeInstanceOf() on Expectation<Modules\\Tenant\\Models\\Domain>; assertion is redundant.",
+          "line": 22,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeInstanceOf().",
+          "identifier": "pest.expectation.redundant"
+        },
+        {
+          "message": "Calling toBeArray() on Expectation<array<int, array<string, string>>>; assertion is redundant.",
+          "line": 39,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeArray().",
+          "identifier": "pest.expectation.redundant"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Timber/tests/Feature/TimberDryingTest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeInstanceOf() on Expectation<Modules\\Timber\\Models\\TimberDryingCycle>; assertion is redundant.",
+          "line": 25,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeInstanceOf().",
+          "identifier": "pest.expectation.redundant"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Timber/tests/Feature/TimberProcessingTest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeInstanceOf() on Expectation<Modules\\Timber\\Models\\TimberProcessingStep>; assertion is redundant.",
+          "line": 36,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeInstanceOf().",
+          "identifier": "pest.expectation.redundant"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Timber/tests/Feature/TimberPurchaseAndLotTest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeInstanceOf() on Expectation<Modules\\Timber\\Models\\TimberPurchaseRecord>; assertion is redundant.",
+          "line": 70,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeInstanceOf().",
+          "identifier": "pest.expectation.redundant"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/Timber/tests/Feature/TimberQrAndPdfTest.php": {
+      "messages": [
+        {
+          "message": "Calling toBeString() on Expectation<string>; assertion is redundant.",
+          "line": 89,
+          "ignorable": true,
+          "tip": "The expectation value is already guaranteed to satisfy toBeString().",
+          "identifier": "pest.expectation.redundant"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/User/tests/Feature/Authentication/ApiLogoutControllerTest.php": {
+      "messages": [
+        {
+          "message": "Strict comparison using === between null and Laravel\\Passport\\PersonalAccessTokenResult will always evaluate to false.",
+          "line": 61,
+          "ignorable": true,
+          "identifier": "identical.alwaysFalse"
+        },
+        {
+          "message": "Instanceof between Laravel\\Passport\\PersonalAccessTokenResult and Laravel\\Passport\\PersonalAccessTokenResult will always evaluate to true.",
+          "line": 65,
+          "ignorable": true,
+          "identifier": "instanceof.alwaysTrue"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/User/tests/Feature/UserCommandIntegrationTest.php": {
+      "messages": [
+        {
+          "message": "Cannot call method todo() on null.",
+          "line": 48,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        },
+        {
+          "message": "Function test invoked with 1 parameter, 2 required.",
+          "line": 48,
+          "ignorable": true,
+          "identifier": "arguments.count"
+        },
+        {
+          "message": "Result of function test (void) is used.",
+          "line": 48,
+          "ignorable": true,
+          "identifier": "function.void"
+        },
+        {
+          "message": "Cannot call method todo() on null.",
+          "line": 168,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        },
+        {
+          "message": "Function test invoked with 1 parameter, 2 required.",
+          "line": 168,
+          "ignorable": true,
+          "identifier": "arguments.count"
+        },
+        {
+          "message": "Result of function test (void) is used.",
+          "line": 168,
+          "ignorable": true,
+          "identifier": "function.void"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/User/tests/Unit/Enums/UserEnumsTest.php": {
+      "messages": [
+        {
+          "message": "Cannot call method todo() on null.",
+          "line": 41,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        },
+        {
+          "message": "Function test invoked with 1 parameter, 2 required.",
+          "line": 41,
+          "ignorable": true,
+          "identifier": "arguments.count"
+        },
+        {
+          "message": "Result of function test (void) is used.",
+          "line": 41,
+          "ignorable": true,
+          "identifier": "function.void"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/User/tests/Unit/Traits/Fixtures/HasUserTestCaseFixture.php": {
+      "messages": [
+        {
+          "message": "Access to static property $user on an unknown class Modules\\User\\Tests\\Unit\\Traits\\Fixtures\\TestCase.",
+          "line": 16,
+          "ignorable": true,
+          "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+          "identifier": "class.notFound"
+        },
+        {
+          "message": "Access to static property $user on an unknown class Modules\\User\\Tests\\Unit\\Traits\\Fixtures\\TestCase.",
+          "line": 16,
+          "ignorable": true,
+          "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+          "identifier": "class.notFound"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/WhatsApp/tests/Feature/DeapproveWhatsAppConversationsCommandTest.php": {
+      "messages": [
+        {
+          "message": "Cannot call method expectsOutputToContain() on Illuminate\\Testing\\PendingCommand|int.",
+          "line": 20,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        },
+        {
+          "message": "Cannot call method expectsChoice() on Illuminate\\Testing\\PendingCommand|int.",
+          "line": 58,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        },
+        {
+          "message": "Cannot access property $approved_up_to_message_id on Modules\\WhatsApp\\Models\\WhatsAppConversation|null.",
+          "line": 77,
+          "ignorable": true,
+          "identifier": "property.nonObject"
+        },
+        {
+          "message": "Cannot call method expectsChoice() on Illuminate\\Testing\\PendingCommand|int.",
+          "line": 100,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/WhatsApp/tests/Feature/DeleteWhatsAppConversationCommandTest.php": {
+      "messages": [
+        {
+          "message": "Cannot call method expectsOutputToContain() on Illuminate\\Testing\\PendingCommand|int.",
+          "line": 18,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        },
+        {
+          "message": "Cannot call method expectsChoice() on Illuminate\\Testing\\PendingCommand|int.",
+          "line": 48,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        },
+        {
+          "message": "Cannot call method expectsChoice() on Illuminate\\Testing\\PendingCommand|int.",
+          "line": 74,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/WhatsApp/tests/Feature/MarkWhatsAppConversationsProcessedCommandTest.php": {
+      "messages": [
+        {
+          "message": "Cannot call method expectsOutputToContain() on Illuminate\\Testing\\PendingCommand|int.",
+          "line": 18,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        },
+        {
+          "message": "Cannot call method expectsChoice() on Illuminate\\Testing\\PendingCommand|int.",
+          "line": 40,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        },
+        {
+          "message": "Cannot call method expectsChoice() on Illuminate\\Testing\\PendingCommand|int.",
+          "line": 67,
+          "ignorable": true,
+          "identifier": "method.nonObject"
+        },
+        {
+          "message": "Cannot access property $approved_up_to_message_id on Modules\\WhatsApp\\Models\\WhatsAppConversation|null.",
+          "line": 76,
+          "ignorable": true,
+          "identifier": "property.nonObject"
+        }
+      ]
+    },
+    "/var/www/_bases/base_workorder_fila5/laravel/Modules/WhatsApp/tests/PestHelpers.php": {
+      "messages": [
+        {
+          "message": "Cannot access offset 'admin.whatsapp_ai' on mixed.",
+          "line": 48,
+          "ignorable": true,
+          "identifier": "offsetAccess.nonOffsetAccessible"
+        },
+        {
+          "message": "Cannot access offset 'features' on mixed.",
+          "line": 48,
+          "ignorable": true,
+          "identifier": "offsetAccess.nonOffsetAccessible"
+        },
+        {
+          "message": "Function whatsAppInboxComponent() should return Livewire\\Features\\SupportTesting\\Testable<Modules\\WhatsApp\\Filament\\Pages\\WhatsAppInboxPage> but returns Livewire\\Features\\SupportTesting\\Testable<Livewire\\Component>.",
+          "line": 57,
+          "ignorable": true,
+          "identifier": "return.type"
+        },
+        {
+          "message": "Unable to resolve the template type TComponent in call to method Livewire\\LivewireManager::test()",
+          "line": 57,
+          "ignorable": true,
+          "tip": "See: https://phpstan.org/blog/solving-phpstan-error-unable-to-resolve-template-type",
+          "identifier": "argument.templateType"
+        }
+      ]
+    }
+  }
+}

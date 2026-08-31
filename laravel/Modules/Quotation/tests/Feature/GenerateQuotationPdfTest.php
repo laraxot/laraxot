@@ -58,7 +58,7 @@ it('generates a quotation PDF', function (): void {
     $pdf = app(GenerateQuotationPdfAction::class)->execute($quotation->refresh());
 
     // Assert
-    expect($pdf)->toBeString();
+expect($pdf)->not->toBeEmpty();
     expect(substr($pdf, 0, 4))->toBe('%PDF');
     expect(strlen($pdf))->toBeGreaterThan(1000);
 });

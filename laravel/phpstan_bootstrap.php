@@ -1,6 +1,26 @@
 <?php
 
 declare(strict_types=1);
+
+/**
+ * LARAVEL_VERSION must exist before LarastanStubFilesExtension runs.
+ * Keep this at the very top: bootstrapFiles order is not guaranteed vs extension boot.
+ */
+if (! defined('LARAVEL_VERSION')) {
+    $laravelVersion = '12.0.0';
+    $installed = __DIR__.'/vendor/composer/installed.php';
+    if (is_file($installed)) {
+        /** @var array{versions?: array<string, array{pretty_version?: string}>} $packages */
+        $packages = require $installed;
+        $pretty = $packages['versions']['laravel/framework']['pretty_version'] ?? null;
+        if (is_string($pretty) && $pretty !== '') {
+            $laravelVersion = ltrim($pretty, 'v');
+        }
+    }
+
+    define('LARAVEL_VERSION', $laravelVersion);
+}
+
 use Illuminate\Contracts\Http\Kernel;
 use Modules\Xot\Datas\XotData;
 use Nwidart\Modules\Facades\Module;

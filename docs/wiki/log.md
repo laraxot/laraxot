@@ -6,16 +6,22 @@ tags:
   - qmd
   - techplanner
 created: "2026-06-06"
-updated: "2026-07-27"
-qmd: "tp-wiki-root workorder AiAssistant visibility second-brain-max-power"
-issues:
-  - "https://github.com/laraxot/base_workorder_fila5/issues/14"
-  - "https://github.com/laraxot/base_workorder_fila5/issues/7"
-discussions:
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
+updated: 2026-08-31
 ---
 
 # TechPlanner LLM Wiki Log
+
+## 2026-08-31 (sera — re-verify PHPStan Modules)
+
+- Ri-run `phpstan analyse Modules` → **[OK] No errors** (10497 file). Nessun fix codice necessario. Story [1.12](../stories/1.12.phpstan-zero-per-module.story.md) → **done**. Memory aggiornata [phpstan-modules-zero.md](memories/phpstan-modules-zero.md). Handoff [phpstan-modules-zero-swarm.md](../chat/phpstan-modules-zero-swarm.md).
+
+## 2026-08-31 (composer + ide-helper)
+
+- **Story [1.14](../stories/1.14.composer-update-phpstan-ide-helper.story.md):** `composer update -W` (Filament 5.7.7) + PHPStan Modules 0 + ide-helper generate/meta/models senza Exception. Handoff [composer-update-phpstan-ide-helper.md](../chat/composer-update-phpstan-ide-helper.md). Fix: ResponseCache `JsonSerializer`, DB `workorder_*`, alias `blog`/`comment`, `config/comments.php`, 9 factory generics.
+
+## 2026-08-31
+
+- **PHPStan Modules = 0:** story [1.12](../stories/1.12.phpstan-zero-per-module.story.md) / issue [#7](https://github.com/laraxot/base_workorder_fila5/issues/7). Handoff [phpstan-modules-zero-swarm.md](../chat/phpstan-modules-zero-swarm.md). Contratto `HasXotFactory` (`@template TFactory of Factory`) in [hasxotfactory.md](../../laravel/Modules/Xot/docs/wiki/traits/hasxotfactory.md); Pest bridge vietato + `pest-plugin-phpstan`.
 
 ## 2026-07-27
 

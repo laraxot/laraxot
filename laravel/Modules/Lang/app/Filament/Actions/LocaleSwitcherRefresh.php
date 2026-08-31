@@ -46,7 +46,7 @@ class LocaleSwitcherRefresh extends Action
     }
 
     /**
-     * @param  array<string, mixed>  $data
+     * @param  array<array-key, mixed>  $data
      */
     public function applyLocale(array $data): RedirectResponse|Redirector
     {

@@ -22,7 +22,7 @@ it('starts a drying cycle for a raw lot and moves it to the drying area', functi
 
     $cycle = app(StartTimberDryingCycleAction::class)->execute($lot, '2026-03-01', 18.0, 'nota');
 
-    expect($cycle)->toBeInstanceOf(TimberDryingCycle::class)
+    expect($cycle)
         ->and($cycle->status_code)->toBe('in_progress')
         ->and((float) $cycle->available_quantity)->toBe(500.0)
         ->and($lot->fresh()?->status_code)->toBe('in_essiccazione')

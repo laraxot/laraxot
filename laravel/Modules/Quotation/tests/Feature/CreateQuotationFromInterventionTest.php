@@ -6,10 +6,15 @@ use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Models\Intervention;
 use Modules\Quotation\Actions\CreateQuotationFromInterventionAction;
 use Modules\Quotation\Models\Quotation;
+use Modules\Quotation\Models\QuotationItem;
 use Modules\Quotation\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
 uses(\Modules\Quotation\Tests\TestCase::class);
 
+/**
+ * @param  array<string, mixed>  $attributes
+ */
 function interventionForQuotation(array $attributes = []): Intervention
 {
     $customerId = DB::table('customers')->insertGetId([
@@ -45,12 +50,19 @@ it('turns an intervention report into a draft quotation with materials, labour a
     expect($quotation)->toBeInstanceOf(Quotation::class);
     expect($quotation?->status_code)->toBe('draft');
 
-    $items = $quotation?->items()->orderBy('sort_order')->get() ?? collect();
-    expect($items)->toHaveCount(4)
-        ->and((string) $items[0]->description)->toBe('Valvola termostatica')
-        ->and((string) $items[1]->description)->toBe('Raccordo')
-        ->and((float) $items[2]->unit_price)->toBe(80.0)
-        ->and((float) $items[3]->unit_price)->toBe(25.0);
+    $items = ($quotation?->items()->orderBy('sort_order')->get() ?? collect())->values();
+    expect($items)->toHaveCount(4);
+
+    $ordered = [];
+    foreach ($items as $item) {
+        Assert::assertInstanceOf(QuotationItem::class, $item);
+        $ordered[] = $item;
+    }
+
+    expect((string) $ordered[0]->description)->toBe('Valvola termostatica');
+    expect((string) $ordered[1]->description)->toBe('Raccordo');
+    expect((float) $ordered[2]->unit_price)->toBe(80.0);
+    expect((float) $ordered[3]->unit_price)->toBe(25.0);
 });
 
 it('returns null when the intervention has nothing to quote', function (): void {

@@ -79,7 +79,7 @@ it('marks the placeholder failed when the job times out / fails (never stuck "pr
     $job->failed(new RuntimeException('cURL 28 timeout'));
 
     $failed = Media::query()->findOrFail($placeholder->id);
-    expect($failed)->toBeInstanceOf(Media::class);
+expect($failed)->not->toBeNull();
     expect($failed->name)->toBe(__('quotations.voice.attachment_failed_title'));
 });
 

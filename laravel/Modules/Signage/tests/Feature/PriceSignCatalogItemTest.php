@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 uses(\Modules\Signage\Tests\TestCase::class);
 
+use Modules\Costing\Database\Factories\WorkCenterFactory;
 use Modules\Costing\Models\WorkCenter;
 use Modules\Signage\Actions\PriceSignCatalogItemAction;
 use Modules\Signage\Datas\SignCatalogItemPrice;
@@ -12,10 +13,24 @@ use Modules\Signage\Models\SignCatalogItemComponent;
 use Modules\Signage\Models\SignPriceList;
 use Modules\Signage\Support\SignageCosting;
 use Modules\Signage\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
 function priceCatalogItem(SignCatalogItem $item): SignCatalogItemPrice
 {
     return app(PriceSignCatalogItemAction::class)->execute($item);
+}
+
+/**
+ * @param  array<string, mixed>  $attributes
+ */
+function createSignageWorkCenter(array $attributes): WorkCenter
+{
+    $factory = WorkCenter::factory();
+    Assert::assertInstanceOf(WorkCenterFactory::class, $factory);
+    $center = $factory->create($attributes);
+    Assert::assertInstanceOf(WorkCenter::class, $center);
+
+    return $center;
 }
 
 it('takes the quantity of a square-metre row from the piece of material consumed', function (): void {
@@ -68,7 +83,7 @@ it('ignores width and height when the unit is not a surface unit', function (): 
 });
 
 it('resolves the markup from the work centre when the item says nothing', function (): void {
-    WorkCenter::factory()->create(['context_code' => SignageCosting::CONTEXT, 'code' => 'material', 'default_markup_percent' => 50]);
+    createSignageWorkCenter(['context_code' => SignageCosting::CONTEXT, 'code' => 'material', 'default_markup_percent' => 50]);
 
     $item = SignCatalogItem::factory()->create(['markup_percent' => null]);
     SignCatalogItemComponent::factory()->for($item, 'catalogItem')->create([
@@ -85,7 +100,7 @@ it('resolves the markup from the work centre when the item says nothing', functi
 });
 
 it('lets the item override the work centre markup', function (): void {
-    WorkCenter::factory()->create(['context_code' => SignageCosting::CONTEXT, 'code' => 'material', 'default_markup_percent' => 50]);
+    createSignageWorkCenter(['context_code' => SignageCosting::CONTEXT, 'code' => 'material', 'default_markup_percent' => 50]);
 
     $item = SignCatalogItem::factory()->create(['markup_percent' => 10]);
     SignCatalogItemComponent::factory()->for($item, 'catalogItem')->create([
@@ -102,7 +117,7 @@ it('lets the item override the work centre markup', function (): void {
 });
 
 it('falls back to the price list when neither item nor work centre says anything', function (): void {
-    WorkCenter::factory()->create(['context_code' => SignageCosting::CONTEXT, 'code' => 'material', 'default_markup_percent' => null]);
+    createSignageWorkCenter(['context_code' => SignageCosting::CONTEXT, 'code' => 'material', 'default_markup_percent' => null]);
 
     $list = SignPriceList::factory()->create(['default_markup_percent' => 25]);
     $item = SignCatalogItem::factory()->for($list, 'priceList')->create(['markup_percent' => null]);
@@ -137,8 +152,8 @@ it('falls back to the configured default when nothing else is set', function ():
 });
 
 it('applies a different markup per work centre inside the same distinta', function (): void {
-    WorkCenter::factory()->create(['context_code' => SignageCosting::CONTEXT, 'code' => 'material', 'default_markup_percent' => 50]);
-    WorkCenter::factory()->create(['context_code' => SignageCosting::CONTEXT, 'code' => 'labor', 'default_markup_percent' => 100]);
+    createSignageWorkCenter(['context_code' => SignageCosting::CONTEXT, 'code' => 'material', 'default_markup_percent' => 50]);
+    createSignageWorkCenter(['context_code' => SignageCosting::CONTEXT, 'code' => 'labor', 'default_markup_percent' => 100]);
 
     $item = SignCatalogItem::factory()->create(['markup_percent' => null]);
     SignCatalogItemComponent::factory()->for($item, 'catalogItem')->create([
@@ -155,7 +170,7 @@ it('applies a different markup per work centre inside the same distinta', functi
 });
 
 it('lets a hand-written price win and derives the percentages from it', function (): void {
-    WorkCenter::factory()->create(['context_code' => SignageCosting::CONTEXT, 'code' => 'material', 'default_markup_percent' => 50]);
+    createSignageWorkCenter(['context_code' => SignageCosting::CONTEXT, 'code' => 'material', 'default_markup_percent' => 50]);
 
     $item = SignCatalogItem::factory()->create([
         'markup_percent' => null,

@@ -18,6 +18,7 @@ use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;
+use function Pest\Laravel\get;
 
 beforeEach(function (): void {
     NavigationGate::flush();
@@ -80,7 +81,8 @@ it('blocks direct access to a resource once its item is disabled', function (): 
     $user->syncRoles(['admin', 'catalog::admin']);
     filament()->setCurrentPanel('catalog::admin');
 
-    actingAs($user)->get(ProductResource::getUrl('index', panel: 'catalog::admin'))->assertOk();
+    actingAs($user);
+    get(ProductResource::getUrl('index', panel: 'catalog::admin'))->assertOk();
 
     NavigationPreference::query()->create([
         'node_key' => NavigationClassifier::itemKey(ProductResource::class),
@@ -88,5 +90,6 @@ it('blocks direct access to a resource once its item is disabled', function (): 
     ]);
     NavigationGate::flush();
 
-    actingAs($user)->get(ProductResource::getUrl('index', panel: 'catalog::admin'))->assertForbidden();
+    actingAs($user);
+    get(ProductResource::getUrl('index', panel: 'catalog::admin'))->assertForbidden();
 });

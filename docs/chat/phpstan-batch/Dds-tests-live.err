@@ -1,0 +1,2 @@
+Note: Using configuration file /var/www/_bases/base_workorder_fila5/laravel/phpstan.neon.
+PHP Fatal error:  Trait method Parental\HasChildren::scopeChildrenWith has not been applied as Modules\Blog\Models\Article::scopeChildrenWith, because of collision with Modules\Blog\Models\Concerns\ArticleQueryScopes::scopeChildrenWith in /var/www/_bases/base_workorder_fila5/laravel/Modules/Blog/app/Models/Article.php on line 232

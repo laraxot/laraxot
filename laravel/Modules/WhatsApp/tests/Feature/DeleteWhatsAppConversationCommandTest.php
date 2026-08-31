@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use Illuminate\Testing\PendingCommand;
+use PHPUnit\Framework\Assert;
+
 uses(\Modules\WhatsApp\Tests\TestCase::class);
 
 use Carbon\CarbonImmutable;
@@ -14,9 +17,13 @@ afterEach(function (): void {
 });
 
 it('warns when there is nothing to delete', function (): void {
-    $this->artisan('whatsapp:delete-conversation')
-        ->expectsOutputToContain('Nessuna conversazione trovata.')
+    $pending = $this->artisan('whatsapp:delete-conversation');
+
+    Assert::assertInstanceOf(PendingCommand::class, $pending);
+
+    $pending->expectsOutputToContain('Nessuna conversazione trovata.')
         ->assertExitCode(0);
+
 });
 
 it('deletes the selected conversations after confirmation', function (): void {
@@ -44,41 +51,81 @@ it('deletes the selected conversations after confirmation', function (): void {
     ]);
 
     // Numbered 1, 2, 3... in display order — see PicksWhatsAppConversations.
-    $this->artisan('whatsapp:delete-conversation')
-        ->expectsChoice(
-            'Quali conversazioni vuoi eliminare?',
-            [1],
-            [
-                1 => '1) +393330001111 — 1 messaggi — numero sbagliato',
-                2 => '2) +393339990000 — 0 messaggi',
-            ],
-        )
+    $pending = $this->artisan('whatsapp:delete-conversation');
+
+    Assert::assertInstanceOf(PendingCommand::class, $pending);
+
+    $pending->expectsChoice(
+
+    'Quali conversazioni vuoi eliminare?',
+
+    [1],
+
+    [
+
+    1 => '1) +393330001111 — 1 messaggi — numero sbagliato',
+
+    2 => '2) +393339990000 — 0 messaggi',
+
+    ],
+
+    )
         ->expectsConfirmation('Eliminare 1 conversazioni e tutti i messaggi collegati? Azione irreversibile.', 'yes')
         ->assertExitCode(0);
+
+    
 
     expect(WhatsAppConversation::query()->whereKey($spam->id)->exists())->toBeFalse()
         ->and(WhatsAppMessage::query()->whereKey($spamMessage->id)->exists())->toBeFalse()
         ->and(WhatsAppConversation::query()->whereKey($legit->id)->exists())->toBeTrue();
-});
 
-it('aborts without deleting when the user declines confirmation', function (): void {
+    });
+
+    
+
+    it('aborts without deleting when the user declines confirmation', function (): void {
+
     CarbonImmutable::setTestNow(CarbonImmutable::parse('2026-08-22 10:00:00'));
 
+    
+
     $conversation = WhatsAppConversation::query()->create([
-        'phone_e164' => '+393331239876',
-        'status' => 'open',
-        'last_message_at' => now(),
+
+    'phone_e164' => '+393331239876',
+
+    'status' => 'open',
+
+    'last_message_at' => now(),
+
     ]);
 
-    $this->artisan('whatsapp:delete-conversation')
-        ->expectsChoice(
-            'Quali conversazioni vuoi eliminare?',
-            [1],
-            [1 => '1) +393331239876 — 0 messaggi'],
-        )
+    
+
+    $pending = $this->artisan('whatsapp:delete-conversation');
+
+
+    
+
+    Assert::assertInstanceOf(PendingCommand::class, $pending);
+
+
+    
+
+    $pending->expectsChoice(
+
+    'Quali conversazioni vuoi eliminare?',
+
+    [1],
+
+    [1 => '1) +393331239876 — 0 messaggi'],
+
+    )
         ->expectsConfirmation('Eliminare 1 conversazioni e tutti i messaggi collegati? Azione irreversibile.', 'no')
         ->expectsOutputToContain('Operazione annullata.')
         ->assertExitCode(0);
 
+    
+
     expect(WhatsAppConversation::query()->whereKey($conversation->id)->exists())->toBeTrue();
-});
+
+    });;;

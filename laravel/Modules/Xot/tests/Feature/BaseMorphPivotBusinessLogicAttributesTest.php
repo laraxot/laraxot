@@ -11,7 +11,7 @@ use PHPUnit\Framework\Assert;
 uses(\Modules\Xot\Tests\TestCase::class);
 
 describe('Base Morph Pivot Business Logic', function (): void {
-    describe('Base Morph Pivot Business Logic (attributes continued)', function (): void {
+    test('it can manage tags attributes', function (): void {
         // Arrange
         $tags = ['tag1', 'tag2', 'important'];
 

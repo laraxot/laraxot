@@ -43,10 +43,10 @@ abstract class TestCase extends XotBaseTestCase
     protected $connectionsToTransact = ['tenant'];
 
     /** @var TestSushiModel */
-    public static mixed $model;
+    public static mixed $sushiModel;
 
     /** @var BaseModel|null */
-    public static mixed $baseModel = null;
+    public static mixed $sushiBaseModel = null;
 
     public static ?Tenant $tenant = null;
 
@@ -143,7 +143,7 @@ abstract class TestCase extends XotBaseTestCase
             DB::purge($connection);
         }
 
-        self::$model = new TestSushiModel();
+        self::$sushiModel = new TestSushiModel();
         self::$createTestData = static fn (): array => [];
     }
 
@@ -171,9 +171,9 @@ abstract class TestCase extends XotBaseTestCase
 
     public static function sushiModel(): TestSushiModel
     {
-        Assert::assertInstanceOf(TestSushiModel::class, self::$model);
+        Assert::assertInstanceOf(TestSushiModel::class, self::$sushiModel);
 
-        return self::$model;
+        return self::$sushiModel;
     }
 
     public static function sushiJsonPath(): string
@@ -262,9 +262,9 @@ abstract class TestCase extends XotBaseTestCase
 
     public static function baseModelInstance(): BaseModel
     {
-        Assert::assertInstanceOf(BaseModel::class, self::$baseModel);
+        Assert::assertInstanceOf(BaseModel::class, self::$sushiBaseModel);
 
-        return self::$baseModel;
+        return self::$sushiBaseModel;
     }
 
     /**
@@ -322,6 +322,9 @@ abstract class TestCase extends XotBaseTestCase
         Assert::markTestSkipped($message);
     }
 
+    /**
+     * @param  array<string, mixed>  $parameters
+     */
     public static function runArtisanCommand(string $command, array $parameters = []): int
     {
         /** @var int $exitCode */
