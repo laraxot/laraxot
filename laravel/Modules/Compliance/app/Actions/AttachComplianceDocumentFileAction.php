@@ -21,7 +21,7 @@ final class AttachComplianceDocumentFileAction
     public function execute(
         ComplianceDocument $document,
         string $path,
-        ?int $uploadedByUserId = null,
+        int|string|null $uploadedByUserId = null,
     ): ?Media {
         $path = trim($path);
         if ($path === '' || ! Storage::disk('public')->exists($path)) {

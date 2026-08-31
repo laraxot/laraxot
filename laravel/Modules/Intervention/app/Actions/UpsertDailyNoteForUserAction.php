@@ -13,7 +13,7 @@ final class UpsertDailyNoteForUserAction
     use QueueableAction;
 
     public function execute(
-        int $userId,
+        int|string $userId,
         CarbonImmutable $noteDate,
         string $body,
         ?string $bodyHtml = null,

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Modules\Intervention\Tests\TestCase;
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Actions\CreateIssueReportAction;
@@ -42,7 +42,7 @@ it('creates an issue report for an intervention', function (): void {
     // Act
     $report = app(CreateIssueReportAction::class)->execute(
         intervention: $intervention,
-        createdByUserId: (int) $user->id,
+        createdByUserId: $user->id,
         body: 'Found an issue on site',
     );
 

@@ -35,6 +35,10 @@ abstract class TestCase extends XotBaseTestCase
 
     protected function setUp(): void
     {
+        // Alcuni test guardano lo schema (es. il tipo delle colonne che indicano
+        // una persona): senza il fixture condiviso le tabelle non esistono.
+        $this->prepareSharedFixcitySqliteForTesting();
+
         parent::setUp();
 
         // ✅ NO migrate manuale - DatabaseTransactions gestisce tutto

@@ -16,7 +16,7 @@ class ApproveAbsenceRequestAction
 {
     use QueueableAction;
 
-    public function execute(AbsenceRequest $request, int $decidedByUserId, ?CarbonInterface $decidedAt = null): AbsenceRequest
+    public function execute(AbsenceRequest $request, int|string $decidedByUserId, ?CarbonInterface $decidedAt = null): AbsenceRequest
     {
         $request->forceFill([
             'status' => AbsenceRequest::STATUS_APPROVED,

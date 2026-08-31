@@ -23,7 +23,7 @@ final class GenerateMaintenanceInterventionAction
         HeatingSystem $system,
         ?Boiler $boiler,
         CarbonInterface $scheduledAt,
-        int $performedByUserId,
+        int|string $performedByUserId,
         string $controlType = 'maintenance',
     ): Intervention {
         $label = $controlType === 'efficiency_check'

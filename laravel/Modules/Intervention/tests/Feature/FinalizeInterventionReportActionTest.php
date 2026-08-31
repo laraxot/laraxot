@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Modules\Intervention\Tests\TestCase;
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
 use Carbon\CarbonImmutable;
 use Modules\Customer\Models\Customer;
@@ -58,7 +58,7 @@ it('finalizes an intervention with outcome completed and updates work order stat
 
     $finalized = app(FinalizeInterventionReportAction::class)->execute(
         intervention: $intervention,
-        validatedByUserId: (int) $admin->id,
+        validatedByUserId: $admin->id,
         travelKm: 12,
         travelMinutes: 25,
         notes: 'Done',
@@ -67,7 +67,8 @@ it('finalizes an intervention with outcome completed and updates work order stat
 
     expect($finalized->outcome_code)->toBe('completed');
     expect($finalized->notes_html)->toBe('Done');
-    expect($finalized->validated_by_user_id)->toBe((int) $admin->id);
+    // L'id e' un UUID: si confronta come stringa, il cast a int lo azzererebbe.
+    expect($finalized->validated_by_user_id)->toBe((string) $admin->id);
     expect($finalized->validated_at)->not->toBeNull();
 
     $workOrder->refresh();
@@ -113,7 +114,7 @@ it('finalizes an intervention with outcome suspended (keeps work order in progre
 
     $finalized = app(FinalizeInterventionReportAction::class)->execute(
         intervention: $intervention,
-        validatedByUserId: (int) $user->id,
+        validatedByUserId: $user->id,
         travelKm: 0,
         travelMinutes: 0,
         notes: null,
@@ -165,7 +166,7 @@ it('finalizes an intervention with outcome quotation and adds an activity', func
 
     $finalized = app(FinalizeInterventionReportAction::class)->execute(
         intervention: $intervention,
-        validatedByUserId: (int) $user->id,
+        validatedByUserId: $user->id,
         travelKm: 0,
         travelMinutes: 0,
         notes: 'Need a quote',

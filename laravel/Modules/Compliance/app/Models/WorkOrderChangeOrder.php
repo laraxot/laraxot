@@ -16,8 +16,8 @@ use Modules\Xot\Models\XotBaseModel;
 /**
  * @property int $id
  * @property int $work_order_id
- * @property int|null $requested_by_user_id
- * @property int|null $approved_by_user_id
+ * @property string|null $requested_by_user_id
+ * @property string|null $approved_by_user_id
  * @property string $title
  * @property string|null $description
  * @property string|null $estimated_amount

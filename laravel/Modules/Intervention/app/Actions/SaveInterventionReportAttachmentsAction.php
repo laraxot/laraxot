@@ -29,7 +29,7 @@ final class SaveInterventionReportAttachmentsAction
         Intervention $intervention,
         array $photoPaths,
         ?string $signatureDataUrl,
-        int $userId,
+        int|string $userId,
     ): array {
         $stored = 0;
 

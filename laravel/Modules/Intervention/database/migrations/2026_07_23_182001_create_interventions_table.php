@@ -13,7 +13,9 @@ return new class() extends XotBaseMigration
             $table->id();
             $table->foreignId('work_order_id')->nullable()->constrained('work_orders')->nullOnDelete();
             $table->foreignId('customer_id')->nullable()->constrained('customers')->nullOnDelete();
-            $table->unsignedBigInteger('performed_by_user_id')->nullable()->index();
+            // L'id utente e' un UUID di 36 caratteri: una colonna intera lo troncherebbe
+            // a 0, perdendo in silenzio chi ha eseguito l'operazione.
+            $table->string('performed_by_user_id', 36)->nullable()->index();
             $table->dateTime('scheduled_at')->nullable();
             $table->dateTime('started_at')->nullable();
             $table->dateTime('ended_at')->nullable();
@@ -34,7 +36,7 @@ return new class() extends XotBaseMigration
             $table->timestamp('google_synced_at')->nullable();
             $table->string('outcome_code')->nullable();
             $table->dateTime('validated_at')->nullable();
-            $table->unsignedBigInteger('validated_by_user_id')->nullable()->index();
+            $table->string('validated_by_user_id', 36)->nullable()->index();
             $table->index(['work_order_id']);
             $table->index(['customer_id']);
         });

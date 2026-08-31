@@ -23,7 +23,7 @@ return new class() extends XotBaseMigration
         $this->tableCreate(function (Blueprint $table): void {
             $table->id();
 
-            $table->unsignedBigInteger('user_id')->index();
+            $table->string('user_id', 36)->index();
 
             $table->string('type');
 
@@ -35,7 +35,9 @@ return new class() extends XotBaseMigration
 
             $table->string('status')->default('pending');
 
-            $table->unsignedBigInteger('decided_by_user_id')->nullable();
+            // L'id utente e' un UUID di 36 caratteri: una colonna intera lo troncherebbe
+            // a 0, perdendo in silenzio chi ha eseguito l'operazione.
+            $table->string('decided_by_user_id', 36)->nullable();
 
             $table->dateTime('decided_at')->nullable();
 

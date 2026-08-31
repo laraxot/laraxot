@@ -20,7 +20,7 @@ final class AddVehicleDocumentAction
     public function execute(
         Vehicle $vehicle,
         string $path,
-        ?int $uploadedByUserId = null,
+        int|string|null $uploadedByUserId = null,
         ?string $title = null,
     ): VehicleDocument {
         $media = $this->createMediaFromStoredFile->execute(

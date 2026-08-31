@@ -12,9 +12,11 @@ return new class() extends XotBaseMigration
         $this->tableCreate(static function (Blueprint $table): void {
             $table->id();
             $table->foreignId('work_order_id')->constrained('work_orders')->cascadeOnDelete();
-            $table->unsignedBigInteger('user_id')->index();
+            $table->string('user_id', 36)->index();
             $table->string('role')->nullable();
-            $table->unsignedBigInteger('assigned_by_user_id')->nullable()->index();
+            // L'id utente e' un UUID di 36 caratteri: una colonna intera lo troncherebbe
+            // a 0, perdendo in silenzio chi ha eseguito l'operazione.
+            $table->string('assigned_by_user_id', 36)->nullable()->index();
             $table->dateTime('assigned_at')->nullable();
             $table->unique(['work_order_id', 'user_id']);
             $table->index(['work_order_id']);

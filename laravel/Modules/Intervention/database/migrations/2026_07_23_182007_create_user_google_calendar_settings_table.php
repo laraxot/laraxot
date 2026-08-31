@@ -11,7 +11,9 @@ return new class() extends XotBaseMigration
     {
         $this->tableCreate(static function (Blueprint $table): void {
             $table->id();
-            $table->unsignedBigInteger('user_id')->unique();
+            // L'id utente e' un UUID di 36 caratteri: una colonna intera lo troncherebbe
+            // a 0, legando la riga all'utente sbagliato o a nessuno.
+            $table->string('user_id', 36);
             $table->boolean('enabled')->default(false);
             $table->string('google_email')->nullable();
             $table->string('calendar_id')->nullable();

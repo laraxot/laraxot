@@ -39,7 +39,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property array<string, mixed>|null $layers
  * @property array<string, mixed>|null $notes
  * @property array<string, mixed>|null $raw_extraction
- * @property int|null $created_by_user_id
+ * @property string|null $created_by_user_id
  * @property string|null $artwork_path
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at

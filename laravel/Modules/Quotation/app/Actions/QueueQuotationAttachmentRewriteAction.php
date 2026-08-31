@@ -24,7 +24,7 @@ final class QueueQuotationAttachmentRewriteAction
         private AddQuotationAttachmentAction $attach,
     ) {}
 
-    public function execute(Quotation $target, string $customerName = '', ?int $userId = null): bool
+    public function execute(Quotation $target, string $customerName = '', int|string|null $userId = null): bool
     {
         $sourceId = is_numeric($target->source_quotation_id) ? (int) $target->source_quotation_id : 0;
         if ($sourceId <= 0) {
@@ -55,7 +55,7 @@ final class QueueQuotationAttachmentRewriteAction
         return true;
     }
 
-    private function createPlaceholder(Quotation $target, ?int $userId): int
+    private function createPlaceholder(Quotation $target, int|string|null $userId): int
     {
         $this->removeStalePlaceholders($target);
 

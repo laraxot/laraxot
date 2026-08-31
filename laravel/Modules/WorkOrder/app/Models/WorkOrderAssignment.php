@@ -13,7 +13,7 @@ use Modules\User\Models\User;
  * @property int $work_order_id
  * @property int $user_id
  * @property string|null $role
- * @property int|null $assigned_by_user_id
+ * @property string|null $assigned_by_user_id
  * @property Carbon|null $assigned_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at

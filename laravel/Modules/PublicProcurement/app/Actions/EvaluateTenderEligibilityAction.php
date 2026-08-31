@@ -26,7 +26,7 @@ final class EvaluateTenderEligibilityAction
      */
     public function execute(
         PublicProcurementTenderOpportunity $opportunity,
-        ?int $evaluatedByUserId = null,
+        int|string|null $evaluatedByUserId = null,
         array $requiredDocuments = [],
     ): PublicProcurementTenderEligibilityCheck {
         $requirements = $requiredDocuments !== [] ? $requiredDocuments : $this->requiredDocumentsFor($opportunity);

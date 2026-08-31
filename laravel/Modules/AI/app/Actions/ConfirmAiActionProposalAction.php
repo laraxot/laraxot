@@ -22,7 +22,7 @@ class ConfirmAiActionProposalAction
 
     public function __construct(private readonly AiActionHandlerRegistry $registry) {}
 
-    public function execute(AiActionProposal $proposal, int $confirmedByUserId): AiActionProposal
+    public function execute(AiActionProposal $proposal, int|string $confirmedByUserId): AiActionProposal
     {
         $proposal->forceFill([
             'status' => AiActionProposal::STATUS_CONFIRMED,

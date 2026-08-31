@@ -13,7 +13,7 @@ final class CreateAbsenceRequestAction
     use QueueableAction;
 
     public function execute(
-        int $userId,
+        int|string $userId,
         string $type,
         CarbonImmutable $startsAt,
         CarbonImmutable $endsAt,

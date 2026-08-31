@@ -19,7 +19,7 @@ final class SyncDailyNotePhotosAction
      * @param  array<int, string>  $paths
      * @return array<int, Media>
      */
-    public function execute(DailyNote $dailyNote, array $paths, ?int $uploadedByUserId = null): array
+    public function execute(DailyNote $dailyNote, array $paths, int|string|null $uploadedByUserId = null): array
     {
         $normalizedPaths = collect($paths)
             ->map(static fn (mixed $path): string => trim((string) $path))

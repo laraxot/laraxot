@@ -25,7 +25,7 @@ class BuildWeeklyTimeTableAction
      *
      * @return array<string, mixed>
      */
-    public function execute(int $userId, Carbon $start, Carbon $end): array
+    public function execute(int|string $userId, Carbon $start, Carbon $end): array
     {
         /** @var Collection<int, WorkHour> $entries */
         $entries = WorkHour::query()

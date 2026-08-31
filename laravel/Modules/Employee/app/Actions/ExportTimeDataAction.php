@@ -23,7 +23,7 @@ class ExportTimeDataAction
     /**
      * Execute time data export.
      */
-    public function execute(int $userId, Carbon $startDate, Carbon $endDate, string $format = 'xlsx'): string
+    public function execute(int|string $userId, Carbon $startDate, Carbon $endDate, string $format = 'xlsx'): string
     {
         // Ottieni dati completi per il periodo
         $timeData = $this->getTimeDataForExport($userId, $startDate, $endDate);
@@ -42,7 +42,7 @@ class ExportTimeDataAction
      *
      * @return array{employee: array<string, array<string, int|string>|int|string>, period: array{start: string, end: string, days: int}, summary: array<string, int>, weekData: array<string, mixed>, entries: array<int, array{date: string, time: string, type: string, status: string, location: string, notes: string}>, generatedAt: string}
      */
-    private function getTimeDataForExport(int $userId, Carbon $startDate, Carbon $endDate): array
+    private function getTimeDataForExport(int|string $userId, Carbon $startDate, Carbon $endDate): array
     {
         // Usa Action esistente per ottenere dati base
         $baseData = app(BuildWorkHoursForRangeAction::class)->execute($userId, $startDate, $endDate);
@@ -92,7 +92,7 @@ class ExportTimeDataAction
      *
      * @param  array{employee?: array<string, mixed>, period?: array<string, mixed>, summary?: array<string, int>, weekData?: array<string, mixed>, entries?: array<int, array<string, string>>, generatedAt?: string}  $data
      */
-    private function exportToExcel(array $data, int $userId, Carbon $startDate, Carbon $endDate): string
+    private function exportToExcel(array $data, int|string $userId, Carbon $startDate, Carbon $endDate): string
     {
         $filename = "timbrature_{$userId}_{$startDate->format('Ymd')}_{$endDate->format('Ymd')}.xlsx";
 
@@ -110,7 +110,7 @@ class ExportTimeDataAction
      *
      * @param  array{employee?: array<string, mixed>, period?: array<string, mixed>, summary?: array<string, int>, weekData?: array<string, mixed>, entries?: array<int, array<string, string>>, generatedAt?: string}  $data
      */
-    private function exportToCsv(array $data, int $userId, Carbon $startDate, Carbon $endDate): string
+    private function exportToCsv(array $data, int|string $userId, Carbon $startDate, Carbon $endDate): string
     {
         $filename = "timbrature_{$userId}_{$startDate->format('Ymd')}_{$endDate->format('Ymd')}.csv";
         $csvData = $this->buildCsvData($data);
@@ -125,7 +125,7 @@ class ExportTimeDataAction
      *
      * @param  array{employee?: array<string, mixed>, period?: array<string, mixed>, summary?: array<string, int>, weekData?: array<string, mixed>, entries?: array<int, array<string, string>>, generatedAt?: string}  $data
      */
-    private function exportToPdf(array $data, int $userId, Carbon $startDate, Carbon $endDate): string
+    private function exportToPdf(array $data, int|string $userId, Carbon $startDate, Carbon $endDate): string
     {
         $filename = "timbrature_{$userId}_{$startDate->format('Ymd')}_{$endDate->format('Ymd')}.pdf";
 

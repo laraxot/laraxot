@@ -16,7 +16,7 @@ use Modules\Intervention\Database\Factories\InterventionReportShareFactory;
  * @property int $id
  * @property int $intervention_id
  * @property string $token
- * @property int|null $created_by_user_id
+ * @property string|null $created_by_user_id
  * @property CarbonImmutable|null $expires_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at

@@ -20,7 +20,7 @@ final class AddEmployeeDocumentAction
     public function execute(
         Employee $employee,
         string $path,
-        ?int $uploadedByUserId = null,
+        int|string|null $uploadedByUserId = null,
         ?string $title = null,
         ?string $kind = null,
     ): EmployeeDocument {

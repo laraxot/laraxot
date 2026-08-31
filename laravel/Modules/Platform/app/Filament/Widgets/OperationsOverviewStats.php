@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Platform\Filament\Widgets;
 
-use Modules\Platform\Filament\Widgets\Concerns\ResolvesPanelUserScope;
 use App\Support\AccountFeatures;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
@@ -12,6 +11,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 use Modules\HR\Models\AbsenceRequest;
 use Modules\Intervention\Models\Intervention;
+use Modules\Platform\Filament\Widgets\Concerns\ResolvesPanelUserScope;
 use Modules\WorkOrder\Models\WorkOrder;
 
 final class OperationsOverviewStats extends BaseWidget
@@ -80,7 +80,7 @@ final class OperationsOverviewStats extends BaseWidget
     }
 
     /** @return Builder<Intervention> */
-    private function scopedInterventionsQuery(?int $userId): Builder
+    private function scopedInterventionsQuery(int|string|null $userId): Builder
     {
         return Intervention::query()
             ->when(
@@ -90,7 +90,7 @@ final class OperationsOverviewStats extends BaseWidget
     }
 
     /** @return Builder<AbsenceRequest> */
-    private function scopedAbsenceRequestsQuery(?int $userId): Builder
+    private function scopedAbsenceRequestsQuery(int|string|null $userId): Builder
     {
         return AbsenceRequest::query()
             ->when(
@@ -100,7 +100,7 @@ final class OperationsOverviewStats extends BaseWidget
     }
 
     /** @return Builder<WorkOrder> */
-    private function scopedWorkOrdersQuery(?int $userId): Builder
+    private function scopedWorkOrdersQuery(int|string|null $userId): Builder
     {
         $query = WorkOrder::query();
 

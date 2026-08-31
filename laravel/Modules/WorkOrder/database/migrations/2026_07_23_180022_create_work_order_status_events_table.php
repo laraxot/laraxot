@@ -14,7 +14,9 @@ return new class() extends XotBaseMigration
             $table->foreignId('work_order_id')->constrained('work_orders')->cascadeOnDelete();
             $table->foreignId('from_status_id')->nullable()->constrained('work_order_statuses')->nullOnDelete();
             $table->foreignId('to_status_id')->nullable()->constrained('work_order_statuses')->nullOnDelete();
-            $table->unsignedBigInteger('changed_by_user_id')->nullable()->index();
+            // L'id utente e' un UUID di 36 caratteri: una colonna intera lo troncherebbe
+            // a 0, perdendo in silenzio chi ha eseguito l'operazione.
+            $table->string('changed_by_user_id', 36)->nullable()->index();
             $table->text('note')->nullable();
             $table->dateTime('changed_at')->nullable();
             $table->index(['work_order_id']);

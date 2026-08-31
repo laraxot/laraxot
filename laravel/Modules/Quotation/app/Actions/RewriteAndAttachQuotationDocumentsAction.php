@@ -28,7 +28,7 @@ final class RewriteAndAttachQuotationDocumentsAction
         private readonly AddQuotationAttachmentAction $attach,
     ) {}
 
-    public function execute(Quotation $source, Quotation $target, string $newCustomerName = '', ?int $userId = null): int
+    public function execute(Quotation $source, Quotation $target, string $newCustomerName = '', int|string|null $userId = null): int
     {
         $targetKey = $target->getKey();
         $targetId = is_numeric($targetKey) ? (int) $targetKey : 0;

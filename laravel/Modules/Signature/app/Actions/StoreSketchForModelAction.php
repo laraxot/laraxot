@@ -22,8 +22,8 @@ final class StoreSketchForModelAction
     public function execute(
         string $dataUrl,
         string $sketchableType,
-        int $sketchableId,
-        int $userId,
+        int|string $sketchableId,
+        int|string $userId,
         array $payload = [],
     ): Sketch {
         $path = $this->storePngDataUrl($dataUrl, directory: 'media/sketches');

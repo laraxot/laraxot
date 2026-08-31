@@ -32,7 +32,7 @@ final class ApplyInterventionReportDraftAction
         private readonly ResolveDictatedOperatorsAction $resolveOperators,
     ) {}
 
-    public function execute(Intervention $intervention, InterventionReportDraft $draft, ?int $userId = null): Intervention
+    public function execute(Intervention $intervention, InterventionReportDraft $draft, int|string|null $userId = null): Intervention
     {
         $attributes = [];
 
@@ -95,7 +95,7 @@ final class ApplyInterventionReportDraftAction
         return $intervention->refresh();
     }
 
-    private function recordIssues(Intervention $intervention, InterventionReportDraft $draft, ?int $userId): void
+    private function recordIssues(Intervention $intervention, InterventionReportDraft $draft, int|string|null $userId): void
     {
         foreach ($draft->issues as $body) {
             $intervention->issueReports()->create([

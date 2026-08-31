@@ -189,10 +189,12 @@ final class InterventionResource extends GatedXotBaseResource
                                     return;
                                 }
 
-                                $assignedIds = $record->assignedUsers()->pluck('users.id')->map(static fn ($id): int => (int) $id)->all();
+                                // Gli id utente sono UUID: restano stringhe, altrimenti
+                                // il cast li appiattisce e la select non ritrova nessuno.
+                                $assignedIds = $record->assignedUsers()->pluck('users.id')->map(static fn (mixed $id): string => (string) $id)->all();
 
                                 if ($assignedIds === [] && $record->performed_by_user_id !== null) {
-                                    $assignedIds = [(int) $record->performed_by_user_id];
+                                    $assignedIds = [(string) $record->performed_by_user_id];
                                 }
 
                                 $component->state($assignedIds);
@@ -653,7 +655,7 @@ final class InterventionResource extends GatedXotBaseResource
                         if ($userId === null) {
                             return false;
                         }
-                        if (! self::isAssignedToUser($record, (int) $userId)) {
+                        if (! self::isAssignedToUser($record, (string) $userId)) {
                             return false;
                         }
 
@@ -686,7 +688,7 @@ final class InterventionResource extends GatedXotBaseResource
                         if ($userId === null) {
                             return false;
                         }
-                        if (! self::isAssignedToUser($record, (int) $userId)) {
+                        if (! self::isAssignedToUser($record, (string) $userId)) {
                             return false;
                         }
 
@@ -719,7 +721,7 @@ final class InterventionResource extends GatedXotBaseResource
                             return false;
                         }
 
-                        return self::isAssignedToUser($record, (int) $userId);
+                        return self::isAssignedToUser($record, (string) $userId);
                     })
                     ->form([
                         TextInput::make('travel_km')
@@ -778,7 +780,7 @@ final class InterventionResource extends GatedXotBaseResource
                             return false;
                         }
 
-                        return self::isAssignedToUser($record, (int) $userId);
+                        return self::isAssignedToUser($record, (string) $userId);
                     })
                     ->url(fn (Intervention $record): string => UploadInterventionPhotos::getUrl([
                         'interventionId' => $record->id,
@@ -1309,9 +1311,9 @@ final class InterventionResource extends GatedXotBaseResource
         return '';
     }
 
-    private static function isAssignedToUser(Intervention $record, int $userId): bool
+    private static function isAssignedToUser(Intervention $record, int|string $userId): bool
     {
-        if ((int) $record->performed_by_user_id === $userId) {
+        if ((string) $record->performed_by_user_id === (string) $userId) {
             return true;
         }
 

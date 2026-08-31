@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Email\Filament\Pages;
 
-use Modules\User\Models\User;
 use App\Support\AccountFeatures;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
@@ -15,6 +14,7 @@ use Modules\Email\Models\EmailMessage;
 use Modules\Email\Settings\EmailSettings;
 use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\Platform\Models\PlatformSetting;
+use Modules\User\Models\User;
 
 final class EmailSettingsPage extends GatedXotBasePage
 {
@@ -58,7 +58,7 @@ final class EmailSettingsPage extends GatedXotBasePage
 
     public int $confidenceThreshold = 80;
 
-    public ?int $defaultApprovalUserId = null;
+    public int|string|null $defaultApprovalUserId = null;
 
     public bool $autoArchiveCertainNotes = false;
 

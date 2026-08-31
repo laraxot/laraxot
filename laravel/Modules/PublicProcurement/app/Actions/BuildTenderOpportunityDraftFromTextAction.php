@@ -16,7 +16,7 @@ final class BuildTenderOpportunityDraftFromTextAction
 {
     use QueueableAction;
 
-    public function execute(string $filename, string $text, ?int $createdByUserId = null): PublicProcurementAiExtraction
+    public function execute(string $filename, string $text, int|string|null $createdByUserId = null): PublicProcurementAiExtraction
     {
         $classification = app(ClassifyPublicProcurementDocumentTextAction::class)->execute($filename, $text);
         $payload = [

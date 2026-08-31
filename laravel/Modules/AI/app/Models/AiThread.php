@@ -17,7 +17,7 @@ use Modules\Xot\Models\XotBaseModel;
  *
  * @property int $id
  * @property string $public_id
- * @property int $created_by_user_id
+ * @property string $created_by_user_id
  * @property string $panel_id
  * @property Carbon|null $last_message_at
  * @property array<string, mixed>|null $meta

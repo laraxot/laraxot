@@ -23,7 +23,7 @@ use Modules\Employee\Database\Factories\AbsenceRequestFactory;
  * @property Carbon $ends_at
  * @property string|null $notes
  * @property string $status
- * @property int|null $decided_by_user_id
+ * @property string|null $decided_by_user_id
  * @property Carbon|null $decided_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
@@ -126,7 +126,7 @@ class AbsenceRequest extends BaseModel
      * @param  Builder<AbsenceRequest>  $query
      * @return Builder<AbsenceRequest>
      */
-    public function scopeForUser(Builder $query, int $userId): Builder
+    public function scopeForUser(Builder $query, int|string $userId): Builder
     {
         return $query->where('user_id', $userId);
     }

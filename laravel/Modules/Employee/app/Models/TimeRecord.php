@@ -39,7 +39,7 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property-read ProfileContract|null $updater
  *
  * @method static Builder<static>|TimeRecord forDate(\Carbon\Carbon $date)
- * @method static Builder<static>|TimeRecord forUser(int $userId)
+ * @method static Builder<static>|TimeRecord forUser(int|string $userId)
  * @method static Builder<static>|TimeRecord newModelQuery()
  * @method static Builder<static>|TimeRecord newQuery()
  * @method static Builder<static>|TimeRecord ofType(string $type)
@@ -125,7 +125,7 @@ class TimeRecord extends BaseModel
      * @param  Builder<static>  $query
      * @return Builder<static>
      */
-    public function scopeForUser($query, int $userId)
+    public function scopeForUser($query, int|string $userId)
     {
         return $query->where('user_id', $userId);
     }

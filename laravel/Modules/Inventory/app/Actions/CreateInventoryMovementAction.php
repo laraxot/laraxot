@@ -28,7 +28,7 @@ final class CreateInventoryMovementAction
         ?string $note,
         ?int $workOrderId,
         ?int $interventionId,
-        ?int $createdByUserId,
+        int|string|null $createdByUserId,
         bool $originAuto = false,
         ?CarbonImmutable $occurredAt = null,
         ?float $unitPrice = null,

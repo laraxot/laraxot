@@ -37,7 +37,7 @@ class BuildTimelineVisualizationAction
      *   dayStatus: array<string, array{status: string, indicator: string, color: string, dayName: string, isToday: bool, isWeekend: bool}>
      * }
      */
-    public function execute(int $userId, Carbon $weekStart, Carbon $weekEnd): array
+    public function execute(int|string $userId, Carbon $weekStart, Carbon $weekEnd): array
     {
         // 1. Costruisci slot temporali (06:00-20:00 come nell'immagine)
         $timeSlots = $this->buildTimeSlots();
@@ -82,7 +82,7 @@ class BuildTimelineVisualizationAction
      *
      * @return Collection<int, WorkHour>
      */
-    private function getWeekEntries(int $userId, Carbon $weekStart, Carbon $weekEnd): Collection
+    private function getWeekEntries(int|string $userId, Carbon $weekStart, Carbon $weekEnd): Collection
     {
         return WorkHour::query()
             ->where('employee_id', $userId)
