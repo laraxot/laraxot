@@ -5,7 +5,9 @@ declare(strict_types=1);
 uses(\Modules\Wts\Tests\TestCase::class);
 
 use Modules\User\Models\User;
+use Livewire\Livewire;
 use Modules\Wts\Filament\Resources\UserResource;
+use Modules\Wts\Filament\Resources\UserResource\Pages\ListUsers;
 use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;
@@ -48,4 +50,46 @@ it('hides user management from wts_operator', function (): void {
     actingAs($operator);
 
     expect(UserResource::canViewAny())->toBeFalse();
+});
+
+it('lets a wts_admin edit and view the plant users', function (): void {
+    Role::findOrCreate('wts_admin');
+    $admin = User::factory()->create();
+    $admin->syncRoles(['wts_admin']);
+    $other = User::factory()->create();
+    $other->syncRoles(['wts_admin']);
+
+    filament()->setCurrentPanel('wts');
+    actingAs($admin);
+
+    expect(UserResource::canEdit($other))->toBeTrue()
+        ->and(UserResource::canView($other))->toBeTrue();
+});
+
+it('denies edit and view to a wts_operator', function (): void {
+    foreach (['wts_admin', 'wts_operator'] as $roleName) {
+        Role::findOrCreate($roleName);
+    }
+    $operator = User::factory()->create();
+    $operator->syncRoles(['wts_operator']);
+    $target = User::factory()->create();
+    $target->syncRoles(['wts_admin']);
+
+    filament()->setCurrentPanel('wts');
+    actingAs($operator);
+
+    expect(UserResource::canEdit($target))->toBeFalse()
+        ->and(UserResource::canView($target))->toBeFalse();
+});
+
+it('offers the create action on the wts user list', function (): void {
+    Role::findOrCreate('wts_admin');
+    $admin = User::factory()->create();
+    $admin->syncRoles(['wts_admin']);
+
+    filament()->setCurrentPanel('wts');
+
+    Livewire::actingAs($admin)
+        ->test(ListUsers::class)
+        ->assertActionExists('create');
 });

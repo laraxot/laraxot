@@ -44,6 +44,10 @@ progetto di origine viveva in `app/` e non era mai stato portato.
   dentro l'unica `UserResource` dell'app. Qui `Modules\User` e' condiviso e non deve
   conoscere il WTS, quindi il filtro sta in `Modules\Wts\Filament\Resources\UserResource`
   (estende quella di User) con le sue quattro Pages; il pannello monta quella.
+  L'accesso e' del solo `wts_admin` e resta soggetto al toggle di "Moduli & Menu"
+  (`NavigationGate`), non alla policy Shield: quella richiede permessi che nel
+  pannello di impianto non ha nessuno e negherebbe la pagina anche a chi di dovere.
+  La lista aggiunge l'azione "crea" all'export ereditato.
 
 ## Test allineati al contesto di destinazione
 
@@ -58,6 +62,14 @@ progetto di origine viveva in `app/` e non era mai stato portato.
   conversione raster→ZPL a uno `ZplImageConverter` **mai scritto**: il ramo esplodeva a
   runtime. Le etichette WTS disegnano il QR con `^BQ` nativo, quindi il metodo rifiuta
   l'elemento invece di fingere un supporto che non c'e'.
+
+## Delta `Modules/Auth` assorbito
+
+Il delta della seconda tranche su `Modules/Auth` (commit `cd1cf2f`, `db4a599`,
+`44f3eab`) era interamente logica del pannello WTS: lista utenti ristretta,
+gating per `wts_admin`, tasto "crea" nella lista. Non esiste un modulo `Auth` in
+questa base, quindi quel comportamento e' stato realizzato dove appartiene: nella
+`UserResource` di questo modulo.
 
 ## Dipendenze aggiunte
 

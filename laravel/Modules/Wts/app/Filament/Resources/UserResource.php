@@ -6,7 +6,9 @@ namespace Modules\Wts\Filament\Resources;
 
 use App\Support\AccountFeatures;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Modules\Platform\Support\Navigation\NavigationGate;
 use Modules\User\Filament\Resources\UserResource as BaseUserResource;
 
 /**
@@ -30,11 +32,43 @@ class UserResource extends BaseUserResource
 
     public static function canViewAny(): bool
     {
-        return AccountFeatures::isWtsAdmin(Auth::user());
+        return self::isAllowed();
     }
 
     public static function canCreate(): bool
     {
-        return AccountFeatures::isWtsAdmin(Auth::user());
+        return self::isAllowed();
+    }
+
+    public static function canEdit(Model $record): bool
+    {
+        return self::isAllowed();
+    }
+
+    public static function canView(Model $record): bool
+    {
+        return self::isAllowed();
+    }
+
+    public static function canDelete(Model $record): bool
+    {
+        return self::isAllowed();
+    }
+
+    public static function shouldRegisterNavigation(): bool
+    {
+        return self::isAllowed();
+    }
+
+    /**
+     * Nel pannello WTS l'accesso e' del solo wts_admin; oltre a questo resta il
+     * toggle di "Moduli & Menu", che permette di spegnere la voce senza toccare
+     * i ruoli. Non si passa dalla policy Shield: richiede permessi che qui non
+     * ha nessuno, e negherebbe la pagina anche a chi di dovere.
+     */
+    private static function isAllowed(): bool
+    {
+        return AccountFeatures::isWtsAdmin(Auth::user())
+            && NavigationGate::isItemEnabled(self::class);
     }
 }

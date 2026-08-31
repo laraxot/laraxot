@@ -278,12 +278,20 @@ storico del modulo era proprio questo).
   `Log::listen()` a tre argomenti (abbandonata da Laravel 9) e restituiva l'array per
   valore quando i log arrivano dopo. 2 rossi → 20 verdi.
 
-### Auth → User: rimandato alla Fase 3
+### Auth → User: rimandato alla Fase 3 → **chiuso con Wts**
 
 Il delta del modulo Auth è **interamente** logica del panel WTS (`isWtsPanel()`,
 ruoli `wts_admin`/`wts_operator`, `AccountFeatures::isWtsAdmin`). Il panel e il
-modulo Wts non esistono ancora nella base: il delta va portato **insieme** a Wts
-nella Fase 3, altrimenti sarebbe codice morto che referenzia classi assenti.
+modulo Wts non esistevano ancora nella base: il delta è stato portato **insieme** a
+Wts, altrimenti sarebbe stato codice morto che referenzia classi assenti.
+
+Nel sorgente quel comportamento stava nell'unica `UserResource` dell'applicazione,
+con dei `if (isWtsPanel())` sparsi nei quattro metodi di autorizzazione. Qui
+`Modules/User` è un modulo condiviso e non deve sapere che esiste un WTS: la
+resource ristretta è `Modules\Wts\Filament\Resources\UserResource`, che estende
+quella di User, e il pannello monta quella. Sparisce il branch: nella resource del
+pannello di impianto non c'è nessun «se siamo nel pannello WTS», perché ci siamo
+per costruzione.
 
 ## Checkpoint 2026-08-31 — Fase 2 completa: tre moduli nuovi
 
@@ -338,11 +346,34 @@ dal listino fornitori col ricarico di Costing.
    l'utente sulla prima resource che capita: la dashboard va montata a mano se si
    dichiara `$isDiscovered = false`.
 
+## Checkpoint 2026-08-31 — Fase 3: modulo Wts
+
+Il verticale WTS (impianto di trattamento rifiuti) viveva in `app/Wts`,
+`app/Filament/Wts` e `WtsPanelProvider`: 69 file mai portati. Ora è un modulo con
+pannello proprio su `/wts`, 205 test verdi e PHPStan pulito. Dettaglio in
+[Modules/Wts/docs/import-status.md](../../laravel/Modules/Wts/docs/import-status.md).
+
+Quattro cose imparate qui, oltre a quelle già in elenco:
+
+7. **Le pagine che si dichiarano `$isDiscovered = false` vanno montate tutte a mano**,
+   non solo la dashboard: con il solo elenco parziale il pannello espone il login e
+   ogni altra rotta risponde 404.
+8. **Un modello con `SoftDeletes` e una migrazione senza `deleted_at` non fallisce
+   subito**: fallisce alla prima query, con un 500 in pagina. Vale la pena derivare
+   il flag della migrazione dai trait del modello invece che a memoria.
+9. **I `@property` generati dallo schema mentono se il modello ha dei `casts()`**: una
+   colonna JSON è `string` su disco e `array` in PHP, e un docblock che dice `string`
+   rende morto ogni `is_array()` a valle. Il generatore ora legge prima i cast.
+10. **Uno stub di comodo sopravvive al pacchetto che sostituiva**: `Barryvdh\DomPDF\PDF`
+    era stubbato in `Modules/Intervention` da quando dompdf non c'era; ora che c'è,
+    lo stub nascondeva l'API reale e faceva sbagliare l'analisi statica in un altro
+    modulo. Rimosso.
+
 ### Stato del piano
 
-- **Fase 1** (delta moduli portati): completa, tranne Auth→User che dipende da Wts.
+- **Fase 1** (delta moduli portati): **completa** — Auth→User chiuso insieme a Wts.
 - **Fase 2** (moduli nuovi): completa — MetalWork, Signage, Costing.
 - **Fase 4** (gap): Compliance, EnergyBroker, PublicProcurement hanno PHPStan pulito
   e test verdi; testsuite di tutti i moduli aggiunte a `phpunit.xml`.
-- **Fase 3** (codice `app/` → moduli): da fare — Wts, Thermo, Giveback, Dds, AsdSoci,
-  EnergyBroker Filament, panel Customer/Supplier.
+- **Fase 3** (codice `app/` → moduli): Wts **fatto**; restano Thermo, Giveback, Dds,
+  AsdSoci, EnergyBroker Filament, panel Customer/Supplier.
