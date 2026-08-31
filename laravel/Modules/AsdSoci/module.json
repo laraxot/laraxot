@@ -1,0 +1,12 @@
+{
+    "name": "AsdSoci",
+    "alias": "asdsoci",
+    "description": "Verticale demo per la gestione soci di associazione sportiva",
+    "keywords": [],
+    "priority": 123,
+    "providers": [
+        "Modules\\AsdSoci\\Providers\\AsdSociServiceProvider",
+        "Modules\\AsdSoci\\Providers\\Filament\\AdminPanelProvider"
+    ],
+    "files": []
+}

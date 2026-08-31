@@ -137,6 +137,18 @@
         <testsuite name="Wts">
             <directory>Modules/Wts/tests</directory>
         </testsuite>
+        <testsuite name="Thermo">
+            <directory>Modules/Thermo/tests</directory>
+        </testsuite>
+        <testsuite name="Giveback">
+            <directory>Modules/Giveback/tests</directory>
+        </testsuite>
+        <testsuite name="Dds">
+            <directory>Modules/Dds/tests</directory>
+        </testsuite>
+        <testsuite name="AsdSoci">
+            <directory>Modules/AsdSoci/tests</directory>
+        </testsuite>
     </testsuites>
     <source>
         <include>

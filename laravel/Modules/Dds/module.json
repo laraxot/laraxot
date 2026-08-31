@@ -1,0 +1,12 @@
+{
+    "name": "Dds",
+    "alias": "dds",
+    "description": "Verticale demo per il settore porte e serramenti",
+    "keywords": [],
+    "priority": 122,
+    "providers": [
+        "Modules\\Dds\\Providers\\DdsServiceProvider",
+        "Modules\\Dds\\Providers\\Filament\\AdminPanelProvider"
+    ],
+    "files": []
+}

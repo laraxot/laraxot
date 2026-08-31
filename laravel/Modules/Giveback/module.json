@@ -1,0 +1,12 @@
+{
+    "name": "Giveback",
+    "alias": "giveback",
+    "description": "Verticale demo della piattaforma giveback",
+    "keywords": [],
+    "priority": 121,
+    "providers": [
+        "Modules\\Giveback\\Providers\\GivebackServiceProvider",
+        "Modules\\Giveback\\Providers\\Filament\\AdminPanelProvider"
+    ],
+    "files": []
+}

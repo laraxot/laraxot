@@ -1,0 +1,12 @@
+{
+    "name": "Thermo",
+    "alias": "thermo",
+    "description": "Verticale demo per la gestione impianti termici",
+    "keywords": [],
+    "priority": 120,
+    "providers": [
+        "Modules\\Thermo\\Providers\\ThermoServiceProvider",
+        "Modules\\Thermo\\Providers\\Filament\\AdminPanelProvider"
+    ],
+    "files": []
+}
