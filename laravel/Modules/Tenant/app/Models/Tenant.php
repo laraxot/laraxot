@@ -6,8 +6,6 @@ namespace Modules\Tenant\Models;
 
 // use Modules\Patient\Models\Patient; // Module not available
 // use Modules\Dental\Models\Appointment; // Module not available
-use Closure;
-use Illuminate\Contracts\Database\Query\Expression;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -15,58 +13,46 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 use Modules\Tenant\Database\Factories\TenantFactory;
 use Modules\User\Models\User;
-use Modules\Xot\Contracts\ProfileContract;
+use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * Modello Tenant per la gestione multi-tenant dell'applicazione.
  *
- * @property string $name
- * @property string $domain
- * @property string $database
- * @property string $slug
- * @property array<string, mixed>|null $settings
+ * @property-read User|null $creator
+ * @property string|null $name
+ * @property string|null $domain
+ * @property string|null $database
+ * @property string|null $slug
+ * @property array<array-key, mixed>|null $settings
  * @property bool $is_active
+ * @property Carbon|null $last_activity_at
  * @property string|null $logo
- * @property \Carbon\Carbon|null $last_activity_at
+ * @property string|null $email
+ * @property string|null $phone
+ * @property string|null $address
+ * @property string|null $city
+ * @property string|null $postal_code
+ * @property string|null $province
+ * @property string|null $country
+ * @property string|null $tax_code
+ * @property string|null $vat_number
  * @property-read string $url
+ * @property-read User|null $updater
  * @property-read Collection<int, User> $users
  * @property-read int|null $users_count
  *
- * @method static TenantFactory factory($count = null, $state = [])
+ * @method static \Modules\Tenant\Database\Factories\TenantFactory factory($count = null, $state = [])
  * @method static Builder<static>|Tenant newModelQuery()
  * @method static Builder<static>|Tenant newQuery()
  * @method static Builder<static>|Tenant query()
- * @method static Tenant|null first()
- * @method static Collection<int, Tenant> get()
- * @method static Tenant create(array<string, mixed> $attributes = [])
- * @method static Tenant firstOrCreate(array<string, mixed> $attributes = [], array<string, mixed> $values = [])
- * @method static Builder<static>|Tenant where((string|Closure) $column, mixed $operator = null, mixed $value = null, string $boolean = 'and')
- * @method static Builder<static>|Tenant whereNotNull((string|Expression) $columns)
- * @method static int count(string $columns = '*')
- *
- * @property string $id
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
- * @property string|null $deleted_at
- * @property ProfileContract|null $creator
- * @property ProfileContract|null $updater
- * @property ProfileContract|null $deleter
- *
- * @method static Builder<static>|Tenant whereCreatedAt($value)
- * @method static Builder<static>|Tenant whereDatabase($value)
- * @method static Builder<static>|Tenant whereDeletedAt($value)
- * @method static Builder<static>|Tenant whereDomain($value)
- * @method static Builder<static>|Tenant whereId($value)
- * @method static Builder<static>|Tenant whereIsActive($value)
- * @method static Builder<static>|Tenant whereName($value)
- * @method static Builder<static>|Tenant whereSlug($value)
- * @method static Builder<static>|Tenant whereUpdatedAt($value)
- * @method static Builder<static>|Tenant whereSettings($value)
  *
  * @mixin \Eloquent
  */
 class Tenant extends BaseModel
 {
+    /** @use HasXotFactory<TenantFactory> */
+    use HasXotFactory;
+
     /**
      * Gli attributi che sono mass assignable.
      */
@@ -138,6 +124,13 @@ class Tenant extends BaseModel
         if (! is_string($slug) || $slug === '') {
             $this->attributes['slug'] = Str::slug($value);
         }
+    }
+
+    public function getNameAttribute(): ?string
+    {
+        $name = $this->attributes['name'] ?? null;
+
+        return is_string($name) ? $name : null;
     }
 
     /**

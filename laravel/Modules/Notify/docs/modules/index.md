@@ -243,6 +243,7 @@ related:
 |--------|---------|---------|-------|------|
 | Xot | ✅ Active | Level 9 | ✅ 80% | ✅ Complete |  
 | Fixcity | ✅ Active | Level 7 | ⚠️ 60% | 📝 Updating |
+| App | ✅ Active | Level 7 | ⚠️ 60% | 📝 Updating |
 | User | ✅ Active | Level 8 | ✅ 75% | ✅ Complete |
 | UI | ✅ Active | Level 8 | ✅ 70% | ✅ Complete |
 | Cms | ✅ Active | Level 7 | ⚠️ 65% | ✅ Complete |

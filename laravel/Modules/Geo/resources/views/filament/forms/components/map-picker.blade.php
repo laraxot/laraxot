@@ -2,26 +2,6 @@
 /** @var \Modules\Geo\Filament\Forms\Components\MapPicker $field */
 $statePath = $field->getStatePath();
 $id = $field->getId();
-
-$labels = [
-    'zoom_in' => __('geo::coordinate-picker.zoom_in'),
-    'zoom_out' => __('geo::coordinate-picker.zoom_out'),
-    'fullscreen' => __('geo::coordinate-picker.fullscreen'),
-    'close_fullscreen'=> __('geo::coordinate-picker.close_fullscreen'),
-    'use_location' => __('geo::coordinate-picker.use_my_location'),
-    'locating' => __('geo::coordinate-picker.locating'),
-    'search' => __('geo::coordinate-picker.search'),
-    'search_placeholder' => __('geo::coordinate-picker.search_placeholder'),
-    'close_search' => __('geo::coordinate-picker.close_search'),
-    'switch_layer' => __('geo::coordinate-picker.switch_layer'),
-    'latitude' => __('geo::coordinate-picker.latitude'),
-    'longitude' => __('geo::coordinate-picker.longitude'),
-    'address' => __('geo::coordinate-picker.address'),
-];
-@endphp
-
-<x-dynamic-component :component="$getFieldWrapperView()" :field="$field">
-    <div x-data="{
             state: $wire.{{ $applyStateBindingModifiers("\$entangle('{$statePath}')") }},
             isFullscreen: false,
             labels: @js($labels),

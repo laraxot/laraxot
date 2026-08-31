@@ -67,6 +67,7 @@ Folio (routing)
 ```
 Themes/*/Http/Livewire/  ← FORBIDDEN!
 PredictController@index   ← FORBIDDEN!
+ForecastController@index   ← FORBIDDEN!
 ```
 
 ---

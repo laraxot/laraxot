@@ -89,6 +89,7 @@ Verificare che:
 
 *Ultimo aggiornamento: giugno 2025*
 - [Notify Module Documentation](readme.md)
+- [Notify Module Documentation](README.md)
 - [SMS Testing Guide](sms/testing.md)
 - [MailTemplate Integration](mail-templates-structure-1.md)
 - [Root Conflict Resolution Guidelines](../../../../docs/project/conflict-resolution-guidelines.md)

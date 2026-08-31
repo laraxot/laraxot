@@ -54,8 +54,33 @@ This document outlines the architectural design of the Notify module, focusing o
 - Update this document if significant changes are made to the Notify module architecture.
 
 ## Links to Related Documentation
-- [Notify Module Index](./INDEX.md)
+- [Notify Module Index](./index.md)
 - [Notification Channels Implementation](./NOTIFICATION_CHANNELS_IMPLEMENTATION.md)
 - [Email Templates](./EMAIL_TEMPLATES.md)
 - [SMS Implementation](./SMS_IMPLEMENTATION.md)
 - [Troubleshooting](./TROUBLESHOOTING.md)
+- [Troubleshooting](./TROUBLESHOOTING.md)
+
+---
+
+<!-- Merged from ARCHITECTURE.md, which collided with this file on case-insensitive filesystems. -->
+
+---
+title: "Notify Module Architecture"
+type: architecture
+tags: [module, architecture, notify]
+created: 2026-08-04
+updated: 2026-08-04
+---
+# Notify Module — Architecture
+
+## Purpose
+Notify module for Laraxot platform.
+
+## Core Components
+- Models, Actions, Resources
+- Standard Laraxot module structure
+
+## Quality Gates
+- PHPStan L10 compliance
+- Test coverage requirements

@@ -28,15 +28,14 @@ namespace Modules\Notify\Tests\Unit\Models;
 
 use Modules\Notify\Models\NotifyTheme;
 use Modules\Notify\Tests\TestCase;
+use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
+use function Pest\Laravel\withoutExceptionHandling;
 use function Safe\json_encode;
 
-uses(\Modules\Notify\Tests\TestCase::class);
-
 beforeEach(function (): void {
-    /** @var TestCase $this */
-    $this->disableExceptionHandling();
+    withoutExceptionHandling();
 });
 
 describe('Notify Theme PartTwo', function (): void {
@@ -44,20 +43,17 @@ describe('Notify Theme PartTwo', function (): void {
         NotifyTheme::create([
             'type' => 'email',
             'subject' => 'Email Theme',
-            'lang' => 'it',
-        ]);
+            'lang' => 'it']);
 
         NotifyTheme::create([
             'type' => 'sms',
             'subject' => 'SMS Theme',
-            'lang' => 'it',
-        ]);
+            'lang' => 'it']);
 
         NotifyTheme::create([
             'type' => 'push',
             'subject' => 'Push Theme',
-            'lang' => 'it',
-        ]);
+            'lang' => 'it']);
 
         $emailThemes = NotifyTheme::where('type', 'email')->get();
         $smsThemes = NotifyTheme::where('type', 'sms')->get();
@@ -66,29 +62,26 @@ describe('Notify Theme PartTwo', function (): void {
         Assert::assertCount(1, $emailThemes);
         Assert::assertCount(1, $smsThemes);
         Assert::assertCount(1, $pushThemes);
-        Assert::assertEquals('email', \assertFirstModel($emailThemes, NotifyTheme::class)->type);
-        Assert::assertEquals('sms', \assertFirstModel($smsThemes, NotifyTheme::class)->type);
-        Assert::assertEquals('push', \assertFirstModel($pushThemes, NotifyTheme::class)->type);
+        Assert::assertEquals('email', XotBasePest::assertFirstModel($emailThemes, NotifyTheme::class)->type);
+        Assert::assertEquals('sms', XotBasePest::assertFirstModel($smsThemes, NotifyTheme::class)->type);
+        Assert::assertEquals('push', XotBasePest::assertFirstModel($pushThemes, NotifyTheme::class)->type);
     });
 
     test('_can_find_by_theme_name', function (): void {
         NotifyTheme::create([
             'type' => 'email',
             'subject' => 'Default Theme',
-            'theme' => 'default',
-        ]);
+            'theme' => 'default']);
 
         NotifyTheme::create([
             'type' => 'email',
             'subject' => 'Dark Theme',
-            'theme' => 'dark',
-        ]);
+            'theme' => 'dark']);
 
         NotifyTheme::create([
             'type' => 'email',
             'subject' => 'Custom Theme',
-            'theme' => 'custom',
-        ]);
+            'theme' => 'custom']);
 
         $defaultThemes = NotifyTheme::where('theme', 'default')->get();
         $darkThemes = NotifyTheme::where('theme', 'dark')->get();
@@ -97,9 +90,9 @@ describe('Notify Theme PartTwo', function (): void {
         Assert::assertCount(1, $defaultThemes);
         Assert::assertCount(1, $darkThemes);
         Assert::assertCount(1, $customThemes);
-        Assert::assertEquals('default', \assertFirstModel($defaultThemes, NotifyTheme::class)->theme);
-        Assert::assertEquals('dark', \assertFirstModel($darkThemes, NotifyTheme::class)->theme);
-        Assert::assertEquals('custom', \assertFirstModel($customThemes, NotifyTheme::class)->theme);
+        Assert::assertEquals('default', XotBasePest::assertFirstModel($defaultThemes, NotifyTheme::class)->theme);
+        Assert::assertEquals('dark', XotBasePest::assertFirstModel($darkThemes, NotifyTheme::class)->theme);
+        Assert::assertEquals('custom', XotBasePest::assertFirstModel($customThemes, NotifyTheme::class)->theme);
     });
 
     test('_can_find_by_post_type', function (): void {
@@ -107,22 +100,19 @@ describe('Notify Theme PartTwo', function (): void {
             'type' => 'email',
             'subject' => 'User Welcome',
             'post_type' => 'App\Models\User',
-            'post_id' => 123,
-        ]);
+            'post_id' => 123]);
 
         NotifyTheme::create([
             'type' => 'email',
             'subject' => 'Company Welcome',
             'post_type' => 'App\Models\Company',
-            'post_id' => 456,
-        ]);
+            'post_id' => 456]);
 
         NotifyTheme::create([
             'type' => 'email',
             'subject' => 'Order Confirmation',
             'post_type' => 'App\Models\Order',
-            'post_id' => 789,
-        ]);
+            'post_id' => 789]);
 
         $userThemes = NotifyTheme::where('post_type', 'App\Models\User')->get();
         $companyThemes = NotifyTheme::where('post_type', 'App\Models\Company')->get();
@@ -131,37 +121,34 @@ describe('Notify Theme PartTwo', function (): void {
         Assert::assertCount(1, $userThemes);
         Assert::assertCount(1, $companyThemes);
         Assert::assertCount(1, $orderThemes);
-        Assert::assertEquals('App\Models\User', \assertFirstModel($userThemes, NotifyTheme::class)->post_type);
-        Assert::assertEquals('App\Models\Company', \assertFirstModel($companyThemes, NotifyTheme::class)->post_type);
-        Assert::assertEquals('App\Models\Order', \assertFirstModel($orderThemes, NotifyTheme::class)->post_type);
+        Assert::assertEquals('App\Models\User', XotBasePest::assertFirstModel($userThemes, NotifyTheme::class)->post_type);
+        Assert::assertEquals('App\Models\Company', XotBasePest::assertFirstModel($companyThemes, NotifyTheme::class)->post_type);
+        Assert::assertEquals('App\Models\Order', XotBasePest::assertFirstModel($orderThemes, NotifyTheme::class)->post_type);
     });
 
     test('_can_find_by_subject_pattern', function (): void {
         NotifyTheme::create([
             'type' => 'email',
             'subject' => 'Welcome to our platform',
-            'lang' => 'it',
-        ]);
+            'lang' => 'it']);
 
         NotifyTheme::create([
             'type' => 'email',
             'subject' => 'Welcome to our service',
-            'lang' => 'en',
-        ]);
+            'lang' => 'en']);
 
         NotifyTheme::create([
             'type' => 'email',
             'subject' => 'Order confirmation',
-            'lang' => 'it',
-        ]);
+            'lang' => 'it']);
 
         $welcomeThemes = NotifyTheme::where('subject', 'like', '%Welcome%')->get();
         $orderThemes = NotifyTheme::where('subject', 'like', '%Order%')->get();
 
         Assert::assertCount(2, $welcomeThemes);
         Assert::assertCount(1, $orderThemes);
-        $welcomeSubject = \assertFirstModel($welcomeThemes, NotifyTheme::class)->subject;
-        $orderSubject = \assertFirstModel($orderThemes, NotifyTheme::class)->subject;
+        $welcomeSubject = XotBasePest::assertFirstModel($welcomeThemes, NotifyTheme::class)->subject;
+        $orderSubject = XotBasePest::assertFirstModel($orderThemes, NotifyTheme::class)->subject;
         Assert::assertNotNull($welcomeSubject);
         Assert::assertNotNull($orderSubject);
         Assert::assertStringContainsString('Welcome', $welcomeSubject);
@@ -173,22 +160,19 @@ describe('Notify Theme PartTwo', function (): void {
             'type' => 'email',
             'subject' => 'System Notification',
             'from' => 'System',
-            'from_email' => 'system@example.com',
-        ]);
+            'from_email' => 'system@example.com']);
 
         NotifyTheme::create([
             'type' => 'email',
             'subject' => 'Marketing Email',
             'from' => 'Marketing',
-            'from_email' => 'marketing@example.com',
-        ]);
+            'from_email' => 'marketing@example.com']);
 
         NotifyTheme::create([
             'type' => 'email',
             'subject' => 'Support Email',
             'from' => 'Support',
-            'from_email' => 'support@example.com',
-        ]);
+            'from_email' => 'support@example.com']);
 
         $systemThemes = NotifyTheme::where('from_email', 'system@example.com')->get();
         $marketingThemes = NotifyTheme::where('from_email', 'marketing@example.com')->get();
@@ -197,9 +181,9 @@ describe('Notify Theme PartTwo', function (): void {
         Assert::assertCount(1, $systemThemes);
         Assert::assertCount(1, $marketingThemes);
         Assert::assertCount(1, $supportThemes);
-        Assert::assertEquals('system@example.com', \assertFirstModel($systemThemes, NotifyTheme::class)->from_email);
-        Assert::assertEquals('marketing@example.com', \assertFirstModel($marketingThemes, NotifyTheme::class)->from_email);
-        Assert::assertEquals('support@example.com', \assertFirstModel($supportThemes, NotifyTheme::class)->from_email);
+        Assert::assertEquals('system@example.com', XotBasePest::assertFirstModel($systemThemes, NotifyTheme::class)->from_email);
+        Assert::assertEquals('marketing@example.com', XotBasePest::assertFirstModel($marketingThemes, NotifyTheme::class)->from_email);
+        Assert::assertEquals('support@example.com', XotBasePest::assertFirstModel($supportThemes, NotifyTheme::class)->from_email);
     });
 
     test('_can_find_by_view_params_value', function (): void {
@@ -208,35 +192,29 @@ describe('Notify Theme PartTwo', function (): void {
             'subject' => 'High Priority Theme',
             'view_params' => [
                 'priority' => 'high',
-                'category' => 'security',
-            ],
-        ]);
+                'category' => 'security']]);
 
         NotifyTheme::create([
             'type' => 'email',
             'subject' => 'Low Priority Theme',
             'view_params' => [
                 'priority' => 'low',
-                'category' => 'general',
-            ],
-        ]);
+                'category' => 'general']]);
 
         NotifyTheme::create([
             'type' => 'email',
             'subject' => 'Medium Priority Theme',
             'view_params' => [
                 'priority' => 'medium',
-                'category' => 'maintenance',
-            ],
-        ]);
+                'category' => 'maintenance']]);
 
         $highPriorityThemes = NotifyTheme::whereJsonPath('view_params.priority', 'high')->get();
         $securityThemes = NotifyTheme::whereJsonPath('view_params.category', 'security')->get();
 
         Assert::assertCount(1, $highPriorityThemes);
         Assert::assertCount(1, $securityThemes);
-        Assert::assertEquals('high', \assertFirstModel($highPriorityThemes, NotifyTheme::class)->view_params['priority']);
-        Assert::assertEquals('security', \assertFirstModel($securityThemes, NotifyTheme::class)->view_params['category']);
+        Assert::assertEquals('high', TestCase::notifyArrayGet(XotBasePest::assertFirstModel($highPriorityThemes, NotifyTheme::class)->view_params, 'priority'));
+        Assert::assertEquals('security', TestCase::notifyArrayGet(XotBasePest::assertFirstModel($securityThemes, NotifyTheme::class)->view_params, 'category'));
     });
 
     test('_can_find_by_multiple_criteria', function (): void {
@@ -247,9 +225,7 @@ describe('Notify Theme PartTwo', function (): void {
             'theme' => 'default',
             'view_params' => [
                 'priority' => 'high',
-                'category' => 'security',
-            ],
-        ]);
+                'category' => 'security']]);
 
         NotifyTheme::create([
             'type' => 'email',
@@ -258,9 +234,7 @@ describe('Notify Theme PartTwo', function (): void {
             'theme' => 'dark',
             'view_params' => [
                 'priority' => 'low',
-                'category' => 'general',
-            ],
-        ]);
+                'category' => 'general']]);
 
         NotifyTheme::create([
             'type' => 'sms',
@@ -269,9 +243,7 @@ describe('Notify Theme PartTwo', function (): void {
             'theme' => 'custom',
             'view_params' => [
                 'priority' => 'medium',
-                'category' => 'maintenance',
-            ],
-        ]);
+                'category' => 'maintenance']]);
 
         $italianEmailHighPriority = NotifyTheme::where('lang', 'it')
             ->where('type', 'email')
@@ -279,10 +251,10 @@ describe('Notify Theme PartTwo', function (): void {
             ->get();
 
         Assert::assertCount(1, $italianEmailHighPriority);
-        Assert::assertEquals('it', \assertFirstModel($italianEmailHighPriority, NotifyTheme::class)->lang);
-        Assert::assertEquals('email', \assertFirstModel($italianEmailHighPriority, NotifyTheme::class)->type);
-        Assert::assertEquals('high', \notifyArrayGet(\assertFirstModel($italianEmailHighPriority, NotifyTheme::class)->view_params, 'priority'));
-        Assert::assertEquals('Italian High Priority Security', \assertFirstModel($italianEmailHighPriority, NotifyTheme::class)->subject);
+        Assert::assertEquals('it', XotBasePest::assertFirstModel($italianEmailHighPriority, NotifyTheme::class)->lang);
+        Assert::assertEquals('email', XotBasePest::assertFirstModel($italianEmailHighPriority, NotifyTheme::class)->type);
+        Assert::assertEquals('high', TestCase::notifyArrayGet(XotBasePest::assertFirstModel($italianEmailHighPriority, NotifyTheme::class)->view_params, 'priority'));
+        Assert::assertEquals('Italian High Priority Security', XotBasePest::assertFirstModel($italianEmailHighPriority, NotifyTheme::class)->subject);
     });
 
     test('_can_handle_null_values', function (): void {
@@ -300,8 +272,7 @@ describe('Notify Theme PartTwo', function (): void {
             'logo_src' => null,
             'logo_width' => null,
             'logo_height' => null,
-            'view_params' => null,
-        ]);
+            'view_params' => null]);
 
         Assert::assertNull($theme->lang);
         Assert::assertNull($theme->body);
@@ -321,12 +292,10 @@ describe('Notify Theme PartTwo', function (): void {
         $theme = NotifyTheme::create([
             'type' => 'email',
             'subject' => 'Empty Params Theme',
-            'view_params' => [],
-        ]);
-        \assertNotifyTableHas('notify_themes', [
+            'view_params' => []]);
+        XotBasePest::assertTableHas('notify', 'notify_themes', [
             'id' => $theme->id,
-            'view_params' => json_encode([]),
-        ]);
+            'view_params' => json_encode([])]);
         Assert::assertEmpty($theme->view_params);
     });
 
@@ -337,65 +306,53 @@ describe('Notify Theme PartTwo', function (): void {
                     'url' => '/images/logo.png',
                     'alt' => 'Company Logo',
                     'width' => 200,
-                    'height' => 80,
-                ],
+                    'height' => 80],
                 'colors' => [
                     'primary' => '#3b82f6',
                     'secondary' => '#64748b',
                     'accent' => '#f59e0b',
                     'success' => '#10b981',
                     'warning' => '#f59e0b',
-                    'error' => '#ef4444',
-                ],
+                    'error' => '#ef4444'],
                 'fonts' => [
                     'heading' => 'Inter',
                     'body' => 'Roboto',
-                    'mono' => 'JetBrains Mono',
-                ],
-            ],
+                    'mono' => 'JetBrains Mono']],
             'layout' => [
                 'container' => [
                     'max_width' => '1200px',
                     'padding' => '20px',
-                    'margin' => '0 auto',
-                ],
+                    'margin' => '0 auto'],
                 'spacing' => [
                     'xs' => '4px',
                     'sm' => '8px',
                     'md' => '16px',
                     'lg' => '24px',
-                    'xl' => '32px',
-                ],
+                    'xl' => '32px'],
                 'border_radius' => [
                     'sm' => '4px',
                     'md' => '8px',
                     'lg' => '12px',
-                    'xl' => '16px',
-                ],
-            ],
+                    'xl' => '16px']],
             'features' => [
                 'dark_mode' => true,
                 'responsive' => true,
                 'accessibility' => true,
-                'animations' => false,
-            ],
-        ];
+                'animations' => false]];
 
         $theme = NotifyTheme::create([
             'type' => 'email',
             'subject' => 'Complex Params Theme',
-            'view_params' => $complexParams,
-        ]);
-        \assertNotifyTableHas('notify_themes', [
+            'view_params' => $complexParams]);
+        XotBasePest::assertTableHas('notify', 'notify_themes', [
             'id' => $theme->id,
-            'view_params' => json_encode($complexParams),
-        ]);
+            'view_params' => json_encode($complexParams)]);
 
-        Assert::assertEquals('/images/logo.png', \notifyArrayGet($theme->view_params, 'branding', 'logo', 'url'));
-        Assert::assertEquals('#3b82f6', \notifyArrayGet($theme->view_params, 'branding', 'colors', 'primary'));
-        Assert::assertEquals('Inter', \notifyArrayGet($theme->view_params, 'branding', 'fonts', 'heading'));
-        Assert::assertEquals('1200px', \notifyArrayGet($theme->view_params, 'layout', 'container', 'max_width'));
-        Assert::assertTrue(\notifyArrayGet($theme->view_params, 'features', 'dark_mode'));
-        Assert::assertFalse(\notifyArrayGet($theme->view_params, 'features', 'animations'));
+        Assert::assertEquals('/images/logo.png', TestCase::notifyArrayGet($theme->view_params, 'branding', 'logo', 'url'));
+        Assert::assertEquals('#3b82f6', TestCase::notifyArrayGet($theme->view_params, 'branding', 'colors', 'primary'));
+        Assert::assertEquals('Inter', TestCase::notifyArrayGet($theme->view_params, 'branding', 'fonts', 'heading'));
+        Assert::assertEquals('1200px', TestCase::notifyArrayGet($theme->view_params, 'layout', 'container', 'max_width'));
+        Assert::assertTrue(TestCase::notifyArrayGet($theme->view_params, 'features', 'dark_mode'));
+        Assert::assertFalse(TestCase::notifyArrayGet($theme->view_params, 'features', 'animations'));
     });
 });

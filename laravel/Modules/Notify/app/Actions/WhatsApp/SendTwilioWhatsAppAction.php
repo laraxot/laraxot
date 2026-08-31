@@ -10,8 +10,9 @@ use GuzzleHttp\Exception\ClientException;
 use Illuminate\Support\Facades\Log;
 use Modules\Notify\Contracts\WhatsAppProviderActionInterface;
 use Modules\Notify\Datas\WhatsAppData;
-use function Safe\json_decode;
 use Spatie\QueueableAction\QueueableAction;
+
+use function Safe\json_decode;
 
 final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
 {
@@ -66,7 +67,6 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
      * Execute the action.
      *
      * @param  WhatsAppData  $whatsAppData  I dati del messaggio WhatsApp
-     *
      * @return array<string, mixed> Risultato dell'operazione
      *
      * @throws Exception In caso di errore durante l'invio
@@ -78,16 +78,14 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
 
         $client = new Client([
             'timeout' => $this->timeout,
-            'auth' => [$this->accountSid, $this->authToken],
-        ]);
+            'auth' => [$this->accountSid, $this->authToken]]);
 
         $endpoint = $this->baseUrl.'/Accounts/'.$this->accountSid.'/Messages.json';
 
         $payload = [
             'To' => $to,
             'From' => $from,
-            'Body' => $whatsAppData->body,
-        ];
+            'Body' => $whatsAppData->body];
 
         // Aggiungi media se presente
         if (! empty($whatsAppData->media)) {
@@ -96,8 +94,7 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
 
         try {
             $response = $client->post($endpoint, [
-                'form_params' => $payload,
-            ]);
+                'form_params' => $payload]);
 
             $statusCode = $response->getStatusCode();
             $responseContent = $response->getBody()->getContents();
@@ -112,8 +109,7 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
 
             Log::debug('WhatsApp Twilio inviato con successo', [
                 'to' => $whatsAppData->recipient,
-                'response_code' => $statusCode,
-            ]);
+                'response_code' => $statusCode]);
 
             return [
                 'success' => $statusCode >= 200 && $statusCode < 300,
@@ -121,8 +117,7 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
                     ? $responseData['sid']
                     : null,
                 'response' => $responseData,
-                'vars' => $this->vars,
-            ];
+                'vars' => $this->vars];
         } catch (ClientException $e) {
             $response = $e->getResponse();
             $statusCode = $response->getStatusCode();
@@ -138,8 +133,7 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
             Log::warning('Errore invio WhatsApp Twilio', [
                 'to' => $whatsAppData->recipient,
                 'status' => $statusCode,
-                'response' => $responseBody,
-            ]);
+                'response' => $responseBody]);
 
             return [
                 'success' => false,
@@ -147,8 +141,7 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
                     ? $responseBody['message']
                     : 'Errore sconosciuto',
                 'status_code' => $statusCode,
-                'vars' => $this->vars,
-            ];
+                'vars' => $this->vars];
         }
     }
 }

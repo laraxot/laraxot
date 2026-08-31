@@ -15,13 +15,12 @@ class GetCitiesAction
 {
     use QueueableAction;
 
-    public const CACHE_KEY = 'geo.cities.%s';
+    public const string CACHE_KEY = 'geo.cities.%s';
 
-    public const CACHE_TTL = 86400;
+    public const int CACHE_TTL = 86400;
 
     /**
-     * @param string $provinceCode Codice della provincia
-     *
+     * @param  string  $provinceCode  Codice della provincia
      * @return Collection<int, array{name: string, code: string}>
      */
     public function execute(string $provinceCode): Collection

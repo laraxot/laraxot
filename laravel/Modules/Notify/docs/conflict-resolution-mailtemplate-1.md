@@ -93,6 +93,7 @@ Verificare che:
 
 *Ultimo aggiornamento: giugno 2025*
 - [Notify Module Documentation](readme.md)
+- [Notify Module Documentation](README.md)
 - [SMS Implementation Guide](sms-implementation-1.md)
 - [Mail Templates Structure](mail-templates-structure-1.md)
 - [Translation Standards](translation-standards-2.md)

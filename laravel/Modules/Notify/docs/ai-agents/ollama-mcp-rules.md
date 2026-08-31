@@ -44,6 +44,7 @@ Task complexity?
 ```json
 {
   "num_predict": 128-256,
+  "num_forecast": 128-256,
   "temperature": 0.1-0.3,
   "top_k": 10-20,
   "top_p": 0.5-0.7

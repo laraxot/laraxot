@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Billing\Tests\TestCase::class);
+uses(TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Modules\Billing\Actions\GenerateInvoicePdfAction;

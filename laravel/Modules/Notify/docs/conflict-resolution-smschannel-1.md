@@ -76,6 +76,7 @@ return $action->execute($smsData);
 
 *Ultimo aggiornamento: giugno 2025*
 - [Notify Module Documentation](readme.md)
+- [Notify Module Documentation](README.md)
 - [SMS Channel Architecture](sms-channel-action-resolution-1.md)
 - [Root Conflict Resolution Guidelines](../../../../docs/project/conflict-resolution-guidelines.md)
 

@@ -1,3 +1,12 @@
+---
+title: "Analisi della Sicurezza"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Analisi della Sicurezza
 
 ## Vulnerabilità Comuni

@@ -13,11 +13,12 @@ class NetfunChannel
 {
     public function __construct(
         private readonly SendSmsFactorSMSAction $action,
-    ) {
-    }
+    ) {}
 
     /**
-     * @return array<string, mixed>|null
+     * Il ritorno è quello di SendSmsFactorSMSAction::execute(), già tipizzato alla fonte.
+     *
+     * @return array{status_code: int, status_txt: string}|null
      */
     public function send(mixed $notifiable, Notification $notification): ?array
     {
@@ -41,8 +42,7 @@ class NetfunChannel
             'body' => is_string($message)
                 ? $message
                 : (is_object($message) && method_exists($message, 'getContent') ? $message->getContent() : ''),
-            'from' => '',
-        ]);
+            'from' => '']);
 
         return $this->action->execute($smsData);
     }

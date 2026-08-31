@@ -6,7 +6,7 @@ namespace Modules\AI\Datas;
 
 final class AIPromptTemplates
 {
-    public const ROUTING_JSON = <<<'JSON'
+    public const string ROUTING_JSON = <<<'JSON'
 {
   "assignments": [
     {
@@ -23,7 +23,7 @@ final class AIPromptTemplates
 }
 JSON;
 
-    public const PATTERN_JSON = <<<'JSON'
+    public const string PATTERN_JSON = <<<'JSON'
 {
   "temporal_trends": {
     "peak_hours": ["9-11", "14-16"],
@@ -45,7 +45,7 @@ JSON;
 }
 JSON;
 
-    public const IMPROVEMENTS_JSON = <<<'JSON'
+    public const string IMPROVEMENTS_JSON = <<<'JSON'
 
 Fornisci suggerimenti per:
 - Processi operativi

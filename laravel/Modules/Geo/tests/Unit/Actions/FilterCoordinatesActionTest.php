@@ -5,10 +5,8 @@ declare(strict_types=1);
 namespace Modules\Geo\Tests\Unit\Actions;
 
 use Modules\Geo\Actions\FilterCoordinatesAction;
-use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Geo\Tests\TestCase::class);
 it('filters coordinates within radius correctly', function (): void {
     $action = new FilterCoordinatesAction();
 

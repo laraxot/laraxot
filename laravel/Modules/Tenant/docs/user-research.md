@@ -2,7 +2,7 @@
 title: "Tenant Module - User Research"
 module: "Tenant"
 type: concept
-tags: [user, research]
+tags: [USER, RESEARCH]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "user research"

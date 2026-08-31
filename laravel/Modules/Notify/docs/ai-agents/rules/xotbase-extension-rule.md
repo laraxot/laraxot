@@ -112,6 +112,7 @@ class OutcomesTableWidget extends XotBaseTableWidget
 
 **Zen Philosophy**:
 > "XotBaseTableWidget non sa di Predict, non sa di Blog, non sa di Events.
+> "XotBaseTableWidget non sa di Forecast, non sa di Blog, non sa di Events.
 > È AGNOSTICO, come il container blade.
 > La sua forza è la sua VUOTEZZA.
 > Può contenere QUALSIASI cosa."
@@ -128,6 +129,7 @@ abstract class XotBaseTableWidget extends FilamentTableWidget
 
 **Why This is Powerful**:
 - ✅ **Agnostico**: Funziona per Predict, Blog, Events, Profiles
+- ✅ **Agnostico**: Funziona per Forecast, Blog, Events, Profiles
 - ✅ **Estensibile**: Puoi aggiungere features a TUTTI i widget cambiando 1 file
 - ✅ **Coerente**: Tutti i widget hanno lo stesso comportamento base
 - ✅ **Manutenibile**: Fix in 1 posto, fix everywhere
@@ -267,11 +269,11 @@ class OutcomesTableWidget extends XotBaseTableWidget
 ## 🔗 Related Documentation
 
 ### Module Docs
-- **[OutcomesTableWidget](../../laravel/Modules/Predict/Filament/Widgets/OutcomesTableWidget.php)** - Actual implementation
+- **[OutcomesTableWidget](../../laravel/Modules/Forecast/Filament/Widgets/OutcomesTableWidget.php)** - Actual implementation
 - **[XotBaseTableWidget](../../laravel/Modules/Xot/app/Filament/Widgets/XotBaseTableWidget.php)** - Base class
 
 ### AI Agents Docs
-- **[Rules Index](00-INDEX.md)** - All rules
+- **[Rules Index](00-index.md)** - All rules
 - **[Reusable Components](../guidelines/reusable-components-philosophy.md)** - DRY+KISS philosophy
 
 ---

@@ -86,8 +86,7 @@ class TryDuocircleMailAction
                     'subject' => is_scalar($subject) ? (string) $subject : '',
                     'attachments' => count($attachments),
                     'body' => is_scalar($body) ? (string) $body : '',
-                    'moved' => (bool) $this->invoke($message, 'move', 'INBOX.read'),
-                ];
+                    'moved' => (bool) $this->invoke($message, 'move', 'INBOX.read')];
             }
         }
 

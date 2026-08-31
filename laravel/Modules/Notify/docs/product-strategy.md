@@ -1,3 +1,12 @@
+---
+title: "Notify - Product Strategy"
+module: notify
+type: product
+tags: [product, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Notify - Product Strategy
 
 > Strategia prodotto. Modulo.

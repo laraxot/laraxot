@@ -182,6 +182,7 @@ abstract class BaseModel extends \Modules\Xot\Models\XotBaseModel
     use SoftDeletes;  // ✅ Specifico
     
     protected $connection = 'fixcity';
+    protected $connection = 'ptv';
     
     // ❌ DUPLICATO: già in XotBaseModel
     protected $fillable = ['id'];
@@ -204,6 +205,7 @@ abstract class BaseModel extends \Modules\Xot\Models\XotBaseModel
     use SoftDeletes;  // ✅ Specifico
     
     protected $connection = 'fixcity';
+    protected $connection = 'ptv';
     
     // ✅ RIMOSSO: $fillable (eredita da parent)
     // ✅ RIMOSSO: $dates (deprecato)

@@ -262,6 +262,9 @@ Per domande su questo aggiornamento:
 - **Email**: dev@fixcity.it
 - **Slack**: #fixcity-dev
 - **GitHub**: [laraxot/fixcity](https://github.com/laraxot/fixcity)
+- **Email**: dev@ptv.it
+- **Slack**: #ptv-dev
+- **GitHub**: [laraxot/ptv](https://github.com/laraxot/ptv)
 
 ---
 

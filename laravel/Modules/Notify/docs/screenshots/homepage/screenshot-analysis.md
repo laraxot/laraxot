@@ -1,10 +1,12 @@
 ---
 title: "📸 Screenshot Analysis - Homepage FixCity"
+title: "📸 Screenshot Analysis - Homepage Notify"
 type: concept
 tags: [screenshot, analysis]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "screenshot-analysis 📸 screenshot analysis - homepage fixcity"
+qmd: "screenshot-analysis 📸 screenshot analysis - homepage laraxot"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -14,6 +16,7 @@ related:
 ---
 
 # 📸 Screenshot Analysis - Homepage FixCity
+# 📸 Screenshot Analysis - Homepage Notify
 
 ## Reference: Bootstrap Italia
 
@@ -138,22 +141,23 @@ Screenshot: footer_bootstrap_italia.png
 
 ---
 
-## FixCity Current State
+## Notify Current State
 
 ### Screenshots
 ```
-Screenshot: fixcity_header_current.png
-Screenshot: fixcity_hero_current.png
-Screenshot: fixcity_governance_current.png
-Screenshot: fixcity_events_current.png
-Screenshot: fixcity_topics_current.png
-Screenshot: fixcity_footer_current.png
-URL: http://fixcity.local/it/tests/homepage
+Screenshot: app_header_current.png
+Screenshot: app_hero_current.png
+Screenshot: app_governance_current.png
+Screenshot: app_events_current.png
+Screenshot: app_topics_current.png
+Screenshot: app_footer_current.png
+URL: http://laraxot.local/it/tests/homepage
 ```
 
 ### Differenze Principali
 
 | Elemento | Bootstrap Italia | FixCity | Status |
+| Elemento | Bootstrap Italia | Notify | Status |
 |----------|-----------------|---------|--------|
 | Header slim | ✅ Presente | ❌ Assente | 🔴 |
 | Hero card-teaser | ✅ Sì | ❌ No | 🔴 |

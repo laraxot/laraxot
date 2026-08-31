@@ -44,7 +44,7 @@ Questo documento analizza tutti i modelli del modulo Media verificando la presen
 - **Versioning**: Gestione versioni multiple file
 
 **Relazioni Business Logic**:
-- **<nome progetto>**: Documenti pazienti, referti medici, immagini profilo
+- **Dominio sanitario**: Documenti pazienti, referti medici, immagini profilo
 - **User**: Avatar utenti, documenti identità
 - **Cms**: Immagini contenuti, allegati pagine
 - **Notify**: Allegati notifiche email
@@ -207,10 +207,10 @@ Tutti i file factory devono essere validati con PHPStan livello 9:
 - [Performance Optimization](./performance_optimization.md)
 
 ### Moduli Collegati
-- [<nome progetto> Module](../../<nome progetto>/docs/modelli_factory_seeder_analisi.md) - Documenti medici
-- [User Module](../../user/docs/modelli_factory_seeder_analisi.md) - Avatar e documenti utente
-- [Cms Module](../../cms/docs/modelli_factory_seeder_analisi.md) - Contenuti multimediali
-- [Notify Module](../../notify/docs/modelli_factory_seeder_analisi.md) - Allegati notifiche
+- Modulo sanitario legacy - Documenti medici
+- [User Module](../../User/docs/modelli_factory_seeder_analisi.md) - Avatar e documenti utente
+- [Cms Module](../../Cms/docs/modelli_factory_seeder_analisi.md) - Contenuti multimediali
+- [Notify Module](../../Notify/docs/modelli_factory_seeder_analisi.md) - Allegati notifiche
 
 ### Librerie e Servizi
 - [Intervention Image](http://image.intervention.io/) - Image processing
@@ -218,5 +218,6 @@ Tutti i file factory devono essere validati con PHPStan livello 9:
 - [FFmpeg](https://ffmpeg.org/) - Video/Audio processing
 - [ImageMagick](https://imagemagick.org/) - Advanced image processing
 
+*Ultimo aggiornamento: Gennaio 2025*
 *Analisi completa di 4 modelli attivi, sistema media completo*
 *Supporto upload, conversioni, storage locale/cloud*

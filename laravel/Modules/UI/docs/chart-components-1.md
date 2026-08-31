@@ -7,7 +7,7 @@ I componenti chart forniscono visualizzazioni grafiche dei dati, utilizzando Cha
 
 ### LineChart
 ```blade
-<x-ui::line-chart
+<x-ui::line-chart 
     :title="'Andamento Utenti'"
     :labels="['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu']"
     :datasets="[
@@ -27,7 +27,7 @@ I componenti chart forniscono visualizzazioni grafiche dei dati, utilizzando Cha
 
 ### PieChart
 ```blade
-<x-ui::pie-chart
+<x-ui::pie-chart 
     :title="'Distribuzione Utenti'"
     :labels="['Attivi', 'Inattivi', 'In attesa']"
     :data="[300, 50, 100]"
@@ -41,7 +41,7 @@ I componenti chart forniscono visualizzazioni grafiche dei dati, utilizzando Cha
 
 ### StatsOverview
 ```blade
-<x-ui::stats-overview
+<x-ui::stats-overview 
     :stats="[
         [
             'label' => 'Utenti Totali',
@@ -91,12 +91,12 @@ use Livewire\Component;
 class UserStats extends Component
 {
     public $chartData;
-
+    
     public function mount()
     {
         $this->updateChartData();
     }
-
+    
     public function updateChartData()
     {
         $this->chartData = [
@@ -110,7 +110,7 @@ class UserStats extends Component
             ]
         ];
     }
-
+    
     public function render()
     {
         return view('livewire.user-stats');

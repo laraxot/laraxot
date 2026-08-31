@@ -55,8 +55,7 @@ class SendAwsEmailPage extends XotBasePage
     protected function getForms(): array
     {
         return [
-            'emailForm',
-        ];
+            'emailForm'];
     }
 
     protected function fillForms(): void
@@ -96,16 +95,14 @@ class SendAwsEmailPage extends XotBasePage
                     'aws-default' => 'AWS Default',
                     'aws-notification' => 'AWS Notification',
                     'aws-receipt' => 'AWS Receipt',
-                    'aws-alert' => 'AWS Alert',
-                ])
+                    'aws-alert' => 'AWS Alert'])
                 ->default('aws-default')
                 ->required()
                 ->helperText(__('notify::email.form.template.helper')),
             'add_attachments' => Toggle::make('add_attachments')
                 ->label(__('notify::email.form.add_attachments.label'))
                 ->default(false)
-                ->helperText(__('notify::email.form.add_attachments.helper')),
-        ];
+                ->helperText(__('notify::email.form.add_attachments.helper'))];
     }
 
     public function sendEmail(): void
@@ -139,12 +136,11 @@ class SendAwsEmailPage extends XotBasePage
         }
     }
 
-    /** @return array<string, \Filament\Actions\Action> */
+    /** @return array<string, Action> */
     protected function getEmailFormActions(): array
     {
         return [
-            'submit' => Action::make('sendEmail')->label(__('notify::email.actions.send'))->submit('sendEmail'),
-        ];
+            'submit' => Action::make('sendEmail')->label(__('notify::email.actions.send'))->submit('sendEmail')];
     }
 
     #[Override]

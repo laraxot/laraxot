@@ -83,11 +83,13 @@ I nomi specifici dell'applicazione devono apparire solo:
 4. Usare esempi generici nelle spiegazioni
 
 ## Collegamenti Bidirezionali
-- [README](README.md)
-- [Design System](design-system.md)
-- [Componenti](components.md)
 
 ## Vedi Anche
+- [Best Practices](../../../docs/standards/best-practices.md) 
+- [Documentazione Principale](../../../docs/README.md)
+- [Standard di Codice](../../../docs/standards/coding-standards.md)
+- [Best Practices](../../../docs/standards/best-practices.md)
 - [Documentazione Principale](../../../project_docs/README.md)
 - [Standard di Codice](../../../project_docs/standards/coding-standards.md)
 - [Best Practices](../../../project_docs/standards/best-practices.md)
+||||||| parent of 9a84589 (.):docs/archived/naming-rules-1.md

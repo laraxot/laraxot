@@ -29,6 +29,7 @@ Tutti in `Modules/UI/app/Filament/Forms/Components/`:
 ### Import Statements da Verificare
 
 **TechPlanner/app/Filament/Resources/ClientResource.php**:
+**modulo operativo/app/Filament/Resources/ClientResource.php**:
 ```php
 Line 13: use Modules\Notify\Filament\Forms\Components\ContactSection;
 ```

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Modules\Media\Filament\Resources\MediaResource;
 use Modules\Media\Models\Media;
+use Modules\Media\Support\Ffmpeg\MediaExporterResolver;
 use Modules\Xot\Filament\Widgets\XotBaseWidget;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
 
@@ -27,9 +28,16 @@ class ConvertWidget extends XotBaseWidget
 
     public float $rate = 0.0;
 
-    protected string $view = 'media::filament.widgets.convert';
-
     protected static string $resource = MediaResource::class;
+
+    public function __construct()
+    {
+        /** @var view-string $viewPath */
+        $viewPath = 'media::filament.widgets.convert';
+        $this->view = $viewPath;
+
+        parent::__construct();
+    }
 
     public function getFormSchema(): array
     {
@@ -48,6 +56,9 @@ class ConvertWidget extends XotBaseWidget
         $extension = mb_strtolower(class_basename($format));
         $file_new = Str::of($file_mp4)->replaceLast('.mp4', '.'.$extension)->toString();
 
+        /*
+         * -preset ultrafast.
+         */
         $exportedMedia = FFMpeg::fromDisk($disk_mp4)
             ->open($file_mp4)
             ->export();
@@ -64,8 +75,21 @@ class ConvertWidget extends XotBaseWidget
                 ->send();
         });
 
-        $exportedMedia->toDisk($disk_mp4);
-        $exportedMedia->inFormat($format);
-        $exportedMedia->save($file_new);
+        $formattedMedia = MediaExporterResolver::from(
+            $exportedMedia->toDisk($disk_mp4)
+        )->inFormat($format);
+        $formattedMedia->save($file_new);
+
+        while ($this->percentage < 100) {
+            // Stream the current count to the browser...
+            $this->stream(
+                to: 'count',
+                content: $this->start,
+                replace: true,
+            );
+
+            $this->start =
+                "{$this->percentage}% transcoded".PHP_EOL."{$this->remaining} seconds left at rate: {$this->rate}";
+        }
     }
 }

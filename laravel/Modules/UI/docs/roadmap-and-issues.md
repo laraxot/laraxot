@@ -198,6 +198,7 @@ php phpmd.phar Modules/UI/database/factories text cleancode,codesize,controversi
   - Smart forms
   - Auto-completion
   - Predictive inputs
+  - forecastive inputs
 
 - [ ] **Real-Time Components**
   - Live updates

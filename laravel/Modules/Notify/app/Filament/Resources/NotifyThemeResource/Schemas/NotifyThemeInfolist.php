@@ -31,7 +31,6 @@ class NotifyThemeInfolist extends XotBaseResourceInfolist
             'logo_src' => TextEntry::make('logo_src'),
             'logo_width' => TextEntry::make('logo_width'),
             'logo_height' => TextEntry::make('logo_height'),
-            'view_params' => TextEntry::make('view_params'),
-        ];
+            'view_params' => TextEntry::make('view_params')];
     }
 }

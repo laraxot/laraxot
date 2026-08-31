@@ -17,16 +17,15 @@ class GetAddressFromOpenCageAction
 {
     use QueueableAction;
 
-    private const BASE_URL = 'https://api.opencagedata.com/geocode/v1';
+    private const string BASE_URL = 'https://api.opencagedata.com/geocode/v1';
 
     /**
      * Esegue la ricerca dell'indirizzo su OpenCage.
      *
-     * @param string $address L'indirizzo da cercare
+     * @param  string  $address  L'indirizzo da cercare
+     * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
      *
      * @throws \Exception Se la chiave API non è configurata
-     *
-     * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
      */
     public function execute(string $address): ?AddressData
     {

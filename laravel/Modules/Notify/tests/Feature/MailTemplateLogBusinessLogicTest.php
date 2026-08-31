@@ -8,12 +8,10 @@ use Modules\Notify\Database\Factories\MailTemplateFactory;
 use Modules\Notify\Database\Factories\MailTemplateLogFactory;
 use Modules\Notify\Models\MailTemplate;
 use Modules\Notify\Models\MailTemplateLog;
-use Modules\Notify\Tests\TestCase;
+use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
-
-uses(\Modules\Notify\Tests\TestCase::class);
 
 describe('Mail Template Log Business Logic', function () {
     it('can create mail template log with basic information', function () {
@@ -39,7 +37,7 @@ describe('Mail Template Log Business Logic', function () {
 
         $log = MailTemplateLog::query()->create($logData);
 
-        \assertNotifyTableHas('mail_template_logs', [
+        XotBasePest::assertTableHas('notify', 'mail_template_logs', [
             'id' => $log->id,
             'template_id' => $template->id,
             'status' => 'sent',
@@ -47,11 +45,11 @@ describe('Mail Template Log Business Logic', function () {
         ]);
 
         Assert::assertSame('sent', $log->status);
-        $data = \assertNotifyArray($log->data);
-        $variables = \assertNotifyArray($data['variables'] ?? null);
+        $data = XotBasePest::assertArray($log->data);
+        $variables = XotBasePest::assertArray($data['variables'] ?? null);
         Assert::assertSame('patient@example.com', $data['recipient']);
         Assert::assertSame('Mario Rossi', $variables['patient_name']);
-        Assert::assertSame('appointment_confirmation_001', \assertNotifyArray($log->metadata)['campaign_id']);
+        Assert::assertSame('appointment_confirmation_001', XotBasePest::assertArray($log->metadata)['campaign_id']);
     });
 
     it('can manage mail template log template relationship', function () {
@@ -81,7 +79,7 @@ describe('Mail Template Log Business Logic', function () {
             'delivered_at' => now(),
         ]);
 
-        $fresh = \assertFreshModel($log, MailTemplateLog::class);
+        $fresh = XotBasePest::assertFreshModel($log, MailTemplateLog::class);
         Assert::assertSame('delivered', $fresh->status);
         Assert::assertNotNull($fresh->sent_at);
         Assert::assertNotNull($fresh->delivered_at);
@@ -101,10 +99,10 @@ describe('Mail Template Log Business Logic', function () {
             'metadata' => ['error_code' => 'TIMEOUT'],
         ]);
 
-        $fresh = \assertFreshModel($log, MailTemplateLog::class);
+        $fresh = XotBasePest::assertFreshModel($log, MailTemplateLog::class);
         Assert::assertSame('failed', $fresh->status);
         Assert::assertSame('SMTP timeout', $fresh->status_message);
-        Assert::assertSame('TIMEOUT', \assertNotifyArray($fresh->metadata)['error_code']);
+        Assert::assertSame('TIMEOUT', XotBasePest::assertArray($fresh->metadata)['error_code']);
     });
 
     it('can persist structured data and metadata as json', function () {
@@ -121,7 +119,7 @@ describe('Mail Template Log Business Logic', function () {
             'metadata' => $meta,
         ]);
 
-        \assertNotifyTableHas('mail_template_logs', [
+        XotBasePest::assertTableHas('notify', 'mail_template_logs', [
             'id' => $log->id,
             'data' => json_encode($payload),
             'metadata' => json_encode($meta),

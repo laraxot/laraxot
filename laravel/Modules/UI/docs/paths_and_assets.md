@@ -23,6 +23,7 @@
 
 ```
 /var/www/html/saluteora/
+[project-root]/
 ├── laravel/                 # Applicazione Laravel (codice sorgente)
 │   ├── Modules/             # Moduli dell'applicazione
 │   ├── resources/           # Risorse non compilate
@@ -40,6 +41,10 @@
 
 | Tipo di Asset | ✅ Percorso Corretto | ❌ Percorso Errato |
 |---------------|---------------------|-------------------|
+| Immagini | `[project-root]/public_html/images/` | `[project-root]/laravel/public/images/` |
+| CSS | `[project-root]/public_html/css/` | `[project-root]/laravel/public/css/` |
+| JavaScript | `[project-root]/public_html/js/` | `[project-root]/laravel/public/js/` |
+| SVG | `[project-root]/public_html/images/` | `[project-root]/laravel/public/images/` |
 | Immagini | `/var/www/html/saluteora/public_html/images/` | `/var/www/html/saluteora/laravel/public/images/` |
 | CSS | `/var/www/html/saluteora/public_html/css/` | `/var/www/html/saluteora/laravel/public/css/` |
 | JavaScript | `/var/www/html/saluteora/public_html/js/` | `/var/www/html/saluteora/laravel/public/js/` |
@@ -75,6 +80,7 @@ Gli SVG utilizzati come icone o componenti UI dovrebbero essere implementati com
 
 ```
 /var/www/html/saluteora/laravel/Themes/One/resources/views/components/ui/
+[project-root]/laravel/Themes/One/resources/views/components/ui/
 ```
 
 ### SVG come Asset Pubblici
@@ -83,6 +89,7 @@ Gli SVG utilizzati come immagini (avatar, loghi, ecc.) dovrebbero essere posizio
 
 ```
 /var/www/html/saluteora/public_html/images/
+[project-root]/public_html/images/
 ```
 
 ## Gestione dei Componenti UI
@@ -93,12 +100,14 @@ Il componente avatar è implementato in:
 
 ```
 /var/www/html/saluteora/laravel/Themes/One/resources/views/components/ui/avatar.blade.php
+[project-root]/laravel/Themes/One/resources/views/components/ui/avatar.blade.php
 ```
 
 E utilizza gli avatar SVG dalla directory pubblica:
 
 ```
 /var/www/html/saluteora/public_html/images/avatars/
+[project-root]/public_html/images/avatars/
 ```
 
 ### Componente Icon
@@ -107,6 +116,7 @@ Il componente icon è implementato in:
 
 ```
 /var/www/html/saluteora/laravel/Themes/One/resources/views/components/ui/icon.blade.php
+[project-root]/laravel/Themes/One/resources/views/components/ui/icon.blade.php
 ```
 
 E include le definizioni SVG direttamente nel componente.
@@ -148,6 +158,7 @@ E include le definizioni SVG direttamente nel componente.
 ## Errori Comuni
 
 1. **Utilizzo del percorso Laravel public**: Utilizzare `/var/www/html/saluteora/laravel/public/` invece di `/var/www/html/saluteora/public_html/`
+1. **Utilizzo del percorso Laravel public**: Utilizzare `[project-root]/laravel/public/` invece di `[project-root]/public_html/`
 2. **Riferimenti diretti ai file**: Utilizzare percorsi assoluti invece dell'helper `asset()`
 3. **Mancanza di fallback**: Non fornire alternative quando un'immagine non è disponibile
 4. **Inconsistenza nei nomi dei file**: Utilizzare convenzioni di naming diverse per file simili

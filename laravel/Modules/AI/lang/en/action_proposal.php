@@ -7,14 +7,30 @@ return [
     'plural_label' => 'AI Action Proposals',
     'navigation_group' => 'AI Assistant',
     'fields' => [
-        'section' => 'Proposal details',
-        'thread' => 'Thread',
-        'type' => 'Type',
-        'status' => 'Status',
-        'preview' => 'Preview',
-        'error' => 'Error',
-        'confirmed_at' => 'Confirmed at',
-        'executed_at' => 'Executed at',
+        'section' => [
+            'label' => 'Proposal details',
+        ],
+        'thread' => [
+            'label' => 'Thread',
+        ],
+        'type' => [
+            'label' => 'Type',
+        ],
+        'status' => [
+            'label' => 'Status',
+        ],
+        'preview' => [
+            'label' => 'Preview',
+        ],
+        'error' => [
+            'label' => 'Error',
+        ],
+        'confirmed_at' => [
+            'label' => 'Confirmed at',
+        ],
+        'executed_at' => [
+            'label' => 'Executed at',
+        ],
     ],
     'statuses' => [
         'pending' => 'Pending',

@@ -25,6 +25,8 @@ related:
 2. Click **"Open folder as vault"**
 3. Select: `/var/www/_bases/base_fixcity_fila5/docs`
 4. Vault name: `base_fixcity_fila5-docs`
+3. Select: `/var/www/_bases/base_ptvx_fila5/docs`
+4. Vault name: `base_ptvx_fila5-docs`
 5. Click **"Open"**
 
 ## Configuration
@@ -79,6 +81,7 @@ Install browser extension to capture web articles:
 
 **Configuration**:
 - Clip destination: `/var/www/_bases/base_fixcity_fila5/docs/raw/articles/`
+- Clip destination: `/var/www/_bases/base_ptvx_fila5/docs/raw/articles/`
 - Format: Markdown with YAML frontmatter
 - Tags: Auto-extract from article metadata
 
@@ -128,6 +131,7 @@ LLM scans for issues and reports findings.
 
 - **Filter by type**: `type:concept` to see only concept pages
 - **Filter by tags**: `tags:prediction-market` to see related pages
+- **Filter by tags**: `tags:forecast-market` to see related pages
 - **Local graph**: Open on a page to see only its connections
 - **Groups**: Color-code by page type (concepts, entities, sources)
 

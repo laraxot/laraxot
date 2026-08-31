@@ -5,12 +5,9 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Feature;
 
 use Illuminate\Support\Facades\File;
-use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 use function Safe\json_decode;
-
-uses(\Modules\Notify\Tests\TestCase::class);
 
 test('components json is valid and contains expected components', function (): void {
     $filePath = base_path('Modules/Notify/app/Console/Commands/_components.json');
@@ -34,8 +31,10 @@ test('components json is valid and contains expected components', function (): v
     $names = array_column($json, 'name');
     Assert::assertContains('send-mail-command', $names);
     Assert::assertContains('telegram-webhook', $names);
+    Assert::assertContains('analyze-translation-files', $names);
 
     $classes = array_column($json, 'class');
     Assert::assertContains('SendMailCommand', $classes);
     Assert::assertContains('TelegramWebhook', $classes);
+    Assert::assertContains('AnalyzeTranslationFiles', $classes);
 });

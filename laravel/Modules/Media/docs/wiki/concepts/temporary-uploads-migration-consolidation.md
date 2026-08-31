@@ -57,7 +57,7 @@ column additions must live inside the model's single `create_<table>_table.php`)
 
 One migration per model restored: `TemporaryUpload` →
 `2023_01_01_000000_create_temporary_uploads_table.php` only. See
-[MIGRATIONS.md](../../MIGRATIONS.md) for the module's migration parity table.
+[MIGRATIONS.md](../../migrations.md) for the module's migration parity table.
 
 - `phpstan analyse Modules/Media` → 0 errors (174 files).
 - `phpmd` on the migration file → no violations.

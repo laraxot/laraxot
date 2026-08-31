@@ -58,8 +58,8 @@ grep -r "interface.*Contract" --include="*.php" /var/www/html/_bases/base_techpl
 ## Riferimenti
 
 - [Laravel Contracts Documentation](https://laravel.com/docs/contracts)
-- [PTVX Code Quality Guidelines](/var/www/html/_bases/base_ptvx_fila3_mono/laravel/docs/code-quality.md)
-- [Modulo Xot Contracts](/var/www/html/_bases/base_ptvx_fila3_mono/laravel/Modules/Xot/app/Contracts/)
+- [PTVX Code Quality Guidelines](/var/www/html/_bases/base_ptvx_fila5/laravel/docs/code-quality.md)
+- [Modulo Xot Contracts](/var/www/html/_bases/base_ptvx_fila5/laravel/Modules/Xot/app/Contracts/)
 - [SaluteOra Code Quality Guidelines](/var/www/html/saluteora/laravel/docs/code-quality.md)
 - [Laravel Contracts Documentation](https://laravel.com/project_docs/contracts)
 - [SaluteOra Code Quality Guidelines](/var/www/html/saluteora/laravel/project_docs/code-quality.md)

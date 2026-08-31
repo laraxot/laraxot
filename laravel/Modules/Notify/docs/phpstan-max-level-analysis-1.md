@@ -41,6 +41,7 @@ related:
 |--------|--------|----------|----------|
 | User | 4,539 | 23.5% | 🔴 CRITICA |
 | Fixcity | 3,540 | 18.3% | 🔴 CRITICA |
+| App | 3,540 | 18.3% | 🔴 CRITICA |
 | Notify | 2,727 | 14.1% | 🔴 CRITICA |
 | Cms | 1,696 | 8.8% | 🟠 ALTA |
 | Xot | 1,274 | 6.6% | 🟠 ALTA |
@@ -189,6 +190,7 @@ public function create(string $class): Model
    - Errori critici
    - Correzione manuale necessaria
    - Priorità: User, Fixcity, Notify
+   - Priorità: User, App, Notify
 
 3. **Aggiungere null-safe operators**
    - Target: 1,000 errori method.nonObject più semplici
@@ -246,12 +248,14 @@ public function create(string $class): Model
 - **Documentazione**: `/Modules/User/docs/`
 
 #### 2. Fixcity Module (3,540 errori)
+#### 2. App Module (3,540 errori)
 - **Focus**: method.nonObject, property.nonObject
 - **File critici**:
   - Filament Resources
   - Services
   - Models
 - **Documentazione**: `/Modules/Fixcity/docs/`
+- **Documentazione**: `/Modules/App/docs/`
 
 #### 3. Notify Module (2,727 errori)
 - **Focus**: argument.type, method.nonObject

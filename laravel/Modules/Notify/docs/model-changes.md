@@ -1,3 +1,12 @@
+---
+title: "Modifiche al Modello MailTemplate"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Modifiche al Modello MailTemplate
 
 ## Modifiche Implementate ([DATE])

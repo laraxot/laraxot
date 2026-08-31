@@ -230,6 +230,7 @@ Level 3: Themes
 #### Wave 2: Core Structure 🟡 IN PROGRESS
 - 🟡 Create central roadmap.md (THIS FILE)
 - [ ] Create unified INDEX.md
+- [ ] Create unified index.md
 - [ ] Create MODULE_ROADMAPS.md
 - [ ] Create TIMELINE.md
 - [ ] Archive old roadmap variants
@@ -358,11 +359,11 @@ Each of the 18 modules has its own documentation:
 ```
 docs/
 ├── roadmap.md (THIS FILE) - Central hub, all phases
-├── INDEX.md - Master navigation, updated with links
+├── index.md - Master navigation, updated with links
 ├── PROJECT/ - Project metadata
 │   ├── README.md
 │   ├── architecture.md
-│   └── CHANGELOG.md
+│   └── changelog.md
 └── archive/
     └── roadmaps/
         ├── analysis.md - Consolidation analysis
@@ -439,6 +440,7 @@ Sep 2024          Q4 2025          Q1 2026          Q2 2026          2027+
 1. **Phase 11 Wave 2**: Complete core documentation structure
    - ✅ Create central roadmap.md (THIS FILE)
    - 🟡 Update INDEX.md with navigation
+   - 🟡 Update index.md with navigation
    - 🟡 Create MODULE_ROADMAPS.md
    - 🟡 Create TIMELINE.md
 
@@ -465,6 +467,7 @@ Sep 2024          Q4 2025          Q1 2026          Q2 2026          2027+
 - 📅 Old roadmap files archived (not deleted)
 - 📅 Migration guide created for old locations
 - 📅 INDEX.md updated with roadmap link
+- 📅 index.md updated with roadmap link
 - 📅 All internal links verified (no 404s)
 - 📅 Module-specific roadmaps linked from central hub
 

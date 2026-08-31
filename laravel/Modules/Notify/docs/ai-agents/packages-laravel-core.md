@@ -141,6 +141,7 @@ XDEBUG_MODE=off ./vendor/bin/pest --coverage --min=80
 
 # Modulo specifico
 XDEBUG_MODE=off ./vendor/bin/pest Modules/Quaeris/tests
+XDEBUG_MODE=off ./vendor/bin/pest Modules/App/tests
 
 # Via composer
 composer coverage
@@ -288,6 +289,7 @@ Espone l'applicazione all'AI (Claude, ecc.) tramite MCP protocol.
 use Laravel\Mcp\Server;
 
 $server = new Server('quaeris-surveys');
+$server = new Server('this-project-surveys');
 
 // Resources (dati che l'AI puo leggere)
 $server->resource('surveys', new Resource(

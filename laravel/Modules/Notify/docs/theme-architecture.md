@@ -83,6 +83,7 @@ class AppServiceProvider extends ServiceProvider
 ```json
 {
     "name": "fixcity/theme-sixteen",
+    "name": "ptv/theme-sixteen",
     "extra": {
         "laravel": {
             "providers": [
@@ -263,6 +264,7 @@ class AppServiceProvider extends ServiceProvider
 ```json
 {
     "name": "fixcity/theme-sixteen",
+    "name": "ptv/theme-sixteen",
     "extra": {
         "laravel": {
             "providers": [

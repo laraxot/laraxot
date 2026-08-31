@@ -36,6 +36,7 @@ The `boost:add-skill jeffallan/claude-skills --skill laravel-specialist` command
 
 **Files Modified**:
 - `/var/www/_bases/base_fixcity_fila5/laravel/composer.json`
+- `/var/www/_bases/base_ptv_fila5/laravel/composer.json`
 
 ### 2. Version Conflicts (CRITICAL)
 **Problem**: Module composer.json files had conflicting version requirements:
@@ -52,6 +53,8 @@ The `boost:add-skill jeffallan/claude-skills --skill laravel-specialist` command
 **Files Modified**:
 - `/var/www/_bases/base_fixcity_fila5/laravel/composer.json`
 - `/var/www/_bases/base_fixcity_fila5/laravel/Modules/Rating/composer.json`
+- `/var/www/_bases/base_ptv_fila5/laravel/composer.json`
+- `/var/www/_bases/base_ptv_fila5/laravel/Modules/Rating/composer.json`
 
 ### 3. Method Conflict (CRITICAL)
 **Problem**: `Modules\Fixcity\Models\User` used `InteractsWithComments` trait which conflicted with `BaseUser::notifications()` method.
@@ -63,6 +66,8 @@ The `boost:add-skill jeffallan/claude-skills --skill laravel-specialist` command
 **Files Modified**:
 - `/var/www/_bases/base_fixcity_fila5/laravel/Modules/Fixcity/app/Models/User.php`
 - `/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/app/Models/BaseUser.php` (fixed return type)
+- `/var/www/_bases/base_ptv_fila5/laravel/Modules/Fixcity/app/Models/User.php`
+- `/var/www/_bases/base_ptv_fila5/laravel/Modules/User/app/Models/BaseUser.php` (fixed return type)
 
 ### 4. Environment Configuration
 **Problem**: No `.env` file existed, causing Boost to be disabled.
@@ -73,6 +78,7 @@ The `boost:add-skill jeffallan/claude-skills --skill laravel-specialist` command
 
 **Files Created**:
 - `/var/www/_bases/base_fixcity_fila5/laravel/.env`
+- `/var/www/_bases/base_ptv_fila5/laravel/.env`
 
 ## Installation Process
 
@@ -113,6 +119,7 @@ php artisan list | grep boost
 ### Skill Installation Location
 ```
 /var/www/_bases/base_fixcity_fila5/laravel/.ai/skills/laravel-specialist/
+/var/www/_bases/base_ptv_fila5/laravel/.ai/skills/laravel-specialist/
 ```
 
 ## Documentation Created
@@ -159,6 +166,7 @@ Created BOOST_SKILL_FIX_summary.md in:
 ## Backup Files Created
 
 - `/var/www/_bases/base_fixcity_fila5/laravel/composer.json.backup`
+- `/var/www/_bases/base_ptv_fila5/laravel/composer.json.backup`
 
 ## Known Issues
 

@@ -1,4 +1,5 @@
 # 🎯 MASTER ROADMAP - FIXCITY PLATFORM
+# 🎯 MASTER ROADMAP - NOTIFY PLATFORM
 
 **Versione**: 1.0  
 **Data Creazione**: Gennaio 2025  
@@ -7,6 +8,7 @@
 
 ## 🎯 OBIETTIVO MASTER
 Completare il progetto FixCity in ogni aspetto seguendo le roadmap specifiche di moduli e temi, mantenendo coerenza architetturale e qualità enterprise.
+Completare il progetto Notify in ogni aspetto seguendo le roadmap specifiche di moduli e temi, mantenendo coerenza architetturale e qualità enterprise.
 
 ## 📊 STATO GLOBALE PROGETTO
 
@@ -14,6 +16,7 @@ Completare il progetto FixCity in ogni aspetto seguendo le roadmap specifiche di
 - ✅ **Xot**: Core framework (95% completato)
 - ✅ **User**: Authentication & Authorization (90% completato)
 - ✅ **Fixcity**: Core business logic (80% completato)
+- ✅ **App**: Core business logic (80% completato)
 
 ### 🚧 Moduli In Corso (60-89%)
 - 🚧 **Sixteen Theme**: AGID compliance (70% completato)
@@ -41,6 +44,7 @@ Completare il progetto FixCity in ogni aspetto seguendo le roadmap specifiche di
 
 #### Moduli Priority 1 (CRITICAL)
 - [ ] **Fixcity**: Completare API e mobile optimization
+- [ ] **App**: Completare API e mobile optimization
 - [ ] **User**: Completare social login e mobile auth
 - [ ] **Sixteen Theme**: Raggiungere 100% AGID compliance
 - [ ] **Xot**: Completare ottimizzazioni performance
@@ -214,6 +218,7 @@ Completare il progetto FixCity in ogni aspetto seguendo le roadmap specifiche di
 ## 📋 ROADMAP BY MODULE
 
 ### 🎫 Fixcity Module
+### 🎫 App Module
 - **Status**: 80% → 100% (Q1 2025)
 - **Focus**: API development, mobile optimization
 - **Dependencies**: User, Xot, UI
@@ -229,6 +234,7 @@ Completare il progetto FixCity in ogni aspetto seguendo le roadmap specifiche di
 - **Status**: 70% → 100% (Q1 2025)
 - **Focus**: AGID compliance, mobile optimization
 - **Dependencies**: UI, Fixcity
+- **Dependencies**: UI, App
 - **Critical Path**: AGID → Mobile → Performance
 
 ### 🧩 UI Module
@@ -259,12 +265,14 @@ Completare il progetto FixCity in ogni aspetto seguendo le roadmap specifiche di
 - **Status**: 40% → 90% (Q2 2025)
 - **Focus**: Comment system, moderation
 - **Dependencies**: User, Fixcity
+- **Dependencies**: User, App
 - **Critical Path**: System → Moderation → Integration
 
 ### ⭐ Rating Module
 - **Status**: 30% → 90% (Q2 2025)
 - **Focus**: Rating system, analytics
 - **Dependencies**: User, Fixcity
+- **Dependencies**: User, App
 - **Critical Path**: System → Analytics → Integration
 
 ### 📊 Activity Module
@@ -313,6 +321,7 @@ Completare il progetto FixCity in ogni aspetto seguendo le roadmap specifiche di
 - **Status**: 10% → 90% (Q4 2025)
 - **Focus**: AI features, machine learning
 - **Dependencies**: Fixcity, Media
+- **Dependencies**: App, Media
 - **Critical Path**: ML → Integration → Optimization
 
 ## 🚨 RISK MANAGEMENT
@@ -345,6 +354,7 @@ Completare il progetto FixCity in ogni aspetto seguendo le roadmap specifiche di
 
 ### Module Owners
 - **Fixcity**: Core business logic
+- **App**: Core business logic
 - **User**: Authentication & authorization
 - **Sixteen**: UI/UX e accessibility
 - **Xot**: Core framework

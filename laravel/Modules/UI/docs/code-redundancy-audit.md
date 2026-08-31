@@ -7,6 +7,7 @@ created: "2026-05-26"
 updated: "2026-05-26"
 owner: "UI"
 issue: "https://github.com/provtv/base_ptv_fila5_mono/issues/150"
+issue: "https://github.com/provtv/<nome repository>/issues/150"
 ---
 
 # Code redundancy audit — UI

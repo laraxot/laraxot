@@ -14,7 +14,7 @@ Questa guida descrive i template email responsive disponibili nel modulo Notify,
 
 ## Introduzione
 
-I template email responsive di SaluteOra sono progettati per offrire una comunicazione professionale e coinvolgente con gli utenti. Tutti i template sono:
+I template email responsive di <nome progetto> sono progettati per offrire una comunicazione professionale e coinvolgente con gli utenti. Tutti i template sono:
 
 - **Responsive**: ottimizzati per qualsiasi dispositivo (desktop, tablet, mobile)
 - **Accessibili**: strutturati per garantire accessibilità secondo gli standard WCAG
@@ -89,17 +89,17 @@ Tutti i template condividono elementi strutturali comuni:
     <div class="header">
         <!-- Logo e titoli -->
     </div>
-    
+
     <div class="content">
         <!-- Contenuto principale -->
-        
+
         <div class="main-box">
             <!-- Box principale specifico del template -->
         </div>
-        
+
         <!-- Altre sezioni -->
     </div>
-    
+
     <div class="footer">
         <!-- Contatti, social, etc. -->
     </div>
@@ -121,7 +121,7 @@ Tutti i template utilizzano il motore di templating Blade di Laravel. Le variabi
 | `$name` | Nome destinatario | "Utente" |
 | `$intro_text` | Testo introduttivo | Varia per template |
 | `$outro_text` | Testo conclusivo | Varia per template |
-| `$contact_email` | Email di contatto | "supporto@saluteora.it" |
+| `$contact_email` | Email di contatto | "supporto@<nome progetto>.it" |
 | `$contact_phone` | Telefono di contatto | "+39 06 1234567" |
 | `$office_hours` | Orari ufficio | "Lun-Ven: 9:00-19:00, Sab: 9:00-13:00" |
 
@@ -151,7 +151,7 @@ class SendAppointmentConfirmationAction
     public function execute(array $data)
     {
         $template = MailTemplate::where('mailable', 'appointment_confirmation')->first();
-        
+
         // Prepara i dati per il template
         $templateData = [
             'name' => $data['patient_name'],
@@ -162,11 +162,11 @@ class SendAppointmentConfirmationAction
             'service' => $data['service_name'],
             // Altri dati specifici
         ];
-        
+
         // Invia l'email
         Mail::to($data['patient_email'])
             ->send(new \Modules\Notify\Mail\AppointmentMail($template, $templateData));
-            
+
         return true;
     }
 }

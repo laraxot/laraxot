@@ -83,11 +83,11 @@ new class extends Component {
 
 ```bash
 # Homepage
-curl http://fixcity.local/it/tests/homepage
+curl http://ptv.local/it/tests/homepage
 
 # Altre pagine (se esistono nel CMS)
-curl http://fixcity.local/it/tests/servizi
-curl http://fixcity.local/it/tests/amministrazione
+curl http://ptv.local/it/tests/servizi
+curl http://ptv.local/it/tests/amministrazione
 ```
 
 ## Files Modificati

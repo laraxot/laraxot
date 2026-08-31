@@ -3,7 +3,9 @@
 declare(strict_types=1);
 
 namespace Modules\Notify\Tests\Unit\Datas;
+
 use Modules\Notify\Datas\NotificationData;
+use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\Data;
 
@@ -28,20 +30,29 @@ describe('NotificationData', function () {
         $reflection = new \ReflectionClass(NotificationData::class);
         $properties = $reflection->getProperties();
 
-        $propertyNames = array_map(fn ($p) => $p->getName(), $properties);
+        $propertyNames = array_map(static fn (\ReflectionProperty $p): string => $p->getName(), $properties);
 
-        \assertListContains('from', $propertyNames);
-        \assertListContains('recipient', $propertyNames);
-        \assertListContains('body', $propertyNames);
-        \assertListContains('channels', $propertyNames);
+        XotBasePest::assertListContains('from', $propertyNames);
+        XotBasePest::assertListContains('recipient', $propertyNames);
+        XotBasePest::assertListContains('body', $propertyNames);
+        XotBasePest::assertListContains('channels', $propertyNames);
     });
 
     it('has getSmsData method', function () {
-            });
+        $reflection = new \ReflectionClass(NotificationData::class);
+
+        Assert::assertTrue($reflection->hasMethod('getSmsData'));
+    });
 
     it('has routeNotificationFor method', function () {
-            });
+        $reflection = new \ReflectionClass(NotificationData::class);
+
+        Assert::assertTrue($reflection->hasMethod('routeNotificationFor'));
+    });
 
     it('has from method', function () {
-            });
+        $reflection = new \ReflectionClass(NotificationData::class);
+
+        Assert::assertTrue($reflection->hasMethod('from'));
+    });
 });

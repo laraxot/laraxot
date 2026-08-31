@@ -101,6 +101,7 @@ di eccellenza 2025 per la gestione delle segnalazioni urbane in Italia.
 
 ```
 base_fixcity_fila5_mono/
+base_ptv_fila5_mono/
 │
 ├── 📊 ROOT LEVEL (11 docs strategici)
 │   ├── DOCUMENTATION_INDEX.md          ✅ Indice generale
@@ -273,11 +274,13 @@ base_fixcity_fila5_mono/
 - **Quick Start**: [QUICK_START.md](./QUICK_START.md)
 - **Documentation Index**: [DOCUMENTATION_INDEX.md](./DOCUMENTATION_INDEX.md)
 - **Slack**: #fixcity-dev
+- **Slack**: #ptv-dev
 
 ### Per Utenti
 - **User Guide**: [USER_GUIDE.md](./laravel/Modules/Fixcity/docs/USER_GUIDE.md)
 - **Admin Guide**: [ADMIN_GUIDE.md](./laravel/Modules/Fixcity/docs/ADMIN_GUIDE.md)
 - **Support**: support@fixcity.it
+- **Support**: support@ptv.it
 
 ### Per API Developers
 - **API Documentation**: [API.md](./laravel/Modules/Fixcity/docs/API.md)
@@ -382,6 +385,9 @@ php artisan test --coverage
 - Email: dev@fixcity.it
 - Slack: #fixcity-dev
 - GitHub: github.com/laraxot/fixcity
+- Email: dev@ptv.it
+- Slack: #ptv-dev
+- GitHub: github.com/laraxot/ptv
 
 ---
 

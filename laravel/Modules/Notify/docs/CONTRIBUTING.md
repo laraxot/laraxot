@@ -35,6 +35,8 @@ This project adheres to a Code of Conduct that all contributors are expected to 
 # Clone the repository
 git clone https://github.com/your-org/fixcity.git
 cd fixcity/laravel
+git clone https://github.com/your-org/ptv.git
+cd ptv/laravel
 
 # Install PHP dependencies
 composer install

@@ -24,7 +24,7 @@ class SendPushToPlatformAction
 
     /**
      * @param  array<string, mixed>  $data
-     * @return array<string, mixed>
+     * @return array{success: bool, message_id: mixed, response: mixed}|array{success: bool, message: string, platform: string}
      */
     public function execute(string $platform, string $token, PushNotificationData $notification, array $data = []): array
     {
@@ -37,8 +37,11 @@ class SendPushToPlatformAction
     }
 
     /**
+     * `message_id` e `response` restano `mixed`: vengono da `Response::json()`, che
+     * decodifica il corpo HTTP di FCM senza contratto.
+     *
      * @param  array<string, mixed>  $data
-     * @return array<string, mixed>
+     * @return array{success: bool, message_id: mixed, response: mixed}
      */
     private function sendFCMNotification(string $token, PushNotificationData $notification, array $data): array
     {
@@ -49,20 +52,17 @@ class SendPushToPlatformAction
                 'body' => $notification->body,
                 'icon' => $notification->icon ?? '/icons/icon-192x192.png',
                 'sound' => $notification->sound ?? 'default',
-                'badge' => $notification->badge ?? 1,
-            ],
+                'badge' => $notification->badge ?? 1],
             'data' => $data,
             'priority' => $notification->priority ?? 'high',
-            'ttl' => $notification->ttl ?? 3600,
-        ];
+            'ttl' => $notification->ttl ?? 3600];
 
         $serverKey = SafeStringCastAction::cast(config('notify.fcm.server_key'));
         $url = SafeStringCastAction::cast(config('notify.fcm.url', 'https://fcm.googleapis.com/fcm/send'));
 
         $response = Http::withHeaders([
             'Authorization' => 'key='.$serverKey,
-            'Content-Type' => 'application/json',
-        ])->post($url, $payload);
+            'Content-Type' => 'application/json'])->post($url, $payload);
 
         if ($response instanceof PromiseInterface) {
             $response = $response->wait();
@@ -78,28 +78,26 @@ class SendPushToPlatformAction
             return [
                 'success' => true,
                 'message_id' => is_array($responseData) && isset($responseData['message_id']) ? $responseData['message_id'] : null,
-                'response' => $responseData,
-            ];
+                'response' => $responseData];
         }
 
         throw new Exception('FCM request failed: '.$response->body());
     }
 
     /**
-     * @return array<string, mixed>
+     * @return array{success: bool, message: string, platform: string}
      */
     private function sendAPNSNotification(): array
     {
         return [
             'success' => true,
             'message' => 'APNS notification sent (simulated)',
-            'platform' => 'apns',
-        ];
+            'platform' => 'apns'];
     }
 
     /**
      * @param  array<string, mixed>  $data
-     * @return array<string, mixed>
+     * @return array{success: bool, message: string, platform: string}
      */
     private function sendWebPushNotification(PushNotificationData $notification, array $data): array
     {
@@ -111,13 +109,11 @@ class SendPushToPlatformAction
             'data' => $data,
             'actions' => $notification->actions ?? [],
             'requireInteraction' => $notification->requireInteraction ?? false,
-            'silent' => $notification->silent ?? false,
-        ]);
+            'silent' => $notification->silent ?? false]);
 
         return [
             'success' => true,
             'message' => 'Web Push notification sent (simulated)',
-            'platform' => 'webpush',
-        ];
+            'platform' => 'webpush'];
     }
 }

@@ -10,9 +10,6 @@ use Mockery;
 use Modules\Notify\Actions\NotificationManager;
 use Modules\Notify\Actions\SendNotificationAction;
 use Modules\Notify\Models\NotificationTemplate;
-use Modules\Notify\Tests\TestCase;
-
-uses(\Modules\Notify\Tests\TestCase::class);
 
 function actionsNotificationManagerRecipient(): Model
 {
@@ -24,15 +21,12 @@ function actionsNotificationManagerRecipient(): Model
     };
 }
 
-beforeEach(function (): void {
-    $this->notificationManager = new NotificationManager();
-});
-
 afterEach(function (): void {
     Mockery::close();
 });
 
 it('can send notification to single recipient', function (): void {
+    $notificationManager = new NotificationManager();
     $recipient = actionsNotificationManagerRecipient();
     $templateCode = 'test_template';
     $data = ['key' => 'value'];
@@ -49,14 +43,14 @@ it('can send notification to single recipient', function (): void {
 
     app()->instance(SendNotificationAction::class, $action);
 
-    $this->notificationManager->send($recipient, $templateCode, $data, $channels, $options);
+    $notificationManager->send($recipient, $templateCode, $data, $channels, $options);
 });
 
 it('can send notification to multiple recipients', function (): void {
+    $notificationManager = new NotificationManager();
     $recipients = [
         actionsNotificationManagerRecipient(),
-        actionsNotificationManagerRecipient(),
-    ];
+        actionsNotificationManagerRecipient()];
     $templateCode = 'test_template';
     $data = ['key' => 'value'];
     $channels = ['email'];
@@ -70,37 +64,44 @@ it('can send notification to multiple recipients', function (): void {
 
     app()->instance(SendNotificationAction::class, $action);
 
-    $result = $this->notificationManager->sendMultiple($recipients, $templateCode, $data, $channels, $options);
+    $result = $notificationManager->sendMultiple($recipients, $templateCode, $data, $channels, $options);
 
     expect($result)->toHaveCount(2);
 });
 
 it('can get template by code', function (): void {
+    $notificationManager = new NotificationManager();
     $code = 'test_template';
 
     $template = typedMock(NotificationTemplate::class);
     mockExpectation($template, 'getAttribute')->with('code')->andReturn($code);
     mockExpectation($template, 'getAttribute')->with('is_active')->andReturn(true);
 
-    $result = $this->notificationManager->getTemplate($code);
+    $result = $notificationManager->getTemplate($code);
 
     expect($result)->toBeNull();
 });
 
 it('can get templates by category', function (): void {
-    $result = $this->notificationManager->getTemplatesByCategory('test_category');
+    $notificationManager = new NotificationManager();
+    $category = 'test_category';
+
+    $result = $notificationManager->getTemplatesByCategory($category);
 
     expect($result)->toHaveCount(0);
 });
 
 it('throws exception when template not found', function (): void {
+    $notificationManager = new NotificationManager();
     $recipient = actionsNotificationManagerRecipient();
+    $templateCode = 'invalid_template';
 
-    expect(fn () => $this->notificationManager->send($recipient, 'invalid_template'))
+    expect(fn () => $notificationManager->send($recipient, $templateCode))
         ->toThrow(Exception::class, 'Template not found: invalid_template');
 });
 
 it('returns array from send method', function (): void {
+    $notificationManager = new NotificationManager();
     $recipient = actionsNotificationManagerRecipient();
     $templateCode = 'test_template';
 
@@ -109,10 +110,11 @@ it('returns array from send method', function (): void {
 
     app()->instance(SendNotificationAction::class, $action);
 
-    $this->notificationManager->send($recipient, $templateCode);
+    $notificationManager->send($recipient, $templateCode);
 });
 
 it('returns array from send multiple method', function (): void {
+    $notificationManager = new NotificationManager();
     $recipients = [actionsNotificationManagerRecipient()];
     $templateCode = 'test_template';
 
@@ -121,7 +123,7 @@ it('returns array from send multiple method', function (): void {
 
     app()->instance(SendNotificationAction::class, $action);
 
-    $result = $this->notificationManager->sendMultiple($recipients, $templateCode);
+    $result = $notificationManager->sendMultiple($recipients, $templateCode);
 
     expect($result)->toHaveCount(1);
 });

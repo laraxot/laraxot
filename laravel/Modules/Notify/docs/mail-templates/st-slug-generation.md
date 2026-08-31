@@ -3,6 +3,7 @@
 ## Introduzione
 
 Questo documento analizza un approccio avanzato per la generazione di slug da titoli nei form Filament, con particolare attenzione alla preservazione degli slug per i contenuti già pubblicati. Questa metodologia è particolarmente rilevante per il modulo Notify di Quaeris, in particolare per la gestione dei template email.
+Questo documento analizza un approccio avanzato per la generazione di slug da titoli nei form Filament, con particolare attenzione alla preservazione degli slug per i contenuti già pubblicati. Questa metodologia è particolarmente rilevante per il modulo Notify di App, in particolare per la gestione dei template email.
 
 ## Concetto Base
 
@@ -182,6 +183,7 @@ In alternativa o in aggiunta, è possibile implementare un sistema di reindirizz
 L'implementazione di una generazione intelligente di slug per i template email migliora significativamente la stabilità e l'usabilità del sistema. Preservando gli slug dei template pubblicati, si prevengono problemi di accessibilità e si garantisce un'esperienza utente coerente.
 
 Per il modulo Notify di Quaeris, questa soluzione rappresenta un equilibrio ottimale tra automazione e controllo, con particolare attenzione alla preservazione dei link esistenti.
+Per il modulo Notify di App, questa soluzione rappresenta un equilibrio ottimale tra automazione e controllo, con particolare attenzione alla preservazione dei link esistenti.
 
 ## Riferimenti
 

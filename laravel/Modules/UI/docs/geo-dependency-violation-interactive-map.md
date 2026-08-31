@@ -7,6 +7,10 @@ updated: 2026-07-21
 qmd: "geo-dependency-violation-interactive-map rimosso interactivemap — violava regola "ui non importa geo""
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+updated: 2026-08-18
+qmd: "geo-dependency-violation-interactive-map rimosso interactivemap — violava regola "ui non importa geo""
+issues: ["https://github.com/provtv/<nome repository>/issues/124"]
+discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
   - "./00-index-1.md"
   - "./00-index.md"
@@ -32,10 +36,14 @@ related:
 ## Decisione
 
 Componente completamente inutilizzato + dipendenze mai implementate + violazione di dipendenza = non ha senso costruire 5 Action speculative per una feature che nessuno chiama (YAGNI/ponytail). Archiviato forward-only, non cancellato:
-
 - `Modules/UI/app/Livewire/Components/Map/` → `Modules/UI/docs/archive/Livewire/Map.old/`
 - `Modules/UI/resources/views/livewire/components/map/interactive-map.blade.php{,.old}` → `Modules/UI/docs/archive/views/livewire/components/map/`
-
 ## Se in futuro serve una mappa interattiva
-
 Costruirla **dentro `Modules/Geo`** (dominio corretto), con le Action reali (`Spatie\QueueableAction`, `execute()`), e semmai esporre un Blade component/Livewire consumabile da `UI` o dai temi — mai il contrario.
+Componente inutilizzato + dipendenze Geo + violazione di direzione = **cancellare**, non archiviare in `docs/archive/` e non inventare Action Geo in UI.
+
+2026-08-18: `InteractiveMap.php`, `.old` e Blade non sono più sotto `app/` / `resources/views`. `git grep Modules\\Geo -- app` è vuoto.
+
+Se in futuro serve una mappa: **dentro `Modules/Geo`**, con Action reali (`Spatie\QueueableAction`, `execute()`), eventualmente consumate da un tema. Mai il contrario.
+
+Canon: [geo-boundary.md](./geo-boundary.md).

@@ -1,3 +1,12 @@
+---
+title: "Decision Log: Rimozione Azioni Seasonal Over-Engineered"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Decision Log: Rimozione Azioni Seasonal Over-Engineered
 
 **Decisione**: Rimozione delle classi GetSeasonalEmailLayoutAction e DetermineSeasonalLayoutPathAction  

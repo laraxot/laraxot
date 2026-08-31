@@ -23,6 +23,34 @@ Labels are automatically resolved using:
 Empty values are automatically skipped to save visual space, except for:
 - `0` (zero)
 - `'0'` (string zero)
+- Visual columns (`IconColumn`, `ColorColumn`, `ImageColumn`): only `null` is skipped — `false` / `0` still render (es. icona boolean false)
+
+### 4. **Child columns mounted to Table** (obbligatorio)
+Filament richiede `table` sulla colonna per `getState()` / `toEmbeddedHtml()`. `GroupColumn::table()` e `schema()` propagano la Table alle child; la view richiama `$field->table($getTable())` in render.
+
+Senza mount → `LogicException: The column [id] is not mounted to a table`.
+
+### 5. **Visual columns (Icon / Color / Image)** ✅
+`GroupColumn` **non** stampa lo state grezzo di `IconColumn` (es. `"1"`). Monta table + record e chiama `toEmbeddedHtml()`:
+
+```php
+GroupColumn::make('id/motivo')->schema([
+    TextColumn::make('id'),
+    TextColumn::make('motivo'),
+    IconColumn::make('ha_diritto')->boolean(),
+]);
+```
+
+**Perché:** la view storica faceva `label: {{ $value }}` → per `ha_diritto` int DB usciva `Ha diritto: 1`. Le colonne visuali usano la pipeline Filament (Heroicon check/X).
+
+`TextColumn` usa `formatState()` (rispetta `->html()` / `formatStateUsing`). Ogni campo è un `div.fi-ta-group-row` (stack verticale). Icona: label + visual sulla **stessa** riga (`flex-nowrap` + `inline-flex` sul wrapper, perché `toEmbeddedHtml()` emette un `div.fi-ta-icon` block).
+
+### 6. **SelectColumn embedded (edit inline)** ✅
+`SelectColumn` nel schema del gruppo viene montata su table + record e renderizzata con `toEmbeddedHtml()` (come Icon/Color/Image), anche con state `null`. Il wrapper usa `fi-ta-group-interactive` per distinguere celle editabili.
+
+Esempio: `HaDirittoColumn` include `ValutatoreSelectColumn` per modificare `valutatore_id` nella stessa cella di ha_diritto/motivo (visibile solo super-admin).
+
+**Motivo lungo** (CSV da `implode(',', $motivi)`): in lista usare `->html()->formatStateUsing(… explode → <br> …)`.
 
 ## Implementation Details
 

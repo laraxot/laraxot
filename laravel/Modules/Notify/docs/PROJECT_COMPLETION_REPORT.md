@@ -136,6 +136,9 @@ FIXCITY_ANALYTICS_ENABLED=true
 /api/fixcity/tickets       # Gestione ticket
 /api/fixcity/map/tickets   # Mappa ticket
 /api/fixcity/statistics    # Statistiche
+/api/ptv/tickets       # Gestione ticket
+/api/ptv/map/tickets   # Mappa ticket
+/api/ptv/statistics    # Statistiche
 ```
 
 ## Test Implementati

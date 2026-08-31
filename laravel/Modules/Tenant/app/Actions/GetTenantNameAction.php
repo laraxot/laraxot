@@ -98,6 +98,10 @@ class GetTenantNameAction
     private function getServerName(string $default): string
     {
         $serverName = getenv('SERVER_NAME');
+        if ((! is_string($serverName) || $serverName === '') && isset($_SERVER['SERVER_NAME']) && is_string($_SERVER['SERVER_NAME'])) {
+            $serverName = $_SERVER['SERVER_NAME'];
+        }
+
         if (is_string($serverName) && $serverName !== '' && $serverName !== '127.0.0.1') {
             return $serverName;
         }
@@ -109,7 +113,6 @@ class GetTenantNameAction
      * Costruisce il percorso di configurazione.
      *
      * @param  Collection<int, string>  $parts  Le parti del percorso
-     *
      * @return string Il percorso completo
      */
     private function buildConfigPath(Collection $parts): string

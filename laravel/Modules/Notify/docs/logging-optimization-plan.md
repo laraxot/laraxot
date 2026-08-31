@@ -239,6 +239,7 @@ After:
 // Add error handling examples only
 
 // docs/sms_best_practices.md
+// docs/sms-best-practices.md
 // Update to reflect new logging practices
 ```
 

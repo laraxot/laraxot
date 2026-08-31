@@ -24,7 +24,6 @@ class SendNotificationAction
      * @param  array<string, mixed>  $data
      * @param  array<int, string>  $channels
      * @param  array<string, mixed>  $options
-     * @return NotificationModel|null
      *
      * @throws Exception
      */
@@ -159,9 +158,7 @@ class SendNotificationAction
                 'template_code' => $template->code,
                 'template_id' => $template->getKey(),
                 'payload' => $data,
-                'options' => $options,
-            ],
-        ]);
+                'options' => $options]]);
         $notification->save();
 
         return $notification;

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Media\Tests\Support;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Collection;
 use Spatie\MediaLibrary\Conversions\Conversion;
@@ -28,7 +29,7 @@ abstract class HasMediaTestStub implements HasMedia
     }
 
     /**
-     * @return MorphMany<Media, \Illuminate\Database\Eloquent\Model>
+     * @return MorphMany<Media, Model>
      */
     public function media(): MorphMany
     {

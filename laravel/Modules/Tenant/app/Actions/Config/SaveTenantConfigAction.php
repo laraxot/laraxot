@@ -22,7 +22,6 @@ class SaveTenantConfigAction
 
         $configData = [];
         if (File::exists($path)) {
-            /** @var mixed $existing */
             $existing = File::getRequire($path);
             if (\is_array($existing)) {
                 /** @var array<string, mixed> $existingArray */
@@ -46,7 +45,6 @@ class SaveTenantConfigAction
     /**
      * @param  array<string, mixed>  $array1
      * @param  array<string, mixed>  $array2
-     *
      * @return array<string, mixed>
      */
     private function arrayMergeRecursiveDistinct(array $array1, array $array2): array

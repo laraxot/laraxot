@@ -1,3 +1,12 @@
+---
+title: "Refactoring Summary: SendRecordsNotificationBulkAction Implementation"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Refactoring Summary: SendRecordsNotificationBulkAction Implementation
 
 **Date**: 18 Dicembre 2025  

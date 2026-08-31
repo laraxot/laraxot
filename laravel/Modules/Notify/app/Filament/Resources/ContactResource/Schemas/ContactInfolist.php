@@ -28,7 +28,6 @@ class ContactInfolist extends XotBaseResourceInfolist
                 ->dateTime(),
             'updated_by' => TextEntry::make('updated_by'),
             'created_by' => TextEntry::make('created_by'),
-            'user_id' => TextEntry::make('user_id'),
-        ];
+            'user_id' => TextEntry::make('user_id')];
     }
 }

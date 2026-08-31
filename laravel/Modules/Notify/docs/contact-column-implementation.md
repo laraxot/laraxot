@@ -49,6 +49,8 @@ Implementare `ContactColumn.php` come colonna Filament riutilizzabile che utiliz
 ```
 
 ### Campi Aggiuntivi
+```
+
 ```php
 // Attributi dinamici
 'attribute_1' to 'attribute_14',  // Attributi personalizzabili

@@ -29,8 +29,7 @@ class SchedulePushNotificationAction
             'tokens' => $tokens,
             'notification' => $notification->toArray(),
             'data' => $data,
-            'schedule_time' => $scheduleTime->getTimestamp(),
-        ], $scheduleTime);
+            'schedule_time' => $scheduleTime->getTimestamp()], $scheduleTime);
 
         SendScheduledPushNotification::dispatch($jobId)
             ->delay($scheduleTime);

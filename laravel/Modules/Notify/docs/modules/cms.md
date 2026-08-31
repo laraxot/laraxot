@@ -19,6 +19,7 @@ Per risolvere l'errore "Unable to locate file in Vite manifest", eseguire:
 
 ```bash
 cd /var/www/html/_bases/base_fixcity_fila5_mono/laravel/Themes/Sixteen
+cd /var/www/html/_bases/base_ptvx_fila5_mono/laravel/Themes/Sixteen
 npm run copy
 ```
 

@@ -5,6 +5,7 @@ tags: [project, completion, status]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "project-completion-status 🎯 fixcity - stato completamento progetto"
+qmd: "project-completion-status 🎯 ptv - stato completamento progetto"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -195,6 +196,7 @@ related:
 
 ```
 base_fixcity_fila5_mono/
+base_ptv_fila5_mono/
 ├── documentation-index.md          # ✅ Indice generale
 ├── quick-start.md                  # ✅ Guida rapida
 ├── roadmap-status-summary.md       # ✅ Status master
@@ -267,6 +269,9 @@ base_fixcity_fila5_mono/
 - **Email**: dev@fixcity.it
 - **Docs**: docs@fixcity.it
 - **Slack**: #fixcity-dev
+- **Email**: dev@ptv.it
+- **Docs**: docs@ptv.it
+- **Slack**: #ptv-dev
 
 ---
 

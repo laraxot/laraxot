@@ -1,10 +1,12 @@
 ---
 title: "📸 Analisi Visiva Header & Footer - FixCity vs Bootstrap Italia"
+title: "📸 Analisi Visiva Header & Footer - Notify vs Bootstrap Italia"
 type: concept
 tags: [analisi, colori, header, footer]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "analisi-colori-header-footer 📸 analisi visiva header & footer - fixcity vs bootstrap italia"
+qmd: "analisi-colori-header-footer 📸 analisi visiva header & footer - laraxot vs bootstrap italia"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -14,6 +16,7 @@ related:
 ---
 
 # 📸 Analisi Visiva Header & Footer - FixCity vs Bootstrap Italia
+# 📸 Analisi Visiva Header & Footer - Notify vs Bootstrap Italia
 
 ## Data: {{ date('Y-m-d H:i:s') }}
 
@@ -23,6 +26,7 @@ related:
 
 **URL Reference**: https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html  
 **FixCity**: http://fixcity.local/it/tests/homepage
+**Notify**: http://laraxot.local/it/tests/homepage
 
 **Differenze Principali**:
 1. ❌ Header: Colori non corretti
@@ -176,6 +180,9 @@ related:
 ## 3. FixCity - Differenze Attuali
 
 ### Header FixCity (Errato)
+## 3. Notify - Differenze Attuali
+
+### Header Notify (Errato)
 
 ```
 ❌ Barra regione: Colore sbagliato
@@ -186,6 +193,7 @@ related:
 ```
 
 ### Footer FixCity (Errato)
+### Footer Notify (Errato)
 
 ```
 ❌ Feedback module: Assente o errato

@@ -2,17 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Modules\Media\Services;
+namespace Modules\Media\Actions\Stream;
 
 use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
+use SimpleXMLElement;
+
 use function Safe\file_put_contents;
 use function Safe\fopen;
 use function Safe\realpath;
 use function Safe\simplexml_load_string;
-use SimpleXMLElement;
 
 /**
  * SubtitleService.

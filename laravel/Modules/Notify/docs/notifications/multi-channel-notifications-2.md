@@ -22,6 +22,7 @@ related:
 
 Questa documentazione descrive come implementare correttamente notifiche multi-canale (email, SMS, Telegram) nel modulo Notify di <nome progetto>.
 Questa documentazione descrive come implementare correttamente notifiche multi-canale (email, SMS, Telegram) nel modulo Notify di Quaeris.
+Questa documentazione descrive come implementare correttamente notifiche multi-canale (email, SMS, Telegram) nel modulo Notify di App.
 
 ## Indice
 
@@ -38,6 +39,7 @@ Questa documentazione descrive come implementare correttamente notifiche multi-c
 
 <nome progetto> utilizza il sistema di notifiche di Laravel per inviare comunicazioni attraverso diversi canali. Ogni canale richiede un'implementazione specifica per garantire la corretta consegna dei messaggi.
 Quaeris utilizza il sistema di notifiche di Laravel per inviare comunicazioni attraverso diversi canali. Ogni canale richiede un'implementazione specifica per garantire la corretta consegna dei messaggi.
+App utilizza il sistema di notifiche di Laravel per inviare comunicazioni attraverso diversi canali. Ogni canale richiede un'implementazione specifica per garantire la corretta consegna dei messaggi.
 
 ## Architettura delle Notifiche
 
@@ -108,6 +110,7 @@ public function toMail($notifiable): SpatieEmail
 
 <nome progetto> supporta diversi provider SMS. La configurazione di base prevede:
 Quaeris supporta diversi provider SMS. La configurazione di base prevede:
+App supporta diversi provider SMS. La configurazione di base prevede:
 
 1. Installazione del provider scelto:
    ```bash
@@ -265,6 +268,7 @@ class AppointmentNotification extends Notification
 
 Netfun è un provider di SMS italiano che offre API per l'invio di messaggi SMS. Seguendo l'architettura di <nome progetto>, implementeremo l'integrazione con Netfun utilizzando Spatie Queueable Actions.
 Netfun è un provider di SMS italiano che offre API per l'invio di messaggi SMS. Seguendo l'architettura di Quaeris, implementeremo l'integrazione con Netfun utilizzando Spatie Queueable Actions.
+Netfun è un provider di SMS italiano che offre API per l'invio di messaggi SMS. Seguendo l'architettura di App, implementeremo l'integrazione con Netfun utilizzando Spatie Queueable Actions.
 
 ### 1. Configurazione
 
@@ -280,6 +284,7 @@ return [
         'password' => env('NETFUN_PASSWORD'),
         'sender' => env('NETFUN_SENDER', '<nome progetto>'),
 'sender' => env('NETFUN_SENDER', 'Quaeris'),
+'sender' => env('NETFUN_SENDER', 'App'),
         'api_url' => env('NETFUN_API_URL', 'https://api.netfun.it/sms/v1/'),
     ],
 ];
@@ -292,6 +297,7 @@ NETFUN_USERNAME=your_username
 NETFUN_PASSWORD=your_password
 NETFUN_SENDER=<nome progetto>
 NETFUN_SENDER=Quaeris
+NETFUN_SENDER=App
 ```
 
 ### 2. Creazione della Queueable Action
@@ -624,6 +630,7 @@ class AppointmentReminder extends Notification
         return (new NetfunSMSMessage())
             ->content("Gentile {$notifiable->first_name}, le ricordiamo il suo appuntamento del {$date}. <nome progetto>.")
 ->content("Gentile {$notifiable->first_name}, le ricordiamo il suo appuntamento del {$date}. Quaeris.")
+->content("Gentile {$notifiable->first_name}, le ricordiamo il suo appuntamento del {$date}. App.")
             ->reference('app_' . $this->appointment->id);
     }
     
@@ -670,6 +677,7 @@ class NetfunSMSTest extends TestCase
         $message = (new NetfunSMSMessage())
             ->content('Test SMS da <nome progetto>')
 ->content('Test SMS da Quaeris')
+->content('Test SMS da App')
             ->reference('test_123');
         
         $result = $action->execute(
@@ -707,6 +715,7 @@ class AppointmentReminderController extends Controller
         $message = (new NetfunSMSMessage())
             ->content("Gentile {$appointment->patient->first_name}, le ricordiamo il suo appuntamento del {$appointment->date->format('d/m/Y H:i')}. <nome progetto>.")
 ->content("Gentile {$appointment->patient->first_name}, le ricordiamo il suo appuntamento del {$appointment->date->format('d/m/Y H:i')}. Quaeris.")
+->content("Gentile {$appointment->patient->first_name}, le ricordiamo il suo appuntamento del {$appointment->date->format('d/m/Y H:i')}. App.")
             ->reference('app_' . $appointment->id);
         
         // Esecuzione asincrona
@@ -738,6 +747,8 @@ Utilizzando questa architettura basata su Queueable Actions, otteniamo diversi v
 ### Invio di Notifiche On-Demand
 
 Per inviare notifiche a destinatari che non sono models Notifiable:
+
+```
 
 ```php
 Notification::route('mail', 'esempio@example.com')
@@ -815,4 +826,5 @@ TELEGRAM_BOT_TOKEN=12345:ABC...
 - [TELEGRAM_NOTIFICATIONS_GUIDE.md](./telegram-notifications-guide.md)
 - [NOTIFICATIONS_IMPLEMENTATION_GUIDE.md](./notifications-implementation-guide.md)
 - [SMS_PROVIDER_CONFIGURATION.md](./sms-provider-configuration.md)
+- [TELEGRAM_NOTIFICATIONS_GUIDE.md](./telegram-notifications-guide.md)
 - [TELEGRAM_NOTIFICATIONS_GUIDE.md](./telegram-notifications-guide.md)

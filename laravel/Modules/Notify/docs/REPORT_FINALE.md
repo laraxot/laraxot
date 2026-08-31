@@ -227,6 +227,7 @@ Themes/Sixteen/resources/views/pages/
 
 Per informazioni:
 - **Repository**: `/var/www/_bases/base_fixcity_fila5`
+- **Repository**: `/var/www/_bases/base_ptv_fila5`
 - **Tema**: `Themes/Sixteen`
 - **Documentazione**: `docs/PAGINE_CREATE.md`
 

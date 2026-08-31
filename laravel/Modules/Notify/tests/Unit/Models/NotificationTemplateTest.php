@@ -3,12 +3,10 @@
 declare(strict_types=1);
 
 namespace Modules\Notify\Tests\Unit\Models;
+
 use Modules\Notify\Enums\NotificationTypeEnum;
 use Modules\Notify\Models\NotificationTemplate;
-use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
-
-uses(\Modules\Notify\Tests\TestCase::class);
 
 /**
  * Unit tests must not bootstrap the application container.
@@ -39,8 +37,7 @@ it('has correct fillable fields', function (): void {
         'version',
         'tenant_id',
         'grapesjs_data',
-        'type',
-    ];
+        'type'];
 
     Assert::assertSame($expectedFillable, $fillable);
 });
@@ -64,8 +61,7 @@ it('has correct casts', function (): void {
         'conditions' => 'array',
         'metadata' => 'array',
         'is_active' => 'boolean',
-        'grapesjs_data' => 'array',
-    ];
+        'grapesjs_data' => 'array'];
 
     Assert::assertSame($expectedCasts, $casts);
 });
@@ -82,8 +78,7 @@ it('has translatable fields', function (): void {
     $expectedTranslatable = [
         'subject',
         'body_text',
-        'body_html',
-    ];
+        'body_html'];
 
     Assert::assertSame($expectedTranslatable, $translatable);
 });

@@ -30,8 +30,7 @@ enum TelegramDriverEnum: string
         return [
             self::TELEGRAM->value => 'Telegram',
             self::BOTAPI->value => 'Bot API',
-            self::LARAVEL_TELEGRAM->value => 'Laravel Telegram',
-        ];
+            self::LARAVEL_TELEGRAM->value => 'Laravel Telegram'];
     }
 
     /**
@@ -44,8 +43,7 @@ enum TelegramDriverEnum: string
         return [
             self::TELEGRAM->value => __('notify::telegram.drivers.telegram'),
             self::BOTAPI->value => __('notify::telegram.drivers.botapi'),
-            self::LARAVEL_TELEGRAM->value => __('notify::telegram.drivers.laravel_telegram'),
-        ];
+            self::LARAVEL_TELEGRAM->value => __('notify::telegram.drivers.laravel_telegram')];
     }
 
     /**

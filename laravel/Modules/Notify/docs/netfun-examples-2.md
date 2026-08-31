@@ -50,6 +50,8 @@ related:
 ## 3. Invio SMS Massivo
 
 ### 3.1 Action
+```
+
 ```php
 <?php
 
@@ -704,4 +706,5 @@ class NetfunNotificationIntegrationTest extends TestCase
 - [Prometheus PHP Client](https://github.com/promphp/prometheus_client_php) 
 # Netfun Examples
 
+This document provides examples for Netfun integration.
 This document provides examples for Netfun integration.

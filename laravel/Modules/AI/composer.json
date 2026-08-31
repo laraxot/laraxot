@@ -1,6 +1,6 @@
 {
     "name": "laraxot/module_ai_fila5",
-    "description": "",
+    "description": "AI integration module for the Laraxot ecosystem",
     "homepage": "https://github.com/laraxot/module_ai_fila5",
     "license": "MIT",
     "authors": [
@@ -36,13 +36,7 @@
         "php": "^8.3"
     },
     "require-dev": {
-        "codewithkyrian/transformers": "^0.5.2",
-        "laravel/pint": "^1.13",
-        "larastan/larastan": "*",
-        "driftingly/rector-laravel": "^2.5",
-        "symplify/phpstan-rules": "*",
-        "rector/rector": "^2.2.7",
-        "thecodingmachine/phpstan-safe-rule": "^1.2"
+        "codewithkyrian/transformers": "^0.5.2"
     },
     "repositories": [
         {
@@ -59,6 +53,7 @@
         }
     ],
     "config": {
+        "sort-packages": true,
         "allow-plugins": {
             "php-http/discovery": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,

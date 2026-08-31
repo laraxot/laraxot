@@ -3,15 +3,14 @@
 declare(strict_types=1);
 
 namespace Modules\Notify\Tests\Unit\Actions\WhatsApp;
-use Modules\Notify\Tests\TestCase;
-use function Safe\file_get_contents;
+
 use Modules\Notify\Actions\WhatsApp\SendFacebookWhatsAppAction;
 use Modules\Notify\Datas\WhatsAppData;
+use Modules\Notify\Tests\TestCase;
+use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
 use function Safe\class_uses;
-
-uses(\Modules\Notify\Tests\TestCase::class);
 
 describe('SendFacebookWhatsAppAction', function () {
     it('can be referenced via ReflectionClass without instantiation', function () {
@@ -32,7 +31,7 @@ describe('SendFacebookWhatsAppAction', function () {
         $method = $reflection->getMethod('execute');
         $params = $method->getParameters();
 
-        \assertReflectionTypeName($params[0]->getType(), WhatsAppData::class);
+        XotBasePest::assertReflectionTypeName($params[0]->getType(), WhatsAppData::class);
     });
 
     it('execute returns array', function () {
@@ -40,12 +39,12 @@ describe('SendFacebookWhatsAppAction', function () {
         $method = $reflection->getMethod('execute');
         $returnType = $method->getReturnType();
 
-        \assertReflectionTypeName($returnType, 'array');
+        XotBasePest::assertReflectionTypeName($returnType, 'array');
     });
 
     it('uses strict types', function () {
         $reflection = new \ReflectionClass(SendFacebookWhatsAppAction::class);
-        $content = \notifyReflectionSource($reflection);
+        $content = TestCase::notifyReflectionSource($reflection);
         Assert::assertStringContainsString('declare(strict_types=1)', (string) $content);
     });
 
@@ -58,7 +57,7 @@ describe('SendFacebookWhatsAppAction', function () {
     it('has required imports', function () {
         $reflection = new \ReflectionClass(SendFacebookWhatsAppAction::class);
         $filename = $reflection->getFileName();
-        $content = \notifyReflectionSource(new \ReflectionClass(SendFacebookWhatsAppAction::class));
+        $content = TestCase::notifyReflectionSource(new \ReflectionClass(SendFacebookWhatsAppAction::class));
 
         Assert::assertStringContainsString('declare(strict_types=1)', (string) $content);
     });

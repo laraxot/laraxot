@@ -5,6 +5,7 @@ tags: [perfection, plan]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "perfection-plan 🎯 fixcity - perfection plan"
+qmd: "perfection-plan 🎯 ptv - perfection plan"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:

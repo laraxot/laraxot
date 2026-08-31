@@ -22,6 +22,7 @@ related:
 
 ## 🎯 OVERVIEW
 Report consolidato delle roadmap di tutti i moduli e temi del progetto FixCity.
+Report consolidato delle roadmap di tutti i moduli e temi del progetto Notify.
 
 ## 📋 MODULI
 
@@ -29,6 +30,7 @@ Report consolidato delle roadmap di tutti i moduli e temi del progetto FixCity.
 - **Xot**: Core framework - Status: 95% COMPLETATO
 - **User**: Authentication & Authorization - Status: 90% COMPLETATO  
 - **Fixcity**: Core business logic - Status: 80% COMPLETATO
+- **App**: Core business logic - Status: 80% COMPLETATO
 
 ### Moduli Support (HIGH)
 - **UI**: Component library - Status: 60% COMPLETATO
@@ -75,6 +77,10 @@ Report consolidato delle roadmap di tutti i moduli e temi del progetto FixCity.
 ### Q1 2025 (Gennaio-Marzo)
 1. Completare moduli core (Xot, User, Fixcity)
 2. Implementare API v1 per Fixcity
+1. Completare moduli core (Xot, User, Fixcity)
+2. Implementare API v1 per Fixcity
+1. Completare moduli core (Xot, User, App)
+2. Implementare API v1 per App
 3. Ottimizzare mobile interface
 4. Raggiungere 100% AGID compliance per Sixteen
 

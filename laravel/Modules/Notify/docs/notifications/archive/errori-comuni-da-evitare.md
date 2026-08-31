@@ -1,10 +1,12 @@
 ---
 title: "Errori Comuni da Evitare nelle Implementazioni di Moduli SaluteOra"
+title: "Errori Comuni da Evitare nelle Implementazioni di Moduli <nome progetto>"
 type: concept
 tags: [errori, comuni, evitare]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "errori-comuni-da-evitare errori comuni da evitare nelle implementazioni di moduli saluteora"
+qmd: "errori-comuni-da-evitare errori comuni da evitare nelle implementazioni di moduli <nome progetto>"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -17,6 +19,7 @@ related:
 ---
 
 # Errori Comuni da Evitare nelle Implementazioni di Moduli SaluteOra
+# Errori Comuni da Evitare nelle Implementazioni di Moduli <nome progetto>
 
 ## Errori di Struttura Directory e Namespace
 
@@ -24,12 +27,14 @@ related:
    - ❌ ERRATO: `/var/www/html/saluteora/laravel/Modules/Notify/App/Actions/`
    - ✅ CORRETTO: `/var/www/html/saluteora/laravel/Modules/Notify/app/Actions/`
    
+   - ❌ ERRATO: `[project-root]/laravel/Modules/Notify/App/Actions/`
+   - ✅ CORRETTO: `[project-root]/laravel/Modules/Notify/app/Actions/`
+
    > Le directory standard di Laravel sono sempre in lowercase (`app`, `config`, `resources`, ecc.)
 
 2. **Errore di Namespace nei File**
    - ❌ ERRATO: `namespace Modules\Notify\App\Actions;`
    - ✅ CORRETTO: `namespace Modules\Notify\Actions;`
-   
    > Il namespace dipende dalla configurazione PSR-4 nel composer.json del modulo
 
 ## Errori di Configurazione
@@ -46,7 +51,6 @@ related:
            'retry_attempts' => 3,  // ERRORE: Duplicazione
        ],
    ],
-   
    // CORRETTO
    'drivers' => [
        'provider' => [
@@ -73,7 +77,6 @@ related:
    public function execute() {
        $timeout = 30; // Hardcoded
    }
-   
    // CORRETTO
    public function execute() {
        $timeout = config('sms.timeout');

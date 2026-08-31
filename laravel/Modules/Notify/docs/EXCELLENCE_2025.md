@@ -187,10 +187,10 @@ FixCity è la piattaforma enterprise leader per la gestione delle segnalazioni u
 - 📋 **Webinar mensili** - Best practices
 
 ### Supporto
-- ✅ **Email**: support@fixcity.it
-- ✅ **Slack**: #fixcity-dev
+- ✅ **Email**: support@ptv.it
+- ✅ **Slack**: #ptv-dev
 - ✅ **GitHub**: Issues & Discussions
-- ✅ **Documentation**: docs.fixcity.it
+- ✅ **Documentation**: docs.ptv.it
 
 ---
 
@@ -350,11 +350,11 @@ public function createTicket(
 - **Doc Lead**: Documentation & Training
 
 ### Support Channels
-- **Email**: support@fixcity.it
-- **Slack**: #fixcity-community
-- **GitHub**: github.com/laraxot/fixcity
-- **Docs**: docs.fixcity.it
-- **Status**: status.fixcity.it
+- **Email**: support@ptv.it
+- **Slack**: #ptv-community
+- **GitHub**: github.com/laraxot/ptv
+- **Docs**: docs.ptv.it
+- **Status**: status.ptv.it
 
 ---
 
@@ -371,6 +371,7 @@ Grazie a tutti i contributor che hanno reso possibile questo progetto:
 FixCity è orgogliosamente open source:
 - **License**: MIT
 - **Repository**: github.com/laraxot/fixcity
+- **Repository**: github.com/laraxot/ptv
 - **Contributions**: Welcome!
 - **Code of Conduct**: Contributor Covenant
 

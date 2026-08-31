@@ -1,0 +1,4 @@
+# Spatie
+
+non usiamo services ma utilizziamo https://github.com/spatie/laravel-queueable-action
+cerchiamo sempre di usare https://github.com/spatie/laravel-data  in fatti ogni modulo ha la sua cartella app/Datas

@@ -57,6 +57,7 @@ class ListPosts extends XotBaseListRecords
 - [Professional Charts Guide](../../laravel/Modules/Chart/docs/filament-charts-professional-guide.md)
 - [JpGraph Reference](../../laravel/Modules/Chart/docs/jpgraph-4-4-3-reference.md)
 - [PDF Generation](../../laravel/Modules/Quaeris/docs/pdf-generation-with-charts.md)
+- [PDF Generation](../../laravel/Modules/App/docs/pdf-generation-with-charts.md)
 
 ## Collegamenti
 

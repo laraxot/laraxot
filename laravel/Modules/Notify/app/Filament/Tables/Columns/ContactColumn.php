@@ -42,8 +42,7 @@ class ContactColumn extends ViewColumn
         $searchableArray = ContactTypeEnum::getSearchable();
 
         $this->view(static::getView(), [
-            'contact_types' => $contact_types,
-        ])
+            'contact_types' => $contact_types])
             ->label(__('notify::columns.contact.label'))
             ->searchable($searchableArray)
             ->sortable(false)

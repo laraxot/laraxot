@@ -9,31 +9,23 @@ return [
             'placeholder' => 'recipient',
             'helper_text' => 'recipient',
             'description' => 'recipient',
-            'tooltip' => '',
-        ],
-    ],
+            'tooltip' => '']],
     'actions' => [
         'send' => [
-            'icon' => 'send',
-        ],
+            'icon' => 'send'],
         'profile' => [
             'label' => 'profile',
             'icon' => 'profile',
-            'tooltip' => 'profile',
-        ],
+            'tooltip' => 'profile'],
         'logout' => [
             'label' => 'logout',
             'icon' => 'logout',
-            'tooltip' => 'logout',
-        ],
-    ],
+            'tooltip' => 'logout']],
     'navigation' => [
         'label' => 'Missing Navigation Label',
         'plural_label' => 'Missing Navigation Plural Label',
         'group' => 'Missing Group',
         'icon' => 'heroicon-o-puzzle-piece',
-        'sort' => 100,
-    ],
+        'sort' => 100],
     'label' => 'Missing Label',
-    'plural_label' => 'Missing Plural label',
-];
+    'plural_label' => 'Missing Plural label'];

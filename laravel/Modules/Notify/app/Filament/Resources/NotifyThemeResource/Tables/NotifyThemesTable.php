@@ -23,8 +23,7 @@ class NotifyThemesTable extends XotBaseResourceTable
             ),
             'type' => SelectFilter::make('type')->options(
                 fn (): array => NotifyThemeResource::fieldOptions('type'),
-            ),
-        ];
+            )];
     }
 
     /**
@@ -40,7 +39,6 @@ class NotifyThemesTable extends XotBaseResourceTable
             'theme' => TextColumn::make('theme')->sortable(),
             'from_email' => TextColumn::make('from_email')->searchable(),
             'created_at' => TextColumn::make('created_at')->dateTime()->sortable(),
-            'updated_at' => TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
-        ];
+            'updated_at' => TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true)];
     }
 }

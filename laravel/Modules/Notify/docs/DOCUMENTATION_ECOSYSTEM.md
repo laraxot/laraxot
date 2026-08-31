@@ -157,6 +157,7 @@ Theme: Sixteen
     ├─→ Cms Module
     │   └─ Displays: Pages, blocks, content
     │   └─ Via: config/local/fixcity/database/content/pages/
+    │   └─ Via: config/local/ptv/database/content/pages/
     │   └─ Renders: Block components
     │
     ├─→ Media Module
@@ -279,6 +280,7 @@ Relevant Master Index (MODULE or THEME)
   │
   ▼
 Module/Theme 00-INDEX.md
+Module/Theme 00-index.md
   │ (Component details)
   │
   ▼
@@ -312,6 +314,7 @@ Module Documentation (MODULE_DOCS_INDEX.md)
   │
   ▼
 Module 00-INDEX.md
+Module 00-index.md
   │ (Dependencies, classes)
   │
   ▼
@@ -366,6 +369,7 @@ docs/
 laravel/
 ├── CLAUDE.md                       ← Framework rules (38.7 KB)
 ├── AGENTS.md
+├── agents.md
 └── .windsurfrules                 ← Windsurf rules
 ```
 
@@ -375,12 +379,14 @@ laravel/
 laravel/Modules/
 ├── Xot/docs/
 │   ├── 00-INDEX.md
+│   ├── 00-index.md
 │   ├── architecture/
 │   ├── guides/
 │   └── reference/
 │
 ├── Cms/docs/
 │   ├── 00-INDEX.md
+│   ├── 00-index.md
 │   ├── architecture/
 │   ├── guides/
 │   └── reference/
@@ -394,6 +400,7 @@ laravel/Modules/
 laravel/Themes/
 ├── Sixteen/docs/
 │   ├── 00-INDEX.md
+│   ├── 00-index.md
 │   ├── architecture/
 │   ├── design-comuni/
 │   ├── components/
@@ -403,6 +410,7 @@ laravel/Themes/
 │
 └── TwentyOne/docs/
     ├── 00-INDEX.md
+    ├── 00-index.md
     └── (similar structure)
 ```
 
@@ -457,6 +465,7 @@ laravel/Themes/
 
 2. Follow structure:
    - 00-INDEX.md (always)
+   - 00-index.md (always)
    - architecture/ (how it works)
    - guides/ (how-to)
    - reference/ (API)
@@ -503,6 +512,7 @@ Master Indexes:
 ├─ THEMES_DOCUMENTATION_INDEX.md (Theme hub)
 ├─ ARCHITECTURE-DIAGRAMS.md (System overview)
 ├─ docs/00-INDEX.md (Root index)
+├─ docs/00-index.md (Root index)
 └─ DOCUMENTATION_ECOSYSTEM.md (You are here)
 
 Connected Via:

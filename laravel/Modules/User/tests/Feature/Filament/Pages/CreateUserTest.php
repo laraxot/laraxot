@@ -28,31 +28,31 @@ beforeEach(function (): void {
     }
     Filament::setCurrentPanel($panel);
 
-    $this->createUserPage = new CreateUser();
+    TestCase::$createUserPage = new CreateUser();
 });
 
 describe('Create User', function (): void {
     test('create user page has correct resource', function (): void {
         /** @var TestCase $this */
-        $createUserPage = $this->requireCreateUserPage();
+        $createUserPage = TestCase::requireCreateUserPage();
         Assert::assertSame(UserResource::class, $createUserPage->getResource());
     });
 
     test('create user page extends correct base class', function (): void {
         /** @var TestCase $this */
-        $createUserPage = $this->requireCreateUserPage();
+        $createUserPage = TestCase::requireCreateUserPage();
         Assert::assertInstanceOf(XotBaseCreateRecord::class, $createUserPage);
     });
 
     test('create user page can be instantiated', function (): void {
         /** @var TestCase $this */
-        $createUserPage = $this->requireCreateUserPage();
+        $createUserPage = TestCase::requireCreateUserPage();
         Assert::assertInstanceOf(CreateUser::class, $createUserPage);
     });
 
     test('create user page has correct navigation label', function (): void {
         /** @var TestCase $this */
-        $createUserPage = $this->requireCreateUserPage();
+        $createUserPage = TestCase::requireCreateUserPage();
         $label = $createUserPage->getNavigationLabel();
 
         Assert::assertNotEmpty($label);
@@ -60,7 +60,7 @@ describe('Create User', function (): void {
 
     test('create user page has correct title', function (): void {
         /** @var TestCase $this */
-        $createUserPage = $this->requireCreateUserPage();
+        $createUserPage = TestCase::requireCreateUserPage();
         $title = $createUserPage->getTitle();
 
         Assert::assertNotEmpty($title);
@@ -68,7 +68,7 @@ describe('Create User', function (): void {
 
     test('create user page has correct breadcrumbs structure', function (): void {
         /** @var TestCase $this */
-        $createUserPage = $this->requireCreateUserPage();
+        $createUserPage = TestCase::requireCreateUserPage();
         try {
             $breadcrumbs = $createUserPage->getBreadcrumbs();
             Assert::assertNotEmpty($breadcrumbs);
@@ -78,7 +78,7 @@ describe('Create User', function (): void {
 
     test('create user page can be accessed', function (): void {
         /** @var TestCase $this */
-        $createUserPage = $this->requireCreateUserPage();
+        $createUserPage = TestCase::requireCreateUserPage();
         Assert::assertInstanceOf(CreateUser::class, $createUserPage);
     });
 
@@ -116,7 +116,7 @@ describe('Create User', function (): void {
 
     test('create user page follows filament conventions', function (): void {
         /** @var TestCase $this */
-        $createUserPage = $this->requireCreateUserPage();
+        $createUserPage = TestCase::requireCreateUserPage();
         Assert::assertSame(UserResource::class, $createUserPage->getResource());
         Assert::assertSame(XotData::make()->getUserClass(), $createUserPage->getModel());
     });

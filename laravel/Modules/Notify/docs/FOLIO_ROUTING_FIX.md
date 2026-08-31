@@ -1,3 +1,12 @@
+---
+title: "Fix Routing Folio per Login Page"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # 🔧 Fix Routing Folio per Login Page
 
 **Data**: 14 Ottobre 2025  

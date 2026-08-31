@@ -8,10 +8,7 @@ use Illuminate\Support\Collection;
 use Modules\Geo\Actions\OptimizeRouteAction;
 use Modules\Geo\Datas\LocationData;
 use Modules\Geo\Tests\Fixtures\RouteDistanceStub;
-use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
-
-uses(\Modules\Geo\Tests\TestCase::class);
 
 it('returns same locations when count is 2 or less', function (): void {
     $location1 = new LocationData(latitude: 45.4642, longitude: 9.1900);

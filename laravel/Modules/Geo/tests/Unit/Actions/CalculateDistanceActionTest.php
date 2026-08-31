@@ -9,9 +9,6 @@ use Modules\Geo\Actions\GoogleMaps\CalculateDistanceMatrixAction;
 use Modules\Geo\Datas\LocationData;
 use Modules\Geo\Exceptions\DistanceCalculationException;
 use Modules\Geo\Tests\Fixtures\CalculateDistanceMatrixActionStub;
-use Modules\Geo\Tests\TestCase;
-
-uses(\Modules\Geo\Tests\TestCase::class);
 
 /**
  * Bind the distance-matrix stub into the container and resolve the action

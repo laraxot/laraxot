@@ -15,9 +15,9 @@ class GetRegionsAction
 {
     use QueueableAction;
 
-    public const CACHE_KEY = 'geo.regions';
+    public const string CACHE_KEY = 'geo.regions';
 
-    public const CACHE_TTL = 86400;
+    public const int CACHE_TTL = 86400;
 
     /**
      * @return Collection<int, array{name: string, code: string}>

@@ -35,8 +35,7 @@ class ListNotifyThemes extends XotBaseListRecords
             'updated_at' => TextColumn::make('updated_at')
                 ->dateTime()
                 ->sortable()
-                ->toggleable(isToggledHiddenByDefault: true),
-        ];
+                ->toggleable(isToggledHiddenByDefault: true)];
     }
 
     #[Override]
@@ -45,8 +44,10 @@ class ListNotifyThemes extends XotBaseListRecords
         return self::getNotifyThemeTableColumns();
     }
 
-    #[Override]
-    public function getTableFilters(): array
+    /**
+     * @return array<string, SelectFilter>
+     */
+    public static function getNotifyThemeTableFilters(): array
     {
         return [
             'lang' => SelectFilter::make('lang')->options(
@@ -57,7 +58,12 @@ class ListNotifyThemes extends XotBaseListRecords
             ),
             'type' => SelectFilter::make('type')->options(
                 fn (): array => NotifyThemeResource::fieldOptions('type'),
-            ),
-        ];
+            )];
+    }
+
+    #[Override]
+    public function getTableFilters(): array
+    {
+        return self::getNotifyThemeTableFilters();
     }
 }

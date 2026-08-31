@@ -42,7 +42,7 @@ describe('User Business Logic', function (): void {
 
     test('enforces username uniqueness when required', function (): void {
         /** @var TestCase $this */
-        if (! $this->userTableHasColumn('users', 'username')) {
+        if (! TestCase::userTableHasColumn('users', 'username')) {
             $email = 'alias-'.uniqid('', true).'@example.com';
             createTestUser(['email' => $email]);
 
@@ -134,7 +134,7 @@ describe('User Business Logic', function (): void {
 
         $firstTeam = $teams->first();
         Assert::assertInstanceOf(Team::class, $firstTeam);
-        Assert::assertTrue($this->teamMemberExists($firstTeam, $user));
+        Assert::assertTrue(TestCase::teamMemberExists($firstTeam, $user));
     });
 
     test('enforces team role hierarchy', function (): void {
@@ -142,7 +142,7 @@ describe('User Business Logic', function (): void {
         $user = createTestUser();
         $team = TeamFactory::new()->createOne();
 
-        $this->attachTeamMember($team, $user, ['role' => 'member']);
+        TestCase::attachTeamMember($team, $user, ['role' => 'member']);
 
         $this->assertDatabaseHasRow('team_user', [
             'team_id' => $team->id,
@@ -158,7 +158,7 @@ describe('User Business Logic', function (): void {
         $team = TeamFactory::new()->createOne(['user_id' => $owner->id]);
 
         Assert::assertSame($owner->id, $team->user_id);
-        $this->attachTeamMember($team, $member, ['role' => 'member']);
+        TestCase::attachTeamMember($team, $member, ['role' => 'member']);
 
         $freshTeam = $team->fresh();
         Assert::assertNotNull($freshTeam);
@@ -180,7 +180,7 @@ describe('User Business Logic', function (): void {
 
     test('enforces permission conflicts', function (): void {
         /** @var TestCase $this */
-        if (! $this->userTableExists('model_has_permission')) {
+        if (! TestCase::userTableExists('model_has_permission')) {
             $this->skipTest('model_has_permission table missing on user connection.');
         }
 

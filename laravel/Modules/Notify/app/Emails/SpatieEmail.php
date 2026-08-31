@@ -16,11 +16,12 @@ use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Datas\MetatagData;
 use Modules\Xot\Datas\XotData;
 use Mustache_Engine;
-use function Safe\file_get_contents;
 use Spatie\MailTemplates\Interfaces\MailTemplateInterface;
 use Spatie\MailTemplates\TemplateMailable;
 use Symfony\Component\Mime\MimeTypes;
 use Webmozart\Assert\Assert;
+
+use function Safe\file_get_contents;
 
 /**
  * @see https://github.com/spatie/laravel-database-mail-templates
@@ -51,8 +52,7 @@ class SpatieEmail extends TemplateMailable
         $tpl = MailTemplate::firstOrCreate(
             [
                 'mailable' => self::class,
-                'slug' => $this->slug,
-            ],
+                'slug' => $this->slug],
             [
                 'subject' => 'Benvenuto, {{ first_name }}',
                 'html_template' => '<p>Gentile {{ first_name }} {{ last_name }},</p><p>La tua registrazione  è in attesa di approvazione. Ti contatteremo presto.</p>['.
@@ -63,8 +63,7 @@ class SpatieEmail extends TemplateMailable
                         ']',
                 'sms_template' => 'Gentile {{ first_name }} {{ last_name }}, la tua registrazione  è in attesa di approvazione. Ti contatteremo presto.['.
                         $this->slug.
-                        ']',
-            ],
+                        ']'],
         );
 
         if ($tpl !== null) {
@@ -227,8 +226,7 @@ class SpatieEmail extends TemplateMailable
                 $pathAttachment = [
                     'path' => $path,
                     'as' => $item['as'] ?? null,
-                    'mime' => $item['mime'] ?? null,
-                ];
+                    'mime' => $item['mime'] ?? null];
                 $attachment = $this->getAttachmentFromPath($pathAttachment);
             }
 

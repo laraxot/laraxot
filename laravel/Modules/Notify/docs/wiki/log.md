@@ -1,3 +1,9 @@
+## [2026-08-27] quality | PHPStan `Modules/Notify/app` — XOT-5.43
+
+- `GenericNotification::via()` — PHPDoc `@param object` allineato al type hint nativo
+- `HasNotificationTracking` / `HasTenantNotifications` — `@phpstan-ignore trait.unused` (trait composable, coverage in `tests/Unit/Traits/`)
+- Doc: [concepts/phpstan-pest-test-doubles.md](concepts/phpstan-pest-test-doubles.md) §2b
+
 ## [2026-06-10] schema | notifications owner Notify — XotBaseMigration
 
 - Canonico: `2026_06_10_133000_create_notifications_table.php`
@@ -8,6 +14,8 @@
 
 - Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt)
 - GitHub: [#272](https://github.com/laraxot/base_fixcity_fila5/issues/272) / [D#273](https://github.com/laraxot/base_fixcity_fila5/discussions/273)
+- Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-laraxot-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt)
+- GitHub: [#272](https://github.com/laraxot/platform/issues/272) / [D#273](https://github.com/laraxot/platform/discussions/273)
 
 ---
 title: "Notify Wiki Activity Log"
@@ -20,6 +28,7 @@ module: "Notify"
 
 - Created wiki structure: rules/, skills/, commands/, memories/, concepts/
 - Created INDEX.md for each section
+- Created index.md for each section
 - Created module index.md
 - Ready for on-demand loading via QMD
 

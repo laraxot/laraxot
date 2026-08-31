@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace Modules\Geo\Tests\Feature;
 
 use Modules\Geo\Enums\AddressTypeEnum;
-use Modules\Geo\Tests\TestCase;
+use Modules\Xot\Actions\Cast\SafeIntCastAction;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use PHPUnit\Framework\Assert;
-
-uses(\Modules\Geo\Tests\TestCase::class);
 
 /**
  * In-memory Address tests (no factories / DB / container).
@@ -18,14 +17,13 @@ uses(\Modules\Geo\Tests\TestCase::class);
 /**
  * Build an in-memory address array with sane defaults.
  *
- * @param array<string, mixed> $overrides
- *
+ * @param  array<string, mixed>  $overrides
  * @return array<string, mixed>
  */
 function makeAddress(array $overrides = []): array
 {
     static $autoId = 0;
-    $autoId = (int) $autoId + 1;
+    $autoId = SafeIntCastAction::cast($autoId) + 1;
 
     $defaults = [
         'id' => $autoId,
@@ -53,7 +51,7 @@ function makeAddress(array $overrides = []): array
 /**
  * Compose a displayable full address from array parts.
  *
- * @param array<string, mixed> $address
+ * @param  array<string, mixed>  $address
  */
 function formatFullAddress(array $address): string
 {
@@ -65,10 +63,10 @@ function formatFullAddress(array $address): string
             $address['postal_code'] ?? null,
             $address['country'] ?? null,
         ],
-        static fn (mixed $value): bool => ((string) $value) !== '',
+        static fn (mixed $value): bool => (SafeStringCastAction::cast($value)) !== '',
     );
 
-    return implode(', ', array_map(static fn (mixed $part): string => (string) $part, $parts));
+    return implode(', ', array_map(static fn (mixed $part): string => SafeStringCastAction::cast($part), $parts));
 }
 
 describe('Address Integration', function () {
@@ -133,7 +131,7 @@ describe('Address Integration', function () {
         $extraData = $address['extra_data'];
         Assert::assertIsArray($extraData);
         Assert::assertIsArray($extraData['google_types'] ?? null);
-        Assert::assertStringContainsString('Piazza del Duomo', (string) $address['formatted_address']);
+        Assert::assertStringContainsString('Piazza del Duomo', SafeStringCastAction::cast($address['formatted_address']));
         Assert::assertContains('establishment', $extraData['google_types']);
         Assert::assertSame(4.5, $extraData['rating']);
     });
@@ -161,7 +159,7 @@ describe('Address Integration', function () {
 
         $primary = null;
         foreach ($patientAddresses as $addr) {
-            if (true === $addr['is_primary']) {
+            if ($addr['is_primary'] === true) {
                 $primary = $addr;
                 break;
             }

@@ -4,7 +4,7 @@ module: "Media"
 type: concept
 tags: [webm]
 created: 2026-07-14
-updated: 2026-07-14
+updated: 2026-08-24
 qmd: "webm"
 related:
   - "./migrazione-filament-4.md"
@@ -52,4 +52,4 @@ ffmpeg -h encoder=hevc_nvenc
     output.webm
 
 ----------------------------------
-ffmpeg -h encoder=hevc_nvenc  
+ffmpeg -h encoder=hevc_nvenc

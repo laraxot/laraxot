@@ -18,7 +18,6 @@ class NotificationLogsTable extends XotBaseResourceTable
         return [
             'id' => TextColumn::make('id')->sortable(),
             'name' => TextColumn::make('name')->searchable(),
-            'created_at' => TextColumn::make('created_at')->dateTime()->sortable(),
-        ];
+            'created_at' => TextColumn::make('created_at')->dateTime()->sortable()];
     }
 }

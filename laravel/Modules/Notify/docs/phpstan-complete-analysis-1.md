@@ -34,6 +34,7 @@ related:
 |--------|--------|----------|
 | User | 4,810 | 24.4% |
 | Fixcity | 3,909 | 19.8% |
+| App | 3,909 | 19.8% |
 | Notify | 2,766 | 14.0% |
 | Cms | 1,704 | 8.6% |
 | Geo | 1,216 | 6.2% |
@@ -204,6 +205,7 @@ Function json_encode is unsafe to use
 2. ⏳ Creare script automatizzati per correzioni comuni
 3. ⏳ Iniziare correzioni modulo User (4,810 errori)
 4. ⏳ Proseguire con Fixcity (3,909 errori)
+4. ⏳ Proseguire con App (3,909 errori)
 5. ⏳ Continuare con altri moduli
 6. ⏳ Aggiornare documentazione moduli
 7. ⏳ Aggiornare documentazione temi

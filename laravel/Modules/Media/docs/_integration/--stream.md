@@ -1,4 +1,11 @@
 ---
+module: theme
+topic: __stream
+canonical: ../../../../Themes/docs/shared-components/.gitkeep-Modules
+---
+# __stream
+
+See canonical documentation: ../../../../Themes/docs/shared-components/.gitkeep-Modules
 title: "__stream"
 module: "Media"
 type: concept

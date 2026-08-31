@@ -9,6 +9,8 @@ status: deprecated
 related:
   - "./fixcity-hero-marketing-1.md"
   - "./fixcity-hero-marketing.md"
+  - "./ptv-hero-marketing-1.md"
+  - "./ptv-hero-marketing.md"
   - "./llm-wiki-layout-design-1.md"
   - "./segnalazione-wizard-design.md"
 ---

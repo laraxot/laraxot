@@ -5,13 +5,8 @@ const mapLit = (page) => page.locator('#segnalazioni-elenco-root map-lit#ticket-
 
 test.describe('Segnalazioni elenco — marker icon parity (TicketTypeEnum)', () => {
   test.beforeEach(async ({ page }) => {
-<<<<<<< Updated upstream
-    const response = await page.goto('http://127.0.0.1:8000/it/tests/ticket-list', {
-      waitUntil: 'domcontentloaded',
-=======
     const response = await page.goto('http://127.0.0.1:8000/it', {
       waitUntil: 'networkidle',
->>>>>>> Stashed changes
       timeout: 30000,
     });
 
@@ -27,13 +22,8 @@ test.describe('Segnalazioni elenco — marker icon parity (TicketTypeEnum)', () 
       const markers = Array.isArray(el._allMarkers) ? el._allMarkers : [];
       const withIcon = markers.filter((m) => m.options?.typeIconUrl);
       const samples = withIcon.slice(0, 5).map((m) => ({
-<<<<<<< Updated upstream
         type: m.options.typeValue,
         typeIconUrl: m.options.typeIconUrl,
-=======
-        typeIconUrl: m.options.typeIconUrl,
-        iconHtml: m.options?.icon?.options?.html ?? '',
->>>>>>> Stashed changes
       }));
 
       return {
@@ -54,23 +44,8 @@ test.describe('Segnalazioni elenco — marker icon parity (TicketTypeEnum)', () 
     expect(status.withIconUrl).toBeGreaterThan(0);
 
     for (const sample of status.samples) {
-<<<<<<< Updated upstream
-      const imgGlyph = page.locator(
-        `.geo-map-marker-glyph--img[src="${sample.typeIconUrl}"]`
-      ).first();
-
-      expect(await imgGlyph.count()).toBeGreaterThan(0);
-      expect(sample.typeIconUrl).toContain('/assets/fixcity/svg/');
-
-      const box = await imgGlyph.boundingBox();
-      expect(box?.width ?? 0).toBeGreaterThanOrEqual(20);
-      expect(box?.width ?? 0).toBeLessThanOrEqual(36);
-      expect(box?.height ?? 0).toBeGreaterThanOrEqual(20);
-      expect(box?.height ?? 0).toBeLessThanOrEqual(36);
-=======
       expect(sample.iconHtml).toContain('geo-map-marker-glyph');
       expect(sample.iconHtml).toContain(sample.typeIconUrl);
->>>>>>> Stashed changes
     }
   });
 

@@ -1,0 +1,9 @@
+# Consents
+
+---
+module: theme
+topic: consents
+canonical: ../../../Themes/docs/shared-components/consents.md
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/consents.md

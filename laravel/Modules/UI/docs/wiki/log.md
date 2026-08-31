@@ -7,6 +7,8 @@ updated: 2026-07-14
 qmd: "log ui wiki log"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+issues: ["https://github.com/provtv/<nome repository>/issues/124"]
+discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
   - "./agents.md"
   - "./bmad-method.md"
@@ -19,6 +21,11 @@ related:
 
 - Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt)
 - GitHub: [#272](https://github.com/laraxot/base_fixcity_fila5/issues/272) / [D#273](https://github.com/laraxot/base_fixcity_fila5/discussions/273)
+- Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-<nome progetto>-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt)
+- GitHub: [#272](https://github.com/laraxot/<nome repitory>/issues/272) / [D#273](https://github.com/laraxot/<nome repitory>/discussions/273)
+- Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-progetto corrente-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt)
+- GitHub: [#272](https://github.com/laraxot/platform/issues/272) / [D#273](https://github.com/laraxot/platform/discussions/273)
+- GitHub: [#272](https://github.com/laraxot/<nome repitory>/issues/272) / [D#273](https://github.com/laraxot/<nome repitory>/discussions/273)
 
 # UI Wiki Log
 
@@ -61,6 +68,7 @@ related:
 - Layer raw: tutti i file in `docs/` (eccetto `wiki/`).
 - Layer wiki: `docs/wiki/` — LLM-maintained, sintesi ad alto riuso.
 - Schema: `docs/.schema/WIKI_SCHEMA.md`
+- Schema: `docs/.schema/wiki-schema.md`
 - Adozione moduli: `docs/project/llm-wiki-module-adoption.md`
 
 ## 2026-07-22 — PHPStan Modules 0 + geo-boundary
@@ -70,8 +78,8 @@ related:
 - Evidence: `laravel/storage/app/ai/phpstan-modules-20260722-213406.json` (0 errori).
 - Canon: [geo-boundary.md](../geo-boundary.md) · coordinamento: `docs/chat/phpstan-modules-status.md`.
 
-## 2026-07-22 — Push dual-remote + LFS
-
 - Tip `b874935` su `laraxot/dev` e `provtv/dev`.
+## 2026-07-22 — Push dual-remote + LFS
 - Fix: deepen/shallow + `git push --no-thin` + `git lfs fetch laraxot --all` → `git lfs push provtv --all`.
 - Playbook: [troubleshooting/git-push-lfs-missing-objects.md](./troubleshooting/git-push-lfs-missing-objects.md).
+- Tip `b874935` su `laraxot/dev` e `provtv/dev`.

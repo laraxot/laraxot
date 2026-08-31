@@ -134,6 +134,8 @@ protected function getProjectNamespace(): string
 cd /var/www/html/_bases/base_<nome progetto>/laravel
 cd /var/www/html/_bases/base_Quaeris/laravel
 cd /var/www/html/_bases/base_techplanner_fila5_mono/laravel
+cd /var/www/_bases/base_ptvx_fila5/laravel
+cd /var/www/html/_bases/base_ptvx_fila5/laravel
 ./vendor/bin/phpstan analyze Modules/Notify --level=9
 
 # Test funzionalità

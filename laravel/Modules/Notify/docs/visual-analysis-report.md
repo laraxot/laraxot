@@ -453,6 +453,7 @@ TASK: "Understand system architecture"
 ```
 Filesystem Server
 └─ Reads: /var/www/_bases/base_fixcity_fila5/
+└─ Reads: /var/www/_bases/base_ptv_fila5/
    └─ Indexes all docs
    └─ Enables fast file navigation
 

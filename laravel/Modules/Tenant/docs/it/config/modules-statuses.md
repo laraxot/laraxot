@@ -54,7 +54,7 @@ menu solo perché manca da questo file, senza nessun errore o eccezione.
 ## Incidente reale (2026-07-27)
 
 `config/local/workorder/modules_statuses.json` conteneva moduli di un progetto
-completamente diverso (`Quaeris`, `BarberShop`, `RealEstate`, `Food`, `Forum`,
+completamente diverso (`modulo questionari`, `BarberShop`, `RealEstate`, `Food`, `Forum`,
 `Shop`, `Ticket`, `Limesurvey`, …) — nessuno esistente in `Modules/` di questo
 progetto — più `Blog`/`Comment`/`TestModule` mai ripuliti dopo la loro rimozione.
 `GetTenantModulesAction` filtra silenziosamente le voci senza directory reale, per

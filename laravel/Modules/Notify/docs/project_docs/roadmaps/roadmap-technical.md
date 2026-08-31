@@ -1,4 +1,5 @@
 # 🛠️ ROADMAP TECNICA - FIXCITY PLATFORM
+# 🛠️ ROADMAP TECNICA - NOTIFY PLATFORM
 
 **Versione**: 1.0  
 **Data Creazione**: Gennaio 2025  
@@ -7,6 +8,7 @@
 
 ## 🎯 Obiettivo
 Completare l'evoluzione tecnica del progetto FixCity per raggiungere la produzione con qualità enterprise e scalabilità.
+Completare l'evoluzione tecnica del progetto Notify per raggiungere la produzione con qualità enterprise e scalabilità.
 
 ## 📊 Stato Attuale
 - **PHPStan Level 9**: ✅ COMPLETATO (0 errori)
@@ -460,6 +462,8 @@ jobs:
 - **Email**: tech@laraxot.com
 - **Slack**: #fixcity-tech
 - **GitHub**: [FixCity Repository](https://github.com/laraxot/fixcity)
+- **Slack**: #laraxot-tech
+- **GitHub**: [Notify Repository](https://github.com/laraxot/laraxot)
 
 **🔄 Ultimo Aggiornamento**: Gennaio 2025  
 **📊 Progresso**: 40% → 100% (Target Dicembre 2025)  

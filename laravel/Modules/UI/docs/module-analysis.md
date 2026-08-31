@@ -61,6 +61,7 @@ The UI module provides comprehensive user interface components and styling:
 - **User**: Authentication interface components
 - **Cms**: Content display components
 - **Quaeris**: Dashboard UI components
+- **modulo questionari**: Dashboard UI components
 - **Xot**: Base UI infrastructure
 - **Filament**: Component compatibility
 

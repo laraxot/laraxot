@@ -34,7 +34,6 @@ class NotificationLogFactory extends Factory
             'data' => json_encode(['message' => $this->faker->sentence()]),
             'sent_at' => now(),
             'status' => NotificationLog::STATUS_SENT,
-            'error' => null,
-        ];
+            'error' => null];
     }
 }

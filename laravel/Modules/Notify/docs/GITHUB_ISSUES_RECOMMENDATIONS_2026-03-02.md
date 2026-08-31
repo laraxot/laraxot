@@ -218,6 +218,7 @@ AGENTS.md emphasizes DRY principle for trait methods, but this needs comprehensi
 
 **Related Modules**: All modules, especially Cms (HasBlocks, SushiToJsons traits)
 **Reference**: `/var/www/_bases/base_fixcity_fila5/docs/DryTraitMethods.md`
+**Reference**: `/var/www/_bases/base_ptv_fila5/docs/DryTraitMethods.md`
 
 **Content Requirements**:
 - Trait method ownership principles
@@ -247,6 +248,7 @@ While FixCity achieved 0 PHPStan errors, the patterns and solutions should be th
 
 **Related Modules**: All modules
 **Reference**: `/var/www/_bases/base_fixcity_fila5/PHPSTAN_FINAL_REPORT.md`
+**Reference**: `/var/www/_bases/base_ptv_fila5/PHPSTAN_FINAL_REPORT.md`
 
 **Content Requirements**:
 - Common PHPStan errors and solutions
@@ -325,6 +327,7 @@ While PHPStan Level 10 is achieved, there may be legacy code patterns that don't
 - [ ] Prioritize by impact and effort
 - [ ] Track refactoring progress
 - [ ] Update AGENTS.md with new patterns
+- [ ] Update agents.md with new patterns
 
 **Expected Outcome**: Clean codebase following all Laraxot architectural rules.
 
@@ -340,6 +343,7 @@ PHPStan tests configuration shows 13,982 errors in tests (from reference project
 
 **Related Modules**: All modules
 **Reference**: `/var/www/_bases/base_fixcity_fila5/PHPSTAN_FINAL_REPORT.md`
+**Reference**: `/var/www/_bases/base_ptv_fila5/PHPSTAN_FINAL_REPORT.md`
 
 **Test Areas to Improve**:
 - Test type safety
@@ -687,6 +691,9 @@ Discuss CI/CD pipeline improvements. Topics include:
 - `/var/www/_bases/base_fixcity_fila5/AGENTS.md` - Current architectural rules
 - `/var/www/_bases/base_fixcity_fila5/PHPSTAN_FINAL_REPORT.md` - PHPStan achievement
 - `/var/www/_bases/base_fixcity_fila5/laravel/Modules/Xot/docs/LOGGING_BEST_PRACTICES_2026-03-02.md` - Logging patterns
+- `/var/www/_bases/base_ptv_fila5/agents.md` - Current architectural rules
+- `/var/www/_bases/base_ptv_fila5/PHPSTAN_FINAL_REPORT.md` - PHPStan achievement
+- `/var/www/_bases/base_ptv_fila5/laravel/Modules/Xot/docs/LOGGING_BEST_PRACTICES_2026-03-02.md` - Logging patterns
 
 ---
 

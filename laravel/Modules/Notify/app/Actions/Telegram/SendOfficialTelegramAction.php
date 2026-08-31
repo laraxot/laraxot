@@ -11,9 +11,10 @@ use Illuminate\Support\Facades\Log;
 use Modules\Notify\Contracts\TelegramProviderActionInterface;
 use Modules\Notify\Datas\TelegramData;
 use Modules\Xot\Actions\Cast\SafeIntCastAction;
+use Spatie\QueueableAction\QueueableAction;
+
 use function Safe\json_decode;
 use function Safe\json_encode;
-use Spatie\QueueableAction\QueueableAction;
 
 final class SendOfficialTelegramAction implements TelegramProviderActionInterface
 {
@@ -61,7 +62,6 @@ final class SendOfficialTelegramAction implements TelegramProviderActionInterfac
      * Execute the action.
      *
      * @param  TelegramData  $telegramData  I dati del messaggio Telegram
-     *
      * @return array<string, mixed> Risultato dell'operazione
      *
      * @throws Exception In caso di errore durante l'invio
@@ -70,8 +70,7 @@ final class SendOfficialTelegramAction implements TelegramProviderActionInterfac
     {
         $client = new Client([
             'timeout' => $this->timeout,
-            'base_uri' => $this->apiUrl,
-        ]);
+            'base_uri' => $this->apiUrl]);
 
         // Determina l'endpoint in base al tipo di messaggio
         $endpoint = match ($telegramData->type) {
@@ -86,8 +85,7 @@ final class SendOfficialTelegramAction implements TelegramProviderActionInterfac
         // Prepara il payload in base al tipo di messaggio
         $payload = [
             'chat_id' => $telegramData->chatId,
-            'disable_notification' => $telegramData->disableNotification,
-        ];
+            'disable_notification' => $telegramData->disableNotification];
 
         if ($telegramData->replyToMessageId !== null) {
             $payload['reply_to_message_id'] = $telegramData->replyToMessageId;
@@ -114,8 +112,7 @@ final class SendOfficialTelegramAction implements TelegramProviderActionInterfac
 
         try {
             $response = $client->post($endpoint, [
-                'json' => $payload,
-            ]);
+                'json' => $payload]);
 
             $statusCode = $response->getStatusCode();
             $responseContent = $response->getBody()->getContents();
@@ -129,8 +126,7 @@ final class SendOfficialTelegramAction implements TelegramProviderActionInterfac
 
             Log::debug('Telegram inviato con successo', [
                 'chat_id' => $telegramData->chatId,
-                'response_code' => $statusCode,
-            ]);
+                'response_code' => $statusCode]);
 
             /** @var array<string, mixed> $result */
             $result = $responseData['result'] ?? [];
@@ -141,8 +137,7 @@ final class SendOfficialTelegramAction implements TelegramProviderActionInterfac
                 'success' => ($responseData['ok'] ?? false) === true,
                 'message_id' => $messageId,
                 'response' => $responseData,
-                'vars' => $this->vars,
-            ];
+                'vars' => $this->vars];
         } catch (ClientException $e) {
             $response = $e->getResponse();
             $statusCode = $response->getStatusCode();
@@ -157,16 +152,14 @@ final class SendOfficialTelegramAction implements TelegramProviderActionInterfac
             Log::warning('Errore invio Telegram', [
                 'chat_id' => $telegramData->chatId,
                 'status' => $statusCode,
-                'response' => $responseBody,
-            ]);
+                'response' => $responseBody]);
 
             return [
                 'success' => false,
                 'error' => $responseBody['description'] ?? 'Errore sconosciuto',
                 'error_code' => $responseBody['error_code'] ?? null,
                 'status_code' => $statusCode,
-                'vars' => $this->vars,
-            ];
+                'vars' => $this->vars];
         }
     }
 }

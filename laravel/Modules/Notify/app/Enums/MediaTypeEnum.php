@@ -32,8 +32,7 @@ enum MediaTypeEnum: string
             self::IMAGE->value => 'Image',
             self::VIDEO->value => 'Video',
             self::DOCUMENT->value => 'Document',
-            self::AUDIO->value => 'Audio',
-        ];
+            self::AUDIO->value => 'Audio'];
     }
 
     /**
@@ -47,8 +46,7 @@ enum MediaTypeEnum: string
             self::IMAGE->value => __('notify::whatsapp.media_types.image'),
             self::VIDEO->value => __('notify::whatsapp.media_types.video'),
             self::DOCUMENT->value => __('notify::whatsapp.media_types.document'),
-            self::AUDIO->value => __('notify::whatsapp.media_types.audio'),
-        ];
+            self::AUDIO->value => __('notify::whatsapp.media_types.audio')];
     }
 
     /**

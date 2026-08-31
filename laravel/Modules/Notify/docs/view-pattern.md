@@ -24,6 +24,7 @@ return view($viewName, $viewParams);
 ```php
 /** @phpstan-var view-string $viewName */
 $viewName = 'fixcity::components.blocks.ticket-list';
+$viewName = 'ptv::components.blocks.ticket-list';
 $viewParams = [
     'tickets' => $this->tickets,
     'status' => $this->status,
@@ -46,3 +47,4 @@ return view((string) $view);
 
 - [phpstan_critical_rules](../.cursor/rules/phpstan_critical_rules.md)
 - [AGENTS.md](../AGENTS.md)
+- [agents.md](../agents.md)

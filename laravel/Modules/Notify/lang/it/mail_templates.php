@@ -5,28 +5,18 @@ declare(strict_types=1);
 return [
     'fields' => [
         'id' => [
-            'label' => 'id',
-        ],
+            'label' => 'id'],
         'name' => [
-            'label' => 'name',
-        ],
+            'label' => 'name'],
         'mailable' => [
-            'label' => 'mailable',
-        ],
+            'label' => 'mailable'],
         'slug' => [
-            'label' => 'slug',
-        ],
+            'label' => 'slug'],
         'counter' => [
-            'label' => 'counter',
-        ],
+            'label' => 'counter'],
         'version' => [
-            'label' => 'version',
-        ],
+            'label' => 'version'],
         'created_at' => [
-            'label' => 'created_at',
-        ],
+            'label' => 'created_at'],
         'updated_at' => [
-            'label' => 'updated_at',
-        ],
-    ],
-];
+            'label' => 'updated_at']]];

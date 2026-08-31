@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Modules\UI\Filament\Widgets;
 
+use Filament\Schemas\Components\Component;
 use Modules\Xot\Filament\Widgets\XotBaseSchemaWidget;
 
 final class OverlookWidget extends XotBaseSchemaWidget
@@ -35,7 +36,7 @@ final class OverlookWidget extends XotBaseSchemaWidget
     protected int|string|array $columnSpan = 1;
 
     /**
-     * @return array<string, mixed>
+     * @return array<string, Component>
      */
     public function getFormSchema(): array
     {

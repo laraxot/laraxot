@@ -719,6 +719,8 @@ Utilizzando questa architettura basata su Queueable Actions, otteniamo diversi v
 
 Per inviare notifiche a destinatari che non sono models Notifiable:
 
+```
+
 ```php
 Notification::route('mail', 'esempio@example.com')
     ->route('twilio', '+39XXXXXXXXXX')  // Numero in formato E.164
@@ -792,4 +794,5 @@ TELEGRAM_BOT_TOKEN=12345:ABC...
 
 - [NOTIFICATIONS_IMPLEMENTATION_GUIDE.md](./notifications_implementation_guide.md)
 - [SMS_PROVIDER_CONFIGURATION.md](./sms_provider_configuration.md)
+- [TELEGRAM_NOTIFICATIONS_GUIDE.md](./telegram_notifications_guide.md)
 - [TELEGRAM_NOTIFICATIONS_GUIDE.md](./telegram_notifications_guide.md)

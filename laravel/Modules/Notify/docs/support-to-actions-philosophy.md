@@ -62,3 +62,4 @@ Tutte le classi in `app/Actions/` DEVONO:
 - [no-app-support-queueable-actions](wiki/concepts/no-app-support-queueable-actions.md)
 - [claude-audit-static](wiki/concepts/claude-audit-static.md)
 - Issue [#372](https://github.com/laraxot/base_fixcity_fila5/issues/372) · Discussion [#273](https://github.com/laraxot/base_fixcity_fila5/discussions/273)
+- Issue [#372](https://github.com/laraxot/base_ptv_fila5/issues/372) · Discussion [#273](https://github.com/laraxot/base_ptv_fila5/discussions/273)

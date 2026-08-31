@@ -52,13 +52,13 @@ Gestione multi-tenancy, isolamento dati, tenant scoping e provisioning.
 
 ## Best Practices
 
-- Usare Actions per tenant logic (vedi [actions-over-services-governance](https://github.com/laraxot/base_fixcity_fila5/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
+- Usare Actions per tenant logic (vedi [actions-over-services-governance](https://github.com/laraxot/platform/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
 - Implementare `casts()` method non `$casts` property (vedi [model-casts-phpstan](../../../../docs/wiki/concepts/model-casts-phpstan.md))
 - Usare tenant scoping (vedi [laravel-multi-tenancy](../../../../docs/wiki/concepts/laravel-multi-tenancy.md))
 
 ## Bad Practices
 
-- NON creare Service classes - usare Actions (vedi [actions-over-services-governance](https://github.com/laraxot/base_fixcity_fila5/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
+- NON creare Service classes - usare Actions (vedi [actions-over-services-governance](https://github.com/laraxot/platform/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
 - NON usare `dehydrated(false)` nei trait - blocca salvataggio (vedi Geo CoordinatePicker fix)
 - NON confondere `modules_statuses.json` root con overlay tenant — per workorder vale `config/local/workorder/modules_statuses.json` (vedi [tenant-module-status-registry](../tenant-module-status-registry.md))
 

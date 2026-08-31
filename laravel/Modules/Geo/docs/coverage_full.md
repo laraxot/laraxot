@@ -1,0 +1,9 @@
+# Coverage Full
+
+---
+module: theme
+topic: coverage_full
+canonical: ../../../Themes/docs/shared-components/coverage-full.md
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/coverage-full.md

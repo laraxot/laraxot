@@ -6,6 +6,13 @@ namespace Modules\Notify\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|EmailTemplate newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|EmailTemplate newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|EmailTemplate query()
+ *
+ * @mixin \Eloquent
+ */
 class EmailTemplate extends Model
 {
     /**
@@ -13,8 +20,7 @@ class EmailTemplate extends Model
      */
     protected $fillable = [
         'name', 'subject', 'content', 'variables',
-        'categories', 'version', 'is_active',
-    ];
+        'categories', 'version', 'is_active'];
 
     /**
      * Get the attributes that should be cast.
@@ -25,7 +31,6 @@ class EmailTemplate extends Model
     {
         return [
             'variables' => 'array',
-            'categories' => 'array',
-        ];
+            'categories' => 'array'];
     }
 }

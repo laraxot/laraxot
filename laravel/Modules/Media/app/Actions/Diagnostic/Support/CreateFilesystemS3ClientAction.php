@@ -6,12 +6,13 @@ namespace Modules\Media\Actions\Diagnostic\Support;
 
 use Aws\S3\S3Client;
 use Spatie\QueueableAction\QueueableAction;
+use Webmozart\Assert\Assert;
 
 class CreateFilesystemS3ClientAction
 {
     use QueueableAction;
 
-    private const DEFAULT_REGION = 'eu-west-1';
+    private const string DEFAULT_REGION = 'eu-west-1';
 
     public function execute(): S3Client
     {
@@ -27,6 +28,9 @@ class CreateFilesystemS3ClientAction
 
     public function bucket(): string
     {
-        return (string) config('filesystems.disks.s3.bucket');
+        $bucket = config('filesystems.disks.s3.bucket');
+        Assert::string($bucket);
+
+        return $bucket;
     }
 }

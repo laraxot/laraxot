@@ -8,6 +8,7 @@ use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Wizard\Step;
 use Filament\Schemas\Schema;
 use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class XotBaseResourceForm
@@ -42,6 +43,31 @@ class XotBaseResourceForm
     public static function getSteps(): array
     {
         return [];
+    }
+
+    /**
+     * Costruisce il callback usato da `Select::getOptionLabelUsing()`.
+     *
+     * Regressione: una colonna titolo nulla o vuota faceva arrivare `null` a
+     * `Filament\Forms\Components\Select::isOptionDisabled(string|Htmlable $label)`
+     * mandando in TypeError l'intera pagina di edit. Se la colonna titolo e'
+     * vuota si ripiega su `#{chiave primaria}`.
+     *
+     * @return \Closure(Model): string
+     */
+    protected static function optionLabelFromRecord(string $titleAttribute = 'name'): \Closure
+    {
+        return static function (Model $record) use ($titleAttribute): string {
+            $title = $record->getAttribute($titleAttribute);
+
+            if (\is_string($title) && $title !== '') {
+                return $title;
+            }
+
+            $key = $record->getKey();
+
+            return '#'.(\is_scalar($key) ? (string) $key : '');
+        };
     }
 
     protected static function getStepByName(string $name): Step

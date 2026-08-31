@@ -101,6 +101,7 @@ Once authenticated, you can ask Claude Code to:
 Recommended notebooks to create:
 
 1. **FixCity Architecture** - AGENTS.md, docs/architecture/*
+1. **FixCity Architecture** - agents.md, docs/architecture/*
 2. **FixCity Modules** - laravel/Modules/*/docs/README.md
 3. **FixCity API** - API documentation, Swagger specs
 

@@ -1,0 +1,15 @@
+{
+  "0": "TestCase.php",
+  "1": "CanPaginateHarness",
+  "2": "Illuminate\\Database\\Eloquent\\Model",
+  "3": "Modules\\Xot\\Filament\\Resources\\XotBaseResource",
+  "4": "Modules\\Activity\\Models\\Activity",
+  "5": "Modules\\User\\Models\\User",
+  "6": "TestCase",
+  "7": "Modules\\Activity\\Models\\BaseModel",
+  "8": "ListLogActivitiesPageCoverageTest.php",
+  "9": "EventSourcingBusinessLogicTest.php",
+  "10": "CodeQualityTest.php",
+  "11": "ListLogActivitiesPureMethodsTest.php",
+  "12": "Pest.php"
+}

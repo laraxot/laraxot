@@ -306,6 +306,7 @@ find laravel/Modules -type d -name "Seeders"
 - [Laravel Seeders](https://laravel.com/docs/seeding)
 - [PSR-4 Autoloading](https://www.php-fig.org/psr/psr-4/)
 - [AGENTS.md - Database Naming](../../AGENTS.md)
+- [agents.md - Database Naming](../../agents.md)
 
 ---
 
@@ -324,3 +325,5 @@ If you find incorrect directory names:
 
 **Maintainer**: FixCity Dev Team  
 **Contact**: dev @fixcity.example.com
+**Maintainer**: Notify Dev Team  
+**Contact**: dev @laraxot.example.com

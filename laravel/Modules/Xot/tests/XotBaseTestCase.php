@@ -240,6 +240,17 @@ abstract class XotBaseTestCase extends BaseTestCase
     }
 
     /**
+     * Path of the shared SQLite database used by module tests.
+     *
+     * Single source of truth for `prepareSharedFixcitySqliteForTesting()` and for
+     * `xot:build-test-sqlite`, which needs the same path to build the file offline.
+     */
+    public static function sharedSqlitePath(): string
+    {
+        return database_path('fixcity_data.sqlite');
+    }
+
+    /**
      * Point every sqlite connection at fixcity_data.sqlite and share one PDO.
      *
      * Multiple named connections (activity, user, gdpr, …) on the same SQLite file
@@ -254,7 +265,7 @@ abstract class XotBaseTestCase extends BaseTestCase
             $this->refreshApplication();
         }
 
-        $database = database_path('fixcity_data.sqlite');
+        $database = self::sharedSqlitePath();
 
         // La connessione opzionale 'user' (driver mysql) senza database configurato
         // (DB_DATABASE_USER vuoto) ripiega su sqlite condiviso: stesso fallback di

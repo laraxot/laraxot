@@ -81,6 +81,7 @@ related:
 ---
 
 ### Fixcity Module (35 errors)
+### App Module (35 errors)
 
 #### Missing Model Methods
 - **Method:** `Ticket::setStatus()` (ChangeStatus.php:22)
@@ -101,6 +102,7 @@ related:
 - **File:** `ReportFactory.php`
 - **Issue:** `Report` model not found
 - **Solution:** Create `Modules/Fixcity/Models/Report.php` or update factory
+- **Solution:** Create `Modules/App/Models/Report.php` or update factory
 
 #### Seeder Issues
 - **Files:** `ReportContentSeeder.php`, `TicketDatabaseSeeder.php`
@@ -253,6 +255,7 @@ $value = $data['key'] ?? null;
 ### Module Documentation
 - [ ] `Modules/Cms/docs/models.md` - Document BlockData structure
 - [ ] `Modules/Fixcity/docs/models.md` - Document Ticket methods
+- [ ] `Modules/App/docs/models.md` - Document Ticket methods
 - [ ] `Modules/Geo/docs/actions.md` - Document FilterCoordinatesInRadiusAction
 - [ ] `Modules/Tenant/docs/traits.md` - Document SushiToJson trait requirements
 - [ ] `Modules/User/docs/widgets.md` - Document RegisterWidget and Log class

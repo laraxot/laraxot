@@ -8,11 +8,10 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\Geocoding\AddressData;
+use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\json_decode;
 use function Safe\preg_match;
-
-use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Action per ottenere l'indirizzo e le coordinate tramite Mapbox.
@@ -24,12 +23,11 @@ class GetAddressFromMapboxAction
 {
     use QueueableAction;
 
-    private const API_URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places';
+    private const string API_URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places';
 
     public function __construct(
         private readonly Client $client,
-    ) {
-    }
+    ) {}
 
     /**
      * Ottiene i dettagli dell'indirizzo utilizzando Mapbox.

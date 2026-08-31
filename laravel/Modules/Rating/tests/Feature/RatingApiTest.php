@@ -7,7 +7,12 @@ namespace Modules\Rating\Tests\Feature;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Tests\TestCase;
 
-uses(\Modules\Rating\Tests\TestCase::class);
+use function Pest\Laravel\deleteJson;
+use function Pest\Laravel\getJson;
+use function Pest\Laravel\postJson;
+use function Pest\Laravel\putJson;
+
+uses(TestCase::class);
 
 it('can list ratings', function (): void {
     Rating::create([
@@ -18,7 +23,7 @@ it('can list ratings', function (): void {
         'name' => 'Test Rating 2',
     ]);
 
-    $response = $this->getJson('/api/ratings');
+    $response = getJson('/api/ratings');
 
     $response->assertStatus(200)
         ->assertJsonCount(2, 'data')
@@ -40,7 +45,7 @@ it('can create rating', function (): void {
         'color' => '#00FF00',
     ];
 
-    $response = $this->postJson('/api/ratings', $data);
+    $response = postJson('/api/ratings', $data);
 
     $response->assertStatus(201)
         ->assertJson([
@@ -59,7 +64,7 @@ it('can update rating', function (): void {
         'name' => 'Updated Rating',
     ];
 
-    $response = $this->putJson("/api/ratings/{$rating->id}", $data);
+    $response = putJson("/api/ratings/{$rating->id}", $data);
 
     $response->assertStatus(200)
         ->assertJson([
@@ -74,7 +79,7 @@ it('can delete rating', function (): void {
         'name' => 'Test Rating',
     ]);
 
-    $response = $this->deleteJson("/api/ratings/{$rating->id}");
+    $response = deleteJson("/api/ratings/{$rating->id}");
 
     $response->assertStatus(204);
     expect(Rating::find($rating->id))->toBeNull();
@@ -92,7 +97,7 @@ it('can rate model', function (): void {
         'note' => 'Great!',
     ];
 
-    $response = $this->postJson("/api/ratings/{$rating->id}/rate", $data);
+    $response = postJson("/api/ratings/{$rating->id}/rate", $data);
 
     $response->assertStatus(201)
         ->assertJson([

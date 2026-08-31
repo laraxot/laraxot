@@ -70,6 +70,8 @@ use Modules\Blog\Http\Controllers\BlogController;
 // Only routing and dispatch
 if ($container0 === 'predicts') {
     @include('predict::pages.predict-detail')
+if ($container0 === 'forecasts') {
+    @include('forecast::pages.forecast-detail')
 } elseif ($container0 === 'events') {
     @include('events::pages.event-detail')
 } else {
@@ -84,6 +86,9 @@ if ($container0 === 'predicts') {
 private function getMarketData() { ... }  // Predict-specific
 private function buildOrderBook() { ... } // Predict-specific
 private function calculateQualityScore() { ... } // Predict-specific
+private function getMarketData() { ... }  // Forecast-specific
+private function buildOrderBook() { ... } // Forecast-specific
+private function calculateQualityScore() { ... } // Forecast-specific
 ```
 
 ---
@@ -163,6 +168,7 @@ enum Status: string implements HasLabel, HasColor {
 - [code-style.md](./code-style.md) - Più dettagliato
 - [critical-rules.md](./critical-rules.md) - Regole critiche
 - [AGENTS.md originale](../../AGENTS.md)
+- [agents.md originale](../../agents.md)
 - [Index principale](./index.md)
 
 ## Miglioramenti vs Originale

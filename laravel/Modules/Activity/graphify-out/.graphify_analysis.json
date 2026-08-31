@@ -1,0 +1,1247 @@
+{
+  "communities": {
+    "0": [
+      "app_filament_resources_activityresource",
+      "app_filament_resources_activityresource_activityresource",
+      "app_filament_resources_activityresource_activityresource_getformschema",
+      "app_filament_resources_activityresource_pages_createactivity",
+      "app_filament_resources_activityresource_pages_createactivity_createactivity",
+      "app_filament_resources_activityresource_pages_editactivity",
+      "app_filament_resources_activityresource_pages_editactivity_editactivity",
+      "app_filament_resources_activityresource_pages_editactivity_editactivity_getheaderactions",
+      "app_filament_resources_activityresource_pages_listactivities",
+      "app_filament_resources_activityresource_pages_listactivities_listactivities",
+      "app_filament_resources_activityresource_pages_listactivities_listactivities_gettablecolumns",
+      "app_filament_resources_snapshotresource",
+      "app_filament_resources_snapshotresource_pages_createsnapshot",
+      "app_filament_resources_snapshotresource_pages_createsnapshot_createsnapshot",
+      "app_filament_resources_snapshotresource_pages_editsnapshot",
+      "app_filament_resources_snapshotresource_pages_editsnapshot_editsnapshot",
+      "app_filament_resources_snapshotresource_pages_listsnapshots",
+      "app_filament_resources_snapshotresource_pages_listsnapshots_listsnapshots",
+      "app_filament_resources_snapshotresource_pages_listsnapshots_listsnapshots_gettableactions",
+      "app_filament_resources_snapshotresource_pages_listsnapshots_listsnapshots_gettablebulkactions",
+      "app_filament_resources_snapshotresource_pages_listsnapshots_listsnapshots_gettablecolumns",
+      "app_filament_resources_snapshotresource_pages_listsnapshots_listsnapshots_gettablefilters",
+      "app_filament_resources_snapshotresource_snapshotresource",
+      "app_filament_resources_snapshotresource_snapshotresource_getformschema",
+      "app_filament_resources_snapshotresource_snapshotresource_getpages",
+      "app_filament_resources_snapshotresource_snapshotresource_getrelations",
+      "app_filament_resources_storedeventresource",
+      "app_filament_resources_storedeventresource_pages_createstoredevent",
+      "app_filament_resources_storedeventresource_pages_createstoredevent_createstoredevent",
+      "app_filament_resources_storedeventresource_pages_editstoredevent",
+      "app_filament_resources_storedeventresource_pages_editstoredevent_editstoredevent",
+      "app_filament_resources_storedeventresource_pages_liststoredevents",
+      "app_filament_resources_storedeventresource_pages_liststoredevents_liststoredevents",
+      "app_filament_resources_storedeventresource_pages_liststoredevents_liststoredevents_gettablecolumns",
+      "app_filament_resources_storedeventresource_storedeventresource",
+      "app_filament_resources_storedeventresource_storedeventresource_getformschema",
+      "app_filament_resources_storedeventresource_storedeventresource_getpages",
+      "app_filament_resources_storedeventresource_storedeventresource_getrelations",
+      "modules_xot_filament_resources_pages_xotbasecreaterecord",
+      "modules_xot_filament_resources_pages_xotbaseeditrecord",
+      "modules_xot_filament_resources_pages_xotbaselistrecords",
+      "modules_xot_filament_resources_xotbaseresource",
+      "tests_feature_filamenttest",
+      "tests_feature_filamenttest_setup",
+      "tests_fixtures_listlogactivitiesactiontestpage_php_self_cc8fdb",
+      "tests_fixtures_listlogactivitiesactiontestpage_php_tests_fixtures_listlogactivitiesactiontestpage_cc8fdb",
+      "tests_fixtures_listlogactivitiesactiontestpage_php_tests_fixtures_listlogactivitiesactiontestpage_listlogactivitiesactiontestpage_cc8fdb",
+      "tests_fixtures_listlogactivitiesactiontestpage_php_tests_fixtures_listlogactivitiesactiontestpage_listlogactivitiesactiontestpage_getresource_cc8fdb",
+      "tests_fixtures_listlogactivitiesactiontestpage_php_tests_fixtures_listlogactivitiesactiontestpage_listlogactivitiesactiontestpage_usingresource_cc8fdb",
+      "tests_fixtures_listlogactivitiesactiontestresource_listlogactivitiesactiontestresource_getformschema",
+      "tests_fixtures_listlogactivitiesactiontestresource_php_tests_fixtures_listlogactivitiesactiontestresource_515e95",
+      "tests_fixtures_listlogactivitiesactiontestresource_php_tests_fixtures_listlogactivitiesactiontestresource_listlogactivitiesactiontestresource_515e95",
+      "tests_fixtures_listlogactivitiesactiontestresource_php_tests_fixtures_listlogactivitiesactiontestresource_listlogactivitiesactiontestresource_geturl_515e95",
+      "tests_fixtures_listlogactivitiesactiontestresourcesimple_listlogactivitiesactiontestresourcesimple_getformschema",
+      "tests_fixtures_listlogactivitiesactiontestresourcesimple_php_tests_fixtures_listlogactivitiesactiontestresourcesimple_3fd8f5",
+      "tests_fixtures_listlogactivitiesactiontestresourcesimple_php_tests_fixtures_listlogactivitiesactiontestresourcesimple_listlogactivitiesactiontestresourcesimple_3fd8f5",
+      "tests_fixtures_listlogactivitiesactiontestresourcesimple_php_tests_fixtures_listlogactivitiesactiontestresourcesimple_listlogactivitiesactiontestresourcesimple_geturl_3fd8f5",
+      "tests_unit_editactivitytest",
+      "tests_unit_filament_resourceextensiontest"
+    ],
+    "1": [
+      "composer",
+      "composer_allow_plugins_dealerdirect_phpcodesniffer_composer_installer",
+      "composer_allow_plugins_pestphp_pest_plugin",
+      "composer_allow_plugins_wikimedia_composer_merge_plugin",
+      "composer_authors",
+      "composer_autoload",
+      "composer_autoload_dev",
+      "composer_autoload_dev_psr_4",
+      "composer_autoload_psr_4",
+      "composer_config",
+      "composer_config_allow_plugins",
+      "composer_config_comment_vendor_dir",
+      "composer_config_sort_packages",
+      "composer_description",
+      "composer_extra",
+      "composer_extra_laravel",
+      "composer_homepage",
+      "composer_keywords",
+      "composer_laravel_aliases",
+      "composer_laravel_providers",
+      "composer_license",
+      "composer_minimum_stability",
+      "composer_name",
+      "composer_prefer_stable",
+      "composer_psr_4_modules_activity",
+      "composer_psr_4_modules_activity_database_factories",
+      "composer_psr_4_modules_activity_database_seeders",
+      "composer_psr_4_modules_activity_tests",
+      "composer_psr_4_workbench_app",
+      "composer_psr_4_workbench_database_factories",
+      "composer_psr_4_workbench_database_seeders",
+      "composer_repositories_comment",
+      "composer_require",
+      "composer_require_dev",
+      "composer_require_php",
+      "composer_require_spatie_laravel_activitylog",
+      "composer_require_spatie_laravel_event_sourcing",
+      "ref_activity_log",
+      "ref_audit_trail",
+      "ref_cqrs",
+      "ref_event_sourcing",
+      "ref_filament",
+      "ref_laravel",
+      "ref_laraxot",
+      "ref_module_activity",
+      "ref_modules_activity_providers_activityserviceprovider",
+      "ref_modules_activity_providers_filament_adminpanelprovider",
+      "ref_spatie_activitylog"
+    ],
+    "2": [
+      "app_models_activity",
+      "app_models_snapshot",
+      "app_models_snapshot_snapshot",
+      "app_models_snapshot_snapshot_getconnectionname",
+      "app_models_storedevent_storedevent",
+      "app_models_storedevent_storedevent_casts",
+      "app_models_storedevent_storedevent_construct",
+      "database_factories_activityfactory",
+      "database_factories_activityfactory_activityfactory",
+      "database_factories_activityfactory_activityfactory_definition",
+      "database_seeders_activitydatabaseseeder",
+      "database_seeders_activitydatabaseseeder_activitydatabaseseeder",
+      "database_seeders_activitydatabaseseeder_activitydatabaseseeder_run",
+      "database_seeders_activitymassseeder",
+      "database_seeders_activitymassseeder_activitymassseeder",
+      "database_seeders_activitymassseeder_activitymassseeder_createsnapshots",
+      "database_seeders_activitymassseeder_activitymassseeder_createstoredevents",
+      "database_seeders_activitymassseeder_activitymassseeder_createsystemactivities",
+      "database_seeders_activitymassseeder_activitymassseeder_displaysummary",
+      "database_seeders_activitymassseeder_activitymassseeder_run",
+      "database_seeders_activityseeder",
+      "database_seeders_activityseeder_activityseeder",
+      "database_seeders_activityseeder_activityseeder_run",
+      "database_seeders_snapshotseeder",
+      "database_seeders_snapshotseeder_snapshotseeder",
+      "database_seeders_snapshotseeder_snapshotseeder_run",
+      "database_seeders_storedeventseeder",
+      "database_seeders_storedeventseeder_storedeventseeder",
+      "database_seeders_storedeventseeder_storedeventseeder_run",
+      "database_seeders_testmodelseeder",
+      "database_seeders_testmodelseeder_testmodelseeder",
+      "database_seeders_testmodelseeder_testmodelseeder_run",
+      "illuminate_database_console_seeds_withoutmodelevents",
+      "illuminate_database_seeder",
+      "modules_xot_models_traits_hasxotfactory",
+      "spatie_eventsourcing_snapshots_eloquentsnapshot",
+      "spatie_eventsourcing_storedevents_models_eloquentstoredevent",
+      "tests_unit_models_activitytest"
+    ],
+    "3": [
+      "app_models_policies_activitybasepolicy",
+      "app_models_policies_activitybasepolicy_activitybasepolicy",
+      "app_models_policies_activitybasepolicy_activitybasepolicy_before",
+      "app_models_policies_activitypolicy",
+      "app_models_policies_activitypolicy_activitypolicy",
+      "app_models_policies_activitypolicy_activitypolicy_create",
+      "app_models_policies_activitypolicy_activitypolicy_delete",
+      "app_models_policies_activitypolicy_activitypolicy_forcedelete",
+      "app_models_policies_activitypolicy_activitypolicy_restore",
+      "app_models_policies_activitypolicy_activitypolicy_update",
+      "app_models_policies_activitypolicy_activitypolicy_view",
+      "app_models_policies_snapshotpolicy",
+      "app_models_policies_snapshotpolicy_snapshotpolicy",
+      "app_models_policies_snapshotpolicy_snapshotpolicy_create",
+      "app_models_policies_snapshotpolicy_snapshotpolicy_delete",
+      "app_models_policies_snapshotpolicy_snapshotpolicy_forcedelete",
+      "app_models_policies_snapshotpolicy_snapshotpolicy_restore",
+      "app_models_policies_snapshotpolicy_snapshotpolicy_update",
+      "app_models_policies_snapshotpolicy_snapshotpolicy_view",
+      "app_models_policies_storedeventpolicy",
+      "app_models_policies_storedeventpolicy_storedeventpolicy",
+      "app_models_policies_storedeventpolicy_storedeventpolicy_create",
+      "app_models_policies_storedeventpolicy_storedeventpolicy_delete",
+      "app_models_policies_storedeventpolicy_storedeventpolicy_forcedelete",
+      "app_models_policies_storedeventpolicy_storedeventpolicy_restore",
+      "app_models_policies_storedeventpolicy_storedeventpolicy_update",
+      "app_models_policies_storedeventpolicy_storedeventpolicy_view",
+      "illuminate_auth_access_handlesauthorization",
+      "modules_user_models_policies_userbasepolicy",
+      "modules_xot_contracts_usercontract",
+      "tests_security_accesscontroltest",
+      "tests_unit_activitybasepolicytest",
+      "tests_unit_activitybasepolicytest_policybefore",
+      "tests_unit_activitypolicytest",
+      "tests_unit_models_policies_activitypolicytest",
+      "tests_unit_snapshotpolicytest",
+      "tests_unit_storedeventpolicytest"
+    ],
+    "4": [
+      "app_filament_pages_concerns_canpaginate",
+      "app_filament_pages_concerns_canpaginate_getdefaultrecordsperpageselectoption",
+      "app_filament_pages_concerns_canpaginate_getpaginationpagename",
+      "app_filament_pages_concerns_canpaginate_getperpagesessionkey",
+      "app_filament_pages_concerns_canpaginate_getrecordsperpage",
+      "app_filament_pages_concerns_canpaginate_getrecordsperpageselectoptions",
+      "app_filament_pages_concerns_canpaginate_gettablepage",
+      "app_filament_pages_concerns_canpaginate_paginatequery",
+      "app_filament_pages_concerns_canpaginate_updatedrecordsperpage",
+      "app_models_activity_activity_scopeforbatch",
+      "app_models_activity_activity_scopehasbatch",
+      "filament_tables_enums_paginationmode",
+      "illuminate_contracts_pagination_cursorpaginator",
+      "illuminate_contracts_pagination_paginator",
+      "illuminate_database_eloquent_builder",
+      "illuminate_pagination_lengthawarepaginator",
+      "modules_activity_filament_pages_concerns_canpaginate",
+      "tests_fixtures_canpaginateharness",
+      "tests_fixtures_canpaginateharness_canpaginateharness",
+      "tests_fixtures_canpaginateharness_canpaginateharness_exposeoptions",
+      "tests_fixtures_canpaginateharness_canpaginateharness_exposepaginatequery",
+      "tests_fixtures_canpaginateharness_canpaginateharness_getpage",
+      "tests_fixtures_canpaginateharness_canpaginateharness_getpaginationmode",
+      "tests_fixtures_canpaginateharness_canpaginateharness_resetlivewirepage",
+      "tests_fixtures_canpaginateharness_canpaginateharness_setdefaultperpage",
+      "tests_fixtures_canpaginateharness_canpaginateharness_setmode",
+      "tests_unit_canpaginatecoveragetest",
+      "tests_unit_canpaginatecoveragetest_makecanpaginateharness",
+      "tests_unit_canpaginatetest",
+      "tests_unit_canpaginatetest_getpage",
+      "tests_unit_canpaginatetest_getpaginationmode",
+      "tests_unit_canpaginatetest_php_paginationmode",
+      "tests_unit_canpaginatetest_resetlivewirepage",
+      "tests_unit_canpaginatetest_test_get_records_per_page_select_options"
+    ],
+    "5": [
+      "autoprefixer",
+      "axios",
+      "dotenv",
+      "dotenv_expand",
+      "laravel_vite_plugin",
+      "lodash",
+      "package",
+      "package_devdependencies",
+      "package_devdependencies_autoprefixer",
+      "package_devdependencies_axios",
+      "package_devdependencies_dotenv",
+      "package_devdependencies_dotenv_expand",
+      "package_devdependencies_laravel_vite_plugin",
+      "package_devdependencies_lodash",
+      "package_devdependencies_postcss",
+      "package_devdependencies_postcss_nesting",
+      "package_devdependencies_sass",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_tailwindcss_forms",
+      "package_devdependencies_tailwindcss_typography",
+      "package_devdependencies_tippy_js",
+      "package_devdependencies_vite",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "postcss",
+      "postcss_nesting",
+      "sass",
+      "tailwindcss",
+      "tailwindcss_forms",
+      "tailwindcss_typography",
+      "tippy_js",
+      "vite"
+    ],
+    "6": [
+      "app_filament_pages_listlogactivities",
+      "app_filament_pages_listlogactivities_listlogactivities",
+      "app_filament_pages_listlogactivities_listlogactivities_canrestoreactivity",
+      "app_filament_pages_listlogactivities_listlogactivities_createfieldlabelmap",
+      "app_filament_pages_listlogactivities_listlogactivities_getactivities",
+      "app_filament_pages_listlogactivities_listlogactivities_getbreadcrumb",
+      "app_filament_pages_listlogactivities_listlogactivities_getfieldlabel",
+      "app_filament_pages_listlogactivities_listlogactivities_getoldproperties",
+      "app_filament_pages_listlogactivities_listlogactivities_getpaginationmode",
+      "app_filament_pages_listlogactivities_listlogactivities_gettitle",
+      "app_filament_pages_listlogactivities_listlogactivities_mount",
+      "app_filament_pages_listlogactivities_listlogactivities_resolveactivity",
+      "app_filament_pages_listlogactivities_listlogactivities_restoreactivity",
+      "app_filament_pages_listlogactivities_listlogactivities_sendrestorefailurenotification",
+      "app_filament_pages_listlogactivities_listlogactivities_sendrestoresuccessnotification",
+      "app_filament_pages_listlogactivities_listlogactivities_stringifytranslationvalue",
+      "app_filament_pages_listlogactivities_php_notification",
+      "app_filament_pages_listlogactivities_php_paginationmode",
+      "filament_notifications_notification",
+      "filament_pages_concerns_interactswithformactions",
+      "filament_resources_pages_concerns_interactswithrecord",
+      "illuminate_contracts_pagination_lengthawarepaginator",
+      "illuminate_support_collection",
+      "livewire_withpagination",
+      "modules_xot_filament_resources_pages_xotbasepage",
+      "tests_unit_listlogactivitiespagecoveragetest",
+      "tests_unit_listlogactivitiespagecoveragetest_exposerestorefailure",
+      "tests_unit_listlogactivitiespagecoveragetest_exposerestoresuccess",
+      "tests_unit_listlogactivitiespagecoveragetest_getresource",
+      "tests_unit_listlogactivitiespagetest",
+      "tests_unit_listlogactivitiespagetest_makelistlogactivitiespage"
+    ],
+    "7": [
+      "app_filament_actions_listlogactivitiesaction",
+      "app_filament_actions_listlogactivitiesaction_listlogactivitiesaction",
+      "app_filament_actions_listlogactivitiesaction_listlogactivitiesaction_getdefaultname",
+      "app_filament_actions_listlogactivitiesaction_listlogactivitiesaction_setup",
+      "app_providers_activityserviceprovider",
+      "app_providers_activityserviceprovider_activityserviceprovider",
+      "app_providers_activityserviceprovider_activityserviceprovider_boot",
+      "app_providers_activityserviceprovider_activityserviceprovider_registerconfig",
+      "app_providers_routeserviceprovider",
+      "app_providers_routeserviceprovider_routeserviceprovider",
+      "filament_resources_pages_listrecords",
+      "modules_xot_filament_actions_xotbaseaction",
+      "modules_xot_providers_xotbaserouteserviceprovider",
+      "modules_xot_providers_xotbaseserviceprovider",
+      "tests_feature_actions_listlogactivitiesactiontest",
+      "tests_feature_codequalitytest",
+      "tests_feature_codequalitytest_activityassertphpfilehasvalidsyntax",
+      "tests_feature_codequalitytest_activityfindphpfiles",
+      "tests_feature_filament_actions_listlogactivitiesactiontest",
+      "tests_feature_phpstancompliancetest",
+      "tests_fixtures_listlogactivitiesactiontestpage_php_self_17d148",
+      "tests_fixtures_listlogactivitiesactiontestpage_php_tests_fixtures_listlogactivitiesactiontestpage_17d148",
+      "tests_fixtures_listlogactivitiesactiontestpage_php_tests_fixtures_listlogactivitiesactiontestpage_listlogactivitiesactiontestpage_17d148",
+      "tests_fixtures_listlogactivitiesactiontestpage_php_tests_fixtures_listlogactivitiesactiontestpage_listlogactivitiesactiontestpage_getresource_17d148",
+      "tests_fixtures_listlogactivitiesactiontestpage_php_tests_fixtures_listlogactivitiesactiontestpage_listlogactivitiesactiontestpage_usingresource_17d148",
+      "tests_fixtures_listlogactivitiesactiontestrecord",
+      "tests_fixtures_listlogactivitiesactiontestrecord_listlogactivitiesactiontestrecord",
+      "tests_unit_listlogactivitiesactiontest",
+      "tests_unit_providers_activityserviceprovidertest",
+      "tests_unit_providers_providerstest"
+    ],
+    "8": [
+      "app_actions_activitymaintenanceaction",
+      "app_actions_activitymaintenanceaction_activitymaintenanceaction",
+      "app_actions_loguserloginaction",
+      "app_actions_loguserloginaction_loguserloginaction",
+      "app_actions_loguserloginaction_loguserloginaction_construct",
+      "app_actions_query_getactivitiesbytypeaction",
+      "app_actions_query_getactivitiesbytypeaction_getactivitiesbytypeaction",
+      "app_actions_query_getactivitiesbytypeaction_getactivitiesbytypeaction_execute",
+      "app_actions_query_getactivitystatisticsaction",
+      "app_actions_query_getactivitystatisticsaction_getactivitystatisticsaction",
+      "app_actions_query_getactivitystatisticsaction_getactivitystatisticsaction_computestatistics",
+      "app_actions_query_getactivitystatisticsaction_getactivitystatisticsaction_countbytype",
+      "app_actions_query_getactivitystatisticsaction_getactivitystatisticsaction_execute",
+      "app_actions_query_getmodelactivitiesaction",
+      "app_actions_query_getmodelactivitiesaction_getmodelactivitiesaction",
+      "app_actions_query_getmodelactivitiesaction_getmodelactivitiesaction_execute",
+      "app_actions_query_getrecentactivitiesaction",
+      "app_actions_query_getrecentactivitiesaction_getrecentactivitiesaction",
+      "app_actions_query_getrecentactivitiesaction_getrecentactivitiesaction_execute",
+      "app_actions_query_getuseractivitiesaction",
+      "app_actions_query_getuseractivitiesaction_getuseractivitiesaction",
+      "app_actions_query_getuseractivitiesaction_getuseractivitiesaction_execute",
+      "app_actions_redactmodelattributesaction",
+      "app_actions_redactmodelattributesaction_redactmodelattributesaction",
+      "app_actions_redactmodelattributesaction_redactmodelattributesaction_execute",
+      "app_adapters_activitylogger",
+      "spatie_queueableaction_queueableaction"
+    ],
+    "9": [
+      "app_actions_logactivityaction",
+      "app_actions_logactivityaction_logactivityaction",
+      "app_actions_logactivityaction_logactivityaction_construct",
+      "app_actions_logactivityaction_logactivityaction_execute",
+      "app_actions_logmodelcreatedaction",
+      "app_actions_logmodelcreatedaction_logmodelcreatedaction",
+      "app_actions_logmodelcreatedaction_logmodelcreatedaction_execute",
+      "app_actions_logmodeldeletedaction",
+      "app_actions_logmodeldeletedaction_logmodeldeletedaction",
+      "app_actions_logmodeldeletedaction_logmodeldeletedaction_execute",
+      "app_actions_logmodelupdatedaction",
+      "app_actions_logmodelupdatedaction_logmodelupdatedaction",
+      "app_actions_logmodelupdatedaction_logmodelupdatedaction_execute",
+      "illuminate_database_eloquent_model",
+      "tests_fixtures_logactivityactiontestmodel",
+      "tests_fixtures_logactivityactiontestmodel_logactivityactiontestmodel",
+      "tests_fixtures_logmodelcreatedactiontestmodel",
+      "tests_fixtures_logmodelcreatedactiontestmodel_logmodelcreatedactiontestmodel",
+      "tests_fixtures_logmodeldeletedactiontestmodel",
+      "tests_fixtures_logmodeldeletedactiontestmodel_logmodeldeletedactiontestmodel",
+      "tests_fixtures_logmodelupdatedactiontestmodel",
+      "tests_fixtures_logmodelupdatedactiontestmodel_logmodelupdatedactiontestmodel",
+      "tests_unit_actions_logactionstest",
+      "tests_unit_actions_logactivityactiontest",
+      "tests_unit_actions_logmodelcreatedactiontest",
+      "tests_unit_actions_logmodeldeletedactiontest",
+      "tests_unit_actions_logmodelupdatedactiontest"
+    ],
+    "10": [
+      "app_models_storedevent",
+      "database_factories_snapshotfactory",
+      "database_factories_storedeventfactory",
+      "database_migrations_2023_10_30_103350_create_stored_events_table",
+      "database_migrations_2023_10_30_103350_create_stored_events_table_up",
+      "tests_feature_activitybusinesslogictest",
+      "tests_feature_activityeventsourcingtest",
+      "tests_feature_activityintegrationtest",
+      "tests_feature_activitymanagementtest",
+      "tests_feature_snapshotbusinesslogictest",
+      "tests_feature_storedeventbusinesslogicextendedtest",
+      "tests_feature_storedeventbusinesslogicrestoretest",
+      "tests_feature_storedeventbusinesslogictest",
+      "tests_feature_storedeventedgecasestest",
+      "tests_feature_tempactivitytest",
+      "tests_testcase",
+      "tests_unit_actions_activityloggertest",
+      "tests_unit_actions_loguserloginactiontest",
+      "tests_unit_actions_loguserlogoutactiontest",
+      "tests_unit_models_activitybusinesslogictest",
+      "tests_unit_models_othermodelstest",
+      "tests_unit_models_snapshotbusinesslogictest",
+      "tests_unit_models_snapshotstoredeventmodeltest",
+      "tests_unit_models_snapshottest",
+      "tests_unit_models_storedeventbusinesslogictest",
+      "tests_unit_models_storedeventtest",
+      "tests_unit_snapshotmodeltest"
+    ],
+    "11": [
+      "app_models_testmodel",
+      "app_models_testmodel_testmodel",
+      "database_factories_baseactivityfactory",
+      "database_factories_baseactivityfactory_baseactivityfactory",
+      "database_factories_baseactivityfactory_baseactivityfactory_definition",
+      "database_factories_baseactivityfactory_baseactivityfactory_user",
+      "database_factories_baseactivityfactory_php_static",
+      "database_factories_snapshotfactory_php_static",
+      "database_factories_snapshotfactory_snapshotfactory",
+      "database_factories_snapshotfactory_snapshotfactory_definition",
+      "database_factories_snapshotfactory_snapshotfactory_withstate",
+      "database_factories_snapshotfactory_snapshotfactory_withuuid",
+      "database_factories_snapshotfactory_snapshotfactory_withversion",
+      "database_factories_storedeventfactory_php_static",
+      "database_factories_storedeventfactory_storedeventfactory",
+      "database_factories_storedeventfactory_storedeventfactory_definition",
+      "database_factories_storedeventfactory_storedeventfactory_userevent",
+      "database_factories_storedeventfactory_storedeventfactory_witheventclass",
+      "database_factories_storedeventfactory_storedeventfactory_withuuid",
+      "database_factories_storedeventfactory_storedeventfactory_withversion",
+      "database_factories_testmodelfactory",
+      "database_factories_testmodelfactory_testmodelfactory",
+      "database_factories_testmodelfactory_testmodelfactory_definition",
+      "database_migrations_2026_03_05_000001_create_test_models_table",
+      "database_migrations_2026_03_05_000001_create_test_models_table_up",
+      "illuminate_database_eloquent_factories_factory"
+    ],
+    "12": [
+      "app_actions_activitylogger",
+      "app_actions_activitylogger_activitylogger",
+      "app_actions_activitylogger_activitylogger_created",
+      "app_actions_activitylogger_activitylogger_deleted",
+      "app_actions_activitylogger_activitylogger_getstatistics",
+      "app_actions_activitylogger_activitylogger_getuseractivities",
+      "app_actions_activitylogger_activitylogger_login",
+      "app_actions_activitylogger_activitylogger_logout",
+      "app_actions_activitylogger_activitylogger_updated",
+      "app_actions_loguserlogoutaction",
+      "app_actions_loguserlogoutaction_loguserlogoutaction",
+      "app_actions_loguserlogoutaction_loguserlogoutaction_construct",
+      "app_actions_loguserlogoutaction_loguserlogoutaction_execute",
+      "modules_user_models_user",
+      "tests_feature_actionstest",
+      "tests_feature_actionstest_createactionstestuser",
+      "tests_pesthelpers_activitycreateuser",
+      "tests_unit_actions_activitylifecycleactionstest",
+      "tests_unit_actions_activitylifecycleactionstest_createactivitylifecycleuser"
+    ],
+    "13": [
+      "app_actions_activitylogger_activitylogger_getbytype",
+      "app_actions_activitylogger_activitylogger_getmodelactivities",
+      "app_actions_activitylogger_activitylogger_getrecent",
+      "app_adapters_activitylogger_activitylogger",
+      "app_adapters_activitylogger_activitylogger_cleanold",
+      "app_adapters_activitylogger_activitylogger_created",
+      "app_adapters_activitylogger_activitylogger_custom",
+      "app_adapters_activitylogger_activitylogger_deleted",
+      "app_adapters_activitylogger_activitylogger_getbytype",
+      "app_adapters_activitylogger_activitylogger_getmodelactivities",
+      "app_adapters_activitylogger_activitylogger_getrecent",
+      "app_adapters_activitylogger_activitylogger_getstatistics",
+      "app_adapters_activitylogger_activitylogger_getuseractivities",
+      "app_adapters_activitylogger_activitylogger_log",
+      "app_adapters_activitylogger_activitylogger_login",
+      "app_adapters_activitylogger_activitylogger_logout",
+      "app_adapters_activitylogger_activitylogger_updated",
+      "illuminate_database_eloquent_collection"
+    ],
+    "14": [
+      "composer_scripts",
+      "composer_scripts_analyse",
+      "composer_scripts_build",
+      "composer_scripts_clear",
+      "composer_scripts_format",
+      "composer_scripts_lint",
+      "composer_scripts_post_autoload_dump",
+      "composer_scripts_post_update_cmd",
+      "composer_scripts_prepare",
+      "composer_scripts_serve",
+      "composer_scripts_test",
+      "composer_scripts_test_coverage",
+      "ref_build",
+      "ref_composer_config_disableprocesstimeout",
+      "ref_illuminate_foundation_composerscripts_postupdate",
+      "ref_php_vendor_bin_phpstan_analyse",
+      "ref_php_vendor_bin_pint",
+      "ref_php_vendor_bin_testbench_serve"
+    ],
+    "15": [
+      "app_models_basemodel",
+      "app_models_basemodel_basemodel",
+      "app_models_basemodel_basemodel_casts",
+      "modules_xot_models_xotbasemodel",
+      "tests_feature_basemodelbusinesslogicpesttest",
+      "tests_feature_basemodelbusinesslogictest",
+      "tests_feature_testactivitymodel",
+      "tests_feature_testactivitymodel_testactivitymodel",
+      "tests_feature_testactivitymodel_testactivitymodel_casts",
+      "tests_fixtures_testbasemodel_php_tests_fixtures_testbasemodel_cfa45e",
+      "tests_fixtures_testbasemodel_php_tests_fixtures_testbasemodel_d2f009",
+      "tests_fixtures_testbasemodel_php_tests_fixtures_testbasemodel_testbasemodel_cfa45e",
+      "tests_fixtures_testbasemodel_php_tests_fixtures_testbasemodel_testbasemodel_d2f009",
+      "tests_unit_basemodeltest",
+      "tests_unit_models_basemodelcoveragetest",
+      "tests_unit_models_basemodeltest"
+    ],
+    "16": [
+      "app_listeners_loginlistener",
+      "app_listeners_loginlistener_loginlistener",
+      "app_listeners_loginlistener_loginlistener_handle",
+      "app_listeners_logoutlistener",
+      "app_listeners_logoutlistener_logoutlistener",
+      "app_listeners_logoutlistener_logoutlistener_handle",
+      "app_providers_eventserviceprovider",
+      "app_providers_eventserviceprovider_eventserviceprovider",
+      "app_providers_eventserviceprovider_eventserviceprovider_configureemailverification",
+      "illuminate_auth_events_logout",
+      "illuminate_foundation_support_providers_eventserviceprovider",
+      "tests_unit_listeners_activitylistenerstest",
+      "tests_unit_listeners_loginlistenertest",
+      "tests_unit_listeners_loginlogoutlistenerbehaviortest",
+      "tests_unit_listeners_logoutlistenertest",
+      "tests_unit_loginlistenertest",
+      "tests_unit_logoutlistenertest",
+      "tests_unit_providers_eventserviceprovidertest"
+    ],
+    "17": [
+      "app_actions_activitylogger_activitylogger_cleanold",
+      "app_actions_activitylogger_activitylogger_custom",
+      "app_actions_activitylogger_activitylogger_log",
+      "app_actions_activitymaintenanceaction_activitymaintenanceaction_execute",
+      "app_actions_loguserloginaction_loguserloginaction_execute",
+      "app_actions_recordsubjectactivityaction",
+      "app_actions_recordsubjectactivityaction_recordsubjectactivityaction",
+      "app_actions_recordsubjectactivityaction_recordsubjectactivityaction_execute",
+      "app_models_activity_activity",
+      "app_models_activity_activity_casts",
+      "database_factories_baseactivityfactory_baseactivityfactory_auth",
+      "spatie_activitylog_models_activity",
+      "tests_pesthelpers",
+      "tests_pesthelpers_activitycreateactivity"
+    ],
+    "18": [
+      "app_filament_resources_activityresource_tables_activitiestable",
+      "app_filament_resources_activityresource_tables_activitiestable_activitiestable",
+      "app_filament_resources_activityresource_tables_activitiestable_activitiestable_gettablecolumns",
+      "app_filament_resources_activityresource_tables_activitystable",
+      "app_filament_resources_activityresource_tables_activitystable_activitystable",
+      "app_filament_resources_activityresource_tables_activitystable_activitystable_gettablecolumns",
+      "app_filament_resources_snapshotresource_tables_snapshotstable",
+      "app_filament_resources_snapshotresource_tables_snapshotstable_snapshotstable",
+      "app_filament_resources_snapshotresource_tables_snapshotstable_snapshotstable_gettablecolumns",
+      "app_filament_resources_storedeventresource_tables_storedeventstable",
+      "app_filament_resources_storedeventresource_tables_storedeventstable_storedeventstable",
+      "app_filament_resources_storedeventresource_tables_storedeventstable_storedeventstable_gettablecolumns",
+      "modules_xot_filament_resources_tables_xotbaseresourcetable"
+    ],
+    "19": [
+      "app_filament_resources_activityresource_schemas_activityform",
+      "app_filament_resources_activityresource_schemas_activityform_activityform",
+      "app_filament_resources_activityresource_schemas_activityform_activityform_getformschema",
+      "app_filament_resources_snapshotresource_schemas_snapshotform",
+      "app_filament_resources_snapshotresource_schemas_snapshotform_snapshotform",
+      "app_filament_resources_snapshotresource_schemas_snapshotform_snapshotform_getformschema",
+      "app_filament_resources_storedeventresource_schemas_storedeventform",
+      "app_filament_resources_storedeventresource_schemas_storedeventform_storedeventform",
+      "app_filament_resources_storedeventresource_schemas_storedeventform_storedeventform_getformschema",
+      "modules_xot_filament_resources_schemas_xotbaseresourceform"
+    ],
+    "20": [
+      "app_filament_resources_activityresource_schemas_activityinfolist",
+      "app_filament_resources_activityresource_schemas_activityinfolist_activityinfolist",
+      "app_filament_resources_activityresource_schemas_activityinfolist_activityinfolist_getinfolistschema",
+      "app_filament_resources_snapshotresource_schemas_snapshotinfolist",
+      "app_filament_resources_snapshotresource_schemas_snapshotinfolist_snapshotinfolist",
+      "app_filament_resources_snapshotresource_schemas_snapshotinfolist_snapshotinfolist_getinfolistschema",
+      "app_filament_resources_storedeventresource_schemas_storedeventinfolist",
+      "app_filament_resources_storedeventresource_schemas_storedeventinfolist_storedeventinfolist",
+      "app_filament_resources_storedeventresource_schemas_storedeventinfolist_storedeventinfolist_getinfolistschema",
+      "modules_xot_filament_resources_schemas_xotbaseresourceinfolist"
+    ],
+    "21": [
+      "app_actions_query_getsubjectactivitylogaction",
+      "app_actions_query_getsubjectactivitylogaction_getsubjectactivitylogaction",
+      "app_actions_query_getsubjectactivitylogaction_getsubjectactivitylogaction_execute",
+      "app_adapters_activityrecorder",
+      "app_adapters_activityrecorder_activityrecorder",
+      "app_adapters_activityrecorder_activityrecorder_getlog",
+      "app_adapters_activityrecorder_activityrecorder_record",
+      "modules_activity_models_contracts_activityrecordercontract"
+    ],
+    "22": [
+      "app_events_activityevent",
+      "app_events_activityevent_activityevent",
+      "app_events_activityevent_activityevent_construct",
+      "illuminate_broadcasting_interactswithsockets",
+      "illuminate_foundation_events_dispatchable",
+      "illuminate_queue_serializesmodels",
+      "tests_unit_events_activityeventbehaviortest",
+      "tests_unit_events_activityeventtest"
+    ],
+    "23": [
+      "app_traits_hasevents",
+      "app_traits_hasevents_snapshots",
+      "app_traits_hasevents_storedevents",
+      "illuminate_database_eloquent_relations_morphmany",
+      "modules_activity_traits_hasevents",
+      "tests_fixtures_haseventsdummymodel",
+      "tests_fixtures_haseventsdummymodel_haseventsdummymodel",
+      "tests_unit_traits_haseventstest"
+    ],
+    "24": [
+      "illuminate_foundation_application",
+      "illuminate_foundation_testing_databasetransactions",
+      "modules_activity_filament_pages_listlogactivities",
+      "modules_xot_tests_xotbasetestcase",
+      "tests_testcase_testcase",
+      "tests_testcase_testcase_getpackageproviders",
+      "tests_testcase_testcase_requirepage",
+      "tests_testcase_testcase_setup"
+    ],
+    "25": [
+      "app_providers_filament_adminpanelprovider",
+      "app_providers_filament_adminpanelprovider_adminpanelprovider",
+      "app_providers_filament_adminpanelprovider_adminpanelprovider_panel",
+      "filament_panel",
+      "modules_xot_providers_filament_xotbasepanelprovider",
+      "tests_unit_providers_adminpanelprovidertest"
+    ],
+    "26": [
+      "illuminate_contracts_auth_authenticatable",
+      "illuminate_testing_testresponse",
+      "livewire_features_supporttesting_testable",
+      "tests_peststubs",
+      "tests_peststubs_actingas",
+      "tests_peststubs_livewire"
+    ],
+    "27": [
+      "app_actions_restoreactivityaction",
+      "app_actions_restoreactivityaction_restoreactivityaction",
+      "app_actions_restoreactivityaction_restoreactivityaction_execute",
+      "tests_unit_actions_restoreactivityactiontest"
+    ],
+    "28": [
+      "app_actions_schema_isactivitylogschemawritableaction",
+      "app_actions_schema_isactivitylogschemawritableaction_isactivitylogschemawritableaction",
+      "app_actions_schema_isactivitylogschemawritableaction_isactivitylogschemawritableaction_execute",
+      "tests_unit_actions_isactivitylogschemawritableactiontest"
+    ],
+    "29": [
+      "app_support_activitylogschema",
+      "app_support_activitylogschema_activitylogschema",
+      "app_support_activitylogschema_activitylogschema_iswritable",
+      "tests_unit_support_activitylogschematest"
+    ],
+    "30": [
+      "database_migrations_bak_2026_07_01_000000_update_activity_log_schema",
+      "database_migrations_bak_2026_07_01_000000_update_activity_log_schema_down",
+      "database_migrations_bak_2026_07_01_000000_update_activity_log_schema_resolveconnection",
+      "database_migrations_bak_2026_07_01_000000_update_activity_log_schema_up"
+    ],
+    "31": [
+      "tests_unit_eventsourcingbusinesslogictest",
+      "tests_unit_eventsourcingbusinesslogictest_activityeventsourcingactivitydata",
+      "tests_unit_eventsourcingbusinesslogictest_activityeventsourcingsnapshotdata",
+      "tests_unit_eventsourcingbusinesslogictest_activityeventsourcingstoredeventdata"
+    ],
+    "32": [
+      "app_contracts_activityrecordercontract",
+      "app_contracts_activityrecordercontract_getlog",
+      "app_contracts_activityrecordercontract_record"
+    ],
+    "33": [
+      "app_filament_pages_dashboard",
+      "app_filament_pages_dashboard_dashboard",
+      "modules_xot_filament_pages_xotbasedashboard"
+    ],
+    "34": [
+      "app_models_contracts_activityrecordercontract",
+      "app_models_contracts_activityrecordercontract_getlog",
+      "app_models_contracts_activityrecordercontract_record"
+    ],
+    "36": [
+      "tests_fixtures_listlogactivitiesactiontestresource_php_tests_fixtures_listlogactivitiesactiontestresource_957052",
+      "tests_fixtures_listlogactivitiesactiontestresource_php_tests_fixtures_listlogactivitiesactiontestresource_listlogactivitiesactiontestresource_957052",
+      "tests_fixtures_listlogactivitiesactiontestresource_php_tests_fixtures_listlogactivitiesactiontestresource_listlogactivitiesactiontestresource_geturl_957052"
+    ],
+    "37": [
+      "tests_fixtures_listlogactivitiesactiontestresourcesimple_php_tests_fixtures_listlogactivitiesactiontestresourcesimple_f00c9e",
+      "tests_fixtures_listlogactivitiesactiontestresourcesimple_php_tests_fixtures_listlogactivitiesactiontestresourcesimple_listlogactivitiesactiontestresourcesimple_f00c9e",
+      "tests_fixtures_listlogactivitiesactiontestresourcesimple_php_tests_fixtures_listlogactivitiesactiontestresourcesimple_listlogactivitiesactiontestresourcesimple_geturl_f00c9e"
+    ],
+    "38": [
+      "database_migrations_2023_03_31_103350_create_activity_table",
+      "database_migrations_2023_03_31_103350_create_activity_table_up"
+    ],
+    "39": [
+      "database_migrations_2023_03_31_103351_create_activity_table",
+      "database_migrations_2023_03_31_103351_create_activity_table_up"
+    ],
+    "40": [
+      "database_migrations_2023_10_31_103350_create_snapshots_table",
+      "database_migrations_2023_10_31_103350_create_snapshots_table_up"
+    ],
+    "41": [
+      "database_migrations_2024_01_01_000001_create_activity_table",
+      "database_migrations_2024_01_01_000001_create_activity_table_up"
+    ],
+    "42": [
+      "database_migrations_2024_01_01_000002_create_activity_table",
+      "database_migrations_2024_01_01_000002_create_activity_table_up"
+    ],
+    "43": [
+      "database_migrations_2026_06_10_141000_create_activity_table",
+      "database_migrations_2026_06_10_141000_create_activity_table_up"
+    ],
+    "44": [
+      "database_migrations_bak_2023_03_31_103350_create_activity_table",
+      "database_migrations_bak_2023_03_31_103350_create_activity_table_up"
+    ],
+    "45": [
+      "database_migrations_bak_2023_03_31_103351_create_activity_table",
+      "database_migrations_bak_2023_03_31_103351_create_activity_table_up"
+    ],
+    "46": [
+      "database_migrations_bak_2024_01_01_000001_create_activity_table",
+      "database_migrations_bak_2024_01_01_000001_create_activity_table_up"
+    ],
+    "47": [
+      "database_migrations_bak_2024_01_01_000002_create_activity_table",
+      "database_migrations_bak_2024_01_01_000002_create_activity_table_up"
+    ],
+    "48": [
+      "database_migrations_bak_2024_10_10_000000_add_attribute_changes_to_activity_table",
+      "database_migrations_bak_2024_10_10_000000_add_attribute_changes_to_activity_table_up"
+    ],
+    "49": [
+      "database_migrations_bak_2026_02_13_171410_fix_causer_id_to_uuid",
+      "database_migrations_bak_2026_02_13_171410_fix_causer_id_to_uuid_up"
+    ],
+    "50": [
+      "resources_views_filament_pages_list_log_activities_blade",
+      "restoreactivity_js_from_activityitem_getkey"
+    ],
+    "51": [
+      "vite_config",
+      "vite_config_expand"
+    ],
+    "52": [
+      "webpack_mix",
+      "webpack_mix_mix"
+    ],
+    "53": [
+      "app_traits_hassnapshots"
+    ],
+    "54": [
+      "config_config"
+    ],
+    "55": [
+      "lang_ar_activities"
+    ],
+    "56": [
+      "lang_ckb_activities"
+    ],
+    "57": [
+      "lang_cs_activities"
+    ],
+    "58": [
+      "lang_de_actions"
+    ],
+    "59": [
+      "lang_de_activities"
+    ],
+    "60": [
+      "lang_de_activity"
+    ],
+    "61": [
+      "lang_de_activity_resource"
+    ],
+    "62": [
+      "lang_de_dashboard"
+    ],
+    "63": [
+      "lang_de_log"
+    ],
+    "64": [
+      "lang_de_snapshot"
+    ],
+    "65": [
+      "lang_de_snapshot_resource"
+    ],
+    "66": [
+      "lang_de_snapshots"
+    ],
+    "67": [
+      "lang_de_stored_event"
+    ],
+    "68": [
+      "lang_en_actions"
+    ],
+    "69": [
+      "lang_en_activities"
+    ],
+    "70": [
+      "lang_en_activity"
+    ],
+    "71": [
+      "lang_en_activity_resource"
+    ],
+    "72": [
+      "lang_en_dashboard"
+    ],
+    "73": [
+      "lang_en_log"
+    ],
+    "74": [
+      "lang_en_snapshot"
+    ],
+    "75": [
+      "lang_en_snapshot_resource"
+    ],
+    "76": [
+      "lang_en_snapshots"
+    ],
+    "77": [
+      "lang_en_stored_event"
+    ],
+    "78": [
+      "lang_es_activities"
+    ],
+    "79": [
+      "lang_es_activity"
+    ],
+    "80": [
+      "lang_fa_activities"
+    ],
+    "81": [
+      "lang_fr_activities"
+    ],
+    "82": [
+      "lang_hi_activity"
+    ],
+    "83": [
+      "lang_id_activities"
+    ],
+    "84": [
+      "lang_it_actions"
+    ],
+    "85": [
+      "lang_it_activities"
+    ],
+    "86": [
+      "lang_it_activity"
+    ],
+    "87": [
+      "lang_it_activity_form"
+    ],
+    "88": [
+      "lang_it_activity_resource"
+    ],
+    "89": [
+      "lang_it_dashboard"
+    ],
+    "90": [
+      "lang_it_edit_activity"
+    ],
+    "91": [
+      "lang_it_log"
+    ],
+    "92": [
+      "lang_it_log_activities_action_test"
+    ],
+    "93": [
+      "lang_it_snapshot"
+    ],
+    "94": [
+      "lang_it_snapshot_resource"
+    ],
+    "95": [
+      "lang_it_snapshots"
+    ],
+    "96": [
+      "lang_it_stored_event"
+    ],
+    "97": [
+      "lang_it_stored_events"
+    ],
+    "98": [
+      "lang_nl_activities"
+    ],
+    "99": [
+      "lang_pt_activity"
+    ],
+    "100": [
+      "lang_pt_br_activities"
+    ],
+    "101": [
+      "lang_ru_activity"
+    ],
+    "102": [
+      "lang_tr_activities"
+    ],
+    "103": [
+      "lang_zh_activity"
+    ],
+    "104": [
+      "lang_zh_tw_activities"
+    ],
+    "105": [
+      "php_cs_fixer"
+    ],
+    "106": [
+      "php_cs_fixer_dist"
+    ],
+    "107": [
+      "postcss_config"
+    ],
+    "108": [
+      "resources_assets_js_app"
+    ],
+    "109": [
+      "resources_assets_js_tests_example_test"
+    ],
+    "110": [
+      "resources_views_admin_dashboard_item_blade"
+    ],
+    "111": [
+      "resources_views_filament_pages_dashboard_blade"
+    ],
+    "112": [
+      "resources_views_filament_tables_columns_event_properties_blade"
+    ],
+    "113": [
+      "resources_views_index_blade"
+    ],
+    "114": [
+      "resources_views_layouts_master_blade"
+    ],
+    "115": [
+      "routes_api"
+    ],
+    "116": [
+      "routes_web"
+    ],
+    "117": [
+      "tailwind_config"
+    ],
+    "118": [
+      "tests_pest"
+    ],
+    "119": [
+      "tools_convert_pest_to_assert"
+    ],
+    "120": [
+      "tools_fix_broken_use_function"
+    ],
+    "121": [
+      "vitest_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.05727644652250146,
+    "1": 0.041666666666666664,
+    "2": 0.07681365576102418,
+    "3": 0.1006006006006006,
+    "4": 0.1051693404634581,
+    "5": 0.058823529411764705,
+    "6": 0.10967741935483871,
+    "7": 0.09655172413793103,
+    "8": 0.11965811965811966,
+    "9": 0.11965811965811966,
+    "10": 0.10826210826210826,
+    "11": 0.09846153846153846,
+    "12": 0.19298245614035087,
+    "13": 0.13725490196078433,
+    "14": 0.1111111111111111,
+    "15": 0.16666666666666666,
+    "16": 0.1830065359477124,
+    "17": 0.2087912087912088,
+    "18": 0.20512820512820512,
+    "19": 0.26666666666666666,
+    "20": 0.26666666666666666,
+    "21": 0.2857142857142857,
+    "22": 0.35714285714285715,
+    "23": 0.35714285714285715,
+    "24": 0.2857142857142857,
+    "25": 0.5333333333333333,
+    "26": 0.5333333333333333,
+    "27": 0.5,
+    "28": 0.5,
+    "29": 0.5,
+    "30": 0.8333333333333334,
+    "31": 0.5,
+    "32": 0.6666666666666666,
+    "33": 1.0,
+    "34": 0.6666666666666666,
+    "36": 0.6666666666666666,
+    "37": 0.6666666666666666,
+    "38": 1.0,
+    "39": 1.0,
+    "40": 1.0,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 1.0,
+    "44": 1.0,
+    "45": 1.0,
+    "46": 1.0,
+    "47": 1.0,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0,
+    "58": 1.0,
+    "59": 1.0,
+    "60": 1.0,
+    "61": 1.0,
+    "62": 1.0,
+    "63": 1.0,
+    "64": 1.0,
+    "65": 1.0,
+    "66": 1.0,
+    "67": 1.0,
+    "68": 1.0,
+    "69": 1.0,
+    "70": 1.0,
+    "71": 1.0,
+    "72": 1.0,
+    "73": 1.0,
+    "74": 1.0,
+    "75": 1.0,
+    "76": 1.0,
+    "77": 1.0,
+    "78": 1.0,
+    "79": 1.0,
+    "80": 1.0,
+    "81": 1.0,
+    "82": 1.0,
+    "83": 1.0,
+    "84": 1.0,
+    "85": 1.0,
+    "86": 1.0,
+    "87": 1.0,
+    "88": 1.0,
+    "89": 1.0,
+    "90": 1.0,
+    "91": 1.0,
+    "92": 1.0,
+    "93": 1.0,
+    "94": 1.0,
+    "95": 1.0,
+    "96": 1.0,
+    "97": 1.0,
+    "98": 1.0,
+    "99": 1.0,
+    "100": 1.0,
+    "101": 1.0,
+    "102": 1.0,
+    "103": 1.0,
+    "104": 1.0,
+    "105": 1.0,
+    "106": 1.0,
+    "107": 1.0,
+    "108": 1.0,
+    "109": 1.0,
+    "110": 1.0,
+    "111": 1.0,
+    "112": 1.0,
+    "113": 1.0,
+    "114": 1.0,
+    "115": 1.0,
+    "116": 1.0,
+    "117": 1.0,
+    "118": 1.0,
+    "119": 1.0,
+    "120": 1.0,
+    "121": 1.0
+  },
+  "gods": [
+    {
+      "id": "app_models_activity_activity",
+      "label": "Activity",
+      "degree": 55
+    },
+    {
+      "id": "app_filament_pages_listlogactivities_listlogactivities",
+      "label": "ListLogActivities",
+      "degree": 23
+    },
+    {
+      "id": "app_actions_activitylogger_activitylogger",
+      "label": "ActivityLogger",
+      "degree": 15
+    },
+    {
+      "id": "app_models_basemodel_basemodel",
+      "label": "BaseModel",
+      "degree": 15
+    },
+    {
+      "id": "app_adapters_activitylogger_activitylogger",
+      "label": "ActivityLogger",
+      "degree": 14
+    },
+    {
+      "id": "composer_scripts",
+      "label": "scripts",
+      "degree": 12
+    },
+    {
+      "id": "tests_fixtures_canpaginateharness_canpaginateharness",
+      "label": "CanPaginateHarness",
+      "degree": 12
+    },
+    {
+      "id": "composer_keywords",
+      "label": "keywords",
+      "degree": 10
+    },
+    {
+      "id": "app_models_policies_activitypolicy_activitypolicy",
+      "label": "ActivityPolicy",
+      "degree": 8
+    },
+    {
+      "id": "app_models_policies_snapshotpolicy_snapshotpolicy",
+      "label": "SnapshotPolicy",
+      "degree": 8
+    }
+  ],
+  "surprises": [
+    {
+      "source": "activityCreateActivity()",
+      "target": "ActivityFactory",
+      "source_files": [
+        "tests/PestHelpers.php",
+        "database/factories/ActivityFactory.php"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "makeListLogActivitiesPage()",
+      "target": "ListLogActivities",
+      "source_files": [
+        "tests/Unit/ListLogActivitiesPageTest.php",
+        "app/Filament/Pages/ListLogActivities.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `makeListLogActivitiesPage()` unexpectedly reaches hub `ListLogActivities`"
+    },
+    {
+      "source": "TestBaseModel",
+      "target": "BaseModel",
+      "source_files": [
+        "tests/fixtures/TestBaseModel.php",
+        "app/Models/BaseModel.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "inherits",
+      "why": "connects across different repos/directories; peripheral node `TestBaseModel` unexpectedly reaches hub `BaseModel`"
+    },
+    {
+      "source": "TestBaseModel",
+      "target": "BaseModel",
+      "source_files": [
+        "tests/Fixtures/TestBaseModel.php",
+        "app/Models/BaseModel.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "inherits",
+      "why": "connects across different repos/directories; peripheral node `TestBaseModel` unexpectedly reaches hub `BaseModel`"
+    },
+    {
+      "source": "TestActivityModel",
+      "target": "BaseModel",
+      "source_files": [
+        "tests/Feature/TestActivityModel.php",
+        "app/Models/BaseModel.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "inherits",
+      "why": "connects across different repos/directories"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `Activity` connect `Activity` to `Illuminate\\Database\\Seeder`, `CanPaginate.php`, `ListLogActivities`, `Spatie\\QueueableAction\\QueueableAction`, `Illuminate\\Database\\Eloquent\\Model`, `Modules\\User\\Models\\User`, `Illuminate\\Database\\Eloquent\\Collection`, `ActivityRecorder.php`?",
+      "why": "High betweenness centrality (0.066) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `ListLogActivities` connect `ListLogActivities` to `CanPaginate.php`?",
+      "why": "High betweenness centrality (0.021) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `BaseModel` connect `BaseModel` to `TestCase.php`?",
+      "why": "High betweenness centrality (0.017) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 8 inferred relationships involving `Activity` (e.g. with `.execute()` and `.execute()`) actually correct?",
+      "why": "`Activity` has 8 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `name`, `description`, `laraxot` to the rest of the system?",
+      "why": "70 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `FilamentTest.php` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.05727644652250146 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `composer.json` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.041666666666666664 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

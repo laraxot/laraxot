@@ -10,10 +10,8 @@ use Modules\Geo\Models\Locality;
 use Modules\Geo\Models\Place;
 use Modules\Geo\Models\PlaceType;
 use Modules\Geo\Models\State;
-use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Geo\Tests\TestCase::class);
 test('State model can be instantiated', function () {
     $state = new State();
 

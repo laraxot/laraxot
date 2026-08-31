@@ -46,11 +46,9 @@ class ResolveTenantConfigValueAction
      */
     private function buildMergedGroupConfig(string $group): array
     {
-        /** @var mixed $originalConf */
         $originalConf = config($group);
         $tenantName = app(GetTenantNameAction::class)->execute();
         $configName = str_replace('/', '.', $tenantName).'.'.$group;
-        /** @var mixed $extraConf */
         $extraConf = config($configName);
 
         $originalConfTyped = is_array($originalConf)

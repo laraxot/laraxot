@@ -20,6 +20,8 @@ La configurazione di Netfun segue la struttura standardizzata con parametri glob
 
 ### Parametri Globali (a livello di root)
 
+```
+
 ```php
 // Configurazioni globali applicabili a tutti i provider
 'from' => env('SMS_FROM'),

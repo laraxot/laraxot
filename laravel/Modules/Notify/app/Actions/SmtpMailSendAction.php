@@ -12,8 +12,7 @@ class SmtpMailSendAction
 
     public function execute(string $_to, string $_subject, string $_body): void
     {
-        dddx('WIP');
-
+        throw new \RuntimeException('Removed debug dddx');
         /*
          * $smtpData = SmtpData::make();
          * $transport = $smtpData->getTransport();

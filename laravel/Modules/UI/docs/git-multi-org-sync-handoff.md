@@ -8,6 +8,7 @@ module: "UI"
 issues:
   - "https://github.com/provtv/module_ui_fila5/issues/20"
 discussions:
+  - "https://github.com/provtv/<nome repository>/discussions/204"
   - "https://github.com/provtv/base_ptv_fila5/discussions/204"
 ---
 
@@ -29,6 +30,9 @@ Un tree dirty o un remote dietro/avanti **non** è sincronizzato, anche se l’a
 | Discussion | https://github.com/provtv/base_ptv_fila5/discussions/204 |
 | Hub base issue | https://github.com/provtv/base_ptv_fila5/issues/203 |
 | Hub base discussion | https://github.com/provtv/base_ptv_fila5/discussions/204 |
+| Discussion | https://github.com/provtv/<nome repository>/discussions/204 |
+| Hub base issue | https://github.com/provtv/<nome repository>/issues/203 |
+| Hub base discussion | https://github.com/provtv/<nome repository>/discussions/204 |
 | Story monorepo | `docs/stories/STORY-003-multi-org-sync-geo-boundary-bashscripts.md` |
 
 ## Regole rapide
@@ -38,6 +42,7 @@ Un tree dirty o un remote dietro/avanti **non** è sincronizzato, anche se l’a
 3. Mai `git restore` — forward-only
 4. UI: non reintrodurre `InteractiveMap` (dominio Geo)
 5. Push: se unpack fallisce → `--no-thin`; se GH008 LFS → `lfs fetch --all` dal remote sano, poi `lfs push --all` sul target ([playbook](./wiki/troubleshooting/git-push-lfs-missing-objects.md))
+5. Push: se unpack fallisce → `--no-thin`; se GH008 LFS → `lfs fetch --all` dal remote sano, poi `lfs push --all` sul target ([playbook](./wiki/troubleshooting/git-push-lfs-missing-objects.md))
 
 ## Note owner
 
@@ -45,6 +50,7 @@ InteractiveMap rimosso; vedi `geo-boundary.md` e `geo-dependency-violation-inter
 
 ### Sessione push 2026-07-22
 
+`dev` allineato FF su `laraxot` e `provtv` a `b874935` con `--no-thin` + LFS da `laraxot` verso `provtv`. Dettaglio: [git-push-lfs-missing-objects.md](./wiki/troubleshooting/git-push-lfs-missing-objects.md) · [multi-org-sync-laraxot-provtv.md](./multi-org-sync-laraxot-provtv.md).
 `dev` allineato FF su `laraxot` e `provtv` a `b874935` con `--no-thin` + LFS da `laraxot` verso `provtv`. Dettaglio: [git-push-lfs-missing-objects.md](./wiki/troubleshooting/git-push-lfs-missing-objects.md) · [multi-org-sync-laraxot-provtv.md](./multi-org-sync-laraxot-provtv.md).
 
 ### Caso User 2026-07-23 (unrelated)

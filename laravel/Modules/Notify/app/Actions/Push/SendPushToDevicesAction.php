@@ -18,9 +18,12 @@ class SendPushToDevicesAction
     use QueueableAction;
 
     /**
+     * Chiave = piattaforma rilevata dal token; valore = esito del batch, sia sul ramo
+     * riuscito sia su quello di eccezione.
+     *
      * @param  list<string>  $tokens
      * @param  array<string, mixed>  $data
-     * @return array<string, array<string, mixed>>
+     * @return array<string, array{success: bool, sent: int, failed: int, ...}>
      */
     public function execute(array $tokens, PushNotificationData $notification, array $data = []): array
     {
@@ -36,15 +39,13 @@ class SendPushToDevicesAction
             } catch (Exception $e) {
                 Log::error("Batch push notification failed for platform {$platform}", [
                     'error' => $e->getMessage(),
-                    'token_count' => count($platformTokens),
-                ]);
+                    'token_count' => count($platformTokens)]);
 
                 $results[$platform] = [
                     'success' => false,
                     'error' => $e->getMessage(),
                     'sent' => 0,
-                    'failed' => count($platformTokens),
-                ];
+                    'failed' => count($platformTokens)];
             }
         }
 
@@ -54,7 +55,7 @@ class SendPushToDevicesAction
     /**
      * @param  list<string>  $tokens
      * @param  array<string, mixed>  $data
-     * @return array<string, mixed>
+     * @return array{success: bool, sent: int, failed: int, total: int, results: list<array{success: bool, ...}>}
      */
     private function sendBatchToPlatform(string $platform, array $tokens, PushNotificationData $notification, array $data): array
     {
@@ -77,8 +78,7 @@ class SendPushToDevicesAction
                 $results[] = [
                     'success' => false,
                     'error' => $e->getMessage(),
-                    'token' => $token,
-                ];
+                    'token' => $token];
             }
         }
 
@@ -87,8 +87,7 @@ class SendPushToDevicesAction
             'sent' => $successCount,
             'failed' => $failureCount,
             'total' => count($tokens),
-            'results' => $results,
-        ];
+            'results' => $results];
     }
 
     /**

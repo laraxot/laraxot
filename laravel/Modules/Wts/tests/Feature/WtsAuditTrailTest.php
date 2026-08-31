@@ -2,20 +2,22 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Wts\Tests\TestCase::class);
+uses(TestCase::class);
 
-use Modules\Wts\Filament\Pages\WtsLotDetailPage;
-use Modules\Wts\Filament\Pages\WtsPrintingPage;
+use Illuminate\Support\Carbon;
+use Livewire\Livewire;
 use Modules\User\Models\User;
 use Modules\Wts\Actions\EnqueueWtsLabelPrintAction;
 use Modules\Wts\Actions\GenerateWtsUnitSeriesAction;
 use Modules\Wts\Actions\TakeChargeOfWtsIngressAction;
+use Modules\Wts\Filament\Pages\WtsLotDetailPage;
+use Modules\Wts\Filament\Pages\WtsPrintingPage;
 use Modules\Wts\Models\WtsAuditLog;
 use Modules\Wts\Models\WtsInboundLot;
 use Modules\Wts\Models\WtsInboundRecord;
 use Modules\Wts\Models\WtsPrintJob;
 use Modules\Wts\Models\WtsUnit;
-use Livewire\Livewire;
+use Modules\Wts\Tests\TestCase;
 use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;
@@ -63,9 +65,9 @@ it('writes an updated audit row with exact old and new values and no actor when 
 it('does not audit timestamp-only updates', function (): void {
     $record = WtsInboundRecord::factory()->create();
 
-    $this->travel(1)->minutes();
+    Carbon::setTestNow(now()->addMinute());
     $record->touch();
-    $this->travelBack();
+    Carbon::setTestNow();
 
     expect(WtsAuditLog::query()
         ->where('auditable_type', WtsInboundRecord::class)

@@ -306,6 +306,7 @@ class User extends Model {
 
 ```
 base_fixcity_fila5/
+base_ptvx_fila5/
 ├── .cursor/
 │   ├── superpowers-config.json    ← Optional configuration
 │   └── skills/                     ← Custom skills (if any)

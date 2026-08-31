@@ -230,6 +230,7 @@ public function toMail(object $notifiable): MailMessage
 
 ### **Documentazione Correlata**
 - [README.md Modulo Notify](./readme.md)
+- [README.md Modulo Notify](./README.md)
 - [Template Management](./template-management.md)
 - [Best Practices](./best-practices.md)
 

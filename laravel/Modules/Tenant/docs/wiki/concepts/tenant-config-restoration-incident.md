@@ -20,7 +20,7 @@ related:
 ## Cosa è successo
 
 Commit `8a3fdd530` ha rimosso gli alberi config per dominio in `laravel/config/`:
-`com/geekpiu`, `eu/fixcity`, `net/futurely`, `localhost`, file in `local/predict/`.
+`com/geekpiu`, `eu/progetto corrente`, `net/futurely`, `localhost`, file in `local/forecast/`.
 
 Classificazione errata: «obsolete» durante cleanup ponytail.
 

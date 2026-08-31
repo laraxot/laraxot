@@ -43,6 +43,14 @@ final class DarkModeSwitcherWidget extends XotBaseSchemaWidget
         return [];
     }
 
+    /**
+     * Disabilitabile via config per temi/test (default: visibile).
+     */
+    public static function canView(): bool
+    {
+        return (bool) config('ui.dark_mode_switcher.enabled', true);
+    }
+
     public function render(): View
     {
         return view($this->view, [

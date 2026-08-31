@@ -1,3 +1,12 @@
+---
+title: "Dependency Intelligence - Module Notify"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Dependency Intelligence - Module Notify
 
 Aggiornato da `composer show` il 2026-03-02.

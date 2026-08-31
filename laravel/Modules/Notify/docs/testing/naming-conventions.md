@@ -51,6 +51,7 @@ find Modules/*/tests Themes/*/tests -type f \
 1. **Identificare i duplicati:**
    ```bash
    cd /var/www/_bases/base_fixcity_fila5_mono/laravel
+   cd /var/www/_bases/base_ptvx_fila5_mono/laravel
    find Modules/*/tests Themes/*/tests -type f \
      \( -name "*test.php" -o -name "*test.pest.php" -o -name "pest.php" \) \
      ! -name "*Test.php" ! -name "*Test.pest.php" ! -name "Pest.php" \

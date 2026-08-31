@@ -1,4 +1,11 @@
 ---
+module: theme
+topic: _competitors
+canonical: ../../../../Themes/docs/shared-components/.gitkeep-Modules
+---
+# _competitors
+
+See canonical documentation: ../../../../Themes/docs/shared-components/.gitkeep-Modules
 title: "_competitors"
 module: "Media"
 type: concept

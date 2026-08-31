@@ -9,11 +9,10 @@ use Modules\Activity\Filament\Pages\Concerns\CanPaginate;
 use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Activity\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Can Paginate', function (): void {
     test('trait exists', function (): void {
-        /** @var TestCase $this */
         Assert::assertTrue(trait_exists(CanPaginate::class));
     });
 
@@ -40,7 +39,6 @@ describe('Can Paginate', function (): void {
 
     test('default pagination options return array', function (): void {
         // Test the default pagination options via reflection
-        /** @var TestCase $this */
         $trait = new class()
         {
             use CanPaginate;

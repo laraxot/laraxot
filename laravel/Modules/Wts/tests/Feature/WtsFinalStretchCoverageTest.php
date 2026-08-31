@@ -2,15 +2,17 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Wts\Tests\TestCase::class);
+uses(TestCase::class);
 
+use Illuminate\Support\Collection;
+use Livewire\Livewire;
+use Modules\User\Models\User;
 use Modules\Wts\Filament\Pages\WtsFinishedMaterialPage;
 use Modules\Wts\Filament\Pages\WtsIngressesPage;
 use Modules\Wts\Filament\Pages\WtsInventoryPage;
 use Modules\Wts\Filament\Pages\WtsMaterialDetailPage;
 use Modules\Wts\Filament\Pages\WtsProcessingPage;
 use Modules\Wts\Filament\Pages\WtsSortingPage;
-use Modules\User\Models\User;
 use Modules\Wts\Models\WtsInboundLot;
 use Modules\Wts\Models\WtsInboundRecord;
 use Modules\Wts\Models\WtsProcessingStep;
@@ -19,8 +21,7 @@ use Modules\Wts\Models\WtsUnit;
 use Modules\Wts\Queries\GetWtsIngressOverviewQuery;
 use Modules\Wts\Queries\GetWtsInventoryOverviewQuery;
 use Modules\Wts\Support\WtsLegacyPayload;
-use Illuminate\Support\Collection;
-use Livewire\Livewire;
+use Modules\Wts\Tests\TestCase;
 use Spatie\Permission\Models\Role;
 
 it('covers empty selection and invalid config branches in processing page', function (): void {
@@ -106,13 +107,13 @@ it('covers scalar string executed_at parsing branch in inventory overview query'
     ]);
 
     $unit->setRelation('processingSteps', new Collection([
-        new class
+        new class()
         {
             public string $executed_at = '2026-06-03 10:00:00';
         },
     ]));
 
-    $reflection = new \ReflectionClass(GetWtsInventoryOverviewQuery::class);
+    $reflection = new ReflectionClass(GetWtsInventoryOverviewQuery::class);
     $method = $reflection->getMethod('applyEffectiveSnapshotState');
     $method->setAccessible(true);
 

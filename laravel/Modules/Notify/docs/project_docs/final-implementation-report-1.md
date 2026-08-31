@@ -29,6 +29,7 @@ related:
 ## 🎯 Obiettivo Raggiunto
 
 **Implementazione completa AGID compliance per FixCity**
+**Implementazione completa AGID compliance per Notify**
 - ✅ Multi-step form (4 passi obbligatori)
 - ✅ Sistema FAQ con gestione completa
 - ✅ Componenti UI AGID-compliant
@@ -42,6 +43,10 @@ related:
 ### Models (2)
 - `Modules/Fixcity/app/Models/Faq.php`
 - `Modules/Fixcity/app/Models/FaqCategory.php`
+- `Modules/Fixcity/app/Models/Faq.php`
+- `Modules/Fixcity/app/Models/FaqCategory.php`
+- `Modules/App/app/Models/Faq.php`
+- `Modules/App/app/Models/FaqCategory.php`
 
 ### Migrations (2)
 - `database/Migrations/2025_10_02_203600_create_faq_categories_table.php`
@@ -75,11 +80,11 @@ related:
 - `Modules/UI/resources/views/components/accordion-item.blade.php`
 
 ### Traduzioni (8)
-- `Modules/Fixcity/lang/it/fixcity.php` (aggiornato)
-- `Modules/Fixcity/lang/it/faq.php` ✨
-- `Modules/Fixcity/lang/it/faq-category.php` ✨
-- `Modules/Fixcity/lang/en/faq.php` ✨
-- `Modules/Fixcity/lang/en/faq-category.php` ✨
+- `Modules/App/lang/it/laraxot.php` (aggiornato)
+- `Modules/App/lang/it/faq.php` ✨
+- `Modules/App/lang/it/faq-category.php` ✨
+- `Modules/App/lang/en/faq.php` ✨
+- `Modules/App/lang/en/faq-category.php` ✨
 - `Modules/UI/lang/it/stepper.php` ✨
 - `Modules/UI/lang/en/stepper.php` ✨
 
@@ -121,12 +126,14 @@ protected static ?string $navigationGroup = 'Contenuti';
 ### 1. Esegui Migrations
 ```bash
 cd /var/www/_bases/base_fixcity_fila5_mono/laravel
+cd /var/www/_bases/base_ptvx_fila5_mono/laravel
 php artisan migrate
 ```
 
 ### 2. Popola Database
 ```bash
 php artisan db:seed --class=Modules\\Fixcity\\Database\\Seeders\\FaqSeeder
+php artisan db:seed --class=Modules\\App\\Database\\Seeders\\FaqSeeder
 ```
 
 ### 3. Accedi a Filament Admin
@@ -184,6 +191,7 @@ Steps:
 ## 📚 Documentazione Creata
 
 1. **AGID Gap Analysis** (`Modules/Fixcity/docs/agid-gap-analysis.md`)
+1. **AGID Gap Analysis** (`Modules/App/docs/agid-gap-analysis.md`)
 2. **Theme Compliance** (`Themes/Sixteen/docs/agid-compliance-summary.md`)
 3. **CMS Compliance** (`Modules/Cms/docs/agid-compliance.md`)
 4. **Implementation Guide** (`project_docs/agid-implementation-guide.md`) - 600+ linee
@@ -234,6 +242,7 @@ Steps:
 - ✅ Production ready
 
 **FixCity è ora completamente AGID-compliant e pronto per la produzione!**
+**Notify è ora completamente AGID-compliant e pronto per la produzione!**
 
 ---
 

@@ -80,6 +80,7 @@ All documentation, scripts, and configuration files have been created successful
 
 ```
 base_fixcity_fila5/
+base_ptv_fila5/
 ├── docs/
 │   ├── openviking-integration.md          ✅ NEW
 │   ├── bmad-gsd-ralph-integration.md      ✅ NEW
@@ -115,6 +116,7 @@ sudo systemctl start openviking
 ```bash
 # Navigate to project
 cd /var/www/_bases/base_fixcity_fila5
+cd /var/www/_bases/base_ptv_fila5
 
 # Run initialization
 bash bashscripts/ai/openviking-init.sh
@@ -367,6 +369,8 @@ ls -la .planning/
 
 # Review AGENTS.md
 cat AGENTS.md
+# Review agents.md
+cat agents.md
 ```
 
 ## Resources
@@ -377,6 +381,7 @@ cat AGENTS.md
 - [Unified Workflow](./unified-ai-workflow.md)
 - [BMAD Workflow](laravel/Modules/Xot/docs/bmad-workflow-guide.md)
 - [AGENTS.md](../AGENTS.md)
+- [agents.md](../agents.md)
 
 ### Scripts
 - OpenViking Init: `bashscripts/ai/openviking-init.sh`

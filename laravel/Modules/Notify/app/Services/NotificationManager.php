@@ -131,8 +131,7 @@ class NotificationManager
             'delivered' => 0,
             'failed' => 0,
             'opened' => 0,
-            'clicked' => 0,
-        ];
+            'clicked' => 0];
     }
 
     /**
@@ -160,7 +159,6 @@ class NotificationManager
             'delivered' => 0,
             'failed' => 0,
             'opened' => 0,
-            'clicked' => 0,
-        ];
+            'clicked' => 0];
     }
 }

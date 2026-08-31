@@ -6,32 +6,20 @@ namespace Modules\Tenant\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Modules\Tenant\Database\Factories\TenantSettingFactory;
-use Modules\Xot\Contracts\ProfileContract;
+use Modules\User\Models\User;
 
 /**
- * @property int|null $id
  * @property string|null $tenant_id
  * @property string|null $key
- * @property string|null $value
+ * @property mixed $value
  * @property string|null $type
- *
- * @method static Builder|TenantSetting newModelQuery()
- * @method static Builder|TenantSetting newQuery()
- * @method static Builder|TenantSetting query()
- * @method static Builder|TenantSetting whereId($value)
- * @method static Builder|TenantSetting whereTenantId($value)
- * @method static Builder|TenantSetting whereKey($value)
- * @method static Builder|TenantSetting whereValue($value)
- * @method static Builder|TenantSetting whereType($value)
- *
- * @property ProfileContract|null $creator
- * @property ProfileContract|null $updater
- * @property ProfileContract|null $deleter
- *
- * @method static TenantSettingFactory factory($count = null, $state = [])
- *
+ * @property-read User|null $creator
  * @property-read Tenant|null $tenant
+ * @property-read User|null $updater
+ *
+ * @method static Builder<static>|TenantSetting newModelQuery()
+ * @method static Builder<static>|TenantSetting newQuery()
+ * @method static Builder<static>|TenantSetting query()
  *
  * @mixin \Eloquent
  */

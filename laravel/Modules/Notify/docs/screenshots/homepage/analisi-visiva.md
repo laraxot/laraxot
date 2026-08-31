@@ -1,10 +1,12 @@
 ---
 title: "📸 Analisi Visiva Homepage FixCity vs Bootstrap Italia"
+title: "📸 Analisi Visiva Homepage Notify vs Bootstrap Italia"
 type: concept
 tags: [analisi, visiva]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "analisi-visiva 📸 analisi visiva homepage fixcity vs bootstrap italia"
+qmd: "analisi-visiva 📸 analisi visiva homepage laraxot vs bootstrap italia"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -14,12 +16,14 @@ related:
 ---
 
 # 📸 Analisi Visiva Homepage FixCity vs Bootstrap Italia
+# 📸 Analisi Visiva Homepage Notify vs Bootstrap Italia
 
 ## Data: {{ date('Y-m-d H:i:s') }}
 
 ## Reference
 - **Bootstrap Italia**: https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html
 - **FixCity**: http://fixcity.local/it/tests/homepage
+- **Notify**: http://laraxot.local/it/tests/homepage
 
 ---
 
@@ -42,6 +46,7 @@ related:
 - Text: `#1A1A1A`
 
 ### FixCity (Attuale)
+### Notify (Attuale)
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ [Header Component - XotBase]                                │
@@ -83,6 +88,7 @@ related:
 - Card shadow: `shadow-sm`
 
 ### FixCity (Attuale)
+### Notify (Attuale)
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ [Hero Component - Tailwind classes]                         │
@@ -131,6 +137,7 @@ related:
 - Button: `btn btn-outline-primary btn-sm mt-3`
 
 ### FixCity (Attuale)
+### Notify (Attuale)
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ [Governance Component - Tailwind Grid]                      │
@@ -183,6 +190,7 @@ related:
 - Day abbr: `calendar-day text-muted small text-uppercase`
 
 ### FixCity (Attuale)
+### Notify (Attuale)
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ [Events Component - Flexbox Tailwind]                       │
@@ -238,6 +246,7 @@ related:
 - Title: `h6 text-uppercase text-muted mb-3`
 
 ### FixCity (Attuale)
+### Notify (Attuale)
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ [Topics Component - Tailwind Cards]                         │
@@ -284,6 +293,7 @@ related:
 ```
 
 ### FixCity (Attuale)
+### Notify (Attuale)
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ [Footer Component - XotBase]                                │

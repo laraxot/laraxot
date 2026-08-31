@@ -1,10 +1,12 @@
 ---
 title: "🎯 AZIONI IMMEDIATE - FIXCITY PLATFORM"
+title: "🎯 AZIONI IMMEDIATE - NOTIFY PLATFORM"
 type: concept
 tags: [immediate, actions, 2025, 27.deprecated]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "immediate-actions-2025-01-27.deprecated 🎯 azioni immediate - fixcity platform"
+qmd: "immediate-actions-2025-01-27.deprecated 🎯 azioni immediate - laraxot platform"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -19,6 +21,7 @@ related:
 ---
 
 # 🎯 AZIONI IMMEDIATE - FIXCITY PLATFORM
+# 🎯 AZIONI IMMEDIATE - NOTIFY PLATFORM
 
 **Data**: 27 Gennaio 2025  
 **Priorità**: CRITICAL  
@@ -33,6 +36,7 @@ related:
 
 #### Azioni Immediate
 - [ ] **Week 1**: Implementare test per moduli core (Xot, User, Fixcity)
+- [ ] **Week 1**: Implementare test per moduli core (Xot, User, App)
 - [ ] **Week 2**: Implementare test per moduli support (UI, Geo, Media, Notify)
 - [ ] **Week 3**: Implementare test per moduli features (Comment, Rating, Activity)
 - [ ] **Week 4**: Implementare test per moduli enterprise (Tenant, Seo, Job, AI)
@@ -44,6 +48,7 @@ related:
 
 ### 2. API Development Completion (HIGH)
 **Status**: 45% - **FIXCITY MODULE**
+**Status**: 45% - **NOTIFY MODULE**
 
 #### Azioni Immediate
 - [ ] **Week 1**: Completare RESTful endpoints
@@ -57,6 +62,7 @@ related:
 
 ### 3. Mobile Optimization (HIGH)
 **Status**: 55% - **FIXCITY MODULE**
+**Status**: 55% - **NOTIFY MODULE**
 
 #### Azioni Immediate
 - [ ] **Week 1**: Audit mobile interface
@@ -89,11 +95,11 @@ related:
 - [ ] **Lunedì**: Setup test environment per moduli core
 - [ ] **Martedì**: Implementare test unitari per Xot module
 - [ ] **Mercoledì**: Implementare test unitari per User module
-- [ ] **Giovedì**: Implementare test unitari per Fixcity module
+- [ ] **Giovedì**: Implementare test unitari per App module
 - [ ] **Venerdì**: Implementare test feature per moduli core
 
 ### Week 2: API & Mobile (3-9 Feb)
-- [ ] **Lunedì**: Completare API endpoints Fixcity
+- [ ] **Lunedì**: Completare API endpoints App
 - [ ] **Martedì**: Implementare autenticazione API
 - [ ] **Mercoledì**: Audit mobile interface
 - [ ] **Giovedì**: Implementare responsive improvements
@@ -247,6 +253,7 @@ related:
 ---
 
 *Questo documento definisce le azioni immediate per completare il progetto FixCity Platform nei prossimi 30 giorni.*
+*Questo documento definisce le azioni immediate per completare il progetto Notify Platform nei prossimi 30 giorni.*
 
 
 

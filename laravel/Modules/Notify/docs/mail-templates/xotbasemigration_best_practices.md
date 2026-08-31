@@ -113,5 +113,5 @@ Quando si utilizza `Schema::hasColumn()` direttamente, si bypassa tutta questa l
 
 ## Riferimenti
 
-- [Xot Module Documentation](/var/www/html/saluteora/laravel/Modules/Xot/docs/MIGRATIONS.md)
-- [JSON Migration Best Practices](/var/www/html/saluteora/laravel/Modules/Notify/docs/mail-templates/JSON_MIGRATION_FIXES.md)
+- [Xot Module Documentation]([project-root]/laravel/Modules/Xot/docs/MIGRATIONS.md)
+- [JSON Migration Best Practices]([project-root]/laravel/Modules/Notify/docs/mail-templates/JSON_MIGRATION_FIXES.md)

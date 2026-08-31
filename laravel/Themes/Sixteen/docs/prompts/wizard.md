@@ -1,0 +1,242 @@
+# Wizard
+
+# Wizard prompt operativo (Fixcity + Sixteen)
+
+## Obiettivo
+
+Allineare i wizard a Filament 5 senza reinventare la ruota:
+
+- modulo = logica (`XotBase*`, schema, stato, validazione, submit, redirect);
+- tema = vestito (`pub_theme::components.wizard`, CSS, resa Design Comuni);
+- admin e frontoffice usano lo stesso motore Filament, ma skin diverse.
+
+La regola zen e': stesso engine, vestiti diversi. Se il motore cambia per motivi estetici, la modifica e' sbagliata.
+
+## Fonti obbligatorie da studiare prima di implementare
+
+- https://github.com/filamentphp/filament/blob/5.x/packages/schemas/resources/views/components/wizard.blade.php
+- https://github.com/filamentphp/filament/blob/5.x/packages/schemas/src/Components/Wizard.php
+- `laravel/vendor/filament/schemas/resources/views/components/wizard.blade.php`
+- `laravel/vendor/filament/schemas/resources/views/components/wizard/step.blade.php`
+- `laravel/vendor/filament/schemas/src/Components/Wizard.php`
+- `laravel/vendor/filament/actions/src/Concerns/HasWizard.php`
+- `laravel/vendor/filament/filament/src/Resources/Pages/Concerns/HasWizard.php`
+- https://github.com/filamentphp/demo/blob/5.x/app/Filament/Resources/HR/Departments/Schemas/DepartmentForm.php
+- https://github.com/filamentphp/demo/blob/5.x/app/Filament/Resources/HR/Departments/Tables/DepartmentsTable.php
+- https://github.com/filamentphp/demo/blob/5.x/app/Filament/Resources/HR/Projects/Schemas/ProjectInfolist.php
+- `laravel/Modules/Fixcity/app/Filament/Resources/TicketResource/Schemas/TicketForm.php`
+- `laravel/Modules/Fixcity/app/Filament/Resources/TicketResource/Schemas/TicketInfolist.php`
+- `laravel/Modules/Fixcity/app/Filament/Schemas/Components/PubThemeWizard.php`
+- `laravel/Modules/Xot/app/Filament/Widgets/XotBaseWizardWidget.php`
+- `laravel/Themes/Sixteen/resources/views/components/wizard.blade.php`
+- `laravel/Themes/Sixteen/resources/views/components/wizard/stepper.blade.php`
+
+## Contratto vendor da preservare
+
+`pub_theme::components.wizard` puo' cambiare il vestito, ma deve copiare la logica della Blade vendor Filament:
+
+- inizializzazione Alpine con `x-load`, `x-load-src`, `x-data="wizardSchemaComponent(...)"`;
+- listener `next-wizard-step` e `go-to-wizard-step`;
+- `wire:ignore.self`;
+- hidden input `x-ref="stepsData"` con le chiavi degli step visibili;
+- rendering contenuto con `@foreach ($steps as $step) {{ $step }} @endforeach`;
+- footer con `$previousAction`, `$getCancelAction()`, `$nextAction`, `$getSubmitAction()`;
+- navigazione tramite `goToPreviousStep`, `requestNextStep()`, `isFirstStep()`, `isLastStep()`;
+- nessuna chiamata a metodi del widget dalla Blade del componente Wizard.
+
+La Blade `wizard/step.blade.php` vendor gestisce gia' `fi-active`, `role="tabpanel"`, `x-ref="step-..."`, `x-show`/Alpine e form wrapper eventuale. Non avvolgere ogni step con un secondo contenitore statico per decidere active/inactive.
+
+## Best practices
+
+1. Riusa `Wizard`, `Step` e i trait `HasWizard` ufficiali Filament quando il contesto li supporta.
+2. Mantieni `XotBase*` come contratto architetturale Laraxot: la base incornicia Filament, non lo sostituisce.
+3. Nel frontoffice personalizza il vestito in `pub_theme::components.wizard`, non nel modulo.
+4. Nel backoffice usa la skin Filament standard; non portare `pub_theme` dentro admin.
+5. La view widget del modulo deve essere wrapper/layout: titolo, container, `<form wire:submit="submit">`, `{{ $this->form }}`, modals. Non deve contenere stepper, next/previous o logica step custom.
+6. Lo stepper Design Comuni deve essere Alpine-aware: stato da `step` / `getStepIndex(step)`, non da un `currentStep` calcolato lato Blade al render iniziale.
+7. Se separi schema, usa il pattern Filament demo adattato a Laraxot:
+   - `Schemas/<Model>Form.php` estende `XotBaseResourceForm`;
+   - `Schemas/<Model>Infolist.php` estende `XotBaseResourceInfolist`;
+   - `Tables/<Models>Table.php` estende `XotBaseResourceTable`.
+8. Nel riepilogo read-only usa componenti Infolist/Entry o componenti Schema read-only coerenti; non usare form fields editabili e non usare `SchemaView` come scorciatoia.
+9. Mantieni le funzioni Safe (`use function Safe\...`) dove il progetto le richiede: sono contratto di affidabilita', non rumore da pulire.
+10. Dopo ogni modifica esegui i gate richiesti e registra cosa passa, cosa fallisce e perche'.
+11. Usa `HasWizard` trait esistente di Filament (`Actions/Concerns` o `Resources/Pages/Concerns`), non reinventare la logica wizard da zero.
+12. Verifica sempre entrambe le URL: `/it/tests/segnalazione-crea` (frontoffice) e `/fixcity/admin/tickets/create` (admin) - devono funzionare con lo stesso engine ma vestiti diversi.
+13. Se manca il tasto "Avanti" in frontoffice, controlla prima `$nextAction`, Alpine state, `x-cloak` e CSS del tema - non aggiungere bottoni custom.
+
+## Bad practices
+ 
+- Reinventare `nextStep`, `previousStep`, validazione e query step quando Filament li fornisce gia'.
+- Ridefinire proprietà Eloquent (`$appends`, `$casts`, `$listen`) con type hint nei figli: causa PHPStan fatal error.
+- Lasciare `function (): void` con spazio prima dei due punti: syntax error in PHP 8.
+- Usare `return \$media->toInlineResponse()` in method dichiarato `void`: fatal error in PHP 8.
+- Copiare markup wizard dentro `ticket-create-wizard.blade.php` del modulo.
+- Usare `@include('filament.wizard::steps')`, helper globali tipo `isFirstStep()` / `isLastStep()` o bottoni custom senza passare dal componente Filament.
+- Chiamare `$this->getWizardDisplayStep()` dentro `pub_theme::components.wizard`: in quella Blade `$this` e' il componente Filament, non il widget dominio.
+- Wrappare `{{ $step }}` con un `div.fi-sc-wizard-step` statico: lo step vendor renderizza gia' il contenitore corretto.
+- Fare stepper statico con `:current-step="$getStartStep()"`: dopo il primo render non segue Alpine/Livewire.
+- Nascondere il footer Filament con CSS per "risolvere" duplicati invece di eliminare la duplicazione alla fonte.
+- Mettere business logic, salvataggio, validazione o redirect nel tema.
+- Rimuovere `Safe\file_put_contents`, `Safe\json_encode`, `Safe\file_get_contents`, ecc. per "semplificare".
+- Aggiungere ignore PHPStan, baseline o commenti `@phpstan-ignore` al posto di correggere gli errori.
+- Dichiarare completato un fix wizard senza controllare sia `/it/tests/segnalazione-crea` sia `/fixcity/admin/tickets/create`.
+- Usare `PubThemeWizard` o `pub_theme::components.wizard` in admin - contamina la skin Filament e rompe la separazione modulo/tema.
+- Nascondere il link "Vai al contenuto principale" con CSS invece di verificare che sia correttamente posizionato e accessibile.
+- Aggiungere bottoni "Avanti" custom in Blade invece di risolvere il problema alla radice (Alpine, action, CSS).
+- Creare duplicati di `nextStep()` / `previousStep()` in `XotBaseWizardWidget` se servono solo per Blade `wire:click`: usare **`DelegatesFilamentWizardSchemaMethods`**, non reinventare il trait **`HasWizard`**.
+- Modificare la logica del motore wizard per motivi estetici: il vestito si cambia nel tema, non nel motore.
+
+## False friends
+ 
+- "Funziona in admin, quindi e' ok": falso. Il frontoffice ha lo stesso engine ma vestito diverso e puo' rompersi nella view tema.
+- "PHPStan fatal e' un errore di tipo": falso. Spesso e' un syntax error (es. `function (): void` con spazio) o proprieta' Eloquent ridefinita con tipo diverso.
+- "Posso ridefinire \$appends/\$casts/\$listen nei figli": falso. PHPStan/Larastan da' fatal error se ridefiniti con tipo diverso dal parent.
+- "Void method puo' fare return \$qualcosa": falso. In PHP 8 e' fatal error, non solo warning.
+- "Basta una view custom nel modulo": falso. Il vestito frontoffice e' ownership del tema.
+- "Lo stepper puo' leggere lo step da PHP": falso. Dopo mount lo stato corrente e' Alpine/Filament.
+- "Se manca Avanti, aggiungo un bottone Blade": falso. Prima controlla `$nextAction`, `requestNextStep()`, `x-cloak`, Alpine e CSS.
+- "Il link Vai al contenuto principale e' un bug da nascondere": falso. E' uno skiplink di accessibilita'; va verificato, non rimosso alla cieca.
+- "Safe e' opzionale": falso in questo progetto, soprattutto con `phpstan-safe-rule`.
+- "PHPStan si sistema dopo": falso. I gate sono parte della definizione di done.
+- "PubThemeWizard ovunque e' DRY": falso. In admin contamina la skin Filament.
+- "HasWizard Actions e HasWizard Pages sono intercambiabili": falso. Il primo e' per Action/modale, il secondo per Resource Page; il widget Xot puo' allinearsi al comportamento ma non attaccare trait a caso.
+- "Il tasto Avanti manca quindi lo aggiungo in Blade": falso. Il bottone Filament c'e' sempre, e' nascosto da CSS o Alpine. Verificare `$nextAction`, `x-cloak`, `wire:loading`.
+- "Skiplinks sono inutili e li nascondo": falso. Gli skiplink di accessibilita' sono obbligatori per WCAG. Verificarne posizione e visibilita', non rimuoverli.
+- "Fix in admin = fix in frontoffice": falso. Stesso engine, vestiti diversi. `/it/tests/segnalazione-crea` usa `pub_theme::components.wizard` che puo' rompersi indipendentemente.
+- "Rimuovere Safe semplifica il codice": falso. `Safe\` e' requisito di qualita' del progetto e contratto PHPStan. Mantiene il codice robusto.
+- "PHPStan level 5 e' opzionale": falso. E' parte della Definition of Done. Zero errori, zero ignore, zero baseline.
+
+## Checklist operativa
+
+1. Studia logica, politica, filosofia, religione e zen della feature prima di toccare codice.
+2. Consulta second brain:
+   - `docs/wiki/index.md`;
+   - `laravel/Modules/Fixcity/docs/wiki/`;
+   - `laravel/Modules/Xot/docs/wiki/`;
+   - `laravel/Themes/Sixteen/docs/wiki/`;
+   - `qmd search "wizard Filament pub_theme HasWizard Safe"`.
+3. Aggiorna docs del modulo e del tema con link relativi.
+4. Aggiorna questo prompt se emerge una nuova best practice, bad practice o false friend.
+5. Esegui ingest documentale con `qmd update` e smoke query con `qmd search`.
+6. Esegui controlli dalla cartella `laravel` (DOPO OGNI MODIFICA):
+   - `./vendor/bin/phpstan analyse Modules --configuration=phpstan.neon` - **DEVE** passare con 0 errori, 0 ignore, 0 baseline
+   - `php /home/zorin/.local/bin/phpmd.phar Modules text phpmd.xml` (usa `.phar` fresh v2.15.0)
+   - `./vendor/bin/phpinsights --no-interaction` poi `./vendor/bin/phpinsights --fix --no-interaction`
+   - `./vendor/bin/pest --compact` (richiede `pdo_sqlite` installato per test SQLite)
+   - Puppeteer: `npm install -g puppeteer` poi script custom per `http://127.0.0.1:8000/it/tests/segnalazione-crea`
+   - Playwright: `npx playwright install chromium` poi `npx playwright test`
+   - **RICORDA**: se PHPStan fallisce, correggi l'errore - NON aggiungere ignore o baseline
+   - **PHPMD**: se mostra `Trait method X has not been applied`, rimuovi typed properties `protected string $foo` → `protected $foo` (conflitto con parent class)
+7. Verifica visuale profonda su:
+   - `http://127.0.0.1:8000/it/tests/segnalazione-crea`
+   - `http://127.0.0.1:8000/fixcity/admin/tickets/create`
+8. Conferma:
+   - pulsante Avanti visibile e funzionante;
+   - Indietro non visibile al primo step;
+   - Submit visibile solo all'ultimo step;
+   - skiplink "Vai al contenuto principale" raggiungibile da tastiera e non sovrapposto alla CTA;
+   - nessun errore console Alpine/Livewire (`wizardSchemaComponent`, `step`, `isLastStep`, entangle).
+
+## Definition of done
+
+Un intervento wizard e' chiuso solo quando:
+
+- la logica resta in Xot/Fixcity e il vestito resta in Sixteen;
+- `pub_theme::components.wizard` conserva il contratto vendor;
+- gli step sono renderizzati dal componente `Step` Filament, non da markup duplicato;
+- i documenti modulo/tema/Xot sono aggiornati;
+- QMD e' aggiornato o il blocker e' registrato;
+- **le funzioni Safe (`use function Safe\...`) sono preservate ovunque richieste**;
+- **i gate richiesti sono stati eseguiti DOPO ogni modifica e l'esito e' documentato**;
+- **PHPStan riporta 0 errori con zero ignore, zero baseline, zero @phpstan-ignore**;
+- entrambe le URL funzionano: `/it/tests/segnalazione-crea` e `/fixcity/admin/tickets/create`;
+- il tasto "Avanti" e' visibile e funzionante in frontoffice (non nascosto da CSS/Alpine);
+- lo skiplink accessibilita' e' presente e posizionato correttamente.
+
+/bmad-create-story
+Esegui dalla cartella `laravel/`:
+
+- `./vendor/bin/phpstan analyse Modules --configuration=phpstan.neon`
+  - **vincoli**: 0 errori, 0 ignore, 0 baseline; non modificare mai `laravel/phpstan.neon`
+- (se serve riprodurre) `php artisan serve`
+
+Quando correggi un errore:
+
+- aggiorna/consulta sempre il “second brain” (wiki root + wiki modulo/tema);
+- conserva la logica di business (DRY/KISS, niente scorciatoie, niente soppressioni);
+- dopo ogni modifica esegui i gate: PHPStan, PHPMD `.phar`, PHPInsights, Pest, Puppeteer, Playwright.
+
+## Context engineering (studio → setup → documentazione)
+
+Prima di usare o cambiare workflow/strumenti per agenti, studia e poi documenta **cosa hai adottato e perché** (scopo, trade-off, rischi, confini) nelle wiki pertinenti.
+
+### Fonti (da leggere)
+
+- `https://claude.ai/public/artifacts/f498a4cc-4c45-481c-a6dd-8e1d196dadb0`
+- `https://platform.claude.com/cookbook/tool-use-context-engineering-context-engineering-tools`
+- `https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents`
+- `https://alabeduarte.com/context-engineering-with-claude-code-my-evolving-workflow/`
+- `https://github.com/NeoLabHQ/context-engineering-kit`
+- `https://www.producttalk.org/context-engineering/`
+- `https://martinfowler.com/articles/exploring-gen-ai/context-engineering-coding-agents.html`
+- `https://thomaslandgraf.substack.com/p/context-engineering-for-claude-code`
+- `https://docs.claude-mem.ai/context-engineering`
+- `https://abvijaykumar.medium.com/practical-context-engineering-for-vibe-coding-with-claude-code-6aac4ee77f81`
+- `https://maven.com/altered-craft-learning/context-engineering-for-claude-code`
+- `https://www.nathanonn.com/context-engineering-with-claude-code-explained/`
+- `https://arxiv.org/html/2508.08322v1`
+- `https://www.langchain.com/blog/context-engineering-for-agents`
+- `https://clune.org/posts/anthropic-context-engineering/`
+- `https://www.morphllm.com/context-engineering`
+- `https://dev.to/drguthals/working-effectively-with-claude-from-vibe-prompting-to-context-engineering-for-technical-content-46gl`
+
+### Output atteso (cosa documentare)
+
+- **scopo**: quali problemi risolve nel repo (riduzione errori, meno churn, più qualità)
+- **regole operative**: “docs-first”, ricerca in wiki, naming, link relativi dove possibile
+- **tooling**: quali strumenti effettivamente usi qui (QMD, quality gates) e quando
+- **confini**: cosa NON si deve fare (ignore/baseline, spostare logica nel tema, ecc.)
+
+### Dove documentare
+
+- root: `docs/wiki/`
+- temi: `laravel/Themes/*/docs/wiki/`
+- moduli coinvolti: `laravel/Modules/*/docs/wiki/`
+
+## Manutenzione di questo prompt
+
+
+/bmad-create-story esegui dalla cartella laravel  ./vendor/bin/phpstan analyse Modules, e sistema tutti gli errori, ti ricordo che sempre dopo aver modificato un file devi
+  controllarlo con phpstan, phpmd (versione .phar), phpinsights , e se ha senso con puppetter e con playwright, e costantemente devi aggiornare, studiare e migliorare le cartelle
+  docs dentro i moduli e dentro i temi
+
+/bmad-create-story nella cartella laravel/Modules/Activity/app/Filament/Resources/ActivityResource/  mancano le sotto cartelle Schemas e Tables (studia
+  https://github.com/filamentphp/demo/tree/5.x/app/Filament/Resources/Blog/Authors) e manca anche Schemas/ActivityForm.php Tables/ActivityTable.php e Schemas/ActivityInfolist.php
+  per capire a pieno devi studiare a fondo https://github.com/filamentphp/demo poi aggiornare, studiare e migliorare le cartelle docs dentro i moduli e dentro i temi, poi ingest dei
+  nuovi documenti, poi ragioni utilizzando il tuo second brain , capisci la filosofia, la religione, la politica e lo zen, di nuovo studi, aggiorni e migliori le cartelle docs
+  dentro i moduli e dentro i temi poi ingest dei nuovi documenti, poi implementi , poi controlli con phpstan, phpmd (versione .phar) , phpinsights , devi puntare alla perfezione , e
+  poi procedi per tutte le altre filament resource di tutti i moduli
+
+
+/bmad-create-story in laravel/Modules/Activity/app/Filament/Resources/ActivityResource.php fare
+public static function form(Schema $schema): Schema
+    {
+        return ActivityForm::configure($schema);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return ActivitiesTable::configure($table);
+    }
+
+e' sbagliato ! perche' estende XotBaseResource , capisci la filosofia, la religione, la politica e lo zen, di nuovo studi, aggiorni e migliori le cartelle docs
+  dentro i moduli e dentro i temi poi ingest dei nuovi documenti, poi implementi , poi controlli con phpstan, phpmd (versione .phar) , phpinsights , devi puntare alla perfezione , e
+  poi procedi per tutte le altre filament resource di tutti i moduli
+
+
+/bmad-create-story chi estende XotBaseResourceForm  deve avere il metodo getFormSchema  e non deve avere il metodo configure , capisci da solo il perche' capisci la filosofia, la religione, la politica e lo zen, di nuovo studi, aggiorni e migliori le cartelle docs
+  dentro i moduli e dentro i temi poi ingest dei nuovi documenti, poi implementi , poi controlli con phpstan, phpmd (versione .phar) , phpinsights , devi puntare alla perfezione , e
+  poi procedi per tutte le altre filament resource di tutti i moduli
+
+Se emerge una nuova best practice / bad practice / false friend, aggiorna questo file (`laravel/Themes/Sixteen/docs/prompts/wizard.txt`) mantenendolo corto, concreto e senza duplicazioni.

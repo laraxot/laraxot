@@ -21,6 +21,7 @@ related:
 # Notifiche Telegram 
 
 Questa documentazione descrive come implementare notifiche Telegram nel modulo Notify di Quaeris.
+Questa documentazione descrive come implementare notifiche Telegram nel modulo Notify di App.
 
 ## Indice
 
@@ -36,6 +37,7 @@ Questa documentazione descrive come implementare notifiche Telegram nel modulo N
 ## Introduzione
 
 Telegram offre un'ottima piattaforma per notifiche istantanee grazie alla sua API per bot. Quaeris integra Telegram per inviare notifiche relative ad appuntamenti, promemoria e altre comunicazioni importanti.
+Telegram offre un'ottima piattaforma per notifiche istantanee grazie alla sua API per bot. App integra Telegram per inviare notifiche relative ad appuntamenti, promemoria e altre comunicazioni importanti.
 
 ## Setup del Bot Telegram
 
@@ -48,10 +50,10 @@ Telegram offre un'ottima piattaforma per notifiche istantanee grazie alla sua AP
 
 ### Funzionalità del Bot
 
-Il bot di Quaeris deve avere:
+Il bot di App deve avere:
 - Privacy Mode disattivata (per leggere messaggi nei gruppi)
 - Comandi personalizzati configurati
-- Immagine del profilo con logo Quaeris
+- Immagine del profilo con logo App
 
 ### Comandi Consigliati
 
@@ -59,6 +61,7 @@ Configura i seguenti comandi per il tuo bot:
 ```
 start - Inizia l'interazione con il bot
 register - Collega il tuo account Telegram a Quaeris
+register - Collega il tuo account Telegram a App
 unregister - Scollega il tuo account Telegram
 settings - Gestisci le tue preferenze di notifica
 help - Ottieni assistenza
@@ -179,10 +182,10 @@ public function toTelegram($notifiable)
 
 ### Collegamento Account Telegram
 
-Per collegare un account Telegram a un utente Quaeris:
+Per collegare un account Telegram a un utente App:
 
 1. Implementa un comando `/register` nel bot che generi un token univoco.
-2. L'utente inserisce questo token nel proprio profilo nell'app Quaeris.
+2. L'utente inserisce questo token nel proprio profilo nell'app App.
 3. Salva il `chat_id` Telegram dell'utente nel database.
 
 ```php
@@ -196,6 +199,7 @@ class RegisterCommand extends Command
 {
     protected $name = 'register';
 protected $description = 'Collega il tuo account Telegram a Quaeris';
+protected $description = 'Collega il tuo account Telegram a App';
     
     public function handle()
     {
@@ -211,6 +215,7 @@ protected $description = 'Collega il tuo account Telegram a Quaeris';
         
         $this->replyWithMessage([
 'text' => "Il tuo codice di collegamento è: {$token}\n\nInseriscilo nel tuo profilo Quaeris per completare il collegamento."
+'text' => "Il tuo codice di collegamento è: {$token}\n\nInseriscilo nel tuo profilo App per completare il collegamento."
         ]);
     }
 }

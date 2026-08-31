@@ -27,37 +27,6 @@ export const mapPickerStyles = css`
         left: 0 !important;
         width: 100vw !important;
         height: 100vh !important;
-        z-index: var(--mp-fullscreen-z-index, 999999) !important;
-        border-radius: 0 !important;
-    }
-
-    .map-container:fullscreen {
-        width: 100vw !important;
-        height: 100vh !important;
-        border-radius: 0 !important;
-    }
-
-    .map-picker-leaflet-pane {
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        background: #e5e7eb;
-        opacity: 1;
-    }
-
-    .map-picker-leaflet-pane .leaflet-container,
-    .map-picker-leaflet-pane .leaflet-pane,
-    .map-picker-leaflet-pane .leaflet-layer,
-    .map-picker-leaflet-pane .leaflet-tile,
-    .map-picker-leaflet-pane .leaflet-tile-pane {
-        opacity: 1 !important;
-        filter: none !important;
-    }
-
-    .layer-controls-overlay {
-        position: absolute;
-        top: 1rem;
-        left: 1rem;
         z-index: 3001 !important;
         display: flex !important;
         flex-direction: column;
@@ -81,24 +50,6 @@ export const mapPickerStyles = css`
         box-shadow: 0 8px 18px rgba(23, 50, 77, 0.22);
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         padding: 0;
-        opacity: 1 !important;
-        visibility: visible !important;
-        position: relative;
-        z-index: 3002;
-    }
-
-    .ctrl-btn:hover {
-        background: white;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-        color: #2563eb;
-    }
-
-    .ctrl-btn svg {
-        width: 1.25rem !important;
-        height: 1.25rem !important;
-    }
-
     .ctrl-btn .ctrl-fallback {
         display: none;
         font-size: 1rem;
@@ -128,17 +79,6 @@ export const mapPickerStyles = css`
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(8px);
         max-width: 300px;
-        width: min(300px, calc(100% - 5rem));
-        align-items: center;
-    }
-
-    .search-box input {
-        flex: 1;
-        border: 1px solid #d1d5db;
-        border-radius: 0.5rem;
-        padding: 0.5rem 0.75rem;
-        font-size: 0.875rem;
-        width: 100%;
         min-width: 0;
         outline: none;
         color: #17324d;

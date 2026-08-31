@@ -323,6 +323,7 @@ git merge --abort   # No merge in progress
 git status --short
 # M docs/custom-charts-session-summary.md
 # M laravel/Modules/Quaeris/app/Actions/QuestionChart/Custom/SmsResponseRate.php
+# M laravel/Modules/App/app/Actions/QuestionChart/Custom/SmsResponseRate.php
 # ...
 
 # 3. Continue normal work

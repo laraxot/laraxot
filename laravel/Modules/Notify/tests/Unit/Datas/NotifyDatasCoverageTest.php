@@ -15,32 +15,26 @@ use Modules\Notify\Datas\SMS\SmsFactorData;
 use Modules\Notify\Datas\SmsMessageData;
 use Modules\Notify\Datas\TelegramData;
 use Modules\Notify\Datas\WhatsAppData;
-use Modules\Notify\Tests\TestCase;
+use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
-
-uses(\Modules\Notify\Tests\TestCase::class);
 
 test('netfun sms request and response data can be created from arrays', function () {
     $request = NetfunSmsRequestData::fromArray([
         'token' => 'abc-token',
         'messages' => [
-            ['recipient' => '+391234', 'text' => 'hello'],
-        ],
-    ]);
+            ['recipient' => '+391234', 'text' => 'hello']]]);
 
     $response = NetfunSmsResponseData::fromArray([
         'status' => 'ok',
         'batchId' => 'batch-1',
         'messages' => [
-            ['id' => 'm1', 'status' => 'queued'],
-        ],
-    ]);
+            ['id' => 'm1', 'status' => 'queued']]]);
 
     Assert::assertSame('abc-token', $request->token);
-    Assert::assertCount(1, \assertNotifyArray($request->messages));
+    Assert::assertCount(1, XotBasePest::assertArray($request->messages));
     Assert::assertSame('ok', $response->status);
     Assert::assertSame('batch-1', $response->batchId);
-    Assert::assertCount(1, \assertNotifyArray($response->messages));
+    Assert::assertCount(1, XotBasePest::assertArray($response->messages));
 });
 
 test('netfun sms message-style data objects keep values', function () {
@@ -66,8 +60,7 @@ test('netfun sms message-style data objects keep values', function () {
 
 test('sms driver data classes expose auth headers and defaults', function () {
     config()->set('sms.drivers.smsfactor', [
-        'token' => 'tok',
-    ]);
+        'token' => 'tok']);
 
     $smsfactor = SmsFactorData::make();
 
@@ -89,8 +82,7 @@ test('telegram, whatsapp and sms message datas keep payload', function () {
 
 test('send notification bulk result data keeps counters and errors collection', function () {
     $errors = collect([
-        ['record' => 'r1', 'channel' => 'sms', 'error' => 'fail'],
-    ]);
+        ['record' => 'r1', 'channel' => 'sms', 'error' => 'fail']]);
 
     $result = new SendNotificationBulkResultData(
         successCount: 3,

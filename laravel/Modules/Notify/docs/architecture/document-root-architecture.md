@@ -28,6 +28,7 @@ This project uses a **custom Laravel public path architecture** where the web-ac
 
 ```
 /var/www/_bases/base_fixcity_fila5/
+/var/www/_bases/base_ptvx_fila5/
 ├── public_html/                    ← ACTUAL DocumentRoot (Apache serves from here)
 │   ├── index.php                   ← Entry point
 │   ├── .htaccess

@@ -1,0 +1,142 @@
+# Segnalazioni elenco fase01
+
+<pagina> = segnalazione-area-personale
+<pagina> = ticket-list
+<pagina> = segnalazione-dettaglio
+<pagina> = segnalazione-01-privacy
+<pagina> = segnalazione-03-riepilogo
+<pagina> = segnalazione-04-conferma
+<pagina> = segnalazione-02-dati
+#FASE html parity <pagina>
+bmad-help fase "html parity <pagina>"
+obiettivo: raggiungiamo il 90% di struttura html uguale.
+tramite lo script che hai messo dentro una sottocartella di ./bashscripts e documentato dentro ./bahscripts/docs utilizzando anche gli indici , dobbiamo confrontare la struttura html del tag body incluso, ad esclusione degli script, controlliamo il numero di elementi, ed importante la corrispondenza degli id e le classi css  di 
+https://italia.github.io/design-comuni-pagine-statiche/sito/<pagina>.html
+e confrontarlo con 
+http://127.0.0.1:8000/it/tests/<pagina>
+ti ricordo che la blade e' laravel/Themes/Sixteen/resources/views/pages/tests/[slug].blade.php 
+e il json e' laravel/config/local/fixcity/database/content/pages/tests.<pagina>.json
+ti ricordo che il sito e' multilingua percio' le blade non possono contenere parole o testo in lingua hardcoded e che le traduzioni hanno il prototipo '<namespace>::<contesto>.<collezione>.<chiave>.<tipo>'
+
+questa traduzione e' sbagliata 'SEGNALAZIONE::SEGNALAZIONE.ELENCO.TITLE' non esiste il namespace "segnalazione" , potevi usare "fixcity" e poi manca il tipo .. era meglio 'fixcity::segnalazione.fields.title.label'  
+
+traduzione sbagliata 'fixcity::segnalazione.heading.title_label' corretta 'fixcity::segnalazione.heading.title.label'
+
+non ci deve essere la blade laravel/Themes/Sixteen/resources/views/pages/tests/<pagina>.blade.php utilizziamo la blade laravel/Themes/Sixteen/resources/views/pages/tests/[slug].blade.php 
+
+la locazione di questo script e' sbagliata ./bashscripts/html-structure-compare.sh  manca la sottocartella che in questo caso potrebbe essere "html"  percio' bisogna spostarlo in  ./bashscripts/html/html-structure-compare.sh 
+ bashscripts deve essere agnostico, percio' se hai degli output da salvare di questo confronto devi salvarli dentro una sottocartella di laravel/Themes/Sixteen/docs
+
+la locazione di questo script bashscripts/compare-html-body.py e' sbagliata ! quella giusta e' bashscripts/html/compare-html-body.py
+
+questo file bashscripts/html/html-structure-compare.sh e' sbagliato il contesto non e' body ma leggermente piu' ampio percio' html .. percio' doveva essere bashscripts/html/html-structure-compare.sh
+
+questo file .md  bashscripts/docs/<pagina>-html-parity-analysis.md   non puo' stare qui , perche' bashscripts e' agnostico va spostato dentro la cartella /var/www/_bases/base_fixcity_fila5/laravel/Themes/Sixteen/docs/prompts/<pagina> 
+
+
+Per il confronto HTML body tra reference e local, voglio che lo script:
+
+ 1. Estragga il BODY HTML puro (no <script>, no <style>, solo markup+text)?
+ 2. Compari elemento per elemento la struttura (tag, attributi, classi)?
+ 3. Generi un report dettagliato con:
+ - ✅ Elementi identici
+ - ❌ Elementi mancanti
+ - ⚠️ Elemento con differenze
+ - 📊 Parity score (es. 87% match)
+ 4. Salvi l'output in laravel/Themes/Sixteen/docs/body-structure-comparison/<pagina>/?
+
+questo file e' nel percorso sbagliato /var/www/_bases/base_fixcity_fila5/local_segnalazioni.html , va spostato in laravel/Themes/Sixteen/docs/prompts/<pagina>/local_segnalazioni.html
+
+
+bashscripts viene utilizzato in molti altri progetti percio' non puo avere riferimenti diretti ad esempio verso il tema che stiamo utilizzando , potresti arrivarci passando per collegamenti relativi bidirezionali utilizzando dei files .md dentro la cartella docs della root del progetto , la cartella docs della root del progetto puo' fare 
+
+con git andiamo solo in avanti ! non ripristiniamo mai vecchie versioni, certo puoi anzi devi studiare le vecchie versioni, ma mai ripristinare vecchie versioni
+
+non fare git commit a caso lo fai solo quando hai finito una fase intera 
+
+Bootstrap Italia is wrong - we use TailwindCSS + Alpine.js, not Bootstrap
+ Hardcoded Italian strings - must be dynamic/multilingual
+
+fare  <script src="{{ asset('themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js') }}"></script> o  <script src="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.8.8/dist/js/bootstrap-italia.bundle.min.js"></script> o <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.8.8/dist/css/bootstrap-italia.min.css" />  o <link rel="stylesheet" href="{{ asset('themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/css/bootstrap-italia.min.css') }}">   vuol dire che hai dimenticato che il nostro progetto e' proprio quello di non utilizzare bootstrap  ma di utilizzare tailwindcss + alpine 
+
+
+in laravel/Themes/Sixteen/resources/views/pages/tests/[slug].blade.php  non si puo' fare <x-layouts.design-comuni> deve essere <x-layouts.app>
+in laravel/Themes/Sixteen/resources/views/pages/tests/[slug].blade.php non puo' essere 
+@php
+    use Modules\Cms\Models\Page;
+
+    $pageSlug = 'tests.'.$slug;
+    $locale = app()->getLocale();
+
+    // Fetch page from database
+    $cmsPage = Page::where('slug', $pageSlug)->first();
+    $blocks = [];
+
+    if ($cmsPage) {
+        $rawBlocks = $cmsPage->content_blocks[$locale] ?? $cmsPage->content_blocks['it'] ?? [];
+        foreach ($rawBlocks as $blockData) {
+            $blocks[] = (object) [
+                'active' => true,
+                'view' => $blockData['data']['view'] ?? '',
+                'data' => $blockData['data'] ?? [],
+            ];
+        }
+    }
+
+    /** @var array<string, mixed> $data */
+    $data = [
+        'slug' => $slug,
+    ];
+@endphp
+
+
+deve essere della stessa filosofia religione politica visione zen di laravel/Themes/Sixteen/resources/views/pages/[container0]/[slug].blade.php
+
+la blade  laravel/Themes/Sixteen/resources/views/layouts/design-comuni.blade.php  non dovrebbe esistere, capisci da solo il perche' 
+
+Different CSS framework: We use TailwindCSS + Alpine, reference uses Bootstrap Italia
+non ci deve essere Semantic HTML differences se la reference usa <nav> , <ol>, <li> dobbiamo usarle anche noi
+le Classi CSS devono essere le stesse 
+
+Dobbiamo utilizzare le stesse classi bootstrap, poi con tailwind @apply  le utilizziamo , piu' o meno come fa https://daisyui.com/docs/install
+
+
+ ✅ Translation Format - CORRETTO
+     - ❌ fixcity::context.element.type (SBAGLIATO - manca collection)
+     - ✅ fixcity::context.collection.element.type (CORRETTO - 5 livelli)
+
+    Esempi:
+     - ✅ fixcity::segnalazione.fields.title.label
+     - ✅ fixcity::rating.fields.star.5.label
+     - ❌ fixcity::rating.title (manca .collection.)
+
+     ✅ Bootstrap Usage - CORRETTO
+     - ❌ "NO Bootstrap classes" (SBAGLIATO)
+     - ✅ Bootstrap class names SI nel HTML (row, col-12, btn, card, ecc.) per HTML parity
+     - ✅ Bootstrap CSS/JS NO (MAI caricare file)
+     - ✅ TailwindCSS @apply per styling (style-apply.css)
+     
+     Bootstrap class names SI (for HTML parity)
+     Translation format: 5 levels with .collection
+
+    Files Aggiornati:
+      ✅ .windsurfrules - Regole corrette
+      ✅ QWEN.md - Memories corrette
+      ✅ BLOCK_IMPLEMENTATION_GUIDE.md - Documentazione corretta
+
+Regola: parità HTML strutturale ESSENZIALE (≥90% match, esclusi script/style).
+Dopo: parità visiva/funzionale con TailwindCSS (@apply) + Alpine.js (mai Bootstrap Italia CSS/JS).
+
+/bmad-help la prima da cosa e' fare/migliorare lo script che faccia questo confronto dentro la cartella bashscripts/html e poi documentarlo dentro bashscripts/docs utilizzando anche gli indici e tutto quello che serve per ridurre i files doppi , le rindondanze , poi verificare il funzionamento dello script, poi nel caso migliorarlo e poi utilizzarlo 
+
+costantemente devi studiare, aggiornare e migliorare le cartelle docs dentro i moduli e dentro i temi, le tue rules, le tue memories, le tue skills utilizzando anche gli indici e tutti gli strumenti che vuoi
+
+cerca sempre di imparare e di migliorare, non fermarti mai
+
+ti ricordo che tutti i taks vengono dati contemporaneante a piu' agenti ai, percio' comportati di conseguenza, cerca di non pestare i piedi agli altri agenti ai anzi cerca di traerne beneficio e forza 
+
+cerca di capire sempre il perche' delle cose che ti dico di fare , di capirne lo scopo , se qualcosa non e' chiaro domanda
+
+Need to update docs/rules/memories to prevent this from happening again
+
+utilizza BMAD + GSD 

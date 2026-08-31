@@ -1,108 +1,52 @@
 ---
 module: Tenant
 concept: Configuration Distribution
-last_updated: 2026-07-20
+last_updated: 2026-04-15
 ---
 
 # Configuration Distribution
 
-Each tenant gets configuration overrides via a per-tenant directory under
-`laravel/config/`, merged on top of the base Laravel config at runtime. There
-is no `TenantService` class in the codebase — the mechanism is a set of
-`Spatie\QueueableAction`s called via `app(X::class)->execute()`.
+PTVX allows each tenant to have its own configuration overrides without modifying the core application code. This is achieved through a **Hierarchical Merging System**.
 
 ## 1. Directory Structure
 
+Tenant-specific configurations are stored in subdirectories named after the tenant slug:
+
 ```text
-laravel/config/
-├── app.php                 # base/global config
-├── database.php
-├── localhost/               # local dev tenant
-│   ├── app.php
-│   └── database.php
-├── com/geekpiu/              # production tenant, nested by reversed domain
-│   ├── app.php
-│   ├── database.php
-│   ├── services.php
-│   ├── modules.php
-│   ├── modules_statuses.json
-│   └── morph_map.php         # CRITICAL — Eloquent morph map, never delete
-└── eu/fixcity/
-    └── ...
+config/
+├── app.php                # Base configuration (Global)
+├── tenant_acme/
+│   ├── app.php            # ACME Corp overrides
+│   └── database.php       # ACME specific DB settings
+└── tenant_widgets/
+    └── app.php            # Widgets Inc overrides
 ```
 
-Directory names are the reversed-domain path produced by `GetTenantNameAction`
-(see [TenantIdentification.md](./TenantIdentification.md)), not arbitrary
-tenant slugs.
+## 2. Merging Logic
 
-## 2. Merging Logic — `ResolveTenantConfigValueAction`
+The `TenantService::config()` method handles the merging:
+1. **Load Global**: Retrieves the base configuration from the standard `config/` directory.
+2. **Load Tenant**: Checks for a corresponding file in the tenant's configuration subdirectory.
+3. **Merge**: Overwrites global keys with tenant-specific values.
+4. **Cache**: Stores the result in the Laravel `Config` repository for the current request.
 
-`app/Actions/Config/ResolveTenantConfigValueAction.php` resolves a single
-dotted config key (e.g. `app.name`, `database.connections.tenant`):
+## 3. Usage Pattern
 
-1. Take the first segment of the key as the config **group** (e.g. `app`).
-2. Load the current global `config($group)`.
-3. Load the tenant override at `config("{tenantName with / → .}.{group}")`
-   (e.g. `com.geekpiu.database`).
-4. Recursively merge tenant-over-global via
-   `MergeRecursiveStringKeyConfigAction` (`array_replace_recursive`, filtering
-   to string keys only via `FilterConfigStringKeysAction`).
-5. Write the merged array back into the Laravel `Config` repository for that
-   group (`Config::set($group, $merged)`) — so subsequent plain `config()`
-   calls for that group return tenant-aware values for the rest of the
-   request.
-6. Return the resolved value.
-
-Because step 5 mutates the shared `Config` repository, calling this action for
-a group once is enough to make ordinary `config('app.name')` calls tenant-aware
-afterward — but only for groups that have actually been resolved.
-
-## 3. Where Merging Is Triggered — `TenantServiceProvider`
-
-`app/Providers/TenantServiceProvider::boot()`:
-- `mergeConfigs()` — enumerates every `.php` file in the tenant's config
-  directory (`GetTenantConfigNamesAction`) and calls
-  `ResolveTenantConfigValueAction` for each, so all tenant config groups get
-  merged early in the boot cycle.
-- `registerDB()` — resolves the merged `database` config, ensures a `user`
-  connection alias exists, clones the default connection for every enabled
-  module that doesn't define its own (`mergeModuleConnections`), sets
-  `Schema::defaultStringLength(191)`, replaces `Config::set('database', ...)`
-  wholesale, and reconnects (`DB::purge` + `DB::reconnect`) — except during
-  testing, where reconnect is skipped.
-- `registerMorphMap()` — resolves the merged `morph_map` config and registers
-  it via `Relation::morphMap()`.
-
-## 4. Writing Tenant Config — `SaveTenantConfigAction`
-
-`app/Actions/Config/SaveTenantConfigAction.php` reads the existing tenant
-config file (if any), deep-merges new data on top (`array_merge_recursive`
-distinct-by-key, not `array_replace_recursive`), sorts keys recursively, and
-writes it back via `SaveArrayAction` (Xot module). Used e.g. by
-`ResolveTenantModelClassAction` to persist newly discovered morph-map entries
-back into `morph_map.php` — the morph map is self-healing rather than fully
-static.
-
-## 5. Usage Pattern
+Developers should use the `TenantService` to access tenant-aware configuration:
 
 ```php
-// tenant-aware — merges tenant override before reading
-$appName = app(\Modules\Tenant\Actions\Config\ResolveTenantConfigValueAction::class)
-    ->execute('app.name');
+// ✅ CORRECT - Explicitly tenant-aware
+$appName = TenantService::config('app.name');
 
-// plain config() is only tenant-aware for groups already resolved
-// (all groups are resolved once at boot via TenantServiceProvider::mergeConfigs())
+// ❌ WRONG - This will only return global config
 $appName = config('app.name');
 ```
 
-## 6. Security
-
-`GetTenantFilePathAction` rejects any filename containing `..`, a leading `/`,
-or a null byte before building a path under the tenant's config directory,
-preventing path traversal into another tenant's config or outside `config/`
-entirely.
+## 4. Security: Sandboxing
+Tenant-specific configurations are isolated at the file system level. The `TenantService` ensures that one tenant cannot access another tenant's configuration subdirectory.
 
 ---
 **Related Pages:**
-- [Architecture.md](./Architecture.md)
-- [TenantIdentification.md](./TenantIdentification.md)
+- [[Tenant Module Architecture]]
+- [[Tenant Identification]]
+- [[Database Isolation]]

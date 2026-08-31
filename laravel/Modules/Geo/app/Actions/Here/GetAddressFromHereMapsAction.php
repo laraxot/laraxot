@@ -17,7 +17,7 @@ class GetAddressFromHereMapsAction
 {
     use QueueableAction;
 
-    private const BASE_URL = 'https://geocode.search.hereapi.com/v1/geocode';
+    private const string BASE_URL = 'https://geocode.search.hereapi.com/v1/geocode';
 
     public function execute(string $address): ?AddressData
     {

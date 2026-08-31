@@ -1,3 +1,12 @@
+---
+title: "Verification Report - Compliance and XotBase Refactoring"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Verification Report - Compliance and XotBase Refactoring
 
 **Date**: [DATE]

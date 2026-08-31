@@ -5,6 +5,7 @@ tags: [architecture, analysis]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "architecture-analysis fixcity architecture deep dive analysis"
+qmd: "architecture-analysis ptv architecture deep dive analysis"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -1117,6 +1118,7 @@ The frontend follows Italian Public Administration design guidelines:
 
 // Ticket List (AGID-compliant)
 <x-fixcity::blocks.ticket_list.agid />
+<x-ptv::blocks.ticket_list.agid />
 
 // Forms (Filament + Custom CSS)
 - Titillium Web font family

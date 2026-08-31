@@ -73,6 +73,7 @@
 **✅ SEMPRE**:
 ```blade
 @livewire(\Modules\Predict\Filament\Widgets\PredictTableWidget::class)
+@livewire(\Modules\Forecast\Filament\Widgets\ForecastTableWidget::class)
 ```
 
 **Perché**:

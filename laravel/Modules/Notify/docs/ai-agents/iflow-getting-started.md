@@ -53,6 +53,7 @@ Confronta con `https://laravelpizza.com` e trova le differenze da colmare.
 
 - **MAI** creare file .md in posizioni sbagliate
 - **MAI** usare maiuscole nei nomi .md (eccetto README.md e CHANGELOG.md)
+- **MAI** usare maiuscole nei nomi .md (eccetto README.md e changelog.md)
 - **SEMPRE** usare PHPStan Level 10 dopo aver modificato un file
 - **SEMPRE** eseguire PHPMD e PHPInsights
 - **MAI** usare `property_exists()` su modelli Eloquent

@@ -5,6 +5,7 @@ tags: [action, plan, immediate]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "action-plan-immediate 🎯 piano d'azione immediato - fixcity platform"
+qmd: "action-plan-immediate 🎯 piano d'azione immediato - ptv platform"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:

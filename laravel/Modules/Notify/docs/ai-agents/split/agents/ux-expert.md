@@ -69,8 +69,8 @@ dependencies:
 
 ## Cross-References
 
-- ← [Agents Index](INDEX.md) — All 10 BMad agents
-- ← [Tasks Index](../../tasks/INDEX.md) — 22 reusable tasks
-- ← [Main AI Docs Index](../INDEX.md) — Master index
-- ← [../../../../AGENTS.md](../../../../../../../../AGENTS.md) — Original source
+- ← [Agents Index](index.md) — All 10 BMad agents
+- ← [Tasks Index](../../tasks/index.md) — 22 reusable tasks
+- ← [Main AI Docs Index](../index.md) — Master index
+- ← [../../../../agents.md](../../../../../../../../agents.md) — Original source
 

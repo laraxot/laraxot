@@ -33,7 +33,6 @@ class NotificationTemplateInfolist extends XotBaseResourceInfolist
             'version' => TextEntry::make('version'),
             'tenant_id' => TextEntry::make('tenant_id'),
             'grapesjs_data' => TextEntry::make('grapesjs_data'),
-            'type' => TextEntry::make('type'),
-        ];
+            'type' => TextEntry::make('type')];
     }
 }

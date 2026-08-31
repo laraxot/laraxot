@@ -14,6 +14,7 @@ La verifica ha confermato che:
 - ✅ 18/18 moduli hanno directory corrette
 - ✅ Documentazione del modulo Blog corretta
 - ✅ AGENTS.md aggiornato con la rule
+- ✅ agents.md aggiornato con la rule
 - ✅ GitHub Issue #5 creata per tracking
 - ✅ Documentazione di convenzione creata
 
@@ -40,6 +41,7 @@ Tutti i 18 moduli hanno le directory corrette:
 | Cms | ✅ | ✅ | ✅ | ✅ Pass |
 | Comment | ✅ | ✅ | ✅ | ✅ Pass |
 | Fixcity | ✅ | ✅ | ✅ | ✅ Pass |
+| App | ✅ | ✅ | ✅ | ✅ Pass |
 | Gdpr | ✅ | ✅ | ✅ | ✅ Pass |
 | Geo | ✅ | ✅ | ✅ | ✅ Pass |
 | Job | ✅ | ✅ | ✅ | ✅ Pass |
@@ -151,6 +153,7 @@ Questi sono **accettabili** perché:
 ### 3. ✅ Created Preventive Documentation
 - Guida completa alla convenzione
 - Rule in AGENTS.md
+- Rule in agents.md
 - Esempi e best practices
 
 ### 4. ✅ Established GitHub Workflow
@@ -170,6 +173,7 @@ Questi sono **accettabili** perché:
 ### Immediate (Done ✅)
 - ✅ Fix Blog module documentation
 - ✅ Update AGENTS.md
+- ✅ Update agents.md
 - ✅ Create convention documentation
 - ✅ Create GitHub Issue #5
 
@@ -201,6 +205,7 @@ grep -r "database/Factories\|database/Migrations\|database/Seeders" \
   docs/ laravel/Modules/*/docs/ | \
   grep -v "database-naming.md" | \
   grep -v "AGENTS.md" | \
+  grep -v "agents.md" | \
   grep -v "models/README.md"
 ```
 

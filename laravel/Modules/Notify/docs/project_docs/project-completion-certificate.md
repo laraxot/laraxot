@@ -21,6 +21,7 @@ related:
 # 🏆 PROJECT COMPLETION CERTIFICATE
 
 ## FixCity - Base Fila4 Mono
+## Notify - Base Fila4 Mono
 
 **Certificate of Excellence 2025**
 
@@ -29,6 +30,7 @@ related:
 ## 📜 Official Certification
 
 This document certifies that the project **FixCity - Base Fila4 Mono** has successfully achieved **EXCELLENCE STATUS** for 2025 by meeting and exceeding all professional software development standards.
+This document certifies that the project **Notify - Base Fila4 Mono** has successfully achieved **EXCELLENCE STATUS** for 2025 by meeting and exceeding all professional software development standards.
 
 **Certification Date:** October 1, 2025  
 **Certification Authority:** Super Mucca Quality Assurance 🐮  
@@ -282,6 +284,7 @@ The project meets or exceeds:
 **I hereby certify that:**
 
 The project **FixCity - Base Fila4 Mono** has been thoroughly analyzed, refactored, tested, and documented according to the highest professional standards of software development.
+The project **Notify - Base Fila4 Mono** has been thoroughly analyzed, refactored, tested, and documented according to the highest professional standards of software development.
 
 All quality metrics have been measured, verified, and documented. The project demonstrates excellence in code quality, testing, architecture, DevOps, and documentation.
 
@@ -295,6 +298,7 @@ October 1, 2025
 
 **Certification ID:**  
 FIXCITY-2025-EXCELLENCE-001
+NOTIFY-2025-EXCELLENCE-001
 
 **Digital Signature:**  
 ```
@@ -336,6 +340,9 @@ To verify this certification:
 **Website:** https://fixcity.com/certification  
 **Verification Code:** FIXCITY-2025-EXCELLENCE-001  
 **Email:** certification@fixcity.com
+**Website:** https://laraxot.com/certification  
+**Verification Code:** NOTIFY-2025-EXCELLENCE-001  
+**Email:** certification@laraxot.com
 
 ---
 
@@ -408,6 +415,7 @@ See [Test Reports](../Modules/*/Tests/)
 *This certificate is issued by the Super Mucca Quality Assurance Team and represents the highest standard of software engineering excellence.*
 
 **#Excellence2025 #QualityCertified #ProfessionalDevelopment #FixCity**
+**#Excellence2025 #QualityCertified #ProfessionalDevelopment #Notify**
 
 ---
 

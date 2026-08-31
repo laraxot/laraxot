@@ -12,6 +12,13 @@ use Filament\Schemas\Components\Section;
 use Modules\AI\Models\AiActionProposal;
 use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
 
+/**
+ * Form dedicato di AiActionProposalResource.
+ *
+ * Nessun ->label(): le etichette arrivano da `ai::action_proposal.fields.*.label`
+ * per convenzione (vedi docs/wiki/rules/no-filament-labels.md). Le opzioni della
+ * Select restano tradotte esplicitamente: sono valori, non etichette di campo.
+ */
 class AiActionProposalForm extends XotBaseResourceForm
 {
     /**
@@ -20,14 +27,12 @@ class AiActionProposalForm extends XotBaseResourceForm
     public static function getFormSchema(): array
     {
         return [
-            'section' => Section::make(__('ai::action_proposal.fields.section'))
+            'section' => Section::make()
                 ->schema([
                     'type' => TextInput::make('type')
-                        ->label(__('ai::action_proposal.fields.type'))
                         ->required(),
 
                     'status' => Select::make('status')
-                        ->label(__('ai::action_proposal.fields.status'))
                         ->options([
                             AiActionProposal::STATUS_PENDING => __('ai::action_proposal.statuses.pending'),
                             AiActionProposal::STATUS_CANCELLED => __('ai::action_proposal.statuses.cancelled'),
@@ -38,11 +43,9 @@ class AiActionProposalForm extends XotBaseResourceForm
                         ->required(),
 
                     'preview' => Textarea::make('preview')
-                        ->label(__('ai::action_proposal.fields.preview'))
                         ->columnSpanFull(),
 
                     'error' => Textarea::make('error')
-                        ->label(__('ai::action_proposal.fields.error'))
                         ->columnSpanFull(),
                 ])
                 ->columns(2),

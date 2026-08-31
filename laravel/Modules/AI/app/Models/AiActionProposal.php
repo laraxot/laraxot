@@ -33,7 +33,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property string|null $error
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * @property-read AiThread $thread
+ * @property-read AiThread|null $thread
  *
  * @method static Builder<static>|AiActionProposal newModelQuery()
  * @method static Builder<static>|AiActionProposal newQuery()
@@ -43,15 +43,15 @@ use Modules\Xot\Models\XotBaseModel;
  */
 class AiActionProposal extends XotBaseModel
 {
-    public const STATUS_PENDING = 'pending';
+    public const string STATUS_PENDING = 'pending';
 
-    public const STATUS_CANCELLED = 'cancelled';
+    public const string STATUS_CANCELLED = 'cancelled';
 
-    public const STATUS_CONFIRMED = 'confirmed';
+    public const string STATUS_CONFIRMED = 'confirmed';
 
-    public const STATUS_EXECUTED = 'executed';
+    public const string STATUS_EXECUTED = 'executed';
 
-    public const STATUS_FAILED = 'failed';
+    public const string STATUS_FAILED = 'failed';
 
     /**
      * @var list<string>

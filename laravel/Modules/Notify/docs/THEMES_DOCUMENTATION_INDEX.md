@@ -17,6 +17,7 @@ Connects all theme docs with bidirectional links and visual architecture.
 
 **Core Documentation:**
 - [00-INDEX.md](../laravel/Themes/Sixteen/docs/00-INDEX.md) - Start here
+- [00-index.md](../laravel/Themes/Sixteen/docs/00-index.md) - Start here
 - [Design Comuni Integration](../laravel/Themes/Sixteen/docs/design-comuni-integration.md)
 - [Component Catalog](../laravel/Themes/Sixteen/docs/COMPONENT_CATALOG.md)
 - [Layout Architecture](../laravel/Themes/Sixteen/docs/layout-hierarchy.md)
@@ -26,6 +27,7 @@ Connects all theme docs with bidirectional links and visual architecture.
 Sixteen/
 ├── docs/                          ← 200+ documentation files
 │   ├── 00-INDEX.md               ← MASTER INDEX
+│   ├── 00-index.md               ← MASTER INDEX
 │   ├── architecture/             ← Diagrams & architecture
 │   ├── design-comuni/            ← Design Comuni project
 │   ├── components/               ← Component docs
@@ -228,6 +230,7 @@ Request: GET /it/tests/homepage
    
 4. Middleware loads JSON:
    config/local/fixcity/database/content/pages/homepage.json
+   config/local/ptv/database/content/pages/homepage.json
 
 5. Data passed to view:
    @props('content' => $content)
@@ -383,11 +386,14 @@ Integrates with:
 ```bash
 APP_URL=http://fixcity.local
 # Theme detected from APP_URL → fixcity → Sixteen (or override via config)
+APP_URL=http://ptv.local
+# Theme detected from APP_URL → ptv → Sixteen (or override via config)
 ```
 
 **Via Config:**
 ```php
 // laravel/config/local/fixcity/xra.php
+// laravel/config/local/ptv/xra.php
 'pub_theme' => 'Sixteen',  // or 'TwentyOne'
 ```
 

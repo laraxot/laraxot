@@ -10,8 +10,9 @@ use GuzzleHttp\Exception\ClientException;
 use Illuminate\Support\Facades\Log;
 use Modules\Notify\Contracts\WhatsAppProviderActionInterface;
 use Modules\Notify\Datas\WhatsAppData;
-use function Safe\json_decode;
 use Spatie\QueueableAction\QueueableAction;
+
+use function Safe\json_decode;
 
 final class SendVonageWhatsAppAction implements WhatsAppProviderActionInterface
 {
@@ -63,7 +64,6 @@ final class SendVonageWhatsAppAction implements WhatsAppProviderActionInterface
      * Execute the action.
      *
      * @param  WhatsAppData  $whatsAppData  I dati del messaggio WhatsApp
-     *
      * @return array<string, mixed> Risultato dell'operazione
      *
      * @throws Exception In caso di errore durante l'invio
@@ -76,26 +76,19 @@ final class SendVonageWhatsAppAction implements WhatsAppProviderActionInterface
             'timeout' => $this->timeout,
             'headers' => [
                 'Content-Type' => 'application/json',
-                'Accept' => 'application/json',
-            ],
-        ]);
+                'Accept' => 'application/json']]);
 
         $payload = [
             'from' => [
                 'type' => 'whatsapp',
-                'number' => $from,
-            ],
+                'number' => $from],
             'to' => [
                 'type' => 'whatsapp',
-                'number' => $whatsAppData->recipient,
-            ],
+                'number' => $whatsAppData->recipient],
             'message' => [
                 'content' => [
                     'type' => 'text',
-                    'text' => $whatsAppData->body,
-                ],
-            ],
-        ];
+                    'text' => $whatsAppData->body]]];
 
         // Gestione diversi tipi di messaggi
         if ($whatsAppData->type === 'media' && ! empty($whatsAppData->media)) {
@@ -107,21 +100,17 @@ final class SendVonageWhatsAppAction implements WhatsAppProviderActionInterface
                 'type' => $mediaType,
                 $mediaType => [
                     'url' => $mediaUrl,
-                    'caption' => $whatsAppData->body,
-                ],
-            ];
+                    'caption' => $whatsAppData->body]];
         } elseif ($whatsAppData->type === 'template' && ! empty($whatsAppData->template)) {
             $payload['message']['content'] = [
                 'type' => 'template',
-                'template' => $whatsAppData->template,
-            ];
+                'template' => $whatsAppData->template];
         }
 
         try {
             $response = $client->post($this->baseUrl, [
                 'json' => $payload,
-                'auth' => [$this->apiKey, $this->apiSecret],
-            ]);
+                'auth' => [$this->apiKey, $this->apiSecret]]);
 
             $statusCode = $response->getStatusCode();
             $responseContent = $response->getBody()->getContents();
@@ -136,8 +125,7 @@ final class SendVonageWhatsAppAction implements WhatsAppProviderActionInterface
 
             Log::debug('WhatsApp Vonage inviato con successo', [
                 'to' => $whatsAppData->recipient,
-                'response_code' => $statusCode,
-            ]);
+                'response_code' => $statusCode]);
 
             return [
                 'success' => $statusCode >= 200 && $statusCode < 300,
@@ -145,8 +133,7 @@ final class SendVonageWhatsAppAction implements WhatsAppProviderActionInterface
                     ? $responseData['message_uuid']
                     : null,
                 'response' => $responseData,
-                'vars' => $this->vars,
-            ];
+                'vars' => $this->vars];
         } catch (ClientException $e) {
             $response = $e->getResponse();
             $statusCode = $response->getStatusCode();
@@ -162,8 +149,7 @@ final class SendVonageWhatsAppAction implements WhatsAppProviderActionInterface
             Log::warning('Errore invio WhatsApp Vonage', [
                 'to' => $whatsAppData->recipient,
                 'status' => $statusCode,
-                'response' => $responseBody,
-            ]);
+                'response' => $responseBody]);
 
             return [
                 'success' => false,
@@ -171,8 +157,7 @@ final class SendVonageWhatsAppAction implements WhatsAppProviderActionInterface
                     ? $responseBody['title']
                     : 'Errore sconosciuto',
                 'status_code' => $statusCode,
-                'vars' => $this->vars,
-            ];
+                'vars' => $this->vars];
         }
     }
 
@@ -180,7 +165,6 @@ final class SendVonageWhatsAppAction implements WhatsAppProviderActionInterface
      * Determina il tipo di media basato sull'URL o sull'estensione del file.
      *
      * @param  string  $url  URL del media
-     *
      * @return string Tipo di media (image, video, audio, file)
      */
     private function determineMediaType(string $url): string

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Perimetro di coverage del modulo Lang (ARCHITECTURE-SPINE AD-7).
+
+    L'attributo bootstrap è relativo a QUESTO file, non alla cwd: da "laravel/" il percorso
+    corretto è "../../vendor/autoload.php". Con "vendor/autoload.php" la config non è
+    eseguibile e la misura non parte affatto.
+
+    Invocazione canonica (AD-25): servono entrambe le opzioni, hanno ruoli diversi.
+
+        ./vendor/bin/pest \
+            (opzione "test-directory") Modules/Lang/tests \
+            (opzione "c")              Modules/Lang/phpunit.xml
+
+    "c" sposta il perimetro di coverage, "test-directory" quello di bootstrap
+    (Pest.php, Helpers.php). Senza la seconda, gli helper del modulo non vengono mai
+    caricati e i test falliscono con "undefined function".
+
+    Nota: in un commento XML la doppia lineetta è vietata, per questo qui le opzioni
+    sono scritte per nome invece che nella forma da riga di comando.
+-->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.3/phpunit.xsd"
+         bootstrap="../../vendor/autoload.php"
+         colors="true"
+>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+    </php>
+    <testsuites>
+        <testsuite name="Test Suite">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory suffix=".php">./app</directory>
+        </include>
+    </source>
+</phpunit>

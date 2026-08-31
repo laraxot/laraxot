@@ -20,6 +20,7 @@ related:
 # BMad Tasks Index
 
 **Source**: [`../../../../AGENTS.md`](../../../../../../../../../../AGENTS.md) (lines 905-5349)  
+**Source**: [`../../../../agents.md`](../../../../../../../../../../agents.md) (lines 905-5349)  
 **Total Tasks**: 22  
 **Total Lines**: ~4445  
 **Last Updated**: 2026-04-11  
@@ -82,14 +83,14 @@ related:
 ## Cross-References
 
 ### Related Documentation
-- ← [BMad Agents Index](../../agents/INDEX.md) — 10 agent definitions
-- ← [CLAUDE Index](../claude/INDEX.md) — Laravel Boost guidelines
-- ← [GEMINI Index](../gemini/INDEX.md) — Gemini-specific rules
-- ← [Main AI Docs Index](../INDEX.md) — Master index
+- ← [BMad Agents Index](../../agents/index.md) — 10 agent definitions
+- ← [CLAUDE Index](../claude/index.md) — Laravel Boost guidelines
+- ← [GEMINI Index](../gemini/index.md) — Gemini-specific rules
+- ← [Main AI Docs Index](../index.md) — Master index
 
 ### Bidirectional Links
-- ← Back to [Main AI Docs Index](../INDEX.md)
-- ← Back to [../../../../AGENTS.md](../../../../../../../../../../AGENTS.md) (original source)
+- ← Back to [Main AI Docs Index](../index.md)
+- ← Back to [../../../../agents.md](../../../../../../../../../../agents.md) (original source)
 - ← Back to [Project Docs](../../../docs/README.md)
 
 ---
@@ -102,6 +103,7 @@ Tasks are referenced by name when executing workflows:
 - "Apply qa-gate to story 2.1"
 
 For full task definitions, see the original [`../../../../AGENTS.md`](../../../../../../../../../../AGENTS.md).
+For full task definitions, see the original [`../../../../agents.md`](../../../../../../../../../../agents.md).
 
 ---
 

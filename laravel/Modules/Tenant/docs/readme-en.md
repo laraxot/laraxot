@@ -19,7 +19,7 @@ related:
 [![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
 [![Strict Types](https://img.shields.io/badge/PHP-strict__types-1-informational.svg)](#)
 [![Laraxot Modules](https://img.shields.io/badge/Architecture-Modular-purple.svg)](#)
-[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)](#)
+[![Current Platform](https://img.shields.io/badge/Platform-progetto corrente-008758.svg)](#)
 
 > **One codebase, many municipalities.** Data isolation, teams, per-tenant config — PA-ready SaaS.
 
@@ -27,7 +27,7 @@ related:
 
 ## Why it exists
 
-FixCity scales across entities without forking code.
+progetto corrente scales across entities without forking code.
 
 ## Superpowers
 
@@ -64,4 +64,4 @@ Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filamen
 
 ---
 
-**Module** `tenant` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+**Module** `tenant` · **Laraxot** · **Current Platform** · PHPStan 10 · Filament 5

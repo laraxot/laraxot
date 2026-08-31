@@ -2,7 +2,7 @@
 title: "Tenant Module - Sprint Planning"
 module: "Tenant"
 type: concept
-tags: [sprint, planning]
+tags: [SPRINT, PLANNING]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "sprint planning"

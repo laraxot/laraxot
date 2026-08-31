@@ -1,3 +1,12 @@
+---
+title: "Documentation Improvement Plan - Multi-Agent Edition"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Documentation Improvement Plan - Multi-Agent Edition
 
 > **Status**: 🟡 IN PROGRESS  

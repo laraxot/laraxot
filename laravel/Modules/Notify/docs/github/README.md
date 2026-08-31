@@ -1,11 +1,13 @@
 ---
 title: "GitHub Issues & Discussions - FixCity Platform"
+title: "GitHub Issues & Discussions - Notify Platform"
 type: index
 tags: [notify, docs, github]
 module: Notify
 created: 2026-07-20
 updated: 2026-07-20
 qmd: "notify documentazione github readme github issues & discussions - fixcity platform index readme frontmatter qmd search"
+qmd: "notify documentazione github readme github issues & discussions - laraxot platform index readme frontmatter qmd search"
 issues:
   - "https://github.com/laraxot/module_notify_fila5/issues/56"
 discussions:
@@ -27,6 +29,7 @@ related:
 ## 📋 Overview
 
 Questo documento traccia tutte le GitHub Issues e Discussions create per il progetto FixCity.
+Questo documento traccia tutte le GitHub Issues e Discussions create per il progetto Notify.
 
 ---
 
@@ -35,6 +38,7 @@ Questo documento traccia tutte le GitHub Issues e Discussions create per il prog
 ### Issue #5: 📁 Fix Database Directory Naming Convention
 
 **URL**: https://github.com/laraxot/base_fixcity_fila5/issues/5  
+**URL**: https://github.com/laraxot/platform/issues/5  
 **Created**: 2026-03-13  
 **Author**: @marco76tv  
 **Labels**: `documentation`, `good first issue`  
@@ -58,6 +62,7 @@ Alcuni file di documentazione facevano riferimento a directory del database con 
 - [ ] Cms
 - [ ] Comment
 - [ ] Fixcity
+- [ ] App
 - [ ] Gdpr
 - [ ] Geo
 - [ ] Job
@@ -74,6 +79,7 @@ Alcuni file di documentazione facevano riferimento a directory del database con 
 #### References
 - [Database Naming Convention](conventions/database-naming.md)
 - [AGENTS.md](../../AGENTS.md)
+- [agents.md](../../agents.md)
 
 ---
 
@@ -82,6 +88,7 @@ Alcuni file di documentazione facevano riferimento a directory del database con 
 ### Discussion #1: 📁 Database Directory Naming Best Practices
 
 **URL**: https://github.com/laraxot/base_fixcity_fila5/discussions/1  
+**URL**: https://github.com/laraxot/platform/discussions/1  
 **Created**: 2026-03-13  
 **Author**: @marco76tv  
 **Category**: General  
@@ -185,6 +192,7 @@ Discussion per standardizzare la convention delle directory del database in tutt
 - `module:blog` - Blog module
 - `module:cms` - Cms module
 - `module:fixcity` - Fixcity module
+- `module:laraxot` - App module
 - `module:user` - User module
 - `module:xot` - Xot module
 - [Add more as needed]
@@ -268,3 +276,4 @@ For questions about GitHub usage:
 
 **Maintainer**: @marco76tv  
 **Contact**: dev @fixcity.example.com
+**Contact**: dev @laraxot.example.com

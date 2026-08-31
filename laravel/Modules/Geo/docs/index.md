@@ -1,3 +1,18 @@
+---
+title: "Geo — indice della documentazione"
+description: "Documentazione del modulo Geo: dati geografici e mappe."
+module: Geo
+tags: [geo, documentazione, modulo, laraxot]
+status: active
+repository: https://github.com/laraxot/module_geo_fila5
+related:
+  - ./00-index.md
+  - ./index.md
+  - ../../../../docs/wiki/audits/docs-redundancy-audit.md
+issues: https://github.com/laraxot/module_geo_fila5/issues
+discussions: https://github.com/laraxot/module_geo_fila5/discussions
+---
+
 # PTVX - Documentazione Completa
 
 > Sistema Modulare per la Gestione della Pubblica Amministrazione
@@ -90,27 +105,7 @@
 - **[Code Quality](./best-practices/code-quality.md)** - Qualità del codice
 - **[Testing Guidelines](./testing/guidelines.md)** - Linee guida testing
 
-<<<<<<< HEAD
 ## 📊 Performance
-=======
-## 🗺️ Geo Filament Components
-
-### Filosofia e Regole
-- [**Filament Geo Pickers Philosophy**](filament-geo-pickers-philosophy.md) - Filosofia, visione e regole per i componenti Geo picker
-- [**Map Picker Prompt**](/prompts/map-picker.txt) - Prompt per implementazione MapPicker
-
-### Pickers Components
-- CoordinatePicker - Il maestro Zen
-- MapPicker / LocationPicker - Alias backward-compatible
-- LatitudeLongitudeInput - Le viscere grezze
-- PlacePicker - La guida al specifico
-- MapPositioner - Il righello di prospettiva
-- MapLocationInput - Input nascosto sincronizzato
-- LeafletMarkerMapInput - L'amarker con memoria
-- GeopointPicker - Il punto geografico puro
-
-## 📋 Convenzioni e Standard
->>>>>>> 74bf6abe2 (.)
 
 ### Ottimizzazione
 - **[Performance Optimization](./performance-optimization.md)** - Ottimizzazione generale
@@ -203,28 +198,6 @@
 
 ---
 
-<<<<<<< HEAD
-## 🔍 Cerca nella Documentazione
-
-Usa Ctrl/Cmd + F per cercare in questa pagina, oppure:
-- [Cerca nei moduli](../laravel/Modules/)
-- [Cerca nelle regole AI](../.cursor/rules/)
-- [Cerca negli script](../bashscripts/)
-
-## 📧 Supporto
-
-- **Email**: marco.sottana@gmail.com
-- **Issues**: [GitHub Issues](link-issues)
-- **Discussions**: [GitHub Discussions](link-discussions)
-
----
-
-**Ultima Revisione**: 2025-01-29  
-**Versione Documentazione**: 1.0.0  
-**Responsabile Documentazione**: AI Assistant
-
-=======
 **Versione**: 3.0
 **Autore**: AI Assistant
 **Stato**: Consolidata e Aggiornata
->>>>>>> 74bf6abe2 (.)

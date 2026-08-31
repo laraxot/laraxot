@@ -26,8 +26,7 @@ class SendPushWithTargetingAction
         if ($tokens === []) {
             return [
                 'success' => false,
-                'message' => 'No tokens found matching criteria',
-            ];
+                'message' => 'No tokens found matching criteria'];
         }
 
         return app(SendPushToDevicesAction::class)->execute($tokens, $notification, $data);

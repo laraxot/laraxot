@@ -13,6 +13,6 @@ final class HasUserTestCaseFixture
 
     public function __construct()
     {
-        $this->user = new User();
+        TestCase::$user = new User();
     }
 }

@@ -50,6 +50,7 @@ it('creates user successfully', function () {
 
 **Di ritorno:**
 - → [AGENTS.md - Testing Patterns](../../AGENTS.md#testing-patterns)
+- → [agents.md - Testing Patterns](../../agents.md#testing-patterns)
 - → [AGENT_MEMORY.md - Testing Patterns](../../AGENT_MEMORY.md#-testing-validation-patterns)
 - → [commands.md](commands.md)
 - → [INDEX](index.md)

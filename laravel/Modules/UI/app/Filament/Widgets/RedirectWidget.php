@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\UI\Filament\Widgets;
 
+use Filament\Schemas\Components\Component;
 use Modules\Xot\Filament\Widgets\XotBaseSchemaWidget;
 
 /**
@@ -63,7 +64,7 @@ final class RedirectWidget extends XotBaseSchemaWidget
      * Implementazione richiesta da XotBaseWidget.
      * Per questo widget non abbiamo form, quindi restituiamo array vuoto.
      *
-     * @return array<string, mixed>
+     * @return array<string, Component>
      */
     public function getFormSchema(): array
     {

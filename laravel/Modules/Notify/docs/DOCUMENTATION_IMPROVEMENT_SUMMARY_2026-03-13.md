@@ -16,6 +16,7 @@ Successfully implemented a comprehensive documentation governance framework and 
 ✅ **Documentation governance framework** created  
 ✅ **Master documentation index** established  
 ✅ **Rules and standards** updated (AGENTS.md, .windsurfrules)  
+✅ **Rules and standards** updated (agents.md, .windsurfrules)  
 ✅ **Documentation management skill** created  
 ✅ **4 global memories** saved  
 ✅ **3 GitHub issues** created for tracking  
@@ -68,6 +69,7 @@ Successfully implemented a comprehensive documentation governance framework and 
 ### Rules Updates
 
 5. **[AGENTS.md](AGENTS.md)** - Updated
+5. **[agents.md](AGENTS.md)** - Updated
    - Added documentation governance section
    - No temporal strings rule
    - File naming conventions
@@ -173,12 +175,14 @@ Saved **4 global memories** for AI assistants:
 
 ### Issue #6: Documentation Governance Framework Implementation
 - **URL**: https://github.com/laraxot/base_fixcity_fila5/issues/6
+- **URL**: https://github.com/laraxot/base_ptv_fila5/issues/6
 - **Status**: Open
 - **Focus**: Track governance framework rollout
 - **Next Steps**: Duplicate consolidation, link audit, automation
 
 ### Issue #7: Xot Module Documentation Audit
 - **URL**: https://github.com/laraxot/base_fixcity_fila5/issues/7
+- **URL**: https://github.com/laraxot/base_ptv_fila5/issues/7
 - **Status**: Open
 - **Focus**: Reduce Xot docs from 3,256 → 1,500 files
 - **Timeline**: 2-3 weeks
@@ -186,6 +190,7 @@ Saved **4 global memories** for AI assistants:
 
 ### Related Issue #4: Database Directory Naming
 - **URL**: https://github.com/laraxot/base_fixcity_fila5/issues/4
+- **URL**: https://github.com/laraxot/base_ptv_fila5/issues/4
 - **Status**: Completed ✅
 - **Focus**: Fixed Factories→factories, etc.
 
@@ -292,6 +297,7 @@ grep -r "Last Updated" laravel/Modules/*/docs/ --include="*.md" | wc -l
 
 ### Rules
 - [AGENTS.md](AGENTS.md) - Full standards
+- [agents.md](AGENTS.md) - Full standards
 - [.windsurfrules](.windsurfrules) - IDE rules
 
 ### Skills

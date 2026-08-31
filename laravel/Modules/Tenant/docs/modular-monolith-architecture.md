@@ -195,8 +195,8 @@ sequenceDiagram
 ## Related Documentation
 
 - [Module Structure](structure.md)
-- [Event System](../xot/docs/event_system.md)
-- [Testing Strategy](../testing/readme.md)
+- [Event System](../Xot/docs/event_system.md)
+- [Testing Strategy](../testing/README.md)
 - [API Documentation](../api.md)
 
 ## References

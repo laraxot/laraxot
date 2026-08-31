@@ -134,6 +134,7 @@ laravel/Themes/Sixteen/
 │   │   └── replikate.txt              ← PROTOCOL
 │   └── design-comuni/
 │       ├── 00-INDEX.md                ← HUB
+│       ├── 00-index.md                ← HUB
 │       ├── pages/
 │       │   └── homepage-structure-diff.md
 │       └── screenshots/
@@ -147,6 +148,7 @@ laravel/Themes/Sixteen/
 │
 └── config/
     └── local/fixcity/database/content/
+    └── local/laraxot/database/content/
         └── pages/tests.homepage.json
 
 bashscripts/design-analysis/
@@ -246,6 +248,7 @@ Next AI agent can immediately:
 - **Protocol**: `laravel/Themes/Sixteen/docs/prompts/replikate.txt`
 - **Analysis**: `laravel/Themes/Sixteen/docs/design-comuni/pages/homepage-structure-diff.md`
 - **Navigation**: `laravel/Themes/Sixteen/docs/design-comuni/00-INDEX.md`
+- **Navigation**: `laravel/Themes/Sixteen/docs/design-comuni/00-index.md`
 - **Automation**: `bashscripts/design-analysis/replikate-workflow.sh`
 
 ---

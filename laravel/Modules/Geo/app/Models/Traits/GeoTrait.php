@@ -14,8 +14,8 @@ use Modules\Geo\Datas\GeoData;
 /**
  * Modules\Geo\Models\Traits\GeoTrait.
  *
- * @property float  $latitude
- * @property float  $longitude
+ * @property float $latitude
+ * @property float $longitude
  * @property string $country.
  * @property string $country.
  * @property string $administrative_area_level_2.
@@ -65,7 +65,7 @@ trait GeoTrait
             '',
         );
 
-        return null !== $distance ? (float) $distance : null;
+        return $distance !== null ? (float) $distance : null;
     }
 
     public function distanceCustomField(
@@ -75,15 +75,24 @@ trait GeoTrait
         ?float $lng = null,
         ?string $unit = '',
     ): ?float {
+        $latFieldValue = $this->{$lat_field};
+        $lngFieldValue = $this->{$lng_field};
+        $latFromField = is_float($latFieldValue) || is_int($latFieldValue)
+            ? (float) $latFieldValue
+            : (is_string($latFieldValue) && is_numeric($latFieldValue) ? (float) $latFieldValue : 0.0);
+        $lngFromField = is_float($lngFieldValue) || is_int($lngFieldValue)
+            ? (float) $lngFieldValue
+            : (is_string($lngFieldValue) && is_numeric($lngFieldValue) ? (float) $lngFieldValue : 0.0);
+
         $distance = app(CalculateGeoDistanceAction::class)->execute(
-            (float) $this->{$lat_field},
-            (float) $this->{$lng_field},
+            $latFromField,
+            $lngFromField,
             $lat,
             $lng,
             $unit,
         );
 
-        return null !== $distance ? (float) $distance : null;
+        return $distance !== null ? (float) $distance : null;
     }
 
     // ---- Scopes ----
@@ -150,7 +159,7 @@ trait GeoTrait
 
     public function getAddress(): string
     {
-        if ('' === $this->country) {
+        if ($this->country === '') {
             $this->country = 'Italia';
         }
 
@@ -174,7 +183,7 @@ trait GeoTrait
             return (float) $value;
         }
         $address = $this->address;
-        if (null === $address) {
+        if ($address === null) {
             return null;
         }
         if (is_string($address) && isJson($address)) {
@@ -182,7 +191,7 @@ trait GeoTrait
             $latlng = $geo->latlng;
             $lat = is_float($latlng['lat'] ?? null) || is_int($latlng['lat'] ?? null) ? (float) ($latlng['lat']) : null;
             $lng = is_float($latlng['lng'] ?? null) || is_int($latlng['lng'] ?? null) ? (float) ($latlng['lng']) : null;
-            if (null !== $lat && null !== $lng) {
+            if ($lat !== null && $lng !== null) {
                 $this->update([
                     'latitude' => $lat,
                     'longitude' => $lng,
@@ -242,7 +251,8 @@ trait GeoTrait
                 $this->attributes['full_address'] = ',,';
             }
 
-            $fullAddress = (string) ($this->attributes['full_address'] ?? '');
+            $rawFullAddress = $this->attributes['full_address'] ?? '';
+            $fullAddress = is_string($rawFullAddress) ? $rawFullAddress : '';
             if (strlen($fullAddress) < 10) {
                 $tmp = [];
                 $tmp[] = $geo->route ?? '';
@@ -263,8 +273,7 @@ trait GeoTrait
     }
 
     /**
-     * @param mixed $value
-     *
+     * @param  mixed  $value
      * @return bool|mixed|string
      */
     /*
@@ -298,7 +307,7 @@ trait GeoTrait
      */
     public function getFullAddressAttribute(?string $value): ?string
     {
-        if (null === $this->address) {
+        if ($this->address === null) {
             return null;
         }
         if (is_string($this->address) && isJson($this->address)) {

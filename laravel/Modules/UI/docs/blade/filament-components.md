@@ -7,6 +7,8 @@ updated: 2026-07-14
 qmd: "filament-components utilizzo dei componenti blade di filament"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+issues: ["https://github.com/provtv/<nome repository>/issues/124"]
+discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
   - "./component-registration.md"
 ---
@@ -18,6 +20,11 @@ related:
 **Se esiste una soluzione Filament, usare sempre quella.** Canon progetto: [filament-first-rule.md](../../../../../docs/wiki/rules/filament-first-rule.md) (Rule 019). Memoria agenti: [filament-first-mandatory-agents.md](../../../../../docs/wiki/memories/filament-first-mandatory-agents.md).
 
 Wiki modulo: [filament-first-blade-canonical.md](../wiki/concepts/filament-first-blade-canonical.md).
+# Utilizzo dei componenti Blade di Filament
+
+## Regola fondamentale
+
+Nel progetto <nome progetto>, esiste una regola fondamentale: **utilizzare sempre i componenti Blade forniti da Filament quando disponibili**, invece di creare componenti personalizzati duplicati.
 
 ## Vantaggi dei componenti Filament
 
@@ -55,7 +62,9 @@ Frontoffice senza Livewire dedicato — pattern [Alpine](https://filamentphp.com
 </x-filament::tabs>
 ```
 
-Caso Fixcity `/it`: [STORY-065](../../../../../docs/stories/STORY-065-it-segnalazioni-filament-tabs.md).
+| Tabs | `<x-filament::tabs>` | Tab personalizzati |
+Caso <nome progetto> `/it`: [STORY-065](../../../../../docs/stories/STORY-065-it-segnalazioni-filament-tabs.md).
+Caso progetto corrente `/it`: [STORY-065](../../../../../docs/stories/STORY-065-it-segnalazioni-filament-tabs.md).
 
 ## Esempi di utilizzo
 
@@ -134,3 +143,13 @@ Per migrare da componenti personalizzati a componenti Filament:
 ## Moduli correlati
 
 - [User](../../user/docs/blade/using-filament-components.md) - Implementazione dei componenti profilo con Filament
+- [Documentazione ufficiale Filament Blade Components](https://filamentphp.com/docs/3.x/support/blade-components)
+- [Dropdown](https://filamentphp.com/docs/3.x/support/blade-components/dropdown)
+- [Button](https://filamentphp.com/docs/3.x/support/blade-components/button)
+- [Card](https://filamentphp.com/docs/3.x/support/blade-components/card)
+- [Icon](https://filamentphp.com/docs/3.x/support/blade-components/icon)
+- [Modal](https://filamentphp.com/docs/3.x/support/blade-components/modal)
+
+## Moduli correlati
+
+- [User](../../User/docs/blade/using-filament-components.md) - Implementazione dei componenti profilo con Filament

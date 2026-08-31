@@ -217,7 +217,7 @@ Il modulo Notify è il sistema di gestione notifiche e comunicazioni riutilizzab
 
 ### File da Aggiornare
 - [ ] README.md - Aggiungere sezione testing
-- [ ] CHANGELOG.md - Aggiornare con test
+- [ ] changelog.md - Aggiornare con test
 - [ ] notification-system-guide.md - Guida sistema notifiche
 
 ### Nuovi File da Creare

@@ -454,3 +454,5 @@ final class NotifyPanelProvider extends PanelProvider
             ]);
     }
 }
+
+```

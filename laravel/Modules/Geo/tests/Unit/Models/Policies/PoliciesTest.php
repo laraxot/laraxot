@@ -10,10 +10,8 @@ use Modules\Geo\Models\Policies\LocalityPolicy;
 use Modules\Geo\Models\Policies\PlacePolicy;
 use Modules\Geo\Models\Policies\PlaceTypePolicy;
 use Modules\Geo\Models\Policies\StatePolicy;
-use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Geo\Tests\TestCase::class);
 test('StatePolicy can be instantiated', function () {
     $policy = new StatePolicy();
 

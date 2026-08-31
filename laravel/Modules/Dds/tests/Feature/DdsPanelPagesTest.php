@@ -20,7 +20,8 @@ it('opens every page of the panel', function (string $path): void {
     $user = UserFactory::new()->createOne();
     $user->syncRoles(['dds_admin']);
 
-    actingAs($user)->get($path)->assertOk();
+    actingAs($user);
+    get($path)->assertOk();
 })->with([
     '/dds',
     '/dds/crm-import',

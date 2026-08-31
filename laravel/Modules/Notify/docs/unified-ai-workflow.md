@@ -547,6 +547,7 @@ ls -la .planning/
 /gsd-help
 
 # Review AGENTS.md for GSD commands
+# Review agents.md for GSD commands
 ```
 
 ### Ralph Loop Issues
@@ -570,6 +571,7 @@ cat .ralph/iteration-log.md
 - [BMAD-GSD-Ralph Integration](./bmad-gsd-ralph-integration.md)
 - [BMAD Workflow](laravel/Modules/Xot/docs/bmad-workflow-guide.md)
 - [AGENTS.md](../AGENTS.md)
+- [agents.md](../agents.md)
 
 ### Scripts
 - OpenViking Init: `bashscripts/ai/openviking-init.sh`

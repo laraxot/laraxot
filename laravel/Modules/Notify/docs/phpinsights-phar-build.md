@@ -1,3 +1,12 @@
+---
+title: "Build PHPInsights .phar"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Build PHPInsights .phar
 
 Procedura per costruire il file `phpinsights.phar` usato come strumento qualità codice. PHPInsights non fornisce release phar ufficiali; si usa [humbug/box](https://github.com/humbug/box) per crearlo localmente.

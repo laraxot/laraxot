@@ -1,0 +1,9 @@
+# Cloudflare
+
+---
+module: theme
+topic: cloudflare
+canonical: ../../../Themes/docs/shared-components/cloudflare.md
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/cloudflare.md

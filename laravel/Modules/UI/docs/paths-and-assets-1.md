@@ -8,21 +8,16 @@
 >
 > **Soluzione:** Seguire SEMPRE la regola documentata qui sotto e aggiornata anche in README.md e nella root docs/links.md.
 
-# Gestione dei Percorsi e degli Asset
-
+# Gestione dei Percorsi e degli Asset 
 ## Collegamenti correlati
 - [README modulo UI](/laravel/Modules/UI/docs/README.md)
-- [Architettura Modulare](/laravel/Modules/UI/docs/ARCHITECTURE.md)
+- [Architettura Modulare](/laravel/Modules/UI/docs/architecture.md)
 - [Collegamenti Documentazione](/docs/collegamenti-documentazione.md)
-
 ## Percorsi Corretti per gli Asset
-
 ### Struttura delle Directory
-
 , è fondamentale rispettare la struttura corretta delle directory per gli asset pubblici:
-
 ```
-
+/var/www/html/saluteora/
 ├── laravel/                 # Applicazione Laravel (codice sorgente)
 │   ├── Modules/             # Moduli dell'applicazione
 │   ├── resources/           # Risorse non compilate
@@ -30,20 +25,16 @@
 └── public_html/             # Directory pubblica (web root)
     ├── images/              # Immagini pubbliche
     │   ├── avatars/         # Avatar utenti
-    │   └── ...
     ├── css/                 # File CSS compilati
     ├── js/                  # File JavaScript compilati
     └── ...
-```
-
 ### Percorsi Corretti vs Percorsi Errati
-
 | Tipo di Asset | ✅ Percorso Corretto | ❌ Percorso Errato |
 |---------------|---------------------|-------------------|
-| Immagini | `public_html/images/` | `public/images/` |
-| CSS | `public_html/css/` | `public/css/` |
-| JavaScript | `public_html/js/` | `public/js/` |
-| SVG | `public_html/images/` | `public/images/` |
+| Immagini | `/var/www/html/saluteora/public_html/images/` | `/var/www/html/saluteora/laravel/public/images/` |
+| CSS | `/var/www/html/saluteora/public_html/css/` | `/var/www/html/saluteora/laravel/public/css/` |
+| JavaScript | `/var/www/html/saluteora/public_html/js/` | `/var/www/html/saluteora/laravel/public/js/` |
+| SVG | `/var/www/html/saluteora/public_html/images/` | `/var/www/html/saluteora/laravel/public/images/` |
 
 ## Utilizzo degli Asset nei Componenti Blade
 
@@ -60,7 +51,7 @@ Quando si fa riferimento agli asset nei componenti Blade, utilizzare sempre l'he
 Per garantire una buona esperienza utente, implementare sempre un fallback per le immagini che potrebbero non essere disponibili:
 
 ```php
-<img
+<img 
     src="{{ asset('images/avatars/default-' . $avatarNumber . '.svg') }}"
     alt="{{ $user->name ?? 'User' }}"
     onerror="this.src='{{ asset('images/default-avatar.svg') }}'"
@@ -74,15 +65,11 @@ Per garantire una buona esperienza utente, implementare sempre un fallback per l
 Gli SVG utilizzati come icone o componenti UI dovrebbero essere implementati come componenti Blade in:
 
 ```
-Themes/One/resources/views/components/ui/
+/var/www/html/saluteora/laravel/Themes/One/resources/views/components/ui/
 ```
-
 ### SVG come Asset Pubblici
-
 Gli SVG utilizzati come immagini (avatar, loghi, ecc.) dovrebbero essere posizionati in:
-
-```
-public_html/images/
+/var/www/html/saluteora/public_html/images/
 ```
 
 ## Gestione dei Componenti UI
@@ -92,13 +79,10 @@ public_html/images/
 Il componente avatar è implementato in:
 
 ```
-Themes/One/resources/views/components/ui/avatar.blade.php
+/var/www/html/saluteora/laravel/Themes/One/resources/views/components/ui/avatar.blade.php
 ```
-
 E utilizza gli avatar SVG dalla directory pubblica:
-
-```
-public_html/images/avatars/
+/var/www/html/saluteora/public_html/images/avatars/
 ```
 
 ### Componente Icon
@@ -106,16 +90,13 @@ public_html/images/avatars/
 Il componente icon è implementato in:
 
 ```
-Themes/One/resources/views/components/ui/icon.blade.php
+/var/www/html/saluteora/laravel/Themes/One/resources/views/components/ui/icon.blade.php
 ```
-
 E include le definizioni SVG direttamente nel componente.
-
 ## Regola sui Componenti Blade UI
-
 > **IMPORTANTE:** Tutti i componenti Blade UI condivisi (es. logo, button, badge, ecc.) devono essere posizionati esclusivamente in:
 >
-> `Modules/UI/resources/views/components/ui/`
+> `/var/www/html/ptvx/laravel/Modules/UI/resources/views/components/ui/`
 >
 > **MAI** in `resources/views/components/ui/` della root Laravel.
 
@@ -129,25 +110,19 @@ E include le definizioni SVG direttamente nel componente.
 
 **❌ Errato:**
 ```
-resources/views/components/ui/logo.blade.php
+/var/www/html/ptvx/laravel/resources/views/components/ui/logo.blade.php
 ```
 **✅ Corretto:**
-```
-Modules/UI/resources/views/components/ui/logo.blade.php
-```
-
+/var/www/html/ptvx/laravel/Modules/UI/resources/views/components/ui/logo.blade.php
 ## Best Practices
-
 1. **MAI utilizzare percorsi assoluti hardcoded** nei componenti Blade
 2. **SEMPRE utilizzare l'helper `asset()`** per riferirsi agli asset pubblici
 3. **Implementare fallback** per le immagini che potrebbero non essere disponibili
 4. **Verificare l'esistenza delle directory** prima di salvare nuovi asset
 5. **Seguire le convenzioni di naming** per mantenere la coerenza
 6. **Documentare i percorsi corretti** per evitare confusione
-
 ## Errori Comuni
-
-1. **Utilizzo del percorso Laravel public**: Utilizzare `public/` invece di `public_html/`
+1. **Utilizzo del percorso Laravel public**: Utilizzare `/var/www/html/saluteora/laravel/public/` invece di `/var/www/html/saluteora/public_html/`
 2. **Riferimenti diretti ai file**: Utilizzare percorsi assoluti invece dell'helper `asset()`
 3. **Mancanza di fallback**: Non fornire alternative quando un'immagine non è disponibile
 4. **Inconsistenza nei nomi dei file**: Utilizzare convenzioni di naming diverse per file simili

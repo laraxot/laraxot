@@ -7,12 +7,9 @@ namespace Modules\Geo\Tests\Unit\Models;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 use Modules\Geo\Models\Comune;
-use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
-
-uses(\Modules\Geo\Tests\TestCase::class);
 
 beforeEach(function (): void {
     $comuneFixtureRows = [

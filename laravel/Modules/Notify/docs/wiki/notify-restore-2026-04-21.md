@@ -21,6 +21,7 @@ Inoltre `laravel/Modules/Notify/composer.json` descriveva erroneamente un modulo
   - `Modules\\Notify\\Database\\Factories\\` -> `database/factories/`
   - `Modules\\Notify\\Database\\Seeders\\` -> `database/seeders/`
 - Non restano riferimenti `fixcity/user-module` o `Modules\\User\\` nel composer del modulo.
+- Non restano riferimenti `laraxot/user-module` o `Modules\\User\\` nel composer del modulo.
 
 ## Nota
 

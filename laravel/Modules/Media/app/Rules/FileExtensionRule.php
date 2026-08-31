@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Media\Rules;
 
-use Illuminate\Contracts\Validation\Rule;
+use Closure;
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Http\UploadedFile;
 
 use function in_array;
 
-class FileExtensionRule implements Rule
+class FileExtensionRule implements ValidationRule
 {
     /** @var list<string> */
     protected array $validExtensions = [];
@@ -28,26 +29,36 @@ class FileExtensionRule implements Rule
         ));
     }
 
-    /**
-     * @param  string  $attribute  The attribute being validated (not used in this rule)
-     * @param  mixed  $value  The uploaded file to validate
-     */
-    public function passes($attribute, $value): bool
+    public function validate(string $_attribute, mixed $value, Closure $fail): void
     {
         if (! $value instanceof UploadedFile) {
-            return false;
+            $fail($this->message());
+
+            return;
         }
 
-        return in_array(mb_strtolower($value->getClientOriginalExtension()), $this->validExtensions, strict: false);
+        if (! in_array(mb_strtolower($value->getClientOriginalExtension()), $this->validExtensions, strict: false)) {
+            $fail($this->message());
+        }
     }
 
-    /**
-     * @return array<int|string, mixed>|string
-     */
-    public function message(): array|string
+    public function message(): string
     {
-        return trans('media::validation.mime', [
+        $message = trans('media::validation.mime', [
             'mimes' => implode(', ', $this->validExtensions),
         ]);
+
+        if (is_string($message)) {
+            return $message;
+        }
+
+        $parts = [];
+        foreach ($message as $part) {
+            if (is_string($part)) {
+                $parts[] = $part;
+            }
+        }
+
+        return implode(' ', $parts);
     }
 }

@@ -146,6 +146,7 @@ laravel/Themes/Sixteen/docs/pages/<page-name>/
 ```
 laravel/Themes/Sixteen/docs/
 ├── INDEX.md                                    # Main index
+├── index.md                                    # Main index
 ├── COMPLETE-VISUAL-PARITY-REPORT.md          # All 54 pages
 ├── PRIORITY-MATRIX.json                       # Workload planning
 ├── visual-parity-data.json                    # Machine-readable data
@@ -158,6 +159,7 @@ laravel/Themes/Sixteen/docs/
 ```
 bashscripts/docs/
 ├── INDEX.md                    # Tools overview
+├── index.md                    # Tools overview
 └── github-issues-batch.md      # GitHub CLI guide
 ```
 
@@ -265,6 +267,7 @@ npm run copy     # ~1 second
 ```bash
 # 1. Review the analysis
 cd /var/www/_bases/base_fixcity_fila5
+cd /var/www/_bases/base_ptvx_fila5
 cat laravel/Themes/Sixteen/docs/COMPLETE-VISUAL-PARITY-REPORT.md
 
 # 2. Create GitHub issues
@@ -348,12 +351,15 @@ cat laravel/Themes/Sixteen/docs/visual-parity-data.json
 - **Alpine.js**: https://alpinejs.dev/
 - **Internal Docs**: `laravel/Themes/Sixteen/docs/INDEX.md`
 - **Tools Guide**: `bashscripts/docs/INDEX.md`
+- **Internal Docs**: `laravel/Themes/Sixteen/docs/index.md`
+- **Tools Guide**: `bashscripts/docs/index.md`
 
 ---
 
 **Ready to start? Run this now:**
 ```bash
 cd /var/www/_bases/base_fixcity_fila5
+cd /var/www/_bases/base_ptvx_fila5
 node bashscripts/github/create-design-issues.mjs
 ```
 

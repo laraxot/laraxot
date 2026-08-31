@@ -31,7 +31,9 @@ class ConvertAction extends XotBaseAction
                     ->inline()
                     ->inlineLabel(false),
             ])
-            ->action(dddx(...));
+            ->action(static function (): void {
+                throw new \RuntimeException('Removed debug dddx');
+            });
 
         // ->requiresConfirmation()
     }

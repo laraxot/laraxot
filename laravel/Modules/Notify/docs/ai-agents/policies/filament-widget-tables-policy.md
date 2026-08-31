@@ -1,6 +1,7 @@
 # Filament Widget Tables Policy
 
 > Indice: [./00-INDEX.md](./00-INDEX.md)
+> Indice: [./00-index.md](./00-index.md)
 > Regola correlata: [../../rules/filament-widget-tables-rule.md](../../rules/filament-widget-tables-rule.md)
 > Skill correlata: [../../skills/filament-widget-tables-governance/SKILL.md](../../skills/filament-widget-tables-governance/SKILL.md)
 
@@ -12,6 +13,8 @@ Per qualunque elemento che sia una lista, una collezione di outcome o una vista 
 
 - outcomes di un mercato predict
 - liste di predicts, articles, events, profiles
+- outcomes di un mercato forecast
+- liste di forecasts, articles, events, profiles
 - viste operative che richiedono ricerca, ordinamento o filtri
 - tabelle front office e back office che devono restare coerenti
 

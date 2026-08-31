@@ -1,10 +1,12 @@
 ---
 title: "📊 Quality Dashboard - FixCity Project"
+title: "📊 Quality Dashboard - Notify Project"
 type: concept
 tags: [quality, dashboard]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "quality-dashboard 📊 quality dashboard - fixcity project"
+qmd: "quality-dashboard 📊 quality dashboard - laraxot project"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -19,6 +21,7 @@ related:
 ---
 
 # 📊 Quality Dashboard - FixCity Project
+# 📊 Quality Dashboard - Notify Project
 
 **Last Updated:** 2025-10-01 21:35  
 **Status:** 🟢 Excellent
@@ -67,6 +70,7 @@ Xot      ███████████████████████�
 Tenant   ████████████████████████████████████████ 88%
 User     ████████████████████████████████████████ 85%
 Fixcity  ████████████████████████████████████████ 82%
+App  ████████████████████████████████████████ 82%
 Blog     ████████████████████████████████████████ 80%
 Others   ████████████████████████████████████████ 85%
 ```
@@ -108,6 +112,7 @@ Others   ███████████████████████�
 |--------|-------|------------|-------|---------|
 | Tenant | 94% | 🟢 0 | 🟢 88% | 🟢 Pass |
 | Fixcity | 92% | 🟢 0 | 🟢 82% | 🟢 Pass |
+| App | 92% | 🟢 0 | 🟢 82% | 🟢 Pass |
 | UI | 91% | 🟢 0 | 🟢 85% | 🟢 Pass |
 | Cms | 90% | 🟢 0 | 🟢 80% | 🟢 Pass |
 
@@ -287,6 +292,9 @@ Overall Progress: ████████████████████�
 - **Quality Lead**: quality@fixcity.com
 - **Architecture**: architecture@fixcity.com
 - **Testing**: testing@fixcity.com
+- **Quality Lead**: quality@laraxot.com
+- **Architecture**: architecture@laraxot.com
+- **Testing**: testing@laraxot.com
 
 ---
 

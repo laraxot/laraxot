@@ -4,15 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\Media\Datas;
 
+use Modules\Media\Actions\SaveAttachmentsAction;
 use Spatie\LaravelData\Data;
 
 /**
- * Typed parameter bag for {@see \Modules\Media\Actions\SaveAttachmentsAction}.
+ * Typed parameter bag for {@see SaveAttachmentsAction}.
  */
 class SaveAttachmentsData extends Data
 {
     /**
-     * @param array<int, AttachmentToSaveData> $attachments
+     * @param  array<int, AttachmentToSaveData>  $attachments
      */
     public function __construct(
         public array $attachments,
@@ -23,8 +24,8 @@ class SaveAttachmentsData extends Data
      * Convenience factory for the legacy `list<string> $names` + keyed
      * `array<string,string|null> $paths` shape (e.g. Filament form state).
      *
-     * @param  list<string>                $names
-     * @param  array<string, string|null>   $paths
+     * @param  list<string>  $names
+     * @param  array<string, string|null>  $paths
      */
     public static function fromNamesAndPaths(array $names, array $paths, string $disk = 'attachments'): self
     {

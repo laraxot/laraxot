@@ -57,3 +57,4 @@ Per ogni azione SMS, verificare che:
 - [Struttura della Configurazione SMS](./sms_config_structure.md)
 - [Requisiti di Configurazione Netfun](./netfun_config_requirements.md)
 - [Pattern Factory per SMS](./sms_action_factory_analysis.md)
+- [Pattern Factory per SMS](./sms-action-factory-analysis.md)

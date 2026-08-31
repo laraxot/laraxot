@@ -44,7 +44,6 @@ class Pdf
         return AttachmentData::from([
             'path' => $file_path,
             'as' => $file_name,
-            'mime' => 'application/pdf',
-        ]);
+            'mime' => 'application/pdf']);
     }
 }

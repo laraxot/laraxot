@@ -60,11 +60,14 @@ namespace::context.collection.element.type
 ```blade
 ✅ __('predict::home.hero.cta_learn.label')
 ❌ __('predict::fields.key')  // Missing type!
+✅ __('forecast::home.hero.cta_learn.label')
+❌ __('forecast::fields.key')  // Missing type!
 ```
 
 ### Eccezione
 
 `predict::messages.*` - valore diretto, NO `.label`
+`forecast::messages.*` - valore diretto, NO `.label`
 
 ---
 

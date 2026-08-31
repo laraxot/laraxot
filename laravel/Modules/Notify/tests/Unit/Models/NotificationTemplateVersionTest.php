@@ -3,13 +3,12 @@
 declare(strict_types=1);
 
 namespace Modules\Notify\Tests\Unit\Models;
+
 use Modules\Notify\Models\BaseModel;
 use Modules\Notify\Models\NotificationTemplate;
 use Modules\Notify\Models\NotificationTemplateVersion;
-use Modules\Notify\Tests\TestCase;
+use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
-
-uses(\Modules\Notify\Tests\TestCase::class);
 
 it('extends base model', function (): void {
     $reflection = new \ReflectionClass(NotificationTemplateVersion::class);
@@ -36,8 +35,7 @@ it('has correct fillable attributes', function (): void {
         'conditions',
         'version',
         'created_by',
-        'change_notes',
-    ];
+        'change_notes'];
 
     $reflection = new \ReflectionClass(NotificationTemplateVersion::class);
     $instance = $reflection->newInstanceWithoutConstructor();
@@ -53,7 +51,7 @@ it('has correct casts', function (): void {
     $instance = $reflection->newInstanceWithoutConstructor();
     $castsMethod = $reflection->getMethod('casts');
     $castsMethod->setAccessible(true);
-    $casts = \assertNotifyArray($castsMethod->invoke($instance));
+    $casts = XotBasePest::assertArray($castsMethod->invoke($instance));
     Assert::assertSame('array', $casts['channels'] ?? null);
     Assert::assertSame('array', $casts['variables'] ?? null);
     Assert::assertSame('array', $casts['conditions'] ?? null);
@@ -63,23 +61,23 @@ it('has template relationship method', function (): void {
     $reflection = new \ReflectionClass(NotificationTemplateVersion::class);
     $version = $reflection->newInstanceWithoutConstructor();
 
-    });
+});
 
 it('has restore method', function (): void {
     $reflection = new \ReflectionClass(NotificationTemplateVersion::class);
     $version = $reflection->newInstanceWithoutConstructor();
 
-    });
+});
 
 it('restore method returns NotificationTemplate', function (): void {
     $reflection = new \ReflectionClass(NotificationTemplateVersion::class);
     $version = $reflection->newInstanceWithoutConstructor();
 
-        $method = new \ReflectionMethod($version, 'restore');
+    $method = new \ReflectionMethod($version, 'restore');
     $returnType = $method->getReturnType();
 
     Assert::assertNotNull($returnType);
-    \assertReflectionTypeName($returnType, NotificationTemplate::class);
+    XotBasePest::assertReflectionTypeName($returnType, NotificationTemplate::class);
 });
 
 it('has expected table name', function (): void {
@@ -125,11 +123,11 @@ it('has media trait', function (): void {
 });
 
 it('has creator and updater relationships', function (): void {
-    $version = new NotificationTemplateVersion;
+    $version = new NotificationTemplateVersion();
 
-        });
+});
 
 it('has media relationship', function (): void {
-    $version = new NotificationTemplateVersion;
+    $version = new NotificationTemplateVersion();
 
-    });
+});

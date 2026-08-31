@@ -173,6 +173,7 @@ Blade Template:
 
 JSON Content:
   laravel/config/local/fixcity/database/content/pages/tests.homepage.json
+  laravel/config/local/ptv/database/content/pages/tests.homepage.json
 
 CSS Files:
   laravel/Themes/Sixteen/resources/css/
@@ -192,6 +193,7 @@ Local URL:
 ```bash
 # Go to project
 cd /var/www/_bases/base_fixcity_fila5
+cd /var/www/_bases/base_ptv_fila5
 
 # View analysis results
 cat /tmp/replikate_analysis_homepage/structure-analysis.txt

@@ -49,6 +49,7 @@ related:
 
 ## Migrazione e Manutenzione
 - [Conversione JSON Migration](./migration_json_conversion.md) - Conversione dati JSON nelle migrazioni
+- [Conversione JSON Migration](./migration-json-conversion.md) - Conversione dati JSON nelle migrazioni
 - [Connessione JSON Migration](./json_migration_connection.md) - Connessione tra JSON e migrazioni
 - [Fix Migrazione JSON](./json_migration_fixes.md) - Correzioni per le migrazioni JSON
 - [Best Practices XotBaseMigration](./xotbasemigration_best_practices.md) - Best practices per l'uso di XotBaseMigration
@@ -56,6 +57,8 @@ related:
 ## Best Practices
 - [Best Practices Email](./email_best_practices.md) - Best practices generali per le email
 - [Best Practices Template](./email_templates_best_practices.md) - Best practices specifiche per i template
+- [Best Practices Email](./email-best-practices.md) - Best practices generali per le email
+- [Best Practices Template](./email-templates-best-practices.md) - Best practices specifiche per i template
 - [Compatibilità HTML Email](./html_email_compatibility.md) - Garantire la compatibilità HTML nelle email
 - [Guida Template Email](./email_templates_guide.md) - Guida completa ai template email
 

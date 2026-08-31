@@ -1,0 +1,16 @@
+---
+title: "Artisan"
+type: reference
+tags: [wiki, no-frontmatter-fix]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
+Create an invoke function in one step
+
+Create an invoke function in one step and you are surely familiar with the use of the invoke function in the Single Task Controller:-
+
+php artisan make:controller TestController --invokable
+
+--------------------------------------------------------------
+

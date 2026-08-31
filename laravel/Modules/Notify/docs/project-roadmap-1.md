@@ -703,6 +703,7 @@ tests/Browser/AdminManageTicketTest.php
 
 ### Best Practices
 - [Laravel Boost Guidelines](claude.md)
+- [Laravel Boost Guidelines](CLAUDE.md)
 - [Architecture Patterns](docs/architecture/)
 
 ---

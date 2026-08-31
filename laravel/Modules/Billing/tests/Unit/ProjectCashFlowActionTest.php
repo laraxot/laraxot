@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Billing\Tests\TestCase::class);
+uses(TestCase::class);
 
 use Modules\Billing\Actions\ProjectCashFlowAction;
 use Modules\Billing\Datas\CashFlowEntry;
+use Modules\Billing\Datas\CashFlowProjection;
 use Modules\Billing\Datas\OpenItem;
 use Modules\Billing\Tests\TestCase;
 use Modules\Quotation\DTO\Money;
+use Safe\DateTimeImmutable;
 
 function flowItem(string $dueOn, float $amount): OpenItem
 {
@@ -20,7 +22,11 @@ function flowItem(string $dueOn, float $amount): OpenItem
     );
 }
 
-function project(float $opening, array $receivables, array $payables, string $from = '2026-08-16', string $to = '2026-10-31')
+/**
+ * @param  list<OpenItem>  $receivables
+ * @param  list<OpenItem>  $payables
+ */
+function project(float $opening, array $receivables, array $payables, string $from = '2026-08-16', string $to = '2026-10-31'): CashFlowProjection
 {
     return (new ProjectCashFlowAction())->execute(
         openingBalance: Money::fromFloat($opening),

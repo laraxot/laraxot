@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Billing\Tests\TestCase::class);
+uses(TestCase::class);
 
 use Modules\Billing\Actions\BuildReceivablesAgingAction;
 use Modules\Billing\Datas\AgingBuckets;
 use Modules\Billing\Datas\OpenItem;
+use Modules\Billing\Datas\ReceivablesAging;
 use Modules\Billing\Tests\TestCase;
 use Modules\Quotation\DTO\Money;
+use Safe\DateTimeImmutable;
 
 function openItem(string $dueOn, float $amount, string $reference = 'FT/1'): OpenItem
 {
@@ -20,7 +22,10 @@ function openItem(string $dueOn, float $amount, string $reference = 'FT/1'): Ope
     );
 }
 
-function agingOn(string $asOf, array $items)
+/**
+ * @param  list<OpenItem>  $items
+ */
+function agingOn(string $asOf, array $items): ReceivablesAging
 {
     return (new BuildReceivablesAgingAction())->execute(new DateTimeImmutable($asOf), $items);
 }
@@ -103,7 +108,7 @@ it('puts the oldest debt at the top of its band', function (): void {
         openItem('2026-07-25', 100.0, 'FT/10'),
     ]);
 
-    $items = $aging->bucket(AgingBuckets::DAYS_1_30)?->items ?? [];
+    $items = $aging->bucket(AgingBuckets::DAYS_1_30)->items ?? [];
 
     expect(array_map(static fn (OpenItem $i): string => $i->reference, $items))->toBe(['FT/10', 'FT/20']);
 });

@@ -115,6 +115,7 @@ composer show livewire/livewire
 
 ```bash
 cd /var/www/_bases/base_fixcity_fila5/laravel
+cd /var/www/_bases/base_ptv_fila5/laravel
 php artisan config:clear
 php artisan cache:clear
 php artisan view:clear

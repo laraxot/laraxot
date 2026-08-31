@@ -84,19 +84,20 @@ related:
 | Pennant Rules | [pennant-rules.md](pennant-rules.md) | 8 | Laravel Pennant feature flags |
 | Theme Build | [theme-build-rules.md](theme-build-rules.md) | 33 | Theme build process (CRITICAL) |
 | Project Architecture | [project-architecture.md](project-architecture.md) | 130 | FixCity project architecture |
+| Project Architecture | [project-architecture.md](project-architecture.md) | 130 | Notify project architecture |
 
 ---
 
 ## Cross-References
 
 ### Related Documentation
-- ← [BMad Agents Index](../../agents/INDEX.md) — 10 agent definitions
-- ← [BMad Tasks Index](../tasks/INDEX.md) — 22 reusable tasks
-- ← [GEMINI Index](../gemini/INDEX.md) — Gemini-specific rules
-- ← [Main AI Docs Index](../INDEX.md) — Master index
+- ← [BMad Agents Index](../../agents/index.md) — 10 agent definitions
+- ← [BMad Tasks Index](../tasks/index.md) — 22 reusable tasks
+- ← [GEMINI Index](../gemini/index.md) — Gemini-specific rules
+- ← [Main AI Docs Index](../index.md) — Master index
 
 ### Bidirectional Links
-- ← Back to [Main AI Docs Index](../INDEX.md)
+- ← Back to [Main AI Docs Index](../index.md)
 - ← Back to [../../../../docs/CLAUDE.md](../../../../../../docs/../../../../docs/CLAUDE.md) (original source)
 - ← Back to [Project Docs](../../../docs/README.md)
 

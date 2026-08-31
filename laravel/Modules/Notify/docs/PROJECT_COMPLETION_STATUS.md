@@ -175,6 +175,7 @@
 
 ```
 base_fixcity_fila5_mono/
+base_ptv_fila5_mono/
 ├── DOCUMENTATION_INDEX.md          # ✅ Indice generale
 ├── QUICK_START.md                  # ✅ Guida rapida
 ├── ROADMAP_STATUS_SUMMARY.md       # ✅ Status master
@@ -247,6 +248,9 @@ base_fixcity_fila5_mono/
 - **Email**: dev@fixcity.it
 - **Docs**: docs@fixcity.it
 - **Slack**: #fixcity-dev
+- **Email**: dev@ptv.it
+- **Docs**: docs@ptv.it
+- **Slack**: #ptv-dev
 
 ---
 

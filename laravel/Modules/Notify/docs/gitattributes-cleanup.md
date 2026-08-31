@@ -182,6 +182,7 @@ cp /path/to/backup/.gitattributes laravel/Modules/Blog/
 - [x] Update root `.gitignore`
 - [x] Create module `.gitignore` files
 - [x] Update AGENTS.md
+- [x] Update agents.md
 - [x] Document cleanup
 - [x] Verify with git check-ignore
 

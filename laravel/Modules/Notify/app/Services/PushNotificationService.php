@@ -38,19 +38,15 @@ class PushNotificationService
         $this->config = [
             'fcm' => [
                 'server_key' => config('notify.fcm.server_key'),
-                'url' => 'https://fcm.googleapis.com/fcm/send',
-            ],
+                'url' => 'https://fcm.googleapis.com/fcm/send'],
             'apns' => [
                 'certificate' => config('notify.apns.certificate'),
                 'passphrase' => config('notify.apns.passphrase'),
-                'url' => config('notify.apns.url'),
-            ],
+                'url' => config('notify.apns.url')],
             'webpush' => [
                 'vapid_public' => config('notify.webpush.vapid_public'),
                 'vapid_private' => config('notify.webpush.vapid_private'),
-                'vapid_subject' => config('notify.webpush.vapid_subject'),
-            ],
-        ];
+                'vapid_subject' => config('notify.webpush.vapid_subject')]];
     }
 
     /**
@@ -71,13 +67,11 @@ class PushNotificationService
                 Log::error("Push notification failed for platform {$platform}", [
                     'error' => $e->getMessage(),
                     'token' => $token,
-                    'notification' => $notification,
-                ]);
+                    'notification' => $notification]);
 
                 $results[$platform] = [
                     'success' => false,
-                    'error' => $e->getMessage(),
-                ];
+                    'error' => $e->getMessage()];
             }
         }
 
@@ -105,15 +99,13 @@ class PushNotificationService
             } catch (Exception $e) {
                 Log::error("Batch push notification failed for platform {$platform}", [
                     'error' => $e->getMessage(),
-                    'token_count' => count($platformTokens),
-                ]);
+                    'token_count' => count($platformTokens)]);
 
                 $results[$platform] = [
                     'success' => false,
                     'error' => $e->getMessage(),
                     'sent' => 0,
-                    'failed' => count($platformTokens),
-                ];
+                    'failed' => count($platformTokens)];
             }
         }
 
@@ -137,13 +129,11 @@ class PushNotificationService
             } catch (Exception $e) {
                 Log::error("Topic push notification failed for platform {$platform}", [
                     'error' => $e->getMessage(),
-                    'topic' => $topic,
-                ]);
+                    'topic' => $topic]);
 
                 $results[$platform] = [
                     'success' => false,
-                    'error' => $e->getMessage(),
-                ];
+                    'error' => $e->getMessage()];
             }
         }
 
@@ -162,8 +152,7 @@ class PushNotificationService
         if ($tokens === []) {
             return [
                 'success' => false,
-                'message' => 'No active tokens found',
-            ];
+                'message' => 'No active tokens found'];
         }
 
         return $this->sendToDevices($tokens, $notification, $data);
@@ -182,8 +171,7 @@ class PushNotificationService
             'tokens' => $tokens,
             'notification' => $notification,
             'data' => $data,
-            'schedule_time' => $scheduleTime->getTimestamp(),
-        ], $scheduleTime);
+            'schedule_time' => $scheduleTime->getTimestamp()], $scheduleTime);
 
         SendScheduledPushNotification::dispatch($jobId)
             ->delay($scheduleTime);
@@ -224,8 +212,7 @@ class PushNotificationService
         if ($tokens === []) {
             return [
                 'success' => false,
-                'message' => 'No tokens found matching criteria',
-            ];
+                'message' => 'No tokens found matching criteria'];
         }
 
         return $this->sendToDevices($tokens, $notification, $data);
@@ -260,12 +247,10 @@ class PushNotificationService
                 'body' => $notification['body'],
                 'icon' => $notification['icon'] ?? '/icons/icon-192x192.png',
                 'sound' => $notification['sound'] ?? 'default',
-                'badge' => $notification['badge'] ?? 1,
-            ],
+                'badge' => $notification['badge'] ?? 1],
             'data' => $data,
             'priority' => $notification['priority'] ?? 'high',
-            'ttl' => $notification['ttl'] ?? 3600,
-        ];
+            'ttl' => $notification['ttl'] ?? 3600];
 
         $fcmConfig = $this->config['fcm'] ?? [];
         Assert::isArray($fcmConfig, 'FCM config must be an array');
@@ -274,8 +259,7 @@ class PushNotificationService
 
         $response = Http::withHeaders([
             'Authorization' => 'key='.$serverKey,
-            'Content-Type' => 'application/json',
-        ])->post($url, $payload);
+            'Content-Type' => 'application/json'])->post($url, $payload);
 
         if ($response instanceof PromiseInterface) {
             $response = $response->wait();
@@ -291,8 +275,7 @@ class PushNotificationService
             return [
                 'success' => true,
                 'message_id' => is_array($responseData) && isset($responseData['message_id']) ? $responseData['message_id'] : null,
-                'response' => $responseData,
-            ];
+                'response' => $responseData];
         }
 
         throw new Exception('FCM request failed: '.$response->body());
@@ -308,8 +291,7 @@ class PushNotificationService
         return [
             'success' => true,
             'message' => 'APNS notification sent (simulated)',
-            'platform' => 'apns',
-        ];
+            'platform' => 'apns'];
     }
 
     /**
@@ -327,14 +309,12 @@ class PushNotificationService
             'data' => $data,
             'actions' => $notification['actions'] ?? [],
             'requireInteraction' => $notification['requireInteraction'] ?? false,
-            'silent' => $notification['silent'] ?? false,
-        ]);
+            'silent' => $notification['silent'] ?? false]);
 
         return [
             'success' => true,
             'message' => 'Web Push notification sent (simulated)',
-            'platform' => 'webpush',
-        ];
+            'platform' => 'webpush'];
     }
 
     /**
@@ -364,8 +344,7 @@ class PushNotificationService
                 $results[] = [
                     'success' => false,
                     'error' => $e->getMessage(),
-                    'token' => $token,
-                ];
+                    'token' => $token];
             }
         }
 
@@ -374,8 +353,7 @@ class PushNotificationService
             'sent' => $successCount,
             'failed' => $failureCount,
             'total' => count($tokens),
-            'results' => $results,
-        ];
+            'results' => $results];
     }
 
     /**
@@ -405,10 +383,8 @@ class PushNotificationService
             'notification' => [
                 'title' => $notification['title'],
                 'body' => $notification['body'],
-                'icon' => $notification['icon'] ?? '/icons/icon-192x192.png',
-            ],
-            'data' => $data,
-        ];
+                'icon' => $notification['icon'] ?? '/icons/icon-192x192.png'],
+            'data' => $data];
 
         $fcmConfig = $this->config['fcm'] ?? [];
         Assert::isArray($fcmConfig, 'FCM config must be an array');
@@ -417,8 +393,7 @@ class PushNotificationService
 
         $response = Http::withHeaders([
             'Authorization' => 'key='.$serverKey,
-            'Content-Type' => 'application/json',
-        ])->post($url, $payload);
+            'Content-Type' => 'application/json'])->post($url, $payload);
 
         if ($response instanceof PromiseInterface) {
             $response = $response->wait();
@@ -433,8 +408,7 @@ class PushNotificationService
 
             return [
                 'success' => true,
-                'message_id' => is_array($responseData) && isset($responseData['message_id']) ? $responseData['message_id'] : null,
-            ];
+                'message_id' => is_array($responseData) && isset($responseData['message_id']) ? $responseData['message_id'] : null];
         }
 
         throw new Exception('FCM topic request failed: '.$response->body());
@@ -488,21 +462,17 @@ class PushNotificationService
                 'title' => 'Nuovo Ticket Creato',
                 'body' => 'È stato creato un nuovo ticket: {ticket_title}',
                 'icon' => '/icons/ticket.png',
-                'data' => ['type' => 'ticket_created'],
-            ],
+                'data' => ['type' => 'ticket_created']],
             'ticket_updated' => [
                 'title' => 'Ticket Aggiornato',
                 'body' => 'Il ticket {ticket_title} è stato aggiornato',
                 'icon' => '/icons/update.png',
-                'data' => ['type' => 'ticket_updated'],
-            ],
+                'data' => ['type' => 'ticket_updated']],
             'ticket_resolved' => [
                 'title' => 'Ticket Risolto',
                 'body' => 'Il ticket {ticket_title} è stato risolto',
                 'icon' => '/icons/check.png',
-                'data' => ['type' => 'ticket_resolved'],
-            ],
-        ];
+                'data' => ['type' => 'ticket_resolved']]];
 
         return $templates[$templateId] ?? null;
     }
@@ -548,8 +518,7 @@ class PushNotificationService
         return [
             'success' => true,
             'message' => 'APNS topic notification sent (simulated)',
-            'platform' => 'apns',
-        ];
+            'platform' => 'apns'];
     }
 
     /**
@@ -562,7 +531,6 @@ class PushNotificationService
         return [
             'success' => true,
             'message' => 'Web Push topic notification sent (simulated)',
-            'platform' => 'webpush',
-        ];
+            'platform' => 'webpush'];
     }
 }

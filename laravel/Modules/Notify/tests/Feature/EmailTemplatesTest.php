@@ -5,15 +5,11 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Feature;
 
 use Illuminate\Support\Facades\File;
-use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
-use function Pest\Laravel\get;
-
-uses(\Modules\Notify\Tests\TestCase::class);
 
 describe('Email Templates', function (): void {
     test('_html_template_contains_optional_function', function (): void {
-$filePath = base_path('Modules/Notify/resources/views/emails/html.blade.php');
+        $filePath = base_path('Modules/Notify/resources/views/emails/html.blade.php');
 
         Assert::assertTrue(File::exists($filePath), 'Il file html.blade.php non esiste');
 
@@ -33,7 +29,7 @@ $filePath = base_path('Modules/Notify/resources/views/emails/html.blade.php');
     });
 
     test('_sunny_template_contains_optional_function', function (): void {
-$filePath = base_path('Modules/Notify/resources/views/emails/templates/sunny.blade.php');
+        $filePath = base_path('Modules/Notify/resources/views/emails/templates/sunny.blade.php');
 
         Assert::assertTrue(File::exists($filePath), 'Il file sunny.blade.php non esiste');
 
@@ -47,7 +43,7 @@ $filePath = base_path('Modules/Notify/resources/views/emails/templates/sunny.bla
     });
 
     test('_ark_template_contains_optional_function', function (): void {
-$filePath = base_path('Modules/Notify/resources/views/emails/templates/ark.blade.php');
+        $filePath = base_path('Modules/Notify/resources/views/emails/templates/ark.blade.php');
 
         Assert::assertTrue(File::exists($filePath), 'Il file ark.blade.php non esiste');
 

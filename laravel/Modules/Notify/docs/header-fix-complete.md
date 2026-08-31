@@ -5,6 +5,7 @@ tags: [header, fix, complete]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "header-fix-complete ✅ header fixcity fixato - 100% conforme bootstrap italia"
+qmd: "header-fix-complete ✅ header ptv fixato - 100% conforme bootstrap italia"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:

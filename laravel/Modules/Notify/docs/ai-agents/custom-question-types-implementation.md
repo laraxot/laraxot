@@ -11,12 +11,14 @@ Implementazione completa delle custom question types da Fila4 a Fila5, con integ
 ### 1. RootGroupedBf ✅
 
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/RootGroupedBf.php`
+**File**: `Modules/App/app/Actions/QuestionChart/Custom/RootGroupedBf.php`
 
 **Scopo**: Raggruppa domande per `gid` e calcola valutazioni 1-5 vs 6-10
 
 **Pattern**: `custom:root_grouped_bf`
 
 **Esempio URL**: http://127.0.0.1:8000/quaeris/admin/ats/survey-pdfs/16/question-charts/234
+**Esempio URL**: http://127.0.0.1:8000/this-project/admin/ats/survey-pdfs/16/question-charts/234
 
 **Logica**:
 - Recupera domande LimeSurvey con `parent_qid != 0`
@@ -41,12 +43,14 @@ AnswersChartData {
 ### 2. MailResponseRate ✅
 
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/MailResponseRate.php`
+**File**: `Modules/App/app/Actions/QuestionChart/Custom/MailResponseRate.php`
 
 **Scopo**: Calcola tasso di risposta email
 
 **Pattern**: `custom:mail_response_rate`
 
 **Esempio URL**: http://127.0.0.1:8000/quaeris/admin/ats/survey-pdfs/16/question-charts/192
+**Esempio URL**: http://127.0.0.1:8000/this-project/admin/ats/survey-pdfs/16/question-charts/192
 
 **Logica**:
 - Query su `lime_tokens_{survey_id}` per invitati email
@@ -69,12 +73,14 @@ AnswersChartData {
 ### 3. SmsResponseRate ✅
 
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/SmsResponseRate.php`
+**File**: `Modules/App/app/Actions/QuestionChart/Custom/SmsResponseRate.php`
 
 **Scopo**: Calcola tasso di risposta SMS
 
 **Pattern**: `custom:sms_response_rate`
 
 **Esempio URL**: http://127.0.0.1:8000/quaeris/admin/ats/survey-pdfs/16/question-charts/191
+**Esempio URL**: http://127.0.0.1:8000/this-project/admin/ats/survey-pdfs/16/question-charts/191
 
 **Logica**:
 - Simile a MailResponseRate ma per SMS
@@ -85,12 +91,14 @@ AnswersChartData {
 ### 4. ContactsCompleted ✅
 
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/ContactsCompleted.php`
+**File**: `Modules/App/app/Actions/QuestionChart/Custom/ContactsCompleted.php`
 
 **Scopo**: Conta contatti completati
 
 **Pattern**: `custom:contacts_completed`
 
 **Esempio URL**: http://127.0.0.1:8000/quaeris/admin/ats/survey-pdfs/16/question-charts/190
+**Esempio URL**: http://127.0.0.1:8000/this-project/admin/ats/survey-pdfs/16/question-charts/190
 
 **Logica**:
 - Query su partecipanti
@@ -102,6 +110,7 @@ AnswersChartData {
 ### 5. ContactsCompleted2 ✅
 
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/ContactsCompleted2.php`
+**File**: `Modules/App/app/Actions/QuestionChart/Custom/ContactsCompleted2.php`
 
 **Scopo**: Variante di ContactsCompleted
 
@@ -112,6 +121,7 @@ AnswersChartData {
 ### 6. AvgGroup2 ✅
 
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/AvgGroup2.php`
+**File**: `Modules/App/app/Actions/QuestionChart/Custom/AvgGroup2.php`
 
 **Scopo**: Calcola medie per gruppo
 
@@ -124,6 +134,7 @@ AnswersChartData {
 ### GetAnswersByQuestionChart
 
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/GetAnswersByQuestionChart.php`
+**File**: `Modules/App/app/Actions/QuestionChart/GetAnswersByQuestionChart.php`
 
 **Custom Action Map**:
 ```php
@@ -158,6 +169,7 @@ private function handleCustomQuestionType(...): AnswersChartData
 ### Pest Test Suite
 
 **File**: `Modules/Quaeris/tests/Unit/Actions/QuestionChart/CustomQuestionTypesTest.php`
+**File**: `Modules/App/tests/Unit/Actions/QuestionChart/CustomQuestionTypesTest.php`
 
 **Test Cases**: 10+
 
@@ -197,18 +209,18 @@ XDEBUG_MODE=off ./vendor/bin/pest Modules/Quaeris/tests/Unit/Actions/QuestionCha
 ### Created (11 files)
 
 **Custom Actions** (6):
-1. `Modules/Quaeris/app/Actions/QuestionChart/Custom/RootGroupedBf.php`
-2. `Modules/Quaeris/app/Actions/QuestionChart/Custom/MailResponseRate.php`
-3. `Modules/Quaeris/app/Actions/QuestionChart/Custom/SmsResponseRate.php`
-4. `Modules/Quaeris/app/Actions/QuestionChart/Custom/ContactsCompleted.php`
-5. `Modules/Quaeris/app/Actions/QuestionChart/Custom/ContactsCompleted2.php`
-6. `Modules/Quaeris/app/Actions/QuestionChart/Custom/AvgGroup2.php`
+1. `Modules/App/app/Actions/QuestionChart/Custom/RootGroupedBf.php`
+2. `Modules/App/app/Actions/QuestionChart/Custom/MailResponseRate.php`
+3. `Modules/App/app/Actions/QuestionChart/Custom/SmsResponseRate.php`
+4. `Modules/App/app/Actions/QuestionChart/Custom/ContactsCompleted.php`
+5. `Modules/App/app/Actions/QuestionChart/Custom/ContactsCompleted2.php`
+6. `Modules/App/app/Actions/QuestionChart/Custom/AvgGroup2.php`
 
 **Integration** (1):
-7. `Modules/Quaeris/app/Actions/QuestionChart/GetAnswersByQuestionChart.php` (updated)
+7. `Modules/App/app/Actions/QuestionChart/GetAnswersByQuestionChart.php` (updated)
 
 **Tests** (1):
-8. `Modules/Quaeris/tests/Unit/Actions/QuestionChart/CustomQuestionTypesTest.php`
+8. `Modules/App/tests/Unit/Actions/QuestionChart/CustomQuestionTypesTest.php`
 
 **Documentation** (3):
 9. `.github/ISSUE_TEMPLATE/custom-chart-progress-update.md`
@@ -224,6 +236,8 @@ XDEBUG_MODE=off ./vendor/bin/pest Modules/Quaeris/tests/Unit/Actions/QuestionCha
 ```php
 use Modules\Quaeris\Actions\QuestionChart\Custom\RootGroupedBf;
 use Modules\Quaeris\Models\QuestionChart;
+use Modules\App\Actions\QuestionChart\Custom\RootGroupedBf;
+use Modules\App\Models\QuestionChart;
 
 // Trova QuestionChart
 $questionChart = QuestionChart::find(234);
@@ -243,6 +257,8 @@ foreach ($result->answers as $answer) {
 ```php
 use Modules\Quaeris\Actions\QuestionChart\Custom\MailResponseRate;
 use Modules\Quaeris\Datas\AnswersFilterData;
+use Modules\App\Actions\QuestionChart\Custom\MailResponseRate;
+use Modules\App\Datas\AnswersFilterData;
 
 $questionChart = QuestionChart::find(192);
 
@@ -355,6 +371,13 @@ return AnswersChartData::from([
 
 ### Fila4 Source
 - `./laravel/Modules/Quaeris/app/Actions/QuestionChart/Custom/`
+
+### Fila5 Implementation
+- `Modules/Quaeris/app/Actions/QuestionChart/Custom/`
+- `Modules/Quaeris/app/Actions/QuestionChart/GetAnswersByQuestionChart.php`
+
+### Tests
+- `Modules/Quaeris/tests/Unit/Actions/QuestionChart/CustomQuestionTypesTest.php`
 
 ### Fila5 Implementation
 - `Modules/Quaeris/app/Actions/QuestionChart/Custom/`

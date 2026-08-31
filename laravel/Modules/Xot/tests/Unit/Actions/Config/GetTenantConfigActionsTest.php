@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Modules\Xot\Tests\Unit\Actions\Config;
 
 use Illuminate\Support\Facades\File;
+use Mockery;
+use Mockery\MockInterface;
 use Modules\Tenant\Actions\Config\GetTenantFilePathAction;
 use Modules\Xot\Actions\Config\GetTenantConfigArrayAction;
 use Modules\Xot\Tests\TestCase;
@@ -12,7 +14,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\tempnam;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Get Tenant Config Actions', function (): void {
     test('gets tenant config array correctly', function (): void {
@@ -22,10 +24,11 @@ describe('Get Tenant Config Actions', function (): void {
 
         File::put($tempPath, 'return '.var_export($configData, true).';');
 
-        $mock = $this->createUnitMock(GetTenantFilePathAction::class);
-        $mock->method('execute')
+        /** @var GetTenantFilePathAction&MockInterface $mock */
+        $mock = Mockery::mock(GetTenantFilePathAction::class);
+        $mock->shouldReceive('execute')
             ->with($configName.'.php')
-            ->willReturn($tempPath);
+            ->andReturn($tempPath);
 
         app()->instance(GetTenantFilePathAction::class, $mock);
 
@@ -39,9 +42,10 @@ describe('Get Tenant Config Actions', function (): void {
     test('returns empty array if tenant config file does not exist', function (): void {
         $configName = 'non_existent';
 
-        $mock = $this->createUnitMock(GetTenantFilePathAction::class);
-        $mock->method('execute')
-            ->willReturn('/path/to/nothing.php');
+        /** @var GetTenantFilePathAction&MockInterface $mock */
+        $mock = Mockery::mock(GetTenantFilePathAction::class);
+        $mock->shouldReceive('execute')
+            ->andReturn('/path/to/nothing.php');
 
         app()->instance(GetTenantFilePathAction::class, $mock);
 

@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Wts\Tests\TestCase::class);
+uses(TestCase::class);
 
+use Livewire\Livewire;
+use Modules\User\Models\User;
 use Modules\Wts\Filament\Pages\WtsLotDetailPage;
 use Modules\Wts\Filament\Pages\WtsNewIngressPage;
 use Modules\Wts\Filament\Pages\WtsOperationalParametersPage;
 use Modules\Wts\Filament\Pages\WtsOutputsPage;
 use Modules\Wts\Filament\Pages\WtsProcessingPage;
-use Modules\User\Models\User;
 use Modules\Wts\Models\WtsDerivedMaterial;
 use Modules\Wts\Models\WtsInboundLot;
 use Modules\Wts\Models\WtsInboundRecord;
@@ -17,8 +18,9 @@ use Modules\Wts\Models\WtsOperationalParameter;
 use Modules\Wts\Models\WtsProcessingStep;
 use Modules\Wts\Models\WtsTechnicalSheetSnapshot;
 use Modules\Wts\Models\WtsUnit;
+use Modules\Wts\Queries\GetWtsOperationalParametersQuery;
 use Modules\Wts\Queries\GetWtsReportOverviewQuery;
-use Livewire\Livewire;
+use Modules\Wts\Tests\TestCase;
 use Spatie\Permission\Models\Role;
 
 it('covers label utility actions merged into the lot detail page', function (): void {
@@ -216,7 +218,7 @@ it('covers ingress, outputs, lot detail and operational parameter utility branch
 
     expect($material->fresh()?->technical_sheet_snapshot_id)->toBeNull();
 
-    $parameterBefore = app(\Modules\Wts\Queries\GetWtsOperationalParametersQuery::class)->execute()['standard_drum_weight_kg'] ?? null;
+    $parameterBefore = app(GetWtsOperationalParametersQuery::class)->execute()['standard_drum_weight_kg'] ?? null;
 
     Livewire::actingAs($user)
         ->test(WtsOperationalParametersPage::class)

@@ -79,9 +79,9 @@ Il design system definisce gli standard visivi e di interazione per garantire co
     <x-slot name="header">
         Titolo Card
     </x-slot>
-
+    
     Contenuto della card
-
+    
     <x-slot name="footer">
         Footer della card
     </x-slot>

@@ -43,6 +43,10 @@ class ListUsers extends ListRecords
                 Tables\Columns\TextColumn::make('email'),
             ]),
         ];
+        
+        return $this->layout->getTableColumns($listColumns, $gridColumns);
+    }
+    
 
         return $this->layout->getTableColumns($listColumns, $gridColumns);
     }

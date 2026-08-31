@@ -107,6 +107,7 @@ Creare componenti compatibili Bootstrap Italia.
 
 ```bash
 curl http://fixcity.local/it/tests/homepage | grep -o '<section[^>]*>' | head -10
+curl http://ptv.local/it/tests/homepage | grep -o '<section[^>]*>' | head -10
 ```
 
 ---

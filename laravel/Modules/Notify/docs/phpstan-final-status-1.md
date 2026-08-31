@@ -34,6 +34,7 @@ Tutti i moduli `app/` sono **PERFETTI** al livello MAX di PHPStan!
 |--------|-------|--------|
 | ✅ User | 362 | **0** |
 | ✅ Fixcity | 86 | **0** |
+| ✅ App | 86 | **0** |
 | ✅ Blog | 139 | **0** |
 | ✅ Xot | ~200 | **0** |
 | ✅ Geo | 155 | **0** |

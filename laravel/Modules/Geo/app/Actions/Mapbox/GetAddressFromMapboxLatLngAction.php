@@ -19,7 +19,7 @@ class GetAddressFromMapboxLatLngAction
 {
     use QueueableAction;
 
-    private const BASE_URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places';
+    private const string BASE_URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places';
 
     /**
      * Ottiene l'indirizzo da coordinate geografiche.
@@ -90,7 +90,7 @@ class GetAddressFromMapboxLatLngAction
     }
 
     /**
-     * @param array<mixed> $response
+     * @param  array<mixed>  $response
      */
     private function parseResponse(array $response): MapboxMapData
     {

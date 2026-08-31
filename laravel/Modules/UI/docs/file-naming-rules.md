@@ -40,11 +40,14 @@ Su filesystem case-insensitive (Windows, macOS default), file con nomi che diffe
 - LICENSE.md (maiuscolo - convenzione universale)
 - CONTRIBUTING.md (maiuscolo - convenzione universale)
 - SECURITY.md (maiuscolo - convenzione universale)
-
 - Tutti gli altri: kebab-case minuscolo
   → file-naming-rules.md
   → phpstan-fixes.md
   → api-integration.md
+- README.md (unica eccezione maiuscola nei docs/)
+- In .github/: CONTRIBUTING.md e SECURITY.md (GitHub li cerca con quel casing)
+- Tutti gli altri markdown: kebab-case minuscolo
+  → changelog.md, agents.md, file-naming-rules.md
 ```
 
 ### File Blade

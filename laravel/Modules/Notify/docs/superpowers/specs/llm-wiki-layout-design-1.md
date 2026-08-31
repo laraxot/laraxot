@@ -10,6 +10,8 @@ discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
   - "./fixcity-hero-marketing-1.md"
   - "./fixcity-hero-marketing.md"
+  - "./laraxot-hero-marketing-1.md"
+  - "./laraxot-hero-marketing.md"
   - "./llm-wiki-layout-design.md"
   - "./segnalazione-wizard-design.md"
 ---

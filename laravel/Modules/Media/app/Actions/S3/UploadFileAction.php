@@ -42,15 +42,16 @@ class UploadFileAction extends BaseS3Action
         try {
             $sourceFile = fopen($localFilePath, 'rb');
 
-            $contentType = mime_content_type($localFilePath);
-
             // Default options with proper typing
             $defaultOptions = [
                 'ACL' => 'private',
-                'ContentType' => $contentType !== '' ? $contentType : 'application/octet-stream',
+                'ContentType' => mime_content_type($localFilePath) ?: 'application/octet-stream',
             ];
 
             $uploadOptions = array_merge($defaultOptions, $options);
+
+            // Ensure ACL is string for type safety
+            $acl = is_string($uploadOptions['ACL']) ? $uploadOptions['ACL'] : 'private';
 
             // Use ObjectUploader with proper type casting
             $uploader = new ObjectUploader(
@@ -58,7 +59,7 @@ class UploadFileAction extends BaseS3Action
                 $this->bucketName,
                 $destinationFilePath,
                 $sourceFile,
-                (string) ($uploadOptions['ACL'] ?? 'private'),
+                $acl,
                 $uploadOptions,
             );
 

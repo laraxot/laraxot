@@ -20,7 +20,8 @@ it('opens every page of the panel', function (string $path): void {
     $user = UserFactory::new()->createOne();
     $user->syncRoles(['asd_admin']);
 
-    actingAs($user)->get($path)->assertOk();
+    actingAs($user);
+    get($path)->assertOk();
 })->with([
     '/asd-soci',
     '/asd-soci/enrollment',

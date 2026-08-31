@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Media\Actions\Diagnostic\Aws;
 
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Spatie\QueueableAction\QueueableAction;
 
 class GetAwsConfigSnapshotAction
 {
     use QueueableAction;
 
-    private const KEY_PREVIEW_LENGTH = 8;
+    private const int KEY_PREVIEW_LENGTH = 8;
 
     /**
      * @return array<string, mixed>
@@ -18,7 +19,7 @@ class GetAwsConfigSnapshotAction
     public function execute(): array
     {
         return [
-            'AWS_ACCESS_KEY_ID' => substr((string) config('filesystems.disks.s3.key', ''), 0, self::KEY_PREVIEW_LENGTH).'...',
+            'AWS_ACCESS_KEY_ID' => substr(SafeStringCastAction::cast(config('filesystems.disks.s3.key', '')), 0, self::KEY_PREVIEW_LENGTH).'...',
             'AWS_DEFAULT_REGION' => config('filesystems.disks.s3.region'),
             'AWS_BUCKET' => config('filesystems.disks.s3.bucket'),
             'CLOUDFRONT_URL' => config('filesystems.cloudfront.url'),

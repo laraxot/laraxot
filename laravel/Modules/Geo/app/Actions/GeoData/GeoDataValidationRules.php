@@ -14,7 +14,7 @@ final class GeoDataValidationRules
     use QueueableAction;
 
     /** @var array<string, string> */
-    public const RULES = [
+    public const array RULES = [
         'regions' => 'required|array',
         'regions.*.name' => 'required|string',
         'regions.*.code' => 'required|string|size:2',
@@ -28,7 +28,7 @@ final class GeoDataValidationRules
     ];
 
     /** @var array<string, string> */
-    public const MESSAGES = [
+    public const array MESSAGES = [
         'regions.required' => 'Il file JSON deve contenere un array di regioni',
         'regions.array' => 'Le regioni devono essere un array',
         'regions.*.name.required' => 'Ogni regione deve avere un nome',

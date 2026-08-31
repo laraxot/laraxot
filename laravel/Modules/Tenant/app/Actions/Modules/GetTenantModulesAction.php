@@ -25,7 +25,6 @@ class GetTenantModulesAction
         $contents = File::get($filePath);
 
         try {
-            /** @var mixed $json */
             $json = json_decode($contents, true);
         } catch (Throwable $e) {
             throw new Exception($e->getMessage().'['.$filePath.']['.__LINE__.']['.basename(__FILE__).']');

@@ -54,9 +54,7 @@ class SendEmail extends XotBasePage
                             ->email()
                             ->required(),
                         TextInput::make('subject')->required(),
-                        RichEditor::make('body_html')->required(),
-                    ]),
-            ])
+                        RichEditor::make('body_html')->required()])])
             ->model($this->getUser())
             ->statePath('emailData');
     }
@@ -79,16 +77,14 @@ class SendEmail extends XotBasePage
     protected function getForms(): array
     {
         return [
-            'emailForm',
-        ];
+            'emailForm'];
     }
 
-    /** @return array<string, \Filament\Actions\Action> */
+    /** @return array<string, Action> */
     protected function getEmailFormActions(): array
     {
         return [
-            'submit' => Action::make('emailFormActions')->submit('emailFormActions'),
-        ];
+            'submit' => Action::make('emailFormActions')->submit('emailFormActions')];
     }
 
     protected function getUser(): Authenticatable&Model

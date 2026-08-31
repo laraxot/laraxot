@@ -5,6 +5,7 @@ tags: [master, plan]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "master-plan fixcity platform - master plan 🚀"
+qmd: "master-plan ptv platform - master plan 🚀"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -448,6 +449,7 @@ docs/
 ├── DEPLOYMENT.md (📋 Deployment Guide)
 └── modules/
     ├── fixcity/ (✅ Business Logic + Roadmap)
+    ├── ptv/ (✅ Business Logic + Roadmap)
     ├── user/ (✅ IAM + Roadmap)
     ├── notify/ (✅ Notifications + Roadmap)
     ├── geo/ (✅ Geolocation + Roadmap)
@@ -503,4 +505,5 @@ FixCity è posizionata per diventare la **piattaforma leader europea** per il ci
 - *Team composition e roadmap feasibility*
 
 **Per domande o approfondimenti**: development@fixcity.io
+**Per domande o approfondimenti**: development@ptv.io
 

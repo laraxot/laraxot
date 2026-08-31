@@ -7,6 +7,8 @@ updated: 2026-07-14
 qmd: "ui-components componenti ui - modulo ui"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+issues: ["https://github.com/provtv/<nome repository>/issues/124"]
+discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
   - "./address-field-1.md"
   - "./address-field.md"
@@ -196,7 +198,7 @@ return [
 
 ## 🔗 Collegamenti
 
-- [**README Modulo UI**](../readme.md)
+- [**README Modulo UI**](../README.md)
 - [**Sistema Layout**](../layout/layout-system.md)
 - [**Gestione Asset**](../assets/asset-management.md)
 - [**Personalizzazioni Filament**](../filament/filament-customizations.md)

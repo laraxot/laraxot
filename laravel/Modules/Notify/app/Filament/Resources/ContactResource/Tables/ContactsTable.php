@@ -18,8 +18,7 @@ class ContactsTable extends XotBaseResourceTable
             'active' => Filter::make('active')->query(fn (Builder $query): Builder => $query->where('active', true)),
             'inactive' => Filter::make('inactive')->query(
                 fn (Builder $query): Builder => $query->where('active', false),
-            ),
-        ];
+            )];
     }
 
     /**
@@ -34,7 +33,6 @@ class ContactsTable extends XotBaseResourceTable
             'user_id' => TextColumn::make('user_id')->sortable(),
             'verified_at' => TextColumn::make('verified_at')->dateTime()->sortable(),
             'created_at' => TextColumn::make('created_at')->dateTime()->sortable(),
-            'updated_at' => TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
-        ];
+            'updated_at' => TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true)];
     }
 }

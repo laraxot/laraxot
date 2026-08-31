@@ -23,7 +23,6 @@ class MailTemplatesTable extends XotBaseResourceTable
             'counter' => TextColumn::make('counter')->sortable(),
             'version' => TextColumn::make('version')->sortable(),
             'created_at' => TextColumn::make('created_at')->dateTime()->sortable(),
-            'updated_at' => TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
-        ];
+            'updated_at' => TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true)];
     }
 }

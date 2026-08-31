@@ -101,6 +101,7 @@ php artisan boost:install
 **Usage**:
 ```
 "Create a Filament table widget for Predict model"
+"Create a Filament table widget for Forecast model"
 "Generate a Livewire component for market cards"
 "Add validation rules for user registration"
 ```
@@ -434,6 +435,7 @@ npx shadcn@latest mcp init --client claude
 ```
 "Create a hero section using Flowbite with purple brand color"
 "Generate a Filament table widget for Predict model"
+"Generate a Filament table widget for Forecast model"
 "Add cinematic particles effect to homepage"
 ```
 

@@ -32,8 +32,7 @@ enum WhatsAppDriverEnum: string
             self::TWILIO->value => 'Twilio',
             self::MESSAGEBIRD->value => 'MessageBird',
             self::VONAGE->value => 'Vonage',
-            self::INFOBIP->value => 'Infobip',
-        ];
+            self::INFOBIP->value => 'Infobip'];
     }
 
     /**
@@ -47,8 +46,7 @@ enum WhatsAppDriverEnum: string
             self::TWILIO->value => __('notify::whatsapp.drivers.twilio'),
             self::MESSAGEBIRD->value => __('notify::whatsapp.drivers.messagebird'),
             self::VONAGE->value => __('notify::whatsapp.drivers.vonage'),
-            self::INFOBIP->value => __('notify::whatsapp.drivers.infobip'),
-        ];
+            self::INFOBIP->value => __('notify::whatsapp.drivers.infobip')];
     }
 
     /**

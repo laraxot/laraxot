@@ -1,8 +1,8 @@
-# AGENTS.md Split Index
+# agents.md Split Index
 
-> Documentazione AGENTS.md originale spezzata in file più piccoli e organizzati.
+> Documentazione agents.md originale spezzata in file più piccoli e organizzati.
 
-## 📚 File Creati da AGENTS.md
+## 📚 File Creati da agents.md
 
 | File | Contenuto | Righe Originali |
 |------|-----------|----------------|
@@ -20,6 +20,7 @@
 ## 🔗 Collegamento all'Originale
 
 - [AGENTS.md originale](../../AGENTS.md) - File completo (deprecato)
+- [agents.md originale](../../agents.md) - File completo (deprecato)
 - [Index principale](./index.md) - Torna all'indice
 
 ## 📝 Note

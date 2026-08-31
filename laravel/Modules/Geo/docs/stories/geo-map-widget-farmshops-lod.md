@@ -1,3 +1,7 @@
+---
+scope: module:Geo
+---
+
 # Story: GeoMapWidget Filament v5 con pattern farmshops e LOD client-side
 
 ## Status
@@ -409,3 +413,20 @@ La story è completata solo se:
 - Leaflet.markercluster official repository: `https://github.com/Leaflet/Leaflet.markercluster`
 - Leaflet.markercluster npm package ufficiale: `https://www.npmjs.com/package/leaflet.markercluster`
 - Deprecated package da non usare: `https://www.npmjs.com/package/leaflet-markercluster`
+
+## GitHub (tracciamento)
+
+Repository letto da frontmatter `github.repository` o `git remote -v` (se assente: repo root **`laraxot/base_quaeris_fila5`**): **`laraxot/base_quaeris_fila5`**.
+
+| Risorsa | Stato | Link |
+|---|---|---|
+| Issue | **DA CREARE** | https://github.com/laraxot/base_quaeris_fila5/issues |
+| Discussion | **DA CREARE** | https://github.com/laraxot/base_quaeris_fila5/discussions |
+
+Il numero non e' scritto perche' non esiste ancora: `gh` non e' autenticato in questa sessione e i repo sono privati. Appena disponibile, creare con:
+
+```bash
+gh issue create --repo laraxot/base_quaeris_fila5 \
+  --title "Story: GeoMapWidget Filament v5 con pattern farmshops e LOD client-side" --body-file <FILE>
+gh api repos/laraxot/base_quaeris_fila5/discussions -f title="Story: GeoMapWidget Filament v5 con pattern farmshops e LOD client-side" -f body="vedi la story"
+```

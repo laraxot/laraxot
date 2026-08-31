@@ -49,8 +49,7 @@ class SendSpatieEmailPage extends XotBasePage
     protected function getForms(): array
     {
         return [
-            'emailForm',
-        ];
+            'emailForm'];
     }
 
     protected function fillForms(): void
@@ -80,8 +79,7 @@ class SendSpatieEmailPage extends XotBasePage
             'mail_template_slug' => Select::make('mail_template_slug')
                 ->options(MailTemplate::all()->pluck('slug', 'slug'))
                 ->required(),
-            'body_html' => RichEditor::make('body_html')->required(),
-        ];
+            'body_html' => RichEditor::make('body_html')->required()];
     }
 
     public function sendEmail(): void
@@ -100,14 +98,11 @@ class SendSpatieEmailPage extends XotBasePage
             [
                 'path' => public_path('images/avatars/default-3.svg'),
                 'as' => 'logo.png',
-                'mime' => 'image/png',
-            ],
+                'mime' => 'image/png'],
             [
                 'path' => public_path('images/avatars/default-3.svg'),
                 'as' => 'logo.png',
-                'mime' => 'image/png',
-            ],
-        ];
+                'mime' => 'image/png']];
         // Mail::to($data['recipient'])->locale('it')->send((new SpatieEmail($user,'due'))->addAttachments($attachments));
         /*
          * // Create and send the email
@@ -135,12 +130,11 @@ class SendSpatieEmailPage extends XotBasePage
             ->send();
     }
 
-    /** @return array<string, \Filament\Actions\Action> */
+    /** @return array<string, Action> */
     protected function getEmailFormActions(): array
     {
         return [
-            'submit' => Action::make('emailFormActions')->submit('emailFormActions'),
-        ];
+            'submit' => Action::make('emailFormActions')->submit('emailFormActions')];
     }
 
     #[Override]

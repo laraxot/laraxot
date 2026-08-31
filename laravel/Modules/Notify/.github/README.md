@@ -18,6 +18,7 @@ Replicating **38 Design Comuni static pages** using **Tailwind CSS + Alpine.js**
 
 **Source**: https://italia.github.io/design-comuni-pagine-statiche/  
 **Target**: http://fixcity.local/it/tests/[page-slug]  
+**Target**: http://ptv.local/it/tests/[page-slug]  
 **Timeline**: 12 weeks (April 1 - June 30, 2026)
 
 ---

@@ -142,6 +142,7 @@ Semplicemente aprire Claude Code in qualsiasi progetto. Le skills si attivano au
 
 ```bash
 cd /var/www/_bases/base_fixcity_fila5
+cd /var/www/_bases/base_ptvx_fila5
 claude
 ```
 

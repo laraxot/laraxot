@@ -25,7 +25,6 @@ class ContactForm extends XotBaseResourceForm
                 ->maxLength(255),
             'phone' => TextInput::make('phone')
                 ->tel()
-                ->maxLength(255),
-        ];
+                ->maxLength(255)];
     }
 }

@@ -33,7 +33,11 @@ class TemporaryUploadPathGenerator
      */
     protected function getBasePath(Media $media): string
     {
-        Assert::string($id = $media->getKey());
+        // getKey() torna la chiave primaria, che su Media e' `int`: un Assert::string qui
+        // sollevava sempre, e la classe non e' referenziata da nessuna parte, quindi
+        // nessuno se ne era accorto. Assert::scalar accetta int e string e lascia fuori
+        // array e oggetti, che sono gli unici casi in cui la concatenazione mentirebbe.
+        Assert::scalar($id = $media->getKey());
         $key = md5($media->uuid.$id);
 
         return "tmp/{$key}";

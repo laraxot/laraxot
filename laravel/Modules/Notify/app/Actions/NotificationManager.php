@@ -21,7 +21,6 @@ class NotificationManager
      * @param  array<string, mixed>  $data
      * @param  list<string>  $channels
      * @param  array<string, mixed>  $options
-     * @return Notification|null
      */
     public function send(
         Model $recipient,

@@ -17,22 +17,22 @@ uses(\Modules\User\Tests\TestCase::class);
 
 beforeEach(function (): void {
     /* @var TestCase $this */
-    $this->skipUnlessUserTable('device_user');
-    $this->skipUnlessUserTable('devices');
+    TestCase::skipUnlessUserTable('device_user');
+    TestCase::skipUnlessUserTable('devices');
 
     Config::set('app.key', config('app.key') ?: 'base64:'.base64_encode(random_bytes(32)));
 
-    $this->user = UserFactory::new()->createOne([
+    TestCase::$user = UserFactory::new()->createOne([
         'email' => 'api-logout-'.uniqid('', true).'@example.com',
         'email_verified_at' => now(),
         'is_active' => true,
     ]);
 
-    $this->device = DeviceFactory::new()->createOne();
+    TestCase::$device = DeviceFactory::new()->createOne();
 
     DeviceUser::query()->create([
-        'user_id' => (string) $this->requireUser()->getKey(),
-        'device_id' => (string) $this->requireDevice()->getKey(),
+        'user_id' => (string) TestCase::requireUser()->getKey(),
+        'device_id' => (string) TestCase::requireDevice()->getKey(),
         'login_at' => now()->subHour(),
         'logout_at' => null,
     ]);
@@ -41,7 +41,7 @@ beforeEach(function (): void {
 describe('Api Logout Controller', function (): void {
     test('api logout revokes current personal access token and marks device logout time', function (): void {
         /** @var TestCase $this */
-        $user = $this->requireUser();
+        $user = TestCase::requireUser();
         $privateKey = storage_path('oauth-private.key');
         $publicKey = storage_path('oauth-public.key');
 

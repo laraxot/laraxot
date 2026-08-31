@@ -9,7 +9,7 @@ created: 2026-05-21
 
 ## Problema
 
-Molti moduli (Cms, User, Tenant, Geo, Notify, Rating, Blog, Fixcity, ecc.) implementano la propria logica di upload media (form fields, tabelle, relation manager, azioni) invece di riutilizzare il componente centralizzato del modulo **Media**.
+Molti moduli (Cms, User, Tenant, Geo, Notify, Rating, Blog, LegacyDomain, ecc.) implementano la propria logica di upload media (form fields, tabelle, relation manager, azioni) invece di riutilizzare il componente centralizzato del modulo **Media**.
 
 Questo porta a:
 - Codice duplicato
@@ -53,6 +53,6 @@ o lo schema riutilizzabile `HasMediaForm::getFormSchema()`.
 
 ## Riferimenti
 
-- Issue tracker: [#90](https://github.com/laraxot/base_fixcity_fila5/issues/90)
+- Issue tracker: [#90](https://github.com/laraxot/platform/issues/90)
 - Modulo owner: `laravel/Modules/Media`
 - Componenti canonici: `HasMediaResource`, `HasMediaForm`, `HasMediasTable`, `MediaRelationManager`

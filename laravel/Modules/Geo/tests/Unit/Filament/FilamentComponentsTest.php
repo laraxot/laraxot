@@ -10,10 +10,8 @@ use Modules\Geo\Filament\Forms\Components\MapPicker;
 use Modules\Geo\Filament\Widgets\GeoMapWidget;
 use Modules\Geo\Filament\Widgets\LatLngWidget;
 use Modules\Geo\Filament\Widgets\LocationWidget;
-use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Geo\Tests\TestCase::class);
 test('AddressField can be instantiated', function () {
     $field = AddressField::make('address');
 });

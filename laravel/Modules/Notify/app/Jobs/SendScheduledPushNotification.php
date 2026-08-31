@@ -32,8 +32,7 @@ class SendScheduledPushNotification implements ShouldQueue
      */
     public function __construct(
         private string $jobId
-    ) {
-    }
+    ) {}
 
     /**
      * Execute the job.
@@ -46,8 +45,7 @@ class SendScheduledPushNotification implements ShouldQueue
 
             if (! $notificationData) {
                 Log::warning('Scheduled push notification not found', [
-                    'job_id' => $this->jobId,
-                ]);
+                    'job_id' => $this->jobId]);
 
                 return;
             }
@@ -77,16 +75,14 @@ class SendScheduledPushNotification implements ShouldQueue
             // Log risultato
             Log::debug('Scheduled push notification sent', [
                 'job_id' => $this->jobId,
-                'result' => $result,
-            ]);
+                'result' => $result]);
 
             // Rimuovi notifica programmata
             Cache::forget("scheduled_push:{$this->jobId}");
         } catch (Exception $e) {
             Log::error('Scheduled push notification failed', [
                 'job_id' => $this->jobId,
-                'error' => $e->getMessage(),
-            ]);
+                'error' => $e->getMessage()]);
 
             // Rilancia l'eccezione per il retry
             throw $e;
@@ -100,8 +96,7 @@ class SendScheduledPushNotification implements ShouldQueue
     {
         Log::error('Scheduled push notification job failed permanently', [
             'job_id' => $this->jobId,
-            'error' => $exception->getMessage(),
-        ]);
+            'error' => $exception->getMessage()]);
 
         // Rimuovi notifica programmata anche in caso di fallimento
         Cache::forget("scheduled_push:{$this->jobId}");

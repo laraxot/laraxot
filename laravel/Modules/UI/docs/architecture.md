@@ -652,3 +652,56 @@ The UI module is a **well-architected, feature-rich Filament customization layer
 **Document Version:** 1.0
 **Generated:** 2025-11-19
 **Author:** Claude Code Analysis
+
+---
+
+<!-- Merged from ARCHITECTURE.md, which collided with this file on case-insensitive filesystems. -->
+
+---
+title: "UI Module Architecture"
+type: architecture
+tags: [module, architecture, ui]
+created: 2026-08-04
+updated: 2026-08-04
+---
+# UI Module — Architecture
+
+## Purpose
+UI module for Laraxot platform.
+
+## Core Components
+- Models, Actions, Resources
+- Standard Laraxot module structure
+
+## Quality Gates
+- PHPStan L10 compliance
+- Test coverage requirements
+
+---
+
+## Sintesi dei sottosistemi (migrata da `ARCHITECTURE.md` in root)
+
+> Questo blocco stava nella root del modulo, dove sono ammessi solo README,
+> CHANGELOG, LICENSE, AGENTS e CLAUDE. Il contenuto non era duplicato qui
+> dentro, quindi è stato accodato invece che cancellato: va integrato nelle
+> sezioni sopra.
+
+## Overview
+The UI module provides Filament-based admin interface components, themes, and utilities.
+
+## Components
+- **Filament Resources**: AdminPanel resources for data management
+- **Widgets**: Dashboard widgets and custom controls
+- **Themes**: Tailwind CSS theme system
+- **Layout Components**: Navbar, blocks, page builder
+
+## Subsystems
+- **Page Builder**: Drag-and-drop content builder
+- **Theme System**: Multi-theme support with Tailwind
+- **Components**: Reusable Vue/Blade components
+- **Admin Panel**: Filament admin interface
+
+## Related Docs
+- Wiki: `docs/wiki/ui/`
+- Components: `docs/wiki/ui/UI-*.md`
+- Filament: `docs/wiki/concepts/UI-filament-patterns.md`

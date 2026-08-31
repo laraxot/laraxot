@@ -15,20 +15,20 @@ class CloudFrontIconMediaColumn extends IconColumn
         parent::setUp();
         $attachment = $this->getName();
 
-        $this->default(function ($record) use ($attachment) {
+        $this->default(static function (mixed $record) use ($attachment) {
             if (is_object($record) && method_exists($record, 'getFirstMedia')) {
                 return $record->getFirstMedia($attachment);
             }
         })
             ->icon('heroicon-o-document-text')
-            ->color(function ($record) use ($attachment): string {
+            ->color(static function (mixed $record) use ($attachment): string {
                 if (is_object($record) && method_exists($record, 'getFirstMedia')) {
                     return $record->getFirstMedia($attachment) ? 'success' : 'danger';
                 }
 
                 return 'danger';
             })
-            ->tooltip(function ($record) use ($attachment): string {
+            ->tooltip(static function (mixed $record) use ($attachment): string {
                 if (is_object($record) && method_exists($record, 'getFirstMedia')) {
                     $media = $record->getFirstMedia($attachment);
                     if (is_object($media) && isset($media->file_name) && is_string($media->file_name)) {
@@ -38,7 +38,7 @@ class CloudFrontIconMediaColumn extends IconColumn
 
                 return 'Documento non caricato';
             })
-            ->url(function ($record) use ($attachment): ?string {
+            ->url(static function (mixed $record) use ($attachment): ?string {
                 if (! is_object($record) || ! method_exists($record, 'getFirstMedia')) {
                     return null;
                 }

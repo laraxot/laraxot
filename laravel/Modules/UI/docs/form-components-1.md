@@ -145,6 +145,10 @@ public function form(Form $form): Form
 
 ### Input
 ```blade
+<x-ui::input 
+    name="email" 
+    type="email" 
+    label="Email" 
 <x-ui::input
     name="email"
     type="email"
@@ -286,6 +290,11 @@ form.addEventListener('submit', (e) => {
 - [Componenti Table](./table-components.md)
 - [Componenti Chart](./chart-components.md)
 - [Componenti Layout](./layout-components.md)
+- [Documentazione Frontend](../Cms/docs/frontend-architecture.md) 
+## Collegamenti tra versioni di form-components.md
+* [form-components.md](../../../UI/docs/form-components.md)
+* [form-components.md](../../../UI/docs/roadmap/form-components.md)
+
 - [Documentazione Frontend](../Cms/docs/frontend-architecture.md)
 ## Collegamenti tra versioni di form-components.md
 * [form-components.md](../../../UI/docs/form-components.md)

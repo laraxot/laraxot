@@ -1,3 +1,7 @@
+---
+scope: module:Geo
+---
+
 # Story: MapPicker Filament v5 con Leaflet + Lit + Livewire su colonne latitude/longitude
 
 ## Status
@@ -538,3 +542,20 @@ La story è completa solo se:
 
 - Nominatim
 - Photon
+
+## GitHub (tracciamento)
+
+Repository letto da frontmatter `github.repository` o `git remote -v` (se assente: repo root **`laraxot/base_quaeris_fila5`**): **`laraxot/base_quaeris_fila5`**.
+
+| Risorsa | Stato | Link |
+|---|---|---|
+| Issue | **DA CREARE** | https://github.com/laraxot/base_quaeris_fila5/issues |
+| Discussion | **DA CREARE** | https://github.com/laraxot/base_quaeris_fila5/discussions |
+
+Il numero non e' scritto perche' non esiste ancora: `gh` non e' autenticato in questa sessione e i repo sono privati. Appena disponibile, creare con:
+
+```bash
+gh issue create --repo laraxot/base_quaeris_fila5 \
+  --title "Story: MapPicker Filament v5 con Leaflet + Lit + Livewire su colonne latitude/longitude" --body-file <FILE>
+gh api repos/laraxot/base_quaeris_fila5/discussions -f title="Story: MapPicker Filament v5 con Leaflet + Lit + Livewire su colonne latitude/longitude" -f body="vedi la story"
+```

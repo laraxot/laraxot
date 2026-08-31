@@ -178,6 +178,7 @@ Ogni task: Contesto fresco (200k token) → Qualità costante ✅
 │   ├── STACK.md         # Stack tecnologico
 │   ├── FEATURES.md      # Feature research
 │   ├── ARCHITECTURE.md  # Architettura
+│   ├── architecture.md  # Architettura
 │   └── PITFALLS.md      # Pitfalls da evitare
 ├── phase-1-PLAN.md      # Task atomici XML
 ├── phase-1-SUMMARY.md   # Cosa è successo
@@ -446,6 +447,8 @@ Agent N (Verifier):
 Commit Messages:
 - "docs: predict detail research"
 - "docs: predict detail architecture"
+- "docs: forecast detail research"
+- "docs: forecast detail architecture"
 - "feat: add price chart component"
 - "test: verify phase 1 complete"
 

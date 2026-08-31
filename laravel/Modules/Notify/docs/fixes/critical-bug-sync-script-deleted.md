@@ -86,6 +86,7 @@ export -f is_interactive_shell
 ```bash
 # Clona il repo separato
 cd /var/www/_bases/base_fixcity_fila5
+cd /var/www/_bases/base_ptvx_fila5
 rm -rf bashscripts
 git clone git@github.com:laraxot/bashscripts_fila5.git bashscripts
 

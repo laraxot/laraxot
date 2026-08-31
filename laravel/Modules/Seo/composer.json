@@ -34,7 +34,8 @@
         }
     },
     "require": {
-        "spatie/laravel-sitemap": "^7.0"
+        "spatie/laravel-sitemap": "^7.0",
+        "spatie/laravel-feed": "^4.4"
     },
     "require-dev_comment": {
         "laravel/pint": "^1.13",

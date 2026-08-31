@@ -44,8 +44,7 @@ class SmsFactorData extends Data
                 return [
                     'Authorization' => 'Bearer '.$this->token,
                     'Content-Type' => 'application/json',
-                    'Cache-Control' => 'no-cache',
-                ];
+                    'Cache-Control' => 'no-cache'];
         }
     }
 

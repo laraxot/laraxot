@@ -1,6 +1,7 @@
 # Technology Stack
 
 Stack tecnologico completo di Quaeris Fila5 Mono - Laravel 12 + Filament 5 + PHP 8.3
+Stack tecnologico completo di App Fila5 Mono - Laravel 12 + Filament 5 + PHP 8.3
 
 ## Core Technologies
 

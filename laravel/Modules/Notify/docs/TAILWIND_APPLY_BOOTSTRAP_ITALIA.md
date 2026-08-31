@@ -1,3 +1,12 @@
+---
+title: "Tailwind @apply per Bootstrap Italia - Completato"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # ✅ Tailwind @apply per Bootstrap Italia - Completato
 
 ## Data: 2026-03-31

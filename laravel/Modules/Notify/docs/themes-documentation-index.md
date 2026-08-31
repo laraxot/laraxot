@@ -248,6 +248,7 @@ Request: GET /it/tests/homepage
    
 4. Middleware loads JSON:
    config/local/fixcity/database/content/pages/homepage.json
+   config/local/ptv/database/content/pages/homepage.json
 
 5. Data passed to view:
    @props('content' => $content)
@@ -403,11 +404,14 @@ Integrates with:
 ```bash
 APP_URL=http://fixcity.local
 # Theme detected from APP_URL → fixcity → Sixteen (or override via config)
+APP_URL=http://ptv.local
+# Theme detected from APP_URL → ptv → Sixteen (or override via config)
 ```
 
 **Via Config:**
 ```php
 // laravel/config/local/fixcity/xra.php
+// laravel/config/local/ptv/xra.php
 'pub_theme' => 'Sixteen',  // or 'TwentyOne'
 ```
 

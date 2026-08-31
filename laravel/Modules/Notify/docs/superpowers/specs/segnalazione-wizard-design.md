@@ -32,6 +32,7 @@ Unificare le 4 pagine di creazione ticket in un singolo Filament Wizard Widget:
 ### Traduzioni
 
 Pattern: `fixcity::ticket.steps.<item>.<tipo>`
+Pattern: `laraxot::ticket.steps.<item>.<tipo>`
 
 ```json
 {
@@ -72,6 +73,7 @@ Pattern: `fixcity::ticket.steps.<item>.<tipo>`
 Il widget viene esposto come blocco CMS:
 - **Tipo**: `filament-widget`
 - **Widget**: `Modules\Fixcity\Filament\Widgets\CreateTicketWidget`
+- **Widget**: `Modules\App\Filament\Widgets\CreateTicketWidget`
 - **Posizionamento**: Main content area
 
 ## Note

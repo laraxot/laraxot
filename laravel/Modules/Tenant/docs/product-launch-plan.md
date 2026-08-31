@@ -2,7 +2,7 @@
 title: "Tenant Module - Product Launch Plan"
 module: "Tenant"
 type: concept
-tags: [product, launch, plan]
+tags: [PRODUCT, LAUNCH, PLAN]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "product launch plan"

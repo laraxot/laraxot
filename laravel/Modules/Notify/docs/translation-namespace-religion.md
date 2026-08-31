@@ -24,6 +24,7 @@
 ```php
 // ❌ SBAGLIATO: namespace basato su COMPONENTE UI
 __('fixcity::create_ticket_wizard.summary.images.limit_message')
+__('ptv::create_ticket_wizard.summary.images.limit_message')
 ```
 
 **Perche e sbagliato**:
@@ -50,6 +51,7 @@ __('fixcity::create_ticket_wizard.summary.images.limit_message')
 ```php
 // ✅ CORRETTO: namespace basato su DOMINIO BUSINESS
 __('fixcity::ticket.rules.image.limit_message')
+__('ptv::ticket.rules.image.limit_message')
 ```
 
 **Perche e meglio**:
@@ -210,6 +212,8 @@ grep "limit_message" Modules/Fixcity/lang/it/ticket.php
 ```php
 Section::make(__('fixcity::create_ticket_wizard.summary.images.label'))
     ->limitMessage(__('fixcity::create_ticket_wizard.summary.images.limit_message'))
+Section::make(__('ptv::create_ticket_wizard.summary.images.label'))
+    ->limitMessage(__('ptv::create_ticket_wizard.summary.images.limit_message'))
 ```
 
 **Problemi**:
@@ -224,6 +228,8 @@ Section::make(__('fixcity::create_ticket_wizard.summary.images.label'))
 ```php
 Section::make(__('fixcity::ticket.sections.images.label'))
     ->limitMessage(__('fixcity::ticket.rules.image.limit_message'))
+Section::make(__('ptv::ticket.sections.images.label'))
+    ->limitMessage(__('ptv::ticket.rules.image.limit_message'))
 ```
 
 **Vantaggi**:

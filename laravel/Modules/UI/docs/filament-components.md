@@ -66,14 +66,8 @@
 ## Collegamenti Bidirezionali
 
 ### Errori Comuni
-- [Errori nei Componenti Filament](./filament-components-errors.md)
-- [Best Practices UI](../../best-practices.md)
-- [Implementazione Corretta](../../examples/correct-implementation.md)
 
 ### Componenti Specifici
-- [FileUpload](./components/file-upload.md)
-- [TextInput](./components/text-input.md)
-- [Select](./components/select.md)
 
 ## Struttura della Documentazione
 
@@ -126,3 +120,5 @@
 * [filament-components.md](../../Cms/project_docs/best-practices/filament-components.md)
 * [filament-components.md](../../Cms/project_docs/filament-components.md)
 * [filament-components.md](../../../project_docs/rules/filament-components.md)
+* [filament-components.md](../../../docs/rules/filament-components.md)
+||||||| parent of 9a84589 (.):docs/archived/filament-components-1.md

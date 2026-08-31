@@ -6,27 +6,28 @@ namespace Modules\Notify\Tests\Unit\Actions;
 
 use Modules\Notify\Actions\NetfunSendAction;
 use Modules\Notify\Datas\SmsData;
-use Modules\Notify\Tests\TestCase;
+use PHPUnit\Framework\Assert;
+use ReflectionClass;
 
-uses(\Modules\Notify\Tests\TestCase::class);
+use function Safe\class_uses;
+use function Safe\file_get_contents;
 
 describe('NetfunSendAction', function () {
     it('has execute method returning array', function () {
-        $reflection = new \ReflectionClass(NetfunSendAction::class);
+        $reflection = new ReflectionClass(NetfunSendAction::class);
         $method = $reflection->getMethod('execute');
 
-        \assertReflectionTypeName($method->getReturnType(), 'array');
-        \assertReflectionTypeName($method->getParameters()[0]->getType(), SmsData::class);
+        Assert::assertSame('array', (string) $method->getReturnType());
+        Assert::assertSame(SmsData::class, (string) $method->getParameters()[0]->getType());
     });
 
     it('uses strict types', function () {
-        $content = \notifyReflectionSource(new \ReflectionClass(NetfunSendAction::class));
-        expect($content)->toContain('declare(strict_types=1);');
+        $filename = (new ReflectionClass(NetfunSendAction::class))->getFileName();
+        Assert::assertNotFalse($filename);
+        Assert::assertStringContainsString('declare(strict_types=1);', file_get_contents($filename));
     });
 
     it('uses QueueableAction trait', function () {
-        $traits = \Safe\class_uses(NetfunSendAction::class);
-        \assertNotifyArray($traits);
-        expect($traits)->toContain('Spatie\QueueableAction\QueueableAction');
+        Assert::assertContains('Spatie\QueueableAction\QueueableAction', class_uses(NetfunSendAction::class));
     });
 });

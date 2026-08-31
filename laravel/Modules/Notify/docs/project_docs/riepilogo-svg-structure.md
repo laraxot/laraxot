@@ -44,6 +44,7 @@ laravel/Modules/{ModuleName}/resources/svg/
 9. **Geo** - Geolocalizzazione
 10. **Gdpr** - Conformità GDPR
 11. **Fixcity** - Modulo specifico progetto
+11. **App** - Modulo specifico progetto
 12. **Comment** - Sistema commenti
 13. **Chart** - Grafici e statistiche
 14. **Blog** - Sistema blog

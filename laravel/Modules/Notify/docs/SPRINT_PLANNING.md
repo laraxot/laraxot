@@ -1,3 +1,12 @@
+---
+title: "Notify Module - Sprint Planning"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Notify Module - Sprint Planning
 
 **Module:** Notify  

@@ -6,7 +6,9 @@ Canonical dependency map:
 
 Module/theme specific notes:
 
-- (add notes here when a dependency is directly used by this module/theme)
+- `spatie/laravel-sitemap` ^7.0 — sitemap.xml generation.
+- `spatie/laravel-feed` ^4.4 — RSS/Atom feed capability, dichiarato qui perché trasversale (usabile da qualunque modulo con contenuti indicizzabili: blog, catalogo prodotti, ecc.), non legato a un singolo modulo consumer. Consumer attuale: `Modules/Blog` (`Article implements Feedable`). Vedi `Modules/Blog/docs/dependencies.md`.
+- Installazione pacchetti moduli: dichiarare in `Modules/{Nome}/composer.json`, poi da `laravel/` root `composer update -W` (no nome pacchetto) — root `composer.json` resta minimo, merge-plugin nwidart unisce tutti i `Modules/*/composer.json`. Mai installare dipendenze di modulo a root.
 
 Installed packages index:
 

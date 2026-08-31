@@ -81,20 +81,22 @@ class ListMedia extends XotBaseListRecords
             'download' => Action::make('download_attachment')
                 ->icon('heroicon-o-arrow-down-tray')
                 ->color('primary')
-                ->action(static function ($record) {
+                ->action(static function (mixed $record) {
                     // PHPStan Level 10: isset() per Eloquent magic property
                     if (! is_object($record) || ! method_exists($record, 'getPath') || ! isset($record->file_name)) {
                         throw new RuntimeException('Invalid record for download');
                     }
                     $filePath = $record->getPath();
                     Assert::string($filePath, 'getPath must return string');
+                    $fileName = $record->file_name;
+                    Assert::string($fileName);
 
-                    return response()->download($filePath, (string) $record->file_name);
+                    return response()->download($filePath, $fileName);
                 }),
             'convert' => Action::make('convert')
                 ->icon('media-convert')
                 ->color('gray')
-                ->url(function ($record): string {
+                ->url(static function (mixed $record): string {
                     Assert::string($res = static::$resource::getUrl('convert', ['record' => $record]));
 
                     return $res;

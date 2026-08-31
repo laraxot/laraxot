@@ -459,12 +459,14 @@ Team
 
 **Staging**:
 - URL: https://staging.fixcity.it
+- URL: https://staging.ptv.it
 - DB: PostgreSQL
 - Queue: Redis
 - Cache: Redis
 
 **Production**:
 - URL: https://fixcity.it
+- URL: https://ptv.it
 - DB: PostgreSQL (replicated)
 - Queue: Redis Cluster
 - Cache: Redis Cluster

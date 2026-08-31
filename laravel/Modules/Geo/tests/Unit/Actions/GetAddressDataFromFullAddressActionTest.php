@@ -6,10 +6,8 @@ namespace Modules\Geo\Tests\Unit\Actions;
 
 use Illuminate\Support\Collection;
 use Modules\Geo\Actions\GetAddressDataFromFullAddressAction;
-use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Geo\Tests\TestCase::class);
 it('returns AddressData when first service succeeds', function (): void {
     $action = new GetAddressDataFromFullAddressAction();
 

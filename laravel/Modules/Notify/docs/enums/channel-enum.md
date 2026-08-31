@@ -90,3 +90,4 @@ foreach ($channels as $channelEnum) {
 *   [`WhatsAppChannel` Documentation](`../notifications/channels/whatsapp-channel.md`)
 ```
 Let's create this file.
+```

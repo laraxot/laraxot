@@ -14,8 +14,7 @@ final class ResolveLocalizedBlockDataAction
     use QueueableAction;
 
     /**
-     * @param array<string, mixed> $viewParams
-     *
+     * @param  array<string, mixed>  $viewParams
      * @return array<string, mixed>
      */
     public function execute(array $viewParams): array
@@ -37,14 +36,11 @@ final class ResolveLocalizedBlockDataAction
     }
 
     /**
+     * @param  array<array-key, mixed>  $data
      * @return array<string, mixed>
      */
-    private function normalizeViewData(mixed $data): array
+    private function normalizeViewData(array $data): array
     {
-        if (! is_array($data)) {
-            return [];
-        }
-
         $viewData = [];
 
         foreach ($data as $key => $value) {

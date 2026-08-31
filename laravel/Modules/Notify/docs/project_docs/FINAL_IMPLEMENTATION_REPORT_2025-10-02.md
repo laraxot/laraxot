@@ -56,6 +56,7 @@
 
 ### Traduzioni (8)
 - `Modules/Fixcity/lang/it/fixcity.php` (aggiornato)
+- `Modules/Fixcity/lang/it/laraxot.php` (aggiornato)
 - `Modules/Fixcity/lang/it/faq.php` ✨
 - `Modules/Fixcity/lang/it/faq-category.php` ✨
 - `Modules/Fixcity/lang/en/faq.php` ✨
@@ -101,6 +102,7 @@ protected static ?string $navigationGroup = 'Contenuti';
 ### 1. Esegui Migrations
 ```bash
 cd /var/www/_bases/base_fixcity_fila5_mono/laravel
+cd /var/www/_bases/base_ptvx_fila5_mono/laravel
 php artisan migrate
 ```
 

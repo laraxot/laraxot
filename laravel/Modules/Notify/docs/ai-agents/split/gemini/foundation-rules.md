@@ -41,6 +41,7 @@ This project has domain-specific skills available. You MUST activate the relevan
 - `api-resource-patterns` — Best practices for Laravel API Resources including resource transformation, collection handling, conditional attributes, and relationship loading.
 - `eloquent-best-practices` — Best practices for Laravel Eloquent ORM including query optimization, relationship management, and avoiding common pitfalls like N+1 queries.
 - `laravel-11-12-app-guidelines` — Guidelines and workflow for working on Laravel 11 or Laravel 12 applications across common stacks (API-only or full-stack), including optional Docker Compose/Sail, Inertia + React, Livewire, Vue, Blade, Tailwind v4, Fortify, Wayfinder, PHPUnit, Pint, and Laravel Boost MCP tools. Use when implementing features, fixing bugs, or making UI/backend changes while following project-specific instructions (../../../../AGENTS.md, docs/).
+- `laravel-11-12-app-guidelines` — Guidelines and workflow for working on Laravel 11 or Laravel 12 applications across common stacks (API-only or full-stack), including optional Docker Compose/Sail, Inertia + React, Livewire, Vue, Blade, Tailwind v4, Fortify, Wayfinder, PHPUnit, Pint, and Laravel Boost MCP tools. Use when implementing features, fixing bugs, or making UI/backend changes while following project-specific instructions (../../../../agents.md, docs/).
 - `laravel-best-practices` — Laravel 12 conventions and best practices. Use when creating controllers, models, migrations, validation, services, or structuring Laravel applications. Triggers on tasks involving Laravel architecture, Eloquent, database, API development, or PHP patterns.
 - `laravel-inertia-react` — Laravel + Inertia.js + React integration patterns. Use when building Inertia page components, handling forms with useForm, managing shared data, or implementing persistent layouts. Triggers on tasks involving Inertia.js, page props, form handling, or Laravel React integration.
 - `laravel-multi-tenancy` — Multi-tenant application architecture patterns. Use when working with multi-tenant systems, tenant isolation, or when user mentions multi-tenancy, tenants, tenant scoping, tenant isolation, multi-tenant.
@@ -89,5 +90,7 @@ applications.
 
 - ← [GEMINI Index](INDEX.md) — All Gemini guidelines
 - ← [Main AI Docs Index](../INDEX.md) — Master index
+- ← [GEMINI Index](index.md) — All Gemini guidelines
+- ← [Main AI Docs Index](../index.md) — Master index
 - ← [../../../../laravel/GEMINI.md](../../../../laravel/../../../../laravel/GEMINI.md) — Original source
 

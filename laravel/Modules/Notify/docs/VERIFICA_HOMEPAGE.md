@@ -206,3 +206,4 @@ FixCity:          [4 Cards + "Altri Argomenti"]
 La homepage FixCity **È CONFORME** al design Bootstrap Italia.
 
 URL di test: http://fixcity.local/it/tests/homepage
+URL di test: http://ptv.local/it/tests/homepage

@@ -302,6 +302,7 @@ return [
         'password' => env('SMSHOSTING_PASSWORD'),
         'sender' => env('SMSHOSTING_SENDER', '<nome progetto>'),
 'sender' => env('SMSHOSTING_SENDER', 'Quaeris'),
+'sender' => env('SMSHOSTING_SENDER', 'App'),
     ],
 ];
 ```
@@ -751,6 +752,8 @@ Quando si inviano SMS, è necessario rispettare le normative GDPR:
 
 ### Template SMS GDPR-Compliant
 
+```
+
 ```php
 public function toTwilio($notifiable)
 {
@@ -759,6 +762,10 @@ public function toTwilio($notifiable)
         Per annullare rispondere NO. Per info: <nome progetto>.it/privacy");
 ->content("Quaeris: Promemoria appuntamento {$this->appointment->formatted_date}. 
         Per annullare rispondere NO. Per info: Quaeris.it/privacy");
+->content("Quaeris: Promemoria appuntamento {$this->appointment->formatted_date}. 
+        Per annullare rispondere NO. Per info: Quaeris.it/privacy");
+->content("App: Promemoria appuntamento {$this->appointment->formatted_date}. 
+        Per annullare rispondere NO. Per info: App.it/privacy");
 }
 ```
 
@@ -811,4 +818,5 @@ class ConsentLog extends Model
 - [MULTI_CHANNEL_NOTIFICATIONS.md](./multi-channel-notifications.md)
 - [SMS_PROVIDER_CONFIGURATION.md](./sms-provider-configuration.md)
 - [NOTIFICATIONS_IMPLEMENTATION_GUIDE.md](./notifications-implementation-guide.md)
+- [TELEGRAM_NOTIFICATIONS_GUIDE.md](./telegram-notifications-guide.md)
 - [TELEGRAM_NOTIFICATIONS_GUIDE.md](./telegram-notifications-guide.md)

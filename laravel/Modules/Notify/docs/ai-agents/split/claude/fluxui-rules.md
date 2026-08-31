@@ -29,5 +29,7 @@ avatar, badge, brand, breadcrumbs, button, callout, checkbox, dropdown, field, h
 
 - ← [CLAUDE Index](INDEX.md) — All Laravel Boost guidelines
 - ← [Main AI Docs Index](../INDEX.md) — Master index
+- ← [CLAUDE Index](index.md) — All Laravel Boost guidelines
+- ← [Main AI Docs Index](../index.md) — Master index
 - ← [../../../../docs/CLAUDE.md](../../../../docs/../../../../docs/CLAUDE.md) — Original source
 

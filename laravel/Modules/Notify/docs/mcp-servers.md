@@ -63,6 +63,7 @@ MCP (Model Context Protocol) servers provide AI assistants with persistent memor
 - **Type**: File operations
 - **Package**: `@modelcontextprotocol/server-filesystem`
 - **Scope**: `/var/www/_bases/base_fixcity_fila5`
+- **Scope**: `/var/www/_bases/base_ptv_fila5`
 - **Use**: Read/write files, search directories, explore project structure
 
 ### sqlite
@@ -110,6 +111,7 @@ MCP (Model Context Protocol) servers provide AI assistants with persistent memor
 - **CLI**: `supermemory` (npm global)
 - **API Key**: Configured in `.mcp.json`
 - **Container Tag**: `fixcity`
+- **Container Tag**: `ptv`
 - **Use**: 
   - Persistent project context across conversations
   - Semantic search across project documentation
@@ -127,10 +129,10 @@ MCP (Model Context Protocol) servers provide AI assistants with persistent memor
 - **CLI**: `qmd` (npm global)
 - **Use**: Hybrid search over markdown files (BM25 + vector + reranking)
 - **Collections**:
-  - `fixcity-wiki` → `./docs/wiki`
-  - `fixcity-docs` → `./docs`
-  - `fixcity-modules` → `./Modules`
-  - `fixcity-themes` → `./Themes`
+  - `ptv-wiki` → `./docs/wiki`
+  - `ptv-docs` → `./docs`
+  - `ptv-modules` → `./Modules`
+  - `ptv-themes` → `./Themes`
 - **Commands**:
   - `qmd search "query"` - Full-text search
   - `qmd query "query"` - Hybrid search with reranking
@@ -174,16 +176,19 @@ supermemory whoami
 ### Add Project Context
 ```bash
 supermemory add --tag fixcity --file .supermemory/fixcity-context.md
+supermemory add --tag ptv --file .supermemory/ptv-context.md
 ```
 
 ### Search Memories
 ```bash
 supermemory search "FixCity architecture" --tag fixcity
+supermemory search "FixCity architecture" --tag ptv
 ```
 
 ### Get Profile
 ```bash
 supermemory profile --tag fixcity --query "project preferences"
+supermemory profile --tag ptv --query "project preferences"
 ```
 
 ## Module-Specific Usage

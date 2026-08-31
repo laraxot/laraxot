@@ -6,7 +6,6 @@ namespace Modules\AI\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Carbon;
 use Modules\Xot\Models\XotBaseModel;
 
 /**
@@ -14,15 +13,7 @@ use Modules\Xot\Models\XotBaseModel;
  *
  * A single message (user|assistant|tool|system) within an AiThread.
  *
- * @property int $id
- * @property int $ai_thread_id
- * @property int|null $user_id
- * @property string $role
- * @property string|null $content
- * @property array<string, mixed>|null $payload
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
- * @property-read AiThread $thread
+ * @property-read AiThread|null $thread
  *
  * @method static Builder<static>|AiMessage newModelQuery()
  * @method static Builder<static>|AiMessage newQuery()
@@ -32,13 +23,13 @@ use Modules\Xot\Models\XotBaseModel;
  */
 class AiMessage extends XotBaseModel
 {
-    public const ROLE_USER = 'user';
+    public const string ROLE_USER = 'user';
 
-    public const ROLE_ASSISTANT = 'assistant';
+    public const string ROLE_ASSISTANT = 'assistant';
 
-    public const ROLE_TOOL = 'tool';
+    public const string ROLE_TOOL = 'tool';
 
-    public const ROLE_SYSTEM = 'system';
+    public const string ROLE_SYSTEM = 'system';
 
     /**
      * @var list<string>

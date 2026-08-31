@@ -96,7 +96,7 @@ describe('User', function (): void {
 
     test('user can be deleted', function (): void {
         /* @var TestCase $this */
-        $this->skipUnlessDirectPermissionSupported();
+        TestCase::skipUnlessDirectPermissionSupported();
 
         $user = UserFactory::new()->createOne();
         \assert($user instanceof User);

@@ -1,3 +1,12 @@
+---
+title: "Product Strategy: Notify Module"
+module: notify
+type: product
+tags: [product, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Product Strategy: Notify Module
 
 ## 🌍 Market Context

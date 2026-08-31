@@ -47,21 +47,17 @@ class SendPushWithTemplateAction
                 'title' => 'Nuovo Ticket Creato',
                 'body' => 'È stato creato un nuovo ticket: {ticket_title}',
                 'icon' => '/icons/ticket.png',
-                'data' => ['type' => 'ticket_created'],
-            ],
+                'data' => ['type' => 'ticket_created']],
             'ticket_updated' => [
                 'title' => 'Ticket Aggiornato',
                 'body' => 'Il ticket {ticket_title} è stato aggiornato',
                 'icon' => '/icons/update.png',
-                'data' => ['type' => 'ticket_updated'],
-            ],
+                'data' => ['type' => 'ticket_updated']],
             'ticket_resolved' => [
                 'title' => 'Ticket Risolto',
                 'body' => 'Il ticket {ticket_title} è stato risolto',
                 'icon' => '/icons/check.png',
-                'data' => ['type' => 'ticket_resolved'],
-            ],
-        ];
+                'data' => ['type' => 'ticket_resolved']]];
 
         return $templates[$templateId] ?? null;
     }

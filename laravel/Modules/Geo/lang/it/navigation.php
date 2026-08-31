@@ -76,7 +76,7 @@ return [
             'name' => 'Comuni',
             'plural' => 'Comuni',
             'description' => 'Gestione dei comuni',
-            'icon' => 'heroicon-o-building',
+            'icon' => 'heroicon-o-building-office',
         ],
         'postal_codes' => [
             'name' => 'CAP',

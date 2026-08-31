@@ -1,0 +1,11 @@
+hasxtable-visibility-fix-2026-01-27.md
+phpstan-analysis-report-2025-12-18.md
+phpstan-roadmap-2026-02-03.md
+phpstan-analysis-december-18.md
+phpstan-analysis-december-17.md
+phpstan-corrections-january-2026.md
+phpstan-progress-report-2025-10-13.md
+
+# No numbered .md duplicates (rule: docs/wiki/rules/no-numbered-filenames.md)
+*-[0-9].md
+*-[0-9][0-9].md

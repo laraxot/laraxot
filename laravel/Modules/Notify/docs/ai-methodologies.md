@@ -1,3 +1,12 @@
+---
+title: "AI Methodologies Handbook"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # AI Methodologies Handbook
 
 This file is a DRY local index for AI workflows in this module or theme.

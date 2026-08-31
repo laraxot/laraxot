@@ -1,3 +1,12 @@
+---
+title: "MCP Server Configuration - Notify Module"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # MCP Server Configuration - Notify Module
 
 

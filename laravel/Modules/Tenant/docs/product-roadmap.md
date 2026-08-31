@@ -2,7 +2,7 @@
 title: "Tenant Module - Product Roadmap"
 module: "Tenant"
 type: concept
-tags: [product, roadmap]
+tags: [PRODUCT, ROADMAP]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "product roadmap"

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Filament\Resources;
 
+use Filament\Forms\Components\Field;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -17,6 +18,9 @@ class NotifyThemeResource extends XotBaseResource
 {
     protected static ?string $model = NotifyTheme::class;
 
+    /**
+     * @return array<string, Field>
+     */
     #[Override]
     public static function getFormSchema(): array
     {
@@ -29,8 +33,8 @@ class NotifyThemeResource extends XotBaseResource
             'from' => TextInput::make('from'),
             'from_email' => TextInput::make('from_email'),
             'logo' => SpatieMediaLibraryFileUpload::make('logo_src')
-                ->enableOpen()
-                ->enableDownload()
+                ->openable()
+                ->downloadable()
                 ->columnSpanFull()
                 ->disk('uploads')
                 ->directory('photos')
@@ -43,12 +47,10 @@ class NotifyThemeResource extends XotBaseResource
                     'ark' => 'ark',
                     'minty' => 'minty',
                     'sunny' => 'sunny',
-                    'widgets' => 'widgets',
-                ])
+                    'widgets' => 'widgets'])
                 ->default('empty'),
             'body' => Textarea::make('body')->columnSpanFull(),
-            'body_html' => RichEditor::make('body_html')->columnSpanFull(),
-        ];
+            'body_html' => RichEditor::make('body_html')->columnSpanFull()];
     }
 
     /**
@@ -59,18 +61,15 @@ class NotifyThemeResource extends XotBaseResource
         return match ($field) {
             'lang' => [
                 'it' => 'Italiano',
-                'en' => 'English',
-            ],
+                'en' => 'English'],
             'type' => [
                 'email' => 'Email',
                 'sms' => 'SMS',
-                'push' => 'Push Notification',
-            ],
+                'push' => 'Push Notification'],
             'post_type' => [
                 'page' => 'Page',
                 'post' => 'Post',
-                'product' => 'Product',
-            ],
+                'product' => 'Product'],
             default => [],
         };
     }

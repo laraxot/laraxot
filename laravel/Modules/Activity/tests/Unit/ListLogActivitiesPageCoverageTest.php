@@ -11,33 +11,11 @@ use Modules\Activity\Filament\Resources\ActivityResource;
 use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Activity\Tests\TestCase::class);
-
-beforeEach(function (): void {
-    /** @var TestCase $this */
-    $this->page = new class() extends ListLogActivities
-    {
-        public static function getResource(): string
-        {
-            return ActivityResource::class;
-        }
-
-        public function exposeRestoreSuccess(): Notification
-        {
-            return $this->sendRestoreSuccessNotification();
-        }
-
-        public function exposeRestoreFailure(?string $message = null): Notification
-        {
-            return $this->sendRestoreFailureNotification($message);
-        }
-    };
-});
+uses(TestCase::class);
 
 describe('List Log Activities Page Coverage', function (): void {
     test('get breadcrumb returns string', function (): void {
-        /** @var TestCase $this */
-        $result = $this->requirePage()->getBreadcrumb();
+        $result = TestCase::makeListLogActivitiesPage()->getBreadcrumb();
 
         Assert::assertNotEmpty($result);
     });
@@ -74,24 +52,21 @@ describe('List Log Activities Page Coverage', function (): void {
     });
 
     test('get pagination mode returns default', function (): void {
-        /** @var TestCase $this */
-        $mode = $this->requirePage()->getPaginationMode();
+        $mode = TestCase::makeListLogActivitiesPage()->getPaginationMode();
 
         Assert::assertSame(PaginationMode::Default, $mode);
     });
 
     test('get field label returns name when not in map', function (): void {
-        /** @var TestCase $this */
         try {
-            $label = $this->requirePage()->getFieldLabel('nonexistent_field');
+            $label = TestCase::makeListLogActivitiesPage()->getFieldLabel('nonexistent_field');
             Assert::assertSame('nonexistent_field', $label);
         } catch (\Throwable $e) {
-            $this->skipTest('getFieldLabel() method not available in test context');
+            Assert::markTestSkipped('getFieldLabel() method not available in test context');
         }
     });
 
     test('send restore success notification returns notification', function (): void {
-        /** @var TestCase $this */
         $page = new class() extends ListLogActivities
         {
             /** @return class-string */
@@ -112,7 +87,6 @@ describe('List Log Activities Page Coverage', function (): void {
     });
 
     test('send restore failure notification without message returns notification', function (): void {
-        /** @var TestCase $this */
         $page = new class() extends ListLogActivities
         {
             /** @return class-string */
@@ -133,7 +107,6 @@ describe('List Log Activities Page Coverage', function (): void {
     });
 
     test('send restore failure notification with message includes body', function (): void {
-        /** @var TestCase $this */
         $page = new class() extends ListLogActivities
         {
             /** @return class-string */
@@ -154,8 +127,7 @@ describe('List Log Activities Page Coverage', function (): void {
     });
 
     test('can restore activity with record executes resource check', function (): void {
-        /** @var TestCase $this */
-        $result = $this->requirePage()->canRestoreActivity();
+        $result = TestCase::makeListLogActivitiesPage()->canRestoreActivity();
         Assert::assertFalse($result);
     });
 });

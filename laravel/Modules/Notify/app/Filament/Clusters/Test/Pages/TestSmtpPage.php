@@ -83,10 +83,8 @@ class TestSmtpPage extends XotBasePage
                     RichEditor::make('body_html')
                         ->default('test body')
                         ->required()
-                        ->columnSpanFull(),
-                ])
-                ->columns(3),
-        ])->statePath('emailData');
+                        ->columnSpanFull()])
+                ->columns(3)])->statePath('emailData');
     }
 
     public function sendEmail(): void
@@ -111,12 +109,11 @@ class TestSmtpPage extends XotBasePage
         return ['emailForm'];
     }
 
-    /** @return array<string, \Filament\Actions\Action> */
+    /** @return array<string, Action> */
     protected function getEmailFormActions(): array
     {
         return [
-            'submit' => Action::make('emailFormActions')->submit('emailFormActions'),
-        ];
+            'submit' => Action::make('emailFormActions')->submit('emailFormActions')];
     }
 
     #[Override]

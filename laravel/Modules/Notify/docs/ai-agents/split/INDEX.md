@@ -20,6 +20,7 @@ related:
 # AI Agents Documentation Index
 
 **Project**: FixCity Platform  
+**Project**: Notify Platform  
 **Purpose**: Centralized documentation for all AI assistant configurations  
 **Last Updated**: 2026-04-11  
 
@@ -145,6 +146,7 @@ Split from [`laravel/GEMINI.md`](../../../../laravel/GEMINI.md):
 - ← Back to [Project Root](../../)
 - ← Back to [Docs Index](../../docs/README.md)
 - ← Back to [AGENTS.md](../../../../AGENTS.md) (original)
+- ← Back to [agents.md](../../../../agents.md) (original)
 - ← Back to [CLAUDE.md](../../../../docs/CLAUDE.md) (original)
 - ← Back to [GEMINI.md](../../../../laravel/GEMINI.md) (original)
 - ← Back to [QWEN.md](../../../../QWEN.md) (original)
@@ -157,14 +159,18 @@ Split from [`laravel/GEMINI.md`](../../../../laravel/GEMINI.md):
 1. Create file in appropriate subdirectory (`agents/`, `tasks/`, `claude/`, `gemini/`)
 2. Add entry to this INDEX.md table
 3. Add bidirectional link back to this INDEX.md
+2. Add entry to this index.md table
+3. Add bidirectional link back to this index.md
 4. Update original file to reference split version
 
 ### Updating Split Files
 1. Update the split file
 2. Update line count in this INDEX.md
+2. Update line count in this index.md
 3. Add changelog entry below
 
 ### Changelog
 | Date | Change | Author |
 |------|--------|--------|
 | 2026-04-11 | Initial split of AGENTS.md, CLAUDE.md, GEMINI.md | Qwen |
+| 2026-04-11 | Initial split of agents.md, CLAUDE.md, GEMINI.md | Qwen |

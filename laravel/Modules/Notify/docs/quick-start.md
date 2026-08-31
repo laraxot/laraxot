@@ -5,6 +5,7 @@ tags: [quick, start]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "quick-start 🚀 fixcity - guida rapida sviluppatori"
+qmd: "quick-start 🚀 ptv - guida rapida sviluppatori"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -51,6 +52,8 @@ related:
 ```bash
 git clone https://github.com/laraxot/fixcity.git
 cd fixcity/laravel
+git clone https://github.com/laraxot/ptv.git
+cd ptv/laravel
 ```
 
 ### 2. Installazione Dipendenze
@@ -76,6 +79,7 @@ DB_CONNECTION=pgsql
 DB_HOST=127.0.0.1
 DB_PORT=5432
 DB_DATABASE=fixcity
+DB_DATABASE=ptv
 DB_USERNAME=your_user
 DB_PASSWORD=your_password
 ```
@@ -247,6 +251,7 @@ return [
 
 ```
 base_fixcity_fila5_mono/
+base_ptv_fila5_mono/
 ├── laravel/                    # Applicazione Laravel
 │   ├── Modules/               # Moduli Nwidart
 │   │   ├── Fixcity/          # Core business logic
@@ -534,12 +539,12 @@ php artisan optimize:clear
 ## 📞 SUPPORTO
 
 ### Team
-- **Slack**: #fixcity-dev
-- **Email**: dev@fixcity.it
+- **Slack**: #ptv-dev
+- **Email**: dev@ptv.it
 
 ### Documentazione
-- **Issues**: [GitHub Issues](https://github.com/laraxot/fixcity/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/laraxot/fixcity/discussions)
+- **Issues**: [GitHub Issues](https://github.com/laraxot/ptv/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/laraxot/ptv/discussions)
 
 ---
 
@@ -548,3 +553,37 @@ php artisan optimize:clear
 
 *Per contribuire al progetto, leggi attentamente questa guida e le regole Laraxot. In caso di dubbi, consulta la
 documentazione del modulo specifico o chiedi supporto al team.*
+---
+
+<!-- Merged from QUICK-START.md, which collided with this file on case-insensitive filesystems. -->
+
+---
+title: "Notify Module Quick Start"
+type: guide
+tags: [notify, notifications]
+created: 2026-07-28
+updated: 2026-07-28
+---
+
+# Notify Module — Quick Start
+
+## Send Notification
+
+```php
+use Modules\Notify\Notifications\UserVerificationNotification;
+
+$user->notify(new UserVerificationNotification());
+
+// Queued
+$user->notifyLater(now()->addMinutes(5),
+    new UserVerificationNotification());
+```
+
+## Create Custom Notification
+
+```php
+class CustomNotification extends Notification {
+    public function via() { return ['mail', 'database']; }
+    public function toMail() { return (new Mailable())->view(...); }
+}
+```

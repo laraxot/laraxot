@@ -36,8 +36,8 @@ The `IconStateSplitColumn` is a custom Filament table column component designed 
 
 ```php
 use Modules\UI\Filament\Tables\Columns\IconStateSplitColumn;
-use Modules\<nome progetto>\States\Appointment\AppointmentState;
-use Modules\<nome progetto>\Models\Appointment;
+use Modules\SaluteOra\States\Appointment\AppointmentState;
+use Modules\SaluteOra\Models\Appointment;
 
 // In your Filament resource table configuration
 'states' => IconStateSplitColumn::make()
@@ -280,12 +280,12 @@ The main issue was that `wire:click` doesn't work directly in Filament table col
 #### Solution Architecture
 ```javascript
 // Custom event dispatch
-onclick="window.dispatchEvent(new CustomEvent('state-transition', {
-    detail: {
-        recordId: {{ $record->id }},
+onclick="window.dispatchEvent(new CustomEvent('state-transition', { 
+    detail: { 
+        recordId: {{ $record->id }}, 
         stateClass: '{{ $state['class']::class }}',
         action: 'prova'
-    }
+    } 
 }))"
 
 // Event listener for Livewire integration
@@ -329,4 +329,4 @@ document.addEventListener('state-transition', function(event) {
 
 **Last Updated**: June 2025
 **Version**: 2.1
-**Compatibility**: Filament 3.x, Laravel 10.x
+**Compatibility**: Filament 3.x, Laravel 10.x 

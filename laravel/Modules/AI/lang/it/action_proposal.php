@@ -7,14 +7,30 @@ return [
     'plural_label' => 'Proposte di azione AI',
     'navigation_group' => 'Assistente AI',
     'fields' => [
-        'section' => 'Dettagli proposta',
-        'thread' => 'Conversazione',
-        'type' => 'Tipo',
-        'status' => 'Stato',
-        'preview' => 'Anteprima',
-        'error' => 'Errore',
-        'confirmed_at' => 'Confermata il',
-        'executed_at' => 'Eseguita il',
+        'section' => [
+            'label' => 'Dettagli proposta',
+        ],
+        'thread' => [
+            'label' => 'Conversazione',
+        ],
+        'type' => [
+            'label' => 'Tipo',
+        ],
+        'status' => [
+            'label' => 'Stato',
+        ],
+        'preview' => [
+            'label' => 'Anteprima',
+        ],
+        'error' => [
+            'label' => 'Errore',
+        ],
+        'confirmed_at' => [
+            'label' => 'Confermata il',
+        ],
+        'executed_at' => [
+            'label' => 'Eseguita il',
+        ],
     ],
     'statuses' => [
         'pending' => 'In attesa',

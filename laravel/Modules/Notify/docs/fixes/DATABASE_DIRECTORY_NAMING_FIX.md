@@ -120,6 +120,7 @@ php artisan test
 ## Related
 
 - **GitHub Issue**: https://github.com/laraxot/base_fixcity_fila5/issues/4
+- **GitHub Issue**: https://github.com/laraxot/platform/issues/4
 - **Laravel Directory Structure**: https://laravel.com/docs/structure
 
 ## Checklist

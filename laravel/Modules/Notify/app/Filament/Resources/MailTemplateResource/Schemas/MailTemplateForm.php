@@ -20,6 +20,9 @@ class MailTemplateForm extends XotBaseResourceForm
      */
     public static function getFormSchema(): array
     {
+        /** @var view-string $paramsBadgesView */
+        $paramsBadgesView = 'notify::filament.components.params-badges';
+
         return [
             'mailable_slug_group' => Group::make()
                 ->schema([
@@ -30,8 +33,7 @@ class MailTemplateForm extends XotBaseResourceForm
                         ->maxLength(255),
                     'slug' => TextInput::make('slug')
                         ->required()
-                        ->unique(ignoreRecord: true),
-                ])
+                        ->unique(ignoreRecord: true)])
                 ->columns(2),
             /*
             'name_slug_group' => Group::make()
@@ -45,8 +47,7 @@ class MailTemplateForm extends XotBaseResourceForm
                     TextInput::make('slug')
                         ->label('Slug')
                         ->required()
-                        ->unique(ignoreRecord: true),
-                ])
+                        ->unique(ignoreRecord: true)])
                 ->columns(2),
             */
 
@@ -59,16 +60,14 @@ class MailTemplateForm extends XotBaseResourceForm
                 ->required()
                 ->columnSpanFull(),
             'params_display' => View::make('notify::filament.components.params-badges')
-                ->viewData(fn ($record): array => [
-                    'params' => is_object($record) && isset($record->params) ? $record->params : [],
-                ])
+                ->viewData(fn (mixed $record): array => [
+                    'params' => is_object($record) && isset($record->params) ? $record->params : []])
                 ->columnSpanFull()
-                ->visible(fn ($record): bool => is_object($record) && isset($record->params) && ! empty($record->params)),
+                ->visible(fn (mixed $record): bool => is_object($record) && isset($record->params) && ! empty($record->params)),
             'text_template' => Textarea::make('text_template')
                 ->maxLength(65535)
                 ->columnSpanFull(),
             'sms_template' => Textarea::make('sms_template')
-                ->columnSpanFull(),
-        ];
+                ->columnSpanFull()];
     }
 }

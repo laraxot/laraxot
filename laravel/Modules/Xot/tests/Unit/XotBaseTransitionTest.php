@@ -8,7 +8,7 @@ use Modules\Xot\States\Transitions\XotBaseTransition;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('XotBaseTransition', function (): void {
     it('can be instantiated', function (): void {
@@ -26,7 +26,7 @@ describe('XotBaseTransition', function (): void {
     it('has record property', function (): void {
         [, $transition] = xotBaseTransitionFixture();
 
-        Assert::assertTrue(property_exists($transition, 'record'));
+        Assert::assertTrue((new ReflectionObject($transition))->hasProperty('record'));
     });
 
     it('can get record', function (): void {
@@ -38,18 +38,17 @@ describe('XotBaseTransition', function (): void {
     it('has sendNotifications method', function (): void {
         [, $transition] = xotBaseTransitionFixture();
 
-        Assert::assertTrue(method_exists($transition, 'sendNotifications'));
+        Assert::assertTrue((new ReflectionObject($transition))->hasMethod('sendNotifications'));
     });
 
     it('can send notifications without errors', function (): void {
         $record = UserFactory::new()->createOne();
 
-        $transition = new class($record) extends XotBaseTransition {
+        $transition = new class($record) extends XotBaseTransition
+        {
             public static string $name = 'test_transition';
 
-            public function sendRecipientNotification(RecordNotificationData $recipient, array $data): void
-            {
-            }
+            public function sendRecipientNotification(RecordNotificationData $recipient, array $data): void {}
         };
 
         $transition->sendNotifications();
@@ -58,13 +57,14 @@ describe('XotBaseTransition', function (): void {
     it('has getNotificationRecipients method', function (): void {
         [, $transition] = xotBaseTransitionFixture();
 
-        Assert::assertTrue(method_exists($transition, 'getNotificationRecipients'));
+        Assert::assertTrue((new ReflectionObject($transition))->hasMethod('getNotificationRecipients'));
     });
 
     it('returns correct notification recipients structure', function (): void {
         $record = UserFactory::new()->createOne();
 
-        $transition = new class($record) extends XotBaseTransition {
+        $transition = new class($record) extends XotBaseTransition
+        {
             public static string $name = 'test_transition';
         };
 
@@ -77,13 +77,14 @@ describe('XotBaseTransition', function (): void {
     it('has sendRecipientNotification method', function (): void {
         [, $transition] = xotBaseTransitionFixture();
 
-        Assert::assertTrue(method_exists($transition, 'sendRecipientNotification'));
+        Assert::assertTrue((new ReflectionObject($transition))->hasMethod('sendRecipientNotification'));
     });
 
     it('processes recipients correctly in sendNotifications', function (): void {
         $record = UserFactory::new()->createOne();
 
-        $transition = new class($record) extends XotBaseTransition {
+        $transition = new class($record) extends XotBaseTransition
+        {
             public static string $name = 'test_mixed_transition';
 
             /**
@@ -96,9 +97,7 @@ describe('XotBaseTransition', function (): void {
                 ];
             }
 
-            public function sendRecipientNotification(RecordNotificationData $recipient, array $data): void
-            {
-            }
+            public function sendRecipientNotification(RecordNotificationData $recipient, array $data): void {}
         };
 
         $transition->sendNotifications();

@@ -1,0 +1,3075 @@
+{
+  "communities": {
+    "0": [
+      "app_filament_blocks_heading",
+      "app_filament_blocks_heading_heading",
+      "app_filament_blocks_heading_heading_make",
+      "app_filament_blocks_hero",
+      "app_filament_blocks_hero_hero",
+      "app_filament_blocks_hero_hero_make",
+      "app_filament_blocks_image",
+      "app_filament_blocks_image_image",
+      "app_filament_blocks_image_image_getformschema",
+      "app_filament_blocks_image_image_getratioclass",
+      "app_filament_blocks_image_image_getratios",
+      "app_filament_blocks_image_image_make",
+      "app_filament_blocks_imagesgallery",
+      "app_filament_blocks_imagesgallery_imagesgallery",
+      "app_filament_blocks_imagesgallery_imagesgallery_getratioclass",
+      "app_filament_blocks_imagesgallery_imagesgallery_getratios",
+      "app_filament_blocks_imagesgallery_imagesgallery_make",
+      "app_filament_blocks_imagespatie",
+      "app_filament_blocks_imagespatie_imagespatie",
+      "app_filament_blocks_imagespatie_imagespatie_make",
+      "app_filament_blocks_paragraph",
+      "app_filament_blocks_paragraph_paragraph",
+      "app_filament_blocks_paragraph_paragraph_make",
+      "app_filament_blocks_slider",
+      "app_filament_blocks_slider_slider",
+      "app_filament_blocks_slider_slider_getformschema",
+      "app_filament_blocks_slider_slider_make",
+      "app_filament_blocks_title",
+      "app_filament_blocks_title_title",
+      "app_filament_blocks_title_title_make",
+      "app_filament_blocks_videospatie",
+      "app_filament_blocks_videospatie_videospatie",
+      "app_filament_blocks_videospatie_videospatie_getratioclass",
+      "app_filament_blocks_videospatie_videospatie_getratios",
+      "app_filament_blocks_videospatie_videospatie_make",
+      "app_filament_components_spatiedocumentupload",
+      "app_filament_components_spatiedocumentupload_spatiedocumentupload",
+      "app_filament_components_spatiedocumentupload_spatiedocumentupload_custom",
+      "app_filament_components_spatiedocumentupload_spatiedocumentupload_forcertifications",
+      "app_filament_components_spatiedocumentupload_spatiedocumentupload_foridentitydocument",
+      "app_filament_components_spatiedocumentupload_spatiedocumentupload_foriseedocument",
+      "app_filament_components_spatiedocumentupload_spatiedocumentupload_forpregnancydocument",
+      "app_filament_components_spatiedocumentupload_spatiedocumentupload_make",
+      "app_view_components_render_block_block",
+      "app_view_components_render_block_block_construct",
+      "app_view_components_render_block_block_normalizeviewdata",
+      "app_view_components_render_block_block_render",
+      "filament_forms_components_builder_block",
+      "filament_forms_components_spatiemedialibraryfileupload",
+      "illuminate_contracts_view_factory",
+      "resources_views_filament_forms_components_radio_badge_blade",
+      "set",
+      "spatiemedialibraryfileupload"
+    ],
+    "1": [
+      "app_actions_block_getallblocksaction",
+      "app_actions_block_getallblocksaction_getallblocksaction",
+      "app_actions_block_getallblocksaction_getallblocksaction_execute",
+      "app_actions_block_resolvelocalizedblockdataaction",
+      "app_actions_block_resolvelocalizedblockdataaction_resolvelocalizedblockdataaction",
+      "app_actions_block_resolvelocalizedblockdataaction_resolvelocalizedblockdataaction_execute",
+      "app_actions_block_resolvelocalizedblockdataaction_resolvelocalizedblockdataaction_normalizeviewdata",
+      "app_actions_getuserdataaction",
+      "app_actions_getuserdataaction_getuserdataaction",
+      "app_actions_getuserdataaction_getuserdataaction_execute",
+      "app_actions_icon_getalliconsaction",
+      "app_actions_icon_getalliconsaction_getalliconsaction",
+      "app_actions_icon_getalliconsaction_getalliconsaction_execute",
+      "app_actions_panel_applycalendartopanelaction",
+      "app_actions_panel_applycalendartopanelaction_applycalendartopanelaction",
+      "app_actions_panel_applycalendartopanelaction_applycalendartopanelaction_execute",
+      "app_data_userdata",
+      "app_data_userdata_userdata",
+      "app_data_userdata_userdata_construct",
+      "app_datas_sliderdata",
+      "app_datas_sliderdata_sliderdata",
+      "app_datas_sliderdata_sliderdata_construct",
+      "app_datas_sliderdatacollection",
+      "app_datas_sliderdatacollection_sliderdatacollection",
+      "app_datas_sliderdatacollection_sliderdatacollection_construct",
+      "app_datas_thememetadatadata",
+      "app_datas_thememetadatadata_thememetadatadata",
+      "app_datas_thememetadatadata_thememetadatadata_construct",
+      "app_datas_thememetadatadata_thememetadatadata_getspacing",
+      "app_datas_userdata",
+      "app_datas_userdata_userdata",
+      "app_datas_userdata_userdata_construct",
+      "app_filament_forms_components_iconpicker",
+      "app_filament_forms_components_iconpicker_iconpicker",
+      "app_filament_forms_components_iconpicker_iconpicker_setup",
+      "app_filament_forms_components_passwordstrengthfield",
+      "app_filament_forms_components_passwordstrengthfield_passwordstrengthfield",
+      "app_filament_forms_components_passwordstrengthfield_passwordstrengthfield_evaluatestrength",
+      "app_filament_forms_components_passwordstrengthfield_passwordstrengthfield_setup",
+      "app_filament_forms_components_passwordstrengthfield_php_static",
+      "app_providers_filament_adminpanelprovider",
+      "app_providers_filament_adminpanelprovider_adminpanelprovider",
+      "app_providers_filament_adminpanelprovider_adminpanelprovider_panel",
+      "app_view_components_render_block",
+      "factory",
+      "filament_panel",
+      "modules_xot_filament_forms_components_xotbasetextinput",
+      "modules_xot_providers_filament_xotbasepanelprovider",
+      "spatie_laraveldata_data",
+      "spatie_laraveldata_datacollection",
+      "spatie_queueableaction_queueableaction",
+      "tests_unit_datas_uidatascoveragetest"
+    ],
+    "2": [
+      "action",
+      "app_filament_tables_columns_dummyactionscolumn",
+      "app_filament_tables_columns_dummyactionscolumn_dummyactionscolumn",
+      "app_filament_tables_columns_iconcolumn",
+      "app_filament_tables_columns_iconcolumn_iconcolumn",
+      "app_filament_tables_columns_iconstatecolumn",
+      "app_filament_tables_columns_iconstatecolumn_iconstatecolumn",
+      "app_filament_tables_columns_iconstatecolumn_iconstatecolumn_setup",
+      "app_filament_tables_columns_iconstategroupcolumn",
+      "app_filament_tables_columns_iconstategroupcolumn_iconstategroupcolumn",
+      "app_filament_tables_columns_iconstategroupcolumn_iconstategroupcolumn_setup",
+      "app_filament_tables_columns_iconstategroupcolumn_iconstategroupcolumn_stateclass",
+      "app_filament_tables_columns_iconstategroupcolumn_php_static",
+      "app_filament_tables_columns_iconstatesplitcolumn",
+      "app_filament_tables_columns_iconstatesplitcolumn_iconstatesplitcolumn",
+      "app_filament_tables_columns_iconstatesplitcolumn_iconstatesplitcolumn_cantransitionto",
+      "app_filament_tables_columns_iconstatesplitcolumn_iconstatesplitcolumn_getcachedrecord",
+      "app_filament_tables_columns_iconstatesplitcolumn_iconstatesplitcolumn_getprovaaction",
+      "app_filament_tables_columns_iconstatesplitcolumn_iconstatesplitcolumn_getrecordfortransition",
+      "app_filament_tables_columns_iconstatesplitcolumn_iconstatesplitcolumn_getrecordstates",
+      "app_filament_tables_columns_iconstatesplitcolumn_iconstatesplitcolumn_getstateactions",
+      "app_filament_tables_columns_iconstatesplitcolumn_iconstatesplitcolumn_getstateinstance",
+      "app_filament_tables_columns_iconstatesplitcolumn_iconstatesplitcolumn_getstatemapping",
+      "app_filament_tables_columns_iconstatesplitcolumn_iconstatesplitcolumn_gettransitionaction",
+      "app_filament_tables_columns_iconstatesplitcolumn_iconstatesplitcolumn_handletableaction",
+      "app_filament_tables_columns_iconstatesplitcolumn_iconstatesplitcolumn_notifytransitionerror",
+      "app_filament_tables_columns_iconstatesplitcolumn_iconstatesplitcolumn_notifytransitionsuccess",
+      "app_filament_tables_columns_iconstatesplitcolumn_iconstatesplitcolumn_prova",
+      "app_filament_tables_columns_iconstatesplitcolumn_iconstatesplitcolumn_stateclass",
+      "app_filament_tables_columns_iconstatesplitcolumn_iconstatesplitcolumn_transitionstate",
+      "app_filament_tables_columns_iconstatesplitcolumn_php_static",
+      "app_filament_tables_columns_selectstatecolumn",
+      "app_filament_tables_columns_selectstatecolumn_selectstatecolumn",
+      "app_filament_tables_columns_selectstatecolumn_selectstatecolumn_combinestateoptions",
+      "app_filament_tables_columns_selectstatecolumn_selectstatecolumn_setup",
+      "app_view_components_render_blocks",
+      "app_view_components_render_blocks_blocks",
+      "app_view_components_render_blocks_blocks_construct",
+      "filament_actions_action",
+      "illuminate_database_eloquent_model",
+      "modules_xot_contracts_statecontract",
+      "modules_xot_filament_tables_columns_xotbasecolumngroup",
+      "modules_xot_filament_tables_columns_xotbaseiconcolumn",
+      "modules_xot_filament_tables_columns_xotbaseselectcolumn",
+      "statecontract",
+      "tests_unit_widgets_fixtures_mockeventmodel",
+      "tests_unit_widgets_fixtures_mockeventmodel_mockeventmodel",
+      "tests_unit_widgets_fixtures_mockeventmodel_mockeventmodel_gettable",
+      "tests_unit_widgets_mockeventmodel",
+      "tests_unit_widgets_mockeventmodel_mockeventmodel",
+      "tests_unit_widgets_mockeventmodel_mockeventmodel_gettable"
+    ],
+    "3": [
+      "app_models_basemodel",
+      "app_models_basemodel_basemodel",
+      "app_models_category",
+      "app_models_category_category",
+      "app_models_collection",
+      "app_models_collection_collection",
+      "app_models_fieldoption",
+      "app_models_fieldoption_fieldoption",
+      "database_factories_basemodelfactory",
+      "database_factories_basemodelfactory_basemodelfactory",
+      "database_factories_basemodelfactory_basemodelfactory_active",
+      "database_factories_basemodelfactory_basemodelfactory_definition",
+      "database_factories_basemodelfactory_basemodelfactory_inactive",
+      "database_factories_basemodelfactory_php_static",
+      "database_factories_categoryfactory",
+      "database_factories_categoryfactory_categoryfactory",
+      "database_factories_categoryfactory_categoryfactory_definition",
+      "database_factories_collectionfactory",
+      "database_factories_collectionfactory_collectionfactory",
+      "database_factories_collectionfactory_collectionfactory_definition",
+      "database_factories_fieldoptionfactory",
+      "database_factories_fieldoptionfactory_fieldoptionfactory",
+      "database_factories_fieldoptionfactory_fieldoptionfactory_definition",
+      "database_migrations_2026_07_15_100000_create_categories_table",
+      "database_migrations_2026_07_15_100000_create_categories_table_up",
+      "database_migrations_2026_07_15_100002_create_field_options_table",
+      "database_migrations_2026_07_15_100002_create_field_options_table_up",
+      "database_seeders_categoryseeder",
+      "database_seeders_categoryseeder_categoryseeder",
+      "database_seeders_categoryseeder_categoryseeder_run",
+      "database_seeders_collectionseeder",
+      "database_seeders_collectionseeder_collectionseeder",
+      "database_seeders_collectionseeder_collectionseeder_run",
+      "database_seeders_fieldoptionseeder",
+      "database_seeders_fieldoptionseeder_fieldoptionseeder",
+      "database_seeders_fieldoptionseeder_fieldoptionseeder_run",
+      "database_seeders_uidatabaseseeder",
+      "database_seeders_uidatabaseseeder_uidatabaseseeder",
+      "database_seeders_uidatabaseseeder_uidatabaseseeder_run",
+      "illuminate_database_eloquent_factories_factory",
+      "illuminate_database_seeder",
+      "modules_xot_models_basemodel",
+      "modules_xot_models_xotbasemodel",
+      "tests_feature_uibusinesslogictest",
+      "tests_pest",
+      "tests_pest_createcategory",
+      "tests_pest_createcollection",
+      "tests_pest_makecategory",
+      "tests_pest_makecollection",
+      "tests_unit_models_categorymodeltest",
+      "tests_unit_models_collectionmodeltest"
+    ],
+    "4": [
+      "app_filament_forms_components_addressfield",
+      "app_filament_forms_components_addressfield_addressfield",
+      "app_filament_forms_components_addressfield_addressfield_getdefaultchildcomponents",
+      "app_filament_forms_components_addressfield_addressfield_getrelationship",
+      "app_filament_forms_components_addressfield_addressfield_relationship",
+      "app_filament_forms_components_addressfield_addressfield_saverelationships",
+      "app_filament_forms_components_addressfield_addressfield_setup",
+      "app_filament_forms_components_addressfield_php_static",
+      "app_filament_forms_components_field_qrreader",
+      "app_filament_forms_components_field_qrreader_qrreader",
+      "app_filament_forms_components_openinghoursfield",
+      "app_filament_forms_components_openinghoursfield_openinghoursfield",
+      "app_filament_forms_components_openinghoursfield_openinghoursfield_getdayschema",
+      "app_filament_forms_components_openinghoursfield_openinghoursfield_gettimepickercomponent",
+      "app_filament_forms_components_openinghoursfield_openinghoursfield_setup",
+      "app_filament_forms_components_radiocollection",
+      "app_filament_forms_components_radiocollection_php_closure",
+      "app_filament_forms_components_radiocollection_php_static",
+      "app_filament_forms_components_radiocollection_radiocollection",
+      "app_filament_forms_components_radiocollection_radiocollection_getitemview",
+      "app_filament_forms_components_radiocollection_radiocollection_getoptions",
+      "app_filament_forms_components_radiocollection_radiocollection_getvaluekey",
+      "app_filament_forms_components_radiocollection_radiocollection_isoptionselected",
+      "app_filament_forms_components_radiocollection_radiocollection_itemview",
+      "app_filament_forms_components_radiocollection_radiocollection_options",
+      "app_filament_forms_components_radiocollection_radiocollection_valuekey",
+      "app_filament_forms_components_treefield",
+      "app_filament_forms_components_treefield_treefield",
+      "app_filament_forms_components_treefield_treefield_setup",
+      "app_forms_components_radiocardselector",
+      "app_forms_components_radiocardselector_php_closure",
+      "app_forms_components_radiocardselector_php_static",
+      "app_forms_components_radiocardselector_radiocardselector",
+      "app_forms_components_radiocardselector_radiocardselector_cards",
+      "app_forms_components_radiocardselector_radiocardselector_emptystatedescription",
+      "app_forms_components_radiocardselector_radiocardselector_emptystatetitle",
+      "app_forms_components_radiocardselector_radiocardselector_getcards",
+      "app_forms_components_radiocardselector_radiocardselector_getemptystatedescription",
+      "app_forms_components_radiocardselector_radiocardselector_getemptystatetitle",
+      "app_forms_components_radiocardselector_radiocardselector_getsectionsubtitle",
+      "app_forms_components_radiocardselector_radiocardselector_getsectiontitle",
+      "app_forms_components_radiocardselector_radiocardselector_gettargetfieldname",
+      "app_forms_components_radiocardselector_radiocardselector_normalizecardrow",
+      "app_forms_components_radiocardselector_radiocardselector_populatesfield",
+      "app_forms_components_radiocardselector_radiocardselector_sectionsubtitle",
+      "app_forms_components_radiocardselector_radiocardselector_sectiontitle",
+      "filament_forms_components_timepicker",
+      "illuminate_support_collection",
+      "modules_xot_filament_forms_components_xotbasefield",
+      "timepicker"
+    ],
+    "5": [
+      "app_contracts_hastablelayout",
+      "app_contracts_hastablelayout_gettablelayout",
+      "app_contracts_hastablelayout_settablelayout",
+      "app_filament_actions_header_tablelayouttoggleheaderaction",
+      "app_filament_actions_header_tablelayouttoggleheaderaction_tablelayouttoggleheaderaction",
+      "app_filament_actions_header_tablelayouttoggleheaderaction_tablelayouttoggleheaderaction_getdefaultname",
+      "app_filament_actions_header_tablelayouttoggleheaderaction_tablelayouttoggleheaderaction_setup",
+      "app_filament_actions_table_hastablelayout",
+      "app_filament_actions_table_hastablelayout_getcurrentlayout",
+      "app_filament_actions_table_hastablelayout_gettablelayout",
+      "app_filament_actions_table_hastablelayout_resetlayout",
+      "app_filament_actions_table_hastablelayout_savelayout",
+      "app_filament_actions_table_hastablelayout_settablelayout",
+      "app_filament_actions_table_tablelayouttoggletableaction",
+      "app_filament_actions_table_tablelayouttoggletableaction_tablelayouttoggletableaction",
+      "app_filament_actions_table_tablelayouttoggletableaction_tablelayouttoggletableaction_getdefaultname",
+      "app_filament_actions_table_tablelayouttoggletableaction_tablelayouttoggletableaction_resolvelayout",
+      "app_filament_actions_table_tablelayouttoggletableaction_tablelayouttoggletableaction_resolvetargetlayout",
+      "app_filament_actions_table_tablelayouttoggletableaction_tablelayouttoggletableaction_setup",
+      "app_filament_actions_table_tablelayouttoggletableaction_tablelayouttoggletableaction_togglelayout",
+      "app_filament_actions_table_tablelayouttrait",
+      "app_filament_actions_table_tablelayouttrait_getcurrentlayout",
+      "app_filament_actions_table_tablelayouttrait_gettablelayout",
+      "app_filament_actions_table_tablelayouttrait_php_tablelayoutenum",
+      "app_filament_actions_table_tablelayouttrait_resetlayout",
+      "app_filament_actions_table_tablelayouttrait_savelayout",
+      "app_filament_actions_table_tablelayouttrait_settablelayout",
+      "app_filament_traits_hastablelayoutpage",
+      "app_filament_traits_hastablelayoutpage_applylayoutto",
+      "app_filament_traits_hastablelayoutpage_applylayoutview",
+      "app_filament_traits_hastablelayoutpage_islayoutcapable",
+      "app_filament_traits_hastablelayoutpage_mounttablelayoutfromsession",
+      "app_filament_traits_hastablelayoutpage_readlayoutfrom",
+      "app_traits_tablelayouttrait",
+      "app_traits_tablelayouttrait_gettablelayout",
+      "app_traits_tablelayouttrait_php_tablelayoutenum",
+      "app_traits_tablelayouttrait_refreshtable",
+      "app_traits_tablelayouttrait_resettable",
+      "app_traits_tablelayouttrait_settablelayout",
+      "hastablelayout",
+      "modules_ui_enums_tablelayoutenum",
+      "modules_ui_filament_actions_table_tablelayouttrait",
+      "modules_xot_filament_actions_xotbaseaction",
+      "tablelayouttrait",
+      "tests_unit_traits_hastablelayoutpagecontracttest"
+    ],
+    "6": [
+      "app_enums_cornerpositionenum",
+      "app_enums_cornerpositionenum_getcssclass",
+      "app_enums_fieldtypeenum",
+      "app_enums_tablelayout",
+      "app_enums_tablelayout_php_self",
+      "app_enums_tablelayout_toggle",
+      "app_providers_uiserviceprovider",
+      "app_providers_uiserviceprovider_uiserviceprovider",
+      "app_providers_uiserviceprovider_uiserviceprovider_getcomponentviewpath",
+      "illuminate_foundation_application",
+      "illuminate_foundation_testing_databasetransactions",
+      "lang_it_field",
+      "modules_ui_models_component",
+      "modules_ui_tests_support_ensuresuidatabaseschema",
+      "modules_xot_providers_xotbaseserviceprovider",
+      "modules_xot_tests_xotbasetestcase",
+      "tests_feature_categorytabscomponenttest",
+      "tests_feature_categorytabscomponenttest_rendercategorytabshtml",
+      "tests_feature_categorytabscomponenttest_requirecategorytabshtml",
+      "tests_feature_componentfilesexisttest",
+      "tests_feature_componentfilesexisttest_requiresixteencomponentsbasepath",
+      "tests_feature_componentfilesexisttest_sixteencomponentsbasepath",
+      "tests_feature_componentreorganizationtest",
+      "tests_feature_componentreorganizationtest_skipunlesspubthemeviews",
+      "tests_feature_darkmodetoggletest",
+      "tests_feature_darkmodetoggletest_herocomponentpath",
+      "tests_feature_darkmodetoggletest_readherocontentorskip",
+      "tests_feature_inlinedatepickertest",
+      "tests_feature_inlinedatepickertest_invokeinlinedatepickermethod",
+      "tests_feature_kalshiherocomponenttest",
+      "tests_testcase",
+      "tests_testcase_testcase",
+      "tests_testcase_testcase_getpackageproviders",
+      "tests_testcase_testcase_setup",
+      "tests_unit_enums_uienumscoveragetest",
+      "tests_unit_models_assetmodeltest",
+      "tests_unit_models_componentmodeltest",
+      "tests_unit_models_thememodeltest"
+    ],
+    "7": [
+      "app_filament_forms_components_enumselect",
+      "app_filament_forms_components_enumselect_enumselect",
+      "app_filament_forms_components_enumselect_enumselect_allowshtml",
+      "app_filament_forms_components_enumselect_enumselect_converttoenum",
+      "app_filament_forms_components_enumselect_enumselect_enum",
+      "app_filament_forms_components_enumselect_enumselect_formathtmllabel",
+      "app_filament_forms_components_enumselect_enumselect_formatoption",
+      "app_filament_forms_components_enumselect_enumselect_generateoptions",
+      "app_filament_forms_components_enumselect_enumselect_getcaseicon",
+      "app_filament_forms_components_enumselect_enumselect_getcaselabel",
+      "app_filament_forms_components_enumselect_enumselect_getenumclass",
+      "app_filament_forms_components_enumselect_enumselect_hasicons",
+      "app_filament_forms_components_enumselect_enumselect_htmllabels",
+      "app_filament_forms_components_enumselect_enumselect_icons",
+      "app_filament_forms_components_enumselect_enumselect_make",
+      "app_filament_forms_components_enumselect_enumselect_placeholderwhennoselection",
+      "app_filament_forms_components_enumselect_enumselect_setup",
+      "app_filament_forms_components_enumselect_enumselect_validateenumclass",
+      "app_filament_forms_components_enumselect_php_backedenum",
+      "app_filament_forms_components_enumselect_php_closure",
+      "app_filament_forms_components_enumselect_php_static",
+      "app_filament_forms_components_parentselect",
+      "app_filament_forms_components_parentselect_parentselect",
+      "app_filament_forms_components_selectstate",
+      "app_filament_forms_components_selectstate_selectstate",
+      "app_filament_forms_components_selectstate_selectstate_combinestateoptions",
+      "app_filament_forms_components_selectstate_selectstate_setup",
+      "app_filament_forms_components_yearselect",
+      "app_filament_forms_components_yearselect_php_static",
+      "app_filament_forms_components_yearselect_yearselect",
+      "app_filament_forms_components_yearselect_yearselect_future",
+      "app_filament_forms_components_yearselect_yearselect_getyearsoptions",
+      "app_filament_forms_components_yearselect_yearselect_past",
+      "app_filament_forms_components_yearselect_yearselect_range",
+      "app_filament_forms_components_yearselect_yearselect_setup",
+      "illuminate_support_carbon",
+      "modules_xot_filament_forms_components_xotbaseselect",
+      "tests_unit_enumselecttest"
+    ],
+    "8": [
+      "autoprefixer",
+      "axios",
+      "dotenv",
+      "dotenv_expand",
+      "laravel_vite_plugin",
+      "lodash",
+      "package",
+      "package_devdependencies",
+      "package_devdependencies_autoprefixer",
+      "package_devdependencies_axios",
+      "package_devdependencies_dotenv",
+      "package_devdependencies_dotenv_expand",
+      "package_devdependencies_laravel_vite_plugin",
+      "package_devdependencies_lodash",
+      "package_devdependencies_postcss",
+      "package_devdependencies_postcss_nesting",
+      "package_devdependencies_sass",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_tailwindcss_forms",
+      "package_devdependencies_tailwindcss_typography",
+      "package_devdependencies_tippy_js",
+      "package_devdependencies_vite",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "postcss",
+      "postcss_nesting",
+      "sass",
+      "tailwindcss",
+      "tailwindcss_forms",
+      "tailwindcss_typography",
+      "tippy_js",
+      "vite"
+    ],
+    "9": [
+      "docs_prd",
+      "docs_prd_actionstandard",
+      "docs_prd_architecturerule",
+      "docs_prd_companiondocs",
+      "docs_prd_dependencies",
+      "docs_prd_goals",
+      "docs_prd_implementationpattern",
+      "docs_prd_name",
+      "docs_prd_nongoals",
+      "docs_prd_purpose",
+      "docs_prd_qualitygates",
+      "docs_prd_sourceframework",
+      "docs_prd_status",
+      "docs_prd_suiteversion",
+      "docs_prd_type",
+      "ref_definire_da_solo_il_look_and_feel_di_ogni_tema",
+      "ref_product_launch_plan_md",
+      "ref_product_roadmap_md",
+      "ref_product_strategy_md",
+      "ref_ridurre_duplicazioni_di_rendering",
+      "ref_sprint_planning_meeting_md",
+      "ref_stabilizzare_contratti_tra_blocchi_e_temi",
+      "ref_supportare_componenti_visuali_coerenti",
+      "ref_user_research_md",
+      "ref_vendor_bin_phpinsights_analyse_modules_ui_min_quality_0_min_complexity_0_min_architecture_0_min_style_0",
+      "ref_vendor_bin_phpstan_analyse_modules_ui",
+      "ref_xot"
+    ],
+    "10": [
+      "app_actions_datetime_getdaysmappingaction",
+      "app_actions_datetime_getdaysmappingaction_getdaysmappingaction",
+      "app_actions_datetime_getdaysmappingaction_getdaysmappingaction_createcarboninstance",
+      "app_actions_datetime_getdaysmappingaction_getdaysmappingaction_execute",
+      "app_actions_datetime_getdaysmappingaction_getdaysmappingaction_getweekdays",
+      "app_actions_datetime_getdaysmappingaction_getdaysmappingaction_mapdaytolabel",
+      "app_filament_forms_components_inlinedatepicker",
+      "app_filament_forms_components_inlinedatepicker_inlinedatepicker",
+      "app_filament_forms_components_inlinedatepicker_inlinedatepicker_currentviewmonth",
+      "app_filament_forms_components_inlinedatepicker_inlinedatepicker_enableddates",
+      "app_filament_forms_components_inlinedatepicker_inlinedatepicker_generatecalendardata",
+      "app_filament_forms_components_inlinedatepicker_inlinedatepicker_getenableddates",
+      "app_filament_forms_components_inlinedatepicker_inlinedatepicker_getlocalizedweekdays",
+      "app_filament_forms_components_inlinedatepicker_inlinedatepicker_getviewdata",
+      "app_filament_forms_components_inlinedatepicker_inlinedatepicker_isdateenabled",
+      "app_filament_forms_components_inlinedatepicker_inlinedatepicker_nextmonth",
+      "app_filament_forms_components_inlinedatepicker_inlinedatepicker_previousmonth",
+      "app_filament_forms_components_inlinedatepicker_inlinedatepicker_setup",
+      "app_filament_forms_components_inlinedatepicker_php_closure",
+      "app_filament_forms_components_inlinedatepicker_php_static",
+      "carbon",
+      "carbon_carbon",
+      "modules_xot_filament_forms_components_xotbasedatepicker"
+    ],
+    "11": [
+      "app_filament_blocks_category",
+      "app_filament_blocks_category_category",
+      "app_filament_blocks_category_category_getformschema",
+      "app_filament_blocks_category_category_gettitle",
+      "app_filament_blocks_contact",
+      "app_filament_blocks_contact_contact",
+      "app_filament_blocks_contact_contact_getformschema",
+      "app_filament_blocks_contact_contact_gettitle",
+      "app_filament_blocks_navigation",
+      "app_filament_blocks_navigation_navigation",
+      "app_filament_blocks_navigation_navigation_getblockschema",
+      "app_filament_blocks_navigation_navigation_getformschema",
+      "app_filament_blocks_page",
+      "app_filament_blocks_page_page",
+      "app_filament_blocks_page_page_getformschema",
+      "app_filament_blocks_page_page_gettitle",
+      "app_filament_blocks_post",
+      "app_filament_blocks_post_post",
+      "app_filament_blocks_post_post_getformschema",
+      "app_filament_blocks_post_post_gettitle",
+      "modules_xot_filament_blocks_xotbaseblock"
+    ],
+    "12": [
+      "scripts_ci_contributor_lines_report",
+      "scripts_ci_contributor_lines_report_args",
+      "scripts_ci_contributor_lines_report_barchartsvg",
+      "scripts_ci_contributor_lines_report_buildhtml",
+      "scripts_ci_contributor_lines_report_buildsummary",
+      "scripts_ci_contributor_lines_report_clocdata",
+      "scripts_ci_contributor_lines_report_collectcloc",
+      "scripts_ci_contributor_lines_report_collectgitchurn",
+      "scripts_ci_contributor_lines_report_cwd",
+      "scripts_ci_contributor_lines_report_escapehtml",
+      "scripts_ci_contributor_lines_report_extof",
+      "scripts_ci_contributor_lines_report_gitdata",
+      "scripts_ci_contributor_lines_report_html",
+      "scripts_ci_contributor_lines_report_outhtml",
+      "scripts_ci_contributor_lines_report_outsummary",
+      "scripts_ci_contributor_lines_report_sh",
+      "scripts_ci_contributor_lines_report_sincedate",
+      "scripts_ci_contributor_lines_report_summary",
+      "scripts_ci_contributor_lines_report_topauthors",
+      "scripts_ci_contributor_lines_report_topentries"
+    ],
+    "13": [
+      "app_filament_widgets_groupwidget",
+      "app_filament_widgets_groupwidget_groupwidget",
+      "app_filament_widgets_groupwidget_groupwidget_getformschema",
+      "app_filament_widgets_overlookwidget",
+      "app_filament_widgets_overlookwidget_overlookwidget",
+      "app_filament_widgets_overlookwidget_overlookwidget_getformschema",
+      "app_filament_widgets_redirectwidget",
+      "app_filament_widgets_redirectwidget_redirectwidget",
+      "app_filament_widgets_redirectwidget_redirectwidget_canview",
+      "app_filament_widgets_redirectwidget_redirectwidget_getformschema",
+      "app_filament_widgets_redirectwidget_redirectwidget_getviewdata",
+      "app_filament_widgets_rowwidget_rowwidget",
+      "app_filament_widgets_rowwidget_rowwidget_getcolumns",
+      "app_filament_widgets_rowwidget_rowwidget_getformschema",
+      "modules_xot_filament_widgets_xotbaseschemawidget",
+      "tests_feature_widgetbusinesslogictest",
+      "tests_feature_widgetbusinesslogictest_concreterowwidget",
+      "tests_unit_filament_widgets_rowwidgettest"
+    ],
+    "14": [
+      "app_filament_widgets_darkmodeswitcherwidget_darkmodeswitcherwidget",
+      "app_filament_widgets_darkmodeswitcherwidget_darkmodeswitcherwidget_getformschema",
+      "app_filament_widgets_darkmodeswitcherwidget_darkmodeswitcherwidget_mount",
+      "app_filament_widgets_darkmodeswitcherwidget_darkmodeswitcherwidget_render",
+      "app_filament_widgets_darkmodeswitcherwidget_darkmodeswitcherwidget_toggledarkmode",
+      "app_view_components_darkmodeswitcher",
+      "app_view_components_darkmodeswitcher_darkmodeswitcher",
+      "app_view_components_darkmodeswitcher_darkmodeswitcher_construct",
+      "app_view_components_darkmodeswitcher_darkmodeswitcher_render",
+      "app_view_composers_themecomposer",
+      "app_view_composers_themecomposer_themecomposer",
+      "app_view_composers_themecomposer_themecomposer_flag",
+      "app_view_composers_themecomposer_themecomposer_metatag",
+      "app_view_composers_themecomposer_themecomposer_metatags",
+      "app_view_composers_themecomposer_themecomposer_showscripts",
+      "illuminate_view_view"
+    ],
+    "15": [
+      "app_filament_tables_columns_groupcolumn",
+      "app_filament_tables_columns_groupcolumn_groupcolumn",
+      "app_filament_tables_columns_groupcolumn_groupcolumn_getfields",
+      "app_filament_tables_columns_groupcolumn_groupcolumn_mountchildrentotable",
+      "app_filament_tables_columns_groupcolumn_groupcolumn_schema",
+      "app_filament_tables_columns_groupcolumn_groupcolumn_table",
+      "app_filament_tables_columns_groupcolumn_php_static",
+      "app_filament_tables_columns_treecolumn",
+      "app_filament_tables_columns_treecolumn_treecolumn",
+      "filament_tables_table",
+      "modules_xot_filament_tables_columns_xotbasecolumn",
+      "tests_feature_groupcolumntest",
+      "tests_feature_groupcolumntest_groupcolumnviewtablebag",
+      "tests_support_ensuresuidatabaseschema",
+      "tests_support_ensuresuidatabaseschema_ensureuischema"
+    ],
+    "16": [
+      "app_filament_widgets_darkmodeswitcherwidget",
+      "app_filament_widgets_rowwidget",
+      "filament_schemas_components_component",
+      "tests_unit_widgets_fixtures_basecalendarwidgetstub",
+      "tests_unit_widgets_fixtures_basecalendarwidgetstub_basecalendarwidgetstub",
+      "tests_unit_widgets_fixtures_basecalendarwidgetstub_basecalendarwidgetstub_fetchevents",
+      "tests_unit_widgets_fixtures_basecalendarwidgetstub_basecalendarwidgetstub_getformschema",
+      "tests_unit_widgets_fixtures_mockcalendarwidget",
+      "tests_unit_widgets_fixtures_mockcalendarwidget_mockcalendarwidget",
+      "tests_unit_widgets_fixtures_mockcalendarwidget_mockcalendarwidget_fetchevents",
+      "tests_unit_widgets_fixtures_mockcalendarwidget_mockcalendarwidget_getformschema",
+      "tests_unit_widgets_mockcalendarwidget",
+      "tests_unit_widgets_mockcalendarwidget_mockcalendarwidget",
+      "tests_unit_widgets_mockcalendarwidget_mockcalendarwidget_fetchevents",
+      "tests_unit_widgets_mockcalendarwidget_mockcalendarwidget_getformschema"
+    ],
+    "17": [
+      "app_http_controllers_languagecontroller",
+      "app_http_controllers_languagecontroller_languagecontroller",
+      "app_http_controllers_languagecontroller_languagecontroller_switch",
+      "app_http_kernel",
+      "app_http_kernel_kernel",
+      "app_http_middleware_setlocale",
+      "app_http_middleware_setlocale_php_closure",
+      "app_http_middleware_setlocale_setlocale",
+      "app_http_middleware_setlocale_setlocale_handle",
+      "config_config",
+      "illuminate_foundation_http_kernel",
+      "illuminate_http_redirectresponse",
+      "illuminate_http_request",
+      "illuminate_routing_controller",
+      "symfony_component_httpfoundation_response"
+    ],
+    "18": [
+      "app_enums_tablelayoutenum",
+      "app_enums_tablelayoutenum_getcontainerclasses",
+      "app_enums_tablelayoutenum_gethelpertext",
+      "app_enums_tablelayoutenum_getoptions",
+      "app_enums_tablelayoutenum_gettablecolumns",
+      "app_enums_tablelayoutenum_gettablecontentgrid",
+      "app_enums_tablelayoutenum_gettooltip",
+      "app_enums_tablelayoutenum_init",
+      "app_enums_tablelayoutenum_isgridlayout",
+      "app_enums_tablelayoutenum_islistlayout",
+      "app_enums_tablelayoutenum_php_self",
+      "app_enums_tablelayoutenum_toggle",
+      "filament_tables_columns_layout_component",
+      "tests_unit_enums_tablelayoutenumtest"
+    ],
+    "19": [
+      "app_filament_forms_components_radiobadge",
+      "app_filament_forms_components_radiobadge_php_backedenum",
+      "app_filament_forms_components_radiobadge_php_static",
+      "app_filament_forms_components_radiobadge_radiobadge",
+      "app_filament_forms_components_radiobadge_radiobadge_defaultcolor",
+      "app_filament_forms_components_radiobadge_radiobadge_getcolorforoption",
+      "app_filament_forms_components_radiobadge_radiobadge_getenumvalue",
+      "app_filament_forms_components_radiobadge_radiobadge_geticonforoption",
+      "app_filament_forms_components_radiobadge_radiobadge_selectedcolor",
+      "app_filament_forms_components_radioicon",
+      "app_filament_forms_components_radioicon_radioicon",
+      "app_filament_forms_components_radioimage",
+      "app_filament_forms_components_radioimage_radioimage",
+      "modules_xot_filament_forms_components_xotbaseradio"
+    ],
+    "20": [
+      "app_filament_pages_dashboard",
+      "app_filament_pages_dashboard_dashboard",
+      "app_filament_pages_dashboard_dashboard_getheaderwidgets",
+      "app_filament_widgets_statwithiconwidget",
+      "app_filament_widgets_statwithiconwidget_php_closure",
+      "app_filament_widgets_statwithiconwidget_statwithiconwidget",
+      "app_filament_widgets_statwithiconwidget_statwithiconwidget_getdata",
+      "app_filament_widgets_statwithiconwidget_statwithiconwidget_getformschema",
+      "app_filament_widgets_testwidget",
+      "app_filament_widgets_testwidget_testwidget",
+      "app_filament_widgets_testwidget_testwidget_getformschema",
+      "illuminate_contracts_support_htmlable",
+      "modules_xot_filament_pages_xotbasedashboard",
+      "tests_unit_filament_widgets_statwithiconwidgettest"
+    ],
+    "21": [
+      "app_view_components_breadlink",
+      "app_view_components_breadlink_breadlink",
+      "app_view_components_breadlink_breadlink_construct",
+      "app_view_components_breadlink_breadlink_render",
+      "app_view_components_logo",
+      "app_view_components_logo_logo",
+      "app_view_components_logo_logo_construct",
+      "app_view_components_logo_logo_render",
+      "app_view_components_page_withsidebar",
+      "app_view_components_page_withsidebar_withsidebar",
+      "app_view_components_page_withsidebar_withsidebar_construct",
+      "illuminate_view_component"
+    ],
+    "22": [
+      "app_view_components_render_blocks_blocks_render",
+      "app_view_components_sidebar",
+      "app_view_components_sidebar_sidebar",
+      "app_view_components_sidebar_sidebar_construct",
+      "app_view_components_sidebar_sidebar_render",
+      "app_view_components_svg",
+      "app_view_components_svg_svg",
+      "app_view_components_svg_svg_construct",
+      "app_view_components_svg_svg_render",
+      "illuminate_contracts_view_view",
+      "tests_unit_components_componenttest",
+      "tests_unit_components_componenttest_render"
+    ],
+    "23": [
+      "app_filament_widgets_usercalendarwidget",
+      "app_filament_widgets_usercalendarwidget_usercalendarwidget",
+      "app_filament_widgets_usercalendarwidget_usercalendarwidget_fetchevents",
+      "app_filament_widgets_usercalendarwidget_usercalendarwidget_getactionname",
+      "app_filament_widgets_usercalendarwidget_usercalendarwidget_getformschema",
+      "app_filament_widgets_usercalendarwidget_usercalendarwidget_normalizeeventsarray",
+      "app_filament_widgets_usercalendarwidget_usercalendarwidget_normalizeformschema",
+      "app_filament_widgets_usercalendarwidget_usercalendarwidget_ondateselect",
+      "tests_unit_widgets_basecalendarwidgettest",
+      "tests_unit_widgets_basecalendarwidgettest_createtestcalendarwidget"
+    ],
+    "24": [
+      "app_view_components_navbar",
+      "app_view_components_navbar_navbar",
+      "app_view_components_navbar_navbar_construct",
+      "app_view_components_navbar_navbar_render",
+      "app_view_components_page_withsidebar_withsidebar_render",
+      "app_view_components_std",
+      "app_view_components_std_std",
+      "app_view_components_std_std_construct",
+      "app_view_components_std_std_render",
+      "illuminate_contracts_support_renderable"
+    ],
+    "25": [
+      "app_filament_widgets_testchartwidget",
+      "app_filament_widgets_testchartwidget_testchartwidget",
+      "app_filament_widgets_testchartwidget_testchartwidget_getdata",
+      "app_filament_widgets_testchartwidget_testchartwidget_getdescription",
+      "app_filament_widgets_testchartwidget_testchartwidget_getoptions",
+      "app_filament_widgets_testchartwidget_testchartwidget_gettype",
+      "filament_support_rawjs",
+      "modules_xot_filament_widgets_xotbasechartwidget",
+      "rawjs"
+    ],
+    "26": [
+      "app_http_livewire_darkmodeswitcher",
+      "app_http_livewire_darkmodeswitcher_darkmodeswitcher",
+      "app_http_livewire_darkmodeswitcher_darkmodeswitcher_mount",
+      "app_http_livewire_darkmodeswitcher_darkmodeswitcher_render",
+      "app_http_livewire_darkmodeswitcher_darkmodeswitcher_toggledarkmode",
+      "app_http_livewire_toast",
+      "app_http_livewire_toast_toast",
+      "app_http_livewire_toast_toast_render",
+      "livewire_component"
+    ],
+    "27": [
+      "app_rules_openinghoursrule",
+      "app_rules_openinghoursrule_openinghoursrule",
+      "app_rules_openinghoursrule_openinghoursrule_cleantimevalue",
+      "app_rules_openinghoursrule_openinghoursrule_validate",
+      "app_rules_openinghoursrule_openinghoursrule_validatedaylogic",
+      "app_rules_openinghoursrule_openinghoursrule_validatesession",
+      "app_rules_openinghoursrule_php_closure",
+      "illuminate_contracts_validation_validationrule",
+      "modules_xot_filament_traits_transtrait"
+    ],
+    "28": [
+      "composer",
+      "composer_authors",
+      "composer_description",
+      "composer_homepage",
+      "composer_license",
+      "composer_minimum_stability",
+      "composer_name",
+      "composer_prefer_stable",
+      "composer_repositories"
+    ],
+    "29": [
+      "composer_keywords",
+      "ref_blade",
+      "ref_components",
+      "ref_filament",
+      "ref_laravel",
+      "ref_laraxot",
+      "ref_layouts",
+      "ref_module_ui",
+      "ref_ui"
+    ],
+    "30": [
+      "composer_scripts",
+      "composer_scripts_analyse",
+      "composer_scripts_format",
+      "composer_scripts_post_autoload_dump1",
+      "composer_scripts_post_update_cmd",
+      "composer_scripts_test",
+      "composer_scripts_test_coverage",
+      "ref_illuminate_foundation_composerscripts_postupdate",
+      "ref_php_vendor_bin_testbench_package_discover_ansi"
+    ],
+    "31": [
+      "app_filament_widgets_herowidget",
+      "app_filament_widgets_herowidget_herowidget",
+      "app_filament_widgets_herowidget_herowidget_getcolumns",
+      "app_filament_widgets_herowidget_herowidget_getstats",
+      "app_filament_widgets_statsoverviewwidget",
+      "app_filament_widgets_statsoverviewwidget_statsoverviewwidget",
+      "modules_xot_filament_widgets_xotbasestatsoverviewwidget",
+      "tests_feature_filament_widgets_statsoverviewwidgettest"
+    ],
+    "32": [
+      "composer_allow_plugins_dealerdirect_phpcodesniffer_composer_installer",
+      "composer_allow_plugins_pestphp_pest_plugin",
+      "composer_allow_plugins_wikimedia_composer_merge_plugin",
+      "composer_config",
+      "composer_config_allow_plugins",
+      "composer_config_sort_packages"
+    ],
+    "33": [
+      "composer_extra",
+      "composer_extra_laravel",
+      "composer_laravel_aliases",
+      "composer_laravel_providers",
+      "ref_modules_ui_providers_filament_adminpanelprovider",
+      "ref_modules_ui_providers_uiserviceprovider"
+    ],
+    "34": [
+      "app_models_policies_uibasepolicy",
+      "app_models_policies_uibasepolicy_uibasepolicy",
+      "app_models_policies_uibasepolicy_uibasepolicy_before",
+      "illuminate_auth_access_handlesauthorization",
+      "modules_xot_contracts_usercontract"
+    ],
+    "35": [
+      "app_view_components_blocks_hero_simple",
+      "app_view_components_blocks_hero_simple_simple",
+      "app_view_components_blocks_hero_simple_simple_construct",
+      "app_view_components_blocks_hero_simple_simple_render",
+      "component"
+    ],
+    "36": [
+      "composer_autoload",
+      "composer_autoload_psr_4",
+      "composer_psr_4_modules_ui",
+      "composer_psr_4_modules_ui_database_factories",
+      "composer_psr_4_modules_ui_database_seeders"
+    ],
+    "37": [
+      "addchild",
+      "edititem",
+      "removeitem",
+      "resources_views_components_nav_item_blade"
+    ],
+    "38": [
+      "app_filament_clusters_test",
+      "app_filament_clusters_test_php_backedenum",
+      "app_filament_clusters_test_test",
+      "modules_xot_filament_clusters_xotbasecluster"
+    ],
+    "39": [
+      "app_providers_eventserviceprovider",
+      "app_providers_eventserviceprovider_eventserviceprovider",
+      "app_providers_eventserviceprovider_eventserviceprovider_configureemailverification",
+      "illuminate_foundation_support_providers_eventserviceprovider"
+    ],
+    "40": [
+      "app_filament_forms_components_children",
+      "app_filament_forms_components_children_children",
+      "modules_xot_filament_forms_components_xotbaseviewfield"
+    ],
+    "41": [
+      "app_filament_resources_pages_baselistrecords",
+      "app_filament_resources_pages_baselistrecords_baselistrecords",
+      "modules_xot_filament_resources_pages_xotbaselistrecords"
+    ],
+    "42": [
+      "app_providers_routeserviceprovider",
+      "app_providers_routeserviceprovider_routeserviceprovider",
+      "modules_xot_providers_xotbaserouteserviceprovider"
+    ],
+    "43": [
+      "composer_autoload_dev",
+      "composer_autoload_dev_psr_4",
+      "composer_psr_4_modules_ui_tests"
+    ],
+    "44": [
+      "composer_require",
+      "composer_require_blade_ui_kit_blade_heroicons",
+      "composer_require_owenvoke_blade_fontawesome"
+    ],
+    "45": [
+      "composer_require_comment",
+      "composer_require_comment_coolsam_flatpickr",
+      "composer_require_comment_saade_filament_fullcalendar"
+    ],
+    "46": [
+      "nextmonth",
+      "previousmonth",
+      "resources_views_filament_forms_components_inline_date_picker_blade"
+    ],
+    "47": [
+      "resources_js_plugin",
+      "resources_js_plugin_init",
+      "resources_js_plugin_sorted"
+    ],
+    "48": [
+      "resources_views_components_ui_studio_card_blade",
+      "resources_views_components_ui_studio_card_blade_php_selectstudio_studio_id",
+      "wireclick"
+    ],
+    "49": [
+      "tests_unit_testcolorenum",
+      "tests_unit_testcolorenum_geticon",
+      "tests_unit_testcolorenum_getlabel"
+    ],
+    "50": [
+      "database_migrations_2026_07_15_100001_create_collections_table",
+      "database_migrations_2026_07_15_100001_create_collections_table_up"
+    ],
+    "51": [
+      "lang_change",
+      "resources_views_components_headernav_simple_blade"
+    ],
+    "52": [
+      "mounttableaction",
+      "resources_views_components_ui_state_icons_split_blade"
+    ],
+    "53": [
+      "pub_theme_article_show_content_title_categories",
+      "resources_views_components_blocks_title_v2_blade"
+    ],
+    "54": [
+      "resources_views_components_blocks_images_gallery_blade",
+      "ui_components_blocks"
+    ],
+    "55": [
+      "resources_views_components_blocks_pricing_partials_three_tiers_with_feature_comparison_blade_body_blade",
+      "ui_components_blocks_pricing_partials_three_tiers_with_feature_comparison_blade_body_blade_b_blade"
+    ],
+    "56": [
+      "resources_views_components_blocks_pricing_partials_three_tiers_with_feature_comparison_tail_blade",
+      "ui_components_blocks_pricing_partials_three_tiers_with_feature_comparison_blade_body"
+    ],
+    "57": [
+      "resources_views_components_layouts_main_blade",
+      "toast"
+    ],
+    "58": [
+      "resources_views_components_ui_studio_selector_blade",
+      "resources_views_components_ui_studio_selector_blade_php_selectstudio_studio_id"
+    ],
+    "59": [
+      "resources_views_filament_forms_components_navigation_builder_blade",
+      "resources_views_filament_forms_components_navigation_builder_blade_php_createitem"
+    ],
+    "60": [
+      "resources_views_filament_tables_columns_tree_blade",
+      "resources_views_filament_tables_columns_tree_blade_php_createitem"
+    ],
+    "61": [
+      "resources_views_filament_widgets_statwithicon_blade",
+      "ui_filament_widgets_stat_with_icon"
+    ],
+    "62": [
+      "resources_views_livewire_dark_mode_switcher_blade",
+      "toggledarkmode"
+    ],
+    "63": [
+      "vite_config",
+      "vite_config_dotenvexpand"
+    ],
+    "64": [
+      "webpack_mix",
+      "webpack_mix_mix"
+    ],
+    "65": [
+      "config_laravel_localization"
+    ],
+    "66": [
+      "config_laravellocalization"
+    ],
+    "67": [
+      "lang_ar_actions"
+    ],
+    "68": [
+      "lang_ar_filament_navigation"
+    ],
+    "69": [
+      "lang_ar_icon_state"
+    ],
+    "70": [
+      "lang_ar_table_layout_toggle_table"
+    ],
+    "71": [
+      "lang_cs_actions"
+    ],
+    "72": [
+      "lang_cs_filament_navigation"
+    ],
+    "73": [
+      "lang_cs_icon_state"
+    ],
+    "74": [
+      "lang_cs_table_layout_toggle_table"
+    ],
+    "75": [
+      "lang_de_actions"
+    ],
+    "76": [
+      "lang_de_auth"
+    ],
+    "77": [
+      "lang_de_awstest"
+    ],
+    "78": [
+      "lang_de_blocks"
+    ],
+    "79": [
+      "lang_de_calendar"
+    ],
+    "80": [
+      "lang_de_corner_position"
+    ],
+    "81": [
+      "lang_de_datepicker"
+    ],
+    "82": [
+      "lang_de_filament_navigation"
+    ],
+    "83": [
+      "lang_de_group"
+    ],
+    "84": [
+      "lang_de_heading"
+    ],
+    "85": [
+      "lang_de_hero"
+    ],
+    "86": [
+      "lang_de_icon_picker"
+    ],
+    "87": [
+      "lang_de_icon_state"
+    ],
+    "88": [
+      "lang_de_image"
+    ],
+    "89": [
+      "lang_de_image_spatie"
+    ],
+    "90": [
+      "lang_de_images_gallery"
+    ],
+    "91": [
+      "lang_de_navigation"
+    ],
+    "92": [
+      "lang_de_opening_hours"
+    ],
+    "93": [
+      "lang_de_opening_hours_field"
+    ],
+    "94": [
+      "lang_de_pages"
+    ],
+    "95": [
+      "lang_de_paragraph"
+    ],
+    "96": [
+      "lang_de_radio_icon"
+    ],
+    "97": [
+      "lang_de_radio_image"
+    ],
+    "98": [
+      "lang_de_s3test"
+    ],
+    "99": [
+      "lang_de_select_state"
+    ],
+    "100": [
+      "lang_de_slider"
+    ],
+    "101": [
+      "lang_de_stepper"
+    ],
+    "102": [
+      "lang_de_studio_selector"
+    ],
+    "103": [
+      "lang_de_table_layout_php_lang_de_table_layout_5154ab"
+    ],
+    "104": [
+      "lang_de_table_layout_php_lang_de_table_layout_cb8671"
+    ],
+    "105": [
+      "lang_de_table_layout_toggle_table"
+    ],
+    "106": [
+      "lang_de_title"
+    ],
+    "107": [
+      "lang_de_txt"
+    ],
+    "108": [
+      "lang_de_ui"
+    ],
+    "109": [
+      "lang_de_user_calendar"
+    ],
+    "110": [
+      "lang_de_validation"
+    ],
+    "111": [
+      "lang_de_video_spatie"
+    ],
+    "112": [
+      "lang_de_widgets"
+    ],
+    "113": [
+      "lang_en_actions"
+    ],
+    "114": [
+      "lang_en_auth"
+    ],
+    "115": [
+      "lang_en_awstest"
+    ],
+    "116": [
+      "lang_en_blocks"
+    ],
+    "117": [
+      "lang_en_calendar"
+    ],
+    "118": [
+      "lang_en_corner_position"
+    ],
+    "119": [
+      "lang_en_datepicker"
+    ],
+    "120": [
+      "lang_en_filament_navigation"
+    ],
+    "121": [
+      "lang_en_group"
+    ],
+    "122": [
+      "lang_en_heading"
+    ],
+    "123": [
+      "lang_en_hero"
+    ],
+    "124": [
+      "lang_en_icon_picker"
+    ],
+    "125": [
+      "lang_en_icon_state"
+    ],
+    "126": [
+      "lang_en_image"
+    ],
+    "127": [
+      "lang_en_image_spatie"
+    ],
+    "128": [
+      "lang_en_images_gallery"
+    ],
+    "129": [
+      "lang_en_navigation"
+    ],
+    "130": [
+      "lang_en_opening_hours"
+    ],
+    "131": [
+      "lang_en_opening_hours_field"
+    ],
+    "132": [
+      "lang_en_pages"
+    ],
+    "133": [
+      "lang_en_paragraph"
+    ],
+    "134": [
+      "lang_en_radio_icon"
+    ],
+    "135": [
+      "lang_en_radio_image"
+    ],
+    "136": [
+      "lang_en_s3test"
+    ],
+    "137": [
+      "lang_en_select_state"
+    ],
+    "138": [
+      "lang_en_slider"
+    ],
+    "139": [
+      "lang_en_stepper"
+    ],
+    "140": [
+      "lang_en_studio_selector"
+    ],
+    "141": [
+      "lang_en_table_layout_enum"
+    ],
+    "142": [
+      "lang_en_table_layout_php_lang_en_table_layout_39abd3"
+    ],
+    "143": [
+      "lang_en_table_layout_php_lang_en_table_layout_d4e9e5"
+    ],
+    "144": [
+      "lang_en_table_layout_toggle_table"
+    ],
+    "145": [
+      "lang_en_title"
+    ],
+    "146": [
+      "lang_en_txt"
+    ],
+    "147": [
+      "lang_en_ui"
+    ],
+    "148": [
+      "lang_en_user_calendar"
+    ],
+    "149": [
+      "lang_en_validation"
+    ],
+    "150": [
+      "lang_en_video_spatie"
+    ],
+    "151": [
+      "lang_en_widgets"
+    ],
+    "152": [
+      "lang_es_actions"
+    ],
+    "153": [
+      "lang_es_filament_navigation"
+    ],
+    "154": [
+      "lang_es_icon_state"
+    ],
+    "155": [
+      "lang_es_table_layout"
+    ],
+    "156": [
+      "lang_es_table_layout_toggle_table"
+    ],
+    "157": [
+      "lang_fr_actions"
+    ],
+    "158": [
+      "lang_fr_filament_navigation"
+    ],
+    "159": [
+      "lang_fr_icon_state"
+    ],
+    "160": [
+      "lang_fr_table_layout"
+    ],
+    "161": [
+      "lang_fr_table_layout_toggle_table"
+    ],
+    "162": [
+      "lang_it_actions"
+    ],
+    "163": [
+      "lang_it_auth"
+    ],
+    "164": [
+      "lang_it_aws_test"
+    ],
+    "165": [
+      "lang_it_awstest"
+    ],
+    "166": [
+      "lang_it_blocks"
+    ],
+    "167": [
+      "lang_it_calendar"
+    ],
+    "168": [
+      "lang_it_collection"
+    ],
+    "169": [
+      "lang_it_collection_lang"
+    ],
+    "170": [
+      "lang_it_components"
+    ],
+    "171": [
+      "lang_it_corner_position"
+    ],
+    "172": [
+      "lang_it_datepicker"
+    ],
+    "173": [
+      "lang_it_dummy_actions"
+    ],
+    "174": [
+      "lang_it_enum_select"
+    ],
+    "175": [
+      "lang_it_fallback"
+    ],
+    "176": [
+      "lang_it_field_option"
+    ],
+    "177": [
+      "lang_it_filament_navigation"
+    ],
+    "178": [
+      "lang_it_group"
+    ],
+    "179": [
+      "lang_it_heading"
+    ],
+    "180": [
+      "lang_it_hero"
+    ],
+    "181": [
+      "lang_it_icon_picker"
+    ],
+    "182": [
+      "lang_it_icon_state"
+    ],
+    "183": [
+      "lang_it_icon_state_group"
+    ],
+    "184": [
+      "lang_it_icon_state_group_actions"
+    ],
+    "185": [
+      "lang_it_icon_state_group_fields"
+    ],
+    "186": [
+      "lang_it_icon_state_group_fields_chunk01"
+    ],
+    "187": [
+      "lang_it_icon_state_group_fields_chunk02"
+    ],
+    "188": [
+      "lang_it_icon_state_group_label"
+    ],
+    "189": [
+      "lang_it_icon_state_group_navigation"
+    ],
+    "190": [
+      "lang_it_icon_state_group_plural_label"
+    ],
+    "191": [
+      "lang_it_icon_state_split"
+    ],
+    "192": [
+      "lang_it_image"
+    ],
+    "193": [
+      "lang_it_image_spatie"
+    ],
+    "194": [
+      "lang_it_images_gallery"
+    ],
+    "195": [
+      "lang_it_navigation"
+    ],
+    "196": [
+      "lang_it_notifications"
+    ],
+    "197": [
+      "lang_it_opening_hours"
+    ],
+    "198": [
+      "lang_it_opening_hours_field"
+    ],
+    "199": [
+      "lang_it_opening_hours_field_actions"
+    ],
+    "200": [
+      "lang_it_opening_hours_field_fields"
+    ],
+    "201": [
+      "lang_it_opening_hours_field_label"
+    ],
+    "202": [
+      "lang_it_opening_hours_field_messages"
+    ],
+    "203": [
+      "lang_it_opening_hours_field_navigation"
+    ],
+    "204": [
+      "lang_it_opening_hours_field_plural_label"
+    ],
+    "205": [
+      "lang_it_opening_hours_field_sections"
+    ],
+    "206": [
+      "lang_it_opening_hours_field_steps"
+    ],
+    "207": [
+      "lang_it_opening_hours_field_time_pickers"
+    ],
+    "208": [
+      "lang_it_pages"
+    ],
+    "209": [
+      "lang_it_paragraph"
+    ],
+    "210": [
+      "lang_it_radio_icon"
+    ],
+    "211": [
+      "lang_it_radio_image"
+    ],
+    "212": [
+      "lang_it_s3_test"
+    ],
+    "213": [
+      "lang_it_s3test"
+    ],
+    "214": [
+      "lang_it_select_state"
+    ],
+    "215": [
+      "lang_it_send_email"
+    ],
+    "216": [
+      "lang_it_slider"
+    ],
+    "217": [
+      "lang_it_stepper"
+    ],
+    "218": [
+      "lang_it_studio_selector"
+    ],
+    "219": [
+      "lang_it_table"
+    ],
+    "220": [
+      "lang_it_table_layout_enum_php_lang_it_table_layout_enum_3e6595"
+    ],
+    "221": [
+      "lang_it_table_layout_enum_php_lang_it_table_layout_enum_e853dc"
+    ],
+    "222": [
+      "lang_it_table_layout_enum_test"
+    ],
+    "223": [
+      "lang_it_table_layout_php_lang_it_table_layout_55d1a5"
+    ],
+    "224": [
+      "lang_it_table_layout_php_lang_it_table_layout_56a1e2"
+    ],
+    "225": [
+      "lang_it_table_layout_toggle_table"
+    ],
+    "226": [
+      "lang_it_title"
+    ],
+    "227": [
+      "lang_it_txt"
+    ],
+    "228": [
+      "lang_it_ui"
+    ],
+    "229": [
+      "lang_it_user_calendar"
+    ],
+    "230": [
+      "lang_it_validation"
+    ],
+    "231": [
+      "lang_it_video_spatie"
+    ],
+    "232": [
+      "lang_it_widgets"
+    ],
+    "233": [
+      "lang_nl_actions"
+    ],
+    "234": [
+      "lang_nl_filament_navigation"
+    ],
+    "235": [
+      "lang_nl_icon_state"
+    ],
+    "236": [
+      "lang_nl_table_layout_toggle_table"
+    ],
+    "237": [
+      "lang_pt_br_actions"
+    ],
+    "238": [
+      "lang_pt_br_filament_navigation"
+    ],
+    "239": [
+      "lang_pt_br_icon_state"
+    ],
+    "240": [
+      "lang_pt_br_table_layout"
+    ],
+    "241": [
+      "lang_pt_br_table_layout_toggle_table"
+    ],
+    "242": [
+      "lang_pt_pt_actions"
+    ],
+    "243": [
+      "lang_pt_pt_filament_navigation"
+    ],
+    "244": [
+      "lang_pt_pt_icon_state"
+    ],
+    "245": [
+      "lang_pt_pt_table_layout"
+    ],
+    "246": [
+      "lang_pt_pt_table_layout_toggle_table"
+    ],
+    "247": [
+      "lang_ru_actions"
+    ],
+    "248": [
+      "lang_ru_filament_navigation"
+    ],
+    "249": [
+      "lang_ru_icon_state"
+    ],
+    "250": [
+      "lang_ru_table_layout_toggle_table"
+    ],
+    "251": [
+      "php_cs_fixer"
+    ],
+    "252": [
+      "php_cs_fixer_dist"
+    ],
+    "253": [
+      "postcss_config"
+    ],
+    "254": [
+      "resources_assets_js_app"
+    ],
+    "255": [
+      "resources_js_test_chart_y_tick_options"
+    ],
+    "256": [
+      "resources_lang_en_auth"
+    ],
+    "257": [
+      "resources_lang_en_datepicker"
+    ],
+    "258": [
+      "resources_lang_it_auth"
+    ],
+    "259": [
+      "resources_lang_it_blocks"
+    ],
+    "260": [
+      "resources_lang_it_datepicker"
+    ],
+    "261": [
+      "resources_lang_it_ui"
+    ],
+    "262": [
+      "resources_svg_avatars_female_blade"
+    ],
+    "263": [
+      "resources_svg_avatars_male_blade"
+    ],
+    "264": [
+      "resources_views_alert_blade"
+    ],
+    "265": [
+      "resources_views_components_accordion_blade"
+    ],
+    "266": [
+      "resources_views_components_accordion_item_blade"
+    ],
+    "267": [
+      "resources_views_components_application_logo_blade"
+    ],
+    "268": [
+      "resources_views_components_avatar_blade"
+    ],
+    "269": [
+      "resources_views_components_blocks_appointment_booking_blade"
+    ],
+    "270": [
+      "resources_views_components_blocks_appointments_list_blade"
+    ],
+    "271": [
+      "resources_views_components_blocks_blog_archivied_2_column_with_sign_up_blade"
+    ],
+    "272": [
+      "resources_views_components_blocks_blog_archivied_3_column_cards_blade"
+    ],
+    "273": [
+      "resources_views_components_blocks_blog_archivied_3_column_with_badges_blade"
+    ],
+    "274": [
+      "resources_views_components_blocks_blog_single_column_blade"
+    ],
+    "275": [
+      "resources_views_components_blocks_blog_single_column_with_images_blade"
+    ],
+    "276": [
+      "resources_views_components_blocks_blog_three_column_blade"
+    ],
+    "277": [
+      "resources_views_components_blocks_blog_three_column_with_background_images_blade"
+    ],
+    "278": [
+      "resources_views_components_blocks_blog_three_column_with_images_blade"
+    ],
+    "279": [
+      "resources_views_components_blocks_blog_with_featured_post_blade"
+    ],
+    "280": [
+      "resources_views_components_blocks_blog_with_photo_and_list_blade"
+    ],
+    "281": [
+      "resources_views_components_blocks_change_password_blade"
+    ],
+    "282": [
+      "resources_views_components_blocks_cta_archivied_brand_panel_with_app_screenshot_blade"
+    ],
+    "283": [
+      "resources_views_components_blocks_cta_archivied_brand_panel_with_overlapping_image_blade"
+    ],
+    "284": [
+      "resources_views_components_blocks_cta_centered_on_dark_panel_blade"
+    ],
+    "285": [
+      "resources_views_components_blocks_cta_dark_panel_with_app_screenshot_blade"
+    ],
+    "286": [
+      "resources_views_components_blocks_cta_simple_centered_blade"
+    ],
+    "287": [
+      "resources_views_components_blocks_cta_simple_centered_on_brand_blade"
+    ],
+    "288": [
+      "resources_views_components_blocks_cta_simple_centered_on_dark_blade"
+    ],
+    "289": [
+      "resources_views_components_blocks_cta_simple_justified_blade"
+    ],
+    "290": [
+      "resources_views_components_blocks_cta_simple_justified_on_light_brand_blade"
+    ],
+    "291": [
+      "resources_views_components_blocks_cta_simple_stacked_blade"
+    ],
+    "292": [
+      "resources_views_components_blocks_cta_split_with_image_blade"
+    ],
+    "293": [
+      "resources_views_components_blocks_cta_two_columns_with_photo_on_dark_blade"
+    ],
+    "294": [
+      "resources_views_components_blocks_cta_v1_blade"
+    ],
+    "295": [
+      "resources_views_components_blocks_cta_with_image_tiles_blade"
+    ],
+    "296": [
+      "resources_views_components_blocks_documents_list_blade"
+    ],
+    "297": [
+      "resources_views_components_blocks_educational_material_detail_blade"
+    ],
+    "298": [
+      "resources_views_components_blocks_educational_materials_blade"
+    ],
+    "299": [
+      "resources_views_components_blocks_eligibility_checker_blade"
+    ],
+    "300": [
+      "resources_views_components_blocks_feature_sections_archivied_4x2_grid_on_brand_blade"
+    ],
+    "301": [
+      "resources_views_components_blocks_feature_sections_archivied_alternating_side_by_side_with_images_blade"
+    ],
+    "302": [
+      "resources_views_components_blocks_feature_sections_archivied_alternating_with_optional_testimonial_blade"
+    ],
+    "303": [
+      "resources_views_components_blocks_feature_sections_archivied_grid_with_offset_icons_blade"
+    ],
+    "304": [
+      "resources_views_components_blocks_feature_sections_archivied_simple_three_column_blade"
+    ],
+    "305": [
+      "resources_views_components_blocks_feature_sections_archivied_with_feature_grid_list_blade"
+    ],
+    "306": [
+      "resources_views_components_blocks_feature_sections_centered_2x2_grid_blade"
+    ],
+    "307": [
+      "resources_views_components_blocks_feature_sections_contained_in_panel_blade"
+    ],
+    "308": [
+      "resources_views_components_blocks_feature_sections_offset_2x2_grid_blade"
+    ],
+    "309": [
+      "resources_views_components_blocks_feature_sections_offset_with_feature_list_blade"
+    ],
+    "310": [
+      "resources_views_components_blocks_feature_sections_simple_blade"
+    ],
+    "311": [
+      "resources_views_components_blocks_feature_sections_simple_three_column_with_large_icons_blade"
+    ],
+    "312": [
+      "resources_views_components_blocks_feature_sections_simple_three_column_with_large_icons_on_dark_blade"
+    ],
+    "313": [
+      "resources_views_components_blocks_feature_sections_simple_three_column_with_small_icons_blade"
+    ],
+    "314": [
+      "resources_views_components_blocks_feature_sections_simple_three_column_with_small_icons_on_dark_blade"
+    ],
+    "315": [
+      "resources_views_components_blocks_feature_sections_simple_two_column_with_small_icons_on_dark_blade"
+    ],
+    "316": [
+      "resources_views_components_blocks_feature_sections_v1_blade"
+    ],
+    "317": [
+      "resources_views_components_blocks_feature_sections_with_code_example_panel_blade"
+    ],
+    "318": [
+      "resources_views_components_blocks_feature_sections_with_large_screenshot_blade"
+    ],
+    "319": [
+      "resources_views_components_blocks_feature_sections_with_large_screenshot_on_dark_blade"
+    ],
+    "320": [
+      "resources_views_components_blocks_feature_sections_with_product_screenshot_blade"
+    ],
+    "321": [
+      "resources_views_components_blocks_feature_sections_with_product_screenshot_on_dark_blade"
+    ],
+    "322": [
+      "resources_views_components_blocks_feature_sections_with_product_screenshot_on_left_blade"
+    ],
+    "323": [
+      "resources_views_components_blocks_feature_sections_with_product_screenshot_panel_blade"
+    ],
+    "324": [
+      "resources_views_components_blocks_feature_sections_with_testimonial_blade"
+    ],
+    "325": [
+      "resources_views_components_blocks_header_archivied_branded_with_background_image_blade"
+    ],
+    "326": [
+      "resources_views_components_blocks_header_archivied_simple_with_select_menu_blade"
+    ],
+    "327": [
+      "resources_views_components_blocks_header_archivied_simple_with_select_menu_dark_blade"
+    ],
+    "328": [
+      "resources_views_components_blocks_header_archivied_with_background_image_and_overlapping_cards_blade"
+    ],
+    "329": [
+      "resources_views_components_blocks_header_centered_blade"
+    ],
+    "330": [
+      "resources_views_components_blocks_header_centered_on_dark_blade"
+    ],
+    "331": [
+      "resources_views_components_blocks_header_centered_with_background_image_blade"
+    ],
+    "332": [
+      "resources_views_components_blocks_header_centered_with_eyebrow_blade"
+    ],
+    "333": [
+      "resources_views_components_blocks_header_simple_blade"
+    ],
+    "334": [
+      "resources_views_components_blocks_header_simple_on_dark_blade"
+    ],
+    "335": [
+      "resources_views_components_blocks_header_simple_with_background_image_blade"
+    ],
+    "336": [
+      "resources_views_components_blocks_header_simple_with_eyebrow_blade"
+    ],
+    "337": [
+      "resources_views_components_blocks_header_with_cards_blade"
+    ],
+    "338": [
+      "resources_views_components_blocks_header_with_stats_blade"
+    ],
+    "339": [
+      "resources_views_components_blocks_hero_card_with_background_image_blade"
+    ],
+    "340": [
+      "resources_views_components_blocks_hero_dark_with_illustration_blade"
+    ],
+    "341": [
+      "resources_views_components_blocks_hero_simple_blade"
+    ],
+    "342": [
+      "resources_views_components_blocks_hero_simple_centered_blade"
+    ],
+    "343": [
+      "resources_views_components_blocks_hero_simple_centered_with_background_image_blade"
+    ],
+    "344": [
+      "resources_views_components_blocks_hero_split_with_code_example_blade"
+    ],
+    "345": [
+      "resources_views_components_blocks_hero_split_with_image_blade"
+    ],
+    "346": [
+      "resources_views_components_blocks_hero_split_with_navbar_blade"
+    ],
+    "347": [
+      "resources_views_components_blocks_hero_split_with_screenshot_blade"
+    ],
+    "348": [
+      "resources_views_components_blocks_hero_split_with_screenshot_on_dark_blade"
+    ],
+    "349": [
+      "resources_views_components_blocks_hero_v1_blade"
+    ],
+    "350": [
+      "resources_views_components_blocks_hero_with_angled_image_on_right_blade"
+    ],
+    "351": [
+      "resources_views_components_blocks_hero_with_app_screenshot_blade"
+    ],
+    "352": [
+      "resources_views_components_blocks_hero_with_image_tiles_blade"
+    ],
+    "353": [
+      "resources_views_components_blocks_hero_with_offset_image_blade"
+    ],
+    "354": [
+      "resources_views_components_blocks_hero_with_phone_mockup_blade"
+    ],
+    "355": [
+      "resources_views_components_blocks_hero_with_sign_in_form_blade"
+    ],
+    "356": [
+      "resources_views_components_blocks_hero_with_sign_up_and_media_content_blade"
+    ],
+    "357": [
+      "resources_views_components_blocks_image_blade"
+    ],
+    "358": [
+      "resources_views_components_blocks_image_spatie_blade"
+    ],
+    "359": [
+      "resources_views_components_blocks_images_gallery_v1_blade"
+    ],
+    "360": [
+      "resources_views_components_blocks_images_gallery_v2_blade"
+    ],
+    "361": [
+      "resources_views_components_blocks_newsletter_archivied_centered_card_with_graphic_blade"
+    ],
+    "362": [
+      "resources_views_components_blocks_newsletter_archivied_with_description_on_brand_card_blade"
+    ],
+    "363": [
+      "resources_views_components_blocks_newsletter_archivied_with_paragraph_on_brand_card_blade"
+    ],
+    "364": [
+      "resources_views_components_blocks_newsletter_centered_card_blade"
+    ],
+    "365": [
+      "resources_views_components_blocks_newsletter_side_by_side_on_card_blade"
+    ],
+    "366": [
+      "resources_views_components_blocks_newsletter_side_by_side_with_details_blade"
+    ],
+    "367": [
+      "resources_views_components_blocks_newsletter_simple_side_by_side_blade"
+    ],
+    "368": [
+      "resources_views_components_blocks_newsletter_simple_side_by_side_on_brand_blade"
+    ],
+    "369": [
+      "resources_views_components_blocks_newsletter_simple_side_by_side_on_dark_blade"
+    ],
+    "370": [
+      "resources_views_components_blocks_newsletter_simple_stacked_blade"
+    ],
+    "371": [
+      "resources_views_components_blocks_notifications_list_blade"
+    ],
+    "372": [
+      "resources_views_components_blocks_paragraph_agid_blade"
+    ],
+    "373": [
+      "resources_views_components_blocks_paragraph_blade"
+    ],
+    "374": [
+      "resources_views_components_blocks_paragraph_simple_blade"
+    ],
+    "375": [
+      "resources_views_components_blocks_patient_dashboard_blade"
+    ],
+    "376": [
+      "resources_views_components_blocks_pricing_archivied_split_with_brand_panel_blade"
+    ],
+    "377": [
+      "resources_views_components_blocks_pricing_archivied_three_tiers_on_brand_and_feature_comparison_blade"
+    ],
+    "378": [
+      "resources_views_components_blocks_pricing_archivied_three_tiers_with_emphasized_tier_blade"
+    ],
+    "379": [
+      "resources_views_components_blocks_pricing_archivied_two_tiers_with_extra_tier_blade"
+    ],
+    "380": [
+      "resources_views_components_blocks_pricing_four_tiers_with_toggle_blade"
+    ],
+    "381": [
+      "resources_views_components_blocks_pricing_partials_three_tiers_with_feature_comparison_blade_body_blade_b_blade"
+    ],
+    "382": [
+      "resources_views_components_blocks_pricing_partials_with_comparison_table_blade_body_blade"
+    ],
+    "383": [
+      "resources_views_components_blocks_pricing_partials_with_comparison_table_on_dark_blade_body_blade"
+    ],
+    "384": [
+      "resources_views_components_blocks_pricing_single_price_with_details_blade"
+    ],
+    "385": [
+      "resources_views_components_blocks_pricing_three_tiers_blade"
+    ],
+    "386": [
+      "resources_views_components_blocks_pricing_three_tiers_with_dividers_blade"
+    ],
+    "387": [
+      "resources_views_components_blocks_pricing_three_tiers_with_emphasized_tier_blade"
+    ],
+    "388": [
+      "resources_views_components_blocks_pricing_three_tiers_with_feature_comparison_blade"
+    ],
+    "389": [
+      "resources_views_components_blocks_pricing_three_tiers_with_toggle_blade"
+    ],
+    "390": [
+      "resources_views_components_blocks_pricing_three_tiers_with_toggle_on_dark_blade"
+    ],
+    "391": [
+      "resources_views_components_blocks_pricing_two_tiers_blade"
+    ],
+    "392": [
+      "resources_views_components_blocks_pricing_two_tiers_with_emphasized_tier_blade"
+    ],
+    "393": [
+      "resources_views_components_blocks_pricing_two_tiers_with_extra_tier_blade"
+    ],
+    "394": [
+      "resources_views_components_blocks_pricing_with_comparison_table_blade"
+    ],
+    "395": [
+      "resources_views_components_blocks_pricing_with_comparison_table_on_dark_blade"
+    ],
+    "396": [
+      "resources_views_components_blocks_slider_animation_blade"
+    ],
+    "397": [
+      "resources_views_components_blocks_slider_controls_blade"
+    ],
+    "398": [
+      "resources_views_components_blocks_slider_default_slider_blade"
+    ],
+    "399": [
+      "resources_views_components_blocks_slider_indicators_blade"
+    ],
+    "400": [
+      "resources_views_components_blocks_slider_swiper_blade"
+    ],
+    "401": [
+      "resources_views_components_blocks_stats_archived_simple_in_card_blade"
+    ],
+    "402": [
+      "resources_views_components_blocks_stats_archived_simple_on_brand_blade"
+    ],
+    "403": [
+      "resources_views_components_blocks_stats_archived_split_with_image_blade"
+    ],
+    "404": [
+      "resources_views_components_blocks_stats_archived_with_fading_background_image_blade"
+    ],
+    "405": [
+      "resources_views_components_blocks_stats_simple_blade"
+    ],
+    "406": [
+      "resources_views_components_blocks_stats_simple_grid_blade"
+    ],
+    "407": [
+      "resources_views_components_blocks_stats_simple_grid_on_dark_blade"
+    ],
+    "408": [
+      "resources_views_components_blocks_stats_simple_on_dark_blade"
+    ],
+    "409": [
+      "resources_views_components_blocks_stats_split_with_image_blade"
+    ],
+    "410": [
+      "resources_views_components_blocks_stats_stepped_blade"
+    ],
+    "411": [
+      "resources_views_components_blocks_stats_superseded_simple_in_card_blade"
+    ],
+    "412": [
+      "resources_views_components_blocks_stats_superseded_simple_on_brand_blade"
+    ],
+    "413": [
+      "resources_views_components_blocks_stats_superseded_split_with_image_blade"
+    ],
+    "414": [
+      "resources_views_components_blocks_stats_superseded_with_fading_background_image_blade"
+    ],
+    "415": [
+      "resources_views_components_blocks_stats_timeline_blade"
+    ],
+    "416": [
+      "resources_views_components_blocks_stats_v1_blade"
+    ],
+    "417": [
+      "resources_views_components_blocks_stats_with_background_image_blade"
+    ],
+    "418": [
+      "resources_views_components_blocks_stats_with_description_blade"
+    ],
+    "419": [
+      "resources_views_components_blocks_stats_with_two_column_description_on_dark_blade"
+    ],
+    "420": [
+      "resources_views_components_blocks_testimonials_archivied_side_by_side_on_brand_blade"
+    ],
+    "421": [
+      "resources_views_components_blocks_testimonials_grid_blade"
+    ],
+    "422": [
+      "resources_views_components_blocks_testimonials_off_white_grid_blade"
+    ],
+    "423": [
+      "resources_views_components_blocks_testimonials_side_by_side_blade"
+    ],
+    "424": [
+      "resources_views_components_blocks_testimonials_side_by_side_on_dark_blade"
+    ],
+    "425": [
+      "resources_views_components_blocks_testimonials_simple_centered_blade"
+    ],
+    "426": [
+      "resources_views_components_blocks_testimonials_with_background_image_blade"
+    ],
+    "427": [
+      "resources_views_components_blocks_testimonials_with_large_avatar_blade"
+    ],
+    "428": [
+      "resources_views_components_blocks_testimonials_with_overlapping_image_blade"
+    ],
+    "429": [
+      "resources_views_components_blocks_testimonials_with_star_rating_blade"
+    ],
+    "430": [
+      "resources_views_components_blocks_title_blade"
+    ],
+    "431": [
+      "resources_views_components_blocks_title_v1_blade"
+    ],
+    "432": [
+      "resources_views_components_blocks_user_profile_blade"
+    ],
+    "433": [
+      "resources_views_components_blocks_user_profile_edit_blade"
+    ],
+    "434": [
+      "resources_views_components_blocks_widget_simple_blade"
+    ],
+    "435": [
+      "resources_views_components_bread_link_v1_blade"
+    ],
+    "436": [
+      "resources_views_components_buttons_go_home_blade"
+    ],
+    "437": [
+      "resources_views_components_dark_mode_switcher_blade"
+    ],
+    "438": [
+      "resources_views_components_dropdown_separator_blade"
+    ],
+    "439": [
+      "resources_views_components_empty_blade"
+    ],
+    "440": [
+      "resources_views_components_filament_dropdown_list_separator_blade"
+    ],
+    "441": [
+      "resources_views_components_filament_dropdown_separator_blade"
+    ],
+    "442": [
+      "resources_views_components_icon_blade"
+    ],
+    "443": [
+      "resources_views_components_layouts_app_blade"
+    ],
+    "444": [
+      "resources_views_components_layouts_auth_split_blade"
+    ],
+    "445": [
+      "resources_views_components_layouts_guest_blade"
+    ],
+    "446": [
+      "resources_views_components_layouts_marketing_blade"
+    ],
+    "447": [
+      "resources_views_components_layouts_master_blade"
+    ],
+    "448": [
+      "resources_views_components_logo_v1_blade"
+    ],
+    "449": [
+      "resources_views_components_menu_v1_blade"
+    ],
+    "450": [
+      "resources_views_components_nav_link_blade"
+    ],
+    "451": [
+      "resources_views_components_page_with_sidebar_v1_blade"
+    ],
+    "452": [
+      "resources_views_components_profile_dropdown_blade"
+    ],
+    "453": [
+      "resources_views_components_profile_dropdown_link_blade"
+    ],
+    "454": [
+      "resources_views_components_render_block_v1_blade"
+    ],
+    "455": [
+      "resources_views_components_render_blocks_v1_blade"
+    ],
+    "456": [
+      "resources_views_components_render_blocks_v2_blade"
+    ],
+    "457": [
+      "resources_views_components_std_banner_blade"
+    ],
+    "458": [
+      "resources_views_components_std_button_blade"
+    ],
+    "459": [
+      "resources_views_components_std_card_blade"
+    ],
+    "460": [
+      "resources_views_components_std_container_blade"
+    ],
+    "461": [
+      "resources_views_components_std_input_blade"
+    ],
+    "462": [
+      "resources_views_components_std_menu_blade"
+    ],
+    "463": [
+      "resources_views_components_std_post_footer_blade"
+    ],
+    "464": [
+      "resources_views_components_std_post_meta_blade"
+    ],
+    "465": [
+      "resources_views_components_std_render_block_blade"
+    ],
+    "466": [
+      "resources_views_components_std_render_blocks_blade"
+    ],
+    "467": [
+      "resources_views_components_std_select_blade"
+    ],
+    "468": [
+      "resources_views_components_std_textarea_blade"
+    ],
+    "469": [
+      "resources_views_components_stepper_blade"
+    ],
+    "470": [
+      "resources_views_components_stepper_step_blade"
+    ],
+    "471": [
+      "resources_views_components_svg_v1_blade"
+    ],
+    "472": [
+      "resources_views_components_ui_accordion_blade"
+    ],
+    "473": [
+      "resources_views_components_ui_app_header_blade"
+    ],
+    "474": [
+      "resources_views_components_ui_badge_blade"
+    ],
+    "475": [
+      "resources_views_components_ui_button_blade"
+    ],
+    "476": [
+      "resources_views_components_ui_card_blade"
+    ],
+    "477": [
+      "resources_views_components_ui_checkbox_blade"
+    ],
+    "478": [
+      "resources_views_components_ui_cookiebar_blade"
+    ],
+    "479": [
+      "resources_views_components_ui_hero_blade"
+    ],
+    "480": [
+      "resources_views_components_ui_input_blade"
+    ],
+    "481": [
+      "resources_views_components_ui_light_dark_switch_blade"
+    ],
+    "482": [
+      "resources_views_components_ui_link_blade"
+    ],
+    "483": [
+      "resources_views_components_ui_logo_blade"
+    ],
+    "484": [
+      "resources_views_components_ui_marketing_breadcrumbs_blade"
+    ],
+    "485": [
+      "resources_views_components_ui_marketing_header_blade"
+    ],
+    "486": [
+      "resources_views_components_ui_marketing_page_header_blade"
+    ],
+    "487": [
+      "resources_views_components_ui_modal_blade"
+    ],
+    "488": [
+      "resources_views_components_ui_nav_link_blade"
+    ],
+    "489": [
+      "resources_views_components_ui_notifiche_blade"
+    ],
+    "490": [
+      "resources_views_components_ui_placeholder_blade"
+    ],
+    "491": [
+      "resources_views_components_ui_scroll_reveal_blade"
+    ],
+    "492": [
+      "resources_views_components_ui_service_card_blade"
+    ],
+    "493": [
+      "resources_views_components_ui_services_grid_blade"
+    ],
+    "494": [
+      "resources_views_components_ui_slide_over_blade"
+    ],
+    "495": [
+      "resources_views_components_ui_tab_blade"
+    ],
+    "496": [
+      "resources_views_components_ui_text_link_blade"
+    ],
+    "497": [
+      "resources_views_components_ui_toggle_blade"
+    ],
+    "498": [
+      "resources_views_empty_blade"
+    ],
+    "499": [
+      "resources_views_filament_clusters_test_pages_awstest_blade"
+    ],
+    "500": [
+      "resources_views_filament_clusters_test_pages_s3test_blade"
+    ],
+    "501": [
+      "resources_views_filament_components_inline_date_picker_blade"
+    ],
+    "502": [
+      "resources_views_filament_components_test_results_blade"
+    ],
+    "503": [
+      "resources_views_filament_forms_components_field_qr_reader_blade"
+    ],
+    "504": [
+      "resources_views_filament_forms_components_icon_picker_blade"
+    ],
+    "505": [
+      "resources_views_filament_forms_components_opening_hours_field_blade"
+    ],
+    "506": [
+      "resources_views_filament_forms_components_radio_collection_blade"
+    ],
+    "507": [
+      "resources_views_filament_forms_components_radio_collection_item_blade"
+    ],
+    "508": [
+      "resources_views_filament_forms_components_radio_icon_blade"
+    ],
+    "509": [
+      "resources_views_filament_forms_components_radio_image_blade"
+    ],
+    "510": [
+      "resources_views_filament_forms_components_studio_selector_buttons_blade"
+    ],
+    "511": [
+      "resources_views_filament_pages_dashboard_blade"
+    ],
+    "512": [
+      "resources_views_filament_pages_test_inline_date_picker_blade"
+    ],
+    "513": [
+      "resources_views_filament_table_collapsible_row_content_blade"
+    ],
+    "514": [
+      "resources_views_filament_tables_columns_dummy_actions_blade"
+    ],
+    "515": [
+      "resources_views_filament_tables_columns_group_blade"
+    ],
+    "516": [
+      "resources_views_filament_tables_columns_icon_blade"
+    ],
+    "517": [
+      "resources_views_filament_tables_columns_icon_state_split_blade"
+    ],
+    "518": [
+      "resources_views_filament_widgets_children_blade"
+    ],
+    "519": [
+      "resources_views_filament_widgets_dark_mode_switcher_blade"
+    ],
+    "520": [
+      "resources_views_filament_widgets_empty_blade"
+    ],
+    "521": [
+      "resources_views_filament_widgets_group_blade"
+    ],
+    "522": [
+      "resources_views_filament_widgets_overlook_blade"
+    ],
+    "523": [
+      "resources_views_filament_widgets_redirect_widget_blade"
+    ],
+    "524": [
+      "resources_views_filament_widgets_row_blade"
+    ],
+    "525": [
+      "resources_views_filament_widgets_stat_with_icon_blade"
+    ],
+    "526": [
+      "resources_views_filament_widgets_table_collapsible_blade"
+    ],
+    "527": [
+      "resources_views_filament_widgets_test_widget_blade"
+    ],
+    "528": [
+      "resources_views_filament_widgets_user_calendar_blade"
+    ],
+    "529": [
+      "resources_views_forms_components_radio_card_selector_blade"
+    ],
+    "530": [
+      "resources_views_index_blade"
+    ],
+    "531": [
+      "resources_views_layouts_master_blade"
+    ],
+    "532": [
+      "resources_views_livewire_empty_blade"
+    ],
+    "533": [
+      "resources_views_livewire_toast_blade"
+    ],
+    "534": [
+      "resources_views_metatags_blade"
+    ],
+    "535": [
+      "resources_views_svg_credit_blade"
+    ],
+    "536": [
+      "resources_views_svg_flags_en_blade"
+    ],
+    "537": [
+      "resources_views_svg_flags_it_blade"
+    ],
+    "538": [
+      "resources_views_svg_illustrations_search_blade"
+    ],
+    "539": [
+      "resources_views_themes_one_tailwind_config"
+    ],
+    "540": [
+      "resources_views_ui_studio_selector_blade"
+    ],
+    "541": [
+      "routes_api"
+    ],
+    "542": [
+      "routes_web"
+    ],
+    "543": [
+      "tailwind_config"
+    ],
+    "544": [
+      "tests_unit_security_bladexssmitigationstest"
+    ],
+    "545": [
+      "tests_unit_testnolabelenum"
+    ],
+    "546": [
+      "tests_unit_testpureunitenum"
+    ],
+    "547": [
+      "tests_unit_testsimpleenum"
+    ]
+  },
+  "cohesion": {
+    "0": 0.059506531204644414,
+    "1": 0.05656108597285068,
+    "2": 0.06666666666666667,
+    "3": 0.06274509803921569,
+    "4": 0.05959183673469388,
+    "5": 0.07171717171717172,
+    "6": 0.06401137980085349,
+    "7": 0.08677098150782361,
+    "8": 0.058823529411764705,
+    "9": 0.07407407407407407,
+    "10": 0.16600790513833993,
+    "11": 0.11904761904761904,
+    "12": 0.15789473684210525,
+    "13": 0.16993464052287582,
+    "14": 0.16666666666666666,
+    "15": 0.20952380952380953,
+    "16": 0.1619047619047619,
+    "17": 0.17142857142857143,
+    "18": 0.17582417582417584,
+    "19": 0.2087912087912088,
+    "20": 0.18681318681318682,
+    "21": 0.21212121212121213,
+    "22": 0.21212121212121213,
+    "23": 0.26666666666666666,
+    "24": 0.24444444444444444,
+    "25": 0.2777777777777778,
+    "26": 0.2777777777777778,
+    "27": 0.4444444444444444,
+    "28": 0.2222222222222222,
+    "29": 0.2222222222222222,
+    "30": 0.2222222222222222,
+    "31": 0.32142857142857145,
+    "32": 0.3333333333333333,
+    "33": 0.3333333333333333,
+    "34": 0.6,
+    "35": 0.4,
+    "36": 0.4,
+    "37": 0.5,
+    "38": 0.6666666666666666,
+    "39": 0.5,
+    "40": 1.0,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 0.6666666666666666,
+    "44": 0.6666666666666666,
+    "45": 0.6666666666666666,
+    "46": 0.6666666666666666,
+    "47": 0.6666666666666666,
+    "48": 0.6666666666666666,
+    "49": 0.6666666666666666,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0,
+    "58": 1.0,
+    "59": 1.0,
+    "60": 1.0,
+    "61": 1.0,
+    "62": 1.0,
+    "63": 1.0,
+    "64": 1.0,
+    "65": 1.0,
+    "66": 1.0,
+    "67": 1.0,
+    "68": 1.0,
+    "69": 1.0,
+    "70": 1.0,
+    "71": 1.0,
+    "72": 1.0,
+    "73": 1.0,
+    "74": 1.0,
+    "75": 1.0,
+    "76": 1.0,
+    "77": 1.0,
+    "78": 1.0,
+    "79": 1.0,
+    "80": 1.0,
+    "81": 1.0,
+    "82": 1.0,
+    "83": 1.0,
+    "84": 1.0,
+    "85": 1.0,
+    "86": 1.0,
+    "87": 1.0,
+    "88": 1.0,
+    "89": 1.0,
+    "90": 1.0,
+    "91": 1.0,
+    "92": 1.0,
+    "93": 1.0,
+    "94": 1.0,
+    "95": 1.0,
+    "96": 1.0,
+    "97": 1.0,
+    "98": 1.0,
+    "99": 1.0,
+    "100": 1.0,
+    "101": 1.0,
+    "102": 1.0,
+    "103": 1.0,
+    "104": 1.0,
+    "105": 1.0,
+    "106": 1.0,
+    "107": 1.0,
+    "108": 1.0,
+    "109": 1.0,
+    "110": 1.0,
+    "111": 1.0,
+    "112": 1.0,
+    "113": 1.0,
+    "114": 1.0,
+    "115": 1.0,
+    "116": 1.0,
+    "117": 1.0,
+    "118": 1.0,
+    "119": 1.0,
+    "120": 1.0,
+    "121": 1.0,
+    "122": 1.0,
+    "123": 1.0,
+    "124": 1.0,
+    "125": 1.0,
+    "126": 1.0,
+    "127": 1.0,
+    "128": 1.0,
+    "129": 1.0,
+    "130": 1.0,
+    "131": 1.0,
+    "132": 1.0,
+    "133": 1.0,
+    "134": 1.0,
+    "135": 1.0,
+    "136": 1.0,
+    "137": 1.0,
+    "138": 1.0,
+    "139": 1.0,
+    "140": 1.0,
+    "141": 1.0,
+    "142": 1.0,
+    "143": 1.0,
+    "144": 1.0,
+    "145": 1.0,
+    "146": 1.0,
+    "147": 1.0,
+    "148": 1.0,
+    "149": 1.0,
+    "150": 1.0,
+    "151": 1.0,
+    "152": 1.0,
+    "153": 1.0,
+    "154": 1.0,
+    "155": 1.0,
+    "156": 1.0,
+    "157": 1.0,
+    "158": 1.0,
+    "159": 1.0,
+    "160": 1.0,
+    "161": 1.0,
+    "162": 1.0,
+    "163": 1.0,
+    "164": 1.0,
+    "165": 1.0,
+    "166": 1.0,
+    "167": 1.0,
+    "168": 1.0,
+    "169": 1.0,
+    "170": 1.0,
+    "171": 1.0,
+    "172": 1.0,
+    "173": 1.0,
+    "174": 1.0,
+    "175": 1.0,
+    "176": 1.0,
+    "177": 1.0,
+    "178": 1.0,
+    "179": 1.0,
+    "180": 1.0,
+    "181": 1.0,
+    "182": 1.0,
+    "183": 1.0,
+    "184": 1.0,
+    "185": 1.0,
+    "186": 1.0,
+    "187": 1.0,
+    "188": 1.0,
+    "189": 1.0,
+    "190": 1.0,
+    "191": 1.0,
+    "192": 1.0,
+    "193": 1.0,
+    "194": 1.0,
+    "195": 1.0,
+    "196": 1.0,
+    "197": 1.0,
+    "198": 1.0,
+    "199": 1.0,
+    "200": 1.0,
+    "201": 1.0,
+    "202": 1.0,
+    "203": 1.0,
+    "204": 1.0,
+    "205": 1.0,
+    "206": 1.0,
+    "207": 1.0,
+    "208": 1.0,
+    "209": 1.0,
+    "210": 1.0,
+    "211": 1.0,
+    "212": 1.0,
+    "213": 1.0,
+    "214": 1.0,
+    "215": 1.0,
+    "216": 1.0,
+    "217": 1.0,
+    "218": 1.0,
+    "219": 1.0,
+    "220": 1.0,
+    "221": 1.0,
+    "222": 1.0,
+    "223": 1.0,
+    "224": 1.0,
+    "225": 1.0,
+    "226": 1.0,
+    "227": 1.0,
+    "228": 1.0,
+    "229": 1.0,
+    "230": 1.0,
+    "231": 1.0,
+    "232": 1.0,
+    "233": 1.0,
+    "234": 1.0,
+    "235": 1.0,
+    "236": 1.0,
+    "237": 1.0,
+    "238": 1.0,
+    "239": 1.0,
+    "240": 1.0,
+    "241": 1.0,
+    "242": 1.0,
+    "243": 1.0,
+    "244": 1.0,
+    "245": 1.0,
+    "246": 1.0,
+    "247": 1.0,
+    "248": 1.0,
+    "249": 1.0,
+    "250": 1.0,
+    "251": 1.0,
+    "252": 1.0,
+    "253": 1.0,
+    "254": 1.0,
+    "255": 1.0,
+    "256": 1.0,
+    "257": 1.0,
+    "258": 1.0,
+    "259": 1.0,
+    "260": 1.0,
+    "261": 1.0,
+    "262": 1.0,
+    "263": 1.0,
+    "264": 1.0,
+    "265": 1.0,
+    "266": 1.0,
+    "267": 1.0,
+    "268": 1.0,
+    "269": 1.0,
+    "270": 1.0,
+    "271": 1.0,
+    "272": 1.0,
+    "273": 1.0,
+    "274": 1.0,
+    "275": 1.0,
+    "276": 1.0,
+    "277": 1.0,
+    "278": 1.0,
+    "279": 1.0,
+    "280": 1.0,
+    "281": 1.0,
+    "282": 1.0,
+    "283": 1.0,
+    "284": 1.0,
+    "285": 1.0,
+    "286": 1.0,
+    "287": 1.0,
+    "288": 1.0,
+    "289": 1.0,
+    "290": 1.0,
+    "291": 1.0,
+    "292": 1.0,
+    "293": 1.0,
+    "294": 1.0,
+    "295": 1.0,
+    "296": 1.0,
+    "297": 1.0,
+    "298": 1.0,
+    "299": 1.0,
+    "300": 1.0,
+    "301": 1.0,
+    "302": 1.0,
+    "303": 1.0,
+    "304": 1.0,
+    "305": 1.0,
+    "306": 1.0,
+    "307": 1.0,
+    "308": 1.0,
+    "309": 1.0,
+    "310": 1.0,
+    "311": 1.0,
+    "312": 1.0,
+    "313": 1.0,
+    "314": 1.0,
+    "315": 1.0,
+    "316": 1.0,
+    "317": 1.0,
+    "318": 1.0,
+    "319": 1.0,
+    "320": 1.0,
+    "321": 1.0,
+    "322": 1.0,
+    "323": 1.0,
+    "324": 1.0,
+    "325": 1.0,
+    "326": 1.0,
+    "327": 1.0,
+    "328": 1.0,
+    "329": 1.0,
+    "330": 1.0,
+    "331": 1.0,
+    "332": 1.0,
+    "333": 1.0,
+    "334": 1.0,
+    "335": 1.0,
+    "336": 1.0,
+    "337": 1.0,
+    "338": 1.0,
+    "339": 1.0,
+    "340": 1.0,
+    "341": 1.0,
+    "342": 1.0,
+    "343": 1.0,
+    "344": 1.0,
+    "345": 1.0,
+    "346": 1.0,
+    "347": 1.0,
+    "348": 1.0,
+    "349": 1.0,
+    "350": 1.0,
+    "351": 1.0,
+    "352": 1.0,
+    "353": 1.0,
+    "354": 1.0,
+    "355": 1.0,
+    "356": 1.0,
+    "357": 1.0,
+    "358": 1.0,
+    "359": 1.0,
+    "360": 1.0,
+    "361": 1.0,
+    "362": 1.0,
+    "363": 1.0,
+    "364": 1.0,
+    "365": 1.0,
+    "366": 1.0,
+    "367": 1.0,
+    "368": 1.0,
+    "369": 1.0,
+    "370": 1.0,
+    "371": 1.0,
+    "372": 1.0,
+    "373": 1.0,
+    "374": 1.0,
+    "375": 1.0,
+    "376": 1.0,
+    "377": 1.0,
+    "378": 1.0,
+    "379": 1.0,
+    "380": 1.0,
+    "381": 1.0,
+    "382": 1.0,
+    "383": 1.0,
+    "384": 1.0,
+    "385": 1.0,
+    "386": 1.0,
+    "387": 1.0,
+    "388": 1.0,
+    "389": 1.0,
+    "390": 1.0,
+    "391": 1.0,
+    "392": 1.0,
+    "393": 1.0,
+    "394": 1.0,
+    "395": 1.0,
+    "396": 1.0,
+    "397": 1.0,
+    "398": 1.0,
+    "399": 1.0,
+    "400": 1.0,
+    "401": 1.0,
+    "402": 1.0,
+    "403": 1.0,
+    "404": 1.0,
+    "405": 1.0,
+    "406": 1.0,
+    "407": 1.0,
+    "408": 1.0,
+    "409": 1.0,
+    "410": 1.0,
+    "411": 1.0,
+    "412": 1.0,
+    "413": 1.0,
+    "414": 1.0,
+    "415": 1.0,
+    "416": 1.0,
+    "417": 1.0,
+    "418": 1.0,
+    "419": 1.0,
+    "420": 1.0,
+    "421": 1.0,
+    "422": 1.0,
+    "423": 1.0,
+    "424": 1.0,
+    "425": 1.0,
+    "426": 1.0,
+    "427": 1.0,
+    "428": 1.0,
+    "429": 1.0,
+    "430": 1.0,
+    "431": 1.0,
+    "432": 1.0,
+    "433": 1.0,
+    "434": 1.0,
+    "435": 1.0,
+    "436": 1.0,
+    "437": 1.0,
+    "438": 1.0,
+    "439": 1.0,
+    "440": 1.0,
+    "441": 1.0,
+    "442": 1.0,
+    "443": 1.0,
+    "444": 1.0,
+    "445": 1.0,
+    "446": 1.0,
+    "447": 1.0,
+    "448": 1.0,
+    "449": 1.0,
+    "450": 1.0,
+    "451": 1.0,
+    "452": 1.0,
+    "453": 1.0,
+    "454": 1.0,
+    "455": 1.0,
+    "456": 1.0,
+    "457": 1.0,
+    "458": 1.0,
+    "459": 1.0,
+    "460": 1.0,
+    "461": 1.0,
+    "462": 1.0,
+    "463": 1.0,
+    "464": 1.0,
+    "465": 1.0,
+    "466": 1.0,
+    "467": 1.0,
+    "468": 1.0,
+    "469": 1.0,
+    "470": 1.0,
+    "471": 1.0,
+    "472": 1.0,
+    "473": 1.0,
+    "474": 1.0,
+    "475": 1.0,
+    "476": 1.0,
+    "477": 1.0,
+    "478": 1.0,
+    "479": 1.0,
+    "480": 1.0,
+    "481": 1.0,
+    "482": 1.0,
+    "483": 1.0,
+    "484": 1.0,
+    "485": 1.0,
+    "486": 1.0,
+    "487": 1.0,
+    "488": 1.0,
+    "489": 1.0,
+    "490": 1.0,
+    "491": 1.0,
+    "492": 1.0,
+    "493": 1.0,
+    "494": 1.0,
+    "495": 1.0,
+    "496": 1.0,
+    "497": 1.0,
+    "498": 1.0,
+    "499": 1.0,
+    "500": 1.0,
+    "501": 1.0,
+    "502": 1.0,
+    "503": 1.0,
+    "504": 1.0,
+    "505": 1.0,
+    "506": 1.0,
+    "507": 1.0,
+    "508": 1.0,
+    "509": 1.0,
+    "510": 1.0,
+    "511": 1.0,
+    "512": 1.0,
+    "513": 1.0,
+    "514": 1.0,
+    "515": 1.0,
+    "516": 1.0,
+    "517": 1.0,
+    "518": 1.0,
+    "519": 1.0,
+    "520": 1.0,
+    "521": 1.0,
+    "522": 1.0,
+    "523": 1.0,
+    "524": 1.0,
+    "525": 1.0,
+    "526": 1.0,
+    "527": 1.0,
+    "528": 1.0,
+    "529": 1.0,
+    "530": 1.0,
+    "531": 1.0,
+    "532": 1.0,
+    "533": 1.0,
+    "534": 1.0,
+    "535": 1.0,
+    "536": 1.0,
+    "537": 1.0,
+    "538": 1.0,
+    "539": 1.0,
+    "540": 1.0,
+    "541": 1.0,
+    "542": 1.0,
+    "543": 1.0,
+    "544": 1.0,
+    "545": 1.0,
+    "546": 1.0,
+    "547": 1.0
+  },
+  "gods": [
+    {
+      "id": "app_filament_forms_components_enumselect_enumselect",
+      "label": "EnumSelect",
+      "degree": 19
+    },
+    {
+      "id": "app_filament_tables_columns_iconstatesplitcolumn_iconstatesplitcolumn",
+      "label": "IconStateSplitColumn",
+      "degree": 17
+    },
+    {
+      "id": "app_forms_components_radiocardselector_radiocardselector",
+      "label": "RadioCardSelector",
+      "degree": 16
+    },
+    {
+      "id": "app_view_components_render_block_block",
+      "label": "Block",
+      "degree": 15
+    },
+    {
+      "id": "app_filament_forms_components_inlinedatepicker_inlinedatepicker",
+      "label": "InlineDatePicker",
+      "degree": 13
+    },
+    {
+      "id": "app_filament_forms_components_radiocollection_radiocollection",
+      "label": "RadioCollection",
+      "degree": 11
+    },
+    {
+      "id": "app_filament_widgets_usercalendarwidget_usercalendarwidget",
+      "label": "UserCalendarWidget",
+      "degree": 11
+    },
+    {
+      "id": "app_filament_actions_table_tablelayouttoggletableaction_tablelayouttoggletableaction",
+      "label": "TableLayoutToggleTableAction",
+      "degree": 9
+    },
+    {
+      "id": "app_filament_widgets_darkmodeswitcherwidget_darkmodeswitcherwidget",
+      "label": "DarkModeSwitcherWidget",
+      "degree": 9
+    },
+    {
+      "id": "app_models_category_category",
+      "label": "Category",
+      "degree": 9
+    }
+  ],
+  "surprises": [
+    {
+      "source": "concreteRowWidget()",
+      "target": "RowWidget",
+      "source_files": [
+        "tests/Feature/WidgetBusinessLogicTest.php",
+        "app/Filament/Widgets/RowWidget.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `concreteRowWidget()` unexpectedly reaches hub `RowWidget`"
+    },
+    {
+      "source": "createTestCalendarWidget()",
+      "target": "UserCalendarWidget",
+      "source_files": [
+        "tests/Unit/Widgets/BaseCalendarWidgetTest.php",
+        "app/Filament/Widgets/UserCalendarWidget.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `createTestCalendarWidget()` unexpectedly reaches hub `UserCalendarWidget`"
+    },
+    {
+      "source": "createCategory()",
+      "target": "CategoryFactory",
+      "source_files": [
+        "tests/Pest.php",
+        "database/factories/CategoryFactory.php"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    },
+    {
+      "source": "makeCategory()",
+      "target": "CategoryFactory",
+      "source_files": [
+        "tests/Pest.php",
+        "database/factories/CategoryFactory.php"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    },
+    {
+      "source": "createCollection()",
+      "target": "CollectionFactory",
+      "source_files": [
+        "tests/Pest.php",
+        "database/factories/CollectionFactory.php"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

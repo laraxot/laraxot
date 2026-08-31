@@ -11,19 +11,16 @@ use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
- * @property ProfileContract|null $creator
- * @property ProfileContract|null $updater
+ * @property-read ProfileContract|null $creator
+ * @property-read ProfileContract|null $updater
  *
+ * @method static \Modules\Geo\Database\Factories\PlaceTypeFactory factory($count = null, $state = [])
  * @method static Builder<static>|PlaceType newModelQuery()
  * @method static Builder<static>|PlaceType newQuery()
  * @method static Builder<static>|PlaceType query()
  *
- * @property ProfileContract|null $deleter
- *
- * @method static PlaceTypeFactory factory($count = null, $state = [])
- *
- * @property string      $id
- * @property string      $name
+ * @property int $id
+ * @property string $name
  * @property string|null $description
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
@@ -38,7 +35,7 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 class PlaceType extends BaseModel
 {
-    /** @phpstan-use HasXotFactory<\Modules\Geo\Database\Factories\PlaceTypeFactory> */
+    /** @use HasXotFactory<PlaceTypeFactory> */
     use HasXotFactory;
 
     protected $fillable = [

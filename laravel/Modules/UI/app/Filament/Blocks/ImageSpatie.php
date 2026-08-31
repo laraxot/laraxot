@@ -23,7 +23,11 @@ final class ImageSpatie
             ->schema([
                 Hidden::make('img_uuid')
                     ->default(Str::uuid()->toString(...))
-                    ->formatStateUsing(static fn ($state) => $state ?? Str::uuid()->toString()),
+                    ->formatStateUsing(static function (mixed $state): string {
+                        $value = $state ?? Str::uuid()->toString();
+
+                        return \is_string($value) ? $value : Str::uuid()->toString();
+                    }),
                 // ->live()
                 SpatieMediaLibraryFileUpload::make('image')
                     ->live()
@@ -57,6 +61,6 @@ final class ImageSpatie
                     }),
                 TextInput::make('caption'),
             ])
-            ->columns('form' === $context ? 2 : 1);
+            ->columns($context === 'form' ? 2 : 1);
     }
 }

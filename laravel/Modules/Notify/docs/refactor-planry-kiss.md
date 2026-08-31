@@ -1,3 +1,12 @@
+---
+title: "Piano di Refactor DRY/KISS - Documentazione Modulo Notify"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Piano di Refactor DRY/KISS - Documentazione Modulo Notify
 
 ## Problema Identificato

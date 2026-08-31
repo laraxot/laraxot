@@ -17,11 +17,13 @@
 // ❌ SBAGLIATO - DB::table() quando esiste il modello
 $betHistories = DB::table('bet_histories')
     ->where('predict_id', $predict->id)
+    ->where('forecast_id', $forecast->id)
     ->get();
 
 // ✅ CORRETTO - Usa il MODELLO
 $betHistories = BetHistory::query()
     ->where('predict_id', $predict->id)
+    ->where('forecast_id', $forecast->id)
     ->get();
 ```
 
@@ -179,12 +181,15 @@ Rating::query()->...
 
 ### AI Agents Docs
 - **[Rules Index](00-INDEX.md)** - All rules
+- **[Rules Index](00-index.md)** - All rules
 - **[XotBase Extension Rule](xotbase-extension-rule.md)** - XotBase philosophy
 - **[Reusable Components](../guidelines/reusable-components-philosophy.md)** - DRY+KISS
 
 ### Module Docs
 - **[BetHistory Model](../../laravel/Modules/Predict/app/Models/BetHistory.php)** - Source
 - **[Transaction Model](../../laravel/Modules/Predict/app/Models/Transaction.php)** - Source
+- **[BetHistory Model](../../laravel/Modules/Forecast/app/Models/BetHistory.php)** - Source
+- **[Transaction Model](../../laravel/Modules/Forecast/app/Models/Transaction.php)** - Source
 
 ---
 

@@ -7,12 +7,11 @@ namespace Modules\Notify\Tests\Unit\Actions\NotifyTheme\Attachment;
 use Modules\Notify\Actions\NotifyTheme\Attachment\Pdf;
 use Modules\Notify\Datas\AttachmentData;
 use Modules\Notify\Tests\TestCase;
+use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\class_uses;
-
-uses(\Modules\Notify\Tests\TestCase::class);
 
 describe('NotifyTheme\Attachment\Pdf', function () {
     it('can be instantiated', function () {
@@ -37,8 +36,8 @@ describe('NotifyTheme\Attachment\Pdf', function () {
         $method = $reflection->getMethod('execute');
         $params = $method->getParameters();
 
-        \assertReflectionTypeName($params[0]->getType(), 'string');
-        \assertReflectionTypeName($params[1]->getType(), 'array');
+        XotBasePest::assertReflectionTypeName($params[0]->getType(), 'string');
+        XotBasePest::assertReflectionTypeName($params[1]->getType(), 'array');
     });
 
     it('execute returns AttachmentData', function () {
@@ -46,12 +45,12 @@ describe('NotifyTheme\Attachment\Pdf', function () {
         $method = $reflection->getMethod('execute');
         $returnType = $method->getReturnType();
 
-        \assertReflectionTypeName($returnType, AttachmentData::class);
+        XotBasePest::assertReflectionTypeName($returnType, AttachmentData::class);
     });
 
     it('uses strict types', function () {
         $reflection = new \ReflectionClass(Pdf::class);
-        $content = \notifyReflectionSource($reflection);
+        $content = TestCase::notifyReflectionSource($reflection);
         Assert::assertStringContainsString('declare(strict_types=1)', $content);
     });
 
@@ -62,7 +61,7 @@ describe('NotifyTheme\Attachment\Pdf', function () {
     });
 
     it('has required imports', function () {
-        $content = \notifyReflectionSource(new \ReflectionClass(Pdf::class));
+        $content = TestCase::notifyReflectionSource(new \ReflectionClass(Pdf::class));
 
         Assert::assertStringContainsString('use Modules\Notify\Actions\NotifyTheme\Get', $content);
         Assert::assertStringContainsString('use Modules\Notify\Datas\AttachmentData', $content);

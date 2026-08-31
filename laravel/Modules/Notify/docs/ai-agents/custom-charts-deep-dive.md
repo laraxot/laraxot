@@ -29,6 +29,7 @@
 ### What Are Custom Question Types?
 
 Custom question types are specialized data processing actions for Quaeris survey analytics that handle complex business logic not covered by standard LimeSurvey queries. They enable:
+Custom question types are specialized data processing actions for App survey analytics that handle complex business logic not covered by standard LimeSurvey queries. They enable:
 
 - **Response rate calculations** (email, SMS)
 - **Grouped analysis** (root grouped BF)
@@ -39,6 +40,7 @@ Custom question types are specialized data processing actions for Quaeris survey
 
 Standard LimeSurvey queries cannot handle:
 - Cross-database operations (contacts in `quaeris_data`, surveys in `limesurvey`)
+- Cross-database operations (contacts in `app_data`, surveys in `limesurvey`)
 - Complex business logic (response rate calculations)
 - Custom grouping and aggregation
 - Multi-source data merging
@@ -129,12 +131,14 @@ GROUP BY gid
 ```
 
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/RootGroupedBf.php`
+**File**: `Modules/App/app/Actions/QuestionChart/Custom/RootGroupedBf.php`
 
 **Lines**: 125
 
 **Complexity**: Medium
 
 **Test URL**: `/quaeris/admin/ats/survey-pdfs/16/question-charts/234`
+**Test URL**: `/this-project/admin/ats/survey-pdfs/16/question-charts/234`
 
 ---
 
@@ -159,12 +163,14 @@ AND sent != 'N'
 ```
 
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/MailResponseRate.php`
+**File**: `Modules/App/app/Actions/QuestionChart/Custom/MailResponseRate.php`
 
 **Lines**: 173
 
 **Complexity**: High
 
 **Test URL**: `/quaeris/admin/ats/survey-pdfs/16/question-charts/192`
+**Test URL**: `/this-project/admin/ats/survey-pdfs/16/question-charts/192`
 
 **Footer Output**:
 ```
@@ -182,6 +188,7 @@ Totale Invitati: 100 - Rispondenti: 75 - Percentuale di risposta: 75.00%
 **Database Operations**:
 ```sql
 -- Uses Contact model (quaeris_data database)
+-- Uses Contact model (app_data database)
 SELECT 
     DATE_FORMAT(sms_sent_at, '%Y-%b') as label,
     DATE_FORMAT(sms_sent_at, '%Y-%m') as _sort,
@@ -196,12 +203,14 @@ ORDER BY DATE_FORMAT(sms_sent_at, '%Y-%m')
 ```
 
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/SmsResponseRate.php`
+**File**: `Modules/App/app/Actions/QuestionChart/Custom/SmsResponseRate.php`
 
 **Lines**: 150 (optimized from 473)
 
 **Complexity**: High
 
 **Test URL**: `/quaeris/admin/ats/survey-pdfs/16/question-charts/191`
+**Test URL**: `/this-project/admin/ats/survey-pdfs/16/question-charts/191`
 
 **Key Optimization**: No cross-database joins, uses Contact model directly
 
@@ -216,12 +225,14 @@ ORDER BY DATE_FORMAT(sms_sent_at, '%Y-%m')
 **Implementation**: Combines MailResponseRate + SmsResponseRate
 
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/ContactsCompleted.php`
+**File**: `Modules/App/app/Actions/QuestionChart/Custom/ContactsCompleted.php`
 
 **Lines**: 122
 
 **Complexity**: Medium
 
 **Test URL**: `/quaeris/admin/ats/survey-pdfs/16/question-charts/190`
+**Test URL**: `/this-project/admin/ats/survey-pdfs/16/question-charts/190`
 
 **Calculation**:
 ```php
@@ -241,6 +252,7 @@ $responsePercentage = $totalInvited !== 0
 **Pattern**: `custom:contacts_completed_2`
 
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/ContactsCompleted2.php`
+**File**: `Modules/App/app/Actions/QuestionChart/Custom/ContactsCompleted2.php`
 
 **Lines**: 128
 
@@ -255,6 +267,7 @@ $responsePercentage = $totalInvited !== 0
 **Pattern**: `custom:avg_group_2`
 
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/AvgGroup2.php`
+**File**: `Modules/App/app/Actions/QuestionChart/Custom/AvgGroup2.php`
 
 **Lines**: 107
 
@@ -351,6 +364,7 @@ Argument #1 ($dataClass) must be of type string, null given
 ```
 #0 vendor/spatie/laravel-data/src/DataPipes/CastPropertiesDataPipe.php:113
 #1 Modules/Quaeris/app/Actions/QuestionChart/Custom/MailResponseRate.php:50
+#1 Modules/App/app/Actions/QuestionChart/Custom/MailResponseRate.php:50
 ```
 
 **Fix**:
@@ -671,6 +685,7 @@ $footer = sprintf(
 ```
 ┌─────────────────────┐     ┌─────────────────────┐
 │   quaeris_data      │     │     limesurvey      │
+│   app_data      │     │     limesurvey      │
 │   (MySQL)           │     │     (MySQL)         │
 ├─────────────────────┤     ├─────────────────────┤
 │ contacts            │     │ lime_survey_{sid}   │
@@ -691,9 +706,9 @@ $footer = sprintf(
 ```php
 // config/database.php
 'connections' => [
-    'quaeris' => [
+    'this-project' => [
         'driver' => 'mysql',
-        'database' => 'quaeris_data',
+        'database' => 'app_data',
         'host' => '127.0.0.1',
         // ...
     ],
@@ -701,6 +716,7 @@ $footer = sprintf(
     'limesurvey' => [
         'driver' => 'mysql',
         'database' => 'quaeris_survey', // aka limesurvey
+        'database' => 'app_survey', // aka limesurvey
         'host' => '127.0.0.1',
         // ...
     ],
@@ -710,10 +726,10 @@ $footer = sprintf(
 ### Model Configuration
 
 ```php
-// Modules/Quaeris/Models/Contact.php
+// Modules/App/Models/Contact.php
 class Contact extends Model
 {
-    protected $connection = 'quaeris';
+    protected $connection = 'this-project';
     protected $table = 'contacts';
 }
 
@@ -888,6 +904,7 @@ it('calculates mail response rate correctly', function (): void {
 
 ### GitHub
 - Issue #97: https://github.com/laraxot/base_quaeris_fila5_mono/issues/97
+- Issue #97: https://github.com/laraxot/base_ptvx_fila5_mono/issues/97
 
 ### External Resources
 - [Spatie Laravel Data](https://spatie.be/docs/laravel-data)

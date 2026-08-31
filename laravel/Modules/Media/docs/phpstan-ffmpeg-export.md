@@ -42,6 +42,10 @@ $export->save($file_new);
 
 `save()` è definito su `MediaExporter` (`pbmedia/laravel-ffmpeg`).
 
+## `ResolveMediaExporterAction::execute(mixed)`
+
+Resta `mixed`: è il type-guard sul ritorno della fluent FFmpeg (`__call` / mixin). Restringere a `MediaExporter` svuoterebbe l'action e sposterebbe `argument.type` sui chiamanti. Stesso bordo di `addFilter()`.
+
 ## Vietato
 
 - `@phpstan-ignore` su `save()` se basta spezzare la catena

@@ -5,6 +5,7 @@ tags: [header, fix, analysis]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "header-fix-analysis 📸 header fixcity vs bootstrap italia - analisi e fix"
+qmd: "header-fix-analysis 📸 header ptv vs bootstrap italia - analisi e fix"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:

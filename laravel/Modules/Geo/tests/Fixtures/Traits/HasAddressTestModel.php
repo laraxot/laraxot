@@ -12,6 +12,7 @@ use Modules\Geo\Models\Traits\HasAddress;
  */
 class HasAddressTestModel extends BaseModel
 {
+    /** @use HasAddress<HasAddressTestModel> */
     use HasAddress;
 
     /** @var list<string> */

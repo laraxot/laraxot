@@ -1,10 +1,12 @@
 ---
 title: "📊 RIEPILOGO PROGRESSI - FIXCITY PLATFORM"
+title: "📊 RIEPILOGO PROGRESSI - NOTIFY PLATFORM"
 type: concept
 tags: [progress, summary, 2025, 27.deprecated]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "progress-summary-2025-01-27.deprecated 📊 riepilogo progressi - fixcity platform"
+qmd: "progress-summary-2025-01-27.deprecated 📊 riepilogo progressi - laraxot platform"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -19,6 +21,7 @@ related:
 ---
 
 # 📊 RIEPILOGO PROGRESSI - FIXCITY PLATFORM
+# 📊 RIEPILOGO PROGRESSI - NOTIFY PLATFORM
 
 **Data**: 27 Gennaio 2025  
 **Status**: 🚧 ACTIVE DEVELOPMENT  
@@ -52,6 +55,7 @@ related:
 - [x] **Xot Module**: 95% completato, PHPStan Level 9
 - [x] **User Module**: 90% completato, PHPStan Level 9
 - [x] **Fixcity Module**: 80% completato, PHPStan Level 9
+- [x] **App Module**: 80% completato, PHPStan Level 9
 
 ### ✅ Moduli Support (HIGH)
 - [x] **UI Module**: 85% completato, PHPStan Level 9
@@ -66,6 +70,8 @@ related:
 ### 🔧 Implementazione Roadmap
 - [ ] **API Development**: Fixcity module (45% completato)
 - [ ] **Mobile Optimization**: Fixcity module (55% completato)
+- [ ] **API Development**: App module (45% completato)
+- [ ] **Mobile Optimization**: App module (55% completato)
 - [ ] **AGID Compliance**: Sixteen theme (85% completato)
 - [ ] **Test Coverage**: Implementazione test per tutti i moduli
 
@@ -81,6 +87,7 @@ related:
 
 ### Week 1: API Development
 - [ ] Completare API endpoints per Fixcity
+- [ ] Completare API endpoints per App
 - [ ] Implementare autenticazione API
 - [ ] Documentare API con OpenAPI/Swagger
 - [ ] Test API endpoints
@@ -137,6 +144,7 @@ related:
 
 ### Febbraio 2025
 - [ ] Completare API Fixcity
+- [ ] Completare API App
 - [ ] Ottimizzare mobile interface
 - [ ] Raggiungere 100% AGID compliance
 - [ ] Implementare test coverage 60%+
@@ -188,13 +196,13 @@ related:
 
 ### Moduli Core
 - **Xot ↔ User**: Integrazione completa
-- **Xot ↔ Fixcity**: Integrazione completa
-- **User ↔ Fixcity**: Integrazione completa
+- **Xot ↔ App**: Integrazione completa
+- **User ↔ App**: Integrazione completa
 
 ### Moduli Support
 - **UI ↔ Sixteen**: Integrazione tema
-- **Geo ↔ Fixcity**: Integrazione geolocalizzazione
-- **Media ↔ Fixcity**: Integrazione file upload
+- **Geo ↔ App**: Integrazione geolocalizzazione
+- **Media ↔ App**: Integrazione file upload
 - **Notify ↔ User**: Integrazione notifiche
 
 ### Quality Tools
@@ -243,6 +251,7 @@ related:
 ---
 
 *Questo documento riassume i progressi completati e le prossime azioni per il completamento del progetto FixCity Platform.*
+*Questo documento riassume i progressi completati e le prossime azioni per il completamento del progetto Notify Platform.*
 
 
 

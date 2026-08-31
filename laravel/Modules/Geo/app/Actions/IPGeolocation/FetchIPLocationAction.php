@@ -7,10 +7,9 @@ namespace Modules\Geo\Actions\IPGeolocation;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Modules\Geo\Datas\Location\IPLocationData;
+use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\json_decode;
-
-use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Action per ottenere informazioni di geolocalizzazione da un indirizzo IP.
@@ -19,7 +18,7 @@ class FetchIPLocationAction
 {
     use QueueableAction;
 
-    private const API_URL = 'http://ip-api.com/json/';
+    private const string API_URL = 'http://ip-api.com/json/';
 
     private Client $client;
 
@@ -31,7 +30,7 @@ class FetchIPLocationAction
     /**
      * Ottiene le informazioni di geolocalizzazione per un indirizzo IP.
      *
-     * @param string $ip Indirizzo IP da geolocalizzare
+     * @param  string  $ip  Indirizzo IP da geolocalizzare
      *
      * @throws GuzzleException
      * @throws \RuntimeException
@@ -72,7 +71,7 @@ class FetchIPLocationAction
          */
         $data = json_decode($response->getBody()->getContents(), true);
 
-        if ('success' !== $data['status']) {
+        if ($data['status'] !== 'success') {
             throw new \RuntimeException('Failed to get IP location: '.($data['message'] ?? 'Unknown error'));
         }
 

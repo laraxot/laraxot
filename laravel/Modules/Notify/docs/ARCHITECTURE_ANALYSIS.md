@@ -1097,6 +1097,7 @@ The frontend follows Italian Public Administration design guidelines:
 
 // Ticket List (AGID-compliant)
 <x-fixcity::blocks.ticket_list.agid />
+<x-ptv::blocks.ticket_list.agid />
 
 // Forms (Filament + Custom CSS)
 - Titillium Web font family
@@ -1621,6 +1622,7 @@ Tasks:
 ### Recommended New Documentation
 ```
 1. ARCHITECTURE.md
+1. architecture.md
    - System architecture diagrams
    - Module dependency graph
    - Database schema diagrams

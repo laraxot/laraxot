@@ -275,6 +275,7 @@ FAIL → $this->addError() + rimane su form
 
 ```bash
 cd /var/www/_bases/base_fixcity_fila5_mono/laravel
+cd /var/www/_bases/base_ptv_fila5_mono/laravel
 php artisan serve --host=127.0.0.1 --port=8000
 ```
 

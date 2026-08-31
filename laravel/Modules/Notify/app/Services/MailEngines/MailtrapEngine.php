@@ -58,9 +58,7 @@ class MailtrapEngine
 
     public function send(): self
     {
-        dddx('WIP');
-
-        return $this;
+        throw new \RuntimeException('Removed debug dddx');
     }
 
     public function try(): void

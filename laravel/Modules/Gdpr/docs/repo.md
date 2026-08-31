@@ -1,0 +1,9 @@
+# Repo
+
+---
+module: theme
+topic: repo
+canonical: ../../../Themes/docs/shared-components/repo.md
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/repo.md

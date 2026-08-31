@@ -33,9 +33,7 @@ class WhatsAppChannel
     /**
      * Invia la notifica attraverso il canale WhatsApp.
      *
-     * @param  mixed  $notifiable  Entità che riceve la notifica
      * @param  Notification  $notification  Notifica da inviare
-     *
      * @return array<string, mixed>|null Risultato dell'operazione o null in caso di errore
      *
      * @throws Exception Se la notifica non ha il metodo toWhatsApp o il driver non è supportato

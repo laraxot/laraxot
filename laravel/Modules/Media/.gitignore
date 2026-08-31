@@ -1,6 +1,39 @@
-# Auto-generated forbidden paths — do not edit manually
-# Reason: root cleanup policy (see docs/wiki/rules/root-cleanup-policy.md)
 
+!.env.example
+# ==============================================
+# AI/TOOL SCAFFOLD — must never exist in module tree (see docs/wiki/rules/module-theme-root-cleanup.md)
+# Auto-generated forbidden paths — do not edit manually
+# BACKUP FILES
+# BUILD & COMPILED FILES
+# CACHE & TEMPORARY FILES
+# Cache media
+# DEPENDENCIES & PACKAGES
+# DEVELOPMENT TOOLS
+# DOCUMENTATION CACHE
+# END OF MEDIA .GITIGNORE
+# ENVIRONMENT & CONFIGURATION
+# File di configurazione locale
+# File di test media
+# File media temporanei
+# GIT SPECIFIC
+# LARAVEL SPECIFIC
+# LARAXOT MODULE MEDIA - .GITIGNORE
+# LOG FILES
+# Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
+# Laraxot — quality tool configs forbidden in module/theme root (use laravel/phpinsights.php, laravel/rector.php)
+# MODULE SPECIFIC - MEDIA
+# Modulo Media Laraxot - Template standardizzato
+# OLD DIRECTORIES (LEGACY CLEANUP)
+# Reason: root cleanup policy (see docs/wiki/rules/root-cleanup-policy.md)
+# SYSTEM FILES
+# Ultimo aggiornamento: 2025-01-06
+# 🚫 File specifici del progetto
+*.backup
+*.backup-*
+*.backup.*
+*.backup_*
+*.bak
+*.bakcup
 bashscripts
 _bmad-output
 .circleci
@@ -17,11 +50,6 @@ docs/workbench
 scripts
 test-results
 tests/.claude-audit
-# ==============================================
-# LARAXOT MODULE MEDIA - .GITIGNORE
-# Modulo Media Laraxot - Template standardizzato
-# Ultimo aggiornamento: 2025-01-06
-# DEPENDENCIES & PACKAGES
 vendor/
 /vendor/
 node_modules/
@@ -31,30 +59,36 @@ package-lock.json
 yarn.lock
 yarn-error.log
 composer.lock
-# BUILD & COMPILED FILES
 /build
 /build/
 build/
 dist/
 docs/cache/
 cache/
-# CACHE & TEMPORARY FILES
 *.cache
-*.lock
-*.phar
-*.jar
-*.tmp
-*.swp
-*.swo
-*.stackdump
 *.exe
+*.fila2
+*.jar
+*.lock
+*.log
+*.new
+*.old
+*.old1
+*.old2
+*.phar
+*.stackdump
+*.swo
+*.swp
+*.tmp
 *:Zone.Identifier
 v8-compile-cache-*
 .php-cs-fixer.cache
 .phpunit.result.cache
+error_log
+
+# ==============================================
 # LOG FILES
 *.log
-error_log
 npm-debug.log*
 npm-debug.log
 yarn-error.log*
@@ -81,14 +115,29 @@ Homestead.json
 .git-rewrite
 .git-blame-ignore-revs
 # SYSTEM FILES
+# =============================================
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+._*
+.circleci
+.claude-audit
+ehthumbs.db
+Thumbs.db
+
+# ==============================================
+# BACKUP FILES
+# GIT SPECIFIC
+.git-rewrite/
+.git-rewrite
+.git-blame-ignore-revs
+# SYSTEM FILES
 .DS_Store
 .DS_Store?
 ._*
 .Spotlight-V100
 .Trashes
-ehthumbs.db
-Thumbs.db
-# BACKUP FILES
 *.old
 *.old1
 *.old2
@@ -102,14 +151,146 @@ Thumbs.db
 # DEVELOPMENT TOOLS
 .windsurf/
 .cursor/
+.devcontainer
+.devcontainer/
+.env
+.env.*
+.git-blame-ignore-revs
+.git-rewrite
+.git-rewrite/
+.kilocode
+.kiro
+.php-cs-fixer.cache
+.phpintel
 .phpstorm.meta.php
+.phpunit.result.cache
+.ralph
+.vscode/
+.windsurf/
+.kilocode
+.kiro
+.devcontainer
+.devcontainer/
+/.idea
+/.vagrant
+/build
+/build/
+/docs/vendor/
+/node_modules/
+/vendor/
+Homestead.json
+Homestead.yaml
+Thumbs.db
+_bmad-output
+_docs
+agentdb.rvf
+app/storage/
+archive/
+bashscripts
+bootstrap/compiled.php
+build/
+cache/
+composer.lock
+config/development.php
+config/local.php
+database/Factories_
+database/Factories_old
+database/Factories_old/
+
+# ==============================================
 # DOCUMENTATION CACHE
 docs/phpstan/
+docs/cache/
+docs/archive/
+docs/archive/**
 # OLD DIRECTORIES (LEGACY CLEANUP)
+# DEVELOPMENT TOOLS
+.windsurf/
+.cursor/
+.phpstorm.meta.php
 resources/views/Components_old/
 resources/views/Components_old
 database/Migrations_old/
 database/Migrations_old
+database/Migrations_old/
+database/Seeders_old
+database/Seeders_old/
+database_old
+database_old/
+dist/
+docs/**/*-[0-9].mdarchive/
+docs/archive/
+docs/archive/**
+docs/archived
+docs/cache/
+docs/legacy
+docs/phpstan/
+docs/workbench
+ehthumbs.db
+error_log
+lang/lang/
+laravel
+legacy/
+lerna-debug.log*
+
+# ==============================================
+# MODULE SPECIFIC - MEDIA
+# File di configurazione locale
+config/local.php
+config/development.php
+# File media temporanei
+media/temp/
+media/thumbnails/temp/
+media/uploads/temp/
+media_test_data.json
+node_modules/
+npm-debug.log
+npm-debug.log*
+package-lock.json
+phpinsights.php
+phpmd.ruleset.xml
+phpstan*
+public/hot
+public/storage
+public_html
+public_html/hot
+public_html/storage
+rector.php
+resources/views/Components_old
+resources/views/Components_old/
+scripts
+storage/*.key
+storage/media/
+storage/thumbnails/
+test-results
+test_media_files/
+tests/.claude-audit
+tests/AuditCoverage
+tests/AuditCoverage/
+v8-compile-cache-*
+vendor/
+yarn-error.log
+yarn-error.log*
+yarn.lock
+
+# Root quality tool configs forbidden in module root
+phpmd*
+
+# ==============================================
+# END OF MEDIA .GITIGNORE
+/.ai*
+/_bmad
+/bashscripts
+/_docs
+/docs/archive
+/docs/legacy
+.agents
+.claude
+.codex
+.cursor
+.opencode
+phpstan*-*
+phpmd*.*
 database/Seeders_old/
 database/Seeders_old
 database/Factories_old/
@@ -131,7 +312,6 @@ storage/thumbnails/
 # File di test media
 media_test_data.json
 test_media_files/
-# END OF MEDIA .GITIGNORE
 # 🚫 File specifici del progetto
 *.fila2
 laravel
@@ -141,14 +321,8 @@ agentdb.rvf
 .vscode/
 tests/AuditCoverage
 # AI/TOOL SCAFFOLD — must never exist in module tree (see docs/wiki/rules/module-theme-root-cleanup.md)
-
 # Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
 .cursor/
 .devcontainer/
-.vscode/
 .windsurf/
 tests/AuditCoverage/
-
-# Laraxot — quality tool configs forbidden in module/theme root (use laravel/phpinsights.php, laravel/rector.php)
-phpinsights.php
-rector.php

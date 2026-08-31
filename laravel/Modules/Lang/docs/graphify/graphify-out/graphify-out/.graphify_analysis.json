@@ -1,0 +1,1125 @@
+{
+  "communities": {
+    "0": [
+      "app_actions_filament_autolabelaction",
+      "app_actions_filament_autolabelaction_autolabelaction",
+      "app_actions_filament_autolabelaction_autolabelaction_execute",
+      "app_actions_savetransaction",
+      "app_actions_savetransaction_savetransaction",
+      "app_actions_savetransaction_savetransaction_execute",
+      "app_filament_actions_localeswitcherrefresh",
+      "app_filament_actions_localeswitcherrefresh_localeswitcherrefresh",
+      "app_filament_actions_localeswitcherrefresh_localeswitcherrefresh_setup",
+      "app_filament_forms_components_nationalflagselect",
+      "app_filament_forms_components_nationalflagselect_nationalflagselect",
+      "app_filament_forms_components_nationalflagselect_nationalflagselect_getcountryoptions",
+      "app_filament_forms_components_nationalflagselect_nationalflagselect_getfilteredcountryoptions",
+      "app_filament_forms_components_nationalflagselect_nationalflagselect_setup",
+      "app_filament_forms_components_translationeditor",
+      "app_filament_forms_components_translationeditor_translationeditor",
+      "app_filament_forms_components_translationeditor_translationeditor_getdefaultchildcomponents",
+      "app_filament_forms_components_translationeditor_translationeditor_setup",
+      "app_filament_resources_pages_langbaseeditrecord",
+      "app_filament_resources_pages_langbaseeditrecord_langbaseeditrecord",
+      "app_filament_resources_pages_langbaseeditrecord_langbaseeditrecord_getheaderactions",
+      "app_filament_resources_pages_langbaselistrecords",
+      "app_filament_resources_pages_langbaselistrecords_langbaselistrecords",
+      "app_filament_resources_pages_langbaselistrecords_langbaselistrecords_getheaderactions",
+      "app_filament_resources_translationfileresource_pages_edittranslationfile",
+      "app_filament_resources_translationfileresource_pages_edittranslationfile_edittranslationfile",
+      "app_filament_resources_translationfileresource_pages_edittranslationfile_edittranslationfile_aftersave",
+      "app_filament_resources_translationfileresource_pages_edittranslationfile_edittranslationfile_getformschema",
+      "app_filament_resources_translationfileresource_pages_edittranslationfile_edittranslationfile_getheaderactions",
+      "app_filament_resources_translationfileresource_pages_edittranslationfile_edittranslationfile_gettranslatablelocales",
+      "app_filament_resources_translationfileresource_pages_edittranslationfile_edittranslationfile_makefromarray",
+      "app_filament_resources_translationfileresource_pages_edittranslationfile_edittranslationfile_mutateformdatabeforesave",
+      "app_filament_resources_translationfileresource_pages_listtranslationfiles",
+      "app_filament_resources_translationfileresource_pages_listtranslationfiles_listtranslationfiles",
+      "app_filament_resources_translationfileresource_pages_listtranslationfiles_listtranslationfiles_getheaderactions",
+      "app_filament_resources_translationfileresource_pages_listtranslationfiles_listtranslationfiles_gettablecolumns",
+      "app_filament_resources_translationfileresource_schemas_translationfileform",
+      "app_filament_resources_translationfileresource_schemas_translationfileform_translationfileform",
+      "app_filament_resources_translationfileresource_schemas_translationfileform_translationfileform_getformschema",
+      "app_filament_resources_translationfileresource_tables_translationfilestable",
+      "app_filament_resources_translationfileresource_tables_translationfilestable_translationfilestable",
+      "app_filament_resources_translationfileresource_tables_translationfilestable_translationfilestable_gettablecolumns",
+      "app_filament_resources_translationfileresource_tables_translationfilestable_translationfilestable_gettableheaderactions",
+      "app_filament_resources_translationfileresource_translationfileresource_getpages",
+      "app_providers_langserviceprovider",
+      "filament_actions_action",
+      "filament_forms_components_field",
+      "filament_forms_components_select",
+      "filament_infolists_components_entry",
+      "filament_schemas_components_section",
+      "filament_schemas_components_wizard_step",
+      "filament_support_components_component",
+      "filament_tables_columns_column",
+      "filament_tables_filters_basefilter",
+      "illuminate_contracts_support_htmlable",
+      "larazeus_spatietranslatable_resources_pages_editrecord_concerns_translatable",
+      "larazeus_spatietranslatable_resources_pages_listrecords_concerns_translatable",
+      "modules_xot_filament_forms_components_xotbasefield",
+      "modules_xot_filament_resources_pages_xotbaseeditrecord",
+      "modules_xot_filament_resources_pages_xotbaselistrecords",
+      "modules_xot_filament_resources_schemas_xotbaseresourceform",
+      "modules_xot_filament_resources_tables_xotbaseresourcetable",
+      "tests_unit_actions_savetransactiontest"
+    ],
+    "1": [
+      "app_actions_getallmoduletranslationaction",
+      "app_actions_getallmoduletranslationaction_getallmoduletranslationaction",
+      "app_actions_getallmoduletranslationaction_getallmoduletranslationaction_execute",
+      "app_actions_getalltranslationaction",
+      "app_actions_getalltranslationaction_getalltranslationaction",
+      "app_actions_getalltranslationaction_getalltranslationaction_execute",
+      "app_actions_gettranspathaction",
+      "app_actions_gettranspathaction_gettranspathaction",
+      "app_actions_gettranspathaction_gettranspathaction_execute",
+      "app_actions_mergetranslationsaction",
+      "app_actions_mergetranslationsaction_mergetranslationsaction",
+      "app_actions_mergetranslationsaction_mergetranslationsaction_execute",
+      "app_actions_transarrayaction",
+      "app_actions_transarrayaction_transarrayaction",
+      "app_actions_transarrayaction_transarrayaction_execute",
+      "app_actions_transarrayaction_transarrayaction_trans",
+      "app_actions_translation_recordmissingtranslationaction",
+      "app_actions_translation_recordmissingtranslationaction_recordmissingtranslationaction",
+      "app_actions_translation_recordmissingtranslationaction_recordmissingtranslationaction_execute",
+      "app_actions_translation_recordmissingtranslationaction_recordmissingtranslationaction_parsekey",
+      "app_actions_translatoraction",
+      "app_actions_translatoraction_translatoraction",
+      "app_actions_translatoraction_translatoraction_execute",
+      "app_actions_translatoraction_translatoraction_get",
+      "app_actions_translatoraction_translatoraction_notifymissingkey",
+      "app_actions_writetranslationfileaction",
+      "app_actions_writetranslationfileaction_writetranslationfileaction",
+      "app_actions_writetranslationfileaction_writetranslationfileaction_cleartranslationcache",
+      "app_actions_writetranslationfileaction_writetranslationfileaction_createbackup",
+      "app_actions_writetranslationfileaction_writetranslationfileaction_execute",
+      "app_actions_writetranslationfileaction_writetranslationfileaction_validatephpsyntax",
+      "app_adapters_translatoradapter",
+      "app_adapters_translatoradapter_translatoradapter",
+      "app_adapters_translatoradapter_translatoradapter_get",
+      "app_adapters_translatoradapter_translatoradapter_notifymissingkey",
+      "app_providers_traits_translatortrait",
+      "app_providers_traits_translatortrait_registertranslator",
+      "app_services_translatorservice",
+      "app_services_translatorservice_translatorservice",
+      "app_services_translatorservice_translatorservice_execute",
+      "app_services_translatorservice_translatorservice_get",
+      "app_services_translatorservice_translatorservice_notifymissingkey",
+      "illuminate_translation_translator",
+      "spatie_queueableaction_queueableaction",
+      "tests_unit_actions_getalltranslationactiontest",
+      "tests_unit_actions_getalltranslationactiontest_makegetalltranslationaction",
+      "tests_unit_actions_gettranspathactiontest",
+      "tests_unit_actions_gettranspathactiontest_makegettranspathaction",
+      "tests_unit_actions_transarrayactiontest",
+      "tests_unit_actions_transarrayactiontest_maketransarrayaction",
+      "tests_unit_adapters_translatoradaptertest",
+      "tests_unit_adapters_translatoradaptertest_maketranslatoradapter",
+      "translator"
+    ],
+    "2": [
+      "app_models_basemorphpivot",
+      "app_models_basemorphpivot_basemorphpivot",
+      "app_models_basemorphpivot_basemorphpivot_casts",
+      "app_models_post",
+      "app_models_post_post",
+      "app_models_post_post_casts",
+      "app_models_post_post_getguidattribute",
+      "app_models_post_post_getslugoptions",
+      "app_models_post_post_gettitleattribute",
+      "app_models_post_post_gettxtattribute",
+      "app_models_post_post_linkable",
+      "app_models_post_post_settitleattribute",
+      "app_models_post_post_tosearchablearray",
+      "app_models_traits_linkedtrait",
+      "app_models_translation",
+      "database_factories_postfactory",
+      "database_factories_postfactory_postfactory",
+      "database_factories_postfactory_postfactory_definition",
+      "database_factories_postfactory_postfactory_draft",
+      "database_factories_postfactory_postfactory_italian",
+      "database_factories_postfactory_postfactory_published",
+      "database_factories_translationfactory",
+      "database_factories_translationfactory_translationfactory",
+      "database_factories_translationfactory_translationfactory_definition",
+      "database_factories_translationfilefactory",
+      "database_factories_translationfilefactory_translationfilefactory",
+      "database_factories_translationfilefactory_translationfilefactory_definition",
+      "database_migrations_2026_01_21_211814_create_posts_table",
+      "database_migrations_2026_01_21_211814_create_posts_table_up",
+      "illuminate_database_eloquent_factories_factory",
+      "illuminate_database_eloquent_relations_morphpivot",
+      "illuminate_database_eloquent_relations_morphto",
+      "modules_xot_models_traits_hasxotfactory",
+      "modules_xot_traits_updater",
+      "slugoptions",
+      "spatie_sluggable_hasslug",
+      "spatie_sluggable_slugoptions",
+      "static",
+      "tests_feature_langbusinesslogictest",
+      "tests_pest",
+      "tests_pest_cleanuptranslationfile",
+      "tests_pest_createtranslation",
+      "tests_pest_createtranslationfile",
+      "tests_pest_langassertdatabasehasrow",
+      "tests_pest_maketranslation",
+      "tests_unit_models_basemorphpivottest"
+    ],
+    "3": [
+      "app_models_policies_langbasepolicy",
+      "app_models_policies_langbasepolicy_langbasepolicy",
+      "app_models_policies_langbasepolicy_langbasepolicy_before",
+      "app_models_policies_postpolicy",
+      "app_models_policies_postpolicy_postpolicy",
+      "app_models_policies_postpolicy_postpolicy_create",
+      "app_models_policies_postpolicy_postpolicy_delete",
+      "app_models_policies_postpolicy_postpolicy_forcedelete",
+      "app_models_policies_postpolicy_postpolicy_restore",
+      "app_models_policies_postpolicy_postpolicy_update",
+      "app_models_policies_postpolicy_postpolicy_view",
+      "app_models_policies_postpolicy_postpolicy_viewany",
+      "app_models_policies_translationfilepolicy",
+      "app_models_policies_translationfilepolicy_translationfilepolicy",
+      "app_models_policies_translationfilepolicy_translationfilepolicy_create",
+      "app_models_policies_translationfilepolicy_translationfilepolicy_delete",
+      "app_models_policies_translationfilepolicy_translationfilepolicy_forcedelete",
+      "app_models_policies_translationfilepolicy_translationfilepolicy_restore",
+      "app_models_policies_translationfilepolicy_translationfilepolicy_update",
+      "app_models_policies_translationfilepolicy_translationfilepolicy_view",
+      "app_models_policies_translationfilepolicy_translationfilepolicy_viewany",
+      "app_models_policies_translationpolicy",
+      "app_models_policies_translationpolicy_translationpolicy",
+      "app_models_policies_translationpolicy_translationpolicy_create",
+      "app_models_policies_translationpolicy_translationpolicy_delete",
+      "app_models_policies_translationpolicy_translationpolicy_forcedelete",
+      "app_models_policies_translationpolicy_translationpolicy_restore",
+      "app_models_policies_translationpolicy_translationpolicy_update",
+      "app_models_policies_translationpolicy_translationpolicy_view",
+      "app_models_policies_translationpolicy_translationpolicy_viewany",
+      "app_models_translation_translation",
+      "app_models_translation_translation_scopeoftranslatedgroup",
+      "app_models_translation_translation_scopeorderbygroupkeys",
+      "app_models_translation_translation_scopeselectdistinctgroup",
+      "app_models_translationfile",
+      "app_models_translationfile_translationfile",
+      "app_models_translationfile_translationfile_casts",
+      "app_models_translationfile_translationfile_getrows",
+      "app_models_translationfile_translationfile_isrunningidehelper",
+      "app_models_translationfile_translationfile_loadfilecontent",
+      "app_models_translationfile_translationfile_loadtranslationdatawitherrorhandling",
+      "illuminate_auth_access_handlesauthorization",
+      "illuminate_database_eloquent_builder",
+      "illuminate_database_query_builder",
+      "modules_xot_contracts_usercontract",
+      "sushi_sushi"
+    ],
+    "4": [
+      "app_actions_transcollectionaction",
+      "app_actions_transcollectionaction_transcollectionaction",
+      "app_actions_transcollectionaction_transcollectionaction_execute",
+      "app_actions_transcollectionaction_transcollectionaction_trans",
+      "app_filament_resources_translationfileresource_schemas_translationfileinfolist",
+      "app_filament_resources_translationfileresource_schemas_translationfileinfolist_translationfileinfolist",
+      "app_filament_resources_translationfileresource_schemas_translationfileinfolist_translationfileinfolist_getinfolistschema",
+      "app_filament_widgets_languageswitcherwidget",
+      "app_filament_widgets_languageswitcherwidget_languageswitcherwidget",
+      "app_filament_widgets_languageswitcherwidget_languageswitcherwidget_canview",
+      "app_filament_widgets_languageswitcherwidget_languageswitcherwidget_changelanguage",
+      "app_filament_widgets_languageswitcherwidget_languageswitcherwidget_exposeviewdata",
+      "app_filament_widgets_languageswitcherwidget_languageswitcherwidget_getavailablelocales",
+      "app_filament_widgets_languageswitcherwidget_languageswitcherwidget_getdefaultlanguages",
+      "app_filament_widgets_languageswitcherwidget_languageswitcherwidget_getformschema",
+      "app_filament_widgets_languageswitcherwidget_languageswitcherwidget_getlanguageurl",
+      "app_filament_widgets_languageswitcherwidget_languageswitcherwidget_getviewdata",
+      "app_filament_widgets_languageswitcherwidget_languageswitcherwidget_isvalidlocale",
+      "app_http_livewire_lang_change",
+      "app_http_livewire_lang_change_change",
+      "app_http_livewire_lang_change_change_mount",
+      "app_http_livewire_lang_change_change_render",
+      "app_http_livewire_lang_switcher",
+      "app_http_livewire_lang_switcher_switcher",
+      "app_http_livewire_lang_switcher_switcher_mount",
+      "app_http_livewire_lang_switcher_switcher_render",
+      "app_view_components_flag",
+      "app_view_components_flag_flag",
+      "app_view_components_flag_flag_construct",
+      "app_view_components_flag_flag_render",
+      "app_view_components_languageswitcher",
+      "app_view_components_languageswitcher_languageswitcher",
+      "app_view_components_languageswitcher_languageswitcher_construct",
+      "app_view_components_languageswitcher_languageswitcher_render",
+      "filament_schemas_components_component",
+      "illuminate_contracts_support_renderable",
+      "illuminate_support_collection",
+      "illuminate_view_component",
+      "illuminate_view_view",
+      "livewire_component",
+      "modules_xot_filament_resources_schemas_xotbaseresourceinfolist",
+      "modules_xot_filament_widgets_xotbaseschemawidget",
+      "tests_unit_actions_transcollectionactiontest",
+      "tests_unit_actions_transcollectionactiontest_maketranscollectionaction"
+    ],
+    "5": [
+      "autoprefixer",
+      "axios",
+      "cross_env",
+      "laravel_mix",
+      "laravel_mix_merge_manifest",
+      "laravel_vite_plugin",
+      "lodash",
+      "package",
+      "package_devdependencies",
+      "package_devdependencies_autoprefixer",
+      "package_devdependencies_axios",
+      "package_devdependencies_cross_env",
+      "package_devdependencies_laravel_mix",
+      "package_devdependencies_laravel_mix_merge_manifest",
+      "package_devdependencies_laravel_vite_plugin",
+      "package_devdependencies_lodash",
+      "package_devdependencies_postcss",
+      "package_devdependencies_postcss_nesting",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_tailwindcss_forms",
+      "package_devdependencies_tailwindcss_typography",
+      "package_devdependencies_tippy_js",
+      "package_devdependencies_vite",
+      "package_private",
+      "package_scripts",
+      "package_scripts_development",
+      "package_scripts_hot",
+      "package_scripts_production",
+      "package_scripts_watch",
+      "package_scripts_watch_poll",
+      "postcss",
+      "postcss_nesting",
+      "tailwindcss",
+      "tailwindcss_forms",
+      "tailwindcss_typography",
+      "tippy_js",
+      "vite"
+    ],
+    "6": [
+      "app_casts_langfield",
+      "app_casts_langfield_langfield",
+      "app_casts_langfield_langfield_get",
+      "app_casts_langfield_langfield_set",
+      "app_models_basemodel",
+      "app_models_basemodel_basemodel",
+      "app_models_basemodel_basemodel_casts",
+      "app_models_basemodellang",
+      "app_models_basemodellang_basemodellang",
+      "app_models_basemodellang_basemodellang_casts",
+      "illuminate_contracts_database_eloquent_castsattributes",
+      "illuminate_contracts_translation_translator",
+      "illuminate_database_eloquent_model",
+      "illuminate_foundation_application",
+      "illuminate_foundation_testing_databasetransactions",
+      "modules_lang_models_traits_linkedtrait",
+      "modules_xot_models_xotbasemodel",
+      "modules_xot_tests_xotbasetestcase",
+      "tests_testcase",
+      "tests_testcase_testcase",
+      "tests_testcase_testcase_assertdatabasehasrow",
+      "tests_testcase_testcase_expectapplicationexception",
+      "tests_testcase_testcase_getpackageproviders",
+      "tests_testcase_testcase_setup",
+      "tests_unit_models_basemodellangtest",
+      "tests_unit_models_basemodeltest",
+      "tests_unit_models_basemodeltest_makelangbasemodel",
+      "tests_unit_models_posttest",
+      "tests_unit_models_translationfiletest",
+      "tests_unit_models_translationtest",
+      "tests_unit_services_translatorservicetest",
+      "tests_unit_services_translatorservicetest_maketranslatorservice"
+    ],
+    "7": [
+      "app_actions_publishtranslationaction",
+      "app_actions_publishtranslationaction_publishtranslationaction",
+      "app_actions_publishtranslationaction_publishtranslationaction_execute",
+      "app_actions_synctranslationsaction",
+      "app_datas_langdata",
+      "app_datas_langdata_langdata",
+      "app_datas_langdata_langdata_collection",
+      "app_datas_langdata_php_datacollection",
+      "app_datas_translationdata",
+      "app_datas_translationdata_translationdata",
+      "app_datas_translationdata_translationdata_getdata",
+      "app_datas_translationdata_translationdata_getfilename",
+      "app_models_contracts_hastranslationscontract",
+      "app_models_contracts_hastranslationscontract_gettranslation",
+      "app_models_contracts_hastranslationscontract_settranslation",
+      "app_models_traits_hasstricttranslations",
+      "app_models_traits_hasstricttranslations_gettranslation",
+      "app_models_traits_hasstricttranslations_normalizetranslationarray",
+      "app_view_composers_themecomposer",
+      "app_view_composers_themecomposer_themecomposer",
+      "app_view_composers_themecomposer_themecomposer_buildadminlanguageurl",
+      "app_view_composers_themecomposer_themecomposer_buildflaghtml",
+      "app_view_composers_themecomposer_themecomposer_currentlang",
+      "app_view_composers_themecomposer_themecomposer_languages",
+      "app_view_composers_themecomposer_themecomposer_otherlanguages",
+      "illuminate_database_eloquent_collection",
+      "self",
+      "spatie_laraveldata_data",
+      "spatie_laraveldata_datacollection",
+      "tests_unit_actions_langactionscoveragetest"
+    ],
+    "8": [
+      "docs_prd",
+      "docs_prd_actionstandard",
+      "docs_prd_architecturerule",
+      "docs_prd_companiondocs",
+      "docs_prd_dependencies",
+      "docs_prd_goals",
+      "docs_prd_implementationpattern",
+      "docs_prd_name",
+      "docs_prd_nongoals",
+      "docs_prd_purpose",
+      "docs_prd_qualitygates",
+      "docs_prd_sourceframework",
+      "docs_prd_status",
+      "docs_prd_suiteversion",
+      "docs_prd_type",
+      "ref_gestire_il_routing_di_dominio",
+      "ref_product_launch_plan_md",
+      "ref_product_roadmap_md",
+      "ref_product_strategy_md",
+      "ref_ridurre_drift_e_duplicazioni_nelle_chiavi",
+      "ref_sostituire_cms_o_theme",
+      "ref_sprint_planning_meeting_md",
+      "ref_stabilizzare_la_struttura_delle_traduzioni",
+      "ref_supportare_interfacce_multilingua",
+      "ref_user_research_md",
+      "ref_vendor_bin_phpinsights_analyse_modules_lang_min_quality_0_min_complexity_0_min_architecture_0_min_style_0",
+      "ref_vendor_bin_phpstan_analyse_modules_lang",
+      "ref_xot"
+    ],
+    "9": [
+      "app_models_languageline",
+      "app_models_languageline_languageline",
+      "app_models_languageline_languageline_casts",
+      "database_factories_languagelinefactory",
+      "database_factories_languagelinefactory_languagelinefactory",
+      "database_factories_languagelinefactory_languagelinefactory_definition",
+      "database_migrations_2024_03_20_000001_create_language_lines_table",
+      "database_migrations_2024_03_20_000001_create_language_lines_table_up",
+      "database_seeders_langdatabaseseeder",
+      "database_seeders_langdatabaseseeder_langdatabaseseeder",
+      "database_seeders_langdatabaseseeder_langdatabaseseeder_run",
+      "database_seeders_languagelineseeder",
+      "database_seeders_languagelineseeder_languagelineseeder",
+      "database_seeders_languagelineseeder_languagelineseeder_run",
+      "database_seeders_postseeder",
+      "database_seeders_postseeder_postseeder",
+      "database_seeders_postseeder_postseeder_run",
+      "database_seeders_translationfileseeder",
+      "database_seeders_translationfileseeder_translationfileseeder",
+      "database_seeders_translationfileseeder_translationfileseeder_run",
+      "database_seeders_translationseeder",
+      "database_seeders_translationseeder_translationseeder",
+      "database_seeders_translationseeder_translationseeder_run",
+      "illuminate_database_seeder"
+    ],
+    "10": [
+      "scripts_ci_contributor_lines_report",
+      "scripts_ci_contributor_lines_report_args",
+      "scripts_ci_contributor_lines_report_barchartsvg",
+      "scripts_ci_contributor_lines_report_buildhtml",
+      "scripts_ci_contributor_lines_report_buildsummary",
+      "scripts_ci_contributor_lines_report_clocdata",
+      "scripts_ci_contributor_lines_report_collectcloc",
+      "scripts_ci_contributor_lines_report_collectgitchurn",
+      "scripts_ci_contributor_lines_report_cwd",
+      "scripts_ci_contributor_lines_report_escapehtml",
+      "scripts_ci_contributor_lines_report_extof",
+      "scripts_ci_contributor_lines_report_gitdata",
+      "scripts_ci_contributor_lines_report_html",
+      "scripts_ci_contributor_lines_report_outhtml",
+      "scripts_ci_contributor_lines_report_outsummary",
+      "scripts_ci_contributor_lines_report_sh",
+      "scripts_ci_contributor_lines_report_sincedate",
+      "scripts_ci_contributor_lines_report_summary",
+      "scripts_ci_contributor_lines_report_topauthors",
+      "scripts_ci_contributor_lines_report_topentries"
+    ],
+    "11": [
+      "app_filament_resources_langbaseresource",
+      "app_filament_resources_langbaseresource_langbaseresource",
+      "app_filament_resources_langbaseresource_langbaseresource_getdefaulttranslatablelocale",
+      "app_filament_resources_langbaseresource_langbaseresource_gettranslatablelocales",
+      "app_filament_resources_pages_langbasecreaterecord",
+      "app_filament_resources_pages_langbasecreaterecord_langbasecreaterecord",
+      "app_filament_resources_pages_langbasecreaterecord_langbasecreaterecord_getheaderactions",
+      "app_filament_resources_translationfileresource",
+      "app_filament_resources_translationfileresource_pages_createtranslationfile",
+      "app_filament_resources_translationfileresource_pages_createtranslationfile_createtranslationfile",
+      "app_filament_resources_translationfileresource_translationfileresource",
+      "app_filament_resources_translationfileresource_translationfileresource_getdefaulttranslatablelocale",
+      "app_filament_resources_translationfileresource_translationfileresource_getformschema",
+      "app_filament_resources_translationfileresource_translationfileresource_gettranslatablelocales",
+      "config_config",
+      "larazeus_spatietranslatable_resources_concerns_translatable",
+      "larazeus_spatietranslatable_resources_pages_createrecord_concerns_translatable",
+      "modules_xot_filament_resources_pages_xotbasecreaterecord",
+      "modules_xot_filament_resources_xotbaseresource"
+    ],
+    "12": [
+      "app_providers_langserviceprovider_langserviceprovider",
+      "app_providers_langserviceprovider_langserviceprovider_boot",
+      "app_providers_langserviceprovider_langserviceprovider_registerfilamentlabel",
+      "app_providers_langserviceprovider_langserviceprovider_registertranslator",
+      "app_providers_langserviceprovider_langserviceprovider_translatablecomponents",
+      "app_providers_translatortraitphpstanprobe",
+      "app_providers_translatortraitphpstanprobe_translatortraitphpstanprobe",
+      "config_lang",
+      "illuminate_contracts_foundation_application",
+      "modules_lang_providers_traits_translatortrait",
+      "modules_xot_providers_xotbaseserviceprovider",
+      "tests_unit_providers_langserviceprovidertest",
+      "tests_unit_providers_langserviceprovidertest_makelangserviceprovider"
+    ],
+    "13": [
+      "composer",
+      "composer_authors",
+      "composer_description",
+      "composer_homepage",
+      "composer_license",
+      "composer_minimum_stability",
+      "composer_name",
+      "composer_prefer_stable",
+      "composer_repositories",
+      "composer_repositories_comment",
+      "composer_require_comment"
+    ],
+    "14": [
+      "composer_keywords",
+      "ref_filament",
+      "ref_i18n",
+      "ref_l10n",
+      "ref_lang",
+      "ref_laravel",
+      "ref_laraxot",
+      "ref_localization",
+      "ref_module_lang",
+      "ref_translations"
+    ],
+    "15": [
+      "app_actions_readtranslationfileaction",
+      "app_actions_readtranslationfileaction_readtranslationfileaction",
+      "app_actions_readtranslationfileaction_readtranslationfileaction_arraytophp",
+      "app_actions_readtranslationfileaction_readtranslationfileaction_execute",
+      "app_actions_readtranslationfileaction_readtranslationfileaction_tophp",
+      "tests_unit_actions_readtranslationfileactiontest",
+      "tests_unit_actions_readtranslationfileactiontest_defaultreadtranslationtestdata",
+      "tests_unit_actions_readtranslationfileactiontest_makereadtranslationfileaction",
+      "tests_unit_actions_readtranslationfileactiontest_readtranslationtestfilepath"
+    ],
+    "16": [
+      "app_actions_synctranslationsaction_synctranslationsaction",
+      "app_actions_synctranslationsaction_synctranslationsaction_arraytophp",
+      "app_actions_synctranslationsaction_synctranslationsaction_execute",
+      "app_actions_synctranslationsaction_synctranslationsaction_filterstringkeyarray",
+      "app_actions_synctranslationsaction_synctranslationsaction_getmodules",
+      "app_actions_synctranslationsaction_synctranslationsaction_loadtranslations",
+      "app_actions_synctranslationsaction_synctranslationsaction_mergetranslations",
+      "app_actions_synctranslationsaction_synctranslationsaction_savetranslations",
+      "app_actions_synctranslationsaction_synctranslationsaction_syncmodule"
+    ],
+    "17": [
+      "app_providers_filament_adminpanelprovider",
+      "app_providers_filament_adminpanelprovider_adminpanelprovider",
+      "app_providers_filament_adminpanelprovider_adminpanelprovider_panel",
+      "app_providers_filament_langbasepanelprovider",
+      "app_providers_filament_langbasepanelprovider_langbasepanelprovider",
+      "app_providers_filament_langbasepanelprovider_langbasepanelprovider_panel",
+      "filament_panel",
+      "modules_xot_providers_filament_xotbasepanelprovider"
+    ],
+    "18": [
+      "composer_scripts",
+      "composer_scripts_analyse",
+      "composer_scripts_format",
+      "composer_scripts_post_autoload_dump",
+      "composer_scripts_post_update_cmd",
+      "composer_scripts_test",
+      "composer_scripts_test_coverage"
+    ],
+    "19": [
+      "composer_extra",
+      "composer_extra_laravel",
+      "composer_laravel_aliases",
+      "composer_laravel_providers",
+      "ref_modules_lang_providers_filament_adminpanelprovider",
+      "ref_modules_lang_providers_langserviceprovider"
+    ],
+    "20": [
+      "composer_require",
+      "composer_require_lara_zeus_spatie_translatable",
+      "composer_require_mcamara_laravel_localization",
+      "composer_require_php",
+      "composer_require_rinvex_countries",
+      "composer_require_spatie_laravel_sluggable"
+    ],
+    "21": [
+      "app_filament_resources_pages_langbaseviewrecord",
+      "app_filament_resources_pages_langbaseviewrecord_langbaseviewrecord",
+      "app_filament_resources_pages_langbaseviewrecord_langbaseviewrecord_getheaderactions",
+      "larazeus_spatietranslatable_resources_pages_viewrecord_concerns_translatable",
+      "modules_xot_filament_resources_pages_xotbaseviewrecord"
+    ],
+    "22": [
+      "composer_allow_plugins_pestphp_pest_plugin",
+      "composer_allow_plugins_phpstan_extension_installer",
+      "composer_config",
+      "composer_config_allow_plugins",
+      "composer_config_sort_packages"
+    ],
+    "23": [
+      "composer_autoload",
+      "composer_autoload_psr_4",
+      "composer_psr_4_modules_lang",
+      "composer_psr_4_modules_lang_database_factories",
+      "composer_psr_4_modules_lang_database_seeders"
+    ],
+    "24": [
+      "docs_obbligatorio_audit_script",
+      "docs_obbligatorio_audit_script_auditobbligatorioinnonitalianfiles",
+      "docs_obbligatorio_audit_script_generateobbligatorioreport",
+      "docs_obbligatorio_audit_script_getlanguagefrompath",
+      "docs_obbligatorio_audit_script_getsuggestedtranslation"
+    ],
+    "25": [
+      "app_filament_pages_dashboard",
+      "app_filament_pages_dashboard_dashboard",
+      "backedenum",
+      "modules_xot_filament_pages_xotbasedashboard"
+    ],
+    "26": [
+      "app_providers_routeserviceprovider",
+      "app_providers_routeserviceprovider_routeserviceprovider",
+      "app_providers_routeserviceprovider_routeserviceprovider_registerlang",
+      "modules_xot_providers_xotbaserouteserviceprovider"
+    ],
+    "27": [
+      "docs_helper_text_audit_script",
+      "docs_helper_text_audit_script_audithelpertextfiles",
+      "docs_helper_text_audit_script_findhelpertextissues",
+      "docs_helper_text_audit_script_generatereport"
+    ],
+    "28": [
+      "docs_italian_text_audit_script",
+      "docs_italian_text_audit_script_audititaliantextinnonitalianfiles",
+      "docs_italian_text_audit_script_generateitaliantextreport",
+      "docs_italian_text_audit_script_getlanguagefrompath"
+    ],
+    "29": [
+      "docs_italian_text_validation_refined",
+      "docs_italian_text_validation_refined_auditrealitaliantext",
+      "docs_italian_text_validation_refined_generaterefinedreport",
+      "docs_italian_text_validation_refined_getlanguagefrompath"
+    ],
+    "30": [
+      "app_providers_eventserviceprovider",
+      "app_providers_eventserviceprovider_eventserviceprovider",
+      "illuminate_foundation_support_providers_eventserviceprovider"
+    ],
+    "31": [
+      "composer_autoload_dev",
+      "composer_autoload_dev_psr_4",
+      "composer_psr_4_modules_lang_tests"
+    ],
+    "32": [
+      "bashscripts_composer_init",
+      "bashscripts_composer_init_sh__entry"
+    ],
+    "33": [
+      "bashscripts_update",
+      "bashscripts_update_sh__entry"
+    ],
+    "34": [
+      "database_migrations_2026_01_21_211815_create_translations_table",
+      "database_migrations_2026_01_21_211815_create_translations_table_up"
+    ],
+    "35": [
+      "resources_js_app",
+      "resources_js_bootstrap"
+    ],
+    "36": [
+      "resources_views_components_language_switcher_blade",
+      "resources_views_components_language_switcher_blade_php_changelanguage"
+    ],
+    "37": [
+      "resources_views_filament_widgets_language_switcher_blade",
+      "resources_views_filament_widgets_language_switcher_blade_php_changelanguage"
+    ],
+    "38": [
+      "vite_config",
+      "vite_config_dotenvexpand"
+    ],
+    "39": [
+      "lang_de_auth"
+    ],
+    "40": [
+      "lang_de_countries"
+    ],
+    "41": [
+      "lang_de_edit_translation_file"
+    ],
+    "42": [
+      "lang_de_header"
+    ],
+    "43": [
+      "lang_de_individuale"
+    ],
+    "44": [
+      "lang_de_individuale_tot_stabi"
+    ],
+    "45": [
+      "lang_de_lang_base_create_record"
+    ],
+    "46": [
+      "lang_de_lang_base_edit_record"
+    ],
+    "47": [
+      "lang_de_lang_base_list_records"
+    ],
+    "48": [
+      "lang_de_lang_service"
+    ],
+    "49": [
+      "lang_de_locale_switcher_refresh"
+    ],
+    "50": [
+      "lang_de_nationalities"
+    ],
+    "51": [
+      "lang_de_translation"
+    ],
+    "52": [
+      "lang_de_translation_editor"
+    ],
+    "53": [
+      "lang_de_translation_file"
+    ],
+    "54": [
+      "lang_de_translations"
+    ],
+    "55": [
+      "lang_de_txt"
+    ],
+    "56": [
+      "lang_de_view_translation_file"
+    ],
+    "57": [
+      "lang_de_widgets"
+    ],
+    "58": [
+      "lang_en_auth"
+    ],
+    "59": [
+      "lang_en_countries"
+    ],
+    "60": [
+      "lang_en_edit_translation_file"
+    ],
+    "61": [
+      "lang_en_header"
+    ],
+    "62": [
+      "lang_en_individuale"
+    ],
+    "63": [
+      "lang_en_individuale_tot_stabi"
+    ],
+    "64": [
+      "lang_en_lang_base_create_record"
+    ],
+    "65": [
+      "lang_en_lang_base_edit_record"
+    ],
+    "66": [
+      "lang_en_lang_base_list_records"
+    ],
+    "67": [
+      "lang_en_lang_service"
+    ],
+    "68": [
+      "lang_en_locale_switcher_refresh"
+    ],
+    "69": [
+      "lang_en_nationalities"
+    ],
+    "70": [
+      "lang_en_translation"
+    ],
+    "71": [
+      "lang_en_translation_editor"
+    ],
+    "72": [
+      "lang_en_translation_file"
+    ],
+    "73": [
+      "lang_en_translations"
+    ],
+    "74": [
+      "lang_en_txt"
+    ],
+    "75": [
+      "lang_en_view_translation_file"
+    ],
+    "76": [
+      "lang_en_widgets"
+    ],
+    "77": [
+      "lang_it_actions"
+    ],
+    "78": [
+      "lang_it_auth"
+    ],
+    "79": [
+      "lang_it_countries"
+    ],
+    "80": [
+      "lang_it_edit_translation_file"
+    ],
+    "81": [
+      "lang_it_fields"
+    ],
+    "82": [
+      "lang_it_filament"
+    ],
+    "83": [
+      "lang_it_header"
+    ],
+    "84": [
+      "lang_it_individuale"
+    ],
+    "85": [
+      "lang_it_individuale_tot_stabi"
+    ],
+    "86": [
+      "lang_it_lang_base_create_record"
+    ],
+    "87": [
+      "lang_it_lang_base_edit_record"
+    ],
+    "88": [
+      "lang_it_lang_base_list_records"
+    ],
+    "89": [
+      "lang_it_lang_service"
+    ],
+    "90": [
+      "lang_it_locale_switcher_refresh"
+    ],
+    "91": [
+      "lang_it_nationalities"
+    ],
+    "92": [
+      "lang_it_translation"
+    ],
+    "93": [
+      "lang_it_translation_editor"
+    ],
+    "94": [
+      "lang_it_translation_file"
+    ],
+    "95": [
+      "lang_it_translation_files"
+    ],
+    "96": [
+      "lang_it_translations"
+    ],
+    "97": [
+      "lang_it_txt"
+    ],
+    "98": [
+      "lang_it_view_translation_file"
+    ],
+    "99": [
+      "lang_it_widgets"
+    ],
+    "100": [
+      "resources_assets_js_app"
+    ],
+    "101": [
+      "resources_lang_it_lang_service"
+    ],
+    "102": [
+      "resources_lang_it_translation"
+    ],
+    "103": [
+      "resources_lang_it_translations"
+    ],
+    "104": [
+      "resources_lang_it_txt"
+    ],
+    "105": [
+      "resources_views_admin_dashboard_item_blade"
+    ],
+    "106": [
+      "resources_views_components_empty_blade"
+    ],
+    "107": [
+      "resources_views_components_flag_blade"
+    ],
+    "108": [
+      "resources_views_components_i18n_link_blade"
+    ],
+    "109": [
+      "resources_views_filament_forms_components_translation_editor_blade"
+    ],
+    "110": [
+      "resources_views_filament_pages_dashboard_blade"
+    ],
+    "111": [
+      "resources_views_index_blade"
+    ],
+    "112": [
+      "resources_views_layouts_master_blade"
+    ],
+    "113": [
+      "resources_views_livewire_lang_change_blade"
+    ],
+    "114": [
+      "routes_api"
+    ],
+    "115": [
+      "routes_web"
+    ]
+  },
+  "cohesion": {
+    "0": 0.05325140809011777,
+    "1": 0.057329462989840346,
+    "2": 0.06280193236714976,
+    "3": 0.08502415458937199,
+    "4": 0.06871035940803383,
+    "5": 0.05405405405405406,
+    "6": 0.0907258064516129,
+    "7": 0.09655172413793103,
+    "8": 0.07142857142857142,
+    "9": 0.10507246376811594,
+    "10": 0.15789473684210525,
+    "11": 0.14619883040935672,
+    "12": 0.21794871794871795,
+    "13": 0.18181818181818182,
+    "14": 0.2,
+    "15": 0.2777777777777778,
+    "16": 0.4722222222222222,
+    "17": 0.42857142857142855,
+    "18": 0.2857142857142857,
+    "19": 0.3333333333333333,
+    "20": 0.3333333333333333,
+    "21": 0.6,
+    "22": 0.4,
+    "23": 0.4,
+    "24": 0.7,
+    "25": 0.6666666666666666,
+    "26": 0.6666666666666666,
+    "27": 0.6666666666666666,
+    "28": 0.8333333333333334,
+    "29": 0.8333333333333334,
+    "30": 0.6666666666666666,
+    "31": 0.6666666666666666,
+    "32": 1.0,
+    "33": 1.0,
+    "34": 1.0,
+    "35": 1.0,
+    "36": 1.0,
+    "37": 1.0,
+    "38": 1.0,
+    "39": 1.0,
+    "40": 1.0,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 1.0,
+    "44": 1.0,
+    "45": 1.0,
+    "46": 1.0,
+    "47": 1.0,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0,
+    "58": 1.0,
+    "59": 1.0,
+    "60": 1.0,
+    "61": 1.0,
+    "62": 1.0,
+    "63": 1.0,
+    "64": 1.0,
+    "65": 1.0,
+    "66": 1.0,
+    "67": 1.0,
+    "68": 1.0,
+    "69": 1.0,
+    "70": 1.0,
+    "71": 1.0,
+    "72": 1.0,
+    "73": 1.0,
+    "74": 1.0,
+    "75": 1.0,
+    "76": 1.0,
+    "77": 1.0,
+    "78": 1.0,
+    "79": 1.0,
+    "80": 1.0,
+    "81": 1.0,
+    "82": 1.0,
+    "83": 1.0,
+    "84": 1.0,
+    "85": 1.0,
+    "86": 1.0,
+    "87": 1.0,
+    "88": 1.0,
+    "89": 1.0,
+    "90": 1.0,
+    "91": 1.0,
+    "92": 1.0,
+    "93": 1.0,
+    "94": 1.0,
+    "95": 1.0,
+    "96": 1.0,
+    "97": 1.0,
+    "98": 1.0,
+    "99": 1.0,
+    "100": 1.0,
+    "101": 1.0,
+    "102": 1.0,
+    "103": 1.0,
+    "104": 1.0,
+    "105": 1.0,
+    "106": 1.0,
+    "107": 1.0,
+    "108": 1.0,
+    "109": 1.0,
+    "110": 1.0,
+    "111": 1.0,
+    "112": 1.0,
+    "113": 1.0,
+    "114": 1.0,
+    "115": 1.0
+  },
+  "gods": [
+    {
+      "id": "app_models_post_post",
+      "label": "Post",
+      "degree": 26
+    },
+    {
+      "id": "app_models_translationfile_translationfile",
+      "label": "TranslationFile",
+      "degree": 20
+    },
+    {
+      "id": "app_models_translation_translation",
+      "label": "Translation",
+      "degree": 18
+    },
+    {
+      "id": "app_filament_widgets_languageswitcherwidget_languageswitcherwidget",
+      "label": "LanguageSwitcherWidget",
+      "degree": 14
+    },
+    {
+      "id": "app_actions_synctranslationsaction_synctranslationsaction",
+      "label": "SyncTranslationsAction",
+      "degree": 10
+    },
+    {
+      "id": "app_models_basemodel_basemodel",
+      "label": "BaseModel",
+      "degree": 10
+    },
+    {
+      "id": "composer_keywords",
+      "label": "keywords",
+      "degree": 10
+    },
+    {
+      "id": "app_filament_resources_translationfileresource_pages_edittranslationfile_edittranslationfile",
+      "label": "EditTranslationFile",
+      "degree": 9
+    },
+    {
+      "id": "app_models_policies_postpolicy_postpolicy",
+      "label": "PostPolicy",
+      "degree": 9
+    },
+    {
+      "id": "app_models_policies_translationfilepolicy_translationfilepolicy",
+      "label": "TranslationFilePolicy",
+      "degree": 9
+    }
+  ],
+  "surprises": [
+    {
+      "source": "makeGetAllTranslationAction()",
+      "target": "GetAllTranslationAction",
+      "source_files": [
+        "tests/Unit/Actions/GetAllTranslationActionTest.php",
+        "app/Actions/GetAllTranslationAction.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `makeGetAllTranslationAction()` unexpectedly reaches hub `GetAllTranslationAction`"
+    },
+    {
+      "source": "makeGetTransPathAction()",
+      "target": "GetTransPathAction",
+      "source_files": [
+        "tests/Unit/Actions/GetTransPathActionTest.php",
+        "app/Actions/GetTransPathAction.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `makeGetTransPathAction()` unexpectedly reaches hub `GetTransPathAction`"
+    },
+    {
+      "source": "makeReadTranslationFileAction()",
+      "target": "ReadTranslationFileAction",
+      "source_files": [
+        "tests/Unit/Actions/ReadTranslationFileActionTest.php",
+        "app/Actions/ReadTranslationFileAction.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `makeReadTranslationFileAction()` unexpectedly reaches hub `ReadTranslationFileAction`"
+    },
+    {
+      "source": "makeTransArrayAction()",
+      "target": "TransArrayAction",
+      "source_files": [
+        "tests/Unit/Actions/TransArrayActionTest.php",
+        "app/Actions/TransArrayAction.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `makeTransArrayAction()` unexpectedly reaches hub `TransArrayAction`"
+    },
+    {
+      "source": "makeTransCollectionAction()",
+      "target": "TransCollectionAction",
+      "source_files": [
+        "tests/Unit/Actions/TransCollectionActionTest.php",
+        "app/Actions/TransCollectionAction.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `makeTransCollectionAction()` unexpectedly reaches hub `TransCollectionAction`"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

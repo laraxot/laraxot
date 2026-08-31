@@ -40,4 +40,3 @@ Un tree dirty o un remote dietro/avanti **non** è sincronizzato, anche se l’a
 
 ## Note owner
 
-Push bloccato da Git LFS objects mancanti — priorità residua STORY-003.

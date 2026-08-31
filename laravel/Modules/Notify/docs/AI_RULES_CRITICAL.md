@@ -24,6 +24,7 @@
 ```bash
 # After creating/modifying files
 cd /var/www/_bases/base_fixcity_fila5
+cd /var/www/_bases/base_ptv_fila5
 
 # 1. Add all changes
 git add .
@@ -43,6 +44,7 @@ git push origin dev
 
 # 5. Verify on GitHub
 gh run list --repo laraxot/base_fixcity_fila5
+gh run list --repo laraxot/base_ptv_fila5
 ```
 
 ---
@@ -68,6 +70,7 @@ sleep 120
 
 # Check workflow status
 gh run list --repo laraxot/base_fixcity_fila5
+gh run list --repo laraxot/base_ptv_fila5
 
 # View logs
 gh run view <run-id> --log
@@ -274,6 +277,7 @@ git log -n 3 --oneline
 
 # Compare with:
 # https://github.com/laraxot/base_fixcity_fila5/commits/dev
+# https://github.com/laraxot/base_ptv_fila5/commits/dev
 ```
 
 ---

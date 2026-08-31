@@ -6,10 +6,7 @@ namespace Modules\Geo\Tests\Unit\Actions;
 
 use Modules\Geo\Actions\Distance\CalculateGeoDistanceAction;
 use Modules\Geo\Actions\GoogleMapsAction;
-use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
-
-uses(\Modules\Geo\Tests\TestCase::class);
 
 test('CalculateGeoDistanceAction can be resolved', function (): void {
     $action = app(CalculateGeoDistanceAction::class);

@@ -15,7 +15,7 @@ related:
 **Modulo:** upload, library, media Filament.  
 **Hub:** [../../../../docs/audit/ponytail-audit.md](../../../../docs/audit/ponytail-audit.md)  
 **Remediation:** [../../../../docs/project/ponytail-audit-remediation.md](../../../../docs/project/ponytail-audit-remediation.md)  
-**GitHub monorepo:** [Issue #221](https://github.com/laraxot/base_predict_fila5/issues/221) · [Discussion #222](https://github.com/laraxot/base_predict_fila5/discussions/222) · [Discussion #228](https://github.com/laraxot/base_predict_fila5/discussions/228)
+**GitHub monorepo:** [Issue #221](https://github.com/laraxot/base_ptvx_fila5/issues/221) · [Discussion #222](https://github.com/laraxot/base_ptvx_fila5/discussions/222) · [Discussion #228](https://github.com/laraxot/base_ptvx_fila5/discussions/228)
 
 ## Findings
 
@@ -30,4 +30,4 @@ Rename `.bak` su `BaseController.php` dopo grep globale. Nessun impatto se nessu
 
 ## Collegamenti
 
-- [00-INDEX.md](./00-INDEX.md)
+- [00-INDEX.md](./00-index.md)

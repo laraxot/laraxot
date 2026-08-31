@@ -35,12 +35,9 @@ class StandardConfigResolver implements ConfigResolverInterface
 
         // Handle database configuration specially
         if ($key === 'database') {
-            $databaseResolver = new DatabaseConfigResolver;
-            $extraConf = $databaseResolver->resolve($key, $extraConf);
-
-            if (! is_array($extraConf)) {
-                $extraConf = [];
-            }
+            $databaseResolver = new DatabaseConfigResolver();
+            $resolvedDatabaseConfig = $databaseResolver->resolve($key, $extraConf);
+            $extraConf = is_array($resolvedDatabaseConfig) ? $resolvedDatabaseConfig : [];
         }
 
         $mergedConf = collect($originalConf)->merge($extraConf)->all();
@@ -61,13 +58,7 @@ class StandardConfigResolver implements ConfigResolverInterface
 
     private function extractGroup(string $key): string
     {
-        $group = collect(explode('.', $key))->first();
-
-        if ($group === null) {
-            throw new Exception('Invalid configuration key: '.$key);
-        }
-
-        return $group;
+        return explode('.', $key)[0];
     }
 
     /**

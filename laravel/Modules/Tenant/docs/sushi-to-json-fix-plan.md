@@ -2,7 +2,7 @@
 title: "Tenant Module - SushiToJson Traits Fix Plan"
 module: "Tenant"
 type: concept
-tags: [sushi, json, fix, plan]
+tags: [SUSHI, TO, JSON, FIX]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "sushi to json fix plan"
@@ -448,7 +448,7 @@ class InformationSchemaTable extends BaseModel
 1. Fix XotBaseEditRecord schema type issue (1 error)
 2. Fix Blog module errors (6 errors)
 3. Fix Cms module remaining errors (8 errors)
-4. Fix Fixcity module errors (45 errors)
+4. Fix progetto corrente module errors (45 errors)
 5. Fix Geo module errors (10 errors)
 6. Fix remaining module errors
 

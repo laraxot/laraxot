@@ -1,0 +1,3857 @@
+{
+  ".eslintrc.js": {
+    "mtime": 1781619763.970976,
+    "ast_hash": "e623b82f122fe8d008c44e5b4003d659",
+    "semantic_hash": "e623b82f122fe8d008c44e5b4003d659"
+  },
+  ".gsd/tools/generate-homepage-blocks.sh": {
+    "mtime": 1781619764.4844527,
+    "ast_hash": "5a21c725cabe2f7ea1e4a772fba35276",
+    "semantic_hash": "5a21c725cabe2f7ea1e4a772fba35276"
+  },
+  ".kiro/skills/bmad-agent-builder/scripts/generate-html-report.py": {
+    "mtime": 1781594086.300858,
+    "ast_hash": "98a3e6657bb60a51374abd7b57c5e905",
+    "semantic_hash": "98a3e6657bb60a51374abd7b57c5e905"
+  },
+  ".kiro/skills/bmad-agent-builder/scripts/prepass-execution-deps.py": {
+    "mtime": 1781594086.3016794,
+    "ast_hash": "824541bee2504507ccf6d732758413a4",
+    "semantic_hash": "824541bee2504507ccf6d732758413a4"
+  },
+  ".kiro/skills/bmad-agent-builder/scripts/prepass-prompt-metrics.py": {
+    "mtime": 1781594086.3016794,
+    "ast_hash": "f9aefc20d3e9c55d23069597372cdaae",
+    "semantic_hash": "f9aefc20d3e9c55d23069597372cdaae"
+  },
+  ".kiro/skills/bmad-agent-builder/scripts/prepass-structure-capabilities.py": {
+    "mtime": 1781594086.3016794,
+    "ast_hash": "f092072bd4499c912eef2c121615b670",
+    "semantic_hash": "f092072bd4499c912eef2c121615b670"
+  },
+  ".kiro/skills/bmad-agent-builder/scripts/scan-path-standards.py": {
+    "mtime": 1781594086.3016794,
+    "ast_hash": "27a6fa2347f28443f9ec7ef00cbbc078",
+    "semantic_hash": "27a6fa2347f28443f9ec7ef00cbbc078"
+  },
+  ".kiro/skills/bmad-agent-builder/scripts/scan-scripts.py": {
+    "mtime": 1781594086.3016794,
+    "ast_hash": "28ac7d9f4e11b33a536d330eddf8bc82",
+    "semantic_hash": "28ac7d9f4e11b33a536d330eddf8bc82"
+  },
+  ".kiro/skills/bmad-bmb-setup/scripts/cleanup-legacy.py": {
+    "mtime": 1781594086.3066912,
+    "ast_hash": "c650bd00eb976c2f60c5527701c31230",
+    "semantic_hash": "c650bd00eb976c2f60c5527701c31230"
+  },
+  ".kiro/skills/bmad-bmb-setup/scripts/merge-config.py": {
+    "mtime": 1781594086.3072345,
+    "ast_hash": "90d91cd5d0e1c5828652c5e61b758975",
+    "semantic_hash": "90d91cd5d0e1c5828652c5e61b758975"
+  },
+  ".kiro/skills/bmad-bmb-setup/scripts/merge-help-csv.py": {
+    "mtime": 1781594086.3072345,
+    "ast_hash": "dca3ce8d9c84eb1d6daebbc32a6210a1",
+    "semantic_hash": "dca3ce8d9c84eb1d6daebbc32a6210a1"
+  },
+  ".kiro/skills/bmad-distillator/scripts/analyze_sources.py": {
+    "mtime": 1781594086.3353066,
+    "ast_hash": "4667d5ace06f5fe86effed616f7b9e26",
+    "semantic_hash": "4667d5ace06f5fe86effed616f7b9e26"
+  },
+  ".kiro/skills/bmad-distillator/scripts/tests/test_analyze_sources.py": {
+    "mtime": 1781594086.3362596,
+    "ast_hash": "2234475c0bbbae5cefabae067491b8e6",
+    "semantic_hash": "2234475c0bbbae5cefabae067491b8e6"
+  },
+  ".kiro/skills/bmad-document-project/templates/project-scan-report-schema.json": {
+    "mtime": 1781594086.3373187,
+    "ast_hash": "71d5d42e569dcfeaadad5307c953097f",
+    "semantic_hash": "71d5d42e569dcfeaadad5307c953097f"
+  },
+  ".kiro/skills/bmad-init/scripts/bmad_init.py": {
+    "mtime": 1781594086.3442607,
+    "ast_hash": "814a7766d7ba9d557941a21f66a0f79d",
+    "semantic_hash": "814a7766d7ba9d557941a21f66a0f79d"
+  },
+  ".kiro/skills/bmad-init/scripts/tests/test_bmad_init.py": {
+    "mtime": 1781594086.3451478,
+    "ast_hash": "b98f6c2c1344900d1085bfdcdbcc91e6",
+    "semantic_hash": "b98f6c2c1344900d1085bfdcdbcc91e6"
+  },
+  ".kiro/skills/bmad-module-builder/assets/setup-skill-template/scripts/cleanup-legacy.py": {
+    "mtime": 1781594086.3483746,
+    "ast_hash": "c650bd00eb976c2f60c5527701c31230",
+    "semantic_hash": "c650bd00eb976c2f60c5527701c31230"
+  },
+  ".kiro/skills/bmad-module-builder/assets/setup-skill-template/scripts/merge-config.py": {
+    "mtime": 1781594086.3495388,
+    "ast_hash": "90d91cd5d0e1c5828652c5e61b758975",
+    "semantic_hash": "90d91cd5d0e1c5828652c5e61b758975"
+  },
+  ".kiro/skills/bmad-module-builder/assets/setup-skill-template/scripts/merge-help-csv.py": {
+    "mtime": 1781594086.3495388,
+    "ast_hash": "dca3ce8d9c84eb1d6daebbc32a6210a1",
+    "semantic_hash": "dca3ce8d9c84eb1d6daebbc32a6210a1"
+  },
+  ".kiro/skills/bmad-module-builder/assets/standalone-module-template/merge-config.py": {
+    "mtime": 1781594086.3495388,
+    "ast_hash": "90d91cd5d0e1c5828652c5e61b758975",
+    "semantic_hash": "90d91cd5d0e1c5828652c5e61b758975"
+  },
+  ".kiro/skills/bmad-module-builder/assets/standalone-module-template/merge-help-csv.py": {
+    "mtime": 1781594086.3500454,
+    "ast_hash": "dca3ce8d9c84eb1d6daebbc32a6210a1",
+    "semantic_hash": "dca3ce8d9c84eb1d6daebbc32a6210a1"
+  },
+  ".kiro/skills/bmad-module-builder/scripts/scaffold-setup-skill.py": {
+    "mtime": 1781594086.350608,
+    "ast_hash": "e1ef1a0573089eebfa0bd3be6b32c094",
+    "semantic_hash": "e1ef1a0573089eebfa0bd3be6b32c094"
+  },
+  ".kiro/skills/bmad-module-builder/scripts/scaffold-standalone-module.py": {
+    "mtime": 1781594086.3514316,
+    "ast_hash": "dba5ef52eb24d551d4bf1d5d8fd304ab",
+    "semantic_hash": "dba5ef52eb24d551d4bf1d5d8fd304ab"
+  },
+  ".kiro/skills/bmad-module-builder/scripts/tests/test-scaffold-setup-skill.py": {
+    "mtime": 1781594086.3514316,
+    "ast_hash": "efd99003495eed5b90402f87d88a234a",
+    "semantic_hash": "efd99003495eed5b90402f87d88a234a"
+  },
+  ".kiro/skills/bmad-module-builder/scripts/tests/test-scaffold-standalone-module.py": {
+    "mtime": 1781594086.351969,
+    "ast_hash": "04d485be27736544f8038e8e1812efa8",
+    "semantic_hash": "04d485be27736544f8038e8e1812efa8"
+  },
+  ".kiro/skills/bmad-module-builder/scripts/tests/test-validate-module.py": {
+    "mtime": 1781594086.351969,
+    "ast_hash": "b2d6408e8ed7685ea5c0b751859b3594",
+    "semantic_hash": "b2d6408e8ed7685ea5c0b751859b3594"
+  },
+  ".kiro/skills/bmad-module-builder/scripts/validate-module.py": {
+    "mtime": 1781594086.351969,
+    "ast_hash": "0784bd62a6e383cecc709fd32fb6e27a",
+    "semantic_hash": "0784bd62a6e383cecc709fd32fb6e27a"
+  },
+  ".kiro/skills/bmad-product-brief/bmad-manifest.json": {
+    "mtime": 1781594086.3546543,
+    "ast_hash": "a250aa6b0696fbe9937513a33e57686c",
+    "semantic_hash": "a250aa6b0696fbe9937513a33e57686c"
+  },
+  ".kiro/skills/bmad-testarch-ci/jenkins-pipeline-template.groovy": {
+    "mtime": 1781594086.3949003,
+    "ast_hash": "1c83f64fe4c0a2309909fff47497ac51",
+    "semantic_hash": "1c83f64fe4c0a2309909fff47497ac51"
+  },
+  ".kiro/skills/bmad-workflow-builder/scripts/generate-convert-report.py": {
+    "mtime": 1781594086.4347076,
+    "ast_hash": "6df2804e982f29c7057a1310f6b1b472",
+    "semantic_hash": "6df2804e982f29c7057a1310f6b1b472"
+  },
+  ".kiro/skills/bmad-workflow-builder/scripts/generate-html-report.py": {
+    "mtime": 1781594086.4365327,
+    "ast_hash": "7405a4d8a23d0e5ff8145cd51846844c",
+    "semantic_hash": "7405a4d8a23d0e5ff8145cd51846844c"
+  },
+  ".kiro/skills/bmad-workflow-builder/scripts/prepass-execution-deps.py": {
+    "mtime": 1781594086.4365327,
+    "ast_hash": "7ac110449349ed34c6c5f621cc80c16e",
+    "semantic_hash": "7ac110449349ed34c6c5f621cc80c16e"
+  },
+  ".kiro/skills/bmad-workflow-builder/scripts/prepass-prompt-metrics.py": {
+    "mtime": 1781594086.4365327,
+    "ast_hash": "2c857aa97dda6e1db4bcae0d78ce42f4",
+    "semantic_hash": "2c857aa97dda6e1db4bcae0d78ce42f4"
+  },
+  ".kiro/skills/bmad-workflow-builder/scripts/prepass-workflow-integrity.py": {
+    "mtime": 1781594086.4365327,
+    "ast_hash": "53ab1c180233d8f9ad44e8099cd396d4",
+    "semantic_hash": "53ab1c180233d8f9ad44e8099cd396d4"
+  },
+  ".kiro/skills/bmad-workflow-builder/scripts/scan-path-standards.py": {
+    "mtime": 1781594086.4365327,
+    "ast_hash": "2c78bda4091e4e02fac4cc189a0c3592",
+    "semantic_hash": "2c78bda4091e4e02fac4cc189a0c3592"
+  },
+  ".kiro/skills/bmad-workflow-builder/scripts/scan-scripts.py": {
+    "mtime": 1781594086.4365327,
+    "ast_hash": "28ac7d9f4e11b33a536d330eddf8bc82",
+    "semantic_hash": "28ac7d9f4e11b33a536d330eddf8bc82"
+  },
+  ".kiro/skills/bmad-workflow-builder/scripts/tests/test_generate_convert_report.py": {
+    "mtime": 1781594086.4365327,
+    "ast_hash": "81d02255c409fadc171a39f28c09ea53",
+    "semantic_hash": "81d02255c409fadc171a39f28c09ea53"
+  },
+  ".kiro/skills/gds-document-project/templates/project-scan-report-schema.json": {
+    "mtime": 1781594086.4619093,
+    "ast_hash": "4d9c15746dd83023acde5ec4b4332388",
+    "semantic_hash": "4d9c15746dd83023acde5ec4b4332388"
+  },
+  ".kiro/skills/wds-5-agentic-development/templates/components/dev-mode.js": {
+    "mtime": 1781594086.5397623,
+    "ast_hash": "8c8b6bb7fcfa971582b62a5b1b82f6d1",
+    "semantic_hash": "8c8b6bb7fcfa971582b62a5b1b82f6d1"
+  },
+  ".kiro/skills/wds-5-agentic-development/templates/demo-data-template.json": {
+    "mtime": 1781594086.5397623,
+    "ast_hash": "dbc2938c908a1cc87d47305e6614a418",
+    "semantic_hash": "dbc2938c908a1cc87d47305e6614a418"
+  },
+  ".markdownlint.json": {
+    "mtime": 1781619764.486782,
+    "ast_hash": "e4f06e91e13a21776f18cf0e366ed47d",
+    "semantic_hash": "e4f06e91e13a21776f18cf0e366ed47d"
+  },
+  ".releaserc.json": {
+    "mtime": 1779200039.677871,
+    "ast_hash": "4e6e1d7f8649520947f1c17eee5fe245",
+    "semantic_hash": "4e6e1d7f8649520947f1c17eee5fe245"
+  },
+  ".stylelintrc.json": {
+    "mtime": 1781619764.5257878,
+    "ast_hash": "405ef7a4f6915c4181ffe3858a0332e6",
+    "semantic_hash": "405ef7a4f6915c4181ffe3858a0332e6"
+  },
+  "app/Actions/BuildMailMessageAction.php": {
+    "mtime": 1785687288.7660682,
+    "ast_hash": "c2216ed5f484bfe7d046e7dd8b9929c0",
+    "semantic_hash": "c2216ed5f484bfe7d046e7dd8b9929c0"
+  },
+  "app/Actions/DetermineSeasonalContentViewPathAction.php": {
+    "mtime": 1785494467.8276687,
+    "ast_hash": "6092db929a86cf7439dc064bc7c697e0",
+    "semantic_hash": "6092db929a86cf7439dc064bc7c697e0"
+  },
+  "app/Actions/EsendexSendAction.php": {
+    "mtime": 1785687288.9713824,
+    "ast_hash": "1f89cd42a8d3c0ef4ac697638f5df48d",
+    "semantic_hash": "1f89cd42a8d3c0ef4ac697638f5df48d"
+  },
+  "app/Actions/Mail/Engines/Duocircle/SendDuocircleMailAction.php": {
+    "mtime": 1785494467.8292997,
+    "ast_hash": "0a40cfa2df2493e0de18c981e4ec2507",
+    "semantic_hash": "0a40cfa2df2493e0de18c981e4ec2507"
+  },
+  "app/Actions/Mail/Engines/Duocircle/TryDuocircleMailAction.php": {
+    "mtime": 1785494467.829348,
+    "ast_hash": "80118d2e5e3d27e1e764484eeaac0380",
+    "semantic_hash": "80118d2e5e3d27e1e764484eeaac0380"
+  },
+  "app/Actions/Mail/GetMailLayoutAction.php": {
+    "mtime": 1785687289.178034,
+    "ast_hash": "557ad7cc9df5ca2fd43f7b4511f296ed",
+    "semantic_hash": "557ad7cc9df5ca2fd43f7b4511f296ed"
+  },
+  "app/Actions/Mail/SendMailAction.php": {
+    "mtime": 1785494467.829348,
+    "ast_hash": "8ca2943500783bf801ba54e53dce10ae",
+    "semantic_hash": "8ca2943500783bf801ba54e53dce10ae"
+  },
+  "app/Actions/Mail/SendMailtrapMailAction.php": {
+    "mtime": 1785494467.829348,
+    "ast_hash": "6ce4047ac90086a5737beaad2b31946a",
+    "semantic_hash": "6ce4047ac90086a5737beaad2b31946a"
+  },
+  "app/Actions/Mail/TryMailAction.php": {
+    "mtime": 1785494467.829348,
+    "ast_hash": "2c3fb2a92059b7d25f0405fafb8b57af",
+    "semantic_hash": "2c3fb2a92059b7d25f0405fafb8b57af"
+  },
+  "app/Actions/NetfunSendAction.php": {
+    "mtime": 1785494467.829348,
+    "ast_hash": "f9a73a2e49c51daa3e0748f51b4dd569",
+    "semantic_hash": "f9a73a2e49c51daa3e0748f51b4dd569"
+  },
+  "app/Actions/NormalizePhoneNumberAction.php": {
+    "mtime": 1785687289.405195,
+    "ast_hash": "7921154bec360970efb25dff96126b04",
+    "semantic_hash": "7921154bec360970efb25dff96126b04"
+  },
+  "app/Actions/NotificationManager.php": {
+    "mtime": 1785494467.829348,
+    "ast_hash": "a436e774e9a8a7bb55129d7837b51b46",
+    "semantic_hash": "a436e774e9a8a7bb55129d7837b51b46"
+  },
+  "app/Actions/NotifyTheme/Attachment/Pdf.php": {
+    "mtime": 1785494467.829348,
+    "ast_hash": "12a5782cb93a201b26cdd24ad2987ba6",
+    "semantic_hash": "12a5782cb93a201b26cdd24ad2987ba6"
+  },
+  "app/Actions/NotifyTheme/Get.php": {
+    "mtime": 1781507569.6282005,
+    "ast_hash": "7d55f443209687233a482af24de1a1c8",
+    "semantic_hash": "7d55f443209687233a482af24de1a1c8"
+  },
+  "app/Actions/Push/SchedulePushNotificationAction.php": {
+    "mtime": 1785494467.829348,
+    "ast_hash": "d4d20ec15e5db70cb5b93fa8cd916466",
+    "semantic_hash": "d4d20ec15e5db70cb5b93fa8cd916466"
+  },
+  "app/Actions/Push/SendPushToAllUsersAction.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "52b90a569d30f7ae50ab765346db2936",
+    "semantic_hash": "52b90a569d30f7ae50ab765346db2936"
+  },
+  "app/Actions/Push/SendPushToDeviceAction.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "80f58dbfd69a221cbfb13cd99fd4edfd",
+    "semantic_hash": "80f58dbfd69a221cbfb13cd99fd4edfd"
+  },
+  "app/Actions/Push/SendPushToDevicesAction.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "78be07f42f56cdb8d7b924a73ea11a9d",
+    "semantic_hash": "78be07f42f56cdb8d7b924a73ea11a9d"
+  },
+  "app/Actions/Push/SendPushToPlatformAction.php": {
+    "mtime": 1785686756.6271555,
+    "ast_hash": "364d4ecda64cea33fc37963f83c2be5d",
+    "semantic_hash": "364d4ecda64cea33fc37963f83c2be5d"
+  },
+  "app/Actions/Push/SendPushToTopicAction.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "fd3c66031bfdfde83d81d68afbe13ad6",
+    "semantic_hash": "fd3c66031bfdfde83d81d68afbe13ad6"
+  },
+  "app/Actions/Push/SendPushWithTargetingAction.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "6305294fab0af0937679ab810f5fa081",
+    "semantic_hash": "6305294fab0af0937679ab810f5fa081"
+  },
+  "app/Actions/Push/SendPushWithTemplateAction.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "f7f2835905b6aadad4aa46e0ef3e9dbc",
+    "semantic_hash": "f7f2835905b6aadad4aa46e0ef3e9dbc"
+  },
+  "app/Actions/SMS/FormatSmsMessageAction.php": {
+    "mtime": 1785686756.2387495,
+    "ast_hash": "68f0f37f67473cfa2a26a4860caa47a0",
+    "semantic_hash": "68f0f37f67473cfa2a26a4860caa47a0"
+  },
+  "app/Actions/SMS/NormalizePhoneNumberAction.php": {
+    "mtime": 1785686756.2841702,
+    "ast_hash": "7499658d67a8d7c972c95fd36fb41dd1",
+    "semantic_hash": "7499658d67a8d7c972c95fd36fb41dd1"
+  },
+  "app/Actions/SMS/SendAgiletelecomSMSAction.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "0def605ad6573939e63d05ade13613e9",
+    "semantic_hash": "0def605ad6573939e63d05ade13613e9"
+  },
+  "app/Actions/SMS/SendAgiletelecomSMSv1Action.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "16ef5a6aabbe9a154e4a19516ea5c9da",
+    "semantic_hash": "16ef5a6aabbe9a154e4a19516ea5c9da"
+  },
+  "app/Actions/SMS/SendAgiletelecomSMSv2Action.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "4b4b0179f0ca5a68803908ccbc5adeee",
+    "semantic_hash": "4b4b0179f0ca5a68803908ccbc5adeee"
+  },
+  "app/Actions/SMS/SendGammuSMSAction.php": {
+    "mtime": 1785686756.4416091,
+    "ast_hash": "b52aee02c70a1c87c1bab609bd4d4925",
+    "semantic_hash": "b52aee02c70a1c87c1bab609bd4d4925"
+  },
+  "app/Actions/SMS/SendNetfunSMSAction.php": {
+    "mtime": 1785686756.144735,
+    "ast_hash": "20f2533c97c7b46f6dd588ff533a26fa",
+    "semantic_hash": "20f2533c97c7b46f6dd588ff533a26fa"
+  },
+  "app/Actions/SMS/SendNexmoSMSAction.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "a6f4bbc6cd013a38b2cd8e45fd6212d1",
+    "semantic_hash": "a6f4bbc6cd013a38b2cd8e45fd6212d1"
+  },
+  "app/Actions/SMS/SendPlivoSMSAction.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "494a9ab410fa3de8333d3d5a2a812436",
+    "semantic_hash": "494a9ab410fa3de8333d3d5a2a812436"
+  },
+  "app/Actions/SMS/SendSmsFactorSMSAction.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "a51fc290ca5217a677f3c54c7a71e621",
+    "semantic_hash": "a51fc290ca5217a677f3c54c7a71e621"
+  },
+  "app/Actions/SMS/SendTwilioSMSAction.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "060899d5cefd92f7153b54823e8d76e9",
+    "semantic_hash": "060899d5cefd92f7153b54823e8d76e9"
+  },
+  "app/Actions/SendAppointmentNotificationAction.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "e310b3c437a4abdacdc0c01a4298dd02",
+    "semantic_hash": "e310b3c437a4abdacdc0c01a4298dd02"
+  },
+  "app/Actions/SendNotificationAction.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "c217e285f511faa249c62e26679e67a4",
+    "semantic_hash": "c217e285f511faa249c62e26679e67a4"
+  },
+  "app/Actions/SendNotificationToRecipientAction.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "4f63cfe8114cdc0ae4be1db4aec90647",
+    "semantic_hash": "4f63cfe8114cdc0ae4be1db4aec90647"
+  },
+  "app/Actions/SendRecordNotificationAction.php": {
+    "mtime": 1779200039.677871,
+    "ast_hash": "f10dace57fcfff3fdf05e521255548ef",
+    "semantic_hash": "f10dace57fcfff3fdf05e521255548ef"
+  },
+  "app/Actions/SendRecordsNotificationAction.php": {
+    "mtime": 1785687115.2162802,
+    "ast_hash": "adeb71bebcf160ec0dac043a57d43910",
+    "semantic_hash": "adeb71bebcf160ec0dac043a57d43910"
+  },
+  "app/Actions/SmtpMailSendAction.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "8638d433881cb4923961125e5a2ebd3f",
+    "semantic_hash": "8638d433881cb4923961125e5a2ebd3f"
+  },
+  "app/Actions/Telegram/SendBotmanTelegramAction.php": {
+    "mtime": 1785687389.4603558,
+    "ast_hash": "564d5219e63fccea7b2dd14d352fb8dc",
+    "semantic_hash": "564d5219e63fccea7b2dd14d352fb8dc"
+  },
+  "app/Actions/Telegram/SendNutgramTelegramAction.php": {
+    "mtime": 1785687289.6116817,
+    "ast_hash": "101695e560a9fde8d2262bbc6c41402f",
+    "semantic_hash": "101695e560a9fde8d2262bbc6c41402f"
+  },
+  "app/Actions/Telegram/SendOfficialTelegramAction.php": {
+    "mtime": 1785687289.8534143,
+    "ast_hash": "9a4d150f92bf2421df8bd4fb95fcee06",
+    "semantic_hash": "9a4d150f92bf2421df8bd4fb95fcee06"
+  },
+  "app/Actions/WhatsApp/Send360dialogWhatsAppAction.php": {
+    "mtime": 1785687290.083094,
+    "ast_hash": "8fca43ecfe97481390146dc9c1bd5748",
+    "semantic_hash": "8fca43ecfe97481390146dc9c1bd5748"
+  },
+  "app/Actions/WhatsApp/SendFacebookWhatsAppAction.php": {
+    "mtime": 1785687290.3167331,
+    "ast_hash": "3cc96f65a871eb4c5e7b619b9add251e",
+    "semantic_hash": "3cc96f65a871eb4c5e7b619b9add251e"
+  },
+  "app/Actions/WhatsApp/SendTwilioWhatsAppAction.php": {
+    "mtime": 1785687290.542233,
+    "ast_hash": "c9fcfdd1524d1673e55a02c9a4e60560",
+    "semantic_hash": "c9fcfdd1524d1673e55a02c9a4e60560"
+  },
+  "app/Actions/WhatsApp/SendVonageWhatsAppAction.php": {
+    "mtime": 1785687290.754373,
+    "ast_hash": "1bba043ac002db072fb7b2271b5a1371",
+    "semantic_hash": "1bba043ac002db072fb7b2271b5a1371"
+  },
+  "app/Channels/NetfunChannel.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "33bd9bf8b1f5a30fe2280d2ea450ad81",
+    "semantic_hash": "33bd9bf8b1f5a30fe2280d2ea450ad81"
+  },
+  "app/Channels/SmsChannel.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "dea6df24cfbf163a1e6afdd045436ce1",
+    "semantic_hash": "dea6df24cfbf163a1e6afdd045436ce1"
+  },
+  "app/Channels/TelegramChannel.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "c268e4b4d8577fbb260e678a3b09e181",
+    "semantic_hash": "c268e4b4d8577fbb260e678a3b09e181"
+  },
+  "app/Channels/WhatsAppChannel.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "534e8fb62cb7a5f64d8369bd0f44da83",
+    "semantic_hash": "534e8fb62cb7a5f64d8369bd0f44da83"
+  },
+  "app/Console/Commands/AnalyzeTranslationFiles.php": {
+    "mtime": 1785687290.9693656,
+    "ast_hash": "8616e2fb5d07fb986c6f436bc6b88467",
+    "semantic_hash": "8616e2fb5d07fb986c6f436bc6b88467"
+  },
+  "app/Console/Commands/CleanupNotificationLogsCommand.php": {
+    "mtime": 1785496435.1051538,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "app/Console/Commands/SendMailCommand.php": {
+    "mtime": 1779822270.4091244,
+    "ast_hash": "2924865ebbeb3575476dbfc462b568bf",
+    "semantic_hash": "2924865ebbeb3575476dbfc462b568bf"
+  },
+  "app/Console/Commands/TelegramWebhook.php": {
+    "mtime": 1779200039.6822045,
+    "ast_hash": "f7e4fa56b1859651739edd5ed63ec868",
+    "semantic_hash": "f7e4fa56b1859651739edd5ed63ec868"
+  },
+  "app/Console/Commands/_components.json": {
+    "mtime": 1779200039.6822045,
+    "ast_hash": "139738b5c269316f07b6cffcbdc59dea",
+    "semantic_hash": "139738b5c269316f07b6cffcbdc59dea"
+  },
+  "app/Contracts/CanReceivePushNotifications.php": {
+    "mtime": 1781026637.181054,
+    "ast_hash": "ae11498c31658adcc29c2df1c33522d2",
+    "semantic_hash": "ae11498c31658adcc29c2df1c33522d2"
+  },
+  "app/Contracts/CanThemeNotificationContract.php": {
+    "mtime": 1781507569.6711159,
+    "ast_hash": "7009d586a08fc3345c688b6f4ccf0660",
+    "semantic_hash": "7009d586a08fc3345c688b6f4ccf0660"
+  },
+  "app/Contracts/MobilePushNotification.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "45a38f8a93c9ca649a2334143eb715a5",
+    "semantic_hash": "45a38f8a93c9ca649a2334143eb715a5"
+  },
+  "app/Contracts/NotificationDispatcherContract.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "ac3c6600f6cd048ec891a132b794ba98",
+    "semantic_hash": "ac3c6600f6cd048ec891a132b794ba98"
+  },
+  "app/Contracts/NotificationDispatcherInterface.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "62d07ddf1c9b6c57217805a329623331",
+    "semantic_hash": "62d07ddf1c9b6c57217805a329623331"
+  },
+  "app/Contracts/SMS/SmsActionContract.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "5806dd1de6265cb419d09f093e60f4d0",
+    "semantic_hash": "5806dd1de6265cb419d09f093e60f4d0"
+  },
+  "app/Contracts/SmsActionContract.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "a551273bf420391f84a2360b0ad6b584",
+    "semantic_hash": "a551273bf420391f84a2360b0ad6b584"
+  },
+  "app/Contracts/SmsProviderContract.php": {
+    "mtime": 1781026735.3418984,
+    "ast_hash": "8925421eeb3b492659bf4e56b90212a1",
+    "semantic_hash": "8925421eeb3b492659bf4e56b90212a1"
+  },
+  "app/Contracts/TelegramProviderActionContract.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "22e8c1f235cf50a5c80b5222b4097373",
+    "semantic_hash": "22e8c1f235cf50a5c80b5222b4097373"
+  },
+  "app/Contracts/TelegramProviderActionInterface.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "e78dd9d9efbdf2ea2bcdaf56315d78c4",
+    "semantic_hash": "e78dd9d9efbdf2ea2bcdaf56315d78c4"
+  },
+  "app/Contracts/WhatsAppProviderActionContract.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "022667ed86b1ebc6e9c29cb1293765f4",
+    "semantic_hash": "022667ed86b1ebc6e9c29cb1293765f4"
+  },
+  "app/Contracts/WhatsAppProviderActionInterface.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "207c16a0a6688a91a40ad37b213466b8",
+    "semantic_hash": "207c16a0a6688a91a40ad37b213466b8"
+  },
+  "app/Datas/AttachmentData.php": {
+    "mtime": 1779200039.6822045,
+    "ast_hash": "b6abe864e700a94b970adf6d63a38829",
+    "semantic_hash": "b6abe864e700a94b970adf6d63a38829"
+  },
+  "app/Datas/BeautyEmailData.php": {
+    "mtime": 1779822270.4091244,
+    "ast_hash": "6bcf1c2ff71577ed0baa93f599c25aed",
+    "semantic_hash": "6bcf1c2ff71577ed0baa93f599c25aed"
+  },
+  "app/Datas/EmailAttachmentData.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "cabc4f1276bdcfb593317b456b29dd22",
+    "semantic_hash": "cabc4f1276bdcfb593317b456b29dd22"
+  },
+  "app/Datas/EmailData.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "130e0446d39099b876d6cbf3b4613704",
+    "semantic_hash": "130e0446d39099b876d6cbf3b4613704"
+  },
+  "app/Datas/FirebaseNotificationData.php": {
+    "mtime": 1779200039.6822045,
+    "ast_hash": "a97182813b45d641004e359340faf662",
+    "semantic_hash": "a97182813b45d641004e359340faf662"
+  },
+  "app/Datas/NetfunSmsData.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "2b3b8d3fbe81131b2b89ac0c9e95b4cf",
+    "semantic_hash": "2b3b8d3fbe81131b2b89ac0c9e95b4cf"
+  },
+  "app/Datas/NetfunSmsMessage.php": {
+    "mtime": 1785494467.8300881,
+    "ast_hash": "2185dceb1d558c57b9f7708e9ba19364",
+    "semantic_hash": "2185dceb1d558c57b9f7708e9ba19364"
+  },
+  "app/Datas/NetfunSmsRequestData.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "f375f907df4d0722f6eca5fb2ebb9cff",
+    "semantic_hash": "f375f907df4d0722f6eca5fb2ebb9cff"
+  },
+  "app/Datas/NetfunSmsResponseData.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "2351dddf754ba5def79d2361b9c1375e",
+    "semantic_hash": "2351dddf754ba5def79d2361b9c1375e"
+  },
+  "app/Datas/NotificationData.php": {
+    "mtime": 1781026637.181054,
+    "ast_hash": "5c58825307dacfa296aa6e8a547ef826",
+    "semantic_hash": "5c58825307dacfa296aa6e8a547ef826"
+  },
+  "app/Datas/NotifyThemeData.php": {
+    "mtime": 1779200039.6822045,
+    "ast_hash": "2a554fb93aff19061896a8af276d0a80",
+    "semantic_hash": "2a554fb93aff19061896a8af276d0a80"
+  },
+  "app/Datas/PushCriteriaData.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "fd9718a5662bc21ceab00deb098a3a45",
+    "semantic_hash": "fd9718a5662bc21ceab00deb098a3a45"
+  },
+  "app/Datas/PushNotificationData.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "877694c7a044a4308bec864e4dbf1c61",
+    "semantic_hash": "877694c7a044a4308bec864e4dbf1c61"
+  },
+  "app/Datas/PushNotificationDebugData.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "91de1ea0c544c5bb7fa8af77386bdd62",
+    "semantic_hash": "91de1ea0c544c5bb7fa8af77386bdd62"
+  },
+  "app/Datas/RecordNotificationData.php": {
+    "mtime": 1779200039.6822045,
+    "ast_hash": "a00721cc08db2c81765df57b63236a4b",
+    "semantic_hash": "a00721cc08db2c81765df57b63236a4b"
+  },
+  "app/Datas/SMS/AgiletelecomData.php": {
+    "mtime": 1781026637.181054,
+    "ast_hash": "a3fda8207046c8f8830b20ea3c71cc12",
+    "semantic_hash": "a3fda8207046c8f8830b20ea3c71cc12"
+  },
+  "app/Datas/SMS/GammuData.php": {
+    "mtime": 1779200039.6822045,
+    "ast_hash": "cfcc6b7ff139ff8ec133b59e95d14bb8",
+    "semantic_hash": "cfcc6b7ff139ff8ec133b59e95d14bb8"
+  },
+  "app/Datas/SMS/NexmoData.php": {
+    "mtime": 1781026637.181054,
+    "ast_hash": "e4d67044d5cda65279db0a17f792d161",
+    "semantic_hash": "e4d67044d5cda65279db0a17f792d161"
+  },
+  "app/Datas/SMS/PlivoData.php": {
+    "mtime": 1781026637.181054,
+    "ast_hash": "a63cfe2eb1d4d430f1ad2e76da5630f7",
+    "semantic_hash": "a63cfe2eb1d4d430f1ad2e76da5630f7"
+  },
+  "app/Datas/SMS/SmsFactorData.php": {
+    "mtime": 1781026637.181054,
+    "ast_hash": "e91c4150b6ddd12e189b617327c193b6",
+    "semantic_hash": "e91c4150b6ddd12e189b617327c193b6"
+  },
+  "app/Datas/SMS/TwilioData.php": {
+    "mtime": 1781026637.181054,
+    "ast_hash": "34812cb89da71bf2d9e370451f3ef797",
+    "semantic_hash": "34812cb89da71bf2d9e370451f3ef797"
+  },
+  "app/Datas/SendNotificationBulkResultData.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "493bea9fdb274a12639f5eb7df922855",
+    "semantic_hash": "493bea9fdb274a12639f5eb7df922855"
+  },
+  "app/Datas/SmsData.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "6e63acd0159d566d75ec0d284f34455f",
+    "semantic_hash": "6e63acd0159d566d75ec0d284f34455f"
+  },
+  "app/Datas/SmsMessageData.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "dc82d343a6cc2f61e940e112ec1fa739",
+    "semantic_hash": "dc82d343a6cc2f61e940e112ec1fa739"
+  },
+  "app/Datas/SmtpData.php": {
+    "mtime": 1781507569.7530453,
+    "ast_hash": "c5c86d66e89f08cb11cba7270a5de9f7",
+    "semantic_hash": "c5c86d66e89f08cb11cba7270a5de9f7"
+  },
+  "app/Datas/TelegramData.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "334eb3218438a8e0357d737ddb154800",
+    "semantic_hash": "334eb3218438a8e0357d737ddb154800"
+  },
+  "app/Datas/WhatsAppData.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "57aca3c519eed79dcc72c0084467cde5",
+    "semantic_hash": "57aca3c519eed79dcc72c0084467cde5"
+  },
+  "app/Emails/EmailDataEmail.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "0db1219866f03ce3842401f47154645e",
+    "semantic_hash": "0db1219866f03ce3842401f47154645e"
+  },
+  "app/Emails/SpatieEmail.php": {
+    "mtime": 1785687266.6755548,
+    "ast_hash": "b8cca2b8b6cbf669692810a3d7ad4435",
+    "semantic_hash": "b8cca2b8b6cbf669692810a3d7ad4435"
+  },
+  "app/Enums/ChannelEnum.php": {
+    "mtime": 1779200039.6822045,
+    "ast_hash": "b9615fefa6196eaba397afa10d47d4c4",
+    "semantic_hash": "b9615fefa6196eaba397afa10d47d4c4"
+  },
+  "app/Enums/ContactTypeEnum.php": {
+    "mtime": 1779200039.6822045,
+    "ast_hash": "7a4be4bc2cfcd736a580edc1ad7a2729",
+    "semantic_hash": "7a4be4bc2cfcd736a580edc1ad7a2729"
+  },
+  "app/Enums/MediaTypeEnum.php": {
+    "mtime": 1779985258.37364,
+    "ast_hash": "714f36f276230aa864b3ba874ad31e43",
+    "semantic_hash": "714f36f276230aa864b3ba874ad31e43"
+  },
+  "app/Enums/NotificationLogStatusEnum.php": {
+    "mtime": 1779981754.464693,
+    "ast_hash": "f8f0eafe8af292f35ba053a04a04b91e",
+    "semantic_hash": "f8f0eafe8af292f35ba053a04a04b91e"
+  },
+  "app/Enums/NotificationTypeEnum.php": {
+    "mtime": 1779981754.464693,
+    "ast_hash": "c6e7fdc58418ae3f85728367d3d62f19",
+    "semantic_hash": "c6e7fdc58418ae3f85728367d3d62f19"
+  },
+  "app/Enums/SmsDriverEnum.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "5f885f56d3a8d00fa8e83f32925b90e5",
+    "semantic_hash": "5f885f56d3a8d00fa8e83f32925b90e5"
+  },
+  "app/Enums/TelegramDriverEnum.php": {
+    "mtime": 1779985258.37364,
+    "ast_hash": "9c3fff829185883af1e9b632640b8afc",
+    "semantic_hash": "9c3fff829185883af1e9b632640b8afc"
+  },
+  "app/Enums/WhatsAppDriverEnum.php": {
+    "mtime": 1779985258.37364,
+    "ast_hash": "296bfea430d237b34c2bcc093243b1ff",
+    "semantic_hash": "296bfea430d237b34c2bcc093243b1ff"
+  },
+  "app/Factories/SmsActionFactory.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "e1df220f644221c81cbf80f7c791e3e7",
+    "semantic_hash": "e1df220f644221c81cbf80f7c791e3e7"
+  },
+  "app/Factories/TelegramActionFactory.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "0a84fd6d67ba5dd69840c90c62ac8744",
+    "semantic_hash": "0a84fd6d67ba5dd69840c90c62ac8744"
+  },
+  "app/Factories/WhatsAppActionFactory.php": {
+    "mtime": 1785687291.1625547,
+    "ast_hash": "f89ba71e6c3d3a184b22fdc9e1898123",
+    "semantic_hash": "f89ba71e6c3d3a184b22fdc9e1898123"
+  },
+  "app/Filament/Actions/SendRecordsNotificationBulkAction.php": {
+    "mtime": 1785687291.3726404,
+    "ast_hash": "07c3be41d0af320eb9173dfdd2dbb69e",
+    "semantic_hash": "07c3be41d0af320eb9173dfdd2dbb69e"
+  },
+  "app/Filament/Clusters/Test.php": {
+    "mtime": 1779200039.6822045,
+    "ast_hash": "2ecff897a2a2c00406018eecb4154cc8",
+    "semantic_hash": "2ecff897a2a2c00406018eecb4154cc8"
+  },
+  "app/Filament/Clusters/Test/Pages/SendAwsEmailPage.php": {
+    "mtime": 1781026637.181054,
+    "ast_hash": "aaa4dc0a10834e1d68a857b125ee3ef5",
+    "semantic_hash": "aaa4dc0a10834e1d68a857b125ee3ef5"
+  },
+  "app/Filament/Clusters/Test/Pages/SendEmail.php": {
+    "mtime": 1781026637.181054,
+    "ast_hash": "35ee1af32d238e44b48d8e37357881fb",
+    "semantic_hash": "35ee1af32d238e44b48d8e37357881fb"
+  },
+  "app/Filament/Clusters/Test/Pages/SendEmailPage.php": {
+    "mtime": 1781026637.181054,
+    "ast_hash": "ef5b0d559d9c377d765fa7b53888bd44",
+    "semantic_hash": "ef5b0d559d9c377d765fa7b53888bd44"
+  },
+  "app/Filament/Clusters/Test/Pages/SendFirebasePushNotificationPage.php": {
+    "mtime": 1781026637.181054,
+    "ast_hash": "9088ae3a7a71c71974b3822830e5eebb",
+    "semantic_hash": "9088ae3a7a71c71974b3822830e5eebb"
+  },
+  "app/Filament/Clusters/Test/Pages/SendNetfunSmsPage.php": {
+    "mtime": 1785687291.582209,
+    "ast_hash": "5fe28656c88ccbeda728f2b49a12e208",
+    "semantic_hash": "5fe28656c88ccbeda728f2b49a12e208"
+  },
+  "app/Filament/Clusters/Test/Pages/SendPushNotification.php": {
+    "mtime": 1785687291.8206203,
+    "ast_hash": "664ebb9a63a0338e091dc1592c048f66",
+    "semantic_hash": "664ebb9a63a0338e091dc1592c048f66"
+  },
+  "app/Filament/Clusters/Test/Pages/SendPushNotificationPage.php": {
+    "mtime": 1785687292.0362248,
+    "ast_hash": "539ab85658403487e4ac0df9026235f6",
+    "semantic_hash": "539ab85658403487e4ac0df9026235f6"
+  },
+  "app/Filament/Clusters/Test/Pages/SendSmsPage.php": {
+    "mtime": 1781026637.181054,
+    "ast_hash": "fcbd34ffa5ebf2f06238b48a517aa841",
+    "semantic_hash": "fcbd34ffa5ebf2f06238b48a517aa841"
+  },
+  "app/Filament/Clusters/Test/Pages/SendSpatieEmailPage.php": {
+    "mtime": 1781026637.181054,
+    "ast_hash": "fcf76063a7ca98a67faad5b495a778b3",
+    "semantic_hash": "fcf76063a7ca98a67faad5b495a778b3"
+  },
+  "app/Filament/Clusters/Test/Pages/SendTelegram.php": {
+    "mtime": 1781026637.181054,
+    "ast_hash": "78bab5c8004b7142507528ec8f608ea4",
+    "semantic_hash": "78bab5c8004b7142507528ec8f608ea4"
+  },
+  "app/Filament/Clusters/Test/Pages/SendTelegramPage.php": {
+    "mtime": 1781026637.181054,
+    "ast_hash": "977ed7ac56fb682df785253b6c07ae50",
+    "semantic_hash": "977ed7ac56fb682df785253b6c07ae50"
+  },
+  "app/Filament/Clusters/Test/Pages/SendWhatsAppPage.php": {
+    "mtime": 1781026637.181054,
+    "ast_hash": "898f7ca8d74874f3a7edc943f3c79bb2",
+    "semantic_hash": "898f7ca8d74874f3a7edc943f3c79bb2"
+  },
+  "app/Filament/Clusters/Test/Pages/SlackNotification.php": {
+    "mtime": 1779200039.6822045,
+    "ast_hash": "28e3088e7238bf456e163592888d7502",
+    "semantic_hash": "28e3088e7238bf456e163592888d7502"
+  },
+  "app/Filament/Clusters/Test/Pages/SlackNotificationPage.php": {
+    "mtime": 1779200039.6822045,
+    "ast_hash": "3758f26ad8a6c50e3c8a409e1577116c",
+    "semantic_hash": "3758f26ad8a6c50e3c8a409e1577116c"
+  },
+  "app/Filament/Clusters/Test/Pages/TestSmtpPage.php": {
+    "mtime": 1781026637.1895213,
+    "ast_hash": "1c7c2c7d307dd76af91f94f63382d8a2",
+    "semantic_hash": "1c7c2c7d307dd76af91f94f63382d8a2"
+  },
+  "app/Filament/Forms/Components/ChannelCheckboxList.php": {
+    "mtime": 1779200039.6822045,
+    "ast_hash": "8029c547168f74c5533907e11ba1b17f",
+    "semantic_hash": "8029c547168f74c5533907e11ba1b17f"
+  },
+  "app/Filament/Forms/Components/ContactSection.php": {
+    "mtime": 1779200039.6822045,
+    "ast_hash": "d0d2436e41b47c9f04d4a4623227c8cb",
+    "semantic_hash": "d0d2436e41b47c9f04d4a4623227c8cb"
+  },
+  "app/Filament/Forms/Components/HtmlLayoutPathSelect.php": {
+    "mtime": 1779200039.6822045,
+    "ast_hash": "6581355d51cbd29e50bf21c593bf2ab4",
+    "semantic_hash": "6581355d51cbd29e50bf21c593bf2ab4"
+  },
+  "app/Filament/Forms/Components/MailTemplateSelect.php": {
+    "mtime": 1779200039.6822045,
+    "ast_hash": "975a1df039d86b85ecc7d6df77a20618",
+    "semantic_hash": "975a1df039d86b85ecc7d6df77a20618"
+  },
+  "app/Filament/Pages/Dashboard.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "1121d0e147af901d7131b83d8cc6b4cf",
+    "semantic_hash": "1121d0e147af901d7131b83d8cc6b4cf"
+  },
+  "app/Filament/Pages/SettingPage.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "6aef51f45c335be5ff03f9b90290c261",
+    "semantic_hash": "6aef51f45c335be5ff03f9b90290c261"
+  },
+  "app/Filament/Resources/ContactResource.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "11bb1556bc9319e5997557e8d3f2a0cf",
+    "semantic_hash": "11bb1556bc9319e5997557e8d3f2a0cf"
+  },
+  "app/Filament/Resources/ContactResource/Pages/CreateContact.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "08fa78741a40bde184eda8f4c9e5e855",
+    "semantic_hash": "08fa78741a40bde184eda8f4c9e5e855"
+  },
+  "app/Filament/Resources/ContactResource/Pages/EditContact.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "605fb86663eee00f80badf9336802e36",
+    "semantic_hash": "605fb86663eee00f80badf9336802e36"
+  },
+  "app/Filament/Resources/ContactResource/Pages/ListContacts.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "647f69495abaa85d4fbea54286c4c6a0",
+    "semantic_hash": "647f69495abaa85d4fbea54286c4c6a0"
+  },
+  "app/Filament/Resources/ContactResource/Schemas/ContactForm.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "6465c8f70ac00d7ba9a431be8f1e0e6f",
+    "semantic_hash": "6465c8f70ac00d7ba9a431be8f1e0e6f"
+  },
+  "app/Filament/Resources/ContactResource/Schemas/ContactInfolist.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "1b74cf9858775decc51ec613e32abfb0",
+    "semantic_hash": "1b74cf9858775decc51ec613e32abfb0"
+  },
+  "app/Filament/Resources/ContactResource/Tables/ContactsTable.php": {
+    "mtime": 1781703059.1442113,
+    "ast_hash": "e57b4adb35e90f2d550ca9f8a23302b1",
+    "semantic_hash": "e57b4adb35e90f2d550ca9f8a23302b1"
+  },
+  "app/Filament/Resources/MailTemplateResource.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "e7101e693af2e170e8eaf407a93cdd39",
+    "semantic_hash": "e7101e693af2e170e8eaf407a93cdd39"
+  },
+  "app/Filament/Resources/MailTemplateResource/Pages/CreateMailTemplate.php": {
+    "mtime": 1779824021.4320252,
+    "ast_hash": "4ce11bf137c50918cc3754a20afa72d4",
+    "semantic_hash": "4ce11bf137c50918cc3754a20afa72d4"
+  },
+  "app/Filament/Resources/MailTemplateResource/Pages/EditMailTemplate.php": {
+    "mtime": 1779824021.4320252,
+    "ast_hash": "862f36ff36324e3e17856e6f13032202",
+    "semantic_hash": "862f36ff36324e3e17856e6f13032202"
+  },
+  "app/Filament/Resources/MailTemplateResource/Pages/ListMailTemplates.php": {
+    "mtime": 1779824021.4320252,
+    "ast_hash": "38894ee4c8213c3b608e860c210d8b9f",
+    "semantic_hash": "38894ee4c8213c3b608e860c210d8b9f"
+  },
+  "app/Filament/Resources/MailTemplateResource/Pages/PreviewMailTemplate.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "0ead8afe6cd691c4a86d46fc944318b2",
+    "semantic_hash": "0ead8afe6cd691c4a86d46fc944318b2"
+  },
+  "app/Filament/Resources/MailTemplateResource/Schemas/MailTemplateForm.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "c80cae715de381fb954f444282405cec",
+    "semantic_hash": "c80cae715de381fb954f444282405cec"
+  },
+  "app/Filament/Resources/MailTemplateResource/Schemas/MailTemplateInfolist.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "71e08a42bbdc404662a8395d15c1ade3",
+    "semantic_hash": "71e08a42bbdc404662a8395d15c1ade3"
+  },
+  "app/Filament/Resources/MailTemplateResource/Tables/MailTemplatesTable.php": {
+    "mtime": 1779822270.4091244,
+    "ast_hash": "fd8bfe223ab720339860165d4f4de3b8",
+    "semantic_hash": "fd8bfe223ab720339860165d4f4de3b8"
+  },
+  "app/Filament/Resources/NotificationLogResource/Schemas/NotificationLogForm.php": {
+    "mtime": 1779822270.4091244,
+    "ast_hash": "3d71c9dc74504fd2d2c220367658697e",
+    "semantic_hash": "3d71c9dc74504fd2d2c220367658697e"
+  },
+  "app/Filament/Resources/NotificationLogResource/Schemas/NotificationLogInfolist.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "76dcc00a2d64c520226a3351606b2470",
+    "semantic_hash": "76dcc00a2d64c520226a3351606b2470"
+  },
+  "app/Filament/Resources/NotificationLogResource/Tables/NotificationLogsTable.php": {
+    "mtime": 1779822270.4091244,
+    "ast_hash": "4e8e11cb42c697372daba0305eb6ce92",
+    "semantic_hash": "4e8e11cb42c697372daba0305eb6ce92"
+  },
+  "app/Filament/Resources/NotificationResource.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "7690dab167fbf1708315c0377a996434",
+    "semantic_hash": "7690dab167fbf1708315c0377a996434"
+  },
+  "app/Filament/Resources/NotificationResource/Pages/CreateNotification.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "3a34326e6aade78a99748c8238fd4903",
+    "semantic_hash": "3a34326e6aade78a99748c8238fd4903"
+  },
+  "app/Filament/Resources/NotificationResource/Pages/EditNotification.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "93205c223d9d4831c82af6fc78440751",
+    "semantic_hash": "93205c223d9d4831c82af6fc78440751"
+  },
+  "app/Filament/Resources/NotificationResource/Pages/ListNotifications.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "f9bf5d66ac1770a9b89e109b3867466c",
+    "semantic_hash": "f9bf5d66ac1770a9b89e109b3867466c"
+  },
+  "app/Filament/Resources/NotificationResource/Pages/ViewNotification.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "a2750bbc1c3749f1c2b8a54341b95e75",
+    "semantic_hash": "a2750bbc1c3749f1c2b8a54341b95e75"
+  },
+  "app/Filament/Resources/NotificationResource/Schemas/NotificationForm.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "5bd5a918ae39ba93f07cde9316f2f7d9",
+    "semantic_hash": "5bd5a918ae39ba93f07cde9316f2f7d9"
+  },
+  "app/Filament/Resources/NotificationResource/Schemas/NotificationInfolist.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "a9f38f1bfbc9089094fad762b3784c7b",
+    "semantic_hash": "a9f38f1bfbc9089094fad762b3784c7b"
+  },
+  "app/Filament/Resources/NotificationResource/Tables/NotificationsTable.php": {
+    "mtime": 1781703059.1442113,
+    "ast_hash": "65fcc2b64e24f2ff1ee8b59ee13feed1",
+    "semantic_hash": "65fcc2b64e24f2ff1ee8b59ee13feed1"
+  },
+  "app/Filament/Resources/NotificationTemplateResource.php": {
+    "mtime": 1781026637.1895213,
+    "ast_hash": "2c98b0c7d6475a60b44a548ffa9bab4a",
+    "semantic_hash": "2c98b0c7d6475a60b44a548ffa9bab4a"
+  },
+  "app/Filament/Resources/NotificationTemplateResource/Pages/CreateNotificationTemplate.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "9411e559cd61a87fb6c3df5d8a50a870",
+    "semantic_hash": "9411e559cd61a87fb6c3df5d8a50a870"
+  },
+  "app/Filament/Resources/NotificationTemplateResource/Pages/EditNotificationTemplate.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "19756975b6e053eaeeb6c5c1a61a162f",
+    "semantic_hash": "19756975b6e053eaeeb6c5c1a61a162f"
+  },
+  "app/Filament/Resources/NotificationTemplateResource/Pages/ListNotificationTemplates.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "d59740065d6cef1d4023e6b6417f0a88",
+    "semantic_hash": "d59740065d6cef1d4023e6b6417f0a88"
+  },
+  "app/Filament/Resources/NotificationTemplateResource/Pages/PreviewNotificationTemplate.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "d43fb3f79c2bb9c4e6ac9a2cfe818e3c",
+    "semantic_hash": "d43fb3f79c2bb9c4e6ac9a2cfe818e3c"
+  },
+  "app/Filament/Resources/NotificationTemplateResource/Schemas/NotificationTemplateForm.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "055baf428ca3b65d36adaea5aa5d06d3",
+    "semantic_hash": "055baf428ca3b65d36adaea5aa5d06d3"
+  },
+  "app/Filament/Resources/NotificationTemplateResource/Schemas/NotificationTemplateInfolist.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "9363c3f80a5ceae4ab67dee0b777fd2b",
+    "semantic_hash": "9363c3f80a5ceae4ab67dee0b777fd2b"
+  },
+  "app/Filament/Resources/NotificationTemplateResource/Tables/NotificationTemplatesTable.php": {
+    "mtime": 1779822270.4091244,
+    "ast_hash": "c456f8d094718e07a85fbcf31abb0b2c",
+    "semantic_hash": "c456f8d094718e07a85fbcf31abb0b2c"
+  },
+  "app/Filament/Resources/NotifyThemeResource.php": {
+    "mtime": 1781507569.6282005,
+    "ast_hash": "970dad185a00ef32bc3e261b5fba9d9e",
+    "semantic_hash": "970dad185a00ef32bc3e261b5fba9d9e"
+  },
+  "app/Filament/Resources/NotifyThemeResource/Pages/CreateNotifyTheme.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "a1e69a13ccf66018e4b5994f0d241e76",
+    "semantic_hash": "a1e69a13ccf66018e4b5994f0d241e76"
+  },
+  "app/Filament/Resources/NotifyThemeResource/Pages/EditNotifyTheme.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "770b3f39255e1fad11291ab1183cf334",
+    "semantic_hash": "770b3f39255e1fad11291ab1183cf334"
+  },
+  "app/Filament/Resources/NotifyThemeResource/Pages/ListNotifyThemes.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "0aed8a6f34a42edad3da00bc45eebac8",
+    "semantic_hash": "0aed8a6f34a42edad3da00bc45eebac8"
+  },
+  "app/Filament/Resources/NotifyThemeResource/RelationManagers/LinkableRelationManager.php": {
+    "mtime": 1779200039.6865377,
+    "ast_hash": "7d1e86e84b563149964a19301d0e3183",
+    "semantic_hash": "7d1e86e84b563149964a19301d0e3183"
+  },
+  "app/Filament/Resources/NotifyThemeResource/Schemas/NotifyThemeForm.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "4092a4bdf4a5fee6665bb27ad2f70e9a",
+    "semantic_hash": "4092a4bdf4a5fee6665bb27ad2f70e9a"
+  },
+  "app/Filament/Resources/NotifyThemeResource/Schemas/NotifyThemeInfolist.php": {
+    "mtime": 1779200039.690871,
+    "ast_hash": "ef9c54fed53e296847505531643f19b6",
+    "semantic_hash": "ef9c54fed53e296847505531643f19b6"
+  },
+  "app/Filament/Resources/NotifyThemeResource/Tables/NotifyThemesTable.php": {
+    "mtime": 1781703059.1442113,
+    "ast_hash": "915bfcc1d6dcbb4e32f54c2258827580",
+    "semantic_hash": "915bfcc1d6dcbb4e32f54c2258827580"
+  },
+  "app/Filament/Tables/Columns/ContactColumn.php": {
+    "mtime": 1779200039.690871,
+    "ast_hash": "97b082fed49c6e742c6953366f9184b0",
+    "semantic_hash": "97b082fed49c6e742c6953366f9184b0"
+  },
+  "app/Helpers/ConfigHelper.php": {
+    "mtime": 1785687292.4191027,
+    "ast_hash": "a6ea85f9f3072bb37edd5584223c6334",
+    "semantic_hash": "a6ea85f9f3072bb37edd5584223c6334"
+  },
+  "app/Http/Controllers/NotificationTrackingController.php": {
+    "mtime": 1785496435.112487,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "app/Http/Livewire/_components.json": {
+    "mtime": 1779200039.690871,
+    "ast_hash": "d751713988987e9331980363e24189ce",
+    "semantic_hash": "d751713988987e9331980363e24189ce"
+  },
+  "app/Jobs/SendNotificationJob.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "a89217d4f404b9f89009d2514e34b001",
+    "semantic_hash": "a89217d4f404b9f89009d2514e34b001"
+  },
+  "app/Jobs/SendScheduledPushNotification.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "1c81575e85d2c36828dfd08c2a17e413",
+    "semantic_hash": "1c81575e85d2c36828dfd08c2a17e413"
+  },
+  "app/Mail/AppointmentNotificationMail.php": {
+    "mtime": 1785687292.671161,
+    "ast_hash": "9bdfdb26d97f13ba3acb1bc571f228d4",
+    "semantic_hash": "9bdfdb26d97f13ba3acb1bc571f228d4"
+  },
+  "app/Mail/ChristmasGreetingMailable.php": {
+    "mtime": 1785687292.8990755,
+    "ast_hash": "e63d9b60f7e06c8a35c1655ccf0b9b67",
+    "semantic_hash": "e63d9b60f7e06c8a35c1655ccf0b9b67"
+  },
+  "app/Models/BaseModel.php": {
+    "mtime": 1779822270.413353,
+    "ast_hash": "e193419448e79b46a4bf977b440b38c7",
+    "semantic_hash": "e193419448e79b46a4bf977b440b38c7"
+  },
+  "app/Models/BaseMorphPivot.php": {
+    "mtime": 1779822270.413353,
+    "ast_hash": "cfa820191750b000e19322c93f869577",
+    "semantic_hash": "cfa820191750b000e19322c93f869577"
+  },
+  "app/Models/BasePivot.php": {
+    "mtime": 1779822270.413353,
+    "ast_hash": "731a2b78fa7a79f555bba4c126c3d335",
+    "semantic_hash": "731a2b78fa7a79f555bba4c126c3d335"
+  },
+  "app/Models/Contact.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "265ce79cf5a3ea2ddb500be6a5661337",
+    "semantic_hash": "265ce79cf5a3ea2ddb500be6a5661337"
+  },
+  "app/Models/EmailTemplate.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "27b90df55681217bb60d671ed85ddbf3",
+    "semantic_hash": "27b90df55681217bb60d671ed85ddbf3"
+  },
+  "app/Models/MailTemplate.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "bdc937f902a33b2ea6311072590e46c5",
+    "semantic_hash": "bdc937f902a33b2ea6311072590e46c5"
+  },
+  "app/Models/MailTemplateLog.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "d5a775ff7387ec7797c7b9c48ac6a80e",
+    "semantic_hash": "d5a775ff7387ec7797c7b9c48ac6a80e"
+  },
+  "app/Models/MailTemplateVersion.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "1ef8ae4bd40b09bd20e403a7bc739bd0",
+    "semantic_hash": "1ef8ae4bd40b09bd20e403a7bc739bd0"
+  },
+  "app/Models/Notification.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "4e197dd2a7604ba71087f618db7162d4",
+    "semantic_hash": "4e197dd2a7604ba71087f618db7162d4"
+  },
+  "app/Models/NotificationChannel.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "aaf40f8b876ba4135c26cafa302594ff",
+    "semantic_hash": "aaf40f8b876ba4135c26cafa302594ff"
+  },
+  "app/Models/NotificationLog.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "104cda560136cf67dd41b6ec07a3351d",
+    "semantic_hash": "104cda560136cf67dd41b6ec07a3351d"
+  },
+  "app/Models/NotificationTemplate.php": {
+    "mtime": 1785687390.5784068,
+    "ast_hash": "ae79c368d66cd7ea95cfa31211d9e4ac",
+    "semantic_hash": "ae79c368d66cd7ea95cfa31211d9e4ac"
+  },
+  "app/Models/NotificationTemplateVersion.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "3102f17818c1a16b9edfca13206620ac",
+    "semantic_hash": "3102f17818c1a16b9edfca13206620ac"
+  },
+  "app/Models/NotificationType.php": {
+    "mtime": 1781131642.27378,
+    "ast_hash": "babf66d6419d3ba8c6a5c4583341dd6e",
+    "semantic_hash": "babf66d6419d3ba8c6a5c4583341dd6e"
+  },
+  "app/Models/NotifyTheme.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "ae630fadd7569e00f5761ce5452a776e",
+    "semantic_hash": "ae630fadd7569e00f5761ce5452a776e"
+  },
+  "app/Models/NotifyThemeable.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "c4c246ec7257c4f010b37e88f9e144de",
+    "semantic_hash": "c4c246ec7257c4f010b37e88f9e144de"
+  },
+  "app/Models/Policies/ContactPolicy.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "af32994d73d68ff8a1c0413e5a4489cf",
+    "semantic_hash": "af32994d73d68ff8a1c0413e5a4489cf"
+  },
+  "app/Models/Policies/MailTemplateLogPolicy.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "be9eb8d196218f3cec87cdf9a868b9ae",
+    "semantic_hash": "be9eb8d196218f3cec87cdf9a868b9ae"
+  },
+  "app/Models/Policies/MailTemplatePolicy.php": {
+    "mtime": 1779200039.690871,
+    "ast_hash": "fb066042c2af1d8be775ecd10add4e03",
+    "semantic_hash": "fb066042c2af1d8be775ecd10add4e03"
+  },
+  "app/Models/Policies/MailTemplateVersionPolicy.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "a0cfa44ee6547f5a71083cd990cf5d7b",
+    "semantic_hash": "a0cfa44ee6547f5a71083cd990cf5d7b"
+  },
+  "app/Models/Policies/NotificationPolicy.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "7f6f62b7eccc1bb7aca4e5b4af9db6d7",
+    "semantic_hash": "7f6f62b7eccc1bb7aca4e5b4af9db6d7"
+  },
+  "app/Models/Policies/NotificationTemplatePolicy.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "1d8e2338a6b3aa5c53dd57fc28c2bd67",
+    "semantic_hash": "1d8e2338a6b3aa5c53dd57fc28c2bd67"
+  },
+  "app/Models/Policies/NotificationTemplateVersionPolicy.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "d935b8d366cb777feb04610aa467b7be",
+    "semantic_hash": "d935b8d366cb777feb04610aa467b7be"
+  },
+  "app/Models/Policies/NotificationTypePolicy.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "aa44a03a481889dd25ccbf31e1bb2b49",
+    "semantic_hash": "aa44a03a481889dd25ccbf31e1bb2b49"
+  },
+  "app/Models/Policies/NotifyBasePolicy.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "d67b8b78eef30375013311414da4f09f",
+    "semantic_hash": "d67b8b78eef30375013311414da4f09f"
+  },
+  "app/Models/Policies/NotifyThemePolicy.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "f6645db9beb3d28dbbbeb42691fb7036",
+    "semantic_hash": "f6645db9beb3d28dbbbeb42691fb7036"
+  },
+  "app/Models/Policies/NotifyThemeablePolicy.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "0e3e037abc5b64219dac0cc1c2bf9388",
+    "semantic_hash": "0e3e037abc5b64219dac0cc1c2bf9388"
+  },
+  "app/Models/Theme.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "e540daea576c62e49d55aa024c0ed1bd",
+    "semantic_hash": "e540daea576c62e49d55aa024c0ed1bd"
+  },
+  "app/Models/Traits/HasContact.php": {
+    "mtime": 1785687293.1216033,
+    "ast_hash": "17b87be2b05bd5aac053d52cf28bb9ad",
+    "semantic_hash": "17b87be2b05bd5aac053d52cf28bb9ad"
+  },
+  "app/Notifications/Channels/FirebaseCloudMessagingChannel.php": {
+    "mtime": 1785687293.3802888,
+    "ast_hash": "c8782a73124f2ea4767a8875c35aec0a",
+    "semantic_hash": "c8782a73124f2ea4767a8875c35aec0a"
+  },
+  "app/Notifications/Channels/NetfunChannel.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "509a417f43c5a6b47d274e5ac40c4e2d",
+    "semantic_hash": "509a417f43c5a6b47d274e5ac40c4e2d"
+  },
+  "app/Notifications/Channels/TelegramChannel.php": {
+    "mtime": 1779822270.413353,
+    "ast_hash": "fac530a10369143feac29ead4acbc976",
+    "semantic_hash": "fac530a10369143feac29ead4acbc976"
+  },
+  "app/Notifications/EmailDataNotification.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "6d7e11636d2f0a40e8f71bd6ff876b8f",
+    "semantic_hash": "6d7e11636d2f0a40e8f71bd6ff876b8f"
+  },
+  "app/Notifications/FirebaseAndroidNotification.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "b3ee26ca5e14b52e9dcb79535e2d89c5",
+    "semantic_hash": "b3ee26ca5e14b52e9dcb79535e2d89c5"
+  },
+  "app/Notifications/GenericNotification.php": {
+    "mtime": 1785687293.6105187,
+    "ast_hash": "c962af70d0ccf8fa24b21cb42dc3a04f",
+    "semantic_hash": "c962af70d0ccf8fa24b21cb42dc3a04f"
+  },
+  "app/Notifications/RecordNotification.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "ee0956164af34893239093fed012787d",
+    "semantic_hash": "ee0956164af34893239093fed012787d"
+  },
+  "app/Notifications/SmsNotification.php": {
+    "mtime": 1785687293.8529503,
+    "ast_hash": "2c04e9e373065bf446c6916b09538ec9",
+    "semantic_hash": "2c04e9e373065bf446c6916b09538ec9"
+  },
+  "app/Notifications/TelegramNotification.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "39f886f37d3a67a147a3a6a71372c326",
+    "semantic_hash": "39f886f37d3a67a147a3a6a71372c326"
+  },
+  "app/Notifications/ThemeNotification.php": {
+    "mtime": 1785687294.096617,
+    "ast_hash": "2fa0f3ea380de17865feb3247fb2202e",
+    "semantic_hash": "2fa0f3ea380de17865feb3247fb2202e"
+  },
+  "app/Notifications/TicketAssignedNotification.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "6664fc8c942ed24a825e0209bb05d510",
+    "semantic_hash": "6664fc8c942ed24a825e0209bb05d510"
+  },
+  "app/Notifications/TicketStatusChangedNotification.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "23410e46ff9d1432d5a66f8324a5dfa4",
+    "semantic_hash": "23410e46ff9d1432d5a66f8324a5dfa4"
+  },
+  "app/Notifications/WhatsAppNotification.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "1b309a11fb528b7ba5b93a4a4bc48b81",
+    "semantic_hash": "1b309a11fb528b7ba5b93a4a4bc48b81"
+  },
+  "app/Providers/Concerns/MergesNotifyConfigFromEnv.php": {
+    "mtime": 1781025208.795556,
+    "ast_hash": "37f145221d295889d4a0897cf752783f",
+    "semantic_hash": "37f145221d295889d4a0897cf752783f"
+  },
+  "app/Providers/EventServiceProvider.php": {
+    "mtime": 1779822270.413353,
+    "ast_hash": "30adc5418f7ca323799b86273afc231f",
+    "semantic_hash": "30adc5418f7ca323799b86273afc231f"
+  },
+  "app/Providers/Filament/AdminPanelProvider.php": {
+    "mtime": 1779200039.690871,
+    "ast_hash": "c10b4cdeae260e6ce4313b0aa508f899",
+    "semantic_hash": "c10b4cdeae260e6ce4313b0aa508f899"
+  },
+  "app/Providers/NotifyServiceProvider.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "63560da53e9174cff46297aa085fba3b",
+    "semantic_hash": "63560da53e9174cff46297aa085fba3b"
+  },
+  "app/Providers/RouteServiceProvider.php": {
+    "mtime": 1779200039.690871,
+    "ast_hash": "8088ffb3c7f4a2502e6df361646906d4",
+    "semantic_hash": "8088ffb3c7f4a2502e6df361646906d4"
+  },
+  "app/Services/MailEngines/MailtrapEngine.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "ed36716c40c581d710d8be13a796d6f7",
+    "semantic_hash": "ed36716c40c581d710d8be13a796d6f7"
+  },
+  "app/Services/NotificationManager.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "79ca5a6225cfdf82ac0a4f99456dae36",
+    "semantic_hash": "79ca5a6225cfdf82ac0a4f99456dae36"
+  },
+  "app/Services/PushNotificationService.php": {
+    "mtime": 1785687294.3109593,
+    "ast_hash": "ae700064c6febcb1ac1a7c8c64862cba",
+    "semantic_hash": "ae700064c6febcb1ac1a7c8c64862cba"
+  },
+  "app/Services/SmsService.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "c93695a4a44c3d6807459f1dac5a7862",
+    "semantic_hash": "c93695a4a44c3d6807459f1dac5a7862"
+  },
+  "app/Traits/HasNotificationRateLimiting.php": {
+    "mtime": 1785687294.592715,
+    "ast_hash": "5cef52db31ba0b57f90d9d8017fd5e34",
+    "semantic_hash": "5cef52db31ba0b57f90d9d8017fd5e34"
+  },
+  "app/Traits/HasNotificationTracking.php": {
+    "mtime": 1785687294.820982,
+    "ast_hash": "86d956b25effeb1025e5bdc2b87fbf2c",
+    "semantic_hash": "86d956b25effeb1025e5bdc2b87fbf2c"
+  },
+  "app/Traits/HasTenantNotifications.php": {
+    "mtime": 1785687295.073905,
+    "ast_hash": "44362b34bfd0ff2c826e46c08ae35b4c",
+    "semantic_hash": "44362b34bfd0ff2c826e46c08ae35b4c"
+  },
+  "app/View/Components/_components.json": {
+    "mtime": 1779200039.690871,
+    "ast_hash": "d751713988987e9331980363e24189ce",
+    "semantic_hash": "d751713988987e9331980363e24189ce"
+  },
+  "composer.json": {
+    "mtime": 1785685111.3782156,
+    "ast_hash": "032e8903fc634f119a8d418e32f73024",
+    "semantic_hash": "032e8903fc634f119a8d418e32f73024"
+  },
+  "config/beautymail.php": {
+    "mtime": 1779200039.6952045,
+    "ast_hash": "6ab0617706de920156bb7dc6cc8d166f",
+    "semantic_hash": "6ab0617706de920156bb7dc6cc8d166f"
+  },
+  "config/config.php": {
+    "mtime": 1781507569.6672146,
+    "ast_hash": "1dadcfe8e23a3e5bd1b6fa5702774a91",
+    "semantic_hash": "1dadcfe8e23a3e5bd1b6fa5702774a91"
+  },
+  "config/notify.php": {
+    "mtime": 1781507569.6282005,
+    "ast_hash": "d33109699860068c47f4bb59c50e2608",
+    "semantic_hash": "d33109699860068c47f4bb59c50e2608"
+  },
+  "config/sms.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "af2d55452105f7b9f75962b04ee5242f",
+    "semantic_hash": "af2d55452105f7b9f75962b04ee5242f"
+  },
+  "config/telegram.php": {
+    "mtime": 1781507569.6672146,
+    "ast_hash": "623b59b9795f8c5c812e075841d1ef46",
+    "semantic_hash": "623b59b9795f8c5c812e075841d1ef46"
+  },
+  "config/whatsapp.php": {
+    "mtime": 1781507569.7530453,
+    "ast_hash": "40e35196c171d8b6ff2ccb93e8182d90",
+    "semantic_hash": "40e35196c171d8b6ff2ccb93e8182d90"
+  },
+  "database/factories/ContactFactory.php": {
+    "mtime": 1781209023.087926,
+    "ast_hash": "6ce626447db758ecffd53bb64bab079c",
+    "semantic_hash": "6ce626447db758ecffd53bb64bab079c"
+  },
+  "database/factories/MailTemplateFactory.php": {
+    "mtime": 1781026637.1895213,
+    "ast_hash": "bda360c25f5724fb044c6da0bf211a60",
+    "semantic_hash": "bda360c25f5724fb044c6da0bf211a60"
+  },
+  "database/factories/MailTemplateLogFactory.php": {
+    "mtime": 1781026637.1895213,
+    "ast_hash": "5eb206fc572549d30457936b3a919bcd",
+    "semantic_hash": "5eb206fc572549d30457936b3a919bcd"
+  },
+  "database/factories/MailTemplateVersionFactory.php": {
+    "mtime": 1781026637.1895213,
+    "ast_hash": "d29553d61201fc92d72bccf2e56e0854",
+    "semantic_hash": "d29553d61201fc92d72bccf2e56e0854"
+  },
+  "database/factories/NotificationChannelFactory.php": {
+    "mtime": 1781025290.4279406,
+    "ast_hash": "b63cba5366bd26fc6dc8c2724ce71081",
+    "semantic_hash": "b63cba5366bd26fc6dc8c2724ce71081"
+  },
+  "database/factories/NotificationFactory.php": {
+    "mtime": 1781193604.014053,
+    "ast_hash": "1430490b59ad640d1da6302397704825",
+    "semantic_hash": "1430490b59ad640d1da6302397704825"
+  },
+  "database/factories/NotificationLogFactory.php": {
+    "mtime": 1781193626.1324492,
+    "ast_hash": "8c033e299a5419fa2e32507709028310",
+    "semantic_hash": "8c033e299a5419fa2e32507709028310"
+  },
+  "database/factories/NotificationTemplateFactory.php": {
+    "mtime": 1781249538.75685,
+    "ast_hash": "c9c6914520bba91f8e965ef93eacf6e2",
+    "semantic_hash": "c9c6914520bba91f8e965ef93eacf6e2"
+  },
+  "database/factories/NotificationTemplateVersionFactory.php": {
+    "mtime": 1781026637.1895213,
+    "ast_hash": "6564d2b020b8b2d97a3b1ddbc2ad79af",
+    "semantic_hash": "6564d2b020b8b2d97a3b1ddbc2ad79af"
+  },
+  "database/factories/NotificationTypeFactory.php": {
+    "mtime": 1781026637.1895213,
+    "ast_hash": "f07935f88f378f1fe0602a3d8cb324bb",
+    "semantic_hash": "f07935f88f378f1fe0602a3d8cb324bb"
+  },
+  "database/factories/NotifyThemeFactory.php": {
+    "mtime": 1781026637.1895213,
+    "ast_hash": "4d0195c0de3ded82b28b23925c479b35",
+    "semantic_hash": "4d0195c0de3ded82b28b23925c479b35"
+  },
+  "database/factories/NotifyThemeableFactory.php": {
+    "mtime": 1781026637.1895213,
+    "ast_hash": "836269a0f0927d8a1a20789c0a2b4538",
+    "semantic_hash": "836269a0f0927d8a1a20789c0a2b4538"
+  },
+  "database/mail-templates/newsletter.json": {
+    "mtime": 1779200039.6952045,
+    "ast_hash": "9cee5f367fb75c93f25fd31f503caa76",
+    "semantic_hash": "9cee5f367fb75c93f25fd31f503caa76"
+  },
+  "database/mail-templates/order-confirmation.json": {
+    "mtime": 1779200039.6952045,
+    "ast_hash": "bf838141edeb6b33dad59c8a1bd3ae34",
+    "semantic_hash": "bf838141edeb6b33dad59c8a1bd3ae34"
+  },
+  "database/mail-templates/welcome.json": {
+    "mtime": 1779200039.6952045,
+    "ast_hash": "5d065ea1a14078f5662680da5d926ae6",
+    "semantic_hash": "5d065ea1a14078f5662680da5d926ae6"
+  },
+  "database/migrations/2018_10_10_000000_create_mail_templates_table.php": {
+    "mtime": 1780891392.341686,
+    "ast_hash": "4a323ea3f32f8ace15918a0c563cef88",
+    "semantic_hash": "4a323ea3f32f8ace15918a0c563cef88"
+  },
+  "database/migrations/2018_10_10_000002_create_mail_templates_table.php": {
+    "mtime": 1780891392.341686,
+    "ast_hash": "0e4e8f73d921c9b02c95537dfb6bdb9d",
+    "semantic_hash": "0e4e8f73d921c9b02c95537dfb6bdb9d"
+  },
+  "database/migrations/2018_10_10_000003_create_mail_templates_table.php": {
+    "mtime": 1780891392.341686,
+    "ast_hash": "575bf6e163d95a0d25dcb1dabeadbd74",
+    "semantic_hash": "575bf6e163d95a0d25dcb1dabeadbd74"
+  },
+  "database/migrations/2018_10_10_000004_create_mail_templates_table.php": {
+    "mtime": 1780891392.341686,
+    "ast_hash": "3acfd2d2327c36ac0e9a79268778c3fd",
+    "semantic_hash": "3acfd2d2327c36ac0e9a79268778c3fd"
+  },
+  "database/migrations/2018_10_10_000005_create_mail_templates_table.php": {
+    "mtime": 1780891392.341686,
+    "ast_hash": "dadf467506380942c24620c9b4b695ad",
+    "semantic_hash": "dadf467506380942c24620c9b4b695ad"
+  },
+  "database/migrations/2018_10_10_000006_create_mail_templates_table.php": {
+    "mtime": 1780891392.341686,
+    "ast_hash": "0fa10f601fcc01a05c54b79218ede267",
+    "semantic_hash": "0fa10f601fcc01a05c54b79218ede267"
+  },
+  "database/migrations/2018_10_10_000007_create_mail_templates_table.php": {
+    "mtime": 1779200039.6952045,
+    "ast_hash": "fcd553b20721a85a7cd49681e92817fa",
+    "semantic_hash": "fcd553b20721a85a7cd49681e92817fa"
+  },
+  "database/migrations/2020_01_01_000007_create_notify_themes_table.php": {
+    "mtime": 1779200039.6952045,
+    "ast_hash": "5ee7da9ce8f69a44ac132bc5f10da001",
+    "semantic_hash": "5ee7da9ce8f69a44ac132bc5f10da001"
+  },
+  "database/migrations/2022_10_12_133532_create_notifications_table.php": {
+    "mtime": 1781177130.882458,
+    "ast_hash": "e1d0014dde84859176d9868c7992202d",
+    "semantic_hash": "e1d0014dde84859176d9868c7992202d"
+  },
+  "database/migrations/2022_10_12_133535_create_notify_contacts_table.php": {
+    "mtime": 1781594086.5772247,
+    "ast_hash": "ae64b8c3e4ec4b81af1a1781a29e7593",
+    "semantic_hash": "ae64b8c3e4ec4b81af1a1781a29e7593"
+  },
+  "database/migrations/2022_11_24_000002_create_notify_themeables_table.php": {
+    "mtime": 1779200039.6952045,
+    "ast_hash": "705f90560ff8cbea181569cee8ab2be1",
+    "semantic_hash": "705f90560ff8cbea181569cee8ab2be1"
+  },
+  "database/migrations/2024_04_20_000001_create_mail_template_versions_table.php": {
+    "mtime": 1780891392.341686,
+    "ast_hash": "03dd6ba50e3aab71b2d970319b611a64",
+    "semantic_hash": "03dd6ba50e3aab71b2d970319b611a64"
+  },
+  "database/migrations/2025_03_31_000001_create_notification_logs_table.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "7353a79534179900bd71ac7bdb6a52e0",
+    "semantic_hash": "7353a79534179900bd71ac7bdb6a52e0"
+  },
+  "database/migrations/2025_04_20_000001_create_mail_template_versions_table.php": {
+    "mtime": 1780602474.5326006,
+    "ast_hash": "865068e894567ae5053b56a92099226b",
+    "semantic_hash": "865068e894567ae5053b56a92099226b"
+  },
+  "database/migrations/2025_07_01_000000_create_notification_logs_table.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "42b3424a5a13b054c0c7dc2077ca8365",
+    "semantic_hash": "42b3424a5a13b054c0c7dc2077ca8365"
+  },
+  "database/migrations/2026_03_03_000000_create_notification_templates_table.php": {
+    "mtime": 1779200039.6952045,
+    "ast_hash": "ba5a27c3ae61dd83b56fb11674a80068",
+    "semantic_hash": "ba5a27c3ae61dd83b56fb11674a80068"
+  },
+  "database/migrations/2026_03_03_000001_create_notification_types_table.php": {
+    "mtime": 1779200039.6952045,
+    "ast_hash": "1a0a1b5242ef63b80ef58543142a99a3",
+    "semantic_hash": "1a0a1b5242ef63b80ef58543142a99a3"
+  },
+  "database/migrations/2026_06_10_134000_create_notifications_table.php": {
+    "mtime": 1781097645.2960079,
+    "ast_hash": "b9557c86b2e6d91c7d2b303587b2dd09",
+    "semantic_hash": "b9557c86b2e6d91c7d2b303587b2dd09"
+  },
+  "database/migrations/2026_06_11_180000_create_notify_contacts_table.php": {
+    "mtime": 1781209023.087926,
+    "ast_hash": "ce311135bb6f6efd6993bd2be34b9775",
+    "semantic_hash": "ce311135bb6f6efd6993bd2be34b9775"
+  },
+  "database/migrations/_archive_redundant/2018_10_10_000000_create_mail_templates_table.php": {
+    "mtime": 1779822270.413353,
+    "ast_hash": "4a323ea3f32f8ace15918a0c563cef88",
+    "semantic_hash": "4a323ea3f32f8ace15918a0c563cef88"
+  },
+  "database/migrations/_archive_redundant/2018_10_10_000002_create_mail_templates_table.php": {
+    "mtime": 1779822270.413353,
+    "ast_hash": "0e4e8f73d921c9b02c95537dfb6bdb9d",
+    "semantic_hash": "0e4e8f73d921c9b02c95537dfb6bdb9d"
+  },
+  "database/migrations/_archive_redundant/2018_10_10_000003_create_mail_templates_table.php": {
+    "mtime": 1779822270.413353,
+    "ast_hash": "575bf6e163d95a0d25dcb1dabeadbd74",
+    "semantic_hash": "575bf6e163d95a0d25dcb1dabeadbd74"
+  },
+  "database/migrations/_archive_redundant/2018_10_10_000004_create_mail_templates_table.php": {
+    "mtime": 1779822270.413353,
+    "ast_hash": "3acfd2d2327c36ac0e9a79268778c3fd",
+    "semantic_hash": "3acfd2d2327c36ac0e9a79268778c3fd"
+  },
+  "database/migrations/_archive_redundant/2018_10_10_000005_create_mail_templates_table.php": {
+    "mtime": 1779822270.413353,
+    "ast_hash": "dadf467506380942c24620c9b4b695ad",
+    "semantic_hash": "dadf467506380942c24620c9b4b695ad"
+  },
+  "database/migrations/_archive_redundant/2018_10_10_000006_create_mail_templates_table.php": {
+    "mtime": 1779822270.413353,
+    "ast_hash": "0fa10f601fcc01a05c54b79218ede267",
+    "semantic_hash": "0fa10f601fcc01a05c54b79218ede267"
+  },
+  "database/migrations/_archive_redundant/2024_04_20_000001_create_mail_template_versions_table.php": {
+    "mtime": 1779822270.413353,
+    "ast_hash": "03dd6ba50e3aab71b2d970319b611a64",
+    "semantic_hash": "03dd6ba50e3aab71b2d970319b611a64"
+  },
+  "database/seeders/ContactSeeder.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "54537fe5c74c2b2bc35307d2dfcb0f89",
+    "semantic_hash": "54537fe5c74c2b2bc35307d2dfcb0f89"
+  },
+  "database/seeders/DatabaseSeeder.php": {
+    "mtime": 1779200039.6952045,
+    "ast_hash": "30680cf43027b7b8fd06f1541a753d8f",
+    "semantic_hash": "30680cf43027b7b8fd06f1541a753d8f"
+  },
+  "database/seeders/MailTemplateLogSeeder.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "98d2543acd8b2db2feacc4d5bc53552a",
+    "semantic_hash": "98d2543acd8b2db2feacc4d5bc53552a"
+  },
+  "database/seeders/MailTemplateSeeder.php": {
+    "mtime": 1779200039.6952045,
+    "ast_hash": "64d890f75da1305a3181e9c339cb8352",
+    "semantic_hash": "64d890f75da1305a3181e9c339cb8352"
+  },
+  "database/seeders/MailTemplateVersionSeeder.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "7ff523f021caa460d766296cd9ed427c",
+    "semantic_hash": "7ff523f021caa460d766296cd9ed427c"
+  },
+  "database/seeders/MailTemplatesSeeder.php": {
+    "mtime": 1779200039.6952045,
+    "ast_hash": "bb1209e9e6b2c30f6ae51b68e06b1a37",
+    "semantic_hash": "bb1209e9e6b2c30f6ae51b68e06b1a37"
+  },
+  "database/seeders/NotificationChannelSeeder.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "4c0d3182077c519ddf020bed9af8bb44",
+    "semantic_hash": "4c0d3182077c519ddf020bed9af8bb44"
+  },
+  "database/seeders/NotificationLogSeeder.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "073fb150f3d0a44de0ad0aba48f3f18a",
+    "semantic_hash": "073fb150f3d0a44de0ad0aba48f3f18a"
+  },
+  "database/seeders/NotificationSeeder.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "5c63d420d5fd2a04a735067dc0c4233a",
+    "semantic_hash": "5c63d420d5fd2a04a735067dc0c4233a"
+  },
+  "database/seeders/NotificationTemplateSeeder.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "eb7bb93bd2a4c3667fda9a7098b1d8e3",
+    "semantic_hash": "eb7bb93bd2a4c3667fda9a7098b1d8e3"
+  },
+  "database/seeders/NotificationTemplateVersionSeeder.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "572ca1838048f2b017d0ceb10c70b114",
+    "semantic_hash": "572ca1838048f2b017d0ceb10c70b114"
+  },
+  "database/seeders/NotificationTypeSeeder.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "a57d30c8bea9b66a8642d50e7caff9ed",
+    "semantic_hash": "a57d30c8bea9b66a8642d50e7caff9ed"
+  },
+  "database/seeders/NotifyDatabaseSeeder.php": {
+    "mtime": 1779200039.6952045,
+    "ast_hash": "bfabeb1b090dfc6adee911944887491f",
+    "semantic_hash": "bfabeb1b090dfc6adee911944887491f"
+  },
+  "database/seeders/NotifyThemeSeeder.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "c95fac61fe3141da64965131a377b5d2",
+    "semantic_hash": "c95fac61fe3141da64965131a377b5d2"
+  },
+  "database/seeders/NotifyThemeableSeeder.php": {
+    "mtime": 1785494467.8302655,
+    "ast_hash": "2de49d91943ba32a082649fb718b078e",
+    "semantic_hash": "2de49d91943ba32a082649fb718b078e"
+  },
+  "docs/.obsidian/app.json": {
+    "mtime": 1785494467.836632,
+    "ast_hash": "14d85097b83e4643eeb729c43285dfd9",
+    "semantic_hash": "14d85097b83e4643eeb729c43285dfd9"
+  },
+  "docs/.obsidian/appearance.json": {
+    "mtime": 1785494467.836632,
+    "ast_hash": "ad7c51df356d743301348fb47dce349a",
+    "semantic_hash": "ad7c51df356d743301348fb47dce349a"
+  },
+  "docs/.obsidian/hotkeys.json": {
+    "mtime": 1785494467.836632,
+    "ast_hash": "701b35d6feebb4ee345d8ecfb4797322",
+    "semantic_hash": "701b35d6feebb4ee345d8ecfb4797322"
+  },
+  "docs/prd.json": {
+    "mtime": 1779200039.755871,
+    "ast_hash": "f2db79497345d15bcc2fdc9c45ca3b02",
+    "semantic_hash": "f2db79497345d15bcc2fdc9c45ca3b02"
+  },
+  "docs/templates/send_template.php": {
+    "mtime": 1779200039.768871,
+    "ast_hash": "dcc1f89c38952692d0171f1671bed999",
+    "semantic_hash": "dcc1f89c38952692d0171f1671bed999"
+  },
+  "lang/de/channel.php": {
+    "mtime": 1779200039.768871,
+    "ast_hash": "6fdc648f17a871a4583f0afc965c1b50",
+    "semantic_hash": "6fdc648f17a871a4583f0afc965c1b50"
+  },
+  "lang/de/columns.php": {
+    "mtime": 1779200039.768871,
+    "ast_hash": "894ec69be08ccf0be622cbc503d55780",
+    "semantic_hash": "894ec69be08ccf0be622cbc503d55780"
+  },
+  "lang/de/contact-column.php": {
+    "mtime": 1779200039.768871,
+    "ast_hash": "393e8bcc1d2d0dafeb775edd8a1f8140",
+    "semantic_hash": "393e8bcc1d2d0dafeb775edd8a1f8140"
+  },
+  "lang/de/contact-type-enum.php": {
+    "mtime": 1779200039.768871,
+    "ast_hash": "e61dce6f33eee45f5894d8e0962d6a0b",
+    "semantic_hash": "e61dce6f33eee45f5894d8e0962d6a0b"
+  },
+  "lang/de/contact.php": {
+    "mtime": 1779200039.768871,
+    "ast_hash": "c709602d65abdf46999fd802cca4becc",
+    "semantic_hash": "c709602d65abdf46999fd802cca4becc"
+  },
+  "lang/de/contact_type.php": {
+    "mtime": 1779200039.768871,
+    "ast_hash": "cd51547fa9c6942ae182b9715d2c1056",
+    "semantic_hash": "cd51547fa9c6942ae182b9715d2c1056"
+  },
+  "lang/de/contact_type_enum.php": {
+    "mtime": 1779200039.768871,
+    "ast_hash": "0e0fb3f402212e953605aa77d3ae600d",
+    "semantic_hash": "0e0fb3f402212e953605aa77d3ae600d"
+  },
+  "lang/de/contacts.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "a06d92e41cc7ab61da0aa5487e575e7b",
+    "semantic_hash": "a06d92e41cc7ab61da0aa5487e575e7b"
+  },
+  "lang/de/corrected/send_sms.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "074d28e2ff001f378b3018befe988d0a",
+    "semantic_hash": "074d28e2ff001f378b3018befe988d0a"
+  },
+  "lang/de/create_mail_template.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "b75627622047d029d9beda8643b74071",
+    "semantic_hash": "b75627622047d029d9beda8643b74071"
+  },
+  "lang/de/dashboard.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "97d19f5d66d9cfddc00cc2a2fc7b44dd",
+    "semantic_hash": "97d19f5d66d9cfddc00cc2a2fc7b44dd"
+  },
+  "lang/de/edit_mail_template.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "bbcfde266fe19016a0c6a9144c3acc74",
+    "semantic_hash": "bbcfde266fe19016a0c6a9144c3acc74"
+  },
+  "lang/de/log.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "039aa0730c85f3b229d0afce263685f3",
+    "semantic_hash": "039aa0730c85f3b229d0afce263685f3"
+  },
+  "lang/de/mail.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "e17fa787bb5ef41bbc793b56db1ed4ff",
+    "semantic_hash": "e17fa787bb5ef41bbc793b56db1ed4ff"
+  },
+  "lang/de/mail_channel.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "0d84aafbf32c8ab8e9146b9a74b6a212",
+    "semantic_hash": "0d84aafbf32c8ab8e9146b9a74b6a212"
+  },
+  "lang/de/mail_template.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "d278103d7024e685f36348001a3636e6",
+    "semantic_hash": "d278103d7024e685f36348001a3636e6"
+  },
+  "lang/de/netfun_sms.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "dea30c373b447d103c01a3ffaa059e75",
+    "semantic_hash": "dea30c373b447d103c01a3ffaa059e75"
+  },
+  "lang/de/notification.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "b34f526eec3e10895b1dbd7a951362e1",
+    "semantic_hash": "b34f526eec3e10895b1dbd7a951362e1"
+  },
+  "lang/de/notification_channel.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "896b08d34081a517509f53a774823868",
+    "semantic_hash": "896b08d34081a517509f53a774823868"
+  },
+  "lang/de/notification_channel_enum.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "aeb9eefb3c845ae265e5b02a420451f8",
+    "semantic_hash": "aeb9eefb3c845ae265e5b02a420451f8"
+  },
+  "lang/de/notification_channels.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "912bf60d946cb2962684a21ae17f0be9",
+    "semantic_hash": "912bf60d946cb2962684a21ae17f0be9"
+  },
+  "lang/de/notification_template.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "3646829966f4cc57a5261d32c26ffee4",
+    "semantic_hash": "3646829966f4cc57a5261d32c26ffee4"
+  },
+  "lang/de/notification_templates.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "a866dc82b5064740cb0aa3e7d195ab3f",
+    "semantic_hash": "a866dc82b5064740cb0aa3e7d195ab3f"
+  },
+  "lang/de/notify.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "7f18d1fb96754e752f3892f986b1be74",
+    "semantic_hash": "7f18d1fb96754e752f3892f986b1be74"
+  },
+  "lang/de/notify_template.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "049451279220ac2d0e76d7d00be6bf81",
+    "semantic_hash": "049451279220ac2d0e76d7d00be6bf81"
+  },
+  "lang/de/notify_theme.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "a7ba51f12cad81f356f90031eb97ffab",
+    "semantic_hash": "a7ba51f12cad81f356f90031eb97ffab"
+  },
+  "lang/de/notify_themes.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "f12f9e0fa15b54aebae37b7dde85384f",
+    "semantic_hash": "f12f9e0fa15b54aebae37b7dde85384f"
+  },
+  "lang/de/send_aws_email.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "abd538f63de9e5a46479b031816cf92b",
+    "semantic_hash": "abd538f63de9e5a46479b031816cf92b"
+  },
+  "lang/de/send_email.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "f9e0be529bd7ef05103dad637381d194",
+    "semantic_hash": "f9e0be529bd7ef05103dad637381d194"
+  },
+  "lang/de/send_email_parameters.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "183c338fd9eb8b35e35149ab0cdbe546",
+    "semantic_hash": "183c338fd9eb8b35e35149ab0cdbe546"
+  },
+  "lang/de/send_firebase_push_notification.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "e086028b099745eaa949854c4682bb59",
+    "semantic_hash": "e086028b099745eaa949854c4682bb59"
+  },
+  "lang/de/send_netfun_sms.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "8ebe54514eb33bf937d20262c38cf260",
+    "semantic_hash": "8ebe54514eb33bf937d20262c38cf260"
+  },
+  "lang/de/send_netfun_sms_corrected.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "8ebe54514eb33bf937d20262c38cf260",
+    "semantic_hash": "8ebe54514eb33bf937d20262c38cf260"
+  },
+  "lang/de/send_push_notification.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "dc347e066640830b20b3df6769e9e269",
+    "semantic_hash": "dc347e066640830b20b3df6769e9e269"
+  },
+  "lang/de/send_sms.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "29c37533c39d64ba4adf9323dddfdd34",
+    "semantic_hash": "29c37533c39d64ba4adf9323dddfdd34"
+  },
+  "lang/de/send_spatie_email.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "99e3082918df7fbac7d68064e17824f2",
+    "semantic_hash": "99e3082918df7fbac7d68064e17824f2"
+  },
+  "lang/de/send_telegram.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "4f7e6a0d585984d7d40f3a2c87c65bb6",
+    "semantic_hash": "4f7e6a0d585984d7d40f3a2c87c65bb6"
+  },
+  "lang/de/send_twilio_sms.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "8d2abf9daddc40b35b4597091d058bb7",
+    "semantic_hash": "8d2abf9daddc40b35b4597091d058bb7"
+  },
+  "lang/de/send_vonage_sms.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "caa9153720bcde0a90fec014928bdb3d",
+    "semantic_hash": "caa9153720bcde0a90fec014928bdb3d"
+  },
+  "lang/de/send_whats_app.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "58c34c42bb577fe1bd58924e319ba2dd",
+    "semantic_hash": "58c34c42bb577fe1bd58924e319ba2dd"
+  },
+  "lang/de/send_whatsapp.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "91e9875396fff4f278da9bfe1172755b",
+    "semantic_hash": "91e9875396fff4f278da9bfe1172755b"
+  },
+  "lang/de/setting.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "7551a501524da092aab63c95d0f0fd2a",
+    "semantic_hash": "7551a501524da092aab63c95d0f0fd2a"
+  },
+  "lang/de/slack_notification.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "c0461558de878e50a568d611629c2d20",
+    "semantic_hash": "c0461558de878e50a568d611629c2d20"
+  },
+  "lang/de/sms.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "833d81167e607cd0390393c2e740fb82",
+    "semantic_hash": "833d81167e607cd0390393c2e740fb82"
+  },
+  "lang/de/sms_channel.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "ea523790332404bccd5fa5c0707262db",
+    "semantic_hash": "ea523790332404bccd5fa5c0707262db"
+  },
+  "lang/de/sms_driver_enum.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "c1ceb8369747308660e2ca4f8daa40ab",
+    "semantic_hash": "c1ceb8369747308660e2ca4f8daa40ab"
+  },
+  "lang/de/telegram.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "ec3c660da76f33db94789100ae15d1d4",
+    "semantic_hash": "ec3c660da76f33db94789100ae15d1d4"
+  },
+  "lang/de/telegram_channel.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "d77664a5b07902d72b7b73eedd90ce6b",
+    "semantic_hash": "d77664a5b07902d72b7b73eedd90ce6b"
+  },
+  "lang/de/template.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "4310a1458d58dba40e65e548cfaca5b7",
+    "semantic_hash": "4310a1458d58dba40e65e548cfaca5b7"
+  },
+  "lang/de/test_smtp.php": {
+    "mtime": 1779200400.2859888,
+    "ast_hash": "d3ada3188c65b6cbe4b807e9370342c0",
+    "semantic_hash": "d3ada3188c65b6cbe4b807e9370342c0"
+  },
+  "lang/de/whatsapp.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "763a9718c13deceb4130566d89e64ff5",
+    "semantic_hash": "763a9718c13deceb4130566d89e64ff5"
+  },
+  "lang/de/whatsapp_channel.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "c5cb70826fc461992cb7da85bf950c42",
+    "semantic_hash": "c5cb70826fc461992cb7da85bf950c42"
+  },
+  "lang/en/channel.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "6fdc648f17a871a4583f0afc965c1b50",
+    "semantic_hash": "6fdc648f17a871a4583f0afc965c1b50"
+  },
+  "lang/en/columns.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "11994112044db38538cb880115e6318f",
+    "semantic_hash": "11994112044db38538cb880115e6318f"
+  },
+  "lang/en/contact-column.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "2827a2d68fee784b9ea6db581e0868fc",
+    "semantic_hash": "2827a2d68fee784b9ea6db581e0868fc"
+  },
+  "lang/en/contact-type-enum.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "d738b8962b506cee13fe520b6b934dde",
+    "semantic_hash": "d738b8962b506cee13fe520b6b934dde"
+  },
+  "lang/en/contact.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "c709602d65abdf46999fd802cca4becc",
+    "semantic_hash": "c709602d65abdf46999fd802cca4becc"
+  },
+  "lang/en/contact_type.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "e7209cd9be50f76cc9518e482e85231a",
+    "semantic_hash": "e7209cd9be50f76cc9518e482e85231a"
+  },
+  "lang/en/contact_type_enum.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "a513734ef04a74c71245f0a66c214c29",
+    "semantic_hash": "a513734ef04a74c71245f0a66c214c29"
+  },
+  "lang/en/contacts.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "a06d92e41cc7ab61da0aa5487e575e7b",
+    "semantic_hash": "a06d92e41cc7ab61da0aa5487e575e7b"
+  },
+  "lang/en/corrected/send_sms.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "5da6443950b99034ee596101a7c53b1b",
+    "semantic_hash": "5da6443950b99034ee596101a7c53b1b"
+  },
+  "lang/en/create_mail_template.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "b75627622047d029d9beda8643b74071",
+    "semantic_hash": "b75627622047d029d9beda8643b74071"
+  },
+  "lang/en/dashboard.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "97d19f5d66d9cfddc00cc2a2fc7b44dd",
+    "semantic_hash": "97d19f5d66d9cfddc00cc2a2fc7b44dd"
+  },
+  "lang/en/edit_mail_template.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "bbcfde266fe19016a0c6a9144c3acc74",
+    "semantic_hash": "bbcfde266fe19016a0c6a9144c3acc74"
+  },
+  "lang/en/log.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "039aa0730c85f3b229d0afce263685f3",
+    "semantic_hash": "039aa0730c85f3b229d0afce263685f3"
+  },
+  "lang/en/mail.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "c2df90370630d35c558a52f73b9623f5",
+    "semantic_hash": "c2df90370630d35c558a52f73b9623f5"
+  },
+  "lang/en/mail_template.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "dcbd0b362545f798259fcac35ec8432a",
+    "semantic_hash": "dcbd0b362545f798259fcac35ec8432a"
+  },
+  "lang/en/notification.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "b34f526eec3e10895b1dbd7a951362e1",
+    "semantic_hash": "b34f526eec3e10895b1dbd7a951362e1"
+  },
+  "lang/en/notification_template.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "66867d3b34fc21f0ae177a21d2a8fb3e",
+    "semantic_hash": "66867d3b34fc21f0ae177a21d2a8fb3e"
+  },
+  "lang/en/notify.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "7f18d1fb96754e752f3892f986b1be74",
+    "semantic_hash": "7f18d1fb96754e752f3892f986b1be74"
+  },
+  "lang/en/notify_theme.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "a7ba51f12cad81f356f90031eb97ffab",
+    "semantic_hash": "a7ba51f12cad81f356f90031eb97ffab"
+  },
+  "lang/en/notify_themes.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "f12f9e0fa15b54aebae37b7dde85384f",
+    "semantic_hash": "f12f9e0fa15b54aebae37b7dde85384f"
+  },
+  "lang/en/send_aws_email.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "abd538f63de9e5a46479b031816cf92b",
+    "semantic_hash": "abd538f63de9e5a46479b031816cf92b"
+  },
+  "lang/en/send_email.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "536baf2a2f6a359bf4fed0c9f633ff8a",
+    "semantic_hash": "536baf2a2f6a359bf4fed0c9f633ff8a"
+  },
+  "lang/en/send_email_parameters.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "183c338fd9eb8b35e35149ab0cdbe546",
+    "semantic_hash": "183c338fd9eb8b35e35149ab0cdbe546"
+  },
+  "lang/en/send_firebase_push_notification.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "e086028b099745eaa949854c4682bb59",
+    "semantic_hash": "e086028b099745eaa949854c4682bb59"
+  },
+  "lang/en/send_netfun_sms.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "8ebe54514eb33bf937d20262c38cf260",
+    "semantic_hash": "8ebe54514eb33bf937d20262c38cf260"
+  },
+  "lang/en/send_netfun_sms_corrected.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "8ebe54514eb33bf937d20262c38cf260",
+    "semantic_hash": "8ebe54514eb33bf937d20262c38cf260"
+  },
+  "lang/en/send_push_notification.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "dc347e066640830b20b3df6769e9e269",
+    "semantic_hash": "dc347e066640830b20b3df6769e9e269"
+  },
+  "lang/en/send_sms.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "29c37533c39d64ba4adf9323dddfdd34",
+    "semantic_hash": "29c37533c39d64ba4adf9323dddfdd34"
+  },
+  "lang/en/send_spatie_email.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "99e3082918df7fbac7d68064e17824f2",
+    "semantic_hash": "99e3082918df7fbac7d68064e17824f2"
+  },
+  "lang/en/send_telegram.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "4f7e6a0d585984d7d40f3a2c87c65bb6",
+    "semantic_hash": "4f7e6a0d585984d7d40f3a2c87c65bb6"
+  },
+  "lang/en/send_whats_app.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "58c34c42bb577fe1bd58924e319ba2dd",
+    "semantic_hash": "58c34c42bb577fe1bd58924e319ba2dd"
+  },
+  "lang/en/send_whatsapp.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "91e9875396fff4f278da9bfe1172755b",
+    "semantic_hash": "91e9875396fff4f278da9bfe1172755b"
+  },
+  "lang/en/setting.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "7551a501524da092aab63c95d0f0fd2a",
+    "semantic_hash": "7551a501524da092aab63c95d0f0fd2a"
+  },
+  "lang/en/slack_notification.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "c0461558de878e50a568d611629c2d20",
+    "semantic_hash": "c0461558de878e50a568d611629c2d20"
+  },
+  "lang/en/sms.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "19c98fd4a26d0b4935610a4165d8d1cf",
+    "semantic_hash": "19c98fd4a26d0b4935610a4165d8d1cf"
+  },
+  "lang/en/sms_driver_enum.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "205c8da9731cb336b656252f5287df54",
+    "semantic_hash": "205c8da9731cb336b656252f5287df54"
+  },
+  "lang/en/telegram.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "ec3c660da76f33db94789100ae15d1d4",
+    "semantic_hash": "ec3c660da76f33db94789100ae15d1d4"
+  },
+  "lang/en/template.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "24496da5bc12785bebd54841b051db3c",
+    "semantic_hash": "24496da5bc12785bebd54841b051db3c"
+  },
+  "lang/en/test_smtp.php": {
+    "mtime": 1779200400.2859888,
+    "ast_hash": "14bf0ef9b2bd6cd9db966d41765b6905",
+    "semantic_hash": "14bf0ef9b2bd6cd9db966d41765b6905"
+  },
+  "lang/en/whatsapp.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "a2023a420506a7722ec66c8c92bfc176",
+    "semantic_hash": "a2023a420506a7722ec66c8c92bfc176"
+  },
+  "lang/es/contact_type_enum.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "8570fcdda0da74b54e3b9e7e4be573e1",
+    "semantic_hash": "8570fcdda0da74b54e3b9e7e4be573e1"
+  },
+  "lang/es/mail_template.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "51e06b189ae4390492bfc1117cad6c58",
+    "semantic_hash": "51e06b189ae4390492bfc1117cad6c58"
+  },
+  "lang/es/test_smtp.php": {
+    "mtime": 1779200400.2859888,
+    "ast_hash": "34262709feef9a066c84e5df4494bf5e",
+    "semantic_hash": "34262709feef9a066c84e5df4494bf5e"
+  },
+  "lang/fr/contact_type_enum.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "40d490bfb0b68ffe0ecb89bcb723aa52",
+    "semantic_hash": "40d490bfb0b68ffe0ecb89bcb723aa52"
+  },
+  "lang/fr/test_smtp.php": {
+    "mtime": 1779200400.2859888,
+    "ast_hash": "9d2161ce5d2ae32c90098cbd8251baf9",
+    "semantic_hash": "9d2161ce5d2ae32c90098cbd8251baf9"
+  },
+  "lang/hi/mail_template.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "25a5082531b6f325e0018b104d5a73be",
+    "semantic_hash": "25a5082531b6f325e0018b104d5a73be"
+  },
+  "lang/it/actions.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "02ea55d29ddb9c72adb52d0849f1e1c9",
+    "semantic_hash": "02ea55d29ddb9c72adb52d0849f1e1c9"
+  },
+  "lang/it/channel.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "042440791238b9e170baf02caf4f921e",
+    "semantic_hash": "042440791238b9e170baf02caf4f921e"
+  },
+  "lang/it/channel_checkbox_list.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "6597857dc8f668d0c89311087c42f34b",
+    "semantic_hash": "6597857dc8f668d0c89311087c42f34b"
+  },
+  "lang/it/channel_enum.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "81a310a0fe5d296f2d2772fb2fe5a598",
+    "semantic_hash": "81a310a0fe5d296f2d2772fb2fe5a598"
+  },
+  "lang/it/columns.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "c50a7f4b2959cc2de0998017a43966d0",
+    "semantic_hash": "c50a7f4b2959cc2de0998017a43966d0"
+  },
+  "lang/it/contact-column.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "67f579d27120675cc28ea5afd2d87623",
+    "semantic_hash": "67f579d27120675cc28ea5afd2d87623"
+  },
+  "lang/it/contact-type-enum.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "d8909a80ecd30e85d6d5e66d6069ff71",
+    "semantic_hash": "d8909a80ecd30e85d6d5e66d6069ff71"
+  },
+  "lang/it/contact.php": {
+    "mtime": 1781209023.087926,
+    "ast_hash": "3436a93c73e595b98e0a5e49d04041f9",
+    "semantic_hash": "3436a93c73e595b98e0a5e49d04041f9"
+  },
+  "lang/it/contact_test_proxy.php": {
+    "mtime": 1781209023.087926,
+    "ast_hash": "4f6ad0e64245384709ba4fe2be0f5881",
+    "semantic_hash": "4f6ad0e64245384709ba4fe2be0f5881"
+  },
+  "lang/it/contact_type.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "160d5af617adbfff0237dab5727c99cf",
+    "semantic_hash": "160d5af617adbfff0237dab5727c99cf"
+  },
+  "lang/it/contact_type_enum.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "aeb7f97f327cc526f3454bd773802727",
+    "semantic_hash": "aeb7f97f327cc526f3454bd773802727"
+  },
+  "lang/it/contacts.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "8e55e1e2c50b17a617a054ac2d5d023d",
+    "semantic_hash": "8e55e1e2c50b17a617a054ac2d5d023d"
+  },
+  "lang/it/corrected/send_sms.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "03aaa7410539659b385354b93e5bdef8",
+    "semantic_hash": "03aaa7410539659b385354b93e5bdef8"
+  },
+  "lang/it/create_mail_template.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "4c7162a4bfb744405055e4768be023df",
+    "semantic_hash": "4c7162a4bfb744405055e4768be023df"
+  },
+  "lang/it/dashboard.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "f8753c82aeddc0becb20de455db968d2",
+    "semantic_hash": "f8753c82aeddc0becb20de455db968d2"
+  },
+  "lang/it/edit_mail_template.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "ead7ae2d41242ff1e6b25bd0a9b01359",
+    "semantic_hash": "ead7ae2d41242ff1e6b25bd0a9b01359"
+  },
+  "lang/it/html_layout_path_select.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "f624f296ba8d4fa6fc2946db90d0cf7e",
+    "semantic_hash": "f624f296ba8d4fa6fc2946db90d0cf7e"
+  },
+  "lang/it/linkable.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "9d52b25b0e744d11519c73265903c137",
+    "semantic_hash": "9d52b25b0e744d11519c73265903c137"
+  },
+  "lang/it/log.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "9d87f47abd6feabc96dc2bcae454510d",
+    "semantic_hash": "9d87f47abd6feabc96dc2bcae454510d"
+  },
+  "lang/it/mail.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "f04ab837d1100c6e29d766333768caed",
+    "semantic_hash": "f04ab837d1100c6e29d766333768caed"
+  },
+  "lang/it/mail_template.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "af0d88c7697fd0e8ade7ba4076c82538",
+    "semantic_hash": "af0d88c7697fd0e8ade7ba4076c82538"
+  },
+  "lang/it/mail_template_select.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "7cd4c6e0311976485e61e076dce01ddd",
+    "semantic_hash": "7cd4c6e0311976485e61e076dce01ddd"
+  },
+  "lang/it/mail_templates.php": {
+    "mtime": 1781619772.9457812,
+    "ast_hash": "c0691f69af924e38e09667c56d1c7a94",
+    "semantic_hash": "c0691f69af924e38e09667c56d1c7a94"
+  },
+  "lang/it/notification.php": {
+    "mtime": 1781209023.087926,
+    "ast_hash": "e8df008c89b039fc70ce1ca79930027c",
+    "semantic_hash": "e8df008c89b039fc70ce1ca79930027c"
+  },
+  "lang/it/notification_template.php": {
+    "mtime": 1781209023.087926,
+    "ast_hash": "42cc39383e32a4e6fcc4a31f4ac711e4",
+    "semantic_hash": "42cc39383e32a4e6fcc4a31f4ac711e4"
+  },
+  "lang/it/notification_templates.php": {
+    "mtime": 1781619772.9464252,
+    "ast_hash": "b158e8ea57bfefd1b3ce30913a1d5058",
+    "semantic_hash": "b158e8ea57bfefd1b3ce30913a1d5058"
+  },
+  "lang/it/notification_test_proxy.php": {
+    "mtime": 1781190301.5532713,
+    "ast_hash": "202a45e24a50716b59411250af8c5b2c",
+    "semantic_hash": "202a45e24a50716b59411250af8c5b2c"
+  },
+  "lang/it/notifications.php": {
+    "mtime": 1781619772.9464252,
+    "ast_hash": "31b1c2bc1d69101b8bd0e0a95146cc51",
+    "semantic_hash": "31b1c2bc1d69101b8bd0e0a95146cc51"
+  },
+  "lang/it/notify.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "676f27abc003c49c69b98d80a8134f36",
+    "semantic_hash": "676f27abc003c49c69b98d80a8134f36"
+  },
+  "lang/it/notify_theme.php": {
+    "mtime": 1781190307.117166,
+    "ast_hash": "c4938a6274b6aaaf7efa5adb61e7b6a2",
+    "semantic_hash": "c4938a6274b6aaaf7efa5adb61e7b6a2"
+  },
+  "lang/it/notify_theme_test_proxy.php": {
+    "mtime": 1781190306.5079858,
+    "ast_hash": "4f6ad0e64245384709ba4fe2be0f5881",
+    "semantic_hash": "4f6ad0e64245384709ba4fe2be0f5881"
+  },
+  "lang/it/notify_themes.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "355f3e8baab391850d883a605274999f",
+    "semantic_hash": "355f3e8baab391850d883a605274999f"
+  },
+  "lang/it/preview_mail_template_test_proxy.php": {
+    "mtime": 1781190300.9801981,
+    "ast_hash": "b6a0bc9a19a3b5551d6e9eb03c6bf2dd",
+    "semantic_hash": "b6a0bc9a19a3b5551d6e9eb03c6bf2dd"
+  },
+  "lang/it/send_aws_email.php": {
+    "mtime": 1779200039.7732043,
+    "ast_hash": "d8dbcf8e5848c5484f7aa92850ef6f21",
+    "semantic_hash": "d8dbcf8e5848c5484f7aa92850ef6f21"
+  },
+  "lang/it/send_email.php": {
+    "mtime": 1779822270.4175818,
+    "ast_hash": "4241da7a7a1e195571c7b0829bfe2d6f",
+    "semantic_hash": "4241da7a7a1e195571c7b0829bfe2d6f"
+  },
+  "lang/it/send_email_parameters.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "683627d1aee9d109f0346e2e49c18fe4",
+    "semantic_hash": "683627d1aee9d109f0346e2e49c18fe4"
+  },
+  "lang/it/send_firebase_push_notification.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "fa7159fcddde8007fae0bb83cd08bc2c",
+    "semantic_hash": "fa7159fcddde8007fae0bb83cd08bc2c"
+  },
+  "lang/it/send_netfun_sms.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "521ef66a4a5f40eed1e1ca905d5bd447",
+    "semantic_hash": "521ef66a4a5f40eed1e1ca905d5bd447"
+  },
+  "lang/it/send_netfun_sms_corrected.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "ce16c4430730c3a7966dff16c449185c",
+    "semantic_hash": "ce16c4430730c3a7966dff16c449185c"
+  },
+  "lang/it/send_notification_bulk.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "fb2b1ed8e0fb6ce4d4f6b77a7c831906",
+    "semantic_hash": "fb2b1ed8e0fb6ce4d4f6b77a7c831906"
+  },
+  "lang/it/send_push_notification.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "32cedb97aeb64fb0baf22161d9c45c63",
+    "semantic_hash": "32cedb97aeb64fb0baf22161d9c45c63"
+  },
+  "lang/it/send_records_notification_bulk.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "a2871bd3a489fb8825cda4181ea07586",
+    "semantic_hash": "a2871bd3a489fb8825cda4181ea07586"
+  },
+  "lang/it/send_sms.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "b1e4103f0964ba26dcf89b3eb56889f4",
+    "semantic_hash": "b1e4103f0964ba26dcf89b3eb56889f4"
+  },
+  "lang/it/send_spatie_email.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "7cd01bc65165d703939a56d53cc1bd09",
+    "semantic_hash": "7cd01bc65165d703939a56d53cc1bd09"
+  },
+  "lang/it/send_telegram.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "12aa48a7b1504a8708ea48c7c5427837",
+    "semantic_hash": "12aa48a7b1504a8708ea48c7c5427837"
+  },
+  "lang/it/send_whats_app.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "2a753a92a3c094ab0bc4aefcb7f15051",
+    "semantic_hash": "2a753a92a3c094ab0bc4aefcb7f15051"
+  },
+  "lang/it/send_whatsapp.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "4e0157a08fc146686cf1995500d87580",
+    "semantic_hash": "4e0157a08fc146686cf1995500d87580"
+  },
+  "lang/it/setting.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "3e442178d543db6d9e0728c9dfeb96e6",
+    "semantic_hash": "3e442178d543db6d9e0728c9dfeb96e6"
+  },
+  "lang/it/slack_notification.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "b44d62b913e0c8e09ac8b90f31442b6f",
+    "semantic_hash": "b44d62b913e0c8e09ac8b90f31442b6f"
+  },
+  "lang/it/sms.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "acf2558dfaf9380b56da1defa1d58794",
+    "semantic_hash": "acf2558dfaf9380b56da1defa1d58794"
+  },
+  "lang/it/sms_driver_enum.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "c5be20b17d282b27e72406a7413d907f",
+    "semantic_hash": "c5be20b17d282b27e72406a7413d907f"
+  },
+  "lang/it/telegram.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "203e8f8514bb338cf616be6766f0ba1c",
+    "semantic_hash": "203e8f8514bb338cf616be6766f0ba1c"
+  },
+  "lang/it/template.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "90a76ea420d44148525858461fd396ac",
+    "semantic_hash": "90a76ea420d44148525858461fd396ac"
+  },
+  "lang/it/test_smtp.php": {
+    "mtime": 1779200400.2859888,
+    "ast_hash": "33922a6cce7f6ca1bf3d873e9fe3c026",
+    "semantic_hash": "33922a6cce7f6ca1bf3d873e9fe3c026"
+  },
+  "lang/it/whatsapp.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "03d891e5cc0e4f55814ea04bc37e2796",
+    "semantic_hash": "03d891e5cc0e4f55814ea04bc37e2796"
+  },
+  "lang/pl/contact_type_enum.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "cff7e52672a229864beb0d1cbc28e5fc",
+    "semantic_hash": "cff7e52672a229864beb0d1cbc28e5fc"
+  },
+  "lang/pt/mail_template.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "e9619fc4ff99182daa14fe232a0db99b",
+    "semantic_hash": "e9619fc4ff99182daa14fe232a0db99b"
+  },
+  "lang/pt/test_smtp.php": {
+    "mtime": 1779200400.2859888,
+    "ast_hash": "c1a25f6e786ef34e7c7a32fdd22c1c6f",
+    "semantic_hash": "c1a25f6e786ef34e7c7a32fdd22c1c6f"
+  },
+  "lang/ru/mail_template.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "a5927558cf2e5a458a1f93ab86ed63b2",
+    "semantic_hash": "a5927558cf2e5a458a1f93ab86ed63b2"
+  },
+  "lang/zh/mail_template.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "031fd8c3601954db888857a0de3ac84e",
+    "semantic_hash": "031fd8c3601954db888857a0de3ac84e"
+  },
+  "lang/zh/test_smtp.php": {
+    "mtime": 1779200400.2859888,
+    "ast_hash": "3686655b22a3995367a13a1d91ec6b16",
+    "semantic_hash": "3686655b22a3995367a13a1d91ec6b16"
+  },
+  "module.json": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "29da0bdfee32fb67d4e89ef99ab9a85d",
+    "semantic_hash": "29da0bdfee32fb67d4e89ef99ab9a85d"
+  },
+  "package.json": {
+    "mtime": 1781177487.4832618,
+    "ast_hash": "07fc9158f9b91d3214b621ff821e1937",
+    "semantic_hash": "07fc9158f9b91d3214b621ff821e1937"
+  },
+  "pint.json": {
+    "mtime": 1785494467.9549322,
+    "ast_hash": "7d127cba738d1d739724952d6412e911",
+    "semantic_hash": "7d127cba738d1d739724952d6412e911"
+  },
+  "postcss.config.js": {
+    "mtime": 1780891392.3777187,
+    "ast_hash": "854b38759e7a8b4b82306ae2d9a3a833",
+    "semantic_hash": "854b38759e7a8b4b82306ae2d9a3a833"
+  },
+  "report.json": {
+    "mtime": 1785494467.9549322,
+    "ast_hash": "133cbb8668c363b99ec9f03fec2466c6",
+    "semantic_hash": "133cbb8668c363b99ec9f03fec2466c6"
+  },
+  "reports/eslint-report.json": {
+    "mtime": 1781772805.8928,
+    "ast_hash": "2b6dd9a9c8eab061dbe44461bd8548ca",
+    "semantic_hash": "2b6dd9a9c8eab061dbe44461bd8548ca"
+  },
+  "reports/htmlhint-report.json": {
+    "mtime": 1781772805.8928,
+    "ast_hash": "58e0494c51d30eb3494f7c9198986bb9",
+    "semantic_hash": "58e0494c51d30eb3494f7c9198986bb9"
+  },
+  "reports/laravel-pint-report.json": {
+    "mtime": 1781772805.8928,
+    "ast_hash": "7058a2cf97cd610840699f9c2506e398",
+    "semantic_hash": "7058a2cf97cd610840699f9c2506e398"
+  },
+  "reports/markdownlint-report.json": {
+    "mtime": 1781772805.8928,
+    "ast_hash": "85ad97d1f18b053bde6036b60972c471",
+    "semantic_hash": "85ad97d1f18b053bde6036b60972c471"
+  },
+  "reports/php-cs-fixer-report.json": {
+    "mtime": 1781772805.8928,
+    "ast_hash": "1e9ae6475bc8c35fb9c063abf660999c",
+    "semantic_hash": "1e9ae6475bc8c35fb9c063abf660999c"
+  },
+  "reports/psalm-report.json": {
+    "mtime": 1781772805.8928,
+    "ast_hash": "3babbbff0edc78dade9f69092c2bf6dc",
+    "semantic_hash": "3babbbff0edc78dade9f69092c2bf6dc"
+  },
+  "reports/stylelint-report.json": {
+    "mtime": 1781772805.8928,
+    "ast_hash": "af50a379417d516f4fcc9067cb948059",
+    "semantic_hash": "af50a379417d516f4fcc9067cb948059"
+  },
+  "resources/assets/js/app.js": {
+    "mtime": 1785496435.1528203,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "resources/lang/en/channel_enum.php": {
+    "mtime": 1779200400.2939887,
+    "ast_hash": "fbedd94eb0c17c4d5d5f41338f77354e",
+    "semantic_hash": "fbedd94eb0c17c4d5d5f41338f77354e"
+  },
+  "resources/lang/en/mail.php": {
+    "mtime": 1779200400.2939887,
+    "ast_hash": "356a29b3b58cf1e5264a960003d95122",
+    "semantic_hash": "356a29b3b58cf1e5264a960003d95122"
+  },
+  "resources/lang/en/sms.php": {
+    "mtime": 1779200400.2939887,
+    "ast_hash": "0d40b05da6c82741e8ae1596e05b711f",
+    "semantic_hash": "0d40b05da6c82741e8ae1596e05b711f"
+  },
+  "resources/lang/it/channel_enum.php": {
+    "mtime": 1779200400.2939887,
+    "ast_hash": "fbedd94eb0c17c4d5d5f41338f77354e",
+    "semantic_hash": "fbedd94eb0c17c4d5d5f41338f77354e"
+  },
+  "resources/lang/it/contact_type_enum.php": {
+    "mtime": 1779200400.2939887,
+    "ast_hash": "a1c4c515bf0813b6238105d948c61df5",
+    "semantic_hash": "a1c4c515bf0813b6238105d948c61df5"
+  },
+  "resources/lang/it/mail.php": {
+    "mtime": 1779200400.2939887,
+    "ast_hash": "80de44619ebe59614e59b0167f46aca7",
+    "semantic_hash": "80de44619ebe59614e59b0167f46aca7"
+  },
+  "resources/lang/it/mail_template.php": {
+    "mtime": 1779200400.2939887,
+    "ast_hash": "e0247f5dfeb2e7aea13742745a0aa68f",
+    "semantic_hash": "e0247f5dfeb2e7aea13742745a0aa68f"
+  },
+  "resources/lang/it/notification.php": {
+    "mtime": 1779200400.2939887,
+    "ast_hash": "acad9f8c1f63192c687525616b233cc6",
+    "semantic_hash": "acad9f8c1f63192c687525616b233cc6"
+  },
+  "resources/lang/it/send_aws_email.php": {
+    "mtime": 1779200400.2939887,
+    "ast_hash": "6e000b73392525fd4e20c0f372ad004d",
+    "semantic_hash": "6e000b73392525fd4e20c0f372ad004d"
+  },
+  "resources/lang/it/send_sms.php": {
+    "mtime": 1779200400.2939887,
+    "ast_hash": "bb58736843a9532780c282b7e101ad21",
+    "semantic_hash": "bb58736843a9532780c282b7e101ad21"
+  },
+  "resources/lang/it/sms.php": {
+    "mtime": 1779200400.2939887,
+    "ast_hash": "44f78df080bf4276c2f9e1144897bb8b",
+    "semantic_hash": "44f78df080bf4276c2f9e1144897bb8b"
+  },
+  "resources/lang/it/template.php": {
+    "mtime": 1779200400.2939887,
+    "ast_hash": "35c7ffe10e99bf70ea5b7a6f3578b535",
+    "semantic_hash": "35c7ffe10e99bf70ea5b7a6f3578b535"
+  },
+  "resources/views/admin/dashboard/item.blade.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "cba54c98a08e46e9b705f27c32a1a3cb",
+    "semantic_hash": "cba54c98a08e46e9b705f27c32a1a3cb"
+  },
+  "resources/views/admin/home/acts/try_alert.blade.php": {
+    "mtime": 1779200039.7775378,
+    "ast_hash": "82a0bfdce7b0ccd5cd0f925133334ce9",
+    "semantic_hash": "82a0bfdce7b0ccd5cd0f925133334ce9"
+  },
+  "resources/views/admin/index/acts/manage_template.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "d224f410d55320e43e92dbf12e550baa",
+    "semantic_hash": "d224f410d55320e43e92dbf12e550baa"
+  },
+  "resources/views/components/mail/message.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "9918f20acb1e4911cd074e18e0e52a12",
+    "semantic_hash": "9918f20acb1e4911cd074e18e0e52a12"
+  },
+  "resources/views/email.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "381f53425c4f7b324c47ea7f9ad16767",
+    "semantic_hash": "381f53425c4f7b324c47ea7f9ad16767"
+  },
+  "resources/views/emails/appointments/cancelled.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "77bcb48b54eb05639806ad04c05bbce0",
+    "semantic_hash": "77bcb48b54eb05639806ad04c05bbce0"
+  },
+  "resources/views/emails/appointments/confirmed.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "476803312aa17528ec4604056823f745",
+    "semantic_hash": "476803312aa17528ec4604056823f745"
+  },
+  "resources/views/emails/appointments/generic.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "2c87cf51f04e3c0f8b35d8377148d0bf",
+    "semantic_hash": "2c87cf51f04e3c0f8b35d8377148d0bf"
+  },
+  "resources/views/emails/appointments/reminder.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "d33fe6da10d2db79a868ece66374ebfd",
+    "semantic_hash": "d33fe6da10d2db79a868ece66374ebfd"
+  },
+  "resources/views/emails/appointments/rescheduled.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "0350a7ce36bbbaadbbd35d8569473633",
+    "semantic_hash": "0350a7ce36bbbaadbbd35d8569473633"
+  },
+  "resources/views/emails/email-data-email.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "f67e674d968ae8ee855aedd8c3740e17",
+    "semantic_hash": "f67e674d968ae8ee855aedd8c3740e17"
+  },
+  "resources/views/emails/html.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "a47c6fcc5c19145e83ae164a963a3eea",
+    "semantic_hash": "a47c6fcc5c19145e83ae164a963a3eea"
+  },
+  "resources/views/emails/samples/ark.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "2ec47b61e13a151f7b4e964f8bb157d0",
+    "semantic_hash": "2ec47b61e13a151f7b4e964f8bb157d0"
+  },
+  "resources/views/emails/samples/minty.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "a45947fb4d197cb6d97745b2fc111b7d",
+    "semantic_hash": "a45947fb4d197cb6d97745b2fc111b7d"
+  },
+  "resources/views/emails/samples/sunny.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "c4afd5bb7c7648cd2f5a7c5e4afc3316",
+    "semantic_hash": "c4afd5bb7c7648cd2f5a7c5e4afc3316"
+  },
+  "resources/views/emails/samples/widgets.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "2f1ef7fcaa6db1c543e39fe46fe8ad64",
+    "semantic_hash": "2f1ef7fcaa6db1c543e39fe46fe8ad64"
+  },
+  "resources/views/emails/template.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "943d2d7c147d05640eddb169b2691283",
+    "semantic_hash": "943d2d7c147d05640eddb169b2691283"
+  },
+  "resources/views/emails/templates/ark.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "d38d83c06cb5d4ae799c6dba04e3b769",
+    "semantic_hash": "d38d83c06cb5d4ae799c6dba04e3b769"
+  },
+  "resources/views/emails/templates/ark/contentEnd.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "eadb716cb0e643cd5432460511727e01",
+    "semantic_hash": "eadb716cb0e643cd5432460511727e01"
+  },
+  "resources/views/emails/templates/ark/contentStart.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "92e5a040c41016373782155b0c92b14e",
+    "semantic_hash": "92e5a040c41016373782155b0c92b14e"
+  },
+  "resources/views/emails/templates/ark/contentend.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "eadb716cb0e643cd5432460511727e01",
+    "semantic_hash": "eadb716cb0e643cd5432460511727e01"
+  },
+  "resources/views/emails/templates/ark/contentstart.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "92e5a040c41016373782155b0c92b14e",
+    "semantic_hash": "92e5a040c41016373782155b0c92b14e"
+  },
+  "resources/views/emails/templates/ark/heading.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "4db625d4bea6059e0109b6f175d7d201",
+    "semantic_hash": "4db625d4bea6059e0109b6f175d7d201"
+  },
+  "resources/views/emails/templates/ark/mail.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "ec8f03069a94024bc456c27c52faacf4",
+    "semantic_hash": "ec8f03069a94024bc456c27c52faacf4"
+  },
+  "resources/views/emails/templates/ark/wideImage.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "d71ee9cb8903faa907bfce45ce49dfea",
+    "semantic_hash": "d71ee9cb8903faa907bfce45ce49dfea"
+  },
+  "resources/views/emails/templates/ark/wideimage.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "d71ee9cb8903faa907bfce45ce49dfea",
+    "semantic_hash": "d71ee9cb8903faa907bfce45ce49dfea"
+  },
+  "resources/views/emails/templates/empty.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "9405effea6057cc669c2a30bcbe861d8",
+    "semantic_hash": "9405effea6057cc669c2a30bcbe861d8"
+  },
+  "resources/views/emails/templates/item.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "b81273b1778cdabcd8cd5fa88167b50c",
+    "semantic_hash": "b81273b1778cdabcd8cd5fa88167b50c"
+  },
+  "resources/views/emails/templates/minty.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "017791ea91517163efd0e6b0c56324e7",
+    "semantic_hash": "017791ea91517163efd0e6b0c56324e7"
+  },
+  "resources/views/emails/templates/minty/button.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "c243f91bd5aa94a2c4a1132479e2704b",
+    "semantic_hash": "c243f91bd5aa94a2c4a1132479e2704b"
+  },
+  "resources/views/emails/templates/minty/contentCenteredEnd.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "f52f79e6e4ea5b54e4e4e4ad7415e75a",
+    "semantic_hash": "f52f79e6e4ea5b54e4e4e4ad7415e75a"
+  },
+  "resources/views/emails/templates/minty/contentCenteredStart.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "e43731d673cdb44d03cdecbf5ca60ae4",
+    "semantic_hash": "e43731d673cdb44d03cdecbf5ca60ae4"
+  },
+  "resources/views/emails/templates/minty/contentEnd.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "e59d3580cabfb5a0e59b27c7ecd58834",
+    "semantic_hash": "e59d3580cabfb5a0e59b27c7ecd58834"
+  },
+  "resources/views/emails/templates/minty/contentStart.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "8ee913c69038dc61838b7ea17190c53c",
+    "semantic_hash": "8ee913c69038dc61838b7ea17190c53c"
+  },
+  "resources/views/emails/templates/minty/contentcenteredend.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "f52f79e6e4ea5b54e4e4e4ad7415e75a",
+    "semantic_hash": "f52f79e6e4ea5b54e4e4e4ad7415e75a"
+  },
+  "resources/views/emails/templates/minty/contentcenteredstart.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "e43731d673cdb44d03cdecbf5ca60ae4",
+    "semantic_hash": "e43731d673cdb44d03cdecbf5ca60ae4"
+  },
+  "resources/views/emails/templates/minty/contentend.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "e59d3580cabfb5a0e59b27c7ecd58834",
+    "semantic_hash": "e59d3580cabfb5a0e59b27c7ecd58834"
+  },
+  "resources/views/emails/templates/minty/contentstart.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "8ee913c69038dc61838b7ea17190c53c",
+    "semantic_hash": "8ee913c69038dc61838b7ea17190c53c"
+  },
+  "resources/views/emails/templates/minty/mail.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "cdc48fac073853246ae5bf4165f6186f",
+    "semantic_hash": "cdc48fac073853246ae5bf4165f6186f"
+  },
+  "resources/views/emails/templates/sunny.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "9f6d4ba0d69a290d44fbcb5f8cfaf0c4",
+    "semantic_hash": "9f6d4ba0d69a290d44fbcb5f8cfaf0c4"
+  },
+  "resources/views/emails/templates/sunny/button.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "6b8e5c228cd743df35c9c5313518d641",
+    "semantic_hash": "6b8e5c228cd743df35c9c5313518d641"
+  },
+  "resources/views/emails/templates/sunny/contentEnd.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "fb18604ffaa46af04e5b5dc638017b5d",
+    "semantic_hash": "fb18604ffaa46af04e5b5dc638017b5d"
+  },
+  "resources/views/emails/templates/sunny/contentStart.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "060433e316c679eeabfe9613fc73dc48",
+    "semantic_hash": "060433e316c679eeabfe9613fc73dc48"
+  },
+  "resources/views/emails/templates/sunny/contentend.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "fb18604ffaa46af04e5b5dc638017b5d",
+    "semantic_hash": "fb18604ffaa46af04e5b5dc638017b5d"
+  },
+  "resources/views/emails/templates/sunny/contentstart.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "060433e316c679eeabfe9613fc73dc48",
+    "semantic_hash": "060433e316c679eeabfe9613fc73dc48"
+  },
+  "resources/views/emails/templates/sunny/heading.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "2df495f5bbb3ff20411955e67c6e1f8d",
+    "semantic_hash": "2df495f5bbb3ff20411955e67c6e1f8d"
+  },
+  "resources/views/emails/templates/sunny/mail.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "3397b4f49f8857fe4792883d99bef93f",
+    "semantic_hash": "3397b4f49f8857fe4792883d99bef93f"
+  },
+  "resources/views/emails/templates/sunny/wideImage.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "6675601d34b9df9e047ebd3e7edffcc2",
+    "semantic_hash": "6675601d34b9df9e047ebd3e7edffcc2"
+  },
+  "resources/views/emails/templates/sunny/wideimage.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "6675601d34b9df9e047ebd3e7edffcc2",
+    "semantic_hash": "6675601d34b9df9e047ebd3e7edffcc2"
+  },
+  "resources/views/emails/templates/widgets.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "de64a0b145fa9e545ecd81866fbc0322",
+    "semantic_hash": "de64a0b145fa9e545ecd81866fbc0322"
+  },
+  "resources/views/emails/templates/widgets/articleEnd.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "0299adf7938be20176814bfcc0c8c87c",
+    "semantic_hash": "0299adf7938be20176814bfcc0c8c87c"
+  },
+  "resources/views/emails/templates/widgets/articleStart.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "e277bd16ce935a3f5874fad22fa1aeb6",
+    "semantic_hash": "e277bd16ce935a3f5874fad22fa1aeb6"
+  },
+  "resources/views/emails/templates/widgets/articleend.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "0299adf7938be20176814bfcc0c8c87c",
+    "semantic_hash": "0299adf7938be20176814bfcc0c8c87c"
+  },
+  "resources/views/emails/templates/widgets/articlestart.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "e277bd16ce935a3f5874fad22fa1aeb6",
+    "semantic_hash": "e277bd16ce935a3f5874fad22fa1aeb6"
+  },
+  "resources/views/emails/templates/widgets/mail.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "19dfc3ff18055f44e634343601268878",
+    "semantic_hash": "19dfc3ff18055f44e634343601268878"
+  },
+  "resources/views/emails/templates/widgets/newfeatureEnd.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "0299adf7938be20176814bfcc0c8c87c",
+    "semantic_hash": "0299adf7938be20176814bfcc0c8c87c"
+  },
+  "resources/views/emails/templates/widgets/newfeatureStart.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "3db54e18fc1221e1fa35cb22d9e61bae",
+    "semantic_hash": "3db54e18fc1221e1fa35cb22d9e61bae"
+  },
+  "resources/views/emails/templates/widgets/newfeatureend.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "0299adf7938be20176814bfcc0c8c87c",
+    "semantic_hash": "0299adf7938be20176814bfcc0c8c87c"
+  },
+  "resources/views/emails/templates/widgets/newfeaturestart.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "23581d6e7ab43286529379d7d664b6e8",
+    "semantic_hash": "23581d6e7ab43286529379d7d664b6e8"
+  },
+  "resources/views/emails/text.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "35716e649d9c63de0f032c021bee7d81",
+    "semantic_hash": "35716e649d9c63de0f032c021bee7d81"
+  },
+  "resources/views/emails/welcome.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "2f1ef7fcaa6db1c543e39fe46fe8ad64",
+    "semantic_hash": "2f1ef7fcaa6db1c543e39fe46fe8ad64"
+  },
+  "resources/views/filament/clusters/test/pages/slack-notification.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "cd7d457197407524a49e87ed44469766",
+    "semantic_hash": "cd7d457197407524a49e87ed44469766"
+  },
+  "resources/views/filament/components/params-badges.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "c50737ca6e2ac1ac5d1ba0ad2cbdceee",
+    "semantic_hash": "c50737ca6e2ac1ac5d1ba0ad2cbdceee"
+  },
+  "resources/views/filament/pages/dashboard.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "232ef9d4ef22bf4890dde621e868a146",
+    "semantic_hash": "232ef9d4ef22bf4890dde621e868a146"
+  },
+  "resources/views/filament/pages/send-email-parameters.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "6150a3a4e320505f45e4a1bc7537aeea",
+    "semantic_hash": "6150a3a4e320505f45e4a1bc7537aeea"
+  },
+  "resources/views/filament/pages/send-email.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "9ca7ecf2163cf4684406eda65c07272d",
+    "semantic_hash": "9ca7ecf2163cf4684406eda65c07272d"
+  },
+  "resources/views/filament/pages/send-push-notification.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "c00db4ca3f595e7ecd14764038b66f63",
+    "semantic_hash": "c00db4ca3f595e7ecd14764038b66f63"
+  },
+  "resources/views/filament/pages/send-sms.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "df94bc0dab773a2a8af9868a70c57f17",
+    "semantic_hash": "df94bc0dab773a2a8af9868a70c57f17"
+  },
+  "resources/views/filament/pages/send-telegram.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "2cfe6e9538926a9cdc68bb9061cdc812",
+    "semantic_hash": "2cfe6e9538926a9cdc68bb9061cdc812"
+  },
+  "resources/views/filament/pages/send-whatsapp.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "f928a3134b8500c4caa619640e944a89",
+    "semantic_hash": "f928a3134b8500c4caa619640e944a89"
+  },
+  "resources/views/filament/pages/setting.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "42f94fb95b63a7620e331e091e6896c6",
+    "semantic_hash": "42f94fb95b63a7620e331e091e6896c6"
+  },
+  "resources/views/filament/resources/mail-template-resource/pages/preview-mail-template.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "b022e7dcdf9a0ba81ade65b64b0f711c",
+    "semantic_hash": "b022e7dcdf9a0ba81ade65b64b0f711c"
+  },
+  "resources/views/filament/resources/notification-template-resource/pages/preview-notification-template.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "18b2172d0afb8c77a8ccec201ed14825",
+    "semantic_hash": "18b2172d0afb8c77a8ccec201ed14825"
+  },
+  "resources/views/filament/tables/columns/contact-column.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "ed72234e9ca721d33c316a5d4c6643d0",
+    "semantic_hash": "ed72234e9ca721d33c316a5d4c6643d0"
+  },
+  "resources/views/filament/tables/columns/contact.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "bf7c50b37d4df9c9a0816a243afdeaed",
+    "semantic_hash": "bf7c50b37d4df9c9a0816a243afdeaed"
+  },
+  "resources/views/index.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "8228bf6cb3dd7115b6e242f61d017e8f",
+    "semantic_hash": "8228bf6cb3dd7115b6e242f61d017e8f"
+  },
+  "resources/views/layouts/ark.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "932f6e15af1281408d496911b90b1fb3",
+    "semantic_hash": "932f6e15af1281408d496911b90b1fb3"
+  },
+  "resources/views/layouts/empty.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "40254b2bde107b46200c8d87cc54c7ed",
+    "semantic_hash": "40254b2bde107b46200c8d87cc54c7ed"
+  },
+  "resources/views/layouts/master.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "8d0f96dab11ad4717b02a424e6062be6",
+    "semantic_hash": "8d0f96dab11ad4717b02a424e6062be6"
+  },
+  "resources/views/livewire/database-notifications-trigger.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "3eb15f5690733ba3722c9ee81992896a",
+    "semantic_hash": "3eb15f5690733ba3722c9ee81992896a"
+  },
+  "resources/views/mail/newsletter.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "6c20f618d410185a68394ce6bc90ef69",
+    "semantic_hash": "6c20f618d410185a68394ce6bc90ef69"
+  },
+  "resources/views/mail/promotion.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "53136c43c016586b8406af865fcbf89b",
+    "semantic_hash": "53136c43c016586b8406af865fcbf89b"
+  },
+  "resources/views/mail/transactional/order-confirmation.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "98193b20e300dc7fa125fa38def9c024",
+    "semantic_hash": "98193b20e300dc7fa125fa38def9c024"
+  },
+  "resources/views/mail/welcome.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "e4a4bf4f0e88d9af38da037b64a511f1",
+    "semantic_hash": "e4a4bf4f0e88d9af38da037b64a511f1"
+  },
+  "resources/views/notifications/html.blade.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "9405effea6057cc669c2a30bcbe861d8",
+    "semantic_hash": "9405effea6057cc669c2a30bcbe861d8"
+  },
+  "routes/api.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "bfadffc04acc141c667f9c87f8be1cc1",
+    "semantic_hash": "bfadffc04acc141c667f9c87f8be1cc1"
+  },
+  "routes/web.php": {
+    "mtime": 1779200039.781871,
+    "ast_hash": "b95d1801e0def595325b4a5d4c8f9f01",
+    "semantic_hash": "b95d1801e0def595325b4a5d4c8f9f01"
+  },
+  "screenshot-group-b.js": {
+    "mtime": 1785494467.9549322,
+    "ast_hash": "2b0b380a7c524c7312a4922f4cea9fe3",
+    "semantic_hash": "2b0b380a7c524c7312a4922f4cea9fe3"
+  },
+  "scripts/benchmark.sh": {
+    "mtime": 1781772805.8928,
+    "ast_hash": "153cb4653c1d37c706e8669b844d2716",
+    "semantic_hash": "153cb4653c1d37c706e8669b844d2716"
+  },
+  "scripts/ci/contributor-lines-report.mjs": {
+    "mtime": 1781271763.150621,
+    "ast_hash": "ede7802aeaaef287d37c880b440e827e",
+    "semantic_hash": "ede7802aeaaef287d37c880b440e827e"
+  },
+  "scripts/code-quality-check.sh": {
+    "mtime": 1781772805.8928,
+    "ast_hash": "2dfe7b12116f075e9441a45ecf260d5a",
+    "semantic_hash": "2dfe7b12116f075e9441a45ecf260d5a"
+  },
+  "scripts/code-quality-fix.sh": {
+    "mtime": 1781772805.8928,
+    "ast_hash": "616b2a15e087446d27f2b0641fe91109",
+    "semantic_hash": "616b2a15e087446d27f2b0641fe91109"
+  },
+  "scripts/fix-code-quality-issues.sh": {
+    "mtime": 1781772805.8928,
+    "ast_hash": "990854d6734c09d66ab0e95024331c77",
+    "semantic_hash": "990854d6734c09d66ab0e95024331c77"
+  },
+  "scripts/full-code-quality-check.sh": {
+    "mtime": 1781772805.8928,
+    "ast_hash": "0dd6c5e046a62f91b077da12421666ab",
+    "semantic_hash": "0dd6c5e046a62f91b077da12421666ab"
+  },
+  "scripts/install-quality-tools.sh": {
+    "mtime": 1781772805.8928,
+    "ast_hash": "73e19d418a4a53ae6447deceeaabc256",
+    "semantic_hash": "73e19d418a4a53ae6447deceeaabc256"
+  },
+  "scripts/update-roadmaps.sh": {
+    "mtime": 1781772805.8928,
+    "ast_hash": "0af880ae2a6e24448455a7aa9b0807f5",
+    "semantic_hash": "0af880ae2a6e24448455a7aa9b0807f5"
+  },
+  "skills-lock.json": {
+    "mtime": 1785494467.9549322,
+    "ast_hash": "6d1ee3e48cb1777a1f7e1e942389d6aa",
+    "semantic_hash": "6d1ee3e48cb1777a1f7e1e942389d6aa"
+  },
+  "tailwind.config.js": {
+    "mtime": 1780891392.3777187,
+    "ast_hash": "39703ad584fe1269525916a1c542342a",
+    "semantic_hash": "39703ad584fe1269525916a1c542342a"
+  },
+  "test-homepage.js": {
+    "mtime": 1781619772.3185089,
+    "ast_hash": "d507f70b669f7bfc533a9901adce5f46",
+    "semantic_hash": "d507f70b669f7bfc533a9901adce5f46"
+  },
+  "test-homepage2.js": {
+    "mtime": 1781619772.3185089,
+    "ast_hash": "ea21a353913f27ea3914af3a59615a61",
+    "semantic_hash": "ea21a353913f27ea3914af3a59615a61"
+  },
+  "tests/Feature/ContactManagementBusinessLogicTest.php": {
+    "mtime": 1781345927.5664275,
+    "ast_hash": "45004031d4050d219f75bf88b53c28e8",
+    "semantic_hash": "45004031d4050d219f75bf88b53c28e8"
+  },
+  "tests/Feature/EmailTemplatesTest.php": {
+    "mtime": 1781345927.5647726,
+    "ast_hash": "2500b96401dc0a8aca5b80afbd29da92",
+    "semantic_hash": "2500b96401dc0a8aca5b80afbd29da92"
+  },
+  "tests/Feature/JsonComponentTest.php": {
+    "mtime": 1781345927.5640836,
+    "ast_hash": "0bd467bdfe8654c31d5694e8b4872984",
+    "semantic_hash": "0bd467bdfe8654c31d5694e8b4872984"
+  },
+  "tests/Feature/JsonComponentsTest.php": {
+    "mtime": 1781345927.5650747,
+    "ast_hash": "e427ab441400f9eb2f67d349e5afa434",
+    "semantic_hash": "e427ab441400f9eb2f67d349e5afa434"
+  },
+  "tests/Feature/MailLayoutRenderTest.php": {
+    "mtime": 1785494467.9549322,
+    "ast_hash": "1214306318f9b3cf63050617dd0e051a",
+    "semantic_hash": "1214306318f9b3cf63050617dd0e051a"
+  },
+  "tests/Feature/MailTemplateLogBusinessLogicTest.php": {
+    "mtime": 1781345927.5657663,
+    "ast_hash": "dc3b5f8767cd8fc73b858f03bcbc317a",
+    "semantic_hash": "dc3b5f8767cd8fc73b858f03bcbc317a"
+  },
+  "tests/Feature/MailTemplateTest.php": {
+    "mtime": 1781345927.5654726,
+    "ast_hash": "e984b32da067548588ff92138d65a300",
+    "semantic_hash": "e984b32da067548588ff92138d65a300"
+  },
+  "tests/Feature/MailTemplateVersionBusinessLogicTest.php": {
+    "mtime": 1781345927.5671082,
+    "ast_hash": "e387bb96cc543f2dae135fb3981cf6d7",
+    "semantic_hash": "e387bb96cc543f2dae135fb3981cf6d7"
+  },
+  "tests/Feature/NotificationManagementBusinessLogicTest.php": {
+    "mtime": 1781345927.5623667,
+    "ast_hash": "8c07418ad3f40e849fa21348382a1f47",
+    "semantic_hash": "8c07418ad3f40e849fa21348382a1f47"
+  },
+  "tests/Feature/NotificationTemplateVersionBusinessLogicTest.php": {
+    "mtime": 1785494467.9549322,
+    "ast_hash": "7c8a6b700f7a5ebd0a8e9379946e0b8b",
+    "semantic_hash": "7c8a6b700f7a5ebd0a8e9379946e0b8b"
+  },
+  "tests/Feature/NotificationTypeBusinessLogicTest.php": {
+    "mtime": 1781345927.5634027,
+    "ast_hash": "98414649b5ad6b1595191425ca2d09e6",
+    "semantic_hash": "98414649b5ad6b1595191425ca2d09e6"
+  },
+  "tests/Feature/NotifyThemeableBusinessLogicTest.php": {
+    "mtime": 1785687295.3034518,
+    "ast_hash": "55ce25957f6fed8ef835eb7754f325f9",
+    "semantic_hash": "55ce25957f6fed8ef835eb7754f325f9"
+  },
+  "tests/Feature/SpatieTranslatablePluginTest.php": {
+    "mtime": 1781346334.5058222,
+    "ast_hash": "2c651d3c188fd2278e07319c26c0089a",
+    "semantic_hash": "2c651d3c188fd2278e07319c26c0089a"
+  },
+  "tests/Feature/TemplateManagementBusinessLogicTest.php": {
+    "mtime": 1781346334.5075912,
+    "ast_hash": "f25917df0eddf6a7a1ffc5ad8ca67e30",
+    "semantic_hash": "f25917df0eddf6a7a1ffc5ad8ca67e30"
+  },
+  "tests/Feature/ThemeManagementBusinessLogicTest.php": {
+    "mtime": 1781345927.5626636,
+    "ast_hash": "9bfde99aaf9d6f0326b224000059de68",
+    "semantic_hash": "9bfde99aaf9d6f0326b224000059de68"
+  },
+  "tests/Feature/emailtemplatestest.php": {
+    "mtime": 1785687295.542642,
+    "ast_hash": "24f1d812b1a106bda978b95b1a9118b6",
+    "semantic_hash": "24f1d812b1a106bda978b95b1a9118b6"
+  },
+  "tests/Feature/jsoncomponentstest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "a65b72c1e5f3bd5a0142f1249e9ce8e2",
+    "semantic_hash": "a65b72c1e5f3bd5a0142f1249e9ce8e2"
+  },
+  "tests/Fixtures/ContactSectionTestProxy.php": {
+    "mtime": 1781278024.280235,
+    "ast_hash": "f0c1d1bbf3ee022b7abde6e330f055da",
+    "semantic_hash": "f0c1d1bbf3ee022b7abde6e330f055da"
+  },
+  "tests/Fixtures/EditContactTestProxy.php": {
+    "mtime": 1781278020.4497058,
+    "ast_hash": "d662a43b3f0fb7f3276dabb6e44e0e73",
+    "semantic_hash": "d662a43b3f0fb7f3276dabb6e44e0e73"
+  },
+  "tests/Fixtures/EditNotifyThemeTestProxy.php": {
+    "mtime": 1781278020.2933664,
+    "ast_hash": "51e7184edf3cd0ff14227b4c25fee953",
+    "semantic_hash": "51e7184edf3cd0ff14227b4c25fee953"
+  },
+  "tests/Fixtures/HasContactDummyModel.php": {
+    "mtime": 1781278024.280235,
+    "ast_hash": "c73413362af801b7f52f46cb6babc283",
+    "semantic_hash": "c73413362af801b7f52f46cb6babc283"
+  },
+  "tests/Fixtures/NetfunChannelNotifiableDummy.php": {
+    "mtime": 1781278029.207663,
+    "ast_hash": "c3ad159b25c510b1a6c7fcf36ab4f444",
+    "semantic_hash": "c3ad159b25c510b1a6c7fcf36ab4f444"
+  },
+  "tests/Fixtures/NotifyBaseMorphPivotProxy.php": {
+    "mtime": 1781278024.280235,
+    "ast_hash": "7798ed88dee0e9bb767a62e0ed074e44",
+    "semantic_hash": "7798ed88dee0e9bb767a62e0ed074e44"
+  },
+  "tests/Fixtures/NotifyBasePivotProxy.php": {
+    "mtime": 1781278028.2728298,
+    "ast_hash": "a4864d8b7a8cf53ca31c21cb8bace13b",
+    "semantic_hash": "a4864d8b7a8cf53ca31c21cb8bace13b"
+  },
+  "tests/Fixtures/NotifyNotificationTemplateProxy.php": {
+    "mtime": 1781278028.2728298,
+    "ast_hash": "1400f40662bfadfbfd530effb91685c0",
+    "semantic_hash": "1400f40662bfadfbfd530effb91685c0"
+  },
+  "tests/Fixtures/PreviewMailTemplateTestProxy.php": {
+    "mtime": 1781278021.1569552,
+    "ast_hash": "2fb7d4fe989586ac2fca6dfcbe2520a2",
+    "semantic_hash": "2fb7d4fe989586ac2fca6dfcbe2520a2"
+  },
+  "tests/Fixtures/SendRecordNotificationFailStub.php": {
+    "mtime": 1781278017.449479,
+    "ast_hash": "f71733c71a95d174b9e2205c3bb3a395",
+    "semantic_hash": "f71733c71a95d174b9e2205c3bb3a395"
+  },
+  "tests/Fixtures/SendRecordNotificationNoopStub.php": {
+    "mtime": 1781278016.11315,
+    "ast_hash": "1637df2bb5e8a12a86776e3c1b44c7c9",
+    "semantic_hash": "1637df2bb5e8a12a86776e3c1b44c7c9"
+  },
+  "tests/Fixtures/SendRecordNotificationThrowStub.php": {
+    "mtime": 1781278018.0115564,
+    "ast_hash": "71e3cd02bdc355a41e1f7a1e24537ca1",
+    "semantic_hash": "71e3cd02bdc355a41e1f7a1e24537ca1"
+  },
+  "tests/Fixtures/SendRecordsNotificationBulkActionSpy.php": {
+    "mtime": 1781278020.0514128,
+    "ast_hash": "469bb1e457e5486cc8a8b18a91f0d679",
+    "semantic_hash": "469bb1e457e5486cc8a8b18a91f0d679"
+  },
+  "tests/Fixtures/SendRecordsNotificationRecordDummy.php": {
+    "mtime": 1781278013.0504956,
+    "ast_hash": "4d754a879e05328fd43098b16a5e00b3",
+    "semantic_hash": "4d754a879e05328fd43098b16a5e00b3"
+  },
+  "tests/Fixtures/SendRecordsSafeEloquentCastEmptyStub.php": {
+    "mtime": 1781278015.0181084,
+    "ast_hash": "b6aeb1560f2f776a31712a110d84cb9d",
+    "semantic_hash": "b6aeb1560f2f776a31712a110d84cb9d"
+  },
+  "tests/Fixtures/SendRecordsSafeEloquentCastStub.php": {
+    "mtime": 1781278013.8628008,
+    "ast_hash": "80cd5ac26ee7dbde06cf6561b9440323",
+    "semantic_hash": "80cd5ac26ee7dbde06cf6561b9440323"
+  },
+  "tests/Fixtures/ViewNotificationTestProxy.php": {
+    "mtime": 1781278021.867927,
+    "ast_hash": "9c3dafc24acd95278c39f49b66b597ee",
+    "semantic_hash": "9c3dafc24acd95278c39f49b66b597ee"
+  },
+  "tests/Pest.php": {
+    "mtime": 1781772805.8941867,
+    "ast_hash": "e7ea24684ac2b18838e9d98bf03dd0c3",
+    "semantic_hash": "e7ea24684ac2b18838e9d98bf03dd0c3"
+  },
+  "tests/Support/helpers.php": {
+    "mtime": 1785687295.7730863,
+    "ast_hash": "c04df3deacab4657dfcb1d3b16125cd4",
+    "semantic_hash": "c04df3deacab4657dfcb1d3b16125cd4"
+  },
+  "tests/TestCase.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "a8bff35baf35796d8f5a82a5f3d7cf13",
+    "semantic_hash": "a8bff35baf35796d8f5a82a5f3d7cf13"
+  },
+  "tests/Unit/Actions/BuildMailMessageActionTest.php": {
+    "mtime": 1781345927.5418167,
+    "ast_hash": "26a58ea09aa5a9a8e2680512cbd86c42",
+    "semantic_hash": "26a58ea09aa5a9a8e2680512cbd86c42"
+  },
+  "tests/Unit/Actions/DetermineSeasonalContentViewPathActionTest.php": {
+    "mtime": 1781345927.5414994,
+    "ast_hash": "0eae8e316712780fb2cea5d769aefeb6",
+    "semantic_hash": "0eae8e316712780fb2cea5d769aefeb6"
+  },
+  "tests/Unit/Actions/EsendexSendActionTest.php": {
+    "mtime": 1781345927.5449452,
+    "ast_hash": "fc41be1babaff7701caf6d24d76b50e6",
+    "semantic_hash": "fc41be1babaff7701caf6d24d76b50e6"
+  },
+  "tests/Unit/Actions/Mail/GetMailLayoutActionTest.php": {
+    "mtime": 1781345927.544592,
+    "ast_hash": "7618fec8c16ba2397e35bcb84211a2e8",
+    "semantic_hash": "7618fec8c16ba2397e35bcb84211a2e8"
+  },
+  "tests/Unit/Actions/NetfunSendActionTest.php": {
+    "mtime": 1785687295.9798317,
+    "ast_hash": "dca06d2cf12839eadd261267f40c962d",
+    "semantic_hash": "dca06d2cf12839eadd261267f40c962d"
+  },
+  "tests/Unit/Actions/NormalizePhoneNumberActionTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "d8f4fb30ec56583dba435f73c9daea45",
+    "semantic_hash": "d8f4fb30ec56583dba435f73c9daea45"
+  },
+  "tests/Unit/Actions/NotificationManagerTest.php": {
+    "mtime": 1785687296.1820982,
+    "ast_hash": "b8618151dbb9ecb334888208666b3ac4",
+    "semantic_hash": "b8618151dbb9ecb334888208666b3ac4"
+  },
+  "tests/Unit/Actions/NotifyTheme/Attachment/PdfTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "fa5527652d4e2ce5d97b8bd2df0e768b",
+    "semantic_hash": "fa5527652d4e2ce5d97b8bd2df0e768b"
+  },
+  "tests/Unit/Actions/NotifyTheme/GetTest.php": {
+    "mtime": 1781345927.535343,
+    "ast_hash": "e4857d857aba470d4d628b1451d2157f",
+    "semantic_hash": "e4857d857aba470d4d628b1451d2157f"
+  },
+  "tests/Unit/Actions/SMS/FormatSmsMessageActionTest.php": {
+    "mtime": 1781345927.5378807,
+    "ast_hash": "4017ace1de3d64a7e1d53c2360525171",
+    "semantic_hash": "4017ace1de3d64a7e1d53c2360525171"
+  },
+  "tests/Unit/Actions/SMS/NormalizePhoneNumberActionTest.php": {
+    "mtime": 1781345927.5395122,
+    "ast_hash": "bb1f01fd74a5736e5409b6ede61ae57d",
+    "semantic_hash": "bb1f01fd74a5736e5409b6ede61ae57d"
+  },
+  "tests/Unit/Actions/SMS/SendAgiletelecomSMSActionTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "19d39c1ca1b78ca4b59f3fcb20b3e051",
+    "semantic_hash": "19d39c1ca1b78ca4b59f3fcb20b3e051"
+  },
+  "tests/Unit/Actions/SMS/SendAgiletelecomSMSv1ActionTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "fc04f00214bca6505a292cebf0da02dd",
+    "semantic_hash": "fc04f00214bca6505a292cebf0da02dd"
+  },
+  "tests/Unit/Actions/SMS/SendAgiletelecomSMSv2ActionTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "487f9a08738bedc01f39c58397dd5a05",
+    "semantic_hash": "487f9a08738bedc01f39c58397dd5a05"
+  },
+  "tests/Unit/Actions/SMS/SendGammuSMSActionTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "bc79990a3c7429b44011ec5d320a496b",
+    "semantic_hash": "bc79990a3c7429b44011ec5d320a496b"
+  },
+  "tests/Unit/Actions/SMS/SendNetfunSMSActionTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "0385eaf3deb55bf3151777182c6cc1b0",
+    "semantic_hash": "0385eaf3deb55bf3151777182c6cc1b0"
+  },
+  "tests/Unit/Actions/SMS/SendNexmoSMSActionTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "b5f79b19ff6925c5716056b767cb5f66",
+    "semantic_hash": "b5f79b19ff6925c5716056b767cb5f66"
+  },
+  "tests/Unit/Actions/SMS/SendPlivoSMSActionTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "ad0e45a8eb7281af5794f87bbf81b200",
+    "semantic_hash": "ad0e45a8eb7281af5794f87bbf81b200"
+  },
+  "tests/Unit/Actions/SMS/SendSmsFactorSMSActionTest.php": {
+    "mtime": 1781345927.5381725,
+    "ast_hash": "22e2d00e056373fc4d084e36d4ec7400",
+    "semantic_hash": "22e2d00e056373fc4d084e36d4ec7400"
+  },
+  "tests/Unit/Actions/SMS/SendTwilioSMSActionTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "72ec5db808cd6cf0e5b80a2715635c50",
+    "semantic_hash": "72ec5db808cd6cf0e5b80a2715635c50"
+  },
+  "tests/Unit/Actions/SendAppointmentNotificationActionTest.php": {
+    "mtime": 1781345927.5424342,
+    "ast_hash": "a09c6688f37a63b7b41ed7fbf83f69ab",
+    "semantic_hash": "a09c6688f37a63b7b41ed7fbf83f69ab"
+  },
+  "tests/Unit/Actions/SendNotificationActionTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "62b672cadf10ed1e5cea31f17d4a28d3",
+    "semantic_hash": "62b672cadf10ed1e5cea31f17d4a28d3"
+  },
+  "tests/Unit/Actions/SendNotificationFlowTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "8205713cf1793a28fa74f31d1e04ee82",
+    "semantic_hash": "8205713cf1793a28fa74f31d1e04ee82"
+  },
+  "tests/Unit/Actions/SendNotificationToRecipientActionTest.php": {
+    "mtime": 1781345927.5428128,
+    "ast_hash": "92524bf84d6beb9ee2cfd5b413443bd3",
+    "semantic_hash": "92524bf84d6beb9ee2cfd5b413443bd3"
+  },
+  "tests/Unit/Actions/SendRecordNotificationActionTest.php": {
+    "mtime": 1781345927.5452976,
+    "ast_hash": "160c5b489079f3a01865ba6748cd09a8",
+    "semantic_hash": "160c5b489079f3a01865ba6748cd09a8"
+  },
+  "tests/Unit/Actions/SendRecordsNotificationActionTest.php": {
+    "mtime": 1781345927.5370007,
+    "ast_hash": "74907353c14d7e24bdc65630809ae5ed",
+    "semantic_hash": "74907353c14d7e24bdc65630809ae5ed"
+  },
+  "tests/Unit/Actions/Telegram/SendBotmanTelegramActionTest.php": {
+    "mtime": 1781345927.5432014,
+    "ast_hash": "39f116a9735efbe3cebdb7bc3a75cfb0",
+    "semantic_hash": "39f116a9735efbe3cebdb7bc3a75cfb0"
+  },
+  "tests/Unit/Actions/Telegram/SendNutgramTelegramActionTest.php": {
+    "mtime": 1781345927.5438812,
+    "ast_hash": "198a0a62daec1f8d8c12b0a34c59f6cc",
+    "semantic_hash": "198a0a62daec1f8d8c12b0a34c59f6cc"
+  },
+  "tests/Unit/Actions/Telegram/SendOfficialTelegramActionTest.php": {
+    "mtime": 1781345927.5435226,
+    "ast_hash": "61f9e3c4df700c2105d9af04a4a161be",
+    "semantic_hash": "61f9e3c4df700c2105d9af04a4a161be"
+  },
+  "tests/Unit/Actions/WhatsApp/Send360dialogWhatsAppActionTest.php": {
+    "mtime": 1781345927.535666,
+    "ast_hash": "9a9aae35c6a62e5c625e0439110bae42",
+    "semantic_hash": "9a9aae35c6a62e5c625e0439110bae42"
+  },
+  "tests/Unit/Actions/WhatsApp/SendFacebookWhatsAppActionTest.php": {
+    "mtime": 1781345927.5362754,
+    "ast_hash": "84782e40204e61f9345da94e262c57a7",
+    "semantic_hash": "84782e40204e61f9345da94e262c57a7"
+  },
+  "tests/Unit/Actions/WhatsApp/SendTwilioWhatsAppActionTest.php": {
+    "mtime": 1781345927.5359828,
+    "ast_hash": "4f5a66fcfff22a8dffd01b284f06bf97",
+    "semantic_hash": "4f5a66fcfff22a8dffd01b284f06bf97"
+  },
+  "tests/Unit/Actions/WhatsApp/SendVonageWhatsAppActionTest.php": {
+    "mtime": 1781345927.53662,
+    "ast_hash": "331e3dae67683bdb60b0e640fc78ad8b",
+    "semantic_hash": "331e3dae67683bdb60b0e640fc78ad8b"
+  },
+  "tests/Unit/Architecture/NoOrphanHttpControllersTest.php": {
+    "mtime": 1781131642.2949796,
+    "ast_hash": "73814f29255877074e1848657c282450",
+    "semantic_hash": "73814f29255877074e1848657c282450"
+  },
+  "tests/Unit/Channels/NetfunChannelTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "957ac414f6337ba0abb483e202185c87",
+    "semantic_hash": "957ac414f6337ba0abb483e202185c87"
+  },
+  "tests/Unit/Channels/SmsChannelTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "98505723d062b479b84eb518badcc9a6",
+    "semantic_hash": "98505723d062b479b84eb518badcc9a6"
+  },
+  "tests/Unit/Channels/TelegramChannelTest.php": {
+    "mtime": 1781270988.5316427,
+    "ast_hash": "802aa880767e466f75bcd5c5416bd600",
+    "semantic_hash": "802aa880767e466f75bcd5c5416bd600"
+  },
+  "tests/Unit/Channels/WhatsAppChannelTest.php": {
+    "mtime": 1781270988.5316427,
+    "ast_hash": "045e84bbb105582ee7f3ae4c50b6b163",
+    "semantic_hash": "045e84bbb105582ee7f3ae4c50b6b163"
+  },
+  "tests/Unit/Console/Commands/AnalyzeTranslationFilesTest.php": {
+    "mtime": 1781345927.5500948,
+    "ast_hash": "cde126c766fde5e2b84d32f526d6a765",
+    "semantic_hash": "cde126c766fde5e2b84d32f526d6a765"
+  },
+  "tests/Unit/Console/Commands/SendMailCommandTest.php": {
+    "mtime": 1781194951.4315228,
+    "ast_hash": "7e0e5a4153d4dd6f099a3af956783af2",
+    "semantic_hash": "7e0e5a4153d4dd6f099a3af956783af2"
+  },
+  "tests/Unit/Console/TelegramWebhookCommandTest.php": {
+    "mtime": 1781345927.5497012,
+    "ast_hash": "7d1dbe21631f8c002967c5e82688fbfa",
+    "semantic_hash": "7d1dbe21631f8c002967c5e82688fbfa"
+  },
+  "tests/Unit/Datas/EmailAttachmentDataTest.php": {
+    "mtime": 1781270988.5316427,
+    "ast_hash": "6ed6b21e60039a6e8f187da8634a8327",
+    "semantic_hash": "6ed6b21e60039a6e8f187da8634a8327"
+  },
+  "tests/Unit/Datas/EmailDataTest.php": {
+    "mtime": 1781270988.5316427,
+    "ast_hash": "b6f9560771940bb6b1bba6d636cb6d7d",
+    "semantic_hash": "b6f9560771940bb6b1bba6d636cb6d7d"
+  },
+  "tests/Unit/Datas/NotificationDataTest.php": {
+    "mtime": 1781270988.5316427,
+    "ast_hash": "a0789bb622b7317fb395a0ca3c316f3d",
+    "semantic_hash": "a0789bb622b7317fb395a0ca3c316f3d"
+  },
+  "tests/Unit/Datas/NotifyDatasCoverageTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "d543b58421ea7b88ea7c002eaf58e6f8",
+    "semantic_hash": "d543b58421ea7b88ea7c002eaf58e6f8"
+  },
+  "tests/Unit/Datas/RecordNotificationDataTest.php": {
+    "mtime": 1781345927.5456853,
+    "ast_hash": "96693dc22b161442b2b01b3c4db55ba8",
+    "semantic_hash": "96693dc22b161442b2b01b3c4db55ba8"
+  },
+  "tests/Unit/Datas/SMS/TwilioDataTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "be274775c338bf13125e0b777953f99c",
+    "semantic_hash": "be274775c338bf13125e0b777953f99c"
+  },
+  "tests/Unit/Datas/SmsDataTest.php": {
+    "mtime": 1781270988.5316427,
+    "ast_hash": "92d0d5b238f8942d4207099056fb89e0",
+    "semantic_hash": "92d0d5b238f8942d4207099056fb89e0"
+  },
+  "tests/Unit/Datas/SmtpDataTest.php": {
+    "mtime": 1781270988.5316427,
+    "ast_hash": "980ba68bf1e5f90bb9e819d1eaa1f199",
+    "semantic_hash": "980ba68bf1e5f90bb9e819d1eaa1f199"
+  },
+  "tests/Unit/Emails/EmailDataEmailTest.php": {
+    "mtime": 1781345927.5347111,
+    "ast_hash": "64d2b1f92622fa8ed83ed6509fda0671",
+    "semantic_hash": "64d2b1f92622fa8ed83ed6509fda0671"
+  },
+  "tests/Unit/Enums/ChannelEnumTest.php": {
+    "mtime": 1781345927.5511544,
+    "ast_hash": "29a767f88585a7fe8639e83bb99d792f",
+    "semantic_hash": "29a767f88585a7fe8639e83bb99d792f"
+  },
+  "tests/Unit/Enums/ContactTypeEnumTest.php": {
+    "mtime": 1781345927.553214,
+    "ast_hash": "295847b3533eee5ef0db483794511f9f",
+    "semantic_hash": "295847b3533eee5ef0db483794511f9f"
+  },
+  "tests/Unit/Enums/MediaTypeEnumTest.php": {
+    "mtime": 1781345927.5528882,
+    "ast_hash": "cf75c4e4a7333299551624cc3a36e623",
+    "semantic_hash": "cf75c4e4a7333299551624cc3a36e623"
+  },
+  "tests/Unit/Enums/NotificationLogStatusEnumTest.php": {
+    "mtime": 1781345927.5521884,
+    "ast_hash": "b8150a5333f2f7eb203c7daf13a7f751",
+    "semantic_hash": "b8150a5333f2f7eb203c7daf13a7f751"
+  },
+  "tests/Unit/Enums/NotificationTypeEnumTest.php": {
+    "mtime": 1781345927.5518346,
+    "ast_hash": "269149bd0199d72a4bcb3b0bd793eee9",
+    "semantic_hash": "269149bd0199d72a4bcb3b0bd793eee9"
+  },
+  "tests/Unit/Enums/NotifyEnumsCoverageTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "295bf40efcee625754a6336480064f3a",
+    "semantic_hash": "295bf40efcee625754a6336480064f3a"
+  },
+  "tests/Unit/Enums/SmsDriverEnumTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "31859e37d18525daffa24c9771340e7f",
+    "semantic_hash": "31859e37d18525daffa24c9771340e7f"
+  },
+  "tests/Unit/Enums/TelegramDriverEnumTest.php": {
+    "mtime": 1781345927.5514882,
+    "ast_hash": "a8d49ed3fe8126c5868ff9294d1e31f2",
+    "semantic_hash": "a8d49ed3fe8126c5868ff9294d1e31f2"
+  },
+  "tests/Unit/Enums/WhatsAppDriverEnumTest.php": {
+    "mtime": 1781345927.5504816,
+    "ast_hash": "f187cbf904abee7a44431b87e6db8da0",
+    "semantic_hash": "f187cbf904abee7a44431b87e6db8da0"
+  },
+  "tests/Unit/Factories/ActionFactoriesTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "fa5661c59aeb1d88932d51b17873dfc8",
+    "semantic_hash": "fa5661c59aeb1d88932d51b17873dfc8"
+  },
+  "tests/Unit/Filament/Actions/SendRecordsNotificationBulkActionTest.php": {
+    "mtime": 1781345927.547745,
+    "ast_hash": "0d3d57776dc9377ba95290d1d35182e4",
+    "semantic_hash": "0d3d57776dc9377ba95290d1d35182e4"
+  },
+  "tests/Unit/Filament/Forms/Components/NotifyFormComponentsTest.php": {
+    "mtime": 1781345927.5492997,
+    "ast_hash": "75d8ca21dfe95205105e831f6a95671a",
+    "semantic_hash": "75d8ca21dfe95205105e831f6a95671a"
+  },
+  "tests/Unit/Filament/Pages/SettingPageTest.php": {
+    "mtime": 1781345927.5481565,
+    "ast_hash": "c579130ed3523e660dd38cd455abad7e",
+    "semantic_hash": "c579130ed3523e660dd38cd455abad7e"
+  },
+  "tests/Unit/Filament/Resources/NotifyFilamentResourcesCoverageTest.php": {
+    "mtime": 1781345927.5488842,
+    "ast_hash": "42d2068d692e8d707826257c83318452",
+    "semantic_hash": "42d2068d692e8d707826257c83318452"
+  },
+  "tests/Unit/Filament/Resources/NotifyThemeAndColumnsCoverageTest.php": {
+    "mtime": 1781345927.5485158,
+    "ast_hash": "d535c5ab4bef6bca7d1c8ef6330c36c1",
+    "semantic_hash": "d535c5ab4bef6bca7d1c8ef6330c36c1"
+  },
+  "tests/Unit/GenericNotificationTest.php": {
+    "mtime": 1781345927.5608993,
+    "ast_hash": "31f1b502e472f1a52eb06aa1aa0dd86d",
+    "semantic_hash": "31f1b502e472f1a52eb06aa1aa0dd86d"
+  },
+  "tests/Unit/Models/BaseModelTest.php": {
+    "mtime": 1781345927.5555003,
+    "ast_hash": "f126cf3a18ad077e1f3a62fcbe364e3d",
+    "semantic_hash": "f126cf3a18ad077e1f3a62fcbe364e3d"
+  },
+  "tests/Unit/Models/ContactBusinessLogicTest.php": {
+    "mtime": 1781345927.5560417,
+    "ast_hash": "78c3ba469ff6b6112a8d409a7058ff26",
+    "semantic_hash": "78c3ba469ff6b6112a8d409a7058ff26"
+  },
+  "tests/Unit/Models/ContactTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "0687a8553be4ab567cecfc66a5457208",
+    "semantic_hash": "0687a8553be4ab567cecfc66a5457208"
+  },
+  "tests/Unit/Models/ContactTestPartOneTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "9a36e0ba47c9208b9c258e6fbaffa1f3",
+    "semantic_hash": "9a36e0ba47c9208b9c258e6fbaffa1f3"
+  },
+  "tests/Unit/Models/ContactTestPartTwoTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "2bfe0c0cd08131269f6b6e8cbf0a4564",
+    "semantic_hash": "2bfe0c0cd08131269f6b6e8cbf0a4564"
+  },
+  "tests/Unit/Models/MailTemplateBusinessLogicTest.php": {
+    "mtime": 1781345927.5536766,
+    "ast_hash": "c9bced19f1689f2a3aba853de2d6b478",
+    "semantic_hash": "c9bced19f1689f2a3aba853de2d6b478"
+  },
+  "tests/Unit/Models/MailTemplateLogTest.php": {
+    "mtime": 1785687296.379035,
+    "ast_hash": "29dfac8ecc15ba9661267a351f2276b1",
+    "semantic_hash": "29dfac8ecc15ba9661267a351f2276b1"
+  },
+  "tests/Unit/Models/MailTemplateLogTestPartOneTest.php": {
+    "mtime": 1785687296.5731933,
+    "ast_hash": "be2d88b1cb380de3245617072be0a58a",
+    "semantic_hash": "be2d88b1cb380de3245617072be0a58a"
+  },
+  "tests/Unit/Models/MailTemplateLogTestPartTwoTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "99fa770754dea12890d38e9c7667a643",
+    "semantic_hash": "99fa770754dea12890d38e9c7667a643"
+  },
+  "tests/Unit/Models/MailTemplateTest.php": {
+    "mtime": 1785687296.8455298,
+    "ast_hash": "c3c5c62e69728e871932bd7fc8bcb1a5",
+    "semantic_hash": "c3c5c62e69728e871932bd7fc8bcb1a5"
+  },
+  "tests/Unit/Models/NotificationBusinessLogicTest.php": {
+    "mtime": 1781345927.5585682,
+    "ast_hash": "8872f4422161eb8b5cd54c4d2ae6f175",
+    "semantic_hash": "8872f4422161eb8b5cd54c4d2ae6f175"
+  },
+  "tests/Unit/Models/NotificationTemplateTest.php": {
+    "mtime": 1781345927.5582623,
+    "ast_hash": "a7fb6ed88962d7f03a3d841ce50a7260",
+    "semantic_hash": "a7fb6ed88962d7f03a3d841ce50a7260"
+  },
+  "tests/Unit/Models/NotificationTemplateVersionTest.php": {
+    "mtime": 1781345927.5558226,
+    "ast_hash": "41311f48764598a97133ee0e199047a0",
+    "semantic_hash": "41311f48764598a97133ee0e199047a0"
+  },
+  "tests/Unit/Models/NotificationTest.php": {
+    "mtime": 1785687297.0386622,
+    "ast_hash": "e0f8e9f2dea06979defc0f520d34c45e",
+    "semantic_hash": "e0f8e9f2dea06979defc0f520d34c45e"
+  },
+  "tests/Unit/Models/NotificationTestPartOneTest.php": {
+    "mtime": 1785687297.237684,
+    "ast_hash": "ac1340d22b17995f90556673f0756fb4",
+    "semantic_hash": "ac1340d22b17995f90556673f0756fb4"
+  },
+  "tests/Unit/Models/NotificationTestPartTwoTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "9d1a92d3469dbed3e5632f2ceeb60b12",
+    "semantic_hash": "9d1a92d3469dbed3e5632f2ceeb60b12"
+  },
+  "tests/Unit/Models/NotificationTypeBusinessLogicTest.php": {
+    "mtime": 1781345927.554088,
+    "ast_hash": "d548567565dd6f8b7820c6cacfc302b6",
+    "semantic_hash": "d548567565dd6f8b7820c6cacfc302b6"
+  },
+  "tests/Unit/Models/NotificationTypeTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "9ff49c74dbb6a1bf1b259eee1e804871",
+    "semantic_hash": "9ff49c74dbb6a1bf1b259eee1e804871"
+  },
+  "tests/Unit/Models/NotifyModelsCoverageTest.php": {
+    "mtime": 1781345927.559155,
+    "ast_hash": "07e007af01f763e2e3872bf403218047",
+    "semantic_hash": "07e007af01f763e2e3872bf403218047"
+  },
+  "tests/Unit/Models/NotifyThemeTest.php": {
+    "mtime": 1785687297.4436045,
+    "ast_hash": "86948defa1d9aab6bdf15f2b85d2b364",
+    "semantic_hash": "86948defa1d9aab6bdf15f2b85d2b364"
+  },
+  "tests/Unit/Models/NotifyThemeTestPartOneTest.php": {
+    "mtime": 1785687297.637303,
+    "ast_hash": "9d7add05e22111cbcf512e4da25b8ef6",
+    "semantic_hash": "9d7add05e22111cbcf512e4da25b8ef6"
+  },
+  "tests/Unit/Models/NotifyThemeTestPartTwoTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "ed9dfb5e3a0c9a8d713dd6d4a5d4a1d9",
+    "semantic_hash": "ed9dfb5e3a0c9a8d713dd6d4a5d4a1d9"
+  },
+  "tests/Unit/Models/NotifyThemeableTest.php": {
+    "mtime": 1785687297.83164,
+    "ast_hash": "390fb2dff4737bcbf0e9a3d0c2dcf5b5",
+    "semantic_hash": "390fb2dff4737bcbf0e9a3d0c2dcf5b5"
+  },
+  "tests/Unit/Models/Policies/MailTemplatePolicyTest.php": {
+    "mtime": 1781345927.5563369,
+    "ast_hash": "323a46217dd06a7d931fdb471a04643e",
+    "semantic_hash": "323a46217dd06a7d931fdb471a04643e"
+  },
+  "tests/Unit/Models/Traits/HasContactTest.php": {
+    "mtime": 1781345927.5588694,
+    "ast_hash": "cee7c6542e890e2d0395396ed72d33ed",
+    "semantic_hash": "cee7c6542e890e2d0395396ed72d33ed"
+  },
+  "tests/Unit/Notifications/Channels/NotificationsChannelsTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "e7a3aa46c363a4620b9a8bd9eda8d635",
+    "semantic_hash": "e7a3aa46c363a4620b9a8bd9eda8d635"
+  },
+  "tests/Unit/Notifications/NotificationsCoverageTest.php": {
+    "mtime": 1785687298.0335536,
+    "ast_hash": "9ae303f7e48a655cbf07870389ebe9b9",
+    "semantic_hash": "9ae303f7e48a655cbf07870389ebe9b9"
+  },
+  "tests/Unit/NotifyModelsTest.php": {
+    "mtime": 1781345927.5602129,
+    "ast_hash": "9940fc272c89ddd92b4081a1b33f1739",
+    "semantic_hash": "9940fc272c89ddd92b4081a1b33f1739"
+  },
+  "tests/Unit/Providers/AdminPanelProviderTest.php": {
+    "mtime": 1781345927.5469332,
+    "ast_hash": "c54685dc52436ce6d02144b716b706ba",
+    "semantic_hash": "c54685dc52436ce6d02144b716b706ba"
+  },
+  "tests/Unit/Providers/EventServiceProviderTest.php": {
+    "mtime": 1781345927.5472593,
+    "ast_hash": "8ce9786abf87afd1ef65b9ffde9862b0",
+    "semantic_hash": "8ce9786abf87afd1ef65b9ffde9862b0"
+  },
+  "tests/Unit/Providers/NotifyServiceProviderTest.php": {
+    "mtime": 1781345927.546611,
+    "ast_hash": "14fd8cf4995232600703c1703788b78b",
+    "semantic_hash": "14fd8cf4995232600703c1703788b78b"
+  },
+  "tests/Unit/Services/NotificationManagerTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "16350833e7f2214a1abd9deafab83b6a",
+    "semantic_hash": "16350833e7f2214a1abd9deafab83b6a"
+  },
+  "tests/Unit/Traits/NotifyRateLimitDummy.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "7ff7ae2fad1d69af17d2fddc34ed9e66",
+    "semantic_hash": "7ff7ae2fad1d69af17d2fddc34ed9e66"
+  },
+  "tests/Unit/Traits/NotifyTenantDummyModel.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "b97e68d60ad55d1a815ead06c7f68a5a",
+    "semantic_hash": "b97e68d60ad55d1a815ead06c7f68a5a"
+  },
+  "tests/Unit/Traits/NotifyTrackingDummy.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "355a42bf80dc903a2ff428c8fda59f2e",
+    "semantic_hash": "355a42bf80dc903a2ff428c8fda59f2e"
+  },
+  "tests/Unit/Traits/NotifyTraitTestDoubles.php": {
+    "mtime": 1781358645.4161136,
+    "ast_hash": "a0d2394bfd4ada20486f2abf98634f70",
+    "semantic_hash": "a0d2394bfd4ada20486f2abf98634f70"
+  },
+  "tests/Unit/Traits/NotifyTraitsCoverageTest.php": {
+    "mtime": 1785494467.9585989,
+    "ast_hash": "6a942dbca85490b2aac6ea96b9d6b590",
+    "semantic_hash": "6a942dbca85490b2aac6ea96b9d6b590"
+  },
+  "webpack.mix.js": {
+    "mtime": 1780891392.3777187,
+    "ast_hash": "43fe5a0d148e2a78b7734f7293539e5c",
+    "semantic_hash": "43fe5a0d148e2a78b7734f7293539e5c"
+  }
+}

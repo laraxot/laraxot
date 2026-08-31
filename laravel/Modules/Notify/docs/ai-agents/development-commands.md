@@ -17,6 +17,7 @@ php artisan serve
 ```
 
 **Access:** http://localhost:8000/quaeris/admin/{tenant}
+**Access:** http://localhost:8000/this-project/admin/{tenant}
 
 ## Testing
 
@@ -42,6 +43,7 @@ php artisan test --coverage
 
 # Per modulo
 ./vendor/bin/pest Modules/Quaeris/tests --coverage
+./vendor/bin/pest Modules/App/tests --coverage
 
 # Report HTML → build/coverage/html/
 ./vendor/bin/pest --coverage

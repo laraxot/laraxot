@@ -72,3 +72,14 @@ https://www.igismap.com/top-10-map-direction-api-routing-libraries-navigation-fr
 
 
 
+
+
+## Contenuto originale (txt)
+
+---
+module: theme
+topic: tips_and_links
+canonical: ../../../Themes/docs/shared-components/tips_and_links.txt
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/tips_and_links.txt

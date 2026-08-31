@@ -25,6 +25,7 @@ OpenViking is an AI-powered context management and documentation system that hel
 
 ```bash
 cd /var/www/_bases/base_fixcity_fila5
+cd /var/www/_bases/base_ptv_fila5
 openviking init
 ```
 

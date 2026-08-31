@@ -5,6 +5,7 @@ tags: [project, status]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "project-status fixcity platform - project status report"
+qmd: "project-status ptv platform - project status report"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -196,4 +197,5 @@ related:
 **Report Generated**: 2025-01-01  
 **Next Update**: 2025-01-15  
 **Contact**: development@fixcity.io
+**Contact**: development@ptv.io
 

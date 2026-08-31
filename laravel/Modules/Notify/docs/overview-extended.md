@@ -1,3 +1,12 @@
+---
+title: "Modulo Notify - Documentazione"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Modulo Notify - Documentazione
 
 ## 📚 Overview
@@ -237,6 +246,7 @@ Notification::route('mail', 'to@example.com')->notify($notify);
 **Stato**: PSR-4 compliant, test business logic completati (95% copertura)  
 **Prossimi passi**: Completamento test modelli base  
 **Changelog**: [CHANGELOG.md](./CHANGELOG.md)
+**Changelog**: [changelog.md](./CHANGELOG.md)
 
 ## 🔗 Collegamenti
 

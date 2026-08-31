@@ -28,8 +28,8 @@ class NotifyThemeForm extends XotBaseResourceForm
             'from' => TextInput::make('from'),
             'from_email' => TextInput::make('from_email'),
             'logo' => SpatieMediaLibraryFileUpload::make('logo_src')
-                ->enableOpen()
-                ->enableDownload()
+                ->openable()
+                ->downloadable()
                 ->columnSpanFull()
                 ->disk('uploads')
                 ->directory('photos')
@@ -42,12 +42,10 @@ class NotifyThemeForm extends XotBaseResourceForm
                     'ark' => 'ark',
                     'minty' => 'minty',
                     'sunny' => 'sunny',
-                    'widgets' => 'widgets',
-                ])
+                    'widgets' => 'widgets'])
                 ->default('empty'),
             'body' => Textarea::make('body')->columnSpanFull(),
-            'body_html' => RichEditor::make('body_html')->columnSpanFull(),
-        ];
+            'body_html' => RichEditor::make('body_html')->columnSpanFull()];
     }
 
     /**
@@ -58,18 +56,15 @@ class NotifyThemeForm extends XotBaseResourceForm
         return match ($field) {
             'lang' => [
                 'it' => 'Italiano',
-                'en' => 'English',
-            ],
+                'en' => 'English'],
             'type' => [
                 'email' => 'Email',
                 'sms' => 'SMS',
-                'push' => 'Push Notification',
-            ],
+                'push' => 'Push Notification'],
             'post_type' => [
                 'page' => 'Page',
                 'post' => 'Post',
-                'product' => 'Product',
-            ],
+                'product' => 'Product'],
             default => [],
         };
     }

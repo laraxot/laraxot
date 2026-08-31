@@ -40,7 +40,7 @@ class ViewMedia extends XotBaseViewRecord
                     'media_preview' => Section::make()->schema([
                         'image' => ImageEntry::make('url')
                             ->defaultImageUrl(fn (Media $record) => $record->getUrl())
-                            ->size(500)
+                            ->imageSize(500)
                             ->visible(fn (Media $record): bool => $record->type === 'image'),
                         'video' => VideoEntry::make('url')
                             ->defaultImageUrl(fn (Media $record) => $record->getUrl())
@@ -57,7 +57,7 @@ class ViewMedia extends XotBaseViewRecord
                                     /** @var array<string, mixed> $actionData */
                                     $actionData = $data;
                                     $actionData['disk'] = (string) $record->disk;
-                                    $actionData['file'] = (string) $record->path.'/'.(string) $record->file_name;
+                                    $actionData['file'] = $record->path.'/'.$record->file_name;
                                     $convert_data = ConvertData::from($actionData);
 
                                     /** @var array<string, mixed> $convertArray */

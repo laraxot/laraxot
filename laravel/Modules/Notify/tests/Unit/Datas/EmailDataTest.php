@@ -3,7 +3,10 @@
 declare(strict_types=1);
 
 namespace Modules\Notify\Tests\Unit\Datas;
+
 use Modules\Notify\Datas\EmailData;
+use Modules\Notify\Tests\TestCase;
+use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\Data;
 
@@ -19,15 +22,15 @@ describe('EmailData', function () {
     });
 
     it('has required properties', function () {
-        $propertyNames = \notifyReflectionPropertyNames(new \ReflectionClass(EmailData::class));
+        $propertyNames = TestCase::notifyReflectionPropertyNames(new \ReflectionClass(EmailData::class));
 
-        \assertListContains('recipient', $propertyNames);
-        \assertListContains('from', $propertyNames);
-        \assertListContains('from_email', $propertyNames);
-        \assertListContains('subject', $propertyNames);
-        \assertListContains('body_html', $propertyNames);
-        \assertListContains('body', $propertyNames);
-        \assertListContains('attachments', $propertyNames);
+        XotBasePest::assertListContains('recipient', $propertyNames);
+        XotBasePest::assertListContains('from', $propertyNames);
+        XotBasePest::assertListContains('from_email', $propertyNames);
+        XotBasePest::assertListContains('subject', $propertyNames);
+        XotBasePest::assertListContains('body_html', $propertyNames);
+        XotBasePest::assertListContains('body', $propertyNames);
+        XotBasePest::assertListContains('attachments', $propertyNames);
     });
 
     it('extends Spatie Data', function () {

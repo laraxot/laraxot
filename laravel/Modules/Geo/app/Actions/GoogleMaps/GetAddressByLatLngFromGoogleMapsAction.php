@@ -8,11 +8,10 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\LocationData;
-
-use function Safe\json_decode;
-
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
+
+use function Safe\json_decode;
 
 /**
  * Action per ottenere l'indirizzo da coordinate tramite Google Maps.
@@ -24,12 +23,11 @@ class GetAddressByLatLngFromGoogleMapsAction
 {
     use QueueableAction;
 
-    private const API_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
+    private const string API_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
 
     public function __construct(
         private readonly Client $client,
-    ) {
-    }
+    ) {}
 
     /**
      * Ottiene l'indirizzo dalle coordinate.
@@ -105,7 +103,7 @@ class GetAddressByLatLngFromGoogleMapsAction
          * } $data */
         $data = json_decode($response, true);
 
-        if ('OK' !== $data['status'] || empty($data['results'][0])) {
+        if ($data['status'] !== 'OK' || empty($data['results'][0])) {
             throw new \RuntimeException('No address found for coordinates');
         }
 

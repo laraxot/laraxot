@@ -1,0 +1,5 @@
+# Repo
+
+https://github.com/thedevdojo/genesis
+
+https://github.com/thedevdojo/blog/tree/main/resources%2Fviews%2Fpages%2Fblog

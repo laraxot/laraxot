@@ -154,6 +154,7 @@ bash -n bashscripts/git/subtrees/sync_remote_repo.sh && echo "✅ OK"
 
 ```bash
 cd /var/www/_bases/base_fixcity_fila5
+cd /var/www/_bases/base_ptvx_fila5
 bashscripts/git/subtrees/sync_remote_repo.sh laraxot
 ```
 

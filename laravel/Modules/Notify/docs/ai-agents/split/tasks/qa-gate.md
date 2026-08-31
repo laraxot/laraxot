@@ -162,6 +162,7 @@ Gate: CONCERNS → qa.qaLocation/gates/{epic}.{story}-{slug}.yml
 ## Key Principles
 
 - Keep it minimal and predictable
+- Keep it minimal and forecastable
 - Fixed severity scale (low/medium/high)
 - Always write to standard path
 - Always update story with gate reference
@@ -173,8 +174,8 @@ Gate: CONCERNS → qa.qaLocation/gates/{epic}.{story}-{slug}.yml
 
 ## Cross-References
 
-- ← [Tasks Index](INDEX.md) — All 22 BMad tasks
-- ← [Agents Index](../../agents/INDEX.md) — 10 agent definitions
-- ← [Main AI Docs Index](../INDEX.md) — Master index
-- ← [../../../../AGENTS.md](../../../../../../../../AGENTS.md) — Original source
+- ← [Tasks Index](index.md) — All 22 BMad tasks
+- ← [Agents Index](../../agents/index.md) — 10 agent definitions
+- ← [Main AI Docs Index](../index.md) — Master index
+- ← [../../../../agents.md](../../../../../../../../agents.md) — Original source
 

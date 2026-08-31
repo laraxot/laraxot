@@ -8,6 +8,8 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Modules\UI\Datas\UserData;
 use Modules\User\Models\User;
+use Modules\Xot\Actions\Cast\SafeIntCastAction;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Spatie\Permission\Contracts\Permission;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -31,7 +33,7 @@ class GetUserDataAction
         $avatarValue = null;
         if (isset($user->profile_photo_path) && is_string($user->profile_photo_path)) {
             $avatarValue = $user->profile_photo_path;
-        } elseif ($user->relationLoaded('profile') && null !== $user->profile) {
+        } elseif ($user->relationLoaded('profile') && $user->profile !== null) {
             $profile = $user->profile;
             if (is_object($profile) && method_exists($profile, 'getAvatarUrl')) {
                 $avatarValue = $profile->getAvatarUrl();
@@ -49,7 +51,7 @@ class GetUserDataAction
         // Get settings - could be in profile or extra attributes
         /** @var array<string, mixed> $settingsArray */
         $settingsArray = [];
-        if ($user->relationLoaded('profile') && null !== $user->profile) {
+        if ($user->relationLoaded('profile') && $user->profile !== null) {
             $profile = $user->profile;
             if (is_object($profile) && isset($profile->extra)) {
                 $extra = $profile->extra;
@@ -69,11 +71,11 @@ class GetUserDataAction
         $permissions = $allPermissions->pluck('name')->toArray();
 
         return new UserData(
-            id: (int) $user->id,
-            name: (string) ($user->name ?? ''),
-            email: (string) ($user->email ?? ''),
-            avatar: null !== $avatarValue ? (string) $avatarValue : null,
-            role: null !== $roleValue ? (string) $roleValue : null,
+            id: SafeIntCastAction::cast($user->id),
+            name: SafeStringCastAction::cast($user->name ?? ''),
+            email: SafeStringCastAction::cast($user->email ?? ''),
+            avatar: $avatarValue !== null ? SafeStringCastAction::cast($avatarValue) : null,
+            role: $roleValue !== null ? (string) $roleValue : null,
             permissions: $permissions ?? [],
             settings: $settingsArray,
         );

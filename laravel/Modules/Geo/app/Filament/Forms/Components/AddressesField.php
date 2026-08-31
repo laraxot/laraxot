@@ -9,7 +9,7 @@ use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
-use Modules\Geo\Filament\Resources\AddressResource;
+use Modules\Geo\Filament\Resources\AddressResource\Schemas\AddressForm;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Filament\Forms\Components\XotBaseRepeater;
 
@@ -60,8 +60,7 @@ class AddressesField extends XotBaseRepeater
     }
 
     /**
-     * @param array<mixed> $address
-     *
+     * @param  array<mixed>  $address
      * @return array<string, mixed>
      */
     private static function normalizeAddressRow(array $address): array
@@ -98,7 +97,7 @@ class AddressesField extends XotBaseRepeater
      */
     protected function getAddressFormSchema(): array
     {
-        $baseSchema = AddressResource::getFormSchema();
+        $baseSchema = AddressForm::getFormSchema();
 
         // Campo name: visibile solo con più di 1 elemento
         $baseSchema['name'] = TextInput::make('name')
@@ -110,9 +109,9 @@ class AddressesField extends XotBaseRepeater
         $baseSchema['is_primary'] = Toggle::make('is_primary')
             ->visible(fn (Get $get): bool => count(self::repeaterAddresses($get)) > 1)
             ->default(fn (Get $get): bool => count(self::repeaterAddresses($get)) <= 1)
-            ->afterStateUpdated(function ($state, Set $set, Get $get, Component $component): void {
+            ->afterStateUpdated(function (mixed $state, Set $set, Get $get, Component $component): void {
                 // Se questo diventa primary, disattiva tutti gli altri
-                if (true === $state) {
+                if ($state === true) {
                     $addresses = self::repeaterAddresses($get);
 
                     // Estrae l'indice dal path del componente (es. "addresses.0.is_primary")
@@ -120,7 +119,7 @@ class AddressesField extends XotBaseRepeater
                     preg_match('/addresses\.(\d+)\.is_primary/', $path ?? '', $matches);
                     $currentIndex = $matches[1] ?? null;
 
-                    if (null !== $currentIndex) {
+                    if ($currentIndex !== null) {
                         // Disattiva is_primary negli altri elementi
                         foreach ($addresses as $index => $address) {
                             $indexStr = app(SafeStringCastAction::class)->execute($index);
@@ -134,7 +133,7 @@ class AddressesField extends XotBaseRepeater
                 }
             })
             ->live()
-            ->dehydrateStateUsing(function ($state, Get $get): bool {
+            ->dehydrateStateUsing(function (mixed $state, Get $get): bool {
                 // Se c'è un solo elemento, forza sempre true
                 if (count(self::repeaterAddresses($get)) <= 1) {
                     return true;

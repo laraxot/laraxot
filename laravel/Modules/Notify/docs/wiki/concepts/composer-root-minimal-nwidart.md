@@ -20,6 +20,7 @@ related:
 ## Regola
 
 Dipendenze del dominio **Notify** in `Modules/Notify/composer.json`. Il root `laravel/composer.json` resta skeleton come [base_fixcity_fila5](https://github.com/laraxot/base_fixcity_fila5/blob/dev/laravel/composer.json).
+Dipendenze del dominio **Notify** in `Modules/Notify/composer.json`. Il root `laravel/composer.json` resta skeleton come [base_ptvx_fila5](https://github.com/laraxot/platform/blob/dev/laravel/composer.json).
 
 
 

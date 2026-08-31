@@ -1,3 +1,12 @@
+---
+title: "Struttura Standardizzata della Configurazione SMS"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Struttura Standardizzata della Configurazione SMS
 
 ## Introduzione

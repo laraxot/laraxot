@@ -1,0 +1,2067 @@
+{
+  "communities": {
+    "0": [
+      "app_filament_resources_exportresource_schemas_exportform",
+      "app_filament_resources_exportresource_schemas_exportform_exportform",
+      "app_filament_resources_exportresource_schemas_exportform_exportform_getformschema",
+      "app_filament_resources_exportresource_schemas_exportinfolist",
+      "app_filament_resources_exportresource_schemas_exportinfolist_exportinfolist",
+      "app_filament_resources_exportresource_schemas_exportinfolist_exportinfolist_getinfolistschema",
+      "app_filament_resources_failedimportrowresource_schemas_failedimportrowform",
+      "app_filament_resources_failedimportrowresource_schemas_failedimportrowform_failedimportrowform",
+      "app_filament_resources_failedimportrowresource_schemas_failedimportrowform_failedimportrowform_getformschema",
+      "app_filament_resources_failedimportrowresource_schemas_failedimportrowinfolist",
+      "app_filament_resources_failedimportrowresource_schemas_failedimportrowinfolist_failedimportrowinfolist",
+      "app_filament_resources_failedimportrowresource_schemas_failedimportrowinfolist_failedimportrowinfolist_getinfolistschema",
+      "app_filament_resources_failedjobresource_schemas_failedjobform",
+      "app_filament_resources_failedjobresource_schemas_failedjobform_failedjobform",
+      "app_filament_resources_failedjobresource_schemas_failedjobform_failedjobform_getformschema",
+      "app_filament_resources_failedjobresource_schemas_failedjobinfolist",
+      "app_filament_resources_failedjobresource_schemas_failedjobinfolist_failedjobinfolist",
+      "app_filament_resources_failedjobresource_schemas_failedjobinfolist_failedjobinfolist_getinfolistschema",
+      "app_filament_resources_importresource_schemas_importform",
+      "app_filament_resources_importresource_schemas_importform_importform",
+      "app_filament_resources_importresource_schemas_importform_importform_getformschema",
+      "app_filament_resources_importresource_schemas_importinfolist",
+      "app_filament_resources_importresource_schemas_importinfolist_importinfolist",
+      "app_filament_resources_importresource_schemas_importinfolist_importinfolist_getinfolistschema",
+      "app_filament_resources_jobbatchresource_schemas_jobbatchform",
+      "app_filament_resources_jobbatchresource_schemas_jobbatchform_jobbatchform",
+      "app_filament_resources_jobbatchresource_schemas_jobbatchform_jobbatchform_getformschema",
+      "app_filament_resources_jobbatchresource_schemas_jobbatchinfolist",
+      "app_filament_resources_jobbatchresource_schemas_jobbatchinfolist_jobbatchinfolist",
+      "app_filament_resources_jobbatchresource_schemas_jobbatchinfolist_jobbatchinfolist_getinfolistschema",
+      "app_filament_resources_jobmanagerresource_schemas_jobmanagerform",
+      "app_filament_resources_jobmanagerresource_schemas_jobmanagerform_jobmanagerform",
+      "app_filament_resources_jobmanagerresource_schemas_jobmanagerform_jobmanagerform_getformschema",
+      "app_filament_resources_jobmanagerresource_schemas_jobmanagerinfolist",
+      "app_filament_resources_jobmanagerresource_schemas_jobmanagerinfolist_jobmanagerinfolist",
+      "app_filament_resources_jobmanagerresource_schemas_jobmanagerinfolist_jobmanagerinfolist_getinfolistschema",
+      "app_filament_resources_jobresource_schemas_jobform",
+      "app_filament_resources_jobresource_schemas_jobform_jobform",
+      "app_filament_resources_jobresource_schemas_jobform_jobform_getformschema",
+      "app_filament_resources_jobresource_schemas_jobinfolist",
+      "app_filament_resources_jobresource_schemas_jobinfolist_jobinfolist",
+      "app_filament_resources_jobresource_schemas_jobinfolist_jobinfolist_getinfolistschema",
+      "app_filament_resources_jobswaitingresource_schemas_jobform",
+      "app_filament_resources_jobswaitingresource_schemas_jobform_jobform",
+      "app_filament_resources_jobswaitingresource_schemas_jobform_jobform_getformschema",
+      "app_filament_resources_jobswaitingresource_schemas_jobinfolist",
+      "app_filament_resources_jobswaitingresource_schemas_jobinfolist_jobinfolist",
+      "app_filament_resources_jobswaitingresource_schemas_jobinfolist_jobinfolist_getinfolistschema",
+      "app_filament_resources_jobswaitingresource_schemas_jobswaitingform",
+      "app_filament_resources_jobswaitingresource_schemas_jobswaitingform_jobswaitingform",
+      "app_filament_resources_jobswaitingresource_schemas_jobswaitingform_jobswaitingform_getformschema",
+      "app_filament_resources_jobswaitingresource_schemas_jobswaitinginfolist",
+      "app_filament_resources_jobswaitingresource_schemas_jobswaitinginfolist_jobswaitinginfolist",
+      "app_filament_resources_jobswaitingresource_schemas_jobswaitinginfolist_jobswaitinginfolist_getinfolistschema",
+      "app_filament_resources_scheduleresource_schemas_scheduleinfolist",
+      "app_filament_resources_scheduleresource_schemas_scheduleinfolist_scheduleinfolist",
+      "app_filament_resources_scheduleresource_schemas_scheduleinfolist_scheduleinfolist_getinfolistschema",
+      "filament_schemas_components_component",
+      "modules_xot_filament_resources_schemas_xotbaseresourceform",
+      "modules_xot_filament_resources_schemas_xotbaseresourceinfolist"
+    ],
+    "1": [
+      "app_filament_resources_jobmanagerresource_widgets_jobstatsoverview",
+      "app_filament_resources_jobmanagerresource_widgets_jobstatsoverview_jobstatsoverview",
+      "app_filament_resources_jobmanagerresource_widgets_jobstatsoverview_jobstatsoverview_getcards",
+      "app_filament_resources_jobresource_widgets_jobstatsoverview",
+      "app_filament_resources_jobresource_widgets_jobstatsoverview_jobstatsoverview",
+      "app_filament_resources_jobresource_widgets_jobstatsoverview_jobstatsoverview_getcards",
+      "app_filament_resources_jobswaitingresource_widgets_jobswaitingoverview",
+      "app_filament_resources_jobswaitingresource_widgets_jobswaitingoverview_jobswaitingoverview",
+      "app_filament_resources_jobswaitingresource_widgets_jobswaitingoverview_jobswaitingoverview_getcards",
+      "app_models_job",
+      "app_models_job_job",
+      "app_models_job_job_casts",
+      "app_models_job_job_getdisplaynameattribute",
+      "app_models_job_job_gettable",
+      "app_models_job_job_status",
+      "app_models_job_php_attribute",
+      "app_models_jobbatch",
+      "app_models_jobbatch_jobbatch",
+      "app_models_jobbatch_jobbatch_cancelled",
+      "app_models_jobbatch_jobbatch_casts",
+      "app_models_jobbatch_jobbatch_failed",
+      "app_models_jobbatch_jobbatch_finished",
+      "app_models_jobbatch_jobbatch_hasfailures",
+      "app_models_jobbatch_jobbatch_haspendingjobs",
+      "app_models_jobbatch_jobbatch_processedjobs",
+      "app_models_jobbatch_jobbatch_progress",
+      "app_models_jobmanager",
+      "app_models_jobmanager_jobmanager",
+      "app_models_jobmanager_jobmanager_casts",
+      "app_models_jobmanager_jobmanager_getjobid",
+      "app_models_jobmanager_jobmanager_hasfailed",
+      "app_models_jobmanager_jobmanager_hassucceeded",
+      "app_models_jobmanager_jobmanager_isfinished",
+      "app_models_jobmanager_jobmanager_status",
+      "app_models_jobmanager_php_attribute",
+      "app_models_jobswaiting",
+      "app_models_jobswaiting_jobswaiting",
+      "database_factories_jobbatchfactory",
+      "database_factories_jobbatchfactory_jobbatchfactory",
+      "database_factories_jobbatchfactory_jobbatchfactory_definition",
+      "database_factories_jobfactory",
+      "database_factories_jobfactory_jobfactory",
+      "database_factories_jobfactory_jobfactory_definition",
+      "database_factories_jobmanagerfactory",
+      "database_factories_jobmanagerfactory_jobmanagerfactory",
+      "database_factories_jobmanagerfactory_jobmanagerfactory_definition",
+      "illuminate_contracts_queue_job",
+      "illuminate_database_eloquent_casts_attribute",
+      "modules_job_traits_formatseconds",
+      "modules_xot_filament_widgets_xotbasestatsoverviewwidget",
+      "tests_feature_jobbatchbusinesslogictest",
+      "tests_feature_jobbatchbusinesslogictest_uniquejobbatchid",
+      "tests_feature_jobbusinesslogictest",
+      "tests_feature_simplejobtest",
+      "tests_pest",
+      "tests_pest_createjob",
+      "tests_pest_createjobbatch",
+      "tests_pest_makejob",
+      "tests_pest_makejobbatch",
+      "tests_unit_traits_formatsecondstest"
+    ],
+    "2": [
+      "app_actions_command_getcommandsaction",
+      "app_actions_command_getcommandsaction_getcommandsaction",
+      "app_actions_command_getcommandsaction_getcommandsaction_execute",
+      "app_datas_commanddata",
+      "app_datas_commanddata_commanddata",
+      "app_datas_commanddata_commanddata_construct",
+      "app_filament_resources_jobresource_pages_boardjobs",
+      "app_filament_resources_jobresource_pages_boardjobs_boardjobs",
+      "app_filament_resources_scheduleresource",
+      "app_filament_resources_scheduleresource_pages_createschedule",
+      "app_filament_resources_scheduleresource_pages_createschedule_createschedule",
+      "app_filament_resources_scheduleresource_pages_createschedule_createschedule_getformschema",
+      "app_filament_resources_scheduleresource_pages_createschedule_createschedule_onvalidationerror",
+      "app_filament_resources_scheduleresource_pages_createschedule_createschedule_schema",
+      "app_filament_resources_scheduleresource_pages_editschedule",
+      "app_filament_resources_scheduleresource_pages_editschedule_editschedule",
+      "app_filament_resources_scheduleresource_pages_editschedule_editschedule_getformschema",
+      "app_filament_resources_scheduleresource_pages_editschedule_editschedule_onvalidationerror",
+      "app_filament_resources_scheduleresource_pages_listschedules",
+      "app_filament_resources_scheduleresource_pages_listschedules_listschedules",
+      "app_filament_resources_scheduleresource_pages_listschedules_listschedules_gettableactions",
+      "app_filament_resources_scheduleresource_pages_listschedules_listschedules_gettablebulkactions",
+      "app_filament_resources_scheduleresource_pages_listschedules_listschedules_gettablecolumns",
+      "app_filament_resources_scheduleresource_pages_listschedules_listschedules_gettablerecordurlusing",
+      "app_filament_resources_scheduleresource_pages_viewschedule",
+      "app_filament_resources_scheduleresource_pages_viewschedule_viewschedule",
+      "app_filament_resources_scheduleresource_pages_viewschedule_viewschedule_getheaderactions",
+      "app_filament_resources_scheduleresource_pages_viewschedule_viewschedule_gettablecolumns",
+      "app_filament_resources_scheduleresource_pages_viewschedule_viewschedule_gettitle",
+      "app_filament_resources_scheduleresource_scheduleresource",
+      "app_filament_resources_scheduleresource_scheduleresource_geteloquentquery",
+      "app_filament_resources_scheduleresource_scheduleresource_getformschema",
+      "app_filament_resources_scheduleresource_scheduleresource_getpages",
+      "app_filament_resources_scheduleresource_scheduleresource_getrelations",
+      "app_filament_resources_scheduleresource_schemas_scheduleform",
+      "app_filament_resources_scheduleresource_schemas_scheduleform_scheduleform",
+      "app_filament_resources_scheduleresource_schemas_scheduleform_scheduleform_getformschema",
+      "app_rules_corn",
+      "app_rules_corn_corn",
+      "app_rules_corn_corn_validate",
+      "closure",
+      "filament_forms_concerns_interactswithforms",
+      "filament_schemas_schema",
+      "filament_support_components_component",
+      "filament_tables_concerns_interactswithtable",
+      "filament_tables_contracts_hastable",
+      "illuminate_console_application",
+      "illuminate_contracts_validation_validationrule",
+      "illuminate_validation_validationexception",
+      "modules_xot_filament_resources_pages_xotbaseresourcepage",
+      "modules_xot_filament_traits_navigationpagelabeltrait",
+      "spatie_laraveldata_data",
+      "spatie_laraveldata_datacollection",
+      "tests_unit_actions_command_getcommandsactiontest"
+    ],
+    "3": [
+      "app_actions_getactiveschedulesaction",
+      "app_actions_getactiveschedulesaction_getactiveschedulesaction",
+      "app_actions_getactiveschedulesaction_getactiveschedulesaction_construct",
+      "app_actions_getactiveschedulesaction_getactiveschedulesaction_execute",
+      "app_actions_getactiveschedulesaction_getactiveschedulesaction_getfromcache",
+      "app_actions_getactiveschedulesaction_php_collection",
+      "app_actions_schedule_getactiveschedulesaction",
+      "app_actions_schedule_getactiveschedulesaction_getactiveschedulesaction",
+      "app_actions_schedule_getactiveschedulesaction_getactiveschedulesaction_execute",
+      "app_actions_schedule_getactiveschedulesaction_getactiveschedulesaction_getfromcache",
+      "app_actions_schedule_getactiveschedulesaction_getactiveschedulesaction_getmodel",
+      "app_actions_schedule_getactiveschedulesaction_php_collection",
+      "app_models_jobmanager_jobmanager_prunable",
+      "app_models_policies_schedulepolicy",
+      "app_models_policies_schedulepolicy_schedulepolicy",
+      "app_models_policies_schedulepolicy_schedulepolicy_create",
+      "app_models_policies_schedulepolicy_schedulepolicy_delete",
+      "app_models_policies_schedulepolicy_schedulepolicy_forcedelete",
+      "app_models_policies_schedulepolicy_schedulepolicy_restore",
+      "app_models_policies_schedulepolicy_schedulepolicy_update",
+      "app_models_policies_schedulepolicy_schedulepolicy_view",
+      "app_models_policies_schedulepolicy_schedulepolicy_viewany",
+      "app_models_schedule",
+      "app_models_schedule_schedule",
+      "app_models_schedule_schedule_casts",
+      "app_models_schedule_schedule_evaluatefunction",
+      "app_models_schedule_schedule_getarguments",
+      "app_models_schedule_schedule_getenvironments",
+      "app_models_schedule_schedule_getoptions",
+      "app_models_schedule_schedule_scopeactive",
+      "app_models_schedule_schedule_scopeinactive",
+      "app_models_traits_frontendsortable",
+      "app_models_traits_frontendsortable_scopesortableby",
+      "app_observers_scheduleobserver",
+      "app_observers_scheduleobserver_scheduleobserver",
+      "app_observers_scheduleobserver_scheduleobserver_clearcache",
+      "app_observers_scheduleobserver_scheduleobserver_created",
+      "app_observers_scheduleobserver_scheduleobserver_deleted",
+      "app_observers_scheduleobserver_scheduleobserver_restored",
+      "app_observers_scheduleobserver_scheduleobserver_saved",
+      "app_observers_scheduleobserver_scheduleobserver_updated",
+      "app_services_scheduleservice",
+      "app_services_scheduleservice_php_collection",
+      "app_services_scheduleservice_scheduleservice",
+      "app_services_scheduleservice_scheduleservice_clearcache",
+      "app_services_scheduleservice_scheduleservice_construct",
+      "app_services_scheduleservice_scheduleservice_getactives",
+      "app_services_scheduleservice_scheduleservice_getfromcache",
+      "illuminate_console_scheduling_managesfrequencies",
+      "illuminate_database_eloquent_builder",
+      "illuminate_support_collection",
+      "tests_unit_services_scheduleservicetest"
+    ],
+    "4": [
+      "database_seeders_exportseeder",
+      "database_seeders_exportseeder_exportseeder",
+      "database_seeders_exportseeder_exportseeder_run",
+      "database_seeders_failedimportrowseeder",
+      "database_seeders_failedimportrowseeder_failedimportrowseeder",
+      "database_seeders_failedimportrowseeder_failedimportrowseeder_run",
+      "database_seeders_failedjobseeder",
+      "database_seeders_failedjobseeder_failedjobseeder",
+      "database_seeders_failedjobseeder_failedjobseeder_run",
+      "database_seeders_frequencyseeder",
+      "database_seeders_frequencyseeder_frequencyseeder",
+      "database_seeders_frequencyseeder_frequencyseeder_run",
+      "database_seeders_importseeder",
+      "database_seeders_importseeder_importseeder",
+      "database_seeders_importseeder_importseeder_run",
+      "database_seeders_jobbatchseeder",
+      "database_seeders_jobbatchseeder_jobbatchseeder",
+      "database_seeders_jobbatchseeder_jobbatchseeder_run",
+      "database_seeders_jobdatabaseseeder",
+      "database_seeders_jobdatabaseseeder_jobdatabaseseeder",
+      "database_seeders_jobdatabaseseeder_jobdatabaseseeder_run",
+      "database_seeders_jobmanagerseeder",
+      "database_seeders_jobmanagerseeder_jobmanagerseeder",
+      "database_seeders_jobmanagerseeder_jobmanagerseeder_run",
+      "database_seeders_jobseeder",
+      "database_seeders_jobseeder_jobseeder",
+      "database_seeders_jobseeder_jobseeder_run",
+      "database_seeders_jobswaitingseeder",
+      "database_seeders_jobswaitingseeder_jobswaitingseeder",
+      "database_seeders_jobswaitingseeder_jobswaitingseeder_run",
+      "database_seeders_parameterseeder",
+      "database_seeders_parameterseeder_parameterseeder",
+      "database_seeders_parameterseeder_parameterseeder_run",
+      "database_seeders_resultseeder",
+      "database_seeders_resultseeder_resultseeder",
+      "database_seeders_resultseeder_resultseeder_run",
+      "database_seeders_schedulehistoryseeder",
+      "database_seeders_schedulehistoryseeder_schedulehistoryseeder",
+      "database_seeders_schedulehistoryseeder_schedulehistoryseeder_run",
+      "database_seeders_scheduleseeder",
+      "database_seeders_scheduleseeder_scheduleseeder",
+      "database_seeders_scheduleseeder_scheduleseeder_run",
+      "database_seeders_taskcommentseeder",
+      "database_seeders_taskcommentseeder_taskcommentseeder",
+      "database_seeders_taskcommentseeder_taskcommentseeder_run",
+      "database_seeders_taskseeder",
+      "database_seeders_taskseeder_taskseeder",
+      "database_seeders_taskseeder_taskseeder_run",
+      "illuminate_database_seeder"
+    ],
+    "5": [
+      "composer",
+      "composer_allow_plugins_dealerdirect_phpcodesniffer_composer_installer",
+      "composer_allow_plugins_pestphp_pest_plugin",
+      "composer_allow_plugins_phpstan_extension_installer",
+      "composer_allow_plugins_wikimedia_composer_merge_plugin",
+      "composer_authors",
+      "composer_autoload",
+      "composer_autoload_dev",
+      "composer_autoload_dev_psr_4",
+      "composer_autoload_psr_4",
+      "composer_config",
+      "composer_config_allow_plugins",
+      "composer_config_sort_packages",
+      "composer_description",
+      "composer_extra",
+      "composer_extra_laravel",
+      "composer_homepage",
+      "composer_keywords",
+      "composer_laravel_aliases",
+      "composer_laravel_providers",
+      "composer_license",
+      "composer_minimum_stability",
+      "composer_name",
+      "composer_prefer_stable",
+      "composer_psr_4_modules_job",
+      "composer_psr_4_modules_job_database_factories",
+      "composer_psr_4_modules_job_database_seeders",
+      "composer_psr_4_modules_job_tests",
+      "composer_repositories_comment",
+      "composer_require",
+      "composer_require_dev",
+      "composer_require_php",
+      "composer_scripts",
+      "composer_scripts_analyse",
+      "composer_scripts_format",
+      "composer_scripts_post_autoload_dump1",
+      "composer_scripts_test",
+      "composer_scripts_test_coverage",
+      "ref_async",
+      "ref_background_tasks",
+      "ref_filament",
+      "ref_job",
+      "ref_laravel",
+      "ref_laraxot",
+      "ref_module_job",
+      "ref_modules_job_providers_filament_adminpanelprovider",
+      "ref_modules_job_providers_jobserviceprovider",
+      "ref_queue"
+    ],
+    "6": [
+      "app_models_failedimportrow",
+      "app_models_failedimportrow_failedimportrow",
+      "app_models_failedimportrow_failedimportrow_casts",
+      "app_models_import",
+      "app_models_import_import",
+      "app_models_import_import_casts",
+      "app_models_parameter",
+      "app_models_taskcomment",
+      "database_factories_exportfactory",
+      "database_factories_exportfactory_exportfactory",
+      "database_factories_exportfactory_exportfactory_definition",
+      "database_factories_failedimportrowfactory",
+      "database_factories_failedimportrowfactory_failedimportrowfactory",
+      "database_factories_failedimportrowfactory_failedimportrowfactory_definition",
+      "database_factories_failedjobfactory",
+      "database_factories_failedjobfactory_failedjobfactory",
+      "database_factories_failedjobfactory_failedjobfactory_definition",
+      "database_factories_frequencyfactory",
+      "database_factories_frequencyfactory_frequencyfactory",
+      "database_factories_frequencyfactory_frequencyfactory_definition",
+      "database_factories_importfactory",
+      "database_factories_importfactory_importfactory",
+      "database_factories_importfactory_importfactory_definition",
+      "database_factories_jobswaitingfactory",
+      "database_factories_jobswaitingfactory_jobswaitingfactory",
+      "database_factories_jobswaitingfactory_jobswaitingfactory_definition",
+      "database_factories_parameterfactory",
+      "database_factories_parameterfactory_parameterfactory",
+      "database_factories_parameterfactory_parameterfactory_definition",
+      "database_factories_resultfactory",
+      "database_factories_resultfactory_resultfactory",
+      "database_factories_resultfactory_resultfactory_definition",
+      "database_factories_schedulefactory",
+      "database_factories_schedulefactory_schedulefactory",
+      "database_factories_schedulefactory_schedulefactory_definition",
+      "database_factories_taskcommentfactory",
+      "database_factories_taskcommentfactory_taskcommentfactory",
+      "database_factories_taskcommentfactory_taskcommentfactory_definition",
+      "database_factories_taskfactory",
+      "database_factories_taskfactory_taskfactory",
+      "database_factories_taskfactory_taskfactory_definition",
+      "illuminate_database_eloquent_factories_factory"
+    ],
+    "7": [
+      "autoprefixer",
+      "axios",
+      "cross_env",
+      "laravel_mix",
+      "laravel_mix_merge_manifest",
+      "laravel_vite_plugin",
+      "lodash",
+      "package",
+      "package_devdependencies",
+      "package_devdependencies_autoprefixer",
+      "package_devdependencies_axios",
+      "package_devdependencies_cross_env",
+      "package_devdependencies_laravel_mix",
+      "package_devdependencies_laravel_mix_merge_manifest",
+      "package_devdependencies_laravel_vite_plugin",
+      "package_devdependencies_lodash",
+      "package_devdependencies_postcss",
+      "package_devdependencies_postcss_nesting",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_tailwindcss_forms",
+      "package_devdependencies_tailwindcss_typography",
+      "package_devdependencies_tippy_js",
+      "package_devdependencies_vite",
+      "package_private",
+      "package_scripts",
+      "package_scripts_development",
+      "package_scripts_hot",
+      "package_scripts_production",
+      "package_scripts_watch",
+      "package_scripts_watch_poll",
+      "postcss",
+      "postcss_nesting",
+      "tailwindcss",
+      "tailwindcss_forms",
+      "tailwindcss_typography",
+      "tippy_js",
+      "vite"
+    ],
+    "8": [
+      "app_actions_executetaskaction",
+      "app_actions_executetaskaction_executetaskaction",
+      "app_actions_executetaskaction_executetaskaction_execute",
+      "app_http_livewire_broad",
+      "app_http_livewire_broad_broad",
+      "app_http_livewire_broad_broad_notifyevent",
+      "app_http_livewire_broad_broad_render",
+      "app_http_livewire_broad_broad_try",
+      "app_http_livewire_job_status",
+      "app_http_livewire_job_status_status",
+      "app_http_livewire_job_status_status_artisan",
+      "app_http_livewire_job_status_status_dummyaction",
+      "app_http_livewire_job_status_status_mount",
+      "app_http_livewire_job_status_status_render",
+      "app_http_livewire_job_status_status_saveenv",
+      "app_http_livewire_job_status_status_updatedformdata",
+      "app_http_livewire_schedule_crud",
+      "app_http_livewire_schedule_crud_crud",
+      "app_http_livewire_schedule_crud_crud_executetask",
+      "app_http_livewire_schedule_crud_crud_getcommands",
+      "app_http_livewire_schedule_crud_crud_getfrequencies",
+      "app_http_livewire_schedule_crud_crud_render",
+      "app_http_livewire_schedule_crud_crud_taskcreate",
+      "app_http_livewire_schedule_status",
+      "app_http_livewire_schedule_status_status",
+      "app_http_livewire_schedule_status_status_artisan",
+      "app_http_livewire_schedule_status_status_getscheduledjobs",
+      "app_http_livewire_schedule_status_status_render",
+      "dummyaction",
+      "illuminate_contracts_support_renderable",
+      "livewire_component",
+      "resources_views_livewire_job_status_blade",
+      "resources_views_livewire_job_status_blade_php_artisan",
+      "tests_unit_actions_dummyactiontest",
+      "tests_unit_actions_executetaskactiontest"
+    ],
+    "9": [
+      "app_events_broadcastingevent",
+      "app_events_broadcastingevent_broadcastingevent",
+      "app_events_broadcastingevent_broadcastingevent_broadcaston",
+      "app_events_broadcastingevent_broadcastingevent_broadcastwhen",
+      "app_events_event",
+      "app_events_event_event",
+      "app_events_executing",
+      "app_events_executing_executing",
+      "app_events_privateevent",
+      "app_events_privateevent_privateevent",
+      "app_events_privateevent_privateevent_broadcaston",
+      "app_events_privateevent_privateevent_construct",
+      "app_events_publicevent",
+      "app_events_publicevent_publicevent",
+      "app_events_publicevent_publicevent_broadcaston",
+      "app_events_taskevent",
+      "app_events_taskevent_taskevent",
+      "illuminate_broadcasting_channel",
+      "illuminate_broadcasting_interactswithsockets",
+      "illuminate_broadcasting_privatechannel",
+      "illuminate_contracts_broadcasting_shouldbroadcast",
+      "illuminate_foundation_events_dispatchable",
+      "illuminate_queue_serializesmodels",
+      "tests_unit_events_broadcastingeventtest",
+      "tests_unit_events_eventtest",
+      "tests_unit_events_executingtest",
+      "tests_unit_events_publiceventtest",
+      "tests_unit_events_taskeventtest"
+    ],
+    "10": [
+      "app_contracts_taskcontract",
+      "app_contracts_taskcontract_builder",
+      "app_contracts_taskcontract_destroy",
+      "app_contracts_taskcontract_execute",
+      "app_contracts_taskcontract_find",
+      "app_contracts_taskcontract_findall",
+      "app_contracts_taskcontract_findallactive",
+      "app_contracts_taskcontract_store",
+      "app_contracts_taskcontract_update",
+      "app_contracts_taskinterface",
+      "app_contracts_taskinterface_builder",
+      "app_contracts_taskinterface_destroy",
+      "app_contracts_taskinterface_execute",
+      "app_contracts_taskinterface_find",
+      "app_contracts_taskinterface_findall",
+      "app_contracts_taskinterface_findallactive",
+      "app_contracts_taskinterface_store",
+      "app_contracts_taskinterface_update",
+      "app_events_taskevent_taskevent_construct",
+      "app_models_task_task",
+      "app_models_task_task_compileparameters",
+      "app_models_task_task_getactivatedattribute",
+      "app_models_task_task_getupcomingattribute",
+      "app_models_task_task_routenotificationformail",
+      "app_models_task_task_routenotificationfornexmo",
+      "app_models_task_task_routenotificationforslack",
+      "illuminate_database_eloquent_collection"
+    ],
+    "11": [
+      "docs_prd",
+      "docs_prd_actionstandard",
+      "docs_prd_architecturerule",
+      "docs_prd_companiondocs",
+      "docs_prd_dependencies",
+      "docs_prd_goals",
+      "docs_prd_implementationpattern",
+      "docs_prd_name",
+      "docs_prd_nongoals",
+      "docs_prd_purpose",
+      "docs_prd_qualitygates",
+      "docs_prd_sourceframework",
+      "docs_prd_status",
+      "docs_prd_suiteversion",
+      "docs_prd_type",
+      "ref_contenere_ui_o_dominio_business",
+      "ref_product_launch_plan_md",
+      "ref_product_roadmap_md",
+      "ref_product_strategy_md",
+      "ref_ridurre_blocchi_sincroni_in_backoffice_e_frontoffice",
+      "ref_sprint_planning_meeting_md",
+      "ref_stabilizzare_job_riusabili",
+      "ref_supportare_esecuzione_asincrona_e_retry",
+      "ref_user_research_md",
+      "ref_vendor_bin_phpinsights_analyse_modules_job_min_quality_0_min_complexity_0_min_architecture_0_min_style_0",
+      "ref_vendor_bin_phpstan_analyse_modules_job",
+      "ref_xot"
+    ],
+    "12": [
+      "app_models_policies_failedjobpolicy",
+      "app_models_policies_jobbatchpolicy",
+      "app_models_policies_jobbatchpolicy_jobbatchpolicy",
+      "app_models_policies_jobbatchpolicy_jobbatchpolicy_addteammember",
+      "app_models_policies_jobbatchpolicy_jobbatchpolicy_create",
+      "app_models_policies_jobbatchpolicy_jobbatchpolicy_delete",
+      "app_models_policies_jobbatchpolicy_jobbatchpolicy_removeteammember",
+      "app_models_policies_jobbatchpolicy_jobbatchpolicy_update",
+      "app_models_policies_jobbatchpolicy_jobbatchpolicy_updateteammember",
+      "app_models_policies_jobbatchpolicy_jobbatchpolicy_view",
+      "app_models_policies_jobbatchpolicy_jobbatchpolicy_viewany",
+      "app_models_policies_jobpolicy",
+      "app_models_policies_jobpolicy_jobpolicy",
+      "app_models_policies_jobpolicy_jobpolicy_addteammember",
+      "app_models_policies_jobpolicy_jobpolicy_create",
+      "app_models_policies_jobpolicy_jobpolicy_delete",
+      "app_models_policies_jobpolicy_jobpolicy_removeteammember",
+      "app_models_policies_jobpolicy_jobpolicy_update",
+      "app_models_policies_jobpolicy_jobpolicy_updateteammember",
+      "app_models_policies_jobpolicy_jobpolicy_view",
+      "app_models_policies_jobpolicy_jobpolicy_viewany",
+      "modules_user_models_policies_userbasepolicy",
+      "modules_user_models_team"
+    ],
+    "13": [
+      "app_filament_pages_jobmonitor",
+      "app_filament_pages_jobmonitor_jobmonitor",
+      "app_filament_pages_jobstatus",
+      "app_filament_pages_jobstatus_jobstatus",
+      "app_filament_pages_jobstatus_jobstatus_artisan",
+      "app_filament_pages_jobstatus_jobstatus_getacts",
+      "app_filament_pages_jobstatus_jobstatus_getheaderwidgets",
+      "app_filament_pages_jobstatus_jobstatus_getviewdata",
+      "app_filament_resources_jobbatchresource_pages_listjobbatches_listjobbatches_getheaderactions",
+      "app_filament_widgets_clockwidget",
+      "app_filament_widgets_clockwidget_clockwidget",
+      "app_filament_widgets_clockwidget_clockwidget_begin",
+      "app_filament_widgets_clockwidget_clockwidget_beginprocess",
+      "app_filament_widgets_clockwidget_clockwidget_beginstream",
+      "app_filament_widgets_queuelistenwidget",
+      "app_filament_widgets_queuelistenwidget_queuelistenwidget",
+      "app_filament_widgets_queuelistenwidget_queuelistenwidget_begin",
+      "app_filament_widgets_queuelistenwidget_queuelistenwidget_beginprocess",
+      "app_filament_widgets_queuelistenwidget_queuelistenwidget_beginstream",
+      "modules_xot_filament_pages_xotbasepage",
+      "modules_xot_filament_widgets_xotbasewidget"
+    ],
+    "14": [
+      "app_models_export",
+      "app_models_export_export",
+      "app_models_export_export_casts",
+      "app_providers_eventserviceprovider",
+      "app_providers_eventserviceprovider_eventserviceprovider",
+      "app_providers_eventserviceprovider_eventserviceprovider_configureemailverification",
+      "app_providers_filament_adminpanelprovider",
+      "app_providers_filament_adminpanelprovider_adminpanelprovider",
+      "app_providers_jobserviceprovider",
+      "app_providers_jobserviceprovider_jobserviceprovider",
+      "app_providers_jobserviceprovider_jobserviceprovider_boot",
+      "app_providers_jobserviceprovider_jobserviceprovider_registerqueue",
+      "app_providers_routeserviceprovider",
+      "app_providers_routeserviceprovider_routeserviceprovider",
+      "filament_actions_exports_models_export",
+      "illuminate_foundation_support_providers_eventserviceprovider",
+      "modules_xot_providers_filament_xotbasepanelprovider",
+      "modules_xot_providers_xotbaserouteserviceprovider",
+      "modules_xot_providers_xotbaseserviceprovider",
+      "tests_unit_providers_jobproviderscoveragetest"
+    ],
+    "15": [
+      "app_models_policies_exportpolicy",
+      "app_models_policies_exportpolicy_exportpolicy",
+      "app_models_policies_failedimportrowpolicy",
+      "app_models_policies_failedimportrowpolicy_failedimportrowpolicy",
+      "app_models_policies_frequencypolicy",
+      "app_models_policies_frequencypolicy_frequencypolicy",
+      "app_models_policies_importpolicy",
+      "app_models_policies_importpolicy_importpolicy",
+      "app_models_policies_jobbasepolicy",
+      "app_models_policies_jobbasepolicy_jobbasepolicy",
+      "app_models_policies_jobbasepolicy_jobbasepolicy_before",
+      "app_models_policies_jobmanagerpolicy",
+      "app_models_policies_jobmanagerpolicy_jobmanagerpolicy",
+      "app_models_policies_jobswaitingpolicy",
+      "app_models_policies_jobswaitingpolicy_jobswaitingpolicy",
+      "app_models_policies_parameterpolicy",
+      "app_models_policies_parameterpolicy_parameterpolicy",
+      "app_models_policies_resultpolicy",
+      "app_models_policies_resultpolicy_resultpolicy",
+      "illuminate_auth_access_handlesauthorization"
+    ],
+    "16": [
+      "app_actions_clearschedulecacheaction",
+      "app_actions_clearschedulecacheaction_clearschedulecacheaction",
+      "app_actions_clearschedulecacheaction_clearschedulecacheaction_execute",
+      "app_actions_console_assertallowedartisancommandaction",
+      "app_actions_console_assertallowedartisancommandaction_assertallowedartisancommandaction",
+      "app_actions_console_assertallowedartisancommandaction_assertallowedartisancommandaction_execute",
+      "app_actions_console_getqueuesubcommandsaction",
+      "app_actions_console_getqueuesubcommandsaction_getqueuesubcommandsaction",
+      "app_actions_console_getqueuesubcommandsaction_getqueuesubcommandsaction_execute",
+      "app_actions_console_getschedulestatuscommandsaction",
+      "app_actions_console_getschedulestatuscommandsaction_getschedulestatuscommandsaction",
+      "app_actions_console_getschedulestatuscommandsaction_getschedulestatuscommandsaction_execute",
+      "app_actions_dummyaction",
+      "app_actions_dummyaction_dummyaction",
+      "app_actions_dummyaction_dummyaction_execute",
+      "app_actions_schedule_clearschedulecacheaction",
+      "app_actions_schedule_clearschedulecacheaction_clearschedulecacheaction",
+      "app_actions_schedule_clearschedulecacheaction_clearschedulecacheaction_execute",
+      "spatie_queueableaction_queueableaction"
+    ],
+    "17": [
+      "app_filament_resources_exportresource_pages_listexports",
+      "app_filament_resources_exportresource_pages_listexports_listexports",
+      "app_filament_resources_exportresource_pages_listexports_listexports_gettablecolumns",
+      "app_filament_resources_failedimportrowresource_pages_listfailedimportrows",
+      "app_filament_resources_failedimportrowresource_pages_listfailedimportrows_listfailedimportrows",
+      "app_filament_resources_failedimportrowresource_pages_listfailedimportrows_listfailedimportrows_gettablecolumns",
+      "app_filament_resources_jobswaitingresource",
+      "app_filament_resources_jobswaitingresource_jobswaitingresource",
+      "app_filament_resources_jobswaitingresource_jobswaitingresource_getformschema",
+      "app_filament_resources_jobswaitingresource_jobswaitingresource_getwidgets",
+      "app_filament_resources_jobswaitingresource_pages_listjobswaiting",
+      "app_filament_resources_jobswaitingresource_pages_listjobswaiting_listjobswaiting",
+      "app_filament_resources_jobswaitingresource_pages_listjobswaiting_listjobswaiting_getheaderwidgets",
+      "app_filament_resources_jobswaitingresource_pages_listjobswaiting_listjobswaiting_gettablecolumns",
+      "app_filament_resources_jobswaitingresource_pages_listjobswaitings",
+      "app_filament_resources_jobswaitingresource_pages_listjobswaitings_listjobswaitings",
+      "app_filament_resources_jobswaitingresource_pages_listjobswaitings_listjobswaitings_getheaderwidgets",
+      "app_filament_resources_jobswaitingresource_pages_listjobswaitings_listjobswaitings_gettablecolumns",
+      "modules_xot_filament_resources_pages_xotbaselistrecords"
+    ],
+    "18": [
+      "app_models_policies_failedjobpolicy_failedjobpolicy",
+      "app_models_policies_failedjobpolicy_failedjobpolicy_addteammember",
+      "app_models_policies_failedjobpolicy_failedjobpolicy_create",
+      "app_models_policies_failedjobpolicy_failedjobpolicy_delete",
+      "app_models_policies_failedjobpolicy_failedjobpolicy_removeteammember",
+      "app_models_policies_failedjobpolicy_failedjobpolicy_update",
+      "app_models_policies_failedjobpolicy_failedjobpolicy_updateteammember",
+      "app_models_policies_failedjobpolicy_failedjobpolicy_view",
+      "app_models_policies_failedjobpolicy_failedjobpolicy_viewany",
+      "app_models_policies_taskpolicy",
+      "app_models_policies_taskpolicy_taskpolicy",
+      "app_models_policies_taskpolicy_taskpolicy_create",
+      "app_models_policies_taskpolicy_taskpolicy_delete",
+      "app_models_policies_taskpolicy_taskpolicy_forcedelete",
+      "app_models_policies_taskpolicy_taskpolicy_restore",
+      "app_models_policies_taskpolicy_taskpolicy_update",
+      "app_models_policies_taskpolicy_taskpolicy_view",
+      "app_models_policies_taskpolicy_taskpolicy_viewany",
+      "modules_xot_contracts_usercontract"
+    ],
+    "19": [
+      "app_filament_resources_exportresource_tables_exportstable",
+      "app_filament_resources_exportresource_tables_exportstable_exportstable",
+      "app_filament_resources_exportresource_tables_exportstable_exportstable_gettablecolumns",
+      "app_filament_resources_failedimportrowresource_tables_failedimportrowstable",
+      "app_filament_resources_failedimportrowresource_tables_failedimportrowstable_failedimportrowstable",
+      "app_filament_resources_failedimportrowresource_tables_failedimportrowstable_failedimportrowstable_gettablecolumns",
+      "app_filament_resources_jobbatchresource_tables_jobbatchstable",
+      "app_filament_resources_jobbatchresource_tables_jobbatchstable_jobbatchstable",
+      "app_filament_resources_jobbatchresource_tables_jobbatchstable_jobbatchstable_gettablecolumns",
+      "app_filament_resources_jobresource_tables_jobstable",
+      "app_filament_resources_jobresource_tables_jobstable_jobstable",
+      "app_filament_resources_jobresource_tables_jobstable_jobstable_gettableactions",
+      "app_filament_resources_jobresource_tables_jobstable_jobstable_gettablecolumns",
+      "app_filament_resources_jobresource_tables_jobstable_jobstable_gettablefilters",
+      "app_filament_resources_jobswaitingresource_tables_jobswaitingstable",
+      "app_filament_resources_jobswaitingresource_tables_jobswaitingstable_jobswaitingstable",
+      "app_filament_resources_jobswaitingresource_tables_jobswaitingstable_jobswaitingstable_gettablecolumns",
+      "modules_xot_filament_resources_tables_xotbaseresourcetable"
+    ],
+    "20": [
+      "app_console_commands_phpunittestjobcommand",
+      "app_console_commands_phpunittestjobcommand_phpunittestjobcommand",
+      "app_console_commands_phpunittestjobcommand_phpunittestjobcommand_handle",
+      "app_console_commands_scheduleclearcachecommand",
+      "app_console_commands_scheduleclearcachecommand_scheduleclearcachecommand",
+      "app_console_commands_scheduleclearcachecommand_scheduleclearcachecommand_handle",
+      "app_console_commands_testjobcommand",
+      "app_console_commands_testjobcommand_testjobcommand",
+      "app_console_commands_testjobcommand_testjobcommand_handle",
+      "app_console_commands_workercheck",
+      "app_console_commands_workercheck_workercheck",
+      "app_console_commands_workercheck_workercheck_getlastqueuelistenerpid",
+      "app_console_commands_workercheck_workercheck_handle",
+      "app_console_commands_workercheck_workercheck_isqueuelistenerrunning",
+      "app_console_commands_workercheck_workercheck_savequeuelistenerpid",
+      "app_console_commands_workercheck_workercheck_startqueuelistener",
+      "illuminate_console_command"
+    ],
+    "21": [
+      "app_filament_resources_failedjobresource",
+      "app_filament_resources_failedjobresource_failedjobresource",
+      "app_filament_resources_failedjobresource_failedjobresource_getformschema",
+      "app_filament_resources_failedjobresource_failedjobresource_getpages",
+      "app_filament_resources_failedjobresource_failedjobresource_getrelations",
+      "app_filament_resources_failedjobresource_pages_listfailedjobs",
+      "app_filament_resources_failedjobresource_pages_listfailedjobs_listfailedjobs",
+      "app_filament_resources_failedjobresource_pages_listfailedjobs_listfailedjobs_getheaderactions",
+      "app_filament_resources_failedjobresource_pages_listfailedjobs_listfailedjobs_gettablecolumns",
+      "app_filament_resources_failedjobresource_tables_failedjobstable",
+      "app_filament_resources_failedjobresource_tables_failedjobstable_failedjobstable",
+      "app_filament_resources_failedjobresource_tables_failedjobstable_failedjobstable_gettablecolumns",
+      "app_filament_resources_failedjobresource_tables_failedjobstable_failedjobstable_gettableheaderactions",
+      "app_models_failedjob",
+      "app_models_failedjob_failedjob",
+      "app_models_failedjob_failedjob_casts"
+    ],
+    "22": [
+      "app_filament_resources_jobresource",
+      "app_filament_resources_jobresource_jobresource",
+      "app_filament_resources_jobresource_jobresource_getformschema",
+      "app_filament_resources_jobresource_jobresource_getpages",
+      "app_filament_resources_jobresource_jobresource_getrelations",
+      "app_filament_resources_jobresource_jobresource_getwidgets",
+      "app_filament_resources_jobresource_pages_createjob",
+      "app_filament_resources_jobresource_pages_createjob_createjob",
+      "app_filament_resources_jobresource_pages_editjob",
+      "app_filament_resources_jobresource_pages_editjob_editjob",
+      "app_filament_resources_jobresource_pages_editjob_editjob_getheaderactions",
+      "app_filament_resources_jobresource_pages_listjobs",
+      "app_filament_resources_jobresource_pages_listjobs_listjobs",
+      "app_filament_resources_jobresource_pages_listjobs_listjobs_gettableactions",
+      "app_filament_resources_jobresource_pages_listjobs_listjobs_gettablecolumns",
+      "app_filament_resources_jobresource_pages_listjobs_listjobs_gettablefilters"
+    ],
+    "23": [
+      "app_actions_gettaskfrequenciesaction",
+      "app_actions_gettaskfrequenciesaction_gettaskfrequenciesaction",
+      "app_actions_gettaskfrequenciesaction_gettaskfrequenciesaction_execute",
+      "tests_feature_databaseconnectiontest",
+      "tests_feature_gettaskfrequenciesactionintegrationtest",
+      "tests_feature_schedulebusinesslogictest",
+      "tests_feature_simpletest",
+      "tests_feature_taskfrequenciesintegrationtest",
+      "tests_testcase",
+      "tests_unit_actions_clearschedulecacheactiontest",
+      "tests_unit_actions_getactiveschedulesactiontest",
+      "tests_unit_actions_schedule_scheduleactionstest",
+      "tests_unit_enums_statustest",
+      "tests_unit_events_privateeventtest",
+      "tests_unit_gettaskfrequenciesactiontest"
+    ],
+    "24": [
+      "app_models_frequency",
+      "app_models_frequency_frequency",
+      "app_models_frequency_frequency_casts",
+      "app_models_frequency_frequency_parameters",
+      "app_models_frequency_frequency_task",
+      "app_models_schedule_schedule_histories",
+      "app_models_task",
+      "app_models_task_task_frequencies",
+      "illuminate_database_eloquent_relations_hasmany",
+      "illuminate_notifications_notifiable",
+      "modules_job_models_traits_frontendsortable",
+      "modules_xot_models_traits_hasxotfactory",
+      "tests_feature_resultbusinesslogictest",
+      "tests_feature_taskbusinesslogictest",
+      "tests_unit_models_jobmodelscoveragetest"
+    ],
+    "25": [
+      "app_models_policies_schedulehistorypolicy",
+      "app_models_policies_schedulehistorypolicy_schedulehistorypolicy",
+      "app_models_policies_schedulehistorypolicy_schedulehistorypolicy_create",
+      "app_models_policies_schedulehistorypolicy_schedulehistorypolicy_delete",
+      "app_models_policies_schedulehistorypolicy_schedulehistorypolicy_forcedelete",
+      "app_models_policies_schedulehistorypolicy_schedulehistorypolicy_restore",
+      "app_models_policies_schedulehistorypolicy_schedulehistorypolicy_update",
+      "app_models_policies_schedulehistorypolicy_schedulehistorypolicy_view",
+      "app_models_policies_schedulehistorypolicy_schedulehistorypolicy_viewany",
+      "app_models_schedulehistory",
+      "app_models_schedulehistory_schedulehistory",
+      "app_models_schedulehistory_schedulehistory_casts",
+      "database_factories_schedulehistoryfactory",
+      "database_factories_schedulehistoryfactory_schedulehistoryfactory",
+      "database_factories_schedulehistoryfactory_schedulehistoryfactory_definition"
+    ],
+    "26": [
+      "app_filament_resources_jobmanagerresource",
+      "app_filament_resources_jobmanagerresource_jobmanagerresource",
+      "app_filament_resources_jobmanagerresource_jobmanagerresource_getformschema",
+      "app_filament_resources_jobmanagerresource_jobmanagerresource_getpages",
+      "app_filament_resources_jobmanagerresource_jobmanagerresource_getrelations",
+      "app_filament_resources_jobmanagerresource_jobmanagerresource_getwidgets",
+      "app_filament_resources_jobmanagerresource_pages_createjobmanager",
+      "app_filament_resources_jobmanagerresource_pages_createjobmanager_createjobmanager",
+      "app_filament_resources_jobmanagerresource_pages_editjobmanager",
+      "app_filament_resources_jobmanagerresource_pages_editjobmanager_editjobmanager",
+      "app_filament_resources_jobmanagerresource_pages_listjobmanagers",
+      "app_filament_resources_jobmanagerresource_pages_listjobmanagers_listjobmanagers",
+      "app_filament_resources_jobmanagerresource_pages_listjobmanagers_listjobmanagers_gettablebulkactions",
+      "app_filament_resources_jobmanagerresource_pages_listjobmanagers_listjobmanagers_gettablecolumns"
+    ],
+    "27": [
+      "app_filament_resources_exportresource_pages_createexport",
+      "app_filament_resources_exportresource_pages_createexport_createexport",
+      "app_filament_resources_failedimportrowresource",
+      "app_filament_resources_failedimportrowresource_failedimportrowresource",
+      "app_filament_resources_failedimportrowresource_failedimportrowresource_getformschema",
+      "app_filament_resources_failedimportrowresource_failedimportrowresource_getrelations",
+      "app_filament_resources_failedimportrowresource_pages_createfailedimportrow",
+      "app_filament_resources_failedimportrowresource_pages_createfailedimportrow_createfailedimportrow",
+      "app_filament_resources_importresource_pages_createimport",
+      "app_filament_resources_importresource_pages_createimport_createimport",
+      "app_filament_resources_jobswaitingresource_pages_createjobswaiting",
+      "app_filament_resources_jobswaitingresource_pages_createjobswaiting_createjobswaiting",
+      "modules_xot_filament_resources_pages_xotbasecreaterecord"
+    ],
+    "28": [
+      "app_filament_tables_columns_schedulearguments",
+      "app_filament_tables_columns_schedulearguments_php_static",
+      "app_filament_tables_columns_schedulearguments_schedulearguments",
+      "app_filament_tables_columns_schedulearguments_schedulearguments_filteremptytags",
+      "app_filament_tables_columns_schedulearguments_schedulearguments_formatarraytags",
+      "app_filament_tables_columns_schedulearguments_schedulearguments_gettags",
+      "app_filament_tables_columns_schedulearguments_schedulearguments_withvalue",
+      "app_filament_tables_columns_scheduleoptions",
+      "app_filament_tables_columns_scheduleoptions_php_static",
+      "app_filament_tables_columns_scheduleoptions_scheduleoptions",
+      "app_filament_tables_columns_scheduleoptions_scheduleoptions_gettags",
+      "app_filament_tables_columns_scheduleoptions_scheduleoptions_withvalue",
+      "modules_xot_filament_tables_columns_xotbasetextcolumn"
+    ],
+    "29": [
+      "app_filament_resources_exportresource",
+      "app_filament_resources_exportresource_exportresource",
+      "app_filament_resources_exportresource_exportresource_getformschema",
+      "app_filament_resources_jobbatchresource",
+      "app_filament_resources_jobbatchresource_jobbatchresource",
+      "app_filament_resources_jobbatchresource_jobbatchresource_getformschema",
+      "app_filament_resources_jobbatchresource_jobbatchresource_getpages",
+      "app_filament_resources_jobbatchresource_pages_listjobbatches_listjobbatches",
+      "app_filament_resources_jobbatchresource_pages_listjobbatches_listjobbatches_gettableactions",
+      "app_filament_resources_jobbatchresource_pages_listjobbatches_listjobbatches_gettablebulkactions",
+      "app_filament_resources_jobbatchresource_pages_listjobbatches_listjobbatches_gettablecolumns",
+      "modules_xot_filament_resources_xotbaseresource"
+    ],
+    "30": [
+      "app_models_policies_taskcommentpolicy",
+      "app_models_policies_taskcommentpolicy_taskcommentpolicy",
+      "app_models_policies_taskcommentpolicy_taskcommentpolicy_create",
+      "app_models_policies_taskcommentpolicy_taskcommentpolicy_delete",
+      "app_models_policies_taskcommentpolicy_taskcommentpolicy_forcedelete",
+      "app_models_policies_taskcommentpolicy_taskcommentpolicy_restore",
+      "app_models_policies_taskcommentpolicy_taskcommentpolicy_update",
+      "app_models_policies_taskcommentpolicy_taskcommentpolicy_view",
+      "app_models_policies_taskcommentpolicy_taskcommentpolicy_viewany",
+      "app_models_taskcomment_taskcomment",
+      "app_models_taskcomment_taskcomment_casts",
+      "app_models_taskcomment_taskcomment_user"
+    ],
+    "31": [
+      "app_filament_resources_exportresource_pages_editexport",
+      "app_filament_resources_exportresource_pages_editexport_editexport",
+      "app_filament_resources_failedimportrowresource_pages_editfailedimportrow",
+      "app_filament_resources_failedimportrowresource_pages_editfailedimportrow_editfailedimportrow",
+      "app_filament_resources_importresource_pages_editimport",
+      "app_filament_resources_importresource_pages_editimport_editimport",
+      "app_filament_resources_jobswaitingresource_pages_editjobswaiting",
+      "app_filament_resources_jobswaitingresource_pages_editjobswaiting_editjobswaiting",
+      "app_filament_resources_jobswaitingresource_pages_editjobswaiting_editjobswaiting_getheaderactions",
+      "modules_xot_filament_resources_pages_xotbaseeditrecord"
+    ],
+    "32": [
+      "app_filament_resources_importresource",
+      "app_filament_resources_importresource_importresource",
+      "app_filament_resources_importresource_importresource_getformschema",
+      "app_filament_resources_importresource_importresource_getrelations",
+      "app_filament_resources_importresource_pages_listimports",
+      "app_filament_resources_importresource_pages_listimports_listimports",
+      "app_filament_resources_importresource_pages_listimports_listimports_gettableactions",
+      "app_filament_resources_importresource_pages_listimports_listimports_gettablebulkactions",
+      "app_filament_resources_importresource_pages_listimports_listimports_gettablecolumns",
+      "app_filament_resources_importresource_pages_listimports_listimports_gettablefilters"
+    ],
+    "33": [
+      "app_models_result",
+      "app_models_result_result",
+      "app_models_result_result_casts",
+      "app_models_result_result_getaverageruntime",
+      "app_models_result_result_getlastrun",
+      "app_models_task_task_autocleanup",
+      "app_models_task_task_getaverageruntimeattribute",
+      "app_models_task_task_getlastresultattribute",
+      "app_models_task_task_results",
+      "illuminate_database_query_builder"
+    ],
+    "34": [
+      "illuminate_foundation_application",
+      "illuminate_foundation_testing_databasetransactions",
+      "modules_xot_tests_xotbasetestcase",
+      "tests_testcase_testcase",
+      "tests_testcase_testcase_assertdatabasehasrow",
+      "tests_testcase_testcase_assertdatabasemissingrow",
+      "tests_testcase_testcase_expectapplicationexception",
+      "tests_testcase_testcase_getaction",
+      "tests_testcase_testcase_getpackageproviders",
+      "tests_testcase_testcase_setup"
+    ],
+    "35": [
+      "app_actions_command_getcommandargumentsactions",
+      "app_actions_command_getcommandargumentsactions_getcommandargumentsactions",
+      "app_actions_command_getcommandargumentsactions_getcommandargumentsactions_execute",
+      "app_actions_command_getcommandoptionsactions",
+      "app_actions_command_getcommandoptionsactions_getcommandoptionsactions",
+      "app_actions_command_getcommandoptionsactions_getcommandoptionsactions_execute",
+      "symfony_component_console_command_command",
+      "tests_unit_actions_command_getcommandargumentsactionstest",
+      "tests_unit_actions_command_getcommandoptionsactionstest"
+    ],
+    "36": [
+      "app_filament_columns_scheduleoptions",
+      "app_filament_columns_scheduleoptions_php_static",
+      "app_filament_columns_scheduleoptions_scheduleoptions",
+      "app_filament_columns_scheduleoptions_scheduleoptions_gettags",
+      "app_filament_columns_scheduleoptions_scheduleoptions_withvalue",
+      "app_filament_resources_jobbatchresource_pages_listjobbatches",
+      "app_filament_resources_jobbatchresource_tables_jobbatchestable",
+      "filament_notifications_notification",
+      "filament_tables_columns_textcolumn"
+    ],
+    "37": [
+      "app_notifications_taskcompleted",
+      "app_notifications_taskcompleted_taskcompleted",
+      "app_notifications_taskcompleted_taskcompleted_construct",
+      "app_notifications_taskcompleted_taskcompleted_tomail",
+      "app_notifications_taskcompleted_taskcompleted_via",
+      "illuminate_bus_queueable",
+      "illuminate_contracts_queue_shouldqueue",
+      "illuminate_notifications_messages_mailmessage",
+      "illuminate_notifications_notification"
+    ],
+    "38": [
+      "app_filament_columns_actiongroup",
+      "app_filament_columns_actiongroup_actiongroup",
+      "app_filament_columns_actiongroup_actiongroup_getactions",
+      "app_filament_tables_columns_actiongroup",
+      "app_filament_tables_columns_actiongroup_actiongroup",
+      "app_filament_tables_columns_actiongroup_actiongroup_getactions",
+      "filament_actions_concerns_interactswithrecord",
+      "modules_xot_filament_actions_xotbaseactiongroup"
+    ],
+    "39": [
+      "app_http_requests_schedulerequest",
+      "app_http_requests_schedulerequest_schedulerequest",
+      "app_http_requests_schedulerequest_schedulerequest_attributes",
+      "app_http_requests_schedulerequest_schedulerequest_authorize",
+      "app_http_requests_schedulerequest_schedulerequest_messages",
+      "app_http_requests_schedulerequest_schedulerequest_prepareforvalidation",
+      "app_http_requests_schedulerequest_schedulerequest_rules",
+      "illuminate_foundation_http_formrequest"
+    ],
+    "40": [
+      "app_filament_columns_schedulearguments",
+      "app_filament_columns_schedulearguments_php_static",
+      "app_filament_columns_schedulearguments_schedulearguments",
+      "app_filament_columns_schedulearguments_schedulearguments_filteremptytags",
+      "app_filament_columns_schedulearguments_schedulearguments_formatarraytags",
+      "app_filament_columns_schedulearguments_schedulearguments_gettags",
+      "app_filament_columns_schedulearguments_schedulearguments_withvalue"
+    ],
+    "41": [
+      "app_models_parameter_parameter",
+      "app_models_parameter_parameter_casts",
+      "app_models_parameter_parameter_task",
+      "app_models_result_result_task",
+      "app_models_schedulehistory_schedulehistory_command",
+      "app_models_taskcomment_taskcomment_task",
+      "illuminate_database_eloquent_relations_belongsto"
+    ],
+    "42": [
+      "app_models_basemodel",
+      "app_models_basemodel_basemodel",
+      "app_models_basemodel_basemodel_casts",
+      "app_models_basemodel_basemodel_construct",
+      "modules_xot_models_xotbasemodel",
+      "tests_unit_models_basemodeltest"
+    ],
+    "43": [
+      "app_filament_resources_importresource_tables_importstable",
+      "app_filament_resources_importresource_tables_importstable_importstable",
+      "app_filament_resources_importresource_tables_importstable_importstable_gettableactions",
+      "app_filament_resources_importresource_tables_importstable_importstable_gettablebulkactions",
+      "app_filament_resources_importresource_tables_importstable_importstable_gettablecolumns"
+    ],
+    "44": [
+      "app_filament_resources_scheduleresource_tables_schedulestable",
+      "app_filament_resources_scheduleresource_tables_schedulestable_schedulestable",
+      "app_filament_resources_scheduleresource_tables_schedulestable_schedulestable_gettableactions",
+      "app_filament_resources_scheduleresource_tables_schedulestable_schedulestable_gettablebulkactions",
+      "app_filament_resources_scheduleresource_tables_schedulestable_schedulestable_gettablecolumns"
+    ],
+    "45": [
+      "app_models_basemorphpivot",
+      "app_models_basemorphpivot_basemorphpivot",
+      "app_models_basemorphpivot_basemorphpivot_casts",
+      "illuminate_database_eloquent_relations_morphpivot",
+      "modules_xot_traits_updater"
+    ],
+    "46": [
+      "app_actions_gettaskcommandsaction",
+      "app_actions_gettaskcommandsaction_gettaskcommandsaction",
+      "app_actions_gettaskcommandsaction_gettaskcommandsaction_execute",
+      "tests_unit_actions_gettaskcommandsactiontest"
+    ],
+    "47": [
+      "app_events_executed",
+      "app_events_executed_executed",
+      "app_events_executed_executed_construct",
+      "tests_unit_events_executedtest"
+    ],
+    "48": [
+      "app_filament_fields_repeater",
+      "app_filament_fields_repeater_repeater",
+      "app_filament_fields_repeater_repeater_getitemlabel",
+      "filament_forms_components_repeater"
+    ],
+    "49": [
+      "app_filament_forms_components_repeater",
+      "app_filament_forms_components_repeater_repeater",
+      "app_filament_forms_components_repeater_repeater_getitemlabel",
+      "modules_xot_filament_forms_components_xotbaserepeater"
+    ],
+    "50": [
+      "app_filament_resources_jobbatchresource_tables_jobbatchestable_jobbatchestable",
+      "app_filament_resources_jobbatchresource_tables_jobbatchestable_jobbatchestable_gettablebulkactions",
+      "app_filament_resources_jobbatchresource_tables_jobbatchestable_jobbatchestable_gettablecolumns",
+      "app_filament_resources_jobbatchresource_tables_jobbatchestable_jobbatchestable_gettableheaderactions"
+    ],
+    "51": [
+      "app_filament_resources_jobmanagerresource_tables_jobmanagerstable",
+      "app_filament_resources_jobmanagerresource_tables_jobmanagerstable_jobmanagerstable",
+      "app_filament_resources_jobmanagerresource_tables_jobmanagerstable_jobmanagerstable_gettablebulkactions",
+      "app_filament_resources_jobmanagerresource_tables_jobmanagerstable_jobmanagerstable_gettablecolumns"
+    ],
+    "52": [
+      "app_actions_console_getjobstatuscommandsaction",
+      "app_actions_console_getjobstatuscommandsaction_getjobstatuscommandsaction",
+      "app_actions_console_getjobstatuscommandsaction_getjobstatuscommandsaction_execute"
+    ],
+    "53": [
+      "app_filament_pages_dashboard",
+      "app_filament_pages_dashboard_dashboard",
+      "modules_xot_filament_pages_xotbasedashboard"
+    ],
+    "54": [
+      "emit",
+      "resources_views_livewire_modal_schedule_create_blade",
+      "resources_views_livewire_modal_schedule_create_blade_php_totem_dialogs_frequencies_add"
+    ],
+    "55": [
+      "executetask",
+      "resources_views_livewire_schedule_crud_blade",
+      "taskcreate"
+    ],
+    "56": [
+      "resources_views_admin_home_blade",
+      "resources_views_admin_home_blade_php_job_status",
+      "resources_views_admin_home_blade_php_schedule_status"
+    ],
+    "57": [
+      "resources_views_filament_pages_job_status_blade",
+      "resources_views_filament_pages_job_status_blade_php_artisan",
+      "zibibbo"
+    ],
+    "58": [
+      "webpack_mix",
+      "webpack_mix_dotenvexpand",
+      "webpack_mix_mix"
+    ],
+    "59": [
+      "app_traits_formatseconds",
+      "app_traits_formatseconds_formatseconds"
+    ],
+    "60": [
+      "database_migrations_2022_02_17_124030_create_job_batches_table",
+      "database_migrations_2022_02_17_124030_create_job_batches_table_up"
+    ],
+    "61": [
+      "database_migrations_2022_03_01_000004_create_jobs_table",
+      "database_migrations_2022_03_01_000004_create_jobs_table_up"
+    ],
+    "62": [
+      "database_migrations_2023_02_26_172600_create_schedule_table",
+      "database_migrations_2023_02_26_172600_create_schedule_table_up"
+    ],
+    "63": [
+      "database_migrations_2023_02_26_175242_create_schedule_histories_table",
+      "database_migrations_2023_02_26_175242_create_schedule_histories_table_up"
+    ],
+    "64": [
+      "database_migrations_2023_03_13_000000_create_frequencies_table",
+      "database_migrations_2023_03_13_000000_create_frequencies_table_up"
+    ],
+    "65": [
+      "database_migrations_2023_03_13_000000_create_parameters_table",
+      "database_migrations_2023_03_13_000000_create_parameters_table_up"
+    ],
+    "66": [
+      "database_migrations_2023_03_13_000000_create_results_table",
+      "database_migrations_2023_03_13_000000_create_results_table_up"
+    ],
+    "67": [
+      "database_migrations_2023_03_13_000000_create_tasks_table",
+      "database_migrations_2023_03_13_000000_create_tasks_table_up"
+    ],
+    "68": [
+      "database_migrations_2024_01_01_000000_create_job_manager_table",
+      "database_migrations_2024_01_01_000000_create_job_manager_table_up"
+    ],
+    "69": [
+      "database_migrations_2024_01_01_000001_create_failed_jobs_table",
+      "database_migrations_2024_01_01_000001_create_failed_jobs_table_up"
+    ],
+    "70": [
+      "database_migrations_2024_01_01_000002_create_imports_table",
+      "database_migrations_2024_01_01_000002_create_imports_table_up"
+    ],
+    "71": [
+      "database_migrations_2024_03_12_082158_create_exports_table",
+      "database_migrations_2024_03_12_082158_create_exports_table_up"
+    ],
+    "72": [
+      "database_migrations_2024_03_12_082158_create_failed_import_rows_table",
+      "database_migrations_2024_03_12_082158_create_failed_import_rows_table_up"
+    ],
+    "73": [
+      "database_migrations_2026_07_24_000000_create_task_comments_table",
+      "database_migrations_2026_07_24_000000_create_task_comments_table_up"
+    ],
+    "74": [
+      "dispatchformevent",
+      "resources_views_components_repeater_table_blade"
+    ],
+    "75": [
+      "resources_views_admin_acts_schedule_manager_blade",
+      "resources_views_admin_acts_schedule_manager_blade_php_schedule_status"
+    ],
+    "76": [
+      "resources_views_admin_acts_schedule_status_blade",
+      "resources_views_admin_acts_schedule_status_blade_php_schedule_status"
+    ],
+    "77": [
+      "resources_views_admin_home_acts_task_blade",
+      "schedule_crud"
+    ],
+    "78": [
+      "resources_views_filament_pages_job_monitor_blade",
+      "resources_views_filament_pages_job_monitor_blade_php_job_status"
+    ],
+    "79": [
+      "resources_views_filament_tables_columns_array_blade",
+      "resources_views_filament_tables_columns_array_blade_php_job_filament_tables_columns_array_item"
+    ],
+    "80": [
+      "resources_views_filament_tables_columns_array_item_blade",
+      "resources_views_filament_tables_columns_array_item_blade_php_job_filament_tables_columns_array_item"
+    ],
+    "81": [
+      "resources_views_filament_widgets_clock_widget_blade",
+      "resources_views_filament_widgets_clock_widget_blade_php_begin"
+    ],
+    "82": [
+      "resources_views_filament_widgets_queue_listen_blade",
+      "resources_views_filament_widgets_queue_listen_blade_php_begin"
+    ],
+    "83": [
+      "resources_views_livewire_broad_blade",
+      "try"
+    ],
+    "84": [
+      "resources_views_livewire_schedule_create_blade",
+      "resources_views_livewire_schedule_create_blade_php_totem_dialogs_frequencies_add"
+    ],
+    "85": [
+      "resources_views_livewire_schedule_status_blade",
+      "resources_views_livewire_schedule_status_blade_php_artisan"
+    ],
+    "86": [
+      "vite_config",
+      "vite_config_dotenvexpand"
+    ],
+    "87": [
+      "app_enums_status"
+    ],
+    "88": [
+      "config_config_php_config_config_484935"
+    ],
+    "89": [
+      "config_config_php_config_config_9f0234"
+    ],
+    "90": [
+      "lang_de_edit_failed_import_row"
+    ],
+    "91": [
+      "lang_de_export"
+    ],
+    "92": [
+      "lang_de_failed_import_row"
+    ],
+    "93": [
+      "lang_de_failed_job"
+    ],
+    "94": [
+      "lang_de_import"
+    ],
+    "95": [
+      "lang_de_job"
+    ],
+    "96": [
+      "lang_de_job_batch"
+    ],
+    "97": [
+      "lang_de_job_manager"
+    ],
+    "98": [
+      "lang_de_job_monitor"
+    ],
+    "99": [
+      "lang_de_job_status"
+    ],
+    "100": [
+      "lang_de_jobs_waiting"
+    ],
+    "101": [
+      "lang_de_schedule"
+    ],
+    "102": [
+      "lang_de_translations"
+    ],
+    "103": [
+      "lang_en_edit_failed_import_row"
+    ],
+    "104": [
+      "lang_en_export"
+    ],
+    "105": [
+      "lang_en_failed_import_row"
+    ],
+    "106": [
+      "lang_en_failed_job"
+    ],
+    "107": [
+      "lang_en_import"
+    ],
+    "108": [
+      "lang_en_job"
+    ],
+    "109": [
+      "lang_en_job_batch"
+    ],
+    "110": [
+      "lang_en_job_manager"
+    ],
+    "111": [
+      "lang_en_job_monitor"
+    ],
+    "112": [
+      "lang_en_job_status"
+    ],
+    "113": [
+      "lang_en_jobs_waiting"
+    ],
+    "114": [
+      "lang_en_messages"
+    ],
+    "115": [
+      "lang_en_schedule"
+    ],
+    "116": [
+      "lang_en_translations"
+    ],
+    "117": [
+      "lang_es_translations"
+    ],
+    "118": [
+      "lang_fr_translations"
+    ],
+    "119": [
+      "lang_it_edit_failed_import_row"
+    ],
+    "120": [
+      "lang_it_export"
+    ],
+    "121": [
+      "lang_it_exports"
+    ],
+    "122": [
+      "lang_it_failed_import_row"
+    ],
+    "123": [
+      "lang_it_failed_import_rows"
+    ],
+    "124": [
+      "lang_it_failed_job"
+    ],
+    "125": [
+      "lang_it_failed_jobs"
+    ],
+    "126": [
+      "lang_it_import"
+    ],
+    "127": [
+      "lang_it_imports"
+    ],
+    "128": [
+      "lang_it_job"
+    ],
+    "129": [
+      "lang_it_job_actions"
+    ],
+    "130": [
+      "lang_it_job_batch"
+    ],
+    "131": [
+      "lang_it_job_batches"
+    ],
+    "132": [
+      "lang_it_job_core"
+    ],
+    "133": [
+      "lang_it_job_fields"
+    ],
+    "134": [
+      "lang_it_job_manager"
+    ],
+    "135": [
+      "lang_it_job_managers"
+    ],
+    "136": [
+      "lang_it_job_meta"
+    ],
+    "137": [
+      "lang_it_job_monitor"
+    ],
+    "138": [
+      "lang_it_job_status"
+    ],
+    "139": [
+      "lang_it_jobs"
+    ],
+    "140": [
+      "lang_it_jobs_waiting"
+    ],
+    "141": [
+      "lang_it_jobs_waitings"
+    ],
+    "142": [
+      "lang_it_schedule"
+    ],
+    "143": [
+      "lang_it_schedules"
+    ],
+    "144": [
+      "lang_nb_no_translations"
+    ],
+    "145": [
+      "php_cs_fixer"
+    ],
+    "146": [
+      "php_cs_fixer_dist"
+    ],
+    "147": [
+      "postcss_config"
+    ],
+    "148": [
+      "resources_assets_js_app"
+    ],
+    "149": [
+      "resources_lang_de_edit_failed_import_row"
+    ],
+    "150": [
+      "resources_lang_de_export"
+    ],
+    "151": [
+      "resources_lang_de_failed_import_row"
+    ],
+    "152": [
+      "resources_lang_de_failed_job"
+    ],
+    "153": [
+      "resources_lang_de_import"
+    ],
+    "154": [
+      "resources_lang_de_job"
+    ],
+    "155": [
+      "resources_lang_de_job_batch"
+    ],
+    "156": [
+      "resources_lang_de_job_manager"
+    ],
+    "157": [
+      "resources_lang_de_job_monitor"
+    ],
+    "158": [
+      "resources_lang_de_job_status"
+    ],
+    "159": [
+      "resources_lang_de_jobs_waiting"
+    ],
+    "160": [
+      "resources_lang_de_schedule"
+    ],
+    "161": [
+      "resources_lang_en_edit_failed_import_row"
+    ],
+    "162": [
+      "resources_lang_en_export"
+    ],
+    "163": [
+      "resources_lang_en_failed_import_row"
+    ],
+    "164": [
+      "resources_lang_en_failed_job"
+    ],
+    "165": [
+      "resources_lang_en_import"
+    ],
+    "166": [
+      "resources_lang_en_job"
+    ],
+    "167": [
+      "resources_lang_en_job_batch"
+    ],
+    "168": [
+      "resources_lang_en_job_manager"
+    ],
+    "169": [
+      "resources_lang_en_job_monitor"
+    ],
+    "170": [
+      "resources_lang_en_job_status"
+    ],
+    "171": [
+      "resources_lang_en_jobs_waiting"
+    ],
+    "172": [
+      "resources_lang_en_schedule"
+    ],
+    "173": [
+      "resources_lang_es_edit_failed_import_row"
+    ],
+    "174": [
+      "resources_lang_es_export"
+    ],
+    "175": [
+      "resources_lang_es_failed_import_row"
+    ],
+    "176": [
+      "resources_lang_es_failed_job"
+    ],
+    "177": [
+      "resources_lang_es_import"
+    ],
+    "178": [
+      "resources_lang_es_job"
+    ],
+    "179": [
+      "resources_lang_es_job_batch"
+    ],
+    "180": [
+      "resources_lang_es_job_manager"
+    ],
+    "181": [
+      "resources_lang_es_job_monitor"
+    ],
+    "182": [
+      "resources_lang_es_job_status"
+    ],
+    "183": [
+      "resources_lang_es_jobs_waiting"
+    ],
+    "184": [
+      "resources_lang_es_schedule"
+    ],
+    "185": [
+      "resources_lang_fr_edit_failed_import_row"
+    ],
+    "186": [
+      "resources_lang_fr_export"
+    ],
+    "187": [
+      "resources_lang_fr_failed_import_row"
+    ],
+    "188": [
+      "resources_lang_fr_failed_job"
+    ],
+    "189": [
+      "resources_lang_fr_import"
+    ],
+    "190": [
+      "resources_lang_fr_job"
+    ],
+    "191": [
+      "resources_lang_fr_job_batch"
+    ],
+    "192": [
+      "resources_lang_fr_job_manager"
+    ],
+    "193": [
+      "resources_lang_fr_job_monitor"
+    ],
+    "194": [
+      "resources_lang_fr_job_status"
+    ],
+    "195": [
+      "resources_lang_fr_jobs_waiting"
+    ],
+    "196": [
+      "resources_lang_fr_schedule"
+    ],
+    "197": [
+      "resources_lang_it_edit_failed_import_row"
+    ],
+    "198": [
+      "resources_lang_it_export"
+    ],
+    "199": [
+      "resources_lang_it_failed_import_row"
+    ],
+    "200": [
+      "resources_lang_it_failed_job"
+    ],
+    "201": [
+      "resources_lang_it_import"
+    ],
+    "202": [
+      "resources_lang_it_job"
+    ],
+    "203": [
+      "resources_lang_it_job_batch"
+    ],
+    "204": [
+      "resources_lang_it_job_manager"
+    ],
+    "205": [
+      "resources_lang_it_job_monitor"
+    ],
+    "206": [
+      "resources_lang_it_job_status"
+    ],
+    "207": [
+      "resources_lang_it_jobs_waiting"
+    ],
+    "208": [
+      "resources_lang_it_schedule"
+    ],
+    "209": [
+      "resources_lang_pt_failed_import_row"
+    ],
+    "210": [
+      "resources_lang_pt_failed_job"
+    ],
+    "211": [
+      "resources_lang_pt_import"
+    ],
+    "212": [
+      "resources_lang_pt_job"
+    ],
+    "213": [
+      "resources_lang_pt_job_batch"
+    ],
+    "214": [
+      "resources_lang_pt_job_manager"
+    ],
+    "215": [
+      "resources_lang_pt_job_monitor"
+    ],
+    "216": [
+      "resources_lang_pt_job_status"
+    ],
+    "217": [
+      "resources_lang_pt_jobs_waiting"
+    ],
+    "218": [
+      "resources_lang_pt_schedule"
+    ],
+    "219": [
+      "resources_lang_zh_edit_failed_import_row"
+    ],
+    "220": [
+      "resources_lang_zh_export"
+    ],
+    "221": [
+      "resources_lang_zh_failed_import_row"
+    ],
+    "222": [
+      "resources_lang_zh_failed_job"
+    ],
+    "223": [
+      "resources_lang_zh_import"
+    ],
+    "224": [
+      "resources_lang_zh_job"
+    ],
+    "225": [
+      "resources_lang_zh_job_batch"
+    ],
+    "226": [
+      "resources_lang_zh_job_manager"
+    ],
+    "227": [
+      "resources_lang_zh_job_monitor"
+    ],
+    "228": [
+      "resources_lang_zh_job_status"
+    ],
+    "229": [
+      "resources_lang_zh_jobs_waiting"
+    ],
+    "230": [
+      "resources_lang_zh_schedule"
+    ],
+    "231": [
+      "resources_views_admin_dashboard_item_blade"
+    ],
+    "232": [
+      "resources_views_admin_home_acts_execute_task_panel_blade"
+    ],
+    "233": [
+      "resources_views_admin_home_acts_schedule_manager_blade"
+    ],
+    "234": [
+      "resources_views_components_action_group_blade"
+    ],
+    "235": [
+      "resources_views_components_button_blade"
+    ],
+    "236": [
+      "resources_views_components_icon_button_blade"
+    ],
+    "237": [
+      "resources_views_filament_columns_schedule_arguments_blade"
+    ],
+    "238": [
+      "resources_views_filament_pages_dashboard_blade"
+    ],
+    "239": [
+      "resources_views_filament_tables_columns_schedule_arguments_blade"
+    ],
+    "240": [
+      "resources_views_index_blade"
+    ],
+    "241": [
+      "resources_views_layouts_master_blade"
+    ],
+    "242": [
+      "routes_api"
+    ],
+    "243": [
+      "routes_web"
+    ],
+    "244": [
+      "tailwind_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.05367231638418079,
+    "1": 0.05367231638418079,
+    "2": 0.055904961565338925,
+    "3": 0.06711915535444947,
+    "4": 0.05442176870748299,
+    "5": 0.041666666666666664,
+    "6": 0.06039488966318235,
+    "7": 0.05405405405405406,
+    "8": 0.08067226890756303,
+    "9": 0.14814814814814814,
+    "10": 0.1168091168091168,
+    "11": 0.07407407407407407,
+    "12": 0.1422924901185771,
+    "13": 0.14285714285714285,
+    "14": 0.12105263157894737,
+    "15": 0.10526315789473684,
+    "16": 0.14035087719298245,
+    "17": 0.13450292397660818,
+    "18": 0.1871345029239766,
+    "19": 0.1437908496732026,
+    "20": 0.17647058823529413,
+    "21": 0.15833333333333333,
+    "22": 0.15,
+    "23": 0.1523809523809524,
+    "24": 0.1523809523809524,
+    "25": 0.19047619047619047,
+    "26": 0.17582417582417584,
+    "27": 0.20512820512820512,
+    "28": 0.20512820512820512,
+    "29": 0.19696969696969696,
+    "30": 0.24242424242424243,
+    "31": 0.28888888888888886,
+    "32": 0.2,
+    "33": 0.28888888888888886,
+    "34": 0.2,
+    "35": 0.3333333333333333,
+    "36": 0.2777777777777778,
+    "37": 0.3333333333333333,
+    "38": 0.42857142857142855,
+    "39": 0.2857142857142857,
+    "40": 0.38095238095238093,
+    "41": 0.2857142857142857,
+    "42": 0.4,
+    "43": 0.4,
+    "44": 0.4,
+    "45": 0.6,
+    "46": 0.5,
+    "47": 0.5,
+    "48": 0.5,
+    "49": 0.6666666666666666,
+    "50": 0.5,
+    "51": 0.5,
+    "52": 0.6666666666666666,
+    "53": 1.0,
+    "54": 0.6666666666666666,
+    "55": 0.6666666666666666,
+    "56": 0.6666666666666666,
+    "57": 0.6666666666666666,
+    "58": 0.6666666666666666,
+    "59": 1.0,
+    "60": 1.0,
+    "61": 1.0,
+    "62": 1.0,
+    "63": 1.0,
+    "64": 1.0,
+    "65": 1.0,
+    "66": 1.0,
+    "67": 1.0,
+    "68": 1.0,
+    "69": 1.0,
+    "70": 1.0,
+    "71": 1.0,
+    "72": 1.0,
+    "73": 1.0,
+    "74": 1.0,
+    "75": 1.0,
+    "76": 1.0,
+    "77": 1.0,
+    "78": 1.0,
+    "79": 1.0,
+    "80": 1.0,
+    "81": 1.0,
+    "82": 1.0,
+    "83": 1.0,
+    "84": 1.0,
+    "85": 1.0,
+    "86": 1.0,
+    "87": 1.0,
+    "88": 1.0,
+    "89": 1.0,
+    "90": 1.0,
+    "91": 1.0,
+    "92": 1.0,
+    "93": 1.0,
+    "94": 1.0,
+    "95": 1.0,
+    "96": 1.0,
+    "97": 1.0,
+    "98": 1.0,
+    "99": 1.0,
+    "100": 1.0,
+    "101": 1.0,
+    "102": 1.0,
+    "103": 1.0,
+    "104": 1.0,
+    "105": 1.0,
+    "106": 1.0,
+    "107": 1.0,
+    "108": 1.0,
+    "109": 1.0,
+    "110": 1.0,
+    "111": 1.0,
+    "112": 1.0,
+    "113": 1.0,
+    "114": 1.0,
+    "115": 1.0,
+    "116": 1.0,
+    "117": 1.0,
+    "118": 1.0,
+    "119": 1.0,
+    "120": 1.0,
+    "121": 1.0,
+    "122": 1.0,
+    "123": 1.0,
+    "124": 1.0,
+    "125": 1.0,
+    "126": 1.0,
+    "127": 1.0,
+    "128": 1.0,
+    "129": 1.0,
+    "130": 1.0,
+    "131": 1.0,
+    "132": 1.0,
+    "133": 1.0,
+    "134": 1.0,
+    "135": 1.0,
+    "136": 1.0,
+    "137": 1.0,
+    "138": 1.0,
+    "139": 1.0,
+    "140": 1.0,
+    "141": 1.0,
+    "142": 1.0,
+    "143": 1.0,
+    "144": 1.0,
+    "145": 1.0,
+    "146": 1.0,
+    "147": 1.0,
+    "148": 1.0,
+    "149": 1.0,
+    "150": 1.0,
+    "151": 1.0,
+    "152": 1.0,
+    "153": 1.0,
+    "154": 1.0,
+    "155": 1.0,
+    "156": 1.0,
+    "157": 1.0,
+    "158": 1.0,
+    "159": 1.0,
+    "160": 1.0,
+    "161": 1.0,
+    "162": 1.0,
+    "163": 1.0,
+    "164": 1.0,
+    "165": 1.0,
+    "166": 1.0,
+    "167": 1.0,
+    "168": 1.0,
+    "169": 1.0,
+    "170": 1.0,
+    "171": 1.0,
+    "172": 1.0,
+    "173": 1.0,
+    "174": 1.0,
+    "175": 1.0,
+    "176": 1.0,
+    "177": 1.0,
+    "178": 1.0,
+    "179": 1.0,
+    "180": 1.0,
+    "181": 1.0,
+    "182": 1.0,
+    "183": 1.0,
+    "184": 1.0,
+    "185": 1.0,
+    "186": 1.0,
+    "187": 1.0,
+    "188": 1.0,
+    "189": 1.0,
+    "190": 1.0,
+    "191": 1.0,
+    "192": 1.0,
+    "193": 1.0,
+    "194": 1.0,
+    "195": 1.0,
+    "196": 1.0,
+    "197": 1.0,
+    "198": 1.0,
+    "199": 1.0,
+    "200": 1.0,
+    "201": 1.0,
+    "202": 1.0,
+    "203": 1.0,
+    "204": 1.0,
+    "205": 1.0,
+    "206": 1.0,
+    "207": 1.0,
+    "208": 1.0,
+    "209": 1.0,
+    "210": 1.0,
+    "211": 1.0,
+    "212": 1.0,
+    "213": 1.0,
+    "214": 1.0,
+    "215": 1.0,
+    "216": 1.0,
+    "217": 1.0,
+    "218": 1.0,
+    "219": 1.0,
+    "220": 1.0,
+    "221": 1.0,
+    "222": 1.0,
+    "223": 1.0,
+    "224": 1.0,
+    "225": 1.0,
+    "226": 1.0,
+    "227": 1.0,
+    "228": 1.0,
+    "229": 1.0,
+    "230": 1.0,
+    "231": 1.0,
+    "232": 1.0,
+    "233": 1.0,
+    "234": 1.0,
+    "235": 1.0,
+    "236": 1.0,
+    "237": 1.0,
+    "238": 1.0,
+    "239": 1.0,
+    "240": 1.0,
+    "241": 1.0,
+    "242": 1.0,
+    "243": 1.0,
+    "244": 1.0
+  },
+  "gods": [
+    {
+      "id": "app_models_task_task",
+      "label": "Task",
+      "degree": 43
+    },
+    {
+      "id": "app_models_schedule_schedule",
+      "label": "Schedule",
+      "degree": 30
+    },
+    {
+      "id": "app_models_job_job",
+      "label": "Job",
+      "degree": 24
+    },
+    {
+      "id": "app_models_basemodel_basemodel",
+      "label": "BaseModel",
+      "degree": 19
+    },
+    {
+      "id": "app_models_jobbatch_jobbatch",
+      "label": "JobBatch",
+      "degree": 18
+    },
+    {
+      "id": "app_models_policies_jobbasepolicy_jobbasepolicy",
+      "label": "JobBasePolicy",
+      "degree": 15
+    },
+    {
+      "id": "app_models_result_result",
+      "label": "Result",
+      "degree": 13
+    },
+    {
+      "id": "app_models_schedulehistory_schedulehistory",
+      "label": "ScheduleHistory",
+      "degree": 13
+    },
+    {
+      "id": "app_models_jobmanager_jobmanager",
+      "label": "JobManager",
+      "degree": 12
+    },
+    {
+      "id": "app_models_taskcomment_taskcomment",
+      "label": "TaskComment",
+      "degree": 12
+    }
+  ],
+  "surprises": [
+    {
+      "source": "createJobBatch()",
+      "target": "JobBatchFactory",
+      "source_files": [
+        "tests/Pest.php",
+        "database/factories/JobBatchFactory.php"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    },
+    {
+      "source": "makeJobBatch()",
+      "target": "JobBatchFactory",
+      "source_files": [
+        "tests/Pest.php",
+        "database/factories/JobBatchFactory.php"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    },
+    {
+      "source": "createJob()",
+      "target": "JobFactory",
+      "source_files": [
+        "tests/Pest.php",
+        "database/factories/JobFactory.php"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    },
+    {
+      "source": "makeJob()",
+      "target": "JobFactory",
+      "source_files": [
+        "tests/Pest.php",
+        "database/factories/JobFactory.php"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    },
+    {
+      "source": "createJob()",
+      "target": "Job",
+      "source_files": [
+        "tests/Pest.php",
+        "app/Models/Job.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

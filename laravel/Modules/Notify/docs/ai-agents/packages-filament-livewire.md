@@ -448,6 +448,7 @@ new class extends Component {
 ```php
 use Livewire\Livewire;
 use Modules\Quaeris\Filament\Widgets\SalesChartWidget;
+use Modules\App\Filament\Widgets\SalesChartWidget;
 
 it('renders chart widget', function (): void {
     Livewire::test(SalesChartWidget::class)

@@ -177,6 +177,7 @@ sudo mv phpmd.phar /usr/local/bin/phpmd
 
 ### AI Agents Docs
 - **[Rules Index](00-INDEX.md)** - All rules
+- **[Rules Index](00-index.md)** - All rules
 - **[Quality Gates](quality-gates.md)** - Quality gates
 - **[PHP Best Practices](php-best-practices.md)** - PHP best practices
 

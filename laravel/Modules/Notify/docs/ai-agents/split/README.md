@@ -20,6 +20,7 @@ related:
 # AI Assistant Documentation
 
 **Purpose**: Centralized documentation for all AI assistants used in the FixCity project  
+**Purpose**: Centralized documentation for all AI assistants used in the Notify project  
 **Last Updated**: 2026-04-11  
 
 ---
@@ -31,6 +32,9 @@ related:
 | BMad Agents | [AGENTS.md](../../../AGENTS.md) | 32 files | [agents/INDEX.md](agents/INDEX.md) + [tasks/INDEX.md](tasks/INDEX.md) |
 | Claude/Laravel Boost | [CLAUDE.md](../../../docs/CLAUDE.md) | 21 files | [claude/INDEX.md](claude/INDEX.md) |
 | Gemini | [GEMINI.md](../../../laravel/GEMINI.md) | 14 files | [gemini/INDEX.md](gemini/INDEX.md) |
+| BMad Agents | [agents.md](../../../agents.md) | 32 files | [agents/index.md](agents/index.md) + [tasks/index.md](tasks/index.md) |
+| Claude/Laravel Boost | [CLAUDE.md](../../../docs/CLAUDE.md) | 21 files | [claude/index.md](claude/index.md) |
+| Gemini | [GEMINI.md](../../../laravel/GEMINI.md) | 14 files | [gemini/index.md](gemini/index.md) |
 | Qwen | [QWEN.md](../../../QWEN.md) | 1 file (no split needed) | — |
 
 **Total**: 68 split files across 4 assistants
@@ -57,16 +61,19 @@ related:
 │   └── business-analyst.md
 ├── tasks/                      ← 22 BMad task definitions
 │   ├── INDEX.md
+│   ├── index.md
 │   ├── validate-next-story.md
 │   ├── trace-requirements.md
 │   ├── ... (20 more)
 ├── claude/                     ← 20 Laravel Boost sections
 │   ├── INDEX.md
+│   ├── index.md
 │   ├── foundation-rules.md
 │   ├── boost-rules.md
 │   ├── ... (18 more)
 ├── gemini/                     ← 13 Gemini sections
 │   ├── INDEX.md
+│   ├── index.md
 │   ├── boost-integration.md
 │   ├── foundation-rules.md
 │   ├── ... (11 more)
@@ -96,6 +103,7 @@ Splitting improves:
 ### Bidirectional Links
 Every split file contains links back to:
 - Its section index (e.g., `agents/INDEX.md`)
+- Its section index (e.g., `agents/index.md`)
 - The master index (`INDEX.md`)
 - The original source file
 
@@ -124,6 +132,7 @@ Every split file contains links back to:
 | Date | Change | Author |
 |------|--------|--------|
 | 2026-04-11 | Initial split of AGENTS.md, CLAUDE.md, GEMINI.md | Qwen |
+| 2026-04-11 | Initial split of agents.md, CLAUDE.md, GEMINI.md | Qwen |
 
 ---
 

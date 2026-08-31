@@ -22,7 +22,7 @@ final class GetAddressFromGoogleMapsAction
 {
     use QueueableAction;
 
-    private const BASE_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
+    private const string BASE_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
 
     /**
      * @throws GoogleMapsApiException Se la richiesta fallisce o i dati non sono validi
@@ -74,7 +74,7 @@ final class GetAddressFromGoogleMapsAction
         /** @var GoogleMapResponseData $responseData */
         $responseData = GoogleMapResponseData::from($response->json());
 
-        if (0 === $responseData->results->count()) {
+        if ($responseData->results->count() === 0) {
             throw GoogleMapsApiException::noResultsFound();
         }
 
@@ -86,7 +86,7 @@ final class GetAddressFromGoogleMapsAction
      */
     private function getFirstResult(GoogleMapResponseData $responseData): GoogleMapResultData
     {
-        $firstResult = $responseData->results->first();
+        $firstResult = $responseData->results->toCollection()->first();
 
         if (! $firstResult instanceof GoogleMapResultData) {
             throw GoogleMapsApiException::noResultsFound();
@@ -114,15 +114,15 @@ final class GetAddressFromGoogleMapsAction
     }
 
     /**
-     * @param DataCollection<int, GoogleMapAddressComponentData> $components
-     * @param array<string>                                      $types
+     * @param  DataCollection<int, GoogleMapAddressComponentData>  $components
+     * @param  array<string>  $types
      */
     private function getComponent(DataCollection $components, array $types, bool $short = false): ?string
     {
         /** @var GoogleMapAddressComponentData|null $component */
         $component = $components
             ->toCollection()
-            ->first(function ($component) use ($types) {
+            ->first(function (mixed $component) use ($types) {
                 if (! $component instanceof GoogleMapAddressComponentData) {
                     return false;
                 }

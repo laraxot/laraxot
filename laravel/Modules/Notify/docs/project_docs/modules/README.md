@@ -206,6 +206,8 @@ Modulo per l'intelligenza artificiale.
 
 ### fixcity/
 Modulo specifico per FixCity.
+### laraxot/
+Modulo specifico per Notify.
 
 **Contenuti:**
 - Business logic

@@ -7,6 +7,7 @@
 ### Required Commands (ALWAYS):
 ```bash
 cd /var/www/html/_bases/base_fixcity_fila5_mono/laravel/Themes/Sixteen
+cd /var/www/html/_bases/base_ptvx_fila5_mono/laravel/Themes/Sixteen
 npm run build
 npm run copy
 ```
@@ -38,5 +39,7 @@ This is a fundamental rule that must NEVER be forgotten when working with themes
 
 - ← [CLAUDE Index](INDEX.md) — All Laravel Boost guidelines
 - ← [Main AI Docs Index](../INDEX.md) — Master index
+- ← [CLAUDE Index](index.md) — All Laravel Boost guidelines
+- ← [Main AI Docs Index](../index.md) — Master index
 - ← [../../../../docs/CLAUDE.md](../../../../docs/../../../../docs/CLAUDE.md) — Original source
 

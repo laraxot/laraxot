@@ -16,19 +16,19 @@ uses(\Modules\User\Tests\TestCase::class);
 beforeEach(function (): void {
     /* @var \Modules\User\Tests\TestCase $this */
     /* @var TestCase $this */
-    $this->skipUnlessUserColumn('users', 'two_factor_secret');
-    $this->skipUnlessUserColumn('users', 'two_factor_recovery_codes');
-    $this->skipUnlessUserColumn('users', 'two_factor_confirmed_at');
+    TestCase::skipUnlessUserColumn('users', 'two_factor_secret');
+    TestCase::skipUnlessUserColumn('users', 'two_factor_recovery_codes');
+    TestCase::skipUnlessUserColumn('users', 'two_factor_confirmed_at');
 
-    $this->user = $this->createTestUser();
-    $this->google2fa = new Google2FA();
+    TestCase::$user = TestCase::createTestUser();
+    TestCase::$google2fa = new Google2FA();
 });
 
 describe('Two Factor Service', function (): void {
     test('enable generates secret and qr code', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         $result = enableTwoFactorForUser($user, $google2fa);
 
         Assert::assertIsString($result['secret']);
@@ -38,8 +38,8 @@ describe('Two Factor Service', function (): void {
 
     test('enable stores encrypted secret', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         enableTwoFactorForUser($user, $google2fa);
 
         $fresh = $user->fresh();
@@ -52,8 +52,8 @@ describe('Two Factor Service', function (): void {
 
     test('enable generates10recovery codes', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         $result = enableTwoFactorForUser($user, $google2fa);
 
         Assert::assertCount(10, $result['recovery_codes']);
@@ -64,8 +64,8 @@ describe('Two Factor Service', function (): void {
 
     test('confirm enables2fa with valid code', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         $result = enableTwoFactorForUser($user, $google2fa);
         $validCode = $google2fa->getCurrentOtp($result['secret']);
 
@@ -79,8 +79,8 @@ describe('Two Factor Service', function (): void {
 
     test('confirm fails with invalid code', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         $result = enableTwoFactorForUser($user, $google2fa);
 
         $confirmed = confirmTwoFactorForUser($user, $google2fa, $result['secret'], '000000');
@@ -93,8 +93,8 @@ describe('Two Factor Service', function (): void {
 
     test('disable removes all2fa data', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         $result = enableTwoFactorForUser($user, $google2fa);
         confirmTwoFactorForUser(
             $user,
@@ -114,8 +114,8 @@ describe('Two Factor Service', function (): void {
 
     test('verify validates correct code', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         $result = enableTwoFactorForUser($user, $google2fa);
         $validCode = $google2fa->getCurrentOtp($result['secret']);
 
@@ -126,8 +126,8 @@ describe('Two Factor Service', function (): void {
 
     test('verify rejects incorrect code', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         enableTwoFactorForUser($user, $google2fa);
 
         $verified = verifyTwoFactorCode($user, $google2fa, '000000');
@@ -137,8 +137,8 @@ describe('Two Factor Service', function (): void {
 
     test('verify returns false if no secret', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         $verified = verifyTwoFactorCode($user, $google2fa, '123456');
 
         Assert::assertFalse($verified);
@@ -146,8 +146,8 @@ describe('Two Factor Service', function (): void {
 
     test('verify recovery code works once', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         $result = enableTwoFactorForUser($user, $google2fa);
         $recoveryCode = $result['recovery_codes'][0];
 
@@ -161,8 +161,8 @@ describe('Two Factor Service', function (): void {
 
     test('verify recovery code fails if already used', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         $result = enableTwoFactorForUser($user, $google2fa);
         $recoveryCode = $result['recovery_codes'][0];
 
@@ -175,8 +175,8 @@ describe('Two Factor Service', function (): void {
 
     test('verify recovery code fails with invalid code', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         enableTwoFactorForUser($user, $google2fa);
 
         $verified = verifyTwoFactorRecoveryCode($user, 'invalid-code');
@@ -186,8 +186,8 @@ describe('Two Factor Service', function (): void {
 
     test('regenerate recovery codes creates new set', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         $result = enableTwoFactorForUser($user, $google2fa);
         $oldCodes = $result['recovery_codes'];
 
@@ -199,8 +199,8 @@ describe('Two Factor Service', function (): void {
 
     test('regenerate recovery codes invalidates old ones', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         $result = enableTwoFactorForUser($user, $google2fa);
         $oldCode = $result['recovery_codes'][0];
 
@@ -213,8 +213,8 @@ describe('Two Factor Service', function (): void {
 
     test('qr code contains user email', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         $result = enableTwoFactorForUser($user, $google2fa);
 
         Assert::assertStringContainsString((string) rawurlencode($user->email), (string) $result['qr_code']);
@@ -222,8 +222,8 @@ describe('Two Factor Service', function (): void {
 
     test('qr code is valid otpauth url', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         $result = enableTwoFactorForUser($user, $google2fa);
 
         Assert::assertStringStartsWith('otpauth://totp/', (string) $result['qr_code']);
@@ -232,8 +232,8 @@ describe('Two Factor Service', function (): void {
 
     test('secret is properly encrypted in database', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         $result = enableTwoFactorForUser($user, $google2fa);
 
         $freshUser = $user->fresh();
@@ -248,8 +248,8 @@ describe('Two Factor Service', function (): void {
 
     test('recovery codes are properly encrypted in database', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         $result = enableTwoFactorForUser($user, $google2fa);
 
         $freshUser = $user->fresh();
@@ -262,8 +262,8 @@ describe('Two Factor Service', function (): void {
 
     test('enable can be called multiple times', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         $result1 = enableTwoFactorForUser($user, $google2fa);
         $result2 = enableTwoFactorForUser($user, $google2fa);
 
@@ -272,8 +272,8 @@ describe('Two Factor Service', function (): void {
 
     test('confirm sets confirmed at timestamp', function (): void {
         /** @var TestCase $this */
-        $google2fa = $this->requireGoogle2fa();
-        $user = $this->requireUser();
+        $google2fa = TestCase::requireGoogle2fa();
+        $user = TestCase::requireUser();
         $result = enableTwoFactorForUser($user, $google2fa);
         $validCode = $google2fa->getCurrentOtp($result['secret']);
 

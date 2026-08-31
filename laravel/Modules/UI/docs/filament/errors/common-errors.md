@@ -7,6 +7,8 @@ updated: 2026-07-14
 qmd: "common-errors errori comuni in filament"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+issues: ["https://github.com/provtv/<nome repository>/issues/124"]
+discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
   - "./dropdown-list-item-tag.md"
   - "./static-instance-method-incompatibility.md"

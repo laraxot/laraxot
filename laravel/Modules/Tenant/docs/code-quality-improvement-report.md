@@ -4,26 +4,31 @@ type: report
 tags: [code-quality, phpstan, pest, maintainability]
 module: "Tenant"
 created: 2026-07-17
-updated: 2026-07-17
-qmd: "code quality baseline PHPStan Pest strict types Laraxot Tenant"
+updated: 2026-07-27
+qmd: "code quality baseline PHPStan Pest strict types Laraxot Tenant git remote module_tenant"
 story: STORY-001
-issues:
-<<<<<<< HEAD
-  - "https://github.com/laraxot/base_techplanner_fila5/issues/46"
-discussions:
-  - "https://github.com/laraxot/base_techplanner_fila5/discussions/47"
-=======
-  - "https://github.com/laraxot/base_workorder_fila5/issues/46"
-discussions:
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/47"
->>>>>>> 986b8d3 (.)
+# GRAVE: issue/discussion del MODULO — mai base_project / base_workorder / mono.
+# Resolve: cd laravel/Modules/Tenant && git remote -v → laraxot/module_tenant_fila5
+issues: []
+discussions: []
 related:
   - "../../../../docs/stories/STORY-001-code-quality-moduli-temi.md"
+  - "../../../../docs/wiki/memories/module-github-remote-discipline.md"
+  - "./wiki/memories/github-remote-collision-wrong-base.md"
 ---
 
 # Code Quality Improvement Report — Tenant
 
 > Baseline statica riproducibile per orientare il miglioramento. I conteggi sono segnali, non sostituiscono PHPStan, Pest o la review del flusso reale.
+
+## GitHub (repo del modulo)
+
+```bash
+cd laravel/Modules/Tenant && git remote -v
+# laraxot → git@github.com:laraxot/module_tenant_fila5.git
+```
+
+**Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate. Qui HEAD puntava a `<nome repository>` — nessuno dei due è il remote Tenant. Non scegliere a caso: scoprire il remote nella cartella del modulo.
 
 ## Baseline
 
@@ -76,16 +81,20 @@ Rilevazione del 17 luglio 2026 sul working tree locale; esclusi vendor e dipende
 
 ## Modifiche effettive da fare
 
-
-
-- [ ] PHPStan L10 scoped senza errori non giustificati.
+- [x] PHPStan L10 scoped senza errori non giustificati. (Modules 2026-07-27)
 - [ ] Pest scoped verde sui flussi critici.
 - [ ] Nessuna nuova estensione Filament diretta o controller FO.
 - [ ] Nessuna nuova business logic in Services/Support.
 - [ ] File PHP modificati con strict types e tipi concreti.
 - [ ] Debito residuo con owner e criterio di rimozione.
+- [x] Frontmatter GitHub: remote modulo via `git remote -v` (mai `base_*` mono).
 
 ## Criteri di uscita
+
+## Gate PHPStan (2026-07-27)
+
+- `cd laravel && ./vendor/bin/phpstan analyse Modules --memory-limit=-1` → **0 errori**.
+- Themes: solo insieme a Modules — [phpstan-stale-ignore-pattern](../../../../docs/wiki/troubleshooting/phpstan-stale-ignore-pattern.md).
 
 ## Verifica
 

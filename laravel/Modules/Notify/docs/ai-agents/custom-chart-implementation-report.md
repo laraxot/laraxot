@@ -12,6 +12,7 @@ Implementazione completa delle funzionalità di grafici custom da Fila4 a Fila5,
 
 **Directory Analizzate**:
 - `./laravel/Modules/Quaeris/app/Actions/QuestionChart/`
+- `./laravel/Modules/App/app/Actions/QuestionChart/`
 - `./laravel/Modules/Chart/app/Actions/`
 
 **File Chiave Esaminati**:
@@ -67,6 +68,7 @@ foreach ($charts as $chart) {
 
 #### GetAnswersByQuestionChart
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/GetAnswersByQuestionChart.php`
+**File**: `Modules/App/app/Actions/QuestionChart/GetAnswersByQuestionChart.php`
 
 **Features**:
 - ✅ Custom question type handling (`custom:*`)
@@ -86,6 +88,7 @@ foreach ($charts as $chart) {
 
 #### GetChartsDataByQuestionChart
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/GetChartsDataByQuestionChart.php`
+**File**: `Modules/App/app/Actions/QuestionChart/GetChartsDataByQuestionChart.php`
 
 **Features**:
 - ✅ Multiple charts per question
@@ -153,11 +156,14 @@ foreach ($charts as $chart) {
 #### Actions (4)
 4. `Modules/Quaeris/app/Actions/QuestionChart/GetAnswersByQuestionChart.php`
 5. `Modules/Quaeris/app/Actions/QuestionChart/GetChartsDataByQuestionChart.php`
+4. `Modules/App/app/Actions/QuestionChart/GetAnswersByQuestionChart.php`
+5. `Modules/App/app/Actions/QuestionChart/GetChartsDataByQuestionChart.php`
 6. `Modules/Chart/app/Actions/ExportChartToSvgAction.php`
 7. `Modules/Chart/app/Actions/ExportChartToPngAction.php`
 
 #### Documentation (3)
 8. `Modules/Quaeris/docs/custom-chart-implementation.md`
+8. `Modules/App/docs/custom-chart-implementation.md`
 9. `.kilo/docs/custom-chart-implementation-report.md` (this file)
 10. `.github/ISSUE_TEMPLATE/custom-chart-implementation.md`
 
@@ -174,6 +180,7 @@ foreach ($charts as $chart) {
 
 ```php
 use Modules\Quaeris\Actions\QuestionChart\GetChartsDataByQuestionChart;
+use Modules\App\Actions\QuestionChart\GetChartsDataByQuestionChart;
 use Modules\Chart\Actions\ExportChartToSvgAction;
 use Modules\Chart\Actions\ExportChartToPngAction;
 
@@ -213,6 +220,7 @@ class QuestionChartAnswersCompositeWidget extends Widget
         );
         
         return view('quaeris::filament.widgets.question-chart-answers-composite-widget', [
+        return view('this-project::filament.widgets.question-chart-answers-composite-widget', [
             'chartsData' => $chartsData,
         ]);
     }
@@ -341,12 +349,12 @@ $sort_by_expr = 'DATE_FORMAT(sms_sent_at, "%Y-%m")';
 
 ### File Corretto
 
-- `laravel/Modules/Quaeris/app/Actions/QuestionChart/Custom/SmsResponseRate.php`
+- `laravel/Modules/App/app/Actions/QuestionChart/Custom/SmsResponseRate.php`
 
 ### Test URL
 
-- `/quaeris/admin/ats/survey-pdfs/16/question-charts/191`
-- `/quaeris/admin/ats/survey-pdfs/16/question-charts/234`
+- `/this-project/admin/ats/survey-pdfs/16/question-charts/191`
+- `/this-project/admin/ats/survey-pdfs/16/question-charts/234`
 
 ---
 

@@ -1,7 +1,0 @@
----
-module: theme
-topic: app
-canonical: ../../../Themes/docs/shared-components/app.md
----
-
-See canonical documentation: ../../../Themes/docs/shared-components/app.md

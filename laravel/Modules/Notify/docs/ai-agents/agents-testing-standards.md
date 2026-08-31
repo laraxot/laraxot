@@ -81,4 +81,5 @@ Prima di ogni commit:
 - [testing.md](./testing.md) - Più dettagliato
 - [pest-testing.md](./pest-testing.md) - Guida Pest
 - [AGENTS.md originale](../../AGENTS.md)
+- [agents.md originale](../../agents.md)
 - [Index principale](./index.md)

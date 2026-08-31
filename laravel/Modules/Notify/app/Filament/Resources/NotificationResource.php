@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Notify\Filament\Resources;
 
 use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Field;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Modules\Notify\Models\Notification;
@@ -15,6 +16,9 @@ class NotificationResource extends XotBaseResource
 {
     protected static ?string $model = Notification::class;
 
+    /**
+     * @return array<string, Field>
+     */
     #[Override]
     public static function getFormSchema(): array
     {
@@ -28,7 +32,6 @@ class NotificationResource extends XotBaseResource
             'data' => Textarea::make('data')->label('Notification Data')->columnSpanFull(),
             'read_at' => DateTimePicker::make('read_at')->label('Read At')->nullable(),
             'created_by' => TextInput::make('created_by')->label('Created By')->disabled(),
-            'updated_by' => TextInput::make('updated_by')->label('Updated By')->disabled(),
-        ];
+            'updated_by' => TextInput::make('updated_by')->label('Updated By')->disabled()];
     }
 }

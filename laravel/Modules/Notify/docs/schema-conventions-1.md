@@ -85,3 +85,5 @@ Here's a complete example of a properly formatted schema:
 ```
 
 ---
+---
+```

@@ -120,6 +120,7 @@ return [
 
 **File corretti:**
 - `Modules/Fixcity/app/Filament/Widgets/CreateTicketWidget.php`
+- `Modules/App/app/Filament/Widgets/CreateTicketWidget.php`
 - `Modules/UI/app/Filament/Blocks/Navigation.php`
 - `Modules/UI/app/Filament/Widgets/UserCalendarWidget.php`
 - `Modules/Notify/app/Filament/Clusters/Test/Pages/*.php` (5 file)
@@ -214,6 +215,7 @@ return /** @phpstan-ignore-line property.notFound */ $this->media->path . '/' . 
 
 **Moduli con più errori nei test:**
 1. Fixcity: 1171 errori
+1. App: 1171 errori
 2. Notify: 776 errori
 3. User: 647 errori
 4. Cms: 457 errori
@@ -250,6 +252,7 @@ return /** @phpstan-ignore-line property.notFound */ $this->media->path . '/' . 
 
 ### Priorità Media
 4. **Pulire modulo Fixcity tests (1171 errori)**
+4. **Pulire modulo App tests (1171 errori)**
    - Seguire il pattern del modulo Xot
    - Obiettivo: sotto 500 errori
 

@@ -49,6 +49,7 @@ related:
 | Lang | ❌ | ✅ | 0 | 🟢 Bassa |
 | Job | ❌ | ✅ | 0 | 🟢 Bassa |
 | Fixcity | ✅ | ❌ | 0 | 🟢 Bassa |
+| App | ✅ | ❌ | 0 | 🟢 Bassa |
 | **Xot** | ❌ | ✅ | 0 | ⚡ **CORE** |
 
 **Totale:**
@@ -159,6 +160,7 @@ abstract class BasePivot extends XotBasePivot
 - Lang
 - Job
 - Fixcity
+- App
 
 **Script automatico:**
 
@@ -175,6 +177,7 @@ MODULES=(
     "Lang"
     "Job"
     "Fixcity"
+    "App"
 )
 
 for module in "${MODULES[@]}"; do
@@ -268,6 +271,7 @@ php artisan benchmark:pivot-queries
 ```bash
 # Test ogni modulo singolarmente
 for module in User Blog Rating Notify Geo Comment Cms Gdpr Lang Job Fixcity; do
+for module in User Blog Rating Notify Geo Comment Cms Gdpr Lang Job App; do
     echo "Testing $module..."
     php artisan test --testsuite=$module || echo "❌ $module FAILED"
 done
@@ -285,6 +289,7 @@ done
 2. ✅ `docs/architecture/xotbasepivot-strategy.md` (questo file)
 3. `Modules/Xot/README.md` → aggiungere sezione XotBasePivot
 4. `docs/CHANGELOG.md` → entry per breaking change
+4. `docs/changelog.md` → entry per breaking change
 5. Per ogni modulo: `Modules/{Module}/docs/models/pivot-migration.md`
 
 #### Esempio doc modulo:

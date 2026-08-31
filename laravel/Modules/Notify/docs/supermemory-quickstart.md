@@ -24,6 +24,7 @@ related:
 **Last Updated**: 2026-04-09  
 **API Key**: Configured (sm_BzH3Cugxk1hMDm5V1EHC2N_...)  
 **Container Tag**: `fixcity`  
+**Container Tag**: `ptv`  
 **User**: marco.sottana@gmail.com (Xot org)
 
 ## Overview
@@ -51,6 +52,8 @@ Auth:  api-key (sm_BzH3Cugxk1hMDm5V1EHC2N_Jr9N****)
 ```bash
 cd /var/www/_bases/base_fixcity_fila5
 supermemory add --tag fixcity --file .supermemory/fixcity-context.md
+cd /var/www/_bases/base_ptv_fila5
+supermemory add --tag ptv --file .supermemory/ptv-context.md
 ```
 
 ### Search Memories
@@ -58,11 +61,15 @@ supermemory add --tag fixcity --file .supermemory/fixcity-context.md
 supermemory search "FixCity architecture" --tag fixcity
 supermemory search "Laravel Filament patterns" --tag fixcity
 supermemory search "theme build process" --tag fixcity
+supermemory search "FixCity architecture" --tag ptv
+supermemory search "Laravel Filament patterns" --tag ptv
+supermemory search "theme build process" --tag ptv
 ```
 
 ### Get Profile
 ```bash
 supermemory profile --tag fixcity --query "project preferences"
+supermemory profile --tag ptv --query "project preferences"
 ```
 
 ## Core Commands
@@ -84,30 +91,35 @@ supermemory profile --tag fixcity --query "project preferences"
 Store project architecture decisions:
 ```bash
 supermemory add --tag fixcity --content "FixCity uses Nwidart modules + Laraxot extensions. All models extend XotBaseModel. Service providers extend XotBaseServiceProvider."
+supermemory add --tag ptv --content "FixCity uses Nwidart modules + Laraxot extensions. All models extend XotBaseModel. Service providers extend XotBaseServiceProvider."
 ```
 
 ### 2. Module-Specific Knowledge
 Store module patterns:
 ```bash
 supermemory add --tag fixcity --content "Fixcity module: Ticket model extends XotBaseModel, uses Filament resources for admin, Folio+Volt for frontoffice."
+supermemory add --tag ptv --content "Fixcity module: Ticket model extends XotBaseModel, uses Filament resources for admin, Folio+Volt for frontoffice."
 ```
 
 ### 3. Theme Conventions
 Store theme development patterns:
 ```bash
 supermemory add --tag fixcity --content "Sixteen theme: Bootstrap Italia classes replicated with Tailwind @apply. Vite outDir: './public', then npm run copy to public_html/themes/Sixteen/."
+supermemory add --tag ptv --content "Sixteen theme: Bootstrap Italia classes replicated with Tailwind @apply. Vite outDir: './public', then npm run copy to public_html/themes/Sixteen/."
 ```
 
 ### 4. Development Workflows
 Store build processes:
 ```bash
 supermemory remember "After ANY CSS/JS change in theme: cd Themes/Sixteen && npm run build && npm run copy" --tag fixcity
+supermemory remember "After ANY CSS/JS change in theme: cd Themes/Sixteen && npm run build && npm run copy" --tag ptv
 ```
 
 ### 5. Architectural Decisions
 Store reasoning behind decisions:
 ```bash
 supermemory add --tag fixcity --content "Decision: Use Actions over Services for business logic. Rationale: Queueable, testable, reusable. Spatie/laravel-queueable-action package."
+supermemory add --tag ptv --content "Decision: Use Actions over Services for business logic. Rationale: Queueable, testable, reusable. Spatie/laravel-queueable-action package."
 ```
 
 ## Integration with AI Workflow
@@ -134,6 +146,7 @@ supermemory search "file upload Livewire" --tag fixcity
 ```bash
 # Store completed work summary
 supermemory add --tag fixcity --file path/to/session-summary.md
+supermemory add --tag ptv --file path/to/session-summary.md
 
 # Update project context if needed
 supermemory update <context-memory-id> --content "Updated architecture..."
@@ -143,20 +156,22 @@ supermemory update <context-memory-id> --content "Updated architecture..."
 
 | Tag | Purpose | Example Content |
 |-----|---------|-----------------|
-| `fixcity` | Project-wide context | Architecture, conventions, decisions |
-| `fixcity-{module}` | Module-specific | Module patterns, models, resources |
-| `fixcity-{theme}` | Theme-specific | Theme conventions, build process |
-| `fixcity-{session}` | Session-specific | Session summary, decisions made |
+| `ptv` | Project-wide context | Architecture, conventions, decisions |
+| `ptv-{module}` | Module-specific | Module patterns, models, resources |
+| `ptv-{theme}` | Theme-specific | Theme conventions, build process |
+| `ptv-{session}` | Session-specific | Session summary, decisions made |
 
 ## Best Practices
 
 1. **Use Descriptive Content**: Be specific about what you're storing
 2. **Tag Consistently**: Always use `fixcity` as base tag
+2. **Tag Consistently**: Always use `ptv` as base tag
 3. **Update Regularly**: Keep memories current with project evolution
 4. **Search Before Adding**: Avoid duplicate memories
 5. **Use Metadata**: Add metadata for better filtering:
    ```bash
    supermemory add --tag fixcity --content "..." --metadata '{"type":"architecture","module":"Xot"}'
+   supermemory add --tag ptv --content "..." --metadata '{"type":"architecture","module":"Xot"}'
    ```
 
 ## Configuration
@@ -193,11 +208,13 @@ supermemory whoami
 
 # Re-authenticate if needed
 supermemory init --api-key YOUR_KEY --container-tag fixcity --scope project
+supermemory init --api-key YOUR_KEY --container-tag ptv --scope project
 ```
 
 ### No Results from Search
 - Try broader search terms
 - Verify container tag: `--tag fixcity`
+- Verify container tag: `--tag ptv`
 - Wait 1-2 minutes after adding content for processing
 
 ### Content Not Appearing

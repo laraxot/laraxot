@@ -8,8 +8,9 @@ use Illuminate\Support\Facades\File;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Actions\Theme\GetThemeContextAction;
 use Modules\Xot\Datas\XotData;
-use function Safe\file_get_contents;
 use Spatie\QueueableAction\QueueableAction;
+
+use function Safe\file_get_contents;
 
 /**
  * Action to resolve and load the appropriate email HTML layout.
@@ -25,13 +26,13 @@ class GetMailLayoutAction
      * Resolve and return the layout HTML content.
      *
      * @param  string  $baseName  The base name of the layout (default: 'base')
-     *
      * @return string The HTML content of the layout
      */
     public function execute(string $baseName = 'base'): string
     {
-        $xot = XotData::make();
-        $pub_theme = $xot->pub_theme;
+        $xotResult = XotData::make();
+        $pubThemeValue = $xotResult->pub_theme ?? null;
+        $pub_theme = is_string($pubThemeValue) ? $pubThemeValue : 'theme';
         $themePath = base_path('Themes/'.$pub_theme.'/resources/mail-layouts');
 
         $context = app(GetThemeContextAction::class)->execute();

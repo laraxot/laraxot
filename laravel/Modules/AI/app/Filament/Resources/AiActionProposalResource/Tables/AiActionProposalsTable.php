@@ -28,7 +28,9 @@ class AiActionProposalsTable extends XotBaseResourceTable
             ->icon('heroicon-o-check-circle')
             ->color('success')
             ->requiresConfirmation()
-            ->visible(static fn (AiActionProposal $record): bool => $record->status === AiActionProposal::STATUS_PENDING)
+            ->visible(
+                static fn (AiActionProposal $record): bool => $record->status === AiActionProposal::STATUS_PENDING
+            )
             ->action(function (AiActionProposal $record): void {
                 app(ConfirmAiActionProposalAction::class)->execute($record, (int) Auth::id());
             });
@@ -38,7 +40,9 @@ class AiActionProposalsTable extends XotBaseResourceTable
             ->icon('heroicon-o-x-circle')
             ->color('danger')
             ->requiresConfirmation()
-            ->visible(static fn (AiActionProposal $record): bool => $record->status === AiActionProposal::STATUS_PENDING)
+            ->visible(
+                static fn (AiActionProposal $record): bool => $record->status === AiActionProposal::STATUS_PENDING
+            )
             ->action(function (AiActionProposal $record): void {
                 app(CancelAiActionProposalAction::class)->execute($record);
             });
@@ -54,14 +58,11 @@ class AiActionProposalsTable extends XotBaseResourceTable
         return [
             'id' => TextColumn::make('id')->sortable()->searchable(),
             'thread.public_id' => TextColumn::make('thread.public_id')
-                ->label(__('ai::action_proposal.fields.thread'))
                 ->limit(12),
             'type' => TextColumn::make('type')
-                ->label(__('ai::action_proposal.fields.type'))
                 ->badge()
                 ->searchable(),
             'status' => TextColumn::make('status')
-                ->label(__('ai::action_proposal.fields.status'))
                 ->badge()
                 ->colors([
                     'warning' => AiActionProposal::STATUS_PENDING,
@@ -73,7 +74,6 @@ class AiActionProposalsTable extends XotBaseResourceTable
                 ->formatStateUsing(fn (string $state): string => __("ai::action_proposal.statuses.{$state}"))
                 ->sortable(),
             'preview' => TextColumn::make('preview')
-                ->label(__('ai::action_proposal.fields.preview'))
                 ->limit(50)
                 ->toggleable(isToggledHiddenByDefault: true),
             'created_at' => TextColumn::make('created_at')

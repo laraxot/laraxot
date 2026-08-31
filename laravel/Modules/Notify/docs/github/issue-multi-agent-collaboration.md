@@ -185,12 +185,14 @@ However, since bashscripts docs are gitignored, they need to be committed to bas
 | Discussion Template | ✅ Committed | `.github/DISCUSSION_TEMPLATE/sync-script-coordination.md` |
 | Summary Doc | ✅ Committed | `docs/github/SYNC_REMOTE_REPO_DOCS_summary.md` |
 | AGENTS.md Update | ✅ Committed | Multi-agent coordination section |
+| agents.md Update | ✅ Committed | Multi-agent coordination section |
 
 ### Sync Status
 
 | Repo | Status | Next Step |
 |------|--------|-----------|
 | Main Repo (base_fixcity_fila5) | ✅ Committed & Pushed | - |
+| Main Repo (base_ptvx_fila5) | ✅ Committed & Pushed | - |
 | Bashscripts Repo (bashscripts_fila5) | ⏳ Pending | Commit docs to bashscripts repo |
 
 ---

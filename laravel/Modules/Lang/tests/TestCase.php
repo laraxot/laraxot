@@ -7,10 +7,15 @@ namespace Modules\Lang\Tests;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
+use Mockery;
+use Mockery\Expectation;
+use Mockery\MockInterface;
+use Modules\Lang\Actions\SaveTransAction;
 use Modules\Lang\Providers\LangServiceProvider;
 use Modules\User\Models\User;
 use Modules\User\Providers\UserServiceProvider;
 use Modules\Xot\Tests\XotBaseTestCase;
+use PHPUnit\Framework\Assert;
 
 /**
  * Base test case for Lang module.
@@ -76,6 +81,74 @@ abstract class TestCase extends XotBaseTestCase
         $this->expectException($exceptionClass);
         if (null !== $message) {
             $this->expectThrowableMessage($message);
+        }
+    }
+
+    /**
+     * @template T of object
+     *
+     * @param class-string<T>                        $abstract
+     * @param (\Closure(MockInterface&T): void)|null $callback
+     *
+     * @return MockInterface&T
+     */
+    public static function mockServiceStatic(string $abstract, ?\Closure $callback = null): MockInterface
+    {
+        /** @var MockInterface&T $mock */
+        $mock = Mockery::mock($abstract);
+
+        if (null !== $callback) {
+            $callback($mock);
+        }
+
+        app()->instance($abstract, $mock);
+
+        return $mock;
+    }
+
+    public static function mockExpectation(MockInterface $mock, string $method): Expectation
+    {
+        $mock->shouldReceive($method);
+        $director = $mock->mockery_getExpectationsFor($method);
+        Assert::assertNotNull($director);
+        $expectation = $director->getExpectations()[0] ?? null;
+        Assert::assertInstanceOf(Expectation::class, $expectation);
+
+        return $expectation;
+    }
+
+    public static function mockAllows(MockInterface $mock, string $method): Expectation
+    {
+        return self::mockExpectation($mock, $method);
+    }
+
+    public static function bindRealSaveTransAction(): void
+    {
+        app()->instance(SaveTransAction::class, new SaveTransAction());
+    }
+
+    public static function restoreSaveTransActionNoOp(): void
+    {
+        /** @var MockInterface&SaveTransAction $mock */
+        $mock = Mockery::mock(SaveTransAction::class);
+        $mock->shouldReceive('execute')->andReturnNull();
+        app()->instance(SaveTransAction::class, $mock);
+    }
+
+    public static function forceSqliteTranslations(): void
+    {
+        $database = database_path('fixcity_data.sqlite');
+
+        /** @var array<string, array<string, mixed>> $connections */
+        $connections = config('database.connections', []);
+
+        foreach (array_keys($connections) as $connection) {
+            if ('sqlite' !== config("database.connections.{$connection}.driver")) {
+                continue;
+            }
+
+            config(["database.connections.{$connection}.database" => $database]);
+            DB::purge($connection);
         }
     }
 }

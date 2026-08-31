@@ -61,6 +61,7 @@ public function getMediaAttribute(): \Spatie\MediaLibrary\MediaCollections\Model
 
 #### Configuration Fix
 **File**: `laravel/config/it/quaerisofficina/manager2/xra.php`
+**File**: `laravel/config/it/<nome progetto>officina/manager2/xra.php`
 
 **Issue**: Parse error from invalid placeholder `\Modules\<nome progetto>\Models\Customer::class`
 
@@ -228,6 +229,7 @@ it('media attribute returns empty collection when no media attached', function (
 6. `/laravel/Modules/Fixcity/routes/api.php`
 7. `/laravel/Modules/Fixcity/tests/Unit/Models/TicketBusinessLogicTest.php`
 8. `/laravel/config/it/quaerisofficina/manager2/xra.php`
+8. `/laravel/config/it/<nome progetto>officina/manager2/xra.php`
 
 ### Documentation Files (7)
 1. `/laravel/Modules/Cms/docs/development/roadmap.md`

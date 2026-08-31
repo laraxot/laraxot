@@ -12,10 +12,10 @@ use Modules\Xot\Filament\Forms\Components\XotBaseField;
  * **Filament Component** (not Blade render) — extends XotBaseField so it integrates
  * natively with Filament's form/schema system, Livewire state, and validation.
  *
- * **Why in Geo**: Geolocation and reverse geocoding are geo-spatial concerns.
+ * Why in Geo**: Geolocation and reverse geocoding are geo-spatial concerns.
  * Any module (Fixcity, Municipal, UI, User, etc.) can consume this component.
  *
- * **Usage**:
+ * Usage**:
  * ```php
  * use Modules\Geo\Filament\Forms\Components\AddressInput;
  *

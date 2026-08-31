@@ -1,3 +1,12 @@
+---
+title: "Composer Update Fixes - 24 Novembre 2025"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Composer Update Fixes - 24 Novembre 2025
 
 ## Panoramica

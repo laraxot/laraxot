@@ -5,6 +5,7 @@ Regole di architettura modulare per il progetto.
 ## Modulo Agnosticism - REGOLA FONDAMENTALE
 
 **Il modulo Predict (e tutti i moduli) devono essere AGONISTICI!**
+**Il modulo Forecast (e tutti i moduli) devono essere AGONISTICI!**
 
 Non usare MAI dipendenze hardcoded come `Modules\Blog\Models\User`. Usa sempre `XotData`:
 
@@ -134,4 +135,5 @@ git rm path/to/submodule
 - [module-dependencies.md](./module-dependencies.md) - Più dettagliato
 - [git-submodules.md](./git-submodules.md) - Dettagli git
 - [AGENTS.md originale](../../AGENTS.md)
+- [agents.md originale](../../agents.md)
 - [Index principale](./index.md)

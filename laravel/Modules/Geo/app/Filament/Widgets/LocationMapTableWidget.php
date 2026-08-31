@@ -21,30 +21,17 @@ class LocationMapTableWidget extends BaseWidget
     public function table(Table $table): Table
     {
         return $table
-            ->query($this->getTableQuery())
-            ->columns($this->getTableColumns());
-    }
-
-    /**
-     * @return Builder<Location>
-     */
-    protected function getTableQuery(): Builder
-    {
-        return Location::query()->latest();
-    }
-
-    protected function getTableColumns(): array
-    {
-        return [
-            TextColumn::make('name')
-                ->searchable()
-                ->sortable(),
-            TextColumn::make('city')
-                ->searchable()
-                ->sortable(),
-            TextColumn::make('state')
-                ->searchable()
-                ->sortable(),
-        ];
+            ->query(fn (): Builder => Location::query()->latest())
+            ->columns([
+                TextColumn::make('name')
+                    ->searchable()
+                    ->sortable(),
+                TextColumn::make('city')
+                    ->searchable()
+                    ->sortable(),
+                TextColumn::make('state')
+                    ->searchable()
+                    ->sortable(),
+            ]);
     }
 }

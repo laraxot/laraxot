@@ -8,8 +8,6 @@ use InvalidArgumentException;
 use Modules\Tenant\Actions\GetTenantNameAction;
 use Spatie\QueueableAction\QueueableAction;
 
-use function Safe\realpath;
-
 class GetTenantFilePathAction
 {
     use QueueableAction;
@@ -19,12 +17,6 @@ class GetTenantFilePathAction
         $normalizedFilename = str_replace('\\', '/', $filename);
         if (str_starts_with($normalizedFilename, '/') || str_contains($filename, "\0") || in_array('..', explode('/', $normalizedFilename), true)) {
             throw new InvalidArgumentException('Tenant filename must be a relative path without traversal segments.');
-        }
-
-        if (isRunningTestBench()) {
-            $basePath = realpath(__DIR__.'/../../Config');
-
-            return $basePath.\DIRECTORY_SEPARATOR.$filename;
         }
 
         $tenantName = app(GetTenantNameAction::class)->execute();

@@ -1,3 +1,18 @@
+---
+title: "Geo — indice della documentazione"
+description: "Documentazione del modulo Geo: dati geografici e mappe."
+module: Geo
+tags: [geo, documentazione, modulo, laraxot]
+status: active
+repository: https://github.com/laraxot/module_geo_fila5
+related:
+  - ./00-index.md
+  - ./index.md
+  - ../../../../docs/wiki/audits/docs-redundancy-audit.md
+issues: https://github.com/laraxot/module_geo_fila5/issues
+discussions: https://github.com/laraxot/module_geo_fila5/discussions
+---
+
 # 📚 **Indice Documentazione Modulo Geo**
 
 **Status**: ✅ PHPStan Level 10 Compliant

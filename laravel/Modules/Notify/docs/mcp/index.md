@@ -1,11 +1,13 @@
 ---
 title: "MCP Server Index - FixCity Project"
+title: "MCP Server Index - Notify Project"
 type: index
 tags: [notify, docs, mcp]
 module: Notify
 created: 2026-07-20
 updated: 2026-07-20
 qmd: "notify documentazione mcp index mcp server index - fixcity project index readme frontmatter qmd search"
+qmd: "notify documentazione mcp index mcp server index - laraxot project index readme frontmatter qmd search"
 issues:
   - "https://github.com/laraxot/module_notify_fila5/issues/56"
 discussions:
@@ -18,6 +20,7 @@ related:
   - ../templates/readme.md
 ---
 # MCP Server Index - FixCity Project
+# MCP Server Index - Notify Project
 
 **Purpose**: Central index for all MCP server documentation  
 **Last Updated**: 2026-04-09

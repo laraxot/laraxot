@@ -378,4 +378,5 @@ find . -name "*[A-Z]*" -type d | grep -v node_modules | grep -v vendor
 
 **Maintainer**: @marco76tv  
 **Contact**: dev @fixcity.example.com  
+**Contact**: dev @laraxot.example.com  
 **Last Review**: 2026-03-13

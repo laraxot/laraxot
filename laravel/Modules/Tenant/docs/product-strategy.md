@@ -2,7 +2,7 @@
 title: "Tenant Module - Product Strategy"
 module: "Tenant"
 type: concept
-tags: [product, strategy]
+tags: [PRODUCT, STRATEGY]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "product strategy"

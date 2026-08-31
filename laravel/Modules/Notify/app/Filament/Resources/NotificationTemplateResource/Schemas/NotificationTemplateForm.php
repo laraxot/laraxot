@@ -65,7 +65,6 @@ class NotificationTemplateForm extends XotBaseResourceForm
                 ->maxSize(5120)
                 ->acceptedFileTypes(['application/pdf', 'image/*'])
                 ->columnSpan(['lg' => 3])
-                ->helperText(__('notify::template.form.attachments.helper')),
-        ];
+                ->helperText(__('notify::template.form.attachments.helper'))];
     }
 }

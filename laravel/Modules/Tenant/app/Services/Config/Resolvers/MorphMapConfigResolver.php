@@ -23,8 +23,8 @@ class MorphMapConfigResolver implements ConfigResolverInterface
         // Ex RouteService::inAdmin() (Services archiviato): main panel `/admin/...`.
         // NB: semantica diversa dall'helper globale inAdmin() (module panel `/{module}/admin`).
         $segments = Request::segments();
-        $inMainAdmin = 'admin' === Request::segment(1)
-            || (\count($segments) > 0 && 'livewire' === $segments[0] && true === session('in_admin', false));
+        $inMainAdmin = Request::segment(1) === 'admin'
+            || (\count($segments) > 0 && $segments[0] === 'livewire' && session('in_admin', false) === true);
 
         return $inMainAdmin
             && Str::startsWith($key, 'morph_map')

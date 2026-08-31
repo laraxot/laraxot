@@ -5,6 +5,7 @@ tags: [master, roadmap, 2025]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "master-roadmap-2025 🗺️ fixcity platform - master roadmap 2025"
+qmd: "master-roadmap-2025 🗺️ ptv platform - master roadmap 2025"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:

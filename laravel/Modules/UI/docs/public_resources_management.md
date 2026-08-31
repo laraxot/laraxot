@@ -1,4 +1,4 @@
-# Gestione delle Risorse Pubbliche 
+# Gestione delle Risorse Pubbliche
 
 ## Indice
 - [Panoramica](#panoramica)
@@ -17,6 +17,7 @@ La struttura corretta per le risorse pubbliche  è la seguente:
 
 ```
 /var/www/html/saluteora/
+[project-root]/
 ├── public_html/           # Directory pubblica principale
 │   ├── images/            # Immagini pubbliche
 │   ├── css/               # File CSS
@@ -27,12 +28,14 @@ La struttura corretta per le risorse pubbliche  è la seguente:
 ```
 
 > **IMPORTANTE**: MAI utilizzare `/var/www/html/saluteora/laravel/public/` per i file pubblici. Questa cartella non è accessibile via web nel setup di SaluteOra.
+> **IMPORTANTE**: MAI utilizzare `[project-root]/laravel/public/` per i file pubblici. Questa cartella non è accessibile via web nel setup di <nome progetto>corrente.
 
 ## Tipi di Risorse
 
 ### Immagini
 
 Le immagini devono essere posizionate in `/var/www/html/saluteora/public_html/images/` e organizzate in sottocartelle per tipologia:
+Le immagini devono essere posizionate in `[project-root]/public_html/images/` e organizzate in sottocartelle per tipologia:
 
 - `/images/avatars/` - Avatar utenti
 - `/images/logos/` - Loghi
@@ -99,7 +102,9 @@ I font devono essere posizionati in `/public_html/fonts/` e organizzati per fami
 ### Avatar Utente
 
 ```blade
-<img 
+<img
+    src="{{ $user->avatar ? asset('images/avatars/' . $user->avatar) : asset('images/default-avatar.svg') }}"
+    alt="{{ $user->name }}"
     src="{{ $user->avatar ? asset('images/avatars/' . $user->avatar) : asset('images/default-avatar.svg') }}" 
     alt="{{ $user->name }}" 
     class="h-10 w-10 rounded-full"
@@ -128,3 +133,4 @@ I font devono essere posizionati in `/public_html/fonts/` e organizzati per fami
 ## Conclusione
 
 Seguendo queste linee guida per la gestione delle risorse pubbliche, si garantisce che tutte le risorse siano correttamente accessibili via web e organizzate in modo coerente, facilitando la manutenzione e l'evoluzione del progetto SaluteOra.
+Seguendo queste linee guida per la gestione delle risorse pubbliche, si garantisce che tutte le risorse siano correttamente accessibili via web e organizzate in modo coerente, facilitando la manutenzione e l'evoluzione del progetto <nome progetto>corrente.

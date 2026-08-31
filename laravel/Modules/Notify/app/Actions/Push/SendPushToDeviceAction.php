@@ -21,8 +21,11 @@ class SendPushToDeviceAction
     private array $platforms = ['fcm', 'apns', 'webpush'];
 
     /**
+     * Chiave = piattaforma; valore = esito di `SendPushToPlatformAction` oppure la
+     * shape di errore costruita qui sotto. `success` è l'unica chiave comune ai due rami.
+     *
      * @param  array<string, mixed>  $data
-     * @return array<string, array<string, mixed>>
+     * @return array<string, array{success: bool, ...}>
      */
     public function execute(string $token, PushNotificationData $notification, array $data = []): array
     {
@@ -36,13 +39,11 @@ class SendPushToDeviceAction
                 Log::error("Push notification failed for platform {$platform}", [
                     'error' => $e->getMessage(),
                     'token' => $token,
-                    'notification' => $notification->toArray(),
-                ]);
+                    'notification' => $notification->toArray()]);
 
                 $results[$platform] = [
                     'success' => false,
-                    'error' => $e->getMessage(),
-                ];
+                    'error' => $e->getMessage()];
             }
         }
 

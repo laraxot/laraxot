@@ -24,16 +24,18 @@ class ChristmasGreetingMailable extends Mailable
     public function __construct(
         public string $recipientName = 'Cliente Valutato',
         public string $senderName = 'Il Team del nostro Studio',
-    ) {
-    }
+    ) {}
 
     /**
      * Get the message envelope.
      */
     public function envelope(): Envelope
     {
+        $fromAddress = config('mail.from.address', 'hello@example.com');
+        $fromAddress = is_string($fromAddress) ? $fromAddress : 'hello@example.com';
+
         return new Envelope(
-            from: new Address((string) config('mail.from.address', 'hello@example.com'), $this->senderName),
+            from: new Address($fromAddress, $this->senderName),
             subject: 'Auguri di Buone Feste e Informazioni Importanti!',
         );
     }
@@ -50,8 +52,7 @@ class ChristmasGreetingMailable extends Mailable
             view: $seasonalContentViewPath, // Use the determined content view
             with: [
                 'recipientName' => $this->recipientName,
-                'senderName' => $this->senderName,
-            ],
+                'senderName' => $this->senderName],
         );
     }
 

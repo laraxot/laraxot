@@ -81,6 +81,7 @@ Icona specifica del modulo che rappresenta la funzionalità principale.
 - `form-icon.svg` per il modulo FormBuilder
 - `db-icon.svg` per il modulo DbForge
 - `fixcity-icon.svg` per il modulo Fixcity
+- `laraxot-icon.svg` per il modulo App
 
 ## Moduli Coperti
 
@@ -97,6 +98,7 @@ La struttura SVG è stata creata per i seguenti moduli:
 9. **Geo** - Geolocalizzazione
 10. **Gdpr** - Conformità GDPR
 11. **Fixcity** - Modulo specifico progetto
+11. **App** - Modulo specifico progetto
 12. **Comment** - Sistema commenti
 13. **Chart** - Grafici e statistiche
 14. **Blog** - Sistema blog

@@ -36,19 +36,16 @@ class SendAgiletelecomSMSv1Action implements SmsActionContract
             'smsSENDER' => $agile->sender,
             'smsGATEWAY' => 'H', // M = Qualità standard, H = Qualità Alta
             'smsUSER' => $agile->username,
-            'smsPASSWORD' => $agile->password,
-        ];
+            'smsPASSWORD' => $agile->password];
 
         $headers = [
             'Accept-Encoding' => 'gzip, deflate',
             'Cache-Control' => 'no-cache',
-            'Connection' => 'keep-alive',
-        ];
+            'Connection' => 'keep-alive'];
 
         $client = new Client([
             'timeout' => 2.0,
-            'headers' => $headers,
-        ]);
+            'headers' => $headers]);
 
         $client->post($url, ['form_params' => $payload]);
 

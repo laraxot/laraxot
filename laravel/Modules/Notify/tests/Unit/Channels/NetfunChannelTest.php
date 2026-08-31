@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Unit\Channels;
 
 use Modules\Notify\Channels\NetfunChannel;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 describe('NetfunChannel', function () {
@@ -28,14 +29,14 @@ describe('NetfunChannel', function () {
 
     it('uses strict types', function () {
         $reflection = new \ReflectionClass(NetfunChannel::class);
-        $content = \notifyReflectionSource($reflection);
+        $content = TestCase::notifyReflectionSource($reflection);
         Assert::assertStringContainsString('declare(strict_types=1)', $content);
     });
 
-    it('has private factory dependency', function () {
+    it('has send method with notifiable parameter', function () {
         $reflection = new \ReflectionClass(NetfunChannel::class);
-        $property = $reflection->getProperty('factory');
-
-        Assert::assertTrue($property->isPrivate());
+        $method = $reflection->getMethod('send');
+        Assert::assertTrue($method->isPublic());
+        Assert::assertGreaterThanOrEqual(2, $method->getNumberOfParameters());
     });
 });

@@ -61,8 +61,7 @@ class SmtpData extends Data
             'username' => $this->username,
             'password' => $this->password,
             'timeout' => $this->timeout,
-            'local_domain' => $this->local_domain,
-        ];
+            'local_domain' => $this->local_domain];
     }
 
     public function getTransport(): EsmtpTransport

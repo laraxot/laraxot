@@ -355,8 +355,8 @@ Apply the advanced elicitation task after major sections to refine based on user
 
 ## Cross-References
 
-- ← [Tasks Index](INDEX.md) — All 22 BMad tasks
-- ← [Agents Index](../../agents/INDEX.md) — 10 agent definitions
-- ← [Main AI Docs Index](../INDEX.md) — Master index
-- ← [../../../../AGENTS.md](../../../../../../../../AGENTS.md) — Original source
+- ← [Tasks Index](index.md) — All 22 BMad tasks
+- ← [Agents Index](../../agents/index.md) — 10 agent definitions
+- ← [Main AI Docs Index](../index.md) — Master index
+- ← [../../../../agents.md](../../../../../../../../agents.md) — Original source
 

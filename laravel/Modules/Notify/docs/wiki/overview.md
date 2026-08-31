@@ -61,6 +61,19 @@ docs/
 | `raw/` | `./docs/` + ogni `Modules/*/docs/` | Documenti sorgente (immutabili) |
 | `wiki/` | `./docs/wiki/` + ogni `Modules/*/docs/wiki/` | Conoscenza compilata dall'LLM |
 | `AGENTS.md` | `./docs/wiki/AGENTS.md` | Schema multi-agent |
+
+**Stack**: Laravel 11 + Filament 5 + Laraxot pattern  
+**Moduli**: 18 (Xot, Cms, UI, Lang, User, Fixcity, Blog, Geo, Media, Notify, Activity, Comment, Rating, Seo, Tenant, Job, Gdpr, AI)  
+**Temi**: 2 (Sixteen — Design Comuni/Bootstrap Italia, TwentyOne — cinematic/prediction market)  
+**Raw docs totali**: ~14.000 file  
+
+### Mapping Karpathy → FixCity
+
+| Karpathy | FixCity | Note |
+|----------|---------|------|
+| `raw/` | `./docs/` + ogni `Modules/*/docs/` | Documenti sorgente (immutabili) |
+| `wiki/` | `./docs/wiki/` + ogni `Modules/*/docs/wiki/` | Conoscenza compilata dall'LLM |
+| `AGENTS.md` | `./docs/wiki/AGENTS.md` | Schema multi-agent |
 | `index.md` | `./docs/wiki/index.md` | Catalogo globale |
 | `log.md` | `./docs/wiki/log.md` | Log append-only |
 
@@ -97,6 +110,7 @@ docs/
 
 1. **User** — autenticazione, profilo, GDPR compliance
 2. **Fixcity** — ticket system, segnalazioni civiche, workflow
+2. **App** — ticket system, segnalazioni civiche, workflow
 3. **Geo** — geolocalizzazione, mappe, OpenStreetMap
 4. **Media** — gestione file, upload, storage S3
 5. **Seo** — meta tags, structured data, sitemap

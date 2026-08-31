@@ -5,8 +5,8 @@ tags: [filament, chart, guide]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "filament-chart-js-guide filament chart.js guide"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+issues: ["https://github.com/provtv/<nome repository>/issues/124"]
+discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
   - "./chartjs-datalabels-multiple-labels-complete-guide.md"
   - "./chartjs-plugin-datalabels-filament5.md"
@@ -14,7 +14,6 @@ related:
   - "./server-side-actions.md"
   - "./shared-hosting-strategy.md"
 ---
-
 # Filament Chart.js Guide
 
 > **Why this guide?**: To standardize how we use Chart.js in Filament, especially regarding advanced features like plugins (Zoom, Annotations) which are not enabled by default.
@@ -123,7 +122,7 @@ See the **[LimeSurvey Professional Charts Guide](../../../limesurvey/docs/profes
 ## 5. PDF Reporting Strategy
 
 **Do NOT** use `dompdf` or client-side canvas capture for charts.
-The architectural standard for Quaeris is **Spatie Laravel PDF** (a wrapper around Browsershot).
+The architectural standard for modulo questionari is **Spatie Laravel PDF** (a wrapper around Browsershot).
 
 **Pattern:** "Shadow Report Views"
 1.  Create a dedicated Blade view for the report (linear layout).

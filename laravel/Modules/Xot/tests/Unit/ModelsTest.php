@@ -12,7 +12,7 @@ use Modules\Xot\Models\Module;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('can create a test user', function () {
     $email = 'test-'.uniqid('', true).'@example.com';
@@ -40,8 +40,8 @@ it('can create a test tenant', function () {
 it('can resolve a sushi module row', function () {
     $module = Module::query()->first();
 
-    if (null === $module) {
-        $this->markTestSkipped('No nwidart modules registered in test runtime.');
+    if ($module === null) {
+        Assert::markTestSkipped('No nwidart modules registered in test runtime.');
     }
 
     Assert::assertInstanceOf(Module::class, $module);

@@ -23,6 +23,7 @@ related:
 ## Regola
 
 Nel progetto Base Predict Fila5 `git commit` e `git push` NON sono azioni automatiche di fine task.
+Nel progetto Base Forecast Fila5 `git commit` e `git push` NON sono azioni automatiche di fine task.
 Si eseguono solo quando il lavoro e stato verificato in modo completo e tracciabile.
 
 ## Cosa significa verificato

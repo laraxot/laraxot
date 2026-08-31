@@ -119,7 +119,7 @@ class Media extends BaseModel
 
 Il modulo Media **è utilizzato da** tutti i moduli che gestiscono file:
 - **User**: Avatar, documenti profilo
-- **TechPlanner**: Documenti clienti, certificazioni dispositivi
+- **Dominio operativo**: Documenti clienti, certificazioni dispositivi
 - **Cms**: Immagini contenuti, media gallery
 - **Employee**: Documenti dipendenti, foto profilo
 

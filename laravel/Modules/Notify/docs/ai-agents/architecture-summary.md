@@ -41,3 +41,4 @@ Themes are decoupled from business logic.
 
 ---
 [Return to Documentation Index](../../AGENTS.md)
+[Return to Documentation Index](../../agents.md)

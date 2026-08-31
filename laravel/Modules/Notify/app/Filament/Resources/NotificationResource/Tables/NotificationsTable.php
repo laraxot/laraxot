@@ -27,10 +27,8 @@ class NotificationsTable extends XotBaseResourceTable
                     'info' => 'Info',
                     'success' => 'Success',
                     'warning' => 'Warning',
-                    'error' => 'Error',
-                ])
-                ->multiple(),
-        ];
+                    'error' => 'Error'])
+                ->multiple()];
     }
 
     /**
@@ -45,7 +43,6 @@ class NotificationsTable extends XotBaseResourceTable
             'read_at' => TextColumn::make('read_at')->dateTime()->sortable(),
             'sent_at' => TextColumn::make('sent_at')->dateTime()->sortable(),
             'created_at' => TextColumn::make('created_at')->dateTime()->sortable(),
-            'updated_at' => TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
-        ];
+            'updated_at' => TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true)];
     }
 }

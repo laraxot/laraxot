@@ -10,12 +10,10 @@ use Modules\Geo\Models\BaseModel;
 use Modules\Geo\Models\Region;
 use Modules\Xot\Models\Traits\HasXotFactory;
 use PHPUnit\Framework\Assert;
+use Sushi\Sushi;
 
 use function Safe\class_uses;
 
-use Sushi\Sushi;
-
-uses(\Modules\Geo\Tests\TestCase::class);
 describe('Region Business Logic', function () {
     test('region extends base model', function () {
         Assert::assertInstanceOf(BaseModel::class, new Region());

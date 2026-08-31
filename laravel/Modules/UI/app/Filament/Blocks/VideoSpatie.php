@@ -23,7 +23,11 @@ final class VideoSpatie
             ->schema([
                 Hidden::make('img_uuid')
                     ->default(Str::uuid()->toString(...))
-                    ->formatStateUsing(static fn ($state) => $state ?? Str::uuid()->toString())
+                    ->formatStateUsing(static function (mixed $state): string {
+                        $value = $state ?? Str::uuid()->toString();
+
+                        return \is_string($value) ? $value : Str::uuid()->toString();
+                    })
                     ->live(),
                 // ->required(),
 
@@ -32,7 +36,7 @@ final class VideoSpatie
                     ->hiddenLabel()
                     // ->imagePreviewHeight('250')
                     // ->panelLayout('integrated')
-                    ->imageResizeMode('cover')
+                    ->automaticallyResizeImagesMode('cover')
                     ->panelAspectRatio('2:1')
                     ->maxSize(502400)
                     ->disk('local')
@@ -72,7 +76,7 @@ final class VideoSpatie
                 // ->customProperties(fn(Forms\Get $get) => ['gallery_id' => $get('gallery_id')]),
                 // Forms\Components\SpatieMediaLibraryFileUpload::make('media_id')
             ])
-            ->columns('form' === $context ? 2 : 1);
+            ->columns($context === 'form' ? 2 : 1);
     }
 
     /**

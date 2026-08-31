@@ -46,26 +46,12 @@ trait SushiToPhpArray
 
     protected static function bootSushiToPhpArray(): void
     {
-        static::creating(static function ($model): void {
-            if (! $model instanceof Model) {
-                return;
-            }
-
+        static::creating(static function (Model $model): void {
             $model->toArray();
         });
 
-        static::updating(static function ($model): void {
-            if (! $model instanceof Model) {
-                return;
-            }
-
+        static::updating(static function (Model $model): void {
             $model->toArray();
-        });
-
-        static::deleting(static function ($model): void {
-            if (! $model instanceof Model) {
-                return;
-            }
         });
     }
 }

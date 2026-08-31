@@ -1,3 +1,7 @@
+---
+scope: module:Geo
+---
+
 # Story 1-1: MapPicker Field per Filament
 
 **Status**: `done`
@@ -61,3 +65,20 @@ Campo Filament v5 personalizzato `MapPicker` che gestisce una mappa interattiva 
 - Loop prevention tramite `lastSignature = lat.toFixed(6):lng.toFixed(6)`
 - `setUp()` chiama `$this->dehydrated(false)` per evitare idratazione automatica
 - `resolveSiblingStatePath()` gestisce path assoluti vs relativi per latitude/longitude
+
+## GitHub (tracciamento)
+
+Repository letto da frontmatter `github.repository` o `git remote -v` (se assente: repo root **`laraxot/base_quaeris_fila5`**): **`laraxot/base_quaeris_fila5`**.
+
+| Risorsa | Stato | Link |
+|---|---|---|
+| Issue | **DA CREARE** | https://github.com/laraxot/base_quaeris_fila5/issues |
+| Discussion | **DA CREARE** | https://github.com/laraxot/base_quaeris_fila5/discussions |
+
+Il numero non e' scritto perche' non esiste ancora: `gh` non e' autenticato in questa sessione e i repo sono privati. Appena disponibile, creare con:
+
+```bash
+gh issue create --repo laraxot/base_quaeris_fila5 \
+  --title "Story 1-1: MapPicker Field per Filament" --body-file <FILE>
+gh api repos/laraxot/base_quaeris_fila5/discussions -f title="Story 1-1: MapPicker Field per Filament" -f body="vedi la story"
+```

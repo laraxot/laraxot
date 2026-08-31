@@ -286,6 +286,7 @@ Skills activate automatically when the agent detects relevant tasks:
 
 ```
 /var/www/_bases/base_fixcity_fila5/
+/var/www/_bases/base_ptv_fila5/
 ├── skills/
 │   ├── ui-ux-pro-max/
 │   │   └── SKILL.md
@@ -358,6 +359,7 @@ Context: "Make it beautiful"
 
 ```bash
 cd /var/www/_bases/base_fixcity_fila5
+cd /var/www/_bases/base_ptv_fila5
 mkdir -p skills/ui-ux-pro-max
 # SKILL.md already exists in skills/ui-ux-pro-max/
 ```
@@ -366,6 +368,7 @@ mkdir -p skills/ui-ux-pro-max
 
 ```bash
 cd /var/www/_bases/base_fixcity_fila5
+cd /var/www/_bases/base_ptv_fila5
 mkdir -p skills/taste
 # SKILL.md already exists in skills/taste/
 ```
@@ -374,6 +377,7 @@ mkdir -p skills/taste
 
 ```bash
 cd /var/www/_bases/base_fixcity_fila5
+cd /var/www/_bases/base_ptv_fila5
 mkdir -p skills/anthropic
 # SKILL.md already exists in skills/anthropic/
 ```
@@ -382,6 +386,7 @@ mkdir -p skills/anthropic
 
 ```bash
 cd /var/www/_bases/base_fixcity_fila5
+cd /var/www/_bases/base_ptv_fila5
 npx skills add vercel-labs/agent-skills
 ```
 

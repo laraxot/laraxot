@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\View as ViewFacade;
 use Modules\Geo\Models\Place;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Filament\Widgets\XotBaseWidget;
 
 // use Webbingbrasil\FilamentMaps\Widgets\MapWidget; // Disabilitato per compatibilità Filament 4
@@ -27,7 +28,7 @@ use Modules\Xot\Filament\Widgets\XotBaseWidget;
  */
 class LocationMapWidget extends XotBaseWidget
 {
-    protected const CACHE_TTL = 3600;
+    protected const int CACHE_TTL = 3600;
 
     public Htmlable|string|null $heading = 'Mappa';
 
@@ -60,7 +61,7 @@ class LocationMapWidget extends XotBaseWidget
     public function getMarkers(): array
     {
         return $this->getPlaces()
-            ->filter(fn (Place $place) => null !== $place->latitude && null !== $place->longitude)
+            ->filter(fn (Place $place) => $place->latitude !== null && $place->longitude !== null)
             ->map(function (Place $place): array {
                 $marker = [
                     'position' => [
@@ -71,7 +72,7 @@ class LocationMapWidget extends XotBaseWidget
                 ];
 
                 $icon = $this->getMarkerIcon($place);
-                if (null !== $icon) {
+                if ($icon !== null) {
                     $marker['icon'] = $icon;
                 }
 
@@ -104,7 +105,7 @@ class LocationMapWidget extends XotBaseWidget
     {
         $height = $this->maxHeight ?? '50vh';
 
-        return is_string($height) ? $height : (string) $height;
+        return is_string($height) ? $height : SafeStringCastAction::cast($height);
     }
 
     /**

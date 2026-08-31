@@ -1,3 +1,12 @@
+---
+title: "Monitoraggio del Modulo Notify"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Monitoraggio del Modulo Notify
 
 ## Metriche Chiave

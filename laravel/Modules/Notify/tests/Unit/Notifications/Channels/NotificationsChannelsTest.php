@@ -15,9 +15,8 @@ use Modules\Notify\Notifications\Channels\TelegramChannel;
 use Modules\Notify\Notifications\ThemeNotification;
 use Modules\Notify\Tests\Fixtures\NetfunChannelNotifiableDummy;
 use Modules\Notify\Tests\TestCase;
+use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
-
-uses(\Modules\Notify\Tests\TestCase::class);
 
 function makeThemeNotificationDummy(): ThemeNotification
 {
@@ -28,8 +27,7 @@ function makeThemeNotificationDummy(): ThemeNotification
             return SmsData::from([
                 'from' => 'Xot',
                 'recipient' => '+391234567890',
-                'body' => 'Body',
-            ]);
+                'body' => 'Body']);
         }
     };
 }
@@ -77,11 +75,14 @@ test('netfun notifications channel sends and increases counter', function () {
     $channel->send($notifiable, $notification);
 
     Assert::assertArrayHasKey('sms', $notifiable->increased);
-    Assert::assertSame(200, \notifyArrayGet($notifiable->increased, 'sms', 'status_code'));
+    Assert::assertSame(200, TestCase::notifyArrayGet($notifiable->increased, 'sms', 'status_code'));
 });
 
 test('telegram notifications channel logs when recipient and method are valid', function () {
-    Log::shouldReceive('info')->once();
+    Log::shouldReceive('debug')->once()->withArgs(function (string $message, array $context): bool {
+        return str_contains($message, 'Telegram') && isset($context['chat_id']);
+    });
+    Log::shouldReceive('info')->zeroOrMoreTimes();
 
     $channel = new TelegramChannel();
     $channel->send(makeTelegramNotifiableDummy(), makeTelegramNotificationDummy());
@@ -90,7 +91,7 @@ test('telegram notifications channel logs when recipient and method are valid', 
 test('telegram notifications channel throws when notification has no toTelegram method', function () {
     $channel = new TelegramChannel();
 
-    \assertNotifyThrows(
+    XotBasePest::assertThrows(
         fn () => $channel->send(makeTelegramNotifiableDummy(), new class() extends Notification {}),
         \Exception::class,
     );

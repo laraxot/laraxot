@@ -346,6 +346,7 @@ Completamento intensivo del progetto FixCity per diventare la piattaforma miglio
 
 ### Access
 - **JSON**: `GET /api/fixcity/openapi.json`
+- **JSON**: `GET /api/laraxot/openapi.json`
 - **Swagger UI**: Ready for integration
 - **Postman**: Can auto-generate collection
 

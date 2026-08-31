@@ -2,8 +2,8 @@
 title: "Memories Index"
 type: index
 created: 2026-05-11
-updated: 2026-05-11
-tags: [memories, index, on-demand]
+updated: 2026-07-27
+tags: [memories, index, on-demand, github, remote]
 related:
   - ../rules/00-TRIGGER_MAP.md
   - ../rules/on-demand-pattern.md
@@ -35,6 +35,12 @@ Le Memories progettuali vivono qui, nel wiki del Module **Tenant**, e vengono ca
 - La sorgente di verita' per le Memories e' sempre il wiki locale
 - Non embeddare Memories nei prompt di avvio
 - Per Memories globali, consulta il [wiki root](../../docs/wiki/memories/INDEX.md)
+
+## Memories locali (ricorrenti)
+
+| Trigger | File |
+|---------|------|
+| Link GitHub / merge su `base_*` / `git remote -v` | [github-remote-collision-wrong-base.md](./github-remote-collision-wrong-base.md) |
 
 ## Aggiungere una Nuova MEMORIES
 

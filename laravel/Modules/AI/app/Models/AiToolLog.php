@@ -6,7 +6,6 @@ namespace Modules\AI\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Carbon;
 use Modules\Xot\Models\XotBaseModel;
 
 /**
@@ -14,19 +13,8 @@ use Modules\Xot\Models\XotBaseModel;
  *
  * Audit trail of tool calls performed by the AI assistant.
  *
- * @property int $id
- * @property int $ai_thread_id
- * @property int|null $ai_action_proposal_id
- * @property int|null $user_id
- * @property string $tool_name
- * @property array<string, mixed>|null $arguments
- * @property array<string, mixed>|null $response
- * @property string $status
- * @property string|null $error
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
- * @property-read AiThread $thread
  * @property-read AiActionProposal|null $proposal
+ * @property-read AiThread|null $thread
  *
  * @method static Builder<static>|AiToolLog newModelQuery()
  * @method static Builder<static>|AiToolLog newQuery()
@@ -36,9 +24,9 @@ use Modules\Xot\Models\XotBaseModel;
  */
 class AiToolLog extends XotBaseModel
 {
-    public const STATUS_OK = 'ok';
+    public const string STATUS_OK = 'ok';
 
-    public const STATUS_ERROR = 'error';
+    public const string STATUS_ERROR = 'error';
 
     /**
      * @var list<string>

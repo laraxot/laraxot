@@ -38,6 +38,7 @@
 ```bash
 # After updating .github/workflows/
 cd /var/www/_bases/base_fixcity_fila5
+cd /var/www/_bases/base_ptv_fila5
 
 # Create directory if needed
 mkdir -p bashscripts/ai/.github/workflows

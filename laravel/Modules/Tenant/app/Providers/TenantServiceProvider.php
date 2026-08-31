@@ -54,7 +54,6 @@ class TenantServiceProvider extends XotBaseServiceProvider
             $map = [];
         }
 
-        /** @var array<string, mixed> $map */
         Relation::morphMap($this->buildMorphMap(app(FilterConfigStringKeysAction::class)->execute($map)));
     }
 
@@ -173,6 +172,8 @@ class TenantServiceProvider extends XotBaseServiceProvider
     /**
      * @param  array<string, mixed>  $map
      * @return array<string, class-string<Model>>
+     *
+     * @SuppressWarnings("PHPMD.ErrorControlOperator")
      */
     private function buildMorphMap(array $map): array
     {

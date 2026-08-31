@@ -7,9 +7,6 @@ namespace Modules\Geo\Tests\Unit\Actions;
 use Modules\Geo\Actions\FilterCoordinatesInRadiusAction;
 use Modules\Geo\Actions\GoogleMaps\CalculateDistanceMatrixAction;
 use Modules\Geo\Tests\Fixtures\CalculateDistanceMatrixQueueStub;
-use Modules\Geo\Tests\TestCase;
-
-uses(\Modules\Geo\Tests\TestCase::class);
 
 /**
  * Bind the sequenced distance-matrix stub into the container and resolve the

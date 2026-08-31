@@ -33,6 +33,7 @@ Quando un errore arriva da una pagina Filament/Livewire:
 - solo dopo passare a test applicativi, query, container o permessi.
 
 Per i chart Quaeris la catena minima da controllare e`:
+Per i chart App la catena minima da controllare e`:
 - `QuestionChartChartData`
 - `BuildQuestionChartDatasetAction`
 - `BuildQuestionChartOptionsAction`

@@ -52,6 +52,7 @@ Per collegamenti a documenti in altre directory:
 ```markdown
 [Regole Generali per le Chiavi di Traduzione](../../lang/docs/translation_keys_rules.md)
 [Best Practices per le Chiavi di Traduzione](../../lang/docs/translation_keys_best_practices.md)
+[Best Practices per le Chiavi di Traduzione](../../lang/docs/translation-keys-best-practices.md)
 ```
 
 ## Motivazione

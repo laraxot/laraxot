@@ -483,4 +483,5 @@ FixCity è posizionata per diventare la **piattaforma leader europea** per il ci
 - *Team composition e roadmap feasibility*
 
 **Per domande o approfondimenti**: development@fixcity.io
+**Per domande o approfondimenti**: development@ptv.io
 

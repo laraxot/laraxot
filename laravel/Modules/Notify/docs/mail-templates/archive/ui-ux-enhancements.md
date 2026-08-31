@@ -23,6 +23,7 @@ related:
 ## Introduzione
 
 Questo documento esplora i componenti Filament che possono migliorare l'esperienza utente per i campi `name` e `slug` nel form di gestione dei template email. I miglioramenti proposti seguono le convenzioni del progetto SaluteOra, mantenendo la coerenza visiva e migliorando l'usabilità.
+Questo documento esplora i componenti Filament che possono migliorare l'esperienza utente per i campi `name` e `slug` nel form di gestione dei template email. I miglioramenti proposti seguono le convenzioni del progetto <nome progetto>, mantenendo la coerenza visiva e migliorando l'usabilità.
 
 ## Componenti per il Campo `name`
 
@@ -89,6 +90,7 @@ Questo documento esplora i componenti Filament che possono migliorare l'esperien
     ->unique(ignoreRecord: true)
     ->maxLength(255)
     ->afterStateUpdated(fn (string $context, $state, callable $set) => 
+    ->afterStateUpdated(fn (string $context, $state, callable $set) =>
         $context === 'create' ? $set('slug', Str::slug($state)) : null)
     ->helperText('Identificatore unico utilizzato nel codice')
     ->prefixIcon('heroicon-o-link')
@@ -127,6 +129,7 @@ Questo documento esplora i componenti Filament che possono migliorare l'esperien
             ->icon('heroicon-o-arrow-path')
             ->tooltip('Rigenera dallo slug dal nome')
             ->action(fn (Forms\Get $get, Forms\Set $set) => 
+            ->action(fn (Forms\Get $get, Forms\Set $set) =>
                 $set('slug', Str::slug($get('name'))))
     ),
 ```
@@ -150,7 +153,6 @@ Forms\Components\Group::make([
                 $set('slug', Str::slug($state));
             }
         }),
-        
     Forms\Components\Grid::make(2)
         ->schema([
             'generateSlug' => Forms\Components\Toggle::make('generateSlug')
@@ -162,7 +164,6 @@ Forms\Components\Group::make([
                         $set('slug', Str::slug($get('name')));
                     }
                 }),
-                
             'slug' => Forms\Components\TextInput::make('slug')
                 ->required()
                 ->unique(ignoreRecord: true)
@@ -234,6 +235,7 @@ return [
 ```
 
 ## Conformità con gli Standard SaluteOra
+## Conformità con gli Standard <nome progetto>
 
 Tutti i componenti proposti:
 1. Non utilizzano il metodo `->label()` sui componenti Filament
@@ -250,6 +252,7 @@ I miglioramenti UI/UX proposti per i campi `name` e `slug` si concentrano su:
 4. **Relazioni intuitive** tra campi correlati
 
 L'implementazione di questi miglioramenti rispetta le convenzioni del progetto SaluteOra mentre offre un'esperienza utente significativamente migliorata nella gestione dei template email.
+L'implementazione di questi miglioramenti rispetta le convenzioni del progetto <nome progetto> mentre offre un'esperienza utente significativamente migliorata nella gestione dei template email.
 
 ## Riferimenti
 

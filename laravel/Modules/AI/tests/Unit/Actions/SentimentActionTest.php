@@ -10,8 +10,6 @@ use Modules\AI\Datas\SentimentData;
 use Modules\AI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\AI\Tests\TestCase::class);
-
 beforeEach(function (): void {
     /** @var TestCase $this */
 });
@@ -22,7 +20,6 @@ afterEach(function (): void {
 
 describe('Sentiment Action', function (): void {
     test('_analyzes_positive_sentiment_correctly', function (): void {
-        /** @var TestCase $this */
         $action = new SentimentAction();
         $text = 'This is a great product with excellent features. I am very happy with it.';
 

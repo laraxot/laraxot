@@ -39,6 +39,7 @@ docs/
 │   └── notes/     # Note e appunti
 ├── .schema/       # Schema per l'LLM
 │   └── WIKI_SCHEMA.md
+│   └── wiki-schema.md
 ├── wiki/index.md  # Indice principale
 └── log.md         # Log cronologico
 ```
@@ -52,6 +53,7 @@ docs/
 ### Riferimenti
 
 - [Schema Wiki](./docs/.schema/WIKI_SCHEMA.md) - Istruzioni per l'LLM
+- [Schema Wiki](./docs/.schema/wiki-schema.md) - Istruzioni per l'LLM
 - [Index Globale](./docs/wiki/index.md) - Catalogo di tutte le wiki
 - [Log](./docs/log.md) - Cronologia delle operazioni
 
@@ -87,6 +89,7 @@ docs/
 # Memory Context
 
 # [base_fixcity_fila5] recent context, 2026-04-15 10:19pm GMT+2
+# [base_ptvx_fila5] recent context, 2026-04-15 10:19pm GMT+2
 
 No previous sessions found.
 </claude-mem-context>

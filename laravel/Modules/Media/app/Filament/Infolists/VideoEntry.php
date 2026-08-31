@@ -17,9 +17,6 @@ use Webmozart\Assert\Assert;
 // phpmd: TooManyFields, TooManyPublicMethods, ExcessiveClassComplexity, LongVariable — entry video Filament ricca
 class VideoEntry extends XotBaseEntry
 {
-    /**
-     * @var view-string
-     */
     protected string $view = 'media::filament.infolists.video-entry';
 
     protected string|Closure|null $disk = null;

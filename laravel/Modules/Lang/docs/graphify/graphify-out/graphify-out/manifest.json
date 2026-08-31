@@ -1,0 +1,962 @@
+{
+  ".releaserc.json": {
+    "mtime": 1781509986.119046,
+    "ast_hash": "723cfa5fa882c5b4debe2307a2e271d4",
+    "semantic_hash": "723cfa5fa882c5b4debe2307a2e271d4"
+  },
+  "app/Actions/Filament/AutoLabelAction.php": {
+    "mtime": 1779200039.5652044,
+    "ast_hash": "53380ddedc54d1a8ff82fc49a833c642",
+    "semantic_hash": "53380ddedc54d1a8ff82fc49a833c642"
+  },
+  "app/Actions/GetAllModuleTranslationAction.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "ee9b7e200e2a3279bb9b59beb49f048c",
+    "semantic_hash": "ee9b7e200e2a3279bb9b59beb49f048c"
+  },
+  "app/Actions/GetAllTranslationAction.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "8745e1c243e2eb64b7a831852a0aa0f8",
+    "semantic_hash": "8745e1c243e2eb64b7a831852a0aa0f8"
+  },
+  "app/Actions/GetTransPathAction.php": {
+    "mtime": 1779200039.5652044,
+    "ast_hash": "7931aa754b7f623ed54c913c06e0d426",
+    "semantic_hash": "7931aa754b7f623ed54c913c06e0d426"
+  },
+  "app/Actions/MergeTranslationsAction.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "55cfa23ea52d968c65e7b0b5964f4687",
+    "semantic_hash": "55cfa23ea52d968c65e7b0b5964f4687"
+  },
+  "app/Actions/PublishTranslationAction.php": {
+    "mtime": 1781509986.119046,
+    "ast_hash": "ca008fe83897fa9ce73693cf9d554a42",
+    "semantic_hash": "ca008fe83897fa9ce73693cf9d554a42"
+  },
+  "app/Actions/ReadTranslationFileAction.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "f58ca851ccc3a7ccb3ffc4cc56d0f288",
+    "semantic_hash": "f58ca851ccc3a7ccb3ffc4cc56d0f288"
+  },
+  "app/Actions/SaveTransAction.php": {
+    "mtime": 1781509986.119046,
+    "ast_hash": "0676a059367ab67a113531405220177a",
+    "semantic_hash": "0676a059367ab67a113531405220177a"
+  },
+  "app/Actions/SyncTranslationsAction.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "aaf9759cbe1592b0f2b5b3c8718b2299",
+    "semantic_hash": "aaf9759cbe1592b0f2b5b3c8718b2299"
+  },
+  "app/Actions/TransArrayAction.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "ac620fd9c0b1d44147607037c89c041e",
+    "semantic_hash": "ac620fd9c0b1d44147607037c89c041e"
+  },
+  "app/Actions/TransCollectionAction.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "c8746676f30bcca3da29cd0a5acc64a4",
+    "semantic_hash": "c8746676f30bcca3da29cd0a5acc64a4"
+  },
+  "app/Actions/Translation/RecordMissingTranslationAction.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "44543b30c600efb56abfe49d77741011",
+    "semantic_hash": "44543b30c600efb56abfe49d77741011"
+  },
+  "app/Actions/TranslatorAction.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "6aff04c4229706ec1ca0158abf769b18",
+    "semantic_hash": "6aff04c4229706ec1ca0158abf769b18"
+  },
+  "app/Actions/WriteTranslationFileAction.php": {
+    "mtime": 1785496327.485281,
+    "ast_hash": "a67912bd23f1ab8ea713ac2a1cb89d32",
+    "semantic_hash": "a67912bd23f1ab8ea713ac2a1cb89d32"
+  },
+  "app/Adapters/TranslatorAdapter.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "8fc98febc779537db239544ac4c940a3",
+    "semantic_hash": "8fc98febc779537db239544ac4c940a3"
+  },
+  "app/Casts/LangField.php": {
+    "mtime": 1781509986.119046,
+    "ast_hash": "c02d3bdc86fd3a93f104fedad881d08b",
+    "semantic_hash": "c02d3bdc86fd3a93f104fedad881d08b"
+  },
+  "app/Console/Commands/_components.json": {
+    "mtime": 1779200039.5652044,
+    "ast_hash": "d751713988987e9331980363e24189ce",
+    "semantic_hash": "d751713988987e9331980363e24189ce"
+  },
+  "app/Datas/LangData.php": {
+    "mtime": 1781509986.119046,
+    "ast_hash": "358708d77862b563e507bcd0479538d4",
+    "semantic_hash": "358708d77862b563e507bcd0479538d4"
+  },
+  "app/Datas/TranslationData.php": {
+    "mtime": 1781509986.119046,
+    "ast_hash": "ac3622d163033980ecb57b97311f15e5",
+    "semantic_hash": "ac3622d163033980ecb57b97311f15e5"
+  },
+  "app/Filament/Actions/LocaleSwitcherRefresh.php": {
+    "mtime": 1779200039.5652044,
+    "ast_hash": "2f3c485a9841c48011e5552e541566b3",
+    "semantic_hash": "2f3c485a9841c48011e5552e541566b3"
+  },
+  "app/Filament/Forms/Components/NationalFlagSelect.php": {
+    "mtime": 1785496327.485281,
+    "ast_hash": "63094e93a266ab93a31ab2985a2e860b",
+    "semantic_hash": "63094e93a266ab93a31ab2985a2e860b"
+  },
+  "app/Filament/Forms/Components/TranslationEditor.php": {
+    "mtime": 1785496327.485281,
+    "ast_hash": "117c93a260bacd6bbde64e20cf247d37",
+    "semantic_hash": "117c93a260bacd6bbde64e20cf247d37"
+  },
+  "app/Filament/Pages/Dashboard.php": {
+    "mtime": 1779200039.5652044,
+    "ast_hash": "f76599efe432286bffd9ebadc9a3f26f",
+    "semantic_hash": "f76599efe432286bffd9ebadc9a3f26f"
+  },
+  "app/Filament/Resources/LangBaseResource.php": {
+    "mtime": 1781509986.119046,
+    "ast_hash": "5185190929fe14191029166527c62df8",
+    "semantic_hash": "5185190929fe14191029166527c62df8"
+  },
+  "app/Filament/Resources/Pages/LangBaseCreateRecord.php": {
+    "mtime": 1779200039.5652044,
+    "ast_hash": "6116d6306f396d041f7adec22c0a77d3",
+    "semantic_hash": "6116d6306f396d041f7adec22c0a77d3"
+  },
+  "app/Filament/Resources/Pages/LangBaseEditRecord.php": {
+    "mtime": 1779823814.0990617,
+    "ast_hash": "a00543469b8af747365a1bbb8f26ea42",
+    "semantic_hash": "a00543469b8af747365a1bbb8f26ea42"
+  },
+  "app/Filament/Resources/Pages/LangBaseListRecords.php": {
+    "mtime": 1779823814.0990617,
+    "ast_hash": "8e14181de4a3d9896bc5fcc985278c06",
+    "semantic_hash": "8e14181de4a3d9896bc5fcc985278c06"
+  },
+  "app/Filament/Resources/Pages/LangBaseViewRecord.php": {
+    "mtime": 1779823814.0990617,
+    "ast_hash": "5f91c5e89c9ab1c6dd13098b21e2d6fe",
+    "semantic_hash": "5f91c5e89c9ab1c6dd13098b21e2d6fe"
+  },
+  "app/Filament/Resources/TranslationFileResource.php": {
+    "mtime": 1781509986.119046,
+    "ast_hash": "a2398bb8249fce98795e2802c403ea2e",
+    "semantic_hash": "a2398bb8249fce98795e2802c403ea2e"
+  },
+  "app/Filament/Resources/TranslationFileResource/Pages/CreateTranslationFile.php": {
+    "mtime": 1779823814.0990617,
+    "ast_hash": "ac632939b5e0c493f4f9b0d0c91794e6",
+    "semantic_hash": "ac632939b5e0c493f4f9b0d0c91794e6"
+  },
+  "app/Filament/Resources/TranslationFileResource/Pages/EditTranslationFile.php": {
+    "mtime": 1785496327.485281,
+    "ast_hash": "7489cb3dbee6f3ae7c9fc16316af3402",
+    "semantic_hash": "7489cb3dbee6f3ae7c9fc16316af3402"
+  },
+  "app/Filament/Resources/TranslationFileResource/Pages/ListTranslationFiles.php": {
+    "mtime": 1779823814.0990617,
+    "ast_hash": "601050176dcbb614b4c6c8de410763b5",
+    "semantic_hash": "601050176dcbb614b4c6c8de410763b5"
+  },
+  "app/Filament/Resources/TranslationFileResource/Schemas/TranslationFileForm.php": {
+    "mtime": 1785496327.485281,
+    "ast_hash": "f741a7c23b979344e994c008c1e10f9f",
+    "semantic_hash": "f741a7c23b979344e994c008c1e10f9f"
+  },
+  "app/Filament/Resources/TranslationFileResource/Schemas/TranslationFileInfolist.php": {
+    "mtime": 1779200039.5695376,
+    "ast_hash": "83882b2c50221a8162b21cd0d7f00eb9",
+    "semantic_hash": "83882b2c50221a8162b21cd0d7f00eb9"
+  },
+  "app/Filament/Resources/TranslationFileResource/Tables/TranslationFilesTable.php": {
+    "mtime": 1781703059.1442113,
+    "ast_hash": "a76aa4f8657042b2a958ab550c25fb4a",
+    "semantic_hash": "a76aa4f8657042b2a958ab550c25fb4a"
+  },
+  "app/Filament/Widgets/LanguageSwitcherWidget.php": {
+    "mtime": 1785496327.485281,
+    "ast_hash": "4b324a15c0229791813b461166f6e4b5",
+    "semantic_hash": "4b324a15c0229791813b461166f6e4b5"
+  },
+  "app/Http/Livewire/Lang/Change.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "3e92be0a0d308e1cd173fee26d09f43d",
+    "semantic_hash": "3e92be0a0d308e1cd173fee26d09f43d"
+  },
+  "app/Http/Livewire/Lang/Switcher.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "482695a952d936bc6397133593e5af84",
+    "semantic_hash": "482695a952d936bc6397133593e5af84"
+  },
+  "app/Http/Livewire/_components.json": {
+    "mtime": 1779200039.5695376,
+    "ast_hash": "5346460ee675b55948b2ae4e83eec1c8",
+    "semantic_hash": "5346460ee675b55948b2ae4e83eec1c8"
+  },
+  "app/Models/BaseModel.php": {
+    "mtime": 1779200039.5695376,
+    "ast_hash": "3914115822be4f8b9d2cfd63b365b634",
+    "semantic_hash": "3914115822be4f8b9d2cfd63b365b634"
+  },
+  "app/Models/BaseModelLang.php": {
+    "mtime": 1779200039.5695376,
+    "ast_hash": "37410581688a39de0a6904072e8857c4",
+    "semantic_hash": "37410581688a39de0a6904072e8857c4"
+  },
+  "app/Models/BaseMorphPivot.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "44ad1bad4837488e1556715110611609",
+    "semantic_hash": "44ad1bad4837488e1556715110611609"
+  },
+  "app/Models/Contracts/HasTranslationsContract.php": {
+    "mtime": 1785496327.485281,
+    "ast_hash": "6ac4e332ad084fdee9ba9826b32f4932",
+    "semantic_hash": "6ac4e332ad084fdee9ba9826b32f4932"
+  },
+  "app/Models/LanguageLine.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "95aaaa6e8da2564a28a206fa39cea03f",
+    "semantic_hash": "95aaaa6e8da2564a28a206fa39cea03f"
+  },
+  "app/Models/Policies/LangBasePolicy.php": {
+    "mtime": 1779200039.5695376,
+    "ast_hash": "358a74279ba653e71c266a00f2ae3793",
+    "semantic_hash": "358a74279ba653e71c266a00f2ae3793"
+  },
+  "app/Models/Policies/PostPolicy.php": {
+    "mtime": 1779200039.5695376,
+    "ast_hash": "bd236cbd275332f8f565be0d6768f989",
+    "semantic_hash": "bd236cbd275332f8f565be0d6768f989"
+  },
+  "app/Models/Policies/TranslationFilePolicy.php": {
+    "mtime": 1779200039.5695376,
+    "ast_hash": "91970961137d1e99343741c1f2b04bbb",
+    "semantic_hash": "91970961137d1e99343741c1f2b04bbb"
+  },
+  "app/Models/Policies/TranslationPolicy.php": {
+    "mtime": 1779200039.5695376,
+    "ast_hash": "10dd597af44aa8c6b1706c172f3ad0c1",
+    "semantic_hash": "10dd597af44aa8c6b1706c172f3ad0c1"
+  },
+  "app/Models/Post.php": {
+    "mtime": 1785496327.485281,
+    "ast_hash": "5ba8ce35790aadfd1172a4eba2815c45",
+    "semantic_hash": "5ba8ce35790aadfd1172a4eba2815c45"
+  },
+  "app/Models/Traits/HasStrictTranslations.php": {
+    "mtime": 1785496327.485281,
+    "ast_hash": "d04fd506b015d53f08b6a1cdc5726d81",
+    "semantic_hash": "d04fd506b015d53f08b6a1cdc5726d81"
+  },
+  "app/Models/Traits/LinkedTrait.php": {
+    "mtime": 1785496327.485281,
+    "ast_hash": "bf240073167526d59c552ef9132f66b9",
+    "semantic_hash": "bf240073167526d59c552ef9132f66b9"
+  },
+  "app/Models/Translation.php": {
+    "mtime": 1785496327.485281,
+    "ast_hash": "284a1b0856aac9e211615f2fb0c8f5b9",
+    "semantic_hash": "284a1b0856aac9e211615f2fb0c8f5b9"
+  },
+  "app/Models/TranslationFile.php": {
+    "mtime": 1785496327.485281,
+    "ast_hash": "1aa0626879a944b4497b8dfa389ca910",
+    "semantic_hash": "1aa0626879a944b4497b8dfa389ca910"
+  },
+  "app/Providers/EventServiceProvider.php": {
+    "mtime": 1779200039.5695376,
+    "ast_hash": "4d7c4f292261018cd7dae0ae9400a7d5",
+    "semantic_hash": "4d7c4f292261018cd7dae0ae9400a7d5"
+  },
+  "app/Providers/Filament/AdminPanelProvider.php": {
+    "mtime": 1779200039.5695376,
+    "ast_hash": "6a83623d75cca35ef274ce55da0f6df5",
+    "semantic_hash": "6a83623d75cca35ef274ce55da0f6df5"
+  },
+  "app/Providers/Filament/LangBasePanelProvider.php": {
+    "mtime": 1779200039.5695376,
+    "ast_hash": "ed42e74fdd6161eb061d64a77dbf51ea",
+    "semantic_hash": "ed42e74fdd6161eb061d64a77dbf51ea"
+  },
+  "app/Providers/LangServiceProvider.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "ac1fdd76f25c8f7fed93a7ce5681deb7",
+    "semantic_hash": "ac1fdd76f25c8f7fed93a7ce5681deb7"
+  },
+  "app/Providers/RouteServiceProvider.php": {
+    "mtime": 1779200039.5695376,
+    "ast_hash": "1f8a3b0adfca7a8c5a57110ab528e492",
+    "semantic_hash": "1f8a3b0adfca7a8c5a57110ab528e492"
+  },
+  "app/Providers/Traits/TranslatorTrait.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "ccbd04dfaf8e008a93d6673753b224c8",
+    "semantic_hash": "ccbd04dfaf8e008a93d6673753b224c8"
+  },
+  "app/Providers/TranslatorTraitPhpstanProbe.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "1487c5fb11b911a13976a7b667d30602",
+    "semantic_hash": "1487c5fb11b911a13976a7b667d30602"
+  },
+  "app/Services/TranslatorService.php": {
+    "mtime": 1785496327.485281,
+    "ast_hash": "856539770b31e9ccdf56bfe745e81f32",
+    "semantic_hash": "856539770b31e9ccdf56bfe745e81f32"
+  },
+  "app/View/Components/Flag.php": {
+    "mtime": 1779200039.5695376,
+    "ast_hash": "23a85439fb8a984a1b62f1d26303efc1",
+    "semantic_hash": "23a85439fb8a984a1b62f1d26303efc1"
+  },
+  "app/View/Components/LanguageSwitcher.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "ec1ad77e80309245fec3b0e8874b544b",
+    "semantic_hash": "ec1ad77e80309245fec3b0e8874b544b"
+  },
+  "app/View/Components/_components.json": {
+    "mtime": 1779200039.5695376,
+    "ast_hash": "535cefce1ee0ba8f4b20eb103a6510be",
+    "semantic_hash": "535cefce1ee0ba8f4b20eb103a6510be"
+  },
+  "app/View/Composers/ThemeComposer.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "e8a7f7782dbd93c28a169bedb7f4ca3f",
+    "semantic_hash": "e8a7f7782dbd93c28a169bedb7f4ca3f"
+  },
+  "bashscripts/composer_init.sh": {
+    "mtime": 1779200261.6277869,
+    "ast_hash": "9997e62ed3e283b76d0db58cf0857cc4",
+    "semantic_hash": "9997e62ed3e283b76d0db58cf0857cc4"
+  },
+  "bashscripts/update.sh": {
+    "mtime": 1779200261.6277869,
+    "ast_hash": "8a298b6728c5710481355e39aeed13df",
+    "semantic_hash": "8a298b6728c5710481355e39aeed13df"
+  },
+  "composer.json": {
+    "mtime": 1781509986.120458,
+    "ast_hash": "620c8c7f52cff8384fc47a237231a906",
+    "semantic_hash": "620c8c7f52cff8384fc47a237231a906"
+  },
+  "config/config.php": {
+    "mtime": 1785496327.485281,
+    "ast_hash": "e4bb0f07431f0adddb6052596f4808d5",
+    "semantic_hash": "e4bb0f07431f0adddb6052596f4808d5"
+  },
+  "config/lang.php": {
+    "mtime": 1781509986.120458,
+    "ast_hash": "15e24e9a8b7cee75a8a4d907e1f76e95",
+    "semantic_hash": "15e24e9a8b7cee75a8a4d907e1f76e95"
+  },
+  "database/factories/LanguageLineFactory.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "8b7fdbd1df3f8aec9e4e295bc88c04b6",
+    "semantic_hash": "8b7fdbd1df3f8aec9e4e295bc88c04b6"
+  },
+  "database/factories/PostFactory.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "1a53ca5e145987352f3d3190686094db",
+    "semantic_hash": "1a53ca5e145987352f3d3190686094db"
+  },
+  "database/factories/TranslationFactory.php": {
+    "mtime": 1781509986.120458,
+    "ast_hash": "d08cf293132f750f1036e3ad0d0f389e",
+    "semantic_hash": "d08cf293132f750f1036e3ad0d0f389e"
+  },
+  "database/factories/TranslationFileFactory.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "725173a6032eedbfd52b6bc964cd91c7",
+    "semantic_hash": "725173a6032eedbfd52b6bc964cd91c7"
+  },
+  "database/migrations/2024_03_20_000001_create_language_lines_table.php": {
+    "mtime": 1785496327.485281,
+    "ast_hash": "8197ecae69ef39c6ce93267cfd95baf6",
+    "semantic_hash": "8197ecae69ef39c6ce93267cfd95baf6"
+  },
+  "database/migrations/2026_01_21_211814_create_posts_table.php": {
+    "mtime": 1785496327.485281,
+    "ast_hash": "d963f8a03b613a06be36b7d117f2fc20",
+    "semantic_hash": "d963f8a03b613a06be36b7d117f2fc20"
+  },
+  "database/migrations/2026_01_21_211815_create_translations_table.php": {
+    "mtime": 1785496327.485281,
+    "ast_hash": "e9fc832fe4fd4e769782458b58e77162",
+    "semantic_hash": "e9fc832fe4fd4e769782458b58e77162"
+  },
+  "database/seeders/LangDatabaseSeeder.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "a4d79a02d09801f85fd7e752f0e9067a",
+    "semantic_hash": "a4d79a02d09801f85fd7e752f0e9067a"
+  },
+  "database/seeders/LanguageLineSeeder.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "208c4fe718d041c1c1674162b0e1b0a0",
+    "semantic_hash": "208c4fe718d041c1c1674162b0e1b0a0"
+  },
+  "database/seeders/PostSeeder.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "e31796706d7e1c36175e4de4366b7883",
+    "semantic_hash": "e31796706d7e1c36175e4de4366b7883"
+  },
+  "database/seeders/TranslationFileSeeder.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "f0db7efb7974c64dd2db8d3dd01f801f",
+    "semantic_hash": "f0db7efb7974c64dd2db8d3dd01f801f"
+  },
+  "database/seeders/TranslationSeeder.php": {
+    "mtime": 1785494467.7422655,
+    "ast_hash": "73b9dfc1a571486187ea1666304adcf4",
+    "semantic_hash": "73b9dfc1a571486187ea1666304adcf4"
+  },
+  "docs/helper-text-audit-script.php": {
+    "mtime": 1779200039.5738711,
+    "ast_hash": "ba0ef8cf014f06854b0e3dfe5a51fe53",
+    "semantic_hash": "ba0ef8cf014f06854b0e3dfe5a51fe53"
+  },
+  "docs/italian-text-audit-script.php": {
+    "mtime": 1779200039.5782044,
+    "ast_hash": "206bf99e67a9d454c94553425ec02984",
+    "semantic_hash": "206bf99e67a9d454c94553425ec02984"
+  },
+  "docs/italian-text-validation-refined.php": {
+    "mtime": 1779200039.5782044,
+    "ast_hash": "65fed16c243dff4e4f8b4490200d7a0e",
+    "semantic_hash": "65fed16c243dff4e4f8b4490200d7a0e"
+  },
+  "docs/obbligatorio-audit-script.php": {
+    "mtime": 1779200039.5825377,
+    "ast_hash": "15947254b2e819e83ff1960d11a7332e",
+    "semantic_hash": "15947254b2e819e83ff1960d11a7332e"
+  },
+  "docs/prd.json": {
+    "mtime": 1779200039.5825377,
+    "ast_hash": "df47b2c9ba22d6a80ac401a6cd2e00eb",
+    "semantic_hash": "df47b2c9ba22d6a80ac401a6cd2e00eb"
+  },
+  "lang/de/auth.php": {
+    "mtime": 1779200039.5955377,
+    "ast_hash": "b2e341af85272e7bd5080c1d64c2ca88",
+    "semantic_hash": "b2e341af85272e7bd5080c1d64c2ca88"
+  },
+  "lang/de/countries.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "814801ad5835410b557bc2e6c041ab07",
+    "semantic_hash": "814801ad5835410b557bc2e6c041ab07"
+  },
+  "lang/de/edit_translation_file.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "1e60aaac0309670ddedcc57bde7927b2",
+    "semantic_hash": "1e60aaac0309670ddedcc57bde7927b2"
+  },
+  "lang/de/header.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "33e04cdadd21019efdfd68ef82c5a4ab",
+    "semantic_hash": "33e04cdadd21019efdfd68ef82c5a4ab"
+  },
+  "lang/de/individuale-tot-stabi.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "3b96e3ea1c6f7f66e0611b0506c976b9",
+    "semantic_hash": "3b96e3ea1c6f7f66e0611b0506c976b9"
+  },
+  "lang/de/individuale.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "f7fa10542e68cc6a4876dbbb82160bcf",
+    "semantic_hash": "f7fa10542e68cc6a4876dbbb82160bcf"
+  },
+  "lang/de/lang_base_create_record.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "f7345012371f1733f3a42a6ef69d5f86",
+    "semantic_hash": "f7345012371f1733f3a42a6ef69d5f86"
+  },
+  "lang/de/lang_base_edit_record.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "f7345012371f1733f3a42a6ef69d5f86",
+    "semantic_hash": "f7345012371f1733f3a42a6ef69d5f86"
+  },
+  "lang/de/lang_base_list_records.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "f7345012371f1733f3a42a6ef69d5f86",
+    "semantic_hash": "f7345012371f1733f3a42a6ef69d5f86"
+  },
+  "lang/de/lang_service.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "7a0c39fe6924646f486112a95c6bb53b",
+    "semantic_hash": "7a0c39fe6924646f486112a95c6bb53b"
+  },
+  "lang/de/locale_switcher_refresh.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "20065d5a5f24a3efe3dbce697070a4a3",
+    "semantic_hash": "20065d5a5f24a3efe3dbce697070a4a3"
+  },
+  "lang/de/nationalities.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "ec6e189fa44eb4b210a1c59883b4b13a",
+    "semantic_hash": "ec6e189fa44eb4b210a1c59883b4b13a"
+  },
+  "lang/de/translation.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "eda6a21e8818db16e0d481cd80c8c0e5",
+    "semantic_hash": "eda6a21e8818db16e0d481cd80c8c0e5"
+  },
+  "lang/de/translation_editor.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "af402e8a6999818e49c0d6d1849a59a3",
+    "semantic_hash": "af402e8a6999818e49c0d6d1849a59a3"
+  },
+  "lang/de/translation_file.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "3d22e3ff9d96c09c094921e3ed4a6f8c",
+    "semantic_hash": "3d22e3ff9d96c09c094921e3ed4a6f8c"
+  },
+  "lang/de/translations.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "fd4ee7df96ebec41abc1a3b0741830af",
+    "semantic_hash": "fd4ee7df96ebec41abc1a3b0741830af"
+  },
+  "lang/de/txt.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "44cf0dff8a26c4018ac6a9ba0ea2252b",
+    "semantic_hash": "44cf0dff8a26c4018ac6a9ba0ea2252b"
+  },
+  "lang/de/view_translation_file.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "752afaf7de02f558db2663afe88e4450",
+    "semantic_hash": "752afaf7de02f558db2663afe88e4450"
+  },
+  "lang/de/widgets.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "b7ad9a5517cf4b50e13587ba2caeb5e7",
+    "semantic_hash": "b7ad9a5517cf4b50e13587ba2caeb5e7"
+  },
+  "lang/en/auth.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "0b1301352c184154ad3460fd49c0e8a6",
+    "semantic_hash": "0b1301352c184154ad3460fd49c0e8a6"
+  },
+  "lang/en/countries.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "bb197660edc1eff21002125ad0959730",
+    "semantic_hash": "bb197660edc1eff21002125ad0959730"
+  },
+  "lang/en/edit_translation_file.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "b48fb4bd9e317505a7f17e3209c03d08",
+    "semantic_hash": "b48fb4bd9e317505a7f17e3209c03d08"
+  },
+  "lang/en/header.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "15464a84a74536ca7a39e0af84d0c1f8",
+    "semantic_hash": "15464a84a74536ca7a39e0af84d0c1f8"
+  },
+  "lang/en/individuale-tot-stabi.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "3b96e3ea1c6f7f66e0611b0506c976b9",
+    "semantic_hash": "3b96e3ea1c6f7f66e0611b0506c976b9"
+  },
+  "lang/en/individuale.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "dd0cffe816f9dbbcec28ba8d53b01f04",
+    "semantic_hash": "dd0cffe816f9dbbcec28ba8d53b01f04"
+  },
+  "lang/en/lang_base_create_record.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "f7345012371f1733f3a42a6ef69d5f86",
+    "semantic_hash": "f7345012371f1733f3a42a6ef69d5f86"
+  },
+  "lang/en/lang_base_edit_record.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "f7345012371f1733f3a42a6ef69d5f86",
+    "semantic_hash": "f7345012371f1733f3a42a6ef69d5f86"
+  },
+  "lang/en/lang_base_list_records.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "f7345012371f1733f3a42a6ef69d5f86",
+    "semantic_hash": "f7345012371f1733f3a42a6ef69d5f86"
+  },
+  "lang/en/lang_service.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "0b2fae49c1f444c7b2b64f89e8c32ea8",
+    "semantic_hash": "0b2fae49c1f444c7b2b64f89e8c32ea8"
+  },
+  "lang/en/locale_switcher_refresh.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "20065d5a5f24a3efe3dbce697070a4a3",
+    "semantic_hash": "20065d5a5f24a3efe3dbce697070a4a3"
+  },
+  "lang/en/nationalities.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "20ad6a07831939d6a6a625525f5c234b",
+    "semantic_hash": "20ad6a07831939d6a6a625525f5c234b"
+  },
+  "lang/en/translation.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "eda6a21e8818db16e0d481cd80c8c0e5",
+    "semantic_hash": "eda6a21e8818db16e0d481cd80c8c0e5"
+  },
+  "lang/en/translation_editor.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "af402e8a6999818e49c0d6d1849a59a3",
+    "semantic_hash": "af402e8a6999818e49c0d6d1849a59a3"
+  },
+  "lang/en/translation_file.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "41fd2155b198c49dd24b7825a17eac20",
+    "semantic_hash": "41fd2155b198c49dd24b7825a17eac20"
+  },
+  "lang/en/translations.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "fd4ee7df96ebec41abc1a3b0741830af",
+    "semantic_hash": "fd4ee7df96ebec41abc1a3b0741830af"
+  },
+  "lang/en/txt.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "206c6eb52ee8fd7c129bfb632bb97a82",
+    "semantic_hash": "206c6eb52ee8fd7c129bfb632bb97a82"
+  },
+  "lang/en/view_translation_file.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "752afaf7de02f558db2663afe88e4450",
+    "semantic_hash": "752afaf7de02f558db2663afe88e4450"
+  },
+  "lang/en/widgets.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "a1010edc37d50f48fea33c4d9c56fa4a",
+    "semantic_hash": "a1010edc37d50f48fea33c4d9c56fa4a"
+  },
+  "lang/it/actions.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "9f6c45c2e9d380c74a76d81757a90361",
+    "semantic_hash": "9f6c45c2e9d380c74a76d81757a90361"
+  },
+  "lang/it/auth.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "6b44a25f8532ebb42addee5d64ef0f93",
+    "semantic_hash": "6b44a25f8532ebb42addee5d64ef0f93"
+  },
+  "lang/it/countries.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "413d5b615f17f34596ed2190fc170118",
+    "semantic_hash": "413d5b615f17f34596ed2190fc170118"
+  },
+  "lang/it/edit_translation_file.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "0752a2685bd5e0aabe719236ddec98ef",
+    "semantic_hash": "0752a2685bd5e0aabe719236ddec98ef"
+  },
+  "lang/it/fields.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "f7a565b4c3231dd7ebeed2399fb12031",
+    "semantic_hash": "f7a565b4c3231dd7ebeed2399fb12031"
+  },
+  "lang/it/filament.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "1340cbb320af977544f7ab05a70f2820",
+    "semantic_hash": "1340cbb320af977544f7ab05a70f2820"
+  },
+  "lang/it/header.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "83841c1bed70c1f86631ab013bbeb34c",
+    "semantic_hash": "83841c1bed70c1f86631ab013bbeb34c"
+  },
+  "lang/it/individuale-tot-stabi.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "a6f6def2b7cf750d8e6788c95fec8102",
+    "semantic_hash": "a6f6def2b7cf750d8e6788c95fec8102"
+  },
+  "lang/it/individuale.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "605956ec94885810234294392394b6e5",
+    "semantic_hash": "605956ec94885810234294392394b6e5"
+  },
+  "lang/it/lang_base_create_record.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "4876a35582c02436c29f56f17b6e0a20",
+    "semantic_hash": "4876a35582c02436c29f56f17b6e0a20"
+  },
+  "lang/it/lang_base_edit_record.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "cd114a2a1dfb7c82843aa3e3eaa7331f",
+    "semantic_hash": "cd114a2a1dfb7c82843aa3e3eaa7331f"
+  },
+  "lang/it/lang_base_list_records.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "1df225c297d0ebb01404849c3d4beb16",
+    "semantic_hash": "1df225c297d0ebb01404849c3d4beb16"
+  },
+  "lang/it/lang_service.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "bd580567409664d9b68e055347f41626",
+    "semantic_hash": "bd580567409664d9b68e055347f41626"
+  },
+  "lang/it/locale_switcher_refresh.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "e32fc1ca35da0f5d5f3c28d61d2ffbdd",
+    "semantic_hash": "e32fc1ca35da0f5d5f3c28d61d2ffbdd"
+  },
+  "lang/it/nationalities.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "8bd4b79bc03d3024bf10d934748fd797",
+    "semantic_hash": "8bd4b79bc03d3024bf10d934748fd797"
+  },
+  "lang/it/translation.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "c3c17987945aa6bfd63ebf87bd452320",
+    "semantic_hash": "c3c17987945aa6bfd63ebf87bd452320"
+  },
+  "lang/it/translation_editor.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "7fe6889bb2ce9a7c30097121e48600d2",
+    "semantic_hash": "7fe6889bb2ce9a7c30097121e48600d2"
+  },
+  "lang/it/translation_file.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "118eaf0298af578bfe890d2fed346058",
+    "semantic_hash": "118eaf0298af578bfe890d2fed346058"
+  },
+  "lang/it/translation_files.php": {
+    "mtime": 1781593967.1320486,
+    "ast_hash": "8154003651fb9d338c37e6e5eea7c3b7",
+    "semantic_hash": "8154003651fb9d338c37e6e5eea7c3b7"
+  },
+  "lang/it/translations.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "873f41e7ecd4327cfaf01948054ff880",
+    "semantic_hash": "873f41e7ecd4327cfaf01948054ff880"
+  },
+  "lang/it/txt.php": {
+    "mtime": 1785494467.7787247,
+    "ast_hash": "27bd5e57b8a6cc86d740857e5b8349fd",
+    "semantic_hash": "27bd5e57b8a6cc86d740857e5b8349fd"
+  },
+  "lang/it/view_translation_file.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "11087c11207c5f31a6ef0264295f61c1",
+    "semantic_hash": "11087c11207c5f31a6ef0264295f61c1"
+  },
+  "lang/it/widgets.php": {
+    "mtime": 1779200039.5998712,
+    "ast_hash": "9f8fbae23fe0c77c820dadcff8f41ab9",
+    "semantic_hash": "9f8fbae23fe0c77c820dadcff8f41ab9"
+  },
+  "module.json": {
+    "mtime": 1785496327.496281,
+    "ast_hash": "3ea5813bfb56bf56a501c95e9b6ca30e",
+    "semantic_hash": "3ea5813bfb56bf56a501c95e9b6ca30e"
+  },
+  "package.json": {
+    "mtime": 1785494467.7787247,
+    "ast_hash": "f91c58114a3b6a6ec2e3924a506f8b81",
+    "semantic_hash": "f91c58114a3b6a6ec2e3924a506f8b81"
+  },
+  "resources/assets/js/app.js": {
+    "mtime": 1785496326.3119476,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "resources/js/app.js": {
+    "mtime": 1779200039.6085377,
+    "ast_hash": "1ccf2b9101110f40ecaab1608a6f91cf",
+    "semantic_hash": "1ccf2b9101110f40ecaab1608a6f91cf"
+  },
+  "resources/js/bootstrap.js": {
+    "mtime": 1779200039.6085377,
+    "ast_hash": "78f909acc19aea4717eddca5a87c1ba3",
+    "semantic_hash": "78f909acc19aea4717eddca5a87c1ba3"
+  },
+  "resources/lang/it/lang_service.php": {
+    "mtime": 1779200261.6397867,
+    "ast_hash": "4de2a95eb87539d82d5c31e3bf5c892e",
+    "semantic_hash": "4de2a95eb87539d82d5c31e3bf5c892e"
+  },
+  "resources/lang/it/translation.php": {
+    "mtime": 1779200261.6397867,
+    "ast_hash": "eda6a21e8818db16e0d481cd80c8c0e5",
+    "semantic_hash": "eda6a21e8818db16e0d481cd80c8c0e5"
+  },
+  "resources/lang/it/translations.php": {
+    "mtime": 1779200261.6397867,
+    "ast_hash": "fd4ee7df96ebec41abc1a3b0741830af",
+    "semantic_hash": "fd4ee7df96ebec41abc1a3b0741830af"
+  },
+  "resources/lang/it/txt.php": {
+    "mtime": 1779200261.6397867,
+    "ast_hash": "60da2878d2d2c6c6bf7f6a0e177b0cfa",
+    "semantic_hash": "60da2878d2d2c6c6bf7f6a0e177b0cfa"
+  },
+  "resources/views/admin/dashboard/item.blade.php": {
+    "mtime": 1779200039.6172044,
+    "ast_hash": "a3e3ea9196e32b1ffca7d6d52f13b3d8",
+    "semantic_hash": "a3e3ea9196e32b1ffca7d6d52f13b3d8"
+  },
+  "resources/views/components/empty.blade.php": {
+    "mtime": 1779200039.6172044,
+    "ast_hash": "5a21cc8944a867e2071802a7aebc582a",
+    "semantic_hash": "5a21cc8944a867e2071802a7aebc582a"
+  },
+  "resources/views/components/flag.blade.php": {
+    "mtime": 1779200039.6172044,
+    "ast_hash": "d828c4cd0586c8649bd1030a21240d79",
+    "semantic_hash": "d828c4cd0586c8649bd1030a21240d79"
+  },
+  "resources/views/components/i18n-link.blade.php": {
+    "mtime": 1779200039.6172044,
+    "ast_hash": "066232d7072fbcf86051c1dcf5d39f2d",
+    "semantic_hash": "066232d7072fbcf86051c1dcf5d39f2d"
+  },
+  "resources/views/components/language-switcher.blade.php": {
+    "mtime": 1779200039.6172044,
+    "ast_hash": "f0fe97754bfd50a19846050e091debaa",
+    "semantic_hash": "f0fe97754bfd50a19846050e091debaa"
+  },
+  "resources/views/filament/forms/components/translation-editor.blade.php": {
+    "mtime": 1779200039.6172044,
+    "ast_hash": "8fae83f5bc656eab0c0b1e7fdaf4c2e0",
+    "semantic_hash": "8fae83f5bc656eab0c0b1e7fdaf4c2e0"
+  },
+  "resources/views/filament/pages/dashboard.blade.php": {
+    "mtime": 1779200039.6172044,
+    "ast_hash": "232ef9d4ef22bf4890dde621e868a146",
+    "semantic_hash": "232ef9d4ef22bf4890dde621e868a146"
+  },
+  "resources/views/filament/widgets/language-switcher.blade.php": {
+    "mtime": 1779200039.6172044,
+    "ast_hash": "f0fe97754bfd50a19846050e091debaa",
+    "semantic_hash": "f0fe97754bfd50a19846050e091debaa"
+  },
+  "resources/views/index.blade.php": {
+    "mtime": 1779200039.6172044,
+    "ast_hash": "030285557730bac745b36a7904b9c0f8",
+    "semantic_hash": "030285557730bac745b36a7904b9c0f8"
+  },
+  "resources/views/layouts/master.blade.php": {
+    "mtime": 1779200039.6172044,
+    "ast_hash": "5b54e5a42e255ef08a0e1b5c9a35d8b0",
+    "semantic_hash": "5b54e5a42e255ef08a0e1b5c9a35d8b0"
+  },
+  "resources/views/livewire/lang/change.blade.php": {
+    "mtime": 1779200039.6172044,
+    "ast_hash": "971951a76c2aa9f8627a9501e780f5de",
+    "semantic_hash": "971951a76c2aa9f8627a9501e780f5de"
+  },
+  "routes/api.php": {
+    "mtime": 1779200039.6172044,
+    "ast_hash": "af4c6fb6dcb3a657f41c65233bd4fe74",
+    "semantic_hash": "af4c6fb6dcb3a657f41c65233bd4fe74"
+  },
+  "routes/web.php": {
+    "mtime": 1779200039.6172044,
+    "ast_hash": "af4c6fb6dcb3a657f41c65233bd4fe74",
+    "semantic_hash": "af4c6fb6dcb3a657f41c65233bd4fe74"
+  },
+  "scripts/ci/contributor-lines-report.mjs": {
+    "mtime": 1781509986.170875,
+    "ast_hash": "ede7802aeaaef287d37c880b440e827e",
+    "semantic_hash": "ede7802aeaaef287d37c880b440e827e"
+  },
+  "tests/Feature/LangBusinessLogicTest.php": {
+    "mtime": 1785494467.793599,
+    "ast_hash": "c56086b4dd945a3543e0d56451329c44",
+    "semantic_hash": "c56086b4dd945a3543e0d56451329c44"
+  },
+  "tests/Pest.php": {
+    "mtime": 1785494467.793599,
+    "ast_hash": "7c641d06db2e7a101e078d84f7019238",
+    "semantic_hash": "7c641d06db2e7a101e078d84f7019238"
+  },
+  "tests/TestCase.php": {
+    "mtime": 1785494467.793599,
+    "ast_hash": "575431e72b8858ccffa65060c220e917",
+    "semantic_hash": "575431e72b8858ccffa65060c220e917"
+  },
+  "tests/Unit/Actions/GetAllTranslationActionTest.php": {
+    "mtime": 1781509986.170875,
+    "ast_hash": "4b2e1c86be454bac58e98ea6b2553b1e",
+    "semantic_hash": "4b2e1c86be454bac58e98ea6b2553b1e"
+  },
+  "tests/Unit/Actions/GetTransPathActionTest.php": {
+    "mtime": 1781509986.170875,
+    "ast_hash": "57764c26319ab5cfd2c96ae092933517",
+    "semantic_hash": "57764c26319ab5cfd2c96ae092933517"
+  },
+  "tests/Unit/Actions/LangActionsCoverageTest.php": {
+    "mtime": 1781509986.170875,
+    "ast_hash": "8e1af6dbde6393e421747628846062c3",
+    "semantic_hash": "8e1af6dbde6393e421747628846062c3"
+  },
+  "tests/Unit/Actions/ReadTranslationFileActionTest.php": {
+    "mtime": 1781509986.170875,
+    "ast_hash": "12b6b3272e72e69c8bb399b9ad9cef1a",
+    "semantic_hash": "12b6b3272e72e69c8bb399b9ad9cef1a"
+  },
+  "tests/Unit/Actions/SaveTransActionTest.php": {
+    "mtime": 1781509986.170875,
+    "ast_hash": "4760519ae01a25d962939dc29449cfdc",
+    "semantic_hash": "4760519ae01a25d962939dc29449cfdc"
+  },
+  "tests/Unit/Actions/TransArrayActionTest.php": {
+    "mtime": 1781509986.170875,
+    "ast_hash": "a57fc59cfdd7e21268b55b05cf292bc6",
+    "semantic_hash": "a57fc59cfdd7e21268b55b05cf292bc6"
+  },
+  "tests/Unit/Actions/TransCollectionActionTest.php": {
+    "mtime": 1781509986.170875,
+    "ast_hash": "980cb8853dbb89e278c1651fd5907d6c",
+    "semantic_hash": "980cb8853dbb89e278c1651fd5907d6c"
+  },
+  "tests/Unit/Adapters/TranslatorAdapterTest.php": {
+    "mtime": 1785494467.793599,
+    "ast_hash": "398b2d5dc50690995489ef638cf3fe77",
+    "semantic_hash": "398b2d5dc50690995489ef638cf3fe77"
+  },
+  "tests/Unit/Models/BaseModelLangTest.php": {
+    "mtime": 1785496327.496281,
+    "ast_hash": "b381bea59150780026d49cc1e6001898",
+    "semantic_hash": "b381bea59150780026d49cc1e6001898"
+  },
+  "tests/Unit/Models/BaseModelTest.php": {
+    "mtime": 1785496327.496281,
+    "ast_hash": "dc3ccd2998ee3a4855ca7ee54c8d3582",
+    "semantic_hash": "dc3ccd2998ee3a4855ca7ee54c8d3582"
+  },
+  "tests/Unit/Models/BaseMorphPivotTest.php": {
+    "mtime": 1785496327.496281,
+    "ast_hash": "2367f8f0d1dcd9ddaf9b03b67f8d596e",
+    "semantic_hash": "2367f8f0d1dcd9ddaf9b03b67f8d596e"
+  },
+  "tests/Unit/Models/PostTest.php": {
+    "mtime": 1781509986.1711528,
+    "ast_hash": "15c0652926d0a5cf95c1f97a1a5db7eb",
+    "semantic_hash": "15c0652926d0a5cf95c1f97a1a5db7eb"
+  },
+  "tests/Unit/Models/TranslationFileTest.php": {
+    "mtime": 1781509986.1711528,
+    "ast_hash": "85d02ab421808562c67f0f7a535d8ea8",
+    "semantic_hash": "85d02ab421808562c67f0f7a535d8ea8"
+  },
+  "tests/Unit/Models/TranslationTest.php": {
+    "mtime": 1781509986.1711528,
+    "ast_hash": "2b33d5ad933a4e3749a9745ed9014a32",
+    "semantic_hash": "2b33d5ad933a4e3749a9745ed9014a32"
+  },
+  "tests/Unit/Providers/LangServiceProviderTest.php": {
+    "mtime": 1781509986.1711528,
+    "ast_hash": "a4a92bdd6fe903c7bba62b1d8f7bb006",
+    "semantic_hash": "a4a92bdd6fe903c7bba62b1d8f7bb006"
+  },
+  "tests/Unit/Services/TranslatorServiceTest.php": {
+    "mtime": 1785494467.793599,
+    "ast_hash": "0b8c8e05adf1efd25b76291ee42d6d3a",
+    "semantic_hash": "0b8c8e05adf1efd25b76291ee42d6d3a"
+  },
+  "vite.config.js": {
+    "mtime": 1779200039.6215377,
+    "ast_hash": "c605852719dea1ff9d2f5d3262198b9c",
+    "semantic_hash": "c605852719dea1ff9d2f5d3262198b9c"
+  }
+}

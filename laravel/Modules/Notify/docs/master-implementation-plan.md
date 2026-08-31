@@ -5,6 +5,7 @@ tags: [master, implementation, plan]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "master-implementation-plan 🎯 fixcity - master implementation plan"
+qmd: "master-implementation-plan 🎯 ptv - master implementation plan"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -46,3 +47,4 @@ Modules:
 PHPStan Level 9: 0 errori ✅
 Test Coverage: 27 tests esistenti
 Code Quality: ✅ Eccellente
+```

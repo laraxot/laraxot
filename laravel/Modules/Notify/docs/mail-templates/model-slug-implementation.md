@@ -3,6 +3,7 @@
 ## Panoramica delle Modifiche
 
 Il modello `MailTemplate` (`/var/www/html/Quaeris/laravel/Modules/Notify/app/Models/MailTemplate.php`) è stato aggiornato per supportare l'identificazione dei template tramite slug. Questa implementazione segue le migliori pratiche di Laravel e migliora l'usabilità del sistema di template email.
+Il modello `MailTemplate` (`/var/www/_bases/base_ptvx_fila5/laravel/Modules/Notify/app/Models/MailTemplate.php`) è stato aggiornato per supportare l'identificazione dei template tramite slug. Questa implementazione segue le migliori pratiche di Laravel e migliora l'usabilità del sistema di template email.
 
 ## Modifiche Effettuate
 

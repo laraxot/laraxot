@@ -130,6 +130,7 @@ I seguenti moduli sono stati analizzati senza errori di sintassi bloccanti:
 - ✅ **Cms**: Nessun syntax error
 - ✅ **Geo**: Nessun syntax error
 - ✅ **Fixcity**: Nessun syntax error
+- ✅ **App**: Nessun syntax error
 - ✅ **Blog**: Nessun syntax error
 - ✅ **Rating**: Nessun syntax error
 - ✅ **AI**: Nessun syntax error

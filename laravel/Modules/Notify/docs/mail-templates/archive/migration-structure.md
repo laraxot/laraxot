@@ -23,6 +23,7 @@ related:
 ## Informazioni Generali
 
 - **File**: `/var/www/html/saluteora/laravel/Modules/Notify/database/migrations/2018_10_10_000002_create_mail_templates_table.php`
+- **File**: `[project-root]/laravel/Modules/Notify/database/migrations/2018_10_10_000002_create_mail_templates_table.php`
 - **Base**: `XotBaseMigration`
 - **Tabella**: `mail_templates`
 

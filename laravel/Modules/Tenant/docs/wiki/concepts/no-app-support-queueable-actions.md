@@ -6,9 +6,9 @@ created: 2026-07-12
 updated: 2026-07-13
 qmd: "Tenant module no Support ConfigStringKeyFilter morph map merge config TenantService migration"
 issues:
-  - "https://github.com/laraxot/base_fixcity_fila5/issues/372"
+  - "https://github.com/laraxot/platform/issues/372"
 discussions:
-  - "https://github.com/laraxot/base_fixcity_fila5/discussions/273"
+  - "https://github.com/laraxot/platform/discussions/273"
 related:
   - ../../../../docs/wiki/concepts/no-app-support-monorepo-migration.md
   - config-merge-philosophy.md

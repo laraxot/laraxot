@@ -5,6 +5,7 @@ tags: [project, completion, report]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "project-completion-report report di completamento progetto fixcity"
+qmd: "project-completion-report report di completamento progetto ptv"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -156,6 +157,9 @@ FIXCITY_ANALYTICS_ENABLED=true
 /api/fixcity/tickets       # Gestione ticket
 /api/fixcity/map/tickets   # Mappa ticket
 /api/fixcity/statistics    # Statistiche
+/api/ptv/tickets       # Gestione ticket
+/api/ptv/map/tickets   # Mappa ticket
+/api/ptv/statistics    # Statistiche
 ```
 
 ## Test Implementati

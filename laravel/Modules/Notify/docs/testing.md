@@ -1,5 +1,18 @@
 # Testing Rules Summary
 
+## Coverage baseline (story 5.26)
+
+| Story | Gate attuale | Suite offline | Note |
+|-------|--------------|---------------|------|
+| 5.26 | **47.1%** (target 100%) | 416 pass / 381 skip | Unit `no-notify-db`; skip `notify-db`/Feature su ptv; floor100; override `NOTIFY_DB_TESTS=1` |
+
+```bash
+cd laravel
+XDEBUG_MODE=coverage ./vendor/bin/pest -c Modules/Notify/phpunit.xml --coverage --min=100
+```
+
+Pattern: [module-test-skip-offline-pattern.md](../../Xot/docs/wiki/concepts/module-test-skip-offline-pattern.md).
+
 ## Regole Fondamentali dei Test
 
 ### 1. **Pest Testing Mandatory**
@@ -479,3 +492,27 @@ Remember: Good tests are the foundation of reliable software development.
 ---
 
 *Last updated: January 2025*
+
+---
+
+<!-- Merged from TESTING.md, which collided with this file on case-insensitive filesystems. -->
+
+---
+title: "Notify Module Testing"
+type: guide
+tags: [notify, testing, pest]
+created: 2026-07-28
+---
+
+# Notify Module — Testing
+
+```php
+test('sends welcome notification', function () {
+    Notification::fake();
+    $user = User::factory()->create();
+
+    $user->notify(new WelcomeNotification());
+
+    Notification::assertSentTo($user, WelcomeNotification::class);
+});
+```

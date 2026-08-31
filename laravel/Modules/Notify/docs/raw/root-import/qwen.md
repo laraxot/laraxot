@@ -12,6 +12,8 @@ Questa documentazione è stata divisa in moduli per una gestione più efficiente
 - [Regole Critiche](./.agents/docs/main-rules/qwen-critical-rules.md) — body plain, header parity, stepper responsive, multilingual
 - [Filament Wizard Rule](./laravel/Modules/Fixcity/docs/filament-wizard-rule.md) — NO Blade step management, use Filament Wizard Schema
 - [Module Boundary Philosophy](./laravel/Modules/Fixcity/docs/MODULE-BOUNDARY-PHILOSOPHY.md) — Geo OWNS geolocation, NO Blade::render hacks, use AddressInput
+- [Filament Wizard Rule](./laravel/Modules/App/docs/filament-wizard-rule.md) — NO Blade step management, use Filament Wizard Schema
+- [Module Boundary Philosophy](./laravel/Modules/App/docs/MODULE-BOUNDARY-PHILOSOPHY.md) — Geo OWNS geolocation, NO Blade::render hacks, use AddressInput
 - [Token Efficiency](./docs/token-efficiency-religion.md) — Reduce tokens 50-90% via grep-first, diffs, scoping, tables, batch
 - [LLM Wiki Pattern](./docs/wiki/README.md) — Karpathy-style persistent knowledge base with raw/wiki/AGENTS architecture
 
@@ -19,6 +21,7 @@ Questa documentazione è stata divisa in moduli per una gestione più efficiente
 **See also:**
 - [CLAUDE.md](./CLAUDE.md)
 - [AGENTS.md](./AGENTS.md)
+- [agents.md](./agents.md)
 - [GEMINI.md](./GEMINI.md)
 
 *Ultimo aggiornamento: Aprile 2026*

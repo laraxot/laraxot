@@ -1,10 +1,12 @@
 ---
 title: "Errori Comuni da Evitare nelle Implementazioni di Moduli Quaeris"
+title: "Errori Comuni da Evitare nelle Implementazioni di Moduli App"
 type: concept
 tags: [errori, comuni, evitare]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "errori-comuni-da-evitare-1 errori comuni da evitare nelle implementazioni di moduli quaeris"
+qmd: "errori-comuni-da-evitare-1 errori comuni da evitare nelle implementazioni di moduli this-project"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -19,12 +21,17 @@ related:
 ---
 
 # Errori Comuni da Evitare nelle Implementazioni di Moduli Quaeris
+# Errori Comuni da Evitare nelle Implementazioni di Moduli App
 
 ## Errori di Struttura Directory e Namespace
 
 1. **Errore di Case nelle Directory**
 - ❌ ERRATO: `/var/www/html/Quaeris/laravel/Modules/Notify/App/Actions/`
    - ✅ CORRETTO: `/var/www/html/Quaeris/laravel/Modules/Notify/app/Actions/`
+- ❌ ERRATO: `/var/www/html/Quaeris/laravel/Modules/Notify/App/Actions/`
+   - ✅ CORRETTO: `/var/www/html/Quaeris/laravel/Modules/Notify/app/Actions/`
+- ❌ ERRATO: `/var/www/_bases/base_ptvx_fila5/laravel/Modules/Notify/App/Actions/`
+   - ✅ CORRETTO: `/var/www/_bases/base_ptvx_fila5/laravel/Modules/Notify/app/Actions/`
    
    > Le directory standard di Laravel sono sempre in lowercase (`app`, `config`, `resources`, ecc.)
 

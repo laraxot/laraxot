@@ -28,13 +28,11 @@ class SmsActionFactory
      */
     /** @var list<string> */
     protected array $supportedDrivers = [
-        'smsfactor',
-    ];
+        'smsfactor'];
 
     /** @var array<string, string> */
     protected array $driverAliases = [
-        'smsfac' => 'smsfactor',
-    ];
+        'smsfac' => 'smsfactor'];
 
     /**
      * Crea un'azione SMS basata sul driver specificato o su quello predefinito.
@@ -66,8 +64,7 @@ class SmsActionFactory
             Log::error('SMS driver class not found', [
                 'driver' => $driver,
                 'normalized' => $normalizedDriver,
-                'className' => $className,
-            ]);
+                'className' => $className]);
 
             throw new Exception(
                 'Unsupported SMS driver: '.(is_string($driver) ? $driver : '').". Class {$className} not found.",

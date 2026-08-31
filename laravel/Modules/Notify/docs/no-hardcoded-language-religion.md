@@ -131,6 +131,8 @@ Section::make('Riepilogo Segnalazione')
 // ✅ CORRETTO: usa chiavi traduzione
 Section::make(__('fixcity::create_ticket_wizard.sections.summary.label'))
     ->description(__('fixcity::create_ticket_wizard.sections.summary.description'))
+Section::make(__('ptv::create_ticket_wizard.sections.summary.label'))
+    ->description(__('ptv::create_ticket_wizard.sections.summary.description'))
 ```
 
 **File traduzione**: `Modules/Fixcity/resources/lang/en/create_ticket_wizard.php`
@@ -177,6 +179,7 @@ return [
 ->description(fn (Get $get): string =>
     trans_choice(
         'fixcity::create_ticket_wizard.sections.images.description',
+        'ptv::create_ticket_wizard.sections.images.description',
         count($get('images') ?? [])
     )
 )
@@ -203,6 +206,7 @@ return [
 
 // ✅ CORRETTO
 ->limitMessage(__('fixcity::create_ticket_wizard.sections.images.limit_message'))
+->limitMessage(__('ptv::create_ticket_wizard.sections.images.limit_message'))
 ```
 
 ---
@@ -217,6 +221,7 @@ Section::make('Riepilogo Segnalazione')
 
 // ✅ CORRETTO
 Section::make(__('fixcity::create_ticket_wizard.sections.summary.label'))
+Section::make(__('ptv::create_ticket_wizard.sections.summary.label'))
 ```
 
 ---
@@ -229,6 +234,7 @@ Section::make(__('fixcity::create_ticket_wizard.sections.summary.label'))
 
 // ✅ CORRETTO
 ->description(__('fixcity::create_ticket_wizard.sections.summary.description'))
+->description(__('ptv::create_ticket_wizard.sections.summary.description'))
 ```
 
 ---
@@ -253,6 +259,7 @@ $this->addError('data.submit', 'Si è verificato un errore')
 
 // ✅ CORRETTO
 $this->addError('data.submit', __('fixcity::create_ticket_wizard.notifications.submit_failed.body'))
+$this->addError('data.submit', __('ptv::create_ticket_wizard.notifications.submit_failed.body'))
 ```
 
 ---
@@ -269,6 +276,8 @@ Notification::make()
 Notification::make()
     ->title(__('fixcity::create_ticket_wizard.notifications.success.title'))
     ->body(__('fixcity::create_ticket_wizard.notifications.success.body'))
+    ->title(__('ptv::create_ticket_wizard.notifications.success.title'))
+    ->body(__('ptv::create_ticket_wizard.notifications.success.body'))
 ```
 
 ---
@@ -281,6 +290,7 @@ echo count($items) . ' elementi trovati'
 
 // ✅ CORRETTO
 echo trans_choice('fixcity::messages.items_found', count($items))
+echo trans_choice('ptv::messages.items_found', count($items))
 ```
 
 ---
@@ -295,6 +305,8 @@ Section::make('Riepilogo Segnalazione')
 // ✅ CORRETTO: tutto via translation keys
 Section::make(__('fixcity::sections.summary.label'))
     ->description(__('fixcity::sections.summary.description'))
+Section::make(__('ptv::sections.summary.label'))
+    ->description(__('ptv::sections.summary.description'))
 ```
 
 ---
@@ -322,6 +334,7 @@ Modules/Fixcity/resources/lang/
 ```php
 // Aggiungi nuova UI
 Section::make(__('fixcity::new_section.label'))
+Section::make(__('ptv::new_section.label'))
 
 // IMMEDIATAMENTE aggiungi a TUTTI i file lang:
 // en/create_ticket_wizard.php → 'new_section' => ['label' => 'New Section']
@@ -380,6 +393,7 @@ grep -rE "description\(['\"][A-ZÀ]" Modules/Fixcity/app/Filament/ --include="*.
 Per ogni violazione:
 - Identifica la stringa italiana
 - Crea chiave: `fixcity::create_ticket_wizard.sections.xxx.label`
+- Crea chiave: `ptv::create_ticket_wizard.sections.xxx.label`
 - Aggiungi a TUTTI i file lang (en, it, fr, de, es)
 
 ---
@@ -394,6 +408,8 @@ Section::make('Riepilogo Segnalazione')
 // DOPO
 Section::make(__('fixcity::create_ticket_wizard.sections.summary.label'))
     ->description(__('fixcity::create_ticket_wizard.sections.summary.description'))
+Section::make(__('ptv::create_ticket_wizard.sections.summary.label'))
+    ->description(__('ptv::create_ticket_wizard.sections.summary.description'))
 ```
 
 ---

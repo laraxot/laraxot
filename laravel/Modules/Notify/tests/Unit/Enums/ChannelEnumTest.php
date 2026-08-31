@@ -9,13 +9,10 @@ use Modules\Notify\Actions\SMS\NormalizePhoneNumberAction;
 use Modules\Notify\Channels\SmsChannel;
 use Modules\Notify\Channels\WhatsAppChannel;
 use Modules\Notify\Enums\ChannelEnum;
-use Modules\Notify\Tests\TestCase;
 use Modules\Xot\Actions\Cast\SafeEloquentCastAction;
 use PHPUnit\Framework\Assert;
 
 use function Safe\preg_replace;
-
-uses(\Modules\Notify\Tests\TestCase::class);
 
 test('notification channel mapping is correct', function () {
     Assert::assertSame('mail', ChannelEnum::Mail->getNotificationChannel());
@@ -24,7 +21,7 @@ test('notification channel mapping is correct', function () {
 });
 
 test('mail recipient is resolved only for valid email', function () {
-    app()->instance(SafeEloquentCastAction::class, new class
+    app()->instance(SafeEloquentCastAction::class, new class()
     {
         public function getStringAttribute(Model $record, string $attribute, string $default = ''): string
         {
@@ -34,13 +31,13 @@ test('mail recipient is resolved only for valid email', function () {
         }
     });
 
-    $valid = new class extends Model
+    $valid = new class() extends Model
     {
         protected $guarded = [];
     };
     $valid->setAttribute('email', 'notify@example.test');
 
-    $invalid = new class extends Model
+    $invalid = new class() extends Model
     {
         protected $guarded = [];
     };
@@ -51,7 +48,7 @@ test('mail recipient is resolved only for valid email', function () {
 });
 
 test('sms and whatsapp recipients are normalized', function () {
-    app()->instance(SafeEloquentCastAction::class, new class
+    app()->instance(SafeEloquentCastAction::class, new class()
     {
         public function getStringAttribute(Model $record, string $attribute, string $default = ''): string
         {
@@ -61,7 +58,7 @@ test('sms and whatsapp recipients are normalized', function () {
         }
     });
 
-    app()->instance(NormalizePhoneNumberAction::class, new class
+    app()->instance(NormalizePhoneNumberAction::class, new class()
     {
         public function execute(string $phone): string
         {
@@ -69,7 +66,7 @@ test('sms and whatsapp recipients are normalized', function () {
         }
     });
 
-    $record = new class extends Model
+    $record = new class() extends Model
     {
         protected $guarded = [];
     };

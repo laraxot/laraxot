@@ -45,8 +45,7 @@ class PlivoData extends Data
             default:
                 return [
                     'Authorization' => 'Basic '.base64_encode($this->auth_id.':'.$this->auth_token),
-                    'Content-Type' => 'application/json',
-                ];
+                    'Content-Type' => 'application/json'];
         }
     }
 

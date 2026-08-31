@@ -8,6 +8,7 @@ use Modules\Geo\Filament\Forms\Components\CoordinatePicker;
 use Modules\Geo\Filament\Forms\Components\LatitudeLongitudeInput;
 use Modules\Geo\Filament\Forms\Components\MapPicker;
 use Modules\Geo\Filament\Forms\Components\Traits\HasCoordinatePicker;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use PHPUnit\Framework\Assert;
 
 use function Safe\file;
@@ -25,7 +26,7 @@ function geoReadMethodBody(\ReflectionMethod $ref): string
 
     $body = '';
     foreach (array_slice($lines, $start - 1, $end - $start + 1) as $line) {
-        $body .= (string) $line;
+        $body .= SafeStringCastAction::cast($line);
     }
 
     Assert::assertNotSame('', $body);

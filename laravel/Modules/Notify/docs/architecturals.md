@@ -1,3 +1,12 @@
+---
+title: "Pattern Architetturali per le Notifiche"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Pattern Architetturali per le Notifiche
 
 Questo documento analizza i pattern architetturali utilizzati nel sistema di notifiche di , con particolare attenzione alla selezione del driver e alla gestione delle dipendenze.

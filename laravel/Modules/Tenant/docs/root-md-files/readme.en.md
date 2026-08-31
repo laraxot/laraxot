@@ -2,7 +2,7 @@
 title: "Tenant"
 module: "Tenant"
 type: concept
-tags: [readme.en]
+tags: [README.en]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "readme.en"

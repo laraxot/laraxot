@@ -18,7 +18,7 @@ uses(\Modules\User\Tests\TestCase::class);
 beforeEach(function (): void {
     /* @var TestCase $this */
     $this->widget = new UserOverview();
-    $this->user = UserFactory::new()->createOne([
+    TestCase::$user = UserFactory::new()->createOne([
         'type' => UserType::MasterAdmin,
         'email' => 'admin-'.Str::lower(Str::random(10)).'@example.com',
     ]);
@@ -52,7 +52,7 @@ describe('User Overview', function (): void {
         /** @var TestCase $this */
         $widget = $this->requireWidget();
         Assert::assertInstanceOf(UserOverview::class, $widget);
-        $user = $this->requireUser();
+        $user = TestCase::requireUser();
         $widget->record = $user;
 
         Assert::assertSame($user, $widget->record);

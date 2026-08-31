@@ -9,8 +9,7 @@ declare(strict_types=1);
 
     {{-- @include ('beautymail::templates.sunny.heading', [
         'heading' => 'Hello!',
-        'level' => 'h1',
-    ]) --}}
+        'level' => 'h1']) --}}
 
     @include('notify::emails.templates.sunny.contentStart')
 
@@ -20,7 +19,6 @@ declare(strict_types=1);
 
     {{-- @include('beautymail::templates.sunny.button', [
         'title' => 'Click me',
-        'link' => 'http://google.com',
-    ]) --}}
+        'link' => 'http://google.com']) --}}
 
 @stop

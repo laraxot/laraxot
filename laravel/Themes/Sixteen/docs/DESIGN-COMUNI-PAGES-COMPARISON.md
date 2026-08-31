@@ -19,6 +19,8 @@ https://italia.github.io/design-comuni-pagine-statiche/sito/ and our local test 
 
 | Page | Similarity | Status | Reference Structure | Local Structure |
 |------|------------|--------|---------------------|-----------------|
+<<<<<<< HEAD
+=======
 <<<<<<< Updated upstream
 | segnalazione-02-dati | 78% ⚠️ | OK | 147divs,91anchors,3inputs | 133divs,90anchors,3inputs |
 | homepage | 73% ⚠️ | OK | 215divs,139anchors,18inputs | 186divs,139anchors,8inputs |
@@ -53,6 +55,7 @@ https://italia.github.io/design-comuni-pagine-statiche/sito/ and our local test 
 | evento-dettaglio | 35% ❌ | OK | 220divs,129anchors,17inputs | 84divs,81anchors,1inputs |
 | novita-dettaglio | 33% ❌ | OK | 158divs,101anchors,17inputs | 83divs,85anchors,1inputs |
 =======
+>>>>>>> laraxot/dev
 | homepage | 76% ⚠️ | OK | 215divs,139anchors,18inputs | 243divs,140anchors,18inputs |
 | argomenti | 73% ⚠️ | OK | 230divs,108anchors,17inputs | 229divs,104anchors,17inputs |
 | amministrazione | 70% ⚠️ | OK | 173divs,94anchors,17inputs | 155divs,89anchors,17inputs |
@@ -85,7 +88,10 @@ https://italia.github.io/design-comuni-pagine-statiche/sito/ and our local test 
 | segnalazione-02-dati | 0% ❌ | ERROR | 0divs,0anchors,0inputs | 0divs,0anchors,0inputs |
 | segnalazione-03-riepilogo | 0% ❌ | ERROR | 0divs,0anchors,0inputs | 0divs,0anchors,0inputs |
 | segnalazione-area-personale | 0% ❌ | ERROR | 0divs,0anchors,0inputs | 0divs,0anchors,0inputs |
+<<<<<<< HEAD
+=======
 >>>>>>> Stashed changes
+>>>>>>> laraxot/dev
 
 ## Overall Statistics
 

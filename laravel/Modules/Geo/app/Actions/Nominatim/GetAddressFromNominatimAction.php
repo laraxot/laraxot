@@ -17,13 +17,12 @@ class GetAddressFromNominatimAction
 {
     use QueueableAction;
 
-    private const BASE_URL = 'https://nominatim.openstreetmap.org';
+    private const string BASE_URL = 'https://nominatim.openstreetmap.org';
 
     /**
      * Esegue la ricerca dell'indirizzo su Nominatim.
      *
-     * @param string $address L'indirizzo da cercare
-     *
+     * @param  string  $address  L'indirizzo da cercare
      * @return AddressData|null I dati dell'indirizzo trovato o null se non trovato
      */
     public function execute(string $address): ?AddressData

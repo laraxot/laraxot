@@ -10,10 +10,8 @@ use Modules\Notify\Contracts\TelegramProviderActionInterface;
 use Modules\Notify\Contracts\WhatsAppProviderActionInterface;
 use Modules\Notify\Factories\TelegramActionFactory;
 use Modules\Notify\Factories\WhatsAppActionFactory;
-use Modules\Notify\Tests\TestCase;
+use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
-
-uses(\Modules\Notify\Tests\TestCase::class);
 
 test('sms action resolves default smsfactor driver instance', function () {
     config()->set('sms.default', 'smsfactor');
@@ -34,7 +32,7 @@ test('telegram action factory creates official driver instance', function () {
 });
 
 test('telegram action factory throws for unsupported driver', function () {
-    \assertNotifyThrows(
+    XotBasePest::assertThrows(
         fn () => (new TelegramActionFactory())->create('unsupported'),
         \Exception::class,
     );
@@ -51,7 +49,7 @@ test('whatsapp action factory creates twilio driver instance', function () {
 });
 
 test('whatsapp action factory throws for unsupported driver', function () {
-    \assertNotifyThrows(
+    XotBasePest::assertThrows(
         fn () => (new WhatsAppActionFactory())->create('unsupported'),
         \Exception::class,
     );

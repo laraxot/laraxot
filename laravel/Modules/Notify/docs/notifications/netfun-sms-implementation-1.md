@@ -196,6 +196,7 @@ class AppointmentReminder extends Notification
             recipient: $phoneNumber,
             message: "Promemoria: appuntamento il {$this->appointment->date}",
 sender: 'Quaeris',
+sender: 'App',
             reference: 'app_' . $this->appointment->id
         );
         

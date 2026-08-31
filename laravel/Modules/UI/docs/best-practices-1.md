@@ -35,6 +35,10 @@ class CustomComponent extends Component
     // Proprietà pubbliche con type hint
     public string $label;
     public ?string $hint = null;
+    
+    // Proprietà private per stato interno
+    private bool $isLoading = false;
+    
 
     // Proprietà private per stato interno
     private bool $isLoading = false;
@@ -74,6 +78,11 @@ class CustomComponent extends Component
     &__header { }
     &__content { }
     &__footer { }
+    
+    // Stati
+    &--loading { }
+    &--disabled { }
+    
 
     // Stati
     &--loading { }
@@ -245,6 +254,13 @@ class AdvancedForm extends Component
 * [best-practices.md](../../../Xot/docs/laraxot/best-practices.md)
 * [best-practices.md](../../../UI/docs/best-practices.md)
 * [best-practices.md](../../../../Themes/One/docs/best-practices.md)
+
+
+### Versione Incoming
+
+- Breaking changes 
+
+---
 
 ### Versione Incoming
 

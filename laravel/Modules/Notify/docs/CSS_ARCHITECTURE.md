@@ -122,6 +122,7 @@ Usato SOLO per:
 ### Verifica Classi
 ```bash
 curl http://fixcity.local/it/tests/homepage | grep -o 'class="[^"]*"' | sort | uniq
+curl http://ptv.local/it/tests/homepage | grep -o 'class="[^"]*"' | sort | uniq
 ```
 
 ### Output Atteso

@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Pages;
 
-// use Dotswan\MapPicker\Fields\Map; // Pacchetto non installato
 use Illuminate\Support\Collection;
+// use Dotswan\MapPicker\Fields\Map; // Pacchetto non installato
 use Modules\Geo\Models\Place;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
@@ -28,7 +29,7 @@ class DotswanMap extends XotBasePage
         return $places->map(fn (Place $place): array => [
             'lat' => (float) $place->latitude,
             'lng' => (float) $place->longitude,
-            'title' => (string) ($place->getAttribute('name') ?? 'Unnamed Place'),
+            'title' => SafeStringCastAction::cast($place->getAttribute('name') ?? 'Unnamed Place'),
         ]);
     }
 

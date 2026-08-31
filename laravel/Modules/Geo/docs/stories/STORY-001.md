@@ -1,3 +1,7 @@
+---
+scope: module:Geo
+---
+
 # STORY-001: Consolidamento stack release + changelog avanzato con analytics per-contributore
 
 **Epic:** CI/CD — Release Automation
@@ -170,3 +174,20 @@ Ricerca online (best practice 2026) per la parte analytics:
 ---
 
 **This story was created using BMAD Method v6 - Phase 4 (Implementation Planning)**
+
+## GitHub (tracciamento)
+
+Repository letto da frontmatter `github.repository` o `git remote -v` (se assente: repo root **`laraxot/base_quaeris_fila5`**): **`laraxot/base_quaeris_fila5`**.
+
+| Risorsa | Stato | Link |
+|---|---|---|
+| Issue | **DA CREARE** | https://github.com/laraxot/base_quaeris_fila5/issues |
+| Discussion | **DA CREARE** | https://github.com/laraxot/base_quaeris_fila5/discussions |
+
+Il numero non e' scritto perche' non esiste ancora: `gh` non e' autenticato in questa sessione e i repo sono privati. Appena disponibile, creare con:
+
+```bash
+gh issue create --repo laraxot/base_quaeris_fila5 \
+  --title "STORY-001: Consolidamento stack release + changelog avanzato con analytics per-contributore" --body-file <FILE>
+gh api repos/laraxot/base_quaeris_fila5/discussions -f title="STORY-001: Consolidamento stack release + changelog avanzato con analytics per-contributore" -f body="vedi la story"
+```

@@ -19,7 +19,7 @@ uses(\Modules\User\Tests\TestCase::class);
 
 beforeEach(function (): void {
     /* @var TestCase $this */
-    $this->skipUnlessUsersTableReady();
+    TestCase::skipUnlessUsersTableReady();
 });
 
 describe('User Model', function (): void {
@@ -87,7 +87,7 @@ describe('User Model', function (): void {
 
     test('user can have permissions', function (): void {
         /* @var TestCase $this */
-        $this->skipUnlessDirectPermissionSupported();
+        TestCase::skipUnlessDirectPermissionSupported();
 
         $user = UserFactory::new()->createOne();
         $permission = PermissionFactory::new()->createOne(['guard_name' => 'web', 'name' => 'permission-'.uniqid()]);
@@ -109,7 +109,7 @@ describe('User Model', function (): void {
 
     test('user can check if has permission', function (): void {
         /* @var TestCase $this */
-        $this->skipUnlessDirectPermissionSupported();
+        TestCase::skipUnlessDirectPermissionSupported();
 
         $user = UserFactory::new()->createOne();
         $permission = PermissionFactory::new()->createOne(['name' => 'perm-'.uniqid(), 'guard_name' => 'web']);
@@ -243,7 +243,7 @@ describe('User Model', function (): void {
 
     test('user can be deleted', function (): void {
         /* @var TestCase $this */
-        $this->skipUnlessDirectPermissionSupported();
+        TestCase::skipUnlessDirectPermissionSupported();
 
         $user = UserFactory::new()->createOne();
         $userId = $user->id;

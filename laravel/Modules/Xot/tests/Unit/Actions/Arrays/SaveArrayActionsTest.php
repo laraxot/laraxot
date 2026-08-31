@@ -1,0 +1,40 @@
+<?php
+
+declare(strict_types=1);
+
+use Illuminate\Support\Facades\File;
+use Modules\Xot\Actions\Arrays\SaveJsonArrayAction;
+use Modules\Xot\Actions\Arrays\SavePhpArrayAction;
+use Modules\Xot\Tests\TestCase;
+use PHPUnit\Framework\Assert;
+
+use function Safe\json_decode;
+use function Safe\tempnam;
+
+uses(TestCase::class);
+
+test('save json array action works', function () {
+    $data = ['foo' => 'bar'];
+    $filename = tempnam(sys_get_temp_dir(), 'test_json').'.json';
+
+    $action = app(SaveJsonArrayAction::class);
+    $result = $action->execute($data, $filename);
+
+    Assert::assertTrue($result);
+    $savedData = json_decode(File::get($filename), true);
+    Assert::assertSame($data, $savedData);
+    File::delete($filename);
+});
+
+test('save php array action works', function () {
+    $data = ['foo' => 'bar'];
+    $filename = tempnam(sys_get_temp_dir(), 'test_php').'.php';
+
+    $action = app(SavePhpArrayAction::class);
+    $result = $action->execute($data, $filename);
+
+    Assert::assertTrue($result);
+    $savedData = include $filename;
+    Assert::assertSame($data, $savedData);
+    File::delete($filename);
+});

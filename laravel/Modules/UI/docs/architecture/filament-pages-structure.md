@@ -7,6 +7,8 @@ updated: 2026-07-14
 qmd: "filament-pages-structure struttura pagine filament - modulo ui"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+issues: ["https://github.com/provtv/<nome repository>/issues/124"]
+discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
   - "./component-registration.md"
   - "./filament-resources-structure.md"

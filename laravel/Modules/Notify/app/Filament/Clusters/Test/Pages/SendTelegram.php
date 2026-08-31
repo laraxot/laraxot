@@ -64,9 +64,7 @@ class SendTelegram extends XotBasePage
                     // ->description('Update your account\'s profile information and email address.')
                     ->schema([
                         TextInput::make('recipient')->required(),
-                        RichEditor::make('body')->required(),
-                    ]),
-            ])
+                        RichEditor::make('body')->required()])])
             ->model($this->getUser())
             ->statePath('emailData');
     }
@@ -107,18 +105,16 @@ class SendTelegram extends XotBasePage
     protected function getForms(): array
     {
         return [
-            'emailForm',
-        ];
+            'emailForm'];
     }
 
-    /** @return array<string, \Filament\Actions\Action> */
+    /** @return array<string, Action> */
     protected function getEmailFormActions(): array
     {
         return [
             'submit' => Action::make('emailFormActions')
 
-                ->submit('emailFormActions'),
-        ];
+                ->submit('emailFormActions')];
     }
 
     protected function getUser(): Authenticatable&Model

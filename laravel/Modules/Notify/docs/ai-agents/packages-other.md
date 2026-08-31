@@ -21,6 +21,7 @@ Modules/
   Media/      — file e media
   Notify/     — notifiche (email, SMS, Telegram, WhatsApp)
   Quaeris/    — survey management
+  App/    — survey management
   Tenant/     — multi-tenancy
   UI/         — componenti UI
   User/       — autenticazione, Passport, Socialite

@@ -8,6 +8,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Xot\Actions\Cast\SafeIntCastAction;
+use RuntimeException;
 use Safe\Exceptions\JsonException;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -80,7 +81,7 @@ class GenerateOllamaAction
             ];
         } catch (GuzzleException|JsonException $e) {
             Log::error('Ollama Generate API error', ['error' => $e->getMessage()]);
-            throw new \RuntimeException('Ollama API error: '.$e->getMessage(), 0, $e);
+            throw new RuntimeException('Ollama API error: '.$e->getMessage(), 0, $e);
         }
     }
 

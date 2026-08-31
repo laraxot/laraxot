@@ -1,6 +1,7 @@
 # QWEN Overview
 
 Panoramica e stato attuale del progetto Base Predict Fila5.
+Panoramica e stato attuale del progetto Base Forecast Fila5.
 
 ## Informazioni Progetto
 
@@ -23,6 +24,7 @@ Panoramica e stato attuale del progetto Base Predict Fila5.
 ## 🎯 Obiettivo Principale
 
 **Creare la MIGLIORE predict platform di TUTTI i competitors**
+**Creare la MIGLIORE forecast platform di TUTTI i competitors**
 
 Senza alcun se o ma. Deve essere perfetta in ogni aspetto.
 

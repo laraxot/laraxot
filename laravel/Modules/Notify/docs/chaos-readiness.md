@@ -1,3 +1,12 @@
+---
+title: "Notify Chaos Readiness - 2026-03-02"
+module: notify
+type: integration
+tags: [integrations, modules, notify]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 # Notify Chaos Readiness - 2026-03-02
 
 ## Scope

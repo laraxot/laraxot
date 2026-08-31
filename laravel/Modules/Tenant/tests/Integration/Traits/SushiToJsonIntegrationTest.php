@@ -12,7 +12,7 @@ use Modules\Tenant\Tests\TestCase;
 
 use function Safe\json_encode;
 
-uses(\Modules\Tenant\Tests\TestCase::class, DatabaseTransactions::class);
+uses(TestCase::class, DatabaseTransactions::class);
 
 /**
  * @param  array<array-key, mixed>  $data
@@ -25,7 +25,12 @@ function writeTraitIntegrationJson(string $path, array $data): void
 }
 
 beforeEach(function (): void {
-    $this->tenant = createTenant([
+    /** @var TestCase $this */
+    if (TestCase::tenantDbUnavailable()) {
+        $this->skipTest('DB `tenant` non raggiungibile: blocco di ambiente.');
+    }
+
+    $this->tenant = TestCase::createTenant([
         'name' => 'test-tenant',
         'domain' => 'test.example.com',
     ]);
@@ -46,6 +51,7 @@ beforeEach(function (): void {
 });
 
 afterEach(function (): void {
+    /** @var TestCase $this */
     if (File::exists($this->testJsonPath)) {
         File::delete($this->testJsonPath);
     }
@@ -57,6 +63,7 @@ afterEach(function (): void {
 });
 
 it('creates json file with tenant isolation', function (): void {
+    /** @var TestCase $this */
     $testData = [
         '1' => [
             'id' => 1,
@@ -75,6 +82,7 @@ it('creates json file with tenant isolation', function (): void {
 });
 
 it('loads data with tenant isolation', function (): void {
+    /** @var TestCase $this */
     $tenantId = $this->tenantId();
     $testData = [
         '1' => ['id' => 1, 'name' => 'Item 1', 'tenant_id' => $tenantId],
@@ -96,6 +104,7 @@ it('loads data with tenant isolation', function (): void {
 });
 
 it('handles large datasets efficiently', function (): void {
+    /** @var TestCase $this */
     $largeDataset = [];
     for ($i = 1; $i <= 1000; $i++) {
         $largeDataset[$i] = [
@@ -114,7 +123,8 @@ it('handles large datasets efficiently', function (): void {
 });
 
 it('works with different tenant configurations', function (): void {
-    $secondTenant = createTenant([
+    /** @var TestCase $this */
+    $secondTenant = TestCase::createTenant([
         'name' => 'second-tenant',
         'domain' => 'second.example.com',
     ]);

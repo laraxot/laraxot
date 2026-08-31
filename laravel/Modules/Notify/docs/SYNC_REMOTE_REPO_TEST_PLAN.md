@@ -238,6 +238,8 @@ Test is considered successful when:
 - [Workflow Configuration](../../../.github/workflows/sync-remote-repo.yml)
 - [GitHub Issue #11](https://github.com/laraxot/base_fixcity_fila5/issues/11)
 - [GitHub Issue #12](https://github.com/laraxot/base_fixcity_fila5/issues/12)
+- [GitHub Issue #11](https://github.com/laraxot/base_ptv_fila5/issues/11)
+- [GitHub Issue #12](https://github.com/laraxot/base_ptv_fila5/issues/12)
 
 ---
 

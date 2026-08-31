@@ -7,6 +7,8 @@ updated: 2026-07-14
 qmd: "component-registration registrazione dei componenti nei moduli"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+issues: ["https://github.com/provtv/<nome repository>/issues/124"]
+discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
   - "./filament-pages-structure.md"
   - "./filament-resources-structure.md"

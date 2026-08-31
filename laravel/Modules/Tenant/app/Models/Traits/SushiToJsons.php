@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Modules\Tenant\Models\Traits;
 
 use Exception;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 use Modules\Tenant\Actions\Config\GetTenantFilePathAction;
 use ReflectionObject;
@@ -39,12 +40,7 @@ trait SushiToJsons
      */
     public function getSushiRows(): array
     {
-        $tbl = $this->getTable();
-        if (! is_string($tbl)) {
-            return [];
-        }
-
-        return $this->collectRowsFromJsonFiles($tbl);
+        return $this->collectRowsFromJsonFiles($this->getTable());
     }
 
     public function getJsonFile(): string
@@ -60,17 +56,17 @@ trait SushiToJsons
 
     protected static function bootSushiToJsons(): void
     {
-        static::creating(static function ($model): void {
+        static::creating(static function (Model $model): void {
             Assert::isInstanceOf($model, static::class);
             self::handleJsonCreating($model);
         });
 
-        static::updating(static function ($model): void {
+        static::updating(static function (Model $model): void {
             Assert::isInstanceOf($model, static::class);
             self::handleJsonUpdating($model);
         });
 
-        static::deleting(static function ($model): void {
+        static::deleting(static function (Model $model): void {
             Assert::isInstanceOf($model, static::class);
             self::handleJsonDeleting($model);
         });
@@ -105,10 +101,7 @@ trait SushiToJsons
      */
     private function collectRowsFromJsonFiles(string $tbl): array
     {
-        $files = File::glob(app(GetTenantFilePathAction::class)->execute('database/content/'.$tbl).'/*.json');
-        if ($files === false) {
-            return [];
-        }
+        $files = File::glob(app(GetTenantFilePathAction::class)->execute('database/content/'.$tbl).'/*.json') ?: [];
 
         /** @var array<int, array<string, mixed>> $rows */
         $rows = [];
@@ -117,7 +110,6 @@ trait SushiToJsons
             if (! is_string($file)) {
                 continue;
             }
-
             $row = $this->mapJsonFileToRow($file);
             if ($row !== null) {
                 $rows[] = $row;

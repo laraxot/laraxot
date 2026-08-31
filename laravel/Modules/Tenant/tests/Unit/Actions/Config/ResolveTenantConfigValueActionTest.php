@@ -9,9 +9,10 @@ use Mockery\MockInterface;
 use Modules\Tenant\Actions\Config\ResolveTenantConfigValueAction;
 use Modules\Tenant\Actions\GetTenantNameAction;
 use Modules\Tenant\Tests\TestCase;
+use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Tenant\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('resolves tenant config value by merging with tenant overrides', function (): void {
     /** @var TestCase $this */
@@ -32,7 +33,7 @@ it('resolves tenant config value by merging with tenant overrides', function ():
 });
 
 it('throws exception for empty config key', function (): void {
-    assertTenantThrows(
+    XotBasePest::assertThrows(
         fn (): mixed => app(ResolveTenantConfigValueAction::class)->execute(''),
         \Exception::class,
     );

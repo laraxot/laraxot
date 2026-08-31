@@ -44,4 +44,5 @@ Best practices per l'ottimizzazione delle performance.
 - [Indice AGENTS](./agents-split-index.md)
 - [website-checklist.md](./website-checklist.md) - Checklist completa
 - [AGENTS.md originale](../../AGENTS.md)
+- [agents.md originale](../../agents.md)
 - [Index principale](./index.md)

@@ -46,6 +46,7 @@ class RecordNotification extends Notification implements ShouldQueue
     {
         return (new MailMessage)
 ->subject('Notifica da Quaeris')
+->subject('Notifica da App')
             ->greeting('Ciao ' . $this->record->name)
             ->line('Contenuto della notifica...')
             ->action('Visualizza', url('/'))

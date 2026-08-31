@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Filament\Resources;
 
+use Filament\Forms\Components\Field;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
@@ -18,6 +19,9 @@ class NotificationTemplateResource extends XotBaseResource
 {
     protected static ?string $model = NotificationTemplate::class;
 
+    /**
+     * @return array<string, Field>
+     */
     #[Override]
     public static function getFormSchema(): array
     {
@@ -67,8 +71,7 @@ class NotificationTemplateResource extends XotBaseResource
                 ->maxSize(5120)
                 ->acceptedFileTypes(['application/pdf', 'image/*'])
                 ->columnSpan(['lg' => 3])
-                ->helperText(__('notify::template.form.attachments.helper')),
-        ];
+                ->helperText(__('notify::template.form.attachments.helper'))];
     }
 
     #[Override]
@@ -76,8 +79,7 @@ class NotificationTemplateResource extends XotBaseResource
     {
         return [
             ...parent::getPages(),
-            'preview' => PreviewNotificationTemplate::route('/{record}/preview'),
-        ];
+            'preview' => PreviewNotificationTemplate::route('/{record}/preview')];
     }
 
     /*

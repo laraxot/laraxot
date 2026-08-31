@@ -290,6 +290,7 @@ foreach ($records as $record) {
 - [Xot - PDF Generation Technical](../../../xot/docs/actions/pdf-content-generation-technical.md)
 - [EMAIL_LAYOUTS_BEST_PRACTICES.md](../mail-templates/email_layouts_best_practices.md)
 - [SPATIE_MAIL_TEMPLATES_STRUCTURE.md](../mail-templates/spatie_mail_templates_structure.md)
+- [SPATIE_MAIL_TEMPLATES_STRUCTURE.md](../mail-templates/spatie-mail-templates-structure.md)
 - [EMAIL_TROUBLESHOOTING.md](./email_troubleshooting.md)
 
 ### File Correlati
