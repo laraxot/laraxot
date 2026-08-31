@@ -25,7 +25,7 @@ use ReflectionMethod;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
 
-uses(TestCase::class)->group('no-xot-db');
+uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
 
 afterEach(function (): void {
     Mockery::close();

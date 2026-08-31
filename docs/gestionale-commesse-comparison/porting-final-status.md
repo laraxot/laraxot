@@ -121,3 +121,51 @@ iniziato).
   (file inesistenti, sostituiti con `import-status.md` reale), aggiunto addendum "Re-verifica dopo revert
   multi-agente" con procedura di verifica per sessioni future.
 - Questo file (`porting-final-status.md`) — creato come nuova fonte unica di verità.
+
+---
+
+# Aggiornamento 2026-08-31 — seconda tranche completata
+
+La prima tranche si era fermata allo snapshot `15f07e80` (2026-07-22). Questa tranche
+copre il delta successivo (~132 commit), i tre moduli mai portati e — soprattutto —
+tutto il codice che nel sorgente viveva in `app/` e non era mai arrivato qui.
+
+Fonte di verità del lavoro: [delta-second-tranche.md](delta-second-tranche.md).
+
+## Cosa è entrato
+
+| Ambito | Esito |
+|---|---|
+| Delta dei moduli già portati (Billing, Bom, HR, Intervention, Email, Vehicle, Document, Compliance, WorkOrder, Quotation) | portato |
+| `TimberBilling` → **Timber** | rinominato (bounded context) |
+| Moduli nuovi: **MetalWork**, **Signage**, **Costing** | creati |
+| `app/Wts` + panel → modulo **Wts** | creato, 205 test |
+| `app/Filament/EnergyBroker` + panel | portato, 22 test |
+| `app/Filament/{Thermo,GivebackPlatform,Dds,AsdSoci}` + panel → 4 moduli | creati, 37 test |
+| `app/Filament/Widgets` (5 widget + trait) | distribuiti nei moduli proprietari |
+| Panel Customer/Supplier | in Platform, 6 test |
+| Delta `Modules/Auth` | assorbito in Wts (era logica del pannello WTS) |
+
+51 pannelli Filament registrati, `php artisan about` pulito.
+
+## Difetti reali trovati dai test (non dal porting)
+
+1. **Il pannello cliente esponeva l'audit log**: `/customer/audit-logs` rispondeva 200
+   a un cliente qualunque, perché `XotBasePanelProvider` scopriva le resource del
+   modulo che ospita il pannello. Nato `$discoverModuleComponents`.
+2. **La legenda del calendario perdeva operatori**: `(int)` su id UUID faceva
+   collassare due operatori in una voce. Intermittente, quindi il rosso compariva a caso.
+3. **`document_media.uploaded_by_user_id` perdeva l'autore**: colonna intera con id
+   UUID; toccava HR, Compliance, EnergyBroker e gli allegati agli interventi.
+
+## Criterio di qualità tenuto
+
+PHPStan a **zero errori su `app/`** per ogni modulo toccato. Sull'intero `Modules` il
+conteggio supera i 1000, ma sono tutti nelle suite di test — stesso profilo nei moduli
+storici mai ripuliti. Elenco del debito residuo in fondo a
+[delta-second-tranche.md](delta-second-tranche.md).
+
+## Multitenant
+
+Non implementato, come da accordo: esiste solo il documento di piano da revisionare
+([multitenant-plan-for-review.md](multitenant-plan-for-review.md)).

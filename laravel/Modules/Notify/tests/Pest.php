@@ -21,7 +21,7 @@ use function Safe\file_get_contents;
 /*
  * Bootstrap Pest — modulo Notify.
  * `pest()->extend(TestCase::class)->in(...)` è la forma **consigliata** (XOT-5.41).
- * Non duplicare `uses(TestCase::class)` nei file: XOR → TestCaseAlreadyInUse.
+ * Non duplicare `uses(\Modules\Notify\Tests\TestCase::class)` nei file: XOR → TestCaseAlreadyInUse.
  * Il divieto storico per method.internalClass è decaduto con pest-plugin-phpstan.
  */
 

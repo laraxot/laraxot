@@ -12,7 +12,7 @@ final class RejectAbsenceRequestAction
 {
     use QueueableAction;
 
-    public function execute(AbsenceRequest $request, int $decidedByUserId, ?CarbonImmutable $decidedAt = null): AbsenceRequest
+    public function execute(AbsenceRequest $request, int|string $decidedByUserId, ?CarbonImmutable $decidedAt = null): AbsenceRequest
     {
         $decidedAt = $decidedAt ?? CarbonImmutable::now();
 

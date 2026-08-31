@@ -7,7 +7,7 @@ namespace Modules\UI\Tests\Unit;
 use Modules\UI\Tests\TestCase;
 use Modules\Xot\Tests\ModuleDeepCoverage;
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 /** @return list{string, string} */
 function uiDeepContext(): array

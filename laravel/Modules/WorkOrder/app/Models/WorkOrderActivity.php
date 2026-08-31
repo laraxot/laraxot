@@ -12,7 +12,7 @@ use Modules\User\Models\User;
 /**
  * @property int $id
  * @property int $work_order_id
- * @property int|null $created_by_user_id
+ * @property string|null $created_by_user_id
  * @property string $type
  * @property string $body
  * @property Carbon|null $occurred_at

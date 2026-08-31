@@ -8,7 +8,7 @@ use Modules\Job\Tests\Fixtures\ScheduleArgumentsProbe;
 use Modules\Job\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Job\Tests\TestCase::class);
 
 describe('ScheduleArguments::getTags()', function (): void {
     test('con stato ad array e withValue scarta le voci senza valore', function (): void {

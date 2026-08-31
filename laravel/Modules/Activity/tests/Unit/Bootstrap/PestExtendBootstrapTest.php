@@ -11,7 +11,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\file_get_contents;
 
-uses(TestCase::class);
+uses(\Modules\Activity\Tests\TestCase::class);
 
 /*
  * Il bootstrap Pest del modulo non lega cartelle a TestCase: ogni file

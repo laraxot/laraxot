@@ -8,7 +8,7 @@ use Modules\UI\Models\Collection;
 use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 describe('Collection Model', function (): void {
     test('it can hydrate a collection with valid data in memory', function (): void {

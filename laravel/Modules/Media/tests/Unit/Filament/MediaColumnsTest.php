@@ -28,7 +28,7 @@ use PHPUnit\Framework\Assert;
  * visitare una classe anonima dichiarata dentro una funzione ed esce in errore.
  */
 
-uses(TestCase::class)->group('no-media-db');
+uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
 
 function mediaColumnRecordWith(?object $media): MediaColumnRecordStub
 {

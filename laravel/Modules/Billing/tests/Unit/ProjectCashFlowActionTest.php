@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-uses(TestCase::class);
+uses(\Modules\Billing\Tests\TestCase::class);
 
 use Modules\Billing\Actions\ProjectCashFlowAction;
 use Modules\Billing\Datas\CashFlowEntry;

@@ -14,7 +14,7 @@ use PHPUnit\Framework\Assert;
  * timecode `HH:MM:SS,mmm`.
  */
 
-uses(TestCase::class)->group('no-media-db');
+uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
 
 test('a non xml extension yields no rows', function (): void {
     $rows = (new ParseSubtitleXmlAction())->execute(__DIR__.'/sottotitoli.srt');

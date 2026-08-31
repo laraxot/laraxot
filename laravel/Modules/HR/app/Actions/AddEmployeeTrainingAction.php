@@ -25,7 +25,7 @@ final class AddEmployeeTrainingAction
         ?string $notes = null,
         ?string $title = null,
         ?string $attachmentPath = null,
-        ?int $uploadedByUserId = null,
+        int|string|null $uploadedByUserId = null,
     ): EmployeeTraining {
         $mediaId = null;
 

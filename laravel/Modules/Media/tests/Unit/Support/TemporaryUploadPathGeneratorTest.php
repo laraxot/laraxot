@@ -9,7 +9,7 @@ use Modules\Media\Support\TemporaryUploadPathGenerator;
 use Modules\Media\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class)->group('no-media-db');
+uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
 
 /**
  * Media non persistito: il generator legge solo `id` e `uuid`, non tocca il database.

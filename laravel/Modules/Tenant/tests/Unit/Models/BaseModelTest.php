@@ -9,7 +9,7 @@ use Modules\Tenant\Models\BaseModel;
 use Modules\Tenant\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Tenant\Tests\TestCase::class);
 
 function makeTenantTestBaseModel(): BaseModel
 {

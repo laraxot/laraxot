@@ -34,7 +34,7 @@ final class OrganizeWhatsAppRequestAction
      * @param  array{customer_name?: string, address?: string, city?: string, problem?: string, scheduled_at?: string}  $data
      * @return array{customer_id: int, work_order_id: int|null, intervention_id: int, customer_created: bool, work_order_created: bool}
      */
-    public function execute(WhatsAppConversation $conversation, array $data, int $userId): array
+    public function execute(WhatsAppConversation $conversation, array $data, int|string $userId): array
     {
         $problem = trim((string) ($data['problem'] ?? ''));
         if ($problem === '') {

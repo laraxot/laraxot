@@ -11,7 +11,7 @@ use PHPUnit\Framework\Assert;
 use function Safe\mkdir;
 use function Safe\realpath;
 
-uses(TestCase::class);
+uses(\Modules\Tenant\Tests\TestCase::class);
 
 it('returns real path when requested public path exists', function (): void {
     $root = sys_get_temp_dir().'/appcov-'.uniqid('', true);

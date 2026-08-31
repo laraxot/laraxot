@@ -18,7 +18,7 @@
     "require-dev": {
         "pestphp/pest-plugin-laravel": "*",
         "pestphp/pest-plugin-phpstan": "^5.2.0",
-        "phpstan/extension-installer": "*"
+        "phpstan/extension-installer": "^1.4.3"
     },
     "autoload": {
         "psr-4": {
@@ -103,6 +103,17 @@
             "include": [
                 "Modules/*/composer.json"
             ]
+        },
+        "phpstan/extension-installer": {
+            "ignore": [
+                "larastan/larastan",
+                "nesbot/carbon",
+                "thecodingmachine/phpstan-safe-rule",
+                "pestphp/pest",
+                "composer/pcre",
+                "phpstan/phpstan-deprecation-rules",
+                "tomasvotruba/type-coverage"
+            ]
         }
     },
     "config": {
@@ -115,7 +126,8 @@
             "php-http/discovery": true,
             "wikimedia/composer-merge-plugin": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "codewithkyrian/transformers-libsloader": true
+            "codewithkyrian/transformers-libsloader": true,
+            "phpstan/extension-installer": true
         }
     },
     "minimum-stability": "dev",

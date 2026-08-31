@@ -12,7 +12,7 @@ use Modules\UI\Providers\UIServiceProvider;
 use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 describe('UI coverage boost — Enums', function (): void {
     test('FieldTypeEnum form schema exposes all cases', function (): void {

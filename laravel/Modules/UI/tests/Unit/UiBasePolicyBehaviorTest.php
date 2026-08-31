@@ -28,7 +28,7 @@ if (! function_exists('expectMethod')) {
     }
 }
 
-uses(TestCase::class)->group('no-ui-db');
+uses(\Modules\UI\Tests\TestCase::class)->group('no-ui-db');
 
 /**
  * @param  list<string>  $roles

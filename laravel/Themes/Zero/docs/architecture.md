@@ -1,4 +1,33 @@
 ---
+title: "Zero Theme Architecture"
+type: architecture
+tags: [theme, architecture, zero]
+created: 2026-08-04
+updated: 2026-08-04
+---
+# Zero Theme — Architecture
+
+## Purpose
+Zero theme architecture and design patterns for Laraxot PTVX.
+
+## Core Components
+
+**Views:**
+- Blade templates for base layouts
+- Component-based structure
+
+**Assets:**
+- Vite build pipeline
+- Tailwind CSS compilation
+
+**Providers:**
+- ThemeServiceProvider registration
+
+## Quality Gates
+- Build passes without errors
+- Components render correctly
+- Performance optimized
+---
 title: "Architettura del Tema Zero"
 type: guide
 tags: ['filament', 'laravel', 'charts', 'testing']
@@ -268,3 +297,51 @@ public function test_login_widget_validation()
 - [Documentazione Layout](./layouts.md)
 - [Best Practices Filament](../Cms/docs/frontoffice/filament-auth.md)
 - [Architettura Widget](../User/docs/widgets_structure.md) 
+
+---
+
+<!-- Merged from ARCHITECTURE.md, which collided with this file on case-insensitive filesystems. -->
+
+---
+title: "Zero Theme Architecture"
+type: architecture
+tags: [theme, architecture, zero, frontend]
+created: 2026-08-04
+updated: 2026-08-04
+---
+# Zero Theme — Architecture
+
+## Purpose
+Base Laravel theme (skeleton/boostrap)
+
+## Core Components
+
+**Views:**
+- Blade templates for Zero-specific layouts
+- Component-based structure
+- Filament integration patterns
+
+**Assets:**
+- Vite-based build pipeline
+- CSS/JS compilation with Tailwind
+
+**Providers:**
+- `ZeroThemeServiceProvider` — Theme registration
+- View namespace configuration
+
+## Design Decisions
+
+| Decision | Rationale |
+|----------|-----------|
+| Blade templates | Laravel-native, component-friendly |
+| Tailwind utility-first | Rapid, consistent styling |
+| Vite bundler | Fast HMR, optimized builds |
+
+## Integration Points
+**Depends On:** Laravel, Blade, Tailwind CSS, Vite
+**Active Theme:** Applied system-wide or tenant-specific
+
+## Quality Gates
+- **Build**: npm run build passes
+- **Lint**: Tailwind/Pug linter checks
+- **Preview**: Theme renders correctly in browser

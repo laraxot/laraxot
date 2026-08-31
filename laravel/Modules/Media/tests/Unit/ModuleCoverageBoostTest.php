@@ -12,7 +12,7 @@ use ReflectionClass;
 
 use function Safe\glob;
 
-uses(TestCase::class)->group('no-media-db');
+uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
 
 /**
  * @return list<class-string>

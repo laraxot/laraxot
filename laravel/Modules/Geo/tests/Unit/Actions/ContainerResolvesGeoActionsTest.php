@@ -19,7 +19,7 @@ use PHPUnit\Framework\Assert;
  * comodita': verificava una cosa sola, che il container sapesse costruire i
  * punti d'ingresso del modulo, ed e' quella che vive ancora qui.
  *
- * Aveva anche un difetto suo: `uses(TestCase::class)` compariva **prima** delle
+ * Aveva anche un difetto suo: `uses(\Modules\Geo\Tests\TestCase::class)` compariva **prima** delle
  * dichiarazioni `use`, quindi `TestCase` si risolveva nel namespace del file e
  * non nell'import. In PHP l'import e' di file ma la risoluzione dei nomi segue
  * l'ordine: scrivere `use` dopo l'uso non lo copre.

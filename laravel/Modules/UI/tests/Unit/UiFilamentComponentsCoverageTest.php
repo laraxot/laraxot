@@ -37,7 +37,7 @@ if (! function_exists('expectMethod')) {
     }
 }
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 afterEach(function (): void {
     Mockery::close();

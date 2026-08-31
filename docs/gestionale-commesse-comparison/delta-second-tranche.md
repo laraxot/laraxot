@@ -369,11 +369,59 @@ Quattro cose imparate qui, oltre a quelle già in elenco:
     lo stub nascondeva l'API reale e faceva sbagliare l'analisi statica in un altro
     modulo. Rimosso.
 
+## Checkpoint 2026-08-31 — Fase 3 completa
+
+Portato tutto il codice che nel sorgente viveva in `app/` e non era mai arrivato qui.
+
+| Cosa | Dove | Test |
+|---|---|---|
+| `app/Wts` + `app/Filament/Wts` + panel | nuovo modulo **Wts** | 205 |
+| `app/Filament/EnergyBroker` + panel | **EnergyBroker** (pannello `/energy-broker`) | 22 |
+| `app/Filament/{Thermo,GivebackPlatform,Dds,AsdSoci}` + panel | 4 moduli nuovi | 37 |
+| `app/Filament/Widgets` (5 widget + trait) | Platform, Intervention, WorkOrder, Quotation | 5 |
+| panel Customer/Supplier | **Platform** | 6 |
+
+Due difetti veri trovati dai test scritti per l'occasione, entrambi invisibili a
+occhio:
+
+- **Il pannello cliente esponeva l'audit log.** `XotBasePanelProvider` scopre le
+  resource del modulo che ospita il pannello, e Platform contiene `AuditLogResource`:
+  `/customer/audit-logs` rispondeva 200 a un cliente qualunque. Il gate della resource
+  non poteva chiuderlo senza chiudere anche commesse e fatture. Nato
+  `$discoverModuleComponents`, spento sui pannelli esterni.
+- **La legenda del calendario perdeva operatori.** `(int)` su un id UUID: due
+  operatori diversi collassavano nella stessa voce. Intermittente — dipende da come
+  inizia l'UUID — quindi il test rosso compariva a caso.
+
+Altre lezioni, oltre alle dieci gia' in elenco:
+
+11. **Un file di lingua generato non e' un file di lingua tradotto**: il generatore
+    riempie le chiavi mancanti col nome della chiave, e in pagina si legge
+    `export_xls`. Vanno tradotti prima del commit, non "poi".
+12. **Le migrazioni delle colonne autore**: `foreignId` verso `users.id` non regge un
+    id UUID. Servono `string(36)`, in ogni modulo, comprese quelle condivise
+    (`document_media.uploaded_by_user_id` perdeva chi aveva caricato il file).
+
 ### Stato del piano
 
 - **Fase 1** (delta moduli portati): **completa** — Auth→User chiuso insieme a Wts.
-- **Fase 2** (moduli nuovi): completa — MetalWork, Signage, Costing.
+- **Fase 2** (moduli nuovi): **completa** — MetalWork, Signage, Costing.
+- **Fase 3** (codice `app/` → moduli): **completa**.
 - **Fase 4** (gap): Compliance, EnergyBroker, PublicProcurement hanno PHPStan pulito
   e test verdi; testsuite di tutti i moduli aggiunte a `phpunit.xml`.
-- **Fase 3** (codice `app/` → moduli): Wts **fatto**; restano Thermo, Giveback, Dds,
-  AsdSoci, EnergyBroker Filament, panel Customer/Supplier.
+- **Fase 5** (validazione finale): da fare.
+
+### Debito registrato
+
+- Quotation: 14 test media rossi (Spatie vs modello Media custom), preesistenti.
+- Xot: 82 test rossi sulla connessione `user` verso MySQL — verificato che sono
+  precedenti a questa tranche (stesso conteggio con il provider di prima).
+- Intervention: 3 punti che troncano ancora l'id utente, elencati nel suo
+  `import-status.md`; il primo passo e' allargare `StoreSignatureForModelAction`.
+- `CanvasPad` sta in `app/Filament/Forms/Components` invece che nel modulo UI.
+- **PHPStan sui test**: `phpstan analyse Modules` supera i 1000 errori, ma sono tutti
+  nelle suite di test, mai nel codice di produzione. Il profilo e' identico nei moduli
+  storici mai ripuliti (Notify 18, Intervention 7, Activity 6) e nei nuovi
+  (Signage, MetalWork): accesso nullable su `->first()` e tipi Pest/Livewire che
+  PHPStan non risolve. Ogni modulo toccato in questa tranche e' a **zero errori su
+  `app/`**, che e' il criterio tenuto per tutta la migrazione.

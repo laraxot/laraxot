@@ -88,7 +88,7 @@ use function Safe\rmdir;
 use function Safe\touch;
 use function Safe\unlink;
 
-uses(TestCase::class);
+uses(\Modules\Lang\Tests\TestCase::class);
 
 /**
  * @param  list<string>  $permissions

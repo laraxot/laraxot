@@ -91,8 +91,9 @@ class WorkHoursBoardWidget extends XotBaseSchemaWidget
      */
     public function loadWidgetData(): void
     {
-        /** @var int $userId */
-        $userId = (int) (Auth::id() ?? 0);
+        // L'id utente e' un UUID: il cast a int lo azzererebbe e il widget
+        // mostrerebbe le ore di nessuno.
+        $userId = (string) (Auth::id() ?? '');
 
         // 1. Dati base timbrature (WorkHour-based Action)
         $baseData = app(BuildWorkHoursForRangeAction::class)->execute($userId, $this->weekStart, $this->weekEnd);
@@ -244,8 +245,9 @@ class WorkHoursBoardWidget extends XotBaseSchemaWidget
      */
     public function exportData(): void
     {
-        /** @var int $userId */
-        $userId = (int) (Auth::id() ?? 0);
+        // L'id utente e' un UUID: il cast a int lo azzererebbe e il widget
+        // mostrerebbe le ore di nessuno.
+        $userId = (string) (Auth::id() ?? '');
 
         app(ExportTimeDataAction::class)
             ->onQueue('exports')

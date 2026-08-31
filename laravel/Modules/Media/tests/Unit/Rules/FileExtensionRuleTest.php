@@ -10,7 +10,7 @@ use Modules\Media\Rules\FileExtensionRule;
 use Modules\Media\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class)->group('no-media-db');
+uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
 
 /**
  * Raccoglie i messaggi passati alla closure `$fail` di una ValidationRule.

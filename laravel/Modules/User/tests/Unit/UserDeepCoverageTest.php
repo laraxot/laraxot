@@ -7,7 +7,7 @@ namespace Modules\User\Tests\Unit;
 use Modules\User\Tests\TestCase;
 use Modules\Xot\Tests\ModuleDeepCoverage;
 
-uses(TestCase::class)->group('no-user-db');
+uses(\Modules\User\Tests\TestCase::class)->group('no-user-db');
 
 /** @return array{string, string} */
 /** @return list{string, string} */

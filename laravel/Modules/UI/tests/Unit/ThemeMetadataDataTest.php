@@ -8,7 +8,7 @@ use Modules\UI\Datas\ThemeMetadataData;
 use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 it('espone i colori passati al costruttore', function (): void {
     $data = new ThemeMetadataData('#112233', '#445566');

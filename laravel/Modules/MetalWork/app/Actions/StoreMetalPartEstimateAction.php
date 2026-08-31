@@ -29,7 +29,7 @@ final class StoreMetalPartEstimateAction
         ?MetalDrawing $drawing = null,
         ?MetalRawMaterial $material = null,
         array $inputs = [],
-        ?int $userId = null,
+        int|string|null $userId = null,
     ): MetalPartEstimate {
         return DB::transaction(function () use ($costing, $drawing, $material, $inputs, $userId): MetalPartEstimate {
             $estimate = MetalPartEstimate::query()->create([

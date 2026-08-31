@@ -10,7 +10,7 @@ use PHPUnit\Framework\Assert;
 use ProtoneMedia\LaravelFFMpeg\Exporters\MediaExporter;
 use RuntimeException;
 
-uses(TestCase::class)->group('no-media-db');
+uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
 
 describe('MediaExporterResolver', function (): void {
     it('returns the value unchanged when it is already a MediaExporter', function (): void {

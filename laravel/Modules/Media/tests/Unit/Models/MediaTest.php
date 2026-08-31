@@ -11,7 +11,7 @@ use Modules\Xot\Actions\Cast\SafeIntCastAction;
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Media\Tests\TestCase::class);
 
 /**
  * @param  array<string, mixed>  $attributes

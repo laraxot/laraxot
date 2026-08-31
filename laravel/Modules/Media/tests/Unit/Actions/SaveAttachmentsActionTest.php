@@ -14,7 +14,7 @@ use Modules\Media\Tests\TestCase;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\MediaCollections\FileAdder;
 
-uses(TestCase::class)->group('no-media-db');
+uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
 
 beforeEach(function (): void {
     Storage::fake('attachments');

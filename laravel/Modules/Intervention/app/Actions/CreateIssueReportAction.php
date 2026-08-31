@@ -13,7 +13,7 @@ final class CreateIssueReportAction
 {
     use QueueableAction;
 
-    public function execute(Intervention $intervention, int $createdByUserId, string $body, ?CarbonImmutable $createdAt = null): IssueReport
+    public function execute(Intervention $intervention, int|string $createdByUserId, string $body, ?CarbonImmutable $createdAt = null): IssueReport
     {
         $createdAt = $createdAt ?? CarbonImmutable::now();
 

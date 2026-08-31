@@ -20,7 +20,7 @@ use Modules\Xot\Datas\XotData;
 use PHPUnit\Framework\Assert;
 use Spatie\Permission\Models\Role;
 
-uses(TestCase::class)->group('no-user-db');
+uses(\Modules\User\Tests\TestCase::class)->group('no-user-db');
 
 afterEach(function (): void {
     Mockery::close();

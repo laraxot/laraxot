@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-uses(TestCase::class);
+uses(\Modules\Wts\Tests\TestCase::class);
 
 use Illuminate\Support\Collection;
 use Livewire\Livewire;

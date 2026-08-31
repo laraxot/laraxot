@@ -14,7 +14,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property int|null $boiler_id
  * @property string $control_type
  * @property CarbonInterface $performed_on
- * @property int|null $performed_by_user_id
+ * @property string|null $performed_by_user_id
  * @property int|null $intervention_id
  * @property string|null $rcee_type
  * @property string|null $outcome

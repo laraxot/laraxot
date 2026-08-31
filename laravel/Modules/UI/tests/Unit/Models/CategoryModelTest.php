@@ -8,7 +8,7 @@ use Modules\UI\Models\Category;
 use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 describe('Category Model', function (): void {
     test('it can hydrate a category with valid data in memory', function (): void {

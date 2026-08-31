@@ -11,7 +11,7 @@ use ReflectionClass;
 
 use function Safe\glob;
 
-uses(TestCase::class)->group('no-xot-db');
+uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
 
 /**
  * @return list<class-string>

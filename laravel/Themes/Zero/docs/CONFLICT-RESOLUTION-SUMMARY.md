@@ -6,6 +6,8 @@ created: 2026-07-14
 updated: 2026-07-14
 qmd: "riepilogo risoluzione conflitti git - filament 4"
 related:
+  - "./00-index.md"
+
   - "./00-INDEX.md"
   - "./00-index.md"
 ---

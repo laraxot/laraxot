@@ -23,7 +23,9 @@ return new class() extends XotBaseMigration
         $this->tableCreate(function (Blueprint $table): void {
             $table->id();
             $table->foreignId('refrigerant_circuit_id')->constrained('refrigerant_circuits')->cascadeOnDelete();
-            $table->foreignId('performed_by_user_id')->nullable()->constrained('users')->nullOnDelete();
+            // L'id utente e' un UUID di 36 caratteri: una colonna intera lo troncherebbe
+            // a 0, perdendo in silenzio chi ha eseguito l'operazione.
+            $table->string('performed_by_user_id', 36)->nullable();
             $table->foreignId('intervention_id')->nullable()->constrained('interventions')->nullOnDelete();
 
             $table->date('performed_on');

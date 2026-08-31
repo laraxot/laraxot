@@ -10,7 +10,7 @@ use Modules\User\Tests\TestCase;
 use Modules\Xot\Tests\ModuleRemainingCoverage;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class)->group('no-user-db');
+uses(\Modules\User\Tests\TestCase::class)->group('no-user-db');
 
 afterEach(function (): void {
     Mockery::close();

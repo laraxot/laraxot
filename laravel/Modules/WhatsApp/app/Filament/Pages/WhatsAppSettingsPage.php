@@ -55,7 +55,7 @@ final class WhatsAppSettingsPage extends GatedXotBasePage
 
     public int $confidenceThreshold = 80;
 
-    public ?int $defaultApprovalUserId = null;
+    public int|string|null $defaultApprovalUserId = null;
 
     public bool $autoArchiveCertainNotes = false;
 

@@ -34,11 +34,26 @@ Themes/Zero/app/Filament/Resources/{ResourceName}/
 2. Traduzioni automatiche: **no** `->label()`, `->placeholder()`, `->helperText()`.
 3. `getFormSchema()`, `getInfolistSchema()`, `getTableColumns()` → `array<string, ...>`.
 4. **`getPages()`:** non dichiarare se solo `index` / `create` / `edit` con Page `List{plural}`, `Create{name}`, `Edit{name}` — [getpages-redundancy-rule](../../../laravel/Modules/Xot/docs/filament/getpages-redundancy-rule.md).
+4. **`getPages()`:** non dichiarare se solo `index` / `create` / `edit` con Page `List{plural}`, `Create{name}`, `Edit{name}` — [getpages-redundancy-rule](../../Modules/Xot/docs/filament/getpages-redundancy-rule.md).
+4. **`getPages()`:** non dichiarare se solo `index` / `create` / `edit` con Page `List{plural}`, `Create{name}`, `Edit{name}` — [getpages-redundancy-rule](../../../laravel/Modules/Xot/docs/filament/getpages-redundancy-rule.md).
+4. **`getPages()`:** non dichiarare se solo `index` / `create` / `edit` con Page `List{plural}`, `Create{name}`, `Edit{name}` — [getpages-redundancy-rule](../../Modules/Xot/docs/filament/getpages-redundancy-rule.md).
 
 Per il dettaglio infolist vedi anche [filament-infolist-pattern](./filament-infolist-pattern.md).
 
 ### Copia metodi tabella Page → `*Table`
 
+Spostando la config dalla Page alla `*Table`: `getHeaderActions()` → `getTableHeaderActions()`, `$this->getModel()` → FQCN esplicito, `$this->tableFilters ?? []`, niente `#[Override]`. **NON** creare metodi `return parent::getTableXxx();` (passthrough) o `return [];` (vuoto): equivalgono al default `HasXotTable` (DRY+KISS). Dettaglio: [Progressioni](../../../laravel/Modules/Progressioni/docs/filament-resource-schemas-tables.md#copia-metodi-tabella-page--classe-table-override-utili-vs-inutili).
+
+## Riferimenti
+
+- [Xot – Filament v5 hybrid pattern](../../../laravel/Modules/Xot/docs/wiki/concepts/filament-v5-hybrid-pattern.md)
+- [Progressioni – inventario scaffold](../../../laravel/Modules/Progressioni/docs/filament-resource-schemas-tables.md)
+Spostando la config dalla Page alla `*Table`: `getHeaderActions()` → `getTableHeaderActions()`, `$this->getModel()` → FQCN esplicito, `$this->tableFilters ?? []`, niente `#[Override]`. **NON** creare metodi `return parent::getTableXxx();` (passthrough) o `return [];` (vuoto): equivalgono al default `HasXotTable` (DRY+KISS). Dettaglio: [Progressioni](../../Modules/Progressioni/docs/filament-resource-schemas-tables.md#copia-metodi-tabella-page--classe-table-override-utili-vs-inutili).
+
+## Riferimenti
+
+- [Xot – Filament v5 hybrid pattern](../../Modules/Xot/docs/wiki/concepts/filament-v5-hybrid-pattern.md)
+- [Progressioni – inventario scaffold](../../Modules/Progressioni/docs/filament-resource-schemas-tables.md)
 Spostando la config dalla Page alla `*Table`: `getHeaderActions()` → `getTableHeaderActions()`, `$this->getModel()` → FQCN esplicito, `$this->tableFilters ?? []`, niente `#[Override]`. **NON** creare metodi `return parent::getTableXxx();` (passthrough) o `return [];` (vuoto): equivalgono al default `HasXotTable` (DRY+KISS). Dettaglio: [Progressioni](../../../laravel/Modules/Progressioni/docs/filament-resource-schemas-tables.md#copia-metodi-tabella-page--classe-table-override-utili-vs-inutili).
 
 ## Riferimenti

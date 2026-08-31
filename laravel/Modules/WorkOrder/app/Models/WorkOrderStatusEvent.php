@@ -13,7 +13,7 @@ use Modules\User\Models\User;
  * @property int $work_order_id
  * @property int|null $from_status_id
  * @property int $to_status_id
- * @property int|null $changed_by_user_id
+ * @property string|null $changed_by_user_id
  * @property string|null $note
  * @property Carbon|null $changed_at
  * @property Carbon|null $created_at

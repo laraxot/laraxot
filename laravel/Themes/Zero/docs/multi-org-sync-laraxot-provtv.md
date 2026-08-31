@@ -49,6 +49,11 @@ Niente reset/squash/force per aggirare LFS.
 Stesso pattern dual-remote (`laraxot` + `provtv`) applicato a `laravel/Modules/UI`:
 
 1. Shallow / unpack → deepen o `git push --no-thin`
+3. Tip allineato `b874935` su entrambi i remote
+
+Confine Geo: [geo-boundary.md](../../../Modules/UI/docs/geo-boundary.md)
+
+
 2. LFS GH008 su un org → `git lfs fetch <sibling> --all` poi `git lfs push <target> --all`
 3. Tip allineato `b874935` su entrambi i remote
 

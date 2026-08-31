@@ -16,7 +16,7 @@ use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class)->group('no-user-db');
+uses(\Modules\User\Tests\TestCase::class)->group('no-user-db');
 
 afterEach(function (): void {
     Mockery::close();

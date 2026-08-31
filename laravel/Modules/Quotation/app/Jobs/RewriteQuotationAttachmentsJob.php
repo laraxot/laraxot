@@ -34,7 +34,7 @@ final class RewriteQuotationAttachmentsJob implements ShouldQueue
         public readonly int $sourceId,
         public readonly int $targetId,
         public readonly string $customerName,
-        public readonly ?int $userId = null,
+        public readonly int|string|null $userId = null,
         public readonly ?int $placeholderMediaId = null,
     ) {}
 

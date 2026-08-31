@@ -272,11 +272,15 @@ namespace Themes\Zero\View\Components;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 use Modules\healthcare_app\Models\SurveyPdf;
+use Modules\ModuloEsempio\Models\SurveyPdf;
+use Modules\healthcare_app\Models\SurveyPdf;
 
 /**
  * SurveyCard: Visualizzazione survey card
  * 
  * NOTA: Solo presentazione, nessuna logica business
+ * La logica sta nei moduli healthcare_app
+ * La logica sta nei moduli ModuloEsempio
  * La logica sta nei moduli healthcare_app
  */
 class SurveyCard extends Component
@@ -400,10 +404,14 @@ class SurveyCard extends Component
     @if($showActions)
         <div class="flex justify-end space-x-2">
             <a href="{{ route('filament.healthcare_app::admin.resources.survey-pdfs.view', ['record' => $survey->id]) }}" 
+            <a href="{{ route('filament.ptvx::admin.resources.survey-pdfs.view', ['record' => $survey->id]) }}" 
+            <a href="{{ route('filament.healthcare_app::admin.resources.survey-pdfs.view', ['record' => $survey->id]) }}" 
                class="inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 Visualizza
             </a>
             
+            <a href="{{ route('filament.healthcare_app::admin.resources.survey-pdfs.edit', ['record' => $survey->id]) }}" 
+            <a href="{{ route('filament.ptvx::admin.resources.survey-pdfs.edit', ['record' => $survey->id]) }}" 
             <a href="{{ route('filament.healthcare_app::admin.resources.survey-pdfs.edit', ['record' => $survey->id]) }}" 
                class="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 Modifica

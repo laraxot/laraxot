@@ -44,7 +44,7 @@ function expectMethod(LegacyMockInterface|MockInterface $mock, string $method): 
 
 use function Safe\mkdir;
 
-uses(TestCase::class)->group('no-ui-db');
+uses(\Modules\UI\Tests\TestCase::class)->group('no-ui-db');
 
 describe('UI remaining 100 — enum e form', function (): void {
     test('RadioBadge risolve colori e icone da enum HasColor+HasIcon', function (): void {

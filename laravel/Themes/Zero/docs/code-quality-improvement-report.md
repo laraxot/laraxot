@@ -2,28 +2,36 @@
 title: "Code Quality Improvement Report — Zero"
 type: report
 tags: [code-quality, phpstan, pest, maintainability]
-module: "Zero"
+theme: "Zero"
 created: 2026-07-17
-updated: 2026-07-17
-qmd: "code quality baseline PHPStan Pest strict types Laraxot Zero"
+updated: 2026-07-27
+qmd: "code quality baseline PHPStan Pest strict types Laraxot Zero git remote"
 story: STORY-001
-issues:
-<<<<<<< HEAD
-  - "https://github.com/laraxot/base_techplanner_fila5/issues/46"
-discussions:
-  - "https://github.com/laraxot/base_techplanner_fila5/discussions/47"
-=======
-  - "https://github.com/laraxot/base_workorder_fila5/issues/46"
-discussions:
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/47"
->>>>>>> 8125a85 (Update documentation indices to clarify redundancy and provide updated references. Added notes indicating that several index files are outdated and should refer to the canonical `00-index.md`. Adjusted links in various documents for consistency and accuracy. Enhanced README with additional information about the alternative theme documentation.)
+# GRAVE: issue/discussion del tema — mai base_techplanner / base_workorder / mono.
+# GRAVE: issue/discussion del tema — mai base_ptvx / base_workorder / mono.
+# Resolve: cd laravel/Themes/Zero && git remote -v → laraxot/theme_zero_fila5
+issues: []
+discussions: []
 related:
   - "../../../../docs/stories/STORY-001-code-quality-moduli-temi.md"
+  - "../../../../docs/wiki/memories/module-github-remote-discipline.md"
+module: "Zero"
 ---
 
 # Code Quality Improvement Report — Zero
 
 > Baseline statica riproducibile per orientare il miglioramento. I conteggi sono segnali, non sostituiscono PHPStan, Pest o la review del flusso reale.
+
+
+## GitHub (repo del componente)
+
+```bash
+cd laravel/Themes/Zero && git remote -v
+# atteso: laraxot/theme_zero_fila5
+```
+
+**Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate (`base_techplanner_*` vs `base_workorder_*`). Non scegliere a caso: `git remote -v` nella cartella del modulo/tema.
+**Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate (`base_ptvx_*` vs `base_workorder_*`). Non scegliere a caso: `git remote -v` nella cartella del modulo/tema.
 
 ## Baseline
 
@@ -79,6 +87,8 @@ Rilevazione del 17 luglio 2026 sul working tree locale; esclusi vendor e dipende
 5. **tests/ assente — primo test reale.** Se il componente è caricato in produzione, aggiungere un solo smoke test che risolva provider/entrypoint e renda una view o route rappresentativa. Se è placeholder non usato, rimuovere il componente invece di costruire una suite speculativa.
 
 
+- [x] PHPStan L10 scoped senza errori non giustificati. (Modules 2026-07-27)
+
 - [ ] PHPStan L10 scoped senza errori non giustificati.
 - [ ] Pest scoped verde sui flussi critici.
 - [ ] Nessuna nuova estensione Filament diretta o controller FO.
@@ -87,6 +97,22 @@ Rilevazione del 17 luglio 2026 sul working tree locale; esclusi vendor e dipende
 - [ ] Debito residuo con owner e criterio di rimozione.
 
 ## Criteri di uscita
+
+## Gate PHPStan (2026-07-27)
+
+- `cd laravel && ./vendor/bin/phpstan analyse Modules --memory-limit=-1` → **0 errori**.
+- Themes: solo insieme a Modules — [phpstan-stale-ignore-pattern](../../../../docs/wiki/troubleshooting/phpstan-stale-ignore-pattern.md).
+
+## Verifica GitHub / qualità cross-repo
+
+```bash
+cd laravel/Themes/Zero && git remote -v   # laraxot/theme_zero_fila5
+cd ../../.. && cd laravel && ./vendor/bin/phpstan analyse Modules --memory-limit=-1
+# Themes: usare Modules Themes/Zero insieme — mai Themes da solo
+# (ignore neon unmatched) → docs/wiki/troubleshooting/phpstan-stale-ignore-pattern.md
+```
+
+Gate moduli (2026-07-27): **0 errori** — chat [phpstan-modules-themes-gate](../../../../docs/chat/phpstan-modules-themes-gate.md).
 
 ## Verifica
 

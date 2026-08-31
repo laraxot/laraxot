@@ -27,8 +27,8 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  * @property int $id
  * @property int|null $work_order_id
  * @property int|null $customer_id
- * @property int|null $performed_by_user_id
- * @property int|null $validated_by_user_id
+ * @property string|null $performed_by_user_id
+ * @property string|null $validated_by_user_id
  * @property Carbon|null $scheduled_at
  * @property Carbon|null $started_at
  * @property Carbon|null $ended_at
@@ -114,7 +114,10 @@ final class Intervention extends BaseModel
      */
     public function assignedUsers(): BelongsToMany
     {
-        return $this->belongsToManyX(User::class);
+        // Ordine esplicito per nome: finche' gli id erano interi sequenziali
+        // l'ordine di inserimento reggeva per caso, con gli UUID non piu'. Chi
+        // legge il rapporto si aspetta una lista stabile, non casuale.
+        return $this->belongsToManyX(User::class)->orderBy('users.name');
     }
 
     /** @return BelongsTo<WorkOrder, $this> */

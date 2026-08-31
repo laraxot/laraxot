@@ -13,7 +13,7 @@ use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
 use Webmozart\Assert\Assert as WebmozartAssert;
 
-uses(TestCase::class);
+uses(\Modules\Tenant\Tests\TestCase::class);
 
 beforeEach(function (): void {
     /** @var TestCase $this */

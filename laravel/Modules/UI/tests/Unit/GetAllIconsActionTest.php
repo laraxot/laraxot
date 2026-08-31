@@ -11,7 +11,7 @@ use Modules\UI\Actions\Icon\GetAllIconsAction;
 use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 /**
  * Registra un set di icone vero su una directory temporanea.

@@ -36,6 +36,8 @@ related:
 - [roadmap/theme-customization](./roadmap/theme-customization.md)
 
 ## Root
+- [CHANGELOG](./changelog.md)
+
 - [CHANGELOG](./CHANGELOG.md)
 - [CONFLICT-RESOLUTION-SUMMARY](./CONFLICT-RESOLUTION-SUMMARY.md)
 - [CONFLICT-RESOLUTION-SUMMARY](./CONFLICT_RESOLUTION_SUMMARY.md)
@@ -158,6 +160,11 @@ related:
 - [skills/README](./skills/README.md)
 
 ## Wiki
+- [wiki/SCHEMA](./wiki/schema.md)
+- [wiki/bmad-method](./wiki/bmad-method.md)
+- [wiki/commands/INDEX](./wiki/commands/index.md)
+- [wiki/concepts/INDEX](./wiki/concepts/index.md)
+
 - [wiki/SCHEMA](./wiki/SCHEMA.md)
 - [wiki/bmad-method](./wiki/bmad-method.md)
 - [wiki/commands/INDEX](./wiki/commands/INDEX.md)
@@ -174,6 +181,11 @@ related:
 - [wiki/concepts/theme-zero-operating-focus](./wiki/concepts/theme-zero-operating-focus.md)
 - [wiki/index](./wiki/index.md)
 - [wiki/log](./wiki/log.md)
+- [wiki/memories/INDEX](./wiki/memories/index.md)
+- [wiki/overview](./wiki/overview.md)
+- [wiki/rules/INDEX](./wiki/rules/index.md)
+- [wiki/skills/INDEX](./wiki/skills/index.md)
+
 - [wiki/memories/INDEX](./wiki/memories/INDEX.md)
 - [wiki/overview](./wiki/overview.md)
 - [wiki/rules/INDEX](./wiki/rules/INDEX.md)

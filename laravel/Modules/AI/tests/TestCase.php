@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\AI\Tests;
 
 use Illuminate\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
 use Modules\AI\Providers\AIServiceProvider;
 use Modules\Xot\Tests\XotBaseTestCase;
 
@@ -17,7 +18,7 @@ use Modules\Xot\Tests\XotBaseTestCase;
 abstract class TestCase extends XotBaseTestCase
 {
     /**
-     * @return array<int, class-string<\Illuminate\Support\ServiceProvider>>
+     * @return array<int, class-string<ServiceProvider>>
      */
     protected function getPackageProviders(Application $app): array
     {
@@ -29,6 +30,10 @@ abstract class TestCase extends XotBaseTestCase
 
     protected function setUp(): void
     {
+        // Alcuni test guardano lo schema (es. il tipo delle colonne che indicano
+        // una persona): senza il fixture condiviso le tabelle non esistono.
+        $this->prepareSharedFixcitySqliteForTesting();
+
         parent::setUp();
 
         config([

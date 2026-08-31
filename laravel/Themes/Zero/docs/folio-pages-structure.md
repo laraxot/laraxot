@@ -9,6 +9,7 @@ issues:
   - https://github.com/provtv/base_ptv_fila5/issues/124
 discussions:
   - https://github.com/laraxot/base_fixcity_fila5/discussions/273
+  - https://github.com/laraxot/platform/discussions/273
 related:
   - ./architecture.md
   - ./authentication.md
@@ -41,6 +42,11 @@ resources/views/pages/
 ## Provenienza
 
 Studiato (read-only) lo script/canon Fixcity Sixteen; su Zero si applica forward-only lo stesso divieto semantic dirs senza forzare `container0`/`tests`.  
+- progetto corrente/Sixteen (`[container0]`) **non** è presente in questo repo; non forzarlo qui.
+
+## Provenienza
+
+Studiato (read-only) lo script/canon progetto corrente Sixteen; su Zero si applica forward-only lo stesso divieto semantic dirs senza forzare `container0`/`tests`.  
 Git: `git show` / basi sibling — **mai** restore ([git-forward-only](../../../../docs/wiki/rules/git-forward-only.md)).
 
 ## Enforcement

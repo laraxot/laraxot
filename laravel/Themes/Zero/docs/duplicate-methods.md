@@ -6,6 +6,8 @@ created: 2026-07-14
 updated: 2026-07-14
 qmd: "metodi duplicati zero"
 related:
+  - "./00-index.md"
+
   - "./00-INDEX.md"
   - "./00-index.md"
 ---

@@ -11,6 +11,7 @@ use Modules\EnergyBroker\Filament\Pages\EnergyBrokerDashboard;
 use Modules\EnergyBroker\Filament\Pages\EnergyBrokerOfferComparatorPage;
 use Modules\EnergyBroker\Filament\Pages\EnergyBrokerPipelinePage;
 use Modules\User\Database\Factories\UserFactory;
+use Modules\User\Models\User;
 use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;
@@ -23,7 +24,7 @@ use function Pest\Laravel\get;
  */
 uses(\Modules\EnergyBroker\Tests\TestCase::class);
 
-function energyBrokerUser(string $role = 'energy_broker_admin'): object
+function energyBrokerUser(string $role = 'energy_broker_admin'): User
 {
     Role::findOrCreate($role);
     $user = UserFactory::new()->createOne();

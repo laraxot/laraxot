@@ -10,7 +10,7 @@ use Modules\UI\Rules\OpeningHoursRule;
 use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 /**
  * Applica la regola e restituisce i messaggi di errore raccolti.

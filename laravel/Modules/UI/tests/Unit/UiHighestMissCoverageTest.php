@@ -48,7 +48,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 use function Safe\glob;
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 describe('UI highest-miss coverage', function (): void {
     test('table state columns instantiate via make', function (): void {

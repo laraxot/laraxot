@@ -13,7 +13,7 @@ use function Safe\mkdir;
 use function Safe\rmdir;
 use function Safe\unlink;
 
-uses(TestCase::class);
+uses(\Modules\Xot\Tests\TestCase::class);
 
 /** @var string|null $arrayTestTempDir */
 $arrayTestTempDir = null;

@@ -38,7 +38,9 @@ return new class() extends XotBaseMigration
             $table->json('layers')->nullable();
             $table->json('notes')->nullable();
             $table->json('raw_extraction')->nullable();
-            $table->foreignId('created_by_user_id')->nullable()->constrained('users')->nullOnDelete();
+            // L'id utente e' un UUID di 36 caratteri: una colonna intera lo troncherebbe
+            // a 0, perdendo in silenzio chi ha eseguito l'operazione.
+            $table->string('created_by_user_id', 36)->nullable();
             $table->string('artwork_path')->nullable();
         });
 

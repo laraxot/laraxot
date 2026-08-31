@@ -19,7 +19,7 @@ final class AiAssistantChatHistory implements ChatHistoryInterface
 
     public function __construct(
         private readonly AiThread $thread,
-        private readonly int $currentUserId,
+        private readonly int|string $currentUserId,
     ) {
         $this->loadFromDatabase();
     }

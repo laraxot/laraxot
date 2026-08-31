@@ -8,6 +8,9 @@ updated: 2026-06-15
 related:
   - ../../../One/docs/wiki/concepts/php-method-name-homonyms-theme-impact.md
   - ../../../../../docs/wiki/analysis/method-name-homonym-census.md
+  - ../../../../../../docs/wiki/analysis/method-name-homonym-census.md
+  - ../../../../../docs/wiki/analysis/method-name-homonym-census.md
+  - ../../../../../../docs/wiki/analysis/method-name-homonym-census.md
 ---
 
 # Omonimi metodi PHP — Theme Zero
@@ -15,3 +18,6 @@ related:
 Stesso contratto di [Theme One — impatto temi](../../../One/docs/wiki/concepts/php-method-name-homonyms-theme-impact.md).
 
 Censimento canon: [method-name-homonym-census](../../../../../docs/wiki/analysis/method-name-homonym-census.md).
+Censimento canon: [method-name-homonym-census](../../../../../../docs/wiki/analysis/method-name-homonym-census.md).
+Censimento canon: [method-name-homonym-census](../../../../../docs/wiki/analysis/method-name-homonym-census.md).
+Censimento canon: [method-name-homonym-census](../../../../../../docs/wiki/analysis/method-name-homonym-census.md).

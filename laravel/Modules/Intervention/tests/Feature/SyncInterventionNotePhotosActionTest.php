@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Modules\Intervention\Tests\TestCase;
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -53,19 +53,19 @@ it('syncs only intervention note photos without touching other intervention phot
     app(AttachPhotosToInterventionAction::class)->execute(
         intervention: $intervention,
         paths: [$genericPhotoPath],
-        uploadedByUserId: (int) $user->id,
+        uploadedByUserId: $user->id,
     );
 
     app(SyncInterventionNotePhotosAction::class)->execute(
         intervention: $intervention->refresh(),
         paths: [$notePhotoPathOne],
-        uploadedByUserId: (int) $user->id,
+        uploadedByUserId: $user->id,
     );
 
     app(SyncInterventionNotePhotosAction::class)->execute(
         intervention: $intervention->refresh(),
         paths: [$notePhotoPathTwo],
-        uploadedByUserId: (int) $user->id,
+        uploadedByUserId: $user->id,
     );
 
     $intervention->refresh();

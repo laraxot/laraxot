@@ -17,7 +17,7 @@ use Modules\User\Tests\Unit\Models\Fixtures\TestBaseUser;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
 
-uses(TestCase::class)->group('no-user-db');
+uses(\Modules\User\Tests\TestCase::class)->group('no-user-db');
 
 afterEach(function (): void {
     Mockery::close();

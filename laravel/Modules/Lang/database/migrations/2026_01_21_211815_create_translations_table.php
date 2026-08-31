@@ -6,7 +6,8 @@ use Illuminate\Database\Schema\Blueprint;
 use Modules\Lang\Models\Translation;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-return new class extends XotBaseMigration {
+return new class() extends XotBaseMigration
+{
     protected ?string $model_class = Translation::class;
 
     public function up(): void
@@ -21,7 +22,9 @@ return new class extends XotBaseMigration {
             $table->string('item')->nullable();
             $table->string('key')->nullable()->index();
             $table->string('locale')->nullable()->index();
-            $table->unsignedBigInteger('user_id')->nullable()->index();
+            // L'id utente e' un UUID di 36 caratteri: una colonna intera lo troncherebbe
+            // a 0, legando la riga all'utente sbagliato o a nessuno.
+            $table->string('user_id', 36)->nullable()->index();
         });
 
         // -- UPDATE --

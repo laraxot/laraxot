@@ -60,7 +60,7 @@ final class PublicInterventionReportController extends Controller
                 dataUrl: $dataUrl,
                 signableType: Intervention::class,
                 signableId: (int) $intervention->id,
-                userId: (int) $intervention->performed_by_user_id,
+                userId: (string) $intervention->performed_by_user_id,
                 payload: ['source' => 'public_report', 'signed_by' => 'customer'],
             );
         } catch (RuntimeException) {

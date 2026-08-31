@@ -381,6 +381,10 @@ When working with the Zero theme, you'll commonly encounter models from these mo
 - `Modules\healthcare_app\Models\Survey` - Surveys
 - `Modules\healthcare_app\Models\Question` - Survey questions
 - `Modules\healthcare_app\Models\SurveyPdf` - PDF exports
+### ModuloEsempio Module
+- `Modules\ModuloEsempio\Models\Survey` - Surveys
+- `Modules\ModuloEsempio\Models\Question` - Survey questions
+- `Modules\ModuloEsempio\Models\SurveyPdf` - PDF exports
 
 ### Other Modules
 - `Modules\Geo\Models\Place` - Geographic data
@@ -590,6 +594,21 @@ When working with data in theme views:
 - [Theme Architecture](./architecture.md)
 - [Widget Structure (User Module)](../../../laravel/Modules/User/docs/widgets_structure.md)
 - [Filament Authentication Best Practices](../../../laravel/Modules/Cms/docs/frontoffice/filament-auth.md)
+- [Model Inheritance Rules (User Module)](../../Modules/User/docs/model-inheritance-rules.md)
+- [DRY/KISS Model Refactoring Analysis](../../Modules/Xot/docs/dry-kiss-model-refactoring.md)
+- [Theme Architecture](./architecture.md)
+- [Widget Structure (User Module)](../../Modules/User/docs/widgets_structure.md)
+- [Filament Authentication Best Practices](../../Modules/Cms/docs/frontoffice/filament-auth.md)
+- [Model Inheritance Rules (User Module)](../../../laravel/Modules/User/docs/model-inheritance-rules.md)
+- [DRY/KISS Model Refactoring Analysis](../../../laravel/Modules/Xot/docs/dry-kiss-model-refactoring-2025-10-15.md)
+- [Theme Architecture](./architecture.md)
+- [Widget Structure (User Module)](../../../laravel/Modules/User/docs/widgets_structure.md)
+- [Filament Authentication Best Practices](../../../laravel/Modules/Cms/docs/frontoffice/filament-auth.md)
+- [Model Inheritance Rules (User Module)](../../Modules/User/docs/model-inheritance-rules.md)
+- [DRY/KISS Model Refactoring Analysis](../../Modules/Xot/docs/dry-kiss-model-refactoring-2025-10-15.md)
+- [Theme Architecture](./architecture.md)
+- [Widget Structure (User Module)](../../Modules/User/docs/widgets_structure.md)
+- [Filament Authentication Best Practices](../../Modules/Cms/docs/frontoffice/filament-auth.md)
 
 ---
 

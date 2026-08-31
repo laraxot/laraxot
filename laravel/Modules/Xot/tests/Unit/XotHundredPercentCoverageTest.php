@@ -29,7 +29,7 @@ use Symfony\Component\HttpFoundation\Response;
 use function Safe\ob_end_clean;
 use function Safe\ob_start;
 
-uses(TestCase::class)->group('no-xot-db');
+uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
 
 afterEach(function (): void {
     Mockery::close();

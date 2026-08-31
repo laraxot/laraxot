@@ -9,7 +9,7 @@ use Modules\Media\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\MediaLibrary\MediaCollections\Models\Media as SpatieMedia;
 
-uses(TestCase::class)->group('no-media-db');
+uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
 
 describe('Media Model', function (): void {
     it('extends SpatieMedia', function (): void {

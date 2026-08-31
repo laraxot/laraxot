@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Modules\Intervention\Tests\TestCase;
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
@@ -89,14 +89,16 @@ it('builds full report data: work-order customer wins, operators, materials, pho
         dataUrl: PUB_TINY_PNG,
         signableType: Intervention::class,
         signableId: (int) $intervention->id,
-        userId: (int) $mario->id,
+        userId: $mario->id,
     );
 
     $data = app(GetInterventionReportPublicDataAction::class)->execute($intervention);
 
     expect($data['id'])->toBe((int) $intervention->id)
         ->and($data['customer'])->toBe('Cliente Commessa')
-        ->and($data['operator'])->toBe('Mario, Luigi')
+        // La lista degli operatori e' ordinata per nome: prima l'ordine dipendeva
+        // dagli id sequenziali, che con gli UUID non esistono piu'.
+        ->and($data['operator'])->toBe('Luigi, Mario')
         ->and($data['scheduled_at'])->toBe('25/05/2026 09:30')
         ->and($data['work_minutes'])->toBe(75)
         ->and($data['outcome_code'])->toBe('completed')

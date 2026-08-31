@@ -427,6 +427,8 @@ $graph->Stroke();
 - **FAQ**: https://jpgraph.net/doc/faq.html
 
 ## 🔄 **Integrazione con healthcare_app**
+## 🔄 **Integrazione con ModuloEsempio**
+## 🔄 **Integrazione con healthcare_app**
 
 ### **Pattern di Integrazione**
 ```php

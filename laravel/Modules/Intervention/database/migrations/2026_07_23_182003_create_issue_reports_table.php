@@ -12,7 +12,9 @@ return new class() extends XotBaseMigration
         $this->tableCreate(static function (Blueprint $table): void {
             $table->id();
             $table->foreignId('intervention_id')->constrained('interventions')->cascadeOnDelete();
-            $table->unsignedBigInteger('created_by_user_id')->nullable()->index();
+            // L'id utente e' un UUID di 36 caratteri: una colonna intera lo troncherebbe
+            // a 0, perdendo in silenzio chi ha eseguito l'operazione.
+            $table->string('created_by_user_id', 36)->nullable()->index();
             $table->text('body');
             $table->index(['intervention_id']);
         });

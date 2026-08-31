@@ -25,7 +25,7 @@ use PHPUnit\Framework\Assert;
  * proposito, sono l'unico punto che tocca il database.
  */
 
-uses(TestCase::class)->group('no-media-db');
+uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
 
 test('the form exposes one component per conversion parameter', function (): void {
     $schema = MediaConvertForm::getFormSchema();

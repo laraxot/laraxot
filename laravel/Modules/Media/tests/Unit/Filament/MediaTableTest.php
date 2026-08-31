@@ -18,7 +18,7 @@ use PHPUnit\Framework\Assert;
  * connessioni.
  */
 
-uses(TestCase::class)->group('no-media-db');
+uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
 
 test('the table exposes the media columns in a stable order', function (): void {
     $columns = (new MediaTable())->getTableColumns();

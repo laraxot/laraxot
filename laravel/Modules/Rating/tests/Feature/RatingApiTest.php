@@ -12,7 +12,7 @@ use function Pest\Laravel\getJson;
 use function Pest\Laravel\postJson;
 use function Pest\Laravel\putJson;
 
-uses(TestCase::class);
+uses(\Modules\Rating\Tests\TestCase::class);
 
 it('can list ratings', function (): void {
     Rating::create([

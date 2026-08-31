@@ -16,7 +16,7 @@ final class AttachPhotosToInterventionAction
      * @param  array<int, string>  $paths
      * @return array<int, Media>
      */
-    public function execute(Intervention $intervention, array $paths, ?int $uploadedByUserId = null): array
+    public function execute(Intervention $intervention, array $paths, int|string|null $uploadedByUserId = null): array
     {
         $created = [];
 

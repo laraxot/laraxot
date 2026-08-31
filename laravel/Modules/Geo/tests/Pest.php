@@ -11,7 +11,7 @@ use Modules\Geo\Tests\TestCase;
 /*
  * Bootstrap Pest — modulo Geo.
  * `pest()->extend(TestCase::class)->in(...)` è la forma **consigliata** (XOT-5.41).
- * Non duplicare `uses(TestCase::class)` nei file: XOR → TestCaseAlreadyInUse.
+ * Non duplicare `uses(\Modules\Geo\Tests\TestCase::class)` nei file: XOR → TestCaseAlreadyInUse.
  */
 
 /**

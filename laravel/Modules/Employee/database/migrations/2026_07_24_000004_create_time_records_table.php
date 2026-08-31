@@ -23,7 +23,9 @@ return new class() extends XotBaseMigration
         $this->tableCreate(function (Blueprint $table): void {
             $table->id();
 
-            $table->unsignedBigInteger('user_id')->index();
+            // L'id utente e' un UUID di 36 caratteri: una colonna intera lo troncherebbe
+            // a 0, legando la riga all'utente sbagliato o a nessuno.
+            $table->string('user_id', 36)->index();
 
             $table->dateTime('timestamp');
 

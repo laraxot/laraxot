@@ -13,7 +13,7 @@ use Modules\User\Models\User;
 /**
  * @property int $id
  * @property int $intervention_id
- * @property int|null $created_by_user_id
+ * @property string|null $created_by_user_id
  * @property string $body
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at

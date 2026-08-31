@@ -7,7 +7,7 @@ namespace Modules\Media\Tests\Unit;
 use Modules\Media\Tests\TestCase;
 use Modules\Xot\Tests\ModuleDeepCoverage;
 
-uses(TestCase::class)->group('no-media-db');
+uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
 
 /**
  * @return array{string, string} radice `app/` del modulo e namespace corrispondente

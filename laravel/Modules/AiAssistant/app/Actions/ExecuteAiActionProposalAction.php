@@ -50,7 +50,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    public function execute(AiActionProposal $proposal, int $confirmedByUserId): array
+    public function execute(AiActionProposal $proposal, int|string $confirmedByUserId): array
     {
         $type = (string) $proposal->type;
         $payload = $proposal->payload;
@@ -137,7 +137,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeStartTimePunch(AiActionProposal $proposal, int $userId): array
+    private function executeStartTimePunch(AiActionProposal $proposal, int|string $userId): array
     {
         $interventionId = (int) ($proposal->payload['intervention_id'] ?? 0);
         if ($interventionId <= 0) {
@@ -160,7 +160,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeStopTimePunch(AiActionProposal $proposal, int $userId): array
+    private function executeStopTimePunch(AiActionProposal $proposal, int|string $userId): array
     {
         $interventionId = (int) ($proposal->payload['intervention_id'] ?? 0);
         if ($interventionId <= 0) {
@@ -183,7 +183,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeUpsertDailyNote(AiActionProposal $proposal, int $userId): array
+    private function executeUpsertDailyNote(AiActionProposal $proposal, int|string $userId): array
     {
         $noteDateRaw = (string) ($proposal->payload['note_date'] ?? '');
         $body = (string) ($proposal->payload['body'] ?? '');
@@ -205,7 +205,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeChangeWorkOrderStatus(AiActionProposal $proposal, int $userId): array
+    private function executeChangeWorkOrderStatus(AiActionProposal $proposal, int|string $userId): array
     {
         $workOrderId = (int) ($proposal->payload['work_order_id'] ?? 0);
         $toStatusCode = (string) ($proposal->payload['to_status_code'] ?? '');
@@ -236,7 +236,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeAppendWorkOrderActivityFromWhatsApp(AiActionProposal $proposal, int $userId): array
+    private function executeAppendWorkOrderActivityFromWhatsApp(AiActionProposal $proposal, int|string $userId): array
     {
         $payload = $this->payloadOf($proposal);
         $workOrderId = $this->payloadInt($payload, 'work_order_id');
@@ -271,7 +271,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeCreateInterventionFromWhatsApp(AiActionProposal $proposal, int $userId): array
+    private function executeCreateInterventionFromWhatsApp(AiActionProposal $proposal, int|string $userId): array
     {
         $payload = $this->payloadOf($proposal);
         $workOrderId = $this->payloadInt($payload, 'work_order_id');
@@ -312,7 +312,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeOrganizeWhatsAppRequest(AiActionProposal $proposal, int $userId): array
+    private function executeOrganizeWhatsAppRequest(AiActionProposal $proposal, int|string $userId): array
     {
         $payload = $this->payloadOf($proposal);
 
@@ -346,7 +346,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeUpdateInterventionScheduleFromWhatsApp(AiActionProposal $proposal, int $userId): array
+    private function executeUpdateInterventionScheduleFromWhatsApp(AiActionProposal $proposal, int|string $userId): array
     {
         $payload = $this->payloadOf($proposal);
         $interventionId = $this->payloadInt($payload, 'intervention_id');
@@ -385,7 +385,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeAppendWorkOrderActivityFromEmail(AiActionProposal $proposal, int $userId): array
+    private function executeAppendWorkOrderActivityFromEmail(AiActionProposal $proposal, int|string $userId): array
     {
         $payload = $this->payloadOf($proposal);
         $workOrderId = $this->payloadInt($payload, 'work_order_id');
@@ -420,7 +420,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeCreateInterventionFromEmail(AiActionProposal $proposal, int $userId): array
+    private function executeCreateInterventionFromEmail(AiActionProposal $proposal, int|string $userId): array
     {
         $payload = $this->payloadOf($proposal);
         $workOrderId = $this->payloadInt($payload, 'work_order_id');
@@ -461,7 +461,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeUpdateInterventionScheduleFromEmail(AiActionProposal $proposal, int $userId): array
+    private function executeUpdateInterventionScheduleFromEmail(AiActionProposal $proposal, int|string $userId): array
     {
         $payload = $this->payloadOf($proposal);
         $interventionId = $this->payloadInt($payload, 'intervention_id');
@@ -500,7 +500,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeFinalizeInterventionReport(AiActionProposal $proposal, int $userId): array
+    private function executeFinalizeInterventionReport(AiActionProposal $proposal, int|string $userId): array
     {
         $interventionId = (int) ($proposal->payload['intervention_id'] ?? 0);
         $travelKm = (int) ($proposal->payload['travel_km'] ?? 0);
@@ -543,7 +543,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeCreateInventoryMovement(AiActionProposal $proposal, int $userId): array
+    private function executeCreateInventoryMovement(AiActionProposal $proposal, int|string $userId): array
     {
         Gate::authorize('create', InventoryMovement::class);
 
@@ -617,7 +617,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeAllocateInventoryToWorkOrder(AiActionProposal $proposal, int $userId): array
+    private function executeAllocateInventoryToWorkOrder(AiActionProposal $proposal, int|string $userId): array
     {
         Gate::authorize('create', InventoryMovement::class);
 
@@ -669,7 +669,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeAllocateInventoryToIntervention(AiActionProposal $proposal, int $userId): array
+    private function executeAllocateInventoryToIntervention(AiActionProposal $proposal, int|string $userId): array
     {
         Gate::authorize('create', InventoryMovement::class);
 
@@ -721,7 +721,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeCreateProductionOrder(AiActionProposal $proposal, int $userId): array
+    private function executeCreateProductionOrder(AiActionProposal $proposal, int|string $userId): array
     {
         Gate::authorize('create', ProductionOrder::class);
 
@@ -754,7 +754,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeAdvanceProductionPhase(AiActionProposal $proposal, int $userId): array
+    private function executeAdvanceProductionPhase(AiActionProposal $proposal, int|string $userId): array
     {
         $phaseId = (int) ($proposal->payload['production_phase_id'] ?? 0);
         $toStatus = (string) ($proposal->payload['to_status'] ?? '');
@@ -889,7 +889,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeCreateComplianceDocument(AiActionProposal $proposal, int $userId): array
+    private function executeCreateComplianceDocument(AiActionProposal $proposal, int|string $userId): array
     {
         $payload = $this->payloadOf($proposal);
 
@@ -942,7 +942,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeCreateWorkOrderChangeOrder(AiActionProposal $proposal, int $userId): array
+    private function executeCreateWorkOrderChangeOrder(AiActionProposal $proposal, int|string $userId): array
     {
         $payload = $this->payloadOf($proposal);
 
@@ -980,7 +980,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeGeneratePosDraft(AiActionProposal $proposal, int $userId): array
+    private function executeGeneratePosDraft(AiActionProposal $proposal, int|string $userId): array
     {
         $payload = $this->payloadOf($proposal);
         $workOrderId = $this->payloadInt($payload, 'work_order_id');
@@ -1006,7 +1006,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeApplyPublicProcurementTenderDraft(AiActionProposal $proposal, int $userId): array
+    private function executeApplyPublicProcurementTenderDraft(AiActionProposal $proposal, int|string $userId): array
     {
         $payload = $this->payloadOf($proposal);
         $draftId = $this->payloadNullableInt($payload, 'draft_id');
@@ -1034,7 +1034,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeCreatePublicProcurementContractFromOpportunity(AiActionProposal $proposal, int $userId): array
+    private function executeCreatePublicProcurementContractFromOpportunity(AiActionProposal $proposal, int|string $userId): array
     {
         $payload = $this->payloadOf($proposal);
         $opportunityId = $this->payloadInt($payload, 'tender_opportunity_id');
@@ -1056,7 +1056,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeImportPublicProcurementPriceItems(AiActionProposal $proposal, int $userId): array
+    private function executeImportPublicProcurementPriceItems(AiActionProposal $proposal, int|string $userId): array
     {
         $payload = $this->payloadOf($proposal);
         $contractId = $this->payloadInt($payload, 'public_procurement_contract_id');
@@ -1107,7 +1107,7 @@ final class ExecuteAiActionProposalAction
     /**
      * @return array<string, mixed>
      */
-    private function executeConfirmEnergyBrokerDocumentImport(AiActionProposal $proposal, int $userId): array
+    private function executeConfirmEnergyBrokerDocumentImport(AiActionProposal $proposal, int|string $userId): array
     {
         $payload = $this->payloadOf($proposal);
         $documentId = $this->payloadInt($payload, 'document_id');
@@ -1307,7 +1307,7 @@ final class ExecuteAiActionProposalAction
      * @param  array<string, mixed>|null  $arguments
      * @param  array<string, mixed>|null  $response
      */
-    private function log(AiActionProposal $proposal, int $userId, string $toolName, ?array $arguments, ?array $response, string $status, ?string $error): void
+    private function log(AiActionProposal $proposal, int|string $userId, string $toolName, ?array $arguments, ?array $response, string $status, ?string $error): void
     {
         AiToolLog::query()->create([
             'ai_thread_id' => $proposal->ai_thread_id,

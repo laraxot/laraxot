@@ -9,7 +9,7 @@ use Modules\Media\Models\MediaConvert;
 use Modules\Media\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class)->group('no-media-db');
+uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
 
 describe('MediaConvert Model', function (): void {
     it('extends BaseModel', function (): void {

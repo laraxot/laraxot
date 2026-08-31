@@ -35,7 +35,7 @@ use ReflectionMethod;
 use function Safe\file_put_contents;
 use function Safe\unlink;
 
-uses(TestCase::class)->group('no-media-db');
+uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
 
 /**
  * Invoca un metodo di configurazione tabellare del modulo e ne verifica il contratto.

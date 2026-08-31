@@ -29,7 +29,7 @@ use Modules\UI\View\Composers\ThemeComposer;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 describe('UI gap closer 100 — Livewire', function (): void {
     test('DarkModeSwitcher mount toggle and render', function (): void {

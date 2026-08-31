@@ -15,7 +15,7 @@ use PHPUnit\Framework\Assert;
  * a chi cattura l'eccezione, quindi il messaggio fa parte del contratto.
  */
 
-uses(TestCase::class);
+uses(\Modules\Media\Tests\TestCase::class);
 
 test('uuidAlreadyExists builds the duplicate upload exception', function (): void {
     $exception = CouldNotAddUpload::uuidAlreadyExists();

@@ -13,7 +13,7 @@ use Modules\UI\Enums\TableLayout;
 use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 // --- CornerPositionEnum ---
 

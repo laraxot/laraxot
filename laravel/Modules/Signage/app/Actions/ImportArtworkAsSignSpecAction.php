@@ -19,7 +19,7 @@ final class ImportArtworkAsSignSpecAction
         private readonly ExtractSignComponentsFromArtworkAction $extract,
     ) {}
 
-    public function execute(string $filePath, ?int $userId = null): SignSpec
+    public function execute(string $filePath, int|string|null $userId = null): SignSpec
     {
         $extraction = $this->extract->execute($filePath);
 
@@ -48,7 +48,7 @@ final class ImportArtworkAsSignSpecAction
     /**
      * @return array<string, mixed>
      */
-    private function specAttributes(ArtworkExtraction $extraction, ?int $userId): array
+    private function specAttributes(ArtworkExtraction $extraction, int|string|null $userId): array
     {
         $tb = $extraction->titleBlock;
         $decoded = $extraction->decodedCode;

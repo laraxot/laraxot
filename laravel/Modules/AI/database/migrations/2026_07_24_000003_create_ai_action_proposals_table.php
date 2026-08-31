@@ -27,7 +27,9 @@ return new class() extends XotBaseMigration
 
             $table->foreignId('ai_thread_id')->constrained('ai_threads')->cascadeOnDelete();
 
-            $table->unsignedBigInteger('proposed_by_user_id')->index();
+            // L'id utente e' un UUID di 36 caratteri: una colonna intera lo troncherebbe
+            // a 0, perdendo in silenzio chi ha eseguito l'operazione.
+            $table->string('proposed_by_user_id', 36)->index();
 
             $table->string('type');
 
@@ -37,7 +39,7 @@ return new class() extends XotBaseMigration
 
             $table->string('status')->default('pending');
 
-            $table->unsignedBigInteger('confirmed_by_user_id')->nullable();
+            $table->string('confirmed_by_user_id', 36)->nullable();
 
             $table->dateTime('confirmed_at')->nullable();
 

@@ -9,5 +9,8 @@ related:
 # second brain local discipline
 
 Stub **DRY** verso wiki modulo **Xot**. Policy: [docs-deduplication](../../../../../docs/wiki/how-to/module-docs-deduplication.md).
+Stub **DRY** verso wiki modulo **Xot**. Policy: [docs-deduplication](../../../../../../docs/wiki/how-to/module-docs-deduplication.md).
+Stub **DRY** verso wiki modulo **Xot**. Policy: [docs-deduplication](../../../../../docs/wiki/how-to/module-docs-deduplication.md).
+Stub **DRY** verso wiki modulo **Xot**. Policy: [docs-deduplication](../../../../../../docs/wiki/how-to/module-docs-deduplication.md).
 
 → [second-brain-local-discipline.md](../../../../../Modules/Xot/docs/wiki/concepts/second-brain-local-discipline.md)

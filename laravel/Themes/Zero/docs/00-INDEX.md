@@ -34,12 +34,18 @@ Zero theme documentation follows the standard theme structure with focus on:
 
 ## Key References
 
+- [Theme Hub](../Barthelemy/docs/00-index.md) - Overview of all themes
+- [Sixteen Theme](../Sixteen/docs/00-index.md) - Primary theme (Design Comuni)
+
 - [Theme Hub](../Barthelemy/docs/00-INDEX.md) - Overview of all themes
 - [Sixteen Theme](../Sixteen/docs/00-INDEX.md) - Primary theme (Design Comuni)
 - [TwentyOne Theme](../TwentyOne/docs/00-INDEX.md) - Prediction market theme
 - [Directory Structure Rules](../Barthelemy/docs/directory-structure-rules.md) - Theme organization
 
 ## Related Modules
+
+- [UI Module](../../Modules/UI/docs/00-index.md) - Shared UI components
+- [Xot Module](../../Modules/Xot/docs/00-index.md) - Core utilities
 
 - [UI Module](../../Modules/UI/docs/00-INDEX.md) - Shared UI components
 - [Xot Module](../../Modules/Xot/docs/00-INDEX.md) - Core utilities

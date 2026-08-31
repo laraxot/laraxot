@@ -10,7 +10,7 @@ use Modules\Tenant\Models\Domain;
 use Modules\Tenant\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+uses(\Modules\Tenant\Tests\TestCase::class);
 
 describe('Domain Model', function (): void {
     test('_domain_model_can_be_instantiated', function (): void {

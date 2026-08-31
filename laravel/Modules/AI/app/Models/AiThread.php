@@ -14,6 +14,17 @@ use Modules\Xot\Models\XotBaseModel;
  *
  * A persisted conversation thread between a user and the AI assistant.
  *
+<<<<<<< .merge_file_YR9CUN
+=======
+ * @property int $id
+ * @property string $public_id
+ * @property string $created_by_user_id
+ * @property string $panel_id
+ * @property Carbon|null $last_message_at
+ * @property array<string, mixed>|null $meta
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+>>>>>>> .merge_file_eulF0T
  * @property-read Collection<int, AiMessage> $messages
  * @property-read int|null $messages_count
  * @property-read Collection<int, AiActionProposal> $proposals

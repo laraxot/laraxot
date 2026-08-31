@@ -21,7 +21,7 @@ final class AddQuotationAttachmentAction
         Quotation $quotation,
         string $path,
         string $disk = 'local',
-        ?int $uploadedByUserId = null,
+        int|string|null $uploadedByUserId = null,
         ?string $title = null,
     ): Media {
         $cleanTitle = $title !== null ? trim($title) : '';

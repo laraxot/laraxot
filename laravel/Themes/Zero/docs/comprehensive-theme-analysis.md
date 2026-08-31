@@ -653,6 +653,8 @@ describe('Accessibility Tests', () => {
 
 ### Examples
 
+```
+
 ```blade
 <!-- Basic usage -->
 <x-button>Click me</x-button>

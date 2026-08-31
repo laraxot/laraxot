@@ -23,8 +23,8 @@ final class StoreSignatureForModelAction
     public function execute(
         string $dataUrl,
         string $signableType,
-        int $signableId,
-        int $userId,
+        int|string $signableId,
+        int|string $userId,
         ?CarbonImmutable $signedAt = null,
         array $payload = [],
     ): Signature {

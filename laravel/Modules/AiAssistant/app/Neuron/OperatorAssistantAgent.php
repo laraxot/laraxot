@@ -42,9 +42,9 @@ final class OperatorAssistantAgent extends Agent
 {
     private ?AiThread $thread = null;
 
-    private ?int $currentUserId = null;
+    private int|string|null $currentUserId = null;
 
-    public function forSession(AiThread $thread, int $currentUserId): static
+    public function forSession(AiThread $thread, int|string $currentUserId): static
     {
         $this->thread = $thread;
         $this->currentUserId = $currentUserId;

@@ -9,7 +9,7 @@ use Filament\Forms\Components\TextInput;
 use Modules\Media\Filament\Resources\MediaConvertResource;
 use Modules\Media\Tests\TestCase;
 
-uses(TestCase::class);
+uses(\Modules\Media\Tests\TestCase::class);
 
 test('get form schema returns expected components', function (): void {
     $form = MediaConvertResource::getFormSchema();

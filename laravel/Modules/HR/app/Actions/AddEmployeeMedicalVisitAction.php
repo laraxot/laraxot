@@ -24,7 +24,7 @@ final class AddEmployeeMedicalVisitAction
         ?string $notes = null,
         ?string $title = null,
         ?string $attachmentPath = null,
-        ?int $uploadedByUserId = null,
+        int|string|null $uploadedByUserId = null,
     ): EmployeeMedicalVisit {
         $mediaId = null;
 

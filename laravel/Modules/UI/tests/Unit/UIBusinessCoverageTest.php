@@ -8,7 +8,7 @@ use Mockery;
 use Modules\UI\Tests\TestCase;
 use Modules\Xot\Tests\ModuleBusinessCoverage;
 
-uses(TestCase::class);
+uses(\Modules\UI\Tests\TestCase::class);
 
 afterEach(function (): void {
     Mockery::close();

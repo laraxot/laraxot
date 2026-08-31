@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Modules\Intervention\Tests\TestCase;
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
 use Illuminate\Support\Facades\Storage;
 use Modules\Intervention\Actions\SyncDailyNotePhotosAction;
@@ -34,7 +34,7 @@ it('syncs daily note photos by creating and removing related media', function ()
     app(SyncDailyNotePhotosAction::class)->execute(
         dailyNote: $dailyNote,
         paths: [$keepPath, $removePath],
-        uploadedByUserId: (int) $user->id,
+        uploadedByUserId: $user->id,
     );
 
     expect($dailyNote->media()->where('kind', 'photo')->count())->toBe(2);
@@ -42,7 +42,7 @@ it('syncs daily note photos by creating and removing related media', function ()
     app(SyncDailyNotePhotosAction::class)->execute(
         dailyNote: $dailyNote->fresh() ?? $dailyNote,
         paths: [$keepPath, $newPath],
-        uploadedByUserId: (int) $user->id,
+        uploadedByUserId: $user->id,
     );
 
     $dailyNote->refresh();

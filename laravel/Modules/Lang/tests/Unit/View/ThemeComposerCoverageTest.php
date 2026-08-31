@@ -9,7 +9,7 @@ use PHPUnit\Framework\Assert;
 use ReflectionMethod;
 use Spatie\LaravelData\DataCollection;
 
-uses(TestCase::class);
+uses(\Modules\Lang\Tests\TestCase::class);
 
 test('ThemeComposer languages usa fallback quando manca config', function (): void {
     config(['laravellocalization' => []]);

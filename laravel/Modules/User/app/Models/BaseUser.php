@@ -143,7 +143,7 @@ abstract class BaseUser extends Authenticatable implements FilamentUser, HasAuth
     }
     use HasUuids;
 
-    /** @phpstan-use HasXotFactory<Factory<static>> */
+    /** @use HasXotFactory<\Modules\User\Database\Factories\UserFactory> */
     use HasXotFactory;
 
     use InteractsWithMedia;

@@ -29,7 +29,7 @@ final class ImportStepDrawingAction
         private readonly BuildDrawingBillOfMaterialsAction $billOfMaterials = new BuildDrawingBillOfMaterialsAction(),
     ) {}
 
-    public function execute(string $path, ?string $storagePath = null, ?int $userId = null): MetalDrawing
+    public function execute(string $path, ?string $storagePath = null, int|string|null $userId = null): MetalDrawing
     {
         $geometry = $this->parser->parse($path);
         $hash = hash_file('sha256', $path);

@@ -36,3 +36,13 @@ When a theme page includes the team switcher or dashboard widgets:
 
 - User module fix note: [../../../laravel/Modules/User/docs/spatie-permission-teams-laravel-13.md](../../../laravel/Modules/User/docs/spatie-permission-teams-laravel-13.md)
 - Xot bridge note: [../../../laravel/Modules/Xot/docs/spatie-permission-team-model-laravel-13.md](../../../laravel/Modules/Xot/docs/spatie-permission-team-model-laravel-13.md)
+- User module fix note: [../../../laravel/Modules/User/docs/spatie-permission-teams-laravel-13.md](../../../laravel/Modules/User/docs/spatie-permission-teams-laravel-13.md)
+- Xot bridge note: [../../../laravel/Modules/Xot/docs/spatie-permission-team-model-laravel-13.md](../../../laravel/Modules/Xot/docs/spatie-permission-team-model-laravel-13.md)
+- User module fix note: [../../Modules/User/docs/spatie-permission-teams-laravel-13.md](../../Modules/User/docs/spatie-permission-teams-laravel-13.md)
+- Xot bridge note: [../../Modules/Xot/docs/spatie-permission-team-model-laravel-13.md](../../Modules/Xot/docs/spatie-permission-team-model-laravel-13.md)
+- User module fix note: [../../../laravel/Modules/User/docs/spatie-permission-teams-laravel-13.md](../../../laravel/Modules/User/docs/spatie-permission-teams-laravel-13.md)
+- Xot bridge note: [../../../laravel/Modules/Xot/docs/spatie-permission-team-model-laravel-13.md](../../../laravel/Modules/Xot/docs/spatie-permission-team-model-laravel-13.md)
+- User module fix note: [../../../laravel/Modules/User/docs/spatie-permission-teams-laravel-13.md](../../../laravel/Modules/User/docs/spatie-permission-teams-laravel-13.md)
+- Xot bridge note: [../../../laravel/Modules/Xot/docs/spatie-permission-team-model-laravel-13.md](../../../laravel/Modules/Xot/docs/spatie-permission-team-model-laravel-13.md)
+- User module fix note: [../../Modules/User/docs/spatie-permission-teams-laravel-13.md](../../Modules/User/docs/spatie-permission-teams-laravel-13.md)
+- Xot bridge note: [../../Modules/Xot/docs/spatie-permission-team-model-laravel-13.md](../../Modules/Xot/docs/spatie-permission-team-model-laravel-13.md)

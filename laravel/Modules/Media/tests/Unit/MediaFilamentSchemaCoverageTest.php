@@ -10,7 +10,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\glob;
 
-uses(TestCase::class)->group('no-media-db');
+uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
 
 /**
  * @return array{string, string} radice `app/` del modulo e namespace corrispondente

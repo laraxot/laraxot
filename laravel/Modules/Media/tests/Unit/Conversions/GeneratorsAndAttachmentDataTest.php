@@ -21,7 +21,7 @@ use PHPUnit\Framework\Assert;
  * non e' codice invocabile. Segnalato, non aggirato.
  */
 
-uses(TestCase::class)->group('no-media-db');
+uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
 
 test('the webm generator declares itself installable and handles mp4 sources', function (): void {
     $generator = new Webm();

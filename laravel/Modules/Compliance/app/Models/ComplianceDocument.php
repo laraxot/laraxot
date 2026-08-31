@@ -31,7 +31,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property int|null $subcontractor_id
  * @property int|null $equipment_id
  * @property int|null $media_id
- * @property int|null $uploaded_by_user_id
+ * @property string|null $uploaded_by_user_id
  * @property string|null $extracted_text
  * @property array<string, mixed>|null $ai_classification
  * @property array<string, mixed>|null $ai_extracted_fields

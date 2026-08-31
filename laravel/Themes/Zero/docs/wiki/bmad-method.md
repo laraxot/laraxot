@@ -6,6 +6,8 @@ created: 2026-07-14
 updated: 2026-07-14
 qmd: "bmad method v63 operativo nel progetto"
 related:
+  - "./schema.md"
+
   - "./SCHEMA.md"
   - "./bmad-method.md"
   - "./log.md"

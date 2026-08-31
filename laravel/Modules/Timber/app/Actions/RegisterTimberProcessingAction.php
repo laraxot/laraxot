@@ -24,7 +24,7 @@ final class RegisterTimberProcessingAction
         array $selectedLotIds,
         array $selectedDerivedMaterialIds,
         string $stepTypeCode,
-        ?int $performedByUserId,
+        int|string|null $performedByUserId,
         ?float $recoverableQuantity,
         string $unitOfMeasure,
         ?string $notes,
