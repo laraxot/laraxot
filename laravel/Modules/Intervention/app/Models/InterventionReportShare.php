@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Intervention\Models;
 
 use Carbon\CarbonImmutable;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Intervention\Database\Factories\InterventionReportShareFactory;
@@ -26,8 +25,6 @@ use Modules\Intervention\Database\Factories\InterventionReportShareFactory;
  */
 final class InterventionReportShare extends BaseModel
 {
-    /** @use HasFactory<InterventionReportShareFactory> */
-    use HasFactory;
 
     protected $table = 'intervention_report_shares';
 

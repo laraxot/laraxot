@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Timber\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
@@ -34,8 +33,6 @@ use Modules\Timber\Support\WoodSpeciesCatalog;
  */
 final class TimberDerivedMaterial extends BaseModel
 {
-    /** @use HasFactory<TimberDerivedMaterialFactory> */
-    use HasFactory;
 
     protected $table = 'timber_derived_materials';
 

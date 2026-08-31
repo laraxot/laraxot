@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Email\Models;
 
 use Modules\User\Models\User;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Contact;
@@ -28,8 +27,6 @@ use Modules\Email\Database\Factories\EmailContactIdentityFactory;
  */
 final class EmailContactIdentity extends BaseModel
 {
-    /** @use HasFactory<EmailContactIdentityFactory> */
-    use HasFactory;
 
     protected $table = 'email_contact_identities';
 

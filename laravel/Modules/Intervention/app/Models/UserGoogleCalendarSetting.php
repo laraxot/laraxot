@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Intervention\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Crypt;
@@ -35,8 +34,6 @@ use Modules\User\Models\User;
  */
 final class UserGoogleCalendarSetting extends BaseModel
 {
-    /** @use HasFactory<UserGoogleCalendarSettingFactory> */
-    use HasFactory;
 
     protected $table = 'user_google_calendar_settings';
 

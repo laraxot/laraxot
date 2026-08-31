@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Signage\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Modules\Signage\Database\Factories\SignSpecFactory;
@@ -46,8 +45,6 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class SignSpec extends XotBaseModel
 {
-    /** @use HasFactory<SignSpecFactory> */
-    use HasFactory;
 
     protected $table = 'sign_specs';
 

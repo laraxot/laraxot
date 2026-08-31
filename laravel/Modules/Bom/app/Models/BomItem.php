@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Bom\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Bom\Database\Factories\BomItemFactory;
 use Modules\Catalog\Models\Product;
@@ -18,8 +17,6 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class BomItem extends XotBaseModel
 {
-    /** @use HasFactory<BomItemFactory> */
-    use HasFactory;
 
     protected $table = 'bom_items';
 

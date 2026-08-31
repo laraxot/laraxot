@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Timber\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Customer;
@@ -25,8 +24,6 @@ use Modules\Timber\Database\Factories\TimberPaymentInstallmentFactory;
  */
 final class TimberPaymentInstallment extends BaseModel
 {
-    /** @use HasFactory<TimberPaymentInstallmentFactory> */
-    use HasFactory;
 
     protected $table = 'timber_payment_installments';
 

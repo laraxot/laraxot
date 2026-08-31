@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Intervention\Database\Factories\TimePunchFactory;
@@ -25,8 +24,6 @@ use Modules\User\Models\User;
  */
 final class TimePunch extends BaseModel
 {
-    /** @use HasFactory<TimePunchFactory> */
-    use HasFactory;
 
     protected $table = 'time_punches';
 

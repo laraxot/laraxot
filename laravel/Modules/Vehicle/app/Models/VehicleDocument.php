@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Vehicle\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Document\Models\Media;
 use Modules\Vehicle\Database\Factories\VehicleDocumentFactory;
@@ -20,8 +19,6 @@ use Modules\Vehicle\Database\Factories\VehicleDocumentFactory;
  */
 final class VehicleDocument extends BaseModel
 {
-    /** @use HasFactory<VehicleDocumentFactory> */
-    use HasFactory;
 
     protected $table = 'vehicle_documents';
 

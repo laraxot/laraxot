@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Signature\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
@@ -27,8 +26,6 @@ use Modules\User\Models\User;
  */
 final class Signature extends BaseModel
 {
-    /** @use HasFactory<SignatureFactory> */
-    use HasFactory;
 
     protected $table = 'signatures';
 

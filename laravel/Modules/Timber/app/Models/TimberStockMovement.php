@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Timber\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Timber\Database\Factories\TimberStockMovementFactory;
@@ -30,8 +29,6 @@ use Modules\User\Models\User;
  */
 final class TimberStockMovement extends BaseModel
 {
-    /** @use HasFactory<TimberStockMovementFactory> */
-    use HasFactory;
 
     protected $table = 'timber_stock_movements';
 

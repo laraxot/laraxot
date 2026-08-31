@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\MetalWork\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Modules\MetalWork\Database\Factories\MetalDrawingFactory;
@@ -36,8 +35,6 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class MetalDrawing extends XotBaseModel
 {
-    /** @use HasFactory<MetalDrawingFactory> */
-    use HasFactory;
 
     protected $table = 'metalwork_drawings';
 

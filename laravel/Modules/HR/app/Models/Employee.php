@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\HR\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -14,8 +13,6 @@ use Modules\Xot\Models\XotBaseModel;
 
 final class Employee extends XotBaseModel
 {
-    /** @use HasFactory<EmployeeFactory> */
-    use HasFactory;
 
     use SoftDeletes;
 

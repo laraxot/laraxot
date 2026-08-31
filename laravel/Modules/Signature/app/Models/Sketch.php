@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Signature\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
@@ -25,8 +24,6 @@ use Modules\User\Models\User;
  */
 final class Sketch extends BaseModel
 {
-    /** @use HasFactory<SketchFactory> */
-    use HasFactory;
 
     protected $table = 'sketches';
 

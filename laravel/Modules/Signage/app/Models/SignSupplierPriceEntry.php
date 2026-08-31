@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Signage\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Signage\Database\Factories\SignSupplierPriceEntryFactory;
@@ -22,8 +21,6 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class SignSupplierPriceEntry extends XotBaseModel
 {
-    /** @use HasFactory<SignSupplierPriceEntryFactory> */
-    use HasFactory;
 
     protected $table = 'sign_supplier_price_entries';
 

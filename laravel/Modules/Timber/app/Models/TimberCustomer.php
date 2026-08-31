@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Timber\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -56,8 +55,6 @@ use Modules\Timber\Database\Factories\TimberCustomerFactory;
  */
 final class TimberCustomer extends BaseModel
 {
-    /** @use HasFactory<TimberCustomerFactory> */
-    use HasFactory;
 
     use SoftDeletes;
 

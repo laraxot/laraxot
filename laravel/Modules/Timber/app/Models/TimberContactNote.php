@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Timber\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
@@ -21,8 +20,6 @@ use Modules\User\Models\User;
  */
 final class TimberContactNote extends BaseModel
 {
-    /** @use HasFactory<TimberContactNoteFactory> */
-    use HasFactory;
 
     protected $table = 'timber_contact_notes';
 

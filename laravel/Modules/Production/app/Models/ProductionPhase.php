@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Production\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Production\Database\Factories\ProductionPhaseFactory;
@@ -25,8 +24,6 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class ProductionPhase extends XotBaseModel
 {
-    /** @use HasFactory<ProductionPhaseFactory> */
-    use HasFactory;
 
     protected $table = 'production_phases';
 

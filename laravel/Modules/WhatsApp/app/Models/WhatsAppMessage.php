@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\WhatsApp\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\AiAssistant\Models\AiActionProposal;
@@ -39,8 +38,6 @@ use Modules\WorkOrder\Models\WorkOrder;
  */
 final class WhatsAppMessage extends BaseModel
 {
-    /** @use HasFactory<WhatsAppMessageFactory> */
-    use HasFactory;
 
     protected $table = 'whatsapp_messages';
 

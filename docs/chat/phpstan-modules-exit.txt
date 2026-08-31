@@ -1,1 +1,2 @@
 EXIT:1
+28558 /var/www/_bases/base_workorder_fila5/docs/chat/phpstan-modules-raw.json

@@ -6,7 +6,6 @@ namespace Modules\Notify\Models;
 
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
@@ -80,8 +79,6 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  */
 class NotifyTheme extends BaseModel
 {
-    /** @use HasFactory<NotifyThemeFactory> */
-    use HasFactory;
 
     /** @var list<string> */
     protected $fillable = [

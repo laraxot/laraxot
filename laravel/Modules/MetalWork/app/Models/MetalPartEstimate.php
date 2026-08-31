@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\MetalWork\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
@@ -36,8 +35,6 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class MetalPartEstimate extends XotBaseModel
 {
-    /** @use HasFactory<MetalPartEstimateFactory> */
-    use HasFactory;
 
     protected $table = 'metalwork_part_estimates';
 

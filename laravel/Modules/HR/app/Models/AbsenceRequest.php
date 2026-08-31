@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\HR\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
@@ -28,8 +27,6 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class AbsenceRequest extends XotBaseModel
 {
-    /** @use HasFactory<AbsenceRequestFactory> */
-    use HasFactory;
 
     use SoftDeletes;
 

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Timber\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Catalog\Models\Product;
 use Modules\Timber\Database\Factories\TimberInvoiceLineFactory;
@@ -25,8 +24,6 @@ use Modules\Timber\Database\Factories\TimberInvoiceLineFactory;
  */
 final class TimberInvoiceLine extends BaseModel
 {
-    /** @use HasFactory<TimberInvoiceLineFactory> */
-    use HasFactory;
 
     protected $table = 'timber_invoice_lines';
 

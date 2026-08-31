@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Signage\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Carbon;
 use Modules\Signage\Database\Factories\SignEstimationRuleFactory;
 use Modules\Xot\Models\XotBaseModel;
@@ -29,8 +28,6 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class SignEstimationRule extends XotBaseModel
 {
-    /** @use HasFactory<SignEstimationRuleFactory> */
-    use HasFactory;
 
     protected $table = 'sign_estimation_rules';
 

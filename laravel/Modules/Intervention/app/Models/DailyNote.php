@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Intervention\Models;
 
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Carbon;
@@ -29,8 +28,6 @@ use Modules\User\Models\User;
  */
 final class DailyNote extends BaseModel
 {
-    /** @use HasFactory<DailyNoteFactory> */
-    use HasFactory;
 
     protected $table = 'daily_notes';
 

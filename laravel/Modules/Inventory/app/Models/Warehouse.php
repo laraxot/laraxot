@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Inventory\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Inventory\Database\Factories\WarehouseFactory;
@@ -20,8 +19,6 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class Warehouse extends XotBaseModel
 {
-    /** @use HasFactory<WarehouseFactory> */
-    use HasFactory;
 
     protected $table = 'warehouses';
 

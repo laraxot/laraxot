@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Timber\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Timber\Database\Factories\TimberPriceListVersionFactory;
@@ -20,8 +19,6 @@ use Modules\Timber\Database\Factories\TimberPriceListVersionFactory;
  */
 final class TimberPriceListVersion extends BaseModel
 {
-    /** @use HasFactory<TimberPriceListVersionFactory> */
-    use HasFactory;
 
     protected $table = 'timber_price_list_versions';
 

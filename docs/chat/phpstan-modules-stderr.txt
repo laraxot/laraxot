@@ -1,9 +1,5 @@
 Note: Using configuration file /var/www/_bases/base_workorder_fila5/laravel/phpstan.neon.
-
-In LarastanStubFilesExtension.php line 25:
-                                                          
-  Undefined constant "Larastan\Larastan\LARAVEL_VERSION"  
-                                                          
-
-analyse [-c|--configuration CONFIGURATION] [-l|--level LEVEL] [--no-progress] [--debug] [-a|--autoload-file AUTOLOAD-FILE] [--error-format ERROR-FORMAT] [-b|--generate-baseline [GENERATE-BASELINE]] [--allow-empty-baseline] [--memory-limit MEMORY-LIMIT] [--xdebug] [--tmp-file TMP-FILE] [--instead-of INSTEAD-OF] [--fix] [--watch] [--pro] [--fail-without-result-cache] [--] [<paths>...]
+⚠️  Result is incomplete because of severe errors. ⚠️
+   Fix these errors first and then re-run PHPStan
+   to get all reported errors.
 

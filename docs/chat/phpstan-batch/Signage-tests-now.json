@@ -1,0 +1,75 @@
+
+   Symfony\Component\ErrorHandler\Error\FatalError 
+
+  Could not check compatibility between Modules\Signage\Models\SignComponent::newFactory(): Modules\Signage\Database\Factories\SignComponentFactory and Modules\Xot\Models\XotBaseModel::newFactory(): Modules\Xot\Models\Traits\TFactory, because class Modules\Xot\Models\Traits\TFactory is not available
+
+  at Modules/Signage/app/Models/SignComponent.php:67
+     63▕     {
+     64▕         return $this->belongsTo(SignPriceListItem::class, 'price_list_item_id');
+     65▕     }
+     66▕ 
+  ➜  67▕     protected static function newFactory(): SignComponentFactory
+     68▕     {
+     69▕         return SignComponentFactory::new();
+     70▕     }
+     71▕ }
+
+
+   Symfony\Component\ErrorHandler\Error\FatalError 
+
+  Could not check compatibility between Modules\Signage\Models\SignComponent::newFactory(): Modules\Signage\Database\Factories\SignComponentFactory and Modules\Xot\Models\XotBaseModel::newFactory(): Modules\Xot\Models\Traits\TFactory, because class Modules\Xot\Models\Traits\TFactory is not available
+
+  at Modules/Signage/app/Models/SignComponent.php:67
+     63▕     {
+     64▕         return $this->belongsTo(SignPriceListItem::class, 'price_list_item_id');
+     65▕     }
+     66▕ 
+  ➜  67▕     protected static function newFactory(): SignComponentFactory
+     68▕     {
+     69▕         return SignComponentFactory::new();
+     70▕     }
+     71▕ }
+
+
+   Whoops\Exception\ErrorException 
+
+  Could not check compatibility between Modules\Signage\Models\SignComponent::newFactory(): Modules\Signage\Database\Factories\SignComponentFactory and Modules\Xot\Models\XotBaseModel::newFactory(): Modules\Xot\Models\Traits\TFactory, because class Modules\Xot\Models\Traits\TFactory is not available
+
+  at Modules/Signage/app/Models/SignComponent.php:67
+     63▕     {
+     64▕         return $this->belongsTo(SignPriceListItem::class, 'price_list_item_id');
+     65▕     }
+     66▕ 
+  ➜  67▕     protected static function newFactory(): SignComponentFactory
+     68▕     {
+     69▕         return SignComponentFactory::new();
+     70▕     }
+     71▕ }
+
+      [2m+1 vendor frames [22m
+
+  2   [internal]:0
+      Whoops\Run::handleShutdown()
+
+
+   Whoops\Exception\ErrorException 
+
+  Could not check compatibility between Modules\Signage\Models\SignComponent::newFactory(): Modules\Signage\Database\Factories\SignComponentFactory and Modules\Xot\Models\XotBaseModel::newFactory(): Modules\Xot\Models\Traits\TFactory, because class Modules\Xot\Models\Traits\TFactory is not available
+
+  at Modules/Signage/app/Models/SignComponent.php:67
+     63▕     {
+     64▕         return $this->belongsTo(SignPriceListItem::class, 'price_list_item_id');
+     65▕     }
+     66▕ 
+  ➜  67▕     protected static function newFactory(): SignComponentFactory
+     68▕     {
+     69▕         return SignComponentFactory::new();
+     70▕     }
+     71▕ }
+
+      [2m+1 vendor frames [22m
+
+  2   [internal]:0
+      Whoops\Run::handleShutdown()
+
+{"totals":{"errors":1,"file_errors":0},"files":{},"errors":["Child process error (exit code 255): PHP Fatal error:  Could not check compatibility between Modules\\Signage\\Models\\SignComponent::newFactory(): Modules\\Signage\\Database\\Factories\\SignComponentFactory and Modules\\Xot\\Models\\XotBaseModel::newFactory(): Modules\\Xot\\Models\\Traits\\TFactory, because class Modules\\Xot\\Models\\Traits\\TFactory is not available in /var/www/_bases/base_workorder_fila5/laravel/Modules/Signage/app/Models/SignComponent.php on line 67\n while running parallel worker"]}

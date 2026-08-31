@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Intervention\Database\Factories\IssueReportFactory;
@@ -24,8 +23,6 @@ use Modules\User\Models\User;
  */
 final class IssueReport extends BaseModel
 {
-    /** @use HasFactory<IssueReportFactory> */
-    use HasFactory;
 
     protected $table = 'issue_reports';
 

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Intervention\Database\Factories\InterventionMaterialLineFactory;
@@ -31,8 +30,6 @@ use Modules\Quotation\Models\QuotationItem;
  */
 final class InterventionMaterialLine extends BaseModel
 {
-    /** @use HasFactory<InterventionMaterialLineFactory> */
-    use HasFactory;
 
     protected $table = 'intervention_material_lines';
 

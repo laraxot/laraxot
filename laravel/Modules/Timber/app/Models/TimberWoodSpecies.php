@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Timber\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Carbon;
 use Modules\Timber\Database\Factories\TimberWoodSpeciesFactory;
 
@@ -19,8 +18,6 @@ use Modules\Timber\Database\Factories\TimberWoodSpeciesFactory;
  */
 final class TimberWoodSpecies extends BaseModel
 {
-    /** @use HasFactory<TimberWoodSpeciesFactory> */
-    use HasFactory;
 
     protected $table = 'timber_wood_species';
 

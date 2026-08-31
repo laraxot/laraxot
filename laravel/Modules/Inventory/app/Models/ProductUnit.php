@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Inventory\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Modules\Catalog\Models\Product;
@@ -13,8 +12,6 @@ use Modules\Xot\Models\XotBaseModel;
 
 final class ProductUnit extends XotBaseModel
 {
-    /** @use HasFactory<ProductUnitFactory> */
-    use HasFactory;
 
     protected $table = 'product_units';
 

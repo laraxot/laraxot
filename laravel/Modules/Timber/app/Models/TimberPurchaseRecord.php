@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Timber\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Carbon;
@@ -38,8 +37,6 @@ use Modules\User\Models\User;
  */
 final class TimberPurchaseRecord extends BaseModel
 {
-    /** @use HasFactory<TimberPurchaseRecordFactory> */
-    use HasFactory;
 
     protected $table = 'timber_purchase_records';
 

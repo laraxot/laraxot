@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Timber\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Carbon;
@@ -26,8 +25,6 @@ use Modules\Timber\Database\Factories\TimberPackagedUnitFactory;
  */
 final class TimberPackagedUnit extends BaseModel
 {
-    /** @use HasFactory<TimberPackagedUnitFactory> */
-    use HasFactory;
 
     protected $table = 'timber_packaged_units';
 

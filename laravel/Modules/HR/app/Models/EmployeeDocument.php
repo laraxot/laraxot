@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\HR\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Document\Models\Media;
@@ -23,8 +22,6 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class EmployeeDocument extends XotBaseModel
 {
-    /** @use HasFactory<EmployeeDocumentFactory> */
-    use HasFactory;
 
     protected $table = 'employee_documents';
 

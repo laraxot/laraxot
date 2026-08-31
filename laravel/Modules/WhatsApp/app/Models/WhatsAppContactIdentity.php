@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\WhatsApp\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Contact;
@@ -29,8 +28,6 @@ use Modules\WhatsApp\Database\Factories\WhatsAppContactIdentityFactory;
  */
 final class WhatsAppContactIdentity extends BaseModel
 {
-    /** @use HasFactory<WhatsAppContactIdentityFactory> */
-    use HasFactory;
 
     protected $table = 'whatsapp_contact_identities';
 

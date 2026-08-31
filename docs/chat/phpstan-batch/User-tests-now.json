@@ -1,0 +1,149 @@
+
+   Symfony\Component\ErrorHandler\Error\FatalError 
+
+  Could not check compatibility between Modules\User\Models\Device::newFactory(): Modules\User\Database\Factories\DeviceFactory and Modules\Xot\Models\XotBaseModel::newFactory(): Modules\Xot\Models\Traits\TFactory, because class Modules\Xot\Models\Traits\TFactory is not available
+
+  at Modules/User/app/Models/Device.php:104
+    100▕ 
+    101▕     /**
+    102▕      * Create a new factory instance for the model, typed for static analysis.
+    103▕      */
+  ➜ 104▕     protected static function newFactory(): DeviceFactory
+    105▕     {
+    106▕         return DeviceFactory::new();
+    107▕     }
+    108▕
+
+
+   Symfony\Component\ErrorHandler\Error\FatalError 
+
+  Could not check compatibility between Modules\User\Models\Device::newFactory(): Modules\User\Database\Factories\DeviceFactory and Modules\Xot\Models\XotBaseModel::newFactory(): Modules\Xot\Models\Traits\TFactory, because class Modules\Xot\Models\Traits\TFactory is not available
+
+  at Modules/User/app/Models/Device.php:104
+    100▕ 
+    101▕     /**
+    102▕      * Create a new factory instance for the model, typed for static analysis.
+    103▕      */
+  ➜ 104▕     protected static function newFactory(): DeviceFactory
+    105▕     {
+    106▕         return DeviceFactory::new();
+    107▕     }
+    108▕
+
+
+   Whoops\Exception\ErrorException 
+
+  Could not check compatibility between Modules\User\Models\Device::newFactory(): Modules\User\Database\Factories\DeviceFactory and Modules\Xot\Models\XotBaseModel::newFactory(): Modules\Xot\Models\Traits\TFactory, because class Modules\Xot\Models\Traits\TFactory is not available
+
+  at Modules/User/app/Models/Device.php:104
+    100▕ 
+    101▕     /**
+    102▕      * Create a new factory instance for the model, typed for static analysis.
+    103▕      */
+  ➜ 104▕     protected static function newFactory(): DeviceFactory
+    105▕     {
+    106▕         return DeviceFactory::new();
+    107▕     }
+    108▕
+
+      [2m+1 vendor frames [22m
+
+  2   [internal]:0
+      Whoops\Run::handleShutdown()
+
+
+   Whoops\Exception\ErrorException 
+
+  Could not check compatibility between Modules\User\Models\Device::newFactory(): Modules\User\Database\Factories\DeviceFactory and Modules\Xot\Models\XotBaseModel::newFactory(): Modules\Xot\Models\Traits\TFactory, because class Modules\Xot\Models\Traits\TFactory is not available
+
+  at Modules/User/app/Models/Device.php:104
+    100▕ 
+    101▕     /**
+    102▕      * Create a new factory instance for the model, typed for static analysis.
+    103▕      */
+  ➜ 104▕     protected static function newFactory(): DeviceFactory
+    105▕     {
+    106▕         return DeviceFactory::new();
+    107▕     }
+    108▕
+
+      [2m+1 vendor frames [22m
+
+  2   [internal]:0
+      Whoops\Run::handleShutdown()
+
+
+   Symfony\Component\ErrorHandler\Error\FatalError 
+
+  Could not check compatibility between Modules\User\Models\Device::newFactory(): Modules\User\Database\Factories\DeviceFactory and Modules\Xot\Models\XotBaseModel::newFactory(): Modules\Xot\Models\Traits\TFactory, because class Modules\Xot\Models\Traits\TFactory is not available
+
+  at Modules/User/app/Models/Device.php:104
+    100▕ 
+    101▕     /**
+    102▕      * Create a new factory instance for the model, typed for static analysis.
+    103▕      */
+  ➜ 104▕     protected static function newFactory(): DeviceFactory
+    105▕     {
+    106▕         return DeviceFactory::new();
+    107▕     }
+    108▕
+
+
+   Symfony\Component\ErrorHandler\Error\FatalError 
+
+  Could not check compatibility between Modules\User\Models\Device::newFactory(): Modules\User\Database\Factories\DeviceFactory and Modules\Xot\Models\XotBaseModel::newFactory(): Modules\Xot\Models\Traits\TFactory, because class Modules\Xot\Models\Traits\TFactory is not available
+
+  at Modules/User/app/Models/Device.php:104
+    100▕ 
+    101▕     /**
+    102▕      * Create a new factory instance for the model, typed for static analysis.
+    103▕      */
+  ➜ 104▕     protected static function newFactory(): DeviceFactory
+    105▕     {
+    106▕         return DeviceFactory::new();
+    107▕     }
+    108▕
+
+
+   Whoops\Exception\ErrorException 
+
+  Could not check compatibility between Modules\User\Models\Device::newFactory(): Modules\User\Database\Factories\DeviceFactory and Modules\Xot\Models\XotBaseModel::newFactory(): Modules\Xot\Models\Traits\TFactory, because class Modules\Xot\Models\Traits\TFactory is not available
+
+  at Modules/User/app/Models/Device.php:104
+    100▕ 
+    101▕     /**
+    102▕      * Create a new factory instance for the model, typed for static analysis.
+    103▕      */
+  ➜ 104▕     protected static function newFactory(): DeviceFactory
+    105▕     {
+    106▕         return DeviceFactory::new();
+    107▕     }
+    108▕
+
+      [2m+1 vendor frames [22m
+
+  2   [internal]:0
+      Whoops\Run::handleShutdown()
+
+
+   Whoops\Exception\ErrorException 
+
+  Could not check compatibility between Modules\User\Models\Device::newFactory(): Modules\User\Database\Factories\DeviceFactory and Modules\Xot\Models\XotBaseModel::newFactory(): Modules\Xot\Models\Traits\TFactory, because class Modules\Xot\Models\Traits\TFactory is not available
+
+  at Modules/User/app/Models/Device.php:104
+    100▕ 
+    101▕     /**
+    102▕      * Create a new factory instance for the model, typed for static analysis.
+    103▕      */
+  ➜ 104▕     protected static function newFactory(): DeviceFactory
+    105▕     {
+    106▕         return DeviceFactory::new();
+    107▕     }
+    108▕
+
+      [2m+1 vendor frames [22m
+
+  2   [internal]:0
+      Whoops\Run::handleShutdown()
+
+{"totals":{"errors":1,"file_errors":0},"files":{},"errors":["Child process error (exit code 255): PHP Fatal error:  Could not check compatibility between Modules\\User\\Models\\Device::newFactory(): Modules\\User\\Database\\Factories\\DeviceFactory and Modules\\Xot\\Models\\XotBaseModel::newFactory(): Modules\\Xot\\Models\\Traits\\TFactory, because class Modules\\Xot\\Models\\Traits\\TFactory is not available in /var/www/_bases/base_workorder_fila5/laravel/Modules/User/app/Models/Device.php on line 104\n while running parallel worker"]}

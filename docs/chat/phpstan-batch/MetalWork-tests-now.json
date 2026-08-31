@@ -1,0 +1,75 @@
+
+   Symfony\Component\ErrorHandler\Error\FatalError 
+
+  Could not check compatibility between Modules\MetalWork\Models\MetalDrawing::newFactory(): Modules\MetalWork\Database\Factories\MetalDrawingFactory and Modules\Xot\Models\XotBaseModel::newFactory(): Modules\Xot\Models\Traits\TFactory, because class Modules\Xot\Models\Traits\TFactory is not available
+
+  at Modules/MetalWork/app/Models/MetalDrawing.php:97
+     93▕             isAssembly: (bool) $this->is_assembly,
+     94▕         );
+     95▕     }
+     96▕ 
+  ➜  97▕     protected static function newFactory(): MetalDrawingFactory
+     98▕     {
+     99▕         return MetalDrawingFactory::new();
+    100▕     }
+    101▕ }
+
+
+   Symfony\Component\ErrorHandler\Error\FatalError 
+
+  Could not check compatibility between Modules\MetalWork\Models\MetalDrawing::newFactory(): Modules\MetalWork\Database\Factories\MetalDrawingFactory and Modules\Xot\Models\XotBaseModel::newFactory(): Modules\Xot\Models\Traits\TFactory, because class Modules\Xot\Models\Traits\TFactory is not available
+
+  at Modules/MetalWork/app/Models/MetalDrawing.php:97
+     93▕             isAssembly: (bool) $this->is_assembly,
+     94▕         );
+     95▕     }
+     96▕ 
+  ➜  97▕     protected static function newFactory(): MetalDrawingFactory
+     98▕     {
+     99▕         return MetalDrawingFactory::new();
+    100▕     }
+    101▕ }
+
+
+   Whoops\Exception\ErrorException 
+
+  Could not check compatibility between Modules\MetalWork\Models\MetalDrawing::newFactory(): Modules\MetalWork\Database\Factories\MetalDrawingFactory and Modules\Xot\Models\XotBaseModel::newFactory(): Modules\Xot\Models\Traits\TFactory, because class Modules\Xot\Models\Traits\TFactory is not available
+
+  at Modules/MetalWork/app/Models/MetalDrawing.php:97
+     93▕             isAssembly: (bool) $this->is_assembly,
+     94▕         );
+     95▕     }
+     96▕ 
+  ➜  97▕     protected static function newFactory(): MetalDrawingFactory
+     98▕     {
+     99▕         return MetalDrawingFactory::new();
+    100▕     }
+    101▕ }
+
+      [2m+1 vendor frames [22m
+
+  2   [internal]:0
+      Whoops\Run::handleShutdown()
+
+
+   Whoops\Exception\ErrorException 
+
+  Could not check compatibility between Modules\MetalWork\Models\MetalDrawing::newFactory(): Modules\MetalWork\Database\Factories\MetalDrawingFactory and Modules\Xot\Models\XotBaseModel::newFactory(): Modules\Xot\Models\Traits\TFactory, because class Modules\Xot\Models\Traits\TFactory is not available
+
+  at Modules/MetalWork/app/Models/MetalDrawing.php:97
+     93▕             isAssembly: (bool) $this->is_assembly,
+     94▕         );
+     95▕     }
+     96▕ 
+  ➜  97▕     protected static function newFactory(): MetalDrawingFactory
+     98▕     {
+     99▕         return MetalDrawingFactory::new();
+    100▕     }
+    101▕ }
+
+      [2m+1 vendor frames [22m
+
+  2   [internal]:0
+      Whoops\Run::handleShutdown()
+
+{"totals":{"errors":1,"file_errors":0},"files":{},"errors":["Child process error (exit code 255): PHP Fatal error:  Could not check compatibility between Modules\\MetalWork\\Models\\MetalDrawing::newFactory(): Modules\\MetalWork\\Database\\Factories\\MetalDrawingFactory and Modules\\Xot\\Models\\XotBaseModel::newFactory(): Modules\\Xot\\Models\\Traits\\TFactory, because class Modules\\Xot\\Models\\Traits\\TFactory is not available in /var/www/_bases/base_workorder_fila5/laravel/Modules/MetalWork/app/Models/MetalDrawing.php on line 97\n while running parallel worker"]}

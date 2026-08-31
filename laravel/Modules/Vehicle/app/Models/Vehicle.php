@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Vehicle\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
@@ -28,8 +27,6 @@ use Modules\Vehicle\Database\Factories\VehicleFactory;
  */
 final class Vehicle extends BaseModel
 {
-    /** @use HasFactory<VehicleFactory> */
-    use HasFactory;
 
     use SoftDeletes;
 

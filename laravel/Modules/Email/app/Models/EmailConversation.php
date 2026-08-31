@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Email\Models;
 
 use Modules\User\Models\User;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
@@ -33,8 +32,6 @@ use Modules\Email\Database\Factories\EmailConversationFactory;
  */
 final class EmailConversation extends BaseModel
 {
-    /** @use HasFactory<EmailConversationFactory> */
-    use HasFactory;
 
     protected $table = 'email_conversations';
 
