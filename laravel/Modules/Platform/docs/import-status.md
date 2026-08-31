@@ -83,3 +83,26 @@ da classi Compliance (CalculateFGasObligationAction, ThermalPlantRegistry) del d
 verranno portati insieme a quello. I diff M restanti del sorgente erano solo stile Pint.
 
 Suite Platform+Catalog: 49 passed, PHPStan = 0.
+
+## 2026-08-31 — Widget di riepilogo dal codice app/ mai portato
+
+Portati da `gestionale_commesse/app/Filament/Widgets` i cinque widget di dashboard
+rimasti fuori dalla prima tranche, ciascuno nel modulo che possiede i dati:
+
+| Widget | Modulo | Perche' li' |
+|---|---|---|
+| `OperationsOverviewStats` | Platform | attraversa commesse, interventi e assenze: non appartiene a nessuno dei tre |
+| `InterventionsPerformanceChart` | Intervention | |
+| `WorkOrdersStatusChart` | WorkOrder | |
+| `QuotationsByStatusChart` | Quotation | |
+| `QuotationsValuePerMonthChart` | Quotation | |
+
+Il trait `ResolvesPanelUserScope` (che decide se restringere i dati all'operatore
+corrente) sta in Platform: lo usano widget di moduli diversi.
+
+`parse_url()` sul referer: con la versione Safe un referer malformato solleva invece
+di restituire `false`. Estratto in `refererPath()`, che tratta un referer non valido
+come referer assente — e' quello che il codice voleva dire davvero.
+
+Test `DashboardWidgetsTest`: monta tutti e cinque i widget. Interrogano tre moduli
+diversi, quindi un nome di colonna o una relazione cambiata altrove si vede subito qui.
