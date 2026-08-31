@@ -1,0 +1,12 @@
+{
+    "name": "Wts",
+    "alias": "wts",
+    "description": "Conferimenti, tracciabilit\u00e0 e audit trail rifiuti",
+    "keywords": [],
+    "priority": 115,
+    "providers": [
+        "Modules\\Wts\\Providers\\WtsServiceProvider",
+        "Modules\\Wts\\Providers\\Filament\\AdminPanelProvider"
+    ],
+    "files": []
+}

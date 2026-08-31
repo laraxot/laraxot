@@ -42,5 +42,6 @@
     "Vehicle": true,
     "WhatsApp": true,
     "WorkOrder": true,
+    "Wts": true,
     "Xot": true
 }

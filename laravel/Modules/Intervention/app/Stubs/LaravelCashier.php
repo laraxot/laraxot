@@ -70,32 +70,3 @@ class StripeCheckoutSessions
         return new StripeCheckoutSession();
     }
 }
-
-namespace Barryvdh\DomPDF;
-
-class PDF
-{
-    public function setPaper(string $paper, string $orientation = 'portrait'): self
-    {
-        return $this;
-    }
-
-    public function output(): string
-    {
-        return '';
-    }
-}
-
-namespace Barryvdh\DomPDF\Facade;
-
-class Pdf
-{
-    /**
-     * @param  view-string|null  $view
-     * @param  array<string, mixed>  $data
-     */
-    public static function loadView(?string $view, array $data = []): \Barryvdh\DomPDF\PDF
-    {
-        return new \Barryvdh\DomPDF\PDF();
-    }
-}
