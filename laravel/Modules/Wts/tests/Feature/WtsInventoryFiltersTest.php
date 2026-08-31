@@ -9,6 +9,8 @@ use Modules\Wts\Actions\GenerateWtsInventoryExcelAction;
 use Modules\Wts\Queries\GetWtsInventoryOverviewQuery;
 use OpenSpout\Reader\XLSX\Reader;
 
+use function Safe\unlink;
+
 /**
  * @param  list<array<string, mixed>>  $rows
  */
@@ -27,8 +29,9 @@ function mockEcosStock(array $rows): void
  */
 function ecosStockRow(string $waste, string $zone, string $producer = 'Produttore X', string $line = 'WD', string $cycle = 'COMB'): array
 {
+    /** @var int $counter */
     static $counter = 0;
-    $counter++;
+    $counter = $counter + 1;
 
     return [
         'batch_code' => 'PART-'.str_pad((string) $counter, 3, '0', STR_PAD_LEFT),
@@ -174,7 +177,7 @@ it('exports the filtered inventory to a real xlsx file', function (): void {
         }
     }
     $reader->close();
-    @unlink($path);
+    unlink($path);
 
     // Intestazione + 1 riga dati (solo il CER filtrato) + riga totale.
     expect($values)->toHaveCount(3)

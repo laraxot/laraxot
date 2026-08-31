@@ -7,5 +7,5 @@ use Modules\Cms\Tests\TestCase;
 uses(\Modules\Cms\Tests\TestCase::class);
 
 describe('Register Page', function () {
-    test('register page placeholder', function (): void {})->todo();
+    it('register page placeholder')->todo();
 });

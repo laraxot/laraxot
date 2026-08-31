@@ -11,5 +11,5 @@ test('DownloadAttachmentPlaceHolder extends XotBasePlaceholder', function () {
     Assert::assertTrue(class_exists(DownloadAttachmentPlaceHolder::class));
 });
 
-test('DownloadAttachmentPlaceHolder has setUp method', function (): void {})->todo();
-test('DownloadAttachmentPlaceHolder has generateContent method', function (): void {})->todo();
+it('DownloadAttachmentPlaceHolder has setUp method')->todo();
+it('DownloadAttachmentPlaceHolder has generateContent method')->todo();

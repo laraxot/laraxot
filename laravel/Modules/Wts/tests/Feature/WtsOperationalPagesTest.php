@@ -482,6 +482,7 @@ it('keeps technical identifiers as a secondary search in the work queue', functi
         'current_area_code' => 'to_process',
     ]);
 
+    /** @var \Illuminate\Support\Collection<int, \Modules\Wts\Models\WtsUnit> $units */
     $units = app(GenerateWtsUnitSeriesAction::class)->execute(
         lot: $lot,
         unitTypeCode: 'big_bag',
@@ -495,7 +496,7 @@ it('keeps technical identifiers as a secondary search in the work queue', functi
 
     expect($resultsByOperationalSearch)->toHaveCount(0)
         ->and($resultsByTechnicalSearch)->toHaveCount(1)
-        ->and($resultsByTechnicalSearch->first()?->unit_code)->toBe($units[0]->unit_code);
+        ->and($resultsByTechnicalSearch->first()?->unit_code)->toBe(($units[0] ?? throw new \RuntimeException('missing unit 0'))->unit_code);
 });
 
 it('excludes already finished units from the operational work queue', function (): void {
@@ -525,6 +526,7 @@ it('excludes already finished units from the operational work queue', function (
         'current_area_code' => 'to_process',
     ]);
 
+    /** @var \Illuminate\Support\Collection<int, \Modules\Wts\Models\WtsUnit> $units */
     $units = app(GenerateWtsUnitSeriesAction::class)->execute(
         lot: $lot,
         unitTypeCode: 'big_bag',
@@ -533,7 +535,7 @@ it('excludes already finished units from the operational work queue', function (
         printReasonCode: 'initial_print',
     );
 
-    $units[1]->forceFill([
+    ($units[1] ?? throw new \RuntimeException('missing unit 1'))->forceFill([
         'status_code' => 'finished',
         'current_area_code' => 'to_process',
     ])->save();
@@ -541,7 +543,7 @@ it('excludes already finished units from the operational work queue', function (
     $results = app(GetWtsWorkQueueOverviewQuery::class)->execute('to_process');
 
     expect($results)->toHaveCount(1)
-        ->and($results->first()?->unit_code)->toBe($units[0]->unit_code);
+        ->and($results->first()?->unit_code)->toBe(($units[0] ?? throw new \RuntimeException('missing unit 0'))->unit_code);
 });
 
 it('shows the WTS printable inventory with technical notes and consumed state', function (): void {
@@ -577,6 +579,7 @@ it('shows the WTS printable inventory with technical notes and consumed state', 
         'current_area_code' => 'to_process',
     ]);
 
+    /** @var \Illuminate\Support\Collection<int, \Modules\Wts\Models\WtsUnit> $units */
     $units = app(GenerateWtsUnitSeriesAction::class)->execute(
         lot: $lot,
         unitTypeCode: 'big_bag',
@@ -585,7 +588,7 @@ it('shows the WTS printable inventory with technical notes and consumed state', 
         printReasonCode: 'initial_print',
     );
 
-    $units[1]->forceFill([
+    ($units[1] ?? throw new \RuntimeException('missing unit 1'))->forceFill([
         'status_code' => 'finished',
         'current_area_code' => 'finished',
     ])->save();
@@ -629,6 +632,7 @@ it('builds the inventory snapshot using the selected reference date', function (
         'current_area_code' => 'to_process',
     ]);
 
+    /** @var \Illuminate\Support\Collection<int, \Modules\Wts\Models\WtsUnit> $units */
     $units = app(GenerateWtsUnitSeriesAction::class)->execute(
         lot: $lot,
         unitTypeCode: 'big_bag',
@@ -637,12 +641,12 @@ it('builds the inventory snapshot using the selected reference date', function (
         printReasonCode: 'initial_print',
     );
 
-    $units[0]->forceFill([
+    ($units[0] ?? throw new \RuntimeException('missing unit 0'))->forceFill([
         'created_at' => '2026-06-01 10:00:00',
         'updated_at' => '2026-06-01 10:00:00',
     ])->save();
 
-    $units[1]->forceFill([
+    ($units[1] ?? throw new \RuntimeException('missing unit 1'))->forceFill([
         'created_at' => '2026-06-03 10:00:00',
         'updated_at' => '2026-06-03 10:00:00',
     ])->save();

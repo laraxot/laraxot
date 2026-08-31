@@ -55,7 +55,7 @@ it('computes drum, dirty drum and pallet output weight automatically when regist
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsSortingPage::class)
+        ->test(WtsSortingPage::class) /** @phpstan-ignore-line argument.templateType */
         ->set('selectedUnitIds', [$unit->id])
         ->set('drumsCount', 2)
         ->set('dirtyDrumsCount', 1)
@@ -97,7 +97,7 @@ it('uses the admin edited standard weight for the next processing instead of the
 
     Livewire::actingAs($operator);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsPressingPage::class)
+        ->test(WtsPressingPage::class) /** @phpstan-ignore-line argument.templateType */
         ->set('selectedUnitIds', [$unit->id])
         ->set('palletsCount', 6)
         ->call('registerProcessing')
@@ -123,7 +123,7 @@ it('computes standard output weight for drum, dirty drum and pallet from the UI-
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsProcessingPage::class)
+        ->test(WtsProcessingPage::class) /** @phpstan-ignore-line argument.templateType */
         ->set('selectedUnitIds', [$unit->id])
         ->set('stepTypeCode', 'sorting')
         ->set('drumsCount', 1)
@@ -154,7 +154,9 @@ it('reflects the admin edited standard weight in the UI-07 hub informational sum
     Livewire::actingAs($user);
     Livewire::test(WtsProcessingPage::class)
         ->assertViewHas('operationalParameters', function (array $parameters): bool {
-            return ($parameters['standard_drum_weight_kg']['value'] ?? null) === '99';
+            $drum = $parameters['standard_drum_weight_kg'] ?? null;
+
+            return is_array($drum) && ($drum['value'] ?? null) === '99';
         });
 });
 
@@ -173,7 +175,7 @@ it('uses the exceptional manual weight override instead of the automatic calcula
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsSortingPage::class)
+        ->test(WtsSortingPage::class) /** @phpstan-ignore-line argument.templateType */
         ->set('selectedUnitIds', [$unit->id])
         ->set('drumsCount', 2)
         ->set('drumsWeightOverride', '50,5')
@@ -206,7 +208,7 @@ it('falls back to automatic calculation when the manual override is empty or zer
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsSortingPage::class)
+        ->test(WtsSortingPage::class) /** @phpstan-ignore-line argument.templateType */
         ->set('selectedUnitIds', [$unit->id])
         ->set('drumsCount', 1)
         ->set('drumsWeightOverride', '')
@@ -236,7 +238,7 @@ it('uses the exceptional manual weight override from the UI-07 hub page', functi
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsProcessingPage::class)
+        ->test(WtsProcessingPage::class) /** @phpstan-ignore-line argument.templateType */
         ->set('selectedUnitIds', [$unit->id])
         ->set('stepTypeCode', 'sorting')
         ->set('drumsCount', 2)

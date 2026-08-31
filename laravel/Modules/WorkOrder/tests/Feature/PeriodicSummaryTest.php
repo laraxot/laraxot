@@ -355,24 +355,24 @@ it('shows the periodic summary page and downloads its PDF', function (): void {
     actingAs($admin);
     filament()->setCurrentPanel('admin');
 
-    Livewire::test(PeriodicSummaryPage::class)
-        ->assertOk()
-        ->assertSee('Cliente Pagina S.r.l.')
-        ->assertSee('WO-SUMMARY-PAGE')
-        ->call('applyPreset', 'last_month')
-        ->assertSet('from', CarbonImmutable::now()->subMonth()->startOfMonth()->toDateString())
-        ->call('applyPreset', 'this_year')
-        ->assertSet('from', CarbonImmutable::now()->startOfYear()->toDateString())
-        ->call('applyPreset', 'this_quarter')
-        ->assertSet('from', CarbonImmutable::now()->startOfQuarter()->toDateString())
-        ->call('applyPreset', 'this_month')
-        ->assertSet('from', CarbonImmutable::now()->startOfMonth()->toDateString())
-        ->call('downloadPdf')
-        ->assertFileDownloaded(sprintf(
-            'resoconto_periodico_%s_%s.pdf',
-            CarbonImmutable::now()->startOfMonth()->format('Ymd'),
-            CarbonImmutable::now()->endOfMonth()->format('Ymd'),
-        ));
+    $page = Livewire::test(PeriodicSummaryPage::class);
+    $page->assertOk();
+    $page->assertSee('Cliente Pagina S.r.l.');
+    $page->assertSee('WO-SUMMARY-PAGE');
+    $page->call('applyPreset', 'last_month');
+    $page->assertSet('from', CarbonImmutable::now()->subMonth()->startOfMonth()->toDateString());
+    $page->call('applyPreset', 'this_year');
+    $page->assertSet('from', CarbonImmutable::now()->startOfYear()->toDateString());
+    $page->call('applyPreset', 'this_quarter');
+    $page->assertSet('from', CarbonImmutable::now()->startOfQuarter()->toDateString());
+    $page->call('applyPreset', 'this_month');
+    $page->assertSet('from', CarbonImmutable::now()->startOfMonth()->toDateString());
+    $page->call('downloadPdf');
+    $page->assertFileDownloaded(sprintf(
+        'resoconto_periodico_%s_%s.pdf',
+        CarbonImmutable::now()->startOfMonth()->format('Ymd'),
+        CarbonImmutable::now()->endOfMonth()->format('Ymd'),
+    ));
 });
 
 it('falls back to the current month when the typed dates are unusable', function (): void {
@@ -381,12 +381,12 @@ it('falls back to the current month when the typed dates are unusable', function
     actingAs($admin);
     filament()->setCurrentPanel('admin');
 
-    Livewire::test(PeriodicSummaryPage::class)
-        ->set('from', '')
-        ->set('to', 'non-una-data')
-        ->assertOk()
-        ->call('downloadPdf')
-        ->assertFileDownloaded(sprintf(
+    $page = Livewire::test(PeriodicSummaryPage::class);
+    $page->set('from', '');
+    $page->set('to', 'non-una-data');
+    $page->assertOk();
+    $page->call('downloadPdf');
+    $page->assertFileDownloaded(sprintf(
             'resoconto_periodico_%s_%s.pdf',
             CarbonImmutable::now()->startOfMonth()->format('Ymd'),
             CarbonImmutable::now()->endOfMonth()->format('Ymd'),

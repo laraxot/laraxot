@@ -37,5 +37,10 @@ function metalWorksMaterial(
         'unit_price' => $price,
     ]);
 
-    return $material->fresh();
+    $fresh = $material->fresh();
+    if ($fresh === null) {
+        throw new RuntimeException('MetalRawMaterial disappeared after create.');
+    }
+
+    return $fresh;
 }

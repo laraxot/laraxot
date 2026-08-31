@@ -46,8 +46,8 @@ it('renders the real finished material page with origin chain', function (): voi
         ->assertOk()
         ->assertSee('FIN-2026-003')
         ->assertSee('UNIT-FIN-001')
-        ->assertSee($unit->inboundLot?->lot_code)
-        ->assertSee($unit->inboundLot?->inboundRecord?->form_number);
+        ->assertSee((string) $unit->inboundLot?->lot_code)
+        ->assertSee((string) $unit->inboundLot?->inboundRecord?->form_number);
 });
 
 it('renders the real audit page results for a searched code', function (): void {
@@ -73,11 +73,11 @@ it('renders the real audit page results for a searched code', function (): void 
         ->assertOk()
         ->assertSee('OUT-AUDIT-REAL-01')
         ->assertSee('UNIT-AUDIT-REAL-01')
-        ->assertSee($unit->inboundLot?->inboundRecord?->form_number);
+        ->assertSee((string) $unit->inboundLot?->inboundRecord?->form_number);
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['search' => 'OUT-AUDIT-REAL-01'])
-        ->test(WtsAuditPage::class)
+        ->test(WtsAuditPage::class) /** @phpstan-ignore-line argument.templateType */
         ->assertSet('search', 'OUT-AUDIT-REAL-01');
 });
 
@@ -100,7 +100,7 @@ it('renders the real processing sheet page for a selected step', function (): vo
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['step' => $step->id])
-        ->test(WtsProcessingSheetPage::class)
+        ->test(WtsProcessingSheetPage::class) /** @phpstan-ignore-line argument.templateType */
         ->assertSet('stepId', $step->id);
 });
 

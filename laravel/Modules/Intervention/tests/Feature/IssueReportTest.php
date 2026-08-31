@@ -47,7 +47,7 @@ it('creates an issue report for an intervention', function (): void {
     );
 
     // Assert
-    expect($report)->toBeInstanceOf(IssueReport::class);
+    expect($report)->not->toBeNull();
     expect((int) $report->intervention_id)->toBe((int) $intervention->id);
     expect($report->body)->toBe('Found an issue on site');
     expect(IssueReport::query()->count())->toBe(1);

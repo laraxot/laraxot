@@ -27,7 +27,7 @@ describe('Password ResetComponent', function (): void {
         Assert::assertFalse($component->emailSentMessage);
     });
 
-    test('reset component has send reset password link method', function (): void {})->todo();
+    it('reset component has send reset password link method')->todo();
     test('send reset password link method returns void', function (): void {
         $reflection = new ReflectionClass(ResetComponent::class);
         $method = $reflection->getMethod('sendResetPasswordLink');

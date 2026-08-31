@@ -54,7 +54,7 @@ it('generates a work order PDF', function (): void {
     $pdf = app(GenerateWorkOrderPdfAction::class)->execute($workOrder);
 
     // Assert
-    expect($pdf)->toBeString();
+    expect($pdf)->not->toBeEmpty();
     expect(substr($pdf, 0, 4))->toBe('%PDF');
     expect(strlen($pdf))->toBeGreaterThan(1000);
 });

@@ -24,6 +24,8 @@ use Modules\Signage\Tests\TestCase;
 use Modules\User\Models\User;
 use Spatie\Permission\Models\Role;
 
+use PHPUnit\Framework\Assert;
+
 use function Pest\Laravel\actingAs;
 
 function signageCatalogAdmin(): User
@@ -50,35 +52,35 @@ it('lists the work centres', function (): void {
     (new SignWorkCenterSeeder())->run();
 
     // More centres than fit one page, so check the first page instead.
-    Livewire::test(ListSignWorkCenters::class)
-        ->assertSuccessful()
-        ->assertCanSeeTableRecords(
-            WorkCenter::query()->forContext(SignageCosting::CONTEXT)->orderBy('sort_order')->limit(10)->get()
-        );
+    $lw = Livewire::test(ListSignWorkCenters::class);
+    $lw->assertSuccessful();
+    $lw->assertCanSeeTableRecords(
+        WorkCenter::query()->forContext(SignageCosting::CONTEXT)->orderBy('sort_order')->limit(10)->get()
+    );
 });
 
 it('lists the supplier price list with its work centre', function (): void {
     seedSignageCatalog();
 
-    Livewire::test(ListSignPriceListItems::class)
-        ->assertSuccessful()
-        ->assertCanRenderTableColumn('work_center_code');
+    $lw = Livewire::test(ListSignPriceListItems::class);
+    $lw->assertSuccessful();
+    $lw->assertCanRenderTableColumn('work_center_code');
 });
 
 it('lists the sales price lists', function (): void {
     seedSignageCatalog();
 
-    Livewire::test(ListSignPriceLists::class)
-        ->assertSuccessful()
-        ->assertCanSeeTableRecords(SignPriceList::query()->get());
+    $lw = Livewire::test(ListSignPriceLists::class);
+    $lw->assertSuccessful();
+    $lw->assertCanSeeTableRecords(SignPriceList::query()->get());
 });
 
 it('lists the catalog items', function (): void {
     seedSignageCatalog();
 
-    Livewire::test(ListSignCatalogItems::class)
-        ->assertSuccessful()
-        ->assertCanSeeTableRecords(SignCatalogItem::query()->get());
+    $lw = Livewire::test(ListSignCatalogItems::class);
+    $lw->assertSuccessful();
+    $lw->assertCanSeeTableRecords(SignCatalogItem::query()->get());
 });
 
 it('shows the price breakdown of a catalog item', function (): void {
@@ -99,12 +101,12 @@ it('edits the bill of materials of a catalog item', function (): void {
 
     $item = SignCatalogItem::query()->where('code', 'BV_SIDE_WWcbc_083150 3500K')->firstOrFail();
 
-    Livewire::test(ComponentsRelationManager::class, [
+    $lw = Livewire::test(ComponentsRelationManager::class, [
         'ownerRecord' => $item,
         'pageClass' => ViewSignCatalogItem::class,
-    ])
-        ->assertSuccessful()
-        ->assertCanSeeTableRecords($item->components);
+    ]);
+    $lw->assertSuccessful();
+    $lw->assertCanSeeTableRecords($item->components);
 });
 
 it('duplicates a catalog item together with its distinta', function (): void {

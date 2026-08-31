@@ -30,7 +30,7 @@ test('Metatags can be instantiated', function () {
     Assert::assertInstanceOf(Metatags::class, $component);
 });
 
-test('Page can be instantiated', function (): void {})->todo();
+it('Page can be instantiated')->todo();
 test('PageContent can be instantiated with slug', function () {
     $component = new PageContent('test-slug');
 

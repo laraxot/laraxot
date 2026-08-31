@@ -15,6 +15,9 @@ use Modules\Lang\Actions\Filament\AutoLabelAction;
 
 final class AutoLabelForcedKeyStub extends AutoLabelAction
 {
+    /**
+     * @return array<string, mixed>
+     */
     protected function findCallerFrame(Field|Entry|BaseFilter|Column|Step|Action|Section $component): array
     {
         return ['class' => self::class];

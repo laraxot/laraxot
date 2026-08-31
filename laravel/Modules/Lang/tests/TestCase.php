@@ -117,9 +117,23 @@ abstract class TestCase extends XotBaseTestCase
         return $expectation;
     }
 
+    public static function mockExpects(MockInterface $mock, string $method): Expectation
+    {
+        return self::mockExpectation($mock, $method);
+    }
+
     public static function mockAllows(MockInterface $mock, string $method): Expectation
     {
         return self::mockExpectation($mock, $method);
+    }
+
+    /**
+     * @param  array<string, mixed>  $translations
+     */
+    public static function createTranslationFile(string $filePath, array $translations): void
+    {
+        $phpContent = "<?php\n\nreturn ".var_export($translations, true).";\n";
+        \Safe\file_put_contents($filePath, $phpContent);
     }
 
     public static function bindRealSaveTransAction(): void

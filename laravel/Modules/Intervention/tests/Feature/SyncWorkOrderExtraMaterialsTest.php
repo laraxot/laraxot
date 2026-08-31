@@ -25,7 +25,7 @@ function workOrderExtraScenario(): array
         'updated_at' => now(),
     ]);
 
-    $userId = UserFactory::new()->createOne()->id;
+    $userId = (int) UserFactory::new()->createOne()->getKey();
 
     $workOrder = WorkOrder::query()->create([
         'customer_id' => $customerId,

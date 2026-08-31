@@ -8,7 +8,7 @@ use Modules\Lang\Models\Post;
 
 final class PostNullTitleForGuidStub extends Post
 {
-    protected function titleForGuid(): ?string
+    protected function titleForGuid(): null
     {
         return null;
     }

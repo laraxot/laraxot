@@ -18,7 +18,10 @@ use Modules\Quotation\Models\Quotation;
 use Modules\User\Database\Factories\UserFactory;
 use Spatie\Permission\Models\Role;
 
+use PHPUnit\Framework\Assert;
+
 use function Pest\Laravel\actingAs;
+use function Pest\Laravel\get;
 
 function metalWorksFile(string $name): string
 {
@@ -79,16 +82,17 @@ it('quotes a real drawing against real invoice prices', function (): void {
 
     $quotation = app(CreateQuotationFromMetalPartEstimateAction::class)->execute($estimate, $customer);
 
-    expect($quotation)->toBeInstanceOf(Quotation::class)
-        ->and($quotation->status_code)->toBe('draft')
+    expect($quotation->status_code)->toBe('draft')
         ->and($quotation->customer_id)->toBe($customer->id)
         ->and($quotation->title)->toContain('358447106-1')
         ->and($quotation->items()->count())->toBe(1)
-        ->and((float) $quotation->total)->toBeGreaterThan(0.0)
-        ->and($estimate->fresh()->quotation_id)->toBe($quotation->id);
+        ->and((float) $quotation->total)->toBeGreaterThan(0.0);
+    $freshEstimate = $estimate->fresh();
+    Assert::assertNotNull($freshEstimate);
+    expect($freshEstimate->quotation_id)->toBe($quotation->id);
 
     $item = $quotation->items()->first();
-
+    Assert::assertNotNull($item);
     expect((int) $item->quantity)->toBe(2)
         ->and((float) $item->unit_price)->toBe(round($costing->totalSalePrice() / 2, 2));
 });
@@ -119,8 +123,8 @@ it('renders the quotation page of the metalworks panel', function (): void {
     $user = UserFactory::new()->createOne();
     $user->syncRoles(['metalwork_admin']);
 
-    actingAs($user)
-        ->get('/metalwork/drawing-quotation')
+    actingAs($user);
+    get('/metalwork/drawing-quotation')
         ->assertOk()
         ->assertSee(__('metalwork::metalwork.quotation.steps.upload'));
 });
@@ -131,8 +135,8 @@ it('renders the metalworks dashboard', function (): void {
     $user = UserFactory::new()->createOne();
     $user->syncRoles(['metalwork_operator']);
 
-    actingAs($user)
-        ->get('/metalwork')
+    actingAs($user);
+    get('/metalwork')
         ->assertOk()
         ->assertSee(__('metalwork::metalwork.panel.no_data'));
 });
@@ -143,7 +147,6 @@ it('keeps users without a metalworks role out of the panel', function (): void {
     $user = UserFactory::new()->createOne();
     $user->syncRoles(['operator']);
 
-    actingAs($user)
-        ->get('/metalwork')
-        ->assertForbidden();
+    actingAs($user);
+    get('/metalwork')->assertForbidden();
 });

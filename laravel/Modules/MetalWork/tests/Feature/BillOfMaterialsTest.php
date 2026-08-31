@@ -12,6 +12,10 @@ use Modules\MetalWork\Database\Seeders\MetalWorkCenterSeeder;
 use Modules\MetalWork\Datas\StepSolid;
 use Modules\MetalWork\Support\StepSolidExtractor;
 use Modules\MetalWork\Tests\TestCase;
+use Modules\MetalWork\Datas\MetalCostLine;
+use Modules\MetalWork\Models\MetalDrawing;
+use Modules\MetalWork\Models\MetalDrawingComponent;
+use PHPUnit\Framework\Assert;
 
 it('measures every solid of a drawing separately', function (): void {
     $solids = (new StepSolidExtractor())->extract(metalWorksFixture('353271328-0_stp1.stp'));
@@ -24,8 +28,13 @@ it('measures every solid of a drawing separately', function (): void {
         $solids,
     ));
 
-    expect($signatures)->toHaveCount(2)
-        ->and(max($signatures))->toBe(4);
+    expect($signatures)->toHaveCount(2);
+    $quantities = array_values($signatures);
+    $maxQty = 0;
+    foreach ($quantities as $qty) {
+        $maxQty = max($maxQty, $qty);
+    }
+    expect($maxQty)->toBe(4);
 });
 
 it('groups identical solids into one row carrying a quantity', function (): void {
@@ -34,9 +43,11 @@ it('groups identical solids into one row carrying a quantity', function (): void
     $components = $drawing->components;
 
     expect($components)->toHaveCount(2)
-        ->and($components->sum('quantity'))->toBe(5)
-        // Heaviest first: the 3,2-metre profile leads.
-        ->and((float) $components->first()->length_mm)->toBeGreaterThan(3000.0);
+        ->and($components->sum('quantity'))->toBe(5);
+    $firstComponent = $components->first();
+    Assert::assertInstanceOf(MetalDrawingComponent::class, $firstComponent);
+    // Heaviest first: the 3,2-metre profile leads.
+    expect((float) $firstComponent->length_mm)->toBeGreaterThan(3000.0);
 });
 
 it('keeps a confirmed material when the same drawing is imported again', function (): void {
@@ -45,14 +56,16 @@ it('keeps a confirmed material when the same drawing is imported again', functio
 
     $drawing = app(ImportStepDrawingAction::class)->execute($path);
     $component = $drawing->components()->first();
+    Assert::assertInstanceOf(MetalDrawingComponent::class, $component);
     $component->forceFill(['raw_material_id' => $material->id, 'is_material_confirmed' => true])->save();
 
-    app(BuildDrawingBillOfMaterialsAction::class)->execute($drawing->fresh(), $path);
+    $freshDrawing = $drawing->fresh();
+    Assert::assertInstanceOf(MetalDrawing::class, $freshDrawing);
+    app(BuildDrawingBillOfMaterialsAction::class)->execute($freshDrawing, $path);
 
-    $reimported = $drawing->fresh()->components()->where('is_material_confirmed', true)->first();
-
-    expect($reimported)->not->toBeNull()
-        ->and($reimported->raw_material_id)->toBe($material->id);
+    $reimported = $drawing->fresh()?->components()->where('is_material_confirmed', true)->first();
+    Assert::assertInstanceOf(MetalDrawingComponent::class, $reimported);
+    expect($reimported->raw_material_id)->toBe($material->id);
 });
 
 it('never proposes stock narrower than the piece it has to yield', function (): void {
@@ -128,8 +141,11 @@ it('prices a profile by the metre and a plate by the kilo', function (): void {
     $drawing = app(ImportStepDrawingAction::class)->execute(metalWorksFixture('353271328-0_stp1.stp'));
     $drawing->components()->update(['raw_material_id' => $tube->id, 'is_material_confirmed' => true]);
 
-    $costing = app(EstimateFromBillOfMaterialsAction::class)->execute($drawing->fresh());
+    $fresh = $drawing->fresh();
+    Assert::assertInstanceOf(MetalDrawing::class, $fresh);
+    $costing = app(EstimateFromBillOfMaterialsAction::class)->execute($fresh);
     $materialLine = collect($costing->lines)->firstWhere('workCenterCode', 'material');
+    Assert::assertInstanceOf(MetalCostLine::class, $materialLine);
 
     expect($materialLine->unitCode)->toBe('ml')
         ->and($materialLine->driverCode)->toBe('component_length');

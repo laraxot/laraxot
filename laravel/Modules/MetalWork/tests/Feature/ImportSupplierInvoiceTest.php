@@ -8,6 +8,7 @@ use Modules\MetalWork\Actions\ImportSupplierInvoiceAction;
 use Modules\MetalWork\Models\MetalRawMaterial;
 use Modules\MetalWork\Models\MetalSupplierPrice;
 use Modules\MetalWork\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
 /**
  * Two real invoices, one per supplier: they lay their rows out differently, and
@@ -30,14 +31,14 @@ it('builds the price list from a supplier invoice', function (): void {
 
     $sheet = MetalRawMaterial::query()->firstWhere('code', 'LZP1,5H1500');
 
-    expect($sheet)->not->toBeNull()
-        ->and($sheet->family_code)->toBe('sheet')
+    Assert::assertInstanceOf(MetalRawMaterial::class, $sheet);
+    expect($sheet->family_code)->toBe('sheet')
         ->and($sheet->unit_code)->toBe('kg')
         ->and($sheet->steel_grade)->toBe('DX51')
         ->and($sheet->currentUnitPrice())->toBe(1.17);
 
     $tube = MetalRawMaterial::query()->firstWhere('code', 'TQ60XX3');
-
+    Assert::assertInstanceOf(MetalRawMaterial::class, $tube);
     expect($tube->family_code)->toBe('tube')
         ->and($tube->unit_code)->toBe('ml')
         ->and($tube->currentUnitPrice())->toBe(5.36);
@@ -60,8 +61,8 @@ it('applies a row discount to the price it records', function (): void {
 
     $tube = MetalRawMaterial::query()->firstWhere('code', 'TQ603');
 
-    expect($tube)->not->toBeNull()
-        ->and($tube->currentUnitPrice())->toBe(6.4165);
+    Assert::assertInstanceOf(MetalRawMaterial::class, $tube);
+    expect($tube->currentUnitPrice())->toBe(6.4165);
 });
 
 it('reads the article code out of the layout that prints it above the row', function (): void {
@@ -71,8 +72,8 @@ it('reads the article code out of the layout that prints it above the row', func
 
     $oxyCut = MetalRawMaterial::query()->firstWhere('code', 'OSSITAGLIO');
 
-    expect($oxyCut)->not->toBeNull()
-        ->and($oxyCut->family_code)->toBe('oxy_cut')
+    Assert::assertInstanceOf(MetalRawMaterial::class, $oxyCut);
+    expect($oxyCut->family_code)->toBe('oxy_cut')
         ->and($oxyCut->description)->not->toContain('FORN');
 });
 
@@ -98,8 +99,8 @@ it('records every occurrence of an article an invoice lists more than once', fun
 
     $material = MetalRawMaterial::query()->firstWhere('code', 'TR40X30X2N');
 
-    expect($material)->not->toBeNull()
-        ->and($material->supplierPrices()->count())->toBe(3);
+    Assert::assertInstanceOf(MetalRawMaterial::class, $material);
+    expect($material->supplierPrices()->count())->toBe(3);
 });
 
 it('refuses a file that is not readable', function (): void {

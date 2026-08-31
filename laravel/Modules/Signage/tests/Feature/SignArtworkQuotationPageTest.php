@@ -20,8 +20,11 @@ use Modules\Signage\Models\SignSpec;
 use Modules\Signage\Tests\TestCase;
 use Modules\User\Models\User;
 use Spatie\Permission\Models\Role;
+use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\actingAs;
+use function Pest\Laravel\get;
+use function Safe\file_get_contents;
 
 function signageAdmin(): User
 {
@@ -37,7 +40,7 @@ function signageArtworkUpload(): File
     // the page accept it, and the page copies it back under this name.
     return UploadedFile::fake()->createWithContent(
         'mm-berlino-podium-signs.ai',
-        (string) file_get_contents(__DIR__.'/../Fixtures/mm-berlino-podium-signs.ai'),
+        file_get_contents(__DIR__.'/../Fixtures/mm-berlino-podium-signs.ai'),
     );
 }
 
@@ -52,15 +55,13 @@ it('reads an uploaded drawing and prices it on screen', function (): void {
     actingAs(signageAdmin());
     filament()->setCurrentPanel('admin');
 
-    $page = Livewire::test(SignArtworkQuotationPage::class)
-        ->assertOk()
-        ->set('artwork', signageArtworkUpload())
-        ->call('extract')
-        ->assertHasNoErrors();
+    $page = Livewire::test(SignArtworkQuotationPage::class);
+    $page->assertOk();
+    $page->set('artwork', signageArtworkUpload());
+    $page->call('extract');
+    $page->assertHasNoErrors();
 
-    $specId = $page->get('specId');
-
-    expect($specId)->toBeInt();
+    $specId = (int) $page->get('specId');
 
     $spec = SignSpec::query()->findOrFail($specId);
 
@@ -76,11 +77,11 @@ it('rejects a file that is not a drawing', function (): void {
     actingAs(signageAdmin());
     filament()->setCurrentPanel('admin');
 
-    Livewire::test(SignArtworkQuotationPage::class)
-        ->set('artwork', UploadedFile::fake()->create('listino.xlsx', 12))
-        ->call('extract')
-        ->assertHasErrors('artwork')
-        ->assertSet('specId', null);
+    $page = Livewire::test(SignArtworkQuotationPage::class);
+    $page->set('artwork', UploadedFile::fake()->create('listino.xlsx', 12));
+    $page->call('extract');
+    $page->assertHasErrors('artwork');
+    $page->assertSet('specId', null);
 });
 
 it('recomputes the quotation when the operator types a missing quantity', function (): void {
@@ -93,14 +94,14 @@ it('recomputes the quotation when the operator types a missing quantity', functi
         ->call('extract')
         ->set('markupPercent', '0');
 
-    $specId = $page->get('specId');
+    $specId = (int) $page->get('specId');
     $baseline = priceSignageSpec($specId, []);
 
-    /** @var \Modules\Signage\Datas\SignQuotationLine $cutting */
     $cutting = collect($baseline->lines)->firstWhere('role', 'cutting');
+    Assert::assertInstanceOf(SignQuotationLine::class, $cutting);
     $doubledQuantity = (float) $cutting->quantity * 2;
 
-    $doubled = priceSignageSpec($specId, ['cutting' => $doubledQuantity]);
+    $doubled = priceSignageSpec((int) $specId, ['cutting' => $doubledQuantity]);
 
     // Doubling the milling metres has to add exactly one more milling line worth.
     expect(round($doubled->totalCost - $baseline->totalCost, 2))
@@ -194,19 +195,22 @@ it('keeps the uploaded drawing and serves it as a preview', function (): void {
         ->set('artwork', signageArtworkUpload())
         ->call('extract');
 
-    $spec = SignSpec::query()->findOrFail($page->get('specId'));
+    $specIdRaw = $page->get('specId');
+    Assert::assertIsInt($specIdRaw);
+    $spec = SignSpec::query()->findOrFail($specIdRaw);
 
-    expect($spec->artwork_path)->not->toBeNull();
+    Assert::assertNotNull($spec->artwork_path);
     Storage::disk('public')->assertExists($spec->artwork_path);
 
     // The page links the preview...
     $page->assertSee(route('signage.artwork', ['spec' => $spec->id]), escape: false);
 
     // ...and the route serves the drawing inline as a PDF, so the browser draws it.
-    $response = actingAs($admin)->get(route('signage.artwork', ['spec' => $spec->id]));
+    actingAs($admin);
+    $response = get(route('signage.artwork', ['spec' => $spec->id]));
 
-    $response->assertOk()
-        ->assertHeader('Content-Type', 'application/pdf');
+    $response->assertOk();
+    $response->assertHeader('Content-Type', 'application/pdf');
 
     expect($response->headers->get('Content-Disposition'))->toContain('inline');
 });
@@ -225,7 +229,7 @@ it('does not serve a drawing to anonymous visitors', function (): void {
 
     auth()->logout();
 
-    $this->get(route('signage.artwork', ['spec' => $specId]))->assertForbidden();
+    get(route('signage.artwork', ['spec' => $specId]))->assertForbidden();
 });
 
 it('answers 404 for a spec whose file is gone', function (): void {
@@ -237,5 +241,6 @@ it('answers 404 for a spec whose file is gone', function (): void {
         'artwork_path' => 'signage-artwork/spec_x/disegno-perduto.ai',
     ]);
 
-    actingAs($admin)->get(route('signage.artwork', ['spec' => $spec->id]))->assertNotFound();
+    actingAs($admin);
+    get(route('signage.artwork', ['spec' => $spec->id]))->assertNotFound();
 });

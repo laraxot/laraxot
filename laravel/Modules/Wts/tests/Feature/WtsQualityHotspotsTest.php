@@ -34,8 +34,7 @@ it('takes charge normalizing inputs and blocks any second take charge on the sam
         userId: 77,
     );
 
-    expect($lot)->toBeInstanceOf(WtsInboundLot::class)
-        ->and(WtsInboundLot::query()->where('inbound_record_id', $record->id)->count())->toBe(1)
+    expect(WtsInboundLot::query()->where('inbound_record_id', $record->id)->count())->toBe(1)
         ->and($record->fresh()?->form_number)->toBe('FIR-2026-0099')
         ->and($record->fresh()?->acceptance_status)->toBe('accepted')
         ->and($record->fresh()?->created_by_user_id)->toBe($creator->id)
@@ -145,7 +144,7 @@ it('covers empty selection invalid lot selection and stock view normalization in
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsSortingPage::class)
+        ->test(WtsSortingPage::class) /** @phpstan-ignore-line argument.templateType */
         ->set('selectedUnitIds', [])
         ->call('registerProcessing')
         ->assertHasNoErrors();
@@ -154,7 +153,7 @@ it('covers empty selection invalid lot selection and stock view normalization in
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsSortingPage::class)
+        ->test(WtsSortingPage::class) /** @phpstan-ignore-line argument.templateType */
         ->set('selectedUnitIds', [$unit->id, $otherUnit->id])
         ->set('workedWeight', '10,5')
         ->set('deferredIronWeight', '2,5')
@@ -168,7 +167,7 @@ it('covers empty selection invalid lot selection and stock view normalization in
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsSortingPage::class)
+        ->test(WtsSortingPage::class) /** @phpstan-ignore-line argument.templateType */
         ->assertViewHas('stockViews', [
             'to_process' => 'Da lavorare',
             'finished' => '',

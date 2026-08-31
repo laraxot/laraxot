@@ -10,6 +10,16 @@ use Modules\Intervention\Data\LabourQuote;
 use Modules\Intervention\Data\LabourTariff;
 use Modules\Intervention\Tests\TestCase;
 
+/**
+ * @param  array{
+ *     hourlyPriceCents?: int,
+ *     calloutFeeCents?: int,
+ *     nightPercent?: int,
+ *     nightFromHour?: int,
+ *     nightToHour?: int,
+ *     weekendPercent?: int
+ * }  $overrides
+ */
 function labourTariff(array $overrides = []): LabourTariff
 {
     return new LabourTariff(

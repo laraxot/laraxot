@@ -33,18 +33,16 @@ it('covers label utility actions merged into the lot detail page', function (): 
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class)
+        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */
         ->call('addUnits', 'pallet', 2)
         ->assertHasNoErrors();
 
     $unit = $lot->fresh()?->units()->orderBy('id')->first();
-
-    /** @var \Modules\Wts\Models\WtsUnit $unit */
-    expect($unit)->toBeInstanceOf(WtsUnit::class);
+    assert($unit instanceof WtsUnit);
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class)
+        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */
         ->call('updateUnitType', $unit->id, 'drum')
         ->call('reprintUnitLabel', $unit->id)
         ->call('reprintAllLabels')
@@ -67,7 +65,7 @@ it('rejects an empty non conformity note from the lot detail page', function ():
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class)
+        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */
         ->set('nonConformityNote', '   ')
         ->call('reportNonConformity')
         ->assertHasNoErrors();
@@ -91,7 +89,7 @@ it('registers mixed outputs from the generic WTS processing page', function (): 
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsProcessingPage::class)
+        ->test(WtsProcessingPage::class) /** @phpstan-ignore-line argument.templateType */
         ->set('selectedUnitIds', [$unit->id])
         ->set('stepTypeCode', 'grinding')
         ->set('quantityMode', 'weight')
@@ -140,7 +138,7 @@ it('rejects processing selections outside the selected lot', function (): void {
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lotA->id])
-        ->test(WtsProcessingPage::class)
+        ->test(WtsProcessingPage::class) /** @phpstan-ignore-line argument.templateType */
         ->set('selectedUnitIds', [$unitA->id, $unitB->id])
         ->set('workedWeight', 50)
         ->call('processSelection')
@@ -170,7 +168,7 @@ it('covers ingress, outputs, lot detail and operational parameter utility branch
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['record' => $record->id])
-        ->test(WtsNewIngressPage::class)
+        ->test(WtsNewIngressPage::class) /** @phpstan-ignore-line argument.templateType */
         ->set('grossQuantity', '123,5')
         ->set('tareWeight', '10,2')
         ->set('entryWeight', '113,3')
@@ -182,12 +180,11 @@ it('covers ingress, outputs, lot detail and operational parameter utility branch
         ->and($record->fresh()?->entry_weight)->toBe('113.30');
 
     $lot = $record->fresh()?->lots()->first();
-
-    expect($lot)->not->toBeNull();
+    assert($lot instanceof \Modules\Wts\Models\WtsInboundLot);
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class)
+        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */
         ->call('addUnits', '', 1)
         ->assertHasNoErrors();
 
@@ -199,7 +196,7 @@ it('covers ingress, outputs, lot detail and operational parameter utility branch
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class)
+        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */
         ->call('removeUnit', $finishedUnit->id)
         ->assertHasNoErrors();
 

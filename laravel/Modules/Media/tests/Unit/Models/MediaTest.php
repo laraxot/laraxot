@@ -341,7 +341,7 @@ describe('Media model (database)', function (): void {
 
         expect($media->id)->toBeGreaterThan(0);
     });
-})->group('media-db');
+});
 
 it('media has casts', function (): void {
     $media = new Media();

@@ -70,12 +70,12 @@ it('renders the real material detail page for a scanned unit', function (): void
         ->assertOk()
         ->assertSee('LOT-2026-0200-BIG-BAG-01')
         ->assertSee('Corsia A - scaffale 2')
-        ->assertSee($unit->inboundLot?->lot_code)
-        ->assertSee($unit->inboundLot?->inboundRecord?->form_number);
+        ->assertSee((string) $unit->inboundLot?->lot_code)
+        ->assertSee((string) $unit->inboundLot?->inboundRecord?->form_number);
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['unit' => $unit->id])
-        ->test(WtsMaterialDetailPage::class)
+        ->test(WtsMaterialDetailPage::class) /** @phpstan-ignore-line argument.templateType */
         ->call('moveToArea', 'in_process', 'Reparto pressa')
         ->assertHasNoErrors();
 
@@ -96,7 +96,7 @@ it('reprints the label of a collo directly from the material detail page', funct
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['unit' => $unit->id])
-        ->test(WtsMaterialDetailPage::class)
+        ->test(WtsMaterialDetailPage::class) /** @phpstan-ignore-line argument.templateType */
         ->call('reprintUnitLabel')
         ->assertHasNoErrors();
 

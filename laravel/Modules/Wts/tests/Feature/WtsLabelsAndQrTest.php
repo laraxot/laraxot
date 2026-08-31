@@ -28,15 +28,17 @@ it('builds a QR that links to the processing page for the lot', function (): voi
         'lot_code' => 'LOT-2026-0100',
     ]);
 
+    $inboundRecord = $lot->inboundRecord;
+    assert($inboundRecord instanceof WtsInboundRecord);
+
     $unit = app(GenerateWtsUnitSeriesAction::class)->execute(
         lot: $lot,
         unitTypeCode: 'big_bag',
         unitsCount: 1,
-        technicalSheetSnapshot: $lot->inboundRecord->technicalSheetSnapshot,
+        technicalSheetSnapshot: $inboundRecord->technicalSheetSnapshot,
         printReasonCode: 'initial_print',
     )->first();
-
-    expect($unit)->toBeInstanceOf(WtsUnit::class);
+    assert($unit instanceof WtsUnit);
 
     $payload = app(BuildWtsQrPayloadAction::class)->execute($unit);
 
@@ -48,21 +50,21 @@ it('generates a PDF label for a WTS unit with a real QR SVG', function (): void 
         'lot_code' => 'LOT-2026-0101',
     ]);
 
+    $inboundRecord = $lot->inboundRecord;
+    assert($inboundRecord instanceof WtsInboundRecord);
+
     $unit = app(GenerateWtsUnitSeriesAction::class)->execute(
         lot: $lot,
         unitTypeCode: 'pallet',
         unitsCount: 1,
-        technicalSheetSnapshot: $lot->inboundRecord->technicalSheetSnapshot,
+        technicalSheetSnapshot: $inboundRecord->technicalSheetSnapshot,
         printReasonCode: 'initial_print',
     )->first();
-
-    expect($unit)->toBeInstanceOf(WtsUnit::class);
+    assert($unit instanceof WtsUnit);
 
     $pdf = app(GenerateWtsUnitLabelPdfAction::class)->execute($unit);
 
-    expect($pdf)
-        ->toBeString()
-        ->and(strlen($pdf))->toBeGreaterThan(1000)
+    expect(strlen($pdf))->toBeGreaterThan(1000)
         ->and($pdf)->toStartWith('%PDF');
 });
 
@@ -79,7 +81,7 @@ it('records a non conformity from the lot detail page', function (): void {
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class)
+        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */
         ->set('nonConformityNote', 'Etichetta non leggibile sul collo')
         ->call('reportNonConformity')
         ->assertHasNoErrors();

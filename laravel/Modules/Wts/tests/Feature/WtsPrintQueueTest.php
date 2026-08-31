@@ -112,20 +112,22 @@ it('queues a single label to the printer from the lot detail page', function ():
 
     $unit = makeLabelUnit('LOT-2026-9001-BIG-BAG-01');
     $lot = $unit->inboundLot;
-
+    assert($lot instanceof \Modules\Wts\Models\WtsInboundLot);
     Livewire\Livewire::actingAs($user);
-        Livewire\Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(Modules\Wts\Filament\Pages\WtsLotDetailPage::class)
-        ->call('queueUnitLabelPrint', $unit->id)
+        /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+        $livewire = Livewire\Livewire::withQueryParams(['lot' => $lot->id])
+        ->test(Modules\Wts\Filament\Pages\WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */;
+    $livewire->call('queueUnitLabelPrint', $unit->id)
         ->assertHasNoErrors();
 
     expect(WtsPrintJob::query()->where('wts_unit_id', $unit->id)->where('status_code', 'pending')->count())->toBe(1);
 
     // collo inesistente: nessun job
     Livewire\Livewire::actingAs($user);
-        Livewire\Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(Modules\Wts\Filament\Pages\WtsLotDetailPage::class)
-        ->call('queueUnitLabelPrint', 999999)
+        /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+        $livewire = Livewire\Livewire::withQueryParams(['lot' => $lot->id])
+        ->test(Modules\Wts\Filament\Pages\WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */;
+    $livewire->call('queueUnitLabelPrint', 999999)
         ->assertHasNoErrors();
 
     expect(WtsPrintJob::query()->count())->toBe(1);
@@ -138,6 +140,7 @@ it('queues all lot labels to the printer from the lot detail page', function ():
 
     $unit = makeLabelUnit('LOT-2026-9002-BIG-BAG-01');
     $lot = $unit->inboundLot;
+    assert($lot instanceof \Modules\Wts\Models\WtsInboundLot);
     WtsUnit::factory()->create([
         'inbound_lot_id' => $lot->id,
         'technical_sheet_snapshot_id' => $unit->technical_sheet_snapshot_id,
@@ -145,9 +148,10 @@ it('queues all lot labels to the printer from the lot detail page', function ():
     ]);
 
     Livewire\Livewire::actingAs($user);
-        Livewire\Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(Modules\Wts\Filament\Pages\WtsLotDetailPage::class)
-        ->call('queueAllLabelsPrint')
+        /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+        $livewire = Livewire\Livewire::withQueryParams(['lot' => $lot->id])
+        ->test(Modules\Wts\Filament\Pages\WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */;
+    $livewire->call('queueAllLabelsPrint')
         ->assertHasNoErrors();
 
     expect(WtsPrintJob::query()->where('status_code', 'pending')->count())->toBe(2);

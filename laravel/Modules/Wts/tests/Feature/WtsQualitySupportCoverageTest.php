@@ -159,13 +159,13 @@ it('covers material detail fallback branches and invalid moves', function (): vo
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['unit' => 999999])
-        ->test(WtsMaterialDetailPage::class)
+        ->test(WtsMaterialDetailPage::class) /** @phpstan-ignore-line argument.templateType */
         ->call('moveToArea', 'to_process')
         ->assertHasNoErrors();
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['unit' => $unit->id])
-        ->test(WtsMaterialDetailPage::class)
+        ->test(WtsMaterialDetailPage::class) /** @phpstan-ignore-line argument.templateType */
         ->call('moveToArea', '')
         ->assertHasNoErrors();
 
@@ -184,7 +184,7 @@ it('searches the audit query by lot code and form number fallbacks', function ()
     ]);
 
     $lotResult = app(SearchWtsAuditQuery::class)->execute('LOT-AUDIT-001');
-    $recordResult = app(SearchWtsAuditQuery::class)->execute($lot->inboundRecord?->form_number ?? '');
+    $recordResult = app(SearchWtsAuditQuery::class)->execute($lot->inboundRecord->form_number ?? '');
 
     expect($lotResult['lot']?->id)->toBe($lot->id)
         ->and($lotResult['unit']?->id)->toBe($unit->id)
@@ -215,6 +215,7 @@ it('reports ingress data source status for demo real ecos and driver error state
     config()->set('wts.ecos.sync_ingresses', true);
 
     app()->bind(EcosOdbcConnection::class, function (): EcosOdbcConnection {
+        /** @var \Modules\Wts\Ecos\EcosOdbcConnection&\Mockery\MockInterface $connection */
         $connection = Mockery::mock(EcosOdbcConnection::class);
         $connection->shouldReceive('select')->andThrow(new RuntimeException('ECOS non raggiungibile'));
 

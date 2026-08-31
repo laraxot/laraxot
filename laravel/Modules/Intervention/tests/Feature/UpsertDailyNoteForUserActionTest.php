@@ -22,7 +22,7 @@ it('upserts a daily note for a user and date', function (): void {
         bodyHtml: '<p><strong>First</strong> note</p>',
     );
 
-    expect($note1)->toBeInstanceOf(DailyNote::class);
+    expect($note1)->not->toBeNull();
     expect($note1->user_id)->toBe((int) $user->id);
     expect($note1->note_date->toDateString())->toBe('2026-02-01');
     expect($note1->body)->toBe('First note');

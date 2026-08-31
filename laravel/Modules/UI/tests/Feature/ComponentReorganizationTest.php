@@ -2,14 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Modules\UI\Tests\Feature;
+uses(\Modules\UI\Tests\TestCase::class);
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\View;
-use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
-
-uses(\Modules\UI\Tests\TestCase::class);
 
 function skipUnlessPubThemeViews(): void
 {

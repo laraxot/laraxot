@@ -22,6 +22,8 @@ use Modules\WorkOrder\Tests\TestCase;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
+use PHPUnit\Framework\Assert;
+
 use function Pest\Laravel\actingAs;
 
 function costingAdmin(): User
@@ -129,13 +131,23 @@ it('charts revenue and margin by project, ignoring quotations with no cost', fun
 
     Livewire::test(QuotationsMarginByProjectChart::class)->assertOk();
 
-    /** @var array<string, mixed> $data */
-    $data = (new ReflectionMethod(QuotationsMarginByProjectChart::class, 'getData'))
+    $dataRaw = (new ReflectionMethod(QuotationsMarginByProjectChart::class, 'getData'))
         ->invoke(app(QuotationsMarginByProjectChart::class));
+    Assert::assertIsArray($dataRaw);
+    Assert::assertArrayHasKey('labels', $dataRaw);
+    Assert::assertArrayHasKey('datasets', $dataRaw);
+    $datasets = $dataRaw['datasets'];
+    Assert::assertIsArray($datasets);
+    Assert::assertArrayHasKey(0, $datasets);
+    Assert::assertArrayHasKey(1, $datasets);
+    Assert::assertIsArray($datasets[0]);
+    Assert::assertIsArray($datasets[1]);
+    Assert::assertArrayHasKey('data', $datasets[0]);
+    Assert::assertArrayHasKey('data', $datasets[1]);
 
-    expect($data['labels'])->toBe(['MM Berlino', 'Podium'])
-        ->and($data['datasets'][0]['data'])->toBe([1220.0, 610.0])
-        ->and($data['datasets'][1]['data'])->toBe([620.0, 410.0]);
+    expect($dataRaw['labels'])->toBe(['MM Berlino', 'Podium'])
+        ->and($datasets[0]['data'])->toBe([1220.0, 610.0])
+        ->and($datasets[1]['data'])->toBe([620.0, 410.0]);
 });
 
 // ── Bill of materials ────────────────────────────────────────────────────────
@@ -155,17 +167,17 @@ it('derives the line total when a material is added by hand', function (): void 
         'opened_at' => now(),
     ]);
 
-    Livewire::test(MaterialsRelationManager::class, [
+    $lw = Livewire::test(MaterialsRelationManager::class, [
         'ownerRecord' => $workOrder,
         'pageClass' => ViewWorkOrder::class,
-    ])
-        ->assertOk()
-        ->callTableAction('create', data: [
-            'description' => 'Profilo alluminio',
-            'unit_code' => 'mt',
-            'quantity' => 3,
-            'unit_cost' => 7.5,
-        ]);
+    ]);
+    $lw->assertOk();
+    $lw->callTableAction('create', data: [
+        'description' => 'Profilo alluminio',
+        'unit_code' => 'mt',
+        'quantity' => 3,
+        'unit_cost' => 7.5,
+    ]);
 
     $material = $workOrder->materials()->firstOrFail();
 

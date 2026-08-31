@@ -34,12 +34,13 @@ it('covers empty selection and invalid config branches in processing page', func
     config()->set('wts.operational_parameters', 'invalid');
 
     Livewire::actingAs($user);
-    Livewire::test(WtsProcessingPage::class)
-        ->set('selectedUnitIds', [])
-        ->call('processSelection')
-        ->assertHasNoErrors()
-        ->assertViewHas('stepLabels', [])
-        ->assertViewHas('operationalParameters', []);
+    /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+    $livewire = Livewire::test(WtsProcessingPage::class);
+    $livewire->set('selectedUnitIds', [])
+        ->call('processSelection');
+    $livewire->assertViewHas('stepLabels', []);
+    $livewire->assertViewHas('operationalParameters', []);
+    $livewire->assertHasNoErrors();
 });
 
 it('covers dirty drum and pallet output branches in processing form trait', function (): void {
@@ -58,15 +59,16 @@ it('covers dirty drum and pallet output branches in processing form trait', func
     ]);
 
     Livewire::actingAs($user);
-    Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsSortingPage::class)
-        ->set('selectedUnitIds', [$unit->id])
+    /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+    $livewire = Livewire::withQueryParams(['lot' => $lot->id])
+        ->test(WtsSortingPage::class) /** @phpstan-ignore-line argument.templateType */;
+    $livewire->set('selectedUnitIds', [$unit->id])
         ->set('workedWeight', '50') // >= output (fusto sporco 22 + bancale 20) per bilancio valido
         ->set('dirtyDrumsCount', 1)
         ->set('palletsCount', 1)
-        ->call('registerProcessing')
-        ->assertHasNoErrors()
-        ->assertViewHas('stockViews', []);
+        ->call('registerProcessing');
+    $livewire->assertViewHas('stockViews', []);
+    $livewire->assertHasNoErrors();
 
     $step = WtsProcessingStep::query()->latest('id')->first();
 
@@ -134,12 +136,14 @@ it('covers invalid config branches in ingresses and inventory pages', function (
     config()->set('wts.stock_views', 'invalid');
 
     Livewire::actingAs($user);
-    Livewire::test(WtsIngressesPage::class)
-        ->assertViewHas('unitTypeLabels', []);
+    /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+    $livewire = Livewire::test(WtsIngressesPage::class);
+    $livewire->assertViewHas('unitTypeLabels', []);
 
     Livewire::actingAs($user);
-    Livewire::test(WtsInventoryPage::class)
-        ->assertViewHas('stockViews', []);
+    /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+    $livewire = Livewire::test(WtsInventoryPage::class);
+    $livewire->assertViewHas('stockViews', []);
 });
 
 it('covers empty fallback branches in finished material and material detail pages', function (): void {
@@ -151,11 +155,13 @@ it('covers empty fallback branches in finished material and material detail page
     config()->set('wts.stock_views', 'invalid');
 
     Livewire::actingAs($user);
-    Livewire::test(WtsFinishedMaterialPage::class)
-        ->assertSet('materialId', null)
-        ->assertViewHas('selectedMaterial', null);
+    /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+    $livewire = Livewire::test(WtsFinishedMaterialPage::class);
+    $livewire->assertSet('materialId', null);
+    $livewire->assertViewHas('selectedMaterial', null);
 
     Livewire::actingAs($user);
-    Livewire::test(WtsMaterialDetailPage::class)
-        ->assertViewHas('stockViews', []);
+    /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+    $livewire = Livewire::test(WtsMaterialDetailPage::class);
+    $livewire->assertViewHas('stockViews', []);
 });

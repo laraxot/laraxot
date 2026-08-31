@@ -114,22 +114,23 @@ it('covers remaining processing page utility branches and config normalization',
     ]);
 
     Livewire::actingAs($user);
-    Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsProcessingPage::class)
-        ->call('deselectUnit', $unitA->id)
-        ->set('lotId', $lot->id)
-        ->assertHasNoErrors()
-        ->assertViewHas('stepLabels', [
-            'sorting' => 'Selezione',
-            'pressing' => '',
-        ])
-        ->assertViewHas('operationalParameters', [
-            'standard_drum_weight_kg' => [
-                'label' => 'Peso',
-                'value' => 18,
-                'unit' => 'kg',
-            ],
+    /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+    $livewire = Livewire::withQueryParams(['lot' => $lot->id])
+        ->test(WtsProcessingPage::class) /** @phpstan-ignore-line argument.templateType */;
+    $livewire->call('deselectUnit', $unitA->id)
+        ->set('lotId', $lot->id);
+    $livewire->assertViewHas('stepLabels', [
+        'sorting' => 'Selezione',
+        'pressing' => '',
         ]);
+    $livewire->assertViewHas('operationalParameters', [
+        'standard_drum_weight_kg' => [
+        'label' => 'Peso',
+        'value' => 18,
+        'unit' => 'kg',
+        ],
+        ]);
+    $livewire->assertHasNoErrors();
 
     expect([$unitA->id, $unitB->id])->toContain($unitB->id);
 });

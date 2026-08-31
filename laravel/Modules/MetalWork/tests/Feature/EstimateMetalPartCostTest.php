@@ -11,7 +11,21 @@ use Modules\MetalWork\Datas\StepGeometry;
 use Modules\MetalWork\Models\MetalRawMaterial;
 use Modules\MetalWork\Support\MetalWorksCosting;
 use Modules\MetalWork\Tests\TestCase;
+use Modules\MetalWork\Datas\MetalCostLine;
+use PHPUnit\Framework\Assert;
 
+/**
+ * @param  array{
+ *     partCode?: string,
+ *     name?: string,
+ *     lengthMm?: float|null,
+ *     widthMm?: float|null,
+ *     thicknessMm?: float|null,
+ *     planeCount?: int,
+ *     cylinderCount?: int,
+ *     solidCount?: int
+ * }  $overrides
+ */
 function metalWorksGeometry(array $overrides = []): StepGeometry
 {
     return new StepGeometry(
@@ -79,6 +93,7 @@ it('costs the material in the unit the supplier prices it in', function (): void
     );
 
     $material = collect($costing->lines)->firstWhere('workCenterCode', 'material');
+    Assert::assertInstanceOf(MetalCostLine::class, $material);
 
     // A metre-priced profile is consumed by length, not by weight.
     expect($material->unitCode)->toBe('ml')
@@ -137,8 +152,8 @@ it('lets an operator override the minutes of one work centre', function (): void
     $welding = collect($costing->lines)->firstWhere('workCenterCode', 'welding');
 
     // 120 minutes at the seeded 50 €/h.
-    expect($welding)->not->toBeNull()
-        ->and($welding->quantity)->toBe(2.0)
+    Assert::assertInstanceOf(MetalCostLine::class, $welding);
+    expect($welding->quantity)->toBe(2.0)
         ->and($welding->lineCost)->toBe(100.0)
         ->and($welding->driverCode)->toBe('manual');
 });
@@ -156,10 +171,14 @@ it('resolves the markup most specific first', function (): void {
         ['markup_percent' => 5],
     );
 
-    expect(collect($fromWorkCenter->lines)->firstWhere('workCenterCode', 'material')->markupSourceCode)->toBe('work_center')
-        ->and(collect($fromWorkCenter->lines)->firstWhere('workCenterCode', 'material')->markupPercent)->toBe(40.0)
-        ->and(collect($fromEstimate->lines)->firstWhere('workCenterCode', 'material')->markupSourceCode)->toBe('estimate')
-        ->and(collect($fromEstimate->lines)->firstWhere('workCenterCode', 'material')->markupPercent)->toBe(5.0);
+    $wcLine = collect($fromWorkCenter->lines)->firstWhere('workCenterCode', 'material');
+    $estLine = collect($fromEstimate->lines)->firstWhere('workCenterCode', 'material');
+    Assert::assertInstanceOf(MetalCostLine::class, $wcLine);
+    Assert::assertInstanceOf(MetalCostLine::class, $estLine);
+    expect($wcLine->markupSourceCode)->toBe('work_center')
+        ->and($wcLine->markupPercent)->toBe(40.0)
+        ->and($estLine->markupSourceCode)->toBe('estimate')
+        ->and($estLine->markupPercent)->toBe(5.0);
 });
 
 it('falls back to the configured markup when nothing else says otherwise', function (): void {
@@ -168,6 +187,7 @@ it('falls back to the configured markup when nothing else says otherwise', funct
 
     $costing = app(EstimateMetalPartCostAction::class)->execute(metalWorksGeometry(), metalWorksMaterial());
     $material = collect($costing->lines)->firstWhere('workCenterCode', 'material');
+    Assert::assertInstanceOf(MetalCostLine::class, $material);
 
     expect($material->markupSourceCode)->toBe('config')
         ->and($material->markupPercent)->toBe(20.0);

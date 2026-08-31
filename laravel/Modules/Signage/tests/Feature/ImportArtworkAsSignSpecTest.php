@@ -9,6 +9,7 @@ use Modules\Signage\Models\SignComponent;
 use Modules\Signage\Models\SignPriceListItem;
 use Modules\Signage\Models\SignSpec;
 use Modules\Signage\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
 function signageImportFixture(): string
 {
@@ -18,8 +19,7 @@ function signageImportFixture(): string
 it('persists a sign spec with its components from a drawing', function (): void {
     $spec = app(ImportArtworkAsSignSpecAction::class)->execute(signageImportFixture());
 
-    expect($spec)->toBeInstanceOf(SignSpec::class)
-        ->and($spec->exists)->toBeTrue()
+    expect($spec->exists)->toBeTrue()
         ->and($spec->customer_name)->toBe('ARREDO 91 PRODUZIONE SRL')
         ->and($spec->brand)->toBe('MaxMara')
         ->and($spec->sign_type_code)->toBe('MM_BLOCK25_8019_800900')
@@ -33,8 +33,8 @@ it('persists a sign spec with its components from a drawing', function (): void 
     expect($spec->components()->count())->toBeGreaterThanOrEqual(5);
 
     $body = $spec->components()->where('role_code', 'body')->first();
-    expect($body)->not->toBeNull()
-        ->and($body->material)->toBe('ACRYLBLOCK')
+    Assert::assertInstanceOf(SignComponent::class, $body);
+    expect($body->material)->toBe('ACRYLBLOCK')
         ->and((float) $body->thickness_mm)->toBe(25.0);
 });
 
@@ -42,9 +42,13 @@ it('stores the full extraction snapshot and layers for traceability', function (
     $spec = app(ImportArtworkAsSignSpecAction::class)->execute(signageImportFixture());
 
     expect($spec->layers)->toBeArray()->toContain('LED lighting')
-        ->and($spec->notes)->toContain('PRODUCT NOT INSPECTIONABLE')
-        ->and($spec->raw_extraction)->toBeArray()
-        ->and($spec->raw_extraction['title_block']['sign_type_code'])->toBe('MM_BLOCK25_8019_800900');
+        ->and($spec->notes)->toContain('PRODUCT NOT INSPECTIONABLE');
+    $raw = $spec->raw_extraction;
+    Assert::assertIsArray($raw);
+    Assert::assertArrayHasKey('title_block', $raw);
+    $titleBlock = $raw['title_block'];
+    Assert::assertIsArray($titleBlock);
+    expect($titleBlock['sign_type_code'])->toBe('MM_BLOCK25_8019_800900');
 });
 
 it('links a component to a price-list item and totals a line', function (): void {
@@ -68,8 +72,11 @@ it('links a component to a price-list item and totals a line', function (): void
         'line_total' => round(1.5 * (float) $item->unit_cost, 2),
     ]);
 
-    expect($face->fresh()->priceListItem->code)->toBe('PLEX_OPAL_3500K')
-        ->and((float) $face->fresh()->line_total)->toBe(174.68);
+    $fresh = $face->fresh();
+    Assert::assertInstanceOf(SignComponent::class, $fresh);
+    Assert::assertNotNull($fresh->priceListItem);
+    expect($fresh->priceListItem->code)->toBe('PLEX_OPAL_3500K')
+        ->and((float) $fresh->line_total)->toBe(174.68);
 });
 
 it('deletes components when the spec is deleted', function (): void {

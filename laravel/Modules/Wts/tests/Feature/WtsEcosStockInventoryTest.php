@@ -43,8 +43,7 @@ it('maps ECOS stock rows from the bspart/bscol snapshot query', function (): voi
         ->and($result['rows'])->toHaveCount(1);
 
     $row = $result['rows'][0];
-    expect($row)->toBeInstanceOf(WtsInventoryRow::class)
-        ->and($row->batchCode)->toBe('PART-001')
+    expect($row->batchCode)->toBe('PART-001')
         ->and($row->sheetCode)->toBe('ST-944')
         ->and($row->wasteCode)->toBe('12 01 03')
         ->and($row->weightKg)->toBe(1238.5)

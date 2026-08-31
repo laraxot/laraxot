@@ -62,12 +62,11 @@ afterEach(function (): void {
     Mockery::close();
 });
 
-test('EditTranslationFile schemaFromRecord covers both branches', function (): void {
+test('EditTranslationFile makeFromArray covers content branches', function (): void {
     $edit = new EditTranslationFile();
-    Assert::assertNotEmpty($edit->schemaFromRecord((object) ['content' => ['hello' => 'world']]));
-    Assert::assertSame([], $edit->schemaFromRecord(null));
-    Assert::assertSame([], $edit->schemaFromRecord((object) ['content' => 'scalar']));
-    Assert::assertSame([], $edit->schemaFromRecord((object) []));
+    Assert::assertNotEmpty($edit->makeFromArray(['hello' => 'world'], 'content'));
+    Assert::assertSame([], $edit->makeFromArray([]));
+    Assert::assertNotEmpty($edit->makeFromArray(['nested' => ['x' => '1']], 'content'));
 });
 
 test('LocaleSwitcherRefresh applyLocale covers string and non-string locale', function (): void {

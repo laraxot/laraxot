@@ -133,7 +133,8 @@ it('rate limits login attempts', function (): void {
         ->set('password', 'password123')
         ->call('authenticate');
 
-    expect($response)->toBeNull();
+    expect($response)->not->toBeNull();
+    $response->assertHasErrors();
 });
 
 it('allows any user type to login via frontend', function (): void {
@@ -154,5 +155,6 @@ it('allows any user type to login via frontend', function (): void {
 
     $authenticatedUser = Auth::user();
     expect($authenticatedUser)->not->toBeNull();
+    \PHPUnit\Framework\Assert::assertInstanceOf(\Modules\User\Models\User::class, $authenticatedUser);
     expect($authenticatedUser->email)->toBe($email);
 });

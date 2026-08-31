@@ -65,6 +65,7 @@ it('generates a PDF label for a derived material output', function (): void {
 });
 
 it('generates a batch PDF with one label per unit', function (): void {
+    /** @var \Illuminate\Support\Collection<int, \Modules\Wts\Models\WtsUnit> $units */
     $units = WtsUnit::factory()->count(2)->create();
 
     $pdf = app(GenerateWtsUnitLabelsBatchPdfAction::class)->execute(
@@ -92,7 +93,7 @@ it('downloads the processing sheet PDF from the processing sheet page', function
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['step' => $step->id])
-        ->test(WtsProcessingSheetPage::class)
+        ->test(WtsProcessingSheetPage::class) /** @phpstan-ignore-line argument.templateType */
         ->call('downloadSheetPdf')
         ->assertHasNoErrors();
 });
@@ -160,7 +161,7 @@ it('reprints the output label PDF from the finished material page', function ():
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['material' => $material->id])
-        ->test(WtsFinishedMaterialPage::class)
+        ->test(WtsFinishedMaterialPage::class) /** @phpstan-ignore-line argument.templateType */
         ->call('reprintOutputLabel')
         ->assertHasNoErrors();
 

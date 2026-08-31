@@ -66,6 +66,7 @@ it('generates units with internal qr codes and label prints', function (): void 
         'current_area_code' => 'incoming',
     ]);
 
+    /** @var \Illuminate\Support\Collection<int, \Modules\Wts\Models\WtsUnit> $generatedUnits */
     $generatedUnits = app(GenerateWtsUnitSeriesAction::class)->execute(
         lot: $lot,
         unitTypeCode: 'big_bag',
@@ -75,9 +76,9 @@ it('generates units with internal qr codes and label prints', function (): void 
     );
 
     expect($generatedUnits)->toHaveCount(3)
-        ->and($generatedUnits[0]->unit_code)->toBe('LOT-2026-0001-BIG-BAG-01')
-        ->and($generatedUnits[0]->qr_code)->toStartWith('WTS-QR-')
-        ->and($generatedUnits[0]->labelPrints)->toHaveCount(1);
+        ->and(($generatedUnits[0] ?? throw new \RuntimeException('missing unit 0'))->unit_code)->toBe('LOT-2026-0001-BIG-BAG-01')
+        ->and(($generatedUnits[0] ?? throw new \RuntimeException('missing unit 0'))->qr_code)->toStartWith('WTS-QR-')
+        ->and(($generatedUnits[0] ?? throw new \RuntimeException('missing unit 0'))->labelPrints)->toHaveCount(1);
 
     expect($lot->fresh()?->initial_units_count)->toBe(3);
 });
@@ -112,6 +113,7 @@ it('registers processing on selected units and creates derived materials', funct
         'current_area_code' => 'to_process',
     ]);
 
+    /** @var \Illuminate\Support\Collection<int, \Modules\Wts\Models\WtsUnit> $units */
     $units = app(GenerateWtsUnitSeriesAction::class)->execute(
         lot: $lot,
         unitTypeCode: 'big_bag',
@@ -121,7 +123,7 @@ it('registers processing on selected units and creates derived materials', funct
     );
 
     $step = app(RegisterWtsProcessingAction::class)->execute(
-        selectedUnitIds: [$units[0]->id, $units[1]->id],
+        selectedUnitIds: [($units[0] ?? throw new \RuntimeException('missing unit 0'))->id, ($units[1] ?? throw new \RuntimeException('missing unit 1'))->id],
         stepTypeCode: 'grinding',
         performedByUserId: $user->id,
         quantityMode: 'units',
@@ -154,9 +156,9 @@ it('registers processing on selected units and creates derived materials', funct
         ->and($step->selected_units_count)->toBe(2)
         ->and($step->quantity_mode)->toBe('units');
 
-    expect(WtsUnit::query()->findOrFail($units[0]->id)->status_code)->toBe('finished')
-        ->and(WtsUnit::query()->findOrFail($units[1]->id)->status_code)->toBe('finished')
-        ->and(WtsUnit::query()->findOrFail($units[2]->id)->status_code)->toBe('available');
+    expect(WtsUnit::query()->findOrFail(($units[0] ?? throw new \RuntimeException('missing unit 0'))->id)->status_code)->toBe('finished')
+        ->and(WtsUnit::query()->findOrFail(($units[1] ?? throw new \RuntimeException('missing unit 1'))->id)->status_code)->toBe('finished')
+        ->and(WtsUnit::query()->findOrFail(($units[2] ?? throw new \RuntimeException('missing unit 2'))->id)->status_code)->toBe('available');
 });
 
 it('rejects processing when one of the selected units is no longer available', function (): void {
@@ -184,6 +186,7 @@ it('rejects processing when one of the selected units is no longer available', f
         'current_area_code' => 'to_process',
     ]);
 
+    /** @var \Illuminate\Support\Collection<int, \Modules\Wts\Models\WtsUnit> $units */
     $units = app(GenerateWtsUnitSeriesAction::class)->execute(
         lot: $lot,
         unitTypeCode: 'big_bag',
@@ -192,13 +195,13 @@ it('rejects processing when one of the selected units is no longer available', f
         printReasonCode: 'initial_print',
     );
 
-    $units[1]->forceFill([
+    ($units[1] ?? throw new \RuntimeException('missing unit 1'))->forceFill([
         'status_code' => 'finished',
         'current_area_code' => 'finished',
     ])->save();
 
     app(RegisterWtsProcessingAction::class)->execute(
-        selectedUnitIds: [$units[0]->id],
+        selectedUnitIds: [($units[0] ?? throw new \RuntimeException('missing unit 0'))->id],
         stepTypeCode: 'sorting',
         performedByUserId: null,
         quantityMode: 'units',
@@ -220,7 +223,7 @@ it('rejects processing when one of the selected units is no longer available', f
     );
 
     expect(fn () => app(RegisterWtsProcessingAction::class)->execute(
-        selectedUnitIds: [$units[0]->id, $units[1]->id],
+        selectedUnitIds: [($units[0] ?? throw new \RuntimeException('missing unit 0'))->id, ($units[1] ?? throw new \RuntimeException('missing unit 1'))->id],
         stepTypeCode: 'sorting',
         performedByUserId: null,
         quantityMode: 'units',
@@ -274,6 +277,7 @@ it('rejects processing when selected units do not belong to the expected lot', f
         'current_area_code' => 'to_process',
     ]);
 
+    /** @var \Illuminate\Support\Collection<int, \Modules\Wts\Models\WtsUnit> $firstLotUnits */
     $firstLotUnits = app(GenerateWtsUnitSeriesAction::class)->execute(
         lot: $firstLot,
         unitTypeCode: 'big_bag',
@@ -282,6 +286,7 @@ it('rejects processing when selected units do not belong to the expected lot', f
         printReasonCode: 'initial_print',
     );
 
+    /** @var \Illuminate\Support\Collection<int, \Modules\Wts\Models\WtsUnit> $secondLotUnits */
     $secondLotUnits = app(GenerateWtsUnitSeriesAction::class)->execute(
         lot: $secondLot,
         unitTypeCode: 'big_bag',
@@ -291,7 +296,7 @@ it('rejects processing when selected units do not belong to the expected lot', f
     );
 
     expect(fn () => app(RegisterWtsProcessingAction::class)->execute(
-        selectedUnitIds: [$firstLotUnits[0]->id, $secondLotUnits[0]->id],
+        selectedUnitIds: [($firstLotUnits[0] ?? throw new \RuntimeException('missing unit 0'))->id, ($secondLotUnits[0] ?? throw new \RuntimeException('missing unit 0'))->id],
         stepTypeCode: 'sorting',
         performedByUserId: null,
         quantityMode: 'units',

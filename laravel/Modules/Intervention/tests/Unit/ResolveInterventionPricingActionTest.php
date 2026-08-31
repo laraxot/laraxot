@@ -7,11 +7,15 @@ uses(\Modules\Intervention\Tests\TestCase::class);
 use Carbon\CarbonImmutable;
 use Modules\Intervention\Actions\CalculateLabourAmountAction;
 use Modules\Intervention\Actions\ResolveInterventionPricingAction;
+use Modules\Intervention\Data\InterventionPricing;
 use Modules\Intervention\Data\InterventionReportDraft;
 use Modules\Intervention\Data\LabourQuote;
 use Modules\Intervention\Data\LabourTariff;
 use Modules\Intervention\Tests\TestCase;
 
+/**
+ * @param  array{minutes?: int, labour?: float|null, callout?: float|null, km?: int|null}  $o
+ */
 function pricingDraft(array $o = []): InterventionReportDraft
 {
     return new InterventionReportDraft(
@@ -25,6 +29,9 @@ function pricingDraft(array $o = []): InterventionReportDraft
     );
 }
 
+/**
+ * @param  array{hourly?: int, callout?: int, weekend?: int}  $o
+ */
 function pricingTariff(array $o = []): LabourTariff
 {
     return new LabourTariff(
@@ -34,7 +41,10 @@ function pricingTariff(array $o = []): LabourTariff
     );
 }
 
-function resolvePricing(array $current, InterventionReportDraft $draft, LabourTariff $tariff, ?CarbonImmutable $when = null)
+/**
+ * @param  array{amount?: float|null, callout?: float|null, km?: int|null, minutes?: int}  $current
+ */
+function resolvePricing(array $current, InterventionReportDraft $draft, LabourTariff $tariff, ?CarbonImmutable $when = null): InterventionPricing
 {
     return (new ResolveInterventionPricingAction(new CalculateLabourAmountAction()))->execute(
         currentAmount: $current['amount'] ?? null,
@@ -96,8 +106,6 @@ it('reports the surcharge only when the amount came from the tariff', function (
 
     expect($derived->surchargePercent)->toBe(50)
         ->and($derived->surchargeCode)->toBe(LabourQuote::SURCHARGE_WEEKEND)
-        // Announcing "+50% weekend" over a price the operator stated himself
-        // would describe something that did not happen.
         ->and($dictated->surchargePercent)->toBe(0)
         ->and($dictated->surchargeCode)->toBeNull();
 });

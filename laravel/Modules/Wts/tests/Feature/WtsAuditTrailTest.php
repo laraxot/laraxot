@@ -162,6 +162,7 @@ it('never reuses lot codes of soft deleted lots', function (): void {
 it('never reuses unit sequences of soft deleted units', function (): void {
     $lot = WtsInboundLot::factory()->create(['lot_code' => 'LOT-2026-0500']);
 
+    /** @var \Illuminate\Support\Collection<int, \Modules\Wts\Models\WtsUnit> $units */
     $units = app(GenerateWtsUnitSeriesAction::class)->execute(
         lot: $lot,
         unitTypeCode: 'big_bag',
@@ -172,6 +173,7 @@ it('never reuses unit sequences of soft deleted units', function (): void {
 
     $units->last()?->delete();
 
+    /** @var \Illuminate\Support\Collection<int, \Modules\Wts\Models\WtsUnit> $newUnits */
     $newUnits = app(GenerateWtsUnitSeriesAction::class)->execute(
         lot: $lot->fresh() ?? $lot,
         unitTypeCode: 'big_bag',
@@ -209,10 +211,10 @@ it('attributes queued label prints to the acting user from the lot detail page',
 
     $unit = WtsUnit::factory()->create(['unit_code' => 'LOT-2026-0601-BIG-BAG-01']);
     $lot = $unit->inboundLot;
-
+    assert($lot instanceof \Modules\Wts\Models\WtsInboundLot);
     Livewire::actingAs($user);
-    Livewire::withQueryParams(['lot' => $lot?->id])
-        ->test(WtsLotDetailPage::class)
+    Livewire::withQueryParams(['lot' => $lot->id])
+        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */
         ->call('queueUnitLabelPrint', $unit->id)
         ->call('queueAllLabelsPrint')
         ->assertHasNoErrors();
@@ -242,7 +244,7 @@ it('soft deletes removed units keeping their print history and audit trail', fun
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class)
+        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */
         ->call('removeUnit', $unit->id)
         ->assertHasNoErrors();
 
@@ -273,7 +275,7 @@ it('ignores queue print requests without a selected lot or without units', funct
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $emptyLot->id])
-        ->test(WtsLotDetailPage::class)
+        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */
         ->call('queueAllLabelsPrint')
         ->assertHasNoErrors();
 

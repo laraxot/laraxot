@@ -11,7 +11,12 @@ use Modules\Quotation\Models\QuotationItem;
 use Modules\WorkOrder\Actions\CreateWorkOrderFromQuotationAction;
 use Modules\WorkOrder\Models\WorkOrderStatus;
 use Modules\WorkOrder\Tests\TestCase;
+use Modules\WorkOrder\Models\WorkOrderMaterial;
+use PHPUnit\Framework\Assert;
 
+/**
+ * @param  array<string, mixed>  $attributes
+ */
 function quotationToConvert(array $attributes = []): Quotation
 {
     $customer = Customer::query()->create(['legal_name' => 'Cliente Conversione S.r.l.', 'is_active' => true]);
@@ -61,8 +66,10 @@ it('carries the quoted lines into the job order as its bill of materials', funct
 
     $materials = $workOrder->materials()->get();
 
-    expect($materials)->toHaveCount(2)
-        ->and($materials[0]->description)->toBe('Lastra ottone OT63 [mq]')
+    expect($materials)->toHaveCount(2);
+    Assert::assertInstanceOf(WorkOrderMaterial::class, $materials[0]);
+    Assert::assertInstanceOf(WorkOrderMaterial::class, $materials[1]);
+    expect($materials[0]->description)->toBe('Lastra ottone OT63 [mq]')
         ->and((float) $materials[0]->quantity)->toBe(2.5)
         ->and((float) $materials[0]->unit_cost)->toBe(116.45)
         // Line total is recomputed, never copied blindly: 2,5 × 116,45 = 291,13

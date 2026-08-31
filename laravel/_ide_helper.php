@@ -5,7 +5,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 13.20.0.
+ * Generated for Laravel 13.29.0.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -1846,6 +1846,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $abstract
          * @return string
+         * @throws \LogicException
          * @static
          */
         public static function getAlias($abstract)
@@ -6768,10 +6769,11 @@ namespace Illuminate\Support\Facades {
         /**
          * Get a queued cookie instance.
          *
+         * @template TQueuedDefault
          * @param string $key
-         * @param mixed $default
+         * @param TQueuedDefault|(\Closure(): TQueuedDefault) $default
          * @param string|null $path
-         * @return \Symfony\Component\HttpFoundation\Cookie|null
+         * @return \Symfony\Component\HttpFoundation\Cookie|TQueuedDefault
          * @static
          */
         public static function queued($key, $default = null, $path = null)
@@ -10629,7 +10631,7 @@ namespace Illuminate\Support\Facades {
      * @method static \Illuminate\Http\Client\PendingRequest withResponseMiddleware(callable $middleware)
      * @method static \Illuminate\Http\Client\PendingRequest withAttributes(array $attributes)
      * @method static \Illuminate\Http\Client\PendingRequest beforeSending(callable $callback)
-     * @method static \Illuminate\Http\Client\PendingRequest afterResponse(callable|null $callback)
+     * @method static \Illuminate\Http\Client\PendingRequest afterResponse(callable $callback)
      * @method static \Illuminate\Http\Client\PendingRequest throw(callable|null $callback = null)
      * @method static \Illuminate\Http\Client\PendingRequest throwIf(callable|bool $condition)
      * @method static \Illuminate\Http\Client\PendingRequest throwUnless(callable|bool $condition)
@@ -10721,9 +10723,23 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Execute a callback while requests are created without global middleware or global options.
+         *
+         * @template TReturn
+         * @param (\Closure(): TReturn) $callback
+         * @return TReturn
+         * @static
+         */
+        public static function withoutGlobalConfiguration($callback)
+        {
+            /** @var \Illuminate\Http\Client\Factory $instance */
+            return $instance->withoutGlobalConfiguration($callback);
+        }
+
+        /**
          * Create a new response instance for use during stubbing.
          *
-         * @param array|string|null $body
+         * @param \Psr\Http\Message\StreamInterface|array|string|resource|null $body
          * @param int $status
          * @param array $headers
          * @return \GuzzleHttp\Promise\PromiseInterface
@@ -10737,9 +10753,9 @@ namespace Illuminate\Support\Facades {
         /**
          * Create a new PSR-7 response instance for use during stubbing.
          *
-         * @param array|string|null $body
+         * @param \Psr\Http\Message\StreamInterface|array|string|resource|null $body
          * @param int $status
-         * @param array<string, mixed> $headers
+         * @param array $headers
          * @return \GuzzleHttp\Psr7\Response
          * @throws \InvalidArgumentException
          * @static
@@ -10752,9 +10768,9 @@ namespace Illuminate\Support\Facades {
         /**
          * Create a new RequestException instance for use during stubbing.
          *
-         * @param array|string|null $body
+         * @param \Psr\Http\Message\StreamInterface|array|string|resource|null $body
          * @param int $status
-         * @param array<string, mixed> $headers
+         * @param array $headers
          * @return \Illuminate\Http\Client\RequestException
          * @static
          */
@@ -11082,6 +11098,195 @@ namespace Illuminate\Support\Facades {
         {
             /** @var \Illuminate\Http\Client\Factory $instance */
             return $instance->macroCall($method, $parameters);
+        }
+
+            }
+    /**
+     * @see \Illuminate\Image\ImageManager
+     */
+    class Image {
+        /**
+         * Create an image instance from raw bytes.
+         *
+         * @static
+         */
+        public static function fromBytes($contents)
+        {
+            /** @var \Illuminate\Image\ImageManager $instance */
+            return $instance->fromBytes($contents);
+        }
+
+        /**
+         * Create an image instance from a stream.
+         *
+         * @param resource $stream
+         * @static
+         */
+        public static function fromStream($stream)
+        {
+            /** @var \Illuminate\Image\ImageManager $instance */
+            return $instance->fromStream($stream);
+        }
+
+        /**
+         * Create an image instance from a base64 encoded string.
+         *
+         * @static
+         */
+        public static function fromBase64($base64)
+        {
+            /** @var \Illuminate\Image\ImageManager $instance */
+            return $instance->fromBase64($base64);
+        }
+
+        /**
+         * Create an image instance from a file path.
+         *
+         * @static
+         */
+        public static function fromPath($path)
+        {
+            /** @var \Illuminate\Image\ImageManager $instance */
+            return $instance->fromPath($path);
+        }
+
+        /**
+         * Create an image instance from a storage disk path.
+         *
+         * @static
+         */
+        public static function fromStorage($path, $disk = null)
+        {
+            /** @var \Illuminate\Image\ImageManager $instance */
+            return $instance->fromStorage($path, $disk);
+        }
+
+        /**
+         * Create an image instance from an uploaded file.
+         *
+         * @static
+         */
+        public static function fromUpload($file)
+        {
+            /** @var \Illuminate\Image\ImageManager $instance */
+            return $instance->fromUpload($file);
+        }
+
+        /**
+         * Create an image instance from a URL.
+         *
+         * @static
+         */
+        public static function fromUrl($url)
+        {
+            /** @var \Illuminate\Image\ImageManager $instance */
+            return $instance->fromUrl($url);
+        }
+
+        /**
+         * Register a transformation handler for the given driver.
+         *
+         * @param class-string<\Illuminate\Contracts\Image\Transformation> $transformation
+         * @static
+         */
+        public static function transformUsing($driver, $transformation, $callback)
+        {
+            /** @var \Illuminate\Image\ImageManager $instance */
+            return $instance->transformUsing($driver, $transformation, $callback);
+        }
+
+        /**
+         * Get the default image driver name.
+         *
+         * @static
+         */
+        public static function getDefaultDriver()
+        {
+            /** @var \Illuminate\Image\ImageManager $instance */
+            return $instance->getDefaultDriver();
+        }
+
+        /**
+         * Get a driver instance.
+         *
+         * @param \UnitEnum|string|null $driver
+         * @return mixed
+         * @throws \InvalidArgumentException
+         * @static
+         */
+        public static function driver($driver = null)
+        {
+            //Method inherited from \Illuminate\Support\Manager 
+            /** @var \Illuminate\Image\ImageManager $instance */
+            return $instance->driver($driver);
+        }
+
+        /**
+         * Register a custom driver creator Closure.
+         *
+         * @param string $driver
+         * @param-closure-this $this  $callback
+         * @return \Illuminate\Image\ImageManager
+         * @static
+         */
+        public static function extend($driver, $callback)
+        {
+            //Method inherited from \Illuminate\Support\Manager 
+            /** @var \Illuminate\Image\ImageManager $instance */
+            return $instance->extend($driver, $callback);
+        }
+
+        /**
+         * Get all of the created "drivers".
+         *
+         * @return array<string, mixed>
+         * @static
+         */
+        public static function getDrivers()
+        {
+            //Method inherited from \Illuminate\Support\Manager 
+            /** @var \Illuminate\Image\ImageManager $instance */
+            return $instance->getDrivers();
+        }
+
+        /**
+         * Get the container instance used by the manager.
+         *
+         * @return \Illuminate\Contracts\Container\Container
+         * @static
+         */
+        public static function getContainer()
+        {
+            //Method inherited from \Illuminate\Support\Manager 
+            /** @var \Illuminate\Image\ImageManager $instance */
+            return $instance->getContainer();
+        }
+
+        /**
+         * Set the container instance used by the manager.
+         *
+         * @param \Illuminate\Contracts\Container\Container $container
+         * @return \Illuminate\Image\ImageManager
+         * @static
+         */
+        public static function setContainer($container)
+        {
+            //Method inherited from \Illuminate\Support\Manager 
+            /** @var \Illuminate\Image\ImageManager $instance */
+            return $instance->setContainer($container);
+        }
+
+        /**
+         * Forget all of the resolved driver instances.
+         *
+         * @return \Illuminate\Image\ImageManager
+         * @static
+         */
+        public static function forgetDrivers()
+        {
+            //Method inherited from \Illuminate\Support\Manager 
+            /** @var \Illuminate\Image\ImageManager $instance */
+            return $instance->forgetDrivers();
         }
 
             }
@@ -11649,7 +11854,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Unset the given channel instance.
          *
-         * @param string|null $driver
+         * @param \UnitEnum|string|null $driver
          * @return void
          * @static
          */
@@ -11831,9 +12036,6 @@ namespace Illuminate\Support\Facades {
      * @method static \Illuminate\Mail\SentMessage|null html(string $html, mixed $callback)
      * @method static \Illuminate\Mail\SentMessage|null plain(string $view, array $data, mixed $callback)
      * @method static string render(string|array $view, array $data = [])
-     * @method static mixed onQueue(\BackedEnum|string|null $queue, \Illuminate\Contracts\Mail\Mailable $view)
-     * @method static mixed queueOn(string $queue, \Illuminate\Contracts\Mail\Mailable $view)
-     * @method static mixed laterOn(string $queue, \DateTimeInterface|\DateInterval|int $delay, \Illuminate\Contracts\Mail\Mailable $view)
      * @method static \Symfony\Component\Mailer\Transport\TransportInterface getSymfonyTransport()
      * @method static \Illuminate\Contracts\View\Factory getViewFactory()
      * @method static void setSymfonyTransport(\Symfony\Component\Mailer\Transport\TransportInterface $transport)
@@ -12302,7 +12504,7 @@ namespace Illuminate\Support\Facades {
          * Queue a new message for sending.
          *
          * @param \Illuminate\Contracts\Mail\Mailable|string|array $view
-         * @param string|null $queue
+         * @param \BackedEnum|string|null $queue
          * @return mixed
          * @static
          */
@@ -12310,6 +12512,34 @@ namespace Illuminate\Support\Facades {
         {
             /** @var \Illuminate\Support\Testing\Fakes\MailFake $instance */
             return $instance->queue($view, $queue);
+        }
+
+        /**
+         * Queue a new mail message for sending on the given queue.
+         *
+         * @param \BackedEnum|string|null $queue
+         * @param \Illuminate\Contracts\Mail\Mailable $view
+         * @return mixed
+         * @static
+         */
+        public static function onQueue($queue, $view)
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\MailFake $instance */
+            return $instance->onQueue($queue, $view);
+        }
+
+        /**
+         * Queue a new mail message for sending on the given queue.
+         *
+         * @param \BackedEnum|string|null $queue
+         * @param \Illuminate\Contracts\Mail\Mailable $view
+         * @return mixed
+         * @static
+         */
+        public static function queueOn($queue, $view)
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\MailFake $instance */
+            return $instance->queueOn($queue, $view);
         }
 
         /**
@@ -12325,6 +12555,21 @@ namespace Illuminate\Support\Facades {
         {
             /** @var \Illuminate\Support\Testing\Fakes\MailFake $instance */
             return $instance->later($delay, $view, $queue);
+        }
+
+        /**
+         * Queue a new e-mail message for sending after (n) seconds on the given queue.
+         *
+         * @param string|null $queue
+         * @param \DateTimeInterface|\DateInterval|int $delay
+         * @param \Illuminate\Contracts\Mail\Mailable $view
+         * @return mixed
+         * @static
+         */
+        public static function laterOn($queue, $delay, $view)
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\MailFake $instance */
+            return $instance->laterOn($queue, $delay, $view);
         }
 
             }
@@ -12961,7 +13206,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Assert that a process was recorded matching a given truth test.
          *
-         * @param \Closure|string $callback
+         * @param \Closure|array<array-key, string>|string $callback
          * @return \Illuminate\Process\Factory
          * @static
          */
@@ -12974,7 +13219,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Assert that a process was recorded a given number of times matching a given truth test.
          *
-         * @param \Closure|string $callback
+         * @param \Closure|array<array-key, string>|string $callback
          * @param int $times
          * @return \Illuminate\Process\Factory
          * @static
@@ -12986,9 +13231,22 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Assert that the given processes were run in the given order.
+         *
+         * @param list<\Closure|array<array-key, string>|string> $callbacks
+         * @return \Illuminate\Process\Factory
+         * @static
+         */
+        public static function assertRanInOrder($callbacks)
+        {
+            /** @var \Illuminate\Process\Factory $instance */
+            return $instance->assertRanInOrder($callbacks);
+        }
+
+        /**
          * Assert that a process was not recorded matching a given truth test.
          *
-         * @param \Closure|string $callback
+         * @param \Closure|array<array-key, string>|string $callback
          * @return \Illuminate\Process\Factory
          * @static
          */
@@ -13001,7 +13259,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Assert that a process was not recorded matching a given truth test.
          *
-         * @param \Closure|string $callback
+         * @param \Closure|array<array-key, string>|string $callback
          * @return \Illuminate\Process\Factory
          * @static
          */
@@ -13255,6 +13513,21 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Forward the given queue to another queue and/or connection.
+         *
+         * @param array<string, \UnitEnum|string>|\UnitEnum|string $queue
+         * @param \UnitEnum|string|null $to
+         * @param \UnitEnum|string|null $connection
+         * @return void
+         * @static
+         */
+        public static function forward($queue, $to = null, $connection = null)
+        {
+            /** @var \Illuminate\Queue\QueueManager $instance */
+            $instance->forward($queue, $to, $connection);
+        }
+
+        /**
          * Determine if the driver is connected.
          *
          * @param \UnitEnum|string|null $name
@@ -13310,6 +13583,18 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Pause job processing for all queues on all connections.
+         *
+         * @return void
+         * @static
+         */
+        public static function pauseAll()
+        {
+            /** @var \Illuminate\Queue\QueueManager $instance */
+            $instance->pauseAll();
+        }
+
+        /**
          * Resume a paused queue by its connection and name.
          *
          * @param string $connection
@@ -13321,6 +13606,20 @@ namespace Illuminate\Support\Facades {
         {
             /** @var \Illuminate\Queue\QueueManager $instance */
             $instance->resume($connection, $queue);
+        }
+
+        /**
+         * Resume job processing for all queues on all connections.
+         *
+         * Queues paused individually are not affected.
+         *
+         * @return void
+         * @static
+         */
+        public static function resumeAll()
+        {
+            /** @var \Illuminate\Queue\QueueManager $instance */
+            $instance->resumeAll();
         }
 
         /**
@@ -13752,6 +14051,42 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Get the number of pending jobs across every queue.
+         *
+         * @return int
+         * @static
+         */
+        public static function totalPendingSize()
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\QueueFake $instance */
+            return $instance->totalPendingSize();
+        }
+
+        /**
+         * Get the number of delayed jobs across every queue.
+         *
+         * @return int
+         * @static
+         */
+        public static function totalDelayedSize()
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\QueueFake $instance */
+            return $instance->totalDelayedSize();
+        }
+
+        /**
+         * Get the number of reserved jobs across every queue.
+         *
+         * @return int
+         * @static
+         */
+        public static function totalReservedSize()
+        {
+            /** @var \Illuminate\Support\Testing\Fakes\QueueFake $instance */
+            return $instance->totalReservedSize();
+        }
+
+        /**
          * Get the pending jobs for the given queue.
          *
          * @param \UnitEnum|string|null $queue
@@ -14131,7 +14466,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Delete all of the jobs from the queue.
          *
-         * @param string|null $queue
+         * @param \UnitEnum|string|null $queue
          * @return int
          * @static
          */
@@ -14144,7 +14479,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the queue or return the default.
          *
-         * @param string|null $queue
+         * @param \UnitEnum|string|null $queue
          * @return string
          * @static
          */
@@ -14470,6 +14805,57 @@ namespace Illuminate\Support\Facades {
         {
             /** @var \Illuminate\Cache\RateLimiter $instance */
             return $instance->cleanRateLimiterKey($key);
+        }
+
+        /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param object|callable $macro
+         * @param-closure-this static  $macro
+         * @return void
+         * @static
+         */
+        public static function macro($name, $macro)
+        {
+            \Illuminate\Cache\RateLimiter::macro($name, $macro);
+        }
+
+        /**
+         * Mix another object into the class.
+         *
+         * @param object $mixin
+         * @param bool $replace
+         * @return void
+         * @throws \ReflectionException
+         * @static
+         */
+        public static function mixin($mixin, $replace = true)
+        {
+            \Illuminate\Cache\RateLimiter::mixin($mixin, $replace);
+        }
+
+        /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool
+         * @static
+         */
+        public static function hasMacro($name)
+        {
+            return \Illuminate\Cache\RateLimiter::hasMacro($name);
+        }
+
+        /**
+         * Flush the existing macros.
+         *
+         * @return void
+         * @static
+         */
+        public static function flushMacros()
+        {
+            \Illuminate\Cache\RateLimiter::flushMacros();
         }
 
             }
@@ -20934,6 +21320,20 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
+         * Create a read-through filesystem driver.
+         *
+         * @param array $config
+         * @param string $name
+         * @return \Illuminate\Filesystem\LocalFilesystemAdapter
+         * @static
+         */
+        public static function createReadThroughDriver($config, $name = 'read-through')
+        {
+            /** @var \Illuminate\Filesystem\FilesystemManager $instance */
+            return $instance->createReadThroughDriver($config, $name);
+        }
+
+        /**
          * Create a scoped driver.
          *
          * @param array $config
@@ -21649,7 +22049,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string|null $directory
          * @param bool $recursive
-         * @return array
+         * @return array<string>
          * @static
          */
         public static function files($directory = null, $recursive = false)
@@ -21663,7 +22063,7 @@ namespace Illuminate\Support\Facades {
          * Get all of the files from the given directory (recursive).
          *
          * @param string|null $directory
-         * @return array
+         * @return array<string>
          * @static
          */
         public static function allFiles($directory = null)
@@ -21678,7 +22078,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string|null $directory
          * @param bool $recursive
-         * @return array
+         * @return array<string>
          * @static
          */
         public static function directories($directory = null, $recursive = false)
@@ -21692,7 +22092,7 @@ namespace Illuminate\Support\Facades {
          * Get all the directories within a given directory (recursive).
          *
          * @param string|null $directory
-         * @return array
+         * @return array<string>
          * @static
          */
         public static function allDirectories($directory = null)
@@ -22678,6 +23078,19 @@ namespace Illuminate\Support\Facades {
         {
             /** @var \Illuminate\Validation\Factory $instance */
             $instance->excludeUnvalidatedArrayKeys();
+        }
+
+        /**
+         * Fake the DNS lookups performed by validation rules so they always succeed.
+         *
+         * @param bool $value
+         * @return void
+         * @static
+         */
+        public static function fakeDnsLookups($value = true)
+        {
+            /** @var \Illuminate\Validation\Factory $instance */
+            $instance->fakeDnsLookups($value);
         }
 
         /**
@@ -24244,6 +24657,377 @@ namespace AnourValar\EloquentSerialize\Facades {
         {
             /** @var \AnourValar\EloquentSerialize\Service $instance */
             return $instance->unserialize($package);
+        }
+
+            }
+    }
+
+namespace Barryvdh\DomPDF\Facade {
+    /**
+     * @method static BasePDF setBaseHost(string $baseHost)
+     * @method static BasePDF setBasePath(string $basePath)
+     * @method static BasePDF setCanvas(\Dompdf\Canvas $canvas)
+     * @method static BasePDF setCallbacks(array<string, mixed> $callbacks)
+     * @method static BasePDF setCss(\Dompdf\Css\Stylesheet $css)
+     * @method static BasePDF setDefaultView(string $defaultView, array<string, mixed> $options)
+     * @method static BasePDF setDom(\DOMDocument $dom)
+     * @method static BasePDF setFontMetrics(\Dompdf\FontMetrics $fontMetrics)
+     * @method static BasePDF setHttpContext(resource|array<string, mixed> $httpContext)
+     * @method static BasePDF setPaper(string|float[] $paper, string $orientation = 'portrait')
+     * @method static BasePDF setProtocol(string $protocol)
+     * @method static BasePDF setTree(\Dompdf\Frame\FrameTree $tree)
+     */
+    class Pdf {
+        /**
+         * Get the DomPDF instance
+         *
+         * @static
+         */
+        public static function getDomPDF()
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->getDomPDF();
+        }
+
+        /**
+         * Show or hide warnings
+         *
+         * @static
+         */
+        public static function setWarnings($warnings)
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->setWarnings($warnings);
+        }
+
+        /**
+         * Load a HTML string
+         *
+         * @param string|null $encoding Not used yet
+         * @static
+         */
+        public static function loadHTML($string, $encoding = null)
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->loadHTML($string, $encoding);
+        }
+
+        /**
+         * Load a HTML file
+         *
+         * @static
+         */
+        public static function loadFile($file)
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->loadFile($file);
+        }
+
+        /**
+         * Add metadata info
+         *
+         * @param array<string, string> $info
+         * @static
+         */
+        public static function addInfo($info)
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->addInfo($info);
+        }
+
+        /**
+         * Load a View and convert to HTML
+         *
+         * @param array<string, mixed> $data
+         * @param array<string, mixed> $mergeData
+         * @param string|null $encoding Not used yet
+         * @static
+         */
+        public static function loadView($view, $data = [], $mergeData = [], $encoding = null)
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->loadView($view, $data, $mergeData, $encoding);
+        }
+
+        /**
+         * Set/Change an option (or array of options) in Dompdf
+         *
+         * @param array<string, mixed>|string $attribute
+         * @param null|mixed $value
+         * @static
+         */
+        public static function setOption($attribute, $value = null)
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->setOption($attribute, $value);
+        }
+
+        /**
+         * Replace all the Options from DomPDF
+         *
+         * @param array<string, mixed> $options
+         * @static
+         */
+        public static function setOptions($options, $mergeWithDefaults = false)
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->setOptions($options, $mergeWithDefaults);
+        }
+
+        /**
+         * Output the PDF as a string.
+         *
+         * The options parameter controls the output. Accepted options are:
+         *
+         * 'compress' = > 1 or 0 - apply content stream compression, this is
+         *    on (1) by default
+         *
+         * @param array<string, int> $options
+         * @return string The rendered PDF as string
+         * @static
+         */
+        public static function output($options = [])
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->output($options);
+        }
+
+        /**
+         * Save the PDF to a file
+         *
+         * @static
+         */
+        public static function save($filename, $disk = null)
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->save($filename, $disk);
+        }
+
+        /**
+         * Make the PDF downloadable by the user
+         *
+         * @static
+         */
+        public static function download($filename = 'document.pdf')
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->download($filename);
+        }
+
+        /**
+         * Return a response with the PDF to show in the browser
+         *
+         * @static
+         */
+        public static function stream($filename = 'document.pdf')
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->stream($filename);
+        }
+
+        /**
+         * Render the PDF
+         *
+         * @static
+         */
+        public static function render()
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->render();
+        }
+
+        /**
+         * @param array<string> $pc
+         * @static
+         */
+        public static function setEncryption($password, $ownerpassword = '', $pc = [])
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->setEncryption($password, $ownerpassword, $pc);
+        }
+
+            }
+    /**
+     * @method static BasePDF setBaseHost(string $baseHost)
+     * @method static BasePDF setBasePath(string $basePath)
+     * @method static BasePDF setCanvas(\Dompdf\Canvas $canvas)
+     * @method static BasePDF setCallbacks(array<string, mixed> $callbacks)
+     * @method static BasePDF setCss(\Dompdf\Css\Stylesheet $css)
+     * @method static BasePDF setDefaultView(string $defaultView, array<string, mixed> $options)
+     * @method static BasePDF setDom(\DOMDocument $dom)
+     * @method static BasePDF setFontMetrics(\Dompdf\FontMetrics $fontMetrics)
+     * @method static BasePDF setHttpContext(resource|array<string, mixed> $httpContext)
+     * @method static BasePDF setPaper(string|float[] $paper, string $orientation = 'portrait')
+     * @method static BasePDF setProtocol(string $protocol)
+     * @method static BasePDF setTree(\Dompdf\Frame\FrameTree $tree)
+     */
+    class Pdf {
+        /**
+         * Get the DomPDF instance
+         *
+         * @static
+         */
+        public static function getDomPDF()
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->getDomPDF();
+        }
+
+        /**
+         * Show or hide warnings
+         *
+         * @static
+         */
+        public static function setWarnings($warnings)
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->setWarnings($warnings);
+        }
+
+        /**
+         * Load a HTML string
+         *
+         * @param string|null $encoding Not used yet
+         * @static
+         */
+        public static function loadHTML($string, $encoding = null)
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->loadHTML($string, $encoding);
+        }
+
+        /**
+         * Load a HTML file
+         *
+         * @static
+         */
+        public static function loadFile($file)
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->loadFile($file);
+        }
+
+        /**
+         * Add metadata info
+         *
+         * @param array<string, string> $info
+         * @static
+         */
+        public static function addInfo($info)
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->addInfo($info);
+        }
+
+        /**
+         * Load a View and convert to HTML
+         *
+         * @param array<string, mixed> $data
+         * @param array<string, mixed> $mergeData
+         * @param string|null $encoding Not used yet
+         * @static
+         */
+        public static function loadView($view, $data = [], $mergeData = [], $encoding = null)
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->loadView($view, $data, $mergeData, $encoding);
+        }
+
+        /**
+         * Set/Change an option (or array of options) in Dompdf
+         *
+         * @param array<string, mixed>|string $attribute
+         * @param null|mixed $value
+         * @static
+         */
+        public static function setOption($attribute, $value = null)
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->setOption($attribute, $value);
+        }
+
+        /**
+         * Replace all the Options from DomPDF
+         *
+         * @param array<string, mixed> $options
+         * @static
+         */
+        public static function setOptions($options, $mergeWithDefaults = false)
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->setOptions($options, $mergeWithDefaults);
+        }
+
+        /**
+         * Output the PDF as a string.
+         *
+         * The options parameter controls the output. Accepted options are:
+         *
+         * 'compress' = > 1 or 0 - apply content stream compression, this is
+         *    on (1) by default
+         *
+         * @param array<string, int> $options
+         * @return string The rendered PDF as string
+         * @static
+         */
+        public static function output($options = [])
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->output($options);
+        }
+
+        /**
+         * Save the PDF to a file
+         *
+         * @static
+         */
+        public static function save($filename, $disk = null)
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->save($filename, $disk);
+        }
+
+        /**
+         * Make the PDF downloadable by the user
+         *
+         * @static
+         */
+        public static function download($filename = 'document.pdf')
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->download($filename);
+        }
+
+        /**
+         * Return a response with the PDF to show in the browser
+         *
+         * @static
+         */
+        public static function stream($filename = 'document.pdf')
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->stream($filename);
+        }
+
+        /**
+         * Render the PDF
+         *
+         * @static
+         */
+        public static function render()
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->render();
+        }
+
+        /**
+         * @param array<string> $pc
+         * @static
+         */
+        public static function setEncryption($password, $ownerpassword = '', $pc = [])
+        {
+            /** @var \Barryvdh\DomPDF\PDF $instance */
+            return $instance->setEncryption($password, $ownerpassword, $pc);
         }
 
             }
@@ -26042,6 +26826,7 @@ namespace Laravel\Pennant {
      * @method static void flushMacros()
      * @method static mixed macroCall(string $method, array $parameters)
      * @method static \Laravel\Pennant\PendingScopedFeatureInteraction for(mixed $scope)
+     * @method static \Laravel\Pennant\PendingScopedFeatureInteraction globally()
      * @method static array load(\BackedEnum|\UnitEnum|string|array $features)
      * @method static array loadMissing(\BackedEnum|\UnitEnum|string|array $features)
      * @method static array loadAll()
@@ -26059,7 +26844,7 @@ namespace Laravel\Pennant {
      * @method static void activate(\BackedEnum|\UnitEnum|string|array $feature, mixed $value = true)
      * @method static void deactivate(\BackedEnum|\UnitEnum|string|array $feature)
      * @method static void forget(\BackedEnum|\UnitEnum|string|array $features)
-     * @see \Laravel\Pennant\FeatureManager
+     * @see FeatureManager
      */
     class Feature {
         /**
@@ -28909,6 +29694,17 @@ namespace Illuminate\Support {
             return \Illuminate\Support\Str::sanitizeUrl($url, $allowedSchemes);
         }
 
+        /**
+         * @see \Filament\Support\SupportServiceProvider::packageBooted()
+         * @param \BackedEnum|string|null $color
+         * @return string|null
+         * @static
+         */
+        public static function sanitizeCssColor($color)
+        {
+            return \Illuminate\Support\Str::sanitizeCssColor($color);
+        }
+
             }
     /**
      */
@@ -28932,6 +29728,16 @@ namespace Illuminate\Support {
         public static function sanitizeUrl($allowedSchemes = [])
         {
             return \Illuminate\Support\Stringable::sanitizeUrl($allowedSchemes);
+        }
+
+        /**
+         * @see \Filament\Support\SupportServiceProvider::packageBooted()
+         * @return \Illuminate\Support\Stringable
+         * @static
+         */
+        public static function sanitizeCssColor()
+        {
+            return \Illuminate\Support\Stringable::sanitizeCssColor();
         }
 
             }
@@ -29448,7 +30254,7 @@ namespace Illuminate\View {
         /**
          * @see \Filament\Support\SupportServiceProvider::packageBooted()
          * @param array|string|int|null $span
-         * @param array|int|null $start
+         * @param array|string|int|null $start
          * @param array|string|int|null $order
          * @param bool $isHidden
          * @return \Illuminate\View\ComponentAttributeBag
@@ -29487,6 +30293,7 @@ namespace Illuminate\View {
         /**
          * @see \Livewire\Features\SupportPageComponents\SupportPageComponents::registerLayoutViewMacros()
          * @param mixed $data
+         * @return static
          * @static
          */
         public static function layoutData($data = [])
@@ -29497,6 +30304,7 @@ namespace Illuminate\View {
         /**
          * @see \Livewire\Features\SupportPageComponents\SupportPageComponents::registerLayoutViewMacros()
          * @param mixed $section
+         * @return static
          * @static
          */
         public static function section($section)
@@ -29507,6 +30315,7 @@ namespace Illuminate\View {
         /**
          * @see \Livewire\Features\SupportPageComponents\SupportPageComponents::registerLayoutViewMacros()
          * @param mixed $title
+         * @return static
          * @static
          */
         public static function title($title)
@@ -29517,6 +30326,7 @@ namespace Illuminate\View {
         /**
          * @see \Livewire\Features\SupportPageComponents\SupportPageComponents::registerLayoutViewMacros()
          * @param mixed $slot
+         * @return static
          * @static
          */
         public static function slot($slot)
@@ -29528,6 +30338,7 @@ namespace Illuminate\View {
          * @see \Livewire\Features\SupportPageComponents\SupportPageComponents::registerLayoutViewMacros()
          * @param mixed $view
          * @param mixed $params
+         * @return static
          * @static
          */
         public static function extends($view, $params = [])
@@ -29539,6 +30350,7 @@ namespace Illuminate\View {
          * @see \Livewire\Features\SupportPageComponents\SupportPageComponents::registerLayoutViewMacros()
          * @param mixed $view
          * @param mixed $params
+         * @return static
          * @static
          */
         public static function layout($view, $params = [])
@@ -29549,6 +30361,7 @@ namespace Illuminate\View {
         /**
          * @see \Livewire\Features\SupportPageComponents\SupportPageComponents::registerLayoutViewMacros()
          * @param callable $callback
+         * @return static
          * @static
          */
         public static function response($callback)
@@ -29599,12 +30412,13 @@ namespace Livewire\Features\SupportTesting {
 
         /**
          * @see \Filament\Actions\Testing\TestsActions::unmountAction()
+         * @param string|bool|null $cancelParentActions
          * @return static
          * @static
          */
-        public static function unmountAction()
+        public static function unmountAction($cancelParentActions = null)
         {
-            return \Livewire\Features\SupportTesting\Testable::unmountAction();
+            return \Livewire\Features\SupportTesting\Testable::unmountAction($cancelParentActions);
         }
 
         /**
@@ -32243,6 +33057,143 @@ namespace Livewire\Features\SupportTesting {
             }
     }
 
+namespace Modules\AI\Filament\Resources\AiActionProposalResource\Pages {
+    /**
+     */
+    class CreateAiActionProposal extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditAiActionProposal extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListAiActionProposals extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewAiActionProposal extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Xot\Filament\Resources\Pages {
+    /**
+     */
+    class XotBaseCreateRecord extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class XotBaseEditRecord extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     * Base class for list records pages.
+     *
+     * @property ?string         $model
+     * @property ?string         $resource
+     * @property ?string         $slug
+     * @property TableLayoutEnum $layoutView
+     */
+    class XotBaseListRecords extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class XotBaseViewRecord extends \Filament\Resources\Pages\ViewRecord {
+            }
+    /**
+     * Base class for all custom pages in the application.
+     *
+     * This class provides common functionality for custom pages,
+     * following the architectural pattern of never extending Filament classes directly.
+     *
+     * @property ?string              $model
+     * @property array<string, mixed> $data
+     * @property Schema               $form
+     */
+    class XotBasePage extends \Filament\Resources\Pages\Page {
+            }
+    /**
+     */
+    class XotBaseResourcePage extends \Filament\Resources\Pages\Page {
+            }
+    /**
+     * Base class for ManageRecords.
+     *
+     * Following Laraxot architectural pattern: never extend Filament classes directly.
+     * This class wraps Filament's ManageRecords to provide a XotBase layer.
+     *
+     */
+    class XotBaseManageRecords extends \Filament\Resources\Pages\ManageRecords {
+            }
+    /**
+     * Base page for Filament related-record managers.
+     *
+     */
+    class XotBaseManageRelatedRecords extends \Filament\Resources\Pages\ManageRelatedRecords {
+            }
+    /**
+     */
+    class XotBaseViewBanca extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Filament\Resources\Pages {
+    /**
+     * @template TModel of Model = Model
+     * @property-read Schema $form
+     */
+    class CreateRecord extends \Filament\Resources\Pages\Page {
+            }
+    /**
+     */
+    class Page extends \Filament\Pages\Page {
+            }
+    /**
+     * @template TModel of Model = Model
+     * @property-read Schema $form
+     */
+    class EditRecord extends \Filament\Resources\Pages\Page {
+            }
+    /**
+     */
+    class ListRecords extends \Filament\Resources\Pages\Page {
+            }
+    /**
+     * @template TModel of Model = Model
+     * @property-read Schema $form
+     */
+    class ViewRecord extends \Filament\Resources\Pages\Page {
+            }
+    /**
+     */
+    class ManageRecords extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     * @template TModel of Model = Model
+     */
+    class ManageRelatedRecords extends \Filament\Resources\Pages\Page {
+            }
+    }
+
+namespace Filament\Pages {
+    /**
+     * @template TConfiguration of PageConfiguration = PageConfiguration
+     */
+    class Page extends \Filament\Pages\BasePage {
+            }
+    /**
+     */
+    class BasePage extends \Livewire\Component {
+            }
+    /**
+     */
+    class Dashboard extends \Filament\Pages\Page {
+            }
+    /**
+     */
+    class SimplePage extends \Filament\Pages\BasePage {
+            }
+    }
+
 namespace Modules\AI\Filament\Pages {
     /**
      * @property Schema $form
@@ -32252,7 +33203,7 @@ namespace Modules\AI\Filament\Pages {
             }
     /**
      */
-    class Dashboard extends \Modules\Xot\Filament\Pages\XotBasePage {
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
             }
     /**
      */
@@ -32318,26 +33269,6 @@ namespace Modules\Xot\Filament\Pages {
             }
     }
 
-namespace Filament\Pages {
-    /**
-     * @template TConfiguration of PageConfiguration = PageConfiguration
-     */
-    class Page extends \Filament\Pages\BasePage {
-            }
-    /**
-     */
-    class BasePage extends \Livewire\Component {
-            }
-    /**
-     */
-    class SimplePage extends \Filament\Pages\BasePage {
-            }
-    /**
-     */
-    class Dashboard extends \Filament\Pages\Page {
-            }
-    }
-
 namespace Filament\Auth\Pages {
     /**
      * @property-read Action $registerAction
@@ -32386,104 +33317,6 @@ namespace Modules\Activity\Filament\Resources\ActivityResource\Pages {
      * @see ActivityResource
      */
     class ListActivities extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
-            }
-    }
-
-namespace Modules\Xot\Filament\Resources\Pages {
-    /**
-     */
-    class XotBaseCreateRecord extends \Filament\Resources\Pages\CreateRecord {
-            }
-    /**
-     */
-    class XotBaseEditRecord extends \Filament\Resources\Pages\EditRecord {
-            }
-    /**
-     * Base class for list records pages.
-     *
-     * @property ?string         $model
-     * @property ?string         $resource
-     * @property ?string         $slug
-     * @property TableLayoutEnum $layoutView
-     */
-    class XotBaseListRecords extends \Filament\Resources\Pages\ListRecords {
-            }
-    /**
-     * Base class for all custom pages in the application.
-     *
-     * This class provides common functionality for custom pages,
-     * following the architectural pattern of never extending Filament classes directly.
-     *
-     * @property ?string              $model
-     * @property array<string, mixed> $data
-     * @property Schema               $form
-     */
-    class XotBasePage extends \Filament\Resources\Pages\Page {
-            }
-    /**
-     */
-    class XotBaseViewRecord extends \Filament\Resources\Pages\ViewRecord {
-            }
-    /**
-     */
-    class XotBaseResourcePage extends \Filament\Resources\Pages\Page {
-            }
-    /**
-     * Base class for ManageRecords.
-     *
-     * Following Laraxot architectural pattern: never extend Filament classes directly.
-     * This class wraps Filament's ManageRecords to provide a XotBase layer.
-     *
-     */
-    class XotBaseManageRecords extends \Filament\Resources\Pages\ManageRecords {
-            }
-    /**
-     * Base page for Filament related-record managers.
-     *
-     */
-    class XotBaseManageRelatedRecords extends \Filament\Resources\Pages\ManageRelatedRecords {
-            }
-    /**
-     */
-    class XotBaseViewBanca extends \Filament\Resources\Pages\ViewRecord {
-            }
-    }
-
-namespace Filament\Resources\Pages {
-    /**
-     * @template TModel of Model = Model
-     * @property-read Schema $form
-     */
-    class CreateRecord extends \Filament\Resources\Pages\Page {
-            }
-    /**
-     */
-    class Page extends \Filament\Pages\Page {
-            }
-    /**
-     * @template TModel of Model = Model
-     * @property-read Schema $form
-     */
-    class EditRecord extends \Filament\Resources\Pages\Page {
-            }
-    /**
-     */
-    class ListRecords extends \Filament\Resources\Pages\Page {
-            }
-    /**
-     * @template TModel of Model = Model
-     * @property-read Schema $form
-     */
-    class ViewRecord extends \Filament\Resources\Pages\Page {
-            }
-    /**
-     */
-    class ManageRecords extends \Filament\Resources\Pages\ListRecords {
-            }
-    /**
-     * @template TModel of Model = Model
-     */
-    class ManageRelatedRecords extends \Filament\Resources\Pages\Page {
             }
     }
 
@@ -32539,71 +33372,37 @@ namespace Modules\Activity\Filament\Pages {
             }
     }
 
-namespace Modules\Customer\Filament\Resources\CustomerResource\Pages {
+namespace Modules\AiAssistant\Filament\Pages {
     /**
      */
-    class CreateCustomer extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+    class AiAssistantChat extends \Filament\Pages\Page {
             }
     /**
      */
-    class EditCustomer extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+    class AiCommunicationsMonitor extends \Filament\Pages\Page {
             }
     /**
      */
-    class ListCustomers extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
-            }
-    /**
-     */
-    class ViewCustomer extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
             }
     }
 
-namespace Modules\Customer\Filament\Resources\CustomerResource\RelationManagers {
+namespace Modules\Employee\Filament\Resources\AbsenceRequestResource\Pages {
     /**
      */
-    class ContactsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+    class CreateAbsenceRequest extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
             }
     /**
      */
-    class CustomerSitesRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+    class EditAbsenceRequest extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
             }
     /**
      */
-    class WorkOrdersRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
-            }
-    }
-
-namespace Modules\Xot\Filament\Resources\RelationManagers {
-    /**
-     * @property class-string<Model> $resource
-     */
-    class XotBaseRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
-            }
-    }
-
-namespace Filament\Resources\RelationManagers {
-    /**
-     */
-    class RelationManager extends \Livewire\Component {
-            }
-    }
-
-namespace Modules\Customer\Filament\Resources\ResellerResource\Pages {
-    /**
-     */
-    class CreateReseller extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+    class ListAbsenceRequests extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
             }
     /**
      */
-    class EditReseller extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
-            }
-    /**
-     */
-    class ListResellers extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
-            }
-    /**
-     */
-    class ViewReseller extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+    class ViewAbsenceRequest extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
             }
     }
 
@@ -33323,6 +34122,81 @@ namespace Modules\Geo\Filament\Widgets {
             }
     }
 
+namespace Modules\HR\Filament\Resources\AbsenceRequestResource\Pages {
+    /**
+     */
+    class CreateAbsenceRequest extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditAbsenceRequest extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListAbsenceRequests extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewAbsenceRequest extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\HR\Filament\Resources\EmployeeResource\Pages {
+    /**
+     */
+    class CreateEmployee extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditEmployee extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListEmployees extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewEmployee extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\HR\Filament\Resources\EmployeeResource\RelationManagers {
+    /**
+     */
+    class DocumentsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
+    class MedicalVisitsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
+    class TrainingsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    }
+
+namespace Modules\Xot\Filament\Resources\RelationManagers {
+    /**
+     * @property class-string<Model> $resource
+     */
+    class XotBaseRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    }
+
+namespace Filament\Resources\RelationManagers {
+    /**
+     */
+    class RelationManager extends \Livewire\Component {
+            }
+    }
+
+namespace Modules\HR\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    }
+
 namespace Modules\Media\Filament\Resources\HasMediaResource\RelationManagers {
     /**
      */
@@ -33714,6 +34588,22 @@ namespace Modules\Rating\Filament\Widgets {
      * @property (Model&HasRatingContract)|null $record
      */
     class StatsOverview extends \Modules\Xot\Filament\Widgets\XotBaseStatsOverviewWidget {
+            }
+    }
+
+namespace Modules\Seo\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    }
+
+namespace Modules\Seo\Filament\Widgets {
+    /**
+     * Filament widget for social sharing.
+     *
+     */
+    class SocialShareWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
             }
     }
 
@@ -35290,129 +36180,6 @@ namespace Modules\Lang\Filament\Widgets {
             }
     }
 
-namespace Modules\Blog\Filament\Resources\ArticleResource\Pages {
-    /**
-     */
-    class CreateArticle extends \Modules\Lang\Filament\Resources\Pages\LangBaseCreateRecord {
-            }
-    /**
-     */
-    class EditArticle extends \Modules\Lang\Filament\Resources\Pages\LangBaseEditRecord {
-            }
-    /**
-     */
-    class ListArticles extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
-            }
-    /**
-     */
-    class ViewArticle extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
-            }
-    }
-
-namespace Modules\Blog\Filament\Resources\ArticleResource\RelationManagers {
-    /**
-     */
-    class RatingsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
-            }
-    }
-
-namespace Modules\Blog\Filament\Resources\BannerResource\Pages {
-    /**
-     */
-    class CreateBanner extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
-            }
-    /**
-     */
-    class EditBanner extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
-            }
-    /**
-     */
-    class ListBanners extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
-            }
-    }
-
-namespace Modules\Blog\Filament\Resources\CategoryResource\Pages {
-    /**
-     */
-    class CreateCategory extends \Modules\Lang\Filament\Resources\Pages\LangBaseCreateRecord {
-            }
-    /**
-     */
-    class EditCategory extends \Modules\Lang\Filament\Resources\Pages\LangBaseEditRecord {
-            }
-    /**
-     */
-    class ListCategories extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
-            }
-    /**
-     */
-    class ManageCategories extends \Modules\Xot\Filament\Resources\Pages\XotBaseManageRecords {
-            }
-    }
-
-namespace Modules\Blog\Filament\Resources\ProfileResource\Pages {
-    /**
-     */
-    class CreateProfile extends \Modules\User\Filament\Resources\BaseProfileResource\Pages\CreateProfile {
-            }
-    /**
-     */
-    class EditProfile extends \Modules\User\Filament\Resources\BaseProfileResource\Pages\EditProfile {
-            }
-    /**
-     */
-    class ListProfiles extends \Modules\User\Filament\Resources\BaseProfileResource\Pages\ListProfiles {
-            }
-    /**
-     */
-    class ViewProfile extends \Modules\User\Filament\Resources\BaseProfileResource\Pages\ViewProfile {
-            }
-    }
-
-namespace Modules\Blog\Filament\Resources\ProfileResource\RelationManagers {
-    /**
-     */
-    class RatingMorphsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
-            }
-    }
-
-namespace Modules\Blog\Filament\Resources\TextWidgetResource\Pages {
-    /**
-     */
-    class CreateTextWidget extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
-            }
-    /**
-     */
-    class EditTextWidget extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
-            }
-    /**
-     */
-    class ListTextWidgets extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
-            }
-    /**
-     */
-    class ViewTextWidget extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
-            }
-    }
-
-namespace Modules\Blog\Filament\Pages {
-    /**
-     */
-    class Dashboard extends \Modules\Xot\Filament\Pages\XotBasePage {
-            }
-    }
-
-namespace Modules\Blog\Filament\Widgets {
-    /**
-     */
-    class LatestArticlesWidget extends \Modules\Xot\Filament\Widgets\XotBaseTableWidget {
-            }
-    /**
-     */
-    class SampleChartWidget extends \Modules\Xot\Filament\Widgets\XotBaseChartWidget {
-            }
-    }
-
 namespace Modules\Job\Filament\Resources\ExportResource\Pages {
     /**
      */
@@ -35595,31 +36362,2004 @@ namespace Modules\Job\Filament\Widgets {
             }
     }
 
-namespace Modules\Comment\Filament\Resources\CommentResource\Pages {
+namespace Modules\Catalog\Filament\Resources\CatalogFrequencyResource\Pages {
     /**
      */
-    class ListComments extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+    class CreateCatalogFrequency extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditCatalogFrequency extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListCatalogFrequencies extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewCatalogFrequency extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
             }
     }
 
-namespace Modules\Comment\Filament\Widgets\Comment {
+namespace Modules\Catalog\Filament\Resources\CatalogMeasureUnitResource\Pages {
     /**
      */
-    class CommentWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
+    class CreateCatalogMeasureUnit extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditCatalogMeasureUnit extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListCatalogMeasureUnits extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewCatalogMeasureUnit extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
             }
     }
 
-namespace Modules\Comment\Filament\Widgets\Commentable {
+namespace Modules\Catalog\Filament\Resources\CatalogModelResource\Pages {
     /**
      */
-    class CommentsWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
+    class CreateCatalogModel extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditCatalogModel extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListCatalogModels extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewCatalogModel extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
             }
     }
 
-namespace Modules\Comment\Filament\Widgets\Mention {
+namespace Modules\Catalog\Filament\Resources\CatalogPartTypeResource\Pages {
     /**
      */
-    class MentionSearchWidget extends \Modules\Xot\Filament\Widgets\XotBaseSchemaWidget {
+    class CreateCatalogPartType extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditCatalogPartType extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListCatalogPartTypes extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewCatalogPartType extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Catalog\Filament\Resources\MetelCatalogResource\Pages {
+    /**
+     */
+    class CreateMetelCatalog extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditMetelCatalog extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListMetelCatalogs extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewMetelCatalog extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Catalog\Filament\Resources\MetelCatalogResource\RelationManagers {
+    /**
+     */
+    class ItemsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    }
+
+namespace Modules\Catalog\Filament\Resources\ProductResource\Pages {
+    /**
+     */
+    class CreateProduct extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditProduct extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListProducts extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewProduct extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Catalog\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    }
+
+namespace Modules\Customer\Filament\Resources\CustomerResource\Pages {
+    /**
+     */
+    class CreateCustomer extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditCustomer extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListCustomers extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewCustomer extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Customer\Filament\Resources\CustomerResource\RelationManagers {
+    /**
+     */
+    class ContactsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
+    class CustomerSitesRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
+    class WorkOrdersRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    }
+
+namespace Modules\Customer\Filament\Resources\ResellerResource\Pages {
+    /**
+     */
+    class CreateReseller extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditReseller extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListResellers extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewReseller extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Customer\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    }
+
+namespace Modules\Signature\Filament\Pages {
+    /**
+     * @property Schema $form
+     */
+    class CaptureSignature extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     * @property Schema $form
+     */
+    class CaptureSketch extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    }
+
+namespace Modules\Platform\Filament\Pages {
+    /**
+     * XotBasePage che rispetta le preferenze di navigazione runtime (NavigationGate):
+     * un toggle nasconde la voce dal menu e blocca l'accesso via URL diretto.
+     *
+     * Equivalente Laraxot del GatedPage del gestionale sorgente.
+     *
+     */
+    class GatedXotBasePage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    /**
+     * UI-side control room for the runtime navigation gate: lets an admin turn whole
+     * modules, navigation groups or individual menu items on and off. Only explicit
+     * "off" states are persisted, so anything untouched stays enabled by default.
+     *
+     */
+    class NavigationSettingsPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    }
+
+namespace Modules\Vehicle\Filament\Resources\VehicleResource\Pages {
+    /**
+     */
+    class CreateVehicle extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditVehicle extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListVehicles extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewVehicle extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Vehicle\Filament\Resources\VehicleResource\RelationManagers {
+    /**
+     */
+    class DocumentsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    }
+
+namespace Modules\Vehicle\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    }
+
+namespace Modules\EnergyBroker\Filament\Resources\EnergyBrokerDocumentResource\Pages {
+    /**
+     */
+    class EditEnergyBrokerDocument extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListEnergyBrokerDocuments extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewEnergyBrokerDocument extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\EnergyBroker\Filament\Pages {
+    /**
+     */
+    class EnergyBrokerAgentPortalPage extends \Modules\EnergyBroker\Filament\Pages\EnergyBrokerStaticPage {
+            }
+    /**
+     */
+    class EnergyBrokerStaticPage extends \Modules\EnergyBroker\Filament\Pages\EnergyBrokerPage {
+            }
+    /**
+     */
+    class EnergyBrokerPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class EnergyBrokerCommissionsPage extends \Modules\EnergyBroker\Filament\Pages\EnergyBrokerStaticPage {
+            }
+    /**
+     */
+    class EnergyBrokerCompliancePage extends \Modules\EnergyBroker\Filament\Pages\EnergyBrokerStaticPage {
+            }
+    /**
+     */
+    class EnergyBrokerCrmPage extends \Modules\EnergyBroker\Filament\Pages\EnergyBrokerStaticPage {
+            }
+    /**
+     */
+    class EnergyBrokerCustomerCarePage extends \Modules\EnergyBroker\Filament\Pages\EnergyBrokerStaticPage {
+            }
+    /**
+     */
+    class EnergyBrokerDashboard extends \Filament\Pages\Dashboard {
+            }
+    /**
+     */
+    class EnergyBrokerDocumentAcquisitionPage extends \Modules\EnergyBroker\Filament\Pages\EnergyBrokerPage {
+            }
+    /**
+     */
+    class EnergyBrokerOfferComparatorPage extends \Modules\EnergyBroker\Filament\Pages\EnergyBrokerStaticPage {
+            }
+    /**
+     */
+    class EnergyBrokerPipelinePage extends \Modules\EnergyBroker\Filament\Pages\EnergyBrokerStaticPage {
+            }
+    }
+
+namespace Modules\WorkOrder\Filament\Resources\WorkOrderResource\Pages {
+    /**
+     */
+    class CreateWorkOrder extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditWorkOrder extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListWorkOrders extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewWorkOrder extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\WorkOrder\Filament\Resources\WorkOrderResource\RelationManagers {
+    /**
+     */
+    class ActivitiesRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
+    class AssignmentsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
+    class ChangeOrdersRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
+    class ComplianceDocumentsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
+    class InterventionsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     * La distinta materiali della commessa: ciò che è arrivato dal preventivo,
+     * più quello che la produzione aggiunge strada facendo.
+     *
+     */
+    class MaterialsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
+    class PublicProcurementContractsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
+    class ReadinessItemsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
+    class StatusEventsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    }
+
+namespace Modules\WorkOrder\Filament\Resources\WorkOrderStatusResource\Pages {
+    /**
+     */
+    class CreateWorkOrderStatus extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditWorkOrderStatus extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListWorkOrderStatuses extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    }
+
+namespace Modules\WorkOrder\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    /**
+     * Single screen answering "how did the period go?": customers, work orders,
+     * interventions, materials and quotations aggregated over a date range, with a
+     * one-click PDF of the same figures.
+     *
+     */
+    class PeriodicSummaryPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    }
+
+namespace Modules\WorkOrder\Filament\Widgets {
+    /**
+     */
+    class WorkOrdersStatusChart extends \Filament\Widgets\ChartWidget {
+            }
+    }
+
+namespace Modules\Intervention\Filament\Resources\DailyNoteResource\Pages {
+    /**
+     */
+    class CreateDailyNote extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditDailyNote extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListDailyNotes extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewDailyNote extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Intervention\Filament\Resources\InterventionResource\Pages {
+    /**
+     */
+    class CreateIntervention extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditIntervention extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListInterventions extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewIntervention extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Intervention\Filament\Resources\InterventionResource\RelationManagers {
+    /**
+     */
+    class InventoryMovementsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
+    class IssueReportsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
+    class MediaRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
+    class SignaturesRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
+    class SketchesRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
+    class TimePunchesRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    }
+
+namespace Modules\Intervention\Filament\Pages {
+    /**
+     */
+    class CustomerInterventionCalendar extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    /**
+     * Per-user Google Calendar connection settings: connect/disconnect the Google
+     * account and choose the target calendar. Tokens are never shown or edited here.
+     *
+     */
+    class GoogleCalendarSettingsPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class InterventionCalendar extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     * Where the company sets what an hour of work is *sold* for.
+     *
+     * Deliberately separate from `accounting.hourly_labour_cost_cents`, which is
+     * what an hour *costs* and drives the margin report: mixing the two would put
+     * the company's cost base on a customer document.
+     *
+     * Amounts are handled in euros here and stored in cents, because asking someone
+     * to type 4000 when they mean forty euros is how wrong prices reach invoices.
+     *
+     */
+    class LabourTariffSettingsPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     * @property Schema $form
+     */
+    class MySchedule extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     * Mobile-first page: the operator records a voice note, the AI turns it into a
+     * draft report (with catalog-matched extra materials), attaches photos and the
+     * customer's finger signature, reviews and confirms. Persisting is done by
+     * {@see ApplyInterventionReportDraftAction} and
+     * {@see SaveInterventionReportAttachmentsAction}.
+     *
+     */
+    class RecordInterventionReportPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    }
+
+namespace Modules\MetalWork\Filament\Resources\MetalDrawingResource\Pages {
+    /**
+     */
+    class ListMetalDrawings extends \Filament\Resources\Pages\ListRecords {
+            }
+    }
+
+namespace Modules\MetalWork\Filament\Resources\MetalPartEstimateResource\Pages {
+    /**
+     */
+    class ListMetalPartEstimates extends \Filament\Resources\Pages\ListRecords {
+            }
+    }
+
+namespace Modules\MetalWork\Filament\Resources\MetalPartEstimateResource\RelationManagers {
+    /**
+     * The frozen breakdown: what each work centre contributed to the price, and
+     * which piece of geometry produced its quantity.
+     *
+     */
+    class LinesRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    }
+
+namespace Modules\MetalWork\Filament\Resources\MetalRawMaterialResource\Pages {
+    /**
+     */
+    class EditMetalRawMaterial extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListMetalRawMaterials extends \Filament\Resources\Pages\ListRecords {
+            }
+    }
+
+namespace Modules\MetalWork\Filament\Resources\MetalRawMaterialResource\RelationManagers {
+    /**
+     * What was actually paid for this material, newest first — the estimate reads
+     * the top row.
+     *
+     */
+    class SupplierPricesRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    }
+
+namespace Modules\MetalWork\Filament\Resources\MetalWorkCenterResource\Pages {
+    /**
+     */
+    class ListMetalWorkCenters extends \Filament\Resources\Pages\ListRecords {
+            }
+    }
+
+namespace Modules\MetalWork\Filament\Pages {
+    /**
+     * The whole flow on one screen: drop the STEP file, check what was read out of
+     * it, correct the few numbers the file cannot give (which steel, how full the
+     * bounding box really is, how much offcut), then turn it into a quotation.
+     *
+     * The costing is recomputed on every render rather than stored in the component:
+     * the operator changes one input and wants to watch the price move. Only the
+     * "save" step freezes it.
+     *
+     */
+    class MetalDrawingQuotationPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     * Landing page of the panel: what has been quoted lately, and whether the price
+     * list behind those quotations is still fresh — a material last invoiced months
+     * ago is quoting at a price nobody would honour today.
+     *
+     * Extends Filament's Dashboard, like the other panels' home pages do, so it is
+     * mounted on the panel root. A panel with no page on its root falls back to
+     * Filament's redirect controller, which breaks once Livewire has swapped the
+     * `redirect` binding — a 500 on /metalworks with no page of its own to blame.
+     *
+     */
+    class MetalWorkDashboard extends \Filament\Pages\Dashboard {
+            }
+    }
+
+namespace Modules\Signage\Filament\Resources\SignCatalogItemResource\Pages {
+    /**
+     */
+    class ListSignCatalogItems extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     * The catalog item with its price broken down line by line — the customer asked
+     * to always have the calculation of every single row in sight, not just the
+     * total.
+     *
+     */
+    class ViewSignCatalogItem extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Signage\Filament\Resources\SignCatalogItemResource\RelationManagers {
+    /**
+     * The distinta of a catalog item. Flat, one level — the customer has no
+     * sub-assemblies. Picking a supplier item fills the description, unit and cost,
+     * which the operator can still overwrite for a one-off.
+     *
+     */
+    class ComponentsRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    }
+
+namespace Modules\Signage\Filament\Resources\SignEstimationRuleResource\Pages {
+    /**
+     */
+    class ListSignEstimationRules extends \Filament\Resources\Pages\ListRecords {
+            }
+    }
+
+namespace Modules\Signage\Filament\Resources\SignPriceListItemResource\Pages {
+    /**
+     */
+    class ListSignPriceListItems extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewSignPriceListItem extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Signage\Filament\Resources\SignPriceListItemResource\RelationManagers {
+    /**
+     * What was actually paid for this article, invoice by invoice, so the cost in
+     * the list can be checked against reality. Filled by hand for now — whether it
+     * should come from the purchase invoices is still open with the customer.
+     *
+     */
+    class PriceEntriesRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    }
+
+namespace Modules\Signage\Filament\Resources\SignPriceListResource\Pages {
+    /**
+     */
+    class ListSignPriceLists extends \Filament\Resources\Pages\ListRecords {
+            }
+    }
+
+namespace Modules\Signage\Filament\Resources\SignWorkCenterResource\Pages {
+    /**
+     */
+    class ListSignWorkCenters extends \Filament\Resources\Pages\ListRecords {
+            }
+    }
+
+namespace Modules\Signage\Filament\Pages {
+    /**
+     * The whole quotation flow on one screen: drop the Illustrator drawing, check
+     * what was read from it, fill the quantities the drawing cannot give (milling
+     * metres, labour minutes), then turn it into a draft quotation.
+     *
+     */
+    class SignArtworkQuotationPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    }
+
+namespace Modules\Wts\Filament\Resources\UserResource\Pages {
+    /**
+     * Stessa pagina del modulo User, ma agganciata alla resource ristretta del
+     * pannello WTS: e' la resource a decidere quali utenti si vedono.
+     *
+     */
+    class CreateUser extends \Modules\User\Filament\Resources\UserResource\Pages\CreateUser {
+            }
+    /**
+     * Stessa pagina del modulo User, ma agganciata alla resource ristretta del
+     * pannello WTS: e' la resource a decidere quali utenti si vedono.
+     *
+     */
+    class EditUser extends \Modules\User\Filament\Resources\UserResource\Pages\EditUser {
+            }
+    /**
+     * Stessa pagina del modulo User, ma agganciata alla resource ristretta del
+     * pannello WTS: e' la resource a decidere quali utenti si vedono.
+     *
+     */
+    class ListUsers extends \Modules\User\Filament\Resources\UserResource\Pages\ListUsers {
+            }
+    /**
+     * Stessa pagina del modulo User, ma agganciata alla resource ristretta del
+     * pannello WTS: e' la resource a decidere quali utenti si vedono.
+     *
+     */
+    class ViewUser extends \Modules\User\Filament\Resources\UserResource\Pages\ViewUser {
+            }
+    }
+
+namespace Modules\Wts\Filament\Pages {
+    /**
+     */
+    class WtsAuditPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WtsDashboard extends \Filament\Pages\Dashboard {
+            }
+    /**
+     */
+    class WtsDocumentationPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WtsFinishedMaterialPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WtsGrindingWashingPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WtsIngressesPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WtsInventoryPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WtsLotDetailPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WtsMaterialDetailPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WtsNewIngressPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WtsOperationalParametersPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WtsOutputsPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WtsPressingPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     * Configurazione e monitoraggio della stampa etichette (coda ZPL + agente locale).
+     *
+     */
+    class WtsPrintingPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WtsProcessingPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WtsProcessingSheetPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WtsReportsPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WtsSortingPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WtsUnpackagingPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WtsWorkQueuePage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    }
+
+namespace Modules\Bom\Filament\Resources\BomResource\Pages {
+    /**
+     */
+    class CreateBom extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditBom extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListBoms extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewBom extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Bom\Filament\Resources\BomResource\RelationManagers {
+    /**
+     */
+    class BomItemsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    }
+
+namespace Modules\Bom\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    }
+
+namespace Modules\Compliance\Filament\Resources\ComplianceDocumentResource\Pages {
+    /**
+     */
+    class CreateComplianceDocument extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditComplianceDocument extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListComplianceDocuments extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewComplianceDocument extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Compliance\Filament\Resources\CustomerSystemResource\Pages {
+    /**
+     */
+    class CreateCustomerSystem extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditCustomerSystem extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListCustomerSystems extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewCustomerSystem extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Compliance\Filament\Resources\CustomerSystemResource\RelationManagers {
+    /**
+     * Schemi tecnici allegati a un impianto: schemi dei quadri elettrici, schemi
+     * fotovoltaico, planimetrie videosorveglianza. Riusa il {@see Media} polimorfico
+     * con kind = "schema". Accetta PDF, immagini e file CAD (DWG/DXF).
+     *
+     */
+    class SchemasRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    }
+
+namespace Modules\Compliance\Filament\Resources\EquipmentResource\Pages {
+    /**
+     */
+    class CreateEquipment extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditEquipment extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListEquipment extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewEquipment extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Compliance\Filament\Resources\HeatingSystemResource\Pages {
+    /**
+     */
+    class CreateHeatingSystem extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditHeatingSystem extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListHeatingSystems extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewHeatingSystem extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Compliance\Filament\Resources\HeatingSystemResource\RelationManagers {
+    /**
+     */
+    class BoilersRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    /**
+     */
+    class ControlsRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    }
+
+namespace Modules\Compliance\Filament\Resources\SubcontractorResource\Pages {
+    /**
+     */
+    class CreateSubcontractor extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditSubcontractor extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListSubcontractors extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewSubcontractor extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Compliance\Filament\Resources\WorkOrderChangeOrderResource\Pages {
+    /**
+     */
+    class CreateWorkOrderChangeOrder extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditWorkOrderChangeOrder extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListWorkOrderChangeOrders extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewWorkOrderChangeOrder extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Compliance\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    /**
+     * The two obligations that follow refrigerant and heating work around: leak
+     * checks under the F-Gas Regulation, and controls still waiting to be filed
+     * with the regional register.
+     *
+     */
+    class FGasRegisterPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     * Cross-customer overview of heating maintenance / RCEE deadlines, worst first,
+     * so overdue and expiring controls are visible at a glance.
+     *
+     */
+    class HeatingDeadlinesPage extends \Filament\Pages\Page {
+            }
+    }
+
+namespace Modules\Inventory\Filament\Resources\InventoryMovementResource\Pages {
+    /**
+     */
+    class CreateInventoryMovement extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditInventoryMovement extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListInventoryMovements extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewInventoryMovement extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Inventory\Filament\Resources\WarehouseLocationResource\Pages {
+    /**
+     */
+    class CreateWarehouseLocation extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditWarehouseLocation extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListWarehouseLocations extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewWarehouseLocation extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Inventory\Filament\Resources\WarehouseResource\Pages {
+    /**
+     */
+    class CreateWarehouse extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditWarehouse extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListWarehouses extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewWarehouse extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Inventory\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    /**
+     */
+    class InventoryOverview extends \Filament\Pages\Page {
+            }
+    }
+
+namespace Modules\Production\Filament\Resources\ProductionOrderResource\Pages {
+    /**
+     */
+    class CreateProductionOrder extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditProductionOrder extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListProductionOrders extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewProductionOrder extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Production\Filament\Resources\ProductionOrderResource\RelationManagers {
+    /**
+     */
+    class ProductionPhasesRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    }
+
+namespace Modules\Production\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    }
+
+namespace Modules\Quotation\Filament\Resources\QuotationResource\Pages {
+    /**
+     */
+    class CreateQuotation extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditQuotation extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListQuotations extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewQuotation extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Quotation\Filament\Resources\QuotationResource\RelationManagers {
+    /**
+     */
+    class AttachmentsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    /**
+     */
+    class ItemsRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    }
+
+namespace Modules\Quotation\Filament\Resources\QuotationTemplateResource\Pages {
+    /**
+     */
+    class CreateQuotationTemplate extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditQuotationTemplate extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListQuotationTemplates extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewQuotationTemplate extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Quotation\Filament\Resources\QuotationTemplateResource\RelationManagers {
+    /**
+     */
+    class ItemsRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    }
+
+namespace Modules\Quotation\Filament\Resources\SiteSurveyResource\Pages {
+    /**
+     */
+    class CreateSiteSurvey extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditSiteSurvey extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListSiteSurveys extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewSiteSurvey extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Quotation\Filament\Resources\SiteSurveyResource\RelationManagers {
+    /**
+     * Foto, video e note vocali del sopralluogo: sono la sostanza del rilievo, non
+     * un accessorio. Allegati gestiti via Spatie MediaLibrary (collection_name
+     * come "kind": photos, videos, voice_notes).
+     *
+     */
+    class AttachmentsRelationManager extends \Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager {
+            }
+    }
+
+namespace Modules\Quotation\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    /**
+     * Mobile-first page: the plumber dictates a quotation by voice; the AI turns it
+     * into a draft (customer + catalog-matched line items), optionally seeded from an
+     * existing quotation ("create a similar one for another customer"). The operator
+     * reviews and confirms, creating a brand-new quotation.
+     *
+     */
+    class RecordQuotationVoicePage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    }
+
+namespace Modules\Quotation\Filament\Widgets {
+    /**
+     * Quotations pipeline for the shop owner: how many quotes sit in each status
+     * (draft / sent / confirmed / rejected) — the sales funnel at a glance.
+     *
+     */
+    class QuotationsByStatusChart extends \Filament\Widgets\ChartWidget {
+            }
+    /**
+     * Revenue vs. cost of the quoted work, broken down by project/brand — the view
+     * that answers "which brand actually pays?" rather than "which brand orders
+     * most", which are rarely the same answer.
+     *
+     * Quotations with no cost recorded are left out: showing them would read as
+     * 100% margin and flatter the numbers.
+     *
+     */
+    class QuotationsMarginByProjectChart extends \Filament\Widgets\ChartWidget {
+            }
+    /**
+     * Monthly quotations value for the last 6 months: total quoted vs. confirmed.
+     *
+     * Lets the plumber see the business trend and the quote→win conversion.
+     *
+     */
+    class QuotationsValuePerMonthChart extends \Filament\Widgets\ChartWidget {
+            }
+    }
+
+namespace Modules\Thermo\Filament\Pages {
+    /**
+     */
+    class ThermoAccountAccessPage extends \Modules\Thermo\Filament\Pages\ThermoPage {
+            }
+    /**
+     */
+    class ThermoPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class ThermoAiDocumentsPage extends \Modules\Thermo\Filament\Pages\ThermoPage {
+            }
+    /**
+     */
+    class ThermoCalendarPage extends \Modules\Thermo\Filament\Pages\ThermoPage {
+            }
+    /**
+     */
+    class ThermoComplianceBillingPage extends \Modules\Thermo\Filament\Pages\ThermoPage {
+            }
+    /**
+     */
+    class ThermoCrmPage extends \Modules\Thermo\Filament\Pages\ThermoPage {
+            }
+    /**
+     */
+    class ThermoDashboard extends \Filament\Pages\Dashboard {
+            }
+    /**
+     */
+    class ThermoFieldAppPage extends \Modules\Thermo\Filament\Pages\ThermoPage {
+            }
+    /**
+     */
+    class ThermoPumpPage extends \Modules\Thermo\Filament\Pages\ThermoPage {
+            }
+    /**
+     */
+    class ThermoSurveyQuotePage extends \Modules\Thermo\Filament\Pages\ThermoPage {
+            }
+    }
+
+namespace Modules\Giveback\Filament\Pages {
+    /**
+     */
+    class GivebackAdminPayoutsPage extends \Modules\Giveback\Filament\Pages\GivebackPlatformPage {
+            }
+    /**
+     */
+    class GivebackPlatformPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class GivebackDocumentationPage extends \Modules\Giveback\Filament\Pages\GivebackPlatformPage {
+            }
+    /**
+     */
+    class GivebackLotteryCompliancePage extends \Modules\Giveback\Filament\Pages\GivebackPlatformPage {
+            }
+    /**
+     */
+    class GivebackMerchantDashboardPage extends \Modules\Giveback\Filament\Pages\GivebackPlatformPage {
+            }
+    /**
+     */
+    class GivebackMerchantOnboardingPage extends \Modules\Giveback\Filament\Pages\GivebackPlatformPage {
+            }
+    /**
+     */
+    class GivebackPlatformDashboard extends \Filament\Pages\Dashboard {
+            }
+    /**
+     */
+    class GivebackRoadmapPage extends \Modules\Giveback\Filament\Pages\GivebackPlatformPage {
+            }
+    /**
+     */
+    class GivebackValueFlowPage extends \Modules\Giveback\Filament\Pages\GivebackPlatformPage {
+            }
+    /**
+     */
+    class GivebackWidgetEmbedPage extends \Modules\Giveback\Filament\Pages\GivebackPlatformPage {
+            }
+    }
+
+namespace Modules\Dds\Filament\Pages {
+    /**
+     */
+    class DdsAdministrationPage extends \Modules\Dds\Filament\Pages\DdsPage {
+            }
+    /**
+     */
+    class DdsPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class DdsAdvancedSuitePage extends \Modules\Dds\Filament\Pages\DdsPage {
+            }
+    /**
+     */
+    class DdsCrmPage extends \Modules\Dds\Filament\Pages\DdsPage {
+            }
+    /**
+     */
+    class DdsCustomerPortalPage extends \Modules\Dds\Filament\Pages\DdsPage {
+            }
+    /**
+     */
+    class DdsDashboard extends \Filament\Pages\Dashboard {
+            }
+    /**
+     */
+    class DdsFieldAppPage extends \Modules\Dds\Filament\Pages\DdsPage {
+            }
+    /**
+     */
+    class DdsPlanningPage extends \Modules\Dds\Filament\Pages\DdsPage {
+            }
+    /**
+     */
+    class DdsSurveysContractsPage extends \Modules\Dds\Filament\Pages\DdsPage {
+            }
+    }
+
+namespace Modules\AsdSoci\Filament\Pages {
+    /**
+     */
+    class AsdSociAccountingPage extends \Modules\AsdSoci\Filament\Pages\AsdSociPage {
+            }
+    /**
+     */
+    class AsdSociPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class AsdSociDashboard extends \Filament\Pages\Dashboard {
+            }
+    /**
+     */
+    class AsdSociDocumentationPage extends \Modules\AsdSoci\Filament\Pages\AsdSociPage {
+            }
+    /**
+     */
+    class AsdSociEnrollmentPage extends \Modules\AsdSoci\Filament\Pages\AsdSociPage {
+            }
+    /**
+     */
+    class AsdSociEventsPage extends \Modules\AsdSoci\Filament\Pages\AsdSociPage {
+            }
+    /**
+     */
+    class AsdSociMemberAreaPage extends \Modules\AsdSoci\Filament\Pages\AsdSociPage {
+            }
+    /**
+     */
+    class AsdSociRegisterPage extends \Modules\AsdSoci\Filament\Pages\AsdSociPage {
+            }
+    }
+
+namespace Modules\Fiscal\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    }
+
+namespace Modules\Intervention\Filament\Widgets {
+    /**
+     * What the month found outside the quotation, and what was decided about it.
+     *
+     * Deliberately the owner's widget and not the operator's: to a technician a
+     * money counter reads as "you are slow", to whoever signs the invoices it is
+     * the reason the reporting discipline pays for itself.
+     *
+     * Every figure here comes from `extra_amount`, computed line by line against
+     * the real quotation — not from an estimate of time saved. That matters,
+     * because a number an artisan can check is worth more than a bigger one they
+     * cannot.
+     *
+     */
+    class ExtraMaterialsRecapStats extends \Modules\Xot\Filament\Widgets\XotBaseStatsOverviewWidget {
+            }
+    /**
+     */
+    class InterventionsPerformanceChart extends \Filament\Widgets\ChartWidget {
+            }
+    }
+
+namespace Modules\Billing\Filament\Resources\DeliveryNoteResource\Pages {
+    /**
+     */
+    class CreateDeliveryNote extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditDeliveryNote extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListDeliveryNotes extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewDeliveryNote extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Billing\Filament\Resources\DeliveryNoteResource\RelationManagers {
+    /**
+     */
+    class LinesRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    }
+
+namespace Modules\Billing\Filament\Resources\InvoiceResource\Pages {
+    /**
+     */
+    class CreateInvoice extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditInvoice extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListInvoices extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewInvoice extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Billing\Filament\Resources\InvoiceResource\RelationManagers {
+    /**
+     */
+    class WorkOrdersRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    }
+
+namespace Modules\Billing\Filament\Resources\SupplierInvoiceResource\Pages {
+    /**
+     */
+    class CreateSupplierInvoice extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditSupplierInvoice extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListSupplierInvoices extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewSupplierInvoice extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Billing\Filament\Resources\SupplierInvoiceResource\RelationManagers {
+    /**
+     */
+    class LinesRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    }
+
+namespace Modules\Billing\Filament\Resources\SupplierResource\Pages {
+    /**
+     */
+    class CreateSupplier extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditSupplier extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListSuppliers extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewSupplier extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Billing\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    /**
+     * The three questions an owner asks about money: who owes me, will I have
+     * enough to pay what I owe, and which jobs are actually earning.
+     *
+     */
+    class FinancialControlPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    }
+
+namespace Modules\Document\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    /**
+     */
+    class UploadInterventionPhotos extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    }
+
+namespace Modules\Email\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    /**
+     */
+    class EmailSettingsPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    }
+
+namespace Modules\Timber\Filament\Resources\TimberAgentResource\Pages {
+    /**
+     */
+    class CreateTimberAgent extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditTimberAgent extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListTimberAgents extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewTimberAgent extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Timber\Filament\Resources\TimberCustomerPriceResource\Pages {
+    /**
+     */
+    class CreateTimberCustomerPrice extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditTimberCustomerPrice extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListTimberCustomerPrices extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    }
+
+namespace Modules\Timber\Filament\Resources\TimberCustomerResource\Pages {
+    /**
+     */
+    class CreateTimberCustomer extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditTimberCustomer extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListTimberCustomers extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewTimberCustomer extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Timber\Filament\Resources\TimberDocumentResource\Pages {
+    /**
+     */
+    class CreateTimberDocument extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditTimberDocument extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListTimberDocuments extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewTimberDocument extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Timber\Filament\Resources\TimberEInvoiceResource\Pages {
+    /**
+     */
+    class ListTimberEInvoices extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    }
+
+namespace Modules\Timber\Filament\Resources\TimberInvoiceResource\Pages {
+    /**
+     */
+    class CreateTimberInvoice extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditTimberInvoice extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListTimberInvoices extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewTimberInvoice extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Timber\Filament\Resources\TimberPaymentInstallmentResource\Pages {
+    /**
+     */
+    class CreateTimberPaymentInstallment extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditTimberPaymentInstallment extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListTimberPaymentInstallments extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    }
+
+namespace Modules\Timber\Filament\Resources\TimberPriceListResource\Pages {
+    /**
+     */
+    class CreateTimberPriceList extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditTimberPriceList extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListTimberPriceLists extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    }
+
+namespace Modules\Timber\Filament\Resources\TimberProductResource\Pages {
+    /**
+     */
+    class CreateTimberProduct extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditTimberProduct extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListTimberProducts extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewTimberProduct extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Timber\Filament\Resources\TimberStockMovementResource\Pages {
+    /**
+     */
+    class CreateTimberStockMovement extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class ListTimberStockMovements extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewTimberStockMovement extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Timber\Filament\Resources\TimberSupplierResource\Pages {
+    /**
+     */
+    class CreateTimberSupplier extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditTimberSupplier extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListTimberSuppliers extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewTimberSupplier extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Timber\Filament\Resources\TimberTransporterResource\Pages {
+    /**
+     */
+    class CreateTimberTransporter extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditTimberTransporter extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListTimberTransporters extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    /**
+     */
+    class ViewTimberTransporter extends \Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord {
+            }
+    }
+
+namespace Modules\Timber\Filament\Resources\TimberWoodSpeciesResource\Pages {
+    /**
+     */
+    class CreateTimberWoodSpecies extends \Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord {
+            }
+    /**
+     */
+    class EditTimberWoodSpecies extends \Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord {
+            }
+    /**
+     */
+    class ListTimberWoodSpecies extends \Modules\Xot\Filament\Resources\Pages\XotBaseListRecords {
+            }
+    }
+
+namespace Modules\Timber\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    /**
+     */
+    class TimberAgendaPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class TimberAnalyticsPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class TimberCuttingPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class TimberDashboard extends \Filament\Pages\Dashboard {
+            }
+    /**
+     */
+    class TimberDocumentationPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class TimberDryingPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class TimberInventoryPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class TimberLabelsPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class TimberLotDetailPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class TimberOutputsPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class TimberPackagingPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class TimberProcessingPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class TimberPurchasesPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class TimberSelectionPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class TimberSplittingPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class TimberTraceabilityPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class TimberTraceabilityRegisterPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class TimberVatRegisterPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    /**
+     */
+    class TimberYardPage extends \Modules\Xot\Filament\Pages\XotBasePage {
+            }
+    }
+
+namespace Modules\WhatsApp\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    /**
+     * Inbox that organizes incoming WhatsApp messages inside the gestionale:
+     * conversations grouped per contact/customer, with the message thread.
+     *
+     */
+    class WhatsAppInboxPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    /**
+     */
+    class WhatsAppSettingsPage extends \Modules\Platform\Filament\Pages\GatedXotBasePage {
+            }
+    }
+
+namespace Modules\PublicProcurement\Filament\Resources\PublicProcurementContractResource\Pages {
+    /**
+     */
+    class CreatePublicProcurementContract extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditPublicProcurementContract extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListPublicProcurementContracts extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewPublicProcurementContract extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\PublicProcurement\Filament\Resources\PublicProcurementContractResource\RelationManagers {
+    /**
+     */
+    class DeadlinesRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    /**
+     */
+    class DocumentRequirementsRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    /**
+     */
+    class GuaranteesRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    /**
+     */
+    class MeasurementsRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    /**
+     */
+    class OfficialRecordsRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    /**
+     */
+    class PriceItemsRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    /**
+     */
+    class ProgressReportsRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    }
+
+namespace Modules\PublicProcurement\Filament\Resources\PublicProcurementTenderOpportunityResource\Pages {
+    /**
+     */
+    class CreatePublicProcurementTenderOpportunity extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditPublicProcurementTenderOpportunity extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListPublicProcurementTenderOpportunities extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewPublicProcurementTenderOpportunity extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\PublicProcurement\Filament\Resources\PublicProcurementTenderOpportunityResource\RelationManagers {
+    /**
+     */
+    class EligibilityChecksRelationManager extends \Filament\Resources\RelationManagers\RelationManager {
+            }
+    }
+
+namespace Modules\PublicProcurement\Filament\Resources\PublicProcurementTenderSourceResource\Pages {
+    /**
+     */
+    class CreatePublicProcurementTenderSource extends \Filament\Resources\Pages\CreateRecord {
+            }
+    /**
+     */
+    class EditPublicProcurementTenderSource extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListPublicProcurementTenderSources extends \Filament\Resources\Pages\ListRecords {
+            }
+    }
+
+namespace Modules\PublicProcurement\Filament\Pages {
+    /**
+     */
+    class Dashboard extends \Modules\Xot\Filament\Pages\XotBaseDashboard {
+            }
+    }
+
+namespace Modules\Platform\Filament\Resources\AuditLogResource\Pages {
+    /**
+     */
+    class ListAuditLogs extends \Filament\Resources\Pages\ListRecords {
+            }
+    /**
+     */
+    class ViewAuditLog extends \Filament\Resources\Pages\ViewRecord {
+            }
+    }
+
+namespace Modules\Platform\Filament\Resources\PlatformSettingResource\Pages {
+    /**
+     */
+    class EditPlatformSetting extends \Filament\Resources\Pages\EditRecord {
+            }
+    /**
+     */
+    class ListPlatformSettings extends \Filament\Resources\Pages\ListRecords {
+            }
+    }
+
+namespace Modules\Platform\Filament\Widgets {
+    /**
+     */
+    class OperationsOverviewStats extends \Filament\Widgets\StatsOverviewWidget {
             }
     }
 
@@ -35786,6 +38526,32 @@ namespace  {
         {
             /** @var \Illuminate\Database\Eloquent\Builder $instance */
             return $instance->whereKeyNot($id);
+        }
+
+        /**
+         * Add an "or where" clause on the primary key to the query.
+         *
+         * @param mixed $id
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function orWhereKey($id)
+        {
+            /** @var \Illuminate\Database\Eloquent\Builder $instance */
+            return $instance->orWhereKey($id);
+        }
+
+        /**
+         * Add an "or where not" clause on the primary key to the query.
+         *
+         * @param mixed $id
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function orWhereKeyNot($id)
+        {
+            /** @var \Illuminate\Database\Eloquent\Builder $instance */
+            return $instance->orWhereKeyNot($id);
         }
 
         /**
@@ -36312,6 +39078,18 @@ namespace  {
         {
             /** @var \Illuminate\Database\Eloquent\Builder $instance */
             return $instance->pluck($column, $key);
+        }
+
+        /**
+         * Get an array of primary keys from the query result.
+         *
+         * @return array<int, array-key>
+         * @static
+         */
+        public static function modelKeys()
+        {
+            /** @var \Illuminate\Database\Eloquent\Builder $instance */
+            return $instance->modelKeys();
         }
 
         /**
@@ -38751,6 +41529,65 @@ namespace  {
         }
 
         /**
+         * Add a "where binary" clause to the query.
+         *
+         * @param \Illuminate\Contracts\Database\Query\Expression|string $column
+         * @param string $value
+         * @param string $boolean
+         * @param bool $not
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function whereBinary($column, $value, $boolean = 'and', $not = false)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->whereBinary($column, $value, $boolean, $not);
+        }
+
+        /**
+         * Add an "or where binary" clause to the query.
+         *
+         * @param \Illuminate\Contracts\Database\Query\Expression|string $column
+         * @param string $value
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function orWhereBinary($column, $value)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->orWhereBinary($column, $value);
+        }
+
+        /**
+         * Add a "where not binary" clause to the query.
+         *
+         * @param \Illuminate\Contracts\Database\Query\Expression|string $column
+         * @param string $value
+         * @param string $boolean
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function whereNotBinary($column, $value, $boolean = 'and')
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->whereNotBinary($column, $value, $boolean);
+        }
+
+        /**
+         * Add an "or where not binary" clause to the query.
+         *
+         * @param \Illuminate\Contracts\Database\Query\Expression|string $column
+         * @param string $value
+         * @return \Illuminate\Database\Eloquent\Builder<static>
+         * @static
+         */
+        public static function orWhereNotBinary($column, $value)
+        {
+            /** @var \Illuminate\Database\Query\Builder $instance */
+            return $instance->orWhereNotBinary($column, $value);
+        }
+
+        /**
          * Add a "where like" clause to the query.
          *
          * @param \Illuminate\Contracts\Database\Query\Expression|string $column
@@ -40105,7 +42942,7 @@ namespace  {
          * Add an "order by" clause to order results by a given sequence of values.
          *
          * @param \Illuminate\Contracts\Database\Query\Expression|string $column
-         * @param \Illuminate\Contracts\Support\Arrayable|array $values
+         * @param \Illuminate\Contracts\Support\Arrayable|array<\UnitEnum|string|int|float|bool> $values
          * @return \Illuminate\Database\Eloquent\Builder<static>
          * @static
          */
@@ -41256,6 +44093,7 @@ namespace  {
     class Gate extends \Illuminate\Support\Facades\Gate {}
     class Hash extends \Illuminate\Support\Facades\Hash {}
     class Http extends \Illuminate\Support\Facades\Http {}
+    class Image extends \Illuminate\Support\Facades\Image {}
     class Js extends \Illuminate\Support\Js {}
     class Lang extends \Illuminate\Support\Facades\Lang {}
     class Log extends \Illuminate\Support\Facades\Log {}
@@ -41281,6 +44119,8 @@ namespace  {
     class View extends \Illuminate\Support\Facades\View {}
     class Vite extends \Illuminate\Support\Facades\Vite {}
     class EloquentSerialize extends \AnourValar\EloquentSerialize\Facades\EloquentSerializeFacade {}
+    class PDF extends \Barryvdh\DomPDF\Facade\Pdf {}
+    class Pdf extends \Barryvdh\DomPDF\Facade\Pdf {}
     class Debugbar extends \Fruitcake\LaravelDebugbar\Facades\Debugbar {}
     class Telegram extends \Telegram\Bot\Laravel\Facades\Telegram {}
     class Agent extends \Jenssegers\Agent\Facades\Agent {}

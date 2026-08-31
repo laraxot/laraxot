@@ -8,6 +8,7 @@ use Modules\Quotation\Models\Quotation;
 use Modules\Signage\Database\Seeders\SignageDemoSeeder;
 use Modules\Signage\Models\SignPriceListItem;
 use Modules\Signage\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderMaterial;
 use Modules\WorkOrder\Models\WorkOrderStatus;
@@ -36,20 +37,20 @@ it('fills the sign-shop demo with quotations, job orders and their materials', f
     // plus milling, LED and labour, sold at a 65% markup.
     $berlin = $quotations->firstWhere('code', 'PRE-INS-2026-001');
 
-    expect($berlin)->not->toBeNull()
-        ->and($berlin->items()->count())->toBe(5)
+    Assert::assertInstanceOf(Quotation::class, $berlin);
+    expect($berlin->items()->count())->toBe(5)
         ->and(round((float) $berlin->cost_total, 2))->toBe(591.61)
         ->and((float) $berlin->subtotal)->toBeGreaterThan((float) $berlin->cost_total);
 
     $sheet = $berlin->items()->orderBy('sort_order')->first();
-
+    Assert::assertNotNull($sheet);
     expect($sheet->description)->toContain('Lastra ottone OT63')
         // 116,45 × 1,65 = 192,14
         ->and((float) $sheet->unit_price)->toBe(192.14);
 
     // Quotation 3 was quoted below cost on purpose: it is the red-margin case.
     $duomo = $quotations->firstWhere('code', 'PRE-INS-2026-003');
-
+    Assert::assertInstanceOf(Quotation::class, $duomo);
     expect((float) $duomo->subtotal)->toBeLessThan((float) $duomo->cost_total);
 
     // Two of the three became job orders, each with the quoted lines as its
@@ -61,8 +62,8 @@ it('fills the sign-shop demo with quotations, job orders and their materials', f
 
     $inProduction = WorkOrder::query()->where('title', $berlin->title)->firstOrFail();
 
+    Assert::assertNotNull($inProduction->delivery_due_at);
     expect($inProduction->progress_percent)->toBe(60)
-        ->and($inProduction->delivery_due_at)->not->toBeNull()
         ->and($inProduction->delivery_due_at->isFuture())->toBeTrue()
         ->and($inProduction->materials()->count())->toBe(5);
 

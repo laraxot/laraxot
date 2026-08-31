@@ -45,8 +45,7 @@ it('takes charge of an ingress and creates the operational WTS lot', function ()
         userId: null,
     );
 
-    expect($lot)->toBeInstanceOf(WtsInboundLot::class)
-        ->and($lot->lot_code)->toBe('LOT-2026-0001')
+    expect($lot->lot_code)->toBe('LOT-2026-0001')
         ->and($lot->current_area_code)->toBe('incoming')
         ->and($record->fresh()?->entry_weight)->toBe('1238.00')
         ->and($record->fresh()?->net_weight)->toBe('1238.00')
@@ -158,14 +157,15 @@ it('stores UI-02 taking charge data from the WTS panel', function (): void {
         ->assertSee('FIR-2026-002');
 
     Livewire::actingAs($user);
-    Livewire::withQueryParams(['record' => $record->id])
-        ->test(WtsNewIngressPage::class)
-        ->set('entryWeight', '970')
+    /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+    $livewire = Livewire::withQueryParams(['record' => $record->id])
+        ->test(WtsNewIngressPage::class) /** @phpstan-ignore-line argument.templateType */;
+    $livewire->set('entryWeight', '970')
         ->set('tareWeight', '10')
         ->set('acceptanceStatus', 'accepted_with_note')
         ->set('notes', 'Accettato con nota operativa')
-        ->call('confirmTakingCharge')
-        ->assertHasNoErrors();
+        ->call('confirmTakingCharge');
+    $livewire->assertHasNoErrors();
 
     expect($record->fresh()?->status_code)->toBe('taken_charge')
         ->and($record->fresh()?->entry_weight)->toBe('970.00')
@@ -183,10 +183,11 @@ it('adds and removes lot units directly from UI-03', function (): void {
     ]);
 
     Livewire::actingAs($user);
-    Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class)
-        ->call('addUnits', 'big_bag', 2)
-        ->assertHasNoErrors();
+    /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+    $livewire = Livewire::withQueryParams(['lot' => $lot->id])
+        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */;
+    $livewire->call('addUnits', 'big_bag', 2);
+    $livewire->assertHasNoErrors();
 
     expect($lot->fresh()?->units()->count())->toBe(2)
         ->and($lot->fresh()?->initial_units_count)->toBe(2);
@@ -194,10 +195,11 @@ it('adds and removes lot units directly from UI-03', function (): void {
     $unitId = (int) WtsUnit::query()->where('inbound_lot_id', $lot->id)->firstOrFail()->id;
 
     Livewire::actingAs($user);
-    Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class)
-        ->call('removeUnit', $unitId)
-        ->assertHasNoErrors();
+    /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+    $livewire = Livewire::withQueryParams(['lot' => $lot->id])
+        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */;
+    $livewire->call('removeUnit', $unitId);
+    $livewire->assertHasNoErrors();
 
     expect($lot->fresh()?->units()->count())->toBe(1)
         ->and($lot->fresh()?->initial_units_count)->toBe(1);
@@ -222,12 +224,13 @@ it('takes charge straight from UI-01 with ECOS data and lands on the lot detail'
     ]);
 
     Livewire::actingAs($user);
-    Livewire::test(WtsIngressesPage::class)
-        ->call('takeChargeAndOpenLot', $record->id)
-        ->assertHasNoErrors()
-        ->assertRedirect(WtsLotDetailPage::getUrl(panel: 'wts', parameters: [
-            'lot' => (int) WtsInboundLot::query()->where('inbound_record_id', $record->id)->firstOrFail()->id,
+    /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+    $livewire = Livewire::test(WtsIngressesPage::class);
+    $livewire->call('takeChargeAndOpenLot', $record->id);
+    $livewire->assertRedirect(WtsLotDetailPage::getUrl(panel: 'wts', parameters: [
+        'lot' => (int) WtsInboundLot::query()->where('inbound_record_id', $record->id)->firstOrFail()->id,
         ]));
+    $livewire->assertHasNoErrors();
 
     $lot = WtsInboundLot::query()->where('inbound_record_id', $record->id)->firstOrFail();
 
@@ -257,9 +260,10 @@ it('keeps the ECOS acceptance status and notes when taking charge from UI-01', f
     ]);
 
     Livewire::actingAs($user);
-    Livewire::test(WtsIngressesPage::class)
-        ->call('takeChargeAndOpenLot', $record->id)
-        ->assertHasNoErrors();
+    /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+    $livewire = Livewire::test(WtsIngressesPage::class);
+    $livewire->call('takeChargeAndOpenLot', $record->id);
+    $livewire->assertHasNoErrors();
 
     expect($record->fresh()?->form_number)->toBe('FIR-2026-202')
         ->and($record->fresh()?->acceptance_status)->toBe('accepted_with_note')
@@ -286,9 +290,10 @@ it('reopens the existing lot instead of taking charge twice from UI-01', functio
     ]);
 
     Livewire::actingAs($user);
-    Livewire::test(WtsIngressesPage::class)
-        ->call('takeChargeAndOpenLot', $record->id)
-        ->assertRedirect(WtsLotDetailPage::getUrl(panel: 'wts', parameters: ['lot' => $lot->id]));
+    /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+    $livewire = Livewire::test(WtsIngressesPage::class);
+    $livewire->call('takeChargeAndOpenLot', $record->id);
+    $livewire->assertRedirect(WtsLotDetailPage::getUrl(panel: 'wts', parameters: ['lot' => $lot->id]));
 
     expect(WtsInboundLot::query()->where('inbound_record_id', $record->id)->count())->toBe(1);
 });
@@ -306,8 +311,9 @@ it('refuses the take charge without sending the operator to UI-02 when ECOS data
     ]);
 
     Livewire::actingAs($user);
-    Livewire::test(WtsIngressesPage::class)
-        ->call('takeChargeAndOpenLot', $record->id)
+    /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+    $livewire = Livewire::test(WtsIngressesPage::class);
+    $livewire->call('takeChargeAndOpenLot', $record->id)
         ->assertNoRedirect();
 
     expect(WtsInboundLot::query()->where('inbound_record_id', $record->id)->exists())->toBeFalse()
@@ -354,8 +360,9 @@ it('warns instead of taking charge when the UI-01 ingress does not exist', funct
     $user->syncRoles(['wts_admin']);
 
     Livewire::actingAs($user);
-    Livewire::test(WtsIngressesPage::class)
-        ->call('takeChargeAndOpenLot', 999999)
+    /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
+    $livewire = Livewire::test(WtsIngressesPage::class);
+    $livewire->call('takeChargeAndOpenLot', 999999)
         ->assertNoRedirect();
 
     expect(WtsInboundLot::query()->count())->toBe(0);

@@ -33,7 +33,7 @@ it('registers processing from each WTS processing subpage', function (string $pa
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test($pageClass)
+        ->test($pageClass) /** @phpstan-ignore-line argument.templateType */
         ->set('selectedUnitIds', [$unit->id])
         ->set('workedWeight', '120')
         ->set('drumsCount', 1)
@@ -60,6 +60,7 @@ it('auto-computes the worked weight from the selected colli', function (): void 
         'gross_quantity' => 300,
     ]);
     $lot = WtsInboundLot::factory()->create(['inbound_record_id' => $record->id]);
+    /** @var \Illuminate\Support\Collection<int, \Modules\Wts\Models\WtsUnit> $units */
     $units = WtsUnit::factory()->count(3)->create([
         'inbound_lot_id' => $lot->id,
         'technical_sheet_snapshot_id' => $lot->inboundRecord?->technical_sheet_snapshot_id,
@@ -69,12 +70,12 @@ it('auto-computes the worked weight from the selected colli', function (): void 
 
     Livewire::actingAs($user);
     $component = Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsSortingPage::class)
+        ->test(WtsSortingPage::class) /** @phpstan-ignore-line argument.templateType */
         // Al mount tutti i colli sono selezionati -> peso totale del lotto.
         ->assertSet('workedWeight', '300');
 
     // Selezione parziale (2 di 3) -> somma proporzionale.
-    $component->set('selectedUnitIds', [$units[0]->id, $units[1]->id])
+    $component->set('selectedUnitIds', [($units[0] ?? throw new \RuntimeException('missing unit 0'))->id, ($units[1] ?? throw new \RuntimeException('missing unit 1'))->id])
         ->assertSet('workedWeight', '200');
 
     // Nessun collo selezionato -> campo vuoto.
@@ -107,7 +108,7 @@ it('exposes computed output weights and the remaining waste weight', function ()
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsSortingPage::class)
+        ->test(WtsSortingPage::class) /** @phpstan-ignore-line argument.templateType */
         ->set('workedWeight', '200')
         ->set('drumsCount', 3) // 3 x 20 kg = 60 kg di output
         ->assertViewHas('outputTotalWeight', 60.0)
@@ -125,8 +126,6 @@ it('generates a PDF processing sheet for a recorded processing step', function (
 
     $pdf = app(GenerateWtsProcessingSheetPdfAction::class)->execute($step);
 
-    expect($pdf)
-        ->toBeString()
-        ->and(strlen($pdf))->toBeGreaterThan(1000)
+    expect(strlen($pdf))->toBeGreaterThan(1000)
         ->and($pdf)->toStartWith('%PDF');
 });

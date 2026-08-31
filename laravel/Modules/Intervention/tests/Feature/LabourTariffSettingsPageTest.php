@@ -12,6 +12,8 @@ use Modules\Platform\Models\PlatformSetting;
 use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 
+use PHPUnit\Framework\Assert;
+
 use function Pest\Laravel\actingAs;
 
 function tariffAdmin(): User
@@ -84,13 +86,15 @@ it('refuses impossible hours and negative percentages', function (): void {
 it('previews a 90 minute job on a weekday, an evening and a Saturday', function (): void {
     actingAsTariffAdmin();
 
-    $rows = Livewire::test(LabourTariffSettingsPage::class)
+    $component = Livewire::test(LabourTariffSettingsPage::class)
         ->set('hourlyPrice', 40.0)
         ->set('calloutFee', 25.0)
         ->set('nightPercent', 30)
         ->set('weekendPercent', 50)
-        ->instance()
-        ->preview();
+        ->instance();
+
+    Assert::assertInstanceOf(LabourTariffSettingsPage::class, $component);
+    $rows = $component->preview();
 
     // 90 min at 40 €/h = 60, plus 25 of callout.
     expect($rows[0]['amount'])->toBe(85.0)
@@ -104,7 +108,9 @@ it('previews a 90 minute job on a weekday, an evening and a Saturday', function 
 it('previews nothing to bill when no rate is set', function (): void {
     actingAsTariffAdmin();
 
-    $rows = Livewire::test(LabourTariffSettingsPage::class)->instance()->preview();
+    $component = Livewire::test(LabourTariffSettingsPage::class)->instance();
+    Assert::assertInstanceOf(LabourTariffSettingsPage::class, $component);
+    $rows = $component->preview();
 
     expect($rows[0]['amount'])->toBe(0.0)
         ->and($rows[2]['surcharge'])->toBe(0);

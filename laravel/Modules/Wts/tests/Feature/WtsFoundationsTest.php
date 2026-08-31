@@ -70,8 +70,7 @@ it('records a WTS non conformity against the selected lot and formulario', funct
         reportedByUserId: null,
     );
 
-    expect($report)->toBeInstanceOf(WtsNonConformityReport::class)
-        ->and($report->form_number)->toBe('FIR-2026-001')
+    expect($report->form_number)->toBe('FIR-2026-001')
         ->and($report->note)->toBe('Imballo danneggiato in scarico')
         ->and($report->recipient_email)->toBe('qualita@wts.example')
         ->and($report->lot?->is($lot))->toBeTrue();

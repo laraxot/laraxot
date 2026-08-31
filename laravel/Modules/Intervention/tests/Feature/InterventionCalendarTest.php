@@ -94,7 +94,7 @@ it('returns calendar events with expected props', function (): void {
     $events = $component->instance()->getCalendarEvents('2026-01-01', '2026-01-31');
 
     // Assert
-    expect($events)->toBeArray()->toHaveCount(1);
+    expect($events)->toHaveCount(1);
     $event = $events[0];
     expect($event['id'])->toBe($intervention->id);
     expect($event['title'])->toContain('Condominio Test');
@@ -213,8 +213,8 @@ it('keeps gerardo operator calendar limited to his own interventions', function 
     $events = $component->instance()->getCalendarEvents('2026-02-01', '2026-02-28');
     $legend = $component->instance()->getOperatorLegend();
 
-    expect($events)->toBeArray()->toBeEmpty()
-        ->and($legend)->toBeArray()->toBeEmpty();
+    expect($events)->toBeEmpty()
+        ->and($legend)->toBeEmpty();
 });
 
 it('shows gerardo the interventions of his assigned team in admin calendar', function (): void {
@@ -267,8 +267,14 @@ it('shows gerardo the interventions of his assigned team in admin calendar', fun
     // Enable the assigned-perimeter feature for this account so the admin
     // calendar is scoped to the assigned team, regardless of the production default.
     // NB: niente dot-syntax qui — i punti nell'email spezzerebbero la chiave.
-    $accounts = (array) config('account_features.accounts', []);
-    $accounts['info@gsbuildingservice.it']['features']['admin.assigned_perimeter'] = true;
+    $accountsRaw = config('account_features.accounts', []);
+    $accounts = is_array($accountsRaw) ? $accountsRaw : [];
+    $emailKey = 'info@gsbuildingservice.it';
+    $account = is_array($accounts[$emailKey] ?? null) ? $accounts[$emailKey] : [];
+    $features = is_array($account['features'] ?? null) ? $account['features'] : [];
+    $features['admin.assigned_perimeter'] = true;
+    $account['features'] = $features;
+    $accounts[$emailKey] = $account;
     config(['account_features.accounts' => $accounts]);
 
     filament()->setCurrentPanel('admin');
@@ -389,7 +395,7 @@ it('returns operator legend and respects operator panel filtering', function ():
     $legend = $component->instance()->getOperatorLegend();
 
     // Assert
-    expect($legend)->toBeArray();
+    expect($legend)->not->toBeNull();
     expect(count($legend))->toBeGreaterThanOrEqual(2);
     expect(array_column($legend, 'name'))->toContain('Op Legend 1', 'Op Legend 2');
 
@@ -454,8 +460,14 @@ it('normalizes timed calendar clicks to all-day scheduling for Gerardo', functio
     // Enable the assigned-perimeter feature for this account so timed clicks
     // are normalized to all-day scheduling, regardless of the production default.
     // NB: niente dot-syntax qui — i punti nell'email spezzerebbero la chiave.
-    $accounts = (array) config('account_features.accounts', []);
-    $accounts['info@gsbuildingservice.it']['features']['admin.assigned_perimeter'] = true;
+    $accountsRaw = config('account_features.accounts', []);
+    $accounts = is_array($accountsRaw) ? $accountsRaw : [];
+    $emailKey = 'info@gsbuildingservice.it';
+    $account = is_array($accounts[$emailKey] ?? null) ? $accounts[$emailKey] : [];
+    $features = is_array($account['features'] ?? null) ? $account['features'] : [];
+    $features['admin.assigned_perimeter'] = true;
+    $account['features'] = $features;
+    $accounts[$emailKey] = $account;
     config(['account_features.accounts' => $accounts]);
 
     filament()->setCurrentPanel('admin');

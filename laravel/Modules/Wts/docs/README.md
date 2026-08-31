@@ -37,6 +37,17 @@ dentro tutto il turno e non deve vedere il resto del gestionale.
 `$isDiscovered = false`, quindi senza l'elenco esplicito il pannello esporrebbe solo
 il login e ogni rotta risponderebbe 404.
 
+## Qualita'
+
+PHPStan su `tests/`: **0 file_errors** (verifica: `./vendor/bin/phpstan analyse Modules/Wts/tests`).
+
+Pattern obbligatori nei Pest test:
+
+1. `actingAs($user);` poi `get(...)->assertOk()` — mai `actingAs($user)->get(...)` (Pest `actingAs` non catena bene per PHPStan).
+2. `Livewire::actingAs($user);` poi `Livewire::test(...)` — `Testable::actingAs` e' `void`.
+3. Dopo `Livewire::test()`, le assert da mixin `TestResponse` (`assertViewHas`/`assertSet`/`assertRedirect`) vanno su statement separati, non dopo `assertHasNoErrors()` nella stessa catena.
+4. Collection senza generics (`GenerateWtsUnitSeriesAction::execute`): `@var Collection<int, WtsUnit>` oppure `?? throw`.
+
 ## Documentazione collegata
 
 - [import-status.md](import-status.md) — cosa e' stato portato e cosa e' cambiato

@@ -38,7 +38,7 @@ test('Home page has items property', function () {
     Assert::assertIsArray($property->getValue($page));
 });
 
-test('Home page has mount method', function (): void {})->todo();
-test('Home page has getViewData method', function (): void {})->todo();
-test('Home page has initView method', function (): void {})->todo();
-test('Home page has url method', function (): void {})->todo();
+it('Home page has mount method')->todo();
+it('Home page has getViewData method')->todo();
+it('Home page has initView method')->todo();
+it('Home page has url method')->todo();
