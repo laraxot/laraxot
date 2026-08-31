@@ -14,6 +14,7 @@ use Modules\Wts\Queries\GetWtsWorkQueueOverviewQuery;
 use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;
+use function Pest\Laravel\get;
 
 it('shows legacy technical sheet details in the WTS ingress page and links directly to label generation', function (): void {
     Role::findOrCreate('wts_admin');
@@ -50,8 +51,8 @@ it('shows legacy technical sheet details in the WTS ingress page and links direc
         'current_area_code' => 'incoming',
     ]);
 
-    actingAs($user)
-        ->get('/wts/ingresses')
+    actingAs($user);
+    get('/wts/ingresses')
         ->assertOk()
         ->assertSee('SR2024-04817')
         ->assertSee('Grafica Veneta Spa')
@@ -72,8 +73,8 @@ it('shows take charge button when an ingress has no lot yet', function (): void 
         'received_at' => now(),
     ]);
 
-    actingAs($user)
-        ->get('/wts/ingresses')
+    actingAs($user);
+    get('/wts/ingresses')
         ->assertOk()
         ->assertSee('Prendi in carico')
         ->assertSee('takeChargeAndOpenLot('.$record->id.')', false)
@@ -103,8 +104,8 @@ it('shows work queue button when an ingress lot already has units', function ():
         printReasonCode: 'initial_print',
     );
 
-    actingAs($user)
-        ->get('/wts/ingresses')
+    actingAs($user);
+    get('/wts/ingresses')
         ->assertOk()
         ->assertSee('Giacenza')
         ->assertSee('/wts/work-queue', false)
@@ -400,8 +401,8 @@ it('shows generated units in the operational stock page and processing entry poi
         printReasonCode: 'initial_print',
     );
 
-    actingAs($user)
-        ->get('/wts/work-queue')
+    actingAs($user);
+    get('/wts/work-queue')
         ->assertOk()
         ->assertSee('LOT-2026-0001-BIG-BAG-01')
         ->assertSee('SR2024-04817')
@@ -589,8 +590,8 @@ it('shows the WTS printable inventory with technical notes and consumed state', 
         'current_area_code' => 'finished',
     ])->save();
 
-    actingAs($user)
-        ->get('/wts/inventory')
+    actingAs($user);
+    get('/wts/inventory')
         ->assertOk()
         ->assertSee('Stampa giacenza WTS')
         ->assertSee('LOT-2026-0001')
@@ -696,8 +697,8 @@ it('renders the lot detail page with real lot data when a lot is selected', func
         printReasonCode: 'initial_print',
     );
 
-    actingAs($user)
-        ->get('/wts/lot-detail?lot='.$lot->id)
+    actingAs($user);
+    get('/wts/lot-detail?lot='.$lot->id)
         ->assertOk()
         ->assertSee('LOT-2026-0001')
         ->assertSee('SR2024-04817')
@@ -741,8 +742,8 @@ it('shows placeholder colli rows instead of fake BIGBAG demo rows when no units 
         'initial_units_count' => 2,
     ]);
 
-    actingAs($user)
-        ->get('/wts/lot-detail?lot='.$lot->id)
+    actingAs($user);
+    get('/wts/lot-detail?lot='.$lot->id)
         ->assertOk()
         ->assertSee('Collo 1 di 2')
         ->assertSee('Collo 2 di 2')
@@ -776,8 +777,8 @@ it('shows an empty colli message when no units and no estimated count exist', fu
         'initial_units_count' => 0,
     ]);
 
-    actingAs($user)
-        ->get('/wts/lot-detail?lot='.$lot->id)
+    actingAs($user);
+    get('/wts/lot-detail?lot='.$lot->id)
         ->assertOk()
         ->assertSee('Nessun collo generato')
         ->assertDontSee('BIGBAG-01')
@@ -790,16 +791,16 @@ it('shows the static WTS mockup flow when the database has no demo seed', functi
     $user = User::factory()->create();
     $user->syncRoles(['wts_admin']);
 
-    actingAs($user)
-        ->get('/wts')
+    actingAs($user);
+    get('/wts')
         ->assertOk()
         // Il riquadro "documenti legali demo" del sorgente linkava le pagine del
         // sito vetrina (route terms/privacy), che qui non esistono: rimosso dalla
         // dashboard e quindi non piu' atteso.
         ->assertSee('Flusso operativo da programmazione a WTS1');
 
-    actingAs($user)
-        ->get('/wts/ingresses')
+    actingAs($user);
+    get('/wts/ingresses')
         ->assertOk()
         ->assertSee('Conferimenti del giorno')
         ->assertSee('Data conferimenti')
@@ -808,29 +809,29 @@ it('shows the static WTS mockup flow when the database has no demo seed', functi
         ->assertSee('CER/EER')
         ->assertSee('Colli ECOS');
 
-    actingAs($user)
-        ->get('/wts/lot-detail')
+    actingAs($user);
+    get('/wts/lot-detail')
         ->assertOk()
         ->assertSee('Nessun lotto selezionato')
         ->assertSee('Seleziona un lotto dalla lista ingressi')
         ->assertSee('Torna alla lista ingressi');
 
-    actingAs($user)
-        ->get('/wts/work-queue')
+    actingAs($user);
+    get('/wts/work-queue')
         ->assertOk()
         ->assertSee('Giacenze per lavorazione')
         ->assertSee('Nessuna giacenza da lavorare al momento.')
         ->assertDontSee('Apri lavorazione assegnata');
 
-    actingAs($user)
-        ->get('/wts/material-detail')
+    actingAs($user);
+    get('/wts/material-detail')
         ->assertOk()
         ->assertSee('Dettaglio collo da giacenza')
         ->assertSee('Aperto da UI-05 o da QR')
         ->assertSee('Apri lavorazione assegnata');
 
-    actingAs($user)
-        ->get('/wts/processing')
+    actingAs($user);
+    get('/wts/processing')
         ->assertOk()
         ->assertSee('UI-07 - Seleziona i colli e apri la lavorazione')
         ->assertSee('Seleziona colli e apri triturazione');
@@ -842,32 +843,32 @@ it('renders the separate WTS processing pages', function (): void {
     $user = User::factory()->create();
     $user->syncRoles(['wts_admin']);
 
-    actingAs($user)
-        ->get('/wts/sorting')
+    actingAs($user);
+    get('/wts/sorting')
         ->assertOk()
         ->assertSee('Selezione e cernita')
         ->assertSee('Registra selezione e cernita');
 
-    actingAs($user)
-        ->get('/wts/unpackaging')
+    actingAs($user);
+    get('/wts/unpackaging')
         ->assertOk()
         ->assertSee('Sconfezionamento')
         ->assertSee('Registra sconfezionamento');
 
-    actingAs($user)
-        ->get('/wts/grinding-washing')
+    actingAs($user);
+    get('/wts/grinding-washing')
         ->assertOk()
         ->assertSee('Triturazione e lavaggio')
         ->assertSee('Registra triturazione');
 
-    actingAs($user)
-        ->get('/wts/pressing')
+    actingAs($user);
+    get('/wts/pressing')
         ->assertOk()
         ->assertSee('Pressatura')
         ->assertSee('Registra pressatura');
 
-    actingAs($user)
-        ->get('/wts/processing-sheet')
+    actingAs($user);
+    get('/wts/processing-sheet')
         ->assertOk()
         ->assertSee('Foglio lavorazione')
         ->assertSee('Fogli disponibili')
@@ -909,8 +910,8 @@ it('shows the progressivo and the colli of each viaggio, not those of the shared
         ]);
     }
 
-    actingAs($user)
-        ->get('/wts/ingresses')
+    actingAs($user);
+    get('/wts/ingresses')
         ->assertOk()
         ->assertSee('128700')
         ->assertSee('128759');

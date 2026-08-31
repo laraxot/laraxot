@@ -199,16 +199,16 @@ it('covers ingresses and inventory page utility config branches', function (): v
         'finished' => ['invalid'],
     ]);
 
-    Livewire::actingAs($user)
-        ->test(WtsIngressesPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsIngressesPage::class)
         ->assertSet('receivedDate', now()->toDateString())
         ->assertViewHas('unitTypeLabels', [
             'big_bag' => 'Big bag',
             'drum' => '',
         ]);
 
-    Livewire::actingAs($user)
-        ->test(WtsInventoryPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsInventoryPage::class)
         ->assertSet('referenceDate', now()->format('Y-m-d'))
         ->assertViewHas('stockViews', [
             'to_process' => 'Da lavorare',
@@ -224,8 +224,8 @@ it('covers missing material branches in outputs page', function (): void {
 
     $material = WtsDerivedMaterial::factory()->create();
 
-    Livewire::actingAs($user)
-        ->test(WtsOutputsPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsOutputsPage::class)
         ->call('updateMaterialTechnicalSheet', 999999, '')
         ->call('reprintOutputLabel', 999999)
         ->assertHasNoErrors();
@@ -241,8 +241,8 @@ it('covers invalid unit type config branch in the lot detail page', function ():
 
     config()->set('wts.unit_types', 'invalid');
 
-    Livewire::actingAs($user)
-        ->test(WtsLotDetailPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsLotDetailPage::class)
         ->assertViewHas('unitTypeLabels', []);
 });
 

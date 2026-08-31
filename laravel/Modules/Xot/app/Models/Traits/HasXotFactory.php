@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory as EloquentHasFactory;
 use Modules\Xot\Actions\Factory\GetFactoryAction;
 
-/** @template TFactory of Factory */
+/** @template TModel of \Illuminate\Database\Eloquent\Model */
+/** @template TFactory of Factory<TModel> */
 trait HasXotFactory
 {
     /** @use EloquentHasFactory<TFactory> */

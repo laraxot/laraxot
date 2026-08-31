@@ -31,19 +31,19 @@ it('covers label utility actions merged into the lot detail page', function (): 
 
     $lot = WtsInboundLot::factory()->create();
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsLotDetailPage::class)
         ->call('addUnits', 'pallet', 2)
         ->assertHasNoErrors();
 
     $unit = $lot->fresh()?->units()->orderBy('id')->first();
 
-    /** @var WtsUnit $unit */
+    /** @var \Modules\Wts\Models\WtsUnit $unit */
     expect($unit)->toBeInstanceOf(WtsUnit::class);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsLotDetailPage::class)
         ->call('updateUnitType', $unit->id, 'drum')
         ->call('reprintUnitLabel', $unit->id)
@@ -65,8 +65,8 @@ it('rejects an empty non conformity note from the lot detail page', function ():
 
     $lot = WtsInboundLot::factory()->create();
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsLotDetailPage::class)
         ->set('nonConformityNote', '   ')
         ->call('reportNonConformity')
@@ -89,8 +89,8 @@ it('registers mixed outputs from the generic WTS processing page', function (): 
         'current_area_code' => 'to_process',
     ]);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsProcessingPage::class)
         ->set('selectedUnitIds', [$unit->id])
         ->set('stepTypeCode', 'grinding')
@@ -138,8 +138,8 @@ it('rejects processing selections outside the selected lot', function (): void {
         'status_code' => 'available',
     ]);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lotA->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lotA->id])
         ->test(WtsProcessingPage::class)
         ->set('selectedUnitIds', [$unitA->id, $unitB->id])
         ->set('workedWeight', 50)
@@ -157,8 +157,8 @@ it('covers ingress, outputs, lot detail and operational parameter utility branch
     $user = User::factory()->create();
     $user->syncRoles(['wts_admin']);
 
-    Livewire::actingAs($user)
-        ->test(WtsNewIngressPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsNewIngressPage::class)
         ->call('confirmTakingCharge')
         ->assertHasNoErrors();
 
@@ -168,8 +168,8 @@ it('covers ingress, outputs, lot detail and operational parameter utility branch
         'acceptance_status' => null,
     ]);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['record' => $record->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['record' => $record->id])
         ->test(WtsNewIngressPage::class)
         ->set('grossQuantity', '123,5')
         ->set('tareWeight', '10,2')
@@ -185,8 +185,8 @@ it('covers ingress, outputs, lot detail and operational parameter utility branch
 
     expect($lot)->not->toBeNull();
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsLotDetailPage::class)
         ->call('addUnits', '', 1)
         ->assertHasNoErrors();
@@ -197,8 +197,8 @@ it('covers ingress, outputs, lot detail and operational parameter utility branch
         'status_code' => 'finished',
     ]);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsLotDetailPage::class)
         ->call('removeUnit', $finishedUnit->id)
         ->assertHasNoErrors();
@@ -210,8 +210,8 @@ it('covers ingress, outputs, lot detail and operational parameter utility branch
         'sheet_code' => 'ST-COV-001',
     ]);
 
-    Livewire::actingAs($user)
-        ->test(WtsOutputsPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsOutputsPage::class)
         ->call('updateMaterialTechnicalSheet', $material->id, (string) $newSnapshot->id)
         ->call('updateMaterialTechnicalSheet', $material->id, '')
         ->assertHasNoErrors();
@@ -220,8 +220,8 @@ it('covers ingress, outputs, lot detail and operational parameter utility branch
 
     $parameterBefore = app(GetWtsOperationalParametersQuery::class)->execute()['standard_drum_weight_kg'] ?? null;
 
-    Livewire::actingAs($user)
-        ->test(WtsOperationalParametersPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsOperationalParametersPage::class)
         ->set('parameterValues.standard_drum_weight_kg', '')
         ->call('saveParameter', 'standard_drum_weight_kg')
         ->assertHasNoErrors();

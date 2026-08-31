@@ -17,6 +17,7 @@ use Livewire\Livewire;
 use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;
+use function Pest\Laravel\get;
 
 it('takes charge of an ingress and creates the operational WTS lot', function (): void {
     $snapshot = WtsTechnicalSheetSnapshot::factory()->create([
@@ -150,14 +151,14 @@ it('stores UI-02 taking charge data from the WTS panel', function (): void {
         'status_code' => 'registered',
     ]);
 
-    actingAs($user)
-        ->get('/wts/new-ingress?record='.$record->id)
+    actingAs($user);
+    get('/wts/new-ingress?record='.$record->id)
         ->assertOk()
         ->assertSee('ECOS-1002')
         ->assertSee('FIR-2026-002');
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['record' => $record->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['record' => $record->id])
         ->test(WtsNewIngressPage::class)
         ->set('entryWeight', '970')
         ->set('tareWeight', '10')
@@ -181,8 +182,8 @@ it('adds and removes lot units directly from UI-03', function (): void {
         'lot_code' => 'LOT-2026-0007',
     ]);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsLotDetailPage::class)
         ->call('addUnits', 'big_bag', 2)
         ->assertHasNoErrors();
@@ -192,8 +193,8 @@ it('adds and removes lot units directly from UI-03', function (): void {
 
     $unitId = (int) WtsUnit::query()->where('inbound_lot_id', $lot->id)->firstOrFail()->id;
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsLotDetailPage::class)
         ->call('removeUnit', $unitId)
         ->assertHasNoErrors();
@@ -220,8 +221,8 @@ it('takes charge straight from UI-01 with ECOS data and lands on the lot detail'
         'status_code' => 'registered',
     ]);
 
-    Livewire::actingAs($user)
-        ->test(WtsIngressesPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsIngressesPage::class)
         ->call('takeChargeAndOpenLot', $record->id)
         ->assertHasNoErrors()
         ->assertRedirect(WtsLotDetailPage::getUrl(panel: 'wts', parameters: [
@@ -255,8 +256,8 @@ it('keeps the ECOS acceptance status and notes when taking charge from UI-01', f
         'status_code' => 'registered',
     ]);
 
-    Livewire::actingAs($user)
-        ->test(WtsIngressesPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsIngressesPage::class)
         ->call('takeChargeAndOpenLot', $record->id)
         ->assertHasNoErrors();
 
@@ -284,8 +285,8 @@ it('reopens the existing lot instead of taking charge twice from UI-01', functio
         'lot_code' => 'LOT-2026-0203',
     ]);
 
-    Livewire::actingAs($user)
-        ->test(WtsIngressesPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsIngressesPage::class)
         ->call('takeChargeAndOpenLot', $record->id)
         ->assertRedirect(WtsLotDetailPage::getUrl(panel: 'wts', parameters: ['lot' => $lot->id]));
 
@@ -304,8 +305,8 @@ it('refuses the take charge without sending the operator to UI-02 when ECOS data
         'status_code' => 'registered',
     ]);
 
-    Livewire::actingAs($user)
-        ->test(WtsIngressesPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsIngressesPage::class)
         ->call('takeChargeAndOpenLot', $record->id)
         ->assertNoRedirect();
 
@@ -338,8 +339,8 @@ it('blocks the take charge button until ECOS declares formulario and quantita', 
         'received_at' => now()->startOfDay(),
     ]);
 
-    actingAs($user)
-        ->get('/wts/ingresses')
+    actingAs($user);
+    get('/wts/ingresses')
         ->assertOk()
         ->assertSee('In attesa di arrivo')
         ->assertSee('takeChargeAndOpenLot('.$arrived->id.')', false)
@@ -352,8 +353,8 @@ it('warns instead of taking charge when the UI-01 ingress does not exist', funct
     $user = User::factory()->create();
     $user->syncRoles(['wts_admin']);
 
-    Livewire::actingAs($user)
-        ->test(WtsIngressesPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsIngressesPage::class)
         ->call('takeChargeAndOpenLot', 999999)
         ->assertNoRedirect();
 

@@ -22,7 +22,7 @@ it('sends electronic invoice with provider settings and stores tracking data', f
         'updated_at' => now(),
     ]);
 
-    /** @var Invoice $invoice */
+    /** @var \Modules\Billing\Models\Invoice $invoice */
     $invoice = Invoice::query()->create([
         'number' => 'FAT-EINV-0001',
         'issued_on' => now()->toDateString(),
@@ -78,7 +78,7 @@ it('fails sending electronic invoice when api key is missing', function (): void
         'updated_at' => now(),
     ]);
 
-    /** @var Invoice $invoice */
+    /** @var \Modules\Billing\Models\Invoice $invoice */
     $invoice = Invoice::query()->create([
         'number' => 'FAT-EINV-0002',
         'issued_on' => now()->toDateString(),
@@ -103,7 +103,7 @@ it('stores last error when provider responds with an error', function (): void {
         'updated_at' => now(),
     ]);
 
-    /** @var Invoice $invoice */
+    /** @var \Modules\Billing\Models\Invoice $invoice */
     $invoice = Invoice::query()->create([
         'number' => 'FAT-EINV-0003',
         'issued_on' => now()->toDateString(),
@@ -137,7 +137,7 @@ it('fails sending electronic invoice when provider is disabled', function (): vo
         'updated_at' => now(),
     ]);
 
-    /** @var Invoice $invoice */
+    /** @var \Modules\Billing\Models\Invoice $invoice */
     $invoice = Invoice::query()->create([
         'number' => 'FAT-EINV-0004',
         'issued_on' => now()->toDateString(),
@@ -161,7 +161,7 @@ it('fails sending electronic invoice when endpoint is missing', function (): voi
         'updated_at' => now(),
     ]);
 
-    /** @var Invoice $invoice */
+    /** @var \Modules\Billing\Models\Invoice $invoice */
     $invoice = Invoice::query()->create([
         'number' => 'FAT-EINV-0005',
         'issued_on' => now()->toDateString(),
@@ -187,7 +187,7 @@ it('extracts external id from data.id and normalizes timeout to default', functi
         'updated_at' => now(),
     ]);
 
-    /** @var Invoice $invoice */
+    /** @var \Modules\Billing\Models\Invoice $invoice */
     $invoice = Invoice::query()->create([
         'number' => 'FAT-EINV-0006',
         'issued_on' => now()->toDateString(),
@@ -219,7 +219,7 @@ it('stores http status error message when response body is empty', function (): 
         'updated_at' => now(),
     ]);
 
-    /** @var Invoice $invoice */
+    /** @var \Modules\Billing\Models\Invoice $invoice */
     $invoice = Invoice::query()->create([
         'number' => 'FAT-EINV-0007',
         'issued_on' => now()->toDateString(),
@@ -252,7 +252,7 @@ it('stores provider response body when error json is missing', function (): void
         'updated_at' => now(),
     ]);
 
-    /** @var Invoice $invoice */
+    /** @var \Modules\Billing\Models\Invoice $invoice */
     $invoice = Invoice::query()->create([
         'number' => 'FAT-EINV-0008',
         'issued_on' => now()->toDateString(),

@@ -26,7 +26,7 @@ it('links and unlinks invoices to work orders idempotently', function (): void {
         'updated_at' => now(),
     ]);
 
-    /** @var Invoice $invoice */
+    /** @var \Modules\Billing\Models\Invoice $invoice */
     $invoice = Invoice::query()->create([
         'customer_id' => $customerId,
         'work_order_id' => null,

@@ -15,6 +15,7 @@ use Livewire\Livewire;
 use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;
+use function Pest\Laravel\get;
 
 it('renders the real finished material page with origin chain', function (): void {
     Role::findOrCreate('wts_admin');
@@ -40,8 +41,8 @@ it('renders the real finished material page with origin chain', function (): voi
         'weight' => 40,
     ]);
 
-    actingAs($user)
-        ->get('/wts/finished-material?material='.$material->id)
+    actingAs($user);
+    get('/wts/finished-material?material='.$material->id)
         ->assertOk()
         ->assertSee('FIN-2026-003')
         ->assertSee('UNIT-FIN-001')
@@ -67,15 +68,15 @@ it('renders the real audit page results for a searched code', function (): void 
         'output_code' => 'OUT-AUDIT-REAL-01',
     ]);
 
-    actingAs($user)
-        ->get('/wts/audit?search=OUT-AUDIT-REAL-01')
+    actingAs($user);
+    get('/wts/audit?search=OUT-AUDIT-REAL-01')
         ->assertOk()
         ->assertSee('OUT-AUDIT-REAL-01')
         ->assertSee('UNIT-AUDIT-REAL-01')
         ->assertSee($unit->inboundLot?->inboundRecord?->form_number);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['search' => 'OUT-AUDIT-REAL-01'])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['search' => 'OUT-AUDIT-REAL-01'])
         ->test(WtsAuditPage::class)
         ->assertSet('search', 'OUT-AUDIT-REAL-01');
 });
@@ -91,14 +92,14 @@ it('renders the real processing sheet page for a selected step', function (): vo
         'step_type_code' => 'unpackaging',
     ]);
 
-    actingAs($user)
-        ->get('/wts/processing-sheet?step='.$step->id)
+    actingAs($user);
+    get('/wts/processing-sheet?step='.$step->id)
         ->assertOk()
         ->assertSee('WS-SHEET-REAL-01')
         ->assertSee('unpackaging');
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['step' => $step->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['step' => $step->id])
         ->test(WtsProcessingSheetPage::class)
         ->assertSet('stepId', $step->id);
 });
@@ -113,8 +114,8 @@ it('reprints a derived material label from outputs page', function (): void {
         'output_code' => 'OUT-LABEL-01',
     ]);
 
-    Livewire::actingAs($user)
-        ->test(WtsOutputsPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsOutputsPage::class)
         ->call('reprintOutputLabel', $material->id)
         ->assertHasNoErrors();
 

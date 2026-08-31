@@ -28,7 +28,7 @@ it('writes a created audit row attributed to the acting user', function (): void
 
     $unit = WtsUnit::factory()->create(['unit_code' => 'LOT-2026-0400-BIG-BAG-01']);
 
-    /** @var WtsAuditLog|null $log */
+    /** @var \Modules\Wts\Models\WtsAuditLog|null $log */
     $log = WtsAuditLog::query()
         ->where('auditable_type', WtsUnit::class)
         ->where('auditable_id', $unit->id)
@@ -48,7 +48,7 @@ it('writes an updated audit row with exact old and new values and no actor when 
 
     $record->forceFill(['form_number' => 'FIR-NEW-01'])->save();
 
-    /** @var WtsAuditLog|null $log */
+    /** @var \Modules\Wts\Models\WtsAuditLog|null $log */
     $log = WtsAuditLog::query()
         ->where('auditable_type', WtsInboundRecord::class)
         ->where('auditable_id', $record->id)
@@ -81,7 +81,7 @@ it('audits soft deletes and restores without losing the row', function (): void 
 
     $unit->delete();
 
-    /** @var WtsAuditLog|null $deletedLog */
+    /** @var \Modules\Wts\Models\WtsAuditLog|null $deletedLog */
     $deletedLog = WtsAuditLog::query()
         ->where('auditable_type', WtsUnit::class)
         ->where('auditable_id', $unit->id)
@@ -210,8 +210,8 @@ it('attributes queued label prints to the acting user from the lot detail page',
     $unit = WtsUnit::factory()->create(['unit_code' => 'LOT-2026-0601-BIG-BAG-01']);
     $lot = $unit->inboundLot;
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot?->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot?->id])
         ->test(WtsLotDetailPage::class)
         ->call('queueUnitLabelPrint', $unit->id)
         ->call('queueAllLabelsPrint')
@@ -237,11 +237,11 @@ it('soft deletes removed units keeping their print history and audit trail', fun
         printReasonCode: 'initial_print',
     );
 
-    /** @var WtsUnit $unit */
+    /** @var \Modules\Wts\Models\WtsUnit $unit */
     $unit = $lot->units()->firstOrFail();
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsLotDetailPage::class)
         ->call('removeUnit', $unit->id)
         ->assertHasNoErrors();
@@ -264,15 +264,15 @@ it('ignores queue print requests without a selected lot or without units', funct
     $user = User::factory()->create();
     $user->syncRoles(['wts_admin']);
 
-    Livewire::actingAs($user)
-        ->test(WtsLotDetailPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsLotDetailPage::class)
         ->call('queueAllLabelsPrint')
         ->assertHasNoErrors();
 
     $emptyLot = WtsInboundLot::factory()->create();
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $emptyLot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $emptyLot->id])
         ->test(WtsLotDetailPage::class)
         ->call('queueAllLabelsPrint')
         ->assertHasNoErrors();
@@ -289,8 +289,8 @@ it('keeps cleared print jobs in the database as soft deleted history', function 
 
     WtsPrintJob::factory()->create(['status_code' => 'printed']);
 
-    Livewire::actingAs($user)
-        ->test(WtsPrintingPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsPrintingPage::class)
         ->call('clearPrinted')
         ->assertHasNoErrors();
 

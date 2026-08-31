@@ -90,8 +90,8 @@ it('downloads the processing sheet PDF from the processing sheet page', function
         'work_sheet_code' => 'WS-DOWNLOAD-01',
     ]);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['step' => $step->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['step' => $step->id])
         ->test(WtsProcessingSheetPage::class)
         ->call('downloadSheetPdf')
         ->assertHasNoErrors();
@@ -102,8 +102,8 @@ it('returns nothing when downloading a processing sheet PDF without a selected s
     $user = User::factory()->create();
     $user->syncRoles(['wts_admin']);
 
-    Livewire::actingAs($user)
-        ->test(WtsProcessingSheetPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsProcessingSheetPage::class)
         ->call('downloadSheetPdf')
         ->assertHasNoErrors();
 });
@@ -117,8 +117,8 @@ it('downloads a step sheet PDF from the reports page', function (): void {
         'work_sheet_code' => 'WS-REPORT-01',
     ]);
 
-    Livewire::actingAs($user)
-        ->test(WtsReportsPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsReportsPage::class)
         ->call('downloadStepPdf', $step->id)
         ->assertHasNoErrors();
 });
@@ -128,8 +128,8 @@ it('returns nothing when downloading a missing step sheet PDF from the reports p
     $user = User::factory()->create();
     $user->syncRoles(['wts_admin']);
 
-    Livewire::actingAs($user)
-        ->test(WtsReportsPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsReportsPage::class)
         ->call('downloadStepPdf', 999999)
         ->assertHasNoErrors();
 });
@@ -141,8 +141,8 @@ it('downloads the full processing report PDF from the reports page', function ()
 
     WtsProcessingStep::factory()->create();
 
-    Livewire::actingAs($user)
-        ->test(WtsReportsPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsReportsPage::class)
         ->call('downloadFullReportPdf')
         ->assertHasNoErrors();
 });
@@ -158,8 +158,8 @@ it('reprints the output label PDF from the finished material page', function ():
 
     actingAs($user);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['material' => $material->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['material' => $material->id])
         ->test(WtsFinishedMaterialPage::class)
         ->call('reprintOutputLabel')
         ->assertHasNoErrors();
@@ -172,8 +172,8 @@ it('returns nothing when reprinting an output label without a selected material'
     $user = User::factory()->create();
     $user->syncRoles(['wts_admin']);
 
-    Livewire::actingAs($user)
-        ->test(WtsFinishedMaterialPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsFinishedMaterialPage::class)
         ->call('reprintOutputLabel')
         ->assertHasNoErrors();
 });
@@ -185,8 +185,8 @@ it('downloads the WTS inventory PDF with the default reference date', function (
 
     WtsUnit::factory()->create();
 
-    Livewire::actingAs($user)
-        ->test(WtsInventoryPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsInventoryPage::class)
         ->call('downloadInventoryPdf')
         ->assertHasNoErrors();
 });
@@ -196,8 +196,8 @@ it('downloads the WTS inventory PDF using an explicit reference date', function 
     $user = User::factory()->create();
     $user->syncRoles(['wts_admin']);
 
-    Livewire::actingAs($user)
-        ->test(WtsInventoryPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsInventoryPage::class)
         ->set('referenceDate', '2026-01-15')
         ->call('downloadInventoryPdf')
         ->assertHasNoErrors();
@@ -208,8 +208,8 @@ it('falls back to today when the WTS inventory reference date is cleared', funct
     $user = User::factory()->create();
     $user->syncRoles(['wts_admin']);
 
-    Livewire::actingAs($user)
-        ->test(WtsInventoryPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsInventoryPage::class)
         ->set('referenceDate', '')
         ->call('downloadInventoryPdf')
         ->assertHasNoErrors();

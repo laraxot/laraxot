@@ -16,6 +16,7 @@ use Modules\Wts\Queries\SearchWtsAuditQuery;
 use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;
+use function Pest\Laravel\get;
 
 it('searches the WTS audit chain by formulario lot unit or output', function (): void {
     $unit = WtsUnit::factory()->create([
@@ -80,8 +81,8 @@ it('shows real dashboard counters on the WTS dashboard', function (): void {
         ->and($stats['units_to_process'])->toBeGreaterThanOrEqual(1)
         ->and($stats['processings_today'])->toBeGreaterThanOrEqual(1);
 
-    actingAs($user)
-        ->get('/wts')
+    actingAs($user);
+    get('/wts')
         ->assertOk()
         ->assertSee('Ingressi oggi')
         ->assertSee('Colli da lavorare')

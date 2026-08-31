@@ -58,7 +58,7 @@ it('links a component to a price-list item and totals a line', function (): void
         'unit_cost' => 116.4500,
     ]);
 
-    /** @var SignComponent $face */
+    /** @var \Modules\Signage\Models\SignComponent $face */
     $face = $spec->components()->where('role_code', 'face')->firstOrFail();
     $face->update([
         'price_list_item_id' => $item->id,

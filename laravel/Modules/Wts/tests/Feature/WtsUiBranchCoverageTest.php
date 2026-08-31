@@ -19,8 +19,8 @@ it('covers missing lot branches for label and non-conformity actions in lot deta
     $user = User::factory()->create();
     $user->syncRoles(['wts_admin']);
 
-    Livewire::actingAs($user)
-        ->test(WtsLotDetailPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsLotDetailPage::class)
         ->call('reprintAllLabels')
         ->set('nonConformityNote', 'Nota ignorata')
         ->call('reportNonConformity')
@@ -47,8 +47,8 @@ it('normalizes lot detail unit type config and ignores non string keys', functio
         'drum' => ['invalid'],
     ]);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsLotDetailPage::class)
         ->assertViewHas('unitTypeLabels', [
             'big_bag' => 'Big bag',
@@ -64,8 +64,8 @@ it('covers missing lot and config fallback branches in lot detail page', functio
 
     config()->set('wts.unit_types', 'invalid-config');
 
-    Livewire::actingAs($user)
-        ->test(WtsLotDetailPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsLotDetailPage::class)
         ->call('addUnits', 'big_bag', 1)
         ->call('removeUnit', 999999)
         ->assertHasNoErrors()
@@ -88,8 +88,8 @@ it('ignores non string unit type keys in lot detail page config', function (): v
         'pallet' => ['invalid'],
     ]);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsLotDetailPage::class)
         ->assertViewHas('unitTypeLabels', [
             'big_bag' => 'Big bag',
@@ -103,8 +103,8 @@ it('covers missing record branch and default date in new ingress page', function
     $user = User::factory()->create();
     $user->syncRoles(['wts_admin']);
 
-    Livewire::actingAs($user)
-        ->test(WtsNewIngressPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsNewIngressPage::class)
         ->call('confirmTakingCharge')
         ->assertHasNoErrors()
         ->assertSet('recordId', null)
@@ -122,8 +122,8 @@ it('covers invalid taking charge input branch in new ingress page', function ():
         'status_code' => 'registered',
     ]);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['record' => $record->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['record' => $record->id])
         ->test(WtsNewIngressPage::class)
         ->set('grossQuantity', '0')
         ->call('confirmTakingCharge')
@@ -145,8 +145,8 @@ it('ignores invalid unit ids on the lot detail page when a lot exists', function
         'technical_sheet_snapshot_id' => $lot->inboundRecord?->technical_sheet_snapshot_id,
     ]);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsLotDetailPage::class)
         ->call('updateUnitType', 999999, 'drum')
         ->call('reprintUnitLabel', 999999)
@@ -169,8 +169,8 @@ it('prints single and bulk labels directly from the lot detail page', function (
         'status_code' => 'available',
     ]);
 
-    $component = Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    $component = Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsLotDetailPage::class);
 
     // Cambio tipologia collo senza passare dalla UI-04.
@@ -202,8 +202,8 @@ it('warns instead of printing when the lot has no units yet', function (): void 
 
     $lot = WtsInboundLot::factory()->create();
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsLotDetailPage::class)
         ->call('reprintAllLabels')
         ->assertHasNoErrors();
@@ -217,8 +217,8 @@ it('ignores lot detail label actions when no lot is selected', function (): void
     $user = User::factory()->create();
     $user->syncRoles(['wts_admin']);
 
-    Livewire::actingAs($user)
-        ->test(WtsLotDetailPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsLotDetailPage::class)
         ->call('updateUnitType', 999999, 'drum')
         ->call('reprintUnitLabel', 999999)
         ->call('reprintAllLabels')

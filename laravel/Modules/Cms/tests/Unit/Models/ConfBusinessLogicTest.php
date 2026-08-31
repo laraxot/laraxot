@@ -12,9 +12,7 @@ use Sushi\Sushi;
 
 uses(\Modules\Cms\Tests\TestCase::class);
 describe('Conf Business Logic', function (): void {
-    test('conf extends eloquent model', function (): void {
-    });
-
+    test('conf extends eloquent model', function (): void {})->todo();
     test('conf uses sushi trait for in-memory data', function (): void {
         $traits = class_uses(Conf::class);
 

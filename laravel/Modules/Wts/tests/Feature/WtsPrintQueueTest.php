@@ -58,7 +58,7 @@ it('serves pending print jobs to an authorized agent', function (): void {
     WtsPrintJob::factory()->count(2)->create(['status_code' => 'pending']);
     WtsPrintJob::factory()->create(['status_code' => 'printed']);
 
-    test()->withHeaders(['Authorization' => 'Bearer secret-token'])
+    $this->withHeaders(['Authorization' => 'Bearer secret-token'])
         ->getJson('/api/wts/print-jobs')
         ->assertOk()
         ->assertJsonCount(2, 'jobs')
@@ -69,21 +69,21 @@ it('rejects unauthorized print agents', function (): void {
     config()->set('wts.print_agent_token', 'secret-token');
     WtsPrintJob::factory()->create();
 
-    test()->getJson('/api/wts/print-jobs')->assertStatus(401);
-    test()->withHeaders(['Authorization' => 'Bearer wrong'])->getJson('/api/wts/print-jobs')->assertStatus(401);
+    $this->getJson('/api/wts/print-jobs')->assertStatus(401);
+    $this->withHeaders(['Authorization' => 'Bearer wrong'])->getJson('/api/wts/print-jobs')->assertStatus(401);
 });
 
 it('rejects the agent when no token is configured', function (): void {
     config()->set('wts.print_agent_token', '');
 
-    test()->withHeaders(['Authorization' => 'Bearer anything'])->getJson('/api/wts/print-jobs')->assertStatus(401);
+    $this->withHeaders(['Authorization' => 'Bearer anything'])->getJson('/api/wts/print-jobs')->assertStatus(401);
 });
 
 it('lets the agent mark a job printed', function (): void {
     config()->set('wts.print_agent_token', 'secret-token');
     $job = WtsPrintJob::factory()->create(['status_code' => 'pending']);
 
-    test()->withHeaders(['Authorization' => 'Bearer secret-token'])
+    $this->withHeaders(['Authorization' => 'Bearer secret-token'])
         ->postJson("/api/wts/print-jobs/{$job->id}/done")
         ->assertOk()
         ->assertJson(['ok' => true]);
@@ -97,7 +97,7 @@ it('lets the agent mark a job failed with an error', function (): void {
     config()->set('wts.print_agent_token', 'secret-token');
     $job = WtsPrintJob::factory()->create(['status_code' => 'pending']);
 
-    test()->withHeaders(['Authorization' => 'Bearer secret-token'])
+    $this->withHeaders(['Authorization' => 'Bearer secret-token'])
         ->postJson("/api/wts/print-jobs/{$job->id}/failed", ['error' => 'stampante offline'])
         ->assertOk();
 
@@ -113,8 +113,8 @@ it('queues a single label to the printer from the lot detail page', function ():
     $unit = makeLabelUnit('LOT-2026-9001-BIG-BAG-01');
     $lot = $unit->inboundLot;
 
-    Livewire\Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire\Livewire::actingAs($user);
+        Livewire\Livewire::withQueryParams(['lot' => $lot->id])
         ->test(Modules\Wts\Filament\Pages\WtsLotDetailPage::class)
         ->call('queueUnitLabelPrint', $unit->id)
         ->assertHasNoErrors();
@@ -122,8 +122,8 @@ it('queues a single label to the printer from the lot detail page', function ():
     expect(WtsPrintJob::query()->where('wts_unit_id', $unit->id)->where('status_code', 'pending')->count())->toBe(1);
 
     // collo inesistente: nessun job
-    Livewire\Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire\Livewire::actingAs($user);
+        Livewire\Livewire::withQueryParams(['lot' => $lot->id])
         ->test(Modules\Wts\Filament\Pages\WtsLotDetailPage::class)
         ->call('queueUnitLabelPrint', 999999)
         ->assertHasNoErrors();
@@ -144,8 +144,8 @@ it('queues all lot labels to the printer from the lot detail page', function ():
         'unit_code' => 'LOT-2026-9002-BIG-BAG-02',
     ]);
 
-    Livewire\Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire\Livewire::actingAs($user);
+        Livewire\Livewire::withQueryParams(['lot' => $lot->id])
         ->test(Modules\Wts\Filament\Pages\WtsLotDetailPage::class)
         ->call('queueAllLabelsPrint')
         ->assertHasNoErrors();
@@ -177,8 +177,8 @@ it('lets the printing page enqueue a test label and manage the queue', function 
 
     filament()->setCurrentPanel('wts');
 
-    Livewire\Livewire::actingAs($user)
-        ->test(Modules\Wts\Filament\Pages\WtsPrintingPage::class)
+    Livewire\Livewire::actingAs($user);
+        Livewire\Livewire::test(Modules\Wts\Filament\Pages\WtsPrintingPage::class)
         ->call('printTest')
         ->assertHasNoErrors();
 
@@ -190,8 +190,8 @@ it('lets the printing page enqueue a test label and manage the queue', function 
     WtsPrintJob::factory()->create(['status_code' => 'failed']);
     WtsPrintJob::factory()->create(['status_code' => 'printed']);
 
-    Livewire\Livewire::actingAs($user)
-        ->test(Modules\Wts\Filament\Pages\WtsPrintingPage::class)
+    Livewire\Livewire::actingAs($user);
+        Livewire\Livewire::test(Modules\Wts\Filament\Pages\WtsPrintingPage::class)
         ->call('retryFailed')
         ->call('clearPrinted')
         ->assertHasNoErrors();

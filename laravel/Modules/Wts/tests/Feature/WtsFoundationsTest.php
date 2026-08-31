@@ -15,6 +15,7 @@ use Livewire\Livewire;
 use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;
+use function Pest\Laravel\get;
 
 it('seeds operational parameters from the WTS configuration when missing', function (): void {
     $parameters = app(GetWtsOperationalParametersQuery::class)->execute();
@@ -88,14 +89,14 @@ it('shows and updates WTS operational parameters from the WTS panel', function (
     $user = Modules\User\Models\User::factory()->create();
     $user->syncRoles(['wts_admin']);
 
-    actingAs($user)
-        ->get('/wts/operational-parameters')
+    actingAs($user);
+    get('/wts/operational-parameters')
         ->assertOk()
         ->assertSee('Parametri operativi WTS')
         ->assertSee('Peso standard fusto');
 
-    Livewire::actingAs($user)
-        ->test(Modules\Wts\Filament\Pages\WtsOperationalParametersPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(Modules\Wts\Filament\Pages\WtsOperationalParametersPage::class)
         ->set('parameterValues.standard_drum_weight_kg', '19')
         ->call('saveParameter', 'standard_drum_weight_kg')
         ->assertHasNoErrors();

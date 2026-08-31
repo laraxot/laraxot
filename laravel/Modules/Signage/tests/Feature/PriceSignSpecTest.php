@@ -178,7 +178,7 @@ it('persists prices back onto the components when asked', function (): void {
 
     app(PriceSignSpecAction::class)->execute($spec, ['persist' => true]);
 
-    /** @var SignComponent $fresh */
+    /** @var \Modules\Signage\Models\SignComponent $fresh */
     $fresh = $component->fresh();
     expect($fresh->price_list_item_id)->not->toBeNull()
         ->and((float) $fresh->quantity)->toBe(1.0)     // 1m × 0.5m × 2 pieces

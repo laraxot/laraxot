@@ -33,8 +33,8 @@ it('covers empty selection and invalid config branches in processing page', func
     config()->set('wts.processing_step_types', 'invalid');
     config()->set('wts.operational_parameters', 'invalid');
 
-    Livewire::actingAs($user)
-        ->test(WtsProcessingPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsProcessingPage::class)
         ->set('selectedUnitIds', [])
         ->call('processSelection')
         ->assertHasNoErrors()
@@ -57,8 +57,8 @@ it('covers dirty drum and pallet output branches in processing form trait', func
         'status_code' => 'available',
     ]);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsSortingPage::class)
         ->set('selectedUnitIds', [$unit->id])
         ->set('workedWeight', '50') // >= output (fusto sporco 22 + bancale 20) per bilancio valido
@@ -117,7 +117,7 @@ it('covers scalar string executed_at parsing branch in inventory overview query'
     $method = $reflection->getMethod('applyEffectiveSnapshotState');
     $method->setAccessible(true);
 
-    /** @var WtsUnit $evaluated */
+    /** @var \Modules\Wts\Models\WtsUnit $evaluated */
     $evaluated = $method->invoke(app(GetWtsInventoryOverviewQuery::class), $unit, '2026-06-03');
 
     expect($evaluated->getAttribute('effective_status_code'))->toBe('finished')
@@ -133,12 +133,12 @@ it('covers invalid config branches in ingresses and inventory pages', function (
     config()->set('wts.unit_types', 'invalid');
     config()->set('wts.stock_views', 'invalid');
 
-    Livewire::actingAs($user)
-        ->test(WtsIngressesPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsIngressesPage::class)
         ->assertViewHas('unitTypeLabels', []);
 
-    Livewire::actingAs($user)
-        ->test(WtsInventoryPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsInventoryPage::class)
         ->assertViewHas('stockViews', []);
 });
 
@@ -150,12 +150,12 @@ it('covers empty fallback branches in finished material and material detail page
 
     config()->set('wts.stock_views', 'invalid');
 
-    Livewire::actingAs($user)
-        ->test(WtsFinishedMaterialPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsFinishedMaterialPage::class)
         ->assertSet('materialId', null)
         ->assertViewHas('selectedMaterial', null);
 
-    Livewire::actingAs($user)
-        ->test(WtsMaterialDetailPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsMaterialDetailPage::class)
         ->assertViewHas('stockViews', []);
 });

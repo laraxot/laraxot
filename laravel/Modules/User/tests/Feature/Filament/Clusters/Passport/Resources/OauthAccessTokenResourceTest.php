@@ -5,11 +5,8 @@ use Modules\User\Tests\TestCase;
 
 uses(\Modules\User\Tests\TestCase::class);
 
-it('oauth access token resource class exists', function () {
-});
+it('oauth access token resource class exists')->todo();
 
-it('can render oauth access token resource page', function () {
-});
+it('can render oauth access token resource page')->todo();
 
-it('can list oauth access tokens', function () {
-});
+it('can list oauth access tokens')->todo();

@@ -5,7 +5,5 @@ use Modules\Cms\Tests\TestCase;
 
 uses(\Modules\Cms\Tests\TestCase::class);
 describe('CMS Resource Extension', function () {
-    test('resource extension placeholder', function () {
-        // Placeholder - actual tests require full setup
-    });
+    test('resource extension placeholder', function (): void {})->todo();
 });

@@ -77,8 +77,8 @@ it('records a non conformity from the lot detail page', function (): void {
         'lot_code' => 'LOT-2026-0102',
     ]);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsLotDetailPage::class)
         ->set('nonConformityNote', 'Etichetta non leggibile sul collo')
         ->call('reportNonConformity')

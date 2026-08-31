@@ -24,7 +24,7 @@ it('creates and lists invoices', function (): void {
     ]);
 
     // Act
-    /** @var Invoice $invoice */
+    /** @var \Modules\Billing\Models\Invoice $invoice */
     $invoice = Invoice::query()->create([
         'number' => 'FAT-2026-0001',
         'issued_on' => now()->toDateString(),

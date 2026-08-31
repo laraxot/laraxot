@@ -21,12 +21,8 @@ describe('CounterComponent', function (): void {
         Assert::assertTrue((new ReflectionClass($component))->hasProperty('count'));
     });
 
-    test('counter component has increment method', function (): void {
-    });
-
-    test('counter component has decrement method', function (): void {
-    });
-
+    test('counter component has increment method', function (): void {})->todo();
+    test('counter component has decrement method', function (): void {})->todo();
     test('counter component uses correct namespace', function (): void {
         $reflector = new ReflectionClass(CounterComponent::class);
 

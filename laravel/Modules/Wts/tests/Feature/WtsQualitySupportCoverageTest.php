@@ -26,6 +26,7 @@ use Livewire\Livewire;
 use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;
+use function Pest\Laravel\get;
 
 it('parses legacy payload helpers across valid invalid and fallback inputs', function (): void {
     config()->set('wts.legacy_movement_date_keys', [123, 'movement_date']);
@@ -114,19 +115,19 @@ it('renders reports page and covers work queue utility branches', function (): v
         77 => 'Da ignorare',
     ]);
 
-    actingAs($user)
-        ->get('/wts/reports')
+    actingAs($user);
+    get('/wts/reports')
         ->assertOk()
         ->assertSee('WS-RPT-001')
         ->assertSee('OUT-RPT-001');
 
-    actingAs($user)
-        ->get('/wts/work-queue')
+    actingAs($user);
+    get('/wts/work-queue')
         ->assertOk()
         ->assertSee('Da lavorare');
 
-    Livewire::actingAs($user)
-        ->test(WtsWorkQueuePage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsWorkQueuePage::class)
         ->call('moveUnit', 999999, 'to_process')
         ->call('moveUnit', $unit->id, '')
         ->assertHasNoErrors();
@@ -151,19 +152,19 @@ it('covers material detail fallback branches and invalid moves', function (): vo
         88 => 'Da ignorare',
     ]);
 
-    actingAs($user)
-        ->get('/wts/material-detail?unit='.$unit->id)
+    actingAs($user);
+    get('/wts/material-detail?unit='.$unit->id)
         ->assertOk()
         ->assertSee($unit->unit_code);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['unit' => 999999])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['unit' => 999999])
         ->test(WtsMaterialDetailPage::class)
         ->call('moveToArea', 'to_process')
         ->assertHasNoErrors();
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['unit' => $unit->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['unit' => $unit->id])
         ->test(WtsMaterialDetailPage::class)
         ->call('moveToArea', '')
         ->assertHasNoErrors();

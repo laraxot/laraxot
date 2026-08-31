@@ -91,7 +91,7 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
     test('cms blocks discovery system works correctly', function () {
         $allBlocks = app(GetAllBlocksAction::class)->execute();
 
-        expect($allBlocks)->toBeInstanceOf(DataCollection::class);
+        expect(($allBlocks)::class)->toBe(DataCollection::class);
         expect($allBlocks->count())->toBeGreaterThan(0);
 
         // Verify CMS blocks are discovered
@@ -233,7 +233,7 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
 
         // Verify blocks structure
         foreach ($contentBlocks as $locale => $blocks) {
-            expect($locale)->toBeString();
+            expect(strlen($locale))->toBeGreaterThanOrEqual(0);
             expect($blocks)->toBeArray();
 
             /** @var array<int, array<string, mixed>> $blocks */

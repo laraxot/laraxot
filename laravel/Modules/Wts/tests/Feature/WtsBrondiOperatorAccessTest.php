@@ -24,6 +24,7 @@ use App\Support\AccountFeatures;
 use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;
+use function Pest\Laravel\get;
 
 /**
  * Modalita Brondi: il wts_operator vede solo lo snodo lavorazioni e le quattro
@@ -84,8 +85,8 @@ it('riserva report e parametri operativi al solo wts_admin', function (): void {
 it('nello snodo mostra i quattro tasti ma non i passi successivi', function (): void {
     $user = brondiOperator();
 
-    actingAs($user)
-        ->get('/wts/processing')
+    actingAs($user);
+    get('/wts/processing')
         ->assertOk()
         ->assertSee('Selezione e cernita')
         ->assertSee('Sconfezionamento')
@@ -103,8 +104,8 @@ it('all amministratore lascia invece i passi successivi', function (): void {
     $admin = User::factory()->create();
     $admin->syncRoles(['wts_admin']);
 
-    actingAs($admin)
-        ->get('/wts/processing')
+    actingAs($admin);
+    get('/wts/processing')
         ->assertOk()
         ->assertSee('Passi successivi')
         ->assertSee('Apri foglio lavorazione')

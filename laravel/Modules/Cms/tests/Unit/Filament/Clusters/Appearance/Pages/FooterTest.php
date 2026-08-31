@@ -30,17 +30,8 @@ test('Footer page has footerData property', function () {
     Assert::assertSame('footerData', $property->getName());
 });
 
-test('Footer page has mount method', function () {
-});
-
-test('Footer page has schema method', function () {
-});
-
-test('Footer page has updateData method', function () {
-});
-
-test('Footer page has fillForms method', function () {
-});
-
-test('Footer page has getUpdateFormActions method', function () {
-});
+test('Footer page has mount method', function (): void {})->todo();
+test('Footer page has schema method', function (): void {})->todo();
+test('Footer page has updateData method', function (): void {})->todo();
+test('Footer page has fillForms method', function (): void {})->todo();
+test('Footer page has getUpdateFormActions method', function (): void {})->todo();

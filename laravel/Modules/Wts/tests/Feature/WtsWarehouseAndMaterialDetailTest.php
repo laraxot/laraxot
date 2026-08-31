@@ -13,6 +13,7 @@ use Livewire\Livewire;
 use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;
+use function Pest\Laravel\get;
 
 it('moves a WTS unit between operational warehouse areas with location', function (): void {
     $unit = WtsUnit::factory()->create([
@@ -43,8 +44,8 @@ it('updates warehouse area from UI-05', function (): void {
         'status_code' => 'available',
     ]);
 
-    Livewire::actingAs($user)
-        ->test(WtsWorkQueuePage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsWorkQueuePage::class)
         ->call('moveUnit', $unit->id, 'to_process', 'Corsia B')
         ->assertHasNoErrors();
 
@@ -64,16 +65,16 @@ it('renders the real material detail page for a scanned unit', function (): void
         'location_label' => 'Corsia A - scaffale 2',
     ]);
 
-    actingAs($user)
-        ->get('/wts/material-detail?unit='.$unit->id)
+    actingAs($user);
+    get('/wts/material-detail?unit='.$unit->id)
         ->assertOk()
         ->assertSee('LOT-2026-0200-BIG-BAG-01')
         ->assertSee('Corsia A - scaffale 2')
         ->assertSee($unit->inboundLot?->lot_code)
         ->assertSee($unit->inboundLot?->inboundRecord?->form_number);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['unit' => $unit->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['unit' => $unit->id])
         ->test(WtsMaterialDetailPage::class)
         ->call('moveToArea', 'in_process', 'Reparto pressa')
         ->assertHasNoErrors();
@@ -93,8 +94,8 @@ it('reprints the label of a collo directly from the material detail page', funct
         'current_area_code' => 'to_process',
     ]);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['unit' => $unit->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['unit' => $unit->id])
         ->test(WtsMaterialDetailPage::class)
         ->call('reprintUnitLabel')
         ->assertHasNoErrors();
@@ -102,8 +103,8 @@ it('reprints the label of a collo directly from the material detail page', funct
     expect($unit->fresh()?->labelPrints()->where('print_reason_code', 'reprint')->count())->toBe(1);
 
     // Nessun collo selezionato: nessuna ristampa, nessun errore.
-    Livewire::actingAs($user)
-        ->test(WtsMaterialDetailPage::class)
+    Livewire::actingAs($user);
+    Livewire::test(WtsMaterialDetailPage::class)
         ->call('reprintUnitLabel')
         ->assertHasNoErrors();
 });

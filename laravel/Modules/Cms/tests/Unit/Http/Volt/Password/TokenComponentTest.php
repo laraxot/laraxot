@@ -41,9 +41,7 @@ describe('Password TokenComponent', function (): void {
         Assert::assertSame('', $component->email);
     });
 
-    test('token component has reset password method', function (): void {
-    });
-
+    test('token component has reset password method', function (): void {})->todo();
     test('reset password method returns redirector or redirect response', function (): void {
         $reflection = new ReflectionClass(TokenComponent::class);
         $method = $reflection->getMethod('resetPassword');

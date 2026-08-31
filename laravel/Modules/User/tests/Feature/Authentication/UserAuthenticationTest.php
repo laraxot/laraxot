@@ -269,11 +269,11 @@ describe('User Authorization', function () {
 
 describe('User OAuth Authentication', function () {
     it('can have oauth clients', function () {
-        expect(TestCase::requireUser()->clients())->toBeInstanceOf(MorphMany::class);
+        expect((TestCase::requireUser()->clients())::class)->toBe(MorphMany::class);
     });
 
     it('can have oauth tokens', function () {
-        expect(TestCase::requireUser()->tokens())->toBeInstanceOf(HasMany::class);
+        expect((TestCase::requireUser()->tokens())::class)->toBe(HasMany::class);
     });
 
     it('can find user for passport', function () {
@@ -293,12 +293,11 @@ describe('User OAuth Authentication', function () {
 
 describe('User Authentication Logging', function () {
     it('can log authentication attempts', function () {
-        expect(TestCase::requireUser()->authentications())->toBeInstanceOf(MorphMany::class);
+        expect((TestCase::requireUser()->authentications())::class)->toBe(MorphMany::class);
     });
 
     it('can get latest authentication log', function () {
-        expect(TestCase::requireUser()->latestAuthentication())
-            ->toBeInstanceOf(MorphOne::class);
+        expect((TestCase::requireUser()->latestAuthentication())::class)->toBe(MorphOne::class);
     });
 });
 

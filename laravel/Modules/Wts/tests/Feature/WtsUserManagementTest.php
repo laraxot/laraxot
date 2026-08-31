@@ -89,7 +89,7 @@ it('offers the create action on the wts user list', function (): void {
 
     filament()->setCurrentPanel('wts');
 
-    Livewire::actingAs($admin)
-        ->test(ListUsers::class)
+    Livewire::actingAs($admin);
+    Livewire::test(ListUsers::class)
         ->assertActionExists('create');
 });

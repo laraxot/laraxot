@@ -143,8 +143,8 @@ it('covers empty selection invalid lot selection and stock view normalization in
         'status_code' => 'available',
     ]);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsSortingPage::class)
         ->set('selectedUnitIds', [])
         ->call('registerProcessing')
@@ -152,8 +152,8 @@ it('covers empty selection invalid lot selection and stock view normalization in
 
     expect(WtsProcessingStep::query()->count())->toBe(0);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsSortingPage::class)
         ->set('selectedUnitIds', [$unit->id, $otherUnit->id])
         ->set('workedWeight', '10,5')
@@ -166,8 +166,8 @@ it('covers empty selection invalid lot selection and stock view normalization in
 
     expect(WtsProcessingStep::query()->count())->toBe(0);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsSortingPage::class)
         ->assertViewHas('stockViews', [
             'to_process' => 'Da lavorare',

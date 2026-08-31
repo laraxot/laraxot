@@ -113,8 +113,8 @@ it('covers remaining processing page utility branches and config normalization',
         'broken' => 'invalid',
     ]);
 
-    Livewire::actingAs($user)
-        ->withQueryParams(['lot' => $lot->id])
+    Livewire::actingAs($user);
+    Livewire::withQueryParams(['lot' => $lot->id])
         ->test(WtsProcessingPage::class)
         ->call('deselectUnit', $unitA->id)
         ->set('lotId', $lot->id)

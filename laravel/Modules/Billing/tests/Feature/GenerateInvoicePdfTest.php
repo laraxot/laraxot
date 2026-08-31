@@ -18,7 +18,7 @@ it('generates an invoice PDF', function (): void {
         'updated_at' => now(),
     ]);
 
-    /** @var Invoice $invoice */
+    /** @var \Modules\Billing\Models\Invoice $invoice */
     $invoice = Invoice::query()->create([
         'number' => 'FAT-PDF-0001',
         'issued_on' => now()->toDateString(),
@@ -53,7 +53,7 @@ it('generates an invoice PDF when linked to a work order', function (): void {
         'updated_at' => now(),
     ]);
 
-    /** @var Invoice $invoice */
+    /** @var \Modules\Billing\Models\Invoice $invoice */
     $invoice = Invoice::query()->create([
         'number' => 'FAT-PDF-0002',
         'issued_on' => now()->toDateString(),

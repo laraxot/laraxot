@@ -23,9 +23,7 @@ describe('Password ConfirmComponent', function (): void {
         Assert::assertSame('', $component->password);
     });
 
-    test('confirm component has confirm method', function (): void {
-    });
-
+    test('confirm component has confirm method', function (): void {})->todo();
     test('confirm method declares redirect response return type', function (): void {
         $reflection = new ReflectionClass(ConfirmComponent::class);
         $method = $reflection->getMethod('confirm');

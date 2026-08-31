@@ -96,7 +96,7 @@ it('recomputes the quotation when the operator types a missing quantity', functi
     $specId = $page->get('specId');
     $baseline = priceSignageSpec($specId, []);
 
-    /** @var SignQuotationLine $cutting */
+    /** @var \Modules\Signage\Datas\SignQuotationLine $cutting */
     $cutting = collect($baseline->lines)->firstWhere('role', 'cutting');
     $doubledQuantity = (float) $cutting->quantity * 2;
 
