@@ -135,3 +135,4 @@ laravel/Themes/*/docs/archive/
 laravel/Themes/*/docs/legacy/
 laravel/Themes/*/docs/archived/
 *.lock
+laravel/Themes/Zero/docs/graphify/graphify-out/

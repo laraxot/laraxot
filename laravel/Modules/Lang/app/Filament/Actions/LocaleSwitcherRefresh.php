@@ -38,14 +38,14 @@ class LocaleSwitcherRefresh extends Action
                     ->reactive()
                     ->required(),
             ])
-            ->action(fn (array $data) => $this->applyLocale($data))
+            ->action(fn (array $data): RedirectResponse => $this->applyLocale($data))
             ->modalHeading('Cambia lingua')
             // ->icon('heroicon-o-language')
             ->color('gray');
     }
 
     /**
-     * @param  array<string, mixed>  $data
+     * @param  array<array-key, mixed>  $data
      */
     public function applyLocale(array $data): RedirectResponse
     {
@@ -54,8 +54,10 @@ class LocaleSwitcherRefresh extends Action
 
         session()->put('locale', $locale);
         App::setLocale($locale);
-        // Filament::setLocale($locale);
 
-        return redirect(request()->header('Referer'));
+        $referer = request()->header('Referer');
+        $target = is_string($referer) && $referer !== '' ? $referer : url()->current();
+
+        return redirect()->to($target);
     }
 }

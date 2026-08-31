@@ -4,31 +4,33 @@ type: concept
 module: Xot
 tags: [xot, phpstan, pest, testing, bridge]
 created: 2026-06-10
-updated: 2026-07-24
-qmd: "Xot phpstan pest bridge discipline public assertions tests stay pest helper"
-updated: 2026-07-22
-qmd: "Xot phpstan pest bridge discipline Assert method.internalClass Mockery allows"
+updated: 2026-08-31
+qmd: "Xot phpstan pest bridge discipline plugin-phpstan no PestFunctionBridge"
 issues:
   - "https://github.com/laraxot/module_xot_fila5/issues/28"
 discussions:
   - "https://github.com/laraxot/module_xot_fila5/discussions/29"
 related:
   - ../../../../../../docs/wiki/rules/phpstan-pest-tests-stay-pest.md
+  - ../../../../../../docs/wiki/rules/pest-phpstan-bridge.md
   - ../../../../../../docs/wiki/skills/phpstan-pest-remediation.md
 ---
 
 # PHPStan Pest Bridge Discipline
 
-Xot e' il posto giusto per pattern condivisi di test/static analysis, ma il bridge non deve cambiare il framework dei test.
+Xot e' il posto giusto per pattern condivisi di test/static analysis, ma **non**
+si devono stubbare le funzioni Pest nei namespace test.
 
-## Contratto
+## Contratto (aggiornato 2026-08-31)
 
 - Pest resta il framework test.
 - PHPStan resta governato dal solo `laravel/phpstan.neon` utente.
-- Bridge/helper condivisi devono rendere tipizzabili le assertion ricorrenti, non mascherare errori.
-- Bridge `PestFunctionBridge.php`: `uses|test|it|describe` → `void`; `expect()` → `PestExpectation` (evita `function.resultUnused` e catene `function.void`).
-- Rigenerare bridge: `php bashscripts/tools/generate-pest-phpstan-bridge.php` (214 namespace + blocco `namespace {}` per test senza declare namespace, 2026-07-27).
-- Rigenerare **sempre** dopo aver rimosso o rinominato un modulo: il generatore scansiona `namespace ...;` in ogni file sotto `*/tests/*`, quindi un blocco riferito a un modulo cancellato resta stale nel bridge (`@param-closure-this \Modules\{Removed}\Tests\TestCase` non risolvibile → `class.notFound` per PHPStan). Caso reale 2026-07-24: modulo `Comment` rimosso interamente, bridge non rigenerato → 25 errori PHPStan (28% di uno sweep da 90).
+- **Vietato** `Modules/Xot/tests/Support/PestFunctionBridge.php` — anti-pattern:
+  stub `uses|it|test → void` generano `function.void` + `method.nonObject`.
+- **Obbligatorio** `pestphp/pest-plugin-phpstan` (caricato da `phpstan/extension-installer`).
+- Il generatore `bashscripts/tools/generate-pest-phpstan-bridge.php` è una **guard**
+  che esce con codice 1 — non rigenerare mai il bridge.
+- Canon progetto: `docs/wiki/rules/pest-phpstan-bridge.md`.
 - `uses(\Modules\<M>\Tests\TestCase::class)` sempre **dopo** gli `import use` nel file Pest.
 
 ## Helper XotBaseTestCase (usare nei moduli)

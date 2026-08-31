@@ -16,7 +16,9 @@
         "smalot/pdfparser": "^2"
     },
     "require-dev": {
-        "pestphp/pest-plugin-laravel": "*"
+        "pestphp/pest-plugin-laravel": "*",
+        "pestphp/pest-plugin-phpstan": "^5.2.0",
+        "phpstan/extension-installer": "*"
     },
     "autoload": {
         "psr-4": {
