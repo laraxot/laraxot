@@ -56,3 +56,34 @@ recap extra-materiali, preventivo da intervento, gating navigazione):
   tema (in questa base si compilano solo i temi); nei test `withoutVite()` in XotBaseTestCase.
 - **Test**: +7 file portati/creati (labour, pricing, recap, hydration, tariff page);
   fix chiavi config con email puntata (dot-syntax spezzava `accounts.info@...it`).
+
+## 2026-08-31 — Colori e legenda del calendario con id UUID
+
+`operatorColorFor()` prendeva un `int` e i chiamanti facevano `(int) $intervention->performed_by_user_id`.
+In questa base l'id utente e' un UUID: il cast lo appiattisce a `0` per tutti gli id che
+non iniziano per cifra. Conseguenze viste in produzione dei test:
+
+- due operatori diversi ricevevano lo stesso colore;
+- `getOperatorLegend()` faceva `unique('id')` su quegli zeri e restituiva **una** voce
+  invece di due, quindi la legenda perdeva operatori.
+
+Il difetto era **intermittente**: un UUID che inizia per cifra sopravvive al cast, uno
+che inizia per lettera no, quindi il test rosso compariva solo con certi id generati.
+
+Correzione: `operatorColorFor(int|string $operatorId)` con indice da `crc32()` della
+stringa, e i sei `(int)` delle due pagine calendario diventati `(string)`. Aggiunto un
+test deterministico che forza due UUID che iniziano per lettera.
+
+### Debito registrato (stesso difetto, altrove)
+
+Restano tre punti che troncano ancora l'id utente e vanno affrontati insieme, perche'
+attraversano i moduli:
+
+- `InterventionResource:195` — `[(int) $record->performed_by_user_id]` per lo stato del form;
+- `InterventionResource:1314` — `isAssignedToUser(Intervention $record, int $userId)`, con
+  quattro chiamanti che fanno `(int) $userId`;
+- `PublicInterventionReportController:63` — passa `(int)` a
+  `StoreSignatureForModelAction`, che a sua volta dichiara `int $signableId` e `int $userId`.
+
+Il primo passo e' allargare la firma dell'action delle firme: finche' accetta solo `int`,
+i chiamanti non hanno alternativa al cast.

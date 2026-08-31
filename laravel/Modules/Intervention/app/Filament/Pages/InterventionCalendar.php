@@ -158,7 +158,7 @@ final class InterventionCalendar extends GatedXotBasePage
 
         /** @var array<int, array<string, mixed>> $events */
         $events = $query->get()->map(function (Intervention $intervention): array {
-            $operatorId = (int) $intervention->performed_by_user_id;
+            $operatorId = (string) $intervention->performed_by_user_id;
             $bgColor = self::operatorColorFor($operatorId);
             $textColor = self::eventTextColor($bgColor);
             $scheduledAt = $intervention->scheduled_at;
@@ -249,7 +249,7 @@ final class InterventionCalendar extends GatedXotBasePage
             return;
         }
 
-        $operatorId = (int) $intervention->performed_by_user_id;
+        $operatorId = (string) $intervention->performed_by_user_id;
 
         $workOrder = $intervention->workOrder;
         $customer = $intervention->customer;
@@ -302,7 +302,7 @@ final class InterventionCalendar extends GatedXotBasePage
 
         return $query->get()
             ->map(function (Intervention $i): array {
-                $operatorId = (int) $i->performed_by_user_id;
+                $operatorId = (string) $i->performed_by_user_id;
 
                 return [
                     'id' => (string) $operatorId,

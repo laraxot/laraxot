@@ -109,7 +109,7 @@ it('returns calendar events with expected props', function (): void {
     expect($extendedProps['notes'])->toContain('Sostituzione timer');
 
     $palette = calendarColors();
-    $expectedColor = $palette[(int) $operator->id % count($palette)];
+    $expectedColor = $palette[crc32((string) $operator->id) % count($palette)];
     $expectedTextColor = calendarTextColor($expectedColor);
     expect($event['backgroundColor'])->toBe($expectedColor);
     expect($event['textColor'])->toBe($expectedTextColor);
@@ -320,6 +320,37 @@ it('opens and closes the intervention detail modal', function (): void {
     $component->call('closeModal')
         ->assertSet('showModal', false)
         ->assertSet('selectedIntervention', []);
+});
+
+it('keeps two operators distinct in the legend even when their ids start with a letter', function (): void {
+    // Gli id utente sono UUID. Un cast a int li appiattisce entrambi a 0 quando non
+    // iniziano per cifra, e i due operatori collassano in una sola voce di legenda.
+    $operatorRole = Role::findOrCreate('operator');
+
+    $op1 = UserFactory::new()->createOne(['id' => 'aaaaaaaa-1111-4111-8111-aaaaaaaaaaaa', 'name' => 'Op Uuid A']);
+    $op1->syncRoles([$operatorRole]);
+    $op2 = UserFactory::new()->createOne(['id' => 'bbbbbbbb-2222-4222-8222-bbbbbbbbbbbb', 'name' => 'Op Uuid B']);
+    $op2->syncRoles([$operatorRole]);
+
+    $workOrderId = makeCalendarWorkOrderId('WO-CAL-0009', 'Legenda UUID', 'Cliente UUID');
+    $day = CarbonImmutable::parse('2026-04-07 09:00:00');
+
+    foreach ([$op1, $op2] as $index => $operator) {
+        Intervention::query()->create([
+            'work_order_id' => $workOrderId,
+            'performed_by_user_id' => $operator->id,
+            'scheduled_at' => $day->addHours($index * 2),
+            'started_at' => $day->addHours($index * 2),
+            'ended_at' => $day->addHours($index * 2 + 1),
+            'work_minutes' => 60,
+        ]);
+    }
+
+    filament()->setCurrentPanel(null);
+    $legend = calendarComponent()->instance()->getOperatorLegend();
+
+    expect(array_column($legend, 'name'))->toContain('Op Uuid A', 'Op Uuid B')
+        ->and(array_unique(array_column($legend, 'id')))->toHaveCount(count($legend));
 });
 
 it('returns operator legend and respects operator panel filtering', function (): void {

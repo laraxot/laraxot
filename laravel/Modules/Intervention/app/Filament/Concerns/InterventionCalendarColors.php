@@ -25,10 +25,15 @@ trait InterventionCalendarColors
         ];
     }
 
-    protected static function operatorColorFor(int $operatorId): string
+    /**
+     * Gli id utente sono UUID: l'indice si ricava da un hash della stringa, non
+     * dal valore numerico. Un cast a int appiattirebbe a 0 tutti gli id che non
+     * iniziano per cifra, dando lo stesso colore a operatori diversi.
+     */
+    protected static function operatorColorFor(int|string $operatorId): string
     {
         $colors = self::operatorColors();
-        $colorIndex = $operatorId % count($colors);
+        $colorIndex = crc32((string) $operatorId) % count($colors);
 
         return $colors[$colorIndex];
     }

@@ -78,7 +78,7 @@ final class CustomerInterventionCalendar extends GatedXotBasePage
             ->whereHas('workOrder', fn (Builder $q) => $q->where('customer_id', $customerId))
             ->get()
             ->map(function (Intervention $intervention): array {
-                $operatorId = (int) $intervention->performed_by_user_id;
+                $operatorId = (string) $intervention->performed_by_user_id;
                 $bgColor = self::operatorColorFor($operatorId);
                 $textColor = self::eventTextColor($bgColor);
                 $borderColor = self::eventBorderColor($intervention->outcome_code);
@@ -149,7 +149,7 @@ final class CustomerInterventionCalendar extends GatedXotBasePage
             return;
         }
 
-        $operatorId = (int) $intervention->performed_by_user_id;
+        $operatorId = (string) $intervention->performed_by_user_id;
         $workOrder = $intervention->workOrder;
         $performedBy = $intervention->performedBy;
 
@@ -198,7 +198,7 @@ final class CustomerInterventionCalendar extends GatedXotBasePage
             ->distinct()
             ->get()
             ->map(function (Intervention $i): array {
-                $operatorId = (int) $i->performed_by_user_id;
+                $operatorId = (string) $i->performed_by_user_id;
                 $performedBy = $i->performedBy;
 
                 return [
