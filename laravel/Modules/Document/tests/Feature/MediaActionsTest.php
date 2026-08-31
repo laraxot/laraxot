@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Modules\Document\Actions\AttachPhotosToInterventionAction;
 use Modules\Document\Actions\CreateMediaFromStoredFileAction;
 use Modules\Document\Tests\TestCase;
+use Modules\User\Database\Factories\UserFactory;
 
 uses(\Modules\Document\Tests\TestCase::class);
 
@@ -33,6 +34,30 @@ it('attaches a stored document to an intervention', function (): void {
     expect($media->mime_type)->not->toBeNull();
     expect((int) $media->size_bytes)->toBe(5);
     expect($intervention->media()->count())->toBe(1);
+});
+
+it('keeps the uploader id intact when it is a uuid', function (): void {
+    // L'id utente e' un UUID: se la colonna resta intera, chi ha caricato il file
+    // sparisce (o peggio, diventa un altro utente) senza che nessuno se ne accorga.
+    Storage::fake('public');
+
+    $intervention = documentCreateIntervention();
+    $uploader = UserFactory::new()->createOne(['id' => 'cccccccc-3333-4333-8333-cccccccccccc']);
+
+    $path = 'media/interventions/'.$intervention->id.'/docs/owner.txt';
+    Storage::disk('public')->put($path, 'hello');
+
+    $media = app(CreateMediaFromStoredFileAction::class)->execute(
+        mediable: $intervention,
+        kind: 'document',
+        disk: 'public',
+        path: $path,
+        uploadedByUserId: $uploader->id,
+        title: 'Doc con proprietario',
+        meta: [],
+    );
+
+    expect($media->refresh()->uploaded_by_user_id)->toBe($uploader->id);
 });
 
 it('attaches multiple uploaded photos to an intervention', function (): void {

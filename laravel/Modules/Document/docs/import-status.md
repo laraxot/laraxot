@@ -52,3 +52,17 @@ Adattamenti: `Modules\Documents\Application\Actions` → `Modules\Document\Actio
 **Non portato:** `UploadInterventionPhotosPageTest.php` — la pagina chiama `Gate::authorize('update', $intervention)` in `mount()`; l'autorizzazione dipende da ruoli Shield + `App\Support\AccountFeatures` (shim che ritorna sempre il default), rendendo il test fragile senza una fixture di autenticazione dedicata. La action sottostante (`AttachPhotosToInterventionAction`) resta coperta.
 
 **Esito esecuzione (2026-07-24):** i tre test sopra falliscono nell'ambiente di test corrente con `SQLSTATE[HY000]: no such table` — le migrazioni non risultano applicate al DB sqlite `:memory:` usato da Pest (debito tecnico pre-esistente, vedi `laravel/docs/gestionale-commesse-debito-tecnico.md`), non un difetto di adattamento del test.
+
+## 2026-08-31 — `uploaded_by_user_id` con id UUID
+
+`document_media.uploaded_by_user_id` era `unsignedBigInteger` e
+`CreateMediaFromStoredFileAction::execute()` accettava `?int $uploadedByUserId`.
+In questa base l'id utente e' un UUID: chi caricava un file spariva dalla riga (o,
+con un UUID che inizia per cifra, veniva attribuito a un id inventato).
+
+Colonna portata a `string(36)`, firma allargata a `int|string|null`, `@property` del
+modello allineato. Aggiunto un test che passa un UUID che inizia per lettera e verifica
+che torni indietro identico: con la colonna intera il test fallisce.
+
+Il difetto toccava tutti i chiamanti dell'action (HR, Compliance, EnergyBroker,
+allegati agli interventi), non il solo EnergyBroker da cui e' emerso.

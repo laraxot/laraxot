@@ -16,7 +16,9 @@ return new class() extends XotBaseMigration
             $table->id();
             $table->morphs('mediable');
             // No FK to users (cross-connection risk); Eloquent relation.
-            $table->unsignedBigInteger('uploaded_by_user_id')->nullable()->index();
+            // L'id utente e' un UUID di 36 caratteri: una colonna intera lo
+            // troncherebbe, perdendo chi ha caricato il file.
+            $table->string('uploaded_by_user_id', 36)->nullable()->index();
             $table->string('kind'); // document|photo|signature|sketch|other
             $table->string('title')->nullable();
             $table->string('disk')->default('public');

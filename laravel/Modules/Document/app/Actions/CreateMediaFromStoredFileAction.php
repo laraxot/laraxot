@@ -21,7 +21,7 @@ final class CreateMediaFromStoredFileAction
         string $kind,
         string $disk,
         string $path,
-        ?int $uploadedByUserId = null,
+        int|string|null $uploadedByUserId = null,
         ?string $title = null,
         array $meta = [],
     ): Media {

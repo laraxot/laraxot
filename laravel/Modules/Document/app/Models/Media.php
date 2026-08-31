@@ -18,7 +18,7 @@ use Modules\User\Models\User;
  * @property int $id
  * @property string $mediable_type
  * @property int $mediable_id
- * @property int|null $uploaded_by_user_id
+ * @property string|null $uploaded_by_user_id
  * @property string $kind
  * @property string|null $title
  * @property string $disk
