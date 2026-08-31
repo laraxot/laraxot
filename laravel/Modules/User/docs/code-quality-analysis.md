@@ -1,23 +1,3 @@
----
-title: "Code Quality Analysis - User Module"
-type: concept
-tags: [code, quality, analysis]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "code-quality-analysis code quality analysis - user module"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./2fa-guide.md"
-  - "./2fa.md"
-  - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
-  - "./actions-path-convention.md"
----
-
 # Code Quality Analysis - User Module
 
 ## 🚨 Critical Issues Identified
@@ -324,8 +304,7 @@ public function getTableColumns(): array
 
 ## 📚 Related Documentation
 
-- [authentication-performance-optimization-2.md](./performance/authentication-performance-optimization-2.md)
-- [authentication-performance-optimization-2.md](./performance/authentication-performance-optimization-3.md)
+- [AUTHENTICATION_PERFORMANCE_OPTIMIZATION.md](./performance/AUTHENTICATION_PERFORMANCE_OPTIMIZATION.md)
 - [optimization-analysis.md](./optimization-analysis.md)
 - [phpstan-compliance.md](./phpstan-compliance.md)
 

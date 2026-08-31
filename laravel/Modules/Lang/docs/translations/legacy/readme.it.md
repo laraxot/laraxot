@@ -64,10 +64,10 @@
 
 ## 📚 Documentazione
 
-- [Indice del Progetto](../index.md)
-- [Workflow PHPStan](../phpstan_workflow.md)
-- [Panoramica dei Moduli](../modules.md)
-- [Architettura](../architecture.md)
+- [Indice del Progetto](../INDEX.md)
+- [Workflow PHPStan](../PHPSTAN_WORKFLOW.md)
+- [Panoramica dei Moduli](../MODULES.md)
+- [Architettura](../ARCHITECTURE.md)
 
 ---
 
@@ -82,5 +82,5 @@ Questo progetto è open-source e disponibile sotto la [Licenza MIT](../../LICENS
 ---
 
 <div align="center">
-  <sub>Costruito con ❤️ dal team Base <nome progetto> Fila 5</sub>
+  <sub>Costruito con ❤️ dal team Base Predict Fila3 Mono</sub>
 </div>

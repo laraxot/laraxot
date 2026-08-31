@@ -1,6 +1,6 @@
 ---
 module: theme
-topic: metodi-duplicati-analisi
+topic: METODI-DUPLICATI-ANALISI
 canonical: ../../../Themes/docs/shared-components/METODI_DUPLICATI_ANALISI.md
 ---
 

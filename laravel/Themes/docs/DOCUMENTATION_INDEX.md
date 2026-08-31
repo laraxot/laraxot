@@ -18,6 +18,9 @@
 - [UI Components](#ui-components)
 - [Routing](#routing)
 - [Filament Integration](#filament-integration)
+- [ide-helper e model nei temi](ide-helper-models-and-theme-models.md)
+- [PHPStan non analizza i temi](phpstan-non-analizza-i-temi.md)
+- [Stato di qualita' dei temi](stato-qualita-temi-2026-08-31.md)
 
 ---
 

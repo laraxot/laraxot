@@ -41,6 +41,8 @@ development_status:
   1.10.agent-errors-replica-singular-guardrails: done
   1.11.wave3-reshape-remaining-src-modules: done # 2026-07-24: BaseModel/migrations/PHPStan/modules_statuses tutti completati, incluso AiAssistant
   1.12.phpstan-zero-per-module: done
+  1.14.composer-update-phpstan-ide-helper: done
+  1.15.data-sacred-no-migrate-force: done
   1.13.functional-readiness-migrate-panels: review
   1.13.migrate-real-tests-and-timber-gap: in-progress # sibling of 2.5, Timber tally — non duplicare lavoro
   2.1.copy-then-normalize-modules: done

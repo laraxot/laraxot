@@ -7,7 +7,7 @@ namespace Modules\User\Tests\Feature\Actions;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert as PHPUnitAssert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Is User Allowed Action', function (): void {
     test('allows user with whitelisted email domain', function (): void {

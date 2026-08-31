@@ -17,7 +17,7 @@ use Modules\User\Models\Team;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('User Business Logic', function (): void {
     test('enforces password complexity requirements', function (): void {
@@ -41,7 +41,7 @@ describe('User Business Logic', function (): void {
     });
 
     test('enforces username uniqueness when required', function (): void {
-        /** @var TestCase $this */
+        /* @var TestCase $this */
         if (! TestCase::userTableHasColumn('users', 'username')) {
             $email = 'alias-'.uniqid('', true).'@example.com';
             createTestUser(['email' => $email]);
@@ -179,7 +179,7 @@ describe('User Business Logic', function (): void {
     });
 
     test('enforces permission conflicts', function (): void {
-        /** @var TestCase $this */
+        /* @var TestCase $this */
         if (! TestCase::userTableExists('model_has_permission')) {
             $this->skipTest('model_has_permission table missing on user connection.');
         }

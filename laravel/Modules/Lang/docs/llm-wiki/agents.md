@@ -1,16 +1,14 @@
 ---
-title: "Agent instructions"
-type: reference
-tags: [agents, coding-agent, llm-wiki]
-created: 2026-07-01
-updated: 2026-07-01
-qmd: "istruzioni agenti LLM wiki modulo"
-issues: []
-discussions: []
+title: "Lang {{TYPE^}} LLM Wiki Agent Instructions"
+module: "Lang"
+type: concept
+tags: [migration, filament]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "migration filament"
 related:
-  - ./coding-agent-manifests.md
+  - "./italian-text-refined-audit-report.md"
 ---
-
 # Lang {{TYPE^}} LLM Wiki Agent Instructions
 
 > **Module/Theme:** Lang

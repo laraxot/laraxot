@@ -12,7 +12,7 @@ use Modules\User\Tests\TestCase;
 use Modules\User\Tests\Unit\Adapters\Socialite\Fixtures\SocialiteUserWithRawFixture;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class)->group('no-user-db');
+uses(TestCase::class)->group('no-user-db');
 
 /**
  * @param  array<string, mixed>  $raw

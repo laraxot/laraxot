@@ -62,12 +62,10 @@ use Modules\User\View\Pages\ProfileEditVoltComponent;
 use Modules\Xot\Tests\ModuleBusinessCoverage;
 use Modules\Xot\Tests\ModuleExecuteCoverage;
 use PHPUnit\Framework\Assert;
-use ReflectionMethod;
-use ReflectionProperty;
 
 use function Safe\glob;
 
-uses(\Modules\User\Tests\TestCase::class)->group('no-user-db');
+uses(TestCase::class)->group('no-user-db');
 
 afterEach(function (): void {
     Mockery::close();
@@ -105,7 +103,7 @@ function userCaptureFatal(\Closure $probe): ?\Error
 
 function userInvoke(object $target, string $method, mixed ...$args): mixed
 {
-    $reflection = new ReflectionMethod($target, $method);
+    $reflection = new \ReflectionMethod($target, $method);
     $reflection->setAccessible(true);
 
     return $reflection->invoke($target, ...$args);
@@ -168,7 +166,7 @@ function userDehydrateField(object $field, mixed $state): mixed
         return $state;
     }
 
-    $ref = new ReflectionProperty($field, 'dehydrateStateUsing');
+    $ref = new \ReflectionProperty($field, 'dehydrateStateUsing');
     $ref->setAccessible(true);
     $callback = $ref->getValue($field);
     if (! $callback instanceof \Closure) {
@@ -180,7 +178,7 @@ function userDehydrateField(object $field, mixed $state): mixed
 
 function userInvokeStateClosure(object $field, mixed ...$args): mixed
 {
-    $ref = new ReflectionProperty($field, 'getConstantStateUsing');
+    $ref = new \ReflectionProperty($field, 'getConstantStateUsing');
     $ref->setAccessible(true);
     $callback = $ref->getValue($field);
     if (! $callback instanceof \Closure) {
@@ -195,7 +193,7 @@ function userInvokeStateClosure(object $field, mixed ...$args): mixed
  */
 function userSectionChildren(Section $section): array
 {
-    $ref = new ReflectionProperty($section, 'childComponents');
+    $ref = new \ReflectionProperty($section, 'childComponents');
     $ref->setAccessible(true);
     /** @var array<string, mixed> $children */
     $children = $ref->getValue($section);
@@ -809,12 +807,12 @@ describe('User execute coverage — notifications rules observer helpers', funct
 
         $reset = new ResetPassword('reset-token');
         $reset->url = 'https://example.test/reset';
-        $mail = (new ReflectionMethod($reset, 'buildMailMessage'))->invoke($reset, $reset->url);
+        $mail = (new \ReflectionMethod($reset, 'buildMailMessage'))->invoke($reset, $reset->url);
         Assert::assertInstanceOf(MailMessage::class, $mail);
 
         $verify = new VerifyEmail();
         $verify->url = 'https://example.test/verify';
-        $verifyUrl = (new ReflectionMethod($verify, 'verificationUrl'))->invoke($verify, $user);
+        $verifyUrl = (new \ReflectionMethod($verify, 'verificationUrl'))->invoke($verify, $user);
         Assert::assertSame($verify->url, $verifyUrl);
 
         $freshUser = new User();
@@ -905,7 +903,7 @@ describe('User execute coverage — Filament pages sweep', function (): void {
                     continue;
                 }
                 try {
-                    $refMethod = new ReflectionMethod($instance, $method);
+                    $refMethod = new \ReflectionMethod($instance, $method);
                     if ($refMethod->getNumberOfRequiredParameters() > 0) {
                         continue;
                     }
@@ -971,7 +969,7 @@ describe('User execute coverage — remaining 0% helpers', function (): void {
             $passport->runConfigure();
         }));
 
-        $lifetime = new ReflectionMethod(HasPassportConfiguration::class, 'tokenLifetime');
+        $lifetime = new \ReflectionMethod(HasPassportConfiguration::class, 'tokenLifetime');
         $lifetime->setAccessible(true);
         Assert::assertSame(15, $lifetime->invoke(null, [], 'access_token', 15));
         Assert::assertSame(7, $lifetime->invoke(null, ['access_token' => 7], 'access_token', 15));

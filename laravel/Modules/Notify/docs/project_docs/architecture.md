@@ -1,27 +1,4 @@
----
-title: "FixCity - Architecture Documentation"
-title: "Notify - Architecture Documentation"
-type: concept
-tags: [architecture]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "architecture fixcity - architecture documentation"
-qmd: "architecture laraxot - architecture documentation"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./2025-excellence-achievement.md"
-  - "./agid-implementation-guide.md"
-  - "./complete-refactoring-analysis.md"
-  - "./documentation-status.md"
-  - "./final-implementation-report-.md"
-  - "./final-implementation-report-1.md"
-  - "./final-implementation-report.md"
-  - "./final-refactoring-report.md"
----
-
 # FixCity - Architecture Documentation
-# Notify - Architecture Documentation
 
 **Version:** 4.0  
 **Date:** 2025-10-01  
@@ -76,7 +53,6 @@ Modules/
 ├── Tenant/           # Multi-tenancy support
 ├── User/             # User management & authentication
 ├── Fixcity/          # Main application logic
-├── App/          # Main application logic
 ├── Blog/             # Content management
 ├── Cms/              # CMS functionality
 ├── Geo/              # Geographic services
@@ -101,7 +77,6 @@ graph TD
     A --> C[User]
     A --> D[Lang]
     B --> E[Fixcity]
-    B --> E[App]
     C --> E
     E --> F[Blog]
     E --> G[Cms]

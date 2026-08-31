@@ -42,18 +42,18 @@ final class ResolveFeaturedMarketsGridDataAction
         $locale = app()->getLocale();
 
         return [
-            'title' => $title ? $title : $this__('predict::home.featured_markets.title'),
-            'subtitle' => $subtitle ? $subtitle : $this__('predict::home.featured_markets.subtitle'),
+            'title' => $title ? $title : __('predict::home.featured_markets.title'),
+            'subtitle' => $subtitle ? $subtitle : __('predict::home.featured_markets.subtitle'),
             'showAllLink' => $showAllLink ? $showAllLink : (LaravelLocalization::getLocalizedURL($locale, '/predicts') ?? url('/'.$locale.'/predicts')),
-            'showAllLabel' => $this__('predict::home.featured_markets.cta_all'),
-            'openMarketLabel' => $this__('predict::actions.trade_market'),
-            'activeMarketsLabel' => $this__('predict::home.featured_markets.active_markets'),
-            'multiOutcomeLabel' => $this__('predict::home.featured_markets.multi_outcome_focus'),
-            'visualOptionsLabel' => $this__('predict::home.featured_markets.visual_options'),
-            'freshnessLabel' => $this__('predict::home.featured_markets.freshness'),
-            'educationLabel' => $this__('predict::home.featured_markets.education'),
-            'emptyStateTitle' => $this__('predict::predict_table.empty_state.no_markets_available.message'),
-            'emptyStateBody' => $this__('predict::home.featured_markets.empty_body'),
+            'showAllLabel' => __('predict::home.featured_markets.cta_all'),
+            'openMarketLabel' => __('predict::actions.trade_market'),
+            'activeMarketsLabel' => __('predict::home.featured_markets.active_markets'),
+            'multiOutcomeLabel' => __('predict::home.featured_markets.multi_outcome_focus'),
+            'visualOptionsLabel' => __('predict::home.featured_markets.visual_options'),
+            'freshnessLabel' => __('predict::home.featured_markets.freshness'),
+            'educationLabel' => __('predict::home.featured_markets.education'),
+            'emptyStateTitle' => __('predict::predict_table.empty_state.no_markets_available.message'),
+            'emptyStateBody' => __('predict::home.featured_markets.empty_body'),
             'cards' => app(GetHomepageMarketCardsAction::class)->execute($limit, 'featured'),
         ];
     }

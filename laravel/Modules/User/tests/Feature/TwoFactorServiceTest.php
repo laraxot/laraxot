@@ -11,7 +11,7 @@ use PragmaRX\Google2FA\Google2FA;
 
 use function Safe\json_decode;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 beforeEach(function (): void {
     /* @var \Modules\User\Tests\TestCase $this */

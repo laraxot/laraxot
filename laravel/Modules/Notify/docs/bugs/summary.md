@@ -1,16 +1,3 @@
----
-title: "Bug Fixes Summary"
-type: concept
-tags: [summary]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "summary bug fixes summary"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./user-creation-infinite-loop-fix.md"
----
-
 # Bug Fixes Summary
 
 ## 2025-01-14: User Creation Infinite Loop Fix

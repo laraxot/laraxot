@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Themes\Sixteen\Models\Municipal;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -28,7 +30,7 @@ use Illuminate\Support\Str;
  * @property string|null $qualification
  * @property string|null $role
  * @property string $category
- * @property \Carbon\Carbon|null $birth_date
+ * @property Carbon|null $birth_date
  * @property string|null $birth_place
  * @property string|null $fiscal_code
  * @property string|null $email
@@ -40,11 +42,11 @@ use Illuminate\Support\Str;
  * @property string|null $cv_file_path
  * @property float|null $compensation
  * @property float|null $travel_expenses
- * @property \Carbon\Carbon|null $start_date
- * @property \Carbon\Carbon|null $end_date
+ * @property Carbon|null $start_date
+ * @property Carbon|null $end_date
  * @property bool $is_active
  * @property bool $is_public
- * @property \Carbon\Carbon|null $publication_date
+ * @property Carbon|null $publication_date
  * @property array|null $privacy_settings
  * @property array|null $social_profiles
  * @property array|null $education
@@ -52,13 +54,12 @@ use Illuminate\Support\Str;
  * @property array|null $skills
  * @property array|null $languages
  * @property array|null $metadata
- * @property \Carbon\Carbon|null $created_at
- * @property \Carbon\Carbon|null $updated_at
- * @property \Carbon\Carbon|null $deleted_at
- *
- * @property-read \Illuminate\Database\Eloquent\Collection<int, ContactPoint> $contacts
- * @property-read \Illuminate\Database\Eloquent\Collection<int, MunicipalEvent> $eventsAsSpeaker
- * @property-read \Illuminate\Database\Eloquent\Collection<int, MunicipalEvent> $eventsAsParticipant
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
+ * @property-read Collection<int, ContactPoint> $contacts
+ * @property-read Collection<int, MunicipalEvent> $eventsAsSpeaker
+ * @property-read Collection<int, MunicipalEvent> $eventsAsParticipant
  */
 class PublicPerson extends Model
 {
@@ -445,12 +446,12 @@ class PublicPerson extends Model
     protected function daysInOffice(): Attribute
     {
         return Attribute::make(
-            get: function (): void {
+            get: function (): ?float {
                 if (! $this->is_in_office) {
-                    return;
+                    return null;
                 }
 
-                return $this->end_date?->diffInDays(now()) ?? null;
+                return $this->end_date?->diffInDays(now());
             }
         );
     }

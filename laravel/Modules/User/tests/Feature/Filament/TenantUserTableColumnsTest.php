@@ -9,7 +9,7 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 use Webmozart\Assert\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 /*
  * Regressione: `Filament\Tables\Concerns\HasColumns::getTableColumns()` e'

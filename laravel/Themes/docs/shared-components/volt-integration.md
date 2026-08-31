@@ -235,12 +235,12 @@ $save = function () {
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseTransactions; // mai RefreshDatabase — dati sacri
 use Tests\TestCase;
 
 class VoltLocalizationTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseTransactions;
 
     /** @test */
     public function it_sets_locale_from_referer()
@@ -543,12 +543,12 @@ $save = function () {
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseTransactions; // mai RefreshDatabase — dati sacri
 use Tests\TestCase;
 
 class VoltLocalizationTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseTransactions;
 
     /** @test */
     public function it_sets_locale_from_referer()

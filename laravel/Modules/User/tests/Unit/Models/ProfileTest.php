@@ -8,10 +8,10 @@ use Modules\User\Models\Profile;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 /**
- * @param array<string, mixed> $attributes
+ * @param  array<string, mixed>  $attributes
  */
 function modelsProfileCreate(array $attributes = []): Profile
 {
@@ -39,7 +39,7 @@ function modelsProfileCreate(array $attributes = []): Profile
 }
 
 /**
- * @param array<string, mixed> $where
+ * @param  array<string, mixed>  $where
  */
 function modelsProfileAssertInDatabase(array $where): void
 {

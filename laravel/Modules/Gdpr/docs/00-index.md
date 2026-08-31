@@ -44,10 +44,9 @@
 | [USER_RESEARCH.md](./USER_RESEARCH.md) | User Research |
 
 ## 🔗 **Moduli Correlati**
-- [User](../../User/docs/README.md) - Soggetti dei consensi.
-- [Activity](../../Activity/docs/README.md) - Log di sistema integrato.
-- [Xot](../../Xot/docs/README.md) - Base framework e trait UUID.
-# Documentation Index
+- [User](../../user/docs/readme.md) - Soggetti dei consensi.
+- [Activity](../../activity/docs/readme.md) - Log di sistema integrato.
+- [Xot](../../xot/docs/readme.md) - Base framework e trait UUID.
 - [AGENTS.md](../../../../AGENTS.md) - Project guidelines
 
 ---

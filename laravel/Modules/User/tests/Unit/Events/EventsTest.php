@@ -16,7 +16,7 @@ use Modules\User\Models\User;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('Login event can be instantiated', function () {
     $socialiteUser = SocialiteUser::query()->first() ?? new SocialiteUser([

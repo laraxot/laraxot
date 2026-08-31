@@ -11,6 +11,22 @@ updated: 2026-08-31
 
 # TechPlanner LLM Wiki Log
 
+## 2026-08-31 (notte — Theme Sixteen dati sacri)
+
+- Rimosso `RefreshDatabase` da `BootstrapItaliaComponentsTest` (solo view). `ComunePagesTest` / `ComuneControllerTest`: `DatabaseTransactions`, tolto `migrate` in `beforeEach`, skip se Fixcity assente. Themes PHP: **0** `RefreshDatabase`.
+
+## 2026-08-31 (sera — poetry: no migrate --force)
+
+- Story [1.15](../stories/1.15.data-sacred-no-migrate-force.story.md): tolto `--force` da `ArtisanAction` / `ArtisanService` / `MigrationCommandHandler`. PHPStan Modules 0; Pest Artisan 8/8. DB `*_test` solo `CREATE IF NOT EXISTS`.
+
+## 2026-08-31 (sera — dati sacri write-back)
+
+- Rafforzata religione **dati sacri** in second brain + docs moduli/temi: rule/memory [data-sacred-no-destructive-db](rules/data-sacred-no-destructive-db.md); Xot troubleshooting (tolti esempi `migrate:fresh`/`RefreshDatabase`); [ide-helper-models-governance](../../laravel/Modules/Xot/docs/ide-helper-models-governance.md) → solo `--nowrite`; Media `migrations.md`; Themes Sixteen/Zero `ai-handoff` + `testing-refresh-database-rule` + volt-integration. **Mai** fresh/force/RefreshDatabase per ide-helper o PHPStan.
+
+## 2026-08-31 (sera — ide-helper refresh)
+
+- Suite `ide-helper:{generate,meta,models --nowrite,eloquent}` OK. Fix `config/media.php` (dir→file) per meta EISDIR; `force_fqn`; vietato `--write --reset` sui model. PHPStan Modules **0** dopo clear cache. Handoff [ide-helper-refresh.md](../chat/ide-helper-refresh.md). Story [1.14](../stories/1.14.composer-update-phpstan-ide-helper.story.md) aggiornata.
+
 ## 2026-08-31 (sera — re-verify PHPStan Modules)
 
 - Ri-run `phpstan analyse Modules` → **[OK] No errors** (10497 file). Nessun fix codice necessario. Story [1.12](../stories/1.12.phpstan-zero-per-module.story.md) → **done**. Memory aggiornata [phpstan-modules-zero.md](memories/phpstan-modules-zero.md). Handoff [phpstan-modules-zero-swarm.md](../chat/phpstan-modules-zero-swarm.md).

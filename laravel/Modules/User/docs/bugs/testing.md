@@ -1,16 +1,3 @@
----
-title: "Testing del Bug Fix: Infinite Loop in make:filament-user"
-type: concept
-tags: [testing]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "testing testing del bug fix: infinite loop in make:filament-user"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./make-filament-user-infinite-loop.md"
----
-
 # Testing del Bug Fix: Infinite Loop in make:filament-user
 
 ## Overview

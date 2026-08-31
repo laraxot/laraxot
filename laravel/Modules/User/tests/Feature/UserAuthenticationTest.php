@@ -8,7 +8,7 @@ use Modules\User\Models\AuthenticationLog;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('User Authentication', function () {
     it('can authenticate user with correct credentials', function () {

@@ -2,7 +2,7 @@
 title: "📚 **Indice Documentazione Modulo Job**"
 module: "Job"
 type: concept
-tags: [00, index]
+tags: [00, INDEX]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "00 index"

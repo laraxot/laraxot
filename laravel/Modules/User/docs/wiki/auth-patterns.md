@@ -6,15 +6,6 @@ date: "2026-06-13"
 qmd: "user-auth-patterns"
 github_issue: ""
 github_discussion: ""
-related:
-  - "./agents.md"
-  - "./architecture.md"
-  - "./bmad-method.md"
-  - "./context-compression.md"
-  - "./index.md"
-  - "./log.md"
-  - "./overview.md"
-  - "./socialite-architecture.md"
 ---
 
 # User Module - Authentication Patterns

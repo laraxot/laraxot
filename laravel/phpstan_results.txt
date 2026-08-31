@@ -1,1 +1,0 @@
-Note: Using configuration file ../laravel/phpstan.neon.

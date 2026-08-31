@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\User\Tests\Unit;
 
-use Mockery;
 use Modules\User\Tests\TestCase;
 use Modules\Xot\Tests\ModuleBusinessCoverage;
 
-uses(\Modules\User\Tests\TestCase::class)->group('no-user-db');
+uses(TestCase::class)->group('no-user-db');
 
 afterEach(function (): void {
-    Mockery::close();
+    \Mockery::close();
 });
 
 /** @return array{string, string} */

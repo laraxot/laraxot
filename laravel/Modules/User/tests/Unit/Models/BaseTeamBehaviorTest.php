@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\User\Tests\Unit\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Mockery;
 use Mockery\Expectation;
 use Mockery\MockInterface;
 use Modules\User\Models\BaseTeam;
@@ -16,10 +15,10 @@ use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class)->group('no-user-db');
+uses(TestCase::class)->group('no-user-db');
 
 afterEach(function (): void {
-    Mockery::close();
+    \Mockery::close();
 });
 
 describe('BaseTeam in-memory behavior', function (): void {
@@ -74,7 +73,7 @@ describe('BaseTeam in-memory behavior', function (): void {
         $team->forceFill(['id' => 4]);
 
         /** @var UserContract&MockInterface $user */
-        $user = Mockery::mock(UserContract::class);
+        $user = \Mockery::mock(UserContract::class);
         $userExpectation = $user->shouldReceive('hasTeamPermission');
         \assert($userExpectation instanceof Expectation);
         $userExpectation->with($team, 'edit-team')->andReturnTrue();

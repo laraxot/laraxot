@@ -1,23 +1,3 @@
----
-title: "🎨 MCP Servers per Tailwind CSS & UI Frameworks"
-type: concept
-tags: [mcp, tailwind]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "07-mcp-tailwind-ui 🎨 mcp servers per tailwind css & ui frameworks"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index.md"
-  - "./01-gsd-workflow.md"
-  - "./02-bmad-workflow.md"
-  - "./03-architecture-zen.md"
-  - "./04-filament-philosophy.md"
-  - "./05-front-office-audit.md"
-  - "./06-cinematic-effects.md"
-  - "./08-verified-commit-governance.md"
----
-
 # 🎨 MCP Servers per Tailwind CSS & UI Frameworks
 
 **Data**: 2026-03-20  
@@ -101,7 +81,6 @@ php artisan boost:install
 **Usage**:
 ```
 "Create a Filament table widget for Predict model"
-"Create a Filament table widget for Forecast model"
 "Generate a Livewire component for market cards"
 "Add validation rules for user registration"
 ```
@@ -435,7 +414,6 @@ npx shadcn@latest mcp init --client claude
 ```
 "Create a hero section using Flowbite with purple brand color"
 "Generate a Filament table widget for Predict model"
-"Generate a Filament table widget for Forecast model"
 "Add cinematic particles effect to homepage"
 ```
 

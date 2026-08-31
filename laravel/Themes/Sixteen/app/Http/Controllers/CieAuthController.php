@@ -11,10 +11,11 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
+use Modules\Xot\Contracts\UserContract;
+use Modules\Xot\Datas\XotData;
 use Themes\Sixteen\Actions\CieAuthAction;
 use Themes\Sixteen\Events\CieAuthenticated;
 use Themes\Sixteen\Events\CieLoggedOut;
-use Themes\Sixteen\Models\User;
 
 /**
  * Controller per l'autenticazione CIE
@@ -314,7 +315,7 @@ class CieAuthController extends Controller
     /**
      * Trova o crea un utente basato sui dati CIE
      */
-    protected function findOrCreateUser(array $attributes): User
+    protected function findOrCreateUser(array $attributes): UserContract
     {
         $fiscalCode = $attributes['fiscal_code'];
 
@@ -323,7 +324,8 @@ class CieAuthController extends Controller
         }
 
         // Cerca utente per codice fiscale
-        $user = User::where('fiscal_code', $fiscalCode)->first();
+        $userClass = XotData::make()->getUserClass();
+        $user = $userClass::where('fiscal_code', $fiscalCode)->first();
 
         if ($user) {
             // Aggiorna i dati se necessario
@@ -339,7 +341,7 @@ class CieAuthController extends Controller
     /**
      * Crea un nuovo utente dai dati CIE
      */
-    protected function createUserFromCie(array $attributes): User
+    protected function createUserFromCie(array $attributes): UserContract
     {
         $userData = [
             'name' => $attributes['name'],
@@ -363,13 +365,15 @@ class CieAuthController extends Controller
             $userData['email_verified_at'] = null;
         }
 
-        return User::create($userData);
+        $userClass = XotData::make()->getUserClass();
+
+        return $userClass::create($userData);
     }
 
     /**
      * Aggiorna un utente esistente con i dati CIE
      */
-    protected function updateUserFromCie(User $user, array $attributes): void
+    protected function updateUserFromCie(UserContract $user, array $attributes): void
     {
         $updateData = [];
 

@@ -9,7 +9,7 @@ use Modules\User\Models\TeamUser;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 require_once __DIR__.'/../Support/team-management-business-helpers.php';
 

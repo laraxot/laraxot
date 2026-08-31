@@ -1,20 +1,3 @@
----
-title: "Authentication Performance Optimization - User Module"
-type: concept
-tags: [authentication, performance, optimization]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "authentication-performance-optimization authentication performance optimization - user module"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./authentication-performance-optimization-1.md"
-  - "./authentication-performance-optimization-2.md"
-  - "./authentication-performance-optimization-3.md"
-  - "./authentication-performance-optimization-4.md"
-  - "./authentication-performance-optimization-5.md"
----
-
 # Authentication Performance Optimization - User Module
 
 ## 🚨 Critical Issues Identified

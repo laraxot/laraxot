@@ -1,23 +1,3 @@
----
-title: "LLM Wiki Quick Reference"
-type: concept
-tags: [quick, reference]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "quick-reference llm wiki quick reference"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./agents.md"
-  - "./bmad-method.md"
-  - "./index.md"
-  - "./log.md"
-  - "./notify-conflict-check-.md"
-  - "./notify-conflict-check-1.md"
-  - "./notify-conflict-check.md"
-  - "./notify-restore-.md"
----
-
 # LLM Wiki Quick Reference
 
 > **Based on**: Karpathy's LLM Wiki pattern
@@ -136,7 +116,6 @@ related:                               # Optional (array of paths)
 
 ```bash
 bashscripts/ai/init-llm-wiki.sh module Fixcity
-bashscripts/ai/init-llm-wiki.sh module App
 bashscripts/ai/init-llm-wiki.sh theme Sixteen
 ```
 
@@ -151,7 +130,6 @@ qmd serve ./docs/wiki
 
 1. Open Obsidian → "Open folder as vault"
 2. Select: `/var/www/_bases/base_fixcity_fila5/docs`
-2. Select: `/var/www/_bases/base_ptvx_fila5/docs`
 3. Configuration already in `.obsidian/`
 
 ## Quality Checklist
@@ -190,7 +168,6 @@ Templates available:
 
 - [Complete Integration Guide](wiki/README.md)
 - [Agent Instructions](wiki/AGENTS.md)
-- [Agent Instructions](wiki/agents.md)
 - [Wiki Overview](wiki/overview.md)
 - [Obsidian Setup](.obsidian/README.md)
 - [Module Wiki Guide](Modules/Xot/docs/llm-wiki-integration.md)

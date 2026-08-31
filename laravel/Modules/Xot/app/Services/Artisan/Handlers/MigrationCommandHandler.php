@@ -21,10 +21,11 @@ class MigrationCommandHandler implements CommandHandlerInterface
         if ($moduleName !== '') {
             echo '<h3>Module '.$moduleName.'</h3>';
 
-            return ArtisanService::exe('module:migrate '.$moduleName.' --force');
+            // Dati sacri: mai --force (solo migrate additivo)
+            return ArtisanService::exe('module:migrate', ['module' => $moduleName]);
         }
 
-        return ArtisanService::exe('migrate --force');
+        return ArtisanService::exe('migrate');
     }
 
     public function supports(string $command): bool

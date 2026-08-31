@@ -336,9 +336,9 @@ namespace Modules\AiAssistant\Models{
  * @property-read \Modules\AiAssistant\Models\AiThread|null $thread
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\AiAssistant\Database\Factories\AiActionProposalFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AiActionProposal newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AiActionProposal newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AiActionProposal query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\AiAssistant\Models\AiActionProposal newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\AiAssistant\Models\AiActionProposal newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\AiAssistant\Models\AiActionProposal query()
  */
 	final class AiActionProposal extends \Eloquent {}
 }
@@ -359,9 +359,9 @@ namespace Modules\AiAssistant\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\User\Models\User|null $user
  * @method static \Modules\AiAssistant\Database\Factories\AiMessageFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AiMessage newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AiMessage newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AiMessage query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\AiAssistant\Models\AiMessage newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\AiAssistant\Models\AiMessage newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\AiAssistant\Models\AiMessage query()
  */
 	final class AiMessage extends \Eloquent {}
 }
@@ -387,9 +387,9 @@ namespace Modules\AiAssistant\Models{
  * @property-read int|null $tool_logs_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\AiAssistant\Database\Factories\AiThreadFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AiThread newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AiThread newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AiThread query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\AiAssistant\Models\AiThread newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\AiAssistant\Models\AiThread newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\AiAssistant\Models\AiThread query()
  */
 	final class AiThread extends \Eloquent {}
 }
@@ -414,9 +414,9 @@ namespace Modules\AiAssistant\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\User\Models\User|null $user
  * @method static \Modules\AiAssistant\Database\Factories\AiToolLogFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AiToolLog newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AiToolLog newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AiToolLog query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\AiAssistant\Models\AiToolLog newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\AiAssistant\Models\AiToolLog newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\AiAssistant\Models\AiToolLog query()
  */
 	final class AiToolLog extends \Eloquent {}
 }
@@ -441,12 +441,12 @@ namespace Modules\Billing\Models{
  * @property-read int|null $lines_count
  * @property-read \Modules\Billing\Models\Supplier|null $supplier
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|DeliveryNote newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|DeliveryNote newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|DeliveryNote onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|DeliveryNote query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|DeliveryNote withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|DeliveryNote withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\DeliveryNote newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\DeliveryNote newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\DeliveryNote onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\DeliveryNote query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\DeliveryNote withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\DeliveryNote withoutTrashed()
  */
 	final class DeliveryNote extends \Eloquent {}
 }
@@ -465,9 +465,9 @@ namespace Modules\Billing\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\Billing\Models\DeliveryNote|null $deliveryNote
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|DeliveryNoteLine newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|DeliveryNoteLine newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|DeliveryNoteLine query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\DeliveryNoteLine newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\DeliveryNoteLine newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\DeliveryNoteLine query()
  */
 	final class DeliveryNoteLine extends \Eloquent {}
 }
@@ -494,12 +494,12 @@ namespace Modules\Billing\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\Billing\Models\InvoiceWorkOrderLink> $workOrderLinks
  * @property-read int|null $work_order_links_count
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Invoice newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Invoice newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Invoice onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Invoice query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Invoice withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Invoice withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\Invoice newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\Invoice newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\Invoice onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\Invoice query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\Invoice withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\Invoice withoutTrashed()
  */
 	final class Invoice extends \Eloquent {}
 }
@@ -516,9 +516,9 @@ namespace Modules\Billing\Models{
  * @property-read \Modules\Billing\Models\Invoice|null $invoice
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Billing\Database\Factories\InvoiceWorkOrderLinkFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InvoiceWorkOrderLink newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InvoiceWorkOrderLink newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InvoiceWorkOrderLink query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\InvoiceWorkOrderLink newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\InvoiceWorkOrderLink newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\InvoiceWorkOrderLink query()
  */
 	final class InvoiceWorkOrderLink extends \Eloquent {}
 }
@@ -542,12 +542,12 @@ namespace Modules\Billing\Models{
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\Billing\Models\SupplierInvoice> $invoices
  * @property-read int|null $invoices_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Supplier newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Supplier newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Supplier onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Supplier query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Supplier withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Supplier withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\Supplier newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\Supplier newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\Supplier onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\Supplier query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\Supplier withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\Supplier withoutTrashed()
  */
 	final class Supplier extends \Eloquent {}
 }
@@ -573,12 +573,12 @@ namespace Modules\Billing\Models{
  * @property-read int|null $lines_count
  * @property-read \Modules\Billing\Models\Supplier|null $supplier
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SupplierInvoice newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SupplierInvoice newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SupplierInvoice onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SupplierInvoice query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SupplierInvoice withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SupplierInvoice withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\SupplierInvoice newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\SupplierInvoice newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\SupplierInvoice onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\SupplierInvoice query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\SupplierInvoice withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\SupplierInvoice withoutTrashed()
  */
 	final class SupplierInvoice extends \Eloquent {}
 }
@@ -599,9 +599,9 @@ namespace Modules\Billing\Models{
  * @property-read \Modules\Billing\Models\DeliveryNoteLine|null $deliveryNoteLine
  * @property-read \Modules\Billing\Models\SupplierInvoice|null $invoice
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SupplierInvoiceLine newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SupplierInvoiceLine newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SupplierInvoiceLine query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\SupplierInvoiceLine newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\SupplierInvoiceLine newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Billing\Models\SupplierInvoiceLine query()
  */
 	final class SupplierInvoiceLine extends \Eloquent {}
 }
@@ -1466,8 +1466,8 @@ namespace Modules\Blog\Models{
  * @method static \Illuminate\Database\Eloquent\Builder<static> childrenWith(array<string, mixed> $relations)
  * @method static \Illuminate\Database\Eloquent\Builder<static> childrenWithCount(array<string, mixed> $relations)
  * @mixin \Eloquent
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile team($teams, bool $without = false)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile withoutTeam($teams)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Blog\Models\Profile team($teams, bool $without = false)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Blog\Models\Profile withoutTeam($teams)
  */
 	class Profile extends \Eloquent {}
 }
@@ -1783,9 +1783,9 @@ namespace Modules\Bom\Models{
  * @property-read \Modules\Catalog\Models\Product|null $product
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Bom\Database\Factories\BomFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Bom newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Bom newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Bom query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Bom\Models\Bom newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Bom\Models\Bom newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Bom\Models\Bom query()
  */
 	final class Bom extends \Eloquent {}
 }
@@ -1802,9 +1802,9 @@ namespace Modules\Bom\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Bom\Database\Factories\BomItemFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|BomItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|BomItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|BomItem query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Bom\Models\BomItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Bom\Models\BomItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Bom\Models\BomItem query()
  */
 	final class BomItem extends \Eloquent {}
 }
@@ -1815,9 +1815,9 @@ namespace Modules\Catalog\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $creator
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CatalogFrequency newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CatalogFrequency newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CatalogFrequency query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\CatalogFrequency newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\CatalogFrequency newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\CatalogFrequency query()
  */
 	final class CatalogFrequency extends \Eloquent {}
 }
@@ -1828,9 +1828,9 @@ namespace Modules\Catalog\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $creator
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CatalogMeasureUnit newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CatalogMeasureUnit newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CatalogMeasureUnit query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\CatalogMeasureUnit newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\CatalogMeasureUnit newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\CatalogMeasureUnit query()
  */
 	final class CatalogMeasureUnit extends \Eloquent {}
 }
@@ -1841,9 +1841,9 @@ namespace Modules\Catalog\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $creator
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CatalogModel newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CatalogModel newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CatalogModel query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\CatalogModel newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\CatalogModel newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\CatalogModel query()
  */
 	final class CatalogModel extends \Eloquent {}
 }
@@ -1854,9 +1854,9 @@ namespace Modules\Catalog\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $creator
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CatalogPartType newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CatalogPartType newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CatalogPartType query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\CatalogPartType newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\CatalogPartType newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\CatalogPartType query()
  */
 	final class CatalogPartType extends \Eloquent {}
 }
@@ -1880,9 +1880,9 @@ namespace Modules\Catalog\Models{
  * @property-read int|null $items_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Catalog\Database\Factories\MetelCatalogFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetelCatalog newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetelCatalog newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetelCatalog query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\MetelCatalog newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\MetelCatalog newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\MetelCatalog query()
  */
 	final class MetelCatalog extends \Eloquent {}
 }
@@ -1908,9 +1908,9 @@ namespace Modules\Catalog\Models{
  * @property-read \Modules\Catalog\Models\Product|null $product
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Catalog\Database\Factories\MetelCatalogItemFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetelCatalogItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetelCatalogItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetelCatalogItem query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\MetelCatalogItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\MetelCatalogItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\MetelCatalogItem query()
  */
 	final class MetelCatalogItem extends \Eloquent {}
 }
@@ -1935,12 +1935,12 @@ namespace Modules\Catalog\Models{
  * @property-read \Modules\Catalog\Models\CatalogModel|null $model
  * @property-read \Modules\Catalog\Models\CatalogPartType|null $partType
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Product withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\Product newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\Product newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\Product onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\Product query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\Product withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Catalog\Models\Product withoutTrashed()
  */
 	final class Product extends \Eloquent {}
 }
@@ -2652,16 +2652,16 @@ namespace Modules\Comment\Models{
  * @method static Builder<Comment> query()
  * @method static Builder<Comment> approved()
  * @method static Builder<Comment> pending()
- * @property-read \Illuminate\Database\Eloquent\Collection<int, Comment> $comments
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\Comment\Models\Comment> $comments
  * @property-read int|null $comments_count
- * @property-read \Illuminate\Database\Eloquent\Collection<int, Comment> $nestedComments
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\Comment\Models\Comment> $nestedComments
  * @property-read int|null $nested_comments_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\Comment\Models\CommentNotificationSubscription> $notificationSubscriptions
  * @property-read int|null $notification_subscriptions_count
- * @property-read Comment|null $parentComment
+ * @property-read \Modules\Comment\Models\Comment|null $parentComment
  * @property-read \Modules\Comment\Models\Collections\ReactionCollection<int, \Modules\Comment\Models\Reaction> $reactions
  * @property-read int|null $reactions_count
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Comment topLevel()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Comment\Models\Comment topLevel()
  */
 	class Comment extends \Eloquent implements \Modules\Comment\Models\Contracts\Commentable, \Modules\Comment\Models\Contracts\SupportsCommentNotifications {}
 }
@@ -2770,12 +2770,12 @@ namespace Modules\Compliance\Models{
  * @property-read \Modules\Compliance\Models\HeatingSystem|null $heatingSystem
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Compliance\Database\Factories\BoilerFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Boiler newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Boiler newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Boiler onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Boiler query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Boiler withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Boiler withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Boiler newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Boiler newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Boiler onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Boiler query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Boiler withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Boiler withoutTrashed()
  */
 	final class Boiler extends \Eloquent {}
 }
@@ -2818,12 +2818,12 @@ namespace Modules\Compliance\Models{
  * @property-read \Modules\Vehicle\Models\Vehicle|null $vehicle
  * @property-read \Modules\WorkOrder\Models\WorkOrder|null $workOrder
  * @method static \Modules\Compliance\Database\Factories\ComplianceDocumentFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ComplianceDocument newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ComplianceDocument newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ComplianceDocument onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ComplianceDocument query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ComplianceDocument withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ComplianceDocument withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\ComplianceDocument newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\ComplianceDocument newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\ComplianceDocument onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\ComplianceDocument query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\ComplianceDocument withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\ComplianceDocument withoutTrashed()
  */
 	final class ComplianceDocument extends \Eloquent {}
 }
@@ -2855,12 +2855,12 @@ namespace Modules\Compliance\Models{
  * @property-read \Modules\Customer\Models\CustomerSite|null $site
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Compliance\Database\Factories\CustomerSystemFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomerSystem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomerSystem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomerSystem onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomerSystem query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomerSystem withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomerSystem withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\CustomerSystem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\CustomerSystem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\CustomerSystem onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\CustomerSystem query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\CustomerSystem withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\CustomerSystem withoutTrashed()
  */
 	final class CustomerSystem extends \Eloquent {}
 }
@@ -2887,12 +2887,12 @@ namespace Modules\Compliance\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Compliance\Database\Factories\EquipmentFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Equipment newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Equipment newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Equipment onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Equipment query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Equipment withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Equipment withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Equipment newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Equipment newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Equipment onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Equipment query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Equipment withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Equipment withoutTrashed()
  */
 	final class Equipment extends \Eloquent {}
 }
@@ -2906,9 +2906,9 @@ namespace Modules\Compliance\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Compliance\Database\Factories\FGasLeakCheckFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|FGasLeakCheck newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|FGasLeakCheck newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|FGasLeakCheck query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\FGasLeakCheck newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\FGasLeakCheck newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\FGasLeakCheck query()
  */
 	final class FGasLeakCheck extends \Eloquent {}
 }
@@ -2936,12 +2936,12 @@ namespace Modules\Compliance\Models{
  * @property-read \Modules\Customer\Models\CustomerSite|null $site
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Compliance\Database\Factories\HeatingSystemFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|HeatingSystem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|HeatingSystem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|HeatingSystem onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|HeatingSystem query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|HeatingSystem withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|HeatingSystem withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\HeatingSystem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\HeatingSystem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\HeatingSystem onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\HeatingSystem query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\HeatingSystem withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\HeatingSystem withoutTrashed()
  */
 	final class HeatingSystem extends \Eloquent {}
 }
@@ -2975,9 +2975,9 @@ namespace Modules\Compliance\Models{
  * @property-read \Modules\Compliance\Models\HeatingSystem|null $heatingSystem
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Compliance\Database\Factories\MaintenanceControlFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MaintenanceControl newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MaintenanceControl newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MaintenanceControl query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\MaintenanceControl newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\MaintenanceControl newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\MaintenanceControl query()
  */
 	final class MaintenanceControl extends \Eloquent {}
 }
@@ -2994,12 +2994,12 @@ namespace Modules\Compliance\Models{
  * @property-read int|null $leak_checks_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Compliance\Database\Factories\RefrigerantCircuitFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefrigerantCircuit newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefrigerantCircuit newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefrigerantCircuit onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefrigerantCircuit query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefrigerantCircuit withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|RefrigerantCircuit withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\RefrigerantCircuit newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\RefrigerantCircuit newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\RefrigerantCircuit onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\RefrigerantCircuit query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\RefrigerantCircuit withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\RefrigerantCircuit withoutTrashed()
  */
 	final class RefrigerantCircuit extends \Eloquent {}
 }
@@ -3012,12 +3012,12 @@ namespace Modules\Compliance\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Compliance\Database\Factories\SubcontractorFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Subcontractor newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Subcontractor newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Subcontractor onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Subcontractor query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Subcontractor withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Subcontractor withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Subcontractor newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Subcontractor newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Subcontractor onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Subcontractor query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Subcontractor withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\Subcontractor withoutTrashed()
  */
 	final class Subcontractor extends \Eloquent {}
 }
@@ -3048,12 +3048,12 @@ namespace Modules\Compliance\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\WorkOrder\Models\WorkOrder|null $workOrder
  * @method static \Modules\Compliance\Database\Factories\WorkOrderChangeOrderFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderChangeOrder newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderChangeOrder newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderChangeOrder onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderChangeOrder query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderChangeOrder withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderChangeOrder withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\WorkOrderChangeOrder newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\WorkOrderChangeOrder newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\WorkOrderChangeOrder onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\WorkOrderChangeOrder query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\WorkOrderChangeOrder withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\WorkOrderChangeOrder withoutTrashed()
  */
 	final class WorkOrderChangeOrder extends \Eloquent {}
 }
@@ -3065,9 +3065,9 @@ namespace Modules\Compliance\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\WorkOrder\Models\WorkOrder|null $workOrder
  * @method static \Modules\Compliance\Database\Factories\WorkOrderReadinessItemFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderReadinessItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderReadinessItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderReadinessItem query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\WorkOrderReadinessItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\WorkOrderReadinessItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Compliance\Models\WorkOrderReadinessItem query()
  */
 	final class WorkOrderReadinessItem extends \Eloquent {}
 }
@@ -3092,10 +3092,10 @@ namespace Modules\Costing\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Costing\Database\Factories\WorkCenterFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkCenter forContext(string $contextCode)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkCenter newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkCenter newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkCenter query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Costing\Models\WorkCenter forContext(string $contextCode)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Costing\Models\WorkCenter newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Costing\Models\WorkCenter newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Costing\Models\WorkCenter query()
  */
 	final class WorkCenter extends \Eloquent {}
 }
@@ -3116,12 +3116,12 @@ namespace Modules\Customer\Models{
  * @property-read \Modules\Customer\Models\ContactRole|null $role
  * @property-read \Modules\Customer\Models\CustomerSite|null $site
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Contact withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Contact newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Contact newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Contact onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Contact query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Contact withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Contact withoutTrashed()
  */
 	final class Contact extends \Eloquent {}
 }
@@ -3136,9 +3136,9 @@ namespace Modules\Customer\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $creator
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ContactRole newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ContactRole newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ContactRole query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\ContactRole newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\ContactRole newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\ContactRole query()
  */
 	final class ContactRole extends \Eloquent {}
 }
@@ -3163,12 +3163,12 @@ namespace Modules\Customer\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\WorkOrder\Models\WorkOrder> $workOrders
  * @property-read int|null $work_orders_count
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Customer withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Customer newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Customer newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Customer onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Customer query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Customer withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Customer withoutTrashed()
  */
 	final class Customer extends \Eloquent {}
 }
@@ -3185,12 +3185,12 @@ namespace Modules\Customer\Models{
  * @property-read \Modules\Customer\Models\Customer|null $customer
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomerSite newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomerSite newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomerSite onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomerSite query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomerSite withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|CustomerSite withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\CustomerSite newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\CustomerSite newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\CustomerSite onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\CustomerSite query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\CustomerSite withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\CustomerSite withoutTrashed()
  */
 	final class CustomerSite extends \Eloquent {}
 }
@@ -3206,12 +3206,12 @@ namespace Modules\Customer\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\User\Models\User|null $user
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Reseller newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Reseller newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Reseller onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Reseller query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Reseller withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Reseller withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Reseller newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Reseller newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Reseller onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Reseller query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Reseller withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Customer\Models\Reseller withoutTrashed()
  */
 	final class Reseller extends \Eloquent {}
 }
@@ -3235,12 +3235,12 @@ namespace Modules\Document\Models{
  * @property-read \Illuminate\Database\Eloquent\Model $mediable
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\User\Models\User|null $uploadedBy
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Media newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Media newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Media onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Media query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Media withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Media withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Document\Models\Media newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Document\Models\Media newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Document\Models\Media onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Document\Models\Media query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Document\Models\Media withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Document\Models\Media withoutTrashed()
  */
 	final class Media extends \Eloquent {}
 }
@@ -3264,9 +3264,9 @@ namespace Modules\Email\Models{
  * @property-read \Modules\Customer\Models\CustomerSite|null $site
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\User\Models\User|null $user
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmailContactIdentity newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmailContactIdentity newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmailContactIdentity query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Email\Models\EmailContactIdentity newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Email\Models\EmailContactIdentity newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Email\Models\EmailContactIdentity query()
  */
 	final class EmailContactIdentity extends \Eloquent {}
 }
@@ -3297,9 +3297,9 @@ namespace Modules\Email\Models{
  * @property-read \Modules\Customer\Models\CustomerSite|null $site
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\User\Models\User|null $user
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmailConversation newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmailConversation newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmailConversation query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Email\Models\EmailConversation newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Email\Models\EmailConversation newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Email\Models\EmailConversation query()
  */
 	final class EmailConversation extends \Eloquent {}
 }
@@ -3336,9 +3336,9 @@ namespace Modules\Email\Models{
  * @property-read \Modules\AiAssistant\Models\AiActionProposal|null $proposal
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\WorkOrder\Models\WorkOrder|null $workOrder
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmailMessage newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmailMessage newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmailMessage query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Email\Models\EmailMessage newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Email\Models\EmailMessage newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Email\Models\EmailMessage query()
  */
 	final class EmailMessage extends \Eloquent {}
 }
@@ -3372,11 +3372,11 @@ namespace Modules\Employee\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $creator
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AbsenceRequest forUser(string|int $userId)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AbsenceRequest onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AbsenceRequest pending()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AbsenceRequest withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AbsenceRequest withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Employee\Models\AbsenceRequest forUser(string|int $userId)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Employee\Models\AbsenceRequest onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Employee\Models\AbsenceRequest pending()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Employee\Models\AbsenceRequest withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Employee\Models\AbsenceRequest withoutTrashed()
  */
 	class AbsenceRequest extends \Eloquent {}
 }
@@ -3564,10 +3564,10 @@ namespace Modules\Employee\Models{
  * @property-read int|null $membership_teams_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\User\Models\OauthClient> $oauthApps
  * @property-read int|null $oauth_apps_count
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Admin childrenWith(array $relations)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Admin childrenWithCount(array $relations)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Admin team($teams, bool $without = false)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Admin withoutTeam($teams)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Employee\Models\Admin childrenWith(array $relations)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Employee\Models\Admin childrenWithCount(array $relations)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Employee\Models\Admin team($teams, bool $without = false)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Employee\Models\Admin withoutTeam($teams)
  */
 	class Admin extends \Eloquent {}
 }
@@ -3719,10 +3719,10 @@ namespace Modules\Employee\Models{
  * @property-read int|null $membership_teams_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\User\Models\OauthClient> $oauthApps
  * @property-read int|null $oauth_apps_count
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Employee childrenWith(array $relations)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Employee childrenWithCount(array $relations)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Employee team($teams, bool $without = false)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Employee withoutTeam($teams)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Employee\Models\Employee childrenWith(array $relations)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Employee\Models\Employee childrenWithCount(array $relations)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Employee\Models\Employee team($teams, bool $without = false)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Employee\Models\Employee withoutTeam($teams)
  */
 	class Employee extends \Eloquent {}
 }
@@ -3984,10 +3984,10 @@ namespace Modules\Employee\Models{
  * @property-read int|null $membership_teams_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\User\Models\OauthClient> $oauthApps
  * @property-read int|null $oauth_apps_count
- * @method static \Illuminate\Database\Eloquent\Builder<static>|User childrenWith(array $relations)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|User childrenWithCount(array $relations)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|User team($teams, bool $without = false)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|User withoutTeam($teams)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Employee\Models\User childrenWith(array $relations)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Employee\Models\User childrenWithCount(array $relations)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Employee\Models\User team($teams, bool $without = false)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Employee\Models\User withoutTeam($teams)
  */
 	class User extends \Eloquent implements \Spatie\ModelStates\HasStatesContract {}
 }
@@ -4064,9 +4064,9 @@ namespace Modules\EnergyBroker\Models{
  * @property-read \Modules\EnergyBroker\Models\EnergyBrokerDocument|null $document
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\EnergyBroker\Database\Factories\EnergyBrokerCustomerMatchFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerCustomerMatch newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerCustomerMatch newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerCustomerMatch query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerCustomerMatch newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerCustomerMatch newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerCustomerMatch query()
  */
 	final class EnergyBrokerCustomerMatch extends \Eloquent {}
 }
@@ -4103,12 +4103,12 @@ namespace Modules\EnergyBroker\Models{
  * @property-read \Modules\Document\Models\Media|null $media
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\EnergyBroker\Database\Factories\EnergyBrokerDocumentFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerDocument newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerDocument newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerDocument onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerDocument query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerDocument withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerDocument withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerDocument newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerDocument newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerDocument onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerDocument query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerDocument withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerDocument withoutTrashed()
  */
 	final class EnergyBrokerDocument extends \Eloquent {}
 }
@@ -4133,12 +4133,12 @@ namespace Modules\EnergyBroker\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\User\Models\User|null $uploadedBy
  * @method static \Modules\EnergyBroker\Database\Factories\EnergyBrokerImportBatchFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerImportBatch newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerImportBatch newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerImportBatch onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerImportBatch query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerImportBatch withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerImportBatch withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerImportBatch newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerImportBatch newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerImportBatch onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerImportBatch query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerImportBatch withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerImportBatch withoutTrashed()
  */
 	final class EnergyBrokerImportBatch extends \Eloquent {}
 }
@@ -4169,12 +4169,12 @@ namespace Modules\EnergyBroker\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\EnergyBroker\Database\Factories\EnergyBrokerLargeUploadFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerLargeUpload newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerLargeUpload newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerLargeUpload onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerLargeUpload query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerLargeUpload withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerLargeUpload withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerLargeUpload newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerLargeUpload newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerLargeUpload onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerLargeUpload query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerLargeUpload withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerLargeUpload withoutTrashed()
  */
 	final class EnergyBrokerLargeUpload extends \Eloquent {}
 }
@@ -4199,9 +4199,9 @@ namespace Modules\EnergyBroker\Models{
  * @property-read \Modules\EnergyBroker\Models\EnergyBrokerSupplyPoint|null $supplyPoint
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\EnergyBroker\Database\Factories\EnergyBrokerSupplyHistoryFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerSupplyHistory newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerSupplyHistory newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerSupplyHistory query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerSupplyHistory newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerSupplyHistory newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerSupplyHistory query()
  */
 	final class EnergyBrokerSupplyHistory extends \Eloquent {}
 }
@@ -4230,12 +4230,12 @@ namespace Modules\EnergyBroker\Models{
  * @property-read \Modules\Customer\Models\CustomerSite|null $site
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\EnergyBroker\Database\Factories\EnergyBrokerSupplyPointFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerSupplyPoint newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerSupplyPoint newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerSupplyPoint onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerSupplyPoint query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerSupplyPoint withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EnergyBrokerSupplyPoint withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerSupplyPoint newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerSupplyPoint newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerSupplyPoint onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerSupplyPoint query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerSupplyPoint withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\EnergyBroker\Models\EnergyBrokerSupplyPoint withoutTrashed()
  */
 	final class EnergyBrokerSupplyPoint extends \Eloquent {}
 }
@@ -4562,8 +4562,8 @@ namespace Modules\Gdpr\Models{
  * @mixin \Eloquent
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\User\Models\Team> $teams
  * @property-read int|null $teams_count
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile team($teams, bool $without = false)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile withoutTeam($teams)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Gdpr\Models\Profile team($teams, bool $without = false)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Gdpr\Models\Profile withoutTeam($teams)
  */
 	class Profile extends \Eloquent {}
 }
@@ -5182,12 +5182,12 @@ namespace Modules\HR\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\User\Models\User|null $user
  * @method static \Modules\HR\Database\Factories\AbsenceRequestFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AbsenceRequest newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AbsenceRequest newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AbsenceRequest onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AbsenceRequest query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AbsenceRequest withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AbsenceRequest withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\AbsenceRequest newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\AbsenceRequest newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\AbsenceRequest onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\AbsenceRequest query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\AbsenceRequest withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\AbsenceRequest withoutTrashed()
  */
 	final class AbsenceRequest extends \Eloquent {}
 }
@@ -5205,12 +5205,12 @@ namespace Modules\HR\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\User\Models\User|null $user
  * @method static \Modules\HR\Database\Factories\EmployeeFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Employee newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Employee newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Employee onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Employee query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Employee withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Employee withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\Employee newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\Employee newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\Employee onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\Employee query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\Employee withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\Employee withoutTrashed()
  */
 	final class Employee extends \Eloquent {}
 }
@@ -5230,9 +5230,9 @@ namespace Modules\HR\Models{
  * @property-read \Modules\HR\Models\Employee|null $employee
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\HR\Database\Factories\EmployeeDocumentFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmployeeDocument newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmployeeDocument newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmployeeDocument query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\EmployeeDocument newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\EmployeeDocument newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\EmployeeDocument query()
  */
 	final class EmployeeDocument extends \Eloquent {}
 }
@@ -5254,9 +5254,9 @@ namespace Modules\HR\Models{
  * @property-read \Modules\HR\Models\Employee|null $employee
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\HR\Database\Factories\EmployeeMedicalVisitFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmployeeMedicalVisit newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmployeeMedicalVisit newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmployeeMedicalVisit query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\EmployeeMedicalVisit newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\EmployeeMedicalVisit newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\EmployeeMedicalVisit query()
  */
 	final class EmployeeMedicalVisit extends \Eloquent {}
 }
@@ -5279,9 +5279,9 @@ namespace Modules\HR\Models{
  * @property-read \Modules\HR\Models\Employee|null $employee
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\HR\Database\Factories\EmployeeTrainingFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmployeeTraining newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmployeeTraining newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|EmployeeTraining query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\EmployeeTraining newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\EmployeeTraining newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\HR\Models\EmployeeTraining query()
  */
 	final class EmployeeTraining extends \Eloquent {}
 }
@@ -5302,9 +5302,9 @@ namespace Modules\Intervention\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read int|null $media_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|DailyNote newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|DailyNote newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|DailyNote query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\DailyNote newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\DailyNote newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\DailyNote query()
  */
 	final class DailyNote extends \Eloquent {}
 }
@@ -5363,12 +5363,12 @@ namespace Modules\Intervention\Models{
  * @property-read int|null $sketches_count
  * @property-read int|null $time_punches_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Intervention newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Intervention newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Intervention onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Intervention query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Intervention withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Intervention withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\Intervention newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\Intervention newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\Intervention onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\Intervention query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\Intervention withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\Intervention withoutTrashed()
  */
 	final class Intervention extends \Eloquent {}
 }
@@ -5394,9 +5394,9 @@ namespace Modules\Intervention\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $creator
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InterventionMaterialLine newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InterventionMaterialLine newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InterventionMaterialLine query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\InterventionMaterialLine newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\InterventionMaterialLine newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\InterventionMaterialLine query()
  */
 	final class InterventionMaterialLine extends \Eloquent {}
 }
@@ -5417,9 +5417,9 @@ namespace Modules\Intervention\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $creator
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InterventionReportShare newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InterventionReportShare newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InterventionReportShare query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\InterventionReportShare newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\InterventionReportShare newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\InterventionReportShare query()
  */
 	final class InterventionReportShare extends \Eloquent {}
 }
@@ -5436,9 +5436,9 @@ namespace Modules\Intervention\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Intervention\Database\Factories\InterventionUserFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InterventionUser newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InterventionUser newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InterventionUser query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\InterventionUser newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\InterventionUser newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\InterventionUser query()
  */
 	class InterventionUser extends \Eloquent {}
 }
@@ -5456,9 +5456,9 @@ namespace Modules\Intervention\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $creator
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InterventionUserAssignment newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InterventionUserAssignment newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InterventionUserAssignment query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\InterventionUserAssignment newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\InterventionUserAssignment newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\InterventionUserAssignment query()
  */
 	final class InterventionUserAssignment extends \Eloquent {}
 }
@@ -5477,9 +5477,9 @@ namespace Modules\Intervention\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $creator
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|IssueReport newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|IssueReport newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|IssueReport query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\IssueReport newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\IssueReport newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\IssueReport query()
  */
 	final class IssueReport extends \Eloquent {}
 }
@@ -5499,9 +5499,9 @@ namespace Modules\Intervention\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $creator
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimePunch newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimePunch newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimePunch query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\TimePunch newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\TimePunch newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\TimePunch query()
  */
 	final class TimePunch extends \Eloquent {}
 }
@@ -5529,9 +5529,9 @@ namespace Modules\Intervention\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $creator
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|UserGoogleCalendarSetting newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|UserGoogleCalendarSetting newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|UserGoogleCalendarSetting query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\UserGoogleCalendarSetting newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\UserGoogleCalendarSetting newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Intervention\Models\UserGoogleCalendarSetting query()
  */
 	final class UserGoogleCalendarSetting extends \Eloquent {}
 }
@@ -5563,9 +5563,9 @@ namespace Modules\Inventory\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\WorkOrder\Models\WorkOrder|null $workOrder
  * @method static \Modules\Inventory\Database\Factories\InventoryMovementFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InventoryMovement newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InventoryMovement newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InventoryMovement query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Inventory\Models\InventoryMovement newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Inventory\Models\InventoryMovement newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Inventory\Models\InventoryMovement query()
  */
 	final class InventoryMovement extends \Eloquent {}
 }
@@ -5576,9 +5576,9 @@ namespace Modules\Inventory\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Inventory\Database\Factories\InventoryOverviewRowFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InventoryOverviewRow newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InventoryOverviewRow newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|InventoryOverviewRow query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Inventory\Models\InventoryOverviewRow newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Inventory\Models\InventoryOverviewRow newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Inventory\Models\InventoryOverviewRow query()
  */
 	final class InventoryOverviewRow extends \Eloquent {}
 }
@@ -5594,9 +5594,9 @@ namespace Modules\Inventory\Models{
  * @property-read \Modules\Catalog\Models\Product|null $product
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Inventory\Database\Factories\ProductUnitFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductUnit newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductUnit newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductUnit query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Inventory\Models\ProductUnit newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Inventory\Models\ProductUnit newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Inventory\Models\ProductUnit query()
  */
 	final class ProductUnit extends \Eloquent {}
 }
@@ -5615,9 +5615,9 @@ namespace Modules\Inventory\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\Vehicle\Models\Vehicle|null $vehicle
  * @method static \Modules\Inventory\Database\Factories\WarehouseFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Warehouse query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Inventory\Models\Warehouse newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Inventory\Models\Warehouse newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Inventory\Models\Warehouse query()
  */
 	final class Warehouse extends \Eloquent {}
 }
@@ -5640,9 +5640,9 @@ namespace Modules\Inventory\Models{
  * @property-read int|null $product_units_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Inventory\Database\Factories\WarehouseLocationFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WarehouseLocation newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WarehouseLocation newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WarehouseLocation query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Inventory\Models\WarehouseLocation newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Inventory\Models\WarehouseLocation newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Inventory\Models\WarehouseLocation query()
  */
 	final class WarehouseLocation extends \Eloquent {}
 }
@@ -6660,9 +6660,9 @@ namespace Modules\MetalWork\Models{
  * @property-read int|null $estimates_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\MetalWork\Database\Factories\MetalDrawingFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalDrawing newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalDrawing newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalDrawing query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalDrawing newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalDrawing newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalDrawing query()
  */
 	final class MetalDrawing extends \Eloquent {}
 }
@@ -6691,9 +6691,9 @@ namespace Modules\MetalWork\Models{
  * @property-read \Modules\MetalWork\Models\MetalRawMaterial|null $rawMaterial
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\MetalWork\Database\Factories\MetalDrawingComponentFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalDrawingComponent newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalDrawingComponent newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalDrawingComponent query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalDrawingComponent newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalDrawingComponent newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalDrawingComponent query()
  */
 	final class MetalDrawingComponent extends \Eloquent {}
 }
@@ -6720,9 +6720,9 @@ namespace Modules\MetalWork\Models{
  * @property-read \Modules\MetalWork\Models\MetalPartEstimate|null $partEstimate
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\MetalWork\Database\Factories\MetalEstimateLineFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalEstimateLine newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalEstimateLine newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalEstimateLine query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalEstimateLine newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalEstimateLine newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalEstimateLine query()
  */
 	final class MetalEstimateLine extends \Eloquent {}
 }
@@ -6758,9 +6758,9 @@ namespace Modules\MetalWork\Models{
  * @property-read \Modules\MetalWork\Models\MetalRawMaterial|null $rawMaterial
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\MetalWork\Database\Factories\MetalPartEstimateFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalPartEstimate newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalPartEstimate newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalPartEstimate query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalPartEstimate newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalPartEstimate newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalPartEstimate query()
  */
 	final class MetalPartEstimate extends \Eloquent {}
 }
@@ -6789,9 +6789,9 @@ namespace Modules\MetalWork\Models{
  * @property-read int|null $supplier_prices_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\MetalWork\Database\Factories\MetalRawMaterialFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalRawMaterial newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalRawMaterial newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalRawMaterial query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalRawMaterial newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalRawMaterial newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalRawMaterial query()
  */
 	final class MetalRawMaterial extends \Eloquent {}
 }
@@ -6816,9 +6816,9 @@ namespace Modules\MetalWork\Models{
  * @property-read \Modules\MetalWork\Models\MetalRawMaterial|null $rawMaterial
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\MetalWork\Database\Factories\MetalSupplierPriceFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalSupplierPrice newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalSupplierPrice newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|MetalSupplierPrice query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalSupplierPrice newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalSupplierPrice newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\MetalWork\Models\MetalSupplierPrice query()
  */
 	final class MetalSupplierPrice extends \Eloquent {}
 }
@@ -7364,9 +7364,9 @@ namespace Modules\Platform\Models{
  * @property-read \Illuminate\Database\Eloquent\Model $subject
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Platform\Database\Factories\AuditLogFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AuditLog newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AuditLog newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|AuditLog query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Platform\Models\AuditLog newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Platform\Models\AuditLog newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Platform\Models\AuditLog query()
  */
 	final class AuditLog extends \Eloquent {}
 }
@@ -7387,9 +7387,9 @@ namespace Modules\Platform\Models{
  * @property-read \Modules\User\Models\User|null $updatedBy
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Platform\Database\Factories\NavigationPreferenceFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|NavigationPreference newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|NavigationPreference newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|NavigationPreference query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Platform\Models\NavigationPreference newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Platform\Models\NavigationPreference newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Platform\Models\NavigationPreference query()
  */
 	final class NavigationPreference extends \Eloquent {}
 }
@@ -7407,9 +7407,9 @@ namespace Modules\Platform\Models{
  * @property-read \Modules\User\Models\User|null $updatedBy
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Platform\Database\Factories\PlatformSettingFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PlatformSetting newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PlatformSetting newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PlatformSetting query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Platform\Models\PlatformSetting newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Platform\Models\PlatformSetting newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Platform\Models\PlatformSetting query()
  */
 	final class PlatformSetting extends \Eloquent {}
 }
@@ -7432,9 +7432,9 @@ namespace Modules\Production\Models{
  * @property-read \Modules\Catalog\Models\Product|null $product
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\WorkOrder\Models\WorkOrder|null $workOrder
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductionOrder newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductionOrder newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductionOrder query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Production\Models\ProductionOrder newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Production\Models\ProductionOrder newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Production\Models\ProductionOrder query()
  */
 	final class ProductionOrder extends \Eloquent {}
 }
@@ -7455,9 +7455,9 @@ namespace Modules\Production\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\Production\Models\ProductionOrder|null $order
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductionPhase newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductionPhase newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|ProductionPhase query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Production\Models\ProductionPhase newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Production\Models\ProductionPhase newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Production\Models\ProductionPhase query()
  */
 	final class ProductionPhase extends \Eloquent {}
 }
@@ -7482,12 +7482,12 @@ namespace Modules\PublicProcurement\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\Document\Models\Media|null $media
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementAiExtraction newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementAiExtraction newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementAiExtraction onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementAiExtraction query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementAiExtraction withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementAiExtraction withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementAiExtraction newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementAiExtraction newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementAiExtraction onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementAiExtraction query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementAiExtraction withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementAiExtraction withoutTrashed()
  */
 	final class PublicProcurementAiExtraction extends \Eloquent {}
 }
@@ -7499,12 +7499,12 @@ namespace Modules\PublicProcurement\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $creator
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementContact newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementContact newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementContact onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementContact query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementContact withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementContact withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementContact newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementContact newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementContact onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementContact query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementContact withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementContact withoutTrashed()
  */
 	final class PublicProcurementContact extends \Eloquent {}
 }
@@ -7561,12 +7561,12 @@ namespace Modules\PublicProcurement\Models{
  * @property-read int|null $progress_reports_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\WorkOrder\Models\WorkOrder|null $workOrder
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementContract newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementContract newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementContract onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementContract query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementContract withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementContract withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementContract newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementContract newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementContract onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementContract query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementContract withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementContract withoutTrashed()
  */
 	final class PublicProcurementContract extends \Eloquent {}
 }
@@ -7578,12 +7578,12 @@ namespace Modules\PublicProcurement\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $creator
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementDeadline newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementDeadline newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementDeadline onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementDeadline query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementDeadline withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementDeadline withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementDeadline newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementDeadline newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementDeadline onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementDeadline query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementDeadline withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementDeadline withoutTrashed()
  */
 	final class PublicProcurementDeadline extends \Eloquent {}
 }
@@ -7597,12 +7597,12 @@ namespace Modules\PublicProcurement\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\PublicProcurement\Models\PublicProcurementTenderOpportunity|null $opportunity
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementDocumentRequirement newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementDocumentRequirement newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementDocumentRequirement onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementDocumentRequirement query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementDocumentRequirement withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementDocumentRequirement withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementDocumentRequirement newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementDocumentRequirement newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementDocumentRequirement onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementDocumentRequirement query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementDocumentRequirement withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementDocumentRequirement withoutTrashed()
  */
 	final class PublicProcurementDocumentRequirement extends \Eloquent {}
 }
@@ -7614,9 +7614,9 @@ namespace Modules\PublicProcurement\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $creator
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementEconomicFrame newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementEconomicFrame newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementEconomicFrame query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementEconomicFrame newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementEconomicFrame newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementEconomicFrame query()
  */
 	final class PublicProcurementEconomicFrame extends \Eloquent {}
 }
@@ -7629,12 +7629,12 @@ namespace Modules\PublicProcurement\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\Document\Models\Media|null $media
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementGuarantee newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementGuarantee newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementGuarantee onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementGuarantee query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementGuarantee withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementGuarantee withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementGuarantee newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementGuarantee newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementGuarantee onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementGuarantee query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementGuarantee withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementGuarantee withoutTrashed()
  */
 	final class PublicProcurementGuarantee extends \Eloquent {}
 }
@@ -7649,12 +7649,12 @@ namespace Modules\PublicProcurement\Models{
  * @property-read \Modules\Intervention\Models\Intervention|null $intervention
  * @property-read \Modules\PublicProcurement\Models\PublicProcurementPriceItem|null $priceItem
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementMeasurement newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementMeasurement newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementMeasurement onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementMeasurement query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementMeasurement withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementMeasurement withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementMeasurement newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementMeasurement newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementMeasurement onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementMeasurement query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementMeasurement withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementMeasurement withoutTrashed()
  */
 	final class PublicProcurementMeasurement extends \Eloquent {}
 }
@@ -7667,12 +7667,12 @@ namespace Modules\PublicProcurement\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\Document\Models\Media|null $media
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementOfficialRecord newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementOfficialRecord newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementOfficialRecord onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementOfficialRecord query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementOfficialRecord withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementOfficialRecord withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementOfficialRecord newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementOfficialRecord newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementOfficialRecord onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementOfficialRecord query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementOfficialRecord withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementOfficialRecord withoutTrashed()
  */
 	final class PublicProcurementOfficialRecord extends \Eloquent {}
 }
@@ -7686,12 +7686,12 @@ namespace Modules\PublicProcurement\Models{
  * @property-read \Modules\Billing\Models\Invoice|null $invoice
  * @property-read \Modules\PublicProcurement\Models\PublicProcurementProgressReport|null $progressReport
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementPaymentCertificate newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementPaymentCertificate newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementPaymentCertificate onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementPaymentCertificate query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementPaymentCertificate withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementPaymentCertificate withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementPaymentCertificate newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementPaymentCertificate newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementPaymentCertificate onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementPaymentCertificate query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementPaymentCertificate withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementPaymentCertificate withoutTrashed()
  */
 	final class PublicProcurementPaymentCertificate extends \Eloquent {}
 }
@@ -7703,12 +7703,12 @@ namespace Modules\PublicProcurement\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $creator
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementPriceItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementPriceItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementPriceItem onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementPriceItem query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementPriceItem withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementPriceItem withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementPriceItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementPriceItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementPriceItem onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementPriceItem query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementPriceItem withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementPriceItem withoutTrashed()
  */
 	final class PublicProcurementPriceItem extends \Eloquent {}
 }
@@ -7721,12 +7721,12 @@ namespace Modules\PublicProcurement\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\PublicProcurement\Models\PublicProcurementPaymentCertificate|null $paymentCertificate
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementProgressReport newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementProgressReport newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementProgressReport onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementProgressReport query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementProgressReport withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementProgressReport withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementProgressReport newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementProgressReport newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementProgressReport onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementProgressReport query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementProgressReport withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementProgressReport withoutTrashed()
  */
 	final class PublicProcurementProgressReport extends \Eloquent {}
 }
@@ -7746,12 +7746,12 @@ namespace Modules\PublicProcurement\Models{
  * @property-read \Modules\User\Models\User|null $evaluatedBy
  * @property-read \Modules\PublicProcurement\Models\PublicProcurementTenderOpportunity|null $opportunity
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderEligibilityCheck newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderEligibilityCheck newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderEligibilityCheck onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderEligibilityCheck query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderEligibilityCheck withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderEligibilityCheck withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderEligibilityCheck newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderEligibilityCheck newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderEligibilityCheck onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderEligibilityCheck query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderEligibilityCheck withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderEligibilityCheck withoutTrashed()
  */
 	final class PublicProcurementTenderEligibilityCheck extends \Eloquent {}
 }
@@ -7789,12 +7789,12 @@ namespace Modules\PublicProcurement\Models{
  * @property-read int|null $eligibility_checks_count
  * @property-read \Modules\PublicProcurement\Models\PublicProcurementTenderSource|null $source
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderOpportunity newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderOpportunity newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderOpportunity onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderOpportunity query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderOpportunity withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderOpportunity withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderOpportunity newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderOpportunity newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderOpportunity onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderOpportunity query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderOpportunity withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderOpportunity withoutTrashed()
  */
 	final class PublicProcurementTenderOpportunity extends \Eloquent {}
 }
@@ -7807,12 +7807,12 @@ namespace Modules\PublicProcurement\Models{
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\PublicProcurement\Models\PublicProcurementTenderOpportunity> $opportunities
  * @property-read int|null $opportunities_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderSource newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderSource newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderSource onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderSource query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderSource withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|PublicProcurementTenderSource withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderSource newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderSource newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderSource onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderSource query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderSource withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\PublicProcurement\Models\PublicProcurementTenderSource withoutTrashed()
  */
 	final class PublicProcurementTenderSource extends \Eloquent {}
 }
@@ -7855,12 +7855,12 @@ namespace Modules\Quotation\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\WorkOrder\Models\WorkOrder|null $workOrder
  * @method static \Modules\Quotation\Database\Factories\QuotationFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Quotation newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Quotation newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Quotation onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Quotation query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Quotation withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Quotation withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\Quotation newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\Quotation newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\Quotation onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\Quotation query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\Quotation withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\Quotation withoutTrashed()
  */
 	final class Quotation extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
 }
@@ -7884,9 +7884,9 @@ namespace Modules\Quotation\Models{
  * @property-read \Modules\Quotation\Models\Quotation|null $quotation
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Quotation\Database\Factories\QuotationItemFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|QuotationItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|QuotationItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|QuotationItem query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\QuotationItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\QuotationItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\QuotationItem query()
  */
 	final class QuotationItem extends \Eloquent {}
 }
@@ -7905,12 +7905,12 @@ namespace Modules\Quotation\Models{
  * @property-read int|null $items_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Quotation\Database\Factories\QuotationTemplateFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|QuotationTemplate newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|QuotationTemplate newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|QuotationTemplate onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|QuotationTemplate query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|QuotationTemplate withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|QuotationTemplate withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\QuotationTemplate newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\QuotationTemplate newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\QuotationTemplate onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\QuotationTemplate query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\QuotationTemplate withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\QuotationTemplate withoutTrashed()
  */
 	final class QuotationTemplate extends \Eloquent {}
 }
@@ -7934,9 +7934,9 @@ namespace Modules\Quotation\Models{
  * @property-read \Modules\Quotation\Models\QuotationTemplate|null $template
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Quotation\Database\Factories\QuotationTemplateItemFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|QuotationTemplateItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|QuotationTemplateItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|QuotationTemplateItem query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\QuotationTemplateItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\QuotationTemplateItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\QuotationTemplateItem query()
  */
 	final class QuotationTemplateItem extends \Eloquent {}
 }
@@ -7974,12 +7974,12 @@ namespace Modules\Quotation\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\WorkOrder\Models\WorkOrder|null $workOrder
  * @method static \Modules\Quotation\Database\Factories\SiteSurveyFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SiteSurvey newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SiteSurvey newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SiteSurvey onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SiteSurvey query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SiteSurvey withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SiteSurvey withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\SiteSurvey newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\SiteSurvey newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\SiteSurvey onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\SiteSurvey query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\SiteSurvey withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Quotation\Models\SiteSurvey withoutTrashed()
  */
 	final class SiteSurvey extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
 }
@@ -8165,9 +8165,9 @@ namespace Modules\Signage\Models{
  * @property-read \Modules\Signage\Models\SignPriceList|null $priceList
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Signage\Database\Factories\SignCatalogItemFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignCatalogItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignCatalogItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignCatalogItem query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignCatalogItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignCatalogItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignCatalogItem query()
  */
 	final class SignCatalogItem extends \Eloquent {}
 }
@@ -8193,9 +8193,9 @@ namespace Modules\Signage\Models{
  * @property-read \Modules\Signage\Models\SignPriceListItem|null $supplierItem
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Signage\Database\Factories\SignCatalogItemComponentFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignCatalogItemComponent newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignCatalogItemComponent newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignCatalogItemComponent query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignCatalogItemComponent newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignCatalogItemComponent newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignCatalogItemComponent query()
  */
 	final class SignCatalogItemComponent extends \Eloquent {}
 }
@@ -8229,9 +8229,9 @@ namespace Modules\Signage\Models{
  * @property-read \Modules\Signage\Models\SignSpec|null $signSpec
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Signage\Database\Factories\SignComponentFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignComponent newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignComponent newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignComponent query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignComponent newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignComponent newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignComponent query()
  */
 	final class SignComponent extends \Eloquent {}
 }
@@ -8258,9 +8258,9 @@ namespace Modules\Signage\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Signage\Database\Factories\SignEstimationRuleFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignEstimationRule newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignEstimationRule newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignEstimationRule query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignEstimationRule newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignEstimationRule newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignEstimationRule query()
  */
 	final class SignEstimationRule extends \Eloquent {}
 }
@@ -8282,9 +8282,9 @@ namespace Modules\Signage\Models{
  * @property-read int|null $items_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Signage\Database\Factories\SignPriceListFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignPriceList newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignPriceList newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignPriceList query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignPriceList newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignPriceList newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignPriceList query()
  */
 	final class SignPriceList extends \Eloquent {}
 }
@@ -8313,9 +8313,9 @@ namespace Modules\Signage\Models{
  * @property-read int|null $price_entries_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Signage\Database\Factories\SignPriceListItemFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignPriceListItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignPriceListItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignPriceListItem query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignPriceListItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignPriceListItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignPriceListItem query()
  */
 	final class SignPriceListItem extends \Eloquent {}
 }
@@ -8359,9 +8359,9 @@ namespace Modules\Signage\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Signage\Database\Factories\SignSpecFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignSpec newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignSpec newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignSpec query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignSpec newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignSpec newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignSpec query()
  */
 	final class SignSpec extends \Eloquent {}
 }
@@ -8381,9 +8381,9 @@ namespace Modules\Signage\Models{
  * @property-read \Modules\Signage\Models\SignPriceListItem|null $supplierItem
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Signage\Database\Factories\SignSupplierPriceEntryFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignSupplierPriceEntry newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignSupplierPriceEntry newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|SignSupplierPriceEntry query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignSupplierPriceEntry newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignSupplierPriceEntry newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signage\Models\SignSupplierPriceEntry query()
  */
 	final class SignSupplierPriceEntry extends \Eloquent {}
 }
@@ -8405,9 +8405,9 @@ namespace Modules\Signature\Models{
  * @property-read \Illuminate\Database\Eloquent\Model $signable
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\User\Models\User|null $user
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Signature newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Signature newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Signature query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signature\Models\Signature newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signature\Models\Signature newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signature\Models\Signature query()
  */
 	final class Signature extends \Eloquent {}
 }
@@ -8428,9 +8428,9 @@ namespace Modules\Signature\Models{
  * @property-read \Illuminate\Database\Eloquent\Model $sketchable
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\User\Models\User|null $user
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Sketch newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Sketch newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Sketch query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signature\Models\Sketch newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signature\Models\Sketch newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Signature\Models\Sketch query()
  */
 	final class Sketch extends \Eloquent {}
 }
@@ -8623,12 +8623,12 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberAgentFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberAgent newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberAgent newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberAgent onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberAgent query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberAgent withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberAgent withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberAgent newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberAgent newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberAgent onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberAgent query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberAgent withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberAgent withoutTrashed()
  */
 	final class TimberAgent extends \Eloquent {}
 }
@@ -8649,9 +8649,9 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\Timber\Models\TimberProduct|null $product
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberAgentCommissionFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberAgentCommission newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberAgentCommission newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberAgentCommission query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberAgentCommission newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberAgentCommission newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberAgentCommission query()
  */
 	final class TimberAgentCommission extends \Eloquent {}
 }
@@ -8669,9 +8669,9 @@ namespace Modules\Timber\Models{
  * @property-read \Illuminate\Database\Eloquent\Model $noteable
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberContactNoteFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberContactNote newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberContactNote newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberContactNote query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberContactNote newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberContactNote newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberContactNote query()
  */
 	final class TimberContactNote extends \Eloquent {}
 }
@@ -8726,12 +8726,12 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberCustomerFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberCustomer newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberCustomer newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberCustomer onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberCustomer query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberCustomer withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberCustomer withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberCustomer newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberCustomer newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberCustomer onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberCustomer query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberCustomer withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberCustomer withoutTrashed()
  */
 	final class TimberCustomer extends \Eloquent {}
 }
@@ -8750,9 +8750,9 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\Timber\Models\TimberProduct|null $product
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberCustomerPriceFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberCustomerPrice newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberCustomerPrice newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberCustomerPrice query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberCustomerPrice newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberCustomerPrice newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberCustomerPrice query()
  */
 	final class TimberCustomerPrice extends \Eloquent {}
 }
@@ -8792,9 +8792,9 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read string $wood_species_name
  * @method static \Modules\Timber\Database\Factories\TimberDerivedMaterialFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberDerivedMaterial newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberDerivedMaterial newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberDerivedMaterial query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberDerivedMaterial newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberDerivedMaterial newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberDerivedMaterial query()
  */
 	final class TimberDerivedMaterial extends \Eloquent {}
 }
@@ -8823,12 +8823,12 @@ namespace Modules\Timber\Models{
  * @property-read int|null $lines_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberDocumentFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberDocument newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberDocument newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberDocument onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberDocument query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberDocument withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberDocument withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberDocument newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberDocument newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberDocument onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberDocument query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberDocument withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberDocument withoutTrashed()
  */
 	final class TimberDocument extends \Eloquent {}
 }
@@ -8854,9 +8854,9 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\Timber\Models\TimberProduct|null $product
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberDocumentLineFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberDocumentLine newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberDocumentLine newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberDocumentLine query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberDocumentLine newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberDocumentLine newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberDocumentLine query()
  */
 	final class TimberDocumentLine extends \Eloquent {}
 }
@@ -8880,9 +8880,9 @@ namespace Modules\Timber\Models{
  * @property-read int|null $humidity_checks_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberDryingCycleFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberDryingCycle newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberDryingCycle newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberDryingCycle query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberDryingCycle newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberDryingCycle newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberDryingCycle query()
  */
 	final class TimberDryingCycle extends \Eloquent {}
 }
@@ -8904,9 +8904,9 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\Timber\Models\TimberInvoice|null $invoice
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberEInvoiceFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberEInvoice newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberEInvoice newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberEInvoice query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberEInvoice newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberEInvoice newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberEInvoice query()
  */
 	final class TimberEInvoice extends \Eloquent {}
 }
@@ -8927,9 +8927,9 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\Timber\Models\TimberDryingCycle|null $dryingCycle
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberHumidityCheckFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberHumidityCheck newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberHumidityCheck newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberHumidityCheck query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberHumidityCheck newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberHumidityCheck newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberHumidityCheck query()
  */
 	final class TimberHumidityCheck extends \Eloquent {}
 }
@@ -8960,12 +8960,12 @@ namespace Modules\Timber\Models{
  * @property-read int|null $lines_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberInvoiceFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberInvoice newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberInvoice newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberInvoice onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberInvoice query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberInvoice withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberInvoice withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberInvoice newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberInvoice newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberInvoice onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberInvoice query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberInvoice withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberInvoice withoutTrashed()
  */
 	final class TimberInvoice extends \Eloquent {}
 }
@@ -8990,9 +8990,9 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\Catalog\Models\Product|null $product
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberInvoiceLineFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberInvoiceLine newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberInvoiceLine newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberInvoiceLine query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberInvoiceLine newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberInvoiceLine newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberInvoiceLine query()
  */
 	final class TimberInvoiceLine extends \Eloquent {}
 }
@@ -9013,9 +9013,9 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\User\Models\User|null $printedBy
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberLabelPrintFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberLabelPrint newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberLabelPrint newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberLabelPrint query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberLabelPrint newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberLabelPrint newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberLabelPrint query()
  */
 	final class TimberLabelPrint extends \Eloquent {}
 }
@@ -9046,9 +9046,9 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read string $wood_species_name
  * @method static \Modules\Timber\Database\Factories\TimberLotFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberLot newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberLot newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberLot query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberLot newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberLot newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberLot query()
  */
 	final class TimberLot extends \Eloquent {}
 }
@@ -9069,9 +9069,9 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\User\Models\User|null $movedBy
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberMovementFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberMovement newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberMovement newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberMovement query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberMovement newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberMovement newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberMovement query()
  */
 	final class TimberMovement extends \Eloquent {}
 }
@@ -9099,9 +9099,9 @@ namespace Modules\Timber\Models{
  * @property-read int|null $movements_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberPackagedUnitFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPackagedUnit newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPackagedUnit newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPackagedUnit query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPackagedUnit newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPackagedUnit newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPackagedUnit query()
  */
 	final class TimberPackagedUnit extends \Eloquent {}
 }
@@ -9125,9 +9125,9 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\Timber\Models\TimberInvoice|null $invoice
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberPaymentInstallmentFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPaymentInstallment newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPaymentInstallment newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPaymentInstallment query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPaymentInstallment newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPaymentInstallment newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPaymentInstallment query()
  */
 	final class TimberPaymentInstallment extends \Eloquent {}
 }
@@ -9148,9 +9148,9 @@ namespace Modules\Timber\Models{
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\Timber\Models\TimberPriceListVersion> $versions
  * @property-read int|null $versions_count
  * @method static \Modules\Timber\Database\Factories\TimberPriceListFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPriceList newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPriceList newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPriceList query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPriceList newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPriceList newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPriceList query()
  */
 	final class TimberPriceList extends \Eloquent {}
 }
@@ -9169,9 +9169,9 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\Timber\Models\TimberProduct|null $product
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberPriceListItemFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPriceListItem newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPriceListItem newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPriceListItem query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPriceListItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPriceListItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPriceListItem query()
  */
 	final class TimberPriceListItem extends \Eloquent {}
 }
@@ -9190,9 +9190,9 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\Timber\Models\TimberPriceList|null $priceList
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberPriceListVersionFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPriceListVersion newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPriceListVersion newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPriceListVersion query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPriceListVersion newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPriceListVersion newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPriceListVersion query()
  */
 	final class TimberPriceListVersion extends \Eloquent {}
 }
@@ -9224,9 +9224,9 @@ namespace Modules\Timber\Models{
  * @property-read int|null $input_lots_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberProcessingStepFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberProcessingStep newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberProcessingStep newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberProcessingStep query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberProcessingStep newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberProcessingStep newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberProcessingStep query()
  */
 	final class TimberProcessingStep extends \Eloquent {}
 }
@@ -9244,9 +9244,9 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\Timber\Models\TimberProcessingStep|null $processingStep
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberProcessingStepProcessableFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberProcessingStepProcessable newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberProcessingStepProcessable newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberProcessingStepProcessable query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberProcessingStepProcessable newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberProcessingStepProcessable newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberProcessingStepProcessable query()
  */
 	final class TimberProcessingStepProcessable extends \Eloquent {}
 }
@@ -9292,12 +9292,12 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\Timber\Models\TimberSupplier|null $supplier
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberProductFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberProduct newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberProduct newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberProduct onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberProduct query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberProduct withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberProduct withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberProduct newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberProduct newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberProduct onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberProduct query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberProduct withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberProduct withoutTrashed()
  */
 	final class TimberProduct extends \Eloquent {}
 }
@@ -9334,9 +9334,9 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read string $wood_species_name
  * @method static \Modules\Timber\Database\Factories\TimberPurchaseRecordFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPurchaseRecord newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPurchaseRecord newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberPurchaseRecord query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPurchaseRecord newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPurchaseRecord newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberPurchaseRecord query()
  */
 	final class TimberPurchaseRecord extends \Eloquent {}
 }
@@ -9366,9 +9366,9 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\Timber\Models\TimberProduct|null $product
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberStockMovementFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberStockMovement newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberStockMovement newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberStockMovement query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberStockMovement newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberStockMovement newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberStockMovement query()
  */
 	final class TimberStockMovement extends \Eloquent {}
 }
@@ -9401,12 +9401,12 @@ namespace Modules\Timber\Models{
  * @property-read int|null $purchase_records_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberSupplierFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberSupplier newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberSupplier newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberSupplier onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberSupplier query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberSupplier withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberSupplier withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberSupplier newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberSupplier newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberSupplier onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberSupplier query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberSupplier withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberSupplier withoutTrashed()
  */
 	final class TimberSupplier extends \Eloquent {}
 }
@@ -9430,12 +9430,12 @@ namespace Modules\Timber\Models{
  * @property-read int|null $purchase_records_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberTransporterFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberTransporter newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberTransporter newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberTransporter onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberTransporter query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberTransporter withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberTransporter withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberTransporter newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberTransporter newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberTransporter onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberTransporter query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberTransporter withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberTransporter withoutTrashed()
  */
 	final class TimberTransporter extends \Eloquent {}
 }
@@ -9453,9 +9453,9 @@ namespace Modules\Timber\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\Timber\Database\Factories\TimberWoodSpeciesFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberWoodSpecies newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberWoodSpecies newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|TimberWoodSpecies query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberWoodSpecies newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberWoodSpecies newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Timber\Models\TimberWoodSpecies query()
  */
 	final class TimberWoodSpecies extends \Eloquent {}
 }
@@ -11257,12 +11257,12 @@ namespace Modules\Vehicle\Models{
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\Vehicle\Models\VehicleDocument> $documents
  * @property-read int|null $documents_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Vehicle newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Vehicle newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Vehicle onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Vehicle query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Vehicle withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Vehicle withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Vehicle\Models\Vehicle newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Vehicle\Models\Vehicle newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Vehicle\Models\Vehicle onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Vehicle\Models\Vehicle query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Vehicle\Models\Vehicle withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Vehicle\Models\Vehicle withoutTrashed()
  */
 	final class Vehicle extends \Eloquent {}
 }
@@ -11280,9 +11280,9 @@ namespace Modules\Vehicle\Models{
  * @property-read \Modules\Document\Models\Media|null $media
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\Vehicle\Models\Vehicle|null $vehicle
- * @method static \Illuminate\Database\Eloquent\Builder<static>|VehicleDocument newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|VehicleDocument newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|VehicleDocument query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Vehicle\Models\VehicleDocument newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Vehicle\Models\VehicleDocument newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Vehicle\Models\VehicleDocument query()
  */
 	final class VehicleDocument extends \Eloquent {}
 }
@@ -11307,9 +11307,9 @@ namespace Modules\WhatsApp\Models{
  * @property-read \Modules\Customer\Models\CustomerSite|null $site
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\User\Models\User|null $user
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WhatsAppContactIdentity newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WhatsAppContactIdentity newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WhatsAppContactIdentity query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WhatsApp\Models\WhatsAppContactIdentity newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WhatsApp\Models\WhatsAppContactIdentity newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WhatsApp\Models\WhatsAppContactIdentity query()
  */
 	final class WhatsAppContactIdentity extends \Eloquent {}
 }
@@ -11343,9 +11343,9 @@ namespace Modules\WhatsApp\Models{
  * @property-read \Modules\Customer\Models\CustomerSite|null $site
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\User\Models\User|null $user
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WhatsAppConversation newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WhatsAppConversation newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WhatsAppConversation query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WhatsApp\Models\WhatsAppConversation newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WhatsApp\Models\WhatsAppConversation newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WhatsApp\Models\WhatsAppConversation query()
  */
 	final class WhatsAppConversation extends \Eloquent {}
 }
@@ -11381,9 +11381,9 @@ namespace Modules\WhatsApp\Models{
  * @property-read \Modules\AiAssistant\Models\AiActionProposal|null $proposal
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\WorkOrder\Models\WorkOrder|null $workOrder
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WhatsAppMessage newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WhatsAppMessage newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WhatsAppMessage query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WhatsApp\Models\WhatsAppMessage newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WhatsApp\Models\WhatsAppMessage newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WhatsApp\Models\WhatsAppMessage query()
  */
 	final class WhatsAppMessage extends \Eloquent {}
 }
@@ -11394,8 +11394,8 @@ namespace Modules\WorkOrder\Models{
  *
  * @property \Spatie\SchemalessAttributes\SchemalessAttributes $extra
  * @property-read string $avatar
- * @property-read Profile|null $creator
- * @property-read Profile|null $deleter
+ * @property-read \Modules\WorkOrder\Models\Profile|null $creator
+ * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\User\Models\DeviceUser> $deviceUsers
  * @property-read int|null $device_users_count
  * @property-read \Modules\User\Models\DeviceProfile|null $pivot
@@ -11418,22 +11418,22 @@ namespace Modules\WorkOrder\Models{
  * @property-read int|null $roles_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\User\Models\Team> $teams
  * @property-read int|null $teams_count
- * @property-read Profile|null $updater
+ * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\User\Models\User|null $user
  * @property-read string|null $user_name
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile byUuid(string $uuid)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile childrenWith(array $relations)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile childrenWithCount(array $relations)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\Profile byUuid(string $uuid)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\Profile childrenWith(array $relations)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\Profile childrenWithCount(array $relations)
  * @method static \Modules\WorkOrder\Database\Factories\ProfileFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile permission($permissions, bool $without = false)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile role($roles, ?string $guard = null, bool $without = false)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile team($teams, bool $without = false)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile withoutPermission($permissions)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile withoutRole($roles, ?string $guard = null)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile withoutTeam($teams)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\Profile newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\Profile newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\Profile permission($permissions, bool $without = false)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\Profile query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\Profile role($roles, ?string $guard = null, bool $without = false)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\Profile team($teams, bool $without = false)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\Profile withoutPermission($permissions)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\Profile withoutRole($roles, ?string $guard = null)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\Profile withoutTeam($teams)
  */
 	class Profile extends \Eloquent {}
 }
@@ -11486,12 +11486,12 @@ namespace Modules\WorkOrder\Models{
  * @property-read int|null $status_events_count
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\WorkOrder\Database\Factories\WorkOrderFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrder newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrder newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrder onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrder query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrder withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrder withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrder newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrder newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrder onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrder query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrder withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrder withoutTrashed()
  */
 	final class WorkOrder extends \Eloquent {}
 }
@@ -11513,12 +11513,12 @@ namespace Modules\WorkOrder\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\WorkOrder\Models\WorkOrder|null $workOrder
  * @method static \Modules\WorkOrder\Database\Factories\WorkOrderActivityFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderActivity newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderActivity newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderActivity onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderActivity query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderActivity withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderActivity withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderActivity newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderActivity newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderActivity onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderActivity query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderActivity withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderActivity withoutTrashed()
  */
 	final class WorkOrderActivity extends \Eloquent {}
 }
@@ -11540,9 +11540,9 @@ namespace Modules\WorkOrder\Models{
  * @property-read \Modules\User\Models\User|null $user
  * @property-read \Modules\WorkOrder\Models\WorkOrder|null $workOrder
  * @method static \Modules\WorkOrder\Database\Factories\WorkOrderAssignmentFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderAssignment newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderAssignment newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderAssignment query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderAssignment newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderAssignment newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderAssignment query()
  */
 	final class WorkOrderAssignment extends \Eloquent {}
 }
@@ -11574,9 +11574,9 @@ namespace Modules\WorkOrder\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @method static \Modules\WorkOrder\Database\Factories\WorkOrderMaterialFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderMaterial newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderMaterial newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderMaterial query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderMaterial newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderMaterial newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderMaterial query()
  */
 	final class WorkOrderMaterial extends \Eloquent {}
 }
@@ -11597,9 +11597,9 @@ namespace Modules\WorkOrder\Models{
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\WorkOrder\Models\WorkOrder> $workOrders
  * @property-read int|null $work_orders_count
  * @method static \Modules\WorkOrder\Database\Factories\WorkOrderStatusFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderStatus newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderStatus newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderStatus query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderStatus newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderStatus newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderStatus query()
  */
 	final class WorkOrderStatus extends \Eloquent {}
 }
@@ -11623,9 +11623,9 @@ namespace Modules\WorkOrder\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
  * @property-read \Modules\WorkOrder\Models\WorkOrder|null $workOrder
  * @method static \Modules\WorkOrder\Database\Factories\WorkOrderStatusEventFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderStatusEvent newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderStatusEvent newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WorkOrderStatusEvent query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderStatusEvent newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderStatusEvent newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\WorkOrder\Models\WorkOrderStatusEvent query()
  */
 	final class WorkOrderStatusEvent extends \Eloquent {}
 }
@@ -11646,9 +11646,9 @@ namespace Modules\Wts\Models{
  * @property string|null $updated_by
  * @property string|null $created_by
  * @property-read \Illuminate\Database\Eloquent\Model $auditable
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsAuditLog newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsAuditLog newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsAuditLog query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsAuditLog newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsAuditLog newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsAuditLog query()
  */
 	final class WtsAuditLog extends \Eloquent {}
 }
@@ -11676,12 +11676,12 @@ namespace Modules\Wts\Models{
  * @property-read \Modules\Wts\Models\WtsProcessingStep|null $processingStep
  * @property-read \Modules\Wts\Models\WtsTechnicalSheetSnapshot|null $technicalSheetSnapshot
  * @method static \Modules\Wts\Database\Factories\WtsDerivedMaterialFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsDerivedMaterial newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsDerivedMaterial newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsDerivedMaterial onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsDerivedMaterial query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsDerivedMaterial withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsDerivedMaterial withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsDerivedMaterial newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsDerivedMaterial newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsDerivedMaterial onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsDerivedMaterial query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsDerivedMaterial withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsDerivedMaterial withoutTrashed()
  */
 	final class WtsDerivedMaterial extends \Eloquent {}
 }
@@ -11706,12 +11706,12 @@ namespace Modules\Wts\Models{
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\Wts\Models\WtsUnit> $units
  * @property-read int|null $units_count
  * @method static \Modules\Wts\Database\Factories\WtsInboundLotFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsInboundLot newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsInboundLot newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsInboundLot onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsInboundLot query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsInboundLot withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsInboundLot withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsInboundLot newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsInboundLot newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsInboundLot onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsInboundLot query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsInboundLot withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsInboundLot withoutTrashed()
  */
 	final class WtsInboundLot extends \Eloquent {}
 }
@@ -11754,12 +11754,12 @@ namespace Modules\Wts\Models{
  * @property-read int|null $non_conformity_reports_count
  * @property-read \Modules\Wts\Models\WtsTechnicalSheetSnapshot|null $technicalSheetSnapshot
  * @method static \Modules\Wts\Database\Factories\WtsInboundRecordFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsInboundRecord newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsInboundRecord newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsInboundRecord onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsInboundRecord query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsInboundRecord withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsInboundRecord withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsInboundRecord newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsInboundRecord newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsInboundRecord onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsInboundRecord query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsInboundRecord withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsInboundRecord withoutTrashed()
  */
 	final class WtsInboundRecord extends \Eloquent {}
 }
@@ -11783,12 +11783,12 @@ namespace Modules\Wts\Models{
  * @property-read \Illuminate\Database\Eloquent\Model $labelable
  * @property-read \Modules\User\Models\User|null $printedBy
  * @method static \Modules\Wts\Database\Factories\WtsLabelPrintFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsLabelPrint newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsLabelPrint newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsLabelPrint onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsLabelPrint query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsLabelPrint withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsLabelPrint withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsLabelPrint newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsLabelPrint newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsLabelPrint onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsLabelPrint query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsLabelPrint withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsLabelPrint withoutTrashed()
  */
 	final class WtsLabelPrint extends \Eloquent {}
 }
@@ -11814,12 +11814,12 @@ namespace Modules\Wts\Models{
  * @property-read \Modules\Wts\Models\WtsInboundLot|null $lot
  * @property-read \Modules\User\Models\User|null $reportedBy
  * @method static \Modules\Wts\Database\Factories\WtsNonConformityReportFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsNonConformityReport newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsNonConformityReport newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsNonConformityReport onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsNonConformityReport query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsNonConformityReport withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsNonConformityReport withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsNonConformityReport newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsNonConformityReport newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsNonConformityReport onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsNonConformityReport query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsNonConformityReport withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsNonConformityReport withoutTrashed()
  */
 	final class WtsNonConformityReport extends \Eloquent {}
 }
@@ -11841,12 +11841,12 @@ namespace Modules\Wts\Models{
  * @property string|null $deleted_by
  * @property-read \Modules\User\Models\User|null $updatedBy
  * @method static \Modules\Wts\Database\Factories\WtsOperationalParameterFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsOperationalParameter newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsOperationalParameter newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsOperationalParameter onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsOperationalParameter query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsOperationalParameter withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsOperationalParameter withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsOperationalParameter newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsOperationalParameter newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsOperationalParameter onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsOperationalParameter query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsOperationalParameter withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsOperationalParameter withoutTrashed()
  */
 	final class WtsOperationalParameter extends \Eloquent {}
 }
@@ -11870,12 +11870,12 @@ namespace Modules\Wts\Models{
  * @property string|null $deleted_by
  * @property-read \Modules\Wts\Models\WtsUnit|null $unit
  * @method static \Modules\Wts\Database\Factories\WtsPrintJobFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsPrintJob newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsPrintJob newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsPrintJob onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsPrintJob query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsPrintJob withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsPrintJob withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsPrintJob newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsPrintJob newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsPrintJob onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsPrintJob query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsPrintJob withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsPrintJob withoutTrashed()
  */
 	final class WtsPrintJob extends \Eloquent {}
 }
@@ -11908,12 +11908,12 @@ namespace Modules\Wts\Models{
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\Wts\Models\WtsUnit> $selectedUnits
  * @property-read \Modules\Wts\Models\WtsTechnicalSheetSnapshot|null $technicalSheetSnapshot
  * @method static \Modules\Wts\Database\Factories\WtsProcessingStepFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsProcessingStep newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsProcessingStep newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsProcessingStep onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsProcessingStep query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsProcessingStep withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsProcessingStep withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsProcessingStep newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsProcessingStep newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsProcessingStep onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsProcessingStep query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsProcessingStep withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsProcessingStep withoutTrashed()
  */
 	final class WtsProcessingStep extends \Eloquent {}
 }
@@ -11930,9 +11930,9 @@ namespace Modules\Wts\Models{
  * @property-read \Modules\WorkOrder\Models\Profile|null $creator
  * @property-read \Modules\WorkOrder\Models\Profile|null $deleter
  * @property-read \Modules\WorkOrder\Models\Profile|null $updater
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsProcessingStepUnit newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsProcessingStepUnit newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsProcessingStepUnit query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsProcessingStepUnit newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsProcessingStepUnit newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsProcessingStepUnit query()
  */
 	final class WtsProcessingStepUnit extends \Eloquent {}
 }
@@ -11959,9 +11959,9 @@ namespace Modules\Wts\Models{
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Modules\Wts\Models\WtsUnit> $units
  * @property-read int|null $units_count
  * @method static \Modules\Wts\Database\Factories\WtsTechnicalSheetSnapshotFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsTechnicalSheetSnapshot newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsTechnicalSheetSnapshot newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsTechnicalSheetSnapshot query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsTechnicalSheetSnapshot newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsTechnicalSheetSnapshot newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsTechnicalSheetSnapshot query()
  */
 	final class WtsTechnicalSheetSnapshot extends \Eloquent {}
 }
@@ -11994,12 +11994,12 @@ namespace Modules\Wts\Models{
  * @property-read int|null $processing_steps_count
  * @property-read \Modules\Wts\Models\WtsTechnicalSheetSnapshot|null $technicalSheetSnapshot
  * @method static \Modules\Wts\Database\Factories\WtsUnitFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsUnit newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsUnit newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsUnit onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsUnit query()
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsUnit withTrashed(bool $withTrashed = true)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|WtsUnit withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsUnit newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsUnit newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsUnit onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsUnit query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsUnit withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|\Modules\Wts\Models\WtsUnit withoutTrashed()
  */
 	final class WtsUnit extends \Eloquent {}
 }

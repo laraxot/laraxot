@@ -10,10 +10,10 @@ use Modules\User\Models\Device;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 /**
- * @param array<string, mixed> $attributes
+ * @param  array<string, mixed>  $attributes
  */
 function modelsDeviceCreate(array $attributes = []): Device
 {
@@ -21,7 +21,7 @@ function modelsDeviceCreate(array $attributes = []): Device
 }
 
 /**
- * @param array<string, mixed> $where
+ * @param  array<string, mixed>  $where
  */
 function modelsDeviceAssertInDatabase(string $id, array $where): void
 {

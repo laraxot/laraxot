@@ -11,7 +11,7 @@ use Modules\User\Models\User;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 /**
  * @return array{client: Client, secret: string}
@@ -34,7 +34,7 @@ function createPassportClient(): array
 }
 
 test('client credentials grant returns token', function (): void {
-    /** @var TestCase $this */
+    /* @var TestCase $this */
     ['client' => $client, 'secret' => $secret] = createPassportClient();
 
     $response = $this->post('/oauth/token', [
@@ -50,7 +50,7 @@ test('client credentials grant returns token', function (): void {
 });
 
 test('client credentials can be associated to a specific user', function (): void {
-    /** @var TestCase $this */
+    /* @var TestCase $this */
     ['client' => $client] = createPassportClient();
     $user = UserFactory::new()->createOne();
 

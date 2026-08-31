@@ -21,7 +21,7 @@ use Modules\User\Models\Policies\TeamPermissionPolicy;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('OauthClientPolicy can be instantiated', function () {
     $policy = new OauthClientPolicy();

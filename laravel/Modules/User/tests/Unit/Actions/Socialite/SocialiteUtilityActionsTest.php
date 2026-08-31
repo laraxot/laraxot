@@ -23,7 +23,7 @@ use Modules\User\Tests\Unit\Actions\Socialite\Fixtures\DeletableAccessTokenFixtu
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Socialite utility actions', function (): void {
     it('returns allow list when configured as string', function (): void {

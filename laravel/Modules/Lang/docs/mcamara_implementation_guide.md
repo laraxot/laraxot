@@ -2,10 +2,10 @@
 title: "Guida all'Implementazione di mcamara/laravel-localization"
 module: "Lang"
 type: how-to
-tags: [lang, service, helper, text]
+tags: [git, conflicts, resolution, summary]
 created: 2026-07-14
 updated: 2026-07-14
-qmd: "lang service helper text"
+qmd: "git conflicts resolution summary"
 related:
   - "./italian-text-refined-audit-report.md"
 ---

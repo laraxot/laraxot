@@ -8,7 +8,7 @@ use Modules\User\Datas\PasswordData;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Password Data Labels', function (): void {
     test('password data labels are translated', function (): void {

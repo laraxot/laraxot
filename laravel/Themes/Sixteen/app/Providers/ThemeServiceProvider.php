@@ -284,11 +284,18 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
      */
     protected function loadConfigFrom(string $path, string $namespace): void
     {
-        if (is_dir($path)) {
-            foreach (glob($path.'/*.php') as $file) {
-                $name = basename($file, '.php');
-                $this->mergeConfigFrom($file, $namespace.'.'.$name);
-            }
+        if (! is_dir($path)) {
+            return;
+        }
+
+        $files = glob($path.'/*.php');
+        if ($files === false) {
+            return;
+        }
+
+        foreach ($files as $file) {
+            $name = basename($file, '.php');
+            $this->mergeConfigFrom($file, $namespace.'.'.$name);
         }
     }
 }

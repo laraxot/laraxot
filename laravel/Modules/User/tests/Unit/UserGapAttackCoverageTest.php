@@ -9,7 +9,6 @@ use Illuminate\Auth\Events\OtherDeviceLogout;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Contracts\User as SocialiteUserContract;
-use Mockery;
 use Mockery\MockInterface;
 use Modules\User\Actions\Socialite\RetrieveSocialiteUserAction;
 use Modules\User\Filament\Clusters\Passport\Resources\OauthDeviceCodeResource;
@@ -28,13 +27,11 @@ use Modules\User\Tests\Fixtures\UserGapBaseUserProbe;
 use Modules\User\Tests\TestCase;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
-use ReflectionClass;
-use ReflectionMethod;
 
-uses(\Modules\User\Tests\TestCase::class)->group('no-user-db');
+uses(TestCase::class)->group('no-user-db');
 
 afterEach(function (): void {
-    Mockery::close();
+    \Mockery::close();
 });
 
 describe('User gap attack — highest miss files', function (): void {
@@ -61,8 +58,8 @@ describe('User gap attack — highest miss files', function (): void {
                 } catch (\Throwable) {
                 }
             }
-            $ref = new ReflectionClass($class);
-            foreach ($ref->getMethods(ReflectionMethod::IS_PUBLIC | ReflectionMethod::IS_STATIC) as $method) {
+            $ref = new \ReflectionClass($class);
+            foreach ($ref->getMethods(\ReflectionMethod::IS_PUBLIC | \ReflectionMethod::IS_STATIC) as $method) {
                 if ($method->getDeclaringClass()->getName() !== $class) {
                     continue;
                 }
@@ -85,7 +82,7 @@ describe('User gap attack — highest miss files', function (): void {
             if (! class_exists($class)) {
                 continue;
             }
-            $instance = (new ReflectionClass($class))->newInstanceWithoutConstructor();
+            $instance = (new \ReflectionClass($class))->newInstanceWithoutConstructor();
             if (property_exists($instance, 'email')) {
                 $instance->email = 'test@example.com';
             }
@@ -95,8 +92,8 @@ describe('User gap attack — highest miss files', function (): void {
             if (property_exists($instance, 'password_confirmation')) {
                 $instance->password_confirmation = 'Password1!';
             }
-            $ref = new ReflectionClass($instance);
-            foreach ($ref->getMethods(ReflectionMethod::IS_PUBLIC) as $method) {
+            $ref = new \ReflectionClass($instance);
+            foreach ($ref->getMethods(\ReflectionMethod::IS_PUBLIC) as $method) {
                 if ($method->getDeclaringClass()->getName() !== $class) {
                     continue;
                 }
@@ -120,9 +117,9 @@ describe('User gap attack — highest miss files', function (): void {
             if (! class_exists($class)) {
                 continue;
             }
-            $widget = (new ReflectionClass($class))->newInstanceWithoutConstructor();
-            $ref = new ReflectionClass($widget);
-            foreach ($ref->getMethods(ReflectionMethod::IS_PUBLIC | ReflectionMethod::IS_PROTECTED) as $method) {
+            $widget = (new \ReflectionClass($class))->newInstanceWithoutConstructor();
+            $ref = new \ReflectionClass($widget);
+            foreach ($ref->getMethods(\ReflectionMethod::IS_PUBLIC | \ReflectionMethod::IS_PROTECTED) as $method) {
                 if ($method->getDeclaringClass()->getName() !== $class) {
                     continue;
                 }
@@ -141,7 +138,7 @@ describe('User gap attack — highest miss files', function (): void {
 
     test('Listeners Logout e Socialite Retrieve', function (): void {
         /** @var UserContract&MockInterface $user */
-        $user = Mockery::mock(UserContract::class);
+        $user = \Mockery::mock(UserContract::class);
         mockeryExpect($user->shouldReceive('getAuthIdentifier'))->andReturn(1);
 
         foreach ([LogoutListener::class, OtherDeviceLogoutListener::class] as $class) {
@@ -152,7 +149,7 @@ describe('User gap attack — highest miss files', function (): void {
                 $listener = app($class);
             } catch (\Throwable) {
                 try {
-                    $listener = (new ReflectionClass($class))->newInstanceWithoutConstructor();
+                    $listener = (new \ReflectionClass($class))->newInstanceWithoutConstructor();
                 } catch (\Throwable) {
                     continue;
                 }
@@ -162,7 +159,7 @@ describe('User gap attack — highest miss files', function (): void {
                 ? OtherDeviceLogout::class
                 : Logout::class;
             /** @var Authenticatable&MockInterface $authUser */
-            $authUser = Mockery::mock(Authenticatable::class);
+            $authUser = \Mockery::mock(Authenticatable::class);
             mockeryExpect($authUser->shouldReceive('getAuthIdentifier'))->andReturn(1);
             $event = new $eventClass('web', $authUser);
 
@@ -178,10 +175,10 @@ describe('User gap attack — highest miss files', function (): void {
         if (class_exists(RetrieveSocialiteUserAction::class)) {
             try {
                 $action = app(RetrieveSocialiteUserAction::class);
-                $ref = new ReflectionClass($action);
+                $ref = new \ReflectionClass($action);
                 if ($ref->hasMethod('execute')) {
                     /** @var SocialiteUserContract&MockInterface $socialiteUser */
-                    $socialiteUser = Mockery::mock(SocialiteUserContract::class);
+                    $socialiteUser = \Mockery::mock(SocialiteUserContract::class);
                     try {
                         $action->execute('google', $socialiteUser);
                     } catch (\Throwable) {
@@ -212,8 +209,8 @@ describe('User gap attack — highest miss files', function (): void {
         ], true);
         Assert::assertSame('t@e.st', $user->email);
 
-        $ref = new ReflectionClass($user);
-        foreach ($ref->getMethods(ReflectionMethod::IS_PUBLIC) as $method) {
+        $ref = new \ReflectionClass($user);
+        foreach ($ref->getMethods(\ReflectionMethod::IS_PUBLIC) as $method) {
             if ($method->getDeclaringClass()->getName() !== UserGapBaseUserProbe::class
                 && $method->getDeclaringClass()->getName() !== BaseUser::class) {
                 continue;

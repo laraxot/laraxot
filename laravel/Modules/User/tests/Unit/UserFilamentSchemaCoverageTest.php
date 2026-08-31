@@ -10,7 +10,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\glob;
 
-uses(\Modules\User\Tests\TestCase::class)->group('no-user-db');
+uses(TestCase::class)->group('no-user-db');
 
 /** @return array{string, string} */
 /** @return list{string, string} */

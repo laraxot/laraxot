@@ -1,203 +1,174 @@
----
-title: "Geo — indice della documentazione"
-description: "Documentazione del modulo Geo: dati geografici e mappe."
-module: Geo
-tags: [geo, documentazione, modulo, laraxot]
-status: active
-repository: https://github.com/laraxot/module_geo_fila5
-related:
-  - ./00-index.md
-  - ./index.md
-  - ../../../../docs/wiki/audits/docs-redundancy-audit.md
-issues: https://github.com/laraxot/module_geo_fila5/issues
-discussions: https://github.com/laraxot/module_geo_fila5/discussions
----
+# Geo Module Documentation Index
 
-# PTVX - Documentazione Completa
+## Documentation Structure
 
-> Sistema Modulare per la Gestione della Pubblica Amministrazione
+### 📚 Core Documentation
 
-## 🚀 Quick Start
+- [**Architecture Overview**](./architecture.md) - Technical architecture and system design
+- [**Component Analysis**](./story-map-component-analysis.md) - Deep dive on map component philosophy and best practices
+- [**Project Strategy**](./PRODUCT_STRATEGY.md) - Strategic vision and roadmap
+- [**Technical Implementation**](./TECHNICAL.md) - Technical guidelines and patterns
 
-- **[Introduzione](./README.md)** - Panoramica del progetto
-- **[Getting Started](./getting-started/)** - Setup e primi passi
-- **[Installation](./installation.md)** - Guida installazione completa
+### 🚀 Features & Capabilities
 
-## 🏗️ Architettura
+- [**Address Implementation**](./address-implementation.md) - Address handling and validation
+- [**Address Autocomplete**](./address-autocomplete.md) - Smart address suggestions
+- [**Map Components**](./leaflet_marker_map_input.md) - Interactive map components
+- [**Advanced Features**](./ADVANCED_FEATURES.md) - Power user features
+- [**Product Roadmap**](./PRODUCT_ROADMAP.md) - Future development plans
 
-### Fondamenti
-- **[Architecture Overview](./architecture/)** - Architettura generale del sistema
-- **[Directory Structure](./directory-structure.md)** - Struttura cartelle e organizzazione
-- **[Module System](./development/module-development.md)** - Sistema modulare
-- **[Dependency Management](./dependencies.md)** - Gestione dipendenze
+### 🔧 Integration & Usage
 
-### Moduli Core
-- **[Xot Module](../laravel/Modules/Xot/docs/README.md)** - Framework base
-- **[User Module](../laravel/Modules/User/docs/README.md)** - Autenticazione e autorizzazione
-- **[UI Module](../laravel/Modules/UI/docs/README.md)** - Componenti interfaccia
-- **[Tenant Module](../laravel/Modules/Tenant/docs/README.md)** - Multi-tenancy
-- **[Lang Module](../laravel/Modules/Lang/docs/README.md)** - Gestione traduzioni
+- [**Coordinate Picker Purpose & Architecture**](./coordinate-picker-purpose.md) - Scopo, utilità e implementazione del componente mappa per wizard ticket
+- [**SVG Icon Architecture**](./coordinate-picker-purpose.md#-svg-icon-architecture-no-hardcoded-svg) - Regola DRY: SVG separati in `resources/svg/`, no inline hardcoded
+- [**Filament Components**](./filament-forms-components.md) - Filament forms components, web components (Lit.dev), and integration patterns
+- [**Filament Integration**](./FILAMENT_EXTENSION_RULES.md) - Filament PHP integration patterns
 
-### Design Patterns
-- **[Service Providers](./service-provider-best-practices.md)** - Pattern service providers
-- **[Data Transfer Objects](./best-practices/dto-pattern.md)** - DTO con Spatie Laravel Data
-- **[Actions Pattern](./actions.md)** - Spatie QueueableActions
-- **[Event Sourcing](../laravel/Modules/Activity/docs/event-sourcing.md)** - Event sourcing pattern
+### 🎨 Assets & Icons
 
-## 💻 Sviluppo
+**SVG Icons (resources/svg/)**:
+- `magnifying-glass.svg` - Search icon for address input
+- `location.svg` - Geolocation button
+- `layer.svg` - Layer switcher (street/satellite/topo)
+- `crosshair.svg` - Center map crosshair
+- `arrows-pointing-out.svg` / `arrows-pointing-in.svg` - Fullscreen toggle
+- `map-icon-plus.svg` / `map-icon-minus.svg` - Zoom controls
+- [**Web Components & Build Architecture**](./filament-forms-components.md#web-components--litdev) - Lit.dev web component pattern, module vs theme asset separation
+- [**MCP Servers**](./MCP_SERVER_RECOMMENDED.md) - Recommended Model Context Protocol servers
+- [**App Integration**](./app-integration.md) - Integration with main application
+- [**Address Migration**](./address_migration_guide.md) - Migration guides and patterns
 
-### Guide per Sviluppatori
-- **[Development Guide](./development/)** - Guida completa sviluppo
-- **[Module Development](./development/module-development.md)** - Creare nuovi moduli
-- **[Coding Conventions](./conventions/)** - Convenzioni di codice
-- **[Best Practices](./best-practices/)** - Best practices raccomandate
+### 📊 Analysis & Research
 
-### Framework e Stack
-- **[Laravel](./core/laravel.md)** - Framework Laravel
-- **[Filament](./filament/)** - Admin panel Filament
-- **[Livewire](./core/livewire.md)** - Componenti reattivi
-- **[Blade Components](./blade-components.md)** - Componenti Blade
+- [**Model Analysis**](./analisi-modelli-doppi.md) - Duplicate models analysis and recommendations
+- [**Code Quality Analysis**](./analysis/code-quality-analysis.md) - Code quality metrics and improvements
+- [**User Research**](./USER_RESEARCH.md) - User experience research findings
+- [**Domain Research**](./_integration/archive/here-com.md) - Geographic domain research
 
-### Database
-- **[Migrations](./database-migrations.md)** - Sistema migrazioni
-- **[Models](./core/models.md)** - Eloquent models
-- **[Repositories](./repositories.md)** - Pattern repository
-- **[EAV System](./eav-system.md)** - Entity-Attribute-Value
+### 🛠️ Development & Tools
 
-## 🎨 Frontend
+- [**Sprint Planning**](./SPRINT_PLANNING.md) - Sprint planning and tracking
+- [**Project Management**](./PROJECT.md) - Project management documentation
+- [**PHPStan Fixes**](./PHPSTAN_FIXES.md) - Code quality fixes and improvements
+- [**Vite Build Configuration**](./vite-build-configuration.md) - Vite 7.x + Tailwind 4.x setup per moduli
+- [**Configuration**](./config/config.php) - Module configuration
 
-### UI/UX
-- **[UI Components](./ui_components/)** - Componenti UI custom
-- **[Theme System](./themes/)** - Sistema di temi
-- **[Blade Components](./blade-components.md)** - Componenti Blade
-- **[Forms](./filament/forms.md)** - Form builder
+### 📁 Stories & Tasks
 
-### Filament
-- **[Resources](./filament/resources.md)** - Filament Resources
-- **[Pages](./filament/pages.md)** - Custom pages
-- **[Widgets](./filament/widgets.md)** - Dashboard widgets
-- **[Actions](./filament/actions.md)** - Custom actions
-- **[Relation Managers](./filament/relation-managers.md)** - Gestione relazioni
+- [**Map Component Enhancement Story**](../../_bmad/bmm/4-implementation/bmad-create-story/story-map-ticket-wizard.md) - Enhanced map component for ticket wizard
+- [**Address Input Story**](../../_bmad/bmm/4-implementation/bmad-create-story/discover-inputs.md) - Address input implementation
 
-## 🔒 Sicurezza
+### 📋 Guidelines & Best Practices
 
-### Autenticazione e Autorizzazione
-- **[Authentication](./core/authentication.md)** - Sistema autenticazione
-- **[Authorization](./authorization.md)** - Autorizzazione e permessi
-- **[Roles & Permissions](../laravel/Modules/User/docs/roles-permissions.md)** - Gestione ruoli
-- **[Teams](./teams.md)** - Gestione team
+- [**Design Rules**](./FILAMENT_EXTENSION_RULES.md) - Filament component design rules
+- [**Consolidation Analysis**](./analisi-moduli-ottimizzazioni.md) - Module consolidation guidelines
+- [**Performance Guidelines**](./TECHNICAL.md#performance) - Performance optimization patterns
 
-### Sicurezza Dati
-- **[Security Best Practices](./security.md)** - Sicurezza applicazione
-- **[GDPR Compliance](./gdpr-compliance.md)** - Conformità GDPR
-- **[Audit Log](../laravel/Modules/Activity/docs/README.md)** - Logging attività
+### 🔗 Related Modules
 
-## 🧪 Testing
+- **Fixcity Module** - Main application module using Geo components
+  - [Ticket Wizard Implementation](../../Fixcity/docs/ticket-wizard-frontoffice.md)
+  - [Address Integration](../../Fixcity/docs/address-implementation.md)
 
-### Strategia di Testing
-- **[Testing Strategy](./testing/)** - Strategia generale
-- **[Unit Testing](./testing/unit-testing.md)** - Test unitari
-- **[Feature Testing](./testing/feature-testing.md)** - Test funzionali
-- **[Integration Testing](./testing/integration-testing.md)** - Test di integrazione
+## Quick Reference
 
-### Qualità del Codice
-- **[PHPStan](./best-practices/phpstan.md)** - Analisi statica
-- **[Code Quality](./best-practices/code-quality.md)** - Qualità del codice
-- **[Testing Guidelines](./testing/guidelines.md)** - Linee guida testing
+| Topic | File | Status |
+|-------|------|--------|
+| **AddressInput Component** | [address-input-component.md](./address-input-component.md) | ✅ Active |
+| **Location Spinner UX** | [location-spinner-ux.md](./location-spinner-ux.md) | ✅ Active |
+| AddressField Component (legacy) | [address-field-component.md](./address-field-component.md) | ⚠️ Legacy |
+| AddressResource | [address-resource.md](./filament/address-resource.md) | ✅ Active |
+| Module Boundary Philosophy | [../Fixcity/docs/MODULE-BOUNDARY-PHILOSOPHY.md](../Fixcity/docs/MODULE-BOUNDARY-PHILOSOPHY.md) | ✅ Active |
+| README / Overview | [README.md](./README.md) | ✅ Active |
 
-## 📊 Performance
+## Filament Components
 
-### Ottimizzazione
-- **[Performance Optimization](./performance-optimization.md)** - Ottimizzazione generale
-- **[Cache Management](./cache-management.md)** - Gestione cache
-- **[Queue Management](./queue-management.md)** - Code e job
-- **[Database Optimization](./performance/database.md)** - Ottimizzazione DB
+### Forms
+- **AddressInput** — Single address input with geolocation → [address-input-component.md](./address-input-component.md)
+- **AddressField** (Forms/Components) — Full address section with cascading selects
+- **AddressesField** — Repeater for multiple addresses
+- **LeafletMarkerMapInput** — Interactive map with draggable marker → [story-map-component-analysis.md](./story-map-component-analysis.md)
 
-### Monitoring
-- **[Metrics Dashboard](./metrics-dashboard.md)** - Dashboard metriche
-- **[Performance Monitoring](./performance/monitoring.md)** - Monitoraggio performance
+### Resources
+- **AddressResource** — CRUD for addresses → `./filament/address-resource.md`
+- **LocationResource** — CRUD for locations
 
-## 🌐 Internazionalizzazione
+### Widgets
+- **LocationWidget** — Map display widget
+- **LocationMapTableWidget** — Table with map integration
 
-### Traduzioni
-- **[Lang Service](../laravel/Modules/Lang/docs/README.md)** - Sistema traduzioni
-- **[Translation Guidelines](./conventions/translations.md)** - Linee guida traduzioni
-- **[Multi-language Support](./core/i18n.md)** - Supporto multilingua
+## Architecture
 
-## 🔧 Configurazione
+- [README.md](./README.md) — Module overview
+- [architectural-philosophy.md](./architectural-philosophy.md) — Architecture patterns
+- [00-index.md](./00-index.md) — Legacy index
 
-### Setup e Configurazione
-- **[Environment Setup](./getting-started/environment.md)** - Setup ambiente
-- **[Configuration Files](./core/configuration.md)** - File di configurazione
-- **[Module Configuration](./development/module-configuration.md)** - Configurazione moduli
+## Actions (Geocoding)
 
-## 🐛 Troubleshooting
+| Action | File |
+|--------|------|
+| GetCoordinatesFromAddressAction | `app/Actions/GetCoordinatesByAddressAction.php` |
+| GetAddressFromNominatimAction | `app/Actions/Nominatim/GetAddressFromNominatimAction.php` |
+| GetAddressFromGoogleMapsAction | `app/Actions/GoogleMaps/GetAddressFromGoogleMapsAction.php` |
+| GetAddressFromMapboxAction | `app/Actions/Mapbox/GetAddressFromMapboxAction.php` |
+| CalculateDistanceAction | `app/Actions/CalculateDistanceAction.php` |
 
-### Risoluzione Problemi
-- **[Common Errors](./common-errors.md)** - Errori comuni
-- **[Debugging Guide](./troubleshooting/debugging.md)** - Guida al debugging
-- **[Conflicts Resolution](./conflicts-resolution.md)** - Risoluzione conflitti
-- **[Git Conflicts](./git-conflict-resolution.md)** - Conflitti Git
+## Models
 
-## 🚢 Deploy e Produzione
+- **Address** — `app/Models/Address.php`
+- **Location** — `app/Models/Location.php`
+- **Locality** — `app/Models/Locality.php`
+- **Province** — `app/Models/Province.php`
+- **Region** — `app/Models/Region.php`
+- **ComuneJson** — `app/Models/ComuneJson.php` (preferred over Comune)
+- **Place** — `app/Models/Place.php` (enhanced with geolocation)
 
-### Deployment
-- **[Deployment Guide](./deployment/)** - Guida al deployment
-- **[Server Configuration](./deployment/server.md)** - Configurazione server
-- **[CI/CD](./deployment/ci-cd.md)** - Continuous Integration/Deployment
+## Translations
 
-## 📚 Riferimenti
-
-### API e Integrazioni
-- **[API Development](./api-development.md)** - Sviluppo API
-- **[External Integrations](./integrations/)** - Integrazioni esterne
-- **[OAuth](./oauth/)** - Autenticazione OAuth
-
-### Moduli Specifici PA
-- **[Performance Module](../laravel/Modules/Performance/docs/README.md)** - Valutazioni
-- **[Presenze Assenze](../laravel/Modules/PresenzeAssenze/docs/README.md)** - Timbrature
-- **[Progressioni](../laravel/Modules/Progressioni/docs/README.md)** - Carriere
-- **[Indennità](../laravel/Modules/IndennitaCondizioniLavoro/docs/README.md)** - Indennità
-
-## 🗺️ Roadmap
-
-### Sviluppo Futuro
-- **[Project Roadmap](./project-roadmap.md)** - Roadmap generale
-- **[Filament 4 Upgrade](./filament-4-upgrade-guide.md)** - Upgrade Filament 4
-- **[Laravel 11 Migration](./core/laravel-11-migration.md)** - Migrazione Laravel 11
-
-## 📝 Convenzioni e Standard
-
-### Naming e Style
-- **[Documentation Conventions](./documentation-conventions.md)** - Convenzioni documentazione
-- **[Naming Conventions](./conventions/naming.md)** - Convenzioni naming
-- **[Code Style](./conventions/code-style.md)** - Stile del codice
-
-### Regole Cursor/Windsurf
-- **[Cursor Rules](../.cursor/rules/)** - Regole Cursor AI
-- **[Windsurf Rules](../.windsurf/rules/)** - Regole Windsurf AI
-
-## 🤝 Contribuire
-
-### Come Contribuire
-- **[Contributing Guide](./contributing/)** - Guida per contribuire
-- **[Code of Conduct](./code-of-conduct.md)** - Codice di condotta
-- **[Pull Request Process](./contributing/pr-process.md)** - Processo PR
-
-## 📖 Risorse Aggiuntive
-
-### Learning Resources
-- **[Laravel Documentation](https://laravel.com/docs)** - Docs Laravel ufficiale
-- **[Filament Documentation](https://filamentphp.com/docs)** - Docs Filament ufficiale
-- **[PHPStan Documentation](https://phpstan.org/user-guide/)** - Guida PHPStan
-
-### Community
-- **GitHub Discussions**: [Link discussions]
-- **Issues Tracker**: [Link issues]
-- **Wiki**: [Link wiki]
+- Italian: `lang/it/address.php`
+- English: `lang/en/address.php`
 
 ---
 
-**Versione**: 3.0
-**Autore**: AI Assistant
-**Stato**: Consolidata e Aggiornata
+## 📋 DEDUPLICATION NOTICE
+
+This module has many duplicate files in docs/. Key actions taken:
+
+### Consolidated Documents
+- ✅ **Model Analysis** - [analisi-modelli-doppi.md](./analisi-modelli-doppi.md) - Single source of truth
+- ✅ **Map Component Analysis** - [story-map-component-analysis.md](./story-map-component-analysis.md) - Comprehensive guide
+- ✅ **Technical Guidelines** - [TECHNICAL.md](./TECHNICAL.md) - Single reference
+
+### Categories to Clean Up
+| Pattern | Count | Action |
+|---------|-------|--------|
+| `*sumy.md`, `*-summary.md`, `*summary.md` | ~20 | Consolidated into main docs |
+| `*backup.md`, `*-backup.md`, `*_BACKUP.md` | ~15 | Delete (git preserves) |
+| `*--*.md`, `*.md` (empty name) | ~5 | Delete |
+| Multiple address-resource-*.md | ~30 | Consolidated into one |
+| Multiple address-implementation*.md | ~15 | Consolidated into one |
+
+### 📖 Quick Start
+
+1. **Architecture**: Start with [architecture overview](./architecture.md)
+2. **Components**: Learn about [address components](./address-implementation.md) and [map components](./story-map-component-analysis.md)
+3. **Integration**: Follow [Filament integration guide](./FILAMENT_EXTENSION_RULES.md)
+4. **Examples**: Check [app integration](./app-integration.md)
+
+### 🤝 Contributing
+
+- Follow the [BMad methodology](../../../_bmad/README.md) for development
+- Maintain [design system compliance](../../DesignComuni/README.md)
+- Ensure [accessibility standards](./USER_RESEARCH.md#accessibility) are met
+- Run quality checks with [PHPStan](./PHPSTAN_FIXES.md)
+
+### 📞 Support
+
+- For technical questions: Check [architecture](./architecture.md) and [technical docs](./TECHNICAL.md)
+- For implementation issues: Review [code quality analysis](./analysis/code-quality-analysis.md)
+- For integration help: See [app integration](./app-integration.md) and [Filament rules](./FILAMENT_EXTENSION_RULES.md)
+---
+
+## ⚠️ Architectural Rules
+
+- **[No Http Controllers — Folio + Actions + Filament](../../../../docs/wiki/rules/no-controllers-rule.md)** — Absolute rule: no `Http/Controllers/` in app/ or modules. Geo uses Folio for API endpoints and Actions for business logic.

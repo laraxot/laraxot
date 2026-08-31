@@ -18,7 +18,7 @@ use Modules\User\Models\OauthClient;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 beforeEach(function (): void {
     config(['passport.connection' => 'user']);

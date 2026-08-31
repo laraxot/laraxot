@@ -10,7 +10,7 @@ use PHPUnit\Framework\Assert;
 use function Safe\exec;
 use function Safe\file_get_contents;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('User Migration Syntax', function (): void {
     test('user migrations do not contain merge conflict markers', function (): void {

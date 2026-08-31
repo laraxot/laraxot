@@ -2,15 +2,6 @@
 module: User
 concept: Two-Factor Authentication
 last_updated: 2026-04-15
-related:
-  - "./agents.md"
-  - "./architecture.md"
-  - "./auth-patterns.md"
-  - "./bmad-method.md"
-  - "./context-compression.md"
-  - "./index.md"
-  - "./log.md"
-  - "./overview.md"
 ---
 
 # Two-Factor Authentication (2FA)

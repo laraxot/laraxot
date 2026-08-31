@@ -12,12 +12,11 @@ use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Filament\Pages\MyProfilePage;
 use Modules\User\Providers\Filament\AdminPanelProvider;
 use Modules\User\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\actingAs;
 
-use PHPUnit\Framework\Assert;
-
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 beforeEach(function (): void {
     /* @var TestCase $this */

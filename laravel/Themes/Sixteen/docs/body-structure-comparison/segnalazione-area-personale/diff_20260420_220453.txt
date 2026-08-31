@@ -1,7 +1,0 @@
----
-module: theme
-topic: diff_20260420_220453
-canonical: ../../../../docs/shared-components/diff_20260420_220359.txt
----
-
-See canonical documentation: ../../../../docs/shared-components/diff_20260420_220359.txt

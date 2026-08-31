@@ -18,7 +18,7 @@ use Modules\User\Tests\TestCase;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('builds user attributes from oauth user', function (): void {
     $oauthUser = configureMock(SocialiteUserContract::class, function (MockInterface $mock): void {
@@ -68,10 +68,9 @@ test('retrieves oauth user from socialite driver', function (): void {
         $mock->allows(['getEmail' => 'user@example.com']);
     });
 
-    $driver = new class($oauthUser) {
-        public function __construct(private SocialiteUserContract $oauthUser)
-        {
-        }
+    $driver = new class($oauthUser)
+    {
+        public function __construct(private SocialiteUserContract $oauthUser) {}
 
         public function user(): SocialiteUserContract
         {
@@ -93,10 +92,9 @@ test('retrieves oauth user from socialite driver', function (): void {
 test('returns null and dispatches invalid state event when socialite state is invalid', function (): void {
     $exception = new InvalidStateException();
 
-    $driver = new class($exception) {
-        public function __construct(private InvalidStateException $exception)
-        {
-        }
+    $driver = new class($exception)
+    {
+        public function __construct(private InvalidStateException $exception) {}
 
         public function user(): never
         {

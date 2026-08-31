@@ -15,7 +15,8 @@ related:
 ## regole non negoziabili
 
 - tests solo pest
-- nei tests MAI RefreshDatabase
+- nei tests **MAI** `RefreshDatabase` / `DatabaseMigrations`
+- **MAI** `migrate:fresh`, `migrate --force`, `db:wipe` — i dati sono sacri
 - i tests devono leggere `.env.testing`
 
 ## stato lavori (ultimo)

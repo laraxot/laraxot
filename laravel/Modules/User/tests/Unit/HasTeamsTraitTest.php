@@ -17,10 +17,10 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 /**
- * @param array<string, mixed> $attributes
+ * @param  array<string, mixed>  $attributes
  */
 function hasTeamsCreateTestUser(array $attributes = []): User
 {
@@ -50,7 +50,7 @@ function hasTeamsBootstrapFixture(): array
 }
 
 /**
- * @param array<string, mixed> $pivot
+ * @param  array<string, mixed>  $pivot
  */
 function hasTeamsAttachMember(Team $team, User $user, array $pivot = []): void
 {

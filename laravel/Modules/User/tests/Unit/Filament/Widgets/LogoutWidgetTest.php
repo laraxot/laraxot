@@ -7,7 +7,7 @@ use Modules\User\Tests\TestCase;
 use Modules\Xot\Filament\Widgets\XotBaseSchemaWidget;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('LogoutWidget', function (): void {
     test('logout widget can be instantiated', function (): void {

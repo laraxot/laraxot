@@ -1,16 +1,14 @@
 ---
-title: "Agent instructions"
-type: reference
-tags: [agents, coding-agent, llm-wiki]
-created: 2026-07-01
-updated: 2026-07-01
-qmd: "istruzioni agenti LLM wiki modulo"
-issues: []
-discussions: []
+title: "Job {{TYPE^}} LLM Wiki Agent Instructions"
+module: "Job"
+type: concept
+tags: [AGENTS]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "agents"
 related:
-  - ./coding-agent-manifests.md
+  - "./phpstan-fixes-archive-2.md"
 ---
-
 # Job {{TYPE^}} LLM Wiki Agent Instructions
 
 > **Module/Theme:** Job

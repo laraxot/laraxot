@@ -12,7 +12,7 @@ use Modules\User\Models\User;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('User Model', function (): void {
     test('can be created in memory', function (): void {
@@ -138,8 +138,8 @@ describe('User Model', function (): void {
         $u1 = stubUser(['is_active' => true]);
         $u2 = stubUser(['is_active' => false]);
 
-        $active = collect([$u1, $u2])->filter(fn (User $u) => true === $u->is_active);
-        $inactive = collect([$u1, $u2])->filter(fn (User $u) => false === $u->is_active);
+        $active = collect([$u1, $u2])->filter(fn (User $u) => $u->is_active === true);
+        $inactive = collect([$u1, $u2])->filter(fn (User $u) => $u->is_active === false);
 
         Assert::assertCount(1, $inactive);
         Assert::assertCount(1, $active);
@@ -149,8 +149,8 @@ describe('User Model', function (): void {
         $u1 = stubUser(['email_verified_at' => Carbon::now()]);
         $u2 = stubUser(['email_verified_at' => null]);
 
-        $verified = collect([$u1, $u2])->filter(fn (User $u) => null !== $u->email_verified_at);
-        $unverified = collect([$u1, $u2])->filter(fn (User $u) => null === $u->email_verified_at);
+        $verified = collect([$u1, $u2])->filter(fn (User $u) => $u->email_verified_at !== null);
+        $unverified = collect([$u1, $u2])->filter(fn (User $u) => $u->email_verified_at === null);
 
         Assert::assertCount(1, $unverified);
         Assert::assertCount(1, $verified);

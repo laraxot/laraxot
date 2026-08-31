@@ -5,14 +5,7 @@ created: 2026-05-11
 updated: 2026-05-11
 tags: [qmd, search, docs, performance]
 related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./2fa-guide.md"
-  - "./2fa.md"
-  - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
-  - "./actions-path-convention.md"
+  - ../../docs/wiki/concepts/llm-wiki-operational-discipline.md
 ---
 
 # QMD Setup per Module **User**
@@ -71,7 +64,7 @@ qmd search "form" -c user  # Solo questo modulo
 
 - [Global QMD Config](../qmd.md) (root docs)
 - [Operational Discipline](../../docs/wiki/concepts/llm-wiki-operational-discipline.md)
-- [On-Demand Pattern](./on-demand-pattern.md)
+- [On-Demand Pattern](./ON-DEMAND-PATTERN.md)
 
 ---
 *Cache: ~/.cache/qmd-cache/ | Index: ~/.cache/qmd-cache/index*

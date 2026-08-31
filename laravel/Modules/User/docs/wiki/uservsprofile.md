@@ -2,15 +2,6 @@
 module: User
 concept: User vs Profile
 last_updated: 2026-04-15
-related:
-  - "./agents.md"
-  - "./architecture.md"
-  - "./auth-patterns.md"
-  - "./bmad-method.md"
-  - "./context-compression.md"
-  - "./index.md"
-  - "./log.md"
-  - "./overview.md"
 ---
 
 # User vs Profile Models

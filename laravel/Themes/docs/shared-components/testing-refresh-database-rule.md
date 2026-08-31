@@ -1,7 +1,14 @@
 # Critical Rule: Never Use RefreshDatabase Trait
 
 ## Overview
-This document explains the critical rule against using `Illuminate\Foundation\Testing\RefreshDatabase` trait in the Laraxot framework.
+
+The Laraxot framework forbids destroying database data for agent/test convenience.
+
+**NEVER:**
+- `use Illuminate\Foundation\Testing\RefreshDatabase`
+- `php artisan migrate:fresh` / `migrate:refresh` / `db:wipe` / `migrate --force`
+
+Canon: [data-sacred-no-destructive-db.md](../../../../docs/wiki/rules/data-sacred-no-destructive-db.md).
 
 ## The Rule
 **NEVER use `use Illuminate\Foundation\Testing\RefreshDatabase;` in any test class**

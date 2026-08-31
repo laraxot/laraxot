@@ -13,7 +13,7 @@ use Modules\User\Models\SocialiteUser;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Login User Action', function (): void {
     test('authenticates connected socialite user and dispatches event', function (): void {

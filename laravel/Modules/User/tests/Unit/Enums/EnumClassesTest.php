@@ -8,7 +8,7 @@ use Modules\User\Enums\UserType;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('UserType enum has all cases', function (): void {
     $cases = UserType::cases();

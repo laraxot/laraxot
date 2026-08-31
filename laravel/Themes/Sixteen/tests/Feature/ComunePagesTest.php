@@ -2,16 +2,17 @@
 
 declare(strict_types=1);
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Modules\Fixcity\App\Models\News;
 use Modules\Fixcity\App\Models\Ticket;
 use Tests\TestCase;
 
-uses(TestCase::class, RefreshDatabase::class);
+uses(TestCase::class, DatabaseTransactions::class);
 
-beforeEach(function () {
-    /** @var TestCase $this */
-    $this->artisan('migrate', ['--database' => 'testing']);
+beforeEach(function (): void {
+    if (! class_exists(Ticket::class)) {
+        test()->markTestSkipped('Modulo Fixcity assente in questa base — test Comune rinviati.');
+    }
 });
 
 test('homepage loads successfully', function () {

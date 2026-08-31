@@ -12,7 +12,7 @@ use Modules\User\Enums\LanguageEnum;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('User Datas And Enums Coverage', function (): void {
     test('creates socialite user attributes data with expected values', function (): void {

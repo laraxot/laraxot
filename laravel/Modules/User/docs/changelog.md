@@ -1,23 +1,3 @@
----
-title: "Changelog"
-type: concept
-tags: [changelog]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "changelog changelog"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./2fa-guide.md"
-  - "./2fa.md"
-  - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
-  - "./actions-path-convention.md"
----
-
 # Changelog
 
 Tutte le modifiche notevoli a questo modulo saranno documentate in questo file.

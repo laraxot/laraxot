@@ -121,7 +121,7 @@ class CreateAppointment extends Component
             ->orderBy('name')
             ->get();
 
-        $this->emit('officesLoaded', $this->offices);
+        $this->dispatch('officesLoaded', offices: $this->offices);
     }
 
     public function selectOffice($officeId)

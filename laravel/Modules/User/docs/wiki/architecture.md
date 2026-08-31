@@ -2,15 +2,6 @@
 module: User
 concept: Architecture
 last_updated: 2026-04-15
-related:
-  - "./agents.md"
-  - "./auth-patterns.md"
-  - "./bmad-method.md"
-  - "./context-compression.md"
-  - "./index.md"
-  - "./log.md"
-  - "./overview.md"
-  - "./socialite-architecture.md"
 ---
 
 # User Module Architecture

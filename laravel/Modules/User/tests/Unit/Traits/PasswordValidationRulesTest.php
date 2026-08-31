@@ -10,7 +10,7 @@ use Modules\User\Tests\Unit\Traits\Fixtures\PasswordValidationRulesMockableFixtu
 use Modules\User\Traits\PasswordValidationRules;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Password Validation Rules', function (): void {
     test('password validation rules trait can be used', function (): void {

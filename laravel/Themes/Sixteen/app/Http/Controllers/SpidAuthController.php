@@ -11,10 +11,11 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
+use Modules\Xot\Contracts\UserContract;
+use Modules\Xot\Datas\XotData;
 use Themes\Sixteen\Actions\SpidAuthAction;
 use Themes\Sixteen\Events\SpidAuthenticated;
 use Themes\Sixteen\Events\SpidLoggedOut;
-use Themes\Sixteen\Models\User;
 
 /**
  * Controller per l'autenticazione SPID
@@ -255,7 +256,7 @@ class SpidAuthController extends Controller
     /**
      * Trova o crea un utente basato sui dati SPID
      */
-    protected function findOrCreateUser(array $attributes): User
+    protected function findOrCreateUser(array $attributes): UserContract
     {
         $fiscalCode = $attributes['fiscal_code'];
 
@@ -264,7 +265,8 @@ class SpidAuthController extends Controller
         }
 
         // Cerca utente per codice fiscale
-        $user = User::where('fiscal_code', $fiscalCode)->first();
+        $userClass = XotData::make()->getUserClass();
+        $user = $userClass::where('fiscal_code', $fiscalCode)->first();
 
         if ($user) {
             // Aggiorna i dati se necessario
@@ -280,7 +282,7 @@ class SpidAuthController extends Controller
     /**
      * Crea un nuovo utente dai dati SPID
      */
-    protected function createUserFromSpid(array $attributes): User
+    protected function createUserFromSpid(array $attributes): UserContract
     {
         $userData = [
             'name' => $attributes['name'],
@@ -302,13 +304,15 @@ class SpidAuthController extends Controller
             $userData['email'] = 'spid.'.$attributes['fiscal_code'].'@noemail.local';
         }
 
-        return User::create($userData);
+        $userClass = XotData::make()->getUserClass();
+
+        return $userClass::create($userData);
     }
 
     /**
      * Aggiorna un utente esistente con i dati SPID
      */
-    protected function updateUserFromSpid(User $user, array $attributes): void
+    protected function updateUserFromSpid(UserContract $user, array $attributes): void
     {
         $updateData = [];
 

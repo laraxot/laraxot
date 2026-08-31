@@ -613,7 +613,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-
+          php-version: 8.3
       - name: Install dependencies
         run: composer install
       - name: Run PHPStan

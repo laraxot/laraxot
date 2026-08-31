@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Themes\Sixteen\Actions;
 
 use DOMDocument;
+use DOMElement;
 use DOMXPath;
 use Exception;
 use Illuminate\Http\Request;
@@ -269,7 +270,11 @@ class SpidAuthAction
         $xpath->registerNamespace('saml', 'urn:oasis:names:tc:SAML:2.0:assertion');
 
         $statusCode = $xpath->query('//samlp:StatusCode/@Value');
-        if ($statusCode->length === 0 || $statusCode->item(0)->nodeValue !== 'urn:oasis:names:tc:SAML:2.0:status:Success') {
+        if ($statusCode === false || $statusCode->length === 0) {
+            throw new Exception('SPID authentication failed');
+        }
+
+        if ($statusCode->item(0)?->nodeValue !== 'urn:oasis:names:tc:SAML:2.0:status:Success') {
             throw new Exception('SPID authentication failed');
         }
     }
@@ -282,13 +287,23 @@ class SpidAuthAction
         $attributes = [];
 
         $attributeNodes = $xpath->query('//saml:Attribute');
+        if ($attributeNodes === false) {
+            throw new Exception('SPID response contains no readable attributes');
+        }
+
         foreach ($attributeNodes as $attributeNode) {
+            if (! $attributeNode instanceof DOMElement) {
+                continue;
+            }
+
             $name = $attributeNode->getAttribute('Name');
             $valueNodes = $xpath->query('saml:AttributeValue', $attributeNode);
 
-            if ($valueNodes->length > 0) {
-                $attributes[$name] = $valueNodes->item(0)->nodeValue;
+            if ($valueNodes === false || $valueNodes->length === 0) {
+                continue;
             }
+
+            $attributes[$name] = $valueNodes->item(0)?->nodeValue;
         }
 
         return [

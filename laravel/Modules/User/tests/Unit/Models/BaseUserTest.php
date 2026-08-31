@@ -12,7 +12,7 @@ use Modules\User\Tests\TestCase;
 use Modules\User\Tests\Unit\Models\Fixtures\TestBaseUser;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Base User', function (): void {
     test('base user extends eloquent model', function (): void {

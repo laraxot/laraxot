@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Themes\Sixteen\Models\Municipal;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -40,12 +42,12 @@ use Illuminate\Support\Str;
  * @property string|null $subject_matter
  * @property array|null $keywords
  * @property string|null $language
- * @property \Carbon\Carbon|null $document_date
- * @property \Carbon\Carbon|null $approval_date
- * @property \Carbon\Carbon|null $publication_date
- * @property \Carbon\Carbon|null $effective_date
- * @property \Carbon\Carbon|null $expiry_date
- * @property \Carbon\Carbon|null $review_date
+ * @property Carbon|null $document_date
+ * @property Carbon|null $approval_date
+ * @property Carbon|null $publication_date
+ * @property Carbon|null $effective_date
+ * @property Carbon|null $expiry_date
+ * @property Carbon|null $review_date
  * @property string|null $file_path
  * @property string|null $file_name
  * @property int|null $file_size
@@ -63,14 +65,14 @@ use Illuminate\Support\Str;
  * @property string|null $access_rights
  * @property string $privacy_level
  * @property int|null $retention_period
- * @property \Carbon\Carbon|null $disposal_date
+ * @property Carbon|null $disposal_date
  * @property array|null $digital_signature
  * @property array|null $timestamp
  * @property bool $accessibility_compliance
  * @property bool $format_compliance
  * @property bool $metadata_compliance
  * @property int $download_count
- * @property \Carbon\Carbon|null $last_accessed
+ * @property Carbon|null $last_accessed
  * @property string|null $checksum
  * @property bool $is_published
  * @property bool $is_active
@@ -79,14 +81,13 @@ use Illuminate\Support\Str;
  * @property bool $requires_authentication
  * @property string $visibility_level
  * @property array|null $metadata
- * @property \Carbon\Carbon|null $created_at
- * @property \Carbon\Carbon|null $updated_at
- * @property \Carbon\Carbon|null $deleted_at
- *
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
  * @property-read OrganizationalUnit|null $organizationalUnit
  * @property-read PublicPerson|null $author
  * @property-read MunicipalService|null $service
- * @property-read \Illuminate\Database\Eloquent\Collection<int, ContactPoint> $contacts
+ * @property-read Collection<int, ContactPoint> $contacts
  */
 class PublicDocument extends Model
 {
@@ -729,9 +730,9 @@ class PublicDocument extends Model
     protected function formattedFileSize(): Attribute
     {
         return Attribute::make(
-            get: function (): void {
+            get: function (): ?string {
                 if (! $this->file_size) {
-                    return;
+                    return null;
                 }
 
                 $units = ['B', 'KB', 'MB', 'GB'];

@@ -18,7 +18,7 @@ use Modules\User\Models\User;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\User\Tests\TestCase::class);
+uses(TestCase::class);
 
 beforeEach(function (): void {
     /* @var TestCase $this */
@@ -254,7 +254,7 @@ describe('User Model', function (): void {
     });
 
     test('permission skip check', function (): void {
-        /** @var TestCase $this */
+        /* @var TestCase $this */
         if (! TestCase::userTableExists('model_has_permission')) {
             $this->skipTest('model_has_permission table missing on user connection.');
         }
@@ -268,7 +268,7 @@ describe('User Model', function (): void {
     });
 
     test('can have direct permissions', function (): void {
-        /** @var TestCase $this */
+        /* @var TestCase $this */
         if (! TestCase::userTableExists('model_has_permission')) {
             $this->skipTest('model_has_permission table missing on user connection.');
         }
@@ -282,7 +282,7 @@ describe('User Model', function (): void {
     });
 
     test('can check multiple permissions', function (): void {
-        /** @var TestCase $this */
+        /* @var TestCase $this */
         if (! TestCase::userTableExists('model_has_permission')) {
             $this->skipTest('model_has_permission table missing on user connection.');
         }
@@ -298,7 +298,7 @@ describe('User Model', function (): void {
     });
 
     test('can check any permission', function (): void {
-        /** @var TestCase $this */
+        /* @var TestCase $this */
         if (! TestCase::userTableExists('model_has_permission')) {
             $this->skipTest('model_has_permission table missing on user connection.');
         }

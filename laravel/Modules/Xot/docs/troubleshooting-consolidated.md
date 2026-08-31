@@ -376,9 +376,10 @@ Test non isolati o dipendenze condivise.
 
 **Soluzione**
 ```php
+// ✅ DatabaseTransactions — mai RefreshDatabase (dati sacri)
 class ExampleTest extends TestCase
 {
-    use RefreshDatabase; // Garantisce database pulito
+    use Illuminate\Foundation\Testing\DatabaseTransactions;
 
     protected function setUp(): void
     {
@@ -387,6 +388,8 @@ class ExampleTest extends TestCase
     }
 }
 ```
+
+Canon: [data-sacred-no-destructive-db.md](../../../../docs/wiki/rules/data-sacred-no-destructive-db.md).
 
 ### Errore: Test Lenti
 
