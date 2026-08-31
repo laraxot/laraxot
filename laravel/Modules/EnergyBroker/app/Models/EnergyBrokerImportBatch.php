@@ -13,7 +13,7 @@ use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
- * @property int|null $uploaded_by_user_id
+ * @property string|null $uploaded_by_user_id
  * @property string $source_name
  * @property string $source_type
  * @property string $status

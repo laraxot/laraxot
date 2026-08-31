@@ -103,3 +103,34 @@ integrazione per le Action/Job (import PDF/ZIP, chunked upload, ecc.).
   (`StoreEnergyBrokerLargeUploadChunkAction` → `AssembleEnergyBrokerLargeUploadJob`
   → `ImportEnergyBrokerLargeUploadJob`).
 - Resources → XotBaseResource (wave) ancora da fare, come già annotato.
+
+## 2026-08-31 — Pannello e pagine Filament
+
+Portate le 11 classi di `app/Filament/EnergyBroker` (9 pagine + 2 astratte), il
+`GenerateEnergyBrokerDemoPdfAction` di supporto e le 4 blade, tutto sotto il modulo.
+Il pannello vive su `/energy-broker` (`panelId`/`panelPath` espliciti).
+
+- `EnergyBrokerPage`/`EnergyBrokerStaticPage` estendono `GatedXotBasePage` (Platform)
+  invece del `GatedPage` applicativo del sorgente.
+- Le pagine si dichiarano `$isDiscovered = false`: sono elencate a mano nel
+  PanelProvider, altrimenti il pannello esporrebbe solo il login.
+- Rimosso lo scheletro `Filament/Pages/Dashboard.php` (XotBaseDashboard generato alla
+  creazione del modulo): condivideva lo slug radice con `EnergyBrokerDashboard`, quindi
+  la sua route non veniva registrata ma la voce di menu la cercava lo stesso e ogni
+  pagina del pannello finiva in 500 (`Route [filament.energy-broker.pages.dashboard]
+  not defined`).
+- Namespace: le blade referenziavano `App\Filament\EnergyBroker\Pages\*`, e la pagina
+  di acquisizione importava ancora `Application\Actions`/`Infrastructure\Models` del
+  layout DDD sorgente. Riscritti su `Modules\EnergyBroker\*`.
+- `EnergyBrokerDocumentAcquisitionPage`: `$documentFile` era `mixed` e l'API del file
+  veniva indovinata con `method_exists()`. Ora e' `?TemporaryUploadedFile`, che e' cio'
+  che Livewire assegna davvero; i campi del payload estratto passano da un helper
+  `text()` perche' arrivano da un motore esterno e possono mancare o non essere stringhe.
+- `uploadedByUserId`: firme allargate a `int|string|null` (id utente UUID).
+
+Nuovo test `EnergyBrokerPanelPagesTest`: apre tutte e nove le pagine, verifica che
+ognuna sia montata e che il pannello resti chiuso a chi non ha il ruolo. Serve a far
+fallire subito una pagina dimenticata nell'elenco del provider, che altrimenti resta
+un 404 fino alla demo.
+
+Suite modulo: 22 test verdi. PHPStan su `app/`: 0 errori.

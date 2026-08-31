@@ -21,7 +21,7 @@ final class ImportEnergyBrokerDocumentsFromZipAction
     /**
      * @return array{batch: EnergyBrokerImportBatch, total: int, imported: int, failed: int, skipped: int}
      */
-    public function execute(string $zipPath, ?int $uploadedByUserId = null, ?callable $onBatchCreated = null): array
+    public function execute(string $zipPath, int|string|null $uploadedByUserId = null, ?callable $onBatchCreated = null): array
     {
         $entries = app(ExtractPdfFilesFromZipAction::class)->execute($zipPath);
 
@@ -162,7 +162,7 @@ final class ImportEnergyBrokerDocumentsFromZipAction
         EnergyBrokerDocument $document,
         string $extractedPath,
         string $originalName,
-        ?int $uploadedByUserId,
+        int|string|null $uploadedByUserId,
         string $fileHash,
     ): void {
         if (! is_file($extractedPath)) {

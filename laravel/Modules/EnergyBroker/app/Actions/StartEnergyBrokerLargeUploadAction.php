@@ -15,7 +15,7 @@ final class StartEnergyBrokerLargeUploadAction
         string $originalName,
         int $totalSize,
         int $chunkSize,
-        ?int $uploadedByUserId = null,
+        int|string|null $uploadedByUserId = null,
         ?string $mimeType = null,
     ): EnergyBrokerLargeUpload {
         if (trim($originalName) === '') {

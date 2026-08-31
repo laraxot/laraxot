@@ -23,7 +23,7 @@ final class ImportEnergyBrokerDocumentPdfAction
         string $filename,
         string $binary,
         ?int $batchId = null,
-        ?int $uploadedByUserId = null,
+        int|string|null $uploadedByUserId = null,
         string $fallbackContent = '',
         array $mediaMeta = [],
     ): EnergyBrokerDocument {
@@ -91,7 +91,7 @@ final class ImportEnergyBrokerDocumentPdfAction
         string $filename,
         string $path,
         ?int $batchId = null,
-        ?int $uploadedByUserId = null,
+        int|string|null $uploadedByUserId = null,
         string $fallbackContent = '',
         array $mediaMeta = [],
     ): EnergyBrokerDocument {

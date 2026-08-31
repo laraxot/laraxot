@@ -13,7 +13,7 @@ use Modules\Xot\Models\XotBaseModel;
 /**
  * @property int $id
  * @property string $public_id
- * @property int|null $uploaded_by_user_id
+ * @property string|null $uploaded_by_user_id
  * @property int|null $energy_broker_import_batch_id
  * @property string $original_name
  * @property string|null $mime_type
