@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
@@ -15,6 +15,18 @@ use Modules\Intervention\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
 
 use function Pest\Laravel\actingAs;
+
+// Il periodo esaminato va dall'inizio del mese a ora, ma gli interventi vengono
+// creati a "inizio mese + 1 giorno": il primo del mese quella data e' nel futuro
+// e il recap non trova nulla. Il tempo viene fissato a meta' mese perche' il
+// risultato non dipenda dal giorno in cui la suite gira.
+beforeEach(function (): void {
+    $this->travelTo(CarbonImmutable::create(2026, 6, 15, 10, 0, 0));
+});
+
+afterEach(function (): void {
+    $this->travelBack();
+});
 
 function recapCustomerId(): int
 {
