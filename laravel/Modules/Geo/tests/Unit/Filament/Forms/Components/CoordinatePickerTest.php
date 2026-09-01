@@ -7,11 +7,8 @@ namespace Modules\Geo\Tests\Unit\Filament\Forms\Components;
 use Modules\Geo\Filament\Forms\Components\CoordinatePicker;
 use Modules\Geo\Filament\Forms\Components\LatitudeLongitudeInput;
 use Modules\Geo\Filament\Forms\Components\MapPicker;
-use Modules\Geo\Tests\UnitTestCase;
 use Modules\Xot\Filament\Forms\Components\XotBaseField;
 use PHPUnit\Framework\Assert;
-
-uses(UnitTestCase::class);
 
 test('CoordinatePicker extends XotBaseField', function (): void {
     Assert::assertInstanceOf(XotBaseField::class, CoordinatePicker::make('test'));

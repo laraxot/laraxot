@@ -1,28 +1,5 @@
 [
     {
-        "nome": "Palermo",
-        "codice": 6664,
-        "regione": "Sicilia",
-        "provincia": "Palermo",
-        "sigla_provincia": "PA",
-        "cap": "90100",
-        "codice_catastale": "F480",
-        "popolazione": 192037,
-        "zona_altimetrica": "montagna",
-        "altitudine": 1320,
-        "superficie": 194.93,
-        "lat": 38.1243,
-        "lng": 13.3286,
-        "id": 1,
-        "slug": "palermo",
-        "title": "Palermo",
-        "content": null,
-        "updated_at": "2026-01-19T20:58:57.343175Z",
-        "created_at": "2026-01-19T20:58:57.343184Z",
-        "created_by": null,
-        "updated_by": null
-    },
-    {
         "nome": "Milano",
         "codice": 3466,
         "regione": "Lombardia",
@@ -90,5 +67,34 @@
         "created_at": "2026-06-30T12:04:15.869733Z",
         "created_by": null,
         "updated_by": null
+    },
+    {
+        "nome": "Torino",
+        "codice": 1689,
+        "regione": "\"Piemonte\"",
+        "provincia": "\"Torino\"",
+        "sigla_provincia": "TO",
+        "cap": "\"10100\"",
+        "codice_catastale": "W268",
+        "popolazione": 55558,
+        "zona_altimetrica": "montagna",
+        "altitudine": 1829,
+        "superficie": 435.5,
+        "lat": 45.0015,
+        "lng": 7.660299999999999,
+        "id": 5,
+        "updated_at": "2026-09-01T10:22:21.685974Z",
+        "created_at": "2026-09-01T10:22:21.685997Z"
+    },
+    {
+        "regione": "\"Lombardia\"",
+        "provincia": "\"Milano\"",
+        "nome": "Bresso",
+        "cap": "\"20091\"",
+        "lat": 45.5389,
+        "lng": 9.19,
+        "id": 6,
+        "updated_at": "2026-09-01T10:22:55.300316Z",
+        "created_at": "2026-09-01T10:22:55.300336Z"
     }
 ]

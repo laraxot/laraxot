@@ -12,12 +12,10 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use Modules\Geo\Actions\GoogleMaps\GetGeocodingDataAction;
 use Modules\Geo\Datas\Geocoding\GeocodingData;
-use Modules\Geo\Tests\LightTestCase;
 use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
 
-uses(LightTestCase::class);
 it('throws exception when api key is not configured', function (): void {
     $mockHandler = new MockHandler();
     $handlerStack = HandlerStack::create($mockHandler);

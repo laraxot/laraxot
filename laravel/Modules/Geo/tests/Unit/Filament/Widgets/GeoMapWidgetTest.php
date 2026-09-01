@@ -6,10 +6,8 @@ namespace Modules\Geo\Tests\Unit\Filament\Widgets;
 
 use Filament\Widgets\Widget;
 use Modules\Geo\Filament\Widgets\GeoMapWidget;
-use Modules\Geo\Tests\LightTestCase;
 use PHPUnit\Framework\Assert;
 
-uses(LightTestCase::class);
 test('geo map widget extends filament widget', function (): void {
     Assert::assertInstanceOf(Widget::class, new GeoMapWidget());
 });

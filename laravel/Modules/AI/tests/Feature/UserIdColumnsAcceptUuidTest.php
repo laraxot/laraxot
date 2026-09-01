@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Schema;
-use Modules\AI\Tests\TestCase;
 
 /*
  * In questa base l'id utente e' un UUID di 36 caratteri. Una colonna intera lo
@@ -17,8 +16,6 @@ use Modules\AI\Tests\TestCase;
  * fa ripartire l'applicazione, e su una suite intera si pagano minuti per una
  * verifica che costa millisecondi.
  */
-uses(TestCase::class);
-
 it('stores user ids as strings, not integers', function (): void {
     $columns = [
         ['ai_threads', 'created_by_user_id'],

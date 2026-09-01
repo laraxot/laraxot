@@ -7,10 +7,8 @@ namespace Modules\Geo\Tests\Unit\Actions\Here;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Actions\Here\GetAddressFromHereMapsAction;
 use Modules\Geo\Datas\Geocoding\AddressData;
-use Modules\Geo\Tests\LightTestCase;
 use PHPUnit\Framework\Assert;
 
-uses(LightTestCase::class);
 it('throws exception when api key is not configured', function (): void {
     $action = new GetAddressFromHereMapsAction();
 

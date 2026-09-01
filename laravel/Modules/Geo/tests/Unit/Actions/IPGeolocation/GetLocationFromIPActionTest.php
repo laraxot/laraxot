@@ -9,9 +9,6 @@ use Modules\Geo\Actions\IPGeolocation\GetLocationFromIPAction;
 use Modules\Geo\Datas\Location\IPLocationData;
 use Modules\Geo\Tests\Fixtures\FetchIPLocationReturningStub;
 use Modules\Geo\Tests\Fixtures\FetchIPLocationThrowingStub;
-use Modules\Geo\Tests\LightTestCase;
-
-uses(LightTestCase::class);
 
 it('delegates to fetch action and returns result', function (): void {
     app()->instance(FetchIPLocationAction::class, new FetchIPLocationReturningStub(new IPLocationData(

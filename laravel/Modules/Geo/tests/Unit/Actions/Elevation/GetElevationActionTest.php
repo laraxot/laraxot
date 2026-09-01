@@ -9,9 +9,6 @@ use Modules\Geo\Actions\GoogleMapsAction;
 use Modules\Geo\Datas\LocationData;
 use Modules\Geo\Exceptions\ElevationException;
 use Modules\Geo\Tests\Fixtures\GoogleMapsServiceElevationStub;
-use Modules\Geo\Tests\LightTestCase;
-
-uses(LightTestCase::class);
 
 /**
  * Bind the elevation service stub into the container and resolve the action

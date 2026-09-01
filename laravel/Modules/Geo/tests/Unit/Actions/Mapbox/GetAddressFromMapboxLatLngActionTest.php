@@ -8,10 +8,8 @@ use Illuminate\Support\Facades\Http;
 use Modules\Geo\Actions\Mapbox\GetAddressFromMapboxLatLngAction;
 use Modules\Geo\Datas\Geocoding\AddressData;
 use Modules\Geo\Exceptions\InvalidLocationException;
-use Modules\Geo\Tests\LightTestCase;
 use PHPUnit\Framework\Assert;
 
-uses(LightTestCase::class);
 it('throws exception for invalid latitude below -90', function (): void {
     $action = new GetAddressFromMapboxLatLngAction();
 

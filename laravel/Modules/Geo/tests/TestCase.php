@@ -62,12 +62,17 @@ abstract class TestCase extends XotBaseTestCase
 
     /** @var list<string> */
     protected $connectionsToTransact = [
-        'mysql',
-        'user',
+        'sqlite',
+        'xot',
     ];
 
     protected function setUp(): void
     {
+        // Senza il fixture condiviso i test cercano MariaDB con le credenziali
+        // dello sviluppatore che ha scritto il .env, e falliscono su ogni altra
+        // macchina.
+        $this->prepareSharedFixcitySqliteForTesting();
+
         parent::setUp();
 
         config(['xra.pub_theme' => 'Meetup']);

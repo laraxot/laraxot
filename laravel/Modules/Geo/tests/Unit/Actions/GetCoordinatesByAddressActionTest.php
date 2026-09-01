@@ -7,10 +7,8 @@ namespace Modules\Geo\Tests\Unit\Actions;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Actions\GetCoordinatesByAddressAction;
-use Modules\Geo\Tests\LightTestCase;
 use PHPUnit\Framework\Assert;
 
-uses(LightTestCase::class);
 it('returns null for empty address', function (): void {
     $action = new GetCoordinatesByAddressAction();
 

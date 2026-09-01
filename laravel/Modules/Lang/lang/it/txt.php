@@ -109,6 +109,7 @@ return [
         'invoice' => ['label' => 'invoice', 'placeholder' => 'invoice', 'helper_text' => 'invoice', 'description' => 'invoice'],
         'contract' => ['label' => 'contract', 'placeholder' => 'contract', 'helper_text' => 'contract', 'description' => 'contract'],
         'receipt' => ['label' => 'receipt', 'placeholder' => 'receipt', 'helper_text' => 'receipt', 'description' => 'receipt'],
+        'map_picker' => ['label' => 'map_picker', 'placeholder' => 'map_picker', 'helper_text' => 'map_picker', 'description' => 'map_picker'],
     ],
     'actions' => [
         'authenticate' => ['label' => 'Autentica', 'tooltip' => 'Effettua il login nel sistema', 'icon' => 'ui-login', 'color' => 'primary'],

@@ -10,12 +10,10 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use Modules\Geo\Actions\IPGeolocation\FetchIPLocationAction;
 use Modules\Geo\Datas\Location\IPLocationData;
-use Modules\Geo\Tests\LightTestCase;
 use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
 
-uses(LightTestCase::class);
 /**
  * @return array{0: FetchIPLocationAction, 1: MockHandler}
  */
