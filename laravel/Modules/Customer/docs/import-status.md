@@ -11,6 +11,7 @@ discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
 related:
   - "./README.md"
+  - "./quality-roadmap.md"
   - "../../../../docs/gestionale-commesse-comparison/functional-readiness.md"
   - "../../../../docs/gestionale-commesse-comparison/copy-then-normalize.md"
   - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"

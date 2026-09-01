@@ -9,6 +9,9 @@ related:
   - ./ai-handoff.md
   - ../../../../docs/wiki/rules/data-sacred-no-destructive-db.md
   - ../../../Modules/Xot/docs/testing/laraxot-test-db-architecture.md
+  - ../overviews/perfection-checklist.md
+  - ../../page-directory-structure.md
+  - ../../../../Themes/docs/progetto-perfezione-roadmap.md
 ---
 
 # Test Theme Sixteen — policy

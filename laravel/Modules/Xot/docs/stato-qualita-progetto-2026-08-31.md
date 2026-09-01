@@ -201,3 +201,25 @@ Onesta' del perimetro. Non sono stati verificati:
 - l'accessibilita' e la resa dei temi nel browser.
 
 Ognuno di questi merita una misurazione dedicata prima di qualsiasi affermazione.
+
+---
+
+## 7. Aggiornamento misurazione — 2026-08-31 (sera)
+
+Dati verificati in sessione, senza migrazioni distruttive.
+
+| Check | Esito | Comando / nota |
+|---|---|---|
+| PHPStan `Modules/` | **0 errori** | `./vendor/bin/phpstan analyse Modules --memory-limit=-1` |
+| `artisan about` + `module:list` | **OK** | 51 moduli enabled (Blog/Comment disabled) |
+| `RefreshDatabase` nei test moduli | **0 uso reale** | solo commenti/docblock che vietano il trait |
+| Dati sacri in Xot Artisan | **fix applicati** | niente `--force` su `migrate` in `ArtisanAction` / handlers |
+| Pest unit GC (Intervention + Quotation + Billing) | **77 passed** | `php artisan test Modules/{Intervention,Quotation,Billing}/tests/Unit` |
+| Pest feature Filament (es. Billing invoices) | **fallisce** | `workorder_data_test.roles` assente — debito **D17** |
+| ide-helper | **OK** | `generate` + `meta` + `models --nowrite` |
+
+**Interpretazione:** il gate statico sui moduli è verde, ma **perfezione operativa** richiede ancora
+schema test completo (D17), suite feature verde, temi nel gate PHPStan, e chiusura debiti D1–D11
+(vedi [gestionale-technical-debt.md](../../../docs/gestionale-technical-debt.md)).
+
+Criteri espliciti di “perfezione”: [progetto-perfezione-criteri](./wiki/concepts/progetto-perfezione-criteri.md).

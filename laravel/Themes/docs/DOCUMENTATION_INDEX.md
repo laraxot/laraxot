@@ -1,9 +1,9 @@
 # Theme Documentation Index
 
-**Generated:** 2026-03-30  
-**Total Themes:** 2  
-**Total Documentation Files:** 745  
-**After Deduplication Target:** ~400
+**Generated:** 2026-03-30 (indice parziale — aggiornare)  
+**Total Themes:** 5 attivi (Sixteen, TwentyOne, Zero, Barthelemy, Meetup) + Shared docs  
+**Total Documentation Files:** ~1900+ (Sixteen ~1437)  
+**After Deduplication Target:** ~400 (Sixteen)
 
 ---
 
@@ -21,6 +21,7 @@
 - [ide-helper e model nei temi](ide-helper-models-and-theme-models.md)
 - [PHPStan non analizza i temi](phpstan-non-analizza-i-temi.md)
 - [Stato di qualita' dei temi](stato-qualita-temi-2026-08-31.md)
+- [Roadmap perfezione temi](progetto-perfezione-roadmap.md)
 
 ---
 

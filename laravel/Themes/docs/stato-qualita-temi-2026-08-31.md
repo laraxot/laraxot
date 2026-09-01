@@ -119,3 +119,5 @@ tra `app/` e `src/`, il caricamento delle classi andava in errore. Vedi
 - La resa visiva e l'accessibilita' dei temi nel browser.
 - I test dei temi: non eseguiti, il database non ha tabelle e i dati sono sacri.
 - Gli asset frontend e la configurazione Vite.
+
+Hub perfezione: [progetto-perfezione-roadmap.md](./progetto-perfezione-roadmap.md).
