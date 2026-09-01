@@ -7,7 +7,6 @@ namespace Modules\Signage\Models;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Modules\Signage\Database\Factories\SignSpecFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * The extracted head of a Signage sign drawing: title-block data plus the
@@ -43,7 +42,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class SignSpec extends XotBaseModel
+final class SignSpec extends BaseModel
 {
 
     protected $table = 'sign_specs';

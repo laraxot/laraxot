@@ -6,7 +6,6 @@ namespace Modules\EnergyBroker\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -22,7 +21,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class EnergyBrokerSupplyHistory extends XotBaseModel
+final class EnergyBrokerSupplyHistory extends BaseModel
 {
     protected $table = 'energy_broker_supply_histories';
 

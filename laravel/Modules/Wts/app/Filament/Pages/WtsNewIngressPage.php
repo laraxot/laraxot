@@ -4,15 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use App\Support\AccountFeatures;
-use Modules\Wts\Actions\TakeChargeOfWtsIngressAction;
-use Modules\Wts\Datas\WtsTakeChargeDefaults;
-use Modules\Wts\Models\WtsInboundRecord;
 use Carbon\CarbonInterface;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Wts\Actions\TakeChargeOfWtsIngressAction;
+use Modules\Wts\Datas\WtsTakeChargeDefaults;
+use Modules\Wts\Models\WtsInboundRecord;
+use Modules\Wts\Models\WtsTechnicalSheetSnapshot;
 
 final class WtsNewIngressPage extends GatedXotBasePage
 {
@@ -32,7 +33,7 @@ final class WtsNewIngressPage extends GatedXotBasePage
 
     protected string $view = 'wts::filament.pages.new-ingress';
 
-    public ?int $recordId = null;
+    public int|string|null $recordId = null;
 
     public string $legacyReference = 'ERP-ING-001';
 
@@ -138,9 +139,9 @@ final class WtsNewIngressPage extends GatedXotBasePage
         $this->legacyReference = $record->legacy_reference ?? 'Legacy manuale';
         $this->formNumber = $defaults->formNumber;
         $this->receivedDate = $receivedAt instanceof CarbonInterface ? $receivedAt->toDateString() : now()->toDateString();
-        $this->sourceCompanyName = $sheet instanceof \Modules\Wts\Models\WtsTechnicalSheetSnapshot ? ($sheet->producer_name ?? $record->source_company_name) : $record->source_company_name;
-        $this->wasteCode = $sheet instanceof \Modules\Wts\Models\WtsTechnicalSheetSnapshot ? ($sheet->waste_code ?? '') : '';
-        $this->materialDescription = $sheet instanceof \Modules\Wts\Models\WtsTechnicalSheetSnapshot ? ($sheet->production_description ?? $sheet->packaging_description ?? '') : '';
+        $this->sourceCompanyName = $sheet instanceof WtsTechnicalSheetSnapshot ? ($sheet->producer_name ?? $record->source_company_name) : $record->source_company_name;
+        $this->wasteCode = $sheet instanceof WtsTechnicalSheetSnapshot ? ($sheet->waste_code ?? '') : '';
+        $this->materialDescription = $sheet instanceof WtsTechnicalSheetSnapshot ? ($sheet->production_description ?? $sheet->packaging_description ?? '') : '';
         $this->grossQuantity = $defaults->grossQuantity > 0.0 ? (string) $defaults->grossQuantity : '';
         $this->entryWeight = $defaults->entryWeight !== null ? (string) $defaults->entryWeight : '';
         $this->tareWeight = $defaults->tareWeight !== null ? (string) $defaults->tareWeight : '';

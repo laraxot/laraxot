@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use App\Support\AccountFeatures;
+use Filament\Notifications\Notification;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Auth;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\Wts\Actions\GenerateWtsOutputLabelPdfAction;
 use Modules\Wts\Models\WtsDerivedMaterial;
 use Modules\Wts\Models\WtsTechnicalSheetSnapshot;
-use Filament\Notifications\Notification;
-use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 final class WtsOutputsPage extends GatedXotBasePage
@@ -34,7 +35,7 @@ final class WtsOutputsPage extends GatedXotBasePage
         return AccountFeatures::canAccessWtsPage(Auth::user(), self::class);
     }
 
-    public function updateMaterialTechnicalSheet(int $materialId, string $snapshotId): void
+    public function updateMaterialTechnicalSheet(int|string $materialId, string $snapshotId): void
     {
         $material = WtsDerivedMaterial::query()->find($materialId);
         if ($material === null) {
@@ -51,7 +52,7 @@ final class WtsOutputsPage extends GatedXotBasePage
             ->send();
     }
 
-    public function reprintOutputLabel(int $materialId): ?StreamedResponse
+    public function reprintOutputLabel(int|string $materialId): ?StreamedResponse
     {
         $material = WtsDerivedMaterial::query()->with('labelPrints')->find($materialId);
         if ($material === null) {
@@ -85,8 +86,8 @@ final class WtsOutputsPage extends GatedXotBasePage
 
     /**
      * @return array{
-     *     outputs: \Illuminate\Database\Eloquent\Collection<int, WtsDerivedMaterial>,
-     *     snapshots: \Illuminate\Database\Eloquent\Collection<int, WtsTechnicalSheetSnapshot>
+     *     outputs: Collection<int, WtsDerivedMaterial>,
+     *     snapshots: Collection<int, WtsTechnicalSheetSnapshot>
      * }
      */
     protected function getViewData(): array

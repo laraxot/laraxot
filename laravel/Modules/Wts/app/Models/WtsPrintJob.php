@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Models;
 
+use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Wts\Database\Factories\WtsPrintJobFactory;
 
 /**
  * @property int $id
@@ -18,17 +19,17 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $status_code
  * @property int $attempts
  * @property string|null $error
- * @property \Carbon\CarbonInterface|null $printed_at
- * @property \Carbon\CarbonInterface|null $created_at
- * @property \Carbon\CarbonInterface|null $updated_at
+ * @property CarbonInterface|null $printed_at
+ * @property CarbonInterface|null $created_at
+ * @property CarbonInterface|null $updated_at
  * @property string|null $updated_by
  * @property string|null $created_by
- * @property \Carbon\CarbonInterface|null $deleted_at
+ * @property CarbonInterface|null $deleted_at
  * @property string|null $deleted_by
  */
-final class WtsPrintJob extends Model
+final class WtsPrintJob extends BaseModel
 {
-    /** @use HasFactory<\Modules\Wts\Database\Factories\WtsPrintJobFactory> */
+    /** @use HasFactory<WtsPrintJobFactory> */
     use HasFactory;
 
     use SoftDeletes;
@@ -56,8 +57,8 @@ final class WtsPrintJob extends Model
         return $this->belongsTo(WtsUnit::class, 'wts_unit_id');
     }
 
-    protected static function newFactory(): \Modules\Wts\Database\Factories\WtsPrintJobFactory
+    protected static function newFactory(): WtsPrintJobFactory
     {
-        return \Modules\Wts\Database\Factories\WtsPrintJobFactory::new();
+        return WtsPrintJobFactory::new();
     }
 }

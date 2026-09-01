@@ -7,7 +7,6 @@ namespace Modules\Costing\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Costing\Database\Factories\WorkCenterFactory;
 use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * Un centro di lavoro di un modulo di preventivazione: dove si esegue una riga di
@@ -25,7 +24,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property int $sort_order
  * @property bool $is_active
  */
-final class WorkCenter extends XotBaseModel
+final class WorkCenter extends BaseModel
 {
     /** @phpstan-use HasXotFactory<WorkCenterFactory> */
     use HasXotFactory;

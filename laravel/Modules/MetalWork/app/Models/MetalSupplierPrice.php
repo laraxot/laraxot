@@ -7,7 +7,6 @@ namespace Modules\MetalWork\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\MetalWork\Database\Factories\MetalSupplierPriceFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -24,7 +23,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class MetalSupplierPrice extends XotBaseModel
+final class MetalSupplierPrice extends BaseModel
 {
 
     protected $table = 'metalwork_supplier_prices';

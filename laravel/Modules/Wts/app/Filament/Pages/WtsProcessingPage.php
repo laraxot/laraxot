@@ -4,17 +4,18 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use App\Support\AccountFeatures;
+use Filament\Notifications\Notification;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Auth;
+use InvalidArgumentException;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\Wts\Actions\CalculateWtsStandardOutputWeightAction;
 use Modules\Wts\Actions\RegisterWtsProcessingAction;
 use Modules\Wts\Models\WtsInboundLot;
 use Modules\Wts\Models\WtsOperationalParameter;
 use Modules\Wts\Models\WtsUnit;
 use Modules\Wts\Queries\GetWtsOperationalParametersQuery;
-use Filament\Notifications\Notification;
-use Illuminate\Support\Facades\Auth;
-use InvalidArgumentException;
 
 final class WtsProcessingPage extends GatedXotBasePage
 {
@@ -32,9 +33,9 @@ final class WtsProcessingPage extends GatedXotBasePage
 
     protected string $view = 'wts::filament.pages.processing';
 
-    public ?int $lotId = null;
+    public int|string|null $lotId = null;
 
-    /** @var list<int> */
+    /** @var list<int|string> */
     public array $selectedUnitIds = [];
 
     public string $stepTypeCode = 'unpackaging';
@@ -93,22 +94,22 @@ final class WtsProcessingPage extends GatedXotBasePage
             ->where('status_code', 'available')
             ->pluck('id')
             ->map(static fn (mixed $id): int => is_numeric($id) ? (int) $id : 0)
-            ->filter(static fn (int $id): bool => $id > 0)
+            ->filter(static fn (int|string $id): bool => $id > 0)
             ->all());
     }
 
-    public function deselectUnit(int $unitId): void
+    public function deselectUnit(int|string $unitId): void
     {
         $this->selectedUnitIds = array_values(array_filter(
             $this->selectedUnitIds,
-            static fn (int $selectedUnitId): bool => $selectedUnitId !== $unitId,
+            static fn (int|string $selectedUnitId): bool => $selectedUnitId !== $unitId,
         ));
     }
 
     /**
      * Seleziona/deseleziona un collo col tap (usato dalla vista Brondi dell'operatore).
      */
-    public function toggleUnit(int $unitId): void
+    public function toggleUnit(int|string $unitId): void
     {
         if (in_array($unitId, $this->selectedUnitIds, true)) {
             $this->deselectUnit($unitId);
@@ -173,7 +174,7 @@ final class WtsProcessingPage extends GatedXotBasePage
     }
 
     /**
-     * @return array{selectedLot: WtsInboundLot|null, lots: \Illuminate\Database\Eloquent\Collection<int, WtsInboundLot>, selectedUnits: \Illuminate\Database\Eloquent\Collection<int, WtsUnit>, stepLabels: array<string, string>, operationalParameters: array<string, array<string, string>>}
+     * @return array{selectedLot: WtsInboundLot|null, lots: Collection<int, WtsInboundLot>, selectedUnits: Collection<int, WtsUnit>, stepLabels: array<string, string>, operationalParameters: array<string, array<string, string>>}
      */
     protected function getViewData(): array
     {
@@ -202,7 +203,7 @@ final class WtsProcessingPage extends GatedXotBasePage
      *     container_type_code:string,
      *     quantity:int,
      *     weight:float|null,
-     *     technical_sheet_snapshot_id:int|null,
+     *     technical_sheet_snapshot_id:int|string|null,
      *     is_dirty:bool
      * }>
      */
@@ -292,11 +293,11 @@ final class WtsProcessingPage extends GatedXotBasePage
     }
 
     /**
-     * @param  \Illuminate\Database\Eloquent\Collection<int, WtsInboundLot>|null  $lots
+     * @param  Collection<int, WtsInboundLot>|null  $lots
      */
     private function selectedLot($lots = null): ?WtsInboundLot
     {
-        if ($lots instanceof \Illuminate\Database\Eloquent\Collection) {
+        if ($lots instanceof Collection) {
             /** @var WtsInboundLot|null $lot */
             $lot = $lots->firstWhere('id', $this->lotId);
 

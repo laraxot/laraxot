@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages\Concerns;
 
-use Modules\Wts\Actions\CalculateWtsStandardOutputWeightAction;
-use Modules\Wts\Actions\RegisterWtsProcessingAction;
-use Modules\Wts\Models\WtsInboundLot;
-use Modules\Wts\Models\WtsUnit;
 use Filament\Notifications\Notification;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
+use Modules\Wts\Actions\CalculateWtsStandardOutputWeightAction;
+use Modules\Wts\Actions\RegisterWtsProcessingAction;
+use Modules\Wts\Models\WtsInboundLot;
+use Modules\Wts\Models\WtsUnit;
 
 trait HandlesWtsProcessingForm
 {
-    public ?int $lotId = null;
+    public int|string|null $lotId = null;
 
     /** @var list<int> */
     public array $selectedUnitIds = [];
@@ -79,7 +79,7 @@ trait HandlesWtsProcessingForm
             ->where('status_code', 'available')
             ->pluck('id')
             ->map(static fn (mixed $id): int => is_numeric($id) ? (int) $id : 0)
-            ->filter(static fn (int $id): bool => $id > 0)
+            ->filter(static fn (int|string $id): bool => $id > 0)
             ->all());
 
         $this->recalculateWorkedWeight();
@@ -285,7 +285,7 @@ trait HandlesWtsProcessingForm
     }
 
     /**
-     * @return array<int, array{output_type_code:string, container_type_code:string, quantity:int, weight:float|null, technical_sheet_snapshot_id:int|null, is_dirty:bool}>
+     * @return array<int, array{output_type_code:string, container_type_code:string, quantity:int, weight:float|null, technical_sheet_snapshot_id:int|string|null, is_dirty:bool}>
      */
     private function outputDefinitions(): array
     {
@@ -316,9 +316,9 @@ trait HandlesWtsProcessingForm
     }
 
     /**
-     * @return array{output_type_code:string, container_type_code:string, quantity:int, weight:float|null, technical_sheet_snapshot_id:int|null, is_dirty:bool}
+     * @return array{output_type_code:string, container_type_code:string, quantity:int, weight:float|null, technical_sheet_snapshot_id:int|string|null, is_dirty:bool}
      */
-    private function outputDefinition(string $outputTypeCode, string $containerTypeCode, int $quantity, ?float $weight, ?int $snapshotId, bool $isDirty): array
+    private function outputDefinition(string $outputTypeCode, string $containerTypeCode, int $quantity, ?float $weight, int|string|null $snapshotId, bool $isDirty): array
     {
         return [
             'output_type_code' => $outputTypeCode,

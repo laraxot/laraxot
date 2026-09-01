@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use App\Support\AccountFeatures;
+use Filament\Notifications\Notification;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Auth;
+use InvalidArgumentException;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\Wts\Actions\MoveWtsUnitAction;
 use Modules\Wts\Models\WtsUnit;
 use Modules\Wts\Queries\GetWtsWorkQueueOverviewQuery;
-use Filament\Notifications\Notification;
-use Illuminate\Support\Facades\Auth;
-use InvalidArgumentException;
 
 final class WtsWorkQueuePage extends GatedXotBasePage
 {
@@ -40,7 +41,7 @@ final class WtsWorkQueuePage extends GatedXotBasePage
         return AccountFeatures::canAccessWtsPage(Auth::user(), self::class);
     }
 
-    public function moveUnit(int $unitId, string $areaCode, ?string $locationLabel = null): void
+    public function moveUnit(int|string $unitId, string $areaCode, ?string $locationLabel = null): void
     {
         /** @var WtsUnit|null $unit */
         $unit = WtsUnit::query()->find($unitId);
@@ -66,7 +67,7 @@ final class WtsWorkQueuePage extends GatedXotBasePage
     }
 
     /**
-     * @return array{units: \Illuminate\Database\Eloquent\Collection<int, \Modules\Wts\Models\WtsUnit>, stockViews: array<string, string>, stepLabels: array<string, string>}
+     * @return array{units: Collection<int, WtsUnit>, stockViews: array<string, string>, stepLabels: array<string, string>}
      */
     protected function getViewData(): array
     {

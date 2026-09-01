@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use App\Support\AccountFeatures;
+use Filament\Notifications\Notification;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Auth;
+use InvalidArgumentException;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\Wts\Actions\EnqueueWtsLabelPrintAction;
 use Modules\Wts\Actions\GenerateWtsUnitLabelPdfAction;
 use Modules\Wts\Actions\GenerateWtsUnitLabelsBatchPdfAction;
@@ -13,10 +17,6 @@ use Modules\Wts\Actions\GenerateWtsUnitSeriesAction;
 use Modules\Wts\Actions\ReportWtsNonConformityAction;
 use Modules\Wts\Models\WtsInboundLot;
 use Modules\Wts\Models\WtsUnit;
-use Filament\Notifications\Notification;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Support\Facades\Auth;
-use InvalidArgumentException;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 final class WtsLotDetailPage extends GatedXotBasePage
@@ -35,7 +35,7 @@ final class WtsLotDetailPage extends GatedXotBasePage
 
     protected string $view = 'wts::filament.pages.lot-detail';
 
-    public ?int $lotId = null;
+    public int|string|null $lotId = null;
 
     public string $nonConformityNote = '';
 
@@ -88,7 +88,7 @@ final class WtsLotDetailPage extends GatedXotBasePage
             ->send();
     }
 
-    public function removeUnit(int $unitId): void
+    public function removeUnit(int|string $unitId): void
     {
         $lot = $this->selectedLot();
         if (! $lot instanceof WtsInboundLot) {
@@ -123,7 +123,7 @@ final class WtsLotDetailPage extends GatedXotBasePage
     /**
      * Cambia il tipo di contenitore di un collo gia' generato.
      */
-    public function updateUnitType(int $unitId, string $unitTypeCode): void
+    public function updateUnitType(int|string $unitId, string $unitTypeCode): void
     {
         $lot = $this->selectedLot();
         if (! $lot instanceof WtsInboundLot) {
@@ -154,7 +154,7 @@ final class WtsLotDetailPage extends GatedXotBasePage
      * Stampa/ristampa l'etichetta di un singolo collo, direttamente dalla riga
      * del collo nel dettaglio lotto (UI-04 assorbita qui).
      */
-    public function reprintUnitLabel(int $unitId): ?StreamedResponse
+    public function reprintUnitLabel(int|string $unitId): ?StreamedResponse
     {
         $lot = $this->selectedLot();
         if (! $lot instanceof WtsInboundLot) {
@@ -269,7 +269,7 @@ final class WtsLotDetailPage extends GatedXotBasePage
     /**
      * Invia l'etichetta di un collo direttamente all'etichettatrice (coda ZPL).
      */
-    public function queueUnitLabelPrint(int $unitId): void
+    public function queueUnitLabelPrint(int|string $unitId): void
     {
         $lot = $this->selectedLot();
         $unit = $lot instanceof WtsInboundLot ? $lot->units()->find($unitId) : null;

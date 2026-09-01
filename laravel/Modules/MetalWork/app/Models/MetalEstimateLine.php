@@ -6,7 +6,6 @@ namespace Modules\MetalWork\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -25,7 +24,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class MetalEstimateLine extends XotBaseModel
+final class MetalEstimateLine extends BaseModel
 {
     protected $table = 'metalwork_estimate_lines';
 

@@ -7,7 +7,6 @@ namespace Modules\MetalWork\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\MetalWork\Datas\StepSolid;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -27,7 +26,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class MetalDrawingComponent extends XotBaseModel
+final class MetalDrawingComponent extends BaseModel
 {
     protected $table = 'metalwork_drawing_components';
 

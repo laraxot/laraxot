@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Actions;
 
-use Modules\Wts\Models\WtsDerivedMaterial;
-use Modules\Wts\Models\WtsProcessingStep;
-use Modules\Wts\Models\WtsUnit;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
+use Modules\Wts\Models\WtsDerivedMaterial;
+use Modules\Wts\Models\WtsProcessingStep;
+use Modules\Wts\Models\WtsUnit;
 
 final class RegisterWtsProcessingAction
 {
     /**
-     * @param  list<int>  $selectedUnitIds
+     * @param  list<int|string>  $selectedUnitIds
      * @param array<int, array{
      *     output_type_code:string,
      *     container_type_code:string,
      *     quantity:int,
      *     weight:float|null,
-     *     technical_sheet_snapshot_id:int|null,
+     *     technical_sheet_snapshot_id:int|string|null,
      *     is_dirty:bool
      * }> $outputDefinitions
      */
@@ -35,7 +35,7 @@ final class RegisterWtsProcessingAction
         ?string $remainderWasteCode,
         ?string $notes,
         array $outputDefinitions,
-        ?int $expectedLotId = null,
+        int|string|null $expectedLotId = null,
     ): WtsProcessingStep {
         if ($selectedUnitIds === []) {
             throw new InvalidArgumentException('At least one unit must be selected.');
@@ -75,7 +75,10 @@ final class RegisterWtsProcessingAction
                 throw new InvalidArgumentException('Only available units can be processed.');
             }
 
-            if ($expectedLotId !== null && $selectedUnits->contains(static fn (WtsUnit $unit): bool => $unit->inbound_lot_id !== $expectedLotId)) {
+            // Confronto come stringa: l'id del lotto arriva castato a stringa dal
+            // modello, mentre la chiave esterna resta intera. Un !== fra i due
+            // fallirebbe sempre, rifiutando anche le unita' del lotto giusto.
+            if ($expectedLotId !== null && $selectedUnits->contains(static fn (WtsUnit $unit): bool => (string) $unit->inbound_lot_id !== (string) $expectedLotId)) {
                 throw new InvalidArgumentException('All selected units must belong to the expected lot.');
             }
 

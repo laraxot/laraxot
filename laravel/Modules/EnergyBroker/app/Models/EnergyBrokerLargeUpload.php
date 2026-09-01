@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -31,7 +30,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
  */
-final class EnergyBrokerLargeUpload extends XotBaseModel
+final class EnergyBrokerLargeUpload extends BaseModel
 {
     use SoftDeletes;
 

@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use App\Support\AccountFeatures;
-use Modules\Wts\Actions\GenerateWtsUnitLabelPdfAction;
-use Modules\Wts\Actions\MoveWtsUnitAction;
-use Modules\Wts\Models\WtsUnit;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Wts\Actions\GenerateWtsUnitLabelPdfAction;
+use Modules\Wts\Actions\MoveWtsUnitAction;
+use Modules\Wts\Models\WtsUnit;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 final class WtsMaterialDetailPage extends GatedXotBasePage
@@ -30,7 +30,7 @@ final class WtsMaterialDetailPage extends GatedXotBasePage
 
     protected string $view = 'wts::filament.pages.material-detail';
 
-    public ?int $unitId = null;
+    public int|string|null $unitId = null;
 
     public static function canAccess(): bool
     {

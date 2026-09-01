@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Models;
 
-use Modules\Wts\Concerns\WtsAuditable;
+use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Wts\Concerns\WtsAuditable;
+use Modules\Wts\Database\Factories\WtsDerivedMaterialFactory;
 
 /**
  * @property int $id
@@ -22,16 +23,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $weight
  * @property bool $is_dirty
  * @property array<string, mixed>|null $meta
- * @property \Carbon\CarbonInterface|null $created_at
- * @property \Carbon\CarbonInterface|null $updated_at
+ * @property CarbonInterface|null $created_at
+ * @property CarbonInterface|null $updated_at
  * @property string|null $updated_by
  * @property string|null $created_by
- * @property \Carbon\CarbonInterface|null $deleted_at
+ * @property CarbonInterface|null $deleted_at
  * @property string|null $deleted_by
  */
-final class WtsDerivedMaterial extends Model
+final class WtsDerivedMaterial extends BaseModel
 {
-    /** @use HasFactory<\Modules\Wts\Database\Factories\WtsDerivedMaterialFactory> */
+    /** @use HasFactory<WtsDerivedMaterialFactory> */
     use HasFactory;
 
     use SoftDeletes;
@@ -70,8 +71,8 @@ final class WtsDerivedMaterial extends Model
         return $this->morphMany(WtsLabelPrint::class, 'labelable');
     }
 
-    protected static function newFactory(): \Modules\Wts\Database\Factories\WtsDerivedMaterialFactory
+    protected static function newFactory(): WtsDerivedMaterialFactory
     {
-        return \Modules\Wts\Database\Factories\WtsDerivedMaterialFactory::new();
+        return WtsDerivedMaterialFactory::new();
     }
 }

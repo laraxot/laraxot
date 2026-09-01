@@ -4,13 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use App\Support\AccountFeatures;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Auth;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\Wts\Actions\GenerateWtsProcessingReportPdfAction;
 use Modules\Wts\Actions\GenerateWtsProcessingSheetPdfAction;
+use Modules\Wts\Models\WtsDerivedMaterial;
 use Modules\Wts\Models\WtsProcessingStep;
 use Modules\Wts\Queries\GetWtsReportOverviewQuery;
-use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 final class WtsReportsPage extends GatedXotBasePage
@@ -34,7 +36,7 @@ final class WtsReportsPage extends GatedXotBasePage
         return AccountFeatures::isWtsAdmin(Auth::user());
     }
 
-    public function downloadStepPdf(int $stepId): ?StreamedResponse
+    public function downloadStepPdf(int|string $stepId): ?StreamedResponse
     {
         $step = WtsProcessingStep::query()->find($stepId);
         if (! $step instanceof WtsProcessingStep) {
@@ -68,8 +70,8 @@ final class WtsReportsPage extends GatedXotBasePage
     /**
      * @return array{
      *     stats: array<string, int|float>,
-     *     steps: \Illuminate\Database\Eloquent\Collection<int, \Modules\Wts\Models\WtsProcessingStep>,
-     *     materials: \Illuminate\Database\Eloquent\Collection<int, \Modules\Wts\Models\WtsDerivedMaterial>
+     *     steps: Collection<int, WtsProcessingStep>,
+     *     materials: Collection<int, WtsDerivedMaterial>
      * }
      */
     protected function getViewData(): array

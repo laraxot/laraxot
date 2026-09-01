@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Models;
 
+use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Modules\Wts\Database\Factories\WtsTechnicalSheetSnapshotFactory;
 
 /**
  * @property int $id
@@ -20,14 +21,14 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string|null $note_1
  * @property string|null $note_2
  * @property array<string, mixed>|null $legacy_payload
- * @property \Carbon\CarbonInterface|null $created_at
- * @property \Carbon\CarbonInterface|null $updated_at
+ * @property CarbonInterface|null $created_at
+ * @property CarbonInterface|null $updated_at
  * @property string|null $updated_by
  * @property string|null $created_by
  */
-final class WtsTechnicalSheetSnapshot extends Model
+final class WtsTechnicalSheetSnapshot extends BaseModel
 {
-    /** @use HasFactory<\Modules\Wts\Database\Factories\WtsTechnicalSheetSnapshotFactory> */
+    /** @use HasFactory<WtsTechnicalSheetSnapshotFactory> */
     use HasFactory;
 
     protected $table = 'wts_technical_sheet_snapshots';
@@ -55,8 +56,8 @@ final class WtsTechnicalSheetSnapshot extends Model
         return $this->hasMany(WtsUnit::class, 'technical_sheet_snapshot_id');
     }
 
-    protected static function newFactory(): \Modules\Wts\Database\Factories\WtsTechnicalSheetSnapshotFactory
+    protected static function newFactory(): WtsTechnicalSheetSnapshotFactory
     {
-        return \Modules\Wts\Database\Factories\WtsTechnicalSheetSnapshotFactory::new();
+        return WtsTechnicalSheetSnapshotFactory::new();
     }
 }

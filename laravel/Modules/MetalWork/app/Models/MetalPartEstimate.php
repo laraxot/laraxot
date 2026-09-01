@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Modules\MetalWork\Database\Factories\MetalPartEstimateFactory;
 use Modules\Quotation\Models\Quotation;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -33,7 +32,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class MetalPartEstimate extends XotBaseModel
+final class MetalPartEstimate extends BaseModel
 {
 
     protected $table = 'metalwork_part_estimates';

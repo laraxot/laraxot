@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Models;
 
-use Modules\User\Models\User;
-use Modules\Wts\Concerns\WtsAuditable;
+use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\User\Models\User;
+use Modules\Wts\Concerns\WtsAuditable;
+use Modules\Wts\Database\Factories\WtsNonConformityReportFactory;
 
 /**
  * @property int $id
@@ -19,18 +20,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $note
  * @property string|null $recipient_email
  * @property string|null $reported_by_user_id
- * @property \Carbon\CarbonInterface $reported_at
- * @property \Carbon\CarbonInterface|null $email_sent_at
- * @property \Carbon\CarbonInterface|null $created_at
- * @property \Carbon\CarbonInterface|null $updated_at
+ * @property CarbonInterface $reported_at
+ * @property CarbonInterface|null $email_sent_at
+ * @property CarbonInterface|null $created_at
+ * @property CarbonInterface|null $updated_at
  * @property string|null $updated_by
  * @property string|null $created_by
- * @property \Carbon\CarbonInterface|null $deleted_at
+ * @property CarbonInterface|null $deleted_at
  * @property string|null $deleted_by
  */
-final class WtsNonConformityReport extends Model
+final class WtsNonConformityReport extends BaseModel
 {
-    /** @use HasFactory<\Modules\Wts\Database\Factories\WtsNonConformityReportFactory> */
+    /** @use HasFactory<WtsNonConformityReportFactory> */
     use HasFactory;
 
     use SoftDeletes;
@@ -68,8 +69,8 @@ final class WtsNonConformityReport extends Model
         return $this->belongsTo(User::class, 'reported_by_user_id');
     }
 
-    protected static function newFactory(): \Modules\Wts\Database\Factories\WtsNonConformityReportFactory
+    protected static function newFactory(): WtsNonConformityReportFactory
     {
-        return \Modules\Wts\Database\Factories\WtsNonConformityReportFactory::new();
+        return WtsNonConformityReportFactory::new();
     }
 }

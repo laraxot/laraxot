@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -28,7 +27,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
  */
-final class EnergyBrokerSupplyPoint extends XotBaseModel
+final class EnergyBrokerSupplyPoint extends BaseModel
 {
     use SoftDeletes;
 

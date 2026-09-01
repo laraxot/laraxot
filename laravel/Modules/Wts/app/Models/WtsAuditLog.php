@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Models;
 
+use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
@@ -20,13 +21,13 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property array<string, mixed>|null $new_values
  * @property string|null $performed_by_user_id
  * @property string|null $performed_by_name
- * @property \Carbon\CarbonInterface $performed_at
- * @property \Carbon\CarbonInterface|null $created_at
- * @property \Carbon\CarbonInterface|null $updated_at
+ * @property CarbonInterface $performed_at
+ * @property CarbonInterface|null $created_at
+ * @property CarbonInterface|null $updated_at
  * @property string|null $updated_by
  * @property string|null $created_by
  */
-final class WtsAuditLog extends Model
+final class WtsAuditLog extends BaseModel
 {
     protected $table = 'wts_audit_logs';
 

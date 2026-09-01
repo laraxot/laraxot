@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use App\Support\AccountFeatures;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Auth;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\Wts\Actions\GenerateWtsProcessingSheetPdfAction;
 use Modules\Wts\Models\WtsProcessingStep;
-use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 final class WtsProcessingSheetPage extends GatedXotBasePage
@@ -27,7 +28,7 @@ final class WtsProcessingSheetPage extends GatedXotBasePage
 
     protected string $view = 'wts::filament.pages.processing-sheet';
 
-    public ?int $stepId = null;
+    public int|string|null $stepId = null;
 
     public static function canAccess(): bool
     {
@@ -60,7 +61,7 @@ final class WtsProcessingSheetPage extends GatedXotBasePage
 
     /**
      * @return array{
-     *     steps: \Illuminate\Database\Eloquent\Collection<int, WtsProcessingStep>,
+     *     steps: Collection<int, WtsProcessingStep>,
      *     selectedStep: WtsProcessingStep|null
      * }
      */

@@ -7,7 +7,6 @@ namespace Modules\Signage\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Signage\Database\Factories\SignSupplierPriceEntryFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -19,7 +18,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class SignSupplierPriceEntry extends XotBaseModel
+final class SignSupplierPriceEntry extends BaseModel
 {
 
     protected $table = 'sign_supplier_price_entries';

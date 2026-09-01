@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Models;
 
-use Modules\Wts\Concerns\WtsAuditable;
+use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Wts\Concerns\WtsAuditable;
+use Modules\Wts\Database\Factories\WtsInboundLotFactory;
 
 /**
  * @property int $id
@@ -18,16 +19,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $status_code
  * @property string $current_area_code
  * @property int $initial_units_count
- * @property \Carbon\CarbonInterface|null $created_at
- * @property \Carbon\CarbonInterface|null $updated_at
+ * @property CarbonInterface|null $created_at
+ * @property CarbonInterface|null $updated_at
  * @property string|null $updated_by
  * @property string|null $created_by
- * @property \Carbon\CarbonInterface|null $deleted_at
+ * @property CarbonInterface|null $deleted_at
  * @property string|null $deleted_by
  */
-final class WtsInboundLot extends Model
+final class WtsInboundLot extends BaseModel
 {
-    /** @use HasFactory<\Modules\Wts\Database\Factories\WtsInboundLotFactory> */
+    /** @use HasFactory<WtsInboundLotFactory> */
     use HasFactory;
 
     use SoftDeletes;
@@ -56,8 +57,8 @@ final class WtsInboundLot extends Model
         return $this->hasMany(WtsNonConformityReport::class, 'wts_inbound_lot_id');
     }
 
-    protected static function newFactory(): \Modules\Wts\Database\Factories\WtsInboundLotFactory
+    protected static function newFactory(): WtsInboundLotFactory
     {
-        return \Modules\Wts\Database\Factories\WtsInboundLotFactory::new();
+        return WtsInboundLotFactory::new();
     }
 }

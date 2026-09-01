@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Models;
 
-use Modules\User\Models\User;
+use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\User\Models\User;
+use Modules\Wts\Database\Factories\WtsLabelPrintFactory;
 
 /**
  * @property int $id
@@ -19,17 +21,17 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $qr_payload
  * @property string $print_reason_code
  * @property string|null $printed_by_user_id
- * @property \Carbon\CarbonInterface $printed_at
- * @property \Carbon\CarbonInterface|null $created_at
- * @property \Carbon\CarbonInterface|null $updated_at
+ * @property CarbonInterface $printed_at
+ * @property CarbonInterface|null $created_at
+ * @property CarbonInterface|null $updated_at
  * @property string|null $updated_by
  * @property string|null $created_by
- * @property \Carbon\CarbonInterface|null $deleted_at
+ * @property CarbonInterface|null $deleted_at
  * @property string|null $deleted_by
  */
-final class WtsLabelPrint extends Model
+final class WtsLabelPrint extends BaseModel
 {
-    /** @use HasFactory<\Modules\Wts\Database\Factories\WtsLabelPrintFactory> */
+    /** @use HasFactory<WtsLabelPrintFactory> */
     use HasFactory;
 
     use SoftDeletes;
@@ -59,8 +61,8 @@ final class WtsLabelPrint extends Model
         return $this->belongsTo(User::class, 'printed_by_user_id');
     }
 
-    protected static function newFactory(): \Modules\Wts\Database\Factories\WtsLabelPrintFactory
+    protected static function newFactory(): WtsLabelPrintFactory
     {
-        return \Modules\Wts\Database\Factories\WtsLabelPrintFactory::new();
+        return WtsLabelPrintFactory::new();
     }
 }

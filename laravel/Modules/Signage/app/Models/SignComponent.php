@@ -7,7 +7,6 @@ namespace Modules\Signage\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Signage\Database\Factories\SignComponentFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * One component/material row of a sign spec (distinta base). Priced by linking
@@ -32,7 +31,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class SignComponent extends XotBaseModel
+final class SignComponent extends BaseModel
 {
 
     protected $table = 'sign_components';

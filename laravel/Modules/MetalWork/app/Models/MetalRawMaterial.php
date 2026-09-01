@@ -7,7 +7,6 @@ namespace Modules\MetalWork\Models;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Modules\MetalWork\Database\Factories\MetalRawMaterialFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -27,7 +26,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class MetalRawMaterial extends XotBaseModel
+final class MetalRawMaterial extends BaseModel
 {
 
     protected $table = 'metalwork_raw_materials';

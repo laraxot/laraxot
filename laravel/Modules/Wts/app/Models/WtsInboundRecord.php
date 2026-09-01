@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Models;
 
-use Modules\User\Models\User;
-use Modules\Wts\Concerns\WtsAuditable;
+use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\User\Models\User;
+use Modules\Wts\Concerns\WtsAuditable;
+use Modules\Wts\Database\Factories\WtsInboundRecordFactory;
 
 /**
  * @property int $id
@@ -22,13 +23,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $entry_weight
  * @property string $status_code
  * @property int|null $technical_sheet_snapshot_id
- * @property \Carbon\CarbonInterface|null $received_at
+ * @property CarbonInterface|null $received_at
  * @property string|null $created_by_user_id
  * @property string|null $notes
  * @property string|null $tare_weight
  * @property string|null $net_weight
  * @property string|null $acceptance_status
- * @property \Carbon\CarbonInterface|null $taken_charge_at
+ * @property CarbonInterface|null $taken_charge_at
  * @property string|null $commercial_company_name
  * @property string|null $batch_number
  * @property int|null $ecos_units_count
@@ -36,16 +37,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $treatment_line_code
  * @property string|null $production_cycle_code
  * @property array<string, mixed>|null $legacy_payload
- * @property \Carbon\CarbonInterface|null $created_at
- * @property \Carbon\CarbonInterface|null $updated_at
+ * @property CarbonInterface|null $created_at
+ * @property CarbonInterface|null $updated_at
  * @property string|null $updated_by
  * @property string|null $created_by
- * @property \Carbon\CarbonInterface|null $deleted_at
+ * @property CarbonInterface|null $deleted_at
  * @property string|null $deleted_by
  */
-final class WtsInboundRecord extends Model
+final class WtsInboundRecord extends BaseModel
 {
-    /** @use HasFactory<\Modules\Wts\Database\Factories\WtsInboundRecordFactory> */
+    /** @use HasFactory<WtsInboundRecordFactory> */
     use HasFactory;
 
     use SoftDeletes;
@@ -94,8 +95,8 @@ final class WtsInboundRecord extends Model
         return $this->hasMany(WtsNonConformityReport::class, 'wts_inbound_record_id');
     }
 
-    protected static function newFactory(): \Modules\Wts\Database\Factories\WtsInboundRecordFactory
+    protected static function newFactory(): WtsInboundRecordFactory
     {
-        return \Modules\Wts\Database\Factories\WtsInboundRecordFactory::new();
+        return WtsInboundRecordFactory::new();
     }
 }

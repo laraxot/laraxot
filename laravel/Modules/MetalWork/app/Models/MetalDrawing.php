@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Modules\MetalWork\Database\Factories\MetalDrawingFactory;
 use Modules\MetalWork\Datas\StepGeometry;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -33,7 +32,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class MetalDrawing extends XotBaseModel
+final class MetalDrawing extends BaseModel
 {
 
     protected $table = 'metalwork_drawings';

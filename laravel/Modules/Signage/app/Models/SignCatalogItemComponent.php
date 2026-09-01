@@ -7,7 +7,6 @@ namespace Modules\Signage\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Signage\Database\Factories\SignCatalogItemComponentFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -24,7 +23,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class SignCatalogItemComponent extends XotBaseModel
+final class SignCatalogItemComponent extends BaseModel
 {
 
     protected $table = 'sign_catalog_item_components';

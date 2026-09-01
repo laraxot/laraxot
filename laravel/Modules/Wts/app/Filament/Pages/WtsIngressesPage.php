@@ -4,16 +4,17 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use App\Support\AccountFeatures;
+use Filament\Notifications\Notification;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Auth;
+use InvalidArgumentException;
+use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\Wts\Actions\TakeChargeOfWtsIngressAction;
 use Modules\Wts\Datas\WtsTakeChargeDefaults;
 use Modules\Wts\Models\WtsInboundLot;
 use Modules\Wts\Models\WtsInboundRecord;
 use Modules\Wts\Queries\GetWtsIngressOverviewQuery;
-use Filament\Notifications\Notification;
-use Illuminate\Support\Facades\Auth;
-use InvalidArgumentException;
 
 final class WtsIngressesPage extends GatedXotBasePage
 {
@@ -53,7 +54,7 @@ final class WtsIngressesPage extends GatedXotBasePage
      * (record cambiato sotto, URL diretto) la presa in carico viene rifiutata
      * con il motivo, senza mandare l'operatore da un'altra parte.
      */
-    public function takeChargeAndOpenLot(int $recordId): void
+    public function takeChargeAndOpenLot(int|string $recordId): void
     {
         /** @var WtsInboundRecord|null $record */
         $record = WtsInboundRecord::query()->with('technicalSheetSnapshot')->find($recordId);
@@ -118,7 +119,7 @@ final class WtsIngressesPage extends GatedXotBasePage
     }
 
     /**
-     * @return array{ingresses: \Illuminate\Database\Eloquent\Collection<int, \Modules\Wts\Models\WtsInboundRecord>, unitTypeLabels: array<string, string>, dataSourceStatus: array{label: string, description: string, class: string}}
+     * @return array{ingresses: Collection<int, WtsInboundRecord>, unitTypeLabels: array<string, string>, dataSourceStatus: array{label: string, description: string, class: string}}
      */
     protected function getViewData(): array
     {

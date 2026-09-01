@@ -6,7 +6,6 @@ namespace Modules\Signage\Models;
 
 use Illuminate\Support\Carbon;
 use Modules\Signage\Database\Factories\SignEstimationRuleFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * How to derive a component quantity from the drawing geometry:
@@ -26,7 +25,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class SignEstimationRule extends XotBaseModel
+final class SignEstimationRule extends BaseModel
 {
 
     protected $table = 'sign_estimation_rules';
