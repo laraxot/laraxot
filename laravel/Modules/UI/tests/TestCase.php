@@ -7,6 +7,9 @@ namespace Modules\UI\Tests;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
+use Mockery\ExpectationInterface;
+use Mockery\LegacyMockInterface;
+use Mockery\MockInterface;
 use Modules\UI\Providers\UIServiceProvider;
 use Modules\User\Models\User;
 use Modules\User\Providers\UserServiceProvider;
@@ -23,6 +26,25 @@ use function Safe\file_get_contents;
 abstract class TestCase extends XotBaseTestCase
 {
     use DatabaseTransactions;
+
+    /**
+     * Restringe il tipo di ritorno unione di shouldReceive() per PHPStan.
+     *
+     * Viveva come funzione libera in tre file di test, ognuno con una guardia
+     * function_exists('expectMethod') che non funzionava: la funzione stava in un
+     * namespace, e function_exists senza namespace cerca quella globale. Il secondo
+     * file caricato faceva fallire l'intera suite con un "Cannot redeclare".
+     *
+     * Il tipo dichiarato era Expectation, ma shouldReceive() restituisce una
+     * CompositeExpectation: entrambe implementano ExpectationInterface.
+     */
+    public static function expectMethod(LegacyMockInterface|MockInterface $mock, string $method): ExpectationInterface
+    {
+        /** @var ExpectationInterface $expectation */
+        $expectation = $mock->shouldReceive($method);
+
+        return $expectation;
+    }
 
     /** @var list<string> */
     protected $connectionsToTransact = ['xot', 'sqlite', 'user'];

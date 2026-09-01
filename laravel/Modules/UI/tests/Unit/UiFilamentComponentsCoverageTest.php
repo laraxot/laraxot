@@ -6,7 +6,6 @@ namespace Modules\UI\Tests\Unit;
 
 use Illuminate\Translation\PotentiallyTranslatedString;
 use Mockery;
-use Mockery\LegacyMockInterface;
 use Mockery\MockInterface;
 use Modules\UI\Enums\FieldTypeEnum;
 use Modules\UI\Enums\TableLayout;
@@ -21,9 +20,7 @@ use Modules\Xot\Tests\FilamentSchemaCoverage;
 use PHPUnit\Framework\Assert;
 use SplFileInfo;
 
-require_once __DIR__.'/../Support/MockExpectations.php';
-
-uses(\Modules\UI\Tests\TestCase::class);
+uses(TestCase::class);
 
 afterEach(function (): void {
     Mockery::close();
@@ -91,10 +88,10 @@ describe('UI coverage boost — Rules and policies', function (): void {
     test('UiBasePolicy before grants super-admin', function (): void {
         /** @var MockInterface&UserContract $superAdmin */
         $superAdmin = Mockery::mock(UserContract::class);
-        expectMethod($superAdmin, 'hasRole')->with('super-admin')->andReturn(true);
+        TestCase::expectMethod($superAdmin, 'hasRole')->with('super-admin')->andReturn(true);
         /** @var MockInterface&UserContract $regular */
         $regular = Mockery::mock(UserContract::class);
-        expectMethod($regular, 'hasRole')->with('super-admin')->andReturn(false);
+        TestCase::expectMethod($regular, 'hasRole')->with('super-admin')->andReturn(false);
 
         $policy = new class() extends UiBasePolicy {};
         Assert::assertTrue($policy->before($superAdmin, 'viewAny'));
