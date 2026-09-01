@@ -2,11 +2,9 @@
 
 declare(strict_types=1);
 
-use Exception;
 use Modules\Job\Actions\GetTaskFrequenciesAction;
 use Modules\Job\Tests\TestCase;
 use PHPUnit\Framework\Assert;
-use stdClass;
 
 uses(\Modules\Job\Tests\TestCase::class);
 
@@ -165,7 +163,7 @@ describe('TaskFrequencies Integration', function () {
             true,
             false,
             null,
-            new stdClass(),
+            new \stdClass(),
         ];
 
         $action = $this->getAction(GetTaskFrequenciesAction::class);
@@ -175,8 +173,8 @@ describe('TaskFrequencies Integration', function () {
             try {
                 $action->execute();
                 Assert::fail('Expected exception for invalid config');
-            } catch (Exception $exception) {
-                Assert::assertInstanceOf(Exception::class, $exception);
+            } catch (\Exception $exception) {
+                Assert::assertInstanceOf(\Exception::class, $exception);
             }
         }
     });

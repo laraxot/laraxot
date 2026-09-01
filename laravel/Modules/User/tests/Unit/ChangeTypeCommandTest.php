@@ -7,7 +7,6 @@ use Modules\User\Console\Commands\ChangeTypeCommand;
 use Modules\User\Tests\TestCase;
 use Modules\Xot\Datas\XotData;
 use PHPUnit\Framework\Assert;
-use ReflectionNamedType;
 
 uses(TestCase::class);
 
@@ -48,7 +47,7 @@ test('change type command handle method is public void', function (): void {
     $returnType = $handleMethod->getReturnType();
 
     Assert::assertTrue($handleMethod->isPublic());
-    Assert::assertInstanceOf(ReflectionNamedType::class, $returnType);
+    Assert::assertInstanceOf(\ReflectionNamedType::class, $returnType);
     Assert::assertSame('void', $returnType->getName());
 });
 

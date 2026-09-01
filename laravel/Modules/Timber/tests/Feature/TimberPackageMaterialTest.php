@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use InvalidArgumentException;
 use Modules\Timber\Actions\PackageTimberMaterialAction;
 use Modules\Timber\Models\TimberDerivedMaterial;
 use Modules\Timber\Models\TimberPackagedUnit;
@@ -48,7 +47,7 @@ it('rejects packaging with no article lines', function (): void {
     $material = TimberDerivedMaterial::factory()->createOne(['is_waste' => false, 'quantity' => 100]);
 
     expect(fn (): mixed => app(PackageTimberMaterialAction::class)->execute($material, []))
-        ->toThrow(InvalidArgumentException::class);
+        ->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects packaging a waste material', function (): void {
@@ -57,5 +56,5 @@ it('rejects packaging a waste material', function (): void {
 
     expect(fn (): mixed => app(PackageTimberMaterialAction::class)->execute($material, [
         ['product_id' => $product->id, 'package_type_code' => 'sacco', 'packages_count' => 1, 'quantity_per_package' => 10.0],
-    ]))->toThrow(InvalidArgumentException::class);
+    ]))->toThrow(\InvalidArgumentException::class);
 });

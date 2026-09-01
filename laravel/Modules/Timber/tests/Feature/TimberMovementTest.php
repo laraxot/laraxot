@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use InvalidArgumentException;
 use Modules\Timber\Actions\MoveTimberMaterialAction;
 use Modules\Timber\Models\TimberDerivedMaterial;
 use Modules\Timber\Models\TimberLot;
@@ -37,12 +36,12 @@ it('rejects an unknown area code', function (): void {
     $lot = TimberLot::factory()->createOne();
 
     expect(fn (): mixed => app(MoveTimberMaterialAction::class)->execute($lot, 'area-inesistente', null, null))
-        ->toThrow(InvalidArgumentException::class);
+        ->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects an empty area code', function (): void {
     $lot = TimberLot::factory()->createOne();
 
     expect(fn (): mixed => app(MoveTimberMaterialAction::class)->execute($lot, '', null, null))
-        ->toThrow(InvalidArgumentException::class);
+        ->toThrow(\InvalidArgumentException::class);
 });

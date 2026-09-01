@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use InvalidArgumentException;
 use Modules\Timber\Actions\BuildTimberQrPayloadAction;
 use Modules\Timber\Actions\GenerateTimberInventoryPdfAction;
 use Modules\Timber\Actions\GenerateTimberLabelPdfAction;
@@ -68,7 +67,7 @@ it('rejects building a qr payload for an unsupported model', function (): void {
     $supplier = TimberSupplier::factory()->createOne();
 
     expect(fn (): mixed => app(BuildTimberQrPayloadAction::class)->execute($supplier))
-        ->toThrow(InvalidArgumentException::class);
+        ->toThrow(\InvalidArgumentException::class);
 });
 
 it('renders a qr svg and a data uri', function (): void {

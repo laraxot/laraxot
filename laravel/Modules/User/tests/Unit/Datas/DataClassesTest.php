@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use DateInterval;
 use Modules\User\Datas\DeviceData;
 use Modules\User\Datas\FilamentShieldData;
 use Modules\User\Datas\FilamentUserData;
@@ -30,7 +29,7 @@ test('PermissionData can be instantiated', function () {
         'display_permission_in_exception' => false,
         'display_role_in_exception' => false,
         'enable_wildcard_permission' => false,
-        'cache' => PermissionCacheData::from(['enabled' => true, 'key' => 'spatie.permission.cache', 'expiration_time' => DateInterval::createFromDateString('24 hours'), 'store' => 'default']),
+        'cache' => PermissionCacheData::from(['enabled' => true, 'key' => 'spatie.permission.cache', 'expiration_time' => \DateInterval::createFromDateString('24 hours'), 'store' => 'default']),
     ]);
 
     Assert::assertInstanceOf(PermissionData::class, $permissionData);
@@ -67,7 +66,7 @@ test('PermissionColumnNamesData can be instantiated', function () {
 
 test('PermissionCacheData can be instantiated', function () {
     $cacheData = PermissionCacheData::from([
-        'expiration_time' => DateInterval::createFromDateString('24 hours'),
+        'expiration_time' => \DateInterval::createFromDateString('24 hours'),
         'key' => 'spatie.permission.cache',
         'store' => 'default',
     ]);

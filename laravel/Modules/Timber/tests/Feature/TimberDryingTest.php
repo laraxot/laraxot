@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use InvalidArgumentException;
 use Modules\Timber\Actions\CompleteTimberDryingCycleAction;
 use Modules\Timber\Actions\RecordTimberHumidityCheckAction;
 use Modules\Timber\Actions\StartTimberDryingCycleAction;
@@ -43,14 +42,14 @@ it('rejects starting a drying cycle without available quantity', function (): vo
     $lot = TimberLot::factory()->createOne(['quantity_available' => 0]);
 
     expect(fn (): mixed => app(StartTimberDryingCycleAction::class)->execute($lot, null, null, null))
-        ->toThrow(InvalidArgumentException::class);
+        ->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects an out of range target humidity', function (): void {
     $lot = TimberLot::factory()->createOne(['quantity_available' => 100]);
 
     expect(fn (): mixed => app(StartTimberDryingCycleAction::class)->execute($lot, null, 150.0, null))
-        ->toThrow(InvalidArgumentException::class);
+        ->toThrow(\InvalidArgumentException::class);
 });
 
 it('records a humidity check on an in progress cycle', function (): void {
@@ -74,7 +73,7 @@ it('rejects a humidity check on a completed cycle', function (): void {
 
     expect(function () use ($refreshedCycle): void {
         app(RecordTimberHumidityCheckAction::class)->execute($refreshedCycle, 20.0, null, null);
-    })->toThrow(InvalidArgumentException::class);
+    })->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects an out of range humidity check', function (): void {
@@ -82,7 +81,7 @@ it('rejects an out of range humidity check', function (): void {
     $cycle = app(StartTimberDryingCycleAction::class)->execute($lot, null, null, null);
 
     expect(fn (): mixed => app(RecordTimberHumidityCheckAction::class)->execute($cycle, 250.0, null, null))
-        ->toThrow(InvalidArgumentException::class);
+        ->toThrow(\InvalidArgumentException::class);
 });
 
 it('completes a drying cycle for a raw lot returning it to available status', function (): void {
@@ -117,5 +116,5 @@ it('rejects completing a cycle that is not in progress', function (): void {
     assert($refreshedCycle instanceof TimberDryingCycle);
 
     expect(fn (): mixed => app(CompleteTimberDryingCycleAction::class)->execute($refreshedCycle))
-        ->toThrow(InvalidArgumentException::class);
+        ->toThrow(\InvalidArgumentException::class);
 });

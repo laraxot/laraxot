@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use InvalidArgumentException;
 use Modules\Timber\Actions\RegisterTimberProcessingAction;
 use Modules\Timber\Models\TimberDerivedMaterial;
 use Modules\Timber\Models\TimberLot;
@@ -94,7 +93,7 @@ it('rejects processing with no lot or material selected', function (): void {
             notes: null,
             outputDefinitions: [['wood_species' => 'abete', 'quantity' => 10]],
         );
-    })->toThrow(InvalidArgumentException::class);
+    })->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects an invalid step type', function (): void {
@@ -109,7 +108,7 @@ it('rejects an invalid step type', function (): void {
         unitOfMeasure: 'kg',
         notes: null,
         outputDefinitions: [['wood_species' => 'abete', 'quantity' => 10]],
-    ))->toThrow(InvalidArgumentException::class);
+    ))->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects processing a lot that is not available', function (): void {
@@ -124,7 +123,7 @@ it('rejects processing a lot that is not available', function (): void {
         unitOfMeasure: 'kg',
         notes: null,
         outputDefinitions: [['wood_species' => 'abete', 'quantity' => 10]],
-    ))->toThrow(InvalidArgumentException::class);
+    ))->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects processing a derived material without available quantity', function (): void {
@@ -139,7 +138,7 @@ it('rejects processing a derived material without available quantity', function 
         unitOfMeasure: 'kg',
         notes: null,
         outputDefinitions: [['wood_species' => 'abete', 'quantity' => 10]],
-    ))->toThrow(InvalidArgumentException::class);
+    ))->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects an empty list of output definitions', function (): void {
@@ -154,7 +153,7 @@ it('rejects an empty list of output definitions', function (): void {
         unitOfMeasure: 'kg',
         notes: null,
         outputDefinitions: [],
-    ))->toThrow(InvalidArgumentException::class);
+    ))->toThrow(\InvalidArgumentException::class);
 });
 
 it('forces the output species to the input species and builds the traceable code', function (): void {
@@ -235,7 +234,7 @@ it('rejects an output definition with a non positive quantity', function (): voi
         unitOfMeasure: 'kg',
         notes: null,
         outputDefinitions: [['wood_species' => 'abete', 'quantity' => 0]],
-    ))->toThrow(InvalidArgumentException::class);
+    ))->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects a negative recoverable quantity', function (): void {
@@ -250,7 +249,7 @@ it('rejects a negative recoverable quantity', function (): void {
         unitOfMeasure: 'kg',
         notes: null,
         outputDefinitions: [['wood_species' => 'abete', 'quantity' => 10]],
-    ))->toThrow(InvalidArgumentException::class);
+    ))->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects unknown lot ids', function (): void {
@@ -265,7 +264,7 @@ it('rejects unknown lot ids', function (): void {
             notes: null,
             outputDefinitions: [['wood_species' => 'abete', 'quantity' => 10]],
         );
-    })->toThrow(InvalidArgumentException::class);
+    })->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects unknown derived material ids', function (): void {
@@ -280,5 +279,5 @@ it('rejects unknown derived material ids', function (): void {
             notes: null,
             outputDefinitions: [['wood_species' => 'abete', 'quantity' => 10]],
         );
-    })->toThrow(InvalidArgumentException::class);
+    })->toThrow(\InvalidArgumentException::class);
 });

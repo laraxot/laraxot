@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Mockery;
 use Modules\User\Actions\Team\GetUserTeamsOptionAction;
 use Modules\User\Actions\User\CreateUserAction;
 use Modules\User\Database\Factories\TeamFactory;

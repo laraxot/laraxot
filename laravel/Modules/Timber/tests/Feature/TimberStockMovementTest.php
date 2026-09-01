@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use InvalidArgumentException;
 use Modules\Timber\Actions\RegisterTimberStockMovementAction;
 use Modules\Timber\Models\TimberCustomer;
 use Modules\Timber\Models\TimberProduct;
@@ -54,21 +53,21 @@ it('rejects an unknown direction', function (): void {
     $product = TimberProduct::factory()->createOne();
 
     expect(fn (): mixed => app(RegisterTimberStockMovementAction::class)->execute($product, 'teleport', 10.0, 'quintali'))
-        ->toThrow(InvalidArgumentException::class);
+        ->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects a non-positive load quantity', function (): void {
     $product = TimberProduct::factory()->createOne();
 
     expect(fn (): mixed => app(RegisterTimberStockMovementAction::class)->execute($product, 'load', 0.0, 'quintali'))
-        ->toThrow(InvalidArgumentException::class);
+        ->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects a zero adjustment', function (): void {
     $product = TimberProduct::factory()->createOne();
 
     expect(fn (): mixed => app(RegisterTimberStockMovementAction::class)->execute($product, 'adjustment', 0.0, 'quintali'))
-        ->toThrow(InvalidArgumentException::class);
+        ->toThrow(\InvalidArgumentException::class);
 });
 
 it('updates last and weighted average cost on a valued load', function (): void {

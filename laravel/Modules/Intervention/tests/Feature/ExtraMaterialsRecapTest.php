@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-uses(TestCase::class);
+uses(\Modules\Intervention\Tests\TestCase::class);
 
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;

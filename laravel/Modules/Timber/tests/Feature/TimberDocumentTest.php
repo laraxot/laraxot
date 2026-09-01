@@ -10,7 +10,6 @@ use Modules\Timber\Models\TimberStockMovement;
 use Modules\Timber\Queries\GetTimberStockMovementsQuery;
 use Modules\Timber\Support\TimberDocumentNumberGenerator;
 use Modules\Timber\Tests\TestCase;
-use RuntimeException;
 
 uses(\Modules\Timber\Tests\TestCase::class);
 
@@ -114,7 +113,7 @@ it('does not post an order document to the warehouse', function (): void {
     $document = TimberDocument::factory()->createOne(['document_type_code' => 'ordine_cliente']);
 
     expect(fn (): mixed => app(PostTimberDocumentStockAction::class)->execute($document))
-        ->toThrow(RuntimeException::class);
+        ->toThrow(\RuntimeException::class);
 });
 
 it('refuses to post the same document twice', function (): void {
@@ -137,7 +136,7 @@ it('refuses to post the same document twice', function (): void {
     $action->execute($document);
 
     expect(fn (): mixed => $action->execute($document->refresh()))
-        ->toThrow(RuntimeException::class);
+        ->toThrow(\RuntimeException::class);
 });
 
 it('generates sequential document numbers per type and year', function (): void {

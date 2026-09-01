@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Exception;
 use Modules\Job\Actions\GetTaskFrequenciesAction;
 use Modules\Job\Tests\TestCase;
 use PHPUnit\Framework\Assert;
@@ -38,7 +37,7 @@ describe('GetTaskFrequenciesAction Integration', function () {
     it('throws exception when config is not array', function () {
         /** @var TestCase $this */
         config(['totem.frequencies' => 'invalid_value']);
-        $this->expectApplicationException(Exception::class);
+        $this->expectApplicationException(\Exception::class);
         $action = $this->getAction(GetTaskFrequenciesAction::class);
         $action->execute();
     });
@@ -46,7 +45,7 @@ describe('GetTaskFrequenciesAction Integration', function () {
     it('throws exception when config is null', function () {
         /** @var TestCase $this */
         config(['totem.frequencies' => null]);
-        $this->expectApplicationException(Exception::class);
+        $this->expectApplicationException(\Exception::class);
         $action = $this->getAction(GetTaskFrequenciesAction::class);
         $action->execute();
     });

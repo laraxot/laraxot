@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Mockery;
 use Modules\User\Actions\Passport\CreateGenericClientAction;
 use Modules\User\Actions\Passport\CreatePasswordClientAction;
 use Modules\User\Actions\Passport\CreatePersonalAccessClientAction;
@@ -14,7 +13,7 @@ uses(TestCase::class);
 
 describe('Create specific passport client actions', function (): void {
     afterEach(function (): void {
-        Mockery::close();
+        \Mockery::close();
         app()->forgetInstance(CreateGenericClientAction::class);
         app()->forgetInstance(CreatePasswordClientAction::class);
         app()->forgetInstance(CreatePersonalAccessClientAction::class);

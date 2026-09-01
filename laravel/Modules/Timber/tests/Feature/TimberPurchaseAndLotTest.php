@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use InvalidArgumentException;
 use Modules\Timber\Actions\RegisterTimberPurchaseAction;
 use Modules\Timber\Models\TimberLot;
 use Modules\Timber\Models\TimberPurchaseRecord;
@@ -110,25 +109,25 @@ it('generates sequential lot codes across multiple purchases', function (): void
 });
 
 it('rejects an unknown wood species', function (): void {
-    expect(fn (): mixed => registerTimberPurchase(['woodSpecies' => 'not-a-species']))->toThrow(InvalidArgumentException::class);
+    expect(fn (): mixed => registerTimberPurchase(['woodSpecies' => 'not-a-species']))->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects an unknown unit of measure', function (): void {
-    expect(fn (): mixed => registerTimberPurchase(['unitOfMeasure' => 'not-a-unit']))->toThrow(InvalidArgumentException::class);
+    expect(fn (): mixed => registerTimberPurchase(['unitOfMeasure' => 'not-a-unit']))->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects a non positive quantity', function (): void {
-    expect(fn (): mixed => registerTimberPurchase(['quantity' => 0.0]))->toThrow(InvalidArgumentException::class);
+    expect(fn (): mixed => registerTimberPurchase(['quantity' => 0.0]))->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects a negative gross weight', function (): void {
-    expect(fn (): mixed => registerTimberPurchase(['grossWeight' => -1.0]))->toThrow(InvalidArgumentException::class);
+    expect(fn (): mixed => registerTimberPurchase(['grossWeight' => -1.0]))->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects a negative net weight', function (): void {
-    expect(fn (): mixed => registerTimberPurchase(['netWeight' => -1.0]))->toThrow(InvalidArgumentException::class);
+    expect(fn (): mixed => registerTimberPurchase(['netWeight' => -1.0]))->toThrow(\InvalidArgumentException::class);
 });
 
 it('rejects a negative unit purchase price', function (): void {
-    expect(fn (): mixed => registerTimberPurchase(['unitPurchasePrice' => -1.0]))->toThrow(InvalidArgumentException::class);
+    expect(fn (): mixed => registerTimberPurchase(['unitPurchasePrice' => -1.0]))->toThrow(\InvalidArgumentException::class);
 });
