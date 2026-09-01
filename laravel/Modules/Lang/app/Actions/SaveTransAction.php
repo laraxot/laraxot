@@ -7,6 +7,7 @@ namespace Modules\Lang\Actions;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Modules\Xot\Actions\Arr\SaveArrayAction;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -15,7 +16,7 @@ class SaveTransAction
     use QueueableAction;
 
     /**
-     * @param array<string, mixed>|int|string|Htmlable|null $data
+     * @param  array<string, mixed>|int|string|Htmlable|null  $data
      */
     public function execute(string $key, int|string|array|Htmlable|null $data): void
     {
@@ -33,12 +34,16 @@ class SaveTransAction
         try {
             $cont = File::getRequire($filename);
         } catch (\Exception $e) {
-            dddx([
-                'key' => $key,
-                'data' => $data,
+            // Il file di traduzione esiste ma non e' leggibile o non restituisce
+            // un array. Qui c'era un dddx(), cioe' un dd(): un file corrotto
+            // uccideva la richiesta invece di far ripartire il contenuto da zero.
+            Log::warning('File di traduzione non leggibile, riparto da vuoto', [
                 'filename' => $filename,
-                'message' => $e->getMessage(),
+                'key' => $key,
+                'error' => $e->getMessage(),
             ]);
+
+            $cont = [];
         }
 
         if (! is_array($cont)) {
@@ -46,7 +51,7 @@ class SaveTransAction
         }
 
         $piece = implode('.', array_slice(explode('.', $key), 1));
-        if ('' !== $piece) {
+        if ($piece !== '') {
             Arr::set($cont, $piece, $data);
         } else {
             $cont = $data;
