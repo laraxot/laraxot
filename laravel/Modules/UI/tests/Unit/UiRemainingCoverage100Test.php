@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\View\View;
-use Mockery\Expectation;
 use Mockery\LegacyMockInterface;
 use Mockery\MockInterface;
 use Modules\UI\Actions\GetUserDataAction;
@@ -31,18 +30,9 @@ use Modules\Xot\Actions\GetViewAction;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
 
-/**
- * Narrows Mockery's shouldReceive() union return type for PHPStan.
- */
-function expectMethod(LegacyMockInterface|MockInterface $mock, string $method): Expectation
-{
-    /** @var Expectation $expectation */
-    $expectation = $mock->shouldReceive($method);
-
-    return $expectation;
-}
-
 use function Safe\mkdir;
+
+require_once __DIR__.'/../Support/MockExpectations.php';
 
 uses(\Modules\UI\Tests\TestCase::class)->group('no-ui-db');
 

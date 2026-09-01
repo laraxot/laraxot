@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\UI\Tests\Unit;
 
 use Mockery;
-use Mockery\Expectation;
 use Mockery\LegacyMockInterface;
 use Mockery\MockInterface;
 use Modules\UI\Tests\Fixtures\UiBasePolicyBehaviorConcretePolicy;
@@ -13,20 +12,7 @@ use Modules\UI\Tests\TestCase;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
 
-/**
- * Narrows Mockery's shouldReceive() union return type for PHPStan.
- *
- * @param  LegacyMockInterface|MockInterface  $mock
- */
-if (! function_exists('expectMethod')) {
-    function expectMethod(LegacyMockInterface|MockInterface $mock, string $method): Expectation
-    {
-        /** @var Expectation $expectation */
-        $expectation = $mock->shouldReceive($method);
-
-        return $expectation;
-    }
-}
+require_once __DIR__.'/../Support/MockExpectations.php';
 
 uses(\Modules\UI\Tests\TestCase::class)->group('no-ui-db');
 
