@@ -25,7 +25,7 @@ test('senza override si ricade sul default vuoto', function (): void {
 
         public string $tableSearch = '';
 
-        /** @return array<string, Column|ColumnGroup|LayoutComponent> */
+        /** @return array<string, Column> */
         public function getTableColumns(): array
         {
             return [];

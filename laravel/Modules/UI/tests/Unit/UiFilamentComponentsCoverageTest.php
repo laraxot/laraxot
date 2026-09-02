@@ -89,7 +89,7 @@ describe('UI coverage boost — Rules and policies', function (): void {
         /** @var MockInterface&UserContract $superAdmin */
         $superAdmin = Mockery::mock(UserContract::class);
         $superAdmin->allows([
-            'hasRole' => false,
+            'hasRole' => true,
         ]);
 
         /** @var MockInterface&UserContract $regular */
@@ -99,7 +99,7 @@ describe('UI coverage boost — Rules and policies', function (): void {
         ]);
 
         $policy = new class() extends UiBasePolicy {};
-        Assert::assertNull($policy->before($superAdmin, 'viewAny'));
+        Assert::assertTrue($policy->before($superAdmin, 'viewAny'));
         Assert::assertNull($policy->before($regular, 'viewAny'));
     });
 });
