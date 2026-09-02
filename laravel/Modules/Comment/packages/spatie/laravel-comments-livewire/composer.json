@@ -1,0 +1,72 @@
+{
+    "name": "spatiex/laravel-comments-livewire",
+    "description": "Livewire components for laravel-comments",
+    "keywords": [
+        "spatie",
+        "laravel",
+        "livewire",
+        "laravel-comments"
+    ],
+    "homepage": "https://github.com/spatie/laravel-comments",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://satis.spatie.be"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/contracts": "^11.0|^12.0",
+        "livewire/livewire": "*",
+        "spatiex/laravel-comments": "*",
+        "spatie/laravel-markdown": "*",
+        "spatie/laravel-package-tools": "^1.10.0"
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^6.0|^7.0|^8.0",
+        "larastan/larastan": "*",
+        "orchestra/testbench": "^8.33.0|^9.9.0|^10.0.0",
+        "phpstan/extension-installer": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\LivewireComments\\": "src",
+            "Spatie\\LivewireComments\\Database\\Factories\\": "database/factories"
+
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\LivewireComments\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true,
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\LivewireComments\\LivewireCommentsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "beta",
+    "prefer-stable": true
+}

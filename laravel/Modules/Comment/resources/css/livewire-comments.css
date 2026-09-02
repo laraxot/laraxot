@@ -1,0 +1,11 @@
+.comment-section {
+    --comment-gap: 1rem;
+}
+
+.comment-section-newest-first .comment-thread:last-of-type {
+    margin-bottom: 0;
+}
+
+.comment-thread .prose p {
+    margin-bottom: 0.25rem;
+}
