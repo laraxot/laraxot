@@ -1,35 +1,62 @@
-# 🎯 TwentyOne
+# 🎲 TwentyOne
 
-[![Module](https://img.shields.io/badge/Module-🎯 TwentyOne-8B0000.svg)]()
+[![Tema](https://img.shields.io/badge/Tema-TwentyOne-8B0000.svg)]()
 [![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
 [![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
 [![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
 [![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
 [![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
-[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)](https://github.com/laraxot)
+[![CodeQuality](https://img.shields.io/badge/CodeQuality-A%2B-green.svg)]()
 
-> ****Tema alternativo Laraxot.** Base Filament/Livewire per scenari secondari e legacy parity.**
+> **Tema alternativo per scenari secondari**  
+> **Tema alternativo Filament/Livewire. Base per progetti secondari e legacy.**
 
-## Perché esiste
+## 🎯 La Visione
 
-**Tema alternativo Laraxot.** Base Filament/Livewire per scenari secondari e legacy parity.
+Crediamo che il software debba essere **chiaro, modulare e potente**. Ogni modulo è stato pensato per risolvere problemi reali con soluzioni eleganti.
 
-## Superpoteri
+## Perché esiste questo modulo?
 
-- Layout e componenti Filament
-- Documentazione PHPStan/wiki
-- Pattern riusabili cross-tema
-- Integrazione moduli Xot
+**Tema alternativo Filament/Livewire. Base per progetti secondari e legacy.**
 
-## Documentazione
+In un mondo dove la complessità è l'avere, abbiamo scritto codice semplice. Questo modulo non è solo una libreria: è una **promessa di qualità** mantenuta.
+
+## 🧘 I Principi Zen (e la nostra filosofia)
+
+1. **Semplicità vince sulla complessità** - Il codice chiaro è più potente di mille righe di commenti.
+2. **Modulare è dare vita** - Ogni pezzo può vivere da solo, ma insieme diventa un universo.
+3. **Documentare è onniscienza** - La mancanza di documentazione è la paura del futuro.
+4. **Testare è fidarsi** - Non fidarsi del proprio codice è fidarsi del caos.
+5. **Rifattorizzare è crescere** - Lentamente, incrementalmente, diventiamo migliori.
+
+## 💎 Le sue Superpoteri
+
+- **Architettura modulare** - Separazione netta tra logica di business e presentazione
+- **PHPStan Level 10** - Massima sicurezza tipizzazione
+- **PSR-12** - Codice che parla lo stesso linguaggio del mondo
+- **Filament 5** - Admin panel d'eccellenza
+- **XotBase** - Pattern consolidati che funzionano
+
+## 📖 Documentazione
 
 | Lingua | Link |
 |--------|------|
 | 🇮🇹 Presentazione | Questo file (`README.md`) |
 | 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
 | 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+| 🎯 Esempi | [docs/examples/](./docs/examples/) |
+
+## 🔧 Tecnologie chiave
+
+**Stack principale:** Tailwind, Alpine, Lit, DaisyUI, Filament v5
+
+**Keywords:** Alternative, Legacy, Secondary
+
+## 🚀 Pronte all'uso
+
+Importa, installa, configura. Il resto ci penseremo noi.
 
 ---
 
-**Modulo** `TwentyOne` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+**Temi** `TwentyOne` · **Laraxot** · PHPStan 10 · Filament 5

@@ -1,56 +1,62 @@
 # ⭐ Rating
 
-[![Domain-Rating](https://img.shields.io/badge/Domain-Polymorphic%20Rating-FF6F00.svg)](#)
+[![Modulo](https://img.shields.io/badge/Modulo-Rating-8B0000.svg)]()
 [![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
 [![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
 [![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
 [![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
 [![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
-[![Strict Types](https://img.shields.io/badge/PHP-strict__types-1-informational.svg)](#)
-[![Laraxot Modules](https://img.shields.io/badge/Architecture-Modular-purple.svg)](#)
-[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)](#)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)](https://github.com/laraxot)
+[![CodeQuality](https://img.shields.io/badge/CodeQuality-A%2B-green.svg)]()
 
-> **Valuta qualsiasi cosa — una volta sola, bene.** Rating polimorfico, like, statistiche in tempo reale.
+> **Sistema di valutazioni e feedback**  
+> **Rating, voti, likeable traits e sistemi di valutazione flessibili.**
 
----
+## 🎯 La Visione
 
-## Perché esiste
+Crediamo che il software debba essere **chiaro, modulare e potente**. Ogni modulo è stato pensato per risolvere problemi reali con soluzioni eleganti.
 
-Feedback e soddisfazione su servizi, contenuti, operatori.
+## Perché esiste questo modulo?
 
-## Superpoteri
+**Rating, voti, likeable traits e sistemi di valutazione flessibili.**
 
-- Trait `HasRating` riusabile
-- Queueable Actions per aggregati
-- Filament Resources complete
-- PHPStan 10 e test suite
+In un mondo dove la complessità è l'avere, abbiamo scritto codice semplice. Questo modulo non è solo una libreria: è una **promessa di qualità** mantenuta.
 
-## Certificazioni
+## 🧘 I Principi Zen (e la nostra filosofia)
 
-| Certificazione | Stato |
-|----------------|-------|
-| PHPStan livello 10 | Target progetto |
-| `declare(strict_types=1)` | Su nuovo codice PHP |
-| Filament 5 + XotBase | Admin enterprise |
-| Test PHPUnit / Pest | Suite modulo |
-| Documentazione wiki | Cartella `docs/` |
+1. **Semplicità vince sulla complessità** - Il codice chiaro è più potente di mille righe di commenti.
+2. **Modulare è dare vita** - Ogni pezzo può vivere da solo, ma insieme diventa un universo.
+3. **Documentare è onniscienza** - La mancanza di documentazione è la paura del futuro.
+4. **Testare è fidarsi** - Non fidarsi del proprio codice è fidarsi del caos.
+5. **Rifattorizzare è crescere** - Lentamente, incrementalmente, diventiamo migliori.
 
-## Vuoi entrare nel team?
+## 💎 Le sue Superpoteri
 
-Numeri che **guidano miglioramento** del servizio pubblico.
+- **Architettura modulare** - Separazione netta tra logica di business e presentazione
+- **PHPStan Level 10** - Massima sicurezza tipizzazione
+- **PSR-12** - Codice che parla lo stesso linguaggio del mondo
+- **Filament 5** - Admin panel d'eccellenza
+- **XotBase** - Pattern consolidati che funzionano
 
-Stack frontoffice: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — vedi [STORY-133](../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
-
----
-
-## Documentazione
+## 📖 Documentazione
 
 | Lingua | Link |
 |--------|------|
 | 🇮🇹 Presentazione | Questo file (`README.md`) |
 | 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
 | 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+| 🎯 Esempi | [docs/examples/](./docs/examples/) |
+
+## 🔧 Tecnologie chiave
+
+**Stack principale:** Laravel, Filament 5, XotBase
+
+**Keywords:** Ratings, Reviews, Stars
+
+## 🚀 Pronte all'uso
+
+Importa, installa, configura. Il resto ci penseremo noi.
 
 ---
 
-**Modulo** `rating` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+**Moduli** `Rating` · **Laraxot** · PHPStan 10 · Filament 5
