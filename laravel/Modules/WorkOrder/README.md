@@ -6,9 +6,9 @@
 [![License](https://img.shields.io/github/license/laraxot/module_workorder_fila5?style=plastic&color=blue)]()
 [![Last Commit](https://img.shields.io/github/last-commit/laraxot/module_workorder_fila5?style=plastic&color=purple)]()
 [![Release](https://img.shields.io/github/v/release/laraxot/module_workorder_fila5?style=plastic&color=orange&display_name=release)]()
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)]()
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)]()
+[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)
+[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)
+[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)
 [![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=plastic)]()
 ]()
 
