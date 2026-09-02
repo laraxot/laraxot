@@ -1,0 +1,58 @@
+{
+    "name": "laraxot/module_blog_fila5",
+    "description": "",
+    "homepage": "https://github.com/laraxot/module_blog_fila5",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "marco sottana",
+            "email": "marco.sottana@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Blog\\Providers\\BlogServiceProvider",
+                "Modules\\Blog\\Providers\\Filament\\AdminPanelProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Blog\\": "app/",
+            "Modules\\Blog\\Database\\Factories\\": "database/factories/",
+            "Modules\\Blog\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../Xot"
+        },
+        {
+            "type": "path",
+            "url": "../Tenant"
+        },
+        {
+            "type": "path",
+            "url": "../UI"
+        }
+    ],
+    "require": {
+        "staudenmeir/laravel-adjacency-list": "*",
+        "spatie/laravel-feed": "*",
+        "staudenmeir/eloquent-has-many-deep": "*",
+        "filament/spatie-laravel-tags-plugin": "*",
+        "codewithdennis/filament-select-tree": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+
+}
