@@ -31,3 +31,4 @@ agentdb.rvf
 .windsurf/
 .devcontainer/
 .claude-audit/
+tests/AuditCoverage/
