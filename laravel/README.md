@@ -243,6 +243,6 @@ Questo repository è proprietario. Tutti i diritti riservati.
 
 ---
 
-**base_workorder_fila5** · **Laraxot** · 44 Moduli · PHPStan 10 · Filament 5 · Laravel 12
+**base_workorder_fila5** · **Laraxot** · 44 Moduli · PHPStan 10 · Filament 5 · Laravel 13
 
 > *"Il codice perfetto è quello che non devi spiegare: parla da solo, come il silenzio dopo un sospiro."*

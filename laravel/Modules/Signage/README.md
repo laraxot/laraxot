@@ -1,16 +1,19 @@
 # 📺 Signage
 
-[![Modulo](https://img.shields.io/badge/Modulo-Signage-8B0000.svg)]()
-[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
-[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
-[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
-[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)](https://github.com/laraxot)
-[![CodeQuality](https://img.shields.io/badge/CodeQuality-A%2B-green.svg)]()
+[![Stars](https://img.shields.io/github/stars/laraxot/module_signage_fila5?style=plastic&color=yellow)]()
+[![Forks](https://img.shields.io/github/forks/laraxot/module_signage_fila5?style=plastic&color=green)]()
+[![Issues](https://img.shields.io/github/issues/laraxot/module_signage_fila5?style=plastic&color=red)]()
+[![License](https://img.shields.io/github/license/laraxot/module_signage_fila5?style=plastic&color=blue)]()
+[![Last Commit](https://img.shields.io/github/last-commit/laraxot/module_signage_fila5?style=plastic&color=purple)]()
+[![Release](https://img.shields.io/github/v/release/laraxot/module_signage_fila5?style=plastic&color=orange&display_name=release)]()
+[![PHPStan](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen?style=plastic)]()
+[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=plastic)]()
+[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=plastic)]()
+[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=plastic)]()
+[![FixCity](https://img.shields.io/badge/Platform-FixCity-008758?style=plastic)]()
 
 > **Pannelli informativi e digital signage**  
-> **Pannelli informativi, comunicazioni e strumenti di segnalazione.**
+> Pannelli informativi, comunicazioni e strumenti di segnalazione.
 
 ## 🎯 La Visione
 
@@ -49,7 +52,7 @@ In un mondo dove la complessità è l'avere, abbiamo scritto codice semplice. Qu
 
 ## 🔧 Tecnologie chiave
 
-**Stack principale:** Laravel, Filament 5, XotBase, UI
+**Stack principale:** Laravel 13, Filament 5, XotBase, UI
 
 **Keywords:** Signage, Displays, Kiosks
 
@@ -59,4 +62,4 @@ Importa, installa, configura. Il resto ci penseremo noi.
 
 ---
 
-**Moduli** `Signage` · **Laraxot** · PHPStan 10 · Filament 5
+**Modulo** `Signage` · **Laraxot** · PHPStan 10 · Filament 5

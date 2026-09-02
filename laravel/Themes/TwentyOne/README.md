@@ -1,42 +1,45 @@
 # 🎲 TwentyOne
 
-[![Tema](https://img.shields.io/badge/Tema-TwentyOne-8B0000.svg)]()
-[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
-[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
-[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
-[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)](https://github.com/laraxot)
-[![CodeQuality](https://img.shields.io/badge/CodeQuality-A%2B-green.svg)]()
+[![Stars](https://img.shields.io/github/stars/laraxot/base_workorder_fila5?style=plastic&color=yellow)]()
+[![Forks](https://img.shields.io/github/forks/laraxot/base_workorder_fila5?style=plastic&color=green)]()
+[![Issues](https://img.shields.io/github/issues/laraxot/base_workorder_fila5?style=plastic&color=red)]()
+[![License](https://img.shields.io/github/license/laraxot/base_workorder_fila5?style=plastic&color=blue)]()
+[![Last Commit](https://img.shields.io/github/last-commit/laraxot/base_workorder_fila5?style=plastic&color=purple)]()
+[![Release](https://img.shields.io/github/v/release/laraxot/base_workorder_fila5?style=plastic&color=orange&display_name=release)]()
+[![PHPStan](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen?style=plastic)]()
+[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=plastic)]()
+[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=plastic)]()
+[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=plastic)]()
+[![FixCity](https://img.shields.io/badge/Platform-FixCity-008758?style=plastic)]()
 
 > **Tema alternativo per scenari secondari**  
-> **Tema alternativo Filament/Livewire. Base per progetti secondari e legacy.**
+> Tema alternativo Filament/Livewire. Base per progetti secondari e legacy.
 
 ## 🎯 La Visione
 
-Crediamo che il software debba essere **chiaro, modulare e potente**. Ogni modulo è stato pensato per risolvere problemi reali con soluzioni eleganti.
+Crediamo che il software debba essere **chiaro, modulare e potente**. Ogni tema è stato pensato per rendere l'esperienza utente straordinaria.
 
-## Perché esiste questo modulo?
+## Perché esiste questo tema?
 
 **Tema alternativo Filament/Livewire. Base per progetti secondari e legacy.**
 
-In un mondo dove la complessità è l'avere, abbiamo scritto codice semplice. Questo modulo non è solo una libreria: è una **promessa di qualità** mantenuta.
+In un mondo dove l'estetica conta, abbiamo creato un tema che unisce **funzionalità e bellezza**.
 
-## 🧘 I Principi Zen (e la nostra filosofia)
+## 🧘 I Principi Zen
 
-1. **Semplicità vince sulla complessità** - Il codice chiaro è più potente di mille righe di commenti.
-2. **Modulare è dare vita** - Ogni pezzo può vivere da solo, ma insieme diventa un universo.
-3. **Documentare è onniscienza** - La mancanza di documentazione è la paura del futuro.
-4. **Testare è fidarsi** - Non fidarsi del proprio codice è fidarsi del caos.
-5. **Rifattorizzare è crescere** - Lentamente, incrementalmente, diventiamo migliori.
+1. **Semplicità è eleganza** - Un design pulito vale più di mille colori.
+2. **Modulare è flessibile** - Ogni componente può essere adattato.
+3. **Accessibilità è rispetto** - Ogni utente merita un'esperienza perfetta.
+4. **Performance è cortesia** - Velocità è rispetto per l'utente.
+5. **Consistenza è fiducia** - Uniformità genera sicurezza.
 
 ## 💎 Le sue Superpoteri
 
-- **Architettura modulare** - Separazione netta tra logica di business e presentazione
-- **PHPStan Level 10** - Massima sicurezza tipizzazione
-- **PSR-12** - Codice che parla lo stesso linguaggio del mondo
-- **Filament 5** - Admin panel d'eccellenza
-- **XotBase** - Pattern consolidati che funzionano
+- **Design Comuni AGID** - Conformità standard PA italiana
+- **Tailwind v4 + DaisyUI + Flowbite** - Framework frontend moderni
+- **Lit v3** - Web Component ad alte prestazioni
+- **Filament v5** - Admin panel integrato
+- **XotBase** - Pattern consolidati
 
 ## 📖 Documentazione
 
@@ -45,18 +48,17 @@ In un mondo dove la complessità è l'avere, abbiamo scritto codice semplice. Qu
 | 🇮🇹 Presentazione | Questo file (`README.md`) |
 | 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
 | 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
-| 🎯 Esempi | [docs/examples/](./docs/examples/) |
 
 ## 🔧 Tecnologie chiave
 
-**Stack principale:** Tailwind, Alpine, Lit, DaisyUI, Filament v5
+**Stack principale:** Laravel 13, Tailwind, Alpine, Lit, DaisyUI, Filament 5
 
 **Keywords:** Alternative, Legacy, Secondary
 
-## 🚀 Pronte all'uso
+## 🚀 Pronto all'uso
 
-Importa, installa, configura. Il resto ci penseremo noi.
+Attiva il tema e il gioco è fatto.
 
 ---
 
-**Temi** `TwentyOne` · **Laraxot** · PHPStan 10 · Filament 5
+**Tema** `TwentyOne` · **Laraxot** · PHPStan 10 · Filament 5
