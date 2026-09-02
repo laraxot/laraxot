@@ -54,6 +54,7 @@ development_status:
   # 2.4.compliance-phpstan-cleanup superseded by 2.3
   2.6.technical-debt-playbooks: review # HOW in laravel/docs/debt-*
   2.7.agents-skills-rules-on-demand-compact: ready-for-dev # stub wave done; residual: create-story HOT + alwaysApply + CI
+  2.8.module-readme-agnostic-computed-badges: in-progress # story: laravel/Modules/Xot/docs/stories/18.1.module-readme-agnostic-computed-badges.story.md
 
 github:
   issue_epic: https://github.com/laraxot/base_workorder_fila5/issues/7
