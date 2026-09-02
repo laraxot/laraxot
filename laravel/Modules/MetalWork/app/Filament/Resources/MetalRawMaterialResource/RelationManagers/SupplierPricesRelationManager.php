@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\MetalWork\Filament\Resources\MetalRawMaterialResource\RelationManagers;
 
-use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
 /**
  * What was actually paid for this material, newest first — the estimate reads
  * the top row.
  */
-final class SupplierPricesRelationManager extends RelationManager
+final class SupplierPricesRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'supplierPrices';
 

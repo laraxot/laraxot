@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\MetalWork\Filament\Pages;
 
-use Filament\Pages\Dashboard;
 use Illuminate\Support\Collection;
 use Modules\MetalWork\Models\MetalDrawing;
 use Modules\MetalWork\Models\MetalPartEstimate;
 use Modules\MetalWork\Models\MetalRawMaterial;
 use Modules\MetalWork\Models\MetalSupplierPrice;
+use Modules\Xot\Filament\Pages\XotBaseDashboard;
 
 /**
  * Landing page of the panel: what has been quoted lately, and whether the price
@@ -21,7 +21,7 @@ use Modules\MetalWork\Models\MetalSupplierPrice;
  * Filament's redirect controller, which breaks once Livewire has swapped the
  * `redirect` binding — a 500 on /metalworks with no page of its own to blame.
  */
-final class MetalWorkDashboard extends Dashboard
+final class MetalWorkDashboard extends XotBaseDashboard
 {
     protected static bool $isDiscovered = false;
 

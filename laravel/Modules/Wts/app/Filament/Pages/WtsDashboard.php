@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Modules\Wts\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Modules\Wts\Queries\GetWtsDashboardStatsQuery;
-use Filament\Pages\Dashboard;
 use Illuminate\Support\Facades\Auth;
+use Modules\Wts\Queries\GetWtsDashboardStatsQuery;
+use Modules\Xot\Filament\Pages\XotBaseDashboard;
 
-final class WtsDashboard extends Dashboard
+final class WtsDashboard extends XotBaseDashboard
 {
     protected static bool $isDiscovered = false;
 

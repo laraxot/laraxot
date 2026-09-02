@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\EnergyBroker\Filament\Resources\EnergyBrokerDocumentResource\Pages;
 
-use Filament\Resources\Pages\EditRecord;
 use Modules\EnergyBroker\Filament\Resources\EnergyBrokerDocumentResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
-final class EditEnergyBrokerDocument extends EditRecord
+final class EditEnergyBrokerDocument extends XotBaseEditRecord
 {
     protected static string $resource = EnergyBrokerDocumentResource::class;
 }

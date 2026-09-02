@@ -10,9 +10,8 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\Placeholder;
 use Filament\Notifications\Notification;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Collection;
@@ -23,8 +22,9 @@ use Modules\EnergyBroker\Actions\ReprocessEnergyBrokerDocumentPdfAction;
 use Modules\EnergyBroker\Filament\Resources\EnergyBrokerDocumentResource\Pages;
 use Modules\EnergyBroker\Models\EnergyBrokerDocument;
 use Modules\Platform\Filament\Concerns\GatesResourceNavigation;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class EnergyBrokerDocumentResource extends Resource
+final class EnergyBrokerDocumentResource extends XotBaseResource
 {
     use GatesResourceNavigation;
 
@@ -47,9 +47,10 @@ final class EnergyBrokerDocumentResource extends Resource
         return __('energy_broker.documents');
     }
 
-    public static function form(Schema $schema): Schema
+    /** @return array<int, Component> */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
+        return [
             Section::make(__('energy_broker.sections.document_summary'))->columns(3)->columnSpanFull()->components([
                 Placeholder::make('source_file_name')
                     ->label(__('energy_broker.fields.source_file_name'))
@@ -162,7 +163,7 @@ final class EnergyBrokerDocumentResource extends Resource
                     ->label(__('energy_broker.fields.payment_method'))
                     ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'contract.payment_method')),
             ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table
@@ -316,7 +317,7 @@ final class EnergyBrokerDocumentResource extends Resource
         ];
     }
 
-    private static function payloadValue(?EnergyBrokerDocument $record, string $path): string
+    public static function payloadValue(?EnergyBrokerDocument $record, string $path): string
     {
         $value = data_get($record->normalized_payload ?? [], $path);
 
@@ -333,7 +334,7 @@ final class EnergyBrokerDocumentResource extends Resource
         return $value !== '' ? $value : '-';
     }
 
-    private static function hasDownloadablePdf(EnergyBrokerDocument $record): bool
+    public static function hasDownloadablePdf(EnergyBrokerDocument $record): bool
     {
         $media = $record->media;
         if ($media === null || $media->path === null) {

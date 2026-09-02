@@ -6,27 +6,30 @@ namespace Modules\Signage\Filament\Resources\SignPriceListItemResource\Pages;
 
 use Filament\Actions\EditAction;
 use Filament\Infolists\Components\TextEntry;
-use Filament\Resources\Pages\ViewRecord;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Modules\Signage\Filament\Resources\SignPriceListItemResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
 
-final class ViewSignPriceListItem extends ViewRecord
+final class ViewSignPriceListItem extends XotBaseViewRecord
 {
     protected static string $resource = SignPriceListItemResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            EditAction::make(),
+            'edit' => EditAction::make(),
         ];
     }
 
-    public function infolist(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    protected function getInfolistSchema(): array
     {
-        return $schema->components([
-            Section::make()
+        return [
+            'summary' => Section::make()
                 ->columnSpanFull()
                 ->components([
                     Grid::make(3)->components([
@@ -42,6 +45,6 @@ final class ViewSignPriceListItem extends ViewRecord
                     ]),
                     TextEntry::make('notes')->label(__('signage::signage.fields.notes'))->placeholder('—')->columnSpanFull(),
                 ]),
-        ]);
+        ];
     }
 }

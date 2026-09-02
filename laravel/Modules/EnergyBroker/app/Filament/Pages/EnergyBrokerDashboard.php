@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Modules\EnergyBroker\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Filament\Pages\Dashboard;
 use Illuminate\Support\Facades\Auth;
+use Modules\Xot\Filament\Pages\XotBaseDashboard;
 
-final class EnergyBrokerDashboard extends Dashboard
+final class EnergyBrokerDashboard extends XotBaseDashboard
 {
     protected static bool $isDiscovered = false;
 

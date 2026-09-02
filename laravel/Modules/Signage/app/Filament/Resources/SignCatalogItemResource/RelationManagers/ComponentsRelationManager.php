@@ -4,30 +4,31 @@ declare(strict_types=1);
 
 namespace Modules\Signage\Filament\Resources\SignCatalogItemResource\RelationManagers;
 
+use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Utilities\Get;
-use Filament\Schemas\Schema;
 use Filament\Tables;
-use Filament\Tables\Table;
+use Filament\Tables\Columns\Column;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Costing\Models\WorkCenter;
 use Modules\Signage\Models\SignCatalogItem;
 use Modules\Signage\Models\SignCatalogItemComponent;
 use Modules\Signage\Models\SignPriceListItem;
 use Modules\Signage\Support\SignageCosting;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
 /**
  * The distinta of a catalog item. Flat, one level — the customer has no
  * sub-assemblies. Picking a supplier item fills the description, unit and cost,
  * which the operator can still overwrite for a one-off.
  */
-final class ComponentsRelationManager extends RelationManager
+final class ComponentsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'components';
 
@@ -36,10 +37,13 @@ final class ComponentsRelationManager extends RelationManager
         return (string) __('signage::signage.components');
     }
 
-    public function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public function getFormSchema(): array
     {
-        return $schema->components([
-            Grid::make(3)->components([
+        return [
+            'identification' => Grid::make(3)->components([
                 TextInput::make('position')
                     ->label(__('signage::signage.catalog_fields.position'))
                     ->numeric()
@@ -88,11 +92,11 @@ final class ComponentsRelationManager extends RelationManager
                         }
                     }),
             ]),
-            TextInput::make('description')
+            'description' => TextInput::make('description')
                 ->label(__('signage::signage.catalog_fields.description'))
                 ->required()
                 ->columnSpanFull(),
-            Grid::make(5)->components([
+            'measures' => Grid::make(5)->components([
                 Select::make('unit_code')
                     ->label(__('signage::signage.fields.unit_code'))
                     ->options(__('signage::signage.units'))
@@ -118,44 +122,69 @@ final class ComponentsRelationManager extends RelationManager
                     ->default(0)
                     ->required(),
             ]),
-        ]);
+        ];
     }
 
-    public function table(Table $table): Table
+    /**
+     * @return array<string, Column>
+     */
+    public function getTableColumns(): array
     {
-        return $table
-            ->defaultSort('position')
-            ->columns([
-                Tables\Columns\TextColumn::make('position')->label(__('signage::signage.catalog_fields.position'))->sortable(),
-                Tables\Columns\TextColumn::make('work_center_code')
-                    ->label(__('signage::signage.catalog_fields.work_center_code'))
-                    ->badge(),
-                Tables\Columns\TextColumn::make('supplierItem.code')
-                    ->label(__('signage::signage.fields.code'))
-                    ->placeholder('—'),
-                Tables\Columns\TextColumn::make('supplierItem.supplier_name')
-                    ->label(__('signage::signage.fields.supplier_name'))
-                    ->placeholder('—')
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('description')->label(__('signage::signage.catalog_fields.description'))->wrap()->limit(60),
-                Tables\Columns\TextColumn::make('unit_code')->label(__('signage::signage.fields.unit_code')),
-                Tables\Columns\TextColumn::make('quantity')->label(__('signage::signage.catalog_fields.quantity'))->numeric(3),
-                Tables\Columns\TextColumn::make('width_mm')->label(__('signage::signage.catalog_fields.width_mm'))->placeholder('—'),
-                Tables\Columns\TextColumn::make('height_mm')->label(__('signage::signage.catalog_fields.height_mm'))->placeholder('—'),
-                Tables\Columns\TextColumn::make('unit_cost')->label(__('signage::signage.fields.unit_cost'))->money('EUR'),
-                Tables\Columns\TextColumn::make('line_cost')
-                    ->label(__('signage::signage.catalog_fields.line_cost'))
-                    ->state(fn (SignCatalogItemComponent $record): float => $record->lineCost())
-                    ->money('EUR')
-                    ->weight('bold'),
-            ])
-            ->headerActions([
-                CreateAction::make(),
-            ])
-            ->actions([
-                EditAction::make(),
-                DeleteAction::make(),
-            ]);
+        return [
+            'position' => Tables\Columns\TextColumn::make('position')->label(__('signage::signage.catalog_fields.position'))->sortable(),
+            'work_center_code' => Tables\Columns\TextColumn::make('work_center_code')
+                ->label(__('signage::signage.catalog_fields.work_center_code'))
+                ->badge(),
+            'supplierItem.code' => Tables\Columns\TextColumn::make('supplierItem.code')
+                ->label(__('signage::signage.fields.code'))
+                ->placeholder('—'),
+            'supplierItem.supplier_name' => Tables\Columns\TextColumn::make('supplierItem.supplier_name')
+                ->label(__('signage::signage.fields.supplier_name'))
+                ->placeholder('—')
+                ->toggleable(),
+            'description' => Tables\Columns\TextColumn::make('description')->label(__('signage::signage.catalog_fields.description'))->wrap()->limit(60),
+            'unit_code' => Tables\Columns\TextColumn::make('unit_code')->label(__('signage::signage.fields.unit_code')),
+            'quantity' => Tables\Columns\TextColumn::make('quantity')->label(__('signage::signage.catalog_fields.quantity'))->numeric(3),
+            'width_mm' => Tables\Columns\TextColumn::make('width_mm')->label(__('signage::signage.catalog_fields.width_mm'))->placeholder('—'),
+            'height_mm' => Tables\Columns\TextColumn::make('height_mm')->label(__('signage::signage.catalog_fields.height_mm'))->placeholder('—'),
+            'unit_cost' => Tables\Columns\TextColumn::make('unit_cost')->label(__('signage::signage.fields.unit_cost'))->money('EUR'),
+            'line_cost' => Tables\Columns\TextColumn::make('line_cost')
+                ->label(__('signage::signage.catalog_fields.line_cost'))
+                ->state(fn (SignCatalogItemComponent $record): float => $record->lineCost())
+                ->money('EUR')
+                ->weight('bold'),
+        ];
+    }
+
+    public function getDefaultTableSortColumn(): string
+    {
+        return 'position';
+    }
+
+    public function getDefaultTableSortDirection(): string
+    {
+        return 'asc';
+    }
+
+    /**
+     * @return array<string, Action>
+     */
+    public function getTableHeaderActions(): array
+    {
+        return [
+            'create' => CreateAction::make(),
+        ];
+    }
+
+    /**
+     * @return array<string, Action>
+     */
+    public function getTableActions(): array
+    {
+        return [
+            'edit' => EditAction::make(),
+            'delete' => DeleteAction::make(),
+        ];
     }
 
     private static function isSurfaceUnit(mixed $unitCode): bool

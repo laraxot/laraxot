@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Modules\Dds\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Filament\Pages\Dashboard;
 use Illuminate\Support\Facades\Auth;
+use Modules\Xot\Filament\Pages\XotBaseDashboard;
 
-final class DdsDashboard extends Dashboard
+final class DdsDashboard extends XotBaseDashboard
 {
     protected static bool $isDiscovered = false;
 

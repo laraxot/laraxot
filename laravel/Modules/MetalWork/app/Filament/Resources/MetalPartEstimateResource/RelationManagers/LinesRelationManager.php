@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\MetalWork\Filament\Resources\MetalPartEstimateResource\RelationManagers;
 
-use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
 /**
  * The frozen breakdown: what each work centre contributed to the price, and
  * which piece of geometry produced its quantity.
  */
-final class LinesRelationManager extends RelationManager
+final class LinesRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'lines';
 

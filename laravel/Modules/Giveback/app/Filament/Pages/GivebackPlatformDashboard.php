@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Giveback\Filament\Pages;
 
-use Modules\Giveback\Support\GenerateGivebackMockupPdfAction;
 use App\Support\AccountFeatures;
 use Filament\Actions\Action;
-use Filament\Pages\Dashboard;
 use Illuminate\Support\Facades\Auth;
+use Modules\Giveback\Support\GenerateGivebackMockupPdfAction;
+use Modules\Xot\Filament\Pages\XotBaseDashboard;
 
-final class GivebackPlatformDashboard extends Dashboard
+final class GivebackPlatformDashboard extends XotBaseDashboard
 {
     protected static bool $isDiscovered = false;
 
@@ -27,7 +27,7 @@ final class GivebackPlatformDashboard extends Dashboard
     protected function getHeaderActions(): array
     {
         return [
-            Action::make('downloadMockupPdf')
+            'downloadMockupPdf' => Action::make('downloadMockupPdf')
                 ->label('Scarica PDF mockup')
                 ->icon('heroicon-o-arrow-down-tray')
                 ->color('gray')

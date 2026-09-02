@@ -7,35 +7,38 @@ namespace Modules\Signage\Filament\Resources\SignCatalogItemResource\Pages;
 use Filament\Actions\EditAction;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Components\ViewEntry;
-use Filament\Resources\Pages\ViewRecord;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Modules\Signage\Actions\PriceSignCatalogItemAction;
 use Modules\Signage\Datas\SignCatalogItemPrice;
 use Modules\Signage\Filament\Resources\SignCatalogItemResource;
 use Modules\Signage\Models\SignCatalogItem;
+use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
 
 /**
  * The catalog item with its price broken down line by line — the customer asked
  * to always have the calculation of every single row in sight, not just the
  * total.
  */
-final class ViewSignCatalogItem extends ViewRecord
+final class ViewSignCatalogItem extends XotBaseViewRecord
 {
     protected static string $resource = SignCatalogItemResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            EditAction::make(),
+            'edit' => EditAction::make(),
         ];
     }
 
-    public function infolist(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    protected function getInfolistSchema(): array
     {
-        return $schema->components([
-            Section::make()
+        return [
+            'summary' => Section::make()
                 ->columnSpanFull()
                 ->components([
                     Grid::make(3)->components([
@@ -47,7 +50,7 @@ final class ViewSignCatalogItem extends ViewRecord
                     TextEntry::make('description')->label(__('signage::signage.catalog_fields.description'))->placeholder('—')->columnSpanFull(),
                 ]),
 
-            Section::make(__('signage::signage.pricing.title'))
+            'pricing' => Section::make(__('signage::signage.pricing.title'))
                 ->columnSpanFull()
                 ->components([
                     ViewEntry::make('pricing')
@@ -55,7 +58,7 @@ final class ViewSignCatalogItem extends ViewRecord
                         ->viewData(['price' => $this->price()])
                         ->columnSpanFull(),
                 ]),
-        ]);
+        ];
     }
 
     private function price(): SignCatalogItemPrice

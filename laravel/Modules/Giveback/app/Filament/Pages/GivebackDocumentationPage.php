@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Giveback\Filament\Pages;
 
-use Modules\Giveback\Support\GenerateGivebackMockupPdfAction;
 use Filament\Actions\Action;
 use Illuminate\Support\Str;
+use Modules\Giveback\Support\GenerateGivebackMockupPdfAction;
 
 use function Safe\file_get_contents;
 
@@ -29,7 +29,7 @@ final class GivebackDocumentationPage extends GivebackPlatformPage
     protected function getHeaderActions(): array
     {
         return [
-            Action::make('downloadMockupPdf')
+            'downloadMockupPdf' => Action::make('downloadMockupPdf')
                 ->label('Scarica PDF mockup')
                 ->icon('heroicon-o-arrow-down-tray')
                 ->color('gray')

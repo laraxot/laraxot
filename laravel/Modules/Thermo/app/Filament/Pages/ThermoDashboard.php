@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Modules\Thermo\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Filament\Pages\Dashboard;
 use Illuminate\Support\Facades\Auth;
+use Modules\Xot\Filament\Pages\XotBaseDashboard;
 
-final class ThermoDashboard extends Dashboard
+final class ThermoDashboard extends XotBaseDashboard
 {
     protected static bool $isDiscovered = false;
 
