@@ -7,141 +7,242 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## TechPlanner Laravel Application
+---
 
-TechPlanner is a comprehensive multi-tenant Laravel application built with modular architecture and modern development practices. This application implements advanced features including multi-tenancy, Filament admin panels, and enterprise-grade code quality standards.
+# **base_workorder_fila5**
 
-## Architecture Overview
+> ## L'architettura che respira: dove 44 moduli danzano in armonia
 
-### Modular Design
-- Built with `nwidart/laravel-modules` package for scalable architecture
-- 15+ active modules including TechPlanner (business logic), User (authentication), Xot (foundation), and Tenant (multi-tenancy)
-- Each module follows consistent structure with app/, docs/, config/, database/, etc.
+Questo repository è la **base universelle** per applicazioni Laravel modulari enterprise. Non è un progetto monolitico: è un **ecosistema vivente** di moduli agnostici che possono esistere in qualsiasi dominio, qualsiasi piattaforma, qualsiasi visione.
 
-### Multi-Tenant Support
-- Complete data isolation between tenants using spatie/laravel-multitenancy
-- Context switching capabilities for multi-tenant operations
-- Tenant-specific configurations and features
+---
 
-### Filament Integration
-- Modern admin interface using Filament v3/v4
-- Custom XotBase and LangBase abstract classes for extension patterns
-- Enhanced resource patterns and UI components
+## La Visione
 
-### Foundation Layer (Xot Module)
-- Core functionality and base classes for all other modules
-- Provides XotBaseModel, XotBaseResource, and other foundation patterns
-- Contract system for type safety and interface consistency
+Non costruiamo applicazioni. Costruiamo **organismi software**. Ogni modulo è una cellula; il sistema è l'organismo completo. La visione è radicale: creare architetture talmente pulite che i moduli possano migrare da un progetto all'altro senza alcuna modifica.
 
-## Key Features
+**Il nostro mantra**: *"Il codice che scriviamo oggi deve essere pronto per domani, senza che domani sappia cosa chiederà."*
 
-- **Multi-tenant Architecture**: Isolated data and configurations per tenant
-- **Filament Admin Panel**: Modern admin interface with custom extensions
-- **Modular Structure**: Scalable architecture with reusable modules
-- **Comprehensive Documentation**: Extensive guides and best practices
-- **Advanced Code Quality**: PHPStan Level 10, automated analysis, and testing
-- **Multi-language Support**: Italian, English, and German translations
+---
 
-## Setup Instructions
+## Lo Scopo - Il Perché
+
+### Il Problema che Risolviamo
+
+Il software enterprise muore di complessità. Ogni nuovo progetto reinventa la ruota. Ogni refactoring è un salto nel buio. Noi abbiamo scelto un'altra strada: **costruire moduli che siano cittadini di qualsiasi mondo**.
+
+### Il Perché Profondo
+
+44 moduli. Ognuno è stato forgiato con PHPStan Level 10, testato come se dipendesse da vite umane, documentato come se ogni riga fosse un capolavoro. Questo non è un repository: è un **manifesto** contro lo spreco di energia nello sviluppo software.
+
+---
+
+## La Filosofia - Zen e Ingegneria
+
+### Il Tao del Modular
+
+1. **Un modulo, un'anima** — non mescolare domini
+2. **La dipendenza è una promessa** — accettala solo se necessaria
+3. **Il silenzio del codice è oro** — ogni riga deve parlare da sola
+4. **Il refactoring è meditazione** — non temere il cambiamento
+
+### Il Principio KISS+DRY
+
+- **KISS**: Keep It Simple, Stupid — la semplicità è l'arte più difficile
+- **DRY**: Don't Repeat Yourself — ogni concetto vive in un unico luogo sacro
+- **YAGNI**: You Aren't Gonna Need It — non costruire per fantasmi
+
+### L'Arte del Codice
+
+Ogni riga di codice è un **atto di rispetto** verso chi la leggerà domani. Il nostro Zen:
+- `declare(strict_types=1)` in ogni file — il tipo non è optionale
+- I commenti sono preghiere — solo quando necessario
+- Il naming è conversazione — `$workOrderProcessor` dice più di `$x`
+
+---
+
+## L'Architettura
+
+### Struttura Universale
+
+```
+laravel/
+├── Modules/                    # 44 moduli agnostici
+│   ├── Activity/              # Log attività
+│   ├── AI/                    # Intelligenza artificiale
+│   ├── AiAssistant/           # Assistenti AI
+│   ├── Billing/               # Fatturazione
+│   ├── Blog/                  # Blogging
+│   ├── Catalog/               # Catalogo prodotti
+│   ├── Comment/               # Commenti
+│   ├── Cms/                   # Content Management
+│   ├── Compliance/            # Conformità normative
+│   ├── Costing/               # Costi
+│   ├── Customer/              # Clienti
+│   ├── Dds/                   # Documenti
+│   ├── Document/              # Gestione documentale
+│   ├── Email/                 # Email
+│   ├── Employee/              # Dipendenti
+│   ├── EnergyBroker/          # Broker energetico
+│   ├── Fiscal/                # Fiscale
+│   ├── Gdpr/                  # Privacy/GDPR
+│   ├── Geo/                   # Geolocalizzazione
+│   ├── Giveback/              # Resi/Restituzioni
+│   ├── HR/                    # Risorse umane
+│   ├── Intervention/          # Interventi
+│   ├── Inventory/            # Inventario
+│   ├── Job/                   # Job/Code
+│   ├── Lang/                  # Lingue
+│   ├── Media/                 # Media
+│   ├── MetalWork/             # Lavorazione metalli
+│   ├── Notify/                # Notifiche
+│   ├── Platform/              # Piattaforma base
+│   ├── Production/            # Produzione
+│   ├── PublicProcurement/     # Acquisti pubblici
+│   ├── Quotation/             # Preventivi
+│   ├── Rating/                # Valutazioni
+│   ├── Seo/                   # SEO
+│   ├── Signature/             # Firme digitali
+│   ├── Signage/               # Segnaletica
+│   ├── Tenant/                # Multi-tenancy
+│   ├── Thermo/                # Termotecnica
+│   ├── Timber/                # Legno
+│   ├── UI/                    # Interfaccia
+│   ├── User/                  # Utenti
+│   ├── Vehicle/              # Veicoli
+│   ├── WhatsApp/              # Integrazione WhatsApp
+│   ├── WorkOrder/            # Ordini di lavoro
+│   ├── Wts/                   # WTS
+│   └── Xot/                   # Fondazione/Base
+├── Themes/                    # Temi agnostici
+│   └── Zero/                  # Il tema vuoto perfetto
+└── public_html/              # Entry point web
+```
+
+### Stack Tecnologico
+
+| Componente | Versione | Scopo |
+|------------|----------|-------|
+| Laravel | 12.x | Framework foundation |
+| Filament | 5.x | Admin panels |
+| PHP | 8.4+ | Runtime |
+| PHPStan | Level 10 | Type safety |
+| PSR-12 | - | Coding standard |
+
+---
+
+## La Politica - Regole per la Gloria
+
+### Politica di Qualità
+
+- **PHPStan Level 10** — Zero compromessi sul tipo
+- **PSR-12** — Lo stile è comunicazione
+- **Pest Testing** — I test sono il nostro contratto sociale
+- **Strict Types** — `declare(strict_types=1)` non è optionale
+
+### Politica di Modularità
+
+1. **Nessun modulo dipende da un altro modulo** — tranne esplicite eccezioni
+2. **Ogni modulo è installabile singolarmente** — composabilità totale
+3. **Xot è la fondazione** — gli altri moduli lo estendono, mai il contrario
+
+### Politica di Contribuzione
+
+1. **Commit atomici** — un pensiero, un commit
+2. **Conventional Commits** — messaggi che raccontano storie
+3. **PR reviews** — il codice non è tuo finché qualcun altro non l'ha visto
+
+---
+
+## Superpoteri dell'Ecosistema
+
+### Per gli Sviluppatori
+
+- **Zero setup pain** — clona e lavora, quasi
+- **XotBase patterns** — non reinventare la ruota, estendila
+- **Filament Ready** — UI professionali in ore, non settimane
+- **Type-safe by default** — PHPStan Level 10 ovunque
+
+### Per le Aziende
+
+- **Multi-tenant ready** — isolato per design
+- **Scalabile** — aggiungi moduli, non casino
+- **Manutenibile** — il codice di oggi non sarà il debito di domani
+- **Agnostico** — usa quello che ti serve, ignorail resto
+
+---
+
+## Setup
 
 ### Prerequisites
-- PHP 8.2+
-- Composer
-- Node.js & npm
-- MySQL/PostgreSQL database
-- Redis (optional, for caching and queues)
 
-### Installation
+- PHP 8.4+
+- Composer 2.x
+- MySQL 8.0+ / PostgreSQL 14+ / SQLite (dev)
+- Node.js 20+ (per asset)
+- Redis (opzionale, per cache)
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd techplanner
-   ```
+### Installazione
 
-2. Install PHP dependencies:
-   ```bash
-   composer install
-   ```
+```bash
+# Clona il repository
+git clone git@github.com:laraxot/base_workorder_fila5.git
+cd base_workorder_fila5/laravel
 
-3. Install Node.js dependencies:
-   ```bash
-   npm install
-   ```
+# Installa dipendenze
+composer install
 
-4. Configure environment:
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   ```
+# Configura l'ambiente
+cp .env.example .env
+php artisan key:generate
 
-5. Configure your database settings in `.env`
+# Esegui migrazioni
+php artisan migrate
 
-6. Run database migrations:
-   ```bash
-   php artisan migrate
-   ```
+# Build asset (opzionale)
+npm install && npm run build
 
-7. Build assets:
-   ```bash
-   npm run build
-   ```
+# Avvia
+php artisan serve
+```
 
-8. Start the development server:
-   ```bash
-   php artisan serve
-   ```
+---
 
-## Development Guidelines
+## Comandi Utili
 
-### Code Quality Standards
-- **PHPStan Level 10**: Complete type safety compliance
-- **PSR-12**: Coding standards compliance
-- **Strict Types**: All files use `declare(strict_types=1)`
-- **Type Hints**: Comprehensive parameter and return type declarations
+```bash
+# PHPStan
+./vendor/bin/phpstan analyse Modules --memory-limit=-1
 
-### Architecture Patterns
-- **XotBase Extension**: All Filament classes extend XotBase* or LangBase* abstract classes
-- **Contract-Based**: Interface definitions for type safety
-- **Multi-Tenant**: Always consider tenant context in data operations
+# Pint (format)
+./vendor/bin/pint
 
-### Documentation Standards
-- All .md files in lowercase (except README.md)
-- Module-specific documentation in `/Modules/{Module}/docs/`
-- Business context linked to technical implementations
+# Test
+php artisan test
 
-## Quality Assurance
+# Lista moduli
+php artisan module:list
+```
 
-### Static Analysis
-- **PHPStan**: Level 10 type safety analysis
-- **PHPMD**: Code quality and design rule checking
-- **PHPInsights**: Comprehensive code quality analysis
-- **Rector**: Automated refactoring and modernization
+---
 
-### Testing
-- **Pest**: Primary testing framework
-- **Unit/Feature/Integration Tests**: Comprehensive test coverage
-- **Multi-tenant Testing**: Tenant isolation verification
+## Documentazione
 
-## Contributing
+| Risorsa | Link |
+|---------|------|
+| 📚 Wiki Tecnica | [./docs/wiki/](./docs/wiki/) |
+| 🏗️ Moduli | [./Modules/*/README.md](./Modules/) |
+| 🎨 Temi | [./Themes/*/README.md](./Themes/) |
+| 📖 Wiki Moduli | [./Modules/*/docs/wiki/](./Modules/*/docs/wiki/) |
 
-We welcome contributions that align with our architecture patterns and quality standards:
-
-1. Follow established code standards and architecture rules
-2. Write comprehensive tests for new features
-3. Update documentation for significant changes
-4. Use conventional commits format
-5. Ensure PHPStan level 10 compliance
-6. Maintain multi-tenant architecture integrity
-
-## Learning Resources
-
-Comprehensive documentation is available in the `/docs/` directory:
-- **Project Architecture**: Complete system architecture overview
-- **Module Documentation**: Individual module guides
-- **Best Practices**: Development patterns and standards
-- **Troubleshooting**: Common issues and solutions
+---
 
 ## License
 
-This project is proprietary software. All rights reserved.
+Questo repository è proprietario. Tutti i diritti riservati.
+
+---
+
+**base_workorder_fila5** · **Laraxot** · 44 Moduli · PHPStan 10 · Filament 5 · Laravel 12
+
+> *"Il codice perfetto è quello che non devi spiegare: parla da solo, come il silenzio dopo un sospiro."*

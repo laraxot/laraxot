@@ -1,85 +1,80 @@
-# 🚀 Base WorkOrder Fila5
+# base_workorder_fila5
 
-[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
-[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
-[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
-[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
-[![License](https://img.shields.io/badge/License-Proprietary-blue.svg)]()
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-success.svg)]()
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+> ## La base che dà forma all'impossibile
 
-> **Una piattaforma Laravel modulare di livello enterprise**  
-> Costruita per scalare, progettata per durare. PHPStan 10, Filament 5, architettura modulare.
+[![Laravel](https://img.shields.io/badge/Laravel-12-red?style=for-the-badge)](https://laravel.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen?style=for-the-badge)](https://phpstan.org/)
+[![Modular Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](./laravel/Modules/)
+[![44 Modules](https://img.shields.io/badge/Modules-44-8B0000?style=for-the-badge)](./laravel/Modules/)
+[![1 Theme](https://img.shields.io/badge/Themes-1-008758?style=for-the-badge)](./laravel/Themes/)
 
 ---
 
-## 🎯 La Visione
+## Il Manifesto
 
-Costruiamo software enterprise che sia **potente, mantenibile e onesto**. Nessuna magia nera, nessuna astrazione inutile. Solo codice che funziona, documentato e testato.
+Questo repository è la **base universale** per applicazioni Laravel modulari enterprise. Non appartiene a nessun progetto specifico: è un **ecosistema agnostico** di moduli e temi pronti per qualsiasi dominio.
 
-## 💎 Cosa c'è dentro
+### La Filosofia
 
-- **45+ moduli** pronti all'uso
-- **4 temi** (Design Comuni, Sixteen, TwentyOne, Zero)
-- **PHPStan Level 10** su tutto
-- **Filament 5** per admin panel d'eccellenza
-- **Multi-tenant** ready
-- **Multilingua** integrato
+- **Agnosticità** — i moduli non dipendono da contesti specifici
+- **Composabilità** — usa solo ciò che ti serve
+- **Qualità radicale** — PHPStan Level 10, sempre
+- **Documentazione o morte** — ogni feature senza docs è debito tecnico
 
-## 🏛️ Architettura
+### Lo Zen del Codice
 
-| Layer | Tecnologia |
-|-------|-----------|
-| **Backend** | Laravel 12, PHP 8.4+ |
-| **Admin** | Filament 5 + XotBase |
-| **Frontend** | Tailwind, Alpine, Lit, DaisyUI |
-| **Database** | MySQL, PostgreSQL, SQLite |
-| **Cache/Queue** | Redis |
-| **Search** | Scout |
-| **Storage** | S3-compatible |
+> *"Scrivi codice come se dovessi spiegarlo a un maestro zen: con silenzio, precisione e rispetto."*
 
-## 📦 Moduli
+---
 
-- **Core**: `Xot`, `Lang`, `User`, `Tenant`, `UI`
-- **Business**: `CRM`, `Customer`, `Billing`, `Quotation`, `Order`
-- **Operations**: `Job`, `Production`, `Inventory`, `WorkOrder`, `Intervention`
-- **Content**: `Cms`, `Blog`, `Media`, `Document`, `Seo`
-- **Compliance**: `Gdpr`, `Compliance`, `Activity`, `Rating`
-- **Communication**: `Notify`, `Email`, `WhatsApp`, `Comment`
-- **Vertical**: `EnergyBroker`, `MetalWork`, `Timber`, `Vehicle`, `Geo`
-
-## 🧘 I Principi Zen
-
-1. **Semplicità è potenza** - Il codice chiaro vince.
-2. **Modulare è vivere** - Ogni parte è autonoma.
-3. **Documentare è amare** - La conoscenza deve fluire.
-4. **Testare è fidarsi** - La qualità non si negozia.
-5. **Rifattorizzare è evolvere** - Sempre meglio, mai finiti.
-
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
-git clone git@github.com:laraxot/base_workorder_fila5.git
-cd base_workorder_fila5
+cd laravel
 composer install
 cp .env.example .env
 php artisan key:generate
-php artisan migrate --seed
-npm install && npm run build
+php artisan migrate
 php artisan serve
 ```
 
-## 🔗 Risorse
+---
 
-- 📚 [Documentazione completa](laravel/Modules/docs/)
-- 🎯 [Theme Sixteen](laravel/Themes/Sixteen/) (Design Comuni)
-- 🛠️ [Script di utilità](bashscripts/)
+## Struttura
 
-## 📄 Licenza
-
-Proprietario. Tutti i diritti riservati.
+```
+base_workorder_fila5/
+├── laravel/              # Applicazione Laravel
+│   ├── Modules/          # 44 moduli agnostici
+│   ├── Themes/           # Temi modulari
+│   └── public_html/      # Entry point
+├── docs/                 # Documentazione
+├── bashscripts/          # Script di automazione
+└── public_html/          # Web root
+```
 
 ---
 
-**Laraxot** · Built with ❤️ · PHPStan 10 · Filament 5
+## Comandi Veloci
+
+```bash
+# Analisi statica
+cd laravel && ./vendor/bin/phpstan analyse Modules --memory-limit=-1
+
+# Formattazione
+./vendor/bin/pint
+
+# Test
+php artisan test
+```
+
+---
+
+## License
+
+Proprietario · Tutti i diritti riservati
+
+---
+
+**base_workorder_fila5** · **Laraxot** · 44 Moduli Agnostici · PHPStan 10
