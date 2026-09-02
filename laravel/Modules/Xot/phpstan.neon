@@ -1,0 +1,48 @@
+parameters:
+    level: 7
+    paths:
+        - app
+        - config
+        - database
+        - routes
+        - tests
+    excludePaths:
+        - app_old/*
+        - vendor/*
+        - tests/coverage/*
+    checkMissingIterableValueType: true
+    checkGenericClassInNonGenericObjectType: true
+    checkMissingCallableSignature: true
+    treatPhpDocTypesAsCertain: true
+    reportUnmatchedIgnoredErrors: true
+
+    ignoreErrors:
+        # Ignoriamo temporaneamente alcuni errori specifici mentre li correggiamo
+        - '#Method [a-zA-Z0-9\\_]+::[a-zA-Z0-9_]+\(\) has no return type specified#'
+        - '#Property [a-zA-Z0-9\\_]+::\$[a-zA-Z0-9_]+ has no type specified#'
+
+    # Regole per i tipi di parametri
+    checkArgumentsPassedByReference: true
+    checkNullables: true
+
+    # Regole per i servizi
+    checkFunctionNameCase: true
+
+    # Regole per i modelli
+    checkModelProperties: true
+
+    # Regole per i test
+    inferPrivatePropertyTypeFromConstructor: true
+
+    # Regole per la documentazione
+    checkPhpDocMissingReturn: true
+
+services:
+    -
+        class: PHPStan\Rules\Methods\ReturnTypeRule
+        tags:
+            - phpstan.rules.rule
+    -
+        class: PHPStan\Rules\Properties\TypesAssignedToPropertiesRule
+        tags:
+            - phpstan.rules.rule
