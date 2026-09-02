@@ -142,3 +142,4 @@ bmad/upstream/claude-code-bmad-skills/
 .serena
 .claude-plugin
 ${HOME}
+.token
