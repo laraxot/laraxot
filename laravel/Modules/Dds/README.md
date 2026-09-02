@@ -7,12 +7,12 @@
 [![License](https://img.shields.io/github/license/laraxot/module_dds_fila5?label=License&style=for-the-badge&color=informational)](https://github.com/laraxot/module_dds_fila5/blob/main/LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/laraxot/module_dds_fila5?label=Issues&style=for-the-badge)](https://github.com/laraxot/module_dds_fila5/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/laraxot/module_dds_fila5?label=PRs&style=for-the-badge)](https://github.com/laraxot/module_dds_fila5/pulls)
-[![Laravel 12](https://img.shields.io/badge/Laravel-12-red?style=for-the-badge)](https://laravel.com/)
-[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)
-[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)
-[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen?style=for-the-badge)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)
+[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
+[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
+[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
+[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)](https://martinfowler.com/articles/paradigm-shifts.html)
 
 ---
 

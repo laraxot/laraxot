@@ -6,11 +6,11 @@
 [![License](https://img.shields.io/github/license/laraxot/base_workorder_fila5?style=plastic&color=blue)]()
 [![Last Commit](https://img.shields.io/github/last-commit/laraxot/base_workorder_fila5?style=plastic&color=purple)]()
 [![Release](https://img.shields.io/github/v/release/laraxot/base_workorder_fila5?style=plastic&color=orange&display_name=release)]()
-[![PHPStan](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen?style=plastic)]()
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=plastic)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=plastic)]()
+[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)]()
+[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)]()
+[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)]()
 [![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=plastic)]()
-[![FixCity](https://img.shields.io/badge/Platform-FixCity-008758?style=plastic)]()
+]()
 
 > **Design Comuni per il Paese e la PA**  
 > La tema riconosciuta da Design Comuni. Mappa, wizard, homepage, tutto per la PA.
