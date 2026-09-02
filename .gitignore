@@ -143,3 +143,4 @@ bmad/upstream/claude-code-bmad-skills/
 .claude-plugin
 ${HOME}
 .token
+laravel/phpstan-*
