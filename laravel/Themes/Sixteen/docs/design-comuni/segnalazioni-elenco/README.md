@@ -1,24 +1,34 @@
 # Segnalazioni elenco
 
-Data: 2026-04-04
+[![Module](https://img.shields.io/badge/Module-Segnalazioni elenco-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Obiettivo
-Allineare il layout della pagina `tests.ticket-list` alla reference, mantenendo filtro + mappa affiancati anche quando si passa alla tab "Elenco" e documentando i pulsanti di filtro e `Elenco`/`Mappa`.
+> **Core module for the FixCity Platform.**
 
-## Cosa ho fatto
-- creato il nuovo blocco `pub_theme::components.blocks.segnalazioni.layout` che contiene sidebar + tab mappa/elenco con `x-data` per la logica delle tab/modali;
-- trasferito i dati delle categorie direttamente nel blocco (via proprietà `filters.items`), eliminando il blocco `sidebar-filters` duplicato;
-- aggiornato il JSON `laravel/config/local/fixcity/database/content/pages/tests.ticket-list.json` sul tema per usare il blocco nuovo e passare `filters`, `tabs`, `cta`, `items`, `results_count`;
-- rigenerati gli asset (`npm run build`, `npm run copy`) e pulite le cache (`php artisan optimize:clear`).
+## Perché esiste
 
-## Verifica
-- l'HTML locale mostra ora il `row segnalazioni-layout` con la colonna filtri (`col-lg-3`) e la colonna principale (`col-lg-9`) contenente mappa/tab ed elenco;
-- cliccando su "Elenco" la mappa resta visibile a lato mentre le schede dettagli si dispongono sul lato destro; i pulsanti "Filtra" (mobile) e "Rimuovi filtri" mantengono lo stesso significato originale della reference; i filtri scompaiono su mobile via modal `showFilterModal`.
-- gli screenshot aggiornati sono in `local.png` (locale) e `reference.png` (reference).
+Core module for the FixCity Platform.
 
-## Artifacts
-- [local.png](./local.png)
-- [reference.png](./reference.png)
+## Superpoteri
 
-## Next passi
-- stabilire eventuali variazioni visive nel tab "Mappa" (modal immagini + pin). Se ulteriori differenze emergono, aggiornare i CSS/JS specifici all'interno di `resource/css/app.css` e, se serve, aggiungere un piccolo script Alpine alla pagina stessa.
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
+
+## Documentazione
+
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+
+---
+
+**Modulo** `Sixteen` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

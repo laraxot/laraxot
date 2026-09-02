@@ -1,87 +1,34 @@
 # Tenant Module Roadmap
 
-> "Multi-tenancy system for the Laraxot ecosystem with support for SaaS applications and tenant isolation."
+[![Module](https://img.shields.io/badge/Module-Tenant Module Roadmap-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## 🎯 Vision
+> **"Multi-tenancy system for the Laraxot ecosystem with support for SaaS applications and tenant isolation."**
 
-Provide a **comprehensive multi-tenancy** system that enables:
+## Perché esiste
 
-- ✅ Tenant isolation and separation
-- ✅ Tenant-specific configurations
-- ✅ Tenant database scoping
-- ✅ Tenant resource management
-- ✅ Tenant billing and subscription
-- ✅ Tenant analytics and reporting
+"Multi-tenancy system for the Laraxot ecosystem with support for SaaS applications and tenant isolation."
 
-## 📊 Current Status
+## Superpoteri
 
-### Overall Progress: 80% Complete
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-| Category | Status | Progress |
-|----------|--------|----------|
-| Tenant Management | ✅ Complete | 100% |
-| Tenant Isolation | ✅ Complete | 100% |
-| Database Scoping | ✅ Complete | 100% |
-| Configuration | 🔄 In Progress | 70% |
-| Billing | 🔄 In Progress | 40% |
-| Analytics | 🔄 In Progress | 50% |
+## Documentazione
 
-## 🏗️ Key Features
-
-### 1. Tenant Management
-- Tenant registration
-- Tenant onboarding
-- Tenant configuration
-- Tenant management
-- Tenant lifecycle
-
-### 2. Tenant Isolation
-- Data isolation
-- Resource isolation
-- Security isolation
-- Performance isolation
-- Logical separation
-
-### 3. Database Scoping
-- Automatic query scoping
-- Tenant-aware models
-- Tenant-specific data
-- Cross-tenant queries
-- Data migration
-
-### 4. Configuration
-- Tenant-specific settings
-- Custom configurations
-- Feature flags
-- Theme customization
-- Branding options
-
-### 5. Billing
-- Subscription management
-- Usage tracking
-- Billing cycles
-- Payment processing
-- Invoice generation
-
-## 📅 Upcoming Milestones
-
-### M2: Configuration System (Q1 2026)
-- Complete tenant configuration
-- Add feature flags
-- Implement theme customization
-- Branding options
-
-### M3: Billing System (Q2 2026)
-- Complete subscription management
-- Add usage tracking
-- Implement payment processing
-- Invoice generation
-
-### M4: Analytics (Q3 2026)
-- Tenant analytics
-- Usage reporting
-- Performance metrics
-- Resource optimization
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
 ---
 
+**Modulo** `Tenant` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

@@ -1,23 +1,34 @@
 # Migration archiviate (Notify)
 
-Queste migration **non devono essere eseguite** su installazione pulita (`migrate` / fresh install). Laravel carica solo i file in `database/migrations/` (non le sottocartelle); restano qui per storico e confronto.
+[![Module](https://img.shields.io/badge/Module-Migration archiviate (Notify)-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Tabella `mail_templates`
+> **Core module for the FixCity Platform.**
 
-| Stato | File |
-|-------|------|
-| **Canonica** | `../2018_10_10_000007_create_mail_templates_table.php` |
-| Archiviate | `2018_10_10_000000` … `000006` (CREATE ridondanti della stessa tabella) |
+## Perché esiste
 
-La canonica unisce CREATE + UPDATE (params, sms_template, counter, html_layout_path, soft delete).
+Core module for the FixCity Platform.
 
-## Tabella `mail_template_versions`
+## Superpoteri
 
-| Stato | File |
-|-------|------|
-| **Canonica** | `../2025_04_20_000001_create_mail_template_versions_table.php` |
-| Archiviata | `2024_04_20_000001_create_mail_template_versions_table.php` (duplicato) |
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-## Regola
+## Documentazione
 
-Una tabella = una migration attiva in `database/migrations/`. Evoluzioni schema solo nella migration canonica (pattern `XotBaseMigration`).
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+
+---
+
+**Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

@@ -1,69 +1,34 @@
 # Graphify Knowledge Graph
 
-## Overview
+[![Module](https://img.shields.io/badge/Module-Graphify Knowledge Graph-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-This directory contains the knowledge graph for the **Zero** theme, generated using [Graphify](https://graphify.dev/). The graph provides a comprehensive visualization of code dependencies, architecture, and relationships within the theme.
+> **Core module for the FixCity Platform.**
 
-## Quick Start
+## Perché esiste
 
-### View the Graph
+Core module for the FixCity Platform.
 
-1. **Open in Graphify Visualizer**
-   ```bash
-   cd graphify-out
-   graphify visualize .
-   ```
+## Superpoteri
 
-2. **Analyze Graph Statistics**
-   - **Nodes**: 334 (code entities: components, styles, templates)
-   - **Edges**: 588 (dependencies and relationships)
-   - **Communities**: 48 (logical clusters of theme functionality)
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-### Key Files
+## Documentazione
 
-- **graph.json** — Full knowledge graph in JSON format
-- **.graphify_analysis.json** — Analysis metadata and statistics
-- **GRAPH_REPORT.md** — Generated community names and cluster analysis
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-## Graph Interpretation
+---
 
-The knowledge graph represents:
-
-- **Nodes**: Components, styles, templates, assets, and other theme entities
-- **Edges**: Component dependencies, style imports, template relationships
-- **Communities**: Automatically detected clusters of related theme code
-
-## Use Cases
-
-- **Component Discovery**: Find all components and their relationships
-- **Styling Architecture**: Understand style inheritance and dependencies
-- **Theme Customization**: Identify which components to modify for custom themes
-- **Consistency Analysis**: Ensure consistent patterns across theme components
-- **Performance Optimization**: Find unused styles and components
-
-## Generating Updated Graphs
-
-To regenerate the knowledge graph after code changes:
-
-```bash
-graphify . --code-only --output docs/graphify/graphify-out
-```
-
-To generate community analysis and GRAPH_REPORT.md:
-
-```bash
-graphify cluster-only docs/graphify/graphify-out
-```
-
-## Documentation Integration
-
-For more information about this theme, see:
-- Theme documentation in the main README
-- Component specifications in components/
-- Style guidelines in styles/
-
-## References
-
-- [Graphify Documentation](https://graphify.dev/)
-- [Theme Structure Guidelines](../../../../docs/wiki/rules/theme-structure.md)
-
+**Modulo** `Zero` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

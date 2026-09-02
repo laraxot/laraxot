@@ -1,50 +1,34 @@
----
-title: "Vehicle — knowledge base"
-type: overview
-tags: [vehicle, gestionale-commesse, docs, bmad]
-created: 2026-07-23
-updated: 2026-07-27
-qmd: "Vehicle docs README purpose flotta media debito inventory warehouse"
-issues:
-  - "https://github.com/laraxot/base_workorder_fila5/issues/7"
-discussions:
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
-related:
-  - "./import-status.md"
-  - "../../../Inventory/docs/bugfix-warehouses-vehicle-fk-order.md"
-  - "../../../../docs/gestionale-commesse-comparison/functional-readiness.md"
-  - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
----
-
 # Vehicle
+
+[![Module](https://img.shields.io/badge/Module-Vehicle-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
+
+> **Core module for the FixCity Platform.**
 
 ## Perché esiste
 
-**Parco mezzi** e documenti veicolo: asset logistici del field-service (chi va dove, con quale mezzo, con quali scadenze documentali).
-Inventory può collegare un magazzino mobile (`warehouses.vehicle_id`) — parent obbligatorio in migrate: vedi [bugfix Inventory](../../Inventory/docs/bugfix-warehouses-vehicle-fk-order.md).
+Core module for the FixCity Platform.
 
-## Cosa NON è
+## Superpoteri
 
-- Non è Document domain completo. Debito: `vehicle_documents.media_id` punta a Spatie `media` mentre Document (disabled) voleva altro schema.
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-## Runtime
+## Documentazione
 
-| Gate | Stato |
-|---|---|
-| Enabled | sì |
-| Panel | `vehicle/admin/vehicles` |
-| Document | `statuses=true` ma **RISCHIO** tabella `media` — vedi matrice |
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-## Indice docs
+---
 
-| File | Scopo |
-|---|---|
-| [import-status.md](./import-status.md) | Checklist + debito media |
-| [README.md](./README.md) | Scopo |
-
-## Hub / BMAD
-
-- [functional-readiness.md](../../../../docs/gestionale-commesse-comparison/functional-readiness.md)
-- [#7](https://github.com/laraxot/base_workorder_fila5/issues/7)
-- Matrice statuses: [gc-modules-runtime-matrix.md](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md)
-- Story [2.4 docs hygiene](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md)
+**Modulo** `Vehicle` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

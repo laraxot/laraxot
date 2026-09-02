@@ -1,78 +1,34 @@
----
-title: "Readme"
-type: reference
-tags: [wiki, no-frontmatter-fix]
-created: 2026-08-24
-updated: 2026-08-24
----
+# Xot
 
-# Models - Xot Module
+[![Module](https://img.shields.io/badge/Module-Xot-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Architecture
+> **Core module for the FixCity Platform.**
 
-All models in this module follow the Laraxot architecture pattern:
+## Perché esiste
 
-```
-Model → Module BaseModel → XotBaseModel → Laravel Model
-```
+Core module for the FixCity Platform.
 
-### Base Classes
+## Superpoteri
 
-#### BaseModel
-For regular Eloquent models.
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-**Example:**
-```php
-namespace Modules\Xot\Models;
+## Documentazione
 
-class ExampleModel extends BaseModel
-{
-    protected $fillable = ['name', 'description'];
-
-    protected function casts(): array
-    {
-        return array_merge(parent::casts(), [
-            'published_at' => 'datetime',
-        ]);
-    }
-}
-```
-
-#### BasePivot
-For many-to-many relationship pivot tables.
-
-#### BaseMorphPivot
-For polymorphic pivot tables.
-
-## Models in this Module
-
-[List all models here with brief descriptions]
-
-### [ModelName]
-
-**Purpose:** [Description]
-
-**Key Relationships:**
-- `belongsTo`: [Related models]
-- `hasMany`: [Related models]
-- `belongsToMany`: [Related models]
-
-**Important Methods:**
-- `methodName()`: [Description]
-
-## Best Practices
-
-1. **Never extend `Illuminate\Database\Eloquent\Model` directly**
-2. **Use `casts()` method instead of `$casts` property**
-3. **Connection is auto-discovered** from namespace (e.g., `Modules\Xot` → `'xot'`)
-4. **Use magic properties** - `isset()` instead of `property_exists()`
-
-## References
-
-- [Xot Model Architecture](../../Xot/docs/models/model-architecture.md)
-- [Xot Model Architecture](../../xot/docs/models/model-architecture.md)
-- [CLAUDE.md - Model Inheritance Rules](../../CLAUDE.md#model-inheritance-rules)
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
 ---
 
-**Last Updated**: 2025-11-15
+**Modulo** `Xot` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

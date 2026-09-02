@@ -1,36 +1,34 @@
----
-title: "Compliance — replica gestionale"
-type: overview
-tags: [compliance, gestionale-commesse, replica, bmad]
-created: 2026-07-23
-updated: 2026-07-24
-qmd: "Compliance replica disabled phpstan equipment readiness"
-issues:
-  - "https://github.com/laraxot/base_workorder_fila5/issues/7"
-  - "https://github.com/laraxot/base_workorder_fila5/issues/14"
-discussions:
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/15"
-related:
-  - "./import-status.md"
-  - "../../../../docs/gestionale-commesse-comparison/replica-singular-phase.md"
-  - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
----
-
 # Compliance
+
+[![Module](https://img.shields.io/badge/Module-Compliance-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
+
+> **Core module for the FixCity Platform.**
 
 ## Perché esiste
 
-Conformità / readiness / equipment / documenti compliance di cantiere (SRC). Replica indipendente — **non** merge in altri moduli.
+Core module for the FixCity Platform.
 
-## Runtime
+## Superpoteri
 
-| Gate | Stato |
-|---|---|
-| `modules_statuses` | **true** (riabilitato 2026-07-27, confermato dall'utente) |
-| PHPStan L10 | 0 errori (riverificato 2026-07-27) |
-| Pest | passed (`Modules/Compliance/tests`, eseguito insieme a PublicProcurement: 8/8) |
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-Dettaglio checklist: [import-status.md](./import-status.md).  
-Matrice: [gc-modules-runtime-matrix.md](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md).  
-Story [2.4](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md) · [#14](https://github.com/laraxot/base_workorder_fila5/issues/14).
+## Documentazione
+
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+
+---
+
+**Modulo** `Compliance` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

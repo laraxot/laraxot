@@ -1,39 +1,34 @@
 # Employee Management Development Guide
 
-This directory contains development guides for employee registry and profile management functionality.
+[![Module](https://img.shields.io/badge/Module-Employee Management Development Guide-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Overview
+> **Core module for the FixCity Platform.**
 
-The employee management system handles:
-- Employee registration and profiles
-- Personal information management
-- Employment history tracking
-- Contact information
-- Department and position assignments
+## Perché esiste
 
-## Implementation Status
+Core module for the FixCity Platform.
 
-| Component | Status | Notes |
-|-----------|--------|-------|
-| Employee Model | ✅ Complete | Base model with relationships |
-| Employee Resource | ✅ Complete | Filament CRUD interface |
-| Profile Management | 🚧 In Progress | Extended profile fields |
-| History Tracking | 📋 Planned | Employment history logs |
+## Superpoteri
 
-## Development Files
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-- **registry.md** - Employee registry implementation
-- **implementation.md** - Technical implementation details
+## Documentazione
 
-## Key Models
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-- `Employee` - Core employee model
-- `Profile` - Extended profile information
-- `Department` - Department management
-- `Position` - Job position definitions
+---
 
-## Related Documentation
-
-- [Architecture: Model Architecture](../../architecture/model_architecture.md)
-- [Features: Functional Requirements](../../features/functional_requirements.md)
-- [Implementation: Technical Guide](../../implementation/technical_implementation_guide.md)
+**Modulo** `Employee` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

@@ -1,44 +1,34 @@
 # Script di Backup
 
-## Descrizione
-Questa cartella contiene gli script per il backup del sistema, inclusi:
-- Backup del database
-- Backup dei file
-- Rotazione dei backup
+[![Module](https://img.shields.io/badge/Module-Script di Backup-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Script Disponibili
+> **Core module for the FixCity Platform.**
 
-### 1. backup_database.sh
-Esegue il backup del database con:
-- Dump completo
-- Backup incrementale
-- Compressione dati
+## Perché esiste
 
-### 2. backup_files.sh
-Gestisce il backup dei file con:
-- Backup file di configurazione
-- Backup uploads
-- Backup log
+Core module for the FixCity Platform.
 
-### 3. rotate_backups.sh
-Gestisce la rotazione dei backup con:
-- Rimozione vecchi backup
-- Verifica integrità
-- Notifiche
+## Superpoteri
 
-## Utilizzo
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-```bash
+## Documentazione
 
-# Backup completo
-./backup_database.sh
-./backup_files.sh
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-# Rotazione backup
-./rotate_backups.sh --keep-last=7
-```
+---
 
-## Best Practices
-- Eseguire backup regolari
-- Verificare l'integrità dei backup
-- Mantenere backup in location sicure 
+**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

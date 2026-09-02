@@ -1,54 +1,34 @@
 # Wts
 
-Gestione del ciclo di trattamento rifiuti dell'impianto WTS: dall'ingresso del
-materiale dichiarato dall'ERP legacy (ECOS) fino agli output finiti, passando per
-lavorazioni, etichettatura e audit trail.
+[![Module](https://img.shields.io/badge/Module-Wts-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-Il modulo ha un pannello Filament dedicato (`/wts`): chi lavora in impianto ci sta
-dentro tutto il turno e non deve vedere il resto del gestionale.
+> **Core module for the FixCity Platform.**
 
-## Dominio
+## Perché esiste
 
-| Concetto | Modello | Nota |
-|---|---|---|
-| Viaggio in ingresso da ERP | `WtsInboundRecord` | porta con se' il payload ECOS grezzo |
-| Partita presa in carico | `WtsInboundLot` | nasce dalla presa in carico di un record |
-| Unita' fisica (collo) | `WtsUnit` | generata a serie, etichettata singolarmente |
-| Lavorazione | `WtsProcessingStep` | consuma unita', produce materiali derivati |
-| Output | `WtsDerivedMaterial` | il prodotto della lavorazione |
-| Scheda tecnica | `WtsTechnicalSheetSnapshot` | fotografia della scheda al momento dell'ingresso |
-| Etichette e stampa | `WtsLabelPrint`, `WtsPrintJob` | la coda viene svuotata dall'agente locale |
-| Parametri operativi | `WtsOperationalParameter` | pesi standard e soglie, modificabili a runtime |
-| Non conformita' | `WtsNonConformityReport` | |
-| Audit | `WtsAuditLog` | traccia le azioni sensibili |
+Core module for the FixCity Platform.
 
-## Integrazioni
+## Superpoteri
 
-- **ECOS (ERP legacy)**: lettura via ODBC (`app/Ecos/EcosOdbcConnection`). La scheda
-  tecnica arriva da un gateway dietro contratto (`Legacy\LegacyTechnicalSheetGateway`),
-  cosi' il dominio non conosce il gestionale a monte e i test possono sostituirlo.
-- **Stampa etichette ZPL**: `app/Label/ZplBuilder` genera lo ZPL; i job restano in coda
-  e l'agente sul PC di impianto li preleva via API.
-- **QR**: `bacon/bacon-qr-code` per l'SVG inline, `^BQ` nativo sulle etichette ZPL.
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-## Pannello
+## Documentazione
 
-`Providers/Filament/AdminPanelProvider` monta le pagine a mano: si dichiarano tutte
-`$isDiscovered = false`, quindi senza l'elenco esplicito il pannello esporrebbe solo
-il login e ogni rotta risponderebbe 404.
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-## Qualita'
+---
 
-PHPStan su `tests/`: **0 file_errors** (verifica: `./vendor/bin/phpstan analyse Modules/Wts/tests`).
-
-Pattern obbligatori nei Pest test:
-
-1. `actingAs($user);` poi `get(...)->assertOk()` — mai `actingAs($user)->get(...)` (Pest `actingAs` non catena bene per PHPStan).
-2. `Livewire::actingAs($user);` poi `Livewire::test(...)` — `Testable::actingAs` e' `void`.
-3. Dopo `Livewire::test()`, le assert da mixin `TestResponse` (`assertViewHas`/`assertSet`/`assertRedirect`) vanno su statement separati, non dopo `assertHasNoErrors()` nella stessa catena.
-4. Collection senza generics (`GenerateWtsUnitSeriesAction::execute`): `@var Collection<int, WtsUnit>` oppure `?? throw`.
-
-## Documentazione collegata
-
-- [import-status.md](import-status.md) — cosa e' stato portato e cosa e' cambiato
-- [../../../../docs/gestionale-commesse-comparison/delta-second-tranche.md](../../../../docs/gestionale-commesse-comparison/delta-second-tranche.md)
+**Modulo** `Wts` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

@@ -6,10 +6,23 @@ tags:
   - qmd
   - techplanner
 created: "2026-06-06"
-updated: 2026-08-31
+updated: 2026-09-02
+qmd: "second brain project log PHPStan modules repository inventory documentation changes"
+issues:
+  - "https://github.com/laraxot/base_workorder_fila5/issues/14"
+discussions:
+  - "https://github.com/laraxot/base_workorder_fila5/discussions/15"
 ---
 
 # TechPlanner LLM Wiki Log
+
+## 2026-09-02 (PHPStan Modules — Rating, UI, Xot)
+
+- Story [2.3](../stories/2.3.deep-quality-enabled-modules.story.md): `./vendor/bin/phpstan analyse Modules` verde su **10573 file**. Corretti null safety e generics Eloquent in Rating, helper Mockery UI con `Expectation` concreta e resolver `XotBaseResource::getTableClass()`. Nessuna modifica a `phpstan.neon`, nessun ignore/baseline/cast artificiale. Creato [PHPSTAN-INDEX](PHPSTAN-INDEX.md) e compattata la skill [phpstan-pest-remediation](skills/phpstan-pest-remediation.md).
+
+## 2026-09-02 (inventario repository moduli)
+
+- Allineato `gitmodules.ini` ai 48 moduli Laravel validi (`module.json` presente): aggiunte 32 configurazioni mancanti. Verificati `Rating` e `Seo` già esistenti e create con `gh` le altre 30 repository `laraxot/module_*_fila5`, poi rese **private**. Esclusi `Modules/docs` e lo scaffold incompleto `TestModule`, privi di `module.json`.
 
 ## 2026-08-31 (notte — Theme Sixteen dati sacri)
 

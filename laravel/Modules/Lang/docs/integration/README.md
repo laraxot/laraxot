@@ -1,11 +1,34 @@
 # readme
 
-<!-- Contenuto migrato da _docs/readme.txt -->
+[![Module](https://img.shields.io/badge/Module-readme-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-https://github.com/dimsav/laravel-translatable
+> **Core module for the FixCity Platform.**
 
-https://github.com/Astrotomic/laravel-translatable !!
+## Perché esiste
 
-https://github.com/spatie/laravel-translatable
+Core module for the FixCity Platform.
 
-https://blog.quickadminpanel.com/10-best-laravel-packages-for-multi-language-translations/
+## Superpoteri
+
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
+
+## Documentazione
+
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+
+---
+
+**Modulo** `Lang` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

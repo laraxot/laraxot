@@ -1,226 +1,34 @@
----
-title: "Documentazione Moduli"
-type: index
-tags: [notify, docs, project_docs, modules]
-module: Notify
-created: 2026-07-20
-updated: 2026-07-20
-qmd: "notify documentazione project_docs modules readme documentazione moduli index readme frontmatter qmd search"
-issues:
-  - "https://github.com/laraxot/module_notify_fila5/issues/56"
-discussions:
-  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
-related:
-  - ../../README.md
-  - ../../wiki/index.md
-  - ../../notifications/readme.md
-  - ../../integrations/readme.md
-  - ../../templates/readme.md
----
-# Documentazione Moduli
+# Notify
 
-## Panoramica
-Questa sezione contiene la documentazione specifica di ogni modulo del sistema Laraxot.
+[![Module](https://img.shields.io/badge/Module-Notify-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Moduli Disponibili
+> **Core module for the FixCity Platform.**
 
-### xot/
-Modulo core del sistema Laraxot.
+## Perché esiste
 
-**Contenuti:**
-- Classi base
-- Service Provider
-- Helper e utilities
-- Pattern comuni
+Core module for the FixCity Platform.
 
-### user/
-Modulo per la gestione utenti e autenticazione.
+## Superpoteri
 
-**Contenuti:**
-- Autenticazione
-- Autorizzazioni
-- Profili utente
-- Team e tenant
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-### ui/
-Modulo per i componenti dell'interfaccia utente.
+## Documentazione
 
-**Contenuti:**
-- Componenti Blade
-- Widget Filament
-- Temi e stili
-- Layout system
-
-### tenant/
-Modulo per la gestione multi-tenant.
-
-**Contenuti:**
-- Isolamento tenant
-- Configurazioni
-- Routing
-- Database separation
-
-### media/
-Modulo per la gestione dei file multimediali.
-
-**Contenuti:**
-- Upload file
-- Gestione immagini
-- Storage
-- CDN integration
-
-### cms/
-Modulo per il content management system.
-
-**Contenuti:**
-- Gestione contenuti
-- Editor
-- Pubblicazione
-- SEO
-
-### chart/
-Modulo per grafici e visualizzazioni.
-
-**Contenuti:**
-- Grafici interattivi
-- Dashboard
-- Reporting
-- Analytics
-
-### notify/
-Modulo per le notifiche.
-
-**Contenuti:**
-- Email
-- SMS
-- Push notifications
-- Template
-
-### geo/
-Modulo per funzionalità geografiche.
-
-**Contenuti:**
-- Geocoding
-- Mappe
-- Location services
-- Address validation
-
-### gdpr/
-Modulo per la compliance GDPR.
-
-**Contenuti:**
-- Privacy
-- Cookie consent
-- Data retention
-- User rights
-
-### lang/
-Modulo per la gestione delle lingue.
-
-**Contenuti:**
-- Localizzazione
-- Traduzioni
-- Language switching
-- RTL support
-
-### job/
-Modulo per la gestione dei job.
-
-**Contenuti:**
-- Queue management
-- Background jobs
-- Scheduling
-- Monitoring
-
-### formbuilder/
-Modulo per la costruzione di form dinamici.
-
-**Contenuti:**
-- Form builder
-- Validation
-- Conditional logic
-- Form templates
-
-### seo/
-Modulo per l'ottimizzazione SEO.
-
-**Contenuti:**
-- Meta tags
-- Sitemap
-- Schema markup
-- Analytics
-
-### setting/
-Modulo per le impostazioni del sistema.
-
-**Contenuti:**
-- Configuration
-- Settings management
-- Environment
-- Cache
-
-### blog/
-Modulo per la gestione del blog.
-
-**Contenuti:**
-- Articoli
-- Categorie
-- Commenti
-- RSS feeds
-
-### database/
-Modulo per la gestione del database.
-
-**Contenuti:**
-- Migrations
-- Seeders
-- Database tools
-- Backup
-
-### rating/
-Modulo per il sistema di rating.
-
-**Contenuti:**
-- Rating system
-- Reviews
-- Feedback
-- Analytics
-
-### comment/
-Modulo per i commenti.
-
-**Contenuti:**
-- Comment system
-- Moderation
-- Threading
-- Notifications
-
-### ai/
-Modulo per l'intelligenza artificiale.
-
-**Contenuti:**
-- AI integration
-- Machine learning
-- Chatbots
-- Automation
-
-### fixcity/
-Modulo specifico per FixCity.
-### laraxot/
-Modulo specifico per Notify.
-
-**Contenuti:**
-- Business logic
-- Custom features
-- Integrations
-- Workflows
-
-## Collegamenti
-
-- [Architettura](../architecture/)
-- [Sviluppo](../development/)
-- [Troubleshooting](../troubleshooting/)
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
 ---
 
-*Ultimo aggiornamento: Agosto 2025* 
+**Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

@@ -1,0 +1,55 @@
+---
+title: "Schemaless Attributes casts nota"
+type: concept
+tags: [docs, migrated-from-txt]
+created: 2026-08-24
+updated: 2026-08-24
+source: laravel/Modules/Rating/docs/up.txt
+---
+
+aggiungere   al file laravel/Modules/IndennitaResponsabilita/app/Models/Rating.php
+ /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'extra_attributes' => SchemalessAttributes::class,
+            'rule' => RuleEnum::class,
+            'is_disabled' => 'boolean',
+            'is_readonly' => 'boolean',
+        ];
+    }
+
+    /**
+     * Scope to query by extra attributes.
+     *
+     * @param Builder $query
+     * @param array<string, mixed>|string $attributes
+     * @param mixed $value
+     * @return Builder
+     */
+    public function scopeWithExtraAttributes(Builder $query, array|string $attributes = [], mixed $value = null): Builder
+    {
+        if (is_string($attributes) && $value !== null) {
+            // Single attribute with value: withExtraAttributes('anno', 2024)
+            return $query->where("extra_attributes->{$attributes}", $value);
+        }
+
+        if (is_array($attributes)) {
+            // Multiple attributes: withExtraAttributes(['anno' => 2024, 'type' => 'foo'])
+            foreach ($attributes as $key => $val) {
+                $query = $query->where("extra_attributes->{$key}", $val);
+            }
+        }
+
+        return $query;
+    }
+
+    // -------------------------------------------------
+
+
+
+e' sbagliato ! perche' sono rindondati e dovrebbero stare dentro laravel/Modules/Rating/app/Models/BaseRating.php

@@ -1,60 +1,34 @@
+# docs
+
+[![Module](https://img.shields.io/badge/Module-docs-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
+
+> **Core module for the FixCity Platform.**
+
+## Perché esiste
+
+Core module for the FixCity Platform.
+
+## Superpoteri
+
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
+
+## Documentazione
+
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+
 ---
-title: "Laravel Themes Documentation"
-type: index
-tags: [themes, docs, gestionale-commesse]
-created: 2026-06-05
-updated: 2026-07-27
-qmd: "Themes docs hub Sixteen gestionale panels index"
-issues:
-  - "https://github.com/laraxot/base_workorder_fila5/issues/7"
-discussions:
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
-related:
-  - "./gestionale-docs-index.md"
-  - "./gc-modules-runtime-matrix.md"
-  - "./module-vs-theme-boundaries.md"
-  - "../Sixteen/docs/README.md"
----
 
-# Laravel Themes Documentation
-
-Hub dei temi. Porting gestionale: **[gestionale-docs-index.md](./gestionale-docs-index.md)** · **[tenant-modules-navigation-discipline.md](./tenant-modules-navigation-discipline.md)** (menu admin / JSON tenant).
-
-## Current Themes
-
-| Theme | Role | Status | Docs |
-| --- | --- | --- | --- |
-| `Sixteen` | FO attivo (Design Comuni / BI) | active | [README](../Sixteen/docs/README.md) |
-| `TwentyOne` | FO alternativo Vite/Tailwind | available | [README](../TwentyOne/docs/README.md) |
-| `Zero` / altri | sperimentali / nicchie | available | rispettivi `docs/README.md` |
-
-## Theme Rules
-
-- Home docs tema: `laravel/Themes/<Theme>/docs/README.md`
-- Vietato `lang/lang/` o `_docs/`: [directory-structure-rules.md](./directory-structure-rules.md)
-- Indici root corti: routing, non duplicare
-- Governance: [docs/project/docs-governance.md](../../../docs/project/docs-governance.md) (se presente)
-
-## Gestionale / replica (SSoT temi)
-
-| Doc | Scopo |
-|---|---|
-| **[runtime-config-religion-hub.md](./shared-components/runtime-config-religion-hub.md)** | Hub lezioni runtime (permission, panel trinità, statuses) |
-| **[module-filament-panel-triad.md](../../Modules/Xot/docs/wiki/concepts/module-filament-panel-triad.md)** | SSoT trinità panel (`config` + provider + dashboard) |
-| **[module-admin-panel-provider-religion.md](./shared-components/module-admin-panel-provider-religion.md)** | Boot panel `{modulo}/admin` |
-| **[gestionale-docs-index.md](./gestionale-docs-index.md)** | Indice unico |
-| [module-vs-theme-boundaries.md](./module-vs-theme-boundaries.md) | Confini |
-| [wave1-fo-operator-note.md](./wave1-fo-operator-note.md) | Operator = Filament |
-| [new-modules-panel-mapping.md](./new-modules-panel-mapping.md) | URL `*/admin` |
-| [copy-normalize-modules-vs-themes.md](./copy-normalize-modules-vs-themes.md) | Copy ≠ Themes |
-| Hub prodotto | [functional-readiness.md](../../../docs/gestionale-commesse-comparison/functional-readiness.md) |
-
-## Fast Paths
-
-- [Sixteen](../Sixteen/docs/README.md) · [TwentyOne](../TwentyOne/docs/README.md)
-- [Modules docs](../../Modules/docs/README.md)
-- [llm-wiki.md](./llm-wiki.md) · [AGENTS.md](../../../AGENTS.md)
-
-## Note legacy (UPPERCASE)
-
-File come `ON-DEMAND-PATTERN.md` / `DOCUMENTATION_INDEX.md` restano stub legacy: preferire wiki root e questo hub. Non crearne di nuovi in UPPERCASE.
+**Modulo** `docs` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

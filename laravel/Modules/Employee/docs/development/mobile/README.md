@@ -1,46 +1,34 @@
 # Mobile Development Guide
 
-This directory contains development guides for Progressive Web App (PWA) and mobile application development.
+[![Module](https://img.shields.io/badge/Module-Mobile Development Guide-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Overview
+> **Core module for the FixCity Platform.**
 
-The mobile system provides:
-- Progressive Web App (PWA) functionality
-- Mobile-responsive design
-- Offline capability for critical features
-- Push notifications
-- Mobile-optimized time tracking
+## Perché esiste
 
-## Implementation Status
+Core module for the FixCity Platform.
 
-| Component | Status | Notes |
-|-----------|--------|-------|
-| PWA Foundation | 📋 Planned | Service worker and manifest |
-| Mobile UI | 📋 Planned | Mobile-first responsive design |
-| Offline Support | 📋 Planned | Critical feature offline access |
-| Push Notifications | 📋 Planned | Mobile notification system |
+## Superpoteri
 
-## Development Files
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-- **pwa.md** - Progressive Web App implementation
-- **mobile-app.md** - Mobile application development
+## Documentazione
 
-## Key Components
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-- `ServiceWorker` - PWA offline functionality
-- `PushNotification` - Mobile notifications
-- `MobileTimeTracking` - Mobile time tracking interface
-- `OfflineStorage` - Local data storage
+---
 
-## Mobile Features Priority
-
-1. **Time Tracking** - Clock-in/out from mobile devices
-2. **Presence Status** - View current presence status
-3. **Leave Requests** - Submit leave requests on mobile
-4. **Notifications** - Receive important updates
-5. **Basic Reporting** - View personal time reports
-
-## Related Documentation
-
-- [Features: Feature Specifications](../../features/features_specification.md)
-- [Implementation: Technical Implementation](../../implementation/technical_implementation.md)
+**Modulo** `Employee` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

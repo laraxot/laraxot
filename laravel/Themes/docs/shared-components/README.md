@@ -1,60 +1,34 @@
 # Troubleshooting Guide
 
-## Common Issues
+[![Module](https://img.shields.io/badge/Module-Troubleshooting Guide-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-### PHPStan Errors
-- **Issue**: Method not found errors
-- **Solution**: Check namespace imports and method signatures
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
-- **Prevention**: Always run PHPStan level 9+ before commits
+> **Core module for the FixCity Platform.**
 
-### Translation Problems
-- **Issue**: Missing translations or hardcoded strings
-- **Solution**: Use expanded translation structure
-- **Prevention**: Never use `->label()` in Filament components
+## Perché esiste
 
-### Migration Failures
-- **Issue**: Table/column already exists
-- **Solution**: Always check existence before creation
-- **Prevention**: Use `hasTable()` and `hasColumn()` methods
+Core module for the FixCity Platform.
 
-### Namespace Issues
-- **Issue**: Class not found errors
-- **Solution**: Remove 'App' segment from module namespaces
-- **Prevention**: Follow Laraxot namespace conventions
+## Superpoteri
 
-## Debugging Steps
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-1. **Check PHPStan**: `./vendor/bin/phpstan analyze --level=9`
-2. **Verify Translations**: Ensure all keys exist in all language files
-3. **Test Migrations**: Run in development environment first
-4. **Validate Namespaces**: Follow Modules\ModuleName\* pattern
+## Documentazione
 
-## Getting Help
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-- Check module-specific documentation
-- Review Laraxot framework guidelines
-- Consult best practices documentation
-- Use project memory system for context
+---
+
+**Modulo** `docs` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

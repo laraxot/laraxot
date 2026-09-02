@@ -1,33 +1,34 @@
 # Signage
 
-Preventivi di insegne a partire dal file grafico del cliente.
+[![Module](https://img.shields.io/badge/Module-Signage-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Il problema che risolve
+> **Core module for the FixCity Platform.**
 
-Un'insegna arriva come disegno .ai (che è un contenitore PDF). Dentro ci sono le
-misure, i materiali e le quantità, scritti come testo sparso sul foglio. Preventivare
-a mano vuol dire leggere il disegno, riconoscere le sigle dei materiali, cercarle a
-listino e sommare. Il modulo legge il testo del disegno, lo rimette in righe
-(raggruppando i frammenti per linea di base), riconosce i componenti e li prezza.
+## Perché esiste
 
-## Come si arriva al prezzo
+Core module for the FixCity Platform.
 
-1. **Estrazione** — dal .ai si ricavano i frammenti di testo con le loro coordinate.
-   Un file malformato produce meno testo, non un errore: l'estrazione va avanti.
-2. **Riconoscimento** — le sigle dei tipi insegna vengono decodificate in famiglia,
-   materiale e finitura.
-3. **Prezzo** — ogni componente prende il costo dal listino fornitori e il ricarico
-   da `Costing\Support\MarkupResolver`: voce → centro di lavoro → listino → default.
-4. **Preventivo** — la stima diventa un preventivo del modulo Quotation.
+## Superpoteri
 
-## Catalogo
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-Le insegne ricorrenti stanno a catalogo con la loro distinta di componenti: si
-prezzano senza ripartire dal disegno ogni volta.
+## Documentazione
 
-## Nota sulla consegna del disegno
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-L'anteprima passa da una rotta del modulo e non da `/storage`: i disegni dei clienti
-non devono essere raggiungibili da chi non è autenticato. La rotta risponde 403 e non
-redirige al login, perché ogni pannello ha la propria pagina di accesso e una rotta
-di login globale non esiste.
+---
+
+**Modulo** `Signage` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

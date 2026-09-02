@@ -1,41 +1,34 @@
 # bmad method
 
-## Scopo (business logic)
+[![Module](https://img.shields.io/badge/Module-bmad method-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-BMAD Method serve a rendere **ripetibile** lo sviluppo AI-driven su una codebase modulare grande:
-- riduce duplicazioni tra agenti,
-- rende esplicite le decisioni (requisiti, architettura, test),
-- produce artefatti riutilizzabili (PRD, epics/stories, piani test, documentazione),
-- aiuta a mantenere qualità e tracciabilità quando i task durano più sessioni.
+> **Core module for the FixCity Platform.**
 
-## Dove vive BMAD in questo repo
+## Perché esiste
 
-- **Workflows e agenti**: `_bmad/`
-- **Contesto progetto per BMAD**: `_bmad/bmm/workflows/bmad-generate-project-context/project-context-ptvx.md`
-- **Coordinamento multi-agente**: `docs/ai-agent-coordination.md`
-- **Integrazione progetto (overview)**: `docs/project/bmad-method-integration.md`
-- **Sintesi**: `docs/bmad/bmad-integration-summary.md`
+Core module for the FixCity Platform.
 
-## Come iniziare (operativo)
+## Superpoteri
 
-- **Se non sai cosa fare dopo**: usa `bmad-help`
-- **Se devi progettare** (architettura/storie): usa workflow BMAD (PM/Architect), poi passa a dev/qa
-- **Se devi implementare**: `bmad-dev` (con QA quando tocchi flussi critici o test)
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-## Quando usare BMAD vs GSD
+## Documentazione
 
-- **BMAD**: nuovo modulo, architettura, epics/stories, sprint planning, documentazione ampia
-- **GSD**: feature o bugfix complessi ma “task-atomici”, con wave execution e verify step
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-## Vincoli Laraxot (sempre)
+---
 
-- No Services: usare Actions
-- No `Log::*` in produzione
-- Filament: usare XotBase; vietati `->label()`, `->placeholder()`, `->helperText()`; niente override di `table()` nei RelationManager/Widget
-- PHPStan: non toccare `laravel/phpstan.neon`
-- Docs: file `.md` in minuscolo (eccetto `README.md`), niente date nel contenuto, link interni relativi
-
-## Install/update upstream (riferimento)
-
-Installazione ufficiale BMAD Method: vedi [BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) (quick start: `npx bmad-method install`).
-
+**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

@@ -1,32 +1,34 @@
 # Architecture Documentation
 
-This directory contains all architectural documentation for the Employee module.
+[![Module](https://img.shields.io/badge/Module-Architecture Documentation-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Contents
+> **Core module for the FixCity Platform.**
 
-- **[data_architecture.md](data_architecture.md)** - Data structure and database relationships
-- **[model_architecture.md](model_architecture.md)** - Eloquent model relationships and structure
-- **[technical_architecture.md](technical_architecture.md)** - Technical system overview and design patterns
-- **[feature_comparison.md](feature_comparison.md)** - Feature comparison matrix and analysis
+## Perché esiste
 
-## Overview
+Core module for the FixCity Platform.
 
-The Employee module follows Laraxot architectural principles with strict adherence to:
+## Superpoteri
 
-- **XotBase Extension Pattern** - All classes extend appropriate XotBase classes
-- **Modular Design** - Clear separation of concerns across components
-- **Data Integrity** - Comprehensive validation and relationship management
-- **Scalability** - Architecture supports growth and feature expansion
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-## Key Architectural Decisions
+## Documentazione
 
-1. **Single Table Inheritance** - Using Parental STI for user type management
-2. **Multi-tenant Support** - Built-in tenant isolation and data segregation
-3. **Event-Driven Architecture** - Leveraging Laravel events for decoupled operations
-4. **Repository Pattern** - Data access abstraction for testability and flexibility
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-## Related Documentation
+---
 
-- [Implementation Guides](../implementation/README.md)
-- [Feature Specifications](../features/README.md)
-- [Development Guides](../development/README.md)
+**Modulo** `Employee` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

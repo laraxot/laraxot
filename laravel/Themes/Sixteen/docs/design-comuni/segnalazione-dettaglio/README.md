@@ -1,35 +1,34 @@
 # Segnalazione dettaglio
 
-Data: 2026-04-03
+[![Module](https://img.shields.io/badge/Module-Segnalazione dettaglio-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Obiettivo
+> **Core module for the FixCity Platform.**
 
-Rimpiazzare la test page placeholder `tests.segnalazione-dettaglio` con una pagina strutturata come la reference Design Comuni per la scheda servizio.
+## Perché esiste
 
-## File toccati
+Core module for the FixCity Platform.
 
-- `laravel/Themes/Sixteen/resources/views/components/blocks/tests/ticket-detail.blade.php`
-- `laravel/config/local/fixcity/database/content/pages/tests.segnalazione-dettaglio.json`
-- `laravel/Themes/Sixteen/resources/css/app.css`
+## Superpoteri
 
-## Esito
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-- route locale: `200 OK`
-- breadcrumb reale aggiunto
-- hero/header servizio aggiunto
-- indice laterale pagina aggiunto
-- sezioni principali del servizio aggiunte
-- sezione contatti nel `main` aggiunta
-- rating finale mantenuto come blocco tema esistente
-- `npm run build` eseguito
-- `npm run copy` eseguito
-- `artisan optimize:clear` eseguito
+## Documentazione
 
-## Artifacts
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-- [local.png](./local.png)
-- [reference.png](./reference.png)
+---
 
-## Note
-
-La pagina non usa Bootstrap Italia runtime: la replica e ottenuta con markup compatibile e CSS scoped del tema Sixteen.
+**Modulo** `Sixteen` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

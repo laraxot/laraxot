@@ -1,29 +1,34 @@
----
-title: "Email — replica gestionale"
-type: overview
-tags: [email, gestionale-commesse, replica, bmad]
-created: 2026-07-23
-updated: 2026-07-24
-qmd: "Email replica normalize Laraxot enabled Notify overlap"
-issues:
-  - "https://github.com/laraxot/base_workorder_fila5/issues/7"
-  - "https://github.com/laraxot/base_workorder_fila5/issues/14"
-discussions:
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/15"
-related:
-  - "./import-status.md"
-  - "../../../../docs/gestionale-commesse-comparison/replica-singular-phase.md"
-  - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
----
-
 # Email
 
-Replica SRC (canale email gestionale). Overlap possibile con `Notify` — **non** merge in fase replica.
+[![Module](https://img.shields.io/badge/Module-Email-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-| Gate | Stato |
-|---|---|
-| `modules_statuses` | **true** |
-| Merge in Notify | vietato ora |
+> **Core module for the FixCity Platform.**
 
-Dettaglio: [import-status.md](./import-status.md) · [matrice](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md).
+## Perché esiste
+
+Core module for the FixCity Platform.
+
+## Superpoteri
+
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
+
+## Documentazione
+
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+
+---
+
+**Modulo** `Email` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

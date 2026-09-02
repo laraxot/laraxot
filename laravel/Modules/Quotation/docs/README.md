@@ -1,53 +1,34 @@
----
-title: "Quotation — knowledge base"
-type: overview
-tags: [quotation, gestionale-commesse, docs, bmad]
-created: 2026-07-23
-updated: 2026-07-24
-qmd: "Quotation docs README purpose preventivo sopralluogo"
-issues:
-  - "https://github.com/laraxot/base_workorder_fila5/issues/7"
-  - "https://github.com/laraxot/base_workorder_fila5/issues/14"
-discussions:
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
-related:
-  - "./import-status.md"
-  - "./gestionale-commesse-port.md"
-  - "../../../../docs/gestionale-commesse-comparison/functional-readiness.md"
-  - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
----
-
 # Quotation
+
+[![Module](https://img.shields.io/badge/Module-Quotation-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
+
+> **Core module for the FixCity Platform.**
 
 ## Perché esiste
 
-**Pre-vendita → offerta**: preventivi, template, sopralluoghi (`SiteSurvey`). Nasce dal cliente (e a volte dalla commessa) e può generare lavoro operativo.
+Core module for the FixCity Platform.
 
-## Cosa NON è
+## Superpoteri
 
-- Non è fatturazione (→ Billing).
-- Non è catalogo prodotti (→ Catalog; `product_id` senza FK DB forzata).
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-## Runtime
+## Documentazione
 
-| Gate | Stato |
-|---|---|
-| Enabled | sì |
-| Schema | quotations* + site_surveys (timestamp dopo Customer/WorkOrder) |
-| Panel | `quotation/admin` |
-| User FK | `performed_by_user_id` = `string(36)` |
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-## Indice docs
+---
 
-| File | Scopo |
-|---|---|
-| [import-status.md](./import-status.md) | Checklist |
-| [gestionale-commesse-port.md](./gestionale-commesse-port.md) | Note port |
-| [README.md](./README.md) | Scopo |
-
-## Hub / BMAD
-
-- [functional-readiness.md](../../../../docs/gestionale-commesse-comparison/functional-readiness.md) · story [1.13](../../../../docs/stories/1.13.functional-readiness-migrate-panels.story.md)
-- [#7](https://github.com/laraxot/base_workorder_fila5/issues/7)
-- Matrice statuses: [gc-modules-runtime-matrix.md](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md)
-- Story [2.4 docs hygiene](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md)
+**Modulo** `Quotation` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

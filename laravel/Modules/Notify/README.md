@@ -1,23 +1,19 @@
 # 📬 Notify
 
-[![Domain-Notify](https://img.shields.io/badge/Domain-Notifications-E65100.svg)](#)
+[![Module](https://img.shields.io/badge/Module-📬 Notify-8B0000.svg)]()
 [![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
 [![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
 [![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
 [![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
 [![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
-[![Strict Types](https://img.shields.io/badge/PHP-strict__types-1-informational.svg)](#)
-[![Laraxot Modules](https://img.shields.io/badge/Architecture-Modular-purple.svg)](#)
-[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)](#)
-[![Notify Platform](https://img.shields.io/badge/Platform-Notify-008758.svg)](#)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-> **Il cittadino sa cosa succede al suo ticket.** Email, template, canali — orchestrazione notifiche enterprise.
-
----
+> ****Il cittadino sa cosa succede al suo ticket.** Email, template, canali — orchestrazione notifiche enterprise.**
 
 ## Perché esiste
 
-Chiude il loop feedback: ogni cambio stato può diventare messaggio tracciabile.
+**Il cittadino sa cosa succede al suo ticket.** Email, template, canali — orchestrazione notifiche enterprise.
 
 ## Superpoteri
 
@@ -25,24 +21,6 @@ Chiude il loop feedback: ogni cambio stato può diventare messaggio tracciabile.
 - Integrazione eventi dominio ticket
 - Filament per configurazione
 - BMAD skills e tooling AI nel repo
-
-## Certificazioni
-
-| Certificazione | Stato |
-|----------------|-------|
-| PHPStan livello 10 | Target progetto |
-| `declare(strict_types=1)` | Su nuovo codice PHP |
-| Filament 5 + XotBase | Admin enterprise |
-| Test PHPUnit / Pest | Suite modulo |
-| Documentazione wiki | Cartella `docs/` |
-
-## Vuoi entrare nel team?
-
-Comunicazione **affidabile** = fiducia istituzionale. Qui si implementa.
-
-Stack frontoffice: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — vedi [STORY-133](../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
-
----
 
 ## Documentazione
 
@@ -54,5 +32,4 @@ Stack frontoffice: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filamen
 
 ---
 
-**Modulo** `notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
-**Modulo** `notify` · **Laraxot** · **Notify Platform** · PHPStan 10 · Filament 5
+**Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

@@ -20,14 +20,16 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
+use LogicException;
 use Modules\Media\Actions\GetAttachmentsSchemaAction;
+use Modules\Xot\Actions\Filament\GetResourceClassNameByModelClassAction;
 use Modules\Xot\Actions\GetTransKeyAction;
 use Modules\Xot\Actions\ModelClass\CountAction;
+use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 use Modules\Xot\Filament\Traits\NavigationLabelTrait;
+use Webmozart\Assert\Assert;
 
 use function Safe\glob;
-
-use Webmozart\Assert\Assert;
 
 /**
  * @method static string getUrl(?string $name = null, array<string, mixed> $parameters = [], bool $isAbsolute = true, ?string $panel = null, ?\Illuminate\Database\Eloquent\Model $tenant = null, bool $shouldGuessMissingParameters = false, ?string $configuration = null)
@@ -41,7 +43,7 @@ abstract class XotBaseResource extends FilamentResource
     protected static ?SubNavigationPosition $subNavigationPosition = SubNavigationPosition::Top;
 
     /**
-     * @param array<string, bool|float|int|string|null> $params
+     * @param  array<string, bool|float|int|string|null>  $params
      */
     public static function trans(string $key, bool $exceptionIfNotExist = false, array $params = []): string
     {
@@ -81,7 +83,7 @@ abstract class XotBaseResource extends FilamentResource
      */
     public static function getModel(): string
     {
-        if (null !== static::$model) {
+        if (static::$model !== null) {
             $res = static::$model;
             Assert::subclassOf(
                 $res,
@@ -130,19 +132,50 @@ abstract class XotBaseResource extends FilamentResource
             ->columns(static::getFormSchemaColumns());
     }
 
-    public static function table(Table $table): Table
+    /**
+     * Resolve the dedicated table configurator for the current resource.
+     *
+     * @return class-string<XotBaseResourceTable>
+     */
+    public static function getTableClass(): string
     {
-        $name = class_basename(static::getModel());
-        $name_plural = Str::plural($name);
-        $class = static::class.'\Tables\\'.$name_plural.'Table';
-        if (class_exists($class)) {
-            $configured = $class::configure($table);
-            Assert::isInstanceOf($configured, Table::class);
+        $modelTableClass = static::class.'\Tables\\'.Str::plural(class_basename(static::getModel())).'Table';
+        if (class_exists($modelTableClass)) {
+            Assert::subclassOf($modelTableClass, XotBaseResourceTable::class);
 
-            return $configured;
+            return $modelTableClass;
         }
 
-        return $table;
+        $resourceName = Str::before(class_basename(static::class), 'Resource');
+        $resourceTableClass = static::class.'\Tables\\'.Str::plural($resourceName).'Table';
+        if (class_exists($resourceTableClass)) {
+            Assert::subclassOf($resourceTableClass, XotBaseResourceTable::class);
+
+            return $resourceTableClass;
+        }
+
+        $resourceClass = app(GetResourceClassNameByModelClassAction::class)->execute(static::getModel());
+        $fallbackTableClass = $resourceClass.'\Tables\\'.Str::plural(class_basename(static::getModel())).'Table';
+        if (! class_exists($fallbackTableClass)) {
+            throw new LogicException(sprintf(
+                'No table class found for resource [%s] and model [%s].',
+                static::class,
+                static::getModel(),
+            ));
+        }
+
+        Assert::subclassOf($fallbackTableClass, XotBaseResourceTable::class);
+
+        return $fallbackTableClass;
+    }
+
+    public static function table(Table $table): Table
+    {
+        $tableClass = static::getTableClass();
+        $configured = $tableClass::configure($table);
+        Assert::isInstanceOf($configured, Table::class);
+
+        return $configured;
     }
 
     public static function getFormSchemaColumns(): int
@@ -257,7 +290,7 @@ abstract class XotBaseResource extends FilamentResource
         $filesResult = glob($path.\DIRECTORY_SEPARATOR.'*RelationManager.php');
 
         // PHPStan: glob() with valid pattern returns array
-        if ([] === $filesResult) {
+        if ($filesResult === []) {
             return [];
         }
 

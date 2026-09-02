@@ -1,60 +1,34 @@
 # Job Module Roadmap
 
-> "Job queue and background processing system for the Laraxot ecosystem with job management and monitoring."
+[![Module](https://img.shields.io/badge/Module-Job Module Roadmap-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## 🎯 Vision
+> **"Job queue and background processing system for the Laraxot ecosystem with job management and monitoring."**
 
-Provide a **robust job processing** system that includes:
+## Perché esiste
 
-- ✅ Job queue management
-- ✅ Job scheduling
-- ✅ Job monitoring
-- ✅ Job retries
-- ✅ Job analytics
-- ✅ Failed job handling
+"Job queue and background processing system for the Laraxot ecosystem with job management and monitoring."
 
-## 📊 Current Status
+## Superpoteri
 
-### Overall Progress: 75% Complete
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-| Category | Status | Progress |
-|----------|--------|----------|
-| Job Queue | ✅ Complete | 100% |
-| Job Scheduling | ✅ Complete | 100% |
-| Job Monitoring | 🔄 In Progress | 70% |
-| Job Retries | ✅ Complete | 100% |
-| Job Analytics | 🔄 In Progress | 50% |
-| Failed Job Handling | 🔄 In Progress | 60% |
+## Documentazione
 
-## 🏗️ Key Features
-
-### 1. Job Queue
-- Queue management
-- Job dispatching
-- Job priorities
-- Queue monitoring
-- Queue scaling
-
-### 2. Job Scheduling
-- Cron jobs
-- Scheduled tasks
-- Job chains
-- Job dependencies
-- Job batching
-
-### 3. Job Monitoring
-- Real-time monitoring
-- Job status tracking
-- Performance metrics
-- Error tracking
-- Alert system
-
-### 4. Job Analytics
-- Job performance
-- Queue statistics
-- Failure analysis
-- Throughput metrics
-- Resource usage
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
 ---
 
+**Modulo** `Job` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

@@ -1,64 +1,35 @@
 # OAuth Documentation Index
 
-> **Module**: User  
-> **Topic**: OAuth 2.0 / Laravel Passport  
-> **Last Updated**: 2026-03-18
+[![Module](https://img.shields.io/badge/Module-OAuth Documentation Index-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
----
+> ****Module**: User**
 
-## 📚 Documentation Files
+## Perché esiste
 
-| File | Description |
-|------|-------------|
-| **[oauth-architecture.md](./oauth-architecture.md)** | ✅ **START HERE** - Complete OAuth architecture, models, and usage |
-| [github.md](./github.md) | GitHub OAuth integration (if applicable) |
+**Module**: User
 
----
-
-## 🎯 Quick Reference
-
-### Models
-
-- `OauthClient` - OAuth 2.0 Client (PRIMARY model)
-- `OauthToken` - Access Token
-- `OauthAuthCode` - Authorization Code
-- `OauthRefreshToken` - Refresh Token
-- `OauthDeviceCode` - Device Code
-- `OauthPersonalAccessClient` - Personal Access Client
-
-### Key Features
+## Superpoteri
 
 - ✅ **Authorizable** - Laravel authorization integration
 - ✅ **HasRoles** - Spatie Permission for client roles
 - ✅ **Multi-tenant** - Dedicated `user` database connection
 - ✅ **Factory Pattern** - Testing support
 
----
+## Documentazione
 
-## 🚀 Getting Started
-
-1. **Read**: [oauth-architecture.md](./oauth-architecture.md)
-2. **Understand**: Model structure and relationships
-3. **Implement**: Use `OauthClient` (NOT `Passport\Client` directly)
-4. **Test**: Use `OauthClientFactory` for test data
-
----
-
-## ⚠️ Important Rules
-
-- ❌ **NEVER** use `Laravel\Passport\Client` directly
-- ✅ **ALWAYS** use `Modules\User\Models\OauthClient`
-- ❌ **NEVER** create duplicate wrapper models (DRY + KISS)
-- ✅ **ALWAYS** use `app()` for Actions, not direct instantiation
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
 ---
 
-## 📝 Recent Changes
-
-### 2026-03-18 - DRY Cleanup
-
-- Removed duplicate `Passport/Client.php` model
-- Consolidated all OAuth client functionality in `OauthClient.php`
-- Updated test files to use single model
-
-See: [oauth-architecture.md](./oauth-architecture.md#2026-03-18---dry-cleanup)
+**Modulo** `User` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

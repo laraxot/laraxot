@@ -1,0 +1,768 @@
+{
+  "communities": {
+    "0": [
+      "composer",
+      "composer_allow_plugins_dealerdirect_phpcodesniffer_composer_installer",
+      "composer_allow_plugins_pestphp_pest_plugin",
+      "composer_allow_plugins_wikimedia_composer_merge_plugin",
+      "composer_authors",
+      "composer_autoload",
+      "composer_autoload_dev",
+      "composer_autoload_dev_psr_4",
+      "composer_autoload_psr_4",
+      "composer_config",
+      "composer_config_allow_plugins",
+      "composer_config_sort_packages",
+      "composer_description",
+      "composer_extra",
+      "composer_extra_laravel",
+      "composer_homepage",
+      "composer_keywords",
+      "composer_laravel_aliases",
+      "composer_laravel_providers",
+      "composer_license",
+      "composer_minimum_stability",
+      "composer_name",
+      "composer_prefer_stable",
+      "composer_psr_4_modules_rating",
+      "composer_psr_4_modules_rating_database_factories",
+      "composer_psr_4_modules_rating_database_seeders",
+      "composer_psr_4_modules_rating_tests",
+      "composer_repositories",
+      "composer_require",
+      "composer_require_php",
+      "composer_require_spatie_laravel_schemaless_attributes",
+      "composer_scripts",
+      "composer_scripts_analyse",
+      "composer_scripts_format",
+      "composer_scripts_post_autoload_dump1",
+      "composer_scripts_post_update_cmd",
+      "composer_scripts_test",
+      "composer_scripts_test_coverage",
+      "ref_evaluation",
+      "ref_filament",
+      "ref_illuminate_foundation_composerscripts_postupdate",
+      "ref_laravel",
+      "ref_laraxot",
+      "ref_module_rating",
+      "ref_modules_rating_providers_filament_adminpanelprovider",
+      "ref_modules_rating_providers_ratingserviceprovider",
+      "ref_php_artisan_vendor_publish_provider_statikbe_cookieconsent_cookieconsentserviceprovider_tag_cookie_public",
+      "ref_rating",
+      "ref_schemaless"
+    ],
+    "1": [
+      "app_contracts_haslikecontract",
+      "app_contracts_haslikecontract_dislikedby",
+      "app_contracts_haslikecontract_islikedby",
+      "app_contracts_haslikecontract_likedby",
+      "app_models_policies_ratingmorphpolicy",
+      "app_models_policies_ratingmorphpolicy_ratingmorphpolicy",
+      "app_models_policies_ratingmorphpolicy_ratingmorphpolicy_create",
+      "app_models_policies_ratingmorphpolicy_ratingmorphpolicy_delete",
+      "app_models_policies_ratingmorphpolicy_ratingmorphpolicy_forcedelete",
+      "app_models_policies_ratingmorphpolicy_ratingmorphpolicy_isowner",
+      "app_models_policies_ratingmorphpolicy_ratingmorphpolicy_restore",
+      "app_models_policies_ratingmorphpolicy_ratingmorphpolicy_update",
+      "app_models_policies_ratingmorphpolicy_ratingmorphpolicy_view",
+      "app_models_policies_ratingmorphpolicy_ratingmorphpolicy_viewany",
+      "app_models_policies_ratingpolicy",
+      "app_models_policies_ratingpolicy_ratingpolicy",
+      "app_models_policies_ratingpolicy_ratingpolicy_create",
+      "app_models_policies_ratingpolicy_ratingpolicy_delete",
+      "app_models_policies_ratingpolicy_ratingpolicy_forcedelete",
+      "app_models_policies_ratingpolicy_ratingpolicy_restore",
+      "app_models_policies_ratingpolicy_ratingpolicy_update",
+      "app_models_policies_ratingpolicy_ratingpolicy_view",
+      "app_models_policies_ratingpolicy_ratingpolicy_viewany",
+      "app_models_rating_rating",
+      "app_models_ratingmorph",
+      "app_models_ratingmorph_ratingmorph",
+      "app_models_traits_hasrating",
+      "app_models_traits_hasrating_getarrayratingswithimage",
+      "app_models_traits_hasrating_getbettingusers",
+      "app_models_traits_hasrating_getoptionratingsidcolor",
+      "app_models_traits_hasrating_getoptionratingsidtitle",
+      "app_models_traits_hasrating_getratingspercentagebyuser",
+      "app_models_traits_hasrating_getratingspercentagebyvolume",
+      "app_models_traits_hasrating_getvolumecredit",
+      "app_models_traits_hasrating_ratings",
+      "database_migrations_2026_07_15_120003_create_rating_morph_table",
+      "database_migrations_2026_07_15_120003_create_rating_morph_table_up",
+      "modules_xot_contracts_usercontract",
+      "modules_xot_models_policies_xotbasepolicy"
+    ],
+    "2": [
+      "autoprefixer",
+      "axios",
+      "cross_env",
+      "laravel_mix",
+      "laravel_mix_merge_manifest",
+      "laravel_vite_plugin",
+      "lodash",
+      "package",
+      "package_devdependencies",
+      "package_devdependencies_autoprefixer",
+      "package_devdependencies_axios",
+      "package_devdependencies_cross_env",
+      "package_devdependencies_laravel_mix",
+      "package_devdependencies_laravel_mix_merge_manifest",
+      "package_devdependencies_laravel_vite_plugin",
+      "package_devdependencies_lodash",
+      "package_devdependencies_postcss",
+      "package_devdependencies_postcss_nesting",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_tailwindcss_forms",
+      "package_devdependencies_tailwindcss_typography",
+      "package_devdependencies_tippy_js",
+      "package_devdependencies_vite",
+      "package_private",
+      "package_scripts",
+      "package_scripts_development",
+      "package_scripts_hot",
+      "package_scripts_production",
+      "package_scripts_watch",
+      "package_scripts_watch_poll",
+      "postcss",
+      "postcss_nesting",
+      "tailwindcss",
+      "tailwindcss_forms",
+      "tailwindcss_typography",
+      "tippy_js",
+      "vite"
+    ],
+    "3": [
+      "app_filament_resources_ratingmorphresource",
+      "app_filament_resources_ratingmorphresource_pages_createratingmorph",
+      "app_filament_resources_ratingmorphresource_pages_createratingmorph_createratingmorph",
+      "app_filament_resources_ratingmorphresource_pages_editratingmorph",
+      "app_filament_resources_ratingmorphresource_pages_editratingmorph_editratingmorph",
+      "app_filament_resources_ratingmorphresource_pages_editratingmorph_editratingmorph_getactions",
+      "app_filament_resources_ratingmorphresource_pages_listratingmorphs",
+      "app_filament_resources_ratingmorphresource_pages_listratingmorphs_listratingmorphs",
+      "app_filament_resources_ratingmorphresource_pages_listratingmorphs_listratingmorphs_getactions",
+      "app_filament_resources_ratingmorphresource_pages_listratingmorphs_listratingmorphs_gettablecolumns",
+      "app_filament_resources_ratingmorphresource_ratingmorphresource",
+      "app_filament_resources_ratingresource",
+      "app_filament_resources_ratingresource_pages_basecreaterating",
+      "app_filament_resources_ratingresource_pages_basecreaterating_basecreaterating",
+      "app_filament_resources_ratingresource_pages_baseeditrating",
+      "app_filament_resources_ratingresource_pages_baseeditrating_baseeditrating",
+      "app_filament_resources_ratingresource_pages_baseeditrating_baseeditrating_getactions",
+      "app_filament_resources_ratingresource_pages_baselistratings",
+      "app_filament_resources_ratingresource_pages_baselistratings_baselistratings",
+      "app_filament_resources_ratingresource_pages_baselistratings_baselistratings_gettablecolumns",
+      "app_filament_resources_ratingresource_pages_createrating",
+      "app_filament_resources_ratingresource_pages_createrating_createrating",
+      "app_filament_resources_ratingresource_pages_editrating",
+      "app_filament_resources_ratingresource_pages_editrating_editrating",
+      "app_filament_resources_ratingresource_pages_editrating_editrating_getactions",
+      "app_filament_resources_ratingresource_pages_listratings",
+      "app_filament_resources_ratingresource_pages_listratings_listratings",
+      "modules_xot_filament_resources_pages_xotbasecreaterecord",
+      "modules_xot_filament_resources_pages_xotbaseeditrecord",
+      "modules_xot_filament_resources_pages_xotbaselistrecords",
+      "tests_unit_listratingspagetest"
+    ],
+    "4": [
+      "app_models_basemodel",
+      "app_models_basemodel_basemodel",
+      "app_models_basemodel_basemodel_casts",
+      "app_models_basemorphpivot",
+      "app_models_basemorphpivot_basemorphpivot",
+      "app_models_basemorphpivot_basemorphpivot_casts",
+      "app_models_baserating",
+      "app_models_baserating_baserating",
+      "app_models_baserating_baserating_casts",
+      "app_models_baserating_baserating_getslugoptions",
+      "app_models_baserating_baserating_linkedto",
+      "app_models_baserating_baserating_registermediaconversions",
+      "app_models_baseratingmorph",
+      "app_models_baseratingmorph_baseratingmorph",
+      "app_models_baseratingmorph_baseratingmorph_model",
+      "app_models_baseratingmorph_baseratingmorph_profile",
+      "app_models_baseratingmorph_baseratingmorph_rating",
+      "app_models_baseratingmorph_baseratingmorph_user",
+      "illuminate_database_eloquent_relations_belongsto",
+      "illuminate_database_eloquent_relations_morphpivot",
+      "illuminate_database_eloquent_relations_morphto",
+      "modules_xot_models_xotbasemodel",
+      "modules_xot_traits_updater",
+      "slugoptions",
+      "spatie_medialibrary_hasmedia",
+      "spatie_medialibrary_interactswithmedia",
+      "spatie_medialibrary_mediacollections_models_media",
+      "spatie_sluggable_hasslug",
+      "spatie_sluggable_slugoptions"
+    ],
+    "5": [
+      "app_models_baserating_baserating_scopewithextraattributes",
+      "app_models_traits_hasratingstrait",
+      "app_models_traits_hasratingstrait_getmyratingattribute",
+      "app_models_traits_hasratingstrait_getratingclass",
+      "app_models_traits_hasratingstrait_getratingsavgattribute",
+      "app_models_traits_hasratingstrait_getratingscountattribute",
+      "app_models_traits_hasratingstrait_getratingsrules",
+      "app_models_traits_hasratingstrait_getratingsvalidationattributes",
+      "app_models_traits_hasratingstrait_getratingswhere",
+      "app_models_traits_hasratingstrait_myratings",
+      "app_models_traits_hasratingstrait_ratingavghtml",
+      "app_models_traits_hasratingstrait_ratingobjectives",
+      "app_models_traits_hasratingstrait_ratings",
+      "app_models_traits_hasratingstrait_scopewithrating",
+      "app_models_traits_hasratingstrait_syncratingswhere",
+      "app_models_traits_ratingtrait",
+      "app_models_traits_ratingtrait_getmyratingattribute",
+      "app_models_traits_ratingtrait_getratingsavgattribute",
+      "app_models_traits_ratingtrait_getratingscountattribute",
+      "app_models_traits_ratingtrait_myratings",
+      "app_models_traits_ratingtrait_ratingavghtml",
+      "app_models_traits_ratingtrait_ratingobjectives",
+      "app_models_traits_ratingtrait_ratings",
+      "app_models_traits_ratingtrait_scopewithrating",
+      "illuminate_database_eloquent_builder",
+      "illuminate_database_eloquent_relations_hasmany",
+      "illuminate_database_eloquent_relations_morphtomany",
+      "illuminate_support_collection"
+    ],
+    "6": [
+      "app_filament_actions_table_bettableaction",
+      "app_filament_actions_table_bettableaction_bettableaction",
+      "app_filament_actions_table_bettableaction_bettableaction_getdefaultname",
+      "app_filament_actions_table_bettableaction_bettableaction_setup",
+      "app_filament_resources_ratingmorphresource_tables_ratingmorphstable",
+      "app_filament_resources_ratingmorphresource_tables_ratingmorphstable_ratingmorphstable",
+      "app_filament_resources_ratingmorphresource_tables_ratingmorphstable_ratingmorphstable_gettablecolumns",
+      "app_filament_resources_ratingmorphresource_tables_ratingmorphtable",
+      "app_filament_resources_ratingmorphresource_tables_ratingmorphtable_ratingmorphtable",
+      "app_filament_resources_ratingmorphresource_tables_ratingmorphtable_ratingmorphtable_gettablecolumns",
+      "app_filament_resources_ratingresource_tables_baseratingstable",
+      "app_filament_resources_ratingresource_tables_baseratingstable_baseratingstable",
+      "app_filament_resources_ratingresource_tables_baseratingstable_baseratingstable_gettableactions",
+      "app_filament_resources_ratingresource_tables_baseratingstable_baseratingstable_gettablebulkactions",
+      "app_filament_resources_ratingresource_tables_baseratingstable_baseratingstable_gettablecolumns",
+      "app_filament_resources_ratingresource_tables_baseratingstable_baseratingstable_gettablefilters",
+      "app_filament_resources_ratingresource_tables_ratingstable",
+      "app_filament_resources_ratingresource_tables_ratingstable_ratingstable",
+      "app_filament_resources_ratingresource_tables_ratingstable_ratingstable_gettablecolumns",
+      "app_filament_resources_ratingresource_tables_ratingtable",
+      "app_filament_resources_ratingresource_tables_ratingtable_ratingtable",
+      "app_filament_resources_ratingresource_tables_ratingtable_ratingtable_gettableactions",
+      "app_filament_resources_ratingresource_tables_ratingtable_ratingtable_gettablebulkactions",
+      "app_filament_resources_ratingresource_tables_ratingtable_ratingtable_gettablecolumns",
+      "app_filament_resources_ratingresource_tables_ratingtable_ratingtable_gettablefilters",
+      "filament_actions_action",
+      "modules_xot_filament_resources_tables_xotbaseresourcetable"
+    ],
+    "7": [
+      "docs_prd",
+      "docs_prd_actionstandard",
+      "docs_prd_architecturerule",
+      "docs_prd_companiondocs",
+      "docs_prd_dependencies",
+      "docs_prd_goals",
+      "docs_prd_implementationpattern",
+      "docs_prd_name",
+      "docs_prd_nongoals",
+      "docs_prd_purpose",
+      "docs_prd_qualitygates",
+      "docs_prd_sourceframework",
+      "docs_prd_status",
+      "docs_prd_suiteversion",
+      "docs_prd_type",
+      "ref_gestire_un_dominio_applicativo_esterno_completo",
+      "ref_product_launch_plan_md",
+      "ref_product_roadmap_md",
+      "ref_product_strategy_md",
+      "ref_rendere_riusabile_il_concetto_di_rating_outcome",
+      "ref_sprint_planning_meeting_md",
+      "ref_stabilizzare_il_contratto_dati_delle_opzioni",
+      "ref_supportare_relazione_tra_modelli_e_rating",
+      "ref_user_research_md",
+      "ref_vendor_bin_phpinsights_analyse_modules_rating_min_quality_0_min_complexity_0_min_architecture_0_min_style_0",
+      "ref_vendor_bin_phpstan_analyse_modules_rating",
+      "ref_xot"
+    ],
+    "8": [
+      "app_actions_hasrating_getcountbymodelratingidaction",
+      "app_actions_hasrating_getcountbymodelratingidaction_getcountbymodelratingidaction",
+      "app_actions_hasrating_getcountbymodelratingidaction_getcountbymodelratingidaction_execute",
+      "app_actions_hasrating_getratingoptsbymodelaction",
+      "app_actions_hasrating_getratingoptsbymodelaction_getratingoptsbymodelaction",
+      "app_actions_hasrating_getratingoptsbymodelaction_getratingoptsbymodelaction_execute",
+      "app_actions_hasrating_getsumbymodelratingidaction",
+      "app_actions_hasrating_getsumbymodelratingidaction_getsumbymodelratingidaction",
+      "app_actions_hasrating_getsumbymodelratingidaction_getsumbymodelratingidaction_execute",
+      "app_filament_resources_hasratingresource_widgets_statsoverview",
+      "app_filament_resources_hasratingresource_widgets_statsoverview_statsoverview",
+      "app_filament_resources_hasratingresource_widgets_statsoverview_statsoverview_getstats",
+      "app_filament_widgets_statsoverview",
+      "app_filament_widgets_statsoverview_statsoverview",
+      "app_filament_widgets_statsoverview_statsoverview_getstats",
+      "app_models_contracts_hasratingcontract",
+      "app_models_contracts_hasratingcontract_ratings",
+      "illuminate_database_eloquent_relations_relation",
+      "modules_rating_models_contracts_hasratingcontract",
+      "modules_xot_filament_widgets_xotbasestatsoverviewwidget",
+      "spatie_queueableaction_queueableaction"
+    ],
+    "9": [
+      "app_filament_resources_ratingmorphresource_schemas_ratingmorphform",
+      "app_filament_resources_ratingmorphresource_schemas_ratingmorphform_ratingmorphform",
+      "app_filament_resources_ratingmorphresource_schemas_ratingmorphform_ratingmorphform_getformschema",
+      "app_filament_resources_ratingmorphresource_schemas_ratingmorphinfolist",
+      "app_filament_resources_ratingmorphresource_schemas_ratingmorphinfolist_ratingmorphinfolist",
+      "app_filament_resources_ratingmorphresource_schemas_ratingmorphinfolist_ratingmorphinfolist_getinfolistschema",
+      "app_filament_resources_ratingresource_schemas_baseratingform",
+      "app_filament_resources_ratingresource_schemas_baseratingform_baseratingform",
+      "app_filament_resources_ratingresource_schemas_baseratingform_baseratingform_getformschema",
+      "app_filament_resources_ratingresource_schemas_baseratinginfolist",
+      "app_filament_resources_ratingresource_schemas_baseratinginfolist_baseratinginfolist",
+      "app_filament_resources_ratingresource_schemas_baseratinginfolist_baseratinginfolist_getinfolistschema",
+      "app_filament_resources_ratingresource_schemas_ratingform",
+      "app_filament_resources_ratingresource_schemas_ratingform_ratingform",
+      "app_filament_resources_ratingresource_schemas_ratinginfolist",
+      "app_filament_resources_ratingresource_schemas_ratinginfolist_ratinginfolist",
+      "component",
+      "filament_schemas_components_component",
+      "modules_xot_filament_resources_schemas_xotbaseresourceform",
+      "modules_xot_filament_resources_schemas_xotbaseresourceinfolist"
+    ],
+    "10": [
+      "scripts_ci_contributor_lines_report",
+      "scripts_ci_contributor_lines_report_args",
+      "scripts_ci_contributor_lines_report_barchartsvg",
+      "scripts_ci_contributor_lines_report_buildhtml",
+      "scripts_ci_contributor_lines_report_buildsummary",
+      "scripts_ci_contributor_lines_report_clocdata",
+      "scripts_ci_contributor_lines_report_collectcloc",
+      "scripts_ci_contributor_lines_report_collectgitchurn",
+      "scripts_ci_contributor_lines_report_cwd",
+      "scripts_ci_contributor_lines_report_escapehtml",
+      "scripts_ci_contributor_lines_report_extof",
+      "scripts_ci_contributor_lines_report_gitdata",
+      "scripts_ci_contributor_lines_report_html",
+      "scripts_ci_contributor_lines_report_outhtml",
+      "scripts_ci_contributor_lines_report_outsummary",
+      "scripts_ci_contributor_lines_report_sh",
+      "scripts_ci_contributor_lines_report_sincedate",
+      "scripts_ci_contributor_lines_report_summary",
+      "scripts_ci_contributor_lines_report_topauthors",
+      "scripts_ci_contributor_lines_report_topentries"
+    ],
+    "11": [
+      "app_datas_ratingdata",
+      "app_datas_ratingdata_php_self",
+      "app_datas_ratingdata_ratingdata",
+      "app_datas_ratingdata_ratingdata_construct",
+      "app_datas_ratingdata_ratingdata_fromarray",
+      "app_filament_blocks_rating",
+      "app_filament_blocks_rating_rating",
+      "app_filament_blocks_rating_rating_create",
+      "app_filament_blocks_rating_rating_createadvanced",
+      "app_filament_blocks_rating_rating_createfromformdata",
+      "block",
+      "filament_forms_components_builder_block",
+      "modules_rating_enums_supportedlocale",
+      "spatie_laraveldata_data",
+      "supportedlocale",
+      "tests_unit_ratingtest"
+    ],
+    "12": [
+      "app_enums_ruleenum",
+      "app_filament_resources_baseratingmorphresource",
+      "app_filament_resources_baseratingmorphresource_baseratingmorphresource",
+      "app_filament_resources_baseratingmorphresource_baseratingmorphresource_getformschema",
+      "app_filament_resources_baseratingresource",
+      "app_filament_resources_baseratingresource_baseratingresource",
+      "app_filament_resources_baseratingresource_baseratingresource_getformschema",
+      "app_filament_resources_ratingresource_ratingresource",
+      "app_models_rating",
+      "database_factories_ratingfactory",
+      "database_factories_ratingfactory_ratingfactory",
+      "database_factories_ratingfactory_ratingfactory_definition",
+      "filament_support_components_component",
+      "illuminate_database_eloquent_factories_factory",
+      "modules_media_models_media",
+      "modules_xot_filament_resources_xotbaseresource"
+    ],
+    "13": [
+      "app_providers_ratingserviceprovider",
+      "app_providers_ratingserviceprovider_ratingserviceprovider",
+      "illuminate_foundation_application",
+      "illuminate_foundation_testing_databasetransactions",
+      "modules_xot_providers_xotbaseserviceprovider",
+      "modules_xot_tests_xotbasetestcase",
+      "tests_feature_ratingapitest",
+      "tests_pest",
+      "tests_testcase",
+      "tests_testcase_testcase",
+      "tests_testcase_testcase_getpackageproviders",
+      "tests_testcase_testcase_setup"
+    ],
+    "14": [
+      "database_seeders_ratingdatabaseseeder",
+      "database_seeders_ratingdatabaseseeder_ratingdatabaseseeder",
+      "database_seeders_ratingdatabaseseeder_ratingdatabaseseeder_run",
+      "database_seeders_ratingmorphseeder",
+      "database_seeders_ratingmorphseeder_ratingmorphseeder",
+      "database_seeders_ratingmorphseeder_ratingmorphseeder_run",
+      "database_seeders_ratingseeder",
+      "database_seeders_ratingseeder_ratingseeder",
+      "database_seeders_ratingseeder_ratingseeder_run",
+      "illuminate_database_seeder"
+    ],
+    "15": [
+      "app_models_traits_haslikes",
+      "app_models_traits_haslikes_boothaslikes",
+      "app_models_traits_haslikes_dislikedby",
+      "app_models_traits_haslikes_islikedby",
+      "app_models_traits_haslikes_likedby",
+      "app_models_traits_haslikes_likes",
+      "app_models_traits_haslikes_likesrelation",
+      "illuminate_database_eloquent_collection",
+      "illuminate_database_eloquent_relations_morphmany"
+    ],
+    "16": [
+      "app_filament_relationmanagers_ratingsrelationmanager",
+      "app_filament_relationmanagers_ratingsrelationmanager_ratingsrelationmanager",
+      "app_filament_relationmanagers_ratingsrelationmanager_ratingsrelationmanager_table",
+      "app_filament_resources_hasratingresource_relationmanagers_ratingsrelationmanager",
+      "app_filament_resources_hasratingresource_relationmanagers_ratingsrelationmanager_ratingsrelationmanager",
+      "app_filament_resources_hasratingresource_relationmanagers_ratingsrelationmanager_ratingsrelationmanager_table",
+      "filament_resources_relationmanagers_relationmanager",
+      "filament_tables_table"
+    ],
+    "17": [
+      "app_providers_eventserviceprovider",
+      "app_providers_eventserviceprovider_eventserviceprovider",
+      "app_providers_eventserviceprovider_eventserviceprovider_configureemailverification",
+      "illuminate_foundation_support_providers_eventserviceprovider"
+    ],
+    "18": [
+      "app_view_components_dashboard_item",
+      "app_view_components_dashboard_item_item",
+      "app_view_components_dashboard_item_item_render",
+      "illuminate_view_component"
+    ],
+    "19": [
+      "app_enums_supportedlocale",
+      "app_enums_supportedlocale_fromstring",
+      "app_enums_supportedlocale_php_self"
+    ],
+    "20": [
+      "app_filament_pages_dashboard",
+      "app_filament_pages_dashboard_dashboard",
+      "modules_xot_filament_pages_xotbasedashboard"
+    ],
+    "21": [
+      "app_providers_filament_adminpanelprovider",
+      "app_providers_filament_adminpanelprovider_adminpanelprovider",
+      "modules_xot_providers_filament_xotbasepanelprovider"
+    ],
+    "22": [
+      "app_providers_routeserviceprovider",
+      "app_providers_routeserviceprovider_routeserviceprovider",
+      "modules_xot_providers_xotbaserouteserviceprovider"
+    ],
+    "23": [
+      "webpack_mix",
+      "webpack_mix_dotenvexpand",
+      "webpack_mix_mix"
+    ],
+    "24": [
+      "database_migrations_2023_01_01_000000_create_ratings_table",
+      "database_migrations_2023_01_01_000000_create_ratings_table_up"
+    ],
+    "25": [
+      "database_migrations_2023_01_01_000005_create_rating_morph_table",
+      "database_migrations_2023_01_01_000005_create_rating_morph_table_up"
+    ],
+    "26": [
+      "database_migrations_2026_03_12_180000_create_ratings_table",
+      "database_migrations_2026_03_12_180000_create_ratings_table_up"
+    ],
+    "27": [
+      "database_migrations_2026_06_16_000003_create_ratings_table",
+      "database_migrations_2026_06_16_000003_create_ratings_table_up"
+    ],
+    "28": [
+      "resources_views_livewire_favorite2_blade",
+      "resources_views_livewire_favorite2_blade_php_update"
+    ],
+    "29": [
+      "resources_views_livewire_favorite3_blade",
+      "resources_views_livewire_favorite3_blade_php_update"
+    ],
+    "30": [
+      "resources_views_livewire_favorite_blade",
+      "resources_views_livewire_favorite_blade_php_update"
+    ],
+    "31": [
+      "resources_views_livewire_favorite_bs_italia_blade",
+      "resources_views_livewire_favorite_bs_italia_blade_php_update"
+    ],
+    "32": [
+      "resources_views_livewire_favorite_default_blade",
+      "resources_views_livewire_favorite_default_blade_php_update"
+    ],
+    "33": [
+      "resources_views_livewire_favorite_favorite2_blade",
+      "resources_views_livewire_favorite_favorite2_blade_php_update"
+    ],
+    "34": [
+      "resources_views_livewire_favorite_sandbox_blade",
+      "resources_views_livewire_favorite_sandbox_blade_php_update"
+    ],
+    "35": [
+      "resources_views_livewire_favorite_social_blade",
+      "resources_views_livewire_favorite_social_blade_php_update"
+    ],
+    "36": [
+      "resources_views_livewire_favorite_streamit_blade",
+      "resources_views_livewire_favorite_streamit_blade_php_update"
+    ],
+    "37": [
+      "resources_views_rate_single_blade",
+      "update_i"
+    ],
+    "38": [
+      "vite_config",
+      "vite_config_dotenvexpand"
+    ],
+    "39": [
+      "config_config"
+    ],
+    "40": [
+      "lang_it_enums"
+    ],
+    "41": [
+      "lang_it_favorites"
+    ],
+    "42": [
+      "lang_it_rating"
+    ],
+    "43": [
+      "lang_it_rating_form"
+    ],
+    "44": [
+      "lang_it_rating_morph"
+    ],
+    "45": [
+      "lang_it_stats_overview"
+    ],
+    "46": [
+      "lang_it_txt"
+    ],
+    "47": [
+      "php_cs_dist"
+    ],
+    "48": [
+      "php_cs_fixer"
+    ],
+    "49": [
+      "php_cs_fixer_dist"
+    ],
+    "50": [
+      "resources_assets_js_app"
+    ],
+    "51": [
+      "resources_views_admin_dashboard_item_blade"
+    ],
+    "52": [
+      "resources_views_index_blade"
+    ],
+    "53": [
+      "resources_views_layouts_master_blade"
+    ],
+    "54": [
+      "resources_views_rate_it_blade"
+    ],
+    "55": [
+      "resources_views_rate_multi_blade"
+    ],
+    "56": [
+      "routes_api"
+    ],
+    "57": [
+      "routes_web"
+    ],
+    "58": [
+      "vscode_php_cs_fixer"
+    ]
+  },
+  "cohesion": {
+    "0": 0.04081632653061224,
+    "1": 0.10796221322537113,
+    "2": 0.05405405405405406,
+    "3": 0.08817204301075268,
+    "4": 0.10098522167487685,
+    "5": 0.10846560846560846,
+    "6": 0.09401709401709402,
+    "7": 0.07407407407407407,
+    "8": 0.15714285714285714,
+    "9": 0.12631578947368421,
+    "10": 0.15789473684210525,
+    "11": 0.2,
+    "12": 0.15,
+    "13": 0.22727272727272727,
+    "14": 0.26666666666666666,
+    "15": 0.3611111111111111,
+    "16": 0.42857142857142855,
+    "17": 0.5,
+    "18": 0.6666666666666666,
+    "19": 0.6666666666666666,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 0.6666666666666666,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0,
+    "29": 1.0,
+    "30": 1.0,
+    "31": 1.0,
+    "32": 1.0,
+    "33": 1.0,
+    "34": 1.0,
+    "35": 1.0,
+    "36": 1.0,
+    "37": 1.0,
+    "38": 1.0,
+    "39": 1.0,
+    "40": 1.0,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 1.0,
+    "44": 1.0,
+    "45": 1.0,
+    "46": 1.0,
+    "47": 1.0,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0,
+    "58": 1.0
+  },
+  "gods": [
+    {
+      "id": "app_models_baserating_baserating",
+      "label": "BaseRating",
+      "degree": 12
+    },
+    {
+      "id": "app_models_ratingmorph_ratingmorph",
+      "label": "RatingMorph",
+      "degree": 11
+    },
+    {
+      "id": "app_models_policies_ratingmorphpolicy_ratingmorphpolicy",
+      "label": "RatingMorphPolicy",
+      "degree": 10
+    },
+    {
+      "id": "app_models_policies_ratingpolicy_ratingpolicy",
+      "label": "RatingPolicy",
+      "degree": 9
+    },
+    {
+      "id": "composer_keywords",
+      "label": "keywords",
+      "degree": 8
+    },
+    {
+      "id": "app_datas_ratingdata_ratingdata",
+      "label": "RatingData",
+      "degree": 7
+    },
+    {
+      "id": "app_models_baseratingmorph_baseratingmorph",
+      "label": "BaseRatingMorph",
+      "degree": 7
+    },
+    {
+      "id": "app_models_rating_rating",
+      "label": "Rating",
+      "degree": 7
+    },
+    {
+      "id": "composer_scripts",
+      "label": "scripts",
+      "degree": 7
+    },
+    {
+      "id": "app_filament_resources_ratingresource_tables_baseratingstable_baseratingstable",
+      "label": "BaseRatingsTable",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "getBettingUsers()",
+      "target": "RatingMorph",
+      "source_files": [
+        "app/Models/Traits/HasRating.php",
+        "app/Models/RatingMorph.php"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; peripheral node `getBettingUsers()` unexpectedly reaches hub `RatingMorph`"
+    },
+    {
+      "source": "RatingMorphResource",
+      "target": "BaseRatingMorphResource",
+      "source_files": [
+        "app/Filament/Resources/RatingMorphResource.php",
+        "app/Filament/Resources/BaseRatingMorphResource.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "inherits",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "Rating",
+      "target": "BaseRating",
+      "source_files": [
+        "app/Models/Rating.php",
+        "app/Models/BaseRating.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "inherits",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "RatingMorph",
+      "target": "BaseRatingMorph",
+      "source_files": [
+        "app/Models/RatingMorph.php",
+        "app/Models/BaseRatingMorph.php"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "inherits",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "getRatingsPercentageByUser()",
+      "target": "RatingMorph",
+      "source_files": [
+        "app/Models/Traits/HasRating.php",
+        "app/Models/RatingMorph.php"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

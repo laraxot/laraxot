@@ -1,105 +1,34 @@
 # Development Workflow
 
-## Essential Commands
+[![Module](https://img.shields.io/badge/Module-Development Workflow-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-### Working Directory
-```bash
-# Working directory
-cd /var/www/html/ptvx/laravel
-```
+> **Core module for the FixCity Platform.**
 
-### Complete Setup and Serve
-```bash
-# Complete setup (install, optimize, serve)
-composer go
+## Perché esiste
 
-# Optimize Filament and Laravel
-composer optimize
+Core module for the FixCity Platform.
 
-# Start development server
-php artisan serve
-```
+## Superpoteri
 
-### Code Quality Checks
-```bash
-# Static analysis (Level 10)
-./vendor/bin/phpstan analyze
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-# Code formatting
-./vendor/bin/pint
+## Documentazione
 
-# Code upgrades
-./vendor/bin/rector process
-```
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-### Testing
-```bash
-# Run all tests
-php artisan test
+---
 
-# Run specific module
-php artisan test --filter=User
-
-# Run single test file
-php artisan test tests/Feature/UserTest.php
-
-# Run with coverage
-php artisan test --coverage
-
-# Pest testing
-./vendor/bin/pest
-./vendor/bin/pest --filter=UserTest
-```
-
-### Module Management
-```bash
-# List all modules
-php artisan module:list
-
-# Enable/disable modules
-php artisan module:enable ModuleName
-php artisan module:disable ModuleName
-```
-
-### Caching
-```bash
-# Config cache
-php artisan config:cache
-
-# Route cache
-php artisan route:cache
-
-# View cache
-php artisan view:cache
-
-# Filament cache
-php artisan filament:optimize
-```
-
-## Pre-Commit Checklist
-
-Before every commit, verify:
-
-- [ ] Code extends Xot base classes (not Filament directly)
-- [ ] No hardcoded labels, placeholders, or helper text
-- [ ] No `property_exists()` with Eloquent models
-- [ ] All files have `declare(strict_types=1);`
-- [ ] All methods have explicit return types
-- [ ] Namespaces don't include 'app' segment
-- [ ] Models extend module-specific `BaseModel`
-- [ ] Migrations extend `XotBaseMigration` and have no `down()` method
-- [ ] DTOs use `readonly` properties
-- [ ] PHPStan Level 10 passes: `./vendor/bin/phpstan analyze`
-- [ ] Code formatted: `./vendor/bin/pint`
-- [ ] Tests pass: `php artisan test`
-
-## Additional Notes
-
-### Multi-Database Support
-Some modules use separate database connections. Check model `$connection` property.
-
-### Queue System
-Actions using `QueueableAction` can be queued:
-```php
-app(CreateUserAction::class)->onQueue()->execute($userData);
-```
+**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

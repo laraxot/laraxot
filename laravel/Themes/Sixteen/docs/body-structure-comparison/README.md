@@ -1,32 +1,34 @@
 # Body Structure Comparison Results
 
-Canonical output directory for HTML parity reports.
+[![Module](https://img.shields.io/badge/Module-Body Structure Comparison Results-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## How To Run
+> **Core module for the FixCity Platform.**
 
-```bash
-bashscripts/html/html-structure-compare.sh segnalazione-dettaglio \
-  --output-dir laravel/Themes/Sixteen/docs/body-structure-comparison \
-  --threshold 90
-```
+## Perché esiste
 
-## Output Layout
+Core module for the FixCity Platform.
 
-- `<page>/report.md`
-- `<page>/diff_details.json`
-- `<page>/reference-body.html`
-- `<page>/local-body.html`
-- `<page>/reference-structure.json`
-- `<page>/local-structure.json`
+## Superpoteri
 
-## Current Index
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-See [`INDEX.md`](./INDEX.md) for parity scores and page-level artifacts.
+## Documentazione
 
-## Governance
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-- Bash scripts are reusable and project-agnostic.
-- Theme-specific artifacts stay under `laravel/Themes/Sixteen/docs/...`.
-- Raw HTML snapshots for manual analysis go in `laravel/Themes/Sixteen/docs/prompts/<page>/`.
+---
 
-- Priority rule: structural HTML parity is essential first; visual/functional parity is addressed after via Tailwind @apply + Alpine.js.
+**Modulo** `Sixteen` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

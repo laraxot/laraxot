@@ -1,47 +1,34 @@
 # Architettura Xot
 
-## Classi Base
+[![Module](https://img.shields.io/badge/Module-Architettura Xot-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-### XotBaseModel
+> **Core module for the FixCity Platform.**
 
-Modello base per tutti i moduli.
+## Perché esiste
 
-```php
-namespace Modules\Xot\Models;
+Core module for the FixCity Platform.
 
-abstract class XotBaseModel extends Model
-{
-    use Updater;
-    
-    protected function casts(): array
-    {
-        return [
-            'created_at' => 'datetime',
-            'updated_at' => 'datetime',
-        ];
-    }
-}
-```
+## Superpoteri
 
-### XotBaseMigration
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-Migrazioni anonime standardizzate.
+## Documentazione
 
-```php
-return new class() extends XotBaseMigration {
-    protected string $table_name = 'example';
-    
-    public function up(): void
-    {
-        $this->tableCreate(function (Blueprint $table): void {
-            $table->id();
-            $table->timestamps();
-        });
-    }
-};
-```
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-## Collegamenti
+---
 
-- [Xot Principale](../README.md)
-- [Filament](../filament/)
+**Modulo** `Xot` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

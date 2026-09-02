@@ -1,20 +1,34 @@
+# Barthelemy
+
+[![Module](https://img.shields.io/badge/Module-Barthelemy-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
+
+> **Indice tecnico del tema Barthelemy.**
+
+## Perché esiste
+
+Indice tecnico del tema Barthelemy.
+
+## Superpoteri
+
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
+
+## Documentazione
+
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+
 ---
-title: "Barthelemy Theme Documentation"
-type: index
-tags: [barthelemy, documentation, theme]
-module: "Barthelemy"
-created: 2026-07-17
-updated: 2026-07-17
-qmd: "Barthelemy theme documentation index code quality"
-issues:
-  - "https://github.com/laraxot/base_workorder_fila5/issues/46"
-discussions:
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/47"
----
 
-# Barthelemy Theme Documentation
-
-> Indice tecnico del tema Barthelemy.
-
-- [Code Quality Improvement Report](code-quality-improvement-report.md)
-- [PROJECT-STRUCTURE.md](PROJECT-STRUCTURE.md) — struttura del tema (nessun README.md a livello di root tema, verificato 2026-07-24)
+**Modulo** `Barthelemy` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

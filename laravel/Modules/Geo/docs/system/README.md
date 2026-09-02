@@ -1,120 +1,34 @@
 # Operazioni di Sistema 🖥️
 
-Questa directory contiene gli script per la gestione e manutenzione del sistema operativo, con focus su automazione, monitoraggio e ottimizzazione.
+[![Module](https://img.shields.io/badge/Module-Operazioni di Sistema 🖥️-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## 📁 Struttura
+> **Core module for the FixCity Platform.**
 
-```
-system/
-├── monitoring/     # Script di monitoraggio
-├── automation/     # Script di automazione
-├── backup/         # Script di backup
-└── security/       # Script di sicurezza
-```
+## Perché esiste
 
-## 🔧 Funzionalità Principali
+Core module for the FixCity Platform.
 
-### Monitoraggio Sistema
-- Monitoraggio risorse (CPU, RAM, Disco)
-- Log di sistema
-- Performance metrics
-- Alerting automatico
+## Superpoteri
 
-### Automazione
-- Deployment automatico
-- Gestione servizi
-- Aggiornamenti sistema
-- Manutenzione programmata
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-### Backup
-- Backup incrementali
-- Backup differenziali
-- Rotazione backup
-- Verifica integrità
+## Documentazione
 
-### Sicurezza
-- Hardening sistema
-- Scan vulnerabilità
-- Gestione permessi
-- Audit log
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-## 🚀 Utilizzo
+---
 
-### Prerequisiti
-- Ubuntu 22.04+
-- Bash 4.0+
-- Permessi sudo
-- Tools di sistema
-
-### Comandi Comuni
-```bash
-
-# Monitoraggio sistema
-./monitoring/check_resources.sh
-
-# Backup automatico
-./backup/perform_backup.sh
-
-# Scan sicurezza
-./security/system_scan.sh
-```
-
-## ⚠️ Note Importanti
-
-1. **Permessi**
-   - Verificare permessi utente
-   - Utilizzare sudo quando necessario
-   - Gestire accessi file system
-
-2. **Backup**
-   - Testare restore periodicamente
-   - Verificare spazio disponibile
-   - Monitorare tempi backup
-
-3. **Sicurezza**
-   - Aggiornare regolarmente
-   - Monitorare accessi
-   - Mantenere log sicuri
-
-## 📊 Monitoraggio
-
-### Metriche Chiave
-- Utilizzo CPU
-- Memoria disponibile
-- Spazio disco
-- Latenza rete
-- Processi attivi
-
-### Alerting
-- Email notifications
-- Webhook integration
-- SMS alerts
-- Log aggregation
-
-## 🔒 Sicurezza
-
-### Best Practices
-- Principle of least privilege
-- Regular updates
-- Secure configurations
-- Audit logging
-
-### Controlli
-- File permissions
-- Network security
-- Service hardening
-- User access
-
-## 📚 Documentazione Correlata
-
-- [Guida Monitoraggio](monitoring/README.md)
-- [Guida Backup](backup/README.md)
-- [Guida Sicurezza](security/README.md)
-
-## 🤝 Contribuire
-
-1. Fork del repository
-2. Creazione branch feature
-3. Commit modifiche
-4. Push al branch
-5. Creazione Pull Request 
+**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

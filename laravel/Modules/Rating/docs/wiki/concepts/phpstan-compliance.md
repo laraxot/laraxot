@@ -1,139 +1,80 @@
 ---
-title: "Rating Module - PHPStan Type Compliance"
+title: "Rating — Contratti PHPStan per trait Eloquent"
 type: concept
-tags: [rating, phpstan, types, compliance, quality, static-analysis]
+module: Rating
+tags: [rating, phpstan, larastan, eloquent, generics, traits, testing]
 created: 2026-06-10
-updated: 2026-06-18
-qmd: "rating module phpstan level max zero errors HasRating trait"
+updated: 2026-09-02
+qmd: "Rating PHPStan HasLikes HasRatingsTrait null safety MorphToMany MorphMany $this MorphPivot Expectation zero errors"
+issues:
+  - "https://github.com/laraxot/module_rating_fila5/issues/12"
+discussions:
+  - "https://github.com/laraxot/module_rating_fila5/discussions/48"
 related:
-  - ../../../../Themes/Sixteen/docs/wiki/concepts/phpstan-compliance.md
-  - ../../../../../docs/wiki/concepts/phpstan-level-max-compliance.md
+  - ../troubleshooting/phpstan-generic-limitation-morphtomany.md
+  - ../../../../../../docs/wiki/PHPSTAN-INDEX.md
+  - ../../../../Xot/docs/wiki/phpstan-best-practices.md
 ---
 
-# Rating Module — PHPStan Type Compliance
+# Rating — Contratti PHPStan per trait Eloquent
 
-## Status
+> Stato verificato sul comando canonico, senza configurazioni alternative o
+> soppressioni aggiunte.
 
-✅ **COMPLIANT** — 0 errors in PHPStan level: max
+## Stato
 
-```
-Module:   Rating
-Path:     laravel/Modules/Rating/
-Status:   GREEN
-Errors:   0
-Level:    max
-Updated:  2026-06-18
-```
+Il 2 settembre 2026:
 
-## Module Structure
-
-```
-Rating/
-├── Actions/          Type-safe action classes
-├── Dtos/            Data transfer objects with types
-├── Models/          Eloquent models with attributes
-├── Services/        Business logic services
-├── Http/
-│   ├── Controllers/  Request handlers with return types
-│   └── Requests/     Form requests with validation
-├── Filament/        Admin panel integrations
-├── Tests/           Test suite
-└── docs/            Module documentation
+```text
+./vendor/bin/phpstan analyse Modules
+10573/10573
+[OK] No errors
 ```
 
-## Type Compliance
+Test mirati Rating: **24 passed** su `HasLikesTraitTest` e
+`HasRatingsTraitAccessorsTest`.
 
-### Models & Attributes
+## `HasLikes`: null safety e relazione
 
-✅ All model properties have type declarations.
-✅ All public methods have explicit return types.
-✅ All parameters have type hints.
+- Il trait richiede un host Eloquent con `@phpstan-require-extends Model`.
+- `likes()` restituisce `Collection<int, Like>`.
+- `likesRelation()` restituisce `MorphMany<Like, $this>`.
+- `likedBy()`, `dislikedBy()` e `isLikedBy()` gestiscono esplicitamente l'utente
+  `null`; non dereferenziano più `UserContract|null`.
+- Il callback `deleting` restringe realmente l'host prima di invocare relazione e
+  invalidazione della cache Eloquent.
 
-### Services & Business Logic
+## `HasRatingsTrait`: generics invarianti
 
-✅ All service methods typed.
-✅ Return types specified.
-✅ Nullable types explicit.
+Il modello dichiarante delle relazioni è `$this`, non `static`:
 
-### Controllers & HTTP
+```php
+/** @return MorphToMany<Rating, $this, MorphPivot, 'pivot'> */
+public function ratings(): MorphToMany;
+```
 
-✅ All route handlers typed.
-✅ Request validation contracts.
-✅ Response types specified.
+Questo coincide con il tipo restituito da Eloquent e non forza covarianza dove la
+relazione è invariante. Il trait:
 
-## Enforcement
+- risolve una `class-string<Rating>` e la verifica a runtime;
+- usa `morphToManyX()` per rispettare il pivot Laraxot;
+- tipizza `Builder<static>`, `HasMany<Rating, $this>` e le collection;
+- avvia `syncRatingsWhere()` da una query Rating tipizzata, non da `app(): mixed`;
+- usa la relazione reale `linkedTo` al posto del nome legacy inesistente `post`;
+- restituisce `0.0` quando non esiste alcuna media, come da contratto dei test.
 
-### CI/CD Pipeline
+## Regola per le fixture
+
+Le fixture non sono scaffolding senza tipo: PHPStan rianalizza il trait nel loro
+contesto. Override e proprietà di relazione devono mantenere gli stessi generics
+del modello reale.
+
+## Gate
 
 ```bash
-vendor/bin/phpstan analyse laravel/Modules/Rating \
-  --level=max \
-  --no-progress
+cd laravel
+./vendor/bin/phpstan analyse Modules/Rating
+./vendor/bin/pest Modules/Rating/tests/Unit/HasLikesTraitTest.php \
+  Modules/Rating/tests/Unit/HasRatingsTraitAccessorsTest.php
+./vendor/bin/phpstan analyse Modules
 ```
-
-### Pre-commit Hook
-
-✅ Developers must pass before committing.
-
-```bash
-vendor/bin/phpstan analyse laravel/Modules/Rating --level=max
-```
-
-## Type Coverage Summary
-
-| Category | Status | Notes |
-|----------|--------|-------|
-| Models | ✅ PASS | 100% typed properties |
-| Services | ✅ PASS | 100% return types |
-| Controllers | ✅ PASS | 100% explicit types |
-| DTOs | ✅ PASS | Constructor properties typed |
-| Observers | ✅ PASS | Event handler types |
-| Tests | ✅ PASS | Test utilities typed |
-
-## Testing & Validation
-
-### Running PHPStan
-
-```bash
-# Full module scan
-vendor/bin/phpstan analyse laravel/Modules/Rating --level=max
-
-# Verbose mode
-vendor/bin/phpstan analyse laravel/Modules/Rating --level=max -v
-```
-
-### Test Suite
-
-✅ Tests validate runtime behavior with proper typing.
-
-```bash
-vendor/bin/pest laravel/Modules/Rating/tests --parallel
-```
-
-## Success Criteria
-
-✅ All met:
-
-- [x] Zero PHPStan errors at level max
-- [x] 100% public method return types
-- [x] 100% parameter type hints
-- [x] All model properties typed
-- [x] Tests pass
-- [x] CI/CD validates on push
-
-## Next Review
-
-**Scheduled**: 2026-06-17
-
----
-
-**Maintainer**: Dev Agent 3  
-**Last Updated**: 2026-06-18  
-**Status**: GREEN
-
-## Trait cleanup (2026-06-18)
-
-Rimossi trait **non usati** in app (PHPStan `trait.unused`):
-
-- `HasLikes` — modello `Like` assente, zero consumer
-- `HasRatingsTrait` / `RatingTrait` — legacy duplicati; SSoT rating su modelli rateable = `HasRating` (+ probe `RatingPhpstanTraitProbe`)

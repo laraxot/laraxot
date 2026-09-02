@@ -1,60 +1,34 @@
+# Notify
+
+[![Module](https://img.shields.io/badge/Module-Notify-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
+
+> **Core module for the FixCity Platform.**
+
+## Perché esiste
+
+Core module for the FixCity Platform.
+
+## Superpoteri
+
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
+
+## Documentazione
+
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+
 ---
-title: "FixCity LLM Wiki"
-title: "Notify LLM Wiki"
-type: index
-tags: [notify, docs, wiki]
-module: Notify
-created: 2026-07-20
-updated: 2026-07-20
-qmd: "notify documentazione wiki readme fixcity llm wiki index readme frontmatter qmd search"
-qmd: "notify documentazione wiki readme laraxot llm wiki index readme frontmatter qmd search"
-issues:
-  - "https://github.com/laraxot/module_notify_fila5/issues/56"
-discussions:
-  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
-related:
-  - ../README.md
-  - index.md
-  - ../notifications/readme.md
-  - ../integrations/readme.md
-  - ../templates/readme.md
----
-# FixCity LLM Wiki
-# Notify LLM Wiki
 
-This directory is the canonical compiled wiki layer for the Karpathy-style workflow in this repository.
-
-## Canonical Mapping
-
-- Raw corpus: `docs/` excluding `docs/wiki/**`
-- Compiled wiki: `docs/wiki/`
-- Schema layer: `AGENTS.md`, `CLAUDE.md`, `QWEN.md`, `GEMINI.md`, `docs/project/docs-governance.md`
-
-## Operations
-
-1. Ingest: read sources from `docs/`, then update one or more pages in `docs/wiki/`.
-2. Query: start from [index.md](./index.md), then open the relevant wiki pages before dropping back to raw docs.
-3. Lint: check broken links, stale summaries, duplicate knowledge, orphan pages, and contradictions.
-
-## Structure
-
-- [index.md](./index.md): content index for the compiled wiki
-- [log.md](./log.md): append-only operational history
-- `concepts/`: reusable cross-module knowledge pages
-- `modules/`: module-level synthesis pages
-- `themes/`: theme-level synthesis pages
-- `queries/`: archived answers worth keeping
-- `lint/`: health-check reports and follow-up notes
-
-## Rules
-
-- `docs/wiki/` is synthesis, not raw dumping.
-- Raw files stay in their canonical locations under `docs/`, module docs, theme docs, or other approved sources.
-- Prefer linking to canonical source documents instead of copying large passages.
-- Create a wiki page only when the knowledge is likely to be reused across sessions.
-
-## Related Docs
-
-- [Karpathy adoption](../project/karpathy-llm-wiki-adoption.md)
-- [QMD local docs search](../project/qmd-local-docs-search.md)
-- [Project docs index](../README.md)
+**Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

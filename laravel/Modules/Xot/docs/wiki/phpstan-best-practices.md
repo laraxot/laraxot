@@ -1,123 +1,107 @@
 ---
-title: "PHPStan Best Practices - Xot Module"
+title: "PHPStan Best Practices — Xot"
 type: guideline
-tags: [phpstan, testing, quality, static-analysis, pest, xot]
+module: Xot
+tags: [phpstan, larastan, pest, mockery, eloquent, static-analysis]
 created: 2026-06-13
-updated: 2026-06-13
-qmd: "Xot PHPStan best practices Pest Assert closure mockService rrmdir"
+updated: 2026-09-02
+qmd: "Xot PHPStan best practices Mockery CompositeExpectation ExpectationDirector Eloquent trait relations fixtures architecture tests no ignore"
 issues:
-  - "https://github.com/laraxot/module_xot_fila5/issues/43"
+  - "https://github.com/laraxot/module_xot_fila5/issues/79"
 discussions:
-  - "https://github.com/laraxot/module_xot_fila5/discussions/29"
+  - "https://github.com/laraxot/module_xot_fila5/discussions/19"
 related:
-  - concepts/phpstan-pest-bridge-discipline.md
-  - overviews/platform-completion-roadmap.md
+  - ./concepts/phpstan-pest-bridge-discipline.md
   - ../../../../../docs/wiki/PHPSTAN-INDEX.md
+  - ../../../../../docs/wiki/rules/phpstan-neon-immutable.md
+  - ./rules/module-testcase-xotbase-hierarchy.md
 ---
 
-# PHPStan Best Practices - Xot Module
+# PHPStan Best Practices — Xot
 
-## Pattern per Test in Pest con PHPStan Level Max
+> Contratti verificati per mantenere `analyse Modules` verde senza indebolire
+> l'analisi statica.
 
-### 1. Property Dinamiche in Closure Pest
+## Comando canonico
 
-**Problema:** PHPStan non riconosce `$this->property` nelle closure Pest.
+Da `laravel/`:
 
-**Soluzione A - Variabile Locale (Consigliata):**
-```php
-test('example', function (): void {
-    $action = new MyAction;
-    $result = $action->execute();
-    Assert::assertSame('expected', $result);
-});
+```bash
+./vendor/bin/phpstan analyse Modules
 ```
 
-**Soluzione B - assert() Type Narrowing:**
-```php
-beforeEach(function (): void {
-    $this->workDir = sys_get_temp_dir() . '/test';
-    assert(is_string($this->workDir));
-});
-```
+Il solo file di configurazione autorizzato è `laravel/phpstan.neon`. Gli agenti
+non aggiungono level, baseline, ignore o configurazioni alternative.
 
-**Soluzione C - @phpstan-ignore (Quando inevitabile):**
-```php
-test('example', function (): void {
-    /** @phpstan-ignore varTag.variableNotFound */
-    $mock = Mockery::mock(MyClass::class);
-});
-```
+## Pest e Mockery
 
-### 2. Mock PHPUnit in Closure Pest
+- Pest resta Pest; per assertion non fluenti usare `PHPUnit\Framework\Assert`.
+- Il plugin ufficiale `pestphp/pest-plugin-phpstan` tipizza le closure e sostituisce
+  i vecchi bridge manuali.
+- `Mockery\ExpectationInterface` espone solo l'API minima e non dichiara
+  `with()`/`andReturnUsing()`.
+- Mockery può restituire `CompositeExpectation` anche con un solo metodo. Un
+  helper deve recuperare l'`Expectation` concreta dal suo
+  `ExpectationDirector`, verificare il risultato a runtime e restituire quel tipo.
+- Non usare un `@var Expectation` per contraddire il valore restituito: maschera
+  una differenza runtime reale.
 
-**Problema:** `$this->atLeastOnce()` è protected, PHPStan segnala errore.
-
-**Soluzione:**
-```php
-$mock = $this->createUnitMock(MyClass::class);
-/** @phpstan-ignore-next-line */
-$mock->expects($this->atLeastOnce())
-    ->method('execute')
-    ->willReturn($result);
-```
-
-### 3. Return Type Covarianza
-
-**Problema:** `mockService()` in TestCase figlio deve essere covariante con parent.
-
-**Soluzione:** Usare lo stesso tipo del parent:
-```php
-// XotBaseTestCase
-public function mockService(string $abstract, ?\Closure $callback = null): MockInterface
-
-// TestCase (figlio) - stessa signature, stesso tipo
-public function mockService(string $abstract, ?\Closure $callback = null): MockObject
-```
-
-### 4. Chiamate static::assert*() Fuori Classe
-
-**Problema:** `static::assertDirectoryDoesNotExist()` in closure Pest.
-
-**Soluzione:** Usare `Assert::` (classe PHPUnit):
-```php
-// ❌ Errore
-static::assertDirectoryDoesNotExist($path);
-
-// ✅ OK
-Assert::assertDirectoryDoesNotExist($path);
-```
-
-### 5. Type Narrowing per Funzioni PHP
-
-**Problema:** `tempnam()` ritorna `string|false`, PHPStan segnala errore.
-
-**Soluzione:** assegnazione diretta senza `assertIsString` ridondante se il ramo `false` è irraggiungibile in test, oppure:
+## Generics Eloquent nei trait
 
 ```php
-$tempFile = tempnam(sys_get_temp_dir(), 'prefix');
-if ($tempFile === false) {
-    Assert::fail('tempnam failed');
+/**
+ * @phpstan-require-extends Model
+ */
+trait HasRatings
+{
+    /** @return MorphToMany<Rating, $this, MorphPivot, 'pivot'> */
+    public function ratings(): MorphToMany
+    {
+        return $this->morphToManyX(Rating::class, 'model');
+    }
 }
 ```
 
-**Anti-pattern:** `Assert::assertIsString($tempFile)` quando `$tempFile` è già `string` — `staticMethod.alreadyNarrowedType`.
+Regole:
 
-### 6. `@var TestCase $this` solo se serve
+- modello dichiarante = `$this`; `static` in una relazione invariante può produrre
+  un contratto diverso da quello restituito da Eloquent;
+- il trait dichiara `@phpstan-require-extends Model` se usa metodi Eloquent;
+- `class-string`, pivot, chiavi e valori delle collection restano specifici;
+- una query dinamica parte da una classe verificata o da `Model::newQuery()`, non
+  da un valore `mixed` restituito dal container;
+- una relazione eager-loaded deve esistere davvero sul modello (`linkedTo`, non
+  un nome legacy come `post`).
 
-**Problema:** annotare `/** @var TestCase $this */` prima di `$action = app(...)` genera `varTag.differentVariable`.
+## Fixture e test di architettura
 
-**Soluzione:** mettere `@var` solo nelle closure che chiamano `$this->rrmdir()`, `$this->mockService()`, ecc. Se il test usa solo variabili locali, **omettere** `@var`.
+- Le fixture che consumano trait vengono analizzate come classi reali. Le loro
+  firme devono dichiarare esattamente `Column|ColumnGroup|LayoutComponent`,
+  `MorphMany<Like, $this>` e gli altri tipi di dominio.
+- Se un test architetturale invoca un metodo base documentato ma assente, aggiungere
+  l'API nella base e testarne la risoluzione. Non annotare il call site per farlo
+  sparire.
+- Dopo un fix su helper o trait, eseguire sia i test del consumer sia PHPStan nel
+  contesto della fixture: è lì che emergono gli errori generici.
 
-## Checklist Pre-Commit
+## Narrowing accettato
 
-- [ ] `php -d memory_limit=2048M vendor/bin/phpstan analyse Modules` passa (non solo Xot)
-- [ ] Test Pest eseguibili: `vendor/bin/pest Modules/Xot/tests/Unit`
-- [ ] Nessun `static::` in closure Pest (usare `Assert::`)
-- [ ] Mock con `@phpstan-ignore-next-line` se necessario
+Usare guardie runtime che migliorano anche il comportamento:
 
-## Links
+```php
+$file = tempnam(sys_get_temp_dir(), 'xot-');
+if ($file === false) {
+    throw new RuntimeException('Unable to create temporary file.');
+}
+```
 
-- [platform-completion-roadmap](overviews/platform-completion-roadmap.md)
-- [phpstan-pest-bridge-discipline](concepts/phpstan-pest-bridge-discipline.md)
-- [PHPSTAN-INDEX](../../../../../docs/wiki/PHPSTAN-INDEX.md)
-- [module-testcase-xotbase-hierarchy](rules/module-testcase-xotbase-hierarchy.md)
+Non usare `assert()`, ignore o `@var` inline come sostituti della guardia.
+
+## Chiusura
+
+1. PHPStan sul modulo owner.
+2. Pest sui test coinvolti.
+3. `./vendor/bin/phpstan analyse Modules` come gate finale.
+4. Write-back nella wiki owner e nella story BMAD.
+
+Router globale: [PHPSTAN-INDEX](../../../../../docs/wiki/PHPSTAN-INDEX.md).

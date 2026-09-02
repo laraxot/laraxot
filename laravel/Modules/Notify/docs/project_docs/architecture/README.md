@@ -1,65 +1,34 @@
----
-title: "Architettura del Sistema"
-type: index
-tags: [notify, docs, project_docs, architecture]
-module: Notify
-created: 2026-07-20
-updated: 2026-07-20
-qmd: "notify documentazione project_docs architecture readme architettura del sistema index readme frontmatter qmd search"
-issues:
-  - "https://github.com/laraxot/module_notify_fila5/issues/56"
-discussions:
-  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
-related:
-  - ../../README.md
-  - ../../wiki/index.md
-  - ../../notifications/readme.md
-  - ../../integrations/readme.md
-  - ../../templates/readme.md
----
-# Architettura del Sistema
+# Notify
 
-## Panoramica
-Questa sezione contiene la documentazione architetturale del sistema Laraxot, inclusi moduli, pattern e standard.
+[![Module](https://img.shields.io/badge/Module-Notify-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Struttura
+> **Core module for the FixCity Platform.**
 
-### modules/
-Documentazione della struttura modulare del sistema Laraxot.
+## Perché esiste
 
-**Contenuti:**
-- Struttura dei moduli
-- Relazioni tra moduli
-- Dipendenze e interfacce
-- Pattern di comunicazione
+Core module for the FixCity Platform.
 
-### patterns/
-Pattern architetturali utilizzati nel sistema.
+## Superpoteri
 
-**Contenuti:**
-- Pattern MVC
-- Repository Pattern
-- Service Layer Pattern
-- Event-Driven Architecture
-- CQRS Pattern
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-### standards/
-Standard e convenzioni architetturali.
+## Documentazione
 
-**Contenuti:**
-- Convenzioni di naming
-- Standard di codifica
-- Struttura dei namespace
-- Organizzazione dei file
-
-## Collegamenti
-
-- [Struttura Moduli](./modules/)
-- [Pattern Architetturali](./patterns/)
-- [Standard e Convenzioni](./standards/)
-- [Guida Sviluppo](../development/)
-- [Troubleshooting](../troubleshooting/)
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
 ---
 
-*Ultimo aggiornamento: Agosto 2025* 
+**Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

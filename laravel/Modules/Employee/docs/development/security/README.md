@@ -1,46 +1,34 @@
 # Security Development Guide
 
-This directory contains development guides for role management, permissions, and authorization systems.
+[![Module](https://img.shields.io/badge/Module-Security Development Guide-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Overview
+> **Core module for the FixCity Platform.**
 
-The security system provides:
-- Role-based access control (RBAC)
-- Permission management and assignment
-- Authorization logic and policies
-- Multi-tenant security isolation
-- Audit trail and security logging
+## Perché esiste
 
-## Implementation Status
+Core module for the FixCity Platform.
 
-| Component | Status | Notes |
-|-----------|--------|-------|
-| Role Management | ✅ Complete | Spatie Laravel Permission integration |
-| Permission System | ✅ Complete | Fine-grained permission control |
-| Authorization Policies | 🚧 In Progress | Model-specific policies |
-| Audit Trail | 📋 Planned | Security event logging |
+## Superpoteri
 
-## Development Files
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-- **roles.md** - Role management implementation
-- **permissions.md** - Permission system design
-- **authorization.md** - Authorization logic and policies
+## Documentazione
 
-## Key Components
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-- `Role` - User roles and hierarchies
-- `Permission` - Granular permissions
-- `Policy` - Authorization policies
-- `AuditLog` - Security event tracking
+---
 
-## Security Principles
-
-- **Principle of Least Privilege** - Users get minimum required permissions
-- **Defense in Depth** - Multiple security layers
-- **Secure by Default** - Restrictive default permissions
-- **Audit Everything** - Comprehensive security logging
-
-## Related Documentation
-
-- [Architecture: Technical Architecture](../../architecture/technical_architecture.md)
-- [Implementation: Module Setup Guide](../../implementation/module_setup_guide.md)
+**Modulo** `Employee` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

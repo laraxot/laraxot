@@ -1,123 +1,34 @@
 # Operazioni Docker 🐳
 
-Questa directory contiene gli script per la gestione e automazione delle operazioni Docker, con focus su deployment, monitoraggio e manutenzione dei container.
+[![Module](https://img.shields.io/badge/Module-Operazioni Docker 🐳-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## 📁 Struttura
+> **Core module for the FixCity Platform.**
 
-```
-docker/
-├── deployment/     # Script di deployment
-├── monitoring/     # Script di monitoraggio
-├── maintenance/    # Script di manutenzione
-└── security/       # Script di sicurezza
-```
+## Perché esiste
 
-## 🔧 Funzionalità Principali
+Core module for the FixCity Platform.
 
-### Deployment
-- Build automatico immagini
-- Deployment container
-- Gestione stack
-- Rollback automatico
+## Superpoteri
 
-### Monitoraggio
-- Health check container
-- Log aggregation
-- Performance metrics
-- Alerting automatico
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-### Manutenzione
-- Pulizia risorse
-- Aggiornamento immagini
-- Backup container
-- Rotazione log
+## Documentazione
 
-### Sicurezza
-- Scan vulnerabilità
-- Hardening container
-- Gestione segreti
-- Audit log
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-## 🚀 Utilizzo
+---
 
-### Prerequisiti
-- Docker 24.0+
-- Docker Compose 2.0+
-- Bash 4.0+
-- Permessi sudo
-
-### Comandi Comuni
-```bash
-
-# Deploy stack
-./deployment/deploy_stack.sh
-
-# Monitoraggio container
-./monitoring/check_containers.sh
-
-# Manutenzione sistema
-./maintenance/cleanup.sh
-```
-
-## ⚠️ Note Importanti
-
-1. **Sicurezza**
-   - Utilizzare immagini ufficiali
-   - Implementare least privilege
-   - Gestire segreti in modo sicuro
-   - Monitorare vulnerabilità
-
-2. **Performance**
-   - Ottimizzare risorse
-   - Gestire reti
-   - Monitorare utilizzo
-   - Implementare caching
-
-3. **Backup**
-   - Backup regolari
-   - Test restore
-   - Gestione volumi
-   - Disaster recovery
-
-## 📊 Monitoraggio
-
-### Metriche Chiave
-- Utilizzo risorse
-- Stato container
-- Performance rete
-- Log applicativi
-- Errori runtime
-
-### Alerting
-- Container down
-- Utilizzo risorse
-- Errori applicativi
-- Vulnerabilità
-
-## 🔒 Sicurezza
-
-### Best Practices
-- Immagini minimali
-- Multi-stage build
-- Non-root user
-- Read-only filesystem
-
-### Controlli
-- Scan immagini
-- Network security
-- Resource limits
-- Access control
-
-## 📚 Documentazione Correlata
-
-- [Guida Deployment](deployment/README.md)
-- [Guida Monitoraggio](monitoring/README.md)
-- [Guida Sicurezza](security/README.md)
-
-## 🤝 Contribuire
-
-1. Fork del repository
-2. Creazione branch feature
-3. Commit modifiche
-4. Push al branch
-5. Creazione Pull Request 
+**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

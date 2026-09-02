@@ -1,39 +1,34 @@
 # Document Management Development Guide
 
-This directory contains development guides for employee document storage and management systems.
+[![Module](https://img.shields.io/badge/Module-Document Management Development Guide-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Overview
+> **Core module for the FixCity Platform.**
 
-The document management system handles:
-- Employee document storage and retrieval
-- Contract management and versioning
-- Payroll document handling
-- Digital signature integration
-- Document categorization and search
+## Perché esiste
 
-## Implementation Status
+Core module for the FixCity Platform.
 
-| Component | Status | Notes |
-|-----------|--------|-------|
-| Document Storage | 📋 Planned | File storage system |
-| Contract Management | 📋 Planned | Contract lifecycle management |
-| Digital Signatures | 📋 Planned | E-signature integration |
-| Document Search | 📋 Planned | Full-text search capability |
+## Superpoteri
 
-## Development Files
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-- **payroll.md** - Payroll document management
-- **contracts.md** - Contract management system
-- **storage.md** - Document storage implementation
+## Documentazione
 
-## Key Components
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-- `Document` - Document model and metadata
-- `Contract` - Contract management
-- `DocumentCategory` - Document categorization
-- `DigitalSignature` - E-signature handling
+---
 
-## Related Documentation
-
-- [Architecture: Technical Architecture](../../architecture/technical_architecture.md)
-- [Features: Feature Specifications](../../features/features_specification.md)
+**Modulo** `Employee` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

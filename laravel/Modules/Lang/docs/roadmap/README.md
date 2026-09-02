@@ -1,60 +1,34 @@
 # Lang Module Roadmap
 
-> "Language and translation system for the Laraxot ecosystem with multi-language support and translation management."
+[![Module](https://img.shields.io/badge/Module-Lang Module Roadmap-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## 🎯 Vision
+> **"Language and translation system for the Laraxot ecosystem with multi-language support and translation management."**
 
-Provide a **comprehensive language** system that includes:
+## Perché esiste
 
-- ✅ Multi-language support
-- ✅ Translation management
-- ✅ Language detection
-- ✅ Translation workflows
-- ✅ RTL support
-- ✅ Translation analytics
+"Language and translation system for the Laraxot ecosystem with multi-language support and translation management."
 
-## 📊 Current Status
+## Superpoteri
 
-### Overall Progress: 70% Complete
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-| Category | Status | Progress |
-|----------|--------|----------|
-| Multi-language | ✅ Complete | 100% |
-| Translation Management | 🔄 In Progress | 70% |
-| Language Detection | ✅ Complete | 100% |
-| Translation Workflows | 🔄 In Progress | 60% |
-| RTL Support | 🔄 In Progress | 80% |
-| Translation Analytics | 🔄 In Progress | 40% |
+## Documentazione
 
-## 🏗️ Key Features
-
-### 1. Multi-language
-- Language files
-- Language switching
-- Fallback languages
-- Language-specific content
-- URL localization
-
-### 2. Translation Management
-- Translation editor
-- Translation export
-- Translation import
-- Translation validation
-- Translation memory
-
-### 3. Language Detection
-- Auto-detection
-- User preference
-- Browser detection
-- IP-based detection
-- Custom detection
-
-### 4. Translation Workflows
-- Translation requests
-- Translation approval
-- Translation publishing
-- Translation history
-- Translation collaboration
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
 ---
 
+**Modulo** `Lang` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

@@ -1,46 +1,34 @@
 # Script di Testing
 
-## Descrizione
-Questa cartella contiene gli script per i test del sistema, inclusi:
-- Esecuzione dei test
-- Analisi del codice
-- Verifica della qualità
+[![Module](https://img.shields.io/badge/Module-Script di Testing-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Script Disponibili
+> **Core module for the FixCity Platform.**
 
-### 1. run_tests.sh
-Esegue i test con:
-- Test unitari
-- Test di integrazione
-- Test di funzionalità
+## Perché esiste
 
-### 2. analyze_code.sh
-Analizza il codice con:
-- PHPStan
-- PHPCS
-- PHPMD
+Core module for the FixCity Platform.
 
-### 3. check_quality.sh
-Verifica la qualità con:
-- Controllo coverage
-- Analisi complessità
-- Verifica standard
+## Superpoteri
 
-## Utilizzo
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-```bash
+## Documentazione
 
-# Esegui tutti i test
-./run_tests.sh
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-# Analisi codice
-./analyze_code.sh --level=9
+---
 
-# Verifica qualità
-./check_quality.sh --coverage
-```
-
-## Best Practices
-- Eseguire test regolarmente
-- Mantenere coverage alto
-- Seguire gli standard di codice 
+**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

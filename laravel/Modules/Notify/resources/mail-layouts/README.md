@@ -1,45 +1,34 @@
 # Mail Layouts
 
-Questa directory contiene i layout HTML base per le email. I layout sono file HTML statici che definiscono la struttura base delle email, con il placeholder `{{{ body }}}` per il contenuto dinamico.
+[![Module](https://img.shields.io/badge/Module-Mail Layouts-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Struttura Directory
+> **Core module for the FixCity Platform.**
 
-```
-mail-layouts/
-├── base/
-│   └── default.html    # Layout base con {{{ body }}}
-└── themes/
-    ├── light.html      # Tema chiaro
-    └── dark.html       # Tema scuro
-```
+## Perché esiste
 
-## Utilizzo
+Core module for the FixCity Platform.
 
-I layout vengono utilizzati dalle classi Mailable che estendono `TemplateMailable`. Il contenuto dinamico viene definito nel campo `html_template` della tabella `mail_templates`.
+## Superpoteri
 
-### Esempio
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-```php
-class WelcomeMail extends TemplateMailable
-{
-    public function getHtmlLayout(): string
-    {
-        return file_get_contents(resource_path('mail-layouts/base/default.html'));
-    }
-}
-```
+## Documentazione
 
-## Best Practices
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-1. Mantenere i layout HTML semplici e statici
-2. Usare il placeholder `{{{ body }}}` per il contenuto
-3. Evitare logica dinamica nei layout
-4. Includere solo stili base e struttura
-5. Testare su vari client email
+---
 
-## Note
-
-- I contenuti dinamici devono essere definiti nel database
-- I layout devono essere compatibili con i client email
-- Usare stili inline per massima compatibilità
-- Testare su vari dispositivi e client
+**Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

@@ -1,52 +1,34 @@
----
-title: "Inventory — knowledge base"
-type: overview
-tags: [inventory, gestionale-commesse, docs, bmad]
-created: 2026-07-23
-updated: 2026-07-27
-qmd: "Inventory docs README purpose gestionale warehouse vehicle"
-issues:
-  - "https://github.com/laraxot/base_workorder_fila5/issues/7"
-  - "https://github.com/laraxot/base_workorder_fila5/issues/14"
-discussions:
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
-related:
-  - "./import-status.md"
-  - "./bugfix-warehouses-vehicle-fk-order.md"
-  - "./bugfix-migration-users-uuid-fk.md"
-  - "./model-persistence-status.md"
-  - "./gestionale-commesse-port.md"
-  - "../../../../docs/gestionale-commesse-comparison/functional-readiness.md"
-  - "../../../../docs/gestionale-commesse-comparison/replica-singular-phase.md"
-  - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
----
-
 # Inventory
+
+[![Module](https://img.shields.io/badge/Module-Inventory-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
+
+> **Core module for the FixCity Platform.**
 
 ## Perché esiste
 
-Magazzino / movimenti / ubicazioni: stock a supporto di interventi e produzione.
-Un warehouse può essere **mobile** (furgone) → `vehicle_id` verso modulo Vehicle.
+Core module for the FixCity Platform.
 
-## Runtime
+## Superpoteri
 
-| Gate | Stato |
-|---|---|
-| `modules_statuses` | **true** |
-| Docs | [import-status.md](./import-status.md) |
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-## Indice docs
+## Documentazione
 
-| Doc | Scopo |
-|-----|--------|
-| [import-status.md](./import-status.md) | Enable / gap runtime |
-| [gestionale-commesse-port.md](./gestionale-commesse-port.md) | Port reshape XotBase |
-| [model-persistence-status.md](./model-persistence-status.md) | Migration / factory / seeder |
-| [bugfix-warehouses-vehicle-fk-order.md](./bugfix-warehouses-vehicle-fk-order.md) | MySQL 1824 `vehicles` order |
-| [bugfix-migration-users-uuid-fk.md](./bugfix-migration-users-uuid-fk.md) | UUID user FK |
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-## Hub / BMAD
+---
 
-- [functional-readiness.md](../../../../docs/gestionale-commesse-comparison/functional-readiness.md)
-- Story [2.3](../../../../docs/stories/2.3.deep-quality-enabled-modules.story.md) · [2.4](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md)
-- [#14](https://github.com/laraxot/base_workorder_fila5/issues/14)
+**Modulo** `Inventory` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

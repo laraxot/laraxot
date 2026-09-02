@@ -1,82 +1,34 @@
----
-title: "Readme"
-type: reference
-tags: [wiki, no-frontmatter-fix]
-created: 2026-08-24
-updated: 2026-08-24
----
+# Xot
 
-# Best Practices
+[![Module](https://img.shields.io/badge/Module-Xot-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Laraxot Framework Standards
+> **Core module for the FixCity Platform.**
 
-### Models
-- ALWAYS extend module's BaseModel
-- NEVER extend Eloquent\Model directly
-- Use `declare(strict_types=1);` in all files
-- Implement `casts()` method, not `$casts` property
+## Perché esiste
 
-### Filament Resources
-- ALWAYS extend XotBaseResource
-- NEVER use `->label()` method
-- Return associative arrays from `getFormSchema()`
-- Use enum classes instead of hardcoded options
+Core module for the FixCity Platform.
 
-### Migrations
-- Use anonymous classes extending XotBaseMigration
-- NEVER implement `down()` method
-- Always check existence with `hasTable()` and `hasColumn()`
-- Copy original migration with new timestamp for column additions
+## Superpoteri
 
-### Translations
-- Use expanded structure ALWAYS
-- NEVER remove existing keys
-- Maintain consistency across all languages (IT/EN/DE)
-- Use snake_case for all keys
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-## Code Quality
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- PHPStan level 9+ for all new code
-- Complete PHPDoc annotations
-- Use Safe library for unsafe functions
-- Follow PSR-12 coding standards
+## Documentazione
 
-## Documentation
-- All files in docs/ must be lowercase (except README.md)
-- Create bidirectional links between related documents
-- Update both module and root documentation
-- Include practical examples in all guides
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
 ---
 
-<!-- Merged from readme.md, which collided with this file on case-insensitive filesystems. -->
-
----
-module: theme
-topic: readme
-canonical: ../../../../Themes/docs/shared-components/README-Modules.md
----
-
-See canonical documentation: ../../../../Themes/docs/shared-components/README-Modules.md
+**Modulo** `Xot` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

@@ -1,46 +1,34 @@
----
-title: "Document — knowledge base"
-type: overview
-tags: [document, gestionale-commesse, docs, media-conflict, bmad]
-created: 2026-07-23
-updated: 2026-07-24
-qmd: "Document docs README purpose media conflict risk enabled statuses"
-issues:
-  - "https://github.com/laraxot/base_workorder_fila5/issues/7"
-  - "https://github.com/laraxot/base_workorder_fila5/issues/14"
-discussions:
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/15"
-related:
-  - "./import-status.md"
-  - "./composer-manifest.md"
-  - "../../../../docs/gestionale-commesse-comparison/functional-readiness.md"
-  - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
----
-
 # Document
+
+[![Module](https://img.shields.io/badge/Module-Document-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
+
+> **Core module for the FixCity Platform.**
 
 ## Perché esiste
 
-Allegati di dominio gestionale (kind document/photo/signature/sketch…) — **replica**, non merge in Media Spatie.
+Core module for the FixCity Platform.
 
-## Runtime (attenzione)
+## Superpoteri
 
-| Gate | Stato |
-|---|---|
-| `modules_statuses` | **true** (JSON) |
-| Tabella model `Media` | ancora `media` → **conflitto Spatie** |
-| Migrate / write cieco | **vietato** finché rename (`document_media`) o bridge |
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-Dettaglio: [import-status.md](./import-status.md) · matrice [gc-modules-runtime-matrix.md](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md).
+## Documentazione
 
-## Indice docs
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-| File | Scopo |
-|---|---|
-| [import-status.md](./import-status.md) | Checklist + conflitto |
-| [composer-manifest.md](./composer-manifest.md) | Manifest |
+---
 
-## Hub / BMAD
-
-Story [2.4](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md) · [#14](https://github.com/laraxot/base_workorder_fila5/issues/14)
+**Modulo** `Document` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

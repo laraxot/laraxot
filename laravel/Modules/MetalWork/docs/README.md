@@ -1,37 +1,34 @@
 # MetalWork
 
-Preventivi di carpenteria metallica a partire dai disegni CAD.
+[![Module](https://img.shields.io/badge/Module-MetalWork-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Il problema che risolve
+> **Core module for the FixCity Platform.**
 
-Un pezzo di carpenteria si preventiva pesando l'acciaio e sommando le lavorazioni.
-Farlo a mano su un disegno vuol dire aprire il CAD, misurare gli ingombri, stimare
-quanto materiale serve e ricordarsi a che prezzo il fornitore ha fatturato l'ultima
-volta. Il modulo fa i primi tre passaggi da solo e tiene il quarto aggiornato
-leggendo le fatture fornitore.
+## Perché esiste
 
-## Flusso
+Core module for the FixCity Platform.
 
-1. **Import STEP** — il file viene letto in streaming (non è un mesh: un STEP è una
-   rappresentazione a contorno, quindi il volume esatto non è calcolabile senza un
-   tassellatore). Si ricava l'ingombro, il numero di solidi, i cilindri (fori) e se
-   il pezzo è un assieme.
-2. **Distinta** — se i solidi si distinguono, il pezzo si costa riga per riga: ogni
-   riga è un acquisto reale a un prezzo fatturato. Altrimenti si ricade sul percorso
-   a pezzo singolo, dove il peso viene dall'ingombro per un fattore di riempimento
-   che l'operatore può correggere a schermo — un numero che può verificare sul
-   disegno, invece di una cifra a scatola chiusa.
-3. **Costo e ricarico** — il ricarico si risolve con `Costing\Support\MarkupResolver`:
-   preventivo → centro di lavoro → default di sistema, vince il primo impostato.
-4. **Preventivo** — la stima diventa un preventivo del modulo Quotation.
+## Superpoteri
 
-## Import fatture fornitore
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-I PDF delle fatture vengono letti per tenere aggiornato il listino: una materia prima
-fatturata l'ultima volta mesi fa sta preventivando a un prezzo che oggi nessuno
-onorerebbe, e la dashboard lo dice.
+## Documentazione
 
-## Pannello
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-Vive su `/metalwork`, con dashboard propria: chi preventiva pezzi ci lavora tutto il
-giorno e non deve passare dal pannello generale.
+---
+
+**Modulo** `MetalWork` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

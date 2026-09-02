@@ -1,49 +1,34 @@
 # Time Tracking Development Guide
 
-This directory contains development guides for the time tracking and attendance management system.
+[![Module](https://img.shields.io/badge/Module-Time Tracking Development Guide-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Overview
+> **Core module for the FixCity Platform.**
 
-The time tracking system provides:
-- Real-time clock-in/clock-out functionality
-- Break time management
-- Attendance monitoring
-- Work hour calculations
-- Presence tracking widgets
+## Perché esiste
 
-## Implementation Status
+Core module for the FixCity Platform.
 
-| Component | Status | Notes |
-|-----------|--------|-------|
-| WorkHour Model | ✅ Complete | Core time tracking model |
-| TimeTrackingWidget | ✅ Complete | Real-time dashboard widget |
-| TodayPresenceWidget | ✅ Complete | Presence monitoring widget |
-| Attendance Reports | 🚧 In Progress | Reporting functionality |
-| Mobile Clock-in | 📋 Planned | Mobile PWA integration |
+## Superpoteri
 
-## Development Files
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-- **timbrature/** - Time tracking implementation details
-- **attendance.md** - Attendance management guide
-- **implementation.md** - Technical implementation
+## Documentazione
 
-## Key Components
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-- `WorkHour` - Time tracking records
-- `TimeTrackingWidget` - Dashboard time tracking
-- `TodayPresenceWidget` - Real-time presence display
-- `AttendanceReport` - Reporting system
+---
 
-## Widget Architecture
-
-The time tracking widgets follow XotBaseWidget patterns:
-- Extend `XotBaseWidget` for Laraxot compliance
-- Implement required `getFormSchema()` method
-- Use proper translation files
-- Real-time polling for live updates
-
-## Related Documentation
-
-- [Features: Work Hour Implementation](../../features/workhour_implementation.md)
-- [Architecture: Technical Architecture](../../architecture/technical_architecture.md)
-- [Implementation: Workflows](../../implementation/workflows_and_best_practices.md)
+**Modulo** `Employee` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

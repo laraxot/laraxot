@@ -1,47 +1,34 @@
 # Script di Setup
 
-## Descrizione
-Questa cartella contiene gli script per la configurazione iniziale del progetto, inclusi:
-- Installazione delle dipendenze
-- Configurazione dell'ambiente
-- Setup del database
-- Configurazione dei moduli
+[![Module](https://img.shields.io/badge/Module-Script di Setup-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Script Disponibili
+> **Core module for the FixCity Platform.**
 
-### 1. setup_environment.sh
-Configura l'ambiente di sviluppo con:
-- Installazione dipendenze PHP
-- Installazione dipendenze Node.js
-- Configurazione variabili d'ambiente
+## Perché esiste
 
-### 2. setup_database.sh
-Configura il database con:
-- Creazione database
-- Esecuzione migrazioni
-- Popolamento dati iniziali
+Core module for the FixCity Platform.
 
-### 3. setup_modules.sh
-Configura i moduli con:
-- Installazione moduli base
-- Configurazione dipendenze
-- Setup permessi
+## Superpoteri
 
-## Utilizzo
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-```bash
+## Documentazione
 
-# Setup completo
-./setup_environment.sh
-./setup_database.sh
-./setup_modules.sh
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-# Setup specifico
-./setup_environment.sh --php-only
-./setup_database.sh --migrate-only
-```
+---
 
-## Best Practices
-- Eseguire gli script in ordine corretto
-- Verificare i requisiti di sistema
-- Mantenere backup della configurazione 
+**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

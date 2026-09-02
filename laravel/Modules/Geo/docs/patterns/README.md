@@ -1,23 +1,34 @@
 # 🏗️ Design Patterns PTVX
 
-> **Index**: Guida ai pattern architetturali utilizzati in PTVX.
+[![Module](https://img.shields.io/badge/Module-🏗️ Design Patterns PTVX-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## 🎯 Core Patterns
+> ****Index**: Guida ai pattern architetturali utilizzati in PTVX.**
 
-| Pattern | Descrizione | File |
-|---------|-------------|------|
-| **Repository** | Astrazione accesso dati | [repository.md](./repository.md) |
-| **Service** | Business Logic complessa | [service-layer.md](./service-layer.md) |
-| **Action** | Single Responsibility Logic | [action.md](./action.md) |
-| **DTO** | Data Transfer Objects | [dto.md](./dto.md) |
+## Perché esiste
 
-## 🚀 Framework Patterns
+**Index**: Guida ai pattern architetturali utilizzati in PTVX.
 
-| Pattern | Descrizione | File |
-|---------|-------------|------|
-| **Laravel** | Events, Listeners, Notifications | [laravel.md](./laravel.md) |
-| **Utility** | Cache, Queue, Jobs | [utility.md](./utility.md) |
-| **Checklist** | Standard di qualità | [checklist.md](./checklist.md) |
+## Superpoteri
+
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
+
+## Documentazione
+
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
 ---
-**Torna a**: [Documentazione Principale](../claude/README.md)
+
+**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

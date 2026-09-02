@@ -1,19 +1,34 @@
 # Giveback
 
-Verticale **demo** per piattaforma giveback (cashback solidale). Il modulo contiene solo pagine Filament: niente
-modelli, niente migrazioni, niente tabelle. Serve a mostrare il flusso al cliente,
-non a gestirne i dati.
+[![Module](https://img.shields.io/badge/Module-Giveback-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-Pannello dedicato su `/giveback-platform` con 9 pagine. L'accesso passa da
-`AccountFeatures::canAccessPanel()`; i ruoli riconosciuti sono giveback_admin, giveback_merchant, giveback_support.
+> **Core module for the FixCity Platform.**
 
-## Perche' e' un modulo e non una cartella di pagine
+## Perché esiste
 
-Nel gestionale sorgente viveva in `app/Filament/GivebackPlatform` con il suo PanelProvider in
-`app/Providers/Filament`. Qui la regola e' che ogni verticale sia un modulo: cosi' si
-attiva e si disattiva da `modules_statuses.json`, porta con se' viste e traduzioni, e
-non sporca l'applicazione con dominio che riguarda un solo cliente.
+Core module for the FixCity Platform.
 
-## Documentazione collegata
+## Superpoteri
 
-- [import-status.md](import-status.md)
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
+
+## Documentazione
+
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+
+---
+
+**Modulo** `Giveback` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

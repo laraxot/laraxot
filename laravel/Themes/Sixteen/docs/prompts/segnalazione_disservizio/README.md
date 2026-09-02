@@ -1,51 +1,34 @@
 # Segnalazione Disservizio - Documentation Index
 
-Documentation for implementing the "Segnalazione Disservizio" (Report Issue) flow in Design Comuni pages.
+[![Module](https://img.shields.io/badge/Module-Segnalazione Disservizio - Documentation Index-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Overview
+> **Core module for the FixCity Platform.**
 
-Implementation of the citizen report flow following Design Comuni Italia patterns.
+## Perché esiste
 
-## Reference
+Core module for the FixCity Platform.
 
-- **Design Comuni Reference**: https://italia.github.io/design-comuni-pagine-statiche/sito/ticket-list.html
-- **Reference HTML**: [`reference_segnalazioni.html`](./reference_segnalazioni.html)
-- **Local HTML**: [`local_segnalazioni.html`](./local_segnalazioni.html) (generated)
+## Superpoteri
 
-## Pages in Flow
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-| Step | Page | Slug | Blade |
-|------|------|------|-------|
-| 1 | Privacy | `/it/tests/segnalazione-01-privacy` | `[slug].blade.php` |
-| 2 | Dati | `/it/tests/segnalazione-02-dati` | `[slug].blade.php` |
-| 3 | Riepilogo | `/it/tests/segnalazione-03-riepilogo` | `[slug].blade.php` |
-| 4 | Conferma | `/it/tests/segnalazione-04-conferma` | `[slug].blade.php` |
-| Elenco | Elenco segnalazioni | `/it/tests/ticket-list` | `[slug].blade.php` |
+## Documentazione
 
-## Architecture
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-- **Blade**: `laravel/Themes/Sixteen/resources/views/pages/tests/[slug].blade.php`
-- **JSON Config**: `laravel/config/local/fixcity/database/content/pages/tests.*.json`
-- **Component**: `laravel/Themes/Sixteen/resources/views/components/blocks/segnalazioni/layout.blade.php`
-- **Translations**: `laravel/Modules/Fixcity/lang/{it,en}/segnalazione.php`
-- **Translation Pattern**: `fixcity::segnalazione.{context}.{key}.{type}`
+---
 
-## Comparison Reports
-
-- **Body Structure Comparison**: `laravel/Themes/Sixteen/docs/body-structure-comparison/ticket-list/`
-  - [`report.md`](../body-structure-comparison/ticket-list/report.md)
-  - [`summary.json`](../body-structure-comparison/ticket-list/summary.json)
-  - [`diff_details.json`](../body-structure-comparison/ticket-list/diff_details.json)
-  - [`reference-body.html`](../body-structure-comparison/ticket-list/reference-body.html)
-  - [`local-body.html`](../body-structure-comparison/ticket-list/local-body.html)
-  - [`ticket-list-html-parity-analysis.md`](./ticket-list-html-parity-analysis.md)
-
-## CSS
-
-- **Parity Styles**: `laravel/Themes/Sixteen/resources/css/segnalazione-parity.css`
-
-## Related Documentation
-
-- [Theme Docs Index](../README.md)
-- [Body Structure Comparison Index](../body-structure-comparison/INDEX.md)
-- [Root Bridge Config](../../../../../docs/html-structure-comparison.md)
+**Modulo** `Sixteen` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

@@ -1,209 +1,34 @@
----
-title: "Notifiche"
-type: index
-tags: [notify, docs, notifications]
-module: Notify
-created: 2026-07-20
-updated: 2026-07-20
-qmd: "notify documentazione notifications readme notifiche index readme frontmatter qmd search"
-issues:
-  - "https://github.com/laraxot/module_notify_fila5/issues/56"
-discussions:
-  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
-related:
-  - ../README.md
-  - ../wiki/index.md
-  - readme.md
-  - ../integrations/readme.md
-  - ../templates/readme.md
----
-# Notifiche
+# Notify
 
-## Panoramica
-Questo documento descrive il sistema di notifiche utilizzato nel modulo Notify.
+[![Module](https://img.shields.io/badge/Module-Notify-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-## Struttura delle Notifiche
+> **Core module for the FixCity Platform.**
 
-### Notifica Base
-```php
-// app/Notifications/BaseNotification.php
-namespace App\Notifications;
+## Perché esiste
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Notification;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Notifications\Messages\MailMessage;
+Core module for the FixCity Platform.
 
-class BaseNotification extends Notification implements ShouldQueue
-{
-    use Queueable;
+## Superpoteri
 
-    public function via($notifiable)
-    {
-        return ['mail', 'database'];
-    }
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-    public function toMail($notifiable)
-    {
-        return (new MailMessage)
-            ->subject($this->getSubject())
-            ->greeting($this->getGreeting())
-            ->line($this->getContent())
-            ->action($this->getActionText(), $this->getActionUrl());
-    }
+## Documentazione
 
-    public function toArray($notifiable)
-    {
-        return [
-            'type' => $this->getType(),
-            'data' => $this->getData(),
-        ];
-    }
-}
-```
-
-### Notifica Personalizzata
-```php
-// app/Notifications/AppointmentNotification.php
-namespace App\Notifications;
-
-class AppointmentNotification extends BaseNotification
-{
-    protected $appointment;
-
-    public function __construct($appointment)
-    {
-        $this->appointment = $appointment;
-    }
-
-    public function getSubject()
-    {
-        return "Appuntamento {$this->appointment->date}";
-    }
-
-    public function getContent()
-    {
-        return "Hai un appuntamento il {$this->appointment->date} alle {$this->appointment->time}";
-    }
-
-    public function getActionText()
-    {
-        return 'Vedi Dettagli';
-    }
-
-    public function getActionUrl()
-    {
-        return route('appointments.show', $this->appointment);
-    }
-}
-```
-
-## Canali di Notifica
-
-### Email
-```php
-// config/notifications.php
-return [
-    'channels' => [
-        'mail' => [
-            'driver' => 'smtp',
-            'host' => env('MAIL_HOST'),
-            'port' => env('MAIL_PORT'),
-            'username' => env('MAIL_USERNAME'),
-            'password' => env('MAIL_PASSWORD'),
-            'encryption' => env('MAIL_ENCRYPTION'),
-            'from' => [
-                'address' => env('MAIL_FROM_ADDRESS'),
-                'name' => env('MAIL_FROM_NAME'),
-            ],
-        ],
-    ],
-];
-```
-
-### Database
-```php
-// database/migrations/create_notifications_table.php
-Schema::create('notifications', function (Blueprint $table) {
-    $table->uuid('id')->primary();
-    $table->string('type');
-    $table->morphs('notifiable');
-    $table->text('data');
-    $table->timestamp('read_at')->nullable();
-    $table->timestamps();
-});
-```
-
-### SMS
-```php
-// app/Notifications/Channels/SmsChannel.php
-namespace App\Notifications\Channels;
-
-use Illuminate\Notifications\Notification;
-
-class SmsChannel
-{
-    public function send($notifiable, Notification $notification)
-    {
-        $message = $notification->toSms($notifiable);
-        
-        // Implementazione invio SMS
-    }
-}
-```
-
-## Best Practices
-
-### 1. Gestione Code
-- Utilizzare code separate per tipo
-- Implementare retry policy
-- Monitorare fallimenti
-- Logging dettagliato
-
-### 2. Performance
-- Batch processing
-- Rate limiting
-- Caching
-- Ottimizzazione query
-
-### 3. Sicurezza
-- Validazione input
-- Sanitizzazione output
-- Rate limiting
-- Logging accessi
-
-## Note
-- Tutti i collegamenti sono relativi
-- La documentazione è mantenuta in italiano
-- I collegamenti sono bidirezionali quando appropriato
-- Ogni sezione ha il suo README.md specifico
-
-## Contribuire
-Per contribuire alla documentazione, seguire le [Linee Guida](../../../../../docs/linee-guida-documentazione.md) e le [Regole dei Collegamenti](../../../../../docs/regole_collegamenti_documentazione.md).
-
-## Collegamenti Completi
-Per una lista completa di tutti i collegamenti tra i README.md, consultare il file [README_links.md](../../../../../docs/readme_links.md). 
----
-
-<!-- Merged from readme.md, which collided with this file on case-insensitive filesystems. -->
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
 ---
-title: "Readme"
-type: concept
-tags: [readme]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "readme readme"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./errori-comuni-da-evitare-1.md"
-  - "./errori-comuni-da-evitare.md"
-  - "./index.md"
-  - "./multi-channel-notifications-1.md"
-  - "./multi-channel-notifications-2.md"
-  - "./multi-channel-notifications.md"
-  - "./netfun-sms-implementation-1.md"
-  - "./netfun-sms-implementation.md"
----
 
+**Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

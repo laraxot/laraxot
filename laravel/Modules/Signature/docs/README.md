@@ -1,51 +1,34 @@
----
-title: "Signature — knowledge base"
-type: overview
-tags: [signature, gestionale-commesse, docs, bmad]
-created: 2026-07-23
-updated: 2026-07-24
-qmd: "Signature docs README purpose firma sketch closeout"
-issues:
-  - "https://github.com/laraxot/base_workorder_fila5/issues/7"
-discussions:
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
-related:
-  - "./import-status.md"
-  - "../../../../docs/gestionale-commesse-comparison/functional-readiness.md"
-  - "../../../../laravel/Themes/docs/wave1-fo-operator-note.md"
-  - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
----
-
 # Signature
+
+[![Module](https://img.shields.io/badge/Module-Signature-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
+
+> **Core module for the FixCity Platform.**
 
 ## Perché esiste
 
-**Close-out sul campo**: firma e sketch legati all’intervento (accettazione lavoro / rilievo). Valore legale/operativo, non cosmetico UI.
+Core module for the FixCity Platform.
 
-## Cosa NON è
+## Superpoteri
 
-- Non è upload generico documenti (→ Document/Media).
-- Non vive nei Themes in Wave 1 → panel `signature/admin` Capture*.
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-## Runtime
+## Documentazione
 
-| Gate | Stato |
-|---|---|
-| Enabled | sì |
-| Schema | `signatures`, `sketches` |
-| Panel | pages Capture (no Resource CRUD ancora) |
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-## Indice docs
+---
 
-| File | Scopo |
-|---|---|
-| [import-status.md](./import-status.md) | Checklist |
-| [README.md](./README.md) | Scopo |
-
-## Hub / BMAD
-
-- [functional-readiness.md](../../../../docs/gestionale-commesse-comparison/functional-readiness.md)
-- [wave1-fo-operator-note.md](../../../../laravel/Themes/docs/wave1-fo-operator-note.md)
-- [#7](https://github.com/laraxot/base_workorder_fila5/issues/7)
-- Matrice statuses: [gc-modules-runtime-matrix.md](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md)
-- Story [2.4 docs hygiene](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md)
+**Modulo** `Signature` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

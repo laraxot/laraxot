@@ -1,50 +1,34 @@
----
-title: "HR — knowledge base (replica, NON merge Employee)"
-type: overview
-tags: [hr, gestionale-commesse, replica, do-not-delete, bmad]
-created: 2026-07-23
-updated: 2026-07-24
-qmd: "HR docs README purpose replica overlap Employee enabled"
-issues:
-  - "https://github.com/laraxot/base_workorder_fila5/issues/7"
-  - "https://github.com/laraxot/base_workorder_fila5/issues/14"
-  - "https://github.com/laraxot/base_workorder_fila5/issues/9"
-discussions:
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/8"
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/15"
-related:
-  - "./import-status.md"
-  - "./composer-manifest.md"
-  - "./tests-migration.md"
-  - "./gestionale-commesse-port.md"
-  - "../../../../docs/gestionale-commesse-comparison/replica-singular-phase.md"
-  - "../../../../docs/gestionale-commesse-comparison/STORY-002-hr-vs-employee.md"
-  - "../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md"
-  - "../../../../laravel/docs/migrate-gestionale-tests.md"
----
-
 # HR
+
+[![Module](https://img.shields.io/badge/Module-HR-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
+
+> **Core module for the FixCity Platform.**
 
 ## Perché esiste
 
-Replica HR SRC (persone/organigramma gestionale). Overlap con `Employee` ≠ licenza a delete/merge in fase attuale.
+Core module for the FixCity Platform.
 
-## Runtime
+## Superpoteri
 
-| Gate | Stato |
-|---|---|
-| `modules_statuses` | **true** (2026-07-24) |
-| Merge in Employee | **vietato** ora |
-| Gap analisi | [1.5 employee-hr](../../../../docs/stories/1.5.employee-hr-gap.story.md) |
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-## Indice docs
+## Documentazione
 
-| File | Scopo |
-|---|---|
-| [import-status.md](./import-status.md) | Checklist reshape |
-| [composer-manifest.md](./composer-manifest.md) | Manifest |
-| [tests-migration.md](./tests-migration.md) | Pest SRC → DEST (3 passed / 5 skip) |
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-## Hub / BMAD
+---
 
-[Matrice](../../../../laravel/Themes/docs/gc-modules-runtime-matrix.md) · Story [2.4](../../../../docs/stories/2.4.module-theme-docs-hygiene.story.md) · Story [2.5](../../../../docs/stories/2.5.migrate-gestionale-tests.story.md)
+**Modulo** `HR` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

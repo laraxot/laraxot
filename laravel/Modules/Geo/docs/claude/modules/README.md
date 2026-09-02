@@ -1,123 +1,34 @@
 # Module Structure
 
-## Directory Structure
+[![Module](https://img.shields.io/badge/Module-Module Structure-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
 
-```
-Modules/ModuleName/
-├── app/
-│   ├── Actions/              # Business logic (Spatie QueueableAction)
-│   ├── Data/ or Datas/       # DTOs (Spatie Laravel Data)
-│   ├── Enums/                # Type-safe enums
-│   ├── Filament/
-│   │   ├── Resources/        # Resource definitions
-│   │   ├── Pages/            # Create/Edit/List pages
-│   │   ├── Widgets/          # Dashboard widgets
-│   │   └── Actions/          # Custom Filament actions
-│   ├── Http/
-│   │   ├── Controllers/      # Controllers
-│   │   ├── Middleware/       # Middleware
-│   │   └── Requests/         # Form requests
-│   ├── Models/               # Eloquent models + BaseModel
-│   ├── Notifications/        # Notifications
-│   ├── Observers/            # Model observers
-│   ├── Policies/             # Authorization policies
-│   ├── Providers/            # Service providers
-│   └── Traits/               # Reusable traits
-├── config/                   # Module configuration
-├── database/
-│   ├── factories/            # Model factories
-│   ├── migrations/           # Database migrations
-│   └── seeders/              # Seeders
-├── docs/                     # Module documentation
-├── resources/
-│   ├── lang/                 # Translation files (en/, it/)
-│   └── views/                # Blade templates
-├── routes/                   # api.php, web.php
-├── tests/
-│   ├── Feature/              # Feature tests
-│   └── Unit/                 # Unit tests
-├── composer.json             # Module dependencies
-└── module.json               # Module metadata
-```
+> **Core module for the FixCity Platform.**
 
-## Key Modules
+## Perché esiste
 
-### Core Modules
-- **Xot**: Framework foundation (base classes, traits, utilities)
-- **User**: Auth, roles, permissions, multi-type users, teams
-- **Lang**: Multi-language translation system
-- **Tenant**: Multi-tenancy support
-- **UI**: Shared UI components
+Core module for the FixCity Platform.
 
-### Business Domain Modules
-- Performance, PresenzeAssenze, Questionari
-- Incentivi, IndennitaResponsabilita, IndennitaCondizioniLavoro
-- Legge104, Legge109, Mensa, Progressioni
-- Gdpr, Activity (audit logging)
-- Media (file management)
+## Superpoteri
 
-### External Integration Modules
-- Pdnd, Ptv, Sigma, Europa, Inail, Sindacati
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
 
-## Creating a New Module
+## Documentazione
 
-```bash
-# Create new module
-php artisan module:make ModuleName
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
-# Enable module
-php artisan module:enable ModuleName
-```
+---
 
-## Module Dependencies
-
-Add dependencies in `Modules/ModuleName/composer.json`:
-
-```json
-{
-    "require": {
-        "nwidart/laravel-modules": "^10.0",
-        "spatie/laravel-data": "^4.0",
-        "spatie/laravel-queueable-action": "^2.0"
-    }
-}
-```
-
-## Module Configuration
-
-Each module can have its own config files in `config/`:
-
-```php
-// Modules/ModuleName/config/config.php
-return [
-    'default_setting' => env('MODULE_DEFAULT_SETTING', 'value'),
-    'features' => [
-        'feature_one' => true,
-        'feature_two' => false,
-    ],
-];
-```
-
-Access with:
-```php
-config('module_name.default_setting');
-```
-
-## Module Service Providers
-
-```php
-// Modules/ModuleName/app/Providers/ModuleServiceProvider.php
-class ModuleServiceProvider extends XotBaseServiceProvider
-{
-    public function register(): void
-    {
-        $this->mergeConfigFrom(__DIR__.'/../config/module.php', 'module');
-    }
-
-    public function boot(): void
-    {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'module');
-        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'module');
-    }
-}
-```
+**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

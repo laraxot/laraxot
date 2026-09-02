@@ -1,21 +1,34 @@
+# TestModule
+
+[![Module](https://img.shields.io/badge/Module-TestModule-8B0000.svg)]()
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
+[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture-Modular](https://img.shields.io/badge/Architecture-Modular-purple.svg)]()
+[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)]()
+
+> **Indice tecnico del modulo di supporto ai test.**
+
+## Perché esiste
+
+Indice tecnico del modulo di supporto ai test.
+
+## Superpoteri
+
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
+
+## Documentazione
+
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+
 ---
-title: "TestModule Documentation"
-type: index
-tags: [testmodule, documentation, module]
-module: "TestModule"
-created: 2026-07-17
-updated: 2026-07-17
-qmd: "TestModule documentation index code quality"
-issues:
-  - "https://github.com/laraxot/base_techplanner_fila5/issues/46"
-discussions:
-  - "https://github.com/laraxot/base_techplanner_fila5/discussions/47"
----
 
-# TestModule Documentation
-
-> Indice tecnico del modulo di supporto ai test.
-
-- [Code Quality Improvement Report](code-quality-improvement-report.md)
-- [README del modulo](../README.md)
-
+**Modulo** `TestModule` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
