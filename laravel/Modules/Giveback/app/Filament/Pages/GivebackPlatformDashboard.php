@@ -28,7 +28,6 @@ final class GivebackPlatformDashboard extends XotBaseDashboard
     {
         return [
             'downloadMockupPdf' => Action::make('downloadMockupPdf')
-                ->label('Scarica PDF mockup')
                 ->icon('heroicon-o-arrow-down-tray')
                 ->color('gray')
                 ->action(function () {

@@ -30,17 +30,15 @@ final class ListSignPriceLists extends XotBaseListRecords
     public function getTableColumns(): array
     {
         return [
-            'code' => Tables\Columns\TextColumn::make('code')->label(__('signage::signage.fields.code'))->searchable()->sortable(),
-            'name' => Tables\Columns\TextColumn::make('name')->label(__('signage::signage.fields.name'))->searchable(),
-            'brand' => Tables\Columns\TextColumn::make('brand')->label(__('signage::signage.catalog_fields.brand'))->placeholder('—')->searchable(),
+            'code' => Tables\Columns\TextColumn::make('code')->searchable()->sortable(),
+            'name' => Tables\Columns\TextColumn::make('name')->searchable(),
+            'brand' => Tables\Columns\TextColumn::make('brand')->placeholder('—')->searchable(),
             'items_count' => Tables\Columns\TextColumn::make('items_count')
-                ->label(__('signage::signage.catalog_items'))
                 ->counts('items'),
             'default_markup_percent' => Tables\Columns\TextColumn::make('default_markup_percent')
-                ->label(__('signage::signage.catalog_fields.default_markup_percent'))
                 ->placeholder('—')
                 ->suffix('%'),
-            'is_active' => Tables\Columns\IconColumn::make('is_active')->label(__('signage::signage.fields.is_active'))->boolean(),
+            'is_active' => Tables\Columns\IconColumn::make('is_active')->boolean(),
         ];
     }
 

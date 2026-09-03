@@ -63,16 +63,13 @@ final class SignPriceListItemResource extends GatedXotBaseResource
                 ->components([
                     Grid::make(2)->components([
                         TextInput::make('code')
-                            ->label(__('signage::signage.fields.code'))
                             ->required()
                             ->unique(ignoreRecord: true),
                         Select::make('category_code')
-                            ->label(__('signage::signage.fields.category_code'))
                             ->options(__('signage::signage.categories'))
                             ->required(),
                     ]),
                     Select::make('work_center_code')
-                        ->label(__('signage::signage.catalog_fields.work_center_code'))
                         ->options(fn (): array => WorkCenter::query()
                             ->forContext(SignageCosting::CONTEXT)
                             ->where('is_active', true)
@@ -82,30 +79,26 @@ final class SignPriceListItemResource extends GatedXotBaseResource
                         ->searchable()
                         ->preload(),
                     TextInput::make('name')
-                        ->label(__('signage::signage.fields.name'))
                         ->required()
                         ->columnSpanFull(),
                     Grid::make(3)->components([
                         Select::make('unit_code')
-                            ->label(__('signage::signage.fields.unit_code'))
                             ->options(__('signage::signage.units'))
                             ->required(),
                         TextInput::make('unit_cost')
-                            ->label(__('signage::signage.fields.unit_cost'))
                             ->numeric()
                             ->required()
                             ->default(0),
                         TextInput::make('currency')
-                            ->label(__('signage::signage.fields.currency'))
                             ->default('EUR')
                             ->maxLength(3),
                     ]),
                     Grid::make(2)->components([
-                        TextInput::make('supplier_name')->label(__('signage::signage.fields.supplier_name'))->nullable(),
-                        TextInput::make('supplier_code')->label(__('signage::signage.fields.supplier_code'))->nullable(),
+                        TextInput::make('supplier_name')->nullable(),
+                        TextInput::make('supplier_code')->nullable(),
                     ]),
-                    Textarea::make('notes')->label(__('signage::signage.fields.notes'))->rows(2),
-                    Toggle::make('is_active')->label(__('signage::signage.fields.is_active'))->default(true),
+                    Textarea::make('notes')->rows(2),
+                    Toggle::make('is_active')->default(true),
                 ]),
         ];
     }
@@ -114,26 +107,23 @@ final class SignPriceListItemResource extends GatedXotBaseResource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('code')->label(__('signage::signage.fields.code'))->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('name')->label(__('signage::signage.fields.name'))->searchable()->limit(50)->wrap(),
+                Tables\Columns\TextColumn::make('code')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('name')->searchable()->limit(50)->wrap(),
                 Tables\Columns\TextColumn::make('category_code')
-                    ->label(__('signage::signage.fields.category_code'))
                     ->formatStateUsing(fn (string $state): string => __('signage::signage.categories.'.$state))
                     ->badge()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('work_center_code')
-                    ->label(__('signage::signage.catalog_fields.work_center_code'))
                     ->placeholder('—')
                     ->badge()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('supplier_name')->label(__('signage::signage.fields.supplier_name'))->placeholder('—')->toggleable(),
-                Tables\Columns\TextColumn::make('unit_code')->label(__('signage::signage.fields.unit_code')),
-                Tables\Columns\TextColumn::make('unit_cost')->label(__('signage::signage.fields.unit_cost'))->money('EUR', divideBy: 1)->sortable(),
-                Tables\Columns\IconColumn::make('is_active')->label(__('signage::signage.fields.is_active'))->boolean()->toggleable(),
+                Tables\Columns\TextColumn::make('supplier_name')->placeholder('—')->toggleable(),
+                Tables\Columns\TextColumn::make('unit_code'),
+                Tables\Columns\TextColumn::make('unit_cost')->money('EUR', divideBy: 1)->sortable(),
+                Tables\Columns\IconColumn::make('is_active')->boolean()->toggleable(),
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('category_code')
-                    ->label(__('signage::signage.fields.category_code'))
                     ->options(function (): array {
                         /** @var array<string, string> $categories */
                         $categories = (array) __('signage::signage.categories');
@@ -141,7 +131,6 @@ final class SignPriceListItemResource extends GatedXotBaseResource
                         return $categories;
                     }),
                 Tables\Filters\SelectFilter::make('work_center_code')
-                    ->label(__('signage::signage.catalog_fields.work_center_code'))
                     ->options(fn (): array => WorkCenter::query()
                         ->forContext(SignageCosting::CONTEXT)
                         ->orderBy('sort_order')

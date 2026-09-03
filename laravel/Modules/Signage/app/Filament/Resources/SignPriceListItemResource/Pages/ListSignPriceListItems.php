@@ -34,22 +34,20 @@ final class ListSignPriceListItems extends XotBaseListRecords
     public function getTableColumns(): array
     {
         return [
-            'code' => Tables\Columns\TextColumn::make('code')->label(__('signage::signage.fields.code'))->searchable()->sortable(),
-            'name' => Tables\Columns\TextColumn::make('name')->label(__('signage::signage.fields.name'))->searchable()->limit(50)->wrap(),
+            'code' => Tables\Columns\TextColumn::make('code')->searchable()->sortable(),
+            'name' => Tables\Columns\TextColumn::make('name')->searchable()->limit(50)->wrap(),
             'category_code' => Tables\Columns\TextColumn::make('category_code')
-                ->label(__('signage::signage.fields.category_code'))
                 ->formatStateUsing(fn (string $state): string => __('signage::signage.categories.'.$state))
                 ->badge()
                 ->sortable(),
             'work_center_code' => Tables\Columns\TextColumn::make('work_center_code')
-                ->label(__('signage::signage.catalog_fields.work_center_code'))
                 ->placeholder('—')
                 ->badge()
                 ->sortable(),
-            'supplier_name' => Tables\Columns\TextColumn::make('supplier_name')->label(__('signage::signage.fields.supplier_name'))->placeholder('—')->toggleable(),
-            'unit_code' => Tables\Columns\TextColumn::make('unit_code')->label(__('signage::signage.fields.unit_code')),
-            'unit_cost' => Tables\Columns\TextColumn::make('unit_cost')->label(__('signage::signage.fields.unit_cost'))->money('EUR', divideBy: 1)->sortable(),
-            'is_active' => Tables\Columns\IconColumn::make('is_active')->label(__('signage::signage.fields.is_active'))->boolean()->toggleable(),
+            'supplier_name' => Tables\Columns\TextColumn::make('supplier_name')->placeholder('—')->toggleable(),
+            'unit_code' => Tables\Columns\TextColumn::make('unit_code'),
+            'unit_cost' => Tables\Columns\TextColumn::make('unit_cost')->money('EUR', divideBy: 1)->sortable(),
+            'is_active' => Tables\Columns\IconColumn::make('is_active')->boolean()->toggleable(),
         ];
     }
 
@@ -60,7 +58,6 @@ final class ListSignPriceListItems extends XotBaseListRecords
     {
         return [
             'category_code' => Tables\Filters\SelectFilter::make('category_code')
-                ->label(__('signage::signage.fields.category_code'))
                 ->options(function (): array {
                     /** @var array<string, string> $categories */
                     $categories = (array) __('signage::signage.categories');
@@ -68,7 +65,6 @@ final class ListSignPriceListItems extends XotBaseListRecords
                     return $categories;
                 }),
             'work_center_code' => Tables\Filters\SelectFilter::make('work_center_code')
-                ->label(__('signage::signage.catalog_fields.work_center_code'))
                 ->options(fn (): array => WorkCenter::query()
                     ->forContext(SignageCosting::CONTEXT)
                     ->orderBy('sort_order')

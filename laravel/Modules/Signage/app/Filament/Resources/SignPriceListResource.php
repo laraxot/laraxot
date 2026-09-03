@@ -59,27 +59,23 @@ final class SignPriceListResource extends GatedXotBaseResource
                 ->components([
                     Grid::make(2)->components([
                         TextInput::make('code')
-                            ->label(__('signage::signage.fields.code'))
                             ->required()
                             ->unique(ignoreRecord: true),
                         TextInput::make('name')
-                            ->label(__('signage::signage.fields.name'))
                             ->required(),
                     ]),
                     Grid::make(3)->components([
-                        TextInput::make('brand')->label(__('signage::signage.catalog_fields.brand')),
+                        TextInput::make('brand'),
                         Select::make('customer_id')
-                            ->label(__('signage::signage.catalog_fields.customer'))
                             ->options(fn (): array => Customer::query()->orderBy('name')->pluck('name', 'id')->all())
                             ->searchable()
                             ->preload(),
                         TextInput::make('default_markup_percent')
-                            ->label(__('signage::signage.catalog_fields.default_markup_percent'))
                             ->helperText(__('signage::signage.pricing.markup_hint'))
                             ->numeric()
                             ->suffix('%'),
                     ]),
-                    Toggle::make('is_active')->label(__('signage::signage.fields.is_active'))->default(true),
+                    Toggle::make('is_active')->default(true),
                 ]),
         ];
     }
@@ -88,17 +84,15 @@ final class SignPriceListResource extends GatedXotBaseResource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('code')->label(__('signage::signage.fields.code'))->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('name')->label(__('signage::signage.fields.name'))->searchable(),
-                Tables\Columns\TextColumn::make('brand')->label(__('signage::signage.catalog_fields.brand'))->placeholder('—')->searchable(),
+                Tables\Columns\TextColumn::make('code')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('name')->searchable(),
+                Tables\Columns\TextColumn::make('brand')->placeholder('—')->searchable(),
                 Tables\Columns\TextColumn::make('items_count')
-                    ->label(__('signage::signage.catalog_items'))
                     ->counts('items'),
                 Tables\Columns\TextColumn::make('default_markup_percent')
-                    ->label(__('signage::signage.catalog_fields.default_markup_percent'))
                     ->placeholder('—')
                     ->suffix('%'),
-                Tables\Columns\IconColumn::make('is_active')->label(__('signage::signage.fields.is_active'))->boolean(),
+                Tables\Columns\IconColumn::make('is_active')->boolean(),
             ])
             ->actions([
                 EditAction::make(),

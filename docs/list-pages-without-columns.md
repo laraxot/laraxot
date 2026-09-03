@@ -105,3 +105,26 @@ Attenzione a due cose che il solo spostamento non risolve:
 L'alternativa e' la classe `Tables\<Model>sTable`, che `XotBaseResource::table()` cerca
 da sola: la usano gia' 73 Resource nel progetto, ed e' la strada preferibile quando la
 stessa tabella serve a piu' pagine.
+
+
+## Nota collegata: le etichette scritte a mano
+
+Lo stesso `LangServiceProvider` che dovrebbe mettere le etichette viene scavalcato
+quando il codice chiama `->label()` a mano. La regola del progetto lo vieta
+(`no_filament_labels.md`), ma i moduli portati lo facevano ovunque.
+
+Il provider costruisce la chiave dal **nome della classe**, non da dove la traduzione
+sta oggi: `ListSignWorkCenters` diventa `signage::sign_work_center`, e cerca
+`fields.<campo>.label`. Togliere un `->label(__('signage::signage.fields.code'))` senza
+prima portare il valore nella chiave attesa non lascia l'etichetta com'era: la fa
+diventare il nome del campo, perche' `AutoLabelAction` crea la chiave mancante e ci
+scrive dentro il nome.
+
+Per Signage, MetalWork e Giveback i valori sono stati spostati nelle chiavi attese e i
+242 `->label()` rimossi. Restano zero.
+
+**EnergyBroker e' fermo a 87** e non e' stato toccato: le sue chiavi (`energy_broker.*`)
+non risolvono affatto — il file `Modules/EnergyBroker/lang/it/energy_broker.php` non
+esiste. Le sue etichette sono gia' oggi le chiavi grezze, e togliere i `->label()`
+mostrerebbe il nome del campo al loro posto. Non e' un refactoring: le traduzioni
+italiane vanno scritte, e quello e' lavoro di contenuto.

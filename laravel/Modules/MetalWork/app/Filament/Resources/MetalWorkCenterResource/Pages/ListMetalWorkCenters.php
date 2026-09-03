@@ -30,19 +30,17 @@ final class ListMetalWorkCenters extends XotBaseListRecords
     public function getTableColumns(): array
     {
         return [
-            'code' => Tables\Columns\TextColumn::make('code')->label(__('metalwork::metalwork.fields.code'))->searchable()->sortable(),
-            'name' => Tables\Columns\TextColumn::make('name')->label(__('metalwork::metalwork.fields.name'))->searchable(),
+            'code' => Tables\Columns\TextColumn::make('code')->searchable()->sortable(),
+            'name' => Tables\Columns\TextColumn::make('name')->searchable(),
             'hourly_rate' => Tables\Columns\TextColumn::make('hourly_rate')
-                ->label(__('metalwork::metalwork.fields.hourly_rate'))
                 ->numeric(2)
                 ->suffix(' €/h')
                 ->sortable(),
             'default_markup_percent' => Tables\Columns\TextColumn::make('default_markup_percent')
-                ->label(__('metalwork::metalwork.fields.default_markup_percent'))
                 ->placeholder('—')
                 ->suffix('%'),
-            'is_internal' => Tables\Columns\IconColumn::make('is_internal')->label(__('metalwork::metalwork.fields.is_internal'))->boolean(),
-            'is_active' => Tables\Columns\IconColumn::make('is_active')->label(__('metalwork::metalwork.fields.is_active'))->boolean(),
+            'is_internal' => Tables\Columns\IconColumn::make('is_internal')->boolean(),
+            'is_active' => Tables\Columns\IconColumn::make('is_active')->boolean(),
         ];
     }
 

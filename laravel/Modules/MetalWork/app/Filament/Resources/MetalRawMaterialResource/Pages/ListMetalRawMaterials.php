@@ -32,22 +32,19 @@ final class ListMetalRawMaterials extends XotBaseListRecords
     public function getTableColumns(): array
     {
         return [
-            'code' => Tables\Columns\TextColumn::make('code')->label(__('metalwork::metalwork.fields.code'))->searchable()->sortable(),
-            'description' => Tables\Columns\TextColumn::make('description')->label(__('metalwork::metalwork.fields.description'))->searchable()->wrap(),
+            'code' => Tables\Columns\TextColumn::make('code')->searchable()->sortable(),
+            'description' => Tables\Columns\TextColumn::make('description')->searchable()->wrap(),
             'family_code' => Tables\Columns\TextColumn::make('family_code')
-                ->label(__('metalwork::metalwork.fields.family_code'))
                 ->formatStateUsing(fn (?string $state): string => (string) __('metalwork::metalwork.families.'.($state ?? 'other'))),
-            'steel_grade' => Tables\Columns\TextColumn::make('steel_grade')->label(__('metalwork::metalwork.fields.steel_grade'))->placeholder('—'),
-            'unit_code' => Tables\Columns\TextColumn::make('unit_code')->label(__('metalwork::metalwork.fields.unit_code')),
+            'steel_grade' => Tables\Columns\TextColumn::make('steel_grade')->placeholder('—'),
+            'unit_code' => Tables\Columns\TextColumn::make('unit_code'),
             'current_price' => Tables\Columns\TextColumn::make('current_price')
-                ->label(__('metalwork::metalwork.fields.current_price'))
                 ->placeholder('—')
                 ->state(fn (MetalRawMaterial $record): ?string => $record->currentUnitPrice() === null
                     ? null
                     : number_format($record->currentUnitPrice(), 4, ',', '.').' €/'.$record->unit_code),
-            'supplier_name' => Tables\Columns\TextColumn::make('supplier_name')->label(__('metalwork::metalwork.fields.supplier_name'))->placeholder('—')->searchable(),
+            'supplier_name' => Tables\Columns\TextColumn::make('supplier_name')->placeholder('—')->searchable(),
             'supplier_prices_count' => Tables\Columns\TextColumn::make('supplier_prices_count')
-                ->label(__('metalwork::metalwork.supplier_prices'))
                 ->counts('supplierPrices'),
         ];
     }
@@ -69,7 +66,6 @@ final class ListMetalRawMaterials extends XotBaseListRecords
     {
         return [
             'family_code' => Tables\Filters\SelectFilter::make('family_code')
-                ->label(__('metalwork::metalwork.fields.family_code'))
                 ->options(MetalRawMaterialResource::familyOptions()),
         ];
     }

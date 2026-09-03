@@ -45,7 +45,6 @@ final class ComponentsRelationManager extends XotBaseRelationManager
         return [
             'identification' => Grid::make(3)->components([
                 TextInput::make('position')
-                    ->label(__('signage::signage.catalog_fields.position'))
                     ->numeric()
                     ->default(function (): int {
                         // La riga nuova si mette in coda, lasciando spazio per
@@ -59,7 +58,6 @@ final class ComponentsRelationManager extends XotBaseRelationManager
                     })
                     ->required(),
                 Select::make('work_center_code')
-                    ->label(__('signage::signage.catalog_fields.work_center_code'))
                     ->options(fn (): array => WorkCenter::query()
                         ->forContext(SignageCosting::CONTEXT)
                         ->where('is_active', true)
@@ -68,7 +66,6 @@ final class ComponentsRelationManager extends XotBaseRelationManager
                         ->all())
                     ->required(),
                 Select::make('sign_price_list_item_id')
-                    ->label(__('signage::signage.supplier_item'))
                     ->options(fn (): array => SignPriceListItem::query()
                         ->where('is_active', true)
                         ->orderBy('code')
@@ -93,31 +90,25 @@ final class ComponentsRelationManager extends XotBaseRelationManager
                     }),
             ]),
             'description' => TextInput::make('description')
-                ->label(__('signage::signage.catalog_fields.description'))
                 ->required()
                 ->columnSpanFull(),
             'measures' => Grid::make(5)->components([
                 Select::make('unit_code')
-                    ->label(__('signage::signage.fields.unit_code'))
                     ->options(__('signage::signage.units'))
                     ->required()
                     ->live(),
                 TextInput::make('quantity')
-                    ->label(__('signage::signage.catalog_fields.quantity'))
                     ->numeric()
                     ->default(1)
                     ->required(),
                 TextInput::make('width_mm')
-                    ->label(__('signage::signage.catalog_fields.width_mm'))
                     ->numeric()
                     ->helperText(fn (Get $get): ?string => self::isSurfaceUnit($get('unit_code'))
                         ? (string) __('signage::signage.pricing.surface_hint')
                         : null),
                 TextInput::make('height_mm')
-                    ->label(__('signage::signage.catalog_fields.height_mm'))
                     ->numeric(),
                 TextInput::make('unit_cost')
-                    ->label(__('signage::signage.fields.unit_cost'))
                     ->numeric()
                     ->default(0)
                     ->required(),
@@ -131,25 +122,21 @@ final class ComponentsRelationManager extends XotBaseRelationManager
     public function getTableColumns(): array
     {
         return [
-            'position' => Tables\Columns\TextColumn::make('position')->label(__('signage::signage.catalog_fields.position'))->sortable(),
+            'position' => Tables\Columns\TextColumn::make('position')->sortable(),
             'work_center_code' => Tables\Columns\TextColumn::make('work_center_code')
-                ->label(__('signage::signage.catalog_fields.work_center_code'))
                 ->badge(),
             'supplierItem.code' => Tables\Columns\TextColumn::make('supplierItem.code')
-                ->label(__('signage::signage.fields.code'))
                 ->placeholder('—'),
             'supplierItem.supplier_name' => Tables\Columns\TextColumn::make('supplierItem.supplier_name')
-                ->label(__('signage::signage.fields.supplier_name'))
                 ->placeholder('—')
                 ->toggleable(),
-            'description' => Tables\Columns\TextColumn::make('description')->label(__('signage::signage.catalog_fields.description'))->wrap()->limit(60),
-            'unit_code' => Tables\Columns\TextColumn::make('unit_code')->label(__('signage::signage.fields.unit_code')),
-            'quantity' => Tables\Columns\TextColumn::make('quantity')->label(__('signage::signage.catalog_fields.quantity'))->numeric(3),
-            'width_mm' => Tables\Columns\TextColumn::make('width_mm')->label(__('signage::signage.catalog_fields.width_mm'))->placeholder('—'),
-            'height_mm' => Tables\Columns\TextColumn::make('height_mm')->label(__('signage::signage.catalog_fields.height_mm'))->placeholder('—'),
-            'unit_cost' => Tables\Columns\TextColumn::make('unit_cost')->label(__('signage::signage.fields.unit_cost'))->money('EUR'),
+            'description' => Tables\Columns\TextColumn::make('description')->wrap()->limit(60),
+            'unit_code' => Tables\Columns\TextColumn::make('unit_code'),
+            'quantity' => Tables\Columns\TextColumn::make('quantity')->numeric(3),
+            'width_mm' => Tables\Columns\TextColumn::make('width_mm')->placeholder('—'),
+            'height_mm' => Tables\Columns\TextColumn::make('height_mm')->placeholder('—'),
+            'unit_cost' => Tables\Columns\TextColumn::make('unit_cost')->money('EUR'),
             'line_cost' => Tables\Columns\TextColumn::make('line_cost')
-                ->label(__('signage::signage.catalog_fields.line_cost'))
                 ->state(fn (SignCatalogItemComponent $record): float => $record->lineCost())
                 ->money('EUR')
                 ->weight('bold'),

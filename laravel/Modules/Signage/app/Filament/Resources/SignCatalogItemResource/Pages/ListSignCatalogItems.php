@@ -35,22 +35,20 @@ final class ListSignCatalogItems extends XotBaseListRecords
     public function getTableColumns(): array
     {
         return [
-            'code' => Tables\Columns\TextColumn::make('code')->label(__('signage::signage.fields.code'))->searchable()->sortable(),
-            'priceList.name' => Tables\Columns\TextColumn::make('priceList.name')->label(__('signage::signage.catalog_fields.price_list'))->searchable()->sortable(),
-            'name' => Tables\Columns\TextColumn::make('name')->label(__('signage::signage.fields.name'))->searchable()->limit(50)->wrap(),
+            'code' => Tables\Columns\TextColumn::make('code')->searchable()->sortable(),
+            'priceList.name' => Tables\Columns\TextColumn::make('priceList.name')->searchable()->sortable(),
+            'name' => Tables\Columns\TextColumn::make('name')->searchable()->limit(50)->wrap(),
             'letter_height_min_mm' => Tables\Columns\TextColumn::make('letter_height_min_mm')
-                ->label(__('signage::signage.catalog_fields.letter_height'))
                 ->formatStateUsing(fn (SignCatalogItem $record): string => $record->letter_height_min_mm === null
                     ? '—'
                     : $record->letter_height_min_mm.'–'.$record->letter_height_max_mm.' mm')
                 ->placeholder('—'),
-            'led_temperature_code' => Tables\Columns\TextColumn::make('led_temperature_code')->label(__('signage::signage.catalog_fields.led_temperature_code'))->placeholder('—'),
-            'components_count' => Tables\Columns\TextColumn::make('components_count')->label(__('signage::signage.components'))->counts('components'),
+            'led_temperature_code' => Tables\Columns\TextColumn::make('led_temperature_code')->placeholder('—'),
+            'components_count' => Tables\Columns\TextColumn::make('components_count')->counts('components'),
             'manual_sale_price' => Tables\Columns\TextColumn::make('manual_sale_price')
-                ->label(__('signage::signage.catalog_fields.manual_sale_price'))
                 ->money('EUR')
                 ->placeholder('—'),
-            'is_active' => Tables\Columns\IconColumn::make('is_active')->label(__('signage::signage.fields.is_active'))->boolean()->toggleable(),
+            'is_active' => Tables\Columns\IconColumn::make('is_active')->boolean()->toggleable(),
         ];
     }
 
@@ -71,7 +69,6 @@ final class ListSignCatalogItems extends XotBaseListRecords
     {
         return [
             'sign_price_list_id' => Tables\Filters\SelectFilter::make('sign_price_list_id')
-                ->label(__('signage::signage.catalog_fields.price_list'))
                 ->options(fn (): array => SignPriceList::query()->orderBy('code')->pluck('name', 'id')->all()),
         ];
     }

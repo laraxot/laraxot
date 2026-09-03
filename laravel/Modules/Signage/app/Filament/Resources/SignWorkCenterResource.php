@@ -69,29 +69,24 @@ final class SignWorkCenterResource extends GatedXotBaseResource
                 ->components([
                     Grid::make(2)->components([
                         TextInput::make('code')
-                            ->label(__('signage::signage.fields.code'))
                             ->required()
                             ->unique(ignoreRecord: true, modifyRuleUsing: fn (Unique $rule): Unique => $rule->where('context_code', SignageCosting::CONTEXT)),
                         TextInput::make('name')
-                            ->label(__('signage::signage.fields.name'))
                             ->required(),
                     ]),
                     Grid::make(3)->components([
                         TextInput::make('default_markup_percent')
-                            ->label(__('signage::signage.catalog_fields.default_markup_percent'))
                             ->helperText(__('signage::signage.pricing.markup_hint'))
                             ->numeric()
                             ->suffix('%'),
                         TextInput::make('sort_order')
-                            ->label(__('signage::signage.catalog_fields.sort_order'))
                             ->numeric()
                             ->default(0),
                         Toggle::make('is_internal')
-                            ->label(__('signage::signage.catalog_fields.is_internal'))
                             ->default(true),
                     ]),
                     Hidden::make('context_code')->default(SignageCosting::CONTEXT),
-                    Toggle::make('is_active')->label(__('signage::signage.fields.is_active'))->default(true),
+                    Toggle::make('is_active')->default(true),
                 ]),
         ];
     }
@@ -101,15 +96,14 @@ final class SignWorkCenterResource extends GatedXotBaseResource
         return $table
             ->defaultSort('sort_order')
             ->columns([
-                Tables\Columns\TextColumn::make('code')->label(__('signage::signage.fields.code'))->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('name')->label(__('signage::signage.fields.name'))->searchable(),
+                Tables\Columns\TextColumn::make('code')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('name')->searchable(),
                 Tables\Columns\TextColumn::make('default_markup_percent')
-                    ->label(__('signage::signage.catalog_fields.default_markup_percent'))
                     ->placeholder('—')
                     ->suffix('%')
                     ->sortable(),
-                Tables\Columns\IconColumn::make('is_internal')->label(__('signage::signage.catalog_fields.is_internal'))->boolean(),
-                Tables\Columns\IconColumn::make('is_active')->label(__('signage::signage.fields.is_active'))->boolean(),
+                Tables\Columns\IconColumn::make('is_internal')->boolean(),
+                Tables\Columns\IconColumn::make('is_active')->boolean(),
             ])
             ->actions([
                 EditAction::make(),

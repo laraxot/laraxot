@@ -33,17 +33,17 @@ final class ViewSignPriceListItem extends XotBaseViewRecord
                 ->columnSpanFull()
                 ->components([
                     Grid::make(3)->components([
-                        TextEntry::make('code')->label(__('signage::signage.fields.code'))->weight('bold'),
-                        TextEntry::make('work_center_code')->label(__('signage::signage.catalog_fields.work_center_code'))->placeholder('—')->badge(),
-                        TextEntry::make('supplier_name')->label(__('signage::signage.fields.supplier_name'))->placeholder('—'),
+                        TextEntry::make('code')->weight('bold'),
+                        TextEntry::make('work_center_code')->placeholder('—')->badge(),
+                        TextEntry::make('supplier_name')->placeholder('—'),
                     ]),
-                    TextEntry::make('name')->label(__('signage::signage.fields.name'))->columnSpanFull(),
+                    TextEntry::make('name')->columnSpanFull(),
                     Grid::make(3)->components([
-                        TextEntry::make('unit_code')->label(__('signage::signage.fields.unit_code')),
-                        TextEntry::make('unit_cost')->label(__('signage::signage.fields.unit_cost'))->money('EUR'),
-                        TextEntry::make('currency')->label(__('signage::signage.fields.currency')),
+                        TextEntry::make('unit_code'),
+                        TextEntry::make('unit_cost')->money('EUR'),
+                        TextEntry::make('currency'),
                     ]),
-                    TextEntry::make('notes')->label(__('signage::signage.fields.notes'))->placeholder('—')->columnSpanFull(),
+                    TextEntry::make('notes')->placeholder('—')->columnSpanFull(),
                 ]),
         ];
     }

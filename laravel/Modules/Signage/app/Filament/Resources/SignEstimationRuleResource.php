@@ -55,40 +55,32 @@ final class SignEstimationRuleResource extends GatedXotBaseResource
                 ->components([
                     Grid::make(3)->components([
                         Select::make('role_code')
-                            ->label(__('signage::signage.fields.role_code'))
                             ->options(__('signage::signage.roles'))
                             ->required()
                             ->unique(ignoreRecord: true),
                         Select::make('unit_code')
-                            ->label(__('signage::signage.fields.unit_code'))
                             ->options(__('signage::signage.units'))
                             ->required(),
                         Select::make('strategy_code')
-                            ->label(__('signage::signage.fields.strategy_code'))
                             ->options(__('signage::signage.strategies'))
                             ->helperText(__('signage::signage.help.strategy'))
                             ->required(),
                     ]),
                     Grid::make(3)->components([
                         TextInput::make('factor')
-                            ->label(__('signage::signage.fields.factor'))
                             ->numeric()
                             ->default(1),
                         TextInput::make('base_value')
-                            ->label(__('signage::signage.fields.base_value'))
                             ->numeric()
                             ->default(0),
                         TextInput::make('min_per_piece')
-                            ->label(__('signage::signage.fields.min_per_piece'))
                             ->numeric()
                             ->nullable(),
                     ]),
                     Textarea::make('notes')
-                        ->label(__('signage::signage.fields.notes'))
                         ->helperText(__('signage::signage.help.formula'))
                         ->rows(2),
                     Toggle::make('is_active')
-                        ->label(__('signage::signage.fields.is_active'))
                         ->default(true),
                 ]),
         ];
@@ -99,17 +91,15 @@ final class SignEstimationRuleResource extends GatedXotBaseResource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('role_code')
-                    ->label(__('signage::signage.fields.role_code'))
                     ->formatStateUsing(fn (string $state): string => __('signage::signage.roles.'.$state))
                     ->sortable(),
                 Tables\Columns\TextColumn::make('strategy_code')
-                    ->label(__('signage::signage.fields.strategy_code'))
                     ->formatStateUsing(fn (string $state): string => __('signage::signage.strategies.'.$state)),
-                Tables\Columns\TextColumn::make('unit_code')->label(__('signage::signage.fields.unit_code')),
-                Tables\Columns\TextColumn::make('factor')->label(__('signage::signage.fields.factor'))->numeric(),
-                Tables\Columns\TextColumn::make('base_value')->label(__('signage::signage.fields.base_value'))->numeric(),
-                Tables\Columns\TextColumn::make('min_per_piece')->label(__('signage::signage.fields.min_per_piece'))->numeric()->placeholder('—'),
-                Tables\Columns\IconColumn::make('is_active')->label(__('signage::signage.fields.is_active'))->boolean(),
+                Tables\Columns\TextColumn::make('unit_code'),
+                Tables\Columns\TextColumn::make('factor')->numeric(),
+                Tables\Columns\TextColumn::make('base_value')->numeric(),
+                Tables\Columns\TextColumn::make('min_per_piece')->numeric()->placeholder('—'),
+                Tables\Columns\IconColumn::make('is_active')->boolean(),
             ])
             ->actions([
                 EditAction::make(),

@@ -30,7 +30,6 @@ final class GivebackDocumentationPage extends GivebackPlatformPage
     {
         return [
             'downloadMockupPdf' => Action::make('downloadMockupPdf')
-                ->label('Scarica PDF mockup')
                 ->icon('heroicon-o-arrow-down-tray')
                 ->color('gray')
                 ->action(function () {

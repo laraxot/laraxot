@@ -42,12 +42,12 @@ final class ViewSignCatalogItem extends XotBaseViewRecord
                 ->columnSpanFull()
                 ->components([
                     Grid::make(3)->components([
-                        TextEntry::make('code')->label(__('signage::signage.fields.code'))->weight('bold'),
-                        TextEntry::make('priceList.name')->label(__('signage::signage.catalog_fields.price_list')),
-                        TextEntry::make('led_temperature_code')->label(__('signage::signage.catalog_fields.led_temperature_code'))->placeholder('—'),
+                        TextEntry::make('code')->weight('bold'),
+                        TextEntry::make('priceList.name'),
+                        TextEntry::make('led_temperature_code')->placeholder('—'),
                     ]),
-                    TextEntry::make('name')->label(__('signage::signage.fields.name'))->columnSpanFull(),
-                    TextEntry::make('description')->label(__('signage::signage.catalog_fields.description'))->placeholder('—')->columnSpanFull(),
+                    TextEntry::make('name')->columnSpanFull(),
+                    TextEntry::make('description')->placeholder('—')->columnSpanFull(),
                 ]),
 
             'pricing' => Section::make(__('signage::signage.pricing.title'))

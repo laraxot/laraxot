@@ -23,23 +23,21 @@ final class ListMetalPartEstimates extends XotBaseListRecords
     public function getTableColumns(): array
     {
         return [
-            'part_code' => Tables\Columns\TextColumn::make('part_code')->label(__('metalwork::metalwork.fields.part_code'))->searchable()->sortable(),
-            'name' => Tables\Columns\TextColumn::make('name')->label(__('metalwork::metalwork.fields.name'))->searchable()->wrap(),
-            'quantity' => Tables\Columns\TextColumn::make('quantity')->label(__('metalwork::metalwork.fields.quantity'))->numeric(),
+            'part_code' => Tables\Columns\TextColumn::make('part_code')->searchable()->sortable(),
+            'name' => Tables\Columns\TextColumn::make('name')->searchable()->wrap(),
+            'quantity' => Tables\Columns\TextColumn::make('quantity')->numeric(),
             'gross_weight_kg' => Tables\Columns\TextColumn::make('gross_weight_kg')
-                ->label(__('metalwork::metalwork.fields.gross_weight_kg'))
                 ->numeric(2)
                 ->suffix(' kg'),
-            'total_cost' => Tables\Columns\TextColumn::make('total_cost')->label(__('metalwork::metalwork.fields.total_cost'))->numeric(2)->suffix(' €'),
-            'sale_price' => Tables\Columns\TextColumn::make('sale_price')->label(__('metalwork::metalwork.fields.sale_price'))->numeric(2)->suffix(' €'),
-            'rawMaterial.code' => Tables\Columns\TextColumn::make('rawMaterial.code')->label(__('metalwork::metalwork.raw_material'))->placeholder('—'),
+            'total_cost' => Tables\Columns\TextColumn::make('total_cost')->numeric(2)->suffix(' €'),
+            'sale_price' => Tables\Columns\TextColumn::make('sale_price')->numeric(2)->suffix(' €'),
+            'rawMaterial.code' => Tables\Columns\TextColumn::make('rawMaterial.code')->placeholder('—'),
             'quotation.code' => Tables\Columns\TextColumn::make('quotation.code')
-                ->label(__('metalwork::metalwork.fields.quotation'))
                 ->placeholder('—')
                 ->url(fn (MetalPartEstimate $record): ?string => $record->quotation_id === null
                     ? null
                     : QuotationResource::getUrl('edit', ['record' => $record->quotation_id], panel: 'admin')),
-            'created_at' => Tables\Columns\TextColumn::make('created_at')->label(__('metalwork::metalwork.fields.created_at'))->dateTime('d/m/Y H:i')->sortable(),
+            'created_at' => Tables\Columns\TextColumn::make('created_at')->dateTime('d/m/Y H:i')->sortable(),
         ];
     }
 

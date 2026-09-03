@@ -39,11 +39,11 @@ final class PriceEntriesRelationManager extends XotBaseRelationManager
     {
         return [
             'invoice' => Grid::make(3)->components([
-                TextInput::make('invoice_number')->label(__('signage::signage.catalog_fields.invoice_number')),
-                DatePicker::make('recorded_on')->label(__('signage::signage.catalog_fields.recorded_on'))->required(),
-                TextInput::make('amount')->label(__('signage::signage.catalog_fields.amount'))->numeric()->required(),
+                TextInput::make('invoice_number'),
+                DatePicker::make('recorded_on')->required(),
+                TextInput::make('amount')->numeric()->required(),
             ]),
-            'notes' => Textarea::make('notes')->label(__('signage::signage.fields.notes'))->rows(2)->columnSpanFull(),
+            'notes' => Textarea::make('notes')->rows(2)->columnSpanFull(),
         ];
     }
 
@@ -53,10 +53,10 @@ final class PriceEntriesRelationManager extends XotBaseRelationManager
     public function getTableColumns(): array
     {
         return [
-            'invoice_number' => Tables\Columns\TextColumn::make('invoice_number')->label(__('signage::signage.catalog_fields.invoice_number'))->placeholder('—'),
-            'recorded_on' => Tables\Columns\TextColumn::make('recorded_on')->label(__('signage::signage.catalog_fields.recorded_on'))->date()->sortable(),
-            'amount' => Tables\Columns\TextColumn::make('amount')->label(__('signage::signage.catalog_fields.amount'))->money('EUR')->sortable(),
-            'notes' => Tables\Columns\TextColumn::make('notes')->label(__('signage::signage.fields.notes'))->placeholder('—')->limit(40),
+            'invoice_number' => Tables\Columns\TextColumn::make('invoice_number')->placeholder('—'),
+            'recorded_on' => Tables\Columns\TextColumn::make('recorded_on')->date()->sortable(),
+            'amount' => Tables\Columns\TextColumn::make('amount')->money('EUR')->sortable(),
+            'notes' => Tables\Columns\TextColumn::make('notes')->placeholder('—')->limit(40),
         ];
     }
 

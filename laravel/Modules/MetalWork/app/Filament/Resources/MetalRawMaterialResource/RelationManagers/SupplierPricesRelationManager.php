@@ -27,14 +27,14 @@ final class SupplierPricesRelationManager extends XotBaseRelationManager
         return $table
             ->defaultSort('recorded_on', 'desc')
             ->columns([
-                Tables\Columns\TextColumn::make('recorded_on')->label(__('metalwork::metalwork.fields.recorded_on'))->date('d/m/Y')->sortable(),
-                Tables\Columns\TextColumn::make('supplier_name')->label(__('metalwork::metalwork.fields.supplier_name'))->searchable(),
-                Tables\Columns\TextColumn::make('invoice_number')->label(__('metalwork::metalwork.fields.invoice_number'))->placeholder('—')->searchable(),
-                Tables\Columns\TextColumn::make('delivery_note_number')->label(__('metalwork::metalwork.fields.delivery_note_number'))->placeholder('—'),
-                Tables\Columns\TextColumn::make('quantity')->label(__('metalwork::metalwork.fields.quantity'))->numeric(2),
-                Tables\Columns\TextColumn::make('unit_price')->label(__('metalwork::metalwork.fields.unit_price'))->numeric(4)->suffix(' €'),
-                Tables\Columns\TextColumn::make('line_total')->label(__('metalwork::metalwork.fields.line_total'))->numeric(2)->suffix(' €'),
-                Tables\Columns\TextColumn::make('source_file')->label(__('metalwork::metalwork.fields.source_file'))->placeholder('—')->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('recorded_on')->date('d/m/Y')->sortable(),
+                Tables\Columns\TextColumn::make('supplier_name')->searchable(),
+                Tables\Columns\TextColumn::make('invoice_number')->placeholder('—')->searchable(),
+                Tables\Columns\TextColumn::make('delivery_note_number')->placeholder('—'),
+                Tables\Columns\TextColumn::make('quantity')->numeric(2),
+                Tables\Columns\TextColumn::make('unit_price')->numeric(4)->suffix(' €'),
+                Tables\Columns\TextColumn::make('line_total')->numeric(2)->suffix(' €'),
+                Tables\Columns\TextColumn::make('source_file')->placeholder('—')->toggleable(isToggledHiddenByDefault: true),
             ]);
     }
 }
