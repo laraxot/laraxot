@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace Modules\Billing\Filament\Resources\SupplierInvoiceResource\Pages;
 
-use Filament\Resources\Pages\EditRecord;
 use Modules\Billing\Filament\Resources\SupplierInvoiceResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
-final class EditSupplierInvoice extends EditRecord
+final class EditSupplierInvoice extends XotBaseEditRecord
 {
     protected static string $resource = SupplierInvoiceResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            SupplierInvoiceResource::reconcileAction(),
+            'reconcile' => SupplierInvoiceResource::reconcileAction(),
         ];
     }
 }

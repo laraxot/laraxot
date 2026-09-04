@@ -5,17 +5,17 @@ declare(strict_types=1);
 namespace Modules\Billing\Filament\Resources\DeliveryNoteResource\Pages;
 
 use Filament\Actions\CreateAction;
-use Filament\Resources\Pages\ListRecords;
 use Modules\Billing\Filament\Resources\DeliveryNoteResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
-final class ListDeliveryNotes extends ListRecords
+final class ListDeliveryNotes extends XotBaseListRecords
 {
     protected static string $resource = DeliveryNoteResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            'create' => CreateAction::make(),
         ];
     }
 }

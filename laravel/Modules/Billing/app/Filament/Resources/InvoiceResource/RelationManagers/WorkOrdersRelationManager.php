@@ -7,8 +7,7 @@ namespace Modules\Billing\Filament\Resources\InvoiceResource\RelationManagers;
 use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
 use Filament\Forms\Components\Select;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
@@ -16,8 +15,9 @@ use Illuminate\Support\Facades\DB;
 use Modules\Billing\Actions\LinkInvoiceToWorkOrderAction;
 use Modules\Billing\Models\Invoice;
 use Modules\Billing\Models\InvoiceWorkOrderLink;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class WorkOrdersRelationManager extends RelationManager
+final class WorkOrdersRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'workOrderLinks';
 
@@ -26,10 +26,13 @@ final class WorkOrdersRelationManager extends RelationManager
         return __('billing::billing.sections.work_orders_linked');
     }
 
-    public function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public function getFormSchema(): array
     {
-        return $schema->components([
-            Select::make('work_order_id')
+        return [
+            'work_order_id' => Select::make('work_order_id')
                 ->label(__('billing::billing.fields.work_order'))
                 ->options(fn (): array => DB::table('work_orders')
                     ->orderByDesc('id')
@@ -43,7 +46,7 @@ final class WorkOrdersRelationManager extends RelationManager
                 ->searchable()
                 ->preload()
                 ->required(),
-        ]);
+        ];
     }
 
     public function table(Table $table): Table

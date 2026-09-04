@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Inventory\Filament\Resources\WarehouseLocationResource\Pages;
 
-use Filament\Resources\Pages\EditRecord;
 use Modules\Inventory\Filament\Resources\WarehouseLocationResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
-final class EditWarehouseLocation extends EditRecord
+final class EditWarehouseLocation extends XotBaseEditRecord
 {
     protected static string $resource = WarehouseLocationResource::class;
 }

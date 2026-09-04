@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Inventory\Filament\Resources\InventoryMovementResource\Pages;
 
-use Filament\Resources\Pages\EditRecord;
 use Illuminate\Validation\ValidationException;
 use Modules\Catalog\Models\Product;
 use Modules\Inventory\Filament\Resources\InventoryMovementResource;
 use Modules\Inventory\Models\WarehouseLocation;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
-final class EditInventoryMovement extends EditRecord
+final class EditInventoryMovement extends XotBaseEditRecord
 {
     protected static string $resource = InventoryMovementResource::class;
 

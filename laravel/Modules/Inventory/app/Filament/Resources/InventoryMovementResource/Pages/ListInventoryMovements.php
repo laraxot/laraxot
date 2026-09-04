@@ -5,18 +5,17 @@ declare(strict_types=1);
 namespace Modules\Inventory\Filament\Resources\InventoryMovementResource\Pages;
 
 use Filament\Actions;
-use Filament\Resources\Pages\ListRecords;
 use Modules\Inventory\Filament\Resources\InventoryMovementResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
-final class ListInventoryMovements extends ListRecords
+final class ListInventoryMovements extends XotBaseListRecords
 {
     protected static string $resource = InventoryMovementResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            'create' => Actions\CreateAction::make(),
         ];
     }
 }
-

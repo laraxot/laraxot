@@ -5,21 +5,23 @@ declare(strict_types=1);
 namespace Modules\Billing\Filament\Resources\InvoiceResource\Pages;
 
 use Filament\Actions\Action;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Notifications\Notification;
-use Filament\Resources\Pages\ViewRecord;
+use Filament\Schemas\Components\Component;
 use Modules\Billing\Actions\GenerateInvoicePdfAction;
 use Modules\Billing\Actions\SendElectronicInvoiceAction;
 use Modules\Billing\Filament\Resources\InvoiceResource;
 use Modules\Billing\Models\Invoice;
+use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
 
-final class ViewInvoice extends ViewRecord
+final class ViewInvoice extends XotBaseViewRecord
 {
     protected static string $resource = InvoiceResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Action::make('downloadPdf')
+            'downloadPdf' => Action::make('downloadPdf')
                 ->label(__('billing::billing.actions.download_pdf'))
                 ->icon('heroicon-o-arrow-down-tray')
                 ->action(function () {
@@ -33,7 +35,7 @@ final class ViewInvoice extends ViewRecord
                         sprintf('invoice-%s.pdf', $invoice->number ?: $invoice->id),
                     );
                 }),
-            Action::make('sendElectronicInvoice')
+            'sendElectronicInvoice' => Action::make('sendElectronicInvoice')
                 ->label(__('billing::billing.actions.send_einvoice'))
                 ->icon('heroicon-o-paper-airplane')
                 ->requiresConfirmation()
@@ -67,6 +69,22 @@ final class ViewInvoice extends ViewRecord
                             ->send();
                     }
                 }),
+        ];
+    }
+
+    /**
+     * @return array<string, Component>
+     */
+    protected function getInfolistSchema(): array
+    {
+        return [
+            'number' => TextEntry::make('number'),
+            'customer_id' => TextEntry::make('customer_id'),
+            'issued_on' => TextEntry::make('issued_on'),
+            'total' => TextEntry::make('total'),
+            'electronic_invoice_sent_at' => TextEntry::make('electronic_invoice_sent_at'),
+            'electronic_invoice_external_id' => TextEntry::make('electronic_invoice_external_id'),
+            'updated_at' => TextEntry::make('updated_at'),
         ];
     }
 }

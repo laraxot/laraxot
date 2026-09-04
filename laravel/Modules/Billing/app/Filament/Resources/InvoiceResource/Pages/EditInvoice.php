@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Billing\Filament\Resources\InvoiceResource\Pages;
 
-use Filament\Resources\Pages\EditRecord;
 use Modules\Billing\Filament\Resources\InvoiceResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
-final class EditInvoice extends EditRecord
+final class EditInvoice extends XotBaseEditRecord
 {
     protected static string $resource = InvoiceResource::class;
 }
-

@@ -5,17 +5,17 @@ declare(strict_types=1);
 namespace Modules\Inventory\Filament\Resources\WarehouseLocationResource\Pages;
 
 use Filament\Actions;
-use Filament\Resources\Pages\ListRecords;
 use Modules\Inventory\Filament\Resources\WarehouseLocationResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
-final class ListWarehouseLocations extends ListRecords
+final class ListWarehouseLocations extends XotBaseListRecords
 {
     protected static string $resource = WarehouseLocationResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            'create' => Actions\CreateAction::make(),
         ];
     }
 }

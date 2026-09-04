@@ -10,16 +10,16 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Billing\Models\DeliveryNoteLine;
 use Modules\Billing\Models\SupplierInvoice;
 use Modules\Billing\Models\SupplierInvoiceLine;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class LinesRelationManager extends RelationManager
+final class LinesRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'lines';
 
@@ -59,22 +59,25 @@ final class LinesRelationManager extends RelationManager
             ->all();
     }
 
-    public function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public function getFormSchema(): array
     {
-        return $schema->components([
-            TextInput::make('description')
+        return [
+            'description' => TextInput::make('description')
                 ->label(__('billing::suppliers.fields.description'))
                 ->required()
                 ->maxLength(255)
                 ->columnSpanFull(),
-            TextInput::make('quantity')
+            'quantity' => TextInput::make('quantity')
                 ->label(__('billing::suppliers.fields.quantity'))
                 ->numeric()
                 ->minValue(0)
                 ->step(0.01)
                 ->default(1)
                 ->required(),
-            TextInput::make('unit_price')
+            'unit_price' => TextInput::make('unit_price')
                 ->label(__('billing::suppliers.fields.unit_price'))
                 ->numeric()
                 ->minValue(0)
@@ -82,13 +85,13 @@ final class LinesRelationManager extends RelationManager
                 ->prefix('€')
                 ->default(0)
                 ->required(),
-            Select::make('delivery_note_line_id')
+            'delivery_note_line_id' => Select::make('delivery_note_line_id')
                 ->label(__('billing::suppliers.fields.delivery_note_line'))
                 ->options(fn (): array => $this->deliveryNoteLineOptions())
                 ->searchable()
                 ->preload()
                 ->columnSpanFull(),
-        ])->columns(2);
+        ];
     }
 
     public function table(Table $table): Table

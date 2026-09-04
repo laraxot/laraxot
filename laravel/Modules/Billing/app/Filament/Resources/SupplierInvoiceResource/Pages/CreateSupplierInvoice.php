@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Billing\Filament\Resources\SupplierInvoiceResource\Pages;
 
-use Filament\Resources\Pages\CreateRecord;
 use Modules\Billing\Filament\Resources\SupplierInvoiceResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 
-final class CreateSupplierInvoice extends CreateRecord
+final class CreateSupplierInvoice extends XotBaseCreateRecord
 {
     protected static string $resource = SupplierInvoiceResource::class;
 }

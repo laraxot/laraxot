@@ -9,14 +9,16 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Schemas\Components\Component;
+use Filament\Schemas\Components\Grid;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Billing\Models\DeliveryNoteLine;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class LinesRelationManager extends RelationManager
+final class LinesRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'lines';
 
@@ -25,30 +27,35 @@ final class LinesRelationManager extends RelationManager
         return __('billing::suppliers.delivery_note_lines');
     }
 
-    public function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public function getFormSchema(): array
     {
-        return $schema->components([
-            TextInput::make('description')
-                ->label(__('billing::suppliers.fields.description'))
-                ->required()
-                ->maxLength(255)
-                ->columnSpanFull(),
-            TextInput::make('quantity')
-                ->label(__('billing::suppliers.fields.quantity'))
-                ->numeric()
-                ->minValue(0)
-                ->step(0.01)
-                ->default(1)
-                ->required(),
-            TextInput::make('unit_price')
-                ->label(__('billing::suppliers.fields.unit_price'))
-                ->numeric()
-                ->minValue(0)
-                ->step(0.01)
-                ->prefix('€')
-                ->default(0)
-                ->required(),
-        ])->columns(2);
+        return [
+            'line' => Grid::make(2)->components([
+                TextInput::make('description')
+                    ->label(__('billing::suppliers.fields.description'))
+                    ->required()
+                    ->maxLength(255)
+                    ->columnSpanFull(),
+                TextInput::make('quantity')
+                    ->label(__('billing::suppliers.fields.quantity'))
+                    ->numeric()
+                    ->minValue(0)
+                    ->step(0.01)
+                    ->default(1)
+                    ->required(),
+                TextInput::make('unit_price')
+                    ->label(__('billing::suppliers.fields.unit_price'))
+                    ->numeric()
+                    ->minValue(0)
+                    ->step(0.01)
+                    ->prefix('€')
+                    ->default(0)
+                    ->required(),
+            ]),
+        ];
     }
 
     public function table(Table $table): Table
@@ -85,5 +92,19 @@ final class LinesRelationManager extends RelationManager
             ->bulkActions([
                 DeleteBulkAction::make(),
             ]);
+    }
+
+    /**
+     * @return array<string, Component>
+     */
+    protected function getInfolistSchema(): array
+    {
+        return [
+            'number' => TextEntry::make('number'),
+            'supplier.legal_name' => TextEntry::make('supplier.legal_name'),
+            'received_on' => TextEntry::make('received_on'),
+            'lines_count' => TextEntry::make('lines_count'),
+            'notes' => TextEntry::make('notes'),
+        ];
     }
 }
