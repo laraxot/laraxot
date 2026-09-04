@@ -53,19 +53,19 @@ final class SubcontractorResource extends Resource
         return $schema->components([
             Section::make()->columnSpanFull()->components([
                 Grid::make(2)->components([
-                    TextInput::make('business_name')->label('Ragione sociale')->required()->maxLength(255),
-                    Select::make('status')->label('Stato')->default('active')->options([
+                    TextInput::make('business_name')->required()->maxLength(255),
+                    Select::make('status')->default('active')->options([
                         'active' => 'Attivo',
                         'suspended' => 'Sospeso',
                         'blocked' => 'Bloccato',
                     ]),
-                    TextInput::make('vat_number')->label('Partita IVA')->maxLength(50),
-                    TextInput::make('tax_code')->label('Codice fiscale')->maxLength(50),
-                    TextInput::make('contact_name')->label('Referente')->maxLength(255),
-                    TextInput::make('email')->label('Email')->email()->maxLength(255),
-                    TextInput::make('phone')->label('Telefono')->tel()->maxLength(255),
+                    TextInput::make('vat_number')->maxLength(50),
+                    TextInput::make('tax_code')->maxLength(50),
+                    TextInput::make('contact_name')->maxLength(255),
+                    TextInput::make('email')->email()->maxLength(255),
+                    TextInput::make('phone')->tel()->maxLength(255),
                 ]),
-                Textarea::make('notes')->label('Note')->columnSpanFull(),
+                Textarea::make('notes')->columnSpanFull(),
             ]),
         ]);
     }
@@ -74,11 +74,11 @@ final class SubcontractorResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('business_name')->label('Ragione sociale')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('vat_number')->label('Partita IVA')->toggleable(),
-                Tables\Columns\TextColumn::make('contact_name')->label('Referente')->toggleable(),
-                Tables\Columns\TextColumn::make('email')->label('Email')->toggleable(),
-                Tables\Columns\TextColumn::make('status')->label('Stato')->badge()->sortable(),
+                Tables\Columns\TextColumn::make('business_name')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('vat_number')->toggleable(),
+                Tables\Columns\TextColumn::make('contact_name')->toggleable(),
+                Tables\Columns\TextColumn::make('email')->toggleable(),
+                Tables\Columns\TextColumn::make('status')->badge()->sortable(),
             ])
             ->actions([ViewAction::make(), EditAction::make()])
             ->bulkActions([DeleteBulkAction::make()]);

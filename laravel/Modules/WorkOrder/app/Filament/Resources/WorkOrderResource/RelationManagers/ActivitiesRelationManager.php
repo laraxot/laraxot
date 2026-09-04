@@ -38,7 +38,6 @@ final class ActivitiesRelationManager extends XotBaseRelationManager
     {
         return [
             Select::make('type')
-                ->label(__('workorder::work_orders.fields.type'))
                 ->options([
                     'note' => __('workorder::work_orders.activity_types.note'),
                     'status' => __('workorder::work_orders.activity_types.status'),
@@ -46,11 +45,9 @@ final class ActivitiesRelationManager extends XotBaseRelationManager
                 ->default('note')
                 ->required(),
             Textarea::make('body')
-                ->label(__('workorder::work_orders.fields.body'))
                 ->required()
                 ->columnSpanFull(),
-            DateTimePicker::make('occurred_at')
-                ->label(__('workorder::work_orders.fields.occurred_at')),
+            DateTimePicker::make('occurred_at'),
         ];
     }
 
@@ -59,14 +56,11 @@ final class ActivitiesRelationManager extends XotBaseRelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('type')
-                    ->label(__('workorder::work_orders.fields.type'))
                     ->badge(),
                 Tables\Columns\TextColumn::make('body')
-                    ->label(__('workorder::work_orders.fields.body'))
                     ->limit(60)
                     ->wrap(),
                 Tables\Columns\TextColumn::make('occurred_at')
-                    ->label(__('workorder::work_orders.fields.occurred_at'))
                     ->dateTime()
                     ->sortable(),
             ])

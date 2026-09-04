@@ -53,19 +53,16 @@ final class ViewIntervention extends XotBaseViewRecord
                 ->visible(fn (): bool => RecordInterventionReportPage::canAccess())
                 ->url(fn (): string => RecordInterventionReportPage::getUrl(['intervention' => $interventionId])),
             'backToCalendar' => Action::make('backToCalendar')
-                ->label('Torna al calendario')
                 ->icon('heroicon-o-arrow-left')
                 ->visible(fn (): bool => $returnUrl !== null)
                 ->url(fn (): ?string => $returnUrl),
             'editIntervention' => Action::make('editIntervention')
-                ->label('Modifica')
                 ->icon('heroicon-o-pencil-square')
                 ->url(fn (): string => InterventionResource::getUrl('edit', [
                     'record' => $interventionId,
                     'return_to' => $returnUrl,
                 ])),
             'openAiAssistant' => Action::make('openAiAssistant')
-                ->label('Assistente AI')
                 ->icon('heroicon-o-microphone')
                 ->visible(fn (): bool => request()->is('operator/*')
                     && AccountFeatures::hasFeature(Auth::user(), 'operator.ai_assistant'))
@@ -76,7 +73,6 @@ final class ViewIntervention extends XotBaseViewRecord
             'delete' => DeleteAction::make()
                 ->successRedirectUrl(fn (): ?string => $returnUrl),
             'captureSignature' => Action::make('captureSignature')
-                ->label('Firma')
                 ->icon('heroicon-o-pencil')
                 ->url(fn (): string => CaptureSignature::getUrl(['interventionId' => $interventionId]))
                 ->openUrlInNewTab(),

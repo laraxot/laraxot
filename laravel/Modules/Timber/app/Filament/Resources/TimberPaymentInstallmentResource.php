@@ -78,38 +78,30 @@ final class TimberPaymentInstallmentResource extends XotBaseResource
                 ->columns(2)
                 ->components([
                     Select::make('invoice_id')
-                        ->label('Fattura')
                         ->relationship('invoice', 'number')
                         ->searchable()
                         ->preload(),
                     Select::make('customer_id')
-                        ->label('Cliente')
                         ->relationship('customer', 'business_name')
                         ->searchable()
                         ->preload(),
                     Select::make('direction')
-                        ->label('Tipo')
                         ->options(['in' => 'Entrata (incasso)', 'out' => 'Uscita (pagamento)'])
                         ->default('in')
                         ->required(),
                     DatePicker::make('due_date')
-                        ->label('Scadenza')
                         ->required(),
                     TextInput::make('amount')
-                        ->label('Importo')
                         ->numeric()
                         ->minValue(0)
                         ->required(),
                     Select::make('payment_method_code')
-                        ->label('Metodo')
                         ->options(TimberConfigMap::get('timber.payment_methods')),
                     Select::make('status_code')
-                        ->label('Stato')
                         ->options(TimberConfigMap::get('timber.payment_statuses'))
                         ->default('da_saldare')
                         ->required(),
                     Textarea::make('notes')
-                        ->label('Note')
                         ->rows(2)
                         ->columnSpanFull(),
                 ]),
@@ -119,7 +111,6 @@ final class TimberPaymentInstallmentResource extends XotBaseResource
     public static function markPaidAction(): Action
     {
         return Action::make('markPaid')
-            ->label('Segna pagato')
             ->icon('heroicon-o-check-circle')
             ->color('success')
             ->requiresConfirmation()
@@ -133,7 +124,6 @@ final class TimberPaymentInstallmentResource extends XotBaseResource
     public static function sendRemindersAction(): Action
     {
         return Action::make('sendReminders')
-            ->label('Invia solleciti')
             ->icon('heroicon-o-bell-alert')
             ->color('warning')
             ->requiresConfirmation()

@@ -97,29 +97,23 @@ final class TimberInvoiceResource extends XotBaseResource
                 ->columns(3)
                 ->components([
                     Select::make('kind')
-                        ->label('Tipo')
                         ->options(TimberConfigMap::get('timber.invoice_kinds'))
                         ->default('fattura')
                         ->required()
                         ->disabledOn('edit'),
                     TextInput::make('number')
-                        ->label('Numero')
                         ->placeholder('Assegnato all\'emissione')
                         ->maxLength(255),
                     DatePicker::make('invoice_date')
-                        ->label('Data')
                         ->default(now())
                         ->required(),
                     Select::make('customer_id')
-                        ->label('Cliente')
                         ->relationship('customer', 'business_name')
                         ->searchable()
                         ->preload(),
                     Select::make('payment_method_code')
-                        ->label('Metodo pagamento')
                         ->options(TimberConfigMap::get('timber.payment_methods')),
                     TextInput::make('payment_terms')
-                        ->label('Termini pagamento')
                         ->maxLength(255),
                 ]),
 
@@ -130,7 +124,6 @@ final class TimberInvoiceResource extends XotBaseResource
                         ->hiddenLabel()
                         ->schema([
                             Select::make('product_id')
-                                ->label('Prodotto')
                                 ->options(fn (): array => Product::query()
                                     ->where('is_active', true)
                                     ->orderBy('description')
@@ -154,11 +147,9 @@ final class TimberInvoiceResource extends XotBaseResource
                                 })
                                 ->columnSpan(2),
                             TextInput::make('description')
-                                ->label('Descrizione')
                                 ->required()
                                 ->columnSpan(2),
                             TextInput::make('quantity')
-                                ->label('Quantita')
                                 ->numeric()
                                 ->minValue(0)
                                 ->default(1)
@@ -171,28 +162,23 @@ final class TimberInvoiceResource extends XotBaseResource
                                     };
                                 }),
                             Select::make('unit_of_measure')
-                                ->label('U.m.')
                                 ->options(TimberConfigMap::get('timber.units_of_measure'))
                                 ->default('quintali')
                                 ->required(),
                             TextInput::make('unit_price')
-                                ->label('Prezzo unit.')
                                 ->numeric()
                                 ->minValue(0)
                                 ->default(0),
                             TextInput::make('discount_percent')
-                                ->label('Sconto %')
                                 ->numeric()
                                 ->minValue(0)
                                 ->maxValue(100)
                                 ->default(0),
                             Select::make('vat_rate')
-                                ->label('IVA %')
                                 ->options(TimberConfigMap::get('timber.vat_rates'))
                                 ->default('22')
                                 ->required(),
                             TextInput::make('lot_code')
-                                ->label('Lotto')
                                 ->maxLength(255),
                         ])
                         ->columns(4)
@@ -201,7 +187,6 @@ final class TimberInvoiceResource extends XotBaseResource
                 ]),
 
             Textarea::make('notes')
-                ->label('Note')
                 ->rows(3)
                 ->columnSpanFull(),
         ];
@@ -210,7 +195,6 @@ final class TimberInvoiceResource extends XotBaseResource
     public static function downloadPdfAction(): Action
     {
         return Action::make('downloadPdf')
-            ->label('Anteprima PDF')
             ->icon('heroicon-o-document-arrow-down')
             ->action(function (TimberInvoice $record): StreamedResponse {
                 $pdf = app(GenerateTimberInvoicePdfAction::class)->execute($record);
@@ -225,7 +209,6 @@ final class TimberInvoiceResource extends XotBaseResource
     public static function sendEmailAction(): Action
     {
         return Action::make('sendEmail')
-            ->label('Invia email')
             ->icon('heroicon-o-envelope')
             ->requiresConfirmation()
             ->action(function (TimberInvoice $record): void {
@@ -241,7 +224,6 @@ final class TimberInvoiceResource extends XotBaseResource
     public static function whatsAppAction(): Action
     {
         return Action::make('whatsApp')
-            ->label('WhatsApp')
             ->icon('heroicon-o-chat-bubble-left-right')
             ->color('success')
             ->url(function (TimberInvoice $record): ?string {
@@ -268,7 +250,6 @@ final class TimberInvoiceResource extends XotBaseResource
     public static function prepareEInvoiceAction(): Action
     {
         return Action::make('prepareEInvoice')
-            ->label('Genera fattura elettronica')
             ->icon('heroicon-o-paper-airplane')
             ->color('info')
             ->requiresConfirmation()
@@ -286,7 +267,6 @@ final class TimberInvoiceResource extends XotBaseResource
     public static function issueAction(): Action
     {
         return Action::make('issue')
-            ->label('Emetti')
             ->icon('heroicon-o-check-badge')
             ->color('success')
             ->requiresConfirmation()

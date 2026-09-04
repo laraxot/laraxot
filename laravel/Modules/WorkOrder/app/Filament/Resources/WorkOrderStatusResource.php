@@ -61,13 +61,11 @@ final class WorkOrderStatusResource extends GatedXotBaseResource
     {
         return [
             TextInput::make('code')
-                ->label(__('workorder::work_orders.fields.code'))
                 ->helperText(__('workorder::work_orders.status_help.code'))
                 ->required()
                 ->maxLength(50)
                 ->unique(ignoreRecord: true),
             TextInput::make('name')
-                ->label(__('workorder::work_orders.fields.title'))
                 ->required()
                 ->maxLength(255),
             Select::make('color')

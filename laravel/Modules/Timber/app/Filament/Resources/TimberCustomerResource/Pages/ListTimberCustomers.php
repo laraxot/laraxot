@@ -31,31 +31,24 @@ final class ListTimberCustomers extends XotBaseListRecords
     {
         return [
             'code' => Tables\Columns\TextColumn::make('code')
-                ->label('Codice')
                 ->searchable()
                 ->sortable()
                 ->toggleable(),
             'business_name' => Tables\Columns\TextColumn::make('business_name')
-                ->label('Denominazione')
                 ->searchable()
                 ->sortable(),
             'vat_number' => Tables\Columns\TextColumn::make('vat_number')
-                ->label('Partita IVA')
                 ->searchable()
                 ->toggleable(),
             'city' => Tables\Columns\TextColumn::make('city')
-                ->label('Citta')
                 ->toggleable(),
             'is_customer' => Tables\Columns\IconColumn::make('is_customer')
-                ->label('Cliente')
                 ->boolean()
                 ->toggleable(),
             'is_supplier' => Tables\Columns\IconColumn::make('is_supplier')
-                ->label('Fornitore')
                 ->boolean()
                 ->toggleable(),
             'is_active' => Tables\Columns\IconColumn::make('is_active')
-                ->label('Attivo')
                 ->boolean(),
         ];
     }
@@ -64,8 +57,8 @@ final class ListTimberCustomers extends XotBaseListRecords
     public function getTableFilters(): array
     {
         return [
-            'is_customer' => Tables\Filters\TernaryFilter::make('is_customer')->label('Cliente'),
-            'is_supplier' => Tables\Filters\TernaryFilter::make('is_supplier')->label('Fornitore'),
+            'is_customer' => Tables\Filters\TernaryFilter::make('is_customer'),
+            'is_supplier' => Tables\Filters\TernaryFilter::make('is_supplier'),
         ];
     }
 

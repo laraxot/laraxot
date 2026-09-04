@@ -109,22 +109,17 @@ final class TimberCustomerResource extends XotBaseResource
         return [
             Grid::make(3)->components([
                 TextInput::make('code')
-                    ->label('Codice')
                     ->maxLength(255),
                 TextInput::make('tax_code')
-                    ->label('Codice fiscale')
                     ->maxLength(255),
                 TextInput::make('vat_number')
-                    ->label('Partita IVA')
                     ->maxLength(255),
             ]),
 
             Grid::make(2)->components([
                 Toggle::make('is_customer')
-                    ->label('Cliente')
                     ->default(true),
                 Toggle::make('is_supplier')
-                    ->label('Fornitore')
                     ->default(false),
             ]),
 
@@ -132,25 +127,19 @@ final class TimberCustomerResource extends XotBaseResource
                 ->columns(2)
                 ->components([
                     TextInput::make('business_name')
-                        ->label('Denominazione')
                         ->required()
                         ->maxLength(255)
                         ->columnSpanFull(),
                     TextInput::make('address_line1')
-                        ->label('Indirizzo')
                         ->maxLength(255)
                         ->columnSpanFull(),
                     TextInput::make('postal_code')
-                        ->label('CAP')
                         ->maxLength(255),
                     TextInput::make('city')
-                        ->label('Citta')
                         ->maxLength(255),
                     TextInput::make('province')
-                        ->label('Provincia')
                         ->maxLength(255),
                     TextInput::make('country')
-                        ->label('Nazione')
                         ->default('Italia')
                         ->maxLength(255),
                 ]),
@@ -159,13 +148,10 @@ final class TimberCustomerResource extends XotBaseResource
                 ->columns(3)
                 ->components([
                     TextInput::make('sdi_recipient_code')
-                        ->label('Recapito (Codice destinatario)')
                         ->maxLength(7),
                     TextInput::make('sdi_admin_ref')
-                        ->label('Rif. amministrazione')
                         ->maxLength(255),
                     TextInput::make('pec')
-                        ->label('PEC')
                         ->email()
                         ->maxLength(255),
                 ]),
@@ -174,21 +160,16 @@ final class TimberCustomerResource extends XotBaseResource
                 ->columns(2)
                 ->components([
                     TextInput::make('contact_person')
-                        ->label('Referente')
                         ->maxLength(255),
                     TextInput::make('phone')
-                        ->label('Telefono')
                         ->tel()
                         ->maxLength(255),
                     TextInput::make('mobile')
-                        ->label('Cellulare')
                         ->tel()
                         ->maxLength(255),
                     TextInput::make('fax')
-                        ->label('Fax')
                         ->maxLength(255),
                     TextInput::make('email')
-                        ->label('Email')
                         ->email()
                         ->maxLength(255)
                         ->columnSpanFull(),
@@ -202,19 +183,15 @@ final class TimberCustomerResource extends XotBaseResource
         return [
             Grid::make(2)->components([
                 TextInput::make('default_discount_percent')
-                    ->label('Sconto (%)')
                     ->numeric()
                     ->minValue(0)
                     ->maxValue(100),
                 TextInput::make('price_list_code')
-                    ->label('Listino')
                     ->maxLength(255),
                 TextInput::make('credit_limit')
-                    ->label('Fido')
                     ->numeric()
                     ->minValue(0),
                 Select::make('agent_id')
-                    ->label('Agente')
                     ->options(fn (): array => TimberAgent::query()
                         ->where('is_active', true)
                         ->orderBy('full_name')
@@ -223,13 +200,10 @@ final class TimberCustomerResource extends XotBaseResource
                     ->searchable()
                     ->preload(),
                 TextInput::make('payment_terms')
-                    ->label('Pagamento')
                     ->maxLength(255),
                 TextInput::make('vat_rate_code')
-                    ->label('Aliquota IVA')
                     ->maxLength(255),
                 TextInput::make('carriage_code')
-                    ->label('Porto')
                     ->maxLength(255),
             ]),
 
@@ -237,10 +211,8 @@ final class TimberCustomerResource extends XotBaseResource
                 ->columns(2)
                 ->components([
                     TextInput::make('iban')
-                        ->label('Coord. bancarie (IBAN)')
                         ->maxLength(34),
                     TextInput::make('our_bank')
-                        ->label('Ns. banca')
                         ->maxLength(255),
                 ]),
 
@@ -248,15 +220,12 @@ final class TimberCustomerResource extends XotBaseResource
                 ->columns(2)
                 ->components([
                     TextInput::make('intent_declaration_number')
-                        ->label('Dich. intento')
                         ->maxLength(255),
-                    DatePicker::make('intent_declaration_date')
-                        ->label('Del'),
+                    DatePicker::make('intent_declaration_date'),
                 ]),
 
             Grid::make(2)->components([
-                Toggle::make('send_documents_by_email')
-                    ->label('Invia documenti tramite email'),
+                Toggle::make('send_documents_by_email'),
                 Toggle::make('invoice_with_withholding')
                     ->label("Fattura con Rit. d'acconto"),
             ]),
@@ -264,10 +233,8 @@ final class TimberCustomerResource extends XotBaseResource
             Section::make('In creazione documenti')
                 ->components([
                     Textarea::make('document_notice')
-                        ->label('Mostra avviso')
                         ->rows(2),
                     Textarea::make('document_note')
-                        ->label('Inserisci nota')
                         ->rows(2),
                 ]),
         ];
@@ -278,7 +245,6 @@ final class TimberCustomerResource extends XotBaseResource
     {
         return [
             Textarea::make('notes')
-                ->label('Note')
                 ->rows(4)
                 ->columnSpanFull(),
 
@@ -290,7 +256,6 @@ final class TimberCustomerResource extends XotBaseResource
                         ->hiddenLabel()
                         ->schema([
                             Textarea::make('body')
-                                ->label('Appunto')
                                 ->required()
                                 ->rows(2),
                         ])
@@ -299,7 +264,6 @@ final class TimberCustomerResource extends XotBaseResource
                 ]),
 
             Toggle::make('is_active')
-                ->label('Attivo')
                 ->default(true),
         ];
     }
@@ -307,7 +271,6 @@ final class TimberCustomerResource extends XotBaseResource
     public static function printSheetAction(): Action
     {
         return Action::make('printSheet')
-            ->label('Stampa scheda')
             ->icon('heroicon-o-document-text')
             ->action(function (TimberCustomer $record): StreamedResponse {
                 $pdf = app(GenerateTimberCustomerSheetPdfAction::class)->execute($record);
@@ -321,7 +284,6 @@ final class TimberCustomerResource extends XotBaseResource
     public static function printLabelAction(): Action
     {
         return Action::make('printLabel')
-            ->label('Etichetta')
             ->icon('heroicon-o-tag')
             ->action(function (TimberCustomer $record): StreamedResponse {
                 $pdf = app(GenerateTimberCustomerLabelPdfAction::class)->execute($record);

@@ -22,14 +22,14 @@ final class ProgressReportsRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('number')->label('N.')->sortable(),
-                Tables\Columns\TextColumn::make('status')->label('Stato')->badge()->sortable(),
-                Tables\Columns\TextColumn::make('period_from')->label('Da')->date(),
-                Tables\Columns\TextColumn::make('period_to')->label('A')->date(),
-                Tables\Columns\TextColumn::make('work_amount')->label('Lavori')->money('EUR')->sortable(),
-                Tables\Columns\TextColumn::make('retention_amount')->label('Ritenuta')->money('EUR')->sortable(),
-                Tables\Columns\TextColumn::make('certificate_amount')->label('Certificato')->money('EUR')->sortable(),
-                Tables\Columns\TextColumn::make('progress_percentage')->label('%')->suffix('%')->sortable(),
+                Tables\Columns\TextColumn::make('number')->sortable(),
+                Tables\Columns\TextColumn::make('status')->badge()->sortable(),
+                Tables\Columns\TextColumn::make('period_from')->date(),
+                Tables\Columns\TextColumn::make('period_to')->date(),
+                Tables\Columns\TextColumn::make('work_amount')->money('EUR')->sortable(),
+                Tables\Columns\TextColumn::make('retention_amount')->money('EUR')->sortable(),
+                Tables\Columns\TextColumn::make('certificate_amount')->money('EUR')->sortable(),
+                Tables\Columns\TextColumn::make('progress_percentage')->suffix('%')->sortable(),
             ]);
     }
 }

@@ -81,7 +81,6 @@ final class TimberWoodSpeciesResource extends XotBaseResource
                 ->columns(2)
                 ->components([
                     TextInput::make('name')
-                        ->label('Nome')
                         ->required()
                         ->maxLength(255)
                         ->live(onBlur: true)
@@ -92,18 +91,15 @@ final class TimberWoodSpeciesResource extends XotBaseResource
                             }
                         }),
                     TextInput::make('code')
-                        ->label('Codice')
                         ->required()
                         ->maxLength(255)
                         ->unique(ignoreRecord: true)
                         ->helperText('Codice stabile usato internamente (es. "abete"). Non cambiarlo dopo l\'uso.'),
                     Grid::make(2)->components([
                         TextInput::make('sort_order')
-                            ->label('Ordinamento')
                             ->integer()
                             ->default(0),
                         Toggle::make('is_active')
-                            ->label('Attiva')
                             ->default(true),
                     ]),
                 ]),

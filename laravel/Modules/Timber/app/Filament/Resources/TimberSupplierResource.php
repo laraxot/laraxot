@@ -86,47 +86,37 @@ final class TimberSupplierResource extends XotBaseResource
                 ->components([
                     Grid::make(2)->components([
                         TextInput::make('legal_name')
-                            ->label('Ragione sociale')
                             ->required()
                             ->maxLength(255),
 
                         TextInput::make('vat_number')
-                            ->label('Partita IVA')
                             ->maxLength(255),
 
                         TextInput::make('tax_code')
-                            ->label('Codice fiscale')
                             ->maxLength(255),
 
                         TextInput::make('email')
-                            ->label('Email')
                             ->email()
                             ->maxLength(255),
 
                         TextInput::make('phone')
-                            ->label('Telefono')
                             ->maxLength(255),
 
                         TextInput::make('certifications')
-                            ->label('Certificazioni')
                             ->placeholder('FSC, PEFC')
                             ->maxLength(255),
 
                         TextInput::make('city')
-                            ->label('Citta')
                             ->maxLength(255),
 
                         TextInput::make('province')
-                            ->label('Provincia')
                             ->maxLength(255),
 
                         Toggle::make('is_active')
-                            ->label('Attivo')
                             ->default(true),
                     ]),
 
                     Textarea::make('notes')
-                        ->label('Note')
                         ->columnSpanFull(),
                 ])
                 ->columns(2),
@@ -140,7 +130,6 @@ final class TimberSupplierResource extends XotBaseResource
                         ->hiddenLabel()
                         ->schema([
                             Textarea::make('body')
-                                ->label('Appunto')
                                 ->required()
                                 ->rows(2),
                         ])

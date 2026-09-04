@@ -29,12 +29,12 @@ final class OfficialRecordsRelationManager extends RelationManager
     public function form(Schema $schema): Schema
     {
         return $schema->components([
-            TextInput::make('type')->label('Tipo')->required(),
-            TextInput::make('title')->label('Titolo')->required(),
-            TextInput::make('protocol_number')->label('Protocollo'),
-            DatePicker::make('recorded_on')->label('Data'),
-            Select::make('status')->label('Stato')->options(['draft' => 'Bozza', 'sent' => 'Inviato', 'signed' => 'Firmato', 'archived' => 'Archiviato'])->default('draft'),
-            Textarea::make('summary')->label('Sintesi')->columnSpanFull(),
+            TextInput::make('type')->required(),
+            TextInput::make('title')->required(),
+            TextInput::make('protocol_number'),
+            DatePicker::make('recorded_on'),
+            Select::make('status')->options(['draft' => 'Bozza', 'sent' => 'Inviato', 'signed' => 'Firmato', 'archived' => 'Archiviato'])->default('draft'),
+            Textarea::make('summary')->columnSpanFull(),
         ]);
     }
 
@@ -42,11 +42,11 @@ final class OfficialRecordsRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('type')->label('Tipo')->badge(),
-                Tables\Columns\TextColumn::make('title')->label('Titolo')->searchable(),
-                Tables\Columns\TextColumn::make('protocol_number')->label('Protocollo'),
-                Tables\Columns\TextColumn::make('status')->label('Stato')->badge(),
-                Tables\Columns\TextColumn::make('recorded_on')->label('Data')->date()->sortable(),
+                Tables\Columns\TextColumn::make('type')->badge(),
+                Tables\Columns\TextColumn::make('title')->searchable(),
+                Tables\Columns\TextColumn::make('protocol_number'),
+                Tables\Columns\TextColumn::make('status')->badge(),
+                Tables\Columns\TextColumn::make('recorded_on')->date()->sortable(),
             ])
             ->headerActions([CreateAction::make()])
             ->actions([EditAction::make(), DeleteAction::make()]);

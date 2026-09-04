@@ -32,26 +32,20 @@ final class ListTimberProducts extends XotBaseListRecords
     {
         return [
             'category' => Tables\Columns\TextColumn::make('category')
-                ->label('Categoria')
                 ->toggleable()
                 ->sortable(),
             'code' => Tables\Columns\TextColumn::make('code')
-                ->label('Codice')
                 ->searchable()
                 ->sortable(),
             'description' => Tables\Columns\TextColumn::make('description')
-                ->label('Descrizione')
                 ->searchable()
                 ->wrap(),
             'unit_of_measure' => Tables\Columns\TextColumn::make('unit_of_measure')
-                ->label('U.m.')
                 ->toggleable(),
             'product_type_code' => Tables\Columns\TextColumn::make('product_type_code')
-                ->label('Tipologia')
                 ->formatStateUsing(fn (?string $state): string => TimberConfigMap::get('timber.product_types')[$state] ?? (string) $state)
                 ->toggleable(),
             'is_active' => Tables\Columns\IconColumn::make('is_active')
-                ->label('Attivo')
                 ->boolean(),
         ];
     }
@@ -61,7 +55,6 @@ final class ListTimberProducts extends XotBaseListRecords
     {
         return [
             'product_type_code' => Tables\Filters\SelectFilter::make('product_type_code')
-                ->label('Tipologia')
                 ->options(TimberConfigMap::get('timber.product_types')),
         ];
     }

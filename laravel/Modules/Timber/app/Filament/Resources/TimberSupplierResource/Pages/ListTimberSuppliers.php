@@ -30,17 +30,13 @@ final class ListTimberSuppliers extends XotBaseListRecords
     {
         return [
             'legal_name' => Tables\Columns\TextColumn::make('legal_name')
-                ->label('Ragione sociale')
                 ->searchable()
                 ->sortable(),
             'vat_number' => Tables\Columns\TextColumn::make('vat_number')
-                ->label('Partita IVA')
                 ->toggleable(),
             'city' => Tables\Columns\TextColumn::make('city')
-                ->label('Citta')
                 ->toggleable(),
             'is_active' => Tables\Columns\IconColumn::make('is_active')
-                ->label('Attivo')
                 ->boolean(),
             'updated_at' => Tables\Columns\TextColumn::make('updated_at')
                 ->dateTime()

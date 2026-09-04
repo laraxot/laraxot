@@ -125,7 +125,6 @@ final class ViewQuotation extends ViewRecord
                                 : null;
                         }),
                     Select::make('status_code')
-                        ->label(__('workorder::work_orders.fields.status'))
                         ->options(fn (): array => WorkOrderStatus::query()->orderBy('sort_order')->pluck('name', 'code')->all()),
                     Select::make('assigned_user_id')
                         ->label(__('work_orders.fields.assigned_to'))

@@ -30,14 +30,11 @@ final class ListTimberCustomerPrices extends XotBaseListRecords
     {
         return [
             'customer.business_name' => Tables\Columns\TextColumn::make('customer.business_name')
-                ->label('Cliente')
                 ->searchable()
                 ->sortable(),
             'product.description' => Tables\Columns\TextColumn::make('product.description')
-                ->label('Prodotto')
                 ->searchable(),
             'net_price' => Tables\Columns\TextColumn::make('net_price')
-                ->label('Prezzo netto')
                 ->money('EUR'),
         ];
     }
@@ -47,7 +44,6 @@ final class ListTimberCustomerPrices extends XotBaseListRecords
     {
         return [
             'customer_id' => Tables\Filters\SelectFilter::make('customer_id')
-                ->label('Cliente')
                 ->relationship('customer', 'business_name')
                 ->searchable()
                 ->preload(),

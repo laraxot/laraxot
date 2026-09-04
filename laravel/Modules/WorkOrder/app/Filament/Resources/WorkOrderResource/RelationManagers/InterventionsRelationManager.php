@@ -99,10 +99,8 @@ final class InterventionsRelationManager extends XotBaseRelationManager
             ])
             ->filters([
                 Filter::make('notes_text_search')
-                    ->label('Testo interventi')
                     ->form([
-                        TextInput::make('term')
-                            ->label('Cerca nel testo interventi'),
+                        TextInput::make('term'),
                     ])
                     ->query(function (Builder $query, array $data): Builder {
                         $term = trim((string) ($data['term'] ?? ''));
@@ -114,10 +112,8 @@ final class InterventionsRelationManager extends XotBaseRelationManager
                         return $query->where('notes', 'like', '%'.$term.'%');
                     }),
                 Filter::make('material_search')
-                    ->label('Materiale')
                     ->form([
-                        TextInput::make('term')
-                            ->label('Cerca materiale'),
+                        TextInput::make('term'),
                     ])
                     ->query(function (Builder $query, array $data): Builder {
                         $term = trim((string) ($data['term'] ?? ''));

@@ -1,0 +1,14 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'fields' => [
+        'name' => [
+            'label' => 'Nome',
+        ],
+        'is_active' => [
+            'label' => 'Attiva',
+        ],
+    ],
+];

@@ -27,13 +27,13 @@ final class PriceItemsRelationManager extends RelationManager
     public function form(Schema $schema): Schema
     {
         return $schema->components([
-            TextInput::make('code')->label('Codice voce'),
-            TextInput::make('category')->label('Categoria'),
-            Textarea::make('description')->label('Descrizione')->required()->columnSpanFull(),
-            TextInput::make('unit')->label('UM')->default('cad')->required(),
-            TextInput::make('planned_quantity')->label('Quantità prevista')->numeric()->default(0)->required(),
-            TextInput::make('unit_price')->label('Prezzo unitario')->numeric()->default(0)->required(),
-            TextInput::make('planned_total')->label('Totale')->numeric()->default(0),
+            TextInput::make('code'),
+            TextInput::make('category'),
+            Textarea::make('description')->required()->columnSpanFull(),
+            TextInput::make('unit')->default('cad')->required(),
+            TextInput::make('planned_quantity')->numeric()->default(0)->required(),
+            TextInput::make('unit_price')->numeric()->default(0)->required(),
+            TextInput::make('planned_total')->numeric()->default(0),
         ]);
     }
 
@@ -41,12 +41,12 @@ final class PriceItemsRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('code')->label('Codice')->searchable(),
-                Tables\Columns\TextColumn::make('description')->label('Descrizione')->searchable()->limit(70),
-                Tables\Columns\TextColumn::make('planned_quantity')->label('Q.tà')->sortable(),
-                Tables\Columns\TextColumn::make('unit')->label('UM'),
-                Tables\Columns\TextColumn::make('unit_price')->label('Prezzo')->money('EUR')->sortable(),
-                Tables\Columns\TextColumn::make('planned_total')->label('Totale')->money('EUR')->sortable(),
+                Tables\Columns\TextColumn::make('code')->searchable(),
+                Tables\Columns\TextColumn::make('description')->searchable()->limit(70),
+                Tables\Columns\TextColumn::make('planned_quantity')->sortable(),
+                Tables\Columns\TextColumn::make('unit'),
+                Tables\Columns\TextColumn::make('unit_price')->money('EUR')->sortable(),
+                Tables\Columns\TextColumn::make('planned_total')->money('EUR')->sortable(),
             ])
             ->headerActions([CreateAction::make()])
             ->actions([EditAction::make(), DeleteAction::make()]);

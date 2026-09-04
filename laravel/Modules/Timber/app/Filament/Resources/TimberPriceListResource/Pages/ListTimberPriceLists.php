@@ -29,21 +29,16 @@ final class ListTimberPriceLists extends XotBaseListRecords
     {
         return [
             'name' => Tables\Columns\TextColumn::make('name')
-                ->label('Nome')
                 ->searchable()
                 ->sortable(),
             'code' => Tables\Columns\TextColumn::make('code')
-                ->label('Codice')
                 ->searchable(),
             'items_count' => Tables\Columns\TextColumn::make('items_count')
-                ->label('Prezzi')
                 ->counts('items'),
             'versions_count' => Tables\Columns\TextColumn::make('versions_count')
-                ->label('Versioni')
                 ->counts('versions')
                 ->toggleable(),
             'is_active' => Tables\Columns\IconColumn::make('is_active')
-                ->label('Attivo')
                 ->boolean(),
         ];
     }

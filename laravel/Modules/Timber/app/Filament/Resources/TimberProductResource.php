@@ -102,27 +102,21 @@ final class TimberProductResource extends XotBaseResource
         return [
             Grid::make(2)->components([
                 TextInput::make('code')
-                    ->label('Cod. prodotto')
                     ->unique(ignoreRecord: true)
                     ->maxLength(255),
                 Select::make('product_type_code')
-                    ->label('Tipologia')
                     ->options(TimberConfigMap::get('timber.product_types'))
                     ->default('lot_managed')
                     ->required(),
                 TextInput::make('description')
-                    ->label('Descrizione')
                     ->required()
                     ->maxLength(255)
                     ->columnSpanFull(),
                 TextInput::make('category')
-                    ->label('Categoria')
                     ->maxLength(255),
                 TextInput::make('subcategory')
-                    ->label('Sottocategoria')
                     ->maxLength(255),
                 Select::make('unit_of_measure')
-                    ->label('U.m.')
                     ->options(TimberConfigMap::get('timber.units_of_measure'))
                     ->default('quintali')
                     ->required(),
@@ -134,11 +128,9 @@ final class TimberProductResource extends XotBaseResource
                         ->hiddenLabel()
                         ->schema([
                             Select::make('price_list_code')
-                                ->label('Listino')
                                 ->options(TimberConfigMap::get('timber.price_lists'))
                                 ->required(),
                             TextInput::make('net_price')
-                                ->label('Prezzo netto')
                                 ->numeric()
                                 ->minValue(0)
                                 ->required(),
@@ -149,7 +141,6 @@ final class TimberProductResource extends XotBaseResource
                 ]),
 
             Textarea::make('notes')
-                ->label('Note')
                 ->rows(3)
                 ->columnSpanFull(),
         ];
@@ -161,45 +152,37 @@ final class TimberProductResource extends XotBaseResource
         return [
             Grid::make(2)->components([
                 TextInput::make('barcode')
-                    ->label('Cod. a barre')
                     ->unique(ignoreRecord: true)
                     ->maxLength(255),
                 Select::make('vat_rate_code')
-                    ->label('Aliquota IVA')
                     ->options(TimberConfigMap::get('timber.vat_rates')),
                 TextInput::make('commission_class')
-                    ->label('Classe provvig.')
                     ->maxLength(255),
                 TextInput::make('product_url')
-                    ->label('Link')
                     ->url()
                     ->maxLength(255),
                 TextInput::make('manufacturer')
-                    ->label('Produttore')
                     ->maxLength(255),
             ]),
 
             Grid::make(2)->components([
-                Toggle::make('is_assembled')
-                    ->label('Articolo assemblato'),
-                Toggle::make('publish_on_ecommerce')
-                    ->label('Pubblica su e-commerce'),
+                Toggle::make('is_assembled'),
+                Toggle::make('publish_on_ecommerce'),
             ]),
 
             Section::make('Campi liberi')
                 ->columns(2)
                 ->components([
-                    TextInput::make('free_1')->label('Libero 1')->maxLength(255),
-                    TextInput::make('free_2')->label('Libero 2')->maxLength(255),
-                    TextInput::make('free_3')->label('Libero 3')->maxLength(255),
-                    TextInput::make('free_4')->label('Libero 4')->maxLength(255),
+                    TextInput::make('free_1')->maxLength(255),
+                    TextInput::make('free_2')->maxLength(255),
+                    TextInput::make('free_3')->maxLength(255),
+                    TextInput::make('free_4')->maxLength(255),
                 ]),
 
             Section::make('Fornitore')
                 ->columns(2)
                 ->components([
                     Select::make('supplier_id')
-                        ->label('Fornitore')
                         ->options(fn (): array => TimberSupplier::query()
                             ->where('is_active', true)
                             ->orderBy('legal_name')
@@ -208,14 +191,11 @@ final class TimberProductResource extends XotBaseResource
                         ->searchable()
                         ->preload(),
                     TextInput::make('supplier_product_code')
-                        ->label('Cod. prod. forn.')
                         ->maxLength(255),
                     TextInput::make('supplier_net_price')
-                        ->label('Prz forn. netto')
                         ->numeric()
                         ->minValue(0),
                     TextInput::make('supply_notes')
-                        ->label('Note fornitura')
                         ->maxLength(255),
                 ]),
         ];
@@ -227,32 +207,25 @@ final class TimberProductResource extends XotBaseResource
         return [
             Grid::make(2)->components([
                 TextInput::make('reorder_multiple')
-                    ->label('Ordina multipli di')
                     ->numeric()
                     ->minValue(0),
                 TextInput::make('reorder_lead_days')
-                    ->label('Riordino (giorni)')
                     ->integer()
                     ->minValue(0),
                 TextInput::make('minimum_stock')
-                    ->label('Scorta minima')
                     ->numeric()
                     ->minValue(0),
                 TextInput::make('warehouse_location')
-                    ->label('Ubicazione')
                     ->maxLength(255),
                 TextInput::make('average_cost')
-                    ->label('Costo medio')
                     ->numeric()
                     ->minValue(0),
                 TextInput::make('last_cost')
-                    ->label('Ultimo costo')
                     ->numeric()
                     ->minValue(0),
             ]),
 
             Toggle::make('is_active')
-                ->label('Attivo')
                 ->default(true),
         ];
     }

@@ -85,34 +85,27 @@ final class TimberTransporterResource extends XotBaseResource
                 ->components([
                     Grid::make(2)->components([
                         TextInput::make('legal_name')
-                            ->label('Ragione sociale')
                             ->required()
                             ->maxLength(255),
 
                         TextInput::make('vat_number')
-                            ->label('Partita IVA')
                             ->maxLength(255),
 
                         TextInput::make('phone')
-                            ->label('Telefono')
                             ->maxLength(255),
 
                         TextInput::make('email')
-                            ->label('Email')
                             ->email()
                             ->maxLength(255),
 
                         TextInput::make('vehicle_plate')
-                            ->label('Targa mezzo')
                             ->maxLength(255),
 
                         Toggle::make('is_active')
-                            ->label('Attivo')
                             ->default(true),
                     ]),
 
                     Textarea::make('notes')
-                        ->label('Note')
                         ->columnSpanFull(),
                 ])
                 ->columns(2),

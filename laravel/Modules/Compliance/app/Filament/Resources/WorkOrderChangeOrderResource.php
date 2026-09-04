@@ -55,16 +55,15 @@ final class WorkOrderChangeOrderResource extends Resource
         return $schema->components([
             Section::make()->columnSpanFull()->components([
                 Select::make('work_order_id')
-                    ->label('Commessa')
                     ->required()
                     ->options(fn (): array => WorkOrder::query()->orderByDesc('id')->limit(200)->pluck('title', 'id')->all())
                     ->searchable(),
                 Grid::make(3)->components([
-                    TextInput::make('title')->label('Titolo')->required()->maxLength(255),
-                    TextInput::make('estimated_amount')->label('Stima')->numeric()->prefix('EUR'),
-                    Select::make('status')->label('Stato')->default('proposed')->options(self::statuses()),
+                    TextInput::make('title')->required()->maxLength(255),
+                    TextInput::make('estimated_amount')->numeric()->prefix('EUR'),
+                    Select::make('status')->default('proposed')->options(self::statuses()),
                 ]),
-                Textarea::make('description')->label('Descrizione')->columnSpanFull(),
+                Textarea::make('description')->columnSpanFull(),
             ]),
         ]);
     }
@@ -73,13 +72,13 @@ final class WorkOrderChangeOrderResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('workOrder.title')->label('Commessa')->limit(40)->searchable(),
-                Tables\Columns\TextColumn::make('title')->label('Titolo')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('estimated_amount')->label('Stima')->money('EUR')->sortable(),
-                Tables\Columns\TextColumn::make('status')->label('Stato')->badge()->sortable(),
+                Tables\Columns\TextColumn::make('workOrder.title')->limit(40)->searchable(),
+                Tables\Columns\TextColumn::make('title')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('estimated_amount')->money('EUR')->sortable(),
+                Tables\Columns\TextColumn::make('status')->badge()->sortable(),
             ])
             ->filters([
-                SelectFilter::make('status')->label('Stato')->options(self::statuses()),
+                SelectFilter::make('status')->options(self::statuses()),
             ])
             ->actions([ViewAction::make(), EditAction::make()])
             ->bulkActions([DeleteBulkAction::make()]);

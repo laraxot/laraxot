@@ -29,13 +29,13 @@ final class DeadlinesRelationManager extends RelationManager
     public function form(Schema $schema): Schema
     {
         return $schema->components([
-            TextInput::make('type')->label('Tipo')->required(),
-            TextInput::make('title')->label('Titolo')->required(),
-            Select::make('status')->label('Stato')->options(['open' => 'Aperta', 'done' => 'Completata', 'waived' => 'Non necessaria'])->default('open'),
-            Select::make('severity')->label('Gravità')->options(['info' => 'Info', 'warning' => 'Warning', 'blocking' => 'Bloccante'])->default('warning'),
-            DateTimePicker::make('due_at')->label('Scadenza'),
-            DateTimePicker::make('completed_at')->label('Completata il'),
-            Textarea::make('notes')->label('Note')->columnSpanFull(),
+            TextInput::make('type')->required(),
+            TextInput::make('title')->required(),
+            Select::make('status')->options(['open' => 'Aperta', 'done' => 'Completata', 'waived' => 'Non necessaria'])->default('open'),
+            Select::make('severity')->options(['info' => 'Info', 'warning' => 'Warning', 'blocking' => 'Bloccante'])->default('warning'),
+            DateTimePicker::make('due_at'),
+            DateTimePicker::make('completed_at'),
+            Textarea::make('notes')->columnSpanFull(),
         ]);
     }
 
@@ -43,10 +43,10 @@ final class DeadlinesRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('status')->label('Stato')->badge()->sortable(),
-                Tables\Columns\TextColumn::make('title')->label('Scadenza')->searchable(),
-                Tables\Columns\TextColumn::make('severity')->label('Gravità')->badge()->sortable(),
-                Tables\Columns\TextColumn::make('due_at')->label('Data')->dateTime()->sortable(),
+                Tables\Columns\TextColumn::make('status')->badge()->sortable(),
+                Tables\Columns\TextColumn::make('title')->searchable(),
+                Tables\Columns\TextColumn::make('severity')->badge()->sortable(),
+                Tables\Columns\TextColumn::make('due_at')->dateTime()->sortable(),
             ])
             ->headerActions([CreateAction::make()])
             ->actions([EditAction::make(), DeleteAction::make()]);

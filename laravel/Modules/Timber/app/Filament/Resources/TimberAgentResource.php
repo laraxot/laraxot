@@ -89,37 +89,30 @@ final class TimberAgentResource extends XotBaseResource
                 ->components([
                     Grid::make(2)->components([
                         TextInput::make('full_name')
-                            ->label('Nome e cognome')
                             ->required()
                             ->maxLength(255),
 
                         TextInput::make('email')
-                            ->label('Email')
                             ->email()
                             ->maxLength(255),
 
                         TextInput::make('phone')
-                            ->label('Telefono')
                             ->maxLength(255),
 
                         TextInput::make('zone')
-                            ->label('Zona')
                             ->maxLength(255),
 
                         TextInput::make('commission_percent')
-                            ->label('Provvigione base %')
                             ->helperText('Usata quando non c\'e una regola piu specifica')
                             ->numeric()
                             ->step(0.01)
                             ->suffix('%'),
 
                         Toggle::make('is_active')
-                            ->label('Attivo')
                             ->default(true),
                     ]),
 
                     Textarea::make('notes')
-                        ->label('Note')
                         ->columnSpanFull(),
                 ])
                 ->columns(2),
@@ -131,7 +124,6 @@ final class TimberAgentResource extends XotBaseResource
                         ->hiddenLabel()
                         ->schema([
                             Select::make('scope_type')
-                                ->label('Ambito')
                                 ->options([
                                     'default' => 'Predefinita',
                                     'category' => 'Per categoria',
@@ -141,12 +133,10 @@ final class TimberAgentResource extends XotBaseResource
                                 ->live()
                                 ->required(),
                             TextInput::make('category')
-                                ->label('Categoria')
                                 ->maxLength(255)
                                 ->visible(fn (Get $get): bool => $get('scope_type') === 'category')
                                 ->required(fn (Get $get): bool => $get('scope_type') === 'category'),
                             Select::make('product_id')
-                                ->label('Prodotto')
                                 ->options(fn (): array => TimberProduct::query()
                                     ->orderBy('description')
                                     ->pluck('description', 'id')
@@ -156,7 +146,6 @@ final class TimberAgentResource extends XotBaseResource
                                 ->visible(fn (Get $get): bool => $get('scope_type') === 'product')
                                 ->required(fn (Get $get): bool => $get('scope_type') === 'product'),
                             TextInput::make('rate_percent')
-                                ->label('Provvigione %')
                                 ->numeric()
                                 ->step(0.01)
                                 ->suffix('%')

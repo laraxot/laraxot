@@ -46,10 +46,10 @@ final class PublicProcurementTenderSourceResource extends Resource
     public static function form(Schema $schema): Schema
     {
         return $schema->components([
-            TextInput::make('name')->label('Nome')->required(),
+            TextInput::make('name')->required(),
             Select::make('source_type')->label(__('public_procurement.fields.source_type'))->options(['manual' => 'Manuale', 'portal' => 'Portale', 'rss' => 'RSS/API'])->default('manual'),
             TextInput::make('url')->label(__('public_procurement.fields.url'))->url(),
-            Toggle::make('is_active')->label('Attiva')->default(true),
+            Toggle::make('is_active')->default(true),
             Textarea::make('notes')->label(__('public_procurement.fields.notes'))->columnSpanFull(),
         ]);
     }
@@ -58,9 +58,9 @@ final class PublicProcurementTenderSourceResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')->label('Nome')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('name')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('source_type')->label(__('public_procurement.fields.source_type'))->badge()->sortable(),
-                Tables\Columns\IconColumn::make('is_active')->label('Attiva')->boolean(),
+                Tables\Columns\IconColumn::make('is_active')->boolean(),
                 Tables\Columns\TextColumn::make('url')->label(__('public_procurement.fields.url'))->limit(50),
             ])
             ->actions([EditAction::make()])

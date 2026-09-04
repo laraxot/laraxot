@@ -33,31 +33,24 @@ final class ListTimberDocuments extends XotBaseListRecords
     {
         return [
             'document_type_code' => Tables\Columns\TextColumn::make('document_type_code')
-                ->label('Tipo')
                 ->formatStateUsing(fn (?string $state): string => TimberConfigMap::get('timber.document_types')[$state] ?? (string) $state)
                 ->toggleable(),
             'number' => Tables\Columns\TextColumn::make('number')
-                ->label('Numero')
                 ->searchable()
                 ->sortable(),
             'document_date' => Tables\Columns\TextColumn::make('document_date')
-                ->label('Data')
                 ->date('d/m/Y')
                 ->sortable(),
             'customer.business_name' => Tables\Columns\TextColumn::make('customer.business_name')
-                ->label('Cliente / Fornitore')
                 ->searchable()
                 ->toggleable(),
             'status_code' => Tables\Columns\TextColumn::make('status_code')
-                ->label('Stato')
                 ->badge()
                 ->formatStateUsing(fn (?string $state): string => TimberConfigMap::get('timber.document_statuses')[$state] ?? (string) $state),
             'total_amount' => Tables\Columns\TextColumn::make('total_amount')
-                ->label('Totale')
                 ->money('EUR')
                 ->sortable(),
             'stock_posted_at' => Tables\Columns\IconColumn::make('stock_posted_at')
-                ->label('A magazzino')
                 ->boolean()
                 ->getStateUsing(fn (TimberDocument $record): bool => $record->stock_posted_at !== null),
         ];
@@ -68,10 +61,8 @@ final class ListTimberDocuments extends XotBaseListRecords
     {
         return [
             'document_type_code' => Tables\Filters\SelectFilter::make('document_type_code')
-                ->label('Tipo')
                 ->options(TimberConfigMap::get('timber.document_types')),
             'status_code' => Tables\Filters\SelectFilter::make('status_code')
-                ->label('Stato')
                 ->options(TimberConfigMap::get('timber.document_statuses')),
         ];
     }

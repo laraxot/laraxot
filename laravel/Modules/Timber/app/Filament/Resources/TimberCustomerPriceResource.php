@@ -77,19 +77,16 @@ final class TimberCustomerPriceResource extends XotBaseResource
                 ->columns(3)
                 ->components([
                     Select::make('customer_id')
-                        ->label('Cliente')
                         ->relationship('customer', 'business_name')
                         ->searchable()
                         ->preload()
                         ->required(),
                     Select::make('product_id')
-                        ->label('Prodotto')
                         ->relationship('product', 'description')
                         ->searchable()
                         ->preload()
                         ->required(),
                     TextInput::make('net_price')
-                        ->label('Prezzo netto')
                         ->numeric()
                         ->minValue(0)
                         ->required(),

@@ -135,9 +135,9 @@ final class QuotationResource extends GatedXotBaseResource
                         ->required()
                         ->createOptionForm([
                             TextInput::make('legal_name')->label(__('quotations.fields.customer'))->required()->maxLength(255),
-                            TextInput::make('vat_number')->label('P.IVA')->maxLength(255),
+                            TextInput::make('vat_number')->maxLength(255),
                             TextInput::make('city')->label(__('quotations.voice.city'))->maxLength(255),
-                            TextInput::make('email')->label('Email')->email()->maxLength(255),
+                            TextInput::make('email')->email()->maxLength(255),
                             TextInput::make('phone')->label(__('quotations.voice.phone'))->maxLength(255),
                         ])
                         ->createOptionUsing(fn (array $data): int => (int) Customer::query()->create([

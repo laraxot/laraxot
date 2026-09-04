@@ -30,17 +30,13 @@ final class ListTimberAgents extends XotBaseListRecords
     {
         return [
             'full_name' => Tables\Columns\TextColumn::make('full_name')
-                ->label('Nome e cognome')
                 ->searchable()
                 ->sortable(),
             'zone' => Tables\Columns\TextColumn::make('zone')
-                ->label('Zona')
                 ->toggleable(),
             'commission_percent' => Tables\Columns\TextColumn::make('commission_percent')
-                ->label('Provvigione %')
                 ->suffix('%'),
             'is_active' => Tables\Columns\IconColumn::make('is_active')
-                ->label('Attivo')
                 ->boolean(),
             'updated_at' => Tables\Columns\TextColumn::make('updated_at')
                 ->dateTime()

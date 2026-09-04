@@ -66,7 +66,6 @@ final class SchemasRelationManager extends RelationManager
     {
         return $schema->components([
             FileUpload::make('path')
-                ->label('File schema')
                 ->disk('local')
                 ->directory(fn (): string => 'customer-system-schemas/'.(string) $this->getOwnerRecord()->getKey())
                 ->visibility('private')
@@ -77,7 +76,6 @@ final class SchemasRelationManager extends RelationManager
                 ->columnSpanFull(),
             Hidden::make('original_name'),
             TextInput::make('title')
-                ->label('Titolo / descrizione')
                 ->maxLength(255)
                 ->columnSpanFull(),
         ]);
@@ -89,16 +87,14 @@ final class SchemasRelationManager extends RelationManager
             ->modifyQueryUsing(fn (Builder $query): Builder => $query->where('kind', self::KIND))
             ->columns([
                 Tables\Columns\TextColumn::make('title')
-                    ->label('Schema')
                     ->formatStateUsing(fn (Media $record): string => (string) ($record->title ?: basename((string) $record->path)))
                     ->wrap()
                     ->searchable(),
-                Tables\Columns\TextColumn::make('mime_type')->label('Tipo')->badge()->toggleable(),
+                Tables\Columns\TextColumn::make('mime_type')->badge()->toggleable(),
                 Tables\Columns\TextColumn::make('size_bytes')
-                    ->label('Dimensione')
                     ->formatStateUsing(fn (?int $state): string => $state !== null ? number_format($state / 1024, 0).' KB' : '—')
                     ->toggleable(),
-                Tables\Columns\TextColumn::make('created_at')->label('Caricato il')->dateTime()->sortable(),
+                Tables\Columns\TextColumn::make('created_at')->dateTime()->sortable(),
             ])
             ->headerActions([
                 CreateAction::make()
@@ -133,7 +129,6 @@ final class SchemasRelationManager extends RelationManager
             ])
             ->actions([
                 Action::make('download')
-                    ->label('Scarica')
                     ->icon('heroicon-o-arrow-down-tray')
                     ->action(function (Media $record) {
                         $name = $record->title ?: basename((string) $record->path);

@@ -88,16 +88,13 @@ final class TimberPriceListResource extends XotBaseResource
                 ->components([
                     Grid::make(3)->components([
                         TextInput::make('code')
-                            ->label('Codice')
                             ->required()
                             ->unique(ignoreRecord: true)
                             ->maxLength(255),
                         TextInput::make('name')
-                            ->label('Nome')
                             ->required()
                             ->maxLength(255),
                         Toggle::make('is_active')
-                            ->label('Attivo')
                             ->default(true),
                     ]),
                 ]),
@@ -109,7 +106,6 @@ final class TimberPriceListResource extends XotBaseResource
                         ->hiddenLabel()
                         ->schema([
                             Select::make('product_id')
-                                ->label('Prodotto')
                                 ->options(fn (): array => TimberProduct::query()
                                     ->orderBy('description')
                                     ->pluck('description', 'id')
@@ -119,7 +115,6 @@ final class TimberPriceListResource extends XotBaseResource
                                 ->required()
                                 ->columnSpan(2),
                             TextInput::make('net_price')
-                                ->label('Prezzo netto')
                                 ->numeric()
                                 ->minValue(0)
                                 ->required(),
@@ -134,7 +129,6 @@ final class TimberPriceListResource extends XotBaseResource
     public static function exportCsvAction(): Action
     {
         return Action::make('exportCsv')
-            ->label('Esporta CSV')
             ->icon('heroicon-o-arrow-down-tray')
             ->action(function (TimberPriceList $record): StreamedResponse {
                 $csv = app(ExportTimberPriceListCsvAction::class)->execute($record);
@@ -152,11 +146,9 @@ final class TimberPriceListResource extends XotBaseResource
     public static function importCsvAction(): Action
     {
         return Action::make('importCsv')
-            ->label('Importa CSV')
             ->icon('heroicon-o-arrow-up-tray')
             ->schema([
                 FileUpload::make('file')
-                    ->label('File CSV (codice prodotto; prezzo)')
                     ->acceptedFileTypes(['text/csv', 'text/plain', 'application/vnd.ms-excel'])
                     ->storeFiles(false)
                     ->required(),

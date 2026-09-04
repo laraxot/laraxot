@@ -82,30 +82,24 @@ final class TimberDocumentResource extends XotBaseResource
                 ->columns(3)
                 ->components([
                     Select::make('document_type_code')
-                        ->label('Tipo documento')
                         ->options(TimberConfigMap::get('timber.document_types'))
                         ->default('ddt')
                         ->required(),
                     TextInput::make('number')
-                        ->label('Numero')
                         ->placeholder('Assegnato automaticamente')
                         ->maxLength(255),
                     DatePicker::make('document_date')
-                        ->label('Data')
                         ->default(now())
                         ->required(),
                     Select::make('customer_id')
-                        ->label('Cliente / Fornitore')
                         ->relationship('customer', 'business_name')
                         ->searchable()
                         ->preload(),
                     Select::make('status_code')
-                        ->label('Stato')
                         ->options(TimberConfigMap::get('timber.document_statuses'))
                         ->default('draft')
                         ->required(),
                     TextInput::make('reference')
-                        ->label('Riferimento / Causale')
                         ->maxLength(255),
                 ]),
 
@@ -116,7 +110,6 @@ final class TimberDocumentResource extends XotBaseResource
                         ->hiddenLabel()
                         ->schema([
                             Select::make('product_id')
-                                ->label('Prodotto')
                                 ->options(fn (): array => TimberProduct::query()
                                     ->where('is_active', true)
                                     ->orderBy('description')
@@ -149,33 +142,27 @@ final class TimberDocumentResource extends XotBaseResource
                                 })
                                 ->columnSpan(2),
                             TextInput::make('description')
-                                ->label('Descrizione')
                                 ->required()
                                 ->columnSpan(2),
                             TextInput::make('quantity')
-                                ->label('Quantita')
                                 ->numeric()
                                 ->minValue(0)
                                 ->default(1)
                                 ->required(),
                             Select::make('unit_of_measure')
-                                ->label('U.m.')
                                 ->options(TimberConfigMap::get('timber.units_of_measure'))
                                 ->default('quintali')
                                 ->required(),
                             TextInput::make('unit_price')
-                                ->label('Prezzo unit.')
                                 ->numeric()
                                 ->minValue(0)
                                 ->default(0),
                             TextInput::make('discount_percent')
-                                ->label('Sconto %')
                                 ->numeric()
                                 ->minValue(0)
                                 ->maxValue(100)
                                 ->default(0),
                             TextInput::make('lot_code')
-                                ->label('Lotto a magazzino')
                                 ->maxLength(255)
                                 ->helperText(function (Get $get): ?string {
                                     $productId = $get('product_id');
@@ -196,7 +183,6 @@ final class TimberDocumentResource extends XotBaseResource
                 ]),
 
             Textarea::make('notes')
-                ->label('Note')
                 ->rows(3)
                 ->columnSpanFull(),
         ];
@@ -205,7 +191,6 @@ final class TimberDocumentResource extends XotBaseResource
     public static function postToStockAction(): Action
     {
         return Action::make('postToStock')
-            ->label('Registra a magazzino')
             ->icon('heroicon-o-arrow-down-on-square')
             ->color('success')
             ->requiresConfirmation()

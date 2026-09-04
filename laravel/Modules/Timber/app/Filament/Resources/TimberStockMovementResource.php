@@ -79,16 +79,13 @@ final class TimberStockMovementResource extends XotBaseResource
                 ->columns(2)
                 ->components([
                     DatePicker::make('movement_date')
-                        ->label('Data')
                         ->default(now())
                         ->required(),
                     Select::make('direction_code')
-                        ->label('Tipo movimento')
                         ->options(TimberConfigMap::get('timber.stock_movement_directions'))
                         ->default('load')
                         ->required(),
                     Select::make('product_id')
-                        ->label('Prodotto')
                         ->options(fn (): array => TimberProduct::query()
                             ->where('is_active', true)
                             ->orderBy('description')
@@ -106,7 +103,6 @@ final class TimberStockMovementResource extends XotBaseResource
                         }),
                     Grid::make(2)->components([
                         TextInput::make('quantity')
-                            ->label('Quantita')
                             ->numeric()
                             ->required()
                             ->rule(static function (Get $get): Closure {
@@ -126,33 +122,26 @@ final class TimberStockMovementResource extends XotBaseResource
                                 };
                             }),
                         Select::make('unit_of_measure')
-                            ->label('U.m.')
                             ->key('unit_of_measure')
                             ->options(TimberConfigMap::get('timber.units_of_measure'))
                             ->default('quintali')
                             ->required(),
                     ]),
                     Select::make('customer_id')
-                        ->label('Cliente / Fornitore')
                         ->relationship('customer', 'business_name')
                         ->searchable()
                         ->preload(),
                     Select::make('document_type_code')
-                        ->label('Tipo documento')
                         ->options(TimberConfigMap::get('timber.document_types')),
                     TextInput::make('document_reference')
-                        ->label('Causale / Documento')
                         ->maxLength(255),
                     TextInput::make('lot_code')
-                        ->label('Lotto / Seriale')
                         ->maxLength(255),
                     TextInput::make('unit_cost')
-                        ->label('Costo unitario')
                         ->numeric()
                         ->minValue(0)
                         ->helperText('Aggiorna costo medio e ultimo costo del prodotto sui carichi'),
                     Textarea::make('notes')
-                        ->label('Note')
                         ->rows(2)
                         ->columnSpanFull(),
                 ]),

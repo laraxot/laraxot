@@ -23,17 +23,14 @@ final class ListWorkOrderStatuses extends XotBaseListRecords
                 ->label(__('workorder::work_orders.status_help.sort_order'))
                 ->sortable(),
             'name' => Tables\Columns\TextColumn::make('name')
-                ->label(__('workorder::work_orders.fields.title'))
                 ->searchable(),
             'code' => Tables\Columns\TextColumn::make('code')
-                ->label(__('workorder::work_orders.fields.code'))
                 ->badge()
                 ->searchable(),
             'is_terminal' => Tables\Columns\IconColumn::make('is_terminal')
                 ->label(__('workorder::work_orders.status_help.is_terminal'))
                 ->boolean(),
             'work_orders_count' => Tables\Columns\TextColumn::make('work_orders_count')
-                ->label(__('workorder::work_orders.work_orders'))
                 ->counts('workOrders'),
         ];
     }

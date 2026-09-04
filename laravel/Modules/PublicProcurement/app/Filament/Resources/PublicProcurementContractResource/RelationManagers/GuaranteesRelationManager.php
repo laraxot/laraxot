@@ -29,15 +29,15 @@ final class GuaranteesRelationManager extends RelationManager
     public function form(Schema $schema): Schema
     {
         return $schema->components([
-            Select::make('type')->label('Tipo')->options(['provisional' => 'Provvisoria', 'definitive' => 'Definitiva', 'insurance' => 'Polizza'])->default('definitive'),
-            TextInput::make('title')->label('Titolo')->required(),
-            TextInput::make('provider')->label('Emittente'),
-            TextInput::make('policy_number')->label('Numero polizza'),
-            Select::make('status')->label('Stato')->options(['valid' => 'Valida', 'expiring' => 'In scadenza', 'expired' => 'Scaduta', 'released' => 'Svincolata'])->default('valid'),
-            TextInput::make('amount')->label('Importo')->numeric(),
-            DatePicker::make('issued_on')->label('Emissione'),
-            DatePicker::make('expires_on')->label('Scadenza'),
-            Textarea::make('notes')->label('Note')->columnSpanFull(),
+            Select::make('type')->options(['provisional' => 'Provvisoria', 'definitive' => 'Definitiva', 'insurance' => 'Polizza'])->default('definitive'),
+            TextInput::make('title')->required(),
+            TextInput::make('provider'),
+            TextInput::make('policy_number'),
+            Select::make('status')->options(['valid' => 'Valida', 'expiring' => 'In scadenza', 'expired' => 'Scaduta', 'released' => 'Svincolata'])->default('valid'),
+            TextInput::make('amount')->numeric(),
+            DatePicker::make('issued_on'),
+            DatePicker::make('expires_on'),
+            Textarea::make('notes')->columnSpanFull(),
         ]);
     }
 
@@ -45,11 +45,11 @@ final class GuaranteesRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('type')->label('Tipo')->badge(),
-                Tables\Columns\TextColumn::make('title')->label('Titolo')->searchable(),
-                Tables\Columns\TextColumn::make('status')->label('Stato')->badge(),
-                Tables\Columns\TextColumn::make('amount')->label('Importo')->money('EUR')->sortable(),
-                Tables\Columns\TextColumn::make('expires_on')->label('Scadenza')->date()->sortable(),
+                Tables\Columns\TextColumn::make('type')->badge(),
+                Tables\Columns\TextColumn::make('title')->searchable(),
+                Tables\Columns\TextColumn::make('status')->badge(),
+                Tables\Columns\TextColumn::make('amount')->money('EUR')->sortable(),
+                Tables\Columns\TextColumn::make('expires_on')->date()->sortable(),
             ])
             ->headerActions([CreateAction::make()])
             ->actions([EditAction::make(), DeleteAction::make()]);

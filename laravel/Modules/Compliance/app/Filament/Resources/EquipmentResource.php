@@ -55,24 +55,23 @@ final class EquipmentResource extends Resource
         return $schema->components([
             Section::make()->columnSpanFull()->components([
                 Grid::make(3)->components([
-                    TextInput::make('name')->label('Nome')->required()->maxLength(255),
-                    TextInput::make('type')->label('Tipo')->maxLength(255),
-                    TextInput::make('serial_number')->label('Matricola')->maxLength(255),
-                    Select::make('status')->label('Stato')->default('available')->options([
+                    TextInput::make('name')->required()->maxLength(255),
+                    TextInput::make('type')->maxLength(255),
+                    TextInput::make('serial_number')->maxLength(255),
+                    Select::make('status')->default('available')->options([
                         'available' => 'Disponibile',
                         'assigned' => 'Assegnata',
                         'maintenance' => 'In manutenzione',
                         'blocked' => 'Bloccata',
                     ]),
-                    DatePicker::make('last_checked_on')->label('Ultima verifica'),
-                    DatePicker::make('next_check_due_on')->label('Prossima verifica'),
-                    DatePicker::make('maintenance_due_on')->label('Manutenzione entro'),
+                    DatePicker::make('last_checked_on'),
+                    DatePicker::make('next_check_due_on'),
+                    DatePicker::make('maintenance_due_on'),
                     Select::make('assigned_work_order_id')
-                        ->label('Commessa assegnata')
                         ->options(fn (): array => WorkOrder::query()->orderByDesc('id')->limit(200)->pluck('title', 'id')->all())
                         ->searchable(),
                 ]),
-                Textarea::make('notes')->label('Note')->columnSpanFull(),
+                Textarea::make('notes')->columnSpanFull(),
             ]),
         ]);
     }
@@ -81,12 +80,12 @@ final class EquipmentResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')->label('Nome')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('type')->label('Tipo')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('serial_number')->label('Matricola')->toggleable(),
-                Tables\Columns\TextColumn::make('status')->label('Stato')->badge()->sortable(),
-                Tables\Columns\TextColumn::make('next_check_due_on')->label('Prossima verifica')->date()->sortable(),
-                Tables\Columns\TextColumn::make('assignedWorkOrder.title')->label('Commessa')->limit(40)->toggleable(),
+                Tables\Columns\TextColumn::make('name')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('type')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('serial_number')->toggleable(),
+                Tables\Columns\TextColumn::make('status')->badge()->sortable(),
+                Tables\Columns\TextColumn::make('next_check_due_on')->date()->sortable(),
+                Tables\Columns\TextColumn::make('assignedWorkOrder.title')->limit(40)->toggleable(),
             ])
             ->actions([ViewAction::make(), EditAction::make()])
             ->bulkActions([DeleteBulkAction::make()]);

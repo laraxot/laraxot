@@ -30,17 +30,13 @@ final class ListTimberWoodSpecies extends XotBaseListRecords
     {
         return [
             'name' => Tables\Columns\TextColumn::make('name')
-                ->label('Nome')
                 ->searchable()
                 ->sortable(),
             'code' => Tables\Columns\TextColumn::make('code')
-                ->label('Codice')
                 ->searchable(),
             'sort_order' => Tables\Columns\TextColumn::make('sort_order')
-                ->label('Ordine')
                 ->sortable(),
             'is_active' => Tables\Columns\IconColumn::make('is_active')
-                ->label('Attiva')
                 ->boolean(),
         ];
     }
@@ -49,7 +45,7 @@ final class ListTimberWoodSpecies extends XotBaseListRecords
     public function getTableFilters(): array
     {
         return [
-            'is_active' => Tables\Filters\TernaryFilter::make('is_active')->label('Attiva'),
+            'is_active' => Tables\Filters\TernaryFilter::make('is_active'),
         ];
     }
 

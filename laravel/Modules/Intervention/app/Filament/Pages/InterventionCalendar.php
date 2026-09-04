@@ -98,7 +98,6 @@ final class InterventionCalendar extends GatedXotBasePage
     {
         return [
             Action::make('createIntervention')
-                ->label('Nuovo intervento')
                 ->icon('heroicon-o-plus')
                 ->visible(fn (): bool => $this->canCreateIntervention())
                 ->url(fn (): string => $this->getCreateInterventionUrl()),

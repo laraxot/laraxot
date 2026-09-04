@@ -97,7 +97,6 @@ final class MySchedule extends GatedXotBasePage
     {
         return [
             Action::make('createIntervention')
-                ->label('Nuovo intervento')
                 ->icon('heroicon-o-plus')
                 ->visible(fn (): bool => $this->canCreateIntervention())
                 ->url(fn (): string => InterventionResource::getUrl('create', [

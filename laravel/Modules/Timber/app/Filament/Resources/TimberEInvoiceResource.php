@@ -73,7 +73,6 @@ final class TimberEInvoiceResource extends XotBaseResource
     public static function transmitAction(): Action
     {
         return Action::make('transmit')
-            ->label('Segna inviata a SdI')
             ->icon('heroicon-o-paper-airplane')
             ->color('info')
             ->requiresConfirmation()
@@ -91,7 +90,6 @@ final class TimberEInvoiceResource extends XotBaseResource
     public static function downloadXmlAction(): Action
     {
         return Action::make('downloadXml')
-            ->label('Scarica XML')
             ->icon('heroicon-o-arrow-down-tray')
             ->visible(fn (TimberEInvoice $record): bool => is_string($record->xml_content) && $record->xml_content !== '')
             ->action(function (TimberEInvoice $record): StreamedResponse {

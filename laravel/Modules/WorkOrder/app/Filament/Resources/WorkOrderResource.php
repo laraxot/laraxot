@@ -142,18 +142,15 @@ final class WorkOrderResource extends GatedXotBaseResource
                 ->components([
                     Grid::make(2)->components([
                         TextInput::make('code')
-                            ->label(__('workorder::work_orders.fields.code'))
                             ->maxLength(255),
 
                         Select::make('status_id')
-                            ->label(__('workorder::work_orders.fields.status'))
                             ->options(fn () => WorkOrderStatus::query()->whereNotNull('name')->orderBy('sort_order')->pluck('name', 'id')->all())
                             ->searchable()
                             ->preload(),
                     ]),
 
                     Select::make('customer_id')
-                        ->label(__('workorder::work_orders.fields.customer'))
                         ->options(fn () => self::getCustomerOptionsForCurrentPanel())
                         ->searchable()
                         ->preload()
@@ -166,7 +163,6 @@ final class WorkOrderResource extends GatedXotBaseResource
 
                     Grid::make(2)->components([
                         Select::make('customer_site_id')
-                            ->label(__('workorder::work_orders.fields.site'))
                             ->options(function (callable $get): array {
                                 $customerId = (int) ($get('customer_id') ?? 0);
                                 if ($customerId <= 0) {
@@ -187,7 +183,6 @@ final class WorkOrderResource extends GatedXotBaseResource
                             ->afterStateUpdated(fn (callable $set) => $set('primary_contact_id', null)),
 
                         Select::make('primary_contact_id')
-                            ->label(__('workorder::work_orders.fields.primary_contact'))
                             ->options(function (callable $get): array {
                                 $customerId = (int) ($get('customer_id') ?? 0);
                                 if ($customerId <= 0) {
@@ -209,31 +204,27 @@ final class WorkOrderResource extends GatedXotBaseResource
                     ]),
 
                     TextInput::make('title')
-                        ->label(__('workorder::work_orders.fields.title'))
                         ->required()
                         ->maxLength(255),
 
                     Textarea::make('description')
-                        ->label(__('workorder::work_orders.fields.description'))
                         ->columnSpanFull(),
 
                     Textarea::make('notes')
-                        ->label(__('workorder::work_orders.fields.notes'))
                         ->columnSpanFull(),
 
                     Grid::make(2)->components([
-                        DateTimePicker::make('opened_at')->label(__('workorder::work_orders.fields.opened_at')),
-                        DateTimePicker::make('scheduled_at')->label(__('workorder::work_orders.fields.scheduled_at')),
+                        DateTimePicker::make('opened_at'),
+                        DateTimePicker::make('scheduled_at'),
                         DateTimePicker::make('delivery_due_at')
                             ->label(__('workorder::work_orders.fields.delivery_due_at'))
                             ->helperText(__('workorder::work_orders.fields.delivery_due_at_hint')),
-                        DateTimePicker::make('started_at')->label(__('workorder::work_orders.fields.started_at')),
-                        DateTimePicker::make('completed_at')->label(__('workorder::work_orders.fields.completed_at')),
+                        DateTimePicker::make('started_at'),
+                        DateTimePicker::make('completed_at'),
                     ]),
 
                     Grid::make(2)->components([
                         TextInput::make('planned_minutes')
-                            ->label(__('workorder::work_orders.effort.planned_minutes'))
                             ->helperText(__('workorder::work_orders.effort.hint'))
                             ->numeric()
                             ->minValue(0)
@@ -249,7 +240,6 @@ final class WorkOrderResource extends GatedXotBaseResource
                             ->suffix('%'),
 
                         Placeholder::make('effort_summary')
-                            ->label(__('workorder::work_orders.effort.variance'))
                             ->content(fn (?WorkOrder $record): string => self::effortSummary($record)),
                     ]),
                 ])
@@ -267,19 +257,19 @@ final class WorkOrderResource extends GatedXotBaseResource
                 ->columnSpanFull()
                 ->components([
                     Grid::make(2)->components([
-                        TextEntry::make('code')->label(__('workorder::work_orders.fields.code')),
-                        TextEntry::make('status.name')->label(__('workorder::work_orders.fields.status')),
-                        TextEntry::make('customer.legal_name')->label(__('workorder::work_orders.fields.customer')),
-                        TextEntry::make('site.name')->label(__('workorder::work_orders.fields.site')),
-                        TextEntry::make('primaryContact.full_name')->label(__('workorder::work_orders.fields.primary_contact')),
-                        TextEntry::make('title')->label(__('workorder::work_orders.fields.title')),
-                        TextEntry::make('scheduled_at')->label(__('workorder::work_orders.fields.scheduled_at'))->dateTime(),
+                        TextEntry::make('code'),
+                        TextEntry::make('status.name'),
+                        TextEntry::make('customer.legal_name'),
+                        TextEntry::make('site.name'),
+                        TextEntry::make('primaryContact.full_name'),
+                        TextEntry::make('title'),
+                        TextEntry::make('scheduled_at')->dateTime(),
                         TextEntry::make('delivery_due_at')->label(__('workorder::work_orders.fields.delivery_due_at'))->dateTime(),
                         TextEntry::make('progress_percent')->label(__('workorder::work_orders.progress.label')),
-                        TextEntry::make('planned_minutes')->label(__('workorder::work_orders.effort.planned_minutes')),
+                        TextEntry::make('planned_minutes'),
                     ]),
-                    TextEntry::make('description')->label(__('workorder::work_orders.fields.description'))->columnSpanFull(),
-                    TextEntry::make('notes')->label(__('workorder::work_orders.fields.notes'))->columnSpanFull(),
+                    TextEntry::make('description')->columnSpanFull(),
+                    TextEntry::make('notes')->columnSpanFull(),
                 ])
                 ->columns(2),
         ];
@@ -400,44 +390,35 @@ final class WorkOrderResource extends GatedXotBaseResource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('code')
-                    ->label(__('workorder::work_orders.fields.code'))
                     ->searchable()
                     ->sortable(),
                 // Lo sforamento va visto in lista, non solo aprendo la commessa.
                 Tables\Columns\TextColumn::make('effort_variance')
-                    ->label(__('workorder::work_orders.effort.variance'))
                     ->state(fn (WorkOrder $record): string => self::effortBadge($record))
                     ->badge()
                     ->color(fn (WorkOrder $record): string => self::effortColor($record))
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('title')
-                    ->label(__('workorder::work_orders.fields.title'))
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('customer.legal_name')
-                    ->label(__('workorder::work_orders.fields.customer'))
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('site.name')
-                    ->label(__('workorder::work_orders.fields.site'))
                     ->searchable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('status.name')
-                    ->label(__('workorder::work_orders.fields.status'))
                     ->badge()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('description')
-                    ->label(__('workorder::work_orders.fields.description'))
                     ->limit(60)
                     ->searchable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('notes')
-                    ->label(__('workorder::work_orders.fields.notes'))
                     ->limit(60)
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('scheduled_at')
-                    ->label(__('workorder::work_orders.fields.scheduled_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(),
@@ -464,21 +445,16 @@ final class WorkOrderResource extends GatedXotBaseResource
             ])
             ->filters([
                 SelectFilter::make('customer_id')
-                    ->label(__('workorder::work_orders.fields.customer'))
                     ->relationship('customer', 'legal_name', fn (Builder $query): Builder => $query->whereNotNull('legal_name')),
                 SelectFilter::make('customer_site_id')
-                    ->label(__('workorder::work_orders.fields.site'))
                     ->relationship('site', 'name', fn (Builder $query): Builder => $query->whereNotNull('name')),
                 SelectFilter::make('status_id')
-                    ->label(__('workorder::work_orders.fields.status'))
                     ->relationship('status', 'name', fn (Builder $query): Builder => $query->whereNotNull('name')),
                 Filter::make('scheduled_between')
                     ->label(__('workorder::work_orders.fields.report_from').' / '.__('workorder::work_orders.fields.report_to'))
                     ->form([
-                        DatePicker::make('from')
-                            ->label(__('workorder::work_orders.fields.report_from')),
-                        DatePicker::make('to')
-                            ->label(__('workorder::work_orders.fields.report_to')),
+                        DatePicker::make('from'),
+                        DatePicker::make('to'),
                     ])
                     ->query(function (Builder $query, array $data): Builder {
                         $from = $data['from'] ?? null;
@@ -497,7 +473,6 @@ final class WorkOrderResource extends GatedXotBaseResource
             ])
             ->actions([
                 Action::make('exportReport')
-                    ->label(__('workorder::work_orders.actions.export_report'))
                     ->icon('heroicon-o-document-chart-bar')
                     ->color('success')
                     ->visible(function (): bool {
@@ -512,7 +487,6 @@ final class WorkOrderResource extends GatedXotBaseResource
                     })
                     ->form([
                         Radio::make('format')
-                            ->label(__('workorder::work_orders.fields.report_format'))
                             ->options([
                                 'pdf' => 'PDF',
                                 'docx' => 'Word (DOCX)',
@@ -521,12 +495,10 @@ final class WorkOrderResource extends GatedXotBaseResource
                             ->required()
                             ->inline(),
                         DatePicker::make('from')
-                            ->label(__('workorder::work_orders.fields.report_from'))
                             ->displayFormat('d/m/Y')
                             ->default(now()->startOfMonth()->toDateString())
                             ->required(),
                         DatePicker::make('to')
-                            ->label(__('workorder::work_orders.fields.report_to'))
                             ->displayFormat('d/m/Y')
                             ->default(now()->endOfMonth()->toDateString())
                             ->required(),

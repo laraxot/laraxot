@@ -30,14 +30,14 @@ final class DocumentRequirementsRelationManager extends RelationManager
     public function form(Schema $schema): Schema
     {
         return $schema->components([
-            TextInput::make('code')->label('Codice')->required(),
-            TextInput::make('title')->label('Documento')->required(),
-            Select::make('phase')->label('Fase')->options(['participation' => 'Partecipazione', 'execution' => 'Esecuzione', 'closing' => 'Chiusura'])->default('participation'),
-            Select::make('status')->label('Stato')->options(['missing' => 'Mancante', 'ok' => 'Ok', 'expired' => 'Scaduto', 'waived' => 'Non necessario'])->default('missing'),
-            Select::make('severity')->label('Gravità')->options(['info' => 'Info', 'warning' => 'Warning', 'blocking' => 'Bloccante'])->default('warning'),
-            Toggle::make('is_required')->label('Obbligatorio')->default(true),
-            DatePicker::make('due_on')->label('Scadenza'),
-            Textarea::make('notes')->label('Note')->columnSpanFull(),
+            TextInput::make('code')->required(),
+            TextInput::make('title')->required(),
+            Select::make('phase')->options(['participation' => 'Partecipazione', 'execution' => 'Esecuzione', 'closing' => 'Chiusura'])->default('participation'),
+            Select::make('status')->options(['missing' => 'Mancante', 'ok' => 'Ok', 'expired' => 'Scaduto', 'waived' => 'Non necessario'])->default('missing'),
+            Select::make('severity')->options(['info' => 'Info', 'warning' => 'Warning', 'blocking' => 'Bloccante'])->default('warning'),
+            Toggle::make('is_required')->default(true),
+            DatePicker::make('due_on'),
+            Textarea::make('notes')->columnSpanFull(),
         ]);
     }
 
@@ -45,11 +45,11 @@ final class DocumentRequirementsRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('phase')->label('Fase')->badge(),
-                Tables\Columns\TextColumn::make('title')->label('Documento')->searchable(),
-                Tables\Columns\TextColumn::make('status')->label('Stato')->badge()->sortable(),
-                Tables\Columns\TextColumn::make('severity')->label('Gravità')->badge()->sortable(),
-                Tables\Columns\TextColumn::make('due_on')->label('Scadenza')->date()->sortable(),
+                Tables\Columns\TextColumn::make('phase')->badge(),
+                Tables\Columns\TextColumn::make('title')->searchable(),
+                Tables\Columns\TextColumn::make('status')->badge()->sortable(),
+                Tables\Columns\TextColumn::make('severity')->badge()->sortable(),
+                Tables\Columns\TextColumn::make('due_on')->date()->sortable(),
             ])
             ->headerActions([CreateAction::make()])
             ->actions([EditAction::make(), DeleteAction::make()]);
