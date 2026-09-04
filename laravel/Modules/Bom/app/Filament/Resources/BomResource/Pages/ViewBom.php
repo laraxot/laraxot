@@ -6,16 +6,16 @@ namespace Modules\Bom\Filament\Resources\BomResource\Pages;
 
 use Filament\Actions;
 use Filament\Infolists\Components\TextEntry;
-use Filament\Resources\Pages\ViewRecord;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Support\Enums\Width;
 use Illuminate\Support\HtmlString;
 use Modules\Bom\Filament\Resources\BomResource;
 use Modules\Bom\Models\Bom;
 use Modules\Bom\Models\BomItem;
+use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
 
-final class ViewBom extends ViewRecord
+final class ViewBom extends XotBaseViewRecord
 {
     protected static string $resource = BomResource::class;
 
@@ -26,38 +26,39 @@ final class ViewBom extends ViewRecord
         return Width::Full;
     }
 
-    public function infolist(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    protected function getInfolistSchema(): array
     {
         /** @var Bom $record */
         $record = $this->getRecord()->loadMissing('product', 'items.componentProduct');
 
-        return $schema
-            ->columns(1)
-            ->components([
-                Section::make('Riepilogo')
-                    ->columnSpanFull()
-                    ->columns(2)
-                    ->schema([
-                        TextEntry::make('product.name')
-                            ->label('Prodotto padre')
-                            ->placeholder('—'),
-                        TextEntry::make('name')
-                            ->label('Nome/versione')
-                            ->placeholder('—'),
-                        TextEntry::make('items_count')
-                            ->label('Componenti diretti')
-                            ->state(fn (): int => $record->items->count()),
-                    ]),
-                Section::make('Albero distinta base')
-                    ->columnSpanFull()
-                    ->description('Vista leggibile dei componenti collegati al prodotto principale.')
-                    ->schema([
-                        TextEntry::make('bom_tree')
-                            ->label('Struttura')
-                            ->state(fn (): HtmlString => new HtmlString($this->renderBomTree($record)))
-                            ->html(),
-                    ]),
-            ]);
+        return [
+            'summary' => Section::make('Riepilogo')
+                ->columnSpanFull()
+                ->columns(2)
+                ->schema([
+                    TextEntry::make('product.name')
+                        ->label('Prodotto padre')
+                        ->placeholder('—'),
+                    TextEntry::make('name')
+                        ->label('Nome/versione')
+                        ->placeholder('—'),
+                    TextEntry::make('items_count')
+                        ->label('Componenti diretti')
+                        ->state(fn (): int => $record->items->count()),
+                ]),
+            'tree' => Section::make('Albero distinta base')
+                ->columnSpanFull()
+                ->description('Vista leggibile dei componenti collegati al prodotto principale.')
+                ->schema([
+                    TextEntry::make('bom_tree')
+                        ->label('Struttura')
+                        ->state(fn (): HtmlString => new HtmlString($this->renderBomTree($record)))
+                        ->html(),
+                ]),
+        ];
     }
 
     protected function getHeaderActions(): array

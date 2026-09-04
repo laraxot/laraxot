@@ -6,10 +6,10 @@ namespace Modules\Blog\Filament\Resources\TextWidgetResource\Pages;
 
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ViewAction;
-use Filament\Resources\Pages\EditRecord;
 use Modules\Blog\Filament\Resources\TextWidgetResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
-class EditTextWidget extends EditRecord
+class EditTextWidget extends XotBaseEditRecord
 {
     protected static string $resource = TextWidgetResource::class;
 

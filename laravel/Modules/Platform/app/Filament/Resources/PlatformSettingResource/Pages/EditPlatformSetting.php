@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Platform\Filament\Resources\PlatformSettingResource\Pages;
 
-use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Facades\Auth;
 use Modules\Platform\Filament\Resources\PlatformSettingResource;
 use Modules\Platform\Models\PlatformSetting;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 use Safe\Exceptions\JsonException;
 
 use function Safe\json_encode;
 
-final class EditPlatformSetting extends EditRecord
+final class EditPlatformSetting extends XotBaseEditRecord
 {
     protected static string $resource = PlatformSettingResource::class;
 

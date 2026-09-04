@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Modules\Production\Filament\Resources\ProductionOrderResource\Pages;
 
 use Filament\Actions;
-use Filament\Resources\Pages\ListRecords;
 use Modules\Production\Filament\Resources\ProductionOrderResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
-final class ListProductionOrders extends ListRecords
+final class ListProductionOrders extends XotBaseListRecords
 {
     protected static string $resource = ProductionOrderResource::class;
 
@@ -19,4 +19,3 @@ final class ListProductionOrders extends ListRecords
         ];
     }
 }
-

@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Modules\Platform\Filament\Resources\PlatformSettingResource\Pages;
 
 use Filament\Actions\Action;
-use Filament\Resources\Pages\ListRecords;
 use Illuminate\Support\Facades\Auth;
 use Modules\Platform\Filament\Resources\PlatformSettingResource;
 use Modules\Platform\Models\PlatformSetting;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
-final class ListPlatformSettings extends ListRecords
+final class ListPlatformSettings extends XotBaseListRecords
 {
     protected static string $resource = PlatformSettingResource::class;
 

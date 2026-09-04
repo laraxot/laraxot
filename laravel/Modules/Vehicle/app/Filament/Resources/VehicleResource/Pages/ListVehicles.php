@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Modules\Vehicle\Filament\Resources\VehicleResource\Pages;
 
 use Filament\Actions;
-use Filament\Resources\Pages\ListRecords;
 use Modules\Vehicle\Filament\Resources\VehicleResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
-final class ListVehicles extends ListRecords
+final class ListVehicles extends XotBaseListRecords
 {
     protected static string $resource = VehicleResource::class;
 
@@ -19,4 +19,3 @@ final class ListVehicles extends ListRecords
         ];
     }
 }
-

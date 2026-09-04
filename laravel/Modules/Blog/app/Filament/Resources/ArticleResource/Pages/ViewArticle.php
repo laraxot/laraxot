@@ -9,17 +9,17 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Infolists\Components\TextEntry;
-use Filament\Resources\Pages\ViewRecord;
 use Filament\Schemas\Schema;
+use Modules\Blog\Filament\Resources\ArticleResource;
 // use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
 // use LaraZeus\SpatieTranslatable\Resources\Pages\EditRecord\Concerns\Translatable;
-use Modules\Blog\Filament\Resources\ArticleResource;
 use Modules\Rating\Filament\Widgets\StatsOverview;
+use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
 // use Modules\Rating\Filament\Actions\Header\BetHeaderAction;
 // use Modules\Rating\Filament\Actions\Header\WinHeaderAction;
 use Webmozart\Assert\Assert;
 
-class ViewArticle extends ViewRecord
+class ViewArticle extends XotBaseViewRecord
 {
     // use Translatable; // Temporarily disabled until lara-zeus package is working
 

@@ -5,17 +5,17 @@ declare(strict_types=1);
 namespace Modules\Platform\Filament\Resources\AuditLogResource\Pages;
 
 use Filament\Actions\Action;
-use Filament\Resources\Pages\ListRecords;
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Platform\Filament\Resources\AuditLogResource;
 use Modules\Platform\Models\AuditLog;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 use function Safe\fclose;
 use function Safe\fopen;
 use function Safe\fputcsv;
 
-final class ListAuditLogs extends ListRecords
+final class ListAuditLogs extends XotBaseListRecords
 {
     protected static string $resource = AuditLogResource::class;
 
