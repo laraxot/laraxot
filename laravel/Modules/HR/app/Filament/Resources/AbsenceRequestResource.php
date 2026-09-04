@@ -202,7 +202,7 @@ final class AbsenceRequestResource extends GatedXotBaseResource
         ];
     }
 
-    private static function translateAbsenceType(?string $type): string
+    public static function translateAbsenceType(?string $type): string
     {
         if ($type === null || trim($type) === '') {
             return '-';

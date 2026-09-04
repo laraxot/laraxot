@@ -1311,7 +1311,7 @@ final class InterventionResource extends GatedXotBaseResource
         return '';
     }
 
-    private static function isAssignedToUser(Intervention $record, int|string $userId): bool
+    public static function isAssignedToUser(Intervention $record, int|string $userId): bool
     {
         if ((string) $record->performed_by_user_id === (string) $userId) {
             return true;

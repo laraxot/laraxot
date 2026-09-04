@@ -20,24 +20,11 @@ uses(TestCase::class);
  * censite in docs/list-pages-without-columns.md e vanno svuotate da li',
  * non aggiunte.
  */
-/** @var list<string> Pagine gia' rotte prima di questo test. Solo da accorciare. */
+/** @var list<string> Le ultime rimaste senza colonne. Solo da accorciare. */
 const DEBITO = [
-    'Modules/Catalog/app/Filament/Resources/CatalogFrequencyResource/Pages/ListCatalogFrequencies.php',
-    'Modules/Catalog/app/Filament/Resources/CatalogMeasureUnitResource/Pages/ListCatalogMeasureUnits.php',
-    'Modules/Catalog/app/Filament/Resources/CatalogModelResource/Pages/ListCatalogModels.php',
-    'Modules/Catalog/app/Filament/Resources/CatalogPartTypeResource/Pages/ListCatalogPartTypes.php',
-    'Modules/Catalog/app/Filament/Resources/MetelCatalogResource/Pages/ListMetelCatalogs.php',
-    'Modules/Catalog/app/Filament/Resources/ProductResource/Pages/ListProducts.php',
-    'Modules/Customer/app/Filament/Resources/CustomerResource/Pages/ListCustomers.php',
-    'Modules/Customer/app/Filament/Resources/ResellerResource/Pages/ListResellers.php',
     'Modules/Geo/app/Filament/Resources/Pages/ListLocations.php',
-    'Modules/HR/app/Filament/Resources/AbsenceRequestResource/Pages/ListAbsenceRequests.php',
-    'Modules/HR/app/Filament/Resources/EmployeeResource/Pages/ListEmployees.php',
-    'Modules/Intervention/app/Filament/Resources/DailyNoteResource/Pages/ListDailyNotes.php',
-    'Modules/Intervention/app/Filament/Resources/InterventionResource/Pages/ListInterventions.php',
     'Modules/Lang/app/Filament/Resources/Pages/LangBaseListRecords.php',
     'Modules/UI/app/Filament/Resources/Pages/BaseListRecords.php',
-    'Modules/WorkOrder/app/Filament/Resources/WorkOrderResource/Pages/ListWorkOrders.php',
 ];
 
 it('every list page declares its table columns', function (): void {
