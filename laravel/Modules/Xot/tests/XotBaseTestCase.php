@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Tests;
 
+use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\DatabaseManager;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
@@ -14,6 +15,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Translation\ArrayLoader;
 use Illuminate\Translation\Translator;
 use Mockery\MockInterface;
+use Modules\Lang\Actions\SaveTransAction;
 use Modules\User\Database\Factories\TenantFactory;
 use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\Tenant;
@@ -161,6 +163,8 @@ abstract class XotBaseTestCase extends BaseTestCase
         // i blade con @vite renderizzano senza asset invece di lanciare ViewException.
         $this->withoutVite();
 
+        $this->stopTranslationsFromBeingWritten();
+
         if (! $this->app->bound('translator')) {
             $this->app->singleton('translator', function ($app) {
                 return new Translator(
@@ -169,6 +173,26 @@ abstract class XotBaseTestCase extends BaseTestCase
                 );
             });
         }
+    }
+
+    /**
+     * AutoLabelAction, incontrando una chiave di traduzione che non esiste, la crea
+     * e la scrive nel file del modulo. In test questo significa che una suite
+     * riscrive lang/it/ dell'albero di lavoro: e' cosi' che sono comparsi file come
+     * should_not_write.php e che il fixture finiva sporco fra un'esecuzione e
+     * l'altra. Qui la scrittura viene disinnescata; i test che vogliono verificarla
+     * rimettono l'istanza vera con bindRealSaveTransAction().
+     */
+    protected function stopTranslationsFromBeingWritten(): void
+    {
+        if (! class_exists(SaveTransAction::class)) {
+            return;
+        }
+
+        $this->app->bind(SaveTransAction::class, static fn (): SaveTransAction => new class() extends SaveTransAction
+        {
+            public function execute(string $key, int|string|array|Htmlable|null $data): void {}
+        });
     }
 
     protected function tearDown(): void
