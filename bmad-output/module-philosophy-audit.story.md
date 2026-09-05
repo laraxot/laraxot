@@ -113,10 +113,37 @@ Modules without PHILOSOPHY.md:
 
 ---
 
+## Consolidation Deep Dives
+
+### AI + AiAssistant: Extract Handlers, Don't Merge
+
+**Status:** Stories created, Phase 1 ready for dev
+
+**Scope:**
+1. **Phase 1 (AI module):** Extract domain handlers (QuotationDraft, InterventionReport, Speech)
+   - Story: `laravel/Modules/AI/docs/stories/01.consolidate-aiassistant-handlers.story.md`
+   - Deliverable: 4 handlers, tests, ARCHITECTURE.md, consolidation roadmap
+   
+2. **Phase 2 (AiAssistant module):** Refactor to delegate to handlers
+   - Story: `laravel/Modules/AiAssistant/docs/stories/01.refactor-to-use-ai-handlers.story.md`
+   - Blocked on: Phase 1 completion
+   - Deliverable: Remove direct LLM imports, delegate all extraction to handlers
+
+**Rationale:** NOT a module merge. AI stays infra, AiAssistant stays domain.
+- Current: Duplication (both implement LLM orchestration, retry logic, response parsing)
+- Proposed: AI handles LLM mechanics; AiAssistant handles domain logic
+- Impact: -600 LOC in AiAssistant, +300 LOC in AI (net -300), zero duplication
+
+**Related Docs:**
+- `laravel/Modules/AI/docs/consolidation-with-aiassistant.md` — full strategy
+- `laravel/Modules/AI/ARCHITECTURE.md` — AI handler layer design
+- `laravel/Modules/AiAssistant/ARCHITECTURE.md` — AiAssistant as thin orchestrator
+
 ## Next Steps
 
-1. **Document:** Create PHILOSOPHY.md for Pillar + Domain modules.
-2. **Consolidate:** Merge Email→Notify, Comment+Rating→Feedback, AI+AiAssistant.
-3. **Extract:** Settings from Platform, Timesheet from Employee, ContactManager from Customer.
-4. **Relocate:** AsdSoci, Dds, Giveback, Thermo, Wts → mark TechPlanner-owned.
-5. **Verify:** Run PHPStan L10 + tests after each change. Update git on each module.
+1. ✅ **Document:** PHILOSOPHY.md created for Pillar modules (User, UI, Tenant, Platform, WorkOrder).
+2. 🔄 **Consolidate:** AI+AiAssistant — stories ready for dev (Phase 1 ready now).
+3. ⏳ **Consolidate:** Email→Notify, Comment+Rating→Feedback (story creation pending).
+4. ⏳ **Extract:** Settings from Platform, Timesheet from Employee, ContactManager from Customer.
+5. ⏳ **Relocate:** AsdSoci, Dds, Giveback, Thermo, Wts → mark TechPlanner-owned.
+6. ⏳ **Verify:** Run PHPStan L10 + tests after each change. Update git on each module.
