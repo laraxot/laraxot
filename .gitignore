@@ -153,3 +153,4 @@ laravel/phpstan_geo_errors.json
 laravel/phpstan_all_modules.json
 ${CLAUDE_PROJECT_DIR:-.}/
 .token-optimizer
+${PWD}
