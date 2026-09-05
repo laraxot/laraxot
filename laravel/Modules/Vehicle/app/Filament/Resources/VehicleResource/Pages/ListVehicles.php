@@ -15,7 +15,7 @@ final class ListVehicles extends XotBaseListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            'create' => Actions\CreateAction::make(),
         ];
     }
 }

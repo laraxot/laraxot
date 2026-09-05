@@ -19,11 +19,11 @@ final class ListAuditLogs extends XotBaseListRecords
 {
     protected static string $resource = AuditLogResource::class;
 
-    /** @return array<int, Action> */
+    /** @return array<string, Action> */
     protected function getHeaderActions(): array
     {
         return [
-            Action::make('exportCsv')
+            'exportCsv' => Action::make('exportCsv')
                 ->label(__('platform.audit_log.actions.export_csv'))
                 ->icon('heroicon-o-arrow-down-tray')
                 ->action(function (): StreamedResponse {

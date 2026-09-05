@@ -25,26 +25,25 @@ class ViewArticle extends XotBaseViewRecord
 
     protected static string $resource = ArticleResource::class;
 
-    public function infolist(Schema $schema): Schema
+    protected function getInfolistSchema(): array
     {
-        return $schema
-            ->components([
-                // ...
-                TextEntry::make('title'),
-                TextEntry::make('closed_at'),
-                TextEntry::make('rewarded_at'),
-            ]);
+        return [
+            // ...
+            'title' => TextEntry::make('title'),
+            'closed_at' => TextEntry::make('closed_at'),
+            'rewarded_at' => TextEntry::make('rewarded_at'),
+        ];
     }
 
     protected function getHeaderActions(): array
     {
         return [
             // LocaleSwitcher::make(), // Temporarily disabled until lara-zeus package is working
-            EditAction::make(),
-            DeleteAction::make(),
+            'edit' => EditAction::make(),
+            'delete' => DeleteAction::make(),
             // BetHeaderAction::make(),
             // WinHeaderAction::make(),
-            Action::make('change_closed_at')
+            'change_closed_at' => Action::make('change_closed_at')
                 ->tooltip('cambia data chiusura')
                 ->label('')
                 ->icon('heroicon-o-lock-closed')

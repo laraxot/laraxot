@@ -46,11 +46,11 @@ final class ViewAuditLog extends XotBaseViewRecord
         ];
     }
 
-    /** @return array<int, Action> */
+    /** @return array<string, Action> */
     protected function getHeaderActions(): array
     {
         return [
-            Action::make('back')
+            'back' => Action::make('back')
                 ->label(__('platform.audit_log.actions.back'))
                 ->url(AuditLogResource::getUrl()),
         ];

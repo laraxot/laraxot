@@ -17,7 +17,7 @@ final class ListPlatformSettings extends XotBaseListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Action::make('seedDefaults')
+            'seedDefaults' => Action::make('seedDefaults')
                 ->label(__('platform.actions.seed_defaults'))
                 ->requiresConfirmation()
                 ->modalDescription(__('platform.actions.seed_defaults_description'))

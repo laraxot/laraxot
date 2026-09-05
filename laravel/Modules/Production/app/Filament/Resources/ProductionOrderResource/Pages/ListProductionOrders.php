@@ -15,7 +15,7 @@ final class ListProductionOrders extends XotBaseListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            'create' => Actions\CreateAction::make(),
         ];
     }
 }

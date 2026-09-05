@@ -13,6 +13,5 @@ use Modules\Rating\Models\Traits\HasRatingsTrait;
  */
 abstract class AbstractRatingsHost extends BaseModel
 {
-    /** @use HasRatingsTrait<\Modules\Rating\Models\AbstractRatingsHost> */
     use HasRatingsTrait;
 }

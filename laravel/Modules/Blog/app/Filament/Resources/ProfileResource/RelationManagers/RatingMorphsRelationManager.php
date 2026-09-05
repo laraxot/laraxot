@@ -20,14 +20,13 @@ class RatingMorphsRelationManager extends XotBaseRelationManager
     // protected static string $relationship = 'ratings';
     protected static string $relationship = 'ratingMorphs';
 
-    public function form(Schema $schema): Schema
+    public function getFormSchema(): array
     {
-        return $schema
-            ->components([
-                TextInput::make('title')
-                    ->required()
-                    ->maxLength(255),
-            ]);
+        return [
+            'title' => TextInput::make('title')
+                ->required()
+                ->maxLength(255),
+        ];
     }
 
     public function table(Table $table): Table

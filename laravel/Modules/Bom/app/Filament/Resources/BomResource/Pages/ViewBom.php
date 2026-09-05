@@ -64,7 +64,7 @@ final class ViewBom extends XotBaseViewRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\EditAction::make(),
+            'edit' => Actions\EditAction::make(),
         ];
     }
 
