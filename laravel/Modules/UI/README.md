@@ -10,7 +10,6 @@
 [![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)
 [![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)
 [![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=plastic)]()
-]()
 
 > **Componenti UI riutilizzabili e design system**  
 > Componenti UI, layout, temi e pattern di design per Filament v5.
@@ -41,6 +40,39 @@ In un mondo dove la complessità è l'avere, abbiamo scritto codice semplice. Qu
 - **Filament 5** - Admin panel d'eccellenza
 - **XotBase** - Pattern consolidati che funzionano
 
+## 🚀 Quick Start
+
+```bash
+# Installazione modulo
+php artisan module:enable UI
+php artisan migrate
+
+# Sviluppo locale
+cd laravel
+composer dev
+./vendor/bin/pest Modules/UI/tests
+./vendor/bin/phpstan analyse Modules/UI --memory-limit=-1
+```
+
+Configuration is in `config/ui.php`. Adjust as needed.
+
+## 🤝 Contributing
+
+```bash
+cd laravel
+composer dev
+./vendor/bin/pest Modules/UI/tests
+./vendor/bin/phpstan analyse Modules/UI --memory-limit=-1
+```
+
+**Before submitting:**
+- [ ] Tests pass
+- [ ] PHPStan L10 passes
+- [ ] Code style (Pint) applied
+- [ ] Documentation updated
+
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for design decisions.
+
 ## 📖 Documentazione
 
 | Lingua | Link |
@@ -49,16 +81,15 @@ In un mondo dove la complessità è l'avere, abbiamo scritto codice semplice. Qu
 | 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
 | 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 | 🎯 Esempi | [docs/examples/](./docs/examples/) |
+| 🏗️ Architettura | [ARCHITECTURE.md](./ARCHITECTURE.md) |
+| 🧪 Testing | [TESTING.md](./TESTING.md) |
+| 📜 Changelog | [CHANGELOG.md](./CHANGELOG.md) |
 
 ## 🔧 Tecnologie chiave
 
 **Stack principale:** Laravel 13, Filament 5, XotBase
 
 **Keywords:** UI, Components, Design System
-
-## 🚀 Pronte all'uso
-
-Importa, installa, configura. Il resto ci penseremo noi.
 
 ---
 
