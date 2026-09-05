@@ -151,3 +151,4 @@ laravel/phpstan_xot.json
 laravel/phpstan_report.json
 laravel/phpstan_geo_errors.json
 laravel/phpstan_all_modules.json
+${CLAUDE_PROJECT_DIR:-.}/
