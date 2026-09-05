@@ -93,7 +93,7 @@ it('downloads the processing sheet PDF from the processing sheet page', function
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['step' => $step->id])
-        ->test(WtsProcessingSheetPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(WtsProcessingSheetPage::class)
         ->call('downloadSheetPdf')
         ->assertHasNoErrors();
 });
@@ -161,7 +161,7 @@ it('reprints the output label PDF from the finished material page', function ():
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['material' => $material->id])
-        ->test(WtsFinishedMaterialPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(WtsFinishedMaterialPage::class)
         ->call('reprintOutputLabel')
         ->assertHasNoErrors();
 

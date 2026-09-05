@@ -61,7 +61,7 @@ it('covers dirty drum and pallet output branches in processing form trait', func
     Livewire::actingAs($user);
     /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
     $livewire = Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsSortingPage::class) /** @phpstan-ignore-line argument.templateType */;
+        ->test(WtsSortingPage::class);
     $livewire->set('selectedUnitIds', [$unit->id])
         ->set('workedWeight', '50') // >= output (fusto sporco 22 + bancale 20) per bilancio valido
         ->set('dirtyDrumsCount', 1)

@@ -33,7 +33,7 @@ it('registers processing from each WTS processing subpage', function (string $pa
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test($pageClass) /** @phpstan-ignore-line argument.templateType */
+        ->test($pageClass)
         ->set('selectedUnitIds', [$unit->id])
         ->set('workedWeight', '120')
         ->set('drumsCount', 1)
@@ -70,7 +70,7 @@ it('auto-computes the worked weight from the selected colli', function (): void 
 
     Livewire::actingAs($user);
     $component = Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsSortingPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(WtsSortingPage::class)
         // Al mount tutti i colli sono selezionati -> peso totale del lotto.
         ->assertSet('workedWeight', '300');
 
@@ -108,7 +108,7 @@ it('exposes computed output weights and the remaining waste weight', function ()
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsSortingPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(WtsSortingPage::class)
         ->set('workedWeight', '200')
         ->set('drumsCount', 3) // 3 x 20 kg = 60 kg di output
         ->assertViewHas('outputTotalWeight', 60.0)

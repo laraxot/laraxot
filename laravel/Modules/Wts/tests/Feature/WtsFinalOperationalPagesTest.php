@@ -77,7 +77,7 @@ it('renders the real audit page results for a searched code', function (): void 
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['search' => 'OUT-AUDIT-REAL-01'])
-        ->test(WtsAuditPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(WtsAuditPage::class)
         ->assertSet('search', 'OUT-AUDIT-REAL-01');
 });
 
@@ -100,7 +100,7 @@ it('renders the real processing sheet page for a selected step', function (): vo
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['step' => $step->id])
-        ->test(WtsProcessingSheetPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(WtsProcessingSheetPage::class)
         ->assertSet('stepId', $step->id);
 });
 

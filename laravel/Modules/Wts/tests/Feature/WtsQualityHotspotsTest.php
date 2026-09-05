@@ -144,7 +144,7 @@ it('covers empty selection invalid lot selection and stock view normalization in
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsSortingPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(WtsSortingPage::class)
         ->set('selectedUnitIds', [])
         ->call('registerProcessing')
         ->assertHasNoErrors();
@@ -153,7 +153,7 @@ it('covers empty selection invalid lot selection and stock view normalization in
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsSortingPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(WtsSortingPage::class)
         ->set('selectedUnitIds', [$unit->id, $otherUnit->id])
         ->set('workedWeight', '10,5')
         ->set('deferredIronWeight', '2,5')
@@ -167,7 +167,7 @@ it('covers empty selection invalid lot selection and stock view normalization in
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsSortingPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(WtsSortingPage::class)
         ->assertViewHas('stockViews', [
             'to_process' => 'Da lavorare',
             'finished' => '',

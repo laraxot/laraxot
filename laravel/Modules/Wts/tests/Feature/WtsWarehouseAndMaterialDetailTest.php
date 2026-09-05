@@ -75,7 +75,7 @@ it('renders the real material detail page for a scanned unit', function (): void
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['unit' => $unit->id])
-        ->test(WtsMaterialDetailPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(WtsMaterialDetailPage::class)
         ->call('moveToArea', 'in_process', 'Reparto pressa')
         ->assertHasNoErrors();
 
@@ -96,7 +96,7 @@ it('reprints the label of a collo directly from the material detail page', funct
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['unit' => $unit->id])
-        ->test(WtsMaterialDetailPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(WtsMaterialDetailPage::class)
         ->call('reprintUnitLabel')
         ->assertHasNoErrors();
 

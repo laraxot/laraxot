@@ -3,7 +3,7 @@ title: Fix 17 PHPStan errors across Filament Resources and Xot base classes
 epic: 0
 story_id: 1
 slug: fix-phpstan-filament-xotbase-errors
-status: in-progress
+status: completed
 created: 2026-09-05
 modules_affected:
   - Blog

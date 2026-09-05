@@ -51,7 +51,7 @@ it('normalizes lot detail unit type config and ignores non string keys', functio
     Livewire::actingAs($user);
     /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
     $livewire = Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */;
+        ->test(WtsLotDetailPage::class);
     $livewire->assertViewHas('unitTypeLabels', [
             'big_bag' => 'Big bag',
             'drum' => '',
@@ -94,7 +94,7 @@ it('ignores non string unit type keys in lot detail page config', function (): v
     Livewire::actingAs($user);
     /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
     $livewire = Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */;
+        ->test(WtsLotDetailPage::class);
     $livewire->assertViewHas('unitTypeLabels', [
             'big_bag' => 'Big bag',
             'pallet' => '',
@@ -130,7 +130,7 @@ it('covers invalid taking charge input branch in new ingress page', function ():
     Livewire::actingAs($user);
     /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
     $livewire = Livewire::withQueryParams(['record' => $record->id])
-        ->test(WtsNewIngressPage::class) /** @phpstan-ignore-line argument.templateType */;
+        ->test(WtsNewIngressPage::class);
     $livewire->set('grossQuantity', '0')
         ->call('confirmTakingCharge');
     $livewire->assertHasNoErrors();
@@ -154,7 +154,7 @@ it('ignores invalid unit ids on the lot detail page when a lot exists', function
     Livewire::actingAs($user);
     /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
     $livewire = Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */;
+        ->test(WtsLotDetailPage::class);
     $livewire->call('updateUnitType', 999999, 'drum')
         ->call('reprintUnitLabel', 999999);
     $livewire->assertHasNoErrors();
@@ -178,7 +178,7 @@ it('prints single and bulk labels directly from the lot detail page', function (
 
     Livewire::actingAs($user);
     $component = Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */;
+        ->test(WtsLotDetailPage::class);
 
     // Cambio tipologia collo senza passare dalla UI-04.
     $component->call('updateUnitType', $unit->id, 'drum')->assertHasNoErrors();
@@ -212,7 +212,7 @@ it('warns instead of printing when the lot has no units yet', function (): void 
     Livewire::actingAs($user);
     /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
     $livewire = Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */;
+        ->test(WtsLotDetailPage::class);
     $livewire->call('reprintAllLabels');
     $livewire->assertHasNoErrors();
 

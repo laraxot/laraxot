@@ -81,7 +81,7 @@ it('records a non conformity from the lot detail page', function (): void {
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(WtsLotDetailPage::class)
         ->set('nonConformityNote', 'Etichetta non leggibile sul collo')
         ->call('reportNonConformity')
         ->assertHasNoErrors();

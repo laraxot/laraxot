@@ -116,7 +116,7 @@ it('covers remaining processing page utility branches and config normalization',
     Livewire::actingAs($user);
     /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
     $livewire = Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsProcessingPage::class) /** @phpstan-ignore-line argument.templateType */;
+        ->test(WtsProcessingPage::class);
     $livewire->call('deselectUnit', $unitA->id)
         ->set('lotId', $lot->id);
     $livewire->assertViewHas('stepLabels', [

@@ -116,7 +116,7 @@ it('queues a single label to the printer from the lot detail page', function ():
     Livewire\Livewire::actingAs($user);
         /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
         $livewire = Livewire\Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(Modules\Wts\Filament\Pages\WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */;
+        ->test(Modules\Wts\Filament\Pages\WtsLotDetailPage::class);
     $livewire->call('queueUnitLabelPrint', $unit->id)
         ->assertHasNoErrors();
 
@@ -126,7 +126,7 @@ it('queues a single label to the printer from the lot detail page', function ():
     Livewire\Livewire::actingAs($user);
         /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
         $livewire = Livewire\Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(Modules\Wts\Filament\Pages\WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */;
+        ->test(Modules\Wts\Filament\Pages\WtsLotDetailPage::class);
     $livewire->call('queueUnitLabelPrint', 999999)
         ->assertHasNoErrors();
 
@@ -150,7 +150,7 @@ it('queues all lot labels to the printer from the lot detail page', function ():
     Livewire\Livewire::actingAs($user);
         /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
         $livewire = Livewire\Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(Modules\Wts\Filament\Pages\WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */;
+        ->test(Modules\Wts\Filament\Pages\WtsLotDetailPage::class);
     $livewire->call('queueAllLabelsPrint')
         ->assertHasNoErrors();
 

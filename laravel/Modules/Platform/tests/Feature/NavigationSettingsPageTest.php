@@ -49,13 +49,13 @@ it('persists an override when toggling a node off and removes it when toggling b
     $key = NavigationClassifier::itemKey(ProductResource::class);
 
     Livewire::actingAs($user)
-        ->test(NavigationSettingsPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(NavigationSettingsPage::class)
         ->call('toggle', $key);
 
     expect(NavigationPreference::query()->where('node_key', $key)->where('is_enabled', false)->exists())->toBeTrue();
 
     Livewire::actingAs($user)
-        ->test(NavigationSettingsPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(NavigationSettingsPage::class)
         ->call('toggle', $key);
 
     expect(NavigationPreference::query()->where('node_key', $key)->exists())->toBeFalse();
@@ -66,7 +66,7 @@ it('ignores toggles for keys outside the catalog', function (): void {
     filament()->setCurrentPanel('admin');
 
     Livewire::actingAs($user)
-        ->test(NavigationSettingsPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(NavigationSettingsPage::class)
         ->call('toggle', 'item:App\\Not\\A\\Real\\Class');
 
     expect(NavigationPreference::query()->count())->toBe(0);

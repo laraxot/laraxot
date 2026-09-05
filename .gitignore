@@ -144,3 +144,7 @@ bmad/upstream/claude-code-bmad-skills/
 ${HOME}
 .token
 laravel/phpstan-*
+
+laravel/phpstan_current.json
+laravel/phpstan_employee_errors.json
+laravel/phpstan_xot.json

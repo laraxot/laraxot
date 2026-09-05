@@ -159,7 +159,7 @@ it('stores UI-02 taking charge data from the WTS panel', function (): void {
     Livewire::actingAs($user);
     /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
     $livewire = Livewire::withQueryParams(['record' => $record->id])
-        ->test(WtsNewIngressPage::class) /** @phpstan-ignore-line argument.templateType */;
+        ->test(WtsNewIngressPage::class);
     $livewire->set('entryWeight', '970')
         ->set('tareWeight', '10')
         ->set('acceptanceStatus', 'accepted_with_note')
@@ -185,7 +185,7 @@ it('adds and removes lot units directly from UI-03', function (): void {
     Livewire::actingAs($user);
     /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
     $livewire = Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */;
+        ->test(WtsLotDetailPage::class);
     $livewire->call('addUnits', 'big_bag', 2);
     $livewire->assertHasNoErrors();
 
@@ -197,7 +197,7 @@ it('adds and removes lot units directly from UI-03', function (): void {
     Livewire::actingAs($user);
     /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
     $livewire = Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */;
+        ->test(WtsLotDetailPage::class);
     $livewire->call('removeUnit', $unitId);
     $livewire->assertHasNoErrors();
 

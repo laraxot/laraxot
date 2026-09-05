@@ -159,13 +159,13 @@ it('covers material detail fallback branches and invalid moves', function (): vo
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['unit' => 999999])
-        ->test(WtsMaterialDetailPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(WtsMaterialDetailPage::class)
         ->call('moveToArea', 'to_process')
         ->assertHasNoErrors();
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['unit' => $unit->id])
-        ->test(WtsMaterialDetailPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(WtsMaterialDetailPage::class)
         ->call('moveToArea', '')
         ->assertHasNoErrors();
 

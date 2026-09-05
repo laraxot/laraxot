@@ -214,7 +214,7 @@ it('attributes queued label prints to the acting user from the lot detail page',
     assert($lot instanceof \Modules\Wts\Models\WtsInboundLot);
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(WtsLotDetailPage::class)
         ->call('queueUnitLabelPrint', $unit->id)
         ->call('queueAllLabelsPrint')
         ->assertHasNoErrors();
@@ -244,7 +244,7 @@ it('soft deletes removed units keeping their print history and audit trail', fun
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $lot->id])
-        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(WtsLotDetailPage::class)
         ->call('removeUnit', $unit->id)
         ->assertHasNoErrors();
 
@@ -275,7 +275,7 @@ it('ignores queue print requests without a selected lot or without units', funct
 
     Livewire::actingAs($user);
     Livewire::withQueryParams(['lot' => $emptyLot->id])
-        ->test(WtsLotDetailPage::class) /** @phpstan-ignore-line argument.templateType */
+        ->test(WtsLotDetailPage::class)
         ->call('queueAllLabelsPrint')
         ->assertHasNoErrors();
 
