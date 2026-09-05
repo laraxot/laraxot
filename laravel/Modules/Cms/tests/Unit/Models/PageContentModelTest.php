@@ -8,7 +8,7 @@ use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
 use Spatie\Translatable\HasTranslations;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 describe('PageContent Model', function (): void {
     test('page content model can be instantiated', function (): void {
         $model = new PageContent();

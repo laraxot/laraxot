@@ -7,7 +7,7 @@ use Modules\Cms\Http\Volt\Password\TokenComponent;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 describe('Password TokenComponent', function (): void {
     test('token component extends volt component', function (): void {
         $component = new TokenComponent();

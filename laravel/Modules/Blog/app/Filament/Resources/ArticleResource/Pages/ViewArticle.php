@@ -9,7 +9,6 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Infolists\Components\TextEntry;
-use Filament\Schemas\Schema;
 use Modules\Blog\Filament\Resources\ArticleResource;
 // use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
 // use LaraZeus\SpatieTranslatable\Resources\Pages\EditRecord\Concerns\Translatable;

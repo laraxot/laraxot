@@ -7,7 +7,7 @@ use Modules\Cms\Http\Volt\VerifyComponent;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 describe('VerifyComponent', function (): void {
     test('verify component extends volt component', function (): void {
         $component = new VerifyComponent();

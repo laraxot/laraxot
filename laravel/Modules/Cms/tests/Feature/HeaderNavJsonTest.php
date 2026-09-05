@@ -9,7 +9,7 @@ use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Actions\Config\GetTenantFilePathAction;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 
 /**
  * @return array<string, mixed>

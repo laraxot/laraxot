@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Cms\Tests\TestCase;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('renders the login page', function (): void {
     $locale = app()->getLocale();
@@ -155,6 +155,6 @@ it('allows any user type to login via frontend', function (): void {
 
     $authenticatedUser = Auth::user();
     expect($authenticatedUser)->not->toBeNull();
-    \PHPUnit\Framework\Assert::assertInstanceOf(\Modules\User\Models\User::class, $authenticatedUser);
+    PHPUnit\Framework\Assert::assertInstanceOf(Modules\User\Models\User::class, $authenticatedUser);
     expect($authenticatedUser->email)->toBe($email);
 });

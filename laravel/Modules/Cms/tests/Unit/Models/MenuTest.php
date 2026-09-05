@@ -8,7 +8,7 @@ use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('Menu model can be instantiated', function () {
     $menu = new Menu();
 

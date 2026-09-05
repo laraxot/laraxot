@@ -9,7 +9,7 @@ use Modules\Cms\Tests\TestCase;
 use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('email verification screen can be rendered', function (): void {
     $user = cmsCreateUnverifiedUser();
 

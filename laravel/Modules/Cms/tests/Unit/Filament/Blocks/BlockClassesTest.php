@@ -14,7 +14,7 @@ use Modules\Cms\Filament\Blocks\ParagraphBlock;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('ActionsBlock can be instantiated', function (): void {
     Assert::assertTrue(class_exists(ActionsBlock::class));
 });

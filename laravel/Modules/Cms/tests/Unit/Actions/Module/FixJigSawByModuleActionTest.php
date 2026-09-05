@@ -16,7 +16,7 @@ use function Safe\unlink;
 
 use Symfony\Component\Finder\SplFileInfo;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('FixJigSawByModuleAction can be instantiated', function () {
     $action = new FixJigSawByModuleAction();
 

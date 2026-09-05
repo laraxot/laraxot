@@ -8,7 +8,7 @@ use Modules\Cms\Models\Policies\SectionPolicy;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('PagePolicy can be instantiated', function () {
     $policy = new PagePolicy();
 

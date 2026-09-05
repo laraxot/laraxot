@@ -6,7 +6,7 @@ use Modules\Cms\Filament\Clusters\Appearance\Pages\Breadcrumb;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('Breadcrumb page uses correct view', function () {
     $page = new Breadcrumb();
     // Access protected property via reflection

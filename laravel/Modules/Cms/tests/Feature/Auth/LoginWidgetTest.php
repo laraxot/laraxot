@@ -15,7 +15,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\class_implements;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('widget can be rendered', function (): void {
     $component = Livewire::test(LoginWidget::class);
     /* @var Testable<\Livewire\Component> $component */

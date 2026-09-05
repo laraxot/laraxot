@@ -8,7 +8,7 @@ use Modules\Cms\Tests\TestCase;
 use Modules\User\Filament\Widgets\RegistrationWidget;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
     cmsSkipTest('patient/doctor registration types not configured in this install.');

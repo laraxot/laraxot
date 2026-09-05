@@ -7,7 +7,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\file_get_contents;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 
 /*
  * Test that translations work correctly for each locale.

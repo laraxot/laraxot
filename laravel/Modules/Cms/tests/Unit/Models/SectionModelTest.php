@@ -9,7 +9,7 @@ use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 describe('Section Model', function (): void {
     test('section model can be instantiated', function (): void {
         $model = new Section();

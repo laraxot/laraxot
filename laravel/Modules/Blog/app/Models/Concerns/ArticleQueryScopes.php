@@ -106,5 +106,4 @@ trait ArticleQueryScopes
             ->orWhere('content', 'LIKE', "%{$searching}%")
             ->orWhere('excerpt', 'LIKE', "%{$searching}%");
     }
-
 }

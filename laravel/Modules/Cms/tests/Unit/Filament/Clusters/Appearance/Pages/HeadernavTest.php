@@ -10,7 +10,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\class_implements;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('Headernav page can be instantiated', function () {
     $page = new Headernav();
 });

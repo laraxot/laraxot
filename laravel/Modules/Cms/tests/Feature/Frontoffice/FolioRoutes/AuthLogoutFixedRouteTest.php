@@ -7,7 +7,7 @@ use Illuminate\Testing\TestResponse;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 it('GET /it/auth/logout_fixed acceptable', function (): void {
     /** @var TestResponse<Response> $res */
     $res = cmsGet('/it/auth/logout_fixed');

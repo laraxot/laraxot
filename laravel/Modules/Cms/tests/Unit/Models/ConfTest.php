@@ -6,7 +6,7 @@ use Modules\Cms\Models\Conf;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('Conf model can be instantiated', function () {
     $conf = new Conf();
 

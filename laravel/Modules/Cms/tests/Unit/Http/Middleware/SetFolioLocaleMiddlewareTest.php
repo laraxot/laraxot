@@ -9,7 +9,7 @@ use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Symfony\Component\HttpFoundation\Response;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('it uses user language with highest priority', function (): void {
     LaravelLocalization::shouldReceive('setLocale')->once()->with('fr');
 

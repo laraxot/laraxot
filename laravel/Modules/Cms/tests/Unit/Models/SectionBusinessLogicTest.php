@@ -12,7 +12,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\class_uses;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Section Business Logic', function (): void {
     test('section has expected fillable fields', function (): void {

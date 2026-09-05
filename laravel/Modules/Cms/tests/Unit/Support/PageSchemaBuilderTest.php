@@ -10,7 +10,7 @@ use Modules\User\Models\User;
 use Modules\Xot\Datas\MetatagData;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 
 /**
  * @param array<string, mixed> $schema

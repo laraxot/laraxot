@@ -11,7 +11,7 @@ use Modules\Cms\Datas\ThemeData;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('BlockData can be instantiated', function () {
     // BlockData might not have a simple constructor, so just check if class exists
     Assert::assertTrue(class_exists(BlockData::class));

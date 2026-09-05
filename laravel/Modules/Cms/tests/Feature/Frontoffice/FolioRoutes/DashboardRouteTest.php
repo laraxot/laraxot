@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 it('GET /it/dashboard acceptable for unauthenticated (redirect/401/403)', function (): void {
     $res = cmsGet('/it/dashboard');
     $status = (int) $res->getStatusCode();

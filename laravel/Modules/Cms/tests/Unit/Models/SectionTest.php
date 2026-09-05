@@ -7,7 +7,7 @@ use Modules\Cms\Models\Section;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('Section model can be instantiated', function () {
     $section = new Section();
 

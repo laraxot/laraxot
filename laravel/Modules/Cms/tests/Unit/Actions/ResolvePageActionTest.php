@@ -10,7 +10,7 @@ use Modules\Cms\Database\Factories\PageFactory;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Resolve Page Action', function (): void {
     test('it resolves adynamic model from known mappings', function (): void {
