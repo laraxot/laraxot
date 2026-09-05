@@ -79,3 +79,4 @@ audit-coverage/
 .vscode/
 .windsurf/
 .devcontainer/
+graphify-out

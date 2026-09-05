@@ -19,7 +19,7 @@ modules_affected:
 
 # Preserve Module .code-workspace Files
 
-**Root cause (errore mio):** Durante il sync parallelo (`git add -A`) ho trattato `.code-workspace` come file zombie da cancellare, invece di verificarne l'esistenza per ogni modulo. Il `git add -A` cancellava quelli non tracciati, ma alcuni moduli non li avevano mai creati.
+**Root cause (errore mio):** Ho trattato `.code-workspace` come file zombie (`git add -A` li cancellava se non tracciaati), ma il vero errore è nella convenzione di naming. Il template scritto nel prompt (`_module_<modulename>.code-workspace`) è incompleto: il nome deriva da `git remote -v` (es. `module_blog_fila5` → `_module_blog_fila5.code-workspace`), non dal nome della cartella. Quindi ho generato duplicati con naming errato (`_blog.code-workspace`, `_notify.code-workspace`, `_module_activity` e `_module_activity_fila5`) in 40+ moduli, e ho lasciato `Thermo` senza file.
 
 **Fix:**
 1. Creare `.code-workspace` per i 9 moduli mancanti (usando template da User)

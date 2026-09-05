@@ -10,3 +10,4 @@ tests/AuditCoverage/
 phpinsights.php
 rector.php
 lang/it/.php
+graphify-out

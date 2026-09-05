@@ -32,3 +32,4 @@ agentdb.rvf
 .devcontainer/
 .claude-audit/
 tests/AuditCoverage/
+graphify-out

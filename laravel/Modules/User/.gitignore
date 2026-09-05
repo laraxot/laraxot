@@ -147,3 +147,4 @@ resources/views/node_modules
 phpinsights.php
 rector.php
 tests/Unit/graphify-out/
+graphify-out

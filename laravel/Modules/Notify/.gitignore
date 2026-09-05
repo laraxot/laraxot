@@ -174,3 +174,4 @@ reports
 .devcontainer/
 .vscode/
 reports/
+graphify-out
