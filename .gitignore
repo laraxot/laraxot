@@ -148,3 +148,4 @@ laravel/phpstan-*
 laravel/phpstan_current.json
 laravel/phpstan_employee_errors.json
 laravel/phpstan_xot.json
+laravel/phpstan_report.json
