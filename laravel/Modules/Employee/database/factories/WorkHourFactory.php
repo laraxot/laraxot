@@ -27,11 +27,13 @@ class WorkHourFactory extends Factory
     public function definition(): array
     {
         $timestamp = $this->faker->dateTimeBetween('-30 days', 'now');
+        /** @var int $hour */
         $hour = $this->faker->numberBetween(8, 18);
+        /** @var int $minute */
         $minute = $this->faker->randomElement([0, 15, 30, 45]);
         $carbonTimestamp = Carbon::instance($timestamp)->setTime(
-            is_int($hour) ? $hour : ((int) $hour),
-            is_int($minute) ? $minute : ((int) $minute),
+            $hour,
+            $minute,
             0,
         );
 
@@ -66,9 +68,13 @@ class WorkHourFactory extends Factory
     {
         $entries = [];
 
+        /** @var int $clockInHour */
+        $clockInHour = $this->faker->numberBetween(8, 9);
+        /** @var int $clockInMin */
+        $clockInMin = $this->faker->randomElement([0, 15, 30, 45]);
         $clockInTime = $date->copy()->setTime(
-            (int) $this->faker->numberBetween(8, 9),
-            (int) $this->faker->randomElement([0, 15, 30, 45]),
+            $clockInHour,
+            $clockInMin,
             0,
         );
 

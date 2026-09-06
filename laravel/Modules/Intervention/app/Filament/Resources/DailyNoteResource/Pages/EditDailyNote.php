@@ -43,14 +43,17 @@ final class EditDailyNote extends XotBaseEditRecord
     protected function mutateFormDataBeforeSave(array $data): array
     {
         $photoPaths = is_array($data['photo_paths'] ?? null) ? $data['photo_paths'] : [];
-        $this->photoPaths = array_values(array_map(static fn (mixed $path): string => (string) $path, $photoPaths));
+        $this->photoPaths = array_values(array_map(static function (mixed $path): string {
+            return is_string($path) ? $path : (string) $path;
+        }, $photoPaths));
 
-        $bodyHtml = DailyNoteHtml::sanitize((string) ($data['body_html'] ?? ''));
+        $bodyHtmlValue = $data['body_html'] ?? '';
+        $bodyHtml = DailyNoteHtml::sanitize((string) $bodyHtmlValue);
         $body = DailyNoteHtml::toPlainText($bodyHtml);
 
         return [
-            'user_id' => (int) $data['user_id'],
-            'note_date' => (string) $data['note_date'],
+            'user_id' => (int) ($data['user_id'] ?? 0),
+            'note_date' => (string) ($data['note_date'] ?? ''),
             'body' => $body,
             'body_html' => $bodyHtml,
         ];

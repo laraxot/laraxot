@@ -51,10 +51,11 @@ final class CreateDailyNote extends XotBaseCreateRecord
      */
     protected function handleRecordCreation(array $data): Model
     {
-        $userId = (int) $data['user_id'];
-        $noteDate = CarbonImmutable::parse((string) $data['note_date']);
-        $body = (string) $data['body'];
-        $bodyHtml = (string) ($data['body_html'] ?? '');
+        $userId = (int) ($data['user_id'] ?? 0);
+        $noteDate = CarbonImmutable::parse((string) ($data['note_date'] ?? ''));
+        $body = (string) ($data['body'] ?? '');
+        $bodyHtmlValue = $data['body_html'] ?? '';
+        $bodyHtml = (string) $bodyHtmlValue;
 
         return app(UpsertDailyNoteForUserAction::class)->execute($userId, $noteDate, $body, $bodyHtml);
     }

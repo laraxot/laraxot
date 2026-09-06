@@ -125,7 +125,7 @@ final class EvaluateWorkOrderReadinessAction
         $seenCodes = [];
 
         foreach ($items as $item) {
-            $code = is_string($item['code']) ? $item['code'] : (string) $item['code'];
+            $code = is_string($item['code']) ? $item['code'] : '';
             $seenCodes[] = $code;
 
             $label = is_string($item['label']) ? $item['label'] : '';
