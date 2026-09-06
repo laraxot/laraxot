@@ -160,7 +160,10 @@ private function applyStyles(Graph $graph): void { ... }
 declare(strict_types=1);
 
 namespace Modules\YourModule\Tests\Unit;
+<<<<<<< HEAD
 use Modules\User\Models\User;
+=======
+>>>>>>> 7f6cf6be (.)
 
 use Tests\TestCase;
 

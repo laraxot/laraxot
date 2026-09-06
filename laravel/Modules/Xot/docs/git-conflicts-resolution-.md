@@ -114,8 +114,11 @@ Sono stati identificati e risolti conflitti Git in diversi file del progetto <no
 - Risolto conflitto nella gestione del campo postal_code
 
 **Modifiche Applicate**:
+<<<<<<< HEAD
 ```
 
+=======
+>>>>>>> 7f6cf6be (.)
 ```php
 // VERSIONE CORRETTA
 $res=Locality::query()
@@ -305,4 +308,8 @@ php artisan lang:check
 
 **Ultimo aggiornamento**: 2025-01-06
 **Autore**: Sistema di correzione automatica
+<<<<<<< HEAD
 **Stato**: ✅ Completato
+=======
+**Stato**: ✅ Completato
+>>>>>>> 7f6cf6be (.)

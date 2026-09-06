@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Install module"
 type: reference
@@ -9,6 +10,8 @@ note: "Convertito da install_module.txt (documento) da convert-docs-txt-to-md.py
 
 # Install module
 
+=======
+>>>>>>> 7f6cf6be (.)
  public function test(){
 
         $vendor_name='laraxot/module_formx';
@@ -41,4 +44,8 @@ note: "Convertito da install_module.txt (documento) da convert-docs-txt-to-md.py
         $new_dir=$module_json->name;
 
         rename(base_path('Modules/'.$old_dir),base_path('Modules/'.$new_dir));
+<<<<<<< HEAD
     }
+=======
+    }
+>>>>>>> 7f6cf6be (.)

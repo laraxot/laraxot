@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: 'Continuous integration tools'
 module: Xot
 type: reference
@@ -85,3 +86,11 @@ https://grafikart.fr/tutoriels/grumphp-836
 ----------------------------------------------------------------------
 
 https://jakzal.github.io/toolbox/
+=======
+module: theme
+topic: continuous-integration-tools
+canonical: ../../../Themes/docs/shared-components/_continuous_integration_tools.txt
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/_continuous_integration_tools.txt
+>>>>>>> 7f6cf6be (.)

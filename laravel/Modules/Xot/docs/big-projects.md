@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: 'big_projects'
 module: Xot
@@ -17,3 +18,10 @@ updated: 2026-08-24
 https://laraveldaily.com/larger-laravel-projects-12-things-to-take-care-of/
 
 https://readme.so/it/editor
+=======
+https://laraveldaily.com/larger-laravel-projects-12-things-to-take-care-of/
+
+
+
+https://readme.so/it/editor
+>>>>>>> 7f6cf6be (.)

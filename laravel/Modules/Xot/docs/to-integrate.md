@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: 'To integrate — risorse esterne'
 module: Xot
@@ -18,3 +19,10 @@ updated: 2026-08-24
 ## Riferimenti
 
 - <https://medium.com/@keljtanoski/modular-laravel-personal-boilerplate-project-starter-eedde8cb3d15>
+=======
+# ___to_integrate
+
+<!-- Contenuto migrato da _docs/___to_integrate.txt -->
+
+https://medium.com/@keljtanoski/modular-laravel-personal-boilerplate-project-starter-eedde8cb3d15
+>>>>>>> 7f6cf6be (.)

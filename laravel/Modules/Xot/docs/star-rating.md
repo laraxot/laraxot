@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: 'star_rating'
 module: Xot
@@ -15,3 +16,6 @@ updated: 2026-08-24
 <!-- Contenuto migrato da _docs/star_rating.txt -->
 
 https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker
+=======
+https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker
+>>>>>>> 7f6cf6be (.)

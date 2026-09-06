@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: 'Macro — risorse esterne'
 module: Xot
@@ -18,3 +19,10 @@ updated: 2026-08-24
 ## Riferimenti
 
 - <https://www.larashout.com/laravel-macros-extending-laravels-core-classes>
+=======
+# _macro
+
+<!-- Contenuto migrato da _docs/_macro.txt -->
+
+https://www.larashout.com/laravel-macros-extending-laravels-core-classes
+>>>>>>> 7f6cf6be (.)

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: 'Laravel cms — risorse esterne'
 module: Xot
@@ -18,3 +19,6 @@ updated: 2026-08-24
 ## Riferimenti
 
 - <https://statamic.com/>
+=======
+https://statamic.com/
+>>>>>>> 7f6cf6be (.)

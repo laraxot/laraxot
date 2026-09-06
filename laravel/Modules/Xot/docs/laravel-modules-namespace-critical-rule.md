@@ -25,7 +25,11 @@ use Modules\Tenant\app\Services\TenantService;
 ### ✅ CORRETTO
 ```php
 // ✅ CORRETTO - SEMPRE COSÌ!
+<<<<<<< HEAD
 use Modules\Xot\Contracts\UserContract;
+=======
+use Modules\User\Models\User;
+>>>>>>> 7f6cf6be (.)
 use Modules\Meetup\Actions\CreateEventAction;
 use Modules\Tenant\Services\TenantService;
 ```

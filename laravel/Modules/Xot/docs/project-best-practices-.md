@@ -113,9 +113,12 @@ architecture-overview.md
 MY_DOCUMENT.md              # UPPERCASE
 my_document.md              # underscore
 analysis.md      # date in name (use CHANGELOG.md)
+<<<<<<< HEAD
 analysis-2025-11-04.md      # date in name (use CHANGELOG.md)
 =======
 analysis.md      # date in name (use CHANGELOG.md)
+=======
+>>>>>>> 7f6cf6be (.)
 ```
 
 ### 8. DRY Principle

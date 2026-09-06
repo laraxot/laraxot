@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Agent instructions"
 type: reference
@@ -11,6 +12,8 @@ related:
   - ./coding-agent-manifests.md
 ---
 
+=======
+>>>>>>> 7f6cf6be (.)
 # Xot Module LLM Wiki Agent Instructions
 
 > **Module/Theme:** Xot

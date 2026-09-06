@@ -3,6 +3,7 @@ title: "Dove si configura la tabella di una Resource Filament"
 type: guideline
 module: Xot
 <<<<<<< HEAD
+<<<<<<< HEAD
 tags: [filament, table, resource, architecture, migration]
 created: 2026-09-01
 updated: 2026-09-02
@@ -18,6 +19,23 @@ related:
 updated: 2026-09-01
 qmd: "tabella filament resource table class getTableFilters XotBaseResourceTable HasXotTable list page xot"
 >>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
+=======
+updated: 2026-09-01
+qmd: "tabella filament resource table class getTableFilters XotBaseResourceTable HasXotTable list page xot"
+=======
+tags: [filament, table, resource, architecture, migration]
+created: 2026-09-01
+updated: 2026-09-02
+qmd: "tabella filament resource table class getTableFilters XotBaseResourceTable HasXotTable list page xot"
+issues:
+  - "https://github.com/laraxot/module_xot_fila5/issues/79"
+discussions:
+  - "https://github.com/laraxot/module_xot_fila5/discussions/19"
+related:
+  - ./wiki/phpstan-best-practices.md
+  - ../../../../docs/stories/2.3.deep-quality-enabled-modules.story.md
+>>>>>>> 7f6cf6be (.)
+>>>>>>> 28b0298a (fix: phpstan issues)
 ---
 
 # La tabella si configura nella Table class, non nella pagina
@@ -25,6 +43,10 @@ qmd: "tabella filament resource table class getTableFilters XotBaseResourceTable
 Vale per ogni Resource di questo modulo.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 28b0298a (fix: phpstan issues)
 ## Stato della migrazione nel progetto WorkOrder
 
 Il resolver `XotBaseResource::getTableClass()` è nuovamente operativo e il gate
@@ -38,8 +60,12 @@ nello spostare quegli hook nelle Table class dedicate. È tracciata nella story
 BMAD 2.3 e resta distinta dal gate PHPStan, che analizza correttamente il contratto
 ma non può provare l'esistenza di ogni classe risolta a runtime.
 
+<<<<<<< HEAD
 =======
 >>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
+=======
+>>>>>>> 7f6cf6be (.)
+>>>>>>> 28b0298a (fix: phpstan issues)
 ## La regola
 
 Colonne, filtri e azioni di una Resource stanno in

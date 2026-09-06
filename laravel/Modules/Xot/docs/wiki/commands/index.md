@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 28b0298a (fix: phpstan issues)
 ---
 title: "Index"
 type: reference
@@ -8,7 +11,12 @@ created: 2026-08-24
 updated: 2026-08-24
 ---
 
+<<<<<<< HEAD
 >>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
+=======
+=======
+>>>>>>> 7f6cf6be (.)
+>>>>>>> 28b0298a (fix: phpstan issues)
 # Xot Module - commands Index
 
 ## Purpose

@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 
 ---
 
@@ -90,3 +91,5 @@ http://enneagon.org/phrases
 
 //----- profilo ---
 https://www.fakenamegenerator.com/gen-male-fr-fr.php
+=======
+>>>>>>> 7f6cf6be (.)

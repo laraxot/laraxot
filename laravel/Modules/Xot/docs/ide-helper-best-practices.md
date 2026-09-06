@@ -456,7 +456,10 @@ jobs:
 ```php
 // app/Support/IdeHelper/CustomModelHook.php
 namespace App\Support\IdeHelper;
+<<<<<<< HEAD
 use Modules\User\Models\User;
+=======
+>>>>>>> 7f6cf6be (.)
 
 use Barryvdh\LaravelIdeHelper\Contracts\ModelHookInterface;
 

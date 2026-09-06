@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Contracts — Catalogo Xot
 
 Interfacce canoniche del modulo `Xot`. SSoT per type-hint cross-module.
@@ -43,3 +44,6 @@ $userClass = User::class;
 ```
 
 Vedi: [User docs: contract adoption](../../../User/docs/wiki/concepts/user-profile-contract-adoption.md)
+=======
+
+>>>>>>> 7f6cf6be (.)

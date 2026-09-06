@@ -51,12 +51,16 @@ class GetComponentsAction
                 $content = File::get($components_json),
                 '['.__LINE__.']['.class_basename(static::class).']',
             );
-            $decoded = json_decode($content, true);
-            /** @var array<int, array<string, mixed>> $comps */
-            $comps = is_array($decoded) ? array_values($decoded) : [];
+            try {
+                $decoded = json_decode($content, true, flags: JSON_THROW_ON_ERROR);
+                /** @var array<int, array<string, mixed>> $comps */
+                $comps = is_array($decoded) ? array_values($decoded) : [];
 
-            if ($this->hasCurrentSchema($comps)) {
-                return ComponentFileData::collection($comps);
+                if ($this->hasCurrentSchema($comps)) {
+                    return ComponentFileData::collection($comps);
+                }
+            } catch (\Exception) {
+                // JSON corrupted or invalid: regenerate instead of failing boot
             }
 
             // Cache scritta da uno schema precedente (name/class/ns rinominati o

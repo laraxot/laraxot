@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: 'delete_related_models'
 module: Xot
@@ -18,3 +19,9 @@ con un trait
 https://tighten.co/blog/laravel-tip-bootable-model-traits/
 
 https://andy-carter.com/blog/using-laravel-s-eloquent-traits
+=======
+con un trait 
+https://tighten.co/blog/laravel-tip-bootable-model-traits/
+
+https://andy-carter.com/blog/using-laravel-s-eloquent-traits
+>>>>>>> 7f6cf6be (.)

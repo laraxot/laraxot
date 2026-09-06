@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Xot Module Patterns"
 type: guide
@@ -35,3 +36,6 @@ class CreateMyTable extends XotBaseMigration {
     }
 }
 ```
+=======
+
+>>>>>>> 7f6cf6be (.)

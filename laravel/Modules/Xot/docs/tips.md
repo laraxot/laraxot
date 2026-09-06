@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: 'Tips'
 module: Xot
@@ -10,6 +11,8 @@ created: 2026-08-24
 updated: 2026-08-24
 ---
 
+=======
+>>>>>>> 7f6cf6be (.)
 https://github.com/phpstan/phpstan/issues/1242
 
 
@@ -38,4 +41,8 @@ protected function callAction(array $match)
     }
 
     throw new \Exception("Method not found: {$controllerClass}@{$method}");
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7f6cf6be (.)

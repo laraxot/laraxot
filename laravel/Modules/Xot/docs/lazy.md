@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: 'Lazy — risorse esterne'
 module: Xot
@@ -23,3 +24,12 @@ updated: 2026-08-24
 - <https://github.com/ressio/lazy-load-xt>
 - <https://github.com/aFarkas/lazysizes>
 - <https://lazy-loading.firebaseapp.com/lazy_loading_lib.html>
+=======
+https://github.com/verlok/vanilla-lazyload   
+https://github.com/ApoorvSaxena/lozad.js
+https://github.com/malchata/yall.js
+https://github.com/ressio/lazy-load-xt
+https://github.com/aFarkas/lazysizes
+
+https://lazy-loading.firebaseapp.com/lazy_loading_lib.html
+>>>>>>> 7f6cf6be (.)

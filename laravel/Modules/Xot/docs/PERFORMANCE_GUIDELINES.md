@@ -437,10 +437,17 @@ public function processData(): void
 - [Code Quality Standards](./code_quality_standards.md)
 - [Common Anti-Patterns](./common_anti_patterns.md)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 - [Code Quality Standards](./CODE_QUALITY_STANDARDS.md)
 - [Common Anti-Patterns](./COMMON_ANTI_PATTERNS.md)
 >>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
+=======
+- [Code Quality Standards](./CODE_QUALITY_STANDARDS.md)
+- [Common Anti-Patterns](./COMMON_ANTI_PATTERNS.md)
+=======
+>>>>>>> 7f6cf6be (.)
+>>>>>>> 28b0298a (fix: phpstan issues)
 - [Testing Guidelines](./testing-guidelines.md)
 
 This document provides comprehensive performance guidelines for maintaining optimal performance across the Xot module and modules that extend it.

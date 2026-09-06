@@ -376,7 +376,11 @@ use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Contracts\ProfileContract;
 
 // ERRATO ❌
+<<<<<<< HEAD
 use Modules\Xot\Contracts\UserContract;
+=======
+use Modules\User\Models\User;
+>>>>>>> 7f6cf6be (.)
 ```
 
 ### 3. Accesso agli Utenti

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: 'Pivot'
 module: Xot
@@ -13,6 +14,11 @@ updated: 2026-08-24
 https://github.com/larastan/larastan/issues/515
 
 **
+=======
+//https://github.com/larastan/larastan/issues/515
+
+/**
+>>>>>>> 7f6cf6be (.)
  * @extends JsonResource<\App\User>
 */
 class UserResource extends JsonResource
@@ -30,6 +36,7 @@ class UserResource extends JsonResource
       }
 }
 
+<<<<<<< HEAD
 
 ## Appendice — contenuto migrato
 
@@ -67,3 +74,22 @@ class UserResource extends JsonResource
          ];
       }
 }
+=======
+ //return $this->pivot->time_to_live;  // This is the line 45
+
+getRelationValue("pivot")
+
+
+
+$dpia = request()->route('dpias');
+$dpia = app('request')->route('dpias');
+///////////////////////
+/**
+ * @property int $id
+ */
+class MyCustomModel extends Model {}
+////////////////////
+
+getModel - Builder
+paginate - Builder
+>>>>>>> 7f6cf6be (.)

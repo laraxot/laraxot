@@ -15,14 +15,18 @@ Coverage collection deferred to next cycle.
 Target: >80% app/ code.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 =======
+=======
+>>>>>>> 28b0298a (fix: phpstan issues)
 ## Test Categories
 - Unit Tests
 - Feature Tests
 - Integration Tests
 
 ## Status
+<<<<<<< HEAD
 
 **2026-09-06**: MODULE_PHILOSOPHY.md created. PHPStan Level 10 verified (0 errors). Pest suite running (background). Coverage actual pending test completion.
 
@@ -284,4 +288,13 @@ sostituito ovunque da `Actions/Model/GetAllModelsByModuleNameAction`
 (gia' esistente, logica identica). I suoi 2 test riscritti sul sostituto
 (coverage preservata). `phpstan analyse Modules/Xot`: 0 errori, cache
 pulita, verificato.
+<<<<<<< HEAD
 >>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
+=======
+=======
+All tests are passing and coverage is being maintained.
+>>>>>>> 7f6cf6be (.)
+=======
+---
+>>>>>>> 64db1c96 (docs: add coverage.md (baseline post-consolidation))
+>>>>>>> 28b0298a (fix: phpstan issues)

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: 'Elastic links — risorse esterne'
 module: Xot
@@ -18,3 +19,6 @@ updated: 2026-08-24
 ## Riferimenti
 
 - <http://127.0.0.1:9200/_cat/health?v=true>
+=======
+http://127.0.0.1:9200/_cat/health?v=true
+>>>>>>> 7f6cf6be (.)

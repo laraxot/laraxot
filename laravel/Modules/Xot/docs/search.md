@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: 'Search — risorse esterne'
 module: Xot
@@ -18,3 +19,6 @@ updated: 2026-08-24
 ## Riferimenti
 
 - <https://freek.dev/1182-searching-models-using-a-where-like-query-in-laravel#adding-support-for-relations>
+=======
+https://www.linkedin.com/pulse/searchable-trait-search-multiple-columns-laravel-ech-chebaby/?trk=read_related_article-card_title
+>>>>>>> 7f6cf6be (.)

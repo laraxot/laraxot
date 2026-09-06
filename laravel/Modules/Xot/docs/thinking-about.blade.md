@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: 'thinking_about.blade'
 module: Xot
@@ -16,3 +17,8 @@ updated: 2026-08-24
 
 struttura con l5-repository
 https://github.com/jeanfprado/laradefault/blob/master/app/Repositories/UserRepositoryEloquent.php
+=======
+
+struttura con l5-repository
+https://github.com/jeanfprado/laradefault/blob/master/app/Repositories/UserRepositoryEloquent.php
+>>>>>>> 7f6cf6be (.)
