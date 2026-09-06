@@ -28,15 +28,15 @@ class CatalogModelFactory extends Factory
     }
 
     /**
-     * @return Collection<int, CatalogModel>
+     * @return Collection<int, CatalogModel>|CatalogModel
      */
-    public function create(mixed $attributes = [], ?Model $parent = null): Collection
+    public function create(mixed $attributes = [], ?Model $parent = null): Collection|CatalogModel
     {
         return parent::create($attributes, $parent);
     }
 
     public function createOne(mixed $attributes = [], ?Model $parent = null): CatalogModel
     {
-        return parent::createOne($attributes, $parent);
+        return parent::createOne($attributes);
     }
 }

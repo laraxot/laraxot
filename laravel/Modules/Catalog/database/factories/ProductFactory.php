@@ -40,15 +40,18 @@ class ProductFactory extends Factory
     }
 
     /**
-     * @return Collection<int, Product>
+     * @return Collection<int, Product>|Product
      */
-    public function create(mixed $attributes = [], ?Model $parent = null): Collection
+    public function create(mixed $attributes = [], ?Model $parent = null): Collection|Product
     {
         return parent::create($attributes, $parent);
     }
 
+    /**
+     * @return Product
+     */
     public function createOne(mixed $attributes = [], ?Model $parent = null): Product
     {
-        return parent::createOne($attributes, $parent);
+        return parent::createOne($attributes);
     }
 }

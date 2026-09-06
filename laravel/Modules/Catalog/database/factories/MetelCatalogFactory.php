@@ -35,15 +35,18 @@ class MetelCatalogFactory extends Factory
     }
 
     /**
-     * @return Collection<int, MetelCatalog>
+     * @return Collection<int, MetelCatalog>|MetelCatalog
      */
-    public function create(mixed $attributes = [], ?Model $parent = null): Collection
+    public function create(mixed $attributes = [], ?Model $parent = null): Collection|MetelCatalog
     {
         return parent::create($attributes, $parent);
     }
 
+    /**
+     * @return MetelCatalog
+     */
     public function createOne(mixed $attributes = [], ?Model $parent = null): MetelCatalog
     {
-        return parent::createOne($attributes, $parent);
+        return parent::createOne($attributes);
     }
 }

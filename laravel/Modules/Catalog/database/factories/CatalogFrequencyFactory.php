@@ -39,15 +39,18 @@ class CatalogFrequencyFactory extends Factory
     }
 
     /**
-     * @return Collection<int, CatalogFrequency>
+     * @return Collection<int, CatalogFrequency>|CatalogFrequency
      */
-    public function create(mixed $attributes = [], ?Model $parent = null): Collection
+    public function create(mixed $attributes = [], ?Model $parent = null): Collection|CatalogFrequency
     {
         return parent::create($attributes, $parent);
     }
 
+    /**
+     * @return CatalogFrequency
+     */
     public function createOne(mixed $attributes = [], ?Model $parent = null): CatalogFrequency
     {
-        return parent::createOne($attributes, $parent);
+        return parent::createOne($attributes);
     }
 }

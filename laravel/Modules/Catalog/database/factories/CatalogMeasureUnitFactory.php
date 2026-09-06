@@ -42,15 +42,15 @@ class CatalogMeasureUnitFactory extends Factory
     }
 
     /**
-     * @return Collection<int, CatalogMeasureUnit>
+     * @return Collection<int, CatalogMeasureUnit>|CatalogMeasureUnit
      */
-    public function create(mixed $attributes = [], ?Model $parent = null): Collection
+    public function create(mixed $attributes = [], ?Model $parent = null): Collection|CatalogMeasureUnit
     {
         return parent::create($attributes, $parent);
     }
 
     public function createOne(mixed $attributes = [], ?Model $parent = null): CatalogMeasureUnit
     {
-        return parent::createOne($attributes, $parent);
+        return parent::createOne($attributes);
     }
 }

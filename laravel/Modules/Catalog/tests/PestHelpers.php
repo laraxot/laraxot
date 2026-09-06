@@ -76,7 +76,6 @@ namespace Modules\Catalog\Tests {
     function buildFixedMetelLine(): string
     {
         $line = str_repeat(' ', 140);
-        /** @var callable(string, int, string, int): string $put */
         $put = static function (string $line, int $start, string $value, int $length): string {
             $result = substr_replace($line, str_pad(substr($value, 0, $length), $length), $start, $length);
 
