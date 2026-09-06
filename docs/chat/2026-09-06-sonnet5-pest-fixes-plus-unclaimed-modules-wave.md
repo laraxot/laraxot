@@ -356,3 +356,137 @@ Claimed and closed (Claude Sonnet 5, this session, ~2026-09-06 22:00-22:20 CEST)
   flagged in `docs/coverage.md` for the same file - left untouched.
 - No files skipped due to locks (all free at claim time); `LanguageLine.php`, `Post.php`,
   the story file, and this doc were locked/unlocked cleanly around each edit.
+
+## Inventory
+
+Baseline at pickup: 52 PHPStan errors across 7 files (confirmed with a fresh
+`clear-result-cache` run; one transient "Application bootstrap failed" on the very first
+attempt was a concurrent agent mid-editing `Modules/Platform`/`Modules/AiAssistant`, not
+Inventory — a clean retry a few seconds later gave the stable 52-error baseline).
+
+- Root cause of nearly all 52: `Cannot cast mixed to int/string` on values pulled from
+  Filament `$get()` closures (form state), `Model::getAttribute()`, and
+  `Collection::pluck(...)->all()` results, blindly cast with `(int)`/`(string)`. Fixed by
+  switching to the module's existing canonical helpers
+  `Modules\Xot\Actions\Cast\SafeIntCastAction::cast()` /
+  `SafeStringCastAction::cast()` (already used the same way in Geo/Blog/Catalog — grepped
+  first per the mandatory "trace the real type, don't blind-cast" rule) instead of adding
+  more raw casts.
+- Remaining errors: `Filament\Forms\Components\Placeholder::content()` is deprecated in
+  this Filament v4 in favor of `Filament\Infolists\Components\TextEntry::state()` (verified
+  by reading the vendor source — `Placeholder extends TextEntry`); and `Table::actions()` /
+  `Table::bulkActions()` deprecated in favor of `recordActions()` / `toolbarActions()`
+  (pattern already used in `Modules/Catalog`).
+- Files fixed: `app/Filament/Pages/InventoryOverview.php`,
+  `app/Filament/Resources/InventoryMovementResource.php` (+ its `CreateInventoryMovement.php`
+  / `EditInventoryMovement.php` pages), `app/Filament/Resources/WarehouseLocationResource.php`,
+  `app/Filament/Resources/WarehouseResource.php`,
+  `tests/Feature/WarehouseAndInventoryMovementCrudTest.php`.
+- No `User`/`Profile` model usage found in the touched files, so the
+  `UserContract`/`XotData` rule didn't apply here.
+- `phpstan.neon` untouched, no `@phpstan-ignore`, no baseline entries.
+- One oddity: mid-session, `InventoryOverview.php`'s first successful edit (import +
+  2 cast fixes) silently reverted to the pre-edit HEAD content between tool calls even
+  though its file lock was held continuously by this session the whole time (`git status`
+  in the module's own repo showed it unmodified while three other edited files in the same
+  batch stayed modified). Cause unclear (not reproduced elsewhere in this module) —
+  re-applied the same edit a second time and it stuck. Flagging in case another agent hits
+  the same thing on a different module.
+- Final: **0 PHPStan errors** (confirmed twice, with `clear-result-cache` immediately
+  before each run).
+- PHPMD (`./tools/phpmd.sh Modules/Inventory text phpmd.xml` — the `../docs/phpmd.ruleset.xml`
+  path from the task doesn't exist in this repo; used the repo's actual `laravel/phpmd.xml`):
+  clean on all 7 touched files; only pre-existing findings in untouched files
+  (`Actions/CreateInventoryMovementAction.php`, `Actions/GetStockSnapshotAction.php`,
+  `Policies/*`, `Providers/*ServiceProvider.php`).
+- PHPInsights: not run — confirmed removed from this repo (incompatible with Pest 5, per
+  this session's post-edit hook and the second-brain memory note).
+- Pest (`./vendor/bin/pest Modules/Inventory/tests --no-coverage`): 9 failed / 1 passed, all
+  failures `SQLSTATE[42S02]: Base table or view not found ... 'workorder_data_test.warehouses'
+  doesn't exist`, i.e. a DB-level failure at the factory-insert step, before any of the
+  code touched by this fix runs. Confirmed pre-existing and repo-wide (not Inventory- or
+  fix-specific): `php artisan migrate:status --env=testing` shows dozens of `Pending`
+  migrations across many unrelated modules on the shared `workorder_data_test` DB.
+  Deliberately did **not** run `php artisan migrate` given the "data is sacred" /
+  no-destructive-DB-ops rule and the risk of colliding with other agents' concurrent test
+  runs on the same shared DB — documented as an out-of-scope blocker in
+  `Modules/Inventory/docs/coverage.md` (new file) instead of "fixing" it myself.
+- BMAD: two pre-existing stories found for this exact task
+  (`docs/stories/phpstan-Inventory-fix.md` status Pending, and
+  `docs/stories/01.Inventory-phpstan-fix.story.md` status TODO) — per the dedupe rule, did
+  **not** create a third. Updated the first to `Done` with acceptance criteria checked off,
+  marked the second `Superseded` (linked, not deleted/renumbered).
+- Git: Inventory's own repo (remote `laraxot` -> `module_inventory_fila5.git`, only remote
+  configured). `git fetch laraxot dev` showed local `dev` already 2 commits ahead of
+  `laraxot/dev` with nothing new upstream (`git rev-list --left-right --count HEAD...laraxot/dev`
+  = `2 0`), so no merge was needed. Committed as `cafed8a fix(inventory): resolve all
+  PHPStan errors (52 -> 0)` and pushed clean, no force, to the only remote (`laraxot`).
+- No files skipped due to locks; all 9 touched files (7 code/test + 2 story files) plus
+  this doc were locked/unlocked cleanly around each edit.
+
+## Signature
+
+- Baseline re-verified fresh (`clear-result-cache` first): **21 errors**, not the ~33
+  estimated in the earlier claim — all `cast.int`/`cast.string` on `mixed`, in 3 files:
+  `CaptureSignature.php` (12), `CaptureSketch.php` (7), `tests/Feature/CanvasSignatureAndSketchTest.php` (2).
+- Root cause: `Model::getKey()` has no declared return type (resolves to `mixed`), and
+  `$this->form->getState()` is `array<string, mixed>` — indexing it and casting the result
+  directly (`(int) $data['x']`, `(string) $data['y']`) is a cast on `mixed`, which this repo's
+  PHPStan config forbids without narrowing first.
+- Fixes (no `phpstan.neon` edits, no ignores, no baseline entries):
+  - `$intervention->getKey()` → `$intervention->id` everywhere (`Intervention` has
+    `@property int $id`, already a concrete type — cast no longer needed).
+  - Added two explicit narrowing helpers (not blind casts) — `coerceToInt(mixed, int): int`
+    and `coerceToString(mixed): string` — that check `is_int`/`is_string`/`is_numeric`/etc.
+    before converting, replacing the direct `(int)`/`(string)` casts on form-state array values.
+  - `resolveAllowedUserOptions()`: replaced `pluck('name','id')->mapWithKeys(fn (mixed $name, mixed $id) ...)`
+    (which loses type info) with `get(['id','name'])->mapWithKeys(fn (User $user): array => [(int) $user->id => (string) $user->name])`
+    — `User` has `@property string $id` / `@property string|null $name`, so the casts become
+    casts of concrete types, not `mixed`.
+  - `CaptureSignature` and `CaptureSketch` duplicated this logic near-identically; extracted
+    into a shared trait `app/Filament/Pages/Concerns/InteractsWithCanvasFormData.php` (DRY).
+- `UserContract`/`XotData` rule: checked — none of the 21 errors involved `Auth::user()` or
+  `User`/`Profile` model access in a way that a contract swap would fix. Kept the concrete
+  `Modules\User\Models\User` for `::query()` (confirmed majority convention: 35 Filament files
+  in the repo use the concrete model for building queries/Select options vs 4 using
+  `XotData::make()->getUserClass()`).
+- Same file-revert oddity as Inventory (see above): mid-session, `CaptureSketch.php`'s first
+  successful edit (import + action-body fix) reverted to pre-edit HEAD content between tool
+  calls despite the file's lock being held continuously; one line in the new trait file
+  (`$workOrderId = ... ?->work_order_id ?? 0`) also flipped back to nullsafe once after being
+  fixed to plain `->`. Re-applied both edits a second time and they stuck. Not caused by
+  another agent stealing the lock (lock file timestamp/owner unchanged throughout). Flagging
+  again since it's now been seen on two different modules in the same session.
+- `phpmd.ruleset.xml` didn't exist for this module; copied the SSoT ruleset used identically
+  by Xot/Geo/AI/Seo/Rating/Lang/Cms (md5-identical across all 7) rather than the
+  `../docs/phpmd.ruleset.xml` path from the task (doesn't exist in this repo, same finding
+  as the Inventory entry above).
+- Final: **0 PHPStan errors** (confirmed with `clear-result-cache` immediately before the
+  final run).
+- PHPMD: clean on all touched files; 5 pre-existing findings left untouched (`$shouldRegisterNavigation`
+  / `$connectionsToTransact` are framework-mandated property names, can't rename; one
+  `CyclomaticComplexity` = 13 in `CaptureSignature::getHeaderActions()` pre-dates this fix —
+  verified the diff only replaced casts with helper calls, no branching added/removed).
+- PHPInsights: not run — confirmed removed from this repo (incompatible with Pest 5).
+- Pest (`./vendor/bin/pest Modules/Signature/tests --no-coverage`): **11 passed** (was 8; +3 new
+  from `tests/Unit/CanvasFormDataCoercionTest.php`, added to cover the new coercion helpers,
+  previously untested), **3 failed — pre-existing, out of scope**: two `SQLSTATE[42S02]:
+  Base table or view not found: customers` (confirmed `customers` is missing even on the
+  default DB connection, not just the test DB — a pre-existing migration/schema gap, not
+  code) and one `signatures.user_id` column assertion failing for the same schema-gap reason.
+  Documented in new `Modules/Signature/docs/coverage.md` (also notes Xdebug/PCOV aren't
+  available in this environment, so no numeric coverage % — before/after test counts used
+  instead). Deliberately did not touch migrations/DB per "data is sacred" / no destructive
+  reset rule.
+- BMAD: two pre-existing stub stories found for this exact task
+  (`docs/stories/01.Signature-phpstan-fix.story.md` status TODO, and
+  `docs/stories/phpstan-Signature-fix.md` status Pending) — per dedupe rule, did **not**
+  create a third. Filled in both with problem/plan/acceptance-criteria/outcome and marked
+  both `Done`, cross-linked (neither deleted/renumbered).
+- Git: Signature's own repo (remote `laraxot` -> `module_signature_fila5.git`, only remote
+  configured). `git fetch laraxot dev` showed local `dev` already 2 commits ahead with
+  `laraxot/dev` as an ancestor of `HEAD` (`git merge-base --is-ancestor` confirmed), so no
+  merge was needed. Committed as `c3923b1 fix(signature): phpstan level max zero errors`
+  and pushed clean, no force, to the only remote (`laraxot`) — `85c753d..c3923b1 dev -> dev`.
+- No files skipped due to locks; all 9 touched/created files plus this doc were
+  locked/unlocked cleanly around each edit.
