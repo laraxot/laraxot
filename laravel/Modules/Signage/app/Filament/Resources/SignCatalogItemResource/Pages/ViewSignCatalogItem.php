@@ -37,6 +37,9 @@ final class ViewSignCatalogItem extends XotBaseViewRecord
      */
     protected function getInfolistSchema(): array
     {
+        /** @var view-string $pricingView */
+        $pricingView = 'signage::filament.catalog-item-pricing';
+
         return [
             'summary' => Section::make()
                 ->columnSpanFull()
@@ -54,8 +57,7 @@ final class ViewSignCatalogItem extends XotBaseViewRecord
                 ->columnSpanFull()
                 ->components([
                     ViewEntry::make('pricing')
-                        ->view('signage::filament.catalog-item-pricing')
-                        ->viewData(['price' => $this->price()])
+                        ->view($pricingView, ['price' => $this->price()])
                         ->columnSpanFull(),
                 ]),
         ];
