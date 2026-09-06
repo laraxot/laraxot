@@ -74,7 +74,7 @@ class FineTuning extends XotBasePage
     // Metodo rimosso: safeTranslate() non utilizzato
 
     /**
-     * Schema del form.
+     * @return array<int, \Filament\Forms\Components\FileUpload|\Filament\Forms\Components\Select|\Filament\Forms\Components\TextInput>
      */
     protected function getFormSchema(): array
     {

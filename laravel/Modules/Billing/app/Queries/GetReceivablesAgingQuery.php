@@ -58,7 +58,8 @@ final class GetReceivablesAgingQuery
                 counterparty: is_string($row->legal_name) ? $row->legal_name : '',
                 dueOn: $dueOn,
                 outstanding: Money::fromFloat(
-                    (float) $row->total - (float) ($row->paid_amount ?? 0),
+                    (is_numeric($row->total) ? (float) $row->total : 0.0)
+                    - (is_numeric($row->paid_amount ?? null) ? (float) $row->paid_amount : 0.0),
                 ),
             );
         }

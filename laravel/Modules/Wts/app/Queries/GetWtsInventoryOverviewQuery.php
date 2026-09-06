@@ -208,13 +208,16 @@ final class GetWtsInventoryOverviewQuery
         $effectiveArea = $unit->getAttribute('effective_area_code') ?? $unit->current_area_code;
         $effectiveStatus = $unit->getAttribute('effective_status_code') ?? $unit->status_code;
 
+        $batchCodeValue = data_get($unit->meta, 'batch_code', $lot->lot_code ?? 'Partita assente');
+        $unitSubCodeValue = data_get(
+            $unit->meta,
+            'unit_sub_code',
+            str_pad((string) $unit->generated_sequence, 2, '0', STR_PAD_LEFT),
+        );
+
         return new WtsInventoryRow(
-            batchCode: (string) data_get($unit->meta, 'batch_code', $lot->lot_code ?? 'Partita assente'),
-            unitSubCode: (string) data_get(
-                $unit->meta,
-                'unit_sub_code',
-                str_pad((string) $unit->generated_sequence, 2, '0', STR_PAD_LEFT),
-            ),
+            batchCode: (string) $batchCodeValue,
+            unitSubCode: (string) $unitSubCodeValue,
             unitCode: $unit->unit_code,
             sheetCode: $sheet?->sheet_code,
             sheetDescription: $sheet?->production_description,

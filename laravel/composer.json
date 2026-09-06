@@ -10,31 +10,16 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "bacon/bacon-qr-code": "^3.1",
         "filament/filament": "^5.0",
-        "nwidart/laravel-modules": "*",
-        "smalot/pdfparser": "^2"
+        "nwidart/laravel-modules": "*"
     },
-    "require-dev": {
-        "larastan/larastan": "^3.11",
-        "pestphp/pest": "^5",
-        "pestphp/pest-plugin-laravel": "*",
-        "pestphp/pest-plugin-phpstan": "^5.2.0",
-        "phpstan/extension-installer": "^1.4.3",
-        "phpstan/phpstan": "^2.2.13",
-        "phpstan/phpstan-deprecation-rules": "^2.0.5",
-        "spatie/laravel-data": "*",
-        "phpoffice/phpspreadsheet": "*"
-    },
+    "require-dev": {},
     "autoload": {
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        },
-        "files": [
-            "phpstan_constants.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
@@ -112,17 +97,6 @@
             "include": [
                 "Modules/*/composer.json"
             ]
-        },
-        "phpstan/extension-installer": {
-            "ignore": [
-                "larastan/larastan",
-                "nesbot/carbon",
-                "thecodingmachine/phpstan-safe-rule",
-                "pestphp/pest",
-                "composer/pcre",
-                "phpstan/phpstan-deprecation-rules",
-                "tomasvotruba/type-coverage"
-            ]
         }
     },
     "config": {
@@ -131,12 +105,12 @@
         "sort-packages": true,
         "allow-plugins": {
             "carthage-software/mago": true,
+            "codewithkyrian/transformers-libsloader": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
             "pestphp/pest-plugin": true,
             "php-http/discovery": true,
-            "wikimedia/composer-merge-plugin": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "codewithkyrian/transformers-libsloader": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "wikimedia/composer-merge-plugin": true
         }
     },
     "minimum-stability": "dev",

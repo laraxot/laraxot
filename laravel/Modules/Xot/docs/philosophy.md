@@ -35,6 +35,70 @@ While `Xot` does not contain specific business logic, it profoundly influences h
 
 `Xot` is, therefore, not just a utility module but the architectural consciousness of the entire project.
 
+## Filament Tables Pattern: XotBaseResourceTable
+
+**Critical Design**: Classes extending `XotBaseResourceTable` delegate table configuration through the `table()` method. This is **NOT** a method override — it is an implementation requirement.
+
+### How It Works
+
+```php
+// XotBaseResourceTable (base class)
+abstract class XotBaseResourceTable {
+    public static function configure(Table $table): Table {
+        $instance = app(static::class);
+        return $instance->table($table);  // Calls table() on concrete subclass
+    }
+    
+    abstract public function getTableColumns(): array;
+    // Note: table() method is NOT defined here
+}
+
+// Concrete subclass (e.g., MediaTable in Media module)
+class MediaTable extends XotBaseResourceTable {
+    public function table(Table $table): Table {
+        return $table
+            ->columns($this->getTableColumns())
+            ->filters([...])
+            ->actions([...]);
+    }
+    
+    public function getTableColumns(): array {
+        return [...];
+    }
+}
+```
+
+### Why This Pattern?
+
+1. **Separation of Concerns**: Column definition (`getTableColumns()`) is separate from table config (`table()`)
+2. **Template Method Pattern**: Base class orchestrates the flow, subclasses provide implementation
+3. **Filament 5 Compatibility**: Avoids conflicts with Resource class `table()` method inheritance
+
+### Anti-Pattern (Avoid)
+
+❌ DO NOT redefine `table()` in classes already inheriting it from Resource or XotBaseResource:
+```php
+class MyResource extends XotBaseResource {
+    public function table(Table $table): Table { ... } // WRONG: Resource already has this
+}
+```
+
+✅ DO use XotBaseResourceTable delegation when building table-specific classes:
+```php
+class MyTable extends XotBaseResourceTable {
+    public function table(Table $table): Table { ... } // CORRECT: delegation pattern
+}
+```
+
+### Verification
+
+All Table classes extending XotBaseResourceTable:
+- MUST implement `public function table(Table $table): Table`
+- MUST implement `public function getTableColumns(): array`
+- MUST NOT override parent's `table()` if already inherited from Resource
+
+---
+
 ## 🤖 Integration with Model Context Protocol (MCP)
 
 The `Xot` module, being the architectural foundation, naturally serves as the central point for integrating and leveraging Model Context Protocol (MCP) servers. MCPs deeply align with `Xot`'s core philosophy of modularity, developer experience, and structured development.

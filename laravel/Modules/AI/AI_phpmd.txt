@@ -1,0 +1,7 @@
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/AI/app/Actions/ContextCompressorAction.php:72                            CyclomaticComplexity  The method extractCompressedText() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 13.
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/AI/app/Actions/Predict/GetPredictionDraftFallbackTemplatesAction.php:13  LongClassName         Avoid excessively long class names like GetPredictionDraftFallbackTemplatesAction. Keep class name length under 40.
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/AI/app/Actions/Sentiment/AnalyzeTransformersSentimentAction.php:17       LongVariable          Avoid excessively long variable names like $analyzeBasicSentimentAction. Keep variable name length under 20.
+/var/www/_bases/base_techplanner_fila5/laravel/Modules/AI/tests/Unit/Actions/ContextCompressorActionTest.php:34                 ElseExpression        The method withoutOpenAiKey uses an else expression. Else clauses are basically not necessary and you can simplify the code by not using them.
+
+  [44;1m INFO [49;22m Could not read XML from file "Modules/AI/phpunit.xml".
+

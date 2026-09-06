@@ -1,5 +1,7 @@
+---
+module: theme
+topic: video_tutorial
+canonical: ../../../Themes/docs/shared-components/video-tutorial.md
+---
 
-Setting up Ollama with Llama 3 using Laravel on your local machine
-https://www.youtube.com/watch?v=icrqqsHgr9Y
------------
-
+See canonical documentation: ../../../Themes/docs/shared-components/video-tutorial.md

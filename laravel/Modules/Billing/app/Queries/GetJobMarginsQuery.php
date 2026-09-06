@@ -89,7 +89,7 @@ final class GetJobMarginsQuery
         $margins = [];
 
         foreach ($jobs as $job) {
-            $jobId = (int) $job->id;
+            $jobId = is_numeric($job->id) ? (int) $job->id : 0;
             $minutes = $labourByJob[$jobId] ?? 0.0;
 
             $margins[] = $this->calculateMargin->execute(

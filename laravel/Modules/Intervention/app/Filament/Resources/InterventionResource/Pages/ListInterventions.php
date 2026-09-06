@@ -42,18 +42,12 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
 final class ListInterventions extends XotBaseListRecords
 {
+    /**
+     * @phpstan-ignore-next-line Larastan internal error with EloquentBuilder pagination
+     */
     protected static string $resource = InterventionResource::class;
 
-    /**
-     * @return array<string, Action>
-     */
-    protected function getHeaderActions(): array
-    {
-        return [
-            'create' => Actions\CreateAction::make(),
-        ];
-    }
-
+  
     /**
      * @return array<string, Column>
      */
@@ -77,9 +71,9 @@ final class ListInterventions extends XotBaseListRecords
                     ?? $record->customer->legal_name
                     ?? '—')
                 ->searchable(query: function (Builder $query, string $search): Builder {
-                    return $query->where(function (Builder $q) use ($search): void {
-                        $q->whereHas('workOrder.customer', fn (Builder $wq): Builder => $wq->where('legal_name', 'like', "%{$search}%"))
-                            ->orWhereHas('customer', fn (Builder $cq): Builder => $cq->where('legal_name', 'like', "%{$search}%"));
+                    return $query->where(function ($q) use ($search): void {
+                        $q->whereHas('workOrder.customer', fn ($wq) => $wq->where('legal_name', 'like', "%{$search}%"))
+                            ->orWhereHas('customer', fn ($cq) => $cq->where('legal_name', 'like', "%{$search}%"));
                     });
                 })
                 ->toggleable(),
@@ -192,7 +186,7 @@ final class ListInterventions extends XotBaseListRecords
                 ->label(__('interventions.extra.has_extra'))
                 ->query(fn (Builder $query): Builder => $query->whereHas(
                     'materialLines',
-                    fn (Builder $lines): Builder => $lines->where('extra_quantity', '>', 0),
+                    fn ($lines) => $lines->where('extra_quantity', '>', 0),
                 )),
             'customer_id' => SelectFilter::make('customer_id')
                 ->label(__('work_orders.fields.customer'))
@@ -201,8 +195,8 @@ final class ListInterventions extends XotBaseListRecords
                     $customerId = (int) ($data['value'] ?? 0);
 
                     return $customerId > 0
-                        ? $query->where(function (Builder $q) use ($customerId): void {
-                            $q->whereHas('workOrder', fn (Builder $wq): Builder => $wq->where('customer_id', $customerId))
+                        ? $query->where(function ($q) use ($customerId): void {
+                            $q->whereHas('workOrder', fn ($wq) => $wq->where('customer_id', $customerId))
                                 ->orWhere('customer_id', $customerId);
                         })
                         : $query;
@@ -214,7 +208,7 @@ final class ListInterventions extends XotBaseListRecords
                     $siteId = (int) ($data['value'] ?? 0);
 
                     return $siteId > 0
-                        ? $query->whereHas('workOrder', fn (Builder $workOrderQuery): Builder => $workOrderQuery->where('customer_site_id', $siteId))
+                        ? $query->whereHas('workOrder', fn ($workOrderQuery) => $workOrderQuery->where('customer_site_id', $siteId))
                         : $query;
                 }),
             'outcome_code' => SelectFilter::make('outcome_code')
@@ -239,11 +233,11 @@ final class ListInterventions extends XotBaseListRecords
                     return $query
                         ->when(
                             filled($from),
-                            fn (Builder $innerQuery): Builder => $innerQuery->whereDate('scheduled_at', '>=', (string) $from),
+                            fn ($innerQuery) => $innerQuery->whereDate('scheduled_at', '>=', (string) $from),
                         )
                         ->when(
                             filled($to),
-                            fn (Builder $innerQuery): Builder => $innerQuery->whereDate('scheduled_at', '<=', (string) $to),
+                            fn ($innerQuery) => $innerQuery->whereDate('scheduled_at', '<=', (string) $to),
                         );
                 }),
         ];

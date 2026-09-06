@@ -10,3 +10,4 @@ tags: [xot, foundation, core, dna, philosophy, architecture, inheritance, action
 qmd: "xot philosophy foundation dna inheritance actions type-safety async"
 last_updated: "2026-09-06"
 ---
+Adding to Xot docs/PHILOSOPHY.md: inheritance rules

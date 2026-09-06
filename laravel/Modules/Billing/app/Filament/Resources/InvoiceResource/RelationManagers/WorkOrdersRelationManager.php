@@ -34,15 +34,23 @@ final class WorkOrdersRelationManager extends XotBaseRelationManager
         return [
             'work_order_id' => Select::make('work_order_id')
                 ->label(__('billing::billing.fields.work_order'))
-                ->options(fn (): array => DB::table('work_orders')
-                    ->orderByDesc('id')
-                    ->limit(200)
-                    ->get(['id', 'code', 'title'])
-                    ->mapWithKeys(fn ($row): array => [
-                        (int) $row->id => (string) ($row->code ?: $row->title ?: 'Commessa senza codice'),
-                    ])
-                    ->all()
-                )
+                ->options(function (): array {
+                    $rows = DB::table('work_orders')
+                        ->orderByDesc('id')
+                        ->limit(200)
+                        ->get(['id', 'code', 'title']);
+
+                    $result = [];
+                    foreach ($rows as $row) {
+                        $id = is_int($row->id) || is_numeric($row->id) ? (int) $row->id : 0;
+                        $label = is_string($row->code) && $row->code !== '' 
+                            ? $row->code 
+                            : (is_string($row->title) ? $row->title : 'Commessa senza codice');
+                        $result[$id] = $label;
+                    }
+
+                    return $result;
+                })
                 ->searchable()
                 ->preload()
                 ->required(),
@@ -56,10 +64,20 @@ final class WorkOrdersRelationManager extends XotBaseRelationManager
             ->columns([
                 Tables\Columns\TextColumn::make('work_order_id')
                     ->label(__('billing::billing.fields.work_order'))
-                    ->formatStateUsing(function ($state): string {
-                        $record = DB::table('work_orders')->where('id', $state)->first(['code', 'title']);
+                    ->formatStateUsing(function (mixed $state): string {
+                        if (! is_numeric($state)) {
+                            return 'Commessa non disponibile';
+                        }
+                        $record = DB::table('work_orders')->where('id', (int) $state)->first(['code', 'title']);
 
-                        return (string) ($record?->code ?: $record?->title ?: 'Commessa non disponibile');
+                        if ($record === null) {
+                            return 'Commessa non disponibile';
+                        }
+                        $label = is_string($record->code) && $record->code !== '' 
+                            ? $record->code 
+                            : (is_string($record->title) ? $record->title : 'Commessa non disponibile');
+
+                        return $label;
                     })
                     ->sortable()
                     ->searchable(),
@@ -70,10 +88,13 @@ final class WorkOrdersRelationManager extends XotBaseRelationManager
                     ->using(function (array $data): InvoiceWorkOrderLink {
                         /** @var Invoice $invoice */
                         $invoice = $this->getOwnerRecord();
+                        $workOrderId = is_numeric($data['work_order_id'] ?? null)
+                            ? (int) $data['work_order_id']
+                            : 0;
 
                         return app(LinkInvoiceToWorkOrderAction::class)->execute(
                             invoice: $invoice,
-                            workOrderId: (int) $data['work_order_id'],
+                            workOrderId: $workOrderId,
                         );
                     }),
             ])
