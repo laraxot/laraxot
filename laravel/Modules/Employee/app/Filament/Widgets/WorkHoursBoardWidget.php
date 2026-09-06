@@ -186,16 +186,16 @@ class WorkHoursBoardWidget extends XotBaseSchemaWidget
 
         if (is_array($summary)) {
             $workedVal = $summary['workedMinutes'] ?? 0;
-            $workedMinutes = is_int($workedVal) ? $workedVal : (int) $workedVal;
+            $workedMinutes = is_int($workedVal) ? $workedVal : intval($workedVal);
 
             $addedVal = $summary['addedMinutes'] ?? 0;
-            $addedMinutes = is_int($addedVal) ? $addedVal : (int) $addedVal;
+            $addedMinutes = is_int($addedVal) ? $addedVal : intval($addedVal);
 
             $reducedVal = $summary['reducedMinutes'] ?? 0;
-            $reducedMinutes = is_int($reducedVal) ? $reducedVal : (int) $reducedVal;
+            $reducedMinutes = is_int($reducedVal) ? $reducedVal : intval($reducedVal);
 
             $contractVal = $summary['contractMinutes'] ?? 0;
-            $contractMinutes = is_int($contractVal) ? $contractVal : (int) $contractVal;
+            $contractMinutes = is_int($contractVal) ? $contractVal : intval($contractVal);
         }
 
         return [
