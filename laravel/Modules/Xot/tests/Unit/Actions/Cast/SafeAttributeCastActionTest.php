@@ -9,6 +9,7 @@ use Mockery\MockInterface;
 use Modules\Activity\Models\Activity;
 use Modules\Xot\Actions\Cast\SafeAttributeCastAction;
 use PHPUnit\Framework\Assert;
+use Modules\User\Models\User;
 
 describe('Safe Attribute Cast Action', function (): void {
     test('manages eloquent attributes safely', function (): void {

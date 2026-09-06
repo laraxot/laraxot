@@ -13,5 +13,5 @@ class TrendData extends Data
 {
     public string $date;
 
-    public mixed $aggregate;
+    public int|float|string $aggregate;
 }

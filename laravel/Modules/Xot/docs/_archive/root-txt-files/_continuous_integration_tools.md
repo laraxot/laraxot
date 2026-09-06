@@ -1,4 +1,5 @@
 ---
+<<<<<<<< HEAD:laravel/Modules/Xot/docs/_archive/root-txt-files/_continuous_integration_tools.md
 title: "Continuous integration tools"
 type: reference
 status: active
@@ -11,6 +12,19 @@ note: "Convertito da _Continuous_Integration_Tools.txt (documento) da convert-do
 
 <!-- Contenuto migrato da _docs/_continuous_integration_tools.txt -->
 
+========
+title: 'Continuous integration tools'
+module: Xot
+type: reference
+slug: continuous-integration-tools
+description: '//---------- PHP Mess Detector'
+tags: [migrato-da-txt, xot]
+converted_from: _continuous_integration_tools.txt
+created: 2026-08-24
+updated: 2026-08-24
+---
+
+>>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php):laravel/Modules/Xot/docs/_archive/-integration/_continuous_integration_tools.md
 //----------
 PHP Mess Detector
 

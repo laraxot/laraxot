@@ -171,9 +171,9 @@ final class XotForkedInvoke
                     $tn === 'float' => 1.0,
                     is_a($tn, Model::class, true) => (static function () use ($tn): Model {
                         if ($tn === Model::class || (new ReflectionClass($tn))->isAbstract()) {
-                            $m = new Cache();
+                            $m = new Cache;
                         } else {
-                            $m = new $tn();
+                            $m = new $tn;
                         }
                         $m->setRawAttributes(['id' => 1, 'key' => 'k', 'value' => 'v']);
 

@@ -2,6 +2,7 @@
 title: "Dove si configura la tabella di una Resource Filament"
 type: guideline
 module: Xot
+<<<<<<< HEAD
 tags: [filament, table, resource, architecture, migration]
 created: 2026-09-01
 updated: 2026-09-02
@@ -13,12 +14,17 @@ discussions:
 related:
   - ./wiki/phpstan-best-practices.md
   - ../../../../docs/stories/2.3.deep-quality-enabled-modules.story.md
+=======
+updated: 2026-09-01
+qmd: "tabella filament resource table class getTableFilters XotBaseResourceTable HasXotTable list page xot"
+>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
 ---
 
 # La tabella si configura nella Table class, non nella pagina
 
 Vale per ogni Resource di questo modulo.
 
+<<<<<<< HEAD
 ## Stato della migrazione nel progetto WorkOrder
 
 Il resolver `XotBaseResource::getTableClass()` è nuovamente operativo e il gate
@@ -32,6 +38,8 @@ nello spostare quegli hook nelle Table class dedicate. È tracciata nella story
 BMAD 2.3 e resta distinta dal gate PHPStan, che analizza correttamente il contratto
 ma non può provare l'esistenza di ogni classe risolta a runtime.
 
+=======
+>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
 ## La regola
 
 Colonne, filtri e azioni di una Resource stanno in

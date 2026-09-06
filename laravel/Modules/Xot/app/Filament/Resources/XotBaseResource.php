@@ -110,7 +110,27 @@ abstract class XotBaseResource extends FilamentResource
     /**
      * @return array<int|string, \Filament\Schemas\Components\Component>
      */
-    abstract public static function getFormSchema(): array;
+    public static function getFormSchema(): array
+    {
+        return static::getFormSchemaOld();
+    }
+
+    /**
+     * Bridge di migrazione — schema form ancora sulla Resource.
+     * La classe `{Model}Form` è **obbligatoria** ({@see static::getFormClass()}):
+     * se manca si solleva errore. Old serve solo a spostare il contenuto dentro
+     * `Schemas\{Model}Form::getFormSchema()`; a migrazione chiusa si rimuove.
+     *
+     * ATTENZIONE: NON rendere `getFormSchema()` astratto senza prima migrare i
+     * ~100 consumer che ancora implementano solo `getFormSchemaOld()` (grep
+     * `getFormSchemaOld` su `Modules/*`) — vedi docs/chat/STOP-*-getformschema-*.md.
+     *
+     * @return array<int|string, \Filament\Schemas\Components\Component>
+     */
+    public static function getFormSchemaOld(): array
+    {
+        return [];
+    }
 
     final public static function form(Schema $schema): Schema
     {
@@ -133,12 +153,16 @@ abstract class XotBaseResource extends FilamentResource
     }
 
     /**
+<<<<<<< HEAD
      * Resolve the dedicated table configurator for the current resource.
      *
+=======
+>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
      * @return class-string<XotBaseResourceTable>
      */
     public static function getTableClass(): string
     {
+<<<<<<< HEAD
         $modelTableClass = static::class.'\Tables\\'.Str::plural(class_basename(static::getModel())).'Table';
         if (class_exists($modelTableClass)) {
             Assert::subclassOf($modelTableClass, XotBaseResourceTable::class);
@@ -167,12 +191,31 @@ abstract class XotBaseResource extends FilamentResource
         Assert::subclassOf($fallbackTableClass, XotBaseResourceTable::class);
 
         return $fallbackTableClass;
+=======
+        $class = static::class.'\Tables\\'.Str::plural(class_basename(static::getModel())).'Table';
+        if (class_exists($class)) {
+            Assert::subclassOf($class, XotBaseResourceTable::class);
+
+            return $class;
+        }
+
+        $class1 = app(GetResourceClassNameByModelClassAction::class)->execute(static::getModel());
+        $class1 = $class1.'\Tables\\'.Str::plural(class_basename(static::getModel())).'Table';
+        Assert::subclassOf($class1, XotBaseResourceTable::class);
+
+        return $class1;
+>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
     }
 
     public static function table(Table $table): Table
     {
+<<<<<<< HEAD
         $tableClass = static::getTableClass();
         $configured = $tableClass::configure($table);
+=======
+        $class = static::getTableClass();
+        $configured = $class::configure($table);
+>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
         Assert::isInstanceOf($configured, Table::class);
 
         return $configured;

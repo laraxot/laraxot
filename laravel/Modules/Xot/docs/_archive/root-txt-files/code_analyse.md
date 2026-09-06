@@ -86,4 +86,8 @@ https://github.com/enlightn/enlightn
 
  "phan/phan": "^4.0",
         "phpmetrics/phpmetrics": "^2.7",
+<<<<<<<< HEAD:laravel/Modules/Xot/docs/_archive/root-txt-files/code_analyse.md
         "phpunit/php-code-coverage": "^9.2",
+========
+        "phpunit/php-code-coverage": "^9.2",
+>>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php):laravel/Modules/Xot/docs/_archive/code-analyse.md

@@ -14,9 +14,9 @@ use Spatie\LaravelData\DataCollection;
  */
 class ComponentFileData extends Data
 {
-    public string $name;
+    public string $name = '';
 
-    public string $class;
+    public string $class = '';
 
     public ?string $module = null;
 

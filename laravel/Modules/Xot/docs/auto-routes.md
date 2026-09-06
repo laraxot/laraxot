@@ -1,3 +1,16 @@
+---
+title: "Auto routes"
+type: reference
+status: active
+created: 2026-08-27
+updated: 2026-08-27
+note: "Convertito da auto_routes.txt (documento) da convert-docs-txt-to-md.py."
+---
+
+# auto_routes
+
+<!-- Contenuto migrato da _docs/auto_routes.txt -->
+
 /it/tests
 va a prendere il modello "home" e vede se esiste la relazione "tests" se esiste usa quelle, altrimenti
 va a prendere il "singolar" di tests e va nel solito file xra.php

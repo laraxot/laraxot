@@ -114,6 +114,8 @@ Sono stati identificati e risolti conflitti Git in diversi file del progetto <no
 - Risolto conflitto nella gestione del campo postal_code
 
 **Modifiche Applicate**:
+```
+
 ```php
 // VERSIONE CORRETTA
 $res=Locality::query()

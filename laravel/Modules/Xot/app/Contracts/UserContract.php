@@ -40,7 +40,7 @@ use Spatie\Permission\Traits\HasRoles;
  * @property string|null               $name
  * @property string|null               $phone
  * @property string|null               $type
- * @property string|null               $current_team_id
+ * @property int|null                  $current_team_id
  * @property TeamContract              $currentTeam
  * @property ProfileContract|null      $profile
  * @property Collection<int, UserRole> $roles
@@ -180,6 +180,13 @@ interface UserContract extends Authenticatable, HasMedia, HasName, HasTenants, M
      * Switch the user's context to the given team.
      */
     public function switchTeam(TeamContract $team): bool;
+
+    /**
+     * Get the user's personal team.
+     *
+     * @return TeamContract|null
+     */
+    public function personalTeam(): ?TeamContract;
 
     /**
      * @return array<string, Module>

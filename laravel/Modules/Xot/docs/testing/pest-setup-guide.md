@@ -66,7 +66,7 @@ All tests **MUST** be written in Pest format. If PHPUnit tests are found, they *
 ```php
 <?php
 
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 
 uses(Tests\TestCase::class);
 

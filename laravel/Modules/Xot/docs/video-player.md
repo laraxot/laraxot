@@ -1,3 +1,19 @@
+---
+title: 'video_player'
+module: Xot
+type: reference
+slug: video-player
+description: '<!-- Contenuto migrato da _docs/video_player.txt -->'
+tags: [migrato-da-txt, xot]
+converted_from: video_player.txt
+created: 2026-08-24
+updated: 2026-08-24
+---
+
+# video_player
+
+<!-- Contenuto migrato da _docs/video_player.txt -->
+
 1. Plyr.io:
 Plyr is quite simple, customizable and highly accessible HTML5 video player that also extends its support to Video and YouTube media players. It is popular enough among professionals and beginners due to its lightweight design that allows smooth processing even for larger video files. Plyr can make things simple with collection of effective elements to get jobs done correctly.
 
@@ -87,7 +103,7 @@ https://gist.github.com/jcamp/24d9d4882d81a83db598dac281056960
 ---------------------------------------------------------------------------------------------------------------
 https://www.codester.com/items/11695/vdrive-unlimited-video-convertor-tools-php
 ---------------------------------------------------------------------------------------------------------------
-https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video
+https://developer.mozilla.org/en-US/project_docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video
 ---------------------------------------------------------------------------------------------------------------
 https://spark.adobe.com/it-IT/sp/design/video/urn:aaid:sc:EU:d543a756-deaf-4b23-b79b-940d30c06ade
 ---------------------------------------------------------------------------------------------------------------

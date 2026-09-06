@@ -25,6 +25,7 @@ use Modules\Xot\Datas\XotData;
 use Modules\Xot\Models\Module;
 use Modules\Xot\Providers\XotServiceProvider;
 use PHPUnit\Framework\MockObject\MockObject;
+use Modules\User\Models\User;
 
 /**
  * Class XotBaseTestCase.
@@ -141,7 +142,7 @@ abstract class XotBaseTestCase extends BaseTestCase
     {
         $this->expectException($exceptionClass);
         if ($message !== null) {
-            $this->expectExceptionMessage($message);
+            $this->expectExceptionMessageIsOrContains($message);
         }
     }
 
@@ -166,9 +167,9 @@ abstract class XotBaseTestCase extends BaseTestCase
         $this->stopTranslationsFromBeingWritten();
 
         if (! $this->app->bound('translator')) {
-            $this->app->singleton('translator', function ($app) {
+            $this->app->singleton('translator', function (Application $app) {
                 return new Translator(
-                    new ArrayLoader(),
+                    new ArrayLoader,
                     'en'
                 );
             });
@@ -295,7 +296,8 @@ abstract class XotBaseTestCase extends BaseTestCase
         // (DB_DATABASE_USER vuoto) ripiega su sqlite condiviso: stesso fallback di
         // XotBaseMigration::resolveConnectionName(), altrimenti ogni insert su users
         // fallisce con "No database selected" sulle macchine senza il DB dedicato.
-        if ((string) config('database.connections.user.database') === '') {
+        $userDatabase = config('database.connections.user.database');
+        if (! is_string($userDatabase) || $userDatabase === '') {
             $this->app['config']->set('database.connections.user', [
                 'driver' => 'sqlite',
                 'database' => $database,
@@ -375,7 +377,7 @@ abstract class XotBaseTestCase extends BaseTestCase
 
     public function expectThrowableMessage(string $message): void
     {
-        $this->expectExceptionMessage($message);
+        $this->expectExceptionMessageIsOrContains($message);
     }
 
     public function expectThrowableMessageMatches(string $pattern): void

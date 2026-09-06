@@ -625,7 +625,7 @@ Utilizzare sempre import completi e qualificati per evitare ambiguità:
 ```php
 // CORRETTO
 use Modules\Rating\Models\Rating;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 
 // EVITARE
 use Modules\Rating\Models\Rating as RatingModel;

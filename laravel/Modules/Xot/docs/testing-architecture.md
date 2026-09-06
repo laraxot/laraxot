@@ -70,7 +70,7 @@ Modules/
 namespace Modules\User\Tests\Unit;
 
 use Tests\TestCase;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 
 class UserTest extends TestCase
 {
@@ -86,7 +86,7 @@ class UserTest extends TestCase
 ```php
 <?php
 
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 
 test('user creation', function () {
     $user = User::factory()->create();

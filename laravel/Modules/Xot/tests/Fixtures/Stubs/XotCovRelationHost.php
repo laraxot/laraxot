@@ -16,11 +16,11 @@ final class XotCovRelationHost extends CacheModel
 
     public function guessPivot(string $related, ?string $class = null): Pivot
     {
-        return new XotCovPivot();
+        return new XotCovPivot;
     }
 
     public function guessMorphPivot(string $related, ?string $_class = null): MorphPivot
     {
-        return new XotCovMorphPivot();
+        return new XotCovMorphPivot;
     }
 }

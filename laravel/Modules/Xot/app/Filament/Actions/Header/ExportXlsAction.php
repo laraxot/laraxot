@@ -34,7 +34,7 @@ class ExportXlsAction extends XotBaseAction
                 $transKey = app(GetTransKeyAction::class)->execute($livewire::class);
                 $transKey .= '.fields';
                 $query = $livewire->getFilteredTableQuery();
-                if (null === $query) {
+                if ($query === null) {
                     throw new \Exception('Query is null');
                 }
                 $rows = $query->get();
@@ -47,7 +47,7 @@ class ExportXlsAction extends XotBaseAction
                     $rawFields = $resource::getXlsFields($livewire->tableFilters);
                     if (is_array($rawFields)) {
                         $fields = array_map(
-                            static function ($field): string {
+                            static function (mixed $field): string {
                                 // Handle objects with __toString method
                                 if (is_object($field) && method_exists($field, '__toString')) {
                                     $stringValue = $field->__toString();

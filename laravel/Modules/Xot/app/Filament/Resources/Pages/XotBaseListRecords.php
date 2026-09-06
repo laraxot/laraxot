@@ -21,9 +21,9 @@ use Webmozart\Assert\Assert;
 /**
  * Base class for list records pages.
  *
- * @property ?string         $model
- * @property ?string         $resource
- * @property ?string         $slug
+ * @property ?string $model
+ * @property ?string $resource
+ * @property ?string $slug
  * @property TableLayoutEnum $layoutView
  */
 abstract class XotBaseListRecords extends FilamentListRecords
@@ -31,7 +31,7 @@ abstract class XotBaseListRecords extends FilamentListRecords
     use HasXotTable;
 
     /**
-     * @param array<string, bool|float|int|string|null> $params
+     * @param  array<string, bool|float|int|string|null>  $params
      */
     public static function trans(string $key, array $params = []): string
     {
@@ -87,14 +87,13 @@ abstract class XotBaseListRecords extends FilamentListRecords
     /**
      * Paginate the table query.
      *
-     * @param Builder<Model> $query
-     *
+     * @param  Builder<Model>  $query
      * @return Paginator<int, Model>
      */
     protected function paginateTableQueryOLD(Builder $query): Paginator
     {
         $perPage = $this->getTableRecordsPerPage();
-        $perPageValue = 'all' === $perPage ? $query->count() : (is_numeric($perPage) ? (int) $perPage : null);
+        $perPageValue = $perPage === 'all' ? $query->count() : (is_numeric($perPage) ? (int) $perPage : null);
 
         $paginator = $query->paginate($perPageValue);
 

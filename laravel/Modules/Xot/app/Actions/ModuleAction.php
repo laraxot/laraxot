@@ -84,6 +84,7 @@ class ModuleAction
                         $data[$tmp->name] = $tmp->class;
                     }
                 } catch (\Exception) {
+                    // Skip files whose class name does not resolve to an existing/valid class.
                 }
             }
         }
@@ -91,7 +92,5 @@ class ModuleAction
         return $data;
     }
 
-    public function execute(): void
-    {
-    }
+    public function execute(): void {}
 }

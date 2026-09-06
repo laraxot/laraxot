@@ -95,6 +95,7 @@ test('example test', function () {
 <?php
 
 namespace Modules\User\Tests\Feature;
+use Modules\User\Models\User;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;

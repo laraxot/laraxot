@@ -56,11 +56,11 @@ describe('Xot HasMany and Widget form coverage', function (): void {
             $t->unsignedBigInteger('parent_id')->nullable();
         });
 
-        $parent = new CacheModel();
+        $parent = new CacheModel;
         $parent->forceFill(['id' => 1, 'key' => 'p', 'value' => 'v']);
         $parent->exists = true;
 
-        $related = new CacheModel();
+        $related = new CacheModel;
         $related->forceFill(['id' => 2, 'key' => 'c', 'value' => 'v', 'parent_id' => null]);
 
         $hasMany = Mockery::mock(HasMany::class);
@@ -74,7 +74,7 @@ describe('Xot HasMany and Widget form coverage', function (): void {
             'data' => ['to' => [2], 'from' => [3]],
         ]);
 
-        $action = new HasManyAction();
+        $action = new HasManyAction;
         try {
             $action->execute($parent, $dto);
         } catch (\Throwable $e) {
@@ -97,7 +97,7 @@ describe('Xot HasMany and Widget form coverage', function (): void {
         }
 
         // invalid parent key
-        $badParent = new CacheModel();
+        $badParent = new CacheModel;
         $badParent->forceFill(['id' => null, 'key' => 'x']);
         try {
             $action->execute($badParent, $dto);
@@ -133,7 +133,7 @@ describe('Xot HasMany and Widget form coverage', function (): void {
         Http::fake();
         Process::fake();
         try {
-            $w = new XotWidgetFormHost();
+            $w = new XotWidgetFormHost;
             Assert::assertNotEmpty($w->getFormSchema());
             Assert::assertNotEmpty($w->getFormFill());
             $ref = new ReflectionClass(XotBaseWidget::class);

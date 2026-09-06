@@ -18,6 +18,7 @@ Fixed all instances of `property_exists()` usage in Eloquent models across the c
 
 ### ✅ healthcare_app Module
 ### ✅ ExternalProject Module
+### ✅ Quaeris Module
 - **ViewQuestionChartVisualizationWidget.php:185** - Fixed `property_exists($this, 'livewire')` → `isset($this->livewire)`
 
 ### ✅ Chart Module

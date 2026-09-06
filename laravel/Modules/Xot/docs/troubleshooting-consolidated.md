@@ -68,6 +68,7 @@ Utilizzo di namespace con segmento `App` che non esiste nella struttura modulare
 ```php
 // ❌ ERRATO
 namespace Modules\ModuleName\App\Models;
+use Modules\User\Models\User;
 namespace Modules\ModuleName\App\Actions;
 
 // ✅ CORRETTO

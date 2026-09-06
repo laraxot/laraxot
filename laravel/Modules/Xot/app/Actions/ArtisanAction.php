@@ -46,11 +46,22 @@ class ArtisanAction
                 $purgeConn = \is_string($defaultConn) && $defaultConn !== '' ? $defaultConn : 'mysql';
                 DB::purge($purgeConn);
                 DB::reconnect($purgeConn);
+<<<<<<< HEAD
                 if ($module_name !== '') {
                     echo '<h3>Module '.$module_name.'</h3>';
 
                     // Dati sacri: mai --force (solo migrate additivo)
                     return self::exe('module:migrate', ['module' => $module_name]);
+=======
+                // Niente `--force`: questa action è raggiungibile da richiesta HTTP e
+                // `--force` salterebbe la conferma di Laravel in produzione. I dati
+                // sono sacri: la migrazione su un ambiente di produzione si lancia a
+                // mano da CLI, consapevolmente, non con un click.
+                if ('' !== $module_name) {
+                    echo '<h3>Module '.$module_name.'</h3>';
+
+                    return self::exe('module:migrate '.$module_name);
+>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
                 }
 
                 return self::exe('migrate');
@@ -148,7 +159,7 @@ class ArtisanAction
             'urls' => $urls,
         ];
 
-        return view((string) $view, $view_params);
+        return view($view, $view_params);
     }
 
     public static function showRouteList(): string
@@ -164,7 +175,7 @@ class ArtisanAction
             'lang' => app()->getLocale(),
         ];
 
-        $out = view((string) $view, $view_params);
+        $out = view($view, $view_params);
 
         Assert::isInstanceOf($out, View::class);
 

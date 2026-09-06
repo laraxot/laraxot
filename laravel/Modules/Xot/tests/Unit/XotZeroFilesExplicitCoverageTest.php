@@ -10,7 +10,7 @@ use Modules\Xot\Tests\TestCase;
 uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
 
 test('exception handlers are selected by their declared throwable type', function (): void {
-    $repository = new HandlersRepository();
+    $repository = new HandlersRepository;
     $runtimeHandler = static fn (\RuntimeException $exception): string => $exception->getMessage();
     $logicHandler = static fn (\LogicException $exception): string => $exception->getMessage();
     $repository->addRenderer($runtimeHandler);

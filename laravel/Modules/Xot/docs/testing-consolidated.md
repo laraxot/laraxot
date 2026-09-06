@@ -136,7 +136,7 @@ namespace Modules\ModuleName\Tests\Feature;
 
 use Tests\TestCase;
 use Modules\ModuleName\Models\ExampleModel;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 
 class ExampleApiTest extends TestCase
 {
@@ -219,7 +219,7 @@ declare(strict_types=1);
 namespace Modules\ModuleName\Tests\Feature\Filament;
 
 use Tests\TestCase;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 use Modules\ModuleName\Models\ExampleModel;
 use Livewire\Livewire;
 

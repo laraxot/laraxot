@@ -209,7 +209,7 @@ declare(strict_types=1);
 namespace Modules\YourModule\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 use Modules\YourModule\Models\NestedModel;
 
 class NestedModelPolicy

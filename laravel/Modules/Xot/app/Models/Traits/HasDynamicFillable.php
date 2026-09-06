@@ -24,7 +24,7 @@ trait HasDynamicFillable
         $dynamicFillableEnums = $this->getDynamicFillableEnums();
 
         foreach ($dynamicFillableEnums as $enumClass) {
-            if (! is_string($enumClass) || '' === $enumClass) {
+            if (! is_string($enumClass) || $enumClass === '') {
                 continue;
             }
 

@@ -12,7 +12,7 @@ use PHPUnit\Framework\Assert;
 use function Safe\json_decode;
 use function Safe\tempnam;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('saves array as php file', function (): void {
     $data = ['foo' => 'bar', 'baz' => 123];

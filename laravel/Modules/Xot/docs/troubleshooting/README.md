@@ -9,7 +9,37 @@
 [![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
 ]()
 
+<<<<<<< HEAD
 > **Core module for the FixCity Platform.**
+=======
+### PHPStan Errors
+- **Issue**: Method not found errors
+- **Solution**: Check namespace imports and method signatures
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+- **Prevention**: Always run PHPStan level 9+ before commits
+>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
 
 ## Perché esiste
 

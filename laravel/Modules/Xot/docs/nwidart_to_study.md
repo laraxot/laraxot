@@ -33,8 +33,6 @@ https://github.com/HichemTab-tech/LaravelFS
 
 
 ## Contenuto originale (txt)
-
->>>>>>> .merge_file_bMOZuq
 ---
 module: theme
 topic: nwidart_to_study

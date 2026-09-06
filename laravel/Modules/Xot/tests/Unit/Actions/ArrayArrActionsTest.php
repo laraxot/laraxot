@@ -13,7 +13,7 @@ use PHPUnit\Framework\Assert;
 use function Safe\file_get_contents;
 use function Safe\mkdir;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('normalizes nested numeric strings in diff fixType', function (): void {
     $input = ['items' => [
@@ -39,7 +39,7 @@ it('throws when fixType receives a non-array item', function (): void {
 });
 
 it('returns recursive diff', function (): void {
-    $action = new DiffAssocRecursiveAction();
+    $action = new DiffAssocRecursiveAction;
     $left = ['items' => [
         ['id' => '1', 'name' => 'a'],
         ['id' => '2', 'name' => 'b'],
@@ -54,7 +54,7 @@ it('returns recursive diff', function (): void {
 });
 
 it('covers all branches of range intersect', function (): void {
-    $action = new RangeIntersectAction();
+    $action = new RangeIntersectAction;
 
     Assert::assertSame([2, 5], $action->execute(2, 5, 1, 7));
     Assert::assertSame([2, 5], $action->execute(1, 7, 2, 5));
@@ -72,8 +72,8 @@ it('writes JSON and PHP arrays', function (): void {
     $jsonFile = $tmpDir.'/data.json';
     $phpFile = $tmpDir.'/data.php';
 
-    $jsonAction = new SaveJsonArrayAction();
-    $phpAction = new SavePhpArrayAction();
+    $jsonAction = new SaveJsonArrayAction;
+    $phpAction = new SavePhpArrayAction;
 
     Assert::assertTrue($phpAction->execute(['b' => 2], $phpFile));
     Assert::assertFileExists($phpFile);
@@ -87,7 +87,7 @@ it('dispatches save strategy by format in SaveArrayAction', function (): void {
     $tmpDir = sys_get_temp_dir().'/xot-save-array-action-'.uniqid('', true);
     mkdir($tmpDir, 0777, true);
 
-    $action = new SaveArrayAction();
+    $action = new SaveArrayAction;
     $jsonFile = $tmpDir.'/one.json';
     $phpFile = $tmpDir.'/one.php';
 
@@ -97,7 +97,7 @@ it('dispatches save strategy by format in SaveArrayAction', function (): void {
 
 it('throws on unsupported save format in SaveArrayAction', function (): void {
     try {
-        $action = new SaveArrayAction();
+        $action = new SaveArrayAction;
         $action->execute(['x' => 1], '/tmp/unused', 'xml');
         Assert::fail('Expected exception not thrown');
     } catch (InvalidArgumentException) {

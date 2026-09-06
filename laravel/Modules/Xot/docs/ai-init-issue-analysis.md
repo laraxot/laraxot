@@ -2,7 +2,7 @@
 
 ## Problema Identificato
 
-Lo script `bashscripts/ai/ai_init.sh` non crea la junction richiesta per la cartella `bashscripts/ai/.gemini` da vedere dentro ``.
+Lo script `./bashscripts/ai/ai_init.sh` non crea la junction richiesta per la cartella `./bashscripts/ai/.gemini` da vedere dentro `./`.
 
 ## Analisi
 
@@ -16,7 +16,7 @@ Dopo l'analisi dello script, è stato identificato un problema logico nell'imple
 
 Dovrebbe creare un symlink nella root del progetto:
 ```
-.gemini -> bashscripts/ai/.gemini
+./.gemini -> ./bashscripts/ai/.gemini
 ```
 
 ## Comportamento Attuale
@@ -26,10 +26,10 @@ Lo script cerca una cartella `.gemini` nella root del progetto e crea un symlink
 ## Soluzione
 
 Lo script deve essere corretto per invertire la logica:
-- Cercare le cartelle specifiche in `bashscripts/ai/`
+- Cercare le cartelle specifiche in `bashscripts/ai/` 
 - Creare symlink nella root del progetto che puntano a quelle cartelle
 
 ## Cartelle Coinvolte
 
-- Source: `bashscripts/ai/.gemini`
-- Target symlink: `.gemini`
+- Source: `./bashscripts/ai/.gemini`
+- Target symlink: `./.gemini`

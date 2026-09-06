@@ -119,7 +119,7 @@ describe('Xot chart widgets and resource page', function (): void {
     test('Resource XotBasePage getView getViewTest navigation', function (): void {
         Http::fake();
         Process::fake();
-        $page = new XotResPageStub();
+        $page = new XotResPageStub;
         Assert::assertNotEmpty($page->getView());
         try {
             $page->getViewTest();

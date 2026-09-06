@@ -53,7 +53,7 @@ describe('Xot RelationX ManageRelated StatesChart', function (): void {
             $t->timestamps();
         });
 
-        $host = new XotCovRelationHost();
+        $host = new XotCovRelationHost;
         $host->forceFill(['id' => 1, 'key' => 'k', 'value' => 'v']);
         $host->exists = true;
 

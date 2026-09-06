@@ -8,11 +8,12 @@ use Modules\Xot\Models\XotBaseModel;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('safe object cast action works', function (): void {
     $action = app(SafeObjectCastAction::class);
-    $obj = new class {
+    $obj = new class
+    {
         public string $str = 'test';
 
         public int $int = 123;
@@ -64,7 +65,8 @@ test('safe object cast action works', function (): void {
 
 test('safe eloquent cast action works', function (): void {
     $action = app(SafeEloquentCastAction::class);
-    $model = new class extends XotBaseModel {
+    $model = new class extends XotBaseModel
+    {
         protected $attributes = [
             'str' => 'test',
             'int' => 123,
@@ -92,7 +94,7 @@ test('safe eloquent cast action works', function (): void {
         return $v > 100;
     }));
     Assert::assertTrue($action->hasAttributeCondition($model, 'int', function (mixed $v): bool {
-        return 123 === $v;
+        return $v === 123;
     }));
     Assert::assertSame('test', $action->getAttributeWithFallback($model, 'str', 'null_val', 'string'));
     Assert::assertSame('test', $action->getAttributeWithFallback($model, 'null_val', 'str', 'string'));

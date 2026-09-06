@@ -482,6 +482,7 @@ public function user(): BelongsTo
 
 - [Filament Best Practices](./filament-best-practices.md)
 - [Testing Guidelines](./testing-guidelines.md)
+- [Performance Optimization](./performance-optimization.md)
 - [Performance Optimization](PERFORMANCE-OPTIMIZATION.md)
 - [Security Guidelines](./security-guidelines.md)
 

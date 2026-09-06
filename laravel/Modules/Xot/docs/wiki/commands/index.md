@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Index"
+type: reference
+tags: [wiki, no-frontmatter-fix]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
+>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
 # Xot Module - commands Index
 
 ## Purpose

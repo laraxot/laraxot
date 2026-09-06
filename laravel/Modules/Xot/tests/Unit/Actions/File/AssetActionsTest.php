@@ -12,8 +12,9 @@ use Modules\Xot\Actions\File\GetModulePathAction;
 use Modules\Xot\Tests\TestCase;
 use Nwidart\Modules\Facades\Module;
 use PHPUnit\Framework\Assert;
+use Modules\User\Models\User;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('handles absolute urls in AssetAction', function (): void {
     $action = app(AssetAction::class);
@@ -40,10 +41,9 @@ it('resolves module assets correctly in AssetAction', function (): void {
     $to = public_path('assets/Xot/css/style.css');
 
     // Replace GetModulePathAction with a spy
-    $getModulePathAction = new class($modulePath) extends GetModulePathAction {
-        public function __construct(private string $modulePath)
-        {
-        }
+    $getModulePathAction = new class($modulePath) extends GetModulePathAction
+    {
+        public function __construct(private string $modulePath) {}
 
         public function execute(string $module): string
         {
@@ -54,7 +54,8 @@ it('resolves module assets correctly in AssetAction', function (): void {
     app()->instance(GetModulePathAction::class, $getModulePathAction);
 
     // Replace FixPathAction with a spy (identity function)
-    $fixPathAction = new class extends FixPathAction {
+    $fixPathAction = new class extends FixPathAction
+    {
         public function execute(string $path): string
         {
             return $path;
@@ -86,7 +87,7 @@ it('calculates asset path correctly in AssetPathAction', function (): void {
     // Spy on Module facade
     Module::partialMock()->allows([
         'getModulePath' => function (string $module): string {
-            return 'User' === $module ? '/path/to/User/' : '';
+            return $module === 'User' ? '/path/to/User/' : '';
         },
     ]);
 

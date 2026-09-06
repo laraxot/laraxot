@@ -14,6 +14,7 @@ Questo documento contiene esempi pratici e casi d'uso per sviluppare moduli che 
 declare(strict_types=1);
 
 namespace Modules\Example\app\Models;
+use Modules\User\Models\User;
 
 use Modules\Xot\Models\BaseModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Xot\Tests\Fixtures\Traits;
 
 use Modules\Xot\Traits\Filament\HasCustomModelLabel;
+use Modules\User\Models\User;
 
 abstract class HasCustomModelLabelProbeBase
 {

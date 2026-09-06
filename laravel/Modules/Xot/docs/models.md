@@ -5,6 +5,7 @@
 ### Model
 ```php
 namespace App\Models;
+use Modules\User\Models\User;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

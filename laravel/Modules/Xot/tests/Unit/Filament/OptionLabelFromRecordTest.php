@@ -15,14 +15,14 @@ uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
  */
 describe('etichetta opzione da record', function (): void {
     it('usa la colonna titolo quando e\' valorizzata', function (): void {
-        $record = new DummyTestModel();
+        $record = new DummyTestModel;
         $record->setAttribute('name', 'Viva Servizi');
 
         expect(OptionLabelProbeForm::labelFor($record))->toBe('Viva Servizi');
     });
 
     it('ripiega sulla chiave primaria quando la colonna titolo e\' nulla', function (): void {
-        $record = new DummyTestModel();
+        $record = new DummyTestModel;
         $record->setAttribute('name', null);
         $record->setAttribute('id', 24);
 
@@ -30,7 +30,7 @@ describe('etichetta opzione da record', function (): void {
     });
 
     it('ripiega sulla chiave primaria quando la colonna titolo e\' vuota', function (): void {
-        $record = new DummyTestModel();
+        $record = new DummyTestModel;
         $record->setAttribute('name', '');
         $record->setAttribute('id', 7);
 
@@ -38,7 +38,7 @@ describe('etichetta opzione da record', function (): void {
     });
 
     it('rispetta una colonna titolo diversa da name', function (): void {
-        $record = new DummyTestModel();
+        $record = new DummyTestModel;
         $record->setAttribute('title', 'Contratto 2026');
 
         expect(OptionLabelProbeForm::labelFor($record, 'title'))->toBe('Contratto 2026');

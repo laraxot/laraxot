@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 use Modules\Xot\Filament\Resources\XotBaseResource;
+=======
+>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
@@ -15,9 +18,14 @@ uses(TestCase::class);
 /*
  * Da quando `XotBaseListRecords` non usa piu' `HasXotTable`, la tabella di una list page
  * la costruisce `XotBaseResource::table()` attraverso `getTableClass()`, che alza
+<<<<<<< HEAD
  * `LogicException` se la classe non esiste. Le Resource che dichiarano ancora un
  * proprio `table()` sono nel percorso di migrazione legacy e non consumano questo
  * resolver.
+=======
+ * `LogicException` se la classe non esiste: una Resource senza `*Table` non degrada a
+ * tabella vuota, va in errore a runtime.
+>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
  *
  * Questo test tiene il contratto: nessuna list page concreta puo' restare scoperta.
  */
@@ -50,6 +58,7 @@ test('ogni list page concreta risolve la sua Table class', function (): void {
         }
 
         try {
+<<<<<<< HEAD
             /** @var class-string<XotBaseResource> $resourceClass */
             $resourceClass = $page::getResource();
 
@@ -64,6 +73,12 @@ test('ogni list page concreta risolve la sua Table class', function (): void {
 
             $resourceClass::getTableClass();
         } catch (Throwable $e) {
+=======
+            /** @var class-string<\Modules\Xot\Filament\Resources\XotBaseResource> $resourceClass */
+            $resourceClass = $page::getResource();
+            $resourceClass::getTableClass();
+        } catch (\Throwable $e) {
+>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
             $senzaTable[] = $page.' — '.$e->getMessage();
         }
     }

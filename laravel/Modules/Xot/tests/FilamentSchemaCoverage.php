@@ -131,7 +131,7 @@ final class FilamentSchemaCoverage
             }
 
             try {
-                $tabella = new $class();
+                $tabella = new $class;
                 $colonne = $tabella->getTableColumns();
                 $executed++;
 
@@ -279,7 +279,7 @@ final class FilamentSchemaCoverage
             }
 
             try {
-                $page = new $class();
+                $page = new $class;
                 Assert::assertNotEmpty($page->getTableColumns());
             } catch (\Throwable $e) {
                 Assert::assertNotSame('', $e->getMessage());

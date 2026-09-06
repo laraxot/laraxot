@@ -6,6 +6,7 @@ namespace Modules\Xot\Models;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\Traits\RelationX;
@@ -17,7 +18,10 @@ use Webmozart\Assert\Assert;
  */
 abstract class XotBaseModel extends EloquentModel
 {
+<<<<<<< HEAD
     /** @use HasXotFactory<\Illuminate\Database\Eloquent\Factories\Factory<static>> */
+=======
+>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
     use HasXotFactory;
 
     use RelationX;
@@ -47,37 +51,44 @@ abstract class XotBaseModel extends EloquentModel
     ];
 
     /**
-     * Sibling model in the same `Models\` namespace as the calling leaf (`static::class`).
+     * Risolve il concreto del **modulo chiamante** mantenendo il basename di `static`.
      *
-     * Call from the leaf/base that owns the relation context, e.g. from `BaseScheda`:
-     * `static::getClassName(CriteriOption::class)` → `Progressioni\Models\CriteriOption`
-     * when `static` is `Progressioni\Models\Scheda`.
+     * Il namespace non viene dedotto da `static` (che resta sul prototype del modulo
+     * base, es. `Ptv\Models\CriteriOption`) ma dall'**oggetto chiamante** trovato nel
+     * backtrace: una `Scheda` di Progressioni che invoca `CriteriOption::getClassName()`
+     * ottiene `Progressioni\Models\CriteriOption`. Per questo la chiamata è
+     * `CriteriOption::getClassName()` senza argomenti e senza `static::`.
      *
-     * Do **not** call as `CriteriOption::getClassName()` — LSB would stay on the prototype.
-     *
-     * @param class-string<EloquentModel> $fallback Prototype FQCN (basename reused; used if sibling missing)
+     * Funziona anche dai contesti Filament (`Filament\Resources\`), dove il modello
+     * viene risolto via `getModelClass()` dell'oggetto chiamante.
      *
      * @return class-string<EloquentModel>
      */
-    public static function getClassName(string $fallback): string
+    public static function getClassName(): string
     {
-        Assert::subclassOf($fallback, EloquentModel::class);
+        $object = Arr::first(debug_backtrace(), function (array $value) {
+            return isset($value['object'])
+            && (Str::contains($value['object']::class, 'Models\\') || Str::contains($value['object']::class, 'Filament\\Resources\\'));
+        });
 
-        $short = class_basename($fallback);
-        $candidate = Str::of(static::class)
-            ->beforeLast('\\')
-            ->append('\\'.$short)
-            ->toString();
-
-        if (is_string($candidate) && '' !== $candidate && class_exists($candidate)) {
-            Assert::subclassOf($candidate, EloquentModel::class);
-
-            /* @var class-string<EloquentModel> $candidate */
-            return $candidate;
+        if (! isset($object['object'])) {
+            throw new \RuntimeException('Unable to resolve caller object for getClassName()');
         }
 
-        /* @var class-string<EloquentModel> $fallback */
-        return $fallback;
+        $objectClass = $object['object']::class;
+        if (method_exists($object['object'], 'getModelClass')) {
+            $objectClass = $object['object']->getModelClass();
+        }
+        Assert::string($objectClass);
+        /** @var string $objectClass */
+        $namespace = Str::beforeLast((string) $objectClass, '\Models\\');
+        $className = Str::afterLast(static::class, '\\');
+
+        $res = $namespace.'\\Models\\'.$className;
+        Assert::classExists($res);
+        Assert::subclassOf($res, EloquentModel::class);
+
+        return $res;
     }
 
     /** @return array<string, string> */

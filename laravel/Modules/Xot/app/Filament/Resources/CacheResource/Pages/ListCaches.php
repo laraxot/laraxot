@@ -29,6 +29,9 @@ class ListCaches extends XotBaseListRecords
         ];
     }
 
+    /**
+     * @return array<string, TextColumn>
+     */
     #[\Override]
     public function getTableColumns(): array
     {
@@ -52,9 +55,7 @@ class ListCaches extends XotBaseListRecords
     #[\Override]
     public function getGridTableColumns(): array
     {
-        return [
-            Stack::make($this->getTableColumns()),
-        ];
+        return parent::getGridTableColumns();
     }
 
     /**

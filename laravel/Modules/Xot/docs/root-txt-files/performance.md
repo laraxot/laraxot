@@ -5,7 +5,7 @@ type: reference
 slug: performance
 description: '<!-- Contenuto migrato da _docs/_performance.txt -->'
 tags: [migrato-da-txt, xot]
-converted_from: performance.txt
+converted_from: _performance.txt
 created: 2026-08-24
 updated: 2026-08-24
 ---

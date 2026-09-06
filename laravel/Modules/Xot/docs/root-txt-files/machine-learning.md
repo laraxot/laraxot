@@ -1,16 +1,18 @@
 ---
-title: 'Machine learning'
-module: Xot
+title: "Machine learning"
 type: reference
-slug: machine-learning
-description: 'http://php-nlp-tools.com/blog/category/greek-pos-tagger/'
-tags: [migrato-da-txt, xot]
-converted_from: machine_learning.txt
-created: 2026-08-24
-updated: 2026-08-24
+status: active
+created: 2026-08-27
+updated: 2026-08-27
+note: "Convertito da machine_learning.txt (documento) da convert-docs-txt-to-md.py."
 ---
 
--------------------------------------
+# Machine learning
+
+----------------------------------------
+https://laravel-news.com/google-natural-language-api-for-laravel   !!!!!!!!!!!!!!!!
+
+----------------------------------------
 rephrasing
 https://cloudmersive.com/nlp-api  !!!!!!!!!!!!!!!
 
@@ -49,6 +51,7 @@ http://www.alchemyapi.com/tools/
 http://www.opencalais.com/applications/opencalais-and-php-code
 https://nocodeapi.net/
 https://www.refinitiv.com/en/products/intelligent-tagging-text-analytics
+
 
 
 //--------------------------------------------------------------------------------------------------------

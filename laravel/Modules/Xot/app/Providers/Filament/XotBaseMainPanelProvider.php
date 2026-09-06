@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Providers\Filament;
 
+use Filament\Actions\Action;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
-use Filament\Navigation\MenuItem;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
-use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
+use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
@@ -89,7 +89,7 @@ abstract class XotBaseMainPanelProvider extends PanelProvider
                 StartSession::class,
                 AuthenticateSession::class,
                 ShareErrorsFromSession::class,
-                VerifyCsrfToken::class,
+                PreventRequestForgery::class,
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
@@ -108,7 +108,7 @@ abstract class XotBaseMainPanelProvider extends PanelProvider
         $profileLabel = is_string($profileLabelRaw) ? $profileLabelRaw : null;
 
         $panel->userMenuItems([
-            MenuItem::make()
+            Action::make('profile')
                 ->label($profileLabel)
                 ->url($profile_url)
                 ->icon('heroicon-o-user'),

@@ -22,9 +22,9 @@ class FieldRefreshAction extends XotBaseAction
         $this->icon('heroicon-o-arrow-path')
             ->label('')
             ->tooltip('Ricalcola valore')
-            ->action(function ($record, Set $set): void {
+            ->action(function (mixed $record, Set $set): void {
                 $name = $this->getName();
-                if (null === $name) {
+                if ($name === null) {
                     return;
                 }
 

@@ -23,4 +23,3 @@ https://beyondco.de/project_docs/laravel-websockets/debugging/dashboard   !!
 
 
 https://arslantariq.com/build-ui-dashboards-for-your-laravel-application/
-

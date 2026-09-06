@@ -104,7 +104,7 @@ namespace Modules\UI\Filament\Resources; namespace Modules\UI\App\Filament\Resou
 ```php
 ✅ CORRETTO                    ❌ ERRATO
 use Modules\Xot\Models\XotBaseModel; use App\Models\XotBaseModel;
-use Modules\User\Models\User; use App\Models\User;
+use Modules\Xot\Contracts\UserContract; use App\Models\User;
 use Modules\UI\Filament\Resources\BaseResource; use App\Filament\Resources\BaseResource;
 ```
 

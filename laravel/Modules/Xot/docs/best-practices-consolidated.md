@@ -50,6 +50,7 @@ Questo documento sostituisce e consolida **40+ file di best practices duplicati*
 declare(strict_types=1);
 
 namespace Modules\ModuleName\Path;
+use Modules\User\Models\User;
 
 // Resto del codice...
 ```

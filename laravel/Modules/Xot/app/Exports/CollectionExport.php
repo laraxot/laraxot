@@ -37,8 +37,8 @@ class CollectionExport implements FromCollection, ShouldQueue, WithHeadings, Wit
     public ?array $fields = null;
 
     /**
-     * @param SupportCollection<int, mixed>|EloquentCollection<int, Model> $collection
-     * @param array<int, string>                                           $fields
+     * @param  SupportCollection<int, mixed>|EloquentCollection<int, Model>  $collection
+     * @param  array<int, string>  $fields
      */
     public function __construct(SupportCollection|EloquentCollection $collection, ?string $transKey = null, array $fields = [])
     {
@@ -87,11 +87,11 @@ class CollectionExport implements FromCollection, ShouldQueue, WithHeadings, Wit
      */
     public function map(mixed $row): array
     {
-        if (null === $this->fields || empty($this->fields)) {
+        if ($this->fields === null || empty($this->fields)) {
             Assert::isInstanceOf($row, Model::class);
             $res = app(SafeArrayByModelCastAction::class)->execute($row);
 
-            return array_values(Arr::map($res, function ($value, $_key): string {
+            return array_values(Arr::map($res, function (mixed $value, string $_key): string {
                 if ($value instanceof \BackedEnum) {
                     if (method_exists($value, 'getLabel')) {
                         return SafeStringCastAction::cast($value->getLabel());

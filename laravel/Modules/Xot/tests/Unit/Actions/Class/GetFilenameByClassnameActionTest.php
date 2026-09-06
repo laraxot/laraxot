@@ -7,7 +7,7 @@ use Modules\Xot\Models\Log;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('gets filename from classname correctly', function (): void {
     $action = app(GetFilenameByClassnameAction::class);

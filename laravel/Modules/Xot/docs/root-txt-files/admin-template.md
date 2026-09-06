@@ -5,7 +5,7 @@ type: reference
 slug: admin-template
 description: 'Elenco di 3 riferimenti esterni raccolti per admin template, deduplicati e convertiti da un dump di link.'
 tags: [migrato-da-txt, xot]
-converted_from: admin-template.txt
+converted_from: admin_template.txt
 created: 2026-08-24
 updated: 2026-08-24
 ---

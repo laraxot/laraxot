@@ -17,12 +17,12 @@ class IsAdminRouteAction
             return (bool) $params['in_admin'];
         }
 
-        if ('admin' === request()->segment(1)) {
+        if (request()->segment(1) === 'admin') {
             return true;
         }
 
         $segments = request()->segments();
 
-        return [] !== $segments && 'livewire' === $segments[0] && true === session('in_admin', false);
+        return $segments !== [] && $segments[0] === 'livewire' && session('in_admin', false) === true;
     }
 }

@@ -6,7 +6,7 @@ use Modules\Xot\Actions\Url\IsValidUrlAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('validates correct urls', function (): void {
     $action = app(IsValidUrlAction::class);

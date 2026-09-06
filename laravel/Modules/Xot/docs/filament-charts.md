@@ -28,6 +28,7 @@ Questo genera un widget in `app/Filament/Widgets/BlogPostsChart.php`.
 <?php
 
 namespace App\Filament\Widgets;
+use Modules\User\Models\User;
 
 use Filament\Widgets\ChartWidget;
 

@@ -41,7 +41,7 @@ describe('Xot migration getModelClass and uuid paths', function (): void {
 
         // Force getModelClass() discovery path (model_class null until resolved)
         try {
-            new class() extends XotBaseMigration
+            new class extends XotBaseMigration
             {
                 public function up(): void {}
             };
@@ -63,7 +63,7 @@ describe('Xot migration getModelClass and uuid paths', function (): void {
             'value' => 'v',
         ]);
 
-        $migration = new class() extends XotBaseMigration
+        $migration = new class extends XotBaseMigration
         {
             protected ?string $model_class = CacheModel::class;
 

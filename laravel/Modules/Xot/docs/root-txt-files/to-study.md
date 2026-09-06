@@ -5,7 +5,7 @@ type: reference
 slug: to-study
 description: 'Elenco di 1 riferimenti esterni raccolti per to study, deduplicati e convertiti da un dump di link.'
 tags: [migrato-da-txt, xot]
-converted_from: to-study.txt
+converted_from: __to_study.txt
 created: 2026-08-24
 updated: 2026-08-24
 ---

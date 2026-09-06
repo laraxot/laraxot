@@ -279,7 +279,7 @@ declare(strict_types=1);
 namespace Modules\User\Filament\Resources;
 
 use Modules\Xot\Filament\Resources\XotBaseResource;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 
 class UserResource extends XotBaseResource
 {

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Cache;
 /**
  * Seed a model once per application lifetime.
  *
- * @param string $modelClass The model class to seed (e.g., '\Modules\Notify\Models\NotificationType')
+ * @param  string  $modelClass  The model class to seed (e.g., '\Modules\Notify\Models\NotificationType')
  */
 function xotSeedModelOnce(string $modelClass): void
 {
@@ -49,7 +49,7 @@ function xotSeedModelOnce(string $modelClass): void
         // Check if seeder class exists
         if (class_exists($seederClass)) {
             // Create seeder instance and run its seed method
-            $seeder = new $seederClass();
+            $seeder = new $seederClass;
 
             if ($seeder instanceof Seeder && is_callable([$seeder, 'run'])) {
                 $seeder->{'run'}();

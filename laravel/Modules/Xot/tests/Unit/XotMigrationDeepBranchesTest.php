@@ -47,7 +47,7 @@ describe('Xot migration deep branches', function (): void {
         DB::table('cache')->insert(['id' => 1, 'uuid' => null, 'key' => 'k', 'value' => 'v']);
         DB::table('cache')->insert(['id' => 2, 'uuid' => (string) Str::uuid(), 'key' => 'k2', 'value' => 'v2']);
 
-        $migration = new class() extends XotBaseMigration
+        $migration = new class extends XotBaseMigration
         {
             protected ?string $model_class = CacheModel::class;
 
@@ -148,6 +148,5 @@ describe('Xot migration deep branches', function (): void {
             } catch (\Throwable) {
             }
         }
-
     });
 });

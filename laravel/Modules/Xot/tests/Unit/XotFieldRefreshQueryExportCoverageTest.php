@@ -67,7 +67,7 @@ describe('Xot FieldRefresh QueryExport coverage', function (): void {
                             $set->shouldReceive('__invoke')->zeroOrMoreTimes();
                             $args[] = $set;
                         } else {
-                            $args[] = new XotRefreshRecord();
+                            $args[] = new XotRefreshRecord;
                         }
                     }
                     $method->invoke($inst, ...$args);

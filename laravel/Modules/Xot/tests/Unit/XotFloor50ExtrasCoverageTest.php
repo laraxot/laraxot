@@ -71,6 +71,5 @@ describe('Xot floor50 extras non-public', function (): void {
         } catch (\Throwable $e) {
             Assert::assertNotEmpty($e->getMessage());
         }
-
     });
 });

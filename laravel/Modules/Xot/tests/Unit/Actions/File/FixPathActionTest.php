@@ -8,7 +8,7 @@ use Modules\Xot\Actions\File\FixPathAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('normalizes path slashes correctly', function (): void {
     $action = app(FixPathAction::class);

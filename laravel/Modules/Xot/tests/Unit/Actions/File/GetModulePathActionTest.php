@@ -8,13 +8,13 @@ use Modules\Xot\Tests\TestCase;
 use Nwidart\Modules\Facades\Module;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('gets module path from facade correctly', function (): void {
     // Spy on Module facade
     Module::partialMock()->allows([
         'getModulePath' => function (string $module): string {
-            return 'Xot' === $module ? '/path/to/Xot/' : '';
+            return $module === 'Xot' ? '/path/to/Xot/' : '';
         },
     ]);
 

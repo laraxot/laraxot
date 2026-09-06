@@ -304,6 +304,7 @@ protected function afterCreate(): void
 declare(strict_types=1);
 
 namespace Modules\MioModulo\Providers;
+use Modules\User\Models\User;
 
 use Modules\Xot\Providers\XotBaseServiceProvider;
 

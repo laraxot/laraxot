@@ -6,7 +6,7 @@ use Modules\Xot\Actions\Arr\RangeIntersectAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('calculates range intersection correctly', function (): void {
     $action = app(RangeIntersectAction::class);

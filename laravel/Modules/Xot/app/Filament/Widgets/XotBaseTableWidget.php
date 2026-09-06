@@ -4,12 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Widgets;
 
-use Filament\Tables\Table;
 use Filament\Widgets\Concerns\InteractsWithPageFilters;
 use Filament\Widgets\TableWidget as FilamentTableWidget;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\Relation;
 use Livewire\Attributes\On;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Filament\Traits\HasXotTable;
@@ -24,32 +21,13 @@ abstract class XotBaseTableWidget extends FilamentTableWidget
     /**
      * Ascolta evento di aggiornamento filtri.
      *
-     * @param array<string, mixed> $filters
+     * @param  array<string, mixed>  $filters
      */
     #[On('filterUpdate')]
     public function updateFilters(array $filters): void
     {
         // Forza refresh della tabella quando i filtri cambiano
         $this->resetTable();
-    }
-
-    /**
-     * Configura la tabella con le risposte.
-     */
-    public function tableOLD(Table $table): Table
-    {
-        $query = $this->getTableQuery();
-        if ($query instanceof Relation) {
-            $query = $query->getQuery();
-        }
-
-        /* @var Builder|null $query */
-        return $table
-            ->query($query)
-            ->columns($this->getTableColumns())
-            ->defaultSort('submitdate', 'desc')
-            ->paginated([10, 25, 50, 100])
-            ->poll('30s');
     }
 
     /**

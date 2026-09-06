@@ -4,29 +4,55 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Actions;
 
-use Illuminate\Support\Facades\Storage;
+use Spatie\QueueableAction\ActionJob;
+
 use Spatie\QueueableAction\QueueableAction;
+
+// use Maatwebsite\Excel\Facades\Excel;
+// use PHPExcel;
+// use PhpOffice\PhpSpreadsheet\Spreadsheet;
+// use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+// use Mpdf\Mpdf;
+use Illuminate\Support\Facades\Storage;
 use Spipu\Html2Pdf\Exception\ExceptionFormatter;
 use Spipu\Html2Pdf\Exception\Html2PdfException;
 use Spipu\Html2Pdf\Html2Pdf;
 
+/*
+ * ExceptionFormatter
+ * HtmlParsingException
+ * ImageException
+ * LocaleException
+ * LongSentenceException
+ * TableException
+ */
+
 /**
- * Class HtmlAction.
+ * Class HtmlService.
  */
 class HtmlAction
 {
     use QueueableAction;
-
     public static function toPdf(
         string $html,
         string $out = 'show',
         string $pdforientation = 'L',
         string $filename = '',
     ): string {
-        if ('' === $filename) {
+        // dddx($params);
+
+        // include_once __DIR__.'/vendor/autoload.php';
+        // $pdforientation = 'L'; // default;
+        // $out = 'show';
+        if ($filename === '') {
             $filename = Storage::disk('local')->path('test.pdf');
         }
-
+        /*
+         * extract($params);
+         * if (! isset($html)) {
+         * throw new \Exception('err html is missing');
+         * }
+         */
         if (request('debug', false)) {
             return $html;
         }
@@ -35,11 +61,11 @@ class HtmlAction
             $html2pdf = new Html2Pdf($pdforientation, 'A4', 'it');
             $html2pdf->setTestTdInOnePage(false);
             $html2pdf->WriteHTML($html);
-            if ('content_PDF' === $out) {
+            if ($out === 'content_PDF') {
                 return $html2pdf->Output($filename.'.pdf', 'S');
             }
 
-            if ('file' === $out) {
+            if ($out === 'file') {
                 $html2pdf->Output($filename, 'F');
 
                 return $filename;
@@ -54,6 +80,23 @@ class HtmlAction
             echo $formatter->getHtmlMessage();
         }
 
+        // } catch (HTML2PDF_exception $e) {
+        // } catch (Html2PdfException $e) {
+        //    echo '<pre>';
+        //    \print_r($e);
+        //    echo '</pre>';
+        // }
         return $filename;
     }
+
+    /*
+     * public static function toMpdf($html): string {
+     * require_once __DIR__.'/vendor/autoload.php';
+     *
+     * $mpdf = new Mpdf();
+     * $mpdf->WriteHTML($html);
+     *
+     * return $mpdf->Output();
+     * }
+     */
 }

@@ -17,7 +17,7 @@ class RouteParamsData extends Data
 {
     public ?string $act = null;
 
-    public mixed $row = null;
+    public ?object $row = null;
 
     /** @var array<string, mixed>|null */
     public ?array $query = null;

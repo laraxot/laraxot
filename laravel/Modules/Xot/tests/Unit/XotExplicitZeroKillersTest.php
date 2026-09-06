@@ -17,7 +17,7 @@ test('action URLs fall back to an explicit fragment outside a route', function (
     /** @var array<string, mixed> $paramsArray */
     $paramsArray = $params->toArray();
 
-    expect((new BuildActionUrlAction())->execute($paramsArray))->toBe('#edit');
+    expect((new BuildActionUrlAction)->execute($paramsArray))->toBe('#edit');
 });
 
 test('component analyzer exposes its supported filters', function (): void {

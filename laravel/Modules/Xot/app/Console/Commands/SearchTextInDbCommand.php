@@ -95,7 +95,7 @@ class SearchTextInDbCommand extends Command
                         $this->table(
                             ['Column', 'Value'],
                             collect((array) $result)
-                                ->map(fn ($value, $key) => [
+                                ->map(fn (mixed $value, int|string $key) => [
                                     (string) $key,
                                     is_scalar($value) ? (string) $value : json_encode($value),
                                 ])

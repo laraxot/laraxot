@@ -7,7 +7,7 @@ use Modules\Xot\Actions\Arr\ArrayToRawJsAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('converts mixed PHP arrays to RawJs correctly', function (): void {
     $action = app(ArrayToRawJsAction::class);

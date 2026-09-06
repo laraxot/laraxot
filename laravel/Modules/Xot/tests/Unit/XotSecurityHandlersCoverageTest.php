@@ -34,7 +34,7 @@ describe('Xot security handlers deep', function (): void {
         Log::shouldReceive('debug')->zeroOrMoreTimes();
         Log::shouldReceive('error')->zeroOrMoreTimes();
 
-        $mw = new SecurityMiddleware();
+        $mw = new SecurityMiddleware;
         $next = static fn (Request $r): Response => new Response('ok', 200);
         $response = $mw->handle(Request::create('/health', 'GET'), $next);
 
@@ -53,7 +53,7 @@ describe('Xot security handlers deep', function (): void {
         $request = Request::create('/api/flood', 'GET', [], [], [], ['REMOTE_ADDR' => $ip]);
 
         try {
-            (new SecurityMiddleware())->handle($request, static fn (): Response => new Response('ok'));
+            (new SecurityMiddleware)->handle($request, static fn (): Response => new Response('ok'));
             Assert::fail('The request exceeded the configured IP rate limit.');
         } catch (HttpException $exception) {
             Assert::assertSame(429, $exception->getStatusCode());
@@ -67,7 +67,7 @@ describe('Xot security handlers deep', function (): void {
         Queue::fake();
         Process::fake();
 
-        $repo = new HandlersRepository();
+        $repo = new HandlersRepository;
         $repo->addReporter(static function (\InvalidArgumentException $e): void {});
         $repo->addReporter(static function (\Throwable $e): void {});
         $repo->addReporter(static function (): void {}); // no params → false

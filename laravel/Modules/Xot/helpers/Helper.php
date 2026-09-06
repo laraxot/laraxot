@@ -14,11 +14,10 @@ use Illuminate\Testing\TestResponse;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Actions\Factory\GetFactoryAction;
 use Modules\Xot\Actions\File\FixPathAction;
+use Webmozart\Assert\Assert;
 
 use function Safe\define;
 use function Safe\preg_match;
-
-use Webmozart\Assert\Assert;
 
 if (! function_exists('isRunningTestBench')) {
     function isRunningTestBench(): bool
@@ -71,25 +70,24 @@ if (! function_exists('inAdmin')) {
             return (bool) $params['in_admin'];
         }
 
-        if ('admin' === Request::segment(2)) {
+        if (Request::segment(2) === 'admin') {
             return true;
         }
 
         $segments = Request::segments();
 
-        return (is_countable($segments) ? count($segments) : 0) > 0 && 'livewire' === $segments[0] && true === session('in_admin');
+        return (is_countable($segments) ? count($segments) : 0) > 0 && $segments[0] === 'livewire' && session('in_admin') === true;
     }
 }
 
 if (! function_exists('params2ContainerItem')) {
     /**
-     * @param array<string, mixed>|null $params
-     *
+     * @param  array<string, mixed>|null  $params
      * @return array{0: array<string, mixed>, 1: array<string, mixed>}
      */
     function params2ContainerItem(?array $params = null): array
     {
-        if (null === $params) {
+        if ($params === null) {
             $params = [];
             $route_current = Route::current();
             if ($route_current instanceof Illuminate\Routing\Route) {
@@ -133,7 +131,7 @@ if (! function_exists('authId')) {
         try {
             $id = Filament::auth()->id() ?? auth()->guard()->id();
 
-            return null === $id ? null : (string) $id;
+            return $id === null ? null : (string) $id;
         } catch (Throwable $e) {
             return null;
         }
@@ -150,7 +148,7 @@ if (! function_exists('trans_string')) {
                 continue;
             }
 
-            $safeReplace[$k] = (is_scalar($v) || null === $v) ? $v : SafeStringCastAction::cast($v);
+            $safeReplace[$k] = (is_scalar($v) || $v === null) ? $v : SafeStringCastAction::cast($v);
         }
 
         $result = __($key, $safeReplace, $locale);
@@ -188,8 +186,7 @@ if (! function_exists('actingAs')) {
 
 if (! function_exists('get')) {
     /**
-     * @param array<string, mixed> $options
-     *
+     * @param  array<string, mixed>  $options
      * @return TestResponse<Response>
      */
     function get(string $uri = '', array $options = []): TestResponse
@@ -200,8 +197,7 @@ if (! function_exists('get')) {
 
 if (! function_exists('post')) {
     /**
-     * @param array<string, mixed> $options
-     *
+     * @param  array<string, mixed>  $options
      * @return TestResponse<Response>
      */
     function post(string $uri, mixed $data = [], array $options = []): TestResponse
@@ -270,31 +266,15 @@ if (! function_exists('followingRedirects')) {
     }
 }
 
-if (! function_exists('test')) {
-    /** @param  string  $title  @param  \Closure  $callback  @return void */
-    function test(string $title, Closure $callback): void
-    {
-        throw new RuntimeException('Stub: This function is meant for static analysis only.');
-    }
-}
-
-if (! function_exists('describe')) {
-    /** @param  string  $title  @param  \Closure  $callback  @return void */
-    function describe(string $title, Closure $callback): void
-    {
-        throw new RuntimeException('Stub: This function is meant for static analysis only.');
-    }
-}
-
 if (! function_exists('xotSeedModelOnce')) {
     /**
      * Idempotent entity seeder — PHPStan-safe factory chain via GetFactoryAction.
      *
-     * @param class-string<Model> $modelClass
+     * @param  class-string<Model>  $modelClass
      */
     function xotSeedModelOnce(string $modelClass): void
     {
-        (new GetFactoryAction())
+        (new GetFactoryAction)
             ->execute($modelClass)
             ->createOne();
     }

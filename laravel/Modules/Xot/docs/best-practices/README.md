@@ -21,6 +21,7 @@ Core module for the FixCity Platform.
 - Professional-grade implementation
 - Integrated with FixCity Platform
 
+<<<<<<< HEAD
 ## Documentazione
 
 | Lingua | Link |
@@ -32,3 +33,22 @@ Core module for the FixCity Platform.
 ---
 
 **Modulo** `Xot` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+=======
+## Documentation
+- All files in docs/ must be lowercase (except README.md)
+- Create bidirectional links between related documents
+- Update both module and root documentation
+- Include practical examples in all guides
+
+---
+
+<!-- Merged from readme.md, which collided with this file on case-insensitive filesystems. -->
+
+---
+module: theme
+topic: readme
+canonical: ../../../../Themes/docs/shared-components/README-Modules.md
+---
+
+See canonical documentation: ../../../../Themes/docs/shared-components/README-Modules.md
+>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)

@@ -1,3 +1,15 @@
+---
+title: 'Tips'
+module: Xot
+type: reference
+slug: tips
+description: 'https://github.com/phpstan/phpstan/issues/1242'
+tags: [migrato-da-txt, xot]
+converted_from: __tips.txt
+created: 2026-08-24
+updated: 2026-08-24
+---
+
 https://github.com/phpstan/phpstan/issues/1242
 
 

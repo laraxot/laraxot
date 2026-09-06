@@ -89,6 +89,7 @@ protected $fillable;
 public function passes(string $_attribute, mixed $value): bool { }
 /** @var array<int, string> */
 protected $fillable;
+protected array $fillable;
 ```
 
 ### 🟢 Medium Priority

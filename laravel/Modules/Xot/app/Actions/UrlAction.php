@@ -1,8 +1,15 @@
 <?php
 
+/**
+ * @see https://www.webslesson.info/2019/02/import-excel-file-in-laravel.html
+ * @see https://sweetcode.io/import-and-export-excel-files-data-using-in-laravel/
+ */
+
 declare(strict_types=1);
 
 namespace Modules\Xot\Actions;
+
+use Spatie\QueueableAction\ActionJob;
 
 use Spatie\QueueableAction\QueueableAction;
 
@@ -12,22 +19,22 @@ use Spatie\QueueableAction\QueueableAction;
 class UrlAction
 {
     use QueueableAction;
-
     private static ?self $instance = null;
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public static function getInstance(): self
     {
-        if (! self::$instance instanceof self) {
-            self::$instance = new self();
+        if (! (self::$instance instanceof self)) {
+            self::$instance = new self;
         }
 
         return self::$instance;
     }
 
+    /**
+     * Undocumented function.
+     */
     public static function make(): self
     {
         return static::getInstance();
@@ -35,10 +42,6 @@ class UrlAction
 
     public function checkValidUrl(string $url): bool
     {
-        return false !== filter_var($url, FILTER_VALIDATE_URL);
-    }
-
-    public function execute(): void
-    {
+        return filter_var($url, FILTER_VALIDATE_URL) !== false;
     }
 }

@@ -1,31 +1,45 @@
-# content_selection_and_highlighting
-
-<!-- Contenuto migrato da _docs/content_selection_and_highlighting.txt -->
+---
+title: 'Content selection and highlighting'
+module: Xot
+type: reference
+slug: content-selection-and-highlighting
+description: 'https://javascript.plainenglish.io/medium-like-text-highlighting-in-react-afa35a29a81a'
+tags: [migrato-da-txt, xot]
+converted_from: content_selection_and_highlighting.txt
+created: 2026-08-24
+updated: 2026-08-24
+---
 
 https://javascript.plainenglish.io/medium-like-text-highlighting-in-react-afa35a29a81a
+
 
 https://github.com/codeshifu/react-highlight-pop
 
 https://stackoverflow.com/questions/18543676/display-popup-above-highlighted-text-in-contenteditable-div
 
+
 https://medium.com/@hyvor.talk/how-to-simply-highlight-code-on-your-blog-with-highlight-js-9d9ab2797b8
 
+
 https://stackoverflow.com/questions/23952220/how-can-i-recreate-the-medium-highlight-function
+
 
 http://720kb.github.io/butler/
 https://720kb.github.io/highlighter.js/
 
 https://github.com/anonyco/Highlighter-JS
 
-https://jobjects.com/project_docs/highlighter/jquery //deprecated
+https://jobjects.com/docs/highlighter/jquery //deprecated
 
 https://devpost.com/software/highlighter-js
+
 
 ------------------------------------------------------------
 https://mxb.dev/blog/medium-share-highlight-eleventy/
 https://github.com/maxboeck/eleventy-plugin-share-highlight
 
 ---------------------------------------------------------------
+
 
 https://css-tricks.com/how-to-create-actions-for-selected-text-with-the-selection-api/    !!!
 
@@ -35,8 +49,10 @@ https://github.com/anythingcodes/highlight-share
 -------------------------------------------------------------------------------
 https://estevanmaito.github.io/sharect/
 
+
 ---------------------------------------------------------------
 https://www.freecodecamp.org/news/how-to-create-a-medium-like-highlight-menu-in-vue-dc515f2dddef/   !!!!!!
+
 
 --------------------------------------------------------------
 
@@ -74,7 +90,9 @@ https://javascript.plainenglish.io/medium-like-text-highlighting-in-react-afa35a
 --------------------------------------------------------------
 --------------------------------------------------------------
 
+
 tvb.bibliotechetrevigiane.it
+
 
 -------------------
 <div class="dd ew od xf" data-popper-reference-hidden="false" data-popper-escaped="false"

@@ -12,7 +12,7 @@ use PHPUnit\Framework\Assert;
 uses(\Modules\Xot\Tests\TestCase::class);
 
 it('throws if record has no email', function (): void {
-    $record = new class() extends Model
+    $record = new class extends Model
     {
         public function option(string $key): null
         {
@@ -21,7 +21,7 @@ it('throws if record has no email', function (): void {
 
         public function myLogs(): object
         {
-            return new class()
+            return new class
             {
                 /** @param array<string, mixed> $data */
                 public function create(array $data): void {}

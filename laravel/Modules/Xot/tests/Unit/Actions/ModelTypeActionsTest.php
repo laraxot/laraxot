@@ -10,7 +10,7 @@ use Modules\Xot\Models\Log;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('resolves model types correctly', function (): void {
     Config::set('morph_map', ['log' => Log::class]);
@@ -19,7 +19,6 @@ it('resolves model types correctly', function (): void {
     Assert::assertSame(Log::class, $classAction->execute('log'));
 
     $typeAction = app(GetModelTypeByModelAction::class);
-    $result = $typeAction->execute(new class extends Log implements ModelContract {
-    });
+    $result = $typeAction->execute(new class extends Log implements ModelContract {});
     Assert::assertIsString($result);
 });

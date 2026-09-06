@@ -8,22 +8,24 @@ use Modules\Xot\Tests\TestCase;
 use Modules\Xot\Traits\HasCustomRelations;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('creates custom relation', function (): void {
-    $relatedModel = new class extends Model {
+    $relatedModel = new class extends Model
+    {
         protected $table = 'related';
     };
 
-    $parentModel = new class extends Model {
+    $parentModel = new class extends Model
+    {
         use HasCustomRelations;
 
         protected $table = 'parent';
     };
 
-    $baseConstraints = fn ($relation) => null;
-    $eagerConstraints = fn ($relation, $models) => null;
-    $eagerMatcher = fn ($models, $results, $relation) => [];
+    $baseConstraints = fn (mixed $relation) => null;
+    $eagerConstraints = fn (mixed $relation, mixed $models) => null;
+    $eagerMatcher = fn (mixed $models, mixed $results, mixed $relation) => [];
 
     $relation = $parentModel->customRelation(
         get_class($relatedModel),

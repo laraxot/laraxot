@@ -9,6 +9,7 @@ use Modules\User\Database\Factories\UserFactory;
 use Modules\Xot\Actions\Pdf\GetPdfContentByRecordAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+use Modules\User\Models\User;
 
 uses(\Modules\Xot\Tests\TestCase::class);
 
@@ -20,7 +21,7 @@ uses(\Modules\Xot\Tests\TestCase::class);
 $action = null;
 
 beforeEach(function () use (&$action): void {
-    $action = new GetPdfContentByRecordAction();
+    $action = new GetPdfContentByRecordAction;
 });
 
 describe('Get Pdf Content By Record Action', function () use (&$action): void {
@@ -79,7 +80,7 @@ describe('Get Pdf Content By Record Action', function () use (&$action): void {
 
     test('it generates enhanced filename for performance models', function () use (&$action): void {
         // Arrange - Create a mock model with performance fields
-        $record = new class() extends Model
+        $record = new class extends Model
         {
             protected $table = 'test_performance';
 

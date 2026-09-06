@@ -5,7 +5,7 @@ type: reference
 slug: macro
 description: 'Elenco di 1 riferimenti esterni raccolti per macro, deduplicati e convertiti da un dump di link.'
 tags: [migrato-da-txt, xot]
-converted_from: macro.txt
+converted_from: _macro.txt
 created: 2026-08-24
 updated: 2026-08-24
 ---

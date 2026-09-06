@@ -19,9 +19,9 @@ final class PaDesignColorsAction
 {
     use QueueableAction;
 
-    public const PRIMARY_HEX = '#007A52';
+    public const string PRIMARY_HEX = '#007A52';
 
-    public const INSTITUTIONAL_BLUE_HEX = '#0066CC';
+    public const string INSTITUTIONAL_BLUE_HEX = '#0066CC';
 
     /**
      * @return array{primary: string, institutional_blue: string, danger: string, gray: string, info: string, success: string, warning: string}

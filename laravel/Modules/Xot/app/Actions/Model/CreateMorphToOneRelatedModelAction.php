@@ -14,7 +14,7 @@ class CreateMorphToOneRelatedModelAction
     use QueueableAction;
 
     /**
-     * @param array<string, mixed> $attributes
+     * @param  array<string, mixed>  $attributes
      */
     public function execute(object $relation, array $attributes): Model
     {

@@ -10,7 +10,7 @@ use Modules\Xot\Actions\Theme\SetThemeAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('sets and gets theme', function (): void {
     app(SetThemeAction::class)->execute('test-theme');

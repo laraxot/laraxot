@@ -9,7 +9,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\fopen;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('casts various values to array correctly', function (): void {
     $action = app(SafeArrayCastAction::class);
@@ -21,11 +21,12 @@ it('casts various values to array correctly', function (): void {
     // Collection
     Assert::assertSame(['b' => 2], $action->execute(collect(['b' => 2])));
     // stdClass
-    $obj = new stdClass();
+    $obj = new stdClass;
     $obj->c = 3;
     Assert::assertSame(['c' => 3], $action->execute($obj));
     // Object with toArray
-    $objToArray = new class {
+    $objToArray = new class
+    {
         /** @return array<string, int> */
         public function toArray(): array
         {
@@ -37,7 +38,8 @@ it('casts various values to array correctly', function (): void {
     };
     Assert::assertSame(['d' => 4], $action->execute($objToArray));
     // Object with __toArray
-    $objUnderscoreToArray = new class {
+    $objUnderscoreToArray = new class
+    {
         /** @return array<string, int> */
         public function __toArray(): array
         {
@@ -49,7 +51,8 @@ it('casts various values to array correctly', function (): void {
     };
     Assert::assertSame(['e' => 5], $action->execute($objUnderscoreToArray));
     // Regular object (public properties)
-    $regObj = new class {
+    $regObj = new class
+    {
         public int $f = 6;
     };
     Assert::assertSame(['f' => 6], $action->execute($regObj));
@@ -91,7 +94,7 @@ it('checks if value can be cast', function (): void {
     Assert::assertTrue($action->canCast([]));
     Assert::assertTrue($action->canCast(null));
     Assert::assertTrue($action->canCast('str'));
-    Assert::assertTrue($action->canCast(new stdClass()));
+    Assert::assertTrue($action->canCast(new stdClass));
 });
 
 it('uses static cast method correctly', function (): void {

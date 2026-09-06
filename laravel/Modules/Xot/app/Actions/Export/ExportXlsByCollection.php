@@ -26,10 +26,10 @@ class ExportXlsByCollection
     /**
      * Esporta una collezione in Excel.
      *
-     * @param Collection<int|string, mixed>|EloquentCollection<int, Model> $collection La collezione da esportare
-     * @param string                                                       $filename   Nome del file Excel
-     * @param string|null                                                  $transKey   Chiave di traduzione per i campi
-     * @param array<int, string>                                           $fields     Campi da includere nell'export
+     * @param  Collection<int|string, mixed>|EloquentCollection<int, Model>  $collection  La collezione da esportare
+     * @param  string  $filename  Nome del file Excel
+     * @param  string|null  $transKey  Chiave di traduzione per i campi
+     * @param  array<int, string>  $fields  Campi da includere nell'export
      */
     public function execute(
         Collection|EloquentCollection $collection,
@@ -57,10 +57,9 @@ class ExportXlsByCollection
     /**
      * Esporta una collezione in Excel utilizzando PhpSpreadsheet direttamente.
      *
-     * @param Collection<int|string, mixed>|EloquentCollection<int, Model> $rows     La collezione da esportare
-     * @param array<int, string>                                           $fields   Campi da includere nell'export
-     * @param string                                                       $filename Nome del file Excel
-     *
+     * @param  Collection<int|string, mixed>|EloquentCollection<int, Model>  $rows  La collezione da esportare
+     * @param  array<int, string>  $fields  Campi da includere nell'export
+     * @param  string  $filename  Nome del file Excel
      * @return string Il percorso del file generato
      */
     public function executeWithSpreadsheet(Collection|EloquentCollection $rows, array $fields, string $filename): string
@@ -70,7 +69,7 @@ class ExportXlsByCollection
             $rows = Collection::make($rows->toArray());
         }
 
-        $spreadsheet = new Spreadsheet();
+        $spreadsheet = new Spreadsheet;
         $sheet = $spreadsheet->getActiveSheet();
 
         $this->writeHeader($sheet, $fields);
@@ -85,8 +84,8 @@ class ExportXlsByCollection
     /**
      * Scrive l'intestazione nel foglio Excel.
      *
-     * @param Worksheet          $sheet  Il foglio Excel
-     * @param array<int, string> $fields I campi da utilizzare come intestazioni
+     * @param  Worksheet  $sheet  Il foglio Excel
+     * @param  array<int, string>  $fields  I campi da utilizzare come intestazioni
      */
     protected function writeHeader(Worksheet $sheet, array $fields): void
     {
@@ -98,9 +97,9 @@ class ExportXlsByCollection
     /**
      * Scrive le righe nel foglio di lavoro.
      *
-     * @param Worksheet                     $sheet  Il foglio di lavoro
-     * @param Collection<int|string, mixed> $rows   I dati da scrivere
-     * @param array<int, string>            $fields I campi da utilizzare per le colonne
+     * @param  Worksheet  $sheet  Il foglio di lavoro
+     * @param  Collection<int|string, mixed>  $rows  I dati da scrivere
+     * @param  array<int, string>  $fields  I campi da utilizzare per le colonne
      */
     protected function writeRows(Worksheet $sheet, Collection $rows, array $fields): void
     {
@@ -110,29 +109,34 @@ class ExportXlsByCollection
                 $value = $this->extractValue($data, $field);
                 $sheet->setCellValue(Coordinate::stringFromColumnIndex($col + 1).(string) $row, $value);
             }
-            ++$row;
+            $row++;
         }
     }
 
     /**
-     * Estrae il valore da un oggetto o array usando il campo specificato.
+     * Extracts a value from an object or array using the specified field path.
      *
-     * @param mixed  $data  I dati da cui estrarre il valore
-     * @param string $field Il campo da estrarre
+     * Returns mixed because Laravel's data_get() is polymorphic—it can return
+     * any type that exists at the nested field path (strings, ints, arrays, objects, etc.).
+     * This polymorphism is by design and cannot be narrowed without losing the utility
+     * of generic nested data access.
      *
-     * @return mixed Il valore estratto
+     * @param  mixed  $data  The data object or array to extract from
+     * @param  string  $field  The nested field path (dot notation supported)
+     * @return mixed The extracted value at the field path, or '' if not found
+     *
+     * @see https://laravel.com/docs/helpers#method-data-get
      */
     protected function extractValue(mixed $data, string $field): mixed
     {
-        // Usa data_get di Laravel per accesso sicuro ai dati nidificati
+        // Uses Laravel's data_get for safe nested data access
         return data_get($data, $field, '');
     }
 
     /**
      * Converte EloquentCollection in Support\Collection mantenendo i dati.
      *
-     * @param EloquentCollection<int, Model> $eloquentCollection
-     *
+     * @param  EloquentCollection<int, Model>  $eloquentCollection
      * @return Collection<int, mixed>
      */
     protected function convertToSupportCollection(EloquentCollection $eloquentCollection): Collection

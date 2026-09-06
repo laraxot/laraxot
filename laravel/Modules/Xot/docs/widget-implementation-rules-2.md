@@ -71,7 +71,6 @@ class MyTableWidget extends XotBaseTableWidget
 
 declare(strict_types=1);
 
-namespace Modules\<nome progetto>\Filament\Widgets;
 
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
@@ -93,11 +92,11 @@ class QuestionChartFilterWidget extends XotBaseWidget
             DatePicker::make('dateFrom')
                 ->live()
                 ->afterStateUpdated(fn () => $this->updateFilters()),
-
+            
             DatePicker::make('dateTo')
                 ->live()
                 ->afterStateUpdated(fn () => $this->updateFilters()),
-
+            
             Select::make('answerFilter')
                 ->options([
                     'all' => 'All Answers',
@@ -127,7 +126,6 @@ class QuestionChartFilterWidget extends XotBaseWidget
 
 declare(strict_types=1);
 
-namespace Modules\<nome progetto>\Filament\Widgets;
 
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -148,7 +146,7 @@ class QuestionChartDataWidget extends XotBaseTableWidget
                     ->dateTime()
                     ->sortable()
                     ->searchable(),
-
+                
                 TextColumn::make('answert')
                     ->limit(50)
                     ->tooltip(function (TextColumn $column): ?string {
@@ -156,7 +154,7 @@ class QuestionChartDataWidget extends XotBaseTableWidget
                         return strlen($state) > 50 ? $state : null;
                     })
                     ->searchable(),
-
+                
                 TextColumn::make('answer_lang')
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
@@ -176,11 +174,11 @@ class QuestionChartDataWidget extends XotBaseTableWidget
     protected function getTableQuery()
     {
         $record = $this->getRecord();
-
+        
         if (!$record) {
             return $record->answers()->whereRaw('1 = 0');
         }
-
+        
         return $record->answers()
             ->select(['submitdate', 'answert', 'answer_lang'])
             ->when($record->date_from, function ($query, $dateFrom) {
@@ -204,7 +202,6 @@ class QuestionChartDataWidget extends XotBaseTableWidget
 
 declare(strict_types=1);
 
-namespace Modules\<nome progetto>\Filament\Widgets;
 
 use Filament\Widgets\ChartWidget;
 use Modules\Xot\Filament\Widgets\XotBaseWidget;
@@ -223,16 +220,16 @@ class QuestionChartWidget extends XotBaseWidget
     protected function getData(): array
     {
         $record = $this->getRecord();
-
+        
         if (!$record) {
             return [
                 'datasets' => [],
                 'labels' => [],
             ];
         }
-
+        
         $chartData = $this->getChartData($record);
-
+        
         return [
             'datasets' => [
                 [
@@ -250,11 +247,11 @@ class QuestionChartWidget extends XotBaseWidget
     protected function getType(): string
     {
         $record = $this->getRecord();
-
+        
         if (!$record) {
             return 'bar';
         }
-
+        
         return match ($record->chart_type) {
             'pie' => 'pie',
             'doughnut' => 'doughnut',
@@ -275,17 +272,17 @@ class QuestionChartWidget extends XotBaseWidget
                 $query->where('submitdate', '<=', $dateTo);
             })
             ->get();
-
+        
         $grouped = $answers->groupBy('answer_lang');
-
+        
         $labels = [];
         $values = [];
-
+        
         foreach ($grouped as $lang => $langAnswers) {
             $labels[] = $lang ?: 'Unknown';
             $values[] = $langAnswers->count();
         }
-
+        
         return [
             'labels' => $labels,
             'values' => $values,
@@ -304,12 +301,12 @@ class QuestionChartWidget extends XotBaseWidget
             'rgba(199, 199, 199, ' . $alpha . ')',
             'rgba(83, 102, 255, ' . $alpha . ')',
         ];
-
+        
         $colors = [];
         for ($i = 0; $i < $count; $i++) {
             $colors[] = $baseColors[$i % count($baseColors)];
         }
-
+        
         return $colors;
     }
 }
@@ -365,7 +362,7 @@ class MyWidget extends XotBaseWidget
     {
         return []; // Form vuoto
     }
-
+    
     public function table(Table $table): Table
     {
         // Tabella in widget di form

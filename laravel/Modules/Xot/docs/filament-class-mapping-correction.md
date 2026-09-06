@@ -1,5 +1,6 @@
-# Correzione Mapping Classi Filament - [DATE]
+# Correzione Mapping Classi Filament - 2025-12-23
 
+**Data**: 2025-12-23
 **Obiettivo**: Correggere mapping classi inesistenti nel file `filament_class.txt`
 
 ## ⚠️ Problema Identificato
@@ -113,4 +114,4 @@ Se in futuro si volesse creare queste classi base:
 ---
 
 **Stato**: ✅ Mapping corretto per riflettere codice esistente
-**Data Correzione**: [DATE]
+**Data Correzione**: 2025-12-23
