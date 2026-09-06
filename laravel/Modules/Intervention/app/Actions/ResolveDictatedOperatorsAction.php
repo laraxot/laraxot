@@ -67,10 +67,10 @@ final class ResolveDictatedOperatorsAction
     }
 
     /**
-     * @param  Collection<int, mixed>  $ids
+     * @param  Collection<int, int>  $ids
      */
     private function uniqueId(Collection $ids): ?int
     {
-        return $ids->count() === 1 ? (int) $ids->first() : null;
+        return $ids->count() === 1 ? $ids->first() : null;
     }
 }

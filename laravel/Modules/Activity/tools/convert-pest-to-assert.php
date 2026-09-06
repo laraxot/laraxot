@@ -29,13 +29,11 @@ foreach ($iterator as $file) {
     if ($rawContent === false) {
         continue;
     }
-    /** @var string $code */
     $code = $rawContent;
     if (! str_contains($code, 'expect(')) {
         continue;
     }
 
-    /** @var string $code */
     $replaced = preg_replace('/\s*\/\/\s*@phpstan-ignore-(line|next-line)[^\n]*\n/', "\n", $code);
     $code = is_string($replaced) ? $replaced : $code;
 

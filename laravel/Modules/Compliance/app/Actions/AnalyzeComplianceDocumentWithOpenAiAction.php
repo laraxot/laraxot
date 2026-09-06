@@ -186,10 +186,11 @@ PROMPT;
     private function parseJsonObject(string $text): array
     {
         $clean = trim($text);
-        $clean = preg_replace('/^```(?:json)?\s*|\s*```$/', '', $clean) ?? $clean;
+        $cleanedText = preg_replace('/^```(?:json)?\s*|\s*```$/', '', $clean);
+        $textToDecode = is_string($cleanedText) ? $cleanedText : $clean;
 
         try {
-            $decoded = json_decode($clean, true);
+            $decoded = json_decode($textToDecode, true);
 
             if (! is_array($decoded)) {
                 return [];

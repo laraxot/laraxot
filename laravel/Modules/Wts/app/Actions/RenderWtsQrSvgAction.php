@@ -13,13 +13,15 @@ final class RenderWtsQrSvgAction
     {
         $options = new QROptions([
             'version' => QRCode::VERSION_AUTO,
-            'outputType' => QRCode::OUTPUT_SVG_STRING,
+            'outputType' => QRCode::OUTPUT_MARKUP_SVG,
             'scale' => $size / 260,
         ]);
 
         $qrCode = new QRCode($options);
 
-        return $qrCode->render($payload);
+        $result = $qrCode->render($payload);
+
+        return is_string($result) ? $result : '';
     }
 
     public function dataUri(string $payload, int $size = 260): string

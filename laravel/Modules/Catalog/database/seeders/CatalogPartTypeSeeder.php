@@ -15,9 +15,8 @@ class CatalogPartTypeSeeder extends Seeder
             return;
         }
 
+        /** @var \Modules\Catalog\Database\Factories\CatalogPartTypeFactory $factory */
         $factory = CatalogPartType::factory();
-        if ($factory !== null) {
-            $factory->count(5)->create();
-        }
+        $factory->count(5)->create();
     }
 }

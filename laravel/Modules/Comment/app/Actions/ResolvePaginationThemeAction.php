@@ -17,6 +17,8 @@ class ResolvePaginationThemeAction
 
     public function handle(): string
     {
-        return (string) config('comments.pagination.theme', 'tailwind');
+        $value = config('comments.pagination.theme', 'tailwind');
+
+        return is_string($value) ? $value : 'tailwind';
     }
 }

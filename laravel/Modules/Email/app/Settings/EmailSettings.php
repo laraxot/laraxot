@@ -77,7 +77,9 @@ final readonly class EmailSettings
 
     public function pollLimit(): int
     {
-        $value = $this->settings->getInt('email_ai.poll_limit', (int) config('services.email_ai.poll_limit', 20));
+        $configValue = config('services.email_ai.poll_limit', 20);
+        $configInt = is_int($configValue) ? $configValue : (is_numeric($configValue) ? (int) $configValue : 20);
+        $value = $this->settings->getInt('email_ai.poll_limit', $configInt);
 
         return max(1, min(100, $value));
     }
@@ -91,7 +93,9 @@ final readonly class EmailSettings
 
     public function confidenceThreshold(): int
     {
-        $value = $this->settings->getInt('email_ai.ai_confidence_threshold', (int) config('services.email_ai.ai_confidence_threshold', 80));
+        $configValue = config('services.email_ai.ai_confidence_threshold', 80);
+        $configInt = is_int($configValue) ? $configValue : (is_numeric($configValue) ? (int) $configValue : 80);
+        $value = $this->settings->getInt('email_ai.ai_confidence_threshold', $configInt);
 
         return max(0, min(100, $value));
     }

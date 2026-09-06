@@ -320,8 +320,10 @@ final class EnergyBrokerDocumentAcquisitionPage extends EnergyBrokerPage
     private function readPdfLikeText(string $path): string
     {
         $contents = file_get_contents($path);
-        $contents = preg_replace('/[^\P{C}\n\r\t]+/u', ' ', $contents);
-        $contents = preg_replace('/\s+/', ' ', $contents);
+        $result1 = preg_replace('/[^\P{C}\n\r\t]+/u', ' ', $contents);
+        $contents = is_string($result1) ? $result1 : '';
+        $result2 = preg_replace('/\s+/', ' ', $contents);
+        $contents = is_string($result2) ? $result2 : '';
 
         return mb_substr(trim($contents), 0, 3000);
     }

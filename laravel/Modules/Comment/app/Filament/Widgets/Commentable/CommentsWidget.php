@@ -156,7 +156,11 @@ class CommentsWidget extends XotBaseSchemaWidget
 
         $token = '@{'.$userId.'|'.$displayName.'}';
         $replaced = preg_replace('/@[^\s{]*$/', $token.' ', $this->uiConfig->text);
-        $this->uiConfig->text = $replaced !== null ? $replaced : $this->uiConfig->text.' '.$token;
+        if (is_string($replaced)) {
+            $this->uiConfig->text = $replaced;
+        } else {
+            $this->uiConfig->text = $this->uiConfig->text.' '.$token;
+        }
     }
 
     public function comment(): void

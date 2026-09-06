@@ -13,7 +13,7 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class CatalogModel extends XotBaseModel
 {
-    /** @phpstan-use HasXotFactory<CatalogModelFactory> */
+    /** @phpstan-use HasXotFactory */
     use HasXotFactory;
 
     protected $table = 'catalog_models';
