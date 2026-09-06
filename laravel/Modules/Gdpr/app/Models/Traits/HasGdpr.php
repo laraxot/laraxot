@@ -5,12 +5,14 @@ declare(strict_types=1);
 namespace Modules\Gdpr\Models\Traits;
 
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Facades\Cache;
 use Modules\Gdpr\Enums\ConsentType;
 use Modules\Gdpr\Models\Consent;
 use Modules\Gdpr\Models\Treatment;
+use RuntimeException;
 
 /**
  * Trait HasGdpr.
@@ -19,8 +21,6 @@ use Modules\Gdpr\Models\Treatment;
  *
  * @property Collection<int, Consent> $consents
  * @property Collection<int, Consent> $activeConsents
- *
- * @see \Modules\Gdpr\Tests\Unit\Traits\HasGdprTraitTest
  */
 trait HasGdpr
 {
@@ -63,7 +63,7 @@ trait HasGdpr
     public function hasGivenConsent(ConsentType|string $type): bool
     {
         $type = $type instanceof ConsentType ? $type->value : $type;
-        $cacheKey = 'user_'.(string) $this->getKey().'_consent_'.$type;
+        $cacheKey = $this->gdprConsentCacheKey($type);
 
         if (Cache::has($cacheKey)) {
             return (bool) Cache::get($cacheKey);
@@ -78,7 +78,7 @@ trait HasGdpr
     public function hasGivenConsentWithoutCache(ConsentType|string $type): bool
     {
         $type = $type instanceof ConsentType ? $type->value : $type;
-        $cacheKey = 'user_'.(string) $this->getKey().'_consent_'.$type;
+        $cacheKey = $this->gdprConsentCacheKey($type);
 
         $hasConsent = $this->activeConsents()->where('type', $type)->exists();
 
@@ -90,8 +90,7 @@ trait HasGdpr
     /**
      * Give consent for a specific type.
      *
-     * @param array<string, mixed> $metadata
-     * @param array<string, mixed> $metadata
+     * @param  array<string, mixed>  $metadata
      */
     public function giveConsent(ConsentType|string $type, array $metadata = []): Consent
     {
@@ -139,18 +138,17 @@ trait HasGdpr
      *
      * @return array<string>
      */
-    /** @return array<string> */
     public function getMissingRequiredConsents(): array
     {
-        $givenConsents = $this->activeConsents()->pluck('type')->toArray();
+        $givenConsents = [];
 
-        /** @var array<string> $consentTypes */
-        $consentTypes = ConsentType::getRequiredConsentTypes();
+        foreach ($this->activeConsents()->pluck('type')->all() as $consentType) {
+            if (is_string($consentType)) {
+                $givenConsents[] = $consentType;
+            }
+        }
 
-        /** @var array<string> $given */
-        $given = $givenConsents;
-
-        return array_diff($consentTypes, $given);
+        return array_diff(ConsentType::getRequiredConsentTypes(), $givenConsents);
     }
 
     /**
@@ -166,7 +164,36 @@ trait HasGdpr
      */
     protected function clearConsentCache(string $type): void
     {
-        $cacheKey = 'user_'.(string) $this->getKey().'_consent_'.$type;
-        Cache::forget($cacheKey);
+        Cache::forget($this->gdprConsentCacheKey($type));
+    }
+
+    /**
+     * Build the cache key used to store a consent lookup result.
+     */
+    protected function gdprConsentCacheKey(string $type): string
+    {
+        return 'user_'.$this->gdprKeyAsString().'_consent_'.$type;
+    }
+
+    /**
+     * Get the model's primary key as a string.
+     *
+     * Eloquent's {@see Model::getKey()} is typed
+     * `mixed`; narrow it here to the only scalar types Eloquent actually uses
+     * for primary keys instead of casting mixed to string directly.
+     */
+    protected function gdprKeyAsString(): string
+    {
+        $key = $this->getKey();
+
+        return match (true) {
+            is_string($key) => $key,
+            is_int($key) => (string) $key,
+            default => throw new RuntimeException(sprintf(
+                'Unsupported primary key type "%s" for GDPR cache key on %s.',
+                get_debug_type($key),
+                static::class,
+            )),
+        };
     }
 }
