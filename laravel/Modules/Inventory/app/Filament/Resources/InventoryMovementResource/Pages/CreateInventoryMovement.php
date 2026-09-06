@@ -8,6 +8,7 @@ use Illuminate\Validation\ValidationException;
 use Modules\Catalog\Models\Product;
 use Modules\Inventory\Filament\Resources\InventoryMovementResource;
 use Modules\Inventory\Models\WarehouseLocation;
+use Modules\Xot\Actions\Cast\SafeIntCastAction;
 use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 
 final class CreateInventoryMovement extends XotBaseCreateRecord
@@ -20,8 +21,8 @@ final class CreateInventoryMovement extends XotBaseCreateRecord
      */
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        $productId = (int) ($data['product_id'] ?? 0);
-        $quantity = (int) ($data['quantity'] ?? 0);
+        $productId = SafeIntCastAction::cast($data['product_id'] ?? 0);
+        $quantity = SafeIntCastAction::cast($data['quantity'] ?? 0);
         $unitPrice = $data['unit_price'] ?? null;
 
         if (! is_numeric($unitPrice) && $productId > 0) {
@@ -35,13 +36,13 @@ final class CreateInventoryMovement extends XotBaseCreateRecord
         $data['line_total'] = round($resolvedUnitPrice * $quantity, 2);
 
         $this->assertLocationBelongsToWarehouse(
-            (int) ($data['from_warehouse_id'] ?? 0),
-            (int) ($data['from_location_id'] ?? 0),
+            SafeIntCastAction::cast($data['from_warehouse_id'] ?? 0),
+            SafeIntCastAction::cast($data['from_location_id'] ?? 0),
             'from_location_id',
         );
         $this->assertLocationBelongsToWarehouse(
-            (int) ($data['to_warehouse_id'] ?? 0),
-            (int) ($data['to_location_id'] ?? 0),
+            SafeIntCastAction::cast($data['to_warehouse_id'] ?? 0),
+            SafeIntCastAction::cast($data['to_location_id'] ?? 0),
             'to_location_id',
         );
 

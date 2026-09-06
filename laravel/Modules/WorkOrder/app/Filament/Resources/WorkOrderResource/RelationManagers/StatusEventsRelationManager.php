@@ -64,26 +64,25 @@ final class StatusEventsRelationManager extends XotBaseRelationManager
             ->headerActions([
                 CreateAction::make()
                     ->using(function (array $data): WorkOrderStatusEvent {
-                        $changedAt = isset($data['changed_at']) && $data['changed_at']
-                            ? CarbonImmutable::parse((string) $data['changed_at'])
-                            : null;
+                        $changedAtRaw = is_string($data['changed_at'] ?? null) ? $data['changed_at'] : null;
+                        $changedAt = $changedAtRaw !== null ? CarbonImmutable::parse($changedAtRaw) : null;
 
                         /** @var WorkOrder $workOrder */
                         $workOrder = $this->getOwnerRecord();
 
                         return app(ChangeWorkOrderStatusAction::class)->execute(
                             workOrder: $workOrder,
-                            toStatusId: (int) $data['to_status_id'],
+                            toStatusId: is_int($data['to_status_id'] ?? null) ? (int) $data['to_status_id'] : 0,
                             changedByUserId: (($authId = Auth::id()) !== null ? (int) $authId : null),
-                            note: isset($data['note']) ? (string) $data['note'] : null,
+                            note: is_string($data['note'] ?? null) ? $data['note'] : null,
                             changedAt: $changedAt,
                         );
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 DeleteAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
     }

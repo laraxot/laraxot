@@ -24,8 +24,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 final class Customer extends BaseModel
 {
-    use HasXotFactory;
-
     use SoftDeletes;
 
     protected $guarded = [];

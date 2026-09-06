@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\File;
 use Modules\Tenant\Actions\Config\GetTenantFilePathAction;
 use Modules\Tenant\Database\Factories\TestSushiModelFactory;
 use Modules\Tenant\Models\Traits\SushiToJson;
-use Modules\User\Models\User;
 use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
@@ -22,8 +21,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  * @property Carbon|null $updated_at
  * @property int|null $created_by
  * @property int|null $updated_by
- * @property-read User|null $creator
- * @property-read User|null $updater
  *
  * @method static \Modules\Tenant\Database\Factories\TestSushiModelFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder<static>|TestSushiModel newModelQuery()

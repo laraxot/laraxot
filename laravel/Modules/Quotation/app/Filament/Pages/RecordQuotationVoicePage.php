@@ -267,7 +267,8 @@ final class RecordQuotationVoicePage extends GatedXotBasePage
             ->get(['quotations.id', 'quotations.title', 'customers.legal_name']);
 
         foreach ($ids as $row) {
-            $options[(int) $row->id] = $this->sourceLabelFor($row->id, $row->title, $row->legal_name);
+            $rowId = is_numeric($row->id) ? (int) $row->id : 0;
+            $options[$rowId] = $this->sourceLabelFor($rowId, $row->title, $row->legal_name);
         }
 
         // Keep the detected source visible even if it fell out of the recent list.
@@ -277,16 +278,17 @@ final class RecordQuotationVoicePage extends GatedXotBasePage
                 ->where('quotations.id', $this->sourceId)
                 ->first(['quotations.id', 'quotations.title', 'customers.legal_name']);
             if ($source !== null) {
-                $options[(int) $source->id] = $this->sourceLabelFor($source->id, $source->title, $source->legal_name);
+                $sourceId = is_numeric($source->id) ? (int) $source->id : 0;
+                $options[$sourceId] = $this->sourceLabelFor($sourceId, $source->title, $source->legal_name);
             }
         }
 
         return $options;
     }
 
-    private function sourceLabelFor(mixed $id, mixed $title, mixed $legalName): string
+    private function sourceLabelFor(int $id, mixed $title, mixed $legalName): string
     {
-        $idLabel = is_string($title) && trim($title) !== '' ? trim($title) : '#'.(string) $id;
+        $idLabel = is_string($title) && trim($title) !== '' ? trim($title) : '#'.$id;
         $legalNameLabel = is_string($legalName) && trim($legalName) !== '' ? trim($legalName) : '';
 
         return $legalNameLabel !== '' ? $idLabel.' — '.$legalNameLabel : $idLabel;

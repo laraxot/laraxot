@@ -86,9 +86,9 @@ final class ComplianceDocumentsRelationManager extends XotBaseRelationManager
                         app(GeneratePosDraftForWorkOrderAction::class)->execute($workOrder);
                     }),
                 CreateAction::make()
-                    ->form($this->createFormSchema())
+                    ->schema($this->createFormSchema())
                     ->using(function (array $data, string $model): Model {
-                        $filePath = isset($data['file_path']) ? (string) $data['file_path'] : null;
+                        $filePath = is_string($data['file_path'] ?? null) ? $data['file_path'] : null;
 
                         /** @var array<string, mixed> $attributes */
                         $attributes = $data;
@@ -108,7 +108,7 @@ final class ComplianceDocumentsRelationManager extends XotBaseRelationManager
                         return $document;
                     }),
             ])
-            ->actions([EditAction::make(), DeleteAction::make()]);
+            ->recordActions([EditAction::make(), DeleteAction::make()]);
     }
 
     /**

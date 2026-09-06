@@ -183,6 +183,7 @@ return [
         'b' => ['label' => 'b'],
         'badge' => ['label' => 'badge', 'placeholder' => 'badge', 'helper_text' => 'badge', 'description' => 'badge'],
         'date' => ['label' => 'date', 'placeholder' => 'date', 'helper_text' => 'date', 'description' => 'date'],
+        'order_column' => ['label' => 'order_column'],
     ],
     'actions' => [
         'authenticate' => ['label' => 'Autentica', 'tooltip' => 'Effettua il login nel sistema', 'icon' => 'ui-login', 'color' => 'primary'],

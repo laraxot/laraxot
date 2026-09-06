@@ -206,6 +206,6 @@ final class MatchDictatedItemsToCatalogAction
     {
         $price = $product->getAttribute('unit_price');
 
-        return $price !== null ? (float) $price : null;
+        return is_numeric($price) ? (float) $price : null;
     }
 }

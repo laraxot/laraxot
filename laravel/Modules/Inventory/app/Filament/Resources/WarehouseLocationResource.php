@@ -149,11 +149,11 @@ final class WarehouseLocationResource extends GatedXotBaseResource
                     ->sortable(),
             ])
             ->defaultSort('warehouse_id')
-            ->actions([
+            ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
     }

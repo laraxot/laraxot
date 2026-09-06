@@ -65,14 +65,14 @@ class ChangeTypeCommand extends Command
         $typeLabel = 'None';
         if (isset($user->type) && \is_object($user->type) && method_exists($user->type, 'getLabel')) {
             $enumType = $user->type;
-            /** @var string|Htmlable|mixed */
+            /** @var string|Htmlable $label */
             $label = $enumType->getLabel();
-            if (\is_string($label)) {
-                $typeLabel = $label;
+            if ($label instanceof \Stringable) {
+                $typeLabel = (string) $label;
             } elseif ($label instanceof Htmlable) {
                 $typeLabel = $label->toHtml();
             } else {
-                $typeLabel = is_string($label) ? $label : (string) $label;
+                $typeLabel = '';
             }
         }
 
@@ -105,18 +105,19 @@ class ChangeTypeCommand extends Command
         Assert::isInstanceOf($newTypeEnum, HasLabel::class);
         Assert::isInstanceOf($newTypeEnum, \BackedEnum::class);
 
-        /* @var \BackedEnum&HasLabel $newTypeEnum */
+        /** @var \BackedEnum&HasLabel $newTypeEnum */
         $user->type = (string) $newTypeEnum->value;
         $user->save();
 
-        $label = $newTypeEnum->getLabel();
+        /** @var string|Htmlable $label */
+            $label = $newTypeEnum->getLabel();
         $labelString = '';
-        if (\is_string($label)) {
-            $labelString = $label;
+        if ($label instanceof \Stringable) {
+            $labelString = (string) $label;
         } elseif ($label instanceof Htmlable) {
             $labelString = $label->toHtml();
         } else {
-            $labelString = is_string($label) ? $label : (string) $label;
+            $labelString = '';
         }
         $this->info("User type changed to '{$labelString}' for {$email}");
     }

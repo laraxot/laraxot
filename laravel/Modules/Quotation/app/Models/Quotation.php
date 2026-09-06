@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Customer;
+use Modules\Quotation\Database\Factories\QuotationFactory;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Spatie\MediaLibrary\HasMedia;
@@ -72,6 +73,11 @@ final class Quotation extends BaseModel implements HasMedia
             'voice_ai_response' => 'array',
             'deleted_at' => 'datetime',
         ];
+    }
+
+    protected static function newFactory(): QuotationFactory
+    {
+        return QuotationFactory::new();
     }
 
     /** @return BelongsTo<Customer, $this> */

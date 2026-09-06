@@ -54,6 +54,6 @@ final class ChangeOrdersRelationManager extends XotBaseRelationManager
                 Tables\Columns\TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
             ])
             ->headerActions([CreateAction::make()])
-            ->actions([EditAction::make(), DeleteAction::make()]);
+            ->recordActions([EditAction::make(), DeleteAction::make()]);
     }
 }

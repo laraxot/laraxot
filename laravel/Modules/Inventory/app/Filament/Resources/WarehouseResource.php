@@ -128,11 +128,11 @@ final class WarehouseResource extends GatedXotBaseResource
                 Tables\Columns\IconColumn::make('is_final_destination')->label(__('inventory.fields.final'))->boolean()->toggleable(),
                 Tables\Columns\TextColumn::make('updated_at')->dateTime()->toggleable(isToggledHiddenByDefault: true),
             ])
-            ->actions([
+            ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
     }

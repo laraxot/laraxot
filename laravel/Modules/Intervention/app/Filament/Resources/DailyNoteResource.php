@@ -213,8 +213,8 @@ final class DailyNoteResource extends GatedXotBaseResource
                         ->appendFiles()
                         ->maxParallelUploads(1)
                         ->automaticallyResizeImagesMode('contain')
-                        ->automaticallyResizeImagesToWidth(1280)
-                        ->automaticallyResizeImagesToHeight(1280)
+                        ->automaticallyResizeImagesToWidth('1280')
+                        ->automaticallyResizeImagesToHeight('1280')
                         ->extraInputAttributes([
                             'accept' => 'image/*',
                             'capture' => 'environment',

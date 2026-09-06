@@ -17,6 +17,7 @@ use Modules\Inventory\Models\InventoryOverviewRow;
 use Modules\Inventory\Models\Warehouse;
 use Modules\Platform\Filament\Concerns\GatesPageNavigation;
 use Modules\Platform\Models\PlatformSetting;
+use Modules\Xot\Actions\Cast\SafeIntCastAction;
 
 final class InventoryOverview extends Page implements HasTable
 {
@@ -98,7 +99,7 @@ final class InventoryOverview extends Page implements HasTable
                 ->label(__('inventory.overview_page.filters.warehouse'))
                 ->options(fn (): array => Warehouse::query()->orderBy('name')->pluck('name', 'id')->all())
                 ->query(function (Builder $query, array $data): Builder {
-                    $warehouseId = (int) ($data['value'] ?? 0);
+                    $warehouseId = SafeIntCastAction::cast($data['value'] ?? 0);
 
                     return $warehouseId > 0
                         ? $query->where('inventory_overview_rows.warehouse_id', $warehouseId)
@@ -147,7 +148,7 @@ final class InventoryOverview extends Page implements HasTable
             'products' => (int) $rows->pluck('product_id')->unique()->count(),
             'warehouses' => (int) $rows->pluck('warehouse_id')->unique()->count(),
             'locations' => (int) $rows->pluck('location_id')->filter()->unique()->count(),
-            'total_stock' => (int) $rows->sum('aggregate_stock'),
+            'total_stock' => SafeIntCastAction::cast($rows->sum('aggregate_stock')),
         ];
     }
 

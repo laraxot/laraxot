@@ -8,7 +8,7 @@ use Filament\Actions\Action;
 use Filament\Actions\BulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
-use Filament\Forms\Components\Placeholder;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Notifications\Notification;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
@@ -52,116 +52,116 @@ final class EnergyBrokerDocumentResource extends XotBaseResource
     {
         return [
             Section::make(__('energy_broker.sections.document_summary'))->columns(3)->columnSpanFull()->components([
-                Placeholder::make('source_file_name')
+                TextEntry::make('source_file_name')
                     ->label(__('energy_broker.fields.source_file_name'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => (string) ($record->source_file_name ?? '-')),
-                Placeholder::make('document_type')
+                    ->state(fn (?EnergyBrokerDocument $record): string => (string) ($record->source_file_name ?? '-')),
+                TextEntry::make('document_type')
                     ->label(__('energy_broker.fields.document_type'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => (string) __('energy_broker.document_types.'.($record->document_type ?? 'unknown'))),
-                Placeholder::make('service_type')
+                    ->state(fn (?EnergyBrokerDocument $record): string => (string) __('energy_broker.document_types.'.($record->document_type ?? 'unknown'))),
+                TextEntry::make('service_type')
                     ->label(__('energy_broker.fields.service_type'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => (string) __('energy_broker.service_types.'.($record->service_type ?? 'unknown'))),
-                Placeholder::make('supplier_name')
+                    ->state(fn (?EnergyBrokerDocument $record): string => (string) __('energy_broker.service_types.'.($record->service_type ?? 'unknown'))),
+                TextEntry::make('supplier_name')
                     ->label(__('energy_broker.fields.supplier_name'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => (string) ($record->supplier_name ?? '-')),
-                Placeholder::make('analysis_status')
+                    ->state(fn (?EnergyBrokerDocument $record): string => (string) ($record->supplier_name ?? '-')),
+                TextEntry::make('analysis_status')
                     ->label(__('energy_broker.fields.analysis_status'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => (string) __('energy_broker.statuses.'.($record->analysis_status ?? 'draft'))),
-                Placeholder::make('confidence_score')
+                    ->state(fn (?EnergyBrokerDocument $record): string => (string) __('energy_broker.statuses.'.($record->analysis_status ?? 'draft'))),
+                TextEntry::make('confidence_score')
                     ->label(__('energy_broker.fields.confidence_score'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => $record?->confidence_score !== null ? (string) $record->confidence_score : '-'),
-                Placeholder::make('file')
+                    ->state(fn (?EnergyBrokerDocument $record): string => $record?->confidence_score !== null ? (string) $record->confidence_score : '-'),
+                TextEntry::make('file')
                     ->label(__('energy_broker.fields.pdf_file'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => (string) ($record->media->title ?? '-')),
+                    ->state(fn (?EnergyBrokerDocument $record): string => (string) ($record->media->title ?? '-')),
             ]),
             Section::make(__('energy_broker.sections.customer_data'))->columns(3)->columnSpanFull()->components([
-                Placeholder::make('payload_customer_legal_name')
+                TextEntry::make('payload_customer_legal_name')
                     ->label(__('energy_broker.fields.legal_name'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'customer.legal_name')),
-                Placeholder::make('payload_customer_tax_code')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'customer.legal_name')),
+                TextEntry::make('payload_customer_tax_code')
                     ->label(__('energy_broker.fields.tax_code'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'customer.tax_code')),
-                Placeholder::make('payload_customer_email')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'customer.tax_code')),
+                TextEntry::make('payload_customer_email')
                     ->label(__('energy_broker.fields.email'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'customer.email')),
-                Placeholder::make('payload_customer_address')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'customer.email')),
+                TextEntry::make('payload_customer_address')
                     ->label(__('energy_broker.fields.address_line1'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'customer.address_line1')),
-                Placeholder::make('payload_customer_city')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'customer.address_line1')),
+                TextEntry::make('payload_customer_city')
                     ->label(__('energy_broker.fields.city'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'customer.city')),
-                Placeholder::make('payload_customer_postal_code')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'customer.city')),
+                TextEntry::make('payload_customer_postal_code')
                     ->label(__('energy_broker.fields.postal_code'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'customer.postal_code')),
-                Placeholder::make('payload_customer_province')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'customer.postal_code')),
+                TextEntry::make('payload_customer_province')
                     ->label(__('energy_broker.fields.province'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'customer.province')),
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'customer.province')),
             ]),
             Section::make(__('energy_broker.sections.billing_data'))->columns(3)->columnSpanFull()->components([
-                Placeholder::make('payload_document_number')
+                TextEntry::make('payload_document_number')
                     ->label(__('energy_broker.fields.document_number'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'document.document_number')),
-                Placeholder::make('payload_issued_at')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'document.document_number')),
+                TextEntry::make('payload_issued_at')
                     ->label(__('energy_broker.fields.issued_at'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'document.issued_at')),
-                Placeholder::make('payload_period_label')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'document.issued_at')),
+                TextEntry::make('payload_period_label')
                     ->label(__('energy_broker.fields.period_label'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'document.period_label')),
-                Placeholder::make('payload_due_at')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'document.period_label')),
+                TextEntry::make('payload_due_at')
                     ->label(__('energy_broker.fields.due_at'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'document.due_at')),
-                Placeholder::make('payload_total_amount')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'document.due_at')),
+                TextEntry::make('payload_total_amount')
                     ->label(__('energy_broker.fields.total_amount'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'document.total_amount')),
-                Placeholder::make('payload_customer_code')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'document.total_amount')),
+                TextEntry::make('payload_customer_code')
                     ->label(__('energy_broker.fields.customer_code'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'document.customer_code')),
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'document.customer_code')),
             ]),
             Section::make(__('energy_broker.sections.supply_data'))->columns(3)->columnSpanFull()->components([
-                Placeholder::make('payload_pod')
+                TextEntry::make('payload_pod')
                     ->label(__('energy_broker.fields.pod'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'supply.pod')),
-                Placeholder::make('payload_pdr')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'supply.pod')),
+                TextEntry::make('payload_pdr')
                     ->label(__('energy_broker.fields.pdr'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'supply.pdr')),
-                Placeholder::make('payload_supply_code')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'supply.pdr')),
+                TextEntry::make('payload_supply_code')
                     ->label(__('energy_broker.fields.supply_code'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'supply.supply_code')),
-                Placeholder::make('payload_supply_address')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'supply.supply_code')),
+                TextEntry::make('payload_supply_address')
                     ->label(__('energy_broker.fields.supply_address'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'supply.supply_address')),
-                Placeholder::make('payload_power_kw')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'supply.supply_address')),
+                TextEntry::make('payload_power_kw')
                     ->label(__('energy_broker.fields.power_kw'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'supply.power_kw')),
-                Placeholder::make('payload_annual_consumption')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'supply.power_kw')),
+                TextEntry::make('payload_annual_consumption')
                     ->label(__('energy_broker.fields.annual_consumption'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'supply.annual_consumption')),
-                Placeholder::make('payload_annual_consumption_electricity')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'supply.annual_consumption')),
+                TextEntry::make('payload_annual_consumption_electricity')
                     ->label(__('energy_broker.fields.annual_consumption_electricity'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'supply.annual_consumption_electricity')),
-                Placeholder::make('payload_annual_consumption_gas')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'supply.annual_consumption_electricity')),
+                TextEntry::make('payload_annual_consumption_gas')
                     ->label(__('energy_broker.fields.annual_consumption_gas'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'supply.annual_consumption_gas')),
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'supply.annual_consumption_gas')),
             ]),
             Section::make(__('energy_broker.sections.contract_data'))->columns(3)->columnSpanFull()->components([
-                Placeholder::make('payload_current_supplier')
+                TextEntry::make('payload_current_supplier')
                     ->label(__('energy_broker.fields.current_supplier'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'contract.current_supplier')),
-                Placeholder::make('payload_proposed_supplier')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'contract.current_supplier')),
+                TextEntry::make('payload_proposed_supplier')
                     ->label(__('energy_broker.fields.proposed_supplier'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'contract.proposed_supplier')),
-                Placeholder::make('payload_offer_name')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'contract.proposed_supplier')),
+                TextEntry::make('payload_offer_name')
                     ->label(__('energy_broker.fields.offer_name'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'contract.offer_name')),
-                Placeholder::make('payload_offer_code_electricity')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'contract.offer_name')),
+                TextEntry::make('payload_offer_code_electricity')
                     ->label(__('energy_broker.fields.offer_code_electricity'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'contract.offer_code_electricity')),
-                Placeholder::make('payload_offer_code_gas')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'contract.offer_code_electricity')),
+                TextEntry::make('payload_offer_code_gas')
                     ->label(__('energy_broker.fields.offer_code_gas'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'contract.offer_code_gas')),
-                Placeholder::make('payload_payment_method')
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'contract.offer_code_gas')),
+                TextEntry::make('payload_payment_method')
                     ->label(__('energy_broker.fields.payment_method'))
-                    ->content(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'contract.payment_method')),
+                    ->state(fn (?EnergyBrokerDocument $record): string => self::payloadValue($record, 'contract.payment_method')),
             ]),
         ];
     }
@@ -208,7 +208,7 @@ final class EnergyBrokerDocumentResource extends XotBaseResource
                 Tables\Columns\TextColumn::make('media.title')->label(__('energy_broker.fields.pdf_file'))->toggleable(),
                 Tables\Columns\TextColumn::make('processed_at')->label(__('energy_broker.fields.status'))->dateTime()->toggleable(),
             ])
-            ->actions([
+            ->recordActions([
                 Action::make('downloadPdf')
                     ->label(__('energy_broker.actions.download_pdf'))
                     ->icon('heroicon-o-arrow-down-tray')
@@ -257,7 +257,7 @@ final class EnergyBrokerDocumentResource extends XotBaseResource
                 ViewAction::make(),
                 EditAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 BulkAction::make('reprocessWithDocumentAi')
                     ->label(__('energy_broker.actions.reprocess_with_document_ai'))
                     ->icon('heroicon-o-arrow-path')

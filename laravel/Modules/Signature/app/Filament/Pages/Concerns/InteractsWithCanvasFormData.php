@@ -97,7 +97,7 @@ trait InteractsWithCanvasFormData
                 ->all();
         }
 
-        $workOrderId = $this->intervention?->work_order_id ?? 0;
+        $workOrderId = $this->intervention->work_order_id ?? 0;
 
         if ($workOrderId > 0 && AccountFeatures::hasAssignedPerimeter($currentUser)) {
             return User::query()

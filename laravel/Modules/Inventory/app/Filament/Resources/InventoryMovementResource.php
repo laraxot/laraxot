@@ -346,7 +346,7 @@ final class InventoryMovementResource extends GatedXotBaseResource
                     ->orderBy('name')
                     ->get(['id', 'name']) as $product
             ) {
-                $options[(int) $product->getAttribute('id')] = (string) $product->getAttribute('name');
+                $options[SafeIntCastAction::cast($product->getAttribute('id'))] = SafeStringCastAction::cast($product->getAttribute('name'));
             }
 
             return $options;
@@ -365,7 +365,7 @@ final class InventoryMovementResource extends GatedXotBaseResource
 
         $options = [];
         foreach ($products as $product) {
-            $productId = (int) $product->getAttribute('id');
+            $productId = SafeIntCastAction::cast($product->getAttribute('id'));
             $stock = $stockRows[$productId] ?? 0;
             $sku = $product->getAttribute('sku');
             $name = $product->getAttribute('name');
@@ -404,7 +404,7 @@ final class InventoryMovementResource extends GatedXotBaseResource
 
         $result = [];
         foreach ($rows as $productId => $value) {
-            $result[(int) $productId] = (int) $value;
+            $result[SafeIntCastAction::cast($productId)] = SafeIntCastAction::cast($value);
         }
 
         return $result;

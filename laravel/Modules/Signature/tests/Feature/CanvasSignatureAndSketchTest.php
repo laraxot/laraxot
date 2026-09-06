@@ -56,7 +56,7 @@ it('stores signature and sketch from canvas data urls', function (): void {
     $signature = app(StoreSignatureForModelAction::class)->execute(
         dataUrl: $dataUrl,
         signableType: Intervention::class,
-        signableId: (int) $intervention->getKey(),
+        signableId: $intervention->id,
         userId: (int) $user->id,
         signedAt: null,
         payload: ['image' => $dataUrl],
@@ -65,7 +65,7 @@ it('stores signature and sketch from canvas data urls', function (): void {
     $sketch = app(StoreSketchForModelAction::class)->execute(
         dataUrl: $dataUrl,
         sketchableType: Intervention::class,
-        sketchableId: (int) $intervention->getKey(),
+        sketchableId: $intervention->id,
         userId: (int) $user->id,
         payload: ['image' => $dataUrl],
     );

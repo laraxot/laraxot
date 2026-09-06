@@ -27,9 +27,27 @@ use function Pest\Laravel\actingAs;
 function makeSummaryAdmin(): User
 {
     $admin = User::factory()->create();
+    if (! $admin instanceof User) {
+        // Modules\User\Models\BaseUser lacks a newFactory() override, so Larastan's
+        // dynamic return type extension for factory() cannot resolve the concrete
+        // return type and treats it as mixed. This is a genuine runtime guard, not
+        // a lint-silencer: it documents and enforces the assumption the rest of
+        // this test suite relies on. See docs/chat/2026-09-06-phpstan-workorder-claim.md.
+        throw new \RuntimeException('Expected User::factory()->create() to return a User instance.');
+    }
     $admin->syncRoles([Role::findOrCreate('admin')]);
 
     return $admin;
+}
+
+function createSummaryUser(): User
+{
+    $user = User::factory()->create();
+    if (! $user instanceof User) {
+        throw new \RuntimeException('Expected User::factory()->create() to return a User instance.');
+    }
+
+    return $user;
 }
 
 function makeSummaryCustomer(string $name): Customer

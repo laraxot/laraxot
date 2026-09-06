@@ -113,8 +113,9 @@ it('events can be instantiated', function (): void {
 
     $socialiteFactory = SocialiteUserFactory::new();
     \assert($socialiteFactory instanceof Factory);
+    $ownerKey = $owner->getKey();
     $socialiteUser = $socialiteFactory->create([
-        'user_id' => (string) $owner->getKey(),
+        'user_id' => is_string($ownerKey) ? $ownerKey : (string) ($ownerKey ?? ''),
         'provider' => 'github',
         'provider_id' => 'provider-'.uniqid(),
     ]);
@@ -139,8 +140,9 @@ it('events have dispatchable trait', function (): void {
 
     $socialiteFactory = SocialiteUserFactory::new();
     \assert($socialiteFactory instanceof Factory);
+    $ownerKey = $owner->getKey();
     $socialiteUser = $socialiteFactory->create([
-        'user_id' => (string) $owner->getKey(),
+        'user_id' => is_string($ownerKey) ? $ownerKey : (string) ($ownerKey ?? ''),
         'provider' => 'github',
         'provider_id' => 'provider-'.uniqid(),
     ]);

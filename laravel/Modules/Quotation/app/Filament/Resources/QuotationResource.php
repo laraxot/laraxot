@@ -140,14 +140,18 @@ final class QuotationResource extends GatedXotBaseResource
                             TextInput::make('email')->email()->maxLength(255),
                             TextInput::make('phone')->label(__('quotations.voice.phone'))->maxLength(255),
                         ])
-                        ->createOptionUsing(fn (array $data): int => (int) Customer::query()->create([
-                            'legal_name' => $data['legal_name'],
-                            'vat_number' => $data['vat_number'] ?? null,
-                            'city' => $data['city'] ?? null,
-                            'email' => $data['email'] ?? null,
-                            'phone' => $data['phone'] ?? null,
-                            'is_active' => true,
-                        ])->getKey()),
+                        ->createOptionUsing(function (array $data): int {
+                            $key = Customer::query()->create([
+                                'legal_name' => $data['legal_name'],
+                                'vat_number' => $data['vat_number'] ?? null,
+                                'city' => $data['city'] ?? null,
+                                'email' => $data['email'] ?? null,
+                                'phone' => $data['phone'] ?? null,
+                                'is_active' => true,
+                            ])->getKey();
+
+                            return is_numeric($key) ? (int) $key : 0;
+                        }),
 
                     Select::make('work_order_id')
                         ->label(__('quotations.fields.work_order'))

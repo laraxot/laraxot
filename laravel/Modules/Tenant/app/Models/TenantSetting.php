@@ -6,16 +6,13 @@ namespace Modules\Tenant\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Modules\User\Models\User;
 
 /**
  * @property string|null $tenant_id
  * @property string|null $key
- * @property mixed $value
+ * @property string|null $value
  * @property string|null $type
- * @property-read User|null $creator
  * @property-read Tenant|null $tenant
- * @property-read User|null $updater
  *
  * @method static Builder<static>|TenantSetting newModelQuery()
  * @method static Builder<static>|TenantSetting newQuery()

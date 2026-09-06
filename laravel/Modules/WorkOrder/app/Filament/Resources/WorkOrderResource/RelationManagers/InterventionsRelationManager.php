@@ -60,11 +60,13 @@ final class InterventionsRelationManager extends XotBaseRelationManager
                             ->orderBy('description')
                             ->get()
                             ->map(static function ($line): string {
-                                $quantity = is_numeric($line->getAttribute('quantity') ?? null)
-                                    ? (float) $line->getAttribute('quantity')
-                                    : 0.0;
+                                $quantityRaw = $line->getAttribute('quantity');
+                                $quantity = is_numeric($quantityRaw) ? (float) $quantityRaw : 0.0;
 
-                                return number_format($quantity, 2, ',', '.').'x '.is_string($line->getAttribute('description') ?? null) ? $line->getAttribute('description') : '';
+                                $descriptionRaw = $line->getAttribute('description');
+                                $description = is_string($descriptionRaw) ? $descriptionRaw : '';
+
+                                return number_format($quantity, 2, ',', '.').'x '.$description;
                             });
 
                         if ($manualMaterials->isNotEmpty()) {
@@ -77,9 +79,8 @@ final class InterventionsRelationManager extends XotBaseRelationManager
                             ->orderBy('occurred_at')
                             ->get()
                             ->map(static function ($movement): string {
-                                $quantity = is_int($movement->getAttribute('quantity') ?? null)
-                                    ? (int) $movement->getAttribute('quantity')
-                                    : 0;
+                                $quantityRaw = $movement->getAttribute('quantity');
+                                $quantity = is_int($quantityRaw) ? $quantityRaw : 0;
                                 $product = $movement->getRelationValue('product');
                                 $productName = 'Materiale';
                                 if ($product instanceof Model) {

@@ -7,6 +7,8 @@ use Modules\Inventory\Models\InventoryMovement;
 use Modules\Inventory\Models\Warehouse;
 use Modules\Inventory\Models\WarehouseLocation;
 use Modules\Inventory\Tests\TestCase;
+use Modules\Xot\Actions\Cast\SafeIntCastAction;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,7 +101,7 @@ it('computes aggregate stock across warehouses via the overview action', functio
     ]);
 
     $rows = app(GetInventoryOverviewRowsAction::class)->execute(false)->get()->keyBy(
-        fn ($row): string => (string) $row->warehouse_id
+        fn ($row): string => SafeStringCastAction::cast($row->warehouse_id)
     );
 
     $rowA = $rows[(string) $warehouseA->id] ?? null;
@@ -109,6 +111,6 @@ it('computes aggregate stock across warehouses via the overview action', functio
         throw new RuntimeException('Expected both warehouse overview rows to be present.');
     }
 
-    expect((int) $rowA->aggregate_stock)->toBe(6);
-    expect((int) $rowB->aggregate_stock)->toBe(4);
+    expect(SafeIntCastAction::cast($rowA->aggregate_stock))->toBe(6);
+    expect(SafeIntCastAction::cast($rowB->aggregate_stock))->toBe(4);
 });

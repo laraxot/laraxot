@@ -44,7 +44,7 @@ final class ListEnergyBrokerDocuments extends XotBaseListRecords
                 ->label(__('energy_broker.actions.import_zip'))
                 ->icon('heroicon-o-arrow-up-tray')
                 ->color('primary')
-                ->form([
+                ->schema([
                     FileUpload::make('zip_file')
                         ->label(__('energy_broker.fields.zip_file'))
                         ->disk('local')
@@ -267,7 +267,7 @@ final class ListEnergyBrokerDocuments extends XotBaseListRecords
         return Action::make($name)
             ->label($label)
             ->icon('heroicon-o-document-arrow-up')
-            ->form([
+            ->schema([
                 FileUpload::make('pdf_file')
                     ->label(__('energy_broker.fields.pdf_file'))
                     ->disk('local')

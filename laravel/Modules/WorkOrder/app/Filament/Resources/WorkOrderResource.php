@@ -573,7 +573,12 @@ final class WorkOrderResource extends GatedXotBaseResource
         if (request()->is('customer/*')) {
             /** @var User|null $user */
             $user = Auth::user();
-            $customerId = is_int($user->customer_id) ? (int) $user->customer_id : 0;
+            if (is_object($user)) {
+                $id = $user->customer_id ?? 0;
+                $customerId = is_numeric($id) ? (int) $id : 0;
+            } else {
+                $customerId = 0;
+            }
             if ($customerId > 0) {
                 $query->where('customer_id', $customerId);
             } else {

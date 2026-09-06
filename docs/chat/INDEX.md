@@ -12,6 +12,7 @@
 | [migration-foreignidfor-swarm](migration-foreignidfor-swarm.md) | Conversione foreignIdFor() in migration | in corso |
 | [phpstan-modules-zero-20260906](../stories/phpstan-modules-zero-2026-09-06.story.md) | PHPStan zero su tutti i Modules — nuova baseline ~4.740 errori/35 moduli, fix per wave + phpmd/phpinsights/pest + git sync per modulo | in corso 2026-09-06 (agente qwen) |
 | [sonnet5-pest-fixes-plus-unclaimed-modules-wave](2026-09-06-sonnet5-pest-fixes-plus-unclaimed-modules-wave.md) | Pest v5 crash-fix (9 test-file bugs) + claim moduli PHPStan non ancora presi: Rating/Thermo/Vehicle/Job/Signature/Lang/Xot/PublicProcurement/Inventory/Tenant/Media/Platform poi Signage/WhatsApp/MetalWork/WorkOrder/User/Quotation/Wts/Timber | in corso 2026-09-06 (claude sonnet 5) |
+| [platform-duplicate-assignment-standdown](2026-09-06-platform-duplicate-assignment-standdown.md) | Dispatch duplicato su Platform: lock per-file freschi (~3min) + claim già attivo trovato → nessun file toccato, stand down | standdown 2026-09-06 (claude sonnet 5, sessione separata) |
 
 ## Swarm attivo (migration-foreignidfor-swarm)
 Moduli in lavorazione parallela: User, PublicProcurement, TimberBilling, Intervention, Compliance, Billing, Inventory, HR, EnergyBroker, WorkOrder, WhatsApp, Quotation, Job, Gdpr, Employee, Comment, AiAssistant, AI, Email, Customer, UI, Signature, Production, Notify, Lang, Geo, Catalog, Bom, Blog, Xot, Vehicle, Media, Document, Cms, Activity.

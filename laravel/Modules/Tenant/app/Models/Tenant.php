@@ -8,17 +8,18 @@ namespace Modules\Tenant\Models;
 // use Modules\Dental\Models\Appointment; // Module not available
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 use Modules\Tenant\Database\Factories\TenantFactory;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
+use Modules\Xot\Datas\XotData;
 use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * Modello Tenant per la gestione multi-tenant dell'applicazione.
  *
- * @property-read User|null $creator
  * @property string|null $name
  * @property string|null $domain
  * @property string|null $database
@@ -37,8 +38,7 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  * @property string|null $tax_code
  * @property string|null $vat_number
  * @property-read string $url
- * @property-read User|null $updater
- * @property-read Collection<int, User> $users
+ * @property-read Collection<int, Model&UserContract> $users
  * @property-read int|null $users_count
  *
  * @method static \Modules\Tenant\Database\Factories\TenantFactory factory($count = null, $state = [])
@@ -78,11 +78,17 @@ class Tenant extends BaseModel
     /**
      * Relazione con gli utenti associati al tenant.
      *
-     * @return HasMany<User, $this>
+     * @return HasMany<Model&UserContract, $this>
      */
     public function users(): HasMany
     {
-        return $this->hasMany(User::class);
+        /** @var class-string<Model&UserContract> $userClass */
+        $userClass = XotData::make()->getUserClass();
+
+        /** @var HasMany<Model&UserContract, $this> $relation */
+        $relation = $this->hasMany($userClass);
+
+        return $relation;
     }
 
     // Commented out - Patient and Dental modules not available

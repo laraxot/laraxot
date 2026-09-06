@@ -51,6 +51,6 @@ final class PublicProcurementContractsRelationManager extends XotBaseRelationMan
                 Tables\Columns\TextColumn::make('contract_amount')->label(__('public_procurement.fields.contract_amount'))->money('EUR')->sortable(),
             ])
             ->headerActions([CreateAction::make()])
-            ->actions([EditAction::make()]);
+            ->recordActions([EditAction::make()]);
     }
 }

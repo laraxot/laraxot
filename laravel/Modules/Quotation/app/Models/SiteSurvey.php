@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
+use Modules\Quotation\Database\Factories\SiteSurveyFactory;
 use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\Xot\Models\Traits\HasXotFactory;
@@ -58,6 +59,11 @@ final class SiteSurvey extends BaseModel implements HasMedia
             'performed_at' => 'datetime',
             'deleted_at' => 'datetime',
         ];
+    }
+
+    protected static function newFactory(): SiteSurveyFactory
+    {
+        return SiteSurveyFactory::new();
     }
 
     /** @return BelongsTo<Customer, $this> */

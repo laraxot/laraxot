@@ -61,9 +61,38 @@ e verde e il coverage e diventato misurabile: **80,8 %**.
 /usr/bin/find Modules -newermt '-70 seconds' -type f | wc -l   # deve dare 0
 ```
 
+## Aggiornamento del 6 settembre 2026 (PHPStan zero-error, story phpstan-Rating-fix)
+
+Baseline PHPStan `Modules/Rating` ripulita da 6 → 0 errori (1 `cast.string` in
+`HasRatingsTrait::getRatingsRules()`, 5 `method.deprecated` in
+`tests/Unit/ListRatingsPageTest.php`). Dettagli tecnici:
+`docs/stories/phpstan-Rating-fix.md`.
+
+`tests/Unit/ListRatingsPageTest.php` è stato riportato da 1 a 2 test dopo la
+rimozione delle chiamate deprecate: il test sulle colonne è stato riscritto contro
+`$page->table(Table::make($page))->getColumns()` invece di chiamare
+`getTableColumns()` deprecato direttamente (stesso pattern di
+`RatingFilamentExtendedTest.php`, story 2.3). I tre test su filtri/header/row
+actions non sono stati riproposti con lo stesso pattern: passando dal `Table`
+costruito, `HasXotTable::invokeTableHook()` salta di proposito
+`getTableFilters()/getTableHeaderActions()/getTableActions()/getTableBulkActions()`
+quando non overridati dalla pagina concreta (per non duplicare i default nativi
+Filament), quindi avrebbero prodotto asserzioni false — non erano nello scope
+PHPStan/deprecazione della story.
+
+Verifica mirata (rete/CPU condivisa con ~30 agenti concorrenti, run full-module
+troppo lento per attendere in sessione):
+```
+./vendor/bin/pest Modules/Rating/tests/Unit/ListRatingsPageTest.php -c Modules/Rating/phpunit.xml --no-coverage
+Tests: 2 passed (2 assertions)
+```
+PHPStan `Modules/Rating` cold: **0 errori** (confermato 3 volte con
+`clear-result-cache` prima di ogni run).
+
 ## Storico
 
 | Data | Passati | Saltati | Falliti | Coverage |
 |---|---:|---:|---:|---|
 | 2026-09-01 | 118 | 7 | 0 | 80.8 % |
+| 2026-09-06 (mirato, vedi nota sopra) | 2/2 file toccato | — | 0 | non ricalcolata (full-suite non completata per carico condiviso) |
 

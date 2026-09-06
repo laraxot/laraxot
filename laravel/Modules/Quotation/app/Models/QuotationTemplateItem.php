@@ -7,6 +7,7 @@ namespace Modules\Quotation\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Catalog\Models\Product;
+use Modules\Quotation\Database\Factories\QuotationTemplateItemFactory;
 use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
@@ -40,6 +41,11 @@ final class QuotationTemplateItem extends BaseModel
             'discount_percent' => 'decimal:2',
             'line_total' => 'decimal:2',
         ];
+    }
+
+    protected static function newFactory(): QuotationTemplateItemFactory
+    {
+        return QuotationTemplateItemFactory::new();
     }
 
     /** @return BelongsTo<QuotationTemplate, $this> */

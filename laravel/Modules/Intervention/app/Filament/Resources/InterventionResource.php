@@ -20,8 +20,8 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\RichEditor\TextColor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextEntry;
 use Filament\Forms\Components\TextInput;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Notifications\Notification;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
@@ -335,8 +335,8 @@ final class InterventionResource extends GatedXotBaseResource
                         ->appendFiles()
                         ->maxParallelUploads(1)
                         ->automaticallyResizeImagesMode('contain')
-                        ->automaticallyResizeImagesToWidth(1280)
-                        ->automaticallyResizeImagesToHeight(1280)
+                        ->automaticallyResizeImagesToWidth('1280')
+                        ->automaticallyResizeImagesToHeight('1280')
                         ->extraInputAttributes([
                             'accept' => 'image/*',
                             'capture' => 'environment',

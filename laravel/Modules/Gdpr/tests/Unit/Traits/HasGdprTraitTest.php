@@ -47,7 +47,12 @@ test('has_gdpr_trait_methods_are_public', function (): void {
 });
 
 test('has_gdpr_trait_builds_consent_cache_key_from_string_id', function (): void {
+    // Eloquent auto-casts the primary key to `getKeyType()` while `incrementing`
+    // is true (default `int`), which would silently coerce a string id to 0.
+    // Disable it here to simulate a string-keyed model (e.g. UUID primary key).
     $model = new HasGdprDummy();
+    $model->incrementing = false;
+    $model->setKeyType('string');
     $model->setAttribute('id', 'abc-123');
 
     $method = new \ReflectionMethod($model, 'gdprConsentCacheKey');

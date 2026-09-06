@@ -4,15 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\PublicProcurement\Models;
 
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\PublicProcurement\Database\Factories\PublicProcurementContactFactory;
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
-/**
- * @method static PublicProcurementContactFactory factory($count = null, $state = [])
- */
 final class PublicProcurementContact extends XotBaseModel
 {
     use HasXotFactory;
@@ -22,6 +20,11 @@ final class PublicProcurementContact extends XotBaseModel
 
     /** @var array<int, string> */
     protected $guarded = [];
+
+    protected static function newFactory(): PublicProcurementContactFactory
+    {
+        return PublicProcurementContactFactory::new();
+    }
 
     /** @return array<string, string> */
     protected function casts(): array
