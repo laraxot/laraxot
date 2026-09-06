@@ -69,7 +69,7 @@ class CatalogServiceProvider extends XotBaseServiceProvider
             'metel.api.api_key' => is_string($apiKeyRaw) ? $apiKeyRaw : '',
             'metel.api.articles_endpoint' => is_string($articlesEndpointRaw) ? $articlesEndpointRaw : '',
             'metel.api.items_path' => is_string($itemsPathRaw) ? $itemsPathRaw : '',
-            'metel.api.timeout' => is_numeric($timeoutRaw) ? (int) $timeoutRaw : (int) config('metel.api.timeout', 60),
+            'metel.api.timeout' => is_numeric($timeoutRaw) ? (int) $timeoutRaw : (int) (config('metel.api.timeout') ?? 60),
         ]);
     }
 }

@@ -748,11 +748,14 @@ final class ExecuteAiActionProposalAction
             notes: $notes,
         );
 
+        $code = data_get($order, 'code', '');
+        $status = data_get($order, 'status', '');
+
         return [
             'ok' => true,
             'production_order_id' => $order->id,
-            'code' => (string) data_get($order, 'code', ''),
-            'status' => (string) data_get($order, 'status', ''),
+            'code' => is_string($code) ? $code : (string) $code,
+            'status' => is_string($status) ? $status : (string) $status,
         ];
     }
 
@@ -775,10 +778,12 @@ final class ExecuteAiActionProposalAction
 
         $updated = app(AdvanceProductionPhaseAction::class)->execute($phase, $toStatus);
 
+        $statusValue = data_get($updated, 'status', '');
+
         return [
             'ok' => true,
             'production_phase_id' => $updated->id,
-            'status' => (string) data_get($updated, 'status', ''),
+            'status' => is_string($statusValue) ? $statusValue : (string) $statusValue,
             'started_at' => data_get($updated, 'started_at'),
             'completed_at' => data_get($updated, 'completed_at'),
         ];

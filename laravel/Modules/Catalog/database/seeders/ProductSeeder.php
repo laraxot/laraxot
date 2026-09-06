@@ -15,9 +15,8 @@ class ProductSeeder extends Seeder
             return;
         }
 
+        /** @var \Modules\Catalog\Database\Factories\ProductFactory $factory */
         $factory = Product::factory();
-        if ($factory !== null) {
-            $factory->count(10)->create();
-        }
+        $factory->count(10)->create();
     }
 }

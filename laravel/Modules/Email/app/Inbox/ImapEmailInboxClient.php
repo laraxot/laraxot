@@ -92,9 +92,15 @@ final readonly class ImapEmailInboxClient implements EmailInboxClientInterface
         $check = imap_check($mailbox);
         imap_close($mailbox);
 
+        $messageCount = null;
+        if (isset($check->Nmsgs)) {
+            $nmsgs = $check->Nmsgs;
+            $messageCount = is_int($nmsgs) ? $nmsgs : (is_numeric($nmsgs) ? (int) $nmsgs : null);
+        }
+
         return [
             'folder' => $folder,
-            'messages' => isset($check->Nmsgs) ? (int) $check->Nmsgs : null,
+            'messages' => $messageCount,
         ];
     }
 

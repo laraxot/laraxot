@@ -17,6 +17,8 @@ class ResolvePaginationPageNameAction
 
     public function handle(): string
     {
-        return (string) config('comments.pagination.page_name', 'page');
+        $value = config('comments.pagination.page_name', 'page');
+
+        return is_string($value) ? $value : 'page';
     }
 }

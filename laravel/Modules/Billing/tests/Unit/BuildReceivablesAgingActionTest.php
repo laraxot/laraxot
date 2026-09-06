@@ -56,9 +56,7 @@ it('ignores the time of day when measuring lateness', function (): void {
     expect($item->daysOverdue(new DateTimeImmutable('2026-08-16 00:30')))->toBe(1);
 });
 
-it('places each number of days late in its own band', function (int $days, string $expected): void {
-    expect(AgingBuckets::forDaysOverdue($days))->toBe($expected);
-})->with([
+$agingTestCases = [
     [-1, AgingBuckets::NOT_DUE],
     [0, AgingBuckets::NOT_DUE],
     [1, AgingBuckets::DAYS_1_30],
@@ -68,7 +66,13 @@ it('places each number of days late in its own band', function (int $days, strin
     [61, AgingBuckets::DAYS_61_90],
     [90, AgingBuckets::DAYS_61_90],
     [91, AgingBuckets::OVER_90],
-]);
+];
+
+foreach ($agingTestCases as [$days, $expected]) {
+    it("places each number of days late in its own band (days=$days)", function () use ($days, $expected): void {
+        expect(AgingBuckets::forDaysOverdue($days))->toBe($expected);
+    });
+}
 
 it('always returns every band so a clean one is not mistaken for a missing one', function (): void {
     $aging = agingOn('2026-08-16', []);

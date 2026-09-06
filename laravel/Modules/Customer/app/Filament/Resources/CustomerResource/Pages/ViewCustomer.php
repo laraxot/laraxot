@@ -57,12 +57,15 @@ final class ViewCustomer extends XotBaseViewRecord
                         ->required(),
                 ])
                 ->action(function (Customer $record, array $data): mixed {
-                    $format = match ((string) ($data['format'] ?? 'pdf')) {
+                    $formatValue = $data['format'] ?? 'pdf';
+                    $format = match (is_string($formatValue) ? $formatValue : 'pdf') {
                         'docx' => 'docx',
                         default => 'pdf',
                     };
-                    $from = CarbonImmutable::parse((string) $data['from'])->startOfDay();
-                    $to = CarbonImmutable::parse((string) $data['to'])->endOfDay();
+                    $fromValue = $data['from'];
+                    $from = CarbonImmutable::parse(is_string($fromValue) ? $fromValue : '')->startOfDay();
+                    $toValue = $data['to'];
+                    $to = CarbonImmutable::parse(is_string($toValue) ? $toValue : '')->endOfDay();
 
                     $result = app(GenerateCustomerReportAction::class)->execute(
                         customer: $record,

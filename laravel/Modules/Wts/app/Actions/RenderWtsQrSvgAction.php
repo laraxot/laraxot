@@ -4,21 +4,22 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Actions;
 
-use BaconQrCode\Renderer\Image\SvgImageBackEnd;
-use BaconQrCode\Renderer\ImageRenderer;
-use BaconQrCode\Renderer\RendererStyle\RendererStyle;
-use BaconQrCode\Writer;
+use chillerlan\QRCode\QRCode;
+use chillerlan\QRCode\QROptions;
 
 final class RenderWtsQrSvgAction
 {
     public function execute(string $payload, int $size = 260): string
     {
-        $renderer = new ImageRenderer(
-            new RendererStyle($size),
-            new SvgImageBackEnd,
-        );
+        $options = new QROptions([
+            'version' => QRCode::VERSION_AUTO,
+            'outputType' => QRCode::OUTPUT_SVG_STRING,
+            'scale' => $size / 260,
+        ]);
 
-        return (new Writer($renderer))->writeString($payload);
+        $qrCode = new QRCode($options);
+
+        return $qrCode->render($payload);
     }
 
     public function dataUri(string $payload, int $size = 260): string

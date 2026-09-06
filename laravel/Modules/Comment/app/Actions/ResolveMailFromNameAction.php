@@ -17,6 +17,8 @@ class ResolveMailFromNameAction
 
     public function handle(): string
     {
-        return (string) config('comments.notifications.mail.from.name', config('mail.from.name'));
+        $value = config('comments.notifications.mail.from.name', config('mail.from.name') ?? '');
+
+        return is_string($value) ? $value : '';
     }
 }

@@ -213,7 +213,7 @@ final class EmailSettingsPage extends GatedXotBasePage
             ->orderBy('name')
             ->limit(100)
             ->pluck('name', 'id')
-            ->mapWithKeys(fn (mixed $name, int|string $id): array => [(int) $id => (string) $name])
+            ->mapWithKeys(fn (mixed $name, int|string $id): array => [(int) $id => is_string($name) ? $name : ''])
             ->all();
     }
 

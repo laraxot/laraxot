@@ -178,8 +178,14 @@ final class CustomerResource extends GatedXotBaseResource
                     TextInput::make('iban')
                         ->label(__('customers.fields.iban'))
                         ->maxLength(34)
-                        ->visible(fn (callable $get): bool => (string) $get('payment_method') === 'bonifico')
-                        ->dehydrateStateUsing(fn (?string $state, callable $get): ?string => (string) $get('payment_method') === 'bonifico' ? $state : null),
+                        ->visible(function (callable $get): bool {
+                            $paymentMethod = $get('payment_method');
+                            return is_string($paymentMethod) && $paymentMethod === 'bonifico';
+                        })
+                        ->dehydrateStateUsing(function (?string $state, callable $get): ?string {
+                            $paymentMethod = $get('payment_method');
+                            return is_string($paymentMethod) && $paymentMethod === 'bonifico' ? $state : null;
+                        }),
 
                     Textarea::make('notes')
                         ->label(__('customers.fields.notes'))

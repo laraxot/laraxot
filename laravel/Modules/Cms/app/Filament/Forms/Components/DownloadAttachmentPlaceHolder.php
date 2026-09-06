@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Filament\Forms\Components;
 
+use Filament\Forms\Components\Placeholder;
 use Illuminate\Support\HtmlString;
 use Modules\Cms\Models\Attachment;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
-use Modules\Xot\Filament\Forms\Components\XotBasePlaceholder;
 use Webmozart\Assert\Assert;
 
-class DownloadAttachmentPlaceHolder extends XotBasePlaceholder
+class DownloadAttachmentPlaceHolder extends Placeholder
 {
     protected function setUp(): void
     {

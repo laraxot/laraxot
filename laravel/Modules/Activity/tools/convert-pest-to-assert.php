@@ -29,17 +29,20 @@ foreach ($iterator as $file) {
     if ($rawContent === false) {
         continue;
     }
+    /** @var string $code */
     $code = $rawContent;
     if (! str_contains($code, 'expect(')) {
         continue;
     }
 
-    $code = preg_replace('/\s*\/\/\s*@phpstan-ignore-(line|next-line)[^\n]*\n/', "\n", $code) ?? $code;
+    /** @var string $code */
+    $replaced = preg_replace('/\s*\/\/\s*@phpstan-ignore-(line|next-line)[^\n]*\n/', "\n", $code);
+    $code = is_string($replaced) ? $replaced : $code;
 
     if (! str_contains($code, 'use PHPUnit\\Framework\\Assert;')) {
         $matches = [];
         if (preg_match('/namespace\s+[^;]+;\s*\n((?:use\s+[^;]+;\s*\n)*)/', $code, $matches, PREG_OFFSET_CAPTURE) === 1
-            && is_array($matches[1]) && count($matches[1]) === 2
+            && isset($matches[1][0], $matches[1][1])
             && is_string($matches[1][0]) && is_int($matches[1][1])) {
             $insertAt = $matches[1][1] + strlen($matches[1][0]);
             $code = substr($code, 0, $insertAt).
@@ -48,7 +51,7 @@ foreach ($iterator as $file) {
         } else {
             $m = [];
             if (preg_match('/^(<\?php\s+declare\(strict_types=1\);\s*\n)/', $code, $m, PREG_OFFSET_CAPTURE) === 1
-                && is_array($m[1]) && count($m[1]) === 2
+                && isset($m[1][0], $m[1][1])
                 && is_string($m[1][0]) && is_int($m[1][1])) {
                 $insertAt = $m[1][1] + strlen($m[1][0]);
                 $code = substr($code, 0, $insertAt).

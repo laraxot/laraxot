@@ -172,8 +172,10 @@ final class EnergyBrokerDocumentAcquisitionPage extends EnergyBrokerPage
             throw new \RuntimeException('PDF non leggibile o vuoto.');
         }
 
-        $projectNumber = trim((string) config('services.google_document_ai.project_number', ''));
-        $processorId = trim((string) config('services.google_document_ai.processor_id', ''));
+        $projectValue = config('services.google_document_ai.project_number', '');
+        $projectNumber = is_string($projectValue) ? trim($projectValue) : '';
+        $processorValue = config('services.google_document_ai.processor_id', '');
+        $processorId = is_string($processorValue) ? trim($processorValue) : '';
         if ($projectNumber === '' || $processorId === '') {
             throw new \RuntimeException('services.google_document_ai non configurato.');
         }

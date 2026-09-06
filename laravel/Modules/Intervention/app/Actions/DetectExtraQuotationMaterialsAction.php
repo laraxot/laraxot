@@ -72,6 +72,7 @@ final class DetectExtraQuotationMaterialsAction
     {
         $normalized = mb_strtolower(trim($description));
 
-        return (string) preg_replace('/\s+/', ' ', $normalized);
+        $result = preg_replace('/\s+/', ' ', $normalized);
+        return is_string($result) ? $result : $normalized;
     }
 }

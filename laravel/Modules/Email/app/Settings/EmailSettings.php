@@ -27,7 +27,9 @@ final readonly class EmailSettings
 
     public function imapPort(): int
     {
-        $value = $this->settings->getInt('email_ai.imap_port', (int) config('services.email_ai.imap_port', 993));
+        $configValue = config('services.email_ai.imap_port', 993);
+        $configInt = is_int($configValue) ? $configValue : (is_numeric($configValue) ? (int) $configValue : 993);
+        $value = $this->settings->getInt('email_ai.imap_port', $configInt);
 
         return $value > 0 ? $value : 993;
     }
