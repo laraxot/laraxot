@@ -120,11 +120,11 @@ final class EmployeeResource extends GatedXotBaseResource
                     ->dateTime()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
-            ->actions([
+            ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
                 RestoreBulkAction::make(),
                 ForceDeleteBulkAction::make(),

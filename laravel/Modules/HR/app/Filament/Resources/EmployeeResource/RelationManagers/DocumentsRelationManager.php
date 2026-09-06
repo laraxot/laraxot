@@ -78,14 +78,14 @@ final class DocumentsRelationManager extends XotBaseRelationManager
 
                         return app(AddEmployeeDocumentAction::class)->execute(
                             employee: $employee,
-                            path: (string) $data['path'],
+                            path: self::stringValue($data, 'path') ?? '',
                             uploadedByUserId: is_int($uploadedByUserId) ? $uploadedByUserId : null,
-                            title: isset($data['title']) ? (string) $data['title'] : null,
-                            kind: isset($data['kind']) ? (string) $data['kind'] : null,
+                            title: self::stringValue($data, 'title'),
+                            kind: self::stringValue($data, 'kind'),
                         );
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 Action::make('download')
                     ->label(__('hr.actions.download'))
                     ->icon('heroicon-o-arrow-down-tray')
@@ -97,8 +97,28 @@ final class DocumentsRelationManager extends XotBaseRelationManager
                     ->openUrlInNewTab(),
                 DeleteAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
+    }
+
+    /**
+     * Safely extract a nullable string from untyped Filament form data.
+     *
+     * @param  array<array-key, mixed>  $data
+     */
+    private static function stringValue(array $data, string $key): ?string
+    {
+        if (! array_key_exists($key, $data) || $data[$key] === null) {
+            return null;
+        }
+
+        $value = $data[$key];
+
+        if (is_string($value)) {
+            return $value;
+        }
+
+        return is_scalar($value) ? (string) $value : null;
     }
 }

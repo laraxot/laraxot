@@ -146,7 +146,7 @@ final class AbsenceRequestResource extends GatedXotBaseResource
                     ])
                     ->default('pending'),
             ])
-            ->actions([
+            ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
                 Action::make('approve')
@@ -162,7 +162,7 @@ final class AbsenceRequestResource extends GatedXotBaseResource
                     ->requiresConfirmation()
                     ->action(fn (AbsenceRequest $record): AbsenceRequest => app(RejectAbsenceRequestAction::class)->execute($record, (int) Auth::id())),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
     }

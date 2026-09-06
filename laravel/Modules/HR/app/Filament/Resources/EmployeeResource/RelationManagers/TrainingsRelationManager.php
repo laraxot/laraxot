@@ -83,17 +83,17 @@ final class TrainingsRelationManager extends XotBaseRelationManager
 
                         return app(AddEmployeeTrainingAction::class)->execute(
                             employee: $employee,
-                            name: (string) $data['name'],
-                            completedAt: isset($data['completed_at']) ? (string) $data['completed_at'] : null,
-                            expiresAt: isset($data['expires_at']) ? (string) $data['expires_at'] : null,
-                            notes: isset($data['notes']) ? (string) $data['notes'] : null,
-                            title: isset($data['title']) ? (string) $data['title'] : null,
-                            attachmentPath: isset($data['attachment_path']) ? (string) $data['attachment_path'] : null,
+                            name: self::stringValue($data, 'name') ?? '',
+                            completedAt: self::stringValue($data, 'completed_at'),
+                            expiresAt: self::stringValue($data, 'expires_at'),
+                            notes: self::stringValue($data, 'notes'),
+                            title: self::stringValue($data, 'title'),
+                            attachmentPath: self::stringValue($data, 'attachment_path'),
                             uploadedByUserId: is_int($uploadedByUserId) ? $uploadedByUserId : null,
                         );
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 Action::make('download')
                     ->label(__('hr.actions.download'))
                     ->icon('heroicon-o-arrow-down-tray')
@@ -106,8 +106,28 @@ final class TrainingsRelationManager extends XotBaseRelationManager
                     ->openUrlInNewTab(),
                 DeleteAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
+    }
+
+    /**
+     * Safely extract a nullable string from untyped Filament form data.
+     *
+     * @param  array<array-key, mixed>  $data
+     */
+    private static function stringValue(array $data, string $key): ?string
+    {
+        if (! array_key_exists($key, $data) || $data[$key] === null) {
+            return null;
+        }
+
+        $value = $data[$key];
+
+        if (is_string($value)) {
+            return $value;
+        }
+
+        return is_scalar($value) ? (string) $value : null;
     }
 }
