@@ -7,6 +7,9 @@ use Illuminate\Testing\TestResponse;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+use function Pest\Laravel\get;
+
+
 uses(TestCase::class);
 
 beforeEach(function (): void {

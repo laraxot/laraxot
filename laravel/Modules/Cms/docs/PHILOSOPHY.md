@@ -505,7 +505,7 @@ Visit `/it/comuni/richieste` in the browser. The middleware guards are applied, 
 
 ### Prerequisites
 
-- Laravel 12+ application with Laraxot module structure.
+- Laravel 13+ application with Laraxot module structure.
 - Filament 5+ installed.
 - Database migrations run.
 - Spatie packages already installed (Translatable, Data).

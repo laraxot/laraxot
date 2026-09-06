@@ -10,12 +10,14 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 describe('VerifyComponent', function (): void {
     test('verify component extends volt component', function (): void {
-        $component = new VerifyComponent();
+        $component = new VerifyComponent;
 
         Assert::assertInstanceOf(VoltComponent::class, $component);
     });
 
-    it('verify component has resend method')->todo();
+test('verify component has resend method', function (): void {
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
     test('resend method returns void', function (): void {
         $reflection = new ReflectionClass(VerifyComponent::class);
         $method = $reflection->getMethod('resend');

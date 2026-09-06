@@ -12,7 +12,7 @@ use Modules\Cms\Models\Page as PageModel;
 use Spatie\LaravelData\DataCollection;
 
 /**
- * CMS page shell: blocks loaded by slug. Route/context keys live only in {@see $data}.
+* CMS page shell: blocks loaded by slug. Route/context keys live only in {@see $data}.
  *
  * @SuppressWarnings("PHPMD.StaticAccess")
  */
@@ -29,7 +29,7 @@ final class Page extends Component
     public array $data = [];
 
     /**
-     * @param array<string, mixed> $data Opaque context bag (container0, slug0, models, …)
+    * @param array<string, mixed> $data Opaque context bag (container0, slug0, models, …)
      */
     public function __construct(
         string $side = 'content',

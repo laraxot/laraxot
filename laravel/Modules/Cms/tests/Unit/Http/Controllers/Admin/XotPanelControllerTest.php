@@ -10,12 +10,14 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 describe('XotPanelController', function (): void {
     test('xot panel controller extends base controller', function (): void {
-        $controller = new XotPanelController();
+        $controller = new XotPanelController;
 
         Assert::assertInstanceOf(BaseController::class, $controller);
     });
 
-    it('xot panel controller has __call method')->todo();
+    test('xot panel controller has __call method', function (): void {
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
     test('xot panel controller uses correct namespace', function (): void {
         $reflector = new ReflectionClass(XotPanelController::class);
 

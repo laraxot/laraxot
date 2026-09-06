@@ -10,19 +10,23 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 describe('CounterComponent', function (): void {
     test('counter component extends volt component', function (): void {
-        $component = new CounterComponent();
+        $component = new CounterComponent;
 
         Assert::assertInstanceOf(Component::class, $component);
     });
 
     test('counter component has count property', function (): void {
-        $component = new CounterComponent();
+        $component = new CounterComponent;
 
         Assert::assertTrue((new ReflectionClass($component))->hasProperty('count'));
     });
 
-    it('counter component has increment method')->todo();
-    it('counter component has decrement method')->todo();
+    test('counter component has increment method', function (): void {
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
+    test('counter component has decrement method', function (): void {
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
     test('counter component uses correct namespace', function (): void {
         $reflector = new ReflectionClass(CounterComponent::class);
 
@@ -30,7 +34,7 @@ describe('CounterComponent', function (): void {
     });
 
     test('counter component count starts at zero', function (): void {
-        $component = new CounterComponent();
+        $component = new CounterComponent;
 
         Assert::assertSame(0, $component->count);
     });

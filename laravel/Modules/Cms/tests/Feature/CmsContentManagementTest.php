@@ -107,7 +107,7 @@ test('cms module handles complex block structures', function () {
                 'mobile' => 1,
             ],
             'items' => array_map(
-                fn ($i) => [
+                fn (int $i) => [
                     'id' => $i,
                     'type' => 'content_card',
                     'title' => "Card {$i}",
@@ -125,7 +125,7 @@ test('cms module handles complex block structures', function () {
                         'author' => "Author {$i}",
                         'published_at' => now()->subDays($i)->toISOString(),
                         'categories' => ['Category '.(($i % 3) + 1), 'Category '.((($i + 1) % 3) + 1)],
-                        'tags' => array_map(fn ($t) => "tag{$t}", range(1, 5)),
+                        'tags' => array_map(fn (int $t): string => "tag{$t}", range(1, 5)),
                         'reading_time' => rand(2, 10),
                     ],
                     'actions' => [
@@ -398,7 +398,7 @@ test('cms module supports complex query patterns', function () {
 
     Assert::assertCount(10, $results);
 
-    $heroPages = $results->filter(fn ($page) => collect($page->content_blocks)->contains('type', 'hero'));
+    $heroPages = $results->filter(fn (Page $page) => collect($page->content_blocks)->contains('type', 'hero'));
 
     Assert::assertCount(10, $heroPages);
 });

@@ -5,5 +5,6 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 describe('CMS Resource Extension', function () {
-    it('resource extension placeholder')->todo();
+test('resource extension placeholder', function () {
+    })->todo('Segnaposto senza asserzioni: serve il setup completo del pannello Filament.');
 });

@@ -23,7 +23,7 @@ class FooterData extends Data implements Wireable
 
     /**
      * The view path.
-     */
+    */
     public string $view = 'cms::components.footer';
 
     public ?string $_tpl = null;

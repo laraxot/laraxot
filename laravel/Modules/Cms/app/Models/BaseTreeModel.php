@@ -18,7 +18,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 /**
  * Modules\Cms\Models\BaseTreeModel.
  *
- * @property int                    $id
+* @property int                    $id
  * @property string                 $name
  * @property array<int, mixed>|null $items
  * @property Carbon|null            $created_at
@@ -44,7 +44,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @method static Builder|Menu withTrashed()
  * @method static Builder|Menu withoutTrashed()
  *
- * @property string                                     $title
+* @property string                                     $title
  * @property int|null                                   $parent_id
  * @property Collection<int, static>|array<int, static> $children
  * @property int|null                                   $children_count
@@ -148,7 +148,7 @@ abstract class BaseTreeModel extends BaseModel implements HasRecursiveRelationsh
     ];
 
     /** @var array<string, string> */
-    protected $schema = [
+    protected array $schema = [
         'id' => 'integer',
         'title' => 'string',
         'parent_id' => 'integer',

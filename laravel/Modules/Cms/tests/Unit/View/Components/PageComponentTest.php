@@ -24,6 +24,7 @@ uses(TestCase::class);
 describe('Page component contract — constructor signature', function () {
     test('has exactly four constructor params: side, slug, type, data', function () {
         $reflection = new ReflectionMethod(Page::class, '__construct');
+        $paramNames = array_map(fn (\ReflectionParameter $p): string => $p->getName(), $reflection->getParameters());
         $paramNames = array_map(fn ($p) => $p->getName(), $reflection->getParameters());
 
         Assert::assertSame(['side', 'slug', 'type', 'data'], $paramNames);
@@ -32,14 +33,14 @@ describe('Page component contract — constructor signature', function () {
 
     test('does not have container0 as constructor param', function () {
         $reflection = new ReflectionMethod(Page::class, '__construct');
-        $paramNames = array_map(fn ($p) => $p->getName(), $reflection->getParameters());
+        $paramNames = array_map(fn (\ReflectionParameter $p): string => $p->getName(), $reflection->getParameters());
 
         Assert::assertNotContains('container0', $paramNames);
     });
 
     test('does not have slug0 as constructor param', function () {
         $reflection = new ReflectionMethod(Page::class, '__construct');
-        $paramNames = array_map(fn ($p) => $p->getName(), $reflection->getParameters());
+        $paramNames = array_map(fn (\ReflectionParameter $p): string => $p->getName(), $reflection->getParameters());
 
         Assert::assertNotContains('slug0', $paramNames);
     });

@@ -15,9 +15,7 @@ use Modules\Xot\Contracts\ProfileContract;
  * Modules\Cms\Models\Section.
  *
  * @property string $id
- *
  * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
- *
  * @property string                       $id
  * @property array<array-key, mixed>|null $name
  * @property string|null                  $slug
@@ -27,9 +25,8 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property string|null                  $created_by
  * @property string|null                  $updated_by
  * @property ProfileContract|null         $creator
- * @property mixed                        $translations
+ * @property array<string, array<string, mixed>> $translations
  * @property ProfileContract|null         $updater
- *
  * @method static Builder<static>|Section newModelQuery()
  * @method static Builder<static>|Section newQuery()
  * @method static Builder<static>|Section query()
@@ -47,12 +44,10 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Section whereUpdatedBy($value)
  * @method static int                     count()
  * @method static Builder<static>|Section where($column, $operator = null, $value = null, $boolean = 'and')
- *
  * @property ProfileContract|null $deleter
- *
  * @method static SectionFactory                   factory($count = null, $state = [])
- * @method        array<int, array<string, mixed>> getSushiRows()
- *
+ * @method array<int, array<string, mixed>> getSushiRows()
+ * @property-read array<int, string> $translatable_columns_from
  * @mixin \Eloquent
  */
 class Section extends BaseModelLang
@@ -74,7 +69,7 @@ class Section extends BaseModelLang
     ];
 
     /** @var array<string, string> */
-    protected $schema = [
+    protected array $schema = [
         'id' => 'integer',
         'name' => 'json',
         'slug' => 'string',

@@ -33,7 +33,7 @@ final class BuildPageSchemaAction
         $schema = [
             '@context' => 'https://schema.org',
             '@type' => $pageType,
-            'name' => $meta->getTitle(),
+            'name' => $meta->getBrandName(),
             'description' => $meta->getDescription(limit: 160),
             'url' => $meta->getCanonical(),
             'inLanguage' => app()->getLocale(),

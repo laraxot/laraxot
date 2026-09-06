@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Cms\Tests\TestCase;
+use Modules\Xot\Contracts\UserContract;
 
 uses(TestCase::class);
 
@@ -128,18 +129,21 @@ it('rate limits login attempts', function (): void {
             ->call('authenticate');
     }
 
-    $response = LivewireVolt::test('auth.login')
+    // Sesto tentativo, con la password giusta: il rate limiter deve fermarlo lo stesso.
+    // `call()` restituisce un Testable, mai null: `expect($response)->toBeNull()` non
+    // poteva passare e non diceva niente sul throttling.
+    LivewireVolt::test('auth.login')
         ->set('email', $email)
         ->set('password', 'password123')
-        ->call('authenticate');
+        ->call('authenticate')
+        ->assertHasErrors('email');
 
-    expect($response)->not->toBeNull();
-    $response->assertHasErrors();
+    cmsAssertGuest();
 });
 
 it('allows any user type to login via frontend', function (): void {
     $email = cmsGenerateUniqueEmail();
-    $user = cmsCreateTestUser([
+    cmsCreateTestUser([
         'email' => $email,
         'password' => Hash::make('password123'),
     ]);
@@ -155,6 +159,6 @@ it('allows any user type to login via frontend', function (): void {
 
     $authenticatedUser = Auth::user();
     expect($authenticatedUser)->not->toBeNull();
-    PHPUnit\Framework\Assert::assertInstanceOf(Modules\User\Models\User::class, $authenticatedUser);
+    assert($authenticatedUser instanceof UserContract);
     expect($authenticatedUser->email)->toBe($email);
 });

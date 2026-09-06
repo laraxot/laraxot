@@ -16,7 +16,7 @@ test('Headernav page can be instantiated', function () {
 });
 
 test('Headernav page has data property', function () {
-    $page = new Headernav();
+    $page = new Headernav;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('data');
     $property->setAccessible(true);
@@ -27,7 +27,7 @@ test('Headernav page has data property', function () {
 });
 
 test('Headernav page has headernavData property', function () {
-    $page = new Headernav();
+    $page = new Headernav;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('headernavData');
     $property->setAccessible(true);
@@ -35,11 +35,21 @@ test('Headernav page has headernavData property', function () {
     Assert::assertSame('headernavData', $property->getName());
 });
 
-it('Headernav page has mount method')->todo();
-it('Headernav page has schema method')->todo();
-it('Headernav page has updateData method')->todo();
-it('Headernav page has fillForms method')->todo();
-it('Headernav page has getUpdateFormActions method')->todo();
+test('Headernav page has mount method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
+test('Headernav page has schema method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
+test('Headernav page has updateData method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
+test('Headernav page has fillForms method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
+test('Headernav page has getUpdateFormActions method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
 test('Headernav page implements HasForms', function () {
     $interfaces = class_implements(Headernav::class);
     Assert::assertNotFalse($interfaces);

@@ -12,7 +12,7 @@ test('Themes page can be instantiated', function () {
 });
 
 test('Themes page has themes property', function () {
-    $page = new Themes();
+    $page = new Themes;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('themes');
     $property->setAccessible(true);
@@ -20,5 +20,8 @@ test('Themes page has themes property', function () {
     Assert::assertIsArray($property->getValue($page));
 });
 
-it('Themes page has changePubTheme method')->todo();
-it('Themes page has getViewData method')->todo();
+test('Themes page has changePubTheme method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
+test('Themes page has getViewData method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');

@@ -33,8 +33,7 @@ function headerNavConfig(): array
 }
 
 /**
- * @param array<string, mixed> $config
- *
+ * @param  array<string, mixed>  $config
  * @return list<array<string, mixed>>
  */
 function primaryNavItems(array $config): array
@@ -55,14 +54,13 @@ function primaryNavItems(array $config): array
     }
 
     /** @var list<array<string, mixed>> $normalized */
-    $normalized = array_values(array_filter($items, static fn ($item): bool => is_array($item)));
+    $normalized = array_values(array_filter($items, static fn (mixed $item): bool => is_array($item)));
 
     return $normalized;
 }
 
 /**
- * @param list<array<string, mixed>> $items
- *
+ * @param  list<array<string, mixed>>  $items
  * @return list<string>
  */
 function navItemSlugs(array $items): array
@@ -125,14 +123,17 @@ describe('Header Nav Json', function (): void {
 
     test('header json ha topics url configurato', function (): void {
         $config = headerNavConfig();
+        /** @var array<string, mixed> $sections */
         $sections = $config['sections'] ?? null;
         if (! is_array($sections)) {
             cmsSkipTest('Sections not properly configured');
         }
+        /** @var array<string, mixed> $primaryNav */
         $primaryNav = $sections['primary_nav'] ?? null;
         if (! is_array($primaryNav)) {
             cmsSkipTest('Primary nav not properly configured');
         }
+        /** @var string $topicsUrl */
         $topicsUrl = $primaryNav['topics_url'] ?? null;
         if (! is_string($topicsUrl)) {
             cmsSkipTest('Topics URL not configured');

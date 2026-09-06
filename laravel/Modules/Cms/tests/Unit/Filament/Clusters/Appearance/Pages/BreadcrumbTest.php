@@ -8,7 +8,7 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 test('Breadcrumb page uses correct view', function () {
-    $page = new Breadcrumb();
+    $page = new Breadcrumb;
     // Access protected property via reflection
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('view');
@@ -22,7 +22,7 @@ test('Breadcrumb page can be instantiated', function () {
 });
 
 test('Breadcrumb page has data property', function () {
-    $page = new Breadcrumb();
+    $page = new Breadcrumb;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('data');
     $property->setAccessible(true);
@@ -30,6 +30,11 @@ test('Breadcrumb page has data property', function () {
     Assert::assertIsArray($property->getValue($page));
 });
 
-it('Breadcrumb page has mount method')->todo();
-it('Breadcrumb page has schema method')->todo();
-it('Breadcrumb page has updateData method')->todo();
+test('Breadcrumb page has mount method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
+test('Breadcrumb page has schema method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
+test('Breadcrumb page has updateData method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');

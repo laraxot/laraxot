@@ -7,6 +7,9 @@ use Illuminate\Testing\TestResponse;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+use function Pest\Laravel\get;
+
+
 uses(TestCase::class);
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
@@ -15,7 +18,6 @@ beforeEach(function (): void {
         config()->set('app.key', $key);
         $_ENV['APP_KEY'] = $key;
     }
-
     cmsSkipTest('Filament blocks homepage integration requires full theme + block wiring in this install.');
 });
 

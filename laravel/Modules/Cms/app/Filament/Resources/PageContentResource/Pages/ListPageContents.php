@@ -19,7 +19,7 @@ class ListPageContents extends LangBaseListRecords
     public function getGridTableColumns(): array
     {
         /** @var array<int, Column> $columns */
-        $columns = $this->getTableColumns();
+        $columns = $this->getTableColumns(); // @phpstan-ignore method.deprecated (hook di progetto: la deprecazione e ereditata per nome dal prototipo Filament 5, il codice eseguito e il nostro — story 16.12)
 
         return [
             Stack::make($columns),
