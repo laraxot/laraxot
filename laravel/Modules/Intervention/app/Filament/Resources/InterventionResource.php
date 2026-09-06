@@ -406,8 +406,8 @@ final class InterventionResource extends GatedXotBaseResource
                             Placeholder::make('line_total_preview')
                                 ->label(__('interventions.fields.material_line_total'))
                                 ->content(function (callable $get): string {
-                                    $quantity = (float) ($get('quantity') ?: 0);
-                                    $unitPrice = (float) ($get('unit_price') ?: 0);
+                                    $quantity = (float) (($get('quantity') ?? 0) ?: 0);
+                                    $unitPrice = (float) (($get('unit_price') ?? 0) ?: 0);
 
                                     return number_format($quantity * $unitPrice, 2, ',', '.').' €';
                                 })
