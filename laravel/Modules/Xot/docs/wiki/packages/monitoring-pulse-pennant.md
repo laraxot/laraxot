@@ -6,7 +6,7 @@ created: 2026-08-24
 updated: 2026-08-24
 ---
 
-# Monitoring e Feature Management - Laravel 12
+# Monitoring e Feature Management - Laravel 13
 
 L'integrazione di Laravel Pulse e Pennant fornisce strumenti avanzati per il controllo in tempo reale e il rilascio graduale delle funzionalità.
 

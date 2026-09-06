@@ -1046,7 +1046,7 @@ test('user can switch teams', function () {
 ## 🔄 Recent Updates
 
 ### v2.5.0 - 2025-12-05
-- **Added**: Laravel 12 compatibility
+- **Added**: Laravel 13 compatibility
 - **Added**: Filament 4 support
 - **Fixed**: Merge conflicts in EditProfile and PasswordResetConfirmWidget
 - **Improved**: PHPStan Level 10 compliance
@@ -1102,7 +1102,7 @@ See [ROADMAP.md](./roadmap.md) for details.
 
 **Module**: User (Authentication & Authorization)
 **Version**: 2.5.0
-**Framework**: Laravel 12 + Filament 4
+**Framework**: Laravel 13 + Filament 4
 **PHPStan**: Level 10 ✅
 **Test Coverage**: 88%+ ✅
 **Security**: OWASP Compliant ✅

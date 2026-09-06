@@ -28,14 +28,14 @@ class ListOauthClients extends XotBaseListRecords
                 ->icon('heroicon-o-key')
                 ->form([
                     TextInput::make('name')
-                        ->default((string) config('app.name').' '.static::trans('actions.create_personal.label'))
+                        ->default(is_string(config('app.name')) ? config('app.name') : ''.' '.static::trans('actions.create_personal.label'))
                         ->required()
                         ->maxLength(255),
                 ])
                 ->action(function (array $data): void {
                     app(CreatePersonalAccessClientAction::class)->execute(
-                        name: (string) $data['name'],
-                        redirect: (string) config('app.url'),
+                        name: is_string($data['name'] ?? null) ? $data['name'] : '',
+                        redirect: is_string(config('app.url')) ? config('app.url') : '',
                         user: null,
                         provider: null,
                     );

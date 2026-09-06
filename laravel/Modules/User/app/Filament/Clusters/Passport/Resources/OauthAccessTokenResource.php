@@ -128,7 +128,7 @@ class OauthAccessTokenResource extends XotBaseResource
                     ->requiresConfirmation()
                     ->action(function (mixed $record): void {
                         if ($record instanceof Model) {
-                            if (app(RevokeTokenAction::class)->execute((string) $record->getKey())) {
+                            if (app(RevokeTokenAction::class)->execute(is_string($record->getKey()) ? $record->getKey() : (string) $record->getKey())) {
                                 Notification::make()
                                     ->title(static::trans('actions.revoke.success'))
                                     ->success()
@@ -266,7 +266,7 @@ class OauthAccessTokenResource extends XotBaseResource
                 ->requiresConfirmation()
                 ->action(function (mixed $record): void {
                     if ($record instanceof Model) {
-                        if (app(RevokeTokenAction::class)->execute((string) $record->getKey())) {
+                        if (app(RevokeTokenAction::class)->execute(is_string($record->getKey()) ? $record->getKey() : (string) $record->getKey())) {
                             Notification::make()
                                 ->title(static::trans('actions.revoke.success'))
                                 ->success()

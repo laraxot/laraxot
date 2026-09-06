@@ -6,7 +6,7 @@
 
 ## 🎯 **Lettura Essenziale**
 1. [README.md](./readme.md) - Panoramica del framework Laraxot.
-2. [roadmap.md](./roadmap.md) - Evoluzione 2026: Laravel 12 & Stability.
+2. [roadmap.md](./roadmap.md) - Evoluzione 2026: Laravel 13 & Stability.
 3. [super-mucca-methodology.md](./super-mucca-methodology.md) - La filosofia di sviluppo del progetto.
 
 ## 🏛️ **Architettura Core**

@@ -9,6 +9,7 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Modules\Compliance\Actions\GenerateRceePdfAction;
 use Modules\Compliance\Models\MaintenanceControl;
 
@@ -16,7 +17,7 @@ final class ControlsRelationManager extends RelationManager
 {
     protected static string $relationship = 'controls';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('heating.controls');
     }
@@ -45,7 +46,7 @@ final class ControlsRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('next_due_on')->label(__('heating.fields.next_due_on'))->date()->sortable(),
                 Tables\Columns\IconColumn::make('bollino_paid')->label(__('heating.fields.bollino'))->boolean()->toggleable(),
             ])
-            ->actions([
+            ->recordActions([
                 Action::make('rceePdf')
                     ->label(__('heating.actions.download_rcee'))
                     ->icon('heroicon-o-document-arrow-down')

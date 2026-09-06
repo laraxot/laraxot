@@ -298,5 +298,5 @@ php artisan serve --host=127.0.0.1 --port=8003
 
 **Last Updated**: January 2025  
 **Status**: Production Ready  
-**Tested On**: Laravel 12.x + Filament 3.x  
+**Tested On**: Laravel 13.x + Filament 3.x  
 **Browser Compatibility**: Modern browsers (Chrome, Firefox, Safari, Edge)

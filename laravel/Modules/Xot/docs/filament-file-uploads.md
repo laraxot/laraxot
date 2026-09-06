@@ -97,7 +97,7 @@ protected $casts = [
     'certifications' => 'array',
 ];
 
-// In Laravel 12.x, utilizzare il metodo casts()
+// In Laravel 13.x, utilizzare il metodo casts()
 protected function casts(): array
 {
     return array_merge(parent::casts(), [

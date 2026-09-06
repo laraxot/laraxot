@@ -7,15 +7,14 @@ namespace Modules\Lang\Tests;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
-use Mockery;
-use Mockery\Expectation;
-use Mockery\MockInterface;
 use Modules\Lang\Actions\SaveTransAction;
 use Modules\Lang\Providers\LangServiceProvider;
 use Modules\User\Models\User;
 use Modules\User\Providers\UserServiceProvider;
 use Modules\Xot\Tests\XotBaseTestCase;
-use PHPUnit\Framework\Assert;
+
+use function Safe\file_put_contents;
+use function Safe\mkdir;
 
 /**
  * Base test case for Lang module.
@@ -36,13 +35,13 @@ abstract class TestCase extends XotBaseTestCase
     {
         parent::setUp();
 
-        $database = database_path('fixcity_data.sqlite');
+        $database = database_path('database.sqlite');
 
         /** @var array<string, array<string, mixed>> $connections */
         $connections = config('database.connections', []);
 
         foreach (array_keys($connections) as $connection) {
-            if ('sqlite' !== config("database.connections.{$connection}.driver")) {
+            if (config("database.connections.{$connection}.driver") !== 'sqlite') {
                 continue;
             }
 
@@ -66,7 +65,7 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     public function assertDatabaseHasRow(string $table, array $data, ?string $connection = null): void
     {
@@ -74,95 +73,61 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
-     * @param class-string<\Throwable> $exceptionClass
+     * @param  class-string<\Throwable>  $exceptionClass
      */
     public function expectApplicationException(string $exceptionClass, ?string $message = null): void
     {
         $this->expectException($exceptionClass);
-        if (null !== $message) {
+        if ($message !== null) {
             $this->expectThrowableMessage($message);
         }
     }
 
     /**
-     * @template T of object
+     * Scrive un file di traduzione PHP, creando la directory se manca.
      *
-     * @param class-string<T>                        $abstract
-     * @param (\Closure(MockInterface&T): void)|null $callback
+     * I test la usano per preparare un file esistente prima di verificare come
+     * lo trattano le action di scrittura. Il tipo e' `array<string, string>` e
+     * non un array annidato perche' tutti i chiamanti passano coppie piatte:
+     * se un giorno servisse l'annidamento, si allarga di proposito e si aggiorna
+     * questo commento, invece di partire larghi e non sapere piu' cosa arriva.
      *
-     * @return MockInterface&T
+     * @param  array<string, string>  $data
      */
-    public static function mockServiceStatic(string $abstract, ?\Closure $callback = null): MockInterface
+    public static function createTranslationFile(string $path, array $data): void
     {
-        /** @var MockInterface&T $mock */
-        $mock = Mockery::mock($abstract);
+        $directory = \dirname($path);
 
-        if (null !== $callback) {
-            $callback($mock);
+        if (! is_dir($directory)) {
+            mkdir($directory, 0o755, true);
         }
 
-        app()->instance($abstract, $mock);
-
-        return $mock;
-    }
-
-    public static function mockExpectation(MockInterface $mock, string $method): Expectation
-    {
-        $mock->shouldReceive($method);
-        $director = $mock->mockery_getExpectationsFor($method);
-        Assert::assertNotNull($director);
-        $expectation = $director->getExpectations()[0] ?? null;
-        Assert::assertInstanceOf(Expectation::class, $expectation);
-
-        return $expectation;
-    }
-
-    public static function mockExpects(MockInterface $mock, string $method): Expectation
-    {
-        return self::mockExpectation($mock, $method);
-    }
-
-    public static function mockAllows(MockInterface $mock, string $method): Expectation
-    {
-        return self::mockExpectation($mock, $method);
+        file_put_contents($path, '<?php'.PHP_EOL.PHP_EOL.'return '.var_export($data, true).';'.PHP_EOL);
     }
 
     /**
-     * @param  array<string, mixed>  $translations
+     * Registra nel container l'implementazione reale di SaveTransAction.
+     *
+     * Serve ai test che vogliono verificare la scrittura vera su file: senza
+     * questa riga il container puo' ancora avere il mock lasciato da un test
+     * precedente dello stesso processo, e l'asserzione verificherebbe il mock.
      */
-    public static function createTranslationFile(string $filePath, array $translations): void
-    {
-        $phpContent = "<?php\n\nreturn ".var_export($translations, true).";\n";
-        \Safe\file_put_contents($filePath, $phpContent);
-    }
-
     public static function bindRealSaveTransAction(): void
     {
         app()->instance(SaveTransAction::class, new SaveTransAction());
     }
 
-    public static function restoreSaveTransActionNoOp(): void
+    /**
+     * Rimuove l'override di SaveTransAction dal container.
+     *
+     * Si chiamava `restoreSaveTransActionNoOp()`, ma il nome descriveva un
+     * meccanismo che non e' mai esistito: nessun bootstrap registra una versione
+     * no-op da ripristinare. Quello che i test fanno davvero, nel `finally`, e'
+     * togliere l'istanza forzata da {@see bindRealSaveTransAction()} perche' il
+     * test successivo riparta dalla risoluzione normale.
+     */
+    public static function forgetSaveTransActionOverride(): void
     {
-        /** @var MockInterface&SaveTransAction $mock */
-        $mock = Mockery::mock(SaveTransAction::class);
-        $mock->shouldReceive('execute')->andReturnNull();
-        app()->instance(SaveTransAction::class, $mock);
-    }
-
-    public static function forceSqliteTranslations(): void
-    {
-        $database = database_path('fixcity_data.sqlite');
-
-        /** @var array<string, array<string, mixed>> $connections */
-        $connections = config('database.connections', []);
-
-        foreach (array_keys($connections) as $connection) {
-            if ('sqlite' !== config("database.connections.{$connection}.driver")) {
-                continue;
-            }
-
-            config(["database.connections.{$connection}.database" => $database]);
-            DB::purge($connection);
-        }
+        app()->forgetInstance(SaveTransAction::class);
     }
 }

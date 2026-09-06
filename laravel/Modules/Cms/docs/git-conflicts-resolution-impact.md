@@ -1,6 +1,6 @@
 # Impatto Risoluzione Conflitti Git - Modulo Cms
 
-## Data: [DATE]
+## Data: 2025-01-06
 
 ## Contesto
 Il modulo Cms è stato coinvolto indirettamente nella risoluzione di conflitti Git che hanno interessato moduli correlati. Questo documento analizza l'impatto e le implicazioni per il sistema di gestione contenuti.
@@ -148,7 +148,7 @@ php artisan lang:check
 ### Moduli Correlati
 - [Geo Conflict Resolution](../../geo/project_docs/conflict-resolution.md)
 - [User Theme Conflicts](../../user/project_docs/theme-translation-conflicts-resolution.md)
-- [Xot Git Conflicts](../../xot/project_docs/git-conflicts-resolution-[date].md)
+- [Xot Git Conflicts](../../xot/project_docs/git-conflicts-resolution-2025-01-06.md)
 
 ### Documentazione Cms
 - [Content Management](content-management.md)
@@ -190,7 +190,7 @@ php artisan lang:check
 ### Documentazione Moduli
 - [Geo Conflict Resolution](../../geo/project_docs/conflict-resolution.md)
 - [User Theme Conflicts](../../user/project_docs/theme-translation-conflicts-resolution.md)
-- [Xot Git Conflicts](../../xot/project_docs/git-conflicts-resolution-[date].md)
+- [Xot Git Conflicts](../../xot/project_docs/git-conflicts-resolution-2025-01-06.md)
 
 ### Documentazione Cms
 - [Content Management](content-management.md)
@@ -199,6 +199,6 @@ php artisan lang:check
 
 ---
 
-**Ultimo aggiornamento**: [DATE]
+**Ultimo aggiornamento**: 2025-01-06
 **Autore**: Sistema di correzione automatica
 **Stato**: ✅ Completato

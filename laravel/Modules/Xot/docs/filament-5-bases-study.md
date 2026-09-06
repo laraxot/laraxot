@@ -18,7 +18,7 @@ Studio comparativo dei progetti Filament 5 in `/var/www/_bases/` per aumentare c
 | base_<nome progetto> | v5.2.3 | v12.53.0 | v4.2.0 | v1.1.13 | v12.0.4 |
 
 ## Findings
-1. `base_<nome progetto>` è allineato al cluster recente Laravel 12 + Filament 5 + Livewire 4.
+1. `base_<nome progetto>` è allineato al cluster recente Laravel 13 + Filament 5 + Livewire 4.
 2. Esiste drift su `laravel/folio` (`dev-master` in un progetto, stable in altri): rischio regressioni routing CMS/Volt.
 3. `nwidart/laravel-modules` è stabile su tutti i progetti Fila5 (`v12.0.4`): buona base per pattern condivisi.
 4. `base_ptv_fila5_mono` è il più arretrato nel cluster Fila5 (filament `v5.0.0`): utile come benchmark retrocompatibilità.

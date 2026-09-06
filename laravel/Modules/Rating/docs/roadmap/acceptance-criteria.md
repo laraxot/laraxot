@@ -18,7 +18,7 @@ Riferimento architettura: [architecture.md](../architecture.md).
 
 - [ ] Ogni modello in `Modules/Rating/Models/` estende `Modules\Rating\Models\BaseModel` (o la classe base indicata in [architecture.md](../architecture.md)).
 - [ ] Relazioni con PHPDoc completo (`@return BelongsTo<...>`, `MorphMany<...>`, ecc.) e type hint di ritorno.
-- [ ] Uso di `casts()` method (non `$casts` property) dove richiesto da Laravel 12 / regole progetto.
+- [ ] Uso di `casts()` method (non `$casts` property) dove richiesto da Laravel 13 / regole progetto.
 
 ### Filament (se presente)
 

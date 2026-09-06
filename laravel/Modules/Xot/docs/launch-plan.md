@@ -5,7 +5,7 @@
 - **Launch Lead:** @CoreTeam
 
 ## 🎯 Launch Goals
-- Stabilize all base classes for Laravel 12.
+- Stabilize all base classes for Laravel 13.
 - Reach 100% PHPStan Level 10 compliance across the framework.
 
 ## 📣 Messaging & Positioning

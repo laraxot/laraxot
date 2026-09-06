@@ -168,6 +168,7 @@ final class InvoiceResource extends GatedXotBaseResource
                     ->formatStateUsing(function ($state): string {
                         if (is_numeric($state)) {
                             $name = DB::table('customers')->where('id', $state)->value('legal_name');
+
                             return is_string($name) ? $name : 'Cliente non disponibile';
                         }
 
@@ -196,12 +197,12 @@ final class InvoiceResource extends GatedXotBaseResource
                     ->dateTime()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
-            ->actions([
+            ->recordActions([
                 ViewAction::make(),
                 EditAction::make()
                     ->visible(fn (): bool => ! request()->is('customer/*')),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
                 RestoreBulkAction::make(),
                 ForceDeleteBulkAction::make(),

@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Intervention\Tests\TestCase::class);
-
 use Livewire\Livewire;
 use Modules\Intervention\Filament\Pages\LabourTariffSettingsPage;
 use Modules\Intervention\Settings\InterventionTariffSettings;
@@ -11,10 +9,11 @@ use Modules\Intervention\Tests\TestCase;
 use Modules\Platform\Models\PlatformSetting;
 use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
-
 use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\actingAs;
+
+uses(TestCase::class);
 
 function tariffAdmin(): User
 {
@@ -37,7 +36,13 @@ function storedTariffSetting(string $key): ?int
     /** @var array<string, mixed>|null $value */
     $value = PlatformSetting::query()->where('key', $key)->first()?->value_json;
 
-    return is_array($value) && isset($value['value']) ? (int) $value['value'] : null;
+    if (is_array($value) && isset($value['value'])) {
+        $val = $value['value'];
+
+        return is_numeric($val) ? (int) $val : null;
+    }
+
+    return null;
 }
 
 it('stores euros as cents so nobody has to type 4000 for forty euros', function (): void {

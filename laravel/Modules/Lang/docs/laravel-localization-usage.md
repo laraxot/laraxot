@@ -13,13 +13,13 @@ related:
 
 ## Collegamenti correlati
 - [README modulo Lang](./README.md)
-- [Best Practices Chiavi di Traduzione](translation_keys_best_practices.md)
+- [Best Practices Chiavi di Traduzione](translation-keys-best-practices.md)
 - [Implementazione Header con Selettore Lingua](/laravel/Modules/User/docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
 - [README modulo Lang](./README.md)
-- [Best Practices Chiavi di Traduzione](translation_keys_best_practices.md)
+- [Best Practices Chiavi di Traduzione](translation-keys-best-practices.md)
 - [Implementazione Header con Selettore Lingua](/laravel/Modules/User/docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
 - [README modulo Lang](./README.md)
-- [Best Practices Chiavi di Traduzione](translation_keys_best_practices.md)
+- [Best Practices Chiavi di Traduzione](translation-keys-best-practices.md)
 - [Implementazione Header con Selettore Lingua](/laravel/Modules/User/docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
 - [Collegamenti Documentazione](/docs/collegamenti-documentazione.md)
 
@@ -253,13 +253,13 @@ Questi middleware sono già configurati  e non è necessario modificarli.
 
 ## Collegamenti correlati
 - [README modulo Lang](./README.md)
-- [Best Practices Chiavi di Traduzione](translation_keys_best_practices.md)
+- [Best Practices Chiavi di Traduzione](translation-keys-best-practices.md)
 - [Implementazione Header con Selettore Lingua](/laravel/Modules/User/docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
 - [README modulo Lang](./README.md)
-- [Best Practices Chiavi di Traduzione](translation_keys_best_practices.md)
+- [Best Practices Chiavi di Traduzione](translation-keys-best-practices.md)
 - [Implementazione Header con Selettore Lingua](/laravel/Modules/User/docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
 - [README modulo Lang](./README.md)
-- [Best Practices Chiavi di Traduzione](translation_keys_best_practices.md)
+- [Best Practices Chiavi di Traduzione](translation-keys-best-practices.md)
 - [Implementazione Header con Selettore Lingua](/laravel/Modules/User/docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
 - [Collegamenti Documentazione](/docs/collegamenti-documentazione.md)
 

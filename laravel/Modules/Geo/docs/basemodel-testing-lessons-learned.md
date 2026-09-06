@@ -121,7 +121,7 @@ Tutti i moduli che utilizzano `BaseModel` o pattern simili:
 - `method_exists()` - Verifica metodi senza side effects
 
 ### Compatibility
-- Laravel 12+ ✅
+- Laravel 13+ ✅
 - PHPUnit 10+ ✅
 - Pest 3+ ✅
 - Spatie Media Library ✅

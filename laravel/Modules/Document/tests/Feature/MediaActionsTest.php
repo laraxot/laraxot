@@ -10,7 +10,7 @@ use Modules\Document\Actions\CreateMediaFromStoredFileAction;
 use Modules\Document\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
 
-uses(\Modules\Document\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('attaches a stored document to an intervention', function (): void {
     Storage::fake('public');
@@ -79,7 +79,8 @@ it('attaches multiple uploaded photos to an intervention', function (): void {
 
     expect($created)->toHaveCount(2);
 
-    $intervention->refresh();
+    // $intervention non e' persistita (vedi documentCreateIntervention()): niente
+    // refresh(), la relazione media() interroga document_media per id ad ogni chiamata.
     expect($intervention->media()->count())->toBe(2);
     expect($intervention->media()->pluck('kind')->unique()->all())->toBe(['photo']);
 });

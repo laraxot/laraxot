@@ -161,8 +161,8 @@ find . -name "*.md" -exec sed -i 's/Filament 3\.x/Filament 4.x/g' {} \;
 
 #### **Laravel Version Updates**
 ```bash
-# Pattern: "Laravel 11" → "Laravel 12"
-find . -name "*.md" -exec sed -i 's/Laravel 11/Laravel 12/g' {} \;
+# Pattern: "Laravel 11" → "Laravel 13"
+find . -name "*.md" -exec sed -i 's/Laravel 11/Laravel 13/g' {} \;
 ```
 
 #### **Status Updates**

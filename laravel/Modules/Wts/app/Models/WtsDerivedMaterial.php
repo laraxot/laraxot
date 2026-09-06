@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Wts\Models;
 
 use Carbon\CarbonInterface;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -32,9 +31,6 @@ use Modules\Wts\Database\Factories\WtsDerivedMaterialFactory;
  */
 final class WtsDerivedMaterial extends BaseModel
 {
-    /** @use HasFactory<WtsDerivedMaterialFactory> */
-    use HasFactory;
-
     use SoftDeletes;
     use WtsAuditable;
 

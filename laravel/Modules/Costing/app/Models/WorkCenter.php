@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Costing\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Modules\Costing\Database\Factories\WorkCenterFactory;
 use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
@@ -52,7 +51,6 @@ final class WorkCenter extends BaseModel
     {
         return $query->where('context_code', $contextCode);
     }
-
 
     /** Costo di `$minutes` minuti di questo centro. */
     public function costOfMinutes(float $minutes): float

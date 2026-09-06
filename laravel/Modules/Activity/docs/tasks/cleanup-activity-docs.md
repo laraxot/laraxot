@@ -13,7 +13,7 @@ Rimuovere file duplicati (suffissi -duplicate.md), file di log/coverage (.txt, .
 - [ ] Rimozione sistematica file `.txt`, `.xml` di coverage
 - [ ] Rimozione file duplicati con suffisso `-duplicate.md`
 - [ ] Consolidamento guida eventi di dominio
-- [ ] Verifica compatibilità Laravel 12
+- [ ] Verifica compatibilità Laravel 13
 - [ ] Indice documentazione aggiornato
 - [ ] Documentazione
 

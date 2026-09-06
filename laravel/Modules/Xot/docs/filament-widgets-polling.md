@@ -129,7 +129,7 @@ class ActiveUsersWidget extends XotBaseWidget
 
 Questa funzionalità è compatibile con:
 - Filament 3.x
-- Laravel 12.x
+- Laravel 13.x
 - PHP 8.2+
 
 ## Collegamenti Bidirezionali
@@ -270,7 +270,7 @@ class ActiveUsersWidget extends XotBaseWidget
 
 Questa funzionalità è compatibile con:
 - Filament 4.x
-- Laravel 12.x
+- Laravel 13.x
 - PHP 8.2+
 
 ## Collegamenti Bidirezionali

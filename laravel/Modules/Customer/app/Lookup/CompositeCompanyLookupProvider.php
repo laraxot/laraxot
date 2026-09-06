@@ -15,10 +15,7 @@ final class CompositeCompanyLookupProvider implements CompanyLookupProviderInter
     public function __construct(
         array $providers,
     ) {
-        $this->providers = array_values(array_filter(
-            $providers,
-            static fn ($p): bool => $p instanceof CompanyLookupProviderInterface,
-        ));
+        $this->providers = array_values($providers);
     }
 
     /**

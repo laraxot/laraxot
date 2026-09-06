@@ -79,7 +79,7 @@ final class BoilersRelationManager extends RelationManager
             ->headerActions([
                 CreateAction::make()->label(__('heating.actions.add_boiler')),
             ])
-            ->actions([
+            ->recordActions([
                 $this->registerControlAction(),
                 $this->generateInterventionAction(),
                 EditAction::make(),
@@ -92,7 +92,7 @@ final class BoilersRelationManager extends RelationManager
         return Action::make('registerControl')
             ->label(__('heating.actions.register_control'))
             ->icon('heroicon-o-clipboard-document-check')
-            ->form([
+            ->schema([
                 Select::make('control_type')
                     ->label(__('heating.fields.control_type'))
                     ->options([
@@ -130,7 +130,7 @@ final class BoilersRelationManager extends RelationManager
         return Action::make('generateIntervention')
             ->label(__('heating.actions.generate_intervention'))
             ->icon('heroicon-o-calendar-days')
-            ->form([
+            ->schema([
                 Select::make('control_type')->label(__('heating.fields.control_type'))->options([
                     'maintenance' => __('heating.control_types.maintenance'),
                     'efficiency_check' => __('heating.control_types.efficiency_check'),

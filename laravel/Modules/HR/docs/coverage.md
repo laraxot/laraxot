@@ -1,72 +1,104 @@
 ---
-name: HR Module - Test Coverage Baseline
-description: Coverage baseline and testing strategy for HR module
+name: HR Module - PHPStan L10 fix + coverage
+description: PHPStan Level 10 fix results and Pest coverage snapshot for the HR module
 metadata:
-  status: baseline
+  status: done
   date: 2026-09-06
-  version: 1.0
+  version: 1.1
 ---
 
-# HR Module - Test Coverage Baseline
+# HR Module — PHPStan Level 10 fix + coverage
 
-## Overview
-Pest test coverage baseline for HR module (Laravel Modules/HR).
+## PHPStan (level max, `laravel/phpstan.neon`, not modified)
 
-## Test Summary (2026-09-06)
+| | Errors |
+|---|---|
+| Before | 24 |
+| After | 0 |
 
-| Test Suite | Status | Duration | Notes |
-|---|---|---|---|
-| EmployeeCrudTest | PASS | 12.01s | Employee creation and soft-deletion |
-| AbsenceRequestWorkflowTest | FAIL | - | Database schema issue: `roles` table missing |
-| AddEmployeeAttachmentsTest | FAIL | - | Database schema issue: `document_media` table missing |
-| AddEmployeeDocumentActionMutationTest | FAIL | - | Database schema issue: `document_media` table missing |
-| AbsenceRequestResourceTypeNormalizationTest | ? | - | Not tested |
+Verified twice with a cleared result cache:
+`./vendor/bin/phpstan clear-result-cache && ./vendor/bin/phpstan analyse Modules/HR --memory-limit=-1` → `[OK] No errors`.
 
-## Known Test Dependencies
-- `roles` table (missing in test database)
-- `document_media` table (missing in test database)
-- User seeding for operator role
+Breakdown of the 24 fixed errors:
 
-## Quality Gates - Current Status
-
-### Code Quality
-
-| Tool | Status | Notes |
+| File | method.deprecated | cast.string |
 |---|---|---|
-| PHPStan Level 10 | GREEN | 0 errors |
-| Laravel Pint | GREEN | Fixed formatting issues |
-| PHPMD | PENDING | Manual review needed |
-| Insights | PENDING | Manual review needed |
+| `AbsenceRequestResource.php` | 2 | — |
+| `EmployeeResource.php` | 2 | — |
+| `.../DocumentsRelationManager.php` | 2 | 3 |
+| `.../MedicalVisitsRelationManager.php` | 2 | 5 |
+| `.../TrainingsRelationManager.php` | 2 | 6 |
 
-### Key Fixes Applied (2026-09-06)
+Fixes: `actions()`→`recordActions()`, `bulkActions()`→`toolbarActions()` (Filament
+v4/v5 rename); replaced blind `(string) $data['x']` casts on the untyped Filament
+`array $data` form-data parameter with a private `stringValue()` helper that
+narrows via `is_string()`/`is_scalar()` before returning — no `mixed` left
+unresolved, no `@phpstan-ignore` added.
 
-1. **Type Narrowing in Form Closures**
-   - DocumentsRelationManager: Helper method `stringValue()` for form data type narrowing
-   - MedicalVisitsRelationManager: Proper type casting with isset() checks
-   - TrainingsRelationManager: Same pattern as MedicalVisitsRelationManager
+## Pest — `./vendor/bin/pest --testsuite=HR --no-coverage`
 
-2. **Deprecated Filament v5 Methods**
-   - Deprecated methods already migrated:
-     - `actions()` → `recordActions()` 
-     - `bulkActions()` → `toolbarActions()`
+| | Result |
+|---|---|
+| Before (verified via `git stash`) | 5 failed / 3 passed (10 assertions) |
+| After | 5 failed / 3 passed (10 assertions) — unchanged |
 
-3. **Code Style**
-   - Ordered imports fixed
-   - Operator spacing normalized
-   - PHPDoc alignment corrected
+Confirmed via A/B test (`git stash` the 5 fixed files, run, compare, `git stash
+pop`): identical pass/fail set before and after. The fix introduces **no
+regression**.
 
-## Next Steps
+Passing: `AbsenceRequestResourceTypeNormalizationTest` (2/2),
+`EmployeeCrudTest` (1/1).
 
-1. Fix test database schema (roles, document_media tables)
-2. Ensure all tests pass without database errors
-3. Document any coverage gaps
-4. Set up CI/CD baseline
+Failing (pre-existing, environment-level, not code bugs): `AbsenceRequestWorkflowTest`
+(2), `AddEmployeeAttachmentsTest` (1), `AddEmployeeDocumentActionMutationTest` (2) —
+all `QueryException`:
+- `Base table or view not found: roles` (connection `mariadb`, Spatie Permission
+  migration not present in `workorder_data_test`).
+- `Base table or view not found: document_media` (connection `document`, Document
+  module migration not present in `workorder_data_test`).
 
-## Files Modified
+Not fixed here: these tables belong to other modules'/packages' migrations, not
+to HR, and fixing them requires either migrating the shared test database (touches
+connections/modules outside HR scope, risky while other agents run parallel
+migrations/tests on the same DB) or a Document/Permission-module fixture that HR
+doesn't own. Flagged in
+`docs/chat/2026-09-06-pest-v5-done-plus-phpstan-parallel-wave.md`.
 
-- Modules/HR/app/Filament/Resources/EmployeeResource/RelationManagers/MedicalVisitsRelationManager.php
-- Modules/HR/app/Filament/Resources/EmployeeResource/RelationManagers/TrainingsRelationManager.php
-- Modules/HR/app/Filament/Resources/EmployeeResource/RelationManagers/DocumentsRelationManager.php
+Coverage could not be numerically raised on the 3 already-red suites without
+unblocking the DB first; no coverage was lost either. New/changed production code
+(the `stringValue()` helpers) is exercised indirectly by the tests above once the
+DB blocker is cleared — no new production logic branch was added that isn't
+already covered by an existing (currently DB-blocked) test.
 
-## Related Stories
-- XOT-18.11: HR PHPStan Level 10 fix
+## PHPMD (`Modules/Xot/phpmd.ruleset.xml` — canonical, no local HR ruleset existed)
+
+Pre-existing findings, none introduced or removed by this fix (verified the 3
+touched RelationManagers' `UnusedFormalParameter $model` predates this change —
+required by Filament's `CreateAction::using()` closure signature, not removable):
+
+- `CouplingBetweenObjects` on `AbsenceRequestResource`, `EmployeeResource`,
+  `MedicalVisitsRelationManager`, `TrainingsRelationManager`.
+- `UnusedFormalParameter` in the 3 RelationManagers (`$model`) and in
+  `AbsenceRequestPolicy`/`EmployeePolicy` (standard Laravel Policy signatures).
+- `LongVariable` in `AddEmployee*Action` constructors and `tests/TestCase.php`.
+
+Out of scope for this story (not touched).
+
+## Pint
+
+`./vendor/bin/pint --test` scoped to the 5 files touched by this fix → `passed`
+(no formatting changes needed). Module-wide `Modules/HR` has pre-existing,
+unrelated style debt (`fully_qualified_strict_types`, `no_unused_imports`, etc. in
+several test/model/policy files) not touched by this story.
+
+## Files modified
+
+- `app/Filament/Resources/AbsenceRequestResource.php`
+- `app/Filament/Resources/EmployeeResource.php`
+- `app/Filament/Resources/EmployeeResource/RelationManagers/DocumentsRelationManager.php`
+- `app/Filament/Resources/EmployeeResource/RelationManagers/MedicalVisitsRelationManager.php`
+- `app/Filament/Resources/EmployeeResource/RelationManagers/TrainingsRelationManager.php`
+
+## Related story
+
+`docs/stories/01.HR-phpstan-fix.story.md`

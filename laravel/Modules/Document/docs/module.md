@@ -45,7 +45,10 @@ Document è una preoccupazione trasversale che serve a Intervention, WorkOrder, 
 
 ## Gap
 
-- Nessun test visibile
+- Test presenti (`tests/Unit/MediaTest.php`, `tests/Feature/MediaActionsTest.php`)
+  ma i 4 Feature test restano bloccati in ambienti dove le connessioni mysql
+  `document`/`intervention`/`customer` non sono migrate (vedi `docs/coverage.md`
+  e `docs/stories/phpstan-l10-fix.story.md`)
 - Policies assenti
 - Azioni limitate
 - Eventi di dominio mancanti

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Filament\Resources\InterventionResource\Pages;
 
-use Filament\Actions;
 use Filament\Actions\Action;
 use Filament\Actions\BulkAction;
 use Filament\Actions\DeleteBulkAction;
@@ -42,12 +41,8 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
 final class ListInterventions extends XotBaseListRecords
 {
-    /**
-     * @phpstan-ignore-next-line Larastan internal error with EloquentBuilder pagination
-     */
     protected static string $resource = InterventionResource::class;
 
-  
     /**
      * @return array<string, Column>
      */
@@ -57,12 +52,15 @@ final class ListInterventions extends XotBaseListRecords
             'work_order_id' => Tables\Columns\TextColumn::make('work_order_id')
                 ->label(__('interventions.fields.work_order_id'))
                 ->formatStateUsing(function ($state, Intervention $record): string {
-                    if ($state === null || (int) $state === 0) {
+                    if ($state === null || ! is_numeric($state) || (int) $state === 0) {
                         return '—';
                     }
-                    $wo = DB::table('work_orders')->where('id', $state)->first(['title', 'code']);
+                    $wo = DB::table('work_orders')->where('id', (int) $state)->first(['title', 'code']);
 
-                    return (string) ($wo?->title ?: $wo?->code ?: '—');
+                    $title = $wo?->title;
+                    $code = $wo?->code;
+
+                    return is_string($title) ? $title : (is_string($code) ? $code : '—');
                 })
                 ->sortable(),
             'customer_display' => Tables\Columns\TextColumn::make('customer_display')
@@ -145,7 +143,7 @@ final class ListInterventions extends XotBaseListRecords
                 ))
                 ->money('EUR')
                 ->badge()
-                ->color(fn (mixed $state): string => (float) $state > 0.0 ? 'warning' : 'gray'),
+                ->color(fn (mixed $state): string => is_numeric($state) && (float) $state > 0.0 ? 'warning' : 'gray'),
             'work_minutes' => Tables\Columns\TextColumn::make('work_minutes')
                 ->label(__('interventions.fields.work_minutes'))
                 ->numeric()
@@ -192,7 +190,8 @@ final class ListInterventions extends XotBaseListRecords
                 ->label(__('work_orders.fields.customer'))
                 ->options(fn (): array => Customer::query()->whereNotNull('legal_name')->orderBy('legal_name')->pluck('legal_name', 'id')->all())
                 ->query(function (Builder $query, array $data): Builder {
-                    $customerId = (int) ($data['value'] ?? 0);
+                    $value = $data['value'] ?? 0;
+                    $customerId = is_numeric($value) ? (int) $value : 0;
 
                     return $customerId > 0
                         ? $query->where(function ($q) use ($customerId): void {
@@ -205,7 +204,8 @@ final class ListInterventions extends XotBaseListRecords
                 ->label(__('work_orders.fields.site'))
                 ->options(fn (): array => CustomerSite::query()->whereNotNull('name')->orderBy('name')->pluck('name', 'id')->all())
                 ->query(function (Builder $query, array $data): Builder {
-                    $siteId = (int) ($data['value'] ?? 0);
+                    $value = $data['value'] ?? 0;
+                    $siteId = is_numeric($value) ? (int) $value : 0;
 
                     return $siteId > 0
                         ? $query->whereHas('workOrder', fn ($workOrderQuery) => $workOrderQuery->where('customer_site_id', $siteId))
@@ -227,17 +227,17 @@ final class ListInterventions extends XotBaseListRecords
                         ->label(__('work_orders.fields.report_to')),
                 ])
                 ->query(function (Builder $query, array $data): Builder {
-                    $from = $data['from'] ?? null;
-                    $to = $data['to'] ?? null;
+                    $from = is_string($data['from'] ?? null) ? $data['from'] : null;
+                    $to = is_string($data['to'] ?? null) ? $data['to'] : null;
 
                     return $query
                         ->when(
                             filled($from),
-                            fn ($innerQuery) => $innerQuery->whereDate('scheduled_at', '>=', (string) $from),
+                            fn ($innerQuery) => $innerQuery->whereDate('scheduled_at', '>=', $from),
                         )
                         ->when(
                             filled($to),
-                            fn ($innerQuery) => $innerQuery->whereDate('scheduled_at', '<=', (string) $to),
+                            fn ($innerQuery) => $innerQuery->whereDate('scheduled_at', '<=', $to),
                         );
                 }),
         ];
@@ -352,16 +352,20 @@ final class ListInterventions extends XotBaseListRecords
                 ])
                 ->action(function (Intervention $record, array $data): void {
                     $userId = (int) Auth::id();
-                    $outcomeCode = (string) ($data['outcome_code'] ?? 'completed');
+                    $outcomeCodeValue = $data['outcome_code'] ?? 'completed';
+                    $outcomeCode = is_string($outcomeCodeValue) ? $outcomeCodeValue : 'completed';
                     if (! in_array($outcomeCode, ['completed', 'suspended', 'quotation'], true)) {
                         $outcomeCode = 'completed';
                     }
 
+                    $travelKmValue = $data['travel_km'] ?? 0;
+                    $travelMinutesValue = $data['travel_minutes'] ?? 0;
+
                     app(FinalizeInterventionReportAction::class)->execute(
                         intervention: $record,
                         validatedByUserId: $userId,
-                        travelKm: (int) $data['travel_km'],
-                        travelMinutes: (int) $data['travel_minutes'],
+                        travelKm: is_numeric($travelKmValue) ? (int) $travelKmValue : 0,
+                        travelMinutes: is_numeric($travelMinutesValue) ? (int) $travelMinutesValue : 0,
                         notes: isset($data['notes']) ? (is_string($data['notes']) ? $data['notes'] : null) : null,
                         outcomeCode: $outcomeCode,
                     );

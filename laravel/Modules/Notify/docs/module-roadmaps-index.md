@@ -231,7 +231,7 @@ This document provides an index of all module roadmaps in the Laraxot ecosystem.
 
 ### Completed Features
 - ✅ PHPStan Level 10: All modules compliant
-- ✅ Laravel 12: Full compatibility
+- ✅ Laravel 13: Full compatibility
 - ✅ Filament 5: Complete migration
 - ✅ Base Classes: Comprehensive system
 - ✅ Type Safety: 100% typed codebase

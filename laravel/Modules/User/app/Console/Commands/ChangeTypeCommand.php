@@ -73,7 +73,7 @@ class ChangeTypeCommand extends Command
             } elseif ($label instanceof Htmlable) {
                 $typeLabel = $label->toHtml();
             } else {
-                $typeLabel = (string) $label;
+                $typeLabel = is_string($label) ? $label : (string) $label;
             }
         }
 
@@ -91,7 +91,7 @@ class ChangeTypeCommand extends Command
             ) {
                 $value = app(SafeObjectCastAction::class)
                     ->getStringProperty($item, 'value', '');
-                $options[$value] = (string) $item->getLabel();
+                $options[$value] = is_string($item->getLabel()) ? $item->getLabel() : '';
             } else {
                 $options[(string) $key] = 'Unknown';
             }
@@ -117,7 +117,7 @@ class ChangeTypeCommand extends Command
         } elseif ($label instanceof Htmlable) {
             $labelString = $label->toHtml();
         } else {
-            $labelString = (string) $label;
+            $labelString = is_string($label) ? $label : (string) $label;
         }
         $this->info("User type changed to '{$labelString}' for {$email}");
     }

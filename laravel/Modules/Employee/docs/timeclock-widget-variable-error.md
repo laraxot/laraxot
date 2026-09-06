@@ -20,7 +20,7 @@ ErrorException: Undefined variable $todayDateFormatted
 ```
 
 ### Laravel/Livewire Context
-- **Framework**: Laravel 12.27.0 + PHP 8.4.5
+- **Framework**: Laravel 13.27.0 + PHP 8.4.5
 - **Component**: Livewire Widget con polling
 - **Method**: Livewire update mechanism
 - **User Role**: `employee::admin` role verified
@@ -189,4 +189,4 @@ grep -n "todayDate" Modules/Employee/resources/views/filament/widgets/time-clock
 *Documento creato: 02/09/2025*  
 *Risoluzione completata: 02/09/2025*  
 *Tipo errore: Runtime - Undefined Variable (View Cache)*  
-*Framework: Laravel 12.27.0 + Livewire*
+*Framework: Laravel 13.27.0 + Livewire*

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Wts\Models;
 
 use Carbon\CarbonInterface;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\User\Models\User;
@@ -29,9 +28,6 @@ use Modules\Wts\Database\Factories\WtsOperationalParameterFactory;
  */
 final class WtsOperationalParameter extends BaseModel
 {
-    /** @use HasFactory<WtsOperationalParameterFactory> */
-    use HasFactory;
-
     use SoftDeletes;
     use WtsAuditable;
 

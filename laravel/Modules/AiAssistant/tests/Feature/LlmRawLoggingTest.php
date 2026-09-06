@@ -11,8 +11,9 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Modules\AiAssistant\Llm\LlmChatJsonClient;
 use Modules\AiAssistant\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
-uses(\Modules\AiAssistant\Tests\TestCase::class);
+uses(TestCase::class);
 
 function fakeChatResponse(string $content): void
 {
@@ -67,14 +68,14 @@ it('logs the raw LLM response when services.llm.log_raw is on', function (): voi
             && str_contains($entry['context']['raw_content'], 'Pinco Pallino'),
     ));
 
-    expect($infoLogs)->toHaveCount(1);
+    Assert::assertCount(1, $infoLogs);
 });
 
 it('returns an empty array (never throws) on a connection timeout', function (): void {
     config(['services.deepseek.key' => 'test-key', 'services.deepseek.base_uri' => 'https://api.deepseek.com/v1']);
     Http::fake(fn () => throw new ConnectionException('cURL error 28: Operation timed out'));
 
-    expect(app(LlmChatJsonClient::class)->complete('system', 'user'))->toBe([]);
+    Assert::assertSame([], app(LlmChatJsonClient::class)->complete('system', 'user'));
 });
 
 it('does NOT log when services.llm.log_raw is off', function (): void {
@@ -90,7 +91,7 @@ it('does NOT log when services.llm.log_raw is off', function (): void {
         static fn (array $entry): bool => $entry['level'] === 'info',
     ));
 
-    expect($infoLogs)->toBeEmpty();
+    Assert::assertEmpty($infoLogs);
 });
 
 it('logs the raw body even when the provider returns an HTTP error', function (): void {
@@ -101,7 +102,7 @@ it('logs the raw body even when the provider returns an HTTP error', function ()
 
     $result = app(LlmChatJsonClient::class)->complete('system', 'user prompt');
 
-    expect($result)->toBe([]);
+    Assert::assertSame([], $result);
 
     $errorLogs = array_values(array_filter(
         $entries->getArrayCopy(),
@@ -111,5 +112,5 @@ it('logs the raw body even when the provider returns an HTTP error', function ()
             && ($entry['context']['status'] ?? null) === 429,
     ));
 
-    expect($errorLogs)->toHaveCount(1);
+    Assert::assertCount(1, $errorLogs);
 });

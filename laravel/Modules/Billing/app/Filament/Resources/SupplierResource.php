@@ -153,11 +153,11 @@ final class SupplierResource extends GatedXotBaseResource
                 TernaryFilter::make('is_active')
                     ->label(__('billing::suppliers.fields.is_active')),
             ])
-            ->actions([
+            ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
                 RestoreBulkAction::make(),
                 ForceDeleteBulkAction::make(),

@@ -1,8 +1,8 @@
-# Strategia di Popolamento Metatag - SaluteOra
+# Strategia di Popolamento Metatag - <nome progetto>
 
 ## Panoramica
 
-I file metatag in `config/local/saluteora/lang/{locale}/metatag.php` sono stati popolati basandosi sui contenuti delle traduzioni presenti nel tema (`Themes/One/lang/{locale}/`), seguendo una strategia di SEO e social media optimization.
+I file metatag in `config/local/<nome progetto>/lang/{locale}/metatag.php` sono stati popolati basandosi sui contenuti delle traduzioni presenti nel tema (`Themes/One/lang/{locale}/`), seguendo una strategia di SEO e social media optimization.
 
 ## Fonti Utilizzate
 
@@ -10,15 +10,15 @@ I file metatag in `config/local/saluteora/lang/{locale}/metatag.php` sono stati 
 - `Themes/One/lang/it/navigation.php` - Contenuti hero e navigazione
 - `Themes/One/lang/it/landing.php` - Contenuti landing page
 - `Themes/One/lang/en/navigation.php` - Versione inglese
-- `Themes/One/lang/en/landing.php` - Versione inglese
+- `Themes/One/lang/en/landing.php` - Versione inglese  
 - `Themes/One/lang/de/navigation.php` - Versione tedesca
 
 ### Contenuti Chiave Estratti
 
 #### Titolo Principale (title)
-- **IT**: "SaluteOra - Salute Orale per Gestanti"
-- **EN**: "SaluteOra - Oral Health for Pregnant Women"
-- **DE**: "SaluteOra - Mundgesundheit für Schwangere"
+- **IT**: "<nome progetto> - Salute Orale per Gestanti"
+- **EN**: "<nome progetto> - Oral Health for Pregnant Women"
+- **DE**: "<nome progetto> - Mundgesundheit für Schwangere"
 
 Basato su: `navigation.hero.welcome_title.label`
 
@@ -33,22 +33,22 @@ Basato su: `navigation.hero.welcome_subtitle.label`
 
 ### Keywords Italiane
 ```
-salute orale, gravidanza, gestanti, dentista, prevenzione, odontoiatria,
-visite gratuite, ISEE, salute madre bambino, carie, igiene dentale,
+salute orale, gravidanza, gestanti, dentista, prevenzione, odontoiatria, 
+visite gratuite, ISEE, salute madre bambino, carie, igiene dentale, 
 controllo dentistico, primo trimestre
 ```
 
 ### Keywords Inglesi
 ```
-oral health, pregnancy, pregnant women, dentist, prevention, dentistry,
-free visits, ISEE, mother baby health, cavities, dental hygiene,
+oral health, pregnancy, pregnant women, dentist, prevention, dentistry, 
+free visits, ISEE, mother baby health, cavities, dental hygiene, 
 dental checkup, first trimester
 ```
 
 ### Keywords Tedesche
 ```
-mundgesundheit, schwangerschaft, schwangere, zahnarzt, prävention,
-zahnmedizin, kostenlose besuche, ISEE, mutter baby gesundheit, karies,
+mundgesundheit, schwangerschaft, schwangere, zahnarzt, prävention, 
+zahnmedizin, kostenlose besuche, ISEE, mutter baby gesundheit, karies, 
 zahnhygiene, zahnkontrolle, erstes trimester
 ```
 
@@ -61,8 +61,8 @@ zahnhygiene, zahnkontrolle, erstes trimester
 
 ### Twitter Cards
 - **twitter_card**: "summary_large_image"
-- **twitter_site**: "@saluteora"
-- **twitter_creator**: "@saluteora"
+- **twitter_site**: "@<nome progetto>"
+- **twitter_creator**: "@<nome progetto>"
 
 ### Immagini
 - **image**: "/img/logo.png" - Logo del progetto
@@ -70,9 +70,9 @@ zahnhygiene, zahnkontrolle, erstes trimester
 ## Informazioni Progetto
 
 ### Autore (author)
-- **IT**: "Progetto SaluteOra - ANDI, INMP, COI"
-- **EN**: "SaluteOra Project - ANDI, INMP, COI"
-- **DE**: "SaluteOra Projekt - ANDI, INMP, COI"
+- **IT**: "Progetto <nome progetto> - ANDI, INMP, COI"
+- **EN**: "<nome progetto> Project - ANDI, INMP, COI"  
+- **DE**: "<nome progetto> Projekt - ANDI, INMP, COI"
 
 Basato sui partner del progetto identificati nelle traduzioni.
 
@@ -92,7 +92,7 @@ Basato sui partner del progetto identificati nelle traduzioni.
 
 ### Tipo Contenuto
 - **type**: "website" - Tipo di contenuto principale
-- **sitename**: "SaluteOra" - Nome breve del sito
+- **sitename**: "<nome progetto>" - Nome breve del sito
 
 ## Utilizzo nei Template
 
@@ -129,7 +129,7 @@ I metatag vengono utilizzati nel componente `Modules\Cms\app\View\Components\Met
 
 ### Aggiornamenti Necessari
 - Aggiornare keywords se cambiano i servizi
-- Modificare descrizioni se cambia il focus del progetto
+- Modificare descrizioni se cambia il focus del progetto  
 - Aggiungere nuove lingue se necessario
 - Aggiornare informazioni partner se cambiano
 

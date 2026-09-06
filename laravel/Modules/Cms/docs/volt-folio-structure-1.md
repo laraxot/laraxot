@@ -109,18 +109,18 @@ function login(): void {
 <x-layouts.guest>
     <div class="max-w-md mx-auto">
         <h2 class="text-2xl font-bold mb-4">Login</h2>
-
+        
         <form wire:submit="login">
             <div class="mb-4">
                 <label for="email">Email</label>
                 <input type="email" id="email" wire:model="email" />
             </div>
-
+            
             <div class="mb-4">
                 <label for="password">Password</label>
                 <input type="password" id="password" wire:model="password" />
             </div>
-
+            
             <button type="submit">Login</button>
         </form>
     </div>
@@ -129,7 +129,7 @@ function login(): void {
 
 ## Documentazione Correlata
 
-- [Folio ](./folio_overview.md)
-- [Volt Best Practices](./volt_best_practices.md)
-- [Autenticazione con Volt e Folio](../../user/docs/volt_folio_auth_implementation.md)
-- [Layout Components](../components/layouts.md)
+- [Folio ](./FOLIO_OVERVIEW.md)
+- [Volt Best Practices](./VOLT_BEST_PRACTICES.md)
+- [Autenticazione con Volt e Folio](../../User/docs/VOLT_FOLIO_AUTH_IMPLEMENTATION.md)
+- [Layout Components](../components/LAYOUTS.md)

@@ -754,8 +754,8 @@ final class ExecuteAiActionProposalAction
         return [
             'ok' => true,
             'production_order_id' => $order->id,
-            'code' => is_string($code) ? $code : (string) $code,
-            'status' => is_string($status) ? $status : (string) $status,
+            'code' => is_string($code) ? $code : '',
+            'status' => is_string($status) ? $status : '',
         ];
     }
 
@@ -783,7 +783,7 @@ final class ExecuteAiActionProposalAction
         return [
             'ok' => true,
             'production_phase_id' => $updated->id,
-            'status' => is_string($statusValue) ? $statusValue : (string) $statusValue,
+            'status' => is_string($statusValue) ? $statusValue : '',
             'started_at' => data_get($updated, 'started_at'),
             'completed_at' => data_get($updated, 'completed_at'),
         ];

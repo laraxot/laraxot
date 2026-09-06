@@ -104,13 +104,12 @@ final class OpenApiCompanyLookupProvider implements CompanyLookupProviderInterfa
     private function extractItalianVat(string $query): ?string
     {
         $normalized = preg_replace('/\s+/', '', $query);
-        if (!is_string($normalized)) {
+        if (! is_string($normalized)) {
             return null;
         }
         $matches = [];
         if (preg_match('/(?:IT)?(\d{11})/i', $normalized, $matches) === 1
-            && isset($matches[1])
-            && is_string($matches[1])
+            && is_string($matches[1] ?? null)
         ) {
             return $matches[1];
         }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Modules\Intervention\Tests\TestCase;
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
 use Illuminate\Support\Facades\DB;
 use Modules\Intervention\Actions\SyncWorkOrderExtraMaterialsAction;
@@ -25,7 +25,8 @@ function workOrderExtraScenario(): array
         'updated_at' => now(),
     ]);
 
-    $userId = (int) UserFactory::new()->createOne()->getKey();
+    $userKey = UserFactory::new()->createOne()->getKey();
+    $userId = is_numeric($userKey) ? (int) $userKey : 0;
 
     $workOrder = WorkOrder::query()->create([
         'customer_id' => $customerId,

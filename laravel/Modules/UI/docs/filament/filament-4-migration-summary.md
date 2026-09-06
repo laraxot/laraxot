@@ -35,7 +35,7 @@ related:
 - ✅ Created comprehensive **Filament 4 Migration Guide**
 - ✅ Created detailed **Filament 4 Components Development Guide**
 - ✅ Updated project **CLAUDE.md** rules for Filament 4
-- ✅ Updated version information (PHP 8.3.25, Filament 4.0.19, Laravel 12.30.1)
+- ✅ Updated version information (PHP 8.3.25, Filament 4.0.19, Laravel 13.30.1)
 
 ### 3. Code Updates and Fixes
 

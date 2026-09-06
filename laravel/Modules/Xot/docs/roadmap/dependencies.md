@@ -273,7 +273,7 @@ Xot (Foundation)
     "require-dev": {
         "phpstan/phpstan": "^2.1",
         "laravel/pint": "^1.25",
-        "pestphp/pest": "^3.8"
+        "pestphp/pest": "*"
     }
 }
 ```
@@ -322,8 +322,8 @@ Xot (Foundation)
 - **Resolution**: Use baseline files for third-party packages
 - **Status**: Resolved
 
-**Laravel 12 Compatibility**:
-- **Issue**: Some packages not yet compatible with Laravel 12
+**Laravel 13 Compatibility**:
+- **Issue**: Some packages not yet compatible with Laravel 13
 - **Resolution**: Use forked versions or wait for updates
 - **Status**: Monitoring
 

@@ -190,4 +190,4 @@ php artisan test --filter="validates user types"
 ---
 
 **Versione**: 1.0
-**Compatibilità**: Pest 3.x, Laravel 12.x, PHP 8.3+
+**Compatibilità**: Pest 3.x, Laravel 13.x, PHP 8.3+

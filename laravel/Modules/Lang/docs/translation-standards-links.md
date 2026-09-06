@@ -62,15 +62,15 @@ Stiamo standardizzando i file di traduzione nel modulo Notify che presentano pro
 ## Documentazione nel Modulo Notify
 
 - [Progresso della Standardizzazione](translation_standards_progress.md)
-- [Regole di Naming per i File di Traduzione](translation_file_naming_rules.md)
-- [Guida alla Struttura dei File di Traduzione](translation_file_structure_guide.md)
+- [Regole di Naming per i File di Traduzione](translation-file-naming-rules.md)
+- [Guida alla Struttura dei File di Traduzione](translation-file-structure-guide.md)
 - [Convenzioni di Traduzione nel Modulo Notify](translation_conventions.md)
 - [Guida alla Correzione dei File di Traduzione](translation_file_correction_guide.md)
 
 ## Documentazione nel Modulo Lang
 
 - [Regole Generali per le Traduzioni](translation_keys_rules.md)
-- [Best Practices per le Traduzioni](translation_keys_best_practices.md)
+- [Best Practices per le Traduzioni](translation-keys-best-practices.md)
 - [Standardizzazione Traduzioni Modulo Notify](translation_notify_conversion.md)
 
 ## Riepilogo dei Problemi

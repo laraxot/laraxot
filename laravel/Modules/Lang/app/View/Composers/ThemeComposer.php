@@ -17,9 +17,10 @@ class ThemeComposer
     /**
      * Get all supported languages as a DataCollection.
      *
-     * @throws \Exception if supportedLocales config is not an array
      *
      * @return DataCollection<int, LangData>
+     *
+     * @throws \Exception if supportedLocales config is not an array
      */
     public function languages(): DataCollection
     {
@@ -55,7 +56,7 @@ class ThemeComposer
             $regionalParts = explode('_', $regional);
             $regionalCode = $regionalParts[0] ?? 'en';
 
-            if ('en' === $regionalCode) {
+            if ($regionalCode === 'en') {
                 $regionalCode = 'gb';
             }
 
@@ -93,9 +94,20 @@ class ThemeComposer
     {
         $currentLocale = app()->getLocale();
 
-        return $this->languages()->filter(function (LangData $item) use ($currentLocale): bool {
-            return $item->id !== $currentLocale;
-        });
+        // `DataCollection::filter()` e' deprecata in spatie/laravel-data v5 («use a
+        // regular Laravel collection instead»). Il filtro passa quindi da
+        // `toCollection()`, e il risultato viene ricomposto in DataCollection perche'
+        // e' quello che il tipo di ritorno e i chiamanti dichiarano.
+        $others = $this->languages()
+            ->toCollection()
+            ->filter(static fn (LangData $item): bool => $item->id !== $currentLocale)
+            ->values()
+            ->all();
+
+        /** @var DataCollection<int, LangData> $collection */
+        $collection = LangData::collect($others, DataCollection::class);
+
+        return $collection;
     }
 
     /**
@@ -117,7 +129,7 @@ class ThemeComposer
         // Verifichiamo che il valore del campo sia una stringa o lo convertiamo in modo sicuro
         $value = $lang->{$field};
         if (! is_string($value)) {
-            return 'id' === $field ? $currentLocale : '';
+            return $field === 'id' ? $currentLocale : '';
         }
 
         return $value;
@@ -126,11 +138,10 @@ class ThemeComposer
     /**
      * Build the URL for the admin panel based on the current route and parameters.
      *
-     * @param string $locale The locale code to build URL for
-     *
+     * @param  string  $locale  The locale code to build URL for
      * @return string The generated URL
      */
-    private function buildAdminLanguageUrl(string $locale): string
+    public function buildAdminLanguageUrl(string $locale): string
     {
         $routeName = Route::currentRouteName();
         if (! is_string($routeName)) {
@@ -147,8 +158,7 @@ class ThemeComposer
     /**
      * Build the HTML for the language flag.
      *
-     * @param string $regionalCode The regional code for the flag
-     *
+     * @param  string  $regionalCode  The regional code for the flag
      * @return string The HTML for the flag
      */
     private function buildFlagHtml(string $regionalCode): string

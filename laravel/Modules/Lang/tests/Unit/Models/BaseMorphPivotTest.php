@@ -9,7 +9,7 @@ use Modules\Lang\Models\BaseMorphPivot;
 use Modules\Lang\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Lang\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('BaseMorphPivot Model', function () {
     test('extends MorphPivot', function () {

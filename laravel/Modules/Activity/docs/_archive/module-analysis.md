@@ -4,7 +4,7 @@
 **Module Name**: Activity  
 **Type**: Activity Logging & Audit Trail Module  
 **Status**: ✅ Active  
-**Framework**: Laravel 12.x + Filament 4.x  
+**Framework**: Laravel 13.x + Filament 4.x  
 **Based on**: Laravel-activitylog package  
 **Language**: Multi-language (IT/EN/DE)  
 

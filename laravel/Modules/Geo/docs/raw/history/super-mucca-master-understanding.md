@@ -65,7 +65,7 @@ $models = getModuleModels($moduleName);
 
 **Stack Tecnologico**:
 - PHP 8.2+ con `declare(strict_types=1)`
-- Laravel 12.3+
+- Laravel 13.3+
 - Filament 4.x
 - Livewire 3.x
 - PHPStan Level 10 (target)

@@ -23,10 +23,10 @@ final class EditWorkOrder extends XotBaseEditRecord
      */
     protected function handleRecordUpdate(Model $record, array $data): Model
     {
-        $newStatusId = isset($data['status_id']) && $data['status_id'] ? (int) $data['status_id'] : null;
+        $newStatusId = is_int($data['status_id'] ?? null) ? (int) $data['status_id'] : null;
         unset($data['status_id']);
 
-        $oldStatusId = (int) ($record->getAttribute('status_id') ?? 0);
+        $oldStatusId = is_int($record->getAttribute('status_id')) ? (int) $record->getAttribute('status_id') : 0;
 
         $record->fill($data)->save();
 

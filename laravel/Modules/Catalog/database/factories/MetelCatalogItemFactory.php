@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Catalog\Database\Factories;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Model;
 use Modules\Catalog\Models\MetelCatalog;
 use Modules\Catalog\Models\MetelCatalogItem;
 
@@ -22,6 +24,8 @@ class MetelCatalogItemFactory extends Factory
     public function definition(): array
     {
         $gross = $this->faker->randomFloat(4, 0.5, 500);
+        /** @var int $packagingValue */
+        $packagingValue = $this->faker->randomElement([1, 10, 25, 50, 100]);
 
         return [
             'metel_catalog_id' => MetelCatalog::factory(),
@@ -31,27 +35,22 @@ class MetelCatalogItemFactory extends Factory
             'etim_code' => $this->faker->optional()->bothify('EC######'),
             'description' => $this->faker->sentence(4),
             'unit_of_measure' => $this->faker->randomElement(['PZ', 'MT', 'KG', 'LT', 'CF']),
-            'packaging' => (string) $this->faker->randomElement([1, 10, 25, 50, 100]),
+            'packaging' => (string) $packagingValue,
             'gross_price' => $gross,
             'net_price' => round($gross * $this->faker->randomFloat(2, 0.4, 0.9), 4),
         ];
     }
 
     /**
-     * @param array<string, mixed> $attributes
-     * @return \Illuminate\Database\Eloquent\Collection<int, MetelCatalogItem>
+     * @return Collection<int, MetelCatalogItem>
      */
-    public function create(array $attributes = []): \Illuminate\Database\Eloquent\Collection
+    public function create(mixed $attributes = [], ?Model $parent = null): Collection
     {
-        return parent::create($attributes);
+        return parent::create($attributes, $parent);
     }
 
-    /**
-     * @param array<string, mixed> $attributes
-     * @return MetelCatalogItem
-     */
-    public function createOne(array $attributes = []): MetelCatalogItem
+    public function createOne(mixed $attributes = [], ?Model $parent = null): MetelCatalogItem
     {
-        return parent::createOne($attributes);
+        return parent::createOne($attributes, $parent);
     }
 }

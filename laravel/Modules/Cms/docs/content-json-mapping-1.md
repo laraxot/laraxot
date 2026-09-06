@@ -66,7 +66,7 @@ trait SushiToJsons
 
         return $file;
     }
-
+    
     // Altri metodi...
 }
 ```
@@ -105,9 +105,9 @@ Quando viene richiesta la homepage, il flusso di caricamento dei contenuti è il
 8. I blocchi di contenuto vengono estratti dal modello e passati al componente `Blocks` per il rendering
 
 ## Perché lo Slug "home" è Collegato al File 1.json
-Questo avviene perché il trait `SushiToJsons` carica tutti i JSON in `/config/local/saluteora/database/content/pages/`, e la query Eloquent `Page::firstOrCreate(['slug'=>'home'], ...)` cerca nello "slug" interno di ogni file. Il file `1.json` contiene `"slug": "home"`, perciò viene restituito.
+Questo avviene perché il trait `SushiToJsons` carica tutti i JSON in `/config/local/<nome progetto>/database/content/pages/`, e la query Eloquent `Page::firstOrCreate(['slug'=>'home'], ...)` cerca nello "slug" interno di ogni file. Il file `1.json` contiene `"slug": "home"`, perciò viene restituito.
 
-Consulta anche la documentazione di riferimento in root: ../../../../../docs/gestione-homepage.md
+Consulta anche la documentazione di riferimento in root: ../../../../docs/gestione-homepage.md
 
 ## Vantaggi di Questa Architettura
 

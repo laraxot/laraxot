@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Modules\Intervention\Tests\TestCase;
 
-uses(\Modules\Intervention\Tests\TestCase::class);
+uses(TestCase::class);
 
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
@@ -99,8 +99,10 @@ it('serves the report PDF over the dedicated pdf link', function (): void {
     $response = $this->get(route('interventions.report.public.pdf', ['token' => $share->token]));
 
     $response->assertOk();
+    $content = $response->getContent();
+    $contentStr = is_string($content) ? $content : '';
     expect($response->headers->get('content-type'))->toContain('application/pdf')
-        ->and(substr((string) $response->getContent(), 0, 4))->toBe('%PDF');
+        ->and(substr($contentStr, 0, 4))->toBe('%PDF');
 });
 
 it('returns 404 for the pdf link with an unknown token', function (): void {

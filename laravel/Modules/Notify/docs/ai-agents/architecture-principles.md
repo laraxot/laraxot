@@ -1,11 +1,11 @@
 # Architecture Principles
 
-Key architectural rules for Quaeris Fila5 Mono (Laraxot / Laravel 12 / Filament 5).
-Key architectural rules for App Fila5 Mono (Laraxot / Laravel 12 / Filament 5).
+Key architectural rules for Quaeris Fila5 Mono (Laraxot / Laravel 13 / Filament 5).
+Key architectural rules for App Fila5 Mono (Laraxot / Laravel 13 / Filament 5).
 
 ## 0. Database Configuration (CRITICAL)
 
-**REGOLA ASSOLUTA**: `laravel/config/database.php` deve essere identico alla versione ufficiale Laravel 12.x.
+**REGOLA ASSOLUTA**: `laravel/config/database.php` deve essere identico alla versione ufficiale Laravel 13.x.
 
 **Perche**:
 - Compatibilita con aggiornamenti Laravel

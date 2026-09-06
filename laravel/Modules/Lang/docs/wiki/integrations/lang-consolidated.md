@@ -2394,11 +2394,11 @@ $value = $model->field;  // Ritorna traduzione 'en' se esiste, altrimenti fallba
 
 **Ultimo aggiornamento**: 27 Ottobre 2025
 **Versione Plugin**: lara-zeus/spatie-translatable 1.0.4
-**Compatibilità**: Filament 4.x, Laravel 12.x
-**Compatibilità**: Filament 4.x, Laravel 12.x
-**Compatibilità**: Filament 4.x, Laravel 12.x
-**Compatibilità**: Filament 4.x, Laravel 12.x
-**Compatibilità**: Filament 4.x, Laravel 12.x
+**Compatibilità**: Filament 4.x, Laravel 13.x
+**Compatibilità**: Filament 4.x, Laravel 13.x
+**Compatibilità**: Filament 4.x, Laravel 13.x
+**Compatibilità**: Filament 4.x, Laravel 13.x
+**Compatibilità**: Filament 4.x, Laravel 13.x
 
 ---
 

@@ -35,7 +35,7 @@ final class ViewCustomer extends XotBaseViewRecord
                 ->label('Rendicontazione')
                 ->icon('heroicon-o-document-chart-bar')
                 ->color('success')
-                ->form([
+                ->schema([
                     Radio::make('format')
                         ->label('Formato')
                         ->options([

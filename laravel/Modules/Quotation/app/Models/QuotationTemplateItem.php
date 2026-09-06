@@ -7,7 +7,6 @@ namespace Modules\Quotation\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Catalog\Models\Product;
-use Modules\Quotation\Database\Factories\QuotationTemplateItemFactory;
 use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
@@ -25,7 +24,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 final class QuotationTemplateItem extends BaseModel
 {
-    /** @use HasXotFactory<QuotationTemplateItemFactory> */
     use HasXotFactory;
 
     protected $table = 'quotation_template_items';

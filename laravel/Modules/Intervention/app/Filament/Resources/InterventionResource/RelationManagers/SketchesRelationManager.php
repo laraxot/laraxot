@@ -55,7 +55,7 @@ final class SketchesRelationManager extends XotBaseRelationManager
                 Tables\Columns\ImageColumn::make('path')
                     ->label(__('signatures.fields.image'))
                     ->disk('public')
-                    ->height(60)
+                    ->imageHeight(60)
                     ->width(120)
                     ->extraImgAttributes(['class' => 'object-contain rounded border border-gray-200 bg-white']),
                 Tables\Columns\TextColumn::make('created_at')
@@ -90,7 +90,7 @@ final class SketchesRelationManager extends XotBaseRelationManager
                         );
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 Action::make('open')
                     ->label(__('documents.actions.open'))
                     ->icon('heroicon-o-eye')
@@ -109,7 +109,7 @@ final class SketchesRelationManager extends XotBaseRelationManager
                     ->openUrlInNewTab(),
                 DeleteAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
     }

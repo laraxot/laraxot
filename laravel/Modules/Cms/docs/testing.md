@@ -2,7 +2,7 @@
 
 ## Overview
 
-This module follows the project's [testing guidelines](../../docs/testing.md) and uses Pest PHP as the testing framework.
+This module follows the project's [testing guidelines](../../docs/TESTING.md) and uses Pest PHP as the testing framework.
 
 ## Test Structure
 
@@ -11,8 +11,20 @@ tests/
   Feature/    # Feature tests
   Unit/       # Unit tests
   Pest.php    # Module-specific Pest configuration
+  PestHelpers.php # Helper globali (autoload-dev.files, senza namespace)
   TestCase.php # Base test case for the module
 ```
+
+## PestHelpers (PHPStan + merge)
+
+- Funzioni in `tests/PestHelpers.php` sono **globali** (`cmsActingAsGet`, `cmsGet`, …).
+  Non usare `use function Modules\Cms\Tests\...`: quel namespace non esiste sul file.
+- Ogni helper e' dietro `function_exists(...)`: evita `Cannot redeclare` se un merge
+  o un doppio autoload ripete la definizione.
+- Homepage blocchi: fonte di verità `TestCase::homepageJsonForBlocksArchitecture()`
+  (PSR-4, non si perde nei merge). Wrapper globale opzionale:
+  `loadHomepageJsonForBlocksArchitectureTest()`. Story [ROOT-17.10](../../../../docs/stories/17-10-helper-e-blocchi-persi-nella-bonifica.md).
+- Prima di rimuovere un helper: `grep -rn '\bnomeHelper(' Modules --include='*.php'`.
 
 ## Writing Tests
 

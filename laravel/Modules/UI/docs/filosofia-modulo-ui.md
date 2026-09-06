@@ -666,7 +666,7 @@ Laravel risolve automaticamente override temi con view namespace precedence.
 
 **Modulo**: UI
 **Versione**: 4.1.0
-**Framework**: Laravel 12 + Filament 4
+**Framework**: Laravel 13 + Filament 4
 **PHPStan**: Level 10 ✅
 **Filosofia**: Estendere, Riutilizzare, Tradurre, Adattare
 **Zen**: I componenti si scoprono da soli 禅

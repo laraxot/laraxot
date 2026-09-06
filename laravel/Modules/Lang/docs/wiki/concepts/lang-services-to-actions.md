@@ -46,5 +46,5 @@ resta thin e la business logic è testabile in isolamento.
 ## Test
 
 `Modules/Lang/tests/unit/actions/RecordMissingTranslationActionTest.php` (pest).
-Prerequisito ambiente pre-esistente: il DB di test `database/fixcity_data.sqlite`
+Prerequisito ambiente pre-esistente: il DB di test `database/database.sqlite`
 deve esistere e avere la tabella `translations` (migrare il modulo Lang).

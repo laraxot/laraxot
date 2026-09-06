@@ -47,7 +47,7 @@ final class ViewWorkOrder extends XotBaseViewRecord
             'exportReport' => Actions\Action::make('exportReport')
                 ->icon('heroicon-o-document-chart-bar')
                 ->color('success')
-                ->form([
+                ->schema([
                     Radio::make('format')
                         ->options([
                             'pdf' => 'PDF',
@@ -67,12 +67,14 @@ final class ViewWorkOrder extends XotBaseViewRecord
                 ])
                 ->action(function (array $data): mixed {
                     $workOrder = $this->resolveWorkOrderRecord();
-                    $format = match ((string) ($data['format'] ?? 'pdf')) {
+                    $format = match (is_string($data['format'] ?? null) ? $data['format'] : 'pdf') {
                         'docx' => 'docx',
                         default => 'pdf',
                     };
-                    $from = CarbonImmutable::parse((string) $data['from'])->startOfDay();
-                    $to = CarbonImmutable::parse((string) $data['to'])->endOfDay();
+                    $fromRaw = is_string($data['from'] ?? null) ? $data['from'] : now()->startOfMonth()->toDateString();
+                    $toRaw = is_string($data['to'] ?? null) ? $data['to'] : now()->endOfMonth()->toDateString();
+                    $from = CarbonImmutable::parse($fromRaw)->startOfDay();
+                    $to = CarbonImmutable::parse($toRaw)->endOfDay();
 
                     $result = app(GenerateWorkOrderReportAction::class)->execute(
                         workOrder: $workOrder,

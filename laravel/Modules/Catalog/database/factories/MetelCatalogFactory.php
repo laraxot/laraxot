@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Catalog\Database\Factories;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Model;
 use Modules\Catalog\Models\MetelCatalog;
 
 /**
@@ -33,20 +35,15 @@ class MetelCatalogFactory extends Factory
     }
 
     /**
-     * @param array<string, mixed> $attributes
-     * @return \Illuminate\Database\Eloquent\Collection<int, MetelCatalog>
+     * @return Collection<int, MetelCatalog>
      */
-    public function create(array $attributes = []): \Illuminate\Database\Eloquent\Collection
+    public function create(mixed $attributes = [], ?Model $parent = null): Collection
     {
-        return parent::create($attributes);
+        return parent::create($attributes, $parent);
     }
 
-    /**
-     * @param array<string, mixed> $attributes
-     * @return MetelCatalog
-     */
-    public function createOne(array $attributes = []): MetelCatalog
+    public function createOne(mixed $attributes = [], ?Model $parent = null): MetelCatalog
     {
-        return parent::createOne($attributes);
+        return parent::createOne($attributes, $parent);
     }
 }

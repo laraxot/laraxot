@@ -73,10 +73,23 @@ class Foo extends bar
 ```
 
 </div>
+### Versione HEAD
+
 
 ## Collegamenti tra versioni di customizing-your-site.md
-* [customizing-your-site.md](laravel/modules/gdpr/docs/customizing-your-site.md)
-* [customizing-your-site.md](laravel/modules/xot/docs/customizing-your-site.md)
-* [customizing-your-site.md](laravel/modules/ui/docs/customizing-your-site.md)
-* [customizing-your-site.md](laravel/modules/tenant/docs/it/customizing-your-site.md)
-* [customizing-your-site.md](laravel/modules/cms/docs/customizing-your-site.md)
+* [customizing-your-site.md](../../../Gdpr/project_docs/customizing-your-site.md)
+* [customizing-your-site.md](../../../Xot/project_docs/customizing-your-site.md)
+* [customizing-your-site.md](../../../UI/project_docs/customizing-your-site.md)
+* [customizing-your-site.md](../../../Tenant/project_docs/it/customizing-your-site.md)
+* [customizing-your-site.md](../../../Cms/project_docs/customizing-your-site.md)
+
+
+### Versione Incoming
+
+
+---
+* [customizing-your-site.md](laravel/Modules/Gdpr/docs/customizing-your-site.md)
+* [customizing-your-site.md](laravel/Modules/Xot/docs/customizing-your-site.md)
+* [customizing-your-site.md](laravel/Modules/UI/docs/customizing-your-site.md)
+* [customizing-your-site.md](laravel/Modules/Tenant/docs/it/customizing-your-site.md)
+* [customizing-your-site.md](laravel/Modules/Cms/docs/customizing-your-site.md)

@@ -409,9 +409,9 @@ PROMPT;
                     'ok' => true,
                     'results' => $products->map(static fn (Product $product): array => [
                         'id' => (int) $product->id,
-                        'name' => (string) data_get($product, 'name', ''),
-                        'sku' => (string) data_get($product, 'sku', ''),
-                        'unit_price' => is_numeric(data_get($product, 'unit_price')) ? (float) data_get($product, 'unit_price') : null,
+                        'name' => is_string($product->name) ? $product->name : '',
+                        'sku' => is_string($product->sku) ? $product->sku : '',
+                        'unit_price' => is_numeric($product->unit_price) ? (float) $product->unit_price : null,
                     ])->all(),
                 ];
             });
@@ -446,8 +446,8 @@ PROMPT;
                     'ok' => true,
                     'results' => $warehouses->map(static fn (Warehouse $warehouse): array => [
                         'id' => (int) $warehouse->id,
-                        'name' => (string) data_get($warehouse, 'name', ''),
-                        'code' => (string) data_get($warehouse, 'code', ''),
+                        'name' => is_string(data_get($warehouse, 'name')) ? data_get($warehouse, 'name') : '',
+                        'code' => is_string(data_get($warehouse, 'code')) ? data_get($warehouse, 'code') : '',
                     ])->all(),
                 ];
             });
@@ -507,7 +507,7 @@ PROMPT;
                         ]))));
 
                         return [
-                            'id' => (int) $row->id,
+                            'id' => is_numeric($row->id ?? null) ? (int) $row->id : 0,
                             'label' => trim(implode(' - ', array_values(array_filter([
                                 is_scalar($row->number ?? null) ? (string) $row->number : 'Fattura senza numero',
                                 is_scalar($row->customer_name ?? null) ? (string) $row->customer_name : '',
@@ -533,7 +533,7 @@ PROMPT;
 
         $normalized = mb_strtolower($search);
         $normalized = preg_replace('/[^\pL\pN]+/u', ' ', $normalized);
-        $normalized = trim((string) $normalized);
+        $normalized = is_string($normalized) ? trim($normalized) : '';
 
         return in_array($normalized, [
             'fattura',
@@ -604,7 +604,7 @@ PROMPT;
                         ]))));
 
                         return [
-                            'id' => (int) $row->id,
+                            'id' => is_numeric($row->id ?? null) ? (int) $row->id : 0,
                             'label' => trim(implode(' - ', array_values(array_filter([
                                 is_scalar($row->code ?? null) ? (string) $row->code : 'Preventivo senza codice',
                                 is_scalar($row->customer_name ?? null) ? (string) $row->customer_name : '',
@@ -720,7 +720,7 @@ PROMPT;
                 $warehouseName = null;
                 if ($warehouse_id !== null) {
                     $wh = Warehouse::query()->find($warehouse_id);
-                    $warehouseName = $wh ? (string) data_get($wh, 'name', '') : null;
+                    $warehouseName = $wh ? (is_string(data_get($wh, 'name')) ? data_get($wh, 'name') : '') : null;
                 }
 
                 $snap = app(GetStockSnapshotAction::class)->execute($product_id, $warehouse_id);
@@ -760,8 +760,8 @@ PROMPT;
                 $out = [];
                 foreach ($items as $item) {
                     $out[] = [
-                        'component_product_id' => (int) data_get($item, 'component_product_id'),
-                        'quantity' => (float) data_get($item, 'quantity') * $quantity,
+                        'component_product_id' => is_numeric(data_get($item, 'component_product_id')) ? (int) data_get($item, 'component_product_id') : 0,
+                        'quantity' => is_numeric(data_get($item, 'quantity')) ? (float) data_get($item, 'quantity') * $quantity : 0.0,
                     ];
                 }
 
@@ -1146,7 +1146,7 @@ PROMPT;
             ->addProperty(ToolProperty::make('to_status', PropertyType::STRING, 'Nuovo status: in_progress|completed', true, ['in_progress', 'completed']))
             ->setCallable(function (int $production_phase_id, string $to_status): array {
                 $phase = ProductionPhase::query()->find($production_phase_id);
-                $orderId = $phase ? (int) data_get($phase, 'production_order_id') : null;
+                $orderId = $phase && is_numeric(data_get($phase, 'production_order_id')) ? (int) data_get($phase, 'production_order_id') : null;
                 $phaseName = $phase ? $this->stringValue(data_get($phase, 'name')) : "fase #{$production_phase_id}";
                 $preview = "Avanza {$phaseName} → {$this->humanizeStatusCode($to_status)}.";
                 if ($orderId) {
@@ -1243,14 +1243,14 @@ PROMPT;
                         'service_type' => $this->stringValue(data_get($document, 'service_type')),
                         'supplier_name' => $this->stringValue(data_get($document, 'supplier_name')),
                         'analysis_status' => $this->stringValue(data_get($document, 'analysis_status')),
-                        'confidence_score' => (data_get($document, 'confidence_score')) === null ? null : (float) data_get($document, 'confidence_score'),
+                        'confidence_score' => ($val = data_get($document, 'confidence_score')) !== null && is_numeric($val) ? (float) $val : null,
                         'customer' => data_get($payload, 'customer', []),
                         'supply' => data_get($payload, 'supply', []),
                         'contract' => data_get($payload, 'contract', []),
                         'review_candidates' => $document->customerMatches
                             ->map(fn ($match): array => [
                                 'customer' => $this->stringValue(data_get($match, 'customer.legal_name')),
-                                'score' => (float) data_get($match, 'score'),
+                                'score' => ($val = data_get($match, 'score')) !== null && is_numeric($val) ? (float) $val : 0.0,
                                 'reason' => $this->stringValue(data_get($match, 'reason')),
                             ])->all(),
                     ],
@@ -1274,7 +1274,8 @@ PROMPT;
                 }
 
                 $preview = 'Conferma import Energy Broker di '.$this->describeEnergyBrokerDocumentModel($document).'.';
-                if (in_array((string) data_get($document, 'analysis_status', ''), ['needs_review', 'failed'], true)) {
+                $status = data_get($document, 'analysis_status', '');
+                if (is_string($status) && in_array($status, ['needs_review', 'failed'], true)) {
                     $preview .= ' Attenzione: il documento richiede revisione manuale prima di considerarlo definitivo.';
                 }
                 if ($review_note !== null && trim($review_note) !== '') {

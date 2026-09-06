@@ -33,7 +33,7 @@ class ViewOauthAuthCode extends XotBaseViewRecord
                     'code_grid' => Grid::make(2)
                         ->schema([
                             'id' => TextEntry::make('id')
-                                ->formatStateUsing(fn (mixed $state): string => Str::limit((string) $state, 15, '...')),
+                                ->formatStateUsing(fn (mixed $state): string => Str::limit(is_string($state) ? $state : '', 15, '...')),
                             'client_name' => TextEntry::make('client.name')
                                 ->url(function (mixed $state, $record): ?string {
                                     if (! $record instanceof Model) {
@@ -73,10 +73,10 @@ class ViewOauthAuthCode extends XotBaseViewRecord
                         ->formatStateUsing(function (mixed $state): string {
                             if (is_array($state)) {
                                 /* @var array<int|string, mixed> $state */
-                                return implode(', ', array_map(fn (mixed $item): string => (string) $item, $state));
+                                return implode(', ', array_map(fn (mixed $item): string => is_string($item) ? $item : '', $state));
                             }
 
-                            return (string) $state;
+                            return is_string($state) ? $state : '';
                         })
                         ->columnSpanFull(),
                 ])->columns(1),

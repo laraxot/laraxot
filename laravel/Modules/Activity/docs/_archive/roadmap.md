@@ -37,7 +37,7 @@ Evolvere il sistema di logging verso un'analisi proattiva (AI-driven) e una visu
 ### Fase 1: Qualità e Pulizia (Settimana 1)
 - [ ] Rimozione sistematica dei file `.txt`, `.xml` di coverage e dei duplicati `.md`.
 - [ ] Consolidamento della guida agli eventi di dominio.
-- [ ] Verifica compatibilità Laravel 12.
+- [ ] Verifica compatibilità Laravel 13.
 
 ### Fase 2: Enterprise UI (Settimana 2)
 - [ ] Implementazione del **Cluster "Observability"**:

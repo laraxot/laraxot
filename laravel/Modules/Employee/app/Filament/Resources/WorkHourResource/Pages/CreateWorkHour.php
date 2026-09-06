@@ -23,7 +23,6 @@ class CreateWorkHour extends XotBaseCreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        // Set default status if not provided
         if (! isset($data['status'])) {
             $data['status'] = WorkHourStatusEnum::PENDING->value;
         }

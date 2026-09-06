@@ -1,11 +1,19 @@
 ---
 title: "Regole di Naming per File"
 module: "Lang"
+<<<<<<<< HEAD:docs/wiki/integrations/_da-riconciliare/file-naming.md
 type: concept
 tags: [migrazione, filament, 4]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "migrazione filament 4"
+========
+type: rule
+tags: [migration, filament]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "migration filament"
+>>>>>>>> laraxot/dev:docs/archive/historical/file-naming-rules.md
 related:
   - "./italian-text-refined-audit-report.md"
 ---

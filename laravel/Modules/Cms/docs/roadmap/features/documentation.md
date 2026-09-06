@@ -52,7 +52,7 @@ Le guide principali coprono tutti gli aspetti fondamentali:
 
 ## Requisiti
 - PHP 8.2+
-- Laravel 12.x
+- Laravel 13.x
 - Filament 4.x
 - MySQL 8.0+
 

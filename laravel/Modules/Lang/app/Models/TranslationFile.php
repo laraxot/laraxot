@@ -11,24 +11,24 @@ namespace Modules\Lang\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Modules\Lang\Actions\GetAllTranslationAction;
 use Modules\Lang\Database\Factories\TranslationFileFactory;
 use Modules\Xot\Contracts\ProfileContract;
+use Sushi\Sushi;
 
 use function Safe\json_encode;
 
-use Sushi\Sushi;
-
 /**
- * @property string|null                  $key
- * @property string|null                  $path
- * @property string|null                  $id
- * @property string|null                  $name
+ * @property string|null $key
+ * @property string|null $path
+ * @property string|null $id
+ * @property string|null $name
  * @property array<array-key, mixed>|null $content
- * @property ProfileContract|null         $creator
- * @property ProfileContract|null         $updater
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
  *
- * @method static TranslationFileFactory          factory($count = null, $state = [])
+ * @method static TranslationFileFactory factory($count = null, $state = [])
  * @method static Builder<static>|TranslationFile newModelQuery()
  * @method static Builder<static>|TranslationFile newQuery()
  * @method static Builder<static>|TranslationFile query()
@@ -74,7 +74,7 @@ class TranslationFile extends BaseModel
         try {
             return $this->loadTranslationDataWithErrorHandling();
         } catch (\Throwable $e) {
-            \Illuminate\Support\Facades\Log::warning('TranslationFile::getRows failed', [
+            Log::warning('TranslationFile::getRows failed', [
                 'error' => $e->getMessage(),
                 'file' => $e->getFile(),
                 'line' => $e->getLine(),
@@ -87,26 +87,27 @@ class TranslationFile extends BaseModel
     /**
      * Carica i dati di traduzione con error handling robusto.
      *
-     * @throws \Throwable
      *
      * @return array<int, array<string, mixed>>
+     *
+     * @throws \Throwable
      */
     private function loadTranslationDataWithErrorHandling(): array
     {
         $files = app(GetAllTranslationAction::class)->execute();
 
         /** @var array<int, array<string, mixed>> $result */
-        $result = Arr::map($files, function ($item) {
-            if (! is_array($item)) {
-                return [];
-            }
-
+        $result = Arr::map($files, function (array $item) {
             $key = $item['key'] ?? null;
-            $keyStr = is_string($key) ? $key : (string) $key;
+            /** @var string|int|float|bool|null $keyNarrowed */
+            $keyNarrowed = $key;
+            $keyStr = is_string($keyNarrowed) ? $keyNarrowed : (string) $keyNarrowed;
             $item['id'] = isset($item['key']) ? $keyStr : '';
 
             $pathValue = $item['path'] ?? null;
-            $pathStr = is_string($pathValue) ? $pathValue : (string) $pathValue;
+            /** @var string|int|float|bool|null $pathValueNarrowed */
+            $pathValueNarrowed = $pathValue;
+            $pathStr = is_string($pathValueNarrowed) ? $pathValueNarrowed : (string) $pathValueNarrowed;
             $item['name'] = isset($item['path']) ? basename($pathStr, '.php') : '';
 
             if (isset($item['path'])) {
@@ -136,7 +137,7 @@ class TranslationFile extends BaseModel
 
             return json_encode($content) ?: '';
         } catch (\Throwable $e) {
-            \Illuminate\Support\Facades\Log::debug('Failed to load translation file', [
+            Log::debug('Failed to load translation file', [
                 'path' => $path,
                 'error' => $e->getMessage(),
             ]);

@@ -119145,15 +119145,15 @@
       "norm_label": "laravel12-lang-path-rule.md"
     },
     {
-      "label": "Laravel 12 lang path rule",
+      "label": "Laravel 13 lang path rule",
       "file_type": "document",
       "source_file": "laravel/Modules/Lang/docs/wiki/concepts/laravel12-lang-path-rule.md",
       "source_location": "L12",
       "_origin": "ast",
       "id": "docs_wiki_concepts_laravel12_lang_path_rule_laravel_12_lang_path_rule",
       "community": 721,
-      "community_name": "Laravel 12 lang path rule",
-      "norm_label": "laravel 12 lang path rule"
+      "community_name": "Laravel 13 lang path rule",
+      "norm_label": "Laravel 13 lang path rule"
     },
     {
       "label": "Sintesi",
@@ -119163,7 +119163,7 @@
       "_origin": "ast",
       "id": "docs_wiki_concepts_laravel12_lang_path_rule_sintesi",
       "community": 721,
-      "community_name": "Laravel 12 lang path rule",
+      "community_name": "Laravel 13 lang path rule",
       "norm_label": "sintesi"
     },
     {
@@ -119174,7 +119174,7 @@
       "_origin": "ast",
       "id": "docs_wiki_concepts_laravel12_lang_path_rule_regola_modulo",
       "community": 721,
-      "community_name": "Laravel 12 lang path rule",
+      "community_name": "Laravel 13 lang path rule",
       "norm_label": "regola modulo"
     },
     {
@@ -119185,7 +119185,7 @@
       "_origin": "ast",
       "id": "docs_wiki_concepts_laravel12_lang_path_rule_backlink",
       "community": 721,
-      "community_name": "Laravel 12 lang path rule",
+      "community_name": "Laravel 13 lang path rule",
       "norm_label": "backlink"
     },
     {

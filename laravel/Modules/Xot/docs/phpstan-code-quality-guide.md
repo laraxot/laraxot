@@ -2,14 +2,14 @@
 
 **Ultimo aggiornamento**: [DATE]
 **Principi**: DRY + KISS + SOLID + Robust
-**Stack**: Laravel 12 + Filament 4 + PHP 8.3 + Laraxot
+**Stack**: Laravel 13 + Filament 4 + PHP 8.3 + Laraxot
 **Ultimo aggiornamento**: [DATE]  
 **Ultimo aggiornamento**: 2025-12-22
 **Principi**: DRY + KISS + SOLID + Robust
-**Stack**: Laravel 12 + Filament 4 + PHP 8.3 + Laraxot
+**Stack**: Laravel 13 + Filament 4 + PHP 8.3 + Laraxot
 **Ultimo aggiornamento**: 2025-12-22  
 **Principi**: DRY + KISS + SOLID + Robust  
-**Stack**: Laravel 12 + Filament 4 + PHP 8.3 + Laraxot  
+**Stack**: Laravel 13 + Filament 4 + PHP 8.3 + Laraxot  
 **Obiettivo**: 0 errori PHPStan Level 10 + Complexity < 10 + Quality > 80%
 
 ---
@@ -1914,7 +1914,7 @@ $model->update($filtered);
 
 ## 🎓 Mantra Finale
 
-**DRY + KISS + SOLID + Robust + Laravel 12 + Filament 4 + PHP 8.3 + Laraxot**
+**DRY + KISS + SOLID + Robust + Laravel 13 + Filament 4 + PHP 8.3 + Laraxot**
 
 **Filosofia Zen**: "Non avrai altro path all'infuori del relativo"
 

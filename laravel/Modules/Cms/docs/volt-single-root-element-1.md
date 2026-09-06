@@ -47,9 +47,9 @@ Wrappare sempre gli elementi multipli in un singolo elemento container:
 ## Collegamenti Bidirezionali
 - [Volt Introduction](volt-introduction.md)
 - [Volt Folio Esempio](volt-folio-esempio.md)
-- [Struttura Layout](struttura-layout-componenti-blade-saluteora.md)
+- [Struttura Layout](struttura-layout-componenti-blade-<nome progetto>.md)
 
 ## Vedi Anche
-- [Documentazione Principale](../../../docs/index.md)
+- [Documentazione Principale](../../docs/INDEX.md)
 - [Best Practices Frontend](web-design-rules.md)
-- [Gestione Componenti](components.md)
+- [Gestione Componenti](components.md) 

@@ -127,13 +127,13 @@ final class MetelCatalogResource extends GatedXotBaseResource
                     ->label(__('metel.fields.is_active'))
                     ->boolean(),
             ])
-            ->actions([
+            ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
                 Action::make('importFile')
                     ->label(__('metel.actions.import_file'))
                     ->icon('heroicon-o-arrow-up-tray')
-                    ->form([
+                    ->schema([
                         Select::make('format')
                             ->label(__('metel.import.format'))
                             ->options([
@@ -200,7 +200,7 @@ final class MetelCatalogResource extends GatedXotBaseResource
                     }),
                 DeleteAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
     }

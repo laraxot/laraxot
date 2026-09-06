@@ -19,7 +19,7 @@ This documentation is organized in separate files to:
 
 ## 🏗️ Technology Stack
 
-**Core Stack**: Laravel 12.x | PHP 8.3+ | Filament 4.x | Pest 3.x | PHPStan Level 10 (maximum strictness) | MySQL
+**Core Stack**: Laravel 13.x | PHP 8.3+ | Filament 4.x | Pest 3.x | PHPStan Level 10 (maximum strictness) | MySQL
 
 ### Module Architecture
 

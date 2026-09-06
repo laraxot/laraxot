@@ -321,7 +321,7 @@ $action->onQueue('default')->execute($data);
 
 ### 7.4 Technical Constraints
 - PHP 8.3+ required
-- Laravel 12+ required
+- Laravel 13+ required
 - PHPStan level MAX
 - Strict typing required
 

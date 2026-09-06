@@ -60,9 +60,11 @@ final class InterventionsRelationManager extends XotBaseRelationManager
                             ->orderBy('description')
                             ->get()
                             ->map(static function ($line): string {
-                                $quantity = (float) ($line->getAttribute('quantity') ?? 0);
+                                $quantity = is_numeric($line->getAttribute('quantity') ?? null)
+                                    ? (float) $line->getAttribute('quantity')
+                                    : 0.0;
 
-                                return number_format($quantity, 2, ',', '.').'x '.(string) ($line->getAttribute('description') ?? '');
+                                return number_format($quantity, 2, ',', '.').'x '.is_string($line->getAttribute('description') ?? null) ? $line->getAttribute('description') : '';
                             });
 
                         if ($manualMaterials->isNotEmpty()) {
@@ -75,13 +77,15 @@ final class InterventionsRelationManager extends XotBaseRelationManager
                             ->orderBy('occurred_at')
                             ->get()
                             ->map(static function ($movement): string {
-                                $quantity = (int) ($movement->getAttribute('quantity') ?? 0);
+                                $quantity = is_int($movement->getAttribute('quantity') ?? null)
+                                    ? (int) $movement->getAttribute('quantity')
+                                    : 0;
                                 $product = $movement->getRelationValue('product');
                                 $productName = 'Materiale';
                                 if ($product instanceof Model) {
                                     $name = $product->getAttribute('name');
-                                    if ($name !== null) {
-                                        $productName = (string) $name;
+                                    if (is_string($name)) {
+                                        $productName = $name;
                                     }
                                 }
 
@@ -99,11 +103,11 @@ final class InterventionsRelationManager extends XotBaseRelationManager
             ])
             ->filters([
                 Filter::make('notes_text_search')
-                    ->form([
+                    ->schema([
                         TextInput::make('term'),
                     ])
                     ->query(function (Builder $query, array $data): Builder {
-                        $term = trim((string) ($data['term'] ?? ''));
+                        $term = is_string($data['term'] ?? null) ? trim($data['term']) : '';
 
                         if ($term === '') {
                             return $query;
@@ -112,11 +116,11 @@ final class InterventionsRelationManager extends XotBaseRelationManager
                         return $query->where('notes', 'like', '%'.$term.'%');
                     }),
                 Filter::make('material_search')
-                    ->form([
+                    ->schema([
                         TextInput::make('term'),
                     ])
                     ->query(function (Builder $query, array $data): Builder {
-                        $term = trim((string) ($data['term'] ?? ''));
+                        $term = is_string($data['term'] ?? null) ? trim($data['term']) : '';
 
                         if ($term === '') {
                             return $query;
@@ -137,7 +141,7 @@ final class InterventionsRelationManager extends XotBaseRelationManager
                     }),
             ])
             ->defaultSort('scheduled_at', 'desc')
-            ->actions([
+            ->recordActions([
                 ViewAction::make()
                     ->url(fn (Intervention $record): string => InterventionResource::getUrl('view', ['record' => $record])),
             ]);

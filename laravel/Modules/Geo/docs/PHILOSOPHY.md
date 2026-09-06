@@ -3,7 +3,7 @@
 **Platform**: FixCity  
 **Language**: Italiano/English (bilingual)  
 **Version**: 2.0  
-**Compliance**: PHPStan Level 10, Filament v5, Laravel 12  
+**Compliance**: PHPStan Level 10, Filament v5, Laravel 13  
 
 ---
 

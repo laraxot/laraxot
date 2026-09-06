@@ -39,7 +39,7 @@ Fissare la regola di ownership per `spatie/laravel-model-states` nel progetto mo
 
 ## Compatibilita' verificata al 2026-04-28
 
-- latest stable `2.13.1`: supporta `Laravel 12|13` ma richiede `php ^8.4`
+- latest stable `2.13.1`: supporta `Laravel 13|13` ma richiede `php ^8.4`
 - linea precedente `2.12.1`: supporta `php ^7.4|^8.0` ma solo `Laravel 10|11|12`
 
 ## Regola operativa

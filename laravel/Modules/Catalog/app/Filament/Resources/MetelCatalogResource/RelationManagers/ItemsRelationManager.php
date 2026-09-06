@@ -52,7 +52,7 @@ final class ItemsRelationManager extends XotBaseRelationManager
                     ->label(__('metel.fields.in_products'))
                     ->boolean(),
             ])
-            ->actions([
+            ->recordActions([
                 Action::make('linkToProduct')
                     ->label(__('metel.actions.link_to_product'))
                     ->icon('heroicon-o-cube')
@@ -63,7 +63,7 @@ final class ItemsRelationManager extends XotBaseRelationManager
                         Notification::make()->success()->title(__('metel.actions.linked'))->send();
                     }),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 BulkAction::make('linkSelectedToProducts')
                     ->label(__('metel.actions.link_to_product'))
                     ->icon('heroicon-o-cube')

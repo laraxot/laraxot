@@ -38,7 +38,7 @@ final class BuildSpokenSummaryAction
         $inFence = false;
 
         foreach ($lines as $line) {
-            $trimmed = is_string($line) ? trim($line) : trim((string) $line);
+            $trimmed = is_string($line) ? trim($line) : '';
 
             // Toggle fenced code blocks and drop their content.
             if (str_starts_with($trimmed, '```')) {
@@ -99,18 +99,23 @@ final class BuildSpokenSummaryAction
     private function stripInline(string $text): string
     {
         // Images ![alt](url) -> alt, links [text](url) -> text.
-        $text = preg_replace('/!?\[([^\]]*)\]\([^)]*\)/', '$1', $text) ?? $text;
+        $stripped = preg_replace('/!?\[([^\]]*)\]\([^)]*\)/', '$1', $text);
+        $text = is_string($stripped) ? $stripped : $text;
         // Bold, inline code and strikethrough markers.
         $text = str_replace(['**', '__', '`', '~~'], '', $text);
         // Paired single-char emphasis: *text* or _text_ -> text.
-        $text = preg_replace('/(?<!\w)([*_])(?=\S)(.+?)(?<=\S)\1(?!\w)/u', '$2', $text) ?? $text;
+        $emphasisStripped = preg_replace('/(?<!\w)([*_])(?=\S)(.+?)(?<=\S)\1(?!\w)/u', '$2', $text);
+        $text = is_string($emphasisStripped) ? $emphasisStripped : $text;
 
         return trim($text);
     }
 
     private function collapseWhitespace(string $text): string
     {
-        return trim(preg_replace('/\s+/', ' ', $text) ?? $text);
+        $whitespaceStripped = preg_replace('/\s+/', ' ', $text);
+        $text = is_string($whitespaceStripped) ? $whitespaceStripped : $text;
+
+        return trim($text);
     }
 
     private function limit(string $text): string

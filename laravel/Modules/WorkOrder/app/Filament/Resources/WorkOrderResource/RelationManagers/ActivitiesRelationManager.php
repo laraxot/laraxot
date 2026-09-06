@@ -67,29 +67,28 @@ final class ActivitiesRelationManager extends XotBaseRelationManager
             ->headerActions([
                 CreateAction::make()
                     ->using(function (array $data): WorkOrderActivity {
-                        $occurredAt = isset($data['occurred_at']) && $data['occurred_at']
-                            ? CarbonImmutable::parse((string) $data['occurred_at'])
-                            : null;
+                        $occurredAtRaw = is_string($data['occurred_at'] ?? null) ? $data['occurred_at'] : null;
+                        $occurredAt = $occurredAtRaw !== null ? CarbonImmutable::parse($occurredAtRaw) : null;
 
                         /** @var WorkOrder $workOrder */
                         $workOrder = $this->getOwnerRecord();
 
                         return app(AddWorkOrderActivityAction::class)->execute(
                             workOrderId: (int) $workOrder->id,
-                            type: (string) $data['type'],
-                            body: (string) $data['body'],
+                            type: is_string($data['type'] ?? null) ? $data['type'] : '',
+                            body: is_string($data['body'] ?? null) ? $data['body'] : '',
                             createdByUserId: (($authId = Auth::id()) !== null ? (int) $authId : null),
                             occurredAt: $occurredAt,
                         );
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),
                 RestoreAction::make(),
                 ForceDeleteAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
                 RestoreBulkAction::make(),
                 ForceDeleteBulkAction::make(),

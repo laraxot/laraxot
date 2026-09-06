@@ -1001,7 +1001,7 @@ test('users are isolated by tenant', function() {
 ### 1. Prerequisites
 
 ```bash
-# Ensure you have Laravel 12+ and the Modular architecture
+# Ensure you have Laravel 13+ and the Modular architecture
 composer require laravel/framework:"^12"
 composer require nwidart/laravel-modules
 

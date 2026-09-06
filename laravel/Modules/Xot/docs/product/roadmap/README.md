@@ -94,12 +94,12 @@ The Xot module serves as the core engine of the Laraxot framework, providing 50+
 - **Code Coverage**: Target 95%+ for base classes
 - **Performance**: Reduce module loading time by 40%
 - **Documentation**: 100% API coverage
-- **Compatibility**: Support Laravel 12+ and PHP 8.3+
+- **Compatibility**: Support Laravel 13+ and PHP 8.3+
 
 ## Dependencies
 - **Required**: None (core module)
 - **Dependent Modules**: All other modules
-- **External Dependencies**: Laravel 12, PHP 8.3+
+- **External Dependencies**: Laravel 13, PHP 8.3+
 
 ## Success Criteria
 - All base classes have comprehensive documentation

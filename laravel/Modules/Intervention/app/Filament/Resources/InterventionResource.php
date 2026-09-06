@@ -15,12 +15,12 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
-use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\RichEditor\TextColor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextEntry;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
 use Filament\Schemas\Components\Grid;
@@ -273,9 +273,9 @@ final class InterventionResource extends GatedXotBaseResource
                             ->default(0)
                             ->live()
                             ->helperText('Lascia 0 se non applichi il diritto di chiamata.'),
-                        Placeholder::make('total_amount_preview')
+                        TextEntry::make('total_amount_preview')
                             ->label(__('interventions.fields.total_amount'))
-                            ->content(function (callable $get, ?Intervention $record): string {
+                            ->state(function (callable $get, ?Intervention $record): string {
                                 $amountValue = $get('amount') ?? 0;
                                 $laborAmount = is_numeric($amountValue) ? (float) $amountValue : 0.0;
                                 $calloutFeeValue = $get('callout_fee') ?? 0;
@@ -302,9 +302,9 @@ final class InterventionResource extends GatedXotBaseResource
                             ->numeric()
                             ->minValue(0)
                             ->visible(fn (): bool => ! self::isDirectCustomerMode()),
-                        Placeholder::make('materials_total_preview')
+                        TextEntry::make('materials_total_preview')
                             ->label(__('interventions.fields.materials_total'))
-                            ->content(function (callable $get, ?Intervention $record): string {
+                            ->state(function (callable $get, ?Intervention $record): string {
                                 return number_format(self::previewMaterialsTotal($get('manual_material_lines'), $record), 2, ',', '.').' €';
                             })
                             ->live(),
@@ -334,9 +334,9 @@ final class InterventionResource extends GatedXotBaseResource
                         ->multiple()
                         ->appendFiles()
                         ->maxParallelUploads(1)
-                        ->imageResizeMode('contain')
-                        ->imageResizeTargetWidth('1280')
-                        ->imageResizeTargetHeight('1280')
+                        ->automaticallyResizeImagesMode('contain')
+                        ->automaticallyResizeImagesToWidth(1280)
+                        ->automaticallyResizeImagesToHeight(1280)
                         ->extraInputAttributes([
                             'accept' => 'image/*',
                             'capture' => 'environment',
@@ -358,10 +358,10 @@ final class InterventionResource extends GatedXotBaseResource
                         ->helperText(__('interventions.helpers.daily_note_photos'))
                         ->columnSpanFull(),
 
-                    Placeholder::make('notes_suggestions')
+                    TextEntry::make('notes_suggestions')
                         ->label(__('interventions.fields.notes_suggestions'))
                         ->columnSpanFull()
-                        ->content(function (Get $get): ?HtmlString {
+                        ->state(function (Get $get): ?HtmlString {
                             $suggestions = self::getPreviousNoteSuggestions(self::normalizeTextState($get('notes_html')));
 
                             if ($suggestions === []) {
@@ -415,9 +415,9 @@ final class InterventionResource extends GatedXotBaseResource
                                 ->prefix('€')
                                 ->default(0)
                                 ->live(),
-                            Placeholder::make('line_total_preview')
+                            TextEntry::make('line_total_preview')
                                 ->label(__('interventions.fields.material_line_total'))
-                                ->content(function (callable $get): string {
+                                ->state(function (callable $get): string {
                                     $qtyValue = $get('quantity') ?? 0;
                                     $quantity = is_numeric($qtyValue) ? (float) $qtyValue : 0.0;
                                     $priceValue = $get('unit_price') ?? 0;
@@ -429,9 +429,9 @@ final class InterventionResource extends GatedXotBaseResource
 
                             // L'extra e' calcolato al salvataggio confrontando la riga
                             // con i preventivi della commessa: qui si legge soltanto.
-                            Placeholder::make('extra_preview')
+                            TextEntry::make('extra_preview')
                                 ->label(__('interventions.extra.amount'))
-                                ->content(function (callable $get): string {
+                                ->state(function (callable $get): string {
                                     $extraQtyValue = $get('extra_quantity');
                                     $extraQuantity = is_numeric($extraQtyValue) ? (float) $extraQtyValue : 0.0;
 
@@ -652,7 +652,7 @@ final class InterventionResource extends GatedXotBaseResource
                     ]),
                 Filter::make('scheduled_between')
                     ->label(__('work_orders.fields.report_from').' / '.__('work_orders.fields.report_to'))
-                    ->form([
+                    ->schema([
                         DatePicker::make('from')
                             ->label(__('work_orders.fields.report_from')),
                         DatePicker::make('to')
@@ -673,7 +673,7 @@ final class InterventionResource extends GatedXotBaseResource
                             );
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 Action::make('start_time_punch')
                     ->label(__('interventions.actions.start_time_punch'))
                     ->icon('heroicon-o-play')
@@ -750,7 +750,7 @@ final class InterventionResource extends GatedXotBaseResource
 
                         return self::isAssignedToUser($record, (string) $userId);
                     })
-                    ->form([
+                    ->schema([
                         TextInput::make('travel_km')
                             ->label(__('interventions.fields.travel_km'))
                             ->numeric()
@@ -780,7 +780,7 @@ final class InterventionResource extends GatedXotBaseResource
                     ->action(function (Intervention $record, array $data): void {
                         $userId = (int) Auth::id();
                         $outcomeValue = $data['outcome_code'] ?? 'completed';
-                        $outcomeCode = strval($outcomeValue);
+                        $outcomeCode = self::ensureString($outcomeValue);
                         if (! in_array($outcomeCode, ['completed', 'suspended', 'quotation'], true)) {
                             $outcomeCode = 'completed';
                         }
@@ -822,7 +822,7 @@ final class InterventionResource extends GatedXotBaseResource
                 EditAction::make()
                     ->visible(fn (): bool => ! request()->is('operator/*')),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make()
                     ->visible(fn (): bool => ! request()->is('operator/*')),
                 RestoreBulkAction::make()
@@ -932,7 +932,7 @@ final class InterventionResource extends GatedXotBaseResource
         return $query
             ->get()
             ->mapWithKeys(fn ($row): array => [
-                (int) $row->id => self::formatWorkOrderOptionLabel($row),
+                is_numeric($row->id) ? (int) $row->id : 0 => self::formatWorkOrderOptionLabel($row),
             ])
             ->all();
     }
@@ -963,7 +963,7 @@ final class InterventionResource extends GatedXotBaseResource
         return $query
             ->get()
             ->mapWithKeys(fn ($row): array => [
-                is_numeric($row->id) ? (int) $row->id : 0 => strval($row->legal_name),
+                is_numeric($row->id) ? (int) $row->id : 0 => self::ensureString($row->legal_name),
             ])
             ->all();
     }
@@ -989,7 +989,7 @@ final class InterventionResource extends GatedXotBaseResource
 
         if ($assignedUserIds === [] && Auth::id() !== null) {
             $authId = Auth::id();
-            $assignedUserIds = [$authId !== null ? (int) $authId : 0];
+            $assignedUserIds = [(int) $authId];
         }
 
         $workHoursValue = $data['work_hours'] ?? 0;
@@ -1007,9 +1007,9 @@ final class InterventionResource extends GatedXotBaseResource
         }
 
         $notesHtmlValue = $data['notes_html'] ?? '';
-        $notesHtml = DailyNoteHtml::sanitize(strval($notesHtmlValue));
+        $notesHtml = DailyNoteHtml::sanitize(self::ensureString($notesHtmlValue));
         $notesValue = $data['notes'] ?? '';
-        $notes = trim(strval($notesValue));
+        $notes = trim(self::ensureString($notesValue));
 
         if ($notesHtml !== '') {
             $data['notes_html'] = $notesHtml;
@@ -1094,20 +1094,20 @@ final class InterventionResource extends GatedXotBaseResource
                 }
 
                 $descValue = $line['description'] ?? '';
-                $description = trim(is_string($descValue) ? $descValue : (string) $descValue);
+                $description = trim(self::ensureString($descValue));
                 $qtyValue = $line['quantity'] ?? 0;
                 $quantity = round(is_numeric($qtyValue) ? (float) $qtyValue : 0.0, 2);
                 $priceValue = $line['unit_price'] ?? 0;
                 $unitPrice = round(is_numeric($priceValue) ? (float) $priceValue : 0.0, 2);
                 $unitValue = $line['unit'] ?? 'pz';
-                $unit = trim(is_string($unitValue) ? $unitValue : (string) $unitValue);
+                $unit = trim(self::ensureString($unitValue));
 
                 // Le righe vengono ricreate da zero a ogni salvataggio: senza
                 // riportare la decisione presa sull'extra, ogni modifica
                 // all'intervento la riazzererebbe a "da decidere" e il
                 // materiale gia' destinato alla fattura tornerebbe regalabile.
                 $extraStatusValue = $line['extra_status_code'] ?? 'pending';
-                $extraStatus = trim(is_string($extraStatusValue) ? $extraStatusValue : (string) $extraStatusValue);
+                $extraStatus = trim(self::ensureString($extraStatusValue));
 
                 return [
                     'description' => $description,
@@ -1136,7 +1136,7 @@ final class InterventionResource extends GatedXotBaseResource
                     return $path;
                 }
 
-                return (string) $path;
+                return self::ensureString($path);
             }, is_array($data['notes_photo_paths'] ?? null) ? $data['notes_photo_paths'] : [])),
             uploadedByUserId: Auth::id() !== null ? (int) Auth::id() : null,
         );
@@ -1195,10 +1195,10 @@ final class InterventionResource extends GatedXotBaseResource
 
     private static function formatWorkOrderOptionLabel(object $row): string
     {
-        $customer = trim(is_string($row->customer_name ?? null) ? $row->customer_name : (string) ($row->customer_name ?? ''));
-        $site = trim(is_string($row->site_name ?? null) ? $row->site_name : (string) ($row->site_name ?? ''));
-        $title = trim(is_string($row->title ?? null) ? $row->title : (string) ($row->title ?? ''));
-        $code = trim(is_string($row->code ?? null) ? $row->code : (string) ($row->code ?? ''));
+        $customer = trim(self::ensureString($row->customer_name ?? null));
+        $site = trim(self::ensureString($row->site_name ?? null));
+        $title = trim(self::ensureString($row->title ?? null));
+        $code = trim(self::ensureString($row->code ?? null));
 
         $mainLabel = $site !== '' ? $site : ($title !== '' ? $title : ($code !== '' ? $code : 'Commessa non disponibile'));
         $suffix = $customer !== '' ? $customer : ($code !== '' ? $code : '');
@@ -1211,9 +1211,9 @@ final class InterventionResource extends GatedXotBaseResource
      */
     private static function getAssignableOperatorOptions(): array
     {
-        $modelHasRolesTable = (string) config('permission.table_names.model_has_roles', 'model_has_roles');
-        $rolesTable = (string) config('permission.table_names.roles', 'roles');
-        $userModel = (string) config('auth.providers.users.model', User::class);
+        $modelHasRolesTable = self::ensureString(config('permission.table_names.model_has_roles', 'model_has_roles'));
+        $rolesTable = self::ensureString(config('permission.table_names.roles', 'roles'));
+        $userModel = self::ensureString(config('auth.providers.users.model', User::class));
 
         return DB::table('users')
             ->whereExists(function (QueryBuilder $query) use ($modelHasRolesTable, $rolesTable, $userModel): void {
@@ -1227,7 +1227,7 @@ final class InterventionResource extends GatedXotBaseResource
             ->orderBy('name')
             ->pluck('name', 'id')
             ->mapWithKeys(static fn (mixed $name, mixed $id): array => [
-                is_numeric($id) ? (int) $id : 0 => is_string($name) ? $name : (string) $name,
+                is_numeric($id) ? (int) $id : 0 => is_string($name) ? $name : self::ensureString($name),
             ])
             ->all();
     }
@@ -1299,7 +1299,7 @@ final class InterventionResource extends GatedXotBaseResource
             $priceValue = $line['unit_price'] ?? 0;
             $unitPrice = round((float) (is_numeric($priceValue) ? $priceValue : 0), 2);
             $descValue = $line['description'] ?? '';
-            $description = trim((string) $descValue);
+            $description = trim(self::ensureString($descValue));
 
             if ($description === '' || $quantity <= 0) {
                 continue;
@@ -1329,7 +1329,7 @@ final class InterventionResource extends GatedXotBaseResource
             ->orderByDesc('id')
             ->limit(5)
             ->pluck('notes')
-            ->map(static fn ($note): string => trim((string) $note))
+            ->map(static fn ($note): string => trim(self::ensureString($note)))
             ->filter(static fn (string $note): bool => $note !== '')
             ->unique()
             ->values()
@@ -1376,18 +1376,10 @@ final class InterventionResource extends GatedXotBaseResource
         return '';
     }
 
-    private static function castToString(mixed $value): string
-    {
-        if (is_string($value)) {
-            return $value;
-        }
-
-        return (string) $value;
-    }
-
     public static function isAssignedToUser(Intervention $record, int|string $userId): bool
     {
-        if ((string) $record->performed_by_user_id === (string) $userId) {
+        $performedById = $record->performed_by_user_id;
+        if ($performedById !== null && self::ensureString($performedById) === (string) $userId) {
             return true;
         }
 

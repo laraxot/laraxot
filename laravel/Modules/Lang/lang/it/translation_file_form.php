@@ -13,8 +13,8 @@ return [
     ],
     'sections' => [
         'empty' => [
-            'label' => 'empty',
-            'heading' => 'empty',
+            'label' => '',
+            'heading' => '',
         ],
     ],
 ];

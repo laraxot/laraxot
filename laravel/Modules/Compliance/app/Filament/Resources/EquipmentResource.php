@@ -87,8 +87,8 @@ final class EquipmentResource extends Resource
                 Tables\Columns\TextColumn::make('next_check_due_on')->date()->sortable(),
                 Tables\Columns\TextColumn::make('assignedWorkOrder.title')->limit(40)->toggleable(),
             ])
-            ->actions([ViewAction::make(), EditAction::make()])
-            ->bulkActions([DeleteBulkAction::make()]);
+            ->recordActions([ViewAction::make(), EditAction::make()])
+            ->toolbarActions([DeleteBulkAction::make()]);
     }
 
     public static function getPages(): array

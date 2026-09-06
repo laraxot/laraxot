@@ -215,7 +215,7 @@ Themes/Sixteen/resources/views/pages/
 - NotebookLM - Pattern recognition
 
 **Tecnologie:**
-- Laravel 12
+- Laravel 13
 - Filament 5
 - Livewire 4
 - Tailwind CSS

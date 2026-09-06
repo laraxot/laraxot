@@ -24,7 +24,7 @@ This application is a Laravel application and its main Laravel ecosystems packag
 - laravel/mcp (MCP) - v0
 - laravel/pint (PINT) - v1
 - laravel/sail (SAIL) - v1
-- pestphp/pest (PEST) - v3
+- pestphp/pest (PEST) - v5
 - phpunit/phpunit (PHPUNIT) - v11
 - rector/rector (RECTOR) - v2
 - tailwindcss (TAILWINDCSS) - v4

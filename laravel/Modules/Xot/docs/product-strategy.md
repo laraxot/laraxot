@@ -297,7 +297,7 @@ Quando si prendono decisioni su Xot, priorita' basata su:
 | Assumption | Validation Method | Status |
 |------------|-------------------|--------|
 | All modules use Xot | Architecture audit | Validated |
-| Laravel 12 compatible | Version check | Validated |
+| Laravel 13 compatible | Version check | Validated |
 | PHPStan L10 achievable | Current progress | In Progress |
 | AI will write more code | Industry trends | Validated |
 

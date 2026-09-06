@@ -4,7 +4,7 @@
 **Last Updated**: 2026-03-17  
 **Status**: ✅ Production Ready  
 **Complexity**: Advanced  
-**Prerequisites**: Laravel 12, Filament 5, Spatie Laravel Data, MySQL 8.0+
+**Prerequisites**: Laravel 13, Filament 5, Spatie Laravel Data, MySQL 8.0+
 
 ---
 

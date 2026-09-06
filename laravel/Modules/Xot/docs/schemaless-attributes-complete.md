@@ -18,8 +18,8 @@ Questa documentazione definisce i **pattern completi e standardizzati** per l'us
 - [Field Hydration](https://filamentphp.com/docs/5.x/forms/overview#field-hydration)
 - [Validation Rules](https://filamentphp.com/docs/5.x/forms/validation)
 
-### 🔗 **Standard Laravel 12**:
-- [Laravel 12 Documentation](https://laravel.com/docs/12.x)
+### 🔗 **Standard Laravel 13**:
+- [Laravel 13 Documentation](https://laravel.com/docs/12.x)
 
 ---
 

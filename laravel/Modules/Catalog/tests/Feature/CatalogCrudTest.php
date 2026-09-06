@@ -11,16 +11,14 @@ use Modules\Catalog\Models\CatalogPartType;
 use Modules\Catalog\Models\Product;
 use Modules\Catalog\Tests\TestCase;
 
-uses(\Modules\Catalog\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('creates catalog lookups and a product', function (): void {
     $model = CatalogModel::query()->create(['name' => 'Model X']);
     $partType = CatalogPartType::query()->create(['name' => 'Part']);
     $unit = CatalogMeasureUnit::query()->create(['name' => 'pcs']);
     $freq = CatalogFrequency::query()->create(['name' => 'once']);
-
-    $product = Product::query()->create([
-        'name' => 'Test product',
+    $product = Product::query()->create(['name' => 'Test product',
         'sku' => 'SKU-001',
         'description' => 'Desc',
         'unit_price' => 12.34,

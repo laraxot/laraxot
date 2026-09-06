@@ -1,21 +1,8 @@
-## [1.0.0-dev.17](https://github.com/laraxot/module_lang_fila5/compare/v1.0.0-dev.16...v1.0.0-dev.17) (2026-08-27)
+## [1.0.0-dev.15](https://github.com/laraxot/module_lang_fila5/compare/v1.0.0-dev.14...v1.0.0-dev.15) (2026-08-25)
 
 ### Bug Fixes
 
-* **git:** resolve committed merge markers in .gitattributes ([e5b7144](https://github.com/laraxot/module_lang_fila5/commit/e5b7144e4f47f1597b07f7fe993210b90c27eb28))
-
-## [1.0.0-dev.14](https://github.com/laraxot/module_lang_fila5/compare/v1.0.0-dev.13...v1.0.0-dev.14) (2026-08-24)
-
-### Bug Fixes
-
-* **phpstan:** type closure and method params to close typeCoverage.paramTypeCoverage ([353ec6a](https://github.com/laraxot/module_lang_fila5/commit/353ec6af8a604639588c750b2ff069ef8d89520c))
-* **phpstan:** type closure and method params to close typeCoverage.paramTypeCoverage ([c5fa0b9](https://github.com/laraxot/module_lang_fila5/commit/c5fa0b9290ace44ae28ec4c0442b20741b34df18))
-
-## [1.0.0-dev.13](https://github.com/laraxot/module_lang_fila5/compare/v1.0.0-dev.12...v1.0.0-dev.13) (2026-08-05)
-
-### Bug Fixes
-
-* resolve merge conflicts and standardize naming conventions in module.json and config.php; clean up test files ([de7a9e4](https://github.com/laraxot/module_lang_fila5/commit/de7a9e4d38e2dacbfb779d8d77670fcdd450ba5f))
+* **phpstan:** analyse Modules a zero errori ([31903cb](https://github.com/laraxot/module_lang_fila5/commit/31903cbdf7a314ccf1d800dadcbe20f08a1e1995))
 
 ## [1.0.0-dev.12](https://github.com/laraxot/module_lang_fila5/compare/v1.0.0-dev.11...v1.0.0-dev.12) (2026-07-31)
 

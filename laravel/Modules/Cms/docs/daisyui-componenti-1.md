@@ -4,7 +4,7 @@ Questo documento descrive l'utilizzo di [DaisyUI](https://daisyui.com/) nel prog
 
 ## Indice
 1. [Introduzione a DaisyUI](#introduzione-a-daisyui)
-2. [Vantaggi per il progetto](#vantaggi-per-saluteora)
+2. [Vantaggi per il progetto](#vantaggi-per-<nome progetto>)
 3. [Installazione e Configurazione](#installazione-e-configurazione)
 4. [Sistema di Temi](#sistema-di-temi)
 5. [Componenti Principali](#componenti-principali)
@@ -68,7 +68,7 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        saluteora: {
+        <nome progetto>: {
           "primary": "#1e40af",
           "secondary": "#6b21a8",
           "accent": "#0ea5e9",
@@ -93,7 +93,7 @@ DaisyUI offre un potente sistema di temi che consente di personalizzare l'aspett
 ### Tema il progetto
 
 ```js
-saluteora: {
+<nome progetto>: {
   "primary": "#1e40af",     // Blu principale
   "secondary": "#6b21a8",   // Viola secondario
   "accent": "#0ea5e9",      // Azzurro per accenti
@@ -111,7 +111,7 @@ saluteora: {
 Per supportare modalità chiara/scura o temi alternativi, utilizzare l'attributo `data-theme`:
 
 ```html
-<div data-theme="saluteora">
+<div data-theme="<nome progetto>">
   <!-- Contenuto con tema il progetto -->
 </div>
 
@@ -408,10 +408,10 @@ module.exports = {
     // Plugin personalizzato per componenti specifici di il progetto
     function({ addComponents }) {
       const components = {
-        '.saluteora-card': {
+        '.<nome progetto>-card': {
           '@apply card bg-base-100 shadow-md hover:shadow-lg border border-base-300': {},
         },
-        '.saluteora-form-field': {
+        '.<nome progetto>-form-field': {
           '@apply form-control w-full mb-4': {},
         },
       }
@@ -424,11 +424,11 @@ module.exports = {
 Utilizzo:
 
 ```html
-<div class="saluteora-card">
+<div class="<nome progetto>-card">
   <!-- Contenuto card -->
 </div>
 
-<div class="saluteora-form-field">
+<div class="<nome progetto>-form-field">
   <!-- Campo form -->
 </div>
 ```
@@ -475,7 +475,7 @@ Utilizzo:
 ```blade
 <div class="container mx-auto p-4">
   <h1 class="text-2xl font-bold mb-6">Dashboard Paziente</h1>
-
+  
   <!-- Informazioni Paziente -->
   <div class="card bg-base-100 shadow-xl mb-6">
     <div class="card-body">
@@ -498,14 +498,14 @@ Utilizzo:
       </div>
     </div>
   </div>
-
+  
   <!-- Tabs -->
   <div class="tabs mb-4">
     <a class="tab tab-bordered tab-active">Appuntamenti</a>
     <a class="tab tab-bordered">Documenti</a>
     <a class="tab tab-bordered">ISEE</a>
   </div>
-
+  
   <!-- Contenuto Tab -->
   <div class="overflow-x-auto">
     <table class="table w-full">
@@ -548,10 +548,10 @@ Utilizzo:
 ```blade
 <div class="container mx-auto p-4 max-w-md">
   <h1 class="text-2xl font-bold mb-6">Registrazione Paziente</h1>
-
+  
   <form action="{{ route('patients.store') }}" method="POST">
     @csrf
-
+    
     <div class="form-control w-full mb-4">
       <label class="label">
         <span class="label-text">Nome</span>
@@ -563,7 +563,7 @@ Utilizzo:
         </label>
       @enderror
     </div>
-
+    
     <div class="form-control w-full mb-4">
       <label class="label">
         <span class="label-text">Cognome</span>
@@ -575,7 +575,7 @@ Utilizzo:
         </label>
       @enderror
     </div>
-
+    
     <div class="form-control w-full mb-4">
       <label class="label">
         <span class="label-text">Codice Fiscale</span>
@@ -587,7 +587,7 @@ Utilizzo:
         </label>
       @enderror
     </div>
-
+    
     <div class="form-control w-full mb-4">
       <label class="label">
         <span class="label-text">Email</span>
@@ -599,14 +599,14 @@ Utilizzo:
         </label>
       @enderror
     </div>
-
+    
     <div class="form-control w-full mb-6">
       <label class="label cursor-pointer">
-        <span class="label-text">In gravidanza</span>
+        <span class="label-text">In gravidanza</span> 
         <input type="checkbox" name="is_pregnant" class="toggle toggle-primary" {{ old('is_pregnant') ? 'checked' : '' }} />
       </label>
     </div>
-
+    
     <div class="form-control">
       <button type="submit" class="btn btn-primary">Registra Paziente</button>
     </div>
@@ -624,4 +624,4 @@ Utilizzo:
 
 ---
 
-Per ulteriori informazioni sull'implementazione di DaisyUI in il progetto o per segnalare problemi, contattare il team di sviluppo.
+Per ulteriori informazioni sull'implementazione di DaisyUI in il progetto o per segnalare problemi, contattare il team di sviluppo. 

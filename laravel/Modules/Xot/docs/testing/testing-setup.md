@@ -1,12 +1,12 @@
 # Pest Testing Setup for Laraxot Modular Architecture
 
-This document describes how to configure and run tests using Pest PHP in the Laraxot modular Laravel 12 architecture.
+This document describes how to configure and run tests using Pest PHP in the Laraxot modular Laravel 13 architecture.
 
 ## Prerequisites
 
 - PHP 8.3+
 - Pest PHP 3.x
-- Laravel 12
+- Laravel 13
 - MySQL (same database type as production)
 
 ## Quick Start
@@ -269,7 +269,7 @@ trait CreatesApplication
 
 ## References
 
-- [Laravel 12 Testing](https://laravel.com/docs/12.x/testing)
+- [Laravel 13 Testing](https://laravel.com/docs/12.x/testing)
 - [Pest PHP Documentation](https://pestphp.com/docs)
 - [Laravel Modules Testing](https://laravelmodules.com/docs/12/advanced/tests)
 - [Composer Merge Plugin](https://github.com/wikimedia/composer-merge-plugin)

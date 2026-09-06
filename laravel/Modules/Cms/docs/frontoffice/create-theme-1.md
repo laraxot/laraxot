@@ -47,7 +47,7 @@ theme-name/
 1. **composer.json**
 ```json
 {
-    "name": "saluteora/theme-name",
+    "name": "<nome progetto>/theme-name",
     "description": "Tema per il progetto",
     "type": "theme",
     "license": "proprietary",
@@ -73,7 +73,7 @@ theme-name/
 2. **package.json**
 ```json
 {
-    "name": "saluteora/theme-name",
+    "name": "<nome progetto>/theme-name",
     "private": true,
     "scripts": {
         "dev": "vite",
@@ -366,7 +366,7 @@ Le viste dei widget devono utilizzare i componenti Filament:
             <x-filament::widget>
                 <x-filament::form wire:submit="register">
                     {{ $this->form }}
-
+                    
                     <x-filament::button type="submit">
                         Registrati
                     </x-filament::button>

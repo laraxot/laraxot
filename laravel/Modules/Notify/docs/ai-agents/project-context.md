@@ -5,7 +5,7 @@
 ## 📋 Informazioni Progetto
 
 - **Project**: PTVX Fila5 Mono
-- **Stack**: Laravel 12 | Filament v5 | Pest v4 | PHPStan Level 10 | PHP 8.3+
+- **Stack**: Laravel 13 | Filament v5 | Pest v4 | PHPStan Level 10 | PHP 8.3+
 - **Tipo**: Modular HR & Performance evaluation system
 
 ## 🎯 Regole Fondamentali

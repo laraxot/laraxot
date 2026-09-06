@@ -144,7 +144,7 @@ Dopo OGNI modifica di file PHP:
 
 Risultato ottenuto seguendo rigorosamente:
 - DRY + KISS + SOLID + Robust
-- Laravel 12 + Filament 4 + PHP 8.3
+- Laravel 13 + Filament 4 + PHP 8.3
 - Laraxot architecture rules
 - Zero compromessi su qualità codice
 
@@ -295,7 +295,7 @@ Dopo OGNI modifica di file PHP:
 
 Risultato ottenuto seguendo rigorosamente:
 - DRY + KISS + SOLID + Robust
-- Laravel 12 + Filament 4 + PHP 8.3
+- Laravel 13 + Filament 4 + PHP 8.3
 - Laraxot architecture rules
 - Zero compromessi su qualità codice
 

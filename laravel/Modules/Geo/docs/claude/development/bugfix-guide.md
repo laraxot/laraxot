@@ -188,4 +188,4 @@ Un errore `ParseError: syntax error, unexpected token "protected", expecting end
 
 *Ultimo aggiornamento: 2025-08-04*
 *Versione: 2.0*
-*Compatibilità: Laraxot <nome progetto>, PHP 8.2+, Laravel 12+, Filament 3.4+*
+*Compatibilità: Laraxot <nome progetto>, PHP 8.2+, Laravel 13+, Filament 3.4+*

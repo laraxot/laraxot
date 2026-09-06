@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace Modules\Notify\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Modules\Notify\Database\Factories\NotificationTypeFactory;
 use Override;
 
 /**
@@ -29,9 +27,6 @@ use Override;
  */
 class NotificationType extends Model
 {
-    /** @use HasFactory<NotificationTypeFactory> */
-    use HasFactory;
-
     /** @var list<string> */
     protected $fillable = [
         'name',

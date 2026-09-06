@@ -18,7 +18,7 @@ use Modules\Catalog\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use RuntimeException;
 
-uses(\Modules\Catalog\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('parses a delimited CSV line into a normalized article', function (): void {
     $parser = new MetelRecordParser(
@@ -39,7 +39,11 @@ it('parses a delimited CSV line into a normalized article', function (): void {
 });
 
 it('returns null for header rows and blank lines', function (): void {
-    $parser = new MetelRecordParser(catalogMetelFixedLayout(), catalogMetelFixedPriceDivisor(), catalogMetelCsvMap());
+    $parser = new MetelRecordParser(
+        catalogMetelFixedLayout(),
+        catalogMetelFixedPriceDivisor(),
+        catalogMetelCsvMap(),
+    );
 
     expect($parser->parseCsvLine('codice;descrizione;um;imballo;prezzo;ean;etim'))->toBeNull();
     expect($parser->parseCsvLine('   '))->toBeNull();
@@ -50,7 +54,11 @@ it('returns null for header rows and blank lines', function (): void {
 });
 
 it('parses a fixed-width METEL record applying the price divisor', function (): void {
-    $parser = new MetelRecordParser(catalogMetelFixedLayout(), catalogMetelFixedPriceDivisor(), catalogMetelCsvMap());
+    $parser = new MetelRecordParser(
+        catalogMetelFixedLayout(),
+        catalogMetelFixedPriceDivisor(),
+        catalogMetelCsvMap(),
+    );
 
     $article = $parser->parseFixedLine(buildFixedMetelLine());
 
@@ -73,6 +81,7 @@ it('imports a CSV price list, skipping invalid rows and updating on re-import', 
         'BADROW;senza prezzo;PZ;1;nonnumerico;;',
     ]);
 
+    /** @var array{imported: int, skipped: int} $result */
     $result = app(ImportMetelPriceListFileAction::class)->execute($catalog, $csv);
 
     expect($result['imported'])->toBe(2);
@@ -90,9 +99,10 @@ it('imports a CSV price list, skipping invalid rows and updating on re-import', 
 it('imports a fixed-width price list when the format is forced', function (): void {
     $catalog = makeMetelCatalog();
 
+    /** @var array{imported: int, skipped: int} $result */
     $result = app(ImportMetelPriceListFileAction::class)->execute($catalog, buildFixedMetelLine(), 'fixed');
-
     expect($result['imported'])->toBe(1);
+    /** @var MetelCatalogItem $item */
     $item = $catalog->items()->firstOrFail();
     expect($item->metel_code)->toBe('TST0100010');
     expect((float) $item->gross_price)->toBe(1.85);
@@ -100,6 +110,7 @@ it('imports a fixed-width price list when the format is forced', function (): vo
 
 it('promotes a METEL item into the products catalog preferring the net price', function (): void {
     $catalog = makeMetelCatalog();
+    /** @var MetelCatalogItem $item */
     $item = $catalog->items()->create([
         'metel_code' => 'TST0300012',
         'description' => 'Valvola a sfera 1/2"',
@@ -107,6 +118,7 @@ it('promotes a METEL item into the products catalog preferring the net price', f
         'net_price' => 3.90,
     ]);
 
+    /** @var Product $product */
     $product = app(LinkMetelItemToProductAction::class)->execute($item);
 
     expect($product->sku)->toBe('TST0300012');
@@ -114,12 +126,14 @@ it('promotes a METEL item into the products catalog preferring the net price', f
     expect((float) $product->unit_price)->toBe(3.90);
     expect((int) $item->refresh()->product_id)->toBe((int) $product->id);
 
+    /** @var MetelCatalogItem $again */
     $again = $catalog->items()->create([
         'metel_code' => 'TST0300012b',
         'description' => 'Valvola senza netto',
         'gross_price' => 9.60,
         'net_price' => null,
     ]);
+    /** @var Product $product2 */
     $product2 = app(LinkMetelItemToProductAction::class)->execute($again);
     expect((float) $product2->unit_price)->toBe(9.60);
     expect(Product::query()->count())->toBe(2);
@@ -155,11 +169,13 @@ it('syncs from the METEL API when configured and maps items', function (): void 
     ]);
 
     $catalog = makeMetelCatalog();
+    /** @var array{imported: int, skipped: int} $result */
     $result = app(FetchMetelCatalogViaApiAction::class)->execute($catalog);
 
     expect($result['imported'])->toBe(1);
     expect($result['skipped'])->toBe(1);
     expect($catalog->refresh()->source_type)->toBe('api');
+    /** @var MetelCatalogItem $item */
     $item = $catalog->items()->firstOrFail();
     expect($item->metel_code)->toBe('API000001');
     expect((float) $item->net_price)->toBe(2.75);

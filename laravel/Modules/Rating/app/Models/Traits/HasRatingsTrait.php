@@ -215,7 +215,8 @@ trait HasRatingsTrait
         $msg .= '('.$pivot_avg.') '.$pivot_cout.' Votes ';
 
         $rating_url = '#';
-        $title = 'Vota '.(isset($this->title) ? (string) $this->title : '');
+        $titleValue = $this->title ?? '';
+        $title = 'Vota '.(is_scalar($titleValue) ? (string) $titleValue : '');
 
         $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$rating_url.'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
@@ -242,7 +243,7 @@ trait HasRatingsTrait
         $res = [];
         foreach ($rules as $key => $ruleValue) {
             $keyWithPostfix = $key.$postfix;
-            $ruleStr = (string) $ruleValue;
+            $ruleStr = is_string($ruleValue) ? $ruleValue : '';
 
             // ✅ Se la regola è numeric o integer, aggiungi nullable se non presente
             if (Str::contains($ruleStr, ['numeric', 'integer']) && ! Str::contains($ruleStr, 'nullable')) {

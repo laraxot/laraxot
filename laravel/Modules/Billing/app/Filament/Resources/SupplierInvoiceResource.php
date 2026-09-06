@@ -218,12 +218,12 @@ final class SupplierInvoiceResource extends GatedXotBaseResource
                     ->options(fn (): array => DeliveryNoteResource::supplierOptions())
                     ->searchable(),
             ])
-            ->actions([
+            ->recordActions([
                 self::reconcileAction(),
                 ViewAction::make(),
                 EditAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
                 RestoreBulkAction::make(),
                 ForceDeleteBulkAction::make(),

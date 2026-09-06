@@ -2,7 +2,7 @@
 
 ## Introduzione
 
-LaravelFS è un installer alternativo per Laravel che consente di installare sia i nuovi starter kit di Laravel 12, sia quelli legacy come Breeze e Jetstream che sono stati rimossi dall'installer ufficiale. Rappresenta una soluzione comunitaria per mantenere compatibilità con gli starter kit abbandonati pur supportando le nuove funzionalità di Laravel 12.
+LaravelFS è un installer alternativo per Laravel che consente di installare sia i nuovi starter kit di Laravel 13, sia quelli legacy come Breeze e Jetstream che sono stati rimossi dall'installer ufficiale. Rappresenta una soluzione comunitaria per mantenere compatibilità con gli starter kit abbandonati pur supportando le nuove funzionalità di Laravel 13.
 
 ## Caratteristiche principali
 

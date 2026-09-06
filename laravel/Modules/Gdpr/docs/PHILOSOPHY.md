@@ -615,10 +615,10 @@ Filament ConsentResource, EventResource, TreatmentResource provide admin interfa
 
 ### Prerequisites
 
-- Laravel 12
+- Laravel 13
 - Filament 5
 - PHP 8.4+
-- Module is auto-discovered in Laravel 12
+- Module is auto-discovered in Laravel 13
 
 ### 1. Publish Config
 

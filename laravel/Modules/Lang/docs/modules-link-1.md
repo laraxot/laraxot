@@ -1,14 +1,3 @@
----
-title: "Collegamenti ai Moduli che utilizzano le Traduzioni"
-module: "Lang"
-type: concept
-tags: [build, publish.yml]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "build publish.yml"
-related:
-  - "./italian-text-refined-audit-report.md"
----
 # Collegamenti ai Moduli che utilizzano le Traduzioni
 
 Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento alle traduzioni centralizzate.

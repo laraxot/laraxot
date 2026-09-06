@@ -107,7 +107,7 @@ Level 3: Themes
 - ✅ OpenAPI documentation
 
 **Technical Stack Verified**:
-- ✅ Laravel 12 + Folio routing
+- ✅ Laravel 13 + Folio routing
 - ✅ Livewire 3.x for dynamic components
 - ✅ Tailwind CSS v4 with @apply directives
 - ✅ Alpine.js for interactive elements

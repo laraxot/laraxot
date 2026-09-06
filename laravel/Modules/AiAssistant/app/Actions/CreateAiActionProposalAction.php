@@ -60,7 +60,7 @@ final class CreateAiActionProposalAction
     private function recentProposalCount(int|string $userId): int
     {
         $configValue = config('ai_security.proposal_window_minutes', 10);
-        $windowMinutes = max(1, is_int($configValue) ? $configValue : (int) $configValue);
+        $windowMinutes = max(1, is_int($configValue) ? $configValue : (is_numeric($configValue) ? (int) $configValue : 10));
 
         return AiActionProposal::query()
             ->where('proposed_by_user_id', $userId)

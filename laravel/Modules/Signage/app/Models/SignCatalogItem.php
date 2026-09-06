@@ -32,7 +32,6 @@ use Modules\Signage\Database\Factories\SignCatalogItemFactory;
  */
 final class SignCatalogItem extends BaseModel
 {
-
     protected $table = 'sign_catalog_items';
 
     /** @var array<int, string> */
@@ -59,12 +58,6 @@ final class SignCatalogItem extends BaseModel
     public function components(): HasMany
     {
         return $this->hasMany(SignCatalogItemComponent::class, 'sign_catalog_item_id')->orderBy('position');
-    }
-
-    /** @return SignCatalogItemFactory */
-    public static function factory(): SignCatalogItemFactory
-    {
-        return SignCatalogItemFactory::new();
     }
 
     protected static function newFactory(): SignCatalogItemFactory

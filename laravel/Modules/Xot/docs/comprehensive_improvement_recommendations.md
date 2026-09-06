@@ -1,5 +1,5 @@
 # Comprehensive Improvement Recommendations
-## DRY + KISS + SOLID + Robust + Filament 4 + Laravel 12 + PHP 8.3
+## DRY + KISS + SOLID + Robust + Filament 4 + Laravel 13 + PHP 8.3
 
 ## Executive Summary
 
@@ -345,7 +345,7 @@ public function generateBulkPdfs(Collection $surveys): void
 }
 ```
 
-## 🏗️ Priority 4: Filament 4 + Laravel 12 + PHP 8.3 Optimization
+## 🏗️ Priority 4: Filament 4 + Laravel 13 + PHP 8.3 Optimization
 
 ### 4.1 Leverage PHP 8.3 Features
 **Solution**: Modern PHP patterns
@@ -478,11 +478,11 @@ class ContactResource extends Resource
 }
 ```
 
-### 4.3 Laravel 12 Features Integration
+### 4.3 Laravel 13 Features Integration
 **Solution**: Leverage new Laravel features
 
 ```php
-// Use Laravel 12 improved validation
+// Use Laravel 13 improved validation
 class ContactFormRequest extends FormRequest
 {
     public function rules(): array
@@ -508,13 +508,13 @@ class Contact extends XotUniversalBaseModel
         return [
             'sms_sent_at' => 'datetime',
             'mail_sent_at' => 'datetime',
-            'metadata' => 'encrypted:json', // Laravel 12 encrypted casting
+            'metadata' => 'encrypted:json', // Laravel 13 encrypted casting
             'preferences' => 'json',
         ];
     }
 }
 
-// Use Laravel 12 enhanced collections
+// Use Laravel 13 enhanced collections
 public function processContacts(): Collection
 {
     return Contact::query()
@@ -551,7 +551,7 @@ public function processContacts(): Collection
 ### Phase 4: Modern Standards (Week 7-8)
 1. ✅ Upgrade to PHP 8.3 features
 2. ✅ Optimize Filament 4 resources
-3. ✅ Leverage Laravel 12 features
+3. ✅ Leverage Laravel 13 features
 4. ✅ Add comprehensive testing
 
 ## 📈 Expected Results
@@ -714,7 +714,7 @@ Questa comprehensive analysis fornisce una roadmap dettagliata per trasformare i
 <!-- Merged from COMPREHENSIVE_IMPROVEMENT_RECOMMENDATIONS.md, which collided with this file on case-insensitive filesystems. -->
 
 # Comprehensive Improvement Recommendations
-## DRY + KISS + SOLID + Robust + Filament 4 + Laravel 12 + PHP 8.3
+## DRY + KISS + SOLID + Robust + Filament 4 + Laravel 13 + PHP 8.3
 
 ## Executive Summary
 
@@ -1060,7 +1060,7 @@ public function generateBulkPdfs(Collection $surveys): void
 }
 ```
 
-## 🏗️ Priority 4: Filament 4 + Laravel 12 + PHP 8.3 Optimization
+## 🏗️ Priority 4: Filament 4 + Laravel 13 + PHP 8.3 Optimization
 
 ### 4.1 Leverage PHP 8.3 Features
 **Solution**: Modern PHP patterns
@@ -1193,11 +1193,11 @@ class ContactResource extends Resource
 }
 ```
 
-### 4.3 Laravel 12 Features Integration
+### 4.3 Laravel 13 Features Integration
 **Solution**: Leverage new Laravel features
 
 ```php
-// Use Laravel 12 improved validation
+// Use Laravel 13 improved validation
 class ContactFormRequest extends FormRequest
 {
     public function rules(): array
@@ -1223,13 +1223,13 @@ class Contact extends XotUniversalBaseModel
         return [
             'sms_sent_at' => 'datetime',
             'mail_sent_at' => 'datetime',
-            'metadata' => 'encrypted:json', // Laravel 12 encrypted casting
+            'metadata' => 'encrypted:json', // Laravel 13 encrypted casting
             'preferences' => 'json',
         ];
     }
 }
 
-// Use Laravel 12 enhanced collections
+// Use Laravel 13 enhanced collections
 public function processContacts(): Collection
 {
     return Contact::query()
@@ -1266,7 +1266,7 @@ public function processContacts(): Collection
 ### Phase 4: Modern Standards (Week 7-8)
 1. ✅ Upgrade to PHP 8.3 features
 2. ✅ Optimize Filament 4 resources
-3. ✅ Leverage Laravel 12 features
+3. ✅ Leverage Laravel 13 features
 4. ✅ Add comprehensive testing
 
 ## 📈 Expected Results
@@ -1428,7 +1428,7 @@ Questa comprehensive analysis fornisce una roadmap dettagliata per trasformare i
 ## Contenuto assorbito da `COMPREHENSIVE_IMPROVEMENT_RECOMMENDATIONS.md`
 
 # Comprehensive Improvement Recommendations
-## DRY + KISS + SOLID + Robust + Filament 4 + Laravel 12 + PHP 8.3
+## DRY + KISS + SOLID + Robust + Filament 4 + Laravel 13 + PHP 8.3
 
 ## Executive Summary
 
@@ -1774,7 +1774,7 @@ public function generateBulkPdfs(Collection $surveys): void
 }
 ```
 
-## 🏗️ Priority 4: Filament 4 + Laravel 12 + PHP 8.3 Optimization
+## 🏗️ Priority 4: Filament 4 + Laravel 13 + PHP 8.3 Optimization
 
 ### 4.1 Leverage PHP 8.3 Features
 **Solution**: Modern PHP patterns
@@ -1907,11 +1907,11 @@ class ContactResource extends Resource
 }
 ```
 
-### 4.3 Laravel 12 Features Integration
+### 4.3 Laravel 13 Features Integration
 **Solution**: Leverage new Laravel features
 
 ```php
-// Use Laravel 12 improved validation
+// Use Laravel 13 improved validation
 class ContactFormRequest extends FormRequest
 {
     public function rules(): array
@@ -1937,13 +1937,13 @@ class Contact extends XotUniversalBaseModel
         return [
             'sms_sent_at' => 'datetime',
             'mail_sent_at' => 'datetime',
-            'metadata' => 'encrypted:json', // Laravel 12 encrypted casting
+            'metadata' => 'encrypted:json', // Laravel 13 encrypted casting
             'preferences' => 'json',
         ];
     }
 }
 
-// Use Laravel 12 enhanced collections
+// Use Laravel 13 enhanced collections
 public function processContacts(): Collection
 {
     return Contact::query()
@@ -1980,7 +1980,7 @@ public function processContacts(): Collection
 ### Phase 4: Modern Standards (Week 7-8)
 1. ✅ Upgrade to PHP 8.3 features
 2. ✅ Optimize Filament 4 resources
-3. ✅ Leverage Laravel 12 features
+3. ✅ Leverage Laravel 13 features
 4. ✅ Add comprehensive testing
 
 ## 📈 Expected Results

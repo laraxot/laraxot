@@ -73,3 +73,62 @@ my 6 agents are already running (each does its own fetch+merge before writing), 
 I'm letting them finish rather than aborting; ceding the rest of that story's plan
 (everything except my 6) to avoid two agents landing on the same module. See
 validation note appended to their story file.
+
+# DONE — HR
+
+- **PHPStan**: 24 → 0 errors (clean-cache verified twice). Files: `AbsenceRequestResource.php`,
+  `EmployeeResource.php` (2 `method.deprecated` each: `actions()`→`recordActions()`,
+  `bulkActions()`→`toolbarActions()`), plus the 3 Employee RelationManagers
+  (Documents/MedicalVisits/Trainings — same 2 deprecated-method renames each, plus
+  3/5/6 `cast.string` fixed via a new private `stringValue()` type-narrowing helper
+  replacing blind `(string) $data['x']` casts on Filament's untyped `array $data`
+  form closures). No `@phpstan-ignore`, no baseline entries, `phpstan.neon` untouched.
+- **Pest**: 5 failed / 3 passed, unchanged before/after (verified via `git stash`
+  A/B on the 5 fixed files — identical failure set both times, so this is not a
+  regression). The 5 failures are pre-existing `QueryException`s from missing
+  `roles` (Spatie Permission, `mariadb` connection) and `document_media` (Document
+  module, `document` connection) tables in the shared test DB
+  `workorder_data_test` — not HR's migrations, not touched (out of scope, and
+  those connections/modules are being worked by other agents in this same wave).
+- **PHPMD** (`Modules/Xot/phpmd.ruleset.xml`, no local HR ruleset existed):
+  pre-existing findings only (CouplingBetweenObjects on 4 classes, UnusedFormalParameter
+  in Policies/RelationManager closures, LongVariable) — none introduced/removed by
+  this diff. phpinsights is **not installed** in this repo (removed, incompatible
+  with Pest 5 per second-brain memory) — did not run it, per that memory.
+- **Pint**: the 5 touched files pass `pint --test` clean (no formatting needed).
+- Story: `laravel/Modules/HR/docs/stories/01.HR-phpstan-fix.story.md` (status: done).
+  Coverage doc: `laravel/Modules/HR/docs/coverage.md`.
+- Git sync: committed `c25c627` on `Modules/HR`'s own repo (only remote: `laraxot`
+  → `git@github.com:laraxot/module_hr_fila5.git`), fetched first (nothing new,
+  0 behind / 3 ahead), pushed clean, no force.
+- Note: `Modules/Xot/docs/stories/18.11.hr-phpstan-l10-fix.story.md` duplicates this
+  story's scope (physically misplaced in Xot per the earlier note in this file) —
+  left as-is per the no-delete/no-renumber rule, marked superseded in the real story.
+
+## Incident — accidental repo-wide `pint --dirty` (self-reported)
+
+While verifying HR, I ran `./vendor/bin/pint --dirty` from `laravel/` expecting it
+to scope to HR's own dirty files. It did not: it walked the **whole monorepo** and
+applied formatting-only fixes (import ordering/removal, phpdoc-tag cleanup,
+operator spacing, blank-line rules — no logic changes from Pint itself) on top of
+already-uncommitted, in-progress work in **other agents' modules**: `Gdpr`
+(`app/Models/Traits/HasGdpr.php`), `Catalog` (3 factory files), `Quotation` (5
+model files), `Document` (1 test file), `AiAssistant` (2 files), `WorkOrder`
+(`WorkOrderResource.php`), `Xot` (`helpers/Helper.php`, 4 test files), `Intervention`
+(1 RelationManager), `Compliance` (1 RelationManager), `User` (5 files), `Costing`
+(`WorkCenter.php`). I did **not** run `git checkout`/revert on any of these — I
+inspected two of them (`Xot/tests/TestCase.php`, `Gdpr/HasGdpr.php`) and confirmed
+those files already had real, unrelated in-progress functional changes from other
+agents *before* my pint run (i.e. they were legitimately dirty already); reverting
+would have destroyed that work, so I left Pint's mechanical overlay in place and did
+not touch those files further. My own HR diff was verified separately, scoped
+explicitly (`pint --test <5 files>` → `passed`, no changes needed).
+
+**If you're one of the agents on Gdpr/Catalog/Quotation/Document/AiAssistant/
+WorkOrder/Xot/Intervention/Compliance/User/Costing**: your working tree may have a
+few extra cosmetic diffs (import order/unused-import removal/phpdoc cleanup) layered
+on your own uncommitted changes from around 2026-09-06 ~22:00 UTC — worth a quick
+`git diff` glance before you commit, but nothing that should break tests/PHPStan.
+**Lesson for future agents**: never run `pint --dirty` bare from `laravel/` in this
+repo — always pass an explicit path (`pint --test Modules/<Mod>` or the exact file
+list), since dirty-detection here is not scoped to your module's own nested `.git`.

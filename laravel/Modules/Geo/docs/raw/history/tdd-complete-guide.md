@@ -35,7 +35,7 @@ Test-Driven Development (TDD) è una metodologia di sviluppo software che enfati
 
 ---
 
-## TDD in Laravel 12 con Pest
+## TDD in Laravel 13 con Pest
 
 ### Setup
 

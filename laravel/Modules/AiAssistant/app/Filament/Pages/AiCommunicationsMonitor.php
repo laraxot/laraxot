@@ -121,7 +121,12 @@ final class AiCommunicationsMonitor extends Page
             $items = array_merge($items, $this->whatsAppConversations($limit));
         }
 
-        usort($items, static fn (array $a, array $b): int => strcmp((string) $b['sort_at'], (string) $a['sort_at']));
+        usort($items, static function (array $a, array $b): int {
+            $aSort = is_string($a['sort_at'] ?? null) ? $a['sort_at'] : '';
+            $bSort = is_string($b['sort_at'] ?? null) ? $b['sort_at'] : '';
+
+            return strcmp($bSort, $aSort);
+        });
 
         return array_slice($items, 0, $limit);
     }
@@ -160,9 +165,10 @@ final class AiCommunicationsMonitor extends Page
         $result = app(ExecuteAiActionProposalAction::class)->execute($proposal, $userId);
         $ok = (bool) ($result['ok'] ?? false);
 
+        $errorMsg = is_string($result['error'] ?? null) ? $result['error'] : 'Errore sconosciuto.';
         $notification = Notification::make()
             ->title($ok ? 'Proposta approvata ed eseguita' : 'Esecuzione proposta fallita')
-            ->body($ok ? null : (string) ($result['error'] ?? 'Errore sconosciuto.'));
+            ->body($ok ? null : $errorMsg);
 
         ($ok ? $notification->success() : $notification->danger())->send();
     }
@@ -207,25 +213,42 @@ final class AiCommunicationsMonitor extends Page
             ->orderByDesc('created_at')
             ->limit($limit)
             ->get()
-            ->map(fn (EmailMessage $message): array => $this->mapMessage(
-                channel: 'email',
-                id: (int) $message->id,
-                direction: (string) data_get($message, 'direction', ''),
-                contact: (string) (data_get($message, 'conversation.email') ?? data_get($message, 'from_email') ?? data_get($message, 'to_email') ?? ''),
-                title: (string) (data_get($message, 'subject') ?? 'Email senza oggetto'),
-                contactSub: '',
-                body: (string) data_get($message, 'body', ''),
-                status: (string) data_get($message, 'status', ''),
-                processingStatus: (string) data_get($message, 'processing_status', ''),
-                error: (string) data_get($message, 'error', ''),
-                aiResult: $this->stringKeyArray(data_get($message, 'ai_result')),
-                proposal: $message->proposal,
-                workOrderId: is_numeric(data_get($message, 'work_order_id')) ? (int) data_get($message, 'work_order_id') : null,
-                interventionId: is_numeric(data_get($message, 'intervention_id')) ? (int) data_get($message, 'intervention_id') : null,
-                receivedAt: $this->formatDateTime(data_get($message, 'received_at')),
-                processedAt: $this->formatDateTime(data_get($message, 'processed_at')),
-                sortAt: $this->iso8601(data_get($message, 'created_at')),
-            ))
+            ->map(function (EmailMessage $message): array {
+                $direction = data_get($message, 'direction', '');
+                $directionStr = is_string($direction) ? $direction : '';
+                $contactVal = data_get($message, 'conversation.email') ?? data_get($message, 'from_email') ?? data_get($message, 'to_email') ?? '';
+                $contactStr = is_string($contactVal) ? $contactVal : '';
+                $subject = data_get($message, 'subject') ?? 'Email senza oggetto';
+                $titleStr = is_string($subject) ? $subject : 'Email senza oggetto';
+                $body = data_get($message, 'body', '');
+                $bodyStr = is_string($body) ? $body : '';
+                $status = data_get($message, 'status', '');
+                $statusStr = is_string($status) ? $status : '';
+                $processingStatus = data_get($message, 'processing_status', '');
+                $processingStatusStr = is_string($processingStatus) ? $processingStatus : '';
+                $error = data_get($message, 'error', '');
+                $errorStr = is_string($error) ? $error : '';
+
+                return $this->mapMessage(
+                    channel: 'email',
+                    id: (int) $message->id,
+                    direction: $directionStr,
+                    contact: $contactStr,
+                    title: $titleStr,
+                    contactSub: '',
+                    body: $bodyStr,
+                    status: $statusStr,
+                    processingStatus: $processingStatusStr,
+                    error: $errorStr,
+                    aiResult: $this->stringKeyArray(data_get($message, 'ai_result')),
+                    proposal: $message->proposal,
+                    workOrderId: is_numeric(data_get($message, 'work_order_id')) ? (int) data_get($message, 'work_order_id') : null,
+                    interventionId: is_numeric(data_get($message, 'intervention_id')) ? (int) data_get($message, 'intervention_id') : null,
+                    receivedAt: $this->formatDateTime(data_get($message, 'received_at')),
+                    processedAt: $this->formatDateTime(data_get($message, 'processed_at')),
+                    sortAt: $this->iso8601(data_get($message, 'created_at')),
+                );
+            })
             ->all();
     }
 
@@ -263,34 +286,46 @@ final class AiCommunicationsMonitor extends Page
                 ->reverse()
                 ->map(function (WhatsAppMessage $message): array {
                     $createdAt = data_get($message, 'created_at');
+                    $body = data_get($message, 'body', '');
+                    $bodyStr = is_string($body) ? $body : '';
 
                     return [
                         'from' => data_get($message, 'direction') === 'inbound' ? 'cliente' : 'noi',
-                        'text' => trim((string) data_get($message, 'body', '')),
+                        'text' => trim($bodyStr),
                         'at' => $createdAt instanceof Carbon ? $createdAt->format('H:i') : null,
                     ];
                 })
-                ->map(static fn (array $entry): array => [
-                    'from' => (string) $entry['from'],
-                    'text' => (string) $entry['text'],
-                    'at' => is_string($entry['at']) ? $entry['at'] : null,
-                ])
+                ->map(static function (array $entry): array {
+                    $from = is_string($entry['from'] ?? null) ? $entry['from'] : '';
+                    $text = is_string($entry['text'] ?? null) ? $entry['text'] : '';
+
+                    return [
+                        'from' => $from,
+                        'text' => $text,
+                        'at' => is_string($entry['at']) ? $entry['at'] : null,
+                    ];
+                })
                 ->filter(fn (array $entry): bool => $entry['text'] !== '')
                 ->values()
                 ->all();
 
             $thread = $this->normalizeThread($thread);
 
-            $phone = (string) data_get($conversation, 'phone_e164', '');
+            $phoneValue = data_get($conversation, 'phone_e164', '');
+            $phone = is_string($phoneValue) ? $phoneValue : '';
             $customer = $conversation->customer;
-            $linkedName = trim((string) ($customer !== null ? data_get($customer, 'legal_name', '') : ''));
+            $linkedNameValue = $customer !== null ? data_get($customer, 'legal_name', '') : '';
+            $linkedName = trim(is_string($linkedNameValue) ? $linkedNameValue : '');
             $extractedName = '';
             if ($pendingProposal instanceof AiActionProposal) {
                 $payload = $pendingProposal->payload ?? [];
-                $extractedName = trim((string) ($payload['customer_name'] ?? ''));
+                $customerNameValue = $payload['customer_name'] ?? '';
+                $extractedName = trim(is_string($customerNameValue) ? $customerNameValue : '');
             }
             $displayName = $linkedName !== '' ? $linkedName : ($extractedName !== '' ? $extractedName : $phone);
 
+            $statusValue = data_get($conversation, 'status', '');
+            $statusStr = is_string($statusValue) ? $statusValue : '';
             $items[] = $this->mapMessage(
                 channel: 'whatsapp',
                 id: (int) $conversation->id,
@@ -299,7 +334,7 @@ final class AiCommunicationsMonitor extends Page
                 contactSub: $displayName !== $phone ? $phone : '',
                 title: 'Conversazione WhatsApp',
                 body: '',
-                status: (string) data_get($conversation, 'status', ''),
+                status: $statusStr,
                 processingStatus: $pendingProposal !== null ? 'needs_review' : 'processed',
                 error: '',
                 aiResult: [],
@@ -355,8 +390,8 @@ final class AiCommunicationsMonitor extends Page
             'status_label' => $this->statusLabel($processingStatus),
             'status_class' => $this->statusClass($processingStatus),
             'error' => $error,
-            'ai_summary' => (string) ($aiResult['summary'] ?? ''),
-            'ai_intent' => (string) ($aiResult['intent'] ?? ''),
+            'ai_summary' => is_string($aiResult['summary'] ?? null) ? $aiResult['summary'] : '',
+            'ai_intent' => is_string($aiResult['intent'] ?? null) ? $aiResult['intent'] : '',
             'ai_confidence' => is_numeric($aiResult['confidence'] ?? null) ? (int) $aiResult['confidence'] : null,
             'ai_result' => $aiResult,
             'proposal_public_id' => $proposal?->public_id ? (string) $proposal->public_id : null,
@@ -419,27 +454,39 @@ final class AiCommunicationsMonitor extends Page
             return [];
         }
 
-        $publicId = (string) $proposal->public_id;
+        $publicIdValue = $proposal->public_id;
+        $publicId = is_string($publicIdValue) ? $publicIdValue : '';
         $payload = $proposal->payload;
         $this->proposalWorkOrderIds[$publicId] ??= is_numeric($payload['work_order_id'] ?? null) ? (int) $payload['work_order_id'] : '';
         $this->proposalWorkOrderSearches[$publicId] ??= '';
         $this->proposalInterventionIds[$publicId] ??= is_numeric($payload['intervention_id'] ?? null) ? (int) $payload['intervention_id'] : '';
-        $this->proposalBodies[$publicId] ??= (string) ($payload['body'] ?? $payload['notes'] ?? $payload['summary'] ?? '');
-        $this->proposalScheduledAts[$publicId] ??= $this->formatScheduleForInput((string) ($payload['scheduled_at'] ?? ''));
+        $bodyValue = $payload['body'] ?? $payload['notes'] ?? $payload['summary'] ?? '';
+        $this->proposalBodies[$publicId] ??= is_string($bodyValue) ? $bodyValue : '';
+        $scheduledAtValue = $payload['scheduled_at'] ?? '';
+        $this->proposalScheduledAts[$publicId] ??= $this->formatScheduleForInput(is_string($scheduledAtValue) ? $scheduledAtValue : '');
         $materialLines = is_array($payload['material_lines'] ?? null) ? $payload['material_lines'] : [];
         $firstMaterialLine = $materialLines[0] ?? null;
         $materialLine = is_array($firstMaterialLine) ? $firstMaterialLine : [];
-        $this->proposalMaterialDescriptions[$publicId] ??= (string) ($materialLine['description'] ?? $this->guessMaterialDescription((string) ($payload['body'] ?? $payload['notes'] ?? '')));
-        $messageText = (string) ($payload['body'] ?? $payload['notes'] ?? '');
+        $descValue = $materialLine['description'] ?? null;
+        $bodyForGuess = $payload['body'] ?? $payload['notes'] ?? '';
+        $bodyForGuessStr = is_string($bodyForGuess) ? $bodyForGuess : '';
+        $this->proposalMaterialDescriptions[$publicId] ??= is_string($descValue) ? $descValue : $this->guessMaterialDescription($bodyForGuessStr);
+        $messageText = is_string($bodyForGuess) ? $bodyForGuess : '';
         $materialCost = $this->positiveFloat($materialLine['unit_price'] ?? null) ?? $this->extractMaterialEuroAmount($messageText) ?? $this->extractEuroAmount($messageText);
         $this->proposalMaterialCosts[$publicId] ??= $materialCost !== null ? number_format($materialCost, 2, '.', '') : '';
         $laborAmount = $this->positiveFloat($payload['labor_amount'] ?? $payload['amount'] ?? null) ?? $this->extractLaborEuroAmount($messageText);
         $this->proposalLaborAmounts[$publicId] ??= $laborAmount !== null ? number_format($laborAmount, 2, '.', '') : '';
 
         // New service request: prefill the three editable fields.
-        $this->proposalCustomerNames[$publicId] ??= (string) ($payload['customer_name'] ?? '');
-        $this->proposalAddresses[$publicId] ??= trim(((string) ($payload['address'] ?? '')).' '.((string) ($payload['city'] ?? '')));
-        $this->proposalProblems[$publicId] ??= (string) ($payload['problem'] ?? $payload['summary'] ?? $messageText);
+        $customerNameValue = $payload['customer_name'] ?? '';
+        $this->proposalCustomerNames[$publicId] ??= is_string($customerNameValue) ? $customerNameValue : '';
+        $addressValue = $payload['address'] ?? '';
+        $cityValue = $payload['city'] ?? '';
+        $addressStr = is_string($addressValue) ? $addressValue : '';
+        $cityStr = is_string($cityValue) ? $cityValue : '';
+        $this->proposalAddresses[$publicId] ??= trim($addressStr.' '.$cityStr);
+        $problemValue = $payload['problem'] ?? $payload['summary'] ?? $messageText;
+        $this->proposalProblems[$publicId] ??= is_string($problemValue) ? $problemValue : '';
 
         return $this->stringKeyArray($payload);
     }
@@ -554,13 +601,15 @@ final class AiCommunicationsMonitor extends Page
     private function proposalCreatesSummary(string $type, array $payload): string
     {
         if ($type === 'organize_whatsapp_request') {
-            $name = trim((string) ($payload['customer_name'] ?? ''));
+            $customerNameValue = $payload['customer_name'] ?? '';
+            $name = trim(is_string($customerNameValue) ? $customerNameValue : '');
             $directMode = app(SettingsRepository::class)
                 ->getString('interventions.work_mode', 'work_order') === 'customer';
             $what = $directMode ? 'cliente e intervento' : 'cliente, commessa e intervento';
 
             $when = '';
-            $scheduled = trim((string) ($payload['scheduled_at'] ?? ''));
+            $scheduledValue = $payload['scheduled_at'] ?? '';
+            $scheduled = trim(is_string($scheduledValue) ? $scheduledValue : '');
             if ($scheduled !== '') {
                 try {
                     $when = ' per '.CarbonImmutable::parse($scheduled)->translatedFormat('l d/m \a\l\l\e H:i');
@@ -704,9 +753,11 @@ final class AiCommunicationsMonitor extends Page
     {
         $normalized = [];
         foreach ($thread as $entry) {
+            $fromValue = $entry['from'] ?? '';
+            $textValue = $entry['text'] ?? '';
             $normalized[] = [
-                'from' => (string) ($entry['from'] ?? ''),
-                'text' => (string) ($entry['text'] ?? ''),
+                'from' => is_string($fromValue) ? $fromValue : '',
+                'text' => is_string($textValue) ? $textValue : '',
                 'at' => is_string($entry['at'] ?? null) ? $entry['at'] : null,
             ];
         }
@@ -759,16 +810,22 @@ final class AiCommunicationsMonitor extends Page
             }
 
             $id = (int) $workOrder['id'];
+            $code = is_string($workOrder['code'] ?? null) ? $workOrder['code'] : '';
+            $title = is_string($workOrder['title'] ?? null) ? $workOrder['title'] : '';
+            $site = is_string($workOrder['site'] ?? null) ? $workOrder['site'] : '';
+            $status = is_string($workOrder['status'] ?? null) ? $workOrder['status'] : '';
             $options[$id] = implode(' - ', array_filter([
                 '#'.$id,
-                (string) ($workOrder['code'] ?? ''),
-                (string) ($workOrder['title'] ?? ''),
-                (string) ($workOrder['site'] ?? ''),
-                (string) ($workOrder['status'] ?? ''),
+                $code,
+                $title,
+                $site,
+                $status,
             ]));
         }
 
-        foreach ($this->searchedWorkOrderOptions((string) ($this->proposalWorkOrderSearches[$publicId] ?? '')) as $id => $label) {
+        $searchValue = $this->proposalWorkOrderSearches[$publicId] ?? '';
+        $searchStr = is_string($searchValue) ? $searchValue : '';
+        foreach ($this->searchedWorkOrderOptions($searchStr) as $id => $label) {
             $options[$id] = $label;
         }
 
@@ -803,16 +860,27 @@ final class AiCommunicationsMonitor extends Page
             ->orderByDesc('updated_at')
             ->limit(25)
             ->get()
-            ->mapWithKeys(fn (WorkOrder $workOrder): array => [
-                (int) $workOrder->id => implode(' - ', array_filter([
-                    '#'.(int) $workOrder->id,
-                    (string) ($workOrder->code ?? ''),
-                    (string) $workOrder->title,
-                    (string) data_get($workOrder, 'customer.legal_name', ''),
-                    (string) data_get($workOrder, 'site.name', ''),
-                    (string) data_get($workOrder, 'status.name', ''),
-                ])),
-            ])
+            ->mapWithKeys(function (WorkOrder $workOrder): array {
+                $code = is_string($workOrder->code ?? null) ? $workOrder->code : '';
+                $title = is_string($workOrder->title) ? $workOrder->title : '';
+                $customerLegalName = data_get($workOrder, 'customer.legal_name', '');
+                $customerLegalNameStr = is_string($customerLegalName) ? $customerLegalName : '';
+                $siteName = data_get($workOrder, 'site.name', '');
+                $siteNameStr = is_string($siteName) ? $siteName : '';
+                $statusName = data_get($workOrder, 'status.name', '');
+                $statusNameStr = is_string($statusName) ? $statusName : '';
+
+                return [
+                    (int) $workOrder->id => implode(' - ', array_filter([
+                        '#'.(int) $workOrder->id,
+                        $code,
+                        $title,
+                        $customerLegalNameStr,
+                        $siteNameStr,
+                        $statusNameStr,
+                    ])),
+                ];
+            })
             ->all();
     }
 
@@ -832,11 +900,13 @@ final class AiCommunicationsMonitor extends Page
             }
 
             $id = (int) $intervention['id'];
+            $scheduledAt = is_string($intervention['scheduled_at'] ?? null) ? $intervention['scheduled_at'] : '';
+            $notes = is_string($intervention['notes'] ?? null) ? $intervention['notes'] : '';
             $options[$id] = implode(' - ', array_filter([
                 '#'.$id,
                 is_numeric($intervention['work_order_id'] ?? null) ? 'commessa #'.(int) $intervention['work_order_id'] : '',
-                (string) ($intervention['scheduled_at'] ?? ''),
-                (string) ($intervention['notes'] ?? ''),
+                $scheduledAt,
+                $notes,
             ]));
         }
 

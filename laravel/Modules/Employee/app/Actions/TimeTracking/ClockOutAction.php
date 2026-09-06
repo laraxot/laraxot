@@ -38,10 +38,10 @@ class ClockOutAction
             'clock_out' => Carbon::now(),
         ]);
 
-        // Calculate total hours
-        $totalHours = $lastEntry->calculateTotalHours();
+        // Calculate total hours (approximate from clock_in / clock_out)
+        $totalMinutes = ($lastEntry->clock_out ? $lastEntry->clock_out->diffInMinutes($lastEntry->clock_in ?? Carbon::now()) : 0);
         $lastEntry->update([
-            'total_hours' => $totalHours,
+            'total_hours' => ($totalMinutes > 0 ? $totalMinutes / 60 : 0),
         ]);
     }
 }

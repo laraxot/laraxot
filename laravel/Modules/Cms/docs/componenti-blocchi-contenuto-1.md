@@ -8,7 +8,7 @@ Questo documento descrive i componenti e i blocchi di contenuto disponibili in i
 
 I contenuti statici in il progetto sono gestiti tramite file JSON nella directory:
 ```
-/laravel/config/local/saluteora/database/content/
+/laravel/config/local/<nome progetto>/database/content/
 ```
 
 Ogni pagina ha un file JSON corrispondente con la seguente struttura:

@@ -483,6 +483,6 @@ public function oldMethod()
 - [ ] Tenant scope overhead <5ms
 
 ### Compatibility
-- [ ] Laravel 12 compatibile
+- [ ] Laravel 13 compatibile
 - [ ] Filament 5.x compatibile
 - [ ] PHP 8.3 compatibile

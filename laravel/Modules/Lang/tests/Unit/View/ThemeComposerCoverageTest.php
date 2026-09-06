@@ -8,7 +8,7 @@ use Modules\Lang\View\Composers\ThemeComposer;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\DataCollection;
 
-uses(\Modules\Lang\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('ThemeComposer languages usa fallback quando manca config', function (): void {
     config(['laravellocalization' => []]);
@@ -83,10 +83,7 @@ test('ThemeComposer currentLang restituisce name e gestisce campo non stringa', 
 });
 
 test('ThemeComposer buildAdminLanguageUrl senza route corrente torna hash', function (): void {
-    $composer = new ThemeComposer();
-    $method = new \ReflectionMethod(ThemeComposer::class, 'buildAdminLanguageUrl');
-    $method->setAccessible(true);
-    Assert::assertSame('#', $method->invoke($composer, 'en'));
+    Assert::assertSame('#', (new ThemeComposer())->buildAdminLanguageUrl('en'));
 });
 
 test('ThemeComposer languages mappa en regional a flag gb', function (): void {

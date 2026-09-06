@@ -92,7 +92,7 @@
 - ✅ Master Plan strategico 2025-2026 creato
 
 ### Dicembre 2024
-- ✅ Upgraded to Laravel 12
+- ✅ Upgraded to Laravel 13
 - ✅ Migrated to Filament 4
 - ✅ Implemented OAuth2 with Passport
 - ✅ Enhanced geolocation features

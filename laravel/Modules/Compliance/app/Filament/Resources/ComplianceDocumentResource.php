@@ -10,11 +10,11 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
 use Filament\Schemas\Components\Grid;
@@ -83,9 +83,9 @@ final class ComplianceDocumentResource extends Resource
                     ->openable()
                     ->previewable()
                     ->columnSpanFull(),
-                Placeholder::make('file_preview')
+                TextEntry::make('file_preview')
                     ->label(__('compliance.fields.file_preview'))
-                    ->content(fn (?ComplianceDocument $record): HtmlString => self::filePreview($record))
+                    ->state(fn (?ComplianceDocument $record): HtmlString => self::filePreview($record))
                     ->columnSpanFull()
                     ->visible(fn (?ComplianceDocument $record): bool => $record?->media instanceof Media),
                 Textarea::make('notes')->label(__('compliance.fields.notes'))->columnSpanFull(),
@@ -108,7 +108,7 @@ final class ComplianceDocumentResource extends Resource
                 SelectFilter::make('type')->label(__('compliance.fields.type'))->options(self::documentTypes()),
                 SelectFilter::make('status')->label(__('compliance.fields.status'))->options(self::statuses()),
             ])
-            ->actions([
+            ->recordActions([
                 Action::make('analyzeWithAi')
                     ->label(__('compliance.actions.analyze_with_ai'))
                     ->icon('heroicon-o-sparkles')
@@ -131,7 +131,7 @@ final class ComplianceDocumentResource extends Resource
                 ViewAction::make(),
                 EditAction::make(),
             ])
-            ->bulkActions([DeleteBulkAction::make()]);
+            ->toolbarActions([DeleteBulkAction::make()]);
     }
 
     public static function getPages(): array

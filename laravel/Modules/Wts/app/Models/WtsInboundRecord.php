@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Wts\Models;
 
 use Carbon\CarbonInterface;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -46,9 +45,6 @@ use Modules\Wts\Database\Factories\WtsInboundRecordFactory;
  */
 final class WtsInboundRecord extends BaseModel
 {
-    /** @use HasFactory<WtsInboundRecordFactory> */
-    use HasFactory;
-
     use SoftDeletes;
     use WtsAuditable;
 

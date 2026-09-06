@@ -2,7 +2,7 @@
 
 ## Requisiti
 - PHP 8.2+
-- Laravel 12.x
+- Laravel 13.x
 - Database MySQL/PostgreSQL
 - Composer
 

@@ -76,7 +76,7 @@ class ScheduleResource extends XotBaseResource
                     ->afterStateUpdated(function (Set $set, ?string $state): void {
                         Assert::string($state);
                         Assert::isInstanceOf(
-                            $command = static::$commands->where('name', $state)->first(),
+                            $command = static::$commands->toCollection()->where('name', $state)->first(),
                             CommandData::class,
                         );
                         $params = $command->arguments;
@@ -126,7 +126,7 @@ class ScheduleResource extends XotBaseResource
                     ->reorderable(false),
                 TextInput::make('expression')
                     ->placeholder('* * * * *')
-                    ->rules([new Corn])
+                    ->rules([new Corn()])
                     ->required(),
                 TagsInput::make('environments')->placeholder(null),
                 TextInput::make('log_filename')->helperText(static::trans('messages.help-log-filename')),

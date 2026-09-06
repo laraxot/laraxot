@@ -9,7 +9,7 @@ use Modules\Billing\Models\Supplier;
 use Modules\Billing\Models\SupplierInvoice;
 use Modules\Billing\Tests\TestCase;
 
-uses(\Modules\Billing\Tests\TestCase::class);
+uses(TestCase::class);
 
 /**
  * Le due viste vivono dentro modali Filament: senza un test che le renderizzi,

@@ -22,7 +22,7 @@ final class CreateWorkOrder extends XotBaseCreateRecord
      */
     protected function handleRecordCreation(array $data): Model
     {
-        $statusId = isset($data['status_id']) && $data['status_id'] ? (int) $data['status_id'] : null;
+        $statusId = is_int($data['status_id'] ?? null) ? (int) $data['status_id'] : null;
         unset($data['status_id']);
 
         /** @var WorkOrder $workOrder */

@@ -4,7 +4,7 @@
 **Module Name**: UI  
 **Type**: User Interface & Component Library Module  
 **Status**: ✅ Active  
-**Framework**: Laravel 12.x + Filament 4.x + Tailwind CSS  
+**Framework**: Laravel 13.x + Filament 4.x + Tailwind CSS  
 **Component Library**: Custom UI components and styles  
 **Language**: Multi-language (IT/EN/DE)  
 

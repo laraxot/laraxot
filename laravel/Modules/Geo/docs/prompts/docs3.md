@@ -462,7 +462,7 @@ Ogni documento deve avere collegamenti ai documenti correlati:
 
 **Ultimo aggiornamento:** Giugno 2025
 **Versione:** 2.0
-**Compatibilità:** Laravel 12.x, PHP 8.2+, Filament 3.x
+**Compatibilità:** Laravel 13.x, PHP 8.2+, Filament 3.x
 **Cross-references:** docs1.txt, docs2.txt, docs4.txt
 
 

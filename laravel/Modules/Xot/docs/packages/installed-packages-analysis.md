@@ -3,7 +3,7 @@
 Documentazione generata il 2026-02-26 basata su `composer show`.
 
 ## Core Framework & Admin UI
-- **laravel/framework (v12.53.0)**: Core engine (Laravel 12).
+- **laravel/framework (v12.53.0)**: Core engine (Laravel 13).
 - **filament/filament (v5.2.2)**: Admin panel primario (Filament 5).
 - **livewire/livewire (v4.1.4)**: Framework per componenti reattivi (Livewire 4).
 - **livewire/volt (v1.10.3)**: API funzionale per Livewire.

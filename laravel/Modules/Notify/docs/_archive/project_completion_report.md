@@ -201,7 +201,7 @@ FIXCITY_ANALYTICS_ENABLED=true
 
 ### Prerequisiti
 - PHP 8.1+
-- Laravel 12.x
+- Laravel 13.x
 - MySQL 8.0+
 - Redis 6.0+
 - Node.js 18+

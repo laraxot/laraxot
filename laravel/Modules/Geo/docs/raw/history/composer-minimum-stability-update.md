@@ -94,7 +94,7 @@ I seguenti file avevano già `"minimum-stability": "dev"`:
 - **Funzionalità sperimentali**: Possibilità di testare funzionalità non ancora rilasciate
 
 ### 2. Compatibilità
-- **Laravel 12**: Migliore compatibilità con versioni recenti
+- **Laravel 13**: Migliore compatibilità con versioni recenti
 - **Filament 3**: Supporto per versioni in sviluppo
 - **Moduli personalizzati**: Possibilità di utilizzare versioni dev dei moduli
 
@@ -283,7 +283,7 @@ L'aggiornamento a `"minimum-stability": "dev"` è stato completato con successo 
 
 1. **Maggiore flessibilità** nell'utilizzo di pacchetti
 2. **Accesso a versioni sperimentali** per testing
-3. **Migliore compatibilità** con Laravel 12 e Filament 3
+3. **Migliore compatibilità** con Laravel 13 e Filament 3
 4. **Possibilità di contribuire** a pacchetti open source
 
 La configurazione mantiene `"prefer-stable": true` per garantire stabilità quando possibile.

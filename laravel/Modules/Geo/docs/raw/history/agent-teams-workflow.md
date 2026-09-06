@@ -2,7 +2,7 @@
 
 ## Overview
 
-Sistema di agent teams per la gestione collaborativa del progetto **PTVX (Fila5 Mono)** basato su Laravel 12 e Filament 5.
+Sistema di agent teams per la gestione collaborativa del progetto **PTVX (Fila5 Mono)** basato su Laravel 13 e Filament 5.
 
 ## Struttura Agent Teams
 
@@ -16,7 +16,7 @@ Sistema di agent teams per la gestione collaborativa del progetto **PTVX (Fila5 
 
 **Competenze**:
 - PHP 8.3+ typing
-- Laravel 12.x internals
+- Laravel 13.x internals
 - Filament 5.x architecture
 - Modular monolith patterns
 

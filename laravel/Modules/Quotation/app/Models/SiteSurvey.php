@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
-use Modules\Quotation\Database\Factories\SiteSurveyFactory;
 use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\Xot\Models\Traits\HasXotFactory;
@@ -42,9 +41,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  */
 final class SiteSurvey extends BaseModel implements HasMedia
 {
-    /** @use HasXotFactory<SiteSurveyFactory> */
     use HasXotFactory;
-
     use InteractsWithMedia;
     use SoftDeletes;
 

@@ -539,4 +539,4 @@ $panel->tenantMiddleware([
 ---
 
 **Versione Filament:** 5.x  
-**Compatibilità:** Laravel 12.x, PHP 8.3+
+**Compatibilità:** Laravel 13.x, PHP 8.3+

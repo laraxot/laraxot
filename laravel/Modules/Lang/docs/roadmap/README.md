@@ -1,34 +1,60 @@
 # Lang Module Roadmap
 
-[![Module](https://img.shields.io/badge/Module-Lang Module Roadmap-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+> "Language and translation system for the Laraxot ecosystem with multi-language support and translation management."
 
-> **"Language and translation system for the Laraxot ecosystem with multi-language support and translation management."**
+## 🎯 Vision
 
-## Perché esiste
+Provide a **comprehensive language** system that includes:
 
-"Language and translation system for the Laraxot ecosystem with multi-language support and translation management."
+- ✅ Multi-language support
+- ✅ Translation management
+- ✅ Language detection
+- ✅ Translation workflows
+- ✅ RTL support
+- ✅ Translation analytics
 
-## Superpoteri
+## 📊 Current Status
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+### Overall Progress: 70% Complete
 
-## Documentazione
+| Category | Status | Progress |
+|----------|--------|----------|
+| Multi-language | ✅ Complete | 100% |
+| Translation Management | 🔄 In Progress | 70% |
+| Language Detection | ✅ Complete | 100% |
+| Translation Workflows | 🔄 In Progress | 60% |
+| RTL Support | 🔄 In Progress | 80% |
+| Translation Analytics | 🔄 In Progress | 40% |
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+## 🏗️ Key Features
+
+### 1. Multi-language
+- Language files
+- Language switching
+- Fallback languages
+- Language-specific content
+- URL localization
+
+### 2. Translation Management
+- Translation editor
+- Translation export
+- Translation import
+- Translation validation
+- Translation memory
+
+### 3. Language Detection
+- Auto-detection
+- User preference
+- Browser detection
+- IP-based detection
+- Custom detection
+
+### 4. Translation Workflows
+- Translation requests
+- Translation approval
+- Translation publishing
+- Translation history
+- Translation collaboration
 
 ---
 
-**Modulo** `Lang` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

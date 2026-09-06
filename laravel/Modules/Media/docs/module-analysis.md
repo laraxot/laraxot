@@ -15,7 +15,7 @@ related:
 **Module Name**: Media  
 **Type**: Media Management Module  
 **Status**: ✅ Active  
-**Framework**: Laravel 12.x + Filament 4.x  
+**Framework**: Laravel 13.x + Filament 4.x  
 **Library Integration**: Spatie Media Library  
 **Language**: Multi-language (IT/EN/DE)  
 

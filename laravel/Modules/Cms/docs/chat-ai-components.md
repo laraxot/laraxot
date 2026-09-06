@@ -5,7 +5,7 @@ Questo documento descrive le componenti UI ispirate al template "ChatAI" di [Tai
 ## Panoramica Tailkit ChatAI
 
 - UI di chat moderna basata su Tailwind CSS
-- Versione Laravel 12 con pagine responsive e supporto dark mode
+- Versione Laravel 13 con pagine responsive e supporto dark mode
 - Componenti: header, lista messaggi, bolle chat, area input, launcher
 
 ## Componenti proposti

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Wts\Models;
 
 use Carbon\CarbonInterface;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -38,9 +37,6 @@ use Modules\Wts\Database\Factories\WtsProcessingStepFactory;
  */
 final class WtsProcessingStep extends BaseModel
 {
-    /** @use HasFactory<WtsProcessingStepFactory> */
-    use HasFactory;
-
     use SoftDeletes;
     use WtsAuditable;
 

@@ -37,11 +37,11 @@ use Modules\Xot\Actions\GetViewAction;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Lang\Tests\TestCase::class);
-
 use function Safe\mkdir;
 use function Safe\rmdir;
 use function Safe\unlink;
+
+uses(TestCase::class);
 
 /**
  * @param  list<string>  $permissions
@@ -51,10 +51,10 @@ function langFakeUser(array $permissions = [], bool $superAdmin = false): UserCo
 {
     /** @var MockInterface&UserContract $user */
     $user = Mockery::mock(UserContract::class);
-    TestCase::mockExpectation($user, 'hasRole')
+    $user->shouldReceive('hasRole')
         ->with('super-admin')
         ->andReturn($superAdmin);
-    TestCase::mockExpectation($user, 'hasPermissionTo')
+    $user->shouldReceive('hasPermissionTo')
         ->andReturnUsing(static function (string $permission) use ($permissions): bool {
             return in_array($permission, $permissions, true);
         });
@@ -140,6 +140,7 @@ describe('Lang coverage boost — Filament static', function (): void {
 
         Assert::assertSame('it', TranslationFileResource::getDefaultTranslatableLocale());
         Assert::assertSame(['it', 'en'], TranslationFileResource::getTranslatableLocales());
+        Assert::assertSame([], TranslationFileResource::getFormSchema());
 
         $pages = TranslationFileResource::getPages();
         Assert::assertArrayHasKey('index', $pages);
@@ -273,7 +274,7 @@ describe('Lang coverage boost — UI and data', function (): void {
         $adapter = new TranslatorAdapter($loader, 'it');
 
         $this->mockService(RecordMissingTranslationAction::class, static function (MockInterface $mock): void {
-            TestCase::mockExpects($mock, 'execute')->once()->with('messages.missing', 'it');
+            $mock->expects('execute')->once()->with('messages.missing', 'it');
         });
 
         Assert::assertSame('messages.missing', $adapter->get('messages.missing'));

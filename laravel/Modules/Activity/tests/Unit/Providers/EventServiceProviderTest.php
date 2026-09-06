@@ -13,7 +13,6 @@ use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
-uses(\Modules\Activity\Tests\TestCase::class);
 
 test('event service provider registers login and logout listeners', function () {
     $provider = new EventServiceProvider(app());

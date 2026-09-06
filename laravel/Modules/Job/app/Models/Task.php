@@ -151,7 +151,13 @@ class Task extends BaseModel
             /** @var array<int|string, string> $result */
             $result = [];
             foreach ($parameters as $key => $value) {
-                $result[$key] = is_bool($value) ? ($value ? '1' : '0') : ((string) $value);
+                if (is_bool($value)) {
+                    $result[$key] = $value ? '1' : '0';
+                } elseif (is_scalar($value)) {
+                    $result[$key] = (string) $value;
+                } else {
+                    $result[$key] = '';
+                }
             }
 
             return $result;

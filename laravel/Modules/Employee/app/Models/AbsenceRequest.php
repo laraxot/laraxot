@@ -42,19 +42,19 @@ class AbsenceRequest extends BaseModel
 {
     use SoftDeletes;
 
-    public const STATUS_PENDING = 'pending';
+    public const string STATUS_PENDING = 'pending';
 
-    public const STATUS_APPROVED = 'approved';
+    public const string STATUS_APPROVED = 'approved';
 
-    public const STATUS_REJECTED = 'rejected';
+    public const string STATUS_REJECTED = 'rejected';
 
-    public const TYPE_VACATION = 'vacation';
+    public const string TYPE_VACATION = 'vacation';
 
-    public const TYPE_LEAVE = 'leave';
+    public const string TYPE_LEAVE = 'leave';
 
-    public const TYPE_SICK = 'sick';
+    public const string TYPE_SICK = 'sick';
 
-    public const TYPE_INJURY = 'injury';
+    public const string TYPE_INJURY = 'injury';
 
     /**
      * The attributes that are mass assignable.

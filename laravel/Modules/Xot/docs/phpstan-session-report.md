@@ -268,6 +268,6 @@ I moduli rimanenti (Xot, User) richiedono ancora ~2-3 ore di lavoro sistematico 
 
 ---
 
-**DRY + KISS + SOLID + Robust + Laravel 12 + Filament 4 + PHP 8.3 + Laraxot**
+**DRY + KISS + SOLID + Robust + Laravel 13 + Filament 4 + PHP 8.3 + Laraxot**
 
 *Mantra*: "Un modulo alla volta, un errore alla volta, zero compromessi"

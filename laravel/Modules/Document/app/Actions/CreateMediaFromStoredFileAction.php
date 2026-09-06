@@ -39,7 +39,7 @@ final class CreateMediaFromStoredFileAction
             'path' => $path,
             'mime_type' => $mimeType,
             'size_bytes' => $size,
-            'meta' => $meta ?: null,
+            'meta' => $meta === [] ? null : $meta,
         ]);
 
         return $media;

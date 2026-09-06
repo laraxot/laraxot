@@ -32,14 +32,12 @@ class WorkHoursBoardWidget extends XotBaseSchemaWidget
 
     protected static ?string $maxHeight = '800px';
 
-    // State management per navigazione settimana
     public Carbon $weekStart;
 
     public Carbon $weekEnd;
 
     public bool $showToleranceThreshold = false;
 
-    // Dati computati dal widget
     /** @var array<string, mixed> */
     public array $weekData = [];
 
@@ -54,7 +52,6 @@ class WorkHoursBoardWidget extends XotBaseSchemaWidget
 
     public function mount(): void
     {
-        // Inizializza alla settimana corrente (come dipendentincloud.it)
         $this->weekStart = Carbon::now()->startOfWeek();
         $this->weekEnd = Carbon::now()->endOfWeek();
 
@@ -86,35 +83,23 @@ class WorkHoursBoardWidget extends XotBaseSchemaWidget
         ];
     }
 
-    /**
-     * Carica tutti i dati del widget tramite Actions.
-     */
     public function loadWidgetData(): void
     {
-        // L'id utente e' un UUID: il cast a int lo azzererebbe e il widget
-        // mostrerebbe le ore di nessuno.
         $userId = (string) (Auth::id() ?? '');
 
-        // 1. Dati base timbrature (WorkHour-based Action)
         $baseData = app(BuildWorkHoursForRangeAction::class)->execute($userId, $this->weekStart, $this->weekEnd);
 
-        // 2. Dati timeline visualization (Action nuova)
         $this->timelineData = app(BuildTimelineVisualizationAction::class)
             ->execute($userId, $this->weekStart, $this->weekEnd);
 
-        // 3. Info dipendente corrente
         $this->employeeInfo = app(GetCurrentEmployeeDataAction::class)->execute($userId);
 
-        // 4. Costruisci dati settimana per tabella
         $this->weekData = $this->buildWeekTableData($baseData, $this->timelineData);
 
-        // 5. Summary data per header tabella
         $this->summaryData = $this->buildSummaryData($baseData);
     }
 
     /**
-     * Costruisce dati per tabella settimanale.
-     *
      * @param  array<string, mixed>  $baseData
      * @param  array<string, mixed>  $timelineData
      * @return array<string, mixed>
@@ -127,7 +112,6 @@ class WorkHoursBoardWidget extends XotBaseSchemaWidget
         while ($currentDate->lte($this->weekEnd)) {
             $dateKey = $currentDate->toDateString();
 
-            // Safe access to timeline data
             $sessionBlocks = is_array($timelineData['sessionBlocks'] ?? null) ? $timelineData['sessionBlocks'] : [];
             $dayStatuses = is_array($timelineData['dayStatus'] ?? null) ? $timelineData['dayStatus'] : [];
 
@@ -139,7 +123,6 @@ class WorkHoursBoardWidget extends XotBaseSchemaWidget
                 ? $dayStatuses[$dateKey]
                 : ['status' => 'no_work', 'indicator' => '', 'color' => 'gray'];
 
-            // Calcola ore totali giorno
             $totalHours = 0;
             if (! empty($dayBlocks)) {
                 /** @var array<int, float|int> $durations */
@@ -170,8 +153,6 @@ class WorkHoursBoardWidget extends XotBaseSchemaWidget
     }
 
     /**
-     * Costruisce summary data per header tabella.
-     *
      * @param  array<string, mixed>  $baseData
      * @return array<string, mixed>
      */
@@ -212,9 +193,6 @@ class WorkHoursBoardWidget extends XotBaseSchemaWidget
         ];
     }
 
-    /**
-     * Navigazione settimana precedente.
-     */
     public function previousWeek(): void
     {
         $this->weekStart = $this->weekStart->copy()->subWeek();
@@ -222,9 +200,6 @@ class WorkHoursBoardWidget extends XotBaseSchemaWidget
         $this->loadWidgetData();
     }
 
-    /**
-     * Navigazione settimana successiva.
-     */
     public function nextWeek(): void
     {
         $this->weekStart = $this->weekStart->copy()->addWeek();
@@ -232,9 +207,6 @@ class WorkHoursBoardWidget extends XotBaseSchemaWidget
         $this->loadWidgetData();
     }
 
-    /**
-     * Torna alla settimana corrente.
-     */
     public function currentWeek(): void
     {
         $this->weekStart = Carbon::now()->startOfWeek();
@@ -242,22 +214,14 @@ class WorkHoursBoardWidget extends XotBaseSchemaWidget
         $this->loadWidgetData();
     }
 
-    /**
-     * Toggle soglie di tolleranza.
-     */
     public function toggleToleranceThreshold(): void
     {
         $this->showToleranceThreshold = ! $this->showToleranceThreshold;
-        $this->loadWidgetData(); // Ricarica con/senza soglie
+        $this->loadWidgetData();
     }
 
-    /**
-     * Esporta dati settimana corrente.
-     */
     public function exportData(): void
     {
-        // L'id utente e' un UUID: il cast a int lo azzererebbe e il widget
-        // mostrerebbe le ore di nessuno.
         $userId = (string) (Auth::id() ?? '');
 
         app(ExportTimeDataAction::class)
@@ -271,13 +235,10 @@ class WorkHoursBoardWidget extends XotBaseSchemaWidget
             ->send();
     }
 
-    /**
-     * Formatta minuti in formato ore:minuti.
-     */
     public function formatMinutesToHours(int $minutes): string
     {
         if ($minutes === 0) {
-            return 'Nessuna'; // Come nell'immagine per "Aggiunte" e "Ridotte"
+            return 'Nessuna';
         }
 
         $hours = intdiv($minutes, 60);
@@ -290,22 +251,16 @@ class WorkHoursBoardWidget extends XotBaseSchemaWidget
         return "{$hours}h {$mins}m";
     }
 
-    /**
-     * Calcola posizione temporale per timeline (06:00-20:00).
-     */
     public function getTimePosition(string $time): float
     {
         [$hours, $minutes] = explode(':', $time);
         $totalMinutes = (((int) $hours) * 60) + ((int) $minutes);
-        $baseMinutes = 6 * 60; // 06:00
-        $maxMinutes = 20 * 60; // 20:00
+        $baseMinutes = 6 * 60;
+        $maxMinutes = 20 * 60;
 
         return (($totalMinutes - $baseMinutes) / ($maxMinutes - $baseMinutes)) * 100;
     }
 
-    /**
-     * Ottieni classe CSS per colore sessione.
-     */
     public function getSessionColorClass(string $color): string
     {
         return match ($color) {

@@ -76,7 +76,7 @@ final class MediaRelationManager extends XotBaseRelationManager
                 Tables\Columns\ImageColumn::make('path')
                     ->label(__('documents.fields.preview'))
                     ->disk('public')
-                    ->height(48)
+                    ->imageHeight(48)
                     ->width(48)
                     ->extraImgAttributes(['class' => 'object-cover rounded'])
                     ->defaultImageUrl(fn (): string => '')
@@ -98,7 +98,7 @@ final class MediaRelationManager extends XotBaseRelationManager
             ->headerActions([
                 CreateAction::make(),
             ])
-            ->actions([
+            ->recordActions([
                 Action::make('download')
                     ->label(__('documents.actions.download'))
                     ->icon('heroicon-o-arrow-down-tray')
@@ -108,7 +108,7 @@ final class MediaRelationManager extends XotBaseRelationManager
                 EditAction::make(),
                 DeleteAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
     }

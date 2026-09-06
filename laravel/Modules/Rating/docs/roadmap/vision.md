@@ -15,7 +15,7 @@ Il modulo `Rating` ha l'obiettivo di fornire un'infrastruttura **agnostica e riu
 - Calcolo di punteggi aggregati (media, somma, pesata, ecc.) demandato ad **Actions dedicate**, non a controller o view.
 - Allineamento completo con:
   - PHP 8.2+ e `declare(strict_types=1);`
-  - Laravel 12 e pattern Eloquent moderni
+  - Laravel 13 e pattern Eloquent moderni
   - Filament v5 per eventuali UI di amministrazione/configurazione.
 - Integrazione naturale con il sistema di traduzioni modulare Laraxot (naming chiavi coerente e nessuna label hardcoded).
 

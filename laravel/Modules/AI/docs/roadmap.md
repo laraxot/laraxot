@@ -1,6 +1,6 @@
 # AI Module Roadmap
 
-- **[mission]** Provide AI-powered features (completion, fine-tuning) aligned with Filament v4 and Laravel 12.
+- **[mission]** Provide AI-powered features (completion, fine-tuning) aligned with Filament v4 and Laravel 13.
 - **[status]** ✅ PHPStan cleanup completed (0 errors). Filament v4 compatibility achieved.
 - **[milestones]**
   - ✅ Fix Blade view caching across module pages.

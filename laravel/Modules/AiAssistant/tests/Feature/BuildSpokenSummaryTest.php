@@ -6,8 +6,9 @@ namespace Modules\AiAssistant\Tests\Feature;
 
 use Modules\AiAssistant\Speech\BuildSpokenSummaryAction;
 use Modules\AiAssistant\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
-uses(\Modules\AiAssistant\Tests\TestCase::class);
+uses(TestCase::class);
 
 function spoken(string $markdown): string
 {
@@ -15,66 +16,62 @@ function spoken(string $markdown): string
 }
 
 it('returns empty string for blank input', function (): void {
-    expect(spoken(''))->toBe('')
-        ->and(spoken("   \n  \n"))->toBe('');
+    Assert::assertSame('', spoken(''));
+    Assert::assertSame('', spoken("   \n  \n"));
 });
 
 it('keeps plain prose untouched', function (): void {
-    expect(spoken('Ho aggiornato l\'intervento numero 15.'))
-        ->toBe('Ho aggiornato l\'intervento numero 15.');
+    Assert::assertSame('Ho aggiornato l\'intervento numero 15.', spoken('Ho aggiornato l\'intervento numero 15.'));
 });
 
 it('strips markdown emphasis and inline code', function (): void {
-    expect(spoken('Il **totale** è `85 euro` e va _confermato_.'))
-        ->toBe('Il totale è 85 euro e va confermato.');
+    Assert::assertSame('Il totale è 85 euro e va confermato.', spoken('Il **totale** è `85 euro` e va _confermato_.'));
 });
 
 it('strips headings, blockquotes and list markers', function (): void {
     $md = "# Riepilogo\n\n- Prima voce\n- Seconda voce\n\n> Nota importante";
 
-    expect(spoken($md))->toBe('Riepilogo Prima voce Seconda voce Nota importante');
+    Assert::assertSame('Riepilogo Prima voce Seconda voce Nota importante', spoken($md));
 });
 
 it('strips numbered list markers', function (): void {
-    expect(spoken("1. Primo passo\n2. Secondo passo"))
-        ->toBe('Primo passo Secondo passo');
+    Assert::assertSame('Primo passo Secondo passo', spoken("1. Primo passo\n2. Secondo passo"));
 });
 
 it('converts links and images to their text', function (): void {
-    expect(spoken('Vedi [il rapportino](https://x.test/r) e ![foto](img.png).'))
-        ->toBe('Vedi il rapportino e foto.');
+    Assert::assertSame('Vedi il rapportino e foto.', spoken('Vedi [il rapportino](https://x.test/r) e ![foto](img.png).'));
 });
 
 it('removes fenced code blocks', function (): void {
     $md = "Ecco il comando:\n```php\n\$x = 1;\necho \$x;\n```\nFine.";
 
-    expect(spoken($md))->toBe('Ecco il comando: Fine.');
+    Assert::assertSame('Ecco il comando: Fine.', spoken($md));
 });
 
 it('removes markdown tables entirely', function (): void {
     $md = "Riepilogo materiali:\n\n| Materiale | Prezzo |\n|---|---|\n| Valvola | 5 € |\n| Raccordo | 2 € |\n\nTotale calcolato.";
 
-    expect(spoken($md))->toBe('Riepilogo materiali: Totale calcolato.');
+    Assert::assertSame('Riepilogo materiali: Totale calcolato.', spoken($md));
 });
 
 it('limits the summary to a few sentences', function (): void {
     $md = 'Prima frase. Seconda frase. Terza frase. Quarta frase. Quinta frase.';
 
-    expect(spoken($md))->toBe('Prima frase. Seconda frase. Terza frase.');
+    Assert::assertSame('Prima frase. Seconda frase. Terza frase.', spoken($md));
 });
 
 it('caps very long output at a word boundary with an ellipsis', function (): void {
     $sentence = 'parola '.str_repeat('lunga ', 80); // one long sentence > 350 chars
     $result = spoken($sentence);
 
-    expect(mb_strlen($result))->toBeLessThanOrEqual(351)
-        ->and($result)->toEndWith('…')
-        ->and($result)->not->toContain('  ');
+    Assert::assertLessThanOrEqual(351, mb_strlen($result));
+    Assert::assertStringEndsWith('…', $result);
+    Assert::assertStringNotContainsString('  ', $result);
 });
 
 it('caps a single unbroken long token without a trailing space', function (): void {
     $result = spoken(str_repeat('a', 400));
 
-    expect($result)->toEndWith('…')
-        ->and(mb_strlen($result))->toBe(351);
+    Assert::assertStringEndsWith('…', $result);
+    Assert::assertSame(351, mb_strlen($result));
 });

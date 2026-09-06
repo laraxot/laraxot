@@ -45,7 +45,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 final class WorkOrder extends BaseModel
 {
-    /** @phpstan-use HasXotFactory<WorkOrderFactory> */
     use HasXotFactory;
 
     use SoftDeletes;
@@ -69,6 +68,11 @@ final class WorkOrder extends BaseModel
             'closed_at' => 'datetime',
             'deleted_at' => 'datetime',
         ];
+    }
+
+    protected static function newFactory(): WorkOrderFactory
+    {
+        return WorkOrderFactory::new();
     }
 
     /** @return BelongsTo<Customer, $this> */

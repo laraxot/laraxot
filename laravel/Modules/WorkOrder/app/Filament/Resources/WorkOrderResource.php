@@ -14,7 +14,6 @@ use Filament\Actions\RestoreBulkAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -164,7 +163,7 @@ final class WorkOrderResource extends GatedXotBaseResource
                     Grid::make(2)->components([
                         Select::make('customer_site_id')
                             ->options(function (callable $get): array {
-                                $customerId = (int) ($get('customer_id') ?? 0);
+                                $customerId = is_int($get('customer_id')) ? (int) $get('customer_id') : 0;
                                 if ($customerId <= 0) {
                                     return [];
                                 }
@@ -184,12 +183,12 @@ final class WorkOrderResource extends GatedXotBaseResource
 
                         Select::make('primary_contact_id')
                             ->options(function (callable $get): array {
-                                $customerId = (int) ($get('customer_id') ?? 0);
+                                $customerId = is_int($get('customer_id')) ? (int) $get('customer_id') : 0;
                                 if ($customerId <= 0) {
                                     return [];
                                 }
 
-                                $siteId = (int) ($get('customer_site_id') ?? 0);
+                                $siteId = is_int($get('customer_site_id')) ? (int) $get('customer_site_id') : 0;
 
                                 return Contact::query()
                                     ->where('customer_id', $customerId)
@@ -239,8 +238,8 @@ final class WorkOrderResource extends GatedXotBaseResource
                             ->default(0)
                             ->suffix('%'),
 
-                        Placeholder::make('effort_summary')
-                            ->content(fn (?WorkOrder $record): string => self::effortSummary($record)),
+                        TextEntry::make('effort_summary')
+                            ->state(fn (?WorkOrder $record): string => self::effortSummary($record)),
                     ]),
                 ])
                 ->columns(2),
@@ -452,26 +451,26 @@ final class WorkOrderResource extends GatedXotBaseResource
                     ->relationship('status', 'name', fn (Builder $query): Builder => $query->whereNotNull('name')),
                 Filter::make('scheduled_between')
                     ->label(__('workorder::work_orders.fields.report_from').' / '.__('workorder::work_orders.fields.report_to'))
-                    ->form([
+                    ->schema([
                         DatePicker::make('from'),
                         DatePicker::make('to'),
                     ])
                     ->query(function (Builder $query, array $data): Builder {
-                        $from = $data['from'] ?? null;
-                        $to = $data['to'] ?? null;
+                        $from = is_string($data['from'] ?? null) ? $data['from'] : null;
+                        $to = is_string($data['to'] ?? null) ? $data['to'] : null;
 
                         return $query
                             ->when(
                                 filled($from),
-                                fn (Builder $innerQuery): Builder => $innerQuery->whereDate('scheduled_at', '>=', (string) $from),
+                                fn (Builder $innerQuery): Builder => $innerQuery->whereDate('scheduled_at', '>=', $from),
                             )
                             ->when(
                                 filled($to),
-                                fn (Builder $innerQuery): Builder => $innerQuery->whereDate('scheduled_at', '<=', (string) $to),
+                                fn (Builder $innerQuery): Builder => $innerQuery->whereDate('scheduled_at', '<=', $to),
                             );
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 Action::make('exportReport')
                     ->icon('heroicon-o-document-chart-bar')
                     ->color('success')
@@ -485,7 +484,7 @@ final class WorkOrderResource extends GatedXotBaseResource
 
                         return AccountFeatures::hasFeature($user, 'admin.reports', true);
                     })
-                    ->form([
+                    ->schema([
                         Radio::make('format')
                             ->options([
                                 'pdf' => 'PDF',
@@ -504,12 +503,14 @@ final class WorkOrderResource extends GatedXotBaseResource
                             ->required(),
                     ])
                     ->action(function (WorkOrder $record, array $data): mixed {
-                        $format = match ((string) ($data['format'] ?? 'pdf')) {
+                        $format = match (is_string($data['format'] ?? null) ? $data['format'] : 'pdf') {
                             'docx' => 'docx',
                             default => 'pdf',
                         };
-                        $from = CarbonImmutable::parse((string) $data['from'])->startOfDay();
-                        $to = CarbonImmutable::parse((string) $data['to'])->endOfDay();
+                        $fromRaw = is_string($data['from'] ?? null) ? $data['from'] : now()->startOfMonth()->toDateString();
+                        $toRaw = is_string($data['to'] ?? null) ? $data['to'] : now()->endOfMonth()->toDateString();
+                        $from = CarbonImmutable::parse($fromRaw)->startOfDay();
+                        $to = CarbonImmutable::parse($toRaw)->endOfDay();
 
                         $result = app(GenerateWorkOrderReportAction::class)->execute(
                             workOrder: $record,
@@ -531,7 +532,7 @@ final class WorkOrderResource extends GatedXotBaseResource
                 EditAction::make()
                     ->visible(fn (): bool => ! request()->is('operator/*') && ! request()->is('customer/*')),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make()
                     ->visible(fn (): bool => ! request()->is('operator/*') && ! request()->is('customer/*')),
                 RestoreBulkAction::make()
@@ -572,7 +573,7 @@ final class WorkOrderResource extends GatedXotBaseResource
         if (request()->is('customer/*')) {
             /** @var User|null $user */
             $user = Auth::user();
-            $customerId = is_object($user) ? (int) ($user->customer_id ?? 0) : 0;
+            $customerId = is_int($user->customer_id) ? (int) $user->customer_id : 0;
             if ($customerId > 0) {
                 $query->where('customer_id', $customerId);
             } else {
@@ -661,7 +662,7 @@ final class WorkOrderResource extends GatedXotBaseResource
 
         /** @var array<int, string> */
         return $query->pluck('legal_name', 'id')
-            ->map(static fn (mixed $name): string => (string) $name)
+            ->map(static fn (mixed $name): string => is_string($name) ? $name : '')
             ->all();
     }
 }

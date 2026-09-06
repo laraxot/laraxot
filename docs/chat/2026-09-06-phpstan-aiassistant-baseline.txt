@@ -1,0 +1,462 @@
+Note: Using configuration file /var/www/_bases/base_workorder_fila5/laravel/phpstan.neon.
+Instructions for interpreting errors
+---------
+
+Each error has an associated identifier, like `argument.type`
+or `return.missing`.
+
+Each error identifier has documentation at URL https://phpstan.org/error-identifiers/<identifier>
+This page contains code example, explanation why is this an error
+and instruction how to fix it.
+Before fixing the error, fetch the documentation page for its identifier.
+
+The error usually indicates a real bug or incorrect type in the code. Fix the underlying cause, do not just make the error go away.
+Do not add `@phpstan-ignore` comments, `@phpstan-ignore-next-line` comments, or baseline entries to suppress the error.
+Do not use assert() or inline @var PHPDoc tag to override PHPStan's inferred type.
+Do not add type casts just to silence errors.
+Do not widen parameter or return types just to make the error go away.
+ ------ ------------------------------------------------- 
+  Line   app/Actions/CreateAiActionProposalAction.php     
+ ------ ------------------------------------------------- 
+  63     Cannot cast mixed to int.                        
+         🪪  cast.int                                     
+         ✏️  app/Actions/CreateAiActionProposalAction.php  
+ ------ ------------------------------------------------- 
+
+ ------ -------------------------------------------------- 
+  Line   app/Actions/ExecuteAiActionProposalAction.php     
+ ------ -------------------------------------------------- 
+  757    Cannot cast mixed to string.                      
+         🪪  cast.string                                   
+         ✏️  app/Actions/ExecuteAiActionProposalAction.php  
+  758    Cannot cast mixed to string.                      
+         🪪  cast.string                                   
+         ✏️  app/Actions/ExecuteAiActionProposalAction.php  
+  786    Cannot cast mixed to string.                      
+         🪪  cast.string                                   
+         ✏️  app/Actions/ExecuteAiActionProposalAction.php  
+ ------ -------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------- 
+  Line   app/Filament/Pages/AiAssistantChat.php                           
+ ------ ----------------------------------------------------------------- 
+  233    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  245    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  299    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  401    Offset 1 might not exist on array|null.                          
+         🪪  offsetAccess.notFound                                        
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  403    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  403    Parameter #1 $array of function end expects array|object, mixed  
+         given.                                                           
+         🪪  argument.type                                                
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  501    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  502    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  506    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  506    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  507    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  631    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  647    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  647    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  651    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  706    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  707    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  708    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  709    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  754    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  755    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  756    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  781    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  782    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  992    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  993    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  994    Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+  1008   Cannot cast mixed to string.                                     
+         🪪  cast.string                                                  
+         ✏️  app/Filament/Pages/AiAssistantChat.php                       
+ ------ ----------------------------------------------------------------- 
+
+ ------ --------------------------------------------------- 
+  Line   app/Filament/Pages/AiCommunicationsMonitor.php     
+ ------ --------------------------------------------------- 
+  124    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  124    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  165    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  213    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  214    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  215    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  217    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  218    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  219    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  220    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  269    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  284    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  286    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  290    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  302    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  358    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  359    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  427    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  428    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  432    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  432    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  433    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  440    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  441    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  441    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  442    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  557    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  563    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  708    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  709    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  764    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  765    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  766    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  767    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  811    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  812    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  813    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  838    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+  839    Cannot cast mixed to string.                       
+         🪪  cast.string                                    
+         ✏️  app/Filament/Pages/AiCommunicationsMonitor.php  
+ ------ --------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   app/Lookup/WebAiCompanyLookupProvider.php                              
+ ------ ----------------------------------------------------------------------- 
+  140    Parameter #1 $string of function trim expects string, array<string>|s  
+         tring given.                                                           
+         🪪  argument.type                                                      
+         ✏️  app/Lookup/WebAiCompanyLookupProvider.php                          
+ ------ ----------------------------------------------------------------------- 
+
+ ------ -------------------------------------------------------------------- 
+  Line   app/Neuron/OperatorAssistantAgent.php                               
+ ------ -------------------------------------------------------------------- 
+  412    Cannot cast mixed to string.                                        
+         🪪  cast.string                                                     
+         ✏️  app/Neuron/OperatorAssistantAgent.php                           
+  413    Cannot cast mixed to string.                                        
+         🪪  cast.string                                                     
+         ✏️  app/Neuron/OperatorAssistantAgent.php                           
+  449    Cannot cast mixed to string.                                        
+         🪪  cast.string                                                     
+         ✏️  app/Neuron/OperatorAssistantAgent.php                           
+  450    Cannot cast mixed to string.                                        
+         🪪  cast.string                                                     
+         ✏️  app/Neuron/OperatorAssistantAgent.php                           
+  510    Cannot cast mixed to int.                                           
+         🪪  cast.int                                                        
+         ✏️  app/Neuron/OperatorAssistantAgent.php                           
+  536    Cannot cast array<string>|string to string.                         
+         🪪  cast.string                                                     
+         ✏️  app/Neuron/OperatorAssistantAgent.php                           
+  536    Parameter #1 $string of function trim expects string, mixed given.  
+         🪪  argument.type                                                   
+         ✏️  app/Neuron/OperatorAssistantAgent.php                           
+  607    Cannot cast mixed to int.                                           
+         🪪  cast.int                                                        
+         ✏️  app/Neuron/OperatorAssistantAgent.php                           
+  723    Cannot cast mixed to string.                                        
+         🪪  cast.string                                                     
+         ✏️  app/Neuron/OperatorAssistantAgent.php                           
+  763    Cannot cast mixed to int.                                           
+         🪪  cast.int                                                        
+         ✏️  app/Neuron/OperatorAssistantAgent.php                           
+  764    Cannot cast mixed to float.                                         
+         🪪  cast.double                                                     
+         ✏️  app/Neuron/OperatorAssistantAgent.php                           
+  1149   Cannot cast mixed to int.                                           
+         🪪  cast.int                                                        
+         ✏️  app/Neuron/OperatorAssistantAgent.php                           
+  1246   Cannot cast mixed to float.                                         
+         🪪  cast.double                                                     
+         ✏️  app/Neuron/OperatorAssistantAgent.php                           
+  1253   Cannot cast mixed to float.                                         
+         🪪  cast.double                                                     
+         ✏️  app/Neuron/OperatorAssistantAgent.php                           
+  1277   Cannot cast mixed to string.                                        
+         🪪  cast.string                                                     
+         ✏️  app/Neuron/OperatorAssistantAgent.php                           
+ ------ -------------------------------------------------------------------- 
+
+ ------ ------------------------------------------------- 
+  Line   app/Providers/AiAssistantServiceProvider.php     
+ ------ ------------------------------------------------- 
+  60     Cannot cast mixed to int.                        
+         🪪  cast.int                                     
+         ✏️  app/Providers/AiAssistantServiceProvider.php  
+ ------ ------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   app/Speech/BuildSpokenSummaryAction.php                                
+ ------ ----------------------------------------------------------------------- 
+  41     Cannot cast mixed to string.                                           
+         🪪  cast.string                                                        
+         ✏️  app/Speech/BuildSpokenSummaryAction.php                            
+  108    Parameter #1 $string of function trim expects string, array<string>|s  
+         tring given.                                                           
+         🪪  argument.type                                                      
+         ✏️  app/Speech/BuildSpokenSummaryAction.php                            
+  113    Parameter #1 $string of function trim expects string, array<string>|s  
+         tring given.                                                           
+         🪪  argument.type                                                      
+         ✏️  app/Speech/BuildSpokenSummaryAction.php                            
+ ------ ----------------------------------------------------------------------- 
+
+ ------ --------------------------------------------------- 
+  Line   database/factories/AiActionProposalFactory.php     
+ ------ --------------------------------------------------- 
+  27     Call to an undefined static method                 
+         Modules\AiAssistant\Models\AiThread::factory().    
+         🪪  staticMethod.notFound                          
+         ✏️  database/factories/AiActionProposalFactory.php  
+ ------ --------------------------------------------------- 
+
+ ------ ------------------------------------------------- 
+  Line   database/factories/AiMessageFactory.php          
+ ------ ------------------------------------------------- 
+  25     Call to an undefined static method               
+         Modules\AiAssistant\Models\AiThread::factory().  
+         🪪  staticMethod.notFound                        
+         ✏️  database/factories/AiMessageFactory.php      
+ ------ ------------------------------------------------- 
+
+ ------ ------------------------------------------------- 
+  Line   database/factories/AiToolLogFactory.php          
+ ------ ------------------------------------------------- 
+  25     Call to an undefined static method               
+         Modules\AiAssistant\Models\AiThread::factory().  
+         🪪  staticMethod.notFound                        
+         ✏️  database/factories/AiToolLogFactory.php      
+ ------ ------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Feature/BuildSpokenSummaryTest.php                               
+ ------ ----------------------------------------------------------------------- 
+  18     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/BuildSpokenSummaryTest.php                           
+  18     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/BuildSpokenSummaryTest.php                           
+  23     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/BuildSpokenSummaryTest.php                           
+  28     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/BuildSpokenSummaryTest.php                           
+  35     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/BuildSpokenSummaryTest.php                           
+  39     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/BuildSpokenSummaryTest.php                           
+  44     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/BuildSpokenSummaryTest.php                           
+  51     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/BuildSpokenSummaryTest.php                           
+  57     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/BuildSpokenSummaryTest.php                           
+  63     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/BuildSpokenSummaryTest.php                           
+  70     Call to method toBeLessThanOrEqual() of internal class                 
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/BuildSpokenSummaryTest.php                           
+  70     Call to method toContain() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/BuildSpokenSummaryTest.php                           
+  70     Call to method toEndWith() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/BuildSpokenSummaryTest.php                           
+  78     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/BuildSpokenSummaryTest.php                           
+  78     Call to method toEndWith() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/BuildSpokenSummaryTest.php                           
+ ------ ----------------------------------------------------------------------- 
+
+ ------ ----------------------------------------------------------------------- 
+  Line   tests/Feature/LlmRawLoggingTest.php                                    
+ ------ ----------------------------------------------------------------------- 
+  70     Call to method toHaveCount() of internal class                         
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/LlmRawLoggingTest.php                                
+  77     Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/LlmRawLoggingTest.php                                
+  93     Call to method toBeEmpty() of internal class Pest\Mixins\Expectation<  
+         TValue> from outside its root namespace Pest.                          
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/LlmRawLoggingTest.php                                
+  104    Call to method toBe() of internal class Pest\Mixins\Expectation<TValu  
+         e> from outside its root namespace Pest.                               
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/LlmRawLoggingTest.php                                
+  114    Call to method toHaveCount() of internal class                         
+         Pest\Mixins\Expectation<TValue> from outside its root namespace Pest.  
+         🪪  method.internalClass                                               
+         ✏️  tests/Feature/LlmRawLoggingTest.php                                
+ ------ ----------------------------------------------------------------------- 
+
+ -- ------------------------------------------------------------------------- 
+     Error                                                                    
+ -- ------------------------------------------------------------------------- 
+     Ignored error pattern #Pest\\# (method.internalClass) in paths:          
+     /var/www/_bases/base_workorder_fila5/laravel/*/tests/Pest.php,           
+     /var/www/_bases/base_workorder_fila5/laravel/*/tests/Unit/*.php was not  
+     matched in reported errors.                                              
+ -- ------------------------------------------------------------------------- 
+
+ [ERROR] Found 115 errors                                                       
+

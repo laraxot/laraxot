@@ -80,8 +80,8 @@ final class SubcontractorResource extends Resource
                 Tables\Columns\TextColumn::make('email')->toggleable(),
                 Tables\Columns\TextColumn::make('status')->badge()->sortable(),
             ])
-            ->actions([ViewAction::make(), EditAction::make()])
-            ->bulkActions([DeleteBulkAction::make()]);
+            ->recordActions([ViewAction::make(), EditAction::make()])
+            ->toolbarActions([DeleteBulkAction::make()]);
     }
 
     public static function getPages(): array

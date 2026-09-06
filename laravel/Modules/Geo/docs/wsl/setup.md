@@ -23,7 +23,7 @@
 - PHP 8.3 (ultima versione) - ~10 minuti
 - Webmin (pannello di controllo) - ~5 minuti
 - HeidiSQL (gestore database) - ~5 minuti
-- Laravel 12 (framework PHP) - ~15 minuti
+- Laravel 13 (framework PHP) - ~15 minuti
 - Chiavi SSH per GitHub - ~5 minuti
 
 ## Parte 1: Installare WSL (Windows Subsystem for Linux)
@@ -471,7 +471,7 @@ SHOW TABLES;
 ```
 4. Se non vedi errori, la connessione è stata stabilita correttamente
 
-## Parte 5: Clona e Configura Progetto Laravel 12
+## Parte 5: Clona e Configura Progetto Laravel 13
 
 ### Passo 1: Installa Composer (5 minuti)
 Copia e incolla questi comandi:
@@ -494,8 +494,8 @@ git clone git@github.com:nome-utente/mio-repository.git mioprogetto
 ```
 Premi Invio e aspetta che finisca.
 
-### Passo 4: Alternativa - Crea un nuovo progetto Laravel 12 (15 minuti)
-Se non hai un repository da clonare, puoi creare un nuovo progetto Laravel 12:
+### Passo 4: Alternativa - Crea un nuovo progetto Laravel 13 (15 minuti)
+Se non hai un repository da clonare, puoi creare un nuovo progetto Laravel 13:
 ```bash
 composer create-project laravel/laravel:^12.0 mioprogetto
 ```
@@ -684,7 +684,7 @@ https://mioprogetto.local
 
 3. Vedrai un avviso di sicurezza sul certificato autofirmato. Clicca su "Avanzate" o "Mostra dettagli" e poi su "Procedi a mioprogetto.local (non sicuro)" o simile. Questo è normale perché stiamo usando un certificato autofirmato in ambiente di sviluppo.
 
-4. Dovresti vedere la pagina di benvenuto di Laravel 12 o la homepage del tuo progetto.
+4. Dovresti vedere la pagina di benvenuto di Laravel 13 o la homepage del tuo progetto.
 
 ## Troubleshooting
 
@@ -839,12 +839,12 @@ sudo tail -f /var/log/apache2/error.log
 - [Aggiornamento di Webmin](https://www.webmin.com/upgrade.html)
 
 ### Laravel
-- [Documentazione Laravel 12](https://laravel.com/docs/12.x)
+- [Documentazione Laravel 13](https://laravel.com/docs/12.x)
 - [Installazione Laravel](https://laravel.com/docs/12.x/installation)
 - [Configurazione Database](https://laravel.com/docs/12.x/database)
 - [Migrazioni Database](https://laravel.com/docs/12.x/migrations)
 - [Configurazione Virtual Host](https://laravel.com/docs/12.x/deployment#apache)
-- [Video tutorial Laravel 12 (completo)](https://laracasts.com/series/whats-new-in-laravel-12)
+- [Video tutorial Laravel 13 (completo)](https://laracasts.com/series/whats-new-in-laravel-12)
 - [Laracasts - Tutorial e risorse](https://laracasts.com/)
 - [Laravel News](https://laravel-news.com/)
 - [Eloquent ORM](https://laravel.com/docs/12.x/eloquent)

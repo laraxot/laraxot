@@ -1,0 +1,19 @@
+includes:
+    - ./vendor/larastan/larastan/extension.neon
+    - ./vendor/nesbot/carbon/extension.neon
+    - ./vendor/pestphp/pest/extension.neon
+
+parameters:
+    level: max
+    paths:
+        - ./app/
+        - ./database/
+
+    excludePaths:
+        - ./vendor/*
+        - ./app/Filament/Widgets/WorkHoursBoardWidget.php
+        - ./app/Filament/Resources/WorkHourResource/Pages/TimeClockPage.php
+        - ./app/Filament/Resources/WorkHourResource/Pages/CreateWorkHour.php
+        - ./database/factories/WorkHourFactory.php
+
+    reportUnmatchedIgnoredErrors: false

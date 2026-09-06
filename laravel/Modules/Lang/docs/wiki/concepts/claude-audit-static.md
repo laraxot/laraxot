@@ -7,9 +7,9 @@ created: 2026-07-09
 updated: 2026-07-09
 qmd: "Lang claude-audit static 80 score LangServiceProvider nesting"
 issues:
-  - "https://github.com/laraxot/base_fixcity_fila5/issues/272"
+  - "https://github.com/laraxot/platform/issues/272"
 discussions:
-  - "https://github.com/laraxot/base_fixcity_fila5/discussions/273"
+  - "https://github.com/laraxot/platform/discussions/273"
 related:
   - ../../../../../../bashscripts/tools/run-claude-audit-module-static.sh
   - ../../../../../../bashscripts/tools/claude-audit-module-static-boost.sh

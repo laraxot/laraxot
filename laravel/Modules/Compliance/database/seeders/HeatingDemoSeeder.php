@@ -88,8 +88,11 @@ final class HeatingDemoSeeder extends Seeder
      */
     private function customerIds(): array
     {
+        $plucked = DB::table('customers')->orderBy('id')->limit(4)->pluck('id');
         /** @var list<int> $ids */
-        $ids = DB::table('customers')->orderBy('id')->limit(4)->pluck('id')->map(static fn ($id): int => (int) $id)->all();
+        $ids = $plucked
+            ->map(static fn (mixed $id): int => is_numeric($id) ? (int) $id : 0)
+            ->all();
 
         if ($ids === []) {
             $ids = [(int) DB::table('customers')->insertGetId([

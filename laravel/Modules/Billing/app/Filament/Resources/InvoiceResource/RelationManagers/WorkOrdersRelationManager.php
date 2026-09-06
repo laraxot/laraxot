@@ -43,8 +43,8 @@ final class WorkOrdersRelationManager extends XotBaseRelationManager
                     $result = [];
                     foreach ($rows as $row) {
                         $id = is_int($row->id) || is_numeric($row->id) ? (int) $row->id : 0;
-                        $label = is_string($row->code) && $row->code !== '' 
-                            ? $row->code 
+                        $label = is_string($row->code) && $row->code !== ''
+                            ? $row->code
                             : (is_string($row->title) ? $row->title : 'Commessa senza codice');
                         $result[$id] = $label;
                     }
@@ -73,8 +73,8 @@ final class WorkOrdersRelationManager extends XotBaseRelationManager
                         if ($record === null) {
                             return 'Commessa non disponibile';
                         }
-                        $label = is_string($record->code) && $record->code !== '' 
-                            ? $record->code 
+                        $label = is_string($record->code) && $record->code !== ''
+                            ? $record->code
                             : (is_string($record->title) ? $record->title : 'Commessa non disponibile');
 
                         return $label;
@@ -98,7 +98,7 @@ final class WorkOrdersRelationManager extends XotBaseRelationManager
                         );
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 DeleteAction::make()
                     ->visible(fn (): bool => ! request()->is('customer/*')),
             ]);

@@ -1,7 +1,7 @@
 # 🌍 **Geo Module** - Gestione Avanzata Dati Geografici
 
 [![PHPStan Level 9](https://img.shields.io/badge/PHPStan-Level%209-brightgreen.svg)](https://phpstan.org/)
-[![Laravel 12.x](https://img.shields.io/badge/Laravel-12.x-red.svg)](https://laravel.com/)
+[![Laravel 13.x](https://img.shields.io/badge/Laravel-12.x-red.svg)](https://laravel.com/)
 [![Filament 3.x](https://img.shields.io/badge/Filament-3.x-blue.svg)](https://filamentphp.com/)
 [![Translation Ready](https://img.shields.io/badge/Translation-IT%20%7C%20EN%20%7C%20DE-green.svg)](https://laravel.com/docs/localization)
 [![API Integration](https://img.shields.io/badge/API-Google%20Maps%20%7C%20Mapbox%20%7C%20Here-orange.svg)](https://developers.google.com/maps)
@@ -460,7 +460,7 @@ php artisan db:seed --class=ComuniItalianiSeeder
 ## 🔧 **Installazione e Configurazione**
 
 ### **Requisiti**
-- Laravel 12.x
+- Laravel 13.x
 - PHP 8.2+
 - Composer 2.0+
 - Database MySQL/PostgreSQL

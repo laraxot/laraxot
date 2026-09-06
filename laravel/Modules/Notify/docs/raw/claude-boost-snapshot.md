@@ -712,7 +712,7 @@ This is **FixCity**, a **citizen reporting platform** for urban issue management
 
 ### System Architecture - NWIDART + LARAXOT ECOSYSTEM
 - **Modular Monolith** using Nwidart/Laravel-Modules + Laraxot extensions
-- **Backend**: Laravel 12.24.0 + PHP 8.3.20 + SQLite
+- **Backend**: Laravel 13.24.0 + PHP 8.3.20 + SQLite
 - **Backoffice**: Filament 3.x + Laraxot (admin panels)
 - **Frontoffice**: Folio + Volt + Livewire 3.x (citizen interface)
 - **Module System**: Nwidart base + Laraxot enhancements

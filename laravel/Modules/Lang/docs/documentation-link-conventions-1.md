@@ -90,7 +90,7 @@ Prima di fare commit dei documenti:
 
 ### Da Modules/Lang/docs/ a un altro file nella stessa cartella
 ```markdown
-[Best Practices](translation_keys_best_practices.md)
+[Best Practices](translation-keys-best-practices.md)
 ```
 
 ## Vantaggi dei Percorsi Relativi

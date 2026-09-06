@@ -8,7 +8,7 @@
 
 ## Correzioni Applicate
 
-### 1. Conversione `$casts` in `casts()` (Laravel 12+)
+### 1. Conversione `$casts` in `casts()` (Laravel 13+)
 
 **File**: `app/Models/Rating.php`
 
@@ -40,7 +40,7 @@ protected function casts(): array
 }
 ```
 
-**Motivazione**: `protected $casts` è deprecato in Laravel 12+. Il metodo `casts()` è obbligatorio.
+**Motivazione**: `protected $casts` è deprecato in Laravel 13+. Il metodo `casts()` è obbligatorio.
 
 ### 2. Sostituzione `property_exists()` con `isset()`
 

@@ -1042,7 +1042,7 @@ class MediaAnalyticsService
 }
 ```
 
-## 🚀 Modern Laravel 12 + PHP 8.3 Optimizations
+## 🚀 Modern Laravel 13 + PHP 8.3 Optimizations
 
 ### Enhanced Type Safety & Enums
 ```php
@@ -2204,7 +2204,7 @@ class MediaAnalyticsService
 }
 ```
 
-## 🚀 Modern Laravel 12 + PHP 8.3 Optimizations
+## 🚀 Modern Laravel 13 + PHP 8.3 Optimizations
 
 ### Enhanced Type Safety & Enums
 ```php

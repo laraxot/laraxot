@@ -23,6 +23,19 @@ final class IssueReportsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'issueReports';
 
+    private static function ensureString(mixed $value): string
+    {
+        if (is_string($value)) {
+            return $value;
+        }
+
+        if (is_numeric($value) || is_bool($value) || $value === null) {
+            return (string) $value;
+        }
+
+        return '';
+    }
+
     public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('interventions.issue_reports');
@@ -72,7 +85,7 @@ final class IssueReportsRelationManager extends XotBaseRelationManager
                             : (int) (Auth::id() ?? 0);
 
                         $bodyValue = $data['body'] ?? '';
-                        $body = is_string($bodyValue) ? $bodyValue : strval($bodyValue);
+                        $body = self::ensureString($bodyValue);
 
                         return app(CreateIssueReportAction::class)->execute(
                             intervention: $intervention,
@@ -81,11 +94,11 @@ final class IssueReportsRelationManager extends XotBaseRelationManager
                         );
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
     }

@@ -570,7 +570,7 @@ final class ComplianceDemoSeeder extends Seeder
 
         $lines = array_slice(preg_split('/\R/', wordwrap($body, 64, "\n")) ?: [], 0, 14);
         foreach ($lines as $index => $line) {
-            $this->drawText($doc, (string) $line, 95, 385 + ($index * 42), 18, $mutedColor, $font);
+            $this->drawText($doc, is_string($line) ? $line : '', 95, 385 + ($index * 42), 18, $mutedColor, $font);
         }
 
         imagerectangle($doc, 95, 1065, 930, 1220, $lineColor);
@@ -687,7 +687,7 @@ final class ComplianceDemoSeeder extends Seeder
             $lineSvg .= sprintf(
                 '<text x="170" y="%d" class="body">%s</text>',
                 365 + ($index * 38),
-                $this->e((string) $line),
+                $this->e(is_string($line) ? $line : ''),
             );
         }
 

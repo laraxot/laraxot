@@ -359,7 +359,7 @@ class Example {
 
 *Ultimo aggiornamento: 2025-08-04*
 *Versione: 2.0*
-*Compatibilità: Laraxot <nome progetto>, PHP 8.2+, Laravel 12+, Filament 3.4+*
+*Compatibilità: Laraxot <nome progetto>, PHP 8.2+, Laravel 13+, Filament 3.4+*
 ### Caso Reale
 - Errore su `Modules/User/app/Filament/Widgets/Auth/RegisterWidget.php` risolto spostando la funzione orfana all'interno della classe o eliminandola se non più necessaria
 

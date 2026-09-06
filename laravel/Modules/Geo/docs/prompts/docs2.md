@@ -854,7 +854,7 @@ find docs/ -name "*" | grep '[A-Z]' | grep -v "README.md"
 
 **Ultimo aggiornamento:** Giugno 2025
 **Versione:** 3.0
-**Compatibilità:** Laravel 12.x, PHP 8.2+, Filament 3.x
+**Compatibilità:** Laravel 13.x, PHP 8.2+, Filament 3.x
 **Autore:** Analisi approfondita del codice Laraxot
 
 

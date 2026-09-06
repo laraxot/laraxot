@@ -10,7 +10,7 @@
 
 ### Core Technology
 - **PHP 8.3+** - Strict typing, latest features
-- **Laravel 12** - Latest LTS version
+- **Laravel 13** - Latest LTS version
 - **Filament v5** - Admin panel, widgets, tables
 - **Livewire v4** - Reactive components
 - **Nwidart Laravel Modules** - Modular architecture

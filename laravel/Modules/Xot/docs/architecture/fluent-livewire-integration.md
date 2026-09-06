@@ -1,6 +1,6 @@
 # Integrazione Livewire 4, Volt e Flux UI
 
-Con il passaggio a Laravel 12 e Filament 5, l'integrazione del frontend segue il paradigma "Functional & Component-First".
+Con il passaggio a Laravel 13 e Filament 5, l'integrazione del frontend segue il paradigma "Functional & Component-First".
 
 ## 1. Livewire Volt (Functional API)
 Volt permette di definire componenti Livewire in un unico file Blade.

@@ -5,7 +5,7 @@
 ### Obiettivi
 
 - Portare il modulo a **PHPStan Level 10** senza errori.
-- Allineare tutte le dipendenze e il codice a **Laravel 12** e **Filament v5**.
+- Allineare tutte le dipendenze e il codice a **Laravel 13** e **Filament v5**.
 - Garantire che il modulo sia **sicuro da riutilizzare** in altri progetti Laraxot senza regressioni.
 
 ### Attività

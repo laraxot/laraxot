@@ -60,8 +60,6 @@ class WorkHourFactory extends Factory
     }
 
     /**
-     * Create a sequence of work hours for a full work day.
-     *
      * @return array<int, WorkHour>
      */
     public function workDaySequence(int $employeeId, Carbon $date): array

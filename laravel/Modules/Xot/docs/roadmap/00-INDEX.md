@@ -1,6 +1,6 @@
 # Xot Module - Roadmap
 
-> Motore core Laraxot. Framework Zero-Config per Laravel 12.
+> Motore core Laraxot. Framework Zero-Config per Laravel 13.
 
 ## Indice
 

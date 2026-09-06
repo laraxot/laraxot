@@ -137,7 +137,7 @@ final class SchemasRelationManager extends RelationManager
                         );
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 Action::make('download')
                     ->icon('heroicon-o-arrow-down-tray')
                     ->action(function (Media $record) {

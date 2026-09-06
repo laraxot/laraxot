@@ -80,8 +80,8 @@ final class WorkOrderChangeOrderResource extends Resource
             ->filters([
                 SelectFilter::make('status')->options(self::statuses()),
             ])
-            ->actions([ViewAction::make(), EditAction::make()])
-            ->bulkActions([DeleteBulkAction::make()]);
+            ->recordActions([ViewAction::make(), EditAction::make()])
+            ->toolbarActions([DeleteBulkAction::make()]);
     }
 
     public static function getPages(): array

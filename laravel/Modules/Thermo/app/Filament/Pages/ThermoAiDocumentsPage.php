@@ -326,9 +326,13 @@ PROMPT;
         }
 
         $raw = file_get_contents($path, false, null, 0, 120000);
+        if ($raw === '') {
+            return '';
+        }
         preg_match_all('/[A-Za-z0-9À-ÿ][A-Za-z0-9À-ÿ\s.,;:\/\-_€]{4,}/u', $raw, $matches);
+        $found = $matches[0];
 
-        return trim(implode("\n", array_slice($matches[0], 0, 40)));
+        return trim(implode("\n", array_slice($found, 0, 40)));
     }
 
     private function matchText(string $content, string $pattern): ?string
@@ -355,7 +359,8 @@ PROMPT;
     private function parseJsonObject(string $text): array
     {
         $clean = trim($text);
-        $clean = preg_replace('/^```(?:json)?\s*|\s*```$/', '', $clean);
+        $replaced = preg_replace('/^```(?:json)?\s*|\s*```$/', '', $clean);
+        $clean = is_string($replaced) ? $replaced : $clean;
 
         try {
             $decoded = json_decode($clean, true, 512, JSON_THROW_ON_ERROR);
@@ -378,8 +383,10 @@ PROMPT;
 
     private function excerpt(string $content): string
     {
+        $normalized = preg_replace('/\s+/', ' ', $content);
+
         return $content !== ''
-            ? Str::limit(preg_replace('/\s+/', ' ', $content) ?? $content, 240)
+            ? Str::limit(is_string($normalized) ? $normalized : $content, 240)
             : 'Anteprima testo non disponibile: il PDF potrebbe essere scansionato o compresso. In demo viene mostrata comunque una proposta AI realistica.';
     }
 }

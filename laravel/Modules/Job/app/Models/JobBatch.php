@@ -81,10 +81,7 @@ class JobBatch extends BaseModel
      */
     public function processedJobs(): int|float
     {
-        $totalJobs = (int) ($this->attributes['total_jobs'] ?? 0);
-        $pendingJobs = (int) ($this->attributes['pending_jobs'] ?? 0);
-
-        return $totalJobs - $pendingJobs;
+        return $this->total_jobs - $this->pending_jobs;
     }
 
     /**
@@ -92,7 +89,7 @@ class JobBatch extends BaseModel
      */
     public function progress(): int
     {
-        $totalJobs = (int) ($this->attributes['total_jobs'] ?? 0);
+        $totalJobs = $this->total_jobs;
         $progress = $totalJobs > 0 ? round($this->processedJobs() / $totalJobs * 100) : 0;
 
         return (int) $progress;
@@ -103,9 +100,7 @@ class JobBatch extends BaseModel
      */
     public function hasPendingJobs(): bool
     {
-        $pendingJobs = (int) ($this->attributes['pending_jobs'] ?? 0);
-
-        return $pendingJobs > 0;
+        return $this->pending_jobs > 0;
     }
 
     /**
@@ -121,9 +116,7 @@ class JobBatch extends BaseModel
      */
     public function hasFailures(): bool
     {
-        $failedJobs = (int) ($this->attributes['failed_jobs'] ?? 0);
-
-        return $failedJobs > 0;
+        return $this->failed_jobs > 0;
     }
 
     /**
@@ -131,10 +124,7 @@ class JobBatch extends BaseModel
      */
     public function failed(): bool
     {
-        $failedJobs = (int) ($this->attributes['failed_jobs'] ?? 0);
-        $totalJobs = (int) ($this->attributes['total_jobs'] ?? 0);
-
-        return $failedJobs === $totalJobs;
+        return $this->failed_jobs === $this->total_jobs;
     }
 
     /**

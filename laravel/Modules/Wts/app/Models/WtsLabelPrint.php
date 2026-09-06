@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Wts\Models;
 
 use Carbon\CarbonInterface;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
@@ -31,9 +30,6 @@ use Modules\Wts\Database\Factories\WtsLabelPrintFactory;
  */
 final class WtsLabelPrint extends BaseModel
 {
-    /** @use HasFactory<WtsLabelPrintFactory> */
-    use HasFactory;
-
     use SoftDeletes;
 
     protected $table = 'wts_label_prints';

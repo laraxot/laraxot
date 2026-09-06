@@ -457,7 +457,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `docs/operational-rules/database-testing-consistency-rule.md` — Regola Operativa: Nessun SQLite per i Test - Sempre MySQL con Suffisso "_test"
 - `docs/operational-rules/documentation-standards.md` — Documentation Standards - Regole Documentazione
 - `docs/operational-rules/dry-principle-action-duplication.md` — DRY Principle - Eliminazione Action Classes Duplicate
-- `docs/operational-rules/env-baseline-rule.md` — Env baseline rule (Laravel 12.x)
+- `docs/operational-rules/env-baseline-rule.md` — Env baseline rule (Laravel 13.x)
 - `docs/operational-rules/file-locking-mutex-pattern.md` — File Locking Mutex Pattern - Regola Operativa Critica
 - `docs/operational-rules/git-forward-only-rule.md` — Git Forward-Only Rule - Regola Operativa Assoluta
 - `docs/operational-rules/phpstan-critical-rule.md` — PHPStan Critical Rule - Qualità Codice Assoluta
@@ -924,7 +924,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/Modules/Chart/docs/backend/filament/forms-management.md` — Gestione Form in Filament
 - `laravel/Modules/Chart/docs/backend/framework/filament.md` — Filament Admin Panel
 - `laravel/Modules/Chart/docs/backend/framework/folio-volt.md` — Folio e Volt
-- `laravel/Modules/Chart/docs/backend/framework/laravel.md` — Laravel 12.x
+- `laravel/Modules/Chart/docs/backend/framework/laravel.md` — Laravel 13.x
 - `laravel/Modules/Chart/docs/backend/framework/livewire.md` — Livewire 4.x
 - `laravel/Modules/Chart/docs/backend/laravel-app/README.md` — Indice Documentazione il progetto
 - `laravel/Modules/Chart/docs/backend/laravel-app/index.md` — Indice della Documentazione
@@ -1488,7 +1488,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/Modules/Chart/docs/tecnico/04-correzione-autoloading-composer.md` — Correzione dell'Autoloading in Composer per Moduli Laraxot
 - `laravel/Modules/Chart/docs/tecnico/05-bashscripts-strumenti-automazione.md` — Importanza degli Script Bash nel Progetto il progetto
 - `laravel/Modules/Chart/docs/tecnico/06-struttura-namespace-moduli-laraxot.md` — Struttura dei Namespace nei Moduli Laraxot
-- `laravel/Modules/Chart/docs/tecnico/07-compatibilita-laravel12-moduli-laraxot.md` — Compatibilità tra Laravel 12 e Moduli Laraxot
+- `laravel/Modules/Chart/docs/tecnico/07-compatibilita-laravel12-moduli-laraxot.md` — Compatibilità tra Laravel 13 e Moduli Laraxot
 - `laravel/Modules/Chart/docs/tecnico/08-struttura-temi-laraxot.md` — Struttura dei Temi in Laraxot (il progetto)
 - `laravel/Modules/Chart/docs/tecnico/09-gestione-temi-modulo-cms.md` — Gestione dei Temi tramite il Modulo Cms
 - `laravel/Modules/Chart/docs/tecnico/10-gestione-migrazioni-moduli.md` — Gestione delle Migrazioni nei Moduli Laraxot
@@ -5286,7 +5286,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/Modules/Tenant/docs/customizing-your-site.md` — customizing-your-site
 - `laravel/Modules/Tenant/docs/cyclomatic-complexity-report.md` — Cyclomatic Complexity Report - Module: Tenant
 - `laravel/Modules/Tenant/docs/data-models.md` — data-models
-- `laravel/Modules/Tenant/docs/database-config-standard.md` — Database config standard (Laravel 12.x)
+- `laravel/Modules/Tenant/docs/database-config-standard.md` — Database config standard (Laravel 13.x)
 - `laravel/Modules/Tenant/docs/database-population.md` — Popolamento Database - Modulo Tenant
 - `laravel/Modules/Tenant/docs/database.md` — database
 - `laravel/Modules/Tenant/docs/dependencies.md` — dependencies
@@ -8577,7 +8577,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/Modules/Xot/docs/laravel-mix.md` — laravel-mix
 - `laravel/Modules/Xot/docs/laravel-modules-namespace-critical-rule.md` — ⚠️ REGOLA CRITICA - Namespace Laravel Modules OBBLIGATORIA
 - `laravel/Modules/Xot/docs/laravel.md` — Integrazione con Laravel e Best Practices
-- `laravel/Modules/Xot/docs/laravel12/property-promotion.md` — Da Proprietà a Metodi in Laravel 12
+- `laravel/Modules/Xot/docs/laravel12/property-promotion.md` — Da Proprietà a Metodi in Laravel 13
 - `laravel/Modules/Xot/docs/laravelfs-analisi.md` — Analisi di LaravelFS
 - `laravel/Modules/Xot/docs/laravelfs.md` — laravelfs
 - `laravel/Modules/Xot/docs/laraxot/best-practices.md` — Laraxot Best Practices
@@ -9485,7 +9485,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/Modules/Xot/docs/testing-best-practices.md` — Testing Guide for Laraxot Modules
 - `laravel/Modules/Xot/docs/testing-consolidated.md` — Testing - Documentazione Consolidata DRY + KISS
 - `laravel/Modules/Xot/docs/testing-fixes-roadmap.md` — Testing Fixes Roadmap - Correzione Test Falliti
-- `laravel/Modules/Xot/docs/testing-fixes.md` — 🧪 Fix Testing Issues - Laravel 12 Migration
+- `laravel/Modules/Xot/docs/testing-fixes.md` — 🧪 Fix Testing Issues - Laravel 13 Migration
 - `laravel/Modules/Xot/docs/testing-guide.md` — Testing Guide - Modulo Xot
 - `laravel/Modules/Xot/docs/testing-pest-php.md` — Testing con Pest PHP
 - `laravel/Modules/Xot/docs/testing-philosophy-unified.md` — Laraxot Testing Philosophy: The Unified Approach
@@ -9781,18 +9781,18 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/docs/complete-project-philosophy.md` — Quaeris - Filosofia Completa del Progetto: Logica, Religione, Politica, Zen
 - `laravel/docs/composer-merge-plugin.md` — Composer Merge Plugin Configuration
 - `laravel/docs/comprehensive-module-analysis-2026.md` — Quaeris Fila5 Mono - Complete Module Analysis & Documentation
-- `laravel/docs/config/database-standard-laravel-12.md` — Config Database Standard Laravel 12.x - 2026-01-21
-- `laravel/docs/config/database-standard-summary-2026-01-21.md` — Riepilogo: Database Config Standard Laravel 12.x - 2026-01-21
-- `laravel/docs/config/database-standard-verification-2026-01-21.md` — Verifica: Database Config Standard Laravel 12.x - 2026-01-21
+- `laravel/docs/config/database-standard-laravel-12.md` — Config Database Standard Laravel 13.x - 2026-01-21
+- `laravel/docs/config/database-standard-summary-2026-01-21.md` — Riepilogo: Database Config Standard Laravel 13.x - 2026-01-21
+- `laravel/docs/config/database-standard-verification-2026-01-21.md` — Verifica: Database Config Standard Laravel 13.x - 2026-01-21
 - `laravel/docs/config/debugbar-enabled-rule-2026-01-22.md` — Regola Critica: DEBUGBAR_ENABLED dopo APP_DEBUG
-- `laravel/docs/config/env-standard-laravel-12.md` — Standardizzazione .env con Laravel 12.x
-- `laravel/docs/config/env-standard-summary-2026-01-22.md` — Standardizzazione .env con Laravel 12.x - Riepilogo
+- `laravel/docs/config/env-standard-laravel-12.md` — Standardizzazione .env con Laravel 13.x
+- `laravel/docs/config/env-standard-summary-2026-01-22.md` — Standardizzazione .env con Laravel 13.x - Riepilogo
 - `laravel/docs/config/index.md` — Database Configuration Standards
 - `laravel/docs/coverage_summary.md` — Coverage Summary
 - `laravel/docs/cross-module-philosophy.md` — Filosofia Cross-Module - Manifestazioni Pratiche
 - `laravel/docs/database/large-sql-import-guide.md` — Guida Import File SQL Grandi
 - `laravel/docs/database-architecture.md` — Database Architecture Overview
-- `laravel/docs/database-laravel12-compatibility.md` — Configurazione Database Laravel 12.x - Compatibilità e Regole
+- `laravel/docs/database-laravel12-compatibility.md` — Configurazione Database Laravel 13.x - Compatibilità e Regole
 - `laravel/docs/database-testing.md` — Database Testing Rule - MySQL Only with Test Suffix
 - `laravel/docs/database-zen-complete-solution.md` — Database Environment Management - Laraxot Zen Complete Solution
 - `laravel/docs/deployment/deployment-guide.md` — Deployment del Progetto Quaeris
@@ -9803,7 +9803,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/docs/documentation-completion-guide.md` — Guida Completa per Completare la Documentazione
 - `laravel/docs/documentation-status.md` — Status Documentazione - Report Completo
 - `laravel/docs/dry-kiss-improvements.md` — DRY and KISS Improvements in Modular Architecture
-- `laravel/docs/env-compliance-laravel12.md` — .env Configuration Compliance - Laravel 12.x Standard
+- `laravel/docs/env-compliance-laravel12.md` — .env Configuration Compliance - Laravel 13.x Standard
 - `laravel/docs/filament-5-installation-summary.md` — Filament 5.x Installation Summary - Progetto Completo
 - `laravel/docs/filament-class-extension-rules.md` — Filament Class Extension Rules - Laraxot Framework
 - `laravel/docs/filament-installation-chart-widgets-guide.md` — Filament 5.x Installation and Chart Widget Implementation Guide

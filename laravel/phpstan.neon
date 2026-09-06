@@ -1,10 +1,10 @@
 includes:
     # - ./phpstan-baseline.neon
-    - ./vendor/larastan/larastan/extension.neon
-    - ./vendor/nesbot/carbon/extension.neon
+    #- ./vendor/larastan/larastan/extension.neon
+    #- ./vendor/nesbot/carbon/extension.neon
     - ./vendor/phpstan/phpstan/conf/bleedingEdge.neon
-    - ./vendor/pestphp/pest/extension.neon
-    - ./vendor/pestphp/pest/phpstan-pest-extension.neon
+    #- ./vendor/pestphp/pest/extension.neon
+    #- ./vendor/pestphp/pest/phpstan-pest-extension.neon
 
 parameters:
     level: max
@@ -13,12 +13,6 @@ parameters:
         - ./Modules/
 
     ignoreErrors:
-        # Pest framework uses internal classes in its public API — these are legitimate uses
-        - identifier: method.internalClass
-          paths:
-              - ./*/tests/Pest.php
-              - ./*/tests/Unit/*.php
-          message: '#Pest\\#'
 
     excludePaths:
         - ./*/vendor/*
@@ -26,8 +20,6 @@ parameters:
         - ./*/docs/*
         - ./*/packages/*
         - ./*/*.blade.php
-        # Larastan 3.11.0 isForwardedQueryBuilderMethod() bug — exclude file
-        - ./Modules/Intervention/app/Filament/Resources/InterventionResource/Pages/ListInterventions.php
         - ./_ide_helper.php
         - ./_ide_helper_models.php
 

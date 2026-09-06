@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Catalog\Database\Factories;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Model;
 use Modules\Catalog\Models\CatalogModel;
 
 /**
@@ -26,20 +28,15 @@ class CatalogModelFactory extends Factory
     }
 
     /**
-     * @param array<string, mixed> $attributes
-     * @return \Illuminate\Database\Eloquent\Collection<int, CatalogModel>
+     * @return Collection<int, CatalogModel>
      */
-    public function create(array $attributes = []): \Illuminate\Database\Eloquent\Collection
+    public function create(mixed $attributes = [], ?Model $parent = null): Collection
     {
-        return parent::create($attributes);
+        return parent::create($attributes, $parent);
     }
 
-    /**
-     * @param array<string, mixed> $attributes
-     * @return CatalogModel
-     */
-    public function createOne(array $attributes = []): CatalogModel
+    public function createOne(mixed $attributes = [], ?Model $parent = null): CatalogModel
     {
-        return parent::createOne($attributes);
+        return parent::createOne($attributes, $parent);
     }
 }

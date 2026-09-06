@@ -867,7 +867,7 @@ sudo pecl install redis
 
 ## Configurazione Database
 
-> **Regola base (Laravel 12.x)**: il file `laravel/config/database.php` deve sempre rimanere identico alla versione ufficiale del framework. Non aggiungere connessioni personalizzate direttamente a questo file: le connessioni modulari vengono registrate dinamicamente dal `TenantServiceProvider` e le varianti tenant-specific vanno gestite da `config/<locale>/<tenant>/database.php` o dalle variabili `.env`. In caso di dubbi, consulta `laravel/Modules/Tenant/docs/database-config-standard.md`.
+> **Regola base (Laravel 13.x)**: il file `laravel/config/database.php` deve sempre rimanere identico alla versione ufficiale del framework. Non aggiungere connessioni personalizzate direttamente a questo file: le connessioni modulari vengono registrate dinamicamente dal `TenantServiceProvider` e le varianti tenant-specific vanno gestite da `config/<locale>/<tenant>/database.php` o dalle variabili `.env`. In caso di dubbi, consulta `laravel/Modules/Tenant/docs/database-config-standard.md`.
 
 ### Creazione Database MySQL
 ```bash

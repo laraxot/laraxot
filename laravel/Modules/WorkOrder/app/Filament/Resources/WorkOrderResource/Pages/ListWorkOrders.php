@@ -124,17 +124,17 @@ final class ListWorkOrders extends XotBaseListRecords
                     DatePicker::make('to'),
                 ])
                 ->query(function (Builder $query, array $data): Builder {
-                    $from = $data['from'] ?? null;
-                    $to = $data['to'] ?? null;
+                    $from = is_string($data['from'] ?? null) ? $data['from'] : null;
+                    $to = is_string($data['to'] ?? null) ? $data['to'] : null;
 
                     return $query
                         ->when(
                             filled($from),
-                            fn (Builder $innerQuery): Builder => $innerQuery->whereDate('scheduled_at', '>=', (string) $from),
+                            fn (Builder $innerQuery): Builder => $innerQuery->whereDate('scheduled_at', '>=', $from),
                         )
                         ->when(
                             filled($to),
-                            fn (Builder $innerQuery): Builder => $innerQuery->whereDate('scheduled_at', '<=', (string) $to),
+                            fn (Builder $innerQuery): Builder => $innerQuery->whereDate('scheduled_at', '<=', $to),
                         );
                 }),
         ];
@@ -159,7 +159,7 @@ final class ListWorkOrders extends XotBaseListRecords
 
                     return AccountFeatures::hasFeature($user, 'admin.reports', true);
                 })
-                ->form([
+                ->schema([
                     Radio::make('format')
                         ->options([
                             'pdf' => 'PDF',
@@ -178,12 +178,14 @@ final class ListWorkOrders extends XotBaseListRecords
                         ->required(),
                 ])
                 ->action(function (WorkOrder $record, array $data): mixed {
-                    $format = match ((string) ($data['format'] ?? 'pdf')) {
+                    $format = match (is_string($data['format'] ?? null) ? $data['format'] : 'pdf') {
                         'docx' => 'docx',
                         default => 'pdf',
                     };
-                    $from = CarbonImmutable::parse((string) $data['from'])->startOfDay();
-                    $to = CarbonImmutable::parse((string) $data['to'])->endOfDay();
+                    $fromRaw = is_string($data['from'] ?? null) ? $data['from'] : now()->startOfMonth()->toDateString();
+                    $toRaw = is_string($data['to'] ?? null) ? $data['to'] : now()->endOfMonth()->toDateString();
+                    $from = CarbonImmutable::parse($fromRaw)->startOfDay();
+                    $to = CarbonImmutable::parse($toRaw)->endOfDay();
 
                     $result = app(GenerateWorkOrderReportAction::class)->execute(
                         workOrder: $record,

@@ -10,10 +10,10 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
@@ -26,6 +26,8 @@ use Illuminate\Support\Facades\Auth;
 use Modules\Catalog\Models\Product;
 use Modules\Intervention\Models\Intervention;
 use Modules\Inventory\Actions\GetStockSnapshotAction;
+use Modules\Xot\Actions\Cast\SafeIntCastAction;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Inventory\Filament\Resources\InventoryMovementResource\Pages\CreateInventoryMovement;
 use Modules\Inventory\Filament\Resources\InventoryMovementResource\Pages\EditInventoryMovement;
 use Modules\Inventory\Filament\Resources\InventoryMovementResource\Pages\ListInventoryMovements;
@@ -89,7 +91,7 @@ final class InventoryMovementResource extends GatedXotBaseResource
     public static function getFormSchema(): array
     {
         $storageZonesEnabled = self::storageZonesEnabled();
-        $hasMovementType = fn (callable $get): bool => trim((string) ($get('movement_type') ?? '')) !== '';
+        $hasMovementType = fn (callable $get): bool => trim(SafeStringCastAction::cast($get('movement_type'))) !== '';
 
         return [
             Section::make()
@@ -124,8 +126,8 @@ final class InventoryMovementResource extends GatedXotBaseResource
                         Select::make('product_id')
                             ->label(__('inventory.fields.product'))
                             ->options(fn (callable $get): array => self::productOptionsForMovement(
-                                (string) ($get('movement_type') ?? ''),
-                                (int) ($get('from_warehouse_id') ?? 0),
+                                SafeStringCastAction::cast($get('movement_type')),
+                                SafeIntCastAction::cast($get('from_warehouse_id')),
                             ))
                             ->searchable()
                             ->preload()
@@ -155,23 +157,23 @@ final class InventoryMovementResource extends GatedXotBaseResource
                             ->afterStateUpdated(function (callable $set, callable $get): void {
                                 $set('from_location_id', null);
 
-                                if (in_array((string) $get('movement_type'), ['scarico', 'trasferimento', 'reso'], true)) {
+                                if (in_array(SafeStringCastAction::cast($get('movement_type')), ['scarico', 'trasferimento', 'reso'], true)) {
                                     $set('product_id', null);
                                 }
                             })
-                            ->visible(fn (callable $get): bool => in_array((string) $get('movement_type'), ['scarico', 'trasferimento', 'reso'], true))
-                            ->required(fn (callable $get): bool => in_array((string) $get('movement_type'), ['scarico', 'trasferimento', 'reso'], true))
-                            ->dehydrateStateUsing(fn ($state, callable $get) => in_array((string) $get('movement_type'), ['scarico', 'trasferimento', 'reso'], true) ? $state : null),
+                            ->visible(fn (callable $get): bool => in_array(SafeStringCastAction::cast($get('movement_type')), ['scarico', 'trasferimento', 'reso'], true))
+                            ->required(fn (callable $get): bool => in_array(SafeStringCastAction::cast($get('movement_type')), ['scarico', 'trasferimento', 'reso'], true))
+                            ->dehydrateStateUsing(fn ($state, callable $get) => in_array(SafeStringCastAction::cast($get('movement_type')), ['scarico', 'trasferimento', 'reso'], true) ? $state : null),
                         Select::make('from_location_id')
                             ->label(__('inventory.fields.from_location'))
-                            ->options(fn (callable $get): array => self::locationOptionsForWarehouse((int) ($get('from_warehouse_id') ?? 0)))
+                            ->options(fn (callable $get): array => self::locationOptionsForWarehouse(SafeIntCastAction::cast($get('from_warehouse_id'))))
                             ->searchable()
                             ->preload()
                             ->visible(fn (callable $get): bool => $storageZonesEnabled
-                                && in_array((string) $get('movement_type'), ['scarico', 'trasferimento', 'reso'], true)
-                                && (int) ($get('from_warehouse_id') ?? 0) > 0)
+                                && in_array(SafeStringCastAction::cast($get('movement_type')), ['scarico', 'trasferimento', 'reso'], true)
+                                && SafeIntCastAction::cast($get('from_warehouse_id')) > 0)
                             ->dehydrateStateUsing(fn ($state, callable $get) => $storageZonesEnabled
-                                && in_array((string) $get('movement_type'), ['scarico', 'trasferimento', 'reso'], true)
+                                && in_array(SafeStringCastAction::cast($get('movement_type')), ['scarico', 'trasferimento', 'reso'], true)
                                 ? $state
                                 : null),
                         Select::make('to_warehouse_id')
@@ -181,31 +183,31 @@ final class InventoryMovementResource extends GatedXotBaseResource
                             ->preload()
                             ->live()
                             ->afterStateUpdated(fn (callable $set): mixed => $set('to_location_id', null))
-                            ->visible(fn (callable $get): bool => in_array((string) $get('movement_type'), ['carico', 'trasferimento', 'reso'], true))
-                            ->required(fn (callable $get): bool => in_array((string) $get('movement_type'), ['carico', 'trasferimento', 'reso'], true))
-                            ->dehydrateStateUsing(fn ($state, callable $get) => in_array((string) $get('movement_type'), ['carico', 'trasferimento', 'reso'], true) ? $state : null),
+                            ->visible(fn (callable $get): bool => in_array(SafeStringCastAction::cast($get('movement_type')), ['carico', 'trasferimento', 'reso'], true))
+                            ->required(fn (callable $get): bool => in_array(SafeStringCastAction::cast($get('movement_type')), ['carico', 'trasferimento', 'reso'], true))
+                            ->dehydrateStateUsing(fn ($state, callable $get) => in_array(SafeStringCastAction::cast($get('movement_type')), ['carico', 'trasferimento', 'reso'], true) ? $state : null),
                         Select::make('to_location_id')
                             ->label(__('inventory.fields.to_location'))
-                            ->options(fn (callable $get): array => self::locationOptionsForWarehouse((int) ($get('to_warehouse_id') ?? 0)))
+                            ->options(fn (callable $get): array => self::locationOptionsForWarehouse(SafeIntCastAction::cast($get('to_warehouse_id'))))
                             ->searchable()
                             ->preload()
                             ->visible(fn (callable $get): bool => $storageZonesEnabled
-                                && in_array((string) $get('movement_type'), ['carico', 'trasferimento', 'reso'], true)
-                                && (int) ($get('to_warehouse_id') ?? 0) > 0)
+                                && in_array(SafeStringCastAction::cast($get('movement_type')), ['carico', 'trasferimento', 'reso'], true)
+                                && SafeIntCastAction::cast($get('to_warehouse_id')) > 0)
                             ->dehydrateStateUsing(fn ($state, callable $get) => $storageZonesEnabled
-                                && in_array((string) $get('movement_type'), ['carico', 'trasferimento', 'reso'], true)
+                                && in_array(SafeStringCastAction::cast($get('movement_type')), ['carico', 'trasferimento', 'reso'], true)
                                 ? $state
                                 : null),
                     ]),
-                    Placeholder::make('source_stock_hint')
+                    TextEntry::make('source_stock_hint')
                         ->label(__('inventory.fields.available_stock'))
-                        ->content(fn (callable $get): string => self::sourceStockHint(
-                            (string) ($get('movement_type') ?? ''),
-                            (int) ($get('product_id') ?? 0),
-                            (int) ($get('from_warehouse_id') ?? 0),
-                            (int) ($get('from_location_id') ?? 0),
+                        ->state(fn (callable $get): string => self::sourceStockHint(
+                            SafeStringCastAction::cast($get('movement_type')),
+                            SafeIntCastAction::cast($get('product_id')),
+                            SafeIntCastAction::cast($get('from_warehouse_id')),
+                            SafeIntCastAction::cast($get('from_location_id')),
                         ))
-                        ->visible(fn (callable $get): bool => in_array((string) $get('movement_type'), ['scarico', 'trasferimento', 'reso'], true)),
+                        ->visible(fn (callable $get): bool => in_array(SafeStringCastAction::cast($get('movement_type')), ['scarico', 'trasferimento', 'reso'], true)),
                     Grid::make(2)->components([
                         Select::make('work_order_id')
                             ->label(__('inventory.fields.work_order'))

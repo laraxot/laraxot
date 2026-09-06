@@ -44,7 +44,6 @@ use Modules\Signage\Database\Factories\SignSpecFactory;
  */
 final class SignSpec extends BaseModel
 {
-
     protected $table = 'sign_specs';
 
     /** @var array<int, string> */
@@ -68,12 +67,6 @@ final class SignSpec extends BaseModel
     public function components(): HasMany
     {
         return $this->hasMany(SignComponent::class, 'sign_spec_id')->orderBy('position');
-    }
-
-    /** @return SignSpecFactory */
-    public static function factory(): SignSpecFactory
-    {
-        return SignSpecFactory::new();
     }
 
     protected static function newFactory(): SignSpecFactory

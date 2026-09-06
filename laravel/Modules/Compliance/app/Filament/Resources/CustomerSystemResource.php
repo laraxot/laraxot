@@ -124,11 +124,11 @@ final class CustomerSystemResource extends Resource
                 Tables\Columns\TextColumn::make('media_count')->counts('media'),
                 Tables\Columns\IconColumn::make('is_active')->boolean(),
             ])
-            ->actions([
+            ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
     }

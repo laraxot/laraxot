@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Database\Seeders;
 
-use Modules\User\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Modules\User\Models\User;
 use Spatie\Permission\Models\Role;
 
 /**
@@ -35,7 +35,7 @@ final class InterventionsAgendaDemoSeeder extends Seeder
         // 3) Distribute interventions (and their time punches) across ALL users,
         //    including the ones already present, so everyone has a full agenda.
         /** @var list<int> $userIds */
-        $userIds = DB::table('users')->orderBy('id')->pluck('id')->map(static fn ($id): int => (int) $id)->all();
+        $userIds = DB::table('users')->orderBy('id')->pluck('id')->map(static fn ($id): int => is_numeric($id) ? (int) $id : 0)->all();
         if ($userIds === []) {
             return;
         }

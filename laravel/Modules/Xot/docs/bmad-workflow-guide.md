@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide provides step-by-step instructions for using **BMAD (Business Model Agile Development)** with **Laraxot** projects (Laravel 12 + Filament 5 + PHP 8.3).
+This guide provides step-by-step instructions for using **BMAD (Business Model Agile Development)** with **Laraxot** projects (Laravel 13 + Filament 5 + PHP 8.3).
 
 **Version**: 6.2.2  
 **Last Updated**: March 27, 2026  
@@ -78,7 +78,7 @@ Brainstorm ideas for "DashboardV3 chart enhancements"
 
 Focus on:
 - User needs (survey administrators, data analysts)
-- Technical feasibility (Laravel 12, Filament 5, JPGraph)
+- Technical feasibility (Laravel 13, Filament 5, JPGraph)
 - Business value (ATS compliance, competitive advantage)
 ```
 
@@ -225,7 +225,7 @@ Requirements:
 - Scalability (concurrent users, data volume)
 
 ## 5. Constraints
-- Technical constraints (Laravel 12, Filament 5)
+- Technical constraints (Laravel 13, Filament 5)
 - Business constraints (timeline, budget)
 - Regulatory constraints (GDPR, ATS)
 
@@ -333,7 +333,7 @@ Include:
 Create architecture for "DashboardV3 Custom Charts"
 
 Context:
-- Laravel 12 + Filament 5 + PHP 8.3
+- Laravel 13 + Filament 5 + PHP 8.3
 - Laraxot modular architecture
 - XotBase extension pattern
 - Spatie Queueable Actions

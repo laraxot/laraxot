@@ -89,13 +89,13 @@ use Modules\Xot\Contracts\ProfileContract;
  */
 final class TimeEntry extends BaseModel
 {
-    public const STATUS_PENDING = 'pending';
+    public const string STATUS_PENDING = 'pending';
 
-    public const STATUS_APPROVED = 'approved';
+    public const string STATUS_APPROVED = 'approved';
 
-    public const STATUS_AUTO_APPROVED = 'auto_approved';
+    public const string STATUS_AUTO_APPROVED = 'auto_approved';
 
-    public const STATUS_REJECTED = 'rejected';
+    public const string STATUS_REJECTED = 'rejected';
 
     /** @var list<string> */
     protected $fillable = [

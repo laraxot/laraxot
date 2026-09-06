@@ -30,7 +30,6 @@ use Modules\User\Models\User;
  */
 final class Media extends BaseModel
 {
-
     use SoftDeletes;
 
     protected $table = 'document_media';

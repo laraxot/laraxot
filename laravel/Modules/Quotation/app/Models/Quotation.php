@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Customer;
-use Modules\Quotation\Database\Factories\QuotationFactory;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Spatie\MediaLibrary\HasMedia;
@@ -45,9 +44,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
  */
 final class Quotation extends BaseModel implements HasMedia
 {
-    /** @use HasXotFactory<QuotationFactory> */
     use HasXotFactory;
-
     use InteractsWithMedia;
     use SoftDeletes;
 

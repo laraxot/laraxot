@@ -401,7 +401,7 @@ public function canAccess($user): bool
 }
 ```
 
-## 🔧 Laravel 12 Compliance
+## 🔧 Laravel 13 Compliance
 
 ### 1. Type Declarations
 Use proper type hints and return types:

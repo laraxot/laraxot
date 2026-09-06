@@ -69,7 +69,7 @@ Move all dependencies from `_comment` sections to active sections:
         "friendsofphp/php-cs-fixer": "^3.88",
         "larastan/larastan": "^3.7",
         "laravel/pint": "^1.25",
-        "pestphp/pest": "^3.8",
+        "pestphp/pest": "*",
         ...
     }
 }
@@ -169,7 +169,7 @@ Each module's docs folder will receive:
 
 1. ✅ composer.json has all dependencies in active sections
 2. ✅ `composer install` completes without errors
-3. ✅ `php artisan --version` returns Laravel 12.x
+3. ✅ `php artisan --version` returns Laravel 13.x
 4. ✅ `boost:add-skill` command executes successfully
 5. ✅ All module documentation updated
 

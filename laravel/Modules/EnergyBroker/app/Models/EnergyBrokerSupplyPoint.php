@@ -65,11 +65,6 @@ final class EnergyBrokerSupplyPoint extends BaseModel
         return $this->hasMany(EnergyBrokerSupplyHistory::class, 'energy_broker_supply_point_id');
     }
 
-    public static function factory(): EnergyBrokerSupplyPointFactory
-    {
-        return EnergyBrokerSupplyPointFactory::new();
-    }
-
     protected static function newFactory(): EnergyBrokerSupplyPointFactory
     {
         return EnergyBrokerSupplyPointFactory::new();

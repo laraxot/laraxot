@@ -41,8 +41,8 @@ final class ViewIntervention extends XotBaseViewRecord
 
     protected function getHeaderActions(): array
     {
-        /** @var int $interventionId */
-        $interventionId = (int) ($this->getRecord()->getKey() ?? 0);
+        $key = $this->getRecord()->getKey();
+        $interventionId = is_numeric($key) ? (int) $key : 0;
         $returnUrl = $this->getRequestedReturnUrl();
 
         return [

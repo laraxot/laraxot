@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Auth;
 use Modules\Vehicle\Actions\AddVehicleDocumentAction;
 use Modules\Vehicle\Models\Vehicle;
 use Modules\Vehicle\Models\VehicleDocument;
+use Modules\Xot\Actions\Cast\SafeNullableStringCastAction;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
 class DocumentsRelationManager extends XotBaseRelationManager
@@ -113,9 +115,9 @@ class DocumentsRelationManager extends XotBaseRelationManager
 
                     return app(AddVehicleDocumentAction::class)->execute(
                         vehicle: $vehicle,
-                        path: (string) $data['path'],
+                        path: SafeStringCastAction::cast($data['path'] ?? null),
                         uploadedByUserId: is_int(Auth::id()) ? Auth::id() : null,
-                        title: isset($data['title']) ? (string) $data['title'] : null,
+                        title: SafeNullableStringCastAction::cast($data['title'] ?? null),
                     );
                 }),
         ];

@@ -54,11 +54,9 @@ class AiAssistantServiceProvider extends XotBaseServiceProvider
             $allowed = (array) config('ai_security.allowed_action_types', []);
 
             $maxProposalsValue = config('ai_security.max_proposals_per_window', 30);
-            if (is_int($maxProposalsValue)) {
-                $maxProposals = max(1, $maxProposalsValue);
-            } else {
-                $maxProposals = max(1, (int) $maxProposalsValue);
-            }
+            $maxProposals = is_int($maxProposalsValue)
+                ? max(1, $maxProposalsValue)
+                : max(1, is_numeric($maxProposalsValue) ? (int) $maxProposalsValue : 30);
 
             return new AiActionPolicy(
                 allowedTypes: array_values(array_filter($allowed, 'is_string')),

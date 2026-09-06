@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Billing\Tests\TestCase::class);
-
 use Illuminate\Support\Facades\DB;
 use Modules\Billing\Actions\GenerateInvoicePdfAction;
 use Modules\Billing\Models\Invoice;
 use Modules\Billing\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('generates an invoice PDF', function (): void {
     $customerId = DB::table('customers')->insertGetId([
@@ -18,7 +18,7 @@ it('generates an invoice PDF', function (): void {
         'updated_at' => now(),
     ]);
 
-    /** @var \Modules\Billing\Models\Invoice $invoice */
+    /** @var Invoice $invoice */
     $invoice = Invoice::query()->create([
         'number' => 'FAT-PDF-0001',
         'issued_on' => now()->toDateString(),
@@ -30,7 +30,7 @@ it('generates an invoice PDF', function (): void {
 
     $pdf = app(GenerateInvoicePdfAction::class)->execute($invoice->refresh());
 
-expect($pdf)->not->toBeEmpty();
+    expect($pdf)->not->toBeEmpty();
     expect(substr($pdf, 0, 4))->toBe('%PDF');
     expect(strlen($pdf))->toBeGreaterThan(1000);
 });
@@ -53,7 +53,7 @@ it('generates an invoice PDF when linked to a work order', function (): void {
         'updated_at' => now(),
     ]);
 
-    /** @var \Modules\Billing\Models\Invoice $invoice */
+    /** @var Invoice $invoice */
     $invoice = Invoice::query()->create([
         'number' => 'FAT-PDF-0002',
         'issued_on' => now()->toDateString(),
@@ -67,7 +67,7 @@ it('generates an invoice PDF when linked to a work order', function (): void {
     $pdf = app(GenerateInvoicePdfAction::class)->execute($invoice->refresh());
 
     // Assert
-expect($pdf)->not->toBeEmpty();
+    expect($pdf)->not->toBeEmpty();
     expect(substr($pdf, 0, 4))->toBe('%PDF');
     expect(strlen($pdf))->toBeGreaterThan(1000);
 });

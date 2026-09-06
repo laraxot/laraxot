@@ -25,7 +25,6 @@ use Modules\Signage\Database\Factories\SignCatalogItemComponentFactory;
  */
 final class SignCatalogItemComponent extends BaseModel
 {
-
     protected $table = 'sign_catalog_item_components';
 
     /** @var array<int, string> */
@@ -90,12 +89,6 @@ final class SignCatalogItemComponent extends BaseModel
     public function supplierItem(): BelongsTo
     {
         return $this->belongsTo(SignPriceListItem::class, 'sign_price_list_item_id');
-    }
-
-    /** @return SignCatalogItemComponentFactory */
-    public static function factory(): SignCatalogItemComponentFactory
-    {
-        return SignCatalogItemComponentFactory::new();
     }
 
     protected static function newFactory(): SignCatalogItemComponentFactory

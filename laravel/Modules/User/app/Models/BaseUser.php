@@ -27,7 +27,6 @@ use Illuminate\Support\Str;
 use Laravel\Passport\Contracts\OAuthenticatable;
 use Laravel\Passport\HasApiTokens;
 use Modules\User\Contracts\HasAuthentications;
-use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\Traits\HasAuthenticationLogTrait;
 use Modules\User\Models\Traits\HasDevices;
 use Modules\User\Models\Traits\HasModules;
@@ -142,10 +141,7 @@ abstract class BaseUser extends Authenticatable implements FilamentUser, HasAuth
         HasTeams::teams as membershipTeams;
     }
     use HasUuids;
-
-    /** @use HasXotFactory<UserFactory> */
     use HasXotFactory;
-
     use InteractsWithMedia;
     use Notifiable;
 

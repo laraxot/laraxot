@@ -91,3 +91,34 @@ After every edit: `phpstan` + `phpmd` (./tools) + `phpinsights` (./tools) + `pes
 - Module: <module>
 - Next: <next step>
 ```
+
+## PHPStan Quick Fixes
+
+### Cannot cast mixed to string/int
+```php
+// BAD
+$value = (string) $array['key'];
+
+// GOOD
+$value = is_string($array['key'] ?? null) ? $array['key'] : '';
+$value = is_int($array['key'] ?? null) ? $array['key'] : 0;
+```
+
+### Pest internal class errors (tests/Feature/)
+```php
+// BAD
+expect($x)->toBe($y)
+
+// GOOD
+Assert::assertSame($y, $x);
+Assert::assertStringContainsString($needle, $haystack);
+```
+
+### Offset access array|null
+```php
+// BAD
+$value = $array[$key];
+
+// GOOD
+$value = $array[$key] ?? default;
+```

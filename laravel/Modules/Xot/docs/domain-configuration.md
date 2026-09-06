@@ -1,7 +1,7 @@
 # Gestione Domini e Configurazioni
 
 ## Prerequisiti
-- Laravel 12.x
+- Laravel 13.x
 - PHP 8.2+
 
 ## Struttura dei Domini

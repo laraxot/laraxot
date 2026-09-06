@@ -323,4 +323,4 @@ Il **TimeClockWidget** rappresenta ora l'**eccellenza tecnica** per un widget Fi
 *Documento creato: 02/09/2025*  
 *Refactoring completato: 02/09/2025*  
 *Versione finale: TimeClockWidget v3.0*  
-*Framework: Laravel 12.27.0 + Filament 3.x*
+*Framework: Laravel 13.27.0 + Filament 3.x*

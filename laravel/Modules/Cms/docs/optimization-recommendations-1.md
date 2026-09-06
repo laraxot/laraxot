@@ -19,9 +19,9 @@
 ### ⚠️ AREE DI MIGLIORAMENTO CRITICHE
 
 #### 1. Riusabilità Compromessa (CRITICO)
-- **194+ occorrenze hardcoded** di "saluteora"
+- **194+ occorrenze hardcoded** di "<nome progetto>" 
 - **Path assoluti** in configurazioni e esempi
-- **Content specifico** per SaluteOra in examples
+- **Content specifico** per <nome progetto> in examples
 - **URL hardcoded** in documentazione
 
 #### 2. Documentazione Frammentata (IMPORTANTE)
@@ -42,9 +42,9 @@
 #### Generalizzazione Content Examples
 ```php
 // ❌ PROBLEMI ATTUALI
-'title' => 'Servizi Sanitari SaluteOra',
+'title' => 'Servizi Sanitari <nome progetto>',
 'content' => 'Benvenuti nel nostro studio medico...',
-'url' => 'https://saluteora.com/servizi'
+'url' => 'https://<nome progetto>.com/servizi'
 
 // ✅ SOLUZIONI
 'title' => 'Servizi {{business_type}} {{app_name}}',
@@ -61,7 +61,7 @@ return [
         'domain' => config('app.domain'),
         'business_type' => config('app.business_type', 'organization'),
     ],
-
+    
     'content' => [
         'default_templates' => [
             'homepage' => 'cms::templates.homepage',
@@ -69,7 +69,7 @@ return [
             'about' => 'cms::templates.about',
         ],
     ],
-
+    
     'seo' => [
         'default_meta' => [
             'title' => config('app.name') . ' - {{page_title}}',
@@ -83,12 +83,12 @@ return [
 ```blade
 {{-- templates/services.blade.php --}}
 <x-cms::page>
-    <x-cms::hero
+    <x-cms::hero 
         title="I nostri servizi"
         subtitle="Scopri tutti i servizi offerti da {{ config('app.name') }}"
     />
-
-    <x-cms::services-grid
+    
+    <x-cms::services-grid 
         :services="$services"
         business-type="{{ config('app.business_type', 'organization') }}"
     />
@@ -155,7 +155,7 @@ class ContentCacheService
     public function getCachedPage(string $slug): ?Page
     {
         $cacheKey = $this->cachePrefix . 'page_' . $slug;
-
+        
         return cache()->remember($cacheKey, $this->defaultTtl, function () use ($slug) {
             return Page::with(['blocks', 'media', 'seo'])
                 ->where('slug', $slug)
@@ -213,7 +213,7 @@ class SeoService
     public function generateStructuredData(Page $page): array
     {
         $businessType = config('app.business_type', 'Organization');
-
+        
         return [
             '@context' => 'https://schema.org',
             '@type' => $businessType,
@@ -273,7 +273,7 @@ class SeoService
 ### Pre-Implementazione
 ```bash
 # Verifica hardcoding
-grep -r -i "saluteora" Modules/Cms/ --include="*.md" | wc -l
+grep -r -i "<nome progetto>" Modules/Cms/ --include="*.md" | wc -l
 
 # Conta file documentazione
 find Modules/Cms/docs -name "*.md" | wc -l
@@ -306,7 +306,7 @@ php artisan cms:seo-audit
 - **NON alterare** l'integrazione Filament (funzionante)
 
 ### Focus Miglioramenti
-- **Solo** generalizzare content specifico SaluteOra
+- **Solo** generalizzare content specifico <nome progetto>
 - **Solo** ottimizzare performance dove necessario
 - **Solo** riorganizzare documentazione frammentata
 
@@ -318,8 +318,8 @@ php artisan cms:seo-audit
 
 ## Collegamenti
 
-- [Analisi Moduli Globale](../../../../docs/modules_analysis_and_optimization.md)
+- [Analisi Moduli Globale](../../../docs/modules_analysis_and_optimization.md)
 - [Content Management Guide](content-management/)
 - [SEO Best Practices](seo/)
 
-*
+*Ultimo aggiornamento: gennaio 2025*

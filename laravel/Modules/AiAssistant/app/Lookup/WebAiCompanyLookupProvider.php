@@ -137,7 +137,9 @@ final class WebAiCompanyLookupProvider implements CompanyLookupProviderInterface
         }
 
         // Strip HTML to plain text and cap the size fed to the LLM.
-        $text = trim(preg_replace('/\s+/', ' ', strip_tags($response->body())) ?? '');
+        $body = $response->body();
+        $bodyText = is_string($body) ? $body : '';
+        $text = trim(preg_replace('/\s+/', ' ', strip_tags($bodyText)) ?? '');
 
         // Antibot/captcha challenge instead of real results: don't waste an LLM call
         // on it — return empty so the lookup degrades to the structured sources.

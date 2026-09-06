@@ -62,7 +62,7 @@ This means Xot's `require-dev` dependencies are **merged into the root composer.
 
 ### Cleanup: Duplicate Package Names
 
-Older Composer attempts used either the previous package name or a Laravel 12-only line:
+Older Composer attempts used either the previous package name or a Laravel 13-only line:
 
 ```json
 "barryvdh/laravel-debugbar": "^3.14",

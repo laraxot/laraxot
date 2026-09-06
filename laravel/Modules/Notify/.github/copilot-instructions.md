@@ -50,7 +50,7 @@ npm run quality:eslint       # JavaScript/TypeScript only
 
 ### Project Structure
 - **Document Root**: `public_html/` (NOT `public/`)
-- **Laravel App**: `laravel/` (Laravel 12, Filament 5, Livewire 3)
+- **Laravel App**: `laravel/` (Laravel 13, Filament 5, Livewire 3)
 - **Modules**: `laravel/Modules/*/` (19 modules using nwidart/laravel-modules)
 - **Themes**: `laravel/Themes/*/` (Active: "Sixteen", alt: "TwentyOne")
 - **Bash Scripts**: `bashscripts/<category>/` (organized by function)
@@ -418,4 +418,4 @@ This project supports **simultaneous work by multiple AI agents**. When working:
 
 **Last Updated**: See git history for changelog  
 **Version**: Copilot-native  
-**Framework**: Laravel 12 + Filament 5 + Livewire 3 + nwidart/laravel-modules
+**Framework**: Laravel 13 + Filament 5 + Livewire 3 + nwidart/laravel-modules

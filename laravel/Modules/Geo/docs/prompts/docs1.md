@@ -832,7 +832,7 @@ protected function casts(): array
 
 **Ultimo aggiornamento**: Gennaio 2025
 **Versione**: 3.0
-**Compatibilità**: Laravel 12.x, Filament 3.x, PHP 8.2+
+**Compatibilità**: Laravel 13.x, Filament 3.x, PHP 8.2+
 **Autore**: Analisi approfondita del codice Laraxot
 
 

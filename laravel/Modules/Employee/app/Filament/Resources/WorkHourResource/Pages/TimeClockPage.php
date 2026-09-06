@@ -78,7 +78,7 @@ class TimeClockPage extends XotBasePage implements HasTable
             ->filters([
                 Filter::make('date_range')
                     ->label('Date Range')
-                    ->form([
+                    ->schema([
                         DatePicker::make('date_from')
                             ->label('From'),
                         DatePicker::make('date_to')

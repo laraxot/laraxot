@@ -119,7 +119,7 @@ python scripts/run.py ask_question.py \
 ```bash
 # Research Laravel patterns
 python scripts/run.py ask_question.py \
-  --question "What are Laravel 12 best practices for service architecture?"
+  --question "What are Laravel 13 best practices for service architecture?"
 
 # Research Filament v5
 python scripts/run.py ask_question.py \
@@ -194,7 +194,7 @@ openviking add-memory \
 ```bash
 # Query multiple notebooks
 python scripts/run.py ask_question.py \
-  --question "Compare Laravel 11 vs Laravel 12 architecture changes" \
+  --question "Compare Laravel 11 vs Laravel 13 architecture changes" \
   --notebook-id "laravel-11-docs" \
   --notebook-id "laravel-12-docs"
 ```

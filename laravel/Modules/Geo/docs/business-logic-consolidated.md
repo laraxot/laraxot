@@ -2,12 +2,12 @@
 
 ## 📋 Panoramica del Sistema
 
-<nome progetto> è un sistema completo di gestione sanitaria modulare basato su Laravel 12, progettato per gestire studi medici, pazienti, appuntamenti e servizi sanitari. Il sistema utilizza un'architettura modulare con classi base condivise per garantire coerenza e riutilizzabilità.
+<nome progetto> è un sistema completo di gestione sanitaria modulare basato su Laravel 13, progettato per gestire studi medici, pazienti, appuntamenti e servizi sanitari. Il sistema utilizza un'architettura modulare con classi base condivise per garantire coerenza e riutilizzabilità.
 # 🏥 Business Logic Consolidata - Progetto <nome progetto>
 
 ## 📋 Panoramica del Sistema
 
-<nome progetto> è un sistema completo di gestione sanitaria modulare basato su Laravel 12, progettato per gestire studi medici, pazienti, appuntamenti e servizi sanitari. Il sistema utilizza un'architettura modulare con classi base condivise per garantire coerenza e riutilizzabilità.
+<nome progetto> è un sistema completo di gestione sanitaria modulare basato su Laravel 13, progettato per gestire studi medici, pazienti, appuntamenti e servizi sanitari. Il sistema utilizza un'architettura modulare con classi base condivise per garantire coerenza e riutilizzabilità.
 
 ## 🏗️ Architettura Modulare
 

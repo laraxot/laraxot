@@ -1,14 +1,3 @@
----
-title: "Collegamenti al Modulo User"
-module: "Lang"
-type: concept
-tags: [ottimizzazioni, correzioni]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "ottimizzazioni correzioni"
-related:
-  - "./italian-text-refined-audit-report.md"
----
 # Collegamenti al Modulo User
 
 Questo documento fornisce collegamenti bidirezionali tra il modulo Lang e il modulo User.

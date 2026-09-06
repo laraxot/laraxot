@@ -180,10 +180,12 @@ final class CustomerResource extends GatedXotBaseResource
                         ->maxLength(34)
                         ->visible(function (callable $get): bool {
                             $paymentMethod = $get('payment_method');
+
                             return is_string($paymentMethod) && $paymentMethod === 'bonifico';
                         })
                         ->dehydrateStateUsing(function (?string $state, callable $get): ?string {
                             $paymentMethod = $get('payment_method');
+
                             return is_string($paymentMethod) && $paymentMethod === 'bonifico' ? $state : null;
                         }),
 
@@ -234,11 +236,9 @@ final class CustomerResource extends GatedXotBaseResource
                 Tables\Filters\TernaryFilter::make('is_active')
                     ->label(__('customers.fields.is_active')),
             ])
-            ->actions([
+            ->toolbarActions([
                 ViewAction::make(),
                 EditAction::make(),
-            ])
-            ->bulkActions([
                 DeleteBulkAction::make(),
                 RestoreBulkAction::make(),
                 ForceDeleteBulkAction::make(),

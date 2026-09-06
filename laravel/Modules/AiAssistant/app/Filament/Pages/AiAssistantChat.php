@@ -230,19 +230,20 @@ final class AiAssistantChat extends Page
             ->get()
             ->map(function (AiActionProposal $proposal): array {
                 $payload = is_array($proposal->payload) ? $proposal->payload : [];
-                $source = (string) ($payload['source'] ?? data_get($proposal->thread?->meta, 'source', ''));
-                $preview = (string) ($proposal->preview ?? '');
-                $publicId = (string) $proposal->public_id;
+                $rawSource = $payload['source'] ?? data_get($proposal->thread?->meta, 'source', '');
+                $source = is_string($rawSource) ? $rawSource : '';
+                $preview = is_string($proposal->preview) ? $proposal->preview : '';
+                $publicId = is_string($proposal->public_id) ? $proposal->public_id : '';
                 $this->fillProposalFormState($publicId, $payload);
                 $context = $this->proposalContext($proposal);
 
                 return [
                     'public_id' => $publicId,
                     'source' => $source !== '' ? $source : 'messaggio',
-                    'type' => (string) $proposal->type,
-                    'action_label' => $this->proposalActionLabel((string) $proposal->type),
+                    'type' => is_string($proposal->type) ? $proposal->type : '',
+                    'action_label' => $this->proposalActionLabel(is_string($proposal->type) ? $proposal->type : ''),
                     'preview' => $preview !== '' ? $preview : 'Proposta AI da verificare.',
-                    'body' => Str::limit((string) ($payload['body'] ?? ''), 240),
+                    'body' => Str::limit(is_string($payload['body'] ?? null) ? $payload['body'] : '', 240),
                     'full_message' => $this->fullCommunicationMessage($payload),
                     'requires_work_order' => $this->proposalRequiresWorkOrder((string) $proposal->type),
                     'requires_intervention' => $this->proposalRequiresIntervention((string) $proposal->type),
@@ -294,9 +295,10 @@ final class AiAssistantChat extends Page
         $result = app(ExecuteAiActionProposalAction::class)->execute($proposal, (int) $userId);
         $ok = (bool) ($result['ok'] ?? false);
 
+        $errorMsg = is_string($result['error'] ?? null) ? $result['error'] : 'Errore sconosciuto.';
         $notification = Notification::make()
             ->title($ok ? 'Proposta approvata ed eseguita' : 'Esecuzione proposta fallita')
-            ->body($ok ? null : (string) ($result['error'] ?? 'Errore sconosciuto.'));
+            ->body($ok ? null : $errorMsg);
 
         ($ok ? $notification->success() : $notification->danger())->send();
     }
@@ -498,13 +500,18 @@ final class AiAssistantChat extends Page
         $this->proposalWorkOrderIds[$publicId] ??= is_numeric($payload['work_order_id'] ?? null) ? (int) $payload['work_order_id'] : '';
         $this->proposalWorkOrderSearches[$publicId] ??= '';
         $this->proposalInterventionIds[$publicId] ??= is_numeric($payload['intervention_id'] ?? null) ? (int) $payload['intervention_id'] : '';
-        $this->proposalBodies[$publicId] ??= (string) ($payload['body'] ?? $payload['notes'] ?? $payload['summary'] ?? '');
-        $this->proposalScheduledAts[$publicId] ??= $this->formatScheduleForInput((string) ($payload['scheduled_at'] ?? ''));
+        $bodyValue = $payload['body'] ?? $payload['notes'] ?? $payload['summary'] ?? '';
+        $this->proposalBodies[$publicId] ??= is_string($bodyValue) ? $bodyValue : '';
+        $scheduledAtValue = $payload['scheduled_at'] ?? '';
+        $this->proposalScheduledAts[$publicId] ??= $this->formatScheduleForInput(is_string($scheduledAtValue) ? $scheduledAtValue : '');
         $materialLines = is_array($payload['material_lines'] ?? null) ? $payload['material_lines'] : [];
         $firstMaterialLine = $materialLines[0] ?? null;
         $materialLine = is_array($firstMaterialLine) ? $firstMaterialLine : [];
-        $this->proposalMaterialDescriptions[$publicId] ??= (string) ($materialLine['description'] ?? $this->guessMaterialDescription((string) ($payload['body'] ?? $payload['notes'] ?? '')));
-        $messageText = (string) ($payload['body'] ?? $payload['notes'] ?? '');
+        $descValue = $materialLine['description'] ?? null;
+        $bodyForGuess = $payload['body'] ?? $payload['notes'] ?? '';
+        $bodyForGuessStr = is_string($bodyForGuess) ? $bodyForGuess : '';
+        $this->proposalMaterialDescriptions[$publicId] ??= is_string($descValue) ? $descValue : $this->guessMaterialDescription($bodyForGuessStr);
+        $messageText = is_string($bodyForGuess) ? $bodyForGuess : '';
         $materialCost = $this->positiveFloat($materialLine['unit_price'] ?? null) ?? $this->extractMaterialEuroAmount($messageText) ?? $this->extractEuroAmount($messageText);
         $this->proposalMaterialCosts[$publicId] ??= $materialCost !== null ? number_format($materialCost, 2, '.', '') : '';
         $laborAmount = $this->positiveFloat($payload['labor_amount'] ?? $payload['amount'] ?? null) ?? $this->extractLaborEuroAmount($messageText);
@@ -628,7 +635,8 @@ final class AiAssistantChat extends Page
      */
     private function fullCommunicationMessage(array $payload): string
     {
-        $source = (string) ($payload['source'] ?? '');
+        $sourceValue = $payload['source'] ?? '';
+        $source = is_string($sourceValue) ? $sourceValue : '';
         if ($source === 'whatsapp' && is_numeric($payload['whatsapp_message_id'] ?? null)) {
             $body = WhatsAppMessage::query()
                 ->whereKey((int) $payload['whatsapp_message_id'])
@@ -644,11 +652,18 @@ final class AiAssistantChat extends Page
                 ->first(['subject', 'body']);
 
             if ($message instanceof EmailMessage) {
-                return trim(((string) data_get($message, 'subject', ''))."\n\n".((string) data_get($message, 'body', '')));
+                $subjectValue = data_get($message, 'subject', '');
+                $bodyValue = data_get($message, 'body', '');
+                $subject = is_string($subjectValue) ? $subjectValue : '';
+                $msgBody = is_string($bodyValue) ? $bodyValue : '';
+
+                return trim($subject."\n\n".$msgBody);
             }
         }
 
-        return (string) ($payload['body'] ?? '');
+        $bodyValue = $payload['body'] ?? '';
+
+        return is_string($bodyValue) ? $bodyValue : '';
     }
 
     /**
@@ -701,17 +716,23 @@ final class AiAssistantChat extends Page
             }
 
             $id = (int) $workOrder['id'];
+            $code = is_string($workOrder['code'] ?? null) ? $workOrder['code'] : '';
+            $title = is_string($workOrder['title'] ?? null) ? $workOrder['title'] : '';
+            $site = is_string($workOrder['site'] ?? null) ? $workOrder['site'] : '';
+            $status = is_string($workOrder['status'] ?? null) ? $workOrder['status'] : '';
             $parts = array_filter([
                 '#'.$id,
-                (string) ($workOrder['code'] ?? ''),
-                (string) ($workOrder['title'] ?? ''),
-                (string) ($workOrder['site'] ?? ''),
-                (string) ($workOrder['status'] ?? ''),
+                $code,
+                $title,
+                $site,
+                $status,
             ]);
             $options[$id] = implode(' - ', $parts);
         }
 
-        foreach ($this->searchedWorkOrderOptions((string) ($this->proposalWorkOrderSearches[$publicId] ?? '')) as $id => $label) {
+        $searchValue = $this->proposalWorkOrderSearches[$publicId] ?? '';
+        $searchStr = is_string($searchValue) ? $searchValue : '';
+        foreach ($this->searchedWorkOrderOptions($searchStr) as $id => $label) {
             $options[$id] = $label;
         }
 
@@ -746,16 +767,27 @@ final class AiAssistantChat extends Page
             ->orderByDesc('updated_at')
             ->limit(25)
             ->get()
-            ->mapWithKeys(fn (WorkOrder $workOrder): array => [
-                (int) $workOrder->id => implode(' - ', array_filter([
-                    '#'.(int) $workOrder->id,
-                    (string) ($workOrder->code ?? ''),
-                    (string) $workOrder->title,
-                    (string) data_get($workOrder, 'customer.legal_name', ''),
-                    (string) data_get($workOrder, 'site.name', ''),
-                    (string) data_get($workOrder, 'status.name', ''),
-                ])),
-            ])
+            ->mapWithKeys(function (WorkOrder $workOrder): array {
+                $code = is_string($workOrder->code ?? null) ? $workOrder->code : '';
+                $title = is_string($workOrder->title) ? $workOrder->title : '';
+                $customerLegalName = data_get($workOrder, 'customer.legal_name', '');
+                $customerLegalNameStr = is_string($customerLegalName) ? $customerLegalName : '';
+                $siteName = data_get($workOrder, 'site.name', '');
+                $siteNameStr = is_string($siteName) ? $siteName : '';
+                $statusName = data_get($workOrder, 'status.name', '');
+                $statusNameStr = is_string($statusName) ? $statusName : '';
+
+                return [
+                    (int) $workOrder->id => implode(' - ', array_filter([
+                        '#'.(int) $workOrder->id,
+                        $code,
+                        $title,
+                        $customerLegalNameStr,
+                        $siteNameStr,
+                        $statusNameStr,
+                    ])),
+                ];
+            })
             ->all();
     }
 
@@ -775,11 +807,13 @@ final class AiAssistantChat extends Page
             }
 
             $id = (int) $intervention['id'];
+            $scheduledAt = is_string($intervention['scheduled_at'] ?? null) ? $intervention['scheduled_at'] : '';
+            $notes = is_string($intervention['notes'] ?? null) ? $intervention['notes'] : '';
             $parts = array_filter([
                 '#'.$id,
                 is_numeric($intervention['work_order_id'] ?? null) ? 'commessa #'.(int) $intervention['work_order_id'] : '',
-                (string) ($intervention['scheduled_at'] ?? ''),
-                (string) ($intervention['notes'] ?? ''),
+                $scheduledAt,
+                $notes,
             ]);
             $options[$id] = implode(' - ', $parts);
         }
@@ -989,9 +1023,12 @@ final class AiAssistantChat extends Page
             return null;
         }
 
-        $customer = (string) data_get($intervention, 'workOrder.customer.legal_name', '');
-        $site = (string) data_get($intervention, 'workOrder.site.name', '');
-        $title = (string) data_get($intervention, 'workOrder.title', '');
+        $customerValue = data_get($intervention, 'workOrder.customer.legal_name', '');
+        $customer = is_string($customerValue) ? $customerValue : '';
+        $siteValue = data_get($intervention, 'workOrder.site.name', '');
+        $site = is_string($siteValue) ? $siteValue : '';
+        $titleValue = data_get($intervention, 'workOrder.title', '');
+        $title = is_string($titleValue) ? $titleValue : '';
 
         return trim(implode(' - ', array_values(array_filter([$customer, $site !== '' ? $site : $title]))));
     }
@@ -1005,6 +1042,12 @@ final class AiAssistantChat extends Page
         /** @var Warehouse|null $warehouse */
         $warehouse = Warehouse::query()->find($warehouseId);
 
-        return $warehouse instanceof Warehouse ? (string) data_get($warehouse, 'name', '') : null;
+        if (! $warehouse instanceof Warehouse) {
+            return null;
+        }
+
+        $nameValue = data_get($warehouse, 'name', '');
+
+        return is_string($nameValue) ? $nameValue : '';
     }
 }

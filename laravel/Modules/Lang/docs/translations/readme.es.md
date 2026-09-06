@@ -75,7 +75,7 @@ related:
 
 ## 📚 Documentación
 
-- [Índice del Proyecto](../INDEX.md)
+- [Índice del Proyecto](../index.md)
 - [Workflow PHPStan](../PHPSTAN_WORKFLOW.md)
 - [Panorama de los Módulos](../MODULES.md)
 - [Arquitectura](architecture.md)
@@ -93,5 +93,5 @@ Este proyecto es de código abierto y está disponible bajo la [Licencia MIT](..
 ---
 
 <div align="center">
-  <sub>Construido con ❤️ por el equipo Base Predict Fila3 Mono</sub>
+  <sub>Construido con ❤️ por el equipo Base forecast Fila3 Mono</sub>
 </div>

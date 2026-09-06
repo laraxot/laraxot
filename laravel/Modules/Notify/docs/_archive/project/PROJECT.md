@@ -11,7 +11,7 @@ Transform FixCity from a functional MVP to a national-scale enterprise-ready pla
 - AI-powered automation for categorization and duplicate detection.
 
 ## Stack
-- Laravel 12
+- Laravel 13
 - Filament v5
 - Folio (Routing)
 - Volt (Livewire Components)

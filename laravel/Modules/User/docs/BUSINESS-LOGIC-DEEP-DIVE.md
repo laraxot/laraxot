@@ -655,7 +655,7 @@ class OptimizedUserQueries
 }
 ```
 
-## 🚀 Modern Laravel 12 + PHP 8.3 Patterns
+## 🚀 Modern Laravel 13 + PHP 8.3 Patterns
 
 ### 1. Enum Integration
 ```php

@@ -349,7 +349,7 @@ graph TD
 
 ### 7.4 Technical Constraints
 - PHP 8.3+ required
-- Laravel 12+ required
+- Laravel 13+ required
 - Redis required for caching
 - External API dependencies (OpenAI, Anthropic)
 - Rate limits imposed by providers

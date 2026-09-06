@@ -1,8 +1,8 @@
-# Architettura Content Blocks - SaluteOra
+# Architettura Content Blocks - <nome progetto>
 
 ## Panoramica Architetturale
 
-Il sistema Content Blocks di SaluteOra implementa un'architettura modulare basata su:
+Il sistema Content Blocks di <nome progetto> implementa un'architettura modulare basata su:
 
 1. **Filament Builder** - Per la gestione dinamica dei blocchi nell'admin
 2. **JSON Configuration** - Per la persistenza della struttura delle pagine
@@ -14,7 +14,7 @@ Il sistema Content Blocks di SaluteOra implementa un'architettura modulare basat
 ```
 Admin Interface (Filament Builder)
          ↓
-    JSON Storage (config/local/saluteora/database/content/pages/)
+    JSON Storage (config/local/<nome progetto>/database/content/pages/)
          ↓
     Page Model (Modules/Cms/Models/Page.php)
          ↓
@@ -28,7 +28,7 @@ Admin Interface (Filament Builder)
 ## Componenti Principali
 
 ### 1. Configurazione JSON
-- **Posizione**: `config/local/saluteora/database/content/pages/`
+- **Posizione**: `config/local/<nome progetto>/database/content/pages/`
 - **Formato**: Struttura multilingua con content_blocks, sidebar_blocks, footer_blocks
 - **Validazione**: Ogni blocco deve specificare type, data e view valida
 
@@ -57,7 +57,7 @@ Builder::make('content_blocks')
     ->blocks([
         Builder\Block::make('hero')
             ->schema([/* campi specifici */]),
-        Builder\Block::make('feature_sections')
+        Builder\Block::make('feature_sections')  
             ->schema([/* campi specifici */]),
         // Altri blocchi...
     ])

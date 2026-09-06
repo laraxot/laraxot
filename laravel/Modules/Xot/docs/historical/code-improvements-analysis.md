@@ -2,7 +2,7 @@
 
 **Data**: 2026-01-09  
 **Metodologia**: Super Mucca  
-**Filosofia**: DRY + KISS + SOLID + Robust + Laravel 12 + Filament 4 + PHP 8.3
+**Filosofia**: DRY + KISS + SOLID + Robust + Laravel 13 + Filament 4 + PHP 8.3
 
 ---
 
@@ -16,7 +16,7 @@
 - **Pest**: Testing framework moderno
 - **Filament 4**: Admin panel best practices
 - **Laravel Modules**: Architettura modulare
-- **Laravel 12**: Framework patterns e features
+- **Laravel 13**: Framework patterns e features
 
 ---
 

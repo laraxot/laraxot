@@ -23,11 +23,13 @@ class GetUserTeamsOptionAction
 
         foreach ($teams as $teamUser) {
             $team = $teamUser->team;
-            if (null === $team) {
+            if ($team === null) {
                 continue;
             }
 
-            $options[(string) $team->getKey()] = (string) $team->getAttribute('name');
+            $teamKey = $team->getKey();
+            $teamName = $team->getAttribute('name');
+            $options[is_string($teamKey) ? $teamKey : (string) $teamKey] = is_string($teamName) ? $teamName : '';
         }
 
         return $options;

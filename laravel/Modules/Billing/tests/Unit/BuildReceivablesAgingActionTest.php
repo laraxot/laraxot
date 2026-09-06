@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Billing\Tests\TestCase::class);
-
 use Modules\Billing\Actions\BuildReceivablesAgingAction;
 use Modules\Billing\Datas\AgingBuckets;
 use Modules\Billing\Datas\OpenItem;
@@ -11,6 +9,8 @@ use Modules\Billing\Datas\ReceivablesAging;
 use Modules\Billing\Tests\TestCase;
 use Modules\Quotation\DTO\Money;
 use Safe\DateTimeImmutable;
+
+uses(TestCase::class);
 
 function openItem(string $dueOn, float $amount, string $reference = 'FT/1'): OpenItem
 {

@@ -48,7 +48,7 @@ Frontend Cittadini:
 └── Alpine.js (interattività)
 
 Backend Admin:
-├── Laravel 12.24.0
+├── Laravel 13.24.0
 ├── PHP 8.3.20
 ├── Filament 3.x (admin panel)
 ├── SQLite (database)

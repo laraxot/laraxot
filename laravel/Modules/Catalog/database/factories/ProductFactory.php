@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Catalog\Database\Factories;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Model;
 use Modules\Catalog\Models\CatalogFrequency;
 use Modules\Catalog\Models\CatalogMeasureUnit;
 use Modules\Catalog\Models\CatalogModel;
@@ -38,20 +40,15 @@ class ProductFactory extends Factory
     }
 
     /**
-     * @param array<string, mixed> $attributes
-     * @return \Illuminate\Database\Eloquent\Collection<int, Product>
+     * @return Collection<int, Product>
      */
-    public function create(array $attributes = []): \Illuminate\Database\Eloquent\Collection
+    public function create(mixed $attributes = [], ?Model $parent = null): Collection
     {
-        return parent::create($attributes);
+        return parent::create($attributes, $parent);
     }
 
-    /**
-     * @param array<string, mixed> $attributes
-     * @return Product
-     */
-    public function createOne(array $attributes = []): Product
+    public function createOne(mixed $attributes = [], ?Model $parent = null): Product
     {
-        return parent::createOne($attributes);
+        return parent::createOne($attributes, $parent);
     }
 }

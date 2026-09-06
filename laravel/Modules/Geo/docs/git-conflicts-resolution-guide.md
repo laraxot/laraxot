@@ -356,4 +356,4 @@ git log --oneline --grep="conflict" | head -20
 ---
 
 **Versione**: 1.0
-**Compatibilità**: Git 2.x+, Laravel 12.x, PHP 8.3+
+**Compatibilità**: Git 2.x+, Laravel 13.x, PHP 8.3+

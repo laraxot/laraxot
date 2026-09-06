@@ -112,11 +112,11 @@ final class HeatingSystemResource extends Resource
                 Tables\Columns\TextColumn::make('boilers_count')->label(__('heating.fields.boilers'))->counts('boilers'),
                 Tables\Columns\IconColumn::make('is_active')->label(__('heating.fields.is_active'))->boolean(),
             ])
-            ->actions([
+            ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
     }

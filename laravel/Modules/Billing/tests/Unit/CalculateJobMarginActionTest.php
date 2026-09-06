@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Billing\Tests\TestCase::class);
-
 use Modules\Billing\Actions\CalculateJobMarginAction;
 use Modules\Billing\Datas\JobMargin;
 use Modules\Billing\Datas\JobMarginReport;
 use Modules\Billing\Tests\TestCase;
+
+uses(TestCase::class);
 
 function jobMargin(
     float $revenue,

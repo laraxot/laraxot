@@ -434,7 +434,7 @@ Visita `/it/comuni/richieste` nel browser. Middleware guards applicati, blocchi 
 ## Come installarlo
 
 ### Prerequisiti
-- Laravel 12+ con struttura modulare Laraxot
+- Laravel 13+ con struttura modulare Laraxot
 - Filament 5+ installato
 - Migrazioni DB eseguite
 - Spatie packages gia installati (Translatable, Data)

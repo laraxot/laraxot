@@ -147,11 +147,11 @@ final class DeliveryNoteResource extends GatedXotBaseResource
                     ->options(fn (): array => self::supplierOptions())
                     ->searchable(),
             ])
-            ->actions([
+            ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
                 RestoreBulkAction::make(),
                 ForceDeleteBulkAction::make(),

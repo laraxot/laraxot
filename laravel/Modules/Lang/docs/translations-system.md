@@ -212,13 +212,13 @@ return [
 *Ultimo aggiornamento: Gennaio 2025*
 *Ultimo aggiornamento: Gennaio 2025*
 *Versione: 2.0*
-*Compatibilità: Laravel 12.x, Filament 4.x*
+*Compatibilità: Laravel 13.x, Filament 4.x*
 *Versione: 2.0*
-*Compatibilità: Laravel 12.x, Filament 4.x*
+*Compatibilità: Laravel 13.x, Filament 4.x*
 *Versione: 2.0*
-*Compatibilità: Laravel 12.x, Filament 4.x*
+*Compatibilità: Laravel 13.x, Filament 4.x*
 *Versione: 2.0*
-*Compatibilità: Laravel 12.x, Filament 4.x*
+*Compatibilità: Laravel 13.x, Filament 4.x*
 *Ultimo aggiornamento: Gennaio 2025*
 *Versione: 2.0*
-*Compatibilità: Laravel 12.x, Filament 4.x*
+*Compatibilità: Laravel 13.x, Filament 4.x*

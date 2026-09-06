@@ -2,12 +2,12 @@
 
 ## Panoramica
 
-Questo documento descrive l'implementazione completa della pagina "register_disabled" nel sistema Content Blocks di SaluteOra, utilizzando il Filament Builder per creare una pagina dinamica informativa per quando le registrazioni sono temporaneamente disabilitate.
+Questo documento descrive l'implementazione completa della pagina "register_disabled" nel sistema Content Blocks di <nome progetto>, utilizzando il Filament Builder per creare una pagina dinamica informativa per quando le registrazioni sono temporaneamente disabilitate.
 
 ## Struttura Implementata
 
 ### 1. Configurazione JSON
-**File**: `config/local/saluteora/database/content/pages/register_disabled.json`
+**File**: `config/local/<nome progetto>/database/content/pages/register_disabled.json`
 
 La pagina è configurata con due blocchi principali:
 

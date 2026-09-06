@@ -55,6 +55,6 @@ Se la regola non e' specifica di `Lang`, collegare anche:
 
 ## Vedi anche
 
-- [Rules Index](../rules/INDEX.md)
+- [Rules Index](../rules/index.md)
 - [Lang Wiki Index](../index.md)
 - [Root Trigger Map](../../../../../docs/wiki/rules/00-TRIGGER_MAP.md)

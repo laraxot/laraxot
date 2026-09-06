@@ -69,6 +69,7 @@ final class DailyNoteResource extends GatedXotBaseResource
         }
 
         $authId = Auth::id();
+
         return is_numeric($authId) ? (int) $authId : 0;
     }
 
@@ -211,9 +212,9 @@ final class DailyNoteResource extends GatedXotBaseResource
                         ->multiple()
                         ->appendFiles()
                         ->maxParallelUploads(1)
-                        ->imageResizeMode('contain')
-                        ->imageResizeTargetWidth('1280')
-                        ->imageResizeTargetHeight('1280')
+                        ->automaticallyResizeImagesMode('contain')
+                        ->automaticallyResizeImagesToWidth(1280)
+                        ->automaticallyResizeImagesToHeight(1280)
                         ->extraInputAttributes([
                             'accept' => 'image/*',
                             'capture' => 'environment',
@@ -274,11 +275,11 @@ final class DailyNoteResource extends GatedXotBaseResource
                     ->dateTime()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
-            ->actions([
+            ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
     }

@@ -131,7 +131,7 @@ docs/
 
 Il file `_bmad-output/project-context.md` è **già generato** e contiene:
 
-- ✅ Stack tecnologico (Laravel 12, Filament v5, Pest v4, PHPStan L10)
+- ✅ Stack tecnologico (Laravel 13, Filament v5, Pest v4, PHPStan L10)
 - ✅ Architettura (Modular Monolith, 42+ moduli)
 - ✅ Critical Implementation Rules (PHP, Models, Filament, Migrations, Translations)
 - ✅ Module structure

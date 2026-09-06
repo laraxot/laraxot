@@ -17,21 +17,21 @@ use Modules\Xot\Contracts\ProfileContract;
 /**
  * Modules\Lang\Models\Translation.
  *
- * @property string               $id
- * @property string|null          $lang
- * @property string|null          $key
- * @property string|null          $value
- * @property string|null          $created_by
- * @property string|null          $updated_by
- * @property Carbon|null          $created_at
- * @property Carbon|null          $updated_at
- * @property string               $namespace
- * @property string               $group
- * @property string|null          $item
+ * @property string $id
+ * @property string|null $lang
+ * @property string|null $key
+ * @property string|null $value
+ * @property string|null $created_by
+ * @property string|null $updated_by
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property string $namespace
+ * @property string $group
+ * @property string|null $item
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
  *
- * @method static TranslationFactory                  factory($count = null, $state = [])
+ * @method static TranslationFactory factory($count = null, $state = [])
  * @method static EloquentBuilder<static>|Translation newModelQuery()
  * @method static EloquentBuilder<static>|Translation newQuery()
  * @method static EloquentBuilder<static>|Translation ofTranslatedGroup(string $group)
@@ -51,8 +51,8 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static EloquentBuilder<static>|Translation whereValue($value)
  *
  * @property ProfileContract|null $deleter
- * @property string|null          $locale
- * @property int|null             $user_id
+ * @property string|null $locale
+ * @property int|null $user_id
  *
  * @method static EloquentBuilder<static>|Translation whereLocale($value)
  * @method static EloquentBuilder<static>|Translation whereUserId($value)
@@ -61,9 +61,9 @@ use Modules\Xot\Contracts\ProfileContract;
  */
 class Translation extends BaseModel
 {
-    final public const STATUS_SAVED = 0;
+    final public const int STATUS_SAVED = 0;
 
-    final public const STATUS_CHANGED = 1;
+    final public const int STATUS_CHANGED = 1;
 
     protected $fillable = [
         'id',
@@ -79,8 +79,7 @@ class Translation extends BaseModel
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
     /**
-     * @param EloquentBuilder<Translation> $query
-     *
+     * @param  EloquentBuilder<Translation>  $query
      * @return EloquentBuilder<Translation>|QueryBuilder
      */
     public function scopeOfTranslatedGroup(EloquentBuilder $query, string $group): QueryBuilder|EloquentBuilder
@@ -89,8 +88,7 @@ class Translation extends BaseModel
     }
 
     /**
-     * @param EloquentBuilder<Translation> $query
-     *
+     * @param  EloquentBuilder<Translation>  $query
      * @return EloquentBuilder<Translation>
      */
     public function scopeOrderByGroupKeys(EloquentBuilder $query, bool $ordered): EloquentBuilder
@@ -103,8 +101,7 @@ class Translation extends BaseModel
     }
 
     /**
-     * @param EloquentBuilder<Translation> $query
-     *
+     * @param  EloquentBuilder<Translation>  $query
      * @return EloquentBuilder<Translation>|QueryBuilder
      */
     public function scopeSelectDistinctGroup(EloquentBuilder $query): EloquentBuilder|QueryBuilder

@@ -287,7 +287,7 @@ config('app.name');  // ← NO! Non tenant-aware!
 
 ---
 
-## 🚀 Modern Laravel 12 + PHP 8.3 Patterns
+## 🚀 Modern Laravel 13 + PHP 8.3 Patterns
 
 ### 1. Connection Property Typed
 

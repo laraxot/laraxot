@@ -33,7 +33,7 @@ class GetDomainAllowListAction
         }
 
         if (\is_array($res)) {
-            return array_values(array_map(static fn (mixed $item): string => (string) $item, $res));
+            return array_values(array_map(static fn (mixed $item): string => is_string($item) ? $item : '', $res));
         }
 
         return [];

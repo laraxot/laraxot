@@ -1,21 +1,10 @@
----
-title: "Regole per le Chiavi di Traduzione"
-module: "Lang"
-type: rule
-tags: [google, translate]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "google translate"
-related:
-  - "./italian-text-refined-audit-report.md"
----
 # Regole per le Chiavi di Traduzione
 
 ## Collegamenti correlati
 - [Documentazione centrale](./README.md)
 - [Collegamenti documentazione](./collegamenti-documentazione.md)
-- [Implementazione Auth Pages](auth_pages_implementation.md)
-- [Regole Traduzioni User](translation_keys_rules.md)
+- [Implementazione Auth Pages](../../User/docs/AUTH_PAGES_IMPLEMENTATION.md)
+- [Regole Traduzioni User](../../User/docs/TRANSLATION_KEYS_RULES.md)
 - [Documentazione Lang](./README.md)
 
 ## Regole Fondamentali per le Traduzioni

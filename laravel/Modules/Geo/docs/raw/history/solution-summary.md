@@ -312,7 +312,7 @@ Larazeus Bolt v3 Integration
 La soluzione implementata risolve completamente l'errore originale e fornisce una base solida per l'utilizzo di Larazeus Bolt v3 nel progetto <nome progetto>. L'approccio modulare e la configurazione centralizzata garantiscono manutenibilità e scalabilità del sistema.
 
 **Stato**: ✅ IMPLEMENTATO E TESTATO
-**Compatibilità**: Laravel 12.x, Filament 3.x, Larazeus Bolt v3
+**Compatibilità**: Laravel 13.x, Filament 3.x, Larazeus Bolt v3
 **Performance**: Ottimizzata con cache e lazy loading
 **Sicurezza**: CSRF protection e validazione integrata
 

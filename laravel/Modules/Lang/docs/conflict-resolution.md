@@ -30,7 +30,7 @@ related:
 - docs/translation_audit_completion.md
 - docs/translation_completeness_audit.md
 - docs/translation_errors_correction.md
-- docs/translation_keys_best_practices.md
+- docs/translation-keys-best-practices.md
 - docs/translation_keys_rules.md
 - docs/translation_notify_conversion.md
 

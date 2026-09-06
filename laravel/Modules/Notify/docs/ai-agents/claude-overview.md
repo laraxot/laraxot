@@ -20,7 +20,7 @@ Panoramica del progetto LaravelPizza/Base Forecast Fila5.
 | Tecnologia | Descrizione |
 |-----------|-------------|
 | PHP 8.3+ | Strict typing |
-| Laravel 12 | Latest |
+| Laravel 13 | Latest |
 | Filament v3/v4 | Admin/backend |
 | Nwidart Modules | Modular architecture |
 | Folio + Volt | Front-office |

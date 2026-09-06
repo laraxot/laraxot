@@ -1,4 +1,4 @@
-# Migrazione a Laravel 12 e Filament 5
+# Migrazione a Laravel 13 e Filament 5
 
 Linee guida critiche per l'aggiornamento e la manutenzione dei moduli.
 

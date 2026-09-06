@@ -263,7 +263,7 @@ Replicate the target website https://lightseagreen-dogfish-560272.hostingersite.
 - Brand color consistency (#1E5A96, #2D8659, #E67E22)
 
 ### Backend:
-- Laravel 12.x
+- Laravel 13.x
 - Filament CMS integration
 - GDPR module available
 - SEO module available

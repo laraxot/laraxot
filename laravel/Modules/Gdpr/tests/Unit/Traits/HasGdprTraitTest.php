@@ -5,10 +5,11 @@ declare(strict_types=1);
 namespace Modules\Gdpr\Tests\Unit\Traits;
 
 use Modules\Gdpr\Models\Traits\HasGdpr;
+use Modules\Gdpr\Tests\Fixtures\HasGdprDummy;
 use Modules\Gdpr\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Gdpr\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('has_gdpr_trait_is_trait', function (): void {
     Assert::assertTrue(trait_exists(HasGdpr::class));
@@ -43,4 +44,31 @@ test('has_gdpr_trait_methods_are_public', function (): void {
         Assert::assertTrue($reflection->hasMethod($method));
         Assert::assertTrue($reflection->getMethod($method)->isPublic());
     }
+});
+
+test('has_gdpr_trait_builds_consent_cache_key_from_string_id', function (): void {
+    $model = new HasGdprDummy();
+    $model->setAttribute('id', 'abc-123');
+
+    $method = new \ReflectionMethod($model, 'gdprConsentCacheKey');
+
+    Assert::assertSame('user_abc-123_consent_marketing', $method->invoke($model, 'marketing'));
+});
+
+test('has_gdpr_trait_builds_consent_cache_key_from_int_id', function (): void {
+    $model = new HasGdprDummy();
+    $model->setAttribute('id', 42);
+
+    $method = new \ReflectionMethod($model, 'gdprConsentCacheKey');
+
+    Assert::assertSame('user_42_consent_marketing', $method->invoke($model, 'marketing'));
+});
+
+test('has_gdpr_trait_throws_for_unsupported_primary_key_type', function (): void {
+    $model = new HasGdprDummy();
+    $model->setAttribute('id', ['not', 'scalar']);
+
+    $method = new \ReflectionMethod($model, 'gdprKeyAsString');
+
+    expect(fn () => $method->invoke($model))->toThrow(\RuntimeException::class);
 });

@@ -287,4 +287,4 @@ it('uses transactions', function () {
 ---
 
 **Ultimo aggiornamento**: 2026-02-24  
-**Stack**: Laravel 12 | Filament v5 | Pest v4 | PHPStan Level 10
+**Stack**: Laravel 13 | Filament v5 | Pest v4 | PHPStan Level 10

@@ -6,7 +6,7 @@
 
 set -e
 
-DOCS_DIR="/var/www/_bases/<nome repository>/laravel/Modules/Lang/docs"
+DOCS_DIR="/var/www/_bases/base_ptvx_fila5/laravel/Modules/Lang/docs"
 cd "$DOCS_DIR"
 
 echo "=== Lang Module Docs Consolidation ==="

@@ -22,7 +22,7 @@ related:
 
 ## Riferimenti Studiati
 
-- [Laravel 12 Socialite Login with Microsoft](https://www.itsolutionstuff.com/post/laravel-12-socialite-login-with-microsoft-account-exampleexample.html)
+- [Laravel 13 Socialite Login with Microsoft](https://www.itsolutionstuff.com/post/laravel-12-socialite-login-with-microsoft-account-exampleexample.html)
 - [Filament Socialite Plugin](https://filamentphp.com/plugins/dododedodonl-socialite)
 - [Laravel Socialite Documentation](https://laravel.com/docs/12.x/socialite)
 - [Socialite Providers Microsoft](https://socialiteproviders.com/Microsoft/)

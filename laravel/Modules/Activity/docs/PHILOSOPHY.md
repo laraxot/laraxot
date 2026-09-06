@@ -963,4 +963,4 @@ Quella è la ragione per cui esiste.
 
 ---
 
-*Documentazione filosofica — Modulo Activity · FixCity Platform · Laravel 12 · Filament 5*
+*Documentazione filosofica — Modulo Activity · FixCity Platform · Laravel 13 · Filament 5*

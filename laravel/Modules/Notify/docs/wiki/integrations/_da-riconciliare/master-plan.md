@@ -49,7 +49,7 @@ related:
 ### Stack Tecnologico
 ```
 Frontend:          Blade + Livewire 3 + Alpine.js + Tailwind CSS
-Backend:           Laravel 12.x + PHP 8.3
+Backend:           Laravel 13.x + PHP 8.3
 Admin Panel:       Filament 4.x (Server-Driven UI)
 Database:          MySQL/PostgreSQL (multi-database)
 Cache:             Redis
@@ -480,7 +480,7 @@ docs/
 Notify è posizionata per diventare la **piattaforma leader europea** per il civic engagement e la gestione intelligente delle città. Con:
 <nome progetto> è posizionata per diventare la **piattaforma leader europea** per il civic engagement e la gestione intelligente delle città. Con:
 
-- ✅ **Solida base tecnica** (Laravel 12, Filament 4, architettura modulare)
+- ✅ **Solida base tecnica** (Laravel 13, Filament 4, architettura modulare)
 - ✅ **Business logic completa** (workflow, stati, automazioni)
 - ✅ **Roadmap chiara** (18 moduli, 60+ sprint pianificati)
 - ✅ **Visione innovativa** (AI, IoT, Blockchain)

@@ -316,7 +316,7 @@ graph TD
 
 ### 7.4 Technical Constraints
 - PHP 8.3+ required
-- Laravel 12+ required
+- Laravel 13+ required
 - MySQL 8.0+ with spatial support
 - External API rate limits
 

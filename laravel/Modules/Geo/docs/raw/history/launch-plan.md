@@ -1,4 +1,4 @@
-# Product Launch Plan: PTVX v4.0 (Laravel 12)
+# Product Launch Plan: PTVX v4.0 (Laravel 13)
 
 ## 🚀 Launch Overview
 - **Launch Date:** June 2026

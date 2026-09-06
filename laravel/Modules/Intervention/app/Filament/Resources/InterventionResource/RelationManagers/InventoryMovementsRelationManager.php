@@ -7,7 +7,6 @@ namespace Modules\Intervention\Filament\Resources\InterventionResource\RelationM
 use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -35,6 +34,19 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
     public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return 'Materiali impiegati';
+    }
+
+    private static function ensureString(mixed $value): string
+    {
+        if (is_string($value)) {
+            return $value;
+        }
+
+        if (is_numeric($value) || is_bool($value) || $value === null) {
+            return (string) $value;
+        }
+
+        return '';
     }
 
     private static function isEnabled(): bool
@@ -103,9 +115,10 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
                 ->prefix('EUR')
                 ->default('0.00')
                 ->required(),
-            Placeholder::make('stock_available')
+            TextInput::make('stock_available')
                 ->label(__('inventory.fields.available_stock'))
-                ->content(function (callable $get): string {
+                ->readOnly()
+                ->default(function (callable $get): string {
                     $productIdValue = $get('product_id') ?? 0;
                     $productId = (int) (is_numeric($productIdValue) ? $productIdValue : 0);
                     $warehouseIdValue = $get('from_warehouse_id') ?? 0;
@@ -223,7 +236,7 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
 
                         try {
                             $noteValue = $data['note'] ?? '';
-                            $note = is_string($noteValue) ? $noteValue : strval($noteValue);
+                            $note = self::ensureString($noteValue);
 
                             return app(CreateInventoryMovementAction::class)->execute(
                                 productId: $productId,
@@ -251,7 +264,7 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
                         $intervention->refreshEconomicTotals();
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 DeleteAction::make()
                     ->after(function (): void {
                         /** @var Intervention $intervention */
@@ -260,7 +273,7 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
                         $intervention->refreshEconomicTotals();
                     }),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
     }
@@ -280,7 +293,7 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
             ->orderBy('code')
             ->pluck('code', 'id')
             ->mapWithKeys(static function (mixed $code, mixed $id): array {
-                $codeStr = is_string($code) ? $code : strval($code);
+                $codeStr = is_string($code) ? $code : self::ensureString($code);
                 $idInt = is_numeric($id) ? (int) $id : 0;
 
                 return [$idInt => $codeStr];

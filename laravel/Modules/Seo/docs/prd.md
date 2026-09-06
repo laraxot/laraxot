@@ -310,7 +310,7 @@ graph TD
 
 ### 7.4 Technical Constraints
 - PHP 8.3+ required
-- Laravel 12+ required
+- Laravel 13+ required
 - Filament v5 compatibility
 
 ### 7.5 Database Schema

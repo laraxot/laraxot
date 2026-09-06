@@ -1,4 +1,9 @@
-# Sistema di Routing e Localizzazione con Laravel Folio
+# Sistema di Routing e Localizzazione con Laravel Folio + Volt
+
+## Risorse Ufficiali
+- [Laravel Folio Documentation](https://laravel.com/docs/12.x/folio)
+- [Livewire Volt Documentation](https://livewire.laravel.com/docs/volt)
+- [Volt Class-based API](https://laravel-news.com/livewire-volt-class-based-api)
 
 ## Collegamenti correlati
 - [Indice documentazione CMS](/laravel/modules/cms/project_docs/index.md)
@@ -72,6 +77,10 @@ Themes/{theme_name}/resources/views/pages/
 ├── about.blade.php          # Pagina about (/about)
 ├── contact/
 │   └── index.blade.php      # Pagina contatti (/contact)
+├── events/
+│   ├── index.blade.php      # Lista eventi (/events)
+│   └── [slug].blade.php     # Dettaglio evento (/events/{slug})
+├── [slug].blade.php         # Catch-all per altre pagine CMS
 └── ...
 ```
 
@@ -83,6 +92,304 @@ Modules/{ModuleName}/resources/views/pages/
 │   └── index.blade.php      # Pagina specifica della feature
 └── ...
 ```
+
+## Ordine di Precedenza delle Route Folio
+
+Folio risolve le route in base alla **specificità del path**. Ecco l'ordine di priorità (dal più alto al più basso):
+
+1. **File esatti**: `index.blade.php`, `about.blade.php` → `/`, `/about`
+2. **Directory specifica**: `events/index.blade.php` → `/events`
+3. **Route con parametri in directory specifica**: `events/[slug].blade.php` → `/events/{slug}`
+4. **Catch-all generico**: `[slug].blade.php` → `/{slug}`
+5. **Route annidate con parametri**: `[container0]/[slug].blade.php` → `/{container0}/{slug}`
+
+### Esempio Pratico
+
+Per la URL `/it/events/laravel-beginners-pizza-night`:
+
+| Pattern | Route | Precedenza |
+|---------|-------|-------------|
+| `pages/events/index.blade.php` | `/it/events` | ✅ Solo path esatto |
+| `pages/events/[slug].blade.php` | `/it/events/{slug}` | **✅ PIÙ ALTA** |
+| `pages/[container0]/index.blade.php` | `/it/{container0}` | ❌ Non matcha |
+| `pages/[container0]/[slug].blade.php` | `/it/{container0}/{slug}` | ❌ Meno specifico |
+| `pages/[container0]/[container1]/index.blade.php` | `/it/{container0}/{container1}` | ❌ Meno specifico |
+| `pages/[slug].blade.php` | `/it/{slug}` | ❌ Catch-all |
+
+**Regola chiave**: Folio preferisce sempre la route più **specifica**. 
+- `events/[slug].blade.php` ha priorità su `[container0]/[slug].blade.php` perché `events` è più specifico di `[container0]`.
+
+### Come Dare Precedenza a una Route
+
+Per dare priorità a una route specifica:
+
+1. **Usare directory specifica** (consigliato):
+   ```
+   pages/events/[slug].blade.php  ✅
+   pages/[container0]/[slug].blade.php  ❌
+   ```
+
+2. **Rimuovere file non necessari**:
+   ```bash
+   rm -rf pages/[container0]
+   ```
+
+## Pattern Container0/Slug0 per CMS-Driven Dinamico
+
+### Filosofia
+
+Il pattern `[container0]/[slug0]` permette di gestire **qualsiasi container dinamico** (events, blog, community, etc.) con un singolo set di file Blade. Questo segue i principi **DRY** (Don't Repeat Yourself) e **KISS** (Keep It Simple).
+
+### Struttura
+
+```
+pages/
+├── index.blade.php                    → / (homepage)
+├── [slug].blade.php                   → /{slug} (CMS catch-all)
+├── [container0]/
+│   └── index.blade.php               → /{container0} (lista container)
+└── [container0]/
+    └── [slug0]/
+        └── index.blade.php            → /{container0}/{slug0} (dettaglio)
+```
+
+### Esempio: Router Agnostico
+
+Il file `[container0]/[slug0]/index.blade.php` deve essere **completamente agnostico** - solo un router che passa i parametri al sistema di risoluzione contenuti:
+
+```php
+<?php
+declare(strict_types=1);
+
+use function Laravel\Folio\{middleware, name};
+use Livewire\Volt\Component;
+use Modules\Cms\Http\Middleware\PageSlugMiddleware;
+
+name('container0.view');  // Semantico: view = pagina generica di rendering
+middleware(PageSlugMiddleware::class);
+
+new class extends Component {
+    // ✅ Volt auto-inietta i parametri della route!
+    public string $container0 = '';
+    public string $slug0 = '';
+    public array $data = [];
+    public string $pageSlug = '';
+    
+    // ✅ mount() riceve i segmenti Folio — mai request()->route()
+    public function mount(string $container0, string $slug0 = ''): void
+    {
+        $this->container0 = $container0;
+        $this->slug0 = $slug0;
+        $this->pageSlug = $container0 . '.view';
+        $this->data = [
+            'container0' => $container0,
+            'slug0' => $slug0,
+        ];
+    }
+};
+?>
+
+<x-layouts.app>
+    @volt('container0.view')
+    <div class="page-content content" data-slug="{{ $pageSlug }}" data-side="content">
+        <x-page side="content" :slug="$pageSlug" :data="$data" />
+    </div>
+    @endvolt
+</x-layouts.app>
+```
+
+> **Aggiornamento 2026-06-05:** `@volt('container0.view')` è statico (= `name()`). **Mai** `@volt($pageSlug)`. Per `[container1]` usare `@volt('container1.index')`. Canon: [wiki/concepts/folio-page-shell-pattern.md](wiki/concepts/folio-page-shell-pattern.md).
+
+**Principio chiave (REGOLA OBBLIGATORIA):** 
+- Il file di routing **NON DEVE** contenere logica di business
+- Deve **SOLO** passare `$pageSlug` e `$data` al componente `<x-page>`
+- Il componente `<x-page>` carica il JSON (es. `events_view.json`) che contiene i blocchi
+- Il view path nel JSON (es. `components.blocks.events.detail`) gestisce il rendering
+
+**Perché?**
+1. **Separation of Concerns**: Il file di routing gestisce solo il routing, non la business logic
+2. **Testabilità**: Ogni componente può essere testato separatamente
+3. **Manutenibilità**: Cambiare la logica di risoluzione non richiede modifiche al routing
+4. **Estendibilità**: Nuovi container possono essere aggiunti senza toccare il file di routing
+5. **Agnosticità**: Il file è lo stesso per tutti i container (events, blog, community, etc.)
+- La naming convention segue lo stile Laravel: `resource.action`
+  - `[container0]/index.blade.php` → `name('container0')`
+  - `[container0]/[slug0]/index.blade.php` → `name('container0.view')`
+
+### Content Resolver Block
+
+La logica di risoluzione contenuti è spostata nel blocco `content-resolver.blade.php`:
+
+```php
+@props([
+    'container0' => '',
+    'slug0' => '',
+])
+
+@php
+$content = null;
+$contentType = null;
+$view = null;
+$pageSlug = '';
+
+// Build full slug: events.laravel-beginners-pizza-night
+$fullSlug = $container0 . '.' . $slug0;
+
+// Priority 1: Try to load dynamic model (specific item)
+$knownMappings = [
+    'events' => \Modules\Meetup\Models\Event::class,
+];
+
+if (isset($knownMappings[$container0]) && !empty($slug0)) {
+    $modelClass = $knownMappings[$container0];
+    $item = $modelClass::where('slug', $slug0)->first();
+    
+    if ($item !== null) {
+        $content = $item;
+        $contentType = $container0;
+        $view = 'blocks.' . $container0 . '.detail';
+    }
+}
+
+// Priority 2: Check if exact CMS page exists
+if ($content === null) {
+    $page = \Modules\Cms\Models\Page::firstWhere('slug', $fullSlug);
+    if ($page !== null) {
+        $pageSlug = $fullSlug;
+    }
+}
+
+// Priority 3: Fallback to container.view (e.g., events.view)
+if ($content === null && $pageSlug === '') {
+    $viewSlug = $container0 . '.view';
+    $viewPage = \Modules\Cms\Models\Page::firstWhere('slug', $viewSlug);
+    if ($viewPage !== null) {
+        $pageSlug = $viewSlug;
+    }
+}
+
+// Priority 4: Last resort - use exact slug
+if ($content === null && $pageSlug === '') {
+    $pageSlug = $fullSlug;
+}
+@endphp
+
+@if($content && $view)
+    @include($view, [
+        'item' => $content,
+        'container0' => $container0,
+        'slug0' => $slug0,
+    ])
+@elseif($pageSlug)
+    <x-page side="content" :slug="$pageSlug" :data="$data" />
+@endif
+```
+
+### ⚠️ ANTI-PATTERN: MAI mettere logica nel Router
+
+**SBAGLIATO** - Non mettere mai metodi `resolveContent()` o `loadDynamicModel()` nel file `[container0]/[slug0]/index.blade.php`:
+
+```php
+// ❌ ERRORE GRAVE - MAI FARE QUESTO
+new class extends Component {
+    public string $container0;
+    public string $slug0;
+    public ?object $item = null;
+    
+    public function mount(string $container0, string $slug0 = ''): void
+    {
+        $this->container0 = $container0;
+        $this->slug0 = $slug0;
+        // ❌ SBAGLIATO — anche con mount() tipizzato, resolveContent() viola il principio agnostico
+        $this->resolveContent();
+    }
+    
+    // ❌ MAI - Questo va nel Content Resolver, non nel Router!
+    private function resolveContent(): void
+    {
+        // Logica specifica Event, PageModel, ecc.
+        $item = $this->loadDynamicModel();
+        if ($item !== null) {
+            $this->item = $item;
+        }
+    }
+    
+    // ❌ MAI - Mapping dei modelli nel router!
+    private function loadDynamicModel(): ?object
+    {
+        $knownMappings = [
+            'events' => 'Modules\\Meetup\\Models\\Event',
+        ];
+        // ... logica di caricamento
+    }
+};
+```
+
+**Perché è sbagliato:**
+1. **Violazione Separation of Concerns**: Il router conosce troppi dettagli
+2. **Non riutilizzabile**: Aggiungere un nuovo container richiede modificare il router
+3. **Difficile da testare**: Non si può testare la logica isolatamente
+4. **Accoppiamento stretto**: Il router è accoppiato a specifici modelli (Event, PageModel)
+
+**CORRETTO** - Il router deve essere completamente agnostico:
+
+```php
+// ✅ CORRETTO - Il routing file passa solo i parametri al content-resolver
+new class extends Component {
+    // ✅ Volt auto-inietta i parametri della route!
+    public string $container0 = '';
+    public string $slug0 = '';
+    public array $data = [];
+    
+    public function mount(string $container0, string $slug0 = ''): void
+    {
+        $this->container0 = $container0;
+        $this->slug0 = $slug0;
+        $this->pageSlug = $container0 . '.view';
+        $this->data = [
+            'container0' => $container0,
+            'slug0' => $slug0,
+            'view_slug' => $container0 . '.view',
+        ];
+    }
+};
+```
+
+La logica di risoluzione contenuti deve sempre essere nel **Content Resolver Block**, mai nel router.
+
+### Vantaggi del Pattern Container0
+
+1. **DRY**: Un solo set di file gestisce tutti i container
+2. **Flessibile**: Aggiungi nuovi container senza creare nuovi file
+3. **Manutenibile**: Logica centralizzata
+4. **Scalabile**: Facilmente estendibile
+
+### Route Generate
+
+```
+GET  /it/{container0}              → [container0]/index.blade.php
+GET  /it/{container0}/{slug0}      → [container0]/[slug0]/index.blade.php
+```
+
+### Esempio URL
+
+| URL | container0 | slug0 | Risultato |
+|-----|------------|-------|------------|
+| `/it/events` | events | - | Lista eventi (CMS) |
+| `/it/events/laravel-pizza` | events | laravel-pizza | Dettaglio evento |
+| `/it/blog` | blog | - | Lista blog (CMS) |
+| `/it/blog/my-post` | blog | my-post | Dettaglio post |
+
+### Best Practices
+
+1. **Logica di routing nel Component**: Carica i dati appropriati in base al container
+2. **Usa nomi descriptivi**: `container0`, `slug0` sono generici ma funzionali
+3. **Fallback CMS**: Se non è un container speciale, usa il sistema CMS normale
+
+### Riferimenti
+
+- [Folio Official Docs](https://laravel.com/docs/folio)
+- [GitHub Laravel Folio](https://github.com/laravel/folio)
 
 ## Middleware di Localizzazione
 

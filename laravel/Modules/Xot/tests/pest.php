@@ -1,6 +1,6 @@
 <?php
 
 declare(strict_types=1);
+use Modules\Xot\Tests\TestCase;
 
-/** @phpstan-ignore method.internalClass */
-uses(Modules\Xot\Tests\TestCase::class)->in('.');
+uses(TestCase::class)->in('.');

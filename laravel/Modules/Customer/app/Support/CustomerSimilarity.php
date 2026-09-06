@@ -46,11 +46,13 @@ final class CustomerSimilarity
             $query->orWhereRaw('LOWER(legal_name) LIKE ?', ['%'.self::escape($word).'%']);
         }
 
+        /** @var Customer|null $best */
         $best = null;
         $bestScore = 0.0;
         foreach ($query->limit(300)->get() as $customer) {
             $percent = 0.0;
-            similar_text($needle, mb_strtolower((string) $customer->legal_name), $percent);
+            $legalName = is_string($customer->legal_name) ? $customer->legal_name : (string) $customer->legal_name;
+            similar_text($needle, mb_strtolower($legalName), $percent);
             if ($percent > $bestScore) {
                 $bestScore = $percent;
                 $best = $customer;

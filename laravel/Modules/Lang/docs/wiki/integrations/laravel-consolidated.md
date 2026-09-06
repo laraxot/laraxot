@@ -3288,7 +3288,7 @@ Same issue - localize POST URLs to prevent redirects that change locale.
 ## References
 
 - [Official Documentation](https://github.com/mcamara/laravel-localization)
-- [Laravel 12 Compatibility](#laravel-compatibility)
+- [Laravel 13 Compatibility](#laravel-compatibility)
 
 ---
 

@@ -44,7 +44,7 @@ Il processo di compilazione trasforma i file sorgente (CSS, JavaScript, ecc.) in
 Per compilare il tema, è necessario eseguire il seguente comando nella directory del tema:
 
 ```bash
-cd /var/www/html/saluteora/laravel/Themes/One
+cd /var/www/html/<nome progetto>/laravel/Themes/One
 npm run build
 ```
 
@@ -62,10 +62,10 @@ Questo comando esegue lo script `build` definito nel file `package.json`:
 ### Cosa Succede Durante la Compilazione
 
 1. **Inizializzazione di Vite**: Vite legge la configurazione dal file `vite.config.js`
-2. **Elaborazione dei File Sorgente**:
+2. **Elaborazione dei File Sorgente**: 
    - I file CSS vengono processati da PostCSS e Tailwind CSS
    - I file JavaScript vengono transpilati e bundled
-3. **Ottimizzazione**:
+3. **Ottimizzazione**: 
    - Minificazione dei file
    - Eliminazione del codice inutilizzato (tree-shaking)
    - Generazione di nomi di file con hash per il cache busting
@@ -88,7 +88,7 @@ Dopo la compilazione, è necessario copiare i file compilati nella directory pub
 Per pubblicare il tema compilato, è necessario eseguire il seguente comando:
 
 ```bash
-cd /var/www/html/saluteora/laravel/Themes/One
+cd /var/www/html/<nome progetto>/laravel/Themes/One
 npm run copy
 ```
 
@@ -168,7 +168,7 @@ Le dipendenze frontend sono gestite tramite npm e definite nel file `package.jso
 Prima di compilare il tema per la prima volta, è necessario installare le dipendenze:
 
 ```bash
-cd /var/www/html/saluteora/laravel/Themes/One
+cd /var/www/html/<nome progetto>/laravel/Themes/One
 npm install
 ```
 
@@ -177,7 +177,7 @@ npm install
 Per aggiornare le dipendenze:
 
 ```bash
-cd /var/www/html/saluteora/laravel/Themes/One
+cd /var/www/html/<nome progetto>/laravel/Themes/One
 npm update
 ```
 
@@ -213,4 +213,5 @@ npm update
 
 ## Collegamenti tra versioni di theme_compilation.md
 * [theme_compilation.md](docs/standards/theme_compilation.md)
-* [theme_compilation.md](laravel/modules/cms/docs/theme_compilation.md)
+* [theme_compilation.md](laravel/Modules/Cms/docs/theme_compilation.md)
+

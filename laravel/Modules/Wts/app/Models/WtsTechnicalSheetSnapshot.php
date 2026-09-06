@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Wts\Models;
 
 use Carbon\CarbonInterface;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Wts\Database\Factories\WtsTechnicalSheetSnapshotFactory;
 
@@ -28,9 +27,6 @@ use Modules\Wts\Database\Factories\WtsTechnicalSheetSnapshotFactory;
  */
 final class WtsTechnicalSheetSnapshot extends BaseModel
 {
-    /** @use HasFactory<WtsTechnicalSheetSnapshotFactory> */
-    use HasFactory;
-
     protected $table = 'wts_technical_sheet_snapshots';
 
     /** @var array<int, string> */

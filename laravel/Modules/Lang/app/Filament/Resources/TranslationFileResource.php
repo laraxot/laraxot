@@ -28,8 +28,11 @@ class TranslationFileResource extends XotBaseResource
         return ['it', 'en'];
     }
 
-    #[\Override]
-    public static function getFormSchema(): array
+    // #[\Override]
+    /**
+     * @return array<string, mixed>
+     */
+    public static function getFormSchemaOld(): array
     {
         return [];
 

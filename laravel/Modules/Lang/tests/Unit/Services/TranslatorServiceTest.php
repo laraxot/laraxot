@@ -8,7 +8,7 @@ use Illuminate\Contracts\Translation\Translator;
 use Modules\Lang\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Lang\Tests\TestCase::class);
+uses(TestCase::class);
 
 function makeTranslatorService(): Translator
 {

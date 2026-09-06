@@ -2,7 +2,7 @@
 
 **Ultimo aggiornamento**: 2025-01-10
 **Principi**: DRY + KISS + SOLID + Robust
-**Stack**: Laravel 12 + Filament 4 + PHP 8.3 + Laraxot
+**Stack**: Laravel 13 + Filament 4 + PHP 8.3 + Laraxot
 
 ---
 

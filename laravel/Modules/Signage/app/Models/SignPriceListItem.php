@@ -26,7 +26,6 @@ use Modules\Signage\Database\Factories\SignPriceListItemFactory;
  */
 final class SignPriceListItem extends BaseModel
 {
-
     protected $table = 'sign_price_list_items';
 
     /** @var array<int, string> */
@@ -51,12 +50,6 @@ final class SignPriceListItem extends BaseModel
     public function priceEntries(): HasMany
     {
         return $this->hasMany(SignSupplierPriceEntry::class, 'sign_price_list_item_id');
-    }
-
-    /** @return SignPriceListItemFactory */
-    public static function factory(): SignPriceListItemFactory
-    {
-        return SignPriceListItemFactory::new();
     }
 
     protected static function newFactory(): SignPriceListItemFactory

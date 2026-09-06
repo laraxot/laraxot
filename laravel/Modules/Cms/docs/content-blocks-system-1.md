@@ -1,8 +1,8 @@
-# Sistema Content Blocks - SaluteOra
+# Sistema Content Blocks - <nome progetto>
 
 ## Panoramica
 
-Il sistema Content Blocks di SaluteOra utilizza il Builder di Filament per creare pagine dinamiche composte da blocchi riutilizzabili. Ogni pagina è definita tramite file JSON che contengono la configurazione dei content_blocks.
+Il sistema Content Blocks di <nome progetto> utilizza il Builder di Filament per creare pagine dinamiche composte da blocchi riutilizzabili. Ogni pagina è definita tramite file JSON che contengono la configurazione dei content_blocks.
 
 ## Struttura dei Content Blocks
 
@@ -151,7 +151,7 @@ class BlockData extends Data implements Wireable
 ## Convenzioni di Naming
 
 ### File JSON
-- Posizionati in: `config/local/saluteora/database/content/pages/`
+- Posizionati in: `config/local/<nome progetto>/database/content/pages/`
 - Naming: `kebab-case.json`
 
 ### View Blade

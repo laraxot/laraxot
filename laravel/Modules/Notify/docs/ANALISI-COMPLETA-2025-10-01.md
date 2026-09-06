@@ -427,7 +427,7 @@ Manutenzione Stradale • Illuminazione • Rifiuti • Verde Pubblico • Fogna
 
 ### Punti di Forza ⭐⭐⭐⭐⭐
 1. **Architettura Modulare** - Scalabile, manutenibile, estendibile
-2. **Tech Stack Moderno** - Laravel 12, Filament 3, Livewire 3
+2. **Tech Stack Moderno** - Laravel 13, Filament 3, Livewire 3
 3. **Multi-Language** - 50+ lingue già supportate
 4. **Quality Mindset** - PHPStan Level 9, strict types
 5. **Documentation** - Completa e ben strutturata

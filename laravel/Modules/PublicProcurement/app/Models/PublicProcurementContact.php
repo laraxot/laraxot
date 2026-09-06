@@ -15,7 +15,6 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class PublicProcurementContact extends XotBaseModel
 {
-    /** @phpstan-use HasXotFactory<PublicProcurementContactFactory> */
     use HasXotFactory;
 
     use SoftDeletes;

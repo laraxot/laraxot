@@ -67,23 +67,22 @@ final class AssignmentsRelationManager extends XotBaseRelationManager
             ->headerActions([
                 CreateAction::make()
                     ->using(function (array $data): WorkOrderAssignment {
-                        $assignedAt = isset($data['assigned_at']) && $data['assigned_at']
-                            ? CarbonImmutable::parse((string) $data['assigned_at'])
-                            : null;
+                        $assignedAtRaw = is_string($data['assigned_at'] ?? null) ? $data['assigned_at'] : null;
+                        $assignedAt = $assignedAtRaw !== null ? CarbonImmutable::parse($assignedAtRaw) : null;
 
                         /** @var WorkOrder $workOrder */
                         $workOrder = $this->getOwnerRecord();
 
                         return app(AssignUserToWorkOrderAction::class)->execute(
                             workOrderId: (int) $workOrder->id,
-                            userId: (int) $data['user_id'],
-                            role: isset($data['role']) ? (string) $data['role'] : null,
+                            userId: is_int($data['user_id'] ?? null) ? (int) $data['user_id'] : 0,
+                            role: is_string($data['role'] ?? null) ? $data['role'] : null,
                             assignedByUserId: (($authId = Auth::id()) !== null ? (int) $authId : null),
                             assignedAt: $assignedAt,
                         );
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 EditAction::make(),
                 DeleteAction::make()
                     ->using(function (WorkOrderAssignment $record): void {
@@ -93,7 +92,7 @@ final class AssignmentsRelationManager extends XotBaseRelationManager
                         );
                     }),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
     }
