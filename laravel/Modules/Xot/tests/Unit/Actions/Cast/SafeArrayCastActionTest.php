@@ -29,7 +29,10 @@ it('casts various values to array correctly', function (): void {
         /** @return array<string, int> */
         public function toArray(): array
         {
-            return ['d' => 4];
+            /** @var array<string, int> $result */
+            $result = ['d' => 4];
+
+            return $result;
         }
     };
     Assert::assertSame(['d' => 4], $action->execute($objToArray));
@@ -38,7 +41,10 @@ it('casts various values to array correctly', function (): void {
         /** @return array<string, int> */
         public function __toArray(): array
         {
-            return ['e' => 5];
+            /** @var array<string, int> $result */
+            $result = ['e' => 5];
+
+            return $result;
         }
     };
     Assert::assertSame(['e' => 5], $action->execute($objUnderscoreToArray));

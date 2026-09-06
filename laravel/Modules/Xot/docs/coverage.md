@@ -1,24 +1,17 @@
-# Xot Module Test Coverage
+---
+name: xot-test-coverage
+description: Xot test coverage
+metadata:
+  type: project
+  updated: 2026-09-06
+---
 
-## Overview
-This module has comprehensive test coverage with various test types implemented.
+# Xot Test Coverage (2026-09-06)
 
-## Test Results
-- **Tests Passed**: 0
-- **Assertions**: 0
-- **Test Types**: Unit, Feature, Integration tests
+**PHPStan L10:** ✅ CLEAN (app/)
+**Pest:** ✅ PASS (exit 0)
 
-## Coverage Statistics
-- **Files**: 0
-- **Lines of Code**: 0
-- **Classes**: 0
-- **Methods**: 0
-- **Coverage Rate**: 0%
+Coverage collection deferred to next cycle.
+Target: >80% app/ code.
 
-## Test Categories
-- Unit Tests
-- Feature Tests
-- Integration Tests
-
-## Status
-All tests are passing and coverage is being maintained.
+---
