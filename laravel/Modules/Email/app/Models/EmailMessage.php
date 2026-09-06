@@ -39,7 +39,6 @@ use Modules\WorkOrder\Models\WorkOrder;
  */
 final class EmailMessage extends BaseModel
 {
-
     protected $table = 'email_messages';
 
     /** @var array<int, string> */

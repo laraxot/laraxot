@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Email\Models;
 
-use Modules\User\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
@@ -12,6 +11,7 @@ use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
 use Modules\Email\Database\Factories\EmailConversationFactory;
+use Modules\User\Models\User;
 
 /**
  * @property int $id
@@ -32,7 +32,6 @@ use Modules\Email\Database\Factories\EmailConversationFactory;
  */
 final class EmailConversation extends BaseModel
 {
-
     protected $table = 'email_conversations';
 
     /** @var array<int, string> */

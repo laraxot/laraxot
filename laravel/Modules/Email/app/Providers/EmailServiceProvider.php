@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Email\Providers;
 
-use Modules\User\Models\User;
 use App\Support\AccountFeatures;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
@@ -14,6 +13,7 @@ use Modules\Email\AI\EmailMessageClassifierInterface;
 use Modules\Email\AI\OpenAiEmailMessageClassifier;
 use Modules\Email\Inbox\EmailInboxClientInterface;
 use Modules\Email\Inbox\ImapEmailInboxClient;
+use Modules\User\Models\User;
 use Modules\Xot\Providers\XotBaseServiceProvider;
 
 class EmailServiceProvider extends XotBaseServiceProvider

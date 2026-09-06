@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Email\Models;
 
-use Modules\User\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
 use Modules\Email\Database\Factories\EmailContactIdentityFactory;
+use Modules\User\Models\User;
 
 /**
  * @property int $id
@@ -27,7 +27,6 @@ use Modules\Email\Database\Factories\EmailContactIdentityFactory;
  */
 final class EmailContactIdentity extends BaseModel
 {
-
     protected $table = 'email_contact_identities';
 
     /** @var array<int, string> */

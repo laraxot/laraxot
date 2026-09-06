@@ -41,7 +41,7 @@ use function Pest\Laravel\postJson;
  *   prescindere dall'utente, rendendo il test della pagina non riproducibile finché lo shim non
  *   sarà sostituito da una vera matrice di permessi (debito tecnico noto).
  */
-uses(\Modules\Email\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('stores incoming signed email webhooks idempotently', function (): void {
     Queue::fake();
