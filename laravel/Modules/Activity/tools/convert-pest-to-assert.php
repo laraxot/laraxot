@@ -25,11 +25,7 @@ foreach ($iterator as $file) {
         continue;
     }
 
-    $rawContent = file_get_contents($path);
-    if ($rawContent === false) {
-        continue;
-    }
-    $code = $rawContent;
+    $code = file_get_contents($path);
     if (! str_contains($code, 'expect(')) {
         continue;
     }

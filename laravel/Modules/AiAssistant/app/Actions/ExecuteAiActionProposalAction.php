@@ -1039,10 +1039,12 @@ final class ExecuteAiActionProposalAction
 
         $opportunity = app(ApplyTenderOpportunityDraftAction::class)->execute($draft);
 
+        $opportunityStatus = data_get($opportunity, 'status', '');
+
         return [
             'ok' => true,
             'tender_opportunity_id' => $opportunity->id,
-            'status' => (string) data_get($opportunity, 'status', ''),
+            'status' => is_string($opportunityStatus) ? $opportunityStatus : (string) $opportunityStatus,
         ];
     }
 
@@ -1137,10 +1139,12 @@ final class ExecuteAiActionProposalAction
 
         $result = app(ConfirmEnergyBrokerDocumentImportAction::class)->execute($document);
 
+        $resultStatus = $result['status'] ?? 'unknown';
+
         return [
             'ok' => true,
             'energy_broker_document_id' => $documentId,
-            'status' => (string) ($result['status'] ?? 'unknown'),
+            'status' => is_string($resultStatus) ? $resultStatus : (string) $resultStatus,
             'customer_id' => $result['customer_id'] ?? null,
         ];
     }

@@ -13,7 +13,7 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class CatalogMeasureUnit extends XotBaseModel
 {
-    /** @phpstan-use HasXotFactory */
+    /** @phpstan-use HasXotFactory<CatalogMeasureUnitFactory> */
     use HasXotFactory;
 
     protected $table = 'catalog_measure_units';

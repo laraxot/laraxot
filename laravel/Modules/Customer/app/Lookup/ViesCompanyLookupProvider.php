@@ -86,7 +86,11 @@ final class ViesCompanyLookupProvider implements CompanyLookupProviderInterface
      */
     private function parseAddress(string $address): array
     {
-        $flat = trim(preg_replace('/\s+/', ' ', str_replace(["\n", "\r"], ' ', $address)));
+        $replaced = preg_replace('/\s+/', ' ', str_replace(["\n", "\r"], ' ', $address));
+        if (!is_string($replaced)) {
+            return [null, null, null, null];
+        }
+        $flat = trim($replaced);
         if ($flat === '') {
             return [null, null, null, null];
         }

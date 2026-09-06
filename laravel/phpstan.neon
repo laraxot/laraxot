@@ -13,9 +13,14 @@ parameters:
         - ./Modules/
 
     ignoreErrors:
-        # Pest v3 + PHPStan Level 10 compatibility: Pest's Mixins\Expectation class is marked as @internal
-        # but the PHPStan extension doesn't suppress method.internalClass errors
-        - '#Call to method.*of internal class Pest\\Mixins\\Expectation#'
+        # Pest v3 + PHPStan Level 10 compatibility: Pest's internal classes (@internal)
+        # are used in public APIs; ignore method.internalClass errors for all Pest\* namespaces
+        - identifier: method.internalClass
+          paths:
+              - ./*/tests/Pest.php
+              - ./*/tests/Feature/*.php
+              - ./*/tests/Unit/*.php
+          message: '#of internal class Pest\\#'
 
     excludePaths:
         - ./*/vendor/*

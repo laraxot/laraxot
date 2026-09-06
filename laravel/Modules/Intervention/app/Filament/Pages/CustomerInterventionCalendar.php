@@ -135,7 +135,7 @@ final class CustomerInterventionCalendar extends GatedXotBasePage
     {
         /** @var User|null $user */
         $user = Auth::user();
-        $customerId = is_object($user) ? (int) ($user->customer_id ?? 0) : 0;
+        $customerId = $user instanceof User ? (int) ($user->customer_id ?? 0) : 0;
         if ($customerId <= 0) {
             return;
         }
@@ -184,7 +184,7 @@ final class CustomerInterventionCalendar extends GatedXotBasePage
     {
         /** @var User|null $user */
         $user = Auth::user();
-        $customerId = is_object($user) ? (int) ($user->customer_id ?? 0) : 0;
+        $customerId = $user instanceof User ? (int) ($user->customer_id ?? 0) : 0;
 
         if ($customerId <= 0) {
             return [];

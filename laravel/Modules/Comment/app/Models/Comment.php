@@ -11,19 +11,14 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
-use Modules\Comment\Database\Factories\CommentFactory;
-use Modules\Comment\Models\Concerns\HasComments;
-use Modules\Comment\Models\Contracts\CanComment;
-use Modules\Comment\Models\Contracts\Commentable;
-use Modules\Comment\Models\Contracts\SupportsCommentNotifications;
 use Modules\Comment\Actions\Comment\ApproveCommentAction;
 use Modules\Comment\Actions\Comment\BuildCommentApproveUrlAction;
 use Modules\Comment\Actions\Comment\BuildCommentRejectUrlAction;
 use Modules\Comment\Actions\Comment\BuildCommentUrlAction;
 use Modules\Comment\Actions\Comment\GetCommentableNameAction;
+use Modules\Comment\Actions\Comment\RejectCommentAction;
 use Modules\Comment\Actions\Comment\RunCommentSavingPipelineAction;
 use Modules\Comment\Actions\Comment\ShouldAutomaticallyApproveCommentAction;
-use Modules\Comment\Actions\Comment\RejectCommentAction;
 use Modules\Comment\Actions\Reaction\DeleteCommentReactionAction;
 use Modules\Comment\Actions\Reaction\FindCommentReactionAction;
 use Modules\Comment\Actions\Reaction\GetCommentReactionCountsAction;
@@ -31,7 +26,12 @@ use Modules\Comment\Actions\Reaction\ReactToCommentAction;
 use Modules\Comment\Actions\Resolve\ResolveCommentApprovingUsersAction;
 use Modules\Comment\Actions\Resolve\ResolveCommentMentioneesAction;
 use Modules\Comment\Actions\Resolve\ResolveParticipatingCommentatorsAction;
+use Modules\Comment\Database\Factories\CommentFactory;
 use Modules\Comment\Datas\CommentatorProperties;
+use Modules\Comment\Models\Concerns\HasComments;
+use Modules\Comment\Models\Contracts\CanComment;
+use Modules\Comment\Models\Contracts\Commentable;
+use Modules\Comment\Models\Contracts\SupportsCommentNotifications;
 use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
@@ -61,8 +61,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
 class Comment extends Model implements Commentable, SupportsCommentNotifications
 {
     use HasComments;
-
-    /** @phpstan-use HasXotFactory<CommentFactory> */
     use HasXotFactory;
 
     protected $connection = 'comment';

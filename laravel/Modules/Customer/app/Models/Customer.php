@@ -24,7 +24,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 final class Customer extends BaseModel
 {
-    /** @phpstan-use HasXotFactory<CustomerFactory> */
     use HasXotFactory;
 
     use SoftDeletes;

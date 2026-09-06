@@ -85,10 +85,18 @@ class TimeClockPage extends XotBasePage implements HasTable
                             ->label('To'),
                     ])
                     ->query(function (Builder $query, array $data): Builder {
-                        /** @var array{date_from?: string, date_to?: string} $data */
+                        $dateFrom = null;
+                        if (isset($data['date_from']) && is_string($data['date_from'])) {
+                            $dateFrom = $data['date_from'];
+                        }
+                        $dateTo = null;
+                        if (isset($data['date_to']) && is_string($data['date_to'])) {
+                            $dateTo = $data['date_to'];
+                        }
+
                         return $query
-                            ->when(isset($data['date_from']) && $data['date_from'], fn (Builder $query): Builder => $query->whereDate('timestamp', '>=', (string) $data['date_from']))
-                            ->when(isset($data['date_to']) && $data['date_to'], fn (Builder $query): Builder => $query->whereDate('timestamp', '<=', (string) $data['date_to']));
+                            ->when($dateFrom, fn (Builder $query): Builder => $query->whereDate('timestamp', '>=', $dateFrom))
+                            ->when($dateTo, fn (Builder $query): Builder => $query->whereDate('timestamp', '<=', $dateTo));
                     }),
                 SelectFilter::make('type')
                     ->label('Type')

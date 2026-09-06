@@ -13,7 +13,7 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class CatalogFrequency extends XotBaseModel
 {
-    /** @phpstan-use HasXotFactory */
+    /** @phpstan-use HasXotFactory<CatalogFrequencyFactory> */
     use HasXotFactory;
 
     protected $table = 'catalog_frequencies';

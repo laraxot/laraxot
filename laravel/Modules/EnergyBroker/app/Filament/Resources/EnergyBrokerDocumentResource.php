@@ -197,7 +197,10 @@ final class EnergyBrokerDocumentResource extends XotBaseResource
                 Tables\Columns\TextColumn::make('analysis_status')->label(__('energy_broker.fields.analysis_status'))->badge(),
                 Tables\Columns\TextColumn::make('failure_reason')
                     ->label(__('energy_broker.fields.failure_reason'))
-                    ->state(fn (EnergyBrokerDocument $record): string => is_string($data_get($record->analysis_payload, 'error')) ? $data_get($record->analysis_payload, 'error') : '')
+                    ->state(function (EnergyBrokerDocument $record): string {
+                        $error = data_get($record->analysis_payload, 'error');
+                        return is_string($error) ? $error : '';
+                    })
                     ->limit(80)
                     ->wrap()
                     ->toggleable(),

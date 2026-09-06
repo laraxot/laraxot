@@ -26,7 +26,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 class CommentNotificationOptOut extends Model
 {
-    /** @use HasXotFactory<CommentNotificationOptOutFactory> */
     use HasXotFactory;
 
     protected $connection = 'comment';
