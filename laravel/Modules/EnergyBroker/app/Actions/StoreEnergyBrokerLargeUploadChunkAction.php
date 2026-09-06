@@ -30,7 +30,7 @@ final class StoreEnergyBrokerLargeUploadChunkAction
 
         $received = is_array($upload->received_chunk_indexes) ? $upload->received_chunk_indexes : [];
         $received[] = $chunkIndex;
-        $received = array_values(array_unique(array_map(static fn (mixed $value): int => (int) $value, $received)));
+        $received = array_values(array_unique(array_map(static fn (mixed $value): int => is_int($value) ? (int) $value : (int) ($value ?? 0), $received)));
         sort($received);
 
         $upload->forceFill([

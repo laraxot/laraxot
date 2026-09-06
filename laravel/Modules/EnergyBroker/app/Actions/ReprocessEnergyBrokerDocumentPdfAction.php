@@ -32,8 +32,8 @@ final class ReprocessEnergyBrokerDocumentPdfAction
         $document->forceFill([
             'source_file_name' => $filename,
             'file_hash' => hash('sha256', $binary),
-            'document_type' => (string) ($draft['document_type'] ?? 'unknown'),
-            'service_type' => (string) ($draft['service_type'] ?? 'unknown'),
+            'document_type' => is_string($draft['document_type'] ?? null) ? (string) $draft['document_type'] : 'unknown',
+            'service_type' => is_string($draft['service_type'] ?? null) ? (string) $draft['service_type'] : 'unknown',
             'supplier_name' => data_get($draft, 'contract.current_supplier') ?? data_get($draft, 'contract.proposed_supplier'),
             'analysis_status' => 'draft',
             'confidence_score' => 0.95,
