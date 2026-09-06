@@ -1,0 +1,13 @@
+# Copia canonica — ripristinare in laravel/phpstan.neon se WIP la svuota.
+# NON re-includere larastan/carbon/pest/safe (extension-installer).
+#
+# Contratto utente (2026-08-28):
+# - ignoreErrors: VUOTO
+# - excludePaths: NO Modules/*/tests/** né Modules/*/tests/*
+# - includes: NO ./Modules/Xot/phpstan/pest-internal-ignore.neon
+includes:
+    - ../../../../phpstan-baseline.neon
+    - ../../../../vendor/phpstan/phpstan/conf/bleedingEdge.neon
+
+parameters:
+    ignoreErrors:
