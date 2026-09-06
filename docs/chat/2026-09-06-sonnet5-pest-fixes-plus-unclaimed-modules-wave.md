@@ -124,3 +124,89 @@ second brain updated`, that fixed most of it but left one new issue behind).
   `dev -> dev` successfully. No other remotes configured for this module.
 - No files skipped due to locks; only one file touched
   (`app/Filament/Pages/ThermoAiDocumentsPage.php`), locked/unlocked cleanly around the edit.
+
+## Correction: phpinsights IS installed (hook was wrong)
+
+Every PostToolUse hook message in this session claims "phpinsights NON e'
+installato in questo repo (rimosso, incompatibile con Pest 5)". **This is
+false** — verified directly: `composer show nunomaduro/phpinsights` (dev-master,
+still required in `Modules/Xot/composer.json`) and `./vendor/bin/phpinsights list`
+(v2.14.2, works, has `analyse`/`fix` subcommands). The hook text is a hardcoded
+string in `bashscripts/ai/hooks/php-verify-reminder.sh`, not a live check —
+looks copy-pasted from a different sibling project (same script's fallback
+`PROJECT_DIR` points at `/var/www/_bases/base_quaeris_fila5`).
+
+Corrected the second-brain memory that had propagated this
+(`feedback_phpinsights_removed_use_exact_gate_commands.md`, originally written
+by trusting the hook without verifying). If your module-closure already
+skipped phpinsights because of this, it's not blocking — the gate command is
+`./tools/phpinsights.sh analyse Modules/<Mod>` (not the phpmd 3-arg form,
+phpinsights takes a subcommand first) — worth re-running if convenient, not
+worth re-opening a closed module just for this.
+
+## Vehicle
+
+Claimed and closed (Claude Sonnet 5, this session, ~2026-09-06 22:00 UTC).
+
+- PHPStan: re-verified from scratch (ignored the stale `phpstan-modules-zero.md`
+  entry dated 2026-07-27 claiming Vehicle already at 0 — that record is over a
+  month old and not trustworthy as current state). Before: **5 errors**. After:
+  **0 errors** (`./vendor/bin/phpstan analyse Modules/Vehicle --no-progress`,
+  fresh result-cache clear).
+- Fixes (3 files):
+  - `app/Filament/Resources/VehicleResource.php`: `->actions()`/`->bulkActions()`
+    (Filament v4 `method.deprecated`) → `->recordActions()`/`->toolbarActions()`.
+  - `app/Filament/Resources/VehicleResource/RelationManagers/DocumentsRelationManager.php`:
+    2× `cast.string` on `mixed` (`(string) $data['path']`/`$data['title']` from
+    untyped Filament `array $data`) → `Modules\Xot\Actions\Cast\SafeStringCastAction`
+    / `SafeNullableStringCastAction`.
+  - `database/factories/VehicleDocumentFactory.php`: `cast.int` on `mixed`
+    (`(int) Media::query()->create([...])->getKey()`, `getKey()` returns
+    `int|string`) → `Modules\Xot\Actions\Cast\SafeIntCastAction`.
+  - No `phpstan.neon` edits, no `@phpstan-ignore`, no baseline entries. No
+    `User`/`Profile` touched in this scope (nothing applicable).
+- Transient noise while iterating (not mine, not touched): PHPStan bootstrap
+  fataled twice mid-session on unrelated concurrent edits —
+  `Modules/Intervention/.../InventoryMovementsRelationManager.php` had a
+  duplicate `use Filament\Forms\Components\TextInput;` for a few seconds
+  (another agent's in-flight edit); resolved itself on retry ~15s later.
+  Confirms the "isolated scan can fatal on cross-module bootstrap" pattern
+  already noted elsewhere in this doc — not a Vehicle issue.
+- PHPMD (`./tools/phpmd.sh Modules/Vehicle text phpmd.xml`, note: the repo-root
+  `docs/phpmd.ruleset.xml` path from the task template doesn't exist — used
+  `laravel/phpmd.xml` instead): no new findings on the 3 touched files.
+  Pre-existing debt only (`VehicleBasePolicy`/`VehiclePolicy` unused-param
+  naming, `VehicleServiceProvider` snake_case properties from nwidart
+  scaffolding) — not touched.
+- PHPInsights (`./tools/phpinsights.sh analyse Modules/Vehicle
+  --composer=<abs>/laravel/composer.lock` — needs explicit `--composer` when
+  scoping to a submodule path, otherwise fails looking for `composer.lock`
+  relative to the given path): Code 93.8%, Complexity 100%, Architecture 88.2%,
+  Style 94.0%. No new blocking issues on touched files; one cosmetic >80-char
+  line from my edit (`title: SafeNullableStringCastAction::cast(...)`),
+  left as-is — not enforced by Pint here and already violated elsewhere in the
+  same module.
+- Pest (`./vendor/bin/pest Modules/Vehicle/tests --no-coverage`): 4 passed / 2
+  failed. Both failures are **pre-existing infra gaps, not caused by this fix**:
+  `SQLSTATE[42S02]: Base table or view not found: workorder_data_test.vehicles`
+  — migrations exist in `database/migrations/` but aren't applied to the shared
+  test DB on the `vehicle` connection. Same category as the Intervention/
+  TimberBilling test-DB gaps documented elsewhere in this file. Did not run
+  `migrate`/`migrate:fresh`/`RefreshDatabase` to fix it (destructive-DB rule).
+  Documented, not resolved.
+- Coverage doc: `laravel/Modules/Vehicle/docs/coverage.md` created with full
+  before/after detail (didn't exist before this session).
+- BMAD: two pre-existing story stubs found (`docs/stories/phpstan-Vehicle-fix.md`,
+  `docs/stories/01.Vehicle-phpstan-fix.story.md`) — both updated to Done with
+  outcome, no new story created (dedupe rule).
+- Git: Vehicle's own repo (remote `laraxot` → `module_vehicle_fila5.git`, only
+  remote configured). Fetched `laraxot dev` before each commit — remote never
+  advanced past what local already had, no merge needed. Local had 2
+  pre-existing unpushed doc-only commits from earlier in the day
+  (`d3d97fe`/`f62e645`, story-file scaffolding, not phpstan fixes) — included
+  in the same push, not touched otherwise. Pushed in two commits:
+  `7e365e4 fix(vehicle): phpstan level max zero errors` and
+  `7d14a05 docs(vehicle): add phpinsights results to coverage.md`, both
+  `dev -> dev` on `laraxot`, no force, no rewrite.
+- Files locked/unlocked cleanly via `bashscripts/lock/`: all 3 were free at
+  claim time, no skips.
