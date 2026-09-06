@@ -134,6 +134,7 @@ return [
         'changePassword' => ['label' => 'changePassword', 'icon' => 'changePassword', 'tooltip' => 'changePassword'],
         'test' => ['label' => 'test', 'icon' => 'test', 'tooltip' => 'test'],
         'register' => ['tooltip' => 'register', 'icon' => 'register', 'label' => 'register'],
+        'profile' => ['label' => 'profile', 'icon' => 'profile', 'tooltip' => 'profile'],
     ],
     'sections' => [
         'address' => ['label' => 'address', 'heading' => 'address'],
