@@ -10,6 +10,7 @@
 | [phpstan-zero-structural-blocker](phpstan-zero-structural-blocker.md) | Unico errore residuo: ignore @mixin non matchato in neon | documentato |
 | [document-media-table-collision-blocker](document-media-table-collision-blocker.md) | Modules\Document\Media e Modules\Media\Media collidono sulla tabella fisica `media` (connessioni document/media stesso DB) | documentato, non risolto (decisione owner) |
 | [migration-foreignidfor-swarm](migration-foreignidfor-swarm.md) | Conversione foreignIdFor() in migration | in corso |
+| [phpstan-modules-zero-20260906](../stories/phpstan-modules-zero-2026-09-06.story.md) | PHPStan zero su tutti i Modules — nuova baseline ~4.740 errori/35 moduli, fix per wave + phpmd/phpinsights/pest + git sync per modulo | in corso 2026-09-06 (agente qwen) |
 
 ## Swarm attivo (migration-foreignidfor-swarm)
 Moduli in lavorazione parallela: User, PublicProcurement, TimberBilling, Intervention, Compliance, Billing, Inventory, HR, EnergyBroker, WorkOrder, WhatsApp, Quotation, Job, Gdpr, Employee, Comment, AiAssistant, AI, Email, Customer, UI, Signature, Production, Notify, Lang, Geo, Catalog, Bom, Blog, Xot, Vehicle, Media, Document, Cms, Activity.
