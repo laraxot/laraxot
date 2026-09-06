@@ -944,11 +944,12 @@ final class ExecuteAiActionProposalAction
         }
 
         $typeValue = data_get($document, 'type', '');
+        $type = is_string($typeValue) ? $typeValue : '';
 
         return [
             'ok' => true,
             'compliance_document_id' => $document->id,
-            'type' => is_string($typeValue) ? $typeValue : (string) $typeValue,
+            'type' => $type,
         ];
     }
 
@@ -1009,12 +1010,13 @@ final class ExecuteAiActionProposalAction
         $document = app(GeneratePosDraftForWorkOrderAction::class)->execute($workOrder);
 
         $typeValue = data_get($document, 'type', '');
+        $type = is_string($typeValue) ? $typeValue : '';
 
         return [
             'ok' => true,
             'work_order_id' => $workOrderId,
             'compliance_document_id' => $document->id,
-            'type' => is_string($typeValue) ? $typeValue : (string) $typeValue,
+            'type' => $type,
         ];
     }
 
