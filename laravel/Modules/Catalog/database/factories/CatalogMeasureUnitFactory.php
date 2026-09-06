@@ -38,4 +38,20 @@ class CatalogMeasureUnitFactory extends Factory
             'symbol' => $unit[1],
         ];
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection<int, CatalogMeasureUnit>
+     */
+    public function create(array $attributes = []): \Illuminate\Database\Eloquent\Collection
+    {
+        return parent::create($attributes);
+    }
+
+    /**
+     * @return CatalogMeasureUnit
+     */
+    public function createOne(array $attributes = []): CatalogMeasureUnit
+    {
+        return parent::createOne($attributes);
+    }
 }

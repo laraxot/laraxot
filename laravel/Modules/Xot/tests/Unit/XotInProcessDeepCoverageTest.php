@@ -11,7 +11,7 @@ use Modules\Xot\Tests\TestCase;
 
 use function Safe\realpath;
 
-uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
+uses(TestCase::class)->group('no-xot-db');
 
 test('view namespaces resolve an existing public asset', function (): void {
     $directory = sys_get_temp_dir().'/xot-view-contract-'.uniqid('', true);

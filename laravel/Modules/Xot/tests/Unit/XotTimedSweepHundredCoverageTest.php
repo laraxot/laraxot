@@ -8,7 +8,7 @@ use Modules\Xot\Enums\DayOfWeek;
 use Modules\Xot\Tests\ModuleBusinessCoverage;
 use Modules\Xot\Tests\TestCase;
 
-uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
+uses(TestCase::class)->group('no-xot-db');
 
 test('day transitions wrap the week and preserve the weekend boundary', function (): void {
     expect(DayOfWeek::FRIDAY->next())->toBe(DayOfWeek::SATURDAY)

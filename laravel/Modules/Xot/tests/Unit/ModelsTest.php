@@ -8,12 +8,11 @@ use Modules\Tenant\Database\Factories\TenantFactory;
 use Modules\Tenant\Models\Tenant;
 use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
-use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Models\Module;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('can create a test user', function () {
     $email = 'test-'.uniqid('', true).'@example.com';

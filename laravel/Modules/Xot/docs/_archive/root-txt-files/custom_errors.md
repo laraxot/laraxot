@@ -1,4 +1,3 @@
-<<<<<<<< HEAD:laravel/Modules/Xot/docs/_archive/root-txt-files/custom_errors.md
 ---
 title: "Custom errors"
 type: reference
@@ -10,8 +9,6 @@ note: "Convertito da custom_errors.txt (documento) da convert-docs-txt-to-md.py.
 
 # Custom errors
 
-========
->>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php):laravel/Modules/Xot/docs/_archive/custom-errors.md
 https://tutsforweb.com/how-to-create-custom-404-page-laravel/
 
 

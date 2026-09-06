@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 title: 'livewire_components'
 module: Xot
@@ -19,10 +18,3 @@ da tenere d'occhio .. comprati
 https://livewiredemos.com/components
 
 https://github.com/bitfumes/laravel-livewire-full-course/blob/master/app/Http/Livewire/Logout.php
-=======
-da tenere d'occhio .. comprati
-https://livewiredemos.com/components
-
-
-https://github.com/bitfumes/laravel-livewire-full-course/blob/master/app/Http/Livewire/Logout.php
->>>>>>> 7f6cf6be (.)

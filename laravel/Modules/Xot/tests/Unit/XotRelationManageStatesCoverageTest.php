@@ -15,7 +15,7 @@ use Modules\Xot\Tests\Fixtures\Stubs\XotCovRelationHost;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
+uses(TestCase::class)->group('no-xot-db');
 
 describe('Xot RelationX ManageRelated StatesChart', function (): void {
     test('RelationX belongsToManyX morphToManyX con pivot stub', function (): void {

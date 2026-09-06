@@ -149,7 +149,6 @@ public function getUser(): ?User
 declare(strict_types=1);
 
 namespace Modules\NomeModulo;
-use Modules\User\Models\User;
 
 // Resto del codice
 ```

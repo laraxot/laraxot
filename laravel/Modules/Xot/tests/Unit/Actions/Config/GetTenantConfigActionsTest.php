@@ -14,7 +14,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\tempnam;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Get Tenant Config Actions', function (): void {
     test('gets tenant config array correctly', function (): void {

@@ -7,7 +7,7 @@ namespace Modules\Xot\Tests\Unit;
 use Modules\Xot\Datas\MetatagData;
 use Modules\Xot\Tests\TestCase;
 
-uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
+uses(TestCase::class)->group('no-xot-db');
 
 test('metatag defaults provide stable document metadata', function (): void {
     $metatag = MetatagData::from([]);

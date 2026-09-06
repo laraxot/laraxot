@@ -1,4 +1,3 @@
-<<<<<<<< HEAD:laravel/Modules/Xot/docs/_archive/root-txt-files/type_hinting.md
 ---
 title: "Type hinting"
 type: reference
@@ -10,8 +9,6 @@ note: "Convertito da type_hinting.txt (documento) da convert-docs-txt-to-md.py."
 
 # Type hinting
 
-========
->>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php):laravel/Modules/Xot/docs/_archive/type-hinting.md
 https://mlocati.github.io/articles/php-type-hinting.html
 https://howto.webarea.it/php/type-hinting-php-e-controllo-wake-strict-mode_170
 https://wiki.php.net/rfc/scalar_type_hints
@@ -154,8 +151,4 @@ public function articles(): HasMany {
 
 
 
-<<<<<<<< HEAD:laravel/Modules/Xot/docs/_archive/root-txt-files/type_hinting.md
 https://github.com/oucil/Code-Hint-Aggregator
-========
-https://github.com/oucil/Code-Hint-Aggregator
->>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php):laravel/Modules/Xot/docs/_archive/type-hinting.md

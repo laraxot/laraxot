@@ -1,4 +1,3 @@
-<<<<<<<< HEAD:laravel/Modules/Xot/docs/_archive/root-txt-files/inodes.md
 ---
 title: 'Inodes'
 module: Xot
@@ -10,16 +9,6 @@ converted_from: inodes.txt
 created: 2026-08-24
 updated: 2026-08-24
 ---
-========
-# _inodes
-
-<!-- Contenuto migrato da _docs/_inodes.txt -->
-
---------------------------------------------------------------
-$ df -i /
-Filesystem      Inodes  IUsed   IFree    IUse% Mounted on
-/dev/xvda1      7692288 652294 7039994    9%      /
->>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php):laravel/Modules/Xot/docs/_archive/-integration/-inodes.md
 
 -----------------------------------------------------------
 $ sudo find / -xdev -printf '%h\0' | sort -z | uniq -cz | sort -nrzk 1 | tr '\0' '\n' | head -n 50

@@ -9,7 +9,7 @@ use Modules\Xot\Actions\Mail\SendMailByRecordAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('throws if record has no email', function (): void {
     $record = new class extends Model
@@ -23,7 +23,7 @@ it('throws if record has no email', function (): void {
         {
             return new class
             {
-                /** @param array<string, mixed> $data */
+                /** @param array<mixed> $data */
                 public function create(array $data): void {}
             };
         }

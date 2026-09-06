@@ -8,7 +8,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\file_get_contents;
 
-uses(\Modules\Xot\Tests\TestCase::class)->group('no-db');
+uses(TestCase::class)->group('no-db');
 
 /*
  * Story 16.12 — i punti di estensione di Xot portano gli stessi nomi che Filament 5 ha

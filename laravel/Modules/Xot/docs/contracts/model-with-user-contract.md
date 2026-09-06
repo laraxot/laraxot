@@ -66,24 +66,8 @@ class Article extends Model implements ModelWithUserContract
 - Mantenere la consistenza dei dati nelle relazioni
 - Documentare eventuali personalizzazioni
 
-<<<<<<< HEAD
-## Adozione restaurant_fila5 (2026-09-04)
-
-- 392 occorrenze `use Modules\User\Models\User;` → `use Modules\Xot\Contracts\UserContract;` in app code
-- `UserContract` ora type-hint preferito in BelongsTo, PHPDoc, Volt, Notifications
-- Classe concreta `User` ancora richiesta per: `User::query()` / `User::create()` / extends / `Gate::policy()`
-- Quando serve istanziare la classe a runtime, **sempre** via `XotData::make()->getUserClass()` (mai `User::class` letterale)
-- Vedi [User docs: contract adoption](../../../../User/docs/wiki/concepts/user-profile-contract-adoption.md)
-
-## Collegamenti
-- [ModelContract](model-contract.md)
-- [UserContract](./model-with-user-contract.md)
-- [ProfileContract](../concepts/profile-migration-uuid-contract.md)
-- [User docs: contract adoption](../../../../User/docs/wiki/concepts/user-profile-contract-adoption.md)
-=======
 ## Collegamenti
 - [ModelContract](model-contract.md)
 - [User Management](../features/USER-MANAGEMENT.md)
 - [PHPStan Level 9 Guide](../PHPSTAN-LEVEL9-GUIDE.md)
 - [Contracts Overview](./README.md)
->>>>>>> 7f6cf6be (.)

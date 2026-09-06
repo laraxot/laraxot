@@ -36,4 +36,20 @@ class MetelCatalogItemFactory extends Factory
             'net_price' => round($gross * $this->faker->randomFloat(2, 0.4, 0.9), 4),
         ];
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection<int, MetelCatalogItem>
+     */
+    public function create(array $attributes = []): \Illuminate\Database\Eloquent\Collection
+    {
+        return parent::create($attributes);
+    }
+
+    /**
+     * @return MetelCatalogItem
+     */
+    public function createOne(array $attributes = []): MetelCatalogItem
+    {
+        return parent::createOne($attributes);
+    }
 }

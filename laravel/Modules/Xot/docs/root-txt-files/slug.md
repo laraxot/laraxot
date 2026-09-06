@@ -5,11 +5,7 @@ type: reference
 slug: slug
 description: 'Elenco di 2 riferimenti esterni raccolti per slug, deduplicati e convertiti da un dump di link.'
 tags: [migrato-da-txt, xot]
-<<<<<<< HEAD
 converted_from: _slug.txt
-=======
-converted_from: slug.txt
->>>>>>> 7f6cf6be (.)
 created: 2026-08-24
 updated: 2026-08-24
 ---

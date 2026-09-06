@@ -7,7 +7,7 @@ namespace Modules\Xot\Tests\Unit;
 use Modules\Xot\Datas\RouteParamsData;
 use Modules\Xot\Tests\TestCase;
 
-uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
+uses(TestCase::class)->group('no-xot-db');
 
 test('route parameters preserve row query and nesting intent', function (): void {
     $row = (object) ['id' => 7];

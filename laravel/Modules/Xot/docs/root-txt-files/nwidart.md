@@ -5,11 +5,7 @@ type: reference
 slug: nwidart
 description: 'Elenco di 1 riferimenti esterni raccolti per nwidart, deduplicati e convertiti da un dump di link.'
 tags: [migrato-da-txt, xot]
-<<<<<<< HEAD
 converted_from: _nwidart.txt
-=======
-converted_from: nwidart.txt
->>>>>>> 7f6cf6be (.)
 created: 2026-08-24
 updated: 2026-08-24
 ---
@@ -21,8 +17,4 @@ updated: 2026-08-24
 
 ## Riferimenti
 
-<<<<<<< HEAD
 - <https://bayramblog.medium.com/laravel-9-modules-hmvc-522d5fd52fd3>
-=======
-- <https://dev.to/bdelespierre/very-very-simple-laravel-modules-4927>
->>>>>>> 7f6cf6be (.)

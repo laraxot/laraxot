@@ -12,12 +12,6 @@ class GetCurrentRouteViewAction
 {
     use QueueableAction;
 
-    /**
-     * Gets the current route's view identifier as a dotted path.
-     *
-     * Returns a string like "module.item" derived from controller name
-     * and route parameters.
-     */
     public function execute(): string
     {
         $route = request()->route();
@@ -27,12 +21,7 @@ class GetCurrentRouteViewAction
 
         $routeAction = $route->getActionName();
         $controller = Str::between($routeAction, 'Http\\Controllers\\', 'Controller');
-        /**
-         * Route parameters are polymorphic: they can be scalars, model instances,
-         * or any other type. Typed as array<string, mixed> to reflect reality.
-         *
-         * @var array<string, mixed> $params
-         */
+        /** @var array<string, mixed> $params */
         $params = [];
         foreach ($route->parameters() as $key => $value) {
             if (is_string($key)) {
@@ -51,11 +40,10 @@ class GetCurrentRouteViewAction
 
         return collect(explode('\\', $controller))
             ->reject(static fn (string $part): bool => in_array($part, ['Module', 'Item'], true))
-            ->map(static function (string $part) use ($params): string {
+            ->map(static function (string $part) use ($params): mixed {
                 $part = Str::snake($part);
-                $value = $params[$part] ?? null;
 
-                return is_string($value) ? $value : $part;
+                return $params[$part] ?? $part;
             })
             ->implode('.');
     }

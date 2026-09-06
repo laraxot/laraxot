@@ -28,10 +28,7 @@ test('safe array cast action works', function (): void {
         /** @return array<string, int> */
         public function toArray(): array
         {
-            /** @var array<string, int> $result */
-            $result = ['e' => 5];
-
-            return $result;
+            return ['e' => 5];
         }
     }));
     Assert::assertSame(['f' => 6], $action->execute(new class
@@ -39,10 +36,7 @@ test('safe array cast action works', function (): void {
         /** @return array<string, int> */
         public function __toArray(): array
         {
-            /** @var array<string, int> $result */
-            $result = ['f' => 6];
-
-            return $result;
+            return ['f' => 6];
         }
     }));
 

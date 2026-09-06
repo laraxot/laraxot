@@ -9,7 +9,7 @@ use Modules\Xot\Console\Commands\AnalyzeComponentsCommand;
 use Modules\Xot\Datas\RouteParamsData;
 use Modules\Xot\Tests\TestCase;
 
-uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
+uses(TestCase::class)->group('no-xot-db');
 
 test('action URLs fall back to an explicit fragment outside a route', function (): void {
     $params = RouteParamsData::from(['act' => 'edit']);

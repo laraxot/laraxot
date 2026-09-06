@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Tests\Unit\Actions\Arrays;
 
-use Modules\Xot\Actions\Arrays\SaveArrayAction;
+use Modules\Xot\Actions\Arr\SaveArrayAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
@@ -13,7 +13,7 @@ use function Safe\mkdir;
 use function Safe\rmdir;
 use function Safe\unlink;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 /** @var string|null $arrayTestTempDir */
 $arrayTestTempDir = null;

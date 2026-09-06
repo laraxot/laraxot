@@ -9,10 +9,7 @@
 - 📜 [PHPStan Code Quality Guide](./phpstan-code-quality-guide.md) - La bibbia del Livello 10.
 - 🚫 [No Services Rule](./critical-no-services-rule.md) - Perché usiamo Actions invece dei Service.
 - 🗂️ [Filament Class Extension Rules](./filament-class-extension-rules.md) - Regole obbligatorie per Filament.
-<<<<<<< HEAD
 - 📋 [Widget Method Visibility Rules](./filament/widget-method-visibility-rules.md) - Visibilità metodi getTable*() e convenzioni naming Filament 5.
-=======
->>>>>>> 7f6cf6be (.)
 
 ## 🛠️ Utility & Trait
 - 🧬 [Trait Patterns](./traits-complete-guide.md) - HasTeams, HasXotTable e altri trait core.

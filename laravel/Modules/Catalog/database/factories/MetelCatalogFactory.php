@@ -31,4 +31,20 @@ class MetelCatalogFactory extends Factory
             'is_active' => true,
         ];
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection<int, MetelCatalog>
+     */
+    public function create(array $attributes = []): \Illuminate\Database\Eloquent\Collection
+    {
+        return parent::create($attributes);
+    }
+
+    /**
+     * @return MetelCatalog
+     */
+    public function createOne(array $attributes = []): MetelCatalog
+    {
+        return parent::createOne($attributes);
+    }
 }

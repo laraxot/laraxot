@@ -178,14 +178,8 @@ it('covers get attachments schema branches', function (): void {
     app()->instance(GetAttachmentsSchemaAction::class, new class
     {
         /**
-<<<<<<< HEAD
-         * @param array<string, mixed> $attachments
-         *
-         * @return array<int, string>
-=======
          * @param  string[]  $attachments
          * @return string[]
->>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
          */
         public function execute(array $attachments, string $disk): array
         {

@@ -12,7 +12,6 @@ use Modules\Xot\Actions\File\GetModulePathAction;
 use Modules\Xot\Tests\TestCase;
 use Nwidart\Modules\Facades\Module;
 use PHPUnit\Framework\Assert;
-use Modules\User\Models\User;
 
 uses(TestCase::class);
 

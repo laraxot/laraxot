@@ -5,11 +5,7 @@ type: reference
 slug: tips
 description: 'https://github.com/phpstan/phpstan/issues/1242'
 tags: [migrato-da-txt, xot]
-<<<<<<< HEAD
 converted_from: __tips.txt
-=======
-converted_from: tips.txt
->>>>>>> 7f6cf6be (.)
 created: 2026-08-24
 updated: 2026-08-24
 ---

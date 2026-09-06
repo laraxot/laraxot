@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: 'Uuid'
 module: Xot
 type: reference
@@ -14,11 +13,3 @@ updated: 2026-08-24
 Using UUIDs in Laravel Models
 https://www.larashout.com/using-uuids-in-laravel-models
 //--------------------------------------------------------
-=======
-module: theme
-topic: uuid
-canonical: ../../../Themes/docs/shared-components/UUID.txt
----
-
-See canonical documentation: ../../../Themes/docs/shared-components/UUID.txt
->>>>>>> 7f6cf6be (.)

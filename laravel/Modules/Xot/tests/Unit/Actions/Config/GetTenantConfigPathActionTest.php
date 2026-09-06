@@ -11,7 +11,7 @@ use Modules\Xot\Actions\Config\GetTenantConfigPathAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Get Tenant Config Path Action', function (): void {
     test('delegates to tenant file path action with php filename', function (): void {

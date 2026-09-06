@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 title: 'Nwidart to study — risorse esterne'
 module: Xot
@@ -44,6 +43,3 @@ canonical: ../../../Themes/docs/shared-components/nwidart-to-study.md
 
 See canonical documentation: ../../../Themes/docs/shared-components/nwidart-to-study.md
 https://github.com/HichemTab-tech/LaravelFS
-=======
-https://github.com/HichemTab-tech/LaravelFS
->>>>>>> 7f6cf6be (.)

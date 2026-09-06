@@ -13,12 +13,13 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
-use Spatie\QueueableAction\QueueableAction;
-use Webmozart\Assert\Assert;
 
 use function Safe\define;
 use function Safe\fopen;
 use function Safe\preg_match_all;
+
+use Spatie\QueueableAction\QueueableAction;
+use Webmozart\Assert\Assert;
 
 if (! defined('STDIN')) {
     define('STDIN', fopen('php://stdin', 'r'));
@@ -43,16 +44,9 @@ class ArtisanAction
         switch ($act) {
             case 'migrate':
                 $defaultConn = Config::get('database.default');
-                $purgeConn = \is_string($defaultConn) && $defaultConn !== '' ? $defaultConn : 'mysql';
+                $purgeConn = \is_string($defaultConn) && '' !== $defaultConn ? $defaultConn : 'mysql';
                 DB::purge($purgeConn);
                 DB::reconnect($purgeConn);
-<<<<<<< HEAD
-                if ($module_name !== '') {
-                    echo '<h3>Module '.$module_name.'</h3>';
-
-                    // Dati sacri: mai --force (solo migrate additivo)
-                    return self::exe('module:migrate', ['module' => $module_name]);
-=======
                 // Niente `--force`: questa action è raggiungibile da richiesta HTTP e
                 // `--force` salterebbe la conferma di Laravel in produzione. I dati
                 // sono sacri: la migrazione su un ambiente di produzione si lancia a
@@ -61,7 +55,6 @@ class ArtisanAction
                     echo '<h3>Module '.$module_name.'</h3>';
 
                     return self::exe('module:migrate '.$module_name);
->>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
                 }
 
                 return self::exe('migrate');
@@ -134,7 +127,7 @@ class ArtisanAction
             $log = '';
         }
         $content = '';
-        if ($log !== '' && File::exists(storage_path('logs/'.$log))) {
+        if ('' !== $log && File::exists(storage_path('logs/'.$log))) {
             $content = File::get(storage_path('logs/'.$log));
         }
 
@@ -147,7 +140,7 @@ class ArtisanAction
         /** @var array<int, string> $urls */
         $urls = [];
         $urlsRaw = $matches[1];
-        if ($urlsRaw !== []) {
+        if ([] !== $urlsRaw) {
             $urls = array_values(array_unique($urlsRaw));
         }
 
@@ -187,7 +180,7 @@ class ArtisanAction
         $files = File::files(storage_path('logs'));
 
         foreach ($files as $file) {
-            if ($file->getExtension() === 'log' && $file->getRealPath() !== false) {
+            if ('log' === $file->getExtension() && false !== $file->getRealPath()) {
                 echo '<br/>'.$file->getRealPath();
 
                 File::delete($file->getRealPath());
@@ -202,7 +195,7 @@ class ArtisanAction
         $files = File::files(storage_path('framework/sessions'));
 
         foreach ($files as $file) {
-            if ($file->getExtension() === '' && $file->getRealPath() !== false) {
+            if ('' === $file->getExtension() && false !== $file->getRealPath()) {
                 File::delete($file->getRealPath());
             }
         }
@@ -214,7 +207,7 @@ class ArtisanAction
     {
         $files = File::files(storage_path('debugbar'));
         foreach ($files as $file) {
-            if ($file->getExtension() === 'json' && $file->getRealPath() !== false) {
+            if ('json' === $file->getExtension() && false !== $file->getRealPath()) {
                 File::delete($file->getRealPath());
             }
         }
@@ -223,7 +216,7 @@ class ArtisanAction
     }
 
     /**
-     * @param  array<string, mixed>  $arguments
+     * @param array<string, mixed> $arguments
      */
     public static function exe(string $command, array $arguments = []): string
     {
@@ -238,5 +231,7 @@ class ArtisanAction
         }
     }
 
-    public function execute(): void {}
+    public function execute(): void
+    {
+    }
 }

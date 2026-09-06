@@ -17,7 +17,7 @@ uses(TestCase::class);
 
 test('get module name by class action works', function (): void {
     $action = app(GetModuleNameByClassAction::class);
-    Assert::assertSame('User', $action->execute('Modules\Xot\Contracts\UserContract'));
+    Assert::assertSame('User', $action->execute('Modules\User\Models\User'));
 });
 
 test('get module config action works', function (): void {

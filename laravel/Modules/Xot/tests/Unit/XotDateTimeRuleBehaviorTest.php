@@ -9,7 +9,7 @@ use Modules\Xot\Rules\DateTimeRule;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
+uses(TestCase::class)->group('no-xot-db');
 
 test('DateTimeRule accepts the documented day month year format', function (): void {
     $validator = Validator::make(

@@ -10,7 +10,7 @@ use Modules\Xot\Models\Module;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 beforeEach(function (): void {
     // markTestSkipped() e' public static su PHPUnit\Framework\Assert: chiamarla via la

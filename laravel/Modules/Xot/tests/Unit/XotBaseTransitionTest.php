@@ -8,7 +8,7 @@ use Modules\Xot\States\Transitions\XotBaseTransition;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('XotBaseTransition', function (): void {
     it('can be instantiated', function (): void {

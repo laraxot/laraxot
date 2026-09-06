@@ -5,11 +5,7 @@ type: reference
 slug: stats
 description: 'Elenco di 8 riferimenti esterni raccolti per stats, deduplicati e convertiti da un dump di link.'
 tags: [migrato-da-txt, xot]
-<<<<<<< HEAD
 converted_from: _stats.txt
-=======
-converted_from: stats.txt
->>>>>>> 7f6cf6be (.)
 created: 2026-08-24
 updated: 2026-08-24
 ---

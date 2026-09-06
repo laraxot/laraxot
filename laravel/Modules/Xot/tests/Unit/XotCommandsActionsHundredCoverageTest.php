@@ -11,7 +11,7 @@ use Modules\Xot\Console\Commands\OptimizeFilamentMemoryCommand;
 use Modules\Xot\Tests\TestCase;
 use Symfony\Component\Finder\SplFileInfo;
 
-uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
+uses(TestCase::class)->group('no-xot-db');
 
 test('memory optimization command exposes safe analysis flags', function (): void {
     $command = app(OptimizeFilamentMemoryCommand::class);

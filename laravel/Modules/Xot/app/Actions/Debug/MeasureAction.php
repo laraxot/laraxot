@@ -9,23 +9,20 @@ use Filament\Notifications\Notification;
 
 /**
  * Classe per misurare le performance di esecuzione di un blocco di codice.
+ *
+ * @template T
  */
 class MeasureAction
 {
     /**
-     * Executes a closure while measuring execution time and memory usage.
+     * Esegue una closure misurando il tempo di esecuzione e l'utilizzo di memoria.
      *
-     * Returns mixed because it's a generic closure executor that captures and returns
-     * the closure's result, which can be any type. The @template T parameter ensures
-     * type inference for the actual closure return type when called with a typed closure.
+     * @param \Closure():T $closure La closure da eseguire e misurare
+     * @param string       $label   Etichetta opzionale per identificare la misurazione
      *
-     * @template T
-     *
-     * @param  Closure():T  $closure  The closure to execute and measure
-     * @param  string  $label  Optional label to identify the measurement in notifications
-     * @return T The result of the closure execution, type-preserved via template
+     * @return T Il risultato dell'esecuzione della closure
      */
-    public function execute(Closure $closure, string $label = ''): mixed
+    public function execute(\Closure $closure, string $label = ''): mixed
     {
         $start = microtime(true);
         $memory_start = memory_get_usage();
@@ -49,7 +46,7 @@ class MeasureAction
 
         // Mostriamo una notifica con le metriche
         Notification::make()
-            ->title('Performance Metrics '.($label !== '' ? $label : 'Unnamed'))
+            ->title('Performance Metrics '.('' !== $label ? $label : 'Unnamed'))
             ->body($metrics['execution_time'].'  '.$metrics['memory_usage'])
             ->success()
             ->persistent()

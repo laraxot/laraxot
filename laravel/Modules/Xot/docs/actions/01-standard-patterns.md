@@ -113,11 +113,7 @@ declare(strict_types=1);
 namespace Modules\User\Actions;
 
 use Spatie\QueueableAction\QueueableAction;
-<<<<<<< HEAD
-use Modules\Xot\Contracts\UserContract;
-=======
 use Modules\User\Models\User;
->>>>>>> 7f6cf6be (.)
 
 class CreateUserAction
 {

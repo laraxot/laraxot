@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 title: 'clean_architecture'
 module: Xot
@@ -16,6 +15,3 @@ updated: 2026-08-24
 <!-- Contenuto migrato da _docs/clean_architecture.txt -->
 
 https://github.com/sslr/laravel-clean-architecture-example/tree/main/onion/Driver
-=======
-https://github.com/sslr/laravel-clean-architecture-example/tree/main/onion/Driver
->>>>>>> 7f6cf6be (.)

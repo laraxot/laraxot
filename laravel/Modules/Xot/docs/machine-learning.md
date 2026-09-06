@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 title: 'machine_learning'
 module: Xot
@@ -15,8 +14,6 @@ updated: 2026-08-24
 
 <!-- Contenuto migrato da _docs/machine_learning.txt -->
 
-=======
->>>>>>> 7f6cf6be (.)
 ----------------------------------------
 https://laravel-news.com/google-natural-language-api-for-laravel   !!!!!!!!!!!!!!!!
 
@@ -34,10 +31,6 @@ https://pii-tools.com/detect-person-names-in-text/
 
 https://github.com/angeloskath/php-nlp-tools
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7f6cf6be (.)
 http://php-nlp-tools.com/documentation/
 
 ----------- PER RICERCA -------
@@ -46,10 +39,6 @@ https://www.php.net/manual/en/function.metaphone.php
 
 https://www.phpclasses.org/package/10316-PHP-Detect-a-person-gender-from-the-name-in-Latin-text.html
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7f6cf6be (.)
 https://www.we-rc.com/blog/2021/04/04/named-entity-recognition-in-php
 
 https://rubixml.com/
@@ -58,10 +47,6 @@ https://github.com/wamania/php-stemmer#languages
 
 https://www.youtube.com/watch?v=06-AZXmwHjo
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7f6cf6be (.)
 https://stackoverflow.com/questions/4304938/how-to-recognize-names-from-a-text-using-php +++
 http://www.complexityintelligence.com/en/knowledgebase/api/nlp_ner_v1/snippet_php
 http://www.alchemyapi.com/tools/
@@ -69,11 +54,6 @@ http://www.opencalais.com/applications/opencalais-and-php-code
 https://nocodeapi.net/
 https://www.refinitiv.com/en/products/intelligent-tagging-text-analytics
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 7f6cf6be (.)
 //--------------------------------------------------------------------------------------------------------
 PHP extension wrapping the MITIE data extraction C++ library. For named entity extraction in PHP.
 https://github.com/rjjakes/MITIE-PHP
@@ -107,20 +87,12 @@ https://cloudmersive.medium.com/perform-named-entity-recognition-using-nlp-in-ph
 LUCENE
 https://github.com/nqxcode/laravel-lucene-search
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7f6cf6be (.)
 -----------------------------------------------------------------------------------------------------------------------
 
 https://www.textrazor.com/demo
 
 --------------------------------------------------------------------------------------------------------------------------
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7f6cf6be (.)
 TIPO PERSON OF INTEREST
 https://towardsdatascience.com/object-detection-with-10-lines-of-code-d6cb4d86f606
 
@@ -128,10 +100,6 @@ https://towardsdatascience.com/object-detection-with-10-lines-of-code-d6cb4d86f6
 CON LIBRERIA Stanford
 https://github.com/yooper/php-text-analysis  !!!!!
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7f6cf6be (.)
 -----------------------------------------
 https://github.com/DaveChild/Text-Statistics
 
@@ -140,25 +108,16 @@ https://github.com/DaveChild/Best-websites-a-programmer-should-visit  !!
 
 https://github.com/elastic/elasticsearch-php/blob/master/src/Elasticsearch/Namespaces/IndicesNamespace.php   ????
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7f6cf6be (.)
 ------------------------------------------------
 
 https://github.com/patrickschur/language-detection
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7f6cf6be (.)
 ----------------------------------------------------
 https://www.sitepoint.com/how-to-analyze-tweet-sentiments-with-php-machine-learning/   !!!!!!!!!!!!!!!!!!!!!
 https://github.com/php-ai/php-ml
 
 ---------------------------------------------------
 
-<<<<<<< HEAD
 https://cloud.google.com/natural-language/project_docs/analyzing-sentiment
 
 https://cloud.google.com/natural-language/project_docs/analyzing-entities  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -166,12 +125,3 @@ https://cloud.google.com/natural-language/project_docs/analyzing-entities  !!!!!
 ----------------------------------------------------------
 
 https://accidentalfactors.com/part-of-speech-tagging/
-=======
-https://cloud.google.com/natural-language/docs/analyzing-sentiment
-
-https://cloud.google.com/natural-language/docs/analyzing-entities  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-----------------------------------------------------------
-
-https://accidentalfactors.com/part-of-speech-tagging/
->>>>>>> 7f6cf6be (.)

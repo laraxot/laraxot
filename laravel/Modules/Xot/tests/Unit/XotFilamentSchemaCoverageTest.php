@@ -10,7 +10,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\glob;
 
-uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
+uses(TestCase::class)->group('no-xot-db');
 
 /** @return array{string, string} */
 /** @return list{string, string} */

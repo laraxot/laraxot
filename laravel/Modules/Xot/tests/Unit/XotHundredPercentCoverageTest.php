@@ -29,7 +29,7 @@ use Symfony\Component\HttpFoundation\Response;
 use function Safe\ob_end_clean;
 use function Safe\ob_start;
 
-uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
+uses(TestCase::class)->group('no-xot-db');
 
 afterEach(function (): void {
     Mockery::close();
@@ -96,7 +96,6 @@ namespace PhpCsFixer\Runner\Parallel {
     }
 }
 namespace PhpCsFixer {
-use Modules\User\Models\User;
     final class Config {
         public function setParallelConfig(mixed $c): self { return $this; }
         public function setRiskyAllowed(bool $v): self { return $this; }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 title: "Sortable livewire"
 type: reference
@@ -16,17 +15,3 @@ Elenco di collegamenti migrato da un file `.txt`; URL deduplicati.
 - <https://github.com/asantibanez/laravel-blade-sortable>
 - <https://opensourcelibs.com/lib/livewire-sortablejs>
 - <https://github.com/livewire/sortable>
-=======
-https://sbsharma.com/laravel-jquery-ui-sortable-database-update-livewire/
-
-
-
-https://github.com/asantibanez/laravel-blade-sortable
-
-
-
-https://opensourcelibs.com/lib/livewire-sortablejs
-
-
-https://github.com/livewire/sortable
->>>>>>> 7f6cf6be (.)

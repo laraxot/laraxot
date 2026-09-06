@@ -3,15 +3,15 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\File;
-use Modules\Xot\Actions\Arrays\SaveJsonArrayAction;
-use Modules\Xot\Actions\Arrays\SavePhpArrayAction;
+use Modules\Xot\Actions\Arr\SaveJsonArrayAction;
+use Modules\Xot\Actions\Arr\SavePhpArrayAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 use function Safe\json_decode;
 use function Safe\tempnam;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('save json array action works', function () {
     $data = ['foo' => 'bar'];

@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 # Aggiornamento Mapping Classi Filament - 2025-12-23
 
 **Data**: 2025-12-23
-=======
-# Aggiornamento Mapping Classi Filament - [DATE]
-
->>>>>>> 7f6cf6be (.)
 **Obiettivo**: Verificare e correggere mapping classi nel file `filament_class.txt`
 
 ## ⚠️ Classi Aggiunte al Mapping che NON Esistono

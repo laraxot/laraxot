@@ -35,4 +35,20 @@ class CatalogFrequencyFactory extends Factory
             'sort_order' => $this->faker->numberBetween(0, 100),
         ];
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection<int, CatalogFrequency>
+     */
+    public function create(array $attributes = []): \Illuminate\Database\Eloquent\Collection
+    {
+        return parent::create($attributes);
+    }
+
+    /**
+     * @return CatalogFrequency
+     */
+    public function createOne(array $attributes = []): CatalogFrequency
+    {
+        return parent::createOne($attributes);
+    }
 }

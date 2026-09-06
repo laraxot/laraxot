@@ -1,14 +1,3 @@
----
-title: 'Google drive'
-module: Xot
-type: reference
-slug: google-drive
-description: 'passo passo + screenshot di dove prendere le varie key https://gist.github.com/mehranhadidi/38e38b80e3d533650ed2b94a0f95f7f1'
-tags: [migrato-da-txt, xot]
-converted_from: google_drive.txt
-created: 2026-08-24
-updated: 2026-08-24
----
 
 passo passo + screenshot di dove prendere le varie key
 https://gist.github.com/mehranhadidi/38e38b80e3d533650ed2b94a0f95f7f1
@@ -32,6 +21,8 @@ https://packagist.org/packages/private-it/flysystem-google-drive
 https://github.com/nao-pon/flysystem-google-drive
 https://stackoverflow.com/questions/49529585/laravel-filesystem-managing-folders-in-google-drive-api
 https://medium.com/@dennissmink/laravel-backup-database-to-your-google-drive-f4728a2b74bd
+
+
 
 
 https://flysystem.thephpleague.com/v1/docs/adapter/google-cloud-storage/

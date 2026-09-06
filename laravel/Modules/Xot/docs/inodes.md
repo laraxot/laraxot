@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 title: 'Inodes'
 module: Xot
@@ -12,18 +11,6 @@ updated: 2026-08-24
 ---
 
 -----------------------------------------------------------
-=======
-# _inodes
-
-<!-- Contenuto migrato da _docs/_inodes.txt -->
-
---------------------------------------------------------------
-$ df -i /
-Filesystem      Inodes  IUsed   IFree    IUse% Mounted on
-/dev/xvda1      7692288 652294 7039994    9%      /
-
---------------------------------------------------------------
->>>>>>> 7f6cf6be (.)
 $ sudo find / -xdev -printf '%h\0' | sort -z | uniq -cz | sort -nrzk 1 | tr '\0' '\n' | head -n 50
 
 -------------------------------------------------------------------
@@ -54,8 +41,4 @@ Se il comando sopra non fosse disponibile, per ridurre le dimensioni del file di
 $ journalctl --vacuum-size=100M
 dove 100M sono le dimensioni in cui il file di log deve stare ossia verranno scartiti tutti i log più vecchi finchè non si raggiunge uno spazio di disco usato da Jorunal di 100M (o meno).
 
-<<<<<<< HEAD
 --------------------------------------------------------------
-=======
---------------------------------------------------------------
->>>>>>> 7f6cf6be (.)

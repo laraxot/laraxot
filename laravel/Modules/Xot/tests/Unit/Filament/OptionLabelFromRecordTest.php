@@ -6,7 +6,7 @@ use Modules\Xot\Tests\TestCase;
 use Modules\Xot\Tests\Unit\Support\DummyTestModel;
 use Modules\Xot\Tests\Unit\Support\OptionLabelProbeForm;
 
-uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
+uses(TestCase::class)->group('no-xot-db');
 
 /**
  * Regressione: una colonna titolo nulla faceva arrivare `null` a

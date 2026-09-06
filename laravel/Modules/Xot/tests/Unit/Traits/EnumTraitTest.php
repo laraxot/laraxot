@@ -14,7 +14,7 @@ use Modules\Xot\Tests\Fixtures\Enums\TestEnum;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('gets label via translation', function (): void {
     $label = TestEnum::ALPHA->getLabel();

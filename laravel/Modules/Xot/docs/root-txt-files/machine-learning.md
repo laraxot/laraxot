@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "Machine learning"
 type: reference
 status: active
@@ -14,20 +13,6 @@ note: "Convertito da machine_learning.txt (documento) da convert-docs-txt-to-md.
 https://laravel-news.com/google-natural-language-api-for-laravel   !!!!!!!!!!!!!!!!
 
 ----------------------------------------
-=======
-title: 'Machine learning'
-module: Xot
-type: reference
-slug: machine-learning
-description: 'http://php-nlp-tools.com/blog/category/greek-pos-tagger/'
-tags: [migrato-da-txt, xot]
-converted_from: machine_learning.txt
-created: 2026-08-24
-updated: 2026-08-24
----
-
--------------------------------------
->>>>>>> 7f6cf6be (.)
 rephrasing
 https://cloudmersive.com/nlp-api  !!!!!!!!!!!!!!!
 
@@ -68,10 +53,7 @@ https://nocodeapi.net/
 https://www.refinitiv.com/en/products/intelligent-tagging-text-analytics
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 7f6cf6be (.)
 //--------------------------------------------------------------------------------------------------------
 PHP extension wrapping the MITIE data extraction C++ library. For named entity extraction in PHP.
 https://github.com/rjjakes/MITIE-PHP

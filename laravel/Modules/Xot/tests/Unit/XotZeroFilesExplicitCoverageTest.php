@@ -7,7 +7,7 @@ namespace Modules\Xot\Tests\Unit;
 use Modules\Xot\Exceptions\Handlers\HandlersRepository;
 use Modules\Xot\Tests\TestCase;
 
-uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
+uses(TestCase::class)->group('no-xot-db');
 
 test('exception handlers are selected by their declared throwable type', function (): void {
     $repository = new HandlersRepository;

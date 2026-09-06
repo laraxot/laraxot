@@ -5,11 +5,7 @@ type: reference
 slug: pest
 description: 'Elenco di 1 riferimenti esterni raccolti per pest, deduplicati e convertiti da un dump di link.'
 tags: [migrato-da-txt, xot]
-<<<<<<< HEAD
 converted_from: _pest.txt
-=======
-converted_from: pest.txt
->>>>>>> 7f6cf6be (.)
 created: 2026-08-24
 updated: 2026-08-24
 ---

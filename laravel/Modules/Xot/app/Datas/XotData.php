@@ -28,7 +28,7 @@ class XotData extends Data implements Wireable
 {
     use WireableData;
 
-    public string $main_module = 'User';
+    public string $main_module = '';
 
     public string $param_name = 'noset';
 

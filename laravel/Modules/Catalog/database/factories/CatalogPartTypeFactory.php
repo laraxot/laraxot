@@ -34,4 +34,20 @@ class CatalogPartTypeFactory extends Factory
             ]),
         ];
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection<int, CatalogPartType>
+     */
+    public function create(array $attributes = []): \Illuminate\Database\Eloquent\Collection
+    {
+        return parent::create($attributes);
+    }
+
+    /**
+     * @return CatalogPartType
+     */
+    public function createOne(array $attributes = []): CatalogPartType
+    {
+        return parent::createOne($attributes);
+    }
 }

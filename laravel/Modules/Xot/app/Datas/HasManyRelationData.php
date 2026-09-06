@@ -16,7 +16,7 @@ class HasManyRelationData extends Data
      */
     public function __construct(
         public string $foreignKey,
-        public int|string $parentKey,
+        public mixed $parentKey,
         public array $updateData,
         #[MapInputName('from')]
         public ?array $from = null,

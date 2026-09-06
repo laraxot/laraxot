@@ -37,7 +37,6 @@ test('widget can be rendered', function () {
 function mockXotData(): void
 {
     $mockXotData = \Mockery::mock(\Modules\Xot\Datas\XotData::class)->makePartial();
-<<<<<<< HEAD
     
     $mockXotData->shouldReceive('getUserClass')
         ->andReturn(\Modules\SaluteOra\Models\User::class);
@@ -45,15 +44,6 @@ function mockXotData(): void
     $mockXotData->shouldReceive('make')
         ->andReturn($mockXotData);
     
-=======
-
-    $mockXotData->shouldReceive('getUserClass')
-        ->andReturn(\Modules\<nome progetto>\Models\User::class);
-
-    $mockXotData->shouldReceive('make')
-        ->andReturn($mockXotData);
-
->>>>>>> 7f6cf6be (.)
     // ✅ CRITICO: Bind nel container
     app()->instance(\Modules\Xot\Datas\XotData::class, $mockXotData);
 }
@@ -137,11 +127,7 @@ app()->instance(\Modules\Xot\Datas\XotData::class, $mock);
    - Content presence
    - Layout structure
 
-<<<<<<< HEAD
 2. **Middleware** (Raccomandato) 
-=======
-2. **Middleware** (Raccomandato)
->>>>>>> 7f6cf6be (.)
    - Authentication flow
    - Authorization checks
    - Redirect behavior
@@ -176,11 +162,7 @@ app()->instance(\Modules\Xot\Datas\XotData::class, $mock);
 - ✅ **Performance**: < 5 secondi per test suite
 - ✅ **Architecture**: Separazione rispettata
 
-<<<<<<< HEAD
 ### Gold Standard Criteria  
-=======
-### Gold Standard Criteria
->>>>>>> 7f6cf6be (.)
 - ✅ **Success Rate**: > 90% test passati
 - ✅ **Zero Warnings**: Nessun warning PHP/Pest
 - ✅ **Performance**: < 3 secondi per test suite
@@ -199,11 +181,7 @@ app()->instance(\Modules\Xot\Datas\XotData::class, $mock);
 # Execution time monitoring
 ./vendor/bin/pest -v {TestFile} | grep -E "(seconds|ms)"
 
-<<<<<<< HEAD
 # Success rate calculation  
-=======
-# Success rate calculation
->>>>>>> 7f6cf6be (.)
 ./vendor/bin/pest {TestFile} --compact
 
 # Memory usage monitoring
@@ -232,14 +210,7 @@ app()->instance(\Modules\Xot\Datas\XotData::class, $mock);
 
 ---
 
-<<<<<<< HEAD
 **Status**: ✅ Best Practices Validate  
 **Enforcement**: Obbligatorio per tutti i test  
 **Version**: 1.0 - Gold Standard
 **Last Update**: Dicembre 2024 
-=======
-**Status**: ✅ Best Practices Validate
-**Enforcement**: Obbligatorio per tutti i test
-**Version**: 1.0 - Gold Standard
-**Last Update**: Dicembre 2024
->>>>>>> 7f6cf6be (.)

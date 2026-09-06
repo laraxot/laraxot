@@ -163,7 +163,6 @@ La rimozione delle annotazioni generiche risolve il problema perché:
 ### Modulo User
 ```php
 namespace Modules\User\Models;
-use Modules\User\Models\User;
 
 class User extends BaseModel
 {

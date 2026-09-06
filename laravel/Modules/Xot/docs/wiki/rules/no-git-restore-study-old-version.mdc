@@ -6,15 +6,9 @@ created: 2026-01-21
 updated: 2026-07-27
 qmd: never use git restore always study old version create better forward-only
 issues:
-<<<<<<< HEAD
-  - "https://github.com/laraxot/base_restaurant_fila5/issues/38"
-discussions:
-  - "https://github.com/laraxot/base_restaurant_fila5/discussions/12"
-=======
   - "https://github.com/laraxot/base_techplanner_fila5/issues/38"
 discussions:
   - "https://github.com/laraxot/base_techplanner_fila5/discussions/12"
->>>>>>> 7f6cf6be (.)
 related:
   - ../../../../../../docs/wiki/concepts/git-forward-only-discipline.md
   - ../../../../../../docs/wiki/concepts/git-forward-only-study-old-version.md

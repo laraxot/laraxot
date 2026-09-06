@@ -24,4 +24,20 @@ class CatalogModelFactory extends Factory
             'name' => $this->faker->unique()->bothify('Serie ?##-###'),
         ];
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection<int, CatalogModel>
+     */
+    public function create(array $attributes = []): \Illuminate\Database\Eloquent\Collection
+    {
+        return parent::create($attributes);
+    }
+
+    /**
+     * @return CatalogModel
+     */
+    public function createOne(array $attributes = []): CatalogModel
+    {
+        return parent::createOne($attributes);
+    }
 }

@@ -7,7 +7,7 @@ namespace Modules\Xot\Tests\Unit;
 use Modules\Xot\Datas\ComponentFileData;
 use Modules\Xot\Tests\TestCase;
 
-uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
+uses(TestCase::class)->group('no-xot-db');
 
 test('component file data keeps discovery provenance', function (): void {
     $component = ComponentFileData::from([

@@ -12,8 +12,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Modules\User\Models\User;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
-use Modules\Xot\Datas\XotData;
 
 use function Safe\strtotime;
 
@@ -247,22 +247,11 @@ class FilterBuilder
      *
      * @param  class-string<Model>  $userModel
      */
-    /**
-     * User/Author select filter.
-     *
-     * @param  class-string<Model>|null  $userModel
-     */
     public static function userSelect(
         string $name = 'user',
-        ?string $userModel = null,
+        string $userModel = User::class,
         string $labelColumn = 'name',
     ): SelectFilter {
-        if (null === $userModel) {
-            /** @var class-string<Model> $userModel */
-            $userModel = XotData::make()->getUserClass();
-        }
-
-        /** @var class-string<Model> $userModel */
         return self::selectFromModel($name, $userModel, $labelColumn, 'id', $name);
     }
 

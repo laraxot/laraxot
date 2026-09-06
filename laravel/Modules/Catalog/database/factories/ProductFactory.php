@@ -36,4 +36,20 @@ class ProductFactory extends Factory
             'is_active' => true,
         ];
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection<int, Product>
+     */
+    public function create(array $attributes = []): \Illuminate\Database\Eloquent\Collection
+    {
+        return parent::create($attributes);
+    }
+
+    /**
+     * @return Product
+     */
+    public function createOne(array $attributes = []): Product
+    {
+        return parent::createOne($attributes);
+    }
 }

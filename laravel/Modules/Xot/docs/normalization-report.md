@@ -1,10 +1,4 @@
-<<<<<<< HEAD
 # Report Normalizzazione Documentazione - Gennaio 2025
-=======
-# Report Normalizzazione Documentazione
-
-## Data: Gennaio 2025
->>>>>>> 7f6cf6be (.)
 
 ## Azioni Completate
 
@@ -111,19 +105,12 @@
 - [Processo Normalizzazione](../Xot/docs/docs-normalization-process.md)
 - [Regole Naming File](../Xot/docs/file-naming-rules.md)
 - [Filosofia DRY + KISS](../../docs/philosophy-guide.md)
-<<<<<<< HEAD
 - [Processo Normalizzazione](../xot/docs/docs-normalization-process.md)
 - [Regole Naming File](../xot/docs/file-naming-rules.md)
 - [Filosofia DRY + KISS](../../../docs/philosophy-guide.md)
-=======
->>>>>>> 7f6cf6be (.)
 
 ---
 
 **Data**: Gennaio 2025
 **Stato**: In corso
-<<<<<<< HEAD
 **Prossima Revisione**: Dopo normalizzazione batch successivo
-=======
-**Prossima Revisione**: Dopo normalizzazione batch successivo
->>>>>>> 7f6cf6be (.)

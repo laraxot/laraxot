@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Xot\Tests\Fixtures;
 
 use Modules\Xot\Actions\GetTransKeyAction;
-use Modules\User\Models\User;
 
 class TransKeyCaller
 {

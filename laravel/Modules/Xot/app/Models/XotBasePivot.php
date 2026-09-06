@@ -28,10 +28,6 @@ use function Safe\preg_match;
  */
 abstract class XotBasePivot extends EloquentPivot
 {
-<<<<<<< HEAD
-    /** @use HasXotFactory<\Illuminate\Database\Eloquent\Factories\Factory<static>> */
-=======
->>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
     use HasXotFactory;
 
     use Updater;

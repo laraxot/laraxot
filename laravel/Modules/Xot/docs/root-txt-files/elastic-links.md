@@ -5,11 +5,7 @@ type: reference
 slug: elastic-links
 description: 'Elenco di 1 riferimenti esterni raccolti per elastic links, deduplicati e convertiti da un dump di link.'
 tags: [migrato-da-txt, xot]
-<<<<<<< HEAD
 converted_from: _elastic_links.txt
-=======
-converted_from: elastic-links.txt
->>>>>>> 7f6cf6be (.)
 created: 2026-08-24
 updated: 2026-08-24
 ---

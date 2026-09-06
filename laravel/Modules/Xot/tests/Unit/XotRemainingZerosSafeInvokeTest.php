@@ -9,7 +9,7 @@ use Modules\Xot\Models\Cache;
 use Modules\Xot\Tests\TestCase;
 use Modules\Xot\ValueObjects\PhoneValueObject;
 
-uses(\Modules\Xot\Tests\TestCase::class)->group('no-xot-db');
+uses(TestCase::class)->group('no-xot-db');
 
 test('phone cast round-trips a validated value object', function (): void {
     $cast = new PhoneCast;

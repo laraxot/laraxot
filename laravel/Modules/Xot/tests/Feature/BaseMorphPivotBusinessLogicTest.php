@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 use Modules\Xot\Tests\Fixtures\Models\TestConcreteMorphPivot;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
-use Modules\User\Models\User;
 
 uses(TestCase::class);
 

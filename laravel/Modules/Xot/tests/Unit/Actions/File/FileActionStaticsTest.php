@@ -15,7 +15,7 @@ use function Safe\rmdir;
 use function Safe\scandir;
 use function Safe\unlink;
 
-uses(\Modules\Xot\Tests\TestCase::class);
+uses(TestCase::class);
 
 // $this dentro le closure Pest e' tipizzato da Pest come TestCall, non come
 // Modules\Xot\Tests\TestCase: il custom rrmdir() non e' risolvibile via $this,

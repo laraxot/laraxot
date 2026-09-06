@@ -39,10 +39,6 @@ test('artisan service act method handles migrate command', function (): void {
 
     $result = ArtisanAction::act('migrate');
 
-<<<<<<< HEAD
-    expect(strlen($result))->toBeGreaterThanOrEqual(0);
-=======
->>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
     expect(str_contains($result, 'Migration completed'))->toBeTrue();
 });
 
@@ -56,10 +52,6 @@ test('artisan service act method handles module parameter', function (): void {
     $result = ArtisanAction::act('migrate');
     ob_end_clean();
 
-<<<<<<< HEAD
-    expect(strlen($result))->toBeGreaterThanOrEqual(0);
-=======
->>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
     expect(str_contains($result, 'Module migration'))->toBeTrue();
 });
 
@@ -71,9 +63,5 @@ test('artisan service handles non-string module parameter', function (): void {
 
     $result = ArtisanAction::act('migrate');
 
-<<<<<<< HEAD
-    expect(strlen($result))->toBeGreaterThanOrEqual(0);
-=======
->>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php)
     expect(str_contains($result, 'Migration'))->toBeTrue();
 });

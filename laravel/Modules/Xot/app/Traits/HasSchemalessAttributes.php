@@ -99,16 +99,6 @@ trait HasSchemalessAttributes
 
     /**
      * Get un valore da extra_attributes.
-     *
-     * Returns mixed because extra_attributes stores JSON-serializable data of any type.
-     * The return type matches whatever type was stored or the default value provided.
-     * This polymorphism is intentional and delegated to Spatie's SchemalessAttributes.
-     *
-     * @param  string  $key  The attribute key to retrieve
-     * @param  mixed  $default  Default value if key doesn't exist
-     * @return mixed The stored value or default (could be string, int, bool, array, null, etc.)
-     *
-     * @see https://github.com/spatie/laravel-schemaless-attributes
      */
     public function getExtraAttribute(string $key, mixed $default = null): mixed
     {

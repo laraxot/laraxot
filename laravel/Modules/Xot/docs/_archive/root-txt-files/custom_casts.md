@@ -1,4 +1,3 @@
-<<<<<<<< HEAD:laravel/Modules/Xot/docs/_archive/root-txt-files/custom_casts.md
 ---
 title: "Custom casts"
 type: reference
@@ -10,8 +9,6 @@ note: "Convertito da custom_casts.txt (documento) da convert-docs-txt-to-md.py."
 
 # Custom casts
 
-========
->>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php):laravel/Modules/Xot/docs/_archive/custom-casts.md
 
 php artisan make:cast Address
 
@@ -27,8 +24,4 @@ DB::table(‘orders’)
     ->get();
 
 
-<<<<<<<< HEAD:laravel/Modules/Xot/docs/_archive/root-txt-files/custom_casts.md
 $table->json('address')->nullable();
-========
-$table->json('address')->nullable();
->>>>>>>> f7400a95 (Story 3.1: Add explicit @var type hints to array variables in HasXotTable.php):laravel/Modules/Xot/docs/_archive/custom-casts.md

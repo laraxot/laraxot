@@ -66,10 +66,6 @@ I seguenti moduli hanno `AdminPanelProvider` ma **mancano** del file `Dashboard.
 declare(strict_types=1);
 
 namespace Modules\{ModuleName}\Filament\Pages;
-<<<<<<< HEAD
-use Modules\User\Models\User;
-=======
->>>>>>> 7f6cf6be (.)
 
 use Filament\Pages\Page;
 
