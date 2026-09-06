@@ -92,6 +92,12 @@ final class SignCatalogItemComponent extends BaseModel
         return $this->belongsTo(SignPriceListItem::class, 'sign_price_list_item_id');
     }
 
+    /** @return SignCatalogItemComponentFactory */
+    public static function factory(): SignCatalogItemComponentFactory
+    {
+        return SignCatalogItemComponentFactory::new();
+    }
+
     protected static function newFactory(): SignCatalogItemComponentFactory
     {
         return SignCatalogItemComponentFactory::new();

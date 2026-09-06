@@ -53,6 +53,12 @@ final class SignPriceListItem extends BaseModel
         return $this->hasMany(SignSupplierPriceEntry::class, 'sign_price_list_item_id');
     }
 
+    /** @return SignPriceListItemFactory */
+    public static function factory(): SignPriceListItemFactory
+    {
+        return SignPriceListItemFactory::new();
+    }
+
     protected static function newFactory(): SignPriceListItemFactory
     {
         return SignPriceListItemFactory::new();

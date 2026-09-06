@@ -61,6 +61,12 @@ final class SignCatalogItem extends BaseModel
         return $this->hasMany(SignCatalogItemComponent::class, 'sign_catalog_item_id')->orderBy('position');
     }
 
+    /** @return SignCatalogItemFactory */
+    public static function factory(): SignCatalogItemFactory
+    {
+        return SignCatalogItemFactory::new();
+    }
+
     protected static function newFactory(): SignCatalogItemFactory
     {
         return SignCatalogItemFactory::new();

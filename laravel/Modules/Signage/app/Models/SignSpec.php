@@ -70,6 +70,12 @@ final class SignSpec extends BaseModel
         return $this->hasMany(SignComponent::class, 'sign_spec_id')->orderBy('position');
     }
 
+    /** @return SignSpecFactory */
+    public static function factory(): SignSpecFactory
+    {
+        return SignSpecFactory::new();
+    }
+
     protected static function newFactory(): SignSpecFactory
     {
         return SignSpecFactory::new();

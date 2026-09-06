@@ -54,6 +54,12 @@ final class WorkCenter extends BaseModel
         return $query->where('context_code', $contextCode);
     }
 
+    /** @return WorkCenterFactory */
+    public static function factory(): WorkCenterFactory
+    {
+        return WorkCenterFactory::new();
+    }
+
     /** Costo di `$minutes` minuti di questo centro. */
     public function costOfMinutes(float $minutes): float
     {
