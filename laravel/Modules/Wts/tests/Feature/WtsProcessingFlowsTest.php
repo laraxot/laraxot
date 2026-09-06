@@ -20,7 +20,7 @@ use Spatie\Permission\Models\Role;
 it('registers processing from each WTS processing subpage', function (string $pageClass, string $stepType): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
@@ -52,7 +52,7 @@ it('registers processing from each WTS processing subpage', function (string $pa
 it('auto-computes the worked weight from the selected colli', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $record = WtsInboundRecord::factory()->create([
@@ -90,7 +90,7 @@ it('auto-computes the worked weight from the selected colli', function (): void 
 it('exposes computed output weights and the remaining waste weight', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     config()->set('wts.operational_parameters.standard_drum_weight_kg', [

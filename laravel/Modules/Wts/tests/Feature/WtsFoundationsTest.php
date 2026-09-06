@@ -85,7 +85,7 @@ it('records a WTS non conformity against the selected lot and formulario', funct
 it('shows and updates WTS operational parameters from the WTS panel', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = Modules\User\Models\User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     actingAs($user);

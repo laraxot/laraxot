@@ -86,7 +86,7 @@ it('generates units with internal qr codes and label prints', function (): void 
 it('registers processing on selected units and creates derived materials', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $snapshot = WtsTechnicalSheetSnapshot::query()->create([

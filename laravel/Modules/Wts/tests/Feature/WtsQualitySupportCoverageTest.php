@@ -89,7 +89,7 @@ it('loads technical sheet data from configured legacy table and fallback config'
 it('renders reports page and covers work queue utility branches', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $unit = WtsUnit::factory()->create([
@@ -139,7 +139,7 @@ it('renders reports page and covers work queue utility branches', function (): v
 it('covers material detail fallback branches and invalid moves', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $unit = WtsUnit::factory()->create([

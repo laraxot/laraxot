@@ -82,7 +82,7 @@ it('warns about stale ECOS data when the last sync failed but rows exist', funct
 it('covers remaining processing page utility branches and config normalization', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();

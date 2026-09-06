@@ -33,7 +33,7 @@ use function Pest\Laravel\get;
 function brondiOperator(): User
 {
     Role::findOrCreate('wts_operator');
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_operator']);
 
     return $user;
@@ -74,7 +74,7 @@ it('riserva report e parametri operativi al solo wts_admin', function (): void {
     expect(WtsOperationalParametersPage::canAccess())->toBeFalse();
 
     Role::findOrCreate('wts_admin');
-    $admin = User::factory()->create();
+    $admin = \Modules\Wts\Tests\TestCase::createUser();
     $admin->syncRoles(['wts_admin']);
 
     actingAs($admin);
@@ -101,7 +101,7 @@ it('nello snodo mostra i quattro tasti ma non i passi successivi', function (): 
 
 it('all amministratore lascia invece i passi successivi', function (): void {
     Role::findOrCreate('wts_admin');
-    $admin = User::factory()->create();
+    $admin = \Modules\Wts\Tests\TestCase::createUser();
     $admin->syncRoles(['wts_admin']);
 
     actingAs($admin);

@@ -72,7 +72,7 @@ it('records a non conformity from the lot detail page', function (): void {
     Role::findOrCreate('wts_admin');
     Mail::fake();
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $lot = WtsInboundLot::factory()->create([

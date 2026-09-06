@@ -36,7 +36,7 @@ it('moves a WTS unit between operational warehouse areas with location', functio
 it('updates warehouse area from UI-05', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $unit = WtsUnit::factory()->create([
@@ -56,7 +56,7 @@ it('updates warehouse area from UI-05', function (): void {
 it('renders the real material detail page for a scanned unit', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $unit = WtsUnit::factory()->create([
@@ -86,7 +86,7 @@ it('renders the real material detail page for a scanned unit', function (): void
 it('reprints the label of a collo directly from the material detail page', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $unit = WtsUnit::factory()->create([

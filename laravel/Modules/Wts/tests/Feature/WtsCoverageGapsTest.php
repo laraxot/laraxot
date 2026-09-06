@@ -26,7 +26,7 @@ use Spatie\Permission\Models\Role;
 it('covers label utility actions merged into the lot detail page', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
@@ -58,7 +58,7 @@ it('covers label utility actions merged into the lot detail page', function (): 
 it('rejects an empty non conformity note from the lot detail page', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
@@ -76,7 +76,7 @@ it('rejects an empty non conformity note from the lot detail page', function ():
 it('registers mixed outputs from the generic WTS processing page', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
@@ -119,7 +119,7 @@ it('registers mixed outputs from the generic WTS processing page', function (): 
 it('rejects processing selections outside the selected lot', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $lotA = WtsInboundLot::factory()->create();
@@ -152,7 +152,7 @@ it('rejects processing selections outside the selected lot', function (): void {
 it('covers ingress, outputs, lot detail and operational parameter utility branches', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     Livewire::actingAs($user);

@@ -185,7 +185,7 @@ it('covers empty and missing branches of LookupLegacyTechnicalSheetAction', func
 it('covers ingresses and inventory page utility config branches', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     config()->set('wts.unit_types', [
@@ -219,7 +219,7 @@ it('covers ingresses and inventory page utility config branches', function (): v
 it('covers missing material branches in outputs page', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $material = WtsDerivedMaterial::factory()->create();
@@ -236,7 +236,7 @@ it('covers missing material branches in outputs page', function (): void {
 it('covers invalid unit type config branch in the lot detail page', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     config()->set('wts.unit_types', 'invalid');

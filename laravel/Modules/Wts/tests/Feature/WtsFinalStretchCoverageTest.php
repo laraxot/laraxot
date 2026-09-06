@@ -27,7 +27,7 @@ use Spatie\Permission\Models\Role;
 it('covers empty selection and invalid config branches in processing page', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     config()->set('wts.processing_step_types', 'invalid');
@@ -46,7 +46,7 @@ it('covers empty selection and invalid config branches in processing page', func
 it('covers dirty drum and pallet output branches in processing form trait', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     config()->set('wts.stock_views', 'invalid');
@@ -129,7 +129,7 @@ it('covers scalar string executed_at parsing branch in inventory overview query'
 it('covers invalid config branches in ingresses and inventory pages', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     config()->set('wts.unit_types', 'invalid');
@@ -149,7 +149,7 @@ it('covers invalid config branches in ingresses and inventory pages', function (
 it('covers empty fallback branches in finished material and material detail pages', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     config()->set('wts.stock_views', 'invalid');

@@ -16,7 +16,7 @@ use Livewire\Livewire;
 use Spatie\Permission\Models\Role;
 
 it('takes charge normalizing inputs and blocks any second take charge on the same ingress', function (): void {
-    $creator = User::factory()->create();
+    $creator = \Modules\Wts\Tests\TestCase::createUser();
 
     $record = WtsInboundRecord::factory()->create([
         'status_code' => 'registered',
@@ -119,7 +119,7 @@ it('validates mandatory ingress taking charge fields and positive weights', func
 it('covers empty selection invalid lot selection and stock view normalization in processing trait', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     config()->set('wts.stock_views', [

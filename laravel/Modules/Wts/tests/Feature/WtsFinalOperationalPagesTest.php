@@ -20,7 +20,7 @@ use function Pest\Laravel\get;
 it('renders the real finished material page with origin chain', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $step = WtsProcessingStep::factory()->create([
@@ -53,7 +53,7 @@ it('renders the real finished material page with origin chain', function (): voi
 it('renders the real audit page results for a searched code', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $step = WtsProcessingStep::factory()->create([
@@ -84,7 +84,7 @@ it('renders the real audit page results for a searched code', function (): void 
 it('renders the real processing sheet page for a selected step', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $step = WtsProcessingStep::factory()->create([
@@ -107,7 +107,7 @@ it('renders the real processing sheet page for a selected step', function (): vo
 it('reprints a derived material label from outputs page', function (): void {
     Role::findOrCreate('wts_admin');
 
-    $user = User::factory()->create();
+    $user = \Modules\Wts\Tests\TestCase::createUser();
     $user->syncRoles(['wts_admin']);
 
     $material = WtsDerivedMaterial::factory()->create([
