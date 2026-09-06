@@ -7,6 +7,7 @@ namespace Modules\Signage\Console\Commands;
 use Illuminate\Console\Command;
 use Modules\Signage\Actions\ExtractSignComponentsFromArtworkAction;
 use Modules\Signage\Actions\ImportArtworkAsSignSpecAction;
+use Webmozart\Assert\Assert;
 
 use function Safe\json_encode;
 
@@ -25,7 +26,9 @@ final class ExtractSignArtworkCommand extends Command
 
     public function handle(ExtractSignComponentsFromArtworkAction $action, ImportArtworkAsSignSpecAction $import): int
     {
-        $file = (string) $this->argument('file');
+        $fileArg = $this->argument('file');
+        Assert::stringNotEmpty($fileArg);
+        $file = $fileArg;
 
         if (! is_file($file)) {
             $this->error("File non trovato: {$file}");
