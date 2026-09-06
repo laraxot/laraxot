@@ -45,7 +45,7 @@ final class ListQuotations extends ListRecords
             Actions\Action::make('importFromFile')
                 ->label(__('quotations.import.title'))
                 ->icon('heroicon-o-document-arrow-up')
-                ->form([
+                ->schema([
                     FileUpload::make('file')
                         ->label(__('quotations.import.file'))
                         ->disk('local')
@@ -57,7 +57,11 @@ final class ListQuotations extends ListRecords
                         ->required(),
                 ])
                 ->action(function (array $data): void {
-                    $path = is_array($data['file']) ? (string) reset($data['file']) : (string) $data['file'];
+                    $fileValue = $data['file'];
+                    if (is_array($fileValue)) {
+                        $fileValue = reset($fileValue);
+                    }
+                    $path = is_string($fileValue) ? $fileValue : '';
                     $original = $data['original_name'] ?? null;
                     if (is_array($original)) {
                         $original = reset($original);

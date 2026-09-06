@@ -19,7 +19,7 @@ describe('NotifyTheme\Attachment\Pdf', function () {
     });
 
     it('uses QueueableAction trait', function () {
-        $traits = class_uses(AttachmentData::class);
+        $traits = class_uses(Pdf::class);
         Assert::assertArrayHasKey(QueueableAction::class, $traits);
     });
 

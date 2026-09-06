@@ -43,7 +43,7 @@ describe('Oauth Client', function (): void {
     test('oauth client user relation uses xot data', function (): void {
         /** @var TestCase $this */
         $user = UserFactory::new()->createOne();
-        $client = TestCase::oauthClientTestPersistedClient(['user_id' => (string) $user->getKey()]);
+        $client = TestCase::oauthClientTestPersistedClient(['user_id' => is_string($user->getKey()) ? $user->getKey() : (string) $user->getKey()]);
 
         Assert::assertNotNull($client->user);
         Assert::assertSame($user->getKey(), $client->user->getKey());

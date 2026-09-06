@@ -172,11 +172,11 @@ protected function getHeaderActions(): array
 }
 ```
 
-### 6. Laravel 13 - Nuove Features da Usare
+### 6. Laravel 12 - Nuove Features da Usare
 
 #### Model Events con Type Hints
 ```php
-// ✅ Laravel 13 pattern
+// ✅ Laravel 12 pattern
 protected static function booted(): void
 {
     static::creating(function (Event $event): void {
@@ -314,7 +314,7 @@ $content = file_get_contents($path); // Lancia eccezione se fallisce
 - [Pest](https://pestphp.com/) - Testing framework
 - [Filament](https://filamentphp.com/docs) - Admin panel
 - [Laravel Modules](https://laravelmodules.com/) - Modular architecture
-- [Laravel 13](https://laravel.com/docs/12.x) - Framework docs
+- [Laravel 12](https://laravel.com/docs/12.x) - Framework docs
 
 ### Blog e Risorse
 - [Laravel News](https://laravel-news.com/) - News e tutorial

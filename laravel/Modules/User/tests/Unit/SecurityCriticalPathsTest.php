@@ -46,5 +46,5 @@ test('password mutator hashes long passphrases instead of storing plaintext', fu
 
     $user->password = $longPassphrase;
 
-    Assert::assertTrue(Hash::check($longPassphrase, (string) $user->getAttributes()['password']));
+    Assert::assertTrue(Hash::check($longPassphrase, is_string($user->getAttributes()['password'] ?? null) ? $user->getAttributes()['password'] : ''));
 });

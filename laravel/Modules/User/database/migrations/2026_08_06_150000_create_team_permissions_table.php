@@ -108,6 +108,6 @@ return new class() extends XotBaseMigration
             return false;
         }
 
-        return ((int) $result->count) > 0;
+        return is_int($result->count) ? $result->count > 0 : false;
     }
 };

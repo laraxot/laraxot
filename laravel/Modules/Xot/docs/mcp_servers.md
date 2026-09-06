@@ -30,7 +30,7 @@ This document provides Xot-specific MCP usage guidelines only.
 ### context7
 - **Use**: Look up Laravel, Nwidart, Laraxot documentation
 - **Example Queries**:
-  - "Laravel 13 service provider best practices"
+  - "Laravel 12 service provider best practices"
   - "Nwidart modules composer merge-plugin"
   - "Laravel package development patterns"
 

@@ -13,7 +13,7 @@ final class AlwaysAskPasswordConfirmationAction extends XotBaseAction
     {
         $this->requiresConfirmation()
             ->modalHeading(__('filament-jet::jet.password_confirmation_modal.heading'))
-            ->modalSubheading(__('filament-jet::jet.password_confirmation_modal.description'))
+            ->modalDescription(__('filament-jet::jet.password_confirmation_modal.description'))
             ->schema([
                 TextInput::make('current_password')
                     ->required()

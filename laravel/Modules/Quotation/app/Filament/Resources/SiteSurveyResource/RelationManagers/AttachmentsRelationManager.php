@@ -79,7 +79,11 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
             FileUpload::make('path')
                 ->label(__('site_surveys.attachments.file'))
                 ->disk('public')
-                ->directory(fn (): string => 'site-surveys/'.(string) $this->getOwnerRecord()->getKey())
+                ->directory(function (): string {
+                    $key = $this->getOwnerRecord()->getKey();
+
+                    return 'site-surveys/'.(is_scalar($key) ? (string) $key : '');
+                })
                 ->visibility('public')
                 ->maxSize(51200)
                 ->required()
@@ -133,7 +137,8 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
                         $kind = is_string($data['kind'] ?? null) ? $data['kind'] : 'photo';
                         $collection = self::KIND_TO_COLLECTION[$kind] ?? 'voice_notes';
 
-                        $title = trim((string) ($data['title'] ?? ''));
+                        $rawTitle = $data['title'] ?? '';
+                        $title = is_string($rawTitle) ? trim($rawTitle) : '';
                         $name = $title !== '' ? $title : basename($path);
 
                         $userId = Auth::id();
@@ -149,7 +154,7 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
                         return $adder->toMediaCollection($collection);
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 Action::make('download')
                     ->label(__('site_surveys.attachments.download'))
                     ->icon('heroicon-o-arrow-down-tray')

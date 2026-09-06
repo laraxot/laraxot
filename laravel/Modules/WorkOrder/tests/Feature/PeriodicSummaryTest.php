@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-uses(\Modules\WorkOrder\Tests\TestCase::class);
+use Modules\WorkOrder\Tests\TestCase as WorkOrderTestCase;
+
+uses(WorkOrderTestCase::class);
 
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
@@ -11,6 +13,7 @@ use Modules\Catalog\Models\Product;
 use Modules\Customer\Models\Customer;
 use Modules\Inventory\Models\Warehouse;
 use Modules\Quotation\Models\Quotation;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 use Modules\WorkOrder\Actions\BuildPeriodicSummaryAction;
 use Modules\WorkOrder\Actions\GeneratePeriodicSummaryPdfAction;
@@ -24,38 +27,47 @@ use function Pest\Laravel\actingAs;
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-function makeSummaryAdmin(): User
-{
-    $admin = User::factory()->create();
-    if (! $admin instanceof User) {
-        // Modules\User\Models\BaseUser lacks a newFactory() override, so Larastan's
-        // dynamic return type extension for factory() cannot resolve the concrete
-        // return type and treats it as mixed. This is a genuine runtime guard, not
-        // a lint-silencer: it documents and enforces the assumption the rest of
-        // this test suite relies on. See docs/chat/2026-09-06-phpstan-workorder-claim.md.
-        throw new \RuntimeException('Expected User::factory()->create() to return a User instance.');
-    }
-    $admin->syncRoles([Role::findOrCreate('admin')]);
-
-    return $admin;
-}
-
+/**
+ * Modules\User\Models\BaseUser (HasXotFactory) lacks a newFactory() override, so
+ * Larastan's dynamic return type extension for the static User::factory() proxy
+ * cannot resolve the concrete factory class and treats it as mixed. Calling
+ * Modules\User\Database\Factories\UserFactory directly (same class
+ * GetFactoryAction would have resolved at runtime) sidesteps that, but the base
+ * Factory::create() stub still types its return as TModel|Collection<int, TModel>
+ * because count() might have been called; this helper narrows that back down to
+ * a single User, which is what actually happens at runtime here. Fix kept
+ * entirely inside Modules/WorkOrder. See
+ * docs/chat/2026-09-06-phpstan-workorder-claim.md for the cross-module note.
+ */
 function createSummaryUser(): User
 {
-    $user = User::factory()->create();
+    $user = UserFactory::new()->create();
     if (! $user instanceof User) {
-        throw new \RuntimeException('Expected User::factory()->create() to return a User instance.');
+        throw new RuntimeException('Expected UserFactory::new()->create() to return a single User instance.');
     }
 
     return $user;
 }
 
+function makeSummaryAdmin(): User
+{
+    $admin = createSummaryUser();
+    $admin->syncRoles([Role::findOrCreate('admin')]);
+
+    return $admin;
+}
+
 function makeSummaryCustomer(string $name): Customer
 {
-    return Customer::query()->create([
+    $customer = Customer::query()->create([
         'legal_name' => $name,
         'is_active' => true,
     ]);
+    if (! $customer instanceof Customer) {
+        throw new RuntimeException('Customer creation failed');
+    }
+
+    return $customer;
 }
 
 function makeSummaryWorkOrder(Customer $customer, string $code, string $title = 'Commessa resoconto'): WorkOrder
@@ -87,7 +99,7 @@ function addSummaryIntervention(
     return (int) DB::table('interventions')->insertGetId([
         'work_order_id' => $workOrderId,
         'customer_id' => $customerId,
-        'performed_by_user_id' => User::factory()->create()->id,
+        'performed_by_user_id' => createSummaryUser()->id,
         'scheduled_at' => $scheduledAt,
         'work_minutes' => $workMinutes,
         'outcome_code' => $outcomeCode,
@@ -405,8 +417,8 @@ it('falls back to the current month when the typed dates are unusable', function
     $page->assertOk();
     $page->call('downloadPdf');
     $page->assertFileDownloaded(sprintf(
-            'resoconto_periodico_%s_%s.pdf',
-            CarbonImmutable::now()->startOfMonth()->format('Ymd'),
-            CarbonImmutable::now()->endOfMonth()->format('Ymd'),
-        ));
+        'resoconto_periodico_%s_%s.pdf',
+        CarbonImmutable::now()->startOfMonth()->format('Ymd'),
+        CarbonImmutable::now()->endOfMonth()->format('Ymd'),
+    ));
 });

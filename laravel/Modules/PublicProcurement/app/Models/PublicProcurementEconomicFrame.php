@@ -9,13 +9,17 @@ use Modules\PublicProcurement\Database\Factories\PublicProcurementEconomicFrameF
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
-/**
- * @method static PublicProcurementEconomicFrameFactory factory($count = null, $state = [])
- */
 final class PublicProcurementEconomicFrame extends XotBaseModel
 {
-    /** @phpstan-use HasXotFactory<PublicProcurementEconomicFrameFactory> */
+    /**
+ * @method static PublicProcurementEconomicFrameFactory factory($count = null, $state = [])
+ */
     use HasXotFactory;
+
+    protected static function newFactory(): PublicProcurementEconomicFrameFactory
+    {
+        return PublicProcurementEconomicFrameFactory::new();
+    }
 
     protected $table = 'public_procurement_economic_frames';
 

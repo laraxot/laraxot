@@ -68,7 +68,7 @@ Consolidated from **10** individual files.
 
 
 **Data**: 2026-01-09  
-**Filosofia**: DRY + KISS + SOLID + Robust + Laravel 13 + Filament 4 + PHP 8.3
+**Filosofia**: DRY + KISS + SOLID + Robust + Laravel 12 + Filament 4 + PHP 8.3
 
 ---
 
@@ -249,7 +249,7 @@ class MyResource extends XotBaseResource { }
 - [Pest](https://pestphp.com/) - Testing framework
 - [Filament](https://filamentphp.com/docs) - Admin panel
 - [Laravel Modules](https://laravelmodules.com/) - Modular architecture
-- [Laravel 13](https://laravel.com/docs/12.x) - Framework
+- [Laravel 12](https://laravel.com/docs/12.x) - Framework
 
 ### Community
 - [Laravel News](https://laravel-news.com/)

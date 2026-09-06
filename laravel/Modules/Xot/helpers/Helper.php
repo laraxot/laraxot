@@ -99,15 +99,9 @@ if (! function_exists('params2ContainerItem')) {
         $item = [];
         foreach ($params as $k => $v) {
             $pattern = '/(container|item)(\d+)/';
-            if (preg_match($pattern, $k) !== 1) {
-                continue;
-            }
-            $matches = [];
             preg_match($pattern, $k, $matches);
             if (count($matches) >= 3) {
-                /** @var 'container'|'item' $sk */
                 $sk = $matches[1];
-                /** @var numeric-string $sv */
                 $sv = $matches[2];
                 ${$sk}[$sv] = $v;
             }
@@ -280,7 +274,7 @@ if (! function_exists('xotSeedModelOnce')) {
      */
     function xotSeedModelOnce(string $modelClass): void
     {
-        (new GetFactoryAction())
+        (new GetFactoryAction)
             ->execute($modelClass)
             ->createOne();
     }

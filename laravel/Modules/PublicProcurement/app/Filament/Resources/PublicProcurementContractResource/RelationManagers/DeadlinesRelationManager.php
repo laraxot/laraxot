@@ -49,6 +49,6 @@ final class DeadlinesRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('due_at')->dateTime()->sortable(),
             ])
             ->headerActions([CreateAction::make()])
-            ->actions([EditAction::make(), DeleteAction::make()]);
+            ->recordActions([EditAction::make(), DeleteAction::make()]);
     }
 }

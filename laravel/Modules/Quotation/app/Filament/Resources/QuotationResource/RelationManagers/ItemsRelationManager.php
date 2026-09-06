@@ -14,6 +14,7 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 use Modules\Quotation\Actions\RecalculateQuotationTotalsAction;
 use Modules\Quotation\Models\Quotation;
 
@@ -21,7 +22,7 @@ final class ItemsRelationManager extends RelationManager
 {
     protected static string $relationship = 'items';
 
-    public static function getTitle(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): string
+    public static function getTitle(Model $ownerRecord, string $pageClass): string
     {
         return __('quotations.quotation_items');
     }
@@ -104,7 +105,7 @@ final class ItemsRelationManager extends RelationManager
                         app(RecalculateQuotationTotalsAction::class)->execute($quotation);
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 EditAction::make()
                     ->after(function (RelationManager $livewire): void {
                         /** @var Quotation $quotation */
@@ -118,7 +119,7 @@ final class ItemsRelationManager extends RelationManager
                         app(RecalculateQuotationTotalsAction::class)->execute($quotation);
                     }),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make()
                     ->after(function (RelationManager $livewire): void {
                         /** @var Quotation $quotation */
@@ -128,4 +129,3 @@ final class ItemsRelationManager extends RelationManager
             ]);
     }
 }
-

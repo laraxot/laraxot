@@ -58,7 +58,7 @@ describe('Two Factor Service', function (): void {
 
         Assert::assertCount(10, $result['recovery_codes']);
         foreach ($result['recovery_codes'] as $code) {
-            Assert::assertMatchesRegularExpression('/^[a-zA-Z0-9]+-[a-zA-Z0-9]+$/', (string) $code);
+            Assert::assertMatchesRegularExpression('/^[a-zA-Z0-9]+-[a-zA-Z0-9]+$/', is_string($code) ? $code : '');
         }
     });
 
@@ -217,7 +217,7 @@ describe('Two Factor Service', function (): void {
         $user = TestCase::requireUser();
         $result = enableTwoFactorForUser($user, $google2fa);
 
-        Assert::assertStringContainsString((string) rawurlencode($user->email), (string) $result['qr_code']);
+        Assert::assertStringContainsString(is_string($user->email) ? rawurlencode($user->email) : '', is_string($result['qr_code']) ? $result['qr_code'] : '');
     });
 
     test('qr code is valid otpauth url', function (): void {
@@ -226,8 +226,8 @@ describe('Two Factor Service', function (): void {
         $user = TestCase::requireUser();
         $result = enableTwoFactorForUser($user, $google2fa);
 
-        Assert::assertStringStartsWith('otpauth://totp/', (string) $result['qr_code']);
-        Assert::assertStringContainsString((string) 'secret=', (string) $result['qr_code']);
+        Assert::assertStringStartsWith('otpauth://totp/', is_string($result['qr_code']) ? $result['qr_code'] : '');
+        Assert::assertStringContainsString('secret=', is_string($result['qr_code']) ? $result['qr_code'] : '');
     });
 
     test('secret is properly encrypted in database', function (): void {
@@ -257,7 +257,7 @@ describe('Two Factor Service', function (): void {
         $encrypted = $freshUser->two_factor_recovery_codes;
 
         Assert::assertNotNull($encrypted);
-        Assert::assertSame($result['recovery_codes'], json_decode((string) decrypt($encrypted), true));
+        Assert::assertSame($result['recovery_codes'], json_decode(is_string(decrypt($encrypted)) ? decrypt($encrypted) : '', true));
     });
 
     test('enable can be called multiple times', function (): void {

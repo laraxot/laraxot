@@ -72,3 +72,23 @@ reduction (best-effort)".
   `app/Models/Traits/SushiToCsv.php:153,217`, `app/Models/Traits/SushiToJson.php:451`,
   `app/Actions/Config/ResolveTenantConfigValueAction.php:68`. Da riprendere in una sessione
   successiva quando quel WIP sara' committato/pushato.
+
+### Aggiornamento 2026-09-06 (sessione claude sonnet 5, `phpstan-tenant-fix.md`)
+
+Il WIP concorrente su quei 4 file e' stato committato (`git status --short` su
+`Modules/Tenant` mostra solo `docs/*.md` modificati, i file `app/` sono puliti). Riverificati
+tutti e 4:
+
+- `resolveRowIdKey(mixed $id)` riceve `Model::getKey()`, dichiarato `@return mixed` senza
+  cast nativo dal framework.
+- `csvValue(mixed $value)` / `intValue(mixed $value)` ricevono valori da
+  `array<string, mixed>` (righe Sushi) o `Model::getAttribute()`, entrambi genuinamente
+  polimorfici (bool/int/float/string/Stringable/null).
+- `assertValidConfigValue(mixed $res)` riceve `config($key, $default)`, anch'esso
+  `mixed` lato framework.
+
+In tutti e 4 i casi il corpo della funzione fa immediatamente narrowing a runtime
+(`is_int`/`is_string`/`Assert::scalar`/`is_numeric`) prima di restituire un tipo specifico:
+e' esattamente il pattern raccomandato per confinare un `mixed` di provenienza framework, non
+un caso di "mixed non ancora sostituito". Nessun cambio applicato — follow-up chiuso come
+"confermato corretto", non come "da fare".

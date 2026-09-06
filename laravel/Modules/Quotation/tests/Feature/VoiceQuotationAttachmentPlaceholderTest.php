@@ -61,8 +61,9 @@ it('shows a "being prepared" placeholder row and queues the rewrite job', functi
     $media = $new->media()->where('kind', 'document')->first();
     Assert::assertInstanceOf(Media::class, $media);
     Assert::assertSame(__('quotations.voice.attachment_preparing_title'), $media->title);
-
-    Bus::assertDispatched(RewriteQuotationAttachmentsJob::class, fn (RewriteQuotationAttachmentsJob $job): bool => $job->targetId === (int) $new->id && $job->placeholderMediaId === (int) $media->id);
+    $mediaId = is_int($media->id) ? $media->id : 0;
+    $newId = is_int($new->id) ? $new->id : 0;
+    Bus::assertDispatched(RewriteQuotationAttachmentsJob::class, fn (RewriteQuotationAttachmentsJob $job): bool => $job->targetId === $newId && $job->placeholderMediaId === $mediaId);
 });
 
 it('swaps the placeholder for the real document when the job succeeds', function (): void {
@@ -81,7 +82,7 @@ it('swaps the placeholder for the real document when the job succeeds', function
     $firstDoc = $docs->first();
     Assert::assertInstanceOf(Media::class, $firstDoc);
     Assert::assertNotSame(__('quotations.voice.attachment_preparing_title'), $firstDoc->title);
-    expect(strtolower((string) $firstDoc->path))->toEndWith('.ods');
+    expect(strtolower(is_string($firstDoc->path) ? $firstDoc->path : ''))->toEndWith('.ods');
 });
 
 it('recomputes the quotation notes (validity/payments) via AI in the job', function (): void {

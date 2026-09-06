@@ -122,7 +122,7 @@ class LoginWidget extends XotBaseSchemaWidget
                 }
 
                 /* @var array<int, string> $messages */
-                $this->addError($field, implode(' ', array_map(static fn (mixed $v): string => (string) $v, $messages)));
+                $this->addError($field, implode(' ', array_map(static fn (mixed $v): string => is_string($v) ? $v : '', $messages)));
             }
         } catch (\Exception $e) {
             report($e);

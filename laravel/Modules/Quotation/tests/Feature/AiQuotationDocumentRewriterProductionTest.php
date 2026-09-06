@@ -26,7 +26,7 @@ function fakeRewriterHttp(callable $byModel): void
     Http::fake([
         '*/chat/completions' => function (Request $request) use ($byModel) {
             $data = httpClientRequestData($request);
-            $model = (string) ($data['model'] ?? '');
+            $model = is_string($data['model'] ?? null) ? $data['model'] : '';
             $payload = ['replacements' => $byModel($model)];
 
             return Http::response(['choices' => [['message' => ['content' => json_encode($payload, JSON_UNESCAPED_UNICODE)]]]], 200);

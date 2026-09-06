@@ -84,7 +84,7 @@ it('AI-rewrites the source attachment into the new quotation document and attach
     // The attached document has the AI's replacements applied (the layout is kept).
     $media = $target->media()->where('kind', 'document')->first();
     Assert::assertInstanceOf(Media::class, $media);
-    $text = app(QuotationDocumentTextExtractor::class)->extract(Storage::disk('local')->path((string) $media->path), 'x.ods');
+    $text = app(QuotationDocumentTextExtractor::class)->extract(Storage::disk('local')->path(is_string($media->path) ? $media->path : ''), 'x.ods');
     expect($text)->toContain('Scaldabagno elettrico 80 lt verticale');
     expect($text)->not->toContain('Ariston');
 });

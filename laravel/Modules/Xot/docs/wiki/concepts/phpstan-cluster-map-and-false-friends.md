@@ -34,6 +34,6 @@ Cluster piu' ricorrenti osservati:
 
 ## Priorita'
 
-1. allineare i wrapper Xot ai contratti reali di Filament 5 / Laravel 13
+1. allineare i wrapper Xot ai contratti reali di Filament 5 / Laravel 12
 2. ridurre `mixed` nelle basi comuni
 3. solo dopo fare cleanup seriale dei moduli dipendenti

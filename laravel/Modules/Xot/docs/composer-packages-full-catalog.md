@@ -257,7 +257,7 @@ This document is generated from `composer show --format=json` and represents a f
 | `spatie/laravel-model-states` | `2.12.1` | `yes` | `laravel-extensions` | `shared-runtime` | State support for Eloquent models |
 | `spatie/laravel-model-status` | `1.19.0` | `yes` | `laravel-extensions` | `shared-runtime` | A package to enable assigning statuses to Eloquent Models |
 | `spatie/laravel-package-tools` | `1.92.7` | `yes` | `laravel-extensions` | `shared-runtime` | Tools for creating Laravel packages |
-| `spatie/laravel-permission` | `7.2.0` | `yes` | `laravel-extensions` | `shared-runtime` | Permission handling for Laravel 13 and up |
+| `spatie/laravel-permission` | `7.2.0` | `yes` | `laravel-extensions` | `shared-runtime` | Permission handling for Laravel 12 and up |
 | `spatie/laravel-personal-data-export` | `4.3.1` | `yes` | `laravel-extensions` | `shared-runtime` | Create personal data downloads in a Laravel app |
 | `spatie/laravel-queueable-action` | `2.16.2` | `yes` | `laravel-extensions` | `contracts-actions-jobs` | Queueable action support in Laravel |
 | `spatie/laravel-responsecache` | `7.7.2` | `yes` | `laravel-extensions` | `shared-runtime` | Speed up a Laravel application by caching the entire response |

@@ -22,6 +22,8 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  * @property int $sort_order
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
+ * @method static QuotationTemplateItemFactory factory($count = null, $state = [])
  */
 final class QuotationTemplateItem extends BaseModel
 {

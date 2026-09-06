@@ -14,6 +14,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
 use Modules\Job\Database\Factories\TaskFactory;
 use Modules\Job\Models\Traits\FrontendSortable;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Webmozart\Assert\Assert;
@@ -95,9 +96,7 @@ class Task extends BaseModel
 {
     // use HasFrequencies;
     use FrontendSortable;
-
     use HasXotFactory;
-
     use Notifiable;
 
     protected $fillable = [
@@ -151,11 +150,7 @@ class Task extends BaseModel
             /** @var array<int|string, string> $result */
             $result = [];
             foreach ($parameters as $key => $value) {
-                $result[$key] = match (true) {
-                    is_bool($value) => $value ? '1' : '0',
-                    is_scalar($value) => (string) $value,
-                    default => '',
-                };
+                $result[$key] = SafeStringCastAction::cast($value);
             }
 
             return $result;

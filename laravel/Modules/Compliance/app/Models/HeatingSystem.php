@@ -5,11 +5,15 @@ declare(strict_types=1);
 namespace Modules\Compliance\Models;
 
 use Carbon\CarbonInterface;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Compliance\Database\Factories\HeatingSystemFactory;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
+use Modules\Xot\Actions\Factory\GetFactoryAction;
+use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
 /**
@@ -27,7 +31,13 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class HeatingSystem extends XotBaseModel
 {
+    use HasXotFactory;
     use SoftDeletes;
+
+    protected static function newFactory(): HeatingSystemFactory
+    {
+        return HeatingSystemFactory::new();
+    }
 
     protected $table = 'heating_systems';
 

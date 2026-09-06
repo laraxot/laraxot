@@ -49,6 +49,6 @@ final class PriceItemsRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('planned_total')->money('EUR')->sortable(),
             ])
             ->headerActions([CreateAction::make()])
-            ->actions([EditAction::make(), DeleteAction::make()]);
+            ->recordActions([EditAction::make(), DeleteAction::make()]);
     }
 }

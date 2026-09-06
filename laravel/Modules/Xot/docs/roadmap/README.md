@@ -15,7 +15,7 @@
 
 ## 🎯 Vision
 
-Consolidate Xot as a **Zero-Config** framework for Laravel 13, where every new module automatically inherits:
+Consolidate Xot as a **Zero-Config** framework for Laravel 12, where every new module automatically inherits:
 
 - ✅ **Security** through base class patterns
 - ✅ **Internationalization** via translation traits
@@ -42,7 +42,7 @@ All achieved through **simple base class extension**.
 ### Recent Achievements
 
 - ✅ PHPStan Level 10: 100% compliant
-- ✅ Laravel 13: Full compatibility
+- ✅ Laravel 12: Full compatibility
 - ✅ Filament v5: Complete migration
 - ✅ Base Classes: 50+ classes implemented
 - ✅ Type Safety: 100% typed codebase

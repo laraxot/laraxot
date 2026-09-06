@@ -67,7 +67,7 @@ final class QuotationsMarginByProjectChart extends ChartWidget
             $rowRevenue = is_numeric($row->revenue) ? (float) $row->revenue : 0.0;
             $rowCost = is_numeric($row->cost) ? (float) $row->cost : 0.0;
 
-            $labels[] = (string) $row->project;
+            $labels[] = is_string($row->project) ? $row->project : '';
             $revenue[] = round($rowRevenue, 2);
             $margin[] = round($rowRevenue - $rowCost, 2);
         }

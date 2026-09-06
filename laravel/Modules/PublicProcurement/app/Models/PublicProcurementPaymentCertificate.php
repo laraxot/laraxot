@@ -11,13 +11,17 @@ use Modules\PublicProcurement\Database\Factories\PublicProcurementPaymentCertifi
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
-/**
- * @method static PublicProcurementPaymentCertificateFactory factory($count = null, $state = [])
- */
 final class PublicProcurementPaymentCertificate extends XotBaseModel
 {
-    /** @phpstan-use HasXotFactory<PublicProcurementPaymentCertificateFactory> */
+    /**
+ * @method static PublicProcurementPaymentCertificateFactory factory($count = null, $state = [])
+ */
     use HasXotFactory;
+
+    protected static function newFactory(): PublicProcurementPaymentCertificateFactory
+    {
+        return PublicProcurementPaymentCertificateFactory::new();
+    }
 
     use SoftDeletes;
 

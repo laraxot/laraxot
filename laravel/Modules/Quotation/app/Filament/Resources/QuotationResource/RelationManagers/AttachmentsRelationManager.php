@@ -64,7 +64,11 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
             FileUpload::make('path')
                 ->label(__('quotations.attachments.file'))
                 ->disk('local')
-                ->directory(fn (): string => 'quotation-attachments/'.(string) $this->getOwnerRecord()->getKey())
+                ->directory(function (): string {
+                    $key = $this->getOwnerRecord()->getKey();
+
+                    return 'quotation-attachments/'.(is_scalar($key) ? (string) $key : '');
+                })
                 ->visibility('private')
                 ->acceptedFileTypes(self::ACCEPTED_MIME_TYPES)
                 ->maxSize(20480)
@@ -134,14 +138,19 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
                         /** @var Quotation $quotation */
                         $quotation = $this->getOwnerRecord();
 
-                        $path = is_array($data['path']) ? (string) reset($data['path']) : (string) $data['path'];
+                        $pathValue = $data['path'];
+                        if (is_array($pathValue)) {
+                            $pathValue = reset($pathValue);
+                        }
+                        $path = is_string($pathValue) ? $pathValue : '';
 
                         $original = $data['original_name'] ?? null;
                         if (is_array($original)) {
                             $original = reset($original);
                         }
 
-                        $title = trim((string) ($data['title'] ?? ''));
+                        $rawTitle = $data['title'] ?? '';
+                        $title = is_string($rawTitle) ? trim($rawTitle) : '';
                         if ($title === '') {
                             $title = is_string($original) && $original !== '' ? $original : basename($path);
                         }
@@ -157,7 +166,7 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
                         );
                     }),
             ])
-            ->actions([
+            ->recordActions([
                 Action::make('download')
                     ->label(__('quotations.attachments.download'))
                     ->icon('heroicon-o-arrow-down-tray')

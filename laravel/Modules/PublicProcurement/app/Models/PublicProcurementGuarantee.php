@@ -11,13 +11,17 @@ use Modules\PublicProcurement\Database\Factories\PublicProcurementGuaranteeFacto
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
-/**
- * @method static PublicProcurementGuaranteeFactory factory($count = null, $state = [])
- */
 final class PublicProcurementGuarantee extends XotBaseModel
 {
-    /** @phpstan-use HasXotFactory<PublicProcurementGuaranteeFactory> */
+    /**
+ * @method static PublicProcurementGuaranteeFactory factory($count = null, $state = [])
+ */
     use HasXotFactory;
+
+    protected static function newFactory(): PublicProcurementGuaranteeFactory
+    {
+        return PublicProcurementGuaranteeFactory::new();
+    }
 
     use SoftDeletes;
 

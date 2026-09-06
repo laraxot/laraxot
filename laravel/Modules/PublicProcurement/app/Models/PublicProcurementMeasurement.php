@@ -12,13 +12,17 @@ use Modules\User\Models\User;
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
-/**
- * @method static PublicProcurementMeasurementFactory factory($count = null, $state = [])
- */
 final class PublicProcurementMeasurement extends XotBaseModel
 {
-    /** @phpstan-use HasXotFactory<PublicProcurementMeasurementFactory> */
+    /**
+ * @method static PublicProcurementMeasurementFactory factory($count = null, $state = [])
+ */
     use HasXotFactory;
+
+    protected static function newFactory(): PublicProcurementMeasurementFactory
+    {
+        return PublicProcurementMeasurementFactory::new();
+    }
 
     use SoftDeletes;
 

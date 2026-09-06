@@ -3,7 +3,7 @@
 ## Logica (Logic)
 
 ### Architettura del Sistema
-Quaeris è un sistema completo di gestione survey basato su Laravel 13 + Filament 4 con il framework Laraxot. L'architettura è modulare e segue il pattern:
+Quaeris è un sistema completo di gestione survey basato su Laravel 12 + Filament 4 con il framework Laraxot. L'architettura è modulare e segue il pattern:
 
 ```
 Xot (Motore) → Moduli Specifici (User, Quaeris, etc.) → Funzionalità

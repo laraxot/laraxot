@@ -44,7 +44,7 @@ class TokensRelationManager extends XotBaseRelationManager
             'scopes' => TextColumn::make('scopes')
                 ->limit(30)
                 ->tooltip(function (mixed $state): ?string {
-                    if (null === $state) {
+                    if ($state === null) {
                         return null;
                     }
                     if (is_array($state)) {
@@ -55,10 +55,10 @@ class TokensRelationManager extends XotBaseRelationManager
                 })
                 ->formatStateUsing(function (mixed $state): string {
                     if (is_array($state)) {
-                        return implode(', ', array_map(fn (mixed $s): string => (string) $s, $state));
+                        return implode(', ', array_map(fn (mixed $s): string => is_string($s) ? $s : '', $state));
                     }
 
-                    return (string) ($state ?? '');
+                    return is_string($state ?? null) ? $state : '';
                 }),
             'revoked' => IconColumn::make('revoked')
                 ->boolean()

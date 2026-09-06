@@ -37,7 +37,7 @@
 ### External Documentation
 
 #### Laravel Documentation
-- [Laravel 13 Documentation](https://laravel.com/docs/12.x)
+- [Laravel 12 Documentation](https://laravel.com/docs/12.x)
 - [Laravel API Documentation](https://laravel.com/api/12.x)
 - [Laravel Upgrade Guide](https://laravel.com/docs/12.x/upgrade)
 - [Laravel Contributing Guide](https://laravel.com/docs/contributions)
@@ -257,7 +257,7 @@
 ## Quick Links
 
 ### Essential Links
-- [Laravel 13 Docs](https://laravel.com/docs/12.x)
+- [Laravel 12 Docs](https://laravel.com/docs/12.x)
 - [Filament 5 Docs](https://filamentphp.com/docs/5.x)
 - [PHPStan Docs](https://phpstan.org/user-guide)
 - [Pest Docs](https://pestphp.com/docs)

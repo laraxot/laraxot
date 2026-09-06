@@ -31,14 +31,14 @@ class ViewSocialProvider extends XotBaseViewRecord
                         return json_encode($state);
                     }
 
-                    return is_string($state) ? $state : ((string) $state);
+                    return is_string($state) ? $state : '';
                 }),
                 'parameters' => TextEntry::make('parameters')->formatStateUsing(function ($state): string {
                     if (is_array($state)) {
                         return json_encode($state);
                     }
 
-                    return is_string($state) ? $state : ((string) $state);
+                    return is_string($state) ? $state : '';
                 }),
                 'stateless' => TextEntry::make('stateless')->badge()->color(fn (bool $state): string => $state ? 'success' : 'danger'),
                 'active' => TextEntry::make('active')->badge()->color(fn (bool $state): string => $state ? 'success' : 'danger'),

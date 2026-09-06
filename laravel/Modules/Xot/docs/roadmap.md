@@ -117,7 +117,7 @@ EnumTrait          // Enum utilities
 **Impact**: Module loading failures
 
 ### **Issue #2: UUID Trait Management** ✅ RESOLVED
-**Resolution**: Implemented Laravel 13 native UUID with Passport compatibility bridge
+**Resolution**: Implemented Laravel 12 native UUID with Passport compatibility bridge
 
 ### **Issue #3: Asset Path Resolution**
 **Error**: Module path not found for 'assets' generator
@@ -324,7 +324,7 @@ done
 
 ### **UUID Strategy Decision** ✅
 **Date**: 2026-01-02
-**Decision**: Use Laravel 13 native UUID with Passport compatibility bridge
+**Decision**: Use Laravel 12 native UUID with Passport compatibility bridge
 **Rationale**: Future-proof, consistent, maintainable
 
 ### **Service Provider Order Decision**

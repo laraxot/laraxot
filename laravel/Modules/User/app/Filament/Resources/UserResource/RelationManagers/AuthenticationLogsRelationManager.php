@@ -46,11 +46,11 @@ class AuthenticationLogsRelationManager extends XotBaseRelationManager
                 ->formatStateUsing(function ($state) {
                     if (is_array($state)) {
                         return collect($state)
-                            ->map(fn ($value, $key): string => (string) $key.': '.(string) $value)
+                            ->map(fn ($value, $key): string => (is_string($key) ? $key : '').': '.(is_string($value) ? $value : ''))
                             ->join(', ');
                     }
 
-                    if (null === $state) {
+                    if ($state === null) {
                         return 'N/A';
                     }
 

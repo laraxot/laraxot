@@ -10,13 +10,17 @@ use Modules\PublicProcurement\Database\Factories\PublicProcurementDeadlineFactor
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
-/**
- * @method static PublicProcurementDeadlineFactory factory($count = null, $state = [])
- */
 final class PublicProcurementDeadline extends XotBaseModel
 {
-    /** @phpstan-use HasXotFactory<PublicProcurementDeadlineFactory> */
+    /**
+ * @method static PublicProcurementDeadlineFactory factory($count = null, $state = [])
+ */
     use HasXotFactory;
+
+    protected static function newFactory(): PublicProcurementDeadlineFactory
+    {
+        return PublicProcurementDeadlineFactory::new();
+    }
 
     use SoftDeletes;
 

@@ -49,6 +49,6 @@ final class OfficialRecordsRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('recorded_on')->date()->sortable(),
             ])
             ->headerActions([CreateAction::make()])
-            ->actions([EditAction::make(), DeleteAction::make()]);
+            ->recordActions([EditAction::make(), DeleteAction::make()]);
     }
 }

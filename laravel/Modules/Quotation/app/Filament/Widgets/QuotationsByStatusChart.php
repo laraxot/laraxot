@@ -55,7 +55,7 @@ final class QuotationsByStatusChart extends ChartWidget
             ->selectRaw('status_code, COUNT(*) as total')
             ->groupBy('status_code')
             ->pluck('total', 'status_code')
-            ->map(static fn ($value): int => (int) $value)
+            ->map(static fn ($value): int => is_int($value) ? $value : 0)
             ->all();
 
         $labels = [];

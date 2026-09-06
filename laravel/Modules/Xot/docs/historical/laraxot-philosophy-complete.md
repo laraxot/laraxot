@@ -47,7 +47,7 @@ Xot (Core Engine)
 
 ### Technology Stack
 - **PHP 8.3.27** - Modern PHP with strict typing
-- **Laravel 13.38.1** - Latest Laravel framework
+- **Laravel 12.38.1** - Latest Laravel framework
 - **Filament 4.2.2** - Admin panel framework
 - **Livewire 4.6.4** - Reactive UI components
 - **MySQL** - Primary database

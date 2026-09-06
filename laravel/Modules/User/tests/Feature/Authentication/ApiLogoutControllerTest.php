@@ -29,9 +29,13 @@ beforeEach(function (): void {
 
     TestCase::$device = DeviceFactory::new()->createOne();
 
+    $userKey = TestCase::requireUser()->getKey();
+    $userKeyStr = is_string($userKey) ? $userKey : '';
+    $deviceKey = TestCase::requireDevice()->getKey();
+    $deviceKeyStr = is_string($deviceKey) ? $deviceKey : '';
     DeviceUser::query()->create([
-        'user_id' => (string) TestCase::requireUser()->getKey(),
-        'device_id' => (string) TestCase::requireDevice()->getKey(),
+        'user_id' => $userKeyStr,
+        'device_id' => $deviceKeyStr,
         'login_at' => now()->subHour(),
         'logout_at' => null,
     ]);
@@ -63,16 +67,19 @@ describe('Api Logout Controller', function (): void {
         $accessTokenModel = $user->tokens()->latest('id')->first();
         Assert::assertNotNull($accessTokenModel);
 
+        $userId = $user->getKey();
+        $userIdString = is_string($userId) ? $userId : (string) ($userId ?? '');
+
         Assert::assertTrue(DB::connection('user')->table('oauth_access_tokens')->where('id', $accessTokenModel->getKey())->exists());
-        Assert::assertTrue(DeviceUser::query()->where('user_id', (string) $user->getKey())->whereNull('logout_at')->exists());
+        Assert::assertTrue(DeviceUser::query()->where('user_id', $userIdString)->whereNull('logout_at')->exists());
         $response = $this->withHeader('Authorization', 'Bearer '.$tokenResult->accessToken)
             ->getJson('/api/v2/logout');
 
         $response->assertOk()
             ->assertJsonPath('message', 'Successfully logged out.')
-            ->assertJsonPath('data.user_id', (string) $user->getKey());
+            ->assertJsonPath('data.user_id', $userIdString);
 
         Assert::assertSame(1, DB::connection('user')->table('oauth_access_tokens')->where('id', $accessTokenModel->getKey())->value('revoked'));
-        Assert::assertTrue(DeviceUser::query()->where('user_id', (string) $user->getKey())->whereNotNull('logout_at')->exists());
+        Assert::assertTrue(DeviceUser::query()->where('user_id', $userIdString)->whereNotNull('logout_at')->exists());
     });
 });

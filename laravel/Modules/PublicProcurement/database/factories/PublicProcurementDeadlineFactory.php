@@ -29,7 +29,7 @@ class PublicProcurementDeadlineFactory extends Factory
             'title' => $this->faker->sentence(4),
             'status' => $status,
             'due_at' => $this->faker->dateTimeBetween('-1 month', '+2 months'),
-            'completed_at' => 'completed' === $status ? $this->faker->dateTimeBetween('-1 month', 'now') : null,
+            'completed_at' => $status === 'completed' ? $this->faker->dateTimeBetween('-1 month', 'now') : null,
             'severity' => $this->faker->randomElement(['info', 'warning', 'blocking']),
             'notes' => $this->faker->optional()->sentence(),
         ];

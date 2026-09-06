@@ -152,13 +152,13 @@ class XotBaseResource extends Resource
 }
 ```
 
-## 🔧 Fix Testing Laravel 13
+## 🔧 Fix Testing Laravel 12
 
 Il modulo Xot include il trait `CreatesApplication` per tutti i test dei moduli:
 
 - **✅ Trait Centralizzato**: `Modules\Xot\Tests\CreatesApplication`
 - **✅ Import Corretti**: Tutti i moduli usano il trait corretto
-- **✅ Compatibilità Laravel 13**: Test funzionanti con la nuova versione
+- **✅ Compatibilità Laravel 12**: Test funzionanti con la nuova versione
 - **✅ Struttura Consistente**: Pattern standardizzato per tutti i moduli
 
 📚 **Documentazione Completa**: [Fix Testing Issues](docs/testing-fixes.md)
@@ -453,7 +453,7 @@ Questo progetto è distribuito sotto la licenza MIT. Vedi il file [LICENSE](LICE
 # ⚡ Xot
 
 [![Core](https://img.shields.io/badge/Role-Platform%20Core-6A1B9A.svg)](#)
-[![Laravel 13](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
 [![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
 [![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
 [![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)

@@ -37,7 +37,8 @@ test('it logs registration with custom properties', function (): void {
 
     $row = DB::connection('user')->table('activity_log')->orderByDesc('id')->first();
     Assert::assertNotNull($row);
-    Assert::assertStringContainsString((string) 'newsletter', (string) (string) $row->properties);
+    $properties = is_object($row) && property_exists($row, 'properties') ? $row->properties : null;
+    Assert::assertStringContainsString('newsletter', is_string($properties) ? $properties : '');
 });
 
 test('it logs registration with different user types', function (): void {

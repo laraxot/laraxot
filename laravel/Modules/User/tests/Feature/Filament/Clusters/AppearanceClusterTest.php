@@ -71,7 +71,7 @@ describe('Appearance Cluster', function (): void {
         }
 
         foreach ($files as $file) {
-            $filePath = (string) $file;
+            $filePath = is_string($file) ? $file : '';
             $content = (string) file_get_contents($filePath);
             Assert::assertStringContainsString('extends XotBasePage', $content, basename($filePath));
             Assert::assertStringNotContainsString('extends Page', $content, basename($filePath));

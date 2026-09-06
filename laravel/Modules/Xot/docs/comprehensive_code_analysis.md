@@ -2,7 +2,7 @@
 # Analisi Completa del Codice - Sistema Laraxot
 
 ## Panoramica
-Analisi sistematica di tutti i moduli del progetto per identificare violazioni dei principi DRY, KISS, SOLID e problemi di performance in ottica Laravel 13 + PHP 8.3 + Filament 4.
+Analisi sistematica di tutti i moduli del progetto per identificare violazioni dei principi DRY, KISS, SOLID e problemi di performance in ottica Laravel 12 + PHP 8.3 + Filament 4.
 
 ## 🔴 CRITICI - Violazioni Principi e Errori
 
@@ -263,7 +263,7 @@ public function execute(Contact $contact): void
  */
 ```
 
-### 2. Laravel 13 Compatibility
+### 2. Laravel 12 Compatibility
 
 #### Casts Method
 ```php
@@ -416,7 +416,7 @@ return [
 ## 🔗 Collegamenti Correlati
 
 - [Architettura Moduli](architecture.md)
-- [Best Practices Laravel 13](./LARAVEL_12_GUIDE.md)
+- [Best Practices Laravel 12](./LARAVEL_12_GUIDE.md)
 - [Pattern Filament](./FILAMENT_PATTERNS.md)
 - [Performance Optimization](./PERFORMANCE_GUIDE.md)
 
@@ -456,7 +456,7 @@ See canonical documentation: ../../../Themes/docs/shared-components/COMPREHENSIV
 # Analisi Completa del Codice - Sistema Laraxot
 
 ## Panoramica
-Analisi sistematica di tutti i moduli del progetto per identificare violazioni dei principi DRY, KISS, SOLID e problemi di performance in ottica Laravel 13 + PHP 8.3 + Filament 4.
+Analisi sistematica di tutti i moduli del progetto per identificare violazioni dei principi DRY, KISS, SOLID e problemi di performance in ottica Laravel 12 + PHP 8.3 + Filament 4.
 
 ## 🔴 CRITICI - Violazioni Principi e Errori
 
@@ -717,7 +717,7 @@ public function execute(Contact $contact): void
  */
 ```
 
-### 2. Laravel 13 Compatibility
+### 2. Laravel 12 Compatibility
 
 #### Casts Method
 ```php
@@ -870,7 +870,7 @@ return [
 ## 🔗 Collegamenti Correlati
 
 - [Architettura Moduli](architecture.md)
-- [Best Practices Laravel 13](./LARAVEL_12_GUIDE.md)
+- [Best Practices Laravel 12](./LARAVEL_12_GUIDE.md)
 - [Pattern Filament](./FILAMENT_PATTERNS.md)
 - [Performance Optimization](./PERFORMANCE_GUIDE.md)
 
@@ -904,7 +904,7 @@ return [
 # Analisi Completa del Codice - Sistema Laraxot
 
 ## Panoramica
-Analisi sistematica di tutti i moduli del progetto per identificare violazioni dei principi DRY, KISS, SOLID e problemi di performance in ottica Laravel 13 + PHP 8.3 + Filament 4.
+Analisi sistematica di tutti i moduli del progetto per identificare violazioni dei principi DRY, KISS, SOLID e problemi di performance in ottica Laravel 12 + PHP 8.3 + Filament 4.
 
 ## 🔴 CRITICI - Violazioni Principi e Errori
 
@@ -1165,7 +1165,7 @@ public function execute(Contact $contact): void
  */
 ```
 
-### 2. Laravel 13 Compatibility
+### 2. Laravel 12 Compatibility
 
 #### Casts Method
 ```php
@@ -1318,7 +1318,7 @@ return [
 ## 🔗 Collegamenti Correlati
 
 - [Architettura Moduli](./ARCHITECTURE.md)
-- [Best Practices Laravel 13](./LARAVEL_12_GUIDE.md)
+- [Best Practices Laravel 12](./LARAVEL_12_GUIDE.md)
 - [Pattern Filament](./FILAMENT_PATTERNS.md)
 - [Performance Optimization](./PERFORMANCE_GUIDE.md)
 

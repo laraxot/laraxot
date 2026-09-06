@@ -42,8 +42,12 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class PublicProcurementTenderOpportunity extends XotBaseModel
 {
-    /** @phpstan-use HasXotFactory<PublicProcurementTenderOpportunityFactory> */
     use HasXotFactory;
+
+    protected static function newFactory(): PublicProcurementTenderOpportunityFactory
+    {
+        return PublicProcurementTenderOpportunityFactory::new();
+    }
 
     use SoftDeletes;
 

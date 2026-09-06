@@ -52,6 +52,6 @@ final class DocumentRequirementsRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('due_on')->date()->sortable(),
             ])
             ->headerActions([CreateAction::make()])
-            ->actions([EditAction::make(), DeleteAction::make()]);
+            ->recordActions([EditAction::make(), DeleteAction::make()]);
     }
 }

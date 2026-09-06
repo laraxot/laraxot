@@ -131,7 +131,8 @@ final class SiteSurveyResource extends GatedXotBaseResource
                     Select::make('customer_site_id')
                         ->label(__('site_surveys.fields.customer_site'))
                         ->options(function (callable $get): array {
-                            $customerId = (int) ($get('customer_id') ?? 0);
+                            $rawCustomerId = $get('customer_id');
+                            $customerId = is_numeric($rawCustomerId) ? (int) $rawCustomerId : 0;
 
                             if ($customerId <= 0) {
                                 return [];
@@ -230,7 +231,7 @@ final class SiteSurveyResource extends GatedXotBaseResource
                     ->label(__('site_surveys.fields.attachments_count'))
                     ->counts('media')
                     ->badge()
-                    ->color(fn (mixed $state): string => (int) $state > 0 ? 'success' : 'warning'),
+                    ->color(fn (mixed $state): string => is_numeric($state) && (int) $state > 0 ? 'success' : 'warning'),
             ])
             ->defaultSort('scheduled_at', 'desc')
             ->filters([
@@ -238,11 +239,11 @@ final class SiteSurveyResource extends GatedXotBaseResource
                     ->label(__('site_surveys.fields.status'))
                     ->options(self::statusOptions()),
             ])
-            ->actions([
+            ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
                 RestoreBulkAction::make(),
                 ForceDeleteBulkAction::make(),

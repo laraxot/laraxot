@@ -49,8 +49,12 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class PublicProcurementContract extends XotBaseModel
 {
-    /** @phpstan-use HasXotFactory<PublicProcurementContractFactory> */
     use HasXotFactory;
+
+    protected static function newFactory(): PublicProcurementContractFactory
+    {
+        return PublicProcurementContractFactory::new();
+    }
 
     use SoftDeletes;
 

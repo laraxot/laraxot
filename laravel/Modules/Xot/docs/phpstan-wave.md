@@ -9,7 +9,7 @@ declare(strict_types=1);
 |
 | Shared fixes applied in this wave:
 | - Removed legacy Doctrine-style schema diff logic from
-|   `XotBaseMigration::tableUpdate()` and aligned it with Laravel 13.
+|   `XotBaseMigration::tableUpdate()` and aligned it with Laravel 12.
 | - Normalized `UnitEnum` database connection names in pivot base models.
 | - Repaired typed Filament action callbacks that were calling services
 |   through mixed closures.

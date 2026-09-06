@@ -29,7 +29,7 @@ class GetUserTeamsOptionAction
 
             $teamKey = $team->getKey();
             $teamName = $team->getAttribute('name');
-            $options[is_string($teamKey) ? $teamKey : (string) $teamKey] = is_string($teamName) ? $teamName : '';
+            $options[is_string($teamKey) ? $teamKey : ''] = is_string($teamName) ? $teamName : '';
         }
 
         return $options;

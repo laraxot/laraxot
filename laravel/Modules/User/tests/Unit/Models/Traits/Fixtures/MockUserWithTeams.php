@@ -45,7 +45,9 @@ class MockUserWithTeams extends Model
 
     public function getKey(): string
     {
-        return (string) ($this->attributes['id'] ?? 'mock-user-1');
+        $id = $this->attributes['id'] ?? 'mock-user-1';
+
+        return is_string($id) ? $id : (string) $id;
     }
 
     /**

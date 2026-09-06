@@ -139,11 +139,11 @@ HAVING COUNT(*) < 3;
 
 ### 5. Fetch MCP - Framework Documentation
 
-**Uso principale**: Recupero documentazione Laravel 13 e PHP 8.3
+**Uso principale**: Recupero documentazione Laravel 12 e PHP 8.3
 
 **Ricerche tipiche**:
 ```
-# Laravel 13.x architecture improvements
+# Laravel 12.x architecture improvements
 https://laravel.com/docs/12.x/architecture-concepts
 
 # PHP 8.3 features for type safety

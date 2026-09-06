@@ -164,7 +164,7 @@ abstract class XotBaseTestCase extends BaseTestCase
         if (! $this->app->bound('translator')) {
             $this->app->singleton('translator', function (Application $app) {
                 return new Translator(
-                    new ArrayLoader(),
+                    new ArrayLoader,
                     'en'
                 );
             });
@@ -352,7 +352,7 @@ abstract class XotBaseTestCase extends BaseTestCase
 
     public function expectThrowableMessage(string $message): void
     {
-        $this->expectExceptionMessageMatches('/'.preg_quote($message, '/').'/');
+        $this->expectExceptionMessageIsOrContains($message);
     }
 
     public function expectThrowableMessageMatches(string $pattern): void

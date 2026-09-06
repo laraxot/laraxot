@@ -76,7 +76,7 @@ final class ViewQuotation extends ViewRecord
             Action::make('applyTemplate')
                 ->label(__('quotations.actions.apply_template'))
                 ->icon('heroicon-o-rectangle-stack')
-                ->form([
+                ->schema([
                     Select::make('template_id')
                         ->label(__('quotations.quotation_template'))
                         ->helperText('Applica un modello per inserire automaticamente righe e note precompilate nel preventivo.')
@@ -88,8 +88,9 @@ final class ViewQuotation extends ViewRecord
                 ->action(function (array $data): void {
                     /** @var Quotation $quotation */
                     $quotation = $this->getRecord();
+                    $templateId = $data['template_id'];
                     /** @var QuotationTemplate $template */
-                    $template = QuotationTemplate::query()->findOrFail((int) $data['template_id']);
+                    $template = QuotationTemplate::query()->findOrFail(is_numeric($templateId) ? (int) $templateId : 0);
                     app(ApplyQuotationTemplateToQuotationAction::class)->execute($quotation, $template);
                 }),
 
@@ -102,7 +103,7 @@ final class ViewQuotation extends ViewRecord
 
                     return $quotation->work_order_id === null;
                 })
-                ->form([
+                ->schema([
                     TextInput::make('title')
                         ->label(__('work_orders.fields.title'))
                         ->required()
@@ -136,9 +137,11 @@ final class ViewQuotation extends ViewRecord
                     /** @var Quotation $quotation */
                     $quotation = $this->getRecord();
 
+                    $title = $data['title'];
+
                     /** @var WorkOrder $workOrder */
                     $workOrder = app(CreateWorkOrderFromQuotationAction::class)->execute($quotation, [
-                        'title' => (string) $data['title'],
+                        'title' => is_string($title) ? $title : '',
                         'scheduled_at' => $data['scheduled_at'] ?? null,
                         'delivery_due_at' => $data['delivery_due_at'] ?? null,
                         'status_code' => is_string($data['status_code'] ?? null) ? $data['status_code'] : null,

@@ -235,7 +235,7 @@ With 80 packages × 110 seconds = 8,800 seconds = 2.4 hours
   - `dont-discover` opt-out mechanism added
 - **Laravel 6.x+**: Discovery extended to facades, aliases
 - **Laravel 8.x+**: Improved caching and performance
-- **Laravel 13.x** (Current): Mature, stable, production-proven
+- **Laravel 12.x** (Current): Mature, stable, production-proven
 
 **Inspiration**: Similar to Java's `ServiceLoader`, .NET's reflection-based discovery, Python's entry points.
 

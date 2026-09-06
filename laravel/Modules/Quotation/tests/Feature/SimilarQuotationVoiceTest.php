@@ -97,7 +97,7 @@ it('creates a quotation like Pinco Pallino for another customer, adding a METEL 
     // A brand-new quotation for the NEW customer.
     $marioId = DB::table('customers')->where('legal_name', 'Mario Rossi')->value('id');
     expect($marioId)->not->toBeNull();
-    $new = Quotation::query()->where('customer_id', (int) $marioId)->firstOrFail();
+    $new = Quotation::query()->where('customer_id', is_int($marioId) ? $marioId : 0)->firstOrFail();
     expect($new->id)->not->toBe($source->id);
 
     $descriptions = $new->items()->pluck('description')->all();
@@ -153,12 +153,12 @@ it('gives the new quotation a copy of the source attachment with the customer su
 
     $marioId = DB::table('customers')->where('legal_name', 'Mario Rossi')->value('id');
     expect($marioId)->not->toBeNull();
-    $new = Quotation::query()->where('customer_id', (int) $marioId)->firstOrFail();
+    $new = Quotation::query()->where('customer_id', is_int($marioId) ? $marioId : 0)->firstOrFail();
 
     // The new quotation carries an attachment like the source one, but modified.
     $media = $new->media()->where('kind', 'document')->first();
     Assert::assertInstanceOf(Media::class, $media);
-    $text = app(QuotationDocumentTextExtractor::class)->extract(Storage::disk('local')->path((string) $media->path), 'x.ods');
+    $text = app(QuotationDocumentTextExtractor::class)->extract(Storage::disk('local')->path(is_string($media->path) ? $media->path : ''), 'x.ods');
     expect($text)->toContain('Mario Rossi');
     expect($text)->not->toContain('Pico Pallino');
 });

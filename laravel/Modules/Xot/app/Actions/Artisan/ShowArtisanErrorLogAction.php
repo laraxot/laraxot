@@ -7,7 +7,6 @@ namespace Modules\Xot\Actions\Artisan;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Facades\File;
 use Spatie\QueueableAction\QueueableAction;
-use Webmozart\Assert\Assert;
 
 use function Safe\preg_match_all;
 
@@ -36,11 +35,8 @@ class ShowArtisanErrorLogAction
 
         $pattern = '/url":"([^"]*)"/';
         preg_match_all($pattern, $content, $matches);
-        $urlMatches = $matches[1];
-        Assert::isArray($urlMatches);
-        Assert::allString($urlMatches);
 
-        $urls = array_unique($urlMatches);
+        $urls = array_unique($matches[1]);
         $view_params = [
             'view' => $view,
             'lang' => app()->getLocale(),

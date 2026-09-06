@@ -24,8 +24,12 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class PublicProcurementTenderEligibilityCheck extends XotBaseModel
 {
-    /** @phpstan-use HasXotFactory<PublicProcurementTenderEligibilityCheckFactory> */
     use HasXotFactory;
+
+    protected static function newFactory(): PublicProcurementTenderEligibilityCheckFactory
+    {
+        return PublicProcurementTenderEligibilityCheckFactory::new();
+    }
 
     use SoftDeletes;
 

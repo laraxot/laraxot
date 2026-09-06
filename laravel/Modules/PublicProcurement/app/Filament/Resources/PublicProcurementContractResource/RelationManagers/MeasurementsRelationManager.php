@@ -62,6 +62,6 @@ final class MeasurementsRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('measured_on')->date()->sortable(),
             ])
             ->headerActions([CreateAction::make()])
-            ->actions([EditAction::make(), DeleteAction::make()]);
+            ->recordActions([EditAction::make(), DeleteAction::make()]);
     }
 }

@@ -134,7 +134,7 @@ test('creates socialite user model with normalized attributes', function (): voi
     $result = app(CreateSocialiteUserAction::class)->execute('github', $oauthUser, $user);
 
     Assert::assertInstanceOf(SocialiteUser::class, $result);
-    Assert::assertSame((string) $result->user_id, (string) $user->getKey());
+    Assert::assertSame(is_string($result->user_id) ? $result->user_id : (string) $result->user_id, is_string($user->getKey()) ? $user->getKey() : (string) $user->getKey());
     Assert::assertSame('github', $result->provider);
     Assert::assertSame('provider-user-1', $result->provider_id);
 });

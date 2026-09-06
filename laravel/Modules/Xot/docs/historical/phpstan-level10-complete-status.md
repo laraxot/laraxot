@@ -75,7 +75,7 @@ Moduli che richiedono questa configurazione:
 ## 📚 Correzioni Applicate Durante Audit
 
 ### Modulo Rating
-1. **Conversione `$casts` in `casts()`** (Laravel 13+)
+1. **Conversione `$casts` in `casts()`** (Laravel 12+)
    - Convertito `public $casts` in `protected function casts(): array`
    - Aggiunto PHPDoc `@return array<string, string>`
 

@@ -199,6 +199,7 @@ final class EnergyBrokerDocumentResource extends XotBaseResource
                     ->label(__('energy_broker.fields.failure_reason'))
                     ->state(function (EnergyBrokerDocument $record): string {
                         $error = data_get($record->analysis_payload, 'error');
+
                         return is_string($error) ? $error : '';
                     })
                     ->limit(80)

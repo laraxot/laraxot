@@ -69,7 +69,7 @@ function httpMessagesPrompt(array $messages): string
                 return '';
             }
 
-            return (string) ($message['content'] ?? '');
+            return is_string($message['content'] ?? null) ? $message['content'] : '';
         },
         $messages,
     ));

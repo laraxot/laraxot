@@ -83,7 +83,8 @@ final class ListTimberStockMovements extends XotBaseListRecords
                     TextInput::make('lot_code'),
                 ])
                 ->query(function (Builder $query, array $data): Builder {
-                    $value = trim((string) ($data['lot_code'] ?? ''));
+                    $lotCode = $data['lot_code'] ?? '';
+                    $value = is_string($lotCode) ? trim($lotCode) : '';
 
                     return $value === ''
                         ? $query

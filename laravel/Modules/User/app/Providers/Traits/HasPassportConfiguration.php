@@ -52,14 +52,18 @@ trait HasPassportConfiguration
         $config = Config::get('user.passport.tokens', []);
         Assert::isArray($config);
 
+        $accessToken = $config['access_token'] ?? 15;
+        $refreshToken = $config['refresh_token'] ?? 30;
+        $personalAccessToken = $config['personal_access_token'] ?? 6;
+
         Passport::tokensExpireIn(
-            CarbonInterval::days((int) ($config['access_token'] ?? 15))
+            CarbonInterval::days(is_int($accessToken) ? $accessToken : 15)
         );
         Passport::refreshTokensExpireIn(
-            CarbonInterval::days((int) ($config['refresh_token'] ?? 30))
+            CarbonInterval::days(is_int($refreshToken) ? $refreshToken : 30)
         );
         Passport::personalAccessTokensExpireIn(
-            CarbonInterval::months((int) ($config['personal_access_token'] ?? 6))
+            CarbonInterval::months(is_int($personalAccessToken) ? $personalAccessToken : 6)
         );
     }
 

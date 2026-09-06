@@ -63,8 +63,8 @@ final class PublicProcurementTenderSourceResource extends Resource
                 Tables\Columns\IconColumn::make('is_active')->boolean(),
                 Tables\Columns\TextColumn::make('url')->label(__('public_procurement.fields.url'))->limit(50),
             ])
-            ->actions([EditAction::make()])
-            ->bulkActions([DeleteBulkAction::make()]);
+            ->recordActions([EditAction::make()])
+            ->toolbarActions([DeleteBulkAction::make()]);
     }
 
     public static function getPages(): array

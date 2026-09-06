@@ -381,7 +381,7 @@ public function canAccess($user): bool
 }
 ```
 
-## 🔧 Laravel 13 Compliance
+## 🔧 Laravel 12 Compliance
 
 ### 1. Type Declarations
 Use proper type hints and return types:
@@ -869,7 +869,7 @@ public function canAccess($user): bool
 }
 ```
 
-## 🔧 Laravel 13 Compliance
+## 🔧 Laravel 12 Compliance
 
 ### 1. Type Declarations
 Use proper type hints and return types:

@@ -31,8 +31,12 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class PublicProcurementAiExtraction extends XotBaseModel
 {
-    /** @phpstan-use HasXotFactory<PublicProcurementAiExtractionFactory> */
     use HasXotFactory;
+
+    protected static function newFactory(): PublicProcurementAiExtractionFactory
+    {
+        return PublicProcurementAiExtractionFactory::new();
+    }
 
     use SoftDeletes;
 

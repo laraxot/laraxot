@@ -227,7 +227,9 @@ abstract class BaseUser extends Authenticatable implements FilamentUser, HasAuth
 
     public function getProviderName(): string
     {
-        return (string) ($this->getAttribute('provider') ?? config('auth.guards.api.provider', 'users'));
+        $provider = $this->getAttribute('provider') ?? config('auth.guards.api.provider', 'users');
+
+        return is_string($provider) ? $provider : 'users';
     }
 
     /*
@@ -243,17 +245,17 @@ abstract class BaseUser extends Authenticatable implements FilamentUser, HasAuth
      */
     public function getFilamentName(): string
     {
-        $name = (string) ($this->getAttribute('name') ?? '');
-        $firstName = (string) ($this->getAttribute('first_name') ?? '');
-        $lastName = (string) ($this->getAttribute('last_name') ?? '');
+        $name = $this->getAttribute('name') ?? '';
+        $firstName = $this->getAttribute('first_name') ?? '';
+        $lastName = $this->getAttribute('last_name') ?? '';
 
-        $fullName = trim(\sprintf('%s %s %s', $name, $firstName, $lastName));
+        $fullName = trim(\sprintf('%s %s %s', is_string($name) ? $name : '', is_string($firstName) ? $firstName : '', is_string($lastName) ? $lastName : ''));
 
         // Ensure we always return a non-empty string
         if (empty($fullName)) {
-            $email = (string) ($this->getAttribute('email') ?? '');
+            $email = $this->getAttribute('email') ?? '';
 
-            return ! empty($email) ? $email : 'User';
+            return ! empty($email) && is_string($email) ? $email : 'User';
         }
 
         return $fullName;

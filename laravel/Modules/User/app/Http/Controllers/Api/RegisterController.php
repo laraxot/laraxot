@@ -12,8 +12,7 @@
  * If the validation passes, a new user is created and a success response is returned with the user's name and an access token.
  * If the validation fails, an error response is returned with the validation errors.
  *
- * @param Request $request The incoming request
- *
+ * @param  Request  $request  The incoming request
  * @return JsonResponse The JSON response
  */
 
@@ -55,7 +54,8 @@ class RegisterController extends XotBaseController
 
         /** @var array<string, mixed> $input */
         $input = $request->all();
-        $input['password'] = bcrypt((string) $input['password']);
+        $password = $input['password'] ?? '';
+        $input['password'] = bcrypt(is_string($password) ? $password : '');
         $user_class = XotData::make()->getUserClass();
         /** @var UserContract */
         $user = $user_class::create($input);

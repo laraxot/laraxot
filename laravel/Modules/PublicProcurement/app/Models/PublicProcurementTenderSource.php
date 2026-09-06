@@ -10,13 +10,17 @@ use Modules\PublicProcurement\Database\Factories\PublicProcurementTenderSourceFa
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
-/**
- * @method static PublicProcurementTenderSourceFactory factory($count = null, $state = [])
- */
 final class PublicProcurementTenderSource extends XotBaseModel
 {
-    /** @phpstan-use HasXotFactory<PublicProcurementTenderSourceFactory> */
+    /**
+ * @method static PublicProcurementTenderSourceFactory factory($count = null, $state = [])
+ */
     use HasXotFactory;
+
+    protected static function newFactory(): PublicProcurementTenderSourceFactory
+    {
+        return PublicProcurementTenderSourceFactory::new();
+    }
 
     use SoftDeletes;
 

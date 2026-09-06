@@ -67,7 +67,7 @@ describe('User Overview', function (): void {
     });
 
     test('user overview widget has correct namespace', function (): void {
-        Assert::assertStringContainsString((string) 'Modules\User\Filament\Resources\UserResource\Widgets', (string) UserOverview::class);
+        Assert::assertStringContainsString('Modules\User\Filament\Resources\UserResource\Widgets', UserOverview::class);
     });
 
     test('user overview widget can be instantiated', function (): void {
@@ -92,7 +92,7 @@ describe('User Overview', function (): void {
         $viewProperty->setAccessible(true);
 
         $viewPath = $viewProperty->getValue($widget);
-        Assert::assertStringContainsString((string) 'user::', (string) $viewPath);
-        Assert::assertStringContainsString((string) 'widgets.user-overview', (string) $viewPath);
+        Assert::assertStringContainsString('user::', is_string($viewPath) ? $viewPath : '');
+        Assert::assertStringContainsString('widgets.user-overview', is_string($viewPath) ? $viewPath : '');
     });
 });

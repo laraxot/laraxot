@@ -24,15 +24,21 @@ uses(\Modules\Quotation\Tests\TestCase::class);
  */
 function fakeQuotationExtractor(array $payload): QuotationDraftExtractorInterface
 {
+    /** @var array<string, mixed> $payload */
     return new class($payload) implements QuotationDraftExtractorInterface
     {
-        /** @param array<string, mixed> $payload */
+        /**
+         * @param array<string, mixed> $payload
+         */
         public function __construct(private array $payload) {}
 
         /** @return array<string, mixed> */
         public function extract(string $transcript): array
         {
-            return $this->payload;
+            /** @var array<string, mixed> $payload */
+            $payload = $this->payload;
+
+            return $payload;
         }
     };
 }
@@ -258,6 +264,8 @@ it('persists a reviewed draft as a new quotation with recalculated totals', func
     expect((float) $quotation->tax_percent)->toBe(22.0); // default applied
     expect($quotation->items()->count())->toBe(2);
     expect((float) $quotation->subtotal)->toBe(16.0);
-    expect((float) $quotation->total)->toBeGreaterThan(16.0);
-    expect((int) $quotation->items()->where('description', 'Valvola')->value('product_id'))->toBe((int) $product->id);
+    expect($quotation->total)->toBeGreaterThan(16.0);
+    $productIdValue = $quotation->items()->where('description', 'Valvola')->value('product_id');
+    $productId = is_int($productIdValue) ? $productIdValue : 0;
+    expect($productId)->toBe(is_int($product->id) ? $product->id : 0);
 });

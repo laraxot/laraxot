@@ -112,7 +112,7 @@ final class PublicProcurementTenderOpportunityResource extends Resource
                 SelectFilter::make('status')->label(__('public_procurement.fields.status'))->options(self::statuses()),
                 SelectFilter::make('category')->label(__('public_procurement.fields.category'))->options(fn (): array => PublicProcurementTenderOpportunity::query()->whereNotNull('category')->distinct()->pluck('category', 'category')->all()),
             ])
-            ->actions([
+            ->recordActions([
                 Action::make('evaluateEligibility')
                     ->label(__('public_procurement.actions.evaluate_eligibility'))
                     ->icon('heroicon-o-shield-check')
@@ -133,7 +133,7 @@ final class PublicProcurementTenderOpportunityResource extends Resource
                 ViewAction::make(),
                 EditAction::make(),
             ])
-            ->bulkActions([DeleteBulkAction::make()])
+            ->toolbarActions([DeleteBulkAction::make()])
             ->defaultSort('submission_deadline_at');
     }
 

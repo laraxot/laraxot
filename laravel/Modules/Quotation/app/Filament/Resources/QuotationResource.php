@@ -12,10 +12,10 @@ use Filament\Actions\ForceDeleteBulkAction;
 use Filament\Actions\RestoreBulkAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Support\Enums\FontWeight;
@@ -165,9 +165,18 @@ final class QuotationResource extends GatedXotBaseResource
                             return $q
                                 ->limit(200)
                                 ->get(['id', 'code', 'title'])
-                                ->mapWithKeys(fn ($row): array => [
-                                    (int) $row->id => (string) ($row->code ?: $row->title ?: 'Commessa senza codice'),
-                                ])
+                                ->mapWithKeys(function ($row): array {
+                                    $id = is_numeric($row->id) ? (int) $row->id : 0;
+                                    $label = $row->code;
+                                    if (! is_string($label) || $label === '') {
+                                        $label = $row->title;
+                                    }
+                                    if (! is_string($label) || $label === '') {
+                                        $label = 'Commessa senza codice';
+                                    }
+
+                                    return [$id => $label];
+                                })
                                 ->all();
                         })
                         ->searchable()
@@ -232,9 +241,9 @@ final class QuotationResource extends GatedXotBaseResource
                             ->helperText(__('quotations.fields.cost_total_hint'))
                             ->numeric()
                             ->minValue(0),
-                        Placeholder::make('margin_summary')
+                        TextEntry::make('margin_summary')
                             ->label(__('quotations.margin.label'))
-                            ->content(fn (?Quotation $record): string => self::marginSummary($record)),
+                            ->state(fn (?Quotation $record): string => self::marginSummary($record)),
                     ]),
                 ])
                 ->columns(2),
@@ -260,9 +269,13 @@ final class QuotationResource extends GatedXotBaseResource
                         ->label(__('quotations.voice.ai_response_label'))
                         ->disabled()
                         ->rows(10)
-                        ->formatStateUsing(fn (mixed $state): string => is_array($state)
-                            ? json_encode($state, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)
-                            : (string) $state)
+                        ->formatStateUsing(function (mixed $state): string {
+                            if (is_array($state)) {
+                                return json_encode($state, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+                            }
+
+                            return is_scalar($state) ? (string) $state : '';
+                        })
                         ->columnSpanFull(),
                 ]),
         ];
@@ -291,7 +304,9 @@ final class QuotationResource extends GatedXotBaseResource
                 Tables\Columns\TextColumn::make('customer_id')
                     ->label(__('quotations.fields.customer'))
                     ->formatStateUsing(function ($state): string {
-                        return (string) (DB::table('customers')->where('id', $state)->value('legal_name') ?? 'Cliente non disponibile');
+                        $legalName = DB::table('customers')->where('id', $state)->value('legal_name');
+
+                        return is_string($legalName) && $legalName !== '' ? $legalName : 'Cliente non disponibile';
                     })
                     ->toggleable()
                     ->searchable(),
@@ -328,11 +343,11 @@ final class QuotationResource extends GatedXotBaseResource
                     ->dateTime()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
-            ->actions([
+            ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
                 RestoreBulkAction::make(),
                 ForceDeleteBulkAction::make(),

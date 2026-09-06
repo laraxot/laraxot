@@ -1,8 +1,8 @@
-# 🧪 Fix Testing Issues - Laravel 13 Migration
+# 🧪 Fix Testing Issues - Laravel 12 Migration
 
 ## Panoramica
 
-Questo documento descrive i problemi di testing riscontrati durante la migrazione da Laravel 11 a Laravel 13 e le soluzioni implementate.
+Questo documento descrive i problemi di testing riscontrati durante la migrazione da Laravel 11 a Laravel 12 e le soluzioni implementate.
 
 ## 🚨 Problema Identificato
 
@@ -212,7 +212,7 @@ Dopo le correzioni:
 - ✅ Tutti i moduli usano il trait corretto
 - ✅ I test possono essere eseguiti senza errori
 - ✅ Struttura testing consistente
-- ✅ Compatibilità con Laravel 13
+- ✅ Compatibilità con Laravel 12
 
 ## 📝 Note per il Futuro
 

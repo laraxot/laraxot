@@ -73,18 +73,9 @@
         "nunomaduro/phpinsights": "*",
         "orchestra/testbench": "*",
         "pestphp/pest": "*",
-        "pestphp/pest-plugin-faker": "^5.0",
-        "pestphp/pest-plugin-laravel": "^5.0",
-        "pestphp/pest-plugin-livewire": "^5.0",
-        "pestphp/pest-plugin-mutate": "^5.0",
-        "pestphp/pest-plugin-phpstan": "^5.2",
-        "pestphp/pest-plugin-profanity": "^5.0",
-        "pestphp/pest-plugin-rector": "^5.0",
-        "pestphp/pest-plugin-type-coverage": "^5.0",
-        "phpstan/extension-installer": "^1.4",
-        "phpstan/phpdoc-parser": "^2.3",
-        "phpstan/phpstan-deprecation-rules": "^2.0",
-        "thecodingmachine/phpstan-safe-rule": "^1.4"
+        "pestphp/pest-plugin-type-coverage": "*",
+        "thecodingmachine/phpstan-safe-rule": "*",
+        "pestphp/pest-plugin-laravel": "*"
     },
     "repositories_comment": "Local path packages (coolsam/panel-modules) moved to root composer.json for proper priority. DO NOT add Packagist here - it must remain non-canonical in root.",
     "repositories": [

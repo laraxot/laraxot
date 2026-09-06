@@ -23,7 +23,7 @@ use Modules\PublicProcurement\Tests\TestCase;
 | fuori scopo per lo smoke pass di un modulo dormiente.
 */
 
-uses(\Modules\PublicProcurement\Tests\TestCase::class);
+uses(TestCase::class);
 
 function makePublicProcurementOpportunity(?CarbonImmutable $deadline = null): PublicProcurementTenderOpportunity
 {

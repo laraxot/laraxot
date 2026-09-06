@@ -38,7 +38,7 @@ class SocialiteUsersRelationManager extends XotBaseRelationManager
                         /** @phpstan-var view-string $viewString */
                         $viewString = 'filament.components.avatar';
 
-                        return view($viewString, ['url' => (string) $state])->render();
+                        return view($viewString, ['url' => is_string($state) ? $state : ''])->render();
                     }
 
                     return 'No Avatar';

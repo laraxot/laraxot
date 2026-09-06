@@ -73,3 +73,36 @@ di tabelle: non toccata (fuori scope, forward-only).
 
 Tutti i file validati con `php -l` (nessun errore di sintassi). Non eseguiti
 composer/phpstan/pest come da vincoli del task.
+
+## Aggiornamento 2026-09-06 — fix PHPStan `Model::factory()` mixed
+
+Il meccanismo generico `HasXotFactory::newFactory()` (via `GetFactoryAction`, che a
+runtime funziona correttamente con la convenzione `\Models\` → `\Database\Factories\`)
+**non è risolvibile staticamente da Larastan**: `ModelFactoryDynamicStaticMethodReturnTypeExtension`
+(attivo via `phpstan/extension-installer`, indipendentemente dal fatto che
+`vendor/larastan/larastan/extension.neon` sia commentato in `phpstan.neon`) ispeziona il
+return-type di `newFactory()` e richiede che si risolva a **una singola classe Factory
+concreta**. Con `@return Factory<static>` (generico) risolve alla classe base
+`Factory` oppure fallisce la risoluzione del template `static` a seconda del contesto,
+e il fallback per convenzione naming (`App\Models\X` → `Database\Factories\XFactory`)
+non riconosce il namespace dei moduli (`Modules\X\Models\Y`) — risultato:
+`Model::factory()` tipizzato `*ERROR*`/`mixed`, quindi `Cannot call method count()/create()
+on mixed` su ogni seeder.
+
+**Fix applicato** (root cause, nessun `@phpstan-ignore`/baseline/`@var` override): ognuno
+dei 15 modelli concreti ora dichiara esplicitamente
+
+```php
+protected static function newFactory(): PublicProcurementXFactory
+{
+    return PublicProcurementXFactory::new();
+}
+```
+
+con return type **concreto non generico** (non `Factory<static>`). Larastan risolve
+questo caso esattamente come lo scaffolding standard Laravel (`make:model -f`) e
+tipizza correttamente l'intera catena `factory()->count()->create()`. Rimossi anche i
+tag `@phpstan-use HasXotFactory<XFactory>` (invalidi: il trait `HasXotFactory` non è
+generico, causavano `generics.notGeneric`) e i tag `@method static XFactory factory(...)`
+(ridondanti, ora la verità è nel `newFactory()` concreto). `use HasXotFactory;` resta
+per la logica `count()`/`state()` di `factory()`.

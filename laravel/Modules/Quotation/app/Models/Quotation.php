@@ -42,6 +42,8 @@ use Spatie\MediaLibrary\InteractsWithMedia;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
+ *
+ * @method static QuotationFactory factory($count = null, $state = [])
  */
 final class Quotation extends BaseModel implements HasMedia
 {

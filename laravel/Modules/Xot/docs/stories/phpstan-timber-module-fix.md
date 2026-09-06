@@ -4,40 +4,30 @@ slug: phpstan-timber-module
 scope:
   - module:Timber
   - project:base_workorder_fila5
-status: superseded-partially
+status: Pending
 epic: PHPStan Quality Gates
 priority: High
 created: 2026-09-06
-updated: 2026-09-06
-superseded_by: ../../Xot/docs/stories/18.2.1.hasxotfactory-factory-method-regression-fix.story.md
 ---
 
-## Problema (aggiornamento 2026-09-06 21:10)
+## Problema
 
-**Non erano 50+ errori nei seeder da riscrivere.** Root cause reale: il trait
-condiviso `Modules/Xot/app/Models/Traits/HasXotFactory.php` aveva perso il metodo
-pubblico `factory()` (regressione introdotta e rimossa nello stesso giorno da un
-altro agente). Fix applicato li', non qui: vedi
-`Modules/Xot/docs/stories/18.2.1.hasxotfactory-factory-method-regression-fix.story.md`.
+PHPStan su Modules/Timber restituisce **50+ errori** in seeders.
 
-Dopo il fix: `phpstan analyse Modules/Timber` e' passato da 1210 a 374 file_errors
-totali (846 → 10 errori reali non-Pest). **Nessun seeder/factory di Timber e' stato
-toccato o rigenerato** — non serviva.
+## Errori Principali
 
-## Errori Principali (storico, causa reale sopra)
+1. **staticMethod.notFound**: factory() non definiti
+2. **method.nonObject**: count(), create() su mixed
 
-1. **staticMethod.notFound**: factory() non definiti — causa reale: trait condiviso, non Timber
-2. **method.nonObject**: count(), create() su mixed — cascata dal punto 1
+## Solution Overview
 
-## Scope residuo (10 errori reali rimasti in Timber dopo il fix del trait)
-
-5 `cast.string`, 3 `argument.type`, 1 `binaryOp.invalid`, 1 `cast.double` — da
-triagare con una story dedicata (non ancora creata).
+1. Generate factories con artisan
+2. Fix seeder patterns
+3. Add proper type assertions
 
 ## Acceptance Criteria
 
-- [x] Causa radice identificata e fissata (a livello di trait Xot, non Timber)
-- [ ] 0 PHPStan errori residui in Timber module (10 rimasti, story dedicata da aprire)
+- [ ] 0 PHPStan errors in Timber module
 - [ ] PHPMD passes
 - [ ] PHPInsights > 90%
 - [ ] Pest coverage incremented

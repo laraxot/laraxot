@@ -385,7 +385,7 @@ git push origin feature-branch
 - [Consolidation Strategy](./documentation-consolidation-strategy.md) - Piano riduzione docs
 
 ### Documentazione Laravel Ecosystem
-- [Laravel 13 Docs](https://laravel.com/docs/12.x)
+- [Laravel 12 Docs](https://laravel.com/docs/12.x)
 - [Filament 4 Docs](https://filamentphp.com/docs/4.x)
 - [Livewire 3 Docs](https://livewire.laravel.com/docs/3.x)
 - [Spatie Laravel Data](https://spatie.be/docs/laravel-data)

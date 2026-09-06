@@ -396,12 +396,16 @@ abstract class TestCase extends XotBaseTestCase
 
     public static function permissionRolePivotTable(): string
     {
-        return (string) config('permission.table_names.model_has_roles', 'model_has_role');
+        $table = config('permission.table_names.model_has_roles');
+
+        return is_string($table) ? $table : 'model_has_role';
     }
 
     public static function permissionPivotTable(): string
     {
-        return (string) config('permission.table_names.model_has_permissions', 'model_has_permission');
+        $table = config('permission.table_names.model_has_permissions');
+
+        return is_string($table) ? $table : 'model_has_permission';
     }
 
     /**

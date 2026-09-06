@@ -70,7 +70,10 @@ test('has_gdpr_trait_builds_consent_cache_key_from_int_id', function (): void {
 });
 
 test('has_gdpr_trait_throws_for_unsupported_primary_key_type', function (): void {
+    // Same reasoning as above: disable the auto int-cast so the raw (unsupported)
+    // attribute value reaches gdprKeyAsString() instead of being coerced to int.
     $model = new HasGdprDummy();
+    $model->incrementing = false;
     $model->setAttribute('id', ['not', 'scalar']);
 
     $method = new \ReflectionMethod($model, 'gdprKeyAsString');

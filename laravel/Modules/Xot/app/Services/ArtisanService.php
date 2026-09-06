@@ -143,9 +143,8 @@ class ArtisanService
 
         $pattern = '/url":"([^"]*)"/';
         preg_match_all($pattern, $content, $matches);
-        /** @var list<string> $urlMatches */
-        $urlMatches = $matches[1];
-        $urls = array_unique($urlMatches);
+
+        $urls = array_unique($matches[1]);
         $view_params = [
             'view' => $view,
             'lang' => app()->getLocale(),

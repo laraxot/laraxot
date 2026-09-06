@@ -347,7 +347,7 @@ final class ModuleRemainingCoverage
         foreach (ModuleBusinessCoverage::discoverPhpClasses($appRoot, $moduleNamespace, 'Filament') as $class) {
             try {
                 if (is_subclass_of($class, XotBaseResourceTable::class)) {
-                    $table = new $class();
+                    $table = new $class;
                     self::invokeClosuresInValue($table->getTableColumns(), $record, $invoked);
                     try {
                         self::invokeClosuresInValue($table->getTableFilters(), $record, $invoked);
@@ -430,7 +430,7 @@ final class ModuleRemainingCoverage
 
         foreach (ModuleBusinessCoverage::discoverPhpClasses($appRoot, $moduleNamespace, 'Models/Policies') as $class) {
             try {
-                $policy = new $class();
+                $policy = new $class;
                 $ref = new ReflectionClass($policy);
 
                 foreach ($roleSets as $roles) {
@@ -581,7 +581,7 @@ final class ModuleRemainingCoverage
 
         foreach (ModuleBusinessCoverage::discoverPhpClasses($appRoot, $moduleNamespace, 'Projectors') as $class) {
             try {
-                $projector = new $class();
+                $projector = new $class;
                 $ref = new ReflectionClass($class);
 
                 foreach ($ref->getMethods(ReflectionMethod::IS_PUBLIC) as $method) {
@@ -1056,8 +1056,8 @@ final class ModuleRemainingCoverage
             is_string(...),
         ));
         // Ignora commenti: `// dddx(...)` non deve bloccare l'esecuzione del metodo.
-        $body = (string) preg_replace('!//.*$!m', '', $body);
-        $body = (string) preg_replace('!/\*.*?\*/!s', '', $body);
+        $body = preg_replace('!//.*$!m', '', $body);
+        $body = preg_replace('!/\*.*?\*/!s', '', $body);
 
         return self::$dddxMethodCache[$cacheKey] = (bool) preg_match('/\bdddx\s*\(/', $body)
             || (bool) preg_match('/(?<![\w\\\\])\bdd\s*\(/', $body);

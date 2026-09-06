@@ -19,7 +19,7 @@ describe('NotifyTheme\Get', function () {
     });
 
     it('uses QueueableAction trait', function () {
-        $traits = class_uses(NotifyThemeData::class);
+        $traits = class_uses(Get::class);
         Assert::assertArrayHasKey(QueueableAction::class, $traits);
     });
 

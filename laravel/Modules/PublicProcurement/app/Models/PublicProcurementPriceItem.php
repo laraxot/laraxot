@@ -10,13 +10,17 @@ use Modules\PublicProcurement\Database\Factories\PublicProcurementPriceItemFacto
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
-/**
- * @method static PublicProcurementPriceItemFactory factory($count = null, $state = [])
- */
 final class PublicProcurementPriceItem extends XotBaseModel
 {
-    /** @phpstan-use HasXotFactory<PublicProcurementPriceItemFactory> */
+    /**
+ * @method static PublicProcurementPriceItemFactory factory($count = null, $state = [])
+ */
     use HasXotFactory;
+
+    protected static function newFactory(): PublicProcurementPriceItemFactory
+    {
+        return PublicProcurementPriceItemFactory::new();
+    }
 
     use SoftDeletes;
 

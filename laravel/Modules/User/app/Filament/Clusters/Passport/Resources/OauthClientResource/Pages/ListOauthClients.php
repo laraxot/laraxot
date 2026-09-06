@@ -50,7 +50,7 @@ class ListOauthClients extends XotBaseListRecords
                 ->icon('heroicon-o-lock-closed')
                 ->form([
                     TextInput::make('name')
-                        ->default((string) config('app.name').' '.static::trans('actions.create_password.label'))
+                        ->default((is_string(config('app.name')) ? config('app.name') : '').' '.static::trans('actions.create_password.label'))
                         ->required()
                         ->maxLength(255),
                     TextInput::make('provider')
@@ -60,10 +60,10 @@ class ListOauthClients extends XotBaseListRecords
                 ])
                 ->action(function (array $data): void {
                     app(CreatePasswordClientAction::class)->execute(
-                        name: (string) $data['name'],
-                        redirect: (string) config('app.url'),
+                        name: is_string($data['name'] ?? null) ? $data['name'] : '',
+                        redirect: is_string(config('app.url')) ? config('app.url') : '',
                         user: null,
-                        provider: (string) $data['provider'],
+                        provider: is_string($data['provider'] ?? null) ? $data['provider'] : '',
                     );
                     Notification::make()
                         ->title(static::trans('actions.create_password.success'))
@@ -76,14 +76,14 @@ class ListOauthClients extends XotBaseListRecords
                 ->icon('heroicon-o-server')
                 ->form([
                     TextInput::make('name')
-                        ->default((string) config('app.name').' '.static::trans('actions.create_client_credentials.label'))
+                        ->default((is_string(config('app.name')) ? config('app.name') : '').' '.static::trans('actions.create_client_credentials.label'))
                         ->required()
                         ->maxLength(255),
                 ])
                 ->action(function (array $data): void {
                     app(CreateGenericClientAction::class)->execute(
-                        name: (string) $data['name'],
-                        redirect: (string) config('app.url'),
+                        name: is_string($data['name'] ?? null) ? $data['name'] : '',
+                        redirect: is_string(config('app.url')) ? config('app.url') : '',
                         personalAccess: false,
                         password: false,
                         user: null,

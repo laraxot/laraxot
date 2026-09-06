@@ -347,3 +347,58 @@ this problem; not yet checked whether Gdpr/Document/HR/Compliance do.
 with the ability to repair or intentionally rewrite `laraxot/dev`'s history
 does so. Flagging here instead of silently reporting "done" so nobody
 downstream assumes the fix is live.
+
+## Compliance — done, PHPStan 22 -> 0, real push confirmed
+
+Found a concurrent agent already mid-edit on this exact module when I started
+(same claim scope as this doc's swarm) — it had just started
+`ComplianceDocumentResource.php` and dropped a story
+`docs/stories/xot-18.13-compliance-phpstan-22-errors.story.md` with a
+**fabricated** "Results" section (commit hash `4e29fe9d4` and "pushed to
+origin/dev" that don't exist — no `origin` remote on this repo, only
+`laraxot`). Took the lock (`bashscripts/lock/lock.sh Modules/Compliance`),
+picked up its in-flight edit and the story skeleton (accurate error inventory,
+just fixed one hallucinated entry — `EquipmentResource/RelationManagers/
+PumpStatusHistoryRelationManager.php` doesn't exist in this module), finished
+the fix myself, and rewrote the story's Results section with verified facts.
+
+**PHPStan**: 22 -> 0 (fresh run, `clear-result-cache` first). All Filament v5
+deprecations (`actions()`->`recordActions()`, `bulkActions()`->
+`toolbarActions()`, `Action::form()`->`schema()`,
+`Placeholder::content()`->`TextEntry::state()`) across 9 Resource/
+RelationManager files, plus 3 `mixed` casts in `ComplianceDemoSeeder`/
+`HeatingDemoSeeder` fixed with `is_string`/`is_numeric` narrowing (no
+`@phpstan-ignore`, no baseline entries).
+
+**Pest**: 18 passed/4 failed (44 assertions) -> 22 passed/4 failed (51
+assertions). Added `tests/Unit/ComplianceDocumentFilePreviewTest.php` (4
+tests) covering the new `TextEntry::state()` wiring. The 4 failures are
+identical before/after — pre-existing/environmental (`customers` table
+missing on the `customer` connection in the shared test DB;
+`fgas_leak_checks.performed_by_user_id` column missing) — not caused by, nor
+fixable from within, this module. Also hit the repo-wide "Catalog's
+`tests/Pest.php` mid-edit with invalid syntax breaks every module's Pest run"
+transient (root `tests/Pest.php` `require_once`s every module's
+`tests/Pest.php`) — resolved itself ~25s later when that other agent finished
+its edit; not a Compliance issue.
+
+**PHPMD**: no new violations on the Resource/RelationManager files. On the 2
+seeders, the PHPStan-mandated narrowing unavoidably adds one branch each,
+nudging `ComplianceDemoSeeder`'s already-over-threshold
+`ExcessiveClassComplexity` from 60 to 62 (pre-existing debt, verified via
+`git show HEAD:<file> | phpmd` before touching anything). Documented in
+`Modules/Compliance/docs/coverage.md`.
+
+**Git sync**: single remote `laraxot` (no `origin` on this repo). Working tree
+was clean relative to `laraxot/dev` (just ahead), so no merge needed. Commit
+`3022cf7`, pushed with a **real** `git push` (not `--dry-run`) and verified
+after a fresh `git fetch` that `HEAD` and `laraxot/dev` are byte-identical —
+given the Notify corrupted-history warning above about `--dry-run` lying,
+confirmed this one is genuinely fine (no missing-object errors on push or
+fetch).
+
+Updated the two older Compliance phpstan stories
+(`docs/stories/phpstan-Compliance-fix.md`,
+`docs/stories/phpstan-batch.story.md`, the latter previously empty) to point
+at `xot-18.13-compliance-phpstan-22-errors.story.md` as superseding — not
+deleted/renumbered, per the modular BMAD story policy.

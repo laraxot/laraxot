@@ -1,6 +1,6 @@
 # 🏗️ **Xot Module** - Il Cuore del Framework Laraxot
 
-[![Laravel 13.x](https://img.shields.io/badge/Laravel-12.x-red.svg)](https://laravel.com/)
+[![Laravel 12.x](https://img.shields.io/badge/Laravel-12.x-red.svg)](https://laravel.com/)
 [![Filament 4.x](https://img.shields.io/badge/Filament-4.x-blue.svg)](https://filamentphp.com/)
 [![PHP 8.3](https://img.shields.io/badge/PHP-8.3-blueviolet.svg)](https://www.php.net/)
 [![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
@@ -10,7 +10,7 @@
 
 ## 📋 **Panoramica**
 
-Il modulo **Xot** è il **framework base** di Laraxot PTVX, un ecosistema modulare basato su **Laravel 13** e **Filament 4**, progettato per applicazioni enterprise. Fornisce gli strumenti fondamentali e i pattern architetturali per garantire coerenza, estensibilità e manutenibilità in tutto il progetto.
+Il modulo **Xot** è il **framework base** di Laraxot PTVX, un ecosistema modulare basato su **Laravel 12** e **Filament 4**, progettato per applicazioni enterprise. Fornisce gli strumenti fondamentali e i pattern architetturali per garantire coerenza, estensibilità e manutenibilità in tutto il progetto.
 
 ### Principi Fondamentali
 - **Modularità**: Ogni funzionalità è organizzata in moduli indipendenti e autoconsistenti.

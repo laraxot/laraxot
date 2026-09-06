@@ -38,8 +38,9 @@ it('returns the teams the authenticated user belongs to, keyed by team id', func
 
     $options = app(GetUserTeamsOptionAction::class)->execute();
 
-    Assert::assertArrayHasKey((string) $team->getKey(), $options);
-    Assert::assertSame('Engineering', $options[(string) $team->getKey()]);
+    $teamKey = is_string($team->getKey()) ? $team->getKey() : '';
+    Assert::assertArrayHasKey($teamKey, $options);
+    Assert::assertSame('Engineering', is_string($teamKey) ? ($options[$teamKey] ?? '') : '');
     Assert::assertArrayHasKey('', $options);
 });
 

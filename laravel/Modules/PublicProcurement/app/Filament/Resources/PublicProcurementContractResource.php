@@ -124,7 +124,7 @@ final class PublicProcurementContractResource extends Resource
             ->filters([
                 SelectFilter::make('status')->label(__('public_procurement.fields.status'))->options(self::statuses()),
             ])
-            ->actions([
+            ->recordActions([
                 Action::make('generateSal')
                     ->label(__('public_procurement.actions.generate_sal'))
                     ->icon('heroicon-o-document-chart-bar')
@@ -142,7 +142,7 @@ final class PublicProcurementContractResource extends Resource
                 ViewAction::make(),
                 EditAction::make(),
             ])
-            ->bulkActions([DeleteBulkAction::make()])
+            ->toolbarActions([DeleteBulkAction::make()])
             ->defaultSort('id', 'desc');
     }
 

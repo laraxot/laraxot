@@ -202,7 +202,7 @@ final class ModuleExecuteCoverage
                         try {
                             $instance = $ref->newInstanceWithoutConstructor();
                         } catch (\Throwable) {
-                            $instance = new $class();
+                            $instance = new $class;
                         }
                         if ($refMethod->getNumberOfRequiredParameters() > 0) {
                             continue;
@@ -224,7 +224,7 @@ final class ModuleExecuteCoverage
                 try {
                     $instance = $ref->newInstanceWithoutConstructor();
                 } catch (\Throwable) {
-                    $instance = new $class();
+                    $instance = new $class;
                 }
             } catch (\Throwable) {
                 continue;
@@ -406,7 +406,7 @@ final class ModuleExecuteCoverage
 
     public static function testXotBaseMigrationHelpers(): void
     {
-        $migration = new class() extends XotBaseMigration
+        $migration = new class extends XotBaseMigration
         {
             protected ?string $model_class = Cache::class;
 
@@ -447,7 +447,7 @@ final class ModuleExecuteCoverage
             }
 
             try {
-                $middleware = new $class();
+                $middleware = new $class;
                 $request = Request::create('/test-'.uniqid('', true), 'GET', [], [], [], [
                     'HTTP_USER_AGENT' => 'PHPUnit',
                     'REMOTE_ADDR' => '127.0.0.'.random_int(1, 254),
@@ -667,7 +667,7 @@ final class ModuleExecuteCoverage
             }
 
             try {
-                $model = new $class();
+                $model = new $class;
                 $model->setRawAttributes(self::defaultModelAttributes());
                 $executed++;
 
@@ -932,7 +932,7 @@ final class ModuleExecuteCoverage
                 }
 
                 if (str_contains($class, '\\Tables\\') && is_subclass_of($class, XotBaseResourceTable::class)) {
-                    $table = new $class();
+                    $table = new $class;
                     $table->getTableColumns();
                     $table->getTableFilters();
                     $executed++;
@@ -969,7 +969,7 @@ final class ModuleExecuteCoverage
             }
 
             try {
-                $model = new $class();
+                $model = new $class;
                 $model->setRawAttributes(self::defaultModelAttributes());
                 $model->toArray();
                 $model->getFillable();
@@ -1072,8 +1072,8 @@ final class ModuleExecuteCoverage
             array_slice($lines, $start - 1, $end - $start + 1),
             is_string(...),
         ));
-        $body = (string) preg_replace('!//.*$!m', '', $body);
-        $body = (string) preg_replace('!/\*.*?\*/!s', '', $body);
+        $body = preg_replace('!//.*$!m', '', $body);
+        $body = preg_replace('!/\*.*?\*/!s', '', $body);
 
         return self::$dddxMethodCache[$cacheKey] = (bool) preg_match('/\bdddx\s*\(/', $body)
             || (bool) preg_match('/(?<![\w\\\\])\bdd\s*\(/', $body);
@@ -1166,7 +1166,7 @@ final class ModuleExecuteCoverage
 
                         continue;
                     }
-                    $model = new $typeName();
+                    $model = new $typeName;
                     $model->setRawAttributes(self::defaultModelAttributes());
                     $args[] = $model;
 
