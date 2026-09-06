@@ -162,11 +162,16 @@ class WorkHourFactory extends Factory
 
     public function forDate(Carbon $date): static
     {
+        /** @var int $hour */
+        $hour = $this->faker->numberBetween(8, 18);
+        /** @var int $minute */
+        $minute = $this->faker->randomElement([0, 15, 30, 45]);
+
         return $this->state([
             'date' => $date->toDateString(),
             'timestamp' => $date->copy()->setTime(
-                (int) $this->faker->numberBetween(8, 18),
-                (int) $this->faker->randomElement([0, 15, 30, 45]),
+                $hour,
+                $minute,
                 0,
             ),
         ]);

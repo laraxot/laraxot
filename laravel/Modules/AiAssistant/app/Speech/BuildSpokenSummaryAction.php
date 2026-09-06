@@ -38,7 +38,7 @@ final class BuildSpokenSummaryAction
         $inFence = false;
 
         foreach ($lines as $line) {
-            $trimmed = trim(is_string($line) ? $line : (string) $line);
+            $trimmed = is_string($line) ? trim($line) : trim((string) $line);
 
             // Toggle fenced code blocks and drop their content.
             if (str_starts_with($trimmed, '```')) {
@@ -81,10 +81,17 @@ final class BuildSpokenSummaryAction
     private function stripLinePrefix(string $line): string
     {
         // Headings, blockquotes, and list markers.
-        $line = preg_replace('/^#{1,6}\s+/', '', $line) ?? $line;
-        $line = preg_replace('/^>\s?/', '', $line) ?? $line;
-        $line = preg_replace('/^[-*+]\s+/', '', $line) ?? $line;
-        $line = preg_replace('/^\d+\.\s+/', '', $line) ?? $line;
+        $result1 = preg_replace('/^#{1,6}\s+/', '', $line);
+        $line = is_string($result1) ? $result1 : $line;
+
+        $result2 = preg_replace('/^>\s?/', '', $line);
+        $line = is_string($result2) ? $result2 : $line;
+
+        $result3 = preg_replace('/^[-*+]\s+/', '', $line);
+        $line = is_string($result3) ? $result3 : $line;
+
+        $result4 = preg_replace('/^\d+\.\s+/', '', $line);
+        $line = is_string($result4) ? $result4 : $line;
 
         return $line;
     }

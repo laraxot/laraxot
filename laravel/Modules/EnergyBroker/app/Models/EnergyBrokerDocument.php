@@ -91,4 +91,14 @@ final class EnergyBrokerDocument extends BaseModel
     {
         return $this->hasMany(EnergyBrokerCustomerMatch::class, 'energy_broker_document_id');
     }
+
+    public static function factory(): EnergyBrokerDocumentFactory
+    {
+        return EnergyBrokerDocumentFactory::new();
+    }
+
+    protected static function newFactory(): EnergyBrokerDocumentFactory
+    {
+        return EnergyBrokerDocumentFactory::new();
+    }
 }

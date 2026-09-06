@@ -90,7 +90,7 @@ final class InterventionResource extends GatedXotBaseResource
             return "media/interventions/{$record->id}/note-photos";
         }
 
-        $normalizedWorkOrderId = max(0, (int) $workOrderId);
+        $normalizedWorkOrderId = max(0, (int) ($workOrderId ?? 0));
 
         return "media/interventions/draft/work-order-{$normalizedWorkOrderId}/note-photos";
     }
@@ -178,7 +178,9 @@ final class InterventionResource extends GatedXotBaseResource
                             ->getOptionLabelsUsing(fn (array $values): array => User::query()
                                 ->whereIn('id', $values)
                                 ->pluck('name', 'id')
-                                ->map(static fn ($name): string => (string) $name)
+                                ->map(static function ($name): string {
+                                    return is_string($name) ? $name : (string) $name;
+                                })
                                 ->all())
                             ->multiple()
                             ->searchable()
@@ -191,7 +193,9 @@ final class InterventionResource extends GatedXotBaseResource
 
                                 // Gli id utente sono UUID: restano stringhe, altrimenti
                                 // il cast li appiattisce e la select non ritrova nessuno.
-                                $assignedIds = $record->assignedUsers()->pluck('users.id')->map(static fn (mixed $id): string => (string) $id)->all();
+                                $assignedIds = $record->assignedUsers()->pluck('users.id')->map(static function (mixed $id): string {
+                                    return is_string($id) ? $id : (string) $id;
+                                })->all();
 
                                 if ($assignedIds === [] && $record->performed_by_user_id !== null) {
                                     $assignedIds = [(string) $record->performed_by_user_id];
@@ -262,8 +266,8 @@ final class InterventionResource extends GatedXotBaseResource
                         Placeholder::make('total_amount_preview')
                             ->label(__('interventions.fields.total_amount'))
                             ->content(function (callable $get, ?Intervention $record): string {
-                                $laborAmount = (float) ($get('amount') ?: 0);
-                                $calloutFee = (float) ($get('callout_fee') ?: 0);
+                                $laborAmount = (float) (($get('amount') ?? 0) ?: 0);
+                                $calloutFee = (float) (($get('callout_fee') ?? 0) ?: 0);
                                 $materialsTotal = self::previewMaterialsTotal($get('manual_material_lines'), $record);
 
                                 return number_format($laborAmount + $calloutFee + $materialsTotal, 2, ',', '.').' €';

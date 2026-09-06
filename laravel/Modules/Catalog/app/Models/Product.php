@@ -26,9 +26,7 @@ use Modules\Xot\Models\XotBaseModel;
  */
 final class Product extends XotBaseModel
 {
-    /** @phpstan-use HasXotFactory */
     use HasXotFactory;
-
     use SoftDeletes;
 
     protected $table = 'products';

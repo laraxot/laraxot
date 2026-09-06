@@ -40,10 +40,14 @@ final class BoilersRelationManager extends RelationManager
     {
         /** @var array<int|string, string> $generatorOptions */
         $generatorOptions = collect((array) config('heating.generator_types', []))
-            ->mapWithKeys(fn ($t): array => [(string) $t => __('heating.generators.'.(string) $t)])->all();
+            ->mapWithKeys(fn ($t): array => [
+                (is_string($t) ? $t : '') => __('heating.generators.'.(is_string($t) ? $t : '')),
+            ])->all();
         /** @var array<int|string, string> $fuelOptions */
         $fuelOptions = collect((array) config('heating.fuel_types', []))
-            ->mapWithKeys(fn ($f): array => [(string) $f => __('heating.fuels.'.(string) $f)])->all();
+            ->mapWithKeys(fn ($f): array => [
+                (is_string($f) ? $f : '') => __('heating.fuels.'.(is_string($f) ? $f : '')),
+            ])->all();
 
         return $schema->components([
             TextInput::make('brand')->label(__('heating.fields.brand'))->maxLength(255),
@@ -141,12 +145,16 @@ final class BoilersRelationManager extends RelationManager
                 /** @var HeatingSystem $system */
                 $system = $this->getOwnerRecord();
 
+                $scheduledAt = is_string($data['scheduled_at']) ? $data['scheduled_at'] : '';
+                $performedByUserId = is_int($data['performed_by_user_id']) ? $data['performed_by_user_id'] : (is_string($data['performed_by_user_id']) ? (int) $data['performed_by_user_id'] : 0);
+                $controlType = is_string($data['control_type'] ?? null) ? $data['control_type'] : 'maintenance';
+
                 app(GenerateMaintenanceInterventionAction::class)->execute(
                     system: $system,
                     boiler: $record,
-                    scheduledAt: Carbon::parse((string) $data['scheduled_at']),
-                    performedByUserId: (int) $data['performed_by_user_id'],
-                    controlType: (string) ($data['control_type'] ?? 'maintenance'),
+                    scheduledAt: Carbon::parse($scheduledAt),
+                    performedByUserId: $performedByUserId,
+                    controlType: $controlType,
                 );
 
                 Notification::make()->success()->title(__('heating.actions.intervention_generated'))->send();
