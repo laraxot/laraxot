@@ -16,9 +16,15 @@
         "smalot/pdfparser": "^2"
     },
     "require-dev": {
+        "larastan/larastan": "^3.11",
+        "pestphp/pest": "^5",
         "pestphp/pest-plugin-laravel": "*",
         "pestphp/pest-plugin-phpstan": "^5.2.0",
-        "phpstan/extension-installer": "^1.4.3"
+        "phpstan/extension-installer": "^1.4.3",
+        "phpstan/phpstan": "^2.2.13",
+        "phpstan/phpstan-deprecation-rules": "^2.0.5",
+        "spatie/laravel-data": "*",
+        "phpoffice/phpspreadsheet": "*"
     },
     "autoload": {
         "psr-4": {

@@ -1,9 +1,5 @@
-includes:
-    # - ./phpstan-baseline.neon
-    - ./vendor/larastan/larastan/extension.neon
-    - ./vendor/nesbot/carbon/extension.neon
-    - ./vendor/phpstan/phpstan/conf/bleedingEdge.neon
-    - ./vendor/pestphp/pest/extension.neon
+includes: []
+    # Extensions auto-loaded by phpstan/extension-installer from composer.json config
 
 parameters:
     level: max
