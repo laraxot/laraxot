@@ -30,7 +30,7 @@ beforeEach(function (): void {
         $this->skipTest('DB `tenant` non raggiungibile: blocco di ambiente.');
     }
 
-    $this->tenant = TestCase::createTenant([
+    TestCase::$tenant = TestCase::createTenant([
         'name' => 'test-tenant',
         'domain' => 'test.example.com',
     ]);
@@ -38,13 +38,13 @@ beforeEach(function (): void {
     $this->setCurrentTenant($this->tenantModel());
 
     $this->model = new TestSushiModel();
-    $this->testJsonPath = app(GetTenantFilePathAction::class)->execute('database/content/test_sushi.json');
+    TestCase::$testJsonPath = app(GetTenantFilePathAction::class)->execute('database/content/test_sushi.json');
 
-    if (File::exists($this->testJsonPath)) {
-        File::delete($this->testJsonPath);
+    if (File::exists(TestCase::$testJsonPath)) {
+        File::delete(TestCase::$testJsonPath);
     }
 
-    $directory = dirname($this->testJsonPath);
+    $directory = dirname(TestCase::$testJsonPath);
     if (File::exists($directory)) {
         File::deleteDirectory($directory);
     }
@@ -52,11 +52,11 @@ beforeEach(function (): void {
 
 afterEach(function (): void {
     /** @var TestCase $this */
-    if (File::exists($this->testJsonPath)) {
-        File::delete($this->testJsonPath);
+    if (File::exists(TestCase::$testJsonPath)) {
+        File::delete(TestCase::$testJsonPath);
     }
 
-    $directory = dirname($this->testJsonPath);
+    $directory = dirname(TestCase::$testJsonPath);
     if (File::exists($directory)) {
         File::deleteDirectory($directory);
     }

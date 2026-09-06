@@ -54,7 +54,8 @@ final class DailyNoteResource extends GatedXotBaseResource
     public static function photoDirectory(int|string|null $userId, mixed $noteDate): string
     {
         $normalizedUserId = max(0, (int) $userId);
-        $result = preg_replace('/[^0-9-]/', '', (string) $noteDate);
+        $dateString = is_string($noteDate) ? $noteDate : (string) $noteDate;
+        $result = preg_replace('/[^0-9-]/', '', $dateString);
         $normalizedDate = is_string($result) && $result !== '' ? $result : 'draft';
 
         return "media/daily-notes/{$normalizedUserId}/{$normalizedDate}/photos";

@@ -1040,11 +1040,12 @@ final class ExecuteAiActionProposalAction
         $opportunity = app(ApplyTenderOpportunityDraftAction::class)->execute($draft);
 
         $opportunityStatus = data_get($opportunity, 'status', '');
+        $statusString = is_string($opportunityStatus) ? $opportunityStatus : '';
 
         return [
             'ok' => true,
             'tender_opportunity_id' => $opportunity->id,
-            'status' => is_string($opportunityStatus) ? $opportunityStatus : (string) $opportunityStatus,
+            'status' => $statusString,
         ];
     }
 
@@ -1285,9 +1286,10 @@ final class ExecuteAiActionProposalAction
         // the live proposal is cleared so new messages start a fresh one.
         $conversation = $message->conversation;
         if ($conversation !== null) {
-            $latestMessageId = (int) $conversation->messages()->max('id');
+            $maxId = $conversation->messages()->max('id');
+            $latestMessageId = is_int($maxId) ? $maxId : 0;
             $conversation->forceFill([
-                'approved_up_to_message_id' => $latestMessageId > 0 ? $latestMessageId : (int) $message->id,
+                'approved_up_to_message_id' => $latestMessageId > 0 ? $latestMessageId : $message->id,
                 'active_proposal_id' => null,
             ])->save();
         }

@@ -41,9 +41,11 @@ final class GetExtraMaterialsRecapQuery
         $lineCount = 0;
 
         foreach ($rows as $row) {
-            $status = (string) ($row->extra_status_code ?? 'pending');
+            $statusValue = $row->extra_status_code ?? 'pending';
+            $status = (string) (is_string($statusValue) ? $statusValue : 'pending');
             $amount = is_numeric($row->amount) ? (float) $row->amount : 0.0;
-            $lineCount += (int) $row->lines_count;
+            $lineCountValue = $row->lines_count;
+            $lineCount += (int) (is_numeric($lineCountValue) ? $lineCountValue : 0);
 
             // An unknown status is money nobody has decided on yet, so it lands
             // in `pending` rather than being dropped from the total.

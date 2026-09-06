@@ -32,31 +32,31 @@ function writeSushiJsonFile(string $path, array $data): void
 beforeEach(function (): void {
     /** @var TestCase $this */
     $this->model = new TestSushiModel();
-    $this->testDirectory = storage_path('tests/sushi-json');
-    $this->testJsonPath = $this->testDirectory.'/test_sushi.json';
+    TestCase::$testDirectory = storage_path('tests/sushi-json');
+    TestCase::$testJsonPath = TestCase::$testDirectory.'/test_sushi.json';
 
-    if (! File::exists($this->testDirectory)) {
-        File::makeDirectory($this->testDirectory, 0755, true, true);
+    if (! File::exists(TestCase::$testDirectory)) {
+        File::makeDirectory(TestCase::$testDirectory, 0755, true, true);
     }
 
-    $jsonPath = $this->testJsonPath;
+    $jsonPath = TestCase::$testJsonPath;
     $mock = Mockery::mock(GetTenantFilePathAction::class);
     $mock->allows(['execute' => $jsonPath]);
     app()->instance(GetTenantFilePathAction::class, $mock);
 
-    if (File::exists($this->testJsonPath)) {
-        File::delete($this->testJsonPath);
+    if (File::exists(TestCase::$testJsonPath)) {
+        File::delete(TestCase::$testJsonPath);
     }
 });
 
 afterEach(function (): void {
     /** @var TestCase $this */
-    if (File::exists($this->testJsonPath)) {
-        File::delete($this->testJsonPath);
+    if (File::exists(TestCase::$testJsonPath)) {
+        File::delete(TestCase::$testJsonPath);
     }
 
-    if (File::exists($this->testDirectory)) {
-        File::deleteDirectory($this->testDirectory);
+    if (File::exists(TestCase::$testDirectory)) {
+        File::deleteDirectory(TestCase::$testDirectory);
     }
 
     Mockery::close();
@@ -64,7 +64,7 @@ afterEach(function (): void {
 
 it('returns correct json file path', function (): void {
     /** @var TestCase $this */
-    expect($this->sushiModel()->getJsonFile())->toBe($this->testJsonPath);
+    expect($this->sushiModel()->getJsonFile())->toBe(TestCase::$testJsonPath);
 });
 
 it('returns empty array when json file not exists', function (): void {
@@ -76,7 +76,7 @@ it('returns empty array when json file not exists', function (): void {
 
 it('throws exception when json data is invalid', function (): void {
     /** @var TestCase $this */
-    File::put($this->testJsonPath, 'invalid json content');
+    File::put(TestCase::$testJsonPath, 'invalid json content');
 
     expect(fn () => $this->sushiModel()->getSushiRows())
         ->toThrow(Exception::class);
@@ -101,7 +101,7 @@ it('loads valid json data correctly', function (): void {
         ],
     ];
 
-    writeSushiJsonFile($this->testJsonPath, $testData);
+    writeSushiJsonFile(TestCase::$testJsonPath, $testData);
 
     $rows = $this->sushiModel()->getSushiRows();
 
@@ -121,7 +121,7 @@ it('normalizes nested arrays in json data', function (): void {
         ],
     ];
 
-    writeSushiJsonFile($this->testJsonPath, $testData);
+    writeSushiJsonFile(TestCase::$testJsonPath, $testData);
 
     $rows = $this->sushiModel()->getSushiRows();
     $row = $this->jsonRecordAt($rows, 1);
@@ -142,9 +142,9 @@ it('saves data to json file successfully', function (): void {
     $result = $this->sushiModel()->saveToJson($testData);
 
     expect($result)->toBeTrue();
-    expect(File::exists($this->testJsonPath))->toBeTrue();
+    expect(File::exists(TestCase::$testJsonPath))->toBeTrue();
 
-    $savedData = $this->readJsonFileAsArray($this->testJsonPath);
+    $savedData = $this->readJsonFileAsArray(TestCase::$testJsonPath);
 
     expect($savedData)->toHaveCount(2);
     expect($this->jsonRecordAt($savedData, 1)['name'])->toBe('Test Item');
@@ -152,8 +152,8 @@ it('saves data to json file successfully', function (): void {
 
 it('creates directory if not exists when saving', function (): void {
     /** @var TestCase $this */
-    if (File::exists($this->testDirectory)) {
-        File::deleteDirectory($this->testDirectory);
+    if (File::exists(TestCase::$testDirectory)) {
+        File::deleteDirectory(TestCase::$testDirectory);
     }
 
     $testData = [1 => ['id' => 1, 'name' => 'Test']];
@@ -161,8 +161,8 @@ it('creates directory if not exists when saving', function (): void {
     $result = $this->sushiModel()->saveToJson($testData);
 
     expect($result)->toBeTrue();
-    expect(File::exists(dirname($this->testJsonPath)))->toBeTrue();
-    expect(File::exists($this->testJsonPath))->toBeTrue();
+    expect(File::exists(dirname(TestCase::$testJsonPath)))->toBeTrue();
+    expect(File::exists(TestCase::$testJsonPath))->toBeTrue();
 });
 
 it('returns false when saving fails', function (): void {
@@ -183,7 +183,7 @@ it('loads existing data correctly', function (): void {
         '1' => ['id' => 1, 'name' => 'Existing Item'],
     ];
 
-    writeSushiJsonFile($this->testJsonPath, $testData);
+    writeSushiJsonFile(TestCase::$testJsonPath, $testData);
 
     $existingData = $this->sushiModel()->loadExistingData();
 
@@ -215,7 +215,7 @@ it('works with sushi package integration', function (): void {
         ],
     ];
 
-    writeSushiJsonFile($this->testJsonPath, $testData);
+    writeSushiJsonFile(TestCase::$testJsonPath, $testData);
 
     $rows = $this->sushiModel()->getSushiRows();
 

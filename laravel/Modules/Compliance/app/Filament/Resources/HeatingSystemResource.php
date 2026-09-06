@@ -57,7 +57,8 @@ final class HeatingSystemResource extends Resource
         /** @var array<int|string, string> $fuelOptions */
         $fuelOptions = collect((array) config('heating.fuel_types', []))
             ->mapWithKeys(function ($f): array {
-                $key = is_string($f) ? $f : (string) $f;
+                $key = is_string($f) ? $f : '';
+
                 return [$key => __('heating.fuels.'.$key)];
             })
             ->all();
@@ -101,7 +102,11 @@ final class HeatingSystemResource extends Resource
                 Tables\Columns\TextColumn::make('code')->label(__('heating.fields.code'))->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('customer_id')
                     ->label(__('heating.fields.customer'))
-                    ->formatStateUsing(fn ($state): string => DB::table('customers')->where('id', $state)->value('legal_name') ?? '—')
+                    ->formatStateUsing(function ($state): string {
+                        $name = DB::table('customers')->where('id', $state)->value('legal_name');
+
+                        return is_string($name) ? $name : '—';
+                    })
                     ->searchable(),
                 Tables\Columns\TextColumn::make('description')->label(__('heating.fields.description'))->limit(40)->toggleable(),
                 Tables\Columns\TextColumn::make('boilers_count')->label(__('heating.fields.boilers'))->counts('boilers'),

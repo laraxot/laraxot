@@ -41,7 +41,8 @@ final class GoogleApiCalendarClient implements GoogleCalendarClient
         $token = $client->fetchAccessTokenWithAuthCode($code);
 
         if (isset($token['error'])) {
-            throw new RuntimeException('Google OAuth error: '.(string) $token['error']);
+            $errorValue = $token['error'];
+            throw new RuntimeException('Google OAuth error: '.(string) (is_string($errorValue) ? $errorValue : ''));
         }
 
         $client->setAccessToken($token);
@@ -70,12 +71,15 @@ final class GoogleApiCalendarClient implements GoogleCalendarClient
         $record->enabled = true;
         $record->google_email = $googleEmail;
         $record->calendar_id = $calendarId;
-        $record->access_token = (string) ($token['access_token'] ?? '');
-        $refresh = (string) ($token['refresh_token'] ?? '');
+        $accessTokenValue = $token['access_token'] ?? '';
+        $record->access_token = (string) (is_string($accessTokenValue) ? $accessTokenValue : '');
+        $refreshTokenValue = $token['refresh_token'] ?? '';
+        $refresh = (string) (is_string($refreshTokenValue) ? $refreshTokenValue : '');
         if ($refresh !== '') {
             $record->refresh_token = $refresh;
         }
-        $record->token_expires_at = isset($token['expires_in']) ? now()->addSeconds((int) $token['expires_in']) : null;
+        $expiresInValue = $token['expires_in'] ?? null;
+        $record->token_expires_at = isset($expiresInValue) && is_numeric($expiresInValue) ? now()->addSeconds((int) $expiresInValue) : null;
         $record->last_synced_at = now();
         $record->last_sync_error_at = null;
         $record->save();
@@ -219,8 +223,10 @@ final class GoogleApiCalendarClient implements GoogleCalendarClient
 
     private function baseClient(): Client
     {
-        $clientId = (string) config('services.google.calendar.client_id');
-        $clientSecret = (string) config('services.google.calendar.client_secret');
+        $clientIdValue = config('services.google.calendar.client_id');
+        $clientId = (string) (is_string($clientIdValue) ? $clientIdValue : '');
+        $clientSecretValue = config('services.google.calendar.client_secret');
+        $clientSecret = (string) (is_string($clientSecretValue) ? $clientSecretValue : '');
 
         if ($clientId === '' || $clientSecret === '') {
             throw new RuntimeException('Google Calendar non configurato: imposta GOOGLE_CALENDAR_CLIENT_ID e GOOGLE_CALENDAR_CLIENT_SECRET.');
@@ -244,15 +250,18 @@ final class GoogleApiCalendarClient implements GoogleCalendarClient
         $record = UserGoogleCalendarSetting::query()->where('user_id', $user->id)->firstOrFail();
 
         $client = $this->baseClient();
+        $accessTokenValue = $record->access_token;
+        $refreshTokenValue = $record->refresh_token;
         $client->setAccessToken([
-            'access_token' => (string) $record->access_token,
-            'refresh_token' => (string) $record->refresh_token,
+            'access_token' => (string) (is_string($accessTokenValue) ? $accessTokenValue : ''),
+            'refresh_token' => (string) (is_string($refreshTokenValue) ? $refreshTokenValue : ''),
             'expires_in' => max(1, (int) now()->diffInSeconds($record->token_expires_at ?? now()->subSecond(), false)),
             'created' => now()->timestamp,
         ]);
 
         if ($client->isAccessTokenExpired()) {
-            $refresh = trim((string) $record->refresh_token);
+            $refreshValue = $record->refresh_token;
+            $refresh = trim((string) (is_string($refreshValue) ? $refreshValue : ''));
             if ($refresh === '') {
                 throw new RuntimeException('Connessione Google Calendar scaduta: ricollega l\'account.');
             }
@@ -260,20 +269,24 @@ final class GoogleApiCalendarClient implements GoogleCalendarClient
             $fresh = $client->fetchAccessTokenWithRefreshToken($refresh);
             if (isset($fresh['error'])) {
                 $record->forceFill(['last_sync_error_at' => now()])->save();
-                throw new RuntimeException('Refresh token Google non valido: '.(string) $fresh['error']);
+                $errorValue = $fresh['error'];
+                throw new RuntimeException('Refresh token Google non valido: '.(string) (is_string($errorValue) ? $errorValue : ''));
             }
 
-            $record->access_token = (string) ($fresh['access_token'] ?? '');
+            $freshAccessTokenValue = $fresh['access_token'] ?? '';
+            $record->access_token = (string) (is_string($freshAccessTokenValue) ? $freshAccessTokenValue : '');
             if (! empty($fresh['refresh_token'])) {
-                $record->refresh_token = (string) $fresh['refresh_token'];
+                $freshRefreshTokenValue = $fresh['refresh_token'];
+                $record->refresh_token = (string) (is_string($freshRefreshTokenValue) ? $freshRefreshTokenValue : '');
             }
-            $record->token_expires_at = isset($fresh['expires_in']) ? now()->addSeconds((int) $fresh['expires_in']) : now()->addHour();
+            $freshExpiresInValue = $fresh['expires_in'] ?? null;
+            $record->token_expires_at = isset($freshExpiresInValue) && is_numeric($freshExpiresInValue) ? now()->addSeconds((int) $freshExpiresInValue) : now()->addHour();
             $record->save();
 
             $client->setAccessToken([
-                'access_token' => (string) $record->access_token,
-                'refresh_token' => (string) $record->refresh_token,
-                'expires_in' => isset($fresh['expires_in']) ? (int) $fresh['expires_in'] : 3600,
+                'access_token' => (string) (is_string($record->access_token) ? $record->access_token : ''),
+                'refresh_token' => (string) (is_string($record->refresh_token) ? $record->refresh_token : ''),
+                'expires_in' => isset($freshExpiresInValue) && is_numeric($freshExpiresInValue) ? (int) $freshExpiresInValue : 3600,
                 'created' => now()->timestamp,
             ]);
         }

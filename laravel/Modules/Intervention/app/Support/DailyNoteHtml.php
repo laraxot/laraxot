@@ -41,11 +41,16 @@ final class DailyNoteHtml
         }
 
         $normalized = preg_replace('/<br\s*\/?>/i', "\n", $html) ?? $html;
+        $normalized = is_string($normalized) ? $normalized : $html;
         $normalized = preg_replace('/<\/p>\s*<p>/i', "\n\n", $normalized) ?? $normalized;
+        $normalized = is_string($normalized) ? $normalized : $html;
         $normalized = preg_replace('/<\/li>\s*<li>/i', "\n", $normalized) ?? $normalized;
+        $normalized = is_string($normalized) ? $normalized : $html;
         $text = html_entity_decode(strip_tags($normalized), ENT_QUOTES | ENT_HTML5, 'UTF-8');
         $text = preg_replace("/\r\n?/", "\n", $text) ?? $text;
+        $text = is_string($text) ? $text : '';
         $text = preg_replace("/\n{3,}/", "\n\n", $text) ?? $text;
+        $text = is_string($text) ? $text : '';
 
         return trim($text);
     }

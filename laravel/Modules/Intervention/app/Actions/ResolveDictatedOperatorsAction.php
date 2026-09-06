@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Actions;
 
-use Modules\User\Models\User;
 use Illuminate\Support\Collection;
+use Modules\User\Models\User;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -48,7 +48,7 @@ final class ResolveDictatedOperatorsAction
     private function resolve(string $needle): ?int
     {
         $exact = $this->uniqueId(
-            User::query()->whereRaw('LOWER(name) = ?', [$needle])->limit(2)->pluck('id'),
+            User::query()->whereRaw('LOWER(name) = ?', [$needle])->limit(2)->pluck('id')->map(fn ($id) => (int) $id),
         );
 
         if ($exact !== null) {
@@ -62,7 +62,8 @@ final class ResolveDictatedOperatorsAction
             User::query()
                 ->whereRaw('LOWER(name) LIKE ?', [$needle.' %'])
                 ->limit(2)
-                ->pluck('id'),
+                ->pluck('id')
+                ->map(fn ($id) => (int) $id),
         );
     }
 

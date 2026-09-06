@@ -61,7 +61,8 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
                 ->preload()
                 ->live()
                 ->afterStateUpdated(function (callable $set, mixed $state): void {
-                    $productId = (int) ($state ?? 0);
+                    $stateValue = $state ?? 0;
+                    $productId = (int) (is_numeric($stateValue) ? $stateValue : 0);
                     $rawUnitPrice = $productId > 0
                         ? Product::query()->whereKey($productId)->value('unit_price')
                         : null;
@@ -83,11 +84,11 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
                 ->required(),
             Select::make('from_location_id')
                 ->label(__('inventory.fields.from_location'))
-                ->options(fn (callable $get): array => self::locationOptionsForWarehouse((int) ($get('from_warehouse_id') ?? 0)))
+                ->options(fn (callable $get): array => self::locationOptionsForWarehouse((int) (is_numeric($get('from_warehouse_id')) ? $get('from_warehouse_id') : 0)))
                 ->searchable()
                 ->preload()
                 ->live()
-                ->visible(fn (callable $get): bool => self::storageZonesEnabled() && (int) ($get('from_warehouse_id') ?? 0) > 0),
+                ->visible(fn (callable $get): bool => self::storageZonesEnabled() && (int) (is_numeric($get('from_warehouse_id')) ? $get('from_warehouse_id') : 0) > 0),
             TextInput::make('quantity')
                 ->label(__('inventory.fields.quantity'))
                 ->numeric()
@@ -105,9 +106,12 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
             Placeholder::make('stock_available')
                 ->label(__('inventory.fields.available_stock'))
                 ->content(function (callable $get): string {
-                    $productId = (int) ($get('product_id') ?? 0);
-                    $warehouseId = (int) ($get('from_warehouse_id') ?? 0);
-                    $locationId = (int) ($get('from_location_id') ?? 0);
+                    $productIdValue = $get('product_id') ?? 0;
+                    $productId = (int) (is_numeric($productIdValue) ? $productIdValue : 0);
+                    $warehouseIdValue = $get('from_warehouse_id') ?? 0;
+                    $warehouseId = (int) (is_numeric($warehouseIdValue) ? $warehouseIdValue : 0);
+                    $locationIdValue = $get('from_location_id') ?? 0;
+                    $locationId = (int) (is_numeric($locationIdValue) ? $locationIdValue : 0);
 
                     if ($productId <= 0 || $warehouseId <= 0) {
                         return 'Seleziona prodotto e magazzino per vedere la giacenza.';
@@ -120,10 +124,10 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
                     );
 
                     if ($locationId > 0) {
-                        return sprintf('%d disponibili in questa ubicazione.', (int) $snapshot['aggregate']);
+                        return sprintf('%d disponibili in questa ubicazione.', (int) ($snapshot['aggregate'] ?? 0));
                     }
 
-                    return sprintf('%d disponibili in questo magazzino.', (int) $snapshot['aggregate']);
+                    return sprintf('%d disponibili in questo magazzino.', (int) ($snapshot['aggregate'] ?? 0));
                 }),
             Textarea::make('note')
                 ->label(__('inventory.fields.note'))
@@ -185,11 +189,16 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
                         /** @var Intervention $intervention */
                         $intervention = $this->getOwnerRecord();
 
-                        $productId = (int) ($data['product_id'] ?? 0);
-                        $warehouseId = (int) ($data['from_warehouse_id'] ?? 0);
-                        $locationId = (int) ($data['from_location_id'] ?? 0);
-                        $quantity = (int) ($data['quantity'] ?? 0);
-                        $unitPrice = round((float) ($data['unit_price'] ?? 0), 2);
+                        $productIdValue = $data['product_id'] ?? 0;
+                        $productId = (int) (is_numeric($productIdValue) ? $productIdValue : 0);
+                        $warehouseIdValue = $data['from_warehouse_id'] ?? 0;
+                        $warehouseId = (int) (is_numeric($warehouseIdValue) ? $warehouseIdValue : 0);
+                        $locationIdValue = $data['from_location_id'] ?? 0;
+                        $locationId = (int) (is_numeric($locationIdValue) ? $locationIdValue : 0);
+                        $qtyValue = $data['quantity'] ?? 0;
+                        $quantity = (int) (is_numeric($qtyValue) ? $qtyValue : 0);
+                        $priceValue = $data['unit_price'] ?? 0;
+                        $unitPrice = round((float) (is_numeric($priceValue) ? $priceValue : 0), 2);
 
                         if ($productId <= 0 || $warehouseId <= 0 || $quantity <= 0) {
                             throw ValidationException::withMessages([
@@ -213,15 +222,17 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
                         }
 
                         try {
+                            $noteValue = $data['note'] ?? '';
+
                             return app(CreateInventoryMovementAction::class)->execute(
                                 productId: $productId,
                                 movementType: 'scarico',
                                 quantity: $quantity,
                                 fromWarehouseId: $warehouseId,
                                 toWarehouseId: null,
-                                note: (string) ($data['note'] ?? ''),
-                                workOrderId: (int) $intervention->work_order_id,
-                                interventionId: (int) $intervention->id,
+                                note: (string) $noteValue,
+                                workOrderId: (int) ($intervention->work_order_id ?? 0),
+                                interventionId: (int) ($intervention->id ?? 0),
                                 createdByUserId: Auth::id() !== null ? (int) Auth::id() : null,
                                 unitPrice: $unitPrice,
                                 fromLocationId: $locationId > 0 ? $locationId : null,
@@ -267,7 +278,11 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
             ->where('is_active', true)
             ->orderBy('code')
             ->pluck('code', 'id')
-            ->mapWithKeys(static fn (mixed $code, mixed $id): array => [(int) $id => (string) $code])
+            ->mapWithKeys(static function (mixed $code, mixed $id): array {
+                return [
+                    (int) (is_numeric($id) ? $id : 0) => is_string($code) ? $code : (string) ($code ?? ''),
+                ];
+            })
             ->all();
     }
 

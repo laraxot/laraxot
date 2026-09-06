@@ -66,7 +66,8 @@ final class SketchesRelationManager extends XotBaseRelationManager
             ->headerActions([
                 CreateAction::make()
                     ->using(function (array $data, self $livewire): Sketch {
-                        $userId = (int) ($data['user_id'] ?? Auth::id());
+                        $userIdValue = $data['user_id'] ?? Auth::id();
+                        $userId = (int) (is_numeric($userIdValue) ? $userIdValue : 0);
                         $rawPayload = is_array($data['payload'] ?? null) ? $data['payload'] : [];
                         $image = is_string($rawPayload['image'] ?? null) ? $rawPayload['image'] : '';
                         /** @var array<string, mixed> $payload */
@@ -80,7 +81,7 @@ final class SketchesRelationManager extends XotBaseRelationManager
                         return app(StoreSketchForModelAction::class)->execute(
                             dataUrl: $image,
                             sketchableType: $livewire->getOwnerRecord()::class,
-                            sketchableId: (int) $livewire->getOwnerRecord()->getKey(),
+                            sketchableId: (int) ($livewire->getOwnerRecord()->getKey() ?? 0),
                             userId: $userId,
                             payload: $payload,
                         );

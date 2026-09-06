@@ -66,14 +66,17 @@ final class IssueReportsRelationManager extends XotBaseRelationManager
                         /** @var Intervention $intervention */
                         $intervention = $this->getOwnerRecord();
 
-                        $createdBy = isset($data['created_by_user_id']) && $data['created_by_user_id']
-                            ? (int) $data['created_by_user_id']
-                            : (int) Auth::id();
+                        $userIdValue = $data['created_by_user_id'] ?? null;
+                        $createdBy = isset($userIdValue) && $userIdValue
+                            ? (int) (is_numeric($userIdValue) ? $userIdValue : 0)
+                            : (int) (Auth::id() ?? 0);
+
+                        $bodyValue = $data['body'] ?? '';
 
                         return app(CreateIssueReportAction::class)->execute(
                             intervention: $intervention,
                             createdByUserId: $createdBy,
-                            body: (string) $data['body'],
+                            body: (string) $bodyValue,
                         );
                     }),
             ])

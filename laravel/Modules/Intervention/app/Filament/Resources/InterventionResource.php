@@ -90,7 +90,7 @@ final class InterventionResource extends GatedXotBaseResource
             return "media/interventions/{$record->id}/note-photos";
         }
 
-        $normalizedWorkOrderId = max(0, (int) ($workOrderId ?? 0));
+        $normalizedWorkOrderId = max(0, (int) (is_numeric($workOrderId) ? $workOrderId : 0));
 
         return "media/interventions/draft/work-order-{$normalizedWorkOrderId}/note-photos";
     }
@@ -473,12 +473,14 @@ final class InterventionResource extends GatedXotBaseResource
                 Tables\Columns\TextColumn::make('work_order_id')
                     ->label(__('interventions.fields.work_order_id'))
                     ->formatStateUsing(function ($state, Intervention $record): string {
-                        if ($state === null || (int) $state === 0) {
+                        if ($state === null || (int) ($state ?? 0) === 0) {
                             return '—';
                         }
                         $wo = DB::table('work_orders')->where('id', $state)->first(['title', 'code']);
 
-                        return (string) ($wo?->title ?: $wo?->code ?: '—');
+                        $result = $wo?->title ?: $wo?->code ?: '—';
+
+                        return is_string($result) ? $result : (string) $result;
                     })
                     ->sortable(),
                 Tables\Columns\TextColumn::make('customer_display')
@@ -933,7 +935,9 @@ final class InterventionResource extends GatedXotBaseResource
 
         return $query
             ->get()
-            ->mapWithKeys(fn ($row): array => [(int) $row->id => (string) $row->legal_name])
+            ->mapWithKeys(fn ($row): array => [
+                (int) ($row->id ?? 0) => is_string($row->legal_name) ? $row->legal_name : (string) ($row->legal_name ?? ''),
+            ])
             ->all();
     }
 
@@ -944,17 +948,21 @@ final class InterventionResource extends GatedXotBaseResource
     public static function normalizeFormData(array $data): array
     {
         $assignedUserIds = collect(is_array($data['assigned_user_ids'] ?? null) ? $data['assigned_user_ids'] : [])
-            ->map(static fn (mixed $id): int => (int) $id)
+            ->map(static function (mixed $id): int {
+                return is_int($id) ? $id : (int) ($id ?? 0);
+            })
             ->filter(static fn (int $id): bool => $id > 0)
             ->unique()
             ->values()
             ->all();
 
         if ($assignedUserIds === [] && Auth::id() !== null) {
-            $assignedUserIds = [(int) Auth::id()];
+            $authId = Auth::id();
+            $assignedUserIds = [$authId !== null ? (int) $authId : 0];
         }
 
-        $workHours = (float) ($data['work_hours'] ?? 0);
+        $workHoursValue = $data['work_hours'] ?? 0;
+        $workHours = (float) (is_numeric($workHoursValue) ? $workHoursValue : 0);
         $workMinutes = max(0, (int) round($workHours * 60));
 
         $scheduledDate = $data['scheduled_date'] ?? null;
@@ -967,8 +975,10 @@ final class InterventionResource extends GatedXotBaseResource
             $data['scheduled_at'] = $scheduledAt;
         }
 
-        $notesHtml = DailyNoteHtml::sanitize((string) ($data['notes_html'] ?? ''));
-        $notes = trim((string) ($data['notes'] ?? ''));
+        $notesHtmlValue = $data['notes_html'] ?? '';
+        $notesHtml = DailyNoteHtml::sanitize((string) $notesHtmlValue);
+        $notesValue = $data['notes'] ?? '';
+        $notes = trim((string) $notesValue);
 
         if ($notesHtml !== '') {
             $data['notes_html'] = $notesHtml;
@@ -984,8 +994,10 @@ final class InterventionResource extends GatedXotBaseResource
         $data['assigned_user_ids'] = $assignedUserIds;
         $data['performed_by_user_id'] = $assignedUserIds[0] ?? null;
         $data['work_minutes'] = $workMinutes;
-        $data['amount'] = round((float) ($data['amount'] ?? 0), 2);
-        $data['callout_fee'] = round((float) ($data['callout_fee'] ?? 0), 2);
+        $amountValue = $data['amount'] ?? 0;
+        $calloutFeeValue = $data['callout_fee'] ?? 0;
+        $data['amount'] = round((float) (is_numeric($amountValue) ? $amountValue : 0), 2);
+        $data['callout_fee'] = round((float) (is_numeric($calloutFeeValue) ? $calloutFeeValue : 0), 2);
         $data['materials_total'] = round(self::computeManualMaterialsTotal($data['manual_material_lines'] ?? []), 2);
         $data['total_amount'] = round((float) $data['amount'] + (float) $data['callout_fee'] + (float) $data['materials_total'], 2);
 
@@ -1048,16 +1060,21 @@ final class InterventionResource extends GatedXotBaseResource
                     ];
                 }
 
-                $description = trim((string) ($line['description'] ?? ''));
-                $quantity = round((float) ($line['quantity'] ?? 0), 2);
-                $unitPrice = round((float) ($line['unit_price'] ?? 0), 2);
-                $unit = trim((string) ($line['unit'] ?? 'pz'));
+                $descValue = $line['description'] ?? '';
+                $description = trim((string) $descValue);
+                $qtyValue = $line['quantity'] ?? 0;
+                $quantity = round((float) (is_numeric($qtyValue) ? $qtyValue : 0), 2);
+                $priceValue = $line['unit_price'] ?? 0;
+                $unitPrice = round((float) (is_numeric($priceValue) ? $priceValue : 0), 2);
+                $unitValue = $line['unit'] ?? 'pz';
+                $unit = trim((string) $unitValue);
 
                 // Le righe vengono ricreate da zero a ogni salvataggio: senza
                 // riportare la decisione presa sull'extra, ogni modifica
                 // all'intervento la riazzererebbe a "da decidere" e il
                 // materiale gia' destinato alla fattura tornerebbe regalabile.
-                $extraStatus = trim((string) ($line['extra_status_code'] ?? 'pending'));
+                $extraStatusValue = $line['extra_status_code'] ?? 'pending';
+                $extraStatus = trim((string) $extraStatusValue);
 
                 return [
                     'description' => $description,
@@ -1081,7 +1098,9 @@ final class InterventionResource extends GatedXotBaseResource
 
         app(SyncInterventionNotePhotosAction::class)->execute(
             intervention: $record,
-            paths: array_values(array_map(static fn (mixed $path): string => (string) $path, is_array($data['notes_photo_paths'] ?? null) ? $data['notes_photo_paths'] : [])),
+            paths: array_values(array_map(static function (mixed $path): string {
+                return is_string($path) ? $path : (string) $path;
+            }, is_array($data['notes_photo_paths'] ?? null) ? $data['notes_photo_paths'] : [])),
             uploadedByUserId: Auth::id() !== null ? (int) Auth::id() : null,
         );
 
@@ -1236,9 +1255,12 @@ final class InterventionResource extends GatedXotBaseResource
                 continue;
             }
 
-            $quantity = round((float) ($line['quantity'] ?? 0), 2);
-            $unitPrice = round((float) ($line['unit_price'] ?? 0), 2);
-            $description = trim((string) ($line['description'] ?? ''));
+            $qtyValue = $line['quantity'] ?? 0;
+            $quantity = round((float) (is_numeric($qtyValue) ? $qtyValue : 0), 2);
+            $priceValue = $line['unit_price'] ?? 0;
+            $unitPrice = round((float) (is_numeric($priceValue) ? $priceValue : 0), 2);
+            $descValue = $line['description'] ?? '';
+            $description = trim((string) $descValue);
 
             if ($description === '' || $quantity <= 0) {
                 continue;

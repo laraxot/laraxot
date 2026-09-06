@@ -68,7 +68,7 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 final class Intervention extends BaseModel
 {
-    /** @phpstan-use HasXotFactory<InterventionFactory> */
+    /** @use HasXotFactory */
     use HasXotFactory;
 
     use SoftDeletes;
