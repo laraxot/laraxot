@@ -127,6 +127,7 @@ trait HasXotTable
      */
     public function getGridTableColumns(): array
     {
+        /** @var array<int, Column|LayoutComponent> $columns */
         $columns = [];
 
         foreach (array_values($this->getTableColumns()) as $column) {
