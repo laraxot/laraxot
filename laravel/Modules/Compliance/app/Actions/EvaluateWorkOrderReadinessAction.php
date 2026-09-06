@@ -125,19 +125,24 @@ final class EvaluateWorkOrderReadinessAction
         $seenCodes = [];
 
         foreach ($items as $item) {
-            $code = (string) $item['code'];
+            $code = is_string($item['code']) ? $item['code'] : (string) $item['code'];
             $seenCodes[] = $code;
+
+            $label = is_string($item['label']) ? $item['label'] : '';
+            $severity = is_string($item['severity']) ? $item['severity'] : '';
+            $status = is_string($item['status']) ? $item['status'] : '';
+            $message = is_string($item['message']) ? $item['message'] : '';
 
             WorkOrderReadinessItem::query()->updateOrCreate(
                 ['work_order_id' => $workOrder->id, 'code' => $code],
                 [
-                    'label' => (string) $item['label'],
-                    'severity' => (string) $item['severity'],
-                    'status' => (string) $item['status'],
-                    'message' => (string) $item['message'],
+                    'label' => $label,
+                    'severity' => $severity,
+                    'status' => $status,
+                    'message' => $message,
                     'source_type' => $item['source_type'] ?? null,
                     'source_id' => $item['source_id'] ?? null,
-                    'due_on' => isset($item['due_on']) ? CarbonImmutable::parse((string) $item['due_on'])->toDateString() : null,
+                    'due_on' => isset($item['due_on']) && is_string($item['due_on']) ? CarbonImmutable::parse($item['due_on'])->toDateString() : null,
                     'meta' => ['evaluated_at' => now()->toISOString()],
                 ],
             );

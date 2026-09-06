@@ -1,62 +1,214 @@
-# Roadmap Modulo Activity - Audit Trail & Intelligence
+# 🎯 ACTIVITY MODULE - ROADMAP 2025
 
-**Data Creazione**: 2026-01-31
-**Status**: 📋 IN LAVORAZIONE
-**Versione**: 2.3.0
+**Modulo**: Activity ([Description])  
+**Status**: 0% COMPLETATO  
+**Priority**: MEDIUM  
+**PHPStan**: 🚧 Level 0 (N/A errori)  
+**Filament**: 🚧 4.x Compatibile  
 
-## 🎯 Obiettivo
+---
 
-Evolvere il sistema di logging verso un'analisi proattiva (AI-driven) e una visualizzazione dei dati sempre più granulare ed efficiente, mantenendo la compliance nativa a PHPStan Level 10.
+## 🎯 MODULE OVERVIEW
 
-## 📊 Stato Attuale
+Il modulo **Activity** [descrizione del modulo].
 
-### Metriche
-- **PHPStan Level 10**: ✅ Compliance Nativa (Modulo di Riferimento)
-- **Copertura Test**: ~94% (Eccellente)
-- **Documentazione**: ~140 file (Necessaria pulizia file duplicati).
+### 🏗️ Architettura Modulo
+```
+Activity Module
+├── 🏛️ Core Features
+│   ├── [Feature 1]
+│   ├── [Feature 2]
+│   └── [Feature 3]
+│
+├── 🔧 Services
+│   ├── [Service 1]
+│   ├── [Service 2]
+│   └── [Service 3]
+│
+└── 🛠️ Utilities
+    ├── [Utility 1]
+    ├── [Utility 2]
+    └── [Utility 3]
+```
 
-## 🚨 TODO e Miglioramenti Identificati
+---
 
-### 1. Cleanup Documentazione (140+ file)
-**Problema**: Presenza di molti file duplicati con suffissi `-duplicate.md` e file di log/coverage test inutili.
-**Priorità**: 🔴 Alta
-**Link**: [docs/tasks/cleanup-activity-docs.md](./tasks/cleanup-activity-docs.md)
+## ✅ COMPLETED FEATURES
 
-### 2. Allineamento Filament v5 (Clusters)
-**Problema**: Organizzare i logs e i widgets in una struttura a Cluster per una navigazione premium.
-**Priorità**: 🔴 Alta
-**Link**: [docs/tasks/activity-filament-v5.md](./tasks/activity-filament-v5.md)
+### 🏛️ Core Features
+- [ ] **Feature 1**: [Description]
+- [ ] **Feature 2**: [Description]
+- [ ] **Feature 3**: [Description]
 
-### 3. AI-Driven Anomaly Detection
-**Problema**: I log sono molti, ma l'identificazione di pattern anomali è manuale.
-**Priorità**: 🟡 Media
-**Link**: [docs/tasks/activity-ai-detection.md](./tasks/activity-ai-detection.md)
+### 🔧 Services
+- [ ] **Service 1**: [Description]
+- [ ] **Service 2**: [Description]
+- [ ] **Service 3**: [Description]
 
-## 📋 Roadmap Dettagliata
+### 🛠️ Technical Excellence
+- [ ] **PHPStan level 10**: 0 errori
+- [ ] **Filament 4.x**: Compatibilità completa
+- [ ] **Type Safety**: Type hints completi
+- [ ] **Error Handling**: Gestione errori robusta
+- [ ] **Testing Setup**: Configurazione test
 
-### Fase 1: Qualità e Pulizia (Settimana 1)
-- [ ] Rimozione sistematica dei file `.txt`, `.xml` di coverage e dei duplicati `.md`.
-- [ ] Consolidamento della guida agli eventi di dominio.
-- [ ] Verifica compatibilità Laravel 12.
+---
 
-### Fase 2: Enterprise UI (Settimana 2)
-- [ ] Implementazione del **Cluster "Observability"**:
-    - **Activity logs** Resource.
-    - **Performance** Dashboard.
-    - **Security Audit** Page.
+## 🚧 IN PROGRESS FEATURES
 
-### Fase 3: Analytics Evolute (Mese 1)
-- [ ] Integrazione con strumenti di analisi pattern per identificare accessi sospetti o operazioni non autorizzate.
+### 🚀 [Feature Name] (Priority: HIGH)
+**Status**: 0% COMPLETATO  
+**Timeline**: Q1 2025
 
-## 🎯 Priorità immediate
-1. **Cleanup**: Eliminare i duplicati per chiarezza.
-2. **Clusters**: Migliorare l'organizzazione Filament.
+#### 📋 Tasks
+- [ ] **Task 1** (Priority: HIGH)
+  - [ ] Subtask 1
+  - [ ] Subtask 2
+  - [ ] Subtask 3
 
-## 📁 Lista task (file .md separati)
+#### 🎯 Success Criteria
+- [ ] Criterion 1
+- [ ] Criterion 2
+- [ ] Criterion 3
 
-Ogni task è documentato in un file nella cartella `docs/tasks/`. Indice: **[tasks-index](./tasks/tasks-index.md)**.
+---
 
-## 🔗 Collegamenti
-- [README](./README.md)
-- [00-index](./00-index.md)
-- [Testing Strategy](./testing-strategy-implementation.md)
+## 📅 PLANNED FEATURES
+
+### 🚀 [Feature Name] (Priority: MEDIUM)
+**Timeline**: Q2 2025
+
+#### 📋 Features
+- [ ] **Feature 1** (Priority: MEDIUM)
+  - [ ] Subtask 1
+  - [ ] Subtask 2
+  - [ ] Subtask 3
+
+#### 🎯 Success Criteria
+- [ ] Criterion 1
+- [ ] Criterion 2
+- [ ] Criterion 3
+
+---
+
+## 🛠️ TECHNICAL IMPROVEMENTS
+
+### 🔧 Code Quality (Priority: HIGH)
+**Status**: 0% COMPLETATO
+
+#### 🚧 In Progress
+- [ ] **Testing Coverage** (Priority: HIGH)
+  - [ ] Unit tests for models
+  - [ ] Feature tests for resources
+  - [ ] Integration tests for API
+  - [ ] Browser tests for UI
+
+- [ ] **Performance Optimization** (Priority: MEDIUM)
+  - [ ] Database query optimization
+  - [ ] Caching implementation
+  - [ ] Memory usage optimization
+  - [ ] Response time improvement
+
+#### 🎯 Success Criteria
+- [ ] Test coverage > 80%
+- [ ] Response time < 200ms
+- [ ] Memory usage < 50MB
+- [ ] Zero critical issues
+
+---
+
+## 🎯 SUCCESS METRICS
+
+### 📊 Technical Metrics
+- [ ] **PHPStan level 10**: 0 errori
+- [ ] **Filament 4.x**: Compatibile
+- [ ] **Test Coverage**: 80% (target)
+- [ ] **Response Time**: < 200ms
+- [ ] **Memory Usage**: < 50MB
+- [ ] **Uptime**: > 99.9%
+
+### 📈 Business Metrics
+- [ ] **Feature Adoption**: > 80%
+- [ ] **User Satisfaction**: > 4.5/5
+- [ ] **Performance Score**: > 90
+- [ ] **Error Rate**: < 1%
+
+---
+
+## 🛠️ IMPLEMENTATION PLAN
+
+### 🎯 Q1 2025 (January - March)
+**Focus**: Core Development
+
+#### January 2025
+- [ ] Module setup
+- [ ] Basic features
+- [ ] Core functionality
+- [ ] Testing setup
+
+#### February 2025
+- [ ] Advanced features
+- [ ] Integration testing
+- [ ] Performance optimization
+- [ ] Documentation
+
+#### March 2025
+- [ ] Final testing
+- [ ] Production deployment
+- [ ] User training
+- [ ] Monitoring setup
+
+---
+
+## 🎯 IMMEDIATE NEXT STEPS (Next 30 Days)
+
+### Week 1: Module Setup
+- [ ] Create module structure
+- [ ] Set up basic classes
+- [ ] Configure testing
+- [ ] Set up documentation
+
+### Week 2: Core Development
+- [ ] Implement core features
+- [ ] Create services
+- [ ] Add utilities
+- [ ] Basic testing
+
+### Week 3: Integration
+- [ ] Integrate with other modules
+- [ ] Test integrations
+- [ ] Performance testing
+- [ ] Bug fixing
+
+### Week 4: Documentation & Testing
+- [ ] Complete documentation
+- [ ] Final testing
+- [ ] Performance optimization
+- [ ] Production preparation
+
+---
+
+## 🏆 SUCCESS CRITERIA
+
+### ✅ Q1 2025 Goals
+- [ ] Core features implemented
+- [ ] Basic testing complete
+- [ ] Documentation started
+- [ ] Integration working
+
+### 🎯 2025 Year-End Goals
+- [ ] All planned features implemented
+- [ ] Test coverage > 80%
+- [ ] Performance optimized
+- [ ] Documentation complete
+- [ ] Production ready
+- [ ] User satisfaction > 4.5/5
+
+---
+
+**Status**: 🚧 PLANNING  
+**Confidence Level**: 70%  
+
+---
+
+*Questa roadmap è specifica per il modulo Activity e viene aggiornata regolarmente in base ai progressi e alle nuove esigenze.*

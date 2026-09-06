@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    L'attributo bootstrap è relativo a QUESTO file, non alla cwd: da "laravel/" il percorso
+    corretto è "../../vendor/autoload.php" (il modulo non ha un proprio vendor/). Con
+    "vendor/autoload.php" la config non è eseguibile e Pest fallisce subito con
+    "Cannot open bootstrap script".
+
+    Invocazione canonica da "laravel/" (opzioni scritte per nome: il doppio trattino non è
+    ammesso dentro un commento XML):
+
+        ./vendor/bin/pest \
+            (opzione "test-directory") Modules/Activity/tests \
+            (opzione "c")              Modules/Activity/phpunit.xml
+-->
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.3/phpunit.xsd"
-         bootstrap="vendor/autoload.php"
+         bootstrap="../../vendor/autoload.php"
          colors="true"
 >
     <testsuites>

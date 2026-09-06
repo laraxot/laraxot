@@ -17,6 +17,8 @@ class ResolveCommentatorModelAvatarFieldAction
 
     public function handle(): string
     {
-        return (string) config('comments.models.avatar', 'avatar');
+        $value = config('comments.models.avatar', 'avatar');
+
+        return is_string($value) ? $value : 'avatar';
     }
 }

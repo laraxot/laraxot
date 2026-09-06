@@ -30,7 +30,7 @@ final class ArticleFormMainGridSchema
                     if ($get('slug')) {
                         return;
                     }
-                    $set('slug', Str::slug((string) $state));
+                    $set('slug', Str::slug(is_string($state) ? $state : ''));
                 }),
 
             TextInput::make('slug')

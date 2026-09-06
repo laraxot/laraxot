@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
+use Modules\Media\Database\Factories\MediaFactory;
 use Modules\User\Models\User;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Datas\XotData;
@@ -95,8 +96,8 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media as SpatieMedia;
  */
 class Media extends SpatieMedia
 {
-    /** @use HasXotFactory<\Modules\Media\Database\Factories\MediaFactory> */
     use HasXotFactory;
+
     use Updater;
 
     /** @var string */

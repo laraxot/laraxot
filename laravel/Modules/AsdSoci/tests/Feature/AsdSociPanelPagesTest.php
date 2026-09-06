@@ -15,23 +15,28 @@ use function Pest\Laravel\get;
  */
 uses(\Modules\AsdSoci\Tests\TestCase::class);
 
-it('opens every page of the panel', function (string $path): void {
+it('sends a guest to the login', function (): void {
+    get('/asd-soci')->assertRedirect();
+});
+
+it('opens every page of the panel', function (): void {
     Role::findOrCreate('asd_admin');
     $user = UserFactory::new()->createOne();
     $user->syncRoles(['asd_admin']);
 
     actingAs($user);
-    get($path)->assertOk();
-})->with([
-    '/asd-soci',
-    '/asd-soci/enrollment',
-    '/asd-soci/member-register',
-    '/asd-soci/accounting',
-    '/asd-soci/events',
-    '/asd-soci/member-area',
-    '/asd-soci/documentation',
-]);
 
-it('sends a guest to the login', function (): void {
-    get('/asd-soci')->assertRedirect();
+    $paths = [
+        '/asd-soci',
+        '/asd-soci/enrollment',
+        '/asd-soci/member-register',
+        '/asd-soci/accounting',
+        '/asd-soci/events',
+        '/asd-soci/member-area',
+        '/asd-soci/documentation',
+    ];
+
+    foreach ($paths as $path) {
+        get($path)->assertOk();
+    }
 });

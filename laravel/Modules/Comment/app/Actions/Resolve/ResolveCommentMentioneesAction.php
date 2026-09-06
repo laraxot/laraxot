@@ -22,6 +22,9 @@ class ResolveCommentMentioneesAction
     public function execute(Comment $comment): Collection
     {
         \Safe\preg_match_all('/data-mention="([^"]+)"/', $comment->original_text, $matches);
+        if (! isset($matches[1])) {
+            return new Collection;
+        }
         $mentioneeIds = $matches[1];
         if ($mentioneeIds === []) {
             return new Collection;

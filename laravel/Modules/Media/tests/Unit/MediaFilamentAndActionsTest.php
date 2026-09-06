@@ -21,7 +21,7 @@ use PHPUnit\Framework\Assert;
 use ProtoneMedia\LaravelFFMpeg\Exporters\MediaExporter;
 use RuntimeException;
 
-uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
+uses(TestCase::class)->group('no-media-db');
 
 test('MediaForm espone i campi anagrafici del media', function (): void {
     $schema = MediaForm::getFormSchema();

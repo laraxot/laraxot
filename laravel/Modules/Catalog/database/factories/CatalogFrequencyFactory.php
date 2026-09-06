@@ -37,6 +37,7 @@ class CatalogFrequencyFactory extends Factory
     }
 
     /**
+     * @param array<string, mixed> $attributes
      * @return \Illuminate\Database\Eloquent\Collection<int, CatalogFrequency>
      */
     public function create(array $attributes = []): \Illuminate\Database\Eloquent\Collection
@@ -45,6 +46,7 @@ class CatalogFrequencyFactory extends Factory
     }
 
     /**
+     * @param array<string, mixed> $attributes
      * @return CatalogFrequency
      */
     public function createOne(array $attributes = []): CatalogFrequency

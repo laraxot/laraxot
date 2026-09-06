@@ -5,6 +5,9 @@ declare(strict_types=1);
 use Illuminate\Database\Eloquent\Model;
 use Modules\Xot\Actions\Cast\SafeEloquentCastAction;
 use Modules\Xot\States\Transitions\XotBaseTransition;
+use Modules\Xot\Tests\Support\PestExpectation;
+
+// PestExpectation wrapper — use Pest's global expect() directly in tests
 
 if (! function_exists('safeEloquentCastFixture')) {
     /**

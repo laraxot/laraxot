@@ -96,7 +96,10 @@ trait HasAddress
             $this->province ?? '',
         );
 
-        return trim(preg_replace('/[,\s]+/', ' ', $address));
+        $normalized = preg_replace('/[,\s]+/', ' ', $address);
+        $result = is_string($normalized) ? $normalized : '';
+
+        return trim($result);
     }
 
     public function getFullAddressesAttribute(?string $value): ?string

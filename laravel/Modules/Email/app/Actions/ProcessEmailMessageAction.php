@@ -113,10 +113,16 @@ final class ProcessEmailMessageAction
      */
     private function canAutoArchive(array $classification): bool
     {
+        $confidence = $classification['confidence'] ?? 0;
+        $confidenceInt = is_int($confidence) ? $confidence : (is_numeric($confidence) ? (int) $confidence : 0);
+
+        $intent = $classification['intent'] ?? '';
+        $intentStr = is_string($intent) ? $intent : '';
+
         return $this->settings->autoArchiveCertainNotes()
             && (bool) ($classification['requires_approval'] ?? true) === false
-            && (int) ($classification['confidence'] ?? 0) >= $this->settings->confidenceThreshold()
-            && (string) ($classification['intent'] ?? '') === 'work_order_note'
+            && $confidenceInt >= $this->settings->confidenceThreshold()
+            && $intentStr === 'work_order_note'
             && $this->positiveInt($classification['work_order_id'] ?? null) !== null;
     }
 
@@ -126,8 +132,10 @@ final class ProcessEmailMessageAction
     private function shouldIgnore(array $classification): bool
     {
         $action = $this->stringKeyedArray($classification['proposed_action'] ?? null);
+        $actionType = $action['type'] ?? '';
+        $actionTypeStr = is_string($actionType) ? $actionType : '';
 
-        return (string) ($action['type'] ?? '') === 'none'
+        return $actionTypeStr === 'none'
             && (bool) ($classification['requires_approval'] ?? false) === false;
     }
 

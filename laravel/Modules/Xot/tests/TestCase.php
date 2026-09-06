@@ -139,7 +139,16 @@ abstract class TestCase extends XotBaseTestCase
 
     public function expectThrowableMessage(string $message): void
     {
-        $this->expectExceptionMessageIsOrContains($message);
+        $this->expectExceptionMessage($message);
+    }
+
+    /**
+     * Check that exception message contains or equals the expected message.
+     * Supports partial matching for more flexible exception message assertions.
+     */
+    public function expectExceptionMessageIsOrContains(string $message): void
+    {
+        $this->expectExceptionMessage($message);
     }
 
     public function expectThrowableMessageMatches(string $pattern): void

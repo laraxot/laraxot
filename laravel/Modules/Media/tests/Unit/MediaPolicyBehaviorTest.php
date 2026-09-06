@@ -15,7 +15,7 @@ use Modules\Media\Tests\TestCase;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
+uses(TestCase::class)->group('no-media-db');
 
 /**
  * @param  list<string>  $permissions

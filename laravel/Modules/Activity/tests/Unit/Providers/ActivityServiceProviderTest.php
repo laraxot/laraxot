@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 namespace Modules\Activity\Tests\Unit\Providers;
+
+use function Safe\json_encode;
 use Modules\Activity\Providers\ActivityServiceProvider;
 use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
@@ -25,7 +27,7 @@ test('activity service provider exposes expected metadata', function (): void {
 
     Assert::assertSame('Activity', $name->getValue($provider));
     $moduleDirValue = $moduleDir->getValue($provider);
-    $moduleDirString = is_string($moduleDirValue) ? $moduleDirValue : (string) $moduleDirValue;
+    $moduleDirString = is_string($moduleDirValue) ? $moduleDirValue : (is_scalar($moduleDirValue) ? (string) $moduleDirValue : (json_encode($moduleDirValue) ?: ''));
     Assert::assertStringContainsString('Modules/Activity', $moduleDirString);
     Assert::assertSame('Modules\\Activity\\Providers', $moduleNs->getValue($provider));
 });

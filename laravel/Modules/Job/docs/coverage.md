@@ -20,6 +20,10 @@ related:
 ▕             }
     1119▕         }
     1120▕ 
+## Status
+
+**2026-09-06**: philosophy.md created. PHPStan analyzed (OK). Pest suite (TBD). Coverage target: +5% per module.
+
     1121▕         try {
   ➜ 1122▕             $reflector = new ReflectionClass($concrete);
     1123▕         } catch (ReflectionException $e) {

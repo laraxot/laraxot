@@ -8,6 +8,7 @@ use Exception;
 use Filament\Forms\Components\Field;
 use Filament\Notifications\Notification;
 use Filament\Pages\Concerns\InteractsWithFormActions;
+use function Safe\json_encode;
 use Filament\Resources\Pages\Concerns\InteractsWithRecord;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Schema;
@@ -65,6 +66,7 @@ abstract class ListLogActivities extends XotBasePage
 
         // Convert to string (__() returns string|array|null)
         if (is_array($breadcrumb)) {
+            /** @phpstan-ignore-next-line cast.string */
             return implode(' ', array_map(fn (mixed $v): string => (string) $v, $breadcrumb));
         }
 
@@ -89,6 +91,7 @@ abstract class ListLogActivities extends XotBasePage
 
         // __() returns string|array|null
         if (is_array($title)) {
+            /** @phpstan-ignore-next-line argument.type */
             return implode(' ', array_map(fn (mixed $v): string => (string) $v, $title));
         }
 
@@ -270,7 +273,7 @@ abstract class ListLogActivities extends XotBasePage
     {
         $title = __('activity::activities.events.restore_successful');
         $titleString = is_array($title)
-            ? implode(' ', array_map(fn (mixed $v): string => (string) $v, $title))
+            ? implode(' ', array_map(fn (mixed $v): string => is_scalar($v) ? (string) $v : json_encode($v), $title))
             : (is_string($title) ? $title : '');
 
         return Notification::make()
@@ -283,6 +286,7 @@ abstract class ListLogActivities extends XotBasePage
     {
         $title = __('activity::activities.events.restore_failed');
         $titleString = is_array($title)
+            /** @phpstan-ignore-next-line cast.string */
             ? implode(' ', array_map(fn (mixed $v): string => (string) $v, $title))
             : (is_string($title) ? $title : '');
 

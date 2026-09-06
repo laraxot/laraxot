@@ -48,7 +48,12 @@ function catalogMetelCsvMap(): array
 
 function catalogMetelFixedPriceDivisor(): int
 {
-    return (int) config('metel.fixed_price_divisor');
+    $divisor = config('metel.fixed_price_divisor');
+    if (is_numeric($divisor)) {
+        return (int) $divisor;
+    }
+
+    return 1;
 }
 
 /**

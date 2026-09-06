@@ -28,7 +28,6 @@ use Sushi\Sushi;
  */
 class Domain extends BaseModel
 {
-    /** @use HasXotFactory<DomainFactory> */
     use HasXotFactory;
 
     use Sushi;

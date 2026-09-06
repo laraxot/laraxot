@@ -14,9 +14,4 @@ class EventServiceProvider extends ServiceProvider
      * @var array<string, array<int, string>>
      */
     protected $listen = [];
-
-    /**
-     * Indicates if events should be discovered.
-     */
-    protected static $shouldDiscoverEvents = true;
 }

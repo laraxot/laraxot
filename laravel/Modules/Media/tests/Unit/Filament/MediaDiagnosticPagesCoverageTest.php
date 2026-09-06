@@ -10,7 +10,7 @@ use Modules\Media\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
 
-uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
+uses(TestCase::class)->group('no-media-db');
 
 function mediaInvoke(object $target, string $method, mixed ...$args): mixed
 {

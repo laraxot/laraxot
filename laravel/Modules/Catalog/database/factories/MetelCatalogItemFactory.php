@@ -38,6 +38,7 @@ class MetelCatalogItemFactory extends Factory
     }
 
     /**
+     * @param array<string, mixed> $attributes
      * @return \Illuminate\Database\Eloquent\Collection<int, MetelCatalogItem>
      */
     public function create(array $attributes = []): \Illuminate\Database\Eloquent\Collection
@@ -46,6 +47,7 @@ class MetelCatalogItemFactory extends Factory
     }
 
     /**
+     * @param array<string, mixed> $attributes
      * @return MetelCatalogItem
      */
     public function createOne(array $attributes = []): MetelCatalogItem

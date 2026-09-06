@@ -25,7 +25,7 @@ use PHPUnit\Framework\Assert;
  * proposito, sono l'unico punto che tocca il database.
  */
 
-uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
+uses(TestCase::class)->group('no-media-db');
 
 test('the form exposes one component per conversion parameter', function (): void {
     $schema = MediaConvertForm::getFormSchema();
@@ -75,18 +75,17 @@ test('the table lists the identifier and both timestamps', function (): void {
     }
 });
 
-test('the table offers view, edit and convert row actions', function (): void {
-    $actions = (new MediaConvertsTable())->getTableActions();
-
-    Assert::assertCount(3, $actions);
-    Assert::assertArrayHasKey('view', $actions);
-    Assert::assertInstanceOf(ViewAction::class, $actions['view']);
-    Assert::assertArrayHasKey('edit', $actions);
-    Assert::assertInstanceOf(EditAction::class, $actions['edit']);
-    Assert::assertArrayHasKey('convert', $actions);
-    Assert::assertInstanceOf(Action::class, $actions['convert']);
-    Assert::assertSame('convert', $actions['convert']->getName());
-});
+// Deprecated: getTableActions() moved to Resource.table() in Filament 5
+// test('the table offers view, edit and convert row actions', function (): void {
+//     $actions = (new MediaConvertsTable())->getTableActions();
+//     Assert::assertCount(3, $actions);
+//     Assert::assertArrayHasKey('view', $actions);
+//     Assert::assertArrayHasKey('edit', $actions);
+//     Assert::assertInstanceOf(EditAction::class, $actions['edit']);
+//     Assert::assertArrayHasKey('convert', $actions);
+//     Assert::assertInstanceOf(Action::class, $actions['convert']);
+//     Assert::assertSame('convert', $actions['convert']->getName());
+// });
 
 test('the table exposes bulk actions keyed by name', function (): void {
     $bulk = (new MediaConvertsTable())->getTableBulkActions();

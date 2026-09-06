@@ -40,6 +40,7 @@ class CatalogMeasureUnitFactory extends Factory
     }
 
     /**
+     * @param array<string, mixed> $attributes
      * @return \Illuminate\Database\Eloquent\Collection<int, CatalogMeasureUnit>
      */
     public function create(array $attributes = []): \Illuminate\Database\Eloquent\Collection
@@ -48,6 +49,7 @@ class CatalogMeasureUnitFactory extends Factory
     }
 
     /**
+     * @param array<string, mixed> $attributes
      * @return CatalogMeasureUnit
      */
     public function createOne(array $attributes = []): CatalogMeasureUnit

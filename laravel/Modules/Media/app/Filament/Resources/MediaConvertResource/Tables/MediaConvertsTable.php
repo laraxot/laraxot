@@ -14,6 +14,7 @@ use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\BaseFilter;
 use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Table;
 use Modules\Media\Actions\Video\ConvertVideoByMediaConvertAction;
 use Modules\Media\Datas\ConvertData;
 use Modules\Media\Models\MediaConvert;
@@ -22,8 +23,16 @@ use Spatie\QueueableAction\ActionJob;
 
 class MediaConvertsTable extends XotBaseResourceTable
 {
+    public function table(Table $table): Table
+    {
+        return $table
+            ->columns($this->getTableColumns())
+            ->filters($this->getTableFilters())
+            ->recordActions($this->getTableActionsData())
+            ->toolbarActions($this->getTableBulkActionsData());
+    }
+
     /**
-     * @return array<string, Column>
      * @return array<string, Column>
      */
     public function getTableColumns(): array
@@ -59,7 +68,7 @@ class MediaConvertsTable extends XotBaseResourceTable
     /**
      * @return array<string, Action|ActionGroup>
      */
-    public function getTableActions(): array
+    private function getTableActionsData(): array
     {
         return [
             'view' => ViewAction::make(),
@@ -70,9 +79,6 @@ class MediaConvertsTable extends XotBaseResourceTable
                     'file' => $record->file,
                     'disk' => $record->disk,
                 ]);
-                // `QueueableAction::onQueue()` restituisce una classe anonima non tipizzata:
-                // PHPStan la vede `mixed` e ogni chiamata su di essa e' un errore. Il job
-                // che quel proxy costruisce e' pubblico, quindi lo si accoda direttamente.
                 dispatch(new ActionJob(app(ConvertVideoByMediaConvertAction::class), [$data, $record]));
             }),
         ];
@@ -81,7 +87,7 @@ class MediaConvertsTable extends XotBaseResourceTable
     /**
      * @return array<string, BulkAction>
      */
-    public function getTableBulkActions(): array
+    private function getTableBulkActionsData(): array
     {
         return [
             'delete' => DeleteBulkAction::make(),

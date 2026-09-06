@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Modules\Activity\Tests\Unit\Providers;
+
 use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Logout;
 use Modules\Activity\Listeners\LoginListener;
@@ -11,6 +12,7 @@ use Modules\Activity\Providers\EventServiceProvider;
 use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 uses(\Modules\Activity\Tests\TestCase::class);
 
 test('event service provider registers login and logout listeners', function () {

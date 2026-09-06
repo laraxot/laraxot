@@ -35,7 +35,8 @@ final class AnalyzeEnergyBrokerDocumentWithGoogleDocumentAiAction
         $projectNumber = $this->stringConfig('services.google_document_ai.project_number');
         $location = $this->stringConfig('services.google_document_ai.location', 'eu');
         $processorId = $this->stringConfig('services.google_document_ai.processor_id');
-        $timeout = (int) config('services.google_document_ai.timeout', 90);
+        $timeoutConfig = config('services.google_document_ai.timeout', 90);
+        $timeout = is_int($timeoutConfig) ? $timeoutConfig : 90;
 
         $accessToken = $this->resolveAccessToken($timeout);
         $endpoint = sprintf(
@@ -66,7 +67,8 @@ final class AnalyzeEnergyBrokerDocumentWithGoogleDocumentAiAction
             throw new \RuntimeException('Risposta Google Document AI non valida.');
         }
 
-        $text = trim((string) data_get($decoded, 'document.text', ''));
+        $textValue = data_get($decoded, 'document.text', '');
+        $text = is_string($textValue) ? trim($textValue) : '';
         $pages = data_get($decoded, 'document.pages');
         $pageCount = is_array($pages) ? count($pages) : ($text !== '' ? 1 : 0);
 
@@ -80,7 +82,8 @@ final class AnalyzeEnergyBrokerDocumentWithGoogleDocumentAiAction
 
     private function resolveAccessToken(int $timeout): string
     {
-        $configuredAccessToken = trim((string) config('services.google_document_ai.access_token', ''));
+        $tokenValue = config('services.google_document_ai.access_token', '');
+        $configuredAccessToken = is_string($tokenValue) ? trim($tokenValue) : '';
         if ($configuredAccessToken !== '') {
             return $configuredAccessToken;
         }
@@ -95,8 +98,10 @@ final class AnalyzeEnergyBrokerDocumentWithGoogleDocumentAiAction
             throw new \RuntimeException('Credenziali Google Document AI non valide.');
         }
 
-        $clientEmail = trim((string) ($decoded['client_email'] ?? ''));
-        $privateKey = (string) ($decoded['private_key'] ?? '');
+        $emailValue = $decoded['client_email'] ?? '';
+        $clientEmail = is_string($emailValue) ? trim($emailValue) : '';
+        $keyValue = $decoded['private_key'] ?? '';
+        $privateKey = is_string($keyValue) ? $keyValue : '';
         if ($clientEmail === '' || trim($privateKey) === '') {
             throw new \RuntimeException('Credenziali Google Document AI incomplete.');
         }
@@ -115,7 +120,8 @@ final class AnalyzeEnergyBrokerDocumentWithGoogleDocumentAiAction
             throw new \RuntimeException('Errore OAuth Google Document AI: '.mb_substr($response->body(), 0, 500));
         }
 
-        $accessToken = trim((string) data_get($response->json(), 'access_token', ''));
+        $tokenData = data_get($response->json(), 'access_token', '');
+        $accessToken = is_string($tokenData) ? trim($tokenData) : '';
         if ($accessToken === '') {
             throw new \RuntimeException('Access token Google Document AI mancante.');
         }

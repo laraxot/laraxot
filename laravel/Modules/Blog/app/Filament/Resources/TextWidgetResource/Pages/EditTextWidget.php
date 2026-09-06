@@ -23,6 +23,8 @@ class EditTextWidget extends XotBaseEditRecord
 
     protected function getRedirectUrl(): string
     {
-        return (string) static::getResource()::getUrl('index');
+        $url = static::getResource()::getUrl('index');
+
+        return is_string($url) ? $url : '';
     }
 }

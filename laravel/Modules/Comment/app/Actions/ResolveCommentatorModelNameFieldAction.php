@@ -17,6 +17,8 @@ class ResolveCommentatorModelNameFieldAction
 
     public function handle(): string
     {
-        return (string) config('comments.models.name', 'name');
+        $value = config('comments.models.name', 'name');
+
+        return is_string($value) ? $value : 'name';
     }
 }

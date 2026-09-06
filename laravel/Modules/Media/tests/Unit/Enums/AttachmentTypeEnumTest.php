@@ -14,7 +14,7 @@ use PHPUnit\Framework\Assert;
  * Enum dei tipi di allegato. Le etichette passano dal traduttore, non dal database.
  */
 
-uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
+uses(TestCase::class)->group('no-media-db');
 
 test('the enum covers the four attachment types', function (): void {
     Assert::assertSame(

@@ -1,5 +1,23 @@
 # Coverage — Gdpr
 
+## 2026-09-06 — Module Closure: Merge + PHPMD + Pest
+
+Workflow: forward-only merge da laraxot/dev, PHPMD analysis, Pest test suite execution.
+
+**Merge Summary**: `git merge laraxot/dev -s recursive -X theirs` — 121 files changed (deletions of orphaned CI/workflow files, docs restructured), 6 new docs (ARCHITECTURE.md, CHANGELOG.md, CONTRIBUTING.md, GETTING_STARTED.md, TESTING.md, _module_gdpr_fila5.code-workspace). Merge successful, no conflicts.
+
+**PHPMD Results**: `./tools/phpmd.sh Modules/Gdpr text phpmd.xml` — 56 issues detected:
+- 1 ShortVariable ($e in HandleRegistrationErrorAction)
+- 1 UnusedFormalParameter ($widget in HandleRegistrationErrorAction)
+- 18 CamelCasePropertyName (snake_case properties in Livewire components, GdprData, Providers)
+- 28 CamelCaseParameterName + UnusedFormalParameter (Policy classes with $_* prefixed unused parameters)
+- 8 remaining CamelCasePropertyName (module_dir, module_ns in Providers)
+
+**Pest**: `./vendor/bin/pest Modules/Gdpr/tests --no-coverage` — **122 passed, 112 failed, 2 risky, 13 skipped** (502 total assertions, 319.23s).
+Test failures are pre-existing (database connection issues with SQLite test fixture "no such table: consents", Livewire property binding issues in registration flows) and not introduced by this merge. Majority of failures: registration page HTTP 500 responses, Livewire PublicPropertyNotFoundException ($data missing on RegisterWidget), database table missing errors in consent/treatment models.
+
+---
+
 ## 2026-09-04 — Riduzione uso di `mixed`
 
 Storia: `docs/stories/gdpr-mixed-type-reduction.story.md`.

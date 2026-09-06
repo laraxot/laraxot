@@ -28,7 +28,7 @@ final class CategoryFormSchema
                 ->reactive()
                 ->unique()
                 ->afterStateUpdated(static function (Set $set, $state): void {
-                    $set('slug', Str::slug((string) $state));
+                    $set('slug', Str::slug(is_string($state) ? $state : ''));
                 }),
             TextInput::make('slug')
                 ->required()

@@ -10,7 +10,7 @@ use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 class ActivitysTable extends XotBaseResourceTable
 {
     /**
-     * @return array<string, mixed>
+     * @return array<string, TextColumn>
      */
     public function getTableColumns(): array
     {

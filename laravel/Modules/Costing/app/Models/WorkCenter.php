@@ -26,7 +26,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 final class WorkCenter extends BaseModel
 {
-    /** @phpstan-use HasXotFactory<WorkCenterFactory> */
     use HasXotFactory;
 
     protected $table = 'costing_work_centers';

@@ -139,7 +139,8 @@ final class ExecuteAiActionProposalAction
      */
     private function executeStartTimePunch(AiActionProposal $proposal, int|string $userId): array
     {
-        $interventionId = (int) ($proposal->payload['intervention_id'] ?? 0);
+        $payload = $this->payloadOf($proposal);
+        $interventionId = $this->payloadInt($payload, 'intervention_id');
         if ($interventionId <= 0) {
             return ['ok' => false, 'error' => 'intervention_id mancante.'];
         }

@@ -16,7 +16,7 @@ use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 use Modules\Xot\Tests\XotBasePest;
 
-uses(\Modules\Media\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Media Business Logic', function () {
     beforeEach(function (): void {

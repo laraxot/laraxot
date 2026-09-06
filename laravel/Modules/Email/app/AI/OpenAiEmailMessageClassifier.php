@@ -28,9 +28,12 @@ final readonly class OpenAiEmailMessageClassifier implements EmailMessageClassif
             return $this->fallbackResult($message, $context, $apiKey === '' ? 'openai_key_missing' : 'empty_message');
         }
 
+        $timeoutValue = config('services.email_ai.openai_timeout', 45);
+        $timeout = is_int($timeoutValue) ? $timeoutValue : 45;
+
         $response = Http::withToken($apiKey)
             ->acceptJson()
-            ->timeout((int) config('services.email_ai.openai_timeout', 45))
+            ->timeout($timeout)
             ->post('https://api.openai.com/v1/responses', [
                 'model' => $this->settings->openAiModel(),
                 'temperature' => 0,
@@ -175,7 +178,8 @@ PROMPT;
     {
         $proposedAction = is_array($parsed['proposed_action'] ?? null) ? $parsed['proposed_action'] : [];
         $payload = is_array($proposedAction['payload'] ?? null) ? $proposedAction['payload'] : [];
-        $workOrderId = (int) ($parsed['work_order_id'] ?? $payload['work_order_id'] ?? data_get($context, 'work_orders.0.id') ?? 0);
+        $workOrderIdValue = $parsed['work_order_id'] ?? $payload['work_order_id'] ?? data_get($context, 'work_orders.0.id') ?? 0;
+        $workOrderId = is_int($workOrderIdValue) ? $workOrderIdValue : (is_numeric($workOrderIdValue) ? (int) $workOrderIdValue : 0);
 
         if ($workOrderId > 0 && ! isset($payload['work_order_id'])) {
             $payload['work_order_id'] = $workOrderId;
@@ -184,9 +188,12 @@ PROMPT;
         $payload['email_message_id'] = (int) $message->id;
         $payload['source'] = 'email';
 
+        $confidenceValue = $parsed['confidence'] ?? 0;
+        $confidence = is_int($confidenceValue) ? $confidenceValue : (is_numeric($confidenceValue) ? (int) $confidenceValue : 0);
+
         return [
             'intent' => is_string($parsed['intent'] ?? null) ? $parsed['intent'] : 'other',
-            'confidence' => max(0, min(100, (int) ($parsed['confidence'] ?? 0))),
+            'confidence' => max(0, min(100, $confidence)),
             'summary' => is_string($parsed['summary'] ?? null) ? trim($parsed['summary']) : mb_substr((string) $message->body, 0, 500),
             'requires_approval' => (bool) ($parsed['requires_approval'] ?? true),
             'missing_fields' => is_array($parsed['missing_fields'] ?? null) ? $parsed['missing_fields'] : [],

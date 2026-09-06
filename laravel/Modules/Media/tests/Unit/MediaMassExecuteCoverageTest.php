@@ -9,7 +9,7 @@ use Modules\Media\Tests\TestCase;
 use Modules\Xot\Tests\ModuleExecuteCoverage;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
+uses(TestCase::class)->group('no-media-db');
 
 afterEach(function (): void {
     Mockery::close();

@@ -129,9 +129,14 @@ final class InvoiceResource extends GatedXotBaseResource
                             return $q
                                 ->limit(200)
                                 ->get(['id', 'code', 'title'])
-                                ->mapWithKeys(fn ($row): array => [
-                                    (int) $row->id => (string) ($row->code ?: $row->title ?: 'Commessa senza codice'),
-                                ])
+                                ->mapWithKeys(function ($row): array {
+                                    $id = is_numeric($row->id) ? (int) $row->id : 0;
+                                    $code = is_string($row->code) ? $row->code : '';
+                                    $title = is_string($row->title) ? $row->title : '';
+                                    $label = $code ?: ($title ?: 'Commessa senza codice');
+
+                                    return [$id => $label];
+                                })
                                 ->all();
                         })
                         ->searchable()
@@ -160,7 +165,14 @@ final class InvoiceResource extends GatedXotBaseResource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('customer_id')
                     ->label(__('billing::billing.fields.customer'))
-                    ->formatStateUsing(fn ($state): string => (string) (DB::table('customers')->where('id', $state)->value('legal_name') ?? 'Cliente non disponibile'))
+                    ->formatStateUsing(function ($state): string {
+                        if (is_numeric($state)) {
+                            $name = DB::table('customers')->where('id', $state)->value('legal_name');
+                            return is_string($name) ? $name : 'Cliente non disponibile';
+                        }
+
+                        return 'Cliente non disponibile';
+                    })
                     ->toggleable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('issued_on')
@@ -203,7 +215,13 @@ final class InvoiceResource extends GatedXotBaseResource
         if (request()->is('customer/*')) {
             /** @var User|null $user */
             $user = Auth::user();
-            $customerId = is_object($user) ? (int) ($user->customer_id ?? 0) : 0;
+            if (is_object($user)) {
+                $id = $user->customer_id ?? 0;
+                $customerId = is_numeric($id) ? (int) $id : 0;
+            } else {
+                $customerId = 0;
+            }
+
             if ($customerId > 0) {
                 $query->where('customer_id', $customerId);
             } else {

@@ -15,23 +15,28 @@ use function Pest\Laravel\get;
  */
 uses(\Modules\Dds\Tests\TestCase::class);
 
-it('opens every page of the panel', function (string $path): void {
+it('opens every page of the panel', function (): void {
     Role::findOrCreate('dds_admin');
     $user = UserFactory::new()->createOne();
     $user->syncRoles(['dds_admin']);
 
     actingAs($user);
-    get($path)->assertOk();
-})->with([
-    '/dds',
-    '/dds/crm-import',
-    '/dds/surveys-contracts',
-    '/dds/planning',
-    '/dds/field-app',
-    '/dds/customer-portal',
-    '/dds/administration',
-    '/dds/advanced-suite',
-]);
+
+    $paths = [
+        '/dds',
+        '/dds/crm-import',
+        '/dds/surveys-contracts',
+        '/dds/planning',
+        '/dds/field-app',
+        '/dds/customer-portal',
+        '/dds/administration',
+        '/dds/advanced-suite',
+    ];
+
+    foreach ($paths as $path) {
+        get($path)->assertOk();
+    }
+});
 
 it('sends a guest to the login', function (): void {
     get('/dds')->assertRedirect();

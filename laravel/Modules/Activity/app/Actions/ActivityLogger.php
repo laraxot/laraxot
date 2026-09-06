@@ -261,7 +261,7 @@ class ActivityLogger
 
                 // Explicitly map and cast to ensure types
                 /** @var array<string, int> $byType */
-                $byType = $results->mapWithKeys(function (object $item, int $_key): array {
+                $byType = $results->mapWithKeys(function (object $item): array {
                     // PHPStan L10: isset() per magic attributes invece di property_exists()
                     if (! isset($item->event, $item->count)) {
                         return [];

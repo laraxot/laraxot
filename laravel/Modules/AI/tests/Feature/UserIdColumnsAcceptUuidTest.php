@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Schema;
+use PHPUnit\Framework\Assert;
 
 /*
  * In questa base l'id utente e' un UUID di 36 caratteri. Una colonna intera lo
@@ -27,12 +28,12 @@ it('stores user ids as strings, not integers', function (): void {
 
     $numeric = [];
     foreach ($columns as [$table, $column]) {
-        expect(Schema::hasColumn($table, $column))->toBeTrue("La colonna {$table}.{$column} non esiste");
+        Assert::assertTrue(Schema::hasColumn($table, $column), "La colonna {$table}.{$column} non esiste");
 
         if (! in_array(Schema::getColumnType($table, $column), ['string', 'varchar', 'text'], true)) {
             $numeric[] = $table.'.'.$column;
         }
     }
 
-    expect($numeric)->toBe([], 'Colonne numeriche: un id UUID viene troncato');
+    Assert::assertSame([], $numeric, 'Colonne numeriche: un id UUID viene troncato');
 });

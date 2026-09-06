@@ -22,7 +22,7 @@ use Modules\Media\Tests\TestCase;
 use Modules\Media\View\Components\VideoPlayer;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
+uses(TestCase::class)->group('no-media-db');
 
 afterEach(function (): void {
     Mockery::close();

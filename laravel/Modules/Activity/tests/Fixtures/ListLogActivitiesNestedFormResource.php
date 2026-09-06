@@ -7,6 +7,7 @@ namespace Modules\Activity\Tests\Fixtures;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
+use Illuminate\Database\Eloquent\Model;
 
 final class ListLogActivitiesNestedFormResource
 {
@@ -21,7 +22,7 @@ final class ListLogActivitiesNestedFormResource
         ]);
     }
 
-    public static function canRestore(mixed $record): bool
+    public static function canRestore(Model $record): bool
     {
         return false;
     }

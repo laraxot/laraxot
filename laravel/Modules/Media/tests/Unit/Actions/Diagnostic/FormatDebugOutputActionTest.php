@@ -13,7 +13,7 @@ use PHPUnit\Framework\Assert;
  * non tocca ne' rete ne' database.
  */
 
-uses(\Modules\Media\Tests\TestCase::class)->group('no-media-db');
+uses(TestCase::class)->group('no-media-db');
 
 test('empty results fall back to the given message', function (): void {
     $output = (new FormatDebugOutputAction())->execute([], 'nessun risultato');
