@@ -1,90 +1,74 @@
-# Notify Module - Comprehensive Analysis
+---
+title: "Notify Module — Doctrine"
+type: doctrine
+tags: [notification, messaging, module-doctrine]
+created: 2026-09-05
+updated: 2026-09-05
+qmd: "Notify module doctrine BMAD analysis purpose religion philosophy policy why zen gap enhancements split merge"
+related:
+  - "../../Xot/docs/module.md"
+  - "../../Email/docs/module.md"
+---
 
-## Module Overview
-**Module Name**: Notify  
-**Type**: Notification & Communication Module  
-**Status**: ✅ Active  
-**Framework**: Laravel 12.x + Filament 4.x  
-**Notification Channels**: Email, SMS, Database, Push  
-**Language**: Multi-language (IT/EN/DE)  
+# Notify Module — Doctrine
 
-## Purpose
-The Notify module provides comprehensive notification and communication functionality:
+## Scope (Scopo)
 
-- Multi-channel notification system (email, SMS, database, push)
-- Email template management
-- Notification scheduling and queuing
-- Communication with survey participants
-- System alert and notification management
-- Multi-language notification support
+Notify orchestra le notifiche multi-canale: email, SMS, WhatsApp, Telegram, FCM push. Gestisce template personalizzabili, preferenze utente, tracciabilità delle consegne. È il servizio di messaggeria affidabile che sceglie il canale migliore.
 
-## Architecture
-- **Notification Channels**: Support for multiple delivery methods
-- **Template System**: Email and message template management
-- **Scheduling**: Queued and scheduled notification delivery
-- **Filament Interface**: Notification management dashboard
-- **Integration Layer**: Connection with other modules for event-based notifications
+## Religion (Religione)
 
-## Current Implementation Status
-### ✅ Fully Implemented Features
-- Multi-channel notification support
-- Email template system
-- Filament-based notification management
-- Queue-based delivery system
-- Multi-language support (IT/EN/DE)
-- PHPStan Level 9+ compliance
-- Test coverage 92%+
-- Database notification storage
+**"Una promessa, una consegna."** La convinzione non negoziabile è che ogni notifica promessa deve essere consegnata attraverso il canale giusto, al momento giusto, rispettando le preferenze dell'utente.
 
-### ⚠️ Partially Implemented Features
-- SMS provider integration (multiple providers)
-- Push notification system
-- Advanced notification personalization
-- Performance optimization for bulk notifications
+## Philosophy (Filosofia)
 
-### ❌ Missing Features
-- Real-time notification delivery tracking
-- Advanced delivery analytics
-- A/B testing for notifications
-- Advanced scheduling patterns
-- Notification preference management for users
-- Integration with external messaging platforms
-- Advanced notification templates with rich content
-- Notification-based workflow system
-- Advanced personalization and segmentation
-- Delivery failure analysis and retry mechanisms
+- **Multi-channel orchestration**: canali multipli, un'interfaccia
+- **Template separation**: contenuto separato dal meccanismo
+- **Channel abstraction**: canali intercambiabili
+- **Preference respect**: preferenze utente come first-class citizen
+- **Delivery tracking**: success/failure per ogni canale
 
-## Integration with Other Modules
-- **User**: Communication with system users
-- **Quaeris**: Survey participant notifications
-- **Limesurvey**: Survey response notifications
-- **Xot**: Base notification infrastructure
-- **Filament**: Management interface
+## Policy (Politica)
 
-## Critical Dependencies
-- Xot module (for base classes)
-- Laravel notification system
-- Mail and SMS providers
-- Queue system for delivery
-- Filament 4.x (management interface)
+- Ogni notifica specifica almeno un canale
+- Template modificabili senza deploy
+- Preferenze utente rispettate per canale e tipo
+- Feedback consegna per ogni canale
+- Credenziali servizi esterni in config sicura
 
-## Key Metrics
-| Aspect | Status | Details |
-|--------|--------|---------|
-| **Channels** | ✅ Multi | Email, SMS, database |
-| **Templates** | ✅ Complete | Template management system |
-| **Scheduling** | ✅ Queue | Queued delivery system |
-| **Dashboard** | ✅ Filament | Integrated management |
-| **PHPStan Level** | ✅ 9+ | High compliance level |
-| **Test Coverage** | ✅ 92% | Good test coverage |
+## Why (Perché)
+
+Multi-canale con protocolli, formati, e requisiti diversi giustifica un modulo dedicato. Orchestrare canali multipli inline sarebbe ingestibile.
+
+## Zen
+
+*"Il messaggio giusto, nel canale giusto, al momento giusto."*
+
+## Gap
+
+- Test integrazione servizi esterni limitati
+- Policies assenti
+- Convenzioni template non documentate
+- Logiche di configurazione disperse
+- Retry e dead letter queue mancanti
+
+## Add
+
+- Policies per template e configurazioni
+- Test con mock per canali
+- Retry con exponential backoff
+- Dashboard monitoring consegne
+- Preferenze granulari per tipo e frequenza
+
+## Split/Merge
+
+**Mantenere come-is.** Il focus è sull'orchestrazione multi-canale, distinta da Email (creazione contenuto) e WhatsApp (canale specifico).
 
 ## Future Enhancements
-- Real-time tracking
-- Advanced analytics
-- A/B testing features
-- Enhanced template system
-- Advanced personalization
-- Workflow integration
-- Multi-provider SMS support
-- Push notification system
-- Advanced preference management
+
+1. **Smart channel selection**: ML per scegliere canale migliore
+2. **Notification scheduler**: invio programmato ottimale
+3. **Notification analytics**: engagement per canale
+4. **User preference AI**: suggerimenti preferenze basati su engagement
+5. **Transactional vs marketing**: separazione执法 per compliance
+6. **Notification inbox**: inbox unificata per tutte le notifiche

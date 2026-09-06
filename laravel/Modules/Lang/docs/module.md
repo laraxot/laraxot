@@ -1,106 +1,71 @@
 ---
-title: "Lang Module - Comprehensive Analysis"
-module: "Lang"
-type: concept
-tags: [migration, filament, 4]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "migration filament 4"
+title: "Lang Module — Doctrine"
+type: doctrine
+tags: [lang, i18n, localization, module-doctrine]
+created: 2026-09-05
+updated: 2026-09-05
+qmd: "Lang module doctrine BMAD analysis purpose religion philosophy policy why zen gap enhancements split merge"
 related:
-  - "./italian-text-refined-audit-report.md"
+  - "../../Xot/docs/module.md"
+  - "../../Platform/docs/module.md"
 ---
-# Lang Module - Comprehensive Analysis
 
-## Module Overview
-**Module Name**: Lang  
-**Type**: Localization & Translation Module  
-**Status**: ✅ Active  
-**Framework**: Laravel 12.x + Filament 4.x  
-**Translation System**: Laravel Localization + Advanced Features  
-**Language**: Multi-language (IT/EN/DE + 7 more)  
+# Lang Module — Doctrine
 
-## Purpose
-The Lang module provides comprehensive localization and translation management:
+## Scope (Scopo)
 
-- Multi-language content management
-- Translation file management and editing
-- Real-time translation updates
-- Language fallback and negotiation
-- Translation management interface
-- Automatic translation tools integration
-- Content localization for different regions
-- Translation validation and quality assurance
+Lang gestisce la localizzazione e internazionalizzazione (i18n) del monorepo. Fornisce il sistema di traduzione centralizzato, lo switching linguistico, la configurazione locale, e i file di traduzione per tutte le lingue supportate. Ogni modulo usa Lang per le proprie traduzioni, mai file di traduzione dispersi.
 
-## Architecture
-- **Translation System**: Laravel localization with extensions
-- **Management Interface**: Translation editing and management
-- **Language Detection**: Automatic language detection and switching
-- **Fallback System**: Translation fallback mechanisms
-- **Filament Interface**: Translation administration dashboard
+## Religion (Religione)
 
-## Current Implementation Status
-### ✅ Fully Implemented Features
-- Multi-language support (10+ languages)
-- Translation file management
-- Language switching functionality
-- Translation fallback system
-- Filament-based translation management
-- Real-time translation updates
-- PHPStan Level 9+ compliance
-- Test coverage 97%+
+**"Semplicità vince sulla complessità. Modulare è dare vita."** La convinzione non negoziabile è che ogni label, ogni messaggio, ogni testo visibile all'utente debba essere tradotto tramite Lang, mai hardcoded in italiano o inglese. Lang è la fonte di verità per tutto il testo del sistema.
 
-### ⚠️ Partially Implemented Features
-- Advanced translation validation
-- Translation consistency checking
-- Performance optimization for translation loading
-- Advanced language detection patterns
+## Philosophy (Filosofia)
 
-### ❌ Missing Features
-- AI-powered translation suggestions
-- Translation collaboration tools
-- Quality assurance automation
-- Translation memory system
-- Advanced translation analytics
-- Integration with professional translation services
-- Advanced content localization
-- Translation workflow management
-- Automated translation testing
-- Advanced language negotiation
+- **XotBase per coerenza**: ogni modello Lang estende XotBase per uniformità
+- **Filament v5**: integrazione nativa con Filament 5 per pannello admin tradotto
+- **Laravel Queues**: traduzioni pesanti (es. generazione PDF multilingua) in queue
+- **PSR-12 + PHPStan L10**: codice e tipi rigorosi
 
-## Integration with Other Modules
-- **User**: User language preferences
-- **Cms**: Multi-language content
-- **healthcare_app**: Survey translation
-- **ExternalProject**: Survey translation
-- **Limesurvey**: Question translation
-- **Xot**: Base localization infrastructure
-- **Filament**: Translation management interface
+## Policy (Politica)
 
-## Critical Dependencies
-- Xot module (for base classes)
-- Laravel localization system
-- Translation management tools
-- Filament 4.x (management interface)
-- Database for translation storage
+- Ogni modulo DEVE avere file di traduzione in `lang/it/` e `lang/en/`
+- Nessun label hardcoded: ogni testo visibile usa `__('module::key')`
+- Le chiavi di traduzione sono nommate con pattern `module.action.operation`
+- Aggiunta di nuove lingue passa per Lang: nessun modulo aggiunge lingue proprie
 
-## Key Metrics
-| Aspect | Status | Details |
-|--------|--------|---------|
-| **Languages** | ✅ 10+ | Multiple language support |
-| **Management** | ✅ Filament | Admin interface |
-| **Real-time** | ✅ Updates | Dynamic translation changes |
-| **Fallback** | ✅ System | Translation fallbacks |
-| **PHPStan Level** | ✅ 9+ | High compliance |
-| **Test Coverage** | ✅ 97% | Excellent coverage |
+## Why (Perché)
+
+Lang esiste perché senza un sistema di traduzione centralizzato, ogni modulo avrebbe i propri file di traduzione con chiavi non standardizzate, rendendo impossibile la manutenzione e l'aggiunta di nuove lingue. Lang garantisce che il sistema sia multilingua by design.
+
+## Zen
+
+*"Il testo è dato, non codice. Traduci una volta, usa ovunque."*
+
+## Gap
+
+- ARCHITECTURE.md mancante nella root del modulo
+- Alcuni adapter di traduzione non completamente testati
+- Mancano report di completezza traduzioni per modulo
+- Nessun tool per trovare stringhe hardcoded nel codice
+
+## Add
+
+- Tool di analisi per trovare stringhe hardcoded nel codice PHP/Blade
+- Report di completezza traduzioni per ogni modulo (percentuale)
+- Più backend di traduzione (API esterne, traduzione automatica con revisione)
+- Action per validazione traduzioni (chiavi mancanti, duplicati, orfane)
+- Dashboard per gestione traduzioni con anteprima live
+
+## Split/Merge
+
+**Mantenere come-is, ma estrarre Filesystem/Translators come sotto-domini se crescono.** Lang è un sistema di supporto che potrebbe essere frammentato, ma la centralizzazione è il suo valore principale — frammentarlo significherebbe perdere la garanzia di coerenza.
 
 ## Future Enhancements
-- AI translation
-- Collaboration tools
-- Quality assurance
-- Translation memory
-- Workflow management
-- Analytics system
-- Professional service integration
-- Content localization
-- Validation improvements
-- Performance optimization
+
+1. **Translation memory**: sistema di memoizzazione per traduzioni riutilizzate tra moduli
+2. **AI-assisted translation**: integrazione LLM per traduzione automatica con revisione umana
+3. **Translation diff**: confronto tra lingue per identificare chiavi obsolete o mancanti
+4. **Crowdsourced translation**: UI per contributi traduzione da parte degli utenti
+5. **Pluralization rules**: supporto completo per lingue con regole di plurale complesse
+6. **RTL support**: supporto completo per lingue right-to-left (arabo, ebraico)
