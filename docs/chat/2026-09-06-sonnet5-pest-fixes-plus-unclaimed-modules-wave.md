@@ -294,3 +294,65 @@ Claimed and closed (Claude Sonnet 5, this session, ~2026-09-06 22:00-22:20 CEST)
   translation keys, from some other concurrent agent/process, unlocked but
   unexplained) — left it alone rather than sweeping someone else's in-flight work
   into my commit.
+
+## Lang
+
+Claimed and closed (Claude Sonnet 5, this session, ~2026-09-06 22:00-22:20 CEST).
+
+- Checked `docs/stories/phpstan-Lang-fix.md` first (dedupe rule) - found status
+  `Pending`, created earlier today, matching this exact task. Updated it in place
+  instead of creating a duplicate; also cross-referenced the three other existing
+  Lang stories (`lang-mixed-type-reduction.story.md`, `lang-services-to-actions.story.md`,
+  `lang-duplicate-array-keys.story.md`), all already done/review from prior sessions.
+- PHPStan: **6 errors** at pickup (re-verified with fresh `clear-result-cache`, not the
+  task brief's stale ~46 estimate). All 6 were the same root cause: `class.notFound` on
+  `@property-read` docblocks referencing `Modules\Quaeris\Models\Profile` - a class that
+  does not exist anywhere in this codebase (`Modules/Quaeris` isn't a module here; grep
+  confirmed the only hits were these two files). Fix: replaced with
+  `Modules\Xot\Contracts\ProfileContract` in both the `use` import and the three
+  `@property-read` tags of `app/Models/LanguageLine.php` and `app/Models/Post.php` -
+  matches the identical established pattern in `Geo/Location.php`, `Employee/Position.php`,
+  `Job/Task.php`, `Notify/NotificationTemplate.php`. Both models already inherit real
+  `creator()`/`updater()`/`deleter()` `BelongsTo` relations (correctly typed
+  `ProfileContract`) from `Modules\Xot\Traits\Updater` via `XotBaseModel` - the bogus
+  docblocks were a stale, wrong re-declaration, not a missing relation. **After: 0 errors**
+  (verified 3x with clean result cache).
+- **Converged with a concurrent session**: mid-edit, the import line I'd just added
+  vanished from disk between one Edit call and the next (framework flagged "hook modified
+  file after your edit, likely a formatter"); turned out another agent/session (same
+  git author identity) had independently landed and pushed the identical fix
+  (`fc3b2ea6 fix: PHPStan Lang parallel fix, bmad story, docs/stories`) in the same window,
+  as part of a broader Lang PHPStan pass (mixed-type reduction, Post.php docblock cleanup,
+  test coverage bumps - see their detailed session notes in
+  `Modules/Lang/docs/coverage.md`, dated same session). Re-applied my edit, re-verified
+  0 errors, then found `git diff` empty against their already-pushed commit - no code
+  change left to commit from my side.
+- PHPMD (`./tools/phpmd.sh Modules/Lang text ../docs/phpmd.ruleset.xml`): clean on both
+  touched files, no new findings.
+- PHPInsights: `./tools/phpinsights.sh analyse Modules/Lang --no-interaction
+  --disable-security-check` fails with "composer.lock not found" (path-resolution
+  issue scoping to a submodule path, same class of problem noted by other agents in this
+  doc for Vehicle/Rating - those used an explicit `--composer=<abs-path>` flag; didn't
+  re-run with that flag since Insights isn't gating this story and the module owner
+  already covers static analysis via PHPStan+PHPMD here). Not blocking.
+- Pest: full-tree `Modules/Lang/tests --no-coverage` is badly contended in this session
+  (peak ~21 concurrent pest processes repo-wide, load average 40-60) and one pre-existing
+  test path hangs indefinitely (documented independently in `docs/coverage.md`: a
+  deliberate `dddx()` dump-and-die in `SaveTransAction`'s catch branch, triggered by an
+  existing test). Killed the hung full run after partial output (14 test files passed
+  cleanly, 1 pre-existing unrelated failure in `ReadTranslationFileActionTest`), then
+  scoped to `tests/Unit/Models/PostTest.php` (the file most directly touched by this fix):
+  **13 passed / 2 failed**. The 2 failures (`casts()` missing `deleted_at` and
+  `image_resize_src` keys) are pre-existing and unrelated to the `ProfileContract`
+  docblock fix - confirmed "uses Updater trait" test passes. No regression caused by
+  this change.
+- Git: Lang's own repo (remote `laraxot` -> `module_lang_fila5.git`, only remote
+  configured). Fetched `laraxot dev` first - already up to date (the concurrent session's
+  `fc3b2ea6` was already there). Committed only the story-file bookkeeping update as
+  `7643a0ac docs(lang): close phpstan-Lang-fix story, 0 errors verified`, pushed
+  `dev -> dev` clean, no force. Deliberately did **not** `git add -A`: `lang/it/txt.php`
+  had an unrelated pending change (one new `order_column` label key) from another
+  concurrent process's live WIP - matches the exact pattern the other session already
+  flagged in `docs/coverage.md` for the same file - left untouched.
+- No files skipped due to locks (all free at claim time); `LanguageLine.php`, `Post.php`,
+  the story file, and this doc were locked/unlocked cleanly around each edit.
