@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Email\Actions;
 
-use Modules\User\Models\User;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Log;
@@ -18,6 +17,7 @@ use Modules\Email\AI\EmailMessageClassifierInterface;
 use Modules\Email\Models\EmailConversation;
 use Modules\Email\Models\EmailMessage;
 use Modules\Email\Settings\EmailSettings;
+use Modules\User\Models\User;
 use Modules\WorkOrder\Actions\AddWorkOrderActivityAction;
 use Spatie\QueueableAction\QueueableAction;
 use Throwable;
@@ -149,7 +149,9 @@ final class ProcessEmailMessageAction
             return;
         }
 
-        $summary = trim((string) ($classification['summary'] ?? ''));
+        $summaryValue = $classification['summary'] ?? '';
+        $summaryStr = is_string($summaryValue) ? $summaryValue : '';
+        $summary = trim($summaryStr);
         $body = $summary !== '' ? $summary : trim((string) $message->body);
 
         $this->addWorkOrderActivity->execute(
@@ -181,12 +183,16 @@ final class ProcessEmailMessageAction
         $payload['email_message_id'] = (int) $message->id;
         $payload['source'] = 'email';
 
-        $summary = trim((string) ($classification['summary'] ?? ''));
+        $summaryValue = $classification['summary'] ?? '';
+        $summaryStr = is_string($summaryValue) ? $summaryValue : '';
+        $summary = trim($summaryStr);
         if ($summary !== '' && ! isset($payload['body'])) {
             $payload['body'] = $summary;
         }
 
-        $preview = trim((string) ($action['preview'] ?? ''));
+        $previewValue = $action['preview'] ?? '';
+        $previewStr = is_string($previewValue) ? $previewValue : '';
+        $preview = trim($previewStr);
         if ($preview === '') {
             $preview = $this->defaultPreview($type, $message, $classification);
         }
@@ -212,7 +218,8 @@ final class ProcessEmailMessageAction
      */
     private function proposalType(array $action): string
     {
-        $type = (string) ($action['type'] ?? '');
+        $typeValue = $action['type'] ?? '';
+        $type = is_string($typeValue) ? $typeValue : '';
 
         return in_array($type, [
             'append_work_order_activity_from_email',
@@ -294,7 +301,9 @@ final class ProcessEmailMessageAction
      */
     private function defaultPreview(string $type, EmailMessage $message, array $classification): string
     {
-        $summary = trim((string) ($classification['summary'] ?? ''));
+        $summaryValue = $classification['summary'] ?? '';
+        $summaryStr = is_string($summaryValue) ? $summaryValue : '';
+        $summary = trim($summaryStr);
         $summary = $summary !== '' ? $summary : mb_substr((string) $message->body, 0, 300);
 
         return match ($type) {

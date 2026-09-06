@@ -63,8 +63,8 @@ final class ResolveEmailMessageContextAction
                 'id' => (int) $workOrder->id,
                 'code' => (string) ($workOrder->code ?? ''),
                 'title' => (string) $workOrder->title,
-                'status' => (string) data_get($workOrder, 'status.name', ''),
-                'site' => (string) data_get($workOrder, 'site.name', ''),
+                'status' => is_string(data_get($workOrder, 'status.name', '')) ? data_get($workOrder, 'status.name', '') : '',
+                'site' => is_string(data_get($workOrder, 'site.name', '')) ? data_get($workOrder, 'site.name', '') : '',
             ])->all(),
             'interventions' => $interventions->map(fn (Intervention $intervention): array => [
                 'id' => (int) $intervention->id,
@@ -160,10 +160,14 @@ final class ResolveEmailMessageContextAction
     {
         $conversation->loadMissing(['customer', 'site', 'contact']);
 
+        $customerLegal = data_get($conversation, 'customer.legal_name', '');
+        $siteName = data_get($conversation, 'site.name', '');
+        $contactFull = data_get($conversation, 'contact.full_name', '');
+
         $parts = array_filter([
-            (string) data_get($conversation, 'customer.legal_name', ''),
-            (string) data_get($conversation, 'site.name', ''),
-            (string) data_get($conversation, 'contact.full_name', ''),
+            is_string($customerLegal) ? $customerLegal : '',
+            is_string($siteName) ? $siteName : '',
+            is_string($contactFull) ? $contactFull : '',
         ]);
 
         return implode(' - ', $parts);

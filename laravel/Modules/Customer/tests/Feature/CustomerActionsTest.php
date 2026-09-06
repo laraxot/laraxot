@@ -92,7 +92,6 @@ it('creates a customer site', function (): void {
 
 it('soft-deletes a customer site', function (): void {
     $customer = Customer::query()->create(['legal_name' => 'Acme S.p.A.', 'is_active' => 1]);
-    /** @var CustomerSite $site */
     $site = $customer->sites()->create(['name' => 'HQ']);
 
     app(SoftDeleteCustomerSiteAction::class)->execute($site);

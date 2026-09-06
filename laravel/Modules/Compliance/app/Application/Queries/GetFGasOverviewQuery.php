@@ -56,9 +56,11 @@ final class GetFGasOverviewQuery
                 ? new SafeDateTimeImmutable($row->last_leak_check_on)
                 : null;
 
+            $chargeKg = is_numeric($row->charge_kg) ? (float) $row->charge_kg : 0.0;
+
             $obligation = $this->calculateObligation->execute(
                 refrigerantCode: is_string($row->refrigerant_code) ? $row->refrigerant_code : '',
-                chargeKg: (float) $row->charge_kg,
+                chargeKg: $chargeKg,
                 lastCheckedOn: $lastCheck,
                 hasLeakDetectionSystem: (bool) $row->has_leak_detection_system,
                 isHermeticallySealed: (bool) $row->is_hermetically_sealed,
@@ -69,7 +71,7 @@ final class GetFGasOverviewQuery
                 'customer' => is_string($row->legal_name) ? $row->legal_name : '',
                 'description' => is_string($row->description) ? $row->description : '',
                 'refrigerant' => is_string($row->refrigerant_code) ? $row->refrigerant_code : '',
-                'charge_kg' => (float) $row->charge_kg,
+                'charge_kg' => $chargeKg,
                 'obligation' => $obligation,
                 'last_check' => $lastCheck?->format('d/m/Y'),
                 'overdue' => $obligation->isOverdue($asOf),

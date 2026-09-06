@@ -106,12 +106,15 @@ final class GeneratePosDraftForWorkOrderAction
     {
         $workOrder = is_array($draft['work_order'] ?? null) ? $draft['work_order'] : [];
         $sections = is_array($draft['sections'] ?? null) ? $draft['sections'] : [];
+        $source = is_string($draft['source'] ?? null) ? $draft['source'] : '';
+        $woTitle = is_string($workOrder['title'] ?? null) ? $workOrder['title'] : '';
+        $woCustomer = is_string($workOrder['customer'] ?? null) ? $workOrder['customer'] : '';
         $lines = [
             '# Bozza POS',
             '',
-            '**Fonte struttura:** '.(string) ($draft['source'] ?? ''),
-            '**Commessa:** '.(string) ($workOrder['title'] ?? ''),
-            '**Cliente:** '.(string) ($workOrder['customer'] ?? ''),
+            '**Fonte struttura:** '.$source,
+            '**Commessa:** '.$woTitle,
+            '**Cliente:** '.$woCustomer,
             '',
         ];
 
@@ -119,10 +122,12 @@ final class GeneratePosDraftForWorkOrderAction
             if (! is_array($section)) {
                 continue;
             }
-            $lines[] = '## '.(string) ($section['title'] ?? 'Sezione POS');
+            $sectionTitle = is_string($section['title'] ?? null) ? $section['title'] : 'Sezione POS';
+            $lines[] = '## '.$sectionTitle;
             $fields = is_array($section['fields'] ?? null) ? $section['fields'] : [];
             foreach ($fields as $field) {
-                $lines[] = '- '.str_replace('_', ' ', (string) $field).':';
+                $fieldStr = is_string($field) ? $field : '';
+                $lines[] = '- '.str_replace('_', ' ', $fieldStr).':';
             }
             $prefill = $section['prefill'] ?? null;
             if (is_array($prefill) && $prefill !== []) {
@@ -133,7 +138,8 @@ final class GeneratePosDraftForWorkOrderAction
             $lines[] = '';
         }
 
-        $lines[] = '> '.(string) ($draft['disclaimer'] ?? '');
+        $disclaimer = is_string($draft['disclaimer'] ?? null) ? $draft['disclaimer'] : '';
+        $lines[] = '> '.$disclaimer;
 
         return implode("\n", $lines);
     }

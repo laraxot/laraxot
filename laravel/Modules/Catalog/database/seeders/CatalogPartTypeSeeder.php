@@ -15,6 +15,9 @@ class CatalogPartTypeSeeder extends Seeder
             return;
         }
 
-        CatalogPartType::factory()->count(5)->create();
+        $factory = CatalogPartType::factory();
+        if ($factory !== null) {
+            $factory->count(5)->create();
+        }
     }
 }

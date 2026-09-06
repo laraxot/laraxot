@@ -35,8 +35,11 @@ class CreateWorkHour extends XotBaseCreateRecord
     {
         $data = $this->form->getState();
 
-        $timestamp = Carbon::parse((string) ($data['timestamp'] ?? ''));
-        $employeeId = (int) ($data['employee_id'] ?? 0);
+        $timestampValue = $data['timestamp'] ?? '';
+        $timestamp = Carbon::parse((string) $timestampValue);
+
+        $employeeIdValue = $data['employee_id'] ?? 0;
+        $employeeId = (int) $employeeIdValue;
 
         $existingEntry = WorkHour::query()
             ->where('employee_id', $employeeId)

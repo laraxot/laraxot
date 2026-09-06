@@ -132,18 +132,20 @@ final class AnalyzeEnergyBrokerDocumentWithGoogleDocumentAiAction
     private function buildJwtAssertion(string $clientEmail, string $privateKey): string
     {
         $now = (int) now()->timestamp;
-        $header = $this->base64UrlEncode((string) json_encode([
+        $headerJson = json_encode([
             'alg' => 'RS256',
             'typ' => 'JWT',
-        ], JSON_THROW_ON_ERROR));
-        $payload = $this->base64UrlEncode((string) json_encode([
+        ], JSON_THROW_ON_ERROR);
+        $header = $this->base64UrlEncode(is_string($headerJson) ? $headerJson : '');
+        $payloadJson = json_encode([
             'iss' => $clientEmail,
             'sub' => $clientEmail,
             'aud' => 'https://oauth2.googleapis.com/token',
             'scope' => 'https://www.googleapis.com/auth/cloud-platform',
             'iat' => $now,
             'exp' => $now + 3500,
-        ], JSON_THROW_ON_ERROR));
+        ], JSON_THROW_ON_ERROR);
+        $payload = $this->base64UrlEncode(is_string($payloadJson) ? $payloadJson : '');
 
         $signingInput = $header.'.'.$payload;
         $signature = '';
@@ -164,7 +166,8 @@ final class AnalyzeEnergyBrokerDocumentWithGoogleDocumentAiAction
 
     private function stringConfig(string $key, ?string $fallback = null): string
     {
-        $value = trim((string) config($key, $fallback));
+        $configValue = config($key, $fallback);
+        $value = is_string($configValue) ? trim($configValue) : '';
         if ($value === '') {
             throw new \RuntimeException(sprintf('Configurazione mancante: %s', $key));
         }

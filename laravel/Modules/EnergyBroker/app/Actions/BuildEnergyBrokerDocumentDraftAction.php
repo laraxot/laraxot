@@ -69,8 +69,10 @@ final class BuildEnergyBrokerDocumentDraftAction
     private function normalizeText(string $text): string
     {
         $text = str_replace(["\r\n", "\r"], "\n", $text);
-        $text = preg_replace('/[ \t]+/', ' ', $text);
-        $text = preg_replace('/\n{2,}/', "\n", $text);
+        $result1 = preg_replace('/[ \t]+/', ' ', $text);
+        $text = is_string($result1) ? $result1 : $text;
+        $result2 = preg_replace('/\n{2,}/', "\n", $text);
+        $text = is_string($result2) ? $result2 : $text;
 
         return trim($text);
     }
@@ -225,7 +227,8 @@ final class BuildEnergyBrokerDocumentDraftAction
 
         $value = str_replace('.', '', $value);
         $value = str_replace(',', '.', $value);
-        $value = preg_replace('/[^0-9.]+/', '', $value);
+        $result = preg_replace('/[^0-9.]+/', '', $value);
+        $value = is_string($result) ? $result : '';
 
         return $value !== '' ? $value : null;
     }

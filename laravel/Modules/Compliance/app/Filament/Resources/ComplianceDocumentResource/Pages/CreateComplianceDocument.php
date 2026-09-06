@@ -22,7 +22,7 @@ final class CreateComplianceDocument extends CreateRecord
      */
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        $this->filePath = isset($data['file_path']) ? (string) $data['file_path'] : null;
+        $this->filePath = is_string($data['file_path'] ?? null) ? $data['file_path'] : null;
         unset($data['file_path']);
 
         return $data;

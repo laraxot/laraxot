@@ -17,6 +17,8 @@ class ResolveGravatarDefaultImageAction
 
     public function handle(): string
     {
-        return (string) config('comments.gravatar.default_image', 'mp');
+        $value = config('comments.gravatar.default_image', 'mp');
+
+        return is_string($value) ? $value : 'mp';
     }
 }

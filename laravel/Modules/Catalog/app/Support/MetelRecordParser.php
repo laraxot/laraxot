@@ -33,7 +33,10 @@ final readonly class MetelRecordParser
     public function detectFormat(string $content): string
     {
         foreach (preg_split('/\r\n|\r|\n/', $content) as $rawLine) {
-            $line = (string) $rawLine;
+            if (! is_string($rawLine)) {
+                continue;
+            }
+            $line = $rawLine;
 
             if (trim($line) === '') {
                 continue;

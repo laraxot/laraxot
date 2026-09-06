@@ -13,6 +13,11 @@ parameters:
         - ./Modules/
 
     ignoreErrors:
+        # Pest v3 + PHPStan Level 10 compatibility: Pest's Mixins\Expectation class is marked as @internal
+        # but the PHPStan extension doesn't suppress method.internalClass errors
+        - '#Call to method.*of internal class Pest\\Mixins\\Expectation#'
+        - '#Call to method.*of internal class Pest\\PendingCalls\\UsesCall#'
+        - '#Call to method extend\(\) of internal class Pest\\Configuration#'
 
     excludePaths:
         - ./*/vendor/*

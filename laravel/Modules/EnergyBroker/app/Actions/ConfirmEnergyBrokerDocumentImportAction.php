@@ -237,13 +237,14 @@ final class ConfirmEnergyBrokerDocumentImportAction
         $serviceType = $this->normalizedString($supplyData['service_type'] ?? null);
         $histories = [];
 
-        if (in_array($serviceType, ['electricity', 'dual'], true) && $this->normalizedString($supplyData['pod'] ?? null) !== null) {
+        $podValue = $this->normalizedString($supplyData['pod'] ?? null);
+        if (in_array($serviceType, ['electricity', 'dual'], true) && $podValue !== null) {
             $supplyPoint = $this->firstOrCreateSupplyPoint(
                 customer: $customer,
                 site: $site,
                 serviceType: 'electricity',
                 identifierField: 'pod',
-                identifierValue: (string) $supplyData['pod'],
+                identifierValue: $podValue,
                 annualConsumption: $this->normalizedNumber($supplyData['annual_consumption_electricity'] ?? $supplyData['annual_consumption'] ?? null),
                 powerKw: $this->normalizedNumber($supplyData['power_kw'] ?? null),
                 supplierName: $this->normalizedString($contractData['proposed_supplier'] ?? null) ?? $this->normalizedString($contractData['current_supplier'] ?? null),
@@ -256,13 +257,14 @@ final class ConfirmEnergyBrokerDocumentImportAction
             ];
         }
 
-        if (in_array($serviceType, ['gas', 'dual'], true) && $this->normalizedString($supplyData['pdr'] ?? null) !== null) {
+        $pdrValue = $this->normalizedString($supplyData['pdr'] ?? null);
+        if (in_array($serviceType, ['gas', 'dual'], true) && $pdrValue !== null) {
             $supplyPoint = $this->firstOrCreateSupplyPoint(
                 customer: $customer,
                 site: $site,
                 serviceType: 'gas',
                 identifierField: 'pdr',
-                identifierValue: (string) $supplyData['pdr'],
+                identifierValue: $pdrValue,
                 annualConsumption: $this->normalizedNumber($supplyData['annual_consumption_gas'] ?? $supplyData['annual_consumption'] ?? null),
                 powerKw: null,
                 supplierName: $this->normalizedString($contractData['proposed_supplier'] ?? null) ?? $this->normalizedString($contractData['current_supplier'] ?? null),
@@ -390,7 +392,8 @@ final class ConfirmEnergyBrokerDocumentImportAction
 
         $string = str_replace('.', '', $string);
         $string = str_replace(',', '.', $string);
-        $string = preg_replace('/[^0-9.]+/', '', $string);
+        $result = preg_replace('/[^0-9.]+/', '', $string);
+        $string = is_string($result) ? $result : '';
 
         return $string !== '' ? $string : null;
     }

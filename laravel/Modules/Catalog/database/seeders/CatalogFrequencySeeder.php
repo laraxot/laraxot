@@ -15,6 +15,9 @@ class CatalogFrequencySeeder extends Seeder
             return;
         }
 
-        CatalogFrequency::factory()->count(5)->create();
+        $factory = CatalogFrequency::factory();
+        if ($factory !== null) {
+            $factory->count(5)->create();
+        }
     }
 }

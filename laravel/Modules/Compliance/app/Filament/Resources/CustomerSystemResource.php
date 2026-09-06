@@ -114,7 +114,7 @@ final class CustomerSystemResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('code')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('customer_id')
-                    ->formatStateUsing(fn ($state): string => (string) (DB::table('customers')->where('id', $state)->value('legal_name') ?? '—'))
+                    ->formatStateUsing(fn ($state): string => DB::table('customers')->where('id', $state)->value('legal_name') ?? '—')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('description')->limit(40)->toggleable(),
                 Tables\Columns\TextColumn::make('media_count')->counts('media'),

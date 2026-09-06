@@ -17,6 +17,8 @@ class ResolveEditorAction
 
     public function handle(): string
     {
-        return (string) config('comments.ui.editor', 'comment::editors.textarea');
+        $value = config('comments.ui.editor', 'comment::editors.textarea');
+
+        return is_string($value) ? $value : 'comment::editors.textarea';
     }
 }

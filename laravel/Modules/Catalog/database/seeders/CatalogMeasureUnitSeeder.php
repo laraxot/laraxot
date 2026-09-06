@@ -15,6 +15,9 @@ class CatalogMeasureUnitSeeder extends Seeder
             return;
         }
 
-        CatalogMeasureUnit::factory()->count(5)->create();
+        $factory = CatalogMeasureUnit::factory();
+        if ($factory !== null) {
+            $factory->count(5)->create();
+        }
     }
 }

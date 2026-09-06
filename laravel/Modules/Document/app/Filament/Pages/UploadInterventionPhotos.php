@@ -89,7 +89,15 @@ final class UploadInterventionPhotos extends GatedXotBasePage
 
                     app(AttachPhotosToInterventionAction::class)->execute(
                         intervention: $this->intervention,
-                        paths: array_values(array_map(static fn (mixed $path): string => (string) $path, $paths)),
+                        paths: array_values(array_map(static function (mixed $path): string {
+                            if (is_string($path)) {
+                                return $path;
+                            }
+                            if (is_int($path) || is_float($path)) {
+                                return (string) $path;
+                            }
+                            return '';
+                        }, $paths)),
                         uploadedByUserId: is_int($userId) ? $userId : null,
                     );
 

@@ -67,7 +67,7 @@ final class SchemasRelationManager extends RelationManager
         return $schema->components([
             FileUpload::make('path')
                 ->disk('local')
-                ->directory(fn (): string => 'customer-system-schemas/'.(string) $this->getOwnerRecord()->getKey())
+                ->directory(fn (): string => 'customer-system-schemas/'.($this->getOwnerRecord()->getKey() ?? 0))
                 ->visibility('private')
                 ->acceptedFileTypes(self::ACCEPTED_MIME_TYPES)
                 ->maxSize(51200)
@@ -103,14 +103,19 @@ final class SchemasRelationManager extends RelationManager
                         /** @var CustomerSystem $system */
                         $system = $this->getOwnerRecord();
 
-                        $path = is_array($data['path']) ? (string) reset($data['path']) : (string) $data['path'];
+                        if (is_array($data['path'])) {
+                            $pathValue = reset($data['path']);
+                            $path = is_string($pathValue) ? $pathValue : '';
+                        } else {
+                            $path = is_string($data['path']) ? $data['path'] : '';
+                        }
 
                         $original = $data['original_name'] ?? null;
                         if (is_array($original)) {
                             $original = reset($original);
                         }
 
-                        $title = trim((string) ($data['title'] ?? ''));
+                        $title = trim(is_string($data['title'] ?? null) ? $data['title'] : '');
                         if ($title === '') {
                             $title = is_string($original) && $original !== '' ? $original : basename($path);
                         }

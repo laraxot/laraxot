@@ -163,7 +163,8 @@ final class ExecuteAiActionProposalAction
      */
     private function executeStopTimePunch(AiActionProposal $proposal, int|string $userId): array
     {
-        $interventionId = (int) ($proposal->payload['intervention_id'] ?? 0);
+        $payload = $this->payloadOf($proposal);
+        $interventionId = $this->payloadInt($payload, 'intervention_id');
         if ($interventionId <= 0) {
             return ['ok' => false, 'error' => 'intervention_id mancante.'];
         }
@@ -186,8 +187,9 @@ final class ExecuteAiActionProposalAction
      */
     private function executeUpsertDailyNote(AiActionProposal $proposal, int|string $userId): array
     {
-        $noteDateRaw = (string) ($proposal->payload['note_date'] ?? '');
-        $body = (string) ($proposal->payload['body'] ?? '');
+        $payload = $this->payloadOf($proposal);
+        $noteDateRaw = $this->payloadNullableString($payload, 'note_date') ?? '';
+        $body = $this->payloadNullableString($payload, 'body') ?? '';
 
         if (trim($noteDateRaw) === '' || trim($body) === '') {
             return ['ok' => false, 'error' => 'note_date/body mancanti.'];
@@ -208,9 +210,10 @@ final class ExecuteAiActionProposalAction
      */
     private function executeChangeWorkOrderStatus(AiActionProposal $proposal, int|string $userId): array
     {
-        $workOrderId = (int) ($proposal->payload['work_order_id'] ?? 0);
-        $toStatusCode = (string) ($proposal->payload['to_status_code'] ?? '');
-        $note = $proposal->payload['note'] ?? null;
+        $payload = $this->payloadOf($proposal);
+        $workOrderId = $this->payloadInt($payload, 'work_order_id');
+        $toStatusCode = $this->payloadNullableString($payload, 'to_status_code') ?? '';
+        $note = $payload['note'] ?? null;
 
         if ($workOrderId <= 0 || trim($toStatusCode) === '') {
             return ['ok' => false, 'error' => 'work_order_id/to_status_code mancanti.'];
@@ -503,11 +506,12 @@ final class ExecuteAiActionProposalAction
      */
     private function executeFinalizeInterventionReport(AiActionProposal $proposal, int|string $userId): array
     {
-        $interventionId = (int) ($proposal->payload['intervention_id'] ?? 0);
-        $travelKm = (int) ($proposal->payload['travel_km'] ?? 0);
-        $travelMinutes = (int) ($proposal->payload['travel_minutes'] ?? 0);
-        $outcomeCode = (string) ($proposal->payload['outcome_code'] ?? '');
-        $notes = $proposal->payload['notes'] ?? null;
+        $payload = $this->payloadOf($proposal);
+        $interventionId = $this->payloadInt($payload, 'intervention_id');
+        $travelKm = $this->payloadInt($payload, 'travel_km');
+        $travelMinutes = $this->payloadInt($payload, 'travel_minutes');
+        $outcomeCode = $this->payloadNullableString($payload, 'outcome_code') ?? '';
+        $notes = $payload['notes'] ?? null;
 
         if ($interventionId <= 0 || trim($outcomeCode) === '') {
             return ['ok' => false, 'error' => 'intervention_id/outcome_code mancanti.'];
@@ -757,8 +761,9 @@ final class ExecuteAiActionProposalAction
      */
     private function executeAdvanceProductionPhase(AiActionProposal $proposal, int|string $userId): array
     {
-        $phaseId = (int) ($proposal->payload['production_phase_id'] ?? 0);
-        $toStatus = (string) ($proposal->payload['to_status'] ?? '');
+        $payload = $this->payloadOf($proposal);
+        $phaseId = $this->payloadInt($payload, 'production_phase_id');
+        $toStatus = $this->payloadNullableString($payload, 'to_status') ?? '';
 
         if ($phaseId <= 0 || ! in_array($toStatus, ['in_progress', 'completed'], true)) {
             return ['ok' => false, 'error' => 'production_phase_id/to_status non validi.'];
@@ -1185,9 +1190,16 @@ final class ExecuteAiActionProposalAction
         $lines = collect($materialLines)
             ->map(static function (mixed $line): array {
                 $line = is_array($line) ? $line : [];
-                $description = trim((string) ($line['description'] ?? ''));
-                $quantity = round((float) ($line['quantity'] ?? 1), 2);
-                $unitPrice = round((float) ($line['unit_price'] ?? 0), 2);
+
+                $descriptionRaw = $line['description'] ?? '';
+                $description = is_string($descriptionRaw) ? trim($descriptionRaw) : '';
+
+                $quantityRaw = $line['quantity'] ?? 1;
+                $quantity = is_numeric($quantityRaw) ? (float) $quantityRaw : 1;
+
+                $unitPriceRaw = $line['unit_price'] ?? 0;
+                $unitPrice = is_numeric($unitPriceRaw) ? (float) $unitPriceRaw : 0;
+
                 $safeQuantity = $quantity > 0 ? $quantity : 1.0;
 
                 return [

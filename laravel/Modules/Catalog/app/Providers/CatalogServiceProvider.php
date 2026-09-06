@@ -58,13 +58,17 @@ class CatalogServiceProvider extends XotBaseServiceProvider
     {
         $enabledRaw = Env::get('METEL_API_ENABLED');
         $timeoutRaw = Env::get('METEL_API_TIMEOUT');
+        $baseUrlRaw = Env::get('METEL_API_BASE_URL') ?? config('metel.api.base_url');
+        $apiKeyRaw = Env::get('METEL_API_KEY') ?? config('metel.api.api_key');
+        $articlesEndpointRaw = Env::get('METEL_API_ARTICLES_ENDPOINT') ?? config('metel.api.articles_endpoint');
+        $itemsPathRaw = Env::get('METEL_API_ITEMS_PATH') ?? config('metel.api.items_path');
 
         config([
             'metel.api.enabled' => filter_var($enabledRaw ?? '0', FILTER_VALIDATE_BOOL),
-            'metel.api.base_url' => (string) (Env::get('METEL_API_BASE_URL') ?? config('metel.api.base_url')),
-            'metel.api.api_key' => (string) (Env::get('METEL_API_KEY') ?? config('metel.api.api_key')),
-            'metel.api.articles_endpoint' => (string) (Env::get('METEL_API_ARTICLES_ENDPOINT') ?? config('metel.api.articles_endpoint')),
-            'metel.api.items_path' => (string) (Env::get('METEL_API_ITEMS_PATH') ?? config('metel.api.items_path')),
+            'metel.api.base_url' => is_string($baseUrlRaw) ? $baseUrlRaw : '',
+            'metel.api.api_key' => is_string($apiKeyRaw) ? $apiKeyRaw : '',
+            'metel.api.articles_endpoint' => is_string($articlesEndpointRaw) ? $articlesEndpointRaw : '',
+            'metel.api.items_path' => is_string($itemsPathRaw) ? $itemsPathRaw : '',
             'metel.api.timeout' => is_numeric($timeoutRaw) ? (int) $timeoutRaw : (int) config('metel.api.timeout', 60),
         ]);
     }

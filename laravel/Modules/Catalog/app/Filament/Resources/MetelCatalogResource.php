@@ -161,8 +161,7 @@ final class MetelCatalogResource extends GatedXotBaseResource
                             return;
                         }
 
-                        $formatValue = (string) ($data['format'] ?? 'auto');
-                        $format = match ($formatValue) {
+                        $format = match (is_string($data['format'] ?? null) ? $data['format'] : 'auto') {
                             'csv' => 'csv',
                             'fixed' => 'fixed',
                             default => 'auto',

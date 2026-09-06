@@ -36,6 +36,7 @@ class CatalogPartTypeFactory extends Factory
     }
 
     /**
+     * @param array<string, mixed> $attributes
      * @return \Illuminate\Database\Eloquent\Collection<int, CatalogPartType>
      */
     public function create(array $attributes = []): \Illuminate\Database\Eloquent\Collection
@@ -44,6 +45,7 @@ class CatalogPartTypeFactory extends Factory
     }
 
     /**
+     * @param array<string, mixed> $attributes
      * @return CatalogPartType
      */
     public function createOne(array $attributes = []): CatalogPartType

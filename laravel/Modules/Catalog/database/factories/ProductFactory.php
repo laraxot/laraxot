@@ -38,6 +38,7 @@ class ProductFactory extends Factory
     }
 
     /**
+     * @param array<string, mixed> $attributes
      * @return \Illuminate\Database\Eloquent\Collection<int, Product>
      */
     public function create(array $attributes = []): \Illuminate\Database\Eloquent\Collection
@@ -46,6 +47,7 @@ class ProductFactory extends Factory
     }
 
     /**
+     * @param array<string, mixed> $attributes
      * @return Product
      */
     public function createOne(array $attributes = []): Product
