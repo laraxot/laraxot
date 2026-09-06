@@ -192,3 +192,4 @@ Queste convenzioni devono essere seguite per mantenere la coerenza del codice in
 * [README.md](../../../../Themes/Two/docs/README.md)
 * [README.md](../../../../Themes/One/docs/README.md)
 
+Regola: chi estende XotBaseResourceTable NON ridefinisce table() - HasXotTable.py:220
