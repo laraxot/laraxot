@@ -296,8 +296,8 @@ final class AiCommunicationsMonitor extends Page
                     ];
                 })
                 ->map(static function (array $entry): array {
-                    $from = is_string($entry['from'] ?? null) ? $entry['from'] : '';
-                    $text = is_string($entry['text'] ?? null) ? $entry['text'] : '';
+                    $from = is_string($entry['from']) ? $entry['from'] : '';
+                    $text = is_string($entry['text']) ? $entry['text'] : '';
 
                     return [
                         'from' => $from,

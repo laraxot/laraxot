@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Signature\Filament\Pages\Concerns;
 
+use App\Support\AccountFeatures;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Support\Facades\Auth;
 use Modules\User\Models\User;

@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-require_once __DIR__.'/PestHelpers.php';
-
-// Wrapper functions in global namespace for PHPStan and Pest
 namespace {
+    require_once __DIR__.'/PestHelpers.php';
+
     use Modules\Catalog\Models\MetelCatalog;
     use Modules\Catalog\Tests\TestCase;
 

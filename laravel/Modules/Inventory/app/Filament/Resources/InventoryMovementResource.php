@@ -26,8 +26,6 @@ use Illuminate\Support\Facades\Auth;
 use Modules\Catalog\Models\Product;
 use Modules\Intervention\Models\Intervention;
 use Modules\Inventory\Actions\GetStockSnapshotAction;
-use Modules\Xot\Actions\Cast\SafeIntCastAction;
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Inventory\Filament\Resources\InventoryMovementResource\Pages\CreateInventoryMovement;
 use Modules\Inventory\Filament\Resources\InventoryMovementResource\Pages\EditInventoryMovement;
 use Modules\Inventory\Filament\Resources\InventoryMovementResource\Pages\ListInventoryMovements;
@@ -38,6 +36,8 @@ use Modules\Inventory\Models\WarehouseLocation;
 use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Platform\Models\PlatformSetting;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Actions\Cast\SafeIntCastAction;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 
 final class InventoryMovementResource extends GatedXotBaseResource
 {
@@ -272,11 +272,11 @@ final class InventoryMovementResource extends GatedXotBaseResource
         return $table
             ->columns($columns)
             ->defaultSort('id', 'desc')
-            ->actions([
+            ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
     }

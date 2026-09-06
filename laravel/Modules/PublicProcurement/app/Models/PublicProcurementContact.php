@@ -16,7 +16,6 @@ use Modules\Xot\Models\XotBaseModel;
 final class PublicProcurementContact extends XotBaseModel
 {
     use HasXotFactory;
-
     use SoftDeletes;
 
     protected $table = 'public_procurement_contacts';

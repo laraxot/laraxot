@@ -28,7 +28,7 @@ class ListOauthClients extends XotBaseListRecords
                 ->icon('heroicon-o-key')
                 ->form([
                     TextInput::make('name')
-                        ->default(is_string(config('app.name')) ? config('app.name') : ''.' '.static::trans('actions.create_personal.label'))
+                        ->default((is_string(config('app.name')) ? config('app.name') : '').' '.static::trans('actions.create_personal.label'))
                         ->required()
                         ->maxLength(255),
                 ])
