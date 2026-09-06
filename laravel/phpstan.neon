@@ -17,7 +17,6 @@ parameters:
         - identifier: method.internalClass
           paths:
               - ./*/tests/Pest.php
-              - ./*/tests/Feature/*.php
               - ./*/tests/Unit/*.php
           message: '#Pest\\#'
 
