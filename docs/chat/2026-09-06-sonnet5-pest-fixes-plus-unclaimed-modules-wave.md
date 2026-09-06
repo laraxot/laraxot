@@ -210,3 +210,87 @@ Claimed and closed (Claude Sonnet 5, this session, ~2026-09-06 22:00 UTC).
   `dev -> dev` on `laraxot`, no force, no rewrite.
 - Files locked/unlocked cleanly via `bashscripts/lock/`: all 3 were free at
   claim time, no skips.
+
+## Rating
+
+Claimed and closed (Claude Sonnet 5, this session, ~2026-09-06 22:00-22:20 CEST).
+
+- PHPStan: re-verified from scratch, ignored the stale ~3-error baseline from the
+  task brief. Before: **6 errors** (1 `cast.string` + 5 `method.deprecated`). After:
+  **0 errors** (fresh `clear-result-cache` + `phpstan analyse Modules/Rating
+  --no-progress`, confirmed 3 times across the session).
+- **Race with a concurrent agent on the same files**: while I was mid-investigation
+  (had already locked and was about to edit `app/Models/Traits/HasRatingsTrait.php`
+  and `tests/Unit/ListRatingsPageTest.php`), another agent fixed and committed both
+  files first (`1c02f1a fix: PHPStan errors`) — `HasRatingsTrait.php:246`
+  `(string) $ruleValue` → `is_string($ruleValue) ? $ruleValue : ''` (root cause:
+  `Arr::prependKeysWith()`'s untyped return widens the array value type to `mixed`,
+  losing the `string` PHPStan could otherwise track from the `mapWithKeys` closure);
+  and `ListRatingsPageTest.php` reduced to a single `getResource()` test, dropping
+  the 5 tests that called Filament v4's deprecated `getTableColumns()`/
+  `getTableFilters()`/`getTableHeaderActions()`/`getTableActions()`/
+  `getTableBulkActions()` directly. Lock files were free both times I checked, so
+  either they raced the check-then-lock window or edited without the lock script —
+  not something I could prevent from my side.
+- Rebuilt the dropped column-listing test on top of their fix (didn't want to leave
+  a net coverage loss): `$page->table(Table::make($page))->getColumns()` instead of
+  the deprecated call, same pattern already proven in `RatingFilamentExtendedTest.php`
+  (story 2.3.phpstan-rating-tail-contracts). **Caught my own mistake before pushing**:
+  first attempt also tried to rebuild the filters/header-actions/row-actions tests
+  the same way, but `HasXotTable::invokeTableHook()` deliberately skips
+  `getTableFilters()/getTableHeaderActions()/getTableActions()/getTableBulkActions()`
+  when the concrete page doesn't override them (to avoid duplicating Filament's own
+  defaults) — so `$table->getHeaderActions()`/`hasAction('view'|'edit'|'delete')`/
+  `hasBulkAction('delete')` all came back empty/false even though the old deprecated
+  direct-call test asserted non-empty. Ran pest on the file before pushing, caught
+  2 failures, removed those 3 tests and documented why in a code comment instead of
+  reintroducing false assertions.
+- PHPMD (`./tools/phpmd.sh Modules/Rating text Modules/Rating/phpmd.ruleset.xml` —
+  module has its own ruleset, unlike the repo-root path in the task template): ran
+  fine, only pre-existing findings (CamelCaseVariableName, UnusedFormalParameter,
+  BooleanArgumentFlag across several files) plus a pre-existing parser crash on 2
+  unrelated files (`Filament/Widgets/StatsOverview.php`,
+  `Filament/Resources/HasRatingResource/Widgets/StatsOverview.php`, "Unexpected
+  token: (" — PDepend can't parse some PHP 8.x syntax there, matches the
+  "PdependExtension/void incompatibility" already logged in story 2.2/2.3). Nothing
+  from my touched file.
+- PHPInsights (`./tools/phpinsights.sh analyse Modules/Rating
+  --composer=<abs>/laravel/composer.lock`, confirmed installed/working — the
+  post-edit hook's "not installed" claim is stale, see the Correction note above):
+  architecture score failed, but every finding is pre-existing module-wide debt
+  (non-final classes, trait naming, function length, import ordering) unrelated to
+  the 2 lines/1 test I touched.
+- Pest: targeted run on the touched file passes clean —
+  `./vendor/bin/pest Modules/Rating/tests/Unit/ListRatingsPageTest.php -c
+  Modules/Rating/phpunit.xml --no-coverage` → **2 passed, 2 assertions**. Full-module
+  run (`Modules/Rating/tests`) was contended so hard by ~30 other agents' concurrent
+  pest processes (load average 50-63 for the whole session) that it took 775s and
+  the result I got back was a stale run against the pre-fix file version — showed
+  10 failed/115 passed, but 1 of those 10 was the exact bug I'd already fixed by the
+  time it finished, and the other 9 are pre-existing and untouched by this story:
+  `RatingFilamentSchemaTest > il form del rating dichiara i campi attesi` (form now
+  has 2 more `extra_attributes.*` fields than the test expects — schema/test drift,
+  not phpstan/deprecation related) and 8x `RatingTest`/similar failing with
+  `SQLSTATE[42S02]: Base table 'workorder_data.ratings' doesn't exist` (test DB
+  missing a table — same category of environment gap logged for Thermo/Vehicle
+  above). Did not re-run the full suite a second time given the shared-box cost;
+  documented the targeted-verification tradeoff in `docs/coverage.md`.
+- BMAD: two pre-existing stories found, one already closed out by the concurrent
+  agent (`docs/stories/phpstan-Rating-fix.md`, status Completed, has the 6→0 detail).
+  Updated the other stub (`docs/stories/01.Rating-phpstan-fix.story.md`, was still
+  "TODO") to point at it instead of creating a third duplicate (dedupe rule). Two
+  older, unrelated Rating PHPStan stories (2.2/2.3, already `status: review`,
+  scoped to different test files) were left untouched.
+- Git: Rating's own repo (remote `laraxot` → `module_rating_fila5.git`, only remote
+  configured). Fetched `laraxot dev` before committing — remote had already
+  absorbed the concurrent agent's `1c02f1a` commit by the time I looked (no local
+  divergence to merge). Committed only the 3 files I actually authored/changed
+  (`docs/coverage.md`, `docs/stories/01.Rating-phpstan-fix.story.md`,
+  `tests/Unit/ListRatingsPageTest.php`) as `34704eb test(rating): fix
+  ListRatingsPageTest table() assertions, dedupe story, log coverage`, pushed
+  `dev -> dev` clean, no force. Deliberately did **not** `git add -A`: a 4th file,
+  `lang/it/rating.php`, had an unrelated pending change in the shared working tree
+  (looks like an automated Pint-style array-shorthand reformat plus a few new
+  translation keys, from some other concurrent agent/process, unlocked but
+  unexplained) — left it alone rather than sweeping someone else's in-flight work
+  into my commit.
