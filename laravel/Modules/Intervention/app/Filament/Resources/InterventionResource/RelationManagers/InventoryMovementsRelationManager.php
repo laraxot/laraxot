@@ -223,6 +223,7 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
 
                         try {
                             $noteValue = $data['note'] ?? '';
+                            $note = is_string($noteValue) ? $noteValue : strval($noteValue);
 
                             return app(CreateInventoryMovementAction::class)->execute(
                                 productId: $productId,
@@ -230,7 +231,7 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
                                 quantity: $quantity,
                                 fromWarehouseId: $warehouseId,
                                 toWarehouseId: null,
-                                note: (string) $noteValue,
+                                note: $note,
                                 workOrderId: (int) ($intervention->work_order_id ?? 0),
                                 interventionId: (int) ($intervention->id ?? 0),
                                 createdByUserId: Auth::id() !== null ? (int) Auth::id() : null,
@@ -279,9 +280,10 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
             ->orderBy('code')
             ->pluck('code', 'id')
             ->mapWithKeys(static function (mixed $code, mixed $id): array {
-                return [
-                    (int) (is_numeric($id) ? $id : 0) => is_string($code) ? $code : (string) ($code ?? ''),
-                ];
+                $codeStr = is_string($code) ? $code : strval($code);
+                $idInt = is_numeric($id) ? (int) $id : 0;
+
+                return [$idInt => $codeStr];
             })
             ->all();
     }
@@ -293,9 +295,8 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
         }
 
         $location = WarehouseLocation::query()->find($locationId);
-        $locationWarehouseId = $location instanceof WarehouseLocation
-            ? (int) ($location->getAttribute('warehouse_id') ?? 0)
-            : 0;
+        $warehouseIdValue = $location instanceof WarehouseLocation ? $location->getAttribute('warehouse_id') : null;
+        $locationWarehouseId = is_numeric($warehouseIdValue) ? (int) $warehouseIdValue : 0;
         if (! $location instanceof WarehouseLocation || $locationWarehouseId !== $warehouseId) {
             throw ValidationException::withMessages([
                 $field => __('inventory.validation.location_mismatch'),

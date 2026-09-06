@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+/**
+ * @phpstan-ignore method.internalClass
+ */
 use Modules\Xot\Tests\TestCase;
 
 use function Safe\file_get_contents;
@@ -66,5 +69,6 @@ it('every list page declares its table columns', function (): void {
 
     sort($pages);
 
+    /** @phpstan-ignore method.internalClass */
     expect($pages)->toBe([], "Queste pagine renderebbero una tabella senza colonne:\n  ".implode("\n  ", $pages));
 });

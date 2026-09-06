@@ -21,6 +21,19 @@ final class CreateDailyNote extends XotBaseCreateRecord
     /** @var array<int, string> */
     private array $photoPaths = [];
 
+    private static function ensureString(mixed $value): string
+    {
+        if (is_string($value)) {
+            return $value;
+        }
+
+        if (is_numeric($value) || is_bool($value) || $value === null) {
+            return (string) $value;
+        }
+
+        return '';
+    }
+
     /**
      * @param  array<string, mixed>  $data
      * @return array<string, mixed>
@@ -29,16 +42,30 @@ final class CreateDailyNote extends XotBaseCreateRecord
     {
         $photoPaths = is_array($data['photo_paths'] ?? null) ? $data['photo_paths'] : [];
         $this->photoPaths = array_values(array_map(static function (mixed $path): string {
-            return is_string($path) ? $path : (string) $path;
+            if (is_string($path)) {
+                return $path;
+            }
+
+            return self::ensureString($path);
         }, $photoPaths));
 
         $bodyHtmlValue = $data['body_html'] ?? '';
-        $bodyHtml = DailyNoteHtml::sanitize((string) $bodyHtmlValue);
+        $bodyHtmlStr = self::ensureString($bodyHtmlValue);
+        $bodyHtml = DailyNoteHtml::sanitize($bodyHtmlStr);
         $body = DailyNoteHtml::toPlainText($bodyHtml);
 
+        $userId = $data['user_id'] ?? null;
+        $userIdInt = 0;
+        if (is_numeric($userId)) {
+            $userIdInt = (int) $userId;
+        }
+
+        $noteDate = $data['note_date'] ?? null;
+        $noteDateStr = self::ensureString($noteDate);
+
         return [
-            'user_id' => (int) ($data['user_id'] ?? 0),
-            'note_date' => (string) ($data['note_date'] ?? ''),
+            'user_id' => $userIdInt,
+            'note_date' => $noteDateStr,
             'body' => $body,
             'body_html' => $bodyHtml,
         ];
@@ -51,13 +78,23 @@ final class CreateDailyNote extends XotBaseCreateRecord
      */
     protected function handleRecordCreation(array $data): Model
     {
-        $userId = (int) ($data['user_id'] ?? 0);
-        $noteDate = CarbonImmutable::parse((string) ($data['note_date'] ?? ''));
-        $body = (string) ($data['body'] ?? '');
-        $bodyHtmlValue = $data['body_html'] ?? '';
-        $bodyHtml = (string) $bodyHtmlValue;
+        $userId = $data['user_id'] ?? null;
+        $userIdInt = 0;
+        if (is_numeric($userId)) {
+            $userIdInt = (int) $userId;
+        }
 
-        return app(UpsertDailyNoteForUserAction::class)->execute($userId, $noteDate, $body, $bodyHtml);
+        $noteDateValue = $data['note_date'] ?? '';
+        $noteDateStr = self::ensureString($noteDateValue);
+        $noteDate = CarbonImmutable::parse($noteDateStr);
+
+        $body = $data['body'] ?? '';
+        $bodyStr = self::ensureString($body);
+
+        $bodyHtmlValue = $data['body_html'] ?? '';
+        $bodyHtmlStr = self::ensureString($bodyHtmlValue);
+
+        return app(UpsertDailyNoteForUserAction::class)->execute($userIdInt, $noteDate, $bodyStr, $bodyHtmlStr);
     }
 
     protected function afterCreate(): void

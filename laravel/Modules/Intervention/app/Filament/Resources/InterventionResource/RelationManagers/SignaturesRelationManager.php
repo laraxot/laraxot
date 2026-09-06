@@ -83,10 +83,13 @@ final class SignaturesRelationManager extends XotBaseRelationManager
                             }
                         }
 
+                        $keyValue = $livewire->getOwnerRecord()->getKey();
+                        $signableId = is_numeric($keyValue) ? (int) $keyValue : 0;
+
                         return app(StoreSignatureForModelAction::class)->execute(
                             dataUrl: $image,
                             signableType: $livewire->getOwnerRecord()::class,
-                            signableId: (int) ($livewire->getOwnerRecord()->getKey() ?? 0),
+                            signableId: $signableId,
                             userId: $userId,
                             signedAt: null,
                             payload: $payload,

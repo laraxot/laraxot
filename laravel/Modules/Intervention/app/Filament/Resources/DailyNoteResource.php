@@ -54,11 +54,35 @@ final class DailyNoteResource extends GatedXotBaseResource
     public static function photoDirectory(int|string|null $userId, mixed $noteDate): string
     {
         $normalizedUserId = max(0, (int) $userId);
-        $dateString = is_string($noteDate) ? $noteDate : (string) $noteDate;
+        $dateString = self::castMixedToString($noteDate);
         $result = preg_replace('/[^0-9-]/', '', $dateString);
-        $normalizedDate = is_string($result) && $result !== '' ? $result : 'draft';
+        $normalizedDate = (is_string($result) && $result !== '') ? $result : 'draft';
 
         return "media/daily-notes/{$normalizedUserId}/{$normalizedDate}/photos";
+    }
+
+    private static function extractUserId(callable $get): int
+    {
+        $userId = $get('user_id');
+        if (is_numeric($userId)) {
+            return (int) $userId;
+        }
+
+        $authId = Auth::id();
+        return is_numeric($authId) ? (int) $authId : 0;
+    }
+
+    private static function castMixedToString(mixed $value): string
+    {
+        if (is_string($value)) {
+            return $value;
+        }
+
+        if (is_numeric($value) || is_bool($value) || $value === null) {
+            return (string) $value;
+        }
+
+        return '';
     }
 
     private static function isEnabledByPlatform(): bool
@@ -180,7 +204,7 @@ final class DailyNoteResource extends GatedXotBaseResource
                         ->label(__('interventions.fields.photos'))
                         ->disk('public')
                         ->directory(fn (Get $get): string => self::photoDirectory(
-                            userId: (int) ($get('user_id') ?? Auth::id() ?? 0),
+                            userId: self::extractUserId($get),
                             noteDate: $get('note_date'),
                         ))
                         ->image()

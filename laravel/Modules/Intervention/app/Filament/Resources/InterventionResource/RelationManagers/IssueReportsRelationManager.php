@@ -72,11 +72,12 @@ final class IssueReportsRelationManager extends XotBaseRelationManager
                             : (int) (Auth::id() ?? 0);
 
                         $bodyValue = $data['body'] ?? '';
+                        $body = is_string($bodyValue) ? $bodyValue : strval($bodyValue);
 
                         return app(CreateIssueReportAction::class)->execute(
                             intervention: $intervention,
                             createdByUserId: $createdBy,
-                            body: (string) $bodyValue,
+                            body: $body,
                         );
                     }),
             ])

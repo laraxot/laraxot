@@ -2,4 +2,5 @@
 
 declare(strict_types=1);
 
-uses(Tests\TestCase::class)->in('.');
+/** @phpstan-ignore method.internalClass */
+uses(Modules\Xot\Tests\TestCase::class)->in('.');

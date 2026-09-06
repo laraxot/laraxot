@@ -69,6 +69,19 @@ final class InterventionResource extends GatedXotBaseResource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-wrench-screwdriver';
 
+    private static function ensureString(mixed $value): string
+    {
+        if (is_string($value)) {
+            return $value;
+        }
+
+        if (is_numeric($value) || is_bool($value) || $value === null) {
+            return (string) $value;
+        }
+
+        return '';
+    }
+
     /**
      * @return array<string, TextColor>
      */
@@ -178,9 +191,7 @@ final class InterventionResource extends GatedXotBaseResource
                             ->getOptionLabelsUsing(fn (array $values): array => User::query()
                                 ->whereIn('id', $values)
                                 ->pluck('name', 'id')
-                                ->map(static function ($name): string {
-                                    return is_string($name) ? $name : (string) $name;
-                                })
+                                ->map(static fn (mixed $name): string => self::ensureString($name))
                                 ->all())
                             ->multiple()
                             ->searchable()
@@ -193,12 +204,11 @@ final class InterventionResource extends GatedXotBaseResource
 
                                 // Gli id utente sono UUID: restano stringhe, altrimenti
                                 // il cast li appiattisce e la select non ritrova nessuno.
-                                $assignedIds = $record->assignedUsers()->pluck('users.id')->map(static function (mixed $id): string {
-                                    return is_string($id) ? $id : (string) $id;
-                                })->all();
+                                $assignedIds = $record->assignedUsers()->pluck('users.id')->map(static fn (mixed $id): string => self::ensureString($id))->all();
 
                                 if ($assignedIds === [] && $record->performed_by_user_id !== null) {
-                                    $assignedIds = [(string) $record->performed_by_user_id];
+                                    $performedById = $record->performed_by_user_id;
+                                    $assignedIds = [self::ensureString($performedById)];
                                 }
 
                                 $component->state($assignedIds);
@@ -266,8 +276,10 @@ final class InterventionResource extends GatedXotBaseResource
                         Placeholder::make('total_amount_preview')
                             ->label(__('interventions.fields.total_amount'))
                             ->content(function (callable $get, ?Intervention $record): string {
-                                $laborAmount = (float) (($get('amount') ?? 0) ?: 0);
-                                $calloutFee = (float) (($get('callout_fee') ?? 0) ?: 0);
+                                $amountValue = $get('amount') ?? 0;
+                                $laborAmount = is_numeric($amountValue) ? (float) $amountValue : 0.0;
+                                $calloutFeeValue = $get('callout_fee') ?? 0;
+                                $calloutFee = is_numeric($calloutFeeValue) ? (float) $calloutFeeValue : 0.0;
                                 $materialsTotal = self::previewMaterialsTotal($get('manual_material_lines'), $record);
 
                                 return number_format($laborAmount + $calloutFee + $materialsTotal, 2, ',', '.').' €';
@@ -406,8 +418,10 @@ final class InterventionResource extends GatedXotBaseResource
                             Placeholder::make('line_total_preview')
                                 ->label(__('interventions.fields.material_line_total'))
                                 ->content(function (callable $get): string {
-                                    $quantity = (float) (($get('quantity') ?? 0) ?: 0);
-                                    $unitPrice = (float) (($get('unit_price') ?? 0) ?: 0);
+                                    $qtyValue = $get('quantity') ?? 0;
+                                    $quantity = is_numeric($qtyValue) ? (float) $qtyValue : 0.0;
+                                    $priceValue = $get('unit_price') ?? 0;
+                                    $unitPrice = is_numeric($priceValue) ? (float) $priceValue : 0.0;
 
                                     return number_format($quantity * $unitPrice, 2, ',', '.').' €';
                                 })
@@ -418,16 +432,20 @@ final class InterventionResource extends GatedXotBaseResource
                             Placeholder::make('extra_preview')
                                 ->label(__('interventions.extra.amount'))
                                 ->content(function (callable $get): string {
-                                    $extraQuantity = (float) ($get('extra_quantity') ?: 0);
+                                    $extraQtyValue = $get('extra_quantity');
+                                    $extraQuantity = is_numeric($extraQtyValue) ? (float) $extraQtyValue : 0.0;
 
                                     if ($extraQuantity <= 0.0) {
                                         return __('interventions.extra.none');
                                     }
 
+                                    $extraAmountValue = $get('extra_amount');
+                                    $extraAmount = is_numeric($extraAmountValue) ? (float) $extraAmountValue : 0.0;
+
                                     return sprintf(
                                         '%s × — %s €',
                                         number_format($extraQuantity, 2, ',', '.'),
-                                        number_format((float) ($get('extra_amount') ?: 0), 2, ',', '.'),
+                                        number_format($extraAmount, 2, ',', '.'),
                                     );
                                 })
                                 ->helperText(__('interventions.extra.computed_hint')),
@@ -438,7 +456,7 @@ final class InterventionResource extends GatedXotBaseResource
                                 ->default('pending')
                                 ->selectablePlaceholder(false)
                                 ->helperText(__('interventions.extra.hint'))
-                                ->visible(fn (callable $get): bool => (float) ($get('extra_quantity') ?: 0) > 0.0),
+                                ->visible(fn (callable $get): bool => (is_numeric($get('extra_quantity')) ? (float) $get('extra_quantity') : 0.0) > 0.0),
 
                             Hidden::make('extra_quantity'),
                             Hidden::make('extra_amount'),
@@ -472,15 +490,16 @@ final class InterventionResource extends GatedXotBaseResource
             ->columns([
                 Tables\Columns\TextColumn::make('work_order_id')
                     ->label(__('interventions.fields.work_order_id'))
-                    ->formatStateUsing(function ($state, Intervention $record): string {
-                        if ($state === null || (int) ($state ?? 0) === 0) {
+                    ->formatStateUsing(function (mixed $state, Intervention $record): string {
+                        $stateValue = is_numeric($state) ? (int) $state : 0;
+                        if ($stateValue === 0) {
                             return '—';
                         }
-                        $wo = DB::table('work_orders')->where('id', $state)->first(['title', 'code']);
+                        $wo = DB::table('work_orders')->where('id', $stateValue)->first(['title', 'code']);
 
                         $result = $wo?->title ?: $wo?->code ?: '—';
 
-                        return is_string($result) ? $result : (string) $result;
+                        return self::ensureString($result);
                     })
                     ->sortable(),
                 Tables\Columns\TextColumn::make('customer_display')
@@ -563,7 +582,7 @@ final class InterventionResource extends GatedXotBaseResource
                     ))
                     ->money('EUR')
                     ->badge()
-                    ->color(fn (mixed $state): string => (float) $state > 0.0 ? 'warning' : 'gray'),
+                    ->color(fn (mixed $state): string => (is_numeric($state) ? (float) $state : 0.0) > 0.0 ? 'warning' : 'gray'),
                 Tables\Columns\TextColumn::make('work_minutes')
                     ->label(__('interventions.fields.work_minutes'))
                     ->numeric()
@@ -603,7 +622,8 @@ final class InterventionResource extends GatedXotBaseResource
                     ->label(__('work_orders.fields.customer'))
                     ->options(fn (): array => Customer::query()->whereNotNull('legal_name')->orderBy('legal_name')->pluck('legal_name', 'id')->all())
                     ->query(function (Builder $query, array $data): Builder {
-                        $customerId = (int) ($data['value'] ?? 0);
+                        $value = $data['value'] ?? null;
+                        $customerId = is_numeric($value) ? (int) $value : 0;
 
                         return $customerId > 0
                             ? $query->where(function (Builder $q) use ($customerId): void {
@@ -616,7 +636,8 @@ final class InterventionResource extends GatedXotBaseResource
                     ->label(__('work_orders.fields.site'))
                     ->options(fn (): array => CustomerSite::query()->whereNotNull('name')->orderBy('name')->pluck('name', 'id')->all())
                     ->query(function (Builder $query, array $data): Builder {
-                        $siteId = (int) ($data['value'] ?? 0);
+                        $value = $data['value'] ?? null;
+                        $siteId = is_numeric($value) ? (int) $value : 0;
 
                         return $siteId > 0
                             ? $query->whereHas('workOrder', fn (Builder $workOrderQuery): Builder => $workOrderQuery->where('customer_site_id', $siteId))
@@ -644,11 +665,11 @@ final class InterventionResource extends GatedXotBaseResource
                         return $query
                             ->when(
                                 filled($from),
-                                fn (Builder $innerQuery): Builder => $innerQuery->whereDate('scheduled_at', '>=', (string) $from),
+                                fn (Builder $innerQuery): Builder => $innerQuery->whereDate('scheduled_at', '>=', self::ensureString($from)),
                             )
                             ->when(
                                 filled($to),
-                                fn (Builder $innerQuery): Builder => $innerQuery->whereDate('scheduled_at', '<=', (string) $to),
+                                fn (Builder $innerQuery): Builder => $innerQuery->whereDate('scheduled_at', '<=', self::ensureString($to)),
                             );
                     }),
             ])
@@ -758,16 +779,22 @@ final class InterventionResource extends GatedXotBaseResource
                     ])
                     ->action(function (Intervention $record, array $data): void {
                         $userId = (int) Auth::id();
-                        $outcomeCode = (string) ($data['outcome_code'] ?? 'completed');
+                        $outcomeValue = $data['outcome_code'] ?? 'completed';
+                        $outcomeCode = strval($outcomeValue);
                         if (! in_array($outcomeCode, ['completed', 'suspended', 'quotation'], true)) {
                             $outcomeCode = 'completed';
                         }
 
+                        $travelKmValue = $data['travel_km'] ?? 0;
+                        $travelKm = is_numeric($travelKmValue) ? (int) $travelKmValue : 0;
+                        $travelMinutesValue = $data['travel_minutes'] ?? 0;
+                        $travelMinutes = is_numeric($travelMinutesValue) ? (int) $travelMinutesValue : 0;
+
                         app(FinalizeInterventionReportAction::class)->execute(
                             intervention: $record,
                             validatedByUserId: $userId,
-                            travelKm: (int) $data['travel_km'],
-                            travelMinutes: (int) $data['travel_minutes'],
+                            travelKm: $travelKm,
+                            travelMinutes: $travelMinutes,
                             notes: isset($data['notes']) ? (is_string($data['notes']) ? $data['notes'] : null) : null,
                             outcomeCode: $outcomeCode,
                         );
@@ -936,7 +963,7 @@ final class InterventionResource extends GatedXotBaseResource
         return $query
             ->get()
             ->mapWithKeys(fn ($row): array => [
-                (int) ($row->id ?? 0) => is_string($row->legal_name) ? $row->legal_name : (string) ($row->legal_name ?? ''),
+                is_numeric($row->id) ? (int) $row->id : 0 => strval($row->legal_name),
             ])
             ->all();
     }
@@ -949,7 +976,11 @@ final class InterventionResource extends GatedXotBaseResource
     {
         $assignedUserIds = collect(is_array($data['assigned_user_ids'] ?? null) ? $data['assigned_user_ids'] : [])
             ->map(static function (mixed $id): int {
-                return is_int($id) ? $id : (int) ($id ?? 0);
+                if (is_int($id)) {
+                    return $id;
+                }
+
+                return is_numeric($id) ? (int) $id : 0;
             })
             ->filter(static fn (int $id): bool => $id > 0)
             ->unique()
@@ -962,7 +993,7 @@ final class InterventionResource extends GatedXotBaseResource
         }
 
         $workHoursValue = $data['work_hours'] ?? 0;
-        $workHours = (float) (is_numeric($workHoursValue) ? $workHoursValue : 0);
+        $workHours = is_numeric($workHoursValue) ? (float) $workHoursValue : 0.0;
         $workMinutes = max(0, (int) round($workHours * 60));
 
         $scheduledDate = $data['scheduled_date'] ?? null;
@@ -976,9 +1007,9 @@ final class InterventionResource extends GatedXotBaseResource
         }
 
         $notesHtmlValue = $data['notes_html'] ?? '';
-        $notesHtml = DailyNoteHtml::sanitize((string) $notesHtmlValue);
+        $notesHtml = DailyNoteHtml::sanitize(strval($notesHtmlValue));
         $notesValue = $data['notes'] ?? '';
-        $notes = trim((string) $notesValue);
+        $notes = trim(strval($notesValue));
 
         if ($notesHtml !== '') {
             $data['notes_html'] = $notesHtml;
@@ -996,8 +1027,8 @@ final class InterventionResource extends GatedXotBaseResource
         $data['work_minutes'] = $workMinutes;
         $amountValue = $data['amount'] ?? 0;
         $calloutFeeValue = $data['callout_fee'] ?? 0;
-        $data['amount'] = round((float) (is_numeric($amountValue) ? $amountValue : 0), 2);
-        $data['callout_fee'] = round((float) (is_numeric($calloutFeeValue) ? $calloutFeeValue : 0), 2);
+        $data['amount'] = round(is_numeric($amountValue) ? (float) $amountValue : 0.0, 2);
+        $data['callout_fee'] = round(is_numeric($calloutFeeValue) ? (float) $calloutFeeValue : 0.0, 2);
         $data['materials_total'] = round(self::computeManualMaterialsTotal($data['manual_material_lines'] ?? []), 2);
         $data['total_amount'] = round((float) $data['amount'] + (float) $data['callout_fee'] + (float) $data['materials_total'], 2);
 
@@ -1039,7 +1070,9 @@ final class InterventionResource extends GatedXotBaseResource
     public static function syncSupplementalData(Intervention $record, array $data): void
     {
         $assignedUserIds = collect(is_array($data['assigned_user_ids'] ?? null) ? $data['assigned_user_ids'] : [])
-            ->map(static fn (mixed $id): int => (int) $id)
+            ->map(static function (mixed $id): int {
+                return is_numeric($id) ? (int) $id : 0;
+            })
             ->filter(static fn (int $id): bool => $id > 0)
             ->unique()
             ->values()
@@ -1061,20 +1094,20 @@ final class InterventionResource extends GatedXotBaseResource
                 }
 
                 $descValue = $line['description'] ?? '';
-                $description = trim((string) $descValue);
+                $description = trim(is_string($descValue) ? $descValue : (string) $descValue);
                 $qtyValue = $line['quantity'] ?? 0;
-                $quantity = round((float) (is_numeric($qtyValue) ? $qtyValue : 0), 2);
+                $quantity = round(is_numeric($qtyValue) ? (float) $qtyValue : 0.0, 2);
                 $priceValue = $line['unit_price'] ?? 0;
-                $unitPrice = round((float) (is_numeric($priceValue) ? $priceValue : 0), 2);
+                $unitPrice = round(is_numeric($priceValue) ? (float) $priceValue : 0.0, 2);
                 $unitValue = $line['unit'] ?? 'pz';
-                $unit = trim((string) $unitValue);
+                $unit = trim(is_string($unitValue) ? $unitValue : (string) $unitValue);
 
                 // Le righe vengono ricreate da zero a ogni salvataggio: senza
                 // riportare la decisione presa sull'extra, ogni modifica
                 // all'intervento la riazzererebbe a "da decidere" e il
                 // materiale gia' destinato alla fattura tornerebbe regalabile.
                 $extraStatusValue = $line['extra_status_code'] ?? 'pending';
-                $extraStatus = trim((string) $extraStatusValue);
+                $extraStatus = trim(is_string($extraStatusValue) ? $extraStatusValue : (string) $extraStatusValue);
 
                 return [
                     'description' => $description,
@@ -1099,7 +1132,11 @@ final class InterventionResource extends GatedXotBaseResource
         app(SyncInterventionNotePhotosAction::class)->execute(
             intervention: $record,
             paths: array_values(array_map(static function (mixed $path): string {
-                return is_string($path) ? $path : (string) $path;
+                if (is_string($path)) {
+                    return $path;
+                }
+
+                return (string) $path;
             }, is_array($data['notes_photo_paths'] ?? null) ? $data['notes_photo_paths'] : [])),
             uploadedByUserId: Auth::id() !== null ? (int) Auth::id() : null,
         );
@@ -1158,10 +1195,10 @@ final class InterventionResource extends GatedXotBaseResource
 
     private static function formatWorkOrderOptionLabel(object $row): string
     {
-        $customer = trim((string) ($row->customer_name ?? ''));
-        $site = trim((string) ($row->site_name ?? ''));
-        $title = trim((string) ($row->title ?? ''));
-        $code = trim((string) ($row->code ?? ''));
+        $customer = trim(is_string($row->customer_name ?? null) ? $row->customer_name : (string) ($row->customer_name ?? ''));
+        $site = trim(is_string($row->site_name ?? null) ? $row->site_name : (string) ($row->site_name ?? ''));
+        $title = trim(is_string($row->title ?? null) ? $row->title : (string) ($row->title ?? ''));
+        $code = trim(is_string($row->code ?? null) ? $row->code : (string) ($row->code ?? ''));
 
         $mainLabel = $site !== '' ? $site : ($title !== '' ? $title : ($code !== '' ? $code : 'Commessa non disponibile'));
         $suffix = $customer !== '' ? $customer : ($code !== '' ? $code : '');
@@ -1189,7 +1226,9 @@ final class InterventionResource extends GatedXotBaseResource
             })
             ->orderBy('name')
             ->pluck('name', 'id')
-            ->mapWithKeys(static fn (mixed $name, mixed $id): array => [(int) $id => (string) $name])
+            ->mapWithKeys(static fn (mixed $name, mixed $id): array => [
+                is_numeric($id) ? (int) $id : 0 => is_string($name) ? $name : (string) $name,
+            ])
             ->all();
     }
 
@@ -1335,6 +1374,15 @@ final class InterventionResource extends GatedXotBaseResource
         }
 
         return '';
+    }
+
+    private static function castToString(mixed $value): string
+    {
+        if (is_string($value)) {
+            return $value;
+        }
+
+        return (string) $value;
     }
 
     public static function isAssignedToUser(Intervention $record, int|string $userId): bool

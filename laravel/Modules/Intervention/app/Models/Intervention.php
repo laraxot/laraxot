@@ -68,7 +68,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 final class Intervention extends BaseModel
 {
-    /** @use HasXotFactory */
     use HasXotFactory;
 
     use SoftDeletes;

@@ -78,10 +78,13 @@ final class SketchesRelationManager extends XotBaseRelationManager
                             }
                         }
 
+                        $keyValue = $livewire->getOwnerRecord()->getKey();
+                        $sketchableId = is_numeric($keyValue) ? (int) $keyValue : 0;
+
                         return app(StoreSketchForModelAction::class)->execute(
                             dataUrl: $image,
                             sketchableType: $livewire->getOwnerRecord()::class,
-                            sketchableId: (int) ($livewire->getOwnerRecord()->getKey() ?? 0),
+                            sketchableId: $sketchableId,
                             userId: $userId,
                             payload: $payload,
                         );

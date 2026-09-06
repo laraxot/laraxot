@@ -48,7 +48,9 @@ final class ResolveDictatedOperatorsAction
     private function resolve(string $needle): ?int
     {
         $exact = $this->uniqueId(
-            User::query()->whereRaw('LOWER(name) = ?', [$needle])->limit(2)->pluck('id')->map(fn ($id) => (int) $id),
+            User::query()->whereRaw('LOWER(name) = ?', [$needle])->limit(2)->pluck('id')->map(function (mixed $id): int {
+                return is_numeric($id) ? (int) $id : 0;
+            }),
         );
 
         if ($exact !== null) {
@@ -63,7 +65,9 @@ final class ResolveDictatedOperatorsAction
                 ->whereRaw('LOWER(name) LIKE ?', [$needle.' %'])
                 ->limit(2)
                 ->pluck('id')
-                ->map(fn ($id) => (int) $id),
+                ->map(function (mixed $id): int {
+                    return is_numeric($id) ? (int) $id : 0;
+                }),
         );
     }
 
