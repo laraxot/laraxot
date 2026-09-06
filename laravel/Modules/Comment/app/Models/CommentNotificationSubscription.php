@@ -32,7 +32,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 class CommentNotificationSubscription extends Model
 {
-    /** @use HasXotFactory<CommentNotificationSubscriptionFactory> */
     use HasXotFactory;
 
     protected $connection = 'comment';
