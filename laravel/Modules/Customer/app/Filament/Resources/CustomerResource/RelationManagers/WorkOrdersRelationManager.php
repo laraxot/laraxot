@@ -60,7 +60,7 @@ final class WorkOrdersRelationManager extends XotBaseRelationManager
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->defaultSort('scheduled_at', 'desc')
-            ->actions([
+            ->recordActions([
                 ViewAction::make()
                     ->url(fn (WorkOrder $record): string => WorkOrderResource::getUrl('view', ['record' => $record])),
             ]);
