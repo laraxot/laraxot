@@ -31,11 +31,16 @@ final class EnergyBrokerLargeUploadController extends Controller
         ]);
 
         $user = $request->user();
+        $userId = null;
+        if ($user) {
+            $id = $user->getAuthIdentifier();
+            $userId = is_int($id) ? $id : (is_string($id) ? (int) $id : null);
+        }
         $upload = $action->execute(
             originalName: (string) $validated['filename'],
             totalSize: (int) $validated['total_size'],
             chunkSize: (int) $validated['chunk_size'],
-            uploadedByUserId: $user ? (int) $user->getAuthIdentifier() : null,
+            uploadedByUserId: $userId,
             mimeType: isset($validated['mime_type']) ? (string) $validated['mime_type'] : null,
         );
 
@@ -145,14 +150,17 @@ final class EnergyBrokerLargeUploadController extends Controller
                 ->latest()
                 ->limit(20)
                 ->get()
-                ->map(fn (EnergyBrokerDocument $document): array => [
-                    'source_file_name' => (string) $document->source_file_name,
-                    'analysis_status' => (string) $document->analysis_status,
-                    'document_type' => (string) $document->document_type,
-                    'service_type' => (string) $document->service_type,
-                    'supplier_name' => (string) $document->supplier_name,
-                    'failure_reason' => (string) (data_get($document->analysis_payload, 'error') ?? ''),
-                ])
+                ->map(function (EnergyBrokerDocument $document): array {
+                    $error = data_get($document->analysis_payload, 'error');
+                    return [
+                        'source_file_name' => (string) $document->source_file_name,
+                        'analysis_status' => (string) $document->analysis_status,
+                        'document_type' => (string) $document->document_type,
+                        'service_type' => (string) $document->service_type,
+                        'supplier_name' => (string) $document->supplier_name,
+                        'failure_reason' => is_string($error) ? $error : '',
+                    ];
+                })
                 ->all()
             : [];
 

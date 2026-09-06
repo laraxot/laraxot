@@ -19,9 +19,7 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 final class CustomerSite extends BaseModel
 {
-    /** @phpstan-use HasXotFactory<CustomerSiteFactory> */
     use HasXotFactory;
-
     use SoftDeletes;
 
     protected $table = 'customer_sites';

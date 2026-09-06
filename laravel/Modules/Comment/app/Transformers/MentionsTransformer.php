@@ -32,7 +32,9 @@ class MentionsTransformer implements CommentTransformer
             },
             $text,
         );
-        $text = $result ?? $text;
+        if (is_string($result)) {
+            $text = $result;
+        }
 
         if (str_contains($text, 'data-mention=')) {
             return $text;
@@ -49,6 +51,6 @@ class MentionsTransformer implements CommentTransformer
             $text,
         );
 
-        return $result ?? $text;
+        return is_string($result) ? $result : $text;
     }
 }

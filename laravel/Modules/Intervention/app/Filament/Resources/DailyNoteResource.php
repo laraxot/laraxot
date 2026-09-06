@@ -54,7 +54,8 @@ final class DailyNoteResource extends GatedXotBaseResource
     public static function photoDirectory(int|string|null $userId, mixed $noteDate): string
     {
         $normalizedUserId = max(0, (int) $userId);
-        $normalizedDate = preg_replace('/[^0-9-]/', '', (string) $noteDate) ?: 'draft';
+        $result = preg_replace('/[^0-9-]/', '', (string) $noteDate);
+        $normalizedDate = is_string($result) && $result !== '' ? $result : 'draft';
 
         return "media/daily-notes/{$normalizedUserId}/{$normalizedDate}/photos";
     }
@@ -178,7 +179,7 @@ final class DailyNoteResource extends GatedXotBaseResource
                         ->label(__('interventions.fields.photos'))
                         ->disk('public')
                         ->directory(fn (Get $get): string => self::photoDirectory(
-                            userId: (int) ($get('user_id') ?: Auth::id()),
+                            userId: (int) ($get('user_id') ?? Auth::id() ?? 0),
                             noteDate: $get('note_date'),
                         ))
                         ->image()

@@ -126,7 +126,8 @@ describe('Homepage Content Management', function () {
     });
 
     it('handles content updates without breaking', function () {
-        $locale = (string) (config('app.locale') ?? 'it');
+        $localeValue = config('app.locale') ?? 'it';
+        $locale = is_string($localeValue) ? $localeValue : (string) $localeValue;
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */

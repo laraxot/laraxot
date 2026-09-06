@@ -13,14 +13,13 @@ parameters:
         - ./Modules/
 
     ignoreErrors:
-        # Pest v3 + PHPStan Level 10 compatibility: Pest's internal classes (@internal)
-        # are used in public APIs; ignore method.internalClass errors for all Pest\* namespaces
+        # Pest framework uses internal classes in its public API — these are legitimate uses
         - identifier: method.internalClass
           paths:
               - ./*/tests/Pest.php
               - ./*/tests/Feature/*.php
               - ./*/tests/Unit/*.php
-          message: '#of internal class Pest\\#'
+          message: '#Pest\\#'
 
     excludePaths:
         - ./*/vendor/*

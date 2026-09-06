@@ -133,7 +133,8 @@ it('persists customer site id when provided', function (): void {
     );
 
     expect($contact->customer_site_id)->toBe($site->id);
-    expect((int) Contact::query()->where('id', $contact->id)->value('customer_site_id'))->toBe((int) $site->id);
+    $dbValue = Contact::query()->where('id', $contact->id)->value('customer_site_id');
+    expect(is_int($dbValue) ? $dbValue : 0)->toBe((int) $site->id);
 });
 
 it('trims position before creating contact roles', function (): void {

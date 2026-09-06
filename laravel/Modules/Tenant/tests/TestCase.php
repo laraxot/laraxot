@@ -52,12 +52,12 @@ abstract class TestCase extends XotBaseTestCase
 
     public static ?Tenant $secondTenant = null;
 
-    public static string $testJsonPath = '';
+    protected string $testJsonPath = '';
 
-    public static string $testDirectory = '';
+    protected string $testDirectory = '';
 
     /** @var Closure(): array<array-key, array<string, mixed>> */
-    public static Closure $createTestData;
+    protected Closure $createTestData;
 
     /**
      * Lo sqlite condiviso non contiene per forza le tabelle del modulo Tenant:

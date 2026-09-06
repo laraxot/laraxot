@@ -16,6 +16,7 @@ abstract class TestCase extends XotBaseTestCase
 
     public static ?self $currentTest = null;
 
+    /** @var array<string> */
     protected array $connectionsToTransact = ['sqlite', 'xot', 'customer'];
 
     /**
