@@ -118,6 +118,7 @@
 ### Filament Integration
 - [`rules/xotbasefield-view-override.md`](./rules/xotbasefield-view-override.md) - **SSOT** for theme view overrides
 - [`filament-widget-best-practices.md`](../TwentyOne/docs/filament-widget-best-practices.md) - **SSOT** for widgets
+- [`filament-canonical-structure.md`](../../Modules/Billing/docs/filament/patterns.md) - **SSOT** for XotBaseResource canonical structure (Schemas/Tables/ Infolist obbligatori, zero ->label hardcoded)
 
 - [`FILAMENT_WIDGET_TRANSPARENT_BACKGROUND.md`](../TwentyOne/docs/FILAMENT_WIDGET_TRANSPARENT_BACKGROUND.md) - Widget styling
 - [`FILAMENT_TABLES_SETUP.md`](../TwentyOne/docs/FILAMENT_TABLES_SETUP.md) - Table configuration
