@@ -68,15 +68,15 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
     public function getFormSchema(): array
     {
         return [
-            Select::make('kind')
+            'kind' => Select::make('kind')
                 ->label(__('site_surveys.attachments.kind'))
                 ->options(self::kindOptions())
                 ->default('photo')
                 ->required(),
-            TextInput::make('title')
+            'title' => TextInput::make('title')
                 ->label(__('site_surveys.attachments.file_title'))
                 ->maxLength(255),
-            FileUpload::make('path')
+            'path' => FileUpload::make('path')
                 ->label(__('site_surveys.attachments.file'))
                 ->disk('public')
                 ->directory(function (): string {

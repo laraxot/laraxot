@@ -14,8 +14,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
@@ -26,8 +25,9 @@ use Modules\Compliance\Actions\RegisterMaintenanceControlAction;
 use Modules\Compliance\Models\Boiler;
 use Modules\Compliance\Models\HeatingSystem;
 use Modules\User\Models\User;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class BoilersRelationManager extends RelationManager
+final class BoilersRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'boilers';
 
@@ -36,7 +36,10 @@ final class BoilersRelationManager extends RelationManager
         return __('heating.boilers');
     }
 
-    public function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public function getFormSchema(): array
     {
         /** @var array<int|string, string> $generatorOptions */
         $generatorOptions = collect((array) config('heating.generator_types', []))
@@ -49,17 +52,17 @@ final class BoilersRelationManager extends RelationManager
                 (is_string($f) ? $f : '') => __('heating.fuels.'.(is_string($f) ? $f : '')),
             ])->all();
 
-        return $schema->components([
-            TextInput::make('brand')->label(__('heating.fields.brand'))->maxLength(255),
-            TextInput::make('model')->label(__('heating.fields.model'))->maxLength(255),
-            TextInput::make('serial_number')->label(__('heating.fields.serial_number'))->maxLength(255),
-            Select::make('generator_type')->label(__('heating.fields.generator_type'))->options($generatorOptions),
-            Select::make('fuel_type')->label(__('heating.fields.fuel_type'))->options($fuelOptions),
-            TextInput::make('power_kw')->label(__('heating.fields.power_kw'))->numeric()->suffix('kW'),
-            DatePicker::make('installation_date')->label(__('heating.fields.installation_date')),
-            TextInput::make('maintenance_interval_months')->label(__('heating.fields.maintenance_interval_months'))->numeric()->minValue(1),
-            TextInput::make('efficiency_check_interval_months')->label(__('heating.fields.efficiency_check_interval_months'))->numeric()->minValue(1),
-        ])->columns(2);
+        return [
+            'brand' => TextInput::make('brand')->label(__('heating.fields.brand'))->maxLength(255),
+            'model' => TextInput::make('model')->label(__('heating.fields.model'))->maxLength(255),
+            'serial_number' => TextInput::make('serial_number')->label(__('heating.fields.serial_number'))->maxLength(255),
+            'generator_type' => Select::make('generator_type')->label(__('heating.fields.generator_type'))->options($generatorOptions),
+            'fuel_type' => Select::make('fuel_type')->label(__('heating.fields.fuel_type'))->options($fuelOptions),
+            'power_kw' => TextInput::make('power_kw')->label(__('heating.fields.power_kw'))->numeric()->suffix('kW'),
+            'installation_date' => DatePicker::make('installation_date')->label(__('heating.fields.installation_date')),
+            'maintenance_interval_months' => TextInput::make('maintenance_interval_months')->label(__('heating.fields.maintenance_interval_months'))->numeric()->minValue(1),
+            'efficiency_check_interval_months' => TextInput::make('efficiency_check_interval_months')->label(__('heating.fields.efficiency_check_interval_months'))->numeric()->minValue(1),
+        ];
     }
 
     public function table(Table $table): Table

@@ -9,13 +9,13 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class PriceItemsRelationManager extends RelationManager
+final class PriceItemsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'priceItems';
 
@@ -24,17 +24,20 @@ final class PriceItemsRelationManager extends RelationManager
         return 'Computo / elenco prezzi';
     }
 
-    public function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public function getFormSchema(): array
     {
-        return $schema->components([
-            TextInput::make('code'),
-            TextInput::make('category'),
-            Textarea::make('description')->required()->columnSpanFull(),
-            TextInput::make('unit')->default('cad')->required(),
-            TextInput::make('planned_quantity')->numeric()->default(0)->required(),
-            TextInput::make('unit_price')->numeric()->default(0)->required(),
-            TextInput::make('planned_total')->numeric()->default(0),
-        ]);
+        return [
+            'code' => TextInput::make('code'),
+            'category' => TextInput::make('category'),
+            'description' => Textarea::make('description')->required()->columnSpanFull(),
+            'unit' => TextInput::make('unit')->default('cad')->required(),
+            'planned_quantity' => TextInput::make('planned_quantity')->numeric()->default(0)->required(),
+            'unit_price' => TextInput::make('unit_price')->numeric()->default(0)->required(),
+            'planned_total' => TextInput::make('planned_total')->numeric()->default(0),
+        ];
     }
 
     public function table(Table $table): Table

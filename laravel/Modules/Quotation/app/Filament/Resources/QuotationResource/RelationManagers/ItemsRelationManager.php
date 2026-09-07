@@ -11,14 +11,15 @@ use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Quotation\Actions\RecalculateQuotationTotalsAction;
 use Modules\Quotation\Models\Quotation;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class ItemsRelationManager extends RelationManager
+final class ItemsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'items';
 
@@ -27,47 +28,50 @@ final class ItemsRelationManager extends RelationManager
         return __('quotations.quotation_items');
     }
 
-    public function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public function getFormSchema(): array
     {
-        return $schema->components([
-            Select::make('product_id')
+        return [
+            'product_id' => Select::make('product_id')
                 ->label(__('quotations.fields.product'))
                 ->relationship('product', 'name')
                 ->searchable()
                 ->preload(),
-            TextInput::make('description')
+            'description' => TextInput::make('description')
                 ->label(__('quotations.fields.description'))
                 ->required()
                 ->columnSpanFull()
                 ->maxLength(255),
-            TextInput::make('quantity')
+            'quantity' => TextInput::make('quantity')
                 ->label(__('quotations.fields.quantity'))
                 ->numeric()
                 ->minValue(0.01)
                 ->default(1)
                 ->required(),
-            TextInput::make('unit_price')
+            'unit_price' => TextInput::make('unit_price')
                 ->label(__('quotations.fields.unit_price'))
                 ->numeric()
                 ->minValue(0)
                 ->default(0)
                 ->required(),
-            TextInput::make('discount_percent')
+            'discount_percent' => TextInput::make('discount_percent')
                 ->label(__('quotations.fields.discount_percent'))
                 ->numeric()
                 ->minValue(0)
                 ->maxValue(100)
                 ->default(0),
-            TextInput::make('line_total')
+            'line_total' => TextInput::make('line_total')
                 ->label(__('quotations.fields.line_total'))
                 ->numeric()
                 ->disabled(),
-            TextInput::make('sort_order')
+            'sort_order' => TextInput::make('sort_order')
                 ->label(__('quotations.fields.sort_order'))
                 ->numeric()
                 ->minValue(0)
                 ->default(0),
-        ])->columns(2);
+        ];
     }
 
     public function table(Table $table): Table

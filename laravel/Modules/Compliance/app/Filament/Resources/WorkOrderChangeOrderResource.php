@@ -10,10 +10,9 @@ use Filament\Actions\ViewAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
@@ -21,8 +20,9 @@ use Modules\Compliance\Filament\Resources\WorkOrderChangeOrderResource\Pages;
 use Modules\Compliance\Models\WorkOrderChangeOrder;
 use Modules\Platform\Filament\Concerns\GatesResourceNavigation;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class WorkOrderChangeOrderResource extends Resource
+final class WorkOrderChangeOrderResource extends XotBaseResource
 {
     use GatesResourceNavigation;
 
@@ -50,22 +50,25 @@ final class WorkOrderChangeOrderResource extends Resource
         return __('compliance.change_orders');
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
-            Section::make()->columnSpanFull()->components([
-                Select::make('work_order_id')
+        return [
+            'section' => Section::make()->columnSpanFull()->components([
+                'work_order_id' => Select::make('work_order_id')
                     ->required()
                     ->options(fn (): array => WorkOrder::query()->orderByDesc('id')->limit(200)->pluck('title', 'id')->all())
                     ->searchable(),
-                Grid::make(3)->components([
-                    TextInput::make('title')->required()->maxLength(255),
-                    TextInput::make('estimated_amount')->numeric()->prefix('EUR'),
-                    Select::make('status')->default('proposed')->options(self::statuses()),
+                'grid' => Grid::make(3)->components([
+                    'title' => TextInput::make('title')->required()->maxLength(255),
+                    'estimated_amount' => TextInput::make('estimated_amount')->numeric()->prefix('EUR'),
+                    'status' => Select::make('status')->default('proposed')->options(self::statuses()),
                 ]),
-                Textarea::make('description')->columnSpanFull(),
+                'description' => Textarea::make('description')->columnSpanFull(),
             ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

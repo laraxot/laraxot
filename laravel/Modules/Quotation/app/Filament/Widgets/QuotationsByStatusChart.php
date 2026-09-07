@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace Modules\Quotation\Filament\Widgets;
 
 use App\Support\AccountFeatures;
-use Filament\Widgets\ChartWidget;
 use Illuminate\Support\Facades\Auth;
 use Modules\Quotation\Models\Quotation;
+use Modules\Xot\Filament\Widgets\XotBaseChartWidget;
 
 /**
  * Quotations pipeline for the shop owner: how many quotes sit in each status
  * (draft / sent / confirmed / rejected) — the sales funnel at a glance.
  */
-final class QuotationsByStatusChart extends ChartWidget
+final class QuotationsByStatusChart extends XotBaseChartWidget
 {
     protected static ?int $sort = 4;
 

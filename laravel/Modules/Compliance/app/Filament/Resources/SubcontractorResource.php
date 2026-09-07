@@ -10,17 +10,17 @@ use Filament\Actions\ViewAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Compliance\Filament\Resources\SubcontractorResource\Pages;
 use Modules\Compliance\Models\Subcontractor;
 use Modules\Platform\Filament\Concerns\GatesResourceNavigation;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class SubcontractorResource extends Resource
+final class SubcontractorResource extends XotBaseResource
 {
     use GatesResourceNavigation;
 
@@ -48,26 +48,29 @@ final class SubcontractorResource extends Resource
         return __('compliance.subcontractors');
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
-            Section::make()->columnSpanFull()->components([
-                Grid::make(2)->components([
-                    TextInput::make('business_name')->required()->maxLength(255),
-                    Select::make('status')->default('active')->options([
+        return [
+            'section' => Section::make()->columnSpanFull()->components([
+                'grid' => Grid::make(2)->components([
+                    'business_name' => TextInput::make('business_name')->required()->maxLength(255),
+                    'status' => Select::make('status')->default('active')->options([
                         'active' => 'Attivo',
                         'suspended' => 'Sospeso',
                         'blocked' => 'Bloccato',
                     ]),
-                    TextInput::make('vat_number')->maxLength(50),
-                    TextInput::make('tax_code')->maxLength(50),
-                    TextInput::make('contact_name')->maxLength(255),
-                    TextInput::make('email')->email()->maxLength(255),
-                    TextInput::make('phone')->tel()->maxLength(255),
+                    'vat_number' => TextInput::make('vat_number')->maxLength(50),
+                    'tax_code' => TextInput::make('tax_code')->maxLength(50),
+                    'contact_name' => TextInput::make('contact_name')->maxLength(255),
+                    'email' => TextInput::make('email')->email()->maxLength(255),
+                    'phone' => TextInput::make('phone')->tel()->maxLength(255),
                 ]),
-                Textarea::make('notes')->columnSpanFull(),
+                'notes' => Textarea::make('notes')->columnSpanFull(),
             ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

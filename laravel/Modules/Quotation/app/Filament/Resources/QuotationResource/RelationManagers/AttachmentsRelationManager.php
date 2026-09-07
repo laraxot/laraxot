@@ -61,7 +61,7 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
     public function getFormSchema(): array
     {
         return [
-            FileUpload::make('path')
+            'path' => FileUpload::make('path')
                 ->label(__('quotations.attachments.file'))
                 ->disk('local')
                 ->directory(function (): string {
@@ -75,8 +75,8 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
                 ->storeFileNamesIn('original_name')
                 ->required()
                 ->columnSpanFull(),
-            Hidden::make('original_name'),
-            TextInput::make('title')
+            'original_name' => Hidden::make('original_name'),
+            'title' => TextInput::make('title')
                 ->label(__('quotations.attachments.file_title'))
                 ->helperText(__('quotations.attachments.file_title_hint'))
                 ->maxLength(255)

@@ -54,7 +54,7 @@ final class QuotationTemplateResource extends GatedXotBaseResource
     public static function getFormSchema(): array
     {
         return [
-            Section::make()->columnSpanFull()->components([
+            'title' => Section::make()->columnSpanFull()->components([
                 TextInput::make('title')
                     ->label(__('quotations.fields.title'))
                     ->required()

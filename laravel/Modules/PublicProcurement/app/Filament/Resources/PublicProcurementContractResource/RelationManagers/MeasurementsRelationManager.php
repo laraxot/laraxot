@@ -11,14 +11,14 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Modules\PublicProcurement\Models\PublicProcurementContract;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class MeasurementsRelationManager extends RelationManager
+final class MeasurementsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'measurements';
 
@@ -27,10 +27,13 @@ final class MeasurementsRelationManager extends RelationManager
         return 'Libretto misure';
     }
 
-    public function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public function getFormSchema(): array
     {
-        return $schema->components([
-            Select::make('price_item_id')
+        return [
+            'price_item_id' => Select::make('price_item_id')
                 ->options(function (): array {
                     $contract = $this->getOwnerRecord();
 
@@ -41,13 +44,13 @@ final class MeasurementsRelationManager extends RelationManager
                     return $contract->priceItems()->pluck('description', 'id')->all();
                 })
                 ->searchable(),
-            Select::make('status')->options(['draft' => 'Bozza', 'approved' => 'Approvata', 'rejected' => 'Respinta'])->default('draft'),
-            DatePicker::make('measured_on'),
-            TextInput::make('quantity')->numeric()->default(0)->required(),
-            TextInput::make('amount')->numeric()->default(0)->required(),
-            Textarea::make('description')->columnSpanFull(),
-            Textarea::make('notes')->columnSpanFull(),
-        ]);
+            'status' => Select::make('status')->options(['draft' => 'Bozza', 'approved' => 'Approvata', 'rejected' => 'Respinta'])->default('draft'),
+            'measured_on' => DatePicker::make('measured_on'),
+            'quantity' => TextInput::make('quantity')->numeric()->default(0)->required(),
+            'amount' => TextInput::make('amount')->numeric()->default(0)->required(),
+            'description' => Textarea::make('description')->columnSpanFull(),
+            'notes' => Textarea::make('notes')->columnSpanFull(),
+        ];
     }
 
     public function table(Table $table): Table

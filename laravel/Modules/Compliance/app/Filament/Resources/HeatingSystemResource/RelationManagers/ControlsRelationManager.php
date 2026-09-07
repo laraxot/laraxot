@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace Modules\Compliance\Filament\Resources\HeatingSystemResource\RelationManagers;
 
 use Filament\Actions\Action;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Compliance\Actions\GenerateRceePdfAction;
 use Modules\Compliance\Models\MaintenanceControl;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class ControlsRelationManager extends RelationManager
+final class ControlsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'controls';
 
@@ -22,9 +22,12 @@ final class ControlsRelationManager extends RelationManager
         return __('heating.controls');
     }
 
-    public function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public function getFormSchema(): array
     {
-        return $schema->components([]);
+        return [];
     }
 
     public function table(Table $table): Table

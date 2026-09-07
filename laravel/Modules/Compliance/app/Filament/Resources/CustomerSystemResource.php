@@ -13,17 +13,17 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\DB;
 use Modules\Compliance\Filament\Resources\CustomerSystemResource\Pages;
 use Modules\Compliance\Filament\Resources\CustomerSystemResource\RelationManagers\SchemasRelationManager;
 use Modules\Compliance\Models\CustomerSystem;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class CustomerSystemResource extends Resource
+final class CustomerSystemResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 
@@ -69,21 +69,24 @@ final class CustomerSystemResource extends Resource
         return 'Impianti cliente';
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
-            Section::make()->columns(2)->components([
-                Select::make('system_type')
+        return [
+            'section' => Section::make()->columns(2)->components([
+                'system_type' => Select::make('system_type')
                     ->options(self::systemTypeOptions())
                     ->required()
                     ->native(false),
-                TextInput::make('code')->maxLength(255),
-                Select::make('customer_id')
+                'code' => TextInput::make('code')->maxLength(255),
+                'customer_id' => Select::make('customer_id')
                     ->options(fn (): array => DB::table('customers')->orderBy('legal_name')->pluck('legal_name', 'id')->all())
                     ->searchable()->preload()->live()
                     ->afterStateUpdated(fn (callable $set) => $set('customer_site_id', null))
                     ->required(),
-                Select::make('customer_site_id')
+                'customer_site_id' => Select::make('customer_site_id')
                     ->options(function (callable $get): array {
                         $customerId = $get('customer_id');
 
@@ -92,16 +95,16 @@ final class CustomerSystemResource extends Resource
                             : DB::table('customer_sites')->where('customer_id', $customerId)->pluck('name', 'id')->all();
                     })
                     ->searchable()->preload(),
-                TextInput::make('description')->maxLength(255)->columnSpanFull(),
-                TextInput::make('brand')->maxLength(255),
-                TextInput::make('model')->maxLength(255),
-                TextInput::make('serial_number')->maxLength(255),
-                TextInput::make('power_kw')->numeric()->suffix('kW'),
-                DatePicker::make('installation_date'),
-                Toggle::make('is_active')->default(true),
-                Textarea::make('notes')->columnSpanFull(),
+                'description' => TextInput::make('description')->maxLength(255)->columnSpanFull(),
+                'brand' => TextInput::make('brand')->maxLength(255),
+                'model' => TextInput::make('model')->maxLength(255),
+                'serial_number' => TextInput::make('serial_number')->maxLength(255),
+                'power_kw' => TextInput::make('power_kw')->numeric()->suffix('kW'),
+                'installation_date' => DatePicker::make('installation_date'),
+                'is_active' => Toggle::make('is_active')->default(true),
+                'notes' => Textarea::make('notes')->columnSpanFull(),
             ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

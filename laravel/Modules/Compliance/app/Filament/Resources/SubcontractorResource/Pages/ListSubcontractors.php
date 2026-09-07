@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace Modules\Compliance\Filament\Resources\SubcontractorResource\Pages;
 
 use Filament\Actions;
-use Filament\Resources\Pages\ListRecords;
 use Modules\Compliance\Filament\Resources\SubcontractorResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
-final class ListSubcontractors extends ListRecords
+final class ListSubcontractors extends XotBaseListRecords
 {
     protected static string $resource = SubcontractorResource::class;
 
     protected function getHeaderActions(): array
     {
-        return [Actions\CreateAction::make()];
+        return ['create' => Actions\CreateAction::make()];
     }
 }

@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Quotation\Filament\Resources\QuotationResource\Pages;
 
-use Filament\Resources\Pages\EditRecord;
 use Modules\Quotation\Filament\Resources\QuotationResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
-final class EditQuotation extends EditRecord
+final class EditQuotation extends XotBaseEditRecord
 {
     protected static string $resource = QuotationResource::class;
 }
-

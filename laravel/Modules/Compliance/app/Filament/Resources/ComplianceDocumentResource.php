@@ -16,10 +16,9 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Notifications\Notification;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
@@ -32,8 +31,9 @@ use Modules\Compliance\Models\ComplianceDocument;
 use Modules\Document\Models\Media;
 use Modules\Platform\Filament\Concerns\GatesResourceNavigation;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class ComplianceDocumentResource extends Resource
+final class ComplianceDocumentResource extends XotBaseResource
 {
     use GatesResourceNavigation;
 
@@ -56,25 +56,28 @@ final class ComplianceDocumentResource extends Resource
         return __('compliance.documents');
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
-            Section::make()->columnSpanFull()->components([
-                Grid::make(3)->components([
-                    Select::make('type')->label(__('compliance.fields.type'))->required()->options(self::documentTypes()),
-                    TextInput::make('title')->label(__('compliance.fields.title'))->required()->maxLength(255),
-                    Select::make('status')->label(__('compliance.fields.status'))->required()->default('missing')->options(self::statuses()),
+        return [
+            'section' => Section::make()->columnSpanFull()->components([
+                'grid' => Grid::make(3)->components([
+                    'type' => Select::make('type')->label(__('compliance.fields.type'))->required()->options(self::documentTypes()),
+                    'title' => TextInput::make('title')->label(__('compliance.fields.title'))->required()->maxLength(255),
+                    'status' => Select::make('status')->label(__('compliance.fields.status'))->required()->default('missing')->options(self::statuses()),
                 ]),
-                Grid::make(3)->components([
-                    Toggle::make('is_required')->label(__('compliance.fields.is_required'))->default(true),
-                    DatePicker::make('issued_on')->label(__('compliance.fields.issued_on')),
-                    DatePicker::make('expires_on')->label(__('compliance.fields.expires_on')),
+                'grid2' => Grid::make(3)->components([
+                    'is_required' => Toggle::make('is_required')->label(__('compliance.fields.is_required'))->default(true),
+                    'issued_on' => DatePicker::make('issued_on')->label(__('compliance.fields.issued_on')),
+                    'expires_on' => DatePicker::make('expires_on')->label(__('compliance.fields.expires_on')),
                 ]),
-                Select::make('work_order_id')
+                'work_order_id' => Select::make('work_order_id')
                     ->label(__('compliance.fields.work_order'))
                     ->options(fn (): array => WorkOrder::query()->orderByDesc('id')->limit(200)->pluck('title', 'id')->all())
                     ->searchable(),
-                FileUpload::make('file_path')
+                'file_path' => FileUpload::make('file_path')
                     ->label(__('compliance.fields.file'))
                     ->disk('public')
                     ->directory('media/compliance')
@@ -83,14 +86,14 @@ final class ComplianceDocumentResource extends Resource
                     ->openable()
                     ->previewable()
                     ->columnSpanFull(),
-                TextEntry::make('file_preview')
+                'file_preview' => TextEntry::make('file_preview')
                     ->label(__('compliance.fields.file_preview'))
                     ->state(fn (?ComplianceDocument $record): HtmlString => self::filePreview($record))
                     ->columnSpanFull()
                     ->visible(fn (?ComplianceDocument $record): bool => $record?->media instanceof Media),
-                Textarea::make('notes')->label(__('compliance.fields.notes'))->columnSpanFull(),
+                'notes' => Textarea::make('notes')->label(__('compliance.fields.notes'))->columnSpanFull(),
             ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

@@ -12,13 +12,13 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class DocumentRequirementsRelationManager extends RelationManager
+final class DocumentRequirementsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'documentRequirements';
 
@@ -27,18 +27,21 @@ final class DocumentRequirementsRelationManager extends RelationManager
         return 'Documenti richiesti';
     }
 
-    public function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public function getFormSchema(): array
     {
-        return $schema->components([
-            TextInput::make('code')->required(),
-            TextInput::make('title')->required(),
-            Select::make('phase')->options(['participation' => 'Partecipazione', 'execution' => 'Esecuzione', 'closing' => 'Chiusura'])->default('participation'),
-            Select::make('status')->options(['missing' => 'Mancante', 'ok' => 'Ok', 'expired' => 'Scaduto', 'waived' => 'Non necessario'])->default('missing'),
-            Select::make('severity')->options(['info' => 'Info', 'warning' => 'Warning', 'blocking' => 'Bloccante'])->default('warning'),
-            Toggle::make('is_required')->default(true),
-            DatePicker::make('due_on'),
-            Textarea::make('notes')->columnSpanFull(),
-        ]);
+        return [
+            'code' => TextInput::make('code')->required(),
+            'title' => TextInput::make('title')->required(),
+            'phase' => Select::make('phase')->options(['participation' => 'Partecipazione', 'execution' => 'Esecuzione', 'closing' => 'Chiusura'])->default('participation'),
+            'status' => Select::make('status')->options(['missing' => 'Mancante', 'ok' => 'Ok', 'expired' => 'Scaduto', 'waived' => 'Non necessario'])->default('missing'),
+            'severity' => Select::make('severity')->options(['info' => 'Info', 'warning' => 'Warning', 'blocking' => 'Bloccante'])->default('warning'),
+            'is_required' => Toggle::make('is_required')->default(true),
+            'due_on' => DatePicker::make('due_on'),
+            'notes' => Textarea::make('notes')->columnSpanFull(),
+        ];
     }
 
     public function table(Table $table): Table
