@@ -4,6 +4,7 @@
 # STATUS DEFINITIONS: backlog | ready-for-dev | in-progress | review | done | blocked
 # stories index: docs/stories/README.md
 # handoff cold-start: docs/stories/0.session-handoff-next-steps.story.md
+# handoff cold-start (thread PHPStan, 2026-09-07): docs/stories/0.session-handoff-phpstan-campaign-2026-09-07.story.md
 
 project: base_workorder_fila5
 source_epic: docs/stories/EPIC-gestionale-commesse-alignment.md
